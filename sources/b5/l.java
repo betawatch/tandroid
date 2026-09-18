@@ -1,6 +1,6 @@
 package b5;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class l extends b {
     public final /* synthetic */ int e;
@@ -18,7 +18,7 @@ public final class l extends b {
                 if (!super.b() || !com.google.android.gms.internal.cast.o.a("MULTI_PROCESS")) {
                     return false;
                 }
-                boolean z10 = a5.c.a;
+                boolean z10 = a5.b.a;
                 if (m.b.b()) {
                     return n.a.getStatics().isMultiProcessEnabled();
                 }

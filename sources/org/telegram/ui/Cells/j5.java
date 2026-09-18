@@ -21,13 +21,13 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MediaController;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.RadialProgress2;
-import org.telegram.ui.Components.dc0;
-import org.telegram.ui.td1;
-import org.telegram.ui.wd1;
+import org.telegram.ui.Components.cc0;
+import org.telegram.ui.ud1;
+import org.telegram.ui.xd1;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class j5 extends org.telegram.ui.Components.x9 implements DownloadController.FileDownloadProgressListener {
+public final class j5 extends org.telegram.ui.Components.u9 implements DownloadController.FileDownloadProgressListener {
     public RectF G;
     public RadialProgress2 H;
     public TLRPC.TL_wallPaper I;
@@ -39,9 +39,9 @@ public final class j5 extends org.telegram.ui.Components.x9 implements DownloadC
     public int O;
     public int P;
     public Paint Q;
-    public dc0 R;
+    public cc0 R;
     public int S;
-    public td1 T;
+    public ud1 T;
     public int U;
 
     @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener
@@ -49,7 +49,7 @@ public final class j5 extends org.telegram.ui.Components.x9 implements DownloadC
         return this.S;
     }
 
-    @Override // org.telegram.ui.Components.x9, android.view.View
+    @Override // org.telegram.ui.Components.u9, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         u(false);
@@ -69,66 +69,66 @@ public final class j5 extends org.telegram.ui.Components.x9 implements DownloadC
     /* JADX WARN: Removed duplicated region for block: B:65:0x005b  */
     /* JADX WARN: Removed duplicated region for block: B:68:0x0040  */
     /* JADX WARN: Removed duplicated region for block: B:7:0x003c  */
-    @Override // org.telegram.ui.Components.x9, android.view.View
+    @Override // org.telegram.ui.Components.u9, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void onDraw(Canvas canvas) {
         int i10;
         int i11;
-        wd1 wd1Var;
+        xd1 xd1Var;
         int i12;
         int i13;
-        wd1 wd1Var2;
+        xd1 xd1Var2;
         int i14;
         int i15;
-        wd1 wd1Var3;
+        xd1 xd1Var3;
         int i16;
-        dc0 dc0Var;
+        cc0 cc0Var;
         BlendMode blendMode;
         RadialProgress2 radialProgress2 = this.H;
         RectF rectF = this.G;
         Paint paint = this.Q;
-        td1 td1Var = this.T;
-        float f7 = td1Var.a.d.l1;
+        ud1 ud1Var = this.T;
+        float f7 = ud1Var.a.d.l1;
         this.a.setBlendMode(null);
-        wd1 wd1Var4 = td1Var.a.d;
-        if (wd1Var4.b == 2) {
-            i10 = wd1Var4.Z0;
+        xd1 xd1Var4 = ud1Var.a.d;
+        if (xd1Var4.b == 2) {
+            i10 = xd1Var4.Z0;
         } else {
             int B0 = org.telegram.ui.ActionBar.j6.B0(org.telegram.ui.ActionBar.j6.Nd);
-            i10 = (int) wd1Var4.s.j;
+            i10 = (int) xd1Var4.s.j;
             if (i10 == 0) {
                 i11 = B0;
-                wd1Var = td1Var.a.d;
-                if (wd1Var.b != 2) {
-                    i12 = wd1Var.b1;
+                xd1Var = ud1Var.a.d;
+                if (xd1Var.b != 2) {
+                    i12 = xd1Var.b1;
                 } else {
                     int B02 = org.telegram.ui.ActionBar.j6.B0(org.telegram.ui.ActionBar.j6.Od);
-                    i12 = (int) wd1Var.s.k;
+                    i12 = (int) xd1Var.s.k;
                     if (i12 == 0) {
                         i13 = B02;
-                        wd1Var2 = td1Var.a.d;
-                        if (wd1Var2.b == 2) {
-                            i14 = wd1Var2.c1;
+                        xd1Var2 = ud1Var.a.d;
+                        if (xd1Var2.b == 2) {
+                            i14 = xd1Var2.c1;
                         } else {
                             int B03 = org.telegram.ui.ActionBar.j6.B0(org.telegram.ui.ActionBar.j6.Pd);
-                            i14 = (int) wd1Var2.s.l;
+                            i14 = (int) xd1Var2.s.l;
                             if (i14 == 0) {
                                 i15 = B03;
-                                wd1Var3 = td1Var.a.d;
-                                if (wd1Var3.b != 2) {
-                                    i16 = wd1Var3.d1;
+                                xd1Var3 = ud1Var.a.d;
+                                if (xd1Var3.b != 2) {
+                                    i16 = xd1Var3.d1;
                                 } else {
                                     int B04 = org.telegram.ui.ActionBar.j6.B0(org.telegram.ui.ActionBar.j6.Qd);
-                                    i16 = (int) wd1Var3.s.m;
+                                    i16 = (int) xd1Var3.s.m;
                                     if (i16 == 0) {
                                         i16 = B04;
                                     }
                                 }
-                                wd1 wd1Var5 = td1Var.a.d;
-                                int i17 = wd1Var5.b != 2 ? wd1Var5.h1 : wd1Var5.s.n;
-                                int i18 = wd1Var5.k1;
+                                xd1 xd1Var5 = ud1Var.a.d;
+                                int i17 = xd1Var5.b != 2 ? xd1Var5.h1 : xd1Var5.s.n;
+                                int i18 = xd1Var5.k1;
                                 if (i13 != 0) {
                                     this.K = null;
                                     this.R = null;
@@ -141,15 +141,15 @@ public final class j5 extends org.telegram.ui.Components.x9 implements DownloadC
                                     this.P = i17;
                                     if (i15 != 0) {
                                         this.K = null;
-                                        dc0 dc0Var2 = this.R;
-                                        if (dc0Var2 != null) {
-                                            dc0Var2.o(i11, i13, i15, i16, 0, false);
+                                        cc0 cc0Var2 = this.R;
+                                        if (cc0Var2 != null) {
+                                            cc0Var2.o(i11, i13, i15, i16, 0, false);
                                         } else {
                                             int i19 = i11;
-                                            dc0 dc0Var3 = new dc0(true, i19, i13, i15, i16);
+                                            cc0 cc0Var3 = new cc0(true, i19, i13, i15, i16);
                                             i11 = i19;
-                                            this.R = dc0Var3;
-                                            dc0Var3.w(AndroidUtilities.dp(6.0f));
+                                            this.R = cc0Var3;
+                                            cc0Var3.w(AndroidUtilities.dp(6.0f));
                                             this.R.r(this);
                                         }
                                         if (f7 < 0.0f) {
@@ -161,19 +161,19 @@ public final class j5 extends org.telegram.ui.Components.x9 implements DownloadC
                                                 blendMode = BlendMode.SOFT_LIGHT;
                                                 imageReceiver.setBlendMode(blendMode);
                                             } else {
-                                                this.a.setColorFilter(new PorterDuffColorFilter(td1Var.a.d.j1, PorterDuff.Mode.SRC_IN));
+                                                this.a.setColorFilter(new PorterDuffColorFilter(ud1Var.a.d.j1, PorterDuff.Mode.SRC_IN));
                                             }
                                         }
                                     } else {
-                                        Rect e7 = org.telegram.ui.Components.w9.e(org.telegram.ui.Components.w9.d(i17), getMeasuredWidth(), getMeasuredHeight());
-                                        this.K = new LinearGradient(e7.left, e7.top, e7.right, e7.bottom, new int[]{i11, i13}, (float[]) null, Shader.TileMode.CLAMP);
+                                        Rect e = org.telegram.ui.Components.t9.e(org.telegram.ui.Components.t9.d(i17), getMeasuredWidth(), getMeasuredHeight());
+                                        this.K = new LinearGradient(e.left, e.top, e.right, e.bottom, new int[]{i11, i13}, (float[]) null, Shader.TileMode.CLAMP);
                                         this.R = null;
                                         this.a.setGradientBitmap(null);
                                     }
                                 }
-                                dc0Var = this.R;
-                                if (dc0Var == null) {
-                                    dc0Var.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
+                                cc0Var = this.R;
+                                if (cc0Var == null) {
+                                    cc0Var.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
                                     this.R.draw(canvas);
                                 } else {
                                     paint.setShader(this.K);
@@ -193,17 +193,17 @@ public final class j5 extends org.telegram.ui.Components.x9 implements DownloadC
                             }
                         }
                         i15 = i14;
-                        wd1Var3 = td1Var.a.d;
-                        if (wd1Var3.b != 2) {
+                        xd1Var3 = ud1Var.a.d;
+                        if (xd1Var3.b != 2) {
                         }
-                        wd1 wd1Var52 = td1Var.a.d;
-                        if (wd1Var52.b != 2) {
+                        xd1 xd1Var52 = ud1Var.a.d;
+                        if (xd1Var52.b != 2) {
                         }
-                        int i182 = wd1Var52.k1;
+                        int i182 = xd1Var52.k1;
                         if (i13 != 0) {
                         }
-                        dc0Var = this.R;
-                        if (dc0Var == null) {
+                        cc0Var = this.R;
+                        if (cc0Var == null) {
                         }
                         super.onDraw(canvas);
                         if (radialProgress2.i.q == 4) {
@@ -211,21 +211,21 @@ public final class j5 extends org.telegram.ui.Components.x9 implements DownloadC
                     }
                 }
                 i13 = i12;
-                wd1Var2 = td1Var.a.d;
-                if (wd1Var2.b == 2) {
+                xd1Var2 = ud1Var.a.d;
+                if (xd1Var2.b == 2) {
                 }
                 i15 = i14;
-                wd1Var3 = td1Var.a.d;
-                if (wd1Var3.b != 2) {
+                xd1Var3 = ud1Var.a.d;
+                if (xd1Var3.b != 2) {
                 }
-                wd1 wd1Var522 = td1Var.a.d;
-                if (wd1Var522.b != 2) {
+                xd1 xd1Var522 = ud1Var.a.d;
+                if (xd1Var522.b != 2) {
                 }
-                int i1822 = wd1Var522.k1;
+                int i1822 = xd1Var522.k1;
                 if (i13 != 0) {
                 }
-                dc0Var = this.R;
-                if (dc0Var == null) {
+                cc0Var = this.R;
+                if (cc0Var == null) {
                 }
                 super.onDraw(canvas);
                 if (radialProgress2.i.q == 4) {
@@ -233,25 +233,25 @@ public final class j5 extends org.telegram.ui.Components.x9 implements DownloadC
             }
         }
         i11 = i10;
-        wd1Var = td1Var.a.d;
-        if (wd1Var.b != 2) {
+        xd1Var = ud1Var.a.d;
+        if (xd1Var.b != 2) {
         }
         i13 = i12;
-        wd1Var2 = td1Var.a.d;
-        if (wd1Var2.b == 2) {
+        xd1Var2 = ud1Var.a.d;
+        if (xd1Var2.b == 2) {
         }
         i15 = i14;
-        wd1Var3 = td1Var.a.d;
-        if (wd1Var3.b != 2) {
+        xd1Var3 = ud1Var.a.d;
+        if (xd1Var3.b != 2) {
         }
-        wd1 wd1Var5222 = td1Var.a.d;
-        if (wd1Var5222.b != 2) {
+        xd1 xd1Var5222 = ud1Var.a.d;
+        if (xd1Var5222.b != 2) {
         }
-        int i18222 = wd1Var5222.k1;
+        int i18222 = xd1Var5222.k1;
         if (i13 != 0) {
         }
-        dc0Var = this.R;
-        if (dc0Var == null) {
+        cc0Var = this.R;
+        if (cc0Var == null) {
         }
         super.onDraw(canvas);
         if (radialProgress2.i.q == 4) {

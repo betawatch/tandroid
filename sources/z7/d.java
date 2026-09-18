@@ -9,7 +9,7 @@ import java.util.Map;
 import java.util.Set;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class d extends AbstractMap implements Serializable {
     public static final Object s = new Object();
@@ -237,13 +237,13 @@ public final class d extends AbstractMap implements Serializable {
         if (a2 != null) {
             return a2.get(obj);
         }
-        int e7 = e(obj);
-        if (e7 == -1) {
+        int e = e(obj);
+        if (e == -1) {
             return null;
         }
         Object[] objArr = this.d;
         objArr.getClass();
-        return objArr[e7];
+        return objArr[e];
     }
 
     @Override // java.util.AbstractMap, java.util.Map

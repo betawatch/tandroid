@@ -1,9 +1,9 @@
 package q1;
 
 import android.text.Editable;
-import androidx.emoji2.text.u;
+import androidx.emoji2.text.t;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class a extends Editable.Factory {
     public static final Object a = new Object();
@@ -13,6 +13,6 @@ public final class a extends Editable.Factory {
     @Override // android.text.Editable.Factory
     public final Editable newEditable(CharSequence charSequence) {
         Class cls = c;
-        return cls != null ? new u(charSequence, cls) : super.newEditable(charSequence);
+        return cls != null ? new t(charSequence, cls) : super.newEditable(charSequence);
     }
 }

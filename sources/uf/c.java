@@ -1,8 +1,8 @@
 package uf;
 
+import ai.m8;
 import android.content.SharedPreferences;
 import android.text.TextUtils;
-import bi.v7;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
@@ -18,9 +18,8 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.web.g1;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class c {
     public static volatile long g;
@@ -40,8 +39,8 @@ public final class c {
         try {
             g = d.getLong("hash", 0L);
             h = d.getLong("lastReload", 0L);
-        } catch (Exception e7) {
-            FileLog.e(e7);
+        } catch (Exception e) {
+            FileLog.e(e);
         }
         AndroidUtilities.runOnUIThread(new a(this, 0));
     }
@@ -65,7 +64,7 @@ public final class c {
             f(true);
             this.f = true;
         }
-        Utilities.globalQueue.postRunnable(new g1(26, this, new ArrayList(this.e)));
+        Utilities.globalQueue.postRunnable(new p2.b(27, this, new ArrayList(this.e)));
     }
 
     public final TLRPC.Document c(long j3) {
@@ -79,8 +78,8 @@ public final class c {
                 if (arrayList.get(i10) != null && ((b) arrayList.get(i10)).a != null && ((b) arrayList.get(i10)).a.id == j3) {
                     return ((b) arrayList.get(i10)).a;
                 }
-            } catch (Exception e7) {
-                FileLog.e(e7);
+            } catch (Exception e) {
+                FileLog.e(e);
                 return null;
             }
         }
@@ -146,7 +145,7 @@ public final class c {
         TL_account.getSavedRingtones getsavedringtones = new TL_account.getSavedRingtones();
         getsavedringtones.hash = g;
         if (z11) {
-            ConnectionsManager.getInstance(this.c).sendRequest(getsavedringtones, new v7(this, 19));
+            ConnectionsManager.getInstance(this.c).sendRequest(getsavedringtones, new m8(this, 22));
             return;
         }
         if (!this.f) {

@@ -1,44 +1,92 @@
 package com.google.android.gms.internal.clearcut;
 
-import java.nio.ByteBuffer;
-import java.nio.charset.Charset;
+import j$.util.concurrent.ConcurrentHashMap;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.util.Map;
 
 /* loaded from: classes.dex */
-public abstract class z {
-    public static final Charset a = Charset.forName("UTF-8");
-    public static final byte[] b;
+public abstract class z extends j {
+    private static Map<Object, z> zzjr = new ConcurrentHashMap();
+    protected c1 zzjp;
+    private int zzjq;
 
-    static {
-        Charset.forName("ISO-8859-1");
-        byte[] bArr = new byte[0];
-        b = bArr;
-        ByteBuffer.wrap(bArr);
-        int length = bArr.length;
+    public z() {
+        this.zzex = 0;
+        this.zzjp = c1.e;
+        this.zzjq = -1;
+    }
+
+    public static Object b(Method method, z zVar, Object... objArr) {
         try {
-            if (length < 0) {
-                throw new c0("CodedInputStream encountered an embedded string or message which claimed to have negative size.");
+            return method.invoke(zVar, objArr);
+        } catch (IllegalAccessException e) {
+            throw new RuntimeException("Couldn't use Java reflection to implement protocol message reflection.", e);
+        } catch (InvocationTargetException e7) {
+            Throwable cause = e7.getCause();
+            if (cause instanceof RuntimeException) {
+                throw ((RuntimeException) cause);
             }
-            if ((0 - 0) + length > Integer.MAX_VALUE) {
-                throw c0.a();
+            if (cause instanceof Error) {
+                throw ((Error) cause);
             }
-        } catch (c0 e7) {
-            throw new IllegalArgumentException(e7);
+            throw new RuntimeException("Unexpected exception thrown by generated accessor method.", cause);
         }
     }
 
-    public static y a(Object obj, Object obj2) {
-        y yVar = (y) ((i) obj);
-        w wVar = (w) yVar.a(5);
-        wVar.a(yVar);
-        i iVar = (i) obj2;
-        if (!wVar.a.getClass().isInstance(iVar)) {
-            throw new IllegalArgumentException("mergeFrom(MessageLite) can only merge messages of the same type.");
-        }
-        wVar.a((y) iVar);
-        return wVar.c();
+    public static void c(Class cls, z zVar) {
+        zzjr.put(cls, zVar);
     }
 
-    public static int b(long j3) {
-        return (int) (j3 ^ (j3 >>> 32));
+    public static z d(Class cls) {
+        z zVar = zzjr.get(cls);
+        if (zVar == null) {
+            try {
+                Class.forName(cls.getName(), true, cls.getClassLoader());
+                zVar = zzjr.get(cls);
+            } catch (ClassNotFoundException e) {
+                throw new IllegalStateException("Class initialization cannot fail.", e);
+            }
+        }
+        if (zVar != null) {
+            return zVar;
+        }
+        String name = cls.getName();
+        throw new IllegalStateException(name.length() != 0 ? "Unable to get default instance for: ".concat(name) : new String("Unable to get default instance for: "));
+    }
+
+    public abstract Object a(int i10);
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!((z) a(6)).getClass().isInstance(obj)) {
+            return false;
+        }
+        w0 w0Var = w0.c;
+        w0Var.getClass();
+        return w0Var.a(getClass()).d(this, (z) obj);
+    }
+
+    public final int hashCode() {
+        int i10 = this.zzex;
+        if (i10 != 0) {
+            return i10;
+        }
+        w0 w0Var = w0.c;
+        w0Var.getClass();
+        int e = w0Var.a(getClass()).e(this);
+        this.zzex = e;
+        return e;
+    }
+
+    public final String toString() {
+        String obj = super.toString();
+        StringBuilder sb2 = new StringBuilder();
+        sb2.append("# ");
+        sb2.append(obj);
+        n1.i(this, sb2, 0);
+        return sb2.toString();
     }
 }

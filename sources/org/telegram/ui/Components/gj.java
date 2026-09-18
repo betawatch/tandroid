@@ -30,7 +30,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class gj extends ni implements NotificationCenter.NotificationCenterDelegate, le.d {
     public String E;
@@ -71,7 +71,7 @@ public final class gj extends ni implements NotificationCenter.NotificationCente
     public final ri s;
     public final cj v;
     public final ui w;
-    public final js x;
+    public final ks x;
     public final FrameLayout y;
 
     /* JADX WARN: Type inference failed for: r0v10, types: [org.telegram.ui.Components.wi] */
@@ -79,7 +79,7 @@ public final class gj extends ni implements NotificationCenter.NotificationCente
     /* JADX WARN: Type inference failed for: r0v9, types: [org.telegram.ui.Components.wi] */
     public gj(Context context, org.telegram.ui.ActionBar.f6 f6Var, vi viVar) {
         super(context, f6Var, viVar);
-        this.n = new le.b(0, this, pr.h, 380L, false);
+        this.n = new le.b(0, this, qr.h, 380L, false);
         this.F = -1;
         this.I = new ArrayList();
         this.J = new HashSet();
@@ -109,15 +109,15 @@ public final class gj extends ni implements NotificationCenter.NotificationCente
                         while (true) {
                             if (i13 < cjVar.getChildCount()) {
                                 View childAt = cjVar.getChildAt(i13);
-                                int R = RecyclerView.R(childAt);
+                                int S = RecyclerView.S(childAt);
                                 int top = childAt.getTop();
-                                if (R >= 0) {
+                                if (S >= 0) {
                                     i12 = top;
-                                    i11 = R;
+                                    i11 = S;
                                 } else {
                                     i13++;
                                     i12 = top;
-                                    i11 = R;
+                                    i11 = S;
                                 }
                             }
                         }
@@ -198,7 +198,7 @@ public final class gj extends ni implements NotificationCenter.NotificationCente
                                     tL_documentAttributeFilename.file_name = file.getName();
                                     tL_message.media.document.attributes.add(tL_documentAttributeFilename);
                                     audioEntry.messageObject = new MessageObject(gjVar.b.J1, tL_message, false, true);
-                                    kf.a a2 = kf.a.a(file);
+                                    jf.a a2 = jf.a.a(file);
                                     if (a2 != null && a2.o != null) {
                                         int dp = AndroidUtilities.dp(44.0f);
                                         Bitmap bitmap = a2.o;
@@ -215,10 +215,10 @@ public final class gj extends ni implements NotificationCenter.NotificationCente
                                 }
                             }
                             query.close();
-                        } catch (Exception e7) {
-                            FileLog.e(e7);
+                        } catch (Exception e) {
+                            FileLog.e(e);
                         }
-                        AndroidUtilities.runOnUIThread(new uc(10, gjVar, arrayList));
+                        AndroidUtilities.runOnUIThread(new oh(4, gjVar, arrayList));
                         return;
                 }
             }
@@ -244,15 +244,15 @@ public final class gj extends ni implements NotificationCenter.NotificationCente
                         while (true) {
                             if (i13 < cjVar.getChildCount()) {
                                 View childAt = cjVar.getChildAt(i13);
-                                int R = RecyclerView.R(childAt);
+                                int S = RecyclerView.S(childAt);
                                 int top = childAt.getTop();
-                                if (R >= 0) {
+                                if (S >= 0) {
                                     i12 = top;
-                                    i112 = R;
+                                    i112 = S;
                                 } else {
                                     i13++;
                                     i12 = top;
-                                    i112 = R;
+                                    i112 = S;
                                 }
                             }
                         }
@@ -333,7 +333,7 @@ public final class gj extends ni implements NotificationCenter.NotificationCente
                                     tL_documentAttributeFilename.file_name = file.getName();
                                     tL_message.media.document.attributes.add(tL_documentAttributeFilename);
                                     audioEntry.messageObject = new MessageObject(gjVar.b.J1, tL_message, false, true);
-                                    kf.a a2 = kf.a.a(file);
+                                    jf.a a2 = jf.a.a(file);
                                     if (a2 != null && a2.o != null) {
                                         int dp = AndroidUtilities.dp(44.0f);
                                         Bitmap bitmap = a2.o;
@@ -350,10 +350,10 @@ public final class gj extends ni implements NotificationCenter.NotificationCente
                                 }
                             }
                             query.close();
-                        } catch (Exception e7) {
-                            FileLog.e(e7);
+                        } catch (Exception e) {
+                            FileLog.e(e);
                         }
-                        AndroidUtilities.runOnUIThread(new uc(10, gjVar, arrayList));
+                        AndroidUtilities.runOnUIThread(new oh(4, gjVar, arrayList));
                         return;
                 }
             }
@@ -379,15 +379,15 @@ public final class gj extends ni implements NotificationCenter.NotificationCente
                         while (true) {
                             if (i13 < cjVar.getChildCount()) {
                                 View childAt = cjVar.getChildAt(i13);
-                                int R = RecyclerView.R(childAt);
+                                int S = RecyclerView.S(childAt);
                                 int top = childAt.getTop();
-                                if (R >= 0) {
+                                if (S >= 0) {
                                     i122 = top;
-                                    i112 = R;
+                                    i112 = S;
                                 } else {
                                     i13++;
                                     i122 = top;
-                                    i112 = R;
+                                    i112 = S;
                                 }
                             }
                         }
@@ -468,7 +468,7 @@ public final class gj extends ni implements NotificationCenter.NotificationCente
                                     tL_documentAttributeFilename.file_name = file.getName();
                                     tL_message.media.document.attributes.add(tL_documentAttributeFilename);
                                     audioEntry.messageObject = new MessageObject(gjVar.b.J1, tL_message, false, true);
-                                    kf.a a2 = kf.a.a(file);
+                                    jf.a a2 = jf.a.a(file);
                                     if (a2 != null && a2.o != null) {
                                         int dp = AndroidUtilities.dp(44.0f);
                                         Bitmap bitmap = a2.o;
@@ -485,10 +485,10 @@ public final class gj extends ni implements NotificationCenter.NotificationCente
                                 }
                             }
                             query.close();
-                        } catch (Exception e7) {
-                            FileLog.e(e7);
+                        } catch (Exception e) {
+                            FileLog.e(e);
                         }
-                        AndroidUtilities.runOnUIThread(new uc(10, gjVar, arrayList));
+                        AndroidUtilities.runOnUIThread(new oh(4, gjVar, arrayList));
                         return;
                 }
             }
@@ -519,15 +519,15 @@ public final class gj extends ni implements NotificationCenter.NotificationCente
                         while (true) {
                             if (i132 < cjVar.getChildCount()) {
                                 View childAt = cjVar.getChildAt(i132);
-                                int R = RecyclerView.R(childAt);
+                                int S = RecyclerView.S(childAt);
                                 int top = childAt.getTop();
-                                if (R >= 0) {
+                                if (S >= 0) {
                                     i122 = top;
-                                    i112 = R;
+                                    i112 = S;
                                 } else {
                                     i132++;
                                     i122 = top;
-                                    i112 = R;
+                                    i112 = S;
                                 }
                             }
                         }
@@ -608,7 +608,7 @@ public final class gj extends ni implements NotificationCenter.NotificationCente
                                     tL_documentAttributeFilename.file_name = file.getName();
                                     tL_message.media.document.attributes.add(tL_documentAttributeFilename);
                                     audioEntry.messageObject = new MessageObject(gjVar.b.J1, tL_message, false, true);
-                                    kf.a a2 = kf.a.a(file);
+                                    jf.a a2 = jf.a.a(file);
                                     if (a2 != null && a2.o != null) {
                                         int dp = AndroidUtilities.dp(44.0f);
                                         Bitmap bitmap = a2.o;
@@ -625,10 +625,10 @@ public final class gj extends ni implements NotificationCenter.NotificationCente
                                 }
                             }
                             query.close();
-                        } catch (Exception e7) {
-                            FileLog.e(e7);
+                        } catch (Exception e) {
+                            FileLog.e(e);
                         }
-                        AndroidUtilities.runOnUIThread(new uc(10, gjVar, arrayList));
+                        AndroidUtilities.runOnUIThread(new oh(4, gjVar, arrayList));
                         return;
                 }
             }
@@ -647,24 +647,24 @@ public final class gj extends ni implements NotificationCenter.NotificationCente
         FrameLayout.LayoutParams d = w7.x5.d(-1, 48.0f, 51, 7.0f, 8.0f, 7.0f, 4.0f);
         ((ViewGroup.MarginLayoutParams) d).topMargin += AndroidUtilities.statusBarHeight;
         frameLayout.addView(riVar, d);
-        js jsVar = new js(context);
-        this.x = jsVar;
-        jsVar.setPadding(AndroidUtilities.dp(11.0f), AndroidUtilities.dp(21.0f), AndroidUtilities.dp(11.0f), AndroidUtilities.dp(21.0f));
-        jsVar.setOnAnimatedHeightChangedListener(new uc(11, this, viVar));
+        ks ksVar = new ks(context);
+        this.x = ksVar;
+        ksVar.setPadding(AndroidUtilities.dp(11.0f), AndroidUtilities.dp(21.0f), AndroidUtilities.dp(11.0f), AndroidUtilities.dp(21.0f));
+        ksVar.setOnAnimatedHeightChangedListener(new oh(this, viVar));
         FrameLayout frameLayout2 = new FrameLayout(context);
         this.y = frameLayout2;
-        jsVar.addView(frameLayout2);
-        jsVar.i(frameLayout2, true, false);
-        FragmentContextView y8Var = new org.telegram.ui.y8(this, context, viVar.f0, frameLayout, f6Var, 1);
-        frameLayout2.addView(y8Var);
-        jsVar.setCallFragmentContextView(y8Var);
+        ksVar.addView(frameLayout2);
+        ksVar.i(frameLayout2, true, false);
+        FragmentContextView a9Var = new org.telegram.ui.a9(this, context, viVar.f0, frameLayout, f6Var, 1);
+        frameLayout2.addView(a9Var);
+        ksVar.setCallFragmentContextView(a9Var);
         FrameLayout.LayoutParams d10 = w7.x5.d(-1, -2.0f, 51, 0.0f, 8.0f, 0.0f, 4.0f);
         ((ViewGroup.MarginLayoutParams) d10).topMargin = org.telegram.messenger.w1.C(27.0f, AndroidUtilities.statusBarHeight, ((ViewGroup.MarginLayoutParams) d10).topMargin);
-        frameLayout.addView(jsVar, d10);
+        frameLayout.addView(ksVar, d10);
         cj cjVar = new cj(this, context, viVar.J1, new d(this, 5), new zi(this), new zi(this), f6Var);
         this.v = cjVar;
         cjVar.Y2.r = false;
-        cjVar.o1();
+        cjVar.q1();
         this.c = cjVar;
         this.d = cjVar;
         this.h = true;
@@ -674,7 +674,7 @@ public final class gj extends ni implements NotificationCenter.NotificationCente
         cjVar.setVerticalScrollBarEnabled(false);
         addView(cjVar, w7.x5.d(-1, -1.0f, 51, 0.0f, 0.0f, 0.0f, 0.0f));
         cjVar.setGlowColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.A5, this.a));
-        cjVar.setOnScrollListener(new ah.e0(this, 17));
+        cjVar.setOnScrollListener(new ai.r(this, 17));
         addView(frameLayout, w7.x5.e(-1, 200, 51));
         cjVar.Y2.N(false);
         L();
@@ -687,17 +687,8 @@ public final class gj extends ni implements NotificationCenter.NotificationCente
         return MediaController.getInstance().setPlaylist(org.telegram.messenger.w1.l(messageObject), messageObject, 0L);
     }
 
-    @Override // org.telegram.ui.Components.ni
-    public final void D(ni niVar) {
-        N();
-        this.K.load();
-        cj cjVar = this.v;
-        cjVar.X2.h1(0, 0);
-        cjVar.Y2.N(false);
-    }
-
     @Override // le.d
-    public final void E(int i10, float f7, float f10, le.e eVar) {
+    public final void D(int i10, float f7, float f10, le.e eVar) {
         if (i10 == 0) {
             ui uiVar = this.w;
             uiVar.setAlpha(f7);
@@ -706,8 +697,17 @@ public final class gj extends ni implements NotificationCenter.NotificationCente
     }
 
     @Override // org.telegram.ui.Components.ni
+    public final void E(ni niVar) {
+        N();
+        this.K.load();
+        cj cjVar = this.v;
+        cjVar.X2.h1(0, 0);
+        cjVar.Y2.N(false);
+    }
+
+    @Override // org.telegram.ui.Components.ni
     public final void G() {
-        this.v.x0(0);
+        this.v.y0(0);
     }
 
     @Override // org.telegram.ui.Components.ni
@@ -723,13 +723,13 @@ public final class gj extends ni implements NotificationCenter.NotificationCente
             arrayList.add(((MediaController.AudioEntry) it.next()).messageObject);
         }
         vi viVar = this.b;
-        return e5.b0(viVar.J1, viVar.n1(), viVar.j1() + arrayList.size(), new Utilities.Callback() { // from class: org.telegram.ui.Components.aj
+        return c5.b0(viVar.J1, viVar.n1(), viVar.j1() + arrayList.size(), new Utilities.Callback() { // from class: org.telegram.ui.Components.aj
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
                 gj gjVar = gj.this;
                 dj djVar = gjVar.O;
                 vi viVar2 = gjVar.b;
-                djVar.i(arrayList, viVar2.m1().getText(), z10, i10, i11, j3, z11, ((Long) obj).longValue());
+                djVar.h(arrayList, viVar2.m1().getText(), z10, i10, i11, j3, z11, ((Long) obj).longValue());
                 viVar2.dismiss(true);
             }
         }, 0L);
@@ -755,16 +755,16 @@ public final class gj extends ni implements NotificationCenter.NotificationCente
         this.v.setPadding(0, (int) (this.x.c(0.0f) + AndroidUtilities.dp(56.0f) + i10 + AndroidUtilities.statusBarHeight), 0, this.e);
     }
 
-    public final void M(h51 h51Var, View view) {
-        if (h51Var != null && h51Var.d == this.S) {
+    public final void M(j51 j51Var, View view) {
+        if (j51Var != null && j51Var.d == this.S) {
             this.K.load();
             return;
         }
-        if (h51Var != null && h51Var.d == this.Q) {
+        if (j51Var != null && j51Var.d == this.Q) {
             N();
             return;
         }
-        if (h51Var != null && h51Var.d == this.R) {
+        if (j51Var != null && j51Var.d == this.R) {
             O();
             return;
         }
@@ -778,12 +778,12 @@ public final class gj extends ni implements NotificationCenter.NotificationCente
                 this.G = true;
                 ArrayList arrayList = new ArrayList();
                 arrayList.add(audioEntry.messageObject);
-                this.O.i(arrayList, viVar.m1().getText(), false, 0, 0, 0L, false, 0L);
+                this.O.h(arrayList, viVar.m1().getText(), false, 0, 0, 0L, false, 0L);
             } else {
                 HashSet hashSet = this.J;
                 if (hashSet.contains(audioEntry)) {
                     hashSet.remove(audioEntry);
-                    h51Var.e = false;
+                    j51Var.e = false;
                     i7Var.e(false, true);
                     i10 = 2;
                 } else {
@@ -794,14 +794,14 @@ public final class gj extends ni implements NotificationCenter.NotificationCente
                             String formatString = LocaleController.formatString(R.string.PassportUploadMaxReached, LocaleController.formatPluralString("Files", i11, new Object[0]));
                             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getContext(), 0, this.a);
                             String string = LocaleController.getString(R.string.AppName);
-                            org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
-                            b2Var.R = string;
-                            b2Var.T = formatString;
-                            i2.g.B(R.string.OK, alertDialog$Builder, null);
+                            org.telegram.ui.ActionBar.c2 c2Var = alertDialog$Builder.a;
+                            c2Var.R = string;
+                            c2Var.T = formatString;
+                            hg.k0.A(R.string.OK, alertDialog$Builder, null);
                             return;
                         }
                     }
-                    h51Var.e = true;
+                    j51Var.e = true;
                     hashSet.add(audioEntry);
                     i7Var.e(true, true);
                 }
@@ -854,7 +854,7 @@ public final class gj extends ni implements NotificationCenter.NotificationCente
         tL_messages_searchGlobal.q = str2;
         tL_messages_searchGlobal.limit = arrayList.isEmpty() ? 3 : 15;
         if (arrayList.size() > 0) {
-            MessageObject messageObject = ((MediaController.AudioEntry) i2.g.h(1, arrayList)).messageObject;
+            MessageObject messageObject = ((MediaController.AudioEntry) hg.k0.h(1, arrayList)).messageObject;
             tL_messages_searchGlobal.offset_id = messageObject.getId();
             tL_messages_searchGlobal.offset_rate = this.c0;
             tL_messages_searchGlobal.offset_peer = messagesController.getInputPeer(MessageObject.getPeerId(messageObject.messageOwner.peer_id));
@@ -904,7 +904,7 @@ public final class gj extends ni implements NotificationCenter.NotificationCente
                 return;
             }
             this.j0 = true;
-            messagesController.getUserNameResolver().resolve(str2, new bi.t2(8, this, messagesController));
+            messagesController.getUserNameResolver().resolve(str2, new ai.g3(8, this, messagesController));
             return;
         }
         TLRPC.User currentUser = UserConfig.getInstance(i10).getCurrentUser();
@@ -975,11 +975,11 @@ public final class gj extends ni implements NotificationCenter.NotificationCente
             boolean z10 = false;
             for (int i11 = 0; i11 < cjVar.getChildCount(); i11++) {
                 View childAt = cjVar.getChildAt(i11);
-                int R = RecyclerView.R(childAt);
-                if (R == 0) {
+                int S = RecyclerView.S(childAt);
+                if (S == 0) {
                     z10 = true;
                 }
-                if (R >= 0 && childAt.getTop() < i10) {
+                if (S >= 0 && childAt.getTop() < i10) {
                     i10 = childAt.getTop();
                 }
             }
@@ -1085,18 +1085,18 @@ public final class gj extends ni implements NotificationCenter.NotificationCente
         this.b.getSheetContainer().invalidate();
     }
 
-    public void setupBlurredSearchField(bh.b bVar) {
+    public void setupBlurredSearchField(ah.c cVar) {
         org.telegram.ui.ActionBar.f6 f6Var = this.a;
         ri riVar = this.s;
         if (riVar != null) {
-            riVar.setupBlurredBackground(bVar.c(riVar, fh.b.n(f6Var), false));
+            riVar.setupBlurredBackground(cVar.c(riVar, eh.b.o(f6Var), false));
         }
-        js jsVar = this.x;
-        if (jsVar != null) {
-            dh.d c10 = bVar.c(jsVar, fh.b.n(f6Var), false);
-            c10.p(AndroidUtilities.dp(24.0f));
-            c10.o(AndroidUtilities.dp(7.0f));
-            jsVar.setBlurredBackground(c10);
+        ks ksVar = this.x;
+        if (ksVar != null) {
+            ch.d c10 = cVar.c(ksVar, eh.b.o(f6Var), false);
+            c10.q(AndroidUtilities.dp(24.0f));
+            c10.p(AndroidUtilities.dp(7.0f));
+            ksVar.setBlurredBackground(c10);
         }
     }
 
@@ -1111,6 +1111,6 @@ public final class gj extends ni implements NotificationCenter.NotificationCente
     }
 
     @Override // le.d
-    public final /* synthetic */ void z(float f7, int i10) {
+    public final /* synthetic */ void C(float f7, int i10) {
     }
 }

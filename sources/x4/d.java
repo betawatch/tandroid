@@ -1,6 +1,5 @@
 package x4;
 
-import ah.g1;
 import android.animation.Animator;
 import android.animation.AnimatorInflater;
 import android.content.Context;
@@ -23,13 +22,13 @@ import java.io.IOException;
 import java.util.ArrayList;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
-import v7.o8;
+import v7.r8;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class d extends g implements Animatable {
     public final Context c;
-    public final g1 d = new g1(this, 7);
+    public final ah.d d = new ah.d(this, 9);
     public final b b = new b();
 
     public d(Context context) {
@@ -182,8 +181,8 @@ public final class d extends g implements Animatable {
                                 }
                                 pVar = new p();
                                 pVar.inflate(resources, xml, asAttributeSet, theme);
-                            } catch (IOException e7) {
-                                Log.e("VectorDrawableCompat", "parser error", e7);
+                            } catch (IOException e) {
+                                Log.e("VectorDrawableCompat", "parser error", e);
                                 pVar = null;
                                 pVar.f = false;
                                 pVar.setCallback(this.d);
@@ -193,8 +192,8 @@ public final class d extends g implements Animatable {
                                 bVar.a = pVar;
                                 f7.recycle();
                                 eventType = xmlPullParser.next();
-                            } catch (XmlPullParserException e10) {
-                                Log.e("VectorDrawableCompat", "parser error", e10);
+                            } catch (XmlPullParserException e7) {
+                                Log.e("VectorDrawableCompat", "parser error", e7);
                                 pVar = null;
                                 pVar.f = false;
                                 pVar.setCallback(this.d);
@@ -238,21 +237,21 @@ public final class d extends g implements Animatable {
                                     } catch (Throwable th2) {
                                         th = th2;
                                     }
-                                } catch (IOException e11) {
+                                } catch (IOException e10) {
+                                    e = e10;
+                                } catch (XmlPullParserException e11) {
                                     e = e11;
-                                } catch (XmlPullParserException e12) {
-                                    e = e12;
                                 }
                                 try {
                                     a2 = a.a(context, resources2, theme2, animation, Xml.asAttributeSet(animation), null, 0);
                                     animation.close();
-                                } catch (IOException e13) {
-                                    e = e13;
+                                } catch (IOException e12) {
+                                    e = e12;
                                     Resources.NotFoundException notFoundException = new Resources.NotFoundException("Can't load animation resource ID #0x" + Integer.toHexString(resourceId2));
                                     notFoundException.initCause(e);
                                     throw notFoundException;
-                                } catch (XmlPullParserException e14) {
-                                    e = e14;
+                                } catch (XmlPullParserException e13) {
+                                    e = e13;
                                     Resources.NotFoundException notFoundException2 = new Resources.NotFoundException("Can't load animation resource ID #0x" + Integer.toHexString(resourceId2));
                                     notFoundException2.initCause(e);
                                     throw notFoundException2;
@@ -366,7 +365,7 @@ public final class d extends g implements Animatable {
     public final void setTint(int i10) {
         Drawable drawable = this.a;
         if (drawable != null) {
-            o8.c(i10, drawable);
+            r8.c(i10, drawable);
         } else {
             this.b.a.setTint(i10);
         }

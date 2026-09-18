@@ -1,133 +1,131 @@
 package androidx.fragment.app;
 
-import android.os.Parcel;
-import android.os.Parcelable;
+import android.util.Log;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
-public final class n0 implements Parcelable {
-    public static final Parcelable.Creator<n0> CREATOR = new w.a(14);
-    public final boolean E;
-    public final String a;
-    public final String b;
-    public final boolean c;
-    public final boolean d;
-    public final int e;
-    public final int f;
-    public final String h;
-    public final boolean n;
-    public final boolean r;
-    public final boolean s;
-    public final boolean v;
-    public final int w;
-    public final String x;
-    public final int y;
+public final class n0 extends androidx.lifecycle.p0 {
+    public static final qb.b j = new qb.b(3);
+    public final boolean g;
+    public final HashMap d = new HashMap();
+    public final HashMap e = new HashMap();
+    public final HashMap f = new HashMap();
+    public boolean h = false;
+    public boolean i = false;
 
-    public n0(r rVar) {
-        this.a = rVar.getClass().getName();
-        this.b = rVar.e;
-        this.c = rVar.y;
-        this.d = rVar.F;
-        this.e = rVar.N;
-        this.f = rVar.O;
-        this.h = rVar.P;
-        this.n = rVar.S;
-        this.r = rVar.w;
-        this.s = rVar.R;
-        this.v = rVar.Q;
-        this.w = rVar.c0.ordinal();
-        this.x = rVar.n;
-        this.y = rVar.r;
-        this.E = rVar.X;
+    public n0(boolean z10) {
+        this.g = z10;
     }
 
-    @Override // android.os.Parcelable
-    public final int describeContents() {
-        return 0;
+    @Override // androidx.lifecycle.p0
+    public final void b() {
+        if (k0.K(3)) {
+            Log.d("FragmentManager", "onCleared called for " + this);
+        }
+        this.h = true;
+    }
+
+    public final void c(s sVar, boolean z10) {
+        if (k0.K(3)) {
+            Log.d("FragmentManager", "Clearing non-config state for " + sVar);
+        }
+        e(sVar.e, z10);
+    }
+
+    public final void d(String str, boolean z10) {
+        if (k0.K(3)) {
+            Log.d("FragmentManager", "Clearing non-config state for saved state of Fragment " + str);
+        }
+        e(str, z10);
+    }
+
+    public final void e(String str, boolean z10) {
+        HashMap hashMap = this.e;
+        n0 n0Var = (n0) hashMap.get(str);
+        if (n0Var != null) {
+            if (z10) {
+                ArrayList arrayList = new ArrayList();
+                arrayList.addAll(n0Var.e.keySet());
+                int size = arrayList.size();
+                int i10 = 0;
+                while (i10 < size) {
+                    Object obj = arrayList.get(i10);
+                    i10++;
+                    n0Var.d((String) obj, true);
+                }
+            }
+            n0Var.b();
+            hashMap.remove(str);
+        }
+        HashMap hashMap2 = this.f;
+        androidx.lifecycle.t0 t0Var = (androidx.lifecycle.t0) hashMap2.get(str);
+        if (t0Var != null) {
+            t0Var.a();
+            hashMap2.remove(str);
+        }
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj != null && n0.class == obj.getClass()) {
+            n0 n0Var = (n0) obj;
+            if (this.d.equals(n0Var.d) && this.e.equals(n0Var.e) && this.f.equals(n0Var.f)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public final void f(s sVar) {
+        if (this.i) {
+            if (k0.K(2)) {
+                Log.v("FragmentManager", "Ignoring removeRetainedFragment as the state is already saved");
+            }
+        } else {
+            if (this.d.remove(sVar.e) == null || !k0.K(2)) {
+                return;
+            }
+            Log.v("FragmentManager", "Updating retained Fragments: Removed " + sVar);
+        }
+    }
+
+    public final int hashCode() {
+        return this.f.hashCode() + ((this.e.hashCode() + (this.d.hashCode() * 31)) * 31);
     }
 
     public final String toString() {
-        StringBuilder sb2 = new StringBuilder(128);
-        sb2.append("FragmentState{");
-        sb2.append(this.a);
-        sb2.append(" (");
-        sb2.append(this.b);
-        sb2.append(")}:");
-        if (this.c) {
-            sb2.append(" fromLayout");
+        StringBuilder sb2 = new StringBuilder("FragmentManagerViewModel{");
+        sb2.append(Integer.toHexString(System.identityHashCode(this)));
+        sb2.append("} Fragments (");
+        Iterator it = this.d.values().iterator();
+        while (it.hasNext()) {
+            sb2.append(it.next());
+            if (it.hasNext()) {
+                sb2.append(", ");
+            }
         }
-        if (this.d) {
-            sb2.append(" dynamicContainer");
+        sb2.append(") Child Non Config (");
+        Iterator it2 = this.e.keySet().iterator();
+        while (it2.hasNext()) {
+            sb2.append((String) it2.next());
+            if (it2.hasNext()) {
+                sb2.append(", ");
+            }
         }
-        int i10 = this.f;
-        if (i10 != 0) {
-            sb2.append(" id=0x");
-            sb2.append(Integer.toHexString(i10));
+        sb2.append(") ViewModelStores (");
+        Iterator it3 = this.f.keySet().iterator();
+        while (it3.hasNext()) {
+            sb2.append((String) it3.next());
+            if (it3.hasNext()) {
+                sb2.append(", ");
+            }
         }
-        String str = this.h;
-        if (str != null && !str.isEmpty()) {
-            sb2.append(" tag=");
-            sb2.append(str);
-        }
-        if (this.n) {
-            sb2.append(" retainInstance");
-        }
-        if (this.r) {
-            sb2.append(" removing");
-        }
-        if (this.s) {
-            sb2.append(" detached");
-        }
-        if (this.v) {
-            sb2.append(" hidden");
-        }
-        String str2 = this.x;
-        if (str2 != null) {
-            sb2.append(" targetWho=");
-            sb2.append(str2);
-            sb2.append(" targetRequestCode=");
-            sb2.append(this.y);
-        }
-        if (this.E) {
-            sb2.append(" userVisibleHint");
-        }
+        sb2.append(')');
         return sb2.toString();
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        parcel.writeString(this.a);
-        parcel.writeString(this.b);
-        parcel.writeInt(this.c ? 1 : 0);
-        parcel.writeInt(this.d ? 1 : 0);
-        parcel.writeInt(this.e);
-        parcel.writeInt(this.f);
-        parcel.writeString(this.h);
-        parcel.writeInt(this.n ? 1 : 0);
-        parcel.writeInt(this.r ? 1 : 0);
-        parcel.writeInt(this.s ? 1 : 0);
-        parcel.writeInt(this.v ? 1 : 0);
-        parcel.writeInt(this.w);
-        parcel.writeString(this.x);
-        parcel.writeInt(this.y);
-        parcel.writeInt(this.E ? 1 : 0);
-    }
-
-    public n0(Parcel parcel) {
-        this.a = parcel.readString();
-        this.b = parcel.readString();
-        this.c = parcel.readInt() != 0;
-        this.d = parcel.readInt() != 0;
-        this.e = parcel.readInt();
-        this.f = parcel.readInt();
-        this.h = parcel.readString();
-        this.n = parcel.readInt() != 0;
-        this.r = parcel.readInt() != 0;
-        this.s = parcel.readInt() != 0;
-        this.v = parcel.readInt() != 0;
-        this.w = parcel.readInt();
-        this.x = parcel.readString();
-        this.y = parcel.readInt();
-        this.E = parcel.readInt() != 0;
     }
 }

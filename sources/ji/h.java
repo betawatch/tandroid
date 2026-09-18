@@ -1,73 +1,43 @@
 package ji;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.i70;
-import org.telegram.ui.Components.n70;
+import android.animation.ValueAnimator;
+import android.view.View;
+import org.telegram.ui.Cells.cb;
+import org.telegram.ui.Cells.h0;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class h implements Runnable {
+public final class h implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ n70 b;
+    public final /* synthetic */ float b;
+    public final /* synthetic */ n c;
+    public final /* synthetic */ View d;
 
-    public /* synthetic */ h(n70 n70Var, int i10) {
+    public /* synthetic */ h(n nVar, View view, float f7, int i10) {
         this.a = i10;
-        this.b = n70Var;
+        this.c = nVar;
+        this.d = view;
+        this.b = f7;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                this.b.s();
-                break;
-            case 1:
-                this.b.s();
-                break;
-            case 2:
-                this.b.s();
-                break;
-            case 3:
-                i70 i70Var = this.b.m;
-                if (i70Var != null) {
-                    AndroidUtilities.hideKeyboard(i70Var.getContentView());
-                    break;
-                }
-                break;
-            case 4:
-                i70 i70Var2 = this.b.m;
-                if (i70Var2 != null) {
-                    AndroidUtilities.hideKeyboard(i70Var2.getContentView());
-                    break;
-                }
-                break;
-            case 5:
-                i70 i70Var3 = this.b.m;
-                if (i70Var3 != null) {
-                    AndroidUtilities.hideKeyboard(i70Var3.getContentView());
-                    break;
-                }
-                break;
-            case 6:
-                i70 i70Var4 = this.b.m;
-                if (i70Var4 != null) {
-                    AndroidUtilities.hideKeyboard(i70Var4.getContentView());
-                    break;
-                }
-                break;
-            case 7:
-                i70 i70Var5 = this.b.m;
-                if (i70Var5 != null) {
-                    AndroidUtilities.hideKeyboard(i70Var5.getContentView());
-                    break;
-                }
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                n nVar = this.c;
+                float measuredHeight = ((nVar.G.getMeasuredHeight() - nVar.F.s9) - r2.Aa) / 2.0f;
+                h0 h0Var = (h0) this.d;
+                float measuredHeight2 = (measuredHeight - (h0Var.getMeasuredHeight() / 2.0f)) + nVar.F.s9;
+                h0Var.setTranslationY(((((float) h0Var.getTop()) > measuredHeight2 ? measuredHeight2 - h0Var.getTop() : 0.0f) * floatValue) + ((1.0f - floatValue) * this.b));
                 break;
             default:
-                i70 i70Var6 = this.b.m;
-                if (i70Var6 != null) {
-                    AndroidUtilities.hideKeyboard(i70Var6.getContentView());
-                    break;
-                }
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                n nVar2 = this.c;
+                float measuredHeight3 = ((nVar2.G.getMeasuredHeight() - nVar2.F.s9) - r2.Aa) / 2.0f;
+                cb cbVar = (cb) this.d;
+                float measuredHeight4 = (measuredHeight3 - (cbVar.getMeasuredHeight() / 2.0f)) + nVar2.F.s9;
+                cbVar.setTranslationY(((((float) cbVar.getTop()) > measuredHeight4 ? measuredHeight4 - cbVar.getTop() : 0.0f) * floatValue2) + ((1.0f - floatValue2) * this.b));
                 break;
         }
     }

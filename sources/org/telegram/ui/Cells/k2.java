@@ -3,7 +3,7 @@ package org.telegram.ui.Cells;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class k2 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -35,7 +35,7 @@ public final class k2 extends AnimatorListenerAdapter {
                 int i10 = (r2Var3.S2 ? 1 : 0) + (r2Var3.Q2 ? 2 : 0) + (r2Var3.R2 ? 4 : 0);
                 int i11 = r2Var3.r4;
                 if (i11 != i10) {
-                    r2Var3.A(i11, i10);
+                    r2Var3.z(i11, i10);
                 } else {
                     r2Var3.v4 = false;
                     r2Var3.t4 = i11;

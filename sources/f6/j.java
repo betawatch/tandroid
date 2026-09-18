@@ -6,7 +6,7 @@ import android.util.Log;
 import e6.q;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public abstract class j {
     public static final g6.b a = new g6.b("MediaSessionUtils", null);
@@ -17,10 +17,10 @@ public abstract class j {
             ArrayList createTypedArrayList = Q0.createTypedArrayList(e6.d.CREATOR);
             Q0.recycle();
             return createTypedArrayList;
-        } catch (RemoteException e7) {
+        } catch (RemoteException e) {
             Object[] objArr = {"getNotificationActions", q.class.getSimpleName()};
             g6.b bVar = a;
-            Log.e(bVar.a, bVar.d("Unable to call %s on %s.", objArr), e7);
+            Log.e(bVar.a, bVar.d("Unable to call %s on %s.", objArr), e);
             return null;
         }
     }
@@ -31,10 +31,10 @@ public abstract class j {
             int[] createIntArray = Q0.createIntArray();
             Q0.recycle();
             return createIntArray;
-        } catch (RemoteException e7) {
+        } catch (RemoteException e) {
             Object[] objArr = {"getCompactViewActionIndices", q.class.getSimpleName()};
             g6.b bVar = a;
-            Log.e(bVar.a, bVar.d("Unable to call %s on %s.", objArr), e7);
+            Log.e(bVar.a, bVar.d("Unable to call %s on %s.", objArr), e);
             return null;
         }
     }

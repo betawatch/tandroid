@@ -10,14 +10,14 @@ import android.view.Menu;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.e51;
-import org.telegram.ui.Components.n01;
-import org.telegram.ui.Components.o01;
-import org.telegram.ui.Components.zt;
+import org.telegram.ui.Components.bu;
+import org.telegram.ui.Components.g51;
+import org.telegram.ui.Components.p01;
+import org.telegram.ui.Components.q01;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class g3 extends zt {
+public final class g3 extends bu {
     public final /* synthetic */ int c;
     public final /* synthetic */ org.telegram.ui.ActionBar.f6 d;
     public final /* synthetic */ boolean e;
@@ -48,21 +48,21 @@ public final class g3 extends zt {
                 menu.removeItem(android.R.id.shareText);
             }
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(LocaleController.getString(R.string.Bold));
-            spannableStringBuilder.setSpan(new e51(AndroidUtilities.bold()), 0, spannableStringBuilder.length(), 33);
+            spannableStringBuilder.setSpan(new g51(AndroidUtilities.bold()), 0, spannableStringBuilder.length(), 33);
             menu.add(R.id.menu_groupbolditalic, R.id.menu_bold, 6, spannableStringBuilder);
             SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(LocaleController.getString(R.string.Italic));
-            spannableStringBuilder2.setSpan(new e51(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM_ITALIC)), 0, spannableStringBuilder2.length(), 33);
+            spannableStringBuilder2.setSpan(new g51(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM_ITALIC)), 0, spannableStringBuilder2.length(), 33);
             menu.add(R.id.menu_groupbolditalic, R.id.menu_italic, 7, spannableStringBuilder2);
             SpannableStringBuilder spannableStringBuilder3 = new SpannableStringBuilder(LocaleController.getString(R.string.Strike));
-            n01 n01Var = new n01();
-            n01Var.a |= 8;
-            spannableStringBuilder3.setSpan(new o01(n01Var, 0), 0, spannableStringBuilder3.length(), 33);
+            p01 p01Var = new p01();
+            p01Var.a |= 8;
+            spannableStringBuilder3.setSpan(new q01(p01Var, 0), 0, spannableStringBuilder3.length(), 33);
             menu.add(R.id.menu_groupbolditalic, R.id.menu_strike, 8, spannableStringBuilder3);
             menu.add(R.id.menu_groupbolditalic, R.id.menu_regular, 9, LocaleController.getString(R.string.Regular));
         }
     }
 
-    @Override // org.telegram.ui.Components.zt, org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.bu, android.widget.TextView, android.view.View
+    @Override // org.telegram.ui.Components.bu, org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.du, android.widget.TextView, android.view.View
     public final void onDraw(Canvas canvas) {
         canvas.save();
         canvas.clipRect(getPaddingLeft() + getScrollX(), getScrollY(), (getWidth() + getScrollX()) - getPaddingRight(), getHeight() + getScrollY());
@@ -70,15 +70,15 @@ public final class g3 extends zt {
         canvas.restore();
     }
 
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.bu, android.widget.TextView
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.du, android.widget.TextView
     public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
         super.onTextChanged(charSequence, i10, i11, i12);
         i3 i3Var = this.f;
-        org.telegram.ui.Components.p6 p6Var = i3Var.v;
-        if (p6Var == null || this.c <= 0) {
+        org.telegram.ui.Components.m6 m6Var = i3Var.v;
+        if (m6Var == null || this.c <= 0) {
             return;
         }
-        p6Var.b();
+        m6Var.b();
         i3Var.c();
     }
 

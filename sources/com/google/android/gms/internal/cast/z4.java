@@ -5,7 +5,7 @@ import java.nio.charset.Charset;
 import java.util.Iterator;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public class z4 implements Iterable, Serializable {
     public static final z4 c = new z4(n5.b);
@@ -23,7 +23,7 @@ public class z4 implements Iterable, Serializable {
 
     public static void p(int i10) {
         if (((i10 - 47) | 47) < 0) {
-            throw new IndexOutOfBoundsException(i2.g.i(i10, "End index: 47 >= "));
+            throw new IndexOutOfBoundsException(hg.k0.i(i10, "End index: 47 >= "));
         }
     }
 
@@ -105,10 +105,10 @@ public class z4 implements Iterable, Serializable {
         String hexString = Integer.toHexString(System.identityHashCode(this));
         int o9 = o();
         if (o() <= 50) {
-            concat = v7.s5.a(this);
+            concat = v7.t5.a(this);
         } else {
             p(o());
-            concat = v7.s5.a(new y4(this.b)).concat("...");
+            concat = v7.t5.a(new y4(this.b)).concat("...");
         }
         StringBuilder sb2 = new StringBuilder("<ByteString@");
         sb2.append(hexString);

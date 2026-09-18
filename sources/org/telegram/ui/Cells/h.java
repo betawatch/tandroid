@@ -3,13 +3,13 @@ package org.telegram.ui.Cells;
 import android.text.Layout;
 import android.text.style.ClickableSpan;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.a90;
-import org.telegram.ui.Components.h90;
+import org.telegram.ui.Components.g90;
+import org.telegram.ui.Components.z80;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class h extends of.e {
-    public h90 d;
+public final class h extends nf.e {
+    public g90 d;
     public final /* synthetic */ Layout e;
     public final /* synthetic */ ClickableSpan f;
     public final /* synthetic */ float g;
@@ -22,25 +22,25 @@ public final class h extends of.e {
         this.g = f7;
     }
 
-    @Override // of.e
+    @Override // nf.e
     public final void c(boolean z10) {
         AndroidUtilities.runOnUIThread(new g(this, 0), z10 ? 0L : 350L);
     }
 
-    @Override // of.e
+    @Override // nf.e
     public final void d() {
         j jVar = this.h;
-        a90 a90Var = jVar.E;
-        h90 h90Var = jVar.G;
-        if (h90Var != null) {
-            a90Var.l(h90Var, true);
+        z80 z80Var = jVar.E;
+        g90 g90Var = jVar.G;
+        if (g90Var != null) {
+            z80Var.l(g90Var, true);
         }
-        h90 i10 = a90.i(this.e, this.f, this.g);
+        g90 i10 = z80.i(this.e, this.f, this.g);
         this.d = i10;
         jVar.G = i10;
         int v02 = org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Ld, jVar.I);
         this.d.f(org.telegram.ui.ActionBar.j6.l1(0.8f, v02), org.telegram.ui.ActionBar.j6.l1(1.3f, v02), org.telegram.ui.ActionBar.j6.l1(1.0f, v02), org.telegram.ui.ActionBar.j6.l1(4.0f, v02));
         this.d.w.setStrokeWidth(AndroidUtilities.dpf2(1.25f));
-        a90Var.b(this.d, null);
+        z80Var.b(this.d, null);
     }
 }

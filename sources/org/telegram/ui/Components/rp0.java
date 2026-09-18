@@ -1,138 +1,77 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import android.view.ViewGroup;
-import org.telegram.messenger.AndroidUtilities;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class rp0 extends org.telegram.ui.ActionBar.p1 {
-    public final /* synthetic */ sp0 x;
+public final class rp0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ iq0 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public rp0(sp0 sp0Var, sp0 sp0Var2) {
-        super(sp0Var2);
-        this.x = sp0Var;
+    public /* synthetic */ rp0(iq0 iq0Var, boolean z10, int i10) {
+        this.a = i10;
+        this.c = iq0Var;
+        this.b = z10;
     }
 
-    @Override // org.telegram.ui.ActionBar.p1
-    public final boolean b() {
-        hq0 hq0Var = this.x.H0;
-        if (hq0Var.isDismissed() || !hq0Var.Y) {
-            return false;
-        }
-        return !hq0Var.d.m();
-    }
-
-    /* JADX WARN: Incorrect condition in loop: B:3:0x000f */
-    @Override // org.telegram.ui.ActionBar.p1
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void e(float f7, float f10, boolean z10) {
-        ViewGroup viewGroup;
-        ViewGroup viewGroup2;
-        sp0 sp0Var = this.x;
-        hq0 hq0Var = sp0Var.H0;
-        int i10 = hq0.a1;
-        for (int i11 = 0; i11 < viewGroup.getChildCount(); i11++) {
-            viewGroup2 = ((org.telegram.ui.ActionBar.f3) hq0Var).containerView;
-            View childAt = viewGroup2.getChildAt(i11);
-            if (childAt != hq0Var.h && childAt != hq0Var.v && childAt != hq0Var.S[1] && childAt != hq0Var.x && childAt != hq0Var.c && childAt != hq0Var.c0 && childAt != hq0Var.f) {
-                childAt.setTranslationY(f7);
-            }
-        }
-        jp0 jp0Var = hq0Var.F;
-        hq0Var.t0 = f7;
-        int i12 = sp0Var.B0;
-        if (i12 != -1) {
-            if (!z10) {
-                f10 = 1.0f - f10;
-            }
-            float f11 = 1.0f - f10;
-            hq0Var.p0 = (int) ((sp0Var.C0 * f10) + (i12 * f11));
-            float f12 = ((i12 - r6) * f11) + f7;
-            jp0Var.setTranslationY(f12);
-            if (z10) {
-                hq0Var.G.setTranslationY(f12);
-            } else {
-                hq0Var.G.setTranslationY(f12 + hq0Var.F.getPaddingTop());
-            }
-        } else {
-            int i13 = sp0Var.D0;
-            if (i13 != -1) {
-                float f13 = 1.0f - f10;
-                hq0Var.p0 = (int) ((sp0Var.E0 * f10) + (i13 * f13));
-                if (!z10) {
-                    f13 = f10;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationCancel(Animator animator) {
+        switch (this.a) {
+            case 0:
+                AnimatorSet[] animatorSetArr = this.c.T;
+                AnimatorSet animatorSet = animatorSetArr[0];
+                if (animatorSet != null && animatorSet.equals(animator)) {
+                    animatorSetArr[0] = null;
+                    break;
                 }
-                if (z10) {
-                    jp0Var.setTranslationY(f7 - ((i13 - r6) * f10));
-                } else {
-                    jp0Var.setTranslationY(((r6 - i13) * f13) + f7);
+                break;
+            default:
+                iq0 iq0Var = this.c;
+                if (animator.equals(iq0Var.y)) {
+                    iq0Var.y = null;
+                    break;
                 }
-            }
+                break;
         }
-        hq0Var.F.setTopGlowOffset((int) (hq0Var.p0 + hq0Var.t0));
-        hq0Var.b.setTranslationY(hq0Var.p0 + hq0Var.t0);
-        hq0Var.Q.setTranslationY(hq0Var.p0 + hq0Var.t0);
-        hq0Var.c.invalidate();
-        hq0Var.setCurrentPanTranslationY(hq0Var.t0);
-        hq0Var.Y0();
-        sp0Var.invalidate();
     }
 
-    @Override // org.telegram.ui.ActionBar.p1
-    public final void f() {
-        hq0 hq0Var = this.x.H0;
-        mp0 mp0Var = hq0Var.d;
-        if (mp0Var == null || !mp0Var.m()) {
-            int i10 = hq0Var.N0;
-            AndroidUtilities.dp(20.0f);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                iq0 iq0Var = this.c;
+                AnimatorSet[] animatorSetArr = iq0Var.T;
+                AnimatorSet animatorSet = animatorSetArr[0];
+                if (animatorSet != null && animatorSet.equals(animator)) {
+                    if (!this.b) {
+                        iq0Var.S[0].setVisibility(4);
+                    }
+                    animatorSetArr[0] = null;
+                    break;
+                }
+                break;
+            default:
+                iq0 iq0Var2 = this.c;
+                FrameLayout frameLayout = iq0Var2.h;
+                if (animator.equals(iq0Var2.y)) {
+                    if (!this.b) {
+                        iq0Var2.c.setVisibility(4);
+                        FrameLayout frameLayout2 = iq0Var2.c0;
+                        if (frameLayout2 != null && frameLayout == null) {
+                            frameLayout2.setVisibility(4);
+                        }
+                        iq0Var2.f.setVisibility(4);
+                    } else if (frameLayout != null) {
+                        frameLayout.setVisibility(4);
+                    }
+                    iq0Var2.y = null;
+                    break;
+                }
+                break;
         }
-        hq0Var.r0 = false;
-        int i11 = hq0Var.p0;
-        hq0Var.q0 = i11;
-        hq0Var.F.setTopGlowOffset(i11);
-        hq0Var.b.setTranslationY(hq0Var.p0);
-        hq0Var.Q.setTranslationY(hq0Var.p0);
-        hq0Var.F.setTranslationY(0.0f);
-        hq0Var.G.setTranslationY(0.0f);
-        hq0Var.Y0();
-    }
-
-    @Override // org.telegram.ui.ActionBar.p1
-    public final void g(int i10, boolean z10) {
-        sp0 sp0Var = this.x;
-        hq0 hq0Var = sp0Var.H0;
-        int i11 = hq0Var.q0;
-        int i12 = hq0Var.p0;
-        if (i11 != i12) {
-            sp0Var.B0 = i11;
-            sp0Var.C0 = i12;
-            hq0Var.r0 = true;
-            hq0Var.p0 = i11;
-        } else {
-            sp0Var.B0 = -1;
-        }
-        int i13 = sp0Var.z0;
-        int i14 = sp0Var.A0;
-        if (i13 != i14) {
-            sp0Var.D0 = 0;
-            sp0Var.E0 = 0;
-            hq0Var.r0 = true;
-            if (z10) {
-                sp0Var.E0 = i13 - i14;
-            } else {
-                sp0Var.E0 = 0 - (i13 - i14);
-            }
-            hq0Var.p0 = z10 ? sp0Var.B0 : sp0Var.C0;
-        } else {
-            sp0Var.D0 = -1;
-        }
-        hq0Var.F.setTopGlowOffset((int) (hq0Var.t0 + hq0Var.p0));
-        hq0Var.b.setTranslationY(hq0Var.t0 + hq0Var.p0);
-        hq0Var.Q.setTranslationY(hq0Var.t0 + hq0Var.p0);
-        sp0Var.invalidate();
     }
 }

@@ -1,26 +1,36 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class al implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ TranslateController b;
-    public final /* synthetic */ long c;
+    public final /* synthetic */ String c;
+    public final /* synthetic */ MessageObject d;
+    public final /* synthetic */ long e;
+    public final /* synthetic */ int f;
 
-    public /* synthetic */ al(TranslateController translateController, long j3, int i10) {
-        this.a = i10;
+    public /* synthetic */ al(TranslateController translateController, String str, MessageObject messageObject, long j3, int i10, int i11) {
+        this.a = i11;
         this.b = translateController;
-        this.c = j3;
+        this.c = str;
+        this.d = messageObject;
+        this.e = j3;
+        this.f = i10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$checkDialogTranslatable$17(this.c);
+                long j3 = this.e;
+                int i10 = this.f;
+                this.b.lambda$checkLanguage$16(this.c, this.d, j3, i10);
                 break;
             default:
-                this.b.lambda$checkDialogMessageSure$11(this.c);
+                long j10 = this.e;
+                int i11 = this.f;
+                this.b.lambda$checkLanguage$12(this.c, this.d, j10, i11);
                 break;
         }
     }

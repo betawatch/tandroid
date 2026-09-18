@@ -1,34 +1,35 @@
 package org.telegram.ui.Components;
 
-import android.app.Activity;
-import org.telegram.messenger.AndroidUtilities;
-
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class t8 extends org.telegram.ui.ActionBar.f3 {
-    public final /* synthetic */ f9 b;
+public final class t8 extends org.telegram.ui.ActionBar.j {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ c9 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public t8(f9 f9Var, Activity activity) {
-        super(activity, true);
-        this.b = f9Var;
+    public /* synthetic */ t8(c9 c9Var, int i10) {
+        this.a = i10;
+        this.b = c9Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.f3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.j2
-    public final void dismiss() {
-        super.dismiss();
-        f9 f9Var = this.b;
-        f9Var.J.v1(f9Var.Y);
-        f9Var.f = true;
-        f9Var.fragmentView.invalidate();
-        f9Var.e.animate().setListener(new j6(this, 3)).alpha(0.0f).setDuration(200L).start();
-    }
-
-    @Override // org.telegram.ui.ActionBar.f3
-    public final void dismissInternal() {
-        super.dismissInternal();
-        f9 f9Var = this.b;
-        AndroidUtilities.requestAdjustResize(f9Var.getParentActivity(), f9Var.getClassGuid());
-        f9Var.S = null;
+    @Override // org.telegram.ui.ActionBar.j
+    public final void b(int i10) {
+        switch (this.a) {
+            case 0:
+                if (i10 == -1) {
+                    c9.U(this.b);
+                    break;
+                }
+                break;
+            default:
+                c9 c9Var = this.b;
+                if (i10 == -1) {
+                    c9.U(c9Var);
+                }
+                if (i10 == 1) {
+                    c9Var.f0();
+                    break;
+                }
+                break;
+        }
     }
 }

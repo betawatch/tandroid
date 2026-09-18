@@ -1,31 +1,28 @@
 package rg;
 
-import android.content.Context;
-import android.graphics.Bitmap;
-import org.telegram.ui.zt0;
-
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class e0 extends qg.c1 {
-    public final /* synthetic */ Bitmap E;
-    public final /* synthetic */ zt0 F;
+public class e0 {
+    public final int a;
+    public final int b;
+    public final String c;
+    public final String d;
+    public final int e;
+    public boolean f;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public e0(zt0 zt0Var, Context context, qg.q0 q0Var, Bitmap bitmap, Bitmap bitmap2) {
-        super(context, q0Var, bitmap, null, null);
-        this.F = zt0Var;
-        this.E = bitmap2;
+    public e0(int i10, int i11, int i12, String str, String str2) {
+        this.a = i10;
+        this.b = i11;
+        this.c = str;
+        this.d = str2;
+        this.e = i12;
     }
 
-    @Override // qg.c1
-    public final void g(qg.m mVar) {
-        int indexOf = qg.m.a.indexOf(mVar);
-        int i10 = indexOf + 1;
-        if (i10 <= 1 || this.E != null) {
-            indexOf = i10;
-        }
-        zt0 zt0Var = this.F;
-        zt0Var.t1.b(indexOf);
-        zt0Var.o(mVar);
+    public static e0 a(int i10, int i11) {
+        return new e0(i10, i11, -1, null, null);
+    }
+
+    public static e0 b(int i10, int i11, String str) {
+        return new e0(i10, -1, i11, null, str);
     }
 }

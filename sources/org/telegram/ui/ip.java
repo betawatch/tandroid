@@ -1,44 +1,84 @@
 package org.telegram.ui;
 
 import android.view.View;
-import android.widget.ScrollView;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.ViewGroup;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class ip implements org.telegram.ui.Components.zk0 {
-    public final /* synthetic */ kp a;
+public final class ip extends org.telegram.ui.Components.ll0 {
+    public final /* synthetic */ jp c;
 
-    public ip(kp kpVar) {
-        this.a = kpVar;
+    public ip(jp jpVar) {
+        this.c = jpVar;
     }
 
-    @Override // org.telegram.ui.Components.zk0
-    public final void a(int i10, View view) {
-        TLRPC.TL_username tL_username;
-        kp kpVar = this.a;
-        lp lpVar = kpVar.a3;
-        if (!(view instanceof na) || (tL_username = ((na) view).v) == null) {
+    @Override // org.telegram.ui.Components.ll0
+    public final boolean D(s4.c1 c1Var) {
+        return c1Var.f == 1;
+    }
+
+    @Override // s4.h0
+    public final int h() {
+        return this.c.a3.N.size() + 2;
+    }
+
+    @Override // s4.h0
+    public final int j(int i10) {
+        if (i10 == 0) {
+            return 0;
+        }
+        return i10 <= this.c.a3.N.size() ? 1 : 2;
+    }
+
+    @Override // s4.h0
+    public final void v(s4.c1 c1Var, int i10) {
+        jp jpVar = this.c;
+        kp kpVar = jpVar.a3;
+        int i11 = c1Var.f;
+        View view = c1Var.a;
+        if (i11 == 0) {
+            org.telegram.ui.Cells.l4 l4Var = (org.telegram.ui.Cells.l4) view;
+            l4Var.setBackgroundColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.d6, jpVar.p2));
+            l4Var.setText(LocaleController.getString(R.string.UsernamesChannelHeader));
             return;
         }
-        if (tL_username.editable) {
-            View view2 = lpVar.fragmentView;
-            if (view2 instanceof ScrollView) {
-                ((ScrollView) view2).smoothScrollTo(0, lpVar.y.getTop() - AndroidUtilities.dp(128.0f));
+        if (i11 != 1) {
+            if (i11 != 2) {
+                return;
             }
-            lpVar.a.requestFocus();
-            AndroidUtilities.showKeyboard(lpVar.a);
+            org.telegram.ui.Cells.e9 e9Var = (org.telegram.ui.Cells.e9) view;
+            e9Var.setText(LocaleController.getString(R.string.UsernamesChannelHelp));
+            e9Var.setBackground(org.telegram.ui.ActionBar.j6.V0(jpVar.getContext(), R.drawable.greydivider_bottom, org.telegram.ui.ActionBar.j6.b7));
             return;
         }
-        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(kpVar.getContext(), 0, lpVar.getResourceProvider());
-        alertDialog$Builder.a.R = LocaleController.getString(tL_username.active ? R.string.UsernameDeactivateLink : R.string.UsernameActivateLink);
-        alertDialog$Builder.a.T = LocaleController.getString(tL_username.active ? R.string.UsernameDeactivateLinkChannelMessage : R.string.UsernameActivateLinkChannelMessage);
-        alertDialog$Builder.k(LocaleController.getString(tL_username.active ? R.string.Hide : R.string.Show), new b7(this, tL_username, view, 8));
-        alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new m4.t0(19));
-        alertDialog$Builder.o();
+        TLRPC.TL_username tL_username = (TLRPC.TL_username) kpVar.N.get(i10 - 1);
+        pa paVar = (pa) view;
+        if (paVar.H) {
+            kpVar.O = null;
+        }
+        paVar.a(tL_username, i10 < kpVar.N.size(), false, 0L);
+        if (tL_username == null || !tL_username.editable) {
+            return;
+        }
+        kpVar.O = paVar;
+    }
+
+    @Override // s4.h0
+    public final s4.c1 x(ViewGroup viewGroup, int i10) {
+        jp jpVar = this.c;
+        org.telegram.ui.ActionBar.f6 f6Var = jpVar.p2;
+        if (i10 == 0) {
+            return new org.telegram.ui.Components.wk0(new org.telegram.ui.Cells.l4(jpVar.getContext(), f6Var));
+        }
+        if (i10 == 1) {
+            return new org.telegram.ui.Components.wk0(new ia(this, jpVar.getContext(), f6Var));
+        }
+        if (i10 != 2) {
+            return null;
+        }
+        return new org.telegram.ui.Components.wk0(new org.telegram.ui.Cells.e9(jpVar.getContext(), 12, f6Var));
     }
 }

@@ -9,7 +9,7 @@ import rd.p;
 import v7.t7;
 import zd.e0;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 final class zzf extends j implements p {
     int zza;
@@ -72,14 +72,14 @@ final class zzf extends j implements p {
             Object obj2 = ((f) obj).a;
             t7.b(obj2);
             return (zzxx) obj2;
-        } catch (Exception e7) {
-            zzcg zza = zzh.zza(e7, new zzcg(zzce.zzb, zzcd.zzaa, e7.getMessage(), null, 8, null));
+        } catch (Exception e) {
+            zzcg zza = zzh.zza(e, new zzcg(zzce.zzb, zzcd.zzaa, e.getMessage(), null, 8, null));
             zzg zzgVar = this.zzc;
             String str = this.zzd;
             long j10 = this.zzb;
             this.zze = zza;
             this.zza = 2;
-            if (zzgVar.zze(str, j10, e7, this) != aVar) {
+            if (zzgVar.zze(str, j10, e, this) != aVar) {
                 throw zza;
             }
         }

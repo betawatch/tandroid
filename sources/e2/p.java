@@ -1,5 +1,6 @@
 package e2;
 
+import ai.s1;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
@@ -7,7 +8,7 @@ import java.util.ArrayDeque;
 import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArraySet;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class p {
     public final x a;
@@ -69,7 +70,7 @@ public final class p {
 
     public final void c(int i10, m mVar) {
         f();
-        this.f.add(new ah.p(new CopyOnWriteArraySet(this.d), i10, mVar, 9));
+        this.f.add(new s1(new CopyOnWriteArraySet(this.d), i10, mVar, 8));
     }
 
     public final void d() {
@@ -84,7 +85,7 @@ public final class p {
             oVar.d = true;
             if (oVar.c) {
                 oVar.c = false;
-                nVar.c(oVar.a, oVar.b.d());
+                nVar.e(oVar.a, oVar.b.d());
             }
         }
         this.d.clear();
@@ -120,7 +121,7 @@ public final class p {
                         b2.q d = oVar.b.d();
                         oVar.b = new b2.p();
                         oVar.c = false;
-                        nVar2.c(oVar.a, d);
+                        nVar2.e(oVar.a, d);
                     }
                     if (pVar.b.a.hasMessages(1)) {
                         break;

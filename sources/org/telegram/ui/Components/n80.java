@@ -2,43 +2,43 @@ package org.telegram.ui.Components;
 
 import android.view.KeyEvent;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class n80 implements org.telegram.ui.ActionBar.a2, org.telegram.ui.ActionBar.l1 {
+public final /* synthetic */ class n80 implements org.telegram.ui.ActionBar.b2, org.telegram.ui.ActionBar.m1 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ w80 b;
+    public final /* synthetic */ v80 b;
 
-    public /* synthetic */ n80(w80 w80Var, int i10) {
+    public /* synthetic */ n80(v80 v80Var, int i10) {
         this.a = i10;
-        this.b = w80Var;
+        this.b = v80Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.a2
-    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+    @Override // org.telegram.ui.ActionBar.b2
+    public void f(org.telegram.ui.ActionBar.c2 c2Var, int i10) {
         switch (this.a) {
             case 0:
-                v80 v80Var = this.b.r;
-                if (v80Var != null) {
-                    v80Var.j();
+                u80 u80Var = this.b.r;
+                if (u80Var != null) {
+                    u80Var.j();
                     break;
                 }
                 break;
             default:
-                v80 v80Var2 = this.b.r;
-                if (v80Var2 != null) {
-                    v80Var2.c();
+                u80 u80Var2 = this.b.r;
+                if (u80Var2 != null) {
+                    u80Var2.c();
                     break;
                 }
                 break;
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.l1
-    public void n(KeyEvent keyEvent) {
-        w80 w80Var = this.b;
-        w80Var.getClass();
-        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && w80Var.s.isShowing()) {
-            w80Var.s.d(true);
+    @Override // org.telegram.ui.ActionBar.m1
+    public void o(KeyEvent keyEvent) {
+        v80 v80Var = this.b;
+        v80Var.getClass();
+        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && v80Var.s.isShowing()) {
+            v80Var.s.d(true);
         }
     }
 }

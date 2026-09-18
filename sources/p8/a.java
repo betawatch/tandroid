@@ -23,7 +23,7 @@ import org.telegram.ui.Cells.l7;
 import u6.e;
 import u6.f;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class a {
     public static final long n = TimeUnit.DAYS.toMillis(366);
@@ -88,8 +88,8 @@ public final class a {
             if (workSource != null) {
                 try {
                     this.b.setWorkSource(workSource);
-                } catch (ArrayIndexOutOfBoundsException | IllegalArgumentException e7) {
-                    Log.wtf("WakeLock", e7.toString());
+                } catch (ArrayIndexOutOfBoundsException | IllegalArgumentException e) {
+                    Log.wtf("WakeLock", e.toString());
                 }
             }
         }
@@ -232,11 +232,11 @@ public final class a {
                                 if (this.h != null) {
                                     this.h = null;
                                 }
-                            } catch (RuntimeException e7) {
-                                if (!e7.getClass().equals(RuntimeException.class)) {
-                                    throw e7;
+                            } catch (RuntimeException e) {
+                                if (!e.getClass().equals(RuntimeException.class)) {
+                                    throw e;
                                 }
-                                Log.e("WakeLock", String.valueOf(this.j).concat(" failed to release!"), e7);
+                                Log.e("WakeLock", String.valueOf(this.j).concat(" failed to release!"), e);
                                 if (this.h != null) {
                                     this.h = null;
                                 }

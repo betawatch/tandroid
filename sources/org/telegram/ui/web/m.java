@@ -1,24 +1,35 @@
 package org.telegram.ui.web;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+import android.view.View;
+import java.util.concurrent.ExecutorService;
+
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class m implements Runnable {
+public final /* synthetic */ class m implements e2.h {
     public final /* synthetic */ int a;
-    public final /* synthetic */ q b;
 
-    public /* synthetic */ m(q qVar, int i10) {
-        this.a = i10;
-        this.b = qVar;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // e2.h
+    public final void accept(Object obj) {
         switch (this.a) {
             case 0:
-                this.b.g0();
+                View view = (View) obj;
+                if (view instanceof h) {
+                    ((h) view).setChecked(false);
+                    break;
+                }
+                break;
+            case 1:
+                View view2 = (View) obj;
+                if (view2 instanceof h) {
+                    ((h) view2).setChecked(false);
+                    break;
+                }
+                break;
+            case 2:
+                ((u2.y0) obj).b.release();
                 break;
             default:
-                this.b.g0();
+                ((ExecutorService) obj).shutdown();
                 break;
         }
     }

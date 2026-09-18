@@ -15,9 +15,9 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public abstract class l30 extends org.telegram.ui.ActionBar.f3 {
+public abstract class l30 extends org.telegram.ui.ActionBar.g3 {
     public final z4.g b;
     public final i30 c;
     public final LinearLayout d;
@@ -86,7 +86,7 @@ public abstract class l30 extends org.telegram.ui.ActionBar.f3 {
             i30Var.setForeground(org.telegram.ui.ActionBar.j6.i0(dp, dp, dp, dp, 0, k10, k10));
         }
         i30Var.setPadding(0, AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f));
-        i30Var.setOnClickListener(new g0(this, 23));
+        i30Var.setOnClickListener(new f0(this, 23));
         this.containerView.addView(i30Var, w7.x5.d(-1, 48.0f, 80, 0.0f, 0.0f, 0.0f, 64.0f));
         LinearLayout linearLayout = new LinearLayout(context);
         this.d = linearLayout;
@@ -112,7 +112,7 @@ public abstract class l30 extends org.telegram.ui.ActionBar.f3 {
             } else {
                 this.e[i12].setText(LocaleController.getString(R.string.VoipRecordLandscape));
             }
-            this.e[i12].setOnClickListener(new di.o4(this, i12, 9));
+            this.e[i12].setOnClickListener(new ci.o4(this, i12, 9));
             i12++;
         }
         if (z10) {

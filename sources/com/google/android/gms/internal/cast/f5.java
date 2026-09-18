@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class f5 implements z5 {
     public static final f5 b = new f5(0);
@@ -19,8 +19,8 @@ public final class f5 implements z5 {
                 }
                 try {
                     return (i6) h5.k(cls.asSubclass(h5.class)).h(3, null);
-                } catch (Exception e7) {
-                    throw new RuntimeException("Unable to get message info for ".concat(cls.getName()), e7);
+                } catch (Exception e) {
+                    throw new RuntimeException("Unable to get message info for ".concat(cls.getName()), e);
                 }
             default:
                 throw new IllegalStateException("This should never be called.");

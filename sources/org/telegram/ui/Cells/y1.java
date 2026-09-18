@@ -12,11 +12,11 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class y1 extends LinearLayout {
     public final ImageView a;
-    public final org.telegram.ui.Components.q6 b;
+    public final org.telegram.ui.Components.n6 b;
     public final View c;
 
     public y1(z1 z1Var, Context context, int i10) {
@@ -30,12 +30,12 @@ public final class y1 extends LinearLayout {
             imageView.setColorFilter(new PorterDuffColorFilter(v02, PorterDuff.Mode.MULTIPLY));
             imageView.setImageResource(i10);
         }
-        org.telegram.ui.Components.q6 q6Var = new org.telegram.ui.Components.q6(context, false, true, false);
-        this.b = q6Var;
-        q6Var.setTextSize(AndroidUtilities.dp(13.0f));
-        q6Var.setTextColor(v02);
-        q6Var.setIncludeFontPadding(false);
-        q6Var.setTypeface(AndroidUtilities.bold());
+        org.telegram.ui.Components.n6 n6Var = new org.telegram.ui.Components.n6(context, false, true, false);
+        this.b = n6Var;
+        n6Var.setTextSize(AndroidUtilities.dp(13.0f));
+        n6Var.setTextColor(v02);
+        n6Var.setIncludeFontPadding(false);
+        n6Var.setTypeface(AndroidUtilities.bold());
         View view = new View(context);
         this.c = view;
         Drawable mutate = getContext().getResources().getDrawable(R.drawable.arrow_more).mutate();
@@ -43,7 +43,7 @@ public final class y1 extends LinearLayout {
         view.setBackground(mutate);
         if (LocaleController.isRTL) {
             addView(view, w7.x5.t(16, 16, 16, 11, 0, 3, 0));
-            addView(q6Var, w7.x5.t(-2, 16, 16, 0, 0, this.a == null ? 11 : 3, 0));
+            addView(n6Var, w7.x5.t(-2, 16, 16, 0, 0, this.a == null ? 11 : 3, 0));
             View view2 = this.a;
             if (view2 != null) {
                 addView(view2, w7.x5.t(16, 16, 16, 0, 0, 11, 0));
@@ -53,7 +53,7 @@ public final class y1 extends LinearLayout {
             if (view3 != null) {
                 addView(view3, w7.x5.t(16, 16, 16, 11, 0, 3, 0));
             }
-            addView(q6Var, w7.x5.t(-2, 16, 16, this.a == null ? 11 : 0, 0, 3, 0));
+            addView(n6Var, w7.x5.t(-2, 16, 16, this.a == null ? 11 : 0, 0, 3, 0));
             addView(view, w7.x5.t(16, 16, 16, 0, 0, 11, 0));
         }
         setBackground(org.telegram.ui.ActionBar.j6.Y(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.i6, f6Var), 16, 16));

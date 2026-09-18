@@ -1,82 +1,36 @@
 package yh;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Path;
-import android.graphics.RectF;
-import android.view.MotionEvent;
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.f6;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
-/* loaded from: classes.dex */
-public final class z extends h1 {
-    public final RectF m0;
-    public final RectF n0;
-    public final Path o0;
-    public final /* synthetic */ c0 p0;
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* loaded from: classes4.dex */
+public final class z implements TextWatcher {
+    public final /* synthetic */ a0 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z(c0 c0Var, Context context, int i10, f6 f6Var) {
-        super(context, i10, f6Var);
-        this.p0 = c0Var;
-        this.m0 = new RectF();
-        this.n0 = new RectF();
-        this.o0 = new Path();
+    public z(a0 a0Var) {
+        this.a = a0Var;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        return false;
-    }
-
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j3) {
-        c0 c0Var = this.p0;
-        x xVar = c0Var.a0;
-        boolean drawChild = super.drawChild(canvas, view, j3);
-        FrameLayout frameLayout = this.d;
-        if (view == frameLayout) {
-            FrameLayout frameLayout2 = xVar.b;
-            w wVar = c0Var.Y;
-            RectF rectF = this.m0;
-            if (!ih.k.c(frameLayout2, wVar, rectF)) {
-                return true;
-            }
-            RectF rectF2 = this.n0;
-            if (!ih.k.c(frameLayout, this, rectF2)) {
-                return true;
-            }
-            float centerX = rectF2.centerX() - AndroidUtilities.dp(40.0f);
-            float centerY = rectF2.centerY() - AndroidUtilities.dp(40.0f);
-            if (!rectF.isEmpty()) {
-                canvas.save();
-                canvas.clipPath(this.o0);
-                canvas.scale(0.6f, 0.6f, rectF2.centerX(), rectF2.centerY());
-                canvas.translate(rectF2.centerX() - (xVar.getWidth() / 2.0f), rectF2.centerY() - (xVar.getHeight() / 2.0f));
-                xVar.b(canvas, xVar.getWidth() / 2.0f, AndroidUtilities.dp(104.0f), xVar.getWidth(), xVar.getHeight());
-                xVar.c(canvas, xVar.getWidth() / 2.0f, AndroidUtilities.dp(104.0f), xVar.getWidth(), xVar.getHeight());
-                canvas.restore();
-                canvas.save();
-                canvas.translate(centerX, centerY);
-                canvas.scale(AndroidUtilities.dp(80.0f) / rectF.width(), AndroidUtilities.dp(80.0f) / rectF.height());
-                xVar.b.draw(canvas);
-                canvas.restore();
-            }
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        String obj;
+        int indexOf;
+        boolean z10 = editable == null || editable.toString().isEmpty() || ".".equals(editable.toString());
+        if (!z10 && (indexOf = (obj = editable.toString()).indexOf(46)) >= 0 && (obj.length() - indexOf) - 1 > 2) {
+            editable.delete(indexOf + 3, obj.length());
         }
-        return drawChild;
+        a0 a0Var = this.a;
+        a0Var.U(!z10 ? zf.a.h(editable.toString(), a0Var.m0.a) : zf.a.i(0L, a0Var.m0.a), false, false, true);
+        a0Var.c0.c(a0Var.d0.isFocused(), true ^ TextUtils.isEmpty(a0Var.d0.getText()));
     }
 
-    @Override // android.view.View
-    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
-        super.onSizeChanged(i10, i11, i12, i13);
-        Path path = this.o0;
-        path.rewind();
-        RectF rectF = this.m0;
-        rectF.set(0.0f, 0.0f, i10, i11);
-        rectF.inset(AndroidUtilities.dp(3.33f), AndroidUtilities.dp(4.0f));
-        path.addRoundRect(rectF, AndroidUtilities.dp(11.0f), AndroidUtilities.dp(11.0f), Path.Direction.CW);
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

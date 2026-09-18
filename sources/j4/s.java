@@ -5,7 +5,7 @@ import c3.h0;
 import i2.l0;
 import java.util.Collections;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class s implements i {
     public final c0 a;
@@ -27,7 +27,45 @@ public final class s implements i {
         this.a = c0Var;
     }
 
-    public final void a(long j3, int i10, int i11, long j10) {
+    @Override // j4.i
+    public final void a(e2.v vVar) {
+        int i10;
+        e2.d.h(this.c);
+        String str = e2.d0.a;
+        while (vVar.a() > 0) {
+            int i11 = vVar.b;
+            int i12 = vVar.c;
+            byte[] bArr = vVar.a;
+            this.l += vVar.a();
+            this.c.d(vVar.a(), vVar);
+            while (i11 < i12) {
+                int b10 = f2.o.b(bArr, i11, i12, this.f);
+                if (b10 == i12) {
+                    g(i11, i12, bArr);
+                    return;
+                }
+                int i13 = (bArr[b10 + 3] & 126) >> 1;
+                if (b10 <= 0 || bArr[b10 - 1] != 0) {
+                    i10 = 3;
+                } else {
+                    b10--;
+                    i10 = 4;
+                }
+                int i14 = b10;
+                int i15 = i14 - i11;
+                if (i15 > 0) {
+                    g(i11, i14, bArr);
+                }
+                int i16 = i12 - i14;
+                long j3 = this.l - i16;
+                b(j3, i16, i15 < 0 ? -i15 : 0, this.m);
+                h(j3, i16, i13, this.m);
+                i11 = i14 + i10;
+            }
+        }
+    }
+
+    public final void b(long j3, int i10, int i11, long j10) {
         e2.c cVar = this.a.d;
         r rVar = this.d;
         boolean z10 = this.e;
@@ -58,12 +96,12 @@ public final class s implements i {
                 System.arraycopy((byte[]) l0Var2.f, 0, bArr, l0Var.e, l0Var2.e);
                 System.arraycopy((byte[]) l0Var3.f, 0, bArr, l0Var.e + l0Var2.e, l0Var3.e);
                 String str2 = null;
-                f2.l h = f2.p.h((byte[]) l0Var2.f, 3, l0Var2.e, null);
-                f2.i iVar = h.b;
-                if (iVar != null) {
-                    int i13 = iVar.a;
-                    boolean z11 = iVar.b;
-                    str2 = e2.e.a(i13, iVar.c, iVar.d, iVar.f, z11, iVar.e);
+                f2.k h = f2.o.h((byte[]) l0Var2.f, 3, l0Var2.e, null);
+                f2.h hVar = h.b;
+                if (hVar != null) {
+                    int i13 = hVar.a;
+                    boolean z11 = hVar.b;
+                    str2 = e2.e.a(i13, hVar.c, hVar.d, hVar.f, z11, hVar.e);
                 }
                 b2.r rVar2 = new b2.r();
                 rVar2.a = str;
@@ -90,60 +128,71 @@ public final class s implements i {
             }
         }
         l0 l0Var4 = this.j;
-        boolean e7 = l0Var4.e(i11);
+        boolean e = l0Var4.e(i11);
         e2.v vVar = this.n;
-        if (e7) {
-            vVar.H(f2.p.m(l0Var4.e, (byte[]) l0Var4.f), (byte[]) l0Var4.f);
+        if (e) {
+            vVar.H(f2.o.m(l0Var4.e, (byte[]) l0Var4.f), (byte[]) l0Var4.f);
             vVar.K(5);
             cVar.a(j10, vVar);
         }
         l0 l0Var5 = this.k;
         if (l0Var5.e(i11)) {
-            vVar.H(f2.p.m(l0Var5.e, (byte[]) l0Var5.f), (byte[]) l0Var5.f);
+            vVar.H(f2.o.m(l0Var5.e, (byte[]) l0Var5.f), (byte[]) l0Var5.f);
             vVar.K(5);
             cVar.a(j10, vVar);
         }
     }
 
     @Override // j4.i
-    public final void b(e2.v vVar) {
-        int i10;
-        e2.d.h(this.c);
-        String str = e2.d0.a;
-        while (vVar.a() > 0) {
-            int i11 = vVar.b;
-            int i12 = vVar.c;
-            byte[] bArr = vVar.a;
-            this.l += vVar.a();
-            this.c.d(vVar.a(), vVar);
-            while (i11 < i12) {
-                int b10 = f2.p.b(bArr, i11, i12, this.f);
-                if (b10 == i12) {
-                    c(i11, i12, bArr);
-                    return;
-                }
-                int i13 = (bArr[b10 + 3] & 126) >> 1;
-                if (b10 <= 0 || bArr[b10 - 1] != 0) {
-                    i10 = 3;
-                } else {
-                    b10--;
-                    i10 = 4;
-                }
-                int i14 = b10;
-                int i15 = i14 - i11;
-                if (i15 > 0) {
-                    c(i11, i14, bArr);
-                }
-                int i16 = i12 - i14;
-                long j3 = this.l - i16;
-                a(j3, i16, i15 < 0 ? -i15 : 0, this.m);
-                h(j3, i16, i13, this.m);
-                i11 = i14 + i10;
-            }
+    public final void c() {
+        this.l = 0L;
+        this.m = -9223372036854775807L;
+        f2.o.a(this.f);
+        this.g.g();
+        this.h.g();
+        this.i.g();
+        this.j.g();
+        this.k.g();
+        this.a.d.c(0);
+        r rVar = this.d;
+        if (rVar != null) {
+            rVar.f = false;
+            rVar.g = false;
+            rVar.h = false;
+            rVar.i = false;
+            rVar.j = false;
         }
     }
 
-    public final void c(int i10, int i11, byte[] bArr) {
+    @Override // j4.i
+    public final void d(c3.q qVar, f0 f0Var) {
+        f0Var.a();
+        f0Var.b();
+        this.b = f0Var.e;
+        f0Var.b();
+        h0 Z1 = qVar.Z1(f0Var.d, 2);
+        this.c = Z1;
+        this.d = new r(Z1);
+        this.a.b(qVar, f0Var);
+    }
+
+    @Override // j4.i
+    public final void e(boolean z10) {
+        e2.d.h(this.c);
+        String str = e2.d0.a;
+        if (z10) {
+            this.a.d.c(0);
+            b(this.l, 0, 0, this.m);
+            h(this.l, 0, 48, this.m);
+        }
+    }
+
+    @Override // j4.i
+    public final void f(int i10, long j3) {
+        this.m = j3;
+    }
+
+    public final void g(int i10, int i11, byte[] bArr) {
         r rVar = this.d;
         if (rVar.f) {
             int i12 = rVar.d;
@@ -162,55 +211,6 @@ public final class s implements i {
         }
         this.j.a(i10, i11, bArr);
         this.k.a(i10, i11, bArr);
-    }
-
-    @Override // j4.i
-    public final void d() {
-        this.l = 0L;
-        this.m = -9223372036854775807L;
-        f2.p.a(this.f);
-        this.g.g();
-        this.h.g();
-        this.i.g();
-        this.j.g();
-        this.k.g();
-        this.a.d.c(0);
-        r rVar = this.d;
-        if (rVar != null) {
-            rVar.f = false;
-            rVar.g = false;
-            rVar.h = false;
-            rVar.i = false;
-            rVar.j = false;
-        }
-    }
-
-    @Override // j4.i
-    public final void e(c3.q qVar, f0 f0Var) {
-        f0Var.a();
-        f0Var.b();
-        this.b = f0Var.e;
-        f0Var.b();
-        h0 R1 = qVar.R1(f0Var.d, 2);
-        this.c = R1;
-        this.d = new r(R1);
-        this.a.b(qVar, f0Var);
-    }
-
-    @Override // j4.i
-    public final void f(boolean z10) {
-        e2.d.h(this.c);
-        String str = e2.d0.a;
-        if (z10) {
-            this.a.d.c(0);
-            a(this.l, 0, 0, this.m);
-            h(this.l, 0, 48, this.m);
-        }
-    }
-
-    @Override // j4.i
-    public final void g(int i10, long j3) {
-        this.m = j3;
     }
 
     public final void h(long j3, int i10, int i11, long j10) {

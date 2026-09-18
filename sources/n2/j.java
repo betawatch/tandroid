@@ -1,11 +1,12 @@
 package n2;
 
+import ai.s1;
 import e2.d0;
 import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArrayList;
 import u2.f0;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class j {
     public final int a;
@@ -40,7 +41,7 @@ public final class j {
         Iterator it = this.c.iterator();
         while (it.hasNext()) {
             i iVar = (i) it.next();
-            d0.U(iVar.a, new ah.p(this, iVar.b, i10, 17));
+            d0.U(iVar.a, new s1(this, iVar.b, i10, 16));
         }
     }
 
@@ -48,7 +49,7 @@ public final class j {
         Iterator it = this.c.iterator();
         while (it.hasNext()) {
             i iVar = (i) it.next();
-            d0.U(iVar.a, new hg.t(this, iVar.b, exc, 24));
+            d0.U(iVar.a, new gg.t(this, iVar.b, exc, 24));
         }
     }
 

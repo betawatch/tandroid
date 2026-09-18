@@ -23,14 +23,14 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public class i40 extends FrameLayout {
     public long E;
     public final org.telegram.ui.ActionBar.f6 F;
     public boolean G;
     public boolean H;
-    public final bi.c4 a;
+    public final ai.p4 a;
     public ImageView b;
     public final ImageView c;
     public org.telegram.ui.Cells.t1 d;
@@ -60,7 +60,7 @@ public class i40 extends FrameLayout {
         ImageView imageView2 = this.b;
         boolean z10 = this.r;
         addView(imageView2, w7.x5.d(34, 34.0f, 21, 0.0f, z10 ? 3.0f : 0.0f, 0.0f, z10 ? 0.0f : 3.0f));
-        setOnClickListener(new g0(this, 26));
+        setOnClickListener(new f0(this, 26));
     }
 
     public final void b(boolean z10) {
@@ -93,7 +93,7 @@ public class i40 extends FrameLayout {
         if (z11) {
             animatorSet2.playTogether(ObjectAnimator.ofFloat(this, (Property<i40, Float>) property, 1.0f, 0.0f), ObjectAnimator.ofFloat(this, (Property<i40, Float>) View.SCALE_Y, 1.0f, 0.5f), ObjectAnimator.ofFloat(this, (Property<i40, Float>) View.SCALE_X, 1.0f, 0.5f));
             this.f.setDuration(150L);
-            this.f.setInterpolator(pr.f);
+            this.f.setInterpolator(qr.f);
         } else {
             animatorSet2.playTogether(ObjectAnimator.ofFloat(this, (Property<i40, Float>) property, 0.0f));
             this.f.setDuration(300L);
@@ -107,11 +107,11 @@ public class i40 extends FrameLayout {
     }
 
     public final void d() {
-        bi.c4 c4Var = this.a;
-        c4Var.setTextColor(-1);
+        ai.p4 p4Var = this.a;
+        p4Var.setTextColor(-1);
         this.c.setColorFilter(new PorterDuffColorFilter(-366530760, PorterDuff.Mode.MULTIPLY));
         int i10 = this.n;
-        c4Var.setBackground(org.telegram.ui.ActionBar.j6.b0(AndroidUtilities.dp((i10 == 7 || i10 == 8) ? 6.0f : 3.0f), -366530760));
+        p4Var.setBackground(org.telegram.ui.ActionBar.j6.b0(AndroidUtilities.dp((i10 == 7 || i10 == 8) ? 6.0f : 3.0f), -366530760));
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -178,7 +178,7 @@ public class i40 extends FrameLayout {
                     left = t1Var.getLeft() + forwardNameCenterX;
                     int dp3 = AndroidUtilities.dp(19.0f);
                     if (i14 == 5) {
-                        int f12 = i2.g.f(19.1f, forwardNameCenterX - (getMeasuredWidth() / 2), 0);
+                        int f12 = hg.k0.f(19.1f, forwardNameCenterX - (getMeasuredWidth() / 2), 0);
                         setTranslationX(f12);
                         dp3 += f12;
                     } else if (left > view.getMeasuredWidth() / 2) {
@@ -229,7 +229,7 @@ public class i40 extends FrameLayout {
                 }
             } else {
                 f7 = 10.0f;
-                bi.c4 c4Var = this.a;
+                ai.p4 p4Var = this.a;
                 if (i14 == 5) {
                     i12 = i16 + i11;
                     this.v = i11;
@@ -239,7 +239,7 @@ public class i40 extends FrameLayout {
                         if (MessageObject.isVoted(tL_messageMediaPoll) && !MessageObject.isVoteResultsIsNotEmpty(tL_messageMediaPoll)) {
                             TLRPC.Poll poll = tL_messageMediaPoll.poll;
                             if (!poll.closed && poll.hide_results_until_close) {
-                                c4Var.setText(LocaleController.getString(R.string.PollResultsWillLater));
+                                p4Var.setText(LocaleController.getString(R.string.PollResultsWillLater));
                                 measure(View.MeasureSpec.makeMeasureSpec(MediaDataController.MAX_STYLE_RUNS_COUNT, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(MediaDataController.MAX_STYLE_RUNS_COUNT, TLObject.FLAG_31));
                                 forwardNameCenterX = i10;
                                 int measuredWidth5 = view.getMeasuredWidth();
@@ -267,7 +267,7 @@ public class i40 extends FrameLayout {
                         }
                     }
                     if (num.intValue() == -1) {
-                        c4Var.setText(LocaleController.getString(R.string.PollSelectOption));
+                        p4Var.setText(LocaleController.getString(R.string.PollSelectOption));
                         measure(View.MeasureSpec.makeMeasureSpec(MediaDataController.MAX_STYLE_RUNS_COUNT, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(MediaDataController.MAX_STYLE_RUNS_COUNT, TLObject.FLAG_31));
                         forwardNameCenterX = i10;
                         int measuredWidth52 = view.getMeasuredWidth();
@@ -296,9 +296,9 @@ public class i40 extends FrameLayout {
                     MessageObject messageObject2 = t1Var.getMessageObject();
                     String str = this.s;
                     if (str == null) {
-                        c4Var.setText(LocaleController.getString(R.string.HidAccount));
+                        p4Var.setText(LocaleController.getString(R.string.HidAccount));
                     } else {
-                        c4Var.setText(str);
+                        p4Var.setText(str);
                     }
                     measure(View.MeasureSpec.makeMeasureSpec(MediaDataController.MAX_STYLE_RUNS_COUNT, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(MediaDataController.MAX_STYLE_RUNS_COUNT, TLObject.FLAG_31));
                     TLRPC.User currentUser = t1Var.getCurrentUser();
@@ -334,7 +334,7 @@ public class i40 extends FrameLayout {
                             dp = AndroidUtilities.dp(20.0f) + dp6;
                         }
                     } else {
-                        dp = org.telegram.messenger.vl.D(50.0f, t1Var.getMeasuredHeight() - Math.max(0, t1Var.getBottom() - view.getMeasuredHeight()), i16);
+                        dp = org.telegram.messenger.wl.D(50.0f, t1Var.getMeasuredHeight() - Math.max(0, t1Var.getBottom() - view.getMeasuredHeight()), i16);
                     }
                     i12 = dp;
                     if (!z11) {
@@ -404,7 +404,7 @@ public class i40 extends FrameLayout {
             setPivotY((imageView.getMeasuredHeight() / 2.0f) + imageView.getY());
             this.f.playTogether(ObjectAnimator.ofFloat(this, (Property<i40, Float>) property, 0.0f, 1.0f), ObjectAnimator.ofFloat(this, (Property<i40, Float>) View.SCALE_Y, 0.5f, 1.0f), ObjectAnimator.ofFloat(this, (Property<i40, Float>) View.SCALE_X, 0.5f, 1.0f));
             this.f.setDuration(350L);
-            this.f.setInterpolator(pr.h);
+            this.f.setInterpolator(qr.h);
         } else {
             animatorSet2.playTogether(ObjectAnimator.ofFloat(this, (Property<i40, Float>) property, 0.0f, 1.0f));
             this.f.setDuration(300L);
@@ -451,10 +451,10 @@ public class i40 extends FrameLayout {
         int i13 = 0;
         if (i12 != 8 || !z10) {
             measuredWidth = i12 == 3 ? iArr[0] : (view.getMeasuredWidth() / 2) + iArr[0];
-        } else if (view instanceof org.telegram.ui.ActionBar.j5) {
-            org.telegram.ui.ActionBar.j5 j5Var = (org.telegram.ui.ActionBar.j5) view;
-            Drawable rightDrawable = j5Var.getRightDrawable();
-            measuredWidth = (iArr[0] + (rightDrawable != null ? rightDrawable.getBounds().centerX() : j5Var.getTextWidth() / 2)) - AndroidUtilities.dp(8.0f);
+        } else if (view instanceof org.telegram.ui.ActionBar.k5) {
+            org.telegram.ui.ActionBar.k5 k5Var = (org.telegram.ui.ActionBar.k5) view;
+            Drawable rightDrawable = k5Var.getRightDrawable();
+            measuredWidth = (iArr[0] + (rightDrawable != null ? rightDrawable.getBounds().centerX() : k5Var.getTextWidth() / 2)) - AndroidUtilities.dp(8.0f);
         } else {
             measuredWidth = view instanceof TextView ? (((TextView) view).getMeasuredWidth() + iArr[0]) - AndroidUtilities.dp(16.5f) : iArr[0];
         }
@@ -574,32 +574,32 @@ public class i40 extends FrameLayout {
         this.F = f6Var;
         this.n = i10;
         this.r = z10;
-        bi.c4 c4Var = new bi.c4(context, 22);
-        this.a = c4Var;
+        ai.p4 p4Var = new ai.p4(context, 22);
+        this.a = p4Var;
         int i11 = org.telegram.ui.ActionBar.j6.pf;
-        c4Var.setTextColor(org.telegram.ui.ActionBar.j6.v0(i11, f6Var));
-        c4Var.setTextSize(1, 14.0f);
-        c4Var.setMaxLines(2);
+        p4Var.setTextColor(org.telegram.ui.ActionBar.j6.v0(i11, f6Var));
+        p4Var.setTextSize(1, 14.0f);
+        p4Var.setMaxLines(2);
         if (i10 == 7 || i10 == 8 || i10 == 9) {
-            c4Var.setMaxWidth(AndroidUtilities.dp(310.0f));
+            p4Var.setMaxWidth(AndroidUtilities.dp(310.0f));
         } else if (i10 == 4) {
-            c4Var.setMaxWidth(AndroidUtilities.dp(280.0f));
+            p4Var.setMaxWidth(AndroidUtilities.dp(280.0f));
         } else {
-            c4Var.setMaxWidth(AndroidUtilities.dp(250.0f));
+            p4Var.setMaxWidth(AndroidUtilities.dp(250.0f));
         }
         if (i10 == 3) {
-            c4Var.setGravity(19);
-            c4Var.setBackground(org.telegram.ui.ActionBar.j6.b0(AndroidUtilities.dp(5.0f), org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.qf, f6Var)));
-            c4Var.setPadding(AndroidUtilities.dp(10.0f), 0, AndroidUtilities.dp(10.0f), 0);
-            addView(c4Var, w7.x5.d(-2, 30.0f, 51, 0.0f, z10 ? 6.0f : 0.0f, 0.0f, z10 ? 0.0f : 6.0f));
+            p4Var.setGravity(19);
+            p4Var.setBackground(org.telegram.ui.ActionBar.j6.b0(AndroidUtilities.dp(5.0f), org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.qf, f6Var)));
+            p4Var.setPadding(AndroidUtilities.dp(10.0f), 0, AndroidUtilities.dp(10.0f), 0);
+            addView(p4Var, w7.x5.d(-2, 30.0f, 51, 0.0f, z10 ? 6.0f : 0.0f, 0.0f, z10 ? 0.0f : 6.0f));
         } else {
-            c4Var.setGravity(51);
-            c4Var.setBackground(org.telegram.ui.ActionBar.j6.b0(AndroidUtilities.dp(10.0f), org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.qf, f6Var)));
-            c4Var.setPadding(AndroidUtilities.dp(i10 == 0 ? 54.0f : 12.0f), AndroidUtilities.dp(9.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(10.0f));
-            addView(c4Var, w7.x5.d(-2, -2.0f, 51, 0.0f, z10 ? 6.0f : 0.0f, 0.0f, z10 ? 0.0f : 6.0f));
+            p4Var.setGravity(51);
+            p4Var.setBackground(org.telegram.ui.ActionBar.j6.b0(AndroidUtilities.dp(10.0f), org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.qf, f6Var)));
+            p4Var.setPadding(AndroidUtilities.dp(i10 == 0 ? 54.0f : 12.0f), AndroidUtilities.dp(9.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(10.0f));
+            addView(p4Var, w7.x5.d(-2, -2.0f, 51, 0.0f, z10 ? 6.0f : 0.0f, 0.0f, z10 ? 0.0f : 6.0f));
         }
         if (i10 == 0) {
-            c4Var.setText(LocaleController.getString(R.string.AutoplayVideoInfo));
+            p4Var.setText(LocaleController.getString(R.string.AutoplayVideoInfo));
             ImageView imageView = new ImageView(context);
             this.b = imageView;
             imageView.setImageResource(R.drawable.tooltip_sound);

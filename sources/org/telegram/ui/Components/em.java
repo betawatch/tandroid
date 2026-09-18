@@ -13,9 +13,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class em extends s4.n0 implements ch.a {
+public final class em extends s4.n0 implements bh.a {
     public Drawable a;
     public final Path b = new Path();
     public final Drawable c;
@@ -28,12 +28,17 @@ public final class em extends s4.n0 implements ch.a {
         this.c = chatAttachAlertPhotoLayout.getContext().getResources().getDrawable(R.drawable.camera).mutate();
     }
 
-    @Override // s4.n0
-    public final void b(Canvas canvas, RecyclerView recyclerView) {
-        d(canvas, recyclerView, null, null);
+    @Override // bh.a
+    public final void b(ah.a aVar, RectF rectF) {
+        e(null, this.d, aVar, rectF);
     }
 
-    public final void d(Canvas canvas, RecyclerView recyclerView, bh.a aVar, RectF rectF) {
+    @Override // s4.n0
+    public final void c(Canvas canvas, RecyclerView recyclerView) {
+        e(canvas, recyclerView, null, null);
+    }
+
+    public final void e(Canvas canvas, RecyclerView recyclerView, ah.a aVar, RectF rectF) {
         int top;
         dm dmVar;
         dm dmVar2;
@@ -45,21 +50,21 @@ public final class em extends s4.n0 implements ch.a {
             }
             return;
         }
-        s4.c1 K = recyclerView.K(0);
-        if (K != null) {
-            top = K.a.getTop();
+        s4.c1 L = recyclerView.L(0);
+        if (L != null) {
+            top = L.a.getTop();
         } else {
-            K = recyclerView.K(chatAttachAlertPhotoLayout.M0);
-            if (K == null) {
+            L = recyclerView.L(chatAttachAlertPhotoLayout.M0);
+            if (L == null) {
                 if (aVar != null) {
                     aVar.a = true;
                     return;
                 }
                 return;
             }
-            top = (K.a.getTop() - AndroidUtilities.dp(2.0f)) - chatAttachAlertPhotoLayout.K0;
+            top = (L.a.getTop() - AndroidUtilities.dp(2.0f)) - chatAttachAlertPhotoLayout.K0;
         }
-        int left = K.a.getLeft();
+        int left = L.a.getLeft();
         int i10 = chatAttachAlertPhotoLayout.K0;
         int i11 = left + i10;
         int dp = AndroidUtilities.dp(2.0f) + (i10 * 2) + top;
@@ -113,14 +118,9 @@ public final class em extends s4.n0 implements ch.a {
         }
     }
 
-    @Override // ch.a
-    public final void e(bh.a aVar, RectF rectF) {
-        d(null, this.d, aVar, rectF);
-    }
-
-    @Override // ch.a
+    @Override // bh.a
     public final void f(Canvas canvas, RectF rectF) {
-        d(canvas, this.d, null, rectF);
+        e(canvas, this.d, null, rectF);
     }
 
     public final void g() {

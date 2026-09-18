@@ -1,6 +1,6 @@
 package i;
 
-import ah.g1;
+import ai.q4;
 import android.content.res.ColorStateList;
 import android.content.res.Resources;
 import android.graphics.Canvas;
@@ -11,10 +11,9 @@ import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.SystemClock;
-import androidx.activity.i;
-import v7.o8;
+import v7.r8;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public abstract class f extends Drawable implements Drawable.Callback {
     public static final /* synthetic */ int x = 0;
@@ -26,10 +25,10 @@ public abstract class f extends Drawable implements Drawable.Callback {
     public boolean f;
     public int h;
     public boolean n;
-    public i r;
+    public q4 r;
     public long s;
     public long v;
-    public g1 w;
+    public ah.d w;
 
     /* JADX WARN: Removed duplicated region for block: B:11:0x003f  */
     /* JADX WARN: Removed duplicated region for block: B:18:0x006a A[ADDED_TO_REGION] */
@@ -127,11 +126,11 @@ public abstract class f extends Drawable implements Drawable.Callback {
 
     public final void b(Drawable drawable) {
         if (this.w == null) {
-            this.w = new g1();
+            this.w = new ah.d();
         }
-        g1 g1Var = this.w;
-        g1Var.b = drawable.getCallback();
-        drawable.setCallback(g1Var);
+        ah.d dVar = this.w;
+        dVar.b = drawable.getCallback();
+        drawable.setCallback(dVar);
         try {
             if (this.a.y <= 0 && this.f) {
                 drawable.setAlpha(this.e);
@@ -154,21 +153,21 @@ public abstract class f extends Drawable implements Drawable.Callback {
             drawable.setLevel(getLevel());
             drawable.setBounds(getBounds());
             if (Build.VERSION.SDK_INT >= 23) {
-                o8.b(o8.a(this), drawable);
+                r8.b(r8.a(this), drawable);
             }
             drawable.setAutoMirrored(this.a.A);
             Rect rect = this.b;
             if (rect != null) {
                 drawable.setHotspotBounds(rect.left, rect.top, rect.right, rect.bottom);
             }
-            g1 g1Var2 = this.w;
-            Drawable.Callback callback = (Drawable.Callback) g1Var2.b;
-            g1Var2.b = null;
+            ah.d dVar2 = this.w;
+            Drawable.Callback callback = (Drawable.Callback) dVar2.b;
+            dVar2.b = null;
             drawable.setCallback(callback);
         } catch (Throwable th2) {
-            g1 g1Var3 = this.w;
-            Drawable.Callback callback2 = (Drawable.Callback) g1Var3.b;
-            g1Var3.b = null;
+            ah.d dVar3 = this.w;
+            Drawable.Callback callback2 = (Drawable.Callback) dVar3.b;
+            dVar3.b = null;
             drawable.setCallback(callback2);
             throw th2;
         }
@@ -180,7 +179,7 @@ public abstract class f extends Drawable implements Drawable.Callback {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final boolean c(int i10) {
-        i iVar;
+        q4 q4Var;
         if (i10 == this.h) {
             return false;
         }
@@ -218,11 +217,11 @@ public abstract class f extends Drawable implements Drawable.Callback {
                     b(d);
                 }
                 if (this.s == 0 || this.v != 0) {
-                    iVar = this.r;
-                    if (iVar != null) {
-                        this.r = new i((e) this, 21);
+                    q4Var = this.r;
+                    if (q4Var != null) {
+                        this.r = new q4((e) this, 21);
                     } else {
-                        unscheduleSelf(iVar);
+                        unscheduleSelf(q4Var);
                     }
                     a(true);
                 }
@@ -234,8 +233,8 @@ public abstract class f extends Drawable implements Drawable.Callback {
         this.h = -1;
         if (this.s == 0) {
         }
-        iVar = this.r;
-        if (iVar != null) {
+        q4Var = this.r;
+        if (q4Var != null) {
         }
         a(true);
         invalidateSelf();
@@ -462,7 +461,7 @@ public abstract class f extends Drawable implements Drawable.Callback {
             Drawable drawable = this.c;
             z10 = drawable != null ? drawable.getPadding(rect) : super.getPadding(rect);
         }
-        if (this.a.A && o8.a(this) == 1) {
+        if (this.a.A && r8.a(this) == 1) {
             int i16 = rect.left;
             rect.left = rect.right;
             rect.right = i16;
@@ -556,7 +555,7 @@ public abstract class f extends Drawable implements Drawable.Callback {
         for (int i13 = 0; i13 < i12; i13++) {
             Drawable drawable = drawableArr[i13];
             if (drawable != null) {
-                boolean b10 = Build.VERSION.SDK_INT >= 23 ? o8.b(i10, drawable) : false;
+                boolean b10 = Build.VERSION.SDK_INT >= 23 ? r8.b(i10, drawable) : false;
                 if (i13 == i11) {
                     z10 = b10;
                 }

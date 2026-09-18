@@ -8,9 +8,8 @@ import android.os.Looper;
 import com.google.android.gms.common.api.k;
 import com.google.android.gms.common.api.l;
 import m.p3;
-import n7.z0;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class g extends n6.g {
     public final w5.b U;
@@ -18,14 +17,14 @@ public final class g extends n6.g {
     public g(Context context, Looper looper, p3 p3Var, w5.b bVar, k kVar, l lVar) {
         super(context, looper, 68, p3Var, kVar, lVar, 0);
         bVar = bVar == null ? w5.b.c : bVar;
-        z0 z0Var = new z0(21, false);
-        z0Var.b = Boolean.FALSE;
+        o0.a aVar = new o0.a(21, (byte) 0);
+        aVar.b = Boolean.FALSE;
         w5.b bVar2 = w5.b.c;
         bVar.getClass();
-        z0Var.b = Boolean.valueOf(bVar.a);
-        z0Var.c = bVar.b;
-        z0Var.c = e.a();
-        this.U = new w5.b(z0Var);
+        aVar.b = Boolean.valueOf(bVar.a);
+        aVar.c = bVar.b;
+        aVar.c = e.a();
+        this.U = new w5.b(aVar);
     }
 
     @Override // n6.g, com.google.android.gms.common.api.c

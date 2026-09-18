@@ -15,7 +15,7 @@ import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class l70 extends View {
     public final Bitmap a;
@@ -54,7 +54,7 @@ public final class l70 extends View {
             this.f = f7;
         }
         this.h = i0.a.k(0, n70Var.s);
-        if (n70Var.t && (view instanceof org.telegram.ui.Cells.za) && (n70Var.c instanceof ProfileActivity)) {
+        if (n70Var.t && (view instanceof org.telegram.ui.Cells.ab) && (n70Var.c instanceof ProfileActivity)) {
             this.b = new Paint(3);
             Bitmap createBitmap = Bitmap.createBitmap(rect.width() + view.getWidth(), rect.height() + view.getHeight(), Bitmap.Config.ARGB_8888);
             this.a = createBitmap;
@@ -71,10 +71,10 @@ public final class l70 extends View {
             ViewGroup viewGroup = n70Var.b;
             d dVar = new d(this, 17);
             if (viewGroup == null) {
-                am0.d(dVar);
+                bm0.d(dVar);
             } else {
-                int i10 = am0.O;
-                AndroidUtilities.makeGlobalBlurBitmap(new org.telegram.ui.nf(20, viewGroup, dVar), 15.0f);
+                int i10 = bm0.O;
+                AndroidUtilities.makeGlobalBlurBitmap(new org.telegram.ui.pf(20, viewGroup, dVar), 15.0f);
             }
         }
     }
@@ -216,7 +216,7 @@ public final class l70 extends View {
                     canvas2.clipPath(path);
                 }
                 if (!(view instanceof org.telegram.ui.Cells.t7)) {
-                    if (!(view instanceof yh.h1) || n70Var.N == 0 || n70Var.O == 0) {
+                    if (!(view instanceof xh.i1) || n70Var.N == 0 || n70Var.O == 0) {
                         if (n70Var.L) {
                             canvas.saveLayerAlpha(0.0f, 0.0f, view.getWidth(), view.getHeight(), (int) (this.w * f7), 31);
                             canvas2 = canvas;
@@ -225,20 +225,20 @@ public final class l70 extends View {
                             canvas2.save();
                         }
                         if (view instanceof m70) {
-                            ((m70) view).c(canvas2, this.w);
+                            ((m70) view).b(canvas2, this.w);
                         } else {
                             canvas2.translate(-view.getScrollX(), -view.getScrollY());
                             view.draw(canvas2);
                         }
                         canvas2.restore();
                     } else if (view.getAlpha() >= 1.0f) {
-                        ((yh.h1) view).a(this, canvas2, width, f17, this.w);
+                        ((xh.i1) view).a(this, canvas2, width, f17, this.w);
                         canvas2 = canvas;
                     } else {
                         canvas.saveLayerAlpha(0.0f, 0.0f, width, f17, (int) (this.w * f7), 31);
                         float lerp = AndroidUtilities.lerp(1.0f, 0.9f, this.w);
                         canvas.scale(lerp, lerp, width / 2.0f, f17 / 2.0f);
-                        ((yh.h1) view).a(this, canvas, width, f17, this.w);
+                        ((xh.i1) view).a(this, canvas, width, f17, this.w);
                         canvas.restore();
                         canvas2 = canvas;
                     }
@@ -263,7 +263,7 @@ public final class l70 extends View {
     public final void onSizeChanged(int i10, int i11, int i12, int i13) {
         super.onSizeChanged(i10, i11, i12, i13);
         n70 n70Var = this.x;
-        hh.d.c(n70Var.n, this);
+        gh.d.c(n70Var.n, this);
         ViewGroup viewGroup = n70Var.A;
         if (viewGroup != null) {
             viewGroup.invalidate();

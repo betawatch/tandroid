@@ -1,38 +1,45 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.Canvas;
+import android.graphics.Point;
 import android.widget.LinearLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class r3 extends LinearLayout {
-    public final f01 a;
-    public boolean b;
-    public f01 c;
-    public final /* synthetic */ q3 d;
+    public boolean a;
+    public final /* synthetic */ o3 b;
+    public final /* synthetic */ q3 c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public r3(Context context, q3 q3Var) {
+    public r3(Context context, o3 o3Var, q3 q3Var) {
         super(context);
-        this.d = q3Var;
-        this.a = new f01(":", 18.0f, null);
+        this.b = o3Var;
+        this.c = q3Var;
+        this.a = false;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        int i10 = org.telegram.ui.ActionBar.j6.G6;
-        this.a.c((getWidth() - this.a.c) / 2.0f, getHeight() / 2.0f, 1.0f, org.telegram.ui.ActionBar.j6.w0(null, i10, false), canvas);
-        if (!LocaleController.is24HourFormat) {
-            boolean z10 = this.d.getValue() % 24 < 12;
-            if (this.b != z10 || this.c == null) {
-                this.b = z10;
-                this.c = new f01(z10 ? "AM" : "PM", 18.0f, null);
-            }
-            this.c.c((getWidth() / 2.0f) + AndroidUtilities.dp(43.0f), (getHeight() / 2.0f) + AndroidUtilities.dp(1.0f), 1.0f, org.telegram.ui.ActionBar.j6.w0(null, i10, false), canvas);
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        this.a = true;
+        Point point = AndroidUtilities.displaySize;
+        int i12 = point.x > point.y ? 3 : 5;
+        o3 o3Var = this.b;
+        o3Var.setItemCount(i12);
+        q3 q3Var = this.c;
+        q3Var.setItemCount(i12);
+        o3Var.getLayoutParams().height = AndroidUtilities.dp(42.0f) * i12;
+        q3Var.getLayoutParams().height = AndroidUtilities.dp(42.0f) * i12;
+        this.a = false;
+        super.onMeasure(i10, i11);
+    }
+
+    @Override // android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.a) {
+            return;
         }
-        super.dispatchDraw(canvas);
+        super.requestLayout();
     }
 }

@@ -6,7 +6,7 @@ import c3.h0;
 import java.util.Collections;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class t implements i {
     public final String a;
@@ -50,7 +50,7 @@ public final class t implements i {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void b(e2.v vVar) {
+    public final void a(e2.v vVar) {
         int i10;
         boolean h;
         e2.d.h(this.e);
@@ -216,27 +216,27 @@ public final class t implements i {
     }
 
     @Override // j4.i
-    public final void d() {
+    public final void c() {
         this.h = 0;
         this.l = -9223372036854775807L;
         this.m = false;
     }
 
     @Override // j4.i
-    public final void e(c3.q qVar, f0 f0Var) {
+    public final void d(c3.q qVar, f0 f0Var) {
         f0Var.a();
         f0Var.b();
-        this.e = qVar.R1(f0Var.d, 1);
+        this.e = qVar.Z1(f0Var.d, 1);
         f0Var.b();
         this.f = f0Var.e;
     }
 
     @Override // j4.i
-    public final void g(int i10, long j3) {
+    public final void f(int i10, long j3) {
         this.l = j3;
     }
 
     @Override // j4.i
-    public final void f(boolean z10) {
+    public final void e(boolean z10) {
     }
 }

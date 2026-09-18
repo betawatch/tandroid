@@ -1,17 +1,20 @@
 package fi;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
-/* loaded from: classes4.dex */
-public final class z extends org.telegram.ui.ActionBar.e5 {
-    public final /* synthetic */ c0 p;
+import org.telegram.ui.Cells.r2;
+import org.telegram.ui.Components.vn0;
 
-    public z(c0 c0Var) {
-        this.p = c0Var;
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* loaded from: classes4.dex */
+public final class z implements vn0 {
+    @Override // org.telegram.ui.Components.vn0
+    public final void e(float f7) {
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void invalidateSelf() {
-        super.invalidateSelf();
-        this.p.invalidate();
+    @Override // org.telegram.ui.Components.vn0
+    public final void f(r2 r2Var) {
+    }
+
+    @Override // org.telegram.ui.Components.vn0
+    public final void finish() {
     }
 }

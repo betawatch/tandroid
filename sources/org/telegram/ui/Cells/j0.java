@@ -2,12 +2,12 @@ package org.telegram.ui.Cells;
 
 import android.content.Context;
 import android.view.MotionEvent;
-import org.telegram.ui.Components.fo0;
-import org.telegram.ui.wc1;
+import org.telegram.ui.Components.go0;
+import org.telegram.ui.xc1;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class j0 extends fo0 {
+public final class j0 extends go0 {
     public final /* synthetic */ int l0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -16,7 +16,7 @@ public final class j0 extends fo0 {
         this.l0 = i10;
     }
 
-    @Override // org.telegram.ui.Components.fo0, android.view.View
+    @Override // org.telegram.ui.Components.go0, android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         switch (this.l0) {
             case 0:
@@ -50,8 +50,8 @@ public final class j0 extends fo0 {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j0(Context context, wc1 wc1Var) {
-        super(context, wc1Var, false);
+    public j0(Context context, xc1 xc1Var) {
+        super(context, xc1Var, false);
         this.l0 = 3;
     }
 }

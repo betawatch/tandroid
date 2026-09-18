@@ -6,6 +6,7 @@ import android.media.MediaFormat;
 import android.opengl.GLES20;
 import android.os.Bundle;
 import android.view.Surface;
+import hg.k0;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.util.Map;
@@ -20,7 +21,7 @@ import org.webrtc.ThreadUtils;
 import org.webrtc.VideoEncoder;
 import org.webrtc.VideoFrame;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes4.dex */
 class HardwareVideoEncoder implements VideoEncoder {
     private static final int DEQUEUE_OUTPUT_BUFFER_TIMEOUT_US = 100000;
@@ -66,7 +67,7 @@ class HardwareVideoEncoder implements VideoEncoder {
     private final VideoFrameDrawer videoFrameDrawer = new VideoFrameDrawer();
     private final BlockingDeque<EncodedImage.Builder> outputBuilders = new LinkedBlockingDeque();
 
-    /* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+    /* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
     public static class BusyCount {
         private int count;
         private final Object countLock;
@@ -102,8 +103,8 @@ class HardwareVideoEncoder implements VideoEncoder {
                 while (this.count > 0) {
                     try {
                         this.countLock.wait();
-                    } catch (InterruptedException e7) {
-                        Logging.e(HardwareVideoEncoder.TAG, "Interrupted while waiting on busy count", e7);
+                    } catch (InterruptedException e) {
+                        Logging.e(HardwareVideoEncoder.TAG, "Interrupted while waiting on busy count", e);
                         z10 = true;
                     }
                 }
@@ -167,16 +168,16 @@ class HardwareVideoEncoder implements VideoEncoder {
                 try {
                     this.codec.queueInputBuffer(dequeueInputBuffer, 0, this.frameSizeBytes, timestampNs, 0);
                     return VideoCodecStatus.OK;
-                } catch (IllegalStateException e7) {
-                    Logging.e(TAG, "queueInputBuffer failed", e7);
+                } catch (IllegalStateException e) {
+                    Logging.e(TAG, "queueInputBuffer failed", e);
                     return VideoCodecStatus.ERROR;
                 }
-            } catch (IllegalStateException e10) {
-                Logging.e(TAG, "getInputBuffer with index=" + dequeueInputBuffer + " failed", e10);
+            } catch (IllegalStateException e7) {
+                Logging.e(TAG, "getInputBuffer with index=" + dequeueInputBuffer + " failed", e7);
                 return VideoCodecStatus.ERROR;
             }
-        } catch (IllegalStateException e11) {
-            Logging.e(TAG, "dequeueInputBuffer failed", e11);
+        } catch (IllegalStateException e10) {
+            Logging.e(TAG, "dequeueInputBuffer failed", e10);
             return VideoCodecStatus.ERROR;
         }
     }
@@ -189,8 +190,8 @@ class HardwareVideoEncoder implements VideoEncoder {
             this.videoFrameDrawer.drawFrame(new VideoFrame(videoFrame.getBuffer(), 0, videoFrame.getTimestampNs()), this.textureDrawer, null);
             this.textureEglBase.swapBuffers(TimeUnit.MICROSECONDS.toNanos(j3), false);
             return VideoCodecStatus.OK;
-        } catch (RuntimeException e7) {
-            Logging.e(TAG, "encodeTexture failed", e7);
+        } catch (RuntimeException e) {
+            Logging.e(TAG, "encodeTexture failed", e);
             return VideoCodecStatus.ERROR;
         }
     }
@@ -252,13 +253,13 @@ class HardwareVideoEncoder implements VideoEncoder {
                 this.outputThread = createOutputThread;
                 createOutputThread.start();
                 return VideoCodecStatus.OK;
-            } catch (IllegalArgumentException e7) {
-                e = e7;
+            } catch (IllegalArgumentException e) {
+                e = e;
                 Logging.e(TAG, "initEncodeInternal failed", e);
                 release();
                 return VideoCodecStatus.FALLBACK_SOFTWARE;
-            } catch (IllegalStateException e10) {
-                e = e10;
+            } catch (IllegalStateException e7) {
+                e = e7;
                 Logging.e(TAG, "initEncodeInternal failed", e);
                 release();
                 return VideoCodecStatus.FALLBACK_SOFTWARE;
@@ -273,8 +274,8 @@ class HardwareVideoEncoder implements VideoEncoder {
     public /* synthetic */ void lambda$deliverEncodedImage$0(int i10) {
         try {
             this.codec.releaseOutputBuffer(i10, false);
-        } catch (Exception e7) {
-            Logging.e(TAG, "releaseOutputBuffer failed", e7);
+        } catch (Exception e) {
+            Logging.e(TAG, "releaseOutputBuffer failed", e);
         }
         this.outputBuffersBusyCount.decrement();
     }
@@ -286,14 +287,14 @@ class HardwareVideoEncoder implements VideoEncoder {
         this.outputBuffersBusyCount.waitForZero();
         try {
             this.codec.stop();
-        } catch (Exception e7) {
-            Logging.e(TAG, "Media encoder stop failed", e7);
+        } catch (Exception e) {
+            Logging.e(TAG, "Media encoder stop failed", e);
         }
         try {
             this.codec.release();
-        } catch (Exception e10) {
-            Logging.e(TAG, "Media encoder release failed", e10);
-            this.shutdownException = e10;
+        } catch (Exception e7) {
+            Logging.e(TAG, "Media encoder release failed", e7);
+            this.shutdownException = e7;
         }
         this.configBuffer = null;
         Logging.d(TAG, "Release on output thread done");
@@ -306,8 +307,8 @@ class HardwareVideoEncoder implements VideoEncoder {
             bundle.putInt("request-sync", 0);
             this.codec.setParameters(bundle);
             this.lastKeyFrameNs = j3;
-        } catch (IllegalStateException e7) {
-            Logging.e(TAG, "requestKeyFrame failed", e7);
+        } catch (IllegalStateException e) {
+            Logging.e(TAG, "requestKeyFrame failed", e);
         }
     }
 
@@ -338,8 +339,8 @@ class HardwareVideoEncoder implements VideoEncoder {
             bundle.putInt("video-bitrate", this.adjustedBitrate);
             this.codec.setParameters(bundle);
             return VideoCodecStatus.OK;
-        } catch (IllegalStateException e7) {
-            Logging.e(TAG, "updateBitrate failed", e7);
+        } catch (IllegalStateException e) {
+            Logging.e(TAG, "updateBitrate failed", e);
             return VideoCodecStatus.ERROR;
         }
     }
@@ -445,8 +446,8 @@ class HardwareVideoEncoder implements VideoEncoder {
             EncodedImage createEncodedImage = poll.createEncodedImage();
             this.callback.onEncodedFrame(createEncodedImage, new VideoEncoder.CodecSpecificInfo());
             createEncodedImage.release();
-        } catch (IllegalStateException e7) {
-            Logging.e(TAG, "deliverOutput failed", e7);
+        } catch (IllegalStateException e) {
+            Logging.e(TAG, "deliverOutput failed", e);
         }
     }
 
@@ -568,7 +569,7 @@ class HardwareVideoEncoder implements VideoEncoder {
         if (i10 == 21 || i10 == 2141391872 || i10 == 2141391876) {
             return true;
         }
-        throw new IllegalArgumentException(i2.g.i(i10, "Unsupported colorFormat: "));
+        throw new IllegalArgumentException(k0.i(i10, "Unsupported colorFormat: "));
     }
 
     @Override // org.webrtc.VideoEncoder

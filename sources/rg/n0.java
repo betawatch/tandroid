@@ -1,121 +1,137 @@
 package rg;
 
-import android.animation.ValueAnimator;
 import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.view.MotionEvent;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import org.telegram.messenger.R;
+import android.graphics.Paint;
+import android.view.View;
+import android.widget.FrameLayout;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.pr;
-import org.telegram.ui.oj1;
+import org.telegram.ui.Components.qr;
+import org.telegram.ui.nb0;
 import w7.x5;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class n0 extends LinearLayout {
-    public final TextView a;
-    public final ah.w b;
-    public ImageView c;
-    public ImageView d;
-    public float e;
-    public boolean f;
-    public ValueAnimator h;
-    public final ImageView n;
-    public final /* synthetic */ o0 r;
+public final class n0 extends FrameLayout implements l0 {
+    public final f6 a;
+    public final ArrayList b;
+    public final m0 c;
+    public final m0 d;
+    public final m0 e;
+    public final boolean f;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public n0(o0 o0Var, Context context) {
+    public n0(Context context, f6 f6Var) {
         super(context);
-        this.r = o0Var;
-        setOrientation(0);
-        int i10 = j6.i6;
-        fh.a aVar = o0Var.Q1;
-        setBackground(j6.f0(j6.v0(i10, aVar), 2, -1));
-        ah.w wVar = new ah.w(this, context);
-        this.b = wVar;
-        addView(wVar, x5.t(-2, -2, 19, 16, 0, 16, 0));
-        ImageView imageView = new ImageView(context);
-        this.c = imageView;
-        ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
-        imageView.setScaleType(scaleType);
-        ImageView imageView2 = this.c;
-        int i11 = j6.E8;
-        imageView2.setColorFilter(j6.v0(i11, aVar));
-        wVar.addView(this.c, x5.e(-2, -2, 17));
-        ImageView imageView3 = new ImageView(context);
-        this.d = imageView3;
-        imageView3.setScaleType(scaleType);
-        this.d.setColorFilter(j6.v0(i11, aVar));
-        this.d.setVisibility(8);
-        wVar.addView(this.d, x5.e(-2, -2, 17));
-        TextView textView = new TextView(context);
-        this.a = textView;
-        textView.setTextColor(j6.v0(i11, aVar));
-        textView.setTextSize(1, 16.0f);
-        addView(textView, x5.t(-2, -2, 19, 0, 0, 16, 0));
-        ImageView imageView4 = new ImageView(context);
-        this.n = imageView4;
-        imageView4.setImageResource(R.drawable.msg_text_check);
-        imageView4.setScaleType(scaleType);
-        imageView4.setColorFilter(new PorterDuffColorFilter(j6.v0(j6.h7, aVar), PorterDuff.Mode.MULTIPLY));
-        imageView4.setVisibility(8);
-        addView(imageView4, x5.n(50, -1));
+        this.b = new ArrayList();
+        this.a = f6Var;
+        for (nb0 nb0Var : nb0.values()) {
+            if (nb0Var.e) {
+                this.b.add(nb0Var);
+            }
+            if (this.b.size() == 3) {
+                break;
+            }
+        }
+        if (this.b.size() < 3) {
+            FileLog.e(new IllegalArgumentException("There should be at least 3 premium icons!"));
+            this.f = true;
+        } else {
+            this.c = a(context, 0);
+            this.d = a(context, 1);
+            this.e = a(context, 2);
+            setClipChildren(false);
+        }
     }
 
-    public final void a(int i10, boolean z10, boolean z11) {
-        if (!z11) {
-            this.c.setImageResource(i10);
+    public final m0 a(Context context, int i10) {
+        nb0 nb0Var = (nb0) this.b.get(i10);
+        m0 m0Var = new m0(context);
+        u1 u1Var = new u1(20);
+        m0Var.e = u1Var;
+        Paint paint = new Paint(1);
+        m0Var.f = paint;
+        u1Var.r = 12;
+        u1Var.s = 8;
+        u1Var.t = 6;
+        if (i10 == 1) {
+            u1Var.N = 1001;
+        }
+        if (i10 == 0) {
+            u1Var.N = 1002;
+        }
+        u1Var.O = this.a;
+        u1Var.P = j6.Zj;
+        u1Var.c();
+        paint.setColor(-1);
+        m0Var.setLayoutParams(x5.d(-2, -2.0f, 17, 0.0f, 52.0f, 0.0f, 0.0f));
+        m0Var.setForeground(nb0Var.c);
+        m0Var.setBackgroundResource(nb0Var.b);
+        m0Var.setPadding(AndroidUtilities.dp(8.0f));
+        m0Var.setBackgroundOuterPadding(AndroidUtilities.dp(32.0f));
+        addView(m0Var);
+        return m0Var;
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, i11);
+        if (this.f) {
             return;
         }
-        ValueAnimator valueAnimator = this.h;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
-            this.h = null;
-            a(i10, false, false);
+        int min = Math.min(View.MeasureSpec.getSize(i10), View.MeasureSpec.getSize(i11));
+        int dp = AndroidUtilities.dp(76.0f);
+        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.c.getLayoutParams();
+        layoutParams.height = dp;
+        layoutParams.width = dp;
+        float f7 = dp;
+        layoutParams.bottomMargin = (int) ((min * 0.1f) + f7);
+        FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) this.d.getLayoutParams();
+        layoutParams2.height = dp;
+        layoutParams2.width = dp;
+        int i12 = (int) (f7 * 0.95f);
+        layoutParams2.rightMargin = i12;
+        FrameLayout.LayoutParams layoutParams3 = (FrameLayout.LayoutParams) this.e.getLayoutParams();
+        layoutParams3.height = dp;
+        layoutParams3.width = dp;
+        layoutParams3.leftMargin = i12;
+    }
+
+    @Override // rg.l0
+    public void setOffset(float f7) {
+        if (this.f) {
             return;
         }
-        this.f = z10;
-        this.d.setImageResource(i10);
-        this.d.setVisibility(0);
-        this.d.setAlpha(1.0f);
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-        this.h = ofFloat;
-        ofFloat.addUpdateListener(new ah.l0(12, this, z10));
-        this.h.addListener(new oj1(this, 4));
-        this.h.setInterpolator(pr.h);
-        this.h.setDuration(420L);
-        this.h.start();
-    }
-
-    @Override // android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        return true;
-    }
-
-    @Override // android.view.View
-    public final boolean performClick() {
-        o0 o0Var = this.r;
-        org.telegram.ui.ActionBar.n1 n1Var = o0Var.R1;
-        if (n1Var != null && n1Var.isShowing()) {
-            o0Var.R1.d(true);
-        }
-        return super.performClick();
-    }
-
-    public void setIcon(int i10) {
-        a(i10, true, false);
-    }
-
-    @Override // android.view.View
-    public void setSelected(boolean z10) {
-        this.n.setVisibility(z10 ? 0 : 8);
-    }
-
-    public void setText(CharSequence charSequence) {
-        this.a.setText(charSequence);
+        float abs = Math.abs(f7 / getMeasuredWidth());
+        float interpolation = qr.i.getInterpolation(abs);
+        int right = getRight();
+        m0 m0Var = this.e;
+        m0Var.setTranslationX(((m0Var.getWidth() * 1.5f) + (right - m0Var.getRight()) + AndroidUtilities.dp(32.0f)) * interpolation);
+        m0Var.setTranslationY(AndroidUtilities.dp(16.0f) * interpolation);
+        float clamp = Utilities.clamp(AndroidUtilities.lerp(1.0f, 1.5f, interpolation), 1.0f, 0.0f);
+        m0Var.setScaleX(clamp);
+        m0Var.setScaleY(clamp);
+        int top = getTop();
+        m0 m0Var2 = this.c;
+        m0Var2.setTranslationY((((top - m0Var2.getTop()) - (m0Var2.getHeight() * 1.8f)) - AndroidUtilities.dp(32.0f)) * abs);
+        m0Var2.setTranslationX(AndroidUtilities.dp(16.0f) * abs);
+        float clamp2 = Utilities.clamp(AndroidUtilities.lerp(1.0f, 1.8f, abs), 1.0f, 0.0f);
+        m0Var2.setScaleX(clamp2);
+        m0Var2.setScaleY(clamp2);
+        float interpolation2 = qr.g.getInterpolation(abs);
+        int left = getLeft();
+        m0 m0Var3 = this.d;
+        m0Var3.setTranslationX((((left - m0Var3.getLeft()) - (m0Var3.getWidth() * 2.5f)) + AndroidUtilities.dp(32.0f)) * interpolation2);
+        m0Var3.setTranslationY(((m0Var3.getHeight() * 2.5f) + (getBottom() - m0Var3.getBottom()) + AndroidUtilities.dp(32.0f)) * interpolation2);
+        float clamp3 = Utilities.clamp(AndroidUtilities.lerp(1.0f, 2.5f, abs), 1.0f, 0.0f);
+        m0Var3.setScaleX(clamp3);
+        m0Var3.setScaleY(clamp3);
+        float f10 = abs < 0.4f ? abs / 0.4f : 1.0f;
+        m0Var.h = f10;
+        m0Var2.h = f10;
+        m0Var3.h = f10;
     }
 }

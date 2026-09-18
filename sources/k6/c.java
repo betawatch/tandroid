@@ -6,7 +6,7 @@ import java.util.Arrays;
 import n4.y;
 import w7.e0;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class c extends o6.a {
     public static final Parcelable.Creator<c> CREATOR = new g8.j(18);
@@ -43,8 +43,8 @@ public final class c extends o6.a {
 
     public final String toString() {
         y yVar = new y(this);
-        yVar.y(this.a, "name");
-        yVar.y(Long.valueOf(b()), "version");
+        yVar.e(this.a, "name");
+        yVar.e(Long.valueOf(b()), "version");
         return yVar.toString();
     }
 

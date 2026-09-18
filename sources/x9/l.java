@@ -1,19 +1,18 @@
 package x9;
 
-import ji.u4;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public abstract class l {
-    public static final u4 a;
+    public static final ka.c a;
 
     static {
-        ka.d dVar = new ka.d();
+        ka.e eVar = new ka.e();
         a aVar = a.a;
-        dVar.j(l.class, aVar);
-        dVar.j(b.class, aVar);
-        a = new u4(dVar, 2);
+        eVar.m(l.class, aVar);
+        eVar.m(b.class, aVar);
+        a = new ka.c(eVar, 0);
     }
 
     public static b a(String str) {

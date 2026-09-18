@@ -1,48 +1,22 @@
 package xh;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.re;
-import zh.w3;
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class f implements le.d, yf.m {
+    public final /* synthetic */ m a;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class f implements RequestDelegate {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
-
-    public /* synthetic */ f(n nVar, boolean z10, e eVar, String str, boolean z11) {
-        this.d = nVar;
-        this.b = z10;
-        this.e = eVar;
-        this.f = str;
-        this.c = z11;
+    @Override // le.d
+    public void D(int i10, float f7, float f10, le.e eVar) {
+        this.a.a0();
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                AndroidUtilities.runOnUIThread(new re((n) this.d, this.b, (Runnable) this.e, (String) this.f, tL_error, tLObject, this.c));
-                break;
-            default:
-                AndroidUtilities.runOnUIThread(new re((w3) this.d, tLObject, this.b, (TLRPC.Document) this.e, this.c, tL_error, (TL_stars.saveStarGift) this.f));
-                break;
-        }
+    @Override // yf.m
+    public void e(long j3) {
+        m mVar = this.a;
+        mVar.b0(j3, mVar.w0);
     }
 
-    public /* synthetic */ f(w3 w3Var, boolean z10, TLRPC.Document document, boolean z11, TL_stars.saveStarGift savestargift) {
-        this.d = w3Var;
-        this.b = z10;
-        this.e = document;
-        this.c = z11;
-        this.f = savestargift;
+    @Override // le.d
+    public /* synthetic */ void C(float f7, int i10) {
     }
 }

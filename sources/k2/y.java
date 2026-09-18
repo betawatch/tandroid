@@ -1,43 +1,18 @@
 package k2;
 
-import android.media.AudioDeviceInfo;
-import android.media.AudioRouting;
-import android.media.AudioTrack;
-import android.os.Handler;
-import android.os.Looper;
-import di.g7;
+import b2.v0;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class y {
-    public final AudioTrack a;
-    public final g7 b;
-    public x c = new AudioRouting.OnRoutingChangedListener() { // from class: k2.x
-        @Override // android.media.AudioRouting.OnRoutingChangedListener
-        public final void onRoutingChanged(AudioRouting audioRouting) {
-            y.a(y.this, audioRouting);
-        }
-    };
+    public final v0 a;
+    public final long b;
+    public final long c;
+    public long d;
 
-    /* JADX WARN: Type inference failed for: r3v1, types: [k2.x] */
-    public y(AudioTrack audioTrack, g7 g7Var) {
-        this.a = audioTrack;
-        this.b = g7Var;
-        audioTrack.addOnRoutingChangedListener(this.c, new Handler(Looper.myLooper()));
-    }
-
-    public static void a(y yVar, AudioRouting audioRouting) {
-        AudioDeviceInfo routedDevice;
-        if (yVar.c == null || (routedDevice = audioRouting.getRoutedDevice()) == null) {
-            return;
-        }
-        yVar.b.c(routedDevice);
-    }
-
-    public final void b() {
-        x xVar = this.c;
-        xVar.getClass();
-        this.a.removeOnRoutingChangedListener(xVar);
-        this.c = null;
+    public y(v0 v0Var, long j3, long j10) {
+        this.a = v0Var;
+        this.b = j3;
+        this.c = j10;
     }
 }

@@ -1,6 +1,7 @@
 package com.google.firebase.messaging;
 
-import ah.m0;
+import ai.w1;
+import ai.y4;
 import android.animation.AnimatorSet;
 import android.animation.ValueAnimator;
 import android.content.Context;
@@ -15,10 +16,9 @@ import android.util.SparseArray;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
-import bi.j4;
 import c3.h0;
+import ci.uc;
 import com.google.android.gms.internal.vision.e2;
-import di.nb;
 import e9.f1;
 import j$.util.Objects;
 import java.lang.reflect.Array;
@@ -40,16 +40,16 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.Components.ju;
-import org.telegram.ui.Components.pr;
+import org.telegram.ui.Components.lu;
+import org.telegram.ui.Components.qr;
 import org.telegram.ui.c5;
-import org.telegram.ui.s4;
+import org.telegram.ui.r4;
 import org.telegram.ui.v4;
 import org.telegram.ui.x4;
-import org.telegram.ui.z0;
+import org.telegram.ui.y0;
 import r0.i0;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class m implements c3.q {
     public static m e;
@@ -59,13 +59,13 @@ public final class m implements c3.q {
     public Object d;
 
     public m(View view) {
-        ju[] juVarArr = {new ju(), new ju(), new ju()};
-        this.b = juVarArr;
+        lu[] luVarArr = {new lu(), new lu(), new lu()};
+        this.b = luVarArr;
         this.d = new ArrayList();
         AnimatorSet animatorSet = new AnimatorSet();
         this.c = animatorSet;
-        animatorSet.playTogether(g(juVarArr[0], 0, 255, 0, 300), g(juVarArr[1], 0, 255, ImageReceiver.DEFAULT_CROSSFADE_DURATION, 300), g(juVarArr[2], 0, 255, 300, 300), g(juVarArr[0], 255, 0, MediaDataController.MAX_STYLE_RUNS_COUNT, 400), g(juVarArr[1], 255, 0, MediaDataController.MAX_STYLE_RUNS_COUNT, 400), g(juVarArr[2], 255, 0, MediaDataController.MAX_STYLE_RUNS_COUNT, 400));
-        animatorSet.addListener(new j4(this, view));
+        animatorSet.playTogether(g(luVarArr[0], 0, 255, 0, 300), g(luVarArr[1], 0, 255, ImageReceiver.DEFAULT_CROSSFADE_DURATION, 300), g(luVarArr[2], 0, 255, 300, 300), g(luVarArr[0], 255, 0, MediaDataController.MAX_STYLE_RUNS_COUNT, 400), g(luVarArr[1], 255, 0, MediaDataController.MAX_STYLE_RUNS_COUNT, 400), g(luVarArr[2], 255, 0, MediaDataController.MAX_STYLE_RUNS_COUNT, 400));
+        animatorSet.addListener(new y4(this, view));
     }
 
     public static void a(jc.e[][][] eVarArr, int i10, jc.e eVar) {
@@ -127,36 +127,25 @@ public final class m implements c3.q {
     }
 
     @Override // c3.q
-    public void P1(c3.b0 b0Var) {
-        ((c3.q) this.b).P1(b0Var);
+    public void X1(c3.b0 b0Var) {
+        ((c3.q) this.b).X1(b0Var);
     }
 
     @Override // c3.q
-    public h0 R1(int i10, int i11) {
+    public h0 Z1(int i10, int i11) {
         SparseArray sparseArray = (SparseArray) this.d;
         c3.q qVar = (c3.q) this.b;
         if (i11 != 3) {
             this.a = true;
-            return qVar.R1(i10, i11);
+            return qVar.Z1(i10, i11);
         }
         z3.o oVar = (z3.o) sparseArray.get(i10);
         if (oVar != null) {
             return oVar;
         }
-        z3.o oVar2 = new z3.o(qVar.R1(i10, i11), (z3.k) this.c);
+        z3.o oVar2 = new z3.o(qVar.Z1(i10, i11), (z3.k) this.c);
         sparseArray.put(i10, oVar2);
         return oVar2;
-    }
-
-    @Override // c3.q
-    public void Z0() {
-        SparseArray sparseArray = (SparseArray) this.d;
-        ((c3.q) this.b).Z0();
-        if (this.a) {
-            for (int i10 = 0; i10 < sparseArray.size(); i10++) {
-                ((z3.o) sparseArray.valueAt(i10)).i = true;
-            }
-        }
     }
 
     /* JADX WARN: Removed duplicated region for block: B:18:0x006c  */
@@ -252,17 +241,28 @@ public final class m implements c3.q {
         arrayList.add(view);
     }
 
+    @Override // c3.q
+    public void e1() {
+        SparseArray sparseArray = (SparseArray) this.d;
+        ((c3.q) this.b).e1();
+        if (this.a) {
+            for (int i10 = 0; i10 < sparseArray.size(); i10++) {
+                ((z3.o) sparseArray.valueAt(i10)).i = true;
+            }
+        }
+    }
+
     public int f(int i10, int i11, int i12) {
         dc.b bVar = (dc.b) this.b;
         return this.a ? bVar.b(i11, i10) : bVar.b(i10, i11) ? (i12 << 1) | 1 : i12 << 1;
     }
 
-    public ValueAnimator g(ju juVar, int i10, int i11, int i12, int i13) {
+    public ValueAnimator g(lu luVar, int i10, int i11, int i12, int i13) {
         ValueAnimator ofInt = ValueAnimator.ofInt(i10, i11);
-        ofInt.addUpdateListener(new m0(16, this, juVar));
+        ofInt.addUpdateListener(new ai.x(15, this, luVar));
         ofInt.setDuration(i13);
         ofInt.setStartDelay(i12);
-        ofInt.setInterpolator(pr.f);
+        ofInt.setInterpolator(qr.f);
         return ofInt;
     }
 
@@ -324,11 +324,11 @@ public final class m implements c3.q {
         synchronized (((HashMap) this.d)) {
             hashMap.putAll((HashMap) this.d);
         }
-        return w7.z.a(((g2.o) this.b).createDataSource(), str, oVar.a, hashMap);
+        return w7.a0.a(((g2.o) this.b).createDataSource(), str, oVar.a, hashMap);
     }
 
     public byte[] j(n2.p pVar) {
-        return w7.z.a(((g2.o) this.b).createDataSource(), pVar.b + "&signedRequest=" + e2.d0.p(pVar.a), null, Collections.EMPTY_MAP);
+        return w7.a0.a(((g2.o) this.b).createDataSource(), pVar.b + "&signedRequest=" + e2.d0.p(pVar.a), null, Collections.EMPTY_MAP);
     }
 
     public synchronized void m() {
@@ -339,7 +339,7 @@ public final class m implements c3.q {
             Boolean o9 = o();
             this.c = o9;
             if (o9 == null) {
-                ((q9.l) ((ma.b) this.b)).a(new androidx.emoji2.text.w(24));
+                ((q9.l) ((ma.b) this.b)).a(new w1(27));
             }
             this.a = true;
         } catch (Throwable th2) {
@@ -475,7 +475,7 @@ public final class m implements c3.q {
     public void t() {
         e2.z zVar = (e2.z) this.d;
         if (this.a) {
-            zVar.c(new nb(this, 22));
+            zVar.c(new uc(this, 26));
             this.a = false;
         }
     }
@@ -495,7 +495,7 @@ public final class m implements c3.q {
                         return true;
                     }
                 }
-                ((s) ((p3) this.d).b).h(gVar);
+                ((t) ((p3) this.d).b).k(gVar);
                 return true;
             } catch (Throwable th2) {
                 throw th2;
@@ -508,31 +508,31 @@ public final class m implements c3.q {
         Context context = viewGroup.getContext();
         if (((ViewGroup) this.b) != viewGroup) {
             if (this.a) {
-                s4 s4Var = (s4) this.d;
+                r4 r4Var = (r4) this.d;
                 int i10 = c5.F;
-                s4Var.b(false);
+                r4Var.b(false);
             }
             this.b = viewGroup;
             this.c = (WindowManager) f0.e.f(context, WindowManager.class);
-            s4 s4Var2 = new s4(this, context, f6Var, v4Var);
-            this.d = s4Var2;
-            z0 z0Var = new z0(this, 3);
+            r4 r4Var2 = new r4(this, context, f6Var, v4Var);
+            this.d = r4Var2;
+            y0 y0Var = new y0(this, 3);
             WeakHashMap weakHashMap = i0.a;
-            r0.a0.j(s4Var2, z0Var);
+            r0.a0.j(r4Var2, y0Var);
         }
-        ((s4) this.d).a(x4Var);
+        ((r4) this.d).a(x4Var);
         if (this.a) {
             return;
         }
-        if (((s4) this.d).getParent() != null) {
-            ((WindowManager) this.c).removeView((s4) this.d);
+        if (((r4) this.d).getParent() != null) {
+            ((WindowManager) this.c).removeView((r4) this.d);
         }
         WindowManager.LayoutParams layoutParams = new WindowManager.LayoutParams(-1, -1, MediaDataController.MAX_STYLE_RUNS_COUNT, 0, -3);
         layoutParams.softInputMode = 16;
         layoutParams.flags |= -1945959040;
         AndroidUtilities.applyEdgeToEdgeLayoutParams(layoutParams);
-        AndroidUtilities.setPreferredMaxRefreshRate((WindowManager) this.c, (s4) this.d, layoutParams);
-        ((WindowManager) this.c).addView((s4) this.d, layoutParams);
+        AndroidUtilities.setPreferredMaxRefreshRate((WindowManager) this.c, (r4) this.d, layoutParams);
+        ((WindowManager) this.c).addView((r4) this.d, layoutParams);
         viewGroup.requestDisallowInterceptTouchEvent(true);
         this.a = true;
     }
@@ -553,12 +553,12 @@ public final class m implements c3.q {
     }
 
     public void x(SpannableString spannableString, int i10) {
-        ju[] juVarArr = (ju[]) this.b;
+        lu[] luVarArr = (lu[]) this.b;
         int i11 = i10 + 1;
-        spannableString.setSpan(juVarArr[0], i10, i11, 0);
+        spannableString.setSpan(luVarArr[0], i10, i11, 0);
         int i12 = i10 + 2;
-        spannableString.setSpan(juVarArr[1], i11, i12, 0);
-        spannableString.setSpan(juVarArr[2], i12, i10 + 3, 0);
+        spannableString.setSpan(luVarArr[1], i11, i12, 0);
+        spannableString.setSpan(luVarArr[2], i12, i10 + 3, 0);
     }
 
     public void y() {

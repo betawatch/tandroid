@@ -15,14 +15,14 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class xj extends FrameLayout {
-    public final x9 a;
-    public final bi.j5 b;
-    public final org.telegram.ui.ActionBar.j5 c;
-    public final mp d;
-    public final i9 e;
+    public final u9 a;
+    public final ai.a6 b;
+    public final org.telegram.ui.ActionBar.k5 c;
+    public final np d;
+    public final f9 e;
     public TLRPC.User f;
     public int h;
     public CharSequence n;
@@ -36,35 +36,35 @@ public final class xj extends FrameLayout {
     public xj(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
         super(context);
         this.x = UserConfig.selectedAccount;
-        this.e = new i9(f6Var);
-        x9 x9Var = new x9(context);
-        this.a = x9Var;
-        x9Var.setRoundRadius(AndroidUtilities.dp(23.0f));
+        this.e = new f9(f6Var);
+        u9 u9Var = new u9(context);
+        this.a = u9Var;
+        u9Var.setRoundRadius(AndroidUtilities.dp(23.0f));
         boolean z10 = LocaleController.isRTL;
-        addView(x9Var, w7.x5.d(46, 46.0f, (z10 ? 5 : 3) | 48, z10 ? 0.0f : 14.0f, 9.0f, z10 ? 14.0f : 0.0f, 0.0f));
-        bi.j5 j5Var = new bi.j5(context, 4);
-        this.b = j5Var;
-        NotificationCenter.listenEmojiLoading(j5Var);
-        j5Var.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.j5, f6Var));
-        j5Var.setTypeface(AndroidUtilities.bold());
-        j5Var.setTextSize(16);
-        j5Var.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
+        addView(u9Var, w7.x5.d(46, 46.0f, (z10 ? 5 : 3) | 48, z10 ? 0.0f : 14.0f, 9.0f, z10 ? 14.0f : 0.0f, 0.0f));
+        ai.a6 a6Var = new ai.a6(context, 4);
+        this.b = a6Var;
+        NotificationCenter.listenEmojiLoading(a6Var);
+        a6Var.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.j5, f6Var));
+        a6Var.setTypeface(AndroidUtilities.bold());
+        a6Var.setTextSize(16);
+        a6Var.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
         boolean z11 = LocaleController.isRTL;
-        addView(j5Var, w7.x5.d(-1, 20.0f, (z11 ? 5 : 3) | 48, z11 ? 28.0f : 72.0f, 12.0f, z11 ? 72.0f : 28.0f, 0.0f));
-        org.telegram.ui.ActionBar.j5 j5Var2 = new org.telegram.ui.ActionBar.j5(context);
-        this.c = j5Var2;
-        j5Var2.setTextSize(13);
-        j5Var2.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.q5, f6Var));
-        j5Var2.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
+        addView(a6Var, w7.x5.d(-1, 20.0f, (z11 ? 5 : 3) | 48, z11 ? 28.0f : 72.0f, 12.0f, z11 ? 72.0f : 28.0f, 0.0f));
+        org.telegram.ui.ActionBar.k5 k5Var = new org.telegram.ui.ActionBar.k5(context);
+        this.c = k5Var;
+        k5Var.setTextSize(13);
+        k5Var.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.q5, f6Var));
+        k5Var.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
         boolean z12 = LocaleController.isRTL;
-        addView(j5Var2, w7.x5.d(-1, 20.0f, (z12 ? 5 : 3) | 48, z12 ? 28.0f : 72.0f, 36.0f, z12 ? 72.0f : 28.0f, 0.0f));
-        mp mpVar = new mp(context, 21, f6Var);
-        this.d = mpVar;
-        mpVar.b(-1, org.telegram.ui.ActionBar.j6.d6, org.telegram.ui.ActionBar.j6.k7);
-        mpVar.setDrawUnchecked(false);
-        mpVar.setDrawBackgroundAsArc(3);
+        addView(k5Var, w7.x5.d(-1, 20.0f, (z12 ? 5 : 3) | 48, z12 ? 28.0f : 72.0f, 36.0f, z12 ? 72.0f : 28.0f, 0.0f));
+        np npVar = new np(context, 21, f6Var);
+        this.d = npVar;
+        npVar.b(-1, org.telegram.ui.ActionBar.j6.d6, org.telegram.ui.ActionBar.j6.k7);
+        npVar.setDrawUnchecked(false);
+        npVar.setDrawBackgroundAsArc(3);
         boolean z13 = LocaleController.isRTL;
-        addView(mpVar, w7.x5.d(24, 24.0f, (z13 ? 5 : 3) | 48, z13 ? 0.0f : 44.0f, 37.0f, z13 ? 44.0f : 0.0f, 0.0f));
+        addView(npVar, w7.x5.d(24, 24.0f, (z13 ? 5 : 3) | 48, z13 ? 0.0f : 44.0f, 37.0f, z13 ? 44.0f : 0.0f, 0.0f));
     }
 
     public final void a(TLRPC.User user, CharSequence charSequence, wj wjVar, boolean z10) {
@@ -82,7 +82,7 @@ public final class xj extends FrameLayout {
             setWillNotDraw(!z10);
             b();
         }
-        Utilities.globalQueue.postRunnable(new uc(12, this, wjVar));
+        Utilities.globalQueue.postRunnable(new oh(6, this, wjVar));
     }
 
     public final void b() {
@@ -90,23 +90,23 @@ public final class xj extends FrameLayout {
         if (user != null) {
             TLRPC.UserProfilePhoto userProfilePhoto = user.photo;
         }
-        i9 i9Var = this.e;
+        f9 f9Var = this.e;
         if (user != null) {
-            i9Var.m(this.x, user);
+            f9Var.m(this.x, user);
             TLRPC.UserStatus userStatus = this.f.status;
         } else {
             CharSequence charSequence = this.n;
             if (charSequence != null) {
-                i9Var.n(this.h, charSequence.toString(), null);
+                f9Var.n(this.h, charSequence.toString(), null);
             } else {
-                i9Var.n(this.h, "#", null);
+                f9Var.n(this.h, "#", null);
             }
         }
         CharSequence charSequence2 = this.n;
-        bi.j5 j5Var = this.b;
+        ai.a6 a6Var = this.b;
         if (charSequence2 != null) {
             this.w = null;
-            j5Var.l(charSequence2, false);
+            a6Var.l(charSequence2, false);
         } else {
             TLRPC.User user2 = this.f;
             if (user2 != null) {
@@ -114,15 +114,15 @@ public final class xj extends FrameLayout {
             } else {
                 this.w = "";
             }
-            j5Var.l(this.w, false);
+            a6Var.l(this.w, false);
         }
         setStatus(this.r);
         TLRPC.User user3 = this.f;
-        x9 x9Var = this.a;
+        u9 u9Var = this.a;
         if (user3 != null) {
-            x9Var.e(user3, i9Var);
+            u9Var.e(user3, f9Var);
         } else {
-            x9Var.setImageDrawable(i9Var);
+            u9Var.setImageDrawable(f9Var);
         }
     }
 

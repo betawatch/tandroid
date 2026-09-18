@@ -1,52 +1,11 @@
 package n7;
 
-import j$.util.Objects;
+import java.util.Comparator;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
-public final class x extends m {
-    public static final x e = new x(0, new Object[0]);
-    public final transient Object[] c;
-    public final transient int d;
-
-    public x(int i10, Object[] objArr) {
-        this.c = objArr;
-        this.d = i10;
-    }
-
-    @Override // java.util.List
-    public final Object get(int i10) {
-        a.e(i10, this.d);
-        Object obj = this.c[i10];
-        Objects.requireNonNull(obj);
-        return obj;
-    }
-
-    @Override // n7.m, n7.h
-    public final int i(Object[] objArr) {
-        Object[] objArr2 = this.c;
-        int i10 = this.d;
-        System.arraycopy(objArr2, 0, objArr, 0, i10);
-        return i10;
-    }
-
-    @Override // n7.h
-    public final int n() {
-        return this.d;
-    }
-
-    @Override // n7.h
-    public final int o() {
-        return 0;
-    }
-
-    @Override // n7.h
-    public final Object[] q() {
-        return this.c;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final int size() {
-        return this.d;
+public abstract class x implements Comparator {
+    public x a() {
+        return new b0(this);
     }
 }

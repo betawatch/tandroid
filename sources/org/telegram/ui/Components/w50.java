@@ -53,7 +53,7 @@ import org.telegram.messenger.camera.Size;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public class w50 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public static final int[] c1 = {285904780, -1394191079};
@@ -81,7 +81,7 @@ public class w50 extends FrameLayout implements NotificationCenter.NotificationC
     public int M0;
     public VideoEditedInfo N;
     public int N0;
-    public g71 O;
+    public h71 O;
     public boolean O0;
     public Bitmap P;
     public final org.telegram.ui.ActionBar.f6 P0;
@@ -114,28 +114,28 @@ public class w50 extends FrameLayout implements NotificationCenter.NotificationC
     public long d0;
     public final RectF e;
     public boolean e0;
-    public final di.w2 f;
+    public final ci.w2 f;
     public long f0;
     public boolean g0;
-    public final di.w2 h;
+    public final ci.w2 h;
     public n50 h0;
     public final Size[] i0;
     public Size j0;
     public final Size k0;
     public TextureView l0;
     public final org.telegram.ui.ml m0;
-    public final di.y2 n;
+    public final ci.y2 n;
     public final boolean n0;
     public CameraSession o0;
     public boolean p0;
     public final Camera2Session[] q0;
-    public xi0 r;
+    public yi0 r;
     public Camera2Session r0;
-    public xi0 s;
+    public yi0 s;
     public boolean s0;
     public float t0;
     public float u0;
-    public xi0 v;
+    public yi0 v;
     public final float[] v0;
     public final ImageView w;
     public final float[] w0;
@@ -175,15 +175,15 @@ public class w50 extends FrameLayout implements NotificationCenter.NotificationC
         f50Var.setStrokeWidth(AndroidUtilities.dp(3.0f));
         f50Var.setColor(-1);
         this.e = new RectF();
-        di.y2 y2Var = new di.y2(getContext(), null, this, null);
+        ci.y2 y2Var = new ci.y2(getContext(), null, this, null);
         this.n = y2Var;
         y2Var.o = 0.5f;
-        y2Var.n = di.y2.f(0.5f);
+        y2Var.n = ci.y2.f(0.5f);
         y2Var.g();
         addView(y2Var.b, w7.x5.e(-1, -1, 119));
         g50 g50Var = new g50(this, context);
         this.b = g50Var;
-        g50Var.setOutlineProvider(new dh.b(this, 2));
+        g50Var.setOutlineProvider(new ch.b(this, 2));
         g50Var.setClipToOutline(true);
         g50Var.setWillNotDraw(false);
         int i11 = AndroidUtilities.roundPlayingMessageSize;
@@ -194,7 +194,7 @@ public class w50 extends FrameLayout implements NotificationCenter.NotificationC
         linearLayout.setPadding(AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f));
         linearLayout.setOrientation(0);
         addView(linearLayout, w7.x5.d(-2, 56.0f, 83, 1.0f, 0.0f, 0.0f, 0.0f));
-        di.w2 w2Var = new di.w2(context);
+        ci.w2 w2Var = new ci.w2(context);
         this.f = w2Var;
         ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
         w2Var.setScaleType(scaleType);
@@ -227,22 +227,22 @@ public class w50 extends FrameLayout implements NotificationCenter.NotificationC
                                 if (!w50Var.p0) {
                                     w50Var.p();
                                 }
-                                xi0 xi0Var = w50Var.v;
+                                yi0 yi0Var = w50Var.v;
                                 int i13 = 0;
-                                if (xi0Var != null) {
-                                    xi0Var.K(0);
+                                if (yi0Var != null) {
+                                    yi0Var.M(0);
                                     w50Var.v.start();
                                 }
                                 w50Var.E0 = true;
                                 ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
                                 ofFloat.setDuration(580L);
-                                ofFloat.setInterpolator(pr.h);
+                                ofFloat.setInterpolator(qr.h);
                                 boolean[] zArr = new boolean[1];
                                 d50 d50Var = new d50(w50Var, i13);
                                 w50Var.b.setCameraDistance(r2.getMeasuredHeight() * 8.0f);
                                 w50Var.m0.setCameraDistance(r2.getMeasuredHeight() * 8.0f);
                                 ofFloat.addUpdateListener(new h50(w50Var, zArr, d50Var));
-                                ofFloat.addListener(new bi.j4(w50Var, zArr, d50Var, 6));
+                                ofFloat.addListener(new ai.y4(w50Var, zArr, d50Var, 6));
                                 ofFloat.start();
                                 break;
                             }
@@ -256,7 +256,7 @@ public class w50 extends FrameLayout implements NotificationCenter.NotificationC
                 }
             }
         });
-        di.w2 w2Var2 = new di.w2(context);
+        ci.w2 w2Var2 = new ci.w2(context);
         this.h = w2Var2;
         w2Var2.setScaleType(scaleType);
         linearLayout.addView(w2Var2, w7.x5.n(44, 44));
@@ -287,22 +287,22 @@ public class w50 extends FrameLayout implements NotificationCenter.NotificationC
                                 if (!w50Var.p0) {
                                     w50Var.p();
                                 }
-                                xi0 xi0Var = w50Var.v;
+                                yi0 yi0Var = w50Var.v;
                                 int i132 = 0;
-                                if (xi0Var != null) {
-                                    xi0Var.K(0);
+                                if (yi0Var != null) {
+                                    yi0Var.M(0);
                                     w50Var.v.start();
                                 }
                                 w50Var.E0 = true;
                                 ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
                                 ofFloat.setDuration(580L);
-                                ofFloat.setInterpolator(pr.h);
+                                ofFloat.setInterpolator(qr.h);
                                 boolean[] zArr = new boolean[1];
                                 d50 d50Var = new d50(w50Var, i132);
                                 w50Var.b.setCameraDistance(r2.getMeasuredHeight() * 8.0f);
                                 w50Var.m0.setCameraDistance(r2.getMeasuredHeight() * 8.0f);
                                 ofFloat.addUpdateListener(new h50(w50Var, zArr, d50Var));
-                                ofFloat.addListener(new bi.j4(w50Var, zArr, d50Var, 6));
+                                ofFloat.addListener(new ai.y4(w50Var, zArr, d50Var, 6));
                                 ofFloat.start();
                                 break;
                             }
@@ -384,9 +384,9 @@ public class w50 extends FrameLayout implements NotificationCenter.NotificationC
 
     public final void d(boolean z10) {
         o();
-        g71 g71Var = this.O;
-        if (g71Var != null) {
-            g71Var.H();
+        h71 h71Var = this.O;
+        if (h71Var != null) {
+            h71Var.H();
             this.O = null;
         }
         if (this.l0 == null) {
@@ -439,8 +439,8 @@ public class w50 extends FrameLayout implements NotificationCenter.NotificationC
     }
 
     public final void e(float f7, int i10) {
-        g71 g71Var = this.O;
-        if (g71Var == null) {
+        h71 h71Var = this.O;
+        if (h71Var == null) {
             return;
         }
         if (i10 == 0) {
@@ -450,7 +450,7 @@ public class w50 extends FrameLayout implements NotificationCenter.NotificationC
             o();
             this.O.B();
         } else if (i10 == 2) {
-            g71Var.L((long) (f7 * g71Var.p()), false);
+            h71Var.L((long) (f7 * h71Var.p()), false);
         }
     }
 
@@ -463,7 +463,7 @@ public class w50 extends FrameLayout implements NotificationCenter.NotificationC
             }
         }
         if (!arrayList2.isEmpty() && b()) {
-            Collections.sort(arrayList2, new org.telegram.ui.f6(11));
+            Collections.sort(arrayList2, new org.telegram.ui.ff(9));
             return (Size) arrayList2.get(0);
         }
         if (!arrayList2.isEmpty()) {
@@ -492,10 +492,10 @@ public class w50 extends FrameLayout implements NotificationCenter.NotificationC
         if (min > 0.0f) {
             ValueAnimator ofFloat = ValueAnimator.ofFloat(min, 0.0f);
             this.b1 = ofFloat;
-            ofFloat.addUpdateListener(new l6(this, 26));
+            ofFloat.addUpdateListener(new i6(this, 26));
             this.b1.addListener(new e50(this, 1));
             this.b1.setDuration(350L);
-            this.b1.setInterpolator(pr.f);
+            this.b1.setInterpolator(qr.f);
             this.b1.start();
         }
     }
@@ -508,9 +508,9 @@ public class w50 extends FrameLayout implements NotificationCenter.NotificationC
         return this.b;
     }
 
-    public hk0 getCameraRect() {
+    public ik0 getCameraRect() {
         this.b.getLocationOnScreen(this.S);
-        return new hk0(r1[0], r1[1], r0.getWidth(), r0.getHeight());
+        return new ik0(r1[0], r1[1], r0.getWidth(), r0.getHeight());
     }
 
     public View getMuteImageView() {
@@ -652,7 +652,7 @@ public class w50 extends FrameLayout implements NotificationCenter.NotificationC
             StringBuilder sb2 = new StringBuilder("InstantCamera preview w = ");
             sb2.append(sizeArr[0].mWidth);
             sb2.append(" h = ");
-            i2.g.o(sizeArr[0].mHeight, sb2);
+            hg.k0.p(sizeArr[0].mHeight, sb2);
         }
         return true;
     }
@@ -683,9 +683,9 @@ public class w50 extends FrameLayout implements NotificationCenter.NotificationC
             return;
         }
         o();
-        g71 g71Var = this.O;
-        if (g71Var != null) {
-            g71Var.H();
+        h71 h71Var = this.O;
+        if (h71Var != null) {
+            h71Var.H();
             this.O = null;
         }
         int i14 = this.a;
@@ -797,9 +797,9 @@ public class w50 extends FrameLayout implements NotificationCenter.NotificationC
         if (this.v == null) {
             int i10 = R.raw.roundcamera_flip;
             int i11 = this.S0;
-            xi0 xi0Var = new xi0(i10, i11, i11);
-            this.v = xi0Var;
-            xi0Var.K(0);
+            yi0 yi0Var = new yi0(i10, i11, i11);
+            this.v = yi0Var;
+            yi0Var.M(0);
             this.v.setCallback(this.f);
         }
         this.f.setImageDrawable(this.v);
@@ -930,14 +930,14 @@ public class w50 extends FrameLayout implements NotificationCenter.NotificationC
         this.W = new AnimatorSet();
         float dp = (z10 || this.f0 <= 300) ? 0.0f : AndroidUtilities.dp(24.0f) - (getMeasuredWidth() / 2.0f);
         ValueAnimator ofFloat = ValueAnimator.ofFloat(z10 ? 1.0f : 0.0f, z10 ? 0.0f : 1.0f);
-        ofFloat.addUpdateListener(new ah.l0(7, this, z11));
+        ofFloat.addUpdateListener(new ai.bb(6, this, z11));
         AnimatorSet animatorSet2 = this.W;
         float[] fArr = {z10 ? 1.0f : 0.0f};
         LinearLayout linearLayout = this.R0;
         Property property = View.ALPHA;
         ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(linearLayout, (Property<LinearLayout, Float>) property, fArr);
         ObjectAnimator ofFloat3 = ObjectAnimator.ofFloat(this.w, (Property<ImageView, Float>) property, 0.0f);
-        ObjectAnimator ofInt = ObjectAnimator.ofInt(this.d, t6.b, z10 ? 255 : 0);
+        ObjectAnimator ofInt = ObjectAnimator.ofInt(this.d, q6.b, z10 ? 255 : 0);
         ObjectAnimator ofFloat4 = ObjectAnimator.ofFloat(g50Var, (Property<g50, Float>) property, z10 ? 1.0f : 0.0f);
         float f7 = z10 ? 1.0f : 0.1f;
         Property property2 = View.SCALE_X;
@@ -963,13 +963,13 @@ public class w50 extends FrameLayout implements NotificationCenter.NotificationC
             try {
                 timer.cancel();
                 this.X0 = null;
-            } catch (Exception e7) {
-                FileLog.e(e7);
+            } catch (Exception e) {
+                FileLog.e(e);
             }
         }
         Timer timer2 = new Timer();
         this.X0 = timer2;
-        timer2.schedule(new di.p2(this, 2), 0L, 17L);
+        timer2.schedule(new ci.p2(this, 2), 0L, 17L);
     }
 
     public final void o() {
@@ -978,8 +978,8 @@ public class w50 extends FrameLayout implements NotificationCenter.NotificationC
             try {
                 timer.cancel();
                 this.X0 = null;
-            } catch (Exception e7) {
-                FileLog.e(e7);
+            } catch (Exception e) {
+                FileLog.e(e);
             }
         }
     }
@@ -994,7 +994,7 @@ public class w50 extends FrameLayout implements NotificationCenter.NotificationC
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         NotificationCenter.getInstance(this.a).removeObserver(this, NotificationCenter.fileUploaded);
-        di.y2 y2Var = this.n;
+        ci.y2 y2Var = this.n;
         if (y2Var != null) {
             y2Var.d();
         }
@@ -1056,7 +1056,7 @@ public class w50 extends FrameLayout implements NotificationCenter.NotificationC
         super.onMeasure(i10, i11);
         int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(getMeasuredWidth(), TLObject.FLAG_30);
         int makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLObject.FLAG_30);
-        di.y2 y2Var = this.n;
+        ci.y2 y2Var = this.n;
         y2Var.b.measure(makeMeasureSpec, makeMeasureSpec2);
         y2Var.c.measure(makeMeasureSpec, makeMeasureSpec2);
     }
@@ -1072,12 +1072,12 @@ public class w50 extends FrameLayout implements NotificationCenter.NotificationC
 
     @Override // android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
-        g71 g71Var;
+        h71 h71Var;
         if (motionEvent.getAction() == 0 && motionEvent.getY() > getMeasuredHeight() - getPaddingBottom()) {
             return false;
         }
-        if (motionEvent.getAction() == 0 && this.c != null && (g71Var = this.O) != null) {
-            boolean x10 = g71Var.x();
+        if (motionEvent.getAction() == 0 && this.c != null && (h71Var = this.O) != null) {
+            boolean x10 = h71Var.x();
             this.O.O(!x10);
             AnimatorSet animatorSet = this.G;
             if (animatorSet != null) {
@@ -1212,9 +1212,9 @@ public class w50 extends FrameLayout implements NotificationCenter.NotificationC
             if (v50Var != null) {
                 v50Var.T.sendMessage(v50Var.T.obtainMessage(5));
                 h(false);
-                g71 g71Var = this.O;
-                if (g71Var != null) {
-                    g71Var.H();
+                h71 h71Var = this.O;
+                if (h71Var != null) {
+                    h71Var.H();
                     this.O = null;
                 }
                 l(true);
@@ -1254,7 +1254,7 @@ public class w50 extends FrameLayout implements NotificationCenter.NotificationC
         boolean z10 = this.U0 && this.e0 && this.E;
         if (this.V0 != z10) {
             this.V0 = z10;
-            di.y2 y2Var = this.n;
+            ci.y2 y2Var = this.n;
             if (z10) {
                 y2Var.c(null);
             } else {
@@ -1272,7 +1272,7 @@ public class w50 extends FrameLayout implements NotificationCenter.NotificationC
                 cameraSession.setTorchEnabled(this.U0 && !this.E && this.e0);
             }
         }
-        di.w2 w2Var = this.h;
+        ci.w2 w2Var = this.h;
         if (w2Var != null) {
             Boolean bool = this.T0;
             if (bool == null || bool.booleanValue() != this.U0) {
@@ -1281,30 +1281,30 @@ public class w50 extends FrameLayout implements NotificationCenter.NotificationC
                 int i10 = this.S0;
                 if (z11) {
                     if (this.s == null) {
-                        xi0 xi0Var = new xi0(R.raw.roundcamera_flash_off, i10, i10);
-                        this.s = xi0Var;
-                        xi0Var.setCallback(w2Var);
+                        yi0 yi0Var = new yi0(R.raw.roundcamera_flash_off, i10, i10);
+                        this.s = yi0Var;
+                        yi0Var.setCallback(w2Var);
                     }
                     w2Var.setImageDrawable(this.s);
                     if (this.T0 == null) {
-                        xi0 xi0Var2 = this.s;
-                        xi0Var2.K(xi0Var2.e[0] - 1);
+                        yi0 yi0Var2 = this.s;
+                        yi0Var2.M(yi0Var2.e[0] - 1);
                     } else {
-                        this.s.K(0);
+                        this.s.M(0);
                         this.s.start();
                     }
                 } else {
                     if (this.r == null) {
-                        xi0 xi0Var3 = new xi0(R.raw.roundcamera_flash_on, i10, i10);
-                        this.r = xi0Var3;
-                        xi0Var3.setCallback(w2Var);
+                        yi0 yi0Var3 = new yi0(R.raw.roundcamera_flash_on, i10, i10);
+                        this.r = yi0Var3;
+                        yi0Var3.setCallback(w2Var);
                     }
                     w2Var.setImageDrawable(this.r);
                     if (this.T0 == null) {
-                        xi0 xi0Var4 = this.r;
-                        xi0Var4.K(xi0Var4.e[0] - 1);
+                        yi0 yi0Var4 = this.r;
+                        yi0Var4.M(yi0Var4.e[0] - 1);
                     } else {
-                        this.r.K(0);
+                        this.r.M(0);
                         this.r.start();
                     }
                 }
@@ -1350,8 +1350,8 @@ public class w50 extends FrameLayout implements NotificationCenter.NotificationC
             } else {
                 ((Activity) getContext()).getWindow().clearFlags(128);
             }
-        } catch (Exception e7) {
-            FileLog.e(e7);
+        } catch (Exception e) {
+            FileLog.e(e);
         }
     }
 

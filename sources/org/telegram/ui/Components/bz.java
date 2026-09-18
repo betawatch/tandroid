@@ -22,9 +22,9 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class bz extends kl0 {
+public final class bz extends ll0 {
     public final Context c;
     public int d;
     public final SparseArray e = new SparseArray();
@@ -40,9 +40,9 @@ public final class bz extends kl0 {
         this.c = context;
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.ll0
     public final boolean D(s4.c1 c1Var) {
-        return c1Var.a instanceof ll0;
+        return c1Var.a instanceof ml0;
     }
 
     public final int E(Object obj) {
@@ -371,7 +371,7 @@ public final class bz extends kl0 {
                 k3Var.setHeight(AndroidUtilities.dp(8.0f));
                 return;
             } else {
-                int A = org.telegram.messenger.vl.A(82.0f, (int) Math.ceil(arrayList.size() / this.d), kzVar.h.getHeight());
+                int A = org.telegram.messenger.wl.A(82.0f, (int) Math.ceil(arrayList.size() / this.d), kzVar.h.getHeight());
                 k3Var.setHeight(A > 0 ? A : 1);
                 return;
             }
@@ -468,14 +468,14 @@ public final class bz extends kl0 {
         View view = null;
         switch (i10) {
             case 0:
-                view = new hg.e2(z11 ? 1 : 0, context, kzVar.Z1, z10 ? 1 : 0);
+                view = new gg.f2(z11 ? 1 : 0, context, kzVar.Z1, z10 ? 1 : 0);
                 break;
             case 1:
                 view = new org.telegram.ui.Cells.k3(context);
                 break;
             case 2:
                 org.telegram.ui.Cells.o8 o8Var = new org.telegram.ui.Cells.o8(this.c, false, false, kzVar.Z1, kzVar.i2);
-                o8Var.setOnIconClickListener(new ct(i11, this, o8Var));
+                o8Var.setOnIconClickListener(new dt(i11, this, o8Var));
                 view = o8Var;
                 break;
             case 3:
@@ -491,7 +491,7 @@ public final class bz extends kl0 {
                 textView2.setPadding(AndroidUtilities.dp(17.0f), 0, AndroidUtilities.dp(17.0f), 0);
                 textView2.setGravity(17);
                 org.telegram.messenger.w1.q(textView2, org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Sh, false), 1, 14.0f);
-                textView2.setBackground(org.telegram.ui.ActionBar.y5.f(new float[]{4.0f}, org.telegram.ui.ActionBar.j6.Oh));
+                textView2.setBackground(org.telegram.ui.ActionBar.z5.f(new float[]{4.0f}, org.telegram.ui.ActionBar.j6.Oh));
                 textView2.setText(LocaleController.getString(R.string.ChooseStickerSet).toUpperCase());
                 n8Var.addView(textView2, w7.x5.t(-2, 28, 51, 17, 10, 14, 8));
                 n8Var.setAddOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.zy
@@ -506,9 +506,9 @@ public final class bz extends kl0 {
                         switch (i12) {
                             case 0:
                                 kz kzVar2 = this.b.v;
-                                ly lyVar = kzVar2.t1;
-                                if (lyVar != null) {
-                                    lyVar.y(kzVar2.J1.id);
+                                ky kyVar = kzVar2.t1;
+                                if (kyVar != null) {
+                                    kyVar.y(kzVar2.J1.id);
                                     break;
                                 }
                                 break;
@@ -521,14 +521,14 @@ public final class bz extends kl0 {
                                     if (bzVar != null) {
                                         bzVar.t(1, 2);
                                     }
-                                    kzVar3.Z(false);
+                                    kzVar3.X(false);
                                     break;
                                 }
                                 break;
                             default:
-                                org.telegram.ui.ActionBar.n2 n2Var = this.b.v.Y1;
-                                if (n2Var instanceof org.telegram.ui.co) {
-                                    ((org.telegram.ui.co) n2Var).Y9();
+                                org.telegram.ui.ActionBar.o2 o2Var = this.b.v.Y1;
+                                if (o2Var instanceof org.telegram.ui.bo) {
+                                    ((org.telegram.ui.bo) o2Var).Y9();
                                     break;
                                 }
                                 break;
@@ -557,9 +557,9 @@ public final class bz extends kl0 {
                         switch (i13) {
                             case 0:
                                 kz kzVar2 = this.b.v;
-                                ly lyVar = kzVar2.t1;
-                                if (lyVar != null) {
-                                    lyVar.y(kzVar2.J1.id);
+                                ky kyVar = kzVar2.t1;
+                                if (kyVar != null) {
+                                    kyVar.y(kzVar2.J1.id);
                                     break;
                                 }
                                 break;
@@ -572,14 +572,14 @@ public final class bz extends kl0 {
                                     if (bzVar != null) {
                                         bzVar.t(1, 2);
                                     }
-                                    kzVar3.Z(false);
+                                    kzVar3.X(false);
                                     break;
                                 }
                                 break;
                             default:
-                                org.telegram.ui.ActionBar.n2 n2Var = this.b.v.Y1;
-                                if (n2Var instanceof org.telegram.ui.co) {
-                                    ((org.telegram.ui.co) n2Var).Y9();
+                                org.telegram.ui.ActionBar.o2 o2Var = this.b.v.Y1;
+                                if (o2Var instanceof org.telegram.ui.bo) {
+                                    ((org.telegram.ui.bo) o2Var).Y9();
                                     break;
                                 }
                                 break;
@@ -591,13 +591,13 @@ public final class bz extends kl0 {
             case 6:
                 iz izVar = new iz(kzVar, false);
                 kzVar.F0 = izVar;
-                bi.o0 o0Var = new bi.o0(kzVar, context, izVar);
-                o0Var.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(8.0f), 0);
-                o0Var.setClipToPadding(false);
-                o0Var.i(new bi.o(4));
-                o0Var.setOnItemClickListener(new k(this, 6));
-                o0Var.setLayoutParams(new s4.p0(-1, AndroidUtilities.dp(52.0f)));
-                view = o0Var;
+                ai.w0 w0Var = new ai.w0(kzVar, context, izVar);
+                w0Var.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(8.0f), 0);
+                w0Var.setClipToPadding(false);
+                w0Var.i(new ai.t(4));
+                w0Var.setOnItemClickListener(new j(this, 6));
+                w0Var.setLayoutParams(new s4.p0(-1, AndroidUtilities.dp(52.0f)));
+                view = w0Var;
                 break;
             case 7:
                 FrameLayout frameLayout = new FrameLayout(context);
@@ -606,7 +606,7 @@ public final class bz extends kl0 {
                 linearLayout.setGravity(17);
                 int dp = AndroidUtilities.dp(13.0f);
                 int i14 = org.telegram.ui.ActionBar.j6.Me;
-                linearLayout.setBackground(org.telegram.ui.ActionBar.j6.b0(dp, org.telegram.ui.ActionBar.j6.l1(0.12f, kzVar.A(i14))));
+                linearLayout.setBackground(org.telegram.ui.ActionBar.j6.b0(dp, org.telegram.ui.ActionBar.j6.l1(0.12f, kzVar.z(i14))));
                 w7.z5.b(linearLayout, 0.1f, 1.5f);
                 linearLayout.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.zy
                     public final /* synthetic */ bz b;
@@ -620,9 +620,9 @@ public final class bz extends kl0 {
                         switch (i11) {
                             case 0:
                                 kz kzVar2 = this.b.v;
-                                ly lyVar = kzVar2.t1;
-                                if (lyVar != null) {
-                                    lyVar.y(kzVar2.J1.id);
+                                ky kyVar = kzVar2.t1;
+                                if (kyVar != null) {
+                                    kyVar.y(kzVar2.J1.id);
                                     break;
                                 }
                                 break;
@@ -635,14 +635,14 @@ public final class bz extends kl0 {
                                     if (bzVar != null) {
                                         bzVar.t(1, 2);
                                     }
-                                    kzVar3.Z(false);
+                                    kzVar3.X(false);
                                     break;
                                 }
                                 break;
                             default:
-                                org.telegram.ui.ActionBar.n2 n2Var = this.b.v.Y1;
-                                if (n2Var instanceof org.telegram.ui.co) {
-                                    ((org.telegram.ui.co) n2Var).Y9();
+                                org.telegram.ui.ActionBar.o2 o2Var = this.b.v.Y1;
+                                if (o2Var instanceof org.telegram.ui.bo) {
+                                    ((org.telegram.ui.bo) o2Var).Y9();
                                     break;
                                 }
                                 break;
@@ -651,11 +651,11 @@ public final class bz extends kl0 {
                 });
                 ImageView imageView = new ImageView(context);
                 imageView.setImageResource(R.drawable.menu_sticker_add);
-                imageView.setColorFilter(new PorterDuffColorFilter(kzVar.A(i14), PorterDuff.Mode.SRC_IN));
+                imageView.setColorFilter(new PorterDuffColorFilter(kzVar.z(i14), PorterDuff.Mode.SRC_IN));
                 linearLayout.addView(imageView, w7.x5.t(24, 24, 17, 0, 0, 0, 0));
                 TextView textView3 = new TextView(context);
                 textView3.setGravity(17);
-                textView3.setTextColor(kzVar.A(i14));
+                textView3.setTextColor(kzVar.z(i14));
                 textView3.setTextSize(1, 11.0f);
                 textView3.setTypeface(AndroidUtilities.bold());
                 textView3.setText(LocaleController.getString(R.string.Create));
@@ -664,6 +664,6 @@ public final class bz extends kl0 {
                 view = frameLayout;
                 break;
         }
-        return new vk0(view);
+        return new wk0(view);
     }
 }

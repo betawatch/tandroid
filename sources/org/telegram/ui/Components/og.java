@@ -1,101 +1,45 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stories;
-
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public interface og {
-    void B0(int i10, int i11);
+public final /* synthetic */ class og implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ qg b;
+    public final /* synthetic */ ci.f4 c;
 
-    void C();
+    public /* synthetic */ og(qg qgVar, ci.f4 f4Var, int i10) {
+        this.a = i10;
+        this.b = qgVar;
+        this.c = f4Var;
+    }
 
-    void D0();
-
-    void G(CharSequence charSequence, boolean z10, int i10, int i11, long j3);
-
-    void G0();
-
-    TLRPC.TL_channels_sendAsPeers H();
-
-    void J(float f7, int i10);
-
-    void P0();
-
-    void U();
-
-    void V0(int i10);
-
-    void V1();
-
-    void W(boolean z10);
-
-    int W0();
-
-    void X1(int i10);
-
-    TL_stories.StoryItem Y0();
-
-    boolean a1(long j3);
-
-    void a2();
-
-    void b2(boolean z10);
-
-    void c2(int i10, int i11, int i12, long j3, long j10, boolean z10);
-
-    boolean d1();
-
-    void f1(CharSequence charSequence, boolean z10, boolean z11);
-
-    void g2();
-
-    void h();
-
-    void h1();
-
-    boolean i1();
-
-    void k();
-
-    void k1();
-
-    boolean l();
-
-    void l0();
-
-    void l1();
-
-    void m1();
-
-    void n1(View view, CharSequence charSequence, boolean z10);
-
-    void n2();
-
-    org.telegram.ui.sn o0();
-
-    int p();
-
-    void p1(CharSequence charSequence);
-
-    TLRPC.Peer q();
-
-    boolean q1();
-
-    void r0();
-
-    void r2();
-
-    void t1();
-
-    void v();
-
-    void x(float f7);
-
-    void x1();
-
-    void z(boolean z10);
-
-    boolean z0();
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                qg qgVar = this.b;
+                ci.f4 f4Var = this.c;
+                qgVar.removeView(f4Var);
+                if (qgVar.b == f4Var) {
+                    qgVar.b = null;
+                    break;
+                }
+                break;
+            case 1:
+                this.b.removeView(this.c);
+                break;
+            case 2:
+                this.b.removeView(this.c);
+                break;
+            default:
+                qg qgVar2 = this.b;
+                ci.f4 f4Var2 = this.c;
+                qgVar2.removeView(f4Var2);
+                if (qgVar2.a == f4Var2) {
+                    qgVar2.a = null;
+                    break;
+                }
+                break;
+        }
+    }
 }

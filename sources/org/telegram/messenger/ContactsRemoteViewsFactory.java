@@ -16,7 +16,7 @@ import android.widget.RemoteViewsService;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 class ContactsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
     private AccountInstance accountInstance;
@@ -68,7 +68,7 @@ class ContactsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactor
         TLRPC.FileLocation fileLocation;
         Bitmap decodeFile;
         int i11;
-        org.telegram.ui.Components.i9 i9Var;
+        org.telegram.ui.Components.f9 f9Var;
         TLRPC.UserProfilePhoto userProfilePhoto;
         if (this.deleted) {
             RemoteViews remoteViews = new RemoteViews(this.mContext.getPackageName(), R.layout.widget_deleted);
@@ -137,19 +137,19 @@ class ContactsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactor
                 Canvas canvas = new Canvas(createBitmap);
                 if (decodeFile == null) {
                     if (user != null) {
-                        i9Var = new org.telegram.ui.Components.i9(0, user);
+                        f9Var = new org.telegram.ui.Components.f9(0, user);
                         if (UserObject.isReplyUser(user)) {
-                            i9Var.g(12);
+                            f9Var.g(12);
                         } else if (UserObject.isUserSelf(user)) {
-                            i9Var.g(1);
+                            f9Var.g(1);
                         }
                     } else {
-                        org.telegram.ui.Components.i9 i9Var2 = new org.telegram.ui.Components.i9((org.telegram.ui.ActionBar.f6) null);
-                        i9Var2.k(this.accountInstance.getCurrentAccount(), chat);
-                        i9Var = i9Var2;
+                        org.telegram.ui.Components.f9 f9Var2 = new org.telegram.ui.Components.f9((org.telegram.ui.ActionBar.f6) null);
+                        f9Var2.k(this.accountInstance.getCurrentAccount(), chat);
+                        f9Var = f9Var2;
                     }
-                    i9Var.setBounds(0, 0, dp, dp);
-                    i9Var.draw(canvas);
+                    f9Var.setBounds(0, 0, dp, dp);
+                    f9Var.draw(canvas);
                 } else {
                     Shader.TileMode tileMode = Shader.TileMode.CLAMP;
                     BitmapShader bitmapShader = new BitmapShader(decodeFile, tileMode, tileMode);

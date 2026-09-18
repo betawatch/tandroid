@@ -1,174 +1,121 @@
 package hg;
 
-import j$.util.Objects;
-import java.util.HashMap;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.support.LongSparseIntArray;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_chatlists;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Matrix;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.ImageView;
+import android.widget.ToggleButton;
+import org.telegram.messenger.voip.VoIPService;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.ju;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class k extends pg.a {
-    public final TLRPC.Dialog c;
-    public final TLRPC.RecentMeUrl d;
-    public final TLRPC.TL_contact e;
-    public final boolean f;
-    public final boolean g;
-    public final boolean h;
-    public final TL_chatlists.TL_chatlists_chatlistUpdates i;
-    public final int j;
-    public final int k;
-    public final String l;
-    public final TLRPC.Chat m;
-    public final TLRPC.User n;
+public final class k extends ImageView {
+    public final /* synthetic */ int a;
 
-    public k(m mVar, TL_chatlists.TL_chatlists_chatlistUpdates tL_chatlists_chatlistUpdates) {
-        super(17, true);
-        this.i = tL_chatlists_chatlistUpdates;
-        int i10 = mVar.W;
-        mVar.W = i10 + 1;
-        this.k = i10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ k(Context context, int i10) {
+        super(context);
+        this.a = i10;
     }
 
-    public final int hashCode() {
-        return Objects.hash(this.c, this.m, this.d, this.e, this.l);
-    }
-
-    public k(m mVar, String str) {
-        super(22, false);
-        HashMap hashMap = mVar.Y;
-        Integer num = (Integer) hashMap.get(str);
-        if (num != null) {
-            this.k = num.intValue();
-        } else {
-            int i10 = mVar.W;
-            mVar.W = i10 + 1;
-            this.k = i10;
-            hashMap.put(str, Integer.valueOf(i10));
+    @Override // android.view.View
+    public void dispatchDraw(Canvas canvas) {
+        switch (this.a) {
+            case 2:
+                super.dispatchDraw(canvas);
+                break;
+            default:
+                super.dispatchDraw(canvas);
+                break;
         }
-        this.l = str;
     }
 
-    public k(m mVar, TLRPC.User user) {
-        super(23, false);
-        this.n = user;
-        long j3 = user.id;
-        LongSparseIntArray longSparseIntArray = mVar.X;
-        int i10 = longSparseIntArray.get(j3, -1);
-        if (i10 >= 0) {
-            this.k = i10;
-            return;
+    @Override // android.view.View
+    public boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        switch (this.a) {
+            case 1:
+                if (getAlpha() < 0.5f) {
+                    return false;
+                }
+                return super.dispatchTouchEvent(motionEvent);
+            default:
+                return super.dispatchTouchEvent(motionEvent);
         }
-        int i11 = mVar.W;
-        mVar.W = i11 + 1;
-        this.k = i11;
-        longSparseIntArray.put(user.id, i11);
     }
 
-    public k(m mVar, TLRPC.Chat chat) {
-        super(23, false);
-        this.m = chat;
-        long j3 = chat.id;
-        LongSparseIntArray longSparseIntArray = mVar.X;
-        int i10 = longSparseIntArray.get(-j3, -1);
-        if (i10 >= 0) {
-            this.k = i10;
-            return;
+    @Override // android.widget.ImageView, android.view.View
+    public void onDraw(Canvas canvas) {
+        switch (this.a) {
+            case 4:
+                super.onDraw(canvas);
+                invalidate();
+                break;
+            default:
+                super.onDraw(canvas);
+                break;
         }
-        int i11 = mVar.W;
-        mVar.W = i11 + 1;
-        this.k = i11;
-        longSparseIntArray.put(-chat.id, i11);
+    }
+
+    @Override // android.view.View
+    public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        switch (this.a) {
+            case 5:
+                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+                accessibilityNodeInfo.setClassName(ToggleButton.class.getName());
+                accessibilityNodeInfo.setCheckable(true);
+                VoIPService sharedInstance = VoIPService.getSharedInstance();
+                if (sharedInstance != null) {
+                    accessibilityNodeInfo.setChecked(sharedInstance.isSpeakerphoneOn());
+                    break;
+                }
+                break;
+            default:
+                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+                break;
+        }
+    }
+
+    @Override // android.widget.ImageView, android.view.View
+    public void onMeasure(int i10, int i11) {
+        float f7;
+        float f10;
+        switch (this.a) {
+            case 0:
+                super.onMeasure(i10, i11);
+                Matrix imageMatrix = getImageMatrix();
+                int measuredWidth = (getMeasuredWidth() - getPaddingLeft()) - getPaddingRight();
+                int measuredHeight = (getMeasuredHeight() - getPaddingTop()) - getPaddingBottom();
+                int intrinsicWidth = getDrawable().getIntrinsicWidth();
+                int intrinsicHeight = getDrawable().getIntrinsicHeight();
+                if (intrinsicWidth * measuredHeight > intrinsicHeight * measuredWidth) {
+                    f7 = measuredHeight;
+                    f10 = intrinsicHeight;
+                } else {
+                    f7 = measuredWidth;
+                    f10 = intrinsicWidth;
+                }
+                float f11 = f7 / f10;
+                imageMatrix.setScale(f11, f11);
+                setImageMatrix(imageMatrix);
+                break;
+            case 3:
+                int size = View.MeasureSpec.getSize(i10);
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30));
+                break;
+            default:
+                super.onMeasure(i10, i11);
+                break;
+        }
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public k(m mVar, int i10, TLRPC.Dialog dialog) {
-        super(i10, true);
-        LongSparseIntArray longSparseIntArray = mVar.X;
-        this.c = dialog;
-        if (dialog != null) {
-            int i11 = longSparseIntArray.get(dialog.id, -1);
-            if (i11 >= 0) {
-                this.k = i11;
-            } else {
-                int i12 = mVar.W;
-                mVar.W = i12 + 1;
-                this.k = i12;
-                longSparseIntArray.put(dialog.id, i12);
-            }
-        } else if (i10 == 19) {
-            this.k = 5;
-        } else {
-            int i13 = mVar.W;
-            mVar.W = i13 + 1;
-            this.k = i13;
-        }
-        if (dialog != null) {
-            int i14 = mVar.h;
-            int i15 = mVar.F;
-            if (i14 != 7 && i14 != 8) {
-                this.g = dialog.pinned;
-            } else {
-                MessagesController.DialogFilter dialogFilter = MessagesController.getInstance(i15).selectedDialogFilter[mVar.h == 8 ? (char) 1 : (char) 0];
-                this.g = dialogFilter != null && dialogFilter.pinnedDialogs.indexOfKey(dialog.id) >= 0;
-            }
-            this.h = dialog.isFolder;
-            this.f = MessagesController.getInstance(i15).isForum(dialog.id);
-        }
-    }
-
-    public k(m mVar, TLRPC.RecentMeUrl recentMeUrl) {
-        super(4, true);
-        this.d = recentMeUrl;
-        int i10 = mVar.W;
-        mVar.W = i10 + 1;
-        this.k = i10;
-    }
-
-    public k(m mVar, int i10) {
-        super(i10, true);
-        this.j = i10;
-        if (i10 == 10) {
-            this.k = 1;
-        } else {
-            if (i10 == 19) {
-                this.k = 5;
-                return;
-            }
-            int i11 = mVar.W;
-            mVar.W = i11 + 1;
-            this.k = i11;
-        }
-    }
-
-    public k(m mVar, int i10, int i11) {
-        super(5, true);
-        this.j = i10;
-        int i12 = mVar.W;
-        mVar.W = i12 + 1;
-        this.k = i12;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public k(m mVar, TLRPC.TL_contact tL_contact) {
-        super(6, true);
-        LongSparseIntArray longSparseIntArray = mVar.X;
-        this.e = tL_contact;
-        if (tL_contact != null) {
-            int i10 = longSparseIntArray.get(tL_contact.user_id, -1);
-            if (i10 > 0) {
-                this.k = i10;
-                return;
-            }
-            int i11 = mVar.W;
-            mVar.W = i11 + 1;
-            this.k = i11;
-            longSparseIntArray.put(tL_contact.user_id, i11);
-            return;
-        }
-        int i12 = mVar.W;
-        mVar.W = i12 + 1;
-        this.k = i12;
+    public k(ju juVar, Context context) {
+        super(context);
+        this.a = 2;
     }
 }

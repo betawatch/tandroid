@@ -1,21 +1,50 @@
 package bi;
 
-import android.content.Context;
-import org.telegram.messenger.Utilities;
+import ai.o6;
+import ai.y1;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import org.telegram.ui.ActionBar.o2;
+import org.telegram.ui.Components.ll0;
+import org.telegram.ui.Components.ml0;
+import org.telegram.ui.Components.x51;
+import org.telegram.ui.Components.za;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes4.dex */
-public final class y extends zh.k8 {
-    public final /* synthetic */ Utilities.Callback[] m0;
+public final class y extends za {
+    public final int X;
+    public final CharSequence Y;
+    public x51 Z;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public y(Context context, b bVar, Utilities.Callback[] callbackArr) {
-        super(context, bVar);
-        this.m0 = callbackArr;
+    public y(o2 o2Var, String str, y1 y1Var) {
+        super(o2Var, true, false, o2Var.getResourceProvider());
+        new FrameLayout(getContext());
+        new ImageView(getContext());
+        this.X = o2Var.getCurrentAccount();
+        this.Y = str;
+        N();
+        this.v = 0.6f;
+        this.y = true;
+        this.E = true;
+        fixNavigationBar();
+        K();
+        ml0 ml0Var = this.d;
+        int i10 = this.backgroundPaddingLeft;
+        ml0Var.setPadding(i10, 0, i10, 0);
+        this.d.setOnItemClickListener(new o6(1, this, y1Var));
     }
 
-    @Override // zh.k8
-    public final void e(int i10) {
-        this.m0[0].run(Integer.valueOf(i10));
+    @Override // org.telegram.ui.Components.za
+    public final ll0 v(ml0 ml0Var) {
+        x51 x51Var = new x51(ml0Var, getContext(), this.X, 0, false, new v(this, 0), this.resourcesProvider);
+        this.Z = x51Var;
+        x51Var.r = false;
+        return x51Var;
+    }
+
+    @Override // org.telegram.ui.Components.za
+    public final CharSequence y() {
+        return this.Y;
     }
 }

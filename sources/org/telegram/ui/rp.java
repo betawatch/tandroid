@@ -1,14 +1,25 @@
 package org.telegram.ui;
 
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.tgnet.TLObject;
-
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class rp extends FrameLayout {
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
+public final /* synthetic */ class rp implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ sp b;
+
+    public /* synthetic */ rp(sp spVar, int i10) {
+        this.a = i10;
+        this.b = spVar;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.x.d.P = false;
+                break;
+            default:
+                this.b.x.d.P = false;
+                break;
+        }
     }
 }

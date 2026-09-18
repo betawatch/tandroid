@@ -1,362 +1,100 @@
 package hg;
 
-import android.content.SharedPreferences;
-import android.util.Pair;
-import android.view.KeyEvent;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.text.TextUtils;
 import android.view.View;
-import java.util.ArrayList;
-import java.util.HashMap;
-import ji.a6;
-import ji.d3;
-import ji.d6;
-import ji.f6;
-import ji.g6;
-import ji.i3;
-import ji.i6;
-import ji.s5;
-import ji.v3;
-import org.telegram.messenger.FileLog;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.video.VideoAds;
-import org.telegram.messenger.video.VideoPlayerHolderBase;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
-import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.n70;
-import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.r41;
-import org.telegram.ui.Components.yc;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.ActionBar.k5;
+import w7.x5;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class t implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
+public final class t extends FrameLayout {
+    public final k5 a;
+    public final vh.o b;
+    public final k5 c;
+    public final f6 d;
+    public boolean e;
+    public TL_account.TL_businessChatLink f;
 
-    public /* synthetic */ t(Object obj, Object obj2, Object obj3, int i10) {
-        this.a = i10;
-        this.b = obj;
-        this.c = obj2;
-        this.d = obj3;
+    public t(Context context, f6 f6Var) {
+        super(context);
+        this.d = f6Var;
+        setWillNotDraw(false);
+        ImageView imageView = new ImageView(context);
+        imageView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
+        imageView.setImageResource(R.drawable.msg_limit_links);
+        imageView.setPadding(AndroidUtilities.dp(9.0f), AndroidUtilities.dp(9.0f), AndroidUtilities.dp(9.0f), AndroidUtilities.dp(9.0f));
+        imageView.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
+        imageView.setBackground(j6.K(AndroidUtilities.dp(36.0f), j6.w0(null, j6.Oh, false)));
+        imageView.setOnClickListener(new ai.v0(this, 25));
+        addView(imageView, x5.i(36.0f, 36.0f, 8388627, 14.0f, 0.0f, 14.0f, 0.0f));
+        k5 k5Var = new k5(context);
+        this.a = k5Var;
+        k5Var.setTextSize(15);
+        k5Var.setTextColor(j6.w0(null, j6.G6, false));
+        k5Var.setGravity(LocaleController.isRTL ? 5 : 3);
+        addView(k5Var, x5.i(-1.0f, 20.0f, 55, 64.0f, 10.0f, 14.0f, 0.0f));
+        k5 k5Var2 = new k5(context);
+        this.c = k5Var2;
+        k5Var2.setTextSize(14);
+        int i10 = j6.z6;
+        k5Var2.setTextColor(j6.w0(null, i10, false));
+        k5Var2.setGravity(LocaleController.isRTL ? 3 : 5);
+        addView(k5Var2, x5.i(-1.0f, 18.0f, 55, 64.0f, 10.66f, 14.0f, 0.0f));
+        vh.o oVar = new vh.o(context);
+        this.b = oVar;
+        oVar.setTextSize(1, 13.0f);
+        oVar.setMaxLines(1);
+        oVar.setEllipsize(TextUtils.TruncateAt.END);
+        oVar.setTextColor(j6.v0(i10, f6Var));
+        oVar.setGravity(LocaleController.isRTL ? 5 : 3);
+        oVar.f = false;
+        oVar.setUseAlphaForEmoji(false);
+        NotificationCenter.listenEmojiLoading(oVar);
+        addView(oVar, x5.i(-1.0f, 20.0f, 87, 64.0f, 0.0f, 14.0f, 6.0f));
     }
 
-    /* JADX WARN: Type inference failed for: r6v0, types: [java.lang.Object, n2.k] */
-    @Override // java.lang.Runnable
-    public final void run() {
-        ArrayList arrayList;
-        int i10 = this.a;
-        Object obj = this.d;
-        ?? r62 = this.c;
-        Object obj2 = this.b;
-        switch (i10) {
-            case 0:
-                ((g0) obj2).b((a0.i) obj, (ArrayList) r62);
-                break;
-            case 1:
-                k1 k1Var = (k1) obj2;
-                String str = (String) r62;
-                TLObject tLObject = (TLObject) obj;
-                k1Var.E0 = 0;
-                if (str.equals(k1Var.D0) && (tLObject instanceof TLRPC.TL_messages_stickers)) {
-                    TLRPC.TL_messages_stickers tL_messages_stickers = (TLRPC.TL_messages_stickers) tLObject;
-                    ArrayList arrayList2 = k1Var.A0;
-                    int size = arrayList2 != null ? arrayList2.size() : 0;
-                    k1Var.F("sticker_search_".concat(str), tL_messages_stickers.stickers);
-                    ArrayList arrayList3 = k1Var.A0;
-                    int size2 = arrayList3 != null ? arrayList3.size() : 0;
-                    if (!k1Var.o0 && (arrayList = k1Var.A0) != null && !arrayList.isEmpty()) {
-                        k1Var.H();
-                        k1Var.V.a(k1Var.K() > 0);
-                        k1Var.o0 = true;
-                    }
-                    if (size != size2) {
-                        k1Var.l();
-                        break;
-                    }
-                }
-                break;
-            case 2:
-                k1 k1Var2 = (k1) obj2;
-                k1Var2.p0 = null;
-                k1Var2.Y((a0.i) obj, (ArrayList) r62, true);
-                break;
-            case 3:
-                b2 b2Var = (b2) obj2;
-                ArrayList arrayList4 = (ArrayList) r62;
-                b2Var.q = arrayList4;
-                b2Var.r = (HashMap) obj;
-                b2Var.s = true;
-                b2Var.a.Y(arrayList4);
-                break;
-            case 4:
-                d2 d2Var = (d2) obj2;
-                TLRPC.TL_messages_foundStickerSets tL_messages_foundStickerSets = (TLRPC.TL_messages_foundStickerSets) obj;
-                String str2 = ((TLRPC.TL_messages_searchStickerSets) r62).q;
-                f2 f2Var = d2Var.a;
-                String str3 = f2Var.R;
-                r41 r41Var = f2Var.e;
-                if (str2.equals(str3)) {
-                    d2Var.a();
-                    r41Var.b.h.getProgressDrawable().e = false;
-                    f2Var.N = 0;
-                    r41Var.b(true);
-                    f2Var.E.addAll(tL_messages_foundStickerSets.sets);
-                    f2Var.l();
-                    break;
-                }
-                break;
-            case 5:
-                u2.f0 f0Var = (u2.f0) obj;
-                j2.f fVar = ((i2.v0) obj2).c;
-                e9.a1 i11 = ((e9.f0) r62).i();
-                com.google.firebase.messaging.n nVar = fVar.d;
-                b2.b1 b1Var = fVar.h;
-                b1Var.getClass();
-                nVar.getClass();
-                nVar.b = e9.i0.v(i11);
-                if (!i11.isEmpty()) {
-                    nVar.e = (u2.f0) i11.get(0);
-                    f0Var.getClass();
-                    nVar.f = f0Var;
-                }
-                if (((u2.f0) nVar.d) == null) {
-                    nVar.d = com.google.firebase.messaging.n.p(b1Var, (e9.i0) nVar.b, (u2.f0) nVar.e, (b2.h1) nVar.a);
-                }
-                nVar.H(b1Var.w0());
-                break;
-            case 6:
-                Pair pair = (Pair) r62;
-                ((i2.c1) obj2).b.h.b(((Integer) pair.first).intValue(), (u2.f0) pair.second, (Exception) obj);
-                break;
-            case 7:
-                ig.c cVar = (ig.c) obj2;
-                TLRPC.TL_error tL_error = (TLRPC.TL_error) r62;
-                TLObject tLObject2 = (TLObject) obj;
-                if (tL_error != null) {
-                    cVar.a.a(0.0f);
-                    yc.b0(tL_error);
-                    break;
-                } else if (tLObject2 instanceof TLRPC.TL_boolFalse) {
-                    cVar.a.a(0.0f);
-                    org.telegram.messenger.w1.p(R.string.UnknownError, yc.a0(cVar), null);
-                    break;
-                } else {
-                    cVar.finishFragment();
-                    break;
-                }
-            case 8:
-                ig.m mVar = (ig.m) obj2;
-                TLRPC.TL_error tL_error2 = (TLRPC.TL_error) r62;
-                TLObject tLObject3 = (TLObject) obj;
-                if (tL_error2 != null) {
-                    mVar.e.a(0.0f);
-                    yc.b0(tL_error2);
-                    break;
-                } else if (tLObject3 instanceof TLRPC.TL_boolFalse) {
-                    mVar.e.a(0.0f);
-                    org.telegram.messenger.w1.p(R.string.UnknownError, yc.a0(mVar), null);
-                    break;
-                } else {
-                    if (mVar.E != null) {
-                        mVar.getMessagesController().loadFullUser(mVar.getUserConfig().getCurrentUser(), 0, true);
-                    }
-                    mVar.finishFragment();
-                    break;
-                }
-            case 9:
-                ig.y yVar = (ig.y) obj2;
-                TL_account.TL_businessChatLink tL_businessChatLink = (TL_account.TL_businessChatLink) obj;
-                ArrayList arrayList5 = yVar.b;
-                if (((TLObject) r62) instanceof TLRPC.TL_boolTrue) {
-                    if (arrayList5.contains(tL_businessChatLink)) {
-                        arrayList5.remove(tL_businessChatLink);
-                        NotificationCenter.getInstance(yVar.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.businessLinksUpdated, new Object[0]);
-                    }
-                    yVar.f();
-                    break;
-                } else {
-                    FileLog.e(new RuntimeException("Unexpected response from server!"));
-                    break;
-                }
-            case 10:
-                ig.y yVar2 = (ig.y) obj2;
-                TL_account.deleteBusinessChatLink deletebusinesschatlink = new TL_account.deleteBusinessChatLink();
-                deletebusinesschatlink.slug = (String) r62;
-                ConnectionsManager.getInstance(yVar2.a).sendRequest(deletebusinesschatlink, new bi.m1(13, yVar2, (TL_account.TL_businessChatLink) obj));
-                break;
-            case 11:
-                ig.k0.P((ig.k0) obj2, (TL_account.TL_connectedBot) r62, (TL_account.TL_businessBotRecipients) obj);
-                break;
-            case 12:
-                ig.w0 w0Var = (ig.w0) obj2;
-                TLRPC.TL_error tL_error3 = (TLRPC.TL_error) r62;
-                TLObject tLObject4 = (TLObject) obj;
-                if (tL_error3 != null) {
-                    w0Var.a.a(0.0f);
-                    yc.b0(tL_error3);
-                    break;
-                } else if (tLObject4 instanceof TLRPC.TL_boolFalse) {
-                    w0Var.a.a(0.0f);
-                    org.telegram.messenger.w1.p(R.string.UnknownError, yc.a0(w0Var), null);
-                    break;
-                } else {
-                    w0Var.finishFragment();
-                    break;
-                }
-            case 13:
-                ig.g1.U((ig.g1) obj2, (TLRPC.TL_error) r62, (TLObject) obj);
-                break;
-            case 14:
-                ig.f2 f2Var2 = (ig.f2) obj2;
-                TLObject tLObject5 = (TLObject) r62;
-                SharedPreferences sharedPreferences = (SharedPreferences) obj;
-                ArrayList arrayList6 = f2Var2.d;
-                if (tLObject5 instanceof TLRPC.TL_help_timezonesList) {
-                    arrayList6.clear();
-                    arrayList6.addAll(((TLRPC.TL_help_timezonesList) tLObject5).timezones);
-                    SerializedData serializedData = new SerializedData(tLObject5.getObjectSize());
-                    tLObject5.serializeToStream(serializedData);
-                    sharedPreferences.edit().putString("timezones", Utilities.bytesToHex(serializedData.toByteArray())).apply();
-                    NotificationCenter.getInstance(f2Var2.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.timezonesUpdated, new Object[0]);
-                }
-                f2Var2.c = true;
-                f2Var2.b = false;
-                break;
-            case 15:
-                v3 v3Var = (v3) obj2;
-                s5 s5Var = (s5) obj;
-                if (v3Var.j4 == ((n70) r62)) {
-                    v3Var.j4 = null;
-                    if (v3Var.C3 && v3Var.i4 == s5Var && !s5Var.H.isEmpty()) {
-                        v3Var.L2();
-                        break;
-                    }
-                }
-                break;
-            case 16:
-                v3 v3Var2 = (v3) obj2;
-                ji.a aVar = (ji.a) r62;
-                ji.a aVar2 = (ji.a) obj;
-                ArrayList arrayList7 = v3Var2.p4;
-                i3 i3Var = v3Var2.n3;
-                if (i3Var != null && aVar != null && aVar2 != null) {
-                    int indexOf = arrayList7.indexOf(aVar);
-                    int indexOf2 = arrayList7.indexOf(aVar2);
-                    if (indexOf >= 0 && indexOf2 >= 0) {
-                        for (int i12 = 0; i12 < arrayList7.size(); i12++) {
-                            ji.a aVar3 = (ji.a) arrayList7.get(i12);
-                            long j3 = aVar3.t;
-                            if (j3 != 0) {
-                                i3Var.Y(i12, i6.l((TL_iv.RichText) v3Var2.m3.get(Long.valueOf(j3))));
-                            } else {
-                                i3Var.Y(i12, g6.z(aVar3.b));
-                            }
-                        }
-                        i3Var.j0(Math.min(indexOf, indexOf2), Math.max(indexOf, indexOf2));
-                        break;
-                    }
-                }
-                break;
-            case 17:
-                ((v3) obj2).Y4((String) obj, (ji.a) r62);
-                break;
-            case 18:
-                ji.a aVar4 = (ji.a) r62;
-                f6 f6Var = (f6) obj;
-                d6 d6Var = ((a6) obj2).a.y;
-                if (d6Var != null) {
-                    ((d3) d6Var).d(aVar4, f6Var.a, f6Var.b, f6Var.c, f6Var.d, f6Var.e);
-                    break;
-                }
-                break;
-            case 19:
-                k2.j jVar = (k2.j) ((n4.y) obj2).c;
-                String str4 = e2.d0.a;
-                j2.f fVar2 = ((i2.c0) jVar).a.s;
-                j2.a p5 = fVar2.p();
-                fVar2.q(p5, 1009, new j2.c(p5, (b2.s) r62, (i2.i) obj, 19));
-                break;
-            case 20:
-                ki.o oVar = (ki.o) obj2;
-                ArrayList arrayList8 = (ArrayList) r62;
-                ArrayList arrayList9 = (ArrayList) obj;
-                oVar.getClass();
-                for (int i13 = 0; i13 < arrayList8.size(); i13++) {
-                    ((View) arrayList8.get(i13)).setVisibility(0);
-                }
-                if (oVar.A.removeAll(arrayList9)) {
-                    for (int i14 = 0; i14 < arrayList9.size(); i14++) {
-                        oVar.d((s4.c1) arrayList9.get(i14));
-                    }
-                    oVar.G();
-                }
-                oVar.K.removeAll(arrayList8);
-                break;
-            case 21:
-                ki.o oVar2 = (ki.o) obj2;
-                View view = (View) r62;
-                s4.c1 c1Var = (s4.c1) obj;
-                oVar2.getClass();
-                view.setVisibility(0);
-                if (oVar2.A.remove(c1Var)) {
-                    oVar2.d(c1Var);
-                    oVar2.G();
-                }
-                oVar2.K.remove(view);
-                break;
-            case 22:
-                m4.w wVar = (m4.w) obj2;
-                m4.r rVar = (m4.r) r62;
-                KeyEvent keyEvent = (KeyEvent) obj;
-                m4.a0 a0Var = wVar.b;
-                if (a0Var.i(rVar)) {
-                    a0Var.b(keyEvent, false, false);
-                } else {
-                    m4.k0 k0Var = a0Var.h;
-                    n4.a0 a0Var2 = rVar.a;
-                    a0Var2.getClass();
-                    k0Var.getClass();
-                    k0Var.H(1, new m4.b0(k0Var, 7), a0Var2, true);
-                }
-                wVar.a = null;
-                break;
-            case 23:
-                m4.a0 a0Var3 = (m4.a0) obj2;
-                m4.t0 t0Var = (m4.t0) r62;
-                m4.s sVar = (m4.s) obj;
-                if (!a0Var3.j()) {
-                    m4.j1 j1Var = a0Var3.t;
-                    t0Var.getClass();
-                    w7.t.b(j1Var, sVar);
-                    break;
-                }
-                break;
-            case 24:
-                n2.j jVar2 = (n2.j) obj2;
-                r62.b(jVar2.a, jVar2.b, (Exception) obj);
-                break;
-            case 25:
-                ((VideoAds) obj2).lambda$show$3((qc) r62, (TLRPC.TL_sponsoredMessage) obj);
-                break;
-            case 26:
-                ((VideoAds) obj2).lambda$show$5((qc) r62, (boolean[]) obj);
-                break;
-            case 27:
-                ((VideoPlayerHolderBase) obj2).lambda$release$3((TLRPC.Document) r62, (Runnable) obj);
-                break;
-            case 28:
-                ((Utilities.Callback2) obj2).run((TLObject) r62, (TLRPC.TL_error) obj);
-                break;
-            default:
-                ((Utilities.Callback2) obj2).run((TLRPC.Updates) r62, (TLRPC.TL_error) obj);
-                break;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        if (this.e) {
+            Paint T0 = j6.T0("paintDivider", this.d);
+            if (T0 == null) {
+                T0 = j6.k0;
+            }
+            canvas.drawRect(AndroidUtilities.dp(LocaleController.isRTL ? 0.0f : 64.0f), getMeasuredHeight() - 1, getWidth() - AndroidUtilities.dp(LocaleController.isRTL ? 64.0f : 0.0f), getMeasuredHeight(), T0);
         }
+    }
+
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        boolean z11 = LocaleController.isRTL;
+        k5 k5Var = this.c;
+        k5 k5Var2 = this.a;
+        if (z11) {
+            k5Var2.setPadding(k5Var.getTextWidth(), 0, 0, 0);
+        } else {
+            k5Var2.setPadding(0, 0, k5Var.getTextWidth(), 0);
+        }
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(56.0f) + (this.e ? 1 : 0), TLObject.FLAG_30));
     }
 }

@@ -1,45 +1,25 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class zg implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ NotificationsController b;
-    public final /* synthetic */ int c;
+import android.app.NotificationChannel;
+import org.telegram.tgnet.InputSerializedData;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.Vector;
 
-    public /* synthetic */ zg(NotificationsController notificationsController, int i10, int i11) {
-        this.a = i11;
-        this.b = notificationsController;
-        this.c = i10;
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class zg implements org.telegram.ui.ActionBar.b2, Vector.TLDeserializer {
+    public static /* bridge */ /* synthetic */ NotificationChannel a(Object obj) {
+        return (NotificationChannel) obj;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.lambda$processDialogsUpdateRead$29(this.c);
-                break;
-            case 1:
-                this.b.lambda$removeDeletedHisoryFromNotifications$12(this.c);
-                break;
-            case 2:
-                this.b.lambda$processSeenStoryReactions$14(this.c);
-                break;
-            case 3:
-                this.b.lambda$processNewMessages$24(this.c);
-                break;
-            case 4:
-                this.b.lambda$processNewMessages$26(this.c);
-                break;
-            case 5:
-                this.b.lambda$setLastOnlineFromOtherDevice$5(this.c);
-                break;
-            case 6:
-                this.b.lambda$processLoadedUnreadMessages$32(this.c);
-                break;
-            default:
-                this.b.lambda$removeDeletedMessagesFromNotifications$9(this.c);
-                break;
-        }
+    @Override // org.telegram.tgnet.Vector.TLDeserializer
+    public TLObject deserialize(InputSerializedData inputSerializedData, int i10, boolean z10) {
+        return TLRPC.PollAnswer.TLdeserialize(inputSerializedData, i10, z10);
+    }
+
+    @Override // org.telegram.ui.ActionBar.b2
+    public void f(org.telegram.ui.ActionBar.c2 c2Var, int i10) {
+        SharedConfig.lambda$checkSdCard$1(c2Var, i10);
     }
 }

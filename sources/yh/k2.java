@@ -1,18 +1,46 @@
 package yh;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.q5;
+import android.content.Context;
+import android.view.MotionEvent;
+import android.widget.LinearLayout;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
-/* loaded from: classes.dex */
-public final class k2 extends q5 {
-    @Override // org.telegram.ui.Components.q5, android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return AndroidUtilities.dp(24.0f);
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* loaded from: classes4.dex */
+public final class k2 extends LinearLayout {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ a4 b;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ k2(a4 a4Var, Context context, int i10) {
+        super(context);
+        this.a = i10;
+        this.b = a4Var;
     }
 
-    @Override // org.telegram.ui.Components.q5, android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return AndroidUtilities.dp(24.0f);
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        switch (this.a) {
+            case 0:
+                if (this.b.Y0.c(0)) {
+                    break;
+                }
+                break;
+            case 1:
+                if (this.b.Y0.c(1)) {
+                    break;
+                }
+                break;
+            case 2:
+                if (this.b.Y0.c(2)) {
+                    break;
+                }
+                break;
+            default:
+                if (this.b.Y0.c(3)) {
+                    break;
+                }
+                break;
+        }
+        return super.dispatchTouchEvent(motionEvent);
     }
 }

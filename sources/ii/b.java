@@ -1,131 +1,155 @@
 package ii;
 
-import android.content.Context;
 import android.view.View;
-import android.widget.FrameLayout;
-import bi.d;
-import bi.x;
-import di.y0;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserObject;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Cells.h6;
-import org.telegram.ui.Cells.i6;
-import org.telegram.ui.Components.bb;
-import org.telegram.ui.Components.e5;
-import org.telegram.ui.Components.kl0;
-import org.telegram.ui.Components.ll0;
-import org.telegram.ui.Components.v51;
-import s4.p0;
-import w7.x5;
+import android.widget.LinearLayout;
+import java.util.ArrayList;
+import org.telegram.tgnet.tl.TL_iv;
+import org.telegram.ui.Components.n70;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes4.dex */
-public final class b extends bb {
-    public v51 X;
-    public boolean Y;
-    public final FrameLayout Z;
-    public final boolean a0;
-    public final boolean b0;
-    public int c0;
+public final /* synthetic */ class b implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ w3 b;
 
-    public b(Context context, TLRPC.Chat chat, long j3, Utilities.Callback callback) {
-        super(context, (f6) null, false);
-        int i10;
-        TLRPC.User user = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(j3));
-        TLRPC.Chat chat2 = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-j3));
-        this.b0 = UserObject.isBot(user);
-        this.a0 = ChatObject.isChannelAndNotMegaGroup(chat2);
-        this.L = false;
-        this.K = AndroidUtilities.dp(12.0f);
-        this.e.setTitle(y());
-        setBackgroundColor(j6.v0(j6.a7, this.resourcesProvider));
-        FrameLayout frameLayout = new FrameLayout(context);
-        this.Z = frameLayout;
-        frameLayout.setPadding(0, AndroidUtilities.dp(3.0f), 0, AndroidUtilities.dp(3.0f));
-        frameLayout.setLayoutParams(new p0(-1, -2));
-        h6 h6Var = new h6(context, null);
-        if (chat2 != null) {
-            i10 = -1;
-            h6Var.t(chat2, null, chat2.title, LocaleController.formatPluralStringSpaced("Members", chat2.participants_count), false, false);
-        } else {
-            i10 = -1;
-            if (user != null) {
-                h6Var.t(user, null, DialogObject.getName(user), LocaleController.getString(R.string.Bot), false, false);
-            }
-        }
-        frameLayout.addView(h6Var, x5.c(-2.0f, i10));
-        ll0 ll0Var = this.d;
-        int i11 = this.backgroundPaddingLeft;
-        ll0Var.setPadding(i11, 0, i11, AndroidUtilities.dp(64.0f) + AndroidUtilities.navigationBarHeight);
-        this.d.o1();
-        this.d.setClipToPadding(false);
-        this.d.setOnItemClickListener(new d(this, 12));
-        di.d dVar = new di.d(context, this.resourcesProvider, true);
-        if (chat != null) {
-            dVar.setText(LocaleController.getString(ChatObject.canAddChatToCommunity(chat) ? R.string.CommunityAddToCommunityButton : R.string.CommunityAddToCommunityRequestButton));
-        } else {
-            dVar.setText(LocaleController.getString(R.string.CommunityCreateCommunity));
-        }
-        dVar.e();
-        dVar.setOnClickListener(new x(this, callback, chat, 9));
-        this.containerView.addView(dVar, x5.f(48.0f, 80, AndroidUtilities.dp(12.0f) + this.backgroundPaddingLeft, 0, AndroidUtilities.dp(12.0f) + this.backgroundPaddingLeft, AndroidUtilities.dp(12.0f) + AndroidUtilities.navigationBarHeight));
-        this.X.N(false);
+    public /* synthetic */ b(w3 w3Var, int i10) {
+        this.a = i10;
+        this.b = w3Var;
     }
 
-    public final void P(Utilities.Callback callback, boolean z10, boolean z11) {
-        if (z11 && !z10 && !this.b0) {
-            e5.P(getContext(), this.resourcesProvider, LocaleController.getString(R.string.CommunityAddToCommunityTitle), LocaleController.getString(this.a0 ? R.string.CommunityAddToCommunityChannelMessage : R.string.CommunityAddToCommunityGroupMessage), LocaleController.getString(R.string.Add), new y0(this, callback, z10, 3)).show();
-        } else {
-            callback.run(Boolean.valueOf(z10));
-            dismiss();
+    /* JADX WARN: Code restructure failed: missing block: B:102:0x017c, code lost:
+    
+        if (r3 <= (r4.getHeight() + r4.getTop())) goto L87;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:86:0x014a, code lost:
+    
+        if (ii.d6.m(r5, r5.getLeft(), r5.getTop(), r1, r3) != false) goto L87;
+     */
+    @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.D2();
+                break;
+            case 1:
+                this.b.u3();
+                break;
+            case 2:
+                w3 w3Var = this.b;
+                if (w3Var.x3 != null && !w3Var.n3.y()) {
+                    if (w3Var.U4(w3Var.x3, w3Var.v3, w3Var.w3)) {
+                        w3Var.A3 = true;
+                        break;
+                    } else {
+                        int left = (int) ((w3Var.v3 - w3Var.x3.getLeft()) - w3Var.getLeft());
+                        int top = (int) ((w3Var.w3 - w3Var.x3.getTop()) - w3Var.getTop());
+                        View view = w3Var.x3;
+                        if (view instanceof h0) {
+                            h0 h0Var = (h0) view;
+                            h0Var.getLocationOnScreen(new int[2]);
+                            float f7 = r8[0] + left;
+                            float f10 = r8[1] + top;
+                            if (!h0.h(h0Var.w, f7, f10) && !h0.h(h0Var.x, f7, f10)) {
+                                ArrayList arrayList = h0Var.y;
+                                int size = arrayList.size();
+                                int i10 = 0;
+                                while (i10 < size) {
+                                    Object obj = arrayList.get(i10);
+                                    i10++;
+                                    if (h0.h((e0) obj, f7, f10)) {
+                                    }
+                                }
+                            }
+                            w3Var.A3 = true;
+                            break;
+                        }
+                        View view2 = w3Var.x3;
+                        if (view2 instanceof o5) {
+                            o5 o5Var = (o5) view2;
+                            if (w3Var.k3(o5Var, left, top)) {
+                                try {
+                                    o5Var.performHapticFeedback(0);
+                                } catch (Exception unused) {
+                                }
+                                w3Var.A3 = true;
+                                break;
+                            } else {
+                                TL_iv.pageTableCell m10 = o5Var.m(left, top);
+                                if (m10 != null) {
+                                    n70 n70Var = w3Var.j4;
+                                    if (n70Var != null) {
+                                        w3Var.j4 = null;
+                                        n70Var.u();
+                                    }
+                                    w3Var.h2(o5Var);
+                                    w3Var.C0();
+                                    w3Var.requestDisallowInterceptTouchEvent(true);
+                                    w3Var.B3 = true;
+                                    w3Var.D3 = m10;
+                                    w3Var.E3 = m10;
+                                    o5Var.w(m10, m10);
+                                    try {
+                                        o5Var.performHapticFeedback(0);
+                                    } catch (Exception unused2) {
+                                    }
+                                    w3Var.A3 = true;
+                                    break;
+                                } else {
+                                    w3Var.K4(w3Var.x3);
+                                    break;
+                                }
+                            }
+                        } else if (view2 instanceof d6) {
+                            d6 d6Var = (d6) view2;
+                            i1 i1Var = d6Var.h;
+                            i1 i1Var2 = d6Var.f;
+                            LinearLayout linearLayout = d6Var.b;
+                            if (!d6.m(i1Var2, i1Var2.getLeft() + linearLayout.getLeft(), i1Var2.getTop() + linearLayout.getTop(), left, top)) {
+                                if (i1Var.getVisibility() == 0) {
+                                    break;
+                                }
+                                w3Var.K4(w3Var.x3);
+                                break;
+                            }
+                            w3Var.A3 = true;
+                            break;
+                        } else {
+                            if (view2 instanceof u0) {
+                                i1 i1Var3 = ((u0) view2).d;
+                                if (i1Var3.length() == 0 && left >= i1Var3.getLeft()) {
+                                    if (left <= i1Var3.getWidth() + i1Var3.getLeft() && top >= i1Var3.getTop()) {
+                                        break;
+                                    }
+                                }
+                            }
+                            w3Var.K4(w3Var.x3);
+                        }
+                    }
+                }
+                break;
+            case 3:
+                w3 w3Var2 = this.b;
+                j3 j3Var = w3Var2.n3;
+                if (j3Var != null && j3Var.y()) {
+                    for (int i11 = 0; i11 < w3Var2.getChildCount(); i11++) {
+                        View childAt = w3Var2.getChildAt(i11);
+                        if ((childAt instanceof d6) || (childAt instanceof o5) || (childAt instanceof m0) || (childAt instanceof u0)) {
+                            childAt.invalidate();
+                        }
+                    }
+                    j3Var.x();
+                    break;
+                }
+                break;
+            case 4:
+                this.b.p3(true);
+                break;
+            default:
+                this.b.b3();
+                break;
         }
-    }
-
-    public final void Q(boolean z10) {
-        boolean z11;
-        if (this.Y == z10) {
-            return;
-        }
-        this.Y = z10;
-        int i10 = this.c0 + 1;
-        ll0 ll0Var = this.d;
-        View T0 = ll0Var.T0(i10);
-        if (T0 instanceof i6) {
-            ((i6) T0).a(!z10);
-            z11 = false;
-        } else {
-            z11 = true;
-        }
-        View T02 = ll0Var.T0(this.c0 + 2);
-        if (T02 instanceof i6) {
-            ((i6) T02).a(z10);
-        } else {
-            z11 = true;
-        }
-        if (z11) {
-            this.X.N(true);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.bb
-    public final kl0 v(ll0 ll0Var) {
-        v51 v51Var = new v51(this.d, getContext(), this.currentAccount, 0, false, new a(this, 0), this.resourcesProvider);
-        this.X = v51Var;
-        v51Var.r = false;
-        return v51Var;
-    }
-
-    @Override // org.telegram.ui.Components.bb
-    public final CharSequence y() {
-        return LocaleController.getString(this.b0 ? R.string.CommunityAddBotTitle : R.string.CommunityAddChatTitle);
     }
 }

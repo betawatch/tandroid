@@ -1,59 +1,48 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class qg implements q0.a {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ co b;
+import org.telegram.messenger.Utilities;
 
-    public /* synthetic */ qg(co coVar, int i10) {
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class qg implements Utilities.Callback2 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ bo b;
+    public final /* synthetic */ String c;
+
+    public /* synthetic */ qg(bo boVar, String str, int i10) {
         this.a = i10;
-        this.b = coVar;
+        this.b = boVar;
+        this.c = str;
     }
 
-    @Override // q0.a
-    public final void accept(Object obj) {
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
+        Boolean bool = (Boolean) obj;
+        Boolean bool2 = (Boolean) obj2;
         switch (this.a) {
             case 0:
-                Integer num = (Integer) obj;
-                co coVar = this.b;
-                coVar.getClass();
-                if (num.intValue() != 0) {
-                    coVar.Bc(true);
-                    coVar.F(num.intValue(), 0, 0, 0, false, true);
-                    break;
-                } else {
-                    coVar.l1 = 0;
-                    coVar.Bc(true);
-                    coVar.getMessagesController().markReactionsAsRead(coVar.T5, coVar.d());
-                    break;
-                }
-            case 1:
-                Integer num2 = (Integer) obj;
-                co coVar2 = this.b;
-                coVar2.getClass();
-                if (num2.intValue() != 0) {
-                    int i10 = coVar2.m1 - 1;
-                    coVar2.m1 = i10;
-                    if (i10 <= 0) {
-                        coVar2.getMessagesController().markPollVotesAsRead(coVar2.T5, coVar2.d());
+                if (bool.booleanValue()) {
+                    boolean booleanValue = bool2.booleanValue();
+                    bo boVar = this.b;
+                    String str = this.c;
+                    if (booleanValue) {
+                        boVar.getMessagesController().addWebBrowserException(str, false);
                     }
-                    coVar2.Ac(true);
-                    coVar2.F(num2.intValue(), 0, 0, 0, false, true);
-                    break;
-                } else {
-                    coVar2.m1 = 0;
-                    coVar2.Ac(true);
-                    coVar2.getMessagesController().markPollVotesAsRead(coVar2.T5, coVar2.d());
+                    boVar.getParentActivity();
+                    nf.f.n(str);
                     break;
                 }
+                break;
             default:
-                co coVar3 = this.b;
-                coVar3.getClass();
-                boolean booleanValue = ((Boolean) obj).booleanValue();
-                coVar3.f7 = booleanValue;
-                if (!booleanValue) {
-                    coVar3.r8();
+                bo boVar2 = this.b;
+                boVar2.getClass();
+                if (bool.booleanValue()) {
+                    boolean booleanValue2 = bool2.booleanValue();
+                    String str2 = this.c;
+                    if (booleanValue2) {
+                        boVar2.getMessagesController().addWebBrowserException(str2, true);
+                    }
+                    nf.f.m(boVar2.getParentActivity(), str2, false, null);
                     break;
                 }
                 break;

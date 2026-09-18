@@ -1,42 +1,28 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
 import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.function.ToIntFunction;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class jf implements ValueAnimator.AnimatorUpdateListener {
+public final /* synthetic */ class jf implements ToIntFunction {
     public final /* synthetic */ int a;
-    public final /* synthetic */ co b;
-    public final /* synthetic */ View c;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ jf(co coVar, org.telegram.ui.Cells.w0 w0Var, int i10) {
+    public /* synthetic */ jf(Object obj, int i10) {
         this.a = i10;
-        this.b = coVar;
-        this.c = w0Var;
+        this.b = obj;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // java.util.function.ToIntFunction
+    public final int applyAsInt(Object obj) {
         switch (this.a) {
             case 0:
-                co coVar = this.b;
-                coVar.getClass();
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                coVar.A9 = AndroidUtilities.dp(30.0f) * floatValue;
-                coVar.o9();
-                this.c.setAlpha(floatValue);
-                break;
+                return ((Integer) ((HashMap) this.b).get((View) obj)).intValue();
             default:
-                co coVar2 = this.b;
-                coVar2.getClass();
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                coVar2.A9 = AndroidUtilities.dp(30.0f) * floatValue2;
-                coVar2.o9();
-                coVar2.r9();
-                this.c.setAlpha(floatValue2);
-                break;
+                return ((Integer) ((ArrayList) this.b).get(((Integer) obj).intValue())).intValue();
         }
     }
 }

@@ -6,9 +6,9 @@ import android.os.Looper;
 import android.util.Log;
 import android.view.animation.DecelerateInterpolator;
 import android.view.animation.Interpolator;
-import di.bb;
+import ci.bb;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class e {
     public final int a;
@@ -38,7 +38,7 @@ public final class e {
         int i10 = this.a;
         d dVar = this.b;
         if (f10 == f7) {
-            dVar.z(f10, i10);
+            dVar.C(f10, i10);
             return;
         }
         int i11 = 1;
@@ -53,7 +53,7 @@ public final class e {
             if (this.g) {
                 this.g = false;
             }
-            dVar.z(f7, i10);
+            dVar.C(f7, i10);
             return;
         }
         this.f = f7;
@@ -94,7 +94,7 @@ public final class e {
     public final void c(float f7) {
         boolean b10 = b();
         if (d(f7, 1.0f) || b10) {
-            this.b.z(f7, this.a);
+            this.b.C(f7, this.a);
         }
     }
 
@@ -103,7 +103,7 @@ public final class e {
             return false;
         }
         this.e = f7;
-        this.b.E(this.a, f7, f10, this);
+        this.b.D(this.a, f7, f10, this);
         return true;
     }
 

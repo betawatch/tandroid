@@ -5,9 +5,9 @@ import android.os.SystemClock;
 import e2.d0;
 import java.io.IOException;
 import java.util.concurrent.Executors;
-import rg.b0;
+import qg.b0;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class m implements n {
     public static final k4.d d = new k4.d(0, -9223372036854775807L, false);
@@ -22,19 +22,13 @@ public final class m implements n {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public m(String str) {
-        this(new z2.a(Executors.newSingleThreadExecutor(new androidx.emoji2.text.a(r3, 1)), new org.telegram.ui.web.n(3)));
+        this(new z2.a(Executors.newSingleThreadExecutor(new androidx.emoji2.text.a(r3, 1)), new org.telegram.ui.web.m(3)));
         String concat = "ExoPlayer:Loader:".concat(str);
         String str2 = d0.a;
     }
 
-    public final void a() {
-        i iVar = this.b;
-        e2.d.h(iVar);
-        iVar.a(false);
-    }
-
     @Override // y2.n
-    public final void b() {
+    public final void a() {
         IOException iOException = this.c;
         if (iOException != null) {
             throw iOException;
@@ -47,6 +41,12 @@ public final class m implements n {
                 throw iOException2;
             }
         }
+    }
+
+    public final void b() {
+        i iVar = this.b;
+        e2.d.h(iVar);
+        iVar.a(false);
     }
 
     public final boolean c() {

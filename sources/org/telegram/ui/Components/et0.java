@@ -1,15 +1,26 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Outline;
-import android.view.View;
-import android.view.ViewOutlineProvider;
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Context;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class et0 extends ViewOutlineProvider {
-    @Override // android.view.ViewOutlineProvider
-    public final void getOutline(View view, Outline outline) {
-        outline.setRoundRect(0, 0, view.getWidth(), AndroidUtilities.dp(24.0f) + view.getHeight(), AndroidUtilities.dp(24.0f));
+public final class et0 extends tu0 {
+    public final /* synthetic */ zu0 h;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public et0(zu0 zu0Var, Context context) {
+        super(zu0Var, context);
+        this.h = zu0Var;
+    }
+
+    @Override // s4.h0
+    public final void l() {
+        super.l();
+        zu0 zu0Var = this.h;
+        st0 W = zu0Var.W(0);
+        if (W == null || W.r.getVisibility() != 0) {
+            return;
+        }
+        zu0Var.I.l();
     }
 }

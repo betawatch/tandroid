@@ -12,9 +12,9 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class n30 extends kl0 {
+public final class n30 extends ll0 {
     public final Context c;
     public final /* synthetic */ r30 d;
 
@@ -31,7 +31,7 @@ public final class n30 extends kl0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.ll0
     public final boolean D(s4.c1 c1Var) {
         View view = c1Var.a;
         if ((view instanceof org.telegram.ui.Cells.a5) && this.d.f0.contains(Long.valueOf(((org.telegram.ui.Cells.a5) view).getUserId()))) {
@@ -91,7 +91,7 @@ public final class n30 extends kl0 {
                 i11 = r30Var.o0;
             }
             long peerId = tLObject instanceof TLRPC.TL_contact ? ((TLRPC.TL_contact) tLObject).user_id : tLObject instanceof TLRPC.User ? ((TLRPC.User) tLObject).id : tLObject instanceof TLRPC.ChannelParticipant ? MessageObject.getPeerId(((TLRPC.ChannelParticipant) tLObject).peer) : ((TLRPC.ChatParticipant) tLObject).user_id;
-            i12 = ((org.telegram.ui.ActionBar.f3) r30Var).currentAccount;
+            i12 = ((org.telegram.ui.ActionBar.g3) r30Var).currentAccount;
             TLRPC.User user = MessagesController.getInstance(i12).getUser(Long.valueOf(peerId));
             if (user != null) {
                 a5Var.setCustomImageVisible(r30Var.f0.contains(Long.valueOf(user.id)));
@@ -172,6 +172,6 @@ public final class n30 extends kl0 {
             a5Var2.setDividerColor(org.telegram.ui.ActionBar.j6.gg);
             a5Var = a5Var2;
         }
-        return new vk0(a5Var);
+        return new wk0(a5Var);
     }
 }

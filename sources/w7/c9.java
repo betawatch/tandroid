@@ -2,21 +2,21 @@ package w7;
 
 import java.util.List;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public abstract class c9 {
     public static void a(z3.d dVar, int i10, e2.h hVar) {
-        long e7 = dVar.e(i10);
-        List h = dVar.h(e7);
-        if (h.isEmpty()) {
+        long g10 = dVar.g(i10);
+        List l4 = dVar.l(g10);
+        if (l4.isEmpty()) {
             return;
         }
-        if (i10 == dVar.k() - 1) {
+        if (i10 == dVar.A() - 1) {
             throw new IllegalStateException();
         }
-        long e10 = dVar.e(i10 + 1) - dVar.e(i10);
-        if (e10 > 0) {
-            hVar.accept(new z3.a(e7, e10, h));
+        long g11 = dVar.g(i10 + 1) - dVar.g(i10);
+        if (g11 > 0) {
+            hVar.accept(new z3.a(g10, g11, l4));
         }
     }
 
@@ -36,21 +36,21 @@ public abstract class c9 {
         } else {
             d = dVar.d(j3);
             if (d == -1) {
-                d = dVar.k();
+                d = dVar.A();
             }
-            if (d > 0 && dVar.e(d - 1) == j3) {
+            if (d > 0 && dVar.g(d - 1) == j3) {
                 d--;
             }
         }
-        if (j3 != -9223372036854775807L && d < dVar.k()) {
-            List h = dVar.h(j3);
-            long e7 = dVar.e(d);
-            if (!h.isEmpty()) {
+        if (j3 != -9223372036854775807L && d < dVar.A()) {
+            List l4 = dVar.l(j3);
+            long g10 = dVar.g(d);
+            if (!l4.isEmpty()) {
                 long j10 = lVar.a;
-                if (j10 < e7) {
-                    hVar.accept(new z3.a(j10, e7 - j10, h));
+                if (j10 < g10) {
+                    hVar.accept(new z3.a(j10, g10 - j10, l4));
                     z10 = true;
-                    for (i10 = d; i10 < dVar.k(); i10++) {
+                    for (i10 = d; i10 < dVar.A(); i10++) {
                         a(dVar, i10, hVar);
                     }
                     if (lVar.b) {
@@ -63,7 +63,7 @@ public abstract class c9 {
                         a(dVar, i11, hVar);
                     }
                     if (z10) {
-                        hVar.accept(new z3.a(dVar.e(d), j3 - dVar.e(d), dVar.h(j3)));
+                        hVar.accept(new z3.a(dVar.g(d), j3 - dVar.g(d), dVar.l(j3)));
                         return;
                     }
                     return;
@@ -71,7 +71,7 @@ public abstract class c9 {
             }
         }
         z10 = false;
-        while (i10 < dVar.k()) {
+        while (i10 < dVar.A()) {
         }
         if (lVar.b) {
         }

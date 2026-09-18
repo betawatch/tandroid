@@ -7,7 +7,7 @@ import android.graphics.Rect;
 import android.text.TextPaint;
 import android.util.TypedValue;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public class f40 extends EditTextBoldCursor {
     public final TextPaint b;
@@ -26,7 +26,7 @@ public class f40 extends EditTextBoldCursor {
         return this.c;
     }
 
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.bu, android.widget.TextView, android.view.View
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.du, android.widget.TextView, android.view.View
     public void onDraw(Canvas canvas) {
         Canvas canvas2;
         if (this.c != null && length() < this.c.length()) {
@@ -58,7 +58,7 @@ public class f40 extends EditTextBoldCursor {
         super.onDraw(canvas);
     }
 
-    @Override // org.telegram.ui.Components.bu, android.widget.TextView, android.view.View
+    @Override // org.telegram.ui.Components.du, android.widget.TextView, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         super.onLayout(z10, i10, i11, i12, i13);
         invalidate();

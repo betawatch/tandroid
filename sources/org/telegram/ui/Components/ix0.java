@@ -1,83 +1,54 @@
 package org.telegram.ui.Components;
 
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.widget.TextView;
-import java.io.Serializable;
-import java.util.HashMap;
-import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class ix0 implements TextWatcher {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ EditTextBoldCursor b;
-    public final /* synthetic */ Serializable c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate e;
+public final /* synthetic */ class ix0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ TLObject b;
+    public final /* synthetic */ Utilities.Callback c;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public ix0(ux0 ux0Var, int[] iArr, TextView textView, EditTextBoldCursor editTextBoldCursor) {
-        this.e = ux0Var;
-        this.c = iArr;
-        this.d = textView;
-        this.b = editTextBoldCursor;
+    public /* synthetic */ ix0(TLObject tLObject, Utilities.Callback callback, int i10) {
+        this.a = i10;
+        this.b = tLObject;
+        this.c = callback;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        boolean z10;
         switch (this.a) {
             case 0:
+                TLObject tLObject = this.b;
+                if (tLObject instanceof TLRPC.TL_messages_stickerSet) {
+                    TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) tLObject;
+                    MediaDataController.getInstance(UserConfig.selectedAccount).putStickerSet(tL_messages_stickerSet);
+                    if (!MediaDataController.getInstance(UserConfig.selectedAccount).isStickerPackInstalled(tL_messages_stickerSet.set.id)) {
+                        MediaDataController.getInstance(UserConfig.selectedAccount).toggleStickerSet(null, tL_messages_stickerSet, 2, null, false, false);
+                    }
+                    z10 = true;
+                } else {
+                    z10 = false;
+                }
+                this.c.run(Boolean.valueOf(z10));
                 break;
             default:
-                org.telegram.ui.pn0 pn0Var = (org.telegram.ui.pn0) this.e;
-                String str = (String) this.c;
-                boolean z10 = ((HashMap) this.d) == pn0Var.t1;
-                EditTextBoldCursor editTextBoldCursor = this.b;
-                org.telegram.ui.pn0.J0(pn0Var, editTextBoldCursor, str, editable, z10);
-                int intValue = ((Integer) editTextBoldCursor.getTag()).intValue();
-                EditTextBoldCursor editTextBoldCursor2 = pn0Var.Y[intValue];
-                if (intValue == 6) {
-                    pn0Var.Y0(true);
+                TLObject tLObject2 = this.b;
+                boolean z11 = tLObject2 instanceof TL_account.paidMessagesRevenue;
+                Utilities.Callback callback = this.c;
+                if (!z11) {
+                    callback.run(0L);
+                    break;
+                } else {
+                    callback.run(Long.valueOf(((TL_account.paidMessagesRevenue) tLObject2).stars_amount));
                     break;
                 }
-                break;
         }
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-        int i13 = this.a;
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-        switch (this.a) {
-            case 0:
-                if (((int[]) this.c)[0] == 2) {
-                    ((ux0) this.e).m0((TextView) this.d, this.b.getText().toString(), false);
-                    break;
-                }
-                break;
-        }
-    }
-
-    public ix0(org.telegram.ui.pn0 pn0Var, EditTextBoldCursor editTextBoldCursor, String str, HashMap hashMap) {
-        this.e = pn0Var;
-        this.b = editTextBoldCursor;
-        this.c = str;
-        this.d = hashMap;
-    }
-
-    private final void a(Editable editable) {
-    }
-
-    private final void b(int i10, int i11, int i12, CharSequence charSequence) {
-    }
-
-    private final void c(int i10, int i11, int i12, CharSequence charSequence) {
-    }
-
-    private final void d(int i10, int i11, int i12, CharSequence charSequence) {
     }
 }

@@ -1,28 +1,33 @@
 package k2;
 
-import java.nio.ByteBuffer;
-import v7.z7;
+import android.content.Context;
+import android.media.AudioAttributes;
+import android.media.AudioTrack;
+import android.os.Build;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
-public final class i0 {
-    public static final byte[] d = {79, 103, 103, 83, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, -43, -59, -9, 1, 19, 79, 112, 117, 115, 72, 101, 97, 100, 1, 2, 56, 1, Byte.MIN_VALUE, -69, 0, 0, 0, 0, 0};
-    public static final byte[] e = {79, 103, 103, 83, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 11, -103, 87, 83, 1, 16, 79, 112, 117, 115, 84, 97, 103, 115, 0, 0, 0, 0, 0, 0, 0, 0};
-    public ByteBuffer a;
-    public int b;
-    public int c;
+public final class i0 implements w {
+    public static AudioAttributes b(b2.e eVar, boolean z10) {
+        return z10 ? new AudioAttributes.Builder().setContentType(3).setFlags(16).setUsage(1).build() : (AudioAttributes) eVar.b().a;
+    }
 
-    public static void a(ByteBuffer byteBuffer, long j3, int i10, int i11, boolean z10) {
-        byteBuffer.put((byte) 79);
-        byteBuffer.put((byte) 103);
-        byteBuffer.put((byte) 103);
-        byteBuffer.put((byte) 83);
-        byteBuffer.put((byte) 0);
-        byteBuffer.put(z10 ? (byte) 2 : (byte) 0);
-        byteBuffer.putLong(j3);
-        byteBuffer.putInt(0);
-        byteBuffer.putInt(i10);
-        byteBuffer.putInt(0);
-        byteBuffer.put(z7.a(i11));
+    public final AudioTrack a(k kVar, b2.e eVar, int i10, Context context) {
+        boolean z10 = kVar.d;
+        int i11 = kVar.a;
+        int i12 = kVar.c;
+        int i13 = kVar.b;
+        int i14 = Build.VERSION.SDK_INT;
+        if (i14 < 23) {
+            return new AudioTrack(b(eVar, z10), e2.d0.r(i13, i12, i11), kVar.f, 1, i10);
+        }
+        AudioTrack.Builder sessionId = new AudioTrack.Builder().setAudioAttributes(b(eVar, z10)).setAudioFormat(e2.d0.r(i13, i12, i11)).setTransferMode(1).setBufferSizeInBytes(kVar.f).setSessionId(i10);
+        if (i14 >= 29) {
+            sessionId.setOffloadedPlayback(kVar.e);
+        }
+        if (i14 >= 34 && context != null) {
+            sessionId.setContext(context);
+        }
+        return sessionId.build();
     }
 }

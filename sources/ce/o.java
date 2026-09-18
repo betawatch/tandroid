@@ -1,5 +1,6 @@
 package ce;
 
+import ee.v;
 import java.io.Serializable;
 import java.util.NoSuchElementException;
 import java.util.concurrent.CancellationException;
@@ -9,11 +10,11 @@ import v7.t7;
 import zd.b0;
 import zd.f1;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public abstract class o {
-    public static final d9.f a = new d9.f("NONE", 1);
-    public static final d9.f b = new d9.f("PENDING", 1);
+    public static final v a = new v("NONE", 0);
+    public static final v b = new v("PENDING", 0);
 
     /* JADX WARN: Removed duplicated region for block: B:30:0x0080 A[RETURN] */
     /* JADX WARN: Removed duplicated region for block: B:31:0x0081  */
@@ -44,7 +45,7 @@ public abstract class o {
                         c gVar = new g(cVar, pVar2);
                         eVar.a = pVar2;
                         eVar.c = 1;
-                        if (bVar.z(gVar, eVar) == aVar) {
+                        if (bVar.H(gVar, eVar) == aVar) {
                             return aVar;
                         }
                         return null;
@@ -103,9 +104,9 @@ public abstract class o {
     public static final Object b(b bVar, kd.c cVar) {
         k kVar;
         int i10;
-        d9.f fVar;
+        v vVar;
         kotlin.jvm.internal.p pVar;
-        de.a e7;
+        de.a e;
         j jVar;
         Object obj;
         if (cVar instanceof k) {
@@ -116,28 +117,28 @@ public abstract class o {
                 Object obj2 = kVar.c;
                 Object obj3 = jd.a.a;
                 i10 = kVar.d;
-                fVar = de.e.a;
+                vVar = de.e.a;
                 if (i10 != 0) {
                     t7.b(obj2);
                     kotlin.jvm.internal.p pVar2 = new kotlin.jvm.internal.p();
-                    pVar2.a = fVar;
+                    pVar2.a = vVar;
                     j jVar2 = new j(pVar2, 0);
                     try {
                         kVar.a = pVar2;
                         kVar.b = jVar2;
                         kVar.d = 1;
-                        if (bVar.z(jVar2, kVar) == obj3) {
+                        if (bVar.H(jVar2, kVar) == obj3) {
                             return obj3;
                         }
                         pVar = pVar2;
-                    } catch (de.a e10) {
+                    } catch (de.a e7) {
                         pVar = pVar2;
-                        e7 = e10;
+                        e = e7;
                         jVar = jVar2;
-                        if (e7.a != jVar) {
+                        if (e.a != jVar) {
                         }
                         obj = pVar.a;
-                        if (obj == fVar) {
+                        if (obj == vVar) {
                         }
                     }
                 } else {
@@ -148,18 +149,18 @@ public abstract class o {
                     pVar = kVar.a;
                     try {
                         t7.b(obj2);
-                    } catch (de.a e11) {
-                        e7 = e11;
-                        if (e7.a != jVar) {
-                            throw e7;
+                    } catch (de.a e10) {
+                        e = e10;
+                        if (e.a != jVar) {
+                            throw e;
                         }
                         obj = pVar.a;
-                        if (obj == fVar) {
+                        if (obj == vVar) {
                         }
                     }
                 }
                 obj = pVar.a;
-                if (obj == fVar) {
+                if (obj == vVar) {
                     return obj;
                 }
                 throw new NoSuchElementException("Expected at least one element");
@@ -169,11 +170,11 @@ public abstract class o {
         Object obj22 = kVar.c;
         Object obj32 = jd.a.a;
         i10 = kVar.d;
-        fVar = de.e.a;
+        vVar = de.e.a;
         if (i10 != 0) {
         }
         obj = pVar.a;
-        if (obj == fVar) {
+        if (obj == vVar) {
         }
     }
 }

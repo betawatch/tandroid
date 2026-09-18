@@ -3,7 +3,7 @@ package r0;
 import android.view.View;
 import android.view.WindowInsets;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public class g1 extends f1 {
     public static final l1 r;
@@ -19,13 +19,13 @@ public class g1 extends f1 {
     }
 
     @Override // r0.c1, r0.i1
-    public i0.c f(int i10) {
-        return i0.c.c(this.c.getInsets(j1.a(i10)));
+    public i0.b f(int i10) {
+        return i0.b.c(this.c.getInsets(j1.a(i10)));
     }
 
     @Override // r0.c1, r0.i1
-    public i0.c g(int i10) {
-        return i0.c.c(this.c.getInsetsIgnoringVisibility(j1.a(i10)));
+    public i0.b g(int i10) {
+        return i0.b.c(this.c.getInsetsIgnoringVisibility(j1.a(i10)));
     }
 
     @Override // r0.c1, r0.i1

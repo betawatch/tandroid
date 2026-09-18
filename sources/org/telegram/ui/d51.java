@@ -11,17 +11,17 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class d51 extends FrameLayout {
     public final Paint a;
     public final Paint b;
     public final RectF c;
-    public final org.telegram.ui.Components.w11 d;
+    public final org.telegram.ui.Components.y11 d;
     public boolean e;
     public long f;
     public long h;
-    public final org.telegram.ui.Components.xi0 n;
+    public final org.telegram.ui.Components.yi0 n;
     public final TextPaint r;
     public StaticLayout s;
     public float v;
@@ -33,7 +33,7 @@ public final class d51 extends FrameLayout {
         super(activity);
         this.x = secretMediaViewer;
         this.c = new RectF();
-        this.d = new org.telegram.ui.Components.w11();
+        this.d = new org.telegram.ui.Components.y11();
         this.r = new TextPaint(1);
         setWillNotDraw(false);
         Paint paint = new Paint(1);
@@ -51,11 +51,11 @@ public final class d51 extends FrameLayout {
         paint2.setColor(-1644826);
         paint2.setStrokeWidth(AndroidUtilities.dp(2.0f));
         new Paint(1).setColor(2130706432);
-        org.telegram.ui.Components.xi0 xi0Var = new org.telegram.ui.Components.xi0(R.raw.fire_on, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f));
-        this.n = xi0Var;
-        xi0Var.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
-        xi0Var.v0 = this;
-        xi0Var.start();
+        org.telegram.ui.Components.yi0 yi0Var = new org.telegram.ui.Components.yi0(R.raw.fire_on, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f));
+        this.n = yi0Var;
+        yi0Var.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
+        yi0Var.R(this);
+        yi0Var.start();
     }
 
     /*  JADX ERROR: NullPointerException in pass: LoopRegionVisitor

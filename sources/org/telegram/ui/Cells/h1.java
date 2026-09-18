@@ -7,7 +7,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class h1 extends n1 {
     public final /* synthetic */ int e;
@@ -46,13 +46,13 @@ public final class h1 extends n1 {
         for (int i12 = 0; i12 < 4; i12++) {
             if (!t1Var.q3) {
                 if (i12 == (z10 ? 3 : 2)) {
-                    float[] fArr = t1.Ee;
+                    float[] fArr = t1.Fe;
                     int i13 = i12 * 2;
                     float dp2 = AndroidUtilities.dp(SharedConfig.bubbleRadius);
                     fArr[i13 + 1] = dp2;
                     fArr[i13] = dp2;
                 } else if (((t1Var.k8 && t1Var.L == null) || t1Var.F) && (i12 == 2 || i12 == 3)) {
-                    float[] fArr2 = t1.Ee;
+                    float[] fArr2 = t1.Fe;
                     int i14 = i12 * 2;
                     int i15 = i14 + 1;
                     float dp3 = AndroidUtilities.dp(t1Var.F ? Math.min(5, SharedConfig.bubbleRadius) : SharedConfig.bubbleRadius);
@@ -60,13 +60,13 @@ public final class h1 extends n1 {
                     fArr2[i14] = dp3;
                 }
             }
-            float[] fArr3 = t1.Ee;
+            float[] fArr3 = t1.Fe;
             int i16 = i12 * 2;
             fArr3[i16 + 1] = 0.0f;
             fArr3[i16] = 0.0f;
         }
         if (z10 || t1Var.J || (groupedMessagePosition = t1Var.L) != null || !(groupedMessagePosition == null || t1Var.a3)) {
-            path.addRoundRect(rectF, t1.Ee, Path.Direction.CW);
+            path.addRoundRect(rectF, t1.Fe, Path.Direction.CW);
         } else {
             path.moveTo(rectF.left + AndroidUtilities.dp(6.0f), rectF.top);
             path.lineTo(rectF.left + AndroidUtilities.dp(6.0f), (rectF.bottom - AndroidUtilities.dp(6.0f)) - AndroidUtilities.dp(5.0f));
@@ -74,7 +74,7 @@ public final class h1 extends n1 {
             rectF2.set(rectF.left + AndroidUtilities.dp(-7.0f), rectF.bottom - AndroidUtilities.dp(23.0f), rectF.left + AndroidUtilities.dp(6.0f), rectF.bottom);
             path.arcTo(rectF2, 0.0f, 83.0f, false);
             float f7 = rectF.right;
-            float[] fArr4 = t1.Ee;
+            float[] fArr4 = t1.Fe;
             float f10 = f7 - (fArr4[4] * 2.0f);
             float f11 = rectF.bottom;
             rectF2.set(f10, f11 - (fArr4[5] * 2.0f), f7, f11);

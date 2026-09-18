@@ -7,22 +7,22 @@ import c0.l;
 import java.io.File;
 import java.io.IOException;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public abstract class i {
     public static final l a = new l();
     public static final Object b = new Object();
-    public static rb.a c = null;
+    public static qb.b c = null;
 
     public static long a(Context context) {
         PackageManager packageManager = context.getApplicationContext().getPackageManager();
         return Build.VERSION.SDK_INT >= 33 ? g.a(packageManager, context).lastUpdateTime : packageManager.getPackageInfo(context.getPackageName(), 0).lastUpdateTime;
     }
 
-    public static rb.a b() {
-        rb.a aVar = new rb.a(21);
-        c = aVar;
-        a.k(aVar);
+    public static qb.b b() {
+        qb.b bVar = new qb.b(21);
+        c = bVar;
+        a.k(bVar);
         return c;
     }
 

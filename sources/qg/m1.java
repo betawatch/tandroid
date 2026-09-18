@@ -1,57 +1,37 @@
 package qg;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class m1 extends o1 {
-    public final /* synthetic */ int f;
-    public final /* synthetic */ l1 g;
-    public final /* synthetic */ p1 h;
+public final class m1 extends View {
+    public final Paint a;
+    public float b;
 
-    public /* synthetic */ m1(p1 p1Var, l1 l1Var, int i10) {
-        this.f = i10;
-        this.h = p1Var;
-        this.g = l1Var;
+    public m1(Context context) {
+        super(context);
+        Paint paint = new Paint(1);
+        this.a = paint;
+        paint.setColor(-1);
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeCap(Paint.Cap.ROUND);
+        paint.setStrokeWidth(AndroidUtilities.dp(2.0f));
     }
 
-    @Override // qg.o1
-    public final void a() {
-        switch (this.f) {
-            case 0:
-                f1 f1Var = this.h.h;
-                float f7 = f1Var.i;
-                float f10 = f1Var.j;
-                this.d = f7;
-                this.e = f10;
-                break;
-            default:
-                f1 f1Var2 = this.h.h;
-                float f11 = f1Var2.d;
-                float f12 = f1Var2.e;
-                this.d = f11;
-                this.e = f12;
-                break;
-        }
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        Paint paint = this.a;
+        canvas.drawLine((getWidth() / 2.0f) + AndroidUtilities.dp(AndroidUtilities.lerp(-6.7f, -7.0f, this.b)), (getHeight() / 2.0f) + AndroidUtilities.dp(AndroidUtilities.lerp(0.71f, 0.0f, this.b)), (getWidth() / 2.0f) + AndroidUtilities.dp(AndroidUtilities.lerp(-2.45f, 7.0f, this.b)), (getHeight() / 2.0f) + AndroidUtilities.dp(AndroidUtilities.lerp(4.79f, 0.0f, this.b)), paint);
+        canvas.drawLine((getWidth() / 2.0f) + AndroidUtilities.dp(AndroidUtilities.lerp(-2.45f, 0.0f, this.b)), (getHeight() / 2.0f) + AndroidUtilities.dp(AndroidUtilities.lerp(4.79f, 7.0f, this.b)), (getWidth() / 2.0f) + AndroidUtilities.dp(AndroidUtilities.lerp(6.59f, 0.0f, this.b)), (getHeight() / 2.0f) + AndroidUtilities.dp(AndroidUtilities.lerp(-4.27f, -7.0f, this.b)), paint);
     }
 
-    @Override // qg.o1
-    public final void b(float f7, float f10) {
-        switch (this.f) {
-            case 0:
-                f1 f1Var = this.h.h;
-                f1Var.i = f7;
-                f1Var.j = f10;
-                this.d = f7;
-                this.e = f10;
-                this.g.a();
-                break;
-            default:
-                f1 f1Var2 = this.h.h;
-                f1Var2.d = f7;
-                f1Var2.e = f10;
-                this.d = f7;
-                this.e = f10;
-                this.g.a();
-                break;
-        }
+    public void setProgress(float f7) {
+        this.b = f7;
+        invalidate();
     }
 }

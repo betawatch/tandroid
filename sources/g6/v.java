@@ -14,7 +14,7 @@ import java.util.HashMap;
 import java.util.concurrent.atomic.AtomicLong;
 import m.p3;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class v extends n6.g {
     public static final b n0 = new b("CastClientImpl", null);
@@ -131,8 +131,8 @@ public final class v extends n6.g {
                     } finally {
                         super.disconnect();
                     }
-                } catch (RemoteException | IllegalStateException e7) {
-                    bVar.a(e7, "Error while disconnecting the controller interface", new Object[0]);
+                } catch (RemoteException | IllegalStateException e) {
+                    bVar.a(e, "Error while disconnecting the controller interface", new Object[0]);
                 }
                 return;
             }

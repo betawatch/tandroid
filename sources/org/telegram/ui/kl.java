@@ -8,31 +8,31 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class kl extends FrameLayout {
     public float a;
     public float b;
-    public final /* synthetic */ co c;
+    public final /* synthetic */ bo c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public kl(co coVar, Activity activity) {
+    public kl(bo boVar, Activity activity) {
         super(activity);
-        this.c = coVar;
+        this.c = boVar;
         setOnLongClickListener(new u(this, 2));
     }
 
     @Override // android.view.ViewGroup
     public final boolean drawChild(Canvas canvas, View view, long j3) {
-        co coVar = this.c;
-        if (view == coVar.z2) {
+        bo boVar = this.c;
+        if (view == boVar.z2) {
             canvas.save();
             canvas.clipRect(0, 0, getMeasuredWidth(), AndroidUtilities.dp(48.0f));
         }
-        org.telegram.ui.ActionBar.j5[] j5VarArr = coVar.D2;
-        if (view != j5VarArr[0] && view != j5VarArr[1]) {
+        org.telegram.ui.ActionBar.k5[] k5VarArr = boVar.D2;
+        if (view != k5VarArr[0] && view != k5VarArr[1]) {
             boolean drawChild = super.drawChild(canvas, view, j3);
-            if (view == coVar.z2) {
+            if (view == boVar.z2) {
                 canvas.restore();
             }
             return drawChild;
@@ -47,15 +47,15 @@ public final class kl extends FrameLayout {
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
         super.onMeasure(i10, i11);
-        co coVar = this.c;
-        if (!coVar.A2) {
+        bo boVar = this.c;
+        if (!boVar.A2) {
             return;
         }
         int i12 = 0;
         while (true) {
-            AnimatorSet[] animatorSetArr = coVar.H2;
+            AnimatorSet[] animatorSetArr = boVar.H2;
             if (i12 >= animatorSetArr.length) {
-                coVar.A2 = false;
+                boVar.A2 = false;
                 return;
             }
             AnimatorSet animatorSet = animatorSetArr[i12];
@@ -70,12 +70,12 @@ public final class kl extends FrameLayout {
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         this.a = motionEvent.getY();
         int action = motionEvent.getAction();
-        co coVar = this.c;
+        bo boVar = this.c;
         if (action == 1) {
-            coVar.finishPreviewFragment();
+            boVar.finishPreviewFragment();
         } else if (motionEvent.getAction() == 2) {
             float f7 = this.b - this.a;
-            coVar.movePreviewFragment(f7);
+            boVar.movePreviewFragment(f7);
             if (f7 < 0.0f) {
                 this.b = this.a;
             }

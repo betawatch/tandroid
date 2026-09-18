@@ -7,7 +7,7 @@ import android.os.Message;
 import android.text.TextUtils;
 import android.util.Log;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class a0 extends com.google.android.gms.internal.cast.c0 {
     public final /* synthetic */ g a;
@@ -32,7 +32,7 @@ public final class a0 extends com.google.android.gms.internal.cast.c0 {
             return;
         }
         int i11 = message.what;
-        if ((i11 == 1 || i11 == 7 || i11 == 4 || i11 == 5) && !this.a.f()) {
+        if ((i11 == 1 || i11 == 7 || i11 == 4 || i11 == 5) && !this.a.g()) {
             w wVar2 = (w) message.obj;
             wVar2.getClass();
             wVar2.d();
@@ -97,7 +97,7 @@ public final class a0 extends com.google.android.gms.internal.cast.c0 {
         }
         int i13 = message.what;
         if (i13 != 2 && i13 != 1 && i13 != 7) {
-            Log.wtf("GmsClient", i2.g.i(i13, "Don't know how to handle message: "), new Exception());
+            Log.wtf("GmsClient", hg.k0.i(i13, "Don't know how to handle message: "), new Exception());
             return;
         }
         w wVar4 = (w) message.obj;

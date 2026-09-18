@@ -1,13 +1,13 @@
 package u2;
 
-import bi.t2;
-import di.s7;
+import ai.g3;
+import ci.s7;
 import j$.util.Objects;
 import java.io.IOException;
 import java.util.concurrent.CopyOnWriteArrayList;
-import org.telegram.ui.ua0;
+import org.telegram.ui.wa0;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class j implements k0, n2.k {
     public final Object a;
@@ -43,7 +43,7 @@ public final class j implements k0, n2.k {
             b0 m10 = m(b0Var, f0Var);
             f0 f0Var2 = (f0) aVar.c;
             f0Var2.getClass();
-            aVar.i(new s7(aVar, f0Var2, m10, 3));
+            aVar.j(new s7(aVar, f0Var2, m10, 3));
         }
     }
 
@@ -53,7 +53,7 @@ public final class j implements k0, n2.k {
             a5.a aVar = this.b;
             b0 m10 = m(b0Var, f0Var);
             aVar.getClass();
-            aVar.i(new t2(11, aVar, m10));
+            aVar.j(new g3(11, aVar, m10));
         }
     }
 
@@ -63,7 +63,7 @@ public final class j implements k0, n2.k {
             a5.a aVar = this.b;
             b0 m10 = m(b0Var, f0Var);
             aVar.getClass();
-            aVar.i(new h0(aVar, tVar, m10, 0));
+            aVar.j(new h0(aVar, tVar, m10, 0));
         }
     }
 
@@ -73,7 +73,7 @@ public final class j implements k0, n2.k {
             a5.a aVar = this.b;
             b0 m10 = m(b0Var, f0Var);
             aVar.getClass();
-            aVar.i(new i0(aVar, tVar, m10, iOException, z10));
+            aVar.j(new i0(aVar, tVar, m10, iOException, z10));
         }
     }
 
@@ -90,7 +90,7 @@ public final class j implements k0, n2.k {
             a5.a aVar = this.b;
             b0 m10 = m(b0Var, f0Var);
             aVar.getClass();
-            aVar.i(new ua0(aVar, tVar, m10, i11, 1));
+            aVar.j(new wa0(aVar, tVar, m10, i11, 1));
         }
     }
 
@@ -107,7 +107,7 @@ public final class j implements k0, n2.k {
             a5.a aVar = this.b;
             b0 m10 = m(b0Var, f0Var);
             aVar.getClass();
-            aVar.i(new h0(aVar, tVar, m10, 1));
+            aVar.j(new h0(aVar, tVar, m10, 1));
         }
     }
 

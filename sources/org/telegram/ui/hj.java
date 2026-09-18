@@ -1,36 +1,24 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+import android.app.Activity;
+import java.util.ArrayList;
+
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class hj extends org.telegram.ui.ActionBar.n1 {
-    public final /* synthetic */ co o;
+public final class hj extends org.telegram.ui.Components.sv {
+    public final /* synthetic */ bo W;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public hj(co coVar, fj fjVar) {
-        super(fjVar, -2, -2);
-        this.o = coVar;
+    public hj(bo boVar, org.telegram.ui.ActionBar.o2 o2Var, Activity activity, org.telegram.ui.ActionBar.f6 f6Var, ArrayList arrayList) {
+        super(o2Var, activity, f6Var, arrayList);
+        this.W = boVar;
     }
 
-    @Override // org.telegram.ui.ActionBar.n1, android.widget.PopupWindow
+    @Override // org.telegram.ui.Components.sv, org.telegram.ui.ActionBar.g3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.k2
     public final void dismiss() {
-        d(true);
-        co coVar = this.o;
-        if (coVar.Q8 != this) {
-            return;
-        }
-        coVar.Q8 = null;
-        coVar.T8 = null;
-        coVar.S8 = null;
-        coVar.z0.R = true;
-        if (coVar.R8) {
-            coVar.g8(false, true, 0.0f);
-        } else {
-            coVar.R8 = true;
-        }
-        mk mkVar = coVar.Y;
-        if (mkVar == null || mkVar.getEditField() == null) {
-            return;
-        }
-        coVar.Y.getEditField().setAllowDrawCursor(true);
+        super.dismiss();
+        bo boVar = this.W;
+        boVar.getClass();
+        boVar.g8(false, true, 0.0f);
     }
 }

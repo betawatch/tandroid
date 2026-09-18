@@ -1,12 +1,12 @@
 package z7;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class d8 implements ia.d {
     public static final d8 a = new d8();
-    public static final ia.c b = new ia.c("errorCode", i2.g.n(w.f.k(w.class, new s(1))));
-    public static final ia.c c = new ia.c("durationMs", i2.g.n(w.f.k(w.class, new s(2))));
-    public static final ia.c d = new ia.c("subjectSegmenterOptions", i2.g.n(w.f.k(w.class, new s(3))));
+    public static final ia.c b = new ia.c("errorCode", hg.k0.o(w.f.k(w.class, new s(1))));
+    public static final ia.c c = new ia.c("durationMs", hg.k0.o(w.f.k(w.class, new s(2))));
+    public static final ia.c d = new ia.c("subjectSegmenterOptions", hg.k0.o(w.f.k(w.class, new s(3))));
 
     @Override // ia.a
     public final void a(Object obj, Object obj2) {

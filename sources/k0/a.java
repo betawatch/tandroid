@@ -1,11 +1,11 @@
 package k0;
 
-import a4.m;
+import a6.m;
 import android.hardware.fingerprint.FingerprintManager;
+import androidx.biometric.s;
 import androidx.biometric.t;
-import androidx.biometric.u;
-import androidx.biometric.w;
-import androidx.biometric.y;
+import androidx.biometric.v;
+import androidx.biometric.x;
 import androidx.lifecycle.z;
 import e0.b;
 import java.lang.ref.WeakReference;
@@ -13,7 +13,7 @@ import java.security.Signature;
 import javax.crypto.Cipher;
 import javax.crypto.Mac;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class a extends FingerprintManager.AuthenticationCallback {
     public final /* synthetic */ m a;
@@ -24,31 +24,31 @@ public final class a extends FingerprintManager.AuthenticationCallback {
 
     @Override // android.hardware.fingerprint.FingerprintManager.AuthenticationCallback
     public final void onAuthenticationError(int i10, CharSequence charSequence) {
-        ((w) ((aa.a) this.a.b).d).a(i10, charSequence);
+        ((v) ((aa.a) this.a.b).d).a(i10, charSequence);
     }
 
     @Override // android.hardware.fingerprint.FingerprintManager.AuthenticationCallback
     public final void onAuthenticationFailed() {
-        WeakReference weakReference = ((w) ((aa.a) this.a.b).d).a;
-        if (weakReference.get() == null || !((y) weakReference.get()).n) {
+        WeakReference weakReference = ((v) ((aa.a) this.a.b).d).a;
+        if (weakReference.get() == null || !((x) weakReference.get()).n) {
             return;
         }
-        y yVar = (y) weakReference.get();
-        if (yVar.u == null) {
-            yVar.u = new z();
+        x xVar = (x) weakReference.get();
+        if (xVar.u == null) {
+            xVar.u = new z();
         }
-        y.h(yVar.u, Boolean.TRUE);
+        x.h(xVar.u, Boolean.TRUE);
     }
 
     @Override // android.hardware.fingerprint.FingerprintManager.AuthenticationCallback
     public final void onAuthenticationHelp(int i10, CharSequence charSequence) {
-        WeakReference weakReference = ((w) ((aa.a) this.a.b).d).a;
+        WeakReference weakReference = ((v) ((aa.a) this.a.b).d).a;
         if (weakReference.get() != null) {
-            y yVar = (y) weakReference.get();
-            if (yVar.t == null) {
-                yVar.t = new z();
+            x xVar = (x) weakReference.get();
+            if (xVar.t == null) {
+                xVar.t = new z();
             }
-            y.h(yVar.t, charSequence);
+            x.h(xVar.t, charSequence);
         }
     }
 
@@ -57,23 +57,23 @@ public final class a extends FingerprintManager.AuthenticationCallback {
         m mVar = this.a;
         aa.a L = b.L(b.f(authenticationResult));
         mVar.getClass();
-        u uVar = null;
+        t tVar = null;
         if (L != null) {
             Cipher cipher = (Cipher) L.c;
             if (cipher != null) {
-                uVar = new u(cipher);
+                tVar = new t(cipher);
             } else {
                 Signature signature = (Signature) L.b;
                 if (signature != null) {
-                    uVar = new u(signature);
+                    tVar = new t(signature);
                 } else {
                     Mac mac = (Mac) L.d;
                     if (mac != null) {
-                        uVar = new u(mac);
+                        tVar = new t(mac);
                     }
                 }
             }
         }
-        ((w) ((aa.a) mVar.b).d).b(new t(uVar, 2));
+        ((v) ((aa.a) mVar.b).d).b(new s(tVar, 2));
     }
 }

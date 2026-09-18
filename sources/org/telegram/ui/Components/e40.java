@@ -6,13 +6,13 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public abstract class e40 extends v51 {
+public abstract class e40 extends x51 {
     public final int N;
     public final ArrayList O;
     public boolean P;
-    public bi.d8 Q;
+    public ai.v8 Q;
     public boolean R;
     public boolean S;
     public int T;
@@ -22,11 +22,11 @@ public abstract class e40 extends v51 {
     public String X;
     public String Y;
     public int Z;
-    public org.telegram.ui.dm a0;
+    public wm a0;
     public final boolean[] b0;
 
-    public e40(ll0 ll0Var, Context context, int i10) {
-        super(ll0Var, context, i10, 0, false, null, null);
+    public e40(ml0 ml0Var, Context context, int i10) {
+        super(ml0Var, context, i10, 0, false, null, null);
         this.O = new ArrayList();
         this.T = 0;
         this.U = -1;
@@ -56,10 +56,10 @@ public abstract class e40 extends v51 {
     }
 
     public final void V() {
-        bi.d8 d8Var = this.Q;
-        if (d8Var != null && d8Var.I != 0) {
-            ConnectionsManager.getInstance(d8Var.c).cancelRequest(d8Var.I, true);
-            d8Var.I = 0;
+        ai.v8 v8Var = this.Q;
+        if (v8Var != null && v8Var.I != 0) {
+            ConnectionsManager.getInstance(v8Var.c).cancelRequest(v8Var.I, true);
+            v8Var.I = 0;
         }
         this.P = false;
         if (this.U >= 0) {
@@ -72,12 +72,12 @@ public abstract class e40 extends v51 {
     }
 
     public final void W() {
-        ll0 ll0Var;
-        if (TextUtils.isEmpty(this.X) || this.V || this.S || (ll0Var = this.d) == null) {
+        ml0 ml0Var;
+        if (TextUtils.isEmpty(this.X) || this.V || this.S || (ml0Var = this.d) == null) {
             return;
         }
-        for (int i10 = 0; i10 < ll0Var.getChildCount(); i10++) {
-            if (ll0Var.getChildAt(i10) instanceof t00) {
+        for (int i10 = 0; i10 < ml0Var.getChildCount(); i10++) {
+            if (ml0Var.getChildAt(i10) instanceof t00) {
                 Y(this.X);
                 return;
             }
@@ -102,8 +102,8 @@ public abstract class e40 extends v51 {
         }
         this.S = true;
         N(true);
-        org.telegram.ui.dm dmVar = new org.telegram.ui.dm(this, i10, X, 6);
-        this.a0 = dmVar;
-        AndroidUtilities.runOnUIThread(dmVar, 300L);
+        wm wmVar = new wm(this, i10, X, 5);
+        this.a0 = wmVar;
+        AndroidUtilities.runOnUIThread(wmVar, 300L);
     }
 }

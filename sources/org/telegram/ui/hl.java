@@ -1,6 +1,6 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class hl implements Runnable {
     public final /* synthetic */ int a;
@@ -15,20 +15,20 @@ public final /* synthetic */ class hl implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                mk mkVar = this.b.H.Y;
-                if (mkVar != null) {
-                    mkVar.T0 = false;
-                    org.telegram.ui.Components.eg egVar = mkVar.U0;
-                    if (egVar != null) {
-                        egVar.u(false);
+                nk nkVar = this.b.H.Y;
+                if (nkVar != null) {
+                    nkVar.T0 = false;
+                    org.telegram.ui.Components.cg cgVar = nkVar.U0;
+                    if (cgVar != null) {
+                        cgVar.u(false);
                         break;
                     }
                 }
                 break;
             default:
-                mk mkVar2 = this.b.H.Y;
-                if (mkVar2 != null) {
-                    mkVar2.H0();
+                nk nkVar2 = this.b.H.Y;
+                if (nkVar2 != null) {
+                    nkVar2.I0();
                     break;
                 }
                 break;

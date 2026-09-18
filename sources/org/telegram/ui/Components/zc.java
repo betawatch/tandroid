@@ -1,79 +1,133 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import android.view.View;
-import android.view.animation.OvershootInterpolator;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.RadialGradient;
+import android.graphics.RectF;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LiteMode;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public class zc {
-    public View a;
-    public final float b;
-    public final float c;
-    public final float d;
-    public long e;
-    public Runnable f;
-    public ValueAnimator g;
-    public boolean h;
+public final class zc {
+    public float A;
+    public float B;
+    public float C;
+    public float D;
+    public final /* synthetic */ bd E;
+    public final Paint a;
+    public Bitmap b;
+    public float c;
+    public float d;
+    public final c6 e;
+    public final c6 f;
+    public float g;
+    public final c6 h;
     public float i;
+    public final c6 j;
+    public final m6 k;
+    public float l;
+    public final c6 m;
+    public boolean n;
+    public final c6 o;
+    public final Path p;
+    public final Paint q;
+    public final RectF r;
+    public final Paint s;
+    public final Paint t;
+    public final RectF u;
+    public RadialGradient v;
+    public Matrix w;
+    public float x;
+    public float y;
+    public float z;
 
-    public zc(View view) {
-        this(view, 1.0f, 5.0f);
+    public zc(bd bdVar) {
+        this.E = bdVar;
+        Paint paint = new Paint(3);
+        this.a = paint;
+        paint.setColor(-1);
+        qr qrVar = qr.h;
+        this.e = new c6(bdVar, 650L, qrVar);
+        this.f = new c6(bdVar, 650L, qrVar);
+        qr qrVar2 = qr.g;
+        this.h = new c6(bdVar, 0L, 150L, qrVar2);
+        this.i = 1.0f;
+        this.j = new c6(bdVar, 0L, 150L, qrVar2);
+        m6 m6Var = new m6(false, true, true, false);
+        this.k = m6Var;
+        this.m = new c6(bdVar, 0L, 150L, qrVar2);
+        this.o = new c6(bdVar, 0L, 200L, qrVar);
+        m6Var.r(-1);
+        m6Var.k(0.35f, 200L, qrVar);
+        m6Var.u(AndroidUtilities.bold());
+        m6Var.t(AndroidUtilities.dp(15.0f));
+        m6Var.b = 17;
+        this.p = new Path();
+        Paint paint2 = new Paint(1);
+        this.q = paint2;
+        this.r = new RectF();
+        this.s = new Paint(1);
+        Paint paint3 = new Paint(1);
+        this.t = paint3;
+        paint3.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
+        paint2.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
+        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_ATOP));
+        this.u = new RectF();
     }
 
-    public final float a(float f7) {
-        return com.google.android.gms.internal.vision.e2.z(1.0f, this.i, f7, 1.0f - f7);
-    }
-
-    public void b() {
-        View view = this.a;
-        if (view != null) {
-            view.invalidate();
+    public final void a(Canvas canvas, float f7, float f10, float f11, float f12, float f13, float f14, float f15, float f16, float f17, float f18) {
+        if (f18 <= 0.0f || !LiteMode.isEnabled(LiteMode.FLAGS_CHAT)) {
+            return;
         }
-        Runnable runnable = this.f;
-        if (runnable != null) {
-            runnable.run();
+        long currentTimeMillis = System.currentTimeMillis();
+        float sqrt = (float) Math.sqrt(2.0d);
+        if (bd.b0 < 0) {
+            bd.b0 = currentTimeMillis;
         }
-    }
-
-    public final void c(boolean z10) {
-        if (this.h != z10) {
-            this.h = z10;
-            ValueAnimator valueAnimator = this.g;
-            this.g = null;
-            if (valueAnimator != null) {
-                valueAnimator.cancel();
+        float f19 = (currentTimeMillis - bd.b0) / 10000.0f;
+        Bitmap bitmap = this.b;
+        if (bitmap != null) {
+            int width = bitmap.getWidth();
+            float f20 = width;
+            float dpf2 = AndroidUtilities.dpf2(15.0f) / f20;
+            float f21 = 7.0f;
+            int floor = (int) Math.floor((f13 % 360.0f) / 7.0f);
+            int ceil = (int) Math.ceil((f14 % 360.0f) / 7.0f);
+            while (floor <= ceil) {
+                float f22 = floor * f21;
+                float sin = (float) (((((Math.sin(2000.0f * f22) + 1.0d) * 0.25d) + 1.0d) * (100.0f + f19)) % 1.0d);
+                float f23 = f20 * sqrt;
+                float f24 = f19;
+                double lerp = AndroidUtilities.lerp(f15 - f23, f16 + f23, sin);
+                float e = (float) hg.k0.e(bd.a(f22), lerp, f7);
+                int i10 = width;
+                float sin2 = (float) ((Math.sin(bd.a(f22)) * lerp) + f10);
+                float abs = (Math.abs(sin - 0.5f) * (-1.75f)) + 1.0f;
+                int max = (int) (Math.max(0.0f, Math.min(1.0f, AndroidUtilities.lerp(1.0f, Math.min(v7.z6.a(e, sin2, f11, f12) / AndroidUtilities.dpf2(64.0f), 1.0f), f17) * com.google.android.gms.internal.vision.e2.B((float) (Math.sin(sin * 3.141592653589793d) - 1.0d), 0.25f, 1.0f, abs * 0.65f * f18))) * 255.0f);
+                Paint paint = this.a;
+                paint.setAlpha(max);
+                float f25 = dpf2;
+                float sin3 = f25 * ((float) ((((Math.sin(f22) + 1.0d) * 0.25d) + 0.800000011920929d) * com.google.android.gms.internal.vision.e2.B((float) (Math.sin(r12) - 1.0d), 0.25f, 1.0f, 0.75f)));
+                canvas.save();
+                canvas.translate(e, sin2);
+                canvas.scale(sin3, sin3);
+                float f26 = -(i10 >> 1);
+                canvas.drawBitmap(this.b, f26, f26, paint);
+                canvas.restore();
+                floor++;
+                sqrt = sqrt;
+                width = i10;
+                f20 = f20;
+                dpf2 = f25;
+                f19 = f24;
+                f21 = 7.0f;
             }
-            ValueAnimator ofFloat = ValueAnimator.ofFloat(this.i, z10 ? 1.0f : 0.0f);
-            this.g = ofFloat;
-            ofFloat.addUpdateListener(new l6(this, 7));
-            this.g.addListener(new org.telegram.ui.to(2, this, z10));
-            if (this.h) {
-                this.g.setInterpolator(pr.f);
-                this.g.setDuration((long) (this.b * 60.0f));
-                this.g.setStartDelay(0L);
-            } else {
-                this.g.setInterpolator(new OvershootInterpolator(this.d));
-                this.g.setDuration((long) (this.c * 350.0f));
-                this.g.setStartDelay(this.e);
-            }
-            this.g.start();
         }
-    }
-
-    public zc(View view, float f7, float f10) {
-        this.e = 0L;
-        this.a = view;
-        this.c = f7;
-        this.b = f7;
-        this.d = f10;
-    }
-
-    public zc(di.o6 o6Var) {
-        this.e = 0L;
-        this.a = o6Var;
-        this.b = 1.5f;
-        this.c = 1.0f;
-        this.d = 2.0f;
     }
 }

@@ -2,31 +2,29 @@ package org.telegram.messenger;
 
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class ke implements Runnable {
+public final /* synthetic */ class ke implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ Utilities.Callback2 c;
+    public final /* synthetic */ Utilities.Callback4 b;
 
-    public /* synthetic */ ke(int i10, int i11, Utilities.Callback2 callback2) {
-        this.a = i11;
-        this.b = i10;
-        this.c = callback2;
+    public /* synthetic */ ke(Utilities.Callback4 callback4, int i10) {
+        this.a = i10;
+        this.b = callback4;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                MessagesController.1.lambda$getLocal$1(this.b, this.c);
-                break;
-            case 1:
-                MessagesController.4.lambda$getLocal$1(this.b, this.c);
+                MessagesController.1.lambda$getRemote$0(this.b, tLObject, tL_error);
                 break;
             default:
-                MessagesController.5.lambda$getLocal$2(this.b, this.c);
+                MessagesController.4.lambda$getRemote$0(this.b, tLObject, tL_error);
                 break;
         }
     }

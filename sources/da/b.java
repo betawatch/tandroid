@@ -1,13 +1,14 @@
 package da;
 
+import a4.m;
 import a6.i;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
+import ci.t9;
+import ci.z6;
 import com.google.firebase.messaging.n;
-import di.s9;
-import di.y6;
-import fi.f;
+import ei.d5;
 import j$.util.Objects;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -19,25 +20,26 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicReference;
-import ji.k5;
+import k2.v;
 import k5.k;
+import k5.l;
 import k5.t;
 import k5.u;
 import k5.w;
 import l5.h;
-import l5.l;
+import l5.o;
 import m.p3;
 import m1.j;
 import m5.e;
 import org.json.JSONObject;
 import org.telegram.ui.Cells.p6;
-import org.telegram.ui.qv0;
+import org.telegram.ui.tv0;
 import s5.g;
 import w7.f6;
 import y9.b0;
 import y9.k0;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class b {
     public Object a;
@@ -121,21 +123,21 @@ public final class b {
         a aVar = null;
         try {
             if (!j.b(2, i10)) {
-                JSONObject B = ((i) this.e).B();
-                if (B != null) {
-                    a O = ((xa.c) this.c).O(B);
-                    f("Loaded cached settings: ", B);
-                    ((ob.a) this.d).getClass();
+                JSONObject B0 = ((m) this.e).B0();
+                if (B0 != null) {
+                    a Q = ((i) this.c).Q(B0);
+                    f("Loaded cached settings: ", B0);
+                    ((na.d) this.d).getClass();
                     long currentTimeMillis = System.currentTimeMillis();
-                    if (j.b(3, i10) || O.c >= currentTimeMillis) {
+                    if (j.b(3, i10) || Q.c >= currentTimeMillis) {
                         try {
                             if (Log.isLoggable("FirebaseCrashlytics", 2)) {
                                 Log.v("FirebaseCrashlytics", "Returning cached settings.", null);
                             }
-                            return O;
-                        } catch (Exception e7) {
-                            e = e7;
-                            aVar = O;
+                            return Q;
+                        } catch (Exception e) {
+                            e = e;
+                            aVar = Q;
                             Log.e("FirebaseCrashlytics", "Failed to get cached settings", e);
                             return aVar;
                         }
@@ -149,8 +151,8 @@ public final class b {
                 }
             }
             return null;
-        } catch (Exception e10) {
-            e = e10;
+        } catch (Exception e7) {
+            e = e7;
         }
     }
 
@@ -170,7 +172,7 @@ public final class b {
         String str;
         m5.a aVar2;
         int i11;
-        j5.b b10;
+        ii.b0 c10;
         String str2;
         Integer num;
         p3 p3Var;
@@ -184,7 +186,7 @@ public final class b {
         while (true) {
             final int i13 = 0;
             g gVar = (g) cVar;
-            if (!((Boolean) gVar.f(new t5.b(bVar) { // from class: r5.d
+            if (!((Boolean) gVar.f(new t5.b(bVar) { // from class: r5.e
                 public final /* synthetic */ da.b b;
 
                 {
@@ -201,11 +203,11 @@ public final class b {
                             SQLiteDatabase a10 = gVar2.a();
                             a10.beginTransaction();
                             try {
-                                Long b11 = g.b(a10, iVar3);
-                                if (b11 == null) {
+                                Long b10 = g.b(a10, iVar3);
+                                if (b10 == null) {
                                     bool = Boolean.FALSE;
                                 } else {
-                                    Cursor rawQuery = gVar2.a().rawQuery("SELECT 1 FROM events WHERE context_id = ? LIMIT 1", new String[]{b11.toString()});
+                                    Cursor rawQuery = gVar2.a().rawQuery("SELECT 1 FROM events WHERE context_id = ? LIMIT 1", new String[]{b10.toString()});
                                     try {
                                         Boolean valueOf = Boolean.valueOf(rawQuery.moveToNext());
                                         rawQuery.close();
@@ -223,15 +225,15 @@ public final class b {
                         default:
                             g gVar3 = (g) ((s5.d) this.b.c);
                             gVar3.getClass();
-                            return (Iterable) gVar3.c(new qv0(29, gVar3, iVar2));
+                            return (Iterable) gVar3.c(new tv0(29, gVar3, iVar2));
                     }
                 }
             })).booleanValue()) {
-                gVar.f(new s9(bVar, iVar2, j10, 7));
+                gVar.f(new t9(bVar, iVar2, j10, 7));
                 return;
             }
             final int i14 = 1;
-            Iterable iterable = (Iterable) gVar.f(new t5.b(bVar) { // from class: r5.d
+            Iterable iterable = (Iterable) gVar.f(new t5.b(bVar) { // from class: r5.e
                 public final /* synthetic */ da.b b;
 
                 {
@@ -248,11 +250,11 @@ public final class b {
                             SQLiteDatabase a10 = gVar2.a();
                             a10.beginTransaction();
                             try {
-                                Long b11 = g.b(a10, iVar3);
-                                if (b11 == null) {
+                                Long b10 = g.b(a10, iVar3);
+                                if (b10 == null) {
                                     bool = Boolean.FALSE;
                                 } else {
-                                    Cursor rawQuery = gVar2.a().rawQuery("SELECT 1 FROM events WHERE context_id = ? LIMIT 1", new String[]{b11.toString()});
+                                    Cursor rawQuery = gVar2.a().rawQuery("SELECT 1 FROM events WHERE context_id = ? LIMIT 1", new String[]{b10.toString()});
                                     try {
                                         Boolean valueOf = Boolean.valueOf(rawQuery.moveToNext());
                                         rawQuery.close();
@@ -270,7 +272,7 @@ public final class b {
                         default:
                             g gVar3 = (g) ((s5.d) this.b.c);
                             gVar3.getClass();
-                            return (Iterable) gVar3.c(new qv0(29, gVar3, iVar2));
+                            return (Iterable) gVar3.c(new tv0(29, gVar3, iVar2));
                     }
                 }
             });
@@ -288,34 +290,35 @@ public final class b {
                 while (it.hasNext()) {
                     arrayList.add(((s5.b) it.next()).c);
                 }
+                int i15 = 29;
                 if (bArr2 != null) {
                     s5.c cVar2 = (s5.c) bVar.i;
                     Objects.requireNonNull(cVar2);
-                    o5.a aVar3 = (o5.a) gVar.f(new k5(cVar2, 19));
+                    o5.a aVar3 = (o5.a) gVar.f(new v(cVar2, i15));
                     n nVar = new n();
                     nVar.f = new HashMap();
-                    nVar.d = Long.valueOf(((u5.a) bVar.g).l());
-                    nVar.e = Long.valueOf(((u5.a) bVar.h).l());
+                    nVar.d = Long.valueOf(((u5.a) bVar.g).q());
+                    nVar.e = Long.valueOf(((u5.a) bVar.h).q());
                     nVar.a = "GDT_CLIENT_METRICS";
                     i5.c cVar3 = new i5.c("proto");
                     aVar3.getClass();
-                    aa.a aVar4 = l5.n.a;
+                    aa.a aVar4 = o.a;
                     aVar4.getClass();
                     ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
                     try {
-                        aVar4.l(aVar3, byteArrayOutputStream);
+                        aVar4.j(aVar3, byteArrayOutputStream);
                     } catch (IOException unused) {
                     }
-                    nVar.c = new l(cVar3, byteArrayOutputStream.toByteArray());
-                    arrayList.add(((j5.c) a2).a(nVar.g()));
+                    nVar.c = new l5.m(cVar3, byteArrayOutputStream.toByteArray());
+                    arrayList.add(((j5.b) a2).a(nVar.g()));
                 }
-                j5.c cVar4 = (j5.c) a2;
+                j5.b bVar2 = (j5.b) a2;
                 HashMap hashMap = new HashMap();
                 int size = arrayList.size();
-                int i15 = 0;
-                while (i15 < size) {
-                    Object obj = arrayList.get(i15);
-                    i15++;
+                int i16 = 0;
+                while (i16 < size) {
+                    Object obj = arrayList.get(i16);
+                    i16++;
                     h hVar = (h) obj;
                     String str3 = hVar.a;
                     if (hashMap.containsKey(str3)) {
@@ -332,8 +335,8 @@ public final class b {
                     Map.Entry entry = (Map.Entry) it2.next();
                     h hVar2 = (h) ((List) entry.getValue()).get(0);
                     w wVar = w.a;
-                    long l4 = cVar4.f.l();
-                    long l10 = cVar4.e.l();
+                    long q6 = bVar2.f.q();
+                    long q10 = bVar2.e.q();
                     k5.j jVar = new k5.j(new k5.h(Integer.valueOf(hVar2.b("sdk-version")), hVar2.a("model"), hVar2.a("hardware"), hVar2.a("device"), hVar2.a("product"), hVar2.a("os-uild"), hVar2.a("manufacturer"), hVar2.a("fingerprint"), hVar2.a("locale"), hVar2.a("country"), hVar2.a("mcc_mnc"), hVar2.a("application_build")));
                     try {
                         num = Integer.valueOf(Integer.parseInt((String) entry.getKey()));
@@ -345,23 +348,23 @@ public final class b {
                     ArrayList arrayList4 = new ArrayList();
                     for (h hVar3 : (List) entry.getValue()) {
                         Iterator it3 = it2;
-                        l lVar = hVar3.c;
+                        l5.m mVar = hVar3.c;
                         byte[] bArr3 = bArr2;
-                        i5.c cVar5 = lVar.a;
-                        byte[] bArr4 = lVar.b;
+                        i5.c cVar4 = mVar.a;
+                        byte[] bArr4 = mVar.b;
                         long j11 = j10;
-                        if (cVar5.equals(new i5.c("proto"))) {
+                        if (cVar4.equals(new i5.c("proto"))) {
                             p3Var = new p3();
                             p3Var.d = bArr4;
-                        } else if (cVar5.equals(new i5.c("json"))) {
+                        } else if (cVar4.equals(new i5.c("json"))) {
                             String str4 = new String(bArr4, Charset.forName("UTF-8"));
                             p3 p3Var2 = new p3();
                             p3Var2.e = str4;
                             p3Var = p3Var2;
                         } else {
-                            String c10 = f6.c("CctTransportBackend");
-                            if (Log.isLoggable(c10, 5)) {
-                                Log.w(c10, "Received event of unsupported encoding " + cVar5 + ". Skipping...");
+                            String c11 = f6.c("CctTransportBackend");
+                            if (Log.isLoggable(c11, 5)) {
+                                Log.w(c11, "Received event of unsupported encoding " + cVar4 + ". Skipping...");
                             }
                             it2 = it3;
                             bArr2 = bArr3;
@@ -391,13 +394,13 @@ public final class b {
                         bArr2 = bArr3;
                         j10 = j11;
                     }
-                    arrayList3.add(new k5.l(l4, l10, jVar, num, str2, arrayList4));
+                    arrayList3.add(new l(q6, q10, jVar, num, str2, arrayList4));
                     it2 = it2;
                 }
                 bArr = bArr2;
                 j3 = j10;
                 k5.i iVar3 = new k5.i(arrayList3);
-                URL url = cVar4.d;
+                URL url = bVar2.d;
                 if (bArr != null) {
                     try {
                         j5.a a10 = j5.a.a(bArr);
@@ -407,7 +410,7 @@ public final class b {
                         }
                         String str7 = a10.a;
                         if (str7 != null) {
-                            url = j5.c.b(str7);
+                            url = j5.b.b(str7);
                         }
                     } catch (IllegalArgumentException unused3) {
                         aVar = new m5.a(3, -1L);
@@ -416,36 +419,36 @@ public final class b {
                     str = null;
                 }
                 try {
-                    int i16 = 20;
-                    aa.a aVar5 = new aa.a(url, iVar3, str, i16);
-                    f fVar = new f(cVar4, 21);
-                    int i17 = 5;
+                    int i17 = 21;
+                    aa.a aVar5 = new aa.a(url, iVar3, str, i17);
+                    d5 d5Var = new d5(bVar2, 29);
+                    int i18 = 5;
                     do {
-                        b10 = fVar.b(aVar5);
-                        URL url2 = (URL) b10.c;
+                        c10 = d5Var.c(aVar5);
+                        URL url2 = (URL) c10.c;
                         if (url2 != null) {
                             f6.a(url2, "CctTransportBackend", "Following redirect to: %s");
-                            aVar5 = new aa.a(url2, (k5.i) aVar5.d, (String) aVar5.b, i16);
+                            aVar5 = new aa.a(url2, (k5.i) aVar5.d, (String) aVar5.b, i17);
                         } else {
                             aVar5 = null;
                         }
                         if (aVar5 == null) {
                             break;
                         } else {
-                            i17--;
+                            i18--;
                         }
-                    } while (i17 >= 1);
-                    int i18 = b10.b;
-                    if (i18 == 200) {
-                        aVar2 = new m5.a(1, b10.a);
+                    } while (i18 >= 1);
+                    int i19 = c10.a;
+                    if (i19 == 200) {
+                        aVar2 = new m5.a(1, c10.b);
                     } else {
-                        if (i18 >= 500 || i18 == 404) {
+                        if (i19 >= 500 || i19 == 404) {
                             aVar = new m5.a(2, -1L);
-                        } else if (i18 == 400) {
+                        } else if (i19 == 400) {
                             try {
                                 aVar = new m5.a(4, -1L);
-                            } catch (IOException e7) {
-                                e = e7;
+                            } catch (IOException e) {
+                                e = e;
                                 f6.b("CctTransportBackend", "Could not make request to the backend", e);
                                 i11 = 2;
                                 aVar2 = new m5.a(2, -1L);
@@ -458,25 +461,26 @@ public final class b {
                         }
                         aVar2 = aVar;
                     }
-                } catch (IOException e10) {
-                    e = e10;
+                } catch (IOException e7) {
+                    e = e7;
                 }
             }
             i11 = 2;
             i12 = aVar2.a;
             if (i12 != i11) {
-                gVar.f(new y6(this, iterable, iVar, j3, 4));
-                ((m2.t) this.d).O(iVar, i10 + 1, true);
+                gVar.f(new z6(this, iterable, iVar, j3, 4));
+                ((lf.i) this.d).V(iVar, i10 + 1, true);
                 return;
             }
             bVar = this;
             iVar2 = iVar;
             j10 = j3;
-            gVar.f(new qv0(26, bVar, iterable));
+            int i20 = 1;
+            gVar.f(new tv0(26, bVar, iterable));
             if (i12 == 1) {
                 j10 = Math.max(j10, aVar2.b);
                 if (bArr != null) {
-                    gVar.f(new k5(bVar, 21));
+                    gVar.f(new r5.d(bVar, i20));
                 }
             } else if (i12 == 4) {
                 HashMap hashMap2 = new HashMap();
@@ -489,7 +493,7 @@ public final class b {
                         hashMap2.put(str8, 1);
                     }
                 }
-                gVar.f(new qv0(27, bVar, hashMap2));
+                gVar.f(new tv0(27, bVar, hashMap2));
             }
             bArr2 = bArr;
         }

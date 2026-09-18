@@ -1,179 +1,269 @@
 package bi;
 
-import android.view.View;
+import ai.y1;
+import android.content.Context;
+import android.media.AudioManager;
+import ci.h8;
+import ci.l4;
+import ci.qb;
+import ci.r6;
+import ci.s3;
+import e2.d0;
+import fi.t0;
+import i2.b0;
+import i2.e0;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessageObject;
-import org.telegram.ui.Components.ue;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.bd;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.FileUploadOperation;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.LocationController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.R;
+import org.telegram.messenger.RichMessageLayout;
+import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.camera.CameraController;
+import org.telegram.messenger.voip.VideoCapturerDevice;
+import org.telegram.messenger.voip.VoIPService;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.e4;
+import org.telegram.ui.Components.b40;
+import org.telegram.ui.Components.ba0;
+import org.telegram.ui.Components.c10;
+import org.telegram.ui.Components.cw;
+import org.telegram.ui.Components.kp;
+import org.telegram.ui.Components.lp;
+import org.telegram.ui.Components.mp;
+import org.telegram.ui.Components.nr0;
+import org.telegram.ui.Components.or0;
+import org.telegram.ui.Components.oy0;
+import org.telegram.ui.Components.v50;
+import org.telegram.ui.Components.w50;
+import org.telegram.ui.Components.wm0;
+import org.telegram.ui.Components.zu0;
+import org.telegram.ui.PremiumPreviewFragment;
+import org.telegram.ui.rm;
+import org.telegram.ui.wo;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class f implements e2.h {
+public final /* synthetic */ class f implements Runnable {
     public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ Object c;
 
-    public /* synthetic */ f(int i10) {
+    public /* synthetic */ f(int i10, Object obj, boolean z10) {
         this.a = i10;
+        this.c = obj;
+        this.b = z10;
     }
 
-    @Override // e2.h
-    public final void accept(Object obj) {
-        MessageObject messageObject;
-        MessageObject messageObject2;
-        switch (this.a) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10 = this.a;
+        int i11 = 1;
+        boolean z10 = this.b;
+        Object obj = this.c;
+        switch (i10) {
             case 0:
-                View view = (View) obj;
-                view.setAlpha(1.0f);
-                view.setTranslationX(0.0f);
-                view.setTranslationY(0.0f);
-                break;
+                u uVar = (u) obj;
+                nr0 nr0Var = uVar.W;
+                if (!z10) {
+                    nr0Var.b(uVar.a.E);
+                    break;
+                } else {
+                    new y(nr0Var.a, LocaleController.getString(R.string.ProfileBotPreviewLanguageChoose), new y1(nr0Var, 4)).show();
+                    break;
+                }
             case 1:
-                ((View) obj).setTranslationY(0.0f);
-                break;
+                s3 s3Var = (s3) obj;
+                if (!z10) {
+                    s3Var.I.setVisibility(8);
+                    break;
+                } else {
+                    s3Var.getClass();
+                    break;
+                }
             case 2:
-                ((u) ((View) obj)).invalidate();
+                ((l4) obj).b.setVisibility(z10 ? 0 : 8);
                 break;
             case 3:
-                View view2 = (View) obj;
-                if (view2 instanceof ig.x1) {
-                    ((ig.x1) view2).c.invalidate();
+                r6 r6Var = (r6) obj;
+                if (!z10) {
+                    r6Var.X0.setVisibility(8);
+                    break;
+                } else {
+                    r6Var.getClass();
                     break;
                 }
-                break;
             case 4:
-                View view3 = (View) obj;
-                if (view3 instanceof ig.x1) {
-                    ((ig.x1) view3).d.a(false, true);
+                h8 h8Var = (h8) obj;
+                if (!z10) {
+                    h8Var.setVisibility(8);
+                    break;
+                } else {
+                    h8Var.getClass();
                     break;
                 }
-                break;
             case 5:
-                ((m4.j1) obj).e();
-                break;
+                qb qbVar = (qb) obj;
+                if (!z10) {
+                    qbVar.A2.j1.setVisibility(8);
+                    break;
+                } else {
+                    qbVar.getClass();
+                    break;
+                }
             case 6:
-                ((m4.j1) obj).e0();
+                ((t0) obj).f(z10, false);
                 break;
             case 7:
-                ((m4.j1) obj).z0();
+                k2.j jVar = (k2.j) ((n4.y) obj).c;
+                String str = d0.a;
+                e0 e0Var = ((b0) jVar).a;
+                if (e0Var.a0 != z10) {
+                    e0Var.a0 = z10;
+                    e0Var.m.e(23, new i2.x(i11, z10));
+                    break;
+                }
                 break;
             case 8:
-                ((m4.j1) obj).G0();
+                ((FileLoader) obj).lambda$onNetworkChanged$4(z10);
                 break;
             case 9:
-                ((m4.j1) obj).V();
+                ((FileUploadOperation) obj).lambda$onNetworkChanged$1(z10);
                 break;
             case 10:
-                ((m4.j1) obj).F();
+                ((LocationController) obj).lambda$startFusedLocationRequest$5(z10);
                 break;
             case 11:
-                ((m4.j1) obj).F0();
+                ((RichMessageLayout.RichBlock) obj).lambda$toggleCheckbox$1(z10);
                 break;
             case 12:
-                ((m4.j1) obj).E0();
+                ((UserConfig) obj).lambda$saveConfig$0(z10);
                 break;
             case 13:
-                ((m4.j1) obj).L();
+                ((CameraController) obj).lambda$recordVideo$11(z10);
                 break;
             case 14:
-                ((m4.j1) obj).stop();
+                ((VideoCapturerDevice) obj).lambda$new$0(z10);
                 break;
             case 15:
-                ((m4.j1) obj).b();
+                ((VoIPService) obj).lambda$startGroupCall$27(z10);
                 break;
             case 16:
-                ((m4.j1) obj).H();
+                ((AudioManager) obj).setSpeakerphoneOn(z10);
                 break;
             case 17:
-                ((m4.j1) obj).v();
+                ((ConnectionsManager) obj).lambda$setIsUpdating$22(z10);
                 break;
             case 18:
-                ((n2.j) obj).a();
+                nf.f.s((Context) obj, LocaleController.getString(z10 ? R.string.BotMonetizationInfoTONLink : R.string.MonetizationInfoTONLink));
                 break;
             case 19:
-                ((View) obj).invalidate();
+                oy0 oy0Var = ((rm) obj).c.d1;
+                if (oy0Var != null && z10) {
+                    oy0Var.setVisibility(8);
+                    break;
+                }
                 break;
             case 20:
-                bd.Y0((View) obj);
+                wo woVar = (wo) obj;
+                woVar.x0.autotranslation = z10;
+                woVar.getMessagesController().putChat(woVar.x0, false);
                 break;
             case 21:
-                View view4 = (View) obj;
-                if ((view4 instanceof org.telegram.ui.Cells.t1) && (messageObject = ((org.telegram.ui.Cells.t1) view4).getMessageObject()) != null) {
-                    messageObject.forceUpdate = true;
-                    break;
+                mp mpVar = (mp) obj;
+                kp kpVar = mpVar.h;
+                if (kpVar != null && kpVar.d != null && !mpVar.isDismissed()) {
+                    mpVar.A(z10, true);
+                    if (mpVar.M != null) {
+                        mpVar.P = true;
+                        TLRPC.WallPaper wallPaper = mpVar.v() ? null : mpVar.n.h;
+                        e4 e4Var = mpVar.M.a;
+                        if (e4Var.a) {
+                            mpVar.n.i(null, wallPaper, false, Boolean.valueOf(z10), false);
+                        } else {
+                            mpVar.n.i(e4Var, wallPaper, false, Boolean.valueOf(z10), false);
+                        }
+                    }
+                    if (kpVar.d != null) {
+                        while (r2 < kpVar.d.size()) {
+                            ((lp) kpVar.d.get(r2)).c = z10 ? 1 : 0;
+                            r2++;
+                        }
+                        kpVar.l();
+                        break;
+                    }
                 }
                 break;
             case 22:
-                View view5 = (View) obj;
-                if ((view5 instanceof org.telegram.ui.Cells.t1) && (messageObject2 = ((org.telegram.ui.Cells.t1) view5).getMessageObject()) != null) {
-                    messageObject2.forceUpdate = true;
-                    messageObject2.reactionsChanged = true;
+                cw cwVar = (cw) obj;
+                if (!z10) {
+                    cwVar.E.setVisibility(8);
                     break;
                 }
                 break;
             case 23:
-                View view6 = (View) obj;
-                if (!(view6 instanceof org.telegram.ui.ActionBar.y2)) {
-                    view6.invalidate();
-                    break;
-                } else {
-                    ((org.telegram.ui.ActionBar.y2) view6).getTextView().invalidate();
-                    break;
-                }
+                c10 c10Var = (c10) obj;
+                c10Var.R(c10Var.y0, z10);
+                break;
             case 24:
-                View view7 = (View) obj;
-                if (!(view7 instanceof org.telegram.ui.Cells.g5)) {
-                    if (!(view7 instanceof ig.x1)) {
-                        view7.invalidate();
-                        break;
-                    } else {
-                        ((ig.x1) view7).c.invalidate();
-                        break;
-                    }
+                b40 b40Var = (b40) obj;
+                if (!z10) {
+                    b40Var.r.setVisibility(8);
+                    break;
                 } else {
-                    org.telegram.ui.Cells.g5 g5Var = (org.telegram.ui.Cells.g5) view7;
-                    g5Var.b.invalidate();
-                    g5Var.c.invalidate();
+                    b40Var.getClass();
                     break;
                 }
             case 25:
-                View view8 = (View) obj;
-                if (view8 instanceof org.telegram.ui.Cells.f8) {
-                    ((org.telegram.ui.Cells.f8) view8).a(true);
+                w50 w50Var = ((v50) obj).H0;
+                if (!w50Var.g0) {
+                    try {
+                        w50Var.performHapticFeedback(3, 2);
+                    } catch (Exception unused) {
+                    }
+                    AndroidUtilities.lockOrientation(w50Var.c.getParentActivity());
+                    w50Var.d0 = z10 ? w50Var.f0 : 0L;
+                    w50Var.c0 = System.currentTimeMillis();
+                    w50Var.e0 = true;
+                    w50Var.r();
+                    w50Var.invalidate();
+                    NotificationCenter.getInstance(w50Var.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.recordStarted, Integer.valueOf(w50Var.Q), Boolean.FALSE);
                     break;
                 }
                 break;
             case 26:
-                View view9 = (View) obj;
-                if (view9 instanceof org.telegram.ui.Cells.f8) {
-                    ((org.telegram.ui.Cells.f8) view9).c(true);
+                ba0 ba0Var = (ba0) obj;
+                if (!z10) {
+                    ba0Var.getClass();
                     break;
-                }
-                break;
-            case 27:
-                Long l4 = (Long) obj;
-                if (l4 != null && l4.longValue() != Long.MAX_VALUE) {
-                    org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
-                    if (U != null) {
-                        U.presentFragment(ProfileActivity.m4(l4.longValue()));
-                        break;
-                    }
                 } else {
-                    AndroidUtilities.runOnUIThread(new ue(26));
+                    ba0Var.G.setVisibility(8);
                     break;
                 }
+            case 27:
+                ((wm0) obj).G.presentFragment(new PremiumPreviewFragment(0, z10 ? "upload_speed" : "download_speed"));
                 break;
             case 28:
-                break;
+                zu0 zu0Var = (zu0) obj;
+                if (!z10) {
+                    zu0Var.m0.setVisibility(8);
+                    break;
+                } else {
+                    zu0Var.getClass();
+                    break;
+                }
             default:
-                View view10 = (View) obj;
-                view10.setScaleX(1.0f);
-                view10.setScaleY(1.0f);
-                break;
+                or0 or0Var = (or0) obj;
+                if (!z10) {
+                    or0Var.U.q0.setVisibility(0);
+                    break;
+                } else {
+                    or0Var.getClass();
+                    break;
+                }
         }
-    }
-
-    public /* synthetic */ f(bd bdVar) {
-        this.a = 20;
     }
 }

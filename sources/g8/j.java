@@ -11,7 +11,7 @@ import android.os.Parcelable;
 import android.os.WorkSource;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.common.data.DataHolder;
-import com.google.android.gms.internal.clearcut.c2;
+import com.google.android.gms.internal.clearcut.d2;
 import com.google.android.gms.location.LocationAvailability;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationResult;
@@ -25,7 +25,7 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.tgnet.ConnectionsManager;
 import w7.d0;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class j implements Parcelable.Creator {
     public final /* synthetic */ int a;
@@ -306,7 +306,7 @@ public final class j implements Parcelable.Creator {
                 return new i6.b(j19, j20, z30);
             case 9:
                 int z31 = d0.z(parcel);
-                c2 c2Var = null;
+                d2 d2Var = null;
                 byte[] bArr = null;
                 int[] iArr = null;
                 String[] strArr = null;
@@ -318,7 +318,7 @@ public final class j implements Parcelable.Creator {
                     int readInt10 = parcel.readInt();
                     switch ((char) readInt10) {
                         case 2:
-                            c2Var = (c2) d0.g(parcel, readInt10, c2.CREATOR);
+                            d2Var = (d2) d0.g(parcel, readInt10, d2.CREATOR);
                             break;
                         case 3:
                             bArr = d0.b(parcel, readInt10);
@@ -347,7 +347,7 @@ public final class j implements Parcelable.Creator {
                     }
                 }
                 d0.m(parcel, z31);
-                return new i6.c(c2Var, bArr, iArr, strArr, iArr2, bArr2, z32, aVarArr);
+                return new i6.c(d2Var, bArr, iArr, strArr, iArr2, bArr2, z32, aVarArr);
             case 10:
                 int z33 = d0.z(parcel);
                 LatLng latLng = null;
@@ -558,7 +558,7 @@ public final class j implements Parcelable.Creator {
                 if (iBinder == null) {
                     gVar.d = null;
                 } else {
-                    gVar.d = new a6.i(x6.b.L0(iBinder));
+                    gVar.d = new xa.c(x6.b.L0(iBinder));
                 }
                 gVar.e = f15;
                 gVar.f = f16;

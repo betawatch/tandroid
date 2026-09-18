@@ -18,7 +18,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class d implements ServiceConnection {
     public final /* synthetic */ int a;
@@ -57,10 +57,10 @@ public final class d implements ServiceConnection {
                 int i11 = c5.e0.a;
                 i3 c10 = c5.e0.c(26, m3.b);
                 Objects.requireNonNull(c10, "ApiSuccess should not be null");
-                pf.b bVar = d0Var.h;
+                of.b bVar = d0Var.h;
                 bVar.getClass();
                 try {
-                    bVar.t0(c10, (p3) bVar.b);
+                    bVar.f0(c10, (p3) bVar.b);
                     break;
                 } catch (Throwable th2) {
                     com.google.android.gms.internal.play_billing.u.i("BillingLogger", "Unable to log.", th2);
@@ -79,16 +79,16 @@ public final class d implements ServiceConnection {
                     }
                 }
                 o0.a aVar2 = new o0.a(19, eVar, componentName);
-                if (((of.d) ((WeakReference) this.b).get()) != null) {
-                    of.f.b = aVar2;
-                    if (MessagesController.getInstance(UserConfig.selectedAccount).isWebBrowserUseCustomTabs() && (aVar = of.f.b) != null) {
+                if (((nf.d) ((WeakReference) this.b).get()) != null) {
+                    nf.f.b = aVar2;
+                    if (MessagesController.getInstance(UserConfig.selectedAccount).isWebBrowserUseCustomTabs() && (aVar = nf.f.b) != null) {
                         try {
                             ((vf.c) ((vf.e) aVar.b)).H0();
                             break;
                         } catch (RemoteException unused) {
                             return;
-                        } catch (Exception e7) {
-                            FileLog.e(e7);
+                        } catch (Exception e) {
+                            FileLog.e(e);
                             return;
                         }
                     }
@@ -96,14 +96,14 @@ public final class d implements ServiceConnection {
                 break;
             default:
                 StringBuilder sb2 = new StringBuilder("Connected to SessionLifecycleService. Queue size ");
-                fg.f fVar = (fg.f) this.b;
+                ni.f fVar = (ni.f) this.b;
                 LinkedBlockingDeque linkedBlockingDeque = (LinkedBlockingDeque) fVar.c;
                 sb2.append(linkedBlockingDeque.size());
                 Log.d("SessionLifecycleClient", sb2.toString());
                 fVar.b = new Messenger(iBinder);
                 ArrayList arrayList = new ArrayList();
                 linkedBlockingDeque.drainTo(arrayList);
-                zd.e0.q(zd.e0.b((id.h) fVar.a), new bb.j(fVar, arrayList, r12, 6));
+                zd.e0.q(zd.e0.b((id.h) fVar.a), new bb.i(fVar, arrayList, r12, 6));
                 break;
         }
     }
@@ -124,14 +124,14 @@ public final class d implements ServiceConnection {
                 d0Var.D = 0;
                 break;
             case 2:
-                if (((of.d) ((WeakReference) this.b).get()) != null) {
-                    of.f.b = null;
+                if (((nf.d) ((WeakReference) this.b).get()) != null) {
+                    nf.f.b = null;
                     break;
                 }
                 break;
             default:
                 Log.d("SessionLifecycleClient", "Disconnected from SessionLifecycleService");
-                fg.f fVar = (fg.f) this.b;
+                ni.f fVar = (ni.f) this.b;
                 fVar.b = null;
                 fVar.getClass();
                 break;

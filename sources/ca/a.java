@@ -1,14 +1,14 @@
 package ca;
 
-import androidx.emoji2.text.w;
+import ai.w1;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class a {
-    public static final z9.b b = new z9.b();
+    public static final z9.a b = new z9.a();
     public static final String c = a("hts/cahyiseot-agolai.o/1frlglgc/aclg", "tp:/rsltcrprsp.ogepscmv/ieo/eaybtho");
     public static final String d = a("AzSBpY4F0rHiHFdinTvM", "IayrSTFL9eJ69YeSUO2");
-    public static final w e = new w(20);
+    public static final w1 e = new w1(20);
     public final c a;
 
     public a(c cVar) {

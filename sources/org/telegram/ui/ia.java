@@ -1,142 +1,38 @@
 package org.telegram.ui;
 
-import android.view.KeyEvent;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import android.app.Activity;
+import android.content.Context;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ia implements TextView.OnEditorActionListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class ia extends pa {
+    public final /* synthetic */ int J = 1;
+    public final /* synthetic */ org.telegram.ui.Components.ll0 K;
 
-    public /* synthetic */ ia(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ia(ja jaVar, Activity activity, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(activity, f6Var);
+        this.K = jaVar;
+        this.a = true;
     }
 
-    @Override // android.widget.TextView.OnEditorActionListener
-    public final boolean onEditorAction(TextView textView, int i10, KeyEvent keyEvent) {
-        org.telegram.ui.ActionBar.v0 v0Var;
-        org.telegram.ui.Cells.t1 t1Var;
-        org.telegram.ui.ActionBar.v0 v0Var2;
-        switch (this.a) {
+    @Override // org.telegram.ui.pa
+    public final String getUsernameEditable() {
+        switch (this.J) {
             case 0:
-                ka kaVar = (ka) this.b;
-                if (i10 != 6 || (v0Var = kaVar.c.a) == null) {
-                    return false;
-                }
-                v0Var.performClick();
-                return true;
-            case 1:
-                co coVar = (co) this.b;
-                if (i10 == 6) {
-                    rh.c cVar = coVar.Cc;
-                    if (cVar != null && (t1Var = cVar.n) != null) {
-                        coVar.ua(t1Var);
-                        return true;
-                    }
-                } else {
-                    coVar.getClass();
-                }
-                return false;
-            case 2:
-                xo xoVar = (xo) this.b;
-                if (i10 != 6 || (v0Var2 = xoVar.a) == null) {
-                    return false;
-                }
-                v0Var2.performClick();
-                return true;
-            case 3:
-                es esVar = (es) this.b;
-                if (i10 == 5) {
-                    esVar.a();
-                    return true;
-                }
-                esVar.getClass();
-                return false;
-            case 4:
-                return i10 == 6 && ((f70) this.b).o0();
-            case 5:
-                pe0 pe0Var = (pe0) this.b;
-                if (i10 == 5) {
-                    pe0Var.h(null);
-                    return true;
-                }
-                pe0Var.getClass();
-                return false;
-            case 6:
-                xe0 xe0Var = (xe0) this.b;
-                if (i10 == 5) {
-                    xe0Var.h(null);
-                    return true;
-                }
-                xe0Var.getClass();
-                return false;
-            case 7:
-                lf0 lf0Var = (lf0) this.b;
-                if (i10 == 5) {
-                    lf0Var.h(null);
-                    return true;
-                }
-                lf0Var.getClass();
-                return false;
-            case 8:
-                PasscodeActivity passcodeActivity = (PasscodeActivity) this.b;
-                int i11 = passcodeActivity.E;
-                if (i11 == 0) {
-                    passcodeActivity.h0();
-                    return true;
-                }
-                if (i11 != 1) {
-                    return false;
-                }
-                passcodeActivity.g0();
-                return true;
-            case 9:
-                ln0 ln0Var = (ln0) this.b;
-                if (i10 == 5) {
-                    ln0Var.h(null);
-                    return true;
-                }
-                ln0Var.getClass();
-                return false;
-            case 10:
-                q21 q21Var = (q21) this.b;
-                q21Var.getClass();
-                if (i10 != 5) {
-                    if (i10 != 6) {
-                        return false;
-                    }
-                    q21Var.finishFragment();
-                    return true;
-                }
-                int intValue = ((Integer) textView.getTag()).intValue() + 1;
-                EditTextBoldCursor[] editTextBoldCursorArr = q21Var.a;
-                if (intValue >= editTextBoldCursorArr.length) {
-                    return true;
-                }
-                editTextBoldCursorArr[intValue].requestFocus();
-                return true;
-            case 11:
-                t71 t71Var = (t71) this.b;
-                if (keyEvent == null) {
-                    return false;
-                }
-                if ((keyEvent.getAction() != 1 || keyEvent.getKeyCode() != 84) && (keyEvent.getAction() != 0 || keyEvent.getKeyCode() != 66)) {
-                    return false;
-                }
-                AndroidUtilities.hideKeyboard(t71Var.c0);
-                return false;
+                return ((ja) this.K).c.r;
             default:
-                TwoStepVerificationActivity twoStepVerificationActivity = (TwoStepVerificationActivity) this.b;
-                twoStepVerificationActivity.getClass();
-                if (i10 != 5 && i10 != 6) {
-                    return false;
+                ci.h2 h2Var = ((ip) this.K).c.a3.a;
+                if (h2Var == null) {
+                    return null;
                 }
-                twoStepVerificationActivity.t0();
-                return true;
+                return h2Var.getText().toString();
         }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ia(ip ipVar, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context, f6Var);
+        this.K = ipVar;
     }
 }

@@ -1,85 +1,24 @@
 package org.telegram.ui;
 
-import android.util.SparseArray;
-import android.view.View;
+import android.app.Activity;
 import java.util.ArrayList;
-import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class qi {
-    public boolean a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ SparseArray c;
-    public final /* synthetic */ co d;
+public final class qi extends org.telegram.ui.Components.sv {
+    public final /* synthetic */ bo W;
 
-    public qi(co coVar, boolean z10, SparseArray sparseArray) {
-        this.d = coVar;
-        this.b = z10;
-        this.c = sparseArray;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public qi(bo boVar, org.telegram.ui.ActionBar.o2 o2Var, Activity activity, org.telegram.ui.ActionBar.f6 f6Var, ArrayList arrayList) {
+        super(o2Var, activity, f6Var, arrayList);
+        this.W = boVar;
     }
 
-    public final boolean a(int i10) {
-        co coVar = this.d;
-        int i11 = i10 - coVar.A0.J;
-        if (i11 < 0 || i11 >= coVar.u6.size()) {
-            return false;
-        }
-        MessageObject messageObject = (MessageObject) coVar.u6.get(i11);
-        if (messageObject.contentType != 0) {
-            return false;
-        }
-        SparseArray sparseArray = this.c;
-        boolean z10 = this.b;
-        if (z10 || sparseArray.get(messageObject.getId(), null) != null) {
-            return z10 && sparseArray.get(messageObject.getId(), null) != null;
-        }
-        return true;
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:30:0x007c  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void b(int i10, boolean z10, float f7, float f10) {
-        s4.c1 K;
-        co coVar = this.d;
-        ArrayList arrayList = coVar.u6;
-        SparseArray[] sparseArrayArr = coVar.W5;
-        int i11 = i10 - coVar.A0.J;
-        if (this.b) {
-            z10 = !z10;
-        }
-        if (i11 < 0 || i11 >= arrayList.size()) {
-            return;
-        }
-        MessageObject messageObject = (MessageObject) arrayList.get(i11);
-        if (!z10 || (sparseArrayArr[0].indexOfKey(messageObject.getId()) < 0 && sparseArrayArr[1].indexOfKey(messageObject.getId()) < 0)) {
-            if ((z10 || sparseArrayArr[0].indexOfKey(messageObject.getId()) >= 0 || sparseArrayArr[1].indexOfKey(messageObject.getId()) >= 0) && messageObject.contentType == 0) {
-                if (z10) {
-                    if (sparseArrayArr[1].size() + sparseArrayArr[0].size() >= 100) {
-                        this.a = true;
-                        K = coVar.x0.K(i10);
-                        if (K != null) {
-                            View view = K.a;
-                            if (view instanceof org.telegram.ui.Cells.t1) {
-                                co.b2(coVar, view, false, f7, f10);
-                                return;
-                            }
-                        }
-                        coVar.x6(messageObject, false, true);
-                        coVar.dc();
-                        coVar.Wc(false);
-                    }
-                }
-                this.a = false;
-                K = coVar.x0.K(i10);
-                if (K != null) {
-                }
-                coVar.x6(messageObject, false, true);
-                coVar.dc();
-                coVar.Wc(false);
-            }
-        }
+    @Override // org.telegram.ui.Components.sv, org.telegram.ui.ActionBar.g3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.k2
+    public final void dismiss() {
+        super.dismiss();
+        bo boVar = this.W;
+        boVar.getClass();
+        boVar.g8(false, true, 0.0f);
     }
 }

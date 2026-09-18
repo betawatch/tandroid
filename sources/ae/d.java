@@ -1,6 +1,8 @@
 package ae;
 
 import be.h;
+import com.google.firebase.messaging.t;
+import ee.v;
 import gd.i;
 import i9.s;
 import ie.g;
@@ -12,7 +14,7 @@ import kotlin.jvm.internal.j;
 import rd.l;
 import zd.i2;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class d extends j implements l {
     public final /* synthetic */ int b;
@@ -42,16 +44,16 @@ public final class d extends j implements l {
             default:
                 Throwable th2 = (Throwable) obj;
                 ((g) this.c).invoke(th2);
-                be.b bVar = (be.b) ((com.google.firebase.messaging.s) this.d).d;
+                be.b bVar = (be.b) ((t) this.d).d;
                 bVar.getClass();
                 AtomicLongFieldUpdater atomicLongFieldUpdater = be.b.b;
                 AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = be.b.i;
-                d9.f fVar = be.d.r;
+                v vVar = be.d.r;
                 while (true) {
                     z10 = true;
-                    if (atomicReferenceFieldUpdater.compareAndSet(bVar, fVar, th2)) {
+                    if (atomicReferenceFieldUpdater.compareAndSet(bVar, vVar, th2)) {
                         z11 = true;
-                    } else if (atomicReferenceFieldUpdater.get(bVar) != fVar) {
+                    } else if (atomicReferenceFieldUpdater.get(bVar) != vVar) {
                         z11 = false;
                     }
                 }
@@ -78,8 +80,8 @@ public final class d extends j implements l {
                     AtomicReferenceFieldUpdater atomicReferenceFieldUpdater2 = be.b.j;
                     while (true) {
                         Object obj2 = atomicReferenceFieldUpdater2.get(bVar);
-                        d9.f fVar2 = obj2 == null ? be.d.p : be.d.q;
-                        while (!atomicReferenceFieldUpdater2.compareAndSet(bVar, obj2, fVar2)) {
+                        v vVar2 = obj2 == null ? be.d.p : be.d.q;
+                        while (!atomicReferenceFieldUpdater2.compareAndSet(bVar, obj2, vVar2)) {
                             if (atomicReferenceFieldUpdater2.get(bVar) != obj2) {
                                 break;
                             }
@@ -99,7 +101,7 @@ public final class d extends j implements l {
                         eVar = new be.e((Throwable) be.b.i.get(bVar));
                     } else {
                         long j13 = j12 & 1152921504606846975L;
-                        be.f fVar3 = be.g.a;
+                        be.f fVar = be.g.a;
                         if (j11 < j13) {
                             Object obj3 = be.d.k;
                             h hVar = (h) be.b.g.get(bVar);
@@ -112,12 +114,12 @@ public final class d extends j implements l {
                                     long j15 = andIncrement / j14;
                                     int i12 = (int) (andIncrement % j14);
                                     if (hVar.c != j15) {
-                                        h e7 = bVar.e(j15, hVar);
-                                        if (e7 == null) {
+                                        h e = bVar.e(j15, hVar);
+                                        if (e == null) {
                                             continue;
                                             z10 = true;
                                         } else {
-                                            hVar = e7;
+                                            hVar = e;
                                         }
                                     }
                                     Object o9 = bVar.o(hVar, i12, andIncrement, obj3);
@@ -143,7 +145,7 @@ public final class d extends j implements l {
                                 }
                             }
                         }
-                        eVar = fVar3;
+                        eVar = fVar;
                     }
                     if (eVar instanceof be.f) {
                         eVar = null;

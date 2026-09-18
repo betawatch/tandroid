@@ -1,26 +1,182 @@
 package yh;
 
-import android.content.Context;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.Components.yc;
+import android.text.SpannableStringBuilder;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.Components.oc;
+import org.telegram.ui.Components.r00;
+import org.telegram.ui.Components.s50;
+import org.telegram.ui.Components.u9;
+import org.telegram.ui.Components.yi0;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.wy;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
-/* loaded from: classes.dex */
-public final class b1 extends zh.w3 {
-    public final /* synthetic */ p1 r1;
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class b1 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ a4 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b1(p1 p1Var, Context context, int i10, long j3, f6 f6Var) {
-        super(context, i10, j3, f6Var, null);
-        this.r1 = p1Var;
+    public /* synthetic */ b1(a4 a4Var, int i10) {
+        this.a = i10;
+        this.b = a4Var;
     }
 
-    @Override // zh.w3, org.telegram.ui.ActionBar.f3, org.telegram.ui.ActionBar.j2
-    public final yc getBulletinFactory() {
-        f6 f6Var;
-        p1 p1Var = this.r1;
-        org.telegram.ui.ActionBar.d3 d3Var = p1Var.container;
-        f6Var = p1Var.resourcesProvider;
-        return new yc(d3Var, f6Var);
+    @Override // java.lang.Runnable
+    public final void run() {
+        String str;
+        TL_stars.StarGift starGift;
+        TLRPC.Document document;
+        h3 h3Var;
+        int i10 = this.a;
+        a4 a4Var = this.b;
+        switch (i10) {
+            case 0:
+                a4.q0(a4Var);
+                break;
+            case 1:
+                new s(a4Var.getContext()).show();
+                break;
+            case 2:
+                a4Var.dismiss();
+                break;
+            case 3:
+                a4.W(a4Var);
+                break;
+            case 4:
+                a4.Y(a4Var);
+                break;
+            case 5:
+                a4Var.j0.setLoading(false);
+                a4Var.q2(0, true, null);
+                break;
+            case 6:
+                new s(a4Var.getContext()).show();
+                break;
+            case 7:
+                a4.w0(a4Var);
+                break;
+            case 8:
+                a4.b0(a4Var);
+                break;
+            case 9:
+                a4Var.onBackPressed();
+                break;
+            case 10:
+                a4.g1(a4Var);
+                break;
+            case 11:
+                a4Var.W1(true);
+                break;
+            case 12:
+                a4Var.U1();
+                break;
+            case 13:
+                a4Var.S1();
+                break;
+            case 14:
+                a4.o0(a4Var);
+                break;
+            case 15:
+                a4Var.dismiss();
+                org.telegram.ui.ActionBar.o2 U = LaunchActivity.U();
+                TL_stars.TL_starGiftUnique K1 = a4Var.K1();
+                if (U != null && K1 != null) {
+                    wy wyVar = new wy(org.telegram.messenger.w1.e(4, "onlySelect", "dialogsType", true));
+                    wyVar.C2 = new s50(a4Var, K1, wyVar, 11);
+                    U.presentFragment(wyVar);
+                    break;
+                }
+                break;
+            case 16:
+                a4Var.Y1();
+                break;
+            case 17:
+                long A1 = a4Var.A1();
+                if (A1 != 0) {
+                    a4Var.X1(A1);
+                    break;
+                }
+                break;
+            case 18:
+                a4Var.onBackPressed();
+                break;
+            case 19:
+                a4Var.getBulletinFactory().Q(R.raw.copy, 36, LocaleController.getString(R.string.WalletAddressCopied)).k(false);
+                break;
+            case 20:
+                if (a4Var.B1() != null) {
+                    StringBuilder sb2 = new StringBuilder();
+                    sb2.append(a4Var.B1().title);
+                    sb2.append(" #");
+                    str = hg.k0.k(a4Var.B1().num, ',', sb2);
+                } else {
+                    str = "";
+                }
+                oc M = a4Var.getBulletinFactory().M(LocaleController.getString(R.string.Gift2UpgradedTitle), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2UpgradedText, str)), R.raw.gift_upgrade);
+                M.j = 5000;
+                M.t = true;
+                M.j();
+                r00 r00Var = a4Var.a0;
+                if (r00Var != null) {
+                    r00Var.c(true);
+                    break;
+                }
+                break;
+            case 21:
+                a4Var.d.v0(((a4) a4Var.Q0.d).P0.length - 1);
+                break;
+            case 22:
+                a4Var.getBulletinFactory().Q(R.raw.copy, 36, LocaleController.getString(R.string.WalletAddressCopied)).k(false);
+                break;
+            case 23:
+                x3 x3Var = a4Var.e0;
+                ci.d dVar = a4Var.j0;
+                i3 i3Var = a4Var.M0.h;
+                ImageReceiver imageReceiver = (i3Var == null || (h3Var = i3Var.c) == null) ? null : ((k3) h3Var).d;
+                u9 u9Var = x3Var.d[0];
+                if (imageReceiver != null && u9Var != null && u9Var.getImageReceiver() != null) {
+                    yi0 lottieAnimation = imageReceiver.getLottieAnimation();
+                    yi0 lottieAnimation2 = u9Var.getImageReceiver().getLottieAnimation();
+                    if (lottieAnimation2 != null && lottieAnimation != null) {
+                        lottieAnimation2.T(lottieAnimation.t(), false);
+                    } else if (lottieAnimation2 == null && lottieAnimation != null) {
+                        imageReceiver.clearImage();
+                        u9Var.setImageDrawable(lottieAnimation);
+                    }
+                }
+                x3Var.b.setAlpha(1.0f);
+                x3Var.c.setAlpha(0.0f);
+                if (a4Var.q0 && a4Var.Z != null && a4Var.D0 != null && a4Var.G1() >= 0 && a4Var.D0.b(a4Var.G1()) >= 0) {
+                    dVar.setFilled(false);
+                    int b10 = a4Var.D0.b(a4Var.G1());
+                    SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
+                    spannableStringBuilder.append((CharSequence) LocaleController.getString(R.string.Gift2UpgradeNext));
+                    Object obj = a4Var.D0.get(b10);
+                    if ((obj instanceof TL_stars.SavedStarGift) && (starGift = ((TL_stars.SavedStarGift) obj).gift) != null && (document = starGift.getDocument()) != null) {
+                        spannableStringBuilder.append((CharSequence) " e");
+                        spannableStringBuilder.setSpan(new org.telegram.ui.Components.x5(document, dVar.getTextPaint().getFontMetricsInt()), spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
+                    }
+                    dVar.g(spannableStringBuilder, true, true);
+                    dVar.f(null, true);
+                    dVar.setOnClickListener(new e1(a4Var, b10, 0));
+                    break;
+                } else {
+                    dVar.setFilled(true);
+                    dVar.g(LocaleController.getString(R.string.OK), true, true);
+                    dVar.f(null, true);
+                    dVar.setOnClickListener(new u0(a4Var, 2));
+                    break;
+                }
+                break;
+            default:
+                a4Var.getClass();
+                new rg.x0((org.telegram.ui.ActionBar.o2) new ai.y3(a4Var, 12), 12, false).show();
+                break;
+        }
     }
 }

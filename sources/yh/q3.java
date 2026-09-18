@@ -1,72 +1,36 @@
 package yh;
 
 import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
 import android.text.SpannableStringBuilder;
-import android.text.TextUtils;
-import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.aj0;
-import org.telegram.ui.Components.d61;
-import org.telegram.ui.Components.e51;
-import org.telegram.ui.Components.g51;
-import org.telegram.ui.Components.h51;
-import org.telegram.ui.Components.ll0;
-import org.telegram.ui.Components.v51;
+import org.telegram.messenger.Emoji;
+import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.yc;
+import org.telegram.ui.gm0;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
-/* loaded from: classes.dex */
-public final class q3 extends g51 {
-    public static final /* synthetic */ int a = 0;
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* loaded from: classes4.dex */
+public final class q3 extends xc {
+    public final org.telegram.ui.ActionBar.f6 N;
+    public String O;
+    public int P;
 
-    static {
-        g51.setup(new q3());
+    public q3(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context, null);
+        this.N = f6Var;
+        setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.G6, f6Var));
+        setTextSize(1, 14.0f);
+        setPadding(0, AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f));
     }
 
-    @Override // org.telegram.ui.Components.g51
-    public final void bindView(View view, h51 h51Var, boolean z10, v51 v51Var, d61 d61Var) {
-        r3 r3Var = (r3) view;
-        TL_stars.starGiftAttributePattern stargiftattributepattern = (TL_stars.starGiftAttributePattern) h51Var.G;
-        int i10 = h51Var.z;
-        String str = (String) h51Var.l;
-        boolean z11 = h51Var.e;
-        f6 f6Var = r3Var.F;
-        aj0 aj0Var = r3Var.c;
-        p3 p3Var = r3Var.N;
-        if (p3Var == null || r3Var.M != stargiftattributepattern.document.id) {
-            r3Var.M = stargiftattributepattern.document.id;
-            if (p3Var != null) {
-                p3Var.o(aj0Var);
-            }
-            p3 p3Var2 = new p3(3, r3Var.L, stargiftattributepattern.document);
-            r3Var.N = p3Var2;
-            p3Var2.setColorFilter(new PorterDuffColorFilter(j6.v0(j6.E8, f6Var), PorterDuff.Mode.SRC_IN));
+    public final void e(String str, int i10, x0 x0Var) {
+        if (str == this.O && this.P == i10) {
+            return;
         }
-        if (aj0Var.isAttachedToWindow()) {
-            r3Var.N.a(aj0Var);
-        }
-        CharSequence charSequence = stargiftattributepattern.name;
-        if (!TextUtils.isEmpty(str)) {
-            charSequence = AndroidUtilities.highlightText(charSequence, str, f6Var);
-        }
-        if (i10 > 0) {
-            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(charSequence);
-            spannableStringBuilder.append((CharSequence) "  ");
-            int length = spannableStringBuilder.length();
-            spannableStringBuilder.append((CharSequence) Integer.toString(i10));
-            spannableStringBuilder.setSpan(new e51(AndroidUtilities.bold()), length, spannableStringBuilder.length(), 33);
-            charSequence = spannableStringBuilder;
-        }
-        r3Var.g(charSequence, 0, r3Var.N);
-        r3Var.setChecked(z11);
-    }
-
-    @Override // org.telegram.ui.Components.g51
-    public final View createView(Context context, ll0 ll0Var, int i10, int i11, f6 f6Var) {
-        return new r3(context, i10, f6Var);
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(Emoji.replaceEmoji(str, getPaint().getFontMetricsInt(), false));
+        spannableStringBuilder.append((CharSequence) " ").append((CharSequence) yc.b(ei.l.G0(i10), x0Var != null ? new gm0(this, x0Var, i10, 16) : null, this.N, null));
+        setText(spannableStringBuilder);
+        this.O = str;
+        this.P = i10;
     }
 }

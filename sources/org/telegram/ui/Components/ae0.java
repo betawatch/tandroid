@@ -18,20 +18,20 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class ae0 extends org.telegram.ui.ActionBar.f3 {
+public final class ae0 extends org.telegram.ui.ActionBar.g3 {
     public final TextView b;
     public final TextView c;
     public final TextView d;
-    public final aj0 e;
-    public final xi0 f;
-    public final w80 h;
+    public final bj0 e;
+    public final yi0 f;
+    public final v80 h;
     public final long n;
     public boolean r;
     public TLRPC.TL_chatInviteExported s;
 
-    public ae0(Context context, org.telegram.ui.f70 f70Var, TLRPC.ChatFull chatFull, long j3, boolean z10) {
+    public ae0(Context context, org.telegram.ui.g70 g70Var, TLRPC.ChatFull chatFull, long j3, boolean z10) {
         super(context, false);
         TLRPC.TL_chatInviteExported tL_chatInviteExported;
         this.n = j3;
@@ -51,18 +51,18 @@ public final class ae0 extends org.telegram.ui.ActionBar.f3 {
         int dp = AndroidUtilities.dp(8.0f);
         imageView.setPadding(dp, dp, dp, dp);
         frameLayout.addView(imageView, w7.x5.d(36, 36.0f, 8388661, 6.0f, 8.0f, 8.0f, 0.0f));
-        w80 w80Var = new w80(context, f70Var, this, true, z10);
-        this.h = w80Var;
-        w80Var.setPermanent(true);
-        aj0 aj0Var = new aj0(context);
-        this.e = aj0Var;
-        xi0 xi0Var = new xi0(R.raw.shared_link_enter, AndroidUtilities.dp(90.0f), AndroidUtilities.dp(90.0f), false, null);
-        this.f = xi0Var;
-        xi0Var.N(42);
-        aj0Var.setAnimation(xi0Var);
-        w80Var.d(0, null, false);
-        w80Var.b(true);
-        w80Var.setDelegate(new kv(this, 9));
+        v80 v80Var = new v80(context, g70Var, this, true, z10);
+        this.h = v80Var;
+        v80Var.setPermanent(true);
+        bj0 bj0Var = new bj0(context);
+        this.e = bj0Var;
+        yi0 yi0Var = new yi0(R.raw.shared_link_enter, AndroidUtilities.dp(90.0f), AndroidUtilities.dp(90.0f), false, null);
+        this.f = yi0Var;
+        yi0Var.P(42);
+        bj0Var.setAnimation(yi0Var);
+        v80Var.d(0, null, false);
+        v80Var.b(true);
+        v80Var.setDelegate(new lv(this, 9));
         TextView textView = new TextView(context);
         this.b = textView;
         textView.setText(LocaleController.getString(R.string.InviteLink));
@@ -79,7 +79,7 @@ public final class ae0 extends org.telegram.ui.ActionBar.f3 {
         textView2.setLineSpacing(textView2.getLineSpacingExtra(), textView2.getLineSpacingMultiplier() * 1.1f);
         TextView textView3 = new TextView(context);
         this.d = textView3;
-        org.telegram.messenger.vl.k(R.string.ManageInviteLinks, textView3, 17);
+        org.telegram.messenger.wl.k(R.string.ManageInviteLinks, textView3, 17);
         textView3.setEllipsize(TextUtils.TruncateAt.END);
         textView3.setSingleLine(true);
         textView3.setTypeface(AndroidUtilities.bold());
@@ -90,11 +90,11 @@ public final class ae0 extends org.telegram.ui.ActionBar.f3 {
         int k10 = i0.a.k(org.telegram.ui.ActionBar.j6.w0(null, i10, false), 120);
         textView3.setBackground(org.telegram.ui.ActionBar.j6.i0(dp2, dp2, dp2, dp2, 0, k10, k10));
         textView3.setLetterSpacing(0.025f);
-        textView3.setOnClickListener(new bi.x(this, chatFull, f70Var, 25));
-        linearLayout.addView(aj0Var, w7.x5.t(90, 90, 1, 0, 33, 0, 0));
+        textView3.setOnClickListener(new ai.d0(this, chatFull, g70Var, 25));
+        linearLayout.addView(bj0Var, w7.x5.t(90, 90, 1, 0, 33, 0, 0));
         linearLayout.addView(textView, w7.x5.t(-1, -2, 1, 60, 10, 60, 0));
         linearLayout.addView(textView2, w7.x5.t(-1, -2, 1, 28, 7, 28, 2));
-        linearLayout.addView(w80Var, w7.x5.n(-1, -2));
+        linearLayout.addView(v80Var, w7.x5.n(-1, -2));
         linearLayout.addView(textView3, w7.x5.t(-1, 48, 1, 14, -2, 14, 6));
         NestedScrollView nestedScrollView = new NestedScrollView(context);
         nestedScrollView.setVerticalScrollBarEnabled(false);
@@ -102,12 +102,12 @@ public final class ae0 extends org.telegram.ui.ActionBar.f3 {
         setCustomView(nestedScrollView);
         TLRPC.Chat chat = MessagesController.getInstance(UserConfig.selectedAccount).getChat(Long.valueOf(j3));
         if (chat != null && ChatObject.isPublic(chat)) {
-            w80Var.setLink("https://t.me/" + ChatObject.getPublicUsername(chat));
+            v80Var.setLink("https://t.me/" + ChatObject.getPublicUsername(chat));
             textView3.setVisibility(8);
         } else if (chatFull == null || (tL_chatInviteExported = chatFull.exported_invite) == null) {
             p(false);
         } else {
-            w80Var.setLink(tL_chatInviteExported.link);
+            v80Var.setLink(tL_chatInviteExported.link);
         }
         q();
     }
@@ -116,10 +116,10 @@ public final class ae0 extends org.telegram.ui.ActionBar.f3 {
         super.dismiss();
     }
 
-    public static void n(ae0 ae0Var, TLRPC.ChatFull chatFull, org.telegram.ui.f70 f70Var) {
-        org.telegram.ui.yh0 yh0Var = new org.telegram.ui.yh0(chatFull.id, 0L, 0);
-        yh0Var.g0(chatFull, chatFull.exported_invite);
-        f70Var.presentFragment(yh0Var);
+    public static void n(ae0 ae0Var, TLRPC.ChatFull chatFull, org.telegram.ui.g70 g70Var) {
+        org.telegram.ui.ai0 ai0Var = new org.telegram.ui.ai0(chatFull.id, 0L, 0);
+        ai0Var.g0(chatFull, chatFull.exported_invite);
+        g70Var.presentFragment(ai0Var);
         super.dismiss();
     }
 
@@ -135,17 +135,17 @@ public final class ae0 extends org.telegram.ui.ActionBar.f3 {
         ae0Var.r = false;
     }
 
-    @Override // org.telegram.ui.ActionBar.f3
+    @Override // org.telegram.ui.ActionBar.g3
     public final ArrayList getThemeDescriptions() {
         ArrayList arrayList = new ArrayList();
-        z6 z6Var = new z6(this, 5);
+        w6 w6Var = new w6(this, 5);
         arrayList.add(new org.telegram.ui.ActionBar.l6(this.b, 4, null, null, null, null, org.telegram.ui.ActionBar.j6.G6));
         arrayList.add(new org.telegram.ui.ActionBar.l6(this.c, 4, null, null, null, null, org.telegram.ui.ActionBar.j6.j5));
         int i10 = org.telegram.ui.ActionBar.j6.Oh;
         arrayList.add(new org.telegram.ui.ActionBar.l6(this.d, 4, null, null, null, null, i10));
-        arrayList.add(new org.telegram.ui.ActionBar.l6(null, 0, null, null, null, z6Var, i10));
-        arrayList.add(new org.telegram.ui.ActionBar.l6(null, 0, null, null, null, z6Var, org.telegram.ui.ActionBar.j6.Sh));
-        arrayList.add(new org.telegram.ui.ActionBar.l6(null, 0, null, null, null, z6Var, org.telegram.ui.ActionBar.j6.n6));
+        arrayList.add(new org.telegram.ui.ActionBar.l6(null, 0, null, null, null, w6Var, i10));
+        arrayList.add(new org.telegram.ui.ActionBar.l6(null, 0, null, null, null, w6Var, org.telegram.ui.ActionBar.j6.Sh));
+        arrayList.add(new org.telegram.ui.ActionBar.l6(null, 0, null, null, null, w6Var, org.telegram.ui.ActionBar.j6.n6));
         return arrayList;
     }
 
@@ -157,7 +157,7 @@ public final class ae0 extends org.telegram.ui.ActionBar.f3 {
         TLRPC.TL_messages_exportChatInvite tL_messages_exportChatInvite = new TLRPC.TL_messages_exportChatInvite();
         tL_messages_exportChatInvite.legacy_revoke_permanent = true;
         tL_messages_exportChatInvite.peer = MessagesController.getInstance(this.currentAccount).getInputPeer(-this.n);
-        ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_exportChatInvite, new di.u3(7, this, z10));
+        ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_exportChatInvite, new ci.u3(7, this, z10));
     }
 
     public final void q() {
@@ -168,17 +168,17 @@ public final class ae0 extends org.telegram.ui.ActionBar.f3 {
         int k10 = i0.a.k(org.telegram.ui.ActionBar.j6.w0(null, i10, false), 120);
         this.d.setBackground(org.telegram.ui.ActionBar.j6.i0(dp2, dp2, dp2, dp2, 0, k10, k10));
         int w02 = org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Sh, false);
-        xi0 xi0Var = this.f;
-        xi0Var.O(w02, "Top");
-        xi0Var.O(w02, "Bottom");
-        xi0Var.O(w02, "Center");
+        yi0 yi0Var = this.f;
+        yi0Var.Q(w02, "Top");
+        yi0Var.Q(w02, "Bottom");
+        yi0Var.Q(w02, "Center");
         this.h.f();
         setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.h5, false));
     }
 
-    @Override // org.telegram.ui.ActionBar.f3, android.app.Dialog
+    @Override // org.telegram.ui.ActionBar.g3, android.app.Dialog
     public final void show() {
         super.show();
-        AndroidUtilities.runOnUIThread(new cc0(this, 5), 50L);
+        AndroidUtilities.runOnUIThread(new bc0(this, 5), 50L);
     }
 }

@@ -20,7 +20,7 @@ import org.telegram.ui.Cells.p6;
 import t4.c;
 import t4.e;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class Recreator implements r {
     public final e a;
@@ -77,14 +77,14 @@ public final class Recreator implements r {
                         if (!new HashSet(linkedHashMap.keySet()).isEmpty()) {
                             g10.g();
                         }
-                    } catch (Exception e7) {
-                        throw new RuntimeException(p6.i("Failed to instantiate ", str2), e7);
+                    } catch (Exception e) {
+                        throw new RuntimeException(p6.i("Failed to instantiate ", str2), e);
                     }
-                } catch (NoSuchMethodException e10) {
-                    throw new IllegalStateException("Class " + asSubclass.getSimpleName() + " must have default constructor in order to be automatically recreated", e10);
+                } catch (NoSuchMethodException e7) {
+                    throw new IllegalStateException("Class " + asSubclass.getSimpleName() + " must have default constructor in order to be automatically recreated", e7);
                 }
-            } catch (ClassNotFoundException e11) {
-                throw new RuntimeException(a.p("Class ", str2, " wasn't found"), e11);
+            } catch (ClassNotFoundException e10) {
+                throw new RuntimeException(a.p("Class ", str2, " wasn't found"), e10);
             }
         }
     }

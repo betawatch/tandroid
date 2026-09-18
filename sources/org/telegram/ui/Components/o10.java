@@ -4,7 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class o10 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -43,7 +43,7 @@ public final class o10 extends AnimatorListenerAdapter {
                     fragmentContextView3.setVisibility(8);
                     v10 v10Var = fragmentContextView3.o0;
                     if (v10Var != null) {
-                        ((rq0) v10Var).a(false);
+                        ((sq0) v10Var).a(false);
                     }
                     fragmentContextView3.f = null;
                     if (fragmentContextView3.w0) {
@@ -69,7 +69,7 @@ public final class o10 extends AnimatorListenerAdapter {
                 if (animatorSet4 != null && animatorSet4.equals(animator)) {
                     v10 v10Var2 = fragmentContextView4.o0;
                     if (v10Var2 != null) {
-                        ((rq0) v10Var2).a(false);
+                        ((sq0) v10Var2).a(false);
                     }
                     fragmentContextView4.f = null;
                     if (fragmentContextView4.w0) {
@@ -118,7 +118,7 @@ public final class o10 extends AnimatorListenerAdapter {
                 if (animatorSet6 != null && animatorSet6.equals(animator)) {
                     v10 v10Var3 = fragmentContextView6.o0;
                     if (v10Var3 != null) {
-                        ((rq0) v10Var3).a(false);
+                        ((sq0) v10Var3).a(false);
                     }
                     fragmentContextView6.f = null;
                     if (fragmentContextView6.w0) {
@@ -191,7 +191,7 @@ public final class o10 extends AnimatorListenerAdapter {
                 fragmentContextView9.v0 = false;
                 fragmentContextView9.x0 = false;
                 fragmentContextView9.y0 = false;
-                fragmentContextView9.m();
+                fragmentContextView9.n();
                 break;
             case 9:
                 FragmentContextView fragmentContextView10 = this.b;
@@ -247,7 +247,7 @@ public final class o10 extends AnimatorListenerAdapter {
                 fragmentContextView12.v0 = false;
                 fragmentContextView12.x0 = false;
                 fragmentContextView12.y0 = false;
-                fragmentContextView12.m();
+                fragmentContextView12.n();
                 break;
         }
     }

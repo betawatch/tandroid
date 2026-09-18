@@ -4,10 +4,10 @@ import android.content.Context;
 import android.util.Log;
 import java.io.IOException;
 import java.io.InputStream;
-import n7.z0;
+import n7.a1;
 import org.telegram.ui.Cells.p6;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class a {
     public String a;
@@ -31,12 +31,12 @@ public final class a {
         throw new IllegalArgumentException("Product type must be provided.");
     }
 
-    public a(z0 z0Var) {
-        Context context = (Context) z0Var.b;
-        int e7 = w9.h.e(context, "com.google.firebase.crashlytics.unity_version", "string");
-        if (e7 != 0) {
+    public a(a1 a1Var) {
+        Context context = (Context) a1Var.b;
+        int e = w9.h.e(context, "com.google.firebase.crashlytics.unity_version", "string");
+        if (e != 0) {
             this.a = "Unity";
-            String string = context.getResources().getString(e7);
+            String string = context.getResources().getString(e);
             this.b = string;
             String i10 = p6.i("Unity Editor version is: ", string);
             if (Log.isLoggable("FirebaseCrashlytics", 2)) {

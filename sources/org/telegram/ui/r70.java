@@ -1,59 +1,46 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.widget.LinearLayout;
-import android.widget.TextView;
+import android.text.Editable;
+import android.text.TextWatcher;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class r70 extends LinearLayout {
-    public final org.telegram.ui.Components.zt a;
-    public boolean b;
-    public int c;
-    public yt d;
-    public String e;
-    public final q70 f;
-    public final /* synthetic */ u70 h;
+public final class r70 implements TextWatcher {
+    public final /* synthetic */ s70 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public r70(u70 u70Var, Context context) {
-        super(context);
-        this.h = u70Var;
-        this.f = new q70(this);
-        TextView g10 = org.telegram.messenger.w1.g(context, 1, 16.0f);
-        g10.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.j5, false));
-        g10.setText("t.me/addemoji/");
-        org.telegram.ui.Components.zt ztVar = new org.telegram.ui.Components.zt(context, null);
-        this.a = ztVar;
-        ztVar.setLines(1);
-        ztVar.setSingleLine(true);
-        ztVar.setInputType(16384);
-        ztVar.setTextSize(1, 16.0f);
-        ztVar.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Ud, false));
-        ztVar.setLinkTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.hc, false));
-        ztVar.setHighlightColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.uf, false));
-        int i10 = org.telegram.ui.ActionBar.j6.Vd;
-        ztVar.setHintColor(org.telegram.ui.ActionBar.j6.w0(null, i10, false));
-        ztVar.setHintTextColor(org.telegram.ui.ActionBar.j6.w0(null, i10, false));
-        ztVar.setCursorColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Wd, false));
-        ztVar.setHandlesColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.vf, false));
-        ztVar.setBackground(null);
-        ztVar.setHint(LocaleController.getString(R.string.AddEmojiPackLinkHint));
-        addView(g10, w7.x5.t(-2, -2, 16, 20, 0, 0, 0));
-        addView(ztVar, w7.x5.t(-1, -2, 16, -4, 0, 0, 0));
-        setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.d6, false));
-        setPadding(0, AndroidUtilities.dp(5.0f), 0, AndroidUtilities.dp(5.0f));
-        setWillNotDraw(false);
+    public r70(s70 s70Var) {
+        this.a = s70Var;
     }
 
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onDraw(Canvas canvas) {
-        if (this.b) {
-            canvas.drawLine(AndroidUtilities.dp(20.0f), getHeight() - 1, getWidth() - getPaddingRight(), getHeight() - 1, org.telegram.ui.ActionBar.j6.k0);
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        String trim = editable.toString().trim();
+        s70 s70Var = this.a;
+        v70 v70Var = s70Var.h;
+        if (s70Var.c != 0) {
+            v70Var.getConnectionsManager().cancelRequest(s70Var.c, true);
+            s70Var.c = 0;
         }
+        mw mwVar = s70Var.d;
+        if (mwVar != null) {
+            AndroidUtilities.cancelRunOnUIThread(mwVar);
+        }
+        s70Var.e = null;
+        if (trim.isEmpty()) {
+            v70.a0(v70Var, null);
+            return;
+        }
+        mw mwVar2 = new mw(20, this, trim);
+        s70Var.d = mwVar2;
+        AndroidUtilities.runOnUIThread(mwVar2, 300L);
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

@@ -2,31 +2,31 @@ package org.telegram.ui.Components;
 
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ f0 b;
+    public final /* synthetic */ e0 b;
 
-    public /* synthetic */ c(f0 f0Var, int i10) {
+    public /* synthetic */ c(e0 e0Var, int i10) {
         this.a = i10;
-        this.b = f0Var;
+        this.b = e0Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                f0 f0Var = this.b;
-                if (!f0Var.K0) {
-                    f0Var.D0.setVisibility(8);
+                e0 e0Var = this.b;
+                if (!e0Var.K0) {
+                    e0Var.D0.setVisibility(8);
                     break;
                 }
                 break;
             case 1:
-                f0 f0Var2 = this.b;
-                if (f0Var2.K0) {
-                    f0Var2.C0.setVisibility(8);
+                e0 e0Var2 = this.b;
+                if (e0Var2.K0) {
+                    e0Var2.C0.setVisibility(8);
                     break;
                 }
                 break;
@@ -34,12 +34,12 @@ public final /* synthetic */ class c implements Runnable {
                 AndroidUtilities.showKeyboard(this.b.A0.b);
                 break;
             case 3:
-                f0 f0Var3 = this.b;
-                f0Var3.l0(0, 0, false);
-                f0Var3.dismiss();
+                e0 e0Var3 = this.b;
+                e0Var3.l0(0, 0, false);
+                e0Var3.dismiss();
                 break;
             default:
-                f0.Q(this.b);
+                e0.Q(this.b);
                 break;
         }
     }

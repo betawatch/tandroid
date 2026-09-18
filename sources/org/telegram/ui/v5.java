@@ -25,9 +25,9 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Components.Premium.LimitPreviewView;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class v5 extends r20 implements NotificationCenter.NotificationCenterDelegate {
+public final class v5 extends t20 implements NotificationCenter.NotificationCenterDelegate {
     public final long P;
     public final int Q;
     public TL_stories.TL_premium_boostsStatus R;
@@ -71,8 +71,8 @@ public final class v5 extends r20 implements NotificationCenter.NotificationCent
 
     public static void x0(v5 v5Var, Context context, View view, int i10) {
         long j3 = v5Var.P;
-        if (view instanceof zg.b) {
-            zg.b bVar = (zg.b) view;
+        if (view instanceof yg.b) {
+            yg.b bVar = (yg.b) view;
             TL_stories.Boost boost = bVar.getBoost();
             boolean z10 = boost.giveaway;
             if (!z10 || boost.stars <= 0) {
@@ -94,26 +94,26 @@ public final class v5 extends r20 implements NotificationCenter.NotificationCent
                     } else {
                         tL_payments_checkedGiftCode.boost = boost;
                     }
-                    new ug.d0(v5Var, tL_payments_checkedGiftCode, boost.used_gift_slug).show();
+                    new tg.d0(v5Var, tL_payments_checkedGiftCode, boost.used_gift_slug).show();
                 } else if (z10 && boost.user_id == -1) {
-                    org.telegram.ui.Components.yb ybVar = new org.telegram.ui.Components.yb(v5Var.getParentActivity(), v5Var.getResourceProvider());
-                    ybVar.c(R.raw.chats_infotip, 36, 36, new String[0]);
-                    ybVar.b.setText(LocaleController.getString(R.string.BoostingRecipientWillBeSelected));
-                    ybVar.b.setSingleLine(false);
-                    ybVar.b.setMaxLines(2);
-                    org.telegram.ui.Components.qc.g(v5Var, ybVar, 2750).j();
+                    org.telegram.ui.Components.wb wbVar = new org.telegram.ui.Components.wb(v5Var.getParentActivity(), v5Var.getResourceProvider());
+                    wbVar.c(R.raw.chats_infotip, 36, 36, new String[0]);
+                    wbVar.b.setText(LocaleController.getString(R.string.BoostingRecipientWillBeSelected));
+                    wbVar.b.setSingleLine(false);
+                    wbVar.b.setMaxLines(2);
+                    org.telegram.ui.Components.oc.g(v5Var, wbVar, 2750).j();
                 } else if (!z11 && !z10) {
                     v5Var.presentFragment(ProfileActivity.m4(bVar.getDialogId()));
                 }
             } else {
-                zh.v7.e1(context, v5Var.Q, v5Var.P, boost, v5Var.getResourceProvider());
+                yh.y7.e1(context, v5Var.Q, v5Var.P, boost, v5Var.getResourceProvider());
             }
         }
         if (view instanceof org.telegram.ui.Cells.r8) {
-            ug.n.m(v5Var, v5Var.resourceProvider, j3, null);
+            tg.o.m(v5Var, v5Var.resourceProvider, j3, null);
         }
-        if (view instanceof zg.c) {
-            ug.n.m(v5Var, v5Var.resourceProvider, j3, ((zg.c) view).getPrepaidGiveaway());
+        if (view instanceof yg.c) {
+            tg.o.m(v5Var, v5Var.resourceProvider, j3, ((yg.c) view).getPrepaidGiveaway());
         }
         if (((u5) v5Var.a0.get(i10)).a == 9) {
             v5Var.E0(Boolean.valueOf(v5Var.b0 == 1));
@@ -161,7 +161,7 @@ public final class v5 extends r20 implements NotificationCenter.NotificationCent
             LimitPreviewView limitPreviewView = new LimitPreviewView(getParentActivity(), R.drawable.filled_limit_boost, 0, this.resourceProvider, 0);
             this.c0 = limitPreviewView;
             limitPreviewView.c0 = true;
-            limitPreviewView.setDarkGradientProvider(new z0(this, 5));
+            limitPreviewView.setDarkGradientProvider(new y0(this, 5));
         }
         if (this.c0.getParent() != null) {
             ((ViewGroup) this.c0.getParent()).removeView(this.c0);
@@ -264,7 +264,7 @@ public final class v5 extends r20 implements NotificationCenter.NotificationCent
         }
     }
 
-    @Override // org.telegram.ui.r20, org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.t20, org.telegram.ui.ActionBar.o2
     public final View createView(Context context) {
         View createView = super.createView(context);
         F0(false);
@@ -272,12 +272,12 @@ public final class v5 extends r20 implements NotificationCenter.NotificationCent
         jVar.m = false;
         jVar.C = false;
         this.c.setItemAnimator(jVar);
-        this.c.setOnItemClickListener(new bi.x5(3, this, context));
+        this.c.setOnItemClickListener(new ai.o6(3, this, context));
         Activity parentActivity = getParentActivity();
         LinearLayout linearLayout = new LinearLayout(parentActivity);
         this.f0 = linearLayout;
         linearLayout.setOrientation(1);
-        this.f0.addView(new bi.e2(parentActivity), w7.x5.t(100, 100, 17, 0, 120, 0, 0));
+        this.f0.addView(new ai.q2(parentActivity), w7.x5.t(100, 100, 17, 0, 120, 0, 0));
         ((ViewGroup) this.fragmentView).addView(this.f0, w7.x5.e(-1, -2, 17));
         this.f0.setAlpha(0.0f);
         if (this.R == null) {
@@ -307,46 +307,46 @@ public final class v5 extends r20 implements NotificationCenter.NotificationCent
         TLRPC.Chat chat = (TLRPC.Chat) objArr[0];
         boolean booleanValue = ((Boolean) objArr[1]).booleanValue();
         List fragmentStack = getParentLayout().getFragmentStack();
-        org.telegram.ui.ActionBar.n2 n2Var = fragmentStack.size() >= 2 ? (org.telegram.ui.ActionBar.n2) org.telegram.ui.Cells.p6.g(2, fragmentStack) : null;
-        if (n2Var instanceof xo) {
-            ((ActionBarLayout) getParentLayout()).a0(n2Var, false);
+        org.telegram.ui.ActionBar.o2 o2Var = fragmentStack.size() >= 2 ? (org.telegram.ui.ActionBar.o2) org.telegram.ui.Cells.p6.g(2, fragmentStack) : null;
+        if (o2Var instanceof wo) {
+            ((ActionBarLayout) getParentLayout()).a0(o2Var, false);
         }
         List fragmentStack2 = getParentLayout().getFragmentStack();
-        org.telegram.ui.ActionBar.n2 n2Var2 = fragmentStack2.size() >= 2 ? (org.telegram.ui.ActionBar.n2) org.telegram.ui.Cells.p6.g(2, fragmentStack2) : null;
+        org.telegram.ui.ActionBar.o2 o2Var2 = fragmentStack2.size() >= 2 ? (org.telegram.ui.ActionBar.o2) org.telegram.ui.Cells.p6.g(2, fragmentStack2) : null;
         if (!booleanValue) {
             finishFragment();
-            if ((n2Var2 instanceof ProfileActivity) || (n2Var2 instanceof co)) {
-                ug.j.f(n2Var2, chat, false);
+            if ((o2Var2 instanceof ProfileActivity) || (o2Var2 instanceof bo)) {
+                tg.k.f(o2Var2, chat, false);
                 return;
             }
             return;
         }
-        org.telegram.ui.ActionBar.n2 n2Var3 = fragmentStack2.size() >= 3 ? (org.telegram.ui.ActionBar.n2) org.telegram.ui.Cells.p6.g(3, fragmentStack2) : null;
-        if (n2Var2 instanceof ProfileActivity) {
-            ((ActionBarLayout) getParentLayout()).a0(n2Var2, false);
+        org.telegram.ui.ActionBar.o2 o2Var3 = fragmentStack2.size() >= 3 ? (org.telegram.ui.ActionBar.o2) org.telegram.ui.Cells.p6.g(3, fragmentStack2) : null;
+        if (o2Var2 instanceof ProfileActivity) {
+            ((ActionBarLayout) getParentLayout()).a0(o2Var2, false);
         }
         finishFragment();
-        if (n2Var3 instanceof co) {
-            ug.j.f(n2Var3, chat, true);
+        if (o2Var3 instanceof bo) {
+            tg.k.f(o2Var3, chat, true);
         }
-        if (n2Var2 instanceof co) {
-            ug.j.f(n2Var2, chat, true);
+        if (o2Var2 instanceof bo) {
+            tg.k.f(o2Var2, chat, true);
         }
     }
 
-    @Override // org.telegram.ui.r20
+    @Override // org.telegram.ui.t20
     public final s4.h0 n0() {
         return this.d0;
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.o2
     public final boolean onFragmentCreate() {
         getNotificationCenter().addObserver(this, NotificationCenter.boostByChannelCreated);
         getNotificationCenter().addObserver(this, NotificationCenter.chatWasBoostedByUser);
         return super.onFragmentCreate();
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.o2
     public final void onFragmentDestroy() {
         getNotificationCenter().removeObserver(this, NotificationCenter.boostByChannelCreated);
         getNotificationCenter().removeObserver(this, NotificationCenter.chatWasBoostedByUser);

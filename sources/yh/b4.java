@@ -1,14 +1,22 @@
 package yh;
 
-import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.d61;
+import org.telegram.ui.Components.h01;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
-/* loaded from: classes.dex */
-public final class b4 extends d61 {
-    @Override // org.telegram.ui.Components.ll0, androidx.recyclerview.widget.RecyclerView, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(Math.min((int) (AndroidUtilities.displaySize.y * 0.35f), View.MeasureSpec.getSize(i11)), View.MeasureSpec.getMode(i11)));
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* loaded from: classes4.dex */
+public final class b4 {
+    public final float a;
+    public final h01 b;
+    public final h01 c;
+
+    public b4(float f7, String str, CharSequence charSequence) {
+        this.b = new h01(str, 12.0f, null);
+        this.c = new h01(charSequence, 12.0f, AndroidUtilities.bold());
+        this.a = (a() / 2.0f) + f7;
+    }
+
+    public final float a() {
+        return Math.max(this.b.j(), this.c.j());
     }
 }

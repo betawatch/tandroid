@@ -1,0 +1,63 @@
+package ci;
+
+import org.telegram.ui.o01;
+
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* loaded from: classes4.dex */
+public final class hc extends jc {
+    public final /* synthetic */ int g;
+    public final /* synthetic */ Object h;
+
+    public /* synthetic */ hc(Object obj, int i10) {
+        this.g = i10;
+        this.h = obj;
+    }
+
+    @Override // ci.jc
+    public final void e() {
+        switch (this.g) {
+            case 0:
+                o01 o01Var = (o01) this.h;
+                o01Var.Q = false;
+                o01Var.invalidate();
+                break;
+            case 1:
+                ai.f6 t10 = ((ai.jc) this.h).t();
+                if (t10 != null) {
+                    t10.m0(true);
+                    break;
+                }
+                break;
+            default:
+                org.telegram.ui.Components.u9 u9Var = (org.telegram.ui.Components.u9) this.h;
+                u9Var.post(new androidx.fragment.app.a0(u9Var, 27));
+                break;
+        }
+    }
+
+    @Override // ci.jc
+    public final void f(boolean z10) {
+        switch (this.g) {
+            case 0:
+                o01 o01Var = (o01) this.h;
+                o01Var.Q = true;
+                o01Var.invalidate();
+                break;
+            case 1:
+                ai.f6 t10 = ((ai.jc) this.h).t();
+                if (t10 != null) {
+                    t10.m0(false);
+                }
+                ai.a5 a5Var = this.f;
+                if (a5Var != null) {
+                    a5Var.setTranslationX(0.0f);
+                    this.f.setTranslationY(0.0f);
+                    break;
+                }
+                break;
+            default:
+                ((org.telegram.ui.Components.u9) this.h).setVisibility(0);
+                break;
+        }
+    }
+}

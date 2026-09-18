@@ -1,50 +1,41 @@
 package org.telegram.ui;
 
-import android.text.Editable;
-import java.util.ArrayList;
-import java.util.HashMap;
+import android.view.KeyEvent;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class dq0 implements ar0 {
-    public final /* synthetic */ HashMap a;
-    public final /* synthetic */ ArrayList b;
-    public final /* synthetic */ kq0 c;
+public final /* synthetic */ class dq0 implements org.telegram.ui.Components.b5, org.telegram.ui.ActionBar.m1 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ lq0 b;
 
-    public dq0(kq0 kq0Var, HashMap hashMap, ArrayList arrayList) {
-        this.c = kq0Var;
-        this.a = hashMap;
-        this.b = arrayList;
+    public /* synthetic */ dq0(lq0 lq0Var, int i10) {
+        this.a = i10;
+        this.b = lq0Var;
     }
 
-    @Override // org.telegram.ui.ar0
-    public final void b(Editable editable) {
-        kq0 kq0Var = this.c;
-        org.telegram.ui.Components.hu huVar = kq0Var.M;
-        kq0Var.a = editable;
-        huVar.setText(editable);
-    }
-
-    @Override // org.telegram.ui.ar0
-    public final /* synthetic */ boolean e() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.ar0
-    public final void h(int i10, boolean z10, boolean z11) {
-        kq0 kq0Var = this.c;
-        kq0Var.removeSelfFromStack();
-        if (z10) {
-            return;
+    @Override // org.telegram.ui.Components.b5
+    public void J(int i10, int i11, boolean z10) {
+        switch (this.a) {
+            case 0:
+                lq0 lq0Var = this.b;
+                lq0Var.V(lq0Var.b, lq0Var.c, z10, i10);
+                lq0Var.finishFragment();
+                break;
+            default:
+                lq0 lq0Var2 = this.b;
+                lq0Var2.V(lq0Var2.b, lq0Var2.c, z10, i10);
+                lq0Var2.finishFragment();
+                break;
         }
-        kq0Var.V(this.a, this.b, z11, i10);
     }
 
-    @Override // org.telegram.ui.ar0
-    public final void a() {
-    }
-
-    @Override // org.telegram.ui.ar0
-    public final /* synthetic */ void g() {
+    @Override // org.telegram.ui.ActionBar.m1
+    public void o(KeyEvent keyEvent) {
+        org.telegram.ui.ActionBar.o1 o1Var;
+        lq0 lq0Var = this.b;
+        lq0Var.getClass();
+        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (o1Var = lq0Var.I) != null && o1Var.isShowing()) {
+            lq0Var.I.d(true);
+        }
     }
 }

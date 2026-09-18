@@ -7,7 +7,7 @@ import kd.j;
 import rd.p;
 import v7.t7;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 final class zzfu extends j implements p {
     int zza;
@@ -91,10 +91,10 @@ final class zzfu extends j implements p {
             }
             this.zzd = null;
             this.zza = 2;
-        } catch (Exception e7) {
-            zzcg zzcgVar2 = e7 instanceof zzcg ? (zzcg) e7 : null;
+        } catch (Exception e) {
+            zzcg zzcgVar2 = e instanceof zzcg ? (zzcg) e : null;
             if (zzcgVar2 == null) {
-                zzcgVar2 = new zzcg(zzce.zzc, zzcd.zzas, e7.getMessage(), null, 8, null);
+                zzcgVar2 = new zzcg(zzce.zzc, zzcd.zzas, e.getMessage(), null, 8, null);
             }
             zzgb zzgbVar3 = this.zzb;
             zzdv zze = zzgbVar3.zze();

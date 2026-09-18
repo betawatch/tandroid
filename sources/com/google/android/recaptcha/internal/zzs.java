@@ -13,7 +13,7 @@ import kd.j;
 import rd.p;
 import v7.t7;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 final class zzs extends j implements p {
     final /* synthetic */ zzu zza;
@@ -55,13 +55,13 @@ final class zzs extends j implements p {
         Application context = zzu.zzl(zzuVar);
         kotlin.jvm.internal.i.e(context, "context");
         a8.f fVar = new a8.f(context, a8.f.k, b.t, com.google.android.gms.common.api.i.c);
-        v e7 = w.e();
-        e7.d = new k6.c[]{l8.f.b};
-        e7.c = new a6.i(cVar, 2);
-        e7.a = 34001;
-        Task e10 = fVar.e(0, e7.a());
-        kotlin.jvm.internal.i.d(e10, "doRead(...)");
-        zzuVar.zzc = zzdf.zza(e10);
+        v e = w.e();
+        e.d = new k6.c[]{l8.f.b};
+        e.c = new a6.i(cVar, 2);
+        e.a = 34001;
+        Task e7 = fVar.e(0, e.a());
+        kotlin.jvm.internal.i.d(e7, "doRead(...)");
+        zzuVar.zzc = zzdf.zza(e7);
         return new f(i.a);
     }
 }

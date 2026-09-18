@@ -1,44 +1,53 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class ep0 extends hp0 {
-    public int G;
-    public final /* synthetic */ bq0 H;
+public final /* synthetic */ class ep0 implements Utilities.Callback2 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ TL_stars.TL_starGiftUnique b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ep0(bq0 bq0Var, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(context, f6Var);
-        this.H = bq0Var;
-        this.G = 0;
+    public /* synthetic */ ep0(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, Object obj, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j3, Object obj2, int i10) {
+        this.a = i10;
+        this.d = notificationCenterDelegate;
+        this.e = obj;
+        this.b = tL_starGiftUnique;
+        this.c = j3;
+        this.f = obj2;
     }
 
-    @Override // org.telegram.ui.hp0
-    public final void a() {
-        bq0 bq0Var = this.H;
-        if (bq0Var.getParentActivity() != null) {
-            AndroidUtilities.setLightStatusBar(bq0Var.getParentActivity(), bq0Var.isLightStatusBar());
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
+        switch (this.a) {
+            case 0:
+                cq0.U((cq0) this.d, (boolean[]) this.e, this.b, this.c, (ap0) this.f, (yh.d3) obj, (nf.e) obj2);
+                break;
+            default:
+                yh.a4 a4Var = (yh.a4) this.d;
+                nf.e eVar = (nf.e) this.e;
+                xh.j0 j0Var = (xh.j0) this.f;
+                eVar.b();
+                if (((Boolean) obj).booleanValue()) {
+                    yh.m2 m2Var = a4Var.O0;
+                    if (m2Var != null) {
+                        m2Var.b(this.b, this.c, j0Var != null);
+                    }
+                    if (j0Var != null) {
+                        AndroidUtilities.runOnUIThread(new xh.d0(j0Var, 2));
+                        a4Var.skipDismissAnimation();
+                    }
+                    a4Var.dismiss();
+                    break;
+                }
+                break;
         }
-        int actionBarButtonColor = getActionBarButtonColor();
-        if (this.G != actionBarButtonColor) {
-            ImageView imageView = bq0Var.J;
-            if (imageView != null) {
-                this.G = actionBarButtonColor;
-                imageView.setColorFilter(new PorterDuffColorFilter(actionBarButtonColor, PorterDuff.Mode.SRC_IN));
-            }
-            ImageView imageView2 = bq0Var.K;
-            if (imageView2 != null) {
-                this.G = actionBarButtonColor;
-                imageView2.setColorFilter(new PorterDuffColorFilter(actionBarButtonColor, PorterDuff.Mode.SRC_IN));
-            }
-        }
-        bq0Var.G0();
-        bq0Var.A0();
     }
 }

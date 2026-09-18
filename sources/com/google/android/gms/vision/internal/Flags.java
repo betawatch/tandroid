@@ -2,21 +2,21 @@ package com.google.android.gms.vision.internal;
 
 import d7.a;
 import d7.b;
-import d7.c;
+import d7.d;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public class Flags {
     private static final b zza;
 
     static {
-        c cVar;
+        d dVar;
         a aVar = new a();
-        c cVar2 = c.b;
-        synchronized (c.class) {
-            cVar = c.b;
+        d dVar2 = d.b;
+        synchronized (d.class) {
+            dVar = d.b;
         }
-        cVar.a.a.add(aVar);
+        dVar.a.a.add(aVar);
         zza = aVar;
     }
 

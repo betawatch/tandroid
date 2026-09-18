@@ -1,39 +1,20 @@
 package org.telegram.ui.Components;
 
+import android.text.Layout;
+import java.lang.ref.WeakReference;
 import java.util.ArrayList;
-import java.util.HashMap;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class v5 {
-    public ArrayList a;
-    public HashMap b;
-    public ArrayList c;
+    public Layout a;
+    public final ArrayList b = new ArrayList();
 
-    public final void a() {
-        ArrayList arrayList = this.a;
-        for (int i10 = 0; i10 < arrayList.size(); i10++) {
-            ((u5) arrayList.get(i10)).d.spanDrawn = false;
-        }
+    public v5(WeakReference weakReference, Layout layout) {
+        this.a = layout;
     }
 
-    public final void b(int i10) {
-        u5 u5Var = (u5) this.a.remove(i10);
-        HashMap hashMap = this.b;
-        x5 x5Var = (x5) hashMap.get(u5Var.c);
-        if (x5Var == null) {
-            throw new RuntimeException("!!!");
-        }
-        ArrayList arrayList = x5Var.b;
-        arrayList.remove(u5Var);
-        x5Var.a();
-        if (arrayList.isEmpty()) {
-            hashMap.remove(u5Var.c);
-            this.c.remove(x5Var);
-        }
-        q5 q5Var = u5Var.f;
-        if (q5Var != null) {
-            q5Var.p(u5Var);
-        }
+    public final void a() {
+        this.b.size();
     }
 }

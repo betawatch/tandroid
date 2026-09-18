@@ -1,51 +1,52 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.MotionEvent;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class t41 extends ll0 {
-    public final /* synthetic */ a51 X2;
-    public final /* synthetic */ d51 Y2;
+public final class t41 {
+    public final /* synthetic */ c51 a;
+    public final /* synthetic */ f51 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public t41(d51 d51Var, Context context, a51 a51Var) {
-        super(context, null);
-        this.Y2 = d51Var;
-        this.X2 = a51Var;
+    public t41(f51 f51Var, c51 c51Var) {
+        this.b = f51Var;
+        this.a = c51Var;
     }
 
-    @Override // org.telegram.ui.Components.ll0
-    public final boolean E0(float f7) {
-        return f7 >= ((float) (AndroidUtilities.dp(58.0f) + this.Y2.E));
+    public final int a() {
+        return this.b.s.v;
     }
 
-    @Override // org.telegram.ui.Components.ll0, android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        this.Y2.F = true;
-        return super.dispatchTouchEvent(motionEvent);
-    }
-
-    @Override // org.telegram.ui.Components.ll0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        return super.onInterceptTouchEvent(motionEvent) || this.X2.d(this, motionEvent);
-    }
-
-    @Override // org.telegram.ui.Components.ll0, androidx.recyclerview.widget.RecyclerView, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        if (this.Y2.L != null) {
-            return false;
+    /* JADX WARN: Removed duplicated region for block: B:11:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x0029  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void b(boolean z10) {
+        f51 f51Var = this.b;
+        v41 v41Var = f51Var.n;
+        if (z10) {
+            s4.h0 adapter = v41Var.getAdapter();
+            gg.g2 g2Var = f51Var.v;
+            if (adapter != g2Var) {
+                v41Var.setAdapter(g2Var);
+                if (v41Var.getAdapter().h() <= 0) {
+                    f51Var.r.i1(0, AndroidUtilities.dp(58.0f) + (-v41Var.getPaddingTop()) + f51Var.E, false);
+                    return;
+                }
+                return;
+            }
         }
-        return super.onTouchEvent(motionEvent);
-    }
-
-    @Override // org.telegram.ui.Components.ll0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        if (this.Y2.H) {
+        if (z10) {
             return;
         }
-        super.requestLayout();
+        s4.h0 adapter2 = v41Var.getAdapter();
+        e51 e51Var = f51Var.s;
+        if (adapter2 == e51Var) {
+            return;
+        }
+        v41Var.setAdapter(e51Var);
+        if (v41Var.getAdapter().h() <= 0) {
+        }
     }
 }

@@ -1,12 +1,12 @@
 package com.google.android.recaptcha.internal;
 
-import i2.g;
+import hg.k0;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 final class zzqo extends zzqq {
     private final InputStream zzf;
@@ -78,7 +78,7 @@ final class zzqo extends zzqq {
         int i12 = i11 + i10;
         int i13 = this.zzh;
         if (i12 <= i13) {
-            throw new IllegalStateException(g.j(i10, "refillBuffer() called when ", " bytes were already available in buffer"));
+            throw new IllegalStateException(k0.j(i10, "refillBuffer() called when ", " bytes were already available in buffer"));
         }
         int i14 = this.zzl;
         if (i10 > (ConnectionsManager.DEFAULT_DATACENTER_ID - i14) - i11 || i14 + i11 + i10 > this.zzm) {
@@ -109,9 +109,9 @@ final class zzqo extends zzqq {
                 return true;
             }
             return zzO(i10);
-        } catch (zzsx e7) {
-            e7.zza();
-            throw e7;
+        } catch (zzsx e) {
+            e.zza();
+            throw e;
         }
     }
 
@@ -159,9 +159,9 @@ final class zzqo extends zzqq {
                 if (i16 > this.zzf.available()) {
                     return null;
                 }
-            } catch (zzsx e7) {
-                e7.zza();
-                throw e7;
+            } catch (zzsx e) {
+                e.zza();
+                throw e;
             }
         }
         byte[] bArr = new byte[i10];
@@ -177,9 +177,9 @@ final class zzqo extends zzqq {
                 }
                 this.zzl += read;
                 i15 += read;
-            } catch (zzsx e10) {
-                e10.zza();
-                throw e10;
+            } catch (zzsx e7) {
+                e7.zza();
+                throw e7;
             }
         }
         return bArr;
@@ -225,9 +225,9 @@ final class zzqo extends zzqq {
                     } else {
                         i13 += (int) skip;
                     }
-                } catch (zzsx e7) {
-                    e7.zza();
-                    throw e7;
+                } catch (zzsx e) {
+                    e.zza();
+                    throw e;
                 }
             } catch (Throwable th2) {
                 this.zzl += i13;

@@ -1,35 +1,20 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.Utilities;
-
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class pc0 extends co0 {
-    public final /* synthetic */ vc0 d;
+public final class pc0 implements Runnable {
+    public boolean a;
+    public final /* synthetic */ uc0 b;
 
-    public pc0(vc0 vc0Var) {
-        this.d = vc0Var;
+    public pc0(uc0 uc0Var) {
+        this.b = uc0Var;
     }
 
-    @Override // org.telegram.ui.Components.co0
-    public final boolean a() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.co0
-    public final boolean b() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.co0
-    public final void c(boolean z10) {
-        this.d.a(!z10);
-    }
-
-    @Override // org.telegram.ui.Components.co0
-    public final CharSequence d() {
-        vc0 vc0Var = this.d;
-        Utilities.CallbackReturn callbackReturn = vc0Var.s0;
-        return callbackReturn != null ? (CharSequence) callbackReturn.run(Integer.valueOf(vc0Var.G)) : vc0Var.d(vc0Var.G);
+    @Override // java.lang.Runnable
+    public final void run() {
+        boolean z10 = this.a;
+        uc0 uc0Var = this.b;
+        uc0Var.a(z10);
+        uc0Var.postDelayed(this, uc0Var.L);
     }
 }

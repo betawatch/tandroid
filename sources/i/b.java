@@ -2,7 +2,7 @@ package i;
 
 import a0.i;
 import a0.j;
-import a0.m;
+import a0.n;
 import android.content.res.ColorStateList;
 import android.content.res.Resources;
 import android.graphics.ColorFilter;
@@ -12,9 +12,9 @@ import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.util.SparseArray;
 import android.util.StateSet;
-import v7.o8;
+import v7.r8;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class b extends Drawable.ConstantState {
     public boolean A;
@@ -26,7 +26,7 @@ public final class b extends Drawable.ConstantState {
     public boolean G;
     public int[][] H;
     public i I;
-    public m J;
+    public n J;
     public final f a;
     public Resources b;
     public int c;
@@ -140,7 +140,7 @@ public final class b extends Drawable.ConstantState {
             this.J = bVar.J;
         } else {
             this.I = new i();
-            this.J = new m();
+            this.J = new n();
         }
     }
 
@@ -213,7 +213,7 @@ public final class b extends Drawable.ConstantState {
                 Drawable[] drawableArr = this.g;
                 Drawable newDrawable = constantState.newDrawable(this.b);
                 if (Build.VERSION.SDK_INT >= 23) {
-                    o8.b(this.x, newDrawable);
+                    r8.b(this.x, newDrawable);
                 }
                 Drawable mutate = newDrawable.mutate();
                 mutate.setCallback(this.a);
@@ -253,7 +253,7 @@ public final class b extends Drawable.ConstantState {
         }
         Drawable newDrawable = ((Drawable.ConstantState) this.f.valueAt(indexOfKey)).newDrawable(this.b);
         if (Build.VERSION.SDK_INT >= 23) {
-            o8.b(this.x, newDrawable);
+            r8.b(this.x, newDrawable);
         }
         Drawable mutate = newDrawable.mutate();
         mutate.setCallback(this.a);
@@ -273,10 +273,10 @@ public final class b extends Drawable.ConstantState {
         if (i10 < 0) {
             return 0;
         }
-        m mVar = this.J;
+        n nVar = this.J;
         int i11 = 0;
-        int a2 = b0.a.a(mVar.c, i10, mVar.a);
-        if (a2 >= 0 && (r52 = mVar.b[a2]) != j.b) {
+        int a2 = b0.a.a(nVar.c, i10, nVar.a);
+        if (a2 >= 0 && (r52 = nVar.b[a2]) != j.b) {
             i11 = r52;
         }
         return i11.intValue();

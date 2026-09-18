@@ -1,381 +1,228 @@
 package fi;
 
-import android.app.Activity;
 import android.content.Context;
-import android.content.SharedPreferences;
-import android.os.Build;
-import android.security.keystore.KeyGenParameterSpec;
-import android.text.TextUtils;
-import android.util.Pair;
-import bi.k8;
-import java.nio.charset.StandardCharsets;
-import java.security.KeyStore;
-import java.security.SecureRandom;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import ci.b9;
+import ci.d9;
+import ci.r9;
 import java.util.WeakHashMap;
-import javax.crypto.Cipher;
-import javax.crypto.KeyGenerator;
-import javax.crypto.SecretKey;
-import javax.crypto.spec.IvParameterSpec;
-import org.json.JSONObject;
-import org.scilab.forge.jlatexmath.TeXSymbolParser;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.FileLog;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.R;
-import org.telegram.messenger.UserObject;
-import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.ActionBar.o2;
+import org.telegram.ui.Components.f61;
+import org.telegram.ui.Components.j51;
+import org.telegram.ui.Components.qr;
+import org.telegram.ui.Components.vc;
+import org.telegram.ui.Components.zw0;
+import org.telegram.ui.bo;
+import w7.x5;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes4.dex */
-public final class s {
-    public static final WeakHashMap k = new WeakHashMap();
-    public static KeyStore l;
-    public final Context a;
-    public final int b;
-    public final long c;
-    public boolean d;
-    public boolean e;
-    public boolean f;
-    public String g;
-    public String h;
-    public a4.m i;
-    public bi.f0 j;
+public final class s extends o2 implements le.d {
+    public final le.b a;
+    public long b;
+    public FrameLayout c;
+    public f61 d;
+    public jh.f e;
+    public LinearLayout f;
+    public ci.d h;
+    public ci.d n;
+    public zw0 r;
+    public TLRPC.ChatFull s;
+    public t0 v;
 
-    public s(Context context, int i10, long j3) {
-        this.a = context;
-        this.b = i10;
-        this.c = j3;
-        h();
+    public s(Bundle bundle) {
+        super(bundle);
+        this.a = new le.b(0, this, qr.h, 320L, false);
     }
 
-    public static void b() {
-        Context context = ApplicationLoader.applicationContext;
-        if (context == null) {
-            return;
-        }
-        for (int i10 = 0; i10 < 4; i10++) {
-            context.getSharedPreferences("2botbiometry_" + i10, 0).edit().clear().apply();
-        }
-        k.clear();
-    }
-
-    public static s c(Context context, int i10, long j3) {
-        Pair pair = new Pair(Integer.valueOf(i10), Long.valueOf(j3));
-        WeakHashMap weakHashMap = k;
-        s sVar = (s) weakHashMap.get(pair);
-        if (sVar != null) {
-            return sVar;
-        }
-        s sVar2 = new s(context, i10, j3);
-        weakHashMap.put(pair, sVar2);
-        return sVar2;
-    }
-
-    public static void d(Activity activity, int i10, Utilities.Callback callback) {
-        int i11 = 0;
-        SharedPreferences sharedPreferences = activity.getSharedPreferences("2botbiometry_" + i10, 0);
-        ArrayList arrayList = new ArrayList();
-        Iterator<Map.Entry<String, ?>> it = sharedPreferences.getAll().entrySet().iterator();
-        while (it.hasNext()) {
-            String key = it.next().getKey();
-            if (key.endsWith("_requested")) {
-                try {
-                    arrayList.add(Long.valueOf(Long.parseLong(key.substring(0, key.length() - 10))));
-                } catch (Exception e7) {
-                    FileLog.e(e7);
-                }
-            }
-        }
-        HashMap hashMap = new HashMap();
-        int size = arrayList.size();
-        while (i11 < size) {
-            Object obj = arrayList.get(i11);
-            i11++;
-            Long l4 = (Long) obj;
-            s c10 = c(activity, i10, l4.longValue());
-            if (c10.e && c10.f) {
-                hashMap.put(l4, Boolean.valueOf(!c10.d));
-            }
-        }
-        if (arrayList.isEmpty()) {
-            callback.run(new ArrayList());
-        } else {
-            MessagesStorage.getInstance(i10).getStorageQueue().postRunnable(new k8(i10, arrayList, hashMap, callback));
-        }
-    }
-
-    public final boolean a() {
-        return this.f;
-    }
-
-    public final SecretKey e() {
-        if (l == null) {
-            KeyStore keyStore = KeyStore.getInstance("AndroidKeyStore");
-            l = keyStore;
-            keyStore.load(null);
-        }
-        KeyStore keyStore2 = l;
-        StringBuilder sb2 = new StringBuilder("9bot_");
-        long j3 = this.c;
-        sb2.append(j3);
-        if (keyStore2.containsAlias(sb2.toString())) {
-            return (SecretKey) l.getKey("9bot_" + j3, null);
-        }
-        KeyGenParameterSpec.Builder builder = new KeyGenParameterSpec.Builder("9bot_" + j3, 3);
-        builder.setBlockModes("CBC");
-        builder.setEncryptionPaddings("PKCS7Padding");
-        builder.setUserAuthenticationRequired(true);
-        int i10 = Build.VERSION.SDK_INT;
-        if (i10 >= 30) {
-            builder.setUserAuthenticationParameters(60, 2);
-        }
-        if (i10 >= 24) {
-            builder.setInvalidatedByBiometricEnrollment(true);
-        }
-        KeyGenerator keyGenerator = KeyGenerator.getInstance("AES", "AndroidKeyStore");
-        keyGenerator.init(builder.build());
-        return keyGenerator.generateKey();
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:16:0x0084  */
-    /* JADX WARN: Removed duplicated region for block: B:21:0x0034  */
-    /* JADX WARN: Removed duplicated region for block: B:8:0x002b  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final JSONObject f() {
-        String str;
-        String string;
-        JSONObject jSONObject = new JSONObject();
-        Context context = this.a;
-        try {
-        } catch (Exception e7) {
-            FileLog.e(e7);
-        }
-        if (new aa.a(new androidx.biometric.s(context, 0)).g(15) == 0) {
-            str = "unknown";
-            if (str == null) {
-                jSONObject.put("available", true);
-                jSONObject.put(TeXSymbolParser.TYPE_ATTR, str);
+    public static void U(s sVar, j51 j51Var) {
+        Object obj = j51Var.G;
+        if (obj instanceof gi.f) {
+            gi.f fVar = (gi.f) obj;
+            long j3 = fVar.a;
+            TLRPC.Chat chat = MessagesController.getInstance(sVar.currentAccount).getChat(Long.valueOf(-j3));
+            TLRPC.User user = MessagesController.getInstance(sVar.currentAccount).getUser(Long.valueOf(j3));
+            if (user != null) {
+                sVar.presentFragment(bo.R9(user.id));
+            } else if (ChatObject.isPublic(chat) || ChatObject.isInChat(chat)) {
+                sVar.presentFragment(bo.R9(-chat.id));
             } else {
-                jSONObject.put("available", false);
+                new hi.c(sVar.getParentActivity(), chat, new b9(23, sVar, fVar)).show();
             }
-            jSONObject.put("access_requested", this.f);
-            jSONObject.put("access_granted", (this.e || this.d) ? false : true);
-            jSONObject.put("token_saved", !TextUtils.isEmpty(this.g));
-            SharedPreferences sharedPreferences = context.getSharedPreferences("2botbiometry_" + this.b, 0);
-            StringBuilder sb2 = new StringBuilder("device_id");
-            long j3 = this.c;
-            sb2.append(j3);
-            string = sharedPreferences.getString(sb2.toString(), null);
-            if (string == null) {
-                byte[] bArr = new byte[32];
-                new SecureRandom().nextBytes(bArr);
-                SharedPreferences.Editor edit = sharedPreferences.edit();
-                String o9 = a4.a.o(j3, "device_id");
-                string = Utilities.bytesToHex(bArr);
-                edit.putString(o9, string).apply();
-            }
-            jSONObject.put("device_id", string);
-            return jSONObject;
         }
-        str = null;
-        if (str == null) {
-        }
-        jSONObject.put("access_requested", this.f);
-        jSONObject.put("access_granted", (this.e || this.d) ? false : true);
-        jSONObject.put("token_saved", !TextUtils.isEmpty(this.g));
-        SharedPreferences sharedPreferences2 = context.getSharedPreferences("2botbiometry_" + this.b, 0);
-        StringBuilder sb22 = new StringBuilder("device_id");
-        long j32 = this.c;
-        sb22.append(j32);
-        string = sharedPreferences2.getString(sb22.toString(), null);
-        if (string == null) {
-        }
-        jSONObject.put("device_id", string);
-        return jSONObject;
     }
 
-    public final boolean g() {
-        return this.e;
+    @Override // le.d
+    public final void D(int i10, float f7, float f10, le.e eVar) {
+        float f11 = 1.0f - f7;
+        this.f.setAlpha(f11);
+        this.f.setVisibility(f11 > 0.0f ? 0 : 8);
+        this.r.setAlpha(f7);
+        this.r.setVisibility(f7 > 0.0f ? 0 : 8);
     }
 
-    public final void h() {
-        SharedPreferences sharedPreferences = this.a.getSharedPreferences("2botbiometry_" + this.b, 0);
-        long j3 = this.c;
-        this.g = sharedPreferences.getString(String.valueOf(j3), null);
-        this.h = sharedPreferences.getString(String.valueOf(j3) + "_iv", null);
+    public final void V(int i10) {
+        this.d.setPadding(0, 0, 0, AndroidUtilities.dp(60.0f) + i10);
+        this.f.setPadding(AndroidUtilities.dp(7.0f), 0, AndroidUtilities.dp(7.0f), AndroidUtilities.dp(12.0f) + i10);
+        this.r.setTranslationY((this.d.getPaddingTop() - this.d.getPaddingBottom()) / 2.0f);
+        this.e.setFadeZoneBottom(AndroidUtilities.dp(72.0f) + i10);
+    }
+
+    @Override // org.telegram.ui.ActionBar.o2
+    public final View createView(Context context) {
         boolean z10 = true;
-        boolean z11 = this.g != null;
-        this.e = z11;
-        if (!z11) {
-            if (!sharedPreferences.getBoolean(j3 + "_requested", false)) {
-                z10 = false;
-            }
-        }
-        this.f = z10;
-        this.d = sharedPreferences.getBoolean(j3 + "_disabled", false);
-    }
+        z10 = true;
+        setHasOwnBackground(true);
+        t0 t0Var = new t0(getParentActivity(), this.resourceProvider, vc.a0(this), this.currentAccount, this.b);
+        this.v = t0Var;
+        t0Var.h = new xa.c(this, 20);
+        t0Var.d();
+        this.v.e();
+        final int i10 = 0;
+        hg.k0.x(false, this.actionBar);
+        this.actionBar.setAllowOverlayTitle(true);
+        this.actionBar.setActionBarMenuOnItemClick(new ei.t(this, 5));
+        this.actionBar.setTitle(LocaleController.getString(R.string.CommunityPendingRequests));
+        FrameLayout frameLayout = new FrameLayout(context);
+        this.c = frameLayout;
+        int i11 = j6.a7;
+        frameLayout.setBackgroundColor(j6.w0(null, i11, false));
+        f61 f61Var = new f61(this, new bi.v(this, 19), new q(this), new q(this));
+        this.d = f61Var;
+        f61Var.setClipToPadding(false);
+        f61 f61Var2 = this.d;
+        f61Var2.Y2.r = false;
+        f61Var2.q1();
+        this.d.j(new ai.r(this, 6));
+        this.actionBar.setAdaptiveBackground(this.d);
+        this.c.addView(this.d, x5.c(-1.0f, -1));
+        jh.f fVar = new jh.f(context);
+        this.e = fVar;
+        fVar.setupColorKey(i11);
+        this.e.setFadeZoneBottom(AndroidUtilities.dp(72.0f));
+        this.e.setFadeHeightBottom(AndroidUtilities.dp(24.0f));
+        this.c.addView(this.e, x5.g());
+        this.c.addView(this.actionBar, x5.e(-1, -2, 48));
+        LinearLayout linearLayout = new LinearLayout(context);
+        this.f = linearLayout;
+        linearLayout.setOrientation(0);
+        this.f.setPadding(AndroidUtilities.dp(7.0f), 0, AndroidUtilities.dp(7.0f), AndroidUtilities.dp(12.0f));
+        ci.d dVar = new ci.d(context, this.resourceProvider, true);
+        this.n = dVar;
+        dVar.d();
+        this.n.setColor(i0.a.d(0.125f, getThemedColor(j6.d6), getThemedColor(j6.G6)));
+        this.n.setText(LocaleController.getString(R.string.CommunityPendingRequestDeclineAll));
+        this.n.e();
+        this.n.setOnClickListener(new View.OnClickListener(this) { // from class: fi.r
+            public final /* synthetic */ s b;
 
-    public final androidx.biometric.u i(boolean z10) {
-        try {
-            if (Build.VERSION.SDK_INT < 23) {
-                return null;
+            {
+                this.b = this;
             }
-            Cipher cipher = Cipher.getInstance("AES/CBC/PKCS7Padding");
-            SecretKey e7 = e();
-            if (z10) {
-                cipher.init(2, e7, new IvParameterSpec(Utilities.hexToBytes(this.h)));
-            } else {
-                cipher.init(1, e7);
-            }
-            return new androidx.biometric.u(cipher);
-        } catch (Exception e10) {
-            FileLog.e(e10);
-            return null;
-        }
-    }
 
-    public final void j(String str, boolean z10, String str2, Utilities.Callback3 callback3) {
-        int i10;
-        int i11;
-        this.j = null;
-        try {
-            if (this.i == null) {
-                this.i = new a4.m(LaunchActivity.G1, f0.e.e(this.a), new q(this));
-            }
-            androidx.biometric.u i12 = i(z10);
-            TLRPC.User user = MessagesController.getInstance(this.b).getUser(Long.valueOf(this.c));
-            j6.l lVar = new j6.l(1);
-            lVar.b = UserObject.getUserName(user);
-            lVar.d = LocaleController.getString(R.string.Back);
-            lVar.a = 15;
-            if (!TextUtils.isEmpty(str)) {
-                lVar.c = str;
-            }
-            j6.l b10 = lVar.b();
-            if (i12 != null) {
-                Cipher cipher = i12.b;
-                if (!z10 && (i11 = Build.VERSION.SDK_INT) >= 30) {
-                    try {
-                        if (TextUtils.isEmpty(str2)) {
-                            this.g = null;
-                        } else if (i11 < 23) {
-                            this.g = str2;
-                        } else {
-                            this.g = Utilities.bytesToHex(cipher.doFinal(str2.getBytes(StandardCharsets.UTF_8)));
-                            this.h = Utilities.bytesToHex(cipher.getIV());
-                        }
-                        k();
-                        callback3.run(Boolean.TRUE, null, null);
-                        return;
-                    } catch (Exception e7) {
-                        FileLog.e(e7);
-                        i12 = i(z10);
-                    }
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                switch (i10) {
+                    case 0:
+                        this.b.v.f(false, true);
+                        break;
+                    default:
+                        this.b.v.f(true, true);
+                        break;
                 }
-            }
-            this.j = new bi.f0(3, callback3, (i12 == null || Build.VERSION.SDK_INT >= 30) ? null : i12);
-            if (i12 == null || (i10 = Build.VERSION.SDK_INT) >= 30) {
-                this.i.h0(b10, null);
-                return;
-            }
-            a4.m mVar = this.i;
-            mVar.getClass();
-            int i13 = b10.a;
-            int i14 = i13 != 0 ? i13 : 15;
-            if ((i14 & 255) == 255) {
-                throw new IllegalArgumentException("Crypto-based authentication is not supported for Class 2 (Weak) biometrics.");
-            }
-            if (i10 < 30 && v7.m.a(i14)) {
-                throw new IllegalArgumentException("Crypto-based authentication is not supported for device credential prior to API 30.");
-            }
-            mVar.h0(b10, i12);
-        } catch (Exception e10) {
-            FileLog.e(e10);
-            callback3.run(Boolean.FALSE, null, null);
-        }
-    }
-
-    public final void k() {
-        SharedPreferences.Editor edit = this.a.getSharedPreferences("2botbiometry_" + this.b, 0).edit();
-        boolean z10 = this.f;
-        long j3 = this.c;
-        if (z10) {
-            edit.putBoolean(j3 + "_requested", true);
-        } else {
-            edit.remove(j3 + "_requested");
-        }
-        if (this.e) {
-            String valueOf = String.valueOf(j3);
-            String str = this.g;
-            if (str == null) {
-                str = "";
-            }
-            edit.putString(valueOf, str);
-            String str2 = String.valueOf(j3) + "_iv";
-            String str3 = this.h;
-            edit.putString(str2, str3 != null ? str3 : "");
-        } else {
-            edit.remove(String.valueOf(j3));
-            edit.remove(String.valueOf(j3) + "_iv");
-        }
-        if (this.d) {
-            edit.putBoolean(j3 + "_disabled", true);
-        } else {
-            edit.remove(j3 + "_disabled");
-        }
-        edit.apply();
-    }
-
-    public final void l(String str, final String str2, final bi.o4 o4Var) {
-        j(str, false, str2, new Utilities.Callback3() { // from class: fi.p
-            @Override // org.telegram.messenger.Utilities.Callback3
-            public final void run(Object obj, Object obj2, Object obj3) {
-                String str3 = str2;
-                Boolean bool = (Boolean) obj;
-                androidx.biometric.t tVar = (androidx.biometric.t) obj2;
-                androidx.biometric.u uVar = (androidx.biometric.u) obj3;
-                s sVar = s.this;
-                sVar.getClass();
-                if (tVar != null) {
-                    try {
-                        if (TextUtils.isEmpty(str3)) {
-                            sVar.g = null;
-                            sVar.h = null;
-                        } else {
-                            int i10 = Build.VERSION.SDK_INT;
-                            if (i10 < 23) {
-                                sVar.g = str3;
-                                sVar.h = null;
-                            } else {
-                                if (i10 >= 30) {
-                                    uVar = sVar.i(false);
-                                }
-                                if (uVar == null) {
-                                    throw new RuntimeException("No cryptoObject found");
-                                }
-                                Cipher cipher = uVar.b;
-                                sVar.g = Utilities.bytesToHex(cipher.doFinal(str3.getBytes(StandardCharsets.UTF_8)));
-                                sVar.h = Utilities.bytesToHex(cipher.getIV());
-                            }
-                        }
-                        sVar.k();
-                    } catch (Exception e7) {
-                        FileLog.e(e7);
-                        bool = Boolean.FALSE;
-                    }
-                }
-                o4Var.run(bool);
             }
         });
+        this.f.addView(this.n, x5.p(0, 48, 1.0f, 0, 4, 0, 4, 0));
+        ci.d dVar2 = new ci.d(context, this.resourceProvider, true);
+        this.h = dVar2;
+        dVar2.setText(LocaleController.getString(R.string.CommunityPendingRequestAddAll));
+        this.h.e();
+        ci.d dVar3 = this.h;
+        final int i12 = z10 ? 1 : 0;
+        dVar3.setOnClickListener(new View.OnClickListener(this) { // from class: fi.r
+            public final /* synthetic */ s b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                switch (i12) {
+                    case 0:
+                        this.b.v.f(false, true);
+                        break;
+                    default:
+                        this.b.v.f(true, true);
+                        break;
+                }
+            }
+        });
+        this.f.addView(this.h, x5.p(0, 48, 1.0f, 0, 4, 0, 4, 0));
+        this.c.addView(this.f, x5.e(-1, -2, 80));
+        zw0 zw0Var = new zw0(getParentActivity(), null, 16, this.resourceProvider);
+        this.r = zw0Var;
+        zw0Var.d.setText(LocaleController.getString(R.string.NoCommunityJoinRequests));
+        this.r.e.setText(LocaleController.getString(R.string.NoCommunityJoinRequestsDescription));
+        this.r.setAnimateLayoutChange(true);
+        this.r.setVisibility(8);
+        this.c.addView(this.r, x5.e(-2, -2, 17));
+        TLRPC.ChatFull chatFull = this.s;
+        if (chatFull != null && chatFull.requests_pending != 0) {
+            z10 = false;
+        }
+        this.a.a(z10, false);
+        V(0);
+        FrameLayout frameLayout2 = this.c;
+        q qVar = new q(this);
+        WeakHashMap weakHashMap = r0.i0.a;
+        r0.a0.j(frameLayout2, qVar);
+        setBulletinDelegate(new d9(4));
+        FrameLayout frameLayout3 = this.c;
+        this.fragmentView = frameLayout3;
+        return frameLayout3;
+    }
+
+    @Override // org.telegram.ui.ActionBar.o2
+    public final boolean drawEdgeNavigationBar() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.ActionBar.o2
+    public final boolean isSupportEdgeToEdge() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.ActionBar.o2
+    public final boolean onFragmentCreate() {
+        this.b = this.arguments.getLong("community_id", 0L);
+        getMessagesController().getChat(Long.valueOf(this.b));
+        this.s = getMessagesController().getChatFull(this.b);
+        return super.onFragmentCreate();
+    }
+
+    @Override // org.telegram.ui.ActionBar.o2
+    public final void onFragmentDestroy() {
+        super.onFragmentDestroy();
+        t0 t0Var = this.v;
+        r9 r9Var = t0Var.i;
+        if (r9Var != null) {
+            r9Var.run();
+        }
+        t0Var.i = null;
+    }
+
+    @Override // le.d
+    public final /* synthetic */ void C(float f7, int i10) {
     }
 }

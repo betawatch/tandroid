@@ -1,14 +1,15 @@
 package i2;
 
 import android.util.Pair;
+import ei.d5;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class v0 {
     public final j2.f c;
     public final e2.z d;
-    public final fi.f e;
+    public final d5 e;
     public long f;
     public int g;
     public boolean h;
@@ -24,10 +25,10 @@ public final class v0 {
     public final b2.j1 b = new b2.j1();
     public ArrayList q = new ArrayList();
 
-    public v0(j2.f fVar, e2.z zVar, fi.f fVar2) {
+    public v0(j2.f fVar, e2.z zVar, d5 d5Var) {
         this.c = fVar;
         this.d = zVar;
-        this.e = fVar2;
+        this.e = d5Var;
     }
 
     public static u2.f0 o(b2.k1 k1Var, Object obj, long j3, long j10, b2.j1 j1Var, b2.h1 h1Var) {
@@ -114,10 +115,10 @@ public final class v0 {
                 if (i10 != -1) {
                     h1Var2.f(i10);
                 }
-                int e7 = h1Var2.e(i10);
+                int e = h1Var2.e(i10);
                 h1Var2.g(i10);
-                if (e7 != h1Var2.g.a(i10).a) {
-                    return e(k1Var, f0Var.a, f0Var.e, e7, u0Var.e, f0Var.d, z10);
+                if (e != h1Var2.g.a(i10).a) {
+                    return e(k1Var, f0Var.a, f0Var.e, e, u0Var.e, f0Var.d, z10);
                 }
                 k1Var.g(obj2, h1Var2);
                 h1Var2.d(i10);
@@ -330,7 +331,7 @@ public final class v0 {
             u10.b(t0Var.g.a);
         }
         t0 t0Var2 = this.j;
-        this.d.c(new hg.t(this, u10, t0Var2 == null ? null : t0Var2.g.a, 5));
+        this.d.c(new gg.t(this, u10, t0Var2 == null ? null : t0Var2.g.a, 13));
     }
 
     /* JADX WARN: Type inference failed for: r1v4, types: [java.lang.Object, u2.d1] */

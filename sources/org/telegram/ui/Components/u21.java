@@ -1,48 +1,30 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class u21 extends g51 {
-    public static final /* synthetic */ int a = 0;
+public final class u21 {
+    public static final u21 a;
+    public static final u21 b;
+    public static final u21 c;
+    public static final /* synthetic */ u21[] d;
 
     static {
-        g51.setup(new u21());
+        u21 u21Var = new u21("TOP", 0);
+        a = u21Var;
+        u21 u21Var2 = new u21("LEFT", 1);
+        b = u21Var2;
+        u21 u21Var3 = new u21("BOTTOM", 2);
+        c = u21Var3;
+        d = new u21[]{u21Var, u21Var2, u21Var3};
     }
 
-    @Override // org.telegram.ui.Components.g51
-    public final void bindView(View view, h51 h51Var, boolean z10, v51 v51Var, d61 d61Var) {
-        v21 v21Var = (v21) view;
-        boolean z11 = false;
-        if (h51Var.r) {
-            v21Var.e();
-        } else {
-            Object obj = h51Var.G;
-            if (obj == null) {
-                if (h51Var.B == -2) {
-                    v21Var.b(h51Var.q, h51Var.e);
-                } else {
-                    v21Var.c((h51Var.y & 1) != 0, h51Var.q, h51Var.e);
-                }
-            } else if (obj instanceof TLRPC.TL_forumTopic) {
-                if (h51Var.I) {
-                    v21Var.a(h51Var.x, (TLRPC.TL_forumTopic) obj, h51Var.e);
-                } else {
-                    v21Var.f((TLRPC.TL_forumTopic) obj, h51Var.e);
-                }
-            }
-        }
-        if (d61Var != null && d61Var.c3 && v21Var.y) {
-            z11 = true;
-        }
-        v21Var.setReorder(z11);
+    public static u21 valueOf(String str) {
+        return (u21) Enum.valueOf(u21.class, str);
     }
 
-    @Override // org.telegram.ui.Components.g51
-    public final View createView(Context context, ll0 ll0Var, int i10, int i11, org.telegram.ui.ActionBar.f6 f6Var) {
-        return new v21(context, i10, f6Var);
+    public static u21[] values() {
+        return (u21[]) d.clone();
     }
 }

@@ -9,7 +9,7 @@ import android.os.Process;
 import android.util.Log;
 import java.util.Calendar;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class o extends p {
     public final /* synthetic */ int c = 1;
@@ -50,7 +50,7 @@ public final class o extends p {
                 return ((PowerManager) this.e).isPowerSaveMode() ? 2 : 1;
             default:
                 aa.a aVar = (aa.a) this.e;
-                bh.a aVar2 = (bh.a) aVar.d;
+                ah.a aVar2 = (ah.a) aVar.d;
                 LocationManager locationManager = (LocationManager) aVar.c;
                 if (aVar2.b > System.currentTimeMillis()) {
                     z10 = aVar2.a;
@@ -59,8 +59,8 @@ public final class o extends p {
                     Location location3 = null;
                     if (f0.e.a(context, "android.permission.ACCESS_COARSE_LOCATION", Process.myPid(), Process.myUid(), context.getPackageName()) == 0) {
                         try {
-                        } catch (Exception e7) {
-                            Log.d("TwilightManager", "Failed to get last known location", e7);
+                        } catch (Exception e) {
+                            Log.d("TwilightManager", "Failed to get last known location", e);
                         }
                         if (locationManager.isProviderEnabled("network")) {
                             location2 = locationManager.getLastKnownLocation("network");
@@ -76,8 +76,8 @@ public final class o extends p {
                             if (locationManager.isProviderEnabled("gps")) {
                                 location3 = locationManager.getLastKnownLocation("gps");
                             }
-                        } catch (Exception e10) {
-                            Log.d("TwilightManager", "Failed to get last known location", e10);
+                        } catch (Exception e7) {
+                            Log.d("TwilightManager", "Failed to get last known location", e7);
                         }
                     }
                     if (location3 == null || location == null ? location3 != null : location3.getTime() > location.getTime()) {

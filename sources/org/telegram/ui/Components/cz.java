@@ -15,7 +15,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class cz implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -118,7 +118,7 @@ public final /* synthetic */ class cz implements Utilities.Callback {
                 dzVar.a((Runnable) obj, false);
                 break;
             case 3:
-                MediaDataController.getInstance(dzVar.w.Q.c1).searchStickerSets(false, dzVar.a, new org.telegram.ui.nf(18, dzVar, (Runnable) obj));
+                MediaDataController.getInstance(dzVar.w.Q.c1).searchStickerSets(false, dzVar.a, new org.telegram.ui.pf(18, dzVar, (Runnable) obj));
                 break;
             case 4:
                 Runnable runnable2 = (Runnable) obj;
@@ -188,7 +188,7 @@ public final /* synthetic */ class cz implements Utilities.Callback {
                         MediaDataController.getInstance(i18).fetchNewEmojiKeywords(currentKeyboardLanguage);
                     }
                     kzVar.W0 = currentKeyboardLanguage;
-                    MediaDataController.getInstance(i18).getEmojiSuggestions(kzVar.W0, fzVar3.N, true, new androidx.car.app.utils.a(dzVar, allStickers3, runnable3, 29), false);
+                    MediaDataController.getInstance(i18).getEmojiSuggestions(kzVar.W0, fzVar3.N, true, new ai.r5(dzVar, allStickers3, runnable3, 29), false);
                     break;
                 } else {
                     runnable3.run();
@@ -247,7 +247,7 @@ public final /* synthetic */ class cz implements Utilities.Callback {
                     TLRPC.TL_messages_getStickers tL_messages_getStickers = new TLRPC.TL_messages_getStickers();
                     tL_messages_getStickers.emoticon = dzVar.a;
                     tL_messages_getStickers.hash = 0L;
-                    fzVar5.L = ConnectionsManager.getInstance(fzVar5.Q.c1).sendRequest(tL_messages_getStickers, new bi.c5(dzVar, tL_messages_getStickers, runnable5, 9));
+                    fzVar5.L = ConnectionsManager.getInstance(fzVar5.Q.c1).sendRequest(tL_messages_getStickers, new ai.t5(dzVar, tL_messages_getStickers, runnable5, 9));
                     break;
                 } else {
                     runnable5.run();

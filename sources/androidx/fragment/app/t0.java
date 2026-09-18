@@ -1,16 +1,41 @@
 package androidx.fragment.app;
 
-import android.view.ViewGroup;
+import android.util.Log;
+import java.io.Writer;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
-public abstract class t0 {
-    public boolean a;
-    public boolean b;
+public final class t0 extends Writer {
+    public final StringBuilder b = new StringBuilder(128);
+    public final String a = "FragmentManager";
 
-    public abstract void a(ViewGroup viewGroup);
+    public final void a() {
+        StringBuilder sb2 = this.b;
+        if (sb2.length() > 0) {
+            Log.d(this.a, sb2.toString());
+            sb2.delete(0, sb2.length());
+        }
+    }
 
-    public abstract void b();
+    @Override // java.io.Writer, java.io.Closeable, java.lang.AutoCloseable
+    public final void close() {
+        a();
+    }
 
-    public abstract void c(s0 s0Var);
+    @Override // java.io.Writer, java.io.Flushable
+    public final void flush() {
+        a();
+    }
+
+    @Override // java.io.Writer
+    public final void write(char[] cArr, int i10, int i11) {
+        for (int i12 = 0; i12 < i11; i12++) {
+            char c10 = cArr[i10 + i12];
+            if (c10 == '\n') {
+                a();
+            } else {
+                this.b.append(c10);
+            }
+        }
+    }
 }

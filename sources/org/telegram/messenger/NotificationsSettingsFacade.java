@@ -6,7 +6,7 @@ import android.media.RingtoneManager;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public class NotificationsSettingsFacade {
     public static final String PROPERTY_CONTENT_PREVIEW = "content_preview_";
@@ -120,7 +120,7 @@ public class NotificationsSettingsFacade {
         applySoundSettings(peerNotifySettings.android_sound, edit, j3, j10, 0, false);
         edit.apply();
         if (z11) {
-            AndroidUtilities.runOnUIThread(new ug(this, 2));
+            AndroidUtilities.runOnUIThread(new vg(this, 2));
         }
     }
 
@@ -128,7 +128,7 @@ public class NotificationsSettingsFacade {
         if (peerNotifySettings == null) {
             return;
         }
-        Utilities.globalQueue.postRunnable(new a3.f0(this, j3, j10, peerNotifySettings, 9));
+        Utilities.globalQueue.postRunnable(new a3.g0(this, j3, j10, peerNotifySettings, 9));
     }
 
     /* JADX WARN: Removed duplicated region for block: B:15:0x00f7  */

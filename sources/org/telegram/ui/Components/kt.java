@@ -1,33 +1,11 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class kt {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-
-    public /* synthetic */ kt(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
-    }
-
-    public final void a(int i10, boolean z10) {
-        switch (this.a) {
-            case 0:
-                ArrayList arrayList = ((mt) this.b).b;
-                int size = arrayList.size();
-                int i11 = 0;
-                while (i11 < size) {
-                    Object obj = arrayList.get(i11);
-                    i11++;
-                    ((kt) obj).a(i10, z10);
-                }
-                break;
-            default:
-                ((Runnable) this.b).run();
-                break;
-        }
-    }
+public abstract class kt {
+    public static final qr a = new qr(0.39d, 0.575d, 0.565d, 1.0d);
+    public static final qr b = new qr(0.445d, 0.05d, 0.55d, 0.95d);
+    public static final qr c = new qr(0.55d, 0.085d, 0.68d, 0.53d);
+    public static final qr d = new qr(0.25d, 0.46d, 0.45d, 0.94d);
+    public static final qr e = new qr(0.455d, 0.03d, 0.515d, 0.955d);
 }

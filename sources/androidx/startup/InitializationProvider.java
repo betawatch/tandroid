@@ -12,7 +12,7 @@ import androidx.car.app.j;
 import v4.a;
 import w7.z7;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public class InitializationProvider extends ContentProvider {
     @Override // android.content.ContentProvider
@@ -46,8 +46,8 @@ public class InitializationProvider extends ContentProvider {
                 z7.a("Startup");
                 c10.a(context2.getPackageManager().getProviderInfo(new ComponentName(context2.getPackageName(), InitializationProvider.class.getName()), 128).metaData);
                 return true;
-            } catch (PackageManager.NameNotFoundException e7) {
-                throw new j(e7);
+            } catch (PackageManager.NameNotFoundException e) {
+                throw new j(e);
             }
         } finally {
             Trace.endSection();

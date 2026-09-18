@@ -5,7 +5,7 @@ import android.view.View;
 import android.view.WindowInsets;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class l1 {
     public static final l1 b;
@@ -41,12 +41,12 @@ public final class l1 {
         }
     }
 
-    public static i0.c e(i0.c cVar, int i10, int i11, int i12, int i13) {
-        int max = Math.max(0, cVar.a - i10);
-        int max2 = Math.max(0, cVar.b - i11);
-        int max3 = Math.max(0, cVar.c - i12);
-        int max4 = Math.max(0, cVar.d - i13);
-        return (max == i10 && max2 == i11 && max3 == i12 && max4 == i13) ? cVar : i0.c.b(max, max2, max3, max4);
+    public static i0.b e(i0.b bVar, int i10, int i11, int i12, int i13) {
+        int max = Math.max(0, bVar.a - i10);
+        int max2 = Math.max(0, bVar.b - i11);
+        int max3 = Math.max(0, bVar.c - i12);
+        int max4 = Math.max(0, bVar.d - i13);
+        return (max == i10 && max2 == i11 && max3 == i12 && max4 == i13) ? bVar : i0.b.b(max, max2, max3, max4);
     }
 
     public static l1 h(View view, WindowInsets windowInsets) {
@@ -91,7 +91,7 @@ public final class l1 {
     public final l1 f(int i10, int i11, int i12, int i13) {
         int i14 = Build.VERSION.SDK_INT;
         b1 a1Var = i14 >= 34 ? new a1(this) : i14 >= 30 ? new z0(this) : i14 >= 29 ? new y0(this) : new x0(this);
-        a1Var.g(i0.c.b(i10, i11, i12, i13));
+        a1Var.g(i0.b.b(i10, i11, i12, i13));
         return a1Var.b();
     }
 

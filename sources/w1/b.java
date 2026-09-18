@@ -1,23 +1,23 @@
 package w1;
 
-import a0.m;
+import a0.n;
 import a6.d;
 import androidx.lifecycle.p0;
 import b2.p;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public class b extends p0 {
-    public static final rb.a f = new rb.a(24);
-    public final m d = new m();
+    public static final qb.b f = new qb.b(24);
+    public final n d = new n();
     public boolean e = false;
 
     @Override // androidx.lifecycle.p0
     public final void b() {
-        m mVar = this.d;
-        int i10 = mVar.c;
+        n nVar = this.d;
+        int i10 = nVar.c;
         for (int i11 = 0; i11 < i10; i11++) {
-            a aVar = (a) mVar.b[i11];
+            a aVar = (a) nVar.b[i11];
             d dVar = aVar.l;
             dVar.a();
             dVar.c = true;
@@ -41,11 +41,11 @@ public class b extends p0 {
             dVar.c = false;
             dVar.e = false;
         }
-        int i12 = mVar.c;
-        Object[] objArr = mVar.b;
+        int i12 = nVar.c;
+        Object[] objArr = nVar.b;
         for (int i13 = 0; i13 < i12; i13++) {
             objArr[i13] = null;
         }
-        mVar.c = 0;
+        nVar.c = 0;
     }
 }

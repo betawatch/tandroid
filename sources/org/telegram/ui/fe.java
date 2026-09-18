@@ -1,72 +1,35 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.view.View;
-import java.util.ArrayList;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class fe extends org.telegram.ui.Components.a81 {
-    public final Context a;
-    public final int b;
+public final class fe extends FrameLayout {
+    public final org.telegram.ui.Components.f61 a;
+    public final org.telegram.ui.ActionBar.f6 b;
     public final int c;
-    public final org.telegram.ui.ActionBar.f6 d;
-    public final ArrayList e = new ArrayList();
-    public final /* synthetic */ ge f;
+    public final int d;
+    public final ai.n8 e;
+    public final /* synthetic */ he f;
 
-    public fe(ge geVar, Context context, int i10, long j3, int i11, org.telegram.ui.ActionBar.f6 f6Var) {
-        this.f = geVar;
-        this.a = context;
-        this.b = i10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public fe(he heVar, Context context, int i10, int i11, int i12, ai.n8 n8Var, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context);
+        this.f = heVar;
+        this.d = i10;
         this.c = i11;
-        this.d = f6Var;
-        i();
+        this.b = f6Var;
+        this.e = n8Var;
+        org.telegram.ui.Components.f61 f61Var = new org.telegram.ui.Components.f61(context, i11, i12, true, new b5(this, 3), new y0(this, 14), null, f6Var);
+        this.a = f61Var;
+        addView(f61Var, w7.x5.c(-1.0f, -1));
+        f61Var.setOnScrollListener(new ii.m3(1, this, n8Var));
     }
 
-    @Override // org.telegram.ui.Components.a81
-    public final View d(int i10) {
-        return new ee(this.f, this.a, i10, this.b, this.c, new ah.g(this, i10, 19), this.d);
-    }
-
-    @Override // org.telegram.ui.Components.a81
-    public final int e() {
-        return this.e.size();
-    }
-
-    @Override // org.telegram.ui.Components.a81
-    public final CharSequence g(int i10) {
-        int h = h(i10);
-        return h != 0 ? h != 1 ? "" : LocaleController.getString(R.string.MonetizationTransactionsTON) : LocaleController.getString(R.string.MonetizationTransactionsStars);
-    }
-
-    @Override // org.telegram.ui.Components.a81
-    public final int h(int i10) {
-        if (i10 < 0) {
-            return 1;
-        }
-        ArrayList arrayList = this.e;
-        if (i10 >= arrayList.size()) {
-            return 1;
-        }
-        return ((org.telegram.ui.Components.h51) arrayList.get(i10)).z;
-    }
-
-    public final void i() {
-        ArrayList arrayList = this.e;
-        arrayList.clear();
-        ge geVar = this.f;
-        if (!geVar.h.isEmpty()) {
-            arrayList.add(org.telegram.ui.Components.h51.C(1));
-        }
-        if (geVar.n.isEmpty()) {
-            return;
-        }
-        arrayList.add(org.telegram.ui.Components.h51.C(0));
-    }
-
-    @Override // org.telegram.ui.Components.a81
-    public final void b(View view, int i10, int i11) {
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.a.Y2.N(false);
     }
 }

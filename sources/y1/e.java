@@ -1,29 +1,29 @@
 package y1;
 
 import android.media.VolumeProvider;
-import androidx.emoji2.text.p;
-import m2.t;
+import androidx.emoji2.text.o;
+import lf.i;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class e extends VolumeProvider {
-    public final /* synthetic */ p a;
+    public final /* synthetic */ o a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public e(p pVar, int i10, int i11, int i12, String str) {
+    public e(o oVar, int i10, int i11, int i12, String str) {
         super(i10, i11, i12, str);
-        this.a = pVar;
+        this.a = oVar;
     }
 
     @Override // android.media.VolumeProvider
     public final void onAdjustVolume(int i10) {
-        p pVar = this.a;
-        ((p4.e) ((t) pVar.f).d).a.post(new p4.c(pVar, i10, 1));
+        o oVar = this.a;
+        ((p4.e) ((i) oVar.f).d).a.post(new p4.c(oVar, i10, 1));
     }
 
     @Override // android.media.VolumeProvider
     public final void onSetVolumeTo(int i10) {
-        p pVar = this.a;
-        ((p4.e) ((t) pVar.f).d).a.post(new p4.c(pVar, i10, 0));
+        o oVar = this.a;
+        ((p4.e) ((i) oVar.f).d).a.post(new p4.c(oVar, i10, 0));
     }
 }

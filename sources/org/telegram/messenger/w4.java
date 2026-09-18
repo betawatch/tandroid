@@ -1,79 +1,39 @@
 package org.telegram.messenger;
 
-import android.text.Spannable;
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 import org.telegram.messenger.ImageLoader;
-import org.telegram.messenger.MessagesController;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class w4 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ String e;
 
-    public /* synthetic */ w4(Object obj, int i10, int i11, Serializable serializable, int i12) {
-        this.a = i12;
-        this.e = obj;
-        this.b = i10;
-        this.c = i11;
-        this.d = serializable;
+    public /* synthetic */ w4(int i10, String str, long j3, long j10) {
+        this.d = i10;
+        this.e = str;
+        this.b = j3;
+        this.c = j10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                ((ImageLoader.5) this.e).lambda$fileDidFailedLoad$6((String) this.d, this.b, this.c);
-                break;
-            case 1:
-                CodeHighlighting.lambda$highlight$5((Spannable) this.e, this.b, this.c, (String) this.d);
-                break;
-            case 2:
-                ((MediaDataController) this.e).lambda$loadReactions$11((List) this.d, this.b, this.c);
-                break;
-            case 3:
-                ((MediaDataController) this.e).lambda$putReactionsToCache$16((ArrayList) this.d, this.b, this.c);
-                break;
-            case 4:
-                ((MessagesController) this.e).lambda$getDifference$350((TLRPC.updates_Difference) this.d, this.b, this.c);
-                break;
-            case 5:
-                ((MessagesController.DialogPhotos) this.e).lambda$load$0((TLRPC.photos_Photos) this.d, this.b, this.c);
-                break;
-            case 6:
-                ((MessagesController.DialogPhotos) this.e).lambda$load$2((TLRPC.messages_Messages) this.d, this.b, this.c);
-                break;
-            case 7:
-                ((MessagesStorage) this.e).lambda$saveSecretParams$7(this.b, this.c, (byte[]) this.d);
-                break;
-            case 8:
-                ((NotificationCenter) this.e).lambda$postNotificationDebounced$2(this.b, (Object[]) this.d, this.c);
+                ImageLoader.5.lambda$fileLoadProgressChanged$8(this.d, this.e, this.b, this.c);
                 break;
             default:
-                ((SecretChatHelper) this.e).lambda$resendMessages$15(this.b, (TLRPC.EncryptedChat) this.d, this.c);
+                FileLog.lambda$dumpUnparsedMessage$1(this.b, this.c, this.d, this.e);
                 break;
         }
     }
 
-    public /* synthetic */ w4(Object obj, int i10, Object obj2, int i11, int i12) {
-        this.a = i12;
-        this.e = obj;
-        this.b = i10;
-        this.d = obj2;
-        this.c = i11;
-    }
-
-    public /* synthetic */ w4(Object obj, Object obj2, int i10, int i11, int i12) {
-        this.a = i12;
-        this.e = obj;
-        this.d = obj2;
-        this.b = i10;
-        this.c = i11;
+    public /* synthetic */ w4(long j3, long j10, int i10, String str) {
+        this.b = j3;
+        this.c = j10;
+        this.d = i10;
+        this.e = str;
     }
 }

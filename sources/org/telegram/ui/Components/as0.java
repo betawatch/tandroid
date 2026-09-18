@@ -1,57 +1,26 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Rect;
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.AndroidUtilities;
-
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class as0 extends s4.n0 {
-    public final /* synthetic */ tr0 a;
-    public final /* synthetic */ xu0 b;
+public final class as0 extends s4.s {
+    public final /* synthetic */ zu0 Q;
 
-    public as0(xu0 xu0Var, tr0 tr0Var) {
-        this.b = xu0Var;
-        this.a = tr0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public as0(zu0 zu0Var) {
+        super(3);
+        this.Q = zu0Var;
     }
 
-    @Override // s4.n0
-    public final void a(Rect rect, View view, RecyclerView recyclerView, s4.z0 z0Var) {
-        tr0 tr0Var = this.a;
-        if (tr0Var.h.getAdapter() == this.b.O) {
-            recyclerView.getClass();
-            int R = RecyclerView.R(view);
-            rect.left = 0;
-            rect.bottom = 0;
-            ur0 ur0Var = tr0Var.x;
-            ur0Var.B1();
-            if (R <= ur0Var.U) {
-                rect.top = 0;
-            } else {
-                rect.top = AndroidUtilities.dp(2.0f);
-            }
-            rect.right = tr0Var.x.E1(R) ? 0 : AndroidUtilities.dp(2.0f);
-            return;
+    @Override // s4.s, s4.c0, s4.o0
+    public final int o0(int i10, of.e eVar, s4.z0 z0Var) {
+        if (this.Q.o1) {
+            i10 = 0;
         }
-        if (!(view instanceof org.telegram.ui.Cells.t7)) {
-            rect.left = 0;
-            rect.top = 0;
-            rect.bottom = 0;
-            rect.right = 0;
-            return;
-        }
-        org.telegram.ui.Cells.t7 t7Var = (org.telegram.ui.Cells.t7) view;
-        tr0Var.h.getClass();
-        int R2 = RecyclerView.R(t7Var);
-        int i10 = tr0Var.x.J;
-        t7Var.a0 = R2 < i10;
-        int i11 = R2 % i10;
-        t7Var.V = i11 == 0;
-        t7Var.W = i11 == i10 - 1;
-        rect.left = 0;
-        rect.top = 0;
-        rect.bottom = 0;
-        rect.right = 0;
+        return super.o0(i10, eVar, z0Var);
+    }
+
+    @Override // s4.s, s4.c0, s4.o0
+    public final boolean y0() {
+        return false;
     }
 }

@@ -2,7 +2,7 @@ package gb;
 
 import java.math.BigDecimal;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public class h0 extends db.u {
     @Override // db.u
@@ -14,10 +14,10 @@ public class h0 extends db.u {
         String v = aVar.v();
         try {
             return fb.d.i(v);
-        } catch (NumberFormatException e7) {
+        } catch (NumberFormatException e) {
             StringBuilder v9 = a4.a.v("Failed parsing '", v, "' as BigDecimal; at path ");
             v9.append(aVar.j());
-            throw new db.j(v9.toString(), e7);
+            throw new db.j(v9.toString(), e);
         }
     }
 

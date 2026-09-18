@@ -1,54 +1,106 @@
 package org.telegram.ui;
 
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ue implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ co b;
-    public final /* synthetic */ MessagesController c;
-    public final /* synthetic */ CharSequence d;
-    public final /* synthetic */ boolean e;
+    public final /* synthetic */ int a;
+    public final /* synthetic */ bo b;
+    public final /* synthetic */ MessageObject c;
 
-    public /* synthetic */ ue(co coVar, CharSequence charSequence, MessagesController messagesController, boolean z10) {
-        this.b = coVar;
-        this.d = charSequence;
-        this.c = messagesController;
-        this.e = z10;
+    public /* synthetic */ ue(bo boVar, MessageObject messageObject, int i10) {
+        this.a = i10;
+        this.b = boVar;
+        this.c = messageObject;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
+        TLRPC.WebPage webPage;
         switch (this.a) {
             case 0:
-                co.k0(this.b, this.d, this.c, this.e);
+                MessageObject messageObject = this.c;
+                TLRPC.MessageMedia messageMedia = messageObject.messageOwner.media;
+                if (messageMedia != null && (webPage = messageMedia.webpage) != null && webPage.cached_page != null) {
+                    LaunchActivity launchActivity = LaunchActivity.G1;
+                    if (launchActivity == null || launchActivity.P() == null || LaunchActivity.G1.P().l(messageObject) == null) {
+                        this.b.createArticleViewer(false).N(messageObject, null, null, null);
+                        break;
+                    }
+                }
+                break;
+            case 1:
+                bo boVar = this.b;
+                boVar.getClass();
+                MessageObject messageObject2 = this.c;
+                TLRPC.Message message = messageObject2.messageOwner;
+                int i10 = message.ttl;
+                boolean z10 = i10 != Integer.MAX_VALUE;
+                int i11 = i10 == Integer.MAX_VALUE ? 0 : i10;
+                message.destroyTime = boVar.getConnectionsManager().getCurrentTime() + i11;
+                messageObject2.messageOwner.destroyTimeMillis = boVar.getConnectionsManager().getCurrentTimeMillis() + (i11 * 1000);
+                if (boVar.h == null) {
+                    boVar.getMessagesController().markMessageAsRead2(boVar.T5, messageObject2.getId(), null, i11, 0L, z10);
+                    break;
+                } else {
+                    boVar.getMessagesController().markMessageAsRead(boVar.T5, messageObject2.messageOwner.random_id, i11);
+                    break;
+                }
+            case 2:
+                int id2 = this.c.getId();
+                bo boVar2 = this.b;
+                boVar2.Xa(id2, 0, true, 0, true, 0, null, null, new wg(boVar2, 13));
+                if (boVar2.h6.isEmpty()) {
+                    boVar2.Lb(false);
+                    break;
+                }
+                break;
+            case 3:
+                bo boVar3 = this.b;
+                boVar3.getClass();
+                MessageObject messageObject3 = this.c;
+                boVar3.Xa(messageObject3.getReplyMsgId(), messageObject3.messageOwner.id, true, messageObject3.getDialogId() == boVar3.L6 ? 1 : 0, false, 0, null, ((TLRPC.TL_messageActionPollAppendAnswer) messageObject3.messageOwner.action).answer.option, null);
+                break;
+            case 4:
+                bo boVar4 = this.b;
+                boVar4.getClass();
+                MessageObject messageObject4 = this.c;
+                boVar4.Xa(messageObject4.getReplyMsgId(), messageObject4.messageOwner.id, true, messageObject4.getDialogId() == boVar4.L6 ? 1 : 0, false, 0, null, null, null);
+                break;
+            case 5:
+                bo boVar5 = this.b;
+                boVar5.getClass();
+                MessageObject messageObject5 = this.c;
+                boVar5.F(messageObject5.getReplyMsgId(), messageObject5.messageOwner.id, messageObject5.getDialogId() == boVar5.L6 ? 1 : 0, 0, true, false);
+                break;
+            case 6:
+                bo boVar6 = this.b;
+                boVar6.getClass();
+                MessageObject messageObject6 = this.c;
+                if (!messageObject6.isVideo()) {
+                    MediaController.getInstance().playMessage(messageObject6);
+                    break;
+                } else {
+                    boVar6.ha(null, messageObject6);
+                    break;
+                }
+            case 7:
+                bo boVar7 = this.b;
+                boVar7.getMessagesController().pinMessage(boVar7.e, boVar7.f, this.c.getId(), true, false, false);
+                boVar7.A3 = null;
                 break;
             default:
-                co coVar = this.b;
-                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(coVar.getParentActivity(), 0, coVar.ea);
-                alertDialog$Builder.a.R = LocaleController.getString(R.string.AppName);
-                String string = LocaleController.getString(R.string.OK);
-                MessagesController messagesController = this.c;
-                alertDialog$Builder.k(string, new ca.b(coVar, messagesController, this.d, this.e, 3));
-                alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-                String string2 = LocaleController.getString(R.string.SecretLinkPreviewAlert);
-                org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
-                b2Var.T = string2;
-                coVar.showDialog(b2Var);
-                messagesController.secretWebpagePreview = 0;
-                MessagesController.getGlobalMainSettings().edit().putInt("secretWebpage2", messagesController.secretWebpagePreview).commit();
+                bo boVar8 = this.b;
+                org.telegram.ui.Components.vc.a0(boVar8).c(LocaleController.getString(R.string.AdHidden)).j();
+                MessageObject messageObject7 = this.c;
+                boVar8.Fa(messageObject7);
+                boVar8.Ha(messageObject7);
                 break;
         }
-    }
-
-    public /* synthetic */ ue(co coVar, MessagesController messagesController, CharSequence charSequence, boolean z10) {
-        this.b = coVar;
-        this.c = messagesController;
-        this.d = charSequence;
-        this.e = z10;
     }
 }

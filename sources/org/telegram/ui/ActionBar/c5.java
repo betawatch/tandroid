@@ -1,29 +1,25 @@
 package org.telegram.ui.ActionBar;
 
-import org.telegram.ui.vn;
-import org.telegram.ui.xn;
-
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class c5 {
-    public final i6 a;
-    public final int b;
-    public final boolean c;
-    public final boolean d;
+    public final o2 a;
+    public boolean b;
+    public boolean c;
+    public boolean d = true;
     public boolean e;
-    public Runnable h;
-    public vn i;
-    public vn j;
-    public xn k;
-    public f6 m;
-    public boolean f = true;
-    public boolean g = true;
-    public long l = 200;
+    public ActionBarPopupWindow$ActionBarPopupWindowLayout f;
+    public boolean g;
 
-    public c5(i6 i6Var, int i10, boolean z10, boolean z11) {
-        this.a = i6Var;
-        this.b = i10;
-        this.c = z10;
-        this.d = z11;
+    public c5(o2 o2Var) {
+        this.a = o2Var;
+    }
+
+    public final void a() {
+        this.c = true;
+    }
+
+    public final void b(boolean z10) {
+        this.b = z10;
     }
 }

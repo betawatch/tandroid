@@ -20,9 +20,9 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class fz extends kl0 {
+public final class fz extends ll0 {
     public int L;
     public int M;
     public String N;
@@ -52,7 +52,7 @@ public final class fz extends kl0 {
     public fz(kz kzVar, Context context) {
         this.Q = kzVar;
         this.h = context;
-        ez ezVar = new ez(context, kzVar.c1, new d(this, 12), new kv(this, 3), kzVar.Z1);
+        ez ezVar = new ez(context, kzVar.c1, new d(this, 12), new lv(this, 3), kzVar.Z1);
         this.c = ezVar;
         ezVar.setPadding(AndroidUtilities.dp(10.0f), 0, AndroidUtilities.dp(10.0f), AndroidUtilities.dp(5.0f));
         ezVar.setClipToPadding(false);
@@ -62,7 +62,7 @@ public final class fz extends kl0 {
         ezVar.setOnTouchListener(new m.c2(this, 3));
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.ll0
     public final boolean D(s4.c1 c1Var) {
         return c1Var.f == 7;
     }
@@ -334,7 +334,7 @@ public final class fz extends kl0 {
                 k3Var.setHeight(AndroidUtilities.dp(8.0f));
                 return;
             } else {
-                int A = org.telegram.messenger.vl.A(82.0f, (int) Math.ceil(num.intValue() / kzVar.y0.d), kzVar.h.getHeight());
+                int A = org.telegram.messenger.wl.A(82.0f, (int) Math.ceil(num.intValue() / kzVar.y0.d), kzVar.h.getHeight());
                 k3Var.setHeight(A > 0 ? A : 1);
                 return;
             }
@@ -401,62 +401,62 @@ public final class fz extends kl0 {
 
     @Override // s4.h0
     public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        View e2Var;
-        ViewGroup yVar;
+        View f2Var;
+        ViewGroup f0Var;
         boolean z10 = true;
         Context context = this.h;
         kz kzVar = this.Q;
         switch (i10) {
             case 0:
-                e2Var = new hg.e2(2, context, kzVar.Z1, z10);
+                f2Var = new gg.f2(2, context, kzVar.Z1, z10);
                 break;
             case 1:
-                e2Var = new org.telegram.ui.Cells.k3(context);
+                f2Var = new org.telegram.ui.Cells.k3(context);
                 break;
             case 2:
-                e2Var = new org.telegram.ui.Cells.o8(this.h, false, false, kzVar.Z1, kzVar.i2);
+                f2Var = new org.telegram.ui.Cells.o8(this.h, false, false, kzVar.Z1, kzVar.i2);
                 break;
             case 3:
                 org.telegram.ui.Cells.r3 r3Var = new org.telegram.ui.Cells.r3(17, this.h, kzVar.Z1, false, true);
-                r3Var.setAddOnClickListener(new g0(this, 15));
-                e2Var = r3Var;
+                r3Var.setAddOnClickListener(new f0(this, 15));
+                f2Var = r3Var;
                 break;
             case 4:
-                e2Var = new View(context);
-                e2Var.setLayoutParams(new s4.p0(-1, kzVar.b1));
+                f2Var = new View(context);
+                f2Var.setLayoutParams(new s4.p0(-1, kzVar.b1));
                 break;
             case 5:
-                yVar = new ah.y(this, context, 15);
+                f0Var = new ai.f0(this, context, 14);
                 ImageView imageView = new ImageView(context);
                 imageView.setScaleType(ImageView.ScaleType.CENTER);
                 imageView.setImageResource(R.drawable.stickers_empty);
                 int i11 = org.telegram.ui.ActionBar.j6.Le;
-                imageView.setColorFilter(new PorterDuffColorFilter(kzVar.A(i11), PorterDuff.Mode.MULTIPLY));
+                imageView.setColorFilter(new PorterDuffColorFilter(kzVar.z(i11), PorterDuff.Mode.MULTIPLY));
                 imageView.setTranslationY(-AndroidUtilities.dp(24.0f));
-                yVar.addView(imageView, w7.x5.d(-2, -2.0f, 17, 0.0f, 42.0f, 0.0f, 28.0f));
+                f0Var.addView(imageView, w7.x5.d(-2, -2.0f, 17, 0.0f, 42.0f, 0.0f, 28.0f));
                 TextView textView = new TextView(context);
                 textView.setText(LocaleController.getString(R.string.NoStickersFound));
                 textView.setTextSize(1, 16.0f);
-                textView.setTextColor(kzVar.A(i11));
-                yVar.addView(textView, w7.x5.d(-2, -2.0f, 17, 0.0f, 42.0f, 0.0f, 9.0f));
-                yVar.setLayoutParams(new s4.p0(-1, -2));
-                e2Var = yVar;
+                textView.setTextColor(kzVar.z(i11));
+                f0Var.addView(textView, w7.x5.d(-2, -2.0f, 17, 0.0f, 42.0f, 0.0f, 9.0f));
+                f0Var.setLayoutParams(new s4.p0(-1, -2));
+                f2Var = f0Var;
                 break;
             case 6:
             default:
-                e2Var = null;
+                f2Var = null;
                 break;
             case 7:
                 ViewGroup.LayoutParams p0Var = new s4.p0(-1, AndroidUtilities.dp(79.0f));
-                yVar = this.c;
-                yVar.setLayoutParams(p0Var);
-                e2Var = yVar;
+                f0Var = this.c;
+                f0Var.setLayoutParams(p0Var);
+                f2Var = f0Var;
                 break;
             case 8:
-                e2Var = new View(kzVar.getContext());
-                e2Var.setLayoutParams(new s4.p0(-1, AndroidUtilities.dp(68.0f)));
+                f2Var = new View(kzVar.getContext());
+                f2Var.setLayoutParams(new s4.p0(-1, AndroidUtilities.dp(68.0f)));
                 break;
         }
-        return new vk0(e2Var);
+        return new wk0(f2Var);
     }
 }

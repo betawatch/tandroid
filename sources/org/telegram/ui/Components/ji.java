@@ -4,9 +4,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class ji extends s6 {
+public final class ji extends p6 {
     public final /* synthetic */ int b;
     public final /* synthetic */ vi c;
 
@@ -25,8 +25,8 @@ public final class ji extends s6 {
         }
     }
 
-    @Override // org.telegram.ui.Components.s6
-    public final void b(Object obj, float f7) {
+    @Override // org.telegram.ui.Components.p6
+    public final void c(Object obj, float f7) {
         ViewGroup viewGroup;
         float f10;
         switch (this.b) {
@@ -48,14 +48,14 @@ public final class ji extends s6 {
                         niVar.setAlpha(f7);
                         viVar.z0.s(f7);
                         ni niVar2 = viVar.z0;
-                        tn tnVar = viVar.m0;
-                        if (niVar2 == tnVar || viVar.y0 == tnVar) {
-                            viVar.a2(niVar2 == tnVar ? 1 : 0);
+                        un unVar = viVar.m0;
+                        if (niVar2 == unVar || viVar.y0 == unVar) {
+                            viVar.a2(niVar2 == unVar ? 1 : 0);
                         }
                         ni niVar3 = viVar.z0;
-                        tn tnVar2 = viVar.n0;
-                        if (niVar3 == tnVar2 || viVar.y0 == tnVar2) {
-                            viVar.a2(niVar3 == tnVar2 ? 1 : 0);
+                        un unVar2 = viVar.n0;
+                        if (niVar3 == unVar2 || viVar.y0 == unVar2) {
+                            viVar.a2(niVar3 == unVar2 ? 1 : 0);
                         }
                         viVar.z0.setTranslationY(AndroidUtilities.dp(78.0f) * f7);
                         viVar.y0.s(1.0f - Math.min(1.0f, f7 / 0.7f));
@@ -65,7 +65,7 @@ public final class ji extends s6 {
                         viVar.a2(1);
                     }
                     viVar.Z0();
-                    viewGroup = ((org.telegram.ui.ActionBar.f3) viVar).containerView;
+                    viewGroup = ((org.telegram.ui.ActionBar.g3) viVar).containerView;
                     viewGroup.invalidate();
                     break;
                 }
@@ -80,12 +80,12 @@ public final class ji extends s6 {
                         float f12 = f7 - f11;
                         if (f12 <= 200.0f) {
                             float f13 = f12 / 200.0f;
-                            f10 = pr.g.getInterpolation(f13) * 1.1f;
-                            childAt.setAlpha(pr.j.getInterpolation(f13));
+                            f10 = qr.g.getInterpolation(f13) * 1.1f;
+                            childAt.setAlpha(qr.j.getInterpolation(f13));
                         } else {
                             childAt.setAlpha(1.0f);
                             float f14 = f12 - 200.0f;
-                            f10 = f14 <= 100.0f ? 1.1f - (pr.i.getInterpolation(f14 / 100.0f) * 0.1f) : 1.0f;
+                            f10 = f14 <= 100.0f ? 1.1f - (qr.i.getInterpolation(f14 / 100.0f) * 0.1f) : 1.0f;
                         }
                     } else {
                         f10 = 0.0f;

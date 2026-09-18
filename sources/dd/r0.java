@@ -1,6 +1,6 @@
 package dd;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public enum r0 extends b2 {
     public r0() {
@@ -11,14 +11,14 @@ public enum r0 extends b2 {
     public final void d(l lVar, a aVar) {
         String g10 = aVar.g(b2.E0);
         if (g10.length() > 0) {
-            lVar.i.l(g10);
+            lVar.i.f(g10);
         } else {
-            lVar.i.n = true;
+            lVar.i.h = true;
         }
         char d = aVar.d();
         if (d == 0) {
             lVar.m(this);
-            lVar.i.j((char) 65533);
+            lVar.i.e((char) 65533);
             return;
         }
         if (d == 65535) {
@@ -28,7 +28,7 @@ public enum r0 extends b2 {
         }
         if (d != '&') {
             if (d != '\'') {
-                lVar.i.j(d);
+                lVar.i.e(d);
                 return;
             } else {
                 lVar.c = b2.d0;
@@ -37,9 +37,9 @@ public enum r0 extends b2 {
         }
         int[] c10 = lVar.c('\'', true);
         if (c10 != null) {
-            lVar.i.m(c10);
+            lVar.i.g(c10);
         } else {
-            lVar.i.j('&');
+            lVar.i.e('&');
         }
     }
 }

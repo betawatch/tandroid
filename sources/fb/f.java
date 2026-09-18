@@ -8,7 +8,7 @@ import java.util.Iterator;
 import java.util.List;
 import v7.m8;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class f implements v, Cloneable {
     public static final f c = new f();
@@ -25,8 +25,8 @@ public final class f implements v, Cloneable {
     public final f clone() {
         try {
             return (f) super.clone();
-        } catch (CloneNotSupportedException e7) {
-            throw new AssertionError(e7);
+        } catch (CloneNotSupportedException e) {
+            throw new AssertionError(e);
         }
     }
 

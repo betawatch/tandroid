@@ -1,136 +1,76 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.co;
-
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class i7 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ Object e;
+    public final /* synthetic */ MediaDataController b;
 
-    public /* synthetic */ i7(Object obj, long j3, int i10, Object obj2, int i11) {
-        this.a = i11;
-        this.b = obj;
-        this.c = j3;
-        this.d = i10;
-        this.e = obj2;
+    public /* synthetic */ i7(MediaDataController mediaDataController, int i10) {
+        this.a = i10;
+        this.b = mediaDataController;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                ((MediaDataController) this.b).lambda$putMenuBotsToCache$6((TLRPC.TL_attachMenuBots) this.e, this.c, this.d);
+                this.b.lambda$fetchEmojiStatuses$232();
                 break;
             case 1:
-                ((MediaDataController) this.b).lambda$processLoadedStickers$104((ArrayList) this.e, this.c, this.d);
+                this.b.lambda$processLoadedMenuBots$5();
                 break;
             case 2:
-                ((MessagesController) this.b).lambda$checkPromoInfoInternal$168(this.c, (TLRPC.TL_help_promoData) this.e, this.d);
+                this.b.lambda$addRecentSticker$20();
                 break;
             case 3:
-                ((MessagesController) this.b).lambda$processUpdateArray$388(this.c, this.d, (TLRPC.TL_sendMessageTextDraftAction) this.e);
+                this.b.lambda$processLoadedReactions$15();
                 break;
             case 4:
-                ((MessagesController) this.b).lambda$processUpdateArray$389(this.c, this.d, (TLRPC.TL_sendMessageRichMessageDraftAction) this.e);
+                this.b.lambda$clearRecentEmojiStatuses$229();
                 break;
             case 5:
-                ((MessagesStorage) this.b).lambda$updateTopicData$48(this.c, (TLRPC.TL_forumTopic) this.e, this.d);
+                this.b.lambda$clearRecentStickers$17();
                 break;
             case 6:
-                ((MessagesStorage) this.b).lambda$updateMessageVoiceTranscriptionOpen$107(this.d, this.c, (TLRPC.Message) this.e);
+                this.b.lambda$loadPremiumPromo$7();
                 break;
             case 7:
-                ((MessagesStorage) this.b).lambda$updateMessageReactions$104(this.d, this.c, (TLRPC.TL_messageReactions) this.e);
+                this.b.lambda$processLoadedPremiumPromo$9();
                 break;
             case 8:
-                ((MessagesStorage) this.b).lambda$updateChatDefaultBannedRights$180(this.c, this.d, (TLRPC.TL_chatBannedRights) this.e);
+                this.b.lambda$cleanupStickerSetCache$39();
                 break;
             case 9:
-                ((SendMessagesHelper) this.b).lambda$sendNotificationCallback$30(this.c, this.d, (byte[]) this.e);
+                this.b.lambda$cleanup$2();
                 break;
             case 10:
-                ((TranslateController) this.b).lambda$checkLanguage$14((MessageObject) this.e, this.c, this.d);
+                this.b.lambda$loadReactions$12();
                 break;
             case 11:
-                org.telegram.ui.i4 i4Var = (org.telegram.ui.i4) this.b;
-                TLObject tLObject = (TLObject) this.e;
-                if (i4Var.G0 != 0) {
-                    i4Var.G0 = 0;
-                    i4Var.b0(false);
-                    if (tLObject != null) {
-                        TLRPC.TL_contacts_resolvedPeer tL_contacts_resolvedPeer = (TLRPC.TL_contacts_resolvedPeer) tLObject;
-                        int i10 = this.d;
-                        MessagesController.getInstance(i10).putUsers(tL_contacts_resolvedPeer.users, false);
-                        MessagesStorage.getInstance(i10).putUsersAndChats(tL_contacts_resolvedPeer.users, tL_contacts_resolvedPeer.chats, false, true);
-                        if (!tL_contacts_resolvedPeer.users.isEmpty()) {
-                            i4Var.P(this.c, tL_contacts_resolvedPeer.users.get(0));
-                            break;
-                        }
-                    }
-                }
+                this.b.lambda$fetchEmojiStatuses$230();
                 break;
             case 12:
-                ((org.telegram.ui.m6) this.b).run(Float.valueOf(((int[]) this.e)[0] / this.d), Boolean.valueOf(System.currentTimeMillis() - this.c > 250));
+                this.b.lambda$loadHints$145();
                 break;
             case 13:
-                ((ProfileActivity) this.b).getMessagesController().getStoriesController().b(this.d, this.c, (ArrayList) this.e);
+                this.b.lambda$loadAttachMenuBots$3();
+                break;
+            case 14:
+                this.b.lambda$loadHints$146();
+                break;
+            case 15:
+                this.b.lambda$clearTopPeers$149();
+                break;
+            case 16:
+                this.b.lambda$loadDraftsIfNeed$185();
+                break;
+            case 17:
+                this.b.lambda$loadDraftsIfNeed$186();
                 break;
             default:
-                di.d dVar = (di.d) this.b;
-                org.telegram.ui.ActionBar.f3[] f3VarArr = (org.telegram.ui.ActionBar.f3[]) this.e;
-                dVar.setLoading(false);
-                org.telegram.ui.ActionBar.f3 f3Var = f3VarArr[0];
-                if (f3Var != null) {
-                    f3Var.dismiss();
-                }
-                zh.s5.y(this.d, false).S();
-                org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
-                if (U != null) {
-                    U.presentFragment(co.R9(this.c));
-                    break;
-                }
+                this.b.lambda$fetchNewEmojiKeywords$210();
                 break;
         }
-    }
-
-    public /* synthetic */ i7(Object obj, Object obj2, int i10, long j3, int i11) {
-        this.a = i11;
-        this.b = obj;
-        this.e = obj2;
-        this.d = i10;
-        this.c = j3;
-    }
-
-    public /* synthetic */ i7(BaseController baseController, long j3, TLObject tLObject, int i10, int i11) {
-        this.a = i11;
-        this.b = baseController;
-        this.c = j3;
-        this.e = tLObject;
-        this.d = i10;
-    }
-
-    public /* synthetic */ i7(BaseController baseController, Object obj, long j3, int i10, int i11) {
-        this.a = i11;
-        this.b = baseController;
-        this.e = obj;
-        this.c = j3;
-        this.d = i10;
-    }
-
-    public /* synthetic */ i7(MessagesStorage messagesStorage, int i10, long j3, TLObject tLObject, int i11) {
-        this.a = i11;
-        this.b = messagesStorage;
-        this.d = i10;
-        this.c = j3;
-        this.e = tLObject;
     }
 }

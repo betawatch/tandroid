@@ -10,7 +10,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class d60 extends FrameLayout {
     public final RectF a;
@@ -58,21 +58,21 @@ public final class d60 extends FrameLayout {
         int i22;
         r60 r60Var = this.d;
         int i23 = r60Var.Z;
-        i10 = ((org.telegram.ui.ActionBar.f3) r60Var).backgroundPaddingTop;
+        i10 = ((org.telegram.ui.ActionBar.g3) r60Var).backgroundPaddingTop;
         int dp = (i23 - i10) - AndroidUtilities.dp(8.0f);
         int dp2 = AndroidUtilities.dp(36.0f) + getMeasuredHeight();
-        i11 = ((org.telegram.ui.ActionBar.f3) r60Var).backgroundPaddingTop;
+        i11 = ((org.telegram.ui.ActionBar.g3) r60Var).backgroundPaddingTop;
         int i24 = i11 + dp2;
         int i25 = AndroidUtilities.statusBarHeight;
         int i26 = dp + i25;
         int i27 = i24 - i25;
         if (this.b) {
-            i19 = ((org.telegram.ui.ActionBar.f3) r60Var).backgroundPaddingTop;
+            i19 = ((org.telegram.ui.ActionBar.g3) r60Var).backgroundPaddingTop;
             int i28 = i19 + i26;
             int i29 = AndroidUtilities.statusBarHeight;
             int i30 = i29 * 2;
             if (i28 < i30) {
-                i22 = ((org.telegram.ui.ActionBar.f3) r60Var).backgroundPaddingTop;
+                i22 = ((org.telegram.ui.ActionBar.g3) r60Var).backgroundPaddingTop;
                 int min = Math.min(i29, (i30 - i26) - i22);
                 i26 -= min;
                 i27 += min;
@@ -80,25 +80,25 @@ public final class d60 extends FrameLayout {
             } else {
                 f7 = 1.0f;
             }
-            i20 = ((org.telegram.ui.ActionBar.f3) r60Var).backgroundPaddingTop;
+            i20 = ((org.telegram.ui.ActionBar.g3) r60Var).backgroundPaddingTop;
             int i31 = i20 + i26;
             int i32 = AndroidUtilities.statusBarHeight;
             if (i31 < i32) {
-                i21 = ((org.telegram.ui.ActionBar.f3) r60Var).backgroundPaddingTop;
+                i21 = ((org.telegram.ui.ActionBar.g3) r60Var).backgroundPaddingTop;
                 i12 = Math.min(i32, (i32 - i26) - i21);
-                drawable = ((org.telegram.ui.ActionBar.f3) r60Var).shadowDrawable;
+                drawable = ((org.telegram.ui.ActionBar.g3) r60Var).shadowDrawable;
                 drawable.setBounds(0, i26, getMeasuredWidth(), AndroidUtilities.dp(10.0f) + i27 + AndroidUtilities.navigationBarHeight);
-                drawable2 = ((org.telegram.ui.ActionBar.f3) r60Var).shadowDrawable;
+                drawable2 = ((org.telegram.ui.ActionBar.g3) r60Var).shadowDrawable;
                 drawable2.draw(canvas);
                 if (f7 != 1.0f) {
                     org.telegram.ui.ActionBar.j6.t0.setColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.h5, false));
-                    i15 = ((org.telegram.ui.ActionBar.f3) r60Var).backgroundPaddingLeft;
-                    i16 = ((org.telegram.ui.ActionBar.f3) r60Var).backgroundPaddingTop;
+                    i15 = ((org.telegram.ui.ActionBar.g3) r60Var).backgroundPaddingLeft;
+                    i16 = ((org.telegram.ui.ActionBar.g3) r60Var).backgroundPaddingTop;
                     float f10 = i16 + i26;
                     int measuredWidth = getMeasuredWidth();
-                    i17 = ((org.telegram.ui.ActionBar.f3) r60Var).backgroundPaddingLeft;
+                    i17 = ((org.telegram.ui.ActionBar.g3) r60Var).backgroundPaddingLeft;
                     float f11 = measuredWidth - i17;
-                    i18 = ((org.telegram.ui.ActionBar.f3) r60Var).backgroundPaddingTop;
+                    i18 = ((org.telegram.ui.ActionBar.g3) r60Var).backgroundPaddingTop;
                     float dp3 = AndroidUtilities.dp(24.0f) + i18 + i26;
                     RectF rectF = this.a;
                     rectF.set(i15, f10, f11, dp3);
@@ -106,11 +106,11 @@ public final class d60 extends FrameLayout {
                 }
                 if (i12 > 0) {
                     org.telegram.ui.ActionBar.j6.t0.setColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.h5, false));
-                    i13 = ((org.telegram.ui.ActionBar.f3) r60Var).backgroundPaddingLeft;
+                    i13 = ((org.telegram.ui.ActionBar.g3) r60Var).backgroundPaddingLeft;
                     float f12 = i13;
                     float f13 = AndroidUtilities.statusBarHeight - i12;
                     int measuredWidth2 = getMeasuredWidth();
-                    i14 = ((org.telegram.ui.ActionBar.f3) r60Var).backgroundPaddingLeft;
+                    i14 = ((org.telegram.ui.ActionBar.g3) r60Var).backgroundPaddingLeft;
                     canvas.drawRect(f12, f13, measuredWidth2 - i14, AndroidUtilities.statusBarHeight, org.telegram.ui.ActionBar.j6.t0);
                 }
                 z10 = i12 <= AndroidUtilities.statusBarHeight / 2;
@@ -130,9 +130,9 @@ public final class d60 extends FrameLayout {
             f7 = 1.0f;
         }
         i12 = 0;
-        drawable = ((org.telegram.ui.ActionBar.f3) r60Var).shadowDrawable;
+        drawable = ((org.telegram.ui.ActionBar.g3) r60Var).shadowDrawable;
         drawable.setBounds(0, i26, getMeasuredWidth(), AndroidUtilities.dp(10.0f) + i27 + AndroidUtilities.navigationBarHeight);
-        drawable2 = ((org.telegram.ui.ActionBar.f3) r60Var).shadowDrawable;
+        drawable2 = ((org.telegram.ui.ActionBar.g3) r60Var).shadowDrawable;
         drawable2.draw(canvas);
         if (f7 != 1.0f) {
         }
@@ -178,9 +178,9 @@ public final class d60 extends FrameLayout {
         int size = View.MeasureSpec.getSize(i11);
         r60 r60Var = this.d;
         r60Var.a0 = true;
-        i12 = ((org.telegram.ui.ActionBar.f3) r60Var).backgroundPaddingLeft;
+        i12 = ((org.telegram.ui.ActionBar.g3) r60Var).backgroundPaddingLeft;
         int i14 = AndroidUtilities.statusBarHeight;
-        i13 = ((org.telegram.ui.ActionBar.f3) r60Var).backgroundPaddingLeft;
+        i13 = ((org.telegram.ui.ActionBar.g3) r60Var).backgroundPaddingLeft;
         setPadding(i12, i14, i13, 0);
         r60Var.a0 = false;
         super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30));

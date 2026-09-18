@@ -11,7 +11,7 @@ import v7.t7;
 import zd.c0;
 import zd.t;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 final class zzbd extends j implements p {
     long zza;
@@ -87,11 +87,11 @@ final class zzbd extends j implements p {
             j3 = this.zza;
             try {
                 t7.b(obj);
-            } catch (Exception e7) {
-                this.zze.a = e7;
-                z11 = (e7 instanceof StandardIntegrityException) && ((errorCode = ((StandardIntegrityException) e7).getErrorCode()) == -100 || errorCode == -18 || errorCode == -12 || errorCode == -8 || errorCode == -3);
+            } catch (Exception e) {
+                this.zze.a = e;
+                z11 = (e instanceof StandardIntegrityException) && ((errorCode = ((StandardIntegrityException) e).getErrorCode()) == -100 || errorCode == -18 || errorCode == -12 || errorCode == -8 || errorCode == -3);
                 if (!z11) {
-                    throw e7;
+                    throw e;
                 }
                 this.zza = j3;
                 this.zzb = true;

@@ -7,9 +7,9 @@ import android.graphics.Canvas;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
-import v7.o8;
+import v7.r8;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class d0 extends y {
     public final c0 e;
@@ -34,24 +34,24 @@ public final class d0 extends y {
         c0 c0Var = this.e;
         Context context = c0Var.getContext();
         int[] iArr = f.a.g;
-        aa.a y3 = aa.a.y(context, attributeSet, iArr, i10);
-        TypedArray typedArray = (TypedArray) y3.c;
-        r0.i0.j(c0Var, c0Var.getContext(), iArr, attributeSet, (TypedArray) y3.c, i10);
-        Drawable s10 = y3.s(0);
-        if (s10 != null) {
-            c0Var.setThumb(s10);
+        lf.i Q = lf.i.Q(context, attributeSet, iArr, i10);
+        TypedArray typedArray = (TypedArray) Q.c;
+        r0.i0.j(c0Var, c0Var.getContext(), iArr, attributeSet, (TypedArray) Q.c, i10);
+        Drawable G = Q.G(0);
+        if (G != null) {
+            c0Var.setThumb(G);
         }
-        Drawable r10 = y3.r(1);
+        Drawable F = Q.F(1);
         Drawable drawable = this.f;
         if (drawable != null) {
             drawable.setCallback(null);
         }
-        this.f = r10;
-        if (r10 != null) {
-            r10.setCallback(c0Var);
-            o8.b(c0Var.getLayoutDirection(), r10);
-            if (r10.isStateful()) {
-                r10.setState(c0Var.getDrawableState());
+        this.f = F;
+        if (F != null) {
+            F.setCallback(c0Var);
+            r8.b(c0Var.getLayoutDirection(), F);
+            if (F.isStateful()) {
+                F.setState(c0Var.getDrawableState());
             }
             f();
         }
@@ -61,10 +61,10 @@ public final class d0 extends y {
             this.j = true;
         }
         if (typedArray.hasValue(2)) {
-            this.g = y3.q(2);
+            this.g = Q.D(2);
             this.i = true;
         }
-        y3.A();
+        Q.R();
         f();
     }
 
@@ -72,7 +72,7 @@ public final class d0 extends y {
         Drawable drawable = this.f;
         if (drawable != null) {
             if (this.i || this.j) {
-                Drawable d = o8.d(drawable.mutate());
+                Drawable d = r8.d(drawable.mutate());
                 this.f = d;
                 if (this.i) {
                     d.setTintList(this.g);

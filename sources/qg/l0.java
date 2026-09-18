@@ -1,84 +1,38 @@
 package qg;
 
-import android.animation.ValueAnimator;
-import ji.u4;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.view.ViewGroup;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.cu0;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class l0 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ q0 b;
+public final class l0 extends l1 {
+    public final Path g3;
+    public final /* synthetic */ cu0 h3;
 
-    public /* synthetic */ l0(q0 q0Var, int i10) {
-        this.a = i10;
-        this.b = q0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public l0(cu0 cu0Var, Context context) {
+        super(context);
+        this.h3 = cu0Var;
+        this.g3 = new Path();
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(final ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                final q0 q0Var = this.b;
-                final int i10 = 1;
-                q0Var.f.f(new Runnable() { // from class: qg.k0
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i10) {
-                            case 0:
-                                q0 q0Var2 = q0Var;
-                                q0Var2.getClass();
-                                q0Var2.J = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                                u4 u4Var = q0Var2.a;
-                                if (u4Var != null) {
-                                    u4Var.n();
-                                    break;
-                                }
-                                break;
-                            default:
-                                q0 q0Var3 = q0Var;
-                                q0Var3.getClass();
-                                q0Var3.I = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                                u4 u4Var2 = q0Var3.a;
-                                if (u4Var2 != null) {
-                                    u4Var2.n();
-                                    break;
-                                }
-                                break;
-                        }
-                    }
-                });
-                break;
-            default:
-                final q0 q0Var2 = this.b;
-                final int i11 = 0;
-                q0Var2.f.f(new Runnable() { // from class: qg.k0
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i11) {
-                            case 0:
-                                q0 q0Var22 = q0Var2;
-                                q0Var22.getClass();
-                                q0Var22.J = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                                u4 u4Var = q0Var22.a;
-                                if (u4Var != null) {
-                                    u4Var.n();
-                                    break;
-                                }
-                                break;
-                            default:
-                                q0 q0Var3 = q0Var2;
-                                q0Var3.getClass();
-                                q0Var3.I = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                                u4 u4Var2 = q0Var3.a;
-                                if (u4Var2 != null) {
-                                    u4Var2.n();
-                                    break;
-                                }
-                                break;
-                        }
-                    }
-                });
-                break;
-        }
+    @Override // androidx.recyclerview.widget.RecyclerView, android.view.View
+    public final void draw(Canvas canvas) {
+        ViewGroup barView;
+        barView = this.h3.getBarView();
+        RectF rectF = AndroidUtilities.rectTmp;
+        rectF.set(AndroidUtilities.lerp(barView.getLeft() - getLeft(), 0, r0.N1), AndroidUtilities.lerp(barView.getTop() - getTop(), 0, r0.N1), AndroidUtilities.lerp(barView.getRight() - getLeft(), getWidth(), r0.N1), AndroidUtilities.lerp(barView.getBottom() - getTop(), getHeight(), r0.N1));
+        Path path = this.g3;
+        path.rewind();
+        path.addRoundRect(rectF, AndroidUtilities.dp(32.0f), AndroidUtilities.dp(32.0f), Path.Direction.CW);
+        canvas.save();
+        canvas.clipPath(path);
+        super.draw(canvas);
+        canvas.restore();
     }
 }

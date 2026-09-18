@@ -1,47 +1,31 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.text.TextUtils;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class uo0 extends LinearLayout {
-    public final ev0 a;
-    public final TextView b;
-    public final TextView c;
+public final class uo0 implements pb {
+    public final /* synthetic */ oc a;
+    public final /* synthetic */ cf b;
 
-    public uo0(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(context);
-        setLayoutParams(new s4.p0(-1, -2));
-        setOrientation(0);
-        setGravity(16);
-        int dp = AndroidUtilities.dp(14.0f);
-        int i10 = dp / 2;
-        setPadding(dp, i10, dp, i10);
-        ev0 ev0Var = new ev0(context);
-        this.a = ev0Var;
-        addView(ev0Var, w7.x5.c(40.0f, 40));
-        LinearLayout linearLayout = new LinearLayout(context);
-        linearLayout.setOrientation(1);
-        addView(linearLayout, w7.x5.m(1.0f, 0, -1, 12, 0, 0));
-        TextView textView = new TextView(context);
-        this.b = textView;
-        int i11 = org.telegram.ui.ActionBar.j6.E8;
-        textView.setTextColor(org.telegram.ui.ActionBar.j6.v0(i11, f6Var));
-        textView.setTextSize(1, 16.0f);
-        textView.setTag(textView);
-        textView.setMaxLines(1);
-        linearLayout.addView(textView);
-        TextView textView2 = new TextView(context);
-        this.c = textView2;
-        textView2.setTextColor(i0.a.k(org.telegram.ui.ActionBar.j6.v0(i11, f6Var), 102));
-        textView2.setTextSize(1, 14.0f);
-        textView2.setTag(textView2);
-        textView2.setMaxLines(1);
-        textView2.setEllipsize(TextUtils.TruncateAt.END);
-        linearLayout.addView(textView2);
+    public uo0(cf cfVar, oc ocVar) {
+        this.b = cfVar;
+        this.a = ocVar;
+    }
+
+    @Override // org.telegram.ui.Components.pb
+    public final void c() {
+        this.b.G.remove(this.a);
+    }
+
+    @Override // org.telegram.ui.Components.pb
+    public final void d() {
+        this.b.G.add(this.a);
+    }
+
+    @Override // org.telegram.ui.Components.pb
+    public final /* synthetic */ void a(oc ocVar) {
+    }
+
+    @Override // org.telegram.ui.Components.pb
+    public final /* synthetic */ void b() {
     }
 }

@@ -1,35 +1,24 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import java.util.ArrayList;
+import android.graphics.Canvas;
+import android.view.View;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class zs extends hg.u1 {
-    public final /* synthetic */ ContactsActivity K;
+public final /* synthetic */ class zs implements ah.n {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.ui.Components.ml0 b;
 
-    public zs(ContactsActivity contactsActivity, Context context, a0.i iVar, boolean z10, boolean z11, boolean z12) {
-        this.K = contactsActivity;
-        this.d = new ArrayList();
-        this.e = new ArrayList();
-        this.H = new ArrayList();
-        this.c = context;
-        this.h = iVar;
-        this.r = z10;
-        this.s = z11;
-        this.x = 0;
-        this.v = z12;
-        this.w = true;
-        hg.b2 b2Var = new hg.b2(true);
-        this.f = b2Var;
-        b2Var.a = new hg.r1(this);
+    public /* synthetic */ zs(org.telegram.ui.Components.ml0 ml0Var, int i10) {
+        this.a = i10;
+        this.b = ml0Var;
     }
 
-    @Override // hg.u1
-    public final void F() {
-        if (this.y || this.f.e() || h() != 0) {
-            return;
+    /* JADX WARN: Failed to find 'out' block for switch in B:2:0x0002. Please report as an issue. */
+    @Override // ah.n
+    public final boolean a(Canvas canvas, View view, long j3) {
+        switch (this.a) {
         }
-        this.K.e.e(false, true);
+        return this.b.drawChild(canvas, view, j3);
     }
 }

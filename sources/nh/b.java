@@ -1,0 +1,53 @@
+package nh;
+
+import android.content.Context;
+import android.os.Build;
+import le.e;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.Components.qr;
+import yf.j0;
+
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* loaded from: classes3.dex */
+public final class b extends ci.d implements le.d {
+    public final le.b h0;
+    public final f6 i0;
+
+    public b(Context context, f6 f6Var) {
+        super(context, f6Var, true);
+        this.h0 = new le.b(0, this, qr.h, 320L, true);
+        this.i0 = f6Var;
+        e();
+        setOutlineProvider(j0.b);
+    }
+
+    @Override // le.d
+    public final void D(int i10, float f7, float f10, e eVar) {
+        f6 f6Var = this.i0;
+        boolean a2 = f6Var != null ? f6Var.a() : j6.I.q();
+        float f11 = this.h0.e;
+        setElevation((1.0f - f11) * AndroidUtilities.dp(1.0f));
+        setColor(i0.a.d(f11, m(j6.d6), m(j6.Oh)));
+        setTextColor(i0.a.d(f11, m(j6.q7), m(j6.Sh)));
+        if (Build.VERSION.SDK_INT >= 28) {
+            if (a2) {
+                setOutlineAmbientShadowColor(553648127);
+                setOutlineSpotShadowColor(553648127);
+            } else {
+                setOutlineAmbientShadowColor(1610612736);
+                setOutlineSpotShadowColor(1610612736);
+            }
+        }
+    }
+
+    public final int m(int i10) {
+        f6 f6Var = this.i0;
+        return f6Var != null ? f6Var.G0(i10) : j6.w0(null, i10, false);
+    }
+
+    @Override // le.d
+    public final /* synthetic */ void C(float f7, int i10) {
+    }
+}

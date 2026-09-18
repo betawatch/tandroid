@@ -1,25 +1,39 @@
 package yh;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.widget.FrameLayout;
+import org.telegram.messenger.MessagesController;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
-/* loaded from: classes.dex */
-public final class v4 extends FrameLayout {
-    public final /* synthetic */ float a;
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class v4 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ v5 b;
+    public final /* synthetic */ TLRPC.TL_payments_paymentResult c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public v4(Context context, float f7) {
-        super(context);
-        this.a = f7;
+    public /* synthetic */ v4(v5 v5Var, TLRPC.TL_payments_paymentResult tL_payments_paymentResult, int i10) {
+        this.a = i10;
+        this.b = v5Var;
+        this.c = tL_payments_paymentResult;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        canvas.save();
-        canvas.clipRect(0.0f, 0.0f, getWidth() * this.a, getHeight());
-        super.dispatchDraw(canvas);
-        canvas.restore();
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                MessagesController.getInstance(this.b.a).processUpdates(this.c.updates, false);
+                break;
+            case 1:
+                MessagesController.getInstance(this.b.a).processUpdates(this.c.updates, false);
+                break;
+            case 2:
+                MessagesController.getInstance(this.b.a).processUpdates(this.c.updates, false);
+                break;
+            case 3:
+                MessagesController.getInstance(this.b.a).processUpdates(this.c.updates, false);
+                break;
+            default:
+                MessagesController.getInstance(this.b.a).processUpdates(this.c.updates, false);
+                break;
+        }
     }
 }

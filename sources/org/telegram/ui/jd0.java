@@ -1,45 +1,12 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.IMapsProvider;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class jd0 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ wg0 b;
-
-    public /* synthetic */ jd0(wg0 wg0Var, int i10) {
-        this.a = i10;
-        this.b = wg0Var;
-    }
-
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                wg0 wg0Var = this.b;
-                wg0Var.getClass();
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                wg0Var.c.setAlpha(floatValue);
-                wg0Var.c.setTranslationY((1.0f - floatValue) * AndroidUtilities.dp(230.0f));
-                break;
-            case 1:
-                wg0 wg0Var2 = this.b;
-                wg0Var2.getClass();
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                wg0Var2.c.setAlpha(floatValue2);
-                wg0Var2.c.setTranslationY((1.0f - floatValue2) * AndroidUtilities.dp(230.0f));
-                break;
-            default:
-                wg0 wg0Var3 = this.b;
-                wg0Var3.getClass();
-                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                float f7 = (0.9f * floatValue3) + 0.1f;
-                wg0Var3.V.setScaleX(f7);
-                wg0Var3.V.setScaleY(f7);
-                wg0Var3.V.setAlpha(floatValue3);
-                break;
-        }
-    }
+public final class jd0 {
+    public int a;
+    public IMapsProvider.IMarker b;
+    public TLRPC.TL_messageMediaVenue c;
 }

@@ -1,119 +1,240 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import android.app.Activity;
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.text.TextPaint;
+import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.CheckBox;
+import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class ev0 extends View {
-    public final Paint a;
-    public final TextPaint b;
-    public int c;
-    public int d;
-    public int e;
-    public int f;
-    public final String h;
-    public final String n;
-    public int r;
-    public final /* synthetic */ PhotoViewer s;
+public final class ev0 extends FrameLayout {
+    public final /* synthetic */ PhotoViewer a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ev0(Context context, PhotoViewer photoViewer) {
-        super(context);
-        this.s = photoViewer;
-        this.a = new Paint(1);
-        TextPaint textPaint = new TextPaint(1);
-        this.b = textPaint;
-        textPaint.setTextSize(AndroidUtilities.dp(14.0f));
-        textPaint.setColor(-3289651);
-        this.h = LocaleController.getString("AccDescrVideoCompressLow", R.string.AccDescrVideoCompressLow);
-        this.n = LocaleController.getString("AccDescrVideoCompressHigh", R.string.AccDescrVideoCompressHigh);
-        setImportantForAccessibility(1);
-        setFocusable(true);
-        setAccessibilityDelegate(new dv0(this));
+    public ev0(PhotoViewer photoViewer, Activity activity) {
+        super(activity);
+        this.a = photoViewer;
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        bo boVar = this.a.l4;
+        if (boVar != null) {
+            boVar.Q7();
+            UndoView undoView = boVar.y3;
+            if (undoView == null || undoView.getVisibility() != 0) {
+                return;
+            }
+            canvas.save();
+            View view = (View) undoView.getParent();
+            canvas.clipRect(view.getX(), view.getY(), view.getX() + view.getWidth(), view.getY() + view.getHeight());
+            canvas.translate(undoView.getX(), undoView.getY());
+            undoView.draw(canvas);
+            canvas.restore();
+            invalidate();
+        }
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchKeyEvent(KeyEvent keyEvent) {
+        keyEvent.getKeyCode();
+        PhotoViewer photoViewer = this.a;
+        if (!photoViewer.r && photoViewer.c2 != 1 && photoViewer.r1 && photoViewer.F2 != null && keyEvent.getRepeatCount() == 0 && keyEvent.getAction() == 0 && (keyEvent.getKeyCode() == 24 || keyEvent.getKeyCode() == 25)) {
+            photoViewer.F2.W(1.0f);
+        }
+        return super.dispatchKeyEvent(keyEvent);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchKeyEventPreIme(KeyEvent keyEvent) {
+        if (keyEvent == null || keyEvent.getKeyCode() != 4 || keyEvent.getAction() != 1) {
+            return super.dispatchKeyEventPreIme(keyEvent);
+        }
+        PhotoViewer photoViewer = this.a;
+        if (photoViewer.Q.y()) {
+            photoViewer.Q.f(false);
+        }
+        if (photoViewer.H1()) {
+            photoViewer.E0(true);
+            return false;
+        }
+        if (ut.q().E) {
+            ut.q().o();
+            return false;
+        }
+        PhotoViewer.t1().G0(true, false);
+        return true;
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:14:0x001a, code lost:
+    
+        if (r1 != 6) goto L23;
+     */
+    @Override // android.view.ViewGroup, android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        PhotoViewer photoViewer = this.a;
+        if (photoViewer.l3 && photoViewer.P3) {
+            int actionMasked = motionEvent.getActionMasked();
+            if (actionMasked != 0) {
+                if (actionMasked != 1 && actionMasked != 3) {
+                    if (actionMasked != 5) {
+                    }
+                }
+                MessageObject messageObject = photoViewer.T4;
+                if (messageObject == null || !messageObject.isSponsored()) {
+                    photoViewer.r2();
+                }
+            }
+            AndroidUtilities.cancelRunOnUIThread(photoViewer.x2);
+        }
+        return super.dispatchTouchEvent(motionEvent);
     }
 
     @Override // android.view.View
+    public final void draw(Canvas canvas) {
+        if (this.a.S8) {
+            return;
+        }
+        super.draw(canvas);
+    }
+
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j3) {
+        try {
+            return super.drawChild(canvas, view, j3);
+        } catch (Throwable unused) {
+            return false;
+        }
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        PhotoViewer photoViewer = this.a;
+        photoViewer.C4.onAttachedToWindow();
+        photoViewer.B4.onAttachedToWindow();
+        photoViewer.D4.onAttachedToWindow();
+        photoViewer.S5 = true;
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        PhotoViewer photoViewer = this.a;
+        photoViewer.C4.onDetachedFromWindow();
+        photoViewer.B4.onDetachedFromWindow();
+        photoViewer.D4.onDetachedFromWindow();
+        photoViewer.S5 = false;
+        photoViewer.T5 = false;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:13:0x0054  */
+    /* JADX WARN: Removed duplicated region for block: B:16:? A[RETURN, SYNTHETIC] */
+    @Override // android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public final void onDraw(Canvas canvas) {
-        if (this.s.Y7 != 1) {
-            this.f = (((getMeasuredWidth() - (this.c * this.s.Y7)) - (((this.s.Y7 * 2) - 2) * this.d)) - (this.e * 2)) / (this.s.Y7 - 1);
-        } else {
-            this.f = ((getMeasuredWidth() - (this.c * this.s.Y7)) - (this.d * 2)) - (this.e * 2);
-        }
-        int dp = AndroidUtilities.dp(6.0f) + (getMeasuredHeight() / 2);
-        int i10 = 0;
-        while (i10 < this.s.Y7) {
-            int i11 = this.e;
-            int i12 = (this.d * 2) + this.f;
-            int i13 = this.c;
-            int i14 = (i13 / 2) + ((i12 + i13) * i10) + i11;
-            if (i10 <= this.s.X7) {
-                this.a.setColor(-11292945);
-            } else {
-                this.a.setColor(1728053247);
+        Canvas canvas2;
+        PhotoViewer photoViewer = this.a;
+        Paint paint = photoViewer.M0;
+        ai.n4 n4Var = photoViewer.s5;
+        if (n4Var != null && n4Var.getVisibility() == 0) {
+            View view = (View) photoViewer.s5.getParent();
+            float min = Math.min(photoViewer.s5.getAlpha(), view != null ? view.getAlpha() : 1.0f);
+            if (min > 0.0f) {
+                canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), (int) (min * 255.0f), 31);
+                canvas2 = canvas;
+                photoViewer.s5.draw(canvas2);
+                canvas2.restore();
+                if (photoViewer.e) {
+                    return;
+                }
+                paint.setAlpha(photoViewer.L0.getAlpha());
+                canvas2.drawRect(0.0f, getMeasuredHeight(), getMeasuredWidth(), getMeasuredHeight() + photoViewer.s2.bottom, paint);
+                return;
             }
-            canvas.drawCircle(i14, dp, i10 == this.s.X7 ? AndroidUtilities.dp(6.0f) : this.c / 2, this.a);
-            if (i10 != 0) {
-                canvas.drawRect((i10 == this.s.X7 + 1 ? AndroidUtilities.dpf2(2.0f) : 0.0f) + (((i14 - (this.c / 2)) - this.d) - this.f), dp - AndroidUtilities.dp(1.0f), (r2 + this.f) - (i10 == this.s.X7 ? AndroidUtilities.dpf2(2.0f) : 0.0f), AndroidUtilities.dp(2.0f) + dp, this.a);
-            }
-            i10++;
         }
-        canvas.drawText(this.h, this.e, dp - AndroidUtilities.dp(16.0f), this.b);
-        canvas.drawText(this.n, (getMeasuredWidth() - this.e) - this.b.measureText(this.n), dp - AndroidUtilities.dp(16.0f), this.b);
+        canvas2 = canvas;
+        if (photoViewer.e) {
+        }
     }
 
-    @Override // android.view.View
+    @Override // android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        return this.a.e && super.onInterceptTouchEvent(motionEvent);
+    }
+
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        PhotoViewer photoViewer = this.a;
+        photoViewer.h0.layout(getPaddingLeft(), 0, photoViewer.h0.getMeasuredWidth() + getPaddingLeft(), photoViewer.h0.getMeasuredHeight());
+        photoViewer.e0.layout(getPaddingLeft(), 0, photoViewer.e0.getMeasuredWidth() + getPaddingLeft(), photoViewer.e0.getMeasuredHeight());
+        photoViewer.j0.layout(getPaddingLeft(), photoViewer.e0.getMeasuredHeight(), photoViewer.j0.getMeasuredWidth(), photoViewer.j0.getMeasuredHeight() + photoViewer.e0.getMeasuredHeight());
+        photoViewer.T5 = true;
+        if (z10) {
+            if (!photoViewer.U5) {
+                float q22 = photoViewer.q2(true);
+                photoViewer.a6 = q22;
+                photoViewer.X5 = 0.0f;
+                photoViewer.Y5 = 0.0f;
+                photoViewer.v3(q22);
+            }
+            CheckBox checkBox = photoViewer.N0;
+            if (checkBox != null) {
+                checkBox.post(new ou0(this, 1));
+            }
+        }
+        if (photoViewer.U5) {
+            photoViewer.M2();
+            photoViewer.U5 = false;
+        }
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, i11);
-        this.c = AndroidUtilities.dp(8.0f);
-        this.d = AndroidUtilities.dp(2.0f);
-        this.e = AndroidUtilities.dp(18.0f);
+        int size = View.MeasureSpec.getSize(i10);
+        int size2 = View.MeasureSpec.getSize(i11);
+        PhotoViewer photoViewer = this.a;
+        if (!photoViewer.s && AndroidUtilities.incorrectDisplaySizeFix) {
+            int i12 = AndroidUtilities.displaySize.y;
+            if (size2 > i12) {
+                size2 = i12;
+            }
+            size2 += AndroidUtilities.statusBarHeight;
+        }
+        setMeasuredDimension(size, size2);
+        int i13 = size2 - photoViewer.s2.bottom;
+        int paddingRight = size - (getPaddingRight() + getPaddingLeft());
+        int paddingBottom = i13 - getPaddingBottom();
+        ViewGroup.LayoutParams layoutParams = photoViewer.h0.getLayoutParams();
+        photoViewer.h0.measure(View.MeasureSpec.makeMeasureSpec(layoutParams.width, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(layoutParams.height, TLObject.FLAG_31));
+        photoViewer.e0.measure(View.MeasureSpec.makeMeasureSpec(paddingRight, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(paddingBottom, TLObject.FLAG_30));
+        photoViewer.j0.measure(View.MeasureSpec.makeMeasureSpec(paddingRight, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(photoViewer.k0, TLObject.FLAG_30));
     }
 
     @Override // android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
-        float x10 = motionEvent.getX();
-        if (motionEvent.getAction() == 0) {
-            this.r = this.s.X7;
-            getParent().requestDisallowInterceptTouchEvent(true);
-        }
-        int i10 = 0;
-        if (motionEvent.getAction() == 0 || motionEvent.getAction() == 2) {
-            while (true) {
-                if (i10 >= this.s.Y7) {
-                    break;
-                }
-                int i11 = this.e;
-                int i12 = this.f;
-                int i13 = this.d;
-                int i14 = this.c;
-                int i15 = (((i13 * 2) + i12 + i14) * i10) + i11;
-                int i16 = i14 / 2;
-                int i17 = i15 + i16;
-                int i18 = (i12 / 2) + i16 + i13;
-                if (x10 <= i17 - i18 || x10 >= i17 + i18) {
-                    i10++;
-                } else if (this.s.X7 != i10) {
-                    this.s.X7 = i10;
-                    this.s.R0();
-                    invalidate();
-                    return true;
-                }
-            }
-        } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-            if (this.s.X7 != this.r) {
-                this.s.p2(1);
-            }
-            this.s.L6 = false;
-            return true;
-        }
-        return true;
+        PhotoViewer photoViewer = this.a;
+        return photoViewer.e && PhotoViewer.k(photoViewer, motionEvent);
+    }
+
+    @Override // android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        super.requestLayout();
+        AndroidUtilities.printStackTrace("requestLayout");
     }
 }

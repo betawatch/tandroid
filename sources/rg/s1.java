@@ -1,13 +1,21 @@
 package rg;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+import android.graphics.Paint;
+import android.graphics.RectF;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public interface s1 {
-    void A();
-
-    void a();
-
-    void o(qg.m mVar);
-
-    qg.s0 x();
+public final class s1 {
+    public int i;
+    public final RectF a = new RectF();
+    public final RectF b = new RectF();
+    public final Paint c = new Paint();
+    public final ArrayList e = new ArrayList();
+    public float f = 1.0f;
+    public final long h = 2000;
+    public final float j = 1000.0f / AndroidUtilities.screenRefreshRate;
+    public final int g = 200;
+    public final float[] d = new float[800];
 }

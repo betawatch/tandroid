@@ -14,9 +14,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class jj0 extends org.telegram.ui.Components.kl0 {
+public final class jj0 extends org.telegram.ui.Components.ll0 {
     public final Context c;
     public final /* synthetic */ lj0 d;
 
@@ -33,7 +33,7 @@ public final class jj0 extends org.telegram.ui.Components.kl0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.ll0
     public final boolean D(s4.c1 c1Var) {
         if (c1Var.f == 0) {
             return ((org.telegram.ui.Cells.a5) c1Var.a).getCurrentObject() instanceof TLObject;
@@ -92,9 +92,9 @@ public final class jj0 extends org.telegram.ui.Components.kl0 {
                 TL_stories.StoryViews storyViews = messageObject.storyItem.views;
                 a5Var.b(user2, null, (storyViews == null || (i11 = storyViews.views_count) == 0) ? LocaleController.getString(R.string.NoViews) : LocaleController.formatPluralString("Views", i11, new Object[0]), i10 != lj0Var.J - 1);
                 TL_stories.StoryItem storyItem = messageObject.storyItem;
-                tv tvVar = new tv(22, this, messageObject);
+                uv uvVar = new uv(22, this, messageObject);
                 a5Var.r = storyItem;
-                a5Var.a.setOnClickListener(tvVar);
+                a5Var.a.setOnClickListener(uvVar);
                 return;
             }
             a5Var.r = null;
@@ -143,30 +143,30 @@ public final class jj0 extends org.telegram.ui.Components.kl0 {
             }
         }
         if (i15 == 4) {
-            la1 la1Var = (la1) view;
-            la1Var.e(lj0Var.r, false);
-            la1Var.setLayoutParams(new s4.p0(-1, -2));
+            ka1 ka1Var = (ka1) view;
+            ka1Var.e(lj0Var.r, false);
+            ka1Var.setLayoutParams(new s4.p0(-1, -2));
             return;
         }
         if (i15 != 5) {
             if (i15 != 7) {
                 return;
             }
-            la1 la1Var2 = (la1) view;
-            la1Var2.e(lj0Var.s, false);
-            la1Var2.setLayoutParams(new s4.p0(-1, -2));
+            ka1 ka1Var2 = (ka1) view;
+            ka1Var2.e(lj0Var.s, false);
+            ka1Var2.setLayoutParams(new s4.p0(-1, -2));
             return;
         }
         kj0 kj0Var = (kj0) view;
         TextView[] textViewArr = kj0Var.a;
         TextView[] textViewArr2 = kj0Var.b;
         lj0 lj0Var2 = kj0Var.c;
-        ya1 ya1Var = lj0Var2.e0;
+        xa1 xa1Var = lj0Var2.e0;
         MessageObject messageObject2 = lj0Var2.n;
-        if (ya1Var != null) {
-            i13 = ya1Var.d();
-            i12 = ya1Var.a();
-            i14 = ya1Var.c();
+        if (xa1Var != null) {
+            i13 = xa1Var.d();
+            i12 = xa1Var.a();
+            i14 = xa1Var.c();
         } else {
             int i18 = messageObject2.isStory() ? messageObject2.storyItem.views.views_count : messageObject2.messageOwner.views;
             i12 = messageObject2.isStory() ? messageObject2.storyItem.views.forwards_count : messageObject2.messageOwner.forwards;

@@ -13,10 +13,10 @@ import android.view.ActionMode;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputConnection;
 import android.widget.AutoCompleteTextView;
-import v7.u7;
+import v7.v7;
 import w7.q7;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public class l extends AutoCompleteTextView implements u0.k {
     public static final int[] d = {R.attr.popupBackground};
@@ -29,11 +29,11 @@ public class l extends AutoCompleteTextView implements u0.k {
         super(context, attributeSet, i10);
         b3.a(context);
         a3.a(this, getContext());
-        aa.a y3 = aa.a.y(getContext(), attributeSet, d, i10);
-        if (((TypedArray) y3.c).hasValue(0)) {
-            setDropDownBackgroundDrawable(y3.r(0));
+        lf.i Q = lf.i.Q(getContext(), attributeSet, d, i10);
+        if (((TypedArray) Q.c).hasValue(0)) {
+            setDropDownBackgroundDrawable(Q.F(0));
         }
-        y3.A();
+        Q.R();
         e2.c cVar = new e2.c(this);
         this.a = cVar;
         cVar.f(attributeSet, i10);
@@ -155,7 +155,7 @@ public class l extends AutoCompleteTextView implements u0.k {
 
     @Override // android.widget.AutoCompleteTextView
     public void setDropDownBackgroundResource(int i10) {
-        setDropDownBackgroundDrawable(u7.b(getContext(), i10));
+        setDropDownBackgroundDrawable(v7.b(getContext(), i10));
     }
 
     public void setEmojiCompatEnabled(boolean z10) {

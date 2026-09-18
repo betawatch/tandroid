@@ -6,7 +6,7 @@ import android.util.AttributeSet;
 import android.view.View;
 import java.lang.reflect.Constructor;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class w {
     public static final Class[] b = {Context.class, AttributeSet.class};
@@ -15,13 +15,13 @@ public final class w {
     public static final int[] e = {R.attr.accessibilityPaneTitle};
     public static final int[] f = {R.attr.screenReaderFocusable};
     public static final String[] g = {"android.widget.", "android.view.", "android.webkit."};
-    public static final a0.l h = new a0.l(0);
+    public static final a0.m h = new a0.m(0);
     public final Object[] a = new Object[2];
 
     public final View a(Context context, String str, String str2) {
         String concat;
-        a0.l lVar = h;
-        Constructor constructor = (Constructor) lVar.get(str);
+        a0.m mVar = h;
+        Constructor constructor = (Constructor) mVar.get(str);
         if (constructor == null) {
             if (str2 != null) {
                 try {
@@ -33,7 +33,7 @@ public final class w {
                 concat = str;
             }
             constructor = Class.forName(concat, false, context.getClassLoader()).asSubclass(View.class).getConstructor(b);
-            lVar.put(str, constructor);
+            mVar.put(str, constructor);
         }
         constructor.setAccessible(true);
         return (View) constructor.newInstance(this.a);

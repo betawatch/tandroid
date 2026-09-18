@@ -1,9 +1,44 @@
 package rg;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
-/* loaded from: classes3.dex */
-public interface x1 {
-    void H(float f7);
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Path;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.k4;
 
-    float get();
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* loaded from: classes3.dex */
+public final class x1 extends k4 {
+    public final Path h;
+    public final /* synthetic */ z1 n;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public x1(z1 z1Var, Context context) {
+        super(context);
+        this.n = z1Var;
+        this.h = new Path();
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        canvas.save();
+        canvas.clipPath(this.h);
+        super.dispatchDraw(canvas);
+        canvas.restore();
+    }
+
+    @Override // org.telegram.ui.k4, android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, i11);
+        Path path = this.h;
+        path.reset();
+        z1 z1Var = this.n;
+        if (z1Var.d) {
+            AndroidUtilities.rectTmp.set(0.0f, -z1Var.M, getMeasuredWidth(), getMeasuredHeight());
+        } else {
+            AndroidUtilities.rectTmp.set(0.0f, 0.0f, getMeasuredWidth(), (int) (getMeasuredHeight() + z1Var.M));
+        }
+        float dp = z1Var.M - AndroidUtilities.dp(3.0f);
+        path.addRoundRect(AndroidUtilities.rectTmp, dp, dp, Path.Direction.CW);
+    }
 }

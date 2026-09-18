@@ -8,18 +8,18 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class q80 extends hq0 {
-    public final /* synthetic */ w80 b1;
+public final class q80 extends iq0 {
+    public final /* synthetic */ v80 b1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public q80(w80 w80Var, Context context, String str, String str2, org.telegram.ui.ActionBar.f6 f6Var) {
+    public q80(v80 v80Var, Context context, String str, String str2, org.telegram.ui.ActionBar.f6 f6Var) {
         super(context, null, str, false, str2, false, f6Var);
-        this.b1 = w80Var;
+        this.b1 = v80Var;
     }
 
-    @Override // org.telegram.ui.Components.hq0
+    @Override // org.telegram.ui.Components.iq0
     public final void R0(a0.i iVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
         String formatString;
         if (z10) {

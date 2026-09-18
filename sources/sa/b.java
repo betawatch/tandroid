@@ -1,8 +1,9 @@
 package sa;
 
 import m1.j;
+import org.telegram.messenger.BuildConfig;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class b {
     public final String a;
@@ -62,7 +63,7 @@ public final class b {
         sb2.append(this.b);
         sb2.append(", responseCode=");
         int i10 = this.c;
-        sb2.append(i10 != 1 ? i10 != 2 ? i10 != 3 ? "null" : "AUTH_ERROR" : "BAD_CONFIG" : "OK");
+        sb2.append(i10 != 1 ? i10 != 2 ? i10 != 3 ? BuildConfig.BETA_URL : "AUTH_ERROR" : "BAD_CONFIG" : "OK");
         sb2.append("}");
         return sb2.toString();
     }

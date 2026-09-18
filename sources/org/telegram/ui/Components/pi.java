@@ -4,7 +4,7 @@ import android.content.Context;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class pi extends qi {
     public int b;
@@ -17,8 +17,8 @@ public final class pi extends qi {
         this.c = viVar;
         setWillNotDraw(false);
         setFocusable(true);
-        f6Var = ((org.telegram.ui.ActionBar.f3) viVar).resourcesProvider;
-        ph.b bVar = new ph.b(context);
+        f6Var = ((org.telegram.ui.ActionBar.g3) viVar).resourcesProvider;
+        oh.b bVar = new oh.b(context);
         bVar.d = f6Var;
         bVar.Q = true;
         TextView textView = bVar.a;
@@ -34,7 +34,7 @@ public final class pi extends qi {
         addView(bVar, w7.x5.c(-1.0f, -1));
     }
 
-    public final void a(int i10, String str, ph.a aVar) {
+    public final void a(int i10, String str, oh.a aVar) {
         this.a.setText(str);
         this.a.setTabAnimation(aVar);
         this.b = i10;

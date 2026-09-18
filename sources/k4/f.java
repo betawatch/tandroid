@@ -7,7 +7,7 @@ import e2.d0;
 import e2.q;
 import java.math.RoundingMode;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class f implements b0 {
     public final q a;
@@ -22,10 +22,10 @@ public final class f implements b0 {
         this.c = j3;
         long j11 = (j10 - j3) / qVar.c;
         this.d = j11;
-        this.e = b(j11);
+        this.e = a(j11);
     }
 
-    public final long b(long j3) {
+    public final long a(long j3) {
         long j10 = j3 * this.b;
         long j11 = this.a.b;
         String str = d0.a;
@@ -43,13 +43,13 @@ public final class f implements b0 {
         long j10 = this.d;
         long i10 = d0.i((qVar.b * j3) / (this.b * 1000000), 0L, j10 - 1);
         long j11 = this.c;
-        long b10 = b(i10);
-        c0 c0Var = new c0(b10, (qVar.c * i10) + j11);
-        if (b10 >= j3 || i10 == j10 - 1) {
+        long a2 = a(i10);
+        c0 c0Var = new c0(a2, (qVar.c * i10) + j11);
+        if (a2 >= j3 || i10 == j10 - 1) {
             return new a0(c0Var, c0Var);
         }
         long j12 = i10 + 1;
-        return new a0(c0Var, new c0(b(j12), (qVar.c * j12) + j11));
+        return new a0(c0Var, new c0(a(j12), (qVar.c * j12) + j11));
     }
 
     @Override // c3.b0

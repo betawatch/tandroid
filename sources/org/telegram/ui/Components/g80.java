@@ -22,17 +22,17 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class g80 extends org.telegram.ui.ActionBar.f3 {
+public final class g80 extends org.telegram.ui.ActionBar.g3 {
     public static final /* synthetic */ int r = 0;
     public final String b;
-    public final org.telegram.ui.ActionBar.n2 c;
+    public final org.telegram.ui.ActionBar.o2 c;
     public final TLRPC.ChatInvite d;
     public final TLRPC.Chat e;
     public final TextView f;
     public final RadialProgressView h;
-    public yc n;
+    public vc n;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     /* JADX WARN: Removed duplicated region for block: B:101:0x0129  */
@@ -53,7 +53,7 @@ public final class g80 extends org.telegram.ui.ActionBar.f3 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public g80(Context context, TLObject tLObject, String str, org.telegram.ui.ActionBar.n2 n2Var, org.telegram.ui.ActionBar.f6 f6Var) {
+    public g80(Context context, TLObject tLObject, String str, org.telegram.ui.ActionBar.o2 o2Var, org.telegram.ui.ActionBar.f6 f6Var) {
         super(1, context, f6Var, false);
         String str2;
         final long j3;
@@ -64,7 +64,7 @@ public final class g80 extends org.telegram.ui.ActionBar.f3 {
         boolean z11;
         boolean z12;
         int i10;
-        org.telegram.ui.ActionBar.j5 j5Var;
+        org.telegram.ui.ActionBar.k5 k5Var;
         final boolean z13;
         boolean isEmpty;
         TLRPC.ChatInvite chatInvite2;
@@ -74,7 +74,7 @@ public final class g80 extends org.telegram.ui.ActionBar.f3 {
         setApplyBottomPadding(false);
         setApplyTopPadding(false);
         fixNavigationBar(getThemedColor(org.telegram.ui.ActionBar.j6.d6));
-        this.c = n2Var;
+        this.c = o2Var;
         if (tLObject instanceof TLRPC.ChatInvite) {
             TLRPC.ChatInvite chatInvite3 = (TLRPC.ChatInvite) tLObject;
             this.d = chatInvite3;
@@ -101,26 +101,26 @@ public final class g80 extends org.telegram.ui.ActionBar.f3 {
                 int dp = AndroidUtilities.dp(8.0f);
                 imageView.setPadding(dp, dp, dp, dp);
                 frameLayout.addView(imageView, w7.x5.d(36, 36.0f, 8388661, 6.0f, 8.0f, 8.0f, 0.0f));
-                x9 x9Var = new x9(context);
-                x9Var.setRoundRadius(AndroidUtilities.dp(45.0f));
-                linearLayout.addView(x9Var, w7.x5.t(90, 90, 49, 0, 27, 0, 0));
+                u9 u9Var = new u9(context);
+                u9Var.setRoundRadius(AndroidUtilities.dp(45.0f));
+                linearLayout.addView(u9Var, w7.x5.t(90, 90, 49, 0, 27, 0, 0));
                 chatInvite = this.d;
                 if (chatInvite == null) {
                     if (chatInvite.chat != null) {
-                        i9 i9Var = new i9(this.d.chat);
+                        f9 f9Var = new f9(this.d.chat);
                         TLRPC.ChatInvite chatInvite4 = this.d;
                         TLRPC.Chat chat2 = chatInvite4.chat;
                         r12 = chat2.title;
                         i10 = chat2.participants_count;
-                        x9Var.a.setForUserOrChat(chat2, i9Var, chatInvite4);
-                        x9Var.d();
+                        u9Var.a.setForUserOrChat(chat2, f9Var, chatInvite4);
+                        u9Var.d();
                     } else {
-                        i9 i9Var2 = new i9((org.telegram.ui.ActionBar.f6) null);
-                        i9Var2.n(0L, this.d.title, null);
+                        f9 f9Var2 = new f9((org.telegram.ui.ActionBar.f6) null);
+                        f9Var2.n(0L, this.d.title, null);
                         TLRPC.ChatInvite chatInvite5 = this.d;
                         String str4 = chatInvite5.title;
                         i10 = chatInvite5.participants_count;
-                        x9Var.h(ImageLocation.getForPhoto(FileLoader.getClosestPhotoSizeWithSize(chatInvite5.photo.sizes, 50), this.d.photo), "50_50", i9Var2, this.d);
+                        u9Var.h(ImageLocation.getForPhoto(FileLoader.getClosestPhotoSizeWithSize(chatInvite5.photo.sizes, 50), this.d.photo), "50_50", f9Var2, this.d);
                         r12 = str4;
                     }
                     TLRPC.ChatInvite chatInvite6 = this.d;
@@ -129,14 +129,14 @@ public final class g80 extends org.telegram.ui.ActionBar.f3 {
                     z12 = chatInvite6.fake;
                     z10 = chatInvite6.scam;
                 } else if (this.e != null) {
-                    i9 i9Var3 = new i9(this.e);
+                    f9 f9Var3 = new f9(this.e);
                     String str5 = this.e.title;
                     TLRPC.ChatFull chatFull = MessagesController.getInstance(this.currentAccount).getChatFull(this.e.id);
                     r12 = chatFull != null ? chatFull.about : null;
                     i10 = Math.max(this.e.participants_count, chatFull != null ? chatFull.participants_count : 0);
                     TLRPC.Chat chat3 = this.e;
-                    x9Var.a.setForUserOrChat(chat3, i9Var3, chat3);
-                    x9Var.d();
+                    u9Var.a.setForUserOrChat(chat3, f9Var3, chat3);
+                    u9Var.d();
                     TLRPC.Chat chat4 = this.e;
                     boolean z14 = chat4.verified;
                     z12 = chat4.fake;
@@ -151,18 +151,18 @@ public final class g80 extends org.telegram.ui.ActionBar.f3 {
                     z12 = false;
                     i10 = 0;
                 }
-                j5Var = new org.telegram.ui.ActionBar.j5(context);
-                j5Var.setTypeface(AndroidUtilities.bold());
-                j5Var.setTextSize(20);
+                k5Var = new org.telegram.ui.ActionBar.k5(context);
+                k5Var.setTypeface(AndroidUtilities.bold());
+                k5Var.setTextSize(20);
                 int i12 = org.telegram.ui.ActionBar.j6.j5;
-                j5Var.setTextColor(getThemedColor(i12));
-                j5Var.l(r12, false);
-                j5Var.setGravity(17);
-                linearLayout.addView(j5Var, w7.x5.t(-2, -2, 49, 10, 10, 10, i10 <= 0 ? 0 : 20));
+                k5Var.setTextColor(getThemedColor(i12));
+                k5Var.l(r12, false);
+                k5Var.setGravity(17);
+                linearLayout.addView(k5Var, w7.x5.t(-2, -2, 49, 10, 10, 10, i10 <= 0 ? 0 : 20));
                 if (!z10 || z12) {
-                    j5Var.i(!z10 ? org.telegram.ui.ActionBar.j6.g1 : org.telegram.ui.ActionBar.j6.h1);
+                    k5Var.i(!z10 ? org.telegram.ui.ActionBar.j6.g1 : org.telegram.ui.ActionBar.j6.h1);
                 } else if (z11) {
-                    j5Var.i(new oq(org.telegram.ui.ActionBar.j6.f1, org.telegram.ui.ActionBar.j6.i1));
+                    k5Var.i(new pq(org.telegram.ui.ActionBar.j6.f1, org.telegram.ui.ActionBar.j6.i1));
                 }
                 TLRPC.ChatInvite chatInvite7 = this.d;
                 z13 = (chatInvite7 == null && ((chatInvite7.channel && !chatInvite7.megagroup) || ChatObject.isChannelAndNotMegaGroup(chatInvite7.chat))) || (ChatObject.isChannel(this.e) && !this.e.megagroup);
@@ -225,18 +225,18 @@ public final class g80 extends org.telegram.ui.ActionBar.f3 {
                     f7 = 24.0f;
                 } else {
                     int min = Math.min(this.d.participants.size(), 3);
-                    l9 l9Var = new l9(context, false);
-                    l9Var.setAvatarsTextSize(AndroidUtilities.dp(20.0f));
+                    i9 i9Var = new i9(context, false);
+                    i9Var.setAvatarsTextSize(AndroidUtilities.dp(20.0f));
                     float f10 = 38;
-                    l9Var.setSize(AndroidUtilities.dp(f10));
-                    l9Var.setCount(min);
-                    l9Var.setStepFactor(0.65f);
+                    i9Var.setSize(AndroidUtilities.dp(f10));
+                    i9Var.setCount(min);
+                    i9Var.setStepFactor(0.65f);
                     for (int i15 = 0; i15 < min; i15++) {
-                        l9Var.b(i15, this.d.participants.get(i15), UserConfig.selectedAccount);
+                        i9Var.b(i15, this.d.participants.get(i15), UserConfig.selectedAccount);
                     }
                     f7 = 24.0f;
-                    l9Var.a(false);
-                    linearLayout.addView(l9Var, w7.x5.t((int) ((((0.65f * f10) + 1.0f) * (min - 1)) + f10), 44, 17, 0, 2, 0, 4));
+                    i9Var.a(false);
+                    linearLayout.addView(i9Var, w7.x5.t((int) ((((0.65f * f10) + 1.0f) * (min - 1)) + f10), 44, 17, 0, 2, 0, 4));
                     TextView textView4 = new TextView(context);
                     textView4.setTextSize(1, 13.0f);
                     textView4.setTextColor(getThemedColor(org.telegram.ui.ActionBar.j6.r5));
@@ -270,7 +270,7 @@ public final class g80 extends org.telegram.ui.ActionBar.f3 {
                 textView5.setTextSize(1, 14.0f);
                 textView5.setTypeface(AndroidUtilities.bold());
                 linearLayout.addView(textView5, w7.x5.t(-1, 48, 8388611, 14, 0, 14, 14));
-                textView5.setOnClickListener(new bi.o2(this, j3, 1));
+                textView5.setOnClickListener(new ai.a3(this, j3, 1));
                 return;
             }
             TLRPC.Chat chat5 = (TLRPC.Chat) tLObject;
@@ -295,23 +295,23 @@ public final class g80 extends org.telegram.ui.ActionBar.f3 {
         int dp4 = AndroidUtilities.dp(8.0f);
         imageView2.setPadding(dp4, dp4, dp4, dp4);
         frameLayout3.addView(imageView2, w7.x5.d(36, 36.0f, 8388661, 6.0f, 8.0f, 8.0f, 0.0f));
-        x9 x9Var2 = new x9(context);
-        x9Var2.setRoundRadius(AndroidUtilities.dp(45.0f));
-        linearLayout.addView(x9Var2, w7.x5.t(90, 90, 49, 0, 27, 0, 0));
+        u9 u9Var2 = new u9(context);
+        u9Var2.setRoundRadius(AndroidUtilities.dp(45.0f));
+        linearLayout.addView(u9Var2, w7.x5.t(90, 90, 49, 0, 27, 0, 0));
         chatInvite = this.d;
         if (chatInvite == null) {
         }
-        j5Var = new org.telegram.ui.ActionBar.j5(context);
-        j5Var.setTypeface(AndroidUtilities.bold());
-        j5Var.setTextSize(20);
+        k5Var = new org.telegram.ui.ActionBar.k5(context);
+        k5Var.setTypeface(AndroidUtilities.bold());
+        k5Var.setTextSize(20);
         int i122 = org.telegram.ui.ActionBar.j6.j5;
-        j5Var.setTextColor(getThemedColor(i122));
-        j5Var.l(r12, false);
-        j5Var.setGravity(17);
-        linearLayout.addView(j5Var, w7.x5.t(-2, -2, 49, 10, 10, 10, i10 <= 0 ? 0 : 20));
+        k5Var.setTextColor(getThemedColor(i122));
+        k5Var.l(r12, false);
+        k5Var.setGravity(17);
+        linearLayout.addView(k5Var, w7.x5.t(-2, -2, 49, 10, 10, 10, i10 <= 0 ? 0 : 20));
         if (z10) {
         }
-        j5Var.i(!z10 ? org.telegram.ui.ActionBar.j6.g1 : org.telegram.ui.ActionBar.j6.h1);
+        k5Var.i(!z10 ? org.telegram.ui.ActionBar.j6.g1 : org.telegram.ui.ActionBar.j6.h1);
         TLRPC.ChatInvite chatInvite72 = this.d;
         if (chatInvite72 == null) {
         }
@@ -379,21 +379,21 @@ public final class g80 extends org.telegram.ui.ActionBar.f3 {
                 a80 a80Var = new a80(g80Var, (TLRPC.TL_chatInviteJoinResultWebView) chatInviteJoinResult, j3, 1);
                 g80Var2 = g80Var;
                 AndroidUtilities.runOnUIThread(a80Var);
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.n5((Object) g80Var2, (Object) tL_error, (Object) updates, (Object) tL_messages_importChatInvite, 25));
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.o5((Object) g80Var2, (Object) tL_error, (Object) updates, (Object) tL_messages_importChatInvite, 25));
             }
         }
         g80Var2 = g80Var;
-        AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.n5((Object) g80Var2, (Object) tL_error, (Object) updates, (Object) tL_messages_importChatInvite, 25));
+        AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.o5((Object) g80Var2, (Object) tL_error, (Object) updates, (Object) tL_messages_importChatInvite, 25));
     }
 
     public static void n(g80 g80Var, TLRPC.TL_error tL_error, TLRPC.Updates updates, TLRPC.TL_messages_importChatInvite tL_messages_importChatInvite) {
-        org.telegram.ui.ActionBar.n2 n2Var = g80Var.c;
-        if (n2Var == null || n2Var.getParentActivity() == null) {
+        org.telegram.ui.ActionBar.o2 o2Var = g80Var.c;
+        if (o2Var == null || o2Var.getParentActivity() == null) {
             return;
         }
         if (tL_error != null) {
             "USER_ALREADY_PARTICIPANT".equals(tL_error.text);
-            e5.f0(g80Var.currentAccount, tL_error, n2Var, tL_messages_importChatInvite, new Object[0]);
+            c5.f0(g80Var.currentAccount, tL_error, o2Var, tL_messages_importChatInvite, new Object[0]);
             return;
         }
         if (updates == null || updates.chats.isEmpty()) {
@@ -407,11 +407,11 @@ public final class g80 extends org.telegram.ui.ActionBar.f3 {
         long j3 = chat.id;
         boolean z10 = !ChatObject.isChannelAndNotMegaGroup(chat);
         g80Var.getClass();
-        Bundle e7 = w.f.e(j3, "chat_id");
+        Bundle e = w.f.e(j3, "chat_id");
         MessagesController messagesController = MessagesController.getInstance(g80Var.currentAccount);
-        org.telegram.ui.ActionBar.n2 n2Var2 = g80Var.c;
-        if (messagesController.checkCanOpenChat(e7, n2Var2)) {
-            n2Var2.presentFragment(new f80(g80Var, e7, z10, j3), n2Var2 instanceof org.telegram.ui.co);
+        org.telegram.ui.ActionBar.o2 o2Var2 = g80Var.c;
+        if (messagesController.checkCanOpenChat(e, o2Var2)) {
+            o2Var2.presentFragment(new f80(g80Var, e, z10, j3), o2Var2 instanceof org.telegram.ui.bo);
         }
     }
 
@@ -462,7 +462,7 @@ public final class g80 extends org.telegram.ui.ActionBar.f3 {
         if (g80Var.d != null || chat == null) {
             TLRPC.TL_messages_importChatInvite tL_messages_importChatInvite = new TLRPC.TL_messages_importChatInvite();
             tL_messages_importChatInvite.hash = g80Var.b;
-            ConnectionsManager.getInstance(g80Var.currentAccount).sendRequest(tL_messages_importChatInvite, new org.telegram.messenger.u9(g80Var, j3, z10, tL_messages_importChatInvite), 2);
+            ConnectionsManager.getInstance(g80Var.currentAccount).sendRequest(tL_messages_importChatInvite, new org.telegram.messenger.v9(g80Var, j3, z10, tL_messages_importChatInvite), 2);
         } else {
             final int i11 = 1;
             MessagesController.getInstance(g80Var.currentAccount).addUserToChat(chat.id, UserConfig.getInstance(g80Var.currentAccount).getCurrentUser(), 0, null, null, true, new Runnable(g80Var) { // from class: org.telegram.ui.Components.e80
@@ -488,7 +488,7 @@ public final class g80 extends org.telegram.ui.ActionBar.f3 {
                             break;
                     }
                 }
-            }, new bi.h(8, g80Var, z10));
+            }, new ai.k(8, g80Var, z10));
         }
     }
 
@@ -500,22 +500,22 @@ public final class g80 extends org.telegram.ui.ActionBar.f3 {
             a80 a80Var = new a80(g80Var, (TLRPC.TL_chatInviteJoinResultWebView) tLObject, j3, 0);
             g80Var2 = g80Var;
             AndroidUtilities.runOnUIThread(a80Var);
-            AndroidUtilities.runOnUIThread(new bi.e4(g80Var2, tL_error, z10, tL_messages_importChatInvite, 18));
+            AndroidUtilities.runOnUIThread(new ai.s4(g80Var2, tL_error, z10, tL_messages_importChatInvite, 18));
         }
         g80Var2 = g80Var;
-        AndroidUtilities.runOnUIThread(new bi.e4(g80Var2, tL_error, z10, tL_messages_importChatInvite, 18));
+        AndroidUtilities.runOnUIThread(new ai.s4(g80Var2, tL_error, z10, tL_messages_importChatInvite, 18));
     }
 
     public static /* synthetic */ void t(g80 g80Var, TLRPC.TL_error tL_error, boolean z10, TLRPC.TL_messages_importChatInvite tL_messages_importChatInvite) {
-        org.telegram.ui.ActionBar.n2 n2Var = g80Var.c;
-        if (n2Var == null || n2Var.getParentActivity() == null) {
+        org.telegram.ui.ActionBar.o2 o2Var = g80Var.c;
+        if (o2Var == null || o2Var.getParentActivity() == null) {
             return;
         }
         if (tL_error != null) {
             if ("INVITE_REQUEST_SENT".equals(tL_error.text)) {
                 g80Var.setOnDismissListener(new b80(1, g80Var, z10));
             } else {
-                e5.f0(g80Var.currentAccount, tL_error, n2Var, tL_messages_importChatInvite, new Object[0]);
+                c5.f0(g80Var.currentAccount, tL_error, o2Var, tL_messages_importChatInvite, new Object[0]);
             }
         }
         g80Var.dismiss();
@@ -529,21 +529,21 @@ public final class g80 extends org.telegram.ui.ActionBar.f3 {
         return TextUtils.ellipsize(str.trim(), textView.getPaint(), AndroidUtilities.dp(120.0f), TextUtils.TruncateAt.END);
     }
 
-    public static void w(Context context, org.telegram.ui.ActionBar.n2 n2Var, yc ycVar, boolean z10) {
+    public static void w(Context context, org.telegram.ui.ActionBar.o2 o2Var, vc vcVar, boolean z10) {
         if (context == null) {
-            if (n2Var != null) {
-                n2Var.getContext();
+            if (o2Var != null) {
+                o2Var.getContext();
                 return;
             }
             return;
         }
-        if (ycVar == null) {
-            ycVar = yc.a0(n2Var);
+        if (vcVar == null) {
+            vcVar = vc.a0(o2Var);
         }
-        nc ncVar = new nc(context, n2Var.getResourceProvider());
-        ncVar.a.f(R.raw.timer_3, 28, 28, null);
-        ncVar.b.setText(LocaleController.getString(R.string.RequestToJoinSent));
-        ncVar.c.setText(z10 ? LocaleController.getString(R.string.RequestToJoinChannelSentDescription) : LocaleController.getString(R.string.RequestToJoinGroupSentDescription));
-        ycVar.b(ncVar, 2750).j();
+        lc lcVar = new lc(context, o2Var.getResourceProvider());
+        lcVar.a.f(R.raw.timer_3, 28, 28, null);
+        lcVar.b.setText(LocaleController.getString(R.string.RequestToJoinSent));
+        lcVar.c.setText(z10 ? LocaleController.getString(R.string.RequestToJoinChannelSentDescription) : LocaleController.getString(R.string.RequestToJoinGroupSentDescription));
+        vcVar.b(lcVar, 2750).j();
     }
 }

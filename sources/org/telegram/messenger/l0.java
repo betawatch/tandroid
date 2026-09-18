@@ -1,6 +1,6 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class l0 implements Runnable {
     public final /* synthetic */ int a;
@@ -30,10 +30,10 @@ public final /* synthetic */ class l0 implements Runnable {
                 org.telegram.ui.b5 b5Var = (org.telegram.ui.b5) this.e;
                 long j3 = this.b;
                 long j10 = this.c;
-                org.telegram.ui.z6.n0 = Long.valueOf(j3 * j10);
+                org.telegram.ui.a7.o0 = Long.valueOf(j3 * j10);
                 Long valueOf = Long.valueOf(this.d * j10);
-                org.telegram.ui.z6.o0 = valueOf;
-                b5Var.run(org.telegram.ui.z6.n0, valueOf);
+                org.telegram.ui.a7.p0 = valueOf;
+                b5Var.run(org.telegram.ui.a7.o0, valueOf);
                 break;
         }
     }

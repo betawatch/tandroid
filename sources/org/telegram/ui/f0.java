@@ -3,16 +3,16 @@ package org.telegram.ui;
 import android.net.Uri;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f0 implements Utilities.Callback0Return {
-    public final /* synthetic */ i4 a;
+    public final /* synthetic */ h4 a;
     public final /* synthetic */ String b;
     public final /* synthetic */ boolean[] c;
-    public final /* synthetic */ of.e d;
+    public final /* synthetic */ nf.e d;
 
-    public /* synthetic */ f0(i4 i4Var, String str, boolean[] zArr, of.e eVar) {
-        this.a = i4Var;
+    public /* synthetic */ f0(h4 h4Var, String str, boolean[] zArr, nf.e eVar) {
+        this.a = h4Var;
         this.b = str;
         this.c = zArr;
         this.d = eVar;
@@ -21,20 +21,20 @@ public final /* synthetic */ class f0 implements Utilities.Callback0Return {
     @Override // org.telegram.messenger.Utilities.Callback0Return
     public final Object run() {
         String str = this.b;
-        if (!of.f.f(Uri.parse(str), false, this.c)) {
+        if (!nf.f.f(Uri.parse(str), false, this.c)) {
             return Boolean.FALSE;
         }
-        i4 i4Var = this.a;
-        of.e eVar = this.d;
+        h4 h4Var = this.a;
+        nf.e eVar = this.d;
         if (eVar != null) {
-            eVar.c = new org.telegram.ui.ActionBar.c6(4, i4Var, eVar);
+            eVar.c = new m4.g0(28, h4Var, eVar);
         } else {
-            v3 v3Var = i4Var.K;
-            if (v3Var != null) {
-                v3Var.dismiss(true);
+            u3 u3Var = h4Var.K;
+            if (u3Var != null) {
+                u3Var.dismiss(true);
             }
         }
-        of.f.r(i4Var.L, Uri.parse(str), true, true, false, eVar, null, true, true, false);
+        nf.f.r(h4Var.L, Uri.parse(str), true, true, false, eVar, null, true, true, false);
         return Boolean.TRUE;
     }
 }

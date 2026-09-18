@@ -1,23 +1,23 @@
 package com.google.android.play.core.integrity;
 
-import a9.i0;
+import a9.j0;
 import android.os.Bundle;
 import com.google.android.gms.tasks.TaskCompletionSource;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 final class bl extends bi {
     final /* synthetic */ bn c;
-    private final i0 d;
+    private final j0 d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public bl(bn bnVar, TaskCompletionSource taskCompletionSource) {
         super(bnVar, taskCompletionSource);
         this.c = bnVar;
-        this.d = new i0("OnWarmUpIntegrityTokenCallback");
+        this.d = new j0("OnWarmUpIntegrityTokenCallback");
     }
 
-    @Override // com.google.android.play.core.integrity.bi, a9.a0
+    @Override // com.google.android.play.core.integrity.bi, a9.b0
     public final void e(Bundle bundle) {
         k kVar;
         super.e(bundle);

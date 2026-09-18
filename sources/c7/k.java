@@ -4,7 +4,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class k extends l {
     public static final Parcelable.Creator<k> CREATOR = new r0(17);
@@ -17,8 +17,8 @@ public final class k extends l {
             this.a = r.a(i10);
             this.b = str;
             this.c = i11;
-        } catch (q e7) {
-            throw new IllegalArgumentException(e7);
+        } catch (q e) {
+            throw new IllegalArgumentException(e);
         }
     }
 
@@ -35,18 +35,18 @@ public final class k extends l {
     }
 
     public final String toString() {
-        m2.t tVar = new m2.t(getClass().getSimpleName(), 7);
+        lf.i iVar = new lf.i(getClass().getSimpleName());
         String valueOf = String.valueOf(this.a.a);
-        n7.c cVar = new n7.c(6, false);
-        ((m2.t) tVar.d).d = cVar;
-        tVar.d = cVar;
-        cVar.c = valueOf;
-        cVar.b = "errorCode";
+        n7.d dVar = new n7.d(7, false);
+        ((lf.i) iVar.d).d = dVar;
+        iVar.d = dVar;
+        dVar.c = valueOf;
+        dVar.b = "errorCode";
         String str = this.b;
         if (str != null) {
-            tVar.T(str, "errorMessage");
+            iVar.Z(str, "errorMessage");
         }
-        return tVar.toString();
+        return iVar.toString();
     }
 
     @Override // android.os.Parcelable

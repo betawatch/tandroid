@@ -1,55 +1,86 @@
 package yh;
 
-import java.util.Comparator;
-import org.telegram.tgnet.tl.TL_stars;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.rq;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class y3 implements Comparator {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ e4 b;
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* loaded from: classes4.dex */
+public final class y3 extends rq {
+    public final View b;
+    public final Paint c;
+    public final Path d;
+    public final long e;
+    public float f;
 
-    public /* synthetic */ y3(e4 e4Var, int i10) {
-        this.a = i10;
-        this.b = e4Var;
+    public y3(ci.d dVar, int i10) {
+        super(dVar);
+        Paint paint = new Paint(1);
+        this.c = paint;
+        Path path = new Path();
+        this.d = path;
+        this.e = System.currentTimeMillis();
+        this.f = 1.0f;
+        this.b = dVar;
+        this.a.setColor(-1);
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeJoin(Paint.Join.ROUND);
+        paint.setStrokeCap(Paint.Cap.ROUND);
+        paint.setColor(i10);
+        path.rewind();
+        path.moveTo(-AndroidUtilities.dpf2(2.91f), AndroidUtilities.dpf2(1.08f));
+        path.lineTo(0.0f, -AndroidUtilities.dpf2(1.08f));
+        path.lineTo(AndroidUtilities.dpf2(2.91f), AndroidUtilities.dpf2(1.08f));
     }
 
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        switch (this.a) {
-            case 0:
-                e4 e4Var = this.b;
-                Integer num = (Integer) e4Var.c.n.get(Integer.valueOf(((TL_stars.starGiftAttributeBackdrop) obj).backdrop_id));
-                Integer num2 = (Integer) e4Var.c.n.get(Integer.valueOf(((TL_stars.starGiftAttributeBackdrop) obj2).backdrop_id));
-                if (num == null) {
-                    return 1;
-                }
-                if (num2 == null) {
-                    return -1;
-                }
-                return num2.intValue() - num.intValue();
-            case 1:
-                e4 e4Var2 = this.b;
-                Integer num3 = (Integer) e4Var2.c.o.get(Long.valueOf(((TL_stars.starGiftAttributePattern) obj).document.id));
-                Integer num4 = (Integer) e4Var2.c.o.get(Long.valueOf(((TL_stars.starGiftAttributePattern) obj2).document.id));
-                if (num3 == null) {
-                    return 1;
-                }
-                if (num4 == null) {
-                    return -1;
-                }
-                return num4.intValue() - num3.intValue();
-            default:
-                e4 e4Var3 = this.b;
-                Integer num5 = (Integer) e4Var3.c.m.get(Long.valueOf(((TL_stars.starGiftAttributeModel) obj).document.id));
-                Integer num6 = (Integer) e4Var3.c.m.get(Long.valueOf(((TL_stars.starGiftAttributeModel) obj2).document.id));
-                if (num5 == null) {
-                    return 1;
-                }
-                if (num6 == null) {
-                    return -1;
-                }
-                return num6.intValue() - num5.intValue();
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        int i10 = (int) (this.f * 255.0f);
+        Paint paint = this.a;
+        paint.setAlpha(i10);
+        canvas.drawCircle(getBounds().centerX(), getBounds().centerY(), getBounds().width() / 2.0f, paint);
+        float currentTimeMillis = ((System.currentTimeMillis() - this.e) % 400) / 400.0f;
+        Paint paint2 = this.c;
+        int alpha = paint2.getAlpha();
+        paint2.setAlpha((int) (alpha * this.f));
+        paint2.setStrokeWidth(AndroidUtilities.dpf2(1.33f));
+        canvas.save();
+        canvas.translate(getBounds().centerX(), getBounds().centerY() - (((AndroidUtilities.dpf2(1.166f) * 2.0f) + (AndroidUtilities.dpf2(2.16f) * 3.0f)) / 2.0f));
+        int i11 = 0;
+        while (i11 < 4) {
+            float f7 = i11 == 0 ? 1.0f - currentTimeMillis : i11 == 3 ? currentTimeMillis : 1.0f;
+            paint2.setAlpha((int) (f7 * 255.0f * this.f));
+            canvas.save();
+            float lerp = AndroidUtilities.lerp(0.5f, 1.0f, f7);
+            canvas.scale(lerp, lerp);
+            canvas.drawPath(this.d, paint2);
+            canvas.restore();
+            canvas.translate(0.0f, AndroidUtilities.dpf2(3.3260002f) * f7);
+            i11++;
         }
+        canvas.restore();
+        paint2.setAlpha(alpha);
+        View view = this.b;
+        if (view != null) {
+            view.invalidate();
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return AndroidUtilities.dp(18.0f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return AndroidUtilities.dp(18.0f);
+    }
+
+    @Override // org.telegram.ui.Components.rq, android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        this.f = i10 / 255.0f;
     }
 }

@@ -1,48 +1,128 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
+import android.graphics.ColorFilter;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.Drawable;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class kt0 extends org.telegram.ui.Components.u00 {
-    public final /* synthetic */ ss0 e;
-    public final /* synthetic */ PhotoViewer f;
+public final class kt0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ PhotoViewer b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public kt0(PhotoViewer photoViewer, ss0 ss0Var) {
-        super(false);
-        this.f = photoViewer;
-        this.e = ss0Var;
+    public /* synthetic */ kt0(PhotoViewer photoViewer, int i10) {
+        this.a = i10;
+        this.b = photoViewer;
     }
 
-    @Override // org.telegram.ui.Components.co0
-    public final CharSequence d() {
-        StringBuilder sb2 = new StringBuilder();
-        PhotoViewer photoViewer = this.f;
-        int[] iArr = photoViewer.m3;
-        sb2.append(LocaleController.formatPluralString("Minutes", iArr[0], new Object[0]));
-        sb2.append(' ');
-        sb2.append(LocaleController.formatPluralString("Seconds", iArr[1], new Object[0]));
-        String sb3 = sb2.toString();
-        StringBuilder sb4 = new StringBuilder();
-        int[] iArr2 = photoViewer.n3;
-        sb4.append(LocaleController.formatPluralString("Minutes", iArr2[0], new Object[0]));
-        sb4.append(' ');
-        sb4.append(LocaleController.formatPluralString("Seconds", iArr2[1], new Object[0]));
-        return LocaleController.formatString("AccDescrPlayerDuration", R.string.AccDescrPlayerDuration, sb3, sb4.toString());
-    }
-
-    @Override // org.telegram.ui.Components.u00
-    public final float k() {
-        return this.f.q3.c();
-    }
-
-    @Override // org.telegram.ui.Components.u00
-    public final void l(float f7) {
-        this.e.b(f7);
-        PhotoViewer photoViewer = this.f;
-        photoViewer.q3.h(f7, false);
-        photoViewer.r3.invalidate();
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        org.telegram.ui.Components.vi viVar;
+        int i10 = this.a;
+        PhotoViewer photoViewer = this.b;
+        switch (i10) {
+            case 0:
+                photoViewer.p6 = null;
+                org.telegram.ui.Components.ue0 ue0Var = photoViewer.C1;
+                if (ue0Var != null) {
+                    if (ue0Var.b.j()) {
+                        photoViewer.a1.setColorFilter(new PorterDuffColorFilter(photoViewer.z1(org.telegram.ui.ActionBar.j6.zf), PorterDuff.Mode.MULTIPLY));
+                    } else {
+                        photoViewer.a1.setColorFilter((ColorFilter) null);
+                    }
+                    photoViewer.g6 = 0.0f;
+                    photoViewer.e0.invalidate();
+                    break;
+                }
+                break;
+            case 1:
+                photoViewer.t3 = null;
+                break;
+            case 2:
+                Drawable[] drawableArr = PhotoViewer.U8;
+                photoViewer.f3();
+                break;
+            case 3:
+                photoViewer.L1.n0(false);
+                cu0 cu0Var = photoViewer.L1;
+                cu0Var.u1.setTypeface(pg.s0.e(cu0Var.P1).j);
+                cu0Var.Z0.setVisibility(0);
+                cu0Var.W0.setVisibility(0);
+                cu0Var.X0.setVisibility(0);
+                org.telegram.ui.Components.fd0 fd0Var = photoViewer.y4;
+                int childCount = fd0Var.getChildCount();
+                for (int i11 = 0; i11 < childCount; i11++) {
+                    fd0Var.getChildAt(i11).setVisibility(4);
+                }
+                photoViewer.p6 = null;
+                photoViewer.u4 = 3;
+                photoViewer.f1().L.b(photoViewer.u4 != 0);
+                ci.j4 j4Var = photoViewer.K1;
+                if (j4Var != null) {
+                    j4Var.b(photoViewer.u4 != 3);
+                }
+                photoViewer.o6 = -1;
+                float q22 = photoViewer.q2(false);
+                photoViewer.a6 = q22;
+                photoViewer.e6 = q22;
+                photoViewer.c6 = 0.0f;
+                photoViewer.d6 = 0.0f;
+                photoViewer.v3(q22);
+                photoViewer.t2 = true;
+                photoViewer.e0.invalidate();
+                dv0 dv0Var = photoViewer.d;
+                if (dv0Var == null || !dv0Var.O()) {
+                    photoViewer.R1();
+                    break;
+                }
+                break;
+            case 4:
+                AnimatorSet animatorSet = photoViewer.B1;
+                if (animatorSet != null && animatorSet.equals(animator)) {
+                    photoViewer.o1.setVisibility(8);
+                    photoViewer.B1 = null;
+                    break;
+                }
+                break;
+            case 5:
+                AndroidUtilities.runOnUIThread(new sl0(this, 20));
+                break;
+            case 6:
+                photoViewer.m6 = 1.0f;
+                Runnable runnable = photoViewer.p4;
+                if (runnable != null) {
+                    bo boVar = photoViewer.l4;
+                    if (boVar == null && (viVar = photoViewer.a2) != null) {
+                        org.telegram.ui.ActionBar.o2 o2Var = viVar.f0;
+                        if (o2Var instanceof bo) {
+                            boVar = (bo) o2Var;
+                        }
+                    }
+                    if (boVar != null) {
+                        boVar.h8(runnable);
+                        break;
+                    } else {
+                        runnable.run();
+                        photoViewer.p4 = null;
+                        break;
+                    }
+                }
+                break;
+            case 7:
+                photoViewer.p6 = null;
+                photoViewer.e0.invalidate();
+                break;
+            case 8:
+                photoViewer.y3[0].setTag(null);
+                break;
+            default:
+                photoViewer.y3[0].setTag(null);
+                break;
+        }
     }
 }

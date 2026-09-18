@@ -1,31 +1,63 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.ChannelBoostsController;
-import org.telegram.tgnet.tl.TL_stories;
+import android.view.View;
+import java.util.ArrayList;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.WallpapersListActivity;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class vo implements e2.h {
+public final /* synthetic */ class vo implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ lp b;
+    public final /* synthetic */ mp b;
 
-    public /* synthetic */ vo(lp lpVar, int i10) {
+    public /* synthetic */ vo(mp mpVar, int i10) {
         this.a = i10;
-        this.b = lpVar;
+        this.b = mpVar;
     }
 
-    @Override // e2.h
-    public final void accept(Object obj) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                lp lpVar = this.b;
-                lpVar.f0 = (TL_stories.TL_premium_boostsStatus) obj;
-                lpVar.e0 = true;
-                lpVar.F(true);
-                lpVar.d0 = false;
+                mp mpVar = this.b;
+                vi viVar = mpVar.Y;
+                if (viVar.y0 != viVar.j0) {
+                    mpVar.a0.setText(LocaleController.getString(R.string.SetColorAsBackground));
+                    vi viVar2 = mpVar.Y;
+                    viVar2.Q1(viVar2.j0);
+                    break;
+                } else {
+                    mpVar.a0.setText(LocaleController.getString(R.string.ChooseBackgroundFromGallery));
+                    mpVar.Y.C1();
+                    jj jjVar = mpVar.Y.r0;
+                    boolean z10 = mpVar.N;
+                    xa xaVar = jjVar.v;
+                    ((ArrayList) xaVar.e).clear();
+                    WallpapersListActivity.z0((ArrayList) xaVar.e, z10);
+                    xaVar.l();
+                    break;
+                }
+            case 1:
+                mp mpVar2 = this.b;
+                if (!mpVar2.v()) {
+                    mpVar2.dismiss();
+                    break;
+                } else {
+                    mpVar2.z(true);
+                    mpVar2.F(true);
+                    break;
+                }
+            case 2:
+                mp mpVar3 = this.b;
+                if (mpVar3.T == null) {
+                    mpVar3.B(!mpVar3.N);
+                    break;
+                }
                 break;
             default:
-                lp.m(this.b, (ChannelBoostsController.CanApplyBoost) obj);
+                this.b.s(false);
                 break;
         }
     }

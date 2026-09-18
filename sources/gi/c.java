@@ -1,36 +1,112 @@
 package gi;
 
-import di.m2;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.h51;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.DialogObject;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.a6;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.Components.f9;
+import org.telegram.ui.Components.u9;
+import w7.x5;
+import yf.p;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class c implements Utilities.Callback5, Utilities.Callback5Return, MessagesStorage.StringCallback {
-    public final /* synthetic */ f a;
+public final class c extends FrameLayout implements a6 {
+    public final f6 a;
+    public final u9 b;
+    public final TextView c;
+    public final TextView d;
+    public final ImageView e;
 
-    @Override // org.telegram.messenger.Utilities.Callback5Return
-    public Object run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        ((Integer) obj3).intValue();
-        ((Float) obj4).floatValue();
-        ((Float) obj5).floatValue();
-        this.a.getClass();
-        return Boolean.FALSE;
+    public c(Context context, f6 f6Var) {
+        super(context);
+        this.a = f6Var;
+        u9 u9Var = new u9(context);
+        this.b = u9Var;
+        u9Var.setRoundRadius(AndroidUtilities.dp(9.0f));
+        addView(u9Var, x5.d(32, 32.0f, 19, 20.0f, 0.0f, 0.0f, 0.0f));
+        LinearLayout linearLayout = new LinearLayout(context);
+        linearLayout.setOrientation(1);
+        linearLayout.setGravity(16);
+        TextView textView = new TextView(context);
+        this.c = textView;
+        textView.setTypeface(AndroidUtilities.bold());
+        textView.setTextSize(1, 16.0f);
+        textView.setSingleLine(true);
+        TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
+        textView.setEllipsize(truncateAt);
+        linearLayout.addView(textView, x5.n(-1, -2));
+        TextView textView2 = new TextView(context);
+        this.d = textView2;
+        textView2.setTextSize(1, 13.0f);
+        textView2.setSingleLine(true);
+        textView2.setEllipsize(truncateAt);
+        linearLayout.addView(textView2, x5.k(0.0f, 2.0f, 0.0f, 0.0f, -1, -2));
+        addView(linearLayout, x5.d(-1, -2.0f, 19, 67.0f, 0.0f, 48.0f, 1.0f));
+        ImageView imageView = new ImageView(context);
+        this.e = imageView;
+        imageView.setImageResource(R.drawable.msg_inputarrow);
+        imageView.setScaleType(ImageView.ScaleType.CENTER);
+        addView(imageView, x5.d(24, 24.0f, 21, 0.0f, 0.0f, 11.0f, 0.0f));
+        e();
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback5
-    public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        ((Integer) obj3).getClass();
-        ((Float) obj4).getClass();
-        ((Float) obj5).getClass();
-        f.U(this.a, (h51) obj);
+    public final void a(int i10, TLRPC.Chat chat) {
+        if (chat == null) {
+            return;
+        }
+        TLRPC.ChatFull chatFull = MessagesController.getInstance(i10).getChatFull(chat.id);
+        setTitle(DialogObject.getShortName(chat));
+        setSubtitle(LocaleController.formatPluralString("CommunityWithChats", chatFull != null ? chatFull.linked_peers.size() : 0, new Object[0]));
+        this.b.e(chat, new f9(chat));
     }
 
-    @Override // org.telegram.messenger.MessagesStorage.StringCallback
-    public void run(String str) {
-        f fVar = this.a;
-        fVar.getMessagesController().getChat(Long.valueOf(-fVar.a));
-        fVar.showDialog(new ii.b(fVar.getParentActivity(), null, fVar.a, new m2(13, fVar, str)));
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        Drawable drawable = j6.S0;
+        u9 u9Var = this.b;
+        p.a(canvas, drawable, (u9Var.getWidth() / 2.0f) + u9Var.getLeft(), (u9Var.getHeight() / 2.0f) + u9Var.getTop(), u9Var.getHeight());
+        super.dispatchDraw(canvas);
+    }
+
+    @Override // org.telegram.ui.ActionBar.a6
+    public final void e() {
+        int i10 = j6.z6;
+        f6 f6Var = this.a;
+        this.e.setColorFilter(j6.v0(i10, f6Var));
+        this.c.setTextColor(j6.v0(j6.G6, f6Var));
+        this.d.setTextColor(j6.v0(i10, f6Var));
+    }
+
+    public /* bridge */ /* synthetic */ int[] getColorKeys() {
+        return null;
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(60.0f), TLObject.FLAG_30));
+    }
+
+    public void setSubtitle(CharSequence charSequence) {
+        this.d.setText(charSequence);
+    }
+
+    public void setTitle(CharSequence charSequence) {
+        this.c.setText(charSequence);
     }
 }

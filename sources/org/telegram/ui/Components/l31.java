@@ -1,46 +1,27 @@
 package org.telegram.ui.Components;
 
-import android.text.TextPaint;
-import android.text.style.ClickableSpan;
-import android.text.style.URLSpan;
-import android.view.View;
-import org.telegram.messenger.Utilities;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class l31 extends ClickableSpan {
-    public final /* synthetic */ URLSpan a;
-    public final /* synthetic */ u31 b;
+public final class l31 extends s4.j {
+    public final /* synthetic */ w31 F;
 
-    public l31(u31 u31Var, URLSpan uRLSpan) {
-        this.b = u31Var;
-        this.a = uRLSpan;
+    public l31(w31 w31Var) {
+        this.F = w31Var;
     }
 
-    @Override // android.text.style.ClickableSpan
-    public final void onClick(View view) {
-        u31 u31Var = this.b;
-        Utilities.CallbackReturn callbackReturn = u31Var.N;
-        URLSpan uRLSpan = this.a;
-        if (callbackReturn != null) {
-            if (((Boolean) callbackReturn.run(uRLSpan)).booleanValue()) {
-                u31Var.dismiss();
-            }
-        } else {
-            org.telegram.ui.ActionBar.n2 n2Var = u31Var.M;
-            if (n2Var != null) {
-                e5.q0(n2Var, uRLSpan.getURL(), false, false);
-            }
-        }
+    @Override // s4.j
+    public final void O() {
+        ViewGroup viewGroup;
+        viewGroup = ((org.telegram.ui.ActionBar.g3) this.F).containerView;
+        viewGroup.invalidate();
     }
 
-    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        int min = Math.min(textPaint.getAlpha(), (textPaint.getColor() >> 24) & 255);
-        if (!(this.a instanceof l51)) {
-            textPaint.setUnderlineText(true);
-        }
-        textPaint.setColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.k5, false));
-        textPaint.setAlpha(min);
+    @Override // s4.j
+    public final void P(s4.c1 c1Var) {
+        ViewGroup viewGroup;
+        viewGroup = ((org.telegram.ui.ActionBar.g3) this.F).containerView;
+        viewGroup.invalidate();
     }
 }

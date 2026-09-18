@@ -19,7 +19,7 @@ import java.util.Arrays;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public class q9 extends da {
     public s4.c0 E0;
@@ -476,7 +476,7 @@ public class q9 extends da {
             }
         }
         if (parent != null) {
-            return this.E != null ? RecyclerView.R(view) : viewGroup.indexOfChild(view);
+            return this.E != null ? RecyclerView.S(view) : viewGroup.indexOfChild(view);
         }
         return -1;
     }
@@ -512,7 +512,7 @@ public class q9 extends da {
         ArrayList arrayList = this.F0;
         arrayList.clear();
         ((p9) view).fillTextLayoutBlocks(arrayList);
-        if (view instanceof org.telegram.ui.u2) {
+        if (view instanceof org.telegram.ui.t2) {
             return true;
         }
         return !arrayList.isEmpty();

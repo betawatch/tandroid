@@ -1,19 +1,52 @@
 package org.telegram.ui;
 
-import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class dw0 implements View.OnClickListener {
-    public final /* synthetic */ org.telegram.ui.Components.n70 a;
+public final /* synthetic */ class dw0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ow0 b;
 
-    public dw0(org.telegram.ui.Components.n70 n70Var) {
-        this.a = n70Var;
+    public /* synthetic */ dw0(ow0 ow0Var, int i10) {
+        this.a = i10;
+        this.b = ow0Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        org.telegram.ui.Components.qc.e();
-        this.a.s();
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                ow0 ow0Var = this.b;
+                AndroidUtilities.runOnUIThread(new dw0(ow0Var, 3));
+                org.telegram.ui.Cells.t1 t1Var = ow0Var.L;
+                if (t1Var != null) {
+                    t1Var.setVisibility(0);
+                    org.telegram.ui.Cells.t1 t1Var2 = ow0Var.L;
+                    t1Var2.L7 = null;
+                    t1Var2.invalidate();
+                }
+                ym ymVar = ow0Var.e0;
+                if (ymVar != null) {
+                    AndroidUtilities.runOnUIThread(ymVar);
+                    ow0Var.e0 = null;
+                    break;
+                }
+                break;
+            case 1:
+                this.b.c(false);
+                break;
+            case 2:
+                this.b.c(false);
+                break;
+            default:
+                super/*android.app.Dialog*/.dismiss();
+                break;
+        }
+    }
+
+    public /* synthetic */ dw0(ow0 ow0Var, boolean z10) {
+        this.a = 0;
+        this.b = ow0Var;
     }
 }

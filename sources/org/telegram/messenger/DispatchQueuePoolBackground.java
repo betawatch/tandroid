@@ -4,7 +4,7 @@ import android.os.SystemClock;
 import android.util.SparseIntArray;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public class DispatchQueuePoolBackground {
     public static final String THREAD_PREFIX = "DispatchQueuePoolThreadSafety_";
@@ -82,7 +82,7 @@ public class DispatchQueuePoolBackground {
                 this.totalTasksCount++;
                 this.busyQueues.add(remove);
                 this.busyQueuesMap.put(remove.index, this.busyQueuesMap.get(remove.index, 0) + 1);
-                if (ah.y0.b) {
+                if (zg.f0.b) {
                     remove.setPriority(1);
                 } else if (remove.getPriority() != 10) {
                     remove.setPriority(10);
@@ -104,7 +104,7 @@ public class DispatchQueuePoolBackground {
         if (backgroundQueue == null) {
             backgroundQueue = new DispatchQueuePoolBackground(Math.max(1, Runtime.getRuntime().availableProcessors()));
         }
-        Utilities.globalQueue.postRunnable(new e(arrayList2, 2));
+        Utilities.globalQueue.postRunnable(new g(arrayList2, 2));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -135,7 +135,7 @@ public class DispatchQueuePoolBackground {
     public static /* synthetic */ void lambda$finishCollectUpdateRunnables$3(ArrayList arrayList) {
         backgroundQueue.execute((ArrayList<Runnable>) arrayList);
         arrayList.clear();
-        AndroidUtilities.runOnUIThread(new e(arrayList, 3));
+        AndroidUtilities.runOnUIThread(new g(arrayList, 3));
     }
 
     public static void execute(Runnable runnable) {
@@ -153,7 +153,7 @@ public class DispatchQueuePoolBackground {
         if (updateTaskCollection == null) {
             ArrayList<ArrayList<Runnable>> arrayList = freeCollections;
             if (!arrayList.isEmpty()) {
-                updateTaskCollection = (ArrayList) i2.g.z(1, arrayList);
+                updateTaskCollection = (ArrayList) hg.k0.z(1, arrayList);
             } else {
                 updateTaskCollection = new ArrayList<>(100);
             }

@@ -1,45 +1,40 @@
 package hg;
 
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.view.View;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.Components.j51;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class q0 {
-    public final int a;
-    public final int b;
-    public final String c;
-    public final int d;
-    public final TLRPC.MessagesFilter e;
-    public TLObject f;
-    public o0 g;
-    public boolean h;
+public final /* synthetic */ class q0 implements org.telegram.ui.ActionBar.b2, Utilities.Callback5 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ u0 b;
 
-    public q0(int i10, int i11, String str) {
-        this.h = true;
+    public /* synthetic */ q0(u0 u0Var, int i10) {
         this.a = i10;
-        this.c = str;
-        this.e = null;
-        this.d = i11;
+        this.b = u0Var;
     }
 
-    public final boolean a() {
-        int i10 = this.d;
-        return i10 == 0 || i10 == 1 || i10 == 2 || i10 == 3 || i10 == 5;
-    }
-
-    public final boolean b(q0 q0Var) {
-        if (this.d == q0Var.d) {
-            return true;
+    @Override // org.telegram.ui.ActionBar.b2
+    public void f(org.telegram.ui.ActionBar.c2 c2Var, int i10) {
+        switch (this.a) {
+            case 0:
+                this.b.a0();
+                break;
+            case 1:
+                this.b.finishFragment();
+                break;
+            default:
+                this.b.a0();
+                break;
         }
-        return a() && q0Var.a();
     }
 
-    public q0(int i10, int i11, TLRPC.MessagesFilter messagesFilter, int i12) {
-        this.h = true;
-        this.a = i10;
-        this.b = i11;
-        this.e = messagesFilter;
-        this.d = i12;
+    @Override // org.telegram.messenger.Utilities.Callback5
+    public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
+        ((Integer) obj3).getClass();
+        ((Float) obj4).getClass();
+        ((Float) obj5).getClass();
+        u0.W(this.b, (j51) obj, (View) obj2);
     }
 }

@@ -1,52 +1,60 @@
 package th;
 
-import android.graphics.ColorFilter;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
+import android.content.Context;
+import android.view.View;
+import java.util.HashMap;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Cells.z;
+import org.telegram.ui.Components.al0;
+import org.telegram.ui.Components.f20;
+import org.telegram.ui.Components.m30;
+import org.telegram.ui.Components.vc;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public abstract class c extends Drawable {
-    public final z a;
-    public int b;
-    public int c = 255;
+public final class c implements al0 {
+    public final /* synthetic */ f6 a;
+    public final /* synthetic */ Context b;
+    public final /* synthetic */ f c;
 
-    public c(f6 f6Var) {
-        int v02 = j6.v0(j6.i6, f6Var);
-        this.b = v02;
-        this.a = j6.Y(v02, 0, 0);
+    public c(Context context, f6 f6Var, f fVar) {
+        this.c = fVar;
+        this.a = f6Var;
+        this.b = context;
     }
 
-    public abstract void a(int i10);
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getAlpha() {
-        return this.c;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return 0;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public void onBoundsChange(Rect rect) {
-        super.onBoundsChange(rect);
-        this.a.setBounds(rect);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        if (this.c != i10) {
-            this.c = i10;
-            a(i10);
+    @Override // org.telegram.ui.Components.al0
+    public final void d(int i10, View view) {
+        TLRPC.TL_help_country tL_help_country;
+        f fVar = this.c;
+        f20 f20Var = fVar.h0;
+        HashMap hashMap = fVar.j0;
+        if (i10 == 0 || (tL_help_country = (TLRPC.TL_help_country) fVar.d0.G(i10 - 1).G) == null) {
+            return;
         }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+        boolean z10 = false;
+        if (hashMap.containsKey(tL_help_country.iso2)) {
+            f20Var.c((m30) hashMap.remove(tL_help_country.iso2));
+        } else {
+            int size = hashMap.size();
+            int i11 = fVar.m0;
+            if (size >= i11) {
+                new vc(fVar.n0, this.a).Q(R.raw.info, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.PollV2YouCanAddXCountriesOnly, Integer.valueOf(i11)))).j();
+                return;
+            }
+            m30 m30Var = new m30(this.b, tL_help_country);
+            m30Var.setOnClickListener(new a(fVar, 4));
+            f20Var.a(m30Var);
+            hashMap.put(tL_help_country.iso2, m30Var);
+            z10 = true;
+        }
+        if (view instanceof xg.b) {
+            ((xg.b) view).c(z10, true);
+        }
+        fVar.d0.N(true);
+        fVar.e0.b(hashMap.size(), true);
     }
 }

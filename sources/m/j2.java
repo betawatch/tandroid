@@ -7,11 +7,11 @@ import android.view.MenuItem;
 import android.widget.PopupWindow;
 import java.lang.reflect.Method;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class j2 extends d2 implements e2 {
     public static final Method T;
-    public l.d S;
+    public k2.u S;
 
     static {
         try {
@@ -24,25 +24,25 @@ public final class j2 extends d2 implements e2 {
     }
 
     @Override // m.e2
-    public final void d(l.l lVar, MenuItem menuItem) {
-        l.d dVar = this.S;
-        if (dVar != null) {
-            dVar.d(lVar, menuItem);
-        }
-    }
-
-    @Override // m.e2
-    public final void o(l.l lVar, l.n nVar) {
-        l.d dVar = this.S;
-        if (dVar != null) {
-            dVar.o(lVar, nVar);
+    public final void G(l.k kVar, l.m mVar) {
+        k2.u uVar = this.S;
+        if (uVar != null) {
+            uVar.G(kVar, mVar);
         }
     }
 
     @Override // m.d2
-    public final r1 q(Context context, boolean z10) {
+    public final r1 o(Context context, boolean z10) {
         i2 i2Var = new i2(context, z10);
         i2Var.setHoverListener(this);
         return i2Var;
+    }
+
+    @Override // m.e2
+    public final void s(l.k kVar, MenuItem menuItem) {
+        k2.u uVar = this.S;
+        if (uVar != null) {
+            uVar.s(kVar, menuItem);
+        }
     }
 }

@@ -1,23 +1,25 @@
 package rg;
 
-import org.telegram.ui.zt0;
+import android.content.Context;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.Components.Premium.LimitPreviewView;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class h0 implements c {
-    public final /* synthetic */ zt0 a;
+public final class h0 extends LimitPreviewView {
+    public final /* synthetic */ i0 m0;
 
-    public h0(zt0 zt0Var) {
-        this.a = zt0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public h0(i0 i0Var, Context context, int i10, int i11, int i12, float f7, f6 f6Var) {
+        super(context, i10, i11, i12, f7, f6Var);
+        this.m0 = i0Var;
     }
 
-    @Override // rg.c
-    public final void a() {
-        this.a.r0(null, true);
-    }
-
-    @Override // rg.c
-    public final k b() {
-        return this.a.S0;
+    @Override // android.view.View
+    public final void invalidate() {
+        if (this.m0.e.f0) {
+            return;
+        }
+        super.invalidate();
     }
 }

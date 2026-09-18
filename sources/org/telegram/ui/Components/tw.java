@@ -1,78 +1,44 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.os.Build;
-import android.view.MotionEvent;
-import j$.util.Objects;
-import org.telegram.messenger.AndroidUtilities;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class tw extends pg.d {
-    public boolean Y2;
-    public final /* synthetic */ kz Z2;
+public final class tw extends s4.s {
+    public final /* synthetic */ kz Q;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public tw(kz kzVar, Context context) {
-        super(context, null);
-        this.Z2 = kzVar;
+    public tw(kz kzVar) {
+        super(5);
+        this.Q = kzVar;
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView
-    public final void k0(int i10, int i11) {
-        bh.f fVar;
-        kz kzVar = this.Z2;
-        fz fzVar = kzVar.z0;
-        if (Build.VERSION.SDK_INT >= 31 && (fVar = kzVar.j2) != null) {
-            fVar.f(i10, i11);
-            kzVar.C();
+    @Override // s4.s, s4.c0, s4.o0
+    public final int o0(int i10, of.e eVar, s4.z0 z0Var) {
+        int o02 = super.o0(i10, eVar, z0Var);
+        kz kzVar = this.Q;
+        if (o02 != 0 && kzVar.D0.getScrollState() == 1) {
+            kzVar.X1 = false;
+            kzVar.Y();
         }
-        if (kzVar.C0 != null) {
-            kzVar.B0.setUnderlineHeight(kzVar.D0.canScrollVertically(-1) ? AndroidUtilities.getShadowHeight() : 0);
+        if (kzVar.T0 == null) {
+            gg.g1 g1Var = new gg.g1(kzVar, kzVar.c1, kzVar.t1.a(), kzVar.t1.f(), 1);
+            kzVar.T0 = g1Var;
+            g1Var.a();
         }
-        if (fzVar != null && getAdapter() == fzVar && fzVar.d == 0) {
-            fz fzVar2 = fzVar.O.w;
-            if (fzVar2.Q.G0.F || fzVar2.y) {
-                return;
-            }
-            if (kzVar.E0.N0() + 50 > fzVar.h()) {
-                dz dzVar = fzVar.O;
-                Objects.requireNonNull(dzVar);
-                AndroidUtilities.runOnUIThread(new sw(dzVar, 0));
-            }
-        }
+        kzVar.T0.b();
+        return o02;
     }
 
-    @Override // org.telegram.ui.Components.ll0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        kz kzVar = this.Z2;
-        if (kzVar.f) {
-            return false;
+    @Override // s4.c0, s4.o0
+    public final void v0(RecyclerView recyclerView, s4.z0 z0Var, int i10) {
+        try {
+            ji.o oVar = new ji.o(recyclerView.getContext(), 2);
+            oVar.a = i10;
+            w0(oVar);
+        } catch (Exception e) {
+            FileLog.e(e);
         }
-        org.telegram.ui.st q6 = org.telegram.ui.st.q();
-        tw twVar = kzVar.D0;
-        kzVar.getMeasuredHeight();
-        return super.onInterceptTouchEvent(motionEvent) || q6.r(motionEvent, twVar, kzVar.g2, this.p2);
-    }
-
-    @Override // org.telegram.ui.Components.ll0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        kz kzVar = this.Z2;
-        if (kzVar.I0 && kzVar.y0.h() > 0) {
-            this.Y2 = true;
-            kzVar.E0.h1(0, 0);
-            kzVar.I0 = false;
-            this.Y2 = false;
-        }
-        super.onLayout(z10, i10, i11, i12, i13);
-        kzVar.q(true);
-    }
-
-    @Override // org.telegram.ui.Components.ll0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        if (this.Y2) {
-            return;
-        }
-        super.requestLayout();
     }
 }

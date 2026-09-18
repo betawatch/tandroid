@@ -3,16 +3,17 @@ package l2;
 import b2.p;
 import b2.r0;
 import b2.s;
+import com.google.firebase.messaging.t;
 import j$.util.Objects;
 import java.util.ArrayList;
 import java.util.List;
 import x2.r;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class k {
     public final y2.n a;
-    public final fg.f b;
+    public final t b;
     public final int[] c;
     public final int d;
     public final g2.h e;
@@ -27,7 +28,7 @@ public final class k {
     public boolean n;
 
     /* JADX WARN: Type inference failed for: r0v0, types: [java.lang.Object, l2.k] */
-    public k(p pVar, y2.n nVar, m2.c cVar, fg.f fVar, int i10, int[] iArr, r rVar, int i11, g2.h hVar, long j3, int i12, boolean z10, ArrayList arrayList, n nVar2) {
+    public k(p pVar, y2.n nVar, m2.c cVar, t tVar, int i10, int[] iArr, r rVar, int i11, g2.h hVar, long j3, int i12, boolean z10, ArrayList arrayList, n nVar2) {
         m2.m mVar;
         i[] iVarArr;
         s sVar;
@@ -36,7 +37,7 @@ public final class k {
         ?? obj = new Object();
         obj.a = nVar;
         obj.k = cVar;
-        obj.b = fVar;
+        obj.b = tVar;
         obj.c = iArr;
         obj.j = rVar;
         obj.d = i11;
@@ -54,9 +55,9 @@ public final class k {
         k kVar = obj;
         while (i14 < kVar.i.length) {
             m2.m mVar2 = (m2.m) a2.get(rVar.h(i14));
-            m2.b P = fVar.P(mVar2.b);
+            m2.b j10 = tVar.j(mVar2.b);
             i[] iVarArr2 = kVar.i;
-            m2.b bVar = P == null ? (m2.b) mVar2.b.get(i13) : P;
+            m2.b bVar = j10 == null ? (m2.b) mVar2.b.get(i13) : j10;
             s sVar2 = mVar2.a;
             pVar.getClass();
             String str = sVar2.q;
@@ -65,7 +66,7 @@ public final class k {
                     mVar = mVar2;
                     sVar = sVar2;
                     iVarArr = iVarArr2;
-                    hVar2 = new u3.d((rb.a) pVar.c, pVar.b ? 1 : 3);
+                    hVar2 = new u3.d((qb.b) pVar.c, pVar.b ? 1 : 3);
                 } else if (Objects.equals(str, "image/jpeg")) {
                     hVar2 = new k3.a(1);
                 } else if (Objects.equals(str, "image/png")) {
@@ -76,32 +77,32 @@ public final class k {
                     int i16 = pVar.b ? i15 : i15 | 32;
                     iVarArr = iVarArr2;
                     sVar = sVar2;
-                    hVar2 = new w3.h((rb.a) pVar.c, i16, null, arrayList, nVar3);
+                    hVar2 = new w3.h((qb.b) pVar.c, i16, null, arrayList, nVar3);
                 }
                 dVar = new v2.d(hVar2, i11, sVar);
                 v2.d dVar2 = dVar;
                 int i17 = i14;
-                long j10 = d;
-                iVarArr[i17] = new i(j10, mVar, bVar, dVar2, 0L, mVar.d());
+                long j11 = d;
+                iVarArr[i17] = new i(j11, mVar, bVar, dVar2, 0L, mVar.d());
                 i14 = i17 + 1;
                 kVar = this;
                 nVar3 = nVar2;
-                d = j10;
+                d = j11;
                 i13 = 0;
             } else if (pVar.b) {
-                hVar2 = new z3.h(((rb.a) pVar.c).v(sVar2), sVar2);
+                hVar2 = new z3.h(((qb.b) pVar.c).x(sVar2), sVar2);
             } else {
                 dVar = null;
                 mVar = mVar2;
                 iVarArr = iVarArr2;
                 v2.d dVar22 = dVar;
                 int i172 = i14;
-                long j102 = d;
-                iVarArr[i172] = new i(j102, mVar, bVar, dVar22, 0L, mVar.d());
+                long j112 = d;
+                iVarArr[i172] = new i(j112, mVar, bVar, dVar22, 0L, mVar.d());
                 i14 = i172 + 1;
                 kVar = this;
                 nVar3 = nVar2;
-                d = j102;
+                d = j112;
                 i13 = 0;
             }
             mVar = mVar2;
@@ -110,12 +111,12 @@ public final class k {
             dVar = new v2.d(hVar2, i11, sVar);
             v2.d dVar222 = dVar;
             int i1722 = i14;
-            long j1022 = d;
-            iVarArr[i1722] = new i(j1022, mVar, bVar, dVar222, 0L, mVar.d());
+            long j1122 = d;
+            iVarArr[i1722] = new i(j1122, mVar, bVar, dVar222, 0L, mVar.d());
             i14 = i1722 + 1;
             kVar = this;
             nVar3 = nVar2;
-            d = j1022;
+            d = j1122;
             i13 = 0;
         }
     }
@@ -132,11 +133,11 @@ public final class k {
     public final i b(int i10) {
         i[] iVarArr = this.i;
         i iVar = iVarArr[i10];
-        m2.b P = this.b.P(iVar.b.b);
-        if (P == null || P.equals(iVar.c)) {
+        m2.b j3 = this.b.j(iVar.b.b);
+        if (j3 == null || j3.equals(iVar.c)) {
             return iVar;
         }
-        i iVar2 = new i(iVar.e, iVar.b, P, iVar.a, iVar.f, iVar.d);
+        i iVar2 = new i(iVar.e, iVar.b, j3, iVar.a, iVar.f, iVar.d);
         iVarArr[i10] = iVar2;
         return iVar2;
     }

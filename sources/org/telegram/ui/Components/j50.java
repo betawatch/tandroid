@@ -12,7 +12,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.camera.Camera2Session;
 import org.telegram.messenger.camera.CameraController;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class j50 implements TextureView.SurfaceTextureListener {
     public final /* synthetic */ int a;
@@ -23,8 +23,8 @@ public final class j50 implements TextureView.SurfaceTextureListener {
         this.b = obj;
     }
 
-    /* JADX WARN: Type inference failed for: r5v2, types: [org.telegram.ui.Components.q01] */
-    /* JADX WARN: Type inference failed for: r6v0, types: [org.telegram.ui.Components.q01] */
+    /* JADX WARN: Type inference failed for: r5v2, types: [org.telegram.ui.Components.s01] */
+    /* JADX WARN: Type inference failed for: r6v0, types: [org.telegram.ui.Components.s01] */
     @Override // android.view.TextureView.SurfaceTextureListener
     public final void onSurfaceTextureAvailable(SurfaceTexture surfaceTexture, int i10, int i11) {
         switch (this.a) {
@@ -44,28 +44,28 @@ public final class j50 implements TextureView.SurfaceTextureListener {
             case 1:
                 break;
             case 2:
-                final w01 w01Var = (w01) this.b;
-                ArrayList arrayList = w01Var.c;
-                u01 u01Var = w01Var.a;
-                if (u01Var != null) {
-                    u01Var.i();
-                    w01Var.a = null;
+                final y01 y01Var = (y01) this.b;
+                ArrayList arrayList = y01Var.c;
+                w01 w01Var = y01Var.a;
+                if (w01Var != null) {
+                    w01Var.i();
+                    y01Var.a = null;
                 }
                 final int i12 = 0;
-                ?? r52 = new Runnable() { // from class: org.telegram.ui.Components.q01
+                ?? r52 = new Runnable() { // from class: org.telegram.ui.Components.s01
                     @Override // java.lang.Runnable
                     public final void run() {
                         switch (i12) {
                             case 0:
-                                w01Var.invalidate();
+                                y01Var.invalidate();
                                 break;
                             default:
-                                w01 w01Var2 = w01Var;
-                                Runnable runnable = w01Var2.d;
+                                y01 y01Var2 = y01Var;
+                                Runnable runnable = y01Var2.d;
                                 if (runnable != null) {
-                                    w01Var2.e = true;
-                                    w01Var2.d = null;
-                                    w01.b(runnable);
+                                    y01Var2.e = true;
+                                    y01Var2.d = null;
+                                    y01.b(runnable);
                                     break;
                                 }
                                 break;
@@ -73,54 +73,54 @@ public final class j50 implements TextureView.SurfaceTextureListener {
                     }
                 };
                 final int i13 = 1;
-                u01 u01Var2 = new u01(surfaceTexture, r52, new Runnable() { // from class: org.telegram.ui.Components.q01
+                w01 w01Var2 = new w01(surfaceTexture, r52, new Runnable() { // from class: org.telegram.ui.Components.s01
                     @Override // java.lang.Runnable
                     public final void run() {
                         switch (i13) {
                             case 0:
-                                w01Var.invalidate();
+                                y01Var.invalidate();
                                 break;
                             default:
-                                w01 w01Var2 = w01Var;
-                                Runnable runnable = w01Var2.d;
+                                y01 y01Var2 = y01Var;
+                                Runnable runnable = y01Var2.d;
                                 if (runnable != null) {
-                                    w01Var2.e = true;
-                                    w01Var2.d = null;
-                                    w01.b(runnable);
+                                    y01Var2.e = true;
+                                    y01Var2.d = null;
+                                    y01.b(runnable);
                                     break;
                                 }
                                 break;
                         }
                     }
                 }, i10, i11);
-                w01Var.a = u01Var2;
-                u01Var2.a = EmuDetector.with(w01Var.getContext()).detect();
+                y01Var.a = w01Var2;
+                w01Var2.a = EmuDetector.with(y01Var.getContext()).detect();
                 if (!arrayList.isEmpty()) {
                     for (int i14 = 0; i14 < arrayList.size(); i14++) {
-                        v01 v01Var = (v01) arrayList.get(i14);
-                        Bitmap bitmap = v01Var.e;
+                        x01 x01Var = (x01) arrayList.get(i14);
+                        Bitmap bitmap = x01Var.e;
                         if (bitmap != null) {
-                            w01Var.a.c(v01Var.f, bitmap, v01Var.c, v01Var.d);
+                            y01Var.a.c(x01Var.f, bitmap, x01Var.c, x01Var.d);
                         } else {
-                            ArrayList arrayList2 = v01Var.b;
+                            ArrayList arrayList2 = x01Var.b;
                             if (arrayList2 != null) {
-                                w01Var.a.f(arrayList2, v01Var.d);
+                                y01Var.a.f(arrayList2, x01Var.d);
                             } else {
-                                w01Var.a.e(v01Var.a, v01Var.g, v01Var.d);
+                                y01Var.a.e(x01Var.a, x01Var.g, x01Var.d);
                             }
                         }
                     }
                     arrayList.clear();
-                    Choreographer.getInstance().postFrameCallback(w01Var.b);
+                    Choreographer.getInstance().postFrameCallback(y01Var.b);
                     break;
                 }
                 break;
             case 3:
                 break;
             default:
-                wh.g gVar = (wh.g) this.b;
+                vh.g gVar = (vh.g) this.b;
                 if (gVar.f == null) {
-                    wh.f fVar = new wh.f(gVar, surfaceTexture, i10, i11, new wh.d(gVar, 1));
+                    vh.f fVar = new vh.f(gVar, surfaceTexture, i10, i11, new vh.d(gVar, 1));
                     gVar.f = fVar;
                     fVar.start();
                     break;
@@ -156,42 +156,42 @@ public final class j50 implements TextureView.SurfaceTextureListener {
                 }
                 return true;
             case 1:
-                ((eg0) this.b).V.w3.setSurfaceTexture(surfaceTexture);
+                ((fg0) this.b).V.w3.setSurfaceTexture(surfaceTexture);
                 return false;
             case 2:
-                w01 w01Var = (w01) this.b;
-                u01 u01Var = w01Var.a;
-                if (u01Var != null) {
-                    u01Var.i();
-                    w01Var.a = null;
+                y01 y01Var = (y01) this.b;
+                w01 w01Var = y01Var.a;
+                if (w01Var != null) {
+                    w01Var.i();
+                    y01Var.a = null;
                 }
-                Runnable runnable = w01Var.d;
+                Runnable runnable = y01Var.d;
                 if (runnable == null) {
                     return false;
                 }
-                w01Var.d = null;
-                w01.b(runnable);
+                y01Var.d = null;
+                y01.b(runnable);
                 return false;
             case 3:
-                b91 b91Var = (b91) this.b;
-                TextureView textureView = b91Var.d;
-                if (!b91Var.S) {
+                d91 d91Var = (d91) this.b;
+                TextureView textureView = d91Var.d;
+                if (!d91Var.S) {
                     return true;
                 }
-                if (b91Var.W) {
-                    b91Var.r = 2;
+                if (d91Var.W) {
+                    d91Var.r = 2;
                 }
                 textureView.setSurfaceTexture(surfaceTexture);
                 textureView.setVisibility(0);
-                b91Var.S = false;
+                d91Var.S = false;
                 return false;
             default:
-                wh.f fVar = ((wh.g) this.b).f;
+                vh.f fVar = ((vh.g) this.b).f;
                 if (fVar == null) {
                     return true;
                 }
                 fVar.a = false;
-                ((wh.g) this.b).f = null;
+                ((vh.g) this.b).f = null;
                 return true;
         }
     }
@@ -212,8 +212,8 @@ public final class j50 implements TextureView.SurfaceTextureListener {
             case 1:
                 return;
             case 2:
-                u01 u01Var = ((w01) this.b).a;
-                if (u01Var == null || (handler = u01Var.getHandler()) == null || !u01Var.b.get()) {
+                w01 w01Var = ((y01) this.b).a;
+                if (w01Var == null || (handler = w01Var.getHandler()) == null || !w01Var.b.get()) {
                     return;
                 }
                 handler.sendMessage(handler.obtainMessage(1, i10, i11));
@@ -221,7 +221,7 @@ public final class j50 implements TextureView.SurfaceTextureListener {
             case 3:
                 return;
             default:
-                wh.f fVar = ((wh.g) this.b).f;
+                vh.f fVar = ((vh.g) this.b).f;
                 if (fVar != null) {
                     synchronized (fVar.e) {
                         fVar.f = true;
@@ -238,10 +238,10 @@ public final class j50 implements TextureView.SurfaceTextureListener {
     public final void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
         switch (this.a) {
             case 3:
-                b91 b91Var = (b91) this.b;
-                if (b91Var.r == 1) {
-                    b91Var.n.getViewTreeObserver().addOnPreDrawListener(new org.telegram.ui.Cells.fa(this, 4));
-                    b91Var.n.invalidate();
+                d91 d91Var = (d91) this.b;
+                if (d91Var.r == 1) {
+                    d91Var.n.getViewTreeObserver().addOnPreDrawListener(new org.telegram.ui.Cells.fa(this, 4));
+                    d91Var.n.invalidate();
                     break;
                 }
                 break;

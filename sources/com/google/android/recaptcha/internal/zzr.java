@@ -14,7 +14,7 @@ import rd.p;
 import v7.t7;
 import zd.h0;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 final class zzr extends j implements p {
     int zza;
@@ -88,13 +88,13 @@ final class zzr extends j implements p {
                 Application context = zzu.zzl(zzuVar);
                 kotlin.jvm.internal.i.e(context, "context");
                 a8.f fVar = new a8.f(context, a8.f.k, com.google.android.gms.common.api.b.t, com.google.android.gms.common.api.i.c);
-                v e7 = w.e();
-                e7.d = new k6.c[]{l8.f.a};
-                e7.c = new xa.c(aVar2, 1);
-                e7.a = 34002;
-                Task e10 = fVar.e(0, e7.a());
-                kotlin.jvm.internal.i.d(e10, "doRead(...)");
-                h0 zza = zzdf.zza(e10);
+                v e = w.e();
+                e.d = new k6.c[]{l8.f.a};
+                e.c = new xa.c(aVar2, 1);
+                e.a = 34002;
+                Task e7 = fVar.e(0, e.a());
+                kotlin.jvm.internal.i.d(e7, "doRead(...)");
+                h0 zza = zzdf.zza(e7);
                 this.zza = 2;
                 obj = zza.await(this);
                 if (obj == aVar) {

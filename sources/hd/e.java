@@ -7,9 +7,9 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.NoSuchElementException;
 import org.telegram.tgnet.ConnectionsManager;
-import v7.a8;
+import v7.b8;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class e extends AbstractList implements List {
     public static final Object[] d = new Object[0];
@@ -515,7 +515,7 @@ public final class e extends AbstractList implements List {
 
     @Override // java.util.AbstractList
     public final void removeRange(int i10, int i11) {
-        a8.a(i10, i11, this.c);
+        b8.a(i10, i11, this.c);
         int i12 = i11 - i10;
         if (i12 == 0) {
             return;

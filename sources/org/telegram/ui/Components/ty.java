@@ -12,14 +12,14 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class ty extends ImageView {
     public int a;
-    public q5 b;
+    public o5 b;
     public boolean c;
-    public z5 d;
-    public xx e;
+    public x5 d;
+    public wx e;
     public final ImageReceiver.BackgroundThreadDrawHolder[] f;
     public float h;
     public ValueAnimator n;
@@ -36,7 +36,7 @@ public final class ty extends ImageView {
         this.c = z10;
     }
 
-    public z5 getSpan() {
+    public x5 getSpan() {
         return this.d;
     }
 
@@ -86,8 +86,8 @@ public final class ty extends ImageView {
             if (f7 != 0.0f) {
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(f7, 0.0f);
                 this.n = ofFloat;
-                ofFloat.addUpdateListener(new l6(this, 21));
-                this.n.addListener(new j6(this, 23));
+                ofFloat.addUpdateListener(new i6(this, 21));
+                this.n.addListener(new p8(this, 20));
                 this.n.setInterpolator(new OvershootInterpolator(5.0f));
                 this.n.setDuration(350L);
                 this.n.start();
@@ -95,7 +95,7 @@ public final class ty extends ImageView {
         }
     }
 
-    public void setSpan(z5 z5Var) {
-        this.d = z5Var;
+    public void setSpan(x5 x5Var) {
+        this.d = x5Var;
     }
 }

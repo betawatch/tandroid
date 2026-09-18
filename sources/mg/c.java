@@ -1,163 +1,107 @@
 package mg;
 
-import android.content.Context;
-import android.os.SystemClock;
-import android.view.MotionEvent;
-import android.view.ScaleGestureDetector;
-import android.view.VelocityTracker;
-import android.view.ViewConfiguration;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MediaDataController;
+import android.app.Activity;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
+import android.widget.TextView;
+import android.widget.Toast;
+import n7.a1;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.SharedConfig;
+import org.telegram.messenger.w1;
+import org.telegram.messenger.wl;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.ActionBar.l4;
+import org.telegram.ui.ActionBar.o2;
+import org.telegram.ui.Components.go0;
+import org.telegram.ui.Components.qv0;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.ProfileActivity;
+import org.telegram.ui.i5;
+import w7.x5;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class c {
-    public final ScaleGestureDetector a;
-    public q b;
-    public float c;
-    public float d;
-    public final float f;
-    public VelocityTracker g;
-    public boolean h;
-    public long k;
-    public boolean l;
-    public final float e = AndroidUtilities.dp(1.0f);
-    public int i = -1;
-    public int j = 0;
+public final /* synthetic */ class c implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ i b;
 
-    public c(Context context) {
-        this.f = ViewConfiguration.get(context).getScaledMinimumFlingVelocity();
-        this.a = new ScaleGestureDetector(context, new b(this, 0));
+    public /* synthetic */ c(i iVar, int i10) {
+        this.a = i10;
+        this.b = iVar;
     }
 
-    public final void a(MotionEvent motionEvent) {
-        float x10;
-        float y3;
-        float x11;
-        float y10;
-        float x12;
-        float y11;
-        p pVar;
-        this.a.onTouchEvent(motionEvent);
-        int action = motionEvent.getAction() & 255;
-        if (action == 0) {
-            this.i = motionEvent.getPointerId(0);
-            this.k = SystemClock.elapsedRealtime();
-        } else if (action == 1 || action == 3) {
-            if (!this.h && SystemClock.elapsedRealtime() - this.k < 800 && (pVar = this.b.M) != null) {
-                pVar.b0();
-            }
-            this.i = -1;
-        } else if (action == 6) {
-            int action2 = (65280 & motionEvent.getAction()) >> 8;
-            if (motionEvent.getPointerId(action2) == this.i) {
-                int i10 = action2 == 0 ? 1 : 0;
-                this.i = motionEvent.getPointerId(i10);
-                this.c = motionEvent.getX(i10);
-                this.d = motionEvent.getY(i10);
-            }
-        }
-        int i11 = this.i;
-        if (i11 == -1) {
-            i11 = 0;
-        }
-        this.j = motionEvent.findPointerIndex(i11);
-        int action3 = motionEvent.getAction();
-        if (action3 != 0) {
-            if (action3 == 1) {
-                if (this.h) {
-                    if (this.g != null) {
-                        try {
-                            x12 = motionEvent.getX(this.j);
-                        } catch (Exception unused) {
-                            x12 = motionEvent.getX();
-                        }
-                        this.c = x12;
-                        try {
-                            y11 = motionEvent.getY(this.j);
-                        } catch (Exception unused2) {
-                            y11 = motionEvent.getY();
-                        }
-                        this.d = y11;
-                        this.g.addMovement(motionEvent);
-                        this.g.computeCurrentVelocity(MediaDataController.MAX_STYLE_RUNS_COUNT);
-                        if (Math.max(Math.abs(this.g.getXVelocity()), Math.abs(this.g.getYVelocity())) >= this.f) {
-                            this.b.getClass();
-                        }
-                    }
-                    this.h = false;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                o2 R = LaunchActivity.R();
+                i5 i5Var = new i5(R.getParentActivity(), false);
+                if (R.getFragmentView() instanceof qv0) {
+                    i5Var.b = (qv0) R.getFragmentView();
                 }
-                VelocityTracker velocityTracker = this.g;
-                if (velocityTracker != null) {
-                    velocityTracker.recycle();
-                    this.g = null;
-                }
-                this.l = false;
-                return;
-            }
-            if (action3 != 2) {
-                if (action3 != 3) {
+                Activity parentActivity = R.getParentActivity();
+                LinearLayout f7 = w1.f(parentActivity, 1);
+                TextView textView = new TextView(parentActivity);
+                textView.setText("Saturation " + (i5.c * 5.0f));
+                int i10 = j6.n5;
+                wl.r(textView, j6.w0(null, i10, false), 1, 16.0f, 1);
+                textView.setMaxLines(1);
+                textView.setSingleLine(true);
+                textView.setGravity((LocaleController.isRTL ? 3 : 5) | 48);
+                f7.addView(textView, x5.d(-2, -1.0f, (LocaleController.isRTL ? 3 : 5) | 48, 21.0f, 13.0f, 21.0f, 0.0f));
+                go0 go0Var = new go0(parentActivity);
+                go0Var.setDelegate(new o0.a(i5Var, textView, false, 1));
+                go0Var.setReportChanges(true);
+                f7.addView(go0Var, x5.d(-1, 38.0f, 0, 5.0f, 4.0f, 5.0f, 0.0f));
+                TextView textView2 = new TextView(parentActivity);
+                textView2.setText("Alpha " + i5.e);
+                wl.r(textView2, j6.w0(null, i10, false), 1, 16.0f, 1);
+                textView2.setMaxLines(1);
+                textView2.setSingleLine(true);
+                textView2.setGravity((LocaleController.isRTL ? 3 : 5) | 48);
+                f7.addView(textView2, x5.d(-2, -1.0f, (LocaleController.isRTL ? 3 : 5) | 48, 21.0f, 13.0f, 21.0f, 0.0f));
+                go0 go0Var2 = new go0(parentActivity);
+                go0Var2.setDelegate(new a1(i5Var, textView2, false, 2));
+                go0Var2.setReportChanges(true);
+                f7.addView(go0Var2, x5.d(-1, 38.0f, 0, 5.0f, 4.0f, 5.0f, 0.0f));
+                TextView textView3 = new TextView(parentActivity);
+                textView3.setText("Blur Radius");
+                wl.r(textView3, j6.w0(null, i10, false), 1, 16.0f, 1);
+                textView3.setMaxLines(1);
+                textView3.setSingleLine(true);
+                textView3.setGravity((LocaleController.isRTL ? 3 : 5) | 48);
+                f7.addView(textView3, x5.d(-2, -1.0f, (LocaleController.isRTL ? 3 : 5) | 48, 21.0f, 13.0f, 21.0f, 0.0f));
+                go0 go0Var3 = new go0(parentActivity);
+                go0Var3.setDelegate(new org.telegram.ui.g(i5Var, 5));
+                go0Var3.setReportChanges(true);
+                f7.addView(go0Var3, x5.d(-1, 38.0f, 0, 5.0f, 4.0f, 5.0f, 0.0f));
+                f7.addOnLayoutChangeListener(new l4(go0Var, go0Var3, go0Var2));
+                ScrollView scrollView = new ScrollView(parentActivity);
+                scrollView.addView(f7);
+                i5Var.setCustomView(scrollView);
+                i5Var.show();
+                this.b.c(false);
+                break;
+            case 1:
+                i iVar = this.b;
+                iVar.getClass();
+                SharedConfig.toggleDebugWebView();
+                Toast.makeText(iVar.getContext(), LocaleController.getString(SharedConfig.debugWebView ? R.string.DebugMenuWebViewDebugEnabled : R.string.DebugMenuWebViewDebugDisabled), 0).show();
+                break;
+            case 2:
+                ProfileActivity.H4((Activity) this.b.getContext(), false);
+                break;
+            default:
+                i iVar2 = this.b;
+                iVar2.n = true;
+                try {
+                    iVar2.performHapticFeedback(0);
+                    break;
+                } catch (Exception unused) {
                     return;
                 }
-                VelocityTracker velocityTracker2 = this.g;
-                if (velocityTracker2 != null) {
-                    velocityTracker2.recycle();
-                    this.g = null;
-                }
-                this.l = false;
-                this.h = false;
-                return;
-            }
-        }
-        if (!this.l) {
-            VelocityTracker obtain = VelocityTracker.obtain();
-            this.g = obtain;
-            if (obtain != null) {
-                obtain.addMovement(motionEvent);
-            }
-            try {
-                x11 = motionEvent.getX(this.j);
-            } catch (Exception unused3) {
-                x11 = motionEvent.getX();
-            }
-            this.c = x11;
-            try {
-                y10 = motionEvent.getY(this.j);
-            } catch (Exception unused4) {
-                y10 = motionEvent.getY();
-            }
-            this.d = y10;
-            this.h = false;
-            this.l = true;
-            return;
-        }
-        try {
-            x10 = motionEvent.getX(this.j);
-        } catch (Exception unused5) {
-            x10 = motionEvent.getX();
-        }
-        try {
-            y3 = motionEvent.getY(this.j);
-        } catch (Exception unused6) {
-            y3 = motionEvent.getY();
-        }
-        float f7 = x10 - this.c;
-        float f10 = y3 - this.d;
-        if (!this.h) {
-            this.h = ((float) Math.sqrt((double) ((f10 * f10) + (f7 * f7)))) >= this.e;
-        }
-        if (this.h) {
-            q qVar = this.b;
-            if (!qVar.F) {
-                o.f(qVar.L, f7, f10);
-                qVar.r(false);
-            }
-            this.c = x10;
-            this.d = y3;
-            VelocityTracker velocityTracker3 = this.g;
-            if (velocityTracker3 != null) {
-                velocityTracker3.addMovement(motionEvent);
-            }
         }
     }
 }

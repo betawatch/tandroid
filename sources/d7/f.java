@@ -1,17 +1,16 @@
 package d7;
 
+import android.os.IBinder;
 import android.os.IInterface;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
-public interface f extends IInterface {
-    boolean getBooleanFlagValue(String str, boolean z10, int i10);
-
-    int getIntFlagValue(String str, int i10, int i11);
-
-    long getLongFlagValue(String str, long j3, int i10);
-
-    String getStringFlagValue(String str, String str2, int i10);
-
-    void init(x6.a aVar);
+public abstract class f extends o7.a implements g {
+    public static g asInterface(IBinder iBinder) {
+        if (iBinder == null) {
+            return null;
+        }
+        IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.flags.IFlagProvider");
+        return queryLocalInterface instanceof g ? (g) queryLocalInterface : new e(iBinder);
+    }
 }

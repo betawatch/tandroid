@@ -2,14 +2,20 @@ package org.telegram.ui;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class v01 extends org.telegram.ui.Cells.j {
-    public final /* synthetic */ a11 c0;
+public final class v01 extends org.telegram.ui.Cells.c9 {
+    public final /* synthetic */ b11 r;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public v01(a11 a11Var, Context context, org.telegram.ui.ActionBar.n2 n2Var, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(context, n2Var, f6Var);
-        this.c0 = a11Var;
+    public v01(b11 b11Var, Context context, org.telegram.ui.ActionBar.f6 f6Var, boolean z10, boolean z11) {
+        super(18, context, f6Var, z10, z11);
+        this.r = b11Var;
+    }
+
+    @Override // org.telegram.ui.Cells.c9
+    public final int a(int i10) {
+        this.r.e.getClass();
+        return i10;
     }
 }

@@ -1,96 +1,71 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.app.Activity;
 import android.graphics.Canvas;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BotForumHelper;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class ke extends FrameLayout {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ChatActivityEnterView b;
+    public final /* synthetic */ ChatActivityEnterView a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ ke(ChatActivityEnterView chatActivityEnterView, Context context, int i10) {
-        super(context);
-        this.a = i10;
-        this.b = chatActivityEnterView;
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        switch (this.a) {
-            case 0:
-                ChatActivityEnterView chatActivityEnterView = this.b;
-                fi.f4 f4Var = chatActivityEnterView.k0;
-                return (f4Var == null || f4Var.getVisibility() != 0) ? super.dispatchTouchEvent(motionEvent) : chatActivityEnterView.k0.dispatchTouchEvent(motionEvent);
-            case 1:
-                ChatActivityEnterView chatActivityEnterView2 = this.b;
-                if (!chatActivityEnterView2.J || chatActivityEnterView2.S4 == BotForumHelper.SteamingSendButtonState.BLOCKING) {
-                    return false;
-                }
-                return super.dispatchTouchEvent(motionEvent);
-            default:
-                return super.dispatchTouchEvent(motionEvent);
-        }
+    public ke(ChatActivityEnterView chatActivityEnterView, Activity activity) {
+        super(activity);
+        this.a = chatActivityEnterView;
     }
 
     @Override // android.view.ViewGroup
-    public boolean drawChild(Canvas canvas, View view, long j3) {
-        switch (this.a) {
-            case 1:
-                ChatActivityEnterView chatActivityEnterView = this.b;
-                if (view == chatActivityEnterView.J0 && chatActivityEnterView.h0) {
-                    return true;
+    public final boolean drawChild(final Canvas canvas, final View view, final long j3) {
+        ChatActivityEnterView chatActivityEnterView = this.a;
+        if (view != null && view == chatActivityEnterView.E0) {
+            return chatActivityEnterView.g0(canvas, new Utilities.Callback0Return() { // from class: org.telegram.ui.Components.je
+                @Override // org.telegram.messenger.Utilities.Callback0Return
+                public final Object run() {
+                    Boolean valueOf;
+                    valueOf = Boolean.valueOf(super/*android.widget.FrameLayout*/.drawChild(canvas, view, j3));
+                    return valueOf;
                 }
-                return super.drawChild(canvas, view, j3);
-            default:
-                return super.drawChild(canvas, view, j3);
+            });
         }
+        if (chatActivityEnterView.z4 && view == chatActivityEnterView.e1) {
+            return true;
+        }
+        return super.drawChild(canvas, view, j3);
     }
 
-    @Override // android.view.View
-    public void onSizeChanged(int i10, int i11, int i12, int i13) {
-        switch (this.a) {
-            case 1:
-                super.onSizeChanged(i10, i11, i12, i13);
-                setPivotX(i10 - AndroidUtilities.dp(22.0f));
-                setPivotY(i11 - AndroidUtilities.dp(22.0f));
-                break;
-            default:
-                super.onSizeChanged(i10, i11, i12, i13);
-                break;
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        ChatActivityEnterView chatActivityEnterView = this.a;
+        if (chatActivityEnterView.B0.isEmpty()) {
+            return;
         }
+        for (int i14 = 0; i14 < getChildCount(); i14++) {
+            View childAt = getChildAt(i14);
+            Float f7 = (Float) chatActivityEnterView.B0.get(childAt);
+            if (f7 != null) {
+                childAt.setTranslationX(f7.floatValue() - childAt.getLeft());
+                childAt.animate().translationX(0.0f).setDuration(150L).setInterpolator(qr.f).start();
+            }
+        }
+        chatActivityEnterView.B0.clear();
     }
 
-    @Override // android.view.View
-    public boolean onTouchEvent(MotionEvent motionEvent) {
-        switch (this.a) {
-            case 1:
-                ChatActivityEnterView chatActivityEnterView = this.b;
-                if (!chatActivityEnterView.J || chatActivityEnterView.S4 == BotForumHelper.SteamingSendButtonState.BLOCKING) {
-                    return false;
-                }
-                return super.onTouchEvent(motionEvent);
-            default:
-                return super.onTouchEvent(motionEvent);
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, i11);
+        int max = Math.max(AndroidUtilities.dp(44.0f), getMeasuredHeight());
+        ChatActivityEnterView chatActivityEnterView = this.a;
+        le.e eVar = chatActivityEnterView.f5;
+        if (eVar.e > 0.0f) {
+            eVar.a(max);
+        } else {
+            eVar.c(max);
         }
-    }
-
-    @Override // android.view.View
-    public void setVisibility(int i10) {
-        switch (this.a) {
-            case 2:
-                super.setVisibility(i10);
-                this.b.P1(true);
-                break;
-            default:
-                super.setVisibility(i10);
-                break;
-        }
+        chatActivityEnterView.O();
     }
 }

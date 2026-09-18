@@ -11,16 +11,16 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.bz;
-import org.telegram.ui.Components.fd;
-import org.telegram.ui.Components.og;
-import org.telegram.ui.Components.ov0;
-import org.telegram.ui.Components.qf;
-import org.telegram.ui.Components.qx;
+import org.telegram.ui.Components.cd;
+import org.telegram.ui.Components.mg;
+import org.telegram.ui.Components.of;
+import org.telegram.ui.Components.px;
+import org.telegram.ui.Components.qv0;
 import r0.m0;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
-public final class a implements m0, qx {
+public final class a implements m0, px {
     public boolean a;
     public int b;
     public Object c;
@@ -52,17 +52,17 @@ public final class a implements m0, qx {
 
     public boolean d() {
         bz bzVar;
-        qf qfVar;
+        of ofVar;
         ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.c;
         if (chatActivityEnterView.w3) {
-            return (chatActivityEnterView.y3 || (qfVar = chatActivityEnterView.E0) == null || qfVar.length() <= 0) && (bzVar = chatActivityEnterView.U0.y0) != null && bzVar.h() > 0 && !chatActivityEnterView.j3;
+            return (chatActivityEnterView.y3 || (ofVar = chatActivityEnterView.E0) == null || ofVar.length() <= 0) && (bzVar = chatActivityEnterView.U0.y0) != null && bzVar.h() > 0 && !chatActivityEnterView.j3;
         }
         return false;
     }
 
     public void e() {
         ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.c;
-        ov0 ov0Var = chatActivityEnterView.l1;
+        qv0 qv0Var = chatActivityEnterView.l1;
         if (d()) {
             AnimatorSet animatorSet = chatActivityEnterView.A3;
             if (animatorSet != null) {
@@ -72,25 +72,25 @@ public final class a implements m0, qx {
             this.a = chatActivityEnterView.y3;
             chatActivityEnterView.y3 = true;
             NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.stopAllHeavyOperations, 1);
-            int height = ((((ov0Var.getHeight() - AndroidUtilities.statusBarHeight) - AndroidUtilities.navigationBarHeight) - AndroidUtilities.dp(6.0f)) - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) - chatActivityEnterView.getHeight();
+            int height = ((((qv0Var.getHeight() - AndroidUtilities.statusBarHeight) - AndroidUtilities.navigationBarHeight) - AndroidUtilities.dp(6.0f)) - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) - chatActivityEnterView.getHeight();
             chatActivityEnterView.C3 = height;
             if (chatActivityEnterView.Q1 == 2) {
                 int dp = AndroidUtilities.dp(175.0f);
                 Point point = AndroidUtilities.displaySize;
                 chatActivityEnterView.C3 = Math.min(height, dp + (point.x > point.y ? chatActivityEnterView.x2 : chatActivityEnterView.w2));
             }
-            if (chatActivityEnterView.c5 == null) {
+            if (chatActivityEnterView.d5 == null) {
                 chatActivityEnterView.U0.getLayoutParams().height = chatActivityEnterView.C3;
             }
             chatActivityEnterView.U0.setLayerType(2, null);
-            ov0Var.requestLayout();
-            if (chatActivityEnterView.x4) {
-                ov0Var.setForeground(new fd(chatActivityEnterView));
+            qv0Var.requestLayout();
+            if (chatActivityEnterView.y4) {
+                qv0Var.setForeground(new cd(chatActivityEnterView));
             }
             this.b = (int) chatActivityEnterView.getTranslationY();
-            og ogVar = chatActivityEnterView.Y2;
-            if (ogVar != null) {
-                ogVar.m1();
+            mg mgVar = chatActivityEnterView.Y2;
+            if (mgVar != null) {
+                mgVar.s1();
             }
         }
     }

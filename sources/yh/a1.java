@@ -1,26 +1,36 @@
 package yh;
 
-import android.content.Context;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.Components.yc;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
-/* loaded from: classes.dex */
-public final class a1 extends x4 {
-    public final /* synthetic */ p1 x0;
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class a1 implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ a4 b;
+    public final /* synthetic */ TL_stars.TL_starGiftUnique c;
+    public final /* synthetic */ zf.a d;
+    public final /* synthetic */ Runnable e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public a1(p1 p1Var, Context context, int i10, sg.k kVar, long j3, m0 m0Var) {
-        super(context, i10, null, kVar, j3, m0Var, false, false);
-        this.x0 = p1Var;
+    public /* synthetic */ a1(a4 a4Var, TL_stars.TL_starGiftUnique tL_starGiftUnique, zf.a aVar, Runnable runnable, int i10) {
+        this.a = i10;
+        this.b = a4Var;
+        this.c = tL_starGiftUnique;
+        this.d = aVar;
+        this.e = runnable;
     }
 
-    @Override // yh.x4
-    public final yc X() {
-        f6 f6Var;
-        p1 p1Var = this.x0;
-        org.telegram.ui.ActionBar.d3 d3Var = p1Var.container;
-        f6Var = p1Var.resourcesProvider;
-        return new yc(d3Var, f6Var);
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                a4.M0(this.b, this.c, this.d, this.e, tLObject, tL_error);
+                break;
+            default:
+                a4.t0(this.b, this.c, this.d, this.e, tLObject, tL_error);
+                break;
+        }
     }
 }

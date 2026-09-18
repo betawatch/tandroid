@@ -1,149 +1,61 @@
 package org.telegram.ui.Components;
 
-import java.util.List;
+import android.view.TextureView;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class y61 implements b2.z0 {
-    public final /* synthetic */ g71 a;
+public final /* synthetic */ class y61 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public y61(g71 g71Var) {
-        this.a = g71Var;
+    public /* synthetic */ y61(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // b2.z0
-    public final /* synthetic */ void onCues(d2.c cVar) {
-    }
-
-    @Override // b2.z0
-    public final void onPlayerStateChanged(boolean z10, int i10) {
-        g71 g71Var = this.a;
-        if (g71Var.H || i10 != 3) {
-            return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                h71 h71Var = (h71) this.b;
+                i2.e0 e0Var = h71Var.d;
+                if (e0Var != null) {
+                    TextureView textureView = h71Var.n;
+                    e0Var.B1();
+                    if (textureView != null && textureView == e0Var.V) {
+                        e0Var.B1();
+                        e0Var.o1();
+                        e0Var.t1(null);
+                        e0Var.m1(0, 0);
+                    }
+                    h71Var.d.v1(h71Var.n);
+                    ArrayList arrayList = h71Var.N;
+                    if (arrayList != null) {
+                        h71Var.F(arrayList, h71Var.O);
+                    } else if (h71Var.U) {
+                        h71Var.G(h71Var.Q, h71Var.S, h71Var.R, h71Var.T);
+                    } else {
+                        h71Var.D(h71Var.Q, h71Var.S);
+                    }
+                    h71Var.C();
+                    break;
+                }
+                break;
+            case 1:
+                h71 h71Var2 = ((g71) this.b).f;
+                h71Var2.a0.removeCallbacksAndMessages(null);
+                h71Var2.K.onVisualizerUpdate(false, true, null);
+                break;
+            case 2:
+                ((j71) this.b).g = false;
+                break;
+            case 3:
+                ((d91) ((j50) ((org.telegram.ui.Cells.fa) this.b).b).b).v.b();
+                break;
+            default:
+                ((z81) this.b).d(false, true);
+                break;
         }
-        g71Var.H = true;
-        if (g71Var.G && g71Var.I) {
-            g71Var.C();
-        }
-    }
-
-    @Override // b2.z0
-    public final /* synthetic */ void onPositionDiscontinuity(int i10) {
-    }
-
-    @Override // b2.z0
-    public final /* synthetic */ void onCues(List list) {
-    }
-
-    @Override // b2.z0
-    public final /* synthetic */ void onPositionDiscontinuity(b2.a1 a1Var, b2.a1 a1Var2, int i10) {
-    }
-
-    @Override // b2.z0
-    public final /* synthetic */ void onAudioAttributesChanged(b2.e eVar) {
-    }
-
-    @Override // b2.z0
-    public final /* synthetic */ void onAudioSessionIdChanged(int i10) {
-    }
-
-    @Override // b2.z0
-    public final /* synthetic */ void onAvailableCommandsChanged(b2.x0 x0Var) {
-    }
-
-    @Override // b2.z0
-    public final /* synthetic */ void onIsLoadingChanged(boolean z10) {
-    }
-
-    @Override // b2.z0
-    public final /* synthetic */ void onIsPlayingChanged(boolean z10) {
-    }
-
-    @Override // b2.z0
-    public final /* synthetic */ void onLoadingChanged(boolean z10) {
-    }
-
-    @Override // b2.z0
-    public final /* synthetic */ void onMediaMetadataChanged(b2.n0 n0Var) {
-    }
-
-    @Override // b2.z0
-    public final /* synthetic */ void onMetadata(b2.p0 p0Var) {
-    }
-
-    @Override // b2.z0
-    public final /* synthetic */ void onPlaybackParametersChanged(b2.v0 v0Var) {
-    }
-
-    @Override // b2.z0
-    public final /* synthetic */ void onPlaybackStateChanged(int i10) {
-    }
-
-    @Override // b2.z0
-    public final /* synthetic */ void onPlaybackSuppressionReasonChanged(int i10) {
-    }
-
-    @Override // b2.z0
-    public final /* synthetic */ void onPlayerError(b2.u0 u0Var) {
-    }
-
-    @Override // b2.z0
-    public final /* synthetic */ void onPlayerErrorChanged(b2.u0 u0Var) {
-    }
-
-    @Override // b2.z0
-    public final /* synthetic */ void onPlaylistMetadataChanged(b2.n0 n0Var) {
-    }
-
-    @Override // b2.z0
-    public final /* synthetic */ void onRenderedFirstFrame() {
-    }
-
-    @Override // b2.z0
-    public final /* synthetic */ void onRepeatModeChanged(int i10) {
-    }
-
-    @Override // b2.z0
-    public final /* synthetic */ void onShuffleModeEnabledChanged(boolean z10) {
-    }
-
-    @Override // b2.z0
-    public final /* synthetic */ void onSkipSilenceEnabledChanged(boolean z10) {
-    }
-
-    @Override // b2.z0
-    public final /* synthetic */ void onTrackSelectionParametersChanged(b2.q1 q1Var) {
-    }
-
-    @Override // b2.z0
-    public final /* synthetic */ void onTracksChanged(b2.s1 s1Var) {
-    }
-
-    @Override // b2.z0
-    public final /* synthetic */ void onVideoSizeChanged(b2.x1 x1Var) {
-    }
-
-    @Override // b2.z0
-    public final /* synthetic */ void onVolumeChanged(float f7) {
-    }
-
-    @Override // b2.z0
-    public final /* synthetic */ void onEvents(b2.b1 b1Var, b2.y0 y0Var) {
-    }
-
-    @Override // b2.z0
-    public final /* synthetic */ void onMediaItemTransition(b2.k0 k0Var, int i10) {
-    }
-
-    @Override // b2.z0
-    public final /* synthetic */ void onPlayWhenReadyChanged(boolean z10, int i10) {
-    }
-
-    @Override // b2.z0
-    public final /* synthetic */ void onSurfaceSizeChanged(int i10, int i11) {
-    }
-
-    @Override // b2.z0
-    public final /* synthetic */ void onTimelineChanged(b2.k1 k1Var, int i10) {
     }
 }

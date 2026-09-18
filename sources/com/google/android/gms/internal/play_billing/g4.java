@@ -12,21 +12,21 @@ import java.util.concurrent.locks.LockSupport;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.telegram.ui.Cells.p6;
-import v7.z5;
+import v7.a6;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public class g4 implements t0 {
     public static final boolean d = Boolean.parseBoolean(System.getProperty("guava.concurrent.generate_cancellation_cause", "false"));
     public static final Logger e = Logger.getLogger(g4.class.getName());
-    public static final z5 f;
+    public static final a6 f;
     public static final Object h;
     public volatile Object a;
     public volatile v2 b;
     public volatile f4 c;
 
     static {
-        z5 e4Var;
+        a6 e4Var;
         try {
             e4Var = new s3(AtomicReferenceFieldUpdater.newUpdater(f4.class, Thread.class, "a"), AtomicReferenceFieldUpdater.newUpdater(f4.class, f4.class, "b"), AtomicReferenceFieldUpdater.newUpdater(g4.class, f4.class, "c"), AtomicReferenceFieldUpdater.newUpdater(g4.class, v2.class, "b"), AtomicReferenceFieldUpdater.newUpdater(g4.class, Object.class, "a"));
             th = null;
@@ -44,14 +44,14 @@ public class g4 implements t0 {
 
     public static void d(g4 g4Var) {
         f4 f4Var;
-        z5 z5Var;
+        a6 a6Var;
         v2 v2Var;
         v2 v2Var2;
         v2 v2Var3;
         do {
             f4Var = g4Var.c;
-            z5Var = f;
-        } while (!z5Var.e(g4Var, f4Var, f4.c));
+            a6Var = f;
+        } while (!a6Var.e(g4Var, f4Var, f4.c));
         while (true) {
             v2Var = null;
             if (f4Var == null) {
@@ -66,7 +66,7 @@ public class g4 implements t0 {
         }
         do {
             v2Var2 = g4Var.b;
-        } while (!z5Var.c(g4Var, v2Var2, v2.d));
+        } while (!a6Var.c(g4Var, v2Var2, v2.d));
         while (true) {
             v2Var3 = v2Var;
             v2Var = v2Var2;
@@ -228,9 +228,9 @@ public class g4 implements t0 {
         if (f4Var != f4Var2) {
             f4 f4Var3 = new f4();
             do {
-                z5 z5Var = f;
-                z5Var.a(f4Var3, f4Var);
-                if (z5Var.e(this, f4Var, f4Var3)) {
+                a6 a6Var = f;
+                a6Var.a(f4Var3, f4Var);
+                if (a6Var.e(this, f4Var, f4Var3)) {
                     do {
                         LockSupport.park(this);
                         if (Thread.interrupted()) {
@@ -301,9 +301,9 @@ public class g4 implements t0 {
                 if (f4Var != f4Var2) {
                     f4 f4Var3 = new f4();
                     do {
-                        z5 z5Var = f;
-                        z5Var.a(f4Var3, f4Var);
-                        if (z5Var.e(this, f4Var, f4Var3)) {
+                        a6 a6Var = f;
+                        a6Var.a(f4Var3, f4Var);
+                        if (a6Var.e(this, f4Var, f4Var3)) {
                             do {
                                 LockSupport.parkNanos(this, nanos);
                                 if (!Thread.interrupted()) {

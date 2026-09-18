@@ -2,12 +2,12 @@ package gb;
 
 import j$.util.concurrent.ConcurrentHashMap;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class j implements db.v {
     public static final i c;
     public static final i d;
-    public final pf.b a;
+    public final of.b a;
     public final ConcurrentHashMap b = new ConcurrentHashMap();
 
     static {
@@ -16,18 +16,18 @@ public final class j implements db.v {
         d = new i(i10);
     }
 
-    public j(pf.b bVar) {
+    public j(of.b bVar) {
         this.a = bVar;
     }
 
-    public final db.u a(pf.b bVar, db.g gVar, kb.a aVar, eb.a aVar2, boolean z10) {
+    public final db.u a(of.b bVar, db.g gVar, kb.a aVar, eb.a aVar2, boolean z10) {
         db.u uVar;
-        Object h22 = bVar.T(new kb.a(aVar2.value())).h2();
+        Object p22 = bVar.K(new kb.a(aVar2.value())).p2();
         boolean nullSafe = aVar2.nullSafe();
-        if (h22 instanceof db.u) {
-            uVar = (db.u) h22;
-        } else if (h22 instanceof db.v) {
-            db.v vVar = (db.v) h22;
+        if (p22 instanceof db.u) {
+            uVar = (db.u) p22;
+        } else if (p22 instanceof db.v) {
+            db.v vVar = (db.v) p22;
             if (z10) {
                 db.v vVar2 = (db.v) this.b.putIfAbsent(aVar.a, vVar);
                 if (vVar2 != null) {
@@ -36,11 +36,11 @@ public final class j implements db.v {
             }
             uVar = vVar.create(gVar, aVar);
         } else {
-            boolean z11 = h22 instanceof db.o;
+            boolean z11 = p22 instanceof db.o;
             if (!z11) {
-                throw new IllegalArgumentException("Invalid attempt to bind an instance of " + h22.getClass().getName() + " as a @JsonAdapter for " + fb.d.k(aVar.b) + ". @JsonAdapter value must be a TypeAdapter, TypeAdapterFactory, JsonSerializer or JsonDeserializer.");
+                throw new IllegalArgumentException("Invalid attempt to bind an instance of " + p22.getClass().getName() + " as a @JsonAdapter for " + fb.d.k(aVar.b) + ". @JsonAdapter value must be a TypeAdapter, TypeAdapterFactory, JsonSerializer or JsonDeserializer.");
             }
-            a0 a0Var = new a0(z11 ? (db.o) h22 : null, gVar, aVar, z10 ? c : d, nullSafe);
+            a0 a0Var = new a0(z11 ? (db.o) p22 : null, gVar, aVar, z10 ? c : d, nullSafe);
             nullSafe = false;
             uVar = a0Var;
         }

@@ -1,41 +1,37 @@
 package org.telegram.messenger;
 
-import android.content.SharedPreferences;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.MessagesStorage;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class v6 implements Runnable {
-    public final /* synthetic */ int a;
+    public final /* synthetic */ int a = 0;
     public final /* synthetic */ MediaDataController b;
-    public final /* synthetic */ TLRPC.TL_error c;
-    public final /* synthetic */ TLObject d;
-    public final /* synthetic */ SharedPreferences e;
-    public final /* synthetic */ boolean[] f;
+    public final /* synthetic */ TLRPC.Message c;
+    public final /* synthetic */ MessagesStorage.TopicKey d;
 
-    public /* synthetic */ v6(MediaDataController mediaDataController, TLRPC.TL_error tL_error, TLObject tLObject, SharedPreferences sharedPreferences, boolean[] zArr, int i10) {
-        this.a = i10;
+    public /* synthetic */ v6(MediaDataController mediaDataController, MessagesStorage.TopicKey topicKey, TLRPC.Message message) {
         this.b = mediaDataController;
-        this.c = tL_error;
-        this.d = tLObject;
-        this.e = sharedPreferences;
-        this.f = zArr;
+        this.d = topicKey;
+        this.c = message;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                SharedPreferences sharedPreferences = this.e;
-                boolean[] zArr = this.f;
-                this.b.lambda$loadRecentAndTopReactions$237(this.c, this.d, sharedPreferences, zArr);
+                this.b.lambda$putBotKeyboard$200(this.d, this.c);
                 break;
             default:
-                SharedPreferences sharedPreferences2 = this.e;
-                boolean[] zArr2 = this.f;
-                this.b.lambda$loadRecentAndTopReactions$235(this.c, this.d, sharedPreferences2, zArr2);
+                this.b.lambda$loadBotKeyboard$195(this.c, this.d);
                 break;
         }
+    }
+
+    public /* synthetic */ v6(MediaDataController mediaDataController, TLRPC.Message message, MessagesStorage.TopicKey topicKey) {
+        this.b = mediaDataController;
+        this.c = message;
+        this.d = topicKey;
     }
 }

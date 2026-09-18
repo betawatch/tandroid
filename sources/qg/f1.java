@@ -1,47 +1,23 @@
 package qg;
 
-import android.graphics.RectF;
+import ci.c6;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class f1 {
-    public final l a;
-    public float b;
-    public float c;
-    public float d;
-    public float e;
-    public float f;
-    public float g;
-    public float h;
-    public float i;
-    public float j;
-    public float k;
-    public boolean l;
+public final class f1 extends g.p {
+    public final /* synthetic */ c6 c;
 
-    public f1(l lVar) {
-        this.a = lVar;
+    public f1(c6 c6Var) {
+        this.c = c6Var;
     }
 
-    public final void a(RectF rectF) {
-        l lVar = this.a;
-        if (lVar.o() == 4) {
-            float f7 = this.b;
-            float f10 = this.k;
-            float f11 = this.c;
-            rectF.set(f7 - f10, f11 - f10, f7 + f10, f11 + f10);
-            rectF.union(this.d, this.e);
-            rectF.union(this.i, this.j);
-        } else {
-            float max = Math.max(Math.abs(this.d), Math.abs(this.e));
-            float f12 = this.b;
-            float f13 = max * 1.42f;
-            float f14 = this.c;
-            rectF.set(f12 - f13, f14 - f13, f12 + f13, f14 + f13);
-            if (lVar.o() == 3) {
-                rectF.union(this.i, this.j);
-            }
-        }
-        float f15 = (-this.f) - 3.0f;
-        rectF.inset(f15, f15);
+    @Override // g.p
+    public final int i(int i10) {
+        MessageObject.GroupedMessagePosition position;
+        int size = (r0.s0.size() - 1) - i10;
+        MessageObject.GroupedMessages groupedMessages = this.c.t0;
+        return (groupedMessages == null || size < 0 || size >= groupedMessages.messages.size() || (position = groupedMessages.getPosition(groupedMessages.messages.get(size))) == null) ? MediaDataController.MAX_STYLE_RUNS_COUNT : position.spanSize;
     }
 }

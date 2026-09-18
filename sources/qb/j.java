@@ -10,10 +10,11 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.Tasks;
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
+import k2.c0;
 import t7.u;
 import w7.h7;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public abstract class j {
     public static final k6.c[] a = new k6.c[0];
@@ -78,9 +79,9 @@ public abstract class j {
 
     public static boolean a(Context context, k6.c[] cVarArr) {
         try {
-            return ((r6.a) Tasks.await(new s6.g(context, s6.g.k, com.google.android.gms.common.api.b.t, com.google.android.gms.common.api.i.c).f(new r(cVarArr, 1)).addOnFailureListener(new na.d()))).a;
-        } catch (InterruptedException | ExecutionException e7) {
-            Log.e("OptionalModuleUtils", "Failed to complete the task of features availability check", e7);
+            return ((r6.a) Tasks.await(new s6.g(context, s6.g.k, com.google.android.gms.common.api.b.t, com.google.android.gms.common.api.i.c).f(new r(cVarArr, 1)).addOnFailureListener(new u()))).a;
+        } catch (InterruptedException | ExecutionException e) {
+            Log.e("OptionalModuleUtils", "Failed to complete the task of features availability check", e);
             return false;
         }
     }
@@ -111,22 +112,22 @@ public abstract class j {
     }
 
     public static void c(Context context, k6.c[] cVarArr) {
-        Task e7;
+        Task e;
         ArrayList arrayList = new ArrayList();
         arrayList.add(new r(cVarArr, 0));
         n6.l.a("APIs must not be empty.", !arrayList.isEmpty());
         s6.g gVar = new s6.g(context, s6.g.k, com.google.android.gms.common.api.b.t, com.google.android.gms.common.api.i.c);
         s6.a b10 = s6.a.b(arrayList, true);
         if (b10.a.isEmpty()) {
-            e7 = Tasks.forResult(new r6.c(0, false));
+            e = Tasks.forResult(new r6.c(0, false));
         } else {
-            v e10 = w.e();
-            e10.d = new k6.c[]{k7.b.c};
-            e10.b = true;
-            e10.a = 27304;
-            e10.c = new l.d(gVar, b10);
-            e7 = gVar.e(0, e10.a());
+            v e7 = w.e();
+            e7.d = new k6.c[]{k7.b.c};
+            e7.b = true;
+            e7.a = 27304;
+            e7.c = new c0(gVar, b10);
+            e = gVar.e(0, e7.a());
         }
-        e7.addOnFailureListener(new u(19));
+        e.addOnFailureListener(new rb.a(19));
     }
 }

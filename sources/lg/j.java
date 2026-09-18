@@ -1,17 +1,481 @@
 package lg;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.net.Uri;
+import android.os.Build;
+import android.text.SpannableStringBuilder;
+import android.text.TextUtils;
+import android.util.Log;
+import android.widget.TextView;
+import android.widget.Toast;
+import androidx.core.content.FileProvider;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.net.URLDecoder;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.NotificationsController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.voip.VoIPService;
+import org.telegram.messenger.wl;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.ActionBarLayout;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.ui.ActionBar.c2;
+import org.telegram.ui.ActionBar.e5;
+import org.telegram.ui.ActionBar.h5;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.ActionBar.o2;
+import org.telegram.ui.Components.ThemeEditorView;
+import org.telegram.ui.Components.id;
+import org.telegram.ui.Components.iq0;
+import org.telegram.ui.Components.pe0;
+import org.telegram.ui.Components.vc;
+import org.telegram.ui.Components.ws0;
+import org.telegram.ui.ThemeActivity;
+import org.telegram.ui.bo;
+import org.telegram.ui.ce1;
+import org.telegram.ui.f81;
+import org.telegram.ui.h4;
+import org.telegram.ui.hc1;
+import org.telegram.ui.k60;
+import org.telegram.ui.n50;
+import org.telegram.ui.nb;
+import org.telegram.ui.nz0;
+import org.telegram.ui.qn0;
+import org.telegram.ui.tv0;
+import org.telegram.ui.u3;
+import org.telegram.ui.v10;
+import org.telegram.ui.wy;
+import org.telegram.ui.z10;
+import pg.h1;
+import pg.j1;
+import pg.k1;
+
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class j {
-    public float a;
-    public float b;
-    public float c;
-    public float d;
-    public float e;
-    public float f;
-    public float[] g;
-    public float[] h;
-    public float[] i;
-    public float[] j;
-    public float[] k;
+public final /* synthetic */ class j implements DialogInterface.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
+
+    public /* synthetic */ j(int i10, Object obj, Object obj2) {
+        this.a = i10;
+        this.b = obj;
+        this.c = obj2;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:149:0x03a6  */
+    /* JADX WARN: Removed duplicated region for block: B:65:0x021b  */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x0232  */
+    /* JADX WARN: Removed duplicated region for block: B:72:0x0234 A[Catch: Exception -> 0x0274, TRY_LEAVE, TryCatch #10 {Exception -> 0x0274, blocks: (B:68:0x022c, B:72:0x0234, B:76:0x027d, B:75:0x0276, B:82:0x026c, B:80:0x0248), top: B:67:0x022c, inners: #4 }] */
+    @Override // android.content.DialogInterface.OnClickListener
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void onClick(DialogInterface dialogInterface, int i10) {
+        TLRPC.TL_secureRequiredType tL_secureRequiredType;
+        TLRPC.TL_secureRequiredType tL_secureRequiredType2;
+        e5 e5Var;
+        e5 e5Var2;
+        File p02;
+        String str;
+        File file;
+        Throwable th2;
+        FileOutputStream fileOutputStream;
+        String sb2;
+        String str2 = "";
+        TLRPC.TL_secureRequiredType tL_secureRequiredType3 = null;
+        r13 = null;
+        FileOutputStream fileOutputStream2 = null;
+        switch (this.a) {
+            case 0:
+                p.a((p) this.b, (Integer[][]) this.c, i10);
+                return;
+            case 1:
+                h4 h4Var = (h4) this.b;
+                String str3 = (String) this.c;
+                u3 u3Var = h4Var.K;
+                if (h4Var.L == null || h4Var.u0[0].c.E == null) {
+                    return;
+                }
+                if (i10 != 0) {
+                    if (i10 != 1 || str3 == null) {
+                        return;
+                    }
+                    if (str3.startsWith("mailto:")) {
+                        str3 = str3.substring(7);
+                    } else if (str3.startsWith("tel:")) {
+                        str3 = str3.substring(4);
+                    }
+                    AndroidUtilities.addToClipboard(str3);
+                    return;
+                }
+                int lastIndexOf = str3.lastIndexOf(35);
+                if (lastIndexOf != -1) {
+                    String lowerCase = !TextUtils.isEmpty(h4Var.u0[0].c.E.cached_page.url) ? h4Var.u0[0].c.E.cached_page.url.toLowerCase() : h4Var.u0[0].c.E.url.toLowerCase();
+                    try {
+                        str2 = URLDecoder.decode(str3.substring(lastIndexOf + 1), "UTF-8");
+                    } catch (Exception unused) {
+                    }
+                    if (str3.toLowerCase().contains(lowerCase)) {
+                        if (!TextUtils.isEmpty(str2)) {
+                            h4Var.V(str2, true);
+                            return;
+                        } else {
+                            h4Var.u0[0].d.h1(u3Var == null ? 0 : 1, u3Var != null ? AndroidUtilities.dp(32.0f) : 0);
+                            h4Var.m(null);
+                            return;
+                        }
+                    }
+                }
+                nf.f.s(h4Var.L, str3);
+                return;
+            case 2:
+                nb nbVar = (nb) this.b;
+                String str4 = (String) this.c;
+                if (i10 == 0) {
+                    nf.f.o(nbVar.a.n.getParentActivity(), str4, true);
+                    return;
+                }
+                if (i10 == 1) {
+                    if (str4.startsWith("mailto:")) {
+                        str4 = str4.substring(7);
+                    } else if (str4.startsWith("tel:")) {
+                        str4 = str4.substring(4);
+                    }
+                    AndroidUtilities.addToClipboard(str4);
+                    return;
+                }
+                return;
+            case 3:
+                bo boVar = (bo) this.b;
+                String str5 = (String) this.c;
+                AndroidUtilities.addToClipboard(str5);
+                vc.a0(boVar).i(LocaleController.formatString(R.string.ExactTextCopied, str5)).j();
+                return;
+            case 4:
+                ArrayList arrayList = (ArrayList) this.b;
+                wy wyVar = (wy) this.c;
+                int i11 = i10 == 0 ? 0 : i10 == 1 ? 1 : i10 == 2 ? 2 : 3;
+                if (arrayList != null) {
+                    for (int i12 = 0; i12 < arrayList.size(); i12++) {
+                        NotificationsController.getInstance(UserConfig.selectedAccount).setDialogNotificationsSettings(((Long) arrayList.get(i12)).longValue(), 0, i11);
+                    }
+                }
+                int i13 = i11;
+                if (vc.a(wyVar)) {
+                    vc.z(wyVar, i13, 0, null).j();
+                    return;
+                }
+                return;
+            case 5:
+                pe0 pe0Var = (pe0) this.b;
+                AndroidUtilities.VcardItem vcardItem = (AndroidUtilities.VcardItem) this.c;
+                pe0Var.getClass();
+                if (i10 == 0) {
+                    try {
+                        ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", vcardItem.getValue(false)));
+                        if (AndroidUtilities.shouldShowClipboardToast()) {
+                            Toast.makeText(pe0Var.r.getParentActivity(), LocaleController.getString(R.string.TextCopied), 0).show();
+                            return;
+                        }
+                        return;
+                    } catch (Exception e) {
+                        FileLog.e(e);
+                        return;
+                    }
+                }
+                return;
+            case 6:
+                ws0 ws0Var = (ws0) this.b;
+                String str6 = (String) this.c;
+                if (i10 == 0) {
+                    ws0Var.a.R0(str6);
+                    return;
+                }
+                ws0Var.getClass();
+                if (i10 == 1) {
+                    if (str6.startsWith("mailto:")) {
+                        str6 = str6.substring(7);
+                    } else if (str6.startsWith("tel:")) {
+                        str6 = str6.substring(4);
+                    }
+                    AndroidUtilities.addToClipboard(str6);
+                    return;
+                }
+                return;
+            case 7:
+                v10 v10Var = (v10) this.b;
+                String str7 = (String) this.c;
+                if (i10 == 0) {
+                    z10 z10Var = v10Var.a.v;
+                    SpannableStringBuilder[] spannableStringBuilderArr = z10.s0;
+                    z10Var.g(str7);
+                    return;
+                }
+                v10Var.getClass();
+                if (i10 == 1) {
+                    if (str7.startsWith("mailto:")) {
+                        str7 = str7.substring(7);
+                    } else if (str7.startsWith("tel:")) {
+                        str7 = str7.substring(4);
+                    }
+                    AndroidUtilities.addToClipboard(str7);
+                    return;
+                }
+                return;
+            case 8:
+                n50 n50Var = (n50) this.b;
+                ArrayList arrayList2 = (ArrayList) this.c;
+                k60 k60Var = n50Var.b;
+                if (VoIPService.getSharedInstance() == null) {
+                    return;
+                }
+                Integer num = (Integer) arrayList2.get(i10);
+                int intValue = num.intValue();
+                k60Var.y3 = num;
+                k60Var.N1(true, true);
+                k60Var.y3 = null;
+                AndroidUtilities.runOnUIThread(new id(n50Var, intValue, 15));
+                return;
+            case 9:
+                qn0 qn0Var = (qn0) this.b;
+                ArrayList arrayList3 = (ArrayList) this.c;
+                try {
+                    tL_secureRequiredType = new TLRPC.TL_secureRequiredType();
+                    try {
+                        tL_secureRequiredType.type = (TLRPC.SecureValueType) ((Class) arrayList3.get(i10)).newInstance();
+                    } catch (Exception unused2) {
+                    }
+                } catch (Exception unused3) {
+                    tL_secureRequiredType = null;
+                }
+                if (!qn0.v1(tL_secureRequiredType.type)) {
+                    if (qn0.t1(tL_secureRequiredType.type)) {
+                        tL_secureRequiredType2 = new TLRPC.TL_secureRequiredType();
+                        tL_secureRequiredType2.type = new TLRPC.TL_secureValueTypeAddress();
+                    }
+                    qn0Var.E1(tL_secureRequiredType, tL_secureRequiredType3, new ArrayList(), tL_secureRequiredType3 != null);
+                    return;
+                }
+                tL_secureRequiredType.selfie_required = true;
+                tL_secureRequiredType.translation_required = true;
+                tL_secureRequiredType2 = new TLRPC.TL_secureRequiredType();
+                tL_secureRequiredType2.type = new TLRPC.TL_secureValueTypePersonalDetails();
+                tL_secureRequiredType3 = tL_secureRequiredType;
+                tL_secureRequiredType = tL_secureRequiredType2;
+                qn0Var.E1(tL_secureRequiredType, tL_secureRequiredType3, new ArrayList(), tL_secureRequiredType3 != null);
+                return;
+            case 10:
+                nz0.a((nz0) this.b, (Context) this.c, i10);
+                return;
+            case 11:
+                f81 f81Var = (f81) this.b;
+                ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", (String) this.c));
+                wl.o(R.string.TextCopied, new vc(f81Var.getContainer(), null));
+                return;
+            case 12:
+                hc1 hc1Var = (hc1) this.b;
+                i6 i6Var = (i6) this.c;
+                ThemeActivity themeActivity = hc1Var.e;
+                if (themeActivity.getParentActivity() == null) {
+                    return;
+                }
+                if (i10 == 0) {
+                    if (i6Var.F == null) {
+                        themeActivity.getMessagesController().saveThemeToServer(i6Var, null);
+                        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needShareTheme, i6Var, null);
+                        return;
+                    }
+                    String str8 = "https://" + themeActivity.getMessagesController().linkPrefix + "/addtheme/" + i6Var.F.slug;
+                    themeActivity.showDialog(new iq0(themeActivity.getParentActivity(), null, str8, false, str8, false, null));
+                    return;
+                }
+                if (i10 != 1) {
+                    if (i10 == 2) {
+                        e5Var = ((o2) themeActivity).parentLayout;
+                        if (e5Var != null) {
+                            j6.t(i6Var, true, false);
+                            e5Var2 = ((o2) themeActivity).parentLayout;
+                            ((ActionBarLayout) e5Var2).U(true, true);
+                            new ThemeEditorView().c(themeActivity.getParentActivity(), i6Var);
+                            return;
+                        }
+                        return;
+                    }
+                    if (i10 == 3) {
+                        themeActivity.presentFragment(new ce1(i6Var, null, false));
+                        return;
+                    }
+                    if (themeActivity.getParentActivity() == null) {
+                        return;
+                    }
+                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(themeActivity.getParentActivity());
+                    alertDialog$Builder.a.R = LocaleController.getString("DeleteThemeTitle", R.string.DeleteThemeTitle);
+                    alertDialog$Builder.a.T = LocaleController.getString("DeleteThemeAlert", R.string.DeleteThemeAlert);
+                    alertDialog$Builder.k(LocaleController.getString("Delete", R.string.Delete), new tv0(13, hc1Var, i6Var));
+                    alertDialog$Builder.h(LocaleController.getString("Cancel", R.string.Cancel), null);
+                    c2 c2Var = alertDialog$Builder.a;
+                    themeActivity.showDialog(c2Var);
+                    TextView textView = (TextView) c2Var.d(-1);
+                    if (textView != null) {
+                        textView.setTextColor(j6.w0(null, j6.q7, false));
+                        return;
+                    }
+                    return;
+                }
+                if (i6Var.b == null && i6Var.d == null) {
+                    StringBuilder sb3 = new StringBuilder();
+                    int[] iArr = j6.nl;
+                    for (int i14 = 0; i14 < iArr.length; i14++) {
+                        sb3.append(h5.i(i14));
+                        sb3.append("=");
+                        sb3.append(iArr[i14]);
+                        sb3.append("\n");
+                    }
+                    p02 = new File(ApplicationLoader.getFilesDirFixed(), "default_theme.attheme");
+                    try {
+                        try {
+                            try {
+                                fileOutputStream = new FileOutputStream(p02);
+                            } catch (Exception e7) {
+                                FileLog.e(e7);
+                            }
+                        } catch (Exception e10) {
+                            e = e10;
+                        }
+                    } catch (Throwable th3) {
+                        th2 = th3;
+                    }
+                    try {
+                        fileOutputStream.write(AndroidUtilities.getStringBytes(sb3.toString()));
+                        fileOutputStream.close();
+                    } catch (Exception e11) {
+                        e = e11;
+                        fileOutputStream2 = fileOutputStream;
+                        FileLog.e(e);
+                        if (fileOutputStream2 != null) {
+                            fileOutputStream2.close();
+                        }
+                        str = i6Var.a;
+                        if (!str.endsWith(".attheme")) {
+                        }
+                        file = new File(FileLoader.getDirectory(4), FileLoader.fixFileName(str));
+                        if (AndroidUtilities.copyFile(p02, file)) {
+                        }
+                    } catch (Throwable th4) {
+                        th2 = th4;
+                        fileOutputStream2 = fileOutputStream;
+                        if (fileOutputStream2 == null) {
+                            throw th2;
+                        }
+                        try {
+                            fileOutputStream2.close();
+                            throw th2;
+                        } catch (Exception e12) {
+                            FileLog.e(e12);
+                            throw th2;
+                        }
+                    }
+                } else {
+                    String str9 = i6Var.d;
+                    p02 = str9 != null ? j6.p0(str9) : new File(i6Var.b);
+                }
+                str = i6Var.a;
+                if (!str.endsWith(".attheme")) {
+                    str = str.concat(".attheme");
+                }
+                file = new File(FileLoader.getDirectory(4), FileLoader.fixFileName(str));
+                try {
+                    if (AndroidUtilities.copyFile(p02, file)) {
+                        return;
+                    }
+                    Intent intent = new Intent("android.intent.action.SEND");
+                    intent.setType("text/xml");
+                    if (Build.VERSION.SDK_INT >= 24) {
+                        try {
+                            intent.putExtra("android.intent.extra.STREAM", FileProvider.d(themeActivity.getParentActivity(), ApplicationLoader.getApplicationId() + ".provider", file));
+                            intent.setFlags(1);
+                        } catch (Exception unused4) {
+                            intent.putExtra("android.intent.extra.STREAM", Uri.fromFile(file));
+                        }
+                    } else {
+                        intent.putExtra("android.intent.extra.STREAM", Uri.fromFile(file));
+                    }
+                    themeActivity.startActivityForResult(Intent.createChooser(intent, LocaleController.getString("ShareFile", R.string.ShareFile)), 500);
+                    return;
+                } catch (Exception e13) {
+                    FileLog.e(e13);
+                    return;
+                }
+            default:
+                k1 k1Var = (k1) this.b;
+                ArrayList arrayList4 = (ArrayList) this.c;
+                SharedPreferences sharedPreferences = k1Var.g;
+                ArrayList arrayList5 = k1Var.c;
+                if (i10 != 0) {
+                    j1 j1Var = new j1();
+                    j1Var.a = i10 - 1;
+                    j1Var.b = arrayList4;
+                    arrayList5.add(j1Var);
+                    String string = sharedPreferences.getString("moretemplates", null);
+                    if (string == null) {
+                        sb2 = "" + j1Var.a;
+                    } else {
+                        StringBuilder g10 = w.f.g(string, "|");
+                        g10.append(j1Var.a);
+                        sb2 = g10.toString();
+                    }
+                    for (int i15 = 0; i15 < arrayList4.size(); i15++) {
+                        StringBuilder g11 = w.f.g(sb2, ",");
+                        g11.append(Math.round(((h1) arrayList4.get(i15)).a));
+                        g11.append(",");
+                        g11.append(Math.round(((h1) arrayList4.get(i15)).b));
+                        sb2 = g11.toString();
+                    }
+                    sharedPreferences.edit().putString("moretemplates", sb2).apply();
+                    return;
+                }
+                StringBuilder sb4 = new StringBuilder("[");
+                for (int i16 = 0; i16 < arrayList5.size(); i16++) {
+                    j1 j1Var2 = (j1) arrayList5.get(i16);
+                    if (i16 > 0) {
+                        sb4.append(",\n");
+                    }
+                    sb4.append("\t{\n\t\t\"shape\": ");
+                    sb4.append(j1Var2.a);
+                    sb4.append(",\n\t\t\"points\": [");
+                    for (int i17 = 0; i17 < j1Var2.b.size(); i17++) {
+                        if (i17 > 0) {
+                            sb4.append(",");
+                        }
+                        h1 h1Var = (h1) j1Var2.b.get(i17);
+                        sb4.append("[");
+                        sb4.append(Math.round(h1Var.a));
+                        sb4.append(",");
+                        sb4.append(Math.round(h1Var.b));
+                        sb4.append("]");
+                    }
+                    sb4.append("],\n\t\t\"freq\": ");
+                    sb4.append(Math.round(((j1Var2.c / k1Var.a) * 100.0f) * 100.0f) / 100.0f);
+                    sb4.append("\n\t}");
+                }
+                sb4.append("\n]");
+                Log.i("shapedetector", sb4.toString());
+                return;
+        }
+    }
 }

@@ -10,7 +10,7 @@ import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.FileLog;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class ke0 implements DialogInterface.OnClickListener {
     public final /* synthetic */ pe0 a;
@@ -428,8 +428,8 @@ public final class ke0 implements DialogInterface.OnClickListener {
         try {
             pe0Var.r.getParentActivity().startActivity(intent3);
             pe0Var.dismiss();
-        } catch (Exception e7) {
-            FileLog.e(e7);
+        } catch (Exception e) {
+            FileLog.e(e);
         }
     }
 }

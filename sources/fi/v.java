@@ -1,65 +1,49 @@
 package fi;
 
-import android.graphics.Paint;
-import android.graphics.RectF;
+import android.os.Bundle;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.e6;
-import org.telegram.ui.Components.h5;
-import org.telegram.ui.Components.p6;
-import org.telegram.ui.Components.pr;
-import org.telegram.ui.Components.sp;
-import org.telegram.ui.Components.zc;
+import org.telegram.ui.Components.b20;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes4.dex */
-public final class v {
-    public final RectF a = new RectF();
-    public final e6 b;
-    public final e6 c;
-    public final e6 d;
-    public final e6 e;
-    public final h5 f;
-    public final h5 g;
-    public final e6 h;
-    public final e6 i;
-    public final zc j;
-    public final Paint k;
-    public final p6 l;
-    public int m;
-    public final org.telegram.ui.Cells.z n;
-    public final sp o;
-    public final org.telegram.ui.Components.voip.h p;
+public final /* synthetic */ class v implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ k0 b;
 
-    public v(x xVar) {
-        pr prVar = pr.h;
-        this.b = new e6(xVar, 0L, 320L, prVar);
-        this.c = new e6(xVar, 0L, 320L, prVar);
-        this.d = new e6(xVar, 0L, 320L, prVar);
-        this.e = new e6(xVar, 0L, 320L, prVar);
-        this.f = new h5(xVar, 320L, prVar, 0);
-        this.g = new h5(xVar, 320L, prVar, 0);
-        this.h = new e6(xVar, 0L, 320L, prVar);
-        this.i = new e6(xVar, 0L, 320L, prVar);
-        this.j = new zc(xVar);
-        this.k = new Paint(1);
-        p6 p6Var = new p6(true, false, true, false);
-        this.l = p6Var;
-        org.telegram.ui.Cells.z Y = j6.Y(0, 9, 9);
-        this.n = Y;
-        sp spVar = new sp(-1);
-        this.o = spVar;
-        org.telegram.ui.Components.voip.h hVar = new org.telegram.ui.Components.voip.h();
-        this.p = hVar;
-        p6Var.b = 17;
-        p6Var.t(AndroidUtilities.dp(14.0f));
-        p6Var.u(AndroidUtilities.bold());
-        p6Var.G = AndroidUtilities.displaySize.x * 4;
-        p6Var.n(true);
-        p6Var.setCallback(xVar);
-        spVar.setCallback(xVar);
-        Y.setCallback(xVar);
-        hVar.l = true;
-        hVar.m = 2.0f;
+    public /* synthetic */ v(k0 k0Var, int i10) {
+        this.a = i10;
+        this.b = k0Var;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                k0 k0Var = this.b;
+                k0Var.v.d.X2.h1(1, k0Var.U.b);
+                k0Var.b.a(false, true);
+                k0Var.setAllowNestedScroll(true);
+                b20 b20Var = k0Var.y;
+                AndroidUtilities.hideKeyboard(b20Var.r);
+                b20Var.r.clearFocus();
+                break;
+            case 1:
+                k0 k0Var2 = this.b;
+                k0Var2.x.d.X2.h1(1, k0Var2.U.b);
+                k0Var2.c.a(false, true);
+                k0Var2.setAllowNestedScroll(true);
+                b20 b20Var2 = k0Var2.E;
+                AndroidUtilities.hideKeyboard(b20Var2.r);
+                b20Var2.r.clearFocus();
+                break;
+            default:
+                k0 k0Var3 = this.b;
+                k0Var3.getClass();
+                Bundle bundle = new Bundle();
+                bundle.putLong("community_id", k0Var3.e);
+                k0Var3.s.presentFragment(new p(bundle));
+                k0Var3.dismiss();
+                break;
+        }
     }
 }

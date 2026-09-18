@@ -1,45 +1,32 @@
 package org.telegram.ui;
 
-import android.os.Build;
+import android.graphics.Canvas;
 import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class x8 extends s4.s0 {
-    public boolean a;
-    public final /* synthetic */ k9 b;
+public final /* synthetic */ class x8 implements ah.n {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public x8(k9 k9Var) {
-        this.b = k9Var;
+    public /* synthetic */ x8(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // s4.s0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        bh.f fVar;
-        k9 k9Var = this.b;
-        ArrayList arrayList = k9Var.G;
-        int L0 = k9Var.c.L0();
-        int abs = L0 == -1 ? 0 : Math.abs(k9Var.c.N0() - L0) + 1;
-        if (abs > 0) {
-            int size = k9Var.d.Y2.x.size();
-            if (!k9Var.J && !k9Var.H && !arrayList.isEmpty() && abs + L0 >= size - 5) {
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.c6(11, this, (g9) i2.g.h(1, arrayList)));
-            }
+    @Override // ah.n
+    public final boolean a(Canvas canvas, View view, long j3) {
+        switch (this.a) {
+            case 0:
+                return ((org.telegram.ui.Components.f61) this.b).drawChild(canvas, view, j3);
+            case 1:
+                ProfileActivity profileActivity = (ProfileActivity) this.b;
+                if (view == profileActivity.O) {
+                    return true;
+                }
+                return profileActivity.a.drawChild(canvas, view, j3);
+            default:
+                return ((dg1) this.b).drawChild(canvas, view, j3);
         }
-        View childAt = recyclerView.getChildAt(0);
-        int top = childAt != null ? childAt.getTop() : 0;
-        if (i11 != 0 && this.a) {
-            k9Var.f.e(i11 < 0, true);
-        }
-        this.a = true;
-        k9Var.r.b(L0 != 0 || top < k9Var.d.getPaddingTop(), true);
-        if (Build.VERSION.SDK_INT < 31 || (fVar = k9Var.Y) == null) {
-            return;
-        }
-        fVar.f(i10, i11);
-        k9Var.f0();
     }
 }

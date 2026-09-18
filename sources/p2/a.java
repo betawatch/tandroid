@@ -7,42 +7,42 @@ import e2.d0;
 import java.util.HashMap;
 import java.util.List;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
-public final class a implements t {
-    public final /* synthetic */ c a;
+public final class a implements u {
+    public final /* synthetic */ d a;
 
-    public a(c cVar) {
-        this.a = cVar;
+    public a(d dVar) {
+        this.a = dVar;
     }
 
-    @Override // p2.t
+    @Override // p2.u
     public final void a() {
         this.a.e.remove(this);
     }
 
-    @Override // p2.t
+    @Override // p2.u
     public final boolean b(Uri uri, b0 b0Var, boolean z10) {
-        b bVar;
-        c cVar = this.a;
-        HashMap hashMap = cVar.d;
-        if (cVar.w == null) {
+        c cVar;
+        d dVar = this.a;
+        HashMap hashMap = dVar.d;
+        if (dVar.w == null) {
             long elapsedRealtime = SystemClock.elapsedRealtime();
-            o oVar = cVar.s;
+            p pVar = dVar.s;
             String str = d0.a;
-            List list = oVar.e;
+            List list = pVar.e;
             int i10 = 0;
             for (int i11 = 0; i11 < list.size(); i11++) {
-                b bVar2 = (b) hashMap.get(((n) list.get(i11)).a);
-                if (bVar2 != null && elapsedRealtime < bVar2.n) {
+                c cVar2 = (c) hashMap.get(((o) list.get(i11)).a);
+                if (cVar2 != null && elapsedRealtime < cVar2.n) {
                     i10++;
                 }
             }
-            y2.g gVar = new y2.g(1, 0, cVar.s.e.size(), i10);
-            cVar.c.getClass();
-            k4.d K3 = rb.a.K3(gVar, b0Var);
-            if (K3 != null && K3.a == 2 && (bVar = (b) hashMap.get(uri)) != null) {
-                b.a(bVar, K3.b);
+            y2.g gVar = new y2.g(1, 0, dVar.s.e.size(), i10);
+            dVar.c.getClass();
+            k4.d K3 = qb.b.K3(gVar, b0Var);
+            if (K3 != null && K3.a == 2 && (cVar = (c) hashMap.get(uri)) != null) {
+                c.a(cVar, K3.b);
             }
         }
         return false;

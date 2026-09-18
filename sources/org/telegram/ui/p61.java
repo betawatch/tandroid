@@ -1,38 +1,37 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class p61 implements ValueAnimator.AnimatorUpdateListener {
+public final class p61 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ s61 b;
+    public final /* synthetic */ r61 b;
 
-    public /* synthetic */ p61(s61 s61Var, int i10) {
+    public /* synthetic */ p61(r61 r61Var, int i10) {
         this.a = i10;
-        this.b = s61Var;
+        this.b = r61Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                s61 s61Var = this.b;
-                s61Var.N = floatValue;
-                s61Var.V.h0.invalidate();
+                super.onAnimationEnd(animator);
+                this.b.I = null;
                 break;
             case 1:
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                s61 s61Var2 = this.b;
-                s61Var2.N = floatValue2;
-                s61Var2.V.h0.invalidate();
+                super.onAnimationEnd(animator);
+                this.b.I = null;
                 break;
             default:
-                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                s61 s61Var3 = this.b;
-                s61Var3.N = floatValue3;
-                s61Var3.V.h0.invalidate();
+                super.onAnimationEnd(animator);
+                r61 r61Var = this.b;
+                r61Var.N = 0.0f;
+                r61Var.I = null;
+                r61Var.M = false;
+                r61Var.d(true, false);
                 break;
         }
     }

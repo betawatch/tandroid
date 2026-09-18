@@ -1,14 +1,14 @@
 package t9;
 
 import android.util.Log;
-import di.s9;
+import ci.t9;
 import java.util.concurrent.atomic.AtomicReference;
 import org.telegram.ui.Cells.p6;
 import q9.p;
-import rg.p2;
+import r5.d;
 import y9.b1;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class a {
     public static final b c = new b();
@@ -17,7 +17,7 @@ public final class a {
 
     public a(p pVar) {
         this.a = pVar;
-        pVar.a(new p2(this, 3));
+        pVar.a(new d(this, 4));
     }
 
     public final b a(String str) {
@@ -40,6 +40,6 @@ public final class a {
         if (Log.isLoggable("FirebaseCrashlytics", 2)) {
             Log.v("FirebaseCrashlytics", i10, null);
         }
-        this.a.a(new s9(str, j3, b1Var, 9));
+        this.a.a(new t9(str, j3, b1Var, 9));
     }
 }

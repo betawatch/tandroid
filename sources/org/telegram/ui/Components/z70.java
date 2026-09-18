@@ -12,9 +12,9 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public abstract class z70 extends org.telegram.ui.ActionBar.f3 {
+public abstract class z70 extends org.telegram.ui.ActionBar.g3 {
     public boolean b;
 
     public z70(Context context, TLRPC.Chat chat) {
@@ -25,12 +25,12 @@ public abstract class z70 extends org.telegram.ui.ActionBar.f3 {
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
         setCustomView(linearLayout);
-        x9 x9Var = new x9(context);
-        x9Var.setRoundRadius(AndroidUtilities.dp(45.0f));
-        linearLayout.addView(x9Var, w7.x5.t(90, 90, 49, 0, 29, 0, 0));
-        x9Var.e(chat, new i9(chat));
+        u9 u9Var = new u9(context);
+        u9Var.setRoundRadius(AndroidUtilities.dp(45.0f));
+        linearLayout.addView(u9Var, w7.x5.t(90, 90, 49, 0, 29, 0, 0));
+        u9Var.e(chat, new f9(chat));
         TextView textView = new TextView(context);
-        org.telegram.messenger.vl.j(18.0f, 1, textView);
+        org.telegram.messenger.wl.j(18.0f, 1, textView);
         com.google.android.gms.internal.vision.e2.p(org.telegram.ui.ActionBar.j6.j5, null, false, textView, 1);
         TextView h = com.google.android.gms.internal.vision.e2.h(linearLayout, textView, w7.x5.t(-2, -2, 49, 17, 24, 17, 0), context);
         h.setTextSize(1, 14.0f);
@@ -55,7 +55,7 @@ public abstract class z70 extends org.telegram.ui.ActionBar.f3 {
         }
         y70 y70Var = new y70(context);
         View view = new View(context);
-        view.setBackground(org.telegram.ui.ActionBar.y5.f(new float[]{4.0f}, org.telegram.ui.ActionBar.j6.Oh));
+        view.setBackground(org.telegram.ui.ActionBar.z5.f(new float[]{4.0f}, org.telegram.ui.ActionBar.j6.Oh));
         y70Var.addView(view, w7.x5.d(-1, -1.0f, 0, 16.0f, 16.0f, 16.0f, 16.0f));
         TextView textView2 = new TextView(context);
         y70Var.a = textView2;
@@ -76,7 +76,7 @@ public abstract class z70 extends org.telegram.ui.ActionBar.f3 {
         linearLayout.addView(y70Var, w7.x5.t(-1, 50, 51, 0, 30, 0, 0));
     }
 
-    @Override // org.telegram.ui.ActionBar.f3
+    @Override // org.telegram.ui.ActionBar.g3
     public final void dismissInternal() {
         super.dismissInternal();
         if (this.b) {

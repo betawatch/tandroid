@@ -5,7 +5,7 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class oi extends qi {
     public TLRPC.User b;
@@ -20,8 +20,8 @@ public final class oi extends qi {
         setWillNotDraw(false);
         setFocusable(true);
         setFocusableInTouchMode(true);
-        f6Var = ((org.telegram.ui.ActionBar.f3) viVar).resourcesProvider;
-        ph.b bVar = new ph.b(context);
+        f6Var = ((org.telegram.ui.ActionBar.g3) viVar).resourcesProvider;
+        oh.b bVar = new oh.b(context);
         bVar.d = f6Var;
         bVar.Q = true;
         TextView textView = bVar.a;
@@ -29,26 +29,26 @@ public final class oi extends qi {
         textView.setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f), 0);
         bVar.b.setVisibility(8);
         bVar.a(false);
-        x9 x9Var = new x9(context);
-        bVar.c = x9Var;
-        bVar.addView(x9Var, w7.x5.d(24, 24.0f, 49, 0.0f, 4.0f, 0.0f, 0.0f));
+        u9 u9Var = new u9(context);
+        bVar.c = u9Var;
+        bVar.addView(u9Var, w7.x5.d(24, 24.0f, 49, 0.0f, 4.0f, 0.0f, 0.0f));
         bVar.w = org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.cl, f6Var);
         bVar.s = org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.al, f6Var);
         bVar.v = org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.bl, f6Var);
         bVar.f();
         this.a = bVar;
-        bVar.getBackupImageView().a.setDelegate(new p2(7));
+        bVar.getBackupImageView().a.setDelegate(new l2(10));
         addView(this.a, w7.x5.c(-1.0f, -1));
     }
 
     public final void a(boolean z10) {
         boolean z11 = this.c != null && (-this.b.id) == this.d.W0;
         this.a.e(z11, z10);
-        xi0 lottieAnimation = this.a.getBackupImageView().getImageReceiver().getLottieAnimation();
+        yi0 lottieAnimation = this.a.getBackupImageView().getImageReceiver().getLottieAnimation();
         if (!z10) {
             if (lottieAnimation != null) {
                 lottieAnimation.stop();
-                lottieAnimation.Q(0.0f, false);
+                lottieAnimation.T(0.0f, false);
                 return;
             }
             return;
@@ -56,9 +56,9 @@ public final class oi extends qi {
         if (!z11 || lottieAnimation == null) {
             return;
         }
-        lottieAnimation.I(0);
-        lottieAnimation.N(-1);
-        lottieAnimation.Q(0.0f, false);
+        lottieAnimation.K(0);
+        lottieAnimation.P(-1);
+        lottieAnimation.T(0.0f, false);
         lottieAnimation.start();
     }
 

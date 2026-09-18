@@ -1,22 +1,29 @@
 package org.telegram.ui;
 
-import java.util.TimerTask;
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Context;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class yf0 extends TimerTask {
-    public final /* synthetic */ zf0 a;
+public final class yf0 extends fs {
+    public final /* synthetic */ int h;
+    public final /* synthetic */ bg0 n;
 
-    public yf0(zf0 zf0Var) {
-        this.a = zf0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ yf0(bg0 bg0Var, Context context, int i10) {
+        super(context);
+        this.h = i10;
+        this.n = bg0Var;
     }
 
-    @Override // java.util.TimerTask, java.lang.Runnable
-    public final void run() {
-        if (this.a.R == null) {
-            return;
+    @Override // org.telegram.ui.fs
+    public final void a() {
+        switch (this.h) {
+            case 0:
+                this.n.h(null);
+                break;
+            default:
+                this.n.h(null);
+                break;
         }
-        AndroidUtilities.runOnUIThread(new g10(this, 24));
     }
 }

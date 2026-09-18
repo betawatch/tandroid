@@ -1,5 +1,6 @@
 package o0;
 
+import a4.m;
 import android.content.ContentUris;
 import android.content.Context;
 import android.content.pm.PackageManager;
@@ -15,14 +16,14 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
-import mg.n;
+import k2.c0;
 import w7.z7;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public abstract class d {
     public static final a0.k a = new a0.k(2);
-    public static final a4.e b = new a4.e(23);
+    public static final a4.e b = new a4.e(21);
 
     public static j4.f a(Context context, List list) {
         z7.a("FontProvider.getFontFamilyResult");
@@ -100,13 +101,13 @@ public abstract class d {
             ArrayList arrayList = new ArrayList();
             Uri build = new Uri.Builder().scheme("content").authority(str).build();
             Uri build2 = new Uri.Builder().scheme("content").authority(str).appendPath("file").build();
-            b dVar = Build.VERSION.SDK_INT < 24 ? new l.d(context, build) : new n(context, build);
+            b c0Var = Build.VERSION.SDK_INT < 24 ? new c0(context, build) : new m(context, build);
             Cursor cursor = null;
             try {
                 String[] strArr = {"_id", "file_id", "font_ttc_index", "font_variation_settings", "font_weight", "font_italic", "result_code"};
                 z7.a("ContentQueryWrapper.query");
                 try {
-                    cursor = dVar.l(build, strArr, new String[]{eVar.c});
+                    cursor = c0Var.G(build, strArr, new String[]{eVar.c});
                     Trace.endSection();
                     if (cursor != null && cursor.getCount() > 0) {
                         int columnIndex = cursor.getColumnIndex("result_code");
@@ -125,7 +126,7 @@ public abstract class d {
                     if (cursor != null) {
                         cursor.close();
                     }
-                    dVar.close();
+                    c0Var.close();
                     return (i[]) arrayList.toArray(new i[0]);
                 } finally {
                 }
@@ -133,7 +134,7 @@ public abstract class d {
                 if (cursor != null) {
                     cursor.close();
                 }
-                dVar.close();
+                c0Var.close();
                 throw th2;
             }
         } finally {

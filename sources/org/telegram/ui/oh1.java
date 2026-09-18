@@ -1,18 +1,42 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
+import android.content.Context;
+import android.text.Editable;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class oh1 {
-    public final int a;
-    public boolean c;
-    public boolean d;
-    public final ArrayList e = new ArrayList();
-    public final ArrayList f = new ArrayList();
-    public final boolean b = true;
+public final class oh1 extends org.telegram.ui.Cells.i3 {
+    public final /* synthetic */ int x;
+    public final /* synthetic */ UserInfoActivity y;
 
-    public oh1(int i10) {
-        this.a = i10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ oh1(UserInfoActivity userInfoActivity, Context context, String str, org.telegram.ui.ActionBar.f6 f6Var, int i10) {
+        super(context, str, false, false, -1, f6Var);
+        this.x = i10;
+        this.y = userInfoActivity;
+    }
+
+    @Override // org.telegram.ui.Cells.i3
+    public final void b(Editable editable) {
+        switch (this.x) {
+            case 0:
+                this.y.b0(true);
+                break;
+            case 1:
+                this.y.b0(true);
+                break;
+            default:
+                UserInfoActivity userInfoActivity = this.y;
+                userInfoActivity.b0(true);
+                userInfoActivity.e0();
+                break;
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public oh1(UserInfoActivity userInfoActivity, Context context, String str, int i10, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context, str, true, false, i10, f6Var);
+        this.x = 2;
+        this.y = userInfoActivity;
     }
 }

@@ -1,42 +1,35 @@
 package androidx.activity;
 
-import android.window.BackEvent;
-import android.window.OnBackAnimationCallback;
+import androidx.fragment.app.b0;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
-public final class t implements OnBackAnimationCallback {
-    public final /* synthetic */ rd.l a;
-    public final /* synthetic */ rd.l b;
-    public final /* synthetic */ rd.a c;
-    public final /* synthetic */ rd.a d;
+public final class t implements c {
+    public final b0 a;
+    public final /* synthetic */ v b;
 
-    public t(rd.l lVar, rd.l lVar2, rd.a aVar, rd.a aVar2) {
-        this.a = lVar;
-        this.b = lVar2;
-        this.c = aVar;
-        this.d = aVar2;
+    public t(v vVar, b0 onBackPressedCallback) {
+        kotlin.jvm.internal.i.e(onBackPressedCallback, "onBackPressedCallback");
+        this.b = vVar;
+        this.a = onBackPressedCallback;
     }
 
-    @Override // android.window.OnBackAnimationCallback
-    public final void onBackCancelled() {
-        this.d.invoke();
-    }
-
-    @Override // android.window.OnBackInvokedCallback
-    public final void onBackInvoked() {
-        this.c.invoke();
-    }
-
-    @Override // android.window.OnBackAnimationCallback
-    public final void onBackProgressed(BackEvent backEvent) {
-        kotlin.jvm.internal.i.e(backEvent, "backEvent");
-        this.b.invoke(new b(backEvent));
-    }
-
-    @Override // android.window.OnBackAnimationCallback
-    public final void onBackStarted(BackEvent backEvent) {
-        kotlin.jvm.internal.i.e(backEvent, "backEvent");
-        this.a.invoke(new b(backEvent));
+    /* JADX WARN: Type inference failed for: r0v2, types: [kotlin.jvm.internal.h, rd.a] */
+    @Override // androidx.activity.c
+    public final void cancel() {
+        v vVar = this.b;
+        hd.e eVar = vVar.b;
+        b0 b0Var = this.a;
+        eVar.remove(b0Var);
+        if (kotlin.jvm.internal.i.a(vVar.c, b0Var)) {
+            b0Var.a();
+            vVar.c = null;
+        }
+        b0Var.b.remove(this);
+        ?? r02 = b0Var.c;
+        if (r02 != 0) {
+            r02.invoke();
+        }
+        b0Var.c = null;
     }
 }

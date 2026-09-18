@@ -1,42 +1,142 @@
 package org.telegram.ui;
 
 import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RadialGradient;
+import android.graphics.Shader;
 import android.view.View;
-import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessagesController;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class ip0 extends org.telegram.ui.Components.g51 {
-    public static final /* synthetic */ int a = 0;
+public class ip0 extends View {
+    public boolean E;
+    public boolean F;
+    public int a;
+    public final org.telegram.ui.ActionBar.f6 b;
+    public float c;
+    public boolean d;
+    public int e;
+    public int f;
+    public final org.telegram.ui.Components.f5 h;
+    public final org.telegram.ui.Components.f5 n;
+    public int r;
+    public int s;
+    public int v;
+    public int w;
+    public RadialGradient x;
+    public final Paint y;
 
-    static {
-        org.telegram.ui.Components.g51.setup(new ip0());
+    public ip0(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context);
+        this.c = 0.0f;
+        org.telegram.ui.Components.qr qrVar = org.telegram.ui.Components.qr.h;
+        this.h = new org.telegram.ui.Components.f5(this, 350L, qrVar);
+        this.n = new org.telegram.ui.Components.f5(this, 350L, qrVar);
+        this.y = new Paint(1);
+        this.b = f6Var;
+        this.a = org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.s8, f6Var);
+        b(-1, -1, false);
     }
 
-    @Override // org.telegram.ui.Components.g51
-    public final void bindView(View view, org.telegram.ui.Components.h51 h51Var, boolean z10, org.telegram.ui.Components.v51 v51Var, org.telegram.ui.Components.d61 d61Var) {
-        jp0 jp0Var = (jp0) view;
-        TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) h51Var.G;
-        yh.i1 i1Var = jp0Var.h;
-        yh.e1 e1Var = jp0Var.e;
-        jp0Var.a = savedStarGift.gift.id;
-        jp0Var.setPadding(0, 0, 0, 0);
-        jp0Var.c(savedStarGift.gift.getDocument(), savedStarGift.gift);
-        jp0Var.b = (TL_stars.starGiftAttributeBackdrop) zh.s5.l(savedStarGift.gift.attributes, TL_stars.starGiftAttributeBackdrop.class);
-        jp0Var.c = (TL_stars.starGiftAttributePattern) zh.s5.l(savedStarGift.gift.attributes, TL_stars.starGiftAttributePattern.class);
-        e1Var.d(jp0Var.b);
-        e1Var.e(jp0Var.c);
-        if (i1Var != null) {
-            i1Var.setBackdrop(jp0Var.b);
-            String k10 = i2.g.k(savedStarGift.gift.num, ',', new StringBuilder("#"));
-            i1Var.b = k10;
-            i1Var.a.e(9, k10, false);
+    public final void b(int i10, int i11, boolean z10) {
+        MessagesController.PeerColors peerColors;
+        MessagesController.PeerColor peerColor = null;
+        if (i11 >= 0 && i10 >= 0 && (peerColors = MessagesController.getInstance(i10).profilePeerColors) != null) {
+            peerColor = peerColors.getColor(i11);
         }
-        jp0Var.b(h51Var.e, false);
+        c(peerColor, z10);
     }
 
-    @Override // org.telegram.ui.Components.g51
-    public final View createView(Context context, org.telegram.ui.Components.ll0 ll0Var, int i10, int i11, org.telegram.ui.ActionBar.f6 f6Var) {
-        return new jp0(context, f6Var, true);
+    public final void c(MessagesController.PeerColor peerColor, boolean z10) {
+        this.d = false;
+        org.telegram.ui.ActionBar.f6 f6Var = this.b;
+        if (peerColor == null) {
+            this.d = true;
+            int v02 = org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.s8, f6Var);
+            this.f = v02;
+            this.e = v02;
+        } else {
+            boolean a2 = f6Var != null ? f6Var.a() : org.telegram.ui.ActionBar.j6.I.q();
+            this.e = peerColor.getBgColor1(a2);
+            this.f = peerColor.getBgColor2(a2);
+        }
+        if (!z10) {
+            this.h.a(this.e, true);
+            this.n.a(this.f, true);
+        }
+        invalidate();
+    }
+
+    @Override // android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        Canvas canvas2;
+        int a2 = this.h.a(this.e, false);
+        int a10 = this.n.a(this.f, false);
+        RadialGradient radialGradient = this.x;
+        Paint paint = this.y;
+        if (radialGradient == null || this.r != a2 || this.s != a10 || this.v != getWidth() || this.w != getHeight()) {
+            this.v = getWidth();
+            this.w = getHeight();
+            float f7 = this.v;
+            float f10 = this.w;
+            float distance = AndroidUtilities.distance(0.0f, 0.0f, f7, f10) * 0.75f;
+            this.s = a10;
+            this.r = a2;
+            RadialGradient radialGradient2 = new RadialGradient(f7 / 2.0f, f10 * 0.4f, distance, new int[]{a10, a2}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
+            this.x = radialGradient2;
+            paint.setShader(radialGradient2);
+            a();
+        }
+        if (this.c >= 1.0f || this.E) {
+            canvas2 = canvas;
+        } else {
+            canvas2 = canvas;
+            canvas2.drawColor(this.a);
+        }
+        paint.setAlpha(this.E ? 255 : (int) (this.c * 255.0f));
+        canvas2.drawRect(0.0f, 0.0f, getWidth(), getHeight(), paint);
+    }
+
+    public int getActionBarButtonColor() {
+        int i10 = org.telegram.ui.ActionBar.j6.v8;
+        org.telegram.ui.ActionBar.f6 f6Var = this.b;
+        return i0.a.d(this.c, org.telegram.ui.ActionBar.j6.v0(i10, f6Var), this.d ? org.telegram.ui.ActionBar.j6.v0(i10, f6Var) : -1);
+    }
+
+    public int getColor() {
+        return i0.a.d(this.c, org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.s8, this.b), i0.a.d(0.75f, this.h.c, this.n.c));
+    }
+
+    public int getTabsViewBackgroundColor() {
+        int i10 = org.telegram.ui.ActionBar.j6.s8;
+        org.telegram.ui.ActionBar.f6 f6Var = this.b;
+        int v02 = AndroidUtilities.computePerceivedBrightness(org.telegram.ui.ActionBar.j6.v0(i10, f6Var)) > 0.721f ? org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.v8, f6Var) : org.telegram.ui.ActionBar.j6.b(0.08f, -0.08f, org.telegram.ui.ActionBar.j6.v0(i10, f6Var));
+        org.telegram.ui.Components.f5 f5Var = this.h;
+        int i11 = f5Var.c;
+        org.telegram.ui.Components.f5 f5Var2 = this.n;
+        return i0.a.d(this.c, v02, AndroidUtilities.computePerceivedBrightness(i0.a.d(0.75f, i11, f5Var2.c)) > 0.721f ? org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.v6, f6Var) : org.telegram.ui.ActionBar.j6.b(0.08f, -0.08f, i0.a.d(0.75f, f5Var.c, f5Var2.c)));
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        if (!this.F) {
+            i11 = org.telegram.messenger.wl.C(230.0f, AndroidUtilities.statusBarHeight, TLObject.FLAG_30);
+        }
+        super.onMeasure(i10, i11);
+    }
+
+    public void setProgressToGradient(float f7) {
+        if (Math.abs(this.c - f7) > 0.001f) {
+            this.c = f7;
+            a();
+            invalidate();
+        }
+    }
+
+    public void a() {
     }
 }

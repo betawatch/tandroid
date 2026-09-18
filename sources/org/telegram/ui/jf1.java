@@ -1,26 +1,18 @@
 package org.telegram.ui;
 
-import android.view.View;
-import org.telegram.messenger.NotificationCenter;
-
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class jf1 implements View.OnClickListener {
-    public final /* synthetic */ eg1 a;
+public final class jf1 extends s4.y {
+    public final /* synthetic */ fg1 S;
 
-    public jf1(eg1 eg1Var) {
-        this.a = eg1Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public jf1(fg1 fg1Var, eg1 eg1Var) {
+        super(eg1Var);
+        this.S = fg1Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        eg1 eg1Var = this.a;
-        if (eg1Var.M == 1) {
-            org.telegram.ui.Components.e5.j0(eg1Var, -eg1Var.a, null, eg1Var.g(), null, false, eg1Var.J, new va(this, 5), eg1Var.getResourceProvider());
-            return;
-        }
-        eg1Var.getMessagesController().addUserToChat(eg1Var.a, eg1Var.getUserConfig().getCurrentUser(), 0, null, eg1Var, false, new cf1(eg1Var, 2), new df1(eg1Var));
-        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.closeSearchByActiveAction, new Object[0]);
-        eg1Var.O0(false);
+    @Override // s4.y
+    public final boolean q() {
+        return this.S.x > 0;
     }
 }

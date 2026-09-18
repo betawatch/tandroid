@@ -21,7 +21,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class i00 extends View {
     public float E;
@@ -34,11 +34,11 @@ public final class i00 extends View {
     public StaticLayout L;
     public StaticLayout M;
     public CharSequence N;
-    public v5 O;
+    public t5 O;
     public StaticLayout P;
-    public v5 Q;
+    public t5 Q;
     public StaticLayout R;
-    public v5 S;
+    public t5 S;
     public StaticLayout T;
     public boolean U;
     public boolean V;
@@ -64,7 +64,7 @@ public final class i00 extends View {
     public boolean l0;
     public final /* synthetic */ k00 m0;
     public boolean n;
-    public v5 r;
+    public t5 r;
     public StaticLayout s;
     public int v;
     public boolean w;
@@ -112,10 +112,10 @@ public final class i00 extends View {
     public final void onAttachedToWindow() {
         this.l0 = true;
         super.onAttachedToWindow();
-        this.r = z5.update(this.b.g ? 26 : 0, this, this.r, this.s);
-        this.O = z5.update(this.b.g ? 26 : 0, this, this.O, this.P);
-        this.Q = z5.update(this.b.g ? 26 : 0, this, this.Q, this.R);
-        this.S = z5.update(this.b.g ? 26 : 0, this, this.S, this.T);
+        this.r = x5.update(this.b.g ? 26 : 0, this, this.r, this.s);
+        this.O = x5.update(this.b.g ? 26 : 0, this, this.O, this.P);
+        this.Q = x5.update(this.b.g ? 26 : 0, this, this.Q, this.R);
+        this.S = x5.update(this.b.g ? 26 : 0, this, this.S, this.T);
     }
 
     @Override // android.view.View
@@ -135,10 +135,10 @@ public final class i00 extends View {
             this.a = null;
         }
         invalidate();
-        z5.release(this, this.r);
-        z5.release(this, this.O);
-        z5.release(this, this.Q);
-        z5.release(this, this.S);
+        x5.release(this, this.r);
+        x5.release(this, this.O);
+        x5.release(this, this.Q);
+        x5.release(this, this.S);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:110:0x047a, code lost:
@@ -338,7 +338,7 @@ public final class i00 extends View {
             f12 = 1.0f;
             StaticLayout staticLayout = new StaticLayout(this.h, textPaint6, AndroidUtilities.dp(f10), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
             this.s = staticLayout;
-            this.r = z5.update(this.b.g ? 26 : 0, this, this.r, staticLayout);
+            this.r = x5.update(this.b.g ? 26 : 0, this, this.r, staticLayout);
             this.c = this.s.getHeight();
             this.v = (int) (-this.s.getLineLeft(0));
         }
@@ -353,7 +353,7 @@ public final class i00 extends View {
                 f19 = 1.0f;
                 f13 = f22;
                 f6Var4 = f6Var3;
-                z5.drawAnimatedEmojis(canvas2, this.T, this.S, 0.0f, null, computeVerticalScrollOffset() - AndroidUtilities.dp(6.0f), computeVerticalScrollOffset() + computeVerticalScrollExtent(), 0.0f, 1.0f, k00Var.f);
+                x5.drawAnimatedEmojis(canvas2, this.T, this.S, 0.0f, null, computeVerticalScrollOffset() - AndroidUtilities.dp(6.0f), computeVerticalScrollOffset() + computeVerticalScrollExtent(), 0.0f, 1.0f, k00Var.f);
                 canvas2.restore();
             } else {
                 textPaint3 = textPaint6;
@@ -370,14 +370,14 @@ public final class i00 extends View {
                 canvas2.translate(f13 + this.v + f23, ((getMeasuredHeight() - this.c) / 2.0f) + f19);
                 this.P.draw(canvas2);
                 StaticLayout staticLayout2 = this.P;
-                v5 v5Var = this.O;
+                t5 t5Var = this.O;
                 float computeVerticalScrollOffset = computeVerticalScrollOffset() - AndroidUtilities.dp(6.0f);
                 float computeVerticalScrollOffset2 = computeVerticalScrollOffset() + computeVerticalScrollExtent();
                 float f24 = this.V ? f19 - this.x : this.x;
                 paint = paint3;
                 textPaint2 = textPaint7;
                 f14 = 1.0f;
-                z5.drawAnimatedEmojis(canvas2, staticLayout2, v5Var, 0.0f, null, computeVerticalScrollOffset, computeVerticalScrollOffset2, 0.0f, f24, k00Var.f);
+                x5.drawAnimatedEmojis(canvas2, staticLayout2, t5Var, 0.0f, null, computeVerticalScrollOffset, computeVerticalScrollOffset2, 0.0f, f24, k00Var.f);
                 canvas2.restore();
                 textPaint2.setAlpha(alpha);
             } else {
@@ -391,7 +391,7 @@ public final class i00 extends View {
                 textPaint2.setAlpha((int) (alpha2 * (this.V ? this.x : f14 - this.x)));
                 canvas2.translate(f13 + this.v + f23, ((getMeasuredHeight() - this.c) / 2.0f) + f14);
                 this.R.draw(canvas2);
-                z5.drawAnimatedEmojis(canvas2, this.R, this.Q, 0.0f, null, computeVerticalScrollOffset() - AndroidUtilities.dp(6.0f), computeVerticalScrollOffset() + computeVerticalScrollExtent(), 0.0f, this.V ? this.x : f14 - this.x, k00Var.f);
+                x5.drawAnimatedEmojis(canvas2, this.R, this.Q, 0.0f, null, computeVerticalScrollOffset() - AndroidUtilities.dp(6.0f), computeVerticalScrollOffset() + computeVerticalScrollExtent(), 0.0f, this.V ? this.x : f14 - this.x, k00Var.f);
                 canvas2.restore();
                 textPaint2.setAlpha(alpha2);
             }
@@ -407,7 +407,7 @@ public final class i00 extends View {
                 canvas2.save();
                 canvas2.translate(f13 + this.v, ((getMeasuredHeight() - this.c) / 2.0f) + 1.0f);
                 this.s.draw(canvas2);
-                z5.drawAnimatedEmojis(canvas2, this.s, this.r, 0.0f, null, computeVerticalScrollOffset() - AndroidUtilities.dp(6.0f), computeVerticalScrollOffset() + computeVerticalScrollExtent(), 0.0f, 1.0f, k00Var.f);
+                x5.drawAnimatedEmojis(canvas2, this.s, this.r, 0.0f, null, computeVerticalScrollOffset() - AndroidUtilities.dp(6.0f), computeVerticalScrollOffset() + computeVerticalScrollExtent(), 0.0f, 1.0f, k00Var.f);
                 canvas2.restore();
             }
             f15 = 0.0f;
@@ -520,7 +520,7 @@ public final class i00 extends View {
             f28 = (f28 * f30) + ((f14 - f30) * f29);
         }
         float dp3 = (z16 && this.R == null) ? (f13 - this.a0) + f15 + f28 + AndroidUtilities.dp(5.0f) : AndroidUtilities.dp(5.0f) + f13 + f28;
-        int y3 = org.telegram.messenger.vl.y(17.333f, getMeasuredHeight(), 2);
+        int y3 = org.telegram.messenger.wl.y(17.333f, getMeasuredHeight(), 2);
         if (z10 || ((!k00Var.n && k00Var.w == f16) || str2 != null)) {
             paint2.setAlpha(255);
         } else {

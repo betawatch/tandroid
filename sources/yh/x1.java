@@ -1,59 +1,78 @@
 package yh;
 
-import android.content.Context;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.Components.hq0;
-import org.telegram.ui.Components.nr0;
-import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.yc;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
-/* loaded from: classes.dex */
-public final class x1 extends hq0 {
-    public final /* synthetic */ org.telegram.ui.ActionBar.n2 b1;
-    public final /* synthetic */ nr0 c1;
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class x1 implements Utilities.Callback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ a4 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public x1(nr0 nr0Var, Context context, String str, String str2, f6 f6Var, org.telegram.ui.ActionBar.n2 n2Var) {
-        super(context, null, str, false, str2, false, f6Var);
-        this.c1 = nr0Var;
-        this.b1 = n2Var;
+    public /* synthetic */ x1(a4 a4Var, int i10) {
+        this.a = i10;
+        this.b = a4Var;
     }
 
-    @Override // org.telegram.ui.Components.hq0
-    public final void R0(a0.i iVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
-        yc a02;
-        if (z10 && (a02 = yc.a0(this.b1)) != null) {
-            if (iVar.m() == 1) {
-                long j3 = iVar.j(0);
-                if (j3 == UserConfig.getInstance(this.currentAccount).clientUserId) {
-                    qc G = a02.G(R.raw.saved_messages, 5000, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.GiftCollectionSharedToSavedMessages, new Object[0])));
-                    G.r = false;
-                    G.j();
-                } else if (j3 < 0) {
-                    qc G2 = a02.G(R.raw.forward, 5000, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.GiftCollectionSharedTo, tL_forumTopic != null ? tL_forumTopic.title : MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-j3)).title)));
-                    G2.r = false;
-                    G2.j();
-                } else {
-                    qc G3 = a02.G(R.raw.forward, 5000, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.GiftCollectionSharedTo, MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(j3)).first_name)));
-                    G3.r = false;
-                    G3.j();
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        TLRPC.Message message;
+        switch (this.a) {
+            case 0:
+                a4 a4Var = this.b;
+                a4Var.getClass();
+                if (((Boolean) obj).booleanValue()) {
+                    a4Var.skipDismissAnimation();
                 }
-            } else {
-                qc Q = a02.Q(R.raw.forward, 36, AndroidUtilities.replaceTags(LocaleController.formatPluralString("GiftCollectionSharedToManyChats", iVar.m(), Integer.valueOf(iVar.m()))));
-                Q.r = false;
-                Q.j();
-            }
-            try {
-                this.c1.performHapticFeedback(3);
-            } catch (Exception unused) {
-            }
+                a4Var.dismiss();
+                break;
+            case 1:
+                TL_stars.starGiftUpgradePreview stargiftupgradepreview = (TL_stars.starGiftUpgradePreview) obj;
+                a4 a4Var2 = this.b;
+                a4Var2.getClass();
+                if (stargiftupgradepreview != null) {
+                    a4Var2.h1 = stargiftupgradepreview.sample_attributes;
+                    a4Var2.i1 = stargiftupgradepreview.prices;
+                    a4Var2.j1 = stargiftupgradepreview.next_prices;
+                    a4Var2.b2();
+                    break;
+                }
+                break;
+            case 2:
+                this.b.dismiss(((Boolean) obj).booleanValue());
+                break;
+            default:
+                TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj;
+                a4 a4Var3 = this.b;
+                a4Var3.K0 = false;
+                a4Var3.L0 = true;
+                if (savedStarGift != null) {
+                    a4Var3.f1 = Boolean.valueOf(savedStarGift.unsaved);
+                    MessageObject messageObject = a4Var3.E0;
+                    if (messageObject != null && (message = messageObject.messageOwner) != null) {
+                        TLRPC.MessageAction messageAction = message.action;
+                        if (messageAction instanceof TLRPC.TL_messageActionStarGiftUnique) {
+                            TLRPC.TL_messageActionStarGiftUnique tL_messageActionStarGiftUnique = (TLRPC.TL_messageActionStarGiftUnique) messageAction;
+                            boolean z10 = tL_messageActionStarGiftUnique.saved;
+                            boolean z11 = !savedStarGift.unsaved;
+                            if (z10 != z11) {
+                                tL_messageActionStarGiftUnique.saved = z11;
+                            }
+                        } else if (messageAction instanceof TLRPC.TL_messageActionStarGift) {
+                            TLRPC.TL_messageActionStarGift tL_messageActionStarGift = (TLRPC.TL_messageActionStarGift) messageAction;
+                            boolean z12 = tL_messageActionStarGift.saved;
+                            boolean z13 = !savedStarGift.unsaved;
+                            if (z12 != z13) {
+                                tL_messageActionStarGift.saved = z13;
+                            }
+                        }
+                        a4Var3.i2(messageObject, null);
+                        break;
+                    }
+                }
+                break;
         }
     }
 }

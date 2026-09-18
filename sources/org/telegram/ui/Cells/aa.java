@@ -4,13 +4,13 @@ import android.graphics.Canvas;
 import android.text.Layout;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public class aa extends da {
     public final z9 u0;
 
-    public aa(bi.da daVar, org.telegram.ui.ActionBar.f6 f6Var) {
-        this.u0 = daVar;
+    public aa(ai.wa waVar, org.telegram.ui.ActionBar.f6 f6Var) {
+        this.u0 = waVar;
         this.h0 = f6Var;
     }
 
@@ -62,8 +62,8 @@ public class aa extends da {
             if (i15 >= 0) {
                 try {
                     return t9Var.a + layout.getOffsetForHorizontal(i15, i14);
-                } catch (Exception e7) {
-                    FileLog.e(e7);
+                } catch (Exception e) {
+                    FileLog.e(e);
                 }
             }
         }

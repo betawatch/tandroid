@@ -1,79 +1,61 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.LinearLayout;
+import android.text.style.ClickableSpan;
+import java.util.ArrayList;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class z31 extends g51 {
-    static {
-        g51.setup(new z31());
+public final /* synthetic */ class z31 implements Utilities.Callback2 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ h41 b;
+
+    public /* synthetic */ z31(h41 h41Var, int i10) {
+        this.a = i10;
+        this.b = h41Var;
     }
 
-    public static h51 a(int i10, CharSequence charSequence, CharSequence charSequence2, CharSequence charSequence3, View.OnClickListener onClickListener, boolean z10, View.OnClickListener onClickListener2, o oVar) {
-        h51 J = h51.J(z31.class);
-        J.d = i10;
-        J.l = charSequence;
-        J.m = charSequence2;
-        J.n = charSequence3;
-        J.D = onClickListener;
-        J.e = z10;
-        J.E = onClickListener2;
-        J.G = oVar;
-        return J;
-    }
-
-    public static h51 b(int i10, String str, String str2, String str3, w31 w31Var) {
-        return a(i10, str, str2, str3, w31Var, false, null, null);
-    }
-
-    @Override // org.telegram.ui.Components.g51
-    public final void bindView(View view, h51 h51Var, boolean z10, v51 v51Var, d61 d61Var) {
-        a41 a41Var = (a41) view;
-        CharSequence charSequence = h51Var.l;
-        CharSequence charSequence2 = h51Var.m;
-        CharSequence charSequence3 = h51Var.n;
-        View.OnClickListener onClickListener = h51Var.D;
-        boolean z11 = h51Var.e;
-        View.OnClickListener onClickListener2 = h51Var.E;
-        Object obj = h51Var.G;
-        View.OnClickListener onClickListener3 = obj instanceof View.OnClickListener ? (View.OnClickListener) obj : null;
-        LinearLayout linearLayout = a41Var.r;
-        LinearLayout linearLayout2 = a41Var.h;
-        LinearLayout linearLayout3 = a41Var.b;
-        a41Var.c.setText(charSequence);
-        a41Var.d.setText(charSequence2);
-        a41Var.e.setText(charSequence3);
-        a41Var.f.setVisibility(onClickListener != null ? 0 : 8);
-        linearLayout3.setOnClickListener(onClickListener);
-        linearLayout3.setClickable(onClickListener != null);
-        a41Var.n.a(z11, false);
-        linearLayout2.setVisibility(onClickListener2 != null ? 0 : 8);
-        linearLayout2.setOnClickListener(onClickListener2);
-        linearLayout.setVisibility(onClickListener3 != null ? 0 : 8);
-        linearLayout.setOnClickListener(new ct(19, a41Var, onClickListener3));
-        a41Var.d();
-    }
-
-    @Override // org.telegram.ui.Components.g51
-    public final boolean contentsEquals(h51 h51Var, h51 h51Var2) {
-        return TextUtils.equals(h51Var.l, h51Var2.l) && TextUtils.equals(h51Var.m, h51Var2.m) && TextUtils.equals(h51Var.n, h51Var2.n) && h51Var.E == h51Var2.E;
-    }
-
-    @Override // org.telegram.ui.Components.g51
-    public final View createView(Context context, ll0 ll0Var, int i10, int i11, org.telegram.ui.ActionBar.f6 f6Var) {
-        return new a41(context, f6Var);
-    }
-
-    @Override // org.telegram.ui.Components.g51
-    public final boolean equals(h51 h51Var, h51 h51Var2) {
-        return h51Var.d == h51Var2.d;
-    }
-
-    @Override // org.telegram.ui.Components.g51
-    public final boolean isClickable() {
-        return false;
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
+        switch (this.a) {
+            case 0:
+                ArrayList arrayList = (ArrayList) obj;
+                x51 x51Var = (x51) obj2;
+                final h41 h41Var = this.b;
+                String[] strArr = h41Var.i0;
+                arrayList.add(j51.B(null));
+                x51Var.E = 1;
+                x51Var.U();
+                String str = h41Var.e0;
+                arrayList.add(b41.b(3, "", str != null ? w31.y(w31.E(str, null, null)) : LocaleController.getString(R.string.AIEditorOriginalText), null, null));
+                arrayList.add(f41.a(4, h41Var.a0, h41Var.k0, new dt(18, h41Var, x51Var), new b90() { // from class: org.telegram.ui.Components.a41
+                    @Override // org.telegram.ui.Components.b90
+                    public final void a(ClickableSpan clickableSpan) {
+                        h41.Q(h41.this, clickableSpan);
+                    }
+                }, null));
+                StringBuilder sb2 = new StringBuilder();
+                sb2.append(w31.E(h41Var.f0, null, null));
+                sb2.append((h41Var.g0 == 1 || strArr == null) ? "" : a4.a.s(new StringBuilder(" ("), strArr[h41Var.g0], ")"));
+                arrayList.add(b41.b(5, "", w31.y(sb2.toString()), null, new y31(h41Var, 4)));
+                arrayList.add(f41.a(6, h41Var.c0, false, null, new b90() { // from class: org.telegram.ui.Components.a41
+                    @Override // org.telegram.ui.Components.b90
+                    public final void a(ClickableSpan clickableSpan) {
+                        h41.Q(h41.this, clickableSpan);
+                    }
+                }, null));
+                x51Var.T();
+                arrayList.add(j51.B(null));
+                x51Var.U();
+                arrayList.add(j51.c(1, R.drawable.msg_copy, LocaleController.getString(R.string.TranslateCopy)));
+                x51Var.T();
+                break;
+            default:
+                h41.R(this.b, (TLRPC.TL_messages_translateResult) obj, (TLRPC.TL_error) obj2);
+                break;
+        }
     }
 }

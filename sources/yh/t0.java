@@ -1,24 +1,52 @@
 package yh;
 
-import android.view.View;
-import org.telegram.ui.Components.o5;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.TwoStepVerificationActivity;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
-/* loaded from: classes.dex */
-public final class t0 implements View.OnAttachStateChangeListener {
-    public final /* synthetic */ o5 a;
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class t0 implements Runnable {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ a4 b;
+    public final /* synthetic */ TLRPC.TL_error c;
+    public final /* synthetic */ TwoStepVerificationActivity d;
+    public final /* synthetic */ TLObject e;
 
-    public t0(o5 o5Var) {
-        this.a = o5Var;
+    public /* synthetic */ t0(a4 a4Var, TLRPC.TL_error tL_error, TLObject tLObject, TwoStepVerificationActivity twoStepVerificationActivity) {
+        this.b = a4Var;
+        this.c = tL_error;
+        this.e = tLObject;
+        this.d = twoStepVerificationActivity;
     }
 
-    @Override // android.view.View.OnAttachStateChangeListener
-    public final void onViewAttachedToWindow(View view) {
-        this.a.a();
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                a4 a4Var = this.b;
+                a4Var.getClass();
+                if (this.c == null) {
+                    TL_account.Password password = (TL_account.Password) this.e;
+                    TwoStepVerificationActivity twoStepVerificationActivity = this.d;
+                    twoStepVerificationActivity.I = password;
+                    TwoStepVerificationActivity.m0(password);
+                    a4Var.M1(twoStepVerificationActivity.l0(), twoStepVerificationActivity);
+                    break;
+                }
+                break;
+            default:
+                TwoStepVerificationActivity twoStepVerificationActivity2 = this.d;
+                a4.W0(this.b, this.c, this.e, twoStepVerificationActivity2);
+                break;
+        }
     }
 
-    @Override // android.view.View.OnAttachStateChangeListener
-    public final void onViewDetachedFromWindow(View view) {
-        this.a.b();
+    public /* synthetic */ t0(a4 a4Var, TLRPC.TL_error tL_error, TwoStepVerificationActivity twoStepVerificationActivity, TLObject tLObject) {
+        this.b = a4Var;
+        this.c = tL_error;
+        this.d = twoStepVerificationActivity;
+        this.e = tLObject;
     }
 }

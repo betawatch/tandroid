@@ -1,6 +1,6 @@
 package m4;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class l {
     public static final String d;
@@ -9,7 +9,7 @@ public final class l {
     public static final String g;
     public final int a;
     public final long b;
-    public final n1 c;
+    public final o1 c;
 
     static {
         String str = e2.d0.a;
@@ -21,9 +21,9 @@ public final class l {
         g = Integer.toString(5, 36);
     }
 
-    public l(int i10, long j3, n1 n1Var) {
+    public l(int i10, long j3, o1 o1Var) {
         this.a = i10;
         this.b = j3;
-        this.c = n1Var;
+        this.c = o1Var;
     }
 }

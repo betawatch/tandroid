@@ -1,42 +1,54 @@
 package androidx.fragment.app;
 
-import android.content.Intent;
-import java.util.ArrayList;
-import java.util.Iterator;
+import java.lang.reflect.InvocationTargetException;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class d0 {
-    public final /* synthetic */ int a;
+    public static final a0.m b = new a0.m(0);
+    public final /* synthetic */ k0 a;
 
-    public final Object a(Intent intent, int i10) {
-        switch (this.a) {
-            case 1:
-                if (i10 == -1 && intent != null) {
-                    String[] stringArrayExtra = intent.getStringArrayExtra("androidx.activity.result.contract.extra.PERMISSIONS");
-                    int[] intArrayExtra = intent.getIntArrayExtra("androidx.activity.result.contract.extra.PERMISSION_GRANT_RESULTS");
-                    if (intArrayExtra != null && stringArrayExtra != null) {
-                        ArrayList arrayList = new ArrayList(intArrayExtra.length);
-                        for (int i11 : intArrayExtra) {
-                            arrayList.add(Boolean.valueOf(i11 == 0));
-                        }
-                        ArrayList arrayList2 = new ArrayList();
-                        for (String str : stringArrayExtra) {
-                            if (str != null) {
-                                arrayList2.add(str);
-                            }
-                        }
-                        Iterator it = arrayList2.iterator();
-                        Iterator it2 = arrayList.iterator();
-                        ArrayList arrayList3 = new ArrayList(Math.min(hd.i.d(arrayList2), hd.i.d(arrayList)));
-                        while (it.hasNext() && it2.hasNext()) {
-                            arrayList3.add(new gd.d(it.next(), it2.next()));
-                        }
-                        break;
-                    }
-                }
-                break;
+    public d0(k0 k0Var) {
+        this.a = k0Var;
+    }
+
+    public static Class b(ClassLoader classLoader, String str) {
+        a0.m mVar = b;
+        a0.m mVar2 = (a0.m) mVar.get(classLoader);
+        if (mVar2 == null) {
+            mVar2 = new a0.m(0);
+            mVar.put(classLoader, mVar2);
         }
-        return new androidx.activity.result.a(intent, i10);
+        Class cls = (Class) mVar2.get(str);
+        if (cls != null) {
+            return cls;
+        }
+        Class<?> cls2 = Class.forName(str, false, classLoader);
+        mVar2.put(str, cls2);
+        return cls2;
+    }
+
+    public static Class c(ClassLoader classLoader, String str) {
+        try {
+            return b(classLoader, str);
+        } catch (ClassCastException e) {
+            throw new androidx.car.app.j(a4.a.p("Unable to instantiate fragment ", str, ": make sure class is a valid subclass of Fragment"), e);
+        } catch (ClassNotFoundException e7) {
+            throw new androidx.car.app.j(a4.a.p("Unable to instantiate fragment ", str, ": make sure class name exists"), e7);
+        }
+    }
+
+    public final s a(String str) {
+        try {
+            return (s) c(this.a.w.b.getClassLoader(), str).getConstructor(null).newInstance(null);
+        } catch (IllegalAccessException e) {
+            throw new androidx.car.app.j(a4.a.p("Unable to instantiate fragment ", str, ": make sure class name exists, is public, and has an empty constructor that is public"), e);
+        } catch (InstantiationException e7) {
+            throw new androidx.car.app.j(a4.a.p("Unable to instantiate fragment ", str, ": make sure class name exists, is public, and has an empty constructor that is public"), e7);
+        } catch (NoSuchMethodException e10) {
+            throw new androidx.car.app.j(a4.a.p("Unable to instantiate fragment ", str, ": could not find Fragment constructor"), e10);
+        } catch (InvocationTargetException e11) {
+            throw new androidx.car.app.j(a4.a.p("Unable to instantiate fragment ", str, ": calling Fragment constructor caused an exception"), e11);
+        }
     }
 }

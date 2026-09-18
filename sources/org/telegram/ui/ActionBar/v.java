@@ -1,48 +1,28 @@
 package org.telegram.ui.ActionBar;
 
+import android.graphics.Outline;
+import android.graphics.Path;
+import android.os.Build;
+import android.view.View;
+import android.view.ViewOutlineProvider;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class v implements Runnable {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ n2 b;
-    public final /* synthetic */ n2 c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ ActionBarLayout e;
+public final class v extends ViewOutlineProvider {
+    public final Path a = new Path();
 
-    public v(ActionBarLayout actionBarLayout, boolean z10, n2 n2Var, n2 n2Var2, boolean z11) {
-        this.e = actionBarLayout;
-        this.a = z10;
-        this.b = n2Var;
-        this.c = n2Var2;
-        this.d = z11;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        ActionBarLayout actionBarLayout = this.e;
-        if (actionBarLayout.d != this) {
-            return;
-        }
-        actionBarLayout.d = null;
-        if (this.a) {
-            n2 n2Var = this.b;
-            if (n2Var != null) {
-                n2Var.onTransitionAnimationStart(false, false);
-            }
-            this.c.onTransitionAnimationStart(true, false);
-            actionBarLayout.d0(true, true, this.d);
-            return;
-        }
-        Runnable runnable = actionBarLayout.e;
-        if (runnable != null) {
-            AndroidUtilities.cancelRunOnUIThread(runnable);
-            if (actionBarLayout.R0) {
-                actionBarLayout.e.run();
-            } else {
-                AndroidUtilities.runOnUIThread(actionBarLayout.e, 200L);
-            }
+    @Override // android.view.ViewOutlineProvider
+    public final void getOutline(View view, Outline outline) {
+        float dp = AndroidUtilities.dp(29.0f);
+        float dp2 = AndroidUtilities.dp(12.0f);
+        Path path = this.a;
+        path.rewind();
+        path.addRoundRect(0.0f, 0.0f, view.getWidth(), view.getHeight(), new float[]{dp, dp, dp, dp, dp2, dp2, dp2, dp2}, Path.Direction.CW);
+        if (Build.VERSION.SDK_INT >= 30) {
+            outline.setPath(path);
+        } else {
+            outline.setConvexPath(path);
         }
     }
 }

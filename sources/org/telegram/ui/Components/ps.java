@@ -1,48 +1,37 @@
 package org.telegram.ui.Components;
 
 import java.util.ArrayList;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.tl.TL_bots;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class ps {
-    public final int a;
-    public final ls b;
-    public boolean c;
-    public boolean d;
-    public boolean e;
-    public long f;
-    public String g;
-    public final ArrayList h = new ArrayList();
-    public boolean i = false;
+public final /* synthetic */ class ps implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ qs b;
 
-    public ps(int i10, ls lsVar) {
+    public /* synthetic */ ps(qs qsVar, int i10) {
         this.a = i10;
-        this.b = lsVar;
+        this.b = qsVar;
     }
 
-    public final void a() {
-        if (this.c || this.e) {
-            return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                qs qsVar = this.b;
+                qsVar.c = false;
+                qsVar.b.run();
+                ArrayList arrayList = qsVar.h;
+                if (arrayList.isEmpty() || System.currentTimeMillis() - qsVar.f > 3600000) {
+                    arrayList.clear();
+                    qsVar.e = false;
+                    qsVar.g = null;
+                    qsVar.a();
+                    break;
+                }
+                break;
+            default:
+                this.b.i = false;
+                break;
         }
-        this.c = true;
-        boolean z10 = this.d;
-        int i10 = this.a;
-        if (!z10) {
-            os osVar = new os(this, 0);
-            MessagesStorage messagesStorage = MessagesStorage.getInstance(i10);
-            messagesStorage.getStorageQueue().postRunnable(new org.telegram.ui.ActionBar.p(this, messagesStorage, osVar, 14));
-            return;
-        }
-        TL_bots.getPopularAppBots getpopularappbots = new TL_bots.getPopularAppBots();
-        getpopularappbots.limit = 20;
-        String str = this.g;
-        if (str == null) {
-            str = "";
-        }
-        getpopularappbots.offset = str;
-        ConnectionsManager.getInstance(i10).sendRequest(getpopularappbots, new y1(this, 3));
     }
 }

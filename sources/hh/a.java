@@ -1,29 +1,50 @@
 package hh;
 
-import android.graphics.Bitmap;
-import java.lang.ref.WeakReference;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.MessageObject;
+import org.telegram.ui.vj;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class a {
-    public WeakReference a;
-    public long b;
-    public boolean c = true;
+    public RecyclerView a;
+    public int b;
+    public long c;
+    public int d;
+    public boolean e;
 
-    public final boolean a(Bitmap bitmap) {
-        if (this.c) {
-            return true;
+    public final boolean a(MessageObject messageObject) {
+        if (messageObject == null) {
+            return false;
         }
-        WeakReference weakReference = this.a;
-        if ((weakReference != null ? (Bitmap) weakReference.get() : null) != bitmap) {
-            return true;
+        if (messageObject.getId() != this.b) {
+            return this.c != 0 && messageObject.getGroupId() == this.c;
         }
-        return ((bitmap == null || bitmap.isRecycled()) ? 0L : (long) bitmap.getGenerationId()) != this.b;
+        return true;
     }
 
-    public final void b(Bitmap bitmap) {
-        this.a = bitmap != null ? new WeakReference(bitmap) : null;
-        this.b = (bitmap == null || bitmap.isRecycled()) ? 0L : bitmap.getGenerationId();
-        this.c = false;
+    public final boolean b() {
+        return this.e;
+    }
+
+    public final boolean c(int i10, long j3) {
+        if (this.b == i10 && this.c == j3) {
+            return false;
+        }
+        this.b = i10;
+        this.c = j3;
+        if (i10 != 0) {
+            return true;
+        }
+        this.e = false;
+        return true;
+    }
+
+    public final void d(int i10) {
+        this.d = i10;
+    }
+
+    public final void e(vj vjVar) {
+        this.a = vjVar;
     }
 }

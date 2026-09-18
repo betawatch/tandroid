@@ -7,16 +7,16 @@ import java.util.Arrays;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class v0 extends o6.a {
     public static final Parcelable.Creator<v0> CREATOR = new r0(14);
     public final boolean a;
-    public final n7.s0 b;
+    public final n7.t0 b;
 
-    public v0(boolean z10, n7.s0 s0Var) {
+    public v0(boolean z10, n7.t0 t0Var) {
         this.a = z10;
-        this.b = s0Var;
+        this.b = t0Var;
     }
 
     public final JSONObject b() {
@@ -25,8 +25,8 @@ public final class v0 extends o6.a {
             if (this.a) {
                 jSONObject.put("enabled", true);
             }
-            n7.s0 s0Var = this.b;
-            byte[] u10 = s0Var == null ? null : s0Var.u();
+            n7.t0 t0Var = this.b;
+            byte[] u10 = t0Var == null ? null : t0Var.u();
             if (u10 != null) {
                 JSONObject jSONObject2 = new JSONObject();
                 jSONObject2.put("first", Base64.encodeToString(Arrays.copyOf(u10, 32), 11));
@@ -36,8 +36,8 @@ public final class v0 extends o6.a {
                 jSONObject.put("results", jSONObject2);
             }
             return jSONObject;
-        } catch (JSONException e7) {
-            throw new RuntimeException("Error encoding AuthenticationExtensionsPrfOutputs to JSON object", e7);
+        } catch (JSONException e) {
+            throw new RuntimeException("Error encoding AuthenticationExtensionsPrfOutputs to JSON object", e);
         }
     }
 
@@ -62,8 +62,8 @@ public final class v0 extends o6.a {
         int q6 = w7.e0.q(parcel, 20293);
         w7.e0.s(parcel, 1, 4);
         parcel.writeInt(this.a ? 1 : 0);
-        n7.s0 s0Var = this.b;
-        w7.e0.c(parcel, 2, s0Var == null ? null : s0Var.u());
+        n7.t0 t0Var = this.b;
+        w7.e0.c(parcel, 2, t0Var == null ? null : t0Var.u());
         w7.e0.r(parcel, q6);
     }
 }

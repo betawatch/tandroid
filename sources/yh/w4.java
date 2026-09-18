@@ -1,54 +1,45 @@
 package yh;
 
-import android.graphics.Canvas;
-import android.graphics.PointF;
-import androidx.recyclerview.widget.RecyclerView;
-import di.eb;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.ll0;
+import android.content.DialogInterface;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
-/* loaded from: classes.dex */
-public final class w4 extends s4.n0 {
-    public final PointF a = new PointF();
-    public final /* synthetic */ x4 b;
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class w4 implements DialogInterface.OnDismissListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Utilities.Callback2 b;
+    public final /* synthetic */ boolean[] c;
 
-    public w4(x4 x4Var) {
-        this.b = x4Var;
+    public /* synthetic */ w4(Utilities.Callback2 callback2, boolean[] zArr, int i10) {
+        this.a = i10;
+        this.b = callback2;
+        this.c = zArr;
     }
 
-    @Override // s4.n0
-    public final void b(Canvas canvas, RecyclerView recyclerView) {
-        float f7;
-        float f10;
-        eb ebVar;
-        float height = recyclerView.getHeight();
-        x4 x4Var = this.b;
-        s4 s4Var = x4Var.s0;
-        r4 r4Var = x4Var.h0;
-        ll0 ll0Var = x4Var.d;
-        PointF pointF = this.a;
-        if (ih.k.b(r4Var, ll0Var, pointF)) {
-            f7 = pointF.x;
-            height = Math.min(height, pointF.y);
-            f10 = Math.max(0.0f, pointF.y + r4Var.getMeasuredHeight());
-        } else {
-            f7 = 0.0f;
-            f10 = 0.0f;
+    @Override // android.content.DialogInterface.OnDismissListener
+    public final void onDismiss(DialogInterface dialogInterface) {
+        switch (this.a) {
+            case 0:
+                Utilities.Callback2 callback2 = this.b;
+                if (callback2 != null && !this.c[0]) {
+                    callback2.run(0L, Boolean.FALSE);
+                    break;
+                }
+                break;
+            case 1:
+                Utilities.Callback2 callback22 = this.b;
+                if (callback22 != null && !this.c[0]) {
+                    callback22.run(Boolean.FALSE, null);
+                    break;
+                }
+                break;
+            default:
+                Utilities.Callback2 callback23 = this.b;
+                if (callback23 != null && !this.c[0]) {
+                    callback23.run(Boolean.FALSE, null);
+                    break;
+                }
+                break;
         }
-        if (ih.k.b(s4Var, ll0Var, pointF)) {
-            height = Math.min(height, pointF.y);
-            f10 = Math.max(f10, pointF.y + s4Var.getMeasuredHeight() + AndroidUtilities.dp(12.0f));
-        }
-        if (height >= f10 || (ebVar = r4Var.L) == null) {
-            return;
-        }
-        float height2 = (f10 - height) / ebVar.getHeight();
-        canvas.save();
-        canvas.clipRect(0.0f, height, recyclerView.getWidth(), f10);
-        canvas.translate(f7, height);
-        canvas.scale(height2, height2);
-        r4Var.L.draw(canvas);
-        canvas.restore();
     }
 }

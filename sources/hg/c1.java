@@ -1,64 +1,20 @@
 package hg;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.tgnet.TLRPC;
+import android.text.InputFilter;
+import android.text.Spanned;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class c1 implements Comparator {
-    public final /* synthetic */ ArrayList a;
-    public final /* synthetic */ ArrayList b;
-
-    public c1(ArrayList arrayList, ArrayList arrayList2) {
-        this.a = arrayList;
-        this.b = arrayList2;
-    }
-
-    public final int a(j1 j1Var) {
-        int i10 = 0;
-        int i11 = 0;
-        while (true) {
-            ArrayList arrayList = this.a;
-            if (i11 >= arrayList.size()) {
-                while (true) {
-                    ArrayList arrayList2 = this.b;
-                    if (i10 >= Math.min(20, arrayList2.size())) {
-                        return -1;
-                    }
-                    if (((TLRPC.Document) arrayList2.get(i10)).id == j1Var.a.id) {
-                        return (arrayList2.size() - i10) + MediaController.VIDEO_BITRATE_480;
-                    }
-                    i10++;
-                }
-            } else {
-                if (((TLRPC.Document) arrayList.get(i11)).id == j1Var.a.id) {
-                    return i11 + 2000000;
-                }
-                i11++;
-            }
+public final class c1 implements InputFilter {
+    @Override // android.text.InputFilter
+    public final CharSequence filter(CharSequence charSequence, int i10, int i11, Spanned spanned, int i12, int i13) {
+        if (charSequence == null) {
+            return null;
         }
-    }
-
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        j1 j1Var = (j1) obj;
-        j1 j1Var2 = (j1) obj2;
-        boolean isAnimatedStickerDocument = MessageObject.isAnimatedStickerDocument(j1Var.a, true);
-        if (isAnimatedStickerDocument == MessageObject.isAnimatedStickerDocument(j1Var2.a, true)) {
-            int a2 = a(j1Var);
-            int a10 = a(j1Var2);
-            if (a2 > a10) {
-                return -1;
-            }
-            if (a2 >= a10) {
-                return 0;
-            }
-        } else if (isAnimatedStickerDocument) {
-            return -1;
+        String charSequence2 = charSequence.toString();
+        if (charSequence2.contains("\n")) {
+            return charSequence2.replaceAll("\n", "");
         }
-        return 1;
+        return null;
     }
 }

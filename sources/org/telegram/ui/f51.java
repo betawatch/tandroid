@@ -3,7 +3,7 @@ package org.telegram.ui;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f51 implements Runnable {
     public final /* synthetic */ int a;
@@ -26,7 +26,7 @@ public final /* synthetic */ class f51 implements Runnable {
                     if (i51Var != null) {
                         i51Var.Xd = (k51Var.w.p() - k51Var.w.n()) / 1000;
                         k51Var.N.q4();
-                        org.telegram.ui.Components.io0 seekBarWaveform = k51Var.N.getSeekBarWaveform();
+                        org.telegram.ui.Components.jo0 seekBarWaveform = k51Var.N.getSeekBarWaveform();
                         if (seekBarWaveform != null) {
                             float f7 = k51Var.a0;
                             seekBarWaveform.J = true;

@@ -1,35 +1,73 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+import android.content.DialogInterface;
+import org.telegram.tgnet.ConnectionsManager;
+
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class mp implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ xp b;
+    public final /* synthetic */ wp b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.c2[] c;
+    public final /* synthetic */ int d;
 
-    public /* synthetic */ mp(xp xpVar, int i10) {
-        this.a = i10;
-        this.b = xpVar;
+    public /* synthetic */ mp(wp wpVar, org.telegram.ui.ActionBar.c2[] c2VarArr, int i10, int i11) {
+        this.a = i11;
+        this.b = wpVar;
+        this.c = c2VarArr;
+        this.d = i10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                xp xpVar = this.b;
-                org.telegram.ui.ActionBar.b2 b2Var = xpVar.r;
-                if (b2Var != null) {
-                    b2Var.setOnCancelListener(new pg(xpVar, 2));
-                    xpVar.showDialog(xpVar.r);
+                org.telegram.ui.ActionBar.c2[] c2VarArr = this.c;
+                org.telegram.ui.ActionBar.c2 c2Var = c2VarArr[0];
+                if (c2Var != null) {
+                    final int i10 = 1;
+                    final wp wpVar = this.b;
+                    final int i11 = this.d;
+                    c2Var.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.ui.np
+                        @Override // android.content.DialogInterface.OnCancelListener
+                        public final void onCancel(DialogInterface dialogInterface) {
+                            switch (i10) {
+                                case 0:
+                                    ConnectionsManager.getInstance(wpVar.currentAccount).cancelRequest(i11, true);
+                                    break;
+                                default:
+                                    ConnectionsManager.getInstance(wpVar.currentAccount).cancelRequest(i11, true);
+                                    break;
+                            }
+                        }
+                    });
+                    wpVar.showDialog(c2VarArr[0]);
                     break;
                 }
                 break;
-            case 1:
-                xp xpVar2 = this.b;
-                xpVar2.getMessagesController().loadFullChat(xpVar2.E, 0, true);
-                break;
             default:
-                xp xpVar3 = this.b;
-                xpVar3.getMessagesController().loadFullChat(xpVar3.E, 0, true);
+                org.telegram.ui.ActionBar.c2[] c2VarArr2 = this.c;
+                org.telegram.ui.ActionBar.c2 c2Var2 = c2VarArr2[0];
+                if (c2Var2 != null) {
+                    final int i12 = 0;
+                    final wp wpVar2 = this.b;
+                    final int i13 = this.d;
+                    c2Var2.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.ui.np
+                        @Override // android.content.DialogInterface.OnCancelListener
+                        public final void onCancel(DialogInterface dialogInterface) {
+                            switch (i12) {
+                                case 0:
+                                    ConnectionsManager.getInstance(wpVar2.currentAccount).cancelRequest(i13, true);
+                                    break;
+                                default:
+                                    ConnectionsManager.getInstance(wpVar2.currentAccount).cancelRequest(i13, true);
+                                    break;
+                            }
+                        }
+                    });
+                    wpVar2.showDialog(c2VarArr2[0]);
+                    break;
+                }
                 break;
         }
     }

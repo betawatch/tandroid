@@ -1,68 +1,50 @@
 package qg;
 
-import android.graphics.SurfaceTexture;
-import android.view.TextureView;
-import org.telegram.ui.Components.ja;
+import android.graphics.drawable.Drawable;
+import org.telegram.ui.Components.qr;
+import org.telegram.ui.PhotoViewer;
+import org.telegram.ui.bu0;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class y0 implements TextureView.SurfaceTextureListener {
-    public final /* synthetic */ ja a;
-    public final /* synthetic */ c1 b;
+public final class y0 implements pg.b1 {
+    public final /* synthetic */ z0 a;
 
-    public y0(c1 c1Var, ja jaVar) {
-        this.b = c1Var;
-        this.a = jaVar;
+    public y0(z0 z0Var) {
+        this.a = z0Var;
     }
 
-    @Override // android.view.TextureView.SurfaceTextureListener
-    public final void onSurfaceTextureAvailable(SurfaceTexture surfaceTexture, int i10, int i11) {
-        if (surfaceTexture != null) {
-            c1 c1Var = this.b;
-            if (c1Var.d != null) {
-                return;
-            }
-            a1 a1Var = new a1(c1Var, surfaceTexture, this.a);
-            c1Var.d = a1Var;
-            a1Var.n = i10;
-            a1Var.r = i11;
-            c1Var.i();
-            c1Var.post(new x0(this, 1));
-            q0 q0Var = c1Var.c;
-            if (q0Var.v) {
-                q0Var.f.f(new o0(q0Var, q0Var.w, 0));
-                q0Var.w = null;
-                q0Var.v = false;
-            }
-        }
+    @Override // pg.b1
+    public final void a() {
+        z0 z0Var = this.a;
+        z0Var.e.animate().alpha(1.0f).setDuration(320L).setUpdateListener(new org.telegram.ui.Components.voip.r0(z0Var, 8)).setInterpolator(qr.h);
     }
 
-    @Override // android.view.TextureView.SurfaceTextureListener
-    public final boolean onSurfaceTextureDestroyed(SurfaceTexture surfaceTexture) {
-        c1 c1Var = this.b;
-        if (c1Var.d != null && !c1Var.y) {
-            q0 q0Var = c1Var.c;
-            q0Var.f.f(new org.telegram.ui.web.g1(9, q0Var, new x0(this, 2)));
-        }
+    @Override // pg.b1
+    public final boolean d() {
         return true;
     }
 
-    @Override // android.view.TextureView.SurfaceTextureListener
-    public final void onSurfaceTextureSizeChanged(SurfaceTexture surfaceTexture, int i10, int i11) {
-        c1 c1Var = this.b;
-        a1 a1Var = c1Var.d;
-        if (a1Var == null) {
-            return;
-        }
-        a1Var.n = i10;
-        a1Var.r = i11;
-        c1Var.i();
-        a1 a1Var2 = c1Var.d;
-        a1Var2.postRunnable(a1Var2.w);
-        c1Var.d.postRunnable(new x0(this, 0));
+    @Override // pg.b1
+    public final void e() {
+        z0 z0Var = this.a;
+        z0Var.b.a.e();
+        z0Var.w.setViewHidden(false);
+        PhotoViewer photoViewer = ((bu0) z0Var).K;
+        Drawable[] drawableArr = PhotoViewer.U8;
+        photoViewer.W2(true, true);
     }
 
-    @Override // android.view.TextureView.SurfaceTextureListener
-    public final void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
+    @Override // pg.b1
+    public final void f() {
+        this.a.w.setViewHidden(true);
+    }
+
+    @Override // pg.b1
+    public final /* synthetic */ void b() {
+    }
+
+    @Override // pg.b1
+    public final void c() {
     }
 }

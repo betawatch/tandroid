@@ -1,10 +1,11 @@
 package g6;
 
+import ai.q4;
 import android.os.Looper;
 import com.google.android.gms.internal.cast.c0;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class o {
     public static final Object i = new Object();
@@ -12,7 +13,7 @@ public final class o {
     public final long b;
     public final String c;
     public n g;
-    public androidx.activity.i h;
+    public q4 h;
     public long e = -1;
     public long f = 0;
     public final c0 d = new c0(Looper.getMainLooper(), 0);
@@ -38,17 +39,17 @@ public final class o {
             this.f = currentTimeMillis;
         }
         if (nVar2 != null) {
-            nVar2.m(this.c, j10, j11, currentTimeMillis);
+            nVar2.p(this.c, j10, j11, currentTimeMillis);
         }
         synchronized (obj) {
             try {
-                androidx.activity.i iVar = this.h;
-                if (iVar != null) {
-                    this.d.removeCallbacks(iVar);
+                q4 q4Var = this.h;
+                if (q4Var != null) {
+                    this.d.removeCallbacks(q4Var);
                 }
-                androidx.activity.i iVar2 = new androidx.activity.i(this, 20);
-                this.h = iVar2;
-                this.d.postDelayed(iVar2, this.b);
+                q4 q4Var2 = new q4(this, 20);
+                this.h = q4Var2;
+                this.d.postDelayed(q4Var2, this.b);
             } catch (Throwable th2) {
                 throw th2;
             }
@@ -97,14 +98,14 @@ public final class o {
                     long currentTimeMillis = System.currentTimeMillis();
                     n nVar = this.g;
                     n6.l.h(nVar);
-                    nVar.s(this.c, this.e, i10, obj, this.f, currentTimeMillis);
+                    nVar.y(this.c, this.e, i10, obj, this.f, currentTimeMillis);
                 }
                 this.e = -1L;
                 this.g = null;
                 synchronized (obj2) {
-                    androidx.activity.i iVar = this.h;
-                    if (iVar != null) {
-                        this.d.removeCallbacks(iVar);
+                    q4 q4Var = this.h;
+                    if (q4Var != null) {
+                        this.d.removeCallbacks(q4Var);
                         this.h = null;
                     }
                 }

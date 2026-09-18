@@ -1,41 +1,45 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.text.Layout;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
+import android.widget.FrameLayout;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.ui.Components.FragmentContextView;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class a9 extends TextView {
-    public final Paint a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.f6 b;
+public final class a9 extends FragmentContextView {
+    public final /* synthetic */ int P0;
+    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate Q0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public a9(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(context);
-        this.b = f6Var;
-        this.a = new Paint(1);
+    public /* synthetic */ a9(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, Context context, org.telegram.ui.ActionBar.o2 o2Var, FrameLayout frameLayout, org.telegram.ui.ActionBar.f6 f6Var, int i10) {
+        super(context, o2Var, frameLayout, false, f6Var);
+        this.P0 = i10;
+        this.Q0 = notificationCenterDelegate;
     }
 
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        int l1 = org.telegram.ui.ActionBar.j6.l1(0.8f, org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.z6, this.b));
-        Paint paint = this.a;
-        paint.setColor(l1);
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeWidth(1.0f);
-        float height = getHeight() / 2.0f;
-        Layout layout = getLayout();
-        int i10 = 0;
-        for (int i11 = 0; i11 < layout.getLineCount(); i11++) {
-            i10 = Math.max(i10, (int) layout.getLineWidth(i11));
+    @Override // org.telegram.ui.Components.FragmentContextView, android.view.View
+    public final void setVisibility(int i10) {
+        switch (this.P0) {
+            case 0:
+                m9 m9Var = (m9) this.Q0;
+                m9Var.M.i(m9Var.N, i10 == 0, true);
+                break;
+            case 1:
+                org.telegram.ui.Components.gj gjVar = (org.telegram.ui.Components.gj) this.Q0;
+                gjVar.x.i(gjVar.y, i10 == 0, true);
+                break;
+            default:
+                fg1 fg1Var = (fg1) this.Q0;
+                fg1Var.U0.i(fg1Var.F0, i10 == 0, true);
+                break;
         }
-        float f7 = i10 / 2.0f;
-        canvas.drawLine(0.0f, height, ((getWidth() / 2.0f) - f7) - AndroidUtilities.dp(8.0f), height, paint);
-        canvas.drawLine((getWidth() / 2.0f) + f7 + AndroidUtilities.dp(8.0f), height, getWidth(), height, paint);
-        super.dispatchDraw(canvas);
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public a9(fg1 fg1Var, Context context, fg1 fg1Var2) {
+        super(context, fg1Var2, null, false, null);
+        this.P0 = 2;
+        this.Q0 = fg1Var;
     }
 }

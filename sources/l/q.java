@@ -2,24 +2,19 @@ package l;
 
 import android.view.MenuItem;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
-public final class q implements MenuItem.OnActionExpandListener {
-    public final MenuItem.OnActionExpandListener a;
-    public final /* synthetic */ s b;
+public final class q implements MenuItem.OnMenuItemClickListener {
+    public final MenuItem.OnMenuItemClickListener a;
+    public final /* synthetic */ r b;
 
-    public q(s sVar, MenuItem.OnActionExpandListener onActionExpandListener) {
-        this.b = sVar;
-        this.a = onActionExpandListener;
+    public q(r rVar, MenuItem.OnMenuItemClickListener onMenuItemClickListener) {
+        this.b = rVar;
+        this.a = onMenuItemClickListener;
     }
 
-    @Override // android.view.MenuItem.OnActionExpandListener
-    public final boolean onMenuItemActionCollapse(MenuItem menuItem) {
-        return this.a.onMenuItemActionCollapse(this.b.f(menuItem));
-    }
-
-    @Override // android.view.MenuItem.OnActionExpandListener
-    public final boolean onMenuItemActionExpand(MenuItem menuItem) {
-        return this.a.onMenuItemActionExpand(this.b.f(menuItem));
+    @Override // android.view.MenuItem.OnMenuItemClickListener
+    public final boolean onMenuItemClick(MenuItem menuItem) {
+        return this.a.onMenuItemClick(this.b.f(menuItem));
     }
 }

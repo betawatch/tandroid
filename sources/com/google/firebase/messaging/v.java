@@ -1,42 +1,48 @@
 package com.google.firebase.messaging;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.util.Log;
-import java.util.Arrays;
-import java.util.regex.Pattern;
+import java.io.File;
+import java.io.IOException;
+import org.telegram.messenger.ApplicationLoader;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class v {
-    public static final Pattern d = Pattern.compile("[a-zA-Z0-9-_.~%]{1,900}");
-    public final String a;
-    public final String b;
-    public final String c;
+    public final SharedPreferences a;
 
-    public v(String str, String str2) {
-        String str3;
-        if (str2 == null || !str2.startsWith("/topics/")) {
-            str3 = str2;
-        } else {
-            Log.w("FirebaseMessaging", "Format /topics/topic-name is deprecated. Only 'topic-name' should be used in " + str + ".");
-            str3 = str2.substring(8);
+    public v(Context context) {
+        boolean isEmpty;
+        SharedPreferences sharedPreferences = context.getSharedPreferences("com.google.android.gms.appid", 0);
+        this.a = sharedPreferences;
+        File file = new File(context.getNoBackupFilesDir(), "com.google.android.gms.appid-no-backup");
+        if (file.exists()) {
+            return;
         }
-        if (str3 == null || !d.matcher(str3).matches()) {
-            throw new IllegalArgumentException(a4.a.p("Invalid topic name: ", str3, " does not match the allowed format [a-zA-Z0-9-_.~%]{1,900}."));
+        try {
+            if (file.createNewFile()) {
+                synchronized (this) {
+                    isEmpty = sharedPreferences.getAll().isEmpty();
+                }
+                if (isEmpty) {
+                    return;
+                }
+                Log.i("FirebaseMessaging", "App restored, clearing state");
+                a();
+            }
+        } catch (IOException e) {
+            if (Log.isLoggable("FirebaseMessaging", 3)) {
+                Log.d("FirebaseMessaging", "Error creating file in no backup dir: " + e.getMessage());
+            }
         }
-        this.a = str3;
-        this.b = str;
-        this.c = a4.a.C(str, "!", str2);
     }
 
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof v)) {
-            return false;
-        }
-        v vVar = (v) obj;
-        return this.a.equals(vVar.a) && this.b.equals(vVar.b);
+    public synchronized void a() {
+        this.a.edit().clear().commit();
     }
 
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{this.b, this.a});
+    public v(int i10, int i11) {
+        this.a = ApplicationLoader.applicationContext.getSharedPreferences(a4.a.l(i10, i11, "pip_layout_", "_"), 0);
     }
 }

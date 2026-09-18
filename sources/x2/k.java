@@ -7,11 +7,10 @@ import android.media.AudioManager;
 import android.media.Spatializer;
 import android.os.Handler;
 import android.os.Looper;
-import e2.d0;
 import j$.util.Objects;
-import k2.a0;
+import k2.d0;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class k {
     public final Spatializer a;
@@ -20,15 +19,15 @@ public final class k {
     public final j d;
 
     public k(Context context, p pVar, Boolean bool) {
-        AudioManager e7 = context == null ? null : c2.d.e(context);
-        if (e7 == null || (bool != null && bool.booleanValue())) {
+        AudioManager e = context == null ? null : c2.d.e(context);
+        if (e == null || (bool != null && bool.booleanValue())) {
             this.a = null;
             this.b = false;
             this.c = null;
             this.d = null;
             return;
         }
-        Spatializer spatializer = e7.getSpatializer();
+        Spatializer spatializer = e.getSpatializer();
         this.a = spatializer;
         this.b = spatializer.getImmersiveAudioLevel() != 0;
         j jVar = new j(pVar);
@@ -37,7 +36,7 @@ public final class k {
         e2.d.h(myLooper);
         Handler handler = new Handler(myLooper);
         this.c = handler;
-        spatializer.addOnSpatializerStateChangedListener(new a0(handler, 0), jVar);
+        spatializer.addOnSpatializerStateChangedListener(new d0(handler, 0), jVar);
     }
 
     public final boolean a(b2.e eVar, b2.s sVar) {
@@ -55,7 +54,7 @@ public final class k {
         } else if (Objects.equals(str2, "audio/ac4") && (i10 == 18 || i10 == 21)) {
             i10 = 24;
         }
-        int s10 = d0.s(i10);
+        int s10 = e2.d0.s(i10);
         if (s10 == 0) {
             return false;
         }

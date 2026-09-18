@@ -1,172 +1,632 @@
 package org.telegram.ui.ActionBar;
 
-import android.content.DialogInterface;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
-import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
-import android.view.animation.AnimationUtils;
-import bi.k8;
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.net.Uri;
+import android.opengl.GLES20;
+import android.os.Bundle;
+import android.text.style.ClickableSpan;
+import android.util.Pair;
+import android.view.ViewGroup;
+import android.view.ViewPropertyAnimator;
+import android.webkit.WebResourceRequest;
+import android.widget.TextView;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.nio.ByteBuffer;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.CountDownLatch;
+import org.json.JSONObject;
+import org.telegram.SQLite.SQLiteCursor;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.AnimationNotificationsLocker;
+import org.telegram.messenger.DownloadController;
+import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.FileLog;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.vl;
-import org.telegram.ui.Components.l8;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.wl;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.Cells.oa;
+import org.telegram.ui.Cells.qa;
+import org.telegram.ui.Components.ae0;
+import org.telegram.ui.Components.ar0;
+import org.telegram.ui.Components.b70;
+import org.telegram.ui.Components.b90;
+import org.telegram.ui.Components.c10;
+import org.telegram.ui.Components.c90;
+import org.telegram.ui.Components.d90;
+import org.telegram.ui.Components.df;
+import org.telegram.ui.Components.fh;
+import org.telegram.ui.Components.gv0;
+import org.telegram.ui.Components.h8;
+import org.telegram.ui.Components.kp;
+import org.telegram.ui.Components.l60;
+import org.telegram.ui.Components.lg;
+import org.telegram.ui.Components.mh;
+import org.telegram.ui.Components.n70;
+import org.telegram.ui.Components.ni;
+import org.telegram.ui.Components.oc;
+import org.telegram.ui.Components.pg0;
+import org.telegram.ui.Components.ps;
+import org.telegram.ui.Components.qf0;
+import org.telegram.ui.Components.qg0;
+import org.telegram.ui.Components.qr;
+import org.telegram.ui.Components.qs;
+import org.telegram.ui.Components.r60;
+import org.telegram.ui.Components.sn0;
+import org.telegram.ui.Components.vc;
+import org.telegram.ui.Components.vi;
+import org.telegram.ui.Components.vo0;
+import org.telegram.ui.Components.vz;
+import org.telegram.ui.Components.wm0;
+import org.telegram.ui.Components.x60;
+import org.telegram.ui.Components.x70;
+import org.telegram.ui.Components.zb0;
+import org.telegram.ui.Components.zu0;
+import org.telegram.ui.Components.zz;
+import org.telegram.ui.ProfileActivity;
+import org.telegram.ui.bo;
+import org.telegram.ui.jb;
+import org.telegram.ui.ku0;
+import org.telegram.ui.qo;
+import org.telegram.ui.sb;
+import org.telegram.ui.wb;
+import org.telegram.ui.wy;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
 
-    public /* synthetic */ q(Object obj, int i10) {
+    public /* synthetic */ q(Object obj, Object obj2, Object obj3, int i10) {
         this.a = i10;
-        this.b = obj;
+        this.c = obj;
+        this.b = obj2;
+        this.d = obj3;
     }
 
+    /* JADX WARN: Removed duplicated region for block: B:191:0x0533  */
     @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public final void run() {
-        DialogInterface.OnDismissListener onDismissListener;
-        DialogInterface.OnDismissListener onDismissListener2;
-        int i10 = this.a;
-        int i11 = 0;
-        Object obj = this.b;
-        switch (i10) {
+        boolean z10;
+        ViewGroup viewGroup;
+        SQLiteCursor sQLiteCursor;
+        String str;
+        ArrayList<Long> arrayList;
+        TLRPC.User user;
+        int i10;
+        int i11;
+        int i12;
+        JSONObject optJSONObject;
+        String optString;
+        int i13 = this.a;
+        int i14 = 6;
+        int i15 = 3;
+        int i16 = 8;
+        Bitmap bitmap = null;
+        int i17 = 0;
+        Object obj = this.d;
+        Object obj2 = this.b;
+        Object obj3 = this.c;
+        switch (i13) {
             case 0:
-                Drawable drawable = ActionBarLayout.p1;
-                AndroidUtilities.runOnUIThread((k8) obj);
-                break;
+                ActionBarLayout actionBarLayout = (ActionBarLayout) obj3;
+                o2 o2Var = (o2) obj2;
+                o2 o2Var2 = (o2) obj;
+                ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = actionBarLayout.J;
+                if (actionBarPopupWindow$ActionBarPopupWindowLayout != null && (viewGroup = (ViewGroup) actionBarPopupWindow$ActionBarPopupWindowLayout.getParent()) != null) {
+                    viewGroup.removeView(actionBarLayout.J);
+                }
+                if (actionBarLayout.h || actionBarLayout.a0) {
+                    actionBarLayout.v.setScaleX(1.0f);
+                    actionBarLayout.v.setScaleY(1.0f);
+                    z10 = false;
+                    actionBarLayout.h = false;
+                    actionBarLayout.J = null;
+                    actionBarLayout.a0 = false;
+                } else {
+                    actionBarLayout.v.setTranslationX(0.0f);
+                    z10 = false;
+                }
+                actionBarLayout.m(o2Var);
+                o2Var.setRemovingFromStack(z10);
+                o2Var.onTransitionAnimationEnd(z10, true);
+                o2Var2.onTransitionAnimationEnd(true, true);
+                o2Var2.onBecomeFullyVisible();
+                return;
             case 1:
-                v0 v0Var = (v0) obj;
-                if (v0Var.getParent() != null) {
-                    v0Var.getParent().requestDisallowInterceptTouchEvent(true);
-                }
-                v0Var.M(null, null);
-                break;
+                ((o2) obj2).presentFragment((bo) obj);
+                ((p3) obj3).c = false;
+                return;
             case 2:
-                ((u0) obj).setSelectedForDelete(false);
-                break;
-            case 3:
-                c1 c1Var = (c1) obj;
-                c1Var.U = true;
-                AndroidUtilities.makeGlobalBlurBitmap(new x0(c1Var, i11), 8.0f);
-                break;
-            case 4:
-                ((p1) obj).c();
-                break;
-            case 5:
-                View view = (View) obj;
-                if (view instanceof k5) {
-                    k5 k5Var = (k5) view;
-                    if (!k5Var.a) {
-                        k5Var.a = true;
-                        k5Var.invalidate();
-                        break;
+                p3 p3Var = (p3) obj3;
+                ArrayList arrayList2 = (ArrayList) obj2;
+                o3 o3Var = (o3) obj;
+                p3Var.getClass();
+                int i18 = 0;
+                while (i18 < arrayList2.size()) {
+                    if (((m3) arrayList2.get(i18)).a == o3Var) {
+                        arrayList2.remove(i18);
+                        i18--;
                     }
+                    i18++;
                 }
-                break;
+                p3Var.invalidate();
+                return;
+            case 3:
+                i6 i6Var = (i6) obj3;
+                TLObject tLObject = (TLObject) obj2;
+                i6 i6Var2 = (i6) obj;
+                if (!(tLObject instanceof TLRPC.TL_wallPaper)) {
+                    i6Var.s();
+                    return;
+                }
+                TLRPC.TL_wallPaper tL_wallPaper = (TLRPC.TL_wallPaper) tLObject;
+                i6Var.g0 = FileLoader.getAttachFileName(tL_wallPaper.document);
+                NotificationCenter.getInstance(i6Var.E).addObserver(i6Var, NotificationCenter.fileLoaded);
+                NotificationCenter.getInstance(i6Var.E).addObserver(i6Var, NotificationCenter.fileLoadFailed);
+                FileLoader.getInstance(i6Var2.E).loadFile(tL_wallPaper.document, tL_wallPaper, 1, 1);
+                return;
+            case 4:
+                org.telegram.ui.Cells.w0 w0Var = (org.telegram.ui.Cells.w0) obj3;
+                w0Var.X0.J1(w0Var, (TLRPC.TL_premiumGiftOption) obj2, (String) obj);
+                return;
+            case 5:
+                i6 i6Var3 = (i6) obj2;
+                i6Var3.f = !i6Var3.d((File) obj, i6Var3.c);
+                AndroidUtilities.runOnUIThread(new oa(i16, (qa) obj3, i6Var3));
+                return;
             case 6:
-                b2 b2Var = ((z1) obj).d;
-                int i12 = AndroidUtilities.displaySize.x;
-                b2Var.L = i12;
-                int dp = i12 - AndroidUtilities.dp(56.0f);
-                int dp2 = AndroidUtilities.isTablet() ? AndroidUtilities.isSmallTablet() ? AndroidUtilities.dp(446.0f) : AndroidUtilities.dp(496.0f) : AndroidUtilities.dp(356.0f);
-                Window window = b2Var.getWindow();
-                WindowManager.LayoutParams layoutParams = new WindowManager.LayoutParams();
-                layoutParams.copyFrom(window.getAttributes());
-                int min = Math.min(dp2, dp);
-                Rect rect = b2Var.A0;
-                layoutParams.width = min + rect.left + rect.right;
-                try {
-                    window.setAttributes(layoutParams);
-                    break;
-                } catch (Throwable th2) {
-                    FileLog.e(th2);
-                    return;
-                }
+                org.telegram.ui.Components.e0 e0Var = (org.telegram.ui.Components.e0) obj3;
+                org.telegram.ui.Components.c5.M((Context) obj2, e0Var.l0, new ka.c(e0Var, i14), (f6) obj);
+                return;
             case 7:
-                f2 f2Var = (f2) obj;
-                f2Var.f1.setVisibility(0);
-                f2Var.h1.setAlpha(0.0f);
-                f2Var.g1.startAnimation(AnimationUtils.loadAnimation(f2Var.getContext(), f2Var.d1));
-                f2Var.h1.animate().setDuration(300L).alpha(1.0f).setListener(new c2(f2Var, 0)).start();
-                break;
+                h8.o((h8) obj3, (c2) obj2, (TLObject) obj);
+                return;
             case 8:
-                f3 f3Var = (f3) ((x2) obj).c;
-                onDismissListener = f3Var.onHideListener;
-                if (onDismissListener != null) {
-                    onDismissListener2 = f3Var.onHideListener;
-                    onDismissListener2.onDismiss(f3Var);
-                }
+                df dfVar = (df) obj3;
+                dfVar.getClass();
+                ((gv0) obj2).getViewTreeObserver().removeOnDrawListener(dfVar);
+                ((vo0) obj).a.setHideAvatar(true);
+                return;
+            case 9:
+                lg lgVar = (lg) obj3;
+                File file = (File) obj;
                 try {
-                    f3Var.dismissInternal();
-                    break;
-                } catch (Exception e7) {
-                    FileLog.e(e7);
+                    InputStream openInputStream = lgVar.getContext().getContentResolver().openInputStream((Uri) obj2);
+                    FileOutputStream fileOutputStream = new FileOutputStream(file);
+                    byte[] bArr = new byte[1024];
+                    while (true) {
+                        int read = openInputStream.read(bArr);
+                        if (read <= 0) {
+                            openInputStream.close();
+                            fileOutputStream.close();
+                            MediaController.PhotoEntry photoEntry = new MediaController.PhotoEntry(0, -1, 0L, file.getAbsolutePath(), 0, false, 0, 0, 0L);
+                            ArrayList arrayList3 = new ArrayList();
+                            arrayList3.add(photoEntry);
+                            AndroidUtilities.runOnUIThread(new q(lgVar, arrayList3, file, 10));
+                            return;
+                        }
+                        fileOutputStream.write(bArr, 0, read);
+                        fileOutputStream.flush();
+                    }
+                } catch (Throwable th2) {
+                    th2.printStackTrace();
                     return;
                 }
-            case 9:
-                w2 w2Var = (w2) obj;
-                w2Var.getClass();
+            case 10:
+                ((lg) obj3).n((File) obj, (ArrayList) obj2);
+                return;
+            case 11:
+                vi.n((vi) obj3, (AnimationNotificationsLocker) obj2, (a3) obj);
+                return;
+            case 12:
+                final vi viVar = (vi) obj3;
+                final fh fhVar = (fh) obj;
+                final boolean z11 = viVar.z0.getCurrentItemTop() <= ((ni) obj2).getButtonsHideOffset();
+                float alpha = viVar.X0.getAlpha();
+                float f7 = z11 ? 1.0f : 0.0f;
+                o1.k kVar = new o1.k(new o1.j(0.0f));
+                kVar.b(new mh(viVar, alpha, f7, z11));
+                kVar.a(new o1.f() { // from class: org.telegram.ui.Components.nh
+                    @Override // o1.f
+                    public final void a(o1.h hVar, boolean z12, float f10, float f11) {
+                        vi.t(vi.this, z11, fhVar);
+                    }
+                });
+                o1.l lVar = new o1.l(500.0f);
+                kVar.u = lVar;
+                lVar.a(1.0f);
+                kVar.u.b(1000.0f);
+                kVar.f();
+                viVar.t1 = kVar;
+                return;
+            case 13:
+                TLObject tLObject2 = (TLObject) obj2;
+                i6 i6Var4 = (i6) obj;
+                HashMap hashMap = ((kp) obj3).s;
+                if (!(tLObject2 instanceof TLRPC.TL_wallPaper)) {
+                    i6Var4.f = true;
+                    return;
+                }
+                TLRPC.WallPaper wallPaper = (TLRPC.WallPaper) tLObject2;
+                String attachFileName = FileLoader.getAttachFileName(wallPaper.document);
+                if (hashMap.containsKey(attachFileName)) {
+                    return;
+                }
+                hashMap.put(attachFileName, i6Var4);
+                FileLoader.getInstance(i6Var4.E).loadFile(wallPaper.document, wallPaper, 1, 1);
+                return;
+            case 14:
+                qs qsVar = (qs) obj3;
+                MessagesStorage messagesStorage = (MessagesStorage) obj2;
+                ps psVar = (ps) obj;
+                ArrayList arrayList4 = new ArrayList();
+                ArrayList<Long> arrayList5 = new ArrayList<>();
+                long j3 = 0;
                 try {
-                    w2Var.b.dismissInternal();
-                    break;
+                    SQLiteCursor queryFinalized = messagesStorage.getDatabase().queryFinalized("SELECT uid, time, offset FROM popular_bots ORDER BY pos", new Object[0]);
+                    str = null;
+                    while (queryFinalized.next()) {
+                        try {
+                            arrayList5.add(Long.valueOf(queryFinalized.longValue(i17)));
+                            j3 = Math.max(j3, queryFinalized.longValue(1));
+                            str = queryFinalized.stringValue(2);
+                            i17 = 0;
+                        } catch (Exception e) {
+                            e = e;
+                            sQLiteCursor = queryFinalized;
+                            try {
+                                FileLog.e(e);
+                                if (sQLiteCursor != null) {
+                                    sQLiteCursor.dispose();
+                                }
+                                AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.f(qsVar, arrayList4, j3, str, psVar, 4));
+                                return;
+                            } catch (Throwable th3) {
+                                th = th3;
+                                if (sQLiteCursor != null) {
+                                    sQLiteCursor.dispose();
+                                }
+                                throw th;
+                            }
+                        } catch (Throwable th4) {
+                            th = th4;
+                            sQLiteCursor = queryFinalized;
+                            if (sQLiteCursor != null) {
+                            }
+                            throw th;
+                        }
+                    }
+                    queryFinalized.dispose();
+                    ArrayList<TLRPC.User> users = messagesStorage.getUsers(arrayList5);
+                    if (users != null) {
+                        int size = arrayList5.size();
+                        int i19 = 0;
+                        while (i19 < size) {
+                            Long l4 = arrayList5.get(i19);
+                            i19++;
+                            long longValue = l4.longValue();
+                            int size2 = users.size();
+                            int i20 = 0;
+                            while (true) {
+                                if (i20 < size2) {
+                                    TLRPC.User user2 = users.get(i20);
+                                    i20++;
+                                    user = user2;
+                                    if (user != null) {
+                                        arrayList = arrayList5;
+                                        if (user.id == longValue) {
+                                        }
+                                    } else {
+                                        arrayList = arrayList5;
+                                    }
+                                    arrayList5 = arrayList;
+                                } else {
+                                    arrayList = arrayList5;
+                                    user = null;
+                                }
+                            }
+                            if (user != null) {
+                                arrayList4.add(user);
+                            }
+                            arrayList5 = arrayList;
+                        }
+                    }
+                    queryFinalized.dispose();
+                } catch (Exception e7) {
+                    e = e7;
+                    str = null;
+                    sQLiteCursor = null;
+                } catch (Throwable th5) {
+                    th = th5;
+                    sQLiteCursor = null;
+                }
+                AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.f(qsVar, arrayList4, j3, str, psVar, 4));
+                return;
+            case 15:
+                vz vzVar = (vz) obj3;
+                Bitmap[] bitmapArr = (Bitmap[]) obj2;
+                CountDownLatch countDownLatch = (CountDownLatch) obj;
+                zz zzVar = vzVar.J;
+                int[] iArr = zzVar.U0;
+                GLES20.glBindFramebuffer(36160, iArr != null ? iArr[!zzVar.g1 ? 1 : 0] : 0);
+                GLES20.glFramebufferTexture2D(36160, 36064, 3553, zzVar.g(!vzVar.T ? 1 : 0), 0);
+                GLES20.glClear(0);
+                int i21 = vzVar.U;
+                if (i21 != 0 && (i10 = vzVar.V) != 0) {
+                    ByteBuffer allocateDirect = ByteBuffer.allocateDirect(i21 * i10 * 4);
+                    GLES20.glReadPixels(0, 0, vzVar.U, vzVar.V, 6408, 5121, allocateDirect);
+                    bitmap = Bitmap.createBitmap(vzVar.U, vzVar.V, Bitmap.Config.ARGB_8888);
+                    bitmap.copyPixelsFromBuffer(allocateDirect);
+                }
+                bitmapArr[0] = bitmap;
+                countDownLatch.countDown();
+                GLES20.glBindFramebuffer(36160, 0);
+                GLES20.glClear(0);
+                return;
+            case 16:
+                c10 c10Var = (c10) obj3;
+                c10Var.z0 = -1;
+                oc M = vc.a0((o2) obj2).M(LocaleController.formatString(R.string.FolderLinkDeletedTitle, c10Var.c0), LocaleController.formatPluralString("FolderLinkDeletedSubtitle", ((ArrayList) obj).size(), new Object[0]), R.raw.ic_delete);
+                M.j = 5000;
+                M.j();
+                c10Var.A0 = true;
+                c10Var.dismiss();
+                c10Var.n.getMessagesController().invalidateChatlistFolderUpdate(c10Var.Y);
+                return;
+            case 17:
+                c10 c10Var2 = (c10) obj3;
+                c10Var2.z0 = c10Var2.n.getConnectionsManager().sendRequest((TLObject) obj2, new qo(i16, c10Var2, (Pair) obj));
+                return;
+            case 18:
+                r60 r60Var = (r60) obj3;
+                r60Var.getClass();
+                Bundle bundle = new Bundle();
+                bundle.putLong("user_id", ((TLRPC.User) obj).id);
+                ((o2) obj2).presentFragment(new ProfileActivity(bundle, null));
+                r60Var.l0 = true;
+                return;
+            case 19:
+                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
+                TLObject tLObject3 = (TLObject) obj;
+                r60 r60Var2 = ((l60) obj3).a.c;
+                if (tL_error == null) {
+                    if (tLObject3 instanceof TLRPC.TL_messages_exportedChatInviteReplaced) {
+                        TLRPC.TL_messages_exportedChatInviteReplaced tL_messages_exportedChatInviteReplaced = (TLRPC.TL_messages_exportedChatInviteReplaced) tLObject3;
+                        TLRPC.ChatFull chatFull = r60Var2.d;
+                        if (chatFull != null) {
+                            chatFull.exported_invite = (TLRPC.TL_chatInviteExported) tL_messages_exportedChatInviteReplaced.new_invite;
+                        }
+                        if (r60Var2.j0 != null) {
+                            TLRPC.TL_chatInviteExported tL_chatInviteExported = chatFull.exported_invite;
+                            return;
+                        }
+                        return;
+                    }
+                    TLRPC.ChatFull chatFull2 = r60Var2.d;
+                    if (chatFull2 != null) {
+                        int i22 = chatFull2.invitesCount - 1;
+                        chatFull2.invitesCount = i22;
+                        if (i22 < 0) {
+                            chatFull2.invitesCount = 0;
+                        }
+                        i12 = r60Var2.currentAccount;
+                        MessagesStorage.getInstance(i12).saveChatLinksCount(r60Var2.g0, chatFull2.invitesCount);
+                    }
+                    jb jbVar = r60Var2.j0;
+                    if (jbVar != null) {
+                        TLRPC.TL_chatInviteExported tL_chatInviteExported2 = r60Var2.b;
+                        TLRPC.TL_channelAdminLogEvent tL_channelAdminLogEvent = new TLRPC.TL_channelAdminLogEvent();
+                        wb wbVar = jbVar.a;
+                        ArrayList arrayList6 = wbVar.o0;
+                        int size3 = arrayList6.size();
+                        tL_chatInviteExported2.revoked = true;
+                        TLRPC.TL_channelAdminLogEventActionExportedInviteRevoke tL_channelAdminLogEventActionExportedInviteRevoke = new TLRPC.TL_channelAdminLogEventActionExportedInviteRevoke();
+                        tL_channelAdminLogEventActionExportedInviteRevoke.invite = tL_chatInviteExported2;
+                        tL_channelAdminLogEvent.action = tL_channelAdminLogEventActionExportedInviteRevoke;
+                        tL_channelAdminLogEvent.date = (int) (System.currentTimeMillis() / 1000);
+                        tL_channelAdminLogEvent.user_id = wbVar.getAccountInstance().getUserConfig().clientUserId;
+                        i11 = wbVar.currentAccount;
+                        if (new MessageObject(i11, tL_channelAdminLogEvent, (ArrayList<MessageObject>) wbVar.n0, (HashMap<String, ArrayList<MessageObject>>) wbVar.m0, wbVar.f, wbVar.T, true).contentType < 0) {
+                            return;
+                        }
+                        wbVar.R0();
+                        int size4 = arrayList6.size() - size3;
+                        if (size4 > 0) {
+                            wbVar.C0.N = true;
+                            sb sbVar = wbVar.E;
+                            sbVar.s(sbVar.h, size4);
+                            wb.K0(wbVar);
+                        }
+                        wbVar.y0.remove(tL_chatInviteExported2.link);
+                        return;
+                    }
+                    return;
+                }
+                return;
+            case 20:
+                b70.O((b70) obj3, (TLRPC.TL_error) obj2, (TLObject) obj);
+                return;
+            case 21:
+                x60 x60Var = (x60) obj3;
+                ArrayList arrayList7 = (ArrayList) obj2;
+                x60Var.h = null;
+                x60Var.c = arrayList7;
+                x60Var.d = (ArrayList) obj;
+                gg.c2 c2Var = x60Var.e;
+                c2Var.f(arrayList7, null);
+                b70 b70Var = x60Var.n;
+                b70Var.J(x60Var.f - 1);
+                x60Var.l();
+                if (c2Var.e() || x60Var.h() > 2) {
+                    return;
+                }
+                b70Var.s.e(false, true);
+                return;
+            case 22:
+                c90 c90Var = (c90) obj3;
+                d90 d90Var = (d90) obj2;
+                ClickableSpan clickableSpan = (ClickableSpan) obj;
+                b90 b90Var = c90Var.h;
+                if (b90Var == null || c90Var.e != d90Var) {
+                    return;
+                }
+                b90Var.a(clickableSpan);
+                c90Var.e = null;
+                c90Var.b.d(true);
+                return;
+            case 23:
+                zb0 zb0Var = (zb0) obj3;
+                TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
+                TLObject tLObject4 = (TLObject) obj;
+                f6 f6Var = zb0Var.c;
+                TextView textView = zb0Var.f;
+                TextView textView2 = zb0Var.e;
+                if (tL_error2 != null) {
+                    if ("USER_PRIVACY_RESTRICTED".equals(tL_error2.text)) {
+                        textView2.setText(LocaleController.getString(R.string.PmReadUnknown));
+                        textView.setVisibility(8);
+                    } else if ("YOUR_PRIVACY_RESTRICTED".equals(tL_error2.text)) {
+                        zb0Var.E = true;
+                        textView2.setText(LocaleController.getString(R.string.PmRead));
+                        textView.setText(LocaleController.getString(R.string.PmReadShowWhen));
+                    } else {
+                        textView2.setText(LocaleController.getString("UnknownError"));
+                        textView.setVisibility(8);
+                        new vc(org.telegram.ui.Components.jb.a(zb0Var.getContext()), f6Var).d0(tL_error2, false);
+                    }
+                } else if (tLObject4 instanceof TLRPC.TL_outboxReadDate) {
+                    textView2.setText(LocaleController.formatPmSeenDate(((TLRPC.TL_outboxReadDate) tLObject4).date));
+                    textView.setVisibility(8);
+                }
+                ViewPropertyAnimator alpha2 = zb0Var.d.animate().alpha(1.0f);
+                qr qrVar = qr.h;
+                wl.q(alpha2, qrVar, 320L);
+                zb0Var.h.animate().alpha(0.0f).setInterpolator(qrVar).setDuration(320L).start();
+                if (zb0Var.E) {
+                    zb0Var.setBackground(j6.Y(j6.v0(j6.i6, f6Var), 6, 0));
+                    zb0Var.setOnClickListener(new x70(zb0Var, i15));
+                    return;
+                } else {
+                    zb0Var.setBackground(null);
+                    zb0Var.setOnClickListener(null);
+                    return;
+                }
+            case 24:
+                ae0.o((ae0) obj3, (TLRPC.TL_error) obj2, (TLObject) obj);
+                return;
+            case 25:
+                String str2 = (String) obj2;
+                WebResourceRequest webResourceRequest = (WebResourceRequest) obj;
+                ku0 ku0Var = (ku0) ((ni.i) obj3).b;
+                try {
+                    HttpURLConnection httpURLConnection = (HttpURLConnection) new URL(str2).openConnection();
+                    httpURLConnection.setRequestMethod("POST");
+                    for (Map.Entry<String, String> entry : webResourceRequest.getRequestHeaders().entrySet()) {
+                        httpURLConnection.addRequestProperty(entry.getKey(), entry.getValue());
+                    }
+                    httpURLConnection.setDoOutput(true);
+                    OutputStream outputStream = httpURLConnection.getOutputStream();
+                    outputStream.write(new JSONObject().put("context", new JSONObject().put("client", new JSONObject().put("userAgent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36,gzip(gfe)").put("clientName", "WEB").put("clientVersion", webResourceRequest.getRequestHeaders().get("X-Youtube-Client-Version")).put("osName", "Windows").put("osVersion", "10.0").put("originalUrl", "https://www.youtube.com/watch?v=" + ku0Var.w).put("platform", "DESKTOP"))).put("videoId", ku0Var.w).toString().getBytes("UTF-8"));
+                    outputStream.close();
+                    InputStream inputStream = httpURLConnection.getResponseCode() == 200 ? httpURLConnection.getInputStream() : httpURLConnection.getErrorStream();
+                    byte[] bArr2 = new byte[10240];
+                    ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+                    while (true) {
+                        int read2 = inputStream.read(bArr2);
+                        if (read2 == -1) {
+                            byteArrayOutputStream.close();
+                            inputStream.close();
+                            JSONObject optJSONObject2 = new JSONObject(byteArrayOutputStream.toString("UTF-8")).optJSONObject("storyboards");
+                            if (optJSONObject2 == null || (optJSONObject = optJSONObject2.optJSONObject("playerStoryboardSpecRenderer")) == null || (optString = optJSONObject.optString("spec")) == null) {
+                                return;
+                            }
+                            if (ku0Var.H == 0) {
+                                ku0Var.s = optString;
+                                return;
+                            } else {
+                                qf0.a(ku0Var, optString);
+                                return;
+                            }
+                        }
+                        byteArrayOutputStream.write(bArr2, 0, read2);
+                    }
                 } catch (Exception e10) {
                     FileLog.e(e10);
                     return;
                 }
-            case 10:
-                u3 u3Var = (u3) obj;
-                if (u3Var.getWindowView() != null) {
-                    u3Var.getWindowView().setDrawingFromOverlay(true);
-                    break;
+                break;
+            case 26:
+                qg0.n((qg0) obj3, (pg0) obj2, (TLObject) obj);
+                return;
+            case 27:
+                wm0 wm0Var = (wm0) obj3;
+                ArrayList arrayList8 = (ArrayList) obj2;
+                ArrayList<MessageObject> arrayList9 = (ArrayList) obj;
+                int i23 = wm0Var.d;
+                for (int i24 = 0; i24 < arrayList8.size(); i24++) {
+                    DownloadController.getInstance(i23).onDownloadComplete((MessageObject) arrayList8.get(i24));
                 }
-                break;
-            case 11:
-                ((x3) obj).f();
-                break;
-            case 12:
-                v4 v4Var = (v4) ((d2) obj).b;
-                v4Var.k();
-                v4Var.j();
-                break;
-            case 13:
-                v4 v4Var2 = ((s4) obj).b;
-                v4Var2.c.dismiss();
-                v4Var2.f.removeAllViews();
-                break;
-            case 14:
-                ((s4) obj).b.c.dismiss();
-                break;
-            case 15:
-                Drawable drawable2 = (Drawable) obj;
-                j6.d = null;
-                j6.N();
-                if (!j6.b) {
-                    j6.i(drawable2);
-                    j6.h(drawable2);
+                if (!arrayList9.isEmpty()) {
+                    DownloadController.getInstance(i23).deleteRecentFiles(arrayList9);
                 }
-                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.didSetNewWallpapper, new Object[0]);
-                break;
-            case 16:
-                ((CountDownLatch) obj).countDown();
-                break;
-            case 17:
-                vl.m(1, (n2) obj);
-                break;
-            case 18:
-                l8 l8Var = (l8) j6.e5.remove((MessageObject) obj);
-                if (l8Var != null) {
-                    l8Var.i = null;
-                    break;
+                wm0Var.O = false;
+                wm0Var.d(true);
+                return;
+            case 28:
+                sn0 sn0Var = (sn0) obj3;
+                wy wyVar = (wy) obj2;
+                n70 n70Var = (n70) obj;
+                if (UserConfig.getInstance(sn0Var.K0.I0).isPremium()) {
+                    wyVar.getMessagesController().disableAds(true);
+                    sn0Var.T();
+                    vc.a0(wyVar).c(LocaleController.getString(R.string.AdHidden)).j();
+                } else {
+                    new rg.x0((o2) wyVar, 3, true).show();
                 }
-                break;
+                n70Var.u();
+                return;
             default:
-                ((i6) obj).s();
-                break;
+                zu0 zu0Var = (zu0) obj3;
+                org.telegram.ui.Components.c5.S(zu0Var.getContext(), null, zu0Var.F1, new ar0(zu0Var, (TL_stories.StoryItem) obj2));
+                ((n70) obj).u();
+                return;
         }
+    }
+
+    public /* synthetic */ q(r60 r60Var, TLRPC.User user, o2 o2Var) {
+        this.a = 18;
+        this.c = r60Var;
+        this.d = user;
+        this.b = o2Var;
+    }
+
+    public /* synthetic */ q(ae0 ae0Var, TLRPC.TL_error tL_error, TLObject tLObject, boolean z10) {
+        this.a = 24;
+        this.c = ae0Var;
+        this.b = tL_error;
+        this.d = tLObject;
     }
 }

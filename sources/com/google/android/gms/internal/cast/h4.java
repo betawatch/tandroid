@@ -11,13 +11,14 @@ import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 import java.util.concurrent.locks.LockSupport;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.telegram.messenger.BuildConfig;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
-public abstract class h4 extends v7.q5 implements i9.w {
+public abstract class h4 extends v7.r5 implements i9.w {
     public static final boolean d;
     public static final Logger e;
-    public static final v7.o5 f;
+    public static final v7.p5 f;
     public static final Object h;
     public volatile Object a;
     public volatile b4 b;
@@ -25,7 +26,7 @@ public abstract class h4 extends v7.q5 implements i9.w {
 
     static {
         boolean z10;
-        v7.o5 d4Var;
+        v7.p5 d4Var;
         Throwable th2;
         Throwable th3;
         try {
@@ -186,7 +187,7 @@ public abstract class h4 extends v7.q5 implements i9.w {
             Object f7 = f(this);
             sb2.append("SUCCESS, result=[");
             if (f7 == null) {
-                sb2.append("null");
+                sb2.append(BuildConfig.BETA_URL);
             } else if (f7 == this) {
                 sb2.append("this future");
             } else {
@@ -223,9 +224,9 @@ public abstract class h4 extends v7.q5 implements i9.w {
         if (g4Var2 != g4Var) {
             g4 g4Var3 = new g4();
             do {
-                v7.o5 o5Var = f;
-                o5Var.c(g4Var3, g4Var2);
-                if (o5Var.g(this, g4Var2, g4Var3)) {
+                v7.p5 p5Var = f;
+                p5Var.c(g4Var3, g4Var2);
+                if (p5Var.g(this, g4Var2, g4Var3)) {
                     do {
                         LockSupport.park(this);
                         if (Thread.interrupted()) {
@@ -352,9 +353,9 @@ public abstract class h4 extends v7.q5 implements i9.w {
                 if (g4Var2 != g4Var) {
                     g4 g4Var3 = new g4();
                     while (true) {
-                        v7.o5 o5Var = f;
-                        o5Var.c(g4Var3, g4Var2);
-                        if (o5Var.g(this, g4Var2, g4Var3)) {
+                        v7.p5 p5Var = f;
+                        p5Var.c(g4Var3, g4Var2);
+                        if (p5Var.g(this, g4Var2, g4Var3)) {
                             j10 = j11;
                             while (true) {
                                 LockSupport.parkNanos(this, Math.min(nanos, 2147483647999999999L));

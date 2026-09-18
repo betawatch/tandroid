@@ -12,7 +12,7 @@ import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLObject;
 import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class b6 implements j6 {
     public static final int[] h = new int[0];
@@ -1095,7 +1095,7 @@ public final class b6 implements j6 {
 
     @Override // com.google.android.gms.internal.cast.j6
     public final boolean c(h5 h5Var, h5 h5Var2) {
-        boolean e7;
+        boolean e;
         int i10 = 0;
         while (true) {
             int[] iArr = this.a;
@@ -1261,10 +1261,10 @@ public final class b6 implements j6 {
                     case Maneuver.TYPE_FERRY_BOAT_LEFT /* 47 */:
                     case 48:
                     case Maneuver.TYPE_FERRY_TRAIN_LEFT /* 49 */:
-                        e7 = k6.e(u6.h(h5Var, j3), u6.h(h5Var2, j3));
+                        e = k6.e(u6.h(h5Var, j3), u6.h(h5Var2, j3));
                         break;
                     case Maneuver.TYPE_FERRY_TRAIN_RIGHT /* 50 */:
-                        e7 = k6.e(u6.h(h5Var, j3), u6.h(h5Var2, j3));
+                        e = k6.e(u6.h(h5Var, j3), u6.h(h5Var2, j3));
                         break;
                     case 51:
                     case 52:
@@ -1293,7 +1293,7 @@ public final class b6 implements j6 {
                     default:
                         i10 += 3;
                 }
-                if (e7) {
+                if (e) {
                     i10 += 3;
                 }
             } else {

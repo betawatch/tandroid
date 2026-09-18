@@ -1,17 +1,26 @@
 package androidx.activity;
 
-import android.window.OnBackInvokedCallback;
-
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
-public final class u {
-    public static final u a = new u();
+public final /* synthetic */ class u extends kotlin.jvm.internal.h implements rd.a {
+    public final /* synthetic */ int a;
 
-    public final OnBackInvokedCallback a(rd.l onBackStarted, rd.l onBackProgressed, rd.a onBackInvoked, rd.a onBackCancelled) {
-        kotlin.jvm.internal.i.e(onBackStarted, "onBackStarted");
-        kotlin.jvm.internal.i.e(onBackProgressed, "onBackProgressed");
-        kotlin.jvm.internal.i.e(onBackInvoked, "onBackInvoked");
-        kotlin.jvm.internal.i.e(onBackCancelled, "onBackCancelled");
-        return new t(onBackStarted, onBackProgressed, onBackInvoked, onBackCancelled);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ u(int i10, Object obj, Class cls, String str, String str2, int i11, int i12) {
+        super(i10, obj, cls, str, str2, i11);
+        this.a = i12;
+    }
+
+    @Override // rd.a
+    public final Object invoke() {
+        switch (this.a) {
+            case 0:
+                ((v) this.receiver).d();
+                break;
+            default:
+                ((v) this.receiver).d();
+                break;
+        }
+        return gd.i.a;
     }
 }

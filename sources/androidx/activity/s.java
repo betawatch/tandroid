@@ -1,27 +1,17 @@
 package androidx.activity;
 
 import android.window.OnBackInvokedCallback;
-import android.window.OnBackInvokedDispatcher;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class s {
     public static final s a = new s();
 
-    public final OnBackInvokedCallback a(rd.a onBackInvoked) {
+    public final OnBackInvokedCallback a(rd.l onBackStarted, rd.l onBackProgressed, rd.a onBackInvoked, rd.a onBackCancelled) {
+        kotlin.jvm.internal.i.e(onBackStarted, "onBackStarted");
+        kotlin.jvm.internal.i.e(onBackProgressed, "onBackProgressed");
         kotlin.jvm.internal.i.e(onBackInvoked, "onBackInvoked");
-        return new r(onBackInvoked, 0);
-    }
-
-    public final void b(Object dispatcher, int i10, Object callback) {
-        kotlin.jvm.internal.i.e(dispatcher, "dispatcher");
-        kotlin.jvm.internal.i.e(callback, "callback");
-        ((OnBackInvokedDispatcher) dispatcher).registerOnBackInvokedCallback(i10, (OnBackInvokedCallback) callback);
-    }
-
-    public final void c(Object dispatcher, Object callback) {
-        kotlin.jvm.internal.i.e(dispatcher, "dispatcher");
-        kotlin.jvm.internal.i.e(callback, "callback");
-        ((OnBackInvokedDispatcher) dispatcher).unregisterOnBackInvokedCallback((OnBackInvokedCallback) callback);
+        kotlin.jvm.internal.i.e(onBackCancelled, "onBackCancelled");
+        return new r(onBackStarted, onBackProgressed, onBackInvoked, onBackCancelled);
     }
 }

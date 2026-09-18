@@ -4,7 +4,7 @@ import android.os.Looper;
 import android.view.Surface;
 import java.util.List;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public interface b1 {
     long A();
@@ -125,7 +125,7 @@ public interface b1 {
 
     void j(int i10);
 
-    d2.c j0();
+    d2.d j0();
 
     void k(k0 k0Var, long j3);
 

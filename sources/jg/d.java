@@ -1,42 +1,10 @@
 package jg;
 
-import android.animation.ValueAnimator;
+import org.telegram.messenger.SegmentTree;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class d implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ g b;
-
-    public /* synthetic */ d(g gVar, int i10) {
-        this.a = i10;
-        this.b = gVar;
-    }
-
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                g gVar = this.b;
-                gVar.j0 = floatValue;
-                gVar.H = true;
-                gVar.invalidate();
-                break;
-            case 1:
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                g gVar2 = this.b;
-                gVar2.k0 = floatValue2;
-                gVar2.H = true;
-                gVar2.invalidate();
-                break;
-            default:
-                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                g gVar3 = this.b;
-                gVar3.v0 = floatValue3;
-                gVar3.t0.setAlpha(gVar3.v0);
-                gVar3.invalidate();
-                break;
-        }
-    }
+public final class d extends b {
+    public long[] l;
+    public SegmentTree m;
 }

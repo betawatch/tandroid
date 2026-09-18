@@ -1,25 +1,21 @@
 package com.google.firebase.messaging;
 
-import android.os.Bundle;
-import android.os.Parcel;
-import android.os.Parcelable;
-import c7.r0;
+import java.util.HashMap;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
-public final class r extends o6.a {
-    public static final Parcelable.Creator<r> CREATOR = new r0(25);
-    public final Bundle a;
-    public a0.f b;
+public abstract class r {
+    public static final aa.a a;
 
-    public r(Bundle bundle) {
-        this.a = bundle;
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = w7.e0.q(parcel, 20293);
-        w7.e0.b(parcel, 2, this.a);
-        w7.e0.r(parcel, q6);
+    static {
+        HashMap hashMap = new HashMap();
+        HashMap hashMap2 = new HashMap();
+        hashMap.put(r.class, c.a);
+        hashMap2.remove(r.class);
+        hashMap.put(wa.e.class, b.a);
+        hashMap2.remove(wa.e.class);
+        hashMap.put(wa.d.class, a.a);
+        hashMap2.remove(wa.d.class);
+        a = new aa.a(new HashMap(hashMap), new HashMap(hashMap2), la.g.a, 29);
     }
 }

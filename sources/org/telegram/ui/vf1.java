@@ -1,28 +1,37 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.TLRPC;
+import android.graphics.Canvas;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class vf1 extends pg.a {
-    public final TLRPC.TL_forumTopic c;
+public final class vf1 extends FrameLayout {
+    public TextView a;
+    public float b;
+    public boolean c;
 
-    public vf1(int i10, TLRPC.TL_forumTopic tL_forumTopic) {
-        super(i10, true);
-        this.c = tL_forumTopic;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj != null && vf1.class == obj.getClass()) {
-            vf1 vf1Var = (vf1) obj;
-            int i10 = this.a;
-            if (i10 == vf1Var.a && i10 == 0 && this.c.id == vf1Var.c.id) {
-                return true;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        if (this.c) {
+            float f7 = this.b + 0.013333334f;
+            this.b = f7;
+            if (f7 > 1.0f) {
+                this.c = false;
+                this.b = 1.0f;
+            }
+        } else {
+            float f10 = this.b - 0.013333334f;
+            this.b = f10;
+            if (f10 < 0.0f) {
+                this.c = true;
+                this.b = 0.0f;
             }
         }
-        return false;
+        this.a.setTranslationX(org.telegram.ui.Components.qr.f.getInterpolation(this.b) * AndroidUtilities.dp(8.0f) * (LocaleController.isRTL ? -1 : 1));
+        invalidate();
     }
 }

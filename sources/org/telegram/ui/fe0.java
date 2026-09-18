@@ -1,30 +1,40 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.view.View;
-import android.widget.ViewSwitcher;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class fe0 extends ViewSwitcher {
-    public final /* synthetic */ int a;
+public final class fe0 extends fs {
+    public final /* synthetic */ int h;
+    public final /* synthetic */ Object n;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ fe0(Context context, int i10) {
+    public /* synthetic */ fe0(Object obj, Context context, int i10) {
         super(context);
-        this.a = i10;
+        this.h = i10;
+        this.n = obj;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        switch (this.a) {
+    @Override // org.telegram.ui.fs
+    public final void a() {
+        switch (this.h) {
             case 0:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(100.0f), TLObject.FLAG_31));
+                ((ie0) this.n).h(null);
                 break;
+            case 1:
+                ((cf0) this.n).h(null);
+                break;
+            case 2:
+                PasscodeActivity passcodeActivity = (PasscodeActivity) this.n;
+                if (passcodeActivity.E != 0) {
+                    passcodeActivity.g0();
+                    break;
+                } else {
+                    postDelayed(new sl0(this, 0), 260L);
+                    break;
+                }
             default:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(100.0f), TLObject.FLAG_31));
+                ((ih1) this.n).C0();
                 break;
         }
     }

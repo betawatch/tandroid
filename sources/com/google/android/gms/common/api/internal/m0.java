@@ -12,7 +12,7 @@ import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import m.p3;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class m0 implements x0, com.google.android.gms.common.api.k {
     public final Lock a;
@@ -46,12 +46,12 @@ public final class m0 implements x0, com.google.android.gms.common.api.k {
         }
         this.e = new h0(this, looper, 1);
         this.b = lock.newCondition();
-        this.m = new xa.c(this, 10);
+        this.m = new a6.i(this, 13);
     }
 
     @Override // com.google.android.gms.common.api.internal.x0
     public final void a() {
-        this.m.f();
+        this.m.j();
     }
 
     @Override // com.google.android.gms.common.api.internal.x0
@@ -62,7 +62,7 @@ public final class m0 implements x0, com.google.android.gms.common.api.k {
     @Override // com.google.android.gms.common.api.internal.x0
     public final e c(e eVar) {
         eVar.l();
-        return this.m.A(eVar);
+        return this.m.M(eVar);
     }
 
     @Override // com.google.android.gms.common.api.internal.x0
@@ -72,7 +72,7 @@ public final class m0 implements x0, com.google.android.gms.common.api.k {
 
     @Override // com.google.android.gms.common.api.internal.x0
     public final void f() {
-        if (this.m.z()) {
+        if (this.m.G()) {
             this.i.clear();
         }
     }
@@ -85,15 +85,15 @@ public final class m0 implements x0, com.google.android.gms.common.api.k {
             printWriter.append((CharSequence) str).append((CharSequence) eVar.c).println(":");
             com.google.android.gms.common.api.c cVar = (com.google.android.gms.common.api.c) this.f.get(eVar.b);
             n6.l.h(cVar);
-            cVar.g(valueOf.concat("  "), printWriter);
+            cVar.h(valueOf.concat("  "), printWriter);
         }
     }
 
     public final void h() {
         this.a.lock();
         try {
-            this.m = new xa.c(this, 10);
-            this.m.x();
+            this.m = new a6.i(this, 13);
+            this.m.y();
             this.b.signalAll();
         } finally {
             this.a.unlock();
@@ -104,7 +104,7 @@ public final class m0 implements x0, com.google.android.gms.common.api.k {
     public final void onConnected(Bundle bundle) {
         this.a.lock();
         try {
-            this.m.c(bundle);
+            this.m.a(bundle);
         } finally {
             this.a.unlock();
         }
@@ -114,7 +114,7 @@ public final class m0 implements x0, com.google.android.gms.common.api.k {
     public final void onConnectionSuspended(int i10) {
         this.a.lock();
         try {
-            this.m.w(i10);
+            this.m.x(i10);
         } finally {
             this.a.unlock();
         }

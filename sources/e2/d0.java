@@ -1,6 +1,5 @@
 package e2;
 
-import a3.j0;
 import android.app.UiModeManager;
 import android.content.Context;
 import android.content.res.Configuration;
@@ -20,7 +19,8 @@ import android.view.WindowManager;
 import b2.b1;
 import b2.r0;
 import b2.s0;
-import di.b7;
+import ci.b9;
+import hg.k0;
 import j$.util.DesugarTimeZone;
 import j$.util.Objects;
 import java.math.BigDecimal;
@@ -53,7 +53,7 @@ import v7.n7;
 import v7.p7;
 import v7.r6;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public abstract class d0 {
     public static final String a;
@@ -162,7 +162,7 @@ public abstract class d0 {
             case 6:
                 return "camera motion";
             default:
-                return i10 >= 10000 ? i2.g.j(i10, "custom (", ")") : "?";
+                return i10 >= 10000 ? k0.j(i10, "custom (", ")") : "?";
         }
     }
 
@@ -740,10 +740,10 @@ public abstract class d0 {
 
     public static i9.c0 d0(i9.w wVar, i9.p pVar) {
         i9.c0 c0Var = new i9.c0();
-        b7 b7Var = new b7(20, c0Var, wVar);
+        b9 b9Var = new b9(14, c0Var, wVar);
         i9.q qVar = i9.q.a;
-        c0Var.a(b7Var, qVar);
-        wVar.a(new j0(wVar, c0Var, pVar, 22), qVar);
+        c0Var.a(b9Var, qVar);
+        wVar.a(new a3.k0(wVar, c0Var, pVar, 22), qVar);
         return c0Var;
     }
 

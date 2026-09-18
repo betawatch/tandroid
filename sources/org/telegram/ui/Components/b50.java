@@ -11,7 +11,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class b50 {
     public final int a;
@@ -96,8 +96,8 @@ public final class b50 {
                     obj2 = obj2;
                     i17 = 4;
                 }
-                float e7 = a4.a.e(i18, this.a, 2.0f, -1.0f);
-                d(fArr2, 24, -1.0f, e7, e7);
+                float e = a4.a.e(i18, this.a, 2.0f, -1.0f);
+                d(fArr2, 24, -1.0f, e, e);
                 GLUtils.texImage2D(3553, 0, createBitmap2, 0);
                 createBitmap2.recycle();
                 createBitmap.recycle();
@@ -122,10 +122,10 @@ public final class b50 {
         }
         GLES20.glBindTexture(3553, 0);
         GLES20.glGenFramebuffers(1, this.j, 0);
-        FloatBuffer h = org.telegram.messenger.vl.h(ByteBuffer.allocateDirect(144));
+        FloatBuffer h = org.telegram.messenger.wl.h(ByteBuffer.allocateDirect(144));
         this.g = h;
         h.put(fArr2).position(0);
-        FloatBuffer h10 = org.telegram.messenger.vl.h(ByteBuffer.allocateDirect(928));
+        FloatBuffer h10 = org.telegram.messenger.wl.h(ByteBuffer.allocateDirect(928));
         this.h = h10;
         h10.put(fArr).position(0);
     }

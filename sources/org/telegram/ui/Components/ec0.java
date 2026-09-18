@@ -1,14 +1,36 @@
 package org.telegram.ui.Components;
 
 import android.graphics.RuntimeShader;
+import java.util.Arrays;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public abstract /* synthetic */ class ec0 {
-    public static /* synthetic */ RuntimeShader a(String str) {
-        return new RuntimeShader(str);
+public final class ec0 {
+    public final RuntimeShader a;
+    public final float[] b = {1.0f, 1.0f, 0.0f, 0.0f};
+    public final float[] c = {1.0f, 1.0f, 0.0f, 0.0f};
+
+    public ec0(int i10) {
+        dc0.b();
+        this.a = dc0.a(AndroidUtilities.readRes(i10));
     }
 
-    public static /* synthetic */ void b() {
+    public final void a(float[] fArr) {
+        float[] fArr2 = this.b;
+        if (Arrays.equals(fArr, fArr2)) {
+            return;
+        }
+        System.arraycopy(fArr, 0, fArr2, 0, 4);
+        this.a.setFloatUniform("transformGradient", fArr2);
+    }
+
+    public final void b(float[] fArr) {
+        float[] fArr2 = this.c;
+        if (Arrays.equals(fArr, fArr2)) {
+            return;
+        }
+        System.arraycopy(fArr, 0, fArr2, 0, 4);
+        this.a.setFloatUniform("transformPattern", fArr2);
     }
 }

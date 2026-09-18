@@ -1,71 +1,48 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class wj extends ki.o {
-    public Runnable W;
-    public final /* synthetic */ co X;
+public final /* synthetic */ class wj implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ xj b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public wj(co coVar, co coVar2, uj ujVar, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(coVar2, ujVar, f6Var);
-        this.X = coVar;
+    public /* synthetic */ wj(xj xjVar, int i10) {
+        this.a = i10;
+        this.b = xjVar;
     }
 
-    @Override // s4.j
-    public final void F() {
-        co coVar = this.X;
-        if (coVar.H9 == -1) {
-            coVar.H9 = coVar.getNotificationCenter().setAnimationInProgress(coVar.H9, co.Nc, false);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                xj xjVar = this.b;
+                xjVar.W = null;
+                bo boVar = xjVar.X;
+                if (boVar.H9 != -1) {
+                    boVar.getNotificationCenter().onAnimationFinish(boVar.H9);
+                    boVar.H9 = -1;
+                }
+                if (BuildVars.LOGS_ENABLED) {
+                    FileLog.d("chatItemAnimator enable notifications");
+                    break;
+                }
+                break;
+            default:
+                xj xjVar2 = this.b;
+                xjVar2.W = null;
+                bo boVar2 = xjVar2.X;
+                if (boVar2.H9 != -1) {
+                    boVar2.getNotificationCenter().onAnimationFinish(boVar2.H9);
+                    boVar2.H9 = -1;
+                }
+                if (BuildVars.LOGS_ENABLED) {
+                    FileLog.d("chatItemAnimator enable notifications");
+                    break;
+                }
+                break;
         }
-    }
-
-    @Override // ki.o, s4.j
-    public final void N() {
-        super.N();
-        Runnable runnable = this.W;
-        if (runnable != null) {
-            AndroidUtilities.cancelRunOnUIThread(runnable);
-            this.W = null;
-        }
-        vj vjVar = new vj(this, 1);
-        this.W = vjVar;
-        AndroidUtilities.runOnUIThread(vjVar);
-    }
-
-    @Override // ki.o
-    public final void W() {
-        co coVar = this.X;
-        coVar.H9 = coVar.getNotificationCenter().setAnimationInProgress(coVar.H9, co.Nc, false);
-        Runnable runnable = this.W;
-        if (runnable != null) {
-            AndroidUtilities.cancelRunOnUIThread(runnable);
-            this.W = null;
-        }
-        if (BuildVars.LOGS_ENABLED) {
-            FileLog.d("chatItemAnimator disable notifications");
-        }
-        org.telegram.ui.ActionBar.v2 v2Var = coVar.Y.getAdjustPanLayoutHelper().h;
-        AndroidUtilities.cancelRunOnUIThread(v2Var);
-        v2Var.run();
-        org.telegram.ui.Components.bf bfVar = coVar.Y.X3;
-        AndroidUtilities.cancelRunOnUIThread(bfVar);
-        bfVar.run();
-    }
-
-    @Override // ki.o, s4.j, s4.m0
-    public final void g() {
-        super.g();
-        Runnable runnable = this.W;
-        if (runnable != null) {
-            AndroidUtilities.cancelRunOnUIThread(runnable);
-        }
-        vj vjVar = new vj(this, 0);
-        this.W = vjVar;
-        AndroidUtilities.runOnUIThread(vjVar);
     }
 }

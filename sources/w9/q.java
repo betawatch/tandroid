@@ -3,18 +3,19 @@ package w9;
 import android.util.Log;
 import java.lang.Thread;
 import java.util.concurrent.atomic.AtomicBoolean;
+import org.telegram.ui.Cells.ia;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class q implements Thread.UncaughtExceptionHandler {
-    public final mg.n a;
+    public final ia a;
     public final da.b b;
     public final Thread.UncaughtExceptionHandler c;
     public final t9.a d;
     public final AtomicBoolean e = new AtomicBoolean(false);
 
-    public q(mg.n nVar, da.b bVar, Thread.UncaughtExceptionHandler uncaughtExceptionHandler, t9.a aVar) {
-        this.a = nVar;
+    public q(ia iaVar, da.b bVar, Thread.UncaughtExceptionHandler uncaughtExceptionHandler, t9.a aVar) {
+        this.a = iaVar;
         this.b = bVar;
         this.c = uncaughtExceptionHandler;
         this.d = aVar;
@@ -70,12 +71,12 @@ public final class q implements Thread.UncaughtExceptionHandler {
         try {
             try {
                 if (a(thread, th2)) {
-                    this.a.q(this.b, thread, th2);
+                    this.a.B(this.b, thread, th2);
                 } else if (Log.isLoggable("FirebaseCrashlytics", 3)) {
                     Log.d("FirebaseCrashlytics", "Uncaught exception will not be recorded by Crashlytics.", null);
                 }
-            } catch (Exception e7) {
-                Log.e("FirebaseCrashlytics", "An error occurred in the uncaught exception handler", e7);
+            } catch (Exception e) {
+                Log.e("FirebaseCrashlytics", "An error occurred in the uncaught exception handler", e);
             }
         } catch (Throwable th3) {
             if (Log.isLoggable("FirebaseCrashlytics", 3)) {

@@ -5,9 +5,9 @@ import android.graphics.Canvas;
 import android.widget.Button;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class t3 extends org.telegram.ui.Components.q6 {
+public final class t3 extends org.telegram.ui.Components.n6 {
     public final /* synthetic */ int s;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -32,7 +32,7 @@ public final class t3 extends org.telegram.ui.Components.q6 {
     public void invalidate() {
         switch (this.s) {
             case 4:
-                if (!ah.y0.b(this)) {
+                if (!zg.f0.b(this)) {
                     super.invalidate();
                     break;
                 }
@@ -43,7 +43,7 @@ public final class t3 extends org.telegram.ui.Components.q6 {
         }
     }
 
-    @Override // org.telegram.ui.Components.q6, android.view.View
+    @Override // org.telegram.ui.Components.n6, android.view.View
     public void onDraw(Canvas canvas) {
         switch (this.s) {
             case 2:
@@ -58,7 +58,7 @@ public final class t3 extends org.telegram.ui.Components.q6 {
         }
     }
 
-    @Override // org.telegram.ui.Components.q6, android.view.View
+    @Override // org.telegram.ui.Components.n6, android.view.View
     public void onMeasure(int i10, int i11) {
         switch (this.s) {
             case 3:
@@ -75,7 +75,7 @@ public final class t3 extends org.telegram.ui.Components.q6 {
     public void invalidate(int i10, int i11, int i12, int i13) {
         switch (this.s) {
             case 4:
-                if (!ah.y0.b(this)) {
+                if (!zg.f0.b(this)) {
                     super.invalidate(i10, i11, i12, i13);
                     break;
                 }

@@ -5,18 +5,18 @@ import java.util.List;
 import org.telegram.messenger.FileLoader;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class qy extends nz {
-    public final iv0 X;
+    public final kv0 X;
     public final /* synthetic */ kz Y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public qy(kz kzVar) {
         super(100, true);
         this.Y = kzVar;
-        this.X = new iv0();
-        this.O = new di.x1(this, 4);
+        this.X = new kv0();
+        this.O = new ci.x1(this, 4);
     }
 
     @Override // s4.o0
@@ -31,7 +31,7 @@ public final class qy extends nz {
     }
 
     @Override // org.telegram.ui.Components.nz
-    public final iv0 D1(int i10) {
+    public final kv0 D1(int i10) {
         ArrayList<TLRPC.DocumentAttribute> arrayList;
         TLRPC.Document document;
         kz kzVar = this.Y;
@@ -94,27 +94,27 @@ public final class qy extends nz {
         return F1(document2, arrayList);
     }
 
-    public final iv0 F1(TLRPC.Document document, List list) {
+    public final kv0 F1(TLRPC.Document document, List list) {
         TLRPC.PhotoSize closestPhotoSizeWithSize;
         int i10;
         int i11;
-        iv0 iv0Var = this.X;
-        iv0Var.b = 100.0f;
-        iv0Var.a = 100.0f;
+        kv0 kv0Var = this.X;
+        kv0Var.b = 100.0f;
+        kv0Var.a = 100.0f;
         if (document != null && (closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(document.thumbs, 90)) != null && (i10 = closestPhotoSizeWithSize.w) != 0 && (i11 = closestPhotoSizeWithSize.h) != 0) {
-            iv0Var.a = i10;
-            iv0Var.b = i11;
+            kv0Var.a = i10;
+            kv0Var.b = i11;
         }
         if (list != null) {
             for (int i12 = 0; i12 < list.size(); i12++) {
                 TLRPC.DocumentAttribute documentAttribute = (TLRPC.DocumentAttribute) list.get(i12);
                 if ((documentAttribute instanceof TLRPC.TL_documentAttributeImageSize) || (documentAttribute instanceof TLRPC.TL_documentAttributeVideo)) {
-                    iv0Var.a = documentAttribute.w;
-                    iv0Var.b = documentAttribute.h;
+                    kv0Var.a = documentAttribute.w;
+                    kv0Var.b = documentAttribute.h;
                     break;
                 }
             }
         }
-        return iv0Var;
+        return kv0Var;
     }
 }

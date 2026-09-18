@@ -1,6 +1,6 @@
 package c3;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public class t implements b0 {
     public final /* synthetic */ int a;
@@ -31,20 +31,20 @@ public class t implements b0 {
             case 0:
                 u uVar = (u) this.c;
                 e2.d.h(uVar.k);
-                pf.b bVar = uVar.k;
+                of.b bVar = uVar.k;
                 long[] jArr = (long[]) bVar.b;
                 long[] jArr2 = (long[]) bVar.c;
-                int e7 = e2.d0.e(jArr, e2.d0.i((uVar.e * j3) / 1000000, 0L, uVar.j - 1), false);
-                long j10 = e7 == -1 ? 0L : jArr[e7];
-                long j11 = e7 != -1 ? jArr2[e7] : 0L;
+                int e = e2.d0.e(jArr, e2.d0.i((uVar.e * j3) / 1000000, 0L, uVar.j - 1), false);
+                long j10 = e == -1 ? 0L : jArr[e];
+                long j11 = e != -1 ? jArr2[e] : 0L;
                 int i10 = uVar.e;
                 long j12 = (j10 * 1000000) / i10;
                 long j13 = this.b;
                 c0 c0Var = new c0(j12, j11 + j13);
-                if (j12 == j3 || e7 == jArr.length - 1) {
+                if (j12 == j3 || e == jArr.length - 1) {
                     return new a0(c0Var, c0Var);
                 }
-                int i11 = e7 + 1;
+                int i11 = e + 1;
                 return new a0(c0Var, new c0((jArr[i11] * 1000000) / i10, j13 + jArr2[i11]));
             case 1:
                 return (a0) this.c;

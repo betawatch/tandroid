@@ -1,87 +1,80 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
-import org.telegram.SQLite.SQLiteDatabase;
-import org.telegram.SQLite.SQLitePreparedStatement;
-import org.telegram.tgnet.NativeByteBuffer;
-import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class bg implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ MessagesStorage b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ ArrayList d;
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ int d;
     public final /* synthetic */ long e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object h;
+    public final /* synthetic */ Object n;
+    public final /* synthetic */ Object r;
+    public final /* synthetic */ Object s;
 
-    public /* synthetic */ bg(int i10, int i11, long j3, ArrayList arrayList, MessagesStorage messagesStorage) {
-        this.a = i11;
-        this.b = messagesStorage;
-        this.c = i10;
-        this.d = arrayList;
-        this.e = j3;
+    public /* synthetic */ bg(MessagesStorage messagesStorage, long j3, boolean z10, String str, long j10, int i10, String str2, String str3, String str4) {
+        this.f = messagesStorage;
+        this.c = j3;
+        this.b = z10;
+        this.h = str;
+        this.e = j10;
+        this.d = i10;
+        this.n = str2;
+        this.r = str3;
+        this.s = str4;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$loadPendingTasks$27(this.c, this.d, this.e);
-                return;
-            case 1:
-                this.b.lambda$loadPendingTasks$28(this.c, this.d, this.e);
-                return;
+                ((MessagesStorage) this.f).lambda$updateUnreadReactionsCountInternal$261(this.c, this.b, (String) this.h, this.e, this.d, (String) this.n, (String) this.r, (String) this.s);
+                break;
             default:
-                int i10 = this.c;
-                long j3 = this.e;
-                SQLiteDatabase database = this.b.getDatabase();
-                SQLitePreparedStatement sQLitePreparedStatement = null;
-                try {
-                    try {
-                        database.executeFast("DELETE FROM star_gifts2").stepThis().dispose();
-                        ArrayList arrayList = this.d;
-                        if (arrayList != null) {
-                            sQLitePreparedStatement = database.executeFast("REPLACE INTO star_gifts2 VALUES(?, ?, ?, ?, ?)");
-                            for (int i11 = 0; i11 < arrayList.size(); i11++) {
-                                TL_stars.StarGift starGift = (TL_stars.StarGift) arrayList.get(i11);
-                                sQLitePreparedStatement.requery();
-                                sQLitePreparedStatement.bindLong(1, starGift.id);
-                                NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(starGift.getObjectSize());
-                                starGift.serializeToStream(nativeByteBuffer);
-                                sQLitePreparedStatement.bindByteBuffer(2, nativeByteBuffer);
-                                sQLitePreparedStatement.bindLong(3, i10);
-                                sQLitePreparedStatement.bindLong(4, j3);
-                                sQLitePreparedStatement.bindInteger(5, i11);
-                                sQLitePreparedStatement.step();
-                                nativeByteBuffer.reuse();
-                            }
-                        }
-                        if (sQLitePreparedStatement == null) {
-                            return;
-                        }
-                    } catch (Exception e7) {
-                        FileLog.e(e7);
-                        if (sQLitePreparedStatement == null) {
-                            return;
-                        }
+                yh.v5 v5Var = (yh.v5) this.f;
+                TLObject tLObject = (TLObject) this.h;
+                Runnable runnable = (Runnable) this.n;
+                TLRPC.TL_error tL_error = (TLRPC.TL_error) this.r;
+                boolean z10 = this.b;
+                long j3 = this.c;
+                int i10 = this.d;
+                MessageObject messageObject = (MessageObject) this.s;
+                long j10 = this.e;
+                if (!(tLObject instanceof TLRPC.Updates)) {
+                    if (tL_error != null && FileRefController.isFileRefError(tL_error.text) && !z10) {
+                        TLRPC.TL_messages_getScheduledMessages tL_messages_getScheduledMessages = new TLRPC.TL_messages_getScheduledMessages();
+                        tL_messages_getScheduledMessages.peer = MessagesController.getInstance(v5Var.a).getInputPeer(j3);
+                        tL_messages_getScheduledMessages.id.add(Integer.valueOf(i10));
+                        ConnectionsManager.getInstance(v5Var.a).sendRequest(tL_messages_getScheduledMessages, new ja(v5Var, messageObject, j10, runnable, 8));
+                        break;
+                    } else {
+                        runnable.run();
+                        break;
                     }
-                    sQLitePreparedStatement.dispose();
-                    return;
-                } catch (Throwable th2) {
-                    if (sQLitePreparedStatement != null) {
-                        sQLitePreparedStatement.dispose();
-                    }
-                    throw th2;
+                } else {
+                    Utilities.stageQueue.postRunnable(new yh.c5(v5Var, tLObject, 5));
+                    runnable.run();
+                    break;
                 }
+                break;
         }
     }
 
-    public /* synthetic */ bg(MessagesStorage messagesStorage, long j3, ArrayList arrayList, int i10) {
-        this.a = 2;
-        this.b = messagesStorage;
-        this.d = arrayList;
-        this.c = i10;
-        this.e = j3;
+    public /* synthetic */ bg(yh.v5 v5Var, TLObject tLObject, Runnable runnable, TLRPC.TL_error tL_error, boolean z10, long j3, int i10, MessageObject messageObject, long j10) {
+        this.f = v5Var;
+        this.h = tLObject;
+        this.n = runnable;
+        this.r = tL_error;
+        this.b = z10;
+        this.c = j3;
+        this.d = i10;
+        this.s = messageObject;
+        this.e = j10;
     }
 }

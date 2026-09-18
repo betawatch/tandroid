@@ -1,5 +1,6 @@
 package w;
 
+import ai.f3;
 import android.os.Bundle;
 import android.os.Parcel;
 import e9.f0;
@@ -16,12 +17,12 @@ import z3.m;
 import z7.s;
 import z7.w;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public abstract /* synthetic */ class f {
     public static z3.b a(m mVar, byte[] bArr, int i10) {
         f0 u10 = i0.u();
-        mVar.e0(bArr, 0, i10, l.c, new ah.m(u10, 11));
+        mVar.B(bArr, 0, i10, l.c, new f3(u10, 10));
         return new z3.b(u10.i());
     }
 

@@ -10,14 +10,14 @@ import android.os.Looper;
 import android.os.Message;
 import android.util.Log;
 import android.util.SparseArray;
-import di.o8;
+import ci.o8;
+import hg.k0;
 import java.io.File;
 import java.lang.ref.WeakReference;
 import java.nio.Buffer;
 import java.nio.ByteBuffer;
 import java.nio.FloatBuffer;
 import java.util.ArrayList;
-import ji.k5;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.FileLog;
@@ -41,7 +41,7 @@ import p4.p0;
 import p4.r0;
 import p4.s0;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class d extends Handler {
     public final /* synthetic */ int a;
@@ -128,8 +128,8 @@ public final class d extends Handler {
                             }
                             v50.a(v50Var, message.arg1 == 1);
                             break;
-                        } catch (Exception e7) {
-                            FileLog.e(e7);
+                        } catch (Exception e) {
+                            FileLog.e(e);
                             v50.b(v50Var, 0, null);
                             Looper.myLooper().quit();
                             return;
@@ -149,8 +149,8 @@ public final class d extends Handler {
                             if (!v50Var.D0 && v50Var.H0.R) {
                                 try {
                                     v50Var.e(false);
-                                } catch (Exception e10) {
-                                    FileLog.e(e10);
+                                } catch (Exception e7) {
+                                    FileLog.e(e7);
                                 }
                                 if (v50Var.w0.equals(num)) {
                                     z10 = false;
@@ -185,7 +185,7 @@ public final class d extends Handler {
                                         if (v50Var.c0 == -1) {
                                             v50Var.c0 = j16 / 1000;
                                             if (BuildVars.LOGS_ENABLED) {
-                                                i2.g.w(new StringBuilder("InstantCamera first video frame was at "), v50Var.c0);
+                                                k0.w(new StringBuilder("InstantCamera first video frame was at "), v50Var.c0);
                                             }
                                         }
                                         v50Var.e0 = j16 - v50Var.d0;
@@ -459,11 +459,11 @@ public final class d extends Handler {
                                                         k50Var.e = i34;
                                                         v50Var.h0 = j20;
                                                         if (BuildVars.LOGS_ENABLED) {
-                                                            i2.g.w(i2.g.l(i34, "InstantCamera found first audio frame at ", " timestamp = "), k50Var.b[i34]);
+                                                            k0.w(k0.l(i34, "InstantCamera found first audio frame at ", " timestamp = "), k50Var.b[i34]);
                                                         }
                                                     } else {
                                                         if (BuildVars.LOGS_ENABLED) {
-                                                            i2.g.w(i2.g.l(i34, "InstantCamera ignore first audio frame at ", " timestamp = "), k50Var.b[i34]);
+                                                            k0.w(k0.l(i34, "InstantCamera ignore first audio frame at ", " timestamp = "), k50Var.b[i34]);
                                                         }
                                                         i34++;
                                                         j15 = j11;
@@ -475,13 +475,13 @@ public final class d extends Handler {
                                                     v50Var.b0 = j21 - j22;
                                                     v50Var.h0 = j22;
                                                     if (BuildVars.LOGS_ENABLED) {
-                                                        i2.g.w(new StringBuilder("InstantCamera detected desync between audio and video "), v50Var.b0);
+                                                        k0.w(new StringBuilder("InstantCamera detected desync between audio and video "), v50Var.b0);
                                                     }
                                                 }
                                             }
                                             long j23 = j15;
                                             if (BuildVars.LOGS_ENABLED) {
-                                                i2.g.o(k50Var.d, new StringBuilder("InstantCamera first audio frame not found, removing buffers "));
+                                                k0.p(k50Var.d, new StringBuilder("InstantCamera first audio frame not found, removing buffers "));
                                             }
                                             v50Var.L.remove(k50Var);
                                             if (v50Var.L.isEmpty()) {
@@ -504,8 +504,8 @@ public final class d extends Handler {
                                 k50 k50Var2 = k50Var;
                                 try {
                                     v50Var.e(false);
-                                } catch (Exception e11) {
-                                    FileLog.e(e11);
+                                } catch (Exception e10) {
+                                    FileLog.e(e10);
                                 }
                                 boolean z11 = false;
                                 while (k50Var2 != null) {
@@ -594,15 +594,15 @@ public final class d extends Handler {
                             try {
                                 FileLog.d("InstantCamera handlePauseRecording drain encoders");
                                 v50Var.e(false);
-                            } catch (Exception e12) {
-                                FileLog.e(e12);
+                            } catch (Exception e11) {
+                                FileLog.e(e11);
                             }
                             MP4Builder mP4Builder = v50Var.K;
                             if (mP4Builder != null) {
                                 try {
                                     mP4Builder.finishMovie(v50Var.H0.b0);
-                                } catch (Exception e13) {
-                                    FileLog.e(e13);
+                                } catch (Exception e12) {
+                                    FileLog.e(e12);
                                 }
                             }
                             AndroidUtilities.runOnUIThread(new r50(v50Var, i13));
@@ -777,10 +777,10 @@ public final class d extends Handler {
                                         }
                                     }
                                 }
-                                k5 k5Var = r0Var.F;
-                                if (k5Var != null && (n0Var instanceof p4.q)) {
+                                k2.v vVar = r0Var.F;
+                                if (vVar != null && (n0Var instanceof p4.q)) {
                                     p4.q qVar = (p4.q) n0Var;
-                                    p4.e eVar = (p4.e) ((s0) k5Var.b).c;
+                                    p4.e eVar = (p4.e) ((s0) vVar.b).c;
                                     if (eVar.e == qVar) {
                                         eVar.i(eVar.c(), 2);
                                     }

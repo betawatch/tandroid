@@ -4,7 +4,7 @@ import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class s {
     public final String a;
@@ -33,8 +33,8 @@ public final class s {
         if (method != null) {
             try {
                 obj2 = method.invoke(obj, null);
-            } catch (InvocationTargetException e7) {
-                throw new db.j(a4.a.p("Accessor ", ib.c.d(method, false), " threw exception"), e7.getCause());
+            } catch (InvocationTargetException e) {
+                throw new db.j(a4.a.p("Accessor ", ib.c.d(method, false), " threw exception"), e.getCause());
             }
         } else {
             obj2 = this.b.get(obj);

@@ -1,22 +1,31 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class os0 implements View.OnLayoutChangeListener {
-    public final /* synthetic */ xu0 a;
+public final class os0 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ st0 b;
+    public final /* synthetic */ zu0 c;
 
-    public os0(xu0 xu0Var) {
-        this.a = xu0Var;
+    public /* synthetic */ os0(zu0 zu0Var, st0 st0Var, int i10) {
+        this.a = i10;
+        this.c = zu0Var;
+        this.b = st0Var;
     }
 
-    @Override // android.view.View.OnLayoutChangeListener
-    public final void onLayoutChange(View view, int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17) {
-        xu0 xu0Var = this.a;
-        if (xu0Var.n0 == null) {
-            return;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                this.c.n1 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                this.b.h.invalidate();
+                break;
+            default:
+                this.c.n1 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                this.b.h.invalidate();
+                break;
         }
-        xu0Var.n0.setTranslationX(((View) r2.getParent()).getMeasuredWidth() - xu0Var.n0.getRight());
     }
 }

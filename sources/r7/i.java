@@ -3,27 +3,27 @@ package r7;
 import android.os.Parcel;
 import com.google.android.gms.location.LocationAvailability;
 import com.google.android.gms.location.LocationResult;
-import ji.u4;
-import k2.g0;
+import k2.c0;
+import org.telegram.ui.Cells.ia;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class i extends b8.b implements g8.n {
     public static final /* synthetic */ int c = 0;
-    public final androidx.activity.o b;
+    public final androidx.activity.n b;
 
-    public i(androidx.activity.o oVar) {
+    public i(androidx.activity.n nVar) {
         super("com.google.android.gms.location.ILocationCallback", 9);
-        this.b = oVar;
+        this.b = nVar;
     }
 
     @Override // b8.b
     public final boolean K0(Parcel parcel, int i10) {
-        androidx.activity.o oVar = this.b;
+        androidx.activity.n nVar = this.b;
         if (i10 == 1) {
             LocationResult locationResult = (LocationResult) d.a(parcel, LocationResult.CREATOR);
             d.b(parcel);
-            oVar.e().a(new mg.n(locationResult, 12));
+            nVar.e().a(new c0(locationResult, 22));
             return true;
         }
         if (i10 != 2) {
@@ -35,22 +35,22 @@ public final class i extends b8.b implements g8.n {
         }
         LocationAvailability locationAvailability = (LocationAvailability) d.a(parcel, LocationAvailability.CREATOR);
         d.b(parcel);
-        oVar.e().a(new g0(locationAvailability, 18));
+        nVar.e().a(new ia(locationAvailability, 10));
         return true;
     }
 
     public final void L0() {
-        this.b.e().a(new u4(this, 20));
+        this.b.e().a(new ka.c(this, 15));
     }
 
     public final void M0(com.google.android.gms.common.api.internal.p pVar) {
-        androidx.activity.o oVar = this.b;
-        synchronized (oVar) {
-            com.google.android.gms.common.api.internal.p pVar2 = (com.google.android.gms.common.api.internal.p) oVar.c;
+        androidx.activity.n nVar = this.b;
+        synchronized (nVar) {
+            com.google.android.gms.common.api.internal.p pVar2 = (com.google.android.gms.common.api.internal.p) nVar.c;
             if (pVar2 != pVar) {
                 pVar2.b = null;
                 pVar2.c = null;
-                oVar.c = pVar;
+                nVar.c = pVar;
             }
         }
     }

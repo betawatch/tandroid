@@ -5,7 +5,6 @@ import android.webkit.DownloadListener;
 import android.webkit.URLUtil;
 import android.widget.TextView;
 import java.util.List;
-import ji.k5;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.DownloadController;
 import org.telegram.messenger.FileLog;
@@ -15,7 +14,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.j6;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes4.dex */
 public final class y0 implements DownloadListener {
     public final /* synthetic */ z0 a;
@@ -54,23 +53,23 @@ public final class y0 implements DownloadListener {
             }
             guessFileName = URLUtil.guessFileName(str, str3, str4);
             String escape = AndroidUtilities.escape(guessFileName);
-            c0 c0Var = new c0(this, str, str4, str2, escape, 4);
+            b0 b0Var = new b0(this, str, str4, str2, escape, 4);
             if (DownloadController.getInstance(UserConfig.selectedAccount).canDownloadMedia(8, j3)) {
-                c0Var.run();
+                b0Var.run();
                 return;
             }
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(z0Var.getContext());
-            org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
-            b2Var.R = LocaleController.getString(R.string.WebDownloadAlertTitle);
-            b2Var.T = AndroidUtilities.replaceTags(j3 > 0 ? LocaleController.formatString(R.string.WebDownloadAlertInfoWithSize, escape, AndroidUtilities.formatFileSize(j3)) : LocaleController.formatString(R.string.WebDownloadAlertInfo, escape));
-            alertDialog$Builder.k(LocaleController.getString(R.string.WebDownloadAlertYes), new k5(c0Var, 14));
+            org.telegram.ui.ActionBar.c2 c2Var = alertDialog$Builder.a;
+            c2Var.R = LocaleController.getString(R.string.WebDownloadAlertTitle);
+            c2Var.T = AndroidUtilities.replaceTags(j3 > 0 ? LocaleController.formatString(R.string.WebDownloadAlertInfoWithSize, escape, AndroidUtilities.formatFileSize(j3)) : LocaleController.formatString(R.string.WebDownloadAlertInfo, escape));
+            alertDialog$Builder.k(LocaleController.getString(R.string.WebDownloadAlertYes), new k2.v(b0Var, 15));
             alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
             TextView textView = (TextView) alertDialog$Builder.o().d(-2);
             if (textView != null) {
                 textView.setTextColor(j6.w0(null, j6.q7, false));
             }
-        } catch (Exception e7) {
-            FileLog.e(e7);
+        } catch (Exception e) {
+            FileLog.e(e);
         }
     }
 }

@@ -4,17 +4,17 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d80 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
     public final /* synthetic */ long b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.f3 c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.g3 c;
     public final /* synthetic */ Object d;
 
-    public /* synthetic */ d80(bb bbVar, Object obj, long j3, int i10) {
+    public /* synthetic */ d80(za zaVar, Object obj, long j3, int i10) {
         this.a = i10;
-        this.c = bbVar;
+        this.c = zaVar;
         this.d = obj;
         this.b = j3;
     }
@@ -26,10 +26,10 @@ public final /* synthetic */ class d80 implements Utilities.Callback2 {
                 g80.m((g80) this.c, this.b, (TLRPC.TL_messages_importChatInvite) this.d, (TLRPC.ChatInviteJoinResult) obj, (TLRPC.TL_error) obj2);
                 break;
             case 1:
-                yh.f4.V((yh.f4) this.c, (TL_stars.TL_starGiftUnique) this.d, this.b, (zh.a3) obj, (of.e) obj2);
+                xh.g4.V((xh.g4) this.c, (TL_stars.TL_starGiftUnique) this.d, this.b, (yh.d3) obj, (nf.e) obj2);
                 break;
             default:
-                zh.g7.Q((zh.g7) this.c, (h51) this.d, this.b, (Boolean) obj, (String) obj2);
+                yh.j7.Q((yh.j7) this.c, (j51) this.d, this.b, (Boolean) obj, (String) obj2);
                 break;
         }
     }

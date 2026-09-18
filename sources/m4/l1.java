@@ -1,54 +1,17 @@
 package m4;
 
-import android.os.Bundle;
-import android.text.TextUtils;
-import j$.util.Objects;
-
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
-public final class l1 {
-    public static final e9.a1 d = e9.i0.z(40010);
-    public static final e9.a1 e;
-    public static final String f;
-    public static final String g;
-    public static final String h;
-    public final int a;
-    public final String b;
-    public final Bundle c;
+public final class l1 extends i9.o {
+    public final int n;
+    public final Object r;
 
-    static {
-        Object[] objArr = {50000, 50001, 50002, 50003, 50004, 50005, 50006};
-        e9.q.d(7, objArr);
-        e = e9.i0.t(7, objArr);
-        String str = e2.d0.a;
-        f = Integer.toString(0, 36);
-        g = Integer.toString(1, 36);
-        h = Integer.toString(2, 36);
+    public l1(int i10, Object obj) {
+        this.n = i10;
+        this.r = obj;
     }
 
-    public l1(int i10) {
-        e2.d.a("commandCode shouldn't be COMMAND_CODE_CUSTOM", i10 != 0);
-        this.a = i10;
-        this.b = "";
-        this.c = Bundle.EMPTY;
-    }
-
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof l1)) {
-            return false;
-        }
-        l1 l1Var = (l1) obj;
-        return this.a == l1Var.a && TextUtils.equals(this.b, l1Var.b);
-    }
-
-    public final int hashCode() {
-        return Objects.hash(this.b, Integer.valueOf(this.a));
-    }
-
-    public l1(String str, Bundle bundle) {
-        this.a = 0;
-        this.b = str;
-        bundle.getClass();
-        this.c = new Bundle(bundle);
+    public final void o() {
+        super.m(this.r);
     }
 }

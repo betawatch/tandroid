@@ -6,18 +6,18 @@ import android.os.IInterface;
 import android.os.Looper;
 import m.p3;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class k extends n6.g {
-    public final a0.l U;
-    public final a0.l V;
-    public final a0.l W;
+    public final a0.m U;
+    public final a0.m V;
+    public final a0.m W;
 
     public k(Context context, Looper looper, com.google.android.gms.common.api.k kVar, com.google.android.gms.common.api.l lVar, p3 p3Var) {
         super(context, looper, 23, p3Var, kVar, lVar, 0);
-        this.U = new a0.l(0);
-        this.V = new a0.l(0);
-        this.W = new a0.l(0);
+        this.U = new a0.m(0);
+        this.V = new a0.m(0);
+        this.W = new a0.m(0);
     }
 
     @Override // n6.g

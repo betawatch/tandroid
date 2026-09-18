@@ -15,7 +15,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class o extends View {
     public final int a;
@@ -35,13 +35,13 @@ public final class o extends View {
         this.c = 60;
     }
 
-    public final void a(ah.j1 j1Var) {
+    public final void a(zg.p0 p0Var) {
         TLRPC.TL_availableReaction tL_availableReaction;
         TLRPC.Document document;
         String findAnimatedEmojiEmoticon;
-        TLRPC.TL_availableReaction tL_availableReaction2 = j1Var.f != null ? MediaDataController.getInstance(UserConfig.selectedAccount).getReactionsMap().get(j1Var.f) : null;
+        TLRPC.TL_availableReaction tL_availableReaction2 = p0Var.f != null ? MediaDataController.getInstance(UserConfig.selectedAccount).getReactionsMap().get(p0Var.f) : null;
         if (tL_availableReaction2 == null) {
-            document = org.telegram.ui.Components.q5.f(UserConfig.selectedAccount, j1Var.g);
+            document = org.telegram.ui.Components.o5.f(UserConfig.selectedAccount, p0Var.g);
             if (document != null && (findAnimatedEmojiEmoticon = MessageObject.findAnimatedEmojiEmoticon(document, null)) != null) {
                 tL_availableReaction2 = MediaDataController.getInstance(UserConfig.selectedAccount).getReactionsMap().get(findAnimatedEmojiEmoticon);
             }
@@ -52,11 +52,11 @@ public final class o extends View {
         }
         ArrayList arrayList = this.e;
         if (document != null || tL_availableReaction == null) {
-            org.telegram.ui.Components.q5 n10 = document == null ? org.telegram.ui.Components.q5.n(2, j1Var.g, null, UserConfig.selectedAccount) : org.telegram.ui.Components.q5.m(2, UserConfig.selectedAccount, document);
+            org.telegram.ui.Components.o5 n10 = document == null ? org.telegram.ui.Components.o5.n(2, p0Var.g, null, UserConfig.selectedAccount) : org.telegram.ui.Components.o5.m(2, UserConfig.selectedAccount, document);
             if (this.n != null) {
                 n10.setColorFilter(new PorterDuffColorFilter(this.n.intValue(), PorterDuff.Mode.MULTIPLY));
             }
-            ah.e a2 = ah.e.a(n10, false, !n10.c());
+            zg.d a2 = zg.d.a(n10, false, !n10.c());
             a2.f(this);
             arrayList.add(a2);
             invalidate();
@@ -104,13 +104,13 @@ public final class o extends View {
                 float f7 = dp2;
                 imageReceiver.setImageCoords((getMeasuredWidth() - dp2) / 2.0f, (getMeasuredHeight() - dp2) / 2.0f, f7, f7);
                 imageReceiver.draw(canvas);
-            } else if (obj instanceof ah.e) {
-                ah.e eVar = (ah.e) obj;
-                eVar.e((int) ((getMeasuredWidth() - dp) / 2.0f), (int) ((getMeasuredHeight() - dp) / 2.0f), (int) ((getMeasuredWidth() + dp) / 2.0f), (int) ((getMeasuredHeight() + dp) / 2.0f));
-                eVar.b(canvas);
-                if (eVar.c()) {
-                    eVar.d(this);
-                    arrayList.remove(eVar);
+            } else if (obj instanceof zg.d) {
+                zg.d dVar = (zg.d) obj;
+                dVar.e((int) ((getMeasuredWidth() - dp) / 2.0f), (int) ((getMeasuredHeight() - dp) / 2.0f), (int) ((getMeasuredWidth() + dp) / 2.0f), (int) ((getMeasuredHeight() + dp) / 2.0f));
+                dVar.b(canvas);
+                if (dVar.c()) {
+                    dVar.d(this);
+                    arrayList.remove(dVar);
                 }
             }
             i10++;
@@ -129,8 +129,8 @@ public final class o extends View {
                 i10++;
                 if (obj instanceof ImageReceiver) {
                     ((ImageReceiver) obj).onDetachedFromWindow();
-                } else if (obj instanceof ah.e) {
-                    ((ah.e) obj).d(this);
+                } else if (obj instanceof zg.d) {
+                    ((zg.d) obj).d(this);
                 }
             }
         }
@@ -157,8 +157,8 @@ public final class o extends View {
             Object obj = arrayList.get(i11);
             if (obj instanceof ImageReceiver) {
                 ((ImageReceiver) obj).setColorFilter(porterDuffColorFilter);
-            } else if (obj instanceof ah.e) {
-                ((ah.e) obj).a.setColorFilter(porterDuffColorFilter2);
+            } else if (obj instanceof zg.d) {
+                ((zg.d) obj).a.setColorFilter(porterDuffColorFilter2);
             }
             i11++;
         }

@@ -1,41 +1,45 @@
 package yh;
 
-import android.content.Context;
-import android.view.ViewGroup;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.ll0;
-import org.telegram.ui.Components.v51;
-import org.telegram.ui.Components.vk0;
+import java.util.ArrayList;
+import org.telegram.ui.Components.yi0;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
-/* loaded from: classes.dex */
-public final class d4 extends v51 {
-    public final /* synthetic */ f4 N;
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class d4 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ e4 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d4(f4 f4Var, ll0 ll0Var, Context context, int i10, ii.a aVar, f6 f6Var) {
-        super(ll0Var, context, i10, 0, false, aVar, f6Var);
-        this.N = f4Var;
+    public /* synthetic */ d4(e4 e4Var, int i10) {
+        this.a = i10;
+        this.b = e4Var;
     }
 
-    @Override // org.telegram.ui.Components.v51, s4.h0
-    public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        f6 f6Var;
-        f6 f6Var2;
-        f4 f4Var = this.N;
-        if (i10 == 0) {
-            Context context = f4Var.getContext();
-            int i11 = j6.L6;
-            f6Var2 = ((org.telegram.ui.ActionBar.f3) f4Var).resourcesProvider;
-            return new vk0(new org.telegram.ui.Cells.l4(context, i11, 13, 12, 4, false, false, f6Var2));
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                e4 e4Var = this.b;
+                e4Var.r = false;
+                e4Var.invalidate();
+                e4Var.a();
+                e4Var.c();
+                break;
+            case 1:
+                this.b.invalidate();
+                break;
+            default:
+                e4 e4Var2 = this.b;
+                e4Var2.setMessageCell(null);
+                ArrayList arrayList = e4Var2.J;
+                int size = arrayList.size();
+                int i10 = 0;
+                while (i10 < size) {
+                    Object obj = arrayList.get(i10);
+                    i10++;
+                    ((yi0) obj).C(true);
+                }
+                arrayList.clear();
+                break;
         }
-        if (i10 != 42) {
-            return super.x(viewGroup, i10);
-        }
-        Context context2 = f4Var.getContext();
-        int i12 = j6.L6;
-        f6Var = ((org.telegram.ui.ActionBar.f3) f4Var).resourcesProvider;
-        return new vk0(new org.telegram.ui.Cells.l4(context2, i12, 13, 12, 4, false, true, f6Var));
     }
 }

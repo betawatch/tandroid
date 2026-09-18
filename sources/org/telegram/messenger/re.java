@@ -1,56 +1,31 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
-
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class re implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ MessagesStorage b;
-    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ long c;
     public final /* synthetic */ long d;
+    public final /* synthetic */ String e;
 
-    public /* synthetic */ re(MessagesStorage messagesStorage, long j3, ArrayList arrayList, int i10) {
+    public /* synthetic */ re(MessagesStorage messagesStorage, long j3, long j10, String str, int i10) {
         this.a = i10;
         this.b = messagesStorage;
-        this.d = j3;
-        this.c = arrayList;
+        this.c = j3;
+        this.d = j10;
+        this.e = str;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$deleteUserChatHistory$86(this.c, this.d);
-                break;
-            case 1:
-                this.b.lambda$emptyMessagesMedia$99(this.c, this.d);
-                break;
-            case 2:
-                this.b.lambda$deleteSavedDialog$54(this.d, this.c);
-                break;
-            case 3:
-                this.b.lambda$updateChannelUsers$125(this.d, this.c);
-                break;
-            case 4:
-                this.b.lambda$markVoiceMessageContentAsRead$217(this.c, this.d);
-                break;
-            case 5:
-                this.b.lambda$markMessagesAsDeletedInternal$226(this.c, this.d);
-                break;
-            case 6:
-                this.b.lambda$removeTopics$58(this.c, this.d);
+                this.b.lambda$updateRanksInLastMessages$45(this.c, this.d, this.e);
                 break;
             default:
-                this.b.lambda$createTaskForSecretChat$117(this.d, this.c);
+                this.b.lambda$updateRanksInLastMessages$46(this.c, this.d, this.e);
                 break;
         }
-    }
-
-    public /* synthetic */ re(MessagesStorage messagesStorage, ArrayList arrayList, long j3, int i10) {
-        this.a = i10;
-        this.b = messagesStorage;
-        this.c = arrayList;
-        this.d = j3;
     }
 }

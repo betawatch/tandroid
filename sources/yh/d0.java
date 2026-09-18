@@ -1,44 +1,36 @@
 package yh;
 
-import org.telegram.ui.Components.q6;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class d0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ j0 b;
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* loaded from: classes4.dex */
+public final class d0 implements TextWatcher {
+    public final /* synthetic */ e0 a;
 
-    public /* synthetic */ d0(j0 j0Var, int i10) {
-        this.a = i10;
-        this.b = j0Var;
+    public d0(e0 e0Var) {
+        this.a = e0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                j0 j0Var = this.b;
-                qh.i iVar = j0Var.h;
-                ih.g gVar = j0Var.f;
-                if (gVar != null) {
-                    gVar.d();
-                }
-                i0 i0Var = j0Var.H;
-                if (i0Var != null) {
-                    i0Var.setTranslationY(-iVar.c());
-                }
-                q6 q6Var = j0Var.w;
-                if (q6Var != null) {
-                    q6Var.setTranslationY(-iVar.c());
-                }
-                j0Var.o();
-                break;
-            case 1:
-                this.b.H.performClick();
-                break;
-            default:
-                this.b.dismiss();
-                break;
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        String obj;
+        int indexOf;
+        boolean z10 = editable == null || editable.toString().isEmpty() || ".".equals(editable.toString());
+        if (!z10 && (indexOf = (obj = editable.toString()).indexOf(46)) >= 0 && (obj.length() - indexOf) - 1 > 2) {
+            editable.delete(indexOf + 3, obj.length());
         }
+        e0 e0Var = this.a;
+        e0Var.q(!z10 ? zf.a.h(editable.toString(), e0Var.H.a) : zf.a.i(0L, e0Var.H.a), false, false, true);
+        e0Var.f.c(e0Var.h.isFocused(), true ^ TextUtils.isEmpty(e0Var.h.getText()));
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

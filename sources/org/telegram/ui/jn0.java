@@ -1,60 +1,52 @@
 package org.telegram.ui;
 
-import android.text.Editable;
-import android.text.TextWatcher;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import android.content.Context;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class jn0 implements TextWatcher {
+public final class jn0 extends TextView {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ln0 b;
 
-    public jn0(ln0 ln0Var, int i10) {
-        this.b = ln0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ jn0(Context context, int i10) {
+        super(context);
         this.a = i10;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        int length;
-        String code;
-        ln0 ln0Var = this.b;
-        if (!ln0Var.H && (length = editable.length()) >= 1) {
-            int i10 = this.a;
-            if (length > 1) {
-                String obj = editable.toString();
-                ln0Var.H = true;
-                for (int i11 = 0; i11 < Math.min(ln0Var.O - i10, length); i11++) {
-                    if (i11 == 0) {
-                        editable.replace(0, length, obj.substring(i11, i11 + 1));
-                    } else {
-                        ln0Var.d[i10 + i11].setText(obj.substring(i11, i11 + 1));
-                    }
-                }
-                ln0Var.H = false;
-            }
-            if (i10 != ln0Var.O - 1) {
-                int i12 = i10 + 1;
-                EditTextBoldCursor editTextBoldCursor = ln0Var.d[i12];
-                editTextBoldCursor.setSelection(editTextBoldCursor.length());
-                ln0Var.d[i12].requestFocus();
-            }
-            int i13 = ln0Var.O;
-            if (i10 == i13 - 1 || (i10 == i13 - 2 && length >= 2)) {
-                code = ln0Var.getCode();
-                if (code.length() == ln0Var.O) {
-                    ln0Var.h(null);
-                }
-            }
+    @Override // android.widget.TextView, android.view.View
+    public CharSequence getAccessibilityClassName() {
+        switch (this.a) {
+            case 3:
+                return Button.class.getName();
+            default:
+                return super.getAccessibilityClassName();
         }
     }
 
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    @Override // android.widget.TextView, android.view.View
+    public void onMeasure(int i10, int i11) {
+        switch (this.a) {
+            case 0:
+                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(100.0f), TLObject.FLAG_31));
+                break;
+            case 1:
+                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(100.0f), TLObject.FLAG_31));
+                break;
+            case 2:
+                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(AndroidUtilities.dp(26.0f)), TLObject.FLAG_30));
+                break;
+            case 3:
+            default:
+                super.onMeasure(i10, i11);
+                break;
+            case 4:
+                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(org.telegram.ui.ActionBar.k.getCurrentActionBarHeight(), TLObject.FLAG_30));
+                break;
+        }
     }
 }

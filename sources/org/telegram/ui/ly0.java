@@ -1,38 +1,109 @@
 package org.telegram.ui;
 
-import java.util.List;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.tgnet.TLRPC;
+import android.os.Bundle;
+import android.view.View;
+import java.util.HashSet;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ly0 implements MessagesStorage.BooleanCallback, rs {
-    public final /* synthetic */ ProfileActivity a;
-    public final /* synthetic */ TLRPC.User b;
+public final /* synthetic */ class ly0 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ProfileActivity b;
 
-    public /* synthetic */ ly0(ProfileActivity profileActivity, TLRPC.User user) {
-        this.a = profileActivity;
-        this.b = user;
+    public /* synthetic */ ly0(ProfileActivity profileActivity, int i10) {
+        this.a = i10;
+        this.b = profileActivity;
     }
 
-    @Override // org.telegram.ui.rs
-    public void c() {
-        ProfileActivity.j0(this.a, this.b);
-    }
-
-    @Override // org.telegram.messenger.MessagesStorage.BooleanCallback
-    public void run(boolean z10) {
-        ProfileActivity profileActivity = this.a;
-        if (profileActivity.getParentLayout() != null) {
-            List fragmentStack = profileActivity.getParentLayout().getFragmentStack();
-            if (((fragmentStack == null || fragmentStack.size() < 2) ? null : (org.telegram.ui.ActionBar.n2) org.telegram.ui.Cells.p6.g(2, fragmentStack)) instanceof co) {
-                ((ActionBarLayout) profileActivity.getParentLayout()).Y(fragmentStack.size() - 2);
-            }
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        int i10 = this.a;
+        ProfileActivity profileActivity = this.b;
+        switch (i10) {
+            case 0:
+                ProfileActivity.i0(profileActivity);
+                break;
+            case 1:
+                if (profileActivity.v.getTag() == null) {
+                    profileActivity.u4();
+                    break;
+                }
+                break;
+            case 2:
+                profileActivity.finishPreviewFragment();
+                break;
+            case 3:
+                profileActivity.R4();
+                break;
+            case 4:
+                ProfileActivity.g0(profileActivity);
+                break;
+            case 5:
+                ProfileActivity.a0(profileActivity);
+                break;
+            case 6:
+                profileActivity.getClass();
+                Bundle bundle = new Bundle();
+                bundle.putLong("chat_id", profileActivity.f1);
+                bundle.putLong("user_id", profileActivity.e1);
+                profileActivity.presentFragment(new g31(bundle));
+                break;
+            case 7:
+                ProfileActivity.h0(profileActivity);
+                break;
+            case 8:
+                profileActivity.Q4();
+                break;
+            case 9:
+                profileActivity.Q4();
+                break;
+            case 10:
+                if (profileActivity.getParentLayout() != null && profileActivity.getParentLayout().getFragmentStack() != null) {
+                    int i11 = 0;
+                    while (i11 < profileActivity.getParentLayout().getFragmentStack().size()) {
+                        org.telegram.ui.ActionBar.o2 o2Var = (org.telegram.ui.ActionBar.o2) profileActivity.getParentLayout().getFragmentStack().get(i11);
+                        if (o2Var instanceof wy) {
+                            wy wyVar = (wy) o2Var;
+                            qx qxVar = wyVar.F3;
+                            if (qxVar != null) {
+                                org.telegram.ui.ActionBar.o2 fragment = qxVar.getFragment();
+                                if ((fragment instanceof fg1) && (-((fg1) fragment).a) == profileActivity.a()) {
+                                    wyVar.F3.a();
+                                }
+                            }
+                        } else if (o2Var instanceof bo) {
+                            if (((bo) o2Var).a() == profileActivity.a()) {
+                                ((ActionBarLayout) profileActivity.getParentLayout()).a0(o2Var, false);
+                                i11--;
+                            }
+                        } else if (o2Var instanceof fg1) {
+                            if ((-((fg1) o2Var).a) == profileActivity.a()) {
+                                ((ActionBarLayout) profileActivity.getParentLayout()).a0(o2Var, false);
+                                i11--;
+                            }
+                        } else if ((o2Var instanceof ProfileActivity) && o2Var != profileActivity) {
+                            ProfileActivity profileActivity2 = (ProfileActivity) o2Var;
+                            if (profileActivity2.a() == profileActivity.a() && profileActivity2.q1) {
+                                ((ActionBarLayout) profileActivity.getParentLayout()).a0(o2Var, false);
+                                i11--;
+                            }
+                        }
+                        i11++;
+                    }
+                }
+                profileActivity.J1 = 0;
+                Bundle bundle2 = new Bundle();
+                bundle2.putLong("chat_id", profileActivity.f1);
+                HashSet hashSet = fg1.n1;
+                profileActivity.presentFragment(fg1.E0(profileActivity.getMessagesController(), profileActivity.getMessagesStorage(), bundle2));
+                break;
+            case 11:
+                profileActivity.t4(view);
+                break;
+            default:
+                profileActivity.t4(view);
+                break;
         }
-        profileActivity.N1 = true;
-        profileActivity.finishFragment();
-        profileActivity.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needDeleteDialog, Long.valueOf(profileActivity.i1), this.b, profileActivity.E2, Boolean.valueOf(z10));
     }
 }

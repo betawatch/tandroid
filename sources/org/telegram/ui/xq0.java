@@ -1,49 +1,46 @@
 package org.telegram.ui;
 
-import android.content.Context;
 import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class xq0 extends org.telegram.ui.Components.t00 {
-    public final /* synthetic */ int U;
+public final class xq0 implements org.telegram.ui.Components.nl0 {
+    public final /* synthetic */ cr0 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ xq0(Context context, int i10, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(context, f6Var);
-        this.U = i10;
+    public xq0(cr0 cr0Var) {
+        this.a = cr0Var;
     }
 
-    @Override // org.telegram.ui.Components.t00
-    public int getColumnsCount() {
-        switch (this.U) {
-            case 0:
-                return 3;
-            default:
-                return super.getColumnsCount();
+    @Override // org.telegram.ui.Components.nl0
+    public final void a(boolean z10) {
+        org.telegram.ui.ActionBar.e5 e5Var;
+        cr0 cr0Var = this.a;
+        cr0Var.W = z10 ? 1 : 0;
+        if (z10) {
+            e5Var = ((org.telegram.ui.ActionBar.o2) cr0Var).parentLayout;
+            e5Var.getView().requestDisallowInterceptTouchEvent(true);
+        }
+        cr0Var.K.e1(true);
+    }
+
+    @Override // org.telegram.ui.Components.nl0
+    public final boolean b(int i10) {
+        return this.a.L.j(i10) == 0;
+    }
+
+    @Override // org.telegram.ui.Components.nl0
+    public final void c(View view, boolean z10) {
+        if (z10 == this.a.X && (view instanceof org.telegram.ui.Cells.s5)) {
+            org.telegram.ui.Cells.s5 s5Var = (org.telegram.ui.Cells.s5) view;
+            s5Var.w.b(s5Var);
         }
     }
 
-    @Override // org.telegram.ui.Components.t00
-    public int getViewType() {
-        switch (this.U) {
-            case 0:
-                return 2;
-            default:
-                return super.getViewType();
-        }
-    }
-
-    @Override // org.telegram.ui.Components.t00, android.view.View
-    public void onMeasure(int i10, int i11) {
-        switch (this.U) {
-            case 1:
-                setMeasuredDimension(View.MeasureSpec.getSize(i10), AndroidUtilities.dp(104.0f));
-                break;
-            default:
-                super.onMeasure(i10, i11);
-                break;
-        }
+    @Override // org.telegram.ui.Components.nl0
+    public final boolean d(int i10) {
+        cr0 cr0Var = this.a;
+        MediaController.AlbumEntry albumEntry = cr0Var.J;
+        return cr0Var.b.containsKey(albumEntry != null ? Integer.valueOf(albumEntry.photos.get(i10).imageId) : ((MediaController.SearchImage) cr0Var.f.get(i10)).id);
     }
 }

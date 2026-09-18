@@ -1,46 +1,29 @@
 package l5;
 
-import android.os.Process;
-import w7.f6;
+import java.util.HashMap;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
-public final class o implements Runnable {
-    public final /* synthetic */ int a;
-    public final Runnable b;
+public abstract class o {
+    public static final aa.a a;
 
-    public /* synthetic */ o(int i10, Runnable runnable) {
-        this.a = i10;
-        this.b = runnable;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                try {
-                    this.b.run();
-                    break;
-                } catch (Exception e7) {
-                    f6.b("Executor", "Background execution failure.", e7);
-                    return;
-                }
-            case 1:
-                this.b.run();
-                break;
-            default:
-                Process.setThreadPriority(0);
-                this.b.run();
-                break;
-        }
-    }
-
-    public String toString() {
-        switch (this.a) {
-            case 1:
-                return this.b.toString();
-            default:
-                return super.toString();
-        }
+    static {
+        HashMap hashMap = new HashMap();
+        HashMap hashMap2 = new HashMap();
+        hashMap.put(o.class, e.a);
+        hashMap2.remove(o.class);
+        hashMap.put(o5.a.class, a.a);
+        hashMap2.remove(o5.a.class);
+        hashMap.put(o5.g.class, g.a);
+        hashMap2.remove(o5.g.class);
+        hashMap.put(o5.e.class, d.a);
+        hashMap2.remove(o5.e.class);
+        hashMap.put(o5.d.class, c.a);
+        hashMap2.remove(o5.d.class);
+        hashMap.put(o5.b.class, b.a);
+        hashMap2.remove(o5.b.class);
+        hashMap.put(o5.f.class, f.a);
+        hashMap2.remove(o5.f.class);
+        a = new aa.a(new HashMap(hashMap), new HashMap(hashMap2), la.g.a, 29);
     }
 }

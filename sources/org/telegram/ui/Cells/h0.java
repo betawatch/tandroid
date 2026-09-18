@@ -33,14 +33,14 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
-import org.telegram.ui.Components.a90;
-import org.telegram.ui.Components.dq;
-import org.telegram.ui.Components.e51;
-import org.telegram.ui.Components.e90;
-import org.telegram.ui.Components.l51;
-import org.telegram.ui.Components.x80;
+import org.telegram.ui.Components.d90;
+import org.telegram.ui.Components.eq;
+import org.telegram.ui.Components.g51;
+import org.telegram.ui.Components.n51;
+import org.telegram.ui.Components.w80;
+import org.telegram.ui.Components.z80;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public abstract class h0 extends View {
     public final ImageReceiver E;
@@ -58,8 +58,8 @@ public abstract class h0 extends View {
     public int f;
     public int h;
     public int n;
-    public e90 r;
-    public final a90 s;
+    public d90 r;
+    public final z80 s;
     public f0 v;
     public final int w;
     public final org.telegram.ui.ActionBar.f6 x;
@@ -67,7 +67,7 @@ public abstract class h0 extends View {
 
     public h0(Context context, int i10, org.telegram.ui.ActionBar.f6 f6Var) {
         super(context);
-        this.s = new a90(this);
+        this.s = new z80(this);
         this.H = AndroidUtilities.dp(4.0f);
         this.w = i10;
         this.x = f6Var;
@@ -126,7 +126,7 @@ public abstract class h0 extends View {
         if (z13) {
             if (!Objects.equals(this.d, "setup")) {
                 this.d = "setup";
-                imageReceiver.setImageBitmap(new dq(new g0(getContext())));
+                imageReceiver.setImageBitmap(new eq(new g0(getContext())));
                 int dp = AndroidUtilities.dp(SharedConfig.bubbleRadius) - AndroidUtilities.dp(2.0f);
                 int dp2 = AndroidUtilities.dp(4.0f);
                 if (!this.G) {
@@ -205,7 +205,7 @@ public abstract class h0 extends View {
                             z11 = false;
                             MessageObject.addLinks(false, spannableStringBuilder);
                             if (z10) {
-                                spannableStringBuilder.setSpan(new e51(AndroidUtilities.bold()), 0, string.length(), 33);
+                                spannableStringBuilder.setSpan(new g51(AndroidUtilities.bold()), 0, string.length(), 33);
                             }
                         }
                         Emoji.replaceEmoji(spannableStringBuilder, org.telegram.ui.ActionBar.j6.o2.getFontMetricsInt(), z11);
@@ -221,8 +221,8 @@ public abstract class h0 extends View {
                             if (this.e > i11 || this.F) {
                                 this.e = i11;
                             }
-                        } catch (Exception e7) {
-                            FileLog.e(e7);
+                        } catch (Exception e) {
+                            FileLog.e(e);
                         }
                     } else if (this.F) {
                         this.e = i11;
@@ -323,10 +323,10 @@ public abstract class h0 extends View {
         if (drawable == null) {
             drawable = org.telegram.ui.ActionBar.j6.O0("drawableMsgInMedia");
         }
-        org.telegram.ui.ActionBar.f5 f5Var = (org.telegram.ui.ActionBar.f5) drawable;
-        f5Var.n((int) getY(), i10, i11);
-        f5Var.setBounds(width, 0, this.e + width, this.f);
-        f5Var.draw(canvas);
+        org.telegram.ui.ActionBar.g5 g5Var = (org.telegram.ui.ActionBar.g5) drawable;
+        g5Var.n((int) getY(), i10, i11);
+        g5Var.setBounds(width, 0, this.e + width, this.f);
+        g5Var.draw(canvas);
         z zVar = this.J;
         if (zVar != null) {
             int i12 = this.K;
@@ -410,21 +410,21 @@ public abstract class h0 extends View {
                             ClickableSpan[] clickableSpanArr = (ClickableSpan[]) spannable.getSpans(offsetForHorizontal, offsetForHorizontal, ClickableSpan.class);
                             if (clickableSpanArr.length != 0) {
                                 a();
-                                this.r = new e90(clickableSpanArr[0], this.x, f7, i10, 0);
+                                this.r = new d90(clickableSpanArr[0], this.x, f7, i10, 0);
                                 try {
                                     try {
                                         int spanStart = spannable.getSpanStart(clickableSpanArr[0]);
-                                        x80 b10 = this.r.b();
+                                        w80 b10 = this.r.b();
                                         b10.d(this.a, spanStart, 0.0f);
                                         this.a.getSelectionPath(spanStart, spannable.getSpanEnd(clickableSpanArr[0]), b10);
-                                    } catch (Exception e7) {
-                                        FileLog.e(e7);
+                                    } catch (Exception e) {
+                                        FileLog.e(e);
                                     }
                                     this.s.a(this.r, null);
                                     invalidate();
                                     z10 = true;
-                                } catch (Exception e10) {
-                                    e = e10;
+                                } catch (Exception e7) {
+                                    e = e7;
                                     z11 = true;
                                     a();
                                     FileLog.e(e);
@@ -439,17 +439,17 @@ public abstract class h0 extends View {
                                 a();
                             }
                         }
-                    } catch (Exception e11) {
-                        e = e11;
+                    } catch (Exception e10) {
+                        e = e10;
                         z11 = false;
                     }
                 } else {
-                    e90 e90Var = this.r;
-                    if (e90Var != null) {
+                    d90 d90Var = this.r;
+                    if (d90Var != null) {
                         try {
-                            ClickableSpan clickableSpan = (ClickableSpan) e90Var.i;
-                            if (clickableSpan instanceof l51) {
-                                String url = ((l51) clickableSpan).getURL();
+                            ClickableSpan clickableSpan = (ClickableSpan) d90Var.i;
+                            if (clickableSpan instanceof n51) {
+                                String url = ((n51) clickableSpan).getURL();
                                 if (!url.startsWith("@")) {
                                     if (!url.startsWith("#")) {
                                         if (!url.startsWith("/")) {
@@ -460,18 +460,18 @@ public abstract class h0 extends View {
                                 }
                                 f0 f0Var = this.v;
                                 if (f0Var != null) {
-                                    ((org.telegram.ui.z0) f0Var).k(url);
+                                    ((org.telegram.ui.y0) f0Var).k(url);
                                 }
                             } else if (clickableSpan instanceof URLSpan) {
                                 f0 f0Var2 = this.v;
                                 if (f0Var2 != null) {
-                                    ((org.telegram.ui.z0) f0Var2).k(((URLSpan) clickableSpan).getURL());
+                                    ((org.telegram.ui.y0) f0Var2).k(((URLSpan) clickableSpan).getURL());
                                 }
                             } else if (clickableSpan != null) {
                                 clickableSpan.onClick(this);
                             }
-                        } catch (Exception e12) {
-                            FileLog.e(e12);
+                        } catch (Exception e11) {
+                            FileLog.e(e11);
                         }
                         a();
                         z10 = true;

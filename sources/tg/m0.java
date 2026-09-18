@@ -1,0 +1,80 @@
+package tg;
+
+import ai.a6;
+import android.os.CountDownTimer;
+import android.view.View;
+import java.util.ArrayList;
+import java.util.Date;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.ActionBar.k5;
+import org.telegram.ui.Components.ml0;
+
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* loaded from: classes3.dex */
+public final class m0 extends CountDownTimer {
+    public final /* synthetic */ t0 a;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public m0(t0 t0Var) {
+        super(Long.MAX_VALUE, 1000L);
+        this.a = t0Var;
+    }
+
+    @Override // android.os.CountDownTimer
+    public final void onTick(long j3) {
+        t0 t0Var = this.a;
+        ml0 ml0Var = t0Var.d;
+        ArrayList arrayList = t0Var.Y;
+        ArrayList arrayList2 = new ArrayList(arrayList.size());
+        int size = arrayList.size();
+        int i10 = 0;
+        while (i10 < size) {
+            Object obj = arrayList.get(i10);
+            i10++;
+            TL_stories.TL_myBoost tL_myBoost = (TL_stories.TL_myBoost) obj;
+            if (tL_myBoost.cooldown_until_date > 0) {
+                arrayList2.add(tL_myBoost);
+            }
+            if (tL_myBoost.cooldown_until_date * 1000 < System.currentTimeMillis()) {
+                tL_myBoost.cooldown_until_date = 0;
+            }
+        }
+        if (arrayList2.isEmpty()) {
+            return;
+        }
+        for (int i11 = 0; i11 < ml0Var.getChildCount(); i11++) {
+            View childAt = ml0Var.getChildAt(i11);
+            if (childAt instanceof xg.l) {
+                xg.l lVar = (xg.l) childAt;
+                if (arrayList2.contains(lVar.getBoost())) {
+                    k5 k5Var = lVar.e;
+                    a6 a6Var = lVar.d;
+                    int i12 = lVar.I.cooldown_until_date;
+                    if (i12 > 0) {
+                        lVar.setSubtitle(LocaleController.formatString(R.string.BoostingAvailableIn, xg.l.f((i12 * 1000) - System.currentTimeMillis())));
+                        a6Var.setAlpha(0.65f);
+                        k5Var.setAlpha(0.65f);
+                        lVar.i(0.3f, false);
+                    } else {
+                        lVar.setSubtitle(LocaleController.formatString(R.string.BoostExpireOn, LocaleController.getInstance().getFormatterBoostExpired().format(new Date(lVar.I.expires * 1000))));
+                        if (a6Var.getAlpha() < 1.0f) {
+                            a6Var.animate().alpha(1.0f).start();
+                            k5Var.animate().alpha(1.0f).start();
+                            lVar.i(1.0f, true);
+                        } else {
+                            a6Var.setAlpha(1.0f);
+                            k5Var.setAlpha(1.0f);
+                            lVar.i(1.0f, false);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @Override // android.os.CountDownTimer
+    public final void onFinish() {
+    }
+}

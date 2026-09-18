@@ -22,7 +22,7 @@ import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.atomic.AtomicLongArray;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class g {
     public static final c h = c.d;
@@ -30,14 +30,14 @@ public final class g {
     public static final q j = t.b;
     public final ThreadLocal a = new ThreadLocal();
     public final ConcurrentHashMap b = new ConcurrentHashMap();
-    public final pf.b c;
+    public final of.b c;
     public final gb.j d;
     public final List e;
     public final boolean f;
     public final c g;
 
     public g(fb.f fVar, HashMap hashMap, c cVar, ArrayList arrayList, ArrayList arrayList2, ArrayList arrayList3, t tVar, t tVar2, ArrayList arrayList4) {
-        pf.b bVar = new pf.b(hashMap, arrayList4, false, 17);
+        of.b bVar = new of.b(hashMap, arrayList4, false, 17);
         this.c = bVar;
         this.f = true;
         this.g = cVar;
@@ -186,7 +186,7 @@ public final class g {
                 if (aVar2 != null) {
                     Class value = aVar2.value();
                     if (v.class.isAssignableFrom(value)) {
-                        v vVar3 = (v) jVar.a.T(new kb.a(value)).h2();
+                        v vVar3 = (v) jVar.a.K(new kb.a(value)).p2();
                         v vVar4 = (v) concurrentHashMap.putIfAbsent(cls, vVar3);
                         if (vVar4 != null) {
                             vVar3 = vVar4;
@@ -233,8 +233,8 @@ public final class g {
             try {
                 g(d(stringWriter));
                 return stringWriter.toString();
-            } catch (IOException e7) {
-                throw new j(e7);
+            } catch (IOException e) {
+                throw new j(e);
             }
         }
         Class cls = tLObject.getClass();
@@ -242,8 +242,8 @@ public final class g {
         try {
             f(tLObject, cls, d(stringWriter2));
             return stringWriter2.toString();
-        } catch (IOException e10) {
-            throw new j(e10);
+        } catch (IOException e7) {
+            throw new j(e7);
         }
     }
 
@@ -260,10 +260,10 @@ public final class g {
         try {
             try {
                 b10.write(bVar, obj);
-            } catch (IOException e7) {
-                throw new j(e7);
-            } catch (AssertionError e10) {
-                throw new AssertionError("AssertionError (GSON 2.11.0): " + e10.getMessage(), e10);
+            } catch (IOException e) {
+                throw new j(e);
+            } catch (AssertionError e7) {
+                throw new AssertionError("AssertionError (GSON 2.11.0): " + e7.getMessage(), e7);
             }
         } finally {
             bVar.l(i10);
@@ -286,11 +286,11 @@ public final class g {
             try {
                 try {
                     fb.d.l(kVar, bVar);
-                } catch (IOException e7) {
-                    throw new j(e7);
+                } catch (IOException e) {
+                    throw new j(e);
                 }
-            } catch (AssertionError e10) {
-                throw new AssertionError("AssertionError (GSON 2.11.0): " + e10.getMessage(), e10);
+            } catch (AssertionError e7) {
+                throw new AssertionError("AssertionError (GSON 2.11.0): " + e7.getMessage(), e7);
             }
         } finally {
             bVar.l(i10);

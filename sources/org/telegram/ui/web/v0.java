@@ -1,19 +1,19 @@
 package org.telegram.ui.web;
 
+import ai.g5;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Build;
 import android.webkit.RenderProcessGoneDetail;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import bi.r4;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes4.dex */
 public final class v0 extends WebViewClient {
     public final /* synthetic */ WebView a;
@@ -44,13 +44,13 @@ public final class v0 extends WebViewClient {
             d1 d1Var = z0Var.Q;
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context, 0, d1Var == null ? null : d1Var.e);
             alertDialog$Builder.a.R = LocaleController.getString(R.string.ChromeCrashTitle);
-            alertDialog$Builder.a.T = AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.ChromeCrashMessage), new b(this, 3));
+            alertDialog$Builder.a.T = AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.ChromeCrashMessage), new u0(this, 0));
             alertDialog$Builder.k(LocaleController.getString(R.string.OK), null);
-            alertDialog$Builder.a.setOnDismissListener(new r4(this, 8));
+            alertDialog$Builder.a.setOnDismissListener(new g5(this, 8));
             alertDialog$Builder.o();
             return true;
-        } catch (Exception e7) {
-            FileLog.e(e7);
+        } catch (Exception e) {
+            FileLog.e(e);
             return false;
         }
     }

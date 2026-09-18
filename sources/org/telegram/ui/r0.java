@@ -4,17 +4,17 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class r0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ i4 a;
+    public final /* synthetic */ h4 a;
 
-    public r0(i4 i4Var) {
-        this.a = i4Var;
+    public r0(h4 h4Var) {
+        this.a = h4Var;
     }
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
-        AndroidUtilities.runOnUIThread(new lu0(this, 6));
+        AndroidUtilities.runOnUIThread(new ou0(this, 6));
     }
 }

@@ -1,16 +1,100 @@
 package qh;
 
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.Drawable;
 import android.view.View;
-import r0.l1;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.R;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public interface d {
-    void J();
+public final class d extends View {
+    public final Drawable a;
+    public final le.b b;
+    public final int c;
+    public e d;
 
-    View N();
+    public d(Context context, int i10) {
+        super(context);
+        this.b = new le.b(this, qr.h, 380L);
+        this.c = i10;
+        Drawable mutate = context.getResources().getDrawable(R.drawable.outline_poll_attach_24).mutate();
+        this.a = mutate;
+        mutate.setColorFilter(new PorterDuffColorFilter(j6.w0(null, j6.o7, false), PorterDuff.Mode.SRC_IN));
+    }
 
-    void j(l1 l1Var);
+    public final void a(e eVar, boolean z10) {
+        e eVar2;
+        e eVar3;
+        this.b.a(eVar != null, z10);
+        if (isAttachedToWindow() && (eVar3 = this.d) != null) {
+            eVar3.b();
+        }
+        this.d = eVar;
+        if (!isAttachedToWindow() || (eVar2 = this.d) == null) {
+            return;
+        }
+        eVar2.a(this);
+    }
 
-    void s();
+    @Override // android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        e eVar = this.d;
+        if (eVar != null) {
+            eVar.a(this);
+        }
+    }
+
+    @Override // android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        e eVar = this.d;
+        if (eVar != null) {
+            eVar.b();
+        }
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        float width = getWidth() / 2.0f;
+        float height = getHeight() / 2.0f;
+        float f7 = this.b.e;
+        if (f7 < 1.0f) {
+            canvas.save();
+            float f10 = 1.0f - f7;
+            canvas.scale(f10, f10, width, height);
+            this.a.draw(canvas);
+            canvas.restore();
+        }
+        if (f7 > 0.0f) {
+            float f11 = this.c;
+            int dp = AndroidUtilities.dp(f11);
+            int width2 = (getWidth() - dp) / 2;
+            int height2 = (getHeight() - dp) / 2;
+            canvas.save();
+            canvas.translate(width2, height2);
+            canvas.scale(f7, f7, AndroidUtilities.dp(f11) / 2.0f, AndroidUtilities.dp(f11) / 2.0f);
+            e eVar = this.d;
+            if (eVar != null) {
+                eVar.c(canvas, AndroidUtilities.dp(f11), AndroidUtilities.dp(f11));
+            }
+            canvas.restore();
+        }
+    }
+
+    @Override // android.view.View
+    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
+        super.onSizeChanged(i10, i11, i12, i13);
+        int dp = AndroidUtilities.dp(24.0f);
+        int i14 = (i10 - dp) / 2;
+        int i15 = (i11 - dp) / 2;
+        this.a.setBounds(i14, i15, i14 + dp, dp + i15);
+    }
 }

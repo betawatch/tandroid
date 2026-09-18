@@ -5,16 +5,17 @@ import j$.util.DesugarCollections;
 import java.io.UnsupportedEncodingException;
 import java.nio.ByteBuffer;
 import java.util.HashMap;
+import k2.c0;
 import org.chromium.support_lib_boundary.WebViewProviderFactoryBoundaryInterface;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class j extends com.googlecode.mp4parser.c {
-    public static final /* synthetic */ mg.n E;
-    public static final /* synthetic */ mg.n F;
-    public static final /* synthetic */ mg.n w;
-    public static final /* synthetic */ mg.n x;
-    public static final /* synthetic */ mg.n y;
+    public static final /* synthetic */ c0 E;
+    public static final /* synthetic */ c0 F;
+    public static final /* synthetic */ c0 w;
+    public static final /* synthetic */ c0 x;
+    public static final /* synthetic */ c0 y;
     public String e;
     public String f;
     public long h;
@@ -73,8 +74,8 @@ public final class j extends com.googlecode.mp4parser.c {
                 this.f = e2.i(1, 0, this.f);
                 this.s = true;
             }
-        } catch (UnsupportedEncodingException e7) {
-            throw new Error(e7);
+        } catch (UnsupportedEncodingException e) {
+            throw new Error(e);
         }
     }
 
@@ -101,7 +102,7 @@ public final class j extends com.googlecode.mp4parser.c {
     }
 
     public final String toString() {
-        com.google.firebase.messaging.s b10 = re.a.b(F, this, this);
+        com.google.firebase.messaging.t b10 = re.a.b(F, this, this);
         com.googlecode.mp4parser.g.a().getClass();
         com.googlecode.mp4parser.g.b(b10);
         StringBuilder sb2 = new StringBuilder("HandlerBox[handlerType=");

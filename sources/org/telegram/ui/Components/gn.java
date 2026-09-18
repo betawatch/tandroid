@@ -1,19 +1,52 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
-/* loaded from: classes3.dex */
-public final class gn extends s4.j {
-    public final /* synthetic */ tn F;
+import android.content.Intent;
+import java.util.ArrayList;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.SendMessagesHelper;
+import org.telegram.messenger.Utilities;
 
-    public gn(tn tnVar) {
-        this.F = tnVar;
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* loaded from: classes3.dex */
+public final class gn implements fk {
+    public final /* synthetic */ Utilities.Callback a;
+    public final /* synthetic */ cn b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.o2 c;
+
+    public gn(Utilities.Callback callback, org.telegram.ui.ActionBar.o2 o2Var, cn cnVar) {
+        this.a = callback;
+        this.b = cnVar;
+        this.c = o2Var;
     }
 
-    @Override // s4.j
-    public final void P(s4.c1 c1Var) {
-        if (c1Var.b() == 0) {
-            tn tnVar = this.F;
-            tnVar.b.X1(tnVar, 0);
+    @Override // org.telegram.ui.Components.fk
+    public final void k(ArrayList arrayList, String str, ArrayList arrayList2, ArrayList arrayList3, boolean z10, int i10, long j3, boolean z11, long j10) {
+        if (!arrayList.isEmpty()) {
+            this.a.run(new rh.c((String) arrayList.get(0)));
         }
+        this.b.dismiss(true);
+    }
+
+    @Override // org.telegram.ui.Components.fk
+    public final void l(long j3, ArrayList arrayList, boolean z10, int i10) {
+        if (!arrayList.isEmpty()) {
+            this.a.run(new rh.d((SendMessagesHelper.SendingMediaInfo) arrayList.get(0)));
+        }
+        this.b.dismiss(true);
+    }
+
+    @Override // org.telegram.ui.Components.fk
+    public final void w() {
+        try {
+            Intent intent = new Intent("android.intent.action.GET_CONTENT");
+            intent.setType("*/*");
+            this.c.getParentActivity().startActivityForResult(intent, 28);
+        } catch (Exception e) {
+            FileLog.e(e);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.fk
+    public final /* synthetic */ void O() {
     }
 }

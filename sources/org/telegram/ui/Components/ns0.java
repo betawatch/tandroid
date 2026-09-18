@@ -1,20 +1,48 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class ns0 extends ju0 {
-    public final /* synthetic */ xu0 t0;
+public final class ns0 extends g.p {
+    public final /* synthetic */ int c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ ViewGroup e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ns0(xu0 xu0Var, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(xu0Var, context, f6Var);
-        this.t0 = xu0Var;
+    public /* synthetic */ ns0(ViewGroup viewGroup, Object obj, int i10) {
+        this.c = i10;
+        this.e = viewGroup;
+        this.d = obj;
     }
 
-    @Override // org.telegram.ui.Components.ScrollSlidingTextTabStrip
-    public final int f(int i10) {
-        return this.t0.V0(i10);
+    @Override // g.p
+    public final int i(int i10) {
+        int i11;
+        switch (this.c) {
+            case 0:
+                st0 st0Var = (st0) this.d;
+                s4.h0 adapter = st0Var.r.getAdapter();
+                zu0 zu0Var = (zu0) this.e;
+                tu0 tu0Var = zu0Var.I;
+                if (adapter == tu0Var) {
+                    if (tu0Var.j(i10) == 2) {
+                        return st0Var.s.J;
+                    }
+                    return 1;
+                }
+                if (zu0.v(zu0Var, adapter) == -1) {
+                    return 1;
+                }
+                ((wu0) adapter).getClass();
+                return 1;
+            default:
+                bi.i iVar = (bi.i) this.d;
+                x51 x51Var = ((f61) this.e).Y2;
+                if (x51Var == null) {
+                    return iVar.J;
+                }
+                j51 G = x51Var.G(i10);
+                return (G == null || (i11 = G.u) == -1) ? iVar.J : i11;
+        }
     }
 }

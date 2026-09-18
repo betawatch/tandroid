@@ -2,66 +2,93 @@ package org.telegram.ui.Components;
 
 import android.content.Context;
 import android.view.MotionEvent;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.TextView;
+import android.view.accessibility.AccessibilityNodeInfo;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class q7 extends FrameLayout {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ k8 b;
+public final class q7 extends bj0 {
+    public float r;
+    public float s;
+    public boolean v;
+    public final org.telegram.ui.Cells.l7 w;
+    public final /* synthetic */ float x;
+    public final /* synthetic */ h8 y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ q7(k8 k8Var, Context context, int i10) {
+    public q7(h8 h8Var, Context context, float f7) {
         super(context);
-        this.a = i10;
-        this.b = k8Var;
-    }
-
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        TextView textView;
-        switch (this.a) {
-            case 0:
-                int y3 = org.telegram.messenger.vl.y(248.0f, i12 - i10, 4);
-                for (int i14 = 0; i14 < 5; i14++) {
-                    int dp = (y3 * i14) + AndroidUtilities.dp((i14 * 48) + 4);
-                    int dp2 = AndroidUtilities.dp(9.0f);
-                    k8 k8Var = this.b;
-                    View view = k8Var.n0[i14];
-                    view.layout(dp, dp2, view.getMeasuredWidth() + dp, k8Var.n0[i14].getMeasuredHeight() + dp2);
-                }
-                break;
-            case 1:
-            default:
-                super.onLayout(z10, i10, i11, i12, i13);
-                break;
-            case 2:
-                super.onLayout(z10, i10, i11, i12, i13);
-                k8 k8Var2 = this.b;
-                if (k8Var2.V != null && (textView = k8Var2.a0) != null) {
-                    int left = (textView.getLeft() - AndroidUtilities.dp(4.0f)) - k8Var2.V.getMeasuredWidth();
-                    org.telegram.ui.ActionBar.v0 v0Var = k8Var2.V;
-                    v0Var.layout(left, v0Var.getTop(), k8Var2.V.getMeasuredWidth() + left, k8Var2.V.getBottom());
-                    break;
-                }
-                break;
-        }
+        this.y = h8Var;
+        this.x = f7;
+        this.w = new org.telegram.ui.Cells.l7(this, 3);
     }
 
     @Override // android.view.View
-    public boolean onTouchEvent(MotionEvent motionEvent) {
-        switch (this.a) {
-            case 1:
-                k8 k8Var = this.b;
-                if (k8Var.i0.getTag() != null) {
-                    k8Var.A0(false, true);
-                }
-                return true;
-            default:
-                return super.onTouchEvent(motionEvent);
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        accessibilityNodeInfo.addAction(16);
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:11:0x0029, code lost:
+    
+        if (r5 != 3) goto L20;
+     */
+    @Override // android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        h8 h8Var = this.y;
+        q7 q7Var = h8Var.L;
+        if (h8Var.T.v || h8Var.H0 == -1) {
+            return false;
         }
+        float rawX = motionEvent.getRawX();
+        float rawY = motionEvent.getRawY();
+        int action = motionEvent.getAction();
+        org.telegram.ui.Cells.l7 l7Var = this.w;
+        if (action == 0) {
+            this.v = false;
+            this.r = rawX;
+            this.s = rawY;
+            AndroidUtilities.runOnUIThread(l7Var, 300L);
+            if (getBackground() != null) {
+                getBackground().setHotspot(this.r, this.s);
+            }
+            setPressed(true);
+            return true;
+        }
+        if (action != 1) {
+            if (action == 2) {
+                float f7 = rawX - this.r;
+                float f10 = rawY - this.s;
+                float f11 = (f10 * f10) + (f7 * f7);
+                float f12 = this.x;
+                if (f11 > f12 * f12 && !this.v) {
+                    AndroidUtilities.cancelRunOnUIThread(l7Var);
+                    setPressed(false);
+                }
+            }
+            return true;
+        }
+        if (!this.v && motionEvent.getAction() == 1 && isPressed()) {
+            MediaController.getInstance().playNextMessage();
+            q7Var.setProgress(0.0f);
+            q7Var.d();
+        }
+        AndroidUtilities.cancelRunOnUIThread(l7Var);
+        if (h8Var.J0 > 0) {
+            MediaController.getInstance().setPlaybackSpeed(true, 1.0f);
+            if (MediaController.getInstance().isMessagePaused()) {
+                h8Var.L0 = 0L;
+                h8Var.N0.run();
+            }
+        }
+        h8Var.H0 = 0;
+        setPressed(false);
+        h8Var.J0 = 0;
+        h8Var.I0 = -1.0f;
+        return true;
     }
 }

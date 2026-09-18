@@ -1,28 +1,50 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
-/* loaded from: classes3.dex */
-public final class eq0 extends org.telegram.ui.ActionBar.j {
-    public final /* synthetic */ kq0 a;
+import android.text.Editable;
+import java.util.ArrayList;
+import java.util.HashMap;
 
-    public eq0(kq0 kq0Var) {
-        this.a = kq0Var;
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* loaded from: classes3.dex */
+public final class eq0 implements br0 {
+    public final /* synthetic */ HashMap a;
+    public final /* synthetic */ ArrayList b;
+    public final /* synthetic */ lq0 c;
+
+    public eq0(lq0 lq0Var, HashMap hashMap, ArrayList arrayList) {
+        this.c = lq0Var;
+        this.a = hashMap;
+        this.b = arrayList;
     }
 
-    @Override // org.telegram.ui.ActionBar.j
-    public final void b(int i10) {
-        kq0 kq0Var = this.a;
-        if (i10 == -1) {
-            kq0Var.finishFragment();
+    @Override // org.telegram.ui.br0
+    public final void b(Editable editable) {
+        lq0 lq0Var = this.c;
+        org.telegram.ui.Components.ju juVar = lq0Var.M;
+        lq0Var.a = editable;
+        juVar.setText(editable);
+    }
+
+    @Override // org.telegram.ui.br0
+    public final /* synthetic */ boolean e() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.br0
+    public final void i(int i10, boolean z10, boolean z11) {
+        lq0 lq0Var = this.c;
+        lq0Var.removeSelfFromStack();
+        if (z10) {
             return;
         }
-        if (i10 != 1) {
-            if (i10 == 2) {
-                kq0.U(kq0Var, null);
-            }
-        } else if (kq0Var.V != null) {
-            kq0Var.finishFragment(false);
-            kq0Var.V.b();
-        }
+        lq0Var.V(this.a, this.b, z11, i10);
+    }
+
+    @Override // org.telegram.ui.br0
+    public final void a() {
+    }
+
+    @Override // org.telegram.ui.br0
+    public final /* synthetic */ void g() {
     }
 }

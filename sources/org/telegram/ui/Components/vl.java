@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class vl extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -30,7 +30,7 @@ public final class vl extends AnimatorListenerAdapter {
                     chatAttachAlertPhotoLayout.P.invalidate();
                 }
                 if (chatAttachAlertPhotoLayout.b0) {
-                    chatAttachAlertPhotoLayout.b.Z1.H();
+                    chatAttachAlertPhotoLayout.b.Z1.K0();
                 }
                 dm dmVar2 = chatAttachAlertPhotoLayout.P;
                 if (dmVar2 != null) {
@@ -44,7 +44,7 @@ public final class vl extends AnimatorListenerAdapter {
                 break;
             default:
                 ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout2 = this.b;
-                d91 d91Var = chatAttachAlertPhotoLayout2.l0;
+                f91 f91Var = chatAttachAlertPhotoLayout2.l0;
                 chatAttachAlertPhotoLayout2.f1.unlock();
                 chatAttachAlertPhotoLayout2.i1 = false;
                 chatAttachAlertPhotoLayout2.b.getWindow().clearFlags(128);
@@ -60,13 +60,13 @@ public final class vl extends AnimatorListenerAdapter {
                     chatAttachAlertPhotoLayout2.P.invalidate();
                 }
                 chatAttachAlertPhotoLayout2.b0 = false;
-                ah.y yVar = chatAttachAlertPhotoLayout2.j0;
-                if (yVar != null) {
-                    yVar.setVisibility(8);
+                ai.f0 f0Var = chatAttachAlertPhotoLayout2.j0;
+                if (f0Var != null) {
+                    f0Var.setVisibility(8);
                 }
-                if (d91Var != null) {
-                    d91Var.setVisibility(8);
-                    d91Var.setTag(null);
+                if (f91Var != null) {
+                    f91Var.setVisibility(8);
+                    f91Var.setTag(null);
                 }
                 tl tlVar3 = chatAttachAlertPhotoLayout2.r;
                 if (tlVar3 != null) {

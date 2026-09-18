@@ -9,21 +9,21 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class f80 extends org.telegram.ui.co {
-    public boolean Qc;
-    public final /* synthetic */ boolean Rc;
-    public final /* synthetic */ long Sc;
-    public final /* synthetic */ g80 Tc;
+public final class f80 extends org.telegram.ui.bo {
+    public boolean Pc;
+    public final /* synthetic */ boolean Qc;
+    public final /* synthetic */ long Rc;
+    public final /* synthetic */ g80 Sc;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public f80(g80 g80Var, Bundle bundle, boolean z10, long j3) {
         super(bundle);
-        this.Tc = g80Var;
-        this.Rc = z10;
-        this.Sc = j3;
-        this.Qc = false;
+        this.Sc = g80Var;
+        this.Qc = z10;
+        this.Rc = j3;
+        this.Pc = false;
     }
 
     public static void Xc(f80 f80Var, long j3, TLRPC.Chat chat) {
@@ -35,27 +35,27 @@ public final class f80 extends org.telegram.ui.co {
             TLRPC.User currentUser = f80Var.getUserConfig().getCurrentUser();
             boolean z10 = chat.admin_rights != null;
             boolean z11 = chat.creator;
-            f6Var = ((org.telegram.ui.ActionBar.f3) f80Var.Tc).resourcesProvider;
-            a01.c(parentActivity, i10, j10, currentUser, null, z10, z11, f6Var);
+            f6Var = ((org.telegram.ui.ActionBar.g3) f80Var.Sc).resourcesProvider;
+            c01.c(parentActivity, i10, j10, currentUser, null, z10, z11, f6Var);
         }
     }
 
-    @Override // org.telegram.ui.co, org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.bo, org.telegram.ui.ActionBar.o2
     public final void onBecomeFullyVisible() {
         super.onBecomeFullyVisible();
-        if (this.Qc || !this.Rc) {
+        if (this.Pc || !this.Qc) {
             return;
         }
-        this.Qc = true;
+        this.Pc = true;
         MessagesController messagesController = getMessagesController();
-        long j3 = this.Sc;
+        long j3 = this.Rc;
         TLRPC.Chat chat = messagesController.getChat(Long.valueOf(j3));
         if (ChatObject.canManageMyTag(chat)) {
-            qc J = yc.a0(this).J(R.raw.contact_check, LocaleController.getString(R.string.JoinedGroup), LocaleController.getString(R.string.JoinedGroupAddTag), new a3.g0(this, j3, chat, 21));
+            oc J = vc.a0(this).J(R.raw.contact_check, LocaleController.getString(R.string.JoinedGroup), LocaleController.getString(R.string.JoinedGroupAddTag), new a3.h0(this, j3, chat, 21));
             J.r = false;
             J.k(true);
         } else {
-            qc Q = yc.a0(this).Q(R.raw.contact_check, 36, LocaleController.getString(R.string.JoinedGroup));
+            oc Q = vc.a0(this).Q(R.raw.contact_check, 36, LocaleController.getString(R.string.JoinedGroup));
             Q.r = false;
             Q.k(true);
         }

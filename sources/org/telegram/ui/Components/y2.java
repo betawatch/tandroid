@@ -1,153 +1,127 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Bitmap;
-import android.graphics.ColorMatrix;
-import android.view.ViewPropertyAnimator;
-import android.widget.FrameLayout;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Context;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import org.telegram.messenger.DialogObject;
+import org.telegram.messenger.GiftAuctionController;
+import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.SharedConfig;
+import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class y2 implements Utilities.Callback {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final /* synthetic */ class y2 implements Utilities.Callback2 {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ Context b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
 
-    public /* synthetic */ y2(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public /* synthetic */ y2(int i10, long j3, TLRPC.Photo photo, Context context, ai.d dVar) {
+        this.c = i10;
+        this.d = j3;
+        this.e = photo;
+        this.b = context;
+        this.f = dVar;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        float height;
-        switch (this.a) {
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
+        int i10 = this.a;
+        Object obj3 = this.f;
+        Object obj4 = this.e;
+        switch (i10) {
             case 0:
-                ((ah.g) this.b).run();
-                break;
-            case 1:
-                CharSequence charSequence = (CharSequence) obj;
-                di.g gVar = ((ld) this.b).f;
-                gVar.setText(charSequence);
-                gVar.w(charSequence.length(), charSequence.length());
-                break;
-            case 2:
-                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = ((hm) this.b).v;
-                chatAttachAlertPhotoLayout.r0(null, null, ((Long) obj).longValue());
-                chatAttachAlertPhotoLayout.b.dismiss();
-                break;
-            case 3:
-                MessagesController.getInstance(((qs) this.b).N).openApp((TLRPC.User) obj, 0);
-                break;
-            case 4:
-                ((zt) this.b).performMenuAction(((Integer) obj).intValue());
-                break;
-            case 5:
-                Runnable runnable = (Runnable) this.b;
-                if (runnable != null) {
-                    runnable.run();
-                    break;
-                }
-                break;
-            case 6:
-                ((ca0) this.b).V.Y0(((Integer) obj).intValue() + 8);
-                break;
-            case 7:
-                wb0 wb0Var = (wb0) this.b;
+                TLRPC.Photo photo = (TLRPC.Photo) obj4;
+                ai.d dVar = (ai.d) obj3;
                 Integer num = (Integer) obj;
-                ArrayList arrayList = wb0Var.e.a;
-                wa0 wa0Var = wb0Var.f;
-                if (((tb0) arrayList.get(wa0Var.getCurrentPosition())).a != num.intValue()) {
-                    int i10 = 0;
-                    int i11 = 0;
-                    while (true) {
-                        if (i11 < arrayList.size()) {
-                            if (((tb0) arrayList.get(i11)).a == num.intValue()) {
-                                i10 = i11;
-                            } else {
-                                i11++;
-                            }
-                        }
-                    }
-                    if (wa0Var.getCurrentPosition() != i10) {
-                        wa0Var.D(i10);
-                        break;
-                    }
+                TL_account.reportProfilePhoto reportprofilephoto = new TL_account.reportProfilePhoto();
+                int i11 = this.c;
+                reportprofilephoto.peer = MessagesController.getInstance(i11).getInputPeer(this.d);
+                TLRPC.TL_inputPhoto tL_inputPhoto = new TLRPC.TL_inputPhoto();
+                tL_inputPhoto.id = photo.id;
+                tL_inputPhoto.file_reference = photo.file_reference;
+                tL_inputPhoto.access_hash = photo.access_hash;
+                reportprofilephoto.photo_id = tL_inputPhoto;
+                reportprofilephoto.message = "";
+                if (num.intValue() == 0) {
+                    reportprofilephoto.reason = new TLRPC.TL_inputReportReasonSpam();
+                } else if (num.intValue() == 1) {
+                    reportprofilephoto.reason = new TLRPC.TL_inputReportReasonViolence();
+                } else if (num.intValue() == 2) {
+                    reportprofilephoto.reason = new TLRPC.TL_inputReportReasonChildAbuse();
+                } else if (num.intValue() == 5) {
+                    reportprofilephoto.reason = new TLRPC.TL_inputReportReasonPornography();
+                } else if (num.intValue() == 3) {
+                    reportprofilephoto.reason = new TLRPC.TL_inputReportReasonIllegalDrugs();
+                } else if (num.intValue() == 4) {
+                    reportprofilephoto.reason = new TLRPC.TL_inputReportReasonPersonalDetails();
                 }
-                break;
-            case 8:
-                sd0 sd0Var = (sd0) this.b;
-                Integer num2 = (Integer) obj;
-                FrameLayout frameLayout = sd0Var.h;
-                if (sd0Var.getContext() != null) {
-                    boolean z10 = sd0Var.getContext().getResources().getConfiguration().orientation == 2;
-                    int intValue = num2.intValue() - AndroidUtilities.navigationBarHeight;
-                    if (SharedConfig.passcodeType == 1) {
-                        ViewPropertyAnimator animate = frameLayout.animate();
-                        if (intValue <= AndroidUtilities.dp(20.0f)) {
-                            height = 0.0f;
-                        } else {
-                            height = (((sd0Var.getHeight() - intValue) / 2.0f) - (frameLayout.getHeight() / (z10 ? 1.0f : 2.0f))) - frameLayout.getTop();
-                        }
-                        ViewPropertyAnimator duration = animate.translationY(height).setDuration(320L);
-                        pr prVar = pr.h;
-                        duration.setInterpolator(prVar).start();
-                        sd0Var.I.animate().alpha(intValue > AndroidUtilities.dp(20.0f) ? 0.0f : 1.0f).setDuration(320L).setInterpolator(prVar);
-                        break;
-                    }
-                }
-                break;
-            case 9:
-                pe0 pe0Var = (pe0) this.b;
-                pe0Var.K.b(pe0Var.N, true, 0, ((Long) obj).longValue());
-                pe0Var.dismiss();
-                break;
-            case 10:
-                Utilities.Callback2 callback2 = (Utilities.Callback2) this.b;
-                Bitmap bitmap = (Bitmap) obj;
-                ColorMatrix colorMatrix = new ColorMatrix();
-                AndroidUtilities.adjustSaturationColorMatrix(colorMatrix, org.telegram.ui.ActionBar.j6.I.q() ? 0.04f : 0.25f);
-                AndroidUtilities.adjustBrightnessColorMatrix(colorMatrix, org.telegram.ui.ActionBar.j6.I.q() ? -0.04f : -0.07f);
-                Bitmap applyColorMatrix = AndroidUtilities.applyColorMatrix(bitmap, colorMatrix);
-                applyColorMatrix.setHasAlpha(false);
-                ColorMatrix colorMatrix2 = new ColorMatrix();
-                colorMatrix2.setSaturation(org.telegram.ui.ActionBar.j6.I.q() ? 2.0f : 3.0f);
-                if (!org.telegram.ui.ActionBar.j6.I.q()) {
-                    AndroidUtilities.adjustBrightnessColorMatrix(colorMatrix2, org.telegram.ui.ActionBar.j6.I.q() ? -0.2f : -0.07f);
-                }
-                Bitmap applyColorMatrix2 = AndroidUtilities.applyColorMatrix(bitmap, colorMatrix2);
-                applyColorMatrix2.setHasAlpha(false);
-                bitmap.recycle();
-                callback2.run(applyColorMatrix, applyColorMatrix2);
+                ConnectionsManager.getInstance(i11).sendRequest(reportprofilephoto, null);
+                new vc(jb.a(this.b), dVar).E(dVar).j();
                 break;
             default:
-                gy0 gy0Var = (gy0) this.b;
-                TL_account.TL_birthday tL_birthday = (TL_account.TL_birthday) obj;
-                TL_account.updateBirthday updatebirthday = new TL_account.updateBirthday();
-                updatebirthday.flags |= 1;
-                updatebirthday.birthday = tL_birthday;
-                int i12 = gy0Var.a;
-                TLRPC.UserFull userFull = MessagesController.getInstance(i12).getUserFull(UserConfig.getInstance(i12).getClientUserId());
-                TL_account.TL_birthday tL_birthday2 = userFull != null ? userFull.birthday : null;
-                if (userFull != null) {
-                    userFull.flags2 |= 32;
-                    userFull.birthday = tL_birthday;
-                    MessagesStorage.getInstance(i12).updateUserInfo(userFull, false);
+                org.telegram.ui.ActionBar.f6 f6Var = (org.telegram.ui.ActionBar.f6) obj4;
+                Runnable runnable = (Runnable) obj3;
+                GiftAuctionController.Auction auction = (GiftAuctionController.Auction) obj;
+                if (auction != null) {
+                    int i12 = this.c;
+                    long j3 = UserConfig.getInstance(i12).clientUserId;
+                    long peerDialogId = DialogObject.getPeerDialogId(auction.auctionUserState.peer);
+                    Context context = this.b;
+                    long j10 = this.d;
+                    if (j10 != peerDialogId && j10 != 0 && peerDialogId != 0) {
+                        ai.l8 l8Var = new ai.l8(context, i12, auction, j10, runnable);
+                        TLObject user = peerDialogId >= 0 ? MessagesController.getInstance(i12).getUser(Long.valueOf(peerDialogId)) : MessagesController.getInstance(i12).getChat(Long.valueOf(-peerDialogId));
+                        TLObject user2 = j10 >= 0 ? MessagesController.getInstance(i12).getUser(Long.valueOf(j10)) : MessagesController.getInstance(i12).getChat(Long.valueOf(-j10));
+                        LinearLayout f7 = org.telegram.messenger.wl.f(context, 1);
+                        f7.addView(new gi.a(context, user, user2), w7.x5.t(-1, -2, 48, 0, -4, 0, 0));
+                        TextView textView = new TextView(context);
+                        NotificationCenter.listenEmojiLoading(textView);
+                        textView.setText(LocaleController.getString(R.string.Gift2AuctionsChangeRecipient));
+                        int i13 = org.telegram.ui.ActionBar.j6.j5;
+                        org.telegram.messenger.wl.x(i13, f6Var, textView, 1, 20.0f);
+                        textView.setGravity(LocaleController.isRTL ? 5 : 3);
+                        f7.addView(textView, w7.x5.d(-2, -2.0f, (LocaleController.isRTL ? 5 : 3) | 48, 24.0f, 19.0f, 24.0f, 2.0f));
+                        TextView textView2 = new TextView(context);
+                        org.telegram.messenger.wl.n(i13, f6Var, textView2, 1, 16.0f);
+                        org.telegram.messenger.wl.p(R.string.Gift2AuctionsChangeRecipient2, new Object[]{DialogObject.getShortName(peerDialogId), DialogObject.getShortName(j10)}, textView2);
+                        f7.addView(textView2, w7.x5.t(-1, -2, 48, 24, 4, 24, 4));
+                        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context, 0, f6Var);
+                        alertDialog$Builder.n(f7);
+                        alertDialog$Builder.k(LocaleController.getString(R.string.Continue), new r5.d(l8Var, 15));
+                        alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
+                        alertDialog$Builder.a.show();
+                        break;
+                    } else if (auction.auctionUserState.bid_date > 0 && !auction.isFinished()) {
+                        xh.m mVar = new xh.m(context, f6Var, null, auction);
+                        mVar.n0 = runnable;
+                        mVar.show();
+                        break;
+                    } else {
+                        new xh.v(context, f6Var, j10, auction.gift, runnable).show();
+                        break;
+                    }
                 }
-                ConnectionsManager.getInstance(i12).sendRequest(updatebirthday, new bi.c5(gy0Var, userFull, tL_birthday2, 13), 1024);
-                MessagesController.getInstance(i12).invalidateContentSettings();
-                MessagesController.getInstance(i12).removeSuggestion(0L, "BIRTHDAY_SETUP");
-                NotificationCenter.getInstance(i12).lambda$postNotificationNameOnUIThread$1(NotificationCenter.newSuggestionsAvailable, new Object[0]);
                 break;
         }
+    }
+
+    public /* synthetic */ y2(Context context, org.telegram.ui.ActionBar.f6 f6Var, int i10, long j3, Runnable runnable) {
+        this.b = context;
+        this.e = f6Var;
+        this.c = i10;
+        this.d = j3;
+        this.f = runnable;
     }
 }

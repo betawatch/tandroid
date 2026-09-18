@@ -11,7 +11,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class om {
     public long i;
@@ -22,9 +22,9 @@ public final class om {
     public float q;
     public float r;
     public float s;
-    public f01 u;
+    public h01 u;
     public long v;
-    public final org.telegram.ui.ActionBar.f5 x;
+    public final org.telegram.ui.ActionBar.g5 x;
     public final m.c3 y;
     public final /* synthetic */ pm z;
     public float a = 0.0f;
@@ -35,7 +35,7 @@ public final class om {
     public float f = 0.0f;
     public float g = 0.0f;
     public final ArrayList h = new ArrayList();
-    public final pr j = pr.j;
+    public final qr j = qr.j;
     public final int l = AndroidUtilities.dp(4.0f);
     public final int m = AndroidUtilities.dp(2.0f) / 2;
     public final RectF t = new RectF();
@@ -45,7 +45,7 @@ public final class om {
         this.z = pmVar;
         org.telegram.ui.ActionBar.f6 f6Var = pmVar.P.n;
         Drawable drawable = f6Var != null ? f6Var.getDrawable("drawableMsgOutMedia") : null;
-        this.x = (org.telegram.ui.ActionBar.f5) (drawable == null ? org.telegram.ui.ActionBar.j6.O0("drawableMsgOutMedia") : drawable);
+        this.x = (org.telegram.ui.ActionBar.g5) (drawable == null ? org.telegram.ui.ActionBar.j6.O0("drawableMsgOutMedia") : drawable);
         this.y = new m.c3();
     }
 
@@ -118,7 +118,7 @@ public final class om {
                 if (nmVar4.k > 0.0f || nmVar4.h + j12 > elapsedRealtime) {
                     nm.b(nmVar4, null, null, z10);
                 } else {
-                    wh.g gVar = nmVar4.s;
+                    vh.g gVar = nmVar4.s;
                     if (gVar != null) {
                         gVar.b(nmVar4.O.z);
                         nmVar4.s = null;

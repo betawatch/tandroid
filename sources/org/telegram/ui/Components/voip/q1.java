@@ -1,49 +1,161 @@
 package org.telegram.ui.Components.voip;
 
 import android.animation.ValueAnimator;
-import android.view.ViewTreeObserver;
-import org.telegram.ui.Components.k61;
-import org.telegram.ui.Components.pr;
+import android.graphics.Bitmap;
+import android.graphics.Paint;
+import android.view.View;
+import android.view.animation.LinearInterpolator;
+import java.util.ArrayList;
+import org.telegram.ui.Components.w81;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class q1 implements ViewTreeObserver.OnPreDrawListener {
-    public final /* synthetic */ float a;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ s1 c;
+public final class q1 {
+    public final com.google.firebase.messaging.n a;
+    public final com.google.firebase.messaging.n b;
+    public com.google.firebase.messaging.n c;
+    public com.google.firebase.messaging.n d;
+    public boolean e;
+    public int f;
+    public int g;
+    public int h;
+    public boolean i;
+    public final Paint j;
+    public final Paint k;
+    public final Paint l;
+    public final ArrayList m;
 
-    public q1(s1 s1Var, float f7, float f10) {
-        this.c = s1Var;
-        this.a = f7;
-        this.b = f10;
+    public q1() {
+        com.google.firebase.messaging.n nVar = new com.google.firebase.messaging.n(80, 80);
+        this.a = nVar;
+        com.google.firebase.messaging.n nVar2 = new com.google.firebase.messaging.n(80, 80);
+        this.b = nVar2;
+        this.f = 0;
+        this.g = 0;
+        Paint paint = new Paint(1);
+        this.j = paint;
+        Paint paint2 = new Paint(1);
+        this.k = paint2;
+        Paint paint3 = new Paint(1);
+        this.l = paint3;
+        this.m = new ArrayList();
+        nVar2.z(0.0f, 0.0f, 80.0f, 80.0f);
+        nVar.z(0.0f, 0.0f, 80.0f, 80.0f);
+        paint.setColor(-1);
+        paint.setAlpha(35);
+        paint2.setColor(-16777216);
+        paint2.setAlpha(102);
+        paint3.setColor(-16777216);
+        paint3.setAlpha(35);
+        ((Paint) nVar2.a).setAlpha(180);
     }
 
-    @Override // android.view.ViewTreeObserver.OnPreDrawListener
-    public final boolean onPreDraw() {
-        s1 s1Var = this.c;
-        if (s1Var.P) {
-            s1Var.M = false;
-            s1Var.requestLayout();
-            return false;
+    public final void a(View view) {
+        this.m.add(view);
+    }
+
+    public final Paint b() {
+        return this.i ? this.k : (Paint) this.b.a;
+    }
+
+    public final void c() {
+        ArrayList arrayList = this.m;
+        int size = arrayList.size();
+        int i10 = 0;
+        while (i10 < size) {
+            Object obj = arrayList.get(i10);
+            i10++;
+            ((View) obj).invalidate();
         }
-        ValueAnimator valueAnimator = s1Var.d0;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
+    }
+
+    public final void d(float f7, float f10) {
+        float f11 = this.g * 1.12f;
+        float f12 = -f7;
+        float f13 = -f10;
+        this.b.B(f12 - ((f11 - this.f) / 2.0f), f13 - ((f11 - this.g) / 2.0f), f11 / ((Bitmap) r1.c).getHeight(), this.h);
+        this.d.z(f12, f13, this.f - f7, this.g - f10);
+    }
+
+    public final void e(boolean z10) {
+        if (!this.i || z10) {
+            this.i = z10;
+        } else {
+            ValueAnimator ofFloat = ValueAnimator.ofFloat(1.0f, 0.0f);
+            final int i10 = 0;
+            ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener(this) { // from class: org.telegram.ui.Components.voip.p1
+                public final /* synthetic */ q1 b;
+
+                {
+                    this.b = this;
+                }
+
+                @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+                public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+                    switch (i10) {
+                        case 0:
+                            q1 q1Var = this.b;
+                            q1Var.getClass();
+                            float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                            int i11 = (int) (35.0f * floatValue);
+                            q1Var.l.setAlpha(i11);
+                            q1Var.k.setAlpha((int) (floatValue * 102.0f));
+                            q1Var.j.setAlpha(i11);
+                            q1Var.c();
+                            break;
+                        default:
+                            q1 q1Var2 = this.b;
+                            q1Var2.getClass();
+                            float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                            ((Paint) q1Var2.b.a).setAlpha((int) (180.0f * floatValue2));
+                            ((Paint) q1Var2.a.a).setAlpha((int) (floatValue2 * 255.0f));
+                            q1Var2.c();
+                            break;
+                    }
+                }
+            });
+            ofFloat.setInterpolator(new LinearInterpolator());
+            ofFloat.setDuration(80L);
+            ofFloat.addListener(new w81(this, 6));
+            ofFloat.start();
+            ValueAnimator ofFloat2 = ValueAnimator.ofFloat(0.0f, 1.0f);
+            final int i11 = 1;
+            ofFloat2.addUpdateListener(new ValueAnimator.AnimatorUpdateListener(this) { // from class: org.telegram.ui.Components.voip.p1
+                public final /* synthetic */ q1 b;
+
+                {
+                    this.b = this;
+                }
+
+                @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+                public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+                    switch (i11) {
+                        case 0:
+                            q1 q1Var = this.b;
+                            q1Var.getClass();
+                            float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                            int i112 = (int) (35.0f * floatValue);
+                            q1Var.l.setAlpha(i112);
+                            q1Var.k.setAlpha((int) (floatValue * 102.0f));
+                            q1Var.j.setAlpha(i112);
+                            q1Var.c();
+                            break;
+                        default:
+                            q1 q1Var2 = this.b;
+                            q1Var2.getClass();
+                            float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                            ((Paint) q1Var2.b.a).setAlpha((int) (180.0f * floatValue2));
+                            ((Paint) q1Var2.a.a).setAlpha((int) (floatValue2 * 255.0f));
+                            q1Var2.c();
+                            break;
+                    }
+                }
+            });
+            ofFloat2.setInterpolator(new LinearInterpolator());
+            ofFloat2.setStartDelay(80L);
+            ofFloat2.setDuration(80L);
+            ofFloat2.start();
         }
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(s1Var.J, 0.0f);
-        s1Var.d0 = ofFloat;
-        ofFloat.addUpdateListener(s1Var.e0);
-        s1Var.d0.setDuration(300L);
-        s1Var.d0.start();
-        float measuredWidth = this.a - ((s1Var.getMeasuredWidth() - (s1Var.getMeasuredWidth() * 0.23f)) / 2.0f);
-        float measuredHeight = this.b - ((s1Var.getMeasuredHeight() - (s1Var.getMeasuredHeight() * 0.23f)) / 2.0f);
-        s1Var.getViewTreeObserver().removeOnPreDrawListener(this);
-        s1Var.setTranslationX(measuredWidth);
-        s1Var.setTranslationY(measuredHeight);
-        s1Var.setScaleX(0.23f);
-        s1Var.setScaleY(0.23f);
-        s1Var.animate().setListener(null).cancel();
-        s1Var.animate().setListener(new k61(this, 10)).scaleX(1.0f).scaleY(1.0f).translationX(0.0f).translationY(0.0f).alpha(1.0f).setDuration(300L).setStartDelay(0L).setInterpolator(pr.f).start();
-        return false;
+        c();
     }
 }

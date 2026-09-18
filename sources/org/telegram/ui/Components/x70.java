@@ -13,7 +13,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class x70 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -38,14 +38,14 @@ public final /* synthetic */ class x70 implements View.OnClickListener {
                 ((g80) this.b).dismiss();
                 break;
             case 2:
-                ((org.telegram.ui.ActionBar.z) this.b).o(2);
+                ((org.telegram.ui.ActionBar.a0) this.b).o(2);
                 break;
             case 3:
-                ac0 ac0Var = (ac0) this.b;
-                ac0.b(ac0Var.getContext(), ac0Var.a, ac0Var.n, false, ac0Var.x, new wp(ac0Var, 29), ac0Var.c);
+                zb0 zb0Var = (zb0) this.b;
+                zb0.b(zb0Var.getContext(), zb0Var.a, zb0Var.n, false, zb0Var.x, new xp(zb0Var, 29), zb0Var.c);
                 break;
             case 4:
-                ((ad0) this.b).onBackPressed();
+                ((zc0) this.b).onBackPressed();
                 break;
             case 5:
                 ae0.m((ae0) this.b);
@@ -71,17 +71,17 @@ public final /* synthetic */ class x70 implements View.OnClickListener {
                 view.getContext().startActivity(new Intent("android.intent.action.VIEW", Uri.parse(((pf0) this.b).a.y.url)));
                 break;
             case 8:
-                eg0 eg0Var = (eg0) this.b;
-                PhotoViewer photoViewer = eg0Var.V;
+                fg0 fg0Var = (fg0) this.b;
+                PhotoViewer photoViewer = fg0Var.V;
                 if (photoViewer != null) {
-                    qf0 qf0Var = eg0Var.r;
+                    qf0 qf0Var = fg0Var.r;
                     if (qf0Var == null) {
-                        g71 g71Var = photoViewer.F2;
-                        if (g71Var != null) {
-                            if (g71Var.y()) {
-                                g71Var.B();
+                        h71 h71Var = photoViewer.F2;
+                        if (h71Var != null) {
+                            if (h71Var.y()) {
+                                h71Var.B();
                             } else {
-                                g71Var.C();
+                                h71Var.C();
                             }
                         }
                     } else if (qf0Var.G) {
@@ -89,106 +89,106 @@ public final /* synthetic */ class x70 implements View.OnClickListener {
                     } else {
                         qf0Var.g();
                     }
-                    eg0.p0.z();
+                    fg0.p0.z();
                     break;
                 }
                 break;
             case 9:
-                ng0 ng0Var = (ng0) this.b;
-                ng0Var.getClass();
-                kg0 kg0Var = (kg0) ng0Var;
-                lg0 lg0Var = kg0Var.e;
-                og0 og0Var = (og0) kg0Var.getTag(R.id.object_tag);
-                if (og0Var.b.size() > 15) {
-                    boolean z10 = og0Var.e;
-                    og0Var.e = !z10;
+                og0 og0Var = (og0) this.b;
+                og0Var.getClass();
+                lg0 lg0Var = (lg0) og0Var;
+                mg0 mg0Var = lg0Var.e;
+                pg0 pg0Var = (pg0) lg0Var.getTag(R.id.object_tag);
+                if (pg0Var.b.size() > 15) {
+                    boolean z10 = pg0Var.e;
+                    pg0Var.e = !z10;
                     if (!z10) {
-                        og0Var.f = 10;
+                        pg0Var.f = 10;
                     }
-                    lg0Var.s.O(kg0Var);
-                    lg0Var.s.c.X(true);
+                    mg0Var.s.O(lg0Var);
+                    mg0Var.s.c.X(true);
                     break;
                 }
                 break;
             case 10:
-                ((am0) this.b).onBackPressed();
+                ((bm0) this.b).onBackPressed();
                 break;
             case 11:
-                vm0 vm0Var = ((um0) this.b).c;
-                dt.n(vm0Var.F, vm0Var.G);
+                wm0 wm0Var = ((vm0) this.b).c;
+                et.n(wm0Var.F, wm0Var.G);
                 break;
             case 12:
-                di.h2 h2Var = ((wm0) this.b).e;
+                ci.h2 h2Var = ((xm0) this.b).e;
                 h2Var.setText("");
                 AndroidUtilities.showKeyboard(h2Var);
                 break;
             case 13:
-                hn0 hn0Var = (hn0) this.b;
-                hn0Var.getClass();
-                new sg.a1(hn0Var.b, 24, true).show();
+                jn0 jn0Var = (jn0) this.b;
+                jn0Var.getClass();
+                new rg.x0(jn0Var.b, 24, true).show();
                 break;
             case 14:
-                ((yn0) this.b).Q(false);
+                ((zn0) this.b).R(false);
                 break;
             case 15:
-                mq0 mq0Var = ((kq0) this.b).s;
-                ArrayList arrayList = mq0Var.s;
+                nq0 nq0Var = ((lq0) this.b).s;
+                ArrayList arrayList = nq0Var.s;
                 if (!arrayList.isEmpty()) {
-                    mq0Var.r = TextUtils.join(" ", arrayList).toString();
-                    mq0Var.n = false;
-                    mq0Var.d();
-                    mq0Var.w = null;
-                    if (mq0Var.b != 0) {
-                        mq0Var.b = 0;
-                        lq0 lq0Var = mq0Var.H;
-                        if (lq0Var != null) {
-                            ((org.telegram.ui.xv) lq0Var).h(0);
+                    nq0Var.r = TextUtils.join(" ", arrayList).toString();
+                    nq0Var.n = false;
+                    nq0Var.d();
+                    nq0Var.w = null;
+                    if (nq0Var.b != 0) {
+                        nq0Var.b = 0;
+                        mq0 mq0Var = nq0Var.H;
+                        if (mq0Var != null) {
+                            ((org.telegram.ui.yv) mq0Var).h(0);
                             break;
                         }
                     }
                 }
                 break;
             case 16:
-                xu0 xu0Var = ((gt0) this.b).f;
-                org.telegram.ui.ActionBar.n2 n2Var = xu0Var.v1;
-                if (n2Var != null && n2Var.getParentLayout() != null) {
-                    ((ActionBarLayout) xu0Var.v1.getParentLayout()).r();
+                zu0 zu0Var = ((it0) this.b).f;
+                org.telegram.ui.ActionBar.o2 o2Var = zu0Var.v1;
+                if (o2Var != null && o2Var.getParentLayout() != null) {
+                    ((ActionBarLayout) zu0Var.v1.getParentLayout()).r();
                     break;
                 }
                 break;
             case 17:
-                ((jq0) this.b).run();
+                ((kq0) this.b).run();
                 break;
             case 18:
-                ((xw0) this.b).b.getImageReceiver().startAnimation();
+                ((zw0) this.b).b.getImageReceiver().startAnimation();
                 break;
             case 19:
-                AndroidUtilities.runOnUIThread((bi.j6) this.b, 100L);
+                AndroidUtilities.runOnUIThread((ai.a7) this.b, 100L);
                 break;
             case 20:
                 ((EditTextBoldCursor) this.b).setText("");
                 break;
             case 21:
-                m11 m11Var = ((o11) this.b).b;
-                m11Var.setText("");
-                AndroidUtilities.showKeyboard(m11Var);
+                o11 o11Var = ((q11) this.b).b;
+                o11Var.setText("");
+                AndroidUtilities.showKeyboard(o11Var);
                 break;
             case 22:
-                ((y11) this.b).b.getImageReceiver().startAnimation();
+                ((a21) this.b).b.getImageReceiver().startAnimation();
                 break;
             case 23:
-                ((u31) this.b).dismiss();
+                ((w31) this.b).dismiss();
                 break;
             case 24:
-                org.telegram.ui.co coVar = ((org.telegram.ui.zk) this.b).s;
-                if (coVar.getUserConfig().isPremium() || ((chat = coVar.e) != null && chat.autotranslation)) {
-                    coVar.getMessagesController().getTranslateController().toggleTranslatingDialog(coVar.a());
+                org.telegram.ui.bo boVar = ((org.telegram.ui.al) this.b).s;
+                if (boVar.getUserConfig().isPremium() || ((chat = boVar.e) != null && chat.autotranslation)) {
+                    boVar.getMessagesController().getTranslateController().toggleTranslatingDialog(boVar.a());
                 } else {
-                    i10 = ((org.telegram.ui.ActionBar.n2) coVar).currentAccount;
-                    MessagesController.getNotificationsSettings(i10).edit().putInt("dialog_show_translate_count" + coVar.a(), 14).commit();
-                    coVar.showDialog(new sg.a1((org.telegram.ui.ActionBar.n2) coVar, 13, false));
+                    i10 = ((org.telegram.ui.ActionBar.o2) boVar).currentAccount;
+                    MessagesController.getNotificationsSettings(i10).edit().putInt("dialog_show_translate_count" + boVar.a(), 14).commit();
+                    boVar.showDialog(new rg.x0((org.telegram.ui.ActionBar.o2) boVar, 13, false));
                 }
-                coVar.Qc(true);
+                boVar.Qc(true);
                 break;
             default:
                 ((ActionBarPopupWindow$ActionBarPopupWindowLayout) this.b).getSwipeBack().b(true);

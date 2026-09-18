@@ -30,7 +30,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.webrtc.EglRenderer;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class dm0 implements Runnable {
     public final /* synthetic */ int a;
@@ -76,31 +76,31 @@ public final /* synthetic */ class dm0 implements Runnable {
         Object obj2 = this.c;
         switch (i13) {
             case 0:
-                pn0.Y((pn0) obj2, z11, (String) obj);
+                qn0.Y((qn0) obj2, z11, (String) obj);
                 return;
             case 1:
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj;
-                pn0 pn0Var = ((bn0) obj2).e;
+                qn0 qn0Var = ((cn0) obj2).e;
                 if (z11) {
-                    i10 = ((org.telegram.ui.ActionBar.n2) pn0Var).currentAccount;
+                    i10 = ((org.telegram.ui.ActionBar.o2) qn0Var).currentAccount;
                     UserConfig.getInstance(i10).resetSavedPassword();
-                    pn0Var.N0 = 0;
-                    pn0Var.R1();
-                    ViewGroup[] viewGroupArr = pn0Var.Z;
+                    qn0Var.N0 = 0;
+                    qn0Var.R1();
+                    ViewGroup[] viewGroupArr = qn0Var.Z;
                     if (viewGroupArr == null || viewGroupArr[0].getVisibility() != 0) {
                         return;
                     }
-                    pn0Var.Y[0].requestFocus();
-                    AndroidUtilities.showKeyboard(pn0Var.Y[0]);
+                    qn0Var.Y[0].requestFocus();
+                    AndroidUtilities.showKeyboard(qn0Var.Y[0]);
                     return;
                 }
-                pn0Var.N1(true, false);
+                qn0Var.N1(true, false);
                 if (tL_error.text.equals("PASSWORD_HASH_INVALID")) {
-                    pn0Var.A1(true);
+                    qn0Var.A1(true);
                     return;
                 }
                 if (!tL_error.text.startsWith("FLOOD_WAIT")) {
-                    pn0Var.M1(LocaleController.getString(R.string.AppName), tL_error.text);
+                    qn0Var.M1(LocaleController.getString(R.string.AppName), tL_error.text);
                     return;
                 }
                 int intValue = Utilities.parseInt((CharSequence) tL_error.text).intValue();
@@ -115,20 +115,20 @@ public final /* synthetic */ class dm0 implements Runnable {
                 int i15 = R.string.FloodWaitTime;
                 Object[] objArr = new Object[1];
                 objArr[c10] = formatPluralString;
-                pn0Var.M1(string, LocaleController.formatString("FloodWaitTime", i15, objArr));
+                qn0Var.M1(string, LocaleController.formatString("FloodWaitTime", i15, objArr));
                 return;
             case 2:
-                br0.U((br0) obj2, (TLObject) obj, z11);
+                cr0.U((cr0) obj2, (TLObject) obj, z11);
                 return;
             case 3:
                 PhotoViewer photoViewer = (PhotoViewer) obj2;
                 View view = (View) obj;
-                Drawable[] drawableArr = PhotoViewer.T8;
+                Drawable[] drawableArr = PhotoViewer.U8;
                 if (!z11) {
                     photoViewer.getClass();
                     view.setVisibility(8);
                 }
-                photoViewer.s3();
+                photoViewer.r3();
                 return;
             case 4:
                 PhotoViewer photoViewer2 = (PhotoViewer) obj2;
@@ -144,32 +144,32 @@ public final /* synthetic */ class dm0 implements Runnable {
                 boolean[] zArr = (boolean[]) obj;
                 if (!z11 || profileActivity.L4 != -1) {
                     profileActivity.j5();
-                    a11 a11Var = profileActivity.d;
-                    if (a11Var != null) {
-                        a11Var.l();
+                    b11 b11Var = profileActivity.d;
+                    if (b11Var != null) {
+                        b11Var.l();
                         return;
                     }
                     return;
                 }
-                org.telegram.ui.Components.dh0 dh0Var = profileActivity.a0;
-                if (dh0Var != null) {
-                    org.telegram.ui.Components.ah0 j3 = org.telegram.ui.Components.dh0.j(7, dh0Var.a);
+                org.telegram.ui.Components.eh0 eh0Var = profileActivity.a0;
+                if (eh0Var != null) {
+                    org.telegram.ui.Components.bh0 j3 = org.telegram.ui.Components.eh0.j(7, eh0Var.a);
                     if (j3 == null || !j3.s) {
                         r52 = 0;
                     } else {
                         r52 = 0;
                         j3.s = false;
-                        dh0Var.invalidate();
+                        eh0Var.invalidate();
                     }
                     if (zArr[r52]) {
-                        org.telegram.ui.Components.dh0 dh0Var2 = profileActivity.a0;
-                        dh0Var2.I = true;
-                        dh0Var2.o(7, r52);
+                        org.telegram.ui.Components.eh0 eh0Var2 = profileActivity.a0;
+                        eh0Var2.I = true;
+                        eh0Var2.o(7, r52);
                         profileActivity.a0.o(9, true);
-                        org.telegram.ui.Components.dh0 dh0Var3 = profileActivity.a0;
-                        if (dh0Var3.I) {
-                            dh0Var3.I = r52;
-                            dh0Var3.d();
+                        org.telegram.ui.Components.eh0 eh0Var3 = profileActivity.a0;
+                        if (eh0Var3.I) {
+                            eh0Var3.I = r52;
+                            eh0Var3.d();
                             return;
                         }
                         return;
@@ -178,12 +178,12 @@ public final /* synthetic */ class dm0 implements Runnable {
                 }
                 return;
             case 6:
-                org.telegram.ui.ActionBar.b2 b2Var = (org.telegram.ui.ActionBar.b2) obj2;
+                org.telegram.ui.ActionBar.c2 c2Var = (org.telegram.ui.ActionBar.c2) obj2;
                 Activity activity = (Activity) obj;
                 try {
                     File logsDir = AndroidUtilities.getLogsDir();
                     if (logsDir == null) {
-                        AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.q1(b2Var, 0));
+                        AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.r1(c2Var, 0));
                         return;
                     }
                     File file = new File(logsDir, "logs.zip");
@@ -234,8 +234,8 @@ public final /* synthetic */ class dm0 implements Runnable {
                                                     bufferedInputStream.close();
                                                 }
                                             }
-                                        } catch (Exception e7) {
-                                            e = e7;
+                                        } catch (Exception e) {
+                                            e = e;
                                             e.printStackTrace();
                                             if (bufferedInputStream != null) {
                                                 bufferedInputStream.close();
@@ -243,7 +243,7 @@ public final /* synthetic */ class dm0 implements Runnable {
                                             if (zipOutputStream != null) {
                                                 zipOutputStream.close();
                                             }
-                                            AndroidUtilities.runOnUIThread(new es0((Dialog) b2Var, zArr2, (Object) activity, (Serializable) file, 5));
+                                            AndroidUtilities.runOnUIThread(new hs0((Dialog) c2Var, zArr2, (Object) activity, (Serializable) file, 5));
                                             return;
                                         }
                                     } catch (Throwable th2) {
@@ -261,8 +261,8 @@ public final /* synthetic */ class dm0 implements Runnable {
                                 i16 = 65536;
                             }
                             zArr2[0] = true;
-                        } catch (Exception e10) {
-                            e = e10;
+                        } catch (Exception e7) {
+                            e = e7;
                             bufferedInputStream = null;
                         } catch (Throwable th3) {
                             th = th3;
@@ -273,8 +273,8 @@ public final /* synthetic */ class dm0 implements Runnable {
                             }
                             throw th;
                         }
-                    } catch (Exception e11) {
-                        e = e11;
+                    } catch (Exception e10) {
+                        e = e10;
                         bufferedInputStream = null;
                         zipOutputStream = null;
                     } catch (Throwable th4) {
@@ -283,14 +283,14 @@ public final /* synthetic */ class dm0 implements Runnable {
                         zipOutputStream = null;
                     }
                     zipOutputStream.close();
-                    AndroidUtilities.runOnUIThread(new es0((Dialog) b2Var, zArr2, (Object) activity, (Serializable) file, 5));
+                    AndroidUtilities.runOnUIThread(new hs0((Dialog) c2Var, zArr2, (Object) activity, (Serializable) file, 5));
                     return;
-                } catch (Exception e12) {
-                    e12.printStackTrace();
+                } catch (Exception e11) {
+                    e11.printStackTrace();
                     return;
                 }
             case 7:
-                u41.P((u41) obj2, z11, (org.telegram.ui.Components.jn0) obj);
+                u41.P((u41) obj2, z11, (org.telegram.ui.Components.ny) obj);
                 return;
             case 8:
                 TwoStepVerificationActivity.X((TwoStepVerificationActivity) obj2, z11, (byte[]) obj);
@@ -298,21 +298,21 @@ public final /* synthetic */ class dm0 implements Runnable {
             case 9:
                 WallpapersListActivity wallpapersListActivity = (WallpapersListActivity) obj2;
                 TLObject tLObject = (TLObject) obj;
-                ArrayList arrayList2 = wallpapersListActivity.b0;
-                HashMap hashMap = wallpapersListActivity.c0;
-                int i18 = wallpapersListActivity.v;
-                HashMap hashMap2 = wallpapersListActivity.h0;
-                ArrayList arrayList3 = wallpapersListActivity.e0;
+                ArrayList arrayList2 = wallpapersListActivity.Z;
+                HashMap hashMap = wallpapersListActivity.a0;
+                int i18 = wallpapersListActivity.r;
+                HashMap hashMap2 = wallpapersListActivity.f0;
+                ArrayList arrayList3 = wallpapersListActivity.c0;
                 if (tLObject instanceof TL_account.TL_wallPapers) {
                     TL_account.TL_wallPapers tL_wallPapers = (TL_account.TL_wallPapers) tLObject;
-                    wallpapersListActivity.g0.clear();
+                    wallpapersListActivity.e0.clear();
                     hashMap2.clear();
                     if (i18 != 1 && i18 != 2) {
                         arrayList3.clear();
                         hashMap.clear();
                         arrayList2.clear();
                         arrayList2.addAll(tL_wallPapers.wallpapers);
-                        arrayList3.addAll(wallpapersListActivity.f0);
+                        arrayList3.addAll(wallpapersListActivity.d0);
                     }
                     int size = tL_wallPapers.wallpapers.size();
                     int i19 = 0;
@@ -325,12 +325,12 @@ public final /* synthetic */ class dm0 implements Runnable {
                             if (wallPaper.settings.background_color != 0 && (org.telegram.ui.ActionBar.j6.I.q() || (wallPaperSettings = wallPaper.settings) == null || wallPaperSettings.intensity >= 0)) {
                                 TLRPC.WallPaperSettings wallPaperSettings4 = wallPaper.settings;
                                 int i20 = wallPaperSettings4.second_background_color;
-                                gj1 gj1Var = (i20 == 0 || (i12 = wallPaperSettings4.third_background_color) == 0) ? new gj1(wallPaperSettings4.background_color, i20, null, wallPaperSettings4.rotation) : new gj1(null, wallPaperSettings4.background_color, i20, i12, wallPaperSettings4.fourth_background_color);
-                                gj1Var.a = wallPaper.slug;
-                                gj1Var.h = wallPaperSettings4.intensity / 100.0f;
-                                gj1Var.f = AndroidUtilities.getWallpaperRotation(wallPaperSettings4.rotation, false);
-                                gj1Var.l = wallPaper;
-                                arrayList3.add(gj1Var);
+                                fj1 fj1Var = (i20 == 0 || (i12 = wallPaperSettings4.third_background_color) == 0) ? new fj1(wallPaperSettings4.background_color, i20, null, wallPaperSettings4.rotation) : new fj1(null, wallPaperSettings4.background_color, i20, i12, wallPaperSettings4.fourth_background_color);
+                                fj1Var.a = wallPaper.slug;
+                                fj1Var.h = wallPaperSettings4.intensity / 100.0f;
+                                fj1Var.f = AndroidUtilities.getWallpaperRotation(wallPaperSettings4.rotation, false);
+                                fj1Var.l = wallPaper;
+                                arrayList3.add(fj1Var);
                             }
                         } else {
                             hashMap.put(wallPaper.slug, wallPaper);
@@ -339,7 +339,7 @@ public final /* synthetic */ class dm0 implements Runnable {
                             } else {
                                 i11 = i19;
                                 if (!hashMap2.containsKey(Long.valueOf(document.id))) {
-                                    wallpapersListActivity.g0.add(wallPaper);
+                                    wallpapersListActivity.e0.add(wallPaper);
                                     hashMap2.put(Long.valueOf(wallPaper.document.id), wallPaper);
                                 }
                             }
@@ -353,38 +353,38 @@ public final /* synthetic */ class dm0 implements Runnable {
                     wallpapersListActivity.A0();
                     wallpapersListActivity.getMessagesStorage().putWallpapers(tL_wallPapers.wallpapers, 1);
                 }
-                org.telegram.ui.ActionBar.b2 b2Var2 = wallpapersListActivity.P;
-                if (b2Var2 != null) {
-                    b2Var2.dismiss();
+                org.telegram.ui.ActionBar.c2 c2Var2 = wallpapersListActivity.N;
+                if (c2Var2 != null) {
+                    c2Var2.dismiss();
                     if (z11) {
                         return;
                     }
-                    wallpapersListActivity.H.x0(0);
+                    wallpapersListActivity.F.y0(0);
                     return;
                 }
                 return;
             case 10:
-                org.telegram.ui.web.l lVar = (org.telegram.ui.web.l) obj2;
+                org.telegram.ui.web.k kVar = (org.telegram.ui.web.k) obj2;
                 String str2 = (String) obj;
-                org.telegram.ui.web.d dVar = lVar.w;
-                ArrayList arrayList4 = lVar.x;
+                org.telegram.ui.web.c cVar = kVar.w;
+                ArrayList arrayList4 = kVar.x;
                 arrayList4.clear();
-                org.telegram.ui.web.p1.a().getClass();
+                org.telegram.ui.web.o1.a().getClass();
                 ArrayList arrayList5 = new ArrayList();
                 try {
                     JSONArray jSONArray = new JSONArray(str2).getJSONArray(1);
                     for (int i21 = 0; i21 < jSONArray.length(); i21++) {
                         arrayList5.add(jSONArray.getString(i21));
                     }
-                } catch (Exception e13) {
-                    FileLog.e((Throwable) e13, false);
+                } catch (Exception e12) {
+                    FileLog.e((Throwable) e12, false);
                     try {
                         JSONArray jSONArray2 = new JSONObject(str2).getJSONObject("gossip").getJSONArray("results");
                         for (int i22 = 0; i22 < jSONArray2.length(); i22++) {
                             arrayList5.add(jSONArray2.getJSONObject(i22).getString("key"));
                         }
-                    } catch (Exception e14) {
-                        FileLog.e((Throwable) e14, false);
+                    } catch (Exception e13) {
+                        FileLog.e((Throwable) e13, false);
                         try {
                             JSONArray jSONArray3 = new JSONArray(str2);
                             for (int i23 = 0; i23 < jSONArray3.length(); i23++) {
@@ -393,15 +393,15 @@ public final /* synthetic */ class dm0 implements Runnable {
                                     arrayList5.add(string2);
                                 }
                             }
-                        } catch (Exception e15) {
-                            FileLog.e((Throwable) e15, false);
+                        } catch (Exception e14) {
+                            FileLog.e((Throwable) e14, false);
                         }
                     }
                 }
                 arrayList4.addAll(arrayList5);
-                dVar.Y2.N(true);
+                cVar.Y2.N(true);
                 if (z11 != (!arrayList4.isEmpty())) {
-                    dVar.X2.h1(0, 0);
+                    cVar.X2.h1(0, 0);
                     return;
                 }
                 return;
@@ -415,7 +415,7 @@ public final /* synthetic */ class dm0 implements Runnable {
                 ((org.telegram.ui.Components.d80) obj2).run(Boolean.valueOf(z11), (String) obj);
                 return;
             default:
-                ((bi.f0) obj2).run(Boolean.valueOf(z11), (String) obj);
+                ((ai.m0) obj2).run(Boolean.valueOf(z11), (String) obj);
                 return;
         }
     }

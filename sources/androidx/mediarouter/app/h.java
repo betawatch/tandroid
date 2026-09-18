@@ -1,5 +1,6 @@
 package androidx.mediarouter.app;
 
+import ai.v0;
 import android.content.Context;
 import android.content.IntentFilter;
 import android.content.pm.PackageManager;
@@ -21,7 +22,7 @@ import java.util.Collections;
 import java.util.List;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class h extends g.u {
     public LinearLayout E;
@@ -189,7 +190,7 @@ public final class h extends g.u {
         cVar.sendMessageDelayed(cVar.obtainMessage(2), 5000L);
     }
 
-    @Override // g.u, androidx.activity.n, android.app.Dialog
+    @Override // g.u, androidx.activity.m, android.app.Dialog
     public final void onCreate(Bundle bundle) {
         String string;
         boolean z10;
@@ -207,7 +208,6 @@ public final class h extends g.u {
         this.G = (ProgressBar) findViewById(R.id.mr_chooser_search_progress_bar);
         Context context = getContext();
         boolean z11 = false;
-        int i10 = 1;
         if (v7.b0.a == null) {
             if (!v7.b0.c(context)) {
                 PackageManager packageManager = context.getPackageManager();
@@ -244,7 +244,7 @@ public final class h extends g.u {
                 }
                 this.x.setText(string);
                 this.y.setMovementMethod(LinkMovementMethod.getInstance());
-                this.F.setOnClickListener(new ah.h0(this, i10));
+                this.F.setOnClickListener(new v0(this, 5));
                 ListView listView = (ListView) findViewById(R.id.mr_chooser_list);
                 this.H = listView;
                 listView.setAdapter((ListAdapter) this.I);
@@ -257,7 +257,7 @@ public final class h extends g.u {
         string = context.getString(R.string.mr_chooser_wifi_warning_description_phone);
         this.x.setText(string);
         this.y.setMovementMethod(LinkMovementMethod.getInstance());
-        this.F.setOnClickListener(new ah.h0(this, i10));
+        this.F.setOnClickListener(new v0(this, 5));
         ListView listView2 = (ListView) findViewById(R.id.mr_chooser_list);
         this.H = listView2;
         listView2.setAdapter((ListAdapter) this.I);

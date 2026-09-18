@@ -6,13 +6,13 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.IdentityHashMap;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class m0 implements d0, c0 {
     public final d0[] a;
     public final boolean[] b;
     public final IdentityHashMap c;
-    public final qb.b d;
+    public final ob.a d;
     public final ArrayList e = new ArrayList();
     public final HashMap f = new HashMap();
     public c0 h;
@@ -20,10 +20,10 @@ public final class m0 implements d0, c0 {
     public d0[] r;
     public n s;
 
-    public m0(qb.b bVar, long[] jArr, d0... d0VarArr) {
-        this.d = bVar;
+    public m0(ob.a aVar, long[] jArr, d0... d0VarArr) {
+        this.d = aVar;
         this.a = d0VarArr;
-        bVar.getClass();
+        aVar.getClass();
         e9.g0 g0Var = e9.i0.b;
         e9.a1 a1Var = e9.a1.e;
         this.s = new n(a1Var, a1Var);
@@ -87,13 +87,6 @@ public final class m0 implements d0, c0 {
         }
     }
 
-    @Override // u2.c1
-    public final void b(d1 d1Var) {
-        c0 c0Var = this.h;
-        c0Var.getClass();
-        c0Var.b(this);
-    }
-
     @Override // u2.d1
     public final boolean c() {
         return this.s.c();
@@ -105,22 +98,22 @@ public final class m0 implements d0, c0 {
     }
 
     @Override // u2.d0
-    public final void j() {
+    public final void g() {
         for (d0 d0Var : this.a) {
-            d0Var.j();
+            d0Var.g();
         }
     }
 
     @Override // u2.d0
-    public final long k(long j3) {
-        long k10 = this.r[0].k(j3);
+    public final long h(long j3) {
+        long h = this.r[0].h(j3);
         int i10 = 1;
         while (true) {
             d0[] d0VarArr = this.r;
             if (i10 >= d0VarArr.length) {
-                return k10;
+                return h;
             }
-            if (d0VarArr[i10].k(k10) != k10) {
+            if (d0VarArr[i10].h(h) != h) {
                 throw new IllegalStateException("Unexpected child seekToUs result.");
             }
             i10++;
@@ -128,43 +121,43 @@ public final class m0 implements d0, c0 {
     }
 
     @Override // u2.d0
-    public final void l(long j3) {
+    public final void i(long j3) {
         for (d0 d0Var : this.r) {
-            d0Var.l(j3);
+            d0Var.i(j3);
         }
     }
 
     @Override // u2.d0
-    public final void n(c0 c0Var, long j3) {
+    public final void k(c0 c0Var, long j3) {
         this.h = c0Var;
         ArrayList arrayList = this.e;
         d0[] d0VarArr = this.a;
         Collections.addAll(arrayList, d0VarArr);
         for (d0 d0Var : d0VarArr) {
-            d0Var.n(this, j3);
+            d0Var.k(this, j3);
         }
     }
 
     @Override // u2.d0
-    public final long o() {
+    public final long l() {
         long j3 = -9223372036854775807L;
         for (d0 d0Var : this.r) {
-            long o9 = d0Var.o();
-            if (o9 != -9223372036854775807L) {
+            long l4 = d0Var.l();
+            if (l4 != -9223372036854775807L) {
                 if (j3 == -9223372036854775807L) {
                     for (d0 d0Var2 : this.r) {
                         if (d0Var2 == d0Var) {
                             break;
                         }
-                        if (d0Var2.k(o9) != o9) {
+                        if (d0Var2.h(l4) != l4) {
                             throw new IllegalStateException("Unexpected child seekToUs result.");
                         }
                     }
-                    j3 = o9;
-                } else if (o9 != j3) {
+                    j3 = l4;
+                } else if (l4 != j3) {
                     throw new IllegalStateException("Conflicting discontinuities.");
                 }
-            } else if (j3 != -9223372036854775807L && d0Var.k(j3) != j3) {
+            } else if (j3 != -9223372036854775807L && d0Var.h(j3) != j3) {
                 throw new IllegalStateException("Unexpected child seekToUs result.");
             }
         }
@@ -172,20 +165,20 @@ public final class m0 implements d0, c0 {
     }
 
     @Override // u2.d1
-    public final boolean p(i2.r0 r0Var) {
+    public final boolean m(i2.r0 r0Var) {
         ArrayList arrayList = this.e;
         if (arrayList.isEmpty()) {
-            return this.s.p(r0Var);
+            return this.s.m(r0Var);
         }
         int size = arrayList.size();
         for (int i10 = 0; i10 < size; i10++) {
-            ((d0) arrayList.get(i10)).p(r0Var);
+            ((d0) arrayList.get(i10)).m(r0Var);
         }
         return false;
     }
 
     @Override // u2.d0
-    public final long q(x2.r[] rVarArr, boolean[] zArr, b1[] b1VarArr, boolean[] zArr2, long j3) {
+    public final long p(x2.r[] rVarArr, boolean[] zArr, b1[] b1VarArr, boolean[] zArr2, long j3) {
         IdentityHashMap identityHashMap;
         int[] iArr;
         int[] iArr2 = new int[rVarArr.length];
@@ -239,10 +232,10 @@ public final class m0 implements d0, c0 {
             int[] iArr4 = iArr2;
             d0[] d0VarArr2 = d0VarArr;
             int i13 = i11;
-            long q6 = d0VarArr2[i11].q(rVarArr2, zArr, b1VarArr3, zArr2, j10);
+            long p5 = d0VarArr2[i11].p(rVarArr2, zArr, b1VarArr3, zArr2, j10);
             if (i13 == 0) {
-                j10 = q6;
-            } else if (q6 != j10) {
+                j10 = p5;
+            } else if (p5 != j10) {
                 throw new IllegalStateException("Children enabled at different positions.");
             }
             boolean z10 = false;
@@ -266,7 +259,7 @@ public final class m0 implements d0, c0 {
         }
         System.arraycopy(b1VarArr2, 0, b1VarArr, 0, length2);
         this.r = (d0[]) arrayList.toArray(new d0[0]);
-        AbstractList w10 = e9.q.w(arrayList, new t0.a(3));
+        AbstractList w10 = e9.q.w(arrayList, new t0.a(9));
         this.d.getClass();
         this.s = new n(arrayList, w10);
         return j10;
@@ -293,5 +286,12 @@ public final class m0 implements d0, c0 {
     @Override // u2.d1
     public final void u(long j3) {
         this.s.u(j3);
+    }
+
+    @Override // u2.c1
+    public final void v(d1 d1Var) {
+        c0 c0Var = this.h;
+        c0Var.getClass();
+        c0Var.v(this);
     }
 }

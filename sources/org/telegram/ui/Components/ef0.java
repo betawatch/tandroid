@@ -4,17 +4,17 @@ import android.graphics.Matrix;
 import android.graphics.SurfaceTexture;
 import android.view.TextureView;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class ef0 implements TextureView.SurfaceTextureListener {
     public final /* synthetic */ boolean a;
-    public final /* synthetic */ ja b;
+    public final /* synthetic */ ha b;
     public final /* synthetic */ jf0 c;
 
-    public ef0(jf0 jf0Var, boolean z10, ja jaVar) {
+    public ef0(jf0 jf0Var, boolean z10, ha haVar) {
         this.c = jf0Var;
         this.a = z10;
-        this.b = jaVar;
+        this.b = haVar;
     }
 
     @Override // android.view.TextureView.SurfaceTextureListener
@@ -32,15 +32,15 @@ public final class ef0 implements TextureView.SurfaceTextureListener {
             Matrix transform = textureView.getTransform(null);
             int width = textureView.getWidth();
             int height = textureView.getHeight();
-            pa paVar = vzVar2.I;
-            if (paVar != null) {
-                Matrix matrix = paVar.v;
+            na naVar = vzVar2.I;
+            if (naVar != null) {
+                Matrix matrix = naVar.v;
                 transform.invert(matrix);
                 float f7 = width;
                 float f10 = height;
                 matrix.preScale(f7, f10);
                 matrix.postScale(1.0f / f7, 1.0f / f10);
-                paVar.c(matrix);
+                naVar.c(matrix);
                 vzVar2.e(false, false, false);
             }
         }
@@ -70,7 +70,7 @@ public final class ef0 implements TextureView.SurfaceTextureListener {
         if (vzVar != null) {
             vzVar.postRunnable(new rz(vzVar, i10, i11, 1));
             jf0Var.l0.e(false, true, false);
-            jf0Var.l0.postRunnable(new cc0(this, 6));
+            jf0Var.l0.postRunnable(new bc0(this, 6));
         }
     }
 

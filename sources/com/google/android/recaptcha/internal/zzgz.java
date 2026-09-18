@@ -11,11 +11,11 @@ import java.util.RandomAccess;
 import java.util.Timer;
 import kotlin.jvm.internal.i;
 import v7.s7;
-import v7.t8;
+import w7.g;
 import wd.c;
 import zd.e0;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class zzgz implements zzgs {
     private static Timer zza;
@@ -68,7 +68,7 @@ public final class zzgz implements zzgs {
                 if (iterator.hasNext()) {
                     u uVar = new u(iterator, null);
                     c cVar = new c();
-                    cVar.c = t8.a(cVar, cVar, uVar);
+                    cVar.c = g.a(cVar, cVar, uVar);
                     it = cVar;
                 } else {
                     it = n.a;

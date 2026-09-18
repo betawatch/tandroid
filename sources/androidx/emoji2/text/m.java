@@ -2,7 +2,7 @@ package androidx.emoji2.text;
 
 import java.util.concurrent.ThreadPoolExecutor;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class m extends v7.w {
     public final /* synthetic */ v7.w a;
@@ -24,10 +24,10 @@ public final class m extends v7.w {
     }
 
     @Override // v7.w
-    public final void b(com.google.firebase.messaging.s sVar) {
+    public final void b(com.google.firebase.messaging.t tVar) {
         ThreadPoolExecutor threadPoolExecutor = this.b;
         try {
-            this.a.b(sVar);
+            this.a.b(tVar);
         } finally {
             threadPoolExecutor.shutdown();
         }

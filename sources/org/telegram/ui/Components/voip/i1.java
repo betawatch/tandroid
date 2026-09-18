@@ -1,30 +1,38 @@
 package org.telegram.ui.Components.voip;
 
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.aj0;
+import org.webrtc.RendererCommon;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class i1 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ m1 b;
-    public final /* synthetic */ aj0 c;
+public final class i1 implements RendererCommon.RendererEvents {
+    public final /* synthetic */ j1 a;
 
-    public /* synthetic */ i1(m1 m1Var, aj0 aj0Var, int i10) {
-        this.a = i10;
-        this.b = m1Var;
-        this.c = aj0Var;
+    public i1(j1 j1Var) {
+        this.a = j1Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                AndroidUtilities.runOnUIThread(new i1(this.b, this.c, 1));
-                break;
-            default:
-                this.b.removeView(this.c);
-                break;
+    @Override // org.webrtc.RendererCommon.RendererEvents
+    public final void onFirstFrameRendered() {
+        j1 j1Var = this.a;
+        j1Var.x = true;
+        com.google.android.gms.internal.cast.p pVar = j1Var.Y;
+        if (pVar != null) {
+            pVar.run();
+            j1Var.Y = null;
         }
+        AndroidUtilities.runOnUIThread(new i2.g0(this, 21));
+    }
+
+    @Override // org.webrtc.RendererCommon.RendererEvents
+    public final void onFrameResolutionChanged(int i10, int i11, int i12) {
+        int i13 = (i12 / 90) % 2;
+        j1 j1Var = this.a;
+        if (i13 == 0) {
+            j1Var.U = Float.valueOf(i11 / i10);
+        } else {
+            j1Var.U = Float.valueOf(i10 / i11);
+        }
+        AndroidUtilities.runOnUIThread(new gg.n(this, i10, i11, 11));
     }
 }

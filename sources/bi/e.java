@@ -1,34 +1,32 @@
 package bi;
 
-import org.telegram.ui.PremiumPreviewFragment;
+import ai.t8;
+import android.view.View;
+import org.telegram.ui.Components.nr0;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class e implements Runnable {
+public final /* synthetic */ class e implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ v b;
+    public final /* synthetic */ u b;
 
-    public /* synthetic */ e(v vVar, int i10) {
+    public /* synthetic */ e(u uVar, int i10) {
         this.a = i10;
-        this.b = vVar;
+        this.b = uVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                this.b.p(true, false);
-                break;
-            case 1:
-                v vVar = this.b;
-                di.f4 f4Var = vVar.J;
-                if (f4Var != null) {
-                    f4Var.e(true);
-                }
-                vVar.e0.presentFragment(new PremiumPreviewFragment(0, "stories"));
+                u uVar = this.b;
+                nr0 nr0Var = uVar.W;
+                t8 t8Var = uVar.a;
+                nr0Var.a(t8Var == null ? "" : t8Var.E);
                 break;
             default:
-                this.b.c();
+                u uVar2 = this.b;
+                uVar2.W.b(uVar2.a.E);
                 break;
         }
     }

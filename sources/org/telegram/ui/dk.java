@@ -1,70 +1,31 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.graphics.Canvas;
 import android.view.MotionEvent;
-import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class dk extends org.telegram.ui.Cells.w0 {
-    public final /* synthetic */ co k2;
+public final class dk extends org.telegram.ui.Components.b21 {
+    public final /* synthetic */ bo e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public dk(Context context, org.telegram.ui.ActionBar.f6 f6Var, co coVar) {
-        super(context, f6Var, false);
-        this.k2 = coVar;
+    public dk(bo boVar, Context context, int i10, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context, i10, f6Var);
+        this.e = boVar;
     }
 
-    @Override // org.telegram.ui.Cells.w0, android.view.View
-    public final void onDraw(Canvas canvas) {
-        co coVar = this.k2;
-        if (coVar.B8 != null) {
-            return;
-        }
-        float y3 = ((coVar.x0.getY() + coVar.s9) - getY()) - AndroidUtilities.dp(4.0f);
-        if (y3 <= 0.0f) {
-            super.onDraw(canvas);
-        } else if (y3 < getMeasuredHeight()) {
-            canvas.save();
-            canvas.clipRect(0.0f, y3, getMeasuredWidth(), getMeasuredHeight());
-            super.onDraw(canvas);
-            canvas.restore();
-        }
-    }
-
-    @Override // android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        org.telegram.ui.ActionBar.k kVar;
-        if (getAlpha() == 0.0f) {
-            return false;
-        }
-        co coVar = this.k2;
-        kVar = ((org.telegram.ui.ActionBar.n2) coVar).actionBar;
-        if (kVar.s() || coVar.A9()) {
-            return false;
-        }
-        return super.onInterceptTouchEvent(motionEvent);
-    }
-
-    @Override // org.telegram.ui.Cells.w0, android.view.View
+    @Override // org.telegram.ui.Components.b21, android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         org.telegram.ui.ActionBar.k kVar;
         if (getAlpha() == 0.0f) {
             return false;
         }
-        co coVar = this.k2;
-        kVar = ((org.telegram.ui.ActionBar.n2) coVar).actionBar;
-        if (kVar.s() || coVar.A9()) {
+        bo boVar = this.e;
+        kVar = ((org.telegram.ui.ActionBar.o2) boVar).actionBar;
+        if (kVar.s() || boVar.A9()) {
             return false;
         }
         return super.onTouchEvent(motionEvent);
-    }
-
-    @Override // android.view.View
-    public final void setAlpha(float f7) {
-        super.setAlpha(f7);
-        setVisibility(f7 > 0.0f ? 0 : 4);
     }
 
     @Override // android.view.View

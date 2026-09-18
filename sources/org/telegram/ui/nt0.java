@@ -1,86 +1,48 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class nt0 extends org.telegram.ui.Components.g71 {
-    public final /* synthetic */ PhotoViewer m0;
+public final class nt0 extends org.telegram.ui.Components.u00 {
+    public final /* synthetic */ vs0 e;
+    public final /* synthetic */ PhotoViewer f;
 
-    public nt0(PhotoViewer photoViewer) {
-        this.m0 = photoViewer;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public nt0(PhotoViewer photoViewer, vs0 vs0Var) {
+        super(false);
+        this.f = photoViewer;
+        this.e = vs0Var;
     }
 
-    @Override // org.telegram.ui.Components.g71
-    public final void B() {
-        super.B();
-        PhotoViewer photoViewer = this.m0;
-        if (photoViewer.u4 == 0) {
-            PhotoViewer.Y(photoViewer, false);
-        }
-        if (photoViewer.N8) {
-            return;
-        }
-        b5.d.D(n());
-        b5.d.x(false);
+    @Override // org.telegram.ui.Components.do0
+    public final CharSequence d() {
+        StringBuilder sb2 = new StringBuilder();
+        PhotoViewer photoViewer = this.f;
+        int[] iArr = photoViewer.m3;
+        sb2.append(LocaleController.formatPluralString("Minutes", iArr[0], new Object[0]));
+        sb2.append(' ');
+        sb2.append(LocaleController.formatPluralString("Seconds", iArr[1], new Object[0]));
+        String sb3 = sb2.toString();
+        StringBuilder sb4 = new StringBuilder();
+        int[] iArr2 = photoViewer.n3;
+        sb4.append(LocaleController.formatPluralString("Minutes", iArr2[0], new Object[0]));
+        sb4.append(' ');
+        sb4.append(LocaleController.formatPluralString("Seconds", iArr2[1], new Object[0]));
+        return LocaleController.formatString("AccDescrPlayerDuration", R.string.AccDescrPlayerDuration, sb3, sb4.toString());
     }
 
-    @Override // org.telegram.ui.Components.g71
-    public final void C() {
-        super.C();
-        PhotoViewer photoViewer = this.m0;
-        PhotoViewer.Y(photoViewer, true);
-        if (photoViewer.N8) {
-            return;
-        }
-        b5.d.D(n());
-        b5.d.x(true);
+    @Override // org.telegram.ui.Components.u00
+    public final float k() {
+        return this.f.q3.c();
     }
 
-    @Override // org.telegram.ui.Components.g71
-    public final void K(long j3) {
-        L(j3, false);
-        PhotoViewer photoViewer = this.m0;
-        if (photoViewer.r1) {
-            PhotoViewer.Z(photoViewer, j3);
-        }
-        if (photoViewer.N8) {
-            return;
-        }
-        b5.d.D(j3);
-    }
-
-    @Override // org.telegram.ui.Components.g71
-    public final void Q(float f7) {
-        super.Q(f7);
-        if (this.m0.N8) {
-            return;
-        }
-        b5.d.z(f7);
-    }
-
-    @Override // org.telegram.ui.Components.g71, b2.z0
-    public final void onRenderedFirstFrame() {
-        b2.v0 h;
-        super.onRenderedFirstFrame();
-        PhotoViewer photoViewer = this.m0;
-        boolean z10 = true;
-        photoViewer.R = true;
-        if (photoViewer.D2) {
-            photoViewer.e0.invalidate();
-        }
-        photoViewer.z3();
-        if (!b5.d.u() && !photoViewer.r) {
-            z10 = false;
-        }
-        O(z10);
-        if (photoViewer.N8) {
-            return;
-        }
-        b5.d.D(n());
-        i2.f0 f0Var = this.d;
-        float f7 = 1.0f;
-        if (f0Var != null && (h = f0Var.h()) != null) {
-            f7 = h.a;
-        }
-        b5.d.z(f7);
+    @Override // org.telegram.ui.Components.u00
+    public final void l(float f7) {
+        this.e.b(f7);
+        PhotoViewer photoViewer = this.f;
+        photoViewer.q3.h(f7, false);
+        photoViewer.r3.invalidate();
     }
 }

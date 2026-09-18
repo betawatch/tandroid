@@ -3,49 +3,29 @@ package qg;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class c0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ u0 a;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ m c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ Runnable e;
-    public final /* synthetic */ d0 f;
+    public final /* synthetic */ int a;
+    public final /* synthetic */ p0 b;
 
-    public c0(d0 d0Var, u0 u0Var, float f7, m mVar, boolean z10, Runnable runnable) {
-        this.f = d0Var;
-        this.a = u0Var;
-        this.b = f7;
-        this.c = mVar;
-        this.d = z10;
-        this.e = runnable;
+    public /* synthetic */ c0(p0 p0Var, int i10) {
+        this.a = i10;
+        this.b = p0Var;
     }
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
-        b1 b1Var;
-        d0 d0Var = this.f;
-        d0Var.x = null;
-        r0 r0Var = new r0(new u0[]{this.a});
-        c1 c1Var = d0Var.a;
-        int currentColor = c1Var.getCurrentColor();
-        float f7 = this.b * 1.0f;
-        r0Var.c = currentColor;
-        r0Var.d = f7;
-        m mVar = this.c;
-        r0Var.e = mVar;
-        mVar.getClass();
-        int currentColor2 = mVar instanceof d ? -1 : c1Var.getCurrentColor();
-        q0 painting = c1Var.getPainting();
-        boolean z10 = this.d;
-        painting.c(r0Var, currentColor2, z10, null);
-        if (z10 && (b1Var = c1Var.a) != null) {
-            b1Var.e();
-        }
-        Runnable runnable = this.e;
-        if (runnable != null) {
-            runnable.run();
+        switch (this.a) {
+            case 0:
+                this.b.f2.setTranslationY(0.0f);
+                break;
+            default:
+                p0 p0Var = this.b;
+                p0Var.i2 = false;
+                p0Var.f2.setTranslationY(0.0f);
+                p0Var.m0();
+                break;
         }
     }
 }

@@ -1,72 +1,22 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class rz0 extends org.telegram.ui.Components.y80 {
-    public final /* synthetic */ ProfileActivity P0;
+public final class rz0 extends org.telegram.ui.Components.ph0 {
+    public final /* synthetic */ ProfileActivity s1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public rz0(ProfileActivity profileActivity, Context context) {
-        super(context);
-        this.P0 = profileActivity;
+    public rz0(ProfileActivity profileActivity, Context context, long j3, org.telegram.ui.ActionBar.k kVar, hz0 hz0Var, qz0 qz0Var, org.telegram.ui.Components.kh0 kh0Var, org.telegram.ui.Components.gh0 gh0Var) {
+        super(context, j3, kVar, hz0Var, qz0Var, kh0Var, gh0Var);
+        this.s1 = profileActivity;
     }
 
-    @Override // android.view.View
-    public final void setAlpha(float f7) {
-        super.setAlpha(f7);
-        this.P0.B3();
-    }
-
-    @Override // org.telegram.ui.ActionBar.j5
-    public final void setTextColor(int i10) {
-        int l1;
-        super.setTextColor(i10);
-        ProfileActivity profileActivity = this.P0;
-        org.telegram.ui.ActionBar.j5[] j5VarArr = profileActivity.r;
-        org.telegram.ui.ActionBar.j5 j5Var = j5VarArr[2];
-        if (j5Var != null) {
-            j5Var.setTextColor(i10);
-            j5VarArr[3].setTextColor(i10);
-        }
-        m11 m11Var = profileActivity.b6;
-        if (m11Var == null || m11Var.c == (l1 = org.telegram.ui.ActionBar.j6.l1(1.4f, org.telegram.ui.ActionBar.j6.b(-0.02f, 0.15f, i10)))) {
-            return;
-        }
-        m11Var.c = l1;
-        m11Var.invalidateSelf();
-    }
-
-    @Override // android.view.View
-    public final void setTranslationX(float f7) {
-        super.setTranslationX(f7);
-        ProfileActivity profileActivity = this.P0;
-        profileActivity.Z3();
-        profileActivity.getClass();
-        profileActivity.r[2].setTranslationX(f7);
-        profileActivity.r[3].setTranslationX(f7);
-        org.telegram.ui.Components.hw0 hw0Var = profileActivity.T;
-        if (hw0Var != null) {
-            hw0Var.setTranslationX(f7 - profileActivity.Z3());
-        }
-    }
-
-    @Override // android.view.View
-    public final void setTranslationY(float f7) {
-        super.setTranslationY(f7);
-        ProfileActivity profileActivity = this.P0;
-        org.telegram.ui.ActionBar.j5[] j5VarArr = profileActivity.r;
-        if (profileActivity.T != null) {
-            AndroidUtilities.dp(3.0f);
-            profileActivity.T.getVisibilityFactor();
-        }
-        j5VarArr[2].setTranslationY(f7);
-        j5VarArr[3].setTranslationY(f7);
-        org.telegram.ui.Components.hw0 hw0Var = profileActivity.T;
-        if (hw0Var != null) {
-            hw0Var.setTranslationY(f7 - AndroidUtilities.dp(5.0f));
-        }
+    @Override // org.telegram.ui.Components.ph0
+    public final void setCustomAvatarProgress(float f7) {
+        ProfileActivity profileActivity = this.s1;
+        profileActivity.n5 = f7;
+        profileActivity.B3();
     }
 }

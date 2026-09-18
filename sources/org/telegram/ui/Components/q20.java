@@ -7,7 +7,7 @@ import android.graphics.PorterDuffColorFilter;
 import android.graphics.Shader;
 import android.view.View;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q20 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -46,26 +46,26 @@ public final /* synthetic */ class q20 implements ValueAnimator.AnimatorUpdateLi
                 r20Var.invalidate();
                 break;
             case 1:
-                org.telegram.ui.Components.voip.t tVar = (org.telegram.ui.Components.voip.t) view;
-                tVar.getClass();
+                org.telegram.ui.Components.voip.u uVar = (org.telegram.ui.Components.voip.u) view;
+                uVar.getClass();
                 float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                tVar.D0 = i0.a.d(floatValue, i14, i13);
+                uVar.D0 = i0.a.d(floatValue, i14, i13);
                 int d = i0.a.d(floatValue, i12, i11);
-                tVar.F0 = d;
-                tVar.T.setColor(d);
-                if (tVar.S > 0.0f) {
-                    tVar.invalidate();
+                uVar.F0 = d;
+                uVar.T.setColor(d);
+                if (uVar.S > 0.0f) {
+                    uVar.invalidate();
                     break;
                 }
                 break;
             default:
-                zh.k8 k8Var = (zh.k8) view;
-                k8Var.getClass();
+                yh.n8 n8Var = (yh.n8) view;
+                n8Var.getClass();
                 float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                k8Var.r = i0.a.d(floatValue2, i14, i13);
-                k8Var.s = i0.a.d(floatValue2, i12, i11);
-                k8Var.y = new LinearGradient(0.0f, 0.0f, 255.0f, 0.0f, new int[]{k8Var.r, k8Var.s}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
-                k8Var.invalidate();
+                n8Var.r = i0.a.d(floatValue2, i14, i13);
+                n8Var.s = i0.a.d(floatValue2, i12, i11);
+                n8Var.y = new LinearGradient(0.0f, 0.0f, 255.0f, 0.0f, new int[]{n8Var.r, n8Var.s}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
+                n8Var.invalidate();
                 break;
         }
     }

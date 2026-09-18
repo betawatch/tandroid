@@ -2,9 +2,9 @@ package com.google.android.gms.internal.play_billing;
 
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
-import v7.u5;
+import v7.v5;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class q0 implements Runnable {
     public final t0 a;
@@ -32,7 +32,7 @@ public final class q0 implements Runnable {
             boolean z11 = false;
             Future future = t0Var;
             if (!isDone) {
-                throw new IllegalStateException(u5.a("Future was expected to be done: %s", t0Var));
+                throw new IllegalStateException(v5.a("Future was expected to be done: %s", t0Var));
             }
             while (true) {
                 try {
@@ -64,15 +64,15 @@ public final class q0 implements Runnable {
             c5.h a2 = c5.g0.a(intValue2, "Billing override value was set by a license tester.");
             d0Var.F(93, i10, a2);
             ((q0.a) lVar.b).accept(a2);
-        } catch (ExecutionException e7) {
-            lVar.k(e7.getCause());
+        } catch (ExecutionException e) {
+            lVar.k(e.getCause());
         } catch (Throwable th3) {
             lVar.k(th3);
         }
     }
 
     public final String toString() {
-        aa.a aVar = new aa.a(q0.class.getSimpleName(), 10);
+        aa.a aVar = new aa.a(q0.class.getSimpleName(), 11);
         k kVar = new k();
         ((k) aVar.d).b = kVar;
         aVar.d = kVar;

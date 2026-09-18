@@ -1,20 +1,19 @@
 package j8;
 
-import a6.i;
 import android.os.Parcel;
 import android.os.Parcelable;
 import com.google.android.gms.maps.model.LatLng;
 import g8.j;
 import w7.e0;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class g extends o6.a {
     public static final Parcelable.Creator<g> CREATOR = new j(15);
     public LatLng a;
     public String b;
     public String c;
-    public i d;
+    public xa.c d;
     public float e;
     public float f;
     public boolean h;
@@ -32,8 +31,8 @@ public final class g extends o6.a {
         e0.k(parcel, 2, this.a, i10);
         e0.l(parcel, 3, this.b);
         e0.l(parcel, 4, this.c);
-        i iVar = this.d;
-        e0.f(parcel, 5, iVar == null ? null : ((x6.a) iVar.b).asBinder());
+        xa.c cVar = this.d;
+        e0.f(parcel, 5, cVar == null ? null : ((x6.a) cVar.b).asBinder());
         float f7 = this.e;
         e0.s(parcel, 6, 4);
         parcel.writeFloat(f7);

@@ -1,117 +1,32 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.accessibility.AccessibilityNodeInfo;
-import android.widget.Button;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class lp0 extends FrameLayout {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ hq0 b;
+public final class lp0 extends g.p {
+    public final /* synthetic */ int c;
+    public final /* synthetic */ iq0 d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ lp0(hq0 hq0Var, Context context, int i10) {
-        super(context);
-        this.a = i10;
-        this.b = hq0Var;
+    public /* synthetic */ lp0(iq0 iq0Var, int i10) {
+        this.c = i10;
+        this.d = iq0Var;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public void dispatchDraw(Canvas canvas) {
-        switch (this.a) {
+    @Override // g.p
+    public final int i(int i10) {
+        switch (this.c) {
             case 0:
-                hq0 hq0Var = this.b;
-                hq0Var.X0.setBounds(0, (int) hq0Var.u0, getMeasuredWidth(), getMeasuredHeight());
-                hq0Var.X0.draw(canvas);
-                canvas.save();
-                canvas.clipRect(0.0f, hq0Var.u0, getMeasuredWidth(), getMeasuredHeight());
-                super.dispatchDraw(canvas);
-                canvas.restore();
-                break;
-            default:
-                super.dispatchDraw(canvas);
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public void onDraw(Canvas canvas) {
-        switch (this.a) {
-            case 0:
-                hq0 hq0Var = this.b;
-                lp0 lp0Var = hq0Var.c;
-                float f7 = hq0Var.v0;
-                if (f7 != 0.0f && f7 != lp0Var.getTop() + hq0Var.v0) {
-                    ValueAnimator valueAnimator = hq0Var.w0;
-                    if (valueAnimator != null) {
-                        valueAnimator.cancel();
-                    }
-                    float top = hq0Var.v0 - (lp0Var.getTop() + hq0Var.u0);
-                    hq0Var.u0 = top;
-                    ValueAnimator ofFloat = ValueAnimator.ofFloat(top, 0.0f);
-                    hq0Var.w0 = ofFloat;
-                    ofFloat.addUpdateListener(new h70(this, 17));
-                    hq0Var.w0.setInterpolator(pr.f);
-                    hq0Var.w0.setDuration(200L);
-                    hq0Var.w0.start();
-                    hq0Var.v0 = 0.0f;
+                if (i10 == 0) {
+                    return this.d.H.J;
                 }
-                hq0Var.S[1].setTranslationY((-(lp0Var.getMeasuredHeight() - AndroidUtilities.dp(48.0f))) + hq0Var.u0 + hq0Var.t0 + ((1.0f - getAlpha()) * (lp0Var.getMeasuredHeight() - AndroidUtilities.dp(48.0f))));
-                break;
-            default:
-                super.onDraw(canvas);
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        switch (this.a) {
+                return 1;
             case 1:
-                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                accessibilityNodeInfo.setText(LocaleController.formatPluralString("AccDescrShareInChats", this.b.U.m(), new Object[0]));
-                accessibilityNodeInfo.setClassName(Button.class.getName());
-                accessibilityNodeInfo.setLongClickable(true);
-                accessibilityNodeInfo.setClickable(true);
-                break;
+                eq0 eq0Var = this.d.M;
+                return (i10 == eq0Var.w || i10 == eq0Var.x || i10 == eq0Var.y || i10 == eq0Var.F || eq0Var.j(i10) == 0) ? 4 : 1;
             default:
-                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public void setAlpha(float f7) {
-        switch (this.a) {
-            case 0:
-                super.setAlpha(f7);
-                invalidate();
-                break;
-            default:
-                super.setAlpha(f7);
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public void setVisibility(int i10) {
-        switch (this.a) {
-            case 0:
-                super.setVisibility(i10);
-                if (i10 != 0) {
-                    this.b.S[1].setTranslationY(0.0f);
-                    break;
+                if (i10 == 0) {
+                    return this.d.I.J;
                 }
-                break;
-            default:
-                super.setVisibility(i10);
-                break;
+                return 1;
         }
     }
 }

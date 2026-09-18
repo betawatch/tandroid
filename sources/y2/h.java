@@ -2,14 +2,14 @@ package y2;
 
 import java.io.IOException;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public interface h {
-    k4.d g(j jVar, long j3, long j10, IOException iOException, int i10);
+    void V(j jVar, long j3, long j10, boolean z10);
 
-    void h(j jVar, long j3, long j10, int i10);
+    k4.d n(j jVar, long j3, long j10, IOException iOException, int i10);
 
-    void i(j jVar, long j3, long j10);
+    void o(j jVar, long j3, long j10, int i10);
 
-    void w(j jVar, long j3, long j10, boolean z10);
+    void q(j jVar, long j3, long j10);
 }

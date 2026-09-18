@@ -4,18 +4,18 @@ import android.graphics.Path;
 import androidx.car.app.navigation.model.Maneuver;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public abstract class g8 {
-    public static boolean a(i0.e[] eVarArr, i0.e[] eVarArr2) {
-        if (eVarArr == null || eVarArr2 == null || eVarArr.length != eVarArr2.length) {
+    public static boolean a(i0.d[] dVarArr, i0.d[] dVarArr2) {
+        if (dVarArr == null || dVarArr2 == null || dVarArr.length != dVarArr2.length) {
             return false;
         }
-        for (int i10 = 0; i10 < eVarArr.length; i10++) {
-            i0.e eVar = eVarArr[i10];
-            char c10 = eVar.a;
-            i0.e eVar2 = eVarArr2[i10];
-            if (c10 != eVar2.a || eVar.b.length != eVar2.b.length) {
+        for (int i10 = 0; i10 < dVarArr.length; i10++) {
+            i0.d dVar = dVarArr[i10];
+            char c10 = dVar.a;
+            i0.d dVar2 = dVarArr2[i10];
+            if (c10 != dVar2.a || dVar.b.length != dVar2.b.length) {
                 return false;
             }
         }
@@ -46,7 +46,7 @@ public abstract class g8 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static i0.e[] c(String str) {
+    public static i0.d[] c(String str) {
         int i10;
         String trim;
         float[] fArr;
@@ -132,11 +132,11 @@ public abstract class g8 {
                                 }
                                 fArr = b(fArr2, i15);
                                 i11 = 0;
-                            } catch (NumberFormatException e7) {
-                                throw new RuntimeException(a4.a.p("error in parsing \"", trim, "\""), e7);
+                            } catch (NumberFormatException e) {
+                                throw new RuntimeException(a4.a.p("error in parsing \"", trim, "\""), e);
                             }
                         }
-                        arrayList.add(new i0.e(trim.charAt(i11), fArr));
+                        arrayList.add(new i0.d(trim.charAt(i11), fArr));
                     }
                     i13 = i12;
                     i12++;
@@ -155,26 +155,26 @@ public abstract class g8 {
             i10 = 0;
         } else {
             i10 = 0;
-            arrayList.add(new i0.e(str.charAt(i13), new float[0]));
+            arrayList.add(new i0.d(str.charAt(i13), new float[0]));
         }
-        return (i0.e[]) arrayList.toArray(new i0.e[i10]);
+        return (i0.d[]) arrayList.toArray(new i0.d[i10]);
     }
 
     public static Path d(String str) {
         Path path = new Path();
         try {
-            i0.e.b(c(str), path);
+            i0.d.b(c(str), path);
             return path;
-        } catch (RuntimeException e7) {
-            throw new RuntimeException("Error in parsing ".concat(str), e7);
+        } catch (RuntimeException e) {
+            throw new RuntimeException("Error in parsing ".concat(str), e);
         }
     }
 
-    public static i0.e[] e(i0.e[] eVarArr) {
-        i0.e[] eVarArr2 = new i0.e[eVarArr.length];
-        for (int i10 = 0; i10 < eVarArr.length; i10++) {
-            eVarArr2[i10] = new i0.e(eVarArr[i10]);
+    public static i0.d[] e(i0.d[] dVarArr) {
+        i0.d[] dVarArr2 = new i0.d[dVarArr.length];
+        for (int i10 = 0; i10 < dVarArr.length; i10++) {
+            dVarArr2[i10] = new i0.d(dVarArr[i10]);
         }
-        return eVarArr2;
+        return dVarArr2;
     }
 }

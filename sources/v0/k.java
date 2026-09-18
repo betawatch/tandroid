@@ -1,80 +1,98 @@
 package v0;
 
-import android.credentials.CreateCredentialException;
-import android.credentials.CreateCredentialResponse;
-import android.credentials.Credential;
-import android.credentials.GetCredentialException;
-import android.credentials.GetCredentialResponse;
+import android.content.Context;
+import android.content.pm.PackageInfo;
+import android.content.pm.ServiceInfo;
+import android.os.Build;
 import android.os.Bundle;
-import android.os.OutcomeReceiver;
 import android.util.Log;
-import w7.b9;
-import w7.u7;
-import w7.v7;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
-public final class k implements OutcomeReceiver {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ i b;
+public final class k {
+    public final Context a;
 
-    public k(i iVar, l lVar) {
-        this.b = iVar;
-    }
-
-    @Override // android.os.OutcomeReceiver
-    public final void onError(Throwable th2) {
-        switch (this.a) {
-            case 0:
-                CreateCredentialException error = (CreateCredentialException) th2;
-                kotlin.jvm.internal.i.e(error, "error");
-                Log.i("CredManProvService", "CreateCredentialResponse error returned from framework");
-                mg.n nVar = (mg.n) this.b;
-                String type = error.getType();
-                kotlin.jvm.internal.i.d(type, "getType(...)");
-                nVar.onError(b9.a(error.getMessage(), type));
+    public k(Context context, int i10) {
+        switch (i10) {
+            case 1:
+                this.a = context;
                 break;
             default:
-                GetCredentialException error2 = (GetCredentialException) th2;
-                kotlin.jvm.internal.i.e(error2, "error");
-                Log.i("CredManProvService", "GetCredentialResponse error returned from framework");
-                i iVar = this.b;
-                String type2 = error2.getType();
-                kotlin.jvm.internal.i.d(type2, "getType(...)");
-                iVar.onError(b9.b(error2.getMessage(), type2));
+                kotlin.jvm.internal.i.e(context, "context");
+                this.a = context;
                 break;
         }
     }
 
-    @Override // android.os.OutcomeReceiver
-    public final void onResult(Object obj) {
-        switch (this.a) {
-            case 0:
-                CreateCredentialResponse response = (CreateCredentialResponse) obj;
-                kotlin.jvm.internal.i.e(response, "response");
-                Log.i("CredManProvService", "Create Result returned from framework: ");
-                mg.n nVar = (mg.n) this.b;
-                Bundle data = response.getData();
-                kotlin.jvm.internal.i.d(data, "getData(...)");
-                nVar.onResult(u7.a("androidx.credentials.TYPE_PUBLIC_KEY_CREDENTIAL", data));
-                break;
-            default:
-                GetCredentialResponse response2 = (GetCredentialResponse) obj;
-                kotlin.jvm.internal.i.e(response2, "response");
-                Log.i("CredManProvService", "GetCredentialResponse returned from framework");
-                i iVar = this.b;
-                Credential credential = response2.getCredential();
-                kotlin.jvm.internal.i.d(credential, "getCredential(...)");
-                String type = credential.getType();
-                kotlin.jvm.internal.i.d(type, "getType(...)");
-                Bundle data2 = credential.getData();
-                kotlin.jvm.internal.i.d(data2, "getData(...)");
-                iVar.onResult(new o(v7.a(type, data2)));
-                break;
+    public static j a(k kVar, Object obj) {
+        if (obj.equals("androidx.credentials.TYPE_CLEAR_RESTORE_CREDENTIAL")) {
+            return kVar.c();
         }
+        if (obj instanceof o) {
+            for (q qVar : ((o) obj).a) {
+            }
+        }
+        Context ctx = kVar.a;
+        kotlin.jvm.internal.i.e(ctx, "ctx");
+        if (ctx.getPackageManager().hasSystemFeature("android.software.leanback") || ctx.getPackageManager().hasSystemFeature("android.hardware.type.automotive")) {
+            return kVar.c();
+        }
+        int i10 = Build.VERSION.SDK_INT;
+        if (i10 >= 34) {
+            m mVar = new m(ctx);
+            m mVar2 = mVar.isAvailableOnDevice() ? mVar : null;
+            return mVar2 == null ? kVar.c() : mVar2;
+        }
+        if (i10 <= 33) {
+            return kVar.c();
+        }
+        return null;
     }
 
-    public k(mg.n nVar, e eVar, l lVar) {
-        this.b = nVar;
+    public PackageInfo b(int i10, String str) {
+        return this.a.getPackageManager().getPackageInfo(str, i10);
+    }
+
+    public j c() {
+        String string;
+        Context context = this.a;
+        PackageInfo packageInfo = context.getPackageManager().getPackageInfo(context.getPackageName(), 132);
+        ArrayList arrayList = new ArrayList();
+        ServiceInfo[] serviceInfoArr = packageInfo.services;
+        if (serviceInfoArr != null) {
+            for (ServiceInfo serviceInfo : serviceInfoArr) {
+                Bundle bundle = serviceInfo.metaData;
+                if (bundle != null && (string = bundle.getString("androidx.credentials.CREDENTIAL_PROVIDER_KEY")) != null) {
+                    arrayList.add(string);
+                }
+            }
+        }
+        List m10 = hd.g.m(arrayList);
+        if (m10.isEmpty()) {
+            return null;
+        }
+        Iterator it = m10.iterator();
+        j jVar = null;
+        while (it.hasNext()) {
+            try {
+                Object newInstance = Class.forName((String) it.next()).getConstructor(Context.class).newInstance(context);
+                kotlin.jvm.internal.i.c(newInstance, "null cannot be cast to non-null type androidx.credentials.CredentialProvider");
+                j jVar2 = (j) newInstance;
+                if (!jVar2.isAvailableOnDevice()) {
+                    continue;
+                } else {
+                    if (jVar != null) {
+                        Log.i("CredProviderFactory", "Only one active OEM CredentialProvider allowed");
+                        return null;
+                    }
+                    jVar = jVar2;
+                }
+            } catch (Throwable unused) {
+            }
+        }
+        return jVar;
     }
 }

@@ -1,5 +1,6 @@
 package com.google.android.gms.auth.api.signin.internal;
 
+import a0.n;
 import a6.b;
 import a6.d;
 import a6.i;
@@ -11,7 +12,7 @@ import android.os.Bundle;
 import android.os.Looper;
 import android.util.Log;
 import android.view.accessibility.AccessibilityEvent;
-import androidx.fragment.app.u;
+import androidx.fragment.app.v;
 import b2.p;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
@@ -20,9 +21,9 @@ import com.google.android.gms.common.api.Status;
 import java.lang.reflect.Modifier;
 import java.util.Set;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
-public class SignInHubActivity extends u {
+public class SignInHubActivity extends v {
     public static boolean T = false;
     public boolean O = false;
     public SignInConfiguration P;
@@ -35,7 +36,7 @@ public class SignInHubActivity extends u {
         return true;
     }
 
-    @Override // androidx.fragment.app.u, androidx.activity.m, android.app.Activity
+    @Override // androidx.fragment.app.v, androidx.activity.l, android.app.Activity
     public final void onActivityResult(int i10, int i11, Intent intent) {
         GoogleSignInAccount googleSignInAccount;
         if (this.O) {
@@ -48,11 +49,11 @@ public class SignInHubActivity extends u {
         if (intent != null) {
             SignInAccount signInAccount = (SignInAccount) intent.getParcelableExtra("signInAccount");
             if (signInAccount != null && (googleSignInAccount = signInAccount.b) != null) {
-                i G = i.G(this);
+                i T2 = i.T(this);
                 GoogleSignInOptions googleSignInOptions = this.P.b;
-                synchronized (G) {
-                    synchronized (G) {
-                        ((b) G.b).c(googleSignInAccount, googleSignInOptions);
+                synchronized (T2) {
+                    synchronized (T2) {
+                        ((b) T2.b).c(googleSignInAccount, googleSignInOptions);
                     }
                     intent.removeExtra("signInAccount");
                     intent.putExtra("googleSignInAccount", googleSignInAccount);
@@ -82,7 +83,7 @@ public class SignInHubActivity extends u {
         w(8);
     }
 
-    @Override // androidx.fragment.app.u, androidx.activity.m, e0.h, android.app.Activity
+    @Override // androidx.fragment.app.v, androidx.activity.l, e0.h, android.app.Activity
     public final void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         Intent intent = getIntent();
@@ -158,13 +159,13 @@ public class SignInHubActivity extends u {
         }
     }
 
-    @Override // androidx.fragment.app.u, android.app.Activity
+    @Override // androidx.fragment.app.v, android.app.Activity
     public final void onDestroy() {
         super.onDestroy();
         T = false;
     }
 
-    @Override // androidx.activity.m, e0.h, android.app.Activity
+    @Override // androidx.activity.l, e0.h, android.app.Activity
     public final void onSaveInstanceState(Bundle bundle) {
         super.onSaveInstanceState(bundle);
         bundle.putBoolean("signingInGoogleApiClients", this.Q);
@@ -175,17 +176,17 @@ public class SignInHubActivity extends u {
     }
 
     public final void v() {
-        w1.b bVar = (w1.b) new a(f(), w1.b.f).n(w1.b.class);
+        w1.b bVar = (w1.b) new a(f(), w1.b.f).m(w1.b.class);
         m mVar = new m(this, 0);
         boolean z10 = bVar.e;
-        a0.m mVar2 = bVar.d;
+        n nVar = bVar.d;
         if (z10) {
             throw new IllegalStateException("Called while creating a loader");
         }
         if (Looper.getMainLooper() != Looper.myLooper()) {
             throw new IllegalStateException("initLoader must be called on the main thread");
         }
-        w1.a aVar = (w1.a) mVar2.c(0);
+        w1.a aVar = (w1.a) nVar.c(0);
         if (aVar == null) {
             try {
                 bVar.e = true;
@@ -197,7 +198,7 @@ public class SignInHubActivity extends u {
                     throw new IllegalArgumentException("Object returned from onCreateLoader must not be a non-static inner member class: " + dVar);
                 }
                 w1.a aVar2 = new w1.a(dVar);
-                mVar2.d(0, aVar2);
+                nVar.d(0, aVar2);
                 bVar.e = false;
                 p pVar = new p(aVar2.l, mVar);
                 aVar2.d(this, pVar);

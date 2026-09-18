@@ -1,16 +1,79 @@
 package org.telegram.ui.Components;
 
-import android.view.accessibility.AccessibilityNodeInfo;
-import android.widget.FrameLayout;
+import java.util.ArrayList;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class rm0 extends FrameLayout {
-    public org.telegram.ui.Cells.j7 a;
+public final class rm0 extends s4.o {
+    public final /* synthetic */ int b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ int f;
+    public final /* synthetic */ ArrayList g;
+    public final /* synthetic */ int h;
+    public final /* synthetic */ int i;
+    public final /* synthetic */ ArrayList j;
+    public final /* synthetic */ wm0 k;
 
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        this.a.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+    public rm0(wm0 wm0Var, int i10, int i11, int i12, int i13, int i14, ArrayList arrayList, int i15, int i16, ArrayList arrayList2) {
+        this.k = wm0Var;
+        this.b = i10;
+        this.c = i11;
+        this.d = i12;
+        this.e = i13;
+        this.f = i14;
+        this.g = arrayList;
+        this.h = i15;
+        this.i = i16;
+        this.j = arrayList2;
+    }
+
+    @Override // s4.o
+    public final boolean a(int i10, int i11) {
+        return b(i10, i11);
+    }
+
+    @Override // s4.o
+    public final boolean b(int i10, int i11) {
+        MessageObject messageObject;
+        wm0 wm0Var = this.k;
+        if (i10 >= 0 && i11 >= 0) {
+            if (i10 == this.c && i11 == wm0Var.s) {
+                return true;
+            }
+            if (i10 == this.d && i11 == wm0Var.x) {
+                return true;
+            }
+        }
+        MessageObject messageObject2 = null;
+        int i12 = this.e;
+        if (i10 < i12 || i10 >= this.f) {
+            int i13 = this.h;
+            messageObject = (i10 < i13 || i10 >= this.i) ? null : (MessageObject) this.j.get(i10 - i13);
+        } else {
+            messageObject = (MessageObject) this.g.get(i10 - i12);
+        }
+        int i14 = wm0Var.v;
+        if (i11 < i14 || i11 >= wm0Var.w) {
+            int i15 = wm0Var.y;
+            if (i11 >= i15 && i11 < wm0Var.E) {
+                messageObject2 = (MessageObject) wm0Var.f.get(i11 - i15);
+            }
+        } else {
+            messageObject2 = (MessageObject) wm0Var.e.get(i11 - i14);
+        }
+        return (messageObject2 == null || messageObject == null || messageObject2.getDocument() == null || messageObject.getDocument() == null || messageObject2.getDocument().id != messageObject.getDocument().id) ? false : true;
+    }
+
+    @Override // s4.o
+    public final int d() {
+        return this.k.r;
+    }
+
+    @Override // s4.o
+    public final int e() {
+        return this.b;
     }
 }

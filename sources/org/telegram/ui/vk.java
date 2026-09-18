@@ -1,38 +1,24 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import android.view.View;
-import android.view.ViewGroup;
-import org.telegram.messenger.AndroidUtilities;
-
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class vk extends ov0 {
-    public vk(ViewGroup viewGroup, ViewGroup viewGroup2) {
-        super(viewGroup, viewGroup2);
+public final class vk extends org.telegram.ui.Components.pk0 {
+    public final /* synthetic */ bo l;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public vk(bo boVar, vj vjVar, yj yjVar) {
+        super(vjVar, yjVar);
+        this.l = boVar;
     }
 
-    @Override // org.telegram.ui.ov0
-    public final void c(Canvas canvas, float f7, float f10, float f11, float f12, float f13) {
-        if (f7 > 0.0f) {
-            View view = this.e;
-            if (view instanceof org.telegram.ui.Cells.t1) {
-                org.telegram.ui.Cells.t1 t1Var = (org.telegram.ui.Cells.t1) view;
-                int max = (int) Math.max(f12, f11);
-                int min = (int) Math.min(f13, t1Var.getMeasuredHeight() + f11);
-                RectF rectF = AndroidUtilities.rectTmp;
-                rectF.set(f10, max, t1Var.getMeasuredWidth() + f10, min);
-                canvas.saveLayerAlpha(rectF, (int) (f7 * 255.0f), 31);
-                canvas.translate(f10, f11 + t1Var.getPaddingTop());
-                t1Var.Ed = true;
-                t1Var.Y1(canvas);
-                if (t1Var.f4() && t1Var.getCurrentMessagesGroup() == null) {
-                    t1Var.m2(1.0f, canvas, false);
-                }
-                t1Var.Ed = false;
-                canvas.restore();
+    public final void f(int i10) {
+        if (this.l.Pa) {
+            if (i10 == 0) {
+                i10 = 1;
+            } else if (i10 == 1) {
+                i10 = 0;
             }
         }
+        this.b = i10;
     }
 }

@@ -5,16 +5,16 @@ import android.app.Application;
 import android.content.Context;
 import android.os.Build;
 import android.os.Process;
-import fg.f;
 import hd.g;
 import hd.o;
 import java.util.ArrayList;
 import java.util.List;
 import kotlin.jvm.internal.i;
+import ni.f;
 import y9.t0;
 import y9.t1;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class c {
     public static final c a = new c();
@@ -56,7 +56,7 @@ public final class c {
             fVar.b = Integer.valueOf(runningAppProcessInfo.pid);
             fVar.c = Integer.valueOf(runningAppProcessInfo.importance);
             fVar.d = Boolean.valueOf(i.a(runningAppProcessInfo.processName, str));
-            arrayList2.add(fVar.g());
+            arrayList2.add(fVar.f());
         }
         return arrayList2;
     }
@@ -97,6 +97,6 @@ public final class c {
         fVar.b = Integer.valueOf(myPid);
         fVar.c = 0;
         fVar.d = false;
-        return fVar.g();
+        return fVar.f();
     }
 }

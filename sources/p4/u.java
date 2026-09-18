@@ -3,20 +3,19 @@ package p4;
 import android.content.ComponentName;
 import com.google.android.gms.internal.vision.h3;
 import java.util.ArrayList;
-import ji.u4;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class u {
     public final h3 a;
     public final ArrayList b = new ArrayList();
     public final boolean c;
-    public final u4 d;
+    public final k2.u d;
     public b2.p e;
 
     public u(h3 h3Var, boolean z10) {
         this.a = h3Var;
-        this.d = (u4) h3Var.d;
+        this.d = (k2.u) h3Var.d;
         this.c = z10;
     }
 

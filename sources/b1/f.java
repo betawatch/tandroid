@@ -6,12 +6,12 @@ import android.content.Intent;
 import android.os.CancellationSignal;
 import androidx.credentials.playservices.CredentialProviderPlayServicesImpl;
 import androidx.credentials.playservices.controllers.identityauth.HiddenActivity;
-import bi.oa;
+import androidx.fragment.app.a0;
 import java.util.concurrent.Executor;
 import rd.l;
 import v0.i;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class f implements l {
     public final /* synthetic */ int a;
@@ -30,9 +30,9 @@ public final /* synthetic */ class f implements l {
             case 0:
                 Executor executor = (Executor) this.b;
                 i iVar = (i) this.c;
-                w0.i e7 = (w0.i) obj;
-                kotlin.jvm.internal.i.e(e7, "e");
-                executor.execute(new h(iVar, e7, 1));
+                w0.i e = (w0.i) obj;
+                kotlin.jvm.internal.i.e(e, "e");
+                executor.execute(new h(iVar, e, 1));
                 return gd.i.a;
             case 1:
                 CancellationSignal cancellationSignal = (CancellationSignal) this.b;
@@ -49,7 +49,7 @@ public final /* synthetic */ class f implements l {
                     } catch (Exception unused) {
                         CredentialProviderPlayServicesImpl.Companion.getClass();
                         if (!a1.g.a(cancellationSignal)) {
-                            eVar.f().execute(new oa(eVar, 5));
+                            eVar.f().execute(new a0(eVar, 4));
                         }
                     }
                 }

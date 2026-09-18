@@ -1,10 +1,11 @@
 package i9;
 
+import ai.z9;
 import java.util.concurrent.Callable;
 import java.util.concurrent.RunnableFuture;
 import java.util.concurrent.locks.LockSupport;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class e0 extends o implements RunnableFuture, g {
     public volatile d0 n;
@@ -18,8 +19,8 @@ public final class e0 extends o implements RunnableFuture, g {
         d0 d0Var;
         Object obj = this.a;
         if ((obj instanceof a) && ((a) obj).a && (d0Var = this.n) != null) {
-            androidx.emoji2.text.n nVar = d0.d;
-            androidx.emoji2.text.n nVar2 = d0.c;
+            z9 z9Var = d0.d;
+            z9 z9Var2 = d0.c;
             Runnable runnable = (Runnable) d0Var.get();
             if (runnable instanceof Thread) {
                 v vVar = new v(d0Var);
@@ -28,7 +29,7 @@ public final class e0 extends o implements RunnableFuture, g {
                     try {
                         ((Thread) runnable).interrupt();
                     } finally {
-                        if (((Runnable) d0Var.getAndSet(nVar2)) == nVar) {
+                        if (((Runnable) d0Var.getAndSet(z9Var2)) == z9Var) {
                             LockSupport.unpark((Thread) runnable);
                         }
                     }

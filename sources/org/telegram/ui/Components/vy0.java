@@ -1,52 +1,28 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLObject;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class vy0 {
+public final class vy0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
+    public final /* synthetic */ Switch b;
 
-    public /* synthetic */ vy0(int i10) {
+    public /* synthetic */ vy0(Switch r12, int i10) {
         this.a = i10;
+        this.b = r12;
     }
 
-    public final int a(cz0 cz0Var, int i10) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                return TLObject.FLAG_31;
-            case 1:
-                return 0;
-            case 2:
-                return i10;
-            case 3:
-                return TLObject.FLAG_31;
+                this.b.d = null;
+                break;
             default:
-                return TLObject.FLAG_31;
-        }
-    }
-
-    public final int b(cz0 cz0Var, int i10) {
-        switch (this.a) {
-            case 0:
-                return TLObject.FLAG_31;
-            case 1:
-                return 0;
-            case 2:
-                return i10;
-            case 3:
-                return 0;
-            default:
-                return 0;
-        }
-    }
-
-    public int c(int i10, int i11) {
-        switch (this.a) {
-            case 4:
-                return i11;
-            default:
-                return i10;
+                this.b.e = null;
+                break;
         }
     }
 }

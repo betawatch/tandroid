@@ -1,45 +1,26 @@
 package org.telegram.ui.Components.voip;
 
-import android.animation.ValueAnimator;
+import android.graphics.Canvas;
+import android.view.View;
+import org.telegram.ui.Components.bw0;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class e3 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ h3 b;
+public final class e3 extends View {
+    public bw0 a;
+    public boolean b;
 
-    public /* synthetic */ e3(h3 h3Var, int i10) {
-        this.a = i10;
-        this.b = h3Var;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        bw0 bw0Var;
+        if (this.b || (bw0Var = this.a) == null) {
+            return;
+        }
+        bw0Var.b(canvas, this);
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                h3 h3Var = this.b;
-                h3Var.getClass();
-                h3Var.G = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                h3Var.invalidate();
-                break;
-            case 1:
-                h3 h3Var2 = this.b;
-                h3Var2.getClass();
-                h3Var2.w = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-                h3Var2.invalidate();
-                break;
-            case 2:
-                h3 h3Var3 = this.b;
-                h3Var3.getClass();
-                h3Var3.s = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-                h3Var3.invalidate();
-                break;
-            default:
-                h3 h3Var4 = this.b;
-                h3Var4.getClass();
-                h3Var4.r = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-                h3Var4.invalidate();
-                break;
-        }
+    public void setState(boolean z10) {
+        this.b = z10;
+        invalidate();
     }
 }

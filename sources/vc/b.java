@@ -16,7 +16,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 import javax.net.ssl.HttpsURLConnection;
-import m2.t;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
@@ -27,7 +26,7 @@ import tc.f;
 import w7.q8;
 import w7.y7;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public abstract class b {
     public static final c a = new c();
@@ -117,13 +116,13 @@ public abstract class b {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static t c(HashMap hashMap, i iVar) {
+    public static lf.i c(HashMap hashMap, i iVar) {
         String str;
         int i10;
         String str2;
         String str3;
         Boolean bool = Boolean.TRUE;
-        t tVar = null;
+        lf.i iVar2 = null;
         try {
             str = Security.getProperty("networkaddress.cache.ttl");
         } catch (SecurityException unused) {
@@ -163,10 +162,10 @@ public abstract class b {
             g(i10, str2, str3);
             throw null;
         }
-        tVar = y7.a(str2);
+        iVar2 = y7.a(str2);
         if (bool.booleanValue()) {
         }
-        return tVar;
+        return iVar2;
     }
 
     public static LinkedList d(String str, Map map) {
@@ -246,8 +245,8 @@ public abstract class b {
                         aVar.d = headerFields;
                         a2.disconnect();
                         return aVar;
-                    } catch (IOException e7) {
-                        e = e7;
+                    } catch (IOException e) {
+                        e = e;
                         throw new tc.a("IOException during API request to Stripe (https://api.stripe.com/v1/tokens): " + e.getMessage() + " Please check your internet connection and try again. If this problem persists, you should check Stripe's service status at https://twitter.com/stripestatus, or let us know at support@stripe.com.", null, e);
                     }
                 } catch (Throwable th2) {
@@ -258,16 +257,16 @@ public abstract class b {
                     }
                     throw th;
                 }
-            } catch (IOException e10) {
-                e = e10;
+            } catch (IOException e7) {
+                e = e7;
             } catch (Throwable th3) {
                 th = th3;
                 if (httpURLConnection != null) {
                 }
                 throw th;
             }
-        } catch (UnsupportedEncodingException e11) {
-            throw new d("Unable to encode parameters to UTF-8. Please contact support@stripe.com for assistance.", null, e11);
+        } catch (UnsupportedEncodingException e10) {
+            throw new d("Unable to encode parameters to UTF-8. Please contact support@stripe.com for assistance.", null, e10);
         }
     }
 

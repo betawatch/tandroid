@@ -1,62 +1,46 @@
 package org.telegram.ui.Components;
 
+import android.os.Bundle;
 import android.view.View;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u0 implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ boolean[] b;
+    public final /* synthetic */ TLRPC.User b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.o2 c;
+    public final /* synthetic */ AlertDialog$Builder d;
 
-    public /* synthetic */ u0(int i10, boolean[] zArr) {
+    public /* synthetic */ u0(TLRPC.User user, org.telegram.ui.ActionBar.o2 o2Var, AlertDialog$Builder alertDialog$Builder, int i10) {
         this.a = i10;
-        this.b = zArr;
+        this.b = user;
+        this.c = o2Var;
+        this.d = alertDialog$Builder;
     }
 
     @Override // android.view.View.OnClickListener
     public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                boolean[] zArr = this.b;
-                boolean z10 = !zArr[0];
-                zArr[0] = z10;
-                ((org.telegram.ui.Cells.z1) view).c(z10, true);
-                break;
-            case 1:
-                boolean[] zArr2 = this.b;
-                boolean z11 = !zArr2[0];
-                zArr2[0] = z11;
-                ((org.telegram.ui.Cells.z1) view).c(z11, true);
-                break;
-            case 2:
-                boolean[] zArr3 = this.b;
-                boolean z12 = !zArr3[0];
-                zArr3[0] = z12;
-                ((org.telegram.ui.Cells.z1) view).c(z12, true);
-                break;
-            case 3:
-                boolean[] zArr4 = this.b;
-                boolean z13 = !zArr4[0];
-                zArr4[0] = z13;
-                ((org.telegram.ui.Cells.z1) view).c(z13, true);
-                break;
-            case 4:
-                boolean[] zArr5 = this.b;
-                boolean z14 = !zArr5[0];
-                zArr5[0] = z14;
-                ((org.telegram.ui.Cells.z1) view).c(z14, true);
-                break;
-            case 5:
-                boolean[] zArr6 = this.b;
-                boolean z15 = !zArr6[0];
-                zArr6[0] = z15;
-                ((org.telegram.ui.Cells.z1) view).c(z15, true);
+                Bundle bundle = new Bundle();
+                bundle.putLong("user_id", this.b.id);
+                org.telegram.ui.ActionBar.o2 o2Var = this.c;
+                if (o2Var.getMessagesController().checkCanOpenChat(bundle, o2Var)) {
+                    o2Var.presentFragment(new ProfileActivity(bundle, null));
+                }
+                this.d.a.L0.run();
                 break;
             default:
-                boolean[] zArr7 = this.b;
-                boolean z16 = !zArr7[0];
-                zArr7[0] = z16;
-                ((org.telegram.ui.Cells.z1) view).c(z16, true);
+                Bundle bundle2 = new Bundle();
+                bundle2.putLong("user_id", this.b.id);
+                org.telegram.ui.ActionBar.o2 o2Var2 = this.c;
+                if (o2Var2.getMessagesController().checkCanOpenChat(bundle2, o2Var2)) {
+                    o2Var2.presentFragment(new ProfileActivity(bundle2, null));
+                }
+                this.d.a.L0.run();
                 break;
         }
     }

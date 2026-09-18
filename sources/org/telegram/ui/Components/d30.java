@@ -23,16 +23,16 @@ import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class d30 extends LinearLayout implements VoIPService.StateListener, NotificationCenter.NotificationCenterDelegate {
     public float E;
     public float F;
     public TextView a;
     public TextView b;
-    public org.telegram.ui.Components.voip.t2 c;
-    public org.telegram.ui.Components.voip.t2 d;
-    public x9 e;
+    public org.telegram.ui.Components.voip.v2 c;
+    public org.telegram.ui.Components.voip.v2 d;
+    public u9 e;
     public RectF f;
     public Paint h;
     public LinearGradient n;
@@ -51,7 +51,7 @@ public final class d30 extends LinearLayout implements VoIPService.StateListener
     }
 
     public static void b(d30 d30Var, Context context) {
-        org.telegram.ui.j60.t1(d30Var.getContext(), new b30(context, 0), Build.VERSION.SDK_INT < 23 || Settings.canDrawOverlays(context), false);
+        org.telegram.ui.k60.t1(d30Var.getContext(), new b30(context, 0), Build.VERSION.SDK_INT < 23 || Settings.canDrawOverlays(context), false);
     }
 
     public final void c(float f7, float f10, int i10) {
@@ -65,31 +65,31 @@ public final class d30 extends LinearLayout implements VoIPService.StateListener
     public final void d(boolean z10) {
         VoIPService sharedInstance;
         boolean z11;
-        org.telegram.ui.Components.voip.t2 t2Var = this.d;
-        org.telegram.ui.Components.voip.t2 t2Var2 = this.c;
-        if (t2Var2 == null || t2Var == null || (sharedInstance = VoIPService.getSharedInstance()) == null) {
+        org.telegram.ui.Components.voip.v2 v2Var = this.d;
+        org.telegram.ui.Components.voip.v2 v2Var2 = this.c;
+        if (v2Var2 == null || v2Var == null || (sharedInstance = VoIPService.getSharedInstance()) == null) {
             return;
         }
         boolean isBluetoothOn = sharedInstance.isBluetoothOn();
         boolean z12 = !isBluetoothOn && sharedInstance.isSpeakerphoneOn();
-        t2Var2.b(z12, z10);
+        v2Var2.b(z12, z10);
         if (isBluetoothOn) {
             z11 = z10;
-            t2Var2.c(R.drawable.calls_bluetooth, -1, 0, 0.1f, true, LocaleController.getString(R.string.VoipAudioRoutingBluetooth), false, z11);
+            v2Var2.c(R.drawable.calls_bluetooth, -1, 0, 0.1f, true, LocaleController.getString(R.string.VoipAudioRoutingBluetooth), false, z11);
         } else {
             z11 = z10;
             if (z12) {
-                t2Var2.c(R.drawable.calls_speaker, -1, 0, 0.3f, true, LocaleController.getString(R.string.VoipSpeaker), false, z11);
+                v2Var2.c(R.drawable.calls_speaker, -1, 0, 0.3f, true, LocaleController.getString(R.string.VoipSpeaker), false, z11);
             } else if (sharedInstance.isHeadsetPlugged()) {
-                t2Var2.c(R.drawable.calls_headphones, -1, 0, 0.1f, true, LocaleController.getString(R.string.VoipAudioRoutingHeadset), false, z11);
+                v2Var2.c(R.drawable.calls_headphones, -1, 0, 0.1f, true, LocaleController.getString(R.string.VoipAudioRoutingHeadset), false, z11);
             } else {
-                t2Var2.c(R.drawable.calls_speaker, -1, 0, 0.1f, true, LocaleController.getString(R.string.VoipSpeaker), false, z11);
+                v2Var2.c(R.drawable.calls_speaker, -1, 0, 0.1f, true, LocaleController.getString(R.string.VoipSpeaker), false, z11);
             }
         }
         if (sharedInstance.mutedByAdmin()) {
-            t2Var.c(R.drawable.calls_unmute, -1, i0.a.k(-1, 76), 0.1f, true, LocaleController.getString(R.string.VoipMutedByAdminShort), true, z11);
+            v2Var.c(R.drawable.calls_unmute, -1, i0.a.k(-1, 76), 0.1f, true, LocaleController.getString(R.string.VoipMutedByAdminShort), true, z11);
         } else {
-            t2Var.c(R.drawable.calls_unmute, -1, i0.a.k(-1, (int) ((sharedInstance.isMicMute() ? 0.3f : 0.15f) * 255.0f)), 0.1f, true, LocaleController.getString(sharedInstance.isMicMute() ? R.string.VoipUnmute : R.string.VoipMute), sharedInstance.isMicMute(), z11);
+            v2Var.c(R.drawable.calls_unmute, -1, i0.a.k(-1, (int) ((sharedInstance.isMicMute() ? 0.3f : 0.15f) * 255.0f)), 0.1f, true, LocaleController.getString(sharedInstance.isMicMute() ? R.string.VoipUnmute : R.string.VoipMute), sharedInstance.isMicMute(), z11);
         }
         invalidate();
     }
@@ -130,12 +130,12 @@ public final class d30 extends LinearLayout implements VoIPService.StateListener
         super.onAttachedToWindow();
         VoIPService sharedInstance = VoIPService.getSharedInstance();
         if (sharedInstance != null && sharedInstance.groupCall != null) {
-            i9 i9Var = new i9((org.telegram.ui.ActionBar.f6) null);
+            f9 f9Var = new f9((org.telegram.ui.ActionBar.f6) null);
             TLRPC.Chat chat = sharedInstance.getChat();
-            i9Var.i(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.p8[i9.e(chat != null ? chat.id : 0L)], false), org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.q8[i9.e(chat != null ? chat.id : 0L)], false));
-            i9Var.k(i10, chat);
+            f9Var.i(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.p8[f9.e(chat != null ? chat.id : 0L)], false), org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.q8[f9.e(chat != null ? chat.id : 0L)], false));
+            f9Var.k(i10, chat);
             if (chat != null) {
-                this.e.h(ImageLocation.getForLocal(chat.photo.photo_small), "50_50", i9Var, null);
+                this.e.h(ImageLocation.getForLocal(chat.photo.photo_small), "50_50", f9Var, null);
             }
             if (!sharedInstance.isConference() || (call = sharedInstance.groupCall) == null) {
                 str = !TextUtils.isEmpty(sharedInstance.groupCall.call.title) ? sharedInstance.groupCall.call.title : chat != null ? chat.title : "";

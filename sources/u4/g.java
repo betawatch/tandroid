@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.concurrent.Callable;
 import java.util.concurrent.Executor;
-import n7.z0;
+import n7.a1;
 import w7.ga;
 import w7.ha;
 import w7.oa;
@@ -19,7 +19,7 @@ import w9.m;
 import w9.o;
 import w9.r;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class g implements Callable {
     public final /* synthetic */ int a;
@@ -43,8 +43,8 @@ public final class g implements Callable {
             case 0:
                 return (h) ((ShortcutInfoCompatSaverImpl) obj).b.get((String) obj2);
             case 1:
-                z0 z0Var = (z0) obj;
-                m mVar = (m) z0Var.c;
+                o0.a aVar = (o0.a) obj;
+                m mVar = (m) aVar.c;
                 Boolean bool = (Boolean) obj2;
                 if (bool.booleanValue()) {
                     if (Log.isLoggable("FirebaseCrashlytics", 3)) {
@@ -58,7 +58,7 @@ public final class g implements Callable {
                     }
                     rVar.h.trySetResult(null);
                     Executor executor = (Executor) mVar.e.b;
-                    return ((Task) z0Var.b).onSuccessTask(executor, new o0.a(this, executor, z10, 22));
+                    return ((Task) aVar.b).onSuccessTask(executor, new a1(this, executor, z10, 23));
                 }
                 if (Log.isLoggable("FirebaseCrashlytics", 2)) {
                     Log.v("FirebaseCrashlytics", "Deleting cached crash reports...", null);
@@ -80,7 +80,7 @@ public final class g implements Callable {
                 return o.a((o) obj, (da.b) obj2);
             default:
                 MobileVisionBase mobileVisionBase = (MobileVisionBase) obj2;
-                vb.a aVar = (vb.a) obj;
+                vb.a aVar2 = (vb.a) obj;
                 HashMap hashMap = ha.f;
                 pa.b();
                 int i11 = oa.a;
@@ -96,9 +96,9 @@ public final class g implements Callable {
                 }
                 haVar.a();
                 try {
-                    Object e7 = mobileVisionBase.b.e(aVar);
+                    Object e = mobileVisionBase.b.e(aVar2);
                     haVar.close();
-                    return e7;
+                    return e;
                 } catch (Throwable th2) {
                     try {
                         haVar.close();

@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class k0 {
     public static final k0 g;
@@ -216,7 +216,7 @@ public final class k0 {
                 e9.g0 g0Var4 = e9.i0.b;
                 j3 = e9.a1.e;
             } else {
-                j3 = e2.d.j(new androidx.emoji2.text.w(6), parcelableArrayList2);
+                j3 = e2.d.j(new ai.w1(13), parcelableArrayList2);
             }
             e9.a1 a1Var2 = j3;
             long j15 = bundle6.getLong(f0.p, -9223372036854775807L);
@@ -357,14 +357,14 @@ public final class k0 {
                 bundle5.putBundle(str6, bundle8);
             }
             if (!list.isEmpty()) {
-                bundle5.putParcelableArrayList(f0.m, e2.d.p(list, new androidx.emoji2.text.w(4)));
+                bundle5.putParcelableArrayList(f0.m, e2.d.p(list, new ai.w1(11)));
             }
             String str7 = f0Var.f;
             if (str7 != null) {
                 bundle5.putString(f0.n, str7);
             }
             if (!i0Var.isEmpty()) {
-                bundle5.putParcelableArrayList(f0.o, e2.d.p(i0Var, new androidx.emoji2.text.w(5)));
+                bundle5.putParcelableArrayList(f0.o, e2.d.p(i0Var, new ai.w1(12)));
             }
             long j13 = f0Var.h;
             if (j13 != -9223372036854775807L) {

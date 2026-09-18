@@ -16,7 +16,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.camera.CameraView;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class w5 implements Runnable {
     public final /* synthetic */ int a;
@@ -37,8 +37,8 @@ public final class w5 implements Runnable {
     */
     public final void run() {
         org.telegram.ui.Components.voip.l I0;
-        org.telegram.ui.Components.voip.t renderer;
-        org.telegram.ui.Components.voip.o oVar;
+        org.telegram.ui.Components.voip.u renderer;
+        org.telegram.ui.Components.voip.p pVar;
         int i10;
         switch (this.a) {
             case 0:
@@ -57,10 +57,10 @@ public final class w5 implements Runnable {
                 }
                 break;
             case 1:
-                u9 u9Var = (u9) this.b;
-                CameraView cameraView = u9Var.c;
-                if (cameraView != null && !u9Var.M && cameraView.getCameraSession() != null) {
-                    u9Var.e.post(new lu0(this, 17));
+                w9 w9Var = (w9) this.b;
+                CameraView cameraView = w9Var.c;
+                if (cameraView != null && !w9Var.M && cameraView.getCameraSession() != null) {
+                    w9Var.e.post(new ou0(this, 17));
                     break;
                 }
                 break;
@@ -85,74 +85,74 @@ public final class w5 implements Runnable {
                 }
                 break;
             case 4:
-                x10 x10Var = (x10) this.b;
-                if (x10Var.M) {
-                    x10Var.f.clear();
-                    x10Var.n.clear();
-                    x10Var.r.clear();
-                    org.telegram.ui.Components.kl0 kl0Var = x10Var.d;
-                    if (kl0Var != null) {
-                        kl0Var.l();
+                z10 z10Var = (z10) this.b;
+                if (z10Var.M) {
+                    z10Var.f.clear();
+                    z10Var.n.clear();
+                    z10Var.r.clear();
+                    org.telegram.ui.Components.ll0 ll0Var = z10Var.d;
+                    if (ll0Var != null) {
+                        ll0Var.l();
                         break;
                     }
                 }
                 break;
             case 5:
-                j60 j60Var = ((q30) this.b).b;
-                j60Var.x.setAnimation(j60Var.J0);
-                j60Var.L0 = false;
+                k60 k60Var = ((s30) this.b).b;
+                k60Var.x.setAnimation(k60Var.J0);
+                k60Var.L0 = false;
                 break;
             case 6:
                 try {
-                    j60 j60Var2 = (j60) this.b;
-                    a40 a40Var = j60Var2.a2;
-                    if (a40Var != null && !a40Var.b && (I0 = j60.I0(j60Var2)) != null && I0.isAttachedToWindow() && (renderer = I0.getRenderer()) != null && (oVar = renderer.a) != null) {
-                        j60.H3.postRunnable(new yt(23, this, oVar));
+                    k60 k60Var2 = (k60) this.b;
+                    c40 c40Var = k60Var2.a2;
+                    if (c40Var != null && !c40Var.b && (I0 = k60.I0(k60Var2)) != null && I0.isAttachedToWindow() && (renderer = I0.getRenderer()) != null && (pVar = renderer.a) != null) {
+                        k60.H3.postRunnable(new mw(17, this, pVar));
                         break;
                     }
-                } catch (Exception e7) {
-                    FileLog.e(e7);
+                } catch (Exception e) {
+                    FileLog.e(e);
                     return;
                 }
                 break;
             case 7:
-                if (((b80) this.b).h) {
+                if (((d80) this.b).h) {
                     long currentTimeMillis = System.currentTimeMillis();
-                    b80 b80Var = (b80) this.b;
-                    if (b80Var.e.equals(b80Var.b.eglGetCurrentContext())) {
-                        b80 b80Var2 = (b80) this.b;
+                    d80 d80Var = (d80) this.b;
+                    if (d80Var.e.equals(d80Var.b.eglGetCurrentContext())) {
+                        d80 d80Var2 = (d80) this.b;
                         break;
                     }
-                    b80 b80Var3 = (b80) this.b;
-                    EGL10 egl10 = b80Var3.b;
-                    EGLDisplay eGLDisplay = b80Var3.c;
-                    EGLSurface eGLSurface = b80Var3.f;
-                    if (!egl10.eglMakeCurrent(eGLDisplay, eGLSurface, eGLSurface, b80Var3.e)) {
+                    d80 d80Var3 = (d80) this.b;
+                    EGL10 egl10 = d80Var3.b;
+                    EGLDisplay eGLDisplay = d80Var3.c;
+                    EGLSurface eGLSurface = d80Var3.f;
+                    if (!egl10.eglMakeCurrent(eGLDisplay, eGLSurface, eGLSurface, d80Var3.e)) {
                         if (BuildVars.LOGS_ENABLED) {
-                            org.telegram.messenger.vl.s(((b80) this.b).b, new StringBuilder("eglMakeCurrent failed "));
+                            org.telegram.messenger.wl.s(((d80) this.b).b, new StringBuilder("eglMakeCurrent failed "));
                             break;
                         }
                     }
-                    int min = (int) Math.min(currentTimeMillis - ((b80) this.b).s, 16L);
-                    Intro.setPage(((b80) this.b).x.H);
+                    int min = (int) Math.min(currentTimeMillis - ((d80) this.b).s, 16L);
+                    Intro.setPage(((d80) this.b).x.H);
                     Intro.setDate((currentTimeMillis - r2.J) / 1000.0f);
                     Intro.onDrawFrame(min);
-                    b80 b80Var4 = (b80) this.b;
-                    b80Var4.b.eglSwapBuffers(b80Var4.c, b80Var4.f);
-                    b80 b80Var5 = (b80) this.b;
-                    b80Var5.s = currentTimeMillis;
+                    d80 d80Var4 = (d80) this.b;
+                    d80Var4.b.eglSwapBuffers(d80Var4.c, d80Var4.f);
+                    d80 d80Var5 = (d80) this.b;
+                    d80Var5.s = currentTimeMillis;
                     float f7 = 0.0f;
-                    if (b80Var5.r == 0.0f) {
+                    if (d80Var5.r == 0.0f) {
                         for (float f10 : ((WindowManager) ApplicationLoader.applicationContext.getSystemService("window")).getDefaultDisplay().getSupportedRefreshRates()) {
                             if (f10 > f7) {
                                 f7 = f10;
                             }
                         }
-                        ((b80) this.b).r = f7;
+                        ((d80) this.b).r = f7;
                     }
                     long currentTimeMillis2 = System.currentTimeMillis() - currentTimeMillis;
-                    b80 b80Var6 = (b80) this.b;
-                    b80Var6.postRunnable(b80Var6.w, Math.max(((long) (1000.0f / b80Var6.r)) - currentTimeMillis2, 0L));
+                    d80 d80Var6 = (d80) this.b;
+                    d80Var6.postRunnable(d80Var6.w, Math.max(((long) (1000.0f / d80Var6.r)) - currentTimeMillis2, 0L));
                     break;
                 }
                 break;
@@ -166,8 +166,8 @@ public final class w5 implements Runnable {
                         launchActivity.G0(true, false, -1, -1, null);
                         try {
                             NotificationsController.getInstance(UserConfig.selectedAccount).showNotifications();
-                        } catch (Exception e10) {
-                            FileLog.e(e10);
+                        } catch (Exception e7) {
+                            FileLog.e(e7);
                         }
                     } else if (BuildVars.LOGS_ENABLED) {
                         FileLog.d("didn't pass lock check");
@@ -177,10 +177,10 @@ public final class w5 implements Runnable {
                 }
                 break;
             case 9:
-                if0 if0Var = (if0) this.b;
-                if (if0Var.h == this) {
-                    if0Var.o();
-                    AndroidUtilities.runOnUIThread(if0Var.h, 1000L);
+                kf0 kf0Var = (kf0) this.b;
+                if (kf0Var.h == this) {
+                    kf0Var.o();
+                    AndroidUtilities.runOnUIThread(kf0Var.h, 1000L);
                     break;
                 }
                 break;
@@ -196,12 +196,12 @@ public final class w5 implements Runnable {
                 }
                 break;
             case 12:
-                zv0 zv0Var = (zv0) this.b;
-                w5 w5Var = zv0Var.y0;
-                org.telegram.ui.Cells.c6 c6Var = zv0Var.b0;
+                cw0 cw0Var = (cw0) this.b;
+                w5 w5Var = cw0Var.y0;
+                org.telegram.ui.Cells.c6 c6Var = cw0Var.b0;
                 if (c6Var != null) {
                     EditTextBoldCursor editField = c6Var.getEditField();
-                    if (!zv0Var.U && editField != null && zv0Var.T && !zv0Var.Y && !AndroidUtilities.usingHardwareInput && !AndroidUtilities.isInMultiwindow && AndroidUtilities.isTablet()) {
+                    if (!cw0Var.U && editField != null && cw0Var.T && !cw0Var.Y && !AndroidUtilities.usingHardwareInput && !AndroidUtilities.isInMultiwindow && AndroidUtilities.isTablet()) {
                         editField.requestFocus();
                         AndroidUtilities.showKeyboard(editField);
                         AndroidUtilities.cancelRunOnUIThread(w5Var);
@@ -211,21 +211,21 @@ public final class w5 implements Runnable {
                 }
                 break;
             case 13:
-                ((bb1) this.b).b0.animate().alpha(1.0f).setDuration(230L);
+                ((ab1) this.b).b0.animate().alpha(1.0f).setDuration(230L);
                 break;
             case 14:
-                te1 te1Var = (te1) this.b;
-                te1Var.F.setVisibility(0);
-                te1Var.F.setAlpha(0.0f);
-                te1Var.F.animate().alpha(1.0f).start();
+                ue1 ue1Var = (ue1) this.b;
+                ue1Var.F.setVisibility(0);
+                ue1Var.F.setAlpha(0.0f);
+                ue1Var.F.animate().alpha(1.0f).start();
                 break;
             default:
-                qj1 qj1Var = (qj1) this.b;
-                MessageObject messageObject = qj1Var.n;
-                if (messageObject != null && qj1Var.getParentActivity() != null && qj1Var.s != null) {
-                    i10 = ((org.telegram.ui.ActionBar.n2) qj1Var).currentAccount;
+                oj1 oj1Var = (oj1) this.b;
+                MessageObject messageObject = oj1Var.n;
+                if (messageObject != null && oj1Var.getParentActivity() != null && oj1Var.s != null) {
+                    i10 = ((org.telegram.ui.ActionBar.o2) oj1Var).currentAccount;
                     MessagesController.getInstance(i10).sendTyping(messageObject.getDialogId(), 0L, 6, 0);
-                    AndroidUtilities.runOnUIThread(qj1Var.s, 25000L);
+                    AndroidUtilities.runOnUIThread(oj1Var.s, 25000L);
                     break;
                 }
                 break;

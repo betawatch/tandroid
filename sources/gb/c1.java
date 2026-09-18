@@ -1,6 +1,6 @@
 package gb;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public class c1 extends db.u {
     @Override // db.u
@@ -14,11 +14,11 @@ public class c1 extends db.u {
             if (p5 <= 65535 && p5 >= -32768) {
                 return Short.valueOf((short) p5);
             }
-            StringBuilder l4 = i2.g.l(p5, "Lossy conversion from ", " to short; at path ");
+            StringBuilder l4 = hg.k0.l(p5, "Lossy conversion from ", " to short; at path ");
             l4.append(aVar.j());
             throw new db.j(l4.toString());
-        } catch (NumberFormatException e7) {
-            throw new db.j(e7);
+        } catch (NumberFormatException e) {
+            throw new db.j(e);
         }
     }
 

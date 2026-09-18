@@ -4,7 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class g40 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -22,9 +22,9 @@ public final class g40 extends AnimatorListenerAdapter {
                 i40 i40Var = this.b;
                 i40Var.f = null;
                 if (!i40Var.H) {
-                    wp wpVar = new wp(this, 21);
-                    i40Var.h = wpVar;
-                    AndroidUtilities.runOnUIThread(wpVar, i40Var.n == 0 ? 10000L : 2000L);
+                    xp xpVar = new xp(this, 21);
+                    i40Var.h = xpVar;
+                    AndroidUtilities.runOnUIThread(xpVar, i40Var.n == 0 ? 10000L : 2000L);
                     break;
                 }
                 break;
@@ -32,9 +32,9 @@ public final class g40 extends AnimatorListenerAdapter {
                 i40 i40Var2 = this.b;
                 i40Var2.f = null;
                 if (!i40Var2.H) {
-                    wp wpVar2 = new wp(this, 22);
-                    i40Var2.h = wpVar2;
-                    AndroidUtilities.runOnUIThread(wpVar2, i40Var2.E);
+                    xp xpVar2 = new xp(this, 22);
+                    i40Var2.h = xpVar2;
+                    AndroidUtilities.runOnUIThread(xpVar2, i40Var2.E);
                     break;
                 }
                 break;

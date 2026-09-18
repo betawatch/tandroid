@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.WindowInsets;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public abstract class a0 {
     public static void a(WindowInsets windowInsets, View view) {
@@ -50,16 +50,16 @@ public abstract class a0 {
                     if (rect != null && rect2 != null) {
                         int i10 = Build.VERSION.SDK_INT;
                         b1 a1Var = i10 >= 34 ? new a1() : i10 >= 30 ? new z0() : i10 >= 29 ? new y0() : new x0();
-                        a1Var.e(i0.c.b(rect.left, rect.top, rect.right, rect.bottom));
-                        a1Var.g(i0.c.b(rect2.left, rect2.top, rect2.right, rect2.bottom));
+                        a1Var.e(i0.b.b(rect.left, rect.top, rect.right, rect.bottom));
+                        a1Var.g(i0.b.b(rect2.left, rect2.top, rect2.right, rect2.bottom));
                         l1 b10 = a1Var.b();
                         b10.a.r(b10);
                         b10.a.d(view.getRootView());
                         return b10;
                     }
                 }
-            } catch (IllegalAccessException e7) {
-                Log.w("WindowInsetsCompat", "Failed to get insets from AttachInfo. " + e7.getMessage(), e7);
+            } catch (IllegalAccessException e) {
+                Log.w("WindowInsetsCompat", "Failed to get insets from AttachInfo. " + e.getMessage(), e);
             }
         }
         return null;

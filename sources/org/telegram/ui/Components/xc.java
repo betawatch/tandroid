@@ -1,100 +1,79 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.R;
+import android.text.Layout;
+import android.text.SpannableString;
+import android.text.SpannableStringBuilder;
+import android.text.Spanned;
+import android.text.TextUtils;
+import android.view.MotionEvent;
+import org.telegram.messenger.AndroidUtilities;
 
-/* JADX WARN: Enum visitor error
-jadx.core.utils.exceptions.JadxRuntimeException: Init of enum field 'e' uses external variables
-	at jadx.core.dex.visitors.EnumVisitor.createEnumFieldByConstructor(EnumVisitor.java:451)
-	at jadx.core.dex.visitors.EnumVisitor.processEnumFieldByRegister(EnumVisitor.java:395)
-	at jadx.core.dex.visitors.EnumVisitor.extractEnumFieldsFromFilledArray(EnumVisitor.java:324)
-	at jadx.core.dex.visitors.EnumVisitor.extractEnumFieldsFromInsn(EnumVisitor.java:262)
-	at jadx.core.dex.visitors.EnumVisitor.convertToEnum(EnumVisitor.java:151)
-	at jadx.core.dex.visitors.EnumVisitor.visit(EnumVisitor.java:100)
- */
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class xc {
-    public static final xc E;
-    public static final xc F;
-    public static final xc G;
-    public static final xc H;
-    public static final xc I;
-    public static final /* synthetic */ xc[] J;
-    public static final xc e;
-    public static final xc f;
-    public static final xc h;
-    public static final xc n;
-    public static final xc r;
-    public static final xc s;
-    public static final xc v;
-    public static final xc w;
-    public static final xc x;
-    public static final xc y;
-    public final String a;
-    public final int b;
-    public final boolean c;
-    public final wc d;
+public class xc extends c90 {
+    public yc L;
+    public yc M;
 
-    static {
-        int i10 = R.string.PhotoSavedHint;
-        wc wcVar = wc.e;
-        xc xcVar = new xc("PHOTO", 0, "PhotoSavedHint", i10, wcVar);
-        e = xcVar;
-        xc xcVar2 = new xc("PHOTOS", 1, "PhotosSavedHint", wcVar);
-        f = xcVar2;
-        xc xcVar3 = new xc("VIDEO", 2, "VideoSavedHint", R.string.VideoSavedHint, wcVar);
-        h = xcVar3;
-        xc xcVar4 = new xc("VIDEOS", 3, "VideosSavedHint", wcVar);
-        n = xcVar4;
-        xc xcVar5 = new xc("LIVEPHOTO", 4, "LivePhotoSavedHint", R.string.LivePhotoSavedHint, wcVar);
-        r = xcVar5;
-        xc xcVar6 = new xc("LIVEPHOTOS", 5, "LivePhotosSavedHint", wcVar);
-        s = xcVar6;
-        xc xcVar7 = new xc("MEDIA", 6, "MediaSavedHint", wcVar);
-        v = xcVar7;
-        int i11 = R.string.PhotoSavedToDownloadsHintLinked;
-        wc wcVar2 = wc.d;
-        xc xcVar8 = new xc("PHOTO_TO_DOWNLOADS", 7, "PhotoSavedToDownloadsHintLinked", i11, wcVar2);
-        w = xcVar8;
-        xc xcVar9 = new xc("VIDEO_TO_DOWNLOADS", 8, "VideoSavedToDownloadsHintLinked", R.string.VideoSavedToDownloadsHintLinked, wcVar2);
-        x = xcVar9;
-        xc xcVar10 = new xc("GIF", 9, "GifSavedHint", R.string.GifSavedHint, wc.h);
-        y = xcVar10;
-        xc xcVar11 = new xc("GIF_TO_DOWNLOADS", 10, "GifSavedToDownloadsHintLinked", R.string.GifSavedToDownloadsHintLinked, wcVar2);
-        E = xcVar11;
-        int i12 = R.string.AudioSavedHint;
-        wc wcVar3 = wc.f;
-        xc xcVar12 = new xc("AUDIO", 11, "AudioSavedHint", i12, wcVar3);
-        F = xcVar12;
-        xc xcVar13 = new xc("AUDIOS", 12, "AudiosSavedHint", wcVar3);
-        G = xcVar13;
-        xc xcVar14 = new xc("UNKNOWN", 13, "FileSavedHintLinked", R.string.FileSavedHintLinked, wcVar2);
-        H = xcVar14;
-        xc xcVar15 = new xc("UNKNOWNS", 14, "FilesSavedHintLinked", wcVar2);
-        I = xcVar15;
-        J = new xc[]{xcVar, xcVar2, xcVar3, xcVar4, xcVar5, xcVar6, xcVar7, xcVar8, xcVar9, xcVar10, xcVar11, xcVar12, xcVar13, xcVar14, xcVar15};
+    @Override // android.widget.TextView, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        if (this.M == null || getMeasuredWidth() <= 0) {
+            return;
+        }
+        SpannableString spannableString = new SpannableString(" btn");
+        spannableString.setSpan(this.M, 1, spannableString.length(), 33);
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(TextUtils.ellipsize(getText(), getPaint(), (((getMeasuredWidth() - getPaddingLeft()) - getPaddingRight()) - this.M.a()) - AndroidUtilities.dp(4.0f), TextUtils.TruncateAt.END));
+        spannableStringBuilder.append((CharSequence) spannableString);
+        setText(spannableStringBuilder);
+        this.M = null;
     }
 
-    public xc(String str, int i10, String str2, int i11, wc wcVar) {
-        this.a = str2;
-        this.b = i11;
-        this.d = wcVar;
-        this.c = false;
-    }
-
-    public static xc valueOf(String str) {
-        return (xc) Enum.valueOf(xc.class, str);
-    }
-
-    public static xc[] values() {
-        return (xc[]) J.clone();
-    }
-
-    public xc(String str, int i10, String str2, wc wcVar) {
-        this.a = str2;
-        this.d = wcVar;
-        this.b = 0;
-        this.c = true;
+    @Override // org.telegram.ui.Components.c90, android.widget.TextView, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        Layout layout;
+        yc ycVar;
+        Runnable runnable;
+        yc ycVar2;
+        int action = motionEvent.getAction();
+        float x10 = motionEvent.getX() - getPaddingLeft();
+        int y3 = ((int) motionEvent.getY()) - getPaddingTop();
+        if ((getText() instanceof Spanned) && (layout = getLayout()) != null) {
+            int lineForVertical = layout.getLineForVertical(y3);
+            Spanned spanned = (Spanned) getText();
+            yc[] ycVarArr = (yc[]) spanned.getSpans(layout.getLineStart(lineForVertical), layout.getLineEnd(lineForVertical), yc.class);
+            for (int i10 = 0; i10 < ycVarArr.length; i10++) {
+                ycVar = ycVarArr[i10];
+                float primaryHorizontal = layout.getPrimaryHorizontal(spanned.getSpanStart(ycVar));
+                float primaryHorizontal2 = layout.getPrimaryHorizontal(spanned.getSpanEnd(ycVar));
+                if (primaryHorizontal2 < primaryHorizontal) {
+                    primaryHorizontal2 = primaryHorizontal;
+                    primaryHorizontal = primaryHorizontal2;
+                }
+                if (x10 >= primaryHorizontal && x10 <= primaryHorizontal2) {
+                    break;
+                }
+            }
+        }
+        ycVar = null;
+        if (action == 0) {
+            this.L = ycVar;
+            if (ycVar != null) {
+                ycVar.c(this, true);
+                return true;
+            }
+        } else if (action == 1 || action == 3) {
+            yc ycVar3 = this.L;
+            if (ycVar3 != null) {
+                ycVar3.c(this, false);
+                if (action == 1 && (runnable = this.L.d) != null) {
+                    runnable.run();
+                }
+            }
+            this.L = null;
+        } else if (action == 2 && (ycVar2 = this.L) != null && ycVar2 != ycVar) {
+            ycVar2.c(this, false);
+            this.L = null;
+        }
+        return this.L != null || super.onTouchEvent(motionEvent);
     }
 }

@@ -1,363 +1,372 @@
 package wh;
 
-import android.content.Context;
 import android.text.TextUtils;
-import android.text.style.ClickableSpan;
-import bi.o4;
+import android.util.LongSparseArray;
+import android.view.View;
+import android.widget.FrameLayout;
+import hg.o0;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
+import java.util.Collections;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.DispatchQueue;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MemberRequestsController;
 import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ActionBar.f3;
-import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.c90;
-import org.telegram.ui.Components.e90;
-import org.telegram.ui.Components.n70;
-import org.telegram.ui.Components.nr0;
-import org.telegram.ui.Components.yc;
-import org.telegram.ui.TwoStepVerificationActivity;
-import ug.n1;
-import yh.b2;
-import yh.h1;
-import yh.m2;
-import yh.t3;
-import zh.s5;
-import zh.w3;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.ActionBar.o2;
+import org.telegram.ui.Cells.e5;
+import org.telegram.ui.Cells.f5;
+import org.telegram.ui.Components.kb0;
+import org.telegram.ui.Components.ml0;
+import org.telegram.ui.Components.t00;
+import org.telegram.ui.Components.tr0;
+import org.telegram.ui.Components.zw0;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class n implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
+public abstract class n implements e5 {
+    public final boolean a;
+    public boolean b;
+    public final o2 g;
+    public final FrameLayout h;
+    public final MemberRequestsController i;
+    public final long j;
+    public final int k;
+    public final boolean l;
+    public FrameLayout m;
+    public zw0 n;
+    public zw0 o;
+    public ml0 p;
+    public t00 q;
+    public TLRPC.TL_chatInviteImporter r;
+    public m s;
+    public String t;
+    public e u;
+    public int v;
+    public boolean w;
+    public boolean y;
+    public boolean z;
+    public final ArrayList c = new ArrayList();
+    public final LongSparseArray d = new LongSparseArray();
+    public final ArrayList e = new ArrayList();
+    public final g f = new g(this);
+    public boolean x = true;
+    public boolean A = true;
+    public boolean B = true;
+    public final e C = new e(this, 0);
+    public final kb0 D = new kb0(this, 16);
 
-    public /* synthetic */ n(Object obj, Object obj2, Object obj3, int i10) {
-        this.a = i10;
-        this.b = obj;
-        this.c = obj2;
-        this.d = obj3;
+    public n(o2 o2Var, FrameLayout frameLayout, long j3, boolean z10) {
+        this.g = o2Var;
+        this.h = frameLayout;
+        this.j = j3;
+        int currentAccount = o2Var.getCurrentAccount();
+        this.k = currentAccount;
+        this.a = ChatObject.isChannelAndNotMegaGroup(j3, currentAccount);
+        this.l = z10;
+        this.i = MemberRequestsController.getInstance(currentAccount);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        boolean z10;
-        boolean z11;
+    public static void k(View view, boolean z10, boolean z11) {
+        if (view == null) {
+            return;
+        }
+        boolean z12 = view.getVisibility() == 0;
+        float f7 = z10 ? 1.0f : 0.0f;
+        if (z10 == z12 && f7 == view.getAlpha()) {
+            return;
+        }
+        if (!z11) {
+            view.setVisibility(z10 ? 0 : 4);
+            return;
+        }
+        if (z10) {
+            view.setAlpha(0.0f);
+        }
+        view.setVisibility(0);
+        view.animate().alpha(f7).setDuration(150L).start();
+    }
+
+    public final zw0 a() {
+        if (this.n == null) {
+            o2 o2Var = this.g;
+            zw0 zw0Var = new zw0(o2Var.getParentActivity(), null, 16, o2Var.getResourceProvider());
+            this.n = zw0Var;
+            boolean z10 = this.a;
+            zw0Var.d.setText(LocaleController.getString(z10 ? R.string.NoSubscribeRequests : R.string.NoMemberRequests));
+            this.n.e.setText(LocaleController.getString(z10 ? R.string.NoSubscribeRequestsDescription : R.string.NoMemberRequestsDescription));
+            this.n.setAnimateLayoutChange(true);
+            this.n.setVisibility(8);
+        }
+        return this.n;
+    }
+
+    public final t00 b() {
+        if (this.q == null) {
+            o2 o2Var = this.g;
+            t00 t00Var = new t00(o2Var.getParentActivity(), o2Var.getResourceProvider());
+            this.q = t00Var;
+            t00Var.setAlpha(0.0f);
+            if (this.B) {
+                this.q.setBackgroundColor(j6.v0(j6.d6, o2Var.getResourceProvider()));
+            }
+            this.q.f(j6.d6, j6.a7, -1);
+            this.q.setViewType(15);
+            this.q.setMemberRequestButton(this.a);
+        }
+        return this.q;
+    }
+
+    public final zw0 c() {
+        if (this.o == null) {
+            o2 o2Var = this.g;
+            zw0 zw0Var = new zw0(o2Var.getParentActivity(), null, 1, o2Var.getResourceProvider());
+            this.o = zw0Var;
+            if (this.B) {
+                zw0Var.setBackgroundColor(j6.v0(j6.d6, o2Var.getResourceProvider()));
+            }
+            this.o.d.setText(LocaleController.getString(R.string.NoResult));
+            this.o.e.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitle2));
+            this.o.setAnimateLayoutChange(true);
+            this.o.setVisibility(8);
+        }
+        return this.o;
+    }
+
+    public final void d(TLRPC.TL_chatInviteImporter tL_chatInviteImporter, boolean z10) {
+        TLRPC.User user = (TLRPC.User) this.d.get(tL_chatInviteImporter.user_id);
+        if (user == null) {
+            return;
+        }
+        TLRPC.TL_messages_hideChatJoinRequest tL_messages_hideChatJoinRequest = new TLRPC.TL_messages_hideChatJoinRequest();
+        tL_messages_hideChatJoinRequest.approved = z10;
+        int i10 = this.k;
+        tL_messages_hideChatJoinRequest.peer = MessagesController.getInstance(i10).getInputPeer(-this.j);
+        tL_messages_hideChatJoinRequest.user_id = MessagesController.getInstance(i10).getInputUser(user);
+        ConnectionsManager.getInstance(i10).sendRequest(tL_messages_hideChatJoinRequest, new o0(this, tL_chatInviteImporter, z10, user, tL_messages_hideChatJoinRequest));
+    }
+
+    public final void e() {
+        TLRPC.TL_messages_chatInviteImporters cachedImporters;
+        boolean z10 = true;
+        if (this.A && (cachedImporters = this.i.getCachedImporters(this.j)) != null) {
+            this.z = true;
+            g(cachedImporters, null, true, true);
+            z10 = false;
+        }
+        AndroidUtilities.runOnUIThread(new tr0(12, this, z10));
+    }
+
+    public void f(String str, boolean z10, boolean z11) {
         boolean z12;
-        boolean z13;
-        long j3;
-        int i10 = this.a;
-        Object obj = this.d;
-        Object obj2 = this.c;
-        Object obj3 = this.b;
-        switch (i10) {
-            case 0:
-                p pVar = (p) obj3;
-                e90 e90Var = (e90) obj2;
-                ClickableSpan clickableSpan = (ClickableSpan) obj;
-                c90 c90Var = pVar.y;
-                if (c90Var != null && pVar.E == e90Var) {
-                    c90Var.a(clickableSpan);
-                    pVar.E = null;
-                    pVar.s.d(true);
-                    break;
-                }
-                break;
-            case 1:
-                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
-                n2 n2Var = (n2) obj;
-                ((nr0) obj3).H = -1;
-                if (tL_error != null) {
-                    yc.a0(n2Var).d0(tL_error, false);
-                    break;
-                }
-                break;
-            case 2:
-                m2 m2Var = (m2) obj3;
-                TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj2;
-                nr0 nr0Var = m2Var.a;
-                nr0Var.e.k(m2Var.e.d, savedStarGift);
-                ((n70) obj).u();
-                nr0Var.n();
-                TL_stars.TL_starGiftCollection c10 = nr0Var.e.c(m2Var.e.d);
-                if (c10 != null) {
-                    yc.a0(nr0Var.a).R(savedStarGift.gift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2RemovedFromCollection, w3.D1(savedStarGift.gift), c10.title))).j();
-                    break;
-                }
-                break;
-            case 3:
-                m2 m2Var2 = (m2) obj3;
-                TL_stars.SavedStarGift savedStarGift2 = (TL_stars.SavedStarGift) obj2;
-                h1 h1Var = (h1) obj;
-                if (m2Var2.d || !savedStarGift2.pinned_to_top || savedStarGift2.unsaved) {
-                    z10 = true;
-                } else {
-                    z10 = true;
-                    h1Var.c(false, true);
-                    m2Var2.e.m(savedStarGift2, false, false);
-                }
-                savedStarGift2.unsaved ^= z10;
-                h1Var.h(savedStarGift2, z10, m2Var2.d);
-                m2Var2.a.e.m(savedStarGift2, savedStarGift2.unsaved);
-                TL_stars.saveStarGift savestargift = new TL_stars.saveStarGift();
-                savestargift.stargift = m2Var2.e.g(savedStarGift2);
-                savestargift.unsave = savedStarGift2.unsaved;
-                ConnectionsManager.getInstance(m2Var2.b).sendRequest(savestargift, null);
-                break;
-            case 4:
-                t3 t3Var = (t3) obj3;
-                TLObject tLObject = (TLObject) obj2;
-                TL_stars.getResaleStarGifts getresalestargifts = (TL_stars.getResaleStarGifts) obj;
-                HashMap hashMap = t3Var.m;
-                HashMap hashMap2 = t3Var.o;
-                HashMap hashMap3 = t3Var.n;
-                ArrayList arrayList = t3Var.h;
-                ArrayList arrayList2 = t3Var.g;
-                ArrayList arrayList3 = t3Var.f;
-                int i11 = t3Var.a;
-                ArrayList arrayList4 = t3Var.d;
-                t3Var.v = -1;
-                if (tLObject instanceof TL_stars.resaleStarGifts) {
-                    TL_stars.resaleStarGifts resalestargifts = (TL_stars.resaleStarGifts) tLObject;
-                    MessagesController.getInstance(i11).putUsers(resalestargifts.users, false);
-                    MessagesController.getInstance(i11).putChats(resalestargifts.chats, false);
-                    t3Var.e = resalestargifts.count;
-                    if (TextUtils.isEmpty(getresalestargifts.offset)) {
-                        arrayList4.clear();
-                        z11 = true;
-                    } else {
-                        z11 = false;
-                    }
-                    ArrayList<TL_stars.StarGift> arrayList5 = resalestargifts.gifts;
-                    int size = arrayList5.size();
-                    int i12 = 0;
-                    while (i12 < size) {
-                        TL_stars.StarGift starGift = arrayList5.get(i12);
-                        i12++;
-                        TL_stars.StarGift starGift2 = starGift;
-                        if (starGift2 instanceof TL_stars.TL_starGiftUnique) {
-                            arrayList4.add((TL_stars.TL_starGiftUnique) starGift2);
-                        }
-                    }
-                    t3Var.u = arrayList4.size() >= t3Var.e || TextUtils.isEmpty(resalestargifts.next_offset);
-                    t3Var.q = resalestargifts.next_offset;
-                    t3Var.t = false;
-                    ArrayList<TL_stars.StarGiftAttribute> arrayList6 = resalestargifts.attributes;
-                    if (arrayList6 != null && !arrayList6.isEmpty()) {
-                        arrayList3.clear();
-                        arrayList2.clear();
-                        arrayList.clear();
-                        arrayList3.addAll(s5.m(resalestargifts.attributes, TL_stars.starGiftAttributeModel.class));
-                        arrayList2.addAll(s5.m(resalestargifts.attributes, TL_stars.starGiftAttributeBackdrop.class));
-                        arrayList.addAll(s5.m(resalestargifts.attributes, TL_stars.starGiftAttributePattern.class));
-                        t3Var.i = resalestargifts.attributes_hash;
-                    }
-                    if (!resalestargifts.counters.isEmpty()) {
-                        hashMap3.clear();
-                        hashMap2.clear();
-                        hashMap.clear();
-                        ArrayList<TL_stars.starGiftAttributeCounter> arrayList7 = resalestargifts.counters;
-                        int size2 = arrayList7.size();
-                        int i13 = 0;
-                        while (i13 < size2) {
-                            TL_stars.starGiftAttributeCounter stargiftattributecounter = arrayList7.get(i13);
-                            i13++;
-                            TL_stars.starGiftAttributeCounter stargiftattributecounter2 = stargiftattributecounter;
-                            TL_stars.StarGiftAttributeId starGiftAttributeId = stargiftattributecounter2.attribute;
-                            if (starGiftAttributeId instanceof TL_stars.starGiftAttributeIdBackdrop) {
-                                hashMap3.put(Integer.valueOf(starGiftAttributeId.backdrop_id), Integer.valueOf(stargiftattributecounter2.count));
-                            } else if (starGiftAttributeId instanceof TL_stars.starGiftAttributeIdPattern) {
-                                hashMap2.put(Long.valueOf(starGiftAttributeId.document_id), Integer.valueOf(stargiftattributecounter2.count));
-                            } else if (starGiftAttributeId instanceof TL_stars.starGiftAttributeIdModel) {
-                                hashMap.put(Long.valueOf(starGiftAttributeId.document_id), Integer.valueOf(stargiftattributecounter2.count));
-                            }
-                        }
-                    }
-                    Utilities.Callback callback = t3Var.c;
-                    if (callback != null) {
-                        callback.run(Boolean.valueOf(z11));
-                        break;
-                    }
-                }
-                break;
-            case 5:
-                zh.g gVar = (zh.g) obj3;
-                TLObject tLObject2 = (TLObject) obj2;
-                Context context = (Context) obj;
-                if (tLObject2 instanceof TLRPC.TL_payments_starsRevenueAdsAccountUrl) {
-                    of.f.s(context, ((TLRPC.TL_payments_starsRevenueAdsAccountUrl) tLObject2).url);
-                }
-                AndroidUtilities.runOnUIThread(new zh.b(gVar, 5), 1000L);
-                break;
-            case 6:
-                zh.g.a0((zh.g) obj3, (TLObject) obj2, (TLRPC.TL_error) obj);
-                break;
-            case 7:
-                w3 w3Var = (w3) obj3;
-                Long l4 = (Long) obj2;
-                w3Var.Z1(l4.longValue(), new o4(w3Var, l4, (n1[]) obj, 10));
-                break;
-            case 8:
-                w3.k0((w3) obj3, (TLObject) obj2, (MessageObject) obj);
-                break;
-            case 9:
-                w3 w3Var2 = (w3) obj3;
-                TL_stars.TL_starGiftUnique tL_starGiftUnique = (TL_stars.TL_starGiftUnique) obj;
-                w3Var2.getClass();
-                ((of.e) obj2).c(false);
-                tL_starGiftUnique.flags &= -17;
-                tL_starGiftUnique.resale_ton_only = false;
-                tL_starGiftUnique.resell_amount = null;
-                w3Var2.e0.setResellPrice(zf.a.i(0L, zf.b.a));
-                b2 b2Var = w3Var2.d1;
-                if (b2Var != null) {
-                    b2Var.run();
-                }
-                i2.g.s(R.string.Gift2ResaleDisable, new Object[]{w3Var2.C1()}, w3Var2.getBulletinFactory(), R.raw.contact_check, 36);
-                break;
-            case 10:
-                w3 w3Var3 = (w3) obj3;
-                w3Var3.getClass();
-                ((of.e) obj2).c(false);
-                w3Var3.getBulletinFactory().d0((TLRPC.TL_error) obj, false);
-                break;
-            case 11:
-                ((n1[]) obj3)[0].dismiss();
-                ((of.e) obj2).c(false);
-                w3.d2((TwoStepVerificationActivity) obj);
-                break;
-            case 12:
-                w3.T((w3) obj3, (org.telegram.ui.ActionBar.b2) obj2, (MessageObject) obj);
-                break;
-            case 13:
-                w3.V((w3) obj3, (TL_stars.TL_starGiftUnique) obj2, (String) obj);
-                break;
-            case 14:
-                TLObject tLObject3 = (TLObject) obj3;
-                TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
-                Utilities.Callback callback2 = (Utilities.Callback) obj;
-                if (tLObject3 instanceof TLRPC.TL_payments_paymentFormStarGift) {
-                    callback2.run((TLRPC.TL_payments_paymentFormStarGift) tLObject3);
-                    break;
-                } else {
-                    s5.e(tL_error2 == null ? "NO_PAYMENT_FORM" : tL_error2.text);
-                    callback2.run(null);
-                    break;
-                }
-            case 15:
-                s5 s5Var = (s5) obj3;
-                TLObject tLObject4 = (TLObject) obj2;
-                Runnable runnable = (Runnable) obj;
-                ArrayList arrayList8 = s5Var.v;
-                boolean[] zArr = s5Var.r;
-                ArrayList[] arrayListArr = s5Var.q;
-                int i14 = s5Var.a;
-                boolean z14 = !s5Var.e;
-                s5Var.c = System.currentTimeMillis();
-                if (tLObject4 instanceof TL_stars.StarsStatus) {
-                    TL_stars.StarsStatus starsStatus = (TL_stars.StarsStatus) tLObject4;
-                    MessagesController.getInstance(i14).putUsers(starsStatus.users, false);
-                    MessagesController.getInstance(i14).putChats(starsStatus.chats, false);
-                    if (arrayListArr[0].isEmpty()) {
-                        ArrayList<TL_stars.StarsTransaction> arrayList9 = starsStatus.history;
-                        int size3 = arrayList9.size();
-                        int i15 = 0;
-                        while (i15 < size3) {
-                            TL_stars.StarsTransaction starsTransaction = arrayList9.get(i15);
-                            i15++;
-                            TL_stars.StarsTransaction starsTransaction2 = starsTransaction;
-                            arrayListArr[0].add(starsTransaction2);
-                            arrayListArr[starsTransaction2.amount.amount > 0 ? (char) 1 : (char) 2].add(starsTransaction2);
-                        }
-                        j3 = 0;
-                        for (int i16 = 0; i16 < 3; i16++) {
-                            zArr[i16] = !arrayListArr[i16].isEmpty() || zArr[i16];
-                            boolean[] zArr2 = s5Var.u;
-                            boolean z15 = (starsStatus.flags & 1) == 0;
-                            zArr2[i16] = z15;
-                            if (z15) {
-                                s5Var.t[i16] = false;
-                            }
-                            s5Var.s[i16] = zArr2[i16] ? null : starsStatus.next_offset;
-                        }
-                        z13 = true;
-                    } else {
-                        j3 = 0;
-                        z13 = false;
-                    }
-                    if (arrayList8.isEmpty()) {
-                        arrayList8.addAll(starsStatus.subscriptions);
-                        s5Var.x = false;
-                        s5Var.w = starsStatus.subscriptions_next_offset;
-                        s5Var.y = (starsStatus.flags & 4) == 0;
-                        z12 = true;
-                    } else {
-                        z12 = false;
-                    }
-                    long j10 = s5Var.f.amount;
-                    TL_stars.StarsAmount starsAmount = starsStatus.balance;
-                    if (j10 != starsAmount.amount) {
-                        z14 = true;
-                    }
-                    s5Var.f = starsAmount;
-                    s5Var.g = j3;
-                } else {
-                    z12 = false;
-                    z13 = false;
-                }
-                s5Var.d = false;
-                s5Var.e = true;
-                if (z14) {
-                    NotificationCenter.getInstance(i14).lambda$postNotificationNameOnUIThread$1(NotificationCenter.starBalanceUpdated, new Object[0]);
-                }
-                if (z13) {
-                    NotificationCenter.getInstance(i14).lambda$postNotificationNameOnUIThread$1(NotificationCenter.starTransactionsLoaded, new Object[0]);
-                }
-                if (z12) {
-                    NotificationCenter.getInstance(i14).lambda$postNotificationNameOnUIThread$1(NotificationCenter.starSubscriptionsLoaded, new Object[0]);
-                }
-                if (runnable != null) {
-                    runnable.run();
-                    break;
-                }
-                break;
-            case 16:
-                s5 s5Var2 = (s5) obj3;
-                Runnable runnable2 = (Runnable) obj;
-                s5Var2.getClass();
-                Iterator it = ((HashSet) obj2).iterator();
-                while (it.hasNext()) {
-                    Integer num = (Integer) it.next();
-                    num.intValue();
-                    s5Var2.Q.remove(num);
-                    s5Var2.R.remove(num);
-                }
-                runnable2.run();
-                break;
-            default:
-                ((boolean[]) obj3)[0] = false;
-                AndroidUtilities.hideKeyboard((EditTextBoldCursor) obj2);
-                ((f3[]) obj)[0].dismiss();
-                break;
+        boolean isEmpty = TextUtils.isEmpty(str);
+        ArrayList arrayList = this.e;
+        if (isEmpty) {
+            z12 = !arrayList.isEmpty() || z10;
+            zw0 zw0Var = this.n;
+            if (zw0Var != null) {
+                zw0Var.setVisibility(z12 ? 4 : 0);
+            }
+            zw0 zw0Var2 = this.o;
+            if (zw0Var2 != null) {
+                zw0Var2.setVisibility(4);
+            }
+        } else {
+            z12 = !this.c.isEmpty() || z10;
+            zw0 zw0Var3 = this.n;
+            if (zw0Var3 != null) {
+                zw0Var3.setVisibility(4);
+            }
+            zw0 zw0Var4 = this.o;
+            if (zw0Var4 != null) {
+                zw0Var4.setVisibility(z12 ? 4 : 0);
+            }
+        }
+        k(this.p, z12, true);
+        if (arrayList.isEmpty()) {
+            zw0 zw0Var5 = this.n;
+            if (zw0Var5 != null) {
+                zw0Var5.setVisibility(0);
+            }
+            zw0 zw0Var6 = this.o;
+            if (zw0Var6 != null) {
+                zw0Var6.setVisibility(4);
+            }
+            k(this.q, false, false);
+            if (this.y && this.l) {
+                this.g.getActionBar().n().j(true);
+            }
         }
     }
 
-    public /* synthetic */ n(Object obj, Object obj2, Object obj3, Object obj4, int i10) {
-        this.a = i10;
-        this.b = obj2;
-        this.c = obj3;
-        this.d = obj4;
+    /* JADX WARN: Removed duplicated region for block: B:28:0x0109  */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x011d  */
+    /* JADX WARN: Removed duplicated region for block: B:42:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x010b  */
+    /* JADX WARN: Removed duplicated region for block: B:53:0x0058  */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x0070  */
+    /* JADX WARN: Removed duplicated region for block: B:73:0x00b9  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void g(TLRPC.TL_messages_chatInviteImporters tL_messages_chatInviteImporters, String str, boolean z10, boolean z11) {
+        boolean z12;
+        ArrayList<TLRPC.TL_chatInviteImporter> arrayList;
+        int i10;
+        boolean z13;
+        ArrayList arrayList2 = this.c;
+        boolean z14 = !arrayList2.isEmpty() && this.x;
+        for (int i11 = 0; i11 < tL_messages_chatInviteImporters.users.size(); i11++) {
+            TLRPC.User user = tL_messages_chatInviteImporters.users.get(i11);
+            this.d.put(user.id, user);
+        }
+        g gVar = this.f;
+        if (z10) {
+            gVar.E(tL_messages_chatInviteImporters.importers);
+        } else {
+            if (tL_messages_chatInviteImporters.importers.size() > 0) {
+                if (tL_messages_chatInviteImporters.importers.size() + arrayList2.size() < tL_messages_chatInviteImporters.count) {
+                    z12 = true;
+                    if (z12) {
+                        gVar.u(arrayList2.size() + (!this.B ? 1 : 0));
+                    }
+                    arrayList = tL_messages_chatInviteImporters.importers;
+                    n nVar = gVar.c;
+                    ArrayList arrayList3 = nVar.c;
+                    i10 = 0;
+                    while (i10 < arrayList.size()) {
+                        long j3 = arrayList.get(i10).user_id;
+                        int i12 = 0;
+                        while (true) {
+                            if (i12 >= arrayList3.size()) {
+                                break;
+                            }
+                            if (((TLRPC.TL_chatInviteImporter) arrayList3.get(i12)).user_id == j3) {
+                                arrayList.remove(i10);
+                                i10--;
+                                break;
+                            }
+                            i12++;
+                        }
+                        i10++;
+                    }
+                    arrayList3.addAll(arrayList);
+                    gVar.s((arrayList3.size() + (!nVar.B ? 1 : 0)) - arrayList.size(), arrayList.size());
+                    if (z12) {
+                        gVar.o(arrayList2.size() + (!this.B ? 1 : 0));
+                    }
+                }
+            }
+            z12 = false;
+            if (z12) {
+            }
+            arrayList = tL_messages_chatInviteImporters.importers;
+            n nVar2 = gVar.c;
+            ArrayList arrayList32 = nVar2.c;
+            i10 = 0;
+            while (i10 < arrayList.size()) {
+            }
+            arrayList32.addAll(arrayList);
+            gVar.s((arrayList32.size() + (!nVar2.B ? 1 : 0)) - arrayList.size(), arrayList.size());
+            if (z12) {
+            }
+        }
+        if (TextUtils.isEmpty(str)) {
+            ArrayList arrayList4 = this.e;
+            if (z10) {
+                arrayList4.clear();
+            }
+            arrayList4.addAll(tL_messages_chatInviteImporters.importers);
+            if (this.l) {
+                z13 = false;
+                this.g.getActionBar().n().k(0).setVisibility(arrayList4.isEmpty() ? 8 : 0);
+                f(str, z11, z13);
+                this.x = arrayList2.size() >= tL_messages_chatInviteImporters.count;
+                if (z14 == (arrayList2.isEmpty() && this.x)) {
+                    if (this.x) {
+                        gVar.o(gVar.h() - 1);
+                        return;
+                    } else {
+                        gVar.u(gVar.h());
+                        return;
+                    }
+                }
+                return;
+            }
+        }
+        z13 = false;
+        f(str, z11, z13);
+        this.x = arrayList2.size() >= tL_messages_chatInviteImporters.count;
+        if (z14 == (arrayList2.isEmpty() && this.x)) {
+        }
+    }
+
+    public final void h(View view) {
+        if (view instanceof f5) {
+            if (this.y) {
+                AndroidUtilities.hideKeyboard(this.g.getParentActivity().getCurrentFocus());
+            }
+            AndroidUtilities.runOnUIThread(new uh.i(2, this, (f5) view), this.y ? 100L : 0L);
+        }
+    }
+
+    public final void i(boolean z10) {
+        int i10;
+        ml0 ml0Var = this.p;
+        if (ml0Var == null || (i10 = !this.f.c.B ? 1 : 0) < 0 || i10 >= ml0Var.getChildCount()) {
+            return;
+        }
+        this.p.getChildAt(i10).setEnabled(z10);
+    }
+
+    public final void j(String str) {
+        if (this.u != null) {
+            Utilities.searchQueue.cancelRunnable(this.u);
+            this.u = null;
+        }
+        if (this.v != 0) {
+            ConnectionsManager.getInstance(this.k).cancelRequest(this.v, false);
+            this.v = 0;
+        }
+        this.t = str;
+        if (this.z && this.e.isEmpty()) {
+            k(this.q, false, false);
+            return;
+        }
+        if (TextUtils.isEmpty(str)) {
+            this.f.E(this.e);
+            k(this.p, true, true);
+            k(this.q, false, false);
+            zw0 zw0Var = this.o;
+            if (zw0Var != null) {
+                zw0Var.setVisibility(4);
+            }
+            if (str == null && this.l) {
+                this.g.getActionBar().n().k(0).setVisibility(this.e.isEmpty() ? 8 : 0);
+            }
+        } else {
+            this.f.E(Collections.EMPTY_LIST);
+            k(this.p, false, false);
+            k(this.q, true, true);
+            DispatchQueue dispatchQueue = Utilities.searchQueue;
+            e eVar = new e(this, 2);
+            this.u = eVar;
+            dispatchQueue.postRunnable(eVar, 300L);
+        }
+        if (str != null) {
+            zw0 zw0Var2 = this.n;
+            if (zw0Var2 != null) {
+                zw0Var2.setVisibility(4);
+            }
+            zw0 zw0Var3 = this.o;
+            if (zw0Var3 != null) {
+                zw0Var3.setVisibility(4);
+            }
+        }
     }
 }

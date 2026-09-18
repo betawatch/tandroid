@@ -1,161 +1,163 @@
 package lg;
 
 import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.Typeface;
-import android.graphics.drawable.Drawable;
-import android.text.TextPaint;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import com.google.android.gms.internal.vision.e2;
-import di.g4;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import android.os.SystemClock;
+import android.view.MotionEvent;
+import android.view.ScaleGestureDetector;
+import android.view.VelocityTracker;
+import android.view.ViewConfiguration;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.j6;
-import w7.x5;
+import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public class c extends FrameLayout {
-    public final TextView a;
-    public final TextView b;
-    public final TextView c;
-    public final TextView d;
-    public boolean e;
-    public boolean f;
-    public final Drawable h;
-    public final int n;
-    public final f6 r;
+public final class c {
+    public final ScaleGestureDetector a;
+    public p b;
+    public float c;
+    public float d;
+    public final float f;
+    public VelocityTracker g;
+    public boolean h;
+    public long k;
+    public boolean l;
+    public final float e = AndroidUtilities.dp(1.0f);
+    public int i = -1;
+    public int j = 0;
 
-    public c(Context context, f6 f6Var) {
-        super(context);
-        this.e = true;
-        new SimpleDateFormat("d MMM yyyy");
-        this.r = f6Var;
-        TextPaint textPaint = new TextPaint();
-        textPaint.setTextSize(14.0f);
-        textPaint.setTypeface(AndroidUtilities.bold());
-        int measureText = (int) textPaint.measureText("00 MMM 0000 - 00 MMM 000");
-        this.n = measureText;
-        TextView textView = new TextView(context);
-        this.a = textView;
-        e2.m(15.0f, 1, textView);
-        addView(textView, x5.d(-2, -2.0f, 8388627, 16.0f, 0.0f, measureText, 0.0f));
-        TextView textView2 = new TextView(context);
-        this.d = textView2;
-        textView2.setTextSize(1, 15.0f);
-        textView2.setTypeface(Typeface.DEFAULT_BOLD);
-        textView2.setGravity(8388627);
-        addView(textView2, x5.d(-2, -2.0f, 8388627, 8.0f, 0.0f, 8.0f, 0.0f));
-        TextView textView3 = new TextView(context);
-        this.b = textView3;
-        textView3.setTextSize(1, 13.0f);
-        textView3.setTypeface(AndroidUtilities.bold());
-        textView3.setGravity(8388629);
-        addView(textView3, x5.d(-2, -2.0f, 8388629, 16.0f, 0.0f, 16.0f, 0.0f));
-        TextView textView4 = new TextView(context);
-        this.c = textView4;
-        textView4.setTextSize(1, 13.0f);
-        textView4.setTypeface(AndroidUtilities.bold());
-        textView4.setGravity(8388629);
-        addView(textView4, x5.d(-2, -2.0f, 8388629, 16.0f, 0.0f, 16.0f, 0.0f));
-        textView4.setVisibility(8);
-        textView2.setVisibility(8);
-        textView2.setText(LocaleController.getString(R.string.ZoomOut));
-        Drawable drawable = getContext().getDrawable(R.drawable.msg_zoomout_stats);
-        this.h = drawable;
-        textView2.setCompoundDrawablesWithIntrinsicBounds(drawable, (Drawable) null, (Drawable) null, (Drawable) null);
-        textView2.setCompoundDrawablePadding(AndroidUtilities.dp(4.0f));
-        textView2.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(4.0f));
-        textView2.setBackground(j6.G0(AndroidUtilities.dp(3.0f), j6.v0(j6.Rh, f6Var)));
-        textView4.addOnLayoutChangeListener(new g4(this, 1));
-        a();
+    public c(Context context) {
+        this.f = ViewConfiguration.get(context).getScaledMinimumFlingVelocity();
+        this.a = new ScaleGestureDetector(context, new b(this, 0));
     }
 
-    public final void a() {
-        int i10 = j6.j5;
-        f6 f6Var = this.r;
-        this.a.setTextColor(j6.v0(i10, f6Var));
-        this.b.setTextColor(j6.v0(i10, f6Var));
-        this.c.setTextColor(j6.v0(i10, f6Var));
-        int i11 = j6.fj;
-        this.d.setTextColor(j6.v0(i11, f6Var));
-        this.h.setColorFilter(j6.v0(i11, f6Var), PorterDuff.Mode.SRC_IN);
-    }
-
-    public final void b(long j3, long j10) {
-        String format;
-        boolean z10 = this.e;
-        TextView textView = this.b;
-        if (!z10) {
-            textView.setVisibility(8);
-            this.c.setVisibility(8);
+    public final void a(MotionEvent motionEvent) {
+        float x10;
+        float y3;
+        float x11;
+        float y10;
+        float x12;
+        float y11;
+        o oVar;
+        this.a.onTouchEvent(motionEvent);
+        int action = motionEvent.getAction() & 255;
+        if (action == 0) {
+            this.i = motionEvent.getPointerId(0);
+            this.k = SystemClock.elapsedRealtime();
+        } else if (action == 1 || action == 3) {
+            if (!this.h && SystemClock.elapsedRealtime() - this.k < 800 && (oVar = this.b.M) != null) {
+                oVar.k0();
+            }
+            this.i = -1;
+        } else if (action == 6) {
+            int action2 = (65280 & motionEvent.getAction()) >> 8;
+            if (motionEvent.getPointerId(action2) == this.i) {
+                int i10 = action2 == 0 ? 1 : 0;
+                this.i = motionEvent.getPointerId(i10);
+                this.c = motionEvent.getX(i10);
+                this.d = motionEvent.getY(i10);
+            }
+        }
+        int i11 = this.i;
+        if (i11 == -1) {
+            i11 = 0;
+        }
+        this.j = motionEvent.findPointerIndex(i11);
+        int action3 = motionEvent.getAction();
+        if (action3 != 0) {
+            if (action3 == 1) {
+                if (this.h) {
+                    if (this.g != null) {
+                        try {
+                            x12 = motionEvent.getX(this.j);
+                        } catch (Exception unused) {
+                            x12 = motionEvent.getX();
+                        }
+                        this.c = x12;
+                        try {
+                            y11 = motionEvent.getY(this.j);
+                        } catch (Exception unused2) {
+                            y11 = motionEvent.getY();
+                        }
+                        this.d = y11;
+                        this.g.addMovement(motionEvent);
+                        this.g.computeCurrentVelocity(MediaDataController.MAX_STYLE_RUNS_COUNT);
+                        if (Math.max(Math.abs(this.g.getXVelocity()), Math.abs(this.g.getYVelocity())) >= this.f) {
+                            this.b.getClass();
+                        }
+                    }
+                    this.h = false;
+                }
+                VelocityTracker velocityTracker = this.g;
+                if (velocityTracker != null) {
+                    velocityTracker.recycle();
+                    this.g = null;
+                }
+                this.l = false;
+                return;
+            }
+            if (action3 != 2) {
+                if (action3 != 3) {
+                    return;
+                }
+                VelocityTracker velocityTracker2 = this.g;
+                if (velocityTracker2 != null) {
+                    velocityTracker2.recycle();
+                    this.g = null;
+                }
+                this.l = false;
+                this.h = false;
+                return;
+            }
+        }
+        if (!this.l) {
+            VelocityTracker obtain = VelocityTracker.obtain();
+            this.g = obtain;
+            if (obtain != null) {
+                obtain.addMovement(motionEvent);
+            }
+            try {
+                x11 = motionEvent.getX(this.j);
+            } catch (Exception unused3) {
+                x11 = motionEvent.getX();
+            }
+            this.c = x11;
+            try {
+                y10 = motionEvent.getY(this.j);
+            } catch (Exception unused4) {
+                y10 = motionEvent.getY();
+            }
+            this.d = y10;
+            this.h = false;
+            this.l = true;
             return;
         }
-        if (this.f) {
-            j10 += 604800000;
+        try {
+            x10 = motionEvent.getX(this.j);
+        } catch (Exception unused5) {
+            x10 = motionEvent.getX();
         }
-        if (j10 - j3 >= 86400000) {
-            format = LocaleController.getInstance().getFormatterYear().format(new Date(j3)) + " — " + LocaleController.getInstance().getFormatterYear().format(new Date(j10));
-        } else {
-            format = LocaleController.getInstance().getFormatterYear().format(new Date(j3));
+        try {
+            y3 = motionEvent.getY(this.j);
+        } catch (Exception unused6) {
+            y3 = motionEvent.getY();
         }
-        textView.setText(format);
-        textView.setVisibility(0);
-    }
-
-    public final void c(boolean z10) {
-        this.e = z10;
-        TextView textView = this.a;
-        if (z10) {
-            textView.setLayoutParams(x5.d(-2, -2.0f, 8388627, 16.0f, 0.0f, this.n, 0.0f));
-            return;
+        float f7 = x10 - this.c;
+        float f10 = y3 - this.d;
+        if (!this.h) {
+            this.h = ((float) Math.sqrt((double) ((f10 * f10) + (f7 * f7)))) >= this.e;
         }
-        this.c.setVisibility(8);
-        this.b.setVisibility(8);
-        textView.setLayoutParams(x5.d(-2, -2.0f, 8388627, 16.0f, 0.0f, 16.0f, 0.0f));
-        textView.requestLayout();
-    }
-
-    public final void d(long j3, boolean z10) {
-        b(j3, j3);
-        TextView textView = this.d;
-        textView.setVisibility(0);
-        TextView textView2 = this.a;
-        if (!z10) {
-            textView.setAlpha(1.0f);
-            textView.setTranslationX(0.0f);
-            textView.setTranslationY(0.0f);
-            textView.setScaleX(1.0f);
-            textView.setScaleY(1.0f);
-            textView2.setAlpha(0.0f);
-            return;
+        if (this.h) {
+            p pVar = this.b;
+            if (!pVar.F) {
+                n.f(pVar.L, f7, f10);
+                pVar.r(false);
+            }
+            this.c = x10;
+            this.d = y3;
+            VelocityTracker velocityTracker3 = this.g;
+            if (velocityTracker3 != null) {
+                velocityTracker3.addMovement(motionEvent);
+            }
         }
-        textView.setAlpha(0.0f);
-        textView.setScaleX(0.3f);
-        textView.setScaleY(0.3f);
-        textView.setPivotX(0.0f);
-        textView.setPivotY(AndroidUtilities.dp(40.0f));
-        textView.animate().alpha(1.0f).scaleY(1.0f).scaleX(1.0f).setDuration(200L).start();
-        textView2.setAlpha(1.0f);
-        textView2.setTranslationX(0.0f);
-        textView2.setTranslationY(0.0f);
-        textView2.setScaleX(1.0f);
-        textView2.setScaleY(1.0f);
-        textView2.setPivotX(0.0f);
-        textView2.setPivotY(0.0f);
-        textView2.animate().alpha(0.0f).scaleY(0.3f).scaleX(0.3f).setDuration(200L).start();
-    }
-
-    public void setTitle(String str) {
-        this.a.setText(str);
-    }
-
-    public void setUseWeekInterval(boolean z10) {
-        this.f = z10;
     }
 }

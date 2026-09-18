@@ -1,46 +1,17 @@
 package org.telegram.ui;
 
-import android.text.Editable;
-import android.text.TextWatcher;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class q70 implements TextWatcher {
-    public final /* synthetic */ r70 a;
+public final class q70 {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ TLRPC.TL_messages_stickerSet b;
+    public final /* synthetic */ v70 c;
 
-    public q70(r70 r70Var) {
-        this.a = r70Var;
-    }
-
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        String trim = editable.toString().trim();
-        r70 r70Var = this.a;
-        u70 u70Var = r70Var.h;
-        if (r70Var.c != 0) {
-            u70Var.getConnectionsManager().cancelRequest(r70Var.c, true);
-            r70Var.c = 0;
-        }
-        yt ytVar = r70Var.d;
-        if (ytVar != null) {
-            AndroidUtilities.cancelRunOnUIThread(ytVar);
-        }
-        r70Var.e = null;
-        if (trim.isEmpty()) {
-            u70.a0(u70Var, null);
-            return;
-        }
-        yt ytVar2 = new yt(26, this, trim);
-        r70Var.d = ytVar2;
-        AndroidUtilities.runOnUIThread(ytVar2, 300L);
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    public q70(v70 v70Var, boolean z10, TLRPC.TL_messages_stickerSet tL_messages_stickerSet) {
+        this.c = v70Var;
+        this.a = z10;
+        this.b = tL_messages_stickerSet;
     }
 }

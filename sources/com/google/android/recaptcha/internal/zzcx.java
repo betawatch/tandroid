@@ -8,7 +8,7 @@ import rd.l;
 import v7.t7;
 import zd.e0;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class zzcx {
     public static final zzcx zza = new zzcx();
@@ -201,7 +201,7 @@ public final class zzcx {
         l lVar5;
         long j13;
         double d11;
-        Exception e7;
+        Exception e;
         if (cVar instanceof zzcv) {
             zzcvVar = (zzcv) cVar;
             int i11 = zzcvVar.zzh;
@@ -245,15 +245,15 @@ public final class zzcx {
                         d10 = d11;
                         j12 = j14;
                         try {
-                        } catch (Exception e10) {
-                            e7 = e10;
+                        } catch (Exception e7) {
+                            e = e7;
                             zzcv zzcvVar3 = zzcvVar2;
                             lVar5 = lVar4;
                             zzcvVar = zzcvVar3;
                             double d12 = d10;
                             j13 = j12;
                             d11 = d12;
-                            if (((Boolean) lVar5.invoke(e7)).booleanValue()) {
+                            if (((Boolean) lVar5.invoke(e)).booleanValue()) {
                             }
                         }
                         zzcvVar2.zza = lVar4;
@@ -273,10 +273,10 @@ public final class zzcx {
                     try {
                         t7.b(obj);
                         return obj;
-                    } catch (Exception e11) {
-                        e7 = e11;
-                        if (((Boolean) lVar5.invoke(e7)).booleanValue()) {
-                            throw e7;
+                    } catch (Exception e10) {
+                        e = e10;
+                        if (((Boolean) lVar5.invoke(e)).booleanValue()) {
+                            throw e;
                         }
                         j11 = (long) (j11 * d11);
                         if (j11 > j13) {

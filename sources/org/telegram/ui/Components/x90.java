@@ -1,21 +1,48 @@
 package org.telegram.ui.Components;
 
-import android.view.accessibility.AccessibilityNodeInfo;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import android.view.View;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class x90 extends org.telegram.ui.n01 {
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        if (!getImageReceiver().hasNotThumb()) {
-            accessibilityNodeInfo.setVisibleToUser(false);
-            return;
-        }
-        accessibilityNodeInfo.setText(LocaleController.getString(R.string.AccDescrProfilePicture));
-        accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(16, LocaleController.getString(R.string.Open)));
-        accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(32, LocaleController.getString(R.string.AccDescrOpenInPhotoViewer)));
+public final class x90 implements lt0 {
+    public final /* synthetic */ ba0 a;
+
+    public x90(ba0 ba0Var) {
+        this.a = ba0Var;
+    }
+
+    @Override // org.telegram.ui.Components.lt0
+    public final void R() {
+        this.a.a0();
+    }
+
+    @Override // org.telegram.ui.Components.lt0
+    public final boolean T() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.lt0
+    public final ml0 f() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.Components.lt0
+    public final TLRPC.Chat g() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.Components.lt0
+    public final boolean h(TLRPC.ChatParticipant chatParticipant, boolean z10, boolean z11, View view) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.lt0
+    public final boolean p() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.lt0
+    public final void E() {
     }
 }

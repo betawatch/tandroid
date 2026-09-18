@@ -1,77 +1,21 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.view.ViewTreeObserver;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class df extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ ChatActivityEnterView c;
+public final class df implements ViewTreeObserver.OnDrawListener {
+    public final /* synthetic */ gv0 a;
+    public final /* synthetic */ vo0 b;
 
-    public /* synthetic */ df(ChatActivityEnterView chatActivityEnterView, boolean z10, int i10) {
-        this.a = i10;
-        this.c = chatActivityEnterView;
-        this.b = z10;
+    public df(gv0 gv0Var, vo0 vo0Var) {
+        this.a = gv0Var;
+        this.b = vo0Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationCancel(Animator animator) {
-        switch (this.a) {
-            case 1:
-                ChatActivityEnterView chatActivityEnterView = this.c;
-                if (animator.equals(chatActivityEnterView.r2)) {
-                    chatActivityEnterView.r2 = null;
-                    break;
-                }
-                break;
-            default:
-                super.onAnimationCancel(animator);
-                break;
-        }
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        af afVar;
-        switch (this.a) {
-            case 0:
-                ChatActivityEnterView chatActivityEnterView = this.c;
-                if (chatActivityEnterView.k5) {
-                    chatActivityEnterView.v1.setVisibility(this.b ? 0 : 8);
-                    break;
-                }
-                break;
-            case 1:
-                ChatActivityEnterView chatActivityEnterView2 = this.c;
-                if (animator.equals(chatActivityEnterView2.r2)) {
-                    chatActivityEnterView2.o1.setVisibility(8);
-                    if (this.b && (afVar = chatActivityEnterView2.I1) != null) {
-                        afVar.setVisibility(8);
-                    }
-                    chatActivityEnterView2.r2 = null;
-                    break;
-                }
-                break;
-            case 2:
-                ChatActivityEnterView chatActivityEnterView3 = this.c;
-                chatActivityEnterView3.L1 = null;
-                if (!this.b) {
-                    chatActivityEnterView3.I1.setVisibility(8);
-                    break;
-                }
-                break;
-            default:
-                float f7 = this.b ? 1.0f : 0.0f;
-                ChatActivityEnterView chatActivityEnterView4 = this.c;
-                chatActivityEnterView4.w0 = f7;
-                eg egVar = chatActivityEnterView4.U0;
-                if (egVar != null) {
-                    egVar.a0();
-                    break;
-                }
-                break;
-        }
+    @Override // android.view.ViewTreeObserver.OnDrawListener
+    public final void onDraw() {
+        gv0 gv0Var = this.a;
+        gv0Var.post(new org.telegram.ui.ActionBar.q(this, gv0Var, this.b, 8));
     }
 }

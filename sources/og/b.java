@@ -1,32 +1,22 @@
 package og;
 
-import org.telegram.ui.co;
-import org.telegram.ui.eg1;
+import gg.g;
+import java.util.ArrayList;
+import org.telegram.ui.Components.ll0;
+import s4.o;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class b implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ co b;
+public abstract class b extends ll0 {
+    public final g c = new g();
 
-    public /* synthetic */ b(co coVar, int i10) {
-        this.a = i10;
-        this.b = coVar;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                co coVar = this.b;
-                if (coVar.getParentLayout() != null) {
-                    eg1.I0(coVar);
-                    break;
-                }
-                break;
-            default:
-                this.b.Yb();
-                break;
+    public final void E(ArrayList arrayList, ArrayList arrayList2) {
+        if (arrayList2 == null) {
+            arrayList2 = new ArrayList();
         }
+        g gVar = this.c;
+        gVar.c = arrayList;
+        gVar.d = arrayList2;
+        o.c(gVar, true).b(this);
     }
 }

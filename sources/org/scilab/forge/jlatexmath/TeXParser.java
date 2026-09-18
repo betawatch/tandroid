@@ -2,14 +2,14 @@ package org.scilab.forge.jlatexmath;
 
 import a4.a;
 import com.google.android.gms.internal.vision.e2;
-import i2.g;
+import hg.k0;
 import java.lang.Character;
 import java.util.HashSet;
 import java.util.Set;
 import org.scilab.forge.jlatexmath.TeXFormula;
 import ru.noties.jlatexmath.awt.Color;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public class TeXParser {
     private static final char BACKPRIME = 8245;
@@ -197,9 +197,9 @@ public class TeXParser {
                     if ("newcommand".equals(command) || "renewcommand".equals(command)) {
                         try {
                             MacroInfo.Commands.get(command).invoke(this, getOptsArgs(2, 2));
-                        } catch (ParseException e7) {
+                        } catch (ParseException e) {
                             if (!this.isPartial) {
-                                throw e7;
+                                throw e;
                             }
                         }
                         this.parseString.delete(i14, this.pos);
@@ -220,9 +220,9 @@ public class TeXParser {
                         optsArgs[0] = command;
                         try {
                             this.parseString.replace(i14, this.pos, (String) macroInfo.invoke(this, optsArgs));
-                        } catch (ParseException e10) {
+                        } catch (ParseException e7) {
                             if (!this.isPartial) {
-                                throw e10;
+                                throw e7;
                             }
                             i14 += command.length() + 1;
                         }
@@ -251,9 +251,9 @@ public class TeXParser {
                                 this.parseString.replace(i14, this.pos, str + "{" + group + "}\\makeatother}");
                                 this.len = this.parseString.length();
                                 this.pos = i14;
-                            } catch (ParseException e11) {
+                            } catch (ParseException e10) {
                                 if (!this.isPartial) {
-                                    throw e11;
+                                    throw e10;
                                 }
                             }
                         } else if (!this.isPartial) {
@@ -749,8 +749,8 @@ public class TeXParser {
             }
             try {
                 return SymbolAtom.get(str2);
-            } catch (SymbolNotFoundException e7) {
-                throw new ParseException("The character '" + Character.toString(convertToRomanNumber) + "' was mapped to an unknown symbol with the name '" + str2 + "'!", e7);
+            } catch (SymbolNotFoundException e) {
+                throw new ParseException("The character '" + Character.toString(convertToRomanNumber) + "' was mapped to an unknown symbol with the name '" + str2 + "'!", e);
             }
         }
         Character.UnicodeBlock unicodeBlock = Character.UnicodeBlock.BASIC_LATIN;
@@ -758,7 +758,7 @@ public class TeXParser {
         TeXFormula.FontInfos externalFont = (!(equals && TeXFormula.isRegisteredBlock(unicodeBlock)) && equals) ? null : TeXFormula.getExternalFont(of2);
         if (externalFont == null) {
             if (this.isPartial) {
-                return new ColorAtom(new RomanAtom(new TeXFormula(g.j(convertToRomanNumber, "\\text{(Unknown char ", ")}")).root), (Color) null, Color.RED);
+                return new ColorAtom(new RomanAtom(new TeXFormula(k0.j(convertToRomanNumber, "\\text{(Unknown char ", ")}")).root), (Color) null, Color.RED);
             }
             throw new ParseException("Unknown character : '" + Character.toString(convertToRomanNumber) + "' (or " + ((int) convertToRomanNumber) + ")");
         }

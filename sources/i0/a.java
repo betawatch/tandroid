@@ -2,8 +2,9 @@ package i0;
 
 import android.graphics.Color;
 import com.google.android.gms.internal.vision.e2;
+import hg.k0;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public abstract class a {
     public static final ThreadLocal a = new ThreadLocal();
@@ -166,7 +167,7 @@ public abstract class a {
         if (i14 == 0) {
             return 0;
         }
-        return e2.w(255, i11, i12 * i13, (i10 * 255) * i11) / (i14 * 255);
+        return k0.g(255, i11, i12 * i13, (i10 * 255) * i11) / (i14 * 255);
     }
 
     public static int j(int i10) {

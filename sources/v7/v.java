@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public abstract class v {
     /* JADX WARN: Removed duplicated region for block: B:19:0x007f  */
@@ -21,13 +21,13 @@ public abstract class v {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static androidx.emoji2.text.r a(Context context) {
+    public static androidx.emoji2.text.q a(Context context) {
         ProviderInfo providerInfo;
         o0.e eVar;
         ApplicationInfo applicationInfo;
-        rb.a cVar = Build.VERSION.SDK_INT >= 28 ? new androidx.emoji2.text.c(2) : new rb.a(2);
+        qb.b cVar = Build.VERSION.SDK_INT >= 28 ? new androidx.emoji2.text.c(2) : new qb.b(2);
         PackageManager packageManager = context.getPackageManager();
-        w7.k6.a(packageManager, "Package manager required to locate emoji font provider");
+        w7.n6.a(packageManager, "Package manager required to locate emoji font provider");
         Iterator<ResolveInfo> it = packageManager.queryIntentContentProviders(new Intent("androidx.content.action.LOAD_EMOJI_FONT"), 0).iterator();
         while (true) {
             if (!it.hasNext()) {
@@ -49,13 +49,13 @@ public abstract class v {
                     arrayList.add(signature.toByteArray());
                 }
                 eVar = new o0.e(str, str2, "emojicompat-emoji-font", Collections.singletonList(arrayList));
-            } catch (PackageManager.NameNotFoundException e7) {
-                Log.wtf("emoji2.text.DefaultEmojiConfig", e7);
+            } catch (PackageManager.NameNotFoundException e) {
+                Log.wtf("emoji2.text.DefaultEmojiConfig", e);
             }
             if (eVar != null) {
                 return null;
             }
-            return new androidx.emoji2.text.r(new androidx.emoji2.text.q(context, eVar));
+            return new androidx.emoji2.text.q(new androidx.emoji2.text.p(context, eVar));
         }
         eVar = null;
         if (eVar != null) {

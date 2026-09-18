@@ -1,23 +1,16 @@
 package androidx.fragment.app;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
-public final class e0 implements Parcelable {
-    public static final Parcelable.Creator<e0> CREATOR = new w.a(12);
-    public String a;
-    public int b;
+public final class e0 implements o0 {
+    public final /* synthetic */ s a;
 
-    @Override // android.os.Parcelable
-    public final int describeContents() {
-        return 0;
+    public e0(s sVar) {
+        this.a = sVar;
     }
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        parcel.writeString(this.a);
-        parcel.writeInt(this.b);
+    @Override // androidx.fragment.app.o0
+    public final void a() {
+        this.a.getClass();
     }
 }

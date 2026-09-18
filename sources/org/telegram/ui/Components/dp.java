@@ -1,43 +1,100 @@
 package org.telegram.ui.Components;
 
+import android.graphics.Bitmap;
+import android.graphics.Point;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.util.ArrayList;
+import java.util.HashMap;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.ImageLoader;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.nd1;
+import org.telegram.ui.gj1;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class dp implements nd1 {
-    public final /* synthetic */ lp a;
+public final class dp implements ti {
+    public final /* synthetic */ mp a;
 
-    public dp(lp lpVar) {
-        this.a = lpVar;
+    public dp(mp mpVar) {
+        this.a = mpVar;
     }
 
-    @Override // org.telegram.ui.nd1
-    public final boolean Z0() {
+    @Override // org.telegram.ui.Components.ti
+    public final void B1(int i10, boolean z10, boolean z11, int i11, int i12, long j3, boolean z12, boolean z13, long j10) {
+        mp mpVar = this.a;
+        try {
+            HashMap<Object, Object> selectedPhotos = mpVar.Y.j0.getSelectedPhotos();
+            if (selectedPhotos.isEmpty()) {
+                return;
+            }
+            MediaController.PhotoEntry photoEntry = (MediaController.PhotoEntry) selectedPhotos.values().iterator().next();
+            String str = photoEntry.imagePath;
+            if (str == null) {
+                str = photoEntry.path;
+            }
+            if (str != null) {
+                File file = new File(FileLoader.getDirectory(4), Utilities.random.nextInt() + ".jpg");
+                Point realScreenSize = AndroidUtilities.getRealScreenSize();
+                Bitmap loadBitmap = ImageLoader.loadBitmap(str, null, (float) realScreenSize.x, (float) realScreenSize.y, true);
+                loadBitmap.compress(Bitmap.CompressFormat.JPEG, 87, new FileOutputStream(file));
+                ap apVar = new ap(new gj1(file, file, ""), loadBitmap, false, 2);
+                apVar.V1 = mpVar.f0;
+                apVar.F1 = false;
+                apVar.E1 = false;
+                apVar.n1 = 0.2f;
+                apVar.c1(mpVar.v.a());
+                apVar.I1 = new cp(this, 0);
+                mp.q(mpVar, apVar);
+            }
+        } catch (Throwable th2) {
+            FileLog.e(th2);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.ti
+    public final boolean S1() {
+        System.currentTimeMillis();
         return true;
     }
 
-    @Override // org.telegram.ui.nd1
-    public final boolean a() {
-        return this.a.N;
+    @Override // org.telegram.ui.Components.ti
+    public final void U0(Object obj) {
+        ap apVar = new ap(obj, null, true, 3);
+        mp mpVar = this.a;
+        apVar.V1 = mpVar.f0;
+        apVar.c1(mpVar.v.a());
+        apVar.I1 = new cp(this, 1);
+        mp.q(mpVar, apVar);
     }
 
-    @Override // org.telegram.ui.nd1
-    public final void p1(boolean z10) {
-        lp lpVar = this.a;
-        org.telegram.ui.co coVar = lpVar.v;
-        lpVar.N = !lpVar.N;
-        if (lpVar.M != null) {
-            lpVar.P = true;
-            coVar.e7 = true;
-            TLRPC.WallPaper wallPaper = lpVar.v() ? null : lpVar.n.h;
-            org.telegram.ui.ActionBar.d4 d4Var = lpVar.M.a;
-            if (d4Var.a) {
-                lpVar.n.i(null, wallPaper, z10, Boolean.valueOf(lpVar.N), false);
-            } else {
-                lpVar.n.i(d4Var, wallPaper, z10, Boolean.valueOf(lpVar.N), false);
-            }
-            coVar.e7 = false;
-        }
+    @Override // org.telegram.ui.Components.ti
+    public final /* synthetic */ boolean c0() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.ti
+    public final void x0(fh fhVar) {
+        fhVar.run();
+    }
+
+    @Override // org.telegram.ui.Components.ti
+    public final /* synthetic */ void K0() {
+    }
+
+    @Override // org.telegram.ui.Components.ti
+    public final /* synthetic */ void j1(TLRPC.User user) {
+    }
+
+    @Override // org.telegram.ui.Components.ti
+    public final /* synthetic */ void u0() {
+    }
+
+    @Override // org.telegram.ui.Components.ti
+    public final /* synthetic */ void W1(ArrayList arrayList, CharSequence charSequence, boolean z10, int i10, int i11, long j3, boolean z11, long j10) {
     }
 }

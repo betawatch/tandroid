@@ -2,88 +2,68 @@ package yg;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.TextView;
-import ji.m4;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.vl;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.g2;
+import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.j6;
-import w7.x5;
+import org.telegram.ui.Cells.ab;
+import org.telegram.ui.Components.f9;
+import tg.t;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public class c extends FrameLayout {
-    public final f6 a;
-    public final ImageView b;
-    public final TextView c;
-    public Runnable d;
-    public final g2 e;
-    public final Paint f;
+public final class c extends ab {
+    public final a a0;
+    public TL_stories.PrepaidGiveaway b0;
 
-    public c(Context context, f6 f6Var) {
-        super(context);
-        this.f = new Paint(1);
-        this.a = f6Var;
-        TextView textView = new TextView(context);
-        this.c = textView;
-        vl.j(20.0f, 1, textView);
-        textView.setGravity(LocaleController.isRTL ? 5 : 3);
-        int i10 = j6.j5;
-        textView.setTextColor(j6.v0(i10, f6Var));
-        boolean z10 = LocaleController.isRTL;
-        addView(textView, x5.d(-1, -2.0f, 23, z10 ? 16.0f : 53.0f, 0.0f, z10 ? 53.0f : 16.0f, 0.0f));
-        ImageView imageView = new ImageView(context);
-        this.b = imageView;
-        g2 g2Var = new g2(false);
-        this.e = g2Var;
-        imageView.setImageDrawable(g2Var);
-        g2Var.a(j6.v0(i10, f6Var));
-        g2Var.b(j6.v0(i10, f6Var));
-        g2Var.k = 220.0f;
-        addView(imageView, x5.d(24, 24.0f, (LocaleController.isRTL ? 5 : 3) | 16, 16.0f, 0.0f, 16.0f, 0.0f));
-        imageView.setOnClickListener(new m4(this, 15));
+    public c(Context context) {
+        super(context, 0, 0, false);
+        this.a0 = new a(context);
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        int v02 = j6.v0(j6.d7, this.a);
-        Paint paint = this.f;
-        paint.setColor(v02);
-        canvas.drawRect(0.0f, getHeight() - AndroidUtilities.getShadowHeight(), getWidth(), getHeight(), paint);
+    @Override // org.telegram.ui.Cells.ab
+    public /* bridge */ /* synthetic */ int[] getColorKeys() {
+        return null;
     }
 
-    public int getHeaderHeight() {
-        return AndroidUtilities.dp(56.0f);
+    public TL_stories.PrepaidGiveaway getPrepaidGiveaway() {
+        return this.b0;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(getHeaderHeight(), TLObject.FLAG_30));
+    @Override // org.telegram.ui.Cells.ab, android.view.View
+    public final void onDraw(Canvas canvas) {
+        if (this.S) {
+            canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(70.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(70.0f) : 0), getMeasuredHeight() - 1, j6.k0);
+        }
     }
 
-    public void setBackImage(int i10) {
-        this.b.setImageResource(i10);
-    }
-
-    public void setCloseImageVisible(boolean z10) {
-        this.b.setVisibility(z10 ? 0 : 8);
-        boolean z11 = LocaleController.isRTL;
-        this.c.setLayoutParams(x5.d(-1, -2.0f, 23, (z11 || !z10) ? 22.0f : 53.0f, 0.0f, (z11 && z10) ? 53.0f : 22.0f, 0.0f));
-    }
-
-    public void setOnCloseClickListener(Runnable runnable) {
-        this.d = runnable;
-    }
-
-    public void setText(CharSequence charSequence) {
-        this.c.setText(charSequence);
+    public void setImage(TL_stories.PrepaidGiveaway prepaidGiveaway) {
+        this.b0 = prepaidGiveaway;
+        boolean z10 = prepaidGiveaway instanceof TL_stories.TL_prepaidStarsGiveaway;
+        f9 f9Var = this.E;
+        if (z10) {
+            f9Var.g(26);
+            String valueOf = String.valueOf(((TL_stories.TL_prepaidStarsGiveaway) prepaidGiveaway).stars / 500);
+            a aVar = this.a0;
+            aVar.f = valueOf;
+            aVar.e = aVar.a.measureText(valueOf);
+            aVar.invalidateSelf();
+        } else if (prepaidGiveaway instanceof TL_stories.TL_prepaidGiveaway) {
+            f9Var.g(16);
+            int i10 = ((TL_stories.TL_prepaidGiveaway) prepaidGiveaway).months;
+            if (i10 == 12) {
+                f9Var.i(-31392, -2796986);
+            } else if (i10 == 6) {
+                f9Var.i(-10703110, -12481584);
+            } else {
+                f9Var.i(-6631068, -11945404);
+            }
+            String valueOf2 = String.valueOf(t.g() * prepaidGiveaway.quantity);
+            a aVar2 = this.a0;
+            aVar2.f = valueOf2;
+            aVar2.e = aVar2.a.measureText(valueOf2);
+            aVar2.invalidateSelf();
+        }
+        this.b.i(this.a0);
     }
 }

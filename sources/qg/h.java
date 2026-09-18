@@ -1,28 +1,33 @@
 package qg;
 
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class h extends l {
-    @Override // qg.m
-    public final int e() {
-        return R.drawable.msg_msgbubble;
-    }
+public interface h {
+    void A(boolean z10);
 
-    @Override // qg.l
-    public final int m() {
-        return R.drawable.msg_msgbubble2;
-    }
+    void B();
 
-    @Override // qg.l
-    public final String n() {
-        return LocaleController.getString(R.string.PaintBubble);
-    }
+    int[] C(j jVar);
 
-    @Override // qg.l
-    public final int o() {
-        return 3;
-    }
+    boolean d(j jVar);
+
+    void h(boolean z10);
+
+    void i(boolean z10);
+
+    void k();
+
+    void l();
+
+    void n(boolean z10);
+
+    boolean q();
+
+    boolean r();
+
+    void u(float f7, float f10, float[] fArr);
+
+    void w();
+
+    void z(j jVar);
 }

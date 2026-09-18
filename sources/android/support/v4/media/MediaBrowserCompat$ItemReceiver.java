@@ -2,16 +2,16 @@ package android.support.v4.media;
 
 import android.os.Bundle;
 import android.os.Parcelable;
-import android.support.v4.media.session.c0;
+import android.support.v4.media.session.b0;
 import c.d;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 class MediaBrowserCompat$ItemReceiver extends d {
     @Override // c.d
     public final void a(int i10, Bundle bundle) {
         if (bundle != null) {
-            bundle = c0.j(bundle);
+            bundle = b0.j(bundle);
         }
         if (i10 != 0) {
             throw null;

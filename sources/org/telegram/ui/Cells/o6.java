@@ -7,14 +7,14 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import org.telegram.messenger.LocaleController;
 import org.telegram.ui.Components.CheckBoxSquare;
-import org.telegram.ui.Components.a90;
-import org.telegram.ui.Components.d90;
+import org.telegram.ui.Components.c90;
+import org.telegram.ui.Components.z80;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class o6 extends FrameLayout {
-    public final a90 a;
-    public final d90 b;
+    public final z80 a;
+    public final c90 b;
     public final CheckBoxSquare c;
 
     public o6(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
@@ -26,18 +26,18 @@ public final class o6 extends FrameLayout {
         checkBoxSquare.setFocusableInTouchMode(false);
         checkBoxSquare.setClickable(false);
         addView(checkBoxSquare, w7.x5.d(18, 18.0f, (LocaleController.isRTL ? 5 : 3) | 16, 21.0f, 0.0f, 21.0f, 0.0f));
-        a90 a90Var = new a90(this);
-        this.a = a90Var;
-        d90 d90Var = new d90(context, a90Var, f6Var);
-        this.b = d90Var;
-        d90Var.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.G6, f6Var));
-        d90Var.setLinkTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.J6, f6Var));
-        d90Var.setTextSize(1, 15.0f);
-        d90Var.setMaxLines(2);
-        d90Var.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
-        d90Var.setEllipsize(TextUtils.TruncateAt.END);
+        z80 z80Var = new z80(this);
+        this.a = z80Var;
+        c90 c90Var = new c90(context, z80Var, f6Var);
+        this.b = c90Var;
+        c90Var.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.G6, f6Var));
+        c90Var.setLinkTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.J6, f6Var));
+        c90Var.setTextSize(1, 15.0f);
+        c90Var.setMaxLines(2);
+        c90Var.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
+        c90Var.setEllipsize(TextUtils.TruncateAt.END);
         boolean z10 = LocaleController.isRTL;
-        addView(d90Var, w7.x5.d(-1, -1.0f, (z10 ? 5 : 3) | 48, z10 ? 16.0f : 58.0f, 21.0f, z10 ? 58.0f : 16.0f, 21.0f));
+        addView(c90Var, w7.x5.d(-1, -1.0f, (z10 ? 5 : 3) | 48, z10 ? 16.0f : 58.0f, 21.0f, z10 ? 58.0f : 16.0f, 21.0f));
         setWillNotDraw(false);
     }
 
@@ -52,12 +52,12 @@ public final class o6 extends FrameLayout {
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        a90 a90Var = this.a;
-        if (a90Var != null) {
+        z80 z80Var = this.a;
+        if (z80Var != null) {
             canvas.save();
-            d90 d90Var = this.b;
-            canvas.translate(d90Var.getLeft(), d90Var.getTop());
-            if (a90Var.f(canvas)) {
+            c90 c90Var = this.b;
+            canvas.translate(c90Var.getLeft(), c90Var.getTop());
+            if (z80Var.f(canvas)) {
                 invalidate();
             }
             canvas.restore();

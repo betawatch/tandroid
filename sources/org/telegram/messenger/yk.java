@@ -1,66 +1,37 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.TranslateController;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class yk implements RequestDelegate {
+public final /* synthetic */ class yk implements Utilities.Callback2 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ BaseController b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ Object d;
+    public final /* synthetic */ TranslateController b;
+    public final /* synthetic */ Utilities.Callback4 c;
+    public final /* synthetic */ boolean d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ String f;
+    public final /* synthetic */ long g;
 
-    public /* synthetic */ yk(BaseController baseController, long j3, Object obj, int i10) {
-        this.a = i10;
-        this.b = baseController;
-        this.c = j3;
-        this.d = obj;
+    public /* synthetic */ yk(TranslateController translateController, Utilities.Callback4 callback4, boolean z10, int i10, String str, long j3, int i11) {
+        this.a = i11;
+        this.b = translateController;
+        this.c = callback4;
+        this.d = z10;
+        this.e = i10;
+        this.f = str;
+        this.g = j3;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
-                ((TranslateController) this.b).lambda$pushPollToTranslate$26((TranslateController.PendingPollTranslation) this.d, this.c, tLObject, tL_error);
-                break;
-            case 1:
-                ((TranslateController) this.b).lambda$pushRichMessageToTranslate$29((TranslateController.PendingRichTranslation) this.d, this.c, tLObject, tL_error);
-                break;
-            case 2:
-                ((MediaDataController) this.b).lambda$loadPinnedMessageInternal$165(this.c, (TLRPC.TL_messages_getMessages) this.d, tLObject, tL_error);
-                break;
-            case 3:
-                ((MessagesController) this.b).lambda$updateTimerProc$155(this.c, (TLRPC.TL_messages_getMessagesViews) this.d, tLObject, tL_error);
-                break;
-            case 4:
-                ((MessagesController) this.b).lambda$reloadMentionsCountForChannel$221((TLRPC.InputPeer) this.d, this.c, tLObject, tL_error);
-                break;
-            case 5:
-                ((MessagesController) this.b).lambda$getGroupCall$63(this.c, (Runnable) this.d, tLObject, tL_error);
-                break;
-            case 6:
-                ((MessagesController) this.b).lambda$getSponsoredMessages$440(this.c, (MessagesController.SponsoredMessagesInfo) this.d, tLObject, tL_error);
-                break;
-            case 7:
-                ((MessagesController) this.b).lambda$loadUnknownChannel$330(this.c, (TLRPC.TL_channel) this.d, tLObject, tL_error);
-                break;
-            case 8:
-                ((MessagesController) this.b).lambda$setChatReactions$471(this.c, (TLRPC.TL_messages_setChatAvailableReactions) this.d, tLObject, tL_error);
+                this.b.lambda$pushToTranslate$21(this.c, this.d, this.e, this.f, this.g, (String) obj, (Boolean) obj2);
                 break;
             default:
-                ((MessagesController) this.b).lambda$checkLastDialogMessage$227((TLRPC.Dialog) this.d, this.c, tLObject, tL_error);
+                this.b.lambda$pushToTranslate$20(this.c, this.d, this.e, this.f, this.g, (String) obj, (Boolean) obj2);
                 break;
         }
-    }
-
-    public /* synthetic */ yk(BaseController baseController, Object obj, long j3, int i10) {
-        this.a = i10;
-        this.b = baseController;
-        this.d = obj;
-        this.c = j3;
     }
 }

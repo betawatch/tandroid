@@ -1,42 +1,120 @@
 package uh;
 
-import android.view.View;
-import android.view.WindowInsets;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.c20;
-import r0.l1;
-import r0.n;
-import sg.p0;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.drawable.Drawable;
+import org.telegram.messenger.Utilities;
+import w7.p;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class b implements c20, n {
-    public final /* synthetic */ f a;
+public final class b extends Drawable {
+    public final a b;
+    public Bitmap c;
+    public Canvas d;
+    public int e;
+    public float f;
+    public int g;
+    public int h;
+    public final Paint a = new Paint(2);
+    public int i = 255;
 
-    public /* synthetic */ b(f fVar) {
-        this.a = fVar;
+    public b(a aVar) {
+        this.b = aVar;
     }
 
-    @Override // r0.n
-    public l1 T0(View view, l1 l1Var) {
-        WindowInsets g10 = l1Var.g();
-        f fVar = this.a;
-        fVar.processLegacyContainerInsets(g10);
-        fVar.Y.a(l1Var.a.f(8).d > 0, true);
-        return l1.b;
+    public final void a(int i10, int i11, float f7, int i12) {
+        int i13 = i12 * 2;
+        int i14 = (int) ((i10 + i13) / f7);
+        int i15 = (int) ((i11 + i13) / f7);
+        Bitmap bitmap = this.c;
+        if (bitmap != null && bitmap.getWidth() == i14 && this.c.getHeight() == i15) {
+            this.c.eraseColor(0);
+        } else {
+            Bitmap bitmap2 = this.c;
+            if (bitmap2 != null) {
+                bitmap2.recycle();
+            }
+            this.c = Bitmap.createBitmap(i14, i15, Bitmap.Config.ARGB_8888);
+            this.d = new Canvas(this.c);
+        }
+        this.f = f7;
+        this.e = i12;
+        this.d.save();
+        float f10 = i12 / f7;
+        this.d.translate(f10, f10);
+        float f11 = 1.0f / f7;
+        this.d.scale(f11, f11);
+        this.b.p(this.d, 255);
+        Utilities.stackBlurBitmap(this.c, (int) f10);
+        this.d.restore();
     }
 
-    @Override // org.telegram.ui.Components.c20
-    public void a(int i10) {
-        int min = Math.min(i10, AndroidUtilities.dp(144.0f));
-        if (i10 > 0) {
-            min -= AndroidUtilities.dp(8.0f);
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        int i10 = this.i;
+        a aVar = this.b;
+        if (i10 == 255) {
+            canvas.save();
+            canvas.translate(this.g, this.h);
+            aVar.p(canvas, 255);
+            canvas.restore();
+            return;
         }
-        f fVar = this.a;
-        if (fVar.l0 != min) {
-            fVar.l0 = min;
-            fVar.X.a(min);
-            fVar.h0.postOnAnimation(new p0(fVar, 12));
+        if (i10 == 0) {
+            return;
         }
+        double d = i10 / 255.0d;
+        double d10 = d / ((1.0d - d) * 6.0d);
+        double d11 = 1.0d + d10;
+        double sqrt = ((-d11) + Math.sqrt((d11 * d11) - (((-d10) * 4.0d) * (-d)))) / ((-2.0d) * d10);
+        int b10 = p.b((int) (d10 * sqrt * 255.0d), 0, 255);
+        int b11 = p.b((int) (sqrt * 255.0d), 0, 255);
+        if (b11 > 0 && this.c != null) {
+            Paint paint = this.a;
+            paint.setAlpha(b11);
+            canvas.save();
+            int i11 = this.g;
+            int i12 = this.e;
+            canvas.translate(i11 - i12, this.h - i12);
+            float f7 = this.f;
+            canvas.scale(f7, f7);
+            canvas.drawBitmap(this.c, 0.0f, 0.0f, paint);
+            canvas.restore();
+        }
+        if (b10 > 0) {
+            canvas.save();
+            canvas.translate(this.g, this.h);
+            aVar.p(canvas, b10);
+            canvas.restore();
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getAlpha() {
+        return this.i;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return 0;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        this.i = i10;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setBounds(int i10, int i11, int i12, int i13) {
+        this.g = i10;
+        this.h = i11;
+        super.setBounds(i10, i11, i12, i13);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

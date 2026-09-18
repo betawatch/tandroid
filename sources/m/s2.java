@@ -5,7 +5,7 @@ import android.widget.TextView;
 import androidx.appcompat.widget.SearchView;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class s2 implements TextView.OnEditorActionListener {
     public final /* synthetic */ int a;
@@ -38,11 +38,11 @@ public final class s2 implements TextView.OnEditorActionListener {
                 ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.b;
                 if (i10 != 4) {
                     if (keyEvent != null && i10 == 0 && !keyEvent.isShiftPressed() && (!chatActivityEnterView.A2 ? keyEvent.isCtrlPressed() : !keyEvent.isCtrlPressed()) && keyEvent.getAction() == 0 && chatActivityEnterView.Y1 == null) {
-                        chatActivityEnterView.S0();
+                        chatActivityEnterView.T0();
                         break;
                     }
                 } else {
-                    chatActivityEnterView.S0();
+                    chatActivityEnterView.T0();
                     break;
                 }
                 break;

@@ -10,28 +10,28 @@ import java.util.ArrayList;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class d40 extends FrameLayout {
     public final int a;
     public final org.telegram.ui.ActionBar.f6 b;
     public ArrayList c;
     public final FrameLayout d;
-    public final d61 e;
-    public final v51 f;
+    public final f61 e;
+    public final x51 f;
     public Utilities.Callback h;
 
     public d40(int i10, Activity activity, org.telegram.ui.ActionBar.f6 f6Var) {
         super(activity);
         this.a = i10;
         this.b = f6Var;
-        d61 d61Var = new d61(activity, i10, 0, false, new d(this, 15), new c40(this), new c40(this), f6Var);
-        this.e = d61Var;
-        d61Var.setClipToPadding(false);
-        v51 v51Var = (v51) d61Var.getAdapter();
-        this.f = v51Var;
-        v51Var.r = false;
-        addView(d61Var, -1, -1);
+        f61 f61Var = new f61(activity, i10, 0, false, new d(this, 15), new c40(this), new c40(this), f6Var);
+        this.e = f61Var;
+        f61Var.setClipToPadding(false);
+        x51 x51Var = (x51) f61Var.getAdapter();
+        this.f = x51Var;
+        x51Var.r = false;
+        addView(f61Var, -1, -1);
         FrameLayout frameLayout = new FrameLayout(activity);
         this.d = frameLayout;
         ImageView imageView = new ImageView(activity);
@@ -42,10 +42,10 @@ public final class d40 extends FrameLayout {
         frameLayout.addView(imageView, w7.x5.e(56, 56, 49));
         TextView textView = new TextView(activity);
         textView.setTextColor(org.telegram.ui.ActionBar.j6.v0(i11, f6Var));
-        org.telegram.messenger.vl.k(R.string.HashtagSearchPlaceholder, textView, 17);
+        org.telegram.messenger.wl.k(R.string.HashtagSearchPlaceholder, textView, 17);
         frameLayout.addView(textView, w7.x5.d(-2, -2.0f, 81, 0.0f, 56.0f, 0.0f, 0.0f));
         addView(frameLayout, w7.x5.e(210, -2, 17));
-        d61Var.setEmptyView(frameLayout);
+        f61Var.setEmptyView(frameLayout);
     }
 
     public void setOnHashtagClickListener(Utilities.Callback<String> callback) {

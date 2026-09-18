@@ -3,7 +3,7 @@ package org.telegram.ui.web;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.webkit.MimeTypeMap;
-import di.o8;
+import ci.o8;
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -18,7 +18,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes4.dex */
 public class HttpGetFileTask extends AsyncTask<String, Void, File> {
     private Utilities.Callback<File> doneCallback;
@@ -104,8 +104,8 @@ public class HttpGetFileTask extends AsyncTask<String, Void, File> {
                         }
                         j11 = j10;
                         z10 = false;
-                    } catch (Exception e7) {
-                        e = e7;
+                    } catch (Exception e) {
+                        e = e;
                         j11 = j10;
                         j3 = j11;
                         if (e instanceof ProtocolException) {
@@ -144,7 +144,7 @@ public class HttpGetFileTask extends AsyncTask<String, Void, File> {
                                         j3 = j10;
                                         if (read == -1) {
                                             if (this.progressCallback != null) {
-                                                AndroidUtilities.runOnUIThread(new b(this, 5));
+                                                AndroidUtilities.runOnUIThread(new u0(this, 2));
                                             }
                                             if (channel != null) {
                                                 channel.close();
@@ -162,8 +162,8 @@ public class HttpGetFileTask extends AsyncTask<String, Void, File> {
                                             if (isCancelled()) {
                                                 try {
                                                     break;
-                                                } catch (Exception e10) {
-                                                    FileLog.e(e10);
+                                                } catch (Exception e7) {
+                                                    FileLog.e(e7);
                                                 }
                                             } else {
                                                 if (contentLengthLong > j3) {
@@ -225,8 +225,8 @@ public class HttpGetFileTask extends AsyncTask<String, Void, File> {
                                 th2.addSuppressed(th12);
                                 throw th2;
                             }
-                        } catch (Exception e11) {
-                            e = e11;
+                        } catch (Exception e10) {
+                            e = e10;
                             if (e instanceof ProtocolException) {
                             }
                         }
@@ -245,8 +245,8 @@ public class HttpGetFileTask extends AsyncTask<String, Void, File> {
                     this.file = o8.w(UserConfig.selectedAccount, str2);
                 }
                 bufferedInputStream = new BufferedInputStream(errorStream, 16384);
-            } catch (Exception e12) {
-                e = e12;
+            } catch (Exception e11) {
+                e = e11;
                 j3 = j10;
             }
         }

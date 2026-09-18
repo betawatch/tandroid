@@ -1,253 +1,162 @@
 package org.telegram.ui.Components;
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.app.Activity;
-import android.content.SharedPreferences;
-import android.graphics.Canvas;
-import android.util.Property;
-import android.view.MotionEvent;
+import android.content.Context;
 import android.view.View;
-import android.view.WindowManager;
-import android.view.animation.DecelerateInterpolator;
-import android.widget.FrameLayout;
+import android.view.ViewGroup;
+import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class wf0 extends FrameLayout {
-    public float a;
-    public float b;
-    public boolean c;
-    public boolean d;
-    public final /* synthetic */ PipRoundVideoView e;
+public abstract class wf0 extends qv0 implements r0.m {
+    public org.telegram.ui.y0 A0;
+    public ml0 B0;
+    public RecyclerView C0;
+    public int D0;
+    public int E0;
+    public final b2.q0 w0;
+    public final kb0 x0;
+    public RecyclerView y0;
+    public org.telegram.ui.x6 z0;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public wf0(PipRoundVideoView pipRoundVideoView, Activity activity) {
-        super(activity);
-        this.e = pipRoundVideoView;
+    public wf0(Context context) {
+        super(context, null);
+        this.x0 = new kb0(this, 1);
+        this.w0 = new b2.q0();
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        org.telegram.ui.ActionBar.h5 h5Var = org.telegram.ui.ActionBar.j6.k3;
-        if (h5Var != null) {
-            h5Var.setAlpha((int) (getAlpha() * 255.0f));
-            org.telegram.ui.ActionBar.j6.k3.setBounds(AndroidUtilities.dp(1.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(125.0f), AndroidUtilities.dp(125.0f));
-            org.telegram.ui.ActionBar.j6.k3.draw(canvas);
-            org.telegram.ui.ActionBar.j6.S1.setColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.ra, false));
-            org.telegram.ui.ActionBar.j6.S1.setAlpha((int) (getAlpha() * 255.0f));
-            canvas.drawCircle(AndroidUtilities.dp(63.0f), AndroidUtilities.dp(63.0f), AndroidUtilities.dp(59.5f), org.telegram.ui.ActionBar.j6.S1);
+    private int getDistanceToPin() {
+        return Math.max(0, this.z0.getTop() - this.E0);
+    }
+
+    @Override // r0.l
+    public final void E(ViewGroup viewGroup, int i10, int i11, int[] iArr, int i12) {
+        ml0 b02;
+        int distanceToPin;
+        if (!Z() || i11 == 0 || (b02 = b0()) == null) {
+            return;
+        }
+        if (viewGroup != this.y0) {
+            if (viewGroup != b02 || i11 <= 0 || (distanceToPin = getDistanceToPin()) <= 0) {
+                return;
+            }
+            iArr[1] = a0(this.y0, Math.min(i11, distanceToPin)) + iArr[1];
+            return;
+        }
+        if (i11 <= 0) {
+            if (this.z0.getTop() > this.E0 || !b02.canScrollVertically(-1)) {
+                return;
+            }
+            iArr[1] = a0(b02, i11) + iArr[1];
+            return;
+        }
+        int distanceToPin2 = i11 - getDistanceToPin();
+        if (distanceToPin2 > 0) {
+            a0(b02, distanceToPin2);
+            iArr[1] = iArr[1] + distanceToPin2;
         }
     }
 
-    @Override // android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        if (motionEvent.getAction() == 0) {
-            this.a = motionEvent.getRawX();
-            this.b = motionEvent.getRawY();
-            this.d = true;
-        }
-        return true;
+    public final boolean Z() {
+        org.telegram.ui.x6 x6Var;
+        return (this.y0 == null || (x6Var = this.z0) == null || !x6Var.isAttachedToWindow() || this.A0 == null) ? false : true;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:69:0x0210  */
-    /* JADX WARN: Removed duplicated region for block: B:84:0x027b  */
-    /* JADX WARN: Removed duplicated region for block: B:93:0x02b8 A[ORIG_RETURN, RETURN] */
-    @Override // android.view.View
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        float f7;
-        boolean z10;
+    public final int a0(RecyclerView recyclerView, int i10) {
+        if (i10 == 0 || !recyclerView.canScrollVertically(i10)) {
+            return 0;
+        }
+        this.C0 = recyclerView;
+        this.D0 = 0;
+        recyclerView.scrollBy(0, i10);
+        int i11 = this.D0;
+        this.C0 = null;
+        return i11;
+    }
+
+    public final ml0 b0() {
         ArrayList arrayList;
-        boolean z11;
-        char c10;
-        MessageObject playingMessageObject;
-        if (!this.d && !this.c) {
-            return false;
+        org.telegram.ui.y0 y0Var = this.A0;
+        ml0 listView = y0Var == null ? null : ((org.telegram.ui.u7) y0Var.b).getListView();
+        ml0 ml0Var = this.B0;
+        if (ml0Var != listView) {
+            kb0 kb0Var = this.x0;
+            if (ml0Var != null && (arrayList = ml0Var.v0) != null) {
+                arrayList.remove(kb0Var);
+            }
+            this.B0 = listView;
+            if (listView != null) {
+                listView.j(kb0Var);
+            }
         }
-        float rawX = motionEvent.getRawX();
-        float rawY = motionEvent.getRawY();
-        int action = motionEvent.getAction();
-        float f10 = 1.0f;
-        PipRoundVideoView pipRoundVideoView = this.e;
-        if (action == 2) {
-            float f11 = rawX - this.a;
-            float f12 = rawY - this.b;
-            if (this.d) {
-                if (Math.abs(f11) < AndroidUtilities.getPixelsInCM(0.3f, true) && Math.abs(f12) < AndroidUtilities.getPixelsInCM(0.3f, false)) {
-                    return true;
-                }
-                this.c = true;
-                this.d = false;
-                return true;
+        return listView;
+    }
+
+    @Override // org.telegram.ui.Components.qv0
+    public /* bridge */ /* synthetic */ int[] getColorKeys() {
+        return null;
+    }
+
+    @Override // r0.m
+    public final void j(ViewGroup viewGroup, int i10, int i11, int i12, int i13, int i14, int[] iArr) {
+        ml0 b02;
+        if (!Z() || i13 == 0 || (b02 = b0()) == null) {
+            return;
+        }
+        RecyclerView recyclerView = this.y0;
+        if (viewGroup == recyclerView) {
+            if (i13 <= 0 || this.z0.getTop() > this.E0) {
+                return;
             }
-            if (!this.c) {
-                return true;
-            }
-            WindowManager.LayoutParams layoutParams = pipRoundVideoView.v;
-            int i10 = (int) (layoutParams.x + f11);
-            layoutParams.x = i10;
-            layoutParams.y = (int) (layoutParams.y + f12);
-            int i11 = pipRoundVideoView.h / 2;
-            int i12 = -i11;
-            if (i10 < i12) {
-                layoutParams.x = i12;
+            a0(b02, i13);
+            iArr[1] = iArr[1] + i13;
+            return;
+        }
+        if (viewGroup == b02) {
+            if (i13 < 0) {
+                iArr[1] = a0(recyclerView, i13) + iArr[1];
             } else {
-                int i13 = (AndroidUtilities.displaySize.x - layoutParams.width) + i11;
-                if (i10 > i13) {
-                    layoutParams.x = i13;
-                }
-            }
-            int i14 = layoutParams.x;
-            if (i14 < 0) {
-                f10 = a4.a.e(i14, i11, 0.5f, 1.0f);
-            } else {
-                if (i14 > AndroidUtilities.displaySize.x - layoutParams.width) {
-                    f10 = org.telegram.messenger.vl.c((i14 - r11) + r10, i11, 0.5f, 1.0f);
-                }
-            }
-            if (pipRoundVideoView.a.getAlpha() != f10) {
-                pipRoundVideoView.a.setAlpha(f10);
-            }
-            WindowManager.LayoutParams layoutParams2 = pipRoundVideoView.v;
-            int i15 = layoutParams2.y;
-            if (i15 < 0) {
-                layoutParams2.y = 0;
-            } else {
-                int i16 = AndroidUtilities.displaySize.y - layoutParams2.height;
-                if (i15 > i16) {
-                    layoutParams2.y = i16;
-                }
-            }
-            pipRoundVideoView.w.updateViewLayout(pipRoundVideoView.a, layoutParams2);
-            this.a = rawX;
-            this.b = rawY;
-            return true;
-        }
-        if (motionEvent.getAction() != 1) {
-            return true;
-        }
-        if (this.d && !this.c && (playingMessageObject = MediaController.getInstance().getPlayingMessageObject()) != null) {
-            if (MediaController.getInstance().isMessagePaused()) {
-                MediaController.getInstance().playMessage(playingMessageObject);
-            } else {
-                MediaController.getInstance().lambda$startAudioAgain$7(playingMessageObject);
+                iArr[1] = iArr[1] + i13;
             }
         }
-        this.c = false;
-        this.d = false;
-        int b10 = PipRoundVideoView.b(true, 0, 0.0f, pipRoundVideoView.h);
-        int b11 = PipRoundVideoView.b(true, 1, 0.0f, pipRoundVideoView.h);
-        int b12 = PipRoundVideoView.b(false, 0, 0.0f, pipRoundVideoView.n);
-        int b13 = PipRoundVideoView.b(false, 1, 0.0f, pipRoundVideoView.n);
-        SharedPreferences.Editor edit = pipRoundVideoView.x.edit();
-        int dp = AndroidUtilities.dp(20.0f);
-        int abs = Math.abs(b10 - pipRoundVideoView.v.x);
-        Property property = View.ALPHA;
-        if (abs > dp) {
-            int i17 = pipRoundVideoView.v.x;
-            f7 = 1.0f;
-            if (i17 >= 0 || i17 <= (-pipRoundVideoView.h) / 4) {
-                if (Math.abs(b11 - i17) > dp) {
-                    int i18 = pipRoundVideoView.v.x;
-                    int i19 = AndroidUtilities.displaySize.x;
-                    c10 = 0;
-                    int i20 = pipRoundVideoView.h;
-                    if (i18 <= i19 - i20 || i18 >= i19 - ((i20 / 4) * 3)) {
-                        if (pipRoundVideoView.a.getAlpha() != 1.0f) {
-                            arrayList = new ArrayList();
-                            if (pipRoundVideoView.v.x < 0) {
-                                arrayList.add(ObjectAnimator.ofInt(pipRoundVideoView, "x", -pipRoundVideoView.h));
-                            } else {
-                                arrayList.add(ObjectAnimator.ofInt(pipRoundVideoView, "x", AndroidUtilities.displaySize.x));
-                            }
-                            z10 = true;
-                            if (!z10) {
-                                if (Math.abs(b12 - pipRoundVideoView.v.y) <= dp || pipRoundVideoView.v.y <= org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) {
-                                    if (arrayList == null) {
-                                        arrayList = new ArrayList();
-                                    }
-                                    edit.putInt("sidey", 0);
-                                    arrayList.add(ObjectAnimator.ofInt(pipRoundVideoView, "y", b12));
-                                } else if (Math.abs(b13 - pipRoundVideoView.v.y) <= dp) {
-                                    if (arrayList == null) {
-                                        arrayList = new ArrayList();
-                                    }
-                                    edit.putInt("sidey", 1);
-                                    arrayList.add(ObjectAnimator.ofInt(pipRoundVideoView, "y", b13));
-                                } else {
-                                    edit.putFloat("py", (pipRoundVideoView.v.y - b12) / (b13 - b12));
-                                    edit.putInt("sidey", 2);
-                                }
-                                edit.commit();
-                            }
-                            if (arrayList != null) {
-                                return true;
-                            }
-                            if (pipRoundVideoView.y == null) {
-                                pipRoundVideoView.y = new DecelerateInterpolator();
-                            }
-                            AnimatorSet animatorSet = new AnimatorSet();
-                            animatorSet.setInterpolator(pipRoundVideoView.y);
-                            animatorSet.setDuration(150L);
-                            if (z10) {
-                                z11 = true;
-                                arrayList.add(ObjectAnimator.ofFloat(pipRoundVideoView.a, (Property<wf0, Float>) property, 0.0f));
-                                animatorSet.addListener(new yf0(pipRoundVideoView, 1));
-                            } else {
-                                z11 = true;
-                            }
-                            animatorSet.playTogether(arrayList);
-                            animatorSet.start();
-                            return z11;
-                        }
-                        edit.putFloat("px", (pipRoundVideoView.v.x - b10) / (b11 - b10));
-                        edit.putInt("sidex", 2);
-                        arrayList = null;
-                        z10 = false;
-                        if (!z10) {
-                        }
-                        if (arrayList != null) {
-                        }
-                    }
-                } else {
-                    c10 = 0;
-                }
-                arrayList = new ArrayList();
-                edit.putInt("sidex", 1);
-                if (pipRoundVideoView.a.getAlpha() != 1.0f) {
-                    wf0 wf0Var = pipRoundVideoView.a;
-                    float[] fArr = new float[1];
-                    fArr[c10] = 1.0f;
-                    arrayList.add(ObjectAnimator.ofFloat(wf0Var, (Property<wf0, Float>) property, fArr));
-                }
-                arrayList.add(ObjectAnimator.ofInt(pipRoundVideoView, "x", b11));
-                z10 = false;
-                if (!z10) {
-                }
-                if (arrayList != null) {
-                }
-            }
-        } else {
-            f7 = 1.0f;
+    }
+
+    @Override // r0.l
+    public final void o(int i10, View view) {
+        this.w0.a = 0;
+    }
+
+    @Override // r0.l
+    public final boolean p(View view, View view2, int i10, int i11) {
+        return Z() && (i10 & 2) != 0;
+    }
+
+    @Override // r0.l
+    public final void s(View view, View view2, int i10, int i11) {
+        this.w0.a = i10;
+    }
+
+    public void setOuterListView(RecyclerView recyclerView) {
+        ArrayList arrayList;
+        RecyclerView recyclerView2 = this.y0;
+        if (recyclerView2 == recyclerView) {
+            return;
         }
-        ArrayList arrayList2 = new ArrayList();
-        edit.putInt("sidex", 0);
-        if (pipRoundVideoView.a.getAlpha() != f7) {
-            arrayList2.add(ObjectAnimator.ofFloat(pipRoundVideoView.a, (Property<wf0, Float>) property, f7));
+        kb0 kb0Var = this.x0;
+        if (recyclerView2 != null && (arrayList = recyclerView2.v0) != null) {
+            arrayList.remove(kb0Var);
         }
-        arrayList2.add(ObjectAnimator.ofInt(pipRoundVideoView, "x", b10));
-        arrayList = arrayList2;
-        z10 = false;
-        if (!z10) {
+        this.y0 = recyclerView;
+        if (recyclerView != null) {
+            recyclerView.j(kb0Var);
         }
-        if (arrayList != null) {
-        }
+    }
+
+    public void setPinnedTop(int i10) {
+        this.E0 = i10;
+    }
+
+    @Override // r0.l
+    public final void c(ViewGroup viewGroup, int i10, int i11, int i12, int i13, int i14) {
     }
 }

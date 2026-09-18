@@ -2,13 +2,13 @@ package org.telegram.ui.Cells;
 
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.h90;
-import org.telegram.ui.Components.ll0;
-import org.telegram.ui.Components.qc;
+import org.telegram.ui.Components.g90;
+import org.telegram.ui.Components.ml0;
+import org.telegram.ui.Components.oc;
 import org.telegram.ui.SessionsActivity;
-import org.telegram.ui.uy;
+import org.telegram.ui.wy;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g implements Runnable {
     public final /* synthetic */ int a;
@@ -24,16 +24,16 @@ public final /* synthetic */ class g implements Runnable {
         switch (this.a) {
             case 0:
                 h hVar = (h) this.b;
-                h90 h90Var = hVar.d;
-                if (h90Var != null) {
-                    hVar.h.E.l(h90Var, true);
+                g90 g90Var = hVar.d;
+                if (g90Var != null) {
+                    hVar.h.E.l(g90Var, true);
                     break;
                 }
                 break;
             case 1:
                 k1 k1Var = ((u1) this.b).e;
                 if (k1Var != null) {
-                    k1Var.j();
+                    k1Var.k();
                     break;
                 }
                 break;
@@ -41,18 +41,18 @@ public final /* synthetic */ class g implements Runnable {
                 ((a2) this.b).a();
                 break;
             case 3:
-                AndroidUtilities.hideKeyboard(((yh.s4) this.b).b.getEditText());
+                AndroidUtilities.hideKeyboard(((xh.t4) this.b).b.getEditText());
                 break;
             case 4:
                 AndroidUtilities.hideKeyboard(((i3) this.b).b);
                 break;
             case 5:
                 h6 h6Var = (h6) this.b;
-                if (!(h6Var.getParent() instanceof ll0)) {
+                if (!(h6Var.getParent() instanceof ml0)) {
                     h6Var.callOnClick();
                     break;
                 } else {
-                    ((ll0) h6Var.getParent()).getOnItemClickListener().a(RecyclerView.R(h6Var), h6Var);
+                    ((ml0) h6Var.getParent()).getOnItemClickListener().d(RecyclerView.S(h6Var), h6Var);
                     break;
                 }
             case 6:
@@ -67,11 +67,11 @@ public final /* synthetic */ class g implements Runnable {
                 ((n9) this.b).b.U();
                 break;
             case 9:
-                ia iaVar = (ia) this.b;
-                iaVar.s = -1;
+                ja jaVar = (ja) this.b;
+                jaVar.s = -1;
                 int i10 = 0;
                 while (true) {
-                    t1[] t1VarArr = iaVar.e;
+                    t1[] t1VarArr = jaVar.e;
                     if (i10 >= t1VarArr.length) {
                         break;
                     } else {
@@ -83,14 +83,14 @@ public final /* synthetic */ class g implements Runnable {
                     }
                 }
             case 10:
-                uy uyVar = (uy) this.b;
-                qc.e();
-                uyVar.presentFragment(new SessionsActivity(0));
+                wy wyVar = (wy) this.b;
+                oc.e();
+                wyVar.presentFragment(new SessionsActivity(0));
                 break;
             default:
-                org.telegram.ui.ActionBar.f3 f3Var = (org.telegram.ui.ActionBar.f3) this.b;
-                f3Var.setCanDismissWithSwipe(true);
-                f3Var.setCanDismissWithTouchOutside(true);
+                org.telegram.ui.ActionBar.g3 g3Var = (org.telegram.ui.ActionBar.g3) this.b;
+                g3Var.setCanDismissWithSwipe(true);
+                g3Var.setCanDismissWithTouchOutside(true);
                 break;
         }
     }

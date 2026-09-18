@@ -1,47 +1,48 @@
 package hg;
 
-import java.util.ArrayList;
-import java.util.Comparator;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.Components.f9;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class d1 implements Comparator {
-    public final /* synthetic */ a0.i a;
-    public final /* synthetic */ ArrayList b;
+public final class d1 extends View {
+    public final Drawable a;
+    public final ImageReceiver b;
 
-    public d1(a0.i iVar, ArrayList arrayList) {
-        this.a = iVar;
-        this.b = arrayList;
+    public d1(e1 e1Var, Context context) {
+        super(context);
+        this.a = getContext().getResources().getDrawable(R.drawable.map_pin_photo).mutate();
+        f9 f9Var = new f9((f6) null);
+        ImageReceiver imageReceiver = new ImageReceiver(this);
+        this.b = imageReceiver;
+        f9Var.r(e1Var.getUserConfig().getCurrentUser());
+        imageReceiver.setForUserOrChat(e1Var.getUserConfig().getCurrentUser(), f9Var);
     }
 
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        TLObject tLObject = (TLObject) obj;
-        TLObject tLObject2 = (TLObject) obj2;
-        long j3 = tLObject instanceof TLRPC.User ? ((TLRPC.User) tLObject).id : -((TLRPC.Chat) tLObject).id;
-        long j10 = tLObject2 instanceof TLRPC.User ? ((TLRPC.User) tLObject2).id : -((TLRPC.Chat) tLObject2).id;
-        a0.i iVar = this.a;
-        if (iVar.h(j3) >= 0 && iVar.h(j10) >= 0) {
-            return 0;
-        }
-        if (iVar.h(j3) < 0) {
-            if (iVar.h(j10) >= 0) {
-                return 1;
-            }
-            Long valueOf = Long.valueOf(j3);
-            ArrayList arrayList = this.b;
-            int indexOf = arrayList.indexOf(valueOf);
-            int indexOf2 = arrayList.indexOf(Long.valueOf(j10));
-            if (indexOf == -1 || indexOf2 == -1) {
-                if (indexOf == -1 || indexOf2 != -1) {
-                    return (indexOf != -1 || indexOf2 == -1) ? 0 : 1;
-                }
-            } else if (indexOf >= indexOf2) {
-                return indexOf == indexOf2 ? 0 : 1;
-            }
-        }
-        return -1;
+    @Override // android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        int dp = AndroidUtilities.dp(62.0f);
+        int dp2 = AndroidUtilities.dp(85.0f);
+        Drawable drawable = this.a;
+        drawable.setBounds(0, 0, dp, dp2);
+        drawable.draw(canvas);
+        int dp3 = AndroidUtilities.dp(62.0f);
+        ImageReceiver imageReceiver = this.b;
+        imageReceiver.setRoundRadius(dp3);
+        imageReceiver.setImageCoords(AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(50.0f), AndroidUtilities.dp(50.0f));
+        imageReceiver.draw(canvas);
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(62.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(85.0f), TLObject.FLAG_30));
     }
 }

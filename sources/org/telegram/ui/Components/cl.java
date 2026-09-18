@@ -9,7 +9,7 @@ import android.view.animation.OvershootInterpolator;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class cl implements ValueAnimator.AnimatorUpdateListener {
     public boolean a;
@@ -38,7 +38,7 @@ public final class cl implements ValueAnimator.AnimatorUpdateListener {
                 this.a = true;
             }
         }
-        float interpolation = lerp <= 0.5f ? pr.g.getInterpolation(lerp / 0.5f) * 1.1f : lerp <= 0.75f ? 1.1f - (pr.g.getInterpolation((lerp - 0.5f) / 0.25f) * 0.2f) : (pr.g.getInterpolation((lerp - 0.75f) / 0.25f) * 0.1f) + 0.9f;
+        float interpolation = lerp <= 0.5f ? qr.g.getInterpolation(lerp / 0.5f) * 1.1f : lerp <= 0.75f ? 1.1f - (qr.g.getInterpolation((lerp - 0.5f) / 0.25f) * 0.2f) : (qr.g.getInterpolation((lerp - 0.75f) / 0.25f) * 0.1f) + 0.9f;
         FrameLayout frameLayout = this.c;
         frameLayout.setScaleX(interpolation);
         frameLayout.setScaleY(interpolation);

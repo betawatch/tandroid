@@ -1,35 +1,33 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ab0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ qb0 b;
-    public final /* synthetic */ Context c;
+    public final /* synthetic */ pb0 b;
 
-    public /* synthetic */ ab0(qb0 qb0Var, Context context, int i10) {
+    public /* synthetic */ ab0(pb0 pb0Var, int i10) {
         this.a = i10;
-        this.b = qb0Var;
-        this.c = context;
+        this.b = pb0Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                qb0 qb0Var = this.b;
-                qb0Var.c0.a(false);
-                AndroidUtilities.runOnUIThread(new ab0(qb0Var, this.c, 1));
-                break;
-            default:
-                Context context = this.c;
-                if (AndroidUtilities.isContextSafe(context)) {
-                    new sg.a1(context, 43, this.b.c0.F).show();
+                pb0 pb0Var = this.b;
+                hb0 hb0Var = pb0Var.f;
+                if (!pb0Var.c0.d.webpageTop) {
+                    hb0Var.x0(hb0Var.computeVerticalScrollRange() - (hb0Var.computeVerticalScrollExtent() + hb0Var.computeVerticalScrollOffset()), MediaDataController.MAX_LINKS_COUNT, ji.n.V);
+                    break;
+                } else {
+                    hb0Var.x0(-hb0Var.computeVerticalScrollOffset(), MediaDataController.MAX_LINKS_COUNT, ji.n.V);
                     break;
                 }
+            default:
+                this.b.g(true, false);
                 break;
         }
     }

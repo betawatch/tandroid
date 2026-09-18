@@ -1,41 +1,31 @@
 package androidx.fragment.app;
 
-import android.util.Log;
-import java.io.Writer;
-
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
-public final class r0 extends Writer {
-    public final StringBuilder b = new StringBuilder(128);
-    public final String a = "FragmentManager";
+public final class r0 {
+    public int a;
+    public s b;
+    public boolean c = false;
+    public int d;
+    public int e;
+    public int f;
+    public int g;
+    public androidx.lifecycle.n h;
+    public androidx.lifecycle.n i;
 
-    public final void a() {
-        StringBuilder sb2 = this.b;
-        if (sb2.length() > 0) {
-            Log.d(this.a, sb2.toString());
-            sb2.delete(0, sb2.length());
-        }
+    public r0(int i10, s sVar) {
+        this.a = i10;
+        this.b = sVar;
+        androidx.lifecycle.n nVar = androidx.lifecycle.n.e;
+        this.h = nVar;
+        this.i = nVar;
     }
 
-    @Override // java.io.Writer, java.io.Closeable, java.lang.AutoCloseable
-    public final void close() {
-        a();
-    }
-
-    @Override // java.io.Writer, java.io.Flushable
-    public final void flush() {
-        a();
-    }
-
-    @Override // java.io.Writer
-    public final void write(char[] cArr, int i10, int i11) {
-        for (int i12 = 0; i12 < i11; i12++) {
-            char c10 = cArr[i10 + i12];
-            if (c10 == '\n') {
-                a();
-            } else {
-                this.b.append(c10);
-            }
-        }
+    public r0(int i10, s sVar, int i11) {
+        this.a = i10;
+        this.b = sVar;
+        androidx.lifecycle.n nVar = androidx.lifecycle.n.e;
+        this.h = nVar;
+        this.i = nVar;
     }
 }

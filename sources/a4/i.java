@@ -12,7 +12,7 @@ import java.util.Collections;
 import java.util.List;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class i extends l {
     public final v h = new v();
@@ -49,7 +49,7 @@ public final class i extends l {
         return new m(list, 0);
     }
 
-    @Override // a4.l, h2.d
+    @Override // a4.l, h2.e
     public final void flush() {
         super.flush();
         this.n = null;
@@ -62,7 +62,7 @@ public final class i extends l {
 
     @Override // a4.l
     public final void g(j jVar) {
-        ByteBuffer byteBuffer = jVar.e;
+        ByteBuffer byteBuffer = jVar.c;
         byteBuffer.getClass();
         byte[] array = byteBuffer.array();
         int limit = byteBuffer.limit();
@@ -118,6 +118,11 @@ public final class i extends l {
         }
     }
 
+    @Override // h2.e
+    public final String getName() {
+        return "Cea708Decoder";
+    }
+
     @Override // a4.l
     public final boolean i() {
         return this.n != this.o;
@@ -148,7 +153,7 @@ public final class i extends l {
                     hVar3.t(i10);
                     i13 = hVar3.i(6);
                     if (i13 < 7) {
-                        e2.n(i13, "Invalid extended service number: ", "Cea708Decoder");
+                        e2.m(i13, "Invalid extended service number: ", "Cea708Decoder");
                     }
                 }
                 if (i14 == 0) {
@@ -245,7 +250,7 @@ public final class i extends l {
                                                     this.m.a((char) 9484);
                                                     break;
                                                 default:
-                                                    e2.n(i16, "Invalid G2 character: ", "Cea708Decoder");
+                                                    e2.m(i16, "Invalid G2 character: ", "Cea708Decoder");
                                                     break;
                                             }
                                     }
@@ -266,12 +271,12 @@ public final class i extends l {
                                 if (i16 == 160) {
                                     this.m.a((char) 13252);
                                 } else {
-                                    e2.n(i16, "Invalid G3 character: ", "Cea708Decoder");
+                                    e2.m(i16, "Invalid G3 character: ", "Cea708Decoder");
                                     this.m.a('_');
                                 }
                                 z10 = true;
                             } else {
-                                e2.n(i16, "Invalid extended command: ", "Cea708Decoder");
+                                e2.m(i16, "Invalid extended command: ", "Cea708Decoder");
                             }
                         } else if (i15 <= 31) {
                             if (i15 != 0) {
@@ -290,7 +295,7 @@ public final class i extends l {
                                         default:
                                             if (i15 < 17 || i15 > 23) {
                                                 if (i15 < 24 || i15 > 31) {
-                                                    e2.n(i15, "Invalid C0 command: ", "Cea708Decoder");
+                                                    e2.m(i15, "Invalid C0 command: ", "Cea708Decoder");
                                                     break;
                                                 } else {
                                                     e2.a.n("Cea708Decoder", "Currently unsupported COMMAND_P16 Command: " + i15);
@@ -436,7 +441,7 @@ public final class i extends l {
                                     case 149:
                                     case ImageReceiver.DEFAULT_CROSSFADE_DURATION /* 150 */:
                                     default:
-                                        e2.n(i15, "Invalid C1 command: ", "Cea708Decoder");
+                                        e2.m(i15, "Invalid C1 command: ", "Cea708Decoder");
                                         break;
                                     case 151:
                                         if (this.m.c) {
@@ -527,7 +532,7 @@ public final class i extends l {
                             } else if (i15 <= 255) {
                                 this.m.a((char) (i15 & 255));
                             } else {
-                                e2.n(i15, "Invalid base command: ", "Cea708Decoder");
+                                e2.m(i15, "Invalid base command: ", "Cea708Decoder");
                             }
                             z10 = true;
                         }

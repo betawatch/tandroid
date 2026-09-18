@@ -8,7 +8,7 @@ import org.telegram.messenger.R;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b30 implements Runnable {
     public final /* synthetic */ int a;
@@ -26,19 +26,19 @@ public final /* synthetic */ class b30 implements Runnable {
                 z20.j(this.b);
                 break;
             case 1:
-                of.f.s(this.b, LocaleController.getString(R.string.StarsTOSLink));
+                nf.f.s(this.b, LocaleController.getString(R.string.StarsTOSLink));
                 break;
             case 2:
                 Activity findActivity = AndroidUtilities.findActivity(this.b);
                 if (findActivity instanceof LaunchActivity) {
-                    ((LaunchActivity) findActivity).p0(new PremiumPreviewFragment(0, sg.k0.A1(10)));
+                    ((LaunchActivity) findActivity).p0(new PremiumPreviewFragment(0, rg.j0.A1(10)));
                     break;
                 }
                 break;
             default:
                 Activity findActivity2 = AndroidUtilities.findActivity(this.b);
                 if (findActivity2 instanceof LaunchActivity) {
-                    ((LaunchActivity) findActivity2).p0(new PremiumPreviewFragment(0, sg.k0.A1(9)));
+                    ((LaunchActivity) findActivity2).p0(new PremiumPreviewFragment(0, rg.j0.A1(9)));
                     break;
                 }
                 break;

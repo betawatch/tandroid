@@ -1,42 +1,45 @@
 package org.telegram.ui.Components;
 
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.LaunchActivity;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class e01 extends FrameLayout {
-    public static final /* synthetic */ int e = 0;
-    public TextView a;
-    public d01 b;
-    public TLRPC.TL_help_termsOfService c;
-    public int d;
+public final /* synthetic */ class e01 implements org.telegram.ui.ActionBar.b2 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ g01 b;
 
-    public final void a() {
-        d01 d01Var = this.b;
-        int i10 = this.d;
-        org.telegram.ui.xa0 xa0Var = (org.telegram.ui.xa0) d01Var;
-        xa0Var.getClass();
-        UserConfig.getInstance(i10).unacceptedTermsOfService = null;
-        UserConfig.getInstance(i10).saveConfig(false);
-        LaunchActivity launchActivity = xa0Var.a;
-        ArrayList arrayList = launchActivity.d0;
-        if (!arrayList.isEmpty()) {
-            ((org.telegram.ui.ActionBar.n2) i2.g.h(1, arrayList)).onResume();
-        }
-        launchActivity.C0.animate().alpha(0.0f).setDuration(150L).setInterpolator(AndroidUtilities.accelerateInterpolator).withEndAction(new org.telegram.ui.g10(xa0Var, 15)).start();
-        TLRPC.TL_help_acceptTermsOfService tL_help_acceptTermsOfService = new TLRPC.TL_help_acceptTermsOfService();
-        tL_help_acceptTermsOfService.id = this.c.id;
-        ConnectionsManager.getInstance(this.d).sendRequest(tL_help_acceptTermsOfService, new bi.c7(16));
+    public /* synthetic */ e01(g01 g01Var, int i10) {
+        this.a = i10;
+        this.b = g01Var;
     }
 
-    public void setDelegate(d01 d01Var) {
-        this.b = d01Var;
+    @Override // org.telegram.ui.ActionBar.b2
+    public final void f(org.telegram.ui.ActionBar.c2 c2Var, int i10) {
+        switch (this.a) {
+            case 0:
+                this.b.a();
+                break;
+            case 1:
+                g01 g01Var = this.b;
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(g01Var.getContext());
+                alertDialog$Builder.a.T = LocaleController.getString(R.string.TosDeclineDeleteAccount);
+                alertDialog$Builder.a.R = LocaleController.getString(R.string.AppName);
+                alertDialog$Builder.k(LocaleController.getString(R.string.Deactivate), new e01(g01Var, 2));
+                hg.k0.r(R.string.Cancel, alertDialog$Builder, null);
+                break;
+            default:
+                g01 g01Var2 = this.b;
+                org.telegram.ui.ActionBar.c2 c2Var2 = new org.telegram.ui.ActionBar.c2(g01Var2.getContext(), 3, null);
+                c2Var2.g0 = false;
+                TL_account.deleteAccount deleteaccount = new TL_account.deleteAccount();
+                deleteaccount.reason = "Decline ToS update";
+                ConnectionsManager.getInstance(g01Var2.d).sendRequest(deleteaccount, new org.telegram.ui.qo(16, g01Var2, c2Var2));
+                c2Var2.show();
+                break;
+        }
     }
 }

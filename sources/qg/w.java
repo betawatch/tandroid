@@ -1,69 +1,79 @@
 package qg;
 
-import android.content.Context;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.s2;
-import org.telegram.ui.lm0;
-import w7.x5;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.ui.cu0;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class w extends LinearLayout {
-    public final v a;
-    public final v b;
-    public final v c;
-    public final EditTextBoldCursor d;
-    public boolean e;
-    public final /* synthetic */ x f;
+public final class w implements pg.u {
+    public boolean a;
+    public final /* synthetic */ Bitmap b;
+    public final /* synthetic */ cu0 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public w(x xVar, Context context) {
-        super(context);
-        this.f = xVar;
-        setOrientation(1);
-        setPadding(AndroidUtilities.dp(14.0f), 0, AndroidUtilities.dp(14.0f), 0);
-        v vVar = new v(xVar, context);
-        this.a = vVar;
-        vVar.a(0);
-        addView(vVar, x5.p(-1, -2, 0.0f, 0, 0, 0, 0, 16));
-        v vVar2 = new v(xVar, context);
-        this.b = vVar2;
-        vVar2.a(1);
-        addView(vVar2, x5.p(-1, -2, 0.0f, 0, 0, 0, 0, 16));
-        v vVar3 = new v(xVar, context);
-        this.c = vVar3;
-        vVar3.a(2);
-        addView(vVar3, x5.p(-1, -2, 0.0f, 0, 0, 0, 0, 16));
-        LinearLayout linearLayout = new LinearLayout(context);
-        linearLayout.setOrientation(0);
-        linearLayout.setGravity(21);
-        addView(linearLayout, x5.c(64.0f, -1));
-        TextView textView = new TextView(context);
-        textView.setTextColor(-1711276033);
-        textView.setTextSize(1, 16.0f);
-        textView.setText(LocaleController.getString(R.string.PaintPaletteSlidersHexColor).toUpperCase());
-        textView.setTypeface(AndroidUtilities.bold());
-        linearLayout.addView(textView, x5.k(0.0f, 0.0f, 8.0f, 0.0f, -2, -2));
-        EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(context);
-        this.d = editTextBoldCursor;
-        editTextBoldCursor.setTextSize(1, 16.0f);
-        editTextBoldCursor.setBackground(j6.b0(AndroidUtilities.dp(10.0f), 436207615));
-        editTextBoldCursor.setPadding(0, 0, 0, 0);
-        editTextBoldCursor.setTextColor(-1);
-        editTextBoldCursor.setGravity(17);
-        editTextBoldCursor.setSingleLine();
-        editTextBoldCursor.setImeOptions(6);
-        editTextBoldCursor.setImeActionLabel(LocaleController.getString(R.string.Done), 6);
-        editTextBoldCursor.setTypeface(AndroidUtilities.bold());
-        editTextBoldCursor.addTextChangedListener(new lm0(this));
-        editTextBoldCursor.setOnFocusChangeListener(new ah.v0(this, 3));
-        editTextBoldCursor.setOnEditorActionListener(new s2(5));
-        linearLayout.addView(editTextBoldCursor, x5.n(72, 36));
+    public w(cu0 cu0Var, Bitmap bitmap) {
+        this.c = cu0Var;
+        this.b = bitmap;
+    }
+
+    @Override // pg.u
+    public final void a() {
+        this.a = true;
+    }
+
+    @Override // pg.u
+    public final void b(Canvas canvas) {
+        e0 e0Var = this.c.W0;
+        Matrix matrix = e0Var.getMatrix();
+        canvas.save();
+        canvas.translate(e0Var.getX(), e0Var.getY());
+        canvas.concat(matrix);
+        float width = e0Var.getWidth();
+        Bitmap bitmap = this.b;
+        canvas.scale(width / bitmap.getWidth(), e0Var.getHeight() / bitmap.getHeight(), 0.0f, 0.0f);
+        canvas.drawBitmap(bitmap, 0.0f, 0.0f, (Paint) null);
+        canvas.restore();
+    }
+
+    @Override // pg.u
+    public final boolean c() {
+        return this.a;
+    }
+
+    @Override // pg.u
+    public final void d() {
+        this.a = false;
+    }
+
+    @Override // pg.u
+    public final View e() {
+        return this.c;
+    }
+
+    @Override // pg.u
+    public final FrameLayout f() {
+        return this.c.e1;
+    }
+
+    @Override // pg.u
+    public final boolean g() {
+        return this.b != null;
+    }
+
+    @Override // pg.u
+    public final void h(int i10) {
+        cu0 cu0Var = this.c;
+        cu0Var.w0(false);
+        pg.s0 s0Var = cu0Var.V1;
+        s0Var.h(i10, true);
+        s0Var.g();
+        cu0Var.setNewColor(i10);
+        l0 l0Var = cu0Var.G1;
+        l0Var.setSelectedColorIndex(s0Var.d());
+        l0Var.getAdapter().l();
     }
 }

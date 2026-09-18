@@ -1,18 +1,18 @@
 package androidx.activity;
 
-import androidx.fragment.app.z;
+import androidx.fragment.app.b0;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 final class OnBackPressedDispatcher$LifecycleOnBackPressedCancellable implements androidx.lifecycle.r, c {
     public final androidx.lifecycle.o a;
-    public final z b;
-    public v c;
-    public final /* synthetic */ x d;
+    public final b0 b;
+    public t c;
+    public final /* synthetic */ v d;
 
-    public OnBackPressedDispatcher$LifecycleOnBackPressedCancellable(x xVar, androidx.lifecycle.o oVar, z onBackPressedCallback) {
+    public OnBackPressedDispatcher$LifecycleOnBackPressedCancellable(v vVar, androidx.lifecycle.o oVar, b0 onBackPressedCallback) {
         kotlin.jvm.internal.i.e(onBackPressedCallback, "onBackPressedCallback");
-        this.d = xVar;
+        this.d = vVar;
         this.a = oVar;
         this.b = onBackPressedCallback;
         oVar.a(this);
@@ -22,9 +22,9 @@ final class OnBackPressedDispatcher$LifecycleOnBackPressedCancellable implements
     public final void cancel() {
         this.a.b(this);
         this.b.b.remove(this);
-        v vVar = this.c;
-        if (vVar != null) {
-            vVar.cancel();
+        t tVar = this.c;
+        if (tVar != null) {
+            tVar.cancel();
         }
         this.c = null;
     }
@@ -39,23 +39,23 @@ final class OnBackPressedDispatcher$LifecycleOnBackPressedCancellable implements
                 }
                 return;
             } else {
-                v vVar = this.c;
-                if (vVar != null) {
-                    vVar.cancel();
+                t tVar2 = this.c;
+                if (tVar2 != null) {
+                    tVar2.cancel();
                     return;
                 }
                 return;
             }
         }
-        x xVar = this.d;
-        xVar.getClass();
-        z onBackPressedCallback = this.b;
+        v vVar = this.d;
+        vVar.getClass();
+        b0 onBackPressedCallback = this.b;
         kotlin.jvm.internal.i.e(onBackPressedCallback, "onBackPressedCallback");
-        xVar.b.addLast(onBackPressedCallback);
-        v vVar2 = new v(xVar, onBackPressedCallback);
-        onBackPressedCallback.b.add(vVar2);
-        xVar.d();
-        onBackPressedCallback.c = new w(0, xVar, x.class, "updateEnabledCallbacks", "updateEnabledCallbacks()V", 0, 1);
-        this.c = vVar2;
+        vVar.b.addLast(onBackPressedCallback);
+        t tVar3 = new t(vVar, onBackPressedCallback);
+        onBackPressedCallback.b.add(tVar3);
+        vVar.d();
+        onBackPressedCallback.c = new u(0, vVar, v.class, "updateEnabledCallbacks", "updateEnabledCallbacks()V", 0, 1);
+        this.c = tVar3;
     }
 }

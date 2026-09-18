@@ -10,10 +10,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class v5 extends FrameLayout {
-    public final org.telegram.ui.Components.x9 a;
+    public final org.telegram.ui.Components.u9 a;
     public final TextView b;
     public final TextView c;
     public final View d;
@@ -23,9 +23,9 @@ public final class v5 extends FrameLayout {
     public v5(x5 x5Var, Context context) {
         super(context);
         this.e = x5Var;
-        org.telegram.ui.Components.x9 x9Var = new org.telegram.ui.Components.x9(context);
-        this.a = x9Var;
-        addView(x9Var, w7.x5.c(-1.0f, -1));
+        org.telegram.ui.Components.u9 u9Var = new org.telegram.ui.Components.u9(context);
+        this.a = u9Var;
+        addView(u9Var, w7.x5.c(-1.0f, -1));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(0);
         linearLayout.setBackgroundResource(R.drawable.album_shadow);
@@ -56,13 +56,13 @@ public final class v5 extends FrameLayout {
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
-        org.telegram.ui.Components.x9 x9Var = this.a;
-        if (x9Var.getImageReceiver().hasNotThumb() && x9Var.getImageReceiver().getCurrentAlpha() == 1.0f) {
+        org.telegram.ui.Components.u9 u9Var = this.a;
+        if (u9Var.getImageReceiver().hasNotThumb() && u9Var.getImageReceiver().getCurrentAlpha() == 1.0f) {
             return;
         }
         x5 x5Var = this.e;
         x5Var.e.setColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.X9, false));
-        canvas.drawRect(0.0f, 0.0f, x9Var.getMeasuredWidth(), x9Var.getMeasuredHeight(), x5Var.e);
+        canvas.drawRect(0.0f, 0.0f, u9Var.getMeasuredWidth(), u9Var.getMeasuredHeight(), x5Var.e);
     }
 
     @Override // android.view.View

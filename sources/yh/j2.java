@@ -1,136 +1,92 @@
 package yh;
 
+import android.content.Context;
+import android.view.MotionEvent;
 import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import java.util.ArrayList;
-import java.util.HashMap;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.nr0;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.ProfileActivity;
-import zh.j5;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.Components.j81;
+import org.telegram.ui.Components.tr0;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
-/* loaded from: classes.dex */
-public final class j2 extends s4.v {
-    public final /* synthetic */ nr0 d;
-    public final /* synthetic */ m2 e;
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* loaded from: classes4.dex */
+public final class j2 extends j81 {
+    public final /* synthetic */ a4 U;
 
-    public j2(m2 m2Var, nr0 nr0Var) {
-        this.e = m2Var;
-        this.d = nr0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public j2(a4 a4Var, Context context) {
+        super(context, null);
+        this.U = a4Var;
     }
 
-    @Override // s4.v
-    public final void a(RecyclerView recyclerView, s4.c1 c1Var) {
-        super.a(recyclerView, c1Var);
-        c1Var.a.setPressed(false);
-    }
-
-    @Override // s4.v
-    public final int e(RecyclerView recyclerView, s4.c1 c1Var) {
-        View view = c1Var.a;
-        return r(view instanceof h1 ? ((h1) view).getSavedGift() : null) ? s4.v.l(15, 0) : s4.v.l(0, 0);
-    }
-
-    @Override // s4.v
-    public final boolean j() {
-        return this.e.n;
-    }
-
-    @Override // s4.v
-    public final boolean k() {
-        return this.e.n;
-    }
-
-    @Override // s4.v
-    public final boolean n(RecyclerView recyclerView, s4.c1 c1Var, s4.c1 c1Var2) {
-        zh.g0 g0Var;
-        m2 m2Var = this.e;
-        h2 h2Var = m2Var.f;
-        if (m2Var.e == null || !m2Var.n) {
-            return false;
-        }
-        View view = c1Var.a;
-        if (!r(view instanceof h1 ? ((h1) view).getSavedGift() : null)) {
-            return false;
-        }
-        View view2 = c1Var2.a;
-        if (!r(view2 instanceof h1 ? ((h1) view2).getSavedGift() : null)) {
-            return false;
-        }
-        int b10 = c1Var.b();
-        int b11 = c1Var2.b();
-        boolean z10 = m2Var.d;
-        nr0 nr0Var = this.d;
-        if (z10) {
-            m2Var.e.k(b10, b11);
-            nr0Var.e.n(m2Var.e.d);
-        } else {
-            j5 j5Var = m2Var.e;
-            if (j5Var.q == null) {
-                j5Var.q = j5Var.h();
-            }
-            j5Var.k(b10, b11);
-        }
-        h2Var.Y2.p(b10, b11);
-        h2Var.Y2.S();
-        if (m2Var.d) {
-            HashMap hashMap = q2.T;
-            nr0Var.f(true);
-        }
-        org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
-        if ((U instanceof ProfileActivity) && (g0Var = ((ProfileActivity) U).v0) != null) {
-            g0Var.a();
-        }
-        return true;
-    }
-
-    @Override // s4.v
-    public final void p(s4.c1 c1Var, int i10) {
-        m2 m2Var = this.e;
-        if (i10 != 0) {
-            h2 h2Var = m2Var.f;
-            if (h2Var != null) {
-                h2Var.I0(false);
-            }
-            if (c1Var != null) {
-                c1Var.a.setPressed(true);
-                return;
-            }
+    @Override // org.telegram.ui.Components.j81
+    public final void F(View view, float f7) {
+        int i10;
+        View view2;
+        xh.m2 m2Var;
+        xh.m2 m2Var2;
+        l2 l2Var;
+        l2 l2Var2;
+        l2 l2Var3;
+        if (getMeasuredWidth() <= 0) {
+            view.setTranslationX(f7);
             return;
         }
-        j5 j5Var = m2Var.e;
-        if (j5Var != null) {
-            ArrayList arrayList = j5Var.q;
-            if (arrayList != null) {
-                ArrayList h = j5Var.h();
-                if (arrayList.size() == h.size()) {
-                    for (int i11 = 0; i11 < arrayList.size(); i11++) {
-                        if (arrayList.get(i11) == h.get(i11)) {
-                        }
-                    }
+        float clamp = Utilities.clamp(f7 / getMeasuredWidth(), 1.0f, -1.0f);
+        a4 a4Var = this.U;
+        i10 = ((org.telegram.ui.ActionBar.g3) a4Var).backgroundPaddingLeft;
+        view.setTranslationX(((-clamp) * 2.0f * i10) + f7);
+        view.setPivotX(clamp <= 0.0f ? view.getMeasuredWidth() : 0.0f);
+        view.setCameraDistance(view.getMeasuredHeight() * 3.4f);
+        view.setScaleX(1.0f - Math.abs(0.25f * clamp));
+        view.setRotationY(clamp * 10.0f);
+        if (view instanceof FrameLayout) {
+            FrameLayout frameLayout = (FrameLayout) view;
+            if (frameLayout.getChildCount() > 0) {
+                view2 = frameLayout.getChildAt(0);
+                m2Var = a4Var.b0;
+                if (m2Var != null && view2 == m2Var.Y && (l2Var3 = m2Var.d0) != null) {
+                    l2Var3.invalidate();
                 }
-                j5Var.l();
-                j5Var.q = null;
+                if (view2 == a4Var.Y && (l2Var2 = a4Var.d0) != null) {
+                    l2Var2.invalidate();
+                }
+                m2Var2 = a4Var.c0;
+                if (m2Var2 == null && view2 == m2Var2.Y && (l2Var = m2Var2.d0) != null) {
+                    l2Var.invalidate();
+                    return;
+                }
                 return;
             }
-            j5Var.q = null;
+        }
+        view2 = null;
+        m2Var = a4Var.b0;
+        if (m2Var != null) {
+            l2Var3.invalidate();
+        }
+        if (view2 == a4Var.Y) {
+            l2Var2.invalidate();
+        }
+        m2Var2 = a4Var.c0;
+        if (m2Var2 == null) {
         }
     }
 
-    public final boolean r(TL_stars.SavedStarGift savedStarGift) {
-        m2 m2Var = this.e;
-        if (!m2Var.n) {
-            return false;
+    /* JADX WARN: Type inference failed for: r1v1, types: [boolean] */
+    @Override // org.telegram.ui.Components.j81
+    public final void G() {
+        super.G();
+        int i10 = this.b;
+        a4 a4Var = this.U;
+        if (i10 != a4Var.L1(false)) {
+            AndroidUtilities.runOnUIThread(new tr0(15, this, this.b > a4Var.L1(false)));
         }
-        if (m2Var.e == this.d.d) {
-            return savedStarGift != null && savedStarGift.pinned_to_top;
-        }
-        return true;
     }
 
-    @Override // s4.v
-    public final void q(s4.c1 c1Var) {
+    @Override // org.telegram.ui.Components.j81
+    public final boolean i(MotionEvent motionEvent) {
+        f4.d dVar = this.U.Y0;
+        return dVar == null || dVar.c(0);
     }
 }

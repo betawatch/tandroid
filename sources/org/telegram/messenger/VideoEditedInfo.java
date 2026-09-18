@@ -25,7 +25,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.RLottieNative;
 import org.telegram.ui.Components.gf0;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public class VideoEditedInfo {
     public int account;
@@ -34,7 +34,7 @@ public class VideoEditedInfo {
     public int bitrate;
     public String blurPath;
     public boolean canceled;
-    public di.t collage;
+    public ci.t collage;
     public ArrayList<Part> collageParts;
     public int compressQuality;
     public MediaController.CropState cropState;
@@ -49,7 +49,7 @@ public class VideoEditedInfo {
     public boolean fromCamera;
     public Integer gradientBottomColor;
     public Integer gradientTopColor;
-    public di.n8 hdrInfo;
+    public ci.n8 hdrInfo;
     public boolean isDark;
     public boolean isPhoto;
     public boolean isSticker;
@@ -84,7 +84,7 @@ public class VideoEditedInfo {
     public boolean shouldLimitFps = true;
     public ArrayList<MediaCodecVideoConvertor.MixedSoundInfo> mixedSoundInfos = new ArrayList<>();
 
-    /* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+    /* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
     public static class EmojiEntity extends TLRPC.TL_messageEntityCustomEmoji {
         public String documentAbsolutePath;
         public MediaEntity entity;
@@ -228,7 +228,7 @@ public class VideoEditedInfo {
             }
             serializedData.writeFloat(this.volume);
             serializedData.writeBool(this.isSticker);
-            di.t tVar = this.collage;
+            ci.t tVar = this.collage;
             if (tVar == null || this.collageParts == null || tVar.e.size() <= 1 || this.collageParts.isEmpty()) {
                 serializedData.writeInt32(TLRPC.TL_null.constructor);
             } else {
@@ -407,11 +407,11 @@ public class VideoEditedInfo {
                             this.isSticker = serializedData.readBool(false);
                         }
                         if (readInt32 >= 11 && serializedData.readInt32(false) == -559038737) {
-                            this.collage = new di.t(serializedData.readString(false));
+                            this.collage = new ci.t(serializedData.readString(false));
                             this.collageParts = new ArrayList<>();
                             for (int i13 = 0; i13 < this.collage.e.size(); i13++) {
                                 Part part = new Part();
-                                part.part = (di.s) this.collage.e.get(i13);
+                                part.part = (ci.s) this.collage.e.get(i13);
                                 part.readParams(serializedData, false);
                                 this.collageParts.add(part);
                             }
@@ -430,15 +430,15 @@ public class VideoEditedInfo {
                 }
             }
             return true;
-        } catch (Exception e7) {
-            FileLog.e(e7);
+        } catch (Exception e) {
+            FileLog.e(e);
             return false;
         }
     }
 
-    /* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+    /* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
     public static class Part extends TLObject {
-        public org.telegram.ui.Components.d6 animatedFileDrawable;
+        public org.telegram.ui.Components.b6 animatedFileDrawable;
         public float currentFrame;
         public long duration;
         public int flags;
@@ -450,7 +450,7 @@ public class VideoEditedInfo {
         public float msPerFrame;
         public boolean muted;
         public long offset;
-        public di.s part;
+        public ci.s part;
         public String path;
         public MediaCodecPlayer player;
         public FloatBuffer posBuffer;
@@ -466,31 +466,31 @@ public class VideoEditedInfo {
             this.loop = true;
         }
 
-        public static ArrayList<Part> toParts(di.o8 o8Var) {
+        public static ArrayList<Part> toParts(ci.o8 o8Var) {
             if (o8Var == null || o8Var.T == null) {
                 return null;
             }
             ArrayList<Part> arrayList = new ArrayList<>();
             for (int i10 = 0; i10 < o8Var.T.size(); i10++) {
-                Part part = new Part((di.o8) o8Var.T.get(i10));
-                part.part = (di.s) o8Var.S.e.get(i10);
+                Part part = new Part((ci.o8) o8Var.T.get(i10));
+                part.part = (ci.s) o8Var.S.e.get(i10);
                 arrayList.add(part);
             }
             return arrayList;
         }
 
-        public static ArrayList<di.o8> toStoryEntries(ArrayList<Part> arrayList) {
+        public static ArrayList<ci.o8> toStoryEntries(ArrayList<Part> arrayList) {
             if (arrayList == null) {
                 return null;
             }
-            ArrayList<di.o8> arrayList2 = new ArrayList<>();
+            ArrayList<ci.o8> arrayList2 = new ArrayList<>();
             int size = arrayList.size();
             int i10 = 0;
             while (i10 < size) {
                 Part part = arrayList.get(i10);
                 i10++;
                 Part part2 = part;
-                di.o8 o8Var = new di.o8();
+                ci.o8 o8Var = new ci.o8();
                 o8Var.K = part2.isVideo;
                 o8Var.Y = part2.muted;
                 o8Var.L = new File(part2.path);
@@ -543,7 +543,7 @@ public class VideoEditedInfo {
             outputSerializedData.writeInt64(this.duration);
         }
 
-        public Part(di.o8 o8Var) {
+        public Part(ci.o8 o8Var) {
             this.volume = 1.0f;
             this.offset = 0L;
             this.loop = true;
@@ -561,7 +561,7 @@ public class VideoEditedInfo {
         }
     }
 
-    /* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+    /* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
     public static class MediaEntity {
         public static final byte TYPE_LINK = 7;
         public static final byte TYPE_LOCATION = 3;
@@ -577,7 +577,7 @@ public class VideoEditedInfo {
         public int W;
         public float additionalHeight;
         public float additionalWidth;
-        public org.telegram.ui.Components.d6 animatedFileDrawable;
+        public org.telegram.ui.Components.b6 animatedFileDrawable;
         public Bitmap bitmap;
         public Canvas canvas;
         public int color;
@@ -591,7 +591,7 @@ public class VideoEditedInfo {
         public int fontSize;
         public float framesPerDraw;
         public float height;
-        public rg.p0 linkSettings;
+        public qg.q0 linkSettings;
         public boolean looped;
         public RLottieNative lottieNative;
         public Matrix matrix;
@@ -610,7 +610,7 @@ public class VideoEditedInfo {
         public byte subType;
         public String text;
         public int textAlign;
-        public qg.j0 textTypeface;
+        public pg.j0 textTypeface;
         public String textTypefaceKey;
         public float textViewHeight;
         public float textViewWidth;
@@ -620,8 +620,8 @@ public class VideoEditedInfo {
         public View view;
         public int viewHeight;
         public int viewWidth;
-        public ah.j1 visibleReaction;
-        public di.nd weather;
+        public zg.p0 visibleReaction;
+        public ci.nd weather;
         public float width;
         public float x;
         public float y;
@@ -706,7 +706,7 @@ public class VideoEditedInfo {
             abstractSerializedData.writeInt32(this.viewWidth);
             abstractSerializedData.writeInt32(this.viewHeight);
             abstractSerializedData.writeInt32(this.textAlign);
-            qg.j0 j0Var = this.textTypeface;
+            pg.j0 j0Var = this.textTypeface;
             if (j0Var == null) {
                 str = this.textTypefaceKey;
                 if (str == null) {
@@ -797,7 +797,7 @@ public class VideoEditedInfo {
         }
 
         public MediaEntity(AbstractSerializedData abstractSerializedData, boolean z10, boolean z11) {
-            qg.j0 j0Var;
+            pg.j0 j0Var;
             this.text = "";
             this.entities = new ArrayList<>();
             this.segmentedPath = "";
@@ -824,12 +824,12 @@ public class VideoEditedInfo {
             this.textAlign = abstractSerializedData.readInt32(z11);
             String readString = abstractSerializedData.readString(z11);
             this.textTypefaceKey = readString;
-            qg.j0 j0Var2 = qg.j0.e;
-            rg.p0 p0Var = null;
+            pg.j0 j0Var2 = pg.j0.e;
+            qg.q0 q0Var = null;
             if (readString != null && !TextUtils.isEmpty(readString)) {
-                List c10 = qg.j0.c();
+                List c10 = pg.j0.c();
                 for (int i11 = 0; i11 < c10.size(); i11++) {
-                    j0Var = (qg.j0) c10.get(i11);
+                    j0Var = (pg.j0) c10.get(i11);
                     if (j0Var != null && TextUtils.equals(readString, j0Var.a)) {
                         break;
                     }
@@ -871,11 +871,11 @@ public class VideoEditedInfo {
                 this.mediaArea = TL_stories.MediaArea.TLdeserialize(abstractSerializedData, abstractSerializedData.readInt32(z11), z11);
                 int readInt323 = abstractSerializedData.readInt32(z11);
                 if (-625858389 != readInt323) {
-                    int i12 = rg.p0.j;
+                    int i12 = qg.q0.j;
                 } else {
-                    p0Var = new rg.p0();
+                    q0Var = new qg.q0();
                 }
-                this.linkSettings = (rg.p0) TLObject.TLdeserialize(rg.p0.class, p0Var, abstractSerializedData, readInt323, z11);
+                this.linkSettings = (qg.q0) TLObject.TLdeserialize(qg.q0.class, q0Var, abstractSerializedData, readInt323, z11);
                 return;
             }
             if (b10 == 4) {
@@ -900,7 +900,7 @@ public class VideoEditedInfo {
                 return;
             }
             if (b10 == 8 && abstractSerializedData.readInt32(z11) == 132805945) {
-                di.nd ndVar = new di.nd();
+                ci.nd ndVar = new ci.nd();
                 ndVar.a = abstractSerializedData.readDouble(false);
                 ndVar.b = abstractSerializedData.readDouble(false);
                 ndVar.c = abstractSerializedData.readString(false);

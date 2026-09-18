@@ -6,19 +6,19 @@ import android.os.Looper;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.k;
 import com.google.android.gms.common.api.l;
-import com.google.android.gms.internal.clearcut.z1;
+import com.google.android.gms.internal.clearcut.a2;
 import g6.s;
 import g6.v;
 import g6.w;
 import kotlin.jvm.internal.i;
 import m.p3;
 import n6.p;
-import n7.m1;
+import n7.n1;
 import s6.h;
 import v8.o;
 import y8.y0;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class d {
     public final /* synthetic */ int a;
@@ -77,11 +77,11 @@ public final class d {
                         throw new UnsupportedOperationException("buildClient must be implemented");
                 }
             case 5:
-                return new z1(context, looper, 40, commonSettings, kVar, lVar, 0);
+                return new a2(context, looper, 40, commonSettings, kVar, lVar, 0);
             case 7:
                 return new b8.a(context, looper, kVar, lVar, commonSettings);
             case 8:
-                return new m1(context, looper, 148, commonSettings, kVar, lVar, 0);
+                return new n1(context, looper, 148, commonSettings, kVar, lVar, 0);
             case 9:
                 commonSettings.getClass();
                 Integer num = (Integer) commonSettings.h;

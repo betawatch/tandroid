@@ -1,74 +1,48 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.RectF;
+import android.view.KeyEvent;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class lh implements ch.a {
+public final /* synthetic */ class lh implements Utilities.Callback4 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ KeyEvent.Callback b;
 
-    public /* synthetic */ lh(Object obj, int i10) {
+    public /* synthetic */ lh(KeyEvent.Callback callback, int i10) {
         this.a = i10;
-        this.b = obj;
+        this.b = callback;
     }
 
-    /* JADX WARN: Failed to find 'out' block for switch in B:2:0x0002. Please report as an issue. */
-    @Override // ch.a
-    public final void e(bh.a aVar, RectF rectF) {
-        switch (this.a) {
-        }
-        aVar.a = true;
-    }
-
-    @Override // ch.a
-    public final void f(Canvas canvas, RectF rectF) {
-        Canvas canvas2;
-        RectF rectF2;
-        ni niVar;
-        di.z7 z7Var;
+    @Override // org.telegram.messenger.Utilities.Callback4
+    public final void run(Object obj, Object obj2, Object obj3, Object obj4) {
         switch (this.a) {
             case 0:
                 vi viVar = (vi) this.b;
-                int i10 = 0;
-                while (i10 < 2) {
-                    ni niVar2 = i10 == 0 ? viVar.y0 : viVar.z0;
-                    if (niVar2 == null || niVar2.c == null || niVar2.getVisibility() != 0) {
-                        canvas2 = canvas;
-                        rectF2 = rectF;
-                    } else {
-                        canvas2 = canvas;
-                        rectF2 = rectF;
-                        hh.d.a(niVar2.c, canvas2, rectF2, niVar2.d, viVar.getContainerView(), (int) (((i10 == 0 && (niVar = viVar.z0) != null && niVar.getVisibility() == 0) ? (1.0f - viVar.z0.getAlpha()) * niVar2.getAlpha() : niVar2.getAlpha()) * 255.0f));
-                    }
-                    i10++;
-                    canvas = canvas2;
-                    rectF = rectF2;
-                }
+                CharSequence charSequence = (CharSequence) obj;
+                ai aiVar = viVar.E0;
+                aiVar.setText(charSequence);
+                aiVar.w(charSequence.length(), charSequence.length());
+                viVar.z1();
                 break;
             case 1:
-                ch.a[] aVarArr = (ch.a[]) this.b;
-                for (int i11 = 0; i11 < 3; i11++) {
-                    ch.a aVar = aVarArr[i11];
-                    if (aVar != null) {
-                        aVar.f(canvas, rectF);
-                    }
-                }
+                vi viVar2 = (vi) this.b;
+                CharSequence charSequence2 = (CharSequence) obj;
+                di diVar = viVar2.P0;
+                diVar.setText(charSequence2);
+                diVar.w(charSequence2.length(), charSequence2.length());
+                viVar2.z1();
                 break;
             default:
-                xu0 xu0Var = (xu0) this.b;
-                for (qt0 qt0Var : xu0Var.k0) {
-                    bh.l lVar = qt0Var.n;
-                    if (lVar != null) {
-                        lVar.f(canvas, rectF);
-                    }
-                }
-                nr0 nr0Var = xu0Var.V;
-                if (nr0Var != null && (z7Var = nr0Var.R) != null) {
-                    z7Var.f(canvas, rectF);
-                    break;
-                }
+                jd jdVar = (jd) this.b;
+                ci.g gVar = jdVar.f;
+                gVar.setText((CharSequence) obj);
+                gVar.d();
+                gVar.k(true);
+                ci.e eVar = jdVar.c0;
+                AndroidUtilities.cancelRunOnUIThread(eVar);
+                eVar.run();
                 break;
         }
     }

@@ -1,6 +1,6 @@
 package dd;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public enum v0 extends b2 {
     public v0() {
@@ -12,7 +12,7 @@ public enum v0 extends b2 {
         char d = aVar.d();
         w wVar = b2.a;
         if (d == '>') {
-            lVar.i.s = true;
+            lVar.i.j = true;
             lVar.k();
             lVar.c = wVar;
         } else if (d == 65535) {

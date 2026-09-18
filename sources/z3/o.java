@@ -7,9 +7,10 @@ import c3.g0;
 import c3.h0;
 import e2.d0;
 import e2.v;
+import hg.k0;
 import java.io.EOFException;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class o implements h0 {
     public final h0 a;
@@ -41,7 +42,7 @@ public final class o implements h0 {
         k kVar = this.b;
         if (!equals) {
             this.h = sVar;
-            this.g = kVar.i0(sVar) ? kVar.v(sVar) : null;
+            this.g = kVar.W(sVar) ? kVar.x(sVar) : null;
         }
         m mVar = this.g;
         h0 h0Var = this.a;
@@ -53,8 +54,8 @@ public final class o implements h0 {
         a2.q = r0.n("application/x-media3-cues");
         a2.j = str;
         a2.v = Long.MAX_VALUE;
-        a2.O = kVar.J(sVar);
-        i2.g.u(a2, h0Var);
+        a2.O = kVar.D(sVar);
+        k0.u(a2, h0Var);
     }
 
     @Override // c3.h0
@@ -66,17 +67,17 @@ public final class o implements h0 {
         e2.d.a("DRM on subtitles is not supported", g0Var == null);
         int i13 = (this.e - i12) - i11;
         try {
-            this.g.e0(this.f, i13, i11, l.c, new e2.h() { // from class: z3.n
+            this.g.B(this.f, i13, i11, l.c, new e2.h() { // from class: z3.n
                 @Override // e2.h
                 public final void accept(Object obj) {
                     a aVar = (a) obj;
                     o oVar = o.this;
                     e2.d.h(oVar.h);
-                    byte[] t22 = qb.b.t2(aVar.a, aVar.c);
+                    byte[] C2 = ob.a.C2(aVar.a, aVar.c);
                     v vVar = oVar.c;
                     vVar.getClass();
-                    vVar.H(t22.length, t22);
-                    oVar.a.d(t22.length, vVar);
+                    vVar.H(C2.length, C2);
+                    oVar.a.d(C2.length, vVar);
                     long j10 = aVar.b;
                     long j11 = j3;
                     if (j10 == -9223372036854775807L) {
@@ -85,14 +86,14 @@ public final class o implements h0 {
                         long j12 = oVar.h.w;
                         j11 = j12 == Long.MAX_VALUE ? j11 + j10 : j10 + j12;
                     }
-                    oVar.a.c(j11, i10 | 1, t22.length, 0, null);
+                    oVar.a.c(j11, i10 | 1, C2.length, 0, null);
                 }
             });
-        } catch (RuntimeException e7) {
+        } catch (RuntimeException e) {
             if (!this.i) {
-                throw e7;
+                throw e;
             }
-            e2.a.o("SubtitleTranscodingTO", "Parsing subtitles failed, ignoring sample.", e7);
+            e2.a.o("SubtitleTranscodingTO", "Parsing subtitles failed, ignoring sample.", e);
         }
         int i14 = i13 + i11;
         this.d = i14;

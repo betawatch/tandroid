@@ -1,30 +1,61 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class sg implements Runnable {
+public final /* synthetic */ class sg implements q0.a {
     public final /* synthetic */ int a;
-    public final /* synthetic */ co b;
-    public final /* synthetic */ TLRPC.User c;
+    public final /* synthetic */ bo b;
 
-    public /* synthetic */ sg(co coVar, TLRPC.User user, int i10) {
+    public /* synthetic */ sg(bo boVar, int i10) {
         this.a = i10;
-        this.b = coVar;
-        this.c = user;
+        this.b = boVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // q0.a
+    public final void accept(Object obj) {
         switch (this.a) {
             case 0:
-                co coVar = this.b;
-                coVar.getClass();
-                coVar.presentFragment(co.R9(this.c.id));
-                break;
+                Integer num = (Integer) obj;
+                bo boVar = this.b;
+                boVar.getClass();
+                if (num.intValue() != 0) {
+                    boVar.Bc(true);
+                    boVar.F(num.intValue(), 0, 0, 0, false, true);
+                    break;
+                } else {
+                    boVar.l1 = 0;
+                    boVar.Bc(true);
+                    boVar.getMessagesController().markReactionsAsRead(boVar.T5, boVar.d());
+                    break;
+                }
+            case 1:
+                Integer num2 = (Integer) obj;
+                bo boVar2 = this.b;
+                boVar2.getClass();
+                if (num2.intValue() != 0) {
+                    int i10 = boVar2.m1 - 1;
+                    boVar2.m1 = i10;
+                    if (i10 <= 0) {
+                        boVar2.getMessagesController().markPollVotesAsRead(boVar2.T5, boVar2.d());
+                    }
+                    boVar2.Ac(true);
+                    boVar2.F(num2.intValue(), 0, 0, 0, false, true);
+                    break;
+                } else {
+                    boVar2.m1 = 0;
+                    boVar2.Ac(true);
+                    boVar2.getMessagesController().markPollVotesAsRead(boVar2.T5, boVar2.d());
+                    break;
+                }
             default:
-                this.b.ma(this.c);
+                bo boVar3 = this.b;
+                boVar3.getClass();
+                boolean booleanValue = ((Boolean) obj).booleanValue();
+                boVar3.f7 = booleanValue;
+                if (!booleanValue) {
+                    boVar3.r8();
+                    break;
+                }
                 break;
         }
     }

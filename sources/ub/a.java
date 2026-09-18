@@ -4,7 +4,7 @@ import v7.c9;
 import v7.v8;
 import v7.y8;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class a {
     public final y8 a;
@@ -12,7 +12,7 @@ public final class a {
     public final qb.d c;
 
     public a(e eVar, qb.d dVar) {
-        y8 e7;
+        y8 c10;
         this.b = eVar;
         this.c = dVar;
         String str = true != eVar.g ? "play-services-mlkit-language-id" : "language-id";
@@ -28,8 +28,8 @@ public final class a {
                 }
                 throw new IllegalStateException("Missing required properties:".concat(sb2.toString()));
             }
-            e7 = c9.e(new v8(str));
+            c10 = c9.c(new v8(str));
         }
-        this.a = e7;
+        this.a = c10;
     }
 }

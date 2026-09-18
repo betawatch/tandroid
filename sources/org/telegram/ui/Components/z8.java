@@ -2,52 +2,94 @@ package org.telegram.ui.Components;
 
 import android.app.Activity;
 import android.view.View;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class z8 extends org.telegram.ui.j71 {
-    public boolean d2;
-    public final /* synthetic */ f9 e2;
+public final class z8 extends ml0 {
+    public final ArrayList X2;
+    public final int Y2;
+    public int Z2;
+    public final org.telegram.ui.y7 a3;
+    public y8 b3;
+    public final /* synthetic */ c9 c3;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z8(f9 f9Var, f9 f9Var2, Activity activity, int i10) {
-        super(f9Var2, activity, false, null, 4, true, null, 16, i10);
-        this.e2 = f9Var;
-        this.d2 = true;
+    public z8(c9 c9Var, Activity activity) {
+        super(activity, null);
+        this.c3 = c9Var;
+        this.X2 = new ArrayList();
+        this.Y2 = 200;
+        this.Z2 = -1;
+        s4.c0 c0Var = new s4.c0();
+        c0Var.j1(0);
+        setLayoutManager(c0Var);
+        for (int i10 = 0; i10 < 7; i10++) {
+            y8 y8Var = new y8();
+            int i11 = this.Y2;
+            this.Y2 = i11 + 1;
+            y8Var.a = i11;
+            int[] iArr = c9.c0[i10];
+            y8Var.c = iArr[0];
+            y8Var.d = iArr[1];
+            y8Var.e = iArr[2];
+            y8Var.f = iArr[3];
+            this.X2.add(y8Var);
+        }
+        for (int i12 = 0; i12 < 30; i12++) {
+            y8 y8Var2 = new y8();
+            int i13 = this.Y2;
+            this.Y2 = i13 + 1;
+            y8Var2.a = i13;
+            int[] iArr2 = c9.d0[i12];
+            y8Var2.c = iArr2[0];
+            y8Var2.d = iArr2[1];
+            y8Var2.e = 0;
+            y8Var2.f = 0;
+            y8Var2.b = true;
+            this.X2.add(y8Var2);
+        }
+        setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
+        setClipToPadding(false);
+        this.h1 = true;
+        int i14 = 2;
+        setOnItemClickListener(new j(this, i14));
+        org.telegram.ui.y7 y7Var = new org.telegram.ui.y7(this, i14);
+        this.a3 = y7Var;
+        setAdapter(y7Var);
+        setOverScrollMode(1);
     }
 
-    @Override // org.telegram.ui.j71, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        if (this.d2) {
-            this.d2 = false;
-            this.e2.b.s(null);
+    @Override // org.telegram.ui.Components.ml0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        int size = View.MeasureSpec.getSize(i10) / this.a3.h();
+        c9 c9Var = this.c3;
+        c9Var.P = size;
+        if (size < AndroidUtilities.dp(39.0f)) {
+            c9Var.P = AndroidUtilities.dp(39.0f);
+        } else if (c9Var.P > AndroidUtilities.dp(150.0f)) {
+            c9Var.P = AndroidUtilities.dp(48.0f);
         }
+        super.onMeasure(i10, i11);
     }
 
-    @Override // org.telegram.ui.j71
-    public final void p(View view, Long l4, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
-        int i10;
-        TLRPC.TL_emojiList tL_emojiList;
-        boolean z10;
-        int i11;
-        boolean z11 = this.R;
-        f9 f9Var = this.e2;
-        if (z11) {
-            i11 = ((org.telegram.ui.ActionBar.n2) f9Var).currentAccount;
-            tL_emojiList = MediaDataController.getInstance(i11).profileAvatarConstructorDefault;
-        } else {
-            i10 = ((org.telegram.ui.ActionBar.n2) f9Var).currentAccount;
-            tL_emojiList = MediaDataController.getInstance(i10).groupAvatarConstructorDefault;
+    public final void x1(y8 y8Var) {
+        int i10 = 0;
+        while (true) {
+            ArrayList arrayList = this.X2;
+            if (i10 >= arrayList.size()) {
+                this.b3 = y8Var;
+                this.Z2 = 1;
+                break;
+            } else {
+                if (((y8) arrayList.get(i10)).equals(y8Var)) {
+                    this.Z2 = ((y8) arrayList.get(i10)).a;
+                    break;
+                }
+                i10++;
+            }
         }
-        if (tL_emojiList != null) {
-            z10 = tL_emojiList.document_id.contains(Long.valueOf(document != null ? document.id : l4 != null ? l4.longValue() : 0L));
-        } else {
-            z10 = false;
-        }
-        f9Var.h0(z10, l4 != null ? l4.longValue() : 0L, document);
+        this.a3.l();
     }
 }

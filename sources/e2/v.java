@@ -1,15 +1,16 @@
 package e2;
 
 import e9.m0;
+import hg.k0;
 import java.nio.ByteOrder;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
+import v7.a8;
 import v7.t6;
-import v7.x7;
-import v7.z7;
+import v7.y7;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class v {
     public static final char[] d = {'\r', '\n'};
@@ -25,7 +26,7 @@ public final class v {
 
     public static int b(int i10, int i11, int i12, int i13) {
         byte b10 = (byte) i12;
-        return x7.c((byte) 0, z7.a(((i10 & 7) << 2) | ((i11 & 48) >> 4)), z7.a(((((byte) i11) & 15) << 4) | ((b10 & 60) >> 2)), z7.a(((b10 & 3) << 6) | (((byte) i13) & 63)));
+        return y7.c((byte) 0, a8.a(((i10 & 7) << 2) | ((i11 & 48) >> 4)), a8.a(((((byte) i11) & 15) << 4) | ((b10 & 60) >> 2)), a8.a(((b10 & 3) << 6) | (((byte) i13) & 63)));
     }
 
     public static int d(Charset charset) {
@@ -55,7 +56,7 @@ public final class v {
         if (j3 >= 0) {
             return j3;
         }
-        throw new IllegalStateException(i2.g.i(j3, "Top bit not zero: "));
+        throw new IllegalStateException(k0.i(j3, "Top bit not zero: "));
     }
 
     public final long C() {
@@ -261,7 +262,7 @@ public final class v {
                 t6.b(j10, "Out of range: %s", ((long) c10) == j10);
                 for (char c11 : cArr) {
                     if (c11 == c10) {
-                        this.b = x7.b(g10 & 255) + this.b;
+                        this.b = y7.b(g10 & 255) + this.b;
                         return c10;
                     }
                 }
@@ -397,7 +398,7 @@ public final class v {
         if (l4 >= 0) {
             return l4;
         }
-        throw new IllegalStateException(i2.g.i(l4, "Top bit not zero: "));
+        throw new IllegalStateException(k0.i(l4, "Top bit not zero: "));
     }
 
     public final int q() {

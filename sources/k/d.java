@@ -7,15 +7,20 @@ import androidx.appcompat.widget.ActionBarContextView;
 import java.lang.ref.WeakReference;
 import n4.y;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
-public final class d extends a implements l.j {
+public final class d extends a implements l.i {
     public Context c;
     public ActionBarContextView d;
     public y e;
     public WeakReference f;
     public boolean h;
-    public l.l n;
+    public l.k n;
+
+    @Override // l.i
+    public final boolean A(l.k kVar, MenuItem menuItem) {
+        return ((ni.f) this.e.b).G(this, menuItem);
+    }
 
     @Override // k.a
     public final void a() {
@@ -23,7 +28,7 @@ public final class d extends a implements l.j {
             return;
         }
         this.h = true;
-        this.e.I(this);
+        this.e.T(this);
     }
 
     @Override // k.a
@@ -36,7 +41,7 @@ public final class d extends a implements l.j {
     }
 
     @Override // k.a
-    public final l.l c() {
+    public final l.k c() {
         return this.n;
     }
 
@@ -57,7 +62,7 @@ public final class d extends a implements l.j {
 
     @Override // k.a
     public final void g() {
-        this.e.J(this, this.n);
+        this.e.U(this, this.n);
     }
 
     @Override // k.a
@@ -91,23 +96,18 @@ public final class d extends a implements l.j {
         this.d.setTitle(charSequence);
     }
 
-    @Override // l.j
-    public final void n(l.l lVar) {
+    @Override // k.a
+    public final void n(boolean z10) {
+        this.b = z10;
+        this.d.setTitleOptional(z10);
+    }
+
+    @Override // l.i
+    public final void t(l.k kVar) {
         g();
         m.h hVar = this.d.d;
         if (hVar != null) {
             hVar.l();
         }
-    }
-
-    @Override // k.a
-    public final void o(boolean z10) {
-        this.b = z10;
-        this.d.setTitleOptional(z10);
-    }
-
-    @Override // l.j
-    public final boolean s(l.l lVar, MenuItem menuItem) {
-        return ((fg.f) this.e.b).H(this, menuItem);
     }
 }

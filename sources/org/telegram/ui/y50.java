@@ -1,80 +1,55 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.LinearGradient;
-import android.graphics.Paint;
-import android.graphics.Shader;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
+import android.animation.ValueAnimator;
+import java.util.HashSet;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class y50 extends View {
-    public int[] a;
-    public int b;
-    public final Paint c;
-    public float d;
-    public final /* synthetic */ j60 e;
+public final class y50 extends s4.j {
+    public float F;
+    public ValueAnimator G;
+    public final HashSet H = new HashSet();
+    public final HashSet I = new HashSet();
+    public float J;
+    public float K;
+    public final /* synthetic */ k60 L;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public y50(j60 j60Var, LaunchActivity launchActivity) {
-        super(launchActivity);
-        this.e = j60Var;
-        Paint paint = new Paint(1);
-        this.c = paint;
-        paint.setStyle(Paint.Style.FILL);
-        paint.setAlpha(0);
+    public y50(k60 k60Var) {
+        this.L = k60Var;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        if (!this.e.z2 || r0.a2.c >= 0.1d) {
-            return;
-        }
-        canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), this.c);
+    @Override // s4.j, s4.m0
+    public final void g() {
+        super.g();
+        this.I.clear();
+        this.H.clear();
+        this.K = Float.MAX_VALUE;
+        this.L.Q.invalidate();
     }
 
-    public void setNewColors(int[] iArr) {
-        int[] iArr2 = this.a;
-        Paint paint = this.c;
-        boolean z10 = true;
-        j60 j60Var = this.e;
-        boolean z11 = false;
-        if (iArr2 == null || iArr[0] != iArr2[0] || iArr[1] != iArr2[1]) {
-            if (iArr2 == null) {
-                paint.setAlpha(255);
-            }
-            this.a = iArr;
-            if (j60Var.h1 != null) {
-                float f7 = j60Var.i1;
-                if (f7 != 1.0f) {
-                    iArr[0] = i0.a.k(iArr[0], (int) (f7 * 255.0f));
-                    int[] iArr3 = this.a;
-                    iArr3[1] = i0.a.k(iArr3[1], (int) (j60Var.i1 * 255.0f));
-                }
-            }
-            paint.setShader(new LinearGradient(0.0f, 0.0f, 0.0f, j60Var.U0.getMeasuredHeight(), this.a, (float[]) null, Shader.TileMode.CLAMP));
-            z11 = true;
+    @Override // s4.j, s4.m0
+    public final void m() {
+        boolean isEmpty = this.p.isEmpty();
+        boolean isEmpty2 = this.r.isEmpty();
+        boolean isEmpty3 = this.q.isEmpty();
+        ValueAnimator valueAnimator = this.G;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+            this.G = null;
         }
-        if (this.b != j60Var.V1) {
-            paint.setShadowLayer(AndroidUtilities.dp(36.0f), 0.0f, this.d, j60Var.V1);
-            this.b = j60Var.V1;
-        } else {
-            z10 = z11;
+        if (!isEmpty || !isEmpty2 || !isEmpty3) {
+            this.F = 0.0f;
+            ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+            this.G = ofFloat;
+            ofFloat.addUpdateListener(new b3(this, 16));
+            this.G.addListener(new org.telegram.ui.Components.w81(this, 22));
+            this.G.setDuration(350L);
+            this.G.setInterpolator(org.telegram.ui.Components.qr.f);
+            this.G.start();
+            k60 k60Var = this.L;
+            k60Var.Q.invalidate();
+            k60Var.a2.invalidate();
         }
-        if (z10) {
-            invalidate();
-        }
-        j60Var.z1();
-    }
-
-    public void setShadowOffset(int i10) {
-        float f7 = i10;
-        if (this.d != f7) {
-            this.c.setShadowLayer(AndroidUtilities.dp(36.0f), 0.0f, this.d, this.e.V1);
-            this.d = f7;
-            invalidate();
-        }
+        super.m();
     }
 }

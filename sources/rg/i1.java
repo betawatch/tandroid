@@ -1,42 +1,30 @@
 package rg;
 
 import android.content.Context;
-import android.view.ViewGroup;
-import org.telegram.ui.Components.vk0;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class i1 extends s4.h0 {
-    public final /* synthetic */ Context c;
-    public final /* synthetic */ k1 d;
+public final class i1 extends View {
+    public final /* synthetic */ int a;
 
-    public i1(k1 k1Var, Context context) {
-        this.d = k1Var;
-        this.c = context;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ i1(Context context, int i10) {
+        super(context);
+        this.a = i10;
     }
 
-    @Override // s4.h0
-    public final int h() {
-        return 14;
-    }
-
-    @Override // s4.h0
-    public final void v(s4.c1 c1Var, int i10) {
-        j1 j1Var = (j1) c1Var.a;
-        ViewGroup.LayoutParams layoutParams = j1Var.getLayoutParams();
-        k1 k1Var = this.d;
-        layoutParams.height = ((k1Var.getHeight() - k1Var.getPaddingTop()) - k1Var.getPaddingBottom()) / 2;
-        qg.s0 s0Var = k1Var.a3;
-        if (s0Var != null) {
-            j1Var.a = s0Var.b(i10);
-            j1Var.invalidate();
-            j1Var.b = k1Var.Z2 == i10 ? 1.0f : 0.0f;
-            j1Var.invalidate();
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        switch (this.a) {
+            case 0:
+                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(68.0f), TLObject.FLAG_30));
+                break;
+            default:
+                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(52.0f), TLObject.FLAG_30));
+                break;
         }
-    }
-
-    @Override // s4.h0
-    public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        return new vk0(new j1(this.d, this.c));
     }
 }

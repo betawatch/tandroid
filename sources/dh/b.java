@@ -1,112 +1,67 @@
 package dh;
 
-import android.graphics.Outline;
-import android.graphics.RectF;
-import android.view.View;
-import android.view.ViewOutlineProvider;
-import di.i;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.k;
-import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
-import org.telegram.ui.Components.qb0;
-import org.telegram.ui.Components.vi;
-import org.telegram.ui.Components.voip.q2;
-import org.telegram.ui.Components.voip.s1;
-import org.telegram.ui.Components.w50;
-import org.telegram.ui.PremiumPreviewFragment;
+import org.telegram.messenger.LiteMode;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.j6;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class b extends ViewOutlineProvider {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public class b implements a {
+    public final f6 a;
+    public final int b;
+    public final float c;
+    public int d;
+    public int e;
+    public int f;
+    public int h;
 
-    public /* synthetic */ b(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public b(int i10, f6 f6Var) {
+        this(f6Var, i10, LiteMode.isEnabled(262144) ? 0.85f : 0.76f);
     }
 
-    @Override // android.view.ViewOutlineProvider
-    public final void getOutline(View view, Outline outline) {
-        k kVar;
-        int i10 = this.a;
-        Object obj = this.b;
-        switch (i10) {
-            case 0:
-                c cVar = ((d) obj).h;
-                d.h(outline, cVar.m, cVar.b);
-                break;
-            case 1:
-                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = (ChatAttachAlertPhotoLayout) obj;
-                vi viVar = chatAttachAlertPhotoLayout.b;
-                float f7 = viVar.G0[1];
-                i iVar = viVar.B2;
-                int min = (int) Math.min((viVar.getContainerView().getTranslationY() + ((f7 - (iVar != null ? iVar.d() + AndroidUtilities.dp(16.0f) : 0.0f)) + chatAttachAlertPhotoLayout.W0)) - chatAttachAlertPhotoLayout.P.getTranslationY(), view.getMeasuredHeight());
-                if (chatAttachAlertPhotoLayout.b0) {
-                    min = view.getMeasuredHeight();
-                } else if (chatAttachAlertPhotoLayout.d0) {
-                    min = AndroidUtilities.lerp(min, view.getMeasuredHeight(), chatAttachAlertPhotoLayout.e0);
-                }
-                boolean z10 = chatAttachAlertPhotoLayout.d0;
-                if (!z10) {
-                    if (!z10 && !chatAttachAlertPhotoLayout.b0) {
-                        int dp = AndroidUtilities.dp(16.0f);
-                        boolean z11 = ChatAttachAlertPhotoLayout.q1;
-                        outline.setRoundRect((int) 0.0f, (int) chatAttachAlertPhotoLayout.W, view.getMeasuredWidth() + dp, Math.min(min, view.getMeasuredHeight()) + dp, dp);
-                        break;
-                    } else {
-                        outline.setRect(0, 0, view.getMeasuredWidth(), Math.min(min, view.getMeasuredHeight()));
-                        break;
-                    }
-                } else {
-                    RectF rectF = AndroidUtilities.rectTmp;
-                    float f10 = chatAttachAlertPhotoLayout.n1;
-                    boolean z12 = ChatAttachAlertPhotoLayout.q1;
-                    float f11 = 1.0f - chatAttachAlertPhotoLayout.e0;
-                    rectF.set((0.0f * f11) + f10, (f11 * chatAttachAlertPhotoLayout.W) + chatAttachAlertPhotoLayout.k1, chatAttachAlertPhotoLayout.m1, chatAttachAlertPhotoLayout.l1);
-                    outline.setRect((int) rectF.left, (int) rectF.top, (int) rectF.right, Math.min(min, (int) rectF.bottom));
-                    break;
-                }
-            case 2:
-                int i11 = ((w50) obj).N0;
-                outline.setOval(0, 0, i11, i11);
-                break;
-            case 3:
-                outline.setRoundRect(0, ((qb0) obj).T + 1, view.getMeasuredWidth(), view.getMeasuredHeight(), AndroidUtilities.dp(8.0f));
-                break;
-            case 4:
-                s1 s1Var = (s1) obj;
-                float f12 = s1Var.Q;
-                if (f12 < 0.0f) {
-                    if (!s1Var.M) {
-                        outline.setRect(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight());
-                        break;
-                    } else {
-                        outline.setRoundRect(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight(), s1Var.M ? AndroidUtilities.dp(4.0f) : 0.0f);
-                        break;
-                    }
-                } else if (f12 >= 1.0f) {
-                    outline.setRoundRect(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight(), s1Var.Q);
-                    break;
-                } else {
-                    outline.setRect(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight());
-                    break;
-                }
-            case 5:
-                q2 q2Var = (q2) obj;
-                if (q2Var.b >= 1.0f) {
-                    outline.setRoundRect((int) q2Var.O, (int) q2Var.N, (int) (view.getMeasuredWidth() - q2Var.O), (int) (view.getMeasuredHeight() - q2Var.N), q2Var.b);
-                    break;
-                } else {
-                    outline.setRect((int) q2Var.O, (int) q2Var.N, (int) (view.getMeasuredWidth() - q2Var.O), (int) (view.getMeasuredHeight() - q2Var.N));
-                    break;
-                }
-            default:
-                int dp2 = AndroidUtilities.dp(12.0f);
-                kVar = ((n2) ((PremiumPreviewFragment) obj)).actionBar;
-                outline.setRoundRect(dp2, AndroidUtilities.dp(12.0f) + kVar.getBottom(), view.getWidth() - AndroidUtilities.dp(12.0f), AndroidUtilities.dp(16.0f) + view.getMeasuredHeight(), AndroidUtilities.dp(16.0f));
-                break;
+    @Override // dh.a
+    public int H() {
+        return this.d;
+    }
+
+    @Override // dh.a
+    public int a() {
+        return this.f;
+    }
+
+    public boolean b() {
+        return AndroidUtilities.computePerceivedBrightness(j6.v0(this.b, this.a)) < 0.721f;
+    }
+
+    @Override // dh.a
+    public int c() {
+        return this.h;
+    }
+
+    public final void d() {
+        this.d = j6.l1(this.c, j6.v0(this.b, this.a));
+        if (b()) {
+            this.f = 687865855;
+            this.h = 352321535;
+            this.e = 0;
+        } else {
+            this.f = -1;
+            this.h = -1;
+            this.e = TLObject.FLAG_29;
         }
+    }
+
+    @Override // dh.a
+    public int m() {
+        return this.e;
+    }
+
+    public b(f6 f6Var, int i10, float f7) {
+        this.a = f6Var;
+        this.b = i10;
+        this.c = f7;
+        d();
     }
 }

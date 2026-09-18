@@ -1,25 +1,47 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class m7 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ k8 b;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.R;
 
-    public /* synthetic */ m7(k8 k8Var, int i10) {
-        this.a = i10;
-        this.b = k8Var;
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* loaded from: classes3.dex */
+public final class m7 implements fo0 {
+    public final /* synthetic */ h8 a;
+
+    public m7(h8 h8Var) {
+        this.a = h8Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                k8.n(this.b);
-                break;
-            default:
-                k8.G(this.b);
-                break;
+    @Override // org.telegram.ui.Components.fo0
+    public final void X(float f7, boolean z10) {
+        if (z10) {
+            MediaController.getInstance().seekToProgress(MediaController.getInstance().getPlayingMessageObject(), f7);
         }
+        MessageObject playingMessageObject = MediaController.getInstance().getPlayingMessageObject();
+        if (playingMessageObject == null || !playingMessageObject.isMusic()) {
+            return;
+        }
+        this.a.G0(playingMessageObject, false);
+    }
+
+    @Override // org.telegram.ui.Components.fo0
+    public final CharSequence getContentDescription() {
+        StringBuilder sb2 = new StringBuilder();
+        h8 h8Var = this.a;
+        sb2.append(LocaleController.formatPluralString("Minutes", h8Var.D0 / 60, new Object[0]));
+        sb2.append(' ');
+        sb2.append(LocaleController.formatPluralString("Seconds", h8Var.D0 % 60, new Object[0]));
+        return LocaleController.formatString("AccDescrPlayerDuration", R.string.AccDescrPlayerDuration, sb2.toString(), LocaleController.formatPluralString("Minutes", h8Var.E0 / 60, new Object[0]) + ' ' + LocaleController.formatPluralString("Seconds", h8Var.E0 % 60, new Object[0]));
+    }
+
+    @Override // org.telegram.ui.Components.fo0
+    public final /* synthetic */ int m0() {
+        return 0;
+    }
+
+    @Override // org.telegram.ui.Components.fo0
+    public final void B() {
     }
 }

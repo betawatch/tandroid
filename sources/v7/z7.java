@@ -1,10 +1,25 @@
 package v7;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public abstract class z7 {
-    public static byte a(long j3) {
-        t6.b(j3, "out of range: %s", (j3 >> 8) == 0);
-        return (byte) j3;
+    public static long[] a(long[]... jArr) {
+        long j3 = 0;
+        for (long[] jArr2 : jArr) {
+            j3 += jArr2.length;
+        }
+        int i10 = (int) j3;
+        t6.b(j3, "the total number of elements (%s) in the arrays must fit in an int", j3 == ((long) i10));
+        long[] jArr3 = new long[i10];
+        int i11 = 0;
+        for (long[] jArr4 : jArr) {
+            System.arraycopy(jArr4, 0, jArr3, i11, jArr4.length);
+            i11 += jArr4.length;
+        }
+        return jArr3;
+    }
+
+    public static int b(long j3) {
+        return (int) (j3 ^ (j3 >>> 32));
     }
 }

@@ -20,23 +20,23 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class m60 extends kl0 {
+public final class m60 extends ll0 {
     public final /* synthetic */ r60 c;
 
     public m60(r60 r60Var) {
         this.c = r60Var;
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.ll0
     public final boolean D(s4.c1 c1Var) {
         int i10;
         int b10 = c1Var.b();
         r60 r60Var = this.c;
         if (b10 == r60Var.n) {
             long j3 = r60Var.b.admin_id;
-            i10 = ((org.telegram.ui.ActionBar.f3) r60Var).currentAccount;
+            i10 = ((org.telegram.ui.ActionBar.g3) r60Var).currentAccount;
             return j3 != UserConfig.getInstance(i10).clientUserId;
         }
         if (b10 < r60Var.x || b10 >= r60Var.y) {
@@ -173,13 +173,13 @@ public final class m60 extends kl0 {
         }
         if (i19 != 1) {
             if (i19 == 3) {
-                w80 w80Var = (w80) view;
-                w80Var.d(0, null, false);
-                w80Var.setLink(tL_chatInviteExported.link);
-                w80Var.setRevoke(tL_chatInviteExported.revoked);
-                w80Var.setPermanent(tL_chatInviteExported.permanent);
-                w80Var.setCanEdit(r60Var.k0);
-                w80Var.b(!r60Var.k0);
+                v80 v80Var = (v80) view;
+                v80Var.d(0, null, false);
+                v80Var.setLink(tL_chatInviteExported.link);
+                v80Var.setRevoke(tL_chatInviteExported.revoked);
+                v80Var.setPermanent(tL_chatInviteExported.permanent);
+                v80Var.setCanEdit(r60Var.k0);
+                v80Var.b(!r60Var.k0);
                 return;
             }
             if (i19 == 4) {
@@ -264,15 +264,15 @@ public final class m60 extends kl0 {
             if (i25 == 2592000) {
                 StringBuilder sb4 = new StringBuilder();
                 sb4.append(LocaleController.formatString(R.string.LinkRevenuePrice, Long.valueOf(tL_starsSubscriptionPricing2.amount)));
-                sb4.append(i24 > 0 ? i2.g.i(i24, " x ") : "");
-                textView2.setText(zh.v7.X0(false, sb4.toString(), 0.8f, null));
+                sb4.append(i24 > 0 ? hg.k0.i(i24, " x ") : "");
+                textView2.setText(yh.y7.X0(false, sb4.toString(), 0.8f, null));
                 if (i24 == 0) {
                     formatString = LocaleController.getString(R.string.NoOneSubscribed);
                 } else {
                     int i26 = R.string.LinkRevenuePriceInfo;
                     BillingController billingController = BillingController.getInstance();
                     double d = tL_starsSubscriptionPricing2.amount / 1000.0d;
-                    i18 = ((org.telegram.ui.ActionBar.f3) r60Var2).currentAccount;
+                    i18 = ((org.telegram.ui.ActionBar.g3) r60Var2).currentAccount;
                     formatString = LocaleController.formatString(i26, billingController.formatCurrency((long) (d * MessagesController.getInstance(i18).starsUsdWithdrawRate1000 * i24), "USD"));
                 }
                 textView.setText(formatString);
@@ -282,14 +282,14 @@ public final class m60 extends kl0 {
             StringBuilder sb5 = new StringBuilder();
             Locale locale2 = Locale.US;
             sb5.append(String.format(locale2, "⭐%1$d/%2$s", Long.valueOf(tL_starsSubscriptionPricing2.amount), str5));
-            sb5.append(i24 > 0 ? i2.g.i(i24, " x ") : "");
-            textView2.setText(zh.v7.X0(false, sb5.toString(), 0.8f, null));
+            sb5.append(i24 > 0 ? hg.k0.i(i24, " x ") : "");
+            textView2.setText(yh.y7.X0(false, sb5.toString(), 0.8f, null));
             if (i24 == 0) {
                 format = LocaleController.getString(R.string.NoOneSubscribed);
             } else {
                 BillingController billingController2 = BillingController.getInstance();
                 double d10 = tL_starsSubscriptionPricing2.amount / 1000.0d;
-                i17 = ((org.telegram.ui.ActionBar.f3) r60Var2).currentAccount;
+                i17 = ((org.telegram.ui.ActionBar.g3) r60Var2).currentAccount;
                 format = String.format(locale2, "you get approximately %1$s %2$s", billingController2.formatCurrency((long) (d10 * MessagesController.getInstance(i17).starsUsdWithdrawRate1000 * i24), "USD"), "for ".concat(str5));
             }
             textView.setText(format);
@@ -329,7 +329,7 @@ public final class m60 extends kl0 {
         if (i10 == r60Var.n) {
             user2 = (TLRPC.User) hashMap.get(Long.valueOf(j3));
             if (user2 == null) {
-                i16 = ((org.telegram.ui.ActionBar.f3) r60Var).currentAccount;
+                i16 = ((org.telegram.ui.ActionBar.g3) r60Var).currentAccount;
                 user2 = MessagesController.getInstance(i16).getUser(Long.valueOf(tL_chatInviteExported.admin_id));
             }
             if (user2 != null) {
@@ -351,7 +351,7 @@ public final class m60 extends kl0 {
                                 str6 = LocaleController.getString("ChannelAdmin", R.string.ChannelAdmin);
                             }
                             long j14 = channelParticipant.promoted_by;
-                            i15 = ((org.telegram.ui.ActionBar.f3) r60Var).currentAccount;
+                            i15 = ((org.telegram.ui.ActionBar.g3) r60Var).currentAccount;
                             z16 = j14 == UserConfig.getInstance(i15).getClientUserId();
                             str4 = str6;
                             z14 = true;
@@ -387,7 +387,7 @@ public final class m60 extends kl0 {
                                 str8 = LocaleController.getString("ChannelAdmin", R.string.ChannelAdmin);
                             }
                             long j15 = chatParticipant.inviter_id;
-                            i14 = ((org.telegram.ui.ActionBar.f3) r60Var).currentAccount;
+                            i14 = ((org.telegram.ui.ActionBar.g3) r60Var).currentAccount;
                             z12 = j15 == UserConfig.getInstance(i14).getClientUserId();
                             z10 = true;
                             z11 = false;
@@ -397,24 +397,24 @@ public final class m60 extends kl0 {
                         }
                     }
                     if (UserObject.isUserSelf(user)) {
-                        i13 = ((org.telegram.ui.ActionBar.f3) r60Var).currentAccount;
+                        i13 = ((org.telegram.ui.ActionBar.g3) r60Var).currentAccount;
                         str3 = str;
                         if (ChatObject.canManageMyTag(MessagesController.getInstance(i13).getChat(Long.valueOf(r60Var.g0)))) {
                             z13 = true;
                             p60Var.a(str2, z10, z11, z13, new h60(this, user, str2, z10, z11, z12, 0));
-                            p60Var.e(user, null, str3, false);
+                            p60Var.d(user, null, str3, false);
                             if (i10 != r60Var.n || (tL_starsSubscriptionPricing = tL_chatInviteExported.subscription_pricing) == null || tL_chatInviteImporter == null) {
                                 return;
                             }
                             int i31 = tL_chatInviteImporter.date;
                             TextView textView3 = p60Var.b0;
                             TextView textView4 = p60Var.a0;
-                            SpannableStringBuilder X0 = zh.v7.X0(false, "⭐️" + tL_starsSubscriptionPricing.amount, 0.7f, null);
+                            SpannableStringBuilder X0 = yh.y7.X0(false, "⭐️" + tL_starsSubscriptionPricing.amount, 0.7f, null);
                             int i32 = tL_starsSubscriptionPricing.period;
                             String string = i32 == 2592000 ? LocaleController.getString(R.string.StarsParticipantSubscriptionPerMonth) : i32 == 300 ? "per 5 minutes" : "per each minute";
                             textView4.setText(X0);
                             textView3.setText(string);
-                            p60Var.i((int) Math.max(di.f4.g(X0, textView4.getPaint()), di.f4.g(string, textView3.getPaint())), true);
+                            p60Var.i((int) Math.max(ci.f4.g(X0, textView4.getPaint()), ci.f4.g(string, textView3.getPaint())), true);
                             p60Var.c.l(LocaleController.formatJoined(i31), false);
                             return;
                         }
@@ -423,7 +423,7 @@ public final class m60 extends kl0 {
                     }
                     z13 = false;
                     p60Var.a(str2, z10, z11, z13, new h60(this, user, str2, z10, z11, z12, 0));
-                    p60Var.e(user, null, str3, false);
+                    p60Var.d(user, null, str3, false);
                     if (i10 != r60Var.n) {
                         return;
                     } else {
@@ -438,7 +438,7 @@ public final class m60 extends kl0 {
                 }
                 z13 = false;
                 p60Var.a(str2, z10, z11, z13, new h60(this, user, str2, z10, z11, z12, 0));
-                p60Var.e(user, null, str3, false);
+                p60Var.d(user, null, str3, false);
                 if (i10 != r60Var.n) {
                 }
             }
@@ -455,7 +455,7 @@ public final class m60 extends kl0 {
         }
         z13 = false;
         p60Var.a(str2, z10, z11, z13, new h60(this, user, str2, z10, z11, z12, 0));
-        p60Var.e(user, null, str3, false);
+        p60Var.d(user, null, str3, false);
         if (i10 != r60Var.n) {
         }
     }
@@ -494,7 +494,7 @@ public final class m60 extends kl0 {
                 view = t00Var;
                 break;
             case 6:
-                view = new jn(context, 12);
+                view = new kn(context, 12);
                 break;
             case 7:
                 view = new org.telegram.ui.Cells.a7(context, (org.telegram.ui.Cells.p6) null);
@@ -513,10 +513,10 @@ public final class m60 extends kl0 {
                 view = new o60(r60Var, context);
                 break;
             default:
-                f6Var = ((org.telegram.ui.ActionBar.f3) r60Var).resourcesProvider;
+                f6Var = ((org.telegram.ui.ActionBar.g3) r60Var).resourcesProvider;
                 view = new org.telegram.ui.Cells.u3(context, f6Var);
                 break;
         }
-        return com.google.android.gms.internal.vision.e2.l(view, view, -1, -2);
+        return com.google.android.gms.internal.vision.e2.k(view, view, -1, -2);
     }
 }

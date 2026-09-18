@@ -1,14 +1,14 @@
 package org.telegram.ui.Cells;
 
 import android.view.View;
-import org.telegram.ui.Components.ll0;
-import org.telegram.ui.Components.yn;
+import org.telegram.ui.Components.ml0;
+import org.telegram.ui.Components.zn;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class l6 extends bi.j9 {
-    public final /* synthetic */ int S = 0;
+public final class l6 extends ai.ca {
+    public final /* synthetic */ int S = 1;
     public final /* synthetic */ View T;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -17,37 +17,37 @@ public final class l6 extends bi.j9 {
         this.T = n6Var;
     }
 
-    @Override // bi.j9
+    @Override // ai.ca
     public final void f(long j3) {
         switch (this.S) {
             case 0:
                 ((n6) this.T).b(j3);
                 break;
             case 1:
-                za zaVar = (za) this.T;
-                org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
+                ab abVar = (ab) this.T;
+                org.telegram.ui.ActionBar.o2 R = LaunchActivity.R();
                 if (R != null) {
                     R.getOrCreateStoryViewer().getClass();
-                    R.getOrCreateStoryViewer().D(zaVar.getContext(), j3, bi.d9.a((ll0) zaVar.getParent()));
+                    R.getOrCreateStoryViewer().D(abVar.getContext(), j3, ai.u9.a((ml0) abVar.getParent()));
                     break;
                 }
                 break;
             default:
-                yn ynVar = (yn) this.T;
-                ynVar.H.getOrCreateStoryViewer().D(ynVar.getContext(), j3, new org.telegram.ui.Components.t(this, 25));
+                zn znVar = (zn) this.T;
+                znVar.H.getOrCreateStoryViewer().D(znVar.getContext(), j3, new org.telegram.ui.Components.s(this, 25));
                 break;
         }
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l6(za zaVar) {
+    public l6(ab abVar) {
         super(null, false);
-        this.T = zaVar;
+        this.T = abVar;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l6(yn ynVar) {
+    public l6(zn znVar) {
         super(null, true);
-        this.T = ynVar;
+        this.T = znVar;
     }
 }

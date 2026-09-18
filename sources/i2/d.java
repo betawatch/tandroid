@@ -2,9 +2,9 @@ package i2;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class d implements d9.j {
+public final /* synthetic */ class d implements d9.i {
     public final /* synthetic */ int a;
     public final /* synthetic */ Context b;
 
@@ -13,17 +13,17 @@ public final /* synthetic */ class d implements d9.j {
         this.b = context;
     }
 
-    @Override // d9.j
+    @Override // d9.i
     public final Object get() {
         switch (this.a) {
             case 0:
                 return c2.d.e(this.b);
             case 1:
-                return new m(this.b);
+                return new l(this.b);
             case 2:
                 return new u2.p(this.b, new c3.m());
             case 3:
-                return new x2.p(this.b, new rb.a(25));
+                return new x2.p(this.b, new qb.b(25));
             default:
                 return y2.f.b(this.b);
         }

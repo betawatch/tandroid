@@ -5,9 +5,9 @@ import android.view.ActionMode;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
-import l.b0;
+import l.a0;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class e extends ActionMode {
     public final Context a;
@@ -30,7 +30,7 @@ public final class e extends ActionMode {
 
     @Override // android.view.ActionMode
     public final Menu getMenu() {
-        return new b0(this.a, this.b.c());
+        return new a0(this.a, this.b.c());
     }
 
     @Override // android.view.ActionMode
@@ -90,7 +90,7 @@ public final class e extends ActionMode {
 
     @Override // android.view.ActionMode
     public final void setTitleOptionalHint(boolean z10) {
-        this.b.o(z10);
+        this.b.n(z10);
     }
 
     @Override // android.view.ActionMode

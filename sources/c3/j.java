@@ -2,7 +2,7 @@ package c3;
 
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class j implements b0 {
     public final int a;
@@ -34,14 +34,14 @@ public final class j implements b0 {
     @Override // c3.b0
     public final a0 j(long j3) {
         long[] jArr = this.e;
-        int e7 = e2.d0.e(jArr, j3, true);
-        long j10 = jArr[e7];
+        int e = e2.d0.e(jArr, j3, true);
+        long j10 = jArr[e];
         long[] jArr2 = this.c;
-        c0 c0Var = new c0(j10, jArr2[e7]);
-        if (j10 >= j3 || e7 == this.a - 1) {
+        c0 c0Var = new c0(j10, jArr2[e]);
+        if (j10 >= j3 || e == this.a - 1) {
             return new a0(c0Var, c0Var);
         }
-        int i10 = e7 + 1;
+        int i10 = e + 1;
         return new a0(c0Var, new c0(jArr[i10], jArr2[i10]));
     }
 

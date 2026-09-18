@@ -1,228 +1,101 @@
 package ah;
 
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.os.Looper;
-import android.util.LongSparseArray;
-import bi.a2;
-import bi.f7;
-import bi.u8;
-import fi.k3;
-import ig.b2;
-import java.util.Comparator;
-import java.util.HashSet;
-import java.util.regex.Pattern;
+import android.graphics.Color;
+import android.graphics.RenderEffect;
+import android.graphics.RenderNode;
+import android.graphics.RuntimeShader;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.SavedMessagesController;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.ActionBar.l2;
-import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.e5;
-import org.telegram.ui.Components.k8;
-import org.telegram.ui.Components.q5;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.co;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class j implements Runnable {
-    public final /* synthetic */ int a;
+public final class j {
+    public final RenderNode a;
+    public final RuntimeShader b;
+    public float c;
+    public float d;
+    public float e;
+    public float f;
+    public float g;
+    public float h;
+    public float i;
+    public float j;
+    public float k;
+    public float l;
+    public float m;
+    public float n;
+    public float o;
+    public int p;
 
-    public /* synthetic */ j(int i10) {
-        this.a = i10;
+    public j(RenderNode renderNode) {
+        this.a = renderNode;
+        RuntimeShader runtimeShader = new RuntimeShader(AndroidUtilities.readRes(R.raw.liquid_glass_shader));
+        this.b = runtimeShader;
+        renderNode.setRenderEffect(RenderEffect.createRuntimeShaderEffect(runtimeShader, "img"));
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:83:0x0122  */
-    /* JADX WARN: Removed duplicated region for block: B:86:0x0127  */
-    @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.startAllHeavyOperations, 512);
-                break;
-            case 1:
-                break;
-            case 2:
-                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.groupCallVisibilityChanged, new Object[0]);
-                break;
-            case 3:
-                a2.j();
-                break;
-            case 4:
-                a2 a2Var = a2.Z;
-                a2Var.e.invalidate();
-                if (!a2Var.e.isInLayout()) {
-                    a2Var.e.requestLayout();
-                    a2Var.d.requestLayout();
-                    a2Var.f.requestLayout();
-                    break;
-                }
-                break;
-            case 5:
-                int i10 = f7.h;
-                break;
-            case 6:
-                Comparator comparator = u8.X;
-                break;
-            case 7:
-                int i11 = di.e0.x0;
-                break;
-            case 8:
-                Looper myLooper = Looper.myLooper();
-                if (myLooper != null) {
-                    myLooper.quit();
-                    break;
-                }
-                break;
-            case 9:
-                break;
-            case 10:
-                MessagesController.getGlobalMainSettings().edit().putInt("storydualhint", MessagesController.getGlobalMainSettings().getInt("storydualhint", 0) + 1).apply();
-                break;
-            case 11:
-                HashSet hashSet = k3.W0;
-                break;
-            case 12:
-                break;
-            case 13:
-                int i12 = hi.h.F;
-                break;
-            case 14:
-                b2[] b2VarArr = b2.g;
-                break;
-            case 15:
-                SharedConfig.drawActionBarShadow = !SharedConfig.drawActionBarShadow;
-                SharedConfig.saveDebugConfig();
-                AndroidUtilities.forEachViews(LaunchActivity.G1.z0.getRootView(), new bi.f(19));
-                break;
-            case 16:
-                SharedPreferences sharedPreferences = ApplicationLoader.applicationContext.getSharedPreferences("themeconfig", 0);
-                String str = "Blue";
-                String string = sharedPreferences.getString("lastDayTheme", "Blue");
-                if (j6.N0(string) == null || j6.N0(string).q()) {
-                    string = "Blue";
-                }
-                String str2 = "Dark Blue";
-                String string2 = sharedPreferences.getString("lastDarkTheme", "Dark Blue");
-                if (j6.N0(string2) == null || !j6.N0(string2).q()) {
-                    string2 = "Dark Blue";
-                }
-                i6 i6Var = j6.I;
-                if (string.equals(string2)) {
-                    if (i6Var.q() || string.equals("Dark Blue") || string.equals("Night")) {
-                        str2 = string2;
-                        AndroidUtilities.runOnUIThread(new ig.t0(j6.I.q() ? j6.N0(str2) : j6.N0(str), 17), 200L);
-                        break;
-                    }
-                } else {
-                    str2 = string2;
-                }
-                str = string;
-                AndroidUtilities.runOnUIThread(new ig.t0(j6.I.q() ? j6.N0(str2) : j6.N0(str), 17), 200L);
-                break;
-            case 17:
-                j6.E(false);
-                break;
-            case 18:
-                int i13 = co.Hc;
-                break;
-            case 19:
-                break;
-            case 20:
-                e1.b(true);
-                break;
-            case 21:
-                NotificationCenter globalInstance = NotificationCenter.getGlobalInstance();
-                int i14 = NotificationCenter.didSetNewTheme;
-                Boolean bool = Boolean.TRUE;
-                globalInstance.lambda$postNotificationNameOnUIThread$1(i14, Boolean.FALSE, bool, bool);
-                break;
-            case 22:
-                Pattern pattern = e5.a;
-                break;
-            case 23:
-                n2 U = LaunchActivity.U();
-                if (U != null) {
-                    l2 l2Var = new l2();
-                    l2Var.a = true;
-                    U.showAsSheet(new PremiumPreviewFragment(0, "schedule_repeat"), l2Var);
-                    break;
-                }
-                break;
-            case 24:
-                AndroidUtilities.cancelRunOnUIThread(q5.v);
-                try {
-                    if (q5.q != null) {
-                        for (int i15 = 0; i15 < q5.q.size(); i15++) {
-                            LongSparseArray longSparseArray = (LongSparseArray) q5.q.valueAt(i15);
-                            int i16 = 0;
-                            while (i16 < longSparseArray.size()) {
-                                if (!((q5) longSparseArray.valueAt(i16)).a) {
-                                    longSparseArray.removeAt(i16);
-                                    i16--;
-                                }
-                                i16++;
-                            }
-                        }
-                        break;
-                    }
-                } catch (Exception e7) {
-                    if (BuildVars.DEBUG_PRIVATE_VERSION) {
-                        FileLog.e(e7);
-                        return;
-                    }
-                    return;
-                }
-                break;
-            case 25:
-                k8 k8Var = k8.T0;
-                break;
-            case 26:
-                SavedMessagesController.openSavedMessages();
-                break;
-            case 27:
-                LaunchActivity launchActivity = LaunchActivity.G1;
-                if (launchActivity != null && !launchActivity.isFinishing()) {
-                    Intent intent = new Intent("android.intent.action.VIEW_DOWNLOADS");
-                    intent.setFlags(268468224);
-                    LaunchActivity.G1.startActivity(intent);
-                    break;
-                }
-                break;
-            case 28:
-                SavedMessagesController.openSavedMessagesReminders();
-                break;
-            default:
-                MediaController.getInstance().stopRecording(0, false, 0, false, 0L);
-                break;
+    public final void a(float f7, float f10, float f11, float f12, float f13, float f14, float f15, float f16, float f17, int i10) {
+        float f18;
+        float f19;
+        float f20;
+        float f21;
+        float width = this.a.getWidth();
+        float height = this.a.getHeight();
+        float f22 = (0.0f + f7) / 2.0f;
+        float f23 = (0.0f + f10) / 2.0f;
+        float f24 = f10 - 0.0f;
+        float f25 = (f7 - 0.0f) / 2.0f;
+        float f26 = f24 / 2.0f;
+        float f27 = f11 + f14;
+        if (f27 > f24) {
+            float f28 = f11 / f27;
+            f18 = f24 * f28;
+            f19 = (1.0f - f28) * f24;
+        } else {
+            f18 = f11;
+            f19 = f14;
         }
-    }
-
-    public /* synthetic */ j(Object obj, int i10) {
-        this.a = i10;
-    }
-
-    private final void a() {
-    }
-
-    private final void b() {
-    }
-
-    private final void c() {
-    }
-
-    private final void e() {
+        float f29 = f12 + f13;
+        if (f29 > f24) {
+            float f30 = f12 / f29;
+            f21 = f24 * (1.0f - f30);
+            f20 = f24 * f30;
+        } else {
+            f20 = f12;
+            f21 = f13;
+        }
+        if (Math.abs(this.c - width) > 0.1f || Math.abs(this.d - height) > 0.1f || Math.abs(this.e - f22) > 0.1f || Math.abs(this.f - f23) > 0.1f || Math.abs(this.g - f25) > 0.1f || Math.abs(this.h - f26) > 0.1f || Math.abs(this.i - f18) > 0.1f || Math.abs(this.j - f20) > 0.1f || Math.abs(this.k - f21) > 0.1f || Math.abs(this.l - f19) > 0.1f || Math.abs(this.m - f15) > 0.1f || Math.abs(this.n - f16) > 0.1f || Math.abs(this.o - f17) > 0.1f || this.p != i10) {
+            this.p = i10;
+            float alpha = Color.alpha(i10) / 255.0f;
+            RuntimeShader runtimeShader = this.b;
+            this.c = width;
+            this.d = height;
+            runtimeShader.setFloatUniform("resolution", width, height);
+            RuntimeShader runtimeShader2 = this.b;
+            this.e = f22;
+            this.f = f23;
+            runtimeShader2.setFloatUniform("center", f22, f23);
+            RuntimeShader runtimeShader3 = this.b;
+            this.g = f25;
+            this.h = f26;
+            runtimeShader3.setFloatUniform("size", f25, f26);
+            RuntimeShader runtimeShader4 = this.b;
+            this.k = f21;
+            this.j = f20;
+            this.l = f19;
+            this.i = f18;
+            runtimeShader4.setFloatUniform("radius", f21, f20, f19, f18);
+            RuntimeShader runtimeShader5 = this.b;
+            this.m = f15;
+            runtimeShader5.setFloatUniform("thickness", f15);
+            RuntimeShader runtimeShader6 = this.b;
+            this.n = f16;
+            runtimeShader6.setFloatUniform("refract_intensity", f16);
+            RuntimeShader runtimeShader7 = this.b;
+            this.o = f17;
+            runtimeShader7.setFloatUniform("refract_index", f17);
+            this.b.setFloatUniform("foreground_color_premultiplied", (Color.red(i10) / 255.0f) * alpha, (Color.green(i10) / 255.0f) * alpha, (Color.blue(i10) / 255.0f) * alpha, alpha);
+            this.a.setRenderEffect(RenderEffect.createRuntimeShaderEffect(this.b, "img"));
+        }
     }
 }

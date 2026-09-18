@@ -12,7 +12,7 @@ import zd.e0;
 import zd.s;
 import zd.t;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 final class zzbe extends j implements p {
     Object zza;
@@ -62,19 +62,19 @@ final class zzbe extends j implements p {
                 }
             }
             return i.a;
-        } catch (Exception e7) {
+        } catch (Exception e) {
             zzbo zzboVar = this.zzc;
             s zzf = zzboVar.zzf();
             Throwable th2 = (Throwable) pVar.a;
             if (th2 == null) {
-                th2 = e7;
+                th2 = e;
             }
             ((t) zzf).L(th2);
             zzboVar.zzc = zzbp.zza;
             zzce zzceVar = zzce.zzb;
             Throwable th3 = (Throwable) pVar.a;
             if (th3 == null) {
-                th3 = e7;
+                th3 = e;
             }
             if (th3 instanceof StandardIntegrityException) {
                 int errorCode = ((StandardIntegrityException) th3).getErrorCode();
@@ -134,7 +134,7 @@ final class zzbe extends j implements p {
             } else {
                 zzcdVar = zzcd.zza;
             }
-            throw new zzcg(zzceVar, zzcdVar, e7.getMessage(), null, 8, null);
+            throw new zzcg(zzceVar, zzcdVar, e.getMessage(), null, 8, null);
         }
     }
 }

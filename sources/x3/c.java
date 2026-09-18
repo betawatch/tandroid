@@ -6,10 +6,10 @@ import b2.s;
 import c3.u;
 import e2.v;
 import java.util.Arrays;
-import n7.z0;
+import n7.a1;
 import u2.x0;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class c extends i {
     public u n;
@@ -32,7 +32,7 @@ public final class c extends i {
     }
 
     @Override // x3.i
-    public final boolean c(v vVar, long j3, z0 z0Var) {
+    public final boolean c(v vVar, long j3, a1 a1Var) {
         byte[] bArr = vVar.a;
         u uVar = this.n;
         if (uVar == null) {
@@ -40,7 +40,7 @@ public final class c extends i {
             this.n = uVar2;
             r a2 = uVar2.c(Arrays.copyOfRange(bArr, 9, vVar.c), null).a();
             a2.p = r0.n("audio/ogg");
-            z0Var.b = new s(a2);
+            a1Var.b = new s(a2);
             return true;
         }
         byte b10 = bArr[0];
@@ -51,12 +51,12 @@ public final class c extends i {
             x0 x0Var = this.o;
             if (x0Var != null) {
                 x0Var.a = j3;
-                z0Var.c = x0Var;
+                a1Var.c = x0Var;
             }
-            ((s) z0Var.b).getClass();
+            ((s) a1Var.b).getClass();
             return false;
         }
-        pf.b u10 = c3.b.u(vVar);
+        of.b u10 = c3.b.u(vVar);
         u uVar3 = new u(uVar.a, uVar.b, uVar.c, uVar.d, uVar.e, uVar.g, uVar.h, uVar.j, u10, uVar.l);
         this.n = uVar3;
         x0 x0Var2 = new x0();

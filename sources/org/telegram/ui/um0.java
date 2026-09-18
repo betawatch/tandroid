@@ -1,90 +1,73 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.tgnet.TLRPC;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class um0 implements org.telegram.ui.Components.ti {
-    public final /* synthetic */ pn0 a;
+public final class um0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ qn0 c;
 
-    public um0(pn0 pn0Var) {
-        this.a = pn0Var;
+    public /* synthetic */ um0(qn0 qn0Var, boolean z10, int i10) {
+        this.a = i10;
+        this.c = qn0Var;
+        this.b = z10;
     }
 
-    @Override // org.telegram.ui.Components.ti
-    public final void B(org.telegram.ui.Components.hh hhVar) {
-        hhVar.run();
-    }
-
-    @Override // org.telegram.ui.Components.ti
-    public final /* synthetic */ boolean D0() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.ti
-    public final void H() {
-        AndroidUtilities.hideKeyboard(this.a.fragmentView.findFocus());
-    }
-
-    @Override // org.telegram.ui.Components.ti
-    public final void l0(int i10, boolean z10, boolean z11, int i11, int i12, long j3, boolean z12, boolean z13, long j10) {
-        org.telegram.ui.Components.vi viVar;
-        pn0 pn0Var = this.a;
-        if (pn0Var.getParentActivity() == null || (viVar = pn0Var.R0) == null) {
-            return;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationCancel(Animator animator) {
+        switch (this.a) {
+            case 0:
+                qn0 qn0Var = this.c;
+                AnimatorSet animatorSet = qn0Var.M;
+                if (animatorSet != null && animatorSet.equals(animator)) {
+                    qn0Var.M = null;
+                    break;
+                }
+                break;
+            default:
+                qn0 qn0Var2 = this.c;
+                AnimatorSet animatorSet2 = qn0Var2.M;
+                if (animatorSet2 != null && animatorSet2.equals(animator)) {
+                    qn0Var2.M = null;
+                    break;
+                }
+                break;
         }
-        if (i10 != 8 && i10 != 7) {
-            viVar.dismissWithButtonClick(i10);
-            pn0Var.F1(i10);
-            return;
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                qn0 qn0Var = this.c;
+                AnimatorSet animatorSet = qn0Var.M;
+                if (animatorSet != null && animatorSet.equals(animator)) {
+                    if (!this.b) {
+                        qn0Var.N.setVisibility(4);
+                        break;
+                    } else {
+                        qn0Var.L.getContentView().setVisibility(4);
+                        break;
+                    }
+                }
+                break;
+            default:
+                qn0 qn0Var2 = this.c;
+                AnimatorSet animatorSet2 = qn0Var2.M;
+                if (animatorSet2 != null && animatorSet2.equals(animator)) {
+                    if (!this.b) {
+                        qn0Var2.P.setVisibility(4);
+                        break;
+                    } else {
+                        qn0Var2.O.setVisibility(4);
+                        break;
+                    }
+                }
+                break;
         }
-        if (i10 != 8) {
-            viVar.dismiss(true);
-        }
-        HashMap<Object, Object> selectedPhotos = pn0Var.R0.j0.getSelectedPhotos();
-        ArrayList<Object> selectedPhotosOrder = pn0Var.R0.j0.getSelectedPhotosOrder();
-        if (selectedPhotos.isEmpty()) {
-            return;
-        }
-        ArrayList arrayList = new ArrayList();
-        for (int i13 = 0; i13 < selectedPhotosOrder.size(); i13++) {
-            MediaController.PhotoEntry photoEntry = (MediaController.PhotoEntry) selectedPhotos.get(selectedPhotosOrder.get(i13));
-            SendMessagesHelper.SendingMediaInfo sendingMediaInfo = new SendMessagesHelper.SendingMediaInfo();
-            String str = photoEntry.imagePath;
-            if (str != null) {
-                sendingMediaInfo.path = str;
-            } else {
-                sendingMediaInfo.path = photoEntry.path;
-            }
-            arrayList.add(sendingMediaInfo);
-            photoEntry.reset();
-        }
-        pn0Var.G1(arrayList);
-    }
-
-    @Override // org.telegram.ui.Components.ti
-    public final /* synthetic */ boolean q() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.ti
-    public final /* synthetic */ void K(Object obj) {
-    }
-
-    @Override // org.telegram.ui.Components.ti
-    public final /* synthetic */ void X(TLRPC.User user) {
-    }
-
-    @Override // org.telegram.ui.Components.ti
-    public final /* synthetic */ void x() {
-    }
-
-    @Override // org.telegram.ui.Components.ti
-    public final /* synthetic */ void E0(ArrayList arrayList, CharSequence charSequence, boolean z10, int i10, int i11, long j3, boolean z11, long j10) {
     }
 }

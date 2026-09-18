@@ -1,47 +1,66 @@
 package org.telegram.ui;
 
+import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class oz0 implements nq {
-    public final /* synthetic */ TLRPC.Chat a;
-    public final /* synthetic */ qq b;
-    public final /* synthetic */ ProfileActivity c;
+public final class oz0 extends s4.s0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ProfileActivity b;
 
-    public oz0(ProfileActivity profileActivity, TLRPC.Chat chat, qq qqVar) {
-        this.c = profileActivity;
-        this.a = chat;
-        this.b = qqVar;
+    public /* synthetic */ oz0(ProfileActivity profileActivity, int i10) {
+        this.a = i10;
+        this.b = profileActivity;
     }
 
-    @Override // org.telegram.ui.nq
-    public final void a(TLRPC.User user) {
-        ProfileActivity profileActivity = this.c;
-        profileActivity.M.m(-profileActivity.f1, user, profileActivity.E2.megagroup ? 10 : 9);
+    @Override // s4.s0
+    public final void a(RecyclerView recyclerView, int i10) {
+        switch (this.a) {
+            case 0:
+                if (i10 == 1) {
+                    AndroidUtilities.hideKeyboard(this.b.getParentActivity().getCurrentFocus());
+                    break;
+                }
+                break;
+            default:
+                ProfileActivity profileActivity = this.b;
+                if (i10 == 1) {
+                    AndroidUtilities.hideKeyboard(profileActivity.getParentActivity().getCurrentFocus());
+                }
+                if (profileActivity.F0 && i10 != 2) {
+                    profileActivity.F0 = false;
+                }
+                org.telegram.ui.ActionBar.w0 w0Var = profileActivity.U0;
+                if (w0Var != null) {
+                    boolean z10 = i10 != 0;
+                    profileActivity.z1 = z10;
+                    w0Var.setEnabled((z10 || profileActivity.p2) ? false : true);
+                }
+                n01 n01Var = profileActivity.O;
+                boolean z11 = profileActivity.a.K1;
+                n01Var.getClass();
+                break;
+        }
     }
 
-    @Override // org.telegram.ui.nq
-    public final void b(int i10, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str) {
-        TLRPC.Chat chat;
-        ProfileActivity profileActivity = this.c;
-        profileActivity.removeSelfFromStack();
-        TLRPC.User user = profileActivity.getMessagesController().getUser(Long.valueOf(profileActivity.e1));
-        if (user == null || (chat = this.a) == null || profileActivity.e1 == 0) {
-            return;
-        }
-        qq qqVar = this.b;
-        if (!qqVar.Q || qqVar.getParentLayout() == null) {
-            return;
-        }
-        for (org.telegram.ui.ActionBar.n2 n2Var : qqVar.getParentLayout().getFragmentStack()) {
-            if (n2Var instanceof ub) {
-                ub ubVar = (ub) n2Var;
-                ubVar.W0();
-                AndroidUtilities.runOnUIThread(new pf0(ubVar, user, chat, 25));
-                return;
-            }
+    @Override // s4.s0
+    public void b(RecyclerView recyclerView, int i10, int i11) {
+        switch (this.a) {
+            case 1:
+                ProfileActivity profileActivity = this.b;
+                org.telegram.ui.Components.i40 i40Var = profileActivity.X;
+                if (i40Var != null) {
+                    i40Var.b(true);
+                }
+                profileActivity.A3();
+                if (profileActivity.C1 != null && !profileActivity.D1 && profileActivity.c.N0() > profileActivity.v4 - 8) {
+                    profileActivity.R3(false);
+                }
+                n01 n01Var = profileActivity.O;
+                n01Var.setPinnedToTop(n01Var.getY() <= 0.0f);
+                profileActivity.U4();
+                break;
         }
     }
 }

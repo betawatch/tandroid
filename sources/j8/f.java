@@ -1,12 +1,12 @@
 package j8;
 
-import a6.i;
 import android.os.Parcel;
 import android.os.RemoteException;
 import androidx.car.app.j;
 import n6.l;
+import s7.i;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class f {
     public final s7.a a;
@@ -16,16 +16,16 @@ public final class f {
         this.a = aVar;
     }
 
-    public final void a(i iVar) {
+    public final void a(xa.c cVar) {
         s7.a aVar = this.a;
         try {
-            x6.a aVar2 = (x6.a) iVar.b;
-            s7.i iVar2 = (s7.i) aVar;
-            Parcel O0 = iVar2.O0();
+            x6.a aVar2 = (x6.a) cVar.b;
+            i iVar = (i) aVar;
+            Parcel O0 = iVar.O0();
             s7.b.c(O0, aVar2);
-            iVar2.S0(O0, 18);
-        } catch (RemoteException e7) {
-            throw new j(e7);
+            iVar.S0(O0, 18);
+        } catch (RemoteException e) {
+            throw new j(e);
         }
     }
 
@@ -36,27 +36,27 @@ public final class f {
         try {
             s7.a aVar = this.a;
             s7.a aVar2 = ((f) obj).a;
-            s7.i iVar = (s7.i) aVar;
+            i iVar = (i) aVar;
             Parcel O0 = iVar.O0();
             s7.b.c(O0, aVar2);
             Parcel N0 = iVar.N0(O0, 16);
             boolean z10 = N0.readInt() != 0;
             N0.recycle();
             return z10;
-        } catch (RemoteException e7) {
-            throw new j(e7);
+        } catch (RemoteException e) {
+            throw new j(e);
         }
     }
 
     public final int hashCode() {
         try {
-            s7.i iVar = (s7.i) this.a;
+            i iVar = (i) this.a;
             Parcel N0 = iVar.N0(iVar.O0(), 17);
             int readInt = N0.readInt();
             N0.recycle();
             return readInt;
-        } catch (RemoteException e7) {
-            throw new j(e7);
+        } catch (RemoteException e) {
+            throw new j(e);
         }
     }
 }

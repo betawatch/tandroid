@@ -1,91 +1,33 @@
 package org.telegram.ui.Components;
 
-import android.os.Build;
-import org.telegram.messenger.NotificationCenter;
+import android.content.Context;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class s8 implements org.telegram.ui.ActionBar.a2, kq {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ f9 b;
+public final class s8 extends mq {
+    public final /* synthetic */ int f0;
 
-    public /* synthetic */ s8(f9 f9Var, int i10) {
-        this.a = i10;
-        this.b = f9Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ s8(Context context, boolean z10, lq lqVar, int i10) {
+        super(context, z10, lqVar);
+        this.f0 = i10;
     }
 
-    @Override // org.telegram.ui.Components.kq
-    public void B0(int i10, int i11, boolean z10) {
-        f9 f9Var = this.b;
-        if (i11 == 0) {
-            b9 b9Var = f9Var.Y;
-            int i12 = b9Var.c;
-            if (i12 != i10 && (i12 == 0 || i10 == 0)) {
-                b9 a2 = b9Var.a();
-                f9Var.Y = a2;
-                f9Var.a.b(a2, true);
-                f9Var.n0();
-            }
-            f9Var.Y.c = i10;
-        } else if (i11 == 1) {
-            b9 b9Var2 = f9Var.Y;
-            int i13 = b9Var2.d;
-            if (i13 != i10 && (i13 == 0 || i10 == 0)) {
-                b9 a10 = b9Var2.a();
-                f9Var.Y = a10;
-                f9Var.a.b(a10, true);
-                f9Var.n0();
-            }
-            f9Var.Y.d = i10;
-        } else if (i11 == 2) {
-            b9 b9Var3 = f9Var.Y;
-            int i14 = b9Var3.e;
-            if (i14 != i10 && (i14 == 0 || i10 == 0)) {
-                b9 a11 = b9Var3.a();
-                f9Var.Y = a11;
-                f9Var.a.b(a11, true);
-                f9Var.n0();
-            }
-            f9Var.Y.e = i10;
-        } else if (i11 == 3) {
-            b9 b9Var4 = f9Var.Y;
-            int i15 = b9Var4.f;
-            if (i15 != i10 && (i15 == 0 || i10 == 0)) {
-                b9 a12 = b9Var4.a();
-                f9Var.Y = a12;
-                f9Var.a.b(a12, true);
-                f9Var.n0();
-            }
-            f9Var.Y.f = i10;
-        }
-        if (Build.VERSION.SDK_INT >= 23) {
-            NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needCheckSystemBarColors, new Object[0]);
-        }
-        f9Var.a.invalidate();
-    }
-
-    @Override // org.telegram.ui.Components.kq
-    public /* synthetic */ int M0(int i10) {
-        return 0;
-    }
-
-    @Override // org.telegram.ui.ActionBar.a2
-    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
-        switch (this.a) {
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        switch (this.f0) {
             case 0:
-                this.b.finishFragment();
+                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(300.0f), TLObject.FLAG_30));
+                break;
+            case 1:
+                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(300.0f), TLObject.FLAG_30));
                 break;
             default:
-                this.b.finishFragment();
+                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(300.0f), TLObject.FLAG_30));
                 break;
         }
-    }
-
-    @Override // org.telegram.ui.Components.kq
-    public /* synthetic */ void k(boolean z10) {
-    }
-
-    @Override // org.telegram.ui.Components.kq
-    public /* synthetic */ void z() {
     }
 }

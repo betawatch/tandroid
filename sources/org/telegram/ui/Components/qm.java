@@ -18,7 +18,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class qm extends ni {
     public static final HashMap U = new HashMap();
@@ -39,7 +39,7 @@ public final class qm extends ni {
     public boolean S;
     public boolean T;
     public org.telegram.ui.ActionBar.f6 n;
-    public bi.o0 r;
+    public ai.w0 r;
     public s4.c0 s;
     public pm v;
     public UndoView w;
@@ -47,7 +47,7 @@ public final class qm extends ni {
     public float y;
 
     @Override // org.telegram.ui.Components.ni
-    public final void B(int i10) {
+    public final void A(int i10) {
         vi viVar = this.b;
         if (i10 > 1) {
             viVar.a1.K(0);
@@ -57,7 +57,7 @@ public final class qm extends ni {
     }
 
     @Override // org.telegram.ui.Components.ni
-    public final void D(ni niVar) {
+    public final void E(ni niVar) {
         pm pmVar = this.v;
         this.Q = true;
         if (niVar instanceof ChatAttachAlertPhotoLayout) {
@@ -69,8 +69,8 @@ public final class qm extends ni {
             pmVar.c();
             pmVar.requestLayout();
             this.s.h1(0, 0);
-            this.r.post(new uc(19, this, niVar));
-            postDelayed(new pg(this, 25), 250L);
+            this.r.post(new oh(13, this, niVar));
+            postDelayed(new ng(this, 25), 250L);
             pmVar.i(this.P, false);
         } else {
             G();
@@ -79,14 +79,14 @@ public final class qm extends ni {
         if (viewPropertyAnimator != null) {
             viewPropertyAnimator.cancel();
         }
-        ViewPropertyAnimator interpolator = this.x.animate().alpha(1.0f).setDuration(150L).setInterpolator(pr.f);
+        ViewPropertyAnimator interpolator = this.x.animate().alpha(1.0f).setDuration(150L).setInterpolator(qr.f);
         this.O = interpolator;
         interpolator.start();
     }
 
     @Override // org.telegram.ui.Components.ni
     public final void G() {
-        this.r.x0(0);
+        this.r.y0(0);
     }
 
     public final void K() {
@@ -133,9 +133,9 @@ public final class qm extends ni {
     public final void dispatchDraw(Canvas canvas) {
         Drawable d;
         int i10;
-        org.telegram.ui.ao aoVar = this.b.r;
+        org.telegram.ui.zn znVar = this.b.r;
         boolean z10 = false;
-        if (aoVar != null && (d = aoVar.d()) != null) {
+        if (znVar != null && (d = znVar.d()) != null) {
             int currentItemTop = getCurrentItemTop();
             if (AndroidUtilities.isTablet()) {
                 i10 = 16;
@@ -161,19 +161,19 @@ public final class qm extends ni {
 
     @Override // org.telegram.ui.Components.ni
     public int getCurrentItemTop() {
-        bi.o0 o0Var = this.r;
-        if (o0Var.getChildCount() <= 0) {
-            o0Var.setTopGlowOffset(o0Var.getPaddingTop());
+        ai.w0 w0Var = this.r;
+        if (w0Var.getChildCount() <= 0) {
+            w0Var.setTopGlowOffset(w0Var.getPaddingTop());
             return ConnectionsManager.DEFAULT_DATACENTER_ID;
         }
-        View childAt = o0Var.getChildAt(0);
-        vk0 vk0Var = (vk0) o0Var.G(childAt);
+        View childAt = w0Var.getChildAt(0);
+        wk0 wk0Var = (wk0) w0Var.H(childAt);
         int top = childAt.getTop();
         int dp = AndroidUtilities.dp(8.0f);
-        if (top < AndroidUtilities.dp(8.0f) || vk0Var == null || vk0Var.b() != 0) {
+        if (top < AndroidUtilities.dp(8.0f) || wk0Var == null || wk0Var.b() != 0) {
             top = dp;
         }
-        o0Var.setTopGlowOffset(top);
+        w0Var.setTopGlowOffset(top);
         return top;
     }
 
@@ -274,7 +274,7 @@ public final class qm extends ni {
         if (viewPropertyAnimator != null) {
             viewPropertyAnimator.cancel();
         }
-        ViewPropertyAnimator interpolator = this.x.animate().alpha(0.0f).setDuration(150L).setInterpolator(pr.j);
+        ViewPropertyAnimator interpolator = this.x.animate().alpha(0.0f).setDuration(150L).setInterpolator(qr.j);
         this.O = interpolator;
         interpolator.start();
         if (getSelectedItemsCount() > 1 && (chatAttachAlertPhotoLayout = (viVar = this.b).j0) != null) {
@@ -310,7 +310,7 @@ public final class qm extends ni {
     public final void y(int i10, int i11) {
         int dp;
         float f7;
-        bi.o0 o0Var = this.r;
+        ai.w0 w0Var = this.r;
         this.S = true;
         ((FrameLayout.LayoutParams) getLayoutParams()).topMargin = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
         if (!AndroidUtilities.isTablet()) {
@@ -322,8 +322,8 @@ public final class qm extends ni {
                 if (dp < 0) {
                     this.R = 0;
                 }
-                if (o0Var.getPaddingTop() == this.R || o0Var.getPaddingBottom() != this.e) {
-                    o0Var.n1(o0Var.getPaddingLeft(), this.R, o0Var.getPaddingRight(), this.e);
+                if (w0Var.getPaddingTop() == this.R || w0Var.getPaddingBottom() != this.e) {
+                    w0Var.p1(w0Var.getPaddingLeft(), this.R, w0Var.getPaddingRight(), this.e);
                     invalidate();
                 }
                 TextView textView = this.x;
@@ -345,9 +345,9 @@ public final class qm extends ni {
         this.R = dp;
         if (dp < 0) {
         }
-        if (o0Var.getPaddingTop() == this.R) {
+        if (w0Var.getPaddingTop() == this.R) {
         }
-        o0Var.n1(o0Var.getPaddingLeft(), this.R, o0Var.getPaddingRight(), this.e);
+        w0Var.p1(w0Var.getPaddingLeft(), this.R, w0Var.getPaddingRight(), this.e);
         invalidate();
         TextView textView2 = this.x;
         if (!AndroidUtilities.isTablet()) {

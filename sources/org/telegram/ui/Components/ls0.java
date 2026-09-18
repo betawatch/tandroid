@@ -1,48 +1,21 @@
 package org.telegram.ui.Components;
 
-import android.view.ViewGroup;
+import android.content.Context;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class ls0 extends g.p {
-    public final /* synthetic */ int c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ ViewGroup e;
+public final class ls0 extends FragmentContextView {
+    public final /* synthetic */ zu0 P0;
 
-    public /* synthetic */ ls0(ViewGroup viewGroup, Object obj, int i10) {
-        this.c = i10;
-        this.e = viewGroup;
-        this.d = obj;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ls0(zu0 zu0Var, Context context, org.telegram.ui.ActionBar.o2 o2Var, zu0 zu0Var2, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context, o2Var, zu0Var2, false, f6Var);
+        this.P0 = zu0Var;
     }
 
-    @Override // g.p
-    public final int i(int i10) {
-        int i11;
-        switch (this.c) {
-            case 0:
-                qt0 qt0Var = (qt0) this.d;
-                s4.h0 adapter = qt0Var.r.getAdapter();
-                xu0 xu0Var = (xu0) this.e;
-                ru0 ru0Var = xu0Var.I;
-                if (adapter == ru0Var) {
-                    if (ru0Var.j(i10) == 2) {
-                        return qt0Var.s.J;
-                    }
-                    return 1;
-                }
-                if (xu0.v(xu0Var, adapter) == -1) {
-                    return 1;
-                }
-                ((uu0) adapter).getClass();
-                return 1;
-            default:
-                ci.h hVar = (ci.h) this.d;
-                v51 v51Var = ((d61) this.e).Y2;
-                if (v51Var == null) {
-                    return hVar.J;
-                }
-                h51 G = v51Var.G(i10);
-                return (G == null || (i11 = G.u) == -1) ? hVar.J : i11;
-        }
+    @Override // org.telegram.ui.Components.FragmentContextView, android.view.View
+    public final void setVisibility(int i10) {
+        zu0 zu0Var = this.P0;
+        zu0Var.P0.i(zu0Var.Q0, i10 == 0, true);
     }
 }

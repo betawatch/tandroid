@@ -1,10 +1,29 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class z00 extends org.telegram.ui.Cells.f3 {
-    @Override // org.telegram.ui.Cells.f3
-    public final int a() {
-        return 25;
+public final /* synthetic */ class z00 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ a10 b;
+
+    public /* synthetic */ z00(a10 a10Var, int i10) {
+        this.a = i10;
+        this.b = a10Var;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.d();
+                break;
+            case 1:
+                this.b.a();
+                break;
+            default:
+                a10 a10Var = this.b;
+                a10Var.b(a10Var.y);
+                break;
+        }
     }
 }

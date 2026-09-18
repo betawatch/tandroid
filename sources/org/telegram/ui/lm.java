@@ -3,20 +3,20 @@ package org.telegram.ui;
 import android.view.View;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class lm extends org.telegram.ui.Components.s6 {
-    public final /* synthetic */ nm b;
+public final class lm extends org.telegram.ui.Components.p6 {
+    public final /* synthetic */ mm b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public lm(nm nmVar) {
-        super("progress", 0);
-        this.b = nmVar;
+    public lm(mm mmVar) {
+        super("alpha", 0);
+        this.b = mmVar;
     }
 
-    @Override // org.telegram.ui.Components.s6
-    public final void b(Object obj, float f7) {
-        ((MessageObject.SendAnimationData) obj).progress = f7;
+    @Override // org.telegram.ui.Components.p6
+    public final void c(Object obj, float f7) {
+        ((MessageObject.SendAnimationData) obj).timeAlpha = f7;
         View view = this.b.b.Q.fragmentView;
         if (view != null) {
             view.invalidate();
@@ -25,6 +25,6 @@ public final class lm extends org.telegram.ui.Components.s6 {
 
     @Override // android.util.Property
     public final Object get(Object obj) {
-        return Float.valueOf(((MessageObject.SendAnimationData) obj).progress);
+        return Float.valueOf(((MessageObject.SendAnimationData) obj).timeAlpha);
     }
 }

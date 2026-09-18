@@ -1,95 +1,76 @@
 package org.telegram.ui.web;
 
-import bi.k9;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Iterator;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.ui.eg1;
-import org.telegram.ui.oy;
-import org.telegram.ui.sj0;
-import org.telegram.ui.uy;
+import ai.da;
+import android.content.DialogInterface;
+import org.telegram.messenger.Utilities;
+import yh.v5;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class d0 implements sj0, oy {
-    public final /* synthetic */ d1 a;
+public final /* synthetic */ class d0 implements DialogInterface.OnDismissListener {
+    public final /* synthetic */ int a;
     public final /* synthetic */ boolean[] b;
-    public final /* synthetic */ String c;
-    public final /* synthetic */ TL_keyboard.TL_buttonTypeRequestPeer d;
-    public final /* synthetic */ k9 e;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
 
-    public /* synthetic */ d0(d1 d1Var, boolean[] zArr, String str, TL_keyboard.TL_buttonTypeRequestPeer tL_buttonTypeRequestPeer, k9 k9Var) {
-        this.a = d1Var;
+    public /* synthetic */ d0(d1 d1Var, boolean[] zArr, da daVar, String str) {
+        this.a = 0;
+        this.c = d1Var;
         this.b = zArr;
-        this.c = str;
-        this.d = tL_buttonTypeRequestPeer;
-        this.e = k9Var;
+        this.d = daVar;
+        this.e = str;
     }
 
-    @Override // org.telegram.ui.oy
-    public /* synthetic */ boolean B() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.oy
-    public /* synthetic */ boolean K(uy uyVar) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.sj0
-    public void a(ArrayList arrayList) {
-        if (arrayList.isEmpty()) {
-            return;
+    @Override // android.content.DialogInterface.OnDismissListener
+    public final void onDismiss(DialogInterface dialogInterface) {
+        switch (this.a) {
+            case 0:
+                d1 d1Var = (d1) this.c;
+                da daVar = (da) this.d;
+                String str = (String) this.e;
+                d1Var.getClass();
+                boolean[] zArr = this.b;
+                if (!zArr[0]) {
+                    zArr[0] = true;
+                    d1Var.y(daVar, "requested_chat_failed", d1.B(str, "req_id"));
+                    break;
+                }
+                break;
+            case 1:
+                Utilities.Callback callback = (Utilities.Callback) this.c;
+                boolean[] zArr2 = (boolean[]) this.d;
+                Utilities.Callback2 callback2 = (Utilities.Callback2) this.e;
+                if (callback != null && !this.b[0]) {
+                    callback.run(Boolean.FALSE);
+                    if (!zArr2[0]) {
+                        callback2.run("cancelled", 0L);
+                        zArr2[0] = true;
+                        break;
+                    }
+                }
+                break;
+            default:
+                Utilities.Callback callback3 = (Utilities.Callback) this.c;
+                boolean[] zArr3 = (boolean[]) this.d;
+                Utilities.Callback callback4 = (Utilities.Callback) this.e;
+                if (callback3 != null && !this.b[0]) {
+                    callback3.run(Boolean.FALSE);
+                    if (!zArr3[0] && callback4 != null) {
+                        callback4.run("cancelled");
+                        zArr3[0] = true;
+                        break;
+                    }
+                }
+                break;
         }
-        int i10 = 0;
-        this.b[0] = true;
-        TLRPC.TL_messages_sendBotRequestedPeer tL_messages_sendBotRequestedPeer = new TLRPC.TL_messages_sendBotRequestedPeer();
-        d1 d1Var = this.a;
-        MessagesController.getInstance(d1Var.M);
-        tL_messages_sendBotRequestedPeer.peer = MessagesController.getInputPeer(d1Var.U);
-        String str = this.c;
-        tL_messages_sendBotRequestedPeer.webapp_req_id = str;
-        tL_messages_sendBotRequestedPeer.button_id = this.d.button_id;
-        int size = arrayList.size();
-        while (i10 < size) {
-            Object obj = arrayList.get(i10);
-            i10++;
-            tL_messages_sendBotRequestedPeer.requested_peers.add(MessagesController.getInstance(d1Var.M).getInputPeer(((Long) obj).longValue()));
-        }
-        ConnectionsManager.getInstance(d1Var.M).sendRequestTyped(tL_messages_sendBotRequestedPeer, new org.telegram.messenger.a(), new w(d1Var, this.e, str, 2));
     }
 
-    @Override // org.telegram.ui.oy
-    public boolean u(uy uyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, eg1 eg1Var) {
-        if (!arrayList.isEmpty()) {
-            int i12 = 0;
-            this.b[0] = true;
-            TLRPC.TL_messages_sendBotRequestedPeer tL_messages_sendBotRequestedPeer = new TLRPC.TL_messages_sendBotRequestedPeer();
-            d1 d1Var = this.a;
-            MessagesController.getInstance(d1Var.M);
-            tL_messages_sendBotRequestedPeer.peer = MessagesController.getInputPeer(d1Var.U);
-            String str = this.c;
-            tL_messages_sendBotRequestedPeer.webapp_req_id = str;
-            tL_messages_sendBotRequestedPeer.button_id = this.d.button_id;
-            HashSet hashSet = new HashSet();
-            int size = arrayList.size();
-            while (i12 < size) {
-                Object obj = arrayList.get(i12);
-                i12++;
-                hashSet.add(Long.valueOf(((MessagesStorage.TopicKey) obj).dialogId));
-            }
-            Iterator it = hashSet.iterator();
-            while (it.hasNext()) {
-                tL_messages_sendBotRequestedPeer.requested_peers.add(MessagesController.getInstance(d1Var.M).getInputPeer(((Long) it.next()).longValue()));
-            }
-            ConnectionsManager.getInstance(d1Var.M).sendRequestTyped(tL_messages_sendBotRequestedPeer, new org.telegram.messenger.a(), new w(d1Var, this.e, str, 1));
-        }
-        uyVar.finishFragment();
-        return true;
+    public /* synthetic */ d0(v5 v5Var, Utilities.Callback callback, boolean[] zArr, boolean[] zArr2, Object obj, int i10) {
+        this.a = i10;
+        this.c = callback;
+        this.b = zArr;
+        this.d = zArr2;
+        this.e = obj;
     }
 }

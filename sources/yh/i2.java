@@ -1,33 +1,27 @@
 package yh;
 
-import org.telegram.ui.Components.nr0;
+import android.text.TextPaint;
+import android.text.style.ClickableSpan;
+import android.view.View;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
-/* loaded from: classes.dex */
-public final class i2 extends s4.j {
-    public final /* synthetic */ nr0 F;
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* loaded from: classes4.dex */
+public final class i2 extends ClickableSpan {
+    public final /* synthetic */ long a;
+    public final /* synthetic */ a4 b;
 
-    public i2(nr0 nr0Var) {
-        this.F = nr0Var;
+    public i2(a4 a4Var, long j3) {
+        this.b = a4Var;
+        this.a = j3;
     }
 
-    @Override // s4.j
-    public final void M() {
-        this.F.o();
+    @Override // android.text.style.ClickableSpan
+    public final void onClick(View view) {
+        this.b.X1(this.a);
     }
 
-    @Override // s4.j
-    public final void O() {
-        this.F.o();
-    }
-
-    @Override // s4.j
-    public final void P(s4.c1 c1Var) {
-        this.F.o();
-    }
-
-    @Override // s4.j
-    public final void Q() {
-        this.F.o();
+    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        textPaint.setColor(textPaint.linkColor);
     }
 }

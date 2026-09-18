@@ -1,29 +1,35 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import android.view.ViewGroup;
+import android.content.Context;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class za0 implements e2.h {
+public final /* synthetic */ class za0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ViewGroup b;
+    public final /* synthetic */ pb0 b;
+    public final /* synthetic */ Context c;
 
-    public /* synthetic */ za0(ViewGroup viewGroup, int i10) {
+    public /* synthetic */ za0(pb0 pb0Var, Context context, int i10) {
         this.a = i10;
-        this.b = viewGroup;
+        this.b = pb0Var;
+        this.c = context;
     }
 
-    @Override // e2.h
-    public final void accept(Object obj) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                qb0 qb0Var = (qb0) this.b;
-                qb0Var.n.y(qb0Var.f.T((View) obj));
+                pb0 pb0Var = this.b;
+                pb0Var.c0.a(false);
+                AndroidUtilities.runOnUIThread(new za0(pb0Var, this.c, 1));
                 break;
             default:
-                d61 d61Var = (d61) this.b;
-                d61Var.Y2.Q(d61Var.T((View) obj), d61Var.c3);
+                Context context = this.c;
+                if (AndroidUtilities.isContextSafe(context)) {
+                    new rg.x0(context, 43, this.b.c0.F).show();
+                    break;
+                }
                 break;
         }
     }

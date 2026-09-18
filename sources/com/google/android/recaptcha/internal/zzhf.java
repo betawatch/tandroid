@@ -6,7 +6,7 @@ import org.telegram.tgnet.TLObject;
 import rd.p;
 import v7.t7;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class zzhf {
     private final p zza;
@@ -27,7 +27,7 @@ public final class zzhf {
     public final Object zza(zzhk zzhkVar, c cVar) {
         zzhe zzheVar;
         int i10;
-        zzcg e7;
+        zzcg e;
         zzgr zzgrVar;
         if (cVar instanceof zzhe) {
             zzheVar = (zzhe) cVar;
@@ -49,11 +49,11 @@ public final class zzhf {
                             return aVar;
                         }
                         zzgrVar = zzgrVar2;
-                    } catch (zzcg e10) {
-                        e7 = e10;
+                    } catch (zzcg e7) {
+                        e = e7;
                         zzgrVar = zzgrVar2;
-                        zzgrVar.zzc(e7);
-                        throw e7;
+                        zzgrVar.zzc(e);
+                        throw e;
                     }
                 } else {
                     if (i10 != 1) {
@@ -62,10 +62,10 @@ public final class zzhf {
                     zzgrVar = zzheVar.zzd;
                     try {
                         t7.b(obj);
-                    } catch (zzcg e11) {
-                        e7 = e11;
-                        zzgrVar.zzc(e7);
-                        throw e7;
+                    } catch (zzcg e10) {
+                        e = e10;
+                        zzgrVar.zzc(e);
+                        throw e;
                     }
                 }
                 zzgrVar.zzb();

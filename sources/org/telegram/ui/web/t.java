@@ -1,43 +1,70 @@
 package org.telegram.ui.web;
 
-import bi.k9;
+import ai.da;
 import org.json.JSONObject;
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.FileLog;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class t implements Utilities.Callback {
+public final /* synthetic */ class t implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ d1 b;
-    public final /* synthetic */ k9 c;
 
-    public /* synthetic */ t(d1 d1Var, k9 k9Var, int i10) {
+    public /* synthetic */ t(d1 d1Var, int i10) {
         this.a = i10;
         this.b = d1Var;
-        this.c = k9Var;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                this.b.y(this.c, "location_requested", (JSONObject) obj);
+                h0 h0Var = this.b.c;
+                if (h0Var != null) {
+                    h0Var.b();
+                }
+                LaunchActivity.L();
                 break;
             case 1:
-                this.b.y(this.c, "location_requested", (JSONObject) obj);
+                d1 d1Var = this.b;
+                da daVar = d1Var.I0;
+                ei.w0 w0Var = d1Var.k0;
+                w0Var.getClass();
+                JSONObject jSONObject = new JSONObject();
+                try {
+                    jSONObject.put("available", w0Var.d());
+                    if (w0Var.d()) {
+                        jSONObject.put("access_requested", w0Var.d);
+                        if (w0Var.d) {
+                            jSONObject.put("access_granted", w0Var.e && w0Var.a());
+                        }
+                    }
+                } catch (Exception e) {
+                    FileLog.e(e);
+                }
+                d1Var.y(daVar, "location_checked", jSONObject);
                 break;
             default:
-                d1 d1Var = this.b;
-                d1Var.getClass();
-                boolean booleanValue = ((Boolean) obj).booleanValue();
-                k9 k9Var = this.c;
-                if (!booleanValue) {
-                    d1Var.y(k9Var, "home_screen_failed", d1.B("UNSUPPORTED", "error"));
-                    break;
-                } else {
-                    d1Var.y(k9Var, "home_screen_added", null);
+                d1 d1Var2 = this.b;
+                if (d1Var2.S) {
+                    d1Var2.S = false;
+                    h0 h0Var2 = d1Var2.c;
+                    if (h0Var2 != null) {
+                        h0Var2.t(false);
+                    }
+                }
+                d1Var2.c();
+                d1Var2.N = false;
+                d1Var2.P = 0L;
+                d1Var2.T = false;
+                z0 z0Var = d1Var2.a;
+                if (z0Var != null) {
+                    z0Var.onResume();
+                    d1Var2.a.reload();
                     break;
                 }
+                break;
         }
     }
 }

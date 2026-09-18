@@ -1,7 +1,7 @@
 package cd;
 
 import com.google.android.gms.common.data.DataHolder;
-import i2.g;
+import hg.k0;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 import kotlin.jvm.internal.i;
@@ -9,7 +9,7 @@ import n6.l;
 import x8.e;
 import y8.k;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public class b implements Iterator {
     public final /* synthetic */ int a;
@@ -88,13 +88,13 @@ public class b implements Iterator {
                     int i12 = this.b;
                     this.b = i12 + 1;
                     return objArr[i12];
-                } catch (ArrayIndexOutOfBoundsException e7) {
+                } catch (ArrayIndexOutOfBoundsException e) {
                     this.b--;
-                    throw new NoSuchElementException(e7.getMessage());
+                    throw new NoSuchElementException(e.getMessage());
                 }
             default:
                 if (!hasNext()) {
-                    throw new NoSuchElementException(g.i(this.b, "Cannot advance the iterator beyond "));
+                    throw new NoSuchElementException(k0.i(this.b, "Cannot advance the iterator beyond "));
                 }
                 e eVar = (e) this.c;
                 int i13 = this.b;

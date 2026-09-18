@@ -10,6 +10,7 @@ import e2.v;
 import e9.a1;
 import e9.g0;
 import e9.i0;
+import hg.k0;
 import java.math.RoundingMode;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
@@ -17,7 +18,7 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class t implements c3.o {
     public static final Pattern i = Pattern.compile("LOCAL:([^,]+)");
@@ -38,30 +39,30 @@ public final class t implements c3.o {
         this.e = z10;
     }
 
-    public final h0 a(long j3) {
-        h0 R1 = this.f.R1(0, 3);
-        b2.r rVar = new b2.r();
-        rVar.q = r0.n("text/vtt");
-        rVar.d = this.a;
-        rVar.v = j3;
-        i2.g.u(rVar, R1);
-        this.f.Z0();
-        return R1;
-    }
-
     @Override // c3.o
-    public final boolean b(c3.p pVar) {
+    public final boolean a(c3.p pVar) {
         c3.l lVar = (c3.l) pVar;
-        lVar.j(this.g, 0, 6, false);
+        lVar.h(this.g, 0, 6, false);
         byte[] bArr = this.g;
         v vVar = this.c;
         vVar.H(6, bArr);
         if (i4.i.a(vVar)) {
             return true;
         }
-        lVar.j(this.g, 6, 3, false);
+        lVar.h(this.g, 6, 3, false);
         vVar.H(9, this.g);
         return i4.i.a(vVar);
+    }
+
+    public final h0 b(long j3) {
+        h0 Z1 = this.f.Z1(0, 3);
+        b2.r rVar = new b2.r();
+        rVar.q = r0.n("text/vtt");
+        rVar.d = this.a;
+        rVar.v = j3;
+        k0.u(rVar, Z1);
+        this.f.e1();
+        return Z1;
     }
 
     @Override // c3.o
@@ -70,7 +71,7 @@ public final class t implements c3.o {
             qVar = new com.google.firebase.messaging.m(qVar, this.d);
         }
         this.f = qVar;
-        qVar.P1(new c3.t(-9223372036854775807L));
+        qVar.X1(new c3.t(-9223372036854775807L));
     }
 
     @Override // c3.o
@@ -132,7 +133,7 @@ public final class t implements c3.o {
                     }
                 }
                 if (matcher == null) {
-                    a(0L);
+                    b(0L);
                     return -1;
                 }
                 String group = matcher.group(1);
@@ -140,13 +141,13 @@ public final class t implements c3.o {
                 long c10 = i4.i.c(group);
                 String str = d0.a;
                 long b10 = this.b.b(d0.Y((j3 + c10) - j10, 90000L, 1000000L, RoundingMode.DOWN) % 8589934592L);
-                h0 a2 = a(b10 - c10);
+                h0 b11 = b(b10 - c10);
                 byte[] bArr3 = this.g;
                 int i13 = this.h;
                 v vVar2 = this.c;
                 vVar2.H(i13, bArr3);
-                a2.d(this.h, vVar2);
-                a2.c(b10, 1, this.h, 0, null);
+                b11.d(this.h, vVar2);
+                b11.c(b10, 1, this.h, 0, null);
                 return -1;
             }
             if (k11.startsWith("X-TIMESTAMP-MAP")) {

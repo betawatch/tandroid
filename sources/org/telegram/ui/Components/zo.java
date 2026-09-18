@@ -1,23 +1,32 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Bitmap;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.wd1;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class zo extends wd1 {
-    public final /* synthetic */ int k2;
+public final /* synthetic */ class zo implements wd1 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ vi b;
+    public final /* synthetic */ org.telegram.ui.s3 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ zo(Object obj, Bitmap bitmap, boolean z10, int i10) {
-        super(obj, bitmap, z10);
-        this.k2 = i10;
+    public /* synthetic */ zo(vi viVar, org.telegram.ui.s3 s3Var, int i10) {
+        this.a = i10;
+        this.b = viVar;
+        this.c = s3Var;
     }
 
     @Override // org.telegram.ui.wd1
-    public final boolean U0() {
-        switch (this.k2) {
+    public final void a(TLRPC.TL_wallPaper tL_wallPaper) {
+        switch (this.a) {
+            case 0:
+                this.b.dismissInternal();
+                this.c.run(tL_wallPaper);
+                break;
+            default:
+                this.b.dismissInternal();
+                this.c.run(tL_wallPaper);
+                break;
         }
-        return true;
     }
 }

@@ -15,12 +15,12 @@ import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.c90;
+import org.telegram.ui.Components.b90;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public class c9 extends FrameLayout {
-    public final wh.p a;
+    public final vh.o a;
     public final b9 b;
     public final b9 c;
     public final ImageView d;
@@ -48,13 +48,13 @@ public class c9 extends FrameLayout {
         }
         int dp = AndroidUtilities.dp(23.0f) + (drawable != null ? AndroidUtilities.dp(48.0f) : 0);
         boolean z10 = LocaleController.isRTL;
-        wh.p pVar = this.a;
+        vh.o oVar = this.a;
         if (z10) {
-            ((ViewGroup.MarginLayoutParams) pVar.getLayoutParams()).leftMargin = dp;
+            ((ViewGroup.MarginLayoutParams) oVar.getLayoutParams()).leftMargin = dp;
         } else {
-            ((ViewGroup.MarginLayoutParams) pVar.getLayoutParams()).rightMargin = dp;
+            ((ViewGroup.MarginLayoutParams) oVar.getLayoutParams()).rightMargin = dp;
         }
-        pVar.requestLayout();
+        oVar.requestLayout();
     }
 
     public final void c(CharSequence charSequence, CharSequence charSequence2, boolean z10) {
@@ -79,10 +79,10 @@ public class c9 extends FrameLayout {
         int i10 = org.telegram.ui.ActionBar.j6.gc;
         org.telegram.ui.ActionBar.f6 f6Var = this.n;
         int a2 = a(org.telegram.ui.ActionBar.j6.v0(i10, f6Var));
-        wh.p pVar = this.a;
-        pVar.setLinkTextColor(a2);
-        pVar.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.G6, f6Var));
-        pVar.invalidate();
+        vh.o oVar = this.a;
+        oVar.setLinkTextColor(a2);
+        oVar.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.G6, f6Var));
+        oVar.invalidate();
         int a10 = a(org.telegram.ui.ActionBar.j6.v0(i10, f6Var));
         b9 b9Var = this.b;
         b9Var.setLinkTextColor(a10);
@@ -148,8 +148,8 @@ public class c9 extends FrameLayout {
         boolean z10 = b9Var.b(x10 - b9Var.getLeft(), ((int) motionEvent.getY()) - b9Var.getTop()) != null;
         if (!z10) {
             int x11 = (int) motionEvent.getX();
-            wh.p pVar = this.a;
-            z10 = pVar.a(x11 - pVar.getLeft(), ((int) motionEvent.getY()) - pVar.getTop()) != null;
+            vh.o oVar = this.a;
+            z10 = oVar.a(x11 - oVar.getLeft(), ((int) motionEvent.getY()) - oVar.getTop()) != null;
         }
         if (z10) {
             return true;
@@ -178,17 +178,17 @@ public class c9 extends FrameLayout {
         this.n = f6Var;
         boolean z12 = z10 || z11;
         this.h = z12;
-        wh.p pVar = new wh.p(context, f6Var, true);
-        this.a = pVar;
+        vh.o oVar = new vh.o(context, f6Var, true);
+        this.a = oVar;
         final int i11 = 0;
-        pVar.setOnLinkLongPressListener(new c90(this) { // from class: org.telegram.ui.Cells.a9
+        oVar.setOnLinkLongPressListener(new b90(this) { // from class: org.telegram.ui.Cells.a9
             public final /* synthetic */ c9 b;
 
             {
                 this.b = this;
             }
 
-            @Override // org.telegram.ui.Components.c90
+            @Override // org.telegram.ui.Components.b90
             public final void a(ClickableSpan clickableSpan) {
                 switch (i11) {
                     case 0:
@@ -228,32 +228,32 @@ public class c9 extends FrameLayout {
                 }
             }
         });
-        pVar.setTextSize(1, 16.0f);
-        pVar.setGravity(LocaleController.isRTL ? 5 : 3);
+        oVar.setTextSize(1, 16.0f);
+        oVar.setGravity(LocaleController.isRTL ? 5 : 3);
         if (z10) {
             setMinimumHeight(AndroidUtilities.dp(60.0f));
         } else {
-            pVar.setLines(1);
-            pVar.setMaxLines(1);
-            pVar.setSingleLine(true);
+            oVar.setLines(1);
+            oVar.setMaxLines(1);
+            oVar.setSingleLine(true);
         }
         TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
-        pVar.setEllipsize(truncateAt);
-        pVar.setImportantForAccessibility(2);
-        pVar.setPadding(AndroidUtilities.dp(6.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(5.0f));
+        oVar.setEllipsize(truncateAt);
+        oVar.setImportantForAccessibility(2);
+        oVar.setPadding(AndroidUtilities.dp(6.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(5.0f));
         float f7 = i10 - 6;
-        addView(pVar, w7.x5.d(-2, -2.0f, LocaleController.isRTL ? 5 : 3, f7, 6.0f, f7, z10 ? 27.0f : 0.0f));
+        addView(oVar, w7.x5.d(-2, -2.0f, LocaleController.isRTL ? 5 : 3, f7, 6.0f, f7, z10 ? 27.0f : 0.0f));
         b9 b9Var = new b9(this, context, f6Var, 0);
         this.b = b9Var;
         final int i12 = 1;
-        b9Var.setOnLinkLongPressListener(new c90(this) { // from class: org.telegram.ui.Cells.a9
+        b9Var.setOnLinkLongPressListener(new b90(this) { // from class: org.telegram.ui.Cells.a9
             public final /* synthetic */ c9 b;
 
             {
                 this.b = this;
             }
 
-            @Override // org.telegram.ui.Components.c90
+            @Override // org.telegram.ui.Components.b90
             public final void a(ClickableSpan clickableSpan) {
                 switch (i12) {
                     case 0:
@@ -314,14 +314,14 @@ public class c9 extends FrameLayout {
         b9 b9Var2 = new b9(this, context, f6Var, 1);
         this.c = b9Var2;
         final int i13 = 2;
-        b9Var2.setOnLinkLongPressListener(new c90(this) { // from class: org.telegram.ui.Cells.a9
+        b9Var2.setOnLinkLongPressListener(new b90(this) { // from class: org.telegram.ui.Cells.a9
             public final /* synthetic */ c9 b;
 
             {
                 this.b = this;
             }
 
-            @Override // org.telegram.ui.Components.c90
+            @Override // org.telegram.ui.Components.b90
             public final void a(ClickableSpan clickableSpan) {
                 switch (i13) {
                     case 0:

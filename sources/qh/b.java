@@ -1,33 +1,40 @@
 package qh;
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import org.telegram.messenger.R;
+import org.telegram.ui.Components.qr;
+
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class b {
-    public static final b a;
-    public static final b b;
-    public static final b c;
-    public static final b d;
-    public static final /* synthetic */ b[] e;
+public final class b extends View {
+    public final le.b a;
+    public final Drawable b;
+    public final Drawable c;
 
-    static {
-        b bVar = new b("STATE_FULLY_HIDDEN", 0);
-        a = bVar;
-        b bVar2 = new b("STATE_ANIMATING_TO_FULLY_HIDDEN", 1);
-        b = bVar2;
-        b bVar3 = new b("STATE_ANIMATING_TO_FULLY_VISIBLE", 2);
-        c = bVar3;
-        b bVar4 = new b("STATE_FULLY_VISIBLE", 3);
-        d = bVar4;
-        e = new b[]{bVar, bVar2, bVar3, bVar4};
+    public b(Context context) {
+        super(context);
+        this.a = new le.b(this, qr.h, 320L);
+        this.b = context.getResources().getDrawable(R.drawable.outline_poll_emoji_24).mutate();
+        this.c = context.getResources().getDrawable(R.drawable.input_keyboard).mutate();
     }
 
-    public static b valueOf(String str) {
-        return (b) Enum.valueOf(b.class, str);
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        float f7 = this.a.e;
+        yf.p.b(canvas, this.b, 1.0f - f7);
+        yf.p.b(canvas, this.c, f7);
     }
 
-    public static b[] values() {
-        return (b[]) e.clone();
+    @Override // android.view.View
+    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
+        super.onSizeChanged(i10, i11, i12, i13);
+        float f7 = i10 / 2.0f;
+        float f10 = i11 / 2.0f;
+        yf.p.d(this.b, f7, f10, 17);
+        yf.p.d(this.c, f7, f10, 17);
     }
 }

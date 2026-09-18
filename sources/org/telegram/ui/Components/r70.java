@@ -10,7 +10,7 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class r70 extends FrameLayout {
     public final /* synthetic */ w70 a;
@@ -27,7 +27,7 @@ public final class r70 extends FrameLayout {
         w70 w70Var = this.a;
         Drawable drawable = w70Var.b;
         int i11 = w70Var.r;
-        i10 = ((org.telegram.ui.ActionBar.f3) w70Var).backgroundPaddingTop;
+        i10 = ((org.telegram.ui.ActionBar.g3) w70Var).backgroundPaddingTop;
         drawable.setBounds(0, i11 - i10, getMeasuredWidth(), getMeasuredHeight());
         drawable.draw(canvas);
     }
@@ -62,7 +62,7 @@ public final class r70 extends FrameLayout {
         ((FrameLayout.LayoutParams) s70Var.getLayoutParams()).topMargin = AndroidUtilities.dp(65.0f) + measuredHeight;
         getMeasuredWidth();
         int D = org.telegram.messenger.w1.D(58.0f, w70Var.h.size(), AndroidUtilities.dp(80.0f));
-        i12 = ((org.telegram.ui.ActionBar.f3) w70Var).backgroundPaddingTop;
+        i12 = ((org.telegram.ui.ActionBar.g3) w70Var).backgroundPaddingTop;
         int C = org.telegram.messenger.w1.C(55.0f, i12 + D, measuredHeight);
         int i13 = size / 5;
         int i14 = C < i13 * 3 ? size - C : i13 * 2;

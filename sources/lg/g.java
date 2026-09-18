@@ -1,25 +1,81 @@
 package lg;
 
-import android.widget.TextView;
-import org.telegram.ui.ActionBar.j6;
-
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class g extends e {
-    public TextView M;
-    public TextView N;
+public final class g {
+    public boolean a;
+    public float b;
+    public float c;
+    public float d;
+    public float e;
+    public float f;
+    public float g;
+    public boolean h;
+    public int i;
+    public float j;
+    public float k;
+    public float l;
+    public float m;
 
-    @Override // lg.e
-    public final void b() {
-        TextView textView = this.M;
-        if (textView == null) {
-            return;
-        }
-        super.b();
-        textView.setTextColor(j6.w0(null, j6.j5, false));
+    /* renamed from: a, reason: merged with bridge method [inline-methods] */
+    public final g clone() {
+        g gVar = new g();
+        gVar.a = this.a;
+        gVar.b = this.b;
+        gVar.c = this.c;
+        gVar.d = this.d;
+        gVar.e = this.e;
+        gVar.f = this.f;
+        gVar.g = this.g;
+        gVar.h = this.h;
+        gVar.i = this.i;
+        gVar.j = this.j;
+        gVar.k = this.k;
+        gVar.l = this.l;
+        gVar.m = this.m;
+        return gVar;
     }
 
-    @Override // lg.e
-    public void setSize(int i10) {
+    public final int b() {
+        return this.i;
+    }
+
+    public final boolean c() {
+        return this.a;
+    }
+
+    public final boolean d() {
+        return this.h;
+    }
+
+    public final void e(boolean z10, float f7, float f10, float f11, int i10, float f12, float f13, float f14, float f15, float f16, float f17, float f18, boolean z11) {
+        this.a = z10;
+        this.b = f7;
+        this.c = f10;
+        this.f = f12;
+        this.g = f11;
+        this.i = i10;
+        while (true) {
+            int i11 = this.i;
+            if (i11 >= 0) {
+                break;
+            } else {
+                this.i = i11 + 360;
+            }
+        }
+        while (true) {
+            int i12 = this.i;
+            if (i12 < 360) {
+                this.j = f15;
+                this.k = f16;
+                this.d = f17;
+                this.e = f18;
+                this.l = f13;
+                this.m = f14;
+                this.h = z11;
+                return;
+            }
+            this.i = i12 - 360;
+        }
     }
 }

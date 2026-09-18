@@ -1,11 +1,11 @@
 package org.telegram.ui.Stories.recorder;
 
-import ah.p;
-import bi.oa;
+import ai.s1;
+import androidx.fragment.app.a0;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes4.dex */
 public class FfmpegAudioWaveformLoader {
     private Utilities.Callback2<short[], Integer> onChunkReceived;
@@ -13,7 +13,7 @@ public class FfmpegAudioWaveformLoader {
 
     public FfmpegAudioWaveformLoader(String str, int i10, Utilities.Callback2<short[], Integer> callback2) {
         this.onChunkReceived = callback2;
-        Utilities.phoneBookQueue.postRunnable(new p(this, str, i10, 4));
+        Utilities.phoneBookQueue.postRunnable(new s1(this, str, i10, 3));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -31,10 +31,10 @@ public class FfmpegAudioWaveformLoader {
     }
 
     private void receiveChunk(short[] sArr, int i10) {
-        AndroidUtilities.runOnUIThread(new p(this, sArr, i10, 5));
+        AndroidUtilities.runOnUIThread(new s1(this, sArr, i10, 4));
     }
 
     public void destroy() {
-        Utilities.phoneBookQueue.postRunnable(new oa(this, 21));
+        Utilities.phoneBookQueue.postRunnable(new a0(this, 15));
     }
 }

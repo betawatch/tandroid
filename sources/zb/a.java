@@ -8,6 +8,7 @@ import android.os.Parcel;
 import android.os.RemoteException;
 import android.os.SystemClock;
 import android.util.Log;
+import hg.k0;
 import java.util.ArrayList;
 import n6.l;
 import qb.j;
@@ -21,7 +22,7 @@ import x7.na;
 import x7.oa;
 import x7.y;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class a implements b {
     public final Context a;
@@ -47,8 +48,8 @@ public final class a implements b {
             try {
                 jaVar.S0(jaVar.O0(), 1);
                 this.c = true;
-            } catch (RemoteException e7) {
-                throw new mb.a("Failed to init thin image labeler.", e7);
+            } catch (RemoteException e) {
+                throw new mb.a("Failed to init thin image labeler.", e);
             }
         }
         int i10 = aVar.e;
@@ -62,7 +63,7 @@ public final class a implements b {
                 if (i13 == 35) {
                     bVar = new x6.b(null);
                 } else if (i13 != 842094169) {
-                    throw new mb.a(i2.g.i(aVar.e, "Unsupported image format: "), 3);
+                    throw new mb.a(k0.i(aVar.e, "Unsupported image format: "), 3);
                 }
             }
             l.h(null);
@@ -101,8 +102,8 @@ public final class a implements b {
                 arrayList.add(new xb.a(naVar.b, naVar.d, naVar.a, naVar.c));
             }
             return arrayList;
-        } catch (RemoteException e10) {
-            throw new mb.a("Failed to run thin image labeler.", e10);
+        } catch (RemoteException e7) {
+            throw new mb.a("Failed to run thin image labeler.", e7);
         }
     }
 
@@ -123,8 +124,8 @@ public final class a implements b {
                 kaVar = queryLocalInterface instanceof ma ? (ma) queryLocalInterface : new ka(b10, "com.google.mlkit.vision.label.aidls.IImageLabelerCreator", 10);
             }
             this.e = ((ka) kaVar).W0(new x6.b(context), new oa(this.b.a, -1));
-        } catch (RemoteException e7) {
-            throw new mb.a("Failed to create thin image labeler.", e7);
+        } catch (RemoteException e) {
+            throw new mb.a("Failed to create thin image labeler.", e);
         } catch (y6.b unused) {
             if (!this.d) {
                 j.b(context);

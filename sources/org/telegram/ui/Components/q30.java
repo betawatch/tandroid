@@ -15,11 +15,11 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class q30 extends kl0 {
+public final class q30 extends ll0 {
     public final Context c;
-    public final hg.b2 d;
+    public final gg.c2 d;
     public o30 e;
     public int f;
     public boolean h;
@@ -32,9 +32,9 @@ public final class q30 extends kl0 {
     public q30(r30 r30Var, Context context) {
         this.w = r30Var;
         this.c = context;
-        hg.b2 b2Var = new hg.b2(true);
-        this.d = b2Var;
-        b2Var.a = new p30(this);
+        gg.c2 c2Var = new gg.c2(true);
+        this.d = c2Var;
+        c2Var.a = new p30(this);
     }
 
     @Override // s4.h0
@@ -45,7 +45,7 @@ public final class q30 extends kl0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.ll0
     public final boolean D(s4.c1 c1Var) {
         View view = c1Var.a;
         return !((view instanceof org.telegram.ui.Cells.a5) && this.w.f0.contains(Long.valueOf(((org.telegram.ui.Cells.a5) view).getUserId()))) && c1Var.f == 0;
@@ -70,8 +70,8 @@ public final class q30 extends kl0 {
     @Override // s4.h0
     public final void l() {
         this.f = 1;
-        hg.b2 b2Var = this.d;
-        int size = b2Var.g.size();
+        gg.c2 c2Var = this.d;
+        int size = c2Var.g.size();
         if (size != 0) {
             int i10 = this.f;
             this.s = i10;
@@ -79,7 +79,7 @@ public final class q30 extends kl0 {
         } else {
             this.s = -1;
         }
-        int size2 = b2Var.e.size();
+        int size2 = c2Var.e.size();
         if (size2 != 0) {
             int i11 = this.f;
             this.v = i11;
@@ -132,36 +132,36 @@ public final class q30 extends kl0 {
             }
         }
         int i14 = this.s;
-        hg.b2 b2Var = this.d;
+        gg.c2 c2Var = this.d;
         SpannableStringBuilder spannableStringBuilder = null;
         if (i14 >= 0 && i10 > i14) {
-            if (i10 < b2Var.g.size() + i14 + 1) {
-                tLObject = (TLObject) b2Var.g.get((i10 - this.s) - 1);
+            if (i10 < c2Var.g.size() + i14 + 1) {
+                tLObject = (TLObject) c2Var.g.get((i10 - this.s) - 1);
                 z10 = tLObject instanceof TLRPC.User;
                 r30 r30Var = this.w;
                 if (z10) {
                     user = (TLRPC.User) tLObject;
                 } else if (tLObject instanceof TLRPC.ChannelParticipant) {
-                    i12 = ((org.telegram.ui.ActionBar.f3) r30Var).currentAccount;
+                    i12 = ((org.telegram.ui.ActionBar.g3) r30Var).currentAccount;
                     user = MessagesController.getInstance(i12).getUser(Long.valueOf(MessageObject.getPeerId(((TLRPC.ChannelParticipant) tLObject).peer)));
                 } else {
                     if (!(tLObject instanceof TLRPC.ChatParticipant)) {
                         return;
                     }
-                    i11 = ((org.telegram.ui.ActionBar.f3) r30Var).currentAccount;
+                    i11 = ((org.telegram.ui.ActionBar.g3) r30Var).currentAccount;
                     user = MessagesController.getInstance(i11).getUser(Long.valueOf(((TLRPC.ChatParticipant) tLObject).user_id));
                 }
                 String publicUsername = UserObject.getPublicUsername(user);
-                size = b2Var.g.size();
+                size = c2Var.g.size();
                 if (size != 0) {
                     int i15 = size + 1;
                     if (i15 > i10) {
-                        str = b2Var.n;
+                        str = c2Var.n;
                         z11 = true;
-                        if (!z11 || publicUsername == null || (size2 = b2Var.e.size()) == 0 || size2 + 1 <= i10) {
+                        if (!z11 || publicUsername == null || (size2 = c2Var.e.size()) == 0 || size2 + 1 <= i10) {
                             publicUsername = null;
                         } else {
-                            String str2 = b2Var.c;
+                            String str2 = c2Var.c;
                             if (str2.startsWith("@")) {
                                 str2 = str2.substring(1);
                             }
@@ -180,8 +180,8 @@ public final class q30 extends kl0 {
                                     spannableStringBuilder2.setSpan(new ForegroundColorSpan(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.pg, false)), indexOfIgnoreCase, length + indexOfIgnoreCase, 33);
                                 }
                                 publicUsername = spannableStringBuilder2;
-                            } catch (Exception e7) {
-                                FileLog.e(e7);
+                            } catch (Exception e) {
+                                FileLog.e(e);
                             }
                         }
                         if (str != null) {
@@ -215,14 +215,14 @@ public final class q30 extends kl0 {
         }
         int i16 = this.v;
         if (i16 >= 0 && i10 > i16) {
-            if (i10 < b2Var.e.size() + i16 + 1) {
-                tLObject = (TLObject) b2Var.e.get((i10 - this.v) - 1);
+            if (i10 < c2Var.e.size() + i16 + 1) {
+                tLObject = (TLObject) c2Var.e.get((i10 - this.v) - 1);
                 z10 = tLObject instanceof TLRPC.User;
                 r30 r30Var2 = this.w;
                 if (z10) {
                 }
                 String publicUsername2 = UserObject.getPublicUsername(user);
-                size = b2Var.g.size();
+                size = c2Var.g.size();
                 if (size != 0) {
                 }
                 str = null;
@@ -244,7 +244,7 @@ public final class q30 extends kl0 {
         if (z10) {
         }
         String publicUsername22 = UserObject.getPublicUsername(user);
-        size = b2Var.g.size();
+        size = c2Var.g.size();
         if (size != 0) {
         }
         str = null;
@@ -287,6 +287,6 @@ public final class q30 extends kl0 {
             a5Var.setDividerColor(org.telegram.ui.ActionBar.j6.tg);
             view = a5Var;
         }
-        return new vk0(view);
+        return new wk0(view);
     }
 }

@@ -10,7 +10,7 @@ import android.util.Log;
 import java.util.ArrayList;
 import w7.z8;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class l0 extends Handler {
     public boolean a;
@@ -85,7 +85,7 @@ public final class l0 extends Handler {
         String sessionId = ((i0) b16).b().a;
         y yVar = (y) ((s) b15);
         kotlin.jvm.internal.i.e(sessionId, "sessionId");
-        zd.e0.q(zd.e0.b(yVar.b), new bb.j(yVar, sessionId, cVar, 5));
+        zd.e0.q(zd.e0.b(yVar.b), new bb.i(yVar, sessionId, cVar, 5));
     }
 
     public final void c(Messenger messenger, String str) {
@@ -98,16 +98,16 @@ public final class l0 extends Handler {
         } catch (DeadObjectException unused) {
             Log.d("SessionLifecycleService", "Removing dead client from list: " + messenger);
             this.c.remove(messenger);
-        } catch (Exception e7) {
-            Log.w("SessionLifecycleService", "Unable to push new session to " + messenger + '.', e7);
+        } catch (Exception e) {
+            Log.w("SessionLifecycleService", "Unable to push new session to " + messenger + '.', e);
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:31:0x0122, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:31:0x0124, code lost:
     
         if (yd.a.b(r9) == false) goto L44;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:50:0x0151, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:50:0x0153, code lost:
     
         if (yd.a.b(r9) == false) goto L44;
      */
@@ -146,11 +146,11 @@ public final class l0 extends Handler {
         Log.d("SessionLifecycleService", "Activity foregrounding at " + msg.getWhen() + '.');
         if (this.a) {
             long when = msg.getWhen() - this.b;
-            bb.i.c.getClass();
-            Object b10 = k9.h.c().b(bb.i.class);
+            bb.h.c.getClass();
+            Object b10 = k9.h.c().b(bb.h.class);
             kotlin.jvm.internal.i.d(b10, "Firebase.app[SessionsSettings::class.java]");
-            bb.i iVar = (bb.i) b10;
-            Bundle bundle = iVar.a.a;
+            bb.h hVar = (bb.h) b10;
+            Bundle bundle = (Bundle) hVar.a.b;
             yd.a aVar = null;
             yd.a aVar2 = bundle.containsKey("firebase_sessions_sessions_restart_timeout") ? new yd.a(z8.a(bundle.getInt("firebase_sessions_sessions_restart_timeout"), yd.c.d)) : null;
             if (aVar2 != null) {
@@ -159,12 +159,12 @@ public final class l0 extends Handler {
                 if (a2 > 0) {
                 }
             }
-            bb.f fVar = iVar.b.c.b;
-            if (fVar == null) {
+            bb.e eVar = hVar.b.c.b;
+            if (eVar == null) {
                 kotlin.jvm.internal.i.h("sessionConfigs");
                 throw null;
             }
-            Integer num = fVar.c;
+            Integer num = eVar.c;
             if (num != null) {
                 int i12 = yd.a.d;
                 aVar = new yd.a(z8.a(num.intValue(), yd.c.d));

@@ -13,7 +13,7 @@ import android.graphics.Shader;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class vf0 extends View {
     public ValueAnimator E;
@@ -108,7 +108,7 @@ public final class vf0 extends View {
             this.E = ofFloat;
             ofFloat.addUpdateListener(new tf0(this, 1));
             this.E.addListener(new uf0(this, 0));
-            this.E.setInterpolator(pr.f);
+            this.E.setInterpolator(qr.f);
             this.E.setDuration(220L);
             this.E.start();
         }
@@ -144,11 +144,11 @@ public final class vf0 extends View {
             if (f7 < 0.0f) {
                 this.r = 0.0f;
             } else {
-                float w10 = com.google.android.gms.internal.vision.e2.w(this.b, 1, r4, dp) - f7;
+                float g10 = hg.k0.g(this.b, 1, r4, dp) - f7;
                 int measuredHeight = getMeasuredHeight() - dp;
                 int i14 = this.v;
-                if (w10 < measuredHeight - i14) {
-                    this.r = com.google.android.gms.internal.vision.e2.w(this.b, 1, i14, dp) - ((getMeasuredHeight() - dp) - this.v);
+                if (g10 < measuredHeight - i14) {
+                    this.r = hg.k0.g(this.b, 1, i14, dp) - ((getMeasuredHeight() - dp) - this.v);
                 }
             }
             float f10 = (i10 - 1) * this.w;
@@ -178,7 +178,7 @@ public final class vf0 extends View {
             this.E = ofFloat;
             ofFloat.addUpdateListener(new tf0(this, 0));
             this.E.addListener(new uf0(this, 1));
-            this.E.setInterpolator(pr.f);
+            this.E.setInterpolator(qr.f);
             this.E.setDuration(220L);
             this.E.start();
         }

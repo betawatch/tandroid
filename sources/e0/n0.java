@@ -11,7 +11,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class n0 {
     public static String d;
@@ -35,7 +35,7 @@ public final class n0 {
         Method method;
         Integer num;
         if (Build.VERSION.SDK_INT >= 24) {
-            return androidx.emoji2.text.x.a(this.b);
+            return androidx.emoji2.text.v.a(this.b);
         }
         Context context = this.a;
         AppOpsManager appOpsManager = (AppOpsManager) context.getSystemService("appops");

@@ -12,7 +12,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public abstract class i {
     public final com.google.firebase.messaging.m a;
@@ -64,14 +64,14 @@ public abstract class i {
                         } else {
                             taskCompletionSource2.setResult(call);
                         }
-                    } catch (RuntimeException e7) {
-                        throw new mb.a("Internal error has occurred when executing ML Kit tasks", e7);
+                    } catch (RuntimeException e) {
+                        throw new mb.a("Internal error has occurred when executing ML Kit tasks", e);
                     }
-                } catch (Exception e10) {
+                } catch (Exception e7) {
                     if (cancellationToken2.isCancellationRequested()) {
                         cancellationTokenSource2.cancel();
                     } else {
-                        taskCompletionSource2.setException(e10);
+                        taskCompletionSource2.setException(e7);
                     }
                 }
             }
@@ -80,13 +80,13 @@ public abstract class i {
             public final void execute(Runnable runnable) {
                 try {
                     executor.execute(runnable);
-                } catch (RuntimeException e7) {
+                } catch (RuntimeException e) {
                     if (cancellationToken.isCancellationRequested()) {
                         cancellationTokenSource.cancel();
                     } else {
-                        taskCompletionSource.setException(e7);
+                        taskCompletionSource.setException(e);
                     }
-                    throw e7;
+                    throw e;
                 }
             }
         });

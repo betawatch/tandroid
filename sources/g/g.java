@@ -25,7 +25,7 @@ import m.v1;
 import org.telegram.messenger.beta.R;
 import r0.i0;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public class g extends u implements DialogInterface {
     public final f f;
@@ -44,7 +44,7 @@ public class g extends u implements DialogInterface {
         return typedValue.resourceId;
     }
 
-    @Override // g.u, androidx.activity.n, android.app.Dialog
+    @Override // g.u, androidx.activity.m, android.app.Dialog
     public void onCreate(Bundle bundle) {
         int i10;
         ListAdapter listAdapter;
@@ -277,7 +277,7 @@ public class g extends u implements DialogInterface {
     @Override // android.app.Dialog, android.view.KeyEvent.Callback
     public boolean onKeyDown(int i10, KeyEvent keyEvent) {
         NestedScrollView nestedScrollView = this.f.m;
-        if (nestedScrollView == null || !nestedScrollView.j(keyEvent)) {
+        if (nestedScrollView == null || !nestedScrollView.i(keyEvent)) {
             return super.onKeyDown(i10, keyEvent);
         }
         return true;
@@ -286,7 +286,7 @@ public class g extends u implements DialogInterface {
     @Override // android.app.Dialog, android.view.KeyEvent.Callback
     public boolean onKeyUp(int i10, KeyEvent keyEvent) {
         NestedScrollView nestedScrollView = this.f.m;
-        if (nestedScrollView == null || !nestedScrollView.j(keyEvent)) {
+        if (nestedScrollView == null || !nestedScrollView.i(keyEvent)) {
             return super.onKeyUp(i10, keyEvent);
         }
         return true;

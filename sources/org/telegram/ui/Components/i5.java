@@ -1,30 +1,43 @@
 package org.telegram.ui.Components;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class i5 implements n5 {
+public final /* synthetic */ class i5 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ q5 b;
+    public final /* synthetic */ k5 b;
+    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ HashSet d;
 
-    public /* synthetic */ i5(q5 q5Var, int i10) {
+    public /* synthetic */ i5(k5 k5Var, ArrayList arrayList, HashSet hashSet, int i10) {
         this.a = i10;
-        this.b = q5Var;
+        this.b = k5Var;
+        this.c = arrayList;
+        this.d = hashSet;
     }
 
-    @Override // org.telegram.ui.Components.n5
-    public final void a(TLRPC.Document document) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                q5 q5Var = this.b;
-                q5Var.e = document;
-                q5Var.j(false);
+                AndroidUtilities.runOnUIThread(new i5(this.b, this.c, this.d, 1));
                 break;
             default:
-                q5 q5Var2 = this.b;
-                q5Var2.e = document;
-                q5Var2.j(false);
+                k5 k5Var = this.b;
+                k5Var.d(this.c);
+                HashSet hashSet = this.d;
+                if (!hashSet.isEmpty()) {
+                    ArrayList<Long> arrayList = new ArrayList<>(hashSet);
+                    TLRPC.TL_messages_getCustomEmojiDocuments tL_messages_getCustomEmojiDocuments = new TLRPC.TL_messages_getCustomEmojiDocuments();
+                    tL_messages_getCustomEmojiDocuments.document_id = arrayList;
+                    ConnectionsManager.getInstance(k5Var.e).sendRequest(tL_messages_getCustomEmojiDocuments, new org.telegram.ui.qo(3, k5Var, arrayList));
+                    break;
+                }
                 break;
         }
     }

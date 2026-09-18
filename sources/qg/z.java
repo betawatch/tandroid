@@ -1,31 +1,79 @@
 package qg;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class z implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ d0 b;
+import java.util.ArrayList;
+import java.util.HashMap;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.MediaController;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.fh;
+import org.telegram.ui.Components.ti;
+import org.telegram.ui.Components.vi;
 
-    public /* synthetic */ z(d0 d0Var, int i10) {
-        this.a = i10;
-        this.b = d0Var;
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* loaded from: classes3.dex */
+public final class z implements ti {
+    public final /* synthetic */ vi a;
+    public final /* synthetic */ p0 b;
+
+    public z(p0 p0Var, vi viVar) {
+        this.b = p0Var;
+        this.a = viVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                d0 d0Var = this.b;
-                m mVar = d0Var.A;
-                if (mVar != null) {
-                    d0Var.a.g(mVar);
-                    d0Var.A = null;
-                    break;
-                }
-                break;
-            default:
-                this.b.a(null, true, null);
-                break;
+    @Override // org.telegram.ui.Components.ti
+    public final void B1(int i10, boolean z10, boolean z11, int i11, int i12, long j3, boolean z12, boolean z13, long j10) {
+        vi viVar = this.a;
+        try {
+            HashMap<Object, Object> selectedPhotos = viVar.j0.getSelectedPhotos();
+            if (selectedPhotos.isEmpty()) {
+                return;
+            }
+            MediaController.PhotoEntry photoEntry = (MediaController.PhotoEntry) selectedPhotos.values().iterator().next();
+            String str = photoEntry.imagePath;
+            if (str == null) {
+                str = photoEntry.path;
+            }
+            p0 p0Var = this.b;
+            p0Var.f0(p0Var.h0(str, true));
+            viVar.dismiss();
+        } catch (Throwable th2) {
+            FileLog.e(th2);
         }
+    }
+
+    @Override // org.telegram.ui.Components.ti
+    public final boolean S1() {
+        System.currentTimeMillis();
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.ti
+    public final /* synthetic */ boolean c0() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.ti
+    public final void x0(fh fhVar) {
+        fhVar.run();
+    }
+
+    @Override // org.telegram.ui.Components.ti
+    public final /* synthetic */ void K0() {
+    }
+
+    @Override // org.telegram.ui.Components.ti
+    public final /* synthetic */ void U0(Object obj) {
+    }
+
+    @Override // org.telegram.ui.Components.ti
+    public final /* synthetic */ void j1(TLRPC.User user) {
+    }
+
+    @Override // org.telegram.ui.Components.ti
+    public final /* synthetic */ void u0() {
+    }
+
+    @Override // org.telegram.ui.Components.ti
+    public final /* synthetic */ void W1(ArrayList arrayList, CharSequence charSequence, boolean z10, int i10, int i11, long j3, boolean z11, long j10) {
     }
 }

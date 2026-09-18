@@ -18,7 +18,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.GenericProvider;
 import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public class CheckBoxBase {
     public static Paint I;
@@ -26,8 +26,8 @@ public class CheckBoxBase {
     public int A;
     public float B;
     public String C;
-    public np D;
-    public org.telegram.ui.ActionBar.f5 E;
+    public op D;
+    public org.telegram.ui.ActionBar.g5 E;
     public org.telegram.ui.ActionBar.f6 F;
     public GenericProvider G;
     public long H;
@@ -66,7 +66,7 @@ public class CheckBoxBase {
         this.v = 0.0f;
         this.w = 1.0f;
         this.z = true;
-        this.G = new p2(8);
+        this.G = new l2(11);
         this.H = 200L;
         this.F = f6Var;
         this.a = view;
@@ -422,13 +422,13 @@ public class CheckBoxBase {
                         }
                         i17 = 6;
                         paint.setStyle(Paint.Style.FILL);
-                        org.telegram.ui.ActionBar.f5 f5Var = this.E;
-                        if (f5Var == null || !f5Var.l()) {
+                        org.telegram.ui.ActionBar.g5 g5Var = this.E;
+                        if (g5Var == null || !g5Var.l()) {
                             paint.setShader(null);
                         } else {
-                            org.telegram.ui.ActionBar.f5 f5Var2 = this.E;
-                            Shader shader = f5Var2.a;
-                            Matrix matrix = f5Var2.k;
+                            org.telegram.ui.ActionBar.g5 g5Var2 = this.E;
+                            Shader shader = g5Var2.a;
+                            Matrix matrix = g5Var2.k;
                             matrix.reset();
                             this.E.a();
                             matrix.postTranslate(0.0f, (-this.E.r) + rect.top);
@@ -629,8 +629,8 @@ public class CheckBoxBase {
         }
         ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this, "progress", z10 ? 1.0f : 0.0f);
         this.p = ofFloat;
-        ofFloat.addListener(new j6(this, 16));
-        this.p.setInterpolator(pr.g);
+        ofFloat.addListener(new p8(this, 13));
+        this.p.setInterpolator(qr.g);
         this.p.setDuration(this.H);
         this.p.start();
     }
@@ -692,9 +692,9 @@ public class CheckBoxBase {
         }
         this.o = f7;
         b();
-        np npVar = this.D;
-        if (npVar != null) {
-            npVar.b();
+        op opVar = this.D;
+        if (opVar != null) {
+            opVar.a();
         }
     }
 }

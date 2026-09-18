@@ -2,46 +2,43 @@ package z3;
 
 import java.util.List;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
-public abstract class j extends h2.h implements d {
-    public d f;
-    public long h;
+public abstract class j extends h2.j implements d {
+    public d a;
+    public long b;
+
+    @Override // z3.d
+    public final int A() {
+        d dVar = this.a;
+        dVar.getClass();
+        return dVar.A();
+    }
+
+    @Override // h2.j, h2.a
+    public final void clear() {
+        super.clear();
+        this.a = null;
+    }
 
     @Override // z3.d
     public final int d(long j3) {
-        d dVar = this.f;
+        d dVar = this.a;
         dVar.getClass();
-        return dVar.d(j3 - this.h);
+        return dVar.d(j3 - this.b);
     }
 
     @Override // z3.d
-    public final long e(int i10) {
-        d dVar = this.f;
+    public final long g(int i10) {
+        d dVar = this.a;
         dVar.getClass();
-        return dVar.e(i10) + this.h;
+        return dVar.g(i10) + this.b;
     }
 
     @Override // z3.d
-    public final List h(long j3) {
-        d dVar = this.f;
+    public final List l(long j3) {
+        d dVar = this.a;
         dVar.getClass();
-        return dVar.h(j3 - this.h);
-    }
-
-    @Override // h2.h
-    public final void i() {
-        this.b = 0;
-        this.c = 0L;
-        this.d = 0;
-        this.e = false;
-        this.f = null;
-    }
-
-    @Override // z3.d
-    public final int k() {
-        d dVar = this.f;
-        dVar.getClass();
-        return dVar.k();
+        return dVar.l(j3 - this.b);
     }
 }

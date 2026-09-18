@@ -4,7 +4,7 @@ import e9.i0;
 import java.util.ArrayList;
 import java.util.List;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class k extends m implements l2.h {
     public final n n;
@@ -15,13 +15,33 @@ public final class k extends m implements l2.h {
     }
 
     @Override // l2.h
-    public final long a(long j3) {
-        return this.n.g(j3);
+    public final boolean H() {
+        return this.n.i();
+    }
+
+    @Override // l2.h
+    public final long M() {
+        return this.n.d;
+    }
+
+    @Override // l2.h
+    public final long P(long j3) {
+        return this.n.d(j3);
+    }
+
+    @Override // l2.h
+    public final long S(long j3, long j10) {
+        return this.n.b(j3, j10);
     }
 
     @Override // m2.m
-    public final String b() {
+    public final String a() {
         return null;
+    }
+
+    @Override // l2.h
+    public final long b(long j3) {
+        return this.n.g(j3);
     }
 
     @Override // l2.h
@@ -29,13 +49,18 @@ public final class k extends m implements l2.h {
         return this.n.e(j3, j10);
     }
 
-    @Override // l2.h
-    public final long e(long j3, long j10) {
-        return this.n.c(j3, j10);
+    @Override // m2.m
+    public final j e() {
+        return null;
     }
 
     @Override // l2.h
     public final long f(long j3, long j10) {
+        return this.n.c(j3, j10);
+    }
+
+    @Override // l2.h
+    public final long j(long j3, long j10) {
         n nVar = this.n;
         if (nVar.f != null) {
             return -9223372036854775807L;
@@ -45,38 +70,13 @@ public final class k extends m implements l2.h {
     }
 
     @Override // l2.h
-    public final j g(long j3) {
+    public final j m(long j3) {
         return this.n.h(this, j3);
     }
 
-    @Override // m2.m
-    public final j h() {
-        return null;
-    }
-
     @Override // l2.h
-    public final long o(long j3, long j10) {
+    public final long v(long j3, long j10) {
         return this.n.f(j3, j10);
-    }
-
-    @Override // l2.h
-    public final boolean t() {
-        return this.n.i();
-    }
-
-    @Override // l2.h
-    public final long u() {
-        return this.n.d;
-    }
-
-    @Override // l2.h
-    public final long w(long j3) {
-        return this.n.d(j3);
-    }
-
-    @Override // l2.h
-    public final long y(long j3, long j10) {
-        return this.n.b(j3, j10);
     }
 
     @Override // m2.m

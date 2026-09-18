@@ -3,10 +3,9 @@ package k2;
 import android.content.Context;
 import android.media.AudioDeviceCallback;
 import android.media.AudioDeviceInfo;
-import di.g7;
-import ji.u4;
+import ci.g7;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class c extends AudioDeviceCallback {
     public final /* synthetic */ g7 a;
@@ -18,15 +17,15 @@ public final class c extends AudioDeviceCallback {
     @Override // android.media.AudioDeviceCallback
     public final void onAudioDevicesAdded(AudioDeviceInfo[] audioDeviceInfoArr) {
         g7 g7Var = this.a;
-        g7Var.a(b.c((Context) g7Var.b, (b2.e) g7Var.j, (u4) g7Var.i));
+        g7Var.a(b.c((Context) g7Var.b, (b2.e) g7Var.j, (a6.m) g7Var.i));
     }
 
     @Override // android.media.AudioDeviceCallback
     public final void onAudioDevicesRemoved(AudioDeviceInfo[] audioDeviceInfoArr) {
-        if (e2.d0.k(audioDeviceInfoArr, (u4) this.a.i)) {
+        if (e2.d0.k(audioDeviceInfoArr, (a6.m) this.a.i)) {
             this.a.i = null;
         }
         g7 g7Var = this.a;
-        g7Var.a(b.c((Context) g7Var.b, (b2.e) g7Var.j, (u4) g7Var.i));
+        g7Var.a(b.c((Context) g7Var.b, (b2.e) g7Var.j, (a6.m) g7Var.i));
     }
 }

@@ -2,13 +2,13 @@ package na;
 
 import android.content.Context;
 import android.os.Build;
-import androidx.emoji2.text.x;
+import androidx.emoji2.text.v;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.Tasks;
 import java.util.Set;
 import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class c implements e, f {
     public final k9.d a;
@@ -36,7 +36,7 @@ public final class c implements e, f {
     }
 
     public final Task b() {
-        if (Build.VERSION.SDK_INT >= 24 ? x.g(this.b) : true) {
+        if (Build.VERSION.SDK_INT >= 24 ? v.g(this.b) : true) {
             return Tasks.call(this.e, new b(this, 0));
         }
         return Tasks.forResult("");
@@ -47,7 +47,7 @@ public final class c implements e, f {
             Tasks.forResult(null);
             return;
         }
-        if (Build.VERSION.SDK_INT >= 24 ? x.g(this.b) : true) {
+        if (Build.VERSION.SDK_INT >= 24 ? v.g(this.b) : true) {
             Tasks.call(this.e, new b(this, 1));
         } else {
             Tasks.forResult(null);

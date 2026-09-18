@@ -10,16 +10,16 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_chatlists;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class w00 extends kl0 {
+public final class w00 extends ll0 {
     public final /* synthetic */ c10 c;
 
     public w00(c10 c10Var) {
         this.c = c10Var;
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.ll0
     public final boolean D(s4.c1 c1Var) {
         if (c1Var.f != 2) {
             return false;
@@ -66,7 +66,7 @@ public final class w00 extends kl0 {
         TLRPC.Chat chat;
         c10 c10Var = this.c;
         ArrayList arrayList2 = c10Var.g0;
-        org.telegram.ui.ActionBar.n2 n2Var = c10Var.n;
+        org.telegram.ui.ActionBar.o2 o2Var = c10Var.n;
         int i11 = c1Var.f;
         View view = c1Var.a;
         TLRPC.User user = null;
@@ -124,16 +124,16 @@ public final class w00 extends kl0 {
         if (peer != null) {
             if (peer instanceof TLRPC.TL_peerUser) {
                 j3 = peer.user_id;
-                user = n2Var.getMessagesController().getUser(Long.valueOf(peer.user_id));
+                user = o2Var.getMessagesController().getUser(Long.valueOf(peer.user_id));
                 str = UserObject.getUserName(user);
                 str2 = (user == null || !user.bot) ? LocaleController.getString(R.string.FilterInviteUser) : LocaleController.getString(R.string.FilterInviteBot);
             } else {
                 if (peer instanceof TLRPC.TL_peerChat) {
                     j3 = -peer.chat_id;
-                    chat = n2Var.getMessagesController().getChat(Long.valueOf(peer.chat_id));
+                    chat = o2Var.getMessagesController().getChat(Long.valueOf(peer.chat_id));
                 } else if (peer instanceof TLRPC.TL_peerChannel) {
                     j3 = -peer.channel_id;
-                    chat = n2Var.getMessagesController().getChat(Long.valueOf(peer.channel_id));
+                    chat = o2Var.getMessagesController().getChat(Long.valueOf(peer.channel_id));
                 }
                 str2 = null;
                 user = chat;
@@ -199,6 +199,6 @@ public final class w00 extends kl0 {
             }
             b10Var = b10Var2;
         }
-        return new vk0(b10Var);
+        return new wk0(b10Var);
     }
 }

@@ -9,7 +9,7 @@ import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public class h {
     public final MediaController a;
@@ -47,8 +47,8 @@ public class h {
             try {
                 mediaSessionCompat$Token.a().o(gVar);
                 rVar.e(13, null, null);
-            } catch (RemoteException e7) {
-                Log.e("MediaControllerCompat", "Dead object in registerCallback.", e7);
+            } catch (RemoteException e) {
+                Log.e("MediaControllerCompat", "Dead object in registerCallback.", e);
             }
         }
         arrayList.clear();
@@ -64,8 +64,8 @@ public class h {
                         rVar.c = null;
                         this.e.a().M(gVar);
                     }
-                } catch (RemoteException e7) {
-                    Log.e("MediaControllerCompat", "Dead object in unregisterCallback.", e7);
+                } catch (RemoteException e) {
+                    Log.e("MediaControllerCompat", "Dead object in unregisterCallback.", e);
                 }
             } else {
                 this.c.remove(rVar);

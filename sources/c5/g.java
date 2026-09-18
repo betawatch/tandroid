@@ -3,10 +3,11 @@ package c5;
 import android.content.Context;
 import androidx.media3.exoplayer.dash.DashMediaSource$Factory;
 import androidx.media3.exoplayer.hls.HlsMediaSource$Factory;
+import hg.k0;
 import java.lang.reflect.GenericDeclaration;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class g {
     public boolean a;
@@ -16,21 +17,21 @@ public final class g {
     public Object e = new h0(this, true);
     public Object f = new h0(this, false);
 
-    public g(Context context, q qVar, pf.b bVar) {
+    public g(Context context, q qVar, of.b bVar) {
         this.b = context;
         this.c = qVar;
         this.d = bVar;
     }
 
-    public d9.j a(int i10) {
-        d9.j jVar;
-        d9.j jVar2;
+    public d9.i a(int i10) {
+        d9.i iVar;
+        d9.i iVar2;
         HashMap hashMap = (HashMap) this.c;
-        d9.j jVar3 = (d9.j) hashMap.get(Integer.valueOf(i10));
-        if (jVar3 != null) {
-            return jVar3;
+        d9.i iVar3 = (d9.i) hashMap.get(Integer.valueOf(i10));
+        if (iVar3 != null) {
+            return iVar3;
         }
-        final pf.b bVar = (pf.b) this.e;
+        final of.b bVar = (of.b) this.e;
         bVar.getClass();
         if (i10 != 0) {
             final int i11 = 1;
@@ -39,13 +40,13 @@ public final class g {
                 if (i10 != 2) {
                     final int i13 = 3;
                     if (i10 == 3) {
-                        jVar = new i2.p(Class.forName("androidx.media3.exoplayer.rtsp.RtspMediaSource$Factory").asSubclass(u2.e0.class), 3);
+                        iVar = new i2.o(Class.forName("androidx.media3.exoplayer.rtsp.RtspMediaSource$Factory").asSubclass(u2.e0.class), 3);
                     } else {
                         if (i10 != 4) {
-                            throw new IllegalArgumentException(i2.g.i(i10, "Unrecognized contentType: "));
+                            throw new IllegalArgumentException(k0.i(i10, "Unrecognized contentType: "));
                         }
-                        jVar = new d9.j() { // from class: u2.o
-                            @Override // d9.j
+                        iVar = new d9.i() { // from class: u2.o
+                            @Override // d9.i
                             public final Object get() {
                                 switch (i13) {
                                     case 0:
@@ -62,8 +63,8 @@ public final class g {
                     }
                 } else {
                     final Class asSubclass = HlsMediaSource$Factory.class.asSubclass(u2.e0.class);
-                    jVar2 = new d9.j() { // from class: u2.o
-                        @Override // d9.j
+                    iVar2 = new d9.i() { // from class: u2.o
+                        @Override // d9.i
                         public final Object get() {
                             switch (i12) {
                                 case 0:
@@ -80,8 +81,8 @@ public final class g {
                 }
             } else {
                 final GenericDeclaration asSubclass2 = Class.forName("androidx.media3.exoplayer.smoothstreaming.SsMediaSource$Factory").asSubclass(u2.e0.class);
-                jVar2 = new d9.j() { // from class: u2.o
-                    @Override // d9.j
+                iVar2 = new d9.i() { // from class: u2.o
+                    @Override // d9.i
                     public final Object get() {
                         switch (i11) {
                             case 0:
@@ -96,12 +97,12 @@ public final class g {
                     }
                 };
             }
-            jVar = jVar2;
+            iVar = iVar2;
         } else {
             final Class asSubclass3 = DashMediaSource$Factory.class.asSubclass(u2.e0.class);
             final int i14 = 0;
-            jVar = new d9.j() { // from class: u2.o
-                @Override // d9.j
+            iVar = new d9.i() { // from class: u2.o
+                @Override // d9.i
                 public final Object get() {
                     switch (i14) {
                         case 0:
@@ -116,7 +117,7 @@ public final class g {
                 }
             };
         }
-        hashMap.put(Integer.valueOf(i10), jVar);
-        return jVar;
+        hashMap.put(Integer.valueOf(i10), iVar);
+        return iVar;
     }
 }

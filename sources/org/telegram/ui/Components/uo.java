@@ -1,63 +1,56 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import java.util.ArrayList;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.WallpapersListActivity;
+import org.telegram.ui.ab1;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class uo implements View.OnClickListener {
+public final /* synthetic */ class uo implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ lp b;
+    public final /* synthetic */ mp b;
 
-    public /* synthetic */ uo(lp lpVar, int i10) {
+    public /* synthetic */ uo(mp mpVar, int i10) {
         this.a = i10;
-        this.b = lpVar;
+        this.b = mpVar;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                lp lpVar = this.b;
-                vi viVar = lpVar.Y;
-                if (viVar.y0 != viVar.j0) {
-                    lpVar.a0.setText(LocaleController.getString(R.string.SetColorAsBackground));
-                    vi viVar2 = lpVar.Y;
-                    viVar2.Q1(viVar2.j0);
-                    break;
-                } else {
-                    lpVar.a0.setText(LocaleController.getString(R.string.ChooseBackgroundFromGallery));
-                    lpVar.Y.C1();
-                    jj jjVar = lpVar.Y.r0;
-                    boolean z10 = lpVar.N;
-                    za zaVar = jjVar.v;
-                    ((ArrayList) zaVar.e).clear();
-                    WallpapersListActivity.z0((ArrayList) zaVar.e, z10);
-                    zaVar.l();
-                    break;
-                }
+                this.b.h.l();
+                break;
             case 1:
-                lp lpVar2 = this.b;
-                if (!lpVar2.v()) {
-                    lpVar2.dismiss();
-                    break;
-                } else {
-                    lpVar2.A(true);
-                    lpVar2.F(true);
-                    break;
-                }
+                this.b.s(true);
+                break;
             case 2:
-                lp lpVar3 = this.b;
-                if (lpVar3.T == null) {
-                    lpVar3.C(!lpVar3.N);
-                    break;
-                }
+                mp mpVar = this.b;
+                org.telegram.ui.bo boVar = mpVar.v;
+                org.telegram.ui.ActionBar.o2 d02 = ab1.d0(boVar.getMessagesController().getChat(Long.valueOf(-boVar.a())), true);
+                org.telegram.ui.ActionBar.m2 m2Var = new org.telegram.ui.ActionBar.m2();
+                m2Var.a = true;
+                d02.setResourceProvider(boVar.getResourceProvider());
+                m2Var.c = new sh(2);
+                m2Var.d = new uo(mpVar, 3);
+                m2Var.b = new uo(mpVar, 4);
+                m2Var.e = true;
+                mpVar.X = d02;
+                boVar.showAsSheet(d02, m2Var);
+                break;
+            case 3:
+                this.b.u();
+                break;
+            case 4:
+                this.b.X = null;
+                break;
+            case 5:
+                this.b.u();
+                break;
+            case 6:
+                this.b.X = null;
                 break;
             default:
-                this.b.s(false);
+                mp mpVar2 = this.b;
+                mpVar2.U.f(mpVar2.G, true);
                 break;
         }
     }

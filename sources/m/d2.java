@@ -16,12 +16,12 @@ import java.lang.reflect.Method;
 import java.util.WeakHashMap;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
-import v7.u7;
+import v7.v7;
 import w7.p7;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
-public abstract class d2 implements l.c0 {
+public abstract class d2 implements l.b0 {
     public static final Method P;
     public static final Method Q;
     public static final Method R;
@@ -95,13 +95,13 @@ public abstract class d2 implements l.c0 {
         if (obtainStyledAttributes2.hasValue(2)) {
             p7.a(xVar, obtainStyledAttributes2.getBoolean(2, false));
         }
-        xVar.setBackgroundDrawable((!obtainStyledAttributes2.hasValue(0) || (resourceId = obtainStyledAttributes2.getResourceId(0, 0)) == 0) ? obtainStyledAttributes2.getDrawable(0) : u7.b(context, resourceId));
+        xVar.setBackgroundDrawable((!obtainStyledAttributes2.hasValue(0) || (resourceId = obtainStyledAttributes2.getResourceId(0, 0)) == 0) ? obtainStyledAttributes2.getDrawable(0) : v7.b(context, resourceId));
         obtainStyledAttributes2.recycle();
         this.O = xVar;
         xVar.setInputMethodMode(1);
     }
 
-    @Override // l.c0
+    @Override // l.b0
     public final boolean a() {
         return this.O.isShowing();
     }
@@ -114,7 +114,7 @@ public abstract class d2 implements l.c0 {
         this.f = i10;
     }
 
-    @Override // l.c0
+    @Override // l.b0
     public final void dismiss() {
         x xVar = this.O;
         xVar.dismiss();
@@ -123,13 +123,17 @@ public abstract class d2 implements l.c0 {
         this.K.removeCallbacks(this.G);
     }
 
-    @Override // l.c0
+    public final Drawable e() {
+        return this.O.getBackground();
+    }
+
+    @Override // l.b0
     public final r1 f() {
         return this.c;
     }
 
-    @Override // l.c0
-    public final void g() {
+    @Override // l.b0
+    public final void h() {
         int i10;
         int a2;
         int paddingBottom;
@@ -138,9 +142,9 @@ public abstract class d2 implements l.c0 {
         Context context = this.a;
         x xVar = this.O;
         if (r1Var2 == null) {
-            r1 q6 = q(context, !this.N);
-            this.c = q6;
-            q6.setAdapter(this.b);
+            r1 o9 = o(context, !this.N);
+            this.c = o9;
+            o9.setAdapter(this.b);
             this.c.setOnItemClickListener(this.F);
             this.c.setFocusable(true);
             this.c.setFocusableInTouchMode(true);
@@ -258,8 +262,8 @@ public abstract class d2 implements l.c0 {
             if (method3 != null) {
                 try {
                     method3.invoke(xVar, this.M);
-                } catch (Exception e7) {
-                    Log.e("ListPopupWindow", "Could not invoke setEpicenterBounds on PopupWindow", e7);
+                } catch (Exception e) {
+                    Log.e("ListPopupWindow", "Could not invoke setEpicenterBounds on PopupWindow", e);
                 }
             }
         } else {
@@ -277,27 +281,23 @@ public abstract class d2 implements l.c0 {
         this.K.post(this.J);
     }
 
-    public final Drawable h() {
-        return this.O.getBackground();
-    }
-
-    public final void j(Drawable drawable) {
+    public final void i(Drawable drawable) {
         this.O.setBackgroundDrawable(drawable);
     }
 
-    public final void k(int i10) {
+    public final void j(int i10) {
         this.h = i10;
         this.r = true;
     }
 
-    public final int n() {
+    public final int m() {
         if (this.r) {
             return this.h;
         }
         return 0;
     }
 
-    public void p(ListAdapter listAdapter) {
+    public void n(ListAdapter listAdapter) {
         h1.a aVar = this.y;
         if (aVar == null) {
             this.y = new h1.a(this, 1);
@@ -317,11 +317,11 @@ public abstract class d2 implements l.c0 {
         }
     }
 
-    public r1 q(Context context, boolean z10) {
+    public r1 o(Context context, boolean z10) {
         return new r1(context, z10);
     }
 
-    public final void r(int i10) {
+    public final void p(int i10) {
         Drawable background = this.O.getBackground();
         if (background == null) {
             this.e = i10;

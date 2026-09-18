@@ -4,7 +4,7 @@ import android.app.Application;
 import java.lang.reflect.InvocationTargetException;
 import java.util.LinkedHashMap;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class r0 extends q0 {
     public static r0 e;
@@ -15,32 +15,23 @@ public final class r0 extends q0 {
     }
 
     @Override // androidx.lifecycle.q0, androidx.lifecycle.s0
-    public final p0 U(Class cls, v1.b bVar) {
+    public final p0 H(Class cls, v1.b bVar) {
         if (this.d != null) {
-            return a(cls);
+            return b(cls);
         }
         Application application = (Application) ((LinkedHashMap) bVar.a).get(q0.a);
         if (application != null) {
-            return b(cls, application);
+            return a(cls, application);
         }
         if (a.class.isAssignableFrom(cls)) {
             throw new IllegalArgumentException("CreationExtras must have an application by `APPLICATION_KEY`");
         }
-        return super.a(cls);
+        return super.b(cls);
     }
 
-    @Override // androidx.lifecycle.q0, androidx.lifecycle.s0
-    public final p0 a(Class cls) {
-        Application application = this.d;
-        if (application != null) {
-            return b(cls, application);
-        }
-        throw new UnsupportedOperationException("AndroidViewModelFactory constructed with empty constructor works only with create(modelClass: Class<T>, extras: CreationExtras).");
-    }
-
-    public final p0 b(Class cls, Application application) {
+    public final p0 a(Class cls, Application application) {
         if (!a.class.isAssignableFrom(cls)) {
-            return super.a(cls);
+            return super.b(cls);
         }
         try {
             p0 p0Var = (p0) cls.getConstructor(Application.class).newInstance(application);
@@ -55,5 +46,14 @@ public final class r0 extends q0 {
         } catch (InvocationTargetException e12) {
             throw new RuntimeException("Cannot create an instance of " + cls, e12);
         }
+    }
+
+    @Override // androidx.lifecycle.q0, androidx.lifecycle.s0
+    public final p0 b(Class cls) {
+        Application application = this.d;
+        if (application != null) {
+            return a(cls, application);
+        }
+        throw new UnsupportedOperationException("AndroidViewModelFactory constructed with empty constructor works only with create(modelClass: Class<T>, extras: CreationExtras).");
     }
 }

@@ -1,123 +1,38 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.drawable.Drawable;
-import android.view.ActionMode;
-import android.view.Menu;
-import android.view.MotionEvent;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.R;
-import org.telegram.messenger.XiaomiUtilities;
-
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class cu extends zt {
-    public Drawable c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ hu e;
+public final /* synthetic */ class cu implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ du b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public cu(hu huVar, Context context, org.telegram.ui.ActionBar.f6 f6Var, int i10) {
-        super(context, f6Var);
-        this.e = huVar;
-        this.d = i10;
-        this.c = null;
+    public /* synthetic */ cu(du duVar, int i10) {
+        this.a = i10;
+        this.b = duVar;
     }
 
-    @Override // org.telegram.ui.Components.bu
-    public final int emojiCacheType() {
-        return this.e.h();
-    }
-
-    @Override // org.telegram.ui.Components.EditTextBoldCursor
-    public final void extendActionMode(ActionMode actionMode, Menu menu) {
-        hu huVar = this.e;
-        if (huVar.a()) {
-            org.telegram.ui.co.k8(menu, null, huVar.L == 3, true, true, true);
-        } else {
-            huVar.i(menu);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.EditTextBoldCursor
-    public final int getActionModeStyle() {
-        int i10 = this.d;
-        if (i10 == 2 || i10 == 3) {
-            return 2;
-        }
-        return super.getActionModeStyle();
-    }
-
-    @Override // org.telegram.ui.Components.zt
-    public final void onLineCountChanged(int i10, int i11) {
-        this.e.q(i10, i11);
-    }
-
-    @Override // org.telegram.ui.Components.bu, android.widget.TextView
-    public final void onSelectionChanged(int i10, int i11) {
-        super.onSelectionChanged(i10, i11);
-        hu huVar = this.e;
-        ql0 ql0Var = huVar.c;
-        if (ql0Var != null) {
-            boolean z10 = false;
-            boolean z11 = i11 != i10;
-            if (huVar.a() && z11) {
-                XiaomiUtilities.isMIUI();
-                z10 = true;
-            }
-            if (huVar.n != z10) {
-                huVar.n = z10;
-                if (z10) {
-                    this.c = ql0Var.d;
-                    ql0Var.a(R.drawable.msg_edit, true);
-                } else {
-                    ql0Var.b(this.c, true);
-                    this.c = null;
-                }
-            }
-        }
-    }
-
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        du duVar;
-        hu huVar = this.e;
-        if (huVar.e && motionEvent.getAction() == 0) {
-            huVar.u();
-            if (!huVar.x || (duVar = huVar.d) == null) {
-                huVar.x(AndroidUtilities.usingHardwareInput ? 0 : 2);
-            } else {
-                duVar.t(false);
-                huVar.x = false;
-                huVar.k(true);
-                AndroidUtilities.showKeyboard(this);
-            }
-            huVar.v();
-        }
-        if (motionEvent.getAction() == 0) {
-            boolean isFocused = isFocused();
-            requestFocus();
-            if (!AndroidUtilities.showKeyboard(this)) {
-                clearFocus();
-                requestFocus();
-            }
-            if (!isFocused) {
-                setSelection(getText().length());
-            }
-        }
-        try {
-            return super.onTouchEvent(motionEvent);
-        } catch (Exception e7) {
-            FileLog.e(e7);
-            return false;
-        }
-    }
-
-    @Override // android.view.View
-    public final void scrollTo(int i10, int i11) {
-        if (this.e.t(i11)) {
-            super.scrollTo(i10, i11);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                du duVar = this.b;
+                duVar.post(new cu(duVar, 1));
+                break;
+            case 1:
+                du duVar2 = this.b;
+                duVar2.invalidateSpoilers();
+                duVar2.b();
+                break;
+            case 2:
+                du.a(this.b);
+                break;
+            case 3:
+                du duVar3 = this.b;
+                duVar3.post(new cu(duVar3, 4));
+                break;
+            default:
+                this.b.setSpoilersRevealed(false, true);
+                break;
         }
     }
 }

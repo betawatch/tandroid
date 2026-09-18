@@ -1,48 +1,31 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class g5 extends FrameLayout {
-    public boolean a;
-    public int b;
-    public q6 c;
-    public q6 d;
+public final /* synthetic */ class g5 implements l5 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ o5 b;
 
-    public q6 getSubtitleTextView() {
-        return this.d;
+    public /* synthetic */ g5(o5 o5Var, int i10) {
+        this.a = i10;
+        this.b = o5Var;
     }
 
-    public q6 getTitle() {
-        return this.c;
-    }
-
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        q6 q6Var = this.d;
-        q6 q6Var2 = this.c;
-        int y3 = org.telegram.messenger.vl.y(42.0f, org.telegram.ui.ActionBar.k.getCurrentActionBarHeight(), 2) + (this.a ? AndroidUtilities.statusBarHeight : 0);
-        int i14 = this.b;
-        if (q6Var.getVisibility() != 8) {
-            q6Var2.layout(i14, (AndroidUtilities.dp(1.0f) + y3) - q6Var2.getPaddingTop(), q6Var2.getMeasuredWidth() + i14, q6Var2.getPaddingBottom() + ((AndroidUtilities.dp(1.3f) + (q6Var2.getTextHeight() + y3)) - q6Var2.getPaddingTop()));
-        } else {
-            q6Var2.layout(i14, (AndroidUtilities.dp(11.0f) + y3) - q6Var2.getPaddingTop(), q6Var2.getMeasuredWidth() + i14, q6Var2.getPaddingBottom() + ((AndroidUtilities.dp(11.0f) + (q6Var2.getTextHeight() + y3)) - q6Var2.getPaddingTop()));
+    @Override // org.telegram.ui.Components.l5
+    public final void a(TLRPC.Document document) {
+        switch (this.a) {
+            case 0:
+                o5 o5Var = this.b;
+                o5Var.e = document;
+                o5Var.j(false);
+                break;
+            default:
+                o5 o5Var2 = this.b;
+                o5Var2.e = document;
+                o5Var2.j(false);
+                break;
         }
-        q6Var.layout(i14, AndroidUtilities.dp(20.0f) + y3, q6Var.getMeasuredWidth() + i14, AndroidUtilities.dp(24.0f) + q6Var.getTextHeight() + y3);
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        int size = View.MeasureSpec.getSize(i10);
-        q6 q6Var = this.c;
-        int paddingRight = q6Var.getPaddingRight() + size;
-        int dp = paddingRight - AndroidUtilities.dp(16.0f);
-        q6Var.measure(View.MeasureSpec.makeMeasureSpec(dp, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(q6Var.getPaddingRight() + AndroidUtilities.dp(32.0f), TLObject.FLAG_31));
-        this.d.measure(View.MeasureSpec.makeMeasureSpec(dp, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(20.0f), TLObject.FLAG_31));
-        setMeasuredDimension(paddingRight, View.MeasureSpec.getSize(i11));
     }
 }

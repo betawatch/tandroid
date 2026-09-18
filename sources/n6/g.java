@@ -1,5 +1,6 @@
 package n6;
 
+import ai.q4;
 import android.accounts.Account;
 import android.content.Context;
 import android.content.Intent;
@@ -23,8 +24,9 @@ import java.util.Locale;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicInteger;
 import m.p3;
+import org.telegram.messenger.BuildConfig;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public abstract class g implements com.google.android.gms.common.api.c {
     public static final k6.c[] T = new k6.c[0];
@@ -49,7 +51,7 @@ public abstract class g implements com.google.android.gms.common.api.c {
     public int d;
     public long e;
     public volatile String f;
-    public androidx.activity.o h;
+    public androidx.activity.n h;
     public final Context n;
     public final Looper r;
     public final j0 s;
@@ -152,7 +154,7 @@ public abstract class g implements com.google.android.gms.common.api.c {
     }
 
     public final void F(int i10, IInterface iInterface) {
-        androidx.activity.o oVar;
+        androidx.activity.n nVar;
         l.b((i10 == 4) == (iInterface != null));
         synchronized (this.w) {
             try {
@@ -174,8 +176,8 @@ public abstract class g implements com.google.android.gms.common.api.c {
                     }
                 } else if (i10 == 2 || i10 == 3) {
                     c0 c0Var2 = this.H;
-                    if (c0Var2 != null && (oVar = this.h) != null) {
-                        Log.e("GmsClient", "Calling connect() while still connected, missing disconnect() for " + ((String) oVar.c) + " on " + ((String) oVar.d));
+                    if (c0Var2 != null && (nVar = this.h) != null) {
+                        Log.e("GmsClient", "Calling connect() while still connected, missing disconnect() for " + ((String) nVar.c) + " on " + ((String) nVar.d));
                         j0 j0Var2 = this.s;
                         String str3 = (String) this.h.c;
                         l.h(str3);
@@ -191,7 +193,7 @@ public abstract class g implements com.google.android.gms.common.api.c {
                     String x10 = x();
                     String w10 = w();
                     boolean y3 = y();
-                    this.h = new androidx.activity.o(x10, w10, y3, 4);
+                    this.h = new androidx.activity.n(x10, w10, y3, 4);
                     if (y3 && l() < 17895000) {
                         throw new IllegalStateException("Internal Error, the minimum apk version of this BaseGmsClient is too low to support dynamic lookup. Start service action: ".concat(String.valueOf((String) this.h.c)));
                     }
@@ -205,8 +207,8 @@ public abstract class g implements com.google.android.gms.common.api.c {
                     }
                     k6.a b10 = j0Var3.b(new g0(str5, str6, this.h.b), c0Var3, str7);
                     if (!b10.c()) {
-                        androidx.activity.o oVar2 = this.h;
-                        Log.w("GmsClient", "unable to connect to service: " + ((String) oVar2.c) + " on " + ((String) oVar2.d));
+                        androidx.activity.n nVar2 = this.h;
+                        Log.w("GmsClient", "unable to connect to service: " + ((String) nVar2.c) + " on " + ((String) nVar2.d));
                         int i11 = b10.b;
                         if (i11 == -1) {
                             i11 = 16;
@@ -275,19 +277,19 @@ public abstract class g implements com.google.android.gms.common.api.c {
                 } finally {
                 }
             }
-        } catch (DeadObjectException e7) {
-            Log.w("GmsClient", "IGmsServiceBroker.getService failed", e7);
+        } catch (DeadObjectException e) {
+            Log.w("GmsClient", "IGmsServiceBroker.getService failed", e);
             int i12 = this.R.get();
             a0 a0Var = this.v;
             a0Var.sendMessage(a0Var.obtainMessage(6, i12, 3));
-        } catch (RemoteException e10) {
-            e = e10;
+        } catch (RemoteException e7) {
+            e = e7;
             Log.w("GmsClient", "IGmsServiceBroker.getService failed", e);
             B(8, null, null, this.R.get());
-        } catch (SecurityException e11) {
-            throw e11;
-        } catch (RuntimeException e12) {
-            e = e12;
+        } catch (SecurityException e10) {
+            throw e10;
+        } catch (RuntimeException e11) {
+            e = e11;
             Log.w("GmsClient", "IGmsServiceBroker.getService failed", e);
             B(8, null, null, this.R.get());
         }
@@ -332,7 +334,12 @@ public abstract class g implements com.google.android.gms.common.api.c {
     }
 
     @Override // com.google.android.gms.common.api.c
-    public final boolean f() {
+    public final void f(a6.m mVar) {
+        ((p0) mVar.b).o.x.post(new q4(mVar, 15));
+    }
+
+    @Override // com.google.android.gms.common.api.c
+    public final boolean g() {
         boolean z10;
         synchronized (this.w) {
             int i10 = this.I;
@@ -345,7 +352,7 @@ public abstract class g implements com.google.android.gms.common.api.c {
     }
 
     @Override // com.google.android.gms.common.api.c
-    public final void g(String str, PrintWriter printWriter) {
+    public final void h(String str, PrintWriter printWriter) {
         int i10;
         IInterface iInterface;
         y yVar;
@@ -372,13 +379,13 @@ public abstract class g implements com.google.android.gms.common.api.c {
         }
         printWriter.append(" mService=");
         if (iInterface == null) {
-            printWriter.append("null");
+            printWriter.append(BuildConfig.BETA_URL);
         } else {
             printWriter.append((CharSequence) v()).append("@").append((CharSequence) Integer.toHexString(System.identityHashCode(iInterface.asBinder())));
         }
         printWriter.append(" mServiceBroker=");
         if (yVar == null) {
-            printWriter.println("null");
+            printWriter.println(BuildConfig.BETA_URL);
         } else {
             printWriter.append("IGmsServiceBroker@").println(Integer.toHexString(System.identityHashCode(yVar.a)));
         }
@@ -413,17 +420,12 @@ public abstract class g implements com.google.android.gms.common.api.c {
     }
 
     @Override // com.google.android.gms.common.api.c
-    public final String h() {
-        androidx.activity.o oVar;
-        if (!j() || (oVar = this.h) == null) {
+    public final String i() {
+        androidx.activity.n nVar;
+        if (!j() || (nVar = this.h) == null) {
             throw new RuntimeException("Failed to connect when checking package");
         }
-        return (String) oVar.d;
-    }
-
-    @Override // com.google.android.gms.common.api.c
-    public final void i(a4.m mVar) {
-        ((p0) mVar.b).o.x.post(new androidx.activity.i(mVar, 14));
+        return (String) nVar.d;
     }
 
     @Override // com.google.android.gms.common.api.c

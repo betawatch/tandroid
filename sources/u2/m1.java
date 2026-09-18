@@ -1,6 +1,6 @@
 package u2;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class m1 implements b1 {
     public final b1 a;
@@ -12,8 +12,8 @@ public final class m1 implements b1 {
     }
 
     @Override // u2.b1
-    public final void b() {
-        this.a.b();
+    public final void a() {
+        this.a.a();
     }
 
     @Override // u2.b1
@@ -22,16 +22,16 @@ public final class m1 implements b1 {
     }
 
     @Override // u2.b1
-    public final int f(n4.y yVar, h2.g gVar, int i10) {
-        int f7 = this.a.f(yVar, gVar, i10);
+    public final int f(n4.y yVar, h2.h hVar, int i10) {
+        int f7 = this.a.f(yVar, hVar, i10);
         if (f7 == -4) {
-            gVar.h += this.b;
+            hVar.e += this.b;
         }
         return f7;
     }
 
     @Override // u2.b1
-    public final int m(long j3) {
-        return this.a.m(j3 - this.b);
+    public final int j(long j3) {
+        return this.a.j(j3 - this.b);
     }
 }

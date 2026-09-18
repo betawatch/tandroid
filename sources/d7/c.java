@@ -1,17 +1,33 @@
 package d7;
 
-import c5.m;
+import hg.k0;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class c {
-    public static final c b;
-    public final m a = new m(1);
+    public final ArrayList a;
 
-    static {
-        c cVar = new c();
-        synchronized (c.class) {
-            b = cVar;
+    public c(int i10) {
+        switch (i10) {
+            case 1:
+                this.a = new ArrayList();
+                break;
+            default:
+                this.a = new ArrayList();
+                new ArrayList();
+                new ArrayList();
+                break;
+        }
+    }
+
+    public void a(StringBuilder sb2) {
+        sb2.append(((Boolean) k0.z(1, this.a)).booleanValue() ? "</ol>" : "</ul>");
+    }
+
+    public void b(StringBuilder sb2) {
+        while (!this.a.isEmpty()) {
+            a(sb2);
         }
     }
 }

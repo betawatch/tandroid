@@ -1,16 +1,16 @@
 package k2;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class g implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ n4.y b;
-    public final /* synthetic */ i2.h c;
+    public final /* synthetic */ i2.g c;
 
-    public /* synthetic */ g(n4.y yVar, i2.h hVar, int i10) {
+    public /* synthetic */ g(n4.y yVar, i2.g gVar, int i10) {
         this.a = i10;
         this.b = yVar;
-        this.c = hVar;
+        this.c = gVar;
     }
 
     @Override // java.lang.Runnable
@@ -18,23 +18,23 @@ public final /* synthetic */ class g implements Runnable {
         switch (this.a) {
             case 0:
                 n4.y yVar = this.b;
-                i2.h hVar = this.c;
-                synchronized (hVar) {
+                i2.g gVar = this.c;
+                synchronized (gVar) {
                 }
                 j jVar = (j) yVar.c;
                 String str = e2.d0.a;
-                j2.f fVar = ((i2.c0) jVar).a.s;
+                j2.f fVar = ((i2.b0) jVar).a.s;
                 j2.a n10 = fVar.n((u2.f0) fVar.d.e);
-                fVar.q(n10, 1013, new j2.c(n10, hVar, 11));
+                fVar.q(n10, 1013, new j2.c(n10, gVar, 13));
                 break;
             default:
                 n4.y yVar2 = this.b;
-                i2.h hVar2 = this.c;
+                i2.g gVar2 = this.c;
                 j jVar2 = (j) yVar2.c;
                 String str2 = e2.d0.a;
-                j2.f fVar2 = ((i2.c0) jVar2).a.s;
+                j2.f fVar2 = ((i2.b0) jVar2).a.s;
                 j2.a p5 = fVar2.p();
-                fVar2.q(p5, 1007, new j2.c(p5, hVar2, 4));
+                fVar2.q(p5, 1007, new j2.c(p5, gVar2, 6));
                 break;
         }
     }

@@ -12,7 +12,7 @@ import java.util.LinkedHashSet;
 import java.util.Map;
 import java.util.Set;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class n extends p4.s {
     public static final g6.b f = new g6.b("MRDiscoveryCallback", null);
@@ -23,7 +23,7 @@ public final class n extends p4.s {
     public final m a = new m(this);
 
     public n(Context context) {
-        this.e = new n4.y(10, (Object) context, false);
+        this.e = new n4.y(context, 10);
     }
 
     @Override // p4.s
@@ -46,7 +46,7 @@ public final class n extends p4.s {
 
     public final void m() {
         g6.b bVar = f;
-        bVar.b(i2.g.j(this.d.size(), "Starting RouteDiscovery with ", " IDs"), new Object[0]);
+        bVar.b(hg.k0.j(this.d.size(), "Starting RouteDiscovery with ", " IDs"), new Object[0]);
         bVar.b("appIdToRouteInfo has these appId route keys: ".concat(String.valueOf(this.c.keySet())), new Object[0]);
         if (Looper.myLooper() == Looper.getMainLooper()) {
             n();
@@ -150,7 +150,7 @@ public final class n extends p4.s {
                     HashMap hashMap = new HashMap();
                     synchronized (this.c) {
                         for (String str2 : this.c.keySet()) {
-                            l lVar2 = (l) this.c.get(v7.i5.a(str2));
+                            l lVar2 = (l) this.c.get(v7.j5.a(str2));
                             if (lVar2 == null) {
                                 int i10 = m0.c;
                                 r10 = v0.s;

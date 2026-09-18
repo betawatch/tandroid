@@ -1,6 +1,6 @@
 package androidx.appcompat.widget;
 
-import a6.m;
+import a4.m;
 import android.content.Context;
 import android.graphics.Rect;
 import android.util.AttributeSet;
@@ -9,7 +9,7 @@ import android.util.TypedValue;
 import android.view.View;
 import android.widget.FrameLayout;
 import g.s;
-import l.l;
+import l.k;
 import m.h;
 import m.i1;
 import m.j1;
@@ -17,7 +17,7 @@ import m.l3;
 import org.telegram.tgnet.TLObject;
 import r0.l0;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public class ContentFrameLayout extends FrameLayout {
     public TypedValue a;
@@ -118,9 +118,9 @@ public class ContentFrameLayout extends FrameLayout {
             if (l0Var != null) {
                 l0Var.b();
             }
-            l lVar = sVar.p(0).h;
-            if (lVar != null) {
-                lVar.c(true);
+            k kVar = sVar.o(0).h;
+            if (kVar != null) {
+                kVar.c(true);
             }
         }
     }

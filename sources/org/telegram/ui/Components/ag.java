@@ -1,91 +1,72 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.text.TextUtils;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagesController;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_keyboard;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class ag extends AnimatorListenerAdapter {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ float c;
-    public final /* synthetic */ float d;
-    public final /* synthetic */ float e;
+public final class ag implements Runnable {
+    public final /* synthetic */ MessageObject a;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ TL_keyboard.KeyboardButtonProto c;
+    public final /* synthetic */ MessageObject d;
+    public final /* synthetic */ TLRPC.User e;
     public final /* synthetic */ ChatActivityEnterView f;
 
-    public ag(ChatActivityEnterView chatActivityEnterView, boolean z10, float f7, float f10, float f11, float f12) {
+    public ag(ChatActivityEnterView chatActivityEnterView, MessageObject messageObject, long j3, TL_keyboard.KeyboardButtonProto keyboardButtonProto, MessageObject messageObject2, TLRPC.User user) {
         this.f = chatActivityEnterView;
-        this.a = z10;
-        this.b = f7;
-        this.c = f10;
-        this.d = f11;
-        this.e = f12;
+        this.a = messageObject;
+        this.b = j3;
+        this.c = keyboardButtonProto;
+        this.d = messageObject2;
+        this.e = user;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationCancel(Animator animator) {
-        float f7;
+    @Override // java.lang.Runnable
+    public final void run() {
         ChatActivityEnterView chatActivityEnterView = this.f;
-        boolean z10 = this.a;
-        if (z10) {
-            int i10 = ChatActivityEnterView.m5;
-            chatActivityEnterView.b0();
-        }
-        xo0 xo0Var = chatActivityEnterView.p0;
-        if (xo0Var != null) {
-            xo0Var.setVisibility(z10 ? 0 : 8);
-            chatActivityEnterView.p0.setAlpha(this.d);
-            chatActivityEnterView.p0.setTranslationX(this.e);
-            f7 = chatActivityEnterView.p0.getTranslationX();
-        } else {
-            f7 = 0.0f;
-        }
-        chatActivityEnterView.Q0.setTranslationX(f7);
-        chatActivityEnterView.G = f7;
-        chatActivityEnterView.J1();
-        chatActivityEnterView.requestLayout();
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        if (this.a) {
+        org.telegram.ui.bo boVar = chatActivityEnterView.O2;
+        if (chatActivityEnterView.l1.R() > AndroidUtilities.dp(20.0f) || chatActivityEnterView.u0()) {
+            chatActivityEnterView.n0(false);
+            AndroidUtilities.hideKeyboard(chatActivityEnterView);
+            AndroidUtilities.runOnUIThread(this, 150L);
             return;
         }
-        ChatActivityEnterView chatActivityEnterView = this.f;
-        xo0 xo0Var = chatActivityEnterView.p0;
-        if (xo0Var != null) {
-            xo0Var.setVisibility(8);
-        }
-        chatActivityEnterView.Q0.setTranslationX(0.0f);
-        chatActivityEnterView.G = 0.0f;
-        chatActivityEnterView.J1();
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationStart(Animator animator) {
-        float f7;
-        boolean z10 = this.a;
-        ChatActivityEnterView chatActivityEnterView = this.f;
-        if (z10) {
-            int i10 = ChatActivityEnterView.m5;
-            chatActivityEnterView.b0();
-            chatActivityEnterView.p0.setVisibility(0);
-        }
-        xo0 xo0Var = chatActivityEnterView.p0;
-        if (xo0Var != null) {
-            xo0Var.setAlpha(this.b);
-            chatActivityEnterView.p0.setTranslationX(this.c);
-            f7 = chatActivityEnterView.p0.getTranslationX();
-        } else {
-            f7 = 0.0f;
-        }
-        chatActivityEnterView.Q0.setTranslationX(f7);
-        chatActivityEnterView.G = f7;
-        chatActivityEnterView.J1();
-        fi.c0 c0Var = chatActivityEnterView.l0;
-        if (c0Var == null || c0Var.getTag() != null) {
+        if (boVar == null) {
             return;
         }
-        chatActivityEnterView.B0.clear();
+        int i10 = chatActivityEnterView.Q;
+        long j3 = this.a.messageOwner.dialog_id;
+        TL_keyboard.KeyboardButtonProto keyboardButtonProto = this.c;
+        String text = keyboardButtonProto.getText();
+        String url = keyboardButtonProto.getUrl();
+        boolean c10 = zf.c.c(keyboardButtonProto, TL_keyboard.TL_buttonTypeSimpleWebView.class);
+        MessageObject messageObject = this.d;
+        ei.f5 b10 = ei.f5.b(i10, j3, this.b, text, url, c10 ? 1 : 0, messageObject != null ? messageObject.messageOwner.id : 0, boVar == null ? 0L : boVar.N8(), null, false, null, null, 0, false, false);
+        LaunchActivity launchActivity = LaunchActivity.G1;
+        if (launchActivity != null && launchActivity.P() != null && LaunchActivity.G1.P().k(b10) != null) {
+            ei.c0 c0Var = chatActivityEnterView.l0;
+            if (c0Var != null) {
+                c0Var.setOpened(false);
+                return;
+            }
+            return;
+        }
+        TLRPC.User user = this.e;
+        String restrictionReason = user == null ? null : MessagesController.getInstance(chatActivityEnterView.Q).getRestrictionReason(user.restriction_reason);
+        if (!TextUtils.isEmpty(restrictionReason)) {
+            MessagesController.getInstance(chatActivityEnterView.Q);
+            MessagesController.showCantOpenAlert(boVar, restrictionReason);
+        } else {
+            ei.k3 k3Var = new ei.k3(chatActivityEnterView.getContext(), chatActivityEnterView.V3);
+            k3Var.k0 = chatActivityEnterView.N2;
+            k3Var.s(boVar, b10);
+            k3Var.show();
+        }
     }
 }

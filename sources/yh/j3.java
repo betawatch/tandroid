@@ -1,47 +1,34 @@
 package yh;
 
-import android.content.Context;
-import android.view.View;
-import android.widget.LinearLayout;
-import android.widget.TextView;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.RadialGradient;
+import android.graphics.Shader;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
-import org.telegram.messenger.vl;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.x9;
-import org.telegram.ui.Components.xi0;
-import w7.x5;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
-/* loaded from: classes.dex */
-public final class j3 extends LinearLayout {
-    public final TextView a;
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* loaded from: classes4.dex */
+public final class j3 extends h3 {
+    public final Paint c;
+    public final Matrix d;
+    public final RadialGradient e;
+    public final int f;
+    public final int g;
+    public final int h;
 
-    public j3(Context context, f6 f6Var) {
-        super(context);
-        setOrientation(1);
-        x9 x9Var = new x9(context);
-        x9Var.setImageDrawable(new xi0(R.raw.utyan_empty, AndroidUtilities.dp(130.0f), AndroidUtilities.dp(130.0f)));
-        addView(x9Var, x5.t(64, 64, 17, 0, 32, 0, 0));
-        TextView textView = new TextView(context);
-        this.a = textView;
-        vl.n(j6.A6, f6Var, textView, 1, 14.0f);
-        textView.setGravity(17);
-        addView(textView, x5.t(-1, -2, 7, 12, 12, 12, 24));
-    }
-
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        int size = View.MeasureSpec.getSize(i10);
-        if (View.MeasureSpec.getMode(i10) == Integer.MIN_VALUE) {
-            size = AndroidUtilities.dp(250.0f);
-        }
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), i11);
-    }
-
-    public void set(CharSequence charSequence) {
-        this.a.setText(charSequence);
+    public j3(TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop) {
+        this.a = stargiftattributebackdrop.name;
+        this.b = stargiftattributebackdrop.getRarityPermille();
+        Paint paint = new Paint(1);
+        this.c = paint;
+        this.d = new Matrix();
+        RadialGradient radialGradient = new RadialGradient(0.0f, 0.0f, AndroidUtilities.dp(200.0f), new int[]{stargiftattributebackdrop.center_color | (-16777216), stargiftattributebackdrop.edge_color | (-16777216)}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
+        this.e = radialGradient;
+        paint.setShader(radialGradient);
+        this.g = stargiftattributebackdrop.text_color | (-16777216);
+        int i10 = stargiftattributebackdrop.pattern_color;
+        this.h = i10 | (-16777216);
+        this.f = i0.a.d(0.25f, stargiftattributebackdrop.edge_color | (-16777216), i10 | (-16777216));
     }
 }

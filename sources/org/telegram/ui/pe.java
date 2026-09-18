@@ -1,250 +1,55 @@
 package org.telegram.ui;
 
-import android.content.ClipData;
-import android.content.ClipboardManager;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class pe implements RequestDelegate {
+public final /* synthetic */ class pe implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ co b;
+    public final /* synthetic */ bo b;
 
-    public /* synthetic */ pe(co coVar, int i10) {
+    public /* synthetic */ pe(bo boVar, int i10) {
         this.a = i10;
-        this.b = coVar;
+        this.b = boVar;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(final TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                final int i10 = 0;
-                final co coVar = this.b;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.df
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i10) {
-                            case 0:
-                                co.G0(coVar, tLObject);
-                                break;
-                            case 1:
-                                co.K0(coVar, tLObject);
-                                break;
-                            case 2:
-                                co coVar2 = coVar;
-                                TLObject tLObject2 = tLObject;
-                                if (tLObject2 != null) {
-                                    TLRPC.TL_exportedMessageLink tL_exportedMessageLink = (TLRPC.TL_exportedMessageLink) tLObject2;
-                                    try {
-                                        ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", tL_exportedMessageLink.link));
-                                        if (org.telegram.ui.Components.yc.a(coVar2)) {
-                                            org.telegram.ui.Components.yc.a0(coVar2).k(!coVar2.F9() && tL_exportedMessageLink.link.contains("/c/")).j();
-                                            break;
-                                        }
-                                    } catch (Exception e7) {
-                                        FileLog.e(e7);
-                                        return;
-                                    }
-                                }
-                                break;
-                            default:
-                                co coVar3 = coVar;
-                                TLObject tLObject3 = tLObject;
-                                coVar3.o5 = 0;
-                                if (tLObject3 == null && coVar3.getParentActivity() != null) {
-                                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(coVar3.getParentActivity(), 0, coVar3.ea);
-                                    alertDialog$Builder.a.R = LocaleController.getString(R.string.AppName);
-                                    alertDialog$Builder.a.T = LocaleController.getString(R.string.EditMessageError);
-                                    alertDialog$Builder.k(LocaleController.getString(R.string.OK), null);
-                                    coVar3.showDialog(alertDialog$Builder.a);
-                                    mk mkVar = coVar3.Y;
-                                    if (mkVar != null) {
-                                        mkVar.c1(null, null, false);
-                                        coVar3.e9(true);
-                                        break;
-                                    }
-                                }
-                                break;
-                        }
-                    }
-                });
-                break;
-            case 1:
-                final int i11 = 1;
-                final co coVar2 = this.b;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.df
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i11) {
-                            case 0:
-                                co.G0(coVar2, tLObject);
-                                break;
-                            case 1:
-                                co.K0(coVar2, tLObject);
-                                break;
-                            case 2:
-                                co coVar22 = coVar2;
-                                TLObject tLObject2 = tLObject;
-                                if (tLObject2 != null) {
-                                    TLRPC.TL_exportedMessageLink tL_exportedMessageLink = (TLRPC.TL_exportedMessageLink) tLObject2;
-                                    try {
-                                        ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", tL_exportedMessageLink.link));
-                                        if (org.telegram.ui.Components.yc.a(coVar22)) {
-                                            org.telegram.ui.Components.yc.a0(coVar22).k(!coVar22.F9() && tL_exportedMessageLink.link.contains("/c/")).j();
-                                            break;
-                                        }
-                                    } catch (Exception e7) {
-                                        FileLog.e(e7);
-                                        return;
-                                    }
-                                }
-                                break;
-                            default:
-                                co coVar3 = coVar2;
-                                TLObject tLObject3 = tLObject;
-                                coVar3.o5 = 0;
-                                if (tLObject3 == null && coVar3.getParentActivity() != null) {
-                                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(coVar3.getParentActivity(), 0, coVar3.ea);
-                                    alertDialog$Builder.a.R = LocaleController.getString(R.string.AppName);
-                                    alertDialog$Builder.a.T = LocaleController.getString(R.string.EditMessageError);
-                                    alertDialog$Builder.k(LocaleController.getString(R.string.OK), null);
-                                    coVar3.showDialog(alertDialog$Builder.a);
-                                    mk mkVar = coVar3.Y;
-                                    if (mkVar != null) {
-                                        mkVar.c1(null, null, false);
-                                        coVar3.e9(true);
-                                        break;
-                                    }
-                                }
-                                break;
-                        }
-                    }
-                });
-                break;
-            case 2:
-                final int i12 = 2;
-                final co coVar3 = this.b;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.df
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i12) {
-                            case 0:
-                                co.G0(coVar3, tLObject);
-                                break;
-                            case 1:
-                                co.K0(coVar3, tLObject);
-                                break;
-                            case 2:
-                                co coVar22 = coVar3;
-                                TLObject tLObject2 = tLObject;
-                                if (tLObject2 != null) {
-                                    TLRPC.TL_exportedMessageLink tL_exportedMessageLink = (TLRPC.TL_exportedMessageLink) tLObject2;
-                                    try {
-                                        ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", tL_exportedMessageLink.link));
-                                        if (org.telegram.ui.Components.yc.a(coVar22)) {
-                                            org.telegram.ui.Components.yc.a0(coVar22).k(!coVar22.F9() && tL_exportedMessageLink.link.contains("/c/")).j();
-                                            break;
-                                        }
-                                    } catch (Exception e7) {
-                                        FileLog.e(e7);
-                                        return;
-                                    }
-                                }
-                                break;
-                            default:
-                                co coVar32 = coVar3;
-                                TLObject tLObject3 = tLObject;
-                                coVar32.o5 = 0;
-                                if (tLObject3 == null && coVar32.getParentActivity() != null) {
-                                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(coVar32.getParentActivity(), 0, coVar32.ea);
-                                    alertDialog$Builder.a.R = LocaleController.getString(R.string.AppName);
-                                    alertDialog$Builder.a.T = LocaleController.getString(R.string.EditMessageError);
-                                    alertDialog$Builder.k(LocaleController.getString(R.string.OK), null);
-                                    coVar32.showDialog(alertDialog$Builder.a);
-                                    mk mkVar = coVar32.Y;
-                                    if (mkVar != null) {
-                                        mkVar.c1(null, null, false);
-                                        coVar32.e9(true);
-                                        break;
-                                    }
-                                }
-                                break;
-                        }
-                    }
-                });
-                break;
-            case 3:
-                final int i13 = 3;
-                final co coVar4 = this.b;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.df
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i13) {
-                            case 0:
-                                co.G0(coVar4, tLObject);
-                                break;
-                            case 1:
-                                co.K0(coVar4, tLObject);
-                                break;
-                            case 2:
-                                co coVar22 = coVar4;
-                                TLObject tLObject2 = tLObject;
-                                if (tLObject2 != null) {
-                                    TLRPC.TL_exportedMessageLink tL_exportedMessageLink = (TLRPC.TL_exportedMessageLink) tLObject2;
-                                    try {
-                                        ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", tL_exportedMessageLink.link));
-                                        if (org.telegram.ui.Components.yc.a(coVar22)) {
-                                            org.telegram.ui.Components.yc.a0(coVar22).k(!coVar22.F9() && tL_exportedMessageLink.link.contains("/c/")).j();
-                                            break;
-                                        }
-                                    } catch (Exception e7) {
-                                        FileLog.e(e7);
-                                        return;
-                                    }
-                                }
-                                break;
-                            default:
-                                co coVar32 = coVar4;
-                                TLObject tLObject3 = tLObject;
-                                coVar32.o5 = 0;
-                                if (tLObject3 == null && coVar32.getParentActivity() != null) {
-                                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(coVar32.getParentActivity(), 0, coVar32.ea);
-                                    alertDialog$Builder.a.R = LocaleController.getString(R.string.AppName);
-                                    alertDialog$Builder.a.T = LocaleController.getString(R.string.EditMessageError);
-                                    alertDialog$Builder.k(LocaleController.getString(R.string.OK), null);
-                                    coVar32.showDialog(alertDialog$Builder.a);
-                                    mk mkVar = coVar32.Y;
-                                    if (mkVar != null) {
-                                        mkVar.c1(null, null, false);
-                                        coVar32.e9(true);
-                                        break;
-                                    }
-                                }
-                                break;
-                        }
-                    }
-                });
-                break;
-            case 4:
-                co coVar5 = this.b;
-                if (tL_error == null) {
-                    coVar5.getMessagesController().processUpdates((TLRPC.Updates) tLObject, false);
-                    break;
-                } else {
-                    coVar5.getClass();
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                bo boVar = this.b;
+                boVar.K8 = floatValue;
+                tm tmVar = boVar.X0;
+                if (tmVar != null) {
+                    tmVar.invalidate();
+                    boVar.x0.invalidate();
                     break;
                 }
+                break;
+            case 1:
+                bo boVar2 = this.b;
+                boVar2.getClass();
+                boVar2.i3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                boVar2.lc();
+                break;
+            case 2:
+                bo boVar3 = this.b;
+                boVar3.getClass();
+                boVar3.i3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                boVar3.lc();
+                break;
+            case 3:
+                bo boVar4 = this.b;
+                boVar4.getClass();
+                boVar4.Da = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                boVar4.o9();
+                break;
             default:
-                co.Z0(this.b, tLObject);
+                bo boVar5 = this.b;
+                boVar5.getClass();
+                boVar5.Da = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                boVar5.o9();
                 break;
         }
     }

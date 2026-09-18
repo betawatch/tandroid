@@ -1,54 +1,29 @@
 package hg;
 
-import bi.fa;
-import java.util.ArrayList;
-import org.telegram.messenger.MessagesController;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
+import java.util.Calendar;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class f1 implements Runnable {
-    public final /* synthetic */ TLRPC.Chat a;
-    public final /* synthetic */ String b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ ArrayList d;
-    public final /* synthetic */ a0.i e;
-    public final /* synthetic */ MessagesController f;
-    public final /* synthetic */ k1 h;
+public final class f1 {
+    public int a;
+    public int b;
 
-    public f1(k1 k1Var, TLRPC.Chat chat, String str, long j3, ArrayList arrayList, a0.i iVar, MessagesController messagesController) {
-        this.h = k1Var;
-        this.a = chat;
-        this.b = str;
-        this.c = j3;
-        this.d = arrayList;
-        this.e = iVar;
-        this.f = messagesController;
+    public f1(int i10, int i11) {
+        this.a = i10;
+        this.b = i11;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        k1 k1Var = this.h;
-        if (k1Var.E != this) {
-            return;
-        }
-        TLRPC.TL_channels_getParticipants tL_channels_getParticipants = new TLRPC.TL_channels_getParticipants();
-        tL_channels_getParticipants.channel = MessagesController.getInputChannel(this.a);
-        tL_channels_getParticipants.limit = 20;
-        tL_channels_getParticipants.offset = 0;
-        TLRPC.TL_channelParticipantsMentions tL_channelParticipantsMentions = new TLRPC.TL_channelParticipantsMentions();
-        int i10 = tL_channelParticipantsMentions.flags;
-        tL_channelParticipantsMentions.flags = i10 | 1;
-        tL_channelParticipantsMentions.q = this.b;
-        long j3 = this.c;
-        if (j3 != 0) {
-            tL_channelParticipantsMentions.flags = i10 | 3;
-            tL_channelParticipantsMentions.top_msg_id = (int) j3;
-        }
-        tL_channels_getParticipants.filter = tL_channelParticipantsMentions;
-        int i11 = k1Var.i0 + 1;
-        k1Var.i0 = i11;
-        k1Var.j0 = ConnectionsManager.getInstance(k1Var.f).sendRequest(tL_channels_getParticipants, new fa(this, i11, this.d, this.e, this.f, 1));
+    public static String a(int i10) {
+        int i11 = i10 % 60;
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(0, 0, 0, ((i10 - i11) / 60) % 24, i11);
+        String format = LocaleController.getInstance().getFormatterConstDay().format(calendar.getTime());
+        return i10 > 1440 ? LocaleController.formatString(R.string.BusinessHoursNextDay, format) : format;
+    }
+
+    public final String toString() {
+        return a(this.a) + " - " + a(this.b);
     }
 }

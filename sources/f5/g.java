@@ -1,11 +1,12 @@
 package f5;
 
 import com.google.android.gms.internal.vision.e2;
+import k2.c0;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class g extends com.googlecode.mp4parser.c {
-    public static final /* synthetic */ mg.n e;
+    public static final /* synthetic */ c0 e;
 
     static {
         re.a aVar = new re.a(g.class, "DataEntryUrlBox.java");

@@ -2,27 +2,25 @@ package org.telegram.ui;
 
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ls0 implements Utilities.Callback {
     public final /* synthetic */ int a;
-    public final /* synthetic */ rs0 b;
-    public final /* synthetic */ boolean c;
+    public final /* synthetic */ us0 b;
 
-    public /* synthetic */ ls0(rs0 rs0Var, boolean z10, int i10) {
+    public /* synthetic */ ls0(us0 us0Var, int i10) {
         this.a = i10;
-        this.b = rs0Var;
-        this.c = z10;
+        this.b = us0Var;
     }
 
     @Override // org.telegram.messenger.Utilities.Callback
     public final void run(Object obj) {
         switch (this.a) {
             case 0:
-                org.telegram.ui.Components.yc.F(this.b.b.e0, this.c).j();
+                new org.telegram.ui.Components.vc(this.b.b.e0, null).m(org.telegram.ui.Components.uc.r, 1, -115203550, -1, null).j();
                 break;
             default:
-                org.telegram.ui.Components.yc.F(this.b.b.e0, this.c).j();
+                new org.telegram.ui.Components.vc(this.b.b.e0, null).m(org.telegram.ui.Components.uc.r, 1, -115203550, -1, null).j();
                 break;
         }
     }

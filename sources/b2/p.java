@@ -11,7 +11,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class p implements s4.e0, androidx.lifecycle.a0, x9.i {
     public final /* synthetic */ int a;
@@ -44,7 +44,7 @@ public final class p implements s4.e0, androidx.lifecycle.a0, x9.i {
     }
 
     @Override // s4.e0
-    public void P0(int i10, int i11) {
+    public void O0(int i10, int i11) {
         this.b = true;
         ((s4.h0) this.c).t(i10, i11);
     }
@@ -108,16 +108,6 @@ public final class p implements s4.e0, androidx.lifecycle.a0, x9.i {
         return this.b;
     }
 
-    @Override // androidx.lifecycle.a0
-    public void f0(Object obj) {
-        this.b = true;
-        a6.m mVar = (a6.m) this.c;
-        mVar.getClass();
-        SignInHubActivity signInHubActivity = (SignInHubActivity) mVar.b;
-        signInHubActivity.setResult(signInHubActivity.R, signInHubActivity.S);
-        signInHubActivity.finish();
-    }
-
     public boolean h(int i10, CharSequence charSequence) {
         if (charSequence == null || i10 < 0 || charSequence.length() - i10 < 0) {
             throw new IllegalArgumentException();
@@ -164,7 +154,7 @@ public final class p implements s4.e0, androidx.lifecycle.a0, x9.i {
             return;
         }
         try {
-            ((l5.r) this.c).a(new i5.a(null, x3Var, i5.d.a, null), new j2.e(17));
+            ((l5.s) this.c).a(new i5.a(null, x3Var, i5.d.a, null), new j2.e(18));
         } catch (Throwable unused) {
             com.google.android.gms.internal.play_billing.u.h("BillingLogger", "logging failed.");
         }
@@ -177,8 +167,18 @@ public final class p implements s4.e0, androidx.lifecycle.a0, x9.i {
     }
 
     @Override // s4.e0
-    public void m1(int i10, int i11) {
+    public void l1(int i10, int i11) {
         ((s4.h0) this.c).r(i10, i11, null);
+    }
+
+    @Override // androidx.lifecycle.a0
+    public void p0(Object obj) {
+        this.b = true;
+        a6.m mVar = (a6.m) this.c;
+        mVar.getClass();
+        SignInHubActivity signInHubActivity = (SignInHubActivity) mVar.b;
+        signInHubActivity.setResult(signInHubActivity.R, signInHubActivity.S);
+        signInHubActivity.finish();
     }
 
     public String toString() {

@@ -6,7 +6,7 @@ import java.util.Arrays;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class g extends o6.a {
     public static final Parcelable.Creator<g> CREATOR = new r0(10);
@@ -33,8 +33,8 @@ public final class g extends o6.a {
                     JSONObject jSONObject2 = new JSONObject();
                     jSONObject2.put("rk", hVar.a);
                     jSONObject.put("credProps", jSONObject2);
-                } catch (JSONException e7) {
-                    throw new RuntimeException("Error encoding AuthenticationExtensionsCredPropsOutputs to JSON object", e7);
+                } catch (JSONException e) {
+                    throw new RuntimeException("Error encoding AuthenticationExtensionsCredPropsOutputs to JSON object", e);
                 }
             }
             k0 k0Var = this.a;
@@ -50,8 +50,8 @@ public final class g extends o6.a {
                 jSONObject.put("txAuthSimple", str);
             }
             return jSONObject;
-        } catch (JSONException e10) {
-            throw new RuntimeException("Error encoding AuthenticationExtensionsClientOutputs to JSON object", e10);
+        } catch (JSONException e7) {
+            throw new RuntimeException("Error encoding AuthenticationExtensionsClientOutputs to JSON object", e7);
         }
     }
 

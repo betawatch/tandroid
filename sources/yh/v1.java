@@ -1,72 +1,55 @@
 package yh;
 
-import android.content.Context;
-import android.text.SpannableStringBuilder;
-import android.view.MotionEvent;
-import android.view.View;
-import org.telegram.messenger.R;
-import org.telegram.ui.Components.h81;
-import org.telegram.ui.Components.i81;
-import org.telegram.ui.Components.nq;
-import org.telegram.ui.Components.nr0;
-import org.telegram.ui.ProfileActivity;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessagesController;
+import org.telegram.ui.Components.oc;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
-/* loaded from: classes.dex */
-public final class v1 extends i81 {
-    public final /* synthetic */ org.telegram.ui.ActionBar.n2 T;
-    public final /* synthetic */ nr0 U;
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class v1 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ a4 b;
+    public final /* synthetic */ String c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public v1(nr0 nr0Var, Context context, org.telegram.ui.ActionBar.n2 n2Var) {
-        super(context, null);
-        this.U = nr0Var;
-        this.T = n2Var;
+    public /* synthetic */ v1(a4 a4Var, String str, int i10) {
+        this.a = i10;
+        this.b = a4Var;
+        this.c = str;
     }
 
-    @Override // org.telegram.ui.Components.i81
-    public final void h() {
-        nr0 nr0Var = this.U;
-        h81 h81Var = nr0Var.n;
-        if (!nr0Var.b() || h81Var == null) {
-            return;
-        }
-        if (nr0Var.J == null) {
-            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(org.telegram.messenger.w1.h(R.string.Gift2NewCollection, new StringBuilder("+ ")));
-            nq nqVar = new nq(R.drawable.poll_add_plus, 0);
-            nqVar.spaceScaleX = 0.8f;
-            spannableStringBuilder.setSpan(nqVar, 0, 1, 33);
-            nr0Var.J = spannableStringBuilder;
-        }
-        h81Var.a(-1, nr0Var.J);
-    }
-
-    @Override // org.telegram.ui.Components.i81
-    public final boolean i(MotionEvent motionEvent) {
-        return !this.U.g();
-    }
-
-    @Override // org.telegram.ui.Components.i81
-    public final void w(boolean z10) {
-        nr0 nr0Var = this.U;
-        nr0Var.l();
-        org.telegram.ui.ActionBar.n2 n2Var = this.T;
-        if (n2Var instanceof ProfileActivity) {
-            ((ProfileActivity) n2Var).R();
-            View fragmentView = n2Var.getFragmentView();
-            if (fragmentView != null) {
-                fragmentView.invalidate();
-            }
-        }
-        nr0Var.o();
-    }
-
-    @Override // org.telegram.ui.Components.i81
-    public final void z(int i10) {
-        this.U.l();
-        org.telegram.ui.ActionBar.n2 n2Var = this.T;
-        if (n2Var instanceof ProfileActivity) {
-            ((ProfileActivity) n2Var).R();
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                a4.i1(this.b, this.c);
+                break;
+            case 1:
+                nf.f.u(r0.getContext(), MessagesController.getInstance(this.b.currentAccount).tonBlockchainExplorerUrl + this.c);
+                break;
+            case 2:
+                nf.f.u(r0.getContext(), MessagesController.getInstance(this.b.currentAccount).tonBlockchainExplorerUrl + this.c);
+                break;
+            case 3:
+                nf.f.u(r0.getContext(), MessagesController.getInstance(this.b.currentAccount).tonBlockchainExplorerUrl + this.c);
+                break;
+            case 4:
+                nf.f.u(r0.getContext(), MessagesController.getInstance(this.b.currentAccount).tonBlockchainExplorerUrl + this.c);
+                break;
+            case 5:
+                nf.f.u(r0.getContext(), MessagesController.getInstance(this.b.currentAccount).tonBlockchainExplorerUrl + this.c);
+                break;
+            case 6:
+                nf.f.u(r0.getContext(), MessagesController.getInstance(this.b.currentAccount).tonBlockchainExplorerUrl + this.c);
+                break;
+            case 7:
+                AndroidUtilities.addToClipboard(this.c);
+                oc k10 = this.b.getBulletinFactory().k(false);
+                k10.t = true;
+                k10.j();
+                break;
+            default:
+                a4.p0(this.b, this.c);
+                break;
         }
     }
 }

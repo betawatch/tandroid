@@ -1,58 +1,38 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.MotionEvent;
+import android.graphics.Rect;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class nw extends ll0 {
-    public boolean X2;
-    public boolean Y2;
-    public final /* synthetic */ kz Z2;
+public final class nw extends s4.n0 {
+    public final /* synthetic */ kz a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public nw(kz kzVar, Context context) {
-        super(context, null);
-        this.Z2 = kzVar;
+    public nw(kz kzVar) {
+        this.a = kzVar;
     }
 
-    @Override // org.telegram.ui.Components.ll0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        org.telegram.ui.st q6 = org.telegram.ui.st.q();
-        kz kzVar = this.Z2;
-        return super.onInterceptTouchEvent(motionEvent) || q6.r(motionEvent, kzVar.h0, kzVar.g2, this.p2);
-    }
-
-    @Override // org.telegram.ui.Components.ll0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        kz kzVar = this.Z2;
-        if (kzVar.q0 && kzVar.n0.G > 1) {
-            this.X2 = true;
-            kzVar.i0.h1(0, 0);
-            kzVar.o0.setVisibility(0);
-            kzVar.p0.k(0, 0);
-            kzVar.q0 = false;
-            this.X2 = false;
-        }
-        super.onLayout(z10, i10, i11, i12, i13);
-        kz.f(kzVar, true);
-    }
-
-    @Override // org.telegram.ui.Components.ll0, androidx.recyclerview.widget.RecyclerView, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, i11);
-        if (this.Y2) {
+    @Override // s4.n0
+    public final void a(Rect rect, View view, RecyclerView recyclerView, s4.z0 z0Var) {
+        recyclerView.getClass();
+        int S = RecyclerView.S(view);
+        kz kzVar = this.a;
+        s4.h0 adapter = kzVar.h0.getAdapter();
+        py pyVar = kzVar.n0;
+        if (adapter == pyVar && S == pyVar.I) {
+            rect.set(0, 0, 0, 0);
             return;
         }
-        this.Z2.n0.l();
-        this.Y2 = true;
-    }
-
-    @Override // org.telegram.ui.Components.ll0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        if (this.X2) {
-            return;
+        if (S == 0) {
+            pyVar.getClass();
         }
-        super.requestLayout();
+        rect.left = 0;
+        rect.bottom = 0;
+        rect.top = AndroidUtilities.dp(2.0f);
+        qy qyVar = kzVar.i0;
+        pyVar.getClass();
+        rect.right = qyVar.E1(S) ? 0 : AndroidUtilities.dp(2.0f);
     }
 }

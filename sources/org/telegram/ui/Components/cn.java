@@ -1,32 +1,24 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.Utilities;
+import android.content.Context;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class cn implements Utilities.Callback {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Utilities.Callback b;
+public final class cn extends vi {
+    public final /* synthetic */ Runnable P2;
 
-    public /* synthetic */ cn(int i10, Utilities.Callback callback) {
-        this.a = i10;
-        this.b = callback;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public cn(Context context, org.telegram.ui.ActionBar.o2 o2Var, org.telegram.ui.ActionBar.f6 f6Var, Runnable runnable) {
+        super(context, o2Var, false, false, true, f6Var);
+        this.P2 = runnable;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        switch (this.a) {
-            case 0:
-                this.b.run(new sh.e((String) obj));
-                break;
-            default:
-                int[] iArr = (int[]) obj;
-                boolean z10 = false;
-                if (iArr.length >= 1 && iArr[0] == 0) {
-                    z10 = true;
-                }
-                this.b.run(Boolean.valueOf(z10));
-                break;
+    @Override // org.telegram.ui.Components.vi, org.telegram.ui.ActionBar.g3
+    public final void dismissInternal() {
+        super.dismissInternal();
+        Runnable runnable = this.P2;
+        if (runnable != null) {
+            runnable.run();
         }
     }
 }

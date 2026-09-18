@@ -5,7 +5,7 @@ import e2.d0;
 import n4.y;
 import u2.b1;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class l implements b1 {
     public final s a;
@@ -21,10 +21,10 @@ public final class l implements b1 {
         this.a = sVar;
         this.e = gVar;
         this.c = gVar.b;
-        a(gVar, z10);
+        b(gVar, z10);
     }
 
-    public final void a(m2.g gVar, boolean z10) {
+    public final void b(m2.g gVar, boolean z10) {
         int i10 = this.h;
         long j3 = -9223372036854775807L;
         long j10 = i10 == 0 ? -9223372036854775807L : this.c[i10 - 1];
@@ -53,11 +53,11 @@ public final class l implements b1 {
     }
 
     @Override // u2.b1
-    public final int f(y yVar, h2.g gVar, int i10) {
+    public final int f(y yVar, h2.h hVar, int i10) {
         int i11 = this.h;
         boolean z10 = i11 == this.c.length;
         if (z10 && !this.d) {
-            gVar.b = 4;
+            hVar.setFlags(4);
             return -4;
         }
         if ((i10 & 2) != 0 || !this.f) {
@@ -72,17 +72,17 @@ public final class l implements b1 {
             this.h = i11 + 1;
         }
         if ((i10 & 4) == 0) {
-            byte[] E = this.b.E(this.e.a[i11]);
-            gVar.l(E.length);
-            gVar.e.put(E);
+            byte[] N = this.b.N(this.e.a[i11]);
+            hVar.b(N.length);
+            hVar.c.put(N);
         }
-        gVar.h = this.c[i11];
-        gVar.b = 1;
+        hVar.e = this.c[i11];
+        hVar.setFlags(1);
         return -4;
     }
 
     @Override // u2.b1
-    public final int m(long j3) {
+    public final int j(long j3) {
         int max = Math.max(this.h, d0.a(this.c, j3, true));
         int i10 = max - this.h;
         this.h = max;
@@ -90,6 +90,6 @@ public final class l implements b1 {
     }
 
     @Override // u2.b1
-    public final void b() {
+    public final void a() {
     }
 }

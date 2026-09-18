@@ -1,5 +1,6 @@
 package yf;
 
+import ai.k2;
 import android.graphics.Canvas;
 import android.graphics.Outline;
 import android.graphics.Path;
@@ -7,26 +8,25 @@ import android.graphics.Rect;
 import android.os.Build;
 import android.os.Looper;
 import android.view.ViewOutlineProvider;
-import bi.z1;
-import org.telegram.ui.qp0;
-import org.telegram.ui.t3;
+import org.telegram.ui.rp0;
+import org.telegram.ui.s3;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public abstract class j0 {
-    public static final z1 a = new z1(21);
-    public static final z1 b = new z1(22);
+    public static final k2 a = new k2(21);
+    public static final k2 b = new k2(22);
     public static Path c;
     public static Outline d;
     public static Rect e;
 
-    public static void a(Canvas canvas, qp0 qp0Var, t3 t3Var) {
+    public static void a(Canvas canvas, rp0 rp0Var, s3 s3Var) {
         Path path;
         Outline outline;
         Rect rect;
-        ViewOutlineProvider outlineProvider = qp0Var.getOutlineProvider();
-        if (canvas.isHardwareAccelerated() || Build.VERSION.SDK_INT < 24 || !qp0Var.getClipToOutline() || outlineProvider == null) {
-            t3Var.run(canvas);
+        ViewOutlineProvider outlineProvider = rp0Var.getOutlineProvider();
+        if (canvas.isHardwareAccelerated() || Build.VERSION.SDK_INT < 24 || !rp0Var.getClipToOutline() || outlineProvider == null) {
+            s3Var.run(canvas);
             return;
         }
         if (Looper.myLooper() == Looper.getMainLooper()) {
@@ -46,10 +46,10 @@ public abstract class j0 {
             rect = new Rect();
         }
         Path path2 = path;
-        outlineProvider.getOutline(qp0Var, outline);
+        outlineProvider.getOutline(rp0Var, outline);
         path2.rewind();
         if (outline.isEmpty() || !outline.getRect(rect)) {
-            t3Var.run(canvas);
+            s3Var.run(canvas);
             return;
         }
         float radius = outline.getRadius();
@@ -60,7 +60,7 @@ public abstract class j0 {
         }
         int save = canvas.save();
         canvas.clipPath(path2);
-        t3Var.run(canvas);
+        s3Var.run(canvas);
         canvas.restoreToCount(save);
     }
 }

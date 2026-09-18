@@ -1,34 +1,13 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
+import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class v6 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Runnable b;
+public interface v6 {
+    void a(bj0 bj0Var);
 
-    public /* synthetic */ v6(int i10, Runnable runnable) {
-        this.a = i10;
-        this.b = runnable;
-    }
+    void b(ImageReceiver imageReceiver);
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                this.b.run();
-                break;
-            case 1:
-                Runnable runnable = this.b;
-                if (runnable != null) {
-                    runnable.run();
-                    break;
-                }
-                break;
-            default:
-                this.b.run();
-                break;
-        }
-    }
+    void c(ImageReceiver imageReceiver);
 }

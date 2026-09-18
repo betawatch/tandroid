@@ -5,7 +5,7 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.Set;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class c implements Set {
     public final /* synthetic */ f a;
@@ -64,8 +64,8 @@ public final class c implements Set {
         f fVar = this.a;
         int i10 = 0;
         for (int i11 = fVar.c - 1; i11 >= 0; i11--) {
-            Object e7 = fVar.e(i11);
-            i10 += e7 == null ? 0 : e7.hashCode();
+            Object e = fVar.e(i11);
+            i10 += e == null ? 0 : e.hashCode();
         }
         return i10;
     }

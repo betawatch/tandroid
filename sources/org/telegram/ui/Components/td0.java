@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class td0 extends sd0 {
     public final /* synthetic */ ud0 b0;
@@ -20,9 +20,9 @@ public final class td0 extends sd0 {
         if (launchActivity == null) {
             return;
         }
-        org.telegram.ui.ActionBar.z3 z3Var = launchActivity.z0;
-        z3Var.setScaleX(AndroidUtilities.lerp(1.0f, 1.25f, f7));
-        z3Var.setScaleY(AndroidUtilities.lerp(1.0f, 1.25f, f7));
+        org.telegram.ui.ActionBar.a4 a4Var = launchActivity.z0;
+        a4Var.setScaleX(AndroidUtilities.lerp(1.0f, 1.25f, f7));
+        a4Var.setScaleY(AndroidUtilities.lerp(1.0f, 1.25f, f7));
     }
 
     @Override // org.telegram.ui.Components.sd0
@@ -32,8 +32,8 @@ public final class td0 extends sd0 {
         if (launchActivity == null) {
             return;
         }
-        org.telegram.ui.ActionBar.z3 z3Var = launchActivity.z0;
-        z3Var.setScaleX(1.0f);
-        z3Var.setScaleY(1.0f);
+        org.telegram.ui.ActionBar.a4 a4Var = launchActivity.z0;
+        a4Var.setScaleX(1.0f);
+        a4Var.setScaleY(1.0f);
     }
 }

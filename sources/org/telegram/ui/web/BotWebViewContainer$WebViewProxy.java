@@ -3,9 +3,9 @@ package org.telegram.ui.web;
 import android.webkit.JavascriptInterface;
 import java.io.Serializable;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.er0;
+import org.telegram.ui.Components.gr0;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes4.dex */
 public class BotWebViewContainer$WebViewProxy {
     public d1 a;
@@ -21,12 +21,12 @@ public class BotWebViewContainer$WebViewProxy {
         if (this.a == null) {
             return;
         }
-        AndroidUtilities.runOnUIThread(new er0(this, str, str2, 18));
+        AndroidUtilities.runOnUIThread(new gr0(this, str, str2, 18));
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     @JavascriptInterface
     public void resolveShare(String str, byte[] bArr, String str2, String str3) {
-        AndroidUtilities.runOnUIThread(new c0((Object) this, str, (Serializable) bArr, str2, str3, 5));
+        AndroidUtilities.runOnUIThread(new b0((Object) this, str, (Serializable) bArr, str2, str3, 5));
     }
 }

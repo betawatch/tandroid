@@ -1,42 +1,22 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
+import android.content.Context;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.ThemeEditorView;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class e11 extends AnimatorListenerAdapter {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ ThemeEditorView.EditorAlert b;
+public final class e11 extends ml0 {
+    public final /* synthetic */ ThemeEditorView.EditorAlert X2;
 
-    public e11(ThemeEditorView.EditorAlert editorAlert, boolean z10) {
-        this.b = editorAlert;
-        this.a = z10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public e11(ThemeEditorView.EditorAlert editorAlert, Context context) {
+        super(context, null);
+        this.X2 = editorAlert;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationCancel(Animator animator) {
-        AnimatorSet[] animatorSetArr = this.b.x;
-        AnimatorSet animatorSet = animatorSetArr[0];
-        if (animatorSet == null || !animatorSet.equals(animator)) {
-            return;
-        }
-        animatorSetArr[0] = null;
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        ThemeEditorView.EditorAlert editorAlert = this.b;
-        AnimatorSet[] animatorSetArr = editorAlert.x;
-        AnimatorSet animatorSet = animatorSetArr[0];
-        if (animatorSet == null || !animatorSet.equals(animator)) {
-            return;
-        }
-        if (!this.a) {
-            editorAlert.w[0].setVisibility(4);
-        }
-        animatorSetArr[0] = null;
+    @Override // org.telegram.ui.Components.ml0
+    public final boolean F0(float f7) {
+        return f7 >= ((float) ((AndroidUtilities.dp(48.0f) + this.X2.E) + AndroidUtilities.statusBarHeight));
     }
 }

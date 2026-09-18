@@ -1,41 +1,38 @@
 package ci;
 
-import android.view.View;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class o implements View.OnClickListener {
+public final /* synthetic */ class o implements Utilities.Callback {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Runnable b;
+    public final /* synthetic */ ec b;
 
-    public /* synthetic */ o(int i10, Runnable runnable) {
+    public /* synthetic */ o(ec ecVar, int i10) {
         this.a = i10;
-        this.b = runnable;
+        this.b = ecVar;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        Integer num = (Integer) obj;
         switch (this.a) {
             case 0:
-                this.b.run();
-                break;
-            case 1:
-                this.b.run();
-                break;
-            case 2:
-                this.b.run();
-                break;
-            case 3:
-                this.b.run();
-                break;
-            case 4:
-                this.b.run();
-                break;
-            case 5:
-                this.b.run();
+                int intValue = num.intValue();
+                ec ecVar = this.b;
+                ecVar.setPeriod(intValue);
+                Utilities.Callback callback = ecVar.B1;
+                if (callback != null) {
+                    callback.run(num);
+                    break;
+                }
                 break;
             default:
-                this.b.run();
+                Utilities.Callback callback2 = this.b.C1;
+                if (callback2 != null) {
+                    callback2.run(num);
+                    break;
+                }
                 break;
         }
     }

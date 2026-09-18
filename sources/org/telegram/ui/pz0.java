@@ -1,38 +1,47 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.accessibility.AccessibilityNodeInfo;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class pz0 extends n01 {
-    public pz0(Context context) {
-        super(context);
+public final class pz0 implements mq {
+    public final /* synthetic */ TLRPC.Chat a;
+    public final /* synthetic */ pq b;
+    public final /* synthetic */ ProfileActivity c;
+
+    public pz0(ProfileActivity profileActivity, TLRPC.Chat chat, pq pqVar) {
+        this.c = profileActivity;
+        this.a = chat;
+        this.b = pqVar;
     }
 
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        bi.y3 y3Var;
-        super.dispatchDraw(canvas);
-        org.telegram.ui.Components.q5 q5Var = this.e;
-        if (q5Var == null || (y3Var = q5Var.k) == null) {
-            return;
-        }
-        y3Var.startAnimation();
+    @Override // org.telegram.ui.mq
+    public final void a(TLRPC.User user) {
+        ProfileActivity profileActivity = this.c;
+        profileActivity.M.m(-profileActivity.f1, user, profileActivity.E2.megagroup ? 10 : 9);
     }
 
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        if (!getImageReceiver().hasNotThumb()) {
-            accessibilityNodeInfo.setVisibleToUser(false);
+    @Override // org.telegram.ui.mq
+    public final void b(int i10, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str) {
+        TLRPC.Chat chat;
+        ProfileActivity profileActivity = this.c;
+        profileActivity.removeSelfFromStack();
+        TLRPC.User user = profileActivity.getMessagesController().getUser(Long.valueOf(profileActivity.e1));
+        if (user == null || (chat = this.a) == null || profileActivity.e1 == 0) {
             return;
         }
-        accessibilityNodeInfo.setText(LocaleController.getString(R.string.AccDescrProfilePicture));
-        accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(16, LocaleController.getString(R.string.Open)));
-        accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(32, LocaleController.getString(R.string.AccDescrOpenInPhotoViewer)));
+        pq pqVar = this.b;
+        if (!pqVar.Q || pqVar.getParentLayout() == null) {
+            return;
+        }
+        for (org.telegram.ui.ActionBar.o2 o2Var : pqVar.getParentLayout().getFragmentStack()) {
+            if (o2Var instanceof wb) {
+                wb wbVar = (wb) o2Var;
+                wbVar.V0();
+                AndroidUtilities.runOnUIThread(new rf0(wbVar, user, chat, 25));
+                return;
+            }
+        }
     }
 }

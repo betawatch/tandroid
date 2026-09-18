@@ -1,19 +1,13 @@
 package v7;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class t3 implements ia.d {
     public static final t3 a = new t3();
-
-    static {
-        org.telegram.ui.Cells.p6.s(org.telegram.ui.Cells.p6.k(h.class, new e(1)));
-    }
+    public static final ia.c b = new ia.c("identifiedLanguage", hg.k0.o(org.telegram.ui.Cells.p6.k(h.class, new e(1))));
 
     @Override // ia.a
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
-        }
-        throw null;
+    public final void a(Object obj, Object obj2) {
+        ((ia.e) obj2).a(b, ((e7) obj).a);
     }
 }

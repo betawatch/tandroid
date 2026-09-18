@@ -1,23 +1,16 @@
 package w7;
 
+import android.opengl.GLES20;
+import android.opengl.GLUtils;
 import android.util.Log;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public abstract class m6 {
-    public static void a(Exception exc, String str, Object... objArr) {
-        if (Log.isLoggable("Vision", 6)) {
-            if (Log.isLoggable("Vision", 3)) {
-                Log.e("Vision", String.format(str, objArr), exc);
-                return;
-            }
-            String format = String.format(str, objArr);
-            String valueOf = String.valueOf(exc);
-            StringBuilder sb2 = new StringBuilder(valueOf.length() + format.length() + 2);
-            sb2.append(format);
-            sb2.append(": ");
-            sb2.append(valueOf);
-            Log.e("Vision", sb2.toString());
+    public static void a() {
+        int glGetError = GLES20.glGetError();
+        if (glGetError != 0) {
+            Log.d("Paint", GLUtils.getEGLErrorString(glGetError));
         }
     }
 }

@@ -1,66 +1,27 @@
 package qg;
 
-import java.util.Arrays;
-import java.util.List;
-import org.telegram.messenger.R;
+import org.telegram.ui.cu0;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public abstract class m {
-    public static final List a = Arrays.asList(new f(), new a(), new c(), new e(), new b(), new d());
+public final /* synthetic */ class m implements q0.a {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ cu0 b;
 
-    public float a() {
-        return 0.85f;
+    public /* synthetic */ m(cu0 cu0Var, int i10) {
+        this.a = i10;
+        this.b = cu0Var;
     }
 
-    public float b() {
-        return 0.0f;
-    }
-
-    public int c() {
-        return -16777216;
-    }
-
-    public float d() {
-        return 0.25f;
-    }
-
-    public abstract int e();
-
-    public float f() {
-        return 1.0f;
-    }
-
-    public float g() {
-        return 0.4f;
-    }
-
-    public float h() {
-        return 1.0f;
-    }
-
-    public String i(int i10) {
-        if (i10 == 0) {
-            return "blitWithMask";
+    @Override // q0.a
+    public final void accept(Object obj) {
+        switch (this.a) {
+            case 0:
+                p0.Z(this.b, (Integer) obj);
+                break;
+            default:
+                p0.c0(this.b, (Integer) obj);
+                break;
         }
-        if (i10 == 1) {
-            return "compositeWithMask";
-        }
-        if (i10 != 2) {
-            return null;
-        }
-        return "brush";
-    }
-
-    public float j() {
-        return 1.0f;
-    }
-
-    public float k() {
-        return 0.15f;
-    }
-
-    public int l() {
-        return R.drawable.paint_radial_brush;
     }
 }

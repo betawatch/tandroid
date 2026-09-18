@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.util.Log;
 import android.view.View;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class a0 implements View.OnClickListener {
     public final /* synthetic */ int a = 1;
@@ -34,8 +34,8 @@ public final class a0 implements View.OnClickListener {
                 try {
                     ((Context) this.b).startActivity((Intent) this.c);
                     break;
-                } catch (ActivityNotFoundException e7) {
-                    Log.e("DeferredLifecycleHelper", "Failed to start resolution intent", e7);
+                } catch (ActivityNotFoundException e) {
+                    Log.e("DeferredLifecycleHelper", "Failed to start resolution intent", e);
                     return;
                 }
         }

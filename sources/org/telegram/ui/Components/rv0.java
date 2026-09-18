@@ -1,9 +1,72 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
-/* loaded from: classes3.dex */
-public interface rv0 {
-    void i(int i10);
+import android.app.Activity;
+import android.content.Context;
+import android.graphics.Point;
+import android.graphics.Rect;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 
-    void l();
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* loaded from: classes3.dex */
+public abstract class rv0 extends qv0 {
+    public Activity w0;
+    public final Rect x0;
+    public int y0;
+    public boolean z0;
+
+    public rv0(Context context, Activity activity) {
+        super(context, null);
+        this.x0 = new Rect();
+        setActivity(activity);
+    }
+
+    @Override // org.telegram.ui.Components.qv0
+    public int R() {
+        View rootView = getRootView();
+        Rect rect = this.x0;
+        getWindowVisibleDisplayFrame(rect);
+        if (this.z0) {
+            return ((rootView.getHeight() - (rect.top != 0 ? AndroidUtilities.statusBarHeight : 0)) - AndroidUtilities.getViewInset(rootView)) - (rect.bottom - rect.top);
+        }
+        int height = (this.w0.getWindow().getDecorView().getHeight() - AndroidUtilities.getViewInset(rootView)) - rootView.getBottom();
+        if (height <= Math.max(AndroidUtilities.dp(10.0f), AndroidUtilities.statusBarHeight)) {
+            return 0;
+        }
+        return height;
+    }
+
+    @Override // org.telegram.ui.Components.qv0
+    public void S() {
+        if (this.n == null && this.r.isEmpty()) {
+            return;
+        }
+        this.y0 = R();
+        Point point = AndroidUtilities.displaySize;
+        post(new tr0(2, this, point.x > point.y));
+    }
+
+    @Override // org.telegram.ui.Components.qv0
+    public /* bridge */ /* synthetic */ int[] getColorKeys() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.Components.qv0
+    public int getKeyboardHeight() {
+        return this.y0;
+    }
+
+    @Override // org.telegram.ui.Components.qv0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        S();
+    }
+
+    public void setActivity(Activity activity) {
+        this.w0 = activity;
+    }
+
+    public void setWithoutWindow(boolean z10) {
+        this.z0 = z10;
+    }
 }

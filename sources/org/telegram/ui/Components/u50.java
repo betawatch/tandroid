@@ -7,7 +7,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class u50 implements Runnable {
     public final /* synthetic */ v50 a;
@@ -104,8 +104,8 @@ public final class u50 implements Runnable {
                             this.a.y0.getTimestamp(audioTimestamp, 0);
                             j10 = j12;
                             j12 = audioTimestamp.nanoTime / j3;
-                        } catch (Exception e7) {
-                            FileLog.e(e7);
+                        } catch (Exception e) {
+                            FileLog.e(e);
                             j12 = System.nanoTime() / j3;
                             j10 = j12;
                             z11 = false;
@@ -143,8 +143,8 @@ public final class u50 implements Runnable {
         }
         try {
             this.a.y0.release();
-        } catch (Exception e10) {
-            FileLog.e(e10);
+        } catch (Exception e7) {
+            FileLog.e(e7);
         }
         if (this.a.D0) {
             return;

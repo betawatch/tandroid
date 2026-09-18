@@ -5,25 +5,25 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocationController;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class j10 implements org.telegram.ui.ActionBar.r0, le.k, org.telegram.ui.ActionBar.a2, av0 {
+public final /* synthetic */ class j10 implements org.telegram.ui.ActionBar.s0, le.k, org.telegram.ui.ActionBar.b2, cv0 {
     public final /* synthetic */ FragmentContextView a;
 
     public /* synthetic */ j10(FragmentContextView fragmentContextView) {
         this.a = fragmentContextView;
     }
 
-    @Override // org.telegram.ui.Components.av0
+    @Override // org.telegram.ui.Components.cv0
     public void b(LocationController.SharingLocationInfo sharingLocationInfo) {
-        float[] fArr = FragmentContextView.M0;
+        float[] fArr = FragmentContextView.O0;
         this.a.k(sharingLocationInfo);
     }
 
     @Override // le.k
-    public void e(le.l lVar) {
+    public void c(le.l lVar) {
         FragmentContextView fragmentContextView = this.a;
-        le.l lVar2 = fragmentContextView.K0;
+        le.l lVar2 = fragmentContextView.M0;
         float f7 = 1.0f - lVar2.a.d.c.a;
         fragmentContextView.d.setAlpha(f7);
         fragmentContextView.d.setScaleX(AndroidUtilities.lerp(0.7f, 1.0f, f7));
@@ -34,19 +34,19 @@ public final /* synthetic */ class j10 implements org.telegram.ui.ActionBar.r0, 
             float c10 = gVar.c();
             Object obj = gVar.a;
             float lerp = AndroidUtilities.lerp(0.7f, 1.0f, c10);
-            mh.c cVar = ((u10) obj).b;
+            lh.c cVar = ((u10) obj).b;
             cVar.setAlpha(gVar.c());
             cVar.setScaleX(lerp);
             cVar.setScaleY(lerp);
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.a2
-    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+    @Override // org.telegram.ui.ActionBar.b2
+    public void f(org.telegram.ui.ActionBar.c2 c2Var, int i10) {
         FragmentContextView fragmentContextView = this.a;
-        org.telegram.ui.ActionBar.n2 n2Var = fragmentContextView.h;
-        if (!(n2Var instanceof org.telegram.ui.uy)) {
-            LocationController.getInstance(n2Var.getCurrentAccount()).removeSharingLocation(fragmentContextView.n.a());
+        org.telegram.ui.ActionBar.o2 o2Var = fragmentContextView.h;
+        if (!(o2Var instanceof org.telegram.ui.wy)) {
+            LocationController.getInstance(o2Var.getCurrentAccount()).removeSharingLocation(fragmentContextView.n.a());
             return;
         }
         for (int i11 = 0; i11 < 4; i11++) {
@@ -54,11 +54,11 @@ public final /* synthetic */ class j10 implements org.telegram.ui.ActionBar.r0, 
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.r0
+    @Override // org.telegram.ui.ActionBar.s0
     public void m(int i10) {
-        float[] fArr = FragmentContextView.M0;
+        float[] fArr = FragmentContextView.O0;
         if (i10 >= 0) {
-            float[] fArr2 = FragmentContextView.M0;
+            float[] fArr2 = FragmentContextView.O0;
             if (i10 >= 6) {
                 return;
             }
@@ -74,6 +74,6 @@ public final /* synthetic */ class j10 implements org.telegram.ui.ActionBar.r0, 
     }
 
     @Override // le.k
-    public /* synthetic */ void c() {
+    public /* synthetic */ void a() {
     }
 }

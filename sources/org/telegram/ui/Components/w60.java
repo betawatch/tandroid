@@ -11,7 +11,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w60 implements Runnable {
     public final /* synthetic */ int a;
@@ -45,9 +45,9 @@ public final /* synthetic */ class w60 implements Runnable {
             case 1:
                 x60 x60Var2 = this.b;
                 String str3 = this.c;
-                hg.b2 b2Var = x60Var2.e;
-                org.telegram.ui.iu iuVar = x60Var2.n.m0;
-                b2Var.g(str3, true, iuVar != null, true, iuVar != null, 0L, false, 0, 0);
+                gg.c2 c2Var = x60Var2.e;
+                org.telegram.ui.gu guVar = x60Var2.n.m0;
+                c2Var.g(str3, true, guVar != null, true, guVar != null, 0L, false, 0, 0);
                 DispatchQueue dispatchQueue = Utilities.searchQueue;
                 w60 w60Var = new w60(x60Var2, str3, 2);
                 x60Var2.h = w60Var;
@@ -121,10 +121,10 @@ public final /* synthetic */ class w60 implements Runnable {
                         arrayList2 = arrayList;
                         i10 = 0;
                     }
-                    AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.p(x60Var3, arrayList3, arrayList4, 21));
+                    AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.q(x60Var3, arrayList3, arrayList4, 21));
                     break;
                 } else {
-                    AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.p(x60Var3, new ArrayList(), new ArrayList(), 21));
+                    AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.q(x60Var3, new ArrayList(), new ArrayList(), 21));
                     break;
                 }
                 break;

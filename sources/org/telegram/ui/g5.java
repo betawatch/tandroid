@@ -10,12 +10,12 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class g5 extends ReplacementSpan {
     public final Paint a;
     public final ImageReceiver b;
-    public final org.telegram.ui.Components.i9 c;
+    public final org.telegram.ui.Components.f9 c;
     public float d;
     public final int e;
     public View f;
@@ -40,9 +40,9 @@ public final class g5 extends ReplacementSpan {
 
     public final void b(TLRPC.Chat chat) {
         int i10 = this.e;
-        org.telegram.ui.Components.i9 i9Var = this.c;
-        i9Var.k(i10, chat);
-        this.b.setForUserOrChat(chat, i9Var);
+        org.telegram.ui.Components.f9 f9Var = this.c;
+        f9Var.k(i10, chat);
+        this.b.setForUserOrChat(chat, f9Var);
     }
 
     public final void c(long j3) {
@@ -104,9 +104,9 @@ public final class g5 extends ReplacementSpan {
 
     public final void e(TLRPC.User user) {
         int i10 = this.e;
-        org.telegram.ui.Components.i9 i9Var = this.c;
-        i9Var.m(i10, user);
-        this.b.setForUserOrChat(user, i9Var);
+        org.telegram.ui.Components.f9 f9Var = this.c;
+        f9Var.m(i10, user);
+        this.b.setForUserOrChat(user, f9Var);
     }
 
     @Override // android.text.style.ReplacementSpan
@@ -123,7 +123,7 @@ public final class g5 extends ReplacementSpan {
         ImageReceiver imageReceiver = new ImageReceiver(view);
         this.b = imageReceiver;
         imageReceiver.setInvalidateAll(true);
-        this.c = new org.telegram.ui.Components.i9((org.telegram.ui.ActionBar.f6) null);
+        this.c = new org.telegram.ui.Components.f9((org.telegram.ui.ActionBar.f6) null);
         imageReceiver.setRoundRadius(AndroidUtilities.dp(f7));
         this.d = f7;
         Paint paint = new Paint(1);

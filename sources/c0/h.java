@@ -13,21 +13,21 @@ import java.util.concurrent.locks.LockSupport;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.telegram.ui.Cells.p6;
-import v7.c5;
+import v7.d5;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public abstract class h implements w {
     public static final boolean d = Boolean.parseBoolean(System.getProperty("guava.concurrent.generate_cancellation_cause", "false"));
     public static final Logger e = Logger.getLogger(h.class.getName());
-    public static final c5 f;
+    public static final d5 f;
     public static final Object h;
     public volatile Object a;
     public volatile d b;
     public volatile g c;
 
     static {
-        c5 fVar;
+        d5 fVar;
         try {
             fVar = new e(AtomicReferenceFieldUpdater.newUpdater(g.class, Thread.class, "a"), AtomicReferenceFieldUpdater.newUpdater(g.class, g.class, "b"), AtomicReferenceFieldUpdater.newUpdater(h.class, g.class, "c"), AtomicReferenceFieldUpdater.newUpdater(h.class, d.class, "b"), AtomicReferenceFieldUpdater.newUpdater(h.class, Object.class, "a"));
             th = null;
@@ -195,9 +195,9 @@ public abstract class h implements w {
             if (gVar2 != gVar) {
                 g gVar3 = new g();
                 do {
-                    c5 c5Var = f;
-                    c5Var.d(gVar3, gVar2);
-                    if (c5Var.c(this, gVar2, gVar3)) {
+                    d5 d5Var = f;
+                    d5Var.d(gVar3, gVar2);
+                    if (d5Var.c(this, gVar2, gVar3)) {
                         while (true) {
                             LockSupport.parkNanos(this, nanos);
                             if (Thread.interrupted()) {
@@ -372,9 +372,9 @@ public abstract class h implements w {
             if (gVar2 != gVar) {
                 g gVar3 = new g();
                 do {
-                    c5 c5Var = f;
-                    c5Var.d(gVar3, gVar2);
-                    if (c5Var.c(this, gVar2, gVar3)) {
+                    d5 d5Var = f;
+                    d5Var.d(gVar3, gVar2);
+                    if (d5Var.c(this, gVar2, gVar3)) {
                         do {
                             LockSupport.park(this);
                             if (!Thread.interrupted()) {

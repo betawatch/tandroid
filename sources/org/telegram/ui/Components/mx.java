@@ -1,29 +1,51 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
-/* loaded from: classes3.dex */
-public final class mx extends g.p {
-    public final /* synthetic */ kz c;
+import android.os.Build;
+import androidx.recyclerview.widget.RecyclerView;
+import j$.util.Objects;
+import org.telegram.messenger.AndroidUtilities;
 
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* loaded from: classes3.dex */
+public final class mx extends jz {
+    public final /* synthetic */ kz d;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public mx(kz kzVar) {
-        this.c = kzVar;
+        super(kzVar, 1);
+        this.d = kzVar;
     }
 
-    @Override // g.p
-    public final int i(int i10) {
-        kz kzVar = this.c;
-        tx txVar = kzVar.R;
-        lx lxVar = kzVar.Q;
-        s4.h0 adapter = kzVar.P.getAdapter();
-        ky kyVar = kzVar.S;
-        if (adapter == kyVar) {
-            int j3 = kyVar.j(i10);
-            if (j3 == 1 || j3 == 3 || j3 == 2 || j3 == 4 || j3 == 5) {
-                return lxVar.J;
-            }
-        } else if ((kzVar.d0 && i10 == 0) || i10 == txVar.d || i10 == txVar.c || i10 == txVar.f || txVar.r.indexOfKey(i10) >= 0 || txVar.v.indexOfKey(i10) >= 0) {
-            return lxVar.J;
+    @Override // org.telegram.ui.Components.jz, s4.s0
+    public final void a(RecyclerView recyclerView, int i10) {
+        if (i10 == 0) {
+            this.d.f0 = false;
         }
-        return 1;
+        super.a(recyclerView, i10);
+    }
+
+    @Override // org.telegram.ui.Components.jz, s4.s0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        ah.i iVar;
+        kz kzVar = this.d;
+        jy jyVar = kzVar.S;
+        jx jxVar = kzVar.Q;
+        kzVar.U(jxVar.I0());
+        if (Build.VERSION.SDK_INT >= 31 && (iVar = kzVar.j2) != null) {
+            iVar.f(i10, i11);
+        }
+        super.b(recyclerView, i10, i11);
+        if (jyVar == null || kzVar.P.getAdapter() != jyVar) {
+            return;
+        }
+        jy jyVar2 = jyVar.x.a;
+        if (jyVar2.F.V.F || jyVar2.E) {
+            return;
+        }
+        if (jxVar.N0() + 20 > jyVar.h()) {
+            iy iyVar = jyVar.x;
+            Objects.requireNonNull(iyVar);
+            AndroidUtilities.runOnUIThread(new rw(iyVar, 1));
+        }
     }
 }

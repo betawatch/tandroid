@@ -3,12 +3,12 @@ package s9;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
-import org.telegram.ui.Components.er0;
 import u4.g;
 import w9.o;
-import w9.w;
+import w9.v;
+import w9.x;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class b implements Callable {
     public final /* synthetic */ boolean a;
@@ -29,9 +29,9 @@ public final class b implements Callable {
         o oVar = this.b;
         ExecutorService executorService = oVar.k;
         g gVar = new g(3, oVar, this.c);
-        ExecutorService executorService2 = w.a;
+        ExecutorService executorService2 = x.a;
         TaskCompletionSource taskCompletionSource = new TaskCompletionSource();
-        executorService.execute(new er0(gVar, executorService, taskCompletionSource, 29));
+        executorService.execute(new v(gVar, executorService, taskCompletionSource, 0));
         taskCompletionSource.getTask();
         return null;
     }

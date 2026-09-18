@@ -1,32 +1,39 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.Components.UndoView;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class p81 extends UndoView {
-    public final /* synthetic */ SessionsActivity f0;
+public final /* synthetic */ class p81 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ q81 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public p81(SessionsActivity sessionsActivity, Context context) {
-        super(context);
-        this.f0 = sessionsActivity;
+    public /* synthetic */ p81(q81 q81Var, int i10) {
+        this.a = i10;
+        this.b = q81Var;
     }
 
-    @Override // org.telegram.ui.Components.UndoView
-    public final void e(int i10, boolean z10) {
-        int i11;
-        if (!z10 && getCurrentInfoObject() != null) {
-            TLRPC.TL_authorization tL_authorization = (TLRPC.TL_authorization) getCurrentInfoObject();
-            TL_account.resetAuthorization resetauthorization = new TL_account.resetAuthorization();
-            resetauthorization.hash = tL_authorization.hash;
-            i11 = ((org.telegram.ui.ActionBar.n2) this.f0).currentAccount;
-            ConnectionsManager.getInstance(i11).sendRequest(resetauthorization, new bc0(19, this, tL_authorization));
+    @Override // java.lang.Runnable
+    public final void run() {
+        String sb2;
+        switch (this.a) {
+            case 0:
+                q81 q81Var = this.b;
+                String str = q81Var.b.text;
+                if (str == null || !str.equals("AUTH_TOKEN_EXCEPTION")) {
+                    StringBuilder sb3 = new StringBuilder();
+                    org.telegram.messenger.wl.l(R.string.ErrorOccurred, "\n", sb3);
+                    sb3.append(q81Var.b.text);
+                    sb2 = sb3.toString();
+                } else {
+                    sb2 = LocaleController.getString(R.string.AccountAlreadyLoggedIn);
+                }
+                org.telegram.ui.Components.c5.u0(q81Var.c, LocaleController.getString(R.string.AuthAnotherClient), sb2, null);
+                break;
+            default:
+                org.telegram.ui.Components.c5.u0(this.b.c, LocaleController.getString(R.string.AuthAnotherClient), LocaleController.getString(R.string.ErrorOccurred), null);
+                break;
         }
-        super.e(i10, z10);
     }
 }

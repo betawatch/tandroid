@@ -1,37 +1,60 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
-
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class bh implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ NotificationsController b;
-    public final /* synthetic */ ArrayList c;
 
-    public /* synthetic */ bh(NotificationsController notificationsController, ArrayList arrayList, int i10) {
+    public /* synthetic */ bh(NotificationsController notificationsController, int i10) {
         this.a = i10;
         this.b = notificationsController;
-        this.c = arrayList;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$removeDeletedHisoryFromNotifications$11(this.c);
+                this.b.lambda$cleanup$2();
                 break;
             case 1:
-                this.b.lambda$processReadMessages$20(this.c);
+                this.b.lambda$hideNotifications$36();
                 break;
             case 2:
-                this.b.lambda$forceShowPopupForReply$6(this.c);
+                this.b.lambda$repeatNotificationMaybe$41();
                 break;
             case 3:
-                this.b.lambda$removeDeletedMessagesFromNotifications$8(this.c);
+                this.b.lambda$processIgnoreStories$17();
+                break;
+            case 4:
+                this.b.lambda$updateBadge$34();
+                break;
+            case 5:
+                this.b.lambda$deleteAllNotificationChannels$44();
+                break;
+            case 6:
+                this.b.lambda$playOutChatSound$49();
+                break;
+            case 7:
+                this.b.checkStoryPushes();
+                break;
+            case 8:
+                this.b.lambda$new$0();
+                break;
+            case 9:
+                this.b.lambda$new$1();
+                break;
+            case 10:
+                this.b.lambda$showNotifications$35();
+                break;
+            case 11:
+                this.b.lambda$forceShowPopupForReply$7();
+                break;
+            case 12:
+                this.b.lambda$processIgnoreStoryReactions$18();
                 break;
             default:
-                this.b.lambda$processDialogsUpdateRead$28(this.c);
+                this.b.lambda$playInChatSound$40();
                 break;
         }
     }

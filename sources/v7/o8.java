@@ -1,84 +1,33 @@
 package v7;
 
-import android.graphics.drawable.Drawable;
-import android.os.Build;
-import android.util.Log;
-import java.lang.reflect.Method;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.tl0;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public abstract class o8 {
-    public static Method a;
-    public static boolean b;
-    public static Method c;
-    public static boolean d;
+    public static void a(tl0 tl0Var, org.telegram.ui.ActionBar.f6 f6Var) {
+        tl0Var.q(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Oh, f6Var), f6Var != null ? f6Var.a() : org.telegram.ui.ActionBar.j6.I.q());
+    }
 
-    public static int a(Drawable drawable) {
-        if (Build.VERSION.SDK_INT >= 23) {
-            return e0.b.i(drawable);
-        }
-        if (!d) {
-            try {
-                Method declaredMethod = Drawable.class.getDeclaredMethod("getLayoutDirection", null);
-                c = declaredMethod;
-                declaredMethod.setAccessible(true);
-            } catch (NoSuchMethodException e7) {
-                Log.i("DrawableCompat", "Failed to retrieve getLayoutDirection() method", e7);
-            }
-            d = true;
-        }
-        Method method = c;
-        if (method == null) {
+    public static int b(ii.a aVar) {
+        if (aVar == null) {
             return 0;
         }
-        try {
-            return ((Integer) method.invoke(drawable, null)).intValue();
-        } catch (Exception e10) {
-            Log.i("DrawableCompat", "Failed to invoke getLayoutDirection() via reflection", e10);
-            c = null;
+        return c(aVar) + (Math.max(0, aVar.c) > 0 ? AndroidUtilities.dp(hg.k0.g(r4, 1, 24, 28)) : 0);
+    }
+
+    public static int c(ii.a aVar) {
+        if ((aVar == null ? 0 : aVar.k.size()) <= 0) {
             return 0;
         }
+        return AndroidUtilities.dp(hg.k0.g(r3, 1, 16, 12));
     }
 
-    public static boolean b(int i10, Drawable drawable) {
-        if (Build.VERSION.SDK_INT >= 23) {
-            return e0.b.D(i10, drawable);
+    public static int d(ii.a aVar) {
+        if ((aVar == null ? 0 : aVar.k.size()) <= 0) {
+            return 0;
         }
-        if (!b) {
-            try {
-                Method declaredMethod = Drawable.class.getDeclaredMethod("setLayoutDirection", Integer.TYPE);
-                a = declaredMethod;
-                declaredMethod.setAccessible(true);
-            } catch (NoSuchMethodException e7) {
-                Log.i("DrawableCompat", "Failed to retrieve setLayoutDirection(int) method", e7);
-            }
-            b = true;
-        }
-        Method method = a;
-        if (method != null) {
-            try {
-                method.invoke(drawable, Integer.valueOf(i10));
-                return true;
-            } catch (Exception e10) {
-                Log.i("DrawableCompat", "Failed to invoke setLayoutDirection(int) via reflection", e10);
-                a = null;
-            }
-        }
-        return false;
-    }
-
-    public static void c(int i10, Drawable drawable) {
-        drawable.setTint(i10);
-    }
-
-    public static Drawable d(Drawable drawable) {
-        if (Build.VERSION.SDK_INT >= 23 || (drawable instanceof j0.b)) {
-            return drawable;
-        }
-        j0.d dVar = new j0.d();
-        dVar.d = dVar.c();
-        dVar.h(drawable);
-        j0.d.a();
-        return dVar;
+        return AndroidUtilities.dp(hg.k0.g(r3, 1, 16, 8));
     }
 }

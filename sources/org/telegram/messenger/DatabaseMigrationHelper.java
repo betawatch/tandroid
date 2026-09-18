@@ -12,14 +12,14 @@ import org.telegram.SQLite.SQLitePreparedStatement;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public class DatabaseMigrationHelper {
     private static void executeNoException(SQLiteDatabase sQLiteDatabase, String str) {
         try {
             sQLiteDatabase.executeFast(str).stepThis().dispose();
-        } catch (Exception e7) {
-            FileLog.e(e7);
+        } catch (Exception e) {
+            FileLog.e(e);
         }
     }
 
@@ -42,7 +42,7 @@ public class DatabaseMigrationHelper {
         long j10;
         long longValue;
         StringBuilder sb2;
-        File file4 = new File(ApplicationLoader.getFilesDirFixed(), i2.g.j(i10, "recover_database_", "/"));
+        File file4 = new File(ApplicationLoader.getFilesDirFixed(), hg.k0.j(i10, "recover_database_", "/"));
         file4.mkdirs();
         File file5 = new File(file4, "cache4.db");
         File file6 = new File(file4, "cache4.db-wal");
@@ -51,8 +51,8 @@ public class DatabaseMigrationHelper {
             file5.delete();
             file6.delete();
             file7.delete();
-        } catch (Exception e7) {
-            e7.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
         ArrayList arrayList = new ArrayList();
         ArrayList arrayList2 = new ArrayList();
@@ -71,8 +71,8 @@ public class DatabaseMigrationHelper {
                 sQLiteDatabase.executeFast("ATTACH DATABASE \"" + file.getAbsolutePath() + "\" AS old;").stepThis().dispose();
                 intValue = sQLiteDatabase.executeInt("PRAGMA old.user_version", new Object[0]).intValue();
                 try {
-                } catch (Exception e10) {
-                    e = e10;
+                } catch (Exception e7) {
+                    e = e7;
                     z10 = false;
                     z11 = true;
                     FileLog.e(e);
@@ -80,11 +80,11 @@ public class DatabaseMigrationHelper {
                     if (z12) {
                     }
                 }
-            } catch (Exception e11) {
-                e = e11;
+            } catch (Exception e10) {
+                e = e10;
             }
-        } catch (Exception e12) {
-            e = e12;
+        } catch (Exception e11) {
+            e = e11;
             z10 = false;
             z11 = true;
             j3 = 0;
@@ -158,8 +158,8 @@ public class DatabaseMigrationHelper {
                     sb2.append("INSERT OR IGNORE INTO messages_v2 SELECT * FROM old.messages_v2 WHERE uid = ");
                     sb2.append(l10);
                     z11 = true;
-                } catch (Exception e13) {
-                    e = e13;
+                } catch (Exception e12) {
+                    e = e12;
                     z11 = true;
                     j3 = j10;
                     FileLog.e(e);
@@ -175,8 +175,8 @@ public class DatabaseMigrationHelper {
                     sb2.append(")");
                     sQLiteDatabase.executeFast(sb2.toString()).stepThis().dispose();
                     MessagesStorage.createFirstHoles(l10.longValue(), executeFast, executeFast2, (int) longValue, 0L);
-                } catch (Exception e14) {
-                    e = e14;
+                } catch (Exception e13) {
+                    e = e13;
                     j3 = j10;
                     FileLog.e(e);
                     z12 = false;
@@ -216,8 +216,8 @@ public class DatabaseMigrationHelper {
             file7.delete();
             FileLog.d("database recovered time " + (System.currentTimeMillis() - j3));
             return z11;
-        } catch (IOException e15) {
-            e15.printStackTrace();
+        } catch (IOException e14) {
+            e14.printStackTrace();
             return z10;
         }
     }
@@ -626,8 +626,8 @@ public class DatabaseMigrationHelper {
             sQLiteDatabase.beginTransaction();
             try {
                 sQLiteCursor9 = sQLiteDatabase.queryFinalized("SELECT mid, uid, send_state, date, data, ttl, replydata FROM scheduled_messages_v2 WHERE 1", new Object[0]);
-            } catch (Exception e7) {
-                FileLog.e(e7);
+            } catch (Exception e) {
+                FileLog.e(e);
                 sQLiteCursor9 = null;
             }
             if (sQLiteCursor9 != null) {
@@ -678,8 +678,8 @@ public class DatabaseMigrationHelper {
             sQLiteDatabase.beginTransaction();
             try {
                 sQLiteCursor8 = sQLiteDatabase.queryFinalized("SELECT mid, uid, date, type, data FROM media_v2 WHERE 1", new Object[0]);
-            } catch (Exception e10) {
-                FileLog.e(e10);
+            } catch (Exception e7) {
+                FileLog.e(e7);
                 sQLiteCursor8 = null;
             }
             if (sQLiteCursor8 != null) {
@@ -721,8 +721,8 @@ public class DatabaseMigrationHelper {
             sQLiteDatabase.beginTransaction();
             try {
                 sQLiteCursor4 = sQLiteDatabase.queryFinalized("SELECT r.random_id, r.mid, m.uid FROM randoms as r INNER JOIN messages as m ON r.mid = m.mid WHERE 1", new Object[0]);
-            } catch (Exception e11) {
-                FileLog.e(e11);
+            } catch (Exception e10) {
+                FileLog.e(e10);
                 sQLiteCursor4 = null;
             }
             if (sQLiteCursor4 != null) {
@@ -745,8 +745,8 @@ public class DatabaseMigrationHelper {
             }
             try {
                 sQLiteCursor5 = sQLiteDatabase.queryFinalized("SELECT p.mid, m.uid, p.id FROM polls as p INNER JOIN messages as m ON p.mid = m.mid WHERE 1", new Object[0]);
-            } catch (Exception e12) {
-                FileLog.e(e12);
+            } catch (Exception e11) {
+                FileLog.e(e11);
                 sQLiteCursor5 = null;
             }
             if (sQLiteCursor5 != null) {
@@ -769,8 +769,8 @@ public class DatabaseMigrationHelper {
             }
             try {
                 sQLiteCursor6 = sQLiteDatabase.queryFinalized("SELECT wp.id, wp.mid, m.uid FROM webpage_pending as wp INNER JOIN messages as m ON wp.mid = m.mid WHERE 1", new Object[0]);
-            } catch (Exception e13) {
-                FileLog.e(e13);
+            } catch (Exception e12) {
+                FileLog.e(e12);
                 sQLiteCursor6 = null;
             }
             if (sQLiteCursor6 != null) {
@@ -793,8 +793,8 @@ public class DatabaseMigrationHelper {
             }
             try {
                 sQLiteCursor7 = sQLiteDatabase.queryFinalized("SELECT et.mid, m.uid, et.date, et.media FROM enc_tasks_v3 as et INNER JOIN messages as m ON et.mid = m.mid WHERE 1", new Object[0]);
-            } catch (Exception e14) {
-                FileLog.e(e14);
+            } catch (Exception e13) {
+                FileLog.e(e13);
                 sQLiteCursor7 = null;
             }
             if (sQLiteCursor7 != null) {
@@ -834,8 +834,8 @@ public class DatabaseMigrationHelper {
             sQLiteDatabase.beginTransaction();
             try {
                 sQLiteCursor2 = sQLiteDatabase.queryFinalized("SELECT mid, uid, read_state, send_state, date, data, out, ttl, media, replydata, imp, mention, forwards, replies_data, thread_reply_id FROM messages WHERE 1", new Object[0]);
-            } catch (Exception e15) {
-                FileLog.e(e15);
+            } catch (Exception e14) {
+                FileLog.e(e14);
                 sQLiteCursor2 = null;
             }
             if (sQLiteCursor2 != null) {
@@ -1030,8 +1030,8 @@ public class DatabaseMigrationHelper {
             sQLiteDatabase2.beginTransaction();
             try {
                 sQLiteCursor = sQLiteDatabase2.queryFinalized("SELECT mid, uid, date, type, data FROM media_v3 WHERE 1", new Object[0]);
-            } catch (Exception e16) {
-                FileLog.e(e16);
+            } catch (Exception e15) {
+                FileLog.e(e15);
                 sQLiteCursor = null;
             }
             if (sQLiteCursor != null) {

@@ -1,58 +1,32 @@
 package org.telegram.ui.Components;
 
-import android.app.Activity;
-import android.view.View;
-import android.widget.ImageView;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationsController;
-import org.telegram.messenger.NotificationsSettingsFacade;
-import org.telegram.messenger.R;
-
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class oe implements View.OnClickListener {
-    public final /* synthetic */ org.telegram.ui.co a;
-    public final /* synthetic */ Activity b;
-    public final /* synthetic */ ChatActivityEnterView c;
+public final class oe implements b5 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ChatActivityEnterView b;
 
-    public oe(ChatActivityEnterView chatActivityEnterView, org.telegram.ui.co coVar, Activity activity) {
-        this.c = chatActivityEnterView;
-        this.a = coVar;
-        this.b = activity;
+    public /* synthetic */ oe(ChatActivityEnterView chatActivityEnterView, int i10) {
+        this.a = i10;
+        this.b = chatActivityEnterView;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        String str;
-        int i10;
-        org.telegram.ui.co coVar = this.a;
-        if (coVar == null) {
-            return;
+    @Override // org.telegram.ui.Components.b5
+    public final void J(int i10, int i11, boolean z10) {
+        switch (this.a) {
+            case 0:
+                this.b.U0(i10, z10, i11, true, 0L);
+                break;
+            default:
+                ChatActivityEnterView chatActivityEnterView = this.b;
+                chatActivityEnterView.U0(i10, z10, i11, true, 0L);
+                kf kfVar = chatActivityEnterView.L0;
+                if (kfVar != null) {
+                    kfVar.i();
+                    chatActivityEnterView.L0 = null;
+                    break;
+                }
+                break;
         }
-        ChatActivityEnterView chatActivityEnterView = this.c;
-        chatActivityEnterView.f2 = !chatActivityEnterView.f2;
-        if (chatActivityEnterView.e0 == null) {
-            chatActivityEnterView.e0 = new mr(this.b, R.drawable.input_notify_on, org.telegram.ui.ActionBar.j6.Wk);
-        }
-        chatActivityEnterView.e0.a(chatActivityEnterView.f2, true);
-        chatActivityEnterView.H1.setImageDrawable(chatActivityEnterView.e0);
-        MessagesController.getNotificationsSettings(chatActivityEnterView.Q).edit().putBoolean(NotificationsSettingsFacade.PROPERTY_SILENT + chatActivityEnterView.P2, chatActivityEnterView.f2).commit();
-        NotificationsController.getInstance(chatActivityEnterView.Q).updateServerNotificationsSettings(chatActivityEnterView.P2, coVar == null ? 0L : coVar.d());
-        coVar.Q7();
-        UndoView undoView = coVar.y3;
-        if (undoView != null) {
-            undoView.j(!chatActivityEnterView.f2 ? 54 : 55, 0L, null);
-        }
-        ImageView imageView = chatActivityEnterView.H1;
-        if (chatActivityEnterView.f2) {
-            str = "AccDescrChanSilentOn";
-            i10 = R.string.AccDescrChanSilentOn;
-        } else {
-            str = "AccDescrChanSilentOff";
-            i10 = R.string.AccDescrChanSilentOff;
-        }
-        imageView.setContentDescription(LocaleController.getString(str, i10));
-        chatActivityEnterView.G1(true);
     }
 }

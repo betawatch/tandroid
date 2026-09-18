@@ -4,10 +4,10 @@ import java.util.Date;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public abstract class y7 {
-    public static m2.t a(String str) {
+    public static lf.i a(String str) {
         JSONObject jSONObject = new JSONObject(str);
         String a2 = q8.a(jSONObject.getString("id"));
         long j3 = jSONObject.getLong("created");
@@ -17,6 +17,6 @@ public abstract class y7 {
         JSONObject jSONObject2 = jSONObject.getJSONObject("card");
         uc.a aVar = new uc.a(null, Integer.valueOf(jSONObject2.getInt("exp_month")), Integer.valueOf(jSONObject2.getInt("exp_year")), null, q8.a(jSONObject2.optString("name")), q8.a(jSONObject2.optString("address_line1")), q8.a(jSONObject2.optString("address_line2")), q8.a(jSONObject2.optString("address_city")), q8.a(jSONObject2.optString("address_state")), q8.a(jSONObject2.optString("address_zip")), q8.a(jSONObject2.optString("address_country")), s8.a(q8.a(jSONObject2.optString("brand"))), q8.a(jSONObject2.optString("last4")), q8.a(jSONObject2.optString("fingerprint")), s8.b(q8.a(jSONObject2.optString("funding"))), q8.a(jSONObject2.optString("country")), q8.a(jSONObject2.optString("currency")));
         new Date(j3 * 1000);
-        return new m2.t(a2, valueOf, aVar, str2);
+        return new lf.i(a2, valueOf, aVar, str2);
     }
 }

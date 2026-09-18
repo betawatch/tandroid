@@ -1,9 +1,37 @@
 package a9;
 
-import android.os.IBinder;
+import com.google.android.gms.tasks.TaskCompletionSource;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
-public interface m0 {
-    Object a(IBinder iBinder);
+public final class m0 extends k0 {
+    public final /* synthetic */ TaskCompletionSource h;
+    public final /* synthetic */ k0 n;
+    public final /* synthetic */ e r;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public m0(e eVar, TaskCompletionSource taskCompletionSource, TaskCompletionSource taskCompletionSource2, k0 k0Var) {
+        super(taskCompletionSource);
+        this.h = taskCompletionSource2;
+        this.n = k0Var;
+        this.r = eVar;
+    }
+
+    @Override // a9.k0
+    public final void b() {
+        synchronized (this.r.f) {
+            try {
+                e eVar = this.r;
+                TaskCompletionSource taskCompletionSource = this.h;
+                eVar.e.add(taskCompletionSource);
+                taskCompletionSource.getTask().addOnCompleteListener(new n4.y(2, eVar, taskCompletionSource));
+                if (this.r.l.getAndIncrement() > 0) {
+                    this.r.b.b("Already connected to the service.", new Object[0]);
+                }
+                e.b(this.r, this.n);
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
+    }
 }

@@ -7,48 +7,48 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageLoader;
 import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class m51 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ j71 b;
+    public final /* synthetic */ i71 b;
 
-    public /* synthetic */ m51(j71 j71Var, int i10) {
+    public /* synthetic */ m51(i71 i71Var, int i10) {
         this.a = i10;
-        this.b = j71Var;
+        this.b = i71Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                j71 j71Var = this.b;
-                j71Var.getClass();
-                HashSet hashSet = ah.y0.a;
+                i71 i71Var = this.b;
+                i71Var.getClass();
+                HashSet hashSet = zg.f0.a;
                 ff.c cacheOutQueue = ImageLoader.getInstance().getCacheOutQueue();
                 if (cacheOutQueue.b == null) {
                     cacheOutQueue.b = new CountDownLatch(1);
                 }
-                ah.y0.b = true;
-                ah.y0.e = false;
-                ah.y0.g = false;
-                AndroidUtilities.runOnUIThread(new m51(j71Var, 2), 0L);
+                zg.f0.b = true;
+                zg.f0.e = false;
+                zg.f0.g = false;
+                AndroidUtilities.runOnUIThread(new m51(i71Var, 2), 0L);
                 break;
             case 1:
-                j71 j71Var2 = this.b;
-                ArrayList arrayList = j71Var2.A1;
+                i71 i71Var2 = this.b;
+                ArrayList arrayList = i71Var2.A1;
                 if (arrayList != null) {
                     arrayList.clear();
                 }
-                ArrayList arrayList2 = j71Var2.B1;
+                ArrayList arrayList2 = i71Var2.B1;
                 if (arrayList2 != null) {
                     arrayList2.clear();
                 }
-                ArrayList arrayList3 = j71Var2.D1;
+                ArrayList arrayList3 = i71Var2.D1;
                 if (arrayList3 != null) {
                     arrayList3.clear();
                 }
-                j71Var2.q0.E(true);
+                i71Var2.q0.E(true);
                 break;
             case 2:
                 this.b.U1.start();
@@ -57,9 +57,9 @@ public final /* synthetic */ class m51 implements Runnable {
                 this.b.B(true, true, true);
                 break;
             default:
-                j71 j71Var3 = this.b;
+                i71 i71Var3 = this.b;
                 NotificationCenter globalInstance = NotificationCenter.getGlobalInstance();
-                m51 m51Var = j71Var3.R1;
+                m51 m51Var = i71Var3.R1;
                 globalInstance.removeDelayed(m51Var);
                 NotificationCenter.getGlobalInstance().doOnIdle(m51Var);
                 break;

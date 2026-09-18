@@ -1,5 +1,7 @@
 package a5;
 
+import ai.c9;
+import ai.g3;
 import android.animation.ValueAnimator;
 import android.content.res.ColorStateList;
 import android.content.res.Resources;
@@ -17,25 +19,24 @@ import android.util.SparseArray;
 import android.util.Xml;
 import android.view.animation.Interpolator;
 import b2.s;
-import bi.k8;
-import bi.t2;
 import c3.h;
 import c3.i;
 import c3.p;
 import c3.u;
 import c5.v;
+import ci.s7;
 import com.google.android.gms.common.api.internal.l;
 import com.google.android.gms.common.api.internal.w;
 import com.google.android.gms.internal.cast.c0;
 import com.google.firebase.messaging.n;
-import di.s7;
 import e2.b0;
 import e9.f1;
 import e9.j0;
 import e9.k0;
 import e9.m0;
-import fg.f;
 import g2.g;
+import gg.x1;
+import h0.c;
 import i9.r;
 import ia.d;
 import j$.util.DesugarCollections;
@@ -55,46 +56,48 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.zip.Deflater;
-import ji.b5;
 import m.p3;
-import m2.t;
+import m4.a0;
+import m4.l0;
+import ni.f;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.Components.gi;
-import org.telegram.ui.Components.ll0;
-import org.telegram.ui.Components.pr;
-import org.telegram.ui.ua0;
-import org.telegram.ui.web.g1;
+import org.telegram.ui.Components.ml0;
+import org.telegram.ui.Components.qr;
+import org.telegram.ui.wa0;
+import org.telegram.ui.web.m;
 import org.xmlpull.v1.XmlPullParserException;
-import sg.p0;
+import rg.w1;
 import u2.f0;
 import u2.h0;
 import u2.i0;
-import v7.a6;
-import v7.c8;
+import u2.t;
 import v7.d8;
 import v7.d9;
+import v7.e8;
 import v7.j;
 import v7.k6;
-import v7.q8;
+import v7.r1;
 import v7.t6;
+import v7.t8;
 import x7.d0;
 import x7.e0;
 import x7.i9;
 import x7.ia;
 import x7.p7;
-import yf.a0;
 import yf.e;
+import yf.z;
 import z7.ib;
 import z7.we;
 import z7.x;
 import z7.y;
 import z7.zf;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public class a implements i, r {
     public final /* synthetic */ int a;
@@ -116,7 +119,7 @@ public class a implements i, r {
      */
     /* JADX WARN: Code restructure failed: missing block: B:67:0x01e2, code lost:
     
-        r0 = new pf.b(r13, r7);
+        r0 = new of.b(r13, r7);
      */
     /* JADX WARN: Code restructure failed: missing block: B:68:0x01e9, code lost:
     
@@ -210,16 +213,16 @@ public class a implements i, r {
      */
     /* JADX WARN: Code restructure failed: missing block: B:98:0x01ef, code lost:
     
-        r0 = new pf.b(r6, r5, r12);
+        r0 = new of.b(r6, r5, r12);
      */
     /* JADX WARN: Code restructure failed: missing block: B:99:0x01f5, code lost:
     
-        r0 = new pf.b(r6, r12);
+        r0 = new of.b(r6, r12);
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static a e(Resources resources, int i10, Resources.Theme theme) {
+    public static a g(Resources resources, int i10, Resources.Theme theme) {
         int next;
         float f7;
         int i11;
@@ -241,7 +244,7 @@ public class a implements i, r {
         name.getClass();
         if (!name.equals("gradient")) {
             if (name.equals("selector")) {
-                ColorStateList b10 = h0.c.b(resources, xml, asAttributeSet, theme);
+                ColorStateList b10 = c.b(resources, xml, asAttributeSet, theme);
                 return new a((Shader) null, b10, b10.getDefaultColor());
             }
             throw new XmlPullParserException(xml.getPositionDescription() + ": unsupported complex color tag " + name);
@@ -334,21 +337,21 @@ public class a implements i, r {
             case 22:
                 d9 d9Var = d9.c;
                 f fVar = (f) this.c;
-                ((c8) this.d).h = false;
-                c8 c8Var = (c8) this.d;
-                c8Var.f = Boolean.FALSE;
-                fVar.a = new d8(c8Var);
+                ((d8) this.d).h = false;
+                d8 d8Var = (d8) this.d;
+                d8Var.f = Boolean.FALSE;
+                fVar.a = new e8(d8Var);
                 try {
                     d9.b();
                     k6 k6Var = new k6(fVar);
-                    t tVar = new t(27);
-                    d9Var.a(tVar);
-                    HashMap hashMap = new HashMap((HashMap) tVar.b);
-                    HashMap hashMap2 = new HashMap((HashMap) tVar.c);
-                    v7.i iVar = (v7.i) tVar.d;
+                    lf.i iVar = new lf.i(29);
+                    d9Var.a(iVar);
+                    HashMap hashMap = new HashMap((HashMap) iVar.b);
+                    HashMap hashMap2 = new HashMap((HashMap) iVar.c);
+                    v7.i iVar2 = (v7.i) iVar.d;
                     ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
                     try {
-                        jVar = new j(byteArrayOutputStream, hashMap, hashMap2, iVar);
+                        jVar = new j(byteArrayOutputStream, hashMap, hashMap2, iVar2);
                         dVar = (d) hashMap.get(k6.class);
                     } catch (IOException unused) {
                     }
@@ -357,25 +360,25 @@ public class a implements i, r {
                     }
                     dVar.a(k6Var, jVar);
                     return byteArrayOutputStream.toByteArray();
-                } catch (UnsupportedEncodingException e7) {
-                    throw new UnsupportedOperationException("Failed to covert logging to UTF-8 byte array", e7);
+                } catch (UnsupportedEncodingException e) {
+                    throw new UnsupportedOperationException("Failed to covert logging to UTF-8 byte array", e);
                 }
             case 23:
             default:
                 zf zfVar = zf.c;
                 p3 p3Var = (p3) this.c;
-                ((c8) this.d).h = false;
-                c8 c8Var2 = (c8) this.d;
-                c8Var2.f = Boolean.FALSE;
-                p3Var.a = new we(c8Var2);
+                ((d8) this.d).h = false;
+                d8 d8Var2 = (d8) this.d;
+                d8Var2.f = Boolean.FALSE;
+                p3Var.a = new we(d8Var2);
                 try {
                     zf.b();
                     ib ibVar = new ib(p3Var);
-                    a6 a6Var = new a6(10);
-                    zfVar.a(a6Var);
-                    HashMap hashMap3 = new HashMap((HashMap) a6Var.b);
-                    HashMap hashMap4 = new HashMap((HashMap) a6Var.c);
-                    x xVar = (x) a6Var.d;
+                    r1 r1Var = new r1(12);
+                    zfVar.a(r1Var);
+                    HashMap hashMap3 = new HashMap((HashMap) r1Var.b);
+                    HashMap hashMap4 = new HashMap((HashMap) r1Var.d);
+                    x xVar = (x) r1Var.c;
                     ByteArrayOutputStream byteArrayOutputStream2 = new ByteArrayOutputStream();
                     try {
                         yVar = new y(byteArrayOutputStream2, hashMap3, hashMap4, xVar);
@@ -387,24 +390,24 @@ public class a implements i, r {
                     }
                     dVar3.a(ibVar, yVar);
                     return byteArrayOutputStream2.toByteArray();
-                } catch (UnsupportedEncodingException e10) {
-                    throw new UnsupportedOperationException("Failed to covert logging to UTF-8 byte array", e10);
+                } catch (UnsupportedEncodingException e7) {
+                    throw new UnsupportedOperationException("Failed to covert logging to UTF-8 byte array", e7);
                 }
             case 24:
                 ia iaVar = ia.c;
                 n nVar = (n) this.c;
-                ((c8) this.d).h = false;
-                c8 c8Var3 = (c8) this.d;
-                c8Var3.f = Boolean.FALSE;
-                nVar.a = new i9(c8Var3);
+                ((d8) this.d).h = false;
+                d8 d8Var3 = (d8) this.d;
+                d8Var3.f = Boolean.FALSE;
+                nVar.a = new i9(d8Var3);
                 try {
                     ia.b();
                     p7 p7Var = new p7(nVar);
-                    a6 a6Var2 = new a6(4);
-                    iaVar.a(a6Var2);
-                    HashMap hashMap5 = new HashMap((HashMap) a6Var2.b);
-                    HashMap hashMap6 = new HashMap((HashMap) a6Var2.c);
-                    d0 d0Var = (d0) a6Var2.d;
+                    r1 r1Var2 = new r1(6);
+                    iaVar.a(r1Var2);
+                    HashMap hashMap5 = new HashMap((HashMap) r1Var2.b);
+                    HashMap hashMap6 = new HashMap((HashMap) r1Var2.d);
+                    d0 d0Var = (d0) r1Var2.c;
                     ByteArrayOutputStream byteArrayOutputStream3 = new ByteArrayOutputStream();
                     try {
                         e0Var = new e0(byteArrayOutputStream3, hashMap5, hashMap6, d0Var);
@@ -416,8 +419,8 @@ public class a implements i, r {
                     }
                     dVar2.a(p7Var, e0Var);
                     return byteArrayOutputStream3.toByteArray();
-                } catch (UnsupportedEncodingException e11) {
-                    throw new UnsupportedOperationException("Failed to covert logging to UTF-8 byte array", e11);
+                } catch (UnsupportedEncodingException e10) {
+                    throw new UnsupportedOperationException("Failed to covert logging to UTF-8 byte array", e10);
                 }
         }
     }
@@ -449,25 +452,99 @@ public class a implements i, r {
             if (z10 || ((Bitmap[]) this.d)[i13] == null) {
                 Bitmap bitmap = ((Bitmap[]) this.d)[i13];
                 if (bitmap != null) {
-                    Utilities.globalQueue.postRunnable(new p0(bitmap, 14));
+                    Utilities.globalQueue.postRunnable(new w1(bitmap, 18));
                 }
                 ((Bitmap[]) this.d)[i13] = Bitmap.createBitmap(i11, i10, Bitmap.Config.ARGB_8888);
             }
-            a0[] a0VarArr = (a0[]) this.c;
-            if (a0VarArr[i13] == null) {
-                a0VarArr[i13] = new a0(i11 * i10 * 2);
+            z[] zVarArr = (z[]) this.c;
+            if (zVarArr[i13] == null) {
+                zVarArr[i13] = new z(i11 * i10 * 2);
             }
         }
     }
 
-    public sa.b b() {
+    @Override // c3.i
+    public h b(p pVar, long j3) {
+        long j10;
+        switch (this.a) {
+            case 8:
+                long position = pVar.getPosition();
+                long l4 = l(pVar);
+                long i10 = pVar.i();
+                pVar.k(Math.max(6, ((u) this.c).c));
+                long l10 = l(pVar);
+                return (l4 > j3 || l10 <= j3) ? l10 <= j3 ? new h(-2, l10, pVar.i()) : new h(-1, l4, position) : new h(0, -9223372036854775807L, i10);
+            default:
+                long position2 = pVar.getPosition();
+                int min = (int) Math.min(112800, pVar.getLength() - position2);
+                e2.v vVar = (e2.v) this.d;
+                vVar.G(min);
+                pVar.a(0, min, vVar.a);
+                int i11 = vVar.c;
+                long j11 = -1;
+                long j12 = -1;
+                long j13 = -9223372036854775807L;
+                while (true) {
+                    if (vVar.a() >= 188) {
+                        byte[] bArr = vVar.a;
+                        int i12 = vVar.b;
+                        while (true) {
+                            if (i12 < i11) {
+                                j10 = -9223372036854775807L;
+                                if (bArr[i12] != 71) {
+                                    i12++;
+                                }
+                            } else {
+                                j10 = -9223372036854775807L;
+                            }
+                        }
+                        int i13 = i12 + 188;
+                        if (i13 <= i11) {
+                            long a2 = t8.a(vVar, i12, this.b);
+                            if (a2 != j10) {
+                                long b10 = ((b0) this.c).b(a2);
+                                if (b10 > j3) {
+                                    return j13 == j10 ? new h(-1, b10, position2) : new h(0, -9223372036854775807L, position2 + j12);
+                                }
+                                j13 = b10;
+                                if (100000 + j13 > j3) {
+                                    return new h(0, -9223372036854775807L, position2 + i12);
+                                }
+                                j12 = i12;
+                            }
+                            vVar.J(i13);
+                            j11 = i13;
+                        }
+                    } else {
+                        j10 = -9223372036854775807L;
+                    }
+                }
+                return j13 != j10 ? new h(-2, j13, position2 + j11) : h.d;
+        }
+    }
+
+    public sa.b c() {
         if ("".isEmpty()) {
             return new sa.b((String) this.c, ((Long) this.d).longValue(), this.b);
         }
         throw new IllegalStateException("Missing required properties:".concat(""));
     }
 
-    public k0 c() {
+    @Override // c3.i
+    public void d() {
+        switch (this.a) {
+            case 8:
+                break;
+            default:
+                e2.v vVar = (e2.v) this.d;
+                byte[] bArr = e2.d0.b;
+                vVar.getClass();
+                vVar.H(bArr.length, bArr);
+                break;
+        }
+    }
+
+    public k0 e() {
         f1 f1Var;
         j0 j0Var = (j0) this.d;
         if (j0Var != null) {
@@ -502,7 +579,7 @@ public class a implements i, r {
         throw j0Var2.a();
     }
 
-    public void d(int i10) {
+    public void f(int i10) {
         int i11 = this.b;
         if (i10 == i11) {
             return;
@@ -514,7 +591,7 @@ public class a implements i, r {
         throw new IllegalStateException(sb2.toString());
     }
 
-    public void f(String str, Object... objArr) {
+    public void i(String str, Object... objArr) {
         if (this.b <= 3) {
             String str2 = (String) this.c;
             if (objArr.length > 0) {
@@ -524,117 +601,57 @@ public class a implements i, r {
         }
     }
 
-    @Override // c3.i
-    public h g(p pVar, long j3) {
-        long j10;
-        switch (this.a) {
-            case 8:
-                long position = pVar.getPosition();
-                long k10 = k(pVar);
-                long k11 = pVar.k();
-                pVar.l(Math.max(6, ((u) this.c).c));
-                long k12 = k(pVar);
-                return (k10 > j3 || k12 <= j3) ? k12 <= j3 ? new h(-2, k12, pVar.k()) : new h(-1, k10, position) : new h(0, -9223372036854775807L, k11);
-            default:
-                long position2 = pVar.getPosition();
-                int min = (int) Math.min(112800, pVar.getLength() - position2);
-                e2.v vVar = (e2.v) this.d;
-                vVar.G(min);
-                pVar.b(0, min, vVar.a);
-                int i10 = vVar.c;
-                long j11 = -1;
-                long j12 = -1;
-                long j13 = -9223372036854775807L;
-                while (true) {
-                    if (vVar.a() >= 188) {
-                        byte[] bArr = vVar.a;
-                        int i11 = vVar.b;
-                        while (true) {
-                            if (i11 < i10) {
-                                j10 = -9223372036854775807L;
-                                if (bArr[i11] != 71) {
-                                    i11++;
-                                }
-                            } else {
-                                j10 = -9223372036854775807L;
-                            }
-                        }
-                        int i12 = i11 + 188;
-                        if (i12 <= i10) {
-                            long a2 = q8.a(vVar, i11, this.b);
-                            if (a2 != j10) {
-                                long b10 = ((b0) this.c).b(a2);
-                                if (b10 > j3) {
-                                    return j13 == j10 ? new h(-1, b10, position2) : new h(0, -9223372036854775807L, position2 + j12);
-                                }
-                                j13 = b10;
-                                if (100000 + j13 > j3) {
-                                    return new h(0, -9223372036854775807L, position2 + i11);
-                                }
-                                j12 = i11;
-                            }
-                            vVar.J(i12);
-                            j11 = i12;
-                        }
-                    } else {
-                        j10 = -9223372036854775807L;
-                    }
-                }
-                return j13 != j10 ? new h(-2, j13, position2 + j11) : h.d;
-        }
-    }
-
-    public void i(e2.h hVar) {
+    public void j(e2.h hVar) {
         Iterator it = ((CopyOnWriteArrayList) this.d).iterator();
         while (it.hasNext()) {
             u2.j0 j0Var = (u2.j0) it.next();
-            e2.d0.U(j0Var.a, new g1(23, hVar, j0Var.b));
+            e2.d0.U(j0Var.a, new p2.b(24, hVar, j0Var.b));
         }
     }
 
-    public void j(int i10, s sVar, int i11, Object obj, long j3) {
-        i(new t2(11, this, new u2.b0(1, i10, sVar, i11, obj, e2.d0.e0(j3), -9223372036854775807L)));
+    public void k(int i10, s sVar, int i11, Object obj, long j3) {
+        j(new g3(11, this, new u2.b0(1, i10, sVar, i11, obj, e2.d0.e0(j3), -9223372036854775807L)));
     }
 
-    public long k(p pVar) {
-        int h;
+    public long l(p pVar) {
+        int e;
         c3.s sVar = (c3.s) this.d;
         u uVar = (u) this.c;
-        while (pVar.k() < pVar.getLength() - 6) {
+        while (pVar.i() < pVar.getLength() - 6) {
             int i10 = this.b;
-            long k10 = pVar.k();
+            long i11 = pVar.i();
             byte[] bArr = new byte[2];
-            int i11 = 0;
+            int i12 = 0;
             boolean b10 = false;
-            pVar.b(0, 2, bArr);
+            pVar.a(0, 2, bArr);
             if ((((bArr[0] & 255) << 8) | (bArr[1] & 255)) != i10) {
-                pVar.q();
-                pVar.l((int) (k10 - pVar.getPosition()));
+                pVar.p();
+                pVar.k((int) (i11 - pVar.getPosition()));
             } else {
                 e2.v vVar = new e2.v(16);
                 System.arraycopy(bArr, 0, vVar.a, 0, 2);
                 byte[] bArr2 = vVar.a;
-                while (i11 < 14 && (h = pVar.h(2 + i11, 14 - i11, bArr2)) != -1) {
-                    i11 += h;
+                while (i12 < 14 && (e = pVar.e(2 + i12, 14 - i12, bArr2)) != -1) {
+                    i12 += e;
                 }
-                vVar.I(i11);
-                pVar.q();
-                pVar.l((int) (k10 - pVar.getPosition()));
+                vVar.I(i12);
+                pVar.p();
+                pVar.k((int) (i11 - pVar.getPosition()));
                 b10 = c3.b.b(vVar, uVar, i10, sVar);
             }
             if (b10) {
                 break;
             }
-            pVar.l(1);
+            pVar.k(1);
         }
-        if (pVar.k() < pVar.getLength() - 6) {
+        if (pVar.i() < pVar.getLength() - 6) {
             return sVar.a;
         }
-        pVar.l((int) (pVar.getLength() - pVar.k()));
+        pVar.k((int) (pVar.getLength() - pVar.i()));
         return uVar.j;
     }
 
-    public Object l(int i10) {
+    public Object m(int i10) {
         SparseArray sparseArray = (SparseArray) this.c;
         if (this.b == -1) {
             this.b = 0;
@@ -652,41 +669,41 @@ public class a implements i, r {
         return sparseArray.valueAt(this.b);
     }
 
-    public boolean m() {
+    public boolean n() {
         ColorStateList colorStateList;
         return ((Shader) this.c) == null && (colorStateList = (ColorStateList) this.d) != null && colorStateList.isStateful();
     }
 
-    public void n(u2.t tVar, int i10, int i11, s sVar, int i12, Object obj, long j3, long j10) {
-        i(new h0(this, tVar, new u2.b0(i10, i11, sVar, i12, obj, e2.d0.e0(j3), e2.d0.e0(j10)), 1));
-    }
-
-    public void o(u2.t tVar, int i10, int i11, s sVar, int i12, Object obj, long j3, long j10) {
-        i(new h0(this, tVar, new u2.b0(i10, i11, sVar, i12, obj, e2.d0.e0(j3), e2.d0.e0(j10)), 0));
+    public void o(t tVar, int i10, int i11, s sVar, int i12, Object obj, long j3, long j10) {
+        j(new h0(this, tVar, new u2.b0(i10, i11, sVar, i12, obj, e2.d0.e0(j3), e2.d0.e0(j10)), 1));
     }
 
     @Override // i9.r
     public void onSuccess(Object obj) {
         List list = (List) obj;
-        m4.a0 a0Var = ((m4.k0) this.d).g;
+        a0 a0Var = ((l0) this.d).g;
         Handler handler = a0Var.l;
         m4.r rVar = (m4.r) this.c;
-        e2.d0.U(handler, new b5(a0Var, rVar, new k8(this, this.b, list, rVar, 6)));
+        e2.d0.U(handler, new x1(a0Var, rVar, new c9(this, this.b, list, rVar, 6)));
     }
 
-    public void p(u2.t tVar, int i10, int i11, s sVar, int i12, Object obj, long j3, long j10, IOException iOException, boolean z10) {
-        i(new i0(this, tVar, new u2.b0(i10, i11, sVar, i12, obj, e2.d0.e0(j3), e2.d0.e0(j10)), iOException, z10));
+    public void p(t tVar, int i10, int i11, s sVar, int i12, Object obj, long j3, long j10) {
+        j(new h0(this, tVar, new u2.b0(i10, i11, sVar, i12, obj, e2.d0.e0(j3), e2.d0.e0(j10)), 0));
     }
 
-    public void q(u2.t tVar, int i10, IOException iOException, boolean z10) {
-        p(tVar, i10, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L, iOException, z10);
+    public void q(t tVar, int i10, int i11, s sVar, int i12, Object obj, long j3, long j10, IOException iOException, boolean z10) {
+        j(new i0(this, tVar, new u2.b0(i10, i11, sVar, i12, obj, e2.d0.e0(j3), e2.d0.e0(j10)), iOException, z10));
     }
 
-    public void r(u2.t tVar, int i10, int i11, s sVar, int i12, Object obj, long j3, long j10, int i13) {
-        i(new ua0(this, tVar, new u2.b0(i10, i11, sVar, i12, obj, e2.d0.e0(j3), e2.d0.e0(j10)), i13, 1));
+    public void r(t tVar, int i10, IOException iOException, boolean z10) {
+        q(tVar, i10, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L, iOException, z10);
     }
 
-    public a t(Object obj, Object obj2) {
+    public void s(t tVar, int i10, int i11, s sVar, int i12, Object obj, long j3, long j10, int i13) {
+        j(new wa0(this, tVar, new u2.b0(i10, i11, sVar, i12, obj, e2.d0.e0(j3), e2.d0.e0(j10)), i13, 1));
+    }
+
+    public a u(Object obj, Object obj2) {
         int i10 = (this.b + 1) * 2;
         Object[] objArr = (Object[]) this.c;
         if (i10 > objArr.length) {
@@ -707,11 +724,11 @@ public class a implements i, r {
         return this;
     }
 
-    public void u(int i10) {
-        v(i10, 200L, pr.f);
+    public void v(int i10) {
+        w(i10, 200L, qr.f);
     }
 
-    public void v(int i10, long j3, Interpolator interpolator) {
+    public void w(int i10, long j3, Interpolator interpolator) {
         ValueAnimator valueAnimator = (ValueAnimator) this.c;
         if (valueAnimator != null) {
             valueAnimator.removeAllListeners();
@@ -721,35 +738,21 @@ public class a implements i, r {
         this.b = 0;
         ValueAnimator ofInt = ValueAnimator.ofInt(0, i10);
         this.c = ofInt;
-        ofInt.addUpdateListener(new ah.m0(25, this, iArr));
+        ofInt.addUpdateListener(new ai.x(24, this, iArr));
         ((ValueAnimator) this.c).addListener(new gi(this, i10, iArr, 1));
         ((ValueAnimator) this.c).setDuration(j3);
         ((ValueAnimator) this.c).setInterpolator(interpolator);
         ((ValueAnimator) this.c).start();
     }
 
-    @Override // c3.i
-    public void w() {
-        switch (this.a) {
-            case 8:
-                break;
-            default:
-                e2.v vVar = (e2.v) this.d;
-                byte[] bArr = e2.d0.b;
-                vVar.getClass();
-                vVar.H(bArr.length, bArr);
-                break;
-        }
-    }
-
     public List x(CharSequence charSequence) {
         charSequence.getClass();
-        xa.c cVar = (xa.c) this.d;
-        cVar.getClass();
-        d9.i iVar = new d9.i(cVar, this, charSequence);
+        a6.i iVar = (a6.i) this.d;
+        iVar.getClass();
+        d9.h hVar = new d9.h(iVar, this, charSequence);
         ArrayList arrayList = new ArrayList();
-        while (iVar.hasNext()) {
-            arrayList.add((String) iVar.next());
+        while (hVar.hasNext()) {
+            arrayList.add((String) hVar.next());
         }
         return DesugarCollections.unmodifiableList(arrayList);
     }
@@ -758,7 +761,7 @@ public class a implements i, r {
         u2.b0 b0Var = new u2.b0(1, i10, null, 3, null, e2.d0.e0(j3), e2.d0.e0(j10));
         f0 f0Var = (f0) this.c;
         f0Var.getClass();
-        i(new s7(this, f0Var, b0Var, 3));
+        j(new s7(this, f0Var, b0Var, 3));
     }
 
     public void z(String str, k6.c cVar) {
@@ -812,7 +815,7 @@ public class a implements i, r {
         this.a = i10;
         switch (i10) {
             case 13:
-                this.c = new hh.a();
+                this.c = new gh.a();
                 break;
             case 19:
                 this.c = new Object[8];
@@ -820,7 +823,7 @@ public class a implements i, r {
                 break;
             case 25:
                 int i11 = e.y;
-                this.c = new a0[i11];
+                this.c = new z[i11];
                 this.d = new Bitmap[i11];
                 break;
             default:
@@ -832,23 +835,15 @@ public class a implements i, r {
 
     public a(n nVar, int i10) {
         this.a = 24;
-        this.d = new c8();
+        this.d = new d8();
         this.c = nVar;
         ia.b();
         this.b = i10;
     }
 
-    public a(f fVar, int i10) {
-        this.a = 22;
-        this.d = new c8();
-        this.c = fVar;
-        d9.b();
-        this.b = i10;
-    }
-
     public a(String str, String[] strArr) {
         String sb2;
-        this.a = 16;
+        this.a = 17;
         if (strArr.length == 0) {
             sb2 = "";
         } else {
@@ -873,7 +868,7 @@ public class a implements i, r {
         this.b = i10;
     }
 
-    private final /* synthetic */ void s() {
+    private final /* synthetic */ void t() {
     }
 
     @Override // i9.r
@@ -882,25 +877,33 @@ public class a implements i, r {
 
     public a(p3 p3Var, int i10) {
         this.a = 26;
-        this.d = new c8();
+        this.d = new d8();
         this.c = p3Var;
         zf.b();
         this.b = i10;
     }
 
-    public a(ll0 ll0Var) {
+    public a(f fVar, int i10) {
+        this.a = 22;
+        this.d = new d8();
+        this.c = fVar;
+        d9.b();
+        this.b = i10;
+    }
+
+    public a(ml0 ml0Var) {
         this.a = 15;
-        this.d = ll0Var;
+        this.d = ml0Var;
     }
 
     public a(ByteBuffer byteBuffer, int i10, RectF rectF) {
-        this.a = 17;
+        this.a = 16;
         this.c = rectF;
         this.b = i10;
         try {
             this.d = File.createTempFile("paint", ".bin", ApplicationLoader.applicationContext.getCacheDir());
-        } catch (Exception e7) {
-            FileLog.e(e7);
+        } catch (Exception e) {
+            FileLog.e(e);
         }
         if (((File) this.d) == null) {
             return;
@@ -917,15 +920,15 @@ public class a implements i, r {
             }
             deflater.end();
             fileOutputStream.close();
-        } catch (Exception e10) {
-            FileLog.e(e10);
+        } catch (Exception e7) {
+            FileLog.e(e7);
         }
     }
 
-    public a(org.telegram.ui.web.n nVar) {
+    public a(m mVar) {
         this.a = 21;
         this.c = new SparseArray();
-        this.d = nVar;
+        this.d = mVar;
         this.b = -1;
     }
 
@@ -968,22 +971,22 @@ public class a implements i, r {
     public a(g gVar) {
         this.a = 11;
         b2.p pVar = new b2.p(6);
-        pVar.c = new rb.a(28);
+        pVar.c = new qb.b(28);
         this.d = pVar;
         this.c = gVar;
         this.b = 1;
     }
 
-    public a(xa.c cVar) {
+    public a(a6.i iVar) {
         this.a = 4;
-        this.d = cVar;
+        this.d = iVar;
         this.c = d9.c.a;
         this.b = ConnectionsManager.DEFAULT_DATACENTER_ID;
     }
 
-    public a(m4.k0 k0Var, m4.r rVar, int i10) {
+    public a(l0 l0Var, m4.r rVar, int i10) {
         this.a = 12;
-        this.d = k0Var;
+        this.d = l0Var;
         this.c = rVar;
         this.b = i10;
     }

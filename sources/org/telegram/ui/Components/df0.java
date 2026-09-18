@@ -5,7 +5,7 @@ import android.graphics.Matrix;
 import android.view.TextureView;
 import android.view.View;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class df0 extends TextureView {
     public final /* synthetic */ jf0 a;
@@ -29,17 +29,17 @@ public final class df0 extends TextureView {
         if (vzVar != null) {
             int width = getWidth();
             int height = getHeight();
-            pa paVar = vzVar.I;
-            if (paVar == null) {
+            na naVar = vzVar.I;
+            if (naVar == null) {
                 return;
             }
-            Matrix matrix2 = paVar.v;
+            Matrix matrix2 = naVar.v;
             matrix.invert(matrix2);
             float f7 = width;
             float f10 = height;
             matrix2.preScale(f7, f10);
             matrix2.postScale(1.0f / f7, 1.0f / f10);
-            paVar.c(matrix2);
+            naVar.c(matrix2);
             vzVar.e(false, false, false);
         }
     }

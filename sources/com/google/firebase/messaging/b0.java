@@ -1,73 +1,64 @@
 package com.google.firebase.messaging;
 
-import android.content.ComponentName;
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
+import android.os.Build;
+import android.util.Log;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
-public abstract class b0 {
-    public static final long a = TimeUnit.MINUTES.toMillis(1);
-    public static final Object b = new Object();
-    public static p8.a c;
+public final class b0 extends BroadcastReceiver {
+    public c0 a;
+    public final /* synthetic */ c0 b;
 
-    public static void a(Context context) {
-        if (c == null) {
-            p8.a aVar = new p8.a(context);
-            c = aVar;
-            synchronized (aVar.a) {
-                aVar.g = true;
-            }
-        }
+    public b0(c0 c0Var, c0 c0Var2) {
+        this.b = c0Var;
+        this.a = c0Var2;
     }
 
-    public static void b(Intent intent) {
-        synchronized (b) {
-            try {
-                if (c != null && intent.getBooleanExtra("com.google.firebase.iid.WakeLockHolder.wakefulintent", false)) {
-                    intent.putExtra("com.google.firebase.iid.WakeLockHolder.wakefulintent", false);
-                    c.c();
-                }
-            } catch (Throwable th2) {
-                throw th2;
-            }
+    public final void a() {
+        if (Log.isLoggable("FirebaseMessaging", 3) || (Build.VERSION.SDK_INT == 23 && Log.isLoggable("FirebaseMessaging", 3))) {
+            Log.d("FirebaseMessaging", "Connectivity change received registered");
         }
+        this.b.a.registerReceiver(this, new IntentFilter("android.net.conn.CONNECTIVITY_CHANGE"));
     }
 
-    public static void c(Context context, e0 e0Var, Intent intent) {
-        synchronized (b) {
-            try {
-                a(context);
-                boolean booleanExtra = intent.getBooleanExtra("com.google.firebase.iid.WakeLockHolder.wakefulintent", false);
-                intent.putExtra("com.google.firebase.iid.WakeLockHolder.wakefulintent", true);
-                if (!booleanExtra) {
-                    c.a(a);
-                }
-                e0Var.b(intent).addOnCompleteListener(new a1.c(intent, 16));
-            } catch (Throwable th2) {
-                throw th2;
+    /* JADX WARN: Removed duplicated region for block: B:21:0x002a A[Catch: all -> 0x0032, TryCatch #0 {all -> 0x0032, blocks: (B:3:0x0001, B:8:0x0007, B:12:0x000f, B:14:0x0018, B:16:0x001e, B:21:0x002a, B:22:0x0034), top: B:2:0x0001 }] */
+    @Override // android.content.BroadcastReceiver
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final synchronized void onReceive(Context context, Intent intent) {
+        boolean z10;
+        try {
+            c0 c0Var = this.a;
+            if (c0Var == null) {
+                return;
             }
-        }
-    }
-
-    public static ComponentName d(Context context, Intent intent) {
-        synchronized (b) {
-            try {
-                a(context);
-                boolean booleanExtra = intent.getBooleanExtra("com.google.firebase.iid.WakeLockHolder.wakefulintent", false);
-                intent.putExtra("com.google.firebase.iid.WakeLockHolder.wakefulintent", true);
-                ComponentName startService = context.startService(intent);
-                if (startService == null) {
-                    return null;
+            if (c0Var.e()) {
+                if (!Log.isLoggable("FirebaseMessaging", 3) && (Build.VERSION.SDK_INT != 23 || !Log.isLoggable("FirebaseMessaging", 3))) {
+                    z10 = false;
+                    if (z10) {
+                        Log.d("FirebaseMessaging", "Connectivity changed. Starting background sync.");
+                    }
+                    c0 c0Var2 = this.a;
+                    c0Var2.d.f.schedule(c0Var2, 0L, TimeUnit.SECONDS);
+                    context.unregisterReceiver(this);
+                    this.a = null;
                 }
-                if (!booleanExtra) {
-                    c.a(a);
+                z10 = true;
+                if (z10) {
                 }
-                return startService;
-            } catch (Throwable th2) {
-                throw th2;
+                c0 c0Var22 = this.a;
+                c0Var22.d.f.schedule(c0Var22, 0L, TimeUnit.SECONDS);
+                context.unregisterReceiver(this);
+                this.a = null;
             }
+        } catch (Throwable th2) {
+            throw th2;
         }
     }
 }

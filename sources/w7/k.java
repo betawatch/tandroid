@@ -4,7 +4,7 @@ import android.net.Uri;
 import java.util.Collections;
 import java.util.Map;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public abstract class k {
     public static g2.m a(m2.m mVar, String str, m2.j jVar, int i10) {
@@ -12,11 +12,11 @@ public abstract class k {
         Uri m10 = e2.a.m(str, jVar.c);
         long j3 = jVar.a;
         long j10 = jVar.b;
-        String b10 = mVar.b();
-        if (b10 == null) {
-            b10 = e2.a.m(((m2.b) mVar.b.get(0)).a, jVar.c).toString();
+        String a2 = mVar.a();
+        if (a2 == null) {
+            a2 = e2.a.m(((m2.b) mVar.b.get(0)).a, jVar.c).toString();
         }
-        String str2 = b10;
+        String str2 = a2;
         e2.d.i(m10, "The uri must be set.");
         return new g2.m(m10, 1, null, e9.f1.h, j3, j10, str2, i10);
     }

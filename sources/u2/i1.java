@@ -1,6 +1,6 @@
 package u2;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class i1 implements b1 {
     public int a;
@@ -11,22 +11,22 @@ public final class i1 implements b1 {
         this.c = k1Var;
     }
 
-    public final void a() {
-        if (this.b) {
-            return;
-        }
-        k1 k1Var = this.c;
-        k1Var.e.j(b2.r0.h(k1Var.s.r), k1Var.s, 0, null, 0L);
-        this.b = true;
-    }
-
     @Override // u2.b1
-    public final void b() {
+    public final void a() {
         k1 k1Var = this.c;
         if (k1Var.v) {
             return;
         }
-        k1Var.r.b();
+        k1Var.r.a();
+    }
+
+    public final void b() {
+        if (this.b) {
+            return;
+        }
+        k1 k1Var = this.c;
+        k1Var.e.k(b2.r0.h(k1Var.s.r), k1Var.s, 0, null, 0L);
+        this.b = true;
     }
 
     @Override // u2.b1
@@ -35,8 +35,8 @@ public final class i1 implements b1 {
     }
 
     @Override // u2.b1
-    public final int f(n4.y yVar, h2.g gVar, int i10) {
-        a();
+    public final int f(n4.y yVar, h2.h hVar, int i10) {
+        b();
         k1 k1Var = this.c;
         boolean z10 = k1Var.w;
         if (z10 && k1Var.x == null) {
@@ -44,7 +44,7 @@ public final class i1 implements b1 {
         }
         int i11 = this.a;
         if (i11 == 2) {
-            gVar.a(4);
+            hVar.addFlag(4);
             return -4;
         }
         if ((i10 & 2) != 0 || i11 == 0) {
@@ -56,11 +56,11 @@ public final class i1 implements b1 {
             return -3;
         }
         k1Var.x.getClass();
-        gVar.a(1);
-        gVar.h = 0L;
+        hVar.addFlag(1);
+        hVar.e = 0L;
         if ((i10 & 4) == 0) {
-            gVar.l(k1Var.y);
-            gVar.e.put(k1Var.x, 0, k1Var.y);
+            hVar.b(k1Var.y);
+            hVar.c.put(k1Var.x, 0, k1Var.y);
         }
         if ((i10 & 1) == 0) {
             this.a = 2;
@@ -69,8 +69,8 @@ public final class i1 implements b1 {
     }
 
     @Override // u2.b1
-    public final int m(long j3) {
-        a();
+    public final int j(long j3) {
+        b();
         if (j3 <= 0 || this.a == 2) {
             return 0;
         }

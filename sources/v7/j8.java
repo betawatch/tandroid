@@ -8,8 +8,9 @@ import android.os.Parcel;
 import android.os.RemoteException;
 import android.util.Log;
 import java.util.concurrent.atomic.AtomicBoolean;
+import org.telegram.messenger.BuildConfig;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public abstract class j8 {
     public static Context a;
@@ -18,7 +19,7 @@ public abstract class j8 {
     public static i8.e a(Context context) {
         i8.e eVar;
         n6.l.h(context);
-        Log.d("j8", "preferredRenderer: ".concat("null"));
+        Log.d("j8", "preferredRenderer: ".concat(BuildConfig.BETA_URL));
         i8.e eVar2 = b;
         if (eVar2 != null) {
             return eVar2;
@@ -51,8 +52,8 @@ public abstract class j8 {
                     O0.writeInt(12451000);
                     eVar.S0(O0, 6);
                     return b;
-                } catch (RemoteException e7) {
-                    throw new androidx.car.app.j(e7);
+                } catch (RemoteException e) {
+                    throw new androidx.car.app.j(e);
                 }
             } catch (IllegalAccessException unused) {
                 throw new IllegalStateException("Unable to call the default constructor of ".concat(loadClass.getName()));
@@ -73,18 +74,18 @@ public abstract class j8 {
         context.getApplicationContext();
         try {
             context2 = y6.e.c(context, y6.e.b, "com.google.android.gms.maps_dynamite").a;
-        } catch (Exception e7) {
+        } catch (Exception e) {
             try {
                 if ("com.google.android.gms.maps_dynamite".equals("com.google.android.gms.maps_dynamite")) {
-                    Log.e("j8", "Failed to load maps module, use pre-Chimera", e7);
+                    Log.e("j8", "Failed to load maps module, use pre-Chimera", e);
                     AtomicBoolean atomicBoolean = k6.g.a;
                     context2 = context.createPackageContext("com.google.android.gms", 3);
                 } else {
                     try {
                         Log.d("j8", "Attempting to load maps_dynamite again.");
                         context2 = y6.e.c(context, y6.e.b, "com.google.android.gms.maps_dynamite").a;
-                    } catch (Exception e10) {
-                        Log.e("j8", "Failed to load maps module, use pre-Chimera", e10);
+                    } catch (Exception e7) {
+                        Log.e("j8", "Failed to load maps module, use pre-Chimera", e7);
                         AtomicBoolean atomicBoolean2 = k6.g.a;
                         context2 = context.createPackageContext("com.google.android.gms", 3);
                     }

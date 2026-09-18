@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public abstract class p {
     public final b a;
@@ -61,9 +61,9 @@ public abstract class p {
             Log.w(bVar2.a, bVar2.d("Message send failed. Message exceeds maximum size", new Object[0]));
             throw new IllegalArgumentException("Message exceeds maximum size524288");
         }
-        com.google.android.gms.common.api.internal.v e7 = com.google.android.gms.common.api.internal.w.e();
-        e7.c = new b0(e0Var, str2, str, 1);
-        e7.a = 8405;
-        e0Var.e(1, e7.a()).addOnFailureListener(new e6.n(aVar, j3, 0));
+        com.google.android.gms.common.api.internal.v e = com.google.android.gms.common.api.internal.w.e();
+        e.c = new b0(e0Var, str2, str, 1);
+        e.a = 8405;
+        e0Var.e(1, e.a()).addOnFailureListener(new e6.n(aVar, j3, 0));
     }
 }

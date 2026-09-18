@@ -1,71 +1,41 @@
 package org.telegram.ui.Components;
 
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
+import android.widget.Toast;
+import java.util.List;
+import org.telegram.messenger.ChatThemeController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.tgnet.ResultCallback;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class ip implements org.telegram.ui.ActionBar.k6 {
-    public boolean a = false;
-    public final /* synthetic */ lp b;
+public final class ip implements ResultCallback {
+    public final /* synthetic */ ChatThemeController a;
+    public final /* synthetic */ mp b;
 
-    public ip(lp lpVar) {
-        this.b = lpVar;
+    public ip(mp mpVar, ChatThemeController chatThemeController) {
+        this.b = mpVar;
+        this.a = chatThemeController;
     }
 
-    @Override // org.telegram.ui.ActionBar.k6
-    public final void a(float f7) {
-        ArrayList arrayList;
-        lp lpVar = this.b;
-        jp jpVar = lpVar.h;
-        if (f7 == 0.0f && !this.a) {
-            if (jpVar != null && (arrayList = jpVar.d) != null) {
-                int size = arrayList.size();
-                int i10 = 0;
-                while (i10 < size) {
-                    Object obj = arrayList.get(i10);
-                    i10++;
-                    ((kp) obj).c = lpVar.N ? 1 : 0;
-                }
-            }
-            if (!lpVar.P) {
-                for (int i11 = 0; i11 < jpVar.h(); i11++) {
-                    ((kp) jpVar.d.get(i11)).getClass();
-                }
-            }
-            this.a = true;
-        }
-        xi0 xi0Var = lpVar.F;
-        int i12 = org.telegram.ui.ActionBar.j6.Oh;
-        xi0Var.setColorFilter(new PorterDuffColorFilter(lpVar.getThemedColor(i12), PorterDuff.Mode.MULTIPLY));
-        lpVar.setOverlayNavBarColor(lpVar.getThemedColor(org.telegram.ui.ActionBar.j6.a7));
-        if (lpVar.P) {
-            for (int i13 = 0; i13 < jpVar.h(); i13++) {
-                ((kp) jpVar.d.get(i13)).getClass();
-            }
-        }
-        if (f7 == 1.0f && this.a) {
-            lpVar.P = false;
-            this.a = false;
-        }
-        lpVar.D();
-        ah.w wVar = lpVar.Z;
-        if (wVar != null) {
-            int dp = AndroidUtilities.dp(0.0f);
-            int themedColor = lpVar.getThemedColor(org.telegram.ui.ActionBar.j6.d6);
-            int k10 = i0.a.k(lpVar.getThemedColor(i12), 76);
-            wVar.setBackground(org.telegram.ui.ActionBar.j6.i0(dp, dp, dp, dp, themedColor, k10, k10));
-        }
-        q6 q6Var = lpVar.a0;
-        if (q6Var != null) {
-            q6Var.setTextColor(lpVar.getThemedColor(i12));
-        }
-        lpVar.setBackgroundColor(lpVar.getThemedColor(org.telegram.ui.ActionBar.j6.h5));
+    @Override // org.telegram.tgnet.ResultCallback
+    public final void onComplete(Object obj) {
+        int i10;
+        ChatThemeController chatThemeController = this.a;
+        List<org.telegram.ui.ActionBar.e4> emojiThemes = chatThemeController.getEmojiThemes((chatThemeController.isGiftThemesFullyLoaded() ? 2 : 0) | 5);
+        mp mpVar = this.b;
+        i10 = ((org.telegram.ui.ActionBar.g3) mpVar).currentAccount;
+        NotificationCenter.getInstance(i10).doOnIdle(new oh(16, this, emojiThemes));
+        mpVar.b0 = false;
     }
 
-    @Override // org.telegram.ui.ActionBar.k6
-    public final void b() {
+    @Override // org.telegram.tgnet.ResultCallback
+    public final /* synthetic */ void onError(Throwable th2) {
+        org.telegram.tgnet.l.a(this, th2);
+    }
+
+    @Override // org.telegram.tgnet.ResultCallback
+    public final void onError(TLRPC.TL_error tL_error) {
+        Toast.makeText(this.b.getContext(), tL_error.text, 0).show();
     }
 }

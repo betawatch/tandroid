@@ -14,14 +14,15 @@ import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.util.Log;
 import android.util.TypedValue;
-import androidx.fragment.app.j0;
-import androidx.fragment.app.u;
+import androidx.fragment.app.l0;
+import androidx.fragment.app.v;
 import com.google.android.gms.common.api.GoogleApiActivity;
 import e0.t;
+import hg.k0;
 import n6.q;
 import n6.r;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class d extends e {
     public static final Object c = new Object();
@@ -47,14 +48,14 @@ public final class d extends e {
         if (d10 != null) {
             builder.setTitle(d10);
         }
-        Log.w("GoogleApiAvailability", i2.g.i(i10, "Creating dialog for Google Play services availability issue. ConnectionResult="), new IllegalArgumentException());
+        Log.w("GoogleApiAvailability", k0.i(i10, "Creating dialog for Google Play services availability issue. ConnectionResult="), new IllegalArgumentException());
         return builder.create();
     }
 
     public static void g(Activity activity, AlertDialog alertDialog, String str, DialogInterface.OnCancelListener onCancelListener) {
         try {
-            if (activity instanceof u) {
-                j0 s10 = ((u) activity).s();
+            if (activity instanceof v) {
+                l0 s10 = ((v) activity).s();
                 i iVar = new i();
                 n6.l.i(alertDialog, "Cannot display null dialog");
                 alertDialog.setOnCancelListener(null);
@@ -97,7 +98,7 @@ public final class d extends e {
 
     public final void h(Context context, int i10, PendingIntent pendingIntent) {
         int i11;
-        Log.w("GoogleApiAvailability", i2.g.j(i10, "GMS core API Availability. ConnectionResult=", ", tag=null"), new IllegalArgumentException());
+        Log.w("GoogleApiAvailability", k0.j(i10, "GMS core API Availability. ConnectionResult=", ", tag=null"), new IllegalArgumentException());
         if (i10 == 18) {
             new j(this, context).sendEmptyMessageDelayed(1, 120000L);
             return;
@@ -113,7 +114,7 @@ public final class d extends e {
         if (f7 == null) {
             f7 = context.getResources().getString(org.telegram.messenger.beta.R.string.common_google_play_services_notification_ticker);
         }
-        String e7 = (i10 == 6 || i10 == 19) ? q.e(context, "common_google_play_services_resolution_required_text", q.a(context)) : q.c(context, i10);
+        String e = (i10 == 6 || i10 == 19) ? q.e(context, "common_google_play_services_resolution_required_text", q.a(context)) : q.c(context, i10);
         Resources resources = context.getResources();
         Object systemService = context.getSystemService("notification");
         n6.l.h(systemService);
@@ -123,7 +124,7 @@ public final class d extends e {
         tVar.h(16, true);
         tVar.e = t.d(f7);
         e0.o oVar = new e0.o(false);
-        oVar.f = t.d(e7);
+        oVar.f = t.d(e);
         tVar.n(oVar);
         PackageManager packageManager = context.getPackageManager();
         if (u6.b.b == null) {
@@ -142,7 +143,7 @@ public final class d extends e {
             tVar.p(resources.getString(org.telegram.messenger.beta.R.string.common_google_play_services_notification_ticker));
             tVar.E.when = System.currentTimeMillis();
             tVar.g = pendingIntent;
-            tVar.f(e7);
+            tVar.f(e);
         }
         if (u6.b.d()) {
             n6.l.k(u6.b.d());

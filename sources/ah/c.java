@@ -1,61 +1,82 @@
 package ah;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.text.Layout;
-import android.text.StaticLayout;
-import android.text.TextPaint;
-import android.text.style.ReplacementSpan;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.j6;
+import android.os.Build;
+import android.view.View;
+import android.view.ViewGroup;
+import java.util.Iterator;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class c extends ReplacementSpan {
-    public final TextPaint a;
-    public final RectF b;
-    public StaticLayout c;
-    public float d;
-    public float e;
-    public int f;
+public final class c {
+    public final fh.a a;
+    public int b;
+    public int c;
+    public pe.b d;
+    public pe.b e;
+    public hh.k f;
+    public ViewGroup g;
+    public ki.i h;
+    public boolean i;
 
-    public c(f6 f6Var) {
-        TextPaint textPaint = new TextPaint(1);
-        this.a = textPaint;
-        this.b = new RectF();
-        textPaint.setTextSize(AndroidUtilities.dp(15.0f));
-        textPaint.setColor(j6.v0(j6.C6, f6Var));
+    public c(fh.a aVar) {
+        this.a = aVar;
     }
 
-    public final void a() {
-        if (this.c == null) {
-            StaticLayout staticLayout = new StaticLayout(LocaleController.getString(R.string.ReactionAddReactionsHint), this.a, AndroidUtilities.displaySize.x, LocaleController.isRTL ? Layout.Alignment.ALIGN_OPPOSITE : Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
-            this.c = staticLayout;
-            this.d = staticLayout.getLineWidth(0);
-            this.e = this.c.getHeight();
+    public final ch.d a(View view) {
+        return c(view, null, false);
+    }
+
+    public final ch.d b(View view, dh.a aVar) {
+        return c(view, aVar, false);
+    }
+
+    public final ch.d c(View view, dh.a aVar, boolean z10) {
+        ViewGroup viewGroup;
+        ch.d l4 = this.a.l();
+        if (this.i && Build.VERSION.SDK_INT >= 33 && (l4 instanceof ch.e)) {
+            ch.e eVar = (ch.e) l4;
+            eVar.P = new j(eVar.K);
+        }
+        l4.o(aVar);
+        int i10 = this.b;
+        int i11 = this.c;
+        l4.h = i10;
+        l4.i = i11;
+        pe.b bVar = this.e;
+        if (bVar != null && view != null) {
+            bVar.add(view);
+        }
+        ki.i iVar = this.h;
+        if (iVar != null && view != null) {
+            iVar.c.add(new ki.h(view, l4));
+        }
+        hh.k kVar = this.f;
+        if (kVar != null && (viewGroup = this.g) != null && view != null) {
+            kVar.d(view, viewGroup, new b(0, l4, view), z10);
+        }
+        pe.b bVar2 = this.d;
+        if (bVar2 != null) {
+            bVar2.add(l4);
+        }
+        return l4;
+    }
+
+    public final void d() {
+        pe.b bVar = this.e;
+        if (bVar != null) {
+            Iterator it = bVar.iterator();
+            while (it.hasNext()) {
+                ((View) it.next()).invalidate();
+            }
         }
     }
 
-    @Override // android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
-        a();
-        Rect clipBounds = canvas.getClipBounds();
-        RectF rectF = this.b;
-        rectF.set(clipBounds);
-        canvas.saveLayerAlpha(rectF, this.f, 31);
-        canvas.translate(f7 + AndroidUtilities.dp(4.0f), (((i14 - i12) / 2.0f) + i12) - (this.e / 2.0f));
-        this.c.draw(canvas);
-        canvas.restore();
+    public final void e(pe.b bVar) {
+        this.e = bVar;
     }
 
-    @Override // android.text.style.ReplacementSpan
-    public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
-        a();
-        return (int) (AndroidUtilities.dp(8.0f) + this.d);
+    public final void f(hh.k kVar, ViewGroup viewGroup) {
+        this.f = kVar;
+        this.g = viewGroup;
     }
 }

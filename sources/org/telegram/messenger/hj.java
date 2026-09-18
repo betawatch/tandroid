@@ -1,66 +1,71 @@
 package org.telegram.messenger;
 
-import java.util.HashMap;
-import org.telegram.messenger.SendMessagesHelper;
+import android.text.TextUtils;
+import java.util.ArrayList;
+import java.util.Collections;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class hj implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ SendMessagesHelper b;
-    public final /* synthetic */ MessageObject c;
-    public final /* synthetic */ String d;
-    public final /* synthetic */ SendMessagesHelper.DelayedMessage e;
-    public final /* synthetic */ boolean f;
-    public final /* synthetic */ SendMessagesHelper.DelayedMessage h;
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ boolean d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object h;
     public final /* synthetic */ Object n;
-    public final /* synthetic */ HashMap r;
-    public final /* synthetic */ boolean s;
-    public final /* synthetic */ Object v;
-    public final /* synthetic */ TLObject w;
-    public final /* synthetic */ TLObject x;
 
-    public /* synthetic */ hj(SendMessagesHelper sendMessagesHelper, TLObject tLObject, TLRPC.TL_messages_addPollAnswer tL_messages_addPollAnswer, TLObject tLObject2, MessageObject messageObject, String str, SendMessagesHelper.DelayedMessage delayedMessage, boolean z10, SendMessagesHelper.DelayedMessage delayedMessage2, Object obj, HashMap hashMap, boolean z11) {
-        this.b = sendMessagesHelper;
-        this.v = tLObject;
-        this.x = tL_messages_addPollAnswer;
-        this.w = tLObject2;
-        this.c = messageObject;
-        this.d = str;
-        this.e = delayedMessage;
-        this.f = z10;
-        this.h = delayedMessage2;
-        this.n = obj;
-        this.r = hashMap;
-        this.s = z11;
+    public /* synthetic */ hj(int i10, ci.d dVar, TLObject tLObject, TL_stars.StarsSubscription starsSubscription, boolean z10, boolean z11, org.telegram.ui.ActionBar.g3[] g3VarArr) {
+        this.e = dVar;
+        this.f = g3VarArr;
+        this.b = i10;
+        this.c = z10;
+        this.h = starsSubscription;
+        this.d = z11;
+        this.n = tLObject;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        switch (this.a) {
+        int i10 = this.a;
+        Object obj = this.n;
+        Object obj2 = this.h;
+        Object obj3 = this.f;
+        Object obj4 = this.e;
+        switch (i10) {
             case 0:
-                this.b.lambda$performSendMessageRequest$75((TLObject) this.v, (TLRPC.TL_messages_addPollAnswer) this.x, this.w, this.c, this.d, this.e, this.f, this.h, this.n, this.r, this.s);
+                ((SendMessagesHelper) obj4).lambda$performSendMessageRequest$95(this.c, (TLRPC.Message) obj3, (ArrayList) obj2, this.d, (ArrayList) obj, this.b);
                 break;
             default:
-                this.b.lambda$performSendMessageRequest$83((org.telegram.ui.ActionBar.n2) this.v, (TLRPC.TL_inputMediaStakeDice) this.w, (TLRPC.TL_messages_sendMedia) this.x, this.c, this.d, this.e, this.f, this.h, this.n, this.r, this.s);
+                TL_stars.StarsSubscription starsSubscription = (TL_stars.StarsSubscription) obj2;
+                TLObject tLObject = (TLObject) obj;
+                ((ci.d) obj4).setLoading(false);
+                org.telegram.ui.ActionBar.g3 g3Var = ((org.telegram.ui.ActionBar.g3[]) obj3)[0];
+                if (g3Var != null) {
+                    g3Var.dismiss();
+                }
+                yh.v5.y(this.b, false).S();
+                org.telegram.ui.ActionBar.o2 U = LaunchActivity.U();
+                if (U != null) {
+                    org.telegram.ui.Components.vc.a0(U).V(Collections.singletonList(tLObject), LocaleController.getString(R.string.StarsSubscriptionCancelledToast), AndroidUtilities.replaceTags((!this.c || TextUtils.isEmpty(starsSubscription.title)) ? (!this.d || TextUtils.isEmpty(starsSubscription.title)) ? LocaleController.formatString(R.string.StarsSubscriptionCancelledToastText, LocaleController.formatDateChat(starsSubscription.until_date)) : LocaleController.formatString(R.string.StarsSubscriptionCancelledBotToastText, LocaleController.formatDateChat(starsSubscription.until_date), starsSubscription.title) : LocaleController.formatString(R.string.StarsSubscriptionCancelledBizToastText, LocaleController.formatDateChat(starsSubscription.until_date), starsSubscription.title)), null).k(false);
+                    break;
+                }
                 break;
         }
     }
 
-    public /* synthetic */ hj(SendMessagesHelper sendMessagesHelper, org.telegram.ui.ActionBar.n2 n2Var, TLRPC.TL_inputMediaStakeDice tL_inputMediaStakeDice, TLRPC.TL_messages_sendMedia tL_messages_sendMedia, MessageObject messageObject, String str, SendMessagesHelper.DelayedMessage delayedMessage, boolean z10, SendMessagesHelper.DelayedMessage delayedMessage2, Object obj, HashMap hashMap, boolean z11) {
-        this.b = sendMessagesHelper;
-        this.v = n2Var;
-        this.w = tL_inputMediaStakeDice;
-        this.x = tL_messages_sendMedia;
-        this.c = messageObject;
-        this.d = str;
-        this.e = delayedMessage;
-        this.f = z10;
-        this.h = delayedMessage2;
-        this.n = obj;
-        this.r = hashMap;
-        this.s = z11;
+    public /* synthetic */ hj(SendMessagesHelper sendMessagesHelper, boolean z10, TLRPC.Message message, ArrayList arrayList, boolean z11, ArrayList arrayList2, int i10) {
+        this.e = sendMessagesHelper;
+        this.c = z10;
+        this.f = message;
+        this.h = arrayList;
+        this.d = z11;
+        this.n = arrayList2;
+        this.b = i10;
     }
 }

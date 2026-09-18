@@ -11,7 +11,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public abstract class e {
     public static final byte[] a = {0, 0, 0, 1};
@@ -180,7 +180,7 @@ public abstract class e {
                                 if (i19 != -1) {
                                     break;
                                 } else {
-                                    e2.n(parseInt5, "Unknown AC-4 level: ", "CodecSpecificDataUtil");
+                                    e2.m(parseInt5, "Unknown AC-4 level: ", "CodecSpecificDataUtil");
                                     break;
                                 }
                             } else {
@@ -204,7 +204,7 @@ public abstract class e {
                             int parseInt8 = Integer.parseInt(split[3]);
                             if (parseInt6 == 0) {
                                 if (parseInt8 != 8 && parseInt8 != 10) {
-                                    e2.n(parseInt8, "Unknown AV1 bit depth: ", "CodecSpecificDataUtil");
+                                    e2.m(parseInt8, "Unknown AV1 bit depth: ", "CodecSpecificDataUtil");
                                     break;
                                 } else {
                                     int i20 = parseInt8 == 8 ? 1 : (jVar == null || !(jVar.d != null || (i11 = jVar.c) == 7 || i11 == 6)) ? 2 : 4096;
@@ -313,12 +313,12 @@ public abstract class e {
                                     if (i13 != i12) {
                                         break;
                                     } else {
-                                        e2.n(parseInt7, "Unknown AV1 level: ", "CodecSpecificDataUtil");
+                                        e2.m(parseInt7, "Unknown AV1 level: ", "CodecSpecificDataUtil");
                                         break;
                                     }
                                 }
                             } else {
-                                e2.n(parseInt6, "Unknown AV1 profile: ", "CodecSpecificDataUtil");
+                                e2.m(parseInt6, "Unknown AV1 profile: ", "CodecSpecificDataUtil");
                                 break;
                             }
                         } catch (NumberFormatException unused2) {
@@ -440,11 +440,11 @@ public abstract class e {
                                 if (i16 != -1) {
                                     break;
                                 } else {
-                                    e2.n(parseInt2, "Unknown AVC level: ", "CodecSpecificDataUtil");
+                                    e2.m(parseInt2, "Unknown AVC level: ", "CodecSpecificDataUtil");
                                     break;
                                 }
                             } else {
-                                e2.n(parseInt, "Unknown AVC profile: ", "CodecSpecificDataUtil");
+                                e2.m(parseInt, "Unknown AVC profile: ", "CodecSpecificDataUtil");
                                 break;
                             }
                         } catch (NumberFormatException unused3) {
@@ -512,8 +512,8 @@ public abstract class e {
                                     break;
                             }
                             break;
-                        } catch (NumberFormatException e7) {
-                            a.o("CodecSpecificDataUtil", "Ignoring malformed primary profile in IAMF codec string: " + split[1], e7);
+                        } catch (NumberFormatException e) {
+                            a.o("CodecSpecificDataUtil", "Ignoring malformed primary profile in IAMF codec string: " + split[1], e);
                             return null;
                         }
                     }
@@ -637,11 +637,11 @@ public abstract class e {
                                 if (i18 != -1) {
                                     break;
                                 } else {
-                                    e2.n(parseInt12, "Unknown VP9 level: ", "CodecSpecificDataUtil");
+                                    e2.m(parseInt12, "Unknown VP9 level: ", "CodecSpecificDataUtil");
                                     break;
                                 }
                             } else {
-                                e2.n(parseInt11, "Unknown VP9 profile: ", "CodecSpecificDataUtil");
+                                e2.m(parseInt11, "Unknown VP9 profile: ", "CodecSpecificDataUtil");
                                 break;
                             }
                         } catch (NumberFormatException unused6) {

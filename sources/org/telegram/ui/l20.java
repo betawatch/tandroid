@@ -1,66 +1,78 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.LinearGradient;
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.RectF;
-import android.graphics.Shader;
-
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class l20 {
-    public LinearGradient b;
-    public final Paint[] a = new Paint[4];
-    public final Matrix c = new Matrix();
+public final class l20 implements org.telegram.ui.Components.fo0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ sg.a b;
 
-    public final void a(Canvas canvas, RectF rectF, float f7) {
-        Paint[] paintArr = this.a;
-        if (paintArr[0] == null) {
-            Paint paint = new Paint(1);
-            paintArr[0] = paint;
-            paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
-        }
-        paintArr[0].setShader(this.b);
-        paintArr[0].setAlpha((int) (f7 * 255.0f));
-        canvas.drawRect(rectF, paintArr[0]);
+    public /* synthetic */ l20(sg.a aVar, int i10) {
+        this.a = i10;
+        this.b = aVar;
     }
 
-    public final void b(Canvas canvas, RectF rectF, int i10, float f7) {
-        if (f7 <= 0.0f) {
-            return;
+    @Override // org.telegram.ui.Components.fo0
+    public final void B() {
+        int i10 = this.a;
+    }
+
+    @Override // org.telegram.ui.Components.fo0
+    public final void X(float f7, boolean z10) {
+        switch (this.a) {
+            case 0:
+                sg.f fVar = this.b.c;
+                if (fVar != null) {
+                    fVar.v = f7 * 2.0f;
+                    break;
+                }
+                break;
+            case 1:
+                sg.f fVar2 = this.b.c;
+                if (fVar2 != null) {
+                    fVar2.w = f7 * 2.0f;
+                    break;
+                }
+                break;
+            case 2:
+                sg.f fVar3 = this.b.c;
+                if (fVar3 != null) {
+                    fVar3.x = f7;
+                    break;
+                }
+                break;
+            default:
+                sg.f fVar4 = this.b.c;
+                if (fVar4 != null) {
+                    fVar4.A = f7 * 2.0f;
+                    break;
+                }
+                break;
         }
-        if (this.b == null) {
-            this.b = new LinearGradient(0.0f, 0.0f, 0.0f, 16.0f, new int[]{-65536, 16711680}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
+    }
+
+    @Override // org.telegram.ui.Components.fo0
+    public final /* synthetic */ CharSequence getContentDescription() {
+        switch (this.a) {
         }
-        Paint[] paintArr = this.a;
-        if (paintArr[i10] == null) {
-            paintArr[i10] = new Paint(1);
-            paintArr[i10].setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
+        return null;
+    }
+
+    @Override // org.telegram.ui.Components.fo0
+    public final /* synthetic */ int m0() {
+        switch (this.a) {
         }
-        paintArr[i10].setShader(this.b);
-        Matrix matrix = this.c;
-        matrix.reset();
-        if (i10 == 0) {
-            matrix.postScale(1.0f, rectF.width() / 16.0f);
-            matrix.postRotate(-90.0f);
-            matrix.postTranslate(rectF.left, rectF.top);
-        } else if (i10 == 1) {
-            matrix.postScale(1.0f, rectF.height() / 16.0f);
-            matrix.postTranslate(rectF.left, rectF.top);
-        } else if (i10 == 2) {
-            matrix.postScale(1.0f, rectF.width() / 16.0f);
-            matrix.postRotate(90.0f);
-            matrix.postTranslate(rectF.right, rectF.top);
-        } else if (i10 == 3) {
-            matrix.postScale(1.0f, rectF.height() / 16.0f);
-            matrix.postScale(1.0f, -1.0f);
-            matrix.postTranslate(rectF.left, rectF.bottom);
-        }
-        this.b.setLocalMatrix(matrix);
-        paintArr[i10].setAlpha((int) (f7 * 255.0f));
-        canvas.drawRect(rectF, paintArr[i10]);
+        return 0;
+    }
+
+    private final void a() {
+    }
+
+    private final void b() {
+    }
+
+    private final void c() {
+    }
+
+    private final void d() {
     }
 }

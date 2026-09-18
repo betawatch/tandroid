@@ -1,39 +1,7 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Rect;
-import android.text.Layout;
-import android.view.View;
-import org.telegram.messenger.Emoji;
-
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class u5 implements w5 {
-    public final View a;
-    public final boolean b;
-    public Layout c;
-    public z5 d;
-    public Rect e;
-    public q5 f;
-    public Emoji.EmojiDrawable h;
-    public boolean n;
-    public float r;
-    public float s;
-    public boolean v;
-
-    public u5(View view, boolean z10) {
-        this.a = view;
-        this.b = z10;
-    }
-
-    @Override // org.telegram.ui.Components.w5
-    public final void invalidate() {
-        View view = this.a;
-        if (view != null) {
-            if (!this.b || view.getParent() == null) {
-                view.invalidate();
-            } else {
-                ((View) view.getParent()).invalidate();
-            }
-        }
-    }
+public interface u5 {
+    void invalidate();
 }

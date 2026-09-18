@@ -1,5 +1,6 @@
 package com.google.android.gms.common.api.internal;
 
+import ai.q4;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.os.Bundle;
@@ -20,7 +21,7 @@ import java.util.concurrent.locks.ReentrantLock;
 import m.p3;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class x implements x0 {
     public final Context a;
@@ -44,8 +45,8 @@ public final class x implements x0 {
         this.o = reentrantLock;
         this.c = looper;
         this.j = cVar;
-        this.d = new m0(context, j0Var, reentrantLock, looper, eVar, fVar2, null, fVar4, null, arrayList2, new a6.m(this, 11));
-        this.e = new m0(context, j0Var, reentrantLock, looper, eVar, fVar, p3Var, fVar3, dVar, arrayList, new xa.c(this, 11));
+        this.d = new m0(context, j0Var, reentrantLock, looper, eVar, fVar2, null, fVar4, null, arrayList2, new xa.c(this, 12));
+        this.e = new m0(context, j0Var, reentrantLock, looper, eVar, fVar, p3Var, fVar3, dVar, arrayList, new a6.i(this, 14));
         a0.f fVar5 = new a0.f(0);
         Iterator it = ((a0.c) fVar2.keySet()).iterator();
         while (it.hasNext()) {
@@ -111,7 +112,7 @@ public final class x implements x0 {
             } else {
                 j0 j0Var = xVar.b;
                 n6.l.h(j0Var);
-                j0Var.v(xVar.k);
+                j0Var.r(xVar.k);
             }
         }
         xVar.i();
@@ -159,7 +160,7 @@ public final class x implements x0 {
             m0 m0Var2 = this.d;
             m0Var2.getClass();
             eVar.l();
-            return m0Var2.m.A(eVar);
+            return m0Var2.m.M(eVar);
         }
         if (j()) {
             com.google.android.gms.common.api.c cVar = this.j;
@@ -169,7 +170,7 @@ public final class x implements x0 {
         m0 m0Var3 = this.e;
         m0Var3.getClass();
         eVar.l();
-        return m0Var3.m.A(eVar);
+        return m0Var3.m.M(eVar);
     }
 
     @Override // com.google.android.gms.common.api.internal.x0
@@ -220,7 +221,7 @@ public final class x implements x0 {
                 this.e.f();
                 this.m = new k6.a(4);
                 if (z10) {
-                    new com.google.android.gms.internal.cast.c0(this.c, 2).post(new androidx.activity.i(this, 17));
+                    new com.google.android.gms.internal.cast.c0(this.c, 2).post(new q4(this, 18));
                 } else {
                     i();
                 }

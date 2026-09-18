@@ -11,9 +11,9 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.pr;
+import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public class i3 extends FrameLayout {
     public boolean a;
@@ -24,24 +24,24 @@ public class i3 extends FrameLayout {
     public boolean f;
     public boolean h;
     public boolean n;
-    public final org.telegram.ui.Components.h5 r;
+    public final org.telegram.ui.Components.f5 r;
     public int s;
-    public final org.telegram.ui.Components.p6 v;
+    public final org.telegram.ui.Components.m6 v;
     public boolean w;
 
     public i3(Context context, String str, boolean z10, boolean z11, int i10, org.telegram.ui.ActionBar.f6 f6Var) {
         super(context);
         this.e = -1;
-        this.r = new org.telegram.ui.Components.h5(this);
-        org.telegram.ui.Components.p6 p6Var = new org.telegram.ui.Components.p6(false, true, true, false);
-        this.v = p6Var;
-        p6Var.k(0.2f, 160L, pr.h);
-        p6Var.t(AndroidUtilities.dp(15.33f));
-        p6Var.b = 5;
+        this.r = new org.telegram.ui.Components.f5(this);
+        org.telegram.ui.Components.m6 m6Var = new org.telegram.ui.Components.m6(false, true, true, false);
+        this.v = m6Var;
+        m6Var.k(0.2f, 160L, qr.h);
+        m6Var.t(AndroidUtilities.dp(15.33f));
+        m6Var.b = 5;
         this.c = i10;
         g3 g3Var = new g3(this, context, f6Var, i10, f6Var, z11);
         this.b = g3Var;
-        p6Var.setCallback(g3Var);
+        m6Var.setCallback(g3Var);
         g3Var.setTextSize(1, 17.0f);
         g3Var.setHintTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.H6, f6Var));
         int i11 = org.telegram.ui.ActionBar.j6.G6;

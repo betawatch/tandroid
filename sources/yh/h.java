@@ -1,48 +1,100 @@
 package yh;
 
-import android.content.Context;
-import android.view.MotionEvent;
+import java.util.HashMap;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.f6;
-import zh.k8;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
-/* loaded from: classes.dex */
-public final class h extends k8 {
-    public final /* synthetic */ m m0;
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class h implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ o b;
+    public final /* synthetic */ long c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public h(m mVar, Context context, f6 f6Var) {
-        super(context, f6Var);
-        this.m0 = mVar;
+    public /* synthetic */ h(o oVar, long j3, int i10) {
+        this.a = i10;
+        this.b = oVar;
+        this.c = j3;
     }
 
-    @Override // zh.k8
-    public final boolean d(float f7) {
-        if (getProgress() <= 0.99d && f7 <= getMeasuredWidth() * 0.9f) {
-            return false;
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(final TLObject tLObject, TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                final int i10 = 1;
+                final o oVar = this.b;
+                final long j3 = this.c;
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: yh.k
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        int i11 = i10;
+                        long j10 = j3;
+                        TLObject tLObject2 = tLObject;
+                        o oVar2 = oVar;
+                        switch (i11) {
+                            case 0:
+                                HashMap hashMap = oVar2.e;
+                                if (tLObject2 instanceof TLRPC.TL_payments_starsRevenueStats) {
+                                    hashMap.put(Long.valueOf(j10), (TLRPC.TL_payments_starsRevenueStats) tLObject2);
+                                } else {
+                                    hashMap.put(Long.valueOf(j10), null);
+                                }
+                                oVar2.d.put(Long.valueOf(j10), Long.valueOf(System.currentTimeMillis()));
+                                NotificationCenter.getInstance(oVar2.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.botStarsUpdated, Long.valueOf(j10));
+                                break;
+                            default:
+                                HashMap hashMap2 = oVar2.c;
+                                if (tLObject2 instanceof TLRPC.TL_payments_starsRevenueStats) {
+                                    hashMap2.put(Long.valueOf(j10), (TLRPC.TL_payments_starsRevenueStats) tLObject2);
+                                } else {
+                                    hashMap2.put(Long.valueOf(j10), null);
+                                }
+                                oVar2.b.put(Long.valueOf(j10), Long.valueOf(System.currentTimeMillis()));
+                                NotificationCenter.getInstance(oVar2.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.botStarsUpdated, Long.valueOf(j10));
+                                break;
+                        }
+                    }
+                });
+                break;
+            default:
+                final int i11 = 0;
+                final o oVar2 = this.b;
+                final long j10 = this.c;
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: yh.k
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        int i112 = i11;
+                        long j102 = j10;
+                        TLObject tLObject2 = tLObject;
+                        o oVar22 = oVar2;
+                        switch (i112) {
+                            case 0:
+                                HashMap hashMap = oVar22.e;
+                                if (tLObject2 instanceof TLRPC.TL_payments_starsRevenueStats) {
+                                    hashMap.put(Long.valueOf(j102), (TLRPC.TL_payments_starsRevenueStats) tLObject2);
+                                } else {
+                                    hashMap.put(Long.valueOf(j102), null);
+                                }
+                                oVar22.d.put(Long.valueOf(j102), Long.valueOf(System.currentTimeMillis()));
+                                NotificationCenter.getInstance(oVar22.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.botStarsUpdated, Long.valueOf(j102));
+                                break;
+                            default:
+                                HashMap hashMap2 = oVar22.c;
+                                if (tLObject2 instanceof TLRPC.TL_payments_starsRevenueStats) {
+                                    hashMap2.put(Long.valueOf(j102), (TLRPC.TL_payments_starsRevenueStats) tLObject2);
+                                } else {
+                                    hashMap2.put(Long.valueOf(j102), null);
+                                }
+                                oVar22.b.put(Long.valueOf(j102), Long.valueOf(System.currentTimeMillis()));
+                                NotificationCenter.getInstance(oVar22.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.botStarsUpdated, Long.valueOf(j102));
+                                break;
+                        }
+                    }
+                });
+                break;
         }
-        m.U(this.m0);
-        return true;
-    }
-
-    @Override // zh.k8, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        if (motionEvent.getAction() == 0 && motionEvent.getY() > getMeasuredHeight() - AndroidUtilities.dp(48.0f)) {
-            return false;
-        }
-        super.dispatchTouchEvent(motionEvent);
-        return true;
-    }
-
-    @Override // zh.k8
-    public final void e(int i10) {
-        m.T(this.m0, i10);
-    }
-
-    @Override // zh.k8
-    public final void setValue(int i10) {
-        super.setValue(i10);
-        m.T(this.m0, i10);
     }
 }

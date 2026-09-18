@@ -12,11 +12,11 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.hm;
-import org.telegram.ui.Components.pr;
+import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class o5 extends org.telegram.ui.Components.x9 {
+public final class o5 extends org.telegram.ui.Components.u9 {
     public final Paint G;
     public long H;
     public Drawable I;
@@ -30,13 +30,13 @@ public final class o5 extends org.telegram.ui.Components.x9 {
         this.G = new Paint(1);
     }
 
-    @Override // org.telegram.ui.Components.x9, android.view.View
+    @Override // org.telegram.ui.Components.u9, android.view.View
     public final void onDraw(Canvas canvas) {
         Bitmap bitmap;
         MediaController.PhotoEntry photoEntry;
         Drawable drawable;
-        org.telegram.ui.Components.q5 q5Var = this.e;
-        ImageReceiver imageReceiver = q5Var != null ? q5Var.k : this.a;
+        org.telegram.ui.Components.o5 o5Var = this.e;
+        ImageReceiver imageReceiver = o5Var != null ? o5Var.k : this.a;
         if (imageReceiver == null) {
             return;
         }
@@ -61,7 +61,7 @@ public final class o5 extends org.telegram.ui.Components.x9 {
                 this.b.draw(canvas);
                 if (s5Var.M == null) {
                     if (s5Var.L == null) {
-                        wh.h hVar = new wh.h();
+                        vh.h hVar = new vh.h();
                         s5Var.L = hVar;
                         hVar.h(i0.a.k(-1, (int) (Color.alpha(-1) * 0.325f)));
                     }
@@ -73,7 +73,7 @@ public final class o5 extends org.telegram.ui.Components.x9 {
         }
         float f7 = s5Var.T;
         if (f7 != 1.0f && s5Var.R != null) {
-            int interpolation = (int) (pr.f.getInterpolation(1.0f - f7) * 255.0f);
+            int interpolation = (int) (qr.f.getInterpolation(1.0f - f7) * 255.0f);
             Paint paint = this.G;
             paint.setAlpha(interpolation);
             canvas.drawBitmap(s5Var.R, 0.0f, 0.0f, paint);
@@ -92,8 +92,8 @@ public final class o5 extends org.telegram.ui.Components.x9 {
             invalidate();
         }
         if (s5Var.s) {
-            q5 q5Var2 = s5Var.U;
-            if ((q5Var2 == null || !((hm) ((org.telegram.ui.Components.t) q5Var2).b).s) && (photoEntry = s5Var.G) != null && photoEntry.isLivePhoto()) {
+            q5 q5Var = s5Var.U;
+            if ((q5Var == null || !((hm) ((org.telegram.ui.Components.s) q5Var).b).s) && (photoEntry = s5Var.G) != null && photoEntry.isLivePhoto()) {
                 if (s5Var.G.isUnalivePhoto()) {
                     if (this.J == null) {
                         this.J = getContext().getResources().getDrawable(R.drawable.media_live_off).mutate();

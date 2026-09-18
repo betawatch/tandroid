@@ -2,17 +2,17 @@ package z2;
 
 import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
-import org.telegram.ui.web.n;
+import org.telegram.ui.web.m;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class a implements Executor {
     public final /* synthetic */ Executor a;
-    public final /* synthetic */ n b;
+    public final /* synthetic */ m b;
 
-    public a(ExecutorService executorService, n nVar) {
+    public a(ExecutorService executorService, m mVar) {
         this.a = executorService;
-        this.b = nVar;
+        this.b = mVar;
     }
 
     @Override // java.util.concurrent.Executor

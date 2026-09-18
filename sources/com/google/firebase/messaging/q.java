@@ -1,21 +1,196 @@
 package com.google.firebase.messaging;
 
-import java.util.HashMap;
+import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.media.Rating;
+import android.os.Bundle;
+import android.text.TextUtils;
+import android.util.Log;
+import java.util.Arrays;
+import java.util.MissingFormatArgumentException;
+import n4.i0;
+import org.json.JSONArray;
+import org.json.JSONException;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
-public abstract class q {
-    public static final aa.a a;
+public final class q {
+    public final Bundle a;
 
-    static {
-        HashMap hashMap = new HashMap();
-        HashMap hashMap2 = new HashMap();
-        hashMap.put(q.class, c.a);
-        hashMap2.remove(q.class);
-        hashMap.put(wa.e.class, b.a);
-        hashMap2.remove(wa.e.class);
-        hashMap.put(wa.d.class, a.a);
-        hashMap2.remove(wa.d.class);
-        a = new aa.a(new HashMap(hashMap), new HashMap(hashMap2), la.g.a, 28);
+    public q(Bundle bundle) {
+        this.a = new Bundle(bundle);
+    }
+
+    public static boolean f(Bundle bundle) {
+        return "1".equals(bundle.getString("gcm.n.e")) || "1".equals(bundle.getString("gcm.n.e".replace("gcm.n.", "gcm.notification.")));
+    }
+
+    public static String m(String str) {
+        return str.startsWith("gcm.n.") ? str.substring(6) : str;
+    }
+
+    public boolean a(String str) {
+        String e = e(str);
+        return "1".equals(e) || Boolean.parseBoolean(e);
+    }
+
+    public Integer b(String str) {
+        String e = e(str);
+        if (TextUtils.isEmpty(e)) {
+            return null;
+        }
+        try {
+            return Integer.valueOf(Integer.parseInt(e));
+        } catch (NumberFormatException unused) {
+            Log.w("NotificationParams", "Couldn't parse value of " + m(str) + "(" + e + ") into an int");
+            return null;
+        }
+    }
+
+    public JSONArray c(String str) {
+        String e = e(str);
+        if (TextUtils.isEmpty(e)) {
+            return null;
+        }
+        try {
+            return new JSONArray(e);
+        } catch (JSONException unused) {
+            Log.w("NotificationParams", "Malformed JSON for key " + m(str) + ": " + e + ", falling back to default");
+            return null;
+        }
+    }
+
+    public String d(Resources resources, String str, String str2) {
+        String[] strArr;
+        String e = e(str2);
+        if (!TextUtils.isEmpty(e)) {
+            return e;
+        }
+        String e7 = e(str2.concat("_loc_key"));
+        if (TextUtils.isEmpty(e7)) {
+            return null;
+        }
+        int identifier = resources.getIdentifier(e7, "string", str);
+        if (identifier == 0) {
+            Log.w("NotificationParams", m(str2.concat("_loc_key")) + " resource not found: " + str2 + " Default value will be used.");
+            return null;
+        }
+        JSONArray c10 = c(str2.concat("_loc_args"));
+        if (c10 == null) {
+            strArr = null;
+        } else {
+            int length = c10.length();
+            strArr = new String[length];
+            for (int i10 = 0; i10 < length; i10++) {
+                strArr[i10] = c10.optString(i10);
+            }
+        }
+        if (strArr == null) {
+            return resources.getString(identifier);
+        }
+        try {
+            return resources.getString(identifier, strArr);
+        } catch (MissingFormatArgumentException e10) {
+            Log.w("NotificationParams", "Missing format argument for " + m(str2) + ": " + Arrays.toString(strArr) + " Default value will be used.", e10);
+            return null;
+        }
+    }
+
+    public String e(String str) {
+        Bundle bundle = this.a;
+        if (!bundle.containsKey(str) && str.startsWith("gcm.n.")) {
+            String replace = !str.startsWith("gcm.n.") ? str : str.replace("gcm.n.", "gcm.notification.");
+            if (bundle.containsKey(replace)) {
+                str = replace;
+            }
+        }
+        return bundle.getString(str);
+    }
+
+    public Bundle g() {
+        Bundle bundle = this.a;
+        Bundle bundle2 = new Bundle(bundle);
+        for (String str : bundle.keySet()) {
+            if (!str.startsWith("google.c.a.") && !str.equals("from")) {
+                bundle2.remove(str);
+            }
+        }
+        return bundle2;
+    }
+
+    public void h(String str, Bitmap bitmap) {
+        Integer num = (Integer) n4.m.c.get(str);
+        if (num != null && num.intValue() != 2) {
+            throw new IllegalArgumentException(a4.a.p("The ", str, " key cannot be used to put a Bitmap"));
+        }
+        this.a.putParcelable(str, bitmap);
+    }
+
+    public void i(long j3, String str) {
+        Integer num = (Integer) n4.m.c.get(str);
+        if (num != null && num.intValue() != 0) {
+            throw new IllegalArgumentException(a4.a.p("The ", str, " key cannot be used to put a long"));
+        }
+        this.a.putLong(str, j3);
+    }
+
+    public void j(String str, i0 i0Var) {
+        Rating rating;
+        float f7 = i0Var.b;
+        int i10 = i0Var.a;
+        Integer num = (Integer) n4.m.c.get(str);
+        if (num != null && num.intValue() != 3) {
+            throw new IllegalArgumentException(a4.a.p("The ", str, " key cannot be used to put a Rating"));
+        }
+        if (i0Var.c == null) {
+            if (i0Var.b()) {
+                switch (i10) {
+                    case 1:
+                        i0Var.c = Rating.newHeartRating(i10 == 1 && f7 == 1.0f);
+                        break;
+                    case 2:
+                        i0Var.c = Rating.newThumbRating(i10 == 2 && f7 == 1.0f);
+                        break;
+                    case 3:
+                    case 4:
+                    case 5:
+                        i0Var.c = Rating.newStarRating(i10, i0Var.a());
+                        break;
+                    case 6:
+                        if (i10 != 6 || !i0Var.b()) {
+                            f7 = -1.0f;
+                        }
+                        i0Var.c = Rating.newPercentageRating(f7);
+                        break;
+                    default:
+                        rating = null;
+                        break;
+                }
+                this.a.putParcelable(str, rating);
+            }
+            i0Var.c = Rating.newUnratedRating(i10);
+        }
+        rating = i0Var.c;
+        this.a.putParcelable(str, rating);
+    }
+
+    public void k(String str, String str2) {
+        Integer num = (Integer) n4.m.c.get(str);
+        if (num != null && num.intValue() != 1) {
+            throw new IllegalArgumentException(a4.a.p("The ", str, " key cannot be used to put a String"));
+        }
+        this.a.putCharSequence(str, str2);
+    }
+
+    public void l(CharSequence charSequence, String str) {
+        Integer num = (Integer) n4.m.c.get(str);
+        if (num != null && num.intValue() != 1) {
+            throw new IllegalArgumentException(a4.a.p("The ", str, " key cannot be used to put a CharSequence"));
+        }
+        this.a.putCharSequence(str, charSequence);
+    }
+
+    public q() {
+        this.a = new Bundle();
     }
 }

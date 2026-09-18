@@ -1,40 +1,30 @@
 package tf;
 
-import android.content.SharedPreferences;
-import android.os.SystemClock;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.NotificationBadge;
-import w7.p;
+import ai.n4;
+import android.view.View;
+import android.view.ViewTreeObserver;
+import yf.x;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
-public final class a {
-    public final SharedPreferences a;
-    public long b;
-    public long c;
-    public int d;
+public final /* synthetic */ class a implements ViewTreeObserver.OnDrawListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ View b;
 
-    public a(String str) {
-        SharedPreferences sharedPreferences = ApplicationLoader.applicationContext.getSharedPreferences("pip_duration_".concat(str), 0);
-        this.a = sharedPreferences;
-        this.b = sharedPreferences.getLong("estimated", 400L);
-        this.d = sharedPreferences.getInt(NotificationBadge.NewHtcHomeBadger.COUNT, 0);
+    public /* synthetic */ a(int i10, View view) {
+        this.a = i10;
+        this.b = view;
     }
 
-    public final void a() {
-        if (this.c == 0) {
-            return;
+    @Override // android.view.ViewTreeObserver.OnDrawListener
+    public final void onDraw() {
+        switch (this.a) {
+            case 0:
+                ((n4) this.b).forceLayout();
+                break;
+            default:
+                ((x) this.b).e.incrementAndGet();
+                break;
         }
-        this.b = (((SystemClock.uptimeMillis() - this.c) * (10 - r4)) / 10) + ((this.b * p.b(this.d, 0, 9)) / 10);
-        this.c = 0L;
-        this.d++;
-        this.a.edit().putLong("estimated", this.b).putInt(NotificationBadge.NewHtcHomeBadger.COUNT, this.d).apply();
-    }
-
-    public final float b() {
-        if (this.b > 0) {
-            return p.a((SystemClock.uptimeMillis() - this.c) / this.b, 0.0f, 1.0f);
-        }
-        return 0.5f;
     }
 }

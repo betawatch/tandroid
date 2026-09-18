@@ -1,57 +1,42 @@
 package org.telegram.ui;
 
-import android.view.View;
-import org.telegram.messenger.MessagesController;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class df1 implements xh.c, MessagesController.ErrorDelegate, r0.n, org.telegram.ui.Components.cl0 {
-    public final /* synthetic */ eg1 a;
+public final /* synthetic */ class df1 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ fg1 b;
 
-    public /* synthetic */ df1(eg1 eg1Var) {
-        this.a = eg1Var;
+    public /* synthetic */ df1(fg1 fg1Var, int i10) {
+        this.a = i10;
+        this.b = fg1Var;
     }
 
-    @Override // r0.n
-    public r0.l1 T0(View view, r0.l1 l1Var) {
-        int i10 = l1Var.a.f(519).d;
-        eg1 eg1Var = this.a;
-        eg1Var.e1 = i10;
-        ag1 ag1Var = eg1Var.r0;
-        if (ag1Var != null) {
-            ag1Var.setPadding(0, 0, 0, i10);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                fg1 fg1Var = this.b;
+                fg1Var.x0();
+                fg1Var.B0();
+                break;
+            case 1:
+                this.b.x0();
+                break;
+            case 2:
+                this.b.O0(true);
+                break;
+            case 3:
+                this.b.finishPreviewFragment();
+                break;
+            case 4:
+                fg1 fg1Var2 = this.b;
+                fg1Var2.A0 = null;
+                fg1Var2.U0(true, false);
+                break;
+            default:
+                fg1 fg1Var3 = this.b;
+                fg1Var3.N.postOnAnimation(new df1(fg1Var3, 1));
+                break;
         }
-        uf1 uf1Var = eg1Var.n;
-        if (uf1Var != null) {
-            uf1Var.a.setTranslationY((-eg1Var.e1) - eg1Var.d1);
-        }
-        eg1Var.h.setTranslationY(((-eg1Var.X0) - eg1Var.e1) - eg1Var.d1);
-        eg1Var.B0();
-        return r0.l1.b;
-    }
-
-    @Override // org.telegram.ui.Components.cl0
-    public boolean d(float f7, float f10, int i10, View view) {
-        return eg1.W(this.a, view, f7);
-    }
-
-    @Override // xh.c
-    public void f(boolean z10, boolean z11) {
-        eg1 eg1Var = this.a;
-        eg1Var.U0.i(eg1Var.R0.c(), z10, z11);
-    }
-
-    @Override // org.telegram.messenger.MessagesController.ErrorDelegate
-    public boolean run(TLRPC.TL_error tL_error) {
-        return eg1.U(this.a, tL_error);
-    }
-
-    @Override // org.telegram.ui.Components.cl0
-    public /* synthetic */ void h() {
-    }
-
-    @Override // org.telegram.ui.Components.cl0
-    public /* synthetic */ void q(float f7) {
     }
 }

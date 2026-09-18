@@ -1,15 +1,14 @@
 package o1;
 
+import a0.m;
 import android.os.Handler;
 import android.os.SystemClock;
 import android.view.Choreographer;
 import java.util.ArrayList;
-import k2.g0;
-import m2.t;
-import org.telegram.ui.Components.u01;
 import org.telegram.ui.Components.w01;
+import org.telegram.ui.Components.y01;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class a implements Choreographer.FrameCallback {
     public final /* synthetic */ int a;
@@ -27,7 +26,7 @@ public final class a implements Choreographer.FrameCallback {
         boolean z10;
         switch (this.a) {
             case 0:
-                b bVar = (b) ((g0) ((t) this.b).b).b;
+                b bVar = (b) ((ka.c) ((lf.i) this.b).b).b;
                 long uptimeMillis = SystemClock.uptimeMillis();
                 ArrayList arrayList = bVar.b;
                 long uptimeMillis2 = SystemClock.uptimeMillis();
@@ -35,11 +34,11 @@ public final class a implements Choreographer.FrameCallback {
                 while (i11 < arrayList.size()) {
                     h hVar = (h) arrayList.get(i11);
                     if (hVar != null) {
-                        a0.l lVar = bVar.a;
-                        Long l4 = (Long) lVar.get(hVar);
+                        m mVar = bVar.a;
+                        Long l4 = (Long) mVar.get(hVar);
                         if (l4 != null) {
                             if (l4.longValue() < uptimeMillis2) {
-                                lVar.remove(hVar);
+                                mVar.remove(hVar);
                             }
                         }
                         long j10 = hVar.i;
@@ -51,15 +50,15 @@ public final class a implements Choreographer.FrameCallback {
                             hVar.i = uptimeMillis;
                             k kVar2 = (k) hVar;
                             if (kVar2.v != Float.MAX_VALUE) {
-                                l lVar2 = kVar2.u;
-                                double d = lVar2.i;
+                                l lVar = kVar2.u;
+                                double d = lVar.i;
                                 i10 = i11;
                                 long j12 = j11 / 2;
-                                e c10 = lVar2.c(kVar2.b, kVar2.a, j12);
-                                l lVar3 = kVar2.u;
-                                lVar3.i = kVar2.v;
+                                e c10 = lVar.c(kVar2.b, kVar2.a, j12);
+                                l lVar2 = kVar2.u;
+                                lVar2.i = kVar2.v;
                                 kVar2.v = Float.MAX_VALUE;
-                                e c11 = lVar3.c(c10.a, c10.b, j12);
+                                e c11 = lVar2.c(c10.a, c10.b, j12);
                                 kVar2.b = c11.a;
                                 kVar2.a = c11.b;
                                 kVar = kVar2;
@@ -74,9 +73,9 @@ public final class a implements Choreographer.FrameCallback {
                             kVar.b = max;
                             kVar.b = Math.min(max, kVar.g);
                             float f7 = kVar.a;
-                            l lVar4 = kVar.u;
-                            lVar4.getClass();
-                            if (Math.abs(f7) >= lVar4.e || Math.abs(r8 - ((float) lVar4.i)) >= lVar4.d) {
+                            l lVar3 = kVar.u;
+                            lVar3.getClass();
+                            if (Math.abs(f7) >= lVar3.e || Math.abs(r8 - ((float) lVar3.i)) >= lVar3.d) {
                                 z10 = false;
                             } else {
                                 kVar.b = (float) kVar.u.i;
@@ -107,21 +106,21 @@ public final class a implements Choreographer.FrameCallback {
                 }
                 if (arrayList.size() > 0) {
                     if (bVar.d == null) {
-                        bVar.d = new t(bVar.c);
+                        bVar.d = new lf.i(bVar.c);
                     }
-                    t tVar = bVar.d;
-                    ((Choreographer) tVar.c).postFrameCallback((a) tVar.d);
+                    lf.i iVar = bVar.d;
+                    ((Choreographer) iVar.c).postFrameCallback((a) iVar.d);
                     break;
                 }
                 break;
             default:
-                u01 u01Var = ((w01) this.b).a;
-                if (u01Var != null) {
-                    Handler handler = u01Var.getHandler();
-                    if (handler != null && u01Var.b.get()) {
+                w01 w01Var = ((y01) this.b).a;
+                if (w01Var != null) {
+                    Handler handler = w01Var.getHandler();
+                    if (handler != null && w01Var.b.get()) {
                         handler.sendMessage(handler.obtainMessage(0));
                     }
-                    if (((w01) this.b).a.S) {
+                    if (((y01) this.b).a.S) {
                         Choreographer.getInstance().postFrameCallback(this);
                         break;
                     }

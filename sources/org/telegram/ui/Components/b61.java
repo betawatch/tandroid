@@ -1,25 +1,20 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
-/* loaded from: classes3.dex */
-public final class b61 extends g.p {
-    public final /* synthetic */ a61 c;
-    public final /* synthetic */ d61 d;
+import org.telegram.messenger.AndroidUtilities;
 
-    public b61(d61 d61Var, a61 a61Var) {
-        this.d = d61Var;
-        this.c = a61Var;
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* loaded from: classes3.dex */
+public final class b61 extends s4.c0 {
+    public final /* synthetic */ f61 I;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public b61(f61 f61Var, int i10) {
+        super(i10, false);
+        this.I = f61Var;
     }
 
-    @Override // g.p
-    public final int i(int i10) {
-        int i11;
-        v51 v51Var = this.d.Y2;
-        a61 a61Var = this.c;
-        if (v51Var == null) {
-            return a61Var.J;
-        }
-        h51 G = v51Var.G(i10);
-        return (G == null || (i11 = G.u) == -1) ? a61Var.J : i11;
+    @Override // s4.c0
+    public final int W0(s4.z0 z0Var) {
+        return this.I.a3 ? AndroidUtilities.displaySize.y : super.W0(z0Var);
     }
 }

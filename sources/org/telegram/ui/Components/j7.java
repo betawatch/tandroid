@@ -1,34 +1,24 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class j7 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ k8 b;
-    public final /* synthetic */ TLRPC.TL_error c;
+    public final /* synthetic */ h8 b;
 
-    public /* synthetic */ j7(k8 k8Var, TLRPC.TL_error tL_error, int i10) {
+    public /* synthetic */ j7(h8 h8Var, int i10) {
         this.a = i10;
-        this.b = k8Var;
-        this.c = tL_error;
+        this.b = h8Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                k8.s(this.b, this.c);
-                break;
-            case 1:
-                k8.w(this.b, this.c);
-                break;
-            case 2:
-                k8.H(this.b, this.c);
+                h8.n(this.b);
                 break;
             default:
-                k8.I(this.b, this.c);
+                h8.G(this.b);
                 break;
         }
     }

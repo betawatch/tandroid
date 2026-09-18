@@ -1,19 +1,41 @@
 package org.telegram.ui.Components;
 
-import android.animation.TimeInterpolator;
-
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class hd implements TimeInterpolator {
+public final /* synthetic */ class hd implements Runnable {
     public final /* synthetic */ int a;
+    public final /* synthetic */ jd b;
+    public final /* synthetic */ boolean c;
 
-    @Override // android.animation.TimeInterpolator
-    public final float getInterpolation(float f7) {
+    public /* synthetic */ hd(jd jdVar, boolean z10, int i10) {
+        this.a = i10;
+        this.b = jdVar;
+        this.c = z10;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                return ((((6.0f * f7) - 15.0f) * f7) + 10.0f) * f7 * f7 * f7;
+                boolean z10 = this.c;
+                jd jdVar = this.b;
+                if (!z10) {
+                    jdVar.Z0.setVisibility(8);
+                    break;
+                } else {
+                    jdVar.getClass();
+                    break;
+                }
             default:
-                return f7;
+                boolean z11 = this.c;
+                jd jdVar2 = this.b;
+                if (!z11) {
+                    jdVar2.V0.setVisibility(8);
+                    break;
+                } else {
+                    jdVar2.getClass();
+                    break;
+                }
         }
     }
 }

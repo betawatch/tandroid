@@ -9,9 +9,9 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.voip.VoIPService;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class t10 extends aj0 {
+public final class t10 extends bj0 {
     public boolean r;
     public boolean s;
     public final s10 v;
@@ -39,11 +39,11 @@ public final class t10 extends aj0 {
                         FragmentContextView fragmentContextView2 = this.b.x;
                         if (VoIPService.getSharedInstance() != null) {
                             VoIPService.getSharedInstance().setMicMute(false, true, false);
-                            if (fragmentContextView2.y.N(fragmentContextView2.O ? 15 : 29)) {
+                            if (fragmentContextView2.y.P(fragmentContextView2.O ? 15 : 29)) {
                                 if (fragmentContextView2.O) {
-                                    fragmentContextView2.y.K(0);
+                                    fragmentContextView2.y.M(0);
                                 } else {
-                                    fragmentContextView2.y.K(14);
+                                    fragmentContextView2.y.M(14);
                                 }
                             }
                             fragmentContextView2.x.d();
@@ -86,11 +86,11 @@ public final class t10 extends aj0 {
                         FragmentContextView fragmentContextView2 = this.b.x;
                         if (VoIPService.getSharedInstance() != null) {
                             VoIPService.getSharedInstance().setMicMute(false, true, false);
-                            if (fragmentContextView2.y.N(fragmentContextView2.O ? 15 : 29)) {
+                            if (fragmentContextView2.y.P(fragmentContextView2.O ? 15 : 29)) {
                                 if (fragmentContextView2.O) {
-                                    fragmentContextView2.y.K(0);
+                                    fragmentContextView2.y.M(0);
                                 } else {
-                                    fragmentContextView2.y.K(14);
+                                    fragmentContextView2.y.M(14);
                                 }
                             }
                             fragmentContextView2.x.d();
@@ -154,11 +154,11 @@ public final class t10 extends aj0 {
                 this.r = false;
             } else if (this.s) {
                 fragmentContextView.O = true;
-                if (fragmentContextView.y.N(15)) {
+                if (fragmentContextView.y.P(15)) {
                     if (fragmentContextView.O) {
-                        fragmentContextView.y.K(0);
+                        fragmentContextView.y.M(0);
                     } else {
-                        fragmentContextView.y.K(14);
+                        fragmentContextView.y.M(14);
                     }
                 }
                 fragmentContextView.x.d();

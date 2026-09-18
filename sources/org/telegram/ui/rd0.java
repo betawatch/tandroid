@@ -1,39 +1,29 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class rd0 implements org.telegram.ui.Components.nv0 {
+public final /* synthetic */ class rd0 implements org.telegram.ui.ActionBar.b2 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.n2 b;
+    public final /* synthetic */ yg0 b;
 
-    public /* synthetic */ rd0(int i10, org.telegram.ui.ActionBar.n2 n2Var) {
+    public /* synthetic */ rd0(yg0 yg0Var, int i10) {
         this.a = i10;
-        this.b = n2Var;
+        this.b = yg0Var;
     }
 
-    @Override // org.telegram.ui.Components.nv0
-    public final void H(int i10, boolean z10) {
-        lg0 lg0Var;
-        nl0 nl0Var;
+    @Override // org.telegram.ui.ActionBar.b2
+    public final void f(org.telegram.ui.ActionBar.c2 c2Var, int i10) {
         switch (this.a) {
             case 0:
-                wg0 wg0Var = (wg0) this.b;
-                if (i10 > AndroidUtilities.dp(20.0f) && wg0Var.h1()) {
-                    AndroidUtilities.hideKeyboard(wg0Var.fragmentView);
-                }
-                if (i10 <= AndroidUtilities.dp(20.0f) && (lg0Var = wg0Var.T) != null) {
-                    lg0Var.run();
-                    wg0Var.T = null;
-                    break;
-                }
+                yg0 yg0Var = this.b;
+                yg0Var.b[yg0Var.a].d();
+                yg0Var.k1(true, true);
                 break;
             default:
-                PasscodeActivity passcodeActivity = (PasscodeActivity) this.b;
-                if (i10 >= AndroidUtilities.dp(20.0f) && (nl0Var = passcodeActivity.P) != null) {
-                    nl0Var.run();
-                    passcodeActivity.P = null;
+                yg0 yg0Var2 = this.b;
+                yg0Var2.l0 = true;
+                if (yg0Var2.a != 0) {
+                    yg0Var2.u1(0, true, null, true);
                     break;
                 }
                 break;

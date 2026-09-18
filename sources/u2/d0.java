@@ -1,19 +1,19 @@
 package u2;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public interface d0 extends d1 {
-    void j();
+    void g();
 
-    long k(long j3);
+    long h(long j3);
 
-    void l(long j3);
+    void i(long j3);
 
-    void n(c0 c0Var, long j3);
+    void k(c0 c0Var, long j3);
 
-    long o();
+    long l();
 
-    long q(x2.r[] rVarArr, boolean[] zArr, b1[] b1VarArr, boolean[] zArr2, long j3);
+    long p(x2.r[] rVarArr, boolean[] zArr, b1[] b1VarArr, boolean[] zArr2, long j3);
 
     o1 r();
 

@@ -11,16 +11,16 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.vl;
+import org.telegram.messenger.wl;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.mp;
+import org.telegram.ui.Components.np;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class x8 extends FrameLayout {
     public final TextView a;
     public final TextView b;
-    public final mp c;
+    public final np c;
     public boolean d;
     public boolean e;
     public int f;
@@ -36,7 +36,7 @@ public final class x8 extends FrameLayout {
         this.f = 50;
         TextView textView = new TextView(context);
         this.a = textView;
-        vl.r(textView, org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.G6, false), 1, 16.0f, 1);
+        wl.r(textView, org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.G6, false), 1, 16.0f, 1);
         textView.setMaxLines(1);
         textView.setSingleLine(true);
         textView.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
@@ -56,13 +56,13 @@ public final class x8 extends FrameLayout {
         textView2.setEllipsize(truncateAt);
         boolean z11 = LocaleController.isRTL;
         addView(textView2, w7.x5.d(-2, -2.0f, (z11 ? 5 : 3) | 48, z11 ? 21 : 64.0f, 36.0f, z11 ? 64.0f : 21, 0.0f));
-        mp mpVar = new mp(context, 21, null);
-        this.c = mpVar;
-        mpVar.setDrawUnchecked(true);
-        mpVar.setDrawBackgroundAsArc(10);
-        mpVar.setDuration(100L);
-        mpVar.b(org.telegram.ui.ActionBar.j6.h7, org.telegram.ui.ActionBar.j6.j7, org.telegram.ui.ActionBar.j6.k7);
-        addView(mpVar, w7.x5.d(20, 20.0f, (LocaleController.isRTL ? 5 : 3) | 16, 22.0f, 0.0f, 22.0f, 0.0f));
+        np npVar = new np(context, 21, null);
+        this.c = npVar;
+        npVar.setDrawUnchecked(true);
+        npVar.setDrawBackgroundAsArc(10);
+        npVar.setDuration(100L);
+        npVar.b(org.telegram.ui.ActionBar.j6.h7, org.telegram.ui.ActionBar.j6.j7, org.telegram.ui.ActionBar.j6.k7);
+        addView(npVar, w7.x5.d(20, 20.0f, (LocaleController.isRTL ? 5 : 3) | 16, 22.0f, 0.0f, 22.0f, 0.0f));
         setClipChildren(false);
     }
 

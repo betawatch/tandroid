@@ -1,16 +1,16 @@
 package j4;
 
+import ai.f9;
 import b2.r0;
 import b2.s0;
-import bi.n8;
 import c3.h0;
 import e9.a1;
 import e9.i0;
 import org.telegram.messenger.OneUIUtilities;
 import v7.p7;
-import v7.p8;
+import v7.s8;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class v implements i {
     public String e;
@@ -26,7 +26,7 @@ public final class v implements i {
     public final e2.v a = new e2.v(new byte[15], 2);
     public final a4.h b = new a4.h();
     public final e2.v c = new e2.v();
-    public final n8 p = new n8();
+    public final f9 p = new f9();
     public int q = -2147483647;
     public int r = -1;
     public long t = -1;
@@ -46,7 +46,7 @@ public final class v implements i {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void b(e2.v vVar) {
+    public final void a(e2.v vVar) {
         int i10;
         int i11;
         int i12;
@@ -67,7 +67,7 @@ public final class v implements i {
             int i19 = 3;
             if (i17 != 0) {
                 e2.v vVar2 = this.c;
-                n8 n8Var = this.p;
+                f9 f9Var = this.p;
                 if (i17 == 1) {
                     int a2 = vVar.a();
                     e2.v vVar3 = this.a;
@@ -80,8 +80,8 @@ public final class v implements i {
                         a4.h hVar = this.b;
                         hVar.o(i20, bArr2);
                         hVar.f();
-                        int a10 = p8.a(hVar, 3, 8, 8);
-                        n8Var.a = a10;
+                        int a10 = s8.a(hVar, 3, 8, 8);
+                        f9Var.a = a10;
                         if (a10 != -1) {
                             e2.d.b(Math.max(Math.max(2, 8), 32) <= 63);
                             p7.a(p7.a(3L, 255L), 4294967296L);
@@ -99,13 +99,13 @@ public final class v implements i {
                                     }
                                 }
                                 j11 = k10;
-                                n8Var.b = j11;
+                                f9Var.b = j11;
                                 if (j11 != -1) {
                                     if (j11 > 16) {
-                                        throw s0.c("Contains sub-stream with an invalid packet label " + n8Var.b);
+                                        throw s0.c("Contains sub-stream with an invalid packet label " + f9Var.b);
                                     }
                                     if (j11 == 0) {
-                                        int i21 = n8Var.a;
+                                        int i21 = f9Var.a;
                                         if (i21 == 1) {
                                             throw s0.a(null, "Mpegh3daConfig packet with invalid packet label 0");
                                         }
@@ -116,8 +116,8 @@ public final class v implements i {
                                             throw s0.a(null, "AudioTruncation packet with invalid packet label 0");
                                         }
                                     }
-                                    int a11 = p8.a(hVar, 11, 24, 24);
-                                    n8Var.c = a11;
+                                    int a11 = s8.a(hVar, 11, 24, 24);
+                                    f9Var.c = a11;
                                     if (a11 != -1) {
                                         z10 = true;
                                         if (z10) {
@@ -125,7 +125,7 @@ public final class v implements i {
                                         } else {
                                             i16 = 0;
                                             this.n = 0;
-                                            this.o = n8Var.c + i20 + this.o;
+                                            this.o = f9Var.c + i20 + this.o;
                                         }
                                         if (z10) {
                                             int i22 = vVar3.c;
@@ -137,7 +137,7 @@ public final class v implements i {
                                             vVar3.J(i16);
                                             this.f.d(vVar3.c, vVar3);
                                             vVar3.G(2);
-                                            vVar2.G(n8Var.c);
+                                            vVar2.G(f9Var.c);
                                             this.m = true;
                                             this.d = 2;
                                         }
@@ -145,7 +145,7 @@ public final class v implements i {
                                 }
                             }
                             j11 = -1;
-                            n8Var.b = j11;
+                            f9Var.b = j11;
                             if (j11 != -1) {
                             }
                         }
@@ -161,7 +161,7 @@ public final class v implements i {
                     if (i17 != 2) {
                         throw new IllegalStateException();
                     }
-                    int i23 = n8Var.a;
+                    int i23 = f9Var.a;
                     if (i23 == 1 || i23 == 17) {
                         int i24 = vVar.b;
                         int min2 = Math.min(vVar.a(), vVar2.a());
@@ -169,14 +169,14 @@ public final class v implements i {
                         vVar2.K(min2);
                         vVar.J(i24);
                     }
-                    int min3 = Math.min(vVar.a(), n8Var.c - this.n);
+                    int min3 = Math.min(vVar.a(), f9Var.c - this.n);
                     this.f.d(min3, vVar);
                     int i25 = this.n + min3;
                     this.n = i25;
-                    if (i25 != n8Var.c) {
+                    if (i25 != f9Var.c) {
                         continue;
                     } else {
-                        int i26 = n8Var.a;
+                        int i26 = f9Var.a;
                         if (i26 == 1) {
                             byte[] bArr3 = vVar2.a;
                             a4.h hVar2 = new a4.h(bArr3, bArr3.length);
@@ -296,7 +296,7 @@ public final class v implements i {
                                 c10 = 1;
                             }
                             hVar2.t(2);
-                            p8.c(hVar2);
+                            s8.c(hVar2);
                             int i30 = hVar2.i(5);
                             int i31 = 0;
                             int i32 = 0;
@@ -304,13 +304,13 @@ public final class v implements i {
                                 int i33 = 16;
                                 if (i31 < i30 + 1) {
                                     int i34 = hVar2.i(3);
-                                    i32 = p8.a(hVar2, 5, 8, 16) + 1 + i32;
+                                    i32 = s8.a(hVar2, 5, 8, 16) + 1 + i32;
                                     if ((i34 == 0 || i34 == 2) && hVar2.h()) {
-                                        p8.c(hVar2);
+                                        s8.c(hVar2);
                                     }
                                     i31++;
                                 } else {
-                                    int a12 = p8.a(hVar2, 4, 8, 16) + 1;
+                                    int a12 = s8.a(hVar2, 4, 8, 16) + 1;
                                     hVar2.s();
                                     int i35 = 0;
                                     while (true) {
@@ -323,7 +323,7 @@ public final class v implements i {
                                                     hVar2.t(13);
                                                 }
                                                 if (c10 > 0) {
-                                                    p8.b(hVar2);
+                                                    s8.b(hVar2);
                                                 }
                                             } else if (i36 == 1) {
                                                 hVar2.t(i19);
@@ -335,7 +335,7 @@ public final class v implements i {
                                                     hVar2.s();
                                                 }
                                                 if (c10 > 0) {
-                                                    p8.b(hVar2);
+                                                    s8.b(hVar2);
                                                     i15 = hVar2.i(2);
                                                 } else {
                                                     i15 = 0;
@@ -366,10 +366,10 @@ public final class v implements i {
                                                     hVar2.s();
                                                 }
                                             } else if (i36 == i19) {
-                                                p8.a(hVar2, 4, i18, i33);
-                                                int a13 = p8.a(hVar2, 4, i18, i33);
+                                                s8.a(hVar2, 4, i18, i33);
+                                                int a13 = s8.a(hVar2, 4, i18, i33);
                                                 if (hVar2.h()) {
-                                                    p8.a(hVar2, i18, i33, 0);
+                                                    s8.a(hVar2, i18, i33, 0);
                                                 }
                                                 hVar2.s();
                                                 if (a13 > 0) {
@@ -383,12 +383,12 @@ public final class v implements i {
                                         } else {
                                             if (hVar2.h()) {
                                                 int i39 = 8;
-                                                int a14 = p8.a(hVar2, 2, 4, 8) + 1;
+                                                int a14 = s8.a(hVar2, 2, 4, 8) + 1;
                                                 int i40 = 0;
                                                 bArr = null;
                                                 while (i40 < a14) {
-                                                    int a15 = p8.a(hVar2, 4, i39, 16);
-                                                    int a16 = p8.a(hVar2, 4, i39, 16);
+                                                    int a15 = s8.a(hVar2, 4, i39, 16);
+                                                    int a16 = s8.a(hVar2, 4, i39, 16);
                                                     if (a15 == 7) {
                                                         int i41 = hVar2.i(4) + 1;
                                                         hVar2.t(4);
@@ -413,7 +413,7 @@ public final class v implements i {
                                                     this.q = (int) (i13 * d);
                                                     this.r = (int) (i14 * d);
                                                     j3 = this.t;
-                                                    j10 = n8Var.b;
+                                                    j10 = f9Var.b;
                                                     if (j3 != j10) {
                                                         this.t = j10;
                                                         String concat = i27 != -1 ? "mhm1".concat(String.format(".%02X", Integer.valueOf(i27))) : "mhm1";
@@ -435,7 +435,7 @@ public final class v implements i {
                                                     this.q = (int) (i13 * d);
                                                     this.r = (int) (i14 * d);
                                                     j3 = this.t;
-                                                    j10 = n8Var.b;
+                                                    j10 = f9Var.b;
                                                     if (j3 != j10) {
                                                     }
                                                     i11 = 1;
@@ -449,7 +449,7 @@ public final class v implements i {
                                                     this.q = (int) (i13 * d);
                                                     this.r = (int) (i14 * d);
                                                     j3 = this.t;
-                                                    j10 = n8Var.b;
+                                                    j10 = f9Var.b;
                                                     if (j3 != j10) {
                                                     }
                                                     i11 = 1;
@@ -463,7 +463,7 @@ public final class v implements i {
                                                     this.q = (int) (i13 * d);
                                                     this.r = (int) (i14 * d);
                                                     j3 = this.t;
-                                                    j10 = n8Var.b;
+                                                    j10 = f9Var.b;
                                                     if (j3 != j10) {
                                                     }
                                                     i11 = 1;
@@ -536,7 +536,7 @@ public final class v implements i {
     }
 
     @Override // j4.i
-    public final void d() {
+    public final void c() {
         this.d = 0;
         this.l = 0;
         this.a.G(2);
@@ -555,16 +555,16 @@ public final class v implements i {
     }
 
     @Override // j4.i
-    public final void e(c3.q qVar, f0 f0Var) {
+    public final void d(c3.q qVar, f0 f0Var) {
         f0Var.a();
         f0Var.b();
         this.e = f0Var.e;
         f0Var.b();
-        this.f = qVar.R1(f0Var.d, 1);
+        this.f = qVar.Z1(f0Var.d, 1);
     }
 
     @Override // j4.i
-    public final void g(int i10, long j3) {
+    public final void f(int i10, long j3) {
         this.k = i10;
         if (!this.j && (this.o != 0 || !this.m)) {
             this.i = true;
@@ -579,6 +579,6 @@ public final class v implements i {
     }
 
     @Override // j4.i
-    public final void f(boolean z10) {
+    public final void e(boolean z10) {
     }
 }

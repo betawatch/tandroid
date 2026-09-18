@@ -1,5 +1,6 @@
 package androidx.mediarouter.app;
 
+import ai.q4;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
@@ -43,7 +44,7 @@ import java.util.HashSet;
 import java.util.concurrent.TimeUnit;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class u extends g.g {
     public static final int F0;
@@ -52,7 +53,7 @@ public final class u extends g.g {
     public final Interpolator C0;
     public final AccessibilityManager D0;
     public Button E;
-    public final androidx.activity.i E0;
+    public final q4 E0;
     public ImageButton F;
     public MediaRouteExpandCollapseButton G;
     public FrameLayout H;
@@ -83,7 +84,7 @@ public final class u extends g.g {
     public final int g0;
     public final p4.x h;
     public HashMap h0;
-    public pf.b i0;
+    public n4.y i0;
     public final r j0;
     public PlaybackStateCompat k0;
     public MediaDescriptionCompat l0;
@@ -124,7 +125,7 @@ public final class u extends g.g {
         ContextThemeWrapper a2 = v7.d0.a(context, true);
         int g10 = v7.d0.g(a2, R.attr.mediaRouteTheme);
         this.O = true;
-        this.E0 = new androidx.activity.i(this, 6);
+        this.E0 = new q4(this, 9);
         Context context2 = getContext();
         this.s = context2;
         this.j0 = new r(this, 0);
@@ -185,10 +186,10 @@ public final class u extends g.g {
             p0 p0Var = (p0) obj;
             p0Var.j = true;
             p0Var.k = true;
-            n4.y yVar = p0Var.l;
-            if (yVar != null) {
-                u uVar = (u) yVar.c;
-                uVar.Z.remove((p4.v) yVar.b);
+            of.b bVar = p0Var.l;
+            if (bVar != null) {
+                u uVar = (u) bVar.c;
+                uVar.Z.remove((p4.v) bVar.b);
                 uVar.V.notifyDataSetChanged();
             }
         }
@@ -240,7 +241,7 @@ public final class u extends g.g {
         p(p4.x.e());
     }
 
-    @Override // g.g, g.u, androidx.activity.n, android.app.Dialog
+    @Override // g.g, g.u, androidx.activity.m, android.app.Dialog
     public final void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         getWindow().setBackgroundDrawableResource(android.R.color.transparent);
@@ -364,16 +365,16 @@ public final class u extends g.g {
     public final void p(MediaSessionCompat$Token mediaSessionCompat$Token) {
         MediaMetadataCompat mediaMetadataCompat;
         PlaybackStateCompat d;
-        pf.b bVar = this.i0;
+        n4.y yVar = this.i0;
         r rVar = this.j0;
-        if (bVar != null) {
-            bVar.j0(rVar);
+        if (yVar != null) {
+            yVar.Z(rVar);
             this.i0 = null;
         }
         if (mediaSessionCompat$Token != null && this.w) {
-            pf.b bVar2 = new pf.b(this.s, mediaSessionCompat$Token);
-            this.i0 = bVar2;
-            bVar2.f0(rVar);
+            n4.y yVar2 = new n4.y(this.s, mediaSessionCompat$Token);
+            this.i0 = yVar2;
+            yVar2.V(rVar);
             MediaMetadata metadata = ((android.support.v4.media.session.h) this.i0.b).a.getMetadata();
             if (metadata != null) {
                 a0.f fVar = MediaMetadataCompat.d;
@@ -392,8 +393,8 @@ public final class u extends g.g {
             if (mediaSessionCompat$Token2.a() != null) {
                 try {
                     d = mediaSessionCompat$Token2.a().d();
-                } catch (RemoteException e7) {
-                    Log.e("MediaControllerCompat", "Dead object in getPlaybackState.", e7);
+                } catch (RemoteException e) {
+                    Log.e("MediaControllerCompat", "Dead object in getPlaybackState.", e);
                 }
                 this.k0 = d;
                 r();

@@ -9,7 +9,7 @@ import java.util.Iterator;
 import java.util.List;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class q0 extends u0 {
     public static final PathInterpolator e = new PathInterpolator(0.0f, 1.1f, 0.0f, 1.0f);
@@ -64,11 +64,11 @@ public final class q0 extends u0 {
     public static void h(View view, v0 v0Var, o0.a aVar) {
         b2.g i10 = i(view);
         if (i10 != null) {
-            qh.e eVar = (qh.e) i10;
+            ph.e eVar = (ph.e) i10;
             if (eVar.c == 0) {
                 Iterator it = eVar.d.iterator();
                 while (it.hasNext()) {
-                    ((qh.d) it.next()).s();
+                    ((ph.d) it.next()).s();
                 }
             }
             eVar.c++;

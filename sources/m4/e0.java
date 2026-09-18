@@ -17,12 +17,12 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.qs;
-import org.telegram.ui.Components.ss;
-import org.telegram.ui.Components.v51;
-import zh.a7;
+import org.telegram.ui.Components.rs;
+import org.telegram.ui.Components.ts;
+import org.telegram.ui.Components.x51;
+import yh.d7;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class e0 implements Runnable {
     public final /* synthetic */ int a;
@@ -32,12 +32,12 @@ public final /* synthetic */ class e0 implements Runnable {
     public final /* synthetic */ Object e;
     public final /* synthetic */ Object f;
 
-    public /* synthetic */ e0(k0 k0Var, int i10, n4.a0 a0Var, j0 j0Var, boolean z10) {
+    public /* synthetic */ e0(l0 l0Var, int i10, n4.a0 a0Var, k0 k0Var, boolean z10) {
         this.a = 0;
-        this.d = k0Var;
+        this.d = l0Var;
         this.c = i10;
         this.e = a0Var;
-        this.f = j0Var;
+        this.f = k0Var;
         this.b = z10;
     }
 
@@ -47,23 +47,23 @@ public final /* synthetic */ class e0 implements Runnable {
         TLRPC.Document document;
         switch (this.a) {
             case 0:
-                k0 k0Var = (k0) this.d;
+                l0 l0Var = (l0) this.d;
                 n4.a0 a0Var = (n4.a0) this.e;
-                j0 j0Var = (j0) this.f;
-                a0 a0Var2 = k0Var.g;
+                k0 k0Var = (k0) this.f;
+                a0 a0Var2 = l0Var.g;
                 if (!a0Var2.j()) {
-                    boolean isActive = ((n4.r) k0Var.k.b).a.isActive();
+                    boolean isActive = ((n4.r) l0Var.k.b).a.isActive();
                     int i10 = this.c;
                     if (isActive) {
-                        r L = k0Var.L(a0Var);
-                        if (k0Var.f.C(L, i10)) {
-                            ob.a aVar = a0Var2.e;
+                        r L = l0Var.L(a0Var);
+                        if (l0Var.f.B(L, i10)) {
+                            na.d dVar = a0Var2.e;
                             a0Var2.s(L);
-                            aVar.getClass();
+                            dVar.getClass();
                             try {
-                                j0Var.f(L);
-                            } catch (RemoteException e7) {
-                                e2.a.o("MediaSessionLegacyStub", "Exception in " + L, e7);
+                                k0Var.g(L);
+                            } catch (RemoteException e) {
+                                e2.a.o("MediaSessionLegacyStub", "Exception in " + L, e);
                             }
                             if (this.b) {
                                 new SparseBooleanArray().append(i10, true);
@@ -75,7 +75,7 @@ public final /* synthetic */ class e0 implements Runnable {
                             break;
                         }
                     } else {
-                        StringBuilder l4 = i2.g.l(i10, "Ignore incoming player command before initialization. command=", ", pid=");
+                        StringBuilder l4 = hg.k0.l(i10, "Ignore incoming player command before initialization. command=", ", pid=");
                         l4.append(a0Var.a.b);
                         e2.a.n("MediaSessionLegacyStub", l4.toString());
                         break;
@@ -86,13 +86,13 @@ public final /* synthetic */ class e0 implements Runnable {
                 ((MessagesController) this.d).lambda$startShortPoll$333((TLRPC.Chat) this.e, this.b, this.c, (q0.a) this.f);
                 break;
             case 2:
-                qs qsVar = (qs) this.d;
+                rs rsVar = (rs) this.d;
                 TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal = (TLRPC.TL_messages_searchGlobal) this.e;
                 TLObject tLObject = (TLObject) this.f;
-                ArrayList arrayList = qsVar.T;
-                int i11 = qsVar.N;
-                if (this.c == qsVar.d0 && TextUtils.equals(tL_messages_searchGlobal.q, qsVar.e0)) {
-                    qsVar.Z = false;
+                ArrayList arrayList = rsVar.T;
+                int i11 = rsVar.N;
+                if (this.c == rsVar.d0 && TextUtils.equals(tL_messages_searchGlobal.q, rsVar.e0)) {
+                    rsVar.Z = false;
                     if (!this.b) {
                         arrayList.clear();
                     }
@@ -108,25 +108,25 @@ public final /* synthetic */ class e0 implements Runnable {
                             TLRPC.Message message = arrayList2.get(i12);
                             i12++;
                             MessageObject messageObject = new MessageObject(i11, message, false, true);
-                            messageObject.setQuery(qsVar.e0);
+                            messageObject.setQuery(rsVar.e0);
                             arrayList.add(messageObject);
                         }
-                        qsVar.b0 = messages_messages instanceof TLRPC.TL_messages_messagesSlice;
+                        rsVar.b0 = messages_messages instanceof TLRPC.TL_messages_messagesSlice;
                         Math.max(arrayList.size(), messages_messages.count);
-                        qsVar.c0 = messages_messages.next_rate;
+                        rsVar.c0 = messages_messages.next_rate;
                     }
-                    qsVar.N(true);
+                    rsVar.N(true);
                     break;
                 }
                 break;
             case 3:
-                ss ssVar = (ss) this.d;
+                ts tsVar = (ts) this.d;
                 TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal2 = (TLRPC.TL_messages_searchGlobal) this.e;
                 TLObject tLObject2 = (TLObject) this.f;
-                ArrayList arrayList3 = ssVar.P;
-                int i13 = ssVar.N;
-                if (this.c == ssVar.a0 && TextUtils.equals(tL_messages_searchGlobal2.q, ssVar.b0)) {
-                    ssVar.W = false;
+                ArrayList arrayList3 = tsVar.P;
+                int i13 = tsVar.N;
+                if (this.c == tsVar.a0 && TextUtils.equals(tL_messages_searchGlobal2.q, tsVar.b0)) {
+                    tsVar.W = false;
                     if (!this.b) {
                         arrayList3.clear();
                     }
@@ -142,20 +142,20 @@ public final /* synthetic */ class e0 implements Runnable {
                             TLRPC.Message message2 = arrayList4.get(i14);
                             i14++;
                             MessageObject messageObject2 = new MessageObject(i13, message2, false, true);
-                            messageObject2.setQuery(ssVar.b0);
+                            messageObject2.setQuery(tsVar.b0);
                             arrayList3.add(messageObject2);
                         }
-                        ssVar.Y = messages_messages2 instanceof TLRPC.TL_messages_messagesSlice;
+                        tsVar.Y = messages_messages2 instanceof TLRPC.TL_messages_messagesSlice;
                         Math.max(arrayList3.size(), messages_messages2.count);
-                        ssVar.Z = messages_messages2.next_rate;
+                        tsVar.Z = messages_messages2.next_rate;
                     }
-                    ssVar.N(true);
+                    tsVar.N(true);
                     break;
                 }
                 break;
             case 4:
-                qg.q0 q0Var = (qg.q0) this.d;
-                qg.r0 r0Var = (qg.r0) this.e;
+                pg.q0 q0Var = (pg.q0) this.d;
+                pg.r0 r0Var = (pg.r0) this.e;
                 Runnable runnable = (Runnable) this.f;
                 boolean z10 = this.b;
                 q0Var.d(r0Var, this.c, z10 ? q0Var.h : null);
@@ -217,7 +217,7 @@ public final /* synthetic */ class e0 implements Runnable {
                 }
                 if (document != null) {
                     imageReceiver.setAllowStartLottieAnimation(true);
-                    imageReceiver.setDelegate(new a7(zArr));
+                    imageReceiver.setDelegate(new d7(zArr));
                     SvgHelper.SvgDrawable svgThumb = DocumentObject.getSvgThumb(document, j6.a7, 0.3f);
                     TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(document.thumbs, 160, true, null, true);
                     imageReceiver.setAutoRepeat(0);
@@ -240,16 +240,16 @@ public final /* synthetic */ class e0 implements Runnable {
         this.f = aVar;
     }
 
-    public /* synthetic */ e0(v51 v51Var, int i10, TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal, boolean z10, TLObject tLObject, int i11) {
+    public /* synthetic */ e0(x51 x51Var, int i10, TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal, boolean z10, TLObject tLObject, int i11) {
         this.a = i11;
-        this.d = v51Var;
+        this.d = x51Var;
         this.c = i10;
         this.e = tL_messages_searchGlobal;
         this.b = z10;
         this.f = tLObject;
     }
 
-    public /* synthetic */ e0(qg.q0 q0Var, qg.r0 r0Var, int i10, boolean z10, Runnable runnable) {
+    public /* synthetic */ e0(pg.q0 q0Var, pg.r0 r0Var, int i10, boolean z10, Runnable runnable) {
         this.a = 4;
         this.d = q0Var;
         this.e = r0Var;

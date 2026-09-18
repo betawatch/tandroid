@@ -18,24 +18,24 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class x60 extends kl0 {
+public final class x60 extends ll0 {
     public ArrayList c = new ArrayList();
     public ArrayList d = new ArrayList();
-    public final hg.b2 e;
+    public final gg.c2 e;
     public int f;
     public Runnable h;
     public final /* synthetic */ b70 n;
 
     public x60(b70 b70Var) {
         this.n = b70Var;
-        hg.b2 b2Var = new hg.b2(false);
-        this.e = b2Var;
-        b2Var.a = new kv(this, 7);
+        gg.c2 c2Var = new gg.c2(false);
+        this.e = c2Var;
+        c2Var.a = new lv(this, 7);
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.ll0
     public final boolean D(s4.c1 c1Var) {
         return c1Var.f == 1;
     }
@@ -43,9 +43,9 @@ public final class x60 extends kl0 {
     @Override // s4.h0
     public final int h() {
         int size = this.c.size();
-        hg.b2 b2Var = this.e;
-        int size2 = b2Var.d.size();
-        int size3 = b2Var.e.size();
+        gg.c2 c2Var = this.e;
+        int size2 = c2Var.d.size();
+        int size3 = c2Var.e.size();
         int i10 = size + size2;
         if (size3 != 0) {
             i10 += size3 + 1;
@@ -98,14 +98,14 @@ public final class x60 extends kl0 {
         }
         org.telegram.ui.Cells.f4 f4Var = (org.telegram.ui.Cells.f4) view;
         int size = this.c.size();
-        hg.b2 b2Var = this.e;
-        ArrayList arrayList = b2Var.e;
-        ArrayList arrayList2 = b2Var.d;
+        gg.c2 c2Var = this.e;
+        ArrayList arrayList = c2Var.e;
+        ArrayList arrayList2 = c2Var.d;
         int size2 = arrayList.size();
         int size3 = arrayList2.size();
         int i12 = i10 - 1;
         CharSequence charSequence2 = null;
-        TLObject tLObject = (i12 < 0 || i12 >= size) ? (i12 < size || i12 >= size3 + size) ? (i12 <= size + size3 || i12 > (size2 + size) + size3) ? null : (TLObject) b2Var.e.get(((i12 - size) - size3) - 1) : (TLObject) arrayList2.get(i12 - size) : (TLObject) this.c.get(i12);
+        TLObject tLObject = (i12 < 0 || i12 >= size) ? (i12 < size || i12 >= size3 + size) ? (i12 <= size + size3 || i12 > (size2 + size) + size3) ? null : (TLObject) c2Var.e.get(((i12 - size) - size3) - 1) : (TLObject) arrayList2.get(i12 - size) : (TLObject) this.c.get(i12);
         if (tLObject != null) {
             String publicUsername = tLObject instanceof TLRPC.User ? ((TLRPC.User) tLObject).username : ChatObject.getPublicUsername((TLRPC.Chat) tLObject);
             if (i12 < size) {
@@ -115,7 +115,7 @@ public final class x60 extends kl0 {
                 charSequence2 = charSequence;
                 charSequence = null;
             } else if (i12 > size && !TextUtils.isEmpty(publicUsername)) {
-                String str = b2Var.c;
+                String str = c2Var.c;
                 if (str.startsWith("@")) {
                     str = str.substring(1);
                 }
@@ -175,7 +175,7 @@ public final class x60 extends kl0 {
         if (i10 == 1) {
             view = new org.telegram.ui.Cells.f4(context, 1, 0, false);
         } else if (i10 == 2) {
-            view = new di.eb(this, context, 19);
+            view = new ci.eb(this, context, 19);
         } else if (i10 != 4) {
             org.telegram.ui.Cells.e4 e4Var = new org.telegram.ui.Cells.e4(context);
             e4Var.setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.e7, false));
@@ -184,7 +184,7 @@ public final class x60 extends kl0 {
             drawable.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Zh, false), PorterDuff.Mode.MULTIPLY));
             TextView textView = new TextView(e4Var.getContext());
             e4Var.b = textView;
-            com.google.android.gms.internal.vision.e2.m(14.0f, 1, textView);
+            com.google.android.gms.internal.vision.e2.l(14.0f, 1, textView);
             textView.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.ai, false));
             textView.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
             e4Var.addView(textView, w7.x5.d(-1, -1.0f, (LocaleController.isRTL ? 5 : 3) | 48, 16.0f, 0.0f, 16.0f, 0.0f));
@@ -192,6 +192,6 @@ public final class x60 extends kl0 {
         } else {
             view = new View(context);
         }
-        return new vk0(view);
+        return new wk0(view);
     }
 }

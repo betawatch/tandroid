@@ -20,9 +20,9 @@ import java.util.ArrayDeque;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import v7.g8;
-import v7.o8;
+import v7.r8;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class p extends g {
     public static final PorterDuff.Mode s = PorterDuff.Mode.SRC_IN;
@@ -101,7 +101,7 @@ public final class p extends g {
         }
         int save = canvas.save();
         canvas.translate(rect.left, rect.top);
-        if (isAutoMirrored() && o8.a(this) == 1) {
+        if (isAutoMirrored() && r8.a(this) == 1) {
             canvas.translate(rect.width(), 0.0f);
             canvas.scale(-1.0f, 1.0f);
         }
@@ -367,7 +367,7 @@ public final class p extends g {
     public final void setTint(int i10) {
         Drawable drawable = this.a;
         if (drawable != null) {
-            o8.c(i10, drawable);
+            r8.c(i10, drawable);
         } else {
             setTintList(ColorStateList.valueOf(i10));
         }
@@ -472,8 +472,8 @@ public final class p extends g {
                 ThreadLocal threadLocal = h0.c.a;
                 try {
                     colorStateList = h0.c.a(resources2, resources2.getXml(resourceId), theme);
-                } catch (Exception e7) {
-                    Log.e("CSLCompat", "Failed to inflate ColorStateList.", e7);
+                } catch (Exception e) {
+                    Log.e("CSLCompat", "Failed to inflate ColorStateList.", e);
                 }
             }
         }

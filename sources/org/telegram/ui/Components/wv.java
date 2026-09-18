@@ -1,11 +1,11 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class wv extends sg.e1 {
+public final class wv extends rg.b1 {
     @Override // android.view.View
     public final void invalidate() {
-        if (ah.y0.b(this)) {
+        if (zg.f0.b(this)) {
             return;
         }
         super.invalidate();
@@ -13,7 +13,7 @@ public final class wv extends sg.e1 {
 
     @Override // android.view.View
     public final void invalidate(int i10, int i11, int i12, int i13) {
-        if (ah.y0.b(this)) {
+        if (zg.f0.b(this)) {
             return;
         }
         super.invalidate(i10, i11, i12, i13);

@@ -1,83 +1,75 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
 import android.content.Context;
-import android.graphics.ColorFilter;
 import android.util.SparseIntArray;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class f61 extends org.telegram.ui.Components.bw {
-    public final /* synthetic */ int g0;
-    public final /* synthetic */ j71 h0;
+public final class f61 extends k61 {
+    public final /* synthetic */ int f3;
+    public final /* synthetic */ i71 g3;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f61(j71 j71Var, Context context, org.telegram.ui.ActionBar.f6 f6Var, boolean z10, boolean z11, int i10, rx0 rx0Var, int i11, int i12) {
-        super(context, f6Var, z10, z11, false, true, i10, rx0Var, i11, false);
-        this.h0 = j71Var;
-        this.g0 = i12;
+    public f61(i71 i71Var, Context context, int i10) {
+        super(i71Var, context);
+        this.g3 = i71Var;
+        this.f3 = i10;
     }
 
-    @Override // org.telegram.ui.Components.bw
-    public final ColorFilter getEmojiColorFilter() {
-        return this.h0.k1;
+    @Override // androidx.recyclerview.widget.RecyclerView
+    public final void k0(int i10) {
+        i71 i71Var = this.g3;
+        z51 z51Var = i71Var.f0;
+        if (i10 == 0) {
+            i71Var.w1 = false;
+            if (i71Var.a == -1 || z51Var.getVisibility() != 0 || z51Var.getTranslationY() <= (-AndroidUtilities.dp(51.0f))) {
+                return;
+            }
+            i71.a(i71Var, z51Var.getTranslationY() > ((float) (-AndroidUtilities.dp(16.0f))) ? 0 : 1, 0);
+        }
     }
 
-    @Override // org.telegram.ui.Components.bw
-    public final boolean h(int i10) {
-        int i11;
-        x61 x61Var;
-        j71 j71Var = this.h0;
-        SparseIntArray sparseIntArray = j71Var.x0;
-        if (j71Var.w1) {
-            return false;
-        }
-        int i12 = this.g0;
-        if (i12 == 4 && i10 == 0) {
-            j71Var.Q = !j71Var.Q;
-            j71Var.d0.setVisibility(8);
-            org.telegram.ui.Components.bw bwVar = j71Var.c0[j71Var.Q ? 1 : 0];
-            j71Var.d0 = bwVar;
-            bwVar.setVisibility(0);
-            j71Var.d0.x.setDrawable(getContext().getDrawable(j71Var.Q ? R.drawable.msg_emoji_stickers : R.drawable.msg_emoji_smiles));
-            j71Var.d0.x.setContentDescription(LocaleController.getString(j71Var.Q ? R.string.AccDescrStickers : R.string.Emoji));
-            j71Var.B(true, false, false);
-            j71Var.r0.h1(0, 0);
-            return true;
-        }
-        org.telegram.ui.Components.xv xvVar = this.E;
-        int i13 = ((xvVar == null || !this.b0) ? 0 : 1) + 1;
-        if (xvVar != null && this.b0 && i10 == 1) {
-            i11 = j71Var.n;
-        } else {
-            if ((i12 != 4 || i10 != 0) && i10 > 0) {
-                int i14 = i10 - i13;
-                if (sparseIntArray.indexOfKey(i14) >= 0) {
-                    i11 = sparseIntArray.get(i14);
+    @Override // androidx.recyclerview.widget.RecyclerView
+    public final void l0(int i10, int i11) {
+        int i12;
+        i71 i71Var = this.g3;
+        i71Var.h();
+        if (!i71Var.w1) {
+            int I0 = i71Var.r0.I0();
+            ArrayList arrayList = i71Var.D0;
+            SparseIntArray sparseIntArray = i71Var.w0;
+            if (I0 != -1) {
+                if (I0 > ((arrayList.size() <= 40 || i71Var.C0) ? arrayList.size() + (i71Var.N0 ? 1 : 0) : 40) && I0 > i71Var.I0.size()) {
+                    int i13 = 0;
+                    while (true) {
+                        if (i13 >= sparseIntArray.size()) {
+                            break;
+                        }
+                        int keyAt = sparseIntArray.keyAt(i13);
+                        int valueAt = sparseIntArray.valueAt(i13);
+                        org.telegram.ui.Components.wx wxVar = valueAt >= 0 ? (org.telegram.ui.Components.wx) i71Var.M0.get(valueAt) : null;
+                        if (wxVar != null) {
+                            boolean z10 = wxVar.h;
+                            int size = wxVar.c.size();
+                            if (!z10) {
+                                size = Math.min(24, size);
+                            }
+                            if (I0 > keyAt && I0 <= keyAt + 1 + size) {
+                                org.telegram.ui.Components.cw cwVar = i71Var.d0;
+                                cwVar.j(((cwVar.E == null || !cwVar.b0) ? 0 : 1) + (cwVar.y != null ? 1 : 0) + valueAt, true);
+                            }
+                        }
+                        i13++;
+                    }
+                } else {
+                    i71Var.d0.j(0, true);
                 }
             }
-            i11 = 0;
         }
-        j71.a(j71Var, i11, AndroidUtilities.dp((i12 == 6 ? 7 : 0) - 2));
-        j71Var.d0.j(i10, true);
-        j71Var.h0.L1 = true;
-        j71Var.v(null, true, true);
-        a61 a61Var = j71Var.f0;
-        if (a61Var != null && (x61Var = a61Var.n) != null) {
-            x61Var.E1(null);
-        }
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.bw
-    public final void i(org.telegram.ui.Components.xv xvVar) {
-        ValueAnimator valueAnimator = this.h0.U1;
-        if (valueAnimator == null || valueAnimator.isRunning()) {
-            xvVar.setScaleX(0.0f);
-            xvVar.setScaleY(0.0f);
-        }
+        i71Var.C();
+        AndroidUtilities.updateViewVisibilityAnimated(i71Var.e0, i71Var.h0.computeVerticalScrollOffset() != 0 || (i12 = this.f3) == 0 || i12 == 12 || i12 == 10 || i12 == 1 || i12 == 11 || i12 == 6, 1.0f, true);
+        i71Var.m();
     }
 }

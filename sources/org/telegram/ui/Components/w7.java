@@ -1,71 +1,316 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.Rect;
+import android.view.MotionEvent;
 import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.R;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.ui.PhotoViewer;
+import org.telegram.ui.ProfileActivity;
+import org.telegram.ui.SecretMediaViewer;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class w7 extends s4.v {
-    public final /* synthetic */ k8 d;
+public final class w7 extends org.telegram.ui.ActionBar.k {
+    public final /* synthetic */ int u1;
+    public final /* synthetic */ Object v1;
 
-    public w7(k8 k8Var) {
-        this.d = k8Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ w7(Object obj, Context context, int i10) {
+        super(context, null);
+        this.u1 = i10;
+        this.v1 = obj;
     }
 
-    @Override // s4.v
-    public final void a(RecyclerView recyclerView, s4.c1 c1Var) {
-        super.a(recyclerView, c1Var);
-        View view = c1Var.a;
-        view.setPressed(false);
-        view.setTag(R.id.dragging, null);
-    }
-
-    @Override // s4.v
-    public final int e(RecyclerView recyclerView, s4.c1 c1Var) {
-        if (c1Var.f != 0) {
-            return 0;
-        }
-        return s4.v.l(3, 0);
-    }
-
-    @Override // s4.v
-    public final boolean n(RecyclerView recyclerView, s4.c1 c1Var, s4.c1 c1Var2) {
-        int b10 = c1Var.b();
-        int b11 = c1Var2.b();
-        k8 k8Var = this.d;
-        if (!k8Var.v0) {
-            k8Var.w0.move(b10, b11);
-        } else {
-            if (b10 <= 0 || b11 <= 0) {
-                return false;
-            }
-            k8Var.w0.move(b10 - 1, b11 - 1);
-        }
-        k8Var.x0.clear();
-        k8Var.x0.addAll(k8Var.w0.list);
-        k8Var.s.p(b10, b11);
-        return true;
-    }
-
-    @Override // s4.v
-    public final void p(s4.c1 c1Var, int i10) {
-        v7 v7Var = this.d.n;
-        if (c1Var != null) {
-            v7Var.c1(false);
-        }
-        if (i10 != 0) {
-            v7Var.I0(false);
-            if (c1Var != null) {
-                c1Var.a.setPressed(true);
-            }
-        }
-        if (c1Var != null) {
-            c1Var.a.setTag(R.id.dragging, i10 == 2 ? Boolean.TRUE : null);
+    @Override // org.telegram.ui.ActionBar.k
+    public void B(int i10, boolean z10) {
+        ImageView imageView;
+        ImageView imageView2;
+        switch (this.u1) {
+            case 5:
+                ProfileActivity profileActivity = (ProfileActivity) this.v1;
+                super.B(i10, z10);
+                if (!z10 && (imageView2 = profileActivity.Y0) != null) {
+                    imageView2.setColorFilter(new PorterDuffColorFilter(i10, PorterDuff.Mode.MULTIPLY));
+                }
+                if (profileActivity.I0 && (imageView = this.e) != null) {
+                    imageView.setColorFilter(i10, PorterDuff.Mode.SRC_IN);
+                    break;
+                }
+                break;
+            default:
+                super.B(i10, z10);
+                break;
         }
     }
 
-    @Override // s4.v
-    public final void q(s4.c1 c1Var) {
+    @Override // org.telegram.ui.ActionBar.k
+    public boolean N(View view) {
+        switch (this.u1) {
+            case 3:
+                return super.N(view) || view == ((org.telegram.ui.wy) this.v1).m0;
+            default:
+                return super.N(view);
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.k
+    public void O(View[] viewArr, boolean[] zArr) {
+        switch (this.u1) {
+            case 3:
+                super.O(viewArr, zArr);
+                ((org.telegram.ui.wy) this.v1).h.a(true, true);
+                break;
+            default:
+                super.O(viewArr, zArr);
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.k, android.view.ViewGroup, android.view.View
+    public boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        switch (this.u1) {
+            case 3:
+                org.telegram.ui.wy wyVar = (org.telegram.ui.wy) this.v1;
+                org.telegram.ui.my myVar = wyVar.X;
+                if (myVar == null || myVar.getAlpha() <= 0.0f || !wyVar.b.f) {
+                    break;
+                }
+                break;
+        }
+        return super.dispatchTouchEvent(motionEvent);
+    }
+
+    @Override // org.telegram.ui.ActionBar.k
+    public void h(boolean z10) {
+        switch (this.u1) {
+            case 3:
+                org.telegram.ui.wy wyVar = (org.telegram.ui.wy) this.v1;
+                wyVar.X.r.getText().clear();
+                if (z10 && wyVar.X.r.isFocused()) {
+                    AndroidUtilities.hideKeyboard(wyVar.X.r);
+                }
+                wyVar.X.r.clearFocus();
+                wyVar.Y.b(false);
+                break;
+            default:
+                super.h(z10);
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.k, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        switch (this.u1) {
+            case 5:
+                super.onLayout(z10, i10, i11, i12, i13);
+                ((ProfileActivity) this.v1).l5(false);
+                break;
+            default:
+                super.onLayout(z10, i10, i11, i12, i13);
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.k, android.view.View
+    public boolean onTouchEvent(MotionEvent motionEvent) {
+        switch (this.u1) {
+            case 5:
+                ProfileActivity profileActivity = (ProfileActivity) this.v1;
+                org.telegram.ui.j0 j0Var = profileActivity.Y;
+                Rect rect = profileActivity.L2;
+                j0Var.getHitRect(rect);
+                if (!rect.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
+                    break;
+                }
+                break;
+        }
+        return super.onTouchEvent(motionEvent);
+    }
+
+    @Override // org.telegram.ui.ActionBar.k
+    public void r() {
+        switch (this.u1) {
+            case 3:
+                super.r();
+                ((org.telegram.ui.wy) this.v1).h.a(false, true);
+                break;
+            default:
+                super.r();
+                break;
+        }
+    }
+
+    @Override // android.view.View
+    public void setAlpha(float f7) {
+        ViewGroup viewGroup;
+        ViewGroup viewGroup2;
+        ViewGroup viewGroup3;
+        ViewGroup viewGroup4;
+        switch (this.u1) {
+            case 0:
+                super.setAlpha(f7);
+                viewGroup = ((org.telegram.ui.ActionBar.g3) ((h8) this.v1)).containerView;
+                viewGroup.invalidate();
+                break;
+            case 1:
+                vi viVar = (vi) this.v1;
+                xh xhVar = viVar.D0;
+                TextView textView = viVar.j1;
+                xh xhVar2 = viVar.x1;
+                float alpha = getAlpha();
+                super.setAlpha(f7);
+                if (alpha != f7) {
+                    if (textView != null) {
+                        float f10 = 1.0f - f7;
+                        textView.setAlpha(f10);
+                        textView.setVisibility(f10 > 0.0f ? 0 : 8);
+                    }
+                    vi.M(viVar);
+                    viewGroup2 = ((org.telegram.ui.ActionBar.g3) viVar).containerView;
+                    viewGroup2.invalidate();
+                    if (xhVar != null && xhVar2 != null) {
+                        if (xhVar.getTag() != null) {
+                            if (viVar.y0 == null) {
+                                float f11 = f7 == 0.0f ? 1.0f : 0.0f;
+                                if (xhVar2.getAlpha() != f11) {
+                                    xhVar2.setAlpha(f11);
+                                    break;
+                                }
+                            }
+                        } else {
+                            ni niVar = viVar.y0;
+                            if (niVar == null || niVar.J()) {
+                                xhVar2.setAlpha(1.0f - f7);
+                                xhVar2.setTranslationY(AndroidUtilities.dp(44.0f) * f7);
+                            }
+                            xhVar.setTranslationY(AndroidUtilities.dp(48.0f) * f7);
+                            break;
+                        }
+                    }
+                }
+                break;
+            case 2:
+                super.setAlpha(f7);
+                viewGroup3 = ((org.telegram.ui.ActionBar.g3) ((qg0) this.v1)).containerView;
+                viewGroup3.invalidate();
+                break;
+            case 3:
+            case 5:
+            default:
+                super.setAlpha(f7);
+                break;
+            case 4:
+                super.setAlpha(f7);
+                ((PhotoViewer) this.v1).e0.invalidate();
+                break;
+            case 6:
+                super.setAlpha(f7);
+                SecretMediaViewer secretMediaViewer = (SecretMediaViewer) this.v1;
+                secretMediaViewer.r.setAlpha(f7);
+                secretMediaViewer.n.setAlpha(f7);
+                break;
+            case 7:
+                if (getAlpha() != f7) {
+                    super.setAlpha(f7);
+                    viewGroup4 = ((org.telegram.ui.ActionBar.g3) ((rg.x0) this.v1)).containerView;
+                    viewGroup4.invalidate();
+                    break;
+                }
+                break;
+        }
+    }
+
+    @Override // android.view.View
+    public void setTag(Object obj) {
+        switch (this.u1) {
+            case 7:
+                super.setTag(obj);
+                rg.x0 x0Var = (rg.x0) this.v1;
+                w7 w7Var = x0Var.N;
+                if (w7Var != null && w7Var.getTag() != null) {
+                    AndroidUtilities.setLightStatusBar(x0Var, i0.a.f(x0Var.getThemedColor(org.telegram.ui.ActionBar.j6.h5)) > 0.699999988079071d);
+                    break;
+                } else {
+                    org.telegram.ui.ActionBar.o2 o2Var = x0Var.b;
+                    if (o2Var != null) {
+                        AndroidUtilities.setLightStatusBar(x0Var, o2Var.isLightStatusBar());
+                        break;
+                    }
+                }
+                break;
+            default:
+                super.setTag(obj);
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.k, android.view.View
+    public void setTranslationY(float f7) {
+        View view;
+        switch (this.u1) {
+            case 3:
+                if (f7 != getTranslationY() && (view = ((org.telegram.ui.wy) this.v1).fragmentView) != null) {
+                    view.invalidate();
+                }
+                super.setTranslationY(f7);
+                break;
+            default:
+                super.setTranslationY(f7);
+                break;
+        }
+    }
+
+    @Override // android.view.View
+    public void setVisibility(int i10) {
+        switch (this.u1) {
+            case 1:
+                super.setVisibility(i10);
+                vi.M((vi) this.v1);
+                break;
+            default:
+                super.setVisibility(i10);
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.k
+    public boolean u() {
+        switch (this.u1) {
+            case 3:
+                org.telegram.ui.qx qxVar = ((org.telegram.ui.wy) this.v1).F3;
+                return qxVar != null && qxVar.c();
+            default:
+                return super.u();
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.k
+    public void v(boolean z10) {
+        switch (this.u1) {
+            case 3:
+                org.telegram.ui.qx qxVar = ((org.telegram.ui.wy) this.v1).F3;
+                if (qxVar != null && qxVar.c() && getBackButton() != null) {
+                    getBackButton().animate().alpha(z10 ? 1.0f : 0.0f).start();
+                }
+                super.v(z10);
+                break;
+            default:
+                super.v(z10);
+                break;
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ w7(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, Context context, org.telegram.ui.ActionBar.f6 f6Var, int i10) {
+        super(context, f6Var);
+        this.u1 = i10;
+        this.v1 = notificationCenterDelegate;
     }
 }

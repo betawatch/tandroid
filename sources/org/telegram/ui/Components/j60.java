@@ -5,7 +5,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class j60 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -20,10 +20,10 @@ public final /* synthetic */ class j60 implements RequestDelegate {
     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.p(this.b, tL_error, tLObject, 19));
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.q(this.b, tL_error, tLObject, 19));
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new zu(16, this.b, tL_error));
+                AndroidUtilities.runOnUIThread(new ny(10, this.b, tL_error));
                 break;
         }
     }

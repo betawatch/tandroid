@@ -1,5 +1,6 @@
 package j6;
 
+import ai.q4;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
@@ -15,7 +16,7 @@ import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class a {
     public static int h;
@@ -26,7 +27,7 @@ public final class a {
     public final ScheduledThreadPoolExecutor d;
     public Messenger f;
     public f g;
-    public final a0.l a = new a0.l(0);
+    public final a0.m a = new a0.m(0);
     public final Messenger e = new Messenger(new c(this, Looper.getMainLooper()));
 
     public a(Context context) {
@@ -100,7 +101,7 @@ public final class a {
                     Log.d("Rpc", "Messenger failed, fallback to startService");
                 }
             }
-            taskCompletionSource.getTask().addOnCompleteListener(m.a, new aa.a((Object) this, b10, (Object) this.d.schedule(new androidx.activity.i(taskCompletionSource, 22), 30L, TimeUnit.SECONDS), 21));
+            taskCompletionSource.getTask().addOnCompleteListener(m.a, new aa.a((Object) this, b10, (Object) this.d.schedule(new q4(taskCompletionSource, 22), 30L, TimeUnit.SECONDS), 22));
             return taskCompletionSource.getTask();
         }
         if (this.c.g() == 2) {
@@ -108,7 +109,7 @@ public final class a {
         } else {
             this.b.startService(intent);
         }
-        taskCompletionSource.getTask().addOnCompleteListener(m.a, new aa.a((Object) this, b10, (Object) this.d.schedule(new androidx.activity.i(taskCompletionSource, 22), 30L, TimeUnit.SECONDS), 21));
+        taskCompletionSource.getTask().addOnCompleteListener(m.a, new aa.a((Object) this, b10, (Object) this.d.schedule(new q4(taskCompletionSource, 22), 30L, TimeUnit.SECONDS), 22));
         return taskCompletionSource.getTask();
     }
 

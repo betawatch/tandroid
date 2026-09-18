@@ -1,10 +1,10 @@
 package org.webrtc;
 
-import com.google.android.gms.internal.vision.e2;
+import hg.k0;
 import java.nio.ByteBuffer;
 import org.webrtc.VideoFrame;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes4.dex */
 public class JavaI420Buffer implements VideoFrame.I420Buffer {
     private final ByteBuffer dataU;
@@ -48,11 +48,11 @@ public class JavaI420Buffer implements VideoFrame.I420Buffer {
     }
 
     private static void checkCapacity(ByteBuffer byteBuffer, int i10, int i11, int i12) {
-        int w10 = e2.w(i11, 1, i12, i10);
-        if (byteBuffer.capacity() >= w10) {
+        int g10 = k0.g(i11, 1, i12, i10);
+        if (byteBuffer.capacity() >= g10) {
             return;
         }
-        StringBuilder l4 = i2.g.l(w10, "Buffer must be at least ", " bytes, but was ");
+        StringBuilder l4 = k0.l(g10, "Buffer must be at least ", " bytes, but was ");
         l4.append(byteBuffer.capacity());
         throw new IllegalArgumentException(l4.toString());
     }

@@ -1,25 +1,33 @@
 package org.telegram.ui.Components;
 
-import android.app.Activity;
-import android.widget.FrameLayout;
+import android.content.Context;
+import android.os.Vibrator;
+import android.text.Spanned;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class m3 extends FrameLayout {
-    public final /* synthetic */ org.telegram.ui.Cells.z1[] a;
+public final class m3 extends gq {
+    public final /* synthetic */ Context b;
+    public final /* synthetic */ NumberTextView c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m3(Activity activity, org.telegram.ui.Cells.z1[] z1VarArr) {
-        super(activity);
-        this.a = z1VarArr;
+    public m3(int i10, Context context, NumberTextView numberTextView) {
+        super(i10);
+        this.b = context;
+        this.c = numberTextView;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, i11);
-        org.telegram.ui.Cells.z1[] z1VarArr = this.a;
-        if (z1VarArr[0] != null) {
-            setMeasuredDimension(getMeasuredWidth(), z1VarArr[0].getMeasuredHeight() + getMeasuredHeight());
+    @Override // org.telegram.ui.Components.gq, android.text.InputFilter
+    public final CharSequence filter(CharSequence charSequence, int i10, int i11, Spanned spanned, int i12, int i13) {
+        CharSequence filter = super.filter(charSequence, i10, i11, spanned, i12, i13);
+        if (filter != null && charSequence != null && filter.length() != charSequence.length()) {
+            Vibrator vibrator = (Vibrator) this.b.getSystemService("vibrator");
+            if (vibrator != null) {
+                vibrator.vibrate(200L);
+            }
+            AndroidUtilities.shakeView(this.c);
         }
+        return filter;
     }
 }

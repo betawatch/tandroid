@@ -5,7 +5,7 @@ import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public abstract class b {
     public static final char[] a = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ $%*+-./:".toCharArray();
@@ -15,9 +15,9 @@ public abstract class b {
             if (dVar.d() < 11) {
                 throw cc.c.a();
             }
-            int e7 = dVar.e(11);
-            sb2.append(f(e7 / 45));
-            sb2.append(f(e7 % 45));
+            int e = dVar.e(11);
+            sb2.append(f(e / 45));
+            sb2.append(f(e % 45));
             i10 -= 2;
         }
         if (i10 == 1) {
@@ -216,8 +216,8 @@ public abstract class b {
         byte[] bArr = new byte[i10 * 2];
         int i11 = 0;
         while (i10 > 0) {
-            int e7 = dVar.e(13);
-            int i12 = (e7 % 96) | ((e7 / 96) << 8);
+            int e = dVar.e(13);
+            int i12 = (e % 96) | ((e / 96) << 8);
             int i13 = i12 + (i12 < 2560 ? 41377 : 42657);
             bArr[i11] = (byte) ((i13 >> 8) & 255);
             bArr[i11 + 1] = (byte) (i13 & 255);
@@ -237,8 +237,8 @@ public abstract class b {
         byte[] bArr = new byte[i10 * 2];
         int i11 = 0;
         while (i10 > 0) {
-            int e7 = dVar.e(13);
-            int i12 = (e7 % 192) | ((e7 / 192) << 8);
+            int e = dVar.e(13);
+            int i12 = (e % 192) | ((e / 192) << 8);
             int i13 = i12 + (i12 < 7936 ? 33088 : 49472);
             bArr[i11] = (byte) (i13 >> 8);
             bArr[i11 + 1] = (byte) i13;
@@ -253,36 +253,36 @@ public abstract class b {
             if (dVar.d() < 10) {
                 throw cc.c.a();
             }
-            int e7 = dVar.e(10);
-            if (e7 >= 1000) {
+            int e = dVar.e(10);
+            if (e >= 1000) {
                 throw cc.c.a();
             }
-            sb2.append(f(e7 / 100));
-            sb2.append(f((e7 / 10) % 10));
-            sb2.append(f(e7 % 10));
+            sb2.append(f(e / 100));
+            sb2.append(f((e / 10) % 10));
+            sb2.append(f(e % 10));
             i10 -= 3;
         }
         if (i10 == 2) {
             if (dVar.d() < 7) {
                 throw cc.c.a();
             }
-            int e10 = dVar.e(7);
-            if (e10 >= 100) {
+            int e7 = dVar.e(7);
+            if (e7 >= 100) {
                 throw cc.c.a();
             }
-            sb2.append(f(e10 / 10));
-            sb2.append(f(e10 % 10));
+            sb2.append(f(e7 / 10));
+            sb2.append(f(e7 % 10));
             return;
         }
         if (i10 == 1) {
             if (dVar.d() < 4) {
                 throw cc.c.a();
             }
-            int e11 = dVar.e(4);
-            if (e11 >= 10) {
+            int e10 = dVar.e(4);
+            if (e10 >= 10) {
                 throw cc.c.a();
             }
-            sb2.append(f(e11));
+            sb2.append(f(e10));
         }
     }
 

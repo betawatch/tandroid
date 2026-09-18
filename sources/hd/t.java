@@ -1,10 +1,11 @@
 package hd;
 
+import hg.k0;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.RandomAccess;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class t extends c implements RandomAccess {
     public final Object[] a;
@@ -15,13 +16,13 @@ public final class t extends c implements RandomAccess {
     public t(int i10, Object[] objArr) {
         this.a = objArr;
         if (i10 < 0) {
-            throw new IllegalArgumentException(i2.g.i(i10, "ring buffer filled size should not be negative but it is ").toString());
+            throw new IllegalArgumentException(k0.i(i10, "ring buffer filled size should not be negative but it is ").toString());
         }
         if (i10 <= objArr.length) {
             this.b = objArr.length;
             this.d = i10;
         } else {
-            StringBuilder l4 = i2.g.l(i10, "ring buffer filled size: ", " cannot be larger than the buffer size: ");
+            StringBuilder l4 = k0.l(i10, "ring buffer filled size: ", " cannot be larger than the buffer size: ");
             l4.append(objArr.length);
             throw new IllegalArgumentException(l4.toString().toString());
         }

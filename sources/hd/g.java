@@ -1,5 +1,6 @@
 package hd;
 
+import hg.k0;
 import java.util.AbstractCollection;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -57,7 +58,7 @@ public abstract class g extends m {
         Object next;
         kotlin.jvm.internal.i.e(iterable, "<this>");
         if (i10 < 0) {
-            throw new IllegalArgumentException(i2.g.j(i10, "Requested element count ", " is less than zero.").toString());
+            throw new IllegalArgumentException(k0.j(i10, "Requested element count ", " is less than zero.").toString());
         }
         o oVar = o.a;
         if (i10 == 0) {

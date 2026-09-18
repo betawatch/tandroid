@@ -7,10 +7,11 @@ import android.os.IInterface;
 import android.os.Parcel;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.tasks.TaskCompletionSource;
+import hg.k0;
 import kotlin.jvm.internal.i;
-import v7.f5;
+import v7.g5;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class e extends Binder implements b, IInterface {
     public final /* synthetic */ int a;
@@ -27,7 +28,7 @@ public final class e extends Binder implements b, IInterface {
         switch (this.a) {
             case 0:
                 i.e(status, "status");
-                f5.a(status, bVar, this.b);
+                g5.a(status, bVar, this.b);
                 break;
         }
     }
@@ -44,7 +45,7 @@ public final class e extends Binder implements b, IInterface {
             l8.d dVar = (l8.d) a.a(parcel, l8.d.CREATOR);
             int dataAvail = parcel.dataAvail();
             if (dataAvail > 0) {
-                throw new BadParcelableException(i2.g.i(dataAvail, "Parcel data not fully consumed, unread size: "));
+                throw new BadParcelableException(k0.i(dataAvail, "Parcel data not fully consumed, unread size: "));
             }
             s(status, dVar);
             return true;
@@ -56,7 +57,7 @@ public final class e extends Binder implements b, IInterface {
         l8.b bVar = (l8.b) a.a(parcel, l8.b.CREATOR);
         int dataAvail2 = parcel.dataAvail();
         if (dataAvail2 > 0) {
-            throw new BadParcelableException(i2.g.i(dataAvail2, "Parcel data not fully consumed, unread size: "));
+            throw new BadParcelableException(k0.i(dataAvail2, "Parcel data not fully consumed, unread size: "));
         }
         S(status2, bVar);
         return true;
@@ -69,7 +70,7 @@ public final class e extends Binder implements b, IInterface {
                 break;
             default:
                 i.e(status, "status");
-                f5.a(status, dVar, this.b);
+                g5.a(status, dVar, this.b);
                 break;
         }
     }

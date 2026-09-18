@@ -14,6 +14,7 @@ import com.google.android.gms.internal.cast.g1;
 import com.google.android.gms.internal.cast.n4;
 import com.google.android.gms.internal.cast.o4;
 import com.google.android.gms.internal.cast.s4;
+import hg.k0;
 import j$.util.DesugarCollections;
 import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
@@ -23,9 +24,9 @@ import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
-import v7.i5;
+import v7.j5;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class a {
     public static final g6.b l = new g6.b("CastContext", null);
@@ -136,18 +137,18 @@ public final class a {
                             com.google.android.gms.internal.cast.n nVar = this.h;
                             List unmodifiableList = DesugarCollections.unmodifiableList(this.e.w);
                             nVar.getClass();
-                            com.google.android.gms.internal.cast.n.f.b(i2.g.j(unmodifiableList.size(), "SetRouteDiscovery for ", " IDs"), new Object[0]);
+                            com.google.android.gms.internal.cast.n.f.b(k0.j(unmodifiableList.size(), "SetRouteDiscovery for ", " IDs"), new Object[0]);
                             LinkedHashSet<String> linkedHashSet = new LinkedHashSet();
                             Iterator it2 = unmodifiableList.iterator();
                             while (it2.hasNext()) {
-                                linkedHashSet.add(i5.a((String) it2.next()));
+                                linkedHashSet.add(j5.a((String) it2.next()));
                             }
                             com.google.android.gms.internal.cast.n.f.b("resetting routes. appIdToRouteInfo has these appId route keys: ".concat(String.valueOf(nVar.c.keySet())), new Object[0]);
                             HashMap hashMap2 = new HashMap();
                             synchronized (nVar.c) {
                                 try {
                                     for (String str2 : linkedHashSet) {
-                                        com.google.android.gms.internal.cast.l lVar4 = (com.google.android.gms.internal.cast.l) nVar.c.get(i5.a(str2));
+                                        com.google.android.gms.internal.cast.l lVar4 = (com.google.android.gms.internal.cast.l) nVar.c.get(j5.a(str2));
                                         if (lVar4 != null) {
                                             hashMap2.put(str2, lVar4);
                                         }
@@ -164,25 +165,24 @@ public final class a {
                             }
                             nVar.m();
                         }
-                        int i11 = 13;
-                        rVar2.f(new String[]{"com.google.android.gms.cast.FLAG_CLIENT_SESSION_ANALYTICS_ENABLED", "com.google.android.gms.cast.FLAG_CLIENT_SESSION_ANALYTICS_MODE", "com.google.android.gms.cast.FLAG_FIRELOG_UPLOAD_MODE", "com.google.android.gms.cast.FLAG_ANALYTICS_LOGGING_BUCKET_SIZE", "com.google.android.gms.cast.FLAG_CLIENT_FEATURE_USAGE_ANALYTICS_ENABLED"}).addOnSuccessListener(new a4.m(this, i11));
-                        com.google.android.gms.common.api.internal.v e7 = com.google.android.gms.common.api.internal.w.e();
-                        e7.c = new a6.i(rVar2, new String[]{"com.google.android.gms.cast.MAP_CAST_STATUS_CODES_TO_CAST_REASON_CODES"}, 22);
-                        e7.d = new k6.c[]{c6.y.d};
-                        e7.b = false;
-                        e7.a = 8427;
-                        rVar2.e(0, e7.a()).addOnSuccessListener(new a6.m(this, i11));
-                    } catch (RemoteException e10) {
-                        throw new IllegalStateException("Failed to call addAppVisibilityListener", e10);
+                        rVar2.f(new String[]{"com.google.android.gms.cast.FLAG_CLIENT_SESSION_ANALYTICS_ENABLED", "com.google.android.gms.cast.FLAG_CLIENT_SESSION_ANALYTICS_MODE", "com.google.android.gms.cast.FLAG_FIRELOG_UPLOAD_MODE", "com.google.android.gms.cast.FLAG_ANALYTICS_LOGGING_BUCKET_SIZE", "com.google.android.gms.cast.FLAG_CLIENT_FEATURE_USAGE_ANALYTICS_ENABLED"}).addOnSuccessListener(new a6.m(this, 15));
+                        com.google.android.gms.common.api.internal.v e = com.google.android.gms.common.api.internal.w.e();
+                        e.c = new xa.c(rVar2, new String[]{"com.google.android.gms.cast.MAP_CAST_STATUS_CODES_TO_CAST_REASON_CODES"});
+                        e.d = new k6.c[]{c6.y.d};
+                        e.b = false;
+                        e.a = 8427;
+                        rVar2.e(0, e.a()).addOnSuccessListener(new xa.c(this, 14));
+                    } catch (RemoteException e7) {
+                        throw new IllegalStateException("Failed to call addAppVisibilityListener", e7);
                     }
-                } catch (RemoteException e11) {
-                    throw new IllegalStateException("Failed to call getSessionManagerImpl", e11);
+                } catch (RemoteException e10) {
+                    throw new IllegalStateException("Failed to call getSessionManagerImpl", e10);
                 }
-            } catch (RemoteException e12) {
-                throw new IllegalStateException("Failed to call getDiscoveryManagerImpl", e12);
+            } catch (RemoteException e11) {
+                throw new IllegalStateException("Failed to call getDiscoveryManagerImpl", e11);
             }
-        } catch (RemoteException e13) {
-            throw new IllegalStateException("Failed to call newCastContextImpl", e13);
+        } catch (RemoteException e12) {
+            throw new IllegalStateException("Failed to call newCastContextImpl", e12);
         }
     }
 
@@ -197,8 +197,8 @@ public final class a {
                     g6.r rVar = new g6.r(applicationContext, g6.r.k, com.google.android.gms.common.api.b.t, com.google.android.gms.common.api.i.c);
                     try {
                         n = new a(applicationContext, castOptions, d.getAdditionalSessionProviders(applicationContext), new com.google.android.gms.internal.cast.r(applicationContext, p4.x.d(applicationContext), castOptions, rVar), rVar);
-                    } catch (d e7) {
-                        throw new RuntimeException(e7);
+                    } catch (d e) {
+                        throw new RuntimeException(e);
                     }
                 }
             }
@@ -207,11 +207,11 @@ public final class a {
     }
 
     public static e d(Context context) {
-        k6.h a2;
+        v0.k a2;
         try {
             a2 = w6.b.a(context);
-        } catch (PackageManager.NameNotFoundException | ClassNotFoundException | IllegalAccessException | InstantiationException | NoSuchMethodException | NullPointerException | InvocationTargetException e7) {
-            e = e7;
+        } catch (PackageManager.NameNotFoundException | ClassNotFoundException | IllegalAccessException | InstantiationException | NoSuchMethodException | NullPointerException | InvocationTargetException e) {
+            e = e;
         }
         try {
             Bundle bundle = a2.a.getPackageManager().getApplicationInfo(context.getPackageName(), 128).metaData;
@@ -223,23 +223,23 @@ public final class a {
                 return (e) Class.forName(string).asSubclass(e.class).getDeclaredConstructor(null).newInstance(null);
             }
             throw new IllegalStateException("The fully qualified name of the implementation of OptionsProvider must be provided as a metadata in the AndroidManifest.xml with key com.google.android.gms.cast.framework.OPTIONS_PROVIDER_CLASS_NAME.");
-        } catch (ClassNotFoundException e10) {
+        } catch (ClassNotFoundException e7) {
+            e = e7;
+            throw new IllegalStateException("Failed to initialize CastContext.", e);
+        } catch (IllegalAccessException e10) {
             e = e10;
             throw new IllegalStateException("Failed to initialize CastContext.", e);
-        } catch (IllegalAccessException e11) {
+        } catch (InstantiationException e11) {
             e = e11;
             throw new IllegalStateException("Failed to initialize CastContext.", e);
-        } catch (InstantiationException e12) {
+        } catch (NoSuchMethodException e12) {
             e = e12;
             throw new IllegalStateException("Failed to initialize CastContext.", e);
-        } catch (NoSuchMethodException e13) {
+        } catch (NullPointerException e13) {
             e = e13;
             throw new IllegalStateException("Failed to initialize CastContext.", e);
-        } catch (NullPointerException e14) {
+        } catch (InvocationTargetException e14) {
             e = e14;
-            throw new IllegalStateException("Failed to initialize CastContext.", e);
-        } catch (InvocationTargetException e15) {
-            e = e15;
             throw new IllegalStateException("Failed to initialize CastContext.", e);
         }
     }
@@ -252,8 +252,8 @@ public final class a {
             Bundle bundle = (Bundle) com.google.android.gms.internal.cast.v.a(Q0, Bundle.CREATOR);
             Q0.recycle();
             return p4.r.b(bundle);
-        } catch (RemoteException e7) {
-            l.a(e7, "Unable to call %s on %s.", "getMergedSelectorAsBundle", n.class.getSimpleName());
+        } catch (RemoteException e) {
+            l.a(e, "Unable to call %s on %s.", "getMergedSelectorAsBundle", n.class.getSimpleName());
             return null;
         }
     }

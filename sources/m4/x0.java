@@ -1,57 +1,68 @@
 package m4;
 
-import di.m4;
-import java.util.concurrent.CancellationException;
-import java.util.concurrent.ExecutionException;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class x0 implements e1 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ e1 b;
+public final /* synthetic */ class x0 implements Runnable {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object h;
+    public final /* synthetic */ Object n;
 
-    public /* synthetic */ x0(e1 e1Var, int i10) {
-        this.a = i10;
-        this.b = e1Var;
+    public /* synthetic */ x0(g1 g1Var, r rVar, m1 m1Var, a0 a0Var, int i10, int i11, f1 f1Var) {
+        this.d = g1Var;
+        this.e = rVar;
+        this.f = m1Var;
+        this.h = a0Var;
+        this.b = i10;
+        this.c = i11;
+        this.n = f1Var;
     }
 
-    @Override // m4.e1
-    public final Object h(final a0 a0Var, final r rVar, final int i10) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                if (a0Var != null) {
-                    throw new ClassCastException();
-                }
-                f1.I0(null, rVar, i10, this.b, new m4(rVar, i10, 1));
-                throw null;
-            default:
-                return f1.I0(a0Var, rVar, i10, this.b, new e2.h() { // from class: m4.a1
-                    /* JADX WARN: Removed duplicated region for block: B:11:0x0025  */
-                    /* JADX WARN: Removed duplicated region for block: B:13:0x0027  */
-                    @Override // e2.h
-                    /*
-                        Code decompiled incorrectly, please refer to instructions dump.
-                    */
-                    public final void accept(Object obj) {
-                        p1 p1Var;
-                        try {
-                            p1Var = (p1) ((i9.w) obj).get();
-                            e2.d.e(p1Var, "SessionResult must not be null");
-                        } catch (InterruptedException e7) {
-                            e = e7;
-                            e2.a.o("MediaSessionStub", "Session operation failed", e);
-                            p1Var = new p1(!(e.getCause() instanceof UnsupportedOperationException) ? -6 : -1);
-                        } catch (CancellationException e10) {
-                            e2.a.o("MediaSessionStub", "Session operation cancelled", e10);
-                            p1Var = new p1(1);
-                        } catch (ExecutionException e11) {
-                            e = e11;
-                            e2.a.o("MediaSessionStub", "Session operation failed", e);
-                            p1Var = new p1(!(e.getCause() instanceof UnsupportedOperationException) ? -6 : -1);
+                g1 g1Var = (g1) this.d;
+                r rVar = (r) this.e;
+                m1 m1Var = (m1) this.f;
+                a0 a0Var = (a0) this.h;
+                f1 f1Var = (f1) this.n;
+                ni.f fVar = g1Var.b;
+                if (fVar.A(rVar)) {
+                    int i10 = this.b;
+                    if (m1Var == null) {
+                        if (!fVar.C(rVar, this.c)) {
+                            g1.O0(a0Var, rVar, i10, new q1(-4));
+                            break;
                         }
-                        f1.O0(a0.this, rVar, i10, p1Var);
+                    } else if (!fVar.D(rVar, m1Var)) {
+                        g1.O0(a0Var, rVar, i10, new q1(-4));
+                        break;
                     }
-                });
+                    f1Var.h(a0Var, rVar, i10);
+                    break;
+                }
+                break;
+            default:
+                ((MediaDataController) this.d).lambda$toggleStickerSet$108((boolean[]) this.e, (TLRPC.StickerSet) this.f, this.b, this.c, (TLRPC.TL_messages_stickerSet) this.h, (Runnable) this.n);
+                break;
         }
+    }
+
+    public /* synthetic */ x0(MediaDataController mediaDataController, boolean[] zArr, TLRPC.StickerSet stickerSet, int i10, int i11, TLRPC.TL_messages_stickerSet tL_messages_stickerSet, Runnable runnable) {
+        this.d = mediaDataController;
+        this.e = zArr;
+        this.f = stickerSet;
+        this.b = i10;
+        this.c = i11;
+        this.h = tL_messages_stickerSet;
+        this.n = runnable;
     }
 }

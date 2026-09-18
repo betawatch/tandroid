@@ -30,8 +30,9 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import org.telegram.messenger.beta.R;
+import org.telegram.ui.Cells.ia;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class o0 extends g.u {
     public static final /* synthetic */ int j0 = 0;
@@ -56,7 +57,7 @@ public final class o0 extends g.u {
     public TextView W;
     public TextView X;
     public String Y;
-    public pf.b Z;
+    public n4.y Z;
     public final r a0;
     public MediaDescriptionCompat b0;
     public f0 c0;
@@ -133,16 +134,16 @@ public final class o0 extends g.u {
 
     public final void h(MediaSessionCompat$Token mediaSessionCompat$Token) {
         MediaMetadataCompat mediaMetadataCompat;
-        pf.b bVar = this.Z;
+        n4.y yVar = this.Z;
         r rVar = this.a0;
-        if (bVar != null) {
-            bVar.j0(rVar);
+        if (yVar != null) {
+            yVar.Z(rVar);
             this.Z = null;
         }
         if (mediaSessionCompat$Token != null && this.F) {
-            pf.b bVar2 = new pf.b(this.y, mediaSessionCompat$Token);
-            this.Z = bVar2;
-            bVar2.f0(rVar);
+            n4.y yVar2 = new n4.y(this.y, mediaSessionCompat$Token);
+            this.Z = yVar2;
+            yVar2.V(rVar);
             MediaMetadata metadata = ((android.support.v4.media.session.h) this.Z.b).a.getMetadata();
             if (metadata != null) {
                 a0.f fVar = MediaMetadataCompat.d;
@@ -291,7 +292,7 @@ public final class o0 extends g.u {
         uVar.getClass();
         p4.x.b();
         for (p4.v vVar : DesugarCollections.unmodifiableList(uVar.b)) {
-            mg.n b10 = this.r.b(vVar);
+            ia b10 = this.r.b(vVar);
             if (b10 != null) {
                 p4.o oVar = (p4.o) b10.b;
                 if (oVar != null && oVar.d) {
@@ -350,7 +351,7 @@ public final class o0 extends g.u {
         h(p4.x.e());
     }
 
-    @Override // g.u, androidx.activity.n, android.app.Dialog
+    @Override // g.u, androidx.activity.m, android.app.Dialog
     public final void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         setContentView(R.layout.mr_cast_dialog);

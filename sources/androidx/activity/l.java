@@ -1,70 +1,494 @@
 package androidx.activity;
 
-import android.os.Looper;
-import android.os.SystemClock;
+import ai.q4;
+import android.content.Intent;
+import android.content.res.Configuration;
+import android.os.Build;
+import android.os.Bundle;
+import android.os.Trace;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewTreeObserver;
-import java.util.concurrent.Executor;
+import android.view.ViewGroup;
+import android.view.Window;
+import android.window.OnBackInvokedDispatcher;
+import androidx.fragment.app.c0;
+import androidx.lifecycle.h0;
+import androidx.lifecycle.j0;
+import androidx.lifecycle.n0;
+import androidx.lifecycle.q0;
+import androidx.lifecycle.s0;
+import androidx.lifecycle.t0;
+import androidx.lifecycle.u0;
+import com.google.android.gms.internal.cast.f0;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.concurrent.CopyOnWriteArraySet;
+import java.util.concurrent.atomic.AtomicInteger;
+import org.telegram.messenger.beta.R;
+import w7.z7;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
-public final class l implements Executor, ViewTreeObserver.OnDrawListener, Runnable {
-    public Runnable b;
-    public final /* synthetic */ m d;
-    public final long a = SystemClock.uptimeMillis() + 10000;
-    public boolean c = false;
+public abstract class l extends e0.h implements u0, androidx.lifecycle.i, t4.e {
+    public final CopyOnWriteArrayList E;
+    public final CopyOnWriteArrayList F;
+    public final CopyOnWriteArrayList G;
+    public boolean H;
+    public boolean I;
+    public final f0 b;
+    public final lf.i c;
+    public final androidx.lifecycle.v d;
+    public final n e;
+    public t0 f;
+    public n0 h;
+    public v n;
+    public final k r;
+    public final n s;
+    public final AtomicInteger v;
+    public final h w;
+    public final CopyOnWriteArrayList x;
+    public final CopyOnWriteArrayList y;
 
-    public l(m mVar) {
-        this.d = mVar;
-    }
-
-    public final void a(View view) {
-        if (this.c) {
-            return;
-        }
-        this.c = true;
-        view.getViewTreeObserver().addOnDrawListener(this);
-    }
-
-    @Override // java.util.concurrent.Executor
-    public final void execute(Runnable runnable) {
-        this.b = runnable;
-        View decorView = this.d.getWindow().getDecorView();
-        if (!this.c) {
-            decorView.postOnAnimation(new a3.c(this, 6));
-        } else if (Looper.myLooper() == Looper.getMainLooper()) {
-            decorView.invalidate();
-        } else {
-            decorView.postInvalidate();
-        }
-    }
-
-    @Override // android.view.ViewTreeObserver.OnDrawListener
-    public final void onDraw() {
-        boolean z10;
-        Runnable runnable = this.b;
-        if (runnable == null) {
-            if (SystemClock.uptimeMillis() > this.a) {
-                this.c = false;
-                this.d.getWindow().getDecorView().post(this);
-                return;
+    /* JADX WARN: Type inference failed for: r5v0, types: [androidx.activity.d] */
+    public l() {
+        f0 f0Var = new f0(1);
+        this.b = f0Var;
+        this.c = new lf.i(new a3.d(this, 25));
+        androidx.lifecycle.v vVar = new androidx.lifecycle.v(this);
+        this.d = vVar;
+        n nVar = new n(this);
+        this.e = nVar;
+        this.n = null;
+        k kVar = new k(this);
+        this.r = kVar;
+        this.s = new n(kVar, (d) new rd.a() { // from class: androidx.activity.d
+            @Override // rd.a
+            public final Object invoke() {
+                l.this.reportFullyDrawn();
+                return null;
             }
+        });
+        this.v = new AtomicInteger();
+        this.w = new h(this);
+        this.x = new CopyOnWriteArrayList();
+        this.y = new CopyOnWriteArrayList();
+        this.E = new CopyOnWriteArrayList();
+        this.F = new CopyOnWriteArrayList();
+        this.G = new CopyOnWriteArrayList();
+        this.H = false;
+        this.I = false;
+        int i10 = Build.VERSION.SDK_INT;
+        vVar.a(new androidx.lifecycle.r() { // from class: androidx.activity.ComponentActivity$2
+            @Override // androidx.lifecycle.r
+            public final void d(androidx.lifecycle.t tVar, androidx.lifecycle.m mVar) {
+                if (mVar == androidx.lifecycle.m.ON_STOP) {
+                    Window window = l.this.getWindow();
+                    View peekDecorView = window != null ? window.peekDecorView() : null;
+                    if (peekDecorView != null) {
+                        peekDecorView.cancelPendingInputEvents();
+                    }
+                }
+            }
+        });
+        vVar.a(new androidx.lifecycle.r() { // from class: androidx.activity.ComponentActivity$3
+            @Override // androidx.lifecycle.r
+            public final void d(androidx.lifecycle.t tVar, androidx.lifecycle.m mVar) {
+                if (mVar == androidx.lifecycle.m.ON_DESTROY) {
+                    l.this.b.c = null;
+                    if (!l.this.isChangingConfigurations()) {
+                        l.this.f().a();
+                    }
+                    k kVar2 = l.this.r;
+                    l lVar = kVar2.d;
+                    lVar.getWindow().getDecorView().removeCallbacks(kVar2);
+                    lVar.getWindow().getDecorView().getViewTreeObserver().removeOnDrawListener(kVar2);
+                }
+            }
+        });
+        vVar.a(new androidx.lifecycle.r() { // from class: androidx.activity.ComponentActivity$4
+            @Override // androidx.lifecycle.r
+            public final void d(androidx.lifecycle.t tVar, androidx.lifecycle.m mVar) {
+                l lVar = l.this;
+                if (lVar.f == null) {
+                    j jVar = (j) lVar.getLastNonConfigurationInstance();
+                    if (jVar != null) {
+                        lVar.f = jVar.a;
+                    }
+                    if (lVar.f == null) {
+                        lVar.f = new t0();
+                    }
+                }
+                lVar.d.b(this);
+            }
+        });
+        nVar.b();
+        j0.d(this);
+        if (i10 <= 23) {
+            ImmLeaksCleaner immLeaksCleaner = new ImmLeaksCleaner();
+            immLeaksCleaner.a = this;
+            vVar.a(immLeaksCleaner);
+        }
+        ((m.p) nVar.d).f("android:support:activity-result", new e(this, 0));
+        f fVar = new f(this, 0);
+        if (((l) f0Var.c) != null) {
+            fVar.a();
+        }
+        ((CopyOnWriteArraySet) f0Var.b).add(fVar);
+    }
+
+    @Override // android.app.Activity
+    public final void addContentView(View view, ViewGroup.LayoutParams layoutParams) {
+        q();
+        this.r.a(getWindow().getDecorView());
+        super.addContentView(view, layoutParams);
+    }
+
+    @Override // androidx.lifecycle.i
+    public final s0 c() {
+        if (this.h == null) {
+            this.h = new n0(getApplication(), this, getIntent() != null ? getIntent().getExtras() : null);
+        }
+        return this.h;
+    }
+
+    @Override // androidx.lifecycle.i
+    public final v1.b d() {
+        v1.b bVar = new v1.b();
+        LinkedHashMap linkedHashMap = (LinkedHashMap) bVar.a;
+        if (getApplication() != null) {
+            linkedHashMap.put(q0.a, getApplication());
+        }
+        linkedHashMap.put(j0.a, this);
+        linkedHashMap.put(j0.b, this);
+        if (getIntent() != null && getIntent().getExtras() != null) {
+            linkedHashMap.put(j0.c, getIntent().getExtras());
+        }
+        return bVar;
+    }
+
+    @Override // androidx.lifecycle.u0
+    public final t0 f() {
+        if (getApplication() == null) {
+            throw new IllegalStateException("Your activity is not yet attached to the Application instance. You can't request ViewModel before onCreate call.");
+        }
+        if (this.f == null) {
+            j jVar = (j) getLastNonConfigurationInstance();
+            if (jVar != null) {
+                this.f = jVar.a;
+            }
+            if (this.f == null) {
+                this.f = new t0();
+            }
+        }
+        return this.f;
+    }
+
+    @Override // t4.e
+    public final m.p g() {
+        return (m.p) this.e.d;
+    }
+
+    @Override // androidx.lifecycle.t
+    public final androidx.lifecycle.o m() {
+        return this.d;
+    }
+
+    public final void o(q0.a aVar) {
+        this.x.add(aVar);
+    }
+
+    @Override // android.app.Activity
+    public void onActivityResult(int i10, int i11, Intent intent) {
+        if (this.w.a(i10, i11, intent)) {
             return;
         }
-        runnable.run();
-        this.b = null;
-        o oVar = this.d.s;
-        synchronized (oVar.c) {
-            z10 = oVar.b;
-        }
-        if (z10) {
-            this.c = false;
-            this.d.getWindow().getDecorView().post(this);
+        super.onActivityResult(i10, i11, intent);
+    }
+
+    @Override // android.app.Activity
+    public void onBackPressed() {
+        p().b();
+    }
+
+    @Override // android.app.Activity, android.content.ComponentCallbacks
+    public void onConfigurationChanged(Configuration configuration) {
+        super.onConfigurationChanged(configuration);
+        Iterator it = this.x.iterator();
+        while (it.hasNext()) {
+            ((q0.a) it.next()).accept(configuration);
         }
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        this.d.getWindow().getDecorView().getViewTreeObserver().removeOnDrawListener(this);
+    @Override // e0.h, android.app.Activity
+    public void onCreate(Bundle bundle) {
+        this.e.c(bundle);
+        f0 f0Var = this.b;
+        f0Var.getClass();
+        f0Var.c = this;
+        Iterator it = ((CopyOnWriteArraySet) f0Var.b).iterator();
+        while (it.hasNext()) {
+            ((f) it.next()).a();
+        }
+        super.onCreate(bundle);
+        int i10 = h0.b;
+        androidx.lifecycle.f0.b(this);
+    }
+
+    @Override // android.app.Activity, android.view.Window.Callback
+    public final boolean onCreatePanelMenu(int i10, Menu menu) {
+        if (i10 != 0) {
+            return true;
+        }
+        super.onCreatePanelMenu(i10, menu);
+        getMenuInflater();
+        Iterator it = ((CopyOnWriteArrayList) this.c.c).iterator();
+        while (it.hasNext()) {
+            ((c0) it.next()).a.k();
+        }
+        return true;
+    }
+
+    @Override // android.app.Activity, android.view.Window.Callback
+    public boolean onMenuItemSelected(int i10, MenuItem menuItem) {
+        if (super.onMenuItemSelected(i10, menuItem)) {
+            return true;
+        }
+        if (i10 == 0) {
+            Iterator it = ((CopyOnWriteArrayList) this.c.c).iterator();
+            while (it.hasNext()) {
+                if (((c0) it.next()).a.p()) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    @Override // android.app.Activity
+    public void onMultiWindowModeChanged(boolean z10) {
+        if (this.H) {
+            return;
+        }
+        Iterator it = this.F.iterator();
+        while (it.hasNext()) {
+            ((q0.a) it.next()).accept(new e0.i(z10));
+        }
+    }
+
+    @Override // android.app.Activity
+    public void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        Iterator it = this.E.iterator();
+        while (it.hasNext()) {
+            ((q0.a) it.next()).accept(intent);
+        }
+    }
+
+    @Override // android.app.Activity, android.view.Window.Callback
+    public final void onPanelClosed(int i10, Menu menu) {
+        Iterator it = ((CopyOnWriteArrayList) this.c.c).iterator();
+        while (it.hasNext()) {
+            ((c0) it.next()).a.q();
+        }
+        super.onPanelClosed(i10, menu);
+    }
+
+    @Override // android.app.Activity
+    public final void onPictureInPictureModeChanged(boolean z10) {
+        if (this.I) {
+            return;
+        }
+        Iterator it = this.G.iterator();
+        while (it.hasNext()) {
+            ((q0.a) it.next()).accept(new e0.q0(z10));
+        }
+    }
+
+    @Override // android.app.Activity, android.view.Window.Callback
+    public final boolean onPreparePanel(int i10, View view, Menu menu) {
+        if (i10 != 0) {
+            return true;
+        }
+        super.onPreparePanel(i10, view, menu);
+        Iterator it = ((CopyOnWriteArrayList) this.c.c).iterator();
+        while (it.hasNext()) {
+            ((c0) it.next()).a.t();
+        }
+        return true;
+    }
+
+    @Override // android.app.Activity
+    public void onRequestPermissionsResult(int i10, String[] strArr, int[] iArr) {
+        if (this.w.a(i10, -1, new Intent().putExtra("androidx.activity.result.contract.extra.PERMISSIONS", strArr).putExtra("androidx.activity.result.contract.extra.PERMISSION_GRANT_RESULTS", iArr)) || Build.VERSION.SDK_INT < 23) {
+            return;
+        }
+        super.onRequestPermissionsResult(i10, strArr, iArr);
+    }
+
+    @Override // android.app.Activity
+    public final Object onRetainNonConfigurationInstance() {
+        j jVar;
+        t0 t0Var = this.f;
+        if (t0Var == null && (jVar = (j) getLastNonConfigurationInstance()) != null) {
+            t0Var = jVar.a;
+        }
+        if (t0Var == null) {
+            return null;
+        }
+        j jVar2 = new j();
+        jVar2.a = t0Var;
+        return jVar2;
+    }
+
+    @Override // e0.h, android.app.Activity
+    public void onSaveInstanceState(Bundle bundle) {
+        androidx.lifecycle.v vVar = this.d;
+        if (vVar != null) {
+            vVar.g();
+        }
+        super.onSaveInstanceState(bundle);
+        this.e.d(bundle);
+    }
+
+    @Override // android.app.Activity, android.content.ComponentCallbacks2
+    public final void onTrimMemory(int i10) {
+        super.onTrimMemory(i10);
+        Iterator it = this.y.iterator();
+        while (it.hasNext()) {
+            ((q0.a) it.next()).accept(Integer.valueOf(i10));
+        }
+    }
+
+    public final v p() {
+        if (this.n == null) {
+            this.n = new v(new q4(this, 3));
+            this.d.a(new androidx.lifecycle.r() { // from class: androidx.activity.ComponentActivity$6
+                @Override // androidx.lifecycle.r
+                public final void d(androidx.lifecycle.t tVar, androidx.lifecycle.m mVar) {
+                    if (mVar != androidx.lifecycle.m.ON_CREATE || Build.VERSION.SDK_INT < 33) {
+                        return;
+                    }
+                    v vVar = l.this.n;
+                    OnBackInvokedDispatcher invoker = i.a((l) tVar);
+                    vVar.getClass();
+                    kotlin.jvm.internal.i.e(invoker, "invoker");
+                    vVar.e = invoker;
+                    vVar.c(vVar.g);
+                }
+            });
+        }
+        return this.n;
+    }
+
+    public final void q() {
+        View decorView = getWindow().getDecorView();
+        kotlin.jvm.internal.i.e(decorView, "<this>");
+        decorView.setTag(R.id.view_tree_lifecycle_owner, this);
+        View decorView2 = getWindow().getDecorView();
+        kotlin.jvm.internal.i.e(decorView2, "<this>");
+        decorView2.setTag(R.id.view_tree_view_model_store_owner, this);
+        View decorView3 = getWindow().getDecorView();
+        kotlin.jvm.internal.i.e(decorView3, "<this>");
+        decorView3.setTag(R.id.view_tree_saved_state_registry_owner, this);
+        View decorView4 = getWindow().getDecorView();
+        kotlin.jvm.internal.i.e(decorView4, "<this>");
+        decorView4.setTag(R.id.view_tree_on_back_pressed_dispatcher_owner, this);
+        View decorView5 = getWindow().getDecorView();
+        kotlin.jvm.internal.i.e(decorView5, "<this>");
+        decorView5.setTag(R.id.report_drawn, this);
+    }
+
+    public final androidx.activity.result.c r(androidx.activity.result.b bVar, androidx.fragment.app.f0 f0Var) {
+        return this.w.c("activity_rq#" + this.v.getAndIncrement(), this, f0Var, bVar);
+    }
+
+    @Override // android.app.Activity
+    public final void reportFullyDrawn() {
+        try {
+            if (z7.b()) {
+                z7.a("reportFullyDrawn() for ComponentActivity");
+            }
+            super.reportFullyDrawn();
+            n nVar = this.s;
+            synchronized (nVar.c) {
+                try {
+                    nVar.b = true;
+                    ArrayList arrayList = (ArrayList) nVar.d;
+                    int size = arrayList.size();
+                    int i10 = 0;
+                    while (i10 < size) {
+                        Object obj = arrayList.get(i10);
+                        i10++;
+                        ((rd.a) obj).invoke();
+                    }
+                    ((ArrayList) nVar.d).clear();
+                } finally {
+                }
+            }
+            Trace.endSection();
+        } catch (Throwable th2) {
+            Trace.endSection();
+            throw th2;
+        }
+    }
+
+    @Override // android.app.Activity
+    public final void setContentView(int i10) {
+        q();
+        this.r.a(getWindow().getDecorView());
+        super.setContentView(i10);
+    }
+
+    @Override // android.app.Activity
+    public final void onMultiWindowModeChanged(boolean z10, Configuration newConfig) {
+        this.H = true;
+        try {
+            super.onMultiWindowModeChanged(z10, newConfig);
+            this.H = false;
+            Iterator it = this.F.iterator();
+            while (it.hasNext()) {
+                q0.a aVar = (q0.a) it.next();
+                kotlin.jvm.internal.i.e(newConfig, "newConfig");
+                aVar.accept(new e0.i(z10));
+            }
+        } catch (Throwable th2) {
+            this.H = false;
+            throw th2;
+        }
+    }
+
+    @Override // android.app.Activity
+    public void onPictureInPictureModeChanged(boolean z10, Configuration newConfig) {
+        this.I = true;
+        try {
+            super.onPictureInPictureModeChanged(z10, newConfig);
+            this.I = false;
+            Iterator it = this.G.iterator();
+            while (it.hasNext()) {
+                q0.a aVar = (q0.a) it.next();
+                kotlin.jvm.internal.i.e(newConfig, "newConfig");
+                aVar.accept(new e0.q0(z10));
+            }
+        } catch (Throwable th2) {
+            this.I = false;
+            throw th2;
+        }
+    }
+
+    @Override // android.app.Activity
+    public void setContentView(View view) {
+        q();
+        this.r.a(getWindow().getDecorView());
+        super.setContentView(view);
+    }
+
+    @Override // android.app.Activity
+    public final void setContentView(View view, ViewGroup.LayoutParams layoutParams) {
+        q();
+        this.r.a(getWindow().getDecorView());
+        super.setContentView(view, layoutParams);
     }
 }

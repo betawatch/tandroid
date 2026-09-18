@@ -1,54 +1,46 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
+import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class y6 implements RequestDelegate {
+public final /* synthetic */ class y6 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ long d;
-    public final /* synthetic */ Object e;
+    public final /* synthetic */ MediaDataController b;
+    public final /* synthetic */ TLRPC.messages_Messages c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ long e;
+    public final /* synthetic */ ArrayList f;
+    public final /* synthetic */ int h;
+    public final /* synthetic */ int n;
+    public final /* synthetic */ boolean r;
+    public final /* synthetic */ int s;
+    public final /* synthetic */ int v;
 
-    public /* synthetic */ y6(Object obj, Object obj2, long j3, long j10, int i10) {
-        this.a = i10;
-        this.b = obj;
-        this.e = obj2;
-        this.c = j3;
-        this.d = j10;
+    public /* synthetic */ y6(MediaDataController mediaDataController, TLRPC.messages_Messages messages_messages, int i10, long j3, ArrayList arrayList, int i11, int i12, boolean z10, int i13, int i14, int i15) {
+        this.a = i15;
+        this.b = mediaDataController;
+        this.c = messages_messages;
+        this.d = i10;
+        this.e = j3;
+        this.f = arrayList;
+        this.h = i11;
+        this.n = i12;
+        this.r = z10;
+        this.s = i13;
+        this.v = i14;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                ((MediaDataController) this.b).lambda$loadPinnedMessageInternal$164(this.c, this.d, (TLRPC.TL_channels_getMessages) this.e, tLObject, tL_error);
-                break;
-            case 1:
-                ((MediaDataController) this.b).lambda$getMediaCounts$129((int[]) this.e, this.c, this.d, tLObject, tL_error);
-                break;
-            case 2:
-                ((MessagesController) this.b).lambda$requestContactToken$476((Utilities.Callback) this.e, this.c, this.d, tLObject, tL_error);
-                break;
-            case 3:
-                ((TopicsController) this.b).lambda$getTopicRepliesCount$30((TLRPC.TL_forumTopic) this.e, this.c, this.d, tLObject, tL_error);
+                this.b.lambda$processLoadedMedia$133(this.c, this.d, this.e, this.f, this.h, this.n, this.r, this.s, this.v);
                 break;
             default:
-                zh.w3 w3Var = (zh.w3) this.b;
-                zh.w3.J0(this.c, this.d, (Utilities.Callback) this.e, tLObject, tL_error, w3Var);
+                this.b.lambda$processLoadedMedia$134(this.c, this.d, this.e, this.f, this.h, this.n, this.r, this.s, this.v);
                 break;
         }
-    }
-
-    public /* synthetic */ y6(MediaDataController mediaDataController, long j3, long j10, TLRPC.TL_channels_getMessages tL_channels_getMessages) {
-        this.a = 0;
-        this.b = mediaDataController;
-        this.c = j3;
-        this.d = j10;
-        this.e = tL_channels_getMessages;
     }
 }

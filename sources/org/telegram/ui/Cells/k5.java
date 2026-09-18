@@ -11,24 +11,24 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.WebFile;
-import org.telegram.messenger.vl;
+import org.telegram.messenger.wl;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class k5 extends FrameLayout {
     public final TextView a;
     public final TextView b;
     public final TextView c;
-    public final org.telegram.ui.Components.x9 d;
+    public final org.telegram.ui.Components.u9 d;
 
     public k5(Context context) {
         super(context);
-        org.telegram.ui.Components.x9 x9Var = new org.telegram.ui.Components.x9(context);
-        this.d = x9Var;
-        x9Var.getImageReceiver().setRoundRadius(AndroidUtilities.dp(8.0f));
-        addView(x9Var, w7.x5.d(100, 100.0f, LocaleController.isRTL ? 5 : 3, 10.0f, 10.0f, 10.0f, 0.0f));
+        org.telegram.ui.Components.u9 u9Var = new org.telegram.ui.Components.u9(context);
+        this.d = u9Var;
+        u9Var.getImageReceiver().setRoundRadius(AndroidUtilities.dp(8.0f));
+        addView(u9Var, w7.x5.d(100, 100.0f, LocaleController.isRTL ? 5 : 3, 10.0f, 10.0f, 10.0f, 0.0f));
         TextView textView = new TextView(context);
         this.a = textView;
         int i10 = org.telegram.ui.ActionBar.j6.G6;
@@ -54,7 +54,7 @@ public final class k5 extends FrameLayout {
         addView(textView2, w7.x5.d(-1, -2.0f, (z11 ? 5 : 3) | 48, z11 ? 10.0f : 123.0f, 33.0f, z11 ? 123.0f : 10.0f, 0.0f));
         TextView textView3 = new TextView(context);
         this.c = textView3;
-        vl.r(textView3, org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.z6, false), 1, 14.0f, 1);
+        wl.r(textView3, org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.z6, false), 1, 14.0f, 1);
         textView3.setMaxLines(1);
         textView3.setSingleLine(true);
         textView3.setEllipsize(truncateAt);
@@ -81,12 +81,12 @@ public final class k5 extends FrameLayout {
         float dp = f7 / (((int) (min * 0.7f)) - AndroidUtilities.dp(2.0f));
         int i10 = (int) (f7 / dp);
         int i11 = (int) (360 / dp);
-        org.telegram.ui.Components.x9 x9Var = this.d;
+        org.telegram.ui.Components.u9 u9Var = this.d;
         if (webDocument == null || !webDocument.mime_type.startsWith("image/")) {
             textView.setLayoutParams(w7.x5.d(-1, -2.0f, (LocaleController.isRTL ? 5 : 3) | 48, 17.0f, 9.0f, 17.0f, 0.0f));
             textView2.setLayoutParams(w7.x5.d(-1, -2.0f, (LocaleController.isRTL ? 5 : 3) | 48, 17.0f, 33.0f, 17.0f, 0.0f));
             textView3.setLayoutParams(w7.x5.d(-1, -2.0f, (LocaleController.isRTL ? 5 : 3) | 48, 17.0f, 90.0f, 17.0f, 9.0f));
-            x9Var.setVisibility(8);
+            u9Var.setVisibility(8);
             return;
         }
         boolean z10 = LocaleController.isRTL;
@@ -95,9 +95,9 @@ public final class k5 extends FrameLayout {
         textView2.setLayoutParams(w7.x5.d(-1, -2.0f, (z11 ? 5 : 3) | 48, z11 ? 10.0f : 123.0f, 33.0f, z11 ? 123.0f : 10.0f, 0.0f));
         boolean z12 = LocaleController.isRTL;
         textView3.setLayoutParams(w7.x5.d(-1, -2.0f, (z12 ? 5 : 3) | 48, z12 ? 10.0f : 123.0f, 90.0f, z12 ? 123.0f : 10.0f, 0.0f));
-        x9Var.setVisibility(0);
+        u9Var.setVisibility(0);
         Locale locale = Locale.US;
-        x9Var.getImageReceiver().setImage(ImageLocation.getForWebFile(WebFile.createWithWebDocument(webDocument)), a4.a.k(i10, i11, "_"), null, null, -1L, null, obj, 1);
+        u9Var.getImageReceiver().setImage(ImageLocation.getForWebFile(WebFile.createWithWebDocument(webDocument)), a4.a.k(i10, i11, "_"), null, null, -1L, null, obj, 1);
     }
 
     public final void b(TLRPC.TL_messageMediaInvoice tL_messageMediaInvoice, String str) {

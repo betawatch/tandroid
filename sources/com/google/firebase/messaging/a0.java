@@ -1,153 +1,178 @@
 package com.google.firebase.messaging;
 
 import android.content.Context;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
-import android.os.PowerManager;
+import android.os.Build;
+import android.os.Bundle;
 import android.util.Log;
+import com.google.android.gms.tasks.Task;
+import com.google.android.gms.tasks.TaskCompletionSource;
+import com.google.android.gms.tasks.Tasks;
 import java.io.IOException;
+import java.util.ArrayDeque;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ScheduledThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
-public final class a0 implements Runnable {
-    public static final Object f = new Object();
-    public static Boolean h;
-    public static Boolean n;
+public final class a0 {
+    public static final long i = TimeUnit.HOURS.toSeconds(8);
+    public static final /* synthetic */ int j = 0;
     public final Context a;
     public final p b;
-    public final PowerManager.WakeLock c;
-    public final y d;
-    public final long e;
+    public final n c;
+    public final FirebaseMessaging d;
+    public final ScheduledThreadPoolExecutor f;
+    public final y h;
+    public final a0.f e = new a0.f(0);
+    public boolean g = false;
 
-    public a0(y yVar, Context context, p pVar, long j3) {
-        this.d = yVar;
-        this.a = context;
-        this.e = j3;
+    public a0(FirebaseMessaging firebaseMessaging, p pVar, y yVar, n nVar, Context context, ScheduledThreadPoolExecutor scheduledThreadPoolExecutor) {
+        this.d = firebaseMessaging;
         this.b = pVar;
-        this.c = ((PowerManager) context.getSystemService("power")).newWakeLock(1, "wake:com.google.firebase.messaging");
+        this.h = yVar;
+        this.c = nVar;
+        this.a = context;
+        this.f = scheduledThreadPoolExecutor;
     }
 
-    public static boolean a(Context context) {
-        boolean booleanValue;
-        synchronized (f) {
+    public static void a(Task task) {
+        try {
+            Tasks.await(task, 30L, TimeUnit.SECONDS);
+        } catch (InterruptedException | TimeoutException e) {
+            throw new IOException("SERVICE_NOT_AVAILABLE", e);
+        } catch (ExecutionException e7) {
+            Throwable cause = e7.getCause();
+            if (cause instanceof IOException) {
+                throw ((IOException) cause);
+            }
+            if (!(cause instanceof RuntimeException)) {
+                throw new IOException(e7);
+            }
+            throw ((RuntimeException) cause);
+        }
+    }
+
+    public static boolean d() {
+        if (Log.isLoggable("FirebaseMessaging", 3)) {
+            return true;
+        }
+        return Build.VERSION.SDK_INT == 23 && Log.isLoggable("FirebaseMessaging", 3);
+    }
+
+    public final void b(String str) {
+        String a2 = this.d.a();
+        n nVar = this.c;
+        nVar.getClass();
+        Bundle bundle = new Bundle();
+        bundle.putString("gcm.topic", "/topics/" + str);
+        a(nVar.o(nVar.D(a2, "/topics/" + str, bundle)));
+    }
+
+    public final void c(String str) {
+        String a2 = this.d.a();
+        n nVar = this.c;
+        nVar.getClass();
+        Bundle bundle = new Bundle();
+        bundle.putString("gcm.topic", "/topics/" + str);
+        bundle.putString("delete", "1");
+        a(nVar.o(nVar.D(a2, "/topics/" + str, bundle)));
+    }
+
+    public final void e(x xVar) {
+        synchronized (this.e) {
             try {
-                Boolean bool = n;
-                Boolean valueOf = Boolean.valueOf(bool == null ? b(context, "android.permission.ACCESS_NETWORK_STATE", bool) : bool.booleanValue());
-                n = valueOf;
-                booleanValue = valueOf.booleanValue();
+                String str = xVar.c;
+                if (this.e.containsKey(str)) {
+                    ArrayDeque arrayDeque = (ArrayDeque) this.e.get(str);
+                    TaskCompletionSource taskCompletionSource = (TaskCompletionSource) arrayDeque.poll();
+                    if (taskCompletionSource != null) {
+                        taskCompletionSource.setResult(null);
+                    }
+                    if (arrayDeque.isEmpty()) {
+                        this.e.remove(str);
+                    }
+                }
             } catch (Throwable th2) {
                 throw th2;
             }
         }
-        return booleanValue;
     }
 
-    public static boolean b(Context context, String str, Boolean bool) {
-        if (bool != null) {
-            return bool.booleanValue();
-        }
-        boolean z10 = context.checkCallingOrSelfPermission(str) == 0;
-        if (!z10 && Log.isLoggable("FirebaseMessaging", 3)) {
-            Log.d("FirebaseMessaging", "Missing Permission: " + str + ". This permission should normally be included by the manifest merger, but may needed to be manually added to your manifest");
-        }
-        return z10;
+    public final synchronized void f(boolean z10) {
+        this.g = z10;
     }
 
-    public static boolean c(Context context) {
-        boolean booleanValue;
-        synchronized (f) {
-            try {
-                Boolean bool = h;
-                Boolean valueOf = Boolean.valueOf(bool == null ? b(context, "android.permission.WAKE_LOCK", bool) : bool.booleanValue());
-                h = valueOf;
-                booleanValue = valueOf.booleanValue();
-            } catch (Throwable th2) {
-                throw th2;
-            }
-        }
-        return booleanValue;
-    }
-
-    public final synchronized boolean e() {
-        boolean z10;
-        try {
-            ConnectivityManager connectivityManager = (ConnectivityManager) this.a.getSystemService("connectivity");
-            NetworkInfo activeNetworkInfo = connectivityManager != null ? connectivityManager.getActiveNetworkInfo() : null;
-            if (activeNetworkInfo != null) {
-                z10 = activeNetworkInfo.isConnected();
-            }
-        } catch (Throwable th2) {
-            throw th2;
-        }
-        return z10;
-    }
-
-    /* JADX WARN: Finally extract failed */
-    @Override // java.lang.Runnable
-    public final void run() {
-        y yVar = this.d;
-        Context context = this.a;
-        boolean c10 = c(context);
-        PowerManager.WakeLock wakeLock = this.c;
-        if (c10) {
-            wakeLock.acquire(f.a);
-        }
-        try {
-            try {
+    /* JADX WARN: Removed duplicated region for block: B:15:0x008a A[Catch: IOException -> 0x005e, TRY_LEAVE, TryCatch #1 {IOException -> 0x005e, blocks: (B:8:0x0029, B:13:0x0084, B:15:0x008a, B:19:0x003a, B:21:0x0042, B:23:0x004b, B:26:0x0060, B:28:0x0068, B:30:0x0071), top: B:7:0x0029 }] */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x009e A[SYNTHETIC] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean g() {
+        x a2;
+        while (true) {
+            synchronized (this) {
                 try {
-                    yVar.f(true);
-                    if (!this.b.e()) {
-                        yVar.f(false);
-                        if (c(context)) {
-                            try {
-                                wakeLock.release();
-                                return;
-                            } catch (RuntimeException unused) {
-                                Log.i("FirebaseMessaging", "TopicsSyncTask's wakelock was already released due to timeout.");
-                                return;
-                            }
-                        }
-                        return;
+                    a2 = this.h.a();
+                    if (a2 == null) {
+                        break;
                     }
-                    if (!a(context) || e()) {
-                        if (yVar.g()) {
-                            yVar.f(false);
-                        } else {
-                            yVar.h(this.e);
-                        }
-                        if (c(context)) {
-                            wakeLock.release();
-                            return;
-                        }
-                        return;
-                    }
-                    new z(this, this).a();
-                    if (c(context)) {
-                        try {
-                            wakeLock.release();
-                        } catch (RuntimeException unused2) {
-                            Log.i("FirebaseMessaging", "TopicsSyncTask's wakelock was already released due to timeout.");
-                        }
-                    }
-                } catch (IOException e7) {
-                    Log.e("FirebaseMessaging", "Failed to sync topics. Won't retry sync. " + e7.getMessage());
-                    yVar.f(false);
-                    if (c(context)) {
-                        wakeLock.release();
-                    }
-                }
-            } catch (RuntimeException unused3) {
-                Log.i("FirebaseMessaging", "TopicsSyncTask's wakelock was already released due to timeout.");
-            }
-        } catch (Throwable th2) {
-            if (c(context)) {
-                try {
-                    wakeLock.release();
-                } catch (RuntimeException unused4) {
-                    Log.i("FirebaseMessaging", "TopicsSyncTask's wakelock was already released due to timeout.");
+                } finally {
                 }
             }
-            throw th2;
+            try {
+                String str = a2.b;
+                String str2 = a2.a;
+                int hashCode = str.hashCode();
+                if (hashCode != 83) {
+                    if (hashCode == 85 && str.equals("U")) {
+                        c(str2);
+                        if (d()) {
+                            Log.d("FirebaseMessaging", "Unsubscribe from topic: " + str2 + " succeeded.");
+                        }
+                        this.h.c(a2);
+                        e(a2);
+                    }
+                    if (!d()) {
+                        Log.d("FirebaseMessaging", "Unknown topic operation" + a2 + ".");
+                    }
+                    this.h.c(a2);
+                    e(a2);
+                } else {
+                    if (str.equals("S")) {
+                        b(str2);
+                        if (d()) {
+                            Log.d("FirebaseMessaging", "Subscribe to topic: " + str2 + " succeeded.");
+                        }
+                        this.h.c(a2);
+                        e(a2);
+                    }
+                    if (!d()) {
+                    }
+                    this.h.c(a2);
+                    e(a2);
+                }
+            } catch (IOException e) {
+                if (!"SERVICE_NOT_AVAILABLE".equals(e.getMessage()) && !"INTERNAL_SERVER_ERROR".equals(e.getMessage())) {
+                    if (e.getMessage() != null) {
+                        throw e;
+                    }
+                    Log.e("FirebaseMessaging", "Topic operation failed without exception message. Will retry Topic operation.");
+                    return false;
+                }
+                Log.e("FirebaseMessaging", "Topic operation failed: " + e.getMessage() + ". Will retry Topic operation.");
+                return false;
+            }
         }
+        if (d()) {
+            Log.d("FirebaseMessaging", "topic sync succeeded");
+        }
+        return true;
+    }
+
+    public final void h(long j3) {
+        this.f.schedule(new c0(this, this.a, this.b, Math.min(Math.max(30L, 2 * j3), i)), j3, TimeUnit.SECONDS);
+        f(true);
     }
 }

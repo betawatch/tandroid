@@ -16,7 +16,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class l extends o6.a {
     public static final aa.a e;
@@ -28,34 +28,34 @@ public final class l extends o6.a {
 
     static {
         aa.a aVar = new aa.a();
-        aVar.C(4, "com.google.android.gms.cast.metadata.CREATION_DATE", "creationDateTime");
-        aVar.C(4, "com.google.android.gms.cast.metadata.RELEASE_DATE", "releaseDate");
-        aVar.C(4, "com.google.android.gms.cast.metadata.BROADCAST_DATE", "originalAirdate");
-        aVar.C(1, "com.google.android.gms.cast.metadata.TITLE", "title");
-        aVar.C(1, "com.google.android.gms.cast.metadata.SUBTITLE", "subtitle");
-        aVar.C(1, "com.google.android.gms.cast.metadata.ARTIST", "artist");
-        aVar.C(1, "com.google.android.gms.cast.metadata.ALBUM_ARTIST", "albumArtist");
-        aVar.C(1, "com.google.android.gms.cast.metadata.ALBUM_TITLE", "albumName");
-        aVar.C(1, "com.google.android.gms.cast.metadata.COMPOSER", "composer");
-        aVar.C(2, "com.google.android.gms.cast.metadata.DISC_NUMBER", "discNumber");
-        aVar.C(2, "com.google.android.gms.cast.metadata.TRACK_NUMBER", "trackNumber");
-        aVar.C(2, "com.google.android.gms.cast.metadata.SEASON_NUMBER", "season");
-        aVar.C(2, "com.google.android.gms.cast.metadata.EPISODE_NUMBER", "episode");
-        aVar.C(1, "com.google.android.gms.cast.metadata.SERIES_TITLE", "seriesTitle");
-        aVar.C(1, "com.google.android.gms.cast.metadata.STUDIO", "studio");
-        aVar.C(2, "com.google.android.gms.cast.metadata.WIDTH", "width");
-        aVar.C(2, "com.google.android.gms.cast.metadata.HEIGHT", "height");
-        aVar.C(1, "com.google.android.gms.cast.metadata.LOCATION_NAME", "location");
-        aVar.C(3, "com.google.android.gms.cast.metadata.LOCATION_LATITUDE", "latitude");
-        aVar.C(3, "com.google.android.gms.cast.metadata.LOCATION_LONGITUDE", "longitude");
-        aVar.C(5, "com.google.android.gms.cast.metadata.SECTION_DURATION", "sectionDuration");
-        aVar.C(5, "com.google.android.gms.cast.metadata.SECTION_START_TIME_IN_MEDIA", "sectionStartTimeInMedia");
-        aVar.C(5, "com.google.android.gms.cast.metadata.SECTION_START_ABSOLUTE_TIME", "sectionStartAbsoluteTime");
-        aVar.C(5, "com.google.android.gms.cast.metadata.SECTION_START_TIME_IN_CONTAINER", "sectionStartTimeInContainer");
-        aVar.C(2, "com.google.android.gms.cast.metadata.QUEUE_ITEM_ID", "queueItemId");
-        aVar.C(1, "com.google.android.gms.cast.metadata.BOOK_TITLE", "bookTitle");
-        aVar.C(2, "com.google.android.gms.cast.metadata.CHAPTER_NUMBER", "chapterNumber");
-        aVar.C(1, "com.google.android.gms.cast.metadata.CHAPTER_TITLE", "chapterTitle");
+        aVar.v(4, "com.google.android.gms.cast.metadata.CREATION_DATE", "creationDateTime");
+        aVar.v(4, "com.google.android.gms.cast.metadata.RELEASE_DATE", "releaseDate");
+        aVar.v(4, "com.google.android.gms.cast.metadata.BROADCAST_DATE", "originalAirdate");
+        aVar.v(1, "com.google.android.gms.cast.metadata.TITLE", "title");
+        aVar.v(1, "com.google.android.gms.cast.metadata.SUBTITLE", "subtitle");
+        aVar.v(1, "com.google.android.gms.cast.metadata.ARTIST", "artist");
+        aVar.v(1, "com.google.android.gms.cast.metadata.ALBUM_ARTIST", "albumArtist");
+        aVar.v(1, "com.google.android.gms.cast.metadata.ALBUM_TITLE", "albumName");
+        aVar.v(1, "com.google.android.gms.cast.metadata.COMPOSER", "composer");
+        aVar.v(2, "com.google.android.gms.cast.metadata.DISC_NUMBER", "discNumber");
+        aVar.v(2, "com.google.android.gms.cast.metadata.TRACK_NUMBER", "trackNumber");
+        aVar.v(2, "com.google.android.gms.cast.metadata.SEASON_NUMBER", "season");
+        aVar.v(2, "com.google.android.gms.cast.metadata.EPISODE_NUMBER", "episode");
+        aVar.v(1, "com.google.android.gms.cast.metadata.SERIES_TITLE", "seriesTitle");
+        aVar.v(1, "com.google.android.gms.cast.metadata.STUDIO", "studio");
+        aVar.v(2, "com.google.android.gms.cast.metadata.WIDTH", "width");
+        aVar.v(2, "com.google.android.gms.cast.metadata.HEIGHT", "height");
+        aVar.v(1, "com.google.android.gms.cast.metadata.LOCATION_NAME", "location");
+        aVar.v(3, "com.google.android.gms.cast.metadata.LOCATION_LATITUDE", "latitude");
+        aVar.v(3, "com.google.android.gms.cast.metadata.LOCATION_LONGITUDE", "longitude");
+        aVar.v(5, "com.google.android.gms.cast.metadata.SECTION_DURATION", "sectionDuration");
+        aVar.v(5, "com.google.android.gms.cast.metadata.SECTION_START_TIME_IN_MEDIA", "sectionStartTimeInMedia");
+        aVar.v(5, "com.google.android.gms.cast.metadata.SECTION_START_ABSOLUTE_TIME", "sectionStartAbsoluteTime");
+        aVar.v(5, "com.google.android.gms.cast.metadata.SECTION_START_TIME_IN_CONTAINER", "sectionStartTimeInContainer");
+        aVar.v(2, "com.google.android.gms.cast.metadata.QUEUE_ITEM_ID", "queueItemId");
+        aVar.v(1, "com.google.android.gms.cast.metadata.BOOK_TITLE", "bookTitle");
+        aVar.v(2, "com.google.android.gms.cast.metadata.CHAPTER_NUMBER", "chapterNumber");
+        aVar.v(1, "com.google.android.gms.cast.metadata.CHAPTER_TITLE", "chapterTitle");
         e = aVar;
     }
 

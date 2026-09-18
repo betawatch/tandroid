@@ -3,11 +3,12 @@ package k6;
 import android.app.PendingIntent;
 import android.os.Parcel;
 import android.os.Parcelable;
+import hg.k0;
 import java.util.Arrays;
 import n4.y;
 import w7.e0;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class a extends o6.a {
     public final int a;
@@ -87,7 +88,7 @@ public final class a extends o6.a {
                     case 25:
                         return "API_INSTALL_REQUIRED";
                     default:
-                        return i2.g.j(i10, "UNKNOWN_ERROR_CODE(", ")");
+                        return k0.j(i10, "UNKNOWN_ERROR_CODE(", ")");
                 }
         }
     }
@@ -117,9 +118,9 @@ public final class a extends o6.a {
 
     public final String toString() {
         y yVar = new y(this);
-        yVar.y(d(this.b), "statusCode");
-        yVar.y(this.c, "resolution");
-        yVar.y(this.d, "message");
+        yVar.e(d(this.b), "statusCode");
+        yVar.e(this.c, "resolution");
+        yVar.e(this.d, "message");
         return yVar.toString();
     }
 

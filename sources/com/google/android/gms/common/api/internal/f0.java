@@ -3,7 +3,7 @@ package com.google.android.gms.common.api.internal;
 import android.os.Bundle;
 import java.util.concurrent.locks.Lock;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class f0 implements com.google.android.gms.common.api.k, com.google.android.gms.common.api.l {
     public final /* synthetic */ g0 a;
@@ -28,8 +28,8 @@ public final class f0 implements com.google.android.gms.common.api.k, com.google
         lock.lock();
         try {
             if (g0Var.w && !aVar.b()) {
-                g0Var.a();
-                g0Var.h();
+                g0Var.b();
+                g0Var.g();
             } else {
                 g0Var.e(aVar);
             }

@@ -9,15 +9,15 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.vl;
+import org.telegram.messenger.wl;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.l80;
-import org.telegram.ui.Components.oq;
+import org.telegram.ui.Components.pq;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class g7 extends FrameLayout {
-    public final org.telegram.ui.Components.x9 a;
+    public final org.telegram.ui.Components.u9 a;
     public final d7 b;
     public final TextView c;
     public long d;
@@ -30,13 +30,13 @@ public final class g7 extends FrameLayout {
         this.f = UserConfig.selectedAccount;
         this.h = f6Var;
         setWillNotDraw(false);
-        org.telegram.ui.Components.x9 x9Var = new org.telegram.ui.Components.x9(context);
-        this.a = x9Var;
-        x9Var.setRoundRadius(AndroidUtilities.dp(28.0f));
-        addView(x9Var, w7.x5.d(56, 56.0f, 49, 0.0f, 7.0f, 0.0f, 0.0f));
+        org.telegram.ui.Components.u9 u9Var = new org.telegram.ui.Components.u9(context);
+        this.a = u9Var;
+        u9Var.setRoundRadius(AndroidUtilities.dp(28.0f));
+        addView(u9Var, w7.x5.d(56, 56.0f, 49, 0.0f, 7.0f, 0.0f, 0.0f));
         TextView textView = new TextView(context);
         this.c = textView;
-        vl.n(org.telegram.ui.ActionBar.j6.j5, f6Var, textView, 1, 12.0f);
+        wl.n(org.telegram.ui.ActionBar.j6.j5, f6Var, textView, 1, 12.0f);
         textView.setMaxLines(2);
         textView.setGravity(49);
         textView.setLines(2);
@@ -61,14 +61,14 @@ public final class g7 extends FrameLayout {
 
     public void setAsNewBotForumTopic(boolean z10) {
         this.c.setText(LocaleController.getString(z10 ? R.string.ShareSendToNewTopic : R.string.ShareSendToOffTopic));
-        org.telegram.ui.Components.x9 x9Var = this.a;
-        x9Var.setAnimatedEmojiDrawable(null);
-        og.a aVar = new og.a(og.a.k[0]);
+        org.telegram.ui.Components.u9 u9Var = this.a;
+        u9Var.setAnimatedEmojiDrawable(null);
+        ng.a aVar = new ng.a(ng.a.k[0]);
         l80 l80Var = new l80(1, null);
         l80Var.a("");
         l80Var.i = 1.8f;
-        oq oqVar = new oq(aVar, l80Var, 0, 0);
-        oqVar.w = true;
-        x9Var.setImageDrawable(oqVar);
+        pq pqVar = new pq(aVar, l80Var, 0, 0);
+        pqVar.w = true;
+        u9Var.setImageDrawable(pqVar);
     }
 }

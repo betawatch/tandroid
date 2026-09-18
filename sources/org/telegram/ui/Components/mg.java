@@ -1,103 +1,101 @@
 package org.telegram.ui.Components;
 
-import java.io.File;
-import java.util.ArrayList;
-import org.telegram.messenger.AccountInstance;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessageSuggestionParams;
-import org.telegram.messenger.SendMessageChatArguments;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.messenger.VideoEditedInfo;
+import android.view.View;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class mg extends org.telegram.ui.su0 {
-    public boolean a;
-    public final /* synthetic */ MediaController.PhotoEntry b;
-    public final /* synthetic */ File c;
-    public final /* synthetic */ ng d;
+public interface mg {
+    void A2();
 
-    public mg(ng ngVar, MediaController.PhotoEntry photoEntry, File file) {
-        this.d = ngVar;
-        this.b = photoEntry;
-        this.c = file;
-    }
+    void B(boolean z10);
 
-    @Override // org.telegram.ui.su0, org.telegram.ui.av0
-    public final void G() {
-        if (this.a) {
-            return;
-        }
-        try {
-            this.c.delete();
-        } catch (Throwable unused) {
-        }
-    }
+    boolean C0();
 
-    @Override // org.telegram.ui.su0, org.telegram.ui.av0
-    public final boolean g() {
-        return false;
-    }
+    void D();
 
-    @Override // org.telegram.ui.su0, org.telegram.ui.av0
-    public final void o(int i10, VideoEditedInfo videoEditedInfo, boolean z10, int i11, int i12, boolean z11) {
-        MessageObject threadMessage;
-        String str;
-        org.telegram.ui.co coVar;
-        ChatActivityEnterView chatActivityEnterView = this.d.d;
-        org.telegram.ui.sn snVar = chatActivityEnterView.U2;
-        if (snVar != null && (coVar = chatActivityEnterView.O2) != null && snVar.f) {
-            coVar.Rb();
-            return;
-        }
-        ArrayList arrayList = new ArrayList();
-        SendMessagesHelper.SendingMediaInfo sendingMediaInfo = new SendMessagesHelper.SendingMediaInfo();
-        MediaController.PhotoEntry photoEntry = this.b;
-        if (photoEntry.isVideo || (str = photoEntry.imagePath) == null) {
-            String str2 = photoEntry.path;
-            if (str2 != null) {
-                sendingMediaInfo.path = str2;
-            }
-        } else {
-            sendingMediaInfo.path = str;
-        }
-        sendingMediaInfo.thumbPath = photoEntry.thumbPath;
-        sendingMediaInfo.isLivePhoto = photoEntry.isLivePhoto();
-        sendingMediaInfo.isVideo = photoEntry.isVideo;
-        sendingMediaInfo.discardLivePhoto = photoEntry.isUnalivePhoto();
-        sendingMediaInfo.livePhotoVideoOffset = photoEntry.livePhotoVideoOffset;
-        sendingMediaInfo.livePhotoTimestampUs = photoEntry.livePhotoTimestampUs;
-        CharSequence charSequence = photoEntry.caption;
-        sendingMediaInfo.caption = charSequence != null ? charSequence.toString() : null;
-        sendingMediaInfo.entities = photoEntry.entities;
-        sendingMediaInfo.masks = photoEntry.stickers;
-        sendingMediaInfo.ttl = photoEntry.ttl;
-        sendingMediaInfo.videoEditedInfo = videoEditedInfo;
-        sendingMediaInfo.canDeleteAfter = true;
-        arrayList.add(sendingMediaInfo);
-        photoEntry.reset();
-        this.a = true;
-        boolean checkUpdateStickersOrder = SendMessagesHelper.checkUpdateStickersOrder(sendingMediaInfo.caption);
-        AccountInstance accountInstance = chatActivityEnterView.R;
-        MessageSuggestionParams messageSuggestionParams = null;
-        long j3 = chatActivityEnterView.P2;
-        MessageObject messageObject = chatActivityEnterView.S2;
-        threadMessage = chatActivityEnterView.getThreadMessage();
-        org.telegram.ui.sn snVar2 = chatActivityEnterView.U2;
-        MessageObject messageObject2 = chatActivityEnterView.Y1;
-        org.telegram.ui.co coVar2 = chatActivityEnterView.O2;
-        int i13 = coVar2 == null ? 0 : coVar2.R3;
-        SendMessageChatArguments C8 = coVar2 != null ? coVar2.C8() : null;
-        long sendMonoForumPeerId = chatActivityEnterView.getSendMonoForumPeerId();
-        org.telegram.ui.co coVar3 = chatActivityEnterView.O2;
-        if (coVar3 != null) {
-            messageSuggestionParams = coVar3.g5;
-        }
-        SendMessagesHelper.prepareSendingMedia(accountInstance, arrayList, j3, messageObject, threadMessage, null, snVar2, false, false, messageObject2, z10, i11, i12, i13, checkUpdateStickersOrder, null, C8, 0L, false, 0L, sendMonoForumPeerId, messageSuggestionParams);
-        og ogVar = chatActivityEnterView.Y2;
-        if (ogVar != null) {
-            ogVar.G(null, true, i11, i12, 0L);
-        }
-    }
+    void E0(int i10, int i11);
+
+    void E1();
+
+    void G0();
+
+    void H(CharSequence charSequence, boolean z10, int i10, int i11, long j3);
+
+    TLRPC.TL_channels_sendAsPeers J();
+
+    void J0();
+
+    void K(float f7, int i10);
+
+    void T0();
+
+    void W();
+
+    void X(boolean z10);
+
+    void a1(int i10);
+
+    int b1();
+
+    TL_stories.StoryItem d1();
+
+    void d2();
+
+    boolean f1(long j3);
+
+    void f2(int i10);
+
+    void g();
+
+    boolean i1();
+
+    void i2();
+
+    void j2(boolean z10);
+
+    void k2(int i10, int i11, int i12, long j3, long j10, boolean z10);
+
+    void l();
+
+    void l1(CharSequence charSequence, boolean z10, boolean z11);
+
+    boolean m();
+
+    void m0();
+
+    void n1();
+
+    boolean o1();
+
+    void o2();
+
+    org.telegram.ui.rn p0();
+
+    int q();
+
+    void q1();
+
+    void r1();
+
+    void s0();
+
+    void s1();
+
+    void t1(View view, CharSequence charSequence, boolean z10);
+
+    TLRPC.Peer v();
+
+    void v1(CharSequence charSequence);
+
+    boolean w1();
+
+    void w2();
+
+    void x();
+
+    void y(float f7);
+
+    void z1();
 }

@@ -1,14 +1,231 @@
 package org.telegram.ui.Cells;
 
-import android.widget.FrameLayout;
-import android.widget.TextView;
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.graphics.Canvas;
+import android.text.TextUtils;
+import android.view.MotionEvent;
+import android.view.View;
+import java.io.File;
+import java.util.ArrayList;
+import java.util.HashMap;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.al0;
+import org.telegram.ui.Components.ml0;
+import org.telegram.ui.ce1;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class qa extends FrameLayout {
-    public TextView a;
+public abstract class qa extends ml0 implements NotificationCenter.NotificationCenterDelegate {
+    public static final byte[] i3 = new byte[1024];
+    public boolean X2;
+    public final gg.b0 Y2;
+    public final HashMap Z2;
+    public final HashMap a3;
+    public org.telegram.ui.ActionBar.i6 b3;
+    public final pa c3;
+    public final ArrayList d3;
+    public final ArrayList e3;
+    public final int f3;
+    public int g3;
+    public final org.telegram.ui.ActionBar.o2 h3;
 
-    public void setMessageText(String str) {
-        this.a.setText(str);
+    public qa(Context context, org.telegram.ui.ActionBar.o2 o2Var, int i10, ArrayList arrayList, ArrayList arrayList2) {
+        super(context, null);
+        this.Z2 = new HashMap();
+        this.a3 = new HashMap();
+        this.d3 = arrayList2;
+        this.e3 = arrayList;
+        this.f3 = i10;
+        this.h3 = o2Var;
+        if (i10 == 2) {
+            setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.h5, false));
+        } else {
+            setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.d6, false));
+        }
+        setItemAnimator(null);
+        setLayoutAnimation(null);
+        gg.b0 b0Var = new gg.b0(3);
+        this.Y2 = b0Var;
+        setPadding(0, 0, 0, 0);
+        setClipToPadding(false);
+        b0Var.j1(0);
+        setLayoutManager(b0Var);
+        pa paVar = new pa(this, context);
+        this.c3 = paVar;
+        setAdapter(paVar);
+        setOnItemClickListener(new al0() { // from class: org.telegram.ui.Cells.la
+            @Override // org.telegram.ui.Components.al0
+            public final void d(int i11, View view) {
+                qa qaVar = qa.this;
+                qaVar.getClass();
+                qaVar.z1(((ThemesHorizontalListCell$InnerThemeView) view).b);
+                int left = view.getLeft();
+                int right = view.getRight();
+                if (left < 0) {
+                    qaVar.w0(left - AndroidUtilities.dp(8.0f), 0, null);
+                } else if (right > qaVar.getMeasuredWidth()) {
+                    qaVar.w0(right - qaVar.getMeasuredWidth(), 0, null);
+                }
+            }
+        });
+        setOnItemLongClickListener(new ma(this, 0));
+    }
+
+    public abstract void B1();
+
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        if (i10 != NotificationCenter.fileLoaded) {
+            if (i10 == NotificationCenter.fileLoadFailed) {
+                this.Z2.remove((String) objArr[0]);
+                return;
+            }
+            return;
+        }
+        String str = (String) objArr[0];
+        File file = (File) objArr[1];
+        org.telegram.ui.ActionBar.i6 i6Var = (org.telegram.ui.ActionBar.i6) this.Z2.get(str);
+        if (i6Var != null) {
+            this.Z2.remove(str);
+            if (this.a3.remove(i6Var) != null) {
+                Utilities.globalQueue.postRunnable(new org.telegram.ui.ActionBar.q(this, i6Var, file, 5));
+            } else {
+                x1(i6Var);
+            }
+        }
+    }
+
+    @Override // org.telegram.ui.Components.ml0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        for (int i10 = 0; i10 < 4; i10++) {
+            NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.fileLoaded);
+            NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.fileLoadFailed);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.ml0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        for (int i10 = 0; i10 < 4; i10++) {
+            NotificationCenter.getInstance(i10).removeObserver(this, NotificationCenter.fileLoaded);
+            NotificationCenter.getInstance(i10).removeObserver(this, NotificationCenter.fileLoadFailed);
+        }
+    }
+
+    @Override // androidx.recyclerview.widget.RecyclerView, android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        if (this.X2) {
+            canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(20.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.j6.k0);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.ml0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        if (getParent() != null && getParent().getParent() != null) {
+            getParent().getParent().requestDisallowInterceptTouchEvent(canScrollHorizontally(-1));
+        }
+        return super.onInterceptTouchEvent(motionEvent);
+    }
+
+    @Override // android.view.View
+    public void setBackgroundColor(int i10) {
+        super.setBackgroundColor(i10);
+        g1();
+    }
+
+    public void setDrawDivider(boolean z10) {
+        this.X2 = z10;
+    }
+
+    public final void x1(org.telegram.ui.ActionBar.i6 i6Var) {
+        int childCount = getChildCount();
+        for (int i10 = 0; i10 < childCount; i10++) {
+            View childAt = getChildAt(i10);
+            if (childAt instanceof ThemesHorizontalListCell$InnerThemeView) {
+                ThemesHorizontalListCell$InnerThemeView themesHorizontalListCell$InnerThemeView = (ThemesHorizontalListCell$InnerThemeView) childAt;
+                if (themesHorizontalListCell$InnerThemeView.b == i6Var && themesHorizontalListCell$InnerThemeView.c()) {
+                    themesHorizontalListCell$InnerThemeView.b.U = true;
+                    themesHorizontalListCell$InnerThemeView.a();
+                }
+            }
+        }
+    }
+
+    public final void y1(int i10) {
+        View view;
+        if (i10 == 0 && (view = (View) getParent()) != null) {
+            i10 = view.getMeasuredWidth();
+        }
+        if (i10 == 0) {
+            return;
+        }
+        org.telegram.ui.ActionBar.i6 A0 = this.f3 == 1 ? org.telegram.ui.ActionBar.j6.J : org.telegram.ui.ActionBar.j6.A0();
+        this.b3 = A0;
+        ArrayList arrayList = this.e3;
+        int indexOf = arrayList.indexOf(A0);
+        if (indexOf >= 0 || (indexOf = this.d3.indexOf(this.b3) + arrayList.size()) >= 0) {
+            this.Y2.h1(indexOf, (i10 - AndroidUtilities.dp(76.0f)) / 2);
+        }
+    }
+
+    public final void z1(org.telegram.ui.ActionBar.i6 i6Var) {
+        TLRPC.TL_theme tL_theme = i6Var.F;
+        if (tL_theme != null) {
+            if (!i6Var.U) {
+                return;
+            }
+            if (tL_theme.document == null) {
+                org.telegram.ui.ActionBar.o2 o2Var = this.h3;
+                if (o2Var != null) {
+                    o2Var.presentFragment(new ce1(i6Var, null, true));
+                    return;
+                }
+                return;
+            }
+        }
+        if (!TextUtils.isEmpty(i6Var.d)) {
+            org.telegram.ui.ActionBar.e6.a(false);
+        }
+        SharedPreferences.Editor edit = ApplicationLoader.applicationContext.getSharedPreferences("themeconfig", 0).edit();
+        edit.putString((this.f3 == 1 || i6Var.q()) ? "lastDarkTheme" : "lastDayTheme", i6Var.m());
+        edit.commit();
+        if (this.f3 == 1) {
+            if (i6Var == org.telegram.ui.ActionBar.j6.J) {
+                return;
+            }
+            boolean z10 = org.telegram.ui.ActionBar.j6.I == org.telegram.ui.ActionBar.j6.J;
+            org.telegram.ui.ActionBar.j6.J = i6Var;
+            if (z10) {
+                org.telegram.ui.ActionBar.j6.l(true);
+            }
+        } else if (i6Var == org.telegram.ui.ActionBar.j6.A0()) {
+            return;
+        } else {
+            NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needSetDayNightTheme, i6Var, Boolean.FALSE, null, -1);
+        }
+        B1();
+        int childCount = getChildCount();
+        for (int i10 = 0; i10 < childCount; i10++) {
+            View childAt = getChildAt(i10);
+            if (childAt instanceof ThemesHorizontalListCell$InnerThemeView) {
+                ThemesHorizontalListCell$InnerThemeView themesHorizontalListCell$InnerThemeView = (ThemesHorizontalListCell$InnerThemeView) childAt;
+                themesHorizontalListCell$InnerThemeView.a.a(themesHorizontalListCell$InnerThemeView.b == (themesHorizontalListCell$InnerThemeView.a0.f3 == 1 ? org.telegram.ui.ActionBar.j6.J : org.telegram.ui.ActionBar.j6.A0()), true);
+            }
+        }
+        org.telegram.ui.ActionBar.e4.q(i6Var, i6Var.Y);
+        if (this.f3 != 1) {
+            org.telegram.ui.ActionBar.j6.F1(this.h3);
+        }
+    }
+
+    public void A1(org.telegram.ui.ActionBar.i6 i6Var) {
     }
 }

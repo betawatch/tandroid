@@ -11,16 +11,16 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
-import v7.v7;
+import v7.w7;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class m extends p {
     public static final String v;
     public long e;
     public c6.q f;
     public Long g;
-    public a4.m h;
+    public xa.c h;
     public int i;
     public final o j;
     public final o k;
@@ -126,7 +126,7 @@ public final class m extends p {
             if (i10 != 0) {
                 jSONObject.put("jump", i10);
             }
-            String b11 = v7.b(num);
+            String b11 = w7.b(num);
             if (b11 != null) {
                 jSONObject.put("repeatMode", b11);
             }
@@ -177,9 +177,9 @@ public final class m extends p {
     }
 
     public final void i() {
-        a4.m mVar = this.h;
-        if (mVar != null) {
-            e6.h hVar = (e6.h) mVar.b;
+        xa.c cVar = this.h;
+        if (cVar != null) {
+            e6.h hVar = (e6.h) cVar.b;
             Iterator it = hVar.h.iterator();
             if (it.hasNext()) {
                 it.next().getClass();
@@ -193,9 +193,9 @@ public final class m extends p {
     }
 
     public final void j() {
-        a4.m mVar = this.h;
-        if (mVar != null) {
-            e6.h hVar = (e6.h) mVar.b;
+        xa.c cVar = this.h;
+        if (cVar != null) {
+            e6.h hVar = (e6.h) cVar.b;
             Iterator it = hVar.h.iterator();
             if (it.hasNext()) {
                 it.next().getClass();
@@ -209,9 +209,9 @@ public final class m extends p {
     }
 
     public final void k() {
-        a4.m mVar = this.h;
-        if (mVar != null) {
-            e6.h hVar = (e6.h) mVar.b;
+        xa.c cVar = this.h;
+        if (cVar != null) {
+            e6.h hVar = (e6.h) cVar.b;
             Iterator it = hVar.h.iterator();
             if (it.hasNext()) {
                 it.next().getClass();
@@ -225,9 +225,9 @@ public final class m extends p {
     }
 
     public final void l() {
-        a4.m mVar = this.h;
-        if (mVar != null) {
-            e6.h hVar = (e6.h) mVar.b;
+        xa.c cVar = this.h;
+        if (cVar != null) {
+            e6.h hVar = (e6.h) cVar.b;
             Iterator it = hVar.j.values().iterator();
             if (it.hasNext()) {
                 if (it.next() != null) {

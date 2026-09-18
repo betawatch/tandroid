@@ -1,40 +1,48 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class x60 extends org.telegram.ui.Components.f20 {
-    public final /* synthetic */ f70 r;
+public final /* synthetic */ class x60 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ g70 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public x60(f70 f70Var, Context context, int i10) {
-        super(context, i10);
-        this.r = f70Var;
+    public /* synthetic */ x60(g70 g70Var, int i10) {
+        this.a = i10;
+        this.b = g70Var;
     }
 
-    @Override // org.telegram.ui.Components.f20
-    public final void a(org.telegram.ui.Components.m30 m30Var) {
-        super.a(m30Var);
-        f70.Z(this.r);
-    }
-
-    @Override // org.telegram.ui.Components.f20
-    public final void b() {
-        super.b();
-        f70.Z(this.r);
-    }
-
-    @Override // org.telegram.ui.Components.f20
-    public final void c(org.telegram.ui.Components.m30 m30Var) {
-        f70 f70Var = this.r;
-        if (m30Var == f70Var.X) {
-            f70Var.X = null;
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
+            case 0:
+                g70 g70Var = this.b;
+                g70Var.f.r.clearFocus();
+                g70Var.f.r.requestFocus();
+                AndroidUtilities.showKeyboard(g70Var.f.r);
+                break;
+            case 1:
+                this.b.o0();
+                break;
+            case 2:
+                g70 g70Var2 = this.b;
+                g70Var2.n0(g70Var2.l0());
+                break;
+            case 3:
+                g70 g70Var3 = this.b;
+                g70Var3.n0(g70Var3.l0());
+                break;
+            default:
+                g70 g70Var4 = this.b;
+                g70Var4.X = null;
+                g70Var4.Z.b();
+                g70Var4.h.b();
+                g70Var4.k0();
+                g70Var4.r0();
+                g70Var4.s0();
+                break;
         }
-        if (m30Var == f70Var.Y) {
-            f70Var.Y = null;
-        }
-        super.c(m30Var);
-        f70.Z(f70Var);
     }
 }

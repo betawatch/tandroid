@@ -1,10 +1,44 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+import android.content.Context;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class in extends my0 {
-    @Override // org.telegram.ui.Components.my0
-    public final int d() {
-        return 3;
+public final class in extends s4.d0 {
+    public final /* synthetic */ hg.e0 r;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public in(hg.e0 e0Var, Context context) {
+        super(context);
+        this.r = e0Var;
+    }
+
+    @Override // s4.d0
+    public final int k(int i10, View view) {
+        int i11;
+        un unVar = (un) this.r.V;
+        if (unVar.V0) {
+            i10 = -1;
+        }
+        int k10 = super.k(i10, view);
+        if (unVar.V0) {
+            k10 += AndroidUtilities.dp(160.0f);
+        }
+        if (!unVar.V0) {
+            k10 = org.telegram.messenger.w1.z(7.0f, unVar.R0 - AndroidUtilities.statusBarHeight, k10);
+        }
+        if (unVar.V0 && k10 == 0 && (i11 = unVar.W0) >= 0) {
+            un.K(unVar, i11);
+            unVar.W0 = -1;
+        }
+        unVar.V0 = false;
+        return k10;
+    }
+
+    @Override // s4.d0
+    public final int m(int i10) {
+        return super.m(i10) * 2;
     }
 }

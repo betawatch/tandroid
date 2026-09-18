@@ -1,72 +1,51 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.animation.AnimatorSet;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class ye extends vg {
-    public final /* synthetic */ int l0;
-    public final /* synthetic */ ChatActivityEnterView m0;
+public final class ye implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ChatActivityEnterView b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ ye(ChatActivityEnterView chatActivityEnterView, Context context, int i10, org.telegram.ui.ActionBar.f6 f6Var, int i11) {
-        super(i10, context, f6Var, true);
-        this.l0 = i11;
-        this.m0 = chatActivityEnterView;
+    public /* synthetic */ ye(ChatActivityEnterView chatActivityEnterView, int i10) {
+        this.a = i10;
+        this.b = chatActivityEnterView;
     }
 
-    @Override // org.telegram.ui.Components.vg
-    public boolean d() {
-        switch (this.l0) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
             case 0:
-                return this.m0.c();
-            default:
-                return super.d();
-        }
-    }
-
-    @Override // org.telegram.ui.Components.vg
-    public final boolean e() {
-        switch (this.l0) {
-            case 0:
-                ChatActivityEnterView chatActivityEnterView = this.m0;
-                return !chatActivityEnterView.c() && chatActivityEnterView.G0 == Integer.MAX_VALUE;
-            default:
-                return !this.m0.p3;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.vg
-    public final boolean f() {
-        switch (this.l0) {
-            case 0:
-                nf nfVar = this.m0.L0;
-                return !(nfVar == null || nfVar.q0) || this.r > 0;
-            default:
-                return true;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.vg
-    public boolean j() {
-        switch (this.l0) {
-            case 0:
-                return this.m0.x4;
-            default:
-                return super.j();
-        }
-    }
-
-    @Override // android.view.View
-    public void setAlpha(float f7) {
-        switch (this.l0) {
-            case 0:
-                super.setAlpha(f7);
-                int i10 = ChatActivityEnterView.m5;
-                this.m0.z1();
+                ChatActivityEnterView chatActivityEnterView = this.b;
+                ye yeVar = chatActivityEnterView.q3;
+                if ((!chatActivityEnterView.k0() || !chatActivityEnterView.w()) && !org.telegram.ui.ActionBar.o2.hasSheets(chatActivityEnterView.O2) && !chatActivityEnterView.X1 && chatActivityEnterView.E0 != null && chatActivityEnterView.j3 && !chatActivityEnterView.y2 && !AndroidUtilities.usingHardwareInput && !AndroidUtilities.isInMultiwindow) {
+                    mg mgVar = chatActivityEnterView.Y2;
+                    if (mgVar != null) {
+                        mgVar.r1();
+                    }
+                    chatActivityEnterView.E0.requestFocus();
+                    AndroidUtilities.showKeyboard(chatActivityEnterView.E0);
+                    AndroidUtilities.cancelRunOnUIThread(yeVar);
+                    AndroidUtilities.runOnUIThread(yeVar, 100L);
+                    break;
+                }
+                break;
+            case 1:
+                mg mgVar2 = this.b.Y2;
+                if (mgVar2 != null) {
+                    mgVar2.k2(0, 0, 0, 0L, 0L, true);
+                    break;
+                }
                 break;
             default:
-                super.setAlpha(f7);
+                ChatActivityEnterView chatActivityEnterView2 = this.b;
+                AnimatorSet animatorSet = chatActivityEnterView2.V0;
+                if (animatorSet != null && !animatorSet.isRunning()) {
+                    chatActivityEnterView2.V0.start();
+                    break;
+                }
                 break;
         }
     }

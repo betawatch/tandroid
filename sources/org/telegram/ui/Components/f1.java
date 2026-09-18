@@ -1,114 +1,38 @@
 package org.telegram.ui.Components;
 
-import android.view.KeyEvent;
-import android.widget.TextView;
+import android.content.DialogInterface;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class f1 implements TextView.OnEditorActionListener {
+public final /* synthetic */ class f1 implements DialogInterface.OnShowListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ EditTextBoldCursor b;
 
-    public /* synthetic */ f1(Object obj, int i10) {
+    public /* synthetic */ f1(int i10, EditTextBoldCursor editTextBoldCursor) {
         this.a = i10;
-        this.b = obj;
+        this.b = editTextBoldCursor;
     }
 
-    @Override // android.widget.TextView.OnEditorActionListener
-    public final boolean onEditorAction(TextView textView, int i10, KeyEvent keyEvent) {
+    @Override // android.content.DialogInterface.OnShowListener
+    public final void onShow(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                org.telegram.ui.ActionBar.n5 n5Var = (org.telegram.ui.ActionBar.n5) this.b;
-                if (i10 == 6) {
-                    n5Var.run();
-                    break;
-                }
+                EditTextBoldCursor editTextBoldCursor = this.b;
+                editTextBoldCursor.requestFocus();
+                AndroidUtilities.showKeyboard(editTextBoldCursor);
                 break;
             case 1:
-                org.telegram.ui.Cells.g3 g3Var = ((org.telegram.ui.Cells.i3) this.b).b;
-                if (i10 == 5) {
-                    g3Var.requestFocus();
-                    g3Var.setSelection(g3Var.length());
-                    break;
-                }
+                EditTextBoldCursor editTextBoldCursor2 = this.b;
+                editTextBoldCursor2.requestFocus();
+                AndroidUtilities.showKeyboard(editTextBoldCursor2);
                 break;
             case 2:
-                wq wqVar = (wq) this.b;
-                if (i10 == 6) {
-                    wqVar.run();
-                    break;
-                }
-                break;
-            case 3:
-                sd0 sd0Var = (sd0) this.b;
-                if (i10 != 6) {
-                    sd0Var.getClass();
-                    break;
-                } else {
-                    sd0Var.k(false);
-                    break;
-                }
-            case 4:
-                q4 q4Var = (q4) this.b;
-                if (i10 == 6) {
-                    q4Var.b.a.callOnClick();
-                    break;
-                }
-                break;
-            case 5:
-                di.h2 h2Var = ((wm0) this.b).e;
-                if (keyEvent != null) {
-                    if ((keyEvent.getAction() == 1 && keyEvent.getKeyCode() == 84) || (keyEvent.getAction() == 0 && keyEvent.getKeyCode() == 66)) {
-                        h2Var.hideActionMode();
-                        AndroidUtilities.hideKeyboard(h2Var);
-                        break;
-                    }
-                }
-                break;
-            case 6:
-                hq0 hq0Var = (hq0) this.b;
-                if (keyEvent != null) {
-                    if ((keyEvent.getAction() == 1 && keyEvent.getKeyCode() == 84) || (keyEvent.getAction() == 0 && keyEvent.getKeyCode() == 66)) {
-                        AndroidUtilities.hideKeyboard(hq0Var.y0.r);
-                        break;
-                    }
-                }
-                break;
-            case 7:
-                AlertDialog$Builder alertDialog$Builder = (AlertDialog$Builder) this.b;
-                if (i10 == 5) {
-                    alertDialog$Builder.a.d(-1).callOnClick();
-                    break;
-                }
-                break;
-            case 8:
-                org.telegram.ui.ActionBar.b2 b2Var = (org.telegram.ui.ActionBar.b2) this.b;
-                if (i10 == 6) {
-                    b2Var.d(-1).callOnClick();
-                    break;
-                }
-                break;
-            case 9:
-                o11 o11Var = (o11) this.b;
-                if (keyEvent != null) {
-                    if ((keyEvent.getAction() == 1 && keyEvent.getKeyCode() == 84) || (keyEvent.getAction() == 0 && keyEvent.getKeyCode() == 66)) {
-                        AndroidUtilities.hideKeyboard(o11Var.b);
-                        break;
-                    }
-                }
+                AndroidUtilities.runOnUIThread(new q1(0, this.b));
                 break;
             default:
-                n61 n61Var = (n61) this.b;
-                if (keyEvent != null) {
-                    if ((keyEvent.getAction() == 1 && keyEvent.getKeyCode() == 84) || (keyEvent.getAction() == 0 && keyEvent.getKeyCode() == 66)) {
-                        AndroidUtilities.hideKeyboard(n61Var.J);
-                        break;
-                    }
-                }
+                AndroidUtilities.runOnUIThread(new q1(6, this.b));
                 break;
         }
-        return false;
     }
 }

@@ -1,6 +1,6 @@
 package dd;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public enum d0 extends b2 {
     public d0() {
@@ -18,7 +18,7 @@ public enum d0 extends b2 {
         j jVar = lVar.i;
         char i10 = aVar.i();
         jVar.getClass();
-        jVar.n(String.valueOf(i10));
+        jVar.h(String.valueOf(i10));
         lVar.h.append(aVar.i());
         lVar.a(b2.P);
     }

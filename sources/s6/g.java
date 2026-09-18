@@ -7,10 +7,10 @@ import com.google.android.gms.common.api.n;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.Tasks;
 import java.util.Arrays;
-import ji.u4;
+import k2.u;
 import n6.l;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class g extends j {
     public static final com.google.android.gms.common.api.e k = new com.google.android.gms.common.api.e("ModuleInstall.API", new a8.d(14), new com.google.android.gms.common.api.d());
@@ -24,11 +24,11 @@ public final class g extends j {
         if (b10.a.isEmpty()) {
             return Tasks.forResult(new r6.a(0, true));
         }
-        v e7 = w.e();
-        e7.d = new k6.c[]{k7.b.c};
-        e7.a = 27301;
-        e7.b = false;
-        e7.c = new u4(this, b10);
-        return e(0, e7.a());
+        v e = w.e();
+        e.d = new k6.c[]{k7.b.c};
+        e.a = 27301;
+        e.b = false;
+        e.c = new u(this, b10);
+        return e(0, e.a());
     }
 }

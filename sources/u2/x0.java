@@ -1,6 +1,6 @@
 package u2;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class x0 implements x3.g {
     public long a;
@@ -15,7 +15,13 @@ public final class x0 implements x3.g {
     }
 
     @Override // x3.g
-    public long a(c3.p pVar) {
+    public void B(long j3) {
+        long[] jArr = (long[]) ((of.b) this.d).b;
+        this.b = jArr[e2.d0.e(jArr, j3, true)];
+    }
+
+    @Override // x3.g
+    public long b(c3.p pVar) {
         long j3 = this.b;
         if (j3 < 0) {
             return -1L;
@@ -26,15 +32,9 @@ public final class x0 implements x3.g {
     }
 
     @Override // x3.g
-    public c3.b0 d() {
+    public c3.b0 g() {
         e2.d.g(this.a != -1);
         return new c3.t((c3.u) this.c, this.a, 0);
-    }
-
-    @Override // x3.g
-    public void h(long j3) {
-        long[] jArr = (long[]) ((pf.b) this.d).b;
-        this.b = jArr[e2.d0.e(jArr, j3, true)];
     }
 
     public x0(String str, byte[] bArr, long j3, long j10) {

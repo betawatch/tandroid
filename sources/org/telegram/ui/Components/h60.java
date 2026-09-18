@@ -4,7 +4,7 @@ import android.content.Context;
 import android.view.View;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class h60 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -13,11 +13,11 @@ public final /* synthetic */ class h60 implements View.OnClickListener {
     public final /* synthetic */ boolean d;
     public final /* synthetic */ boolean e;
     public final /* synthetic */ boolean f;
-    public final /* synthetic */ kl0 h;
+    public final /* synthetic */ ll0 h;
 
-    public /* synthetic */ h60(kl0 kl0Var, TLRPC.User user, String str, boolean z10, boolean z11, boolean z12, int i10) {
+    public /* synthetic */ h60(ll0 ll0Var, TLRPC.User user, String str, boolean z10, boolean z11, boolean z12, int i10) {
         this.a = i10;
-        this.h = kl0Var;
+        this.h = ll0Var;
         this.b = user;
         this.c = str;
         this.d = z10;
@@ -33,14 +33,14 @@ public final /* synthetic */ class h60 implements View.OnClickListener {
             case 0:
                 r60 r60Var = ((m60) this.h).c;
                 Context context = r60Var.getContext();
-                i10 = ((org.telegram.ui.ActionBar.f3) r60Var).currentAccount;
+                i10 = ((org.telegram.ui.ActionBar.g3) r60Var).currentAccount;
                 long j3 = -r60Var.g0;
-                f6Var = ((org.telegram.ui.ActionBar.f3) r60Var).resourcesProvider;
-                a01.b(context, i10, j3, this.b, this.c, this.d, this.e, this.f, f6Var);
+                f6Var = ((org.telegram.ui.ActionBar.g3) r60Var).resourcesProvider;
+                c01.b(context, i10, j3, this.b, this.c, this.d, this.e, this.f, f6Var);
                 break;
             default:
-                xu0 xu0Var = ((ht0) this.h).f;
-                a01.b(xu0Var.getContext(), xu0Var.v1.getCurrentAccount(), xu0Var.j1, this.b, this.c, this.d, this.e, this.f, xu0Var.F1);
+                zu0 zu0Var = ((jt0) this.h).f;
+                c01.b(zu0Var.getContext(), zu0Var.v1.getCurrentAccount(), zu0Var.j1, this.b, this.c, this.d, this.e, this.f, zu0Var.F1);
                 break;
         }
     }

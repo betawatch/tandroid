@@ -2,117 +2,156 @@ package org.telegram.ui.Components;
 
 import android.graphics.Rect;
 import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import android.text.Layout;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
+import android.os.Bundle;
+import android.view.accessibility.AccessibilityEvent;
+import android.view.accessibility.AccessibilityManager;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.view.accessibility.AccessibilityNodeProvider;
+import android.widget.Button;
+import java.util.ArrayList;
+import java.util.List;
+import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class ah0 {
-    public int a;
-    public final zc b;
-    public final e6 e;
-    public Drawable i;
-    public Drawable j;
-    public xi0 k;
-    public f01 l;
-    public h90 r;
-    public boolean s;
-    public boolean t;
-    public int u;
-    public long w;
-    public int x;
-    public final /* synthetic */ dh0 y;
-    public final RectF c = new RectF();
-    public final RectF d = new RectF();
-    public final RectF f = new RectF();
-    public final RectF g = new RectF();
-    public final Rect h = new Rect();
-    public float m = 1.0f;
-    public boolean n = false;
-    public boolean o = false;
-    public boolean p = false;
-    public final float q = 1.0f;
-    public int v = 0;
+public class ah0 extends AccessibilityNodeProvider {
+    public final /* synthetic */ int a = 1;
+    public final Object b;
 
-    public ah0(dh0 dh0Var) {
-        this.y = dh0Var;
-        this.b = new zc(dh0Var);
-        this.e = new e6(dh0Var, 0L, 250L, pr.f);
+    public ah0(k2.u uVar) {
+        this.b = uVar;
     }
 
-    public final void a() {
-        float d = this.e.d(1.0f, false);
-        if (d == 1.0f) {
-            this.n = false;
-            if (this.o) {
-                this.p = true;
-                return;
-            }
-            return;
-        }
-        RectF rectF = this.g;
-        float f7 = rectF.left;
-        RectF rectF2 = this.f;
-        float lerp = AndroidUtilities.lerp(f7, rectF2.left, d);
-        RectF rectF3 = this.d;
-        rectF3.left = lerp;
-        rectF3.right = AndroidUtilities.lerp(rectF.right, rectF2.right, d);
-    }
-
-    public final float b() {
-        boolean z10 = this.o;
-        e6 e6Var = this.e;
-        if (z10) {
-            return 1.0f - e6Var.d(1.0f, false);
-        }
-        if (this.n) {
-            return e6Var.d(1.0f, false);
-        }
-        return 1.0f;
-    }
-
-    public final void c(String str) {
-        f01 f01Var = new f01(str, 11.0f, AndroidUtilities.bold());
-        f01Var.n(3);
-        Layout.Alignment alignment = Layout.Alignment.ALIGN_CENTER;
-        f01Var.a();
-        this.l = f01Var;
-    }
-
-    public final void d(int i10, int i11, int i12) {
-        dh0 dh0Var = this.y;
-        if (i10 != 0) {
-            xi0 xi0Var = new xi0(i10, AndroidUtilities.dp(56.0f), AndroidUtilities.dp(56.0f), false, null);
-            xi0Var.v0 = dh0Var;
-            xi0Var.start();
-            this.k = xi0Var;
-        } else {
-            this.k = null;
-        }
-        this.i = i11 != 0 ? dh0Var.getResources().getDrawable(i11).mutate() : null;
-        this.j = i12 != 0 ? dh0Var.getResources().getDrawable(i12).mutate() : null;
-        xi0 xi0Var2 = this.k;
-        Rect rect = this.h;
-        if (xi0Var2 != null) {
-            xi0Var2.setBounds(rect);
-        }
-        Drawable drawable = this.i;
-        if (drawable != null) {
-            drawable.setBounds(rect);
-        }
-        Drawable drawable2 = this.j;
-        if (drawable2 != null) {
-            drawable2.setBounds(rect);
+    @Override // android.view.accessibility.AccessibilityNodeProvider
+    public final AccessibilityNodeInfo createAccessibilityNodeInfo(int i10) {
+        bh0 bh0Var;
+        switch (this.a) {
+            case 0:
+                int[] iArr = {0, 0};
+                eh0 eh0Var = (eh0) this.b;
+                ArrayList arrayList = eh0Var.a;
+                eh0Var.getLocationOnScreen(iArr);
+                if (i10 == -1) {
+                    AccessibilityNodeInfo obtain = AccessibilityNodeInfo.obtain(eh0Var);
+                    eh0Var.onInitializeAccessibilityNodeInfo(obtain);
+                    obtain.setEnabled(true);
+                    for (int i11 = 0; i11 < arrayList.size(); i11++) {
+                        obtain.addChild(eh0Var, ((bh0) arrayList.get(i11)).a);
+                    }
+                    return obtain;
+                }
+                int i12 = 0;
+                while (true) {
+                    if (i12 >= arrayList.size()) {
+                        bh0Var = null;
+                    } else if (((bh0) arrayList.get(i12)).a == i10) {
+                        bh0Var = (bh0) arrayList.get(i12);
+                    } else {
+                        i12++;
+                    }
+                }
+                if (bh0Var != null) {
+                    RectF rectF = bh0Var.d;
+                    if (!rectF.isEmpty()) {
+                        AccessibilityNodeInfo obtain2 = AccessibilityNodeInfo.obtain();
+                        obtain2.setSource(eh0Var, i10);
+                        obtain2.setParent(eh0Var);
+                        obtain2.setPackageName(eh0Var.getContext().getPackageName());
+                        obtain2.addAction(16);
+                        obtain2.addAction(64);
+                        obtain2.setClickable(true);
+                        obtain2.setFocusable(true);
+                        obtain2.setEnabled(true);
+                        obtain2.setVisibleToUser(true);
+                        obtain2.setClassName(Button.class.getName());
+                        obtain2.setText(bh0Var.l.k());
+                        Rect rect = new Rect((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
+                        obtain2.setBoundsInParent(rect);
+                        rect.offset(iArr[0], iArr[1]);
+                        obtain2.setBoundsInScreen(rect);
+                        return obtain2;
+                    }
+                }
+                return null;
+            default:
+                s0.c Z = ((k2.u) this.b).Z(i10);
+                if (Z == null) {
+                    return null;
+                }
+                return Z.a;
         }
     }
 
-    public ah0(dh0 dh0Var, bh0 bh0Var) {
-        this.y = dh0Var;
-        this.b = new zc(dh0Var);
-        this.e = new e6(dh0Var, 0L, 250L, pr.f);
-        d(0, bh0Var.b, bh0Var.c);
-        c(LocaleController.getString(bh0Var.a));
+    @Override // android.view.accessibility.AccessibilityNodeProvider
+    public List findAccessibilityNodeInfosByText(String str, int i10) {
+        switch (this.a) {
+            case 1:
+                ((k2.u) this.b).getClass();
+                return null;
+            default:
+                return super.findAccessibilityNodeInfosByText(str, i10);
+        }
+    }
+
+    @Override // android.view.accessibility.AccessibilityNodeProvider
+    public AccessibilityNodeInfo findFocus(int i10) {
+        switch (this.a) {
+            case 1:
+                s0.c a02 = ((k2.u) this.b).a0(i10);
+                if (a02 == null) {
+                    return null;
+                }
+                return a02.a;
+            default:
+                return super.findFocus(i10);
+        }
+    }
+
+    @Override // android.view.accessibility.AccessibilityNodeProvider
+    public final boolean performAction(int i10, int i11, Bundle bundle) {
+        bh0 bh0Var;
+        switch (this.a) {
+            case 0:
+                eh0 eh0Var = (eh0) this.b;
+                ArrayList arrayList = eh0Var.a;
+                if (i10 == -1) {
+                    return eh0Var.performAccessibilityAction(i11, bundle);
+                }
+                int i12 = 0;
+                while (true) {
+                    if (i12 >= arrayList.size()) {
+                        bh0Var = null;
+                    } else if (((bh0) arrayList.get(i12)).a == i10) {
+                        bh0Var = (bh0) arrayList.get(i12);
+                    } else {
+                        i12++;
+                    }
+                }
+                if (bh0Var != null) {
+                    if (i11 == 64) {
+                        if (((AccessibilityManager) eh0Var.getContext().getSystemService("accessibility")).isTouchExplorationEnabled()) {
+                            AccessibilityEvent obtain = AccessibilityEvent.obtain(32768);
+                            obtain.setPackageName(eh0Var.getContext().getPackageName());
+                            obtain.setSource(eh0Var, i10);
+                            if (eh0Var.getParent() != null) {
+                                eh0Var.getParent().requestSendAccessibilityEvent(eh0Var, obtain);
+                            }
+                        }
+                    } else if (i11 == 16) {
+                        dh0 dh0Var = eh0Var.F;
+                        if (dh0Var != null) {
+                            ProfileActivity.Y(((org.telegram.ui.my0) dh0Var).b, i10, 0.0f, 0.0f);
+                        }
+                    }
+                    return true;
+                }
+                return false;
+            default:
+                return ((k2.u) this.b).c0(i10, i11, bundle);
+        }
+    }
+
+    public ah0(eh0 eh0Var) {
+        this.b = eh0Var;
     }
 }

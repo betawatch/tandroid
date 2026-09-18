@@ -2,27 +2,27 @@ package org.telegram.ui.Components;
 
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class p30 implements hg.a2 {
+public final class p30 implements gg.b2 {
     public final /* synthetic */ q30 a;
 
     public p30(q30 q30Var) {
         this.a = q30Var;
     }
 
-    @Override // hg.a2
-    public final /* synthetic */ a0.i G() {
+    @Override // gg.b2
+    public final /* synthetic */ a0.i F() {
         return null;
     }
 
-    @Override // hg.a2
-    public final /* synthetic */ boolean Q(int i10) {
+    @Override // gg.b2
+    public final /* synthetic */ boolean O(int i10) {
         return true;
     }
 
-    @Override // hg.a2
-    public final void f(int i10) {
+    @Override // gg.b2
+    public final void h(int i10) {
         q30 q30Var = this.a;
         r30 r30Var = q30Var.w;
         if (i10 < 0 || i10 != q30Var.n || q30Var.h) {
@@ -34,18 +34,18 @@ public final class p30 implements hg.a2 {
         if (q30Var.f > i11) {
             r30Var.J(i11);
         }
-        if (q30Var.d.e() || !r30Var.d.R0()) {
+        if (q30Var.d.e() || !r30Var.d.T0()) {
             return;
         }
         r30Var.s.e(false, z10);
     }
 
-    @Override // hg.a2
+    @Override // gg.b2
     public final a0.i w() {
         return this.a.w.e0;
     }
 
-    @Override // hg.a2
-    public final /* synthetic */ void Y(ArrayList arrayList) {
+    @Override // gg.b2
+    public final /* synthetic */ void Q(ArrayList arrayList) {
     }
 }

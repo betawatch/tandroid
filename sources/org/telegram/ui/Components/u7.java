@@ -1,51 +1,46 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.ui.PhotoViewer;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class u7 extends md {
-    public final /* synthetic */ int b;
-    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate c;
+public final class u7 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ h8 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ u7(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, Context context, int i10) {
-        super(context);
-        this.b = i10;
-        this.c = notificationCenterDelegate;
+    public /* synthetic */ u7(h8 h8Var, int i10) {
+        this.a = i10;
+        this.b = h8Var;
     }
 
-    @Override // org.telegram.ui.Components.md
-    public final void c(boolean z10) {
-        switch (this.b) {
-            case 0:
-                k8 k8Var = (k8) this.c;
-                k8Var.D0();
-                org.telegram.ui.zr zrVar = k8Var.O;
-                if (zrVar != null) {
-                    zrVar.a(b5.d.u());
-                    break;
-                }
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationCancel(Animator animator) {
+        switch (this.a) {
+            case 2:
+                this.b.C0 = null;
                 break;
             default:
-                PhotoViewer photoViewer = (PhotoViewer) this.c;
-                org.telegram.ui.ActionBar.f1 f1Var = photoViewer.F0;
-                if (f1Var != null) {
-                    f1Var.d(z10);
-                    photoViewer.F0.setSelectorColor(z10 ? 259241196 : 268435455);
-                }
-                g71 g71Var = photoViewer.F2;
-                if (g71Var != null) {
-                    g71Var.O(b5.d.u() || photoViewer.r);
-                }
-                org.telegram.ui.zr zrVar2 = photoViewer.w0;
-                if (zrVar2 != null) {
-                    zrVar2.a(b5.d.u());
-                    break;
-                }
+                super.onAnimationCancel(animator);
                 break;
         }
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                this.b.m0 = false;
+                break;
+            case 1:
+                h8 h8Var = this.b;
+                h8Var.i0.setVisibility(4);
+                h8Var.j0.setImageBitmap(null);
+                h8Var.m0 = false;
+                break;
+        }
+    }
+
+    private final void a(Animator animator) {
     }
 }

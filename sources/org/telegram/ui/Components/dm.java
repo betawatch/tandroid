@@ -6,10 +6,10 @@ import android.graphics.RectF;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.camera.CameraView;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class dm extends CameraView {
-    public final ah.n0 a;
+    public final ai.w4 a;
     public boolean b;
     public final /* synthetic */ ChatAttachAlertPhotoLayout c;
 
@@ -17,7 +17,7 @@ public final class dm extends CameraView {
     public dm(ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout, Context context, boolean z10, boolean z11) {
         super(context, z10, z11);
         this.c = chatAttachAlertPhotoLayout;
-        this.a = new ah.n0(this, 8);
+        this.a = new ai.w4(this, 7);
     }
 
     @Override // org.telegram.messenger.camera.CameraView, android.view.ViewGroup, android.view.View
@@ -32,7 +32,7 @@ public final class dm extends CameraView {
             return;
         }
         float translationY = (viVar.getContainerView().getTranslationY() + (viVar.G0[1] + chatAttachAlertPhotoLayout.W0)) - chatAttachAlertPhotoLayout.P.getTranslationY();
-        di.i iVar = viVar.B2;
+        ci.i iVar = viVar.B2;
         int min = (int) Math.min(translationY - (iVar != null ? iVar.d() + AndroidUtilities.dp(8.0f) : 0.0f), getMeasuredHeight());
         boolean z10 = chatAttachAlertPhotoLayout.d0;
         if (z10) {
@@ -60,14 +60,14 @@ public final class dm extends CameraView {
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.c;
-        qc.a(chatAttachAlertPhotoLayout.P, this.a);
+        oc.a(chatAttachAlertPhotoLayout.P, this.a);
         chatAttachAlertPhotoLayout.E.invalidate();
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        qc.h(this.c.P);
+        oc.h(this.c.P);
     }
 
     @Override // android.view.View

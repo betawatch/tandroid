@@ -1,21 +1,15 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class cv extends rv {
-    public final /* synthetic */ rv W;
+public final class cv extends pv {
+    public final /* synthetic */ sv h;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public cv(rv rvVar, org.telegram.ui.ActionBar.n2 n2Var, Context context, org.telegram.ui.ActionBar.f6 f6Var, ArrayList arrayList) {
-        super(n2Var, context, f6Var, arrayList);
-        this.W = rvVar;
-    }
-
-    @Override // org.telegram.ui.Components.rv
-    public final void Y() {
-        this.W.dismiss();
+    public cv(int i10, ArrayList arrayList, sv svVar) {
+        super(i10, arrayList, svVar);
+        this.h = svVar;
     }
 }

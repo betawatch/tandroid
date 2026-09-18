@@ -16,11 +16,13 @@ import java.util.ArrayList;
 import java.util.WeakHashMap;
 import m.k1;
 import m.l3;
+import org.telegram.messenger.BuildConfig;
+import org.telegram.ui.Components.voip.r0;
 import r0.i0;
 import r0.l0;
 import v7.j7;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class b0 extends j7 implements m.b {
     public static final AccelerateInterpolator x = new AccelerateInterpolator();
@@ -47,7 +49,7 @@ public final class b0 extends j7 implements m.b {
     public boolean t;
     public final z u;
     public final z v;
-    public final a4.m w;
+    public final a6.i w;
 
     public b0(Activity activity, boolean z10) {
         new ArrayList();
@@ -57,7 +59,7 @@ public final class b0 extends j7 implements m.b {
         this.r = true;
         this.u = new z(this, 0);
         this.v = new z(this, 1);
-        this.w = new a4.m(this, 21);
+        this.w = new a6.i(this, 20);
         View decorView = activity.getWindow().getDecorView();
         b(decorView);
         if (z10) {
@@ -140,7 +142,7 @@ public final class b0 extends j7 implements m.b {
             wrapper = (k1) findViewById;
         } else {
             if (!(findViewById instanceof Toolbar)) {
-                throw new IllegalStateException("Can't make a decor toolbar out of ".concat(findViewById != null ? findViewById.getClass().getSimpleName() : "null"));
+                throw new IllegalStateException("Can't make a decor toolbar out of ".concat(findViewById != null ? findViewById.getClass().getSimpleName() : BuildConfig.BETA_URL));
             }
             wrapper = ((Toolbar) findViewById).getWrapper();
         }
@@ -201,7 +203,7 @@ public final class b0 extends j7 implements m.b {
     public final void d(boolean z10) {
         boolean z11 = this.p;
         boolean z12 = this.q;
-        a4.m mVar = this.w;
+        a6.i iVar = this.w;
         View view = this.g;
         if (!z12 && z11) {
             if (this.r) {
@@ -229,7 +231,7 @@ public final class b0 extends j7 implements m.b {
                 a2.e(f7);
                 View view2 = (View) a2.a.get();
                 if (view2 != null) {
-                    view2.animate().setUpdateListener(mVar != null ? new ki.a(mVar, view2) : null);
+                    view2.animate().setUpdateListener(iVar != null ? new r0(iVar, view2) : null);
                 }
                 if (!dVar2.b) {
                     arrayList.add(a2);
@@ -282,7 +284,7 @@ public final class b0 extends j7 implements m.b {
             a11.e(0.0f);
             View view3 = (View) a11.a.get();
             if (view3 != null) {
-                view3.animate().setUpdateListener(mVar != null ? new ki.a(mVar, view3) : null);
+                view3.animate().setUpdateListener(iVar != null ? new r0(iVar, view3) : null);
             }
             if (!dVar4.b) {
                 arrayList2.add(a11);
@@ -330,7 +332,7 @@ public final class b0 extends j7 implements m.b {
         this.r = true;
         this.u = new z(this, 0);
         this.v = new z(this, 1);
-        this.w = new a4.m(this, 21);
+        this.w = new a6.i(this, 20);
         b(uVar.getWindow().getDecorView());
     }
 }

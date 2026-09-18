@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class s11 extends View {
     public static final String[] s = {"🎉", "🎆", "🎈"};
@@ -37,8 +37,8 @@ public final class s11 extends View {
             return false;
         }
         if (p11Var.c.getLottieAnimation() != null) {
-            this.b.c.getLottieAnimation().L(0, false, false);
-            this.b.c.getLottieAnimation().F(true);
+            this.b.c.getLottieAnimation().N(0, false, false);
+            this.b.c.getLottieAnimation().H(true);
         }
         this.r = true;
         this.h = 0.0f;
@@ -112,7 +112,7 @@ public final class s11 extends View {
                 this.f = true;
                 if (!this.e) {
                     this.e = true;
-                    post(new f01(this, 3));
+                    post(new g01(this, 3));
                 }
             }
             if (this.r) {
@@ -120,26 +120,26 @@ public final class s11 extends View {
                 this.h = Utilities.clamp(this.h + (Utilities.clamp(currentTimeMillis - this.n, 20L, 0L) / 4200.0f), 1.0f, 0.0f);
                 this.n = currentTimeMillis;
                 ProfileActivity profileActivity = this.a;
-                gz0 gz0Var = profileActivity.a;
+                hz0 hz0Var = profileActivity.a;
                 int i11 = profileActivity.U2;
                 PointF pointF = this.d;
                 float f7 = 2.0f;
                 if (i11 >= 0) {
                     int i12 = 0;
                     while (true) {
-                        if (i12 >= gz0Var.getChildCount()) {
+                        if (i12 >= hz0Var.getChildCount()) {
                             break;
                         }
-                        View childAt = gz0Var.getChildAt(i12);
-                        if (i11 == RecyclerView.R(childAt) && (childAt instanceof org.telegram.ui.Cells.c9)) {
-                            wh.p pVar = ((org.telegram.ui.Cells.c9) childAt).a;
-                            pointF.set(pVar.getX() + childAt.getX() + gz0Var.getX() + AndroidUtilities.dp(12.0f), (pVar.getMeasuredHeight() / 2.0f) + pVar.getY() + childAt.getY() + gz0Var.getY());
+                        View childAt = hz0Var.getChildAt(i12);
+                        if (i11 == RecyclerView.S(childAt) && (childAt instanceof org.telegram.ui.Cells.c9)) {
+                            vh.o oVar = ((org.telegram.ui.Cells.c9) childAt).a;
+                            pointF.set(oVar.getX() + childAt.getX() + hz0Var.getX() + AndroidUtilities.dp(12.0f), (oVar.getMeasuredHeight() / 2.0f) + oVar.getY() + childAt.getY() + hz0Var.getY());
                             break;
                         }
                         i12++;
                     }
                 }
-                float f10 = gz.f();
+                float f10 = iz.f();
                 this.b.c.setImageCoords((getWidth() - AndroidUtilities.dp(f10)) / 2.0f, Math.max(0.0f, pointF.y - (AndroidUtilities.dp(f10) * 0.5f)), AndroidUtilities.dp(f10), AndroidUtilities.dp(f10));
                 canvas.save();
                 canvas.scale(-1.0f, 1.0f, getWidth() / 2.0f, 0.0f);
@@ -159,7 +159,7 @@ public final class s11 extends View {
                     float f15 = pointF.y;
                     float f16 = ((v - f14) * cascade) + (f13 * f11) + f14;
                     float pow = f15 - ((f15 + f12) * ((float) Math.pow(this.h, 2.0d)));
-                    float interpolation = org.telegram.ui.Components.pr.h.getInterpolation(Utilities.clamp(cascade / 0.4f, 1.0f, 0.0f));
+                    float interpolation = org.telegram.ui.Components.qr.h.getInterpolation(Utilities.clamp(cascade / 0.4f, 1.0f, 0.0f));
                     float f17 = (f12 / 2.0f) * interpolation;
                     float f18 = f12 * interpolation;
                     r11Var.setImageCoords(f16 - f17, pow - f17, f18, f18);

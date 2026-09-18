@@ -1,55 +1,109 @@
 package androidx.emoji2.text;
 
-import android.app.Notification;
-import android.app.NotificationManager;
-import android.content.Context;
-import android.content.res.Configuration;
-import android.icu.text.DecimalFormatSymbols;
-import android.os.LocaleList;
-import android.os.UserManager;
+import android.os.Build;
+import android.text.Spannable;
+import android.text.SpannableString;
 import j$.util.stream.IntStream;
-import java.util.Locale;
+import java.util.stream.IntStream;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
-public abstract class x {
-    public static boolean a(NotificationManager notificationManager) {
-        return notificationManager.areNotificationsEnabled();
+public final class x implements Spannable {
+    public boolean a = false;
+    public Spannable b;
+
+    public x(Spannable spannable) {
+        this.b = spannable;
     }
 
-    public static IntStream b(CharSequence charSequence) {
-        IntStream convert;
-        convert = IntStream.VivifiedWrapper.convert(charSequence.chars());
-        return convert;
+    public final void a() {
+        Spannable spannable = this.b;
+        if (!this.a) {
+            if ((Build.VERSION.SDK_INT < 28 ? new na.d(3) : new w(3)).r3(spannable)) {
+                this.b = new SpannableString(spannable);
+            }
+        }
+        this.a = true;
     }
 
-    public static IntStream c(CharSequence charSequence) {
-        IntStream convert;
-        convert = IntStream.VivifiedWrapper.convert(charSequence.codePoints());
-        return convert;
+    @Override // java.lang.CharSequence
+    public final char charAt(int i10) {
+        return this.b.charAt(i10);
     }
 
-    public static LocaleList d(Locale... localeArr) {
-        return new LocaleList(localeArr);
+    @Override // java.lang.CharSequence
+    public /* synthetic */ IntStream chars() {
+        return IntStream.Wrapper.convert(chars());
     }
 
-    public static DecimalFormatSymbols e(Locale locale) {
-        return DecimalFormatSymbols.getInstance(locale);
+    @Override // java.lang.CharSequence
+    public /* synthetic */ java.util.stream.IntStream codePoints() {
+        return IntStream.Wrapper.convert(codePoints());
     }
 
-    public static LocaleList f(Configuration configuration) {
-        return configuration.getLocales();
+    @Override // android.text.Spanned
+    public final int getSpanEnd(Object obj) {
+        return this.b.getSpanEnd(obj);
     }
 
-    public static boolean g(Context context) {
-        return ((UserManager) context.getSystemService(UserManager.class)).isUserUnlocked();
+    @Override // android.text.Spanned
+    public final int getSpanFlags(Object obj) {
+        return this.b.getSpanFlags(obj);
     }
 
-    public static void h(Notification.Action.Builder builder, boolean z10) {
-        builder.setAllowGeneratedReplies(z10);
+    @Override // android.text.Spanned
+    public final int getSpanStart(Object obj) {
+        return this.b.getSpanStart(obj);
     }
 
-    public static void i(Notification.Builder builder) {
-        builder.setRemoteInputHistory(null);
+    @Override // android.text.Spanned
+    public final Object[] getSpans(int i10, int i11, Class cls) {
+        return this.b.getSpans(i10, i11, cls);
+    }
+
+    @Override // java.lang.CharSequence
+    public final int length() {
+        return this.b.length();
+    }
+
+    @Override // android.text.Spanned
+    public final int nextSpanTransition(int i10, int i11, Class cls) {
+        return this.b.nextSpanTransition(i10, i11, cls);
+    }
+
+    @Override // android.text.Spannable
+    public final void removeSpan(Object obj) {
+        a();
+        this.b.removeSpan(obj);
+    }
+
+    @Override // android.text.Spannable
+    public final void setSpan(Object obj, int i10, int i11, int i12) {
+        a();
+        this.b.setSpan(obj, i10, i11, i12);
+    }
+
+    @Override // java.lang.CharSequence
+    public final CharSequence subSequence(int i10, int i11) {
+        return this.b.subSequence(i10, i11);
+    }
+
+    @Override // java.lang.CharSequence
+    public final String toString() {
+        return this.b.toString();
+    }
+
+    @Override // java.lang.CharSequence
+    public final j$.util.stream.IntStream chars() {
+        return v.b(this.b);
+    }
+
+    @Override // java.lang.CharSequence
+    public final j$.util.stream.IntStream codePoints() {
+        return v.c(this.b);
+    }
+
+    public x(CharSequence charSequence) {
+        this.b = new SpannableString(charSequence);
     }
 }

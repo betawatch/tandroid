@@ -1,28 +1,34 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class h8 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ MediaDataController b;
-    public final /* synthetic */ String c;
-    public final /* synthetic */ boolean d;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-    public /* synthetic */ h8(MediaDataController mediaDataController, String str, boolean z10, int i10) {
-        this.a = i10;
-        this.b = mediaDataController;
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class h8 implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ String c;
+    public final /* synthetic */ String d;
+    public final /* synthetic */ BaseController e;
+
+    public /* synthetic */ h8(BaseController baseController, int i10, String str, String str2, int i11) {
+        this.a = i11;
+        this.e = baseController;
+        this.b = i10;
         this.c = str;
-        this.d = z10;
+        this.d = str2;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                this.b.lambda$processLoadedDiceStickers$87(this.c, this.d);
+                ((MediaDataController) this.e).lambda$fetchNewEmojiKeywords$212(this.b, this.c, this.d, tLObject, tL_error);
                 break;
             default:
-                this.b.lambda$loadStickersByEmojiOrName$83(this.c, this.d);
+                ((MessagesController) this.e).lambda$checkPromoInfoInternal$169(this.b, this.c, this.d, tLObject, tL_error);
                 break;
         }
     }

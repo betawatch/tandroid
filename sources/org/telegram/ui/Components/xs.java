@@ -1,16 +1,110 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
-/* loaded from: classes3.dex */
-public final class xs {
-    public s4.c1 a;
-    public s4.c1 b;
-    public int c;
-    public int d;
-    public int e;
-    public int f;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.view.View;
+import android.view.ViewPropertyAnimator;
 
-    public final String toString() {
-        return "ChangeInfo{oldHolder=" + this.a + ", newHolder=" + this.b + ", fromX=" + this.c + ", fromY=" + this.d + ", toX=" + this.e + ", toY=" + this.f + '}';
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* loaded from: classes3.dex */
+public final class xs extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ s4.c1 b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ View d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ ViewPropertyAnimator f;
+    public final /* synthetic */ s4.f1 h;
+
+    public /* synthetic */ xs(s4.f1 f1Var, s4.c1 c1Var, int i10, View view, int i11, ViewPropertyAnimator viewPropertyAnimator, int i12) {
+        this.a = i12;
+        this.h = f1Var;
+        this.b = c1Var;
+        this.c = i10;
+        this.d = view;
+        this.e = i11;
+        this.f = viewPropertyAnimator;
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationCancel(Animator animator) {
+        switch (this.a) {
+            case 0:
+                int i10 = this.c;
+                View view = this.d;
+                if (i10 != 0) {
+                    view.setTranslationX(0.0f);
+                }
+                if (this.e != 0) {
+                    view.setTranslationY(0.0f);
+                }
+                View view2 = this.b.a;
+                if (!(view2 instanceof org.telegram.ui.Cells.r2)) {
+                    if (view2 instanceof gg.l) {
+                        ((gg.l) view2).a = false;
+                        break;
+                    }
+                } else {
+                    ((org.telegram.ui.Cells.r2) view2).setMoving(false);
+                    break;
+                }
+                break;
+            default:
+                int i11 = this.c;
+                View view3 = this.d;
+                if (i11 != 0) {
+                    view3.setTranslationX(0.0f);
+                }
+                if (this.e != 0) {
+                    view3.setTranslationY(0.0f);
+                    break;
+                }
+                break;
+        }
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                this.f.setListener(null);
+                at atVar = (at) this.h;
+                s4.c1 c1Var = this.b;
+                atVar.v(c1Var);
+                atVar.w.remove(c1Var);
+                atVar.A();
+                View view = c1Var.a;
+                if (view instanceof org.telegram.ui.Cells.r2) {
+                    ((org.telegram.ui.Cells.r2) view).setMoving(false);
+                } else if (view instanceof gg.l) {
+                    ((gg.l) view).a = false;
+                }
+                View view2 = this.d;
+                view2.setTranslationX(0.0f);
+                view2.setTranslationY(0.0f);
+                break;
+            default:
+                this.f.setListener(null);
+                s4.j jVar = (s4.j) this.h;
+                s4.c1 c1Var2 = this.b;
+                jVar.P(c1Var2);
+                jVar.v(c1Var2);
+                jVar.z.remove(c1Var2);
+                jVar.G();
+                jVar.z(c1Var2);
+                break;
+        }
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationStart(Animator animator) {
+        switch (this.a) {
+            case 0:
+                ((at) this.h).getClass();
+                break;
+            default:
+                ((s4.j) this.h).getClass();
+                break;
+        }
     }
 }

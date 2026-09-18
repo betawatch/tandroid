@@ -1,41 +1,46 @@
 package org.telegram.ui.Components;
 
-import android.view.MotionEvent;
+import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public abstract class a51 {
-    public String[] a = new String[0];
+public final class a51 implements ux0 {
+    public final /* synthetic */ TLRPC.InputStickerSet a;
+    public final /* synthetic */ f51 b;
 
-    public boolean a() {
-        return false;
+    public a51(f51 f51Var, TLRPC.InputStickerSet inputStickerSet) {
+        this.b = f51Var;
+        this.a = inputStickerSet;
     }
 
-    public String[] b() {
-        return this.a;
-    }
-
-    public boolean c() {
-        return false;
-    }
-
-    public boolean d(t41 t41Var, MotionEvent motionEvent) {
-        return false;
-    }
-
-    public boolean e(t41 t41Var, k kVar, MotionEvent motionEvent) {
-        return false;
-    }
-
-    public abstract void g(TLRPC.StickerSetCovered stickerSetCovered, boolean z10);
-
-    public abstract void h(TLRPC.StickerSetCovered stickerSetCovered);
-
-    public void i(String[] strArr) {
-        this.a = strArr;
-    }
-
-    public void f(TLRPC.Document document, Object obj, boolean z10, int i10) {
+    @Override // org.telegram.ui.Components.ux0
+    public final void a() {
+        f51 f51Var = this.b;
+        s4.h0 adapter = f51Var.n.getAdapter();
+        e51 e51Var = f51Var.s;
+        TLRPC.InputStickerSet inputStickerSet = this.a;
+        int i10 = 0;
+        if (adapter == e51Var) {
+            while (i10 < e51Var.e.size()) {
+                TLRPC.StickerSetCovered stickerSetCovered = (TLRPC.StickerSetCovered) e51Var.e.get(i10);
+                if (stickerSetCovered.set.id == inputStickerSet.id) {
+                    e51Var.F(stickerSetCovered, null);
+                    return;
+                }
+                i10++;
+            }
+            return;
+        }
+        gg.g2 g2Var = f51Var.v;
+        ArrayList arrayList = g2Var.E;
+        while (i10 < arrayList.size()) {
+            TLRPC.StickerSetCovered stickerSetCovered2 = (TLRPC.StickerSetCovered) arrayList.get(i10);
+            if (stickerSetCovered2.set.id == inputStickerSet.id) {
+                g2Var.F(stickerSetCovered2, null);
+                return;
+            }
+            i10++;
+        }
     }
 }

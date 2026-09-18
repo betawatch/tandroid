@@ -9,7 +9,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class x21 implements Runnable {
     public final /* synthetic */ int a;
@@ -29,11 +29,11 @@ public final /* synthetic */ class x21 implements Runnable {
                 boolean z10 = a31Var.r;
                 if (z10) {
                     if (z10 && a31Var.F == null) {
-                        org.telegram.ui.Components.xi0 xi0Var = new org.telegram.ui.Components.xi0(R.raw.qr_matrix, AndroidUtilities.dp(200.0f), AndroidUtilities.dp(200.0f));
-                        a31Var.F = xi0Var;
-                        xi0Var.v0 = a31Var;
-                        xi0Var.getPaint().setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));
-                        a31Var.F.I(1);
+                        org.telegram.ui.Components.yi0 yi0Var = new org.telegram.ui.Components.yi0(R.raw.qr_matrix, AndroidUtilities.dp(200.0f), AndroidUtilities.dp(200.0f));
+                        a31Var.F = yi0Var;
+                        yi0Var.R(a31Var);
+                        a31Var.F.getPaint().setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));
+                        a31Var.F.K(1);
                         a31Var.F.start();
                     }
                     if (a31Var.J == 0 || System.currentTimeMillis() / 1000 >= a31Var.J) {
@@ -42,21 +42,21 @@ public final /* synthetic */ class x21 implements Runnable {
                             Utilities.themeQueue.postRunnable(new y21(a31Var, a31Var.getWidth(), a31Var.getHeight(), 2));
                             a31Var.s.q("", true, true);
                         }
-                        MessagesController.getInstance(UserConfig.selectedAccount).requestContactToken(a31Var.J == 0 ? 750L : 1750L, new t3(a31Var, 18));
+                        MessagesController.getInstance(UserConfig.selectedAccount).requestContactToken(a31Var.J == 0 ? 750L : 1750L, new s3(a31Var, 18));
                     }
                     int i10 = a31Var.J;
                     if (i10 > 0 && a31Var.I != null) {
                         long max = Math.max(0L, (i10 - (System.currentTimeMillis() / 1000)) - 1);
                         int i11 = (int) (max % 60);
                         int min = Math.min(99, (int) (max / 60));
-                        org.telegram.ui.Components.jo0 jo0Var = a31Var.s;
+                        org.telegram.ui.Components.ko0 ko0Var = a31Var.s;
                         StringBuilder sb2 = new StringBuilder();
                         sb2.append(min < 10 ? "0" : "");
                         sb2.append(min);
                         sb2.append(":");
                         sb2.append(i11 < 10 ? "0" : "");
                         sb2.append(i11);
-                        jo0Var.q(sb2.toString(), true, false);
+                        ko0Var.q(sb2.toString(), true, false);
                     }
                     if (a31Var.isAttachedToWindow()) {
                         AndroidUtilities.runOnUIThread(a31Var.N, 1000L);

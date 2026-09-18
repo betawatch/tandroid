@@ -2,10 +2,10 @@ package r0;
 
 import android.view.WindowInsets;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public class d1 extends c1 {
-    public i0.c n;
+    public i0.b n;
 
     public d1(l1 l1Var, WindowInsets windowInsets) {
         super(l1Var, windowInsets);
@@ -23,10 +23,10 @@ public class d1 extends c1 {
     }
 
     @Override // r0.i1
-    public final i0.c i() {
+    public final i0.b i() {
         if (this.n == null) {
             WindowInsets windowInsets = this.c;
-            this.n = i0.c.b(windowInsets.getStableInsetLeft(), windowInsets.getStableInsetTop(), windowInsets.getStableInsetRight(), windowInsets.getStableInsetBottom());
+            this.n = i0.b.b(windowInsets.getStableInsetLeft(), windowInsets.getStableInsetTop(), windowInsets.getStableInsetRight(), windowInsets.getStableInsetBottom());
         }
         return this.n;
     }
@@ -37,7 +37,7 @@ public class d1 extends c1 {
     }
 
     @Override // r0.i1
-    public void s(i0.c cVar) {
-        this.n = cVar;
+    public void s(i0.b bVar) {
+        this.n = bVar;
     }
 }

@@ -1,56 +1,63 @@
 package hg;
 
-import java.io.Serializable;
-import java.util.ArrayList;
+import android.location.Address;
+import android.location.Geocoder;
+import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.kd0;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class x0 implements RequestDelegate {
+public final /* synthetic */ class x0 implements Runnable {
     public final /* synthetic */ int a = 0;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate c;
-    public final /* synthetic */ Serializable d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Serializable f;
-    public final /* synthetic */ Object g;
-    public final /* synthetic */ Object h;
+    public final /* synthetic */ e1 b;
+    public final /* synthetic */ kd0 c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.c2 d;
 
-    public /* synthetic */ x0(k1 k1Var, String str, boolean z10, TLRPC.User user, String str2, MessagesStorage messagesStorage, String str3) {
-        this.c = k1Var;
-        this.d = str;
-        this.b = z10;
-        this.g = user;
-        this.e = str2;
-        this.h = messagesStorage;
-        this.f = str3;
+    public /* synthetic */ x0(e1 e1Var, org.telegram.ui.ActionBar.c2 c2Var, kd0 kd0Var) {
+        this.b = e1Var;
+        this.d = c2Var;
+        this.c = kd0Var;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                AndroidUtilities.runOnUIThread(new y0((k1) this.c, (String) this.d, this.b, tLObject, (TLRPC.User) this.g, (String) this.e, (MessagesStorage) this.h, (String) this.f));
+                e1 e1Var = this.b;
+                e1Var.getClass();
+                this.d.dismiss();
+                e1Var.presentFragment(this.c);
                 break;
             default:
-                ((SendMessagesHelper) this.c).lambda$performSendMessageRequestMulti$74((ArrayList) this.d, (TLObject) this.e, (ArrayList) this.f, (ArrayList) this.g, (SendMessagesHelper.DelayedMessage) this.h, this.b, tLObject, tL_error);
+                e1 e1Var2 = this.b;
+                kd0 kd0Var = this.c;
+                try {
+                    List<Address> fromLocationName = new Geocoder(e1Var2.getParentActivity(), LocaleController.getInstance().getCurrentLocale()).getFromLocationName(e1Var2.y, 1);
+                    if (!fromLocationName.isEmpty()) {
+                        Address address = fromLocationName.get(0);
+                        TLRPC.TL_channelLocation tL_channelLocation = new TLRPC.TL_channelLocation();
+                        tL_channelLocation.address = e1Var2.y;
+                        TLRPC.TL_geoPoint tL_geoPoint = new TLRPC.TL_geoPoint();
+                        tL_channelLocation.geo_point = tL_geoPoint;
+                        tL_geoPoint.lat = address.getLatitude();
+                        tL_channelLocation.geo_point._long = address.getLongitude();
+                        kd0Var.A0 = tL_channelLocation;
+                    }
+                } catch (Exception e) {
+                    FileLog.e(e);
+                }
+                AndroidUtilities.runOnUIThread(new x0(e1Var2, this.d, kd0Var));
                 break;
         }
     }
 
-    public /* synthetic */ x0(ArrayList arrayList, ArrayList arrayList2, ArrayList arrayList3, SendMessagesHelper.DelayedMessage delayedMessage, SendMessagesHelper sendMessagesHelper, TLObject tLObject, boolean z10) {
-        this.c = sendMessagesHelper;
-        this.d = arrayList;
-        this.e = tLObject;
-        this.f = arrayList2;
-        this.g = arrayList3;
-        this.h = delayedMessage;
-        this.b = z10;
+    public /* synthetic */ x0(e1 e1Var, kd0 kd0Var, org.telegram.ui.ActionBar.c2 c2Var) {
+        this.b = e1Var;
+        this.c = kd0Var;
+        this.d = c2Var;
     }
 }

@@ -5,14 +5,13 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import t7.u;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public class k {
     public final int a;
-    public final xa.c b;
-    public final u c;
+    public final a6.i b;
+    public final rb.a c;
     public int d;
     public int e;
     public int f;
@@ -22,16 +21,16 @@ public class k {
         if (i10 <= 0) {
             throw new IllegalArgumentException("maxSize <= 0");
         }
-        this.b = new xa.c(5);
-        this.c = new u(3);
+        this.b = new a6.i(6);
+        this.c = new rb.a(3);
     }
 
     public final Object a(Object key) {
         kotlin.jvm.internal.i.e(key, "key");
         synchronized (this.c) {
-            xa.c cVar = this.b;
-            cVar.getClass();
-            Object obj = ((LinkedHashMap) cVar.b).get(key);
+            a6.i iVar = this.b;
+            iVar.getClass();
+            Object obj = ((LinkedHashMap) iVar.b).get(key);
             if (obj != null) {
                 this.e++;
                 return obj;
@@ -46,9 +45,9 @@ public class k {
         kotlin.jvm.internal.i.e(key, "key");
         synchronized (this.c) {
             this.d++;
-            xa.c cVar = this.b;
-            cVar.getClass();
-            put = ((LinkedHashMap) cVar.b).put(key, obj);
+            a6.i iVar = this.b;
+            iVar.getClass();
+            put = ((LinkedHashMap) iVar.b).put(key, obj);
             if (put != null) {
                 this.d--;
             }
@@ -94,10 +93,10 @@ public class k {
                     }
                     Object key = entry.getKey();
                     Object value = entry.getValue();
-                    xa.c cVar = this.b;
-                    cVar.getClass();
+                    a6.i iVar = this.b;
+                    iVar.getClass();
                     kotlin.jvm.internal.i.e(key, "key");
-                    ((LinkedHashMap) cVar.b).remove(key);
+                    ((LinkedHashMap) iVar.b).remove(key);
                     int i11 = this.d;
                     kotlin.jvm.internal.i.e(value, "value");
                     this.d = i11 - 1;

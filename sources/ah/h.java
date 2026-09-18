@@ -1,48 +1,65 @@
 package ah;
 
-import android.content.Context;
-import android.view.MotionEvent;
-import android.widget.ImageView;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.RenderNode;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
+import yf.f0;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class h extends ImageView {
-    public long a;
-    public final /* synthetic */ i b;
+public final class h {
+    public final g b;
+    public final g c;
+    public long e;
+    public final RenderNode a = f.c();
+    public final Rect d = new Rect();
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public h(i iVar, Context context) {
-        super(context);
-        this.b = iVar;
-        this.a = 0L;
+    public h(i iVar) {
+        if (iVar.a) {
+            g gVar = new g(iVar, "glass", 0, true);
+            this.c = gVar;
+            gVar.e = 4;
+            gVar.f = 4;
+            gVar.d(AndroidUtilities.dpf2(6.0f), f0.b());
+            g gVar2 = new g(iVar, "blur", 0, false);
+            this.b = gVar2;
+            gVar2.e = 8;
+            gVar2.f = 8;
+            gVar2.c(AndroidUtilities.dpf2(38.34f));
+            return;
+        }
+        if (!iVar.c) {
+            g gVar3 = new g(iVar, "blur", 1, false);
+            this.b = gVar3;
+            gVar3.e = 8;
+            gVar3.f = 8;
+            gVar3.c(AndroidUtilities.dpf2(40.0f));
+            gVar3.e(f0.b());
+            this.c = null;
+            return;
+        }
+        g gVar4 = new g(iVar, "blur", 0, false);
+        this.b = gVar4;
+        boolean z10 = iVar.b;
+        int i10 = z10 ? 16 : 8;
+        int i11 = z10 ? 16 : 8;
+        gVar4.e = i10;
+        gVar4.f = i11;
+        gVar4.d(AndroidUtilities.dpf2(40.0f), f0.b());
+        this.c = null;
     }
 
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        Utilities.Callback callback;
-        int action = motionEvent.getAction();
-        i iVar = this.b;
-        if (action == 0) {
-            if (System.currentTimeMillis() < this.a + 350) {
-                return false;
-            }
-            this.a = System.currentTimeMillis();
-            iVar.b = true;
-            iVar.c = false;
-            AndroidUtilities.runOnUIThread(new g(iVar, 350, 0), 350);
-        } else if (motionEvent.getAction() == 3 || motionEvent.getAction() == 1) {
-            iVar.b = false;
-            if (!iVar.c && (callback = iVar.d) != null) {
-                callback.run(Boolean.FALSE);
-                try {
-                    iVar.a.performHapticFeedback(3);
-                } catch (Exception unused) {
-                }
-            }
-        }
-        super.onTouchEvent(motionEvent);
-        return true;
+    public static void a(h hVar, RectF rectF) {
+        Rect rect = hVar.d;
+        float f7 = rectF.left;
+        float f10 = 16;
+        rect.left = Math.round(f7 - (f7 % f10));
+        float f11 = rectF.top;
+        rect.top = Math.round(f11 - (f11 % f10));
+        float f12 = rectF.right;
+        rect.right = Math.round((f10 - (f12 % f10)) + f12);
+        float f13 = rectF.bottom;
+        rect.bottom = Math.round((f10 - (f13 % f10)) + f13);
     }
 }

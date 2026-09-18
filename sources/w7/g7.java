@@ -4,7 +4,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.mlkit.nl.languageid.internal.LanguageIdentifierImpl;
 import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public abstract class g7 {
     public static LanguageIdentifierImpl a() {
@@ -13,11 +13,11 @@ public abstract class g7 {
         eVar.getClass();
         v7.y8 y8Var = aVar.a;
         LanguageIdentifierImpl languageIdentifierImpl = new LanguageIdentifierImpl(eVar, y8Var, (Executor) aVar.c.a.get());
-        fg.f fVar = new fg.f();
+        ni.f fVar = new ni.f();
         fVar.c = languageIdentifierImpl.f;
-        v7.a6 a6Var = new v7.a6(1, false);
-        a6Var.c = LanguageIdentifierImpl.k();
-        fVar.d = new v7.g7(a6Var);
+        v7.r1 r1Var = new v7.r1(3, false);
+        r1Var.d = LanguageIdentifierImpl.k();
+        fVar.d = new v7.g7(r1Var);
         a5.a aVar2 = new a5.a(fVar, 1);
         Task task = y8Var.e;
         qb.m.a.execute(new com.google.android.gms.internal.cast.p(y8Var, aVar2, v7.j6.c, task.isSuccessful() ? (String) task.getResult() : n6.i.c.a(y8Var.g), 6));

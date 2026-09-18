@@ -1,35 +1,25 @@
 package org.telegram.ui;
 
-import android.window.OnBackInvokedCallback;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.ActionBarLayout;
+import android.view.View;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class jb0 implements OnBackInvokedCallback {
+public final class jb0 implements View.OnAttachStateChangeListener {
     public final /* synthetic */ LaunchActivity a;
 
     public jb0(LaunchActivity launchActivity) {
         this.a = launchActivity;
     }
 
-    @Override // android.window.OnBackInvokedCallback
-    public final void onBackInvoked() {
-        if (AndroidUtilities.isTablet()) {
-            this.a.onBackPressed();
-            return;
-        }
-        if (this.a.c0(true)) {
-            LaunchActivity launchActivity = this.a;
-            ActionBarLayout actionBarLayout = launchActivity.q0;
-            if (actionBarLayout == null) {
-                launchActivity.onBackPressed();
-            } else if (!actionBarLayout.c1) {
-                actionBarLayout.G();
-            } else {
-                actionBarLayout.c1 = false;
-                actionBarLayout.e(false);
-            }
-        }
+    @Override // android.view.View.OnAttachStateChangeListener
+    public final void onViewAttachedToWindow(View view) {
+        LaunchActivity launchActivity = this.a;
+        launchActivity.getWindowManager().addCrossWindowBlurEnabledListener(launchActivity.d1);
+    }
+
+    @Override // android.view.View.OnAttachStateChangeListener
+    public final void onViewDetachedFromWindow(View view) {
+        LaunchActivity launchActivity = this.a;
+        launchActivity.getWindowManager().removeCrossWindowBlurEnabledListener(launchActivity.d1);
     }
 }

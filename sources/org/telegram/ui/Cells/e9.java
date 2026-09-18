@@ -16,14 +16,14 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.a90;
-import org.telegram.ui.Components.d90;
+import org.telegram.ui.Components.c90;
+import org.telegram.ui.Components.z80;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public class e9 extends FrameLayout {
     public final x1 a;
-    public final a90 b;
+    public final z80 b;
     public int c;
     public Integer d;
     public int e;
@@ -54,18 +54,18 @@ public class e9 extends FrameLayout {
         return this.a.getText();
     }
 
-    public d90 getTextView() {
+    public c90 getTextView() {
         return this.a;
     }
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
-        a90 a90Var = this.b;
-        if (a90Var != null) {
+        z80 z80Var = this.b;
+        if (z80Var != null) {
             canvas.save();
             x1 x1Var = this.a;
             canvas.translate(x1Var.getLeft(), x1Var.getTop());
-            if (a90Var.f(canvas)) {
+            if (z80Var.f(canvas)) {
                 invalidate();
             }
             canvas.restore();
@@ -169,9 +169,9 @@ public class e9 extends FrameLayout {
         this.e = 10;
         this.f = 17;
         this.s = f6Var;
-        a90 a90Var = new a90(this);
-        this.b = a90Var;
-        x1 x1Var = new x1(this, context, a90Var, f6Var);
+        z80 z80Var = new z80(this);
+        this.b = z80Var;
+        x1 x1Var = new x1(this, context, z80Var, f6Var);
         this.a = x1Var;
         x1Var.setTextSize(1, 14.0f);
         x1Var.setGravity(LocaleController.isRTL ? 5 : 3);

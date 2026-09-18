@@ -1,78 +1,268 @@
 package c9;
 
-import android.content.ComponentName;
+import android.app.IntentService;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.Intent;
-import android.content.ServiceConnection;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
-import android.os.IBinder;
-import android.os.IInterface;
 import android.os.Parcel;
+import android.os.RemoteException;
+import android.os.ResultReceiver;
 import android.util.Log;
+import e0.t;
+import org.telegram.messenger.beta.R;
+import v7.e5;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
-public final class c implements ServiceConnection {
-    public b9.c a;
-    public final /* synthetic */ d b;
+public abstract class c extends IntentService {
+    private static final int CONNECTION_TIMEOUT_IN_MS = 1000;
+    public static final String EXTRA_INTENT = "SearchActionVerificationClientExtraIntent";
+    private static final long MS_TO_NS = 1000000;
+    private static final String NOTIFICATION_CHANNEL_ID = "Assistant_verifier";
+    private static final int NOTIFICATION_ID = 10000;
+    private static final String REMOTE_ASSISTANT_GO_SERVICE_ACTION = "com.google.android.apps.assistant.go.verification.VERIFICATION_SERVICE";
+    private static final String REMOTE_GSA_SERVICE_ACTION = "com.google.android.googlequicksearchbox.SEARCH_ACTION_VERIFICATION_SERVICE";
+    private static final String SEND_MESSAGE_ERROR_MESSAGE = "com.google.android.voicesearch.extra.ERROR_MESSAGE";
+    private static final String SEND_MESSAGE_RESULT_RECEIVER = "com.google.android.voicesearch.extra.SEND_MESSAGE_RESULT_RECEIVER";
+    private static final String TAG = "SAVerificationClientS";
+    private static final int TIME_TO_SLEEP_IN_MS = 50;
+    private final Intent assistantGoServiceIntent;
+    private b assistantGoVerificationServiceConnection;
+    private final long connectionTimeout;
+    private final boolean dbg;
+    private final Intent gsaServiceIntent;
+    private b searchActionVerificationServiceConnection;
 
-    public c(d dVar) {
-        this.b = dVar;
+    public c() {
+        super("SearchActionVerificationClientService");
+        Intent intent = new Intent(REMOTE_GSA_SERVICE_ACTION).setPackage("com.google.android.googlequicksearchbox");
+        this.gsaServiceIntent = intent;
+        Intent intent2 = new Intent(REMOTE_ASSISTANT_GO_SERVICE_ACTION).setPackage("com.google.android.apps.assistant");
+        this.assistantGoServiceIntent = intent2;
+        this.dbg = a();
+        if (isTestingMode()) {
+            intent.setPackage("com.google.verificationdemo.fakeverification");
+            intent2.setPackage("com.google.verificationdemo.fakeverification");
+        }
+        this.connectionTimeout = getConnectionTimeout();
     }
 
-    public static boolean a(c cVar) {
-        return cVar.a != null;
+    public final boolean a() {
+        return isTestingMode() || !"user".equals(Build.TYPE);
     }
 
-    public final boolean b(Intent intent, Bundle bundle) {
-        b9.c cVar = this.a;
-        if (cVar != null) {
-            b9.a aVar = (b9.a) cVar;
-            Parcel obtain = Parcel.obtain();
-            obtain.writeInterfaceToken("com.google.android.search.verification.api.ISearchActionVerificationService");
-            int i10 = h5.a.a;
-            if (intent == null) {
-                obtain.writeInt(0);
-            } else {
-                obtain.writeInt(1);
-                intent.writeToParcel(obtain, 0);
+    public final boolean b(String str) {
+        ApplicationInfo applicationInfo;
+        try {
+            PackageInfo packageInfo = getPackageManager().getPackageInfo(str, 0);
+            if (packageInfo != null && (applicationInfo = packageInfo.applicationInfo) != null) {
+                if (applicationInfo.enabled) {
+                    return true;
+                }
             }
-            obtain.writeInt(1);
-            bundle.writeToParcel(obtain, 0);
-            Parcel G0 = aVar.G0(obtain, 1);
-            boolean z10 = G0.readInt() != 0;
-            G0.recycle();
-            if (z10) {
-                return true;
+            return false;
+        } catch (PackageManager.NameNotFoundException e) {
+            Log.w(TAG, "Couldn't find package name ".concat(str), e);
+            return false;
+        }
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:39:0x018c  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean c(String str, Intent intent, b bVar) {
+        String message;
+        boolean b10;
+        if (str.equals("com.google.android.googlequicksearchbox") || str.equals("com.google.android.apps.assistant")) {
+            if (a() || e5.a(this, str)) {
+                if (intent.hasExtra(EXTRA_INTENT)) {
+                    Intent intent2 = (Intent) intent.getParcelableExtra(EXTRA_INTENT);
+                    if (this.dbg) {
+                        Log.d("SAVerificationClientU", "Intent:");
+                        String valueOf = String.valueOf(intent2);
+                        StringBuilder sb2 = new StringBuilder(valueOf.length() + 1);
+                        sb2.append("\t");
+                        sb2.append(valueOf);
+                        Log.d("SAVerificationClientU", sb2.toString());
+                        Bundle extras = intent2.getExtras();
+                        if (extras != null) {
+                            Log.d("SAVerificationClientU", "Extras:");
+                            for (String str2 : extras.keySet()) {
+                                Log.d("SAVerificationClientU", String.format("\t%s: %s", str2, extras.get(str2)));
+                            }
+                        }
+                    }
+                    if (b.a(bVar)) {
+                        try {
+                            b9.a aVar = (b9.a) bVar.a;
+                            aVar.getClass();
+                            Parcel obtain = Parcel.obtain();
+                            obtain.writeInterfaceToken("com.google.android.search.verification.api.ISearchActionVerificationService");
+                            Parcel G0 = aVar.G0(obtain, 2);
+                            int readInt = G0.readInt();
+                            G0.recycle();
+                            Log.i(TAG, str + " Service API version: " + readInt);
+                            Bundle bundle = new Bundle();
+                            b10 = bVar.b(intent2, bundle);
+                            performAction(intent2, b10, bundle);
+                            message = "";
+                        } catch (RemoteException e) {
+                            String valueOf2 = String.valueOf(e.getMessage());
+                            Log.e(TAG, valueOf2.length() != 0 ? "Remote exception: ".concat(valueOf2) : new String("Remote exception: "));
+                            message = e.getMessage();
+                        } catch (Exception e7) {
+                            String valueOf3 = String.valueOf(e7.getMessage());
+                            Log.e(TAG, valueOf3.length() != 0 ? "Exception: ".concat(valueOf3) : new String("Exception: "));
+                            message = e7.getMessage();
+                        }
+                        if (intent2.hasExtra(SEND_MESSAGE_RESULT_RECEIVER)) {
+                            ResultReceiver resultReceiver = (ResultReceiver) intent2.getExtras().getParcelable(SEND_MESSAGE_RESULT_RECEIVER);
+                            Bundle bundle2 = new Bundle();
+                            bundle2.putString(SEND_MESSAGE_ERROR_MESSAGE, message);
+                            resultReceiver.send(b10 ? 0 : -1, bundle2);
+                        }
+                        return b10;
+                    }
+                    Object[] objArr = {str, intent};
+                    message = "VerificationService is not connected to %s, unable to check intent: %s";
+                    Log.e(TAG, String.format("VerificationService is not connected to %s, unable to check intent: %s", objArr));
+                    b10 = false;
+                    if (intent2.hasExtra(SEND_MESSAGE_RESULT_RECEIVER)) {
+                    }
+                    return b10;
+                }
+                if (this.dbg) {
+                    String valueOf4 = String.valueOf(intent);
+                    StringBuilder sb3 = new StringBuilder(valueOf4.length() + 28);
+                    sb3.append("No extra, nothing to check: ");
+                    sb3.append(valueOf4);
+                    Log.d(TAG, sb3.toString());
+                }
+            } else if (this.dbg) {
+                Log.d(TAG, "Cannot verify the intent with package " + str + " in unsafe mode.");
+                return false;
             }
+        } else if (this.dbg) {
+            Log.d(TAG, "Unsupported package " + str + " for verification.");
+            return false;
         }
         return false;
     }
 
-    @Override // android.content.ServiceConnection
-    public final void onServiceConnected(ComponentName componentName, IBinder iBinder) {
-        boolean z10;
-        b9.c aVar;
-        z10 = this.b.dbg;
-        if (z10) {
-            Log.d("SAVerificationClientS", "onServiceConnected");
-        }
-        int i10 = b9.b.a;
-        if (iBinder == null) {
-            aVar = null;
-        } else {
-            IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.search.verification.api.ISearchActionVerificationService");
-            aVar = queryLocalInterface instanceof b9.c ? (b9.c) queryLocalInterface : new b9.a(iBinder);
-        }
-        this.a = aVar;
+    public long getConnectionTimeout() {
+        return 1000L;
     }
 
-    @Override // android.content.ServiceConnection
-    public final void onServiceDisconnected(ComponentName componentName) {
-        boolean z10;
-        this.a = null;
-        z10 = this.b.dbg;
-        if (z10) {
-            Log.d("SAVerificationClientS", "onServiceDisconnected");
+    public boolean isTestingMode() {
+        return false;
+    }
+
+    @Override // android.app.IntentService, android.app.Service
+    public final void onCreate() {
+        if (this.dbg) {
+            Log.d(TAG, "onCreate");
         }
+        super.onCreate();
+        this.searchActionVerificationServiceConnection = new b(this);
+        if (b("com.google.android.googlequicksearchbox") && (a() || e5.a(this, "com.google.android.googlequicksearchbox"))) {
+            bindService(this.gsaServiceIntent, this.searchActionVerificationServiceConnection, 1);
+        }
+        this.assistantGoVerificationServiceConnection = new b(this);
+        if (b("com.google.android.apps.assistant") && (a() || e5.a(this, "com.google.android.apps.assistant"))) {
+            bindService(this.assistantGoServiceIntent, this.assistantGoVerificationServiceConnection, 1);
+        }
+        if (Build.VERSION.SDK_INT >= 26) {
+            postForegroundNotification();
+        }
+    }
+
+    @Override // android.app.IntentService, android.app.Service
+    public final void onDestroy() {
+        if (this.dbg) {
+            Log.d(TAG, "onDestroy");
+        }
+        super.onDestroy();
+        if (b.a(this.searchActionVerificationServiceConnection)) {
+            unbindService(this.searchActionVerificationServiceConnection);
+        }
+        if (b.a(this.assistantGoVerificationServiceConnection)) {
+            unbindService(this.assistantGoVerificationServiceConnection);
+        }
+        if (Build.VERSION.SDK_INT >= 26) {
+            stopForeground(true);
+        }
+    }
+
+    @Override // android.app.IntentService
+    public final void onHandleIntent(Intent intent) {
+        if (intent == null) {
+            if (this.dbg) {
+                Log.d(TAG, "Unable to verify null intent");
+                return;
+            }
+            return;
+        }
+        long nanoTime = System.nanoTime();
+        while (true) {
+            boolean b10 = b("com.google.android.googlequicksearchbox");
+            boolean z10 = true;
+            boolean z11 = !b10 || b.a(this.searchActionVerificationServiceConnection);
+            if (this.dbg) {
+                Log.d(TAG, "GSA app com.google.android.googlequicksearchbox installed: " + b10 + " connected " + b.a(this.searchActionVerificationServiceConnection));
+            }
+            boolean b11 = b("com.google.android.apps.assistant");
+            if (b11 && !b.a(this.assistantGoVerificationServiceConnection)) {
+                z10 = false;
+            }
+            if (this.dbg) {
+                Log.d(TAG, "AssistantGo app com.google.android.apps.assistant installed: " + b11 + " connected " + b.a(this.assistantGoVerificationServiceConnection));
+            }
+            if ((!z11 || !z10) && System.nanoTime() - nanoTime < this.connectionTimeout * MS_TO_NS) {
+                try {
+                    Thread.sleep(50L);
+                } catch (InterruptedException e) {
+                    if (this.dbg) {
+                        String valueOf = String.valueOf(e);
+                        StringBuilder sb2 = new StringBuilder(valueOf.length() + 33);
+                        sb2.append("Unexpected InterruptedException: ");
+                        sb2.append(valueOf);
+                        Log.d(TAG, sb2.toString());
+                    }
+                }
+            }
+        }
+        if (c("com.google.android.googlequicksearchbox", intent, this.searchActionVerificationServiceConnection)) {
+            Log.i(TAG, "Verified the intent with GSA.");
+            return;
+        }
+        Log.i(TAG, "Unable to verify the intent with GSA.");
+        if (c("com.google.android.apps.assistant", intent, this.assistantGoVerificationServiceConnection)) {
+            Log.i(TAG, "Verified the intent with Assistant Go.");
+        } else {
+            Log.i(TAG, "Unable to verify the intent with Assistant Go.");
+        }
+    }
+
+    public abstract void performAction(Intent intent, boolean z10, Bundle bundle);
+
+    public void postForegroundNotification() {
+        NotificationChannel notificationChannel = new NotificationChannel(NOTIFICATION_CHANNEL_ID, getApplicationContext().getResources().getString(R.drawable.$avd_flip__0), 2);
+        notificationChannel.enableVibration(false);
+        notificationChannel.enableLights(false);
+        notificationChannel.setShowBadge(false);
+        ((NotificationManager) getApplicationContext().getSystemService(NotificationManager.class)).createNotificationChannel(notificationChannel);
+        t tVar = new t(getApplicationContext(), NOTIFICATION_CHANNEL_ID);
+        tVar.q = NOTIFICATION_CHANNEL_ID;
+        tVar.e = t.d(getApplicationContext().getResources().getString(R.drawable.$avd_flip__1));
+        tVar.E.icon = android.R.drawable.ic_dialog_email;
+        tVar.j = -2;
+        tVar.x = 1;
+        startForeground(NOTIFICATION_ID, tVar.b());
     }
 }

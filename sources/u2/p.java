@@ -7,14 +7,13 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
-import rg.p2;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class p implements e0 {
     public final c5.g a;
-    public final pf.b b;
-    public rb.a c;
+    public final of.b b;
+    public qb.b c;
     public final long d;
     public final long e;
     public final long f;
@@ -23,18 +22,18 @@ public final class p implements e0 {
     public boolean i;
 
     public p(Context context, c3.m mVar) {
-        pf.b bVar = new pf.b(context, 18);
+        of.b bVar = new of.b(context, 18);
         this.b = bVar;
-        rb.a aVar = new rb.a(28);
-        this.c = aVar;
+        qb.b bVar2 = new qb.b(28);
+        this.c = bVar2;
         c5.g gVar = new c5.g();
         gVar.b = mVar;
-        gVar.f = aVar;
+        gVar.f = bVar2;
         gVar.c = new HashMap();
         gVar.d = new HashMap();
         gVar.a = true;
         this.a = gVar;
-        if (bVar != ((pf.b) gVar.e)) {
+        if (bVar != ((of.b) gVar.e)) {
             gVar.e = bVar;
             ((HashMap) gVar.c).clear();
             ((HashMap) gVar.d).clear();
@@ -50,8 +49,8 @@ public final class p implements e0 {
     public static e0 e(Class cls, g2.g gVar) {
         try {
             return (e0) cls.getConstructor(g2.g.class).newInstance(gVar);
-        } catch (Exception e7) {
-            throw new IllegalStateException(e7);
+        } catch (Exception e) {
+            throw new IllegalStateException(e);
         }
     }
 
@@ -91,7 +90,7 @@ public final class p implements e0 {
             e0 e0Var = (e0) hashMap.get(Integer.valueOf(I));
             if (e0Var == null) {
                 e0Var = (e0) gVar.a(I).get();
-                e0Var.d((rb.a) gVar.f);
+                e0Var.d((qb.b) gVar.f);
                 e0Var.b(gVar.a);
                 e0Var.c();
                 hashMap.put(Integer.valueOf(I), e0Var);
@@ -206,16 +205,16 @@ public final class p implements e0 {
                         rVar.b = ((b2.j0) i0Var3.get(i10)).f;
                         rVar.a = ((b2.j0) i0Var3.get(i10)).g;
                         b2.s sVar = new b2.s(rVar);
-                        sg.x xVar3 = new sg.x(1, this, sVar);
-                        pf.b bVar = this.b;
-                        p2 p2Var = new p2(xVar3, 4);
-                        m2.t tVar = new m2.t(4);
-                        rb.a aVar = new rb.a(26);
-                        if (this.c.i0(sVar)) {
+                        tg.d dVar = new tg.d(5, this, sVar);
+                        of.b bVar = this.b;
+                        r5.d dVar2 = new r5.d(dVar, 10);
+                        lf.i iVar = new lf.i(5);
+                        qb.b bVar2 = new qb.b(26);
+                        if (this.c.W(sVar)) {
                             b2.r a12 = sVar.a();
                             a12.q = b2.r0.n("application/x-media3-cues");
                             a12.j = sVar.r;
-                            a12.O = this.c.J(sVar);
+                            a12.O = this.c.D(sVar);
                             sVar = new b2.s(a12);
                         }
                         b2.s sVar2 = sVar;
@@ -232,11 +231,11 @@ public final class p implements e0 {
                         b2.f0 f0Var4 = parse != null ? new b2.f0(parse, null, b0Var4.a != null ? new b2.c0(b0Var4) : uri, null, list3, null, a1Var, -9223372036854775807L) : uri;
                         b2.k0 k0Var3 = new b2.k0("", new b2.a0(yVar2), f0Var4, new b2.e0(d0Var), b2.n0.K, g0Var3);
                         f0Var4.getClass();
-                        aVarArr[i11] = new w0(k0Var3, bVar, p2Var, tVar.w(k0Var3), aVar, 1048576, sVar2);
+                        aVarArr[i11] = new w0(k0Var3, bVar, dVar2, iVar.A(k0Var3), bVar2, 1048576, sVar2);
                     } else {
-                        pf.b bVar2 = this.b;
-                        bVar2.getClass();
-                        aVarArr[i10 + 1] = new l1((b2.j0) i0Var3.get(i10), bVar2, new rb.a(26));
+                        of.b bVar3 = this.b;
+                        bVar3.getClass();
+                        aVarArr[i10 + 1] = new l1((b2.j0) i0Var3.get(i10), bVar3, new qb.b(26));
                     }
                 }
                 a11 = new o0(aVarArr);
@@ -272,8 +271,8 @@ public final class p implements e0 {
             }
             e2.a.n("DMediaSourceFactory", "Playing media without ads. Configure ad support by calling setAdsLoaderProvider and setAdViewProvider.");
             return a11;
-        } catch (ClassNotFoundException e7) {
-            throw new IllegalStateException(e7);
+        } catch (ClassNotFoundException e) {
+            throw new IllegalStateException(e);
         }
     }
 
@@ -303,17 +302,17 @@ public final class p implements e0 {
     }
 
     @Override // u2.e0
-    public final e0 d(rb.a aVar) {
-        this.c = aVar;
+    public final e0 d(qb.b bVar) {
+        this.c = bVar;
         c5.g gVar = this.a;
-        gVar.f = aVar;
+        gVar.f = bVar;
         c3.m mVar = (c3.m) gVar.b;
         synchronized (mVar) {
-            mVar.c = aVar;
+            mVar.c = bVar;
         }
         Iterator it = ((HashMap) gVar.d).values().iterator();
         while (it.hasNext()) {
-            ((e0) it.next()).d(aVar);
+            ((e0) it.next()).d(bVar);
         }
         return this;
     }

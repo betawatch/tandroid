@@ -16,7 +16,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.voip.VoIPService;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class x20 extends FrameLayout {
     public float a;
@@ -24,7 +24,7 @@ public final class x20 extends FrameLayout {
     public boolean c;
     public AnimatorSet d;
     public final w20 e;
-    public final ue f;
+    public final sh f;
     public final /* synthetic */ float h;
     public final /* synthetic */ z20 n;
 
@@ -34,7 +34,7 @@ public final class x20 extends FrameLayout {
         this.n = z20Var;
         this.h = f7;
         this.e = new w20(this);
-        this.f = new ue(7);
+        this.f = new sh(6);
     }
 
     @Override // android.widget.FrameLayout, android.view.View
@@ -158,10 +158,10 @@ public final class x20 extends FrameLayout {
                     }
                     ValueAnimator ofFloat = ValueAnimator.ofFloat(z20Var5.b0, z10 ? 1.0f : 0.0f);
                     z20Var5.c0 = ofFloat;
-                    ofFloat.addUpdateListener(new l6(z20Var5, 25));
-                    z20Var5.c0.addListener(new org.telegram.ui.to(11, z20Var5, z10));
+                    ofFloat.addUpdateListener(new i6(z20Var5, 25));
+                    z20Var5.c0.addListener(new aa(10, z20Var5, z10));
                     z20Var5.c0.setDuration(250L);
-                    z20Var5.c0.setInterpolator(pr.f);
+                    z20Var5.c0.setInterpolator(qr.f);
                     z20Var5.c0.start();
                 }
                 z20 z20Var6 = this.n;
@@ -170,7 +170,7 @@ public final class x20 extends FrameLayout {
                     z20Var6.y = z11;
                     z20Var6.c.invalidate();
                     if (!z20Var6.F) {
-                        z20Var6.v.N(z11 ? 33 : 0);
+                        z20Var6.v.P(z11 ? 33 : 0);
                         z20Var6.V.d();
                     }
                     if (z11) {
@@ -252,7 +252,7 @@ public final class x20 extends FrameLayout {
                     ofFloat5.addUpdateListener(this.n.T);
                     this.d.playTogether(ofFloat5);
                 }
-                this.d.setDuration(150L).setInterpolator(pr.f);
+                this.d.setDuration(150L).setInterpolator(qr.f);
                 this.d.start();
                 z20 z20Var8 = this.n;
                 if (z20Var8.K >= 0.0f) {
@@ -286,11 +286,11 @@ public final class x20 extends FrameLayout {
         }
         this.c = false;
         z20 z20Var12 = this.n;
-        aj0 aj0Var = z20Var12.V;
-        xi0 xi0Var = z20Var12.v;
-        ah.y yVar = z20Var12.b;
+        bj0 bj0Var = z20Var12.V;
+        yi0 yi0Var = z20Var12.v;
+        ai.f0 f0Var = z20Var12.b;
         x20 x20Var2 = z20Var12.a;
-        di.r6 r6Var = z20Var12.c;
+        ci.s6 s6Var = z20Var12.c;
         z20 z20Var13 = z20.d0;
         if (z20Var13 == null) {
             return false;
@@ -300,21 +300,21 @@ public final class x20 extends FrameLayout {
         z20Var12.U.K = true;
         z20Var13.e(false);
         float measuredWidth5 = (x20Var2.getMeasuredWidth() / 2.0f) + z20Var12.r.x;
-        float measuredWidth6 = ((yVar.getMeasuredWidth() / 2.0f) + (z20Var12.N - z20Var12.Q)) - measuredWidth5;
-        float measuredHeight4 = ((yVar.getMeasuredHeight() / 2.0f) + (z20Var12.M - z20Var12.R)) - ((x20Var2.getMeasuredHeight() / 2.0f) + z20Var12.r.y);
+        float measuredWidth6 = ((f0Var.getMeasuredWidth() / 2.0f) + (z20Var12.N - z20Var12.Q)) - measuredWidth5;
+        float measuredHeight4 = ((f0Var.getMeasuredHeight() / 2.0f) + (z20Var12.M - z20Var12.R)) - ((x20Var2.getMeasuredHeight() / 2.0f) + z20Var12.r.y);
         z20 z20Var14 = z20.d0;
         WindowManager windowManager = z20Var14.n;
         x20 x20Var3 = z20Var14.a;
-        ah.y yVar2 = z20Var14.b;
+        ai.f0 f0Var2 = z20Var14.b;
         FrameLayout frameLayout = z20Var14.d;
-        org.telegram.ui.u7 u7Var = z20Var14.e;
+        org.telegram.ui.w7 w7Var = z20Var14.e;
         z20Var12.d();
         z20.d0 = null;
         AnimatorSet animatorSet = new AnimatorSet();
-        int i13 = xi0Var.b0;
+        int i13 = yi0Var.a0;
         if (i13 < 33) {
             x20Var = x20Var3;
-            j3 = (long) (((1.0f - (i13 / 33.0f)) * xi0Var.p()) / 2.0f);
+            j3 = (long) (((1.0f - (i13 / 33.0f)) * yi0Var.r()) / 2.0f);
         } else {
             x20Var = x20Var3;
             j3 = 0;
@@ -323,13 +323,13 @@ public final class x20 extends FrameLayout {
         ValueAnimator ofFloat6 = ValueAnimator.ofFloat(f26, measuredWidth6 + f26);
         ofFloat6.addUpdateListener(z20Var12.S);
         ValueAnimator duration = ofFloat6.setDuration(250L);
-        pr prVar = pr.f;
-        duration.setInterpolator(prVar);
+        qr qrVar = qr.f;
+        duration.setInterpolator(qrVar);
         animatorSet.playTogether(ofFloat6);
         float f27 = z20Var12.r.y;
         ValueAnimator ofFloat7 = ValueAnimator.ofFloat(f27, (f27 + measuredHeight4) - AndroidUtilities.dp(30.0f), z20Var12.r.y + measuredHeight4);
         ofFloat7.addUpdateListener(z20Var12.T);
-        ofFloat7.setDuration(250L).setInterpolator(prVar);
+        ofFloat7.setDuration(250L).setInterpolator(qrVar);
         animatorSet.playTogether(ofFloat7);
         float[] fArr2 = {x20Var.getScaleX(), 0.1f};
         Property property = View.SCALE_X;
@@ -344,43 +344,43 @@ public final class x20 extends FrameLayout {
         ofFloat8.setStartDelay((long) (f28 * 0.7f));
         ofFloat8.setDuration((long) (f28 * 0.3f));
         animatorSet.playTogether(ofFloat8);
-        AndroidUtilities.runOnUIThread(new ue(6), 370L);
+        AndroidUtilities.runOnUIThread(new sh(5), 370L);
         long j10 = j3 + 530;
-        ObjectAnimator ofFloat9 = ObjectAnimator.ofFloat(r6Var, (Property<di.r6, Float>) property, 1.0f, 1.05f);
+        ObjectAnimator ofFloat9 = ObjectAnimator.ofFloat(s6Var, (Property<ci.s6, Float>) property, 1.0f, 1.05f);
         ofFloat9.setDuration(j10);
-        pr prVar2 = pr.j;
-        ofFloat9.setInterpolator(prVar2);
+        qr qrVar2 = qr.j;
+        ofFloat9.setInterpolator(qrVar2);
         animatorSet.playTogether(ofFloat9);
-        ObjectAnimator ofFloat10 = ObjectAnimator.ofFloat(r6Var, (Property<di.r6, Float>) property2, 1.0f, 1.05f);
+        ObjectAnimator ofFloat10 = ObjectAnimator.ofFloat(s6Var, (Property<ci.s6, Float>) property2, 1.0f, 1.05f);
         ofFloat10.setDuration(j10);
-        ofFloat10.setInterpolator(prVar2);
+        ofFloat10.setInterpolator(qrVar2);
         animatorSet.playTogether(ofFloat10);
-        ObjectAnimator ofFloat11 = ObjectAnimator.ofFloat(r6Var, (Property<di.r6, Float>) property, 1.0f, 0.3f);
+        ObjectAnimator ofFloat11 = ObjectAnimator.ofFloat(s6Var, (Property<ci.s6, Float>) property, 1.0f, 0.3f);
         ofFloat11.setStartDelay(j10);
         ofFloat11.setDuration(350L);
-        pr prVar3 = pr.h;
-        ofFloat11.setInterpolator(prVar3);
+        qr qrVar3 = qr.h;
+        ofFloat11.setInterpolator(qrVar3);
         animatorSet.playTogether(ofFloat11);
-        ObjectAnimator ofFloat12 = ObjectAnimator.ofFloat(r6Var, (Property<di.r6, Float>) property2, 1.0f, 0.3f);
+        ObjectAnimator ofFloat12 = ObjectAnimator.ofFloat(s6Var, (Property<ci.s6, Float>) property2, 1.0f, 0.3f);
         ofFloat12.setStartDelay(j10);
         ofFloat12.setDuration(350L);
-        ofFloat12.setInterpolator(prVar3);
+        ofFloat12.setInterpolator(qrVar3);
         animatorSet.playTogether(ofFloat12);
-        ObjectAnimator ofFloat13 = ObjectAnimator.ofFloat(r6Var, (Property<di.r6, Float>) View.TRANSLATION_Y, 0.0f, AndroidUtilities.dp(60.0f));
+        ObjectAnimator ofFloat13 = ObjectAnimator.ofFloat(s6Var, (Property<ci.s6, Float>) View.TRANSLATION_Y, 0.0f, AndroidUtilities.dp(60.0f));
         ofFloat13.setStartDelay(j10);
         ofFloat13.setDuration(350L);
-        ofFloat13.setInterpolator(prVar3);
+        ofFloat13.setInterpolator(qrVar3);
         animatorSet.playTogether(ofFloat13);
-        ObjectAnimator ofFloat14 = ObjectAnimator.ofFloat(r6Var, (Property<di.r6, Float>) property3, 1.0f, 0.0f);
+        ObjectAnimator ofFloat14 = ObjectAnimator.ofFloat(s6Var, (Property<ci.s6, Float>) property3, 1.0f, 0.0f);
         ofFloat14.setStartDelay(j10);
         ofFloat14.setDuration(350L);
-        ofFloat14.setInterpolator(prVar3);
+        ofFloat14.setInterpolator(qrVar3);
         animatorSet.playTogether(ofFloat14);
-        animatorSet.addListener(new y20(z20Var12, x20Var4, yVar2, windowManager, frameLayout, u7Var));
+        animatorSet.addListener(new y20(z20Var12, x20Var4, f0Var2, windowManager, frameLayout, w7Var));
         animatorSet.start();
-        xi0Var.N(66);
-        aj0Var.i();
-        aj0Var.d();
+        yi0Var.P(66);
+        bj0Var.i();
+        bj0Var.d();
         return false;
     }
 }

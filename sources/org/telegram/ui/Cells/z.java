@@ -4,7 +4,7 @@ import android.graphics.Canvas;
 import android.graphics.drawable.RippleDrawable;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class z extends RippleDrawable {
     @Override // android.graphics.drawable.RippleDrawable, android.graphics.drawable.LayerDrawable, android.graphics.drawable.Drawable
@@ -12,8 +12,8 @@ public final class z extends RippleDrawable {
         int save = canvas.save();
         try {
             super.draw(canvas);
-        } catch (Exception e7) {
-            FileLog.e("probably forgot to put setCallback", e7);
+        } catch (Exception e) {
+            FileLog.e("probably forgot to put setCallback", e);
         } finally {
             canvas.restoreToCount(save);
         }

@@ -6,7 +6,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public abstract class o0 {
     public static final List a = hd.h.c(Application.class, i0.class);
@@ -33,12 +33,12 @@ public abstract class o0 {
     public static final p0 b(Class cls, Constructor constructor, Object... objArr) {
         try {
             return (p0) constructor.newInstance(Arrays.copyOf(objArr, objArr.length));
-        } catch (IllegalAccessException e7) {
-            throw new RuntimeException("Failed to access " + cls, e7);
-        } catch (InstantiationException e10) {
-            throw new RuntimeException("A " + cls + " cannot be instantiated.", e10);
-        } catch (InvocationTargetException e11) {
-            throw new RuntimeException("An exception happened in constructor of " + cls, e11.getCause());
+        } catch (IllegalAccessException e) {
+            throw new RuntimeException("Failed to access " + cls, e);
+        } catch (InstantiationException e7) {
+            throw new RuntimeException("A " + cls + " cannot be instantiated.", e7);
+        } catch (InvocationTargetException e10) {
+            throw new RuntimeException("An exception happened in constructor of " + cls, e10.getCause());
         }
     }
 }

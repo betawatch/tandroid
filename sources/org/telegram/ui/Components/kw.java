@@ -1,23 +1,25 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class kw extends xy {
-    public final /* synthetic */ kz H;
+public final class kw implements View.OnFocusChangeListener {
+    public final /* synthetic */ kz a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public kw(kz kzVar, Context context) {
-        super(kzVar, context, 1);
-        this.H = kzVar;
+    public kw(kz kzVar) {
+        this.a = kzVar;
     }
 
-    @Override // android.view.View
-    public final void setTranslationY(float f7) {
-        if (f7 != getTranslationY()) {
-            super.setTranslationY(f7);
-            this.H.J.invalidate();
+    @Override // android.view.View.OnFocusChangeListener
+    public final void onFocusChange(View view, boolean z10) {
+        if (z10) {
+            String[] currentKeyboardLanguage = AndroidUtilities.getCurrentKeyboardLanguage();
+            kz kzVar = this.a;
+            kzVar.W0 = currentKeyboardLanguage;
+            MediaDataController.getInstance(kzVar.c1).fetchNewEmojiKeywords(kzVar.W0);
         }
     }
 }

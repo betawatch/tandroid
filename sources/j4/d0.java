@@ -9,9 +9,9 @@ import e9.i0;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import v7.q8;
+import v7.t8;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class d0 implements c3.o {
     public final int a;
@@ -64,7 +64,7 @@ public final class d0 implements c3.o {
         for (int i12 = 0; i12 < size; i12++) {
             sparseArray.put(sparseArray2.keyAt(i12), (g0) sparseArray2.valueAt(i12));
         }
-        sparseArray.put(0, new b0(new pf.b(this)));
+        sparseArray.put(0, new b0(new of.b(this)));
         this.r = null;
     }
 
@@ -76,10 +76,10 @@ public final class d0 implements c3.o {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final boolean b(c3.p pVar) {
+    public final boolean a(c3.p pVar) {
         byte[] bArr = this.d.a;
         c3.l lVar = (c3.l) pVar;
-        lVar.j(bArr, 0, 940, false);
+        lVar.h(bArr, 0, 940, false);
         int i10 = 0;
         while (i10 < 188) {
             for (int i11 = 0; i11 < 5; i11++) {
@@ -87,7 +87,7 @@ public final class d0 implements c3.o {
                     break;
                 }
             }
-            lVar.i(i10, false);
+            lVar.g(i10, false);
             return true;
         }
         return false;
@@ -130,7 +130,7 @@ public final class d0 implements c3.o {
                 this.s = 0;
                 return;
             } else {
-                ((g0) sparseArray.valueAt(i11)).d();
+                ((g0) sparseArray.valueAt(i11)).c();
                 i11++;
             }
         }
@@ -191,8 +191,8 @@ public final class d0 implements c3.o {
                         return 1;
                     }
                     vVar.G(min);
-                    pVar.q();
-                    pVar.b(0, min, vVar.a);
+                    pVar.p();
+                    pVar.a(0, min, vVar.a);
                     int i16 = vVar.b;
                     int i17 = vVar.c;
                     while (true) {
@@ -200,7 +200,7 @@ public final class d0 implements c3.o {
                             break;
                         }
                         if (vVar.a[i16] == 71) {
-                            long a2 = q8.a(vVar, i16, i15);
+                            long a2 = t8.a(vVar, i16, i15);
                             if (a2 != -9223372036854775807L) {
                                 j3 = a2;
                                 break;
@@ -220,8 +220,8 @@ public final class d0 implements c3.o {
                     return 1;
                 }
                 vVar.G(min2);
-                pVar.q();
-                pVar.b(0, min2, vVar.a);
+                pVar.p();
+                pVar.a(0, min2, vVar.a);
                 int i18 = vVar.b;
                 int i19 = vVar.c;
                 int i20 = i19 - 188;
@@ -242,7 +242,7 @@ public final class d0 implements c3.o {
                         } else {
                             i22++;
                             if (i22 == 5) {
-                                long a10 = q8.a(vVar, i20, i15);
+                                long a10 = t8.a(vVar, i20, i15);
                                 if (a10 != -9223372036854775807L) {
                                     j3 = a10;
                                     break;
@@ -268,14 +268,14 @@ public final class d0 implements c3.o {
                     i10 = i14;
                     z10 = false;
                     i13 = 1;
-                    h3.a aVar = new h3.a(new na.d(), new a5.a(this.t, xVar.b), j13, j13 + 1, 0L, length, 188L, 940);
+                    h3.a aVar = new h3.a(new t7.u(), new a5.a(this.t, xVar.b), j13, j13 + 1, 0L, length, 188L, 940);
                     this.l = aVar;
-                    this.m.P1(aVar.a);
+                    this.m.X1(aVar.a);
                 } else {
                     i10 = i14;
                     z10 = false;
                     i13 = 1;
-                    this.m.P1(new c3.t(j13));
+                    this.m.X1(new c3.t(j13));
                 }
             }
             if (this.q) {
@@ -359,7 +359,7 @@ public final class d0 implements c3.o {
                         return r12;
                     }
                     if (i32 != ((i33 + 1) & 15)) {
-                        g0Var.d();
+                        g0Var.c();
                     }
                 }
                 if (z12) {

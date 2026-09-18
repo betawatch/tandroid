@@ -16,7 +16,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class f implements a {
     public final i0 a;
@@ -88,7 +88,7 @@ public final class f implements a {
                                 gVar = new g(new s(rVar));
                                 break;
                             } else {
-                                e2.n(l13, "Ignoring track with unsupported compression ", "StreamFormatChunk");
+                                e2.m(l13, "Ignoring track with unsupported compression ", "StreamFormatChunk");
                                 gVar = dVar;
                                 break;
                             }
@@ -119,7 +119,7 @@ public final class f implements a {
                                     gVar = new g(new s(rVar2));
                                     break;
                                 } else {
-                                    e2.n(q6, "Ignoring track with unsupported format tag ", "StreamFormatChunk");
+                                    e2.m(q6, "Ignoring track with unsupported format tag ", "StreamFormatChunk");
                                 }
                             } else {
                                 e2.a.n("StreamFormatChunk", "Ignoring strf box for unsupported track type: " + d0.G(i13));

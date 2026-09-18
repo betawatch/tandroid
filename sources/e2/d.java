@@ -5,6 +5,7 @@ import android.os.Bundle;
 import e9.a1;
 import e9.f0;
 import e9.i0;
+import hg.k0;
 import i2.t0;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
@@ -13,7 +14,7 @@ import java.util.Iterator;
 import java.util.List;
 import org.xmlpull.v1.XmlPullParser;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public abstract class d {
     public static void a(String str, boolean z10) {
@@ -104,7 +105,7 @@ public abstract class d {
 
     public static void o(MediaFormat mediaFormat, List list) {
         for (int i10 = 0; i10 < list.size(); i10++) {
-            mediaFormat.setByteBuffer(i2.g.i(i10, "csd-"), ByteBuffer.wrap((byte[]) list.get(i10)));
+            mediaFormat.setByteBuffer(k0.i(i10, "csd-"), ByteBuffer.wrap((byte[]) list.get(i10)));
         }
     }
 

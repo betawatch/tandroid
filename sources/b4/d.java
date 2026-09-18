@@ -12,7 +12,7 @@ import e2.d0;
 import e2.v;
 import java.util.List;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class d implements w3.b {
     public int a;
@@ -89,9 +89,9 @@ public final class d implements w3.b {
         PackageInfo packageInfo;
         if (this.a == 0) {
             try {
-                packageInfo = w6.b.a((Context) this.c).d(0, "com.google.android.gms");
-            } catch (PackageManager.NameNotFoundException e7) {
-                Log.w("Metadata", "Failed to find package ".concat(e7.toString()));
+                packageInfo = w6.b.a((Context) this.c).b(0, "com.google.android.gms");
+            } catch (PackageManager.NameNotFoundException e) {
+                Log.w("Metadata", "Failed to find package ".concat(e.toString()));
                 packageInfo = null;
             }
             if (packageInfo != null) {
@@ -148,8 +148,8 @@ public final class d implements w3.b {
         this.c = sparseArray;
     }
 
-    public d(f2.e eVar, s sVar) {
-        v vVar = eVar.c;
+    public d(f2.d dVar, s sVar) {
+        v vVar = dVar.c;
         this.c = vVar;
         vVar.J(12);
         int B = vVar.B();

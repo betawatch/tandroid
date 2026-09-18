@@ -1,42 +1,56 @@
 package v7;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public abstract class t5 {
-    public static void a(int i10, int i11) {
-        String a2;
-        if (i10 < 0 || i10 >= i11) {
-            if (i10 < 0) {
-                a2 = u5.a("%s (%s) must not be negative", "index", Integer.valueOf(i10));
-            } else {
-                if (i11 < 0) {
-                    throw new IllegalArgumentException(i2.g.i(i11, "negative size: "));
+    public static String a(com.google.android.gms.internal.cast.z4 z4Var) {
+        StringBuilder sb2 = new StringBuilder(z4Var.o());
+        for (int i10 = 0; i10 < z4Var.o(); i10++) {
+            byte i11 = z4Var.i(i10);
+            if (i11 == 34) {
+                sb2.append("\\\"");
+            } else if (i11 == 39) {
+                sb2.append("\\'");
+            } else if (i11 != 92) {
+                switch (i11) {
+                    case 7:
+                        sb2.append("\\a");
+                        break;
+                    case 8:
+                        sb2.append("\\b");
+                        break;
+                    case 9:
+                        sb2.append("\\t");
+                        break;
+                    case 10:
+                        sb2.append("\\n");
+                        break;
+                    case 11:
+                        sb2.append("\\v");
+                        break;
+                    case 12:
+                        sb2.append("\\f");
+                        break;
+                    case 13:
+                        sb2.append("\\r");
+                        break;
+                    default:
+                        if (i11 < 32 || i11 > 126) {
+                            sb2.append('\\');
+                            sb2.append((char) (((i11 >>> 6) & 3) + 48));
+                            sb2.append((char) (((i11 >>> 3) & 7) + 48));
+                            sb2.append((char) ((i11 & 7) + 48));
+                            break;
+                        } else {
+                            sb2.append((char) i11);
+                            break;
+                        }
+                        break;
                 }
-                a2 = u5.a("%s (%s) must be less than size (%s)", "index", Integer.valueOf(i10), Integer.valueOf(i11));
+            } else {
+                sb2.append("\\\\");
             }
-            throw new IndexOutOfBoundsException(a2);
         }
-    }
-
-    public static void b(int i10, int i11) {
-        if (i10 < 0 || i10 > i11) {
-            throw new IndexOutOfBoundsException(d(i10, i11, "index"));
-        }
-    }
-
-    public static void c(int i10, int i11, int i12) {
-        if (i10 < 0 || i11 < i10 || i11 > i12) {
-            throw new IndexOutOfBoundsException((i10 < 0 || i10 > i12) ? d(i10, i12, "start index") : (i11 < 0 || i11 > i12) ? d(i11, i12, "end index") : u5.a("end index (%s) must not be less than start index (%s)", Integer.valueOf(i11), Integer.valueOf(i10)));
-        }
-    }
-
-    public static String d(int i10, int i11, String str) {
-        if (i10 < 0) {
-            return u5.a("%s (%s) must not be negative", str, Integer.valueOf(i10));
-        }
-        if (i11 >= 0) {
-            return u5.a("%s (%s) must not be greater than size (%s)", str, Integer.valueOf(i10), Integer.valueOf(i11));
-        }
-        throw new IllegalArgumentException(i2.g.i(i11, "negative size: "));
+        return sb2.toString();
     }
 }

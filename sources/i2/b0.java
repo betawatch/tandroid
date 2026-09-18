@@ -1,24 +1,109 @@
 package i2;
 
-import b2.x1;
+import android.graphics.SurfaceTexture;
+import android.view.Surface;
+import android.view.SurfaceHolder;
+import android.view.TextureView;
+import b2.w1;
+import ci.uc;
+import gg.x1;
+import java.util.ArrayList;
+import org.telegram.ui.Components.h71;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class b0 implements e2.m {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ x1 b;
+public final class b0 implements a3.l0, k2.j, SurfaceHolder.Callback, TextureView.SurfaceTextureListener {
+    public final /* synthetic */ e0 a;
 
-    @Override // e2.m
-    public final void invoke(Object obj) {
-        switch (this.a) {
-            case 0:
-                ((b2.z0) obj).onVideoSizeChanged(this.b);
-                break;
-            default:
-                x1 x1Var = this.b;
-                ((j2.b) obj).d(x1Var);
-                int i10 = x1Var.a;
-                break;
+    public b0(e0 e0Var) {
+        this.a = e0Var;
+    }
+
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final void onSurfaceTextureAvailable(SurfaceTexture surfaceTexture, int i10, int i11) {
+        e0 e0Var = this.a;
+        org.telegram.messenger.b1 b1Var = e0Var.m0;
+        if (b1Var != null) {
+            b1Var.execute(new z(this, surfaceTexture, i10, i11, 0));
+            return;
         }
+        Surface surface = new Surface(surfaceTexture);
+        e0Var.t1(surface);
+        e0Var.S = surface;
+        e0Var.m1(i10, i11);
+    }
+
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final boolean onSurfaceTextureDestroyed(SurfaceTexture surfaceTexture) {
+        e0 e0Var = this.a;
+        ArrayList arrayList = e0Var.n0;
+        int size = arrayList.size();
+        int i10 = 0;
+        while (i10 < size) {
+            Object obj = arrayList.get(i10);
+            i10++;
+            if (((h71) ((w1) obj)).J.onSurfaceDestroyed(surfaceTexture)) {
+                return false;
+            }
+        }
+        org.telegram.messenger.b1 b1Var = e0Var.m0;
+        if (b1Var != null) {
+            b1Var.execute(new uc(this, surfaceTexture));
+            return true;
+        }
+        e0Var.t1(null);
+        e0Var.m1(0, 0);
+        return true;
+    }
+
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final void onSurfaceTextureSizeChanged(SurfaceTexture surfaceTexture, int i10, int i11) {
+        e0 e0Var = this.a;
+        org.telegram.messenger.b1 b1Var = e0Var.m0;
+        if (b1Var != null) {
+            b1Var.execute(new gg.n(this, surfaceTexture, i10, i11));
+        } else {
+            e0Var.m1(i10, i11);
+        }
+    }
+
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
+        e0 e0Var = this.a;
+        org.telegram.messenger.b1 b1Var = e0Var.m0;
+        if (b1Var != null) {
+            b1Var.execute(new x1(10, this, surfaceTexture));
+            return;
+        }
+        ArrayList arrayList = e0Var.n0;
+        int size = arrayList.size();
+        int i10 = 0;
+        while (i10 < size) {
+            Object obj = arrayList.get(i10);
+            i10++;
+            ((h71) ((w1) obj)).J.onSurfaceTextureUpdated(surfaceTexture);
+        }
+    }
+
+    @Override // android.view.SurfaceHolder.Callback
+    public final void surfaceChanged(SurfaceHolder surfaceHolder, int i10, int i11, int i12) {
+        this.a.m1(i11, i12);
+    }
+
+    @Override // android.view.SurfaceHolder.Callback
+    public final void surfaceCreated(SurfaceHolder surfaceHolder) {
+        e0 e0Var = this.a;
+        if (e0Var.U) {
+            e0Var.t1(surfaceHolder.getSurface());
+        }
+    }
+
+    @Override // android.view.SurfaceHolder.Callback
+    public final void surfaceDestroyed(SurfaceHolder surfaceHolder) {
+        e0 e0Var = this.a;
+        if (e0Var.U) {
+            e0Var.t1(null);
+        }
+        e0Var.m1(0, 0);
     }
 }

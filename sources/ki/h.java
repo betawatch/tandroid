@@ -1,80 +1,22 @@
 package ki;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.InetSocketAddress;
-import java.net.Socket;
-import java.util.ArrayList;
-import java.util.logging.Level;
-import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.ActionBar.n2;
+import android.graphics.RectF;
+import android.view.View;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes4.dex */
-public final class h implements Runnable {
-    public final /* synthetic */ int a;
-    public boolean b;
-    public Object c;
-    public final /* synthetic */ Object d;
+public final class h {
+    public final View a;
+    public final ch.d b;
+    public final RectF c = new RectF();
+    public final RectF d = new RectF();
+    public final RectF e = new RectF();
+    public final RectF f = new RectF();
+    public boolean g;
+    public boolean h;
 
-    public /* synthetic */ h(Object obj, Object obj2, boolean z10, int i10) {
-        this.a = i10;
-        this.d = obj;
-        this.c = obj2;
-        this.b = z10;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                o oVar = (o) this.d;
-                ArrayList arrayList = (ArrayList) this.c;
-                int size = arrayList.size();
-                int i10 = 0;
-                while (i10 < size) {
-                    Object obj = arrayList.get(i10);
-                    i10++;
-                    s4.i iVar = (s4.i) obj;
-                    oVar.T(iVar.a, iVar, this.b);
-                }
-                arrayList.clear();
-                oVar.u.remove(arrayList);
-                break;
-            case 1:
-                ActionBarLayout actionBarLayout = (ActionBarLayout) this.d;
-                if (actionBarLayout.e == this) {
-                    actionBarLayout.e = null;
-                    ((n2) this.c).onTransitionAnimationStart(true, false);
-                    actionBarLayout.d0(true, true, this.b);
-                    break;
-                }
-                break;
-            default:
-                try {
-                    ((yc.i) this.d).a.bind(new InetSocketAddress(61578));
-                    this.b = true;
-                    do {
-                        try {
-                            Socket accept = ((yc.i) this.d).a.accept();
-                            accept.setSoTimeout(5000);
-                            InputStream inputStream = accept.getInputStream();
-                            yc.i iVar2 = (yc.i) this.d;
-                            iVar2.c.C(new yc.a(iVar2, inputStream, accept));
-                        } catch (IOException e7) {
-                            yc.i.d.log(Level.FINE, "Communication with the client broken", (Throwable) e7);
-                        }
-                    } while (!((yc.i) this.d).a.isClosed());
-                } catch (IOException e10) {
-                    this.c = e10;
-                    return;
-                }
-        }
-    }
-
-    public h(yc.i iVar) {
-        this.a = 2;
-        this.d = iVar;
-        this.b = false;
+    public h(View view, ch.d dVar) {
+        this.a = view;
+        this.b = dVar;
     }
 }

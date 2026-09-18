@@ -47,7 +47,7 @@ import org.telegram.messenger.video.Mp4Movie;
 import org.webrtc.EglBase;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class v50 implements Runnable {
     public DispatchQueue B0;
@@ -220,7 +220,7 @@ public final class v50 implements Runnable {
                 w50Var.Q0 = deviceIsHigh;
                 createMovie.setAllowSyncFiles(deviceIsHigh);
             }
-            AndroidUtilities.runOnUIThread(new ah.u(26, v50Var, z10));
+            AndroidUtilities.runOnUIThread(new bi.f(25, v50Var, z10));
             if (v50Var.s != EGL14.EGL_NO_DISPLAY) {
                 throw new RuntimeException("EGL already set up");
             }
@@ -295,8 +295,8 @@ public final class v50 implements Runnable {
             v50Var.n0 = GLES20.glGetUniformLocation(v50Var.m0, "uMVPMatrix");
             v50Var.o0 = GLES20.glGetUniformLocation(v50Var.m0, "uSTMatrix");
             v50Var.t0 = GLES20.glGetUniformLocation(v50Var.m0, "texelSize");
-        } catch (Exception e7) {
-            throw new RuntimeException(e7);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
         }
     }
 
@@ -309,7 +309,7 @@ public final class v50 implements Runnable {
         } else {
             if (!v50Var.G0) {
                 v50Var.G0 = true;
-                AndroidUtilities.runOnUIThread(new zu(13, v50Var, q50Var));
+                AndroidUtilities.runOnUIThread(new ny(7, v50Var, q50Var));
             }
             z10 = false;
         }
@@ -323,8 +323,8 @@ public final class v50 implements Runnable {
         try {
             FileLog.d("InstantCamera handleStopRecording drain encoders");
             v50Var.e(true);
-        } catch (Exception e7) {
-            FileLog.e(e7);
+        } catch (Exception e) {
+            FileLog.e(e);
         }
         MediaCodec mediaCodec = v50Var.E;
         if (mediaCodec != null) {
@@ -332,8 +332,8 @@ public final class v50 implements Runnable {
                 mediaCodec.stop();
                 v50Var.E.release();
                 v50Var.E = null;
-            } catch (Exception e10) {
-                FileLog.e(e10);
+            } catch (Exception e7) {
+                FileLog.e(e7);
             }
         }
         MediaCodec mediaCodec2 = v50Var.F;
@@ -343,8 +343,8 @@ public final class v50 implements Runnable {
                 v50Var.F.release();
                 v50Var.F = null;
                 g(false);
-            } catch (Exception e11) {
-                FileLog.e(e11);
+            } catch (Exception e10) {
+                FileLog.e(e10);
             }
         }
         File file = v50Var.H0.b0;
@@ -356,17 +356,17 @@ public final class v50 implements Runnable {
         if (mP4Builder != null) {
             try {
                 mP4Builder.finishMovie();
-            } catch (Exception e12) {
-                FileLog.e(e12);
+            } catch (Exception e11) {
+                FileLog.e(e11);
             }
             FileLog.d("InstantCamera handleStopRecording finish muxer");
             if (v50Var.c) {
                 if (v50Var.a.exists()) {
                     try {
                         v50Var.a.delete();
-                    } catch (Exception e13) {
+                    } catch (Exception e12) {
                         FileLog.e("InstantCamera copying fileToWrite to videoFile, deleting videoFile error " + v50Var.a);
-                        FileLog.e(e13);
+                        FileLog.e(e12);
                     }
                 }
                 if (!v50Var.b.renameTo(v50Var.a)) {
@@ -374,8 +374,8 @@ public final class v50 implements Runnable {
                     try {
                         AndroidUtilities.copyFile(v50Var.b, v50Var.a);
                         v50Var.b.delete();
-                    } catch (IOException e14) {
-                        FileLog.e(e14);
+                    } catch (IOException e13) {
+                        FileLog.e(e13);
                         FileLog.e("InstantCamera unable to move file");
                     }
                 }
@@ -400,7 +400,7 @@ public final class v50 implements Runnable {
         } else {
             if (z10 && (i10 != 1 || !v50Var.G0)) {
                 v50Var.G0 = true;
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.dm(v50Var, i10, q50Var, 8));
+                AndroidUtilities.runOnUIThread(new wm(v50Var, i10, q50Var, 7));
             }
             AndroidUtilities.runOnUIThread(new r50(v50Var, 3));
         }
@@ -466,8 +466,8 @@ public final class v50 implements Runnable {
                         return;
                     }
                     return;
-                } catch (Exception e7) {
-                    FileLog.e(e7);
+                } catch (Exception e) {
+                    FileLog.e(e);
                     return;
                 }
             }
@@ -523,7 +523,7 @@ public final class v50 implements Runnable {
             } else {
                 ByteBuffer outputBuffer = this.E.getOutputBuffer(dequeueOutputBuffer);
                 if (outputBuffer == null) {
-                    throw new RuntimeException(i2.g.j(dequeueOutputBuffer, "encoderOutputBuffer ", " was null"));
+                    throw new RuntimeException(hg.k0.j(dequeueOutputBuffer, "encoderOutputBuffer ", " was null"));
                 }
                 MediaCodec.BufferInfo bufferInfo = this.I;
                 int i10 = bufferInfo.size;
@@ -618,7 +618,7 @@ public final class v50 implements Runnable {
                 } else {
                     ByteBuffer outputBuffer2 = this.F.getOutputBuffer(dequeueOutputBuffer2);
                     if (outputBuffer2 == null) {
-                        throw new RuntimeException(i2.g.j(dequeueOutputBuffer2, "encoderOutputBuffer ", " was null"));
+                        throw new RuntimeException(hg.k0.j(dequeueOutputBuffer2, "encoderOutputBuffer ", " was null"));
                     }
                     MediaCodec.BufferInfo bufferInfo3 = this.J;
                     if ((bufferInfo3.flags & 2) != 0) {
@@ -697,11 +697,11 @@ public final class v50 implements Runnable {
     }
 
     public final void h(File file) {
-        g71 g71Var = new g71();
+        h71 h71Var = new h71();
         w50 w50Var = this.H0;
-        w50Var.O = g71Var;
-        g71Var.J = new k2.g0(this, 10);
-        g71Var.V(w50Var.l0);
+        w50Var.O = h71Var;
+        h71Var.J = new ka.c(this, 8);
+        h71Var.V(w50Var.l0);
         w50Var.O.D(Uri.fromFile(file), "other");
         w50Var.O.C();
         w50Var.O.O(true);
@@ -709,7 +709,7 @@ public final class v50 implements Runnable {
         AnimatorSet animatorSet = new AnimatorSet();
         LinearLayout linearLayout = w50Var.R0;
         Property property = View.ALPHA;
-        animatorSet.playTogether(ObjectAnimator.ofFloat(linearLayout, (Property<LinearLayout, Float>) property, 0.0f), ObjectAnimator.ofInt(w50Var.d, t6.b, 0), ObjectAnimator.ofFloat(w50Var.w, (Property<ImageView, Float>) property, 1.0f));
+        animatorSet.playTogether(ObjectAnimator.ofFloat(linearLayout, (Property<LinearLayout, Float>) property, 0.0f), ObjectAnimator.ofInt(w50Var.d, q6.b, 0), ObjectAnimator.ofFloat(w50Var.w, (Property<ImageView, Float>) property, 1.0f));
         animatorSet.setDuration(180L);
         animatorSet.setInterpolator(new DecelerateInterpolator());
         animatorSet.start();

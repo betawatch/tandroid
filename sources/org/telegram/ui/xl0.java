@@ -15,13 +15,13 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class xl0 extends FrameLayout {
     public final int a;
     public final org.telegram.ui.ActionBar.f6 b;
     public final FrameLayout c;
-    public final org.telegram.ui.Components.x9 d;
+    public final org.telegram.ui.Components.u9 d;
     public final TextView e;
     public final TextView f;
     public final ImageView h;
@@ -35,14 +35,14 @@ public final class xl0 extends FrameLayout {
         FrameLayout frameLayout = new FrameLayout(context);
         this.c = frameLayout;
         addView(frameLayout, w7.x5.d(36, 36.0f, 19, 18.5f, 0.0f, 0.0f, 0.0f));
-        org.telegram.ui.Components.x9 x9Var = new org.telegram.ui.Components.x9(context);
-        this.d = x9Var;
-        x9Var.setImageResource(R.drawable.msg2_permissions);
+        org.telegram.ui.Components.u9 u9Var = new org.telegram.ui.Components.u9(context);
+        this.d = u9Var;
+        u9Var.setImageResource(R.drawable.msg2_permissions);
         int i11 = org.telegram.ui.ActionBar.j6.G6;
         int l1 = org.telegram.ui.ActionBar.j6.l1(0.3f, org.telegram.ui.ActionBar.j6.v0(i11, f6Var));
         PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
-        x9Var.setColorFilter(new PorterDuffColorFilter(l1, mode));
-        frameLayout.addView(x9Var, w7.x5.e(36, 36, 17));
+        u9Var.setColorFilter(new PorterDuffColorFilter(l1, mode));
+        frameLayout.addView(u9Var, w7.x5.e(36, 36, 17));
         TextView b10 = w7.b6.b(context, 15.0f, i11, true, null);
         this.e = b10;
         b10.setSingleLine();

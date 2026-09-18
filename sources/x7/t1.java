@@ -1,13 +1,13 @@
 package x7;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class t1 implements ia.d {
     public static final t1 a = new t1();
-    public static final ia.c b = new ia.c("errorCode", i2.g.n(w.f.j(c0.class, new z(1))));
-    public static final ia.c c = new ia.c("isColdCall", i2.g.n(w.f.j(c0.class, new z(2))));
-    public static final ia.c d = new ia.c("imageInfo", i2.g.n(w.f.j(c0.class, new z(3))));
-    public static final ia.c e = new ia.c("detectorOptions", i2.g.n(w.f.j(c0.class, new z(4))));
+    public static final ia.c b = new ia.c("errorCode", hg.k0.o(w.f.j(c0.class, new z(1))));
+    public static final ia.c c = new ia.c("isColdCall", hg.k0.o(w.f.j(c0.class, new z(2))));
+    public static final ia.c d = new ia.c("imageInfo", hg.k0.o(w.f.j(c0.class, new z(3))));
+    public static final ia.c e = new ia.c("detectorOptions", hg.k0.o(w.f.j(c0.class, new z(4))));
 
     @Override // ia.a
     public final void a(Object obj, Object obj2) {

@@ -13,7 +13,7 @@ import android.text.StaticLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class i10 {
     public int a;
@@ -30,7 +30,7 @@ public final class i10 {
         this.d = new Rect();
         this.f = new RectF();
         this.b = t1Var;
-        this.e = new zc(t1Var, 0.8f, 1.4f);
+        this.e = new wc(t1Var, 0.8f, 1.4f);
     }
 
     public void a(Canvas canvas, boolean z10) {
@@ -44,33 +44,33 @@ public final class i10 {
             ((org.telegram.ui.Cells.z) this.g).draw(canvas);
         }
         if (z10) {
-            h90 h90Var = (h90) this.h;
-            if (h90Var == null) {
-                h90 h90Var2 = new h90();
-                this.h = h90Var2;
-                h90Var2.C = true;
-            } else if (h90Var.b() || ((h90) this.h).c()) {
-                h90 h90Var3 = (h90) this.h;
-                h90Var3.b = -1L;
-                h90Var3.c = -1L;
+            g90 g90Var = (g90) this.h;
+            if (g90Var == null) {
+                g90 g90Var2 = new g90();
+                this.h = g90Var2;
+                g90Var2.C = true;
+            } else if (g90Var.b() || ((g90) this.h).c()) {
+                g90 g90Var3 = (g90) this.h;
+                g90Var3.b = -1L;
+                g90Var3.c = -1L;
             }
         } else {
-            h90 h90Var4 = (h90) this.h;
-            if (h90Var4 != null && !h90Var4.c() && !((h90) this.h).b()) {
-                ((h90) this.h).a();
+            g90 g90Var4 = (g90) this.h;
+            if (g90Var4 != null && !g90Var4.c() && !((g90) this.h).b()) {
+                ((g90) this.h).a();
             }
         }
         canvas.restore();
-        h90 h90Var5 = (h90) this.h;
-        if (h90Var5 == null || h90Var5.b()) {
+        g90 g90Var5 = (g90) this.h;
+        if (g90Var5 == null || g90Var5.b()) {
             return;
         }
-        h90 h90Var6 = (h90) this.h;
-        h90Var6.x = path;
-        h90Var6.f(org.telegram.ui.ActionBar.j6.l1(0.7f, this.a), org.telegram.ui.ActionBar.j6.l1(1.3f, this.a), org.telegram.ui.ActionBar.j6.l1(1.5f, this.a), org.telegram.ui.ActionBar.j6.l1(2.0f, this.a));
-        ((h90) this.h).setBounds(rect);
+        g90 g90Var6 = (g90) this.h;
+        g90Var6.x = path;
+        g90Var6.f(org.telegram.ui.ActionBar.j6.l1(0.7f, this.a), org.telegram.ui.ActionBar.j6.l1(1.3f, this.a), org.telegram.ui.ActionBar.j6.l1(1.5f, this.a), org.telegram.ui.ActionBar.j6.l1(2.0f, this.a));
+        ((g90) this.h).setBounds(rect);
         canvas.save();
-        ((h90) this.h).draw(canvas);
+        ((g90) this.h).draw(canvas);
         canvas.restore();
         ((org.telegram.ui.Cells.t1) this.b).invalidate();
     }
@@ -156,7 +156,7 @@ public final class i10 {
         Rect rect = (Rect) this.d;
         float centerX = rect.centerX();
         float centerY = rect.centerY();
-        ((zc) this.e).c(z10);
+        ((wc) this.e).c(z10);
         if (z10 && (zVar = (org.telegram.ui.Cells.z) this.g) != null) {
             zVar.setHotspot(centerX, centerY);
         }
@@ -171,11 +171,11 @@ public final class i10 {
         Paint paint = new Paint();
         this.b = paint;
         Shader.TileMode tileMode = Shader.TileMode.CLAMP;
-        this.c = new hc0(tileMode);
-        this.d = new hc0(tileMode);
-        this.e = new hc0(Shader.TileMode.REPEAT);
-        this.f = new ft();
-        this.g = new ft();
+        this.c = new gc0(tileMode);
+        this.d = new gc0(tileMode);
+        this.e = new gc0(Shader.TileMode.REPEAT);
+        this.f = new gt();
+        this.g = new gt();
         this.h = new float[4];
         paint.setFilterBitmap(true);
         paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC));

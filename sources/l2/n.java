@@ -9,14 +9,14 @@ import c3.h0;
 import e2.d0;
 import e2.v;
 import n4.y;
-import org.telegram.ui.Components.ho0;
+import org.telegram.ui.Components.io0;
 import u2.a1;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class n implements h0 {
     public final a1 a;
-    public final y b = new y(17, false);
+    public final y b = new y(17);
     public final l3.a c = new l3.a();
     public long d = -9223372036854775807L;
     public final /* synthetic */ o e;
@@ -43,14 +43,14 @@ public final class n implements h0 {
         this.a.c(j3, i10, i11, i12, g0Var);
         while (this.a.x(false)) {
             l3.a aVar = this.c;
-            aVar.i();
+            aVar.clear();
             if (this.a.C(this.b, aVar, 0, false) == -4) {
-                aVar.m();
+                aVar.c();
             } else {
                 aVar = null;
             }
             if (aVar != null) {
-                long j11 = aVar.h;
+                long j11 = aVar.e;
                 p0 a2 = this.e.c.a(aVar);
                 if (a2 != null) {
                     n3.a aVar2 = (n3.a) a2.a[0];
@@ -72,12 +72,12 @@ public final class n implements h0 {
             }
         }
         a1 a1Var = this.a;
-        ho0 ho0Var = a1Var.a;
+        io0 io0Var = a1Var.a;
         synchronized (a1Var) {
             int i14 = a1Var.s;
             i13 = i14 == 0 ? -1L : a1Var.i(i14);
         }
-        ho0Var.b(i13);
+        io0Var.b(i13);
     }
 
     @Override // c3.h0

@@ -12,10 +12,10 @@ import org.telegram.messenger.LanguageDetector;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.u31;
-import org.telegram.ui.h41;
+import org.telegram.ui.Components.w31;
+import org.telegram.ui.g41;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class n9 implements ActionMode.Callback {
     public String a = null;
@@ -31,7 +31,7 @@ public final class n9 implements ActionMode.Callback {
         if (findItem == null) {
             return;
         }
-        findItem.setVisible((this.b.l0 == null || ((this.a == null || h41.Y().contains(this.a)) && LanguageDetector.hasSupport())) ? false : true);
+        findItem.setVisible((this.b.l0 == null || ((this.a == null || g41.Y().contains(this.a)) && LanguageDetector.hasSupport())) ? false : true);
     }
 
     @Override // android.view.ActionMode.Callback
@@ -53,8 +53,8 @@ public final class n9 implements ActionMode.Callback {
                         CharSequence s10 = daVar.s();
                         String str = this.a;
                         g gVar2 = new g(this, 8);
-                        org.telegram.ui.i4 i4Var = tVar.a;
-                        u31.K(i4Var.L, i4Var.M, str, language, s10, null, gVar2);
+                        org.telegram.ui.h4 h4Var = tVar.a;
+                        w31.K(h4Var.L, h4Var.M, str, language, s10, null, gVar2);
                     }
                     daVar.v();
                     return true;
@@ -147,12 +147,12 @@ public final class n9 implements ActionMode.Callback {
         }
         MenuItem findItem4 = menu.findItem(android.R.id.cut);
         if (findItem4 != null) {
-            findItem4.setVisible(this.b instanceof ji.i3);
+            findItem4.setVisible(this.b instanceof ii.j3);
         }
         MenuItem findItem5 = menu.findItem(android.R.id.paste);
         if (findItem5 != null) {
             da daVar3 = this.b;
-            if (daVar3 instanceof ji.i3) {
+            if (daVar3 instanceof ii.j3) {
                 try {
                     ca caVar = daVar3.C;
                     Context context = caVar != null ? caVar.getContext() : ApplicationLoader.applicationContext;

@@ -1,36 +1,77 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import android.view.Window;
+import java.lang.ref.WeakReference;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class mb0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ xb0 b;
+public final class mb0 implements yf.k0 {
+    public final /* synthetic */ int a = 0;
+    public boolean b;
+    public boolean c;
+    public final Object d;
 
-    public /* synthetic */ mb0(xb0 xb0Var, int i10) {
-        this.a = i10;
-        this.b = xb0Var;
+    public mb0(yf.l0 l0Var) {
+        this.d = l0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // yf.k0
+    public final void a(boolean z10) {
         switch (this.a) {
             case 0:
-                xb0 xb0Var = this.b;
-                xb0Var.r.b.requestFocus();
-                AndroidUtilities.showKeyboard(xb0Var.r.b);
-                break;
-            case 1:
-                xb0 xb0Var2 = this.b;
-                xb0Var2.r.b.clearFocus();
-                AndroidUtilities.hideKeyboard(xb0Var2.r.b);
+                if (this.b != z10 && !this.c) {
+                    this.b = z10;
+                    LaunchActivity launchActivity = (LaunchActivity) ((WeakReference) this.d).get();
+                    if (launchActivity != null) {
+                        int i10 = launchActivity.A1 + (z10 ? 1 : -1);
+                        launchActivity.A1 = i10;
+                        j0 j0Var = launchActivity.w0;
+                        if (j0Var != null) {
+                            j0Var.setVisibility(i10 > 0 ? 8 : 0);
+                        }
+                        launchActivity.getWindow();
+                        break;
+                    }
+                }
                 break;
             default:
-                of.f.s(this.b.getParentActivity(), LocaleController.getString(R.string.RequireMonthlyFeeInfoLink));
+                yf.l0 l0Var = (yf.l0) this.d;
+                if (this.b != z10 && !this.c) {
+                    this.b = z10;
+                    if (z10) {
+                        l0Var.a++;
+                    } else {
+                        l0Var.a--;
+                    }
+                    boolean z11 = l0Var.a > 0;
+                    if (l0Var.b != z11) {
+                        l0Var.b = z11;
+                        Window window = (Window) ((WeakReference) l0Var.c.b).get();
+                        if (window != null) {
+                            window.getDecorView().setVisibility(z11 ? 8 : 0);
+                            break;
+                        }
+                    }
+                }
                 break;
         }
+    }
+
+    @Override // yf.k0
+    public final void destroy() {
+        switch (this.a) {
+            case 0:
+                a(false);
+                this.c = true;
+                break;
+            default:
+                a(false);
+                this.c = true;
+                break;
+        }
+    }
+
+    public mb0(LaunchActivity launchActivity, boolean z10) {
+        this.d = new WeakReference(launchActivity);
     }
 }

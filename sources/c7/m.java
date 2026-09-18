@@ -4,7 +4,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class m extends o6.a {
     public static final Parcelable.Creator<m> CREATOR = new r0(18);
@@ -21,8 +21,8 @@ public final class m extends o6.a {
         } else {
             try {
                 a2 = c.a(str);
-            } catch (b | d0 | t0 e7) {
-                throw new IllegalArgumentException(e7);
+            } catch (b | d0 | t0 e) {
+                throw new IllegalArgumentException(e);
             }
         }
         this.a = a2;

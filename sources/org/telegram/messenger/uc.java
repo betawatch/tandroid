@@ -2,33 +2,30 @@ package org.telegram.messenger;
 
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class uc implements Utilities.Callback2 {
+public final /* synthetic */ class uc implements Utilities.Callback {
     public final /* synthetic */ int a;
     public final /* synthetic */ MessagesController b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ Utilities.Callback2 d;
 
-    public /* synthetic */ uc(MessagesController messagesController, long j3, Utilities.Callback2 callback2, int i10) {
+    public /* synthetic */ uc(MessagesController messagesController, int i10) {
         this.a = i10;
         this.b = messagesController;
-        this.c = j3;
-        this.d = callback2;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback2
-    public final void run(Object obj, Object obj2) {
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
         switch (this.a) {
             case 0:
-                this.b.lambda$resolveCommunityAllJoinPendingRequests$250(this.c, this.d, (TLRPC.Bool) obj, (TLRPC.TL_error) obj2);
+                this.b.lambda$loadAppConfig$33((TLRPC.TL_help_appConfig) obj);
                 break;
             case 1:
-                this.b.lambda$resolveCommunityJoinPendingRequest$249(this.c, this.d, (TLRPC.Bool) obj, (TLRPC.TL_error) obj2);
+                this.b.lambda$loadWebBrowserConfig$511((TL_account.TL_webBrowserSettings) obj);
                 break;
             default:
-                this.b.lambda$toggleCommunityParticipantBanned$248(this.c, this.d, (TLRPC.Bool) obj, (TLRPC.TL_error) obj2);
+                this.b.lambda$getAvailableEffects$496((TLRPC.messages_AvailableEffects) obj);
                 break;
         }
     }

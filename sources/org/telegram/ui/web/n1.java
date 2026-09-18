@@ -1,10 +1,59 @@
 package org.telegram.ui.web;
 
-import java.util.HashMap;
+import java.io.BufferedInputStream;
+import java.io.FilterInputStream;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes4.dex */
-public final class n1 {
-    public String a;
-    public final HashMap b = new HashMap();
+public final class n1 extends FilterInputStream {
+    public n1(BufferedInputStream bufferedInputStream) {
+        super(bufferedInputStream);
+    }
+
+    public static int a(int i10) {
+        if (i10 >= 48 && i10 <= 57) {
+            return i10 - 48;
+        }
+        if (i10 >= 65 && i10 <= 70) {
+            return i10 - 55;
+        }
+        if (i10 < 97 || i10 > 102) {
+            return 0;
+        }
+        return i10 - 87;
+    }
+
+    @Override // java.io.FilterInputStream, java.io.InputStream
+    public final int read() {
+        int read = ((FilterInputStream) this).in.read();
+        if (read != 61) {
+            return read;
+        }
+        int read2 = ((FilterInputStream) this).in.read();
+        int read3 = ((FilterInputStream) this).in.read();
+        if (read2 == -1 || read3 == -1) {
+            return -1;
+        }
+        return (read2 == 13 && read3 == 10) ? read() : (read2 == 10 || read3 == 10) ? read3 : (a(read2) << 4) | a(read3);
+    }
+
+    @Override // java.io.FilterInputStream, java.io.InputStream
+    public final int read(byte[] bArr, int i10, int i11) {
+        int i12 = 0;
+        int i13 = 0;
+        while (true) {
+            if (i12 >= i11) {
+                break;
+            }
+            int read = read();
+            if (read != -1) {
+                bArr[i10 + i12] = (byte) read;
+                i13++;
+                i12++;
+            } else if (i13 == 0) {
+                return -1;
+            }
+        }
+        return i13;
+    }
 }

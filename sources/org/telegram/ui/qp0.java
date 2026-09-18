@@ -1,16 +1,42 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
+import android.os.Build;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class qp0 extends org.telegram.ui.Cells.ia {
-    @Override // android.view.View
-    public final void draw(Canvas canvas) {
-        if (canvas.isHardwareAccelerated()) {
-            super.draw(canvas);
-        } else {
-            yf.j0.a(canvas, this, new t3(this, 12));
+public final class qp0 extends s4.s0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ wp0 b;
+
+    public qp0(wp0 wp0Var, int i10) {
+        this.b = wp0Var;
+        this.a = i10;
+    }
+
+    @Override // s4.s0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        ah.i iVar;
+        wp0 wp0Var = this.b;
+        cq0 cq0Var = wp0Var.p0;
+        if (i11 != 0) {
+            cq0Var.D0(1);
         }
+        if (Build.VERSION.SDK_INT >= 31 && (iVar = cq0Var.f0) != null) {
+            iVar.f(i10, i11);
+        }
+        wp0Var.h();
+        if (wp0Var.K != null) {
+            if (wp0Var.J == null || !wp0Var.c()) {
+                return;
+            }
+            wp0Var.J.g(false);
+            return;
+        }
+        yh.n5 n5Var = this.a == 1 ? cq0Var.c : cq0Var.b;
+        if (n5Var == null || !wp0Var.c()) {
+            return;
+        }
+        n5Var.a();
     }
 }

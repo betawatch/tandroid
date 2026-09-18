@@ -1,62 +1,39 @@
 package org.telegram.ui.Components;
 
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
 import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.AndroidUtilities;
+import android.widget.ScrollView;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class m41 extends s4.s0 {
-    public final /* synthetic */ int a;
-    public int b;
-    public final /* synthetic */ Object c;
+public final class m41 extends ScrollView {
+    public Drawable a;
+    public c6 b;
+    public boolean c;
 
-    public m41(p41 p41Var) {
-        this.a = 0;
-        this.c = p41Var;
-    }
-
-    @Override // s4.s0
-    public void a(RecyclerView recyclerView, int i10) {
-        switch (this.a) {
-            case 0:
-                if (i10 == 0) {
-                    this.b = 0;
-                    break;
-                }
-                break;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        float d = this.b.d(canScrollVertically(-1) ? 1.0f : 0.0f, false) * 0.5f;
+        if (d > 0.0f) {
+            if (this.a == null) {
+                this.a = getContext().getResources().getDrawable(R.drawable.header_shadow);
+            }
+            this.a.setBounds(0, getScrollY(), getWidth(), this.a.getIntrinsicHeight() + getScrollY());
+            this.a.setAlpha((int) (d * 255.0f));
+            this.a.draw(canvas);
         }
     }
 
-    @Override // s4.s0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        switch (this.a) {
-            case 0:
-                p41 p41Var = (p41) this.c;
-                this.b += i11;
-                if (recyclerView.getScrollState() == 1 && Math.abs(this.b) > AndroidUtilities.dp(96.0f)) {
-                    View findFocus = p41Var.e.findFocus();
-                    if (findFocus == null) {
-                        findFocus = p41Var.e;
-                    }
-                    AndroidUtilities.hideKeyboard(findFocus);
-                }
-                if (i11 != 0) {
-                    p41.m(p41Var);
-                    break;
-                }
-                break;
-            default:
-                int i12 = this.b + i11;
-                this.b = i12;
-                ((org.telegram.ui.f31) this.c).H.setAlpha((i12 * 1.0f) / AndroidUtilities.dp(6.0f));
-                break;
+    @Override // android.widget.ScrollView, android.view.ViewGroup, android.view.ViewParent
+    public final void onNestedScroll(View view, int i10, int i11, int i12, int i13) {
+        super.onNestedScroll(view, i10, i11, i12, i13);
+        boolean canScrollVertically = canScrollVertically(-1);
+        if (this.c != canScrollVertically) {
+            invalidate();
+            this.c = canScrollVertically;
         }
-    }
-
-    public m41(org.telegram.ui.f31 f31Var) {
-        this.a = 1;
-        this.c = f31Var;
-        this.b = 0;
     }
 }

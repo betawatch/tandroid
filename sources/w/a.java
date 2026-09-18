@@ -13,18 +13,17 @@ import android.support.v4.media.MediaBrowserCompat$MediaItem;
 import android.support.v4.media.MediaDescriptionCompat;
 import android.support.v4.media.MediaMetadataCompat;
 import android.support.v4.media.RatingCompat;
-import androidx.fragment.app.e0;
-import androidx.fragment.app.k0;
-import androidx.fragment.app.n0;
+import androidx.fragment.app.g0;
+import androidx.fragment.app.m0;
+import androidx.fragment.app.p0;
 import c7.a0;
 import c7.b0;
 import c7.h0;
 import c7.j;
 import c7.k;
 import c7.m;
-import c7.m0;
+import c7.n0;
 import c7.o0;
-import c7.p0;
 import c7.q0;
 import c7.t;
 import c7.u;
@@ -40,10 +39,10 @@ import com.google.android.gms.fido.common.Transport;
 import j$.util.Objects;
 import java.util.ArrayList;
 import kotlin.jvm.internal.i;
-import n7.s0;
+import n7.t0;
 import w7.d0;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class a implements Parcelable.Creator {
     public final /* synthetic */ int a;
@@ -109,8 +108,8 @@ public final class a implements Parcelable.Creator {
             case 3:
                 try {
                     return Transport.a(inParcel.readString());
-                } catch (a7.a e7) {
-                    throw new RuntimeException(e7);
+                } catch (a7.a e) {
+                    throw new RuntimeException(e);
                 }
             case 4:
                 return new MediaBrowserCompat$MediaItem(inParcel);
@@ -132,26 +131,26 @@ public final class a implements Parcelable.Creator {
             case 11:
                 return new androidx.fragment.app.c(inParcel);
             case 12:
-                e0 e0Var = new e0();
-                e0Var.a = inParcel.readString();
-                e0Var.b = inParcel.readInt();
-                return e0Var;
+                g0 g0Var = new g0();
+                g0Var.a = inParcel.readString();
+                g0Var.b = inParcel.readInt();
+                return g0Var;
             case 13:
-                k0 k0Var = new k0();
-                k0Var.e = null;
-                k0Var.f = new ArrayList();
-                k0Var.h = new ArrayList();
-                k0Var.a = inParcel.createStringArrayList();
-                k0Var.b = inParcel.createStringArrayList();
-                k0Var.c = (androidx.fragment.app.b[]) inParcel.createTypedArray(androidx.fragment.app.b.CREATOR);
-                k0Var.d = inParcel.readInt();
-                k0Var.e = inParcel.readString();
-                k0Var.f = inParcel.createStringArrayList();
-                k0Var.h = inParcel.createTypedArrayList(androidx.fragment.app.c.CREATOR);
-                k0Var.n = inParcel.createTypedArrayList(e0.CREATOR);
-                return k0Var;
+                m0 m0Var = new m0();
+                m0Var.e = null;
+                m0Var.f = new ArrayList();
+                m0Var.h = new ArrayList();
+                m0Var.a = inParcel.createStringArrayList();
+                m0Var.b = inParcel.createStringArrayList();
+                m0Var.c = (androidx.fragment.app.b[]) inParcel.createTypedArray(androidx.fragment.app.b.CREATOR);
+                m0Var.d = inParcel.readInt();
+                m0Var.e = inParcel.readString();
+                m0Var.f = inParcel.createStringArrayList();
+                m0Var.h = inParcel.createTypedArrayList(androidx.fragment.app.c.CREATOR);
+                m0Var.n = inParcel.createTypedArrayList(g0.CREATOR);
+                return m0Var;
             case 14:
-                return new n0(inParcel);
+                return new p0(inParcel);
             case 15:
                 c.d dVar = new c.d();
                 IBinder readStrongBinder = inParcel.readStrongBinder();
@@ -171,8 +170,8 @@ public final class a implements Parcelable.Creator {
             case 16:
                 try {
                     return c7.c.a(inParcel.readString());
-                } catch (c7.b e10) {
-                    throw new RuntimeException(e10);
+                } catch (c7.b e7) {
+                    throw new RuntimeException(e7);
                 }
             case 17:
                 int z15 = d0.z(inParcel);
@@ -198,7 +197,7 @@ public final class a implements Parcelable.Creator {
                     }
                 }
                 d0.m(inParcel, z16);
-                return new m0(j3);
+                return new c7.m0(j3);
             case 19:
                 int z17 = d0.z(inParcel);
                 while (inParcel.dataPosition() < z17) {
@@ -210,7 +209,7 @@ public final class a implements Parcelable.Creator {
                     }
                 }
                 d0.m(inParcel, z17);
-                return new c7.n0(z11);
+                return new n0(z11);
             case 20:
                 int z18 = d0.z(inParcel);
                 while (inParcel.dataPosition() < z18) {
@@ -256,7 +255,7 @@ public final class a implements Parcelable.Creator {
                     }
                 }
                 d0.m(inParcel, z20);
-                return new p0(bArr2 == null ? null : s0.t(bArr2.length, bArr2), bArr3 == null ? null : s0.t(bArr3.length, bArr3), bArr4 != null ? s0.t(bArr4.length, bArr4) : null, i11);
+                return new c7.p0(bArr2 == null ? null : t0.t(bArr2.length, bArr2), bArr3 == null ? null : t0.t(bArr3.length, bArr3), bArr4 != null ? t0.t(bArr4.length, bArr4) : null, i11);
             case 23:
                 int z21 = d0.z(inParcel);
                 while (inParcel.dataPosition() < z21) {
@@ -444,8 +443,8 @@ public final class a implements Parcelable.Creator {
             default:
                 try {
                     return a0.a(inParcel.readString());
-                } catch (z e11) {
-                    throw new RuntimeException(e11);
+                } catch (z e10) {
+                    throw new RuntimeException(e10);
                 }
         }
     }
@@ -478,11 +477,11 @@ public final class a implements Parcelable.Creator {
             case 11:
                 return new androidx.fragment.app.c[i10];
             case 12:
-                return new e0[i10];
+                return new g0[i10];
             case 13:
-                return new k0[i10];
+                return new m0[i10];
             case 14:
-                return new n0[i10];
+                return new p0[i10];
             case 15:
                 return new c.d[i10];
             case 16:
@@ -490,15 +489,15 @@ public final class a implements Parcelable.Creator {
             case 17:
                 return new z0[i10];
             case 18:
-                return new m0[i10];
+                return new c7.m0[i10];
             case 19:
-                return new c7.n0[i10];
+                return new n0[i10];
             case 20:
                 return new t[i10];
             case 21:
                 return new o0[i10];
             case 22:
-                return new p0[i10];
+                return new c7.p0[i10];
             case 23:
                 return new q0[i10];
             case 24:

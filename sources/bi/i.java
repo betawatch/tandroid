@@ -1,107 +1,98 @@
 package bi;
 
-import di.fc;
-import di.kc;
-import di.pc;
-import org.telegram.messenger.ChannelBoostsController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.xo;
+import android.view.View;
+import android.view.accessibility.AccessibilityNodeInfo;
+import org.telegram.ui.Cells.u7;
+import org.telegram.ui.Components.f61;
+import org.telegram.ui.Components.kv0;
+import org.telegram.ui.Components.nz;
+import s4.z0;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class i implements e2.h {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
+public final class i extends nz {
+    public final /* synthetic */ int X = 0;
+    public final Object Y;
 
-    public /* synthetic */ i(Object obj, Object obj2, long j3, Object obj3, int i10) {
-        this.a = i10;
-        this.c = obj;
-        this.d = obj2;
-        this.b = j3;
-        this.e = obj3;
+    public i() {
+        super(100, false);
+        this.Y = new kv0();
     }
 
-    @Override // e2.h
-    public final void accept(Object obj) {
-        int i10 = this.a;
-        long j3 = this.b;
-        Object obj2 = this.e;
-        Object obj3 = this.d;
-        Object obj4 = this.c;
-        switch (i10) {
+    @Override // s4.o0
+    public int A() {
+        switch (this.X) {
             case 0:
-                v vVar = (v) obj4;
-                u uVar = (u) obj2;
-                ((org.telegram.ui.ActionBar.b2) obj3).dismiss();
-                if (((Boolean) obj).booleanValue()) {
-                    pc E = pc.E(vVar.e0.getParentActivity(), vVar.f);
-                    E.N = j3;
-                    fc fcVar = E.c1;
-                    if (fcVar != null) {
-                        fcVar.setDialogId(j3);
+                return 0;
+            default:
+                return super.A();
+        }
+    }
+
+    @Override // org.telegram.ui.Components.nz
+    public kv0 D1(int i10) {
+        switch (this.X) {
+            case 0:
+                kv0 kv0Var = (kv0) this.Y;
+                kv0Var.b = 100.0f;
+                kv0Var.a = 100.0f;
+                return kv0Var;
+            default:
+                return super.D1(i10);
+        }
+    }
+
+    @Override // s4.s, s4.o0
+    public void U(of.e eVar, z0 z0Var, View view, s0.c cVar) {
+        switch (this.X) {
+            case 0:
+                super.U(eVar, z0Var, view, cVar);
+                AccessibilityNodeInfo accessibilityNodeInfo = cVar.a;
+                AccessibilityNodeInfo.CollectionItemInfo collectionItemInfo = accessibilityNodeInfo.getCollectionItemInfo();
+                n7.b bVar = collectionItemInfo != null ? new n7.b(collectionItemInfo) : null;
+                if (bVar != null) {
+                    Object obj = bVar.a;
+                    if (((AccessibilityNodeInfo.CollectionItemInfo) obj).isHeading()) {
+                        accessibilityNodeInfo.setCollectionItemInfo(AccessibilityNodeInfo.CollectionItemInfo.obtain(((AccessibilityNodeInfo.CollectionItemInfo) obj).getRowIndex(), ((AccessibilityNodeInfo.CollectionItemInfo) obj).getRowSpan(), ((AccessibilityNodeInfo.CollectionItemInfo) obj).getColumnIndex(), ((AccessibilityNodeInfo.CollectionItemInfo) obj).getColumnSpan(), false));
+                        break;
                     }
-                    E.M = false;
-                    E.R(kc.c(uVar));
-                    break;
                 }
-                break;
-            case 1:
-                u8 u8Var = (u8) obj4;
-                e2.h hVar = (e2.h) obj3;
-                MessagesController messagesController = (MessagesController) obj2;
-                TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus = (TL_stories.TL_premium_boostsStatus) obj;
-                if (tL_premium_boostsStatus != null) {
-                    ChannelBoostsController boostsController = messagesController.getBoostsController();
-                    long j10 = this.b;
-                    boostsController.userCanBoostChannel(j10, tL_premium_boostsStatus, new i(u8Var, hVar, j10, tL_premium_boostsStatus, 2));
-                    hVar.accept(Boolean.FALSE);
-                    break;
-                } else {
-                    hVar.accept(Boolean.FALSE);
-                    break;
-                }
-            case 2:
-                u8 u8Var2 = (u8) obj4;
-                e2.h hVar2 = (e2.h) obj3;
-                TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus2 = (TL_stories.TL_premium_boostsStatus) obj2;
-                ChannelBoostsController.CanApplyBoost canApplyBoost = (ChannelBoostsController.CanApplyBoost) obj;
-                if (canApplyBoost != null) {
-                    org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
-                    g gVar = u8Var2.j(j3) ? new g(u8Var2, j3, 3) : null;
-                    int i11 = sg.k0.V0;
-                    if (R != null && tL_premium_boostsStatus2 != null && R.getContext() != null) {
-                        sg.k0 k0Var = new sg.k0(18, R.getCurrentAccount(), R.getContext(), R, R.getResourceProvider());
-                        k0Var.G1(canApplyBoost);
-                        k0Var.F1(tL_premium_boostsStatus2, true);
-                        k0Var.H1(j3);
-                        k0Var.Q0 = gVar;
-                        k0Var.show();
-                    }
-                    hVar2.accept(Boolean.FALSE);
-                    break;
-                } else {
-                    hVar2.accept(Boolean.FALSE);
-                    break;
-                }
-            case 3:
-                xo.X((xo) obj4, (org.telegram.ui.ActionBar.b2) obj3, (TL_stories.TL_premium_boostsStatus) obj2, this.b, (ChannelBoostsController.CanApplyBoost) obj);
                 break;
             default:
-                zh.w3.d0((zh.w3) obj4, (TL_stories.TL_premium_boostsStatus) obj3, this.b, (MessagesController) obj2, (ChannelBoostsController.CanApplyBoost) obj);
+                super.U(eVar, z0Var, view, cVar);
                 break;
         }
     }
 
-    public /* synthetic */ i(Object obj, Object obj2, Object obj3, long j3, int i10) {
-        this.a = i10;
-        this.c = obj;
-        this.d = obj2;
-        this.e = obj3;
-        this.b = j3;
+    @Override // s4.c0
+    public int W0(z0 z0Var) {
+        switch (this.X) {
+            case 1:
+                if (!((f61) this.Y).a3) {
+                    break;
+                } else {
+                    break;
+                }
+        }
+        return super.W0(z0Var);
+    }
+
+    @Override // s4.c0
+    public void z0(z0 z0Var, int[] iArr) {
+        switch (this.X) {
+            case 0:
+                super.z0(z0Var, iArr);
+                iArr[1] = Math.max(iArr[1], u7.a(1) * 2);
+                break;
+            default:
+                super.z0(z0Var, iArr);
+                break;
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public i(f61 f61Var, int i10) {
+        super(i10, false);
+        this.Y = f61Var;
     }
 }

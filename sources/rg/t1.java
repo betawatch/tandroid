@@ -1,232 +1,255 @@
 package rg;
 
-import android.animation.ValueAnimator;
-import android.content.Context;
+import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.Drawable;
-import android.view.MotionEvent;
-import android.view.View;
-import android.widget.LinearLayout;
-import java.util.List;
+import android.graphics.RectF;
+import com.google.android.gms.internal.vision.e2;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
-import org.telegram.ui.Cells.ua;
-import org.telegram.ui.Components.aj0;
-import org.telegram.ui.Components.pr;
-import org.telegram.ui.Components.xi0;
-import org.telegram.ui.oj1;
-import w7.x5;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.Cells.p6;
+import org.telegram.ui.zd;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class t1 extends LinearLayout {
-    public final aj0[] a;
-    public s1 b;
-    public final Paint c;
-    public final int d;
-    public boolean e;
-    public int f;
-    public int h;
+public final class t1 {
+    public long a;
+    public final int b;
+    public float d;
+    public float e;
+    public float f;
+    public float g;
+    public float h;
+    public float i;
+    public float j;
+    public float k;
+    public int l;
+    public int m;
     public float n;
-    public ValueAnimator r;
+    public float o;
+    public float p;
+    public final /* synthetic */ u1 r;
+    public float c = 1.0f;
+    public boolean q = true;
 
-    public t1(Context context, boolean z10) {
-        super(context);
-        List list = qg.m.a;
-        this.a = new aj0[list.size() + 2];
-        Paint paint = new Paint(1);
-        this.c = paint;
-        this.f = 1;
-        this.h = -1;
+    public t1(u1 u1Var) {
+        this.r = u1Var;
+        int i10 = u1Var.S;
+        u1Var.S = i10 + 1;
+        this.b = i10;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:38:0x00ab  */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x00d0  */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x00f6  */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x00dd  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void a(Canvas canvas, long j3, float f7) {
+        float f10;
+        float f11;
+        u1 u1Var = this.r;
+        boolean z10 = u1Var.G;
+        RectF rectF = u1Var.c;
+        float f12 = u1Var.A;
+        if (z10) {
+            int[] iArr = u1Var.E;
+            int i10 = this.l;
+            int i11 = iArr[i10];
+            float[] fArr = u1Var.D[i10];
+            int i12 = i11 * 2;
+            this.h = fArr[i12];
+            this.i = fArr[i12 + 1];
+            iArr[i10] = i11 + 1;
+        } else {
+            this.h = this.d;
+            this.i = this.e;
+        }
+        if (rectF.isEmpty() || !rectF.contains(this.h, this.i)) {
+            canvas.save();
+            canvas.translate(this.h, this.i);
+            float f13 = this.n;
+            if (f13 != 0.0f) {
+                canvas.rotate(f13, u1Var.d[this.l].getWidth() / 2.0f, u1Var.d[this.l].getHeight() / 2.0f);
+            }
+            if (u1Var.I) {
+                long j10 = this.a - j3;
+                if (j10 < 200) {
+                    f10 = Utilities.clamp(1.0f - (j10 / 150.0f), 1.0f, 0.0f);
+                    f11 = this.o;
+                    if (f11 >= 1.0f || zd.b != 1.0f) {
+                        float interpolation = AndroidUtilities.overshootInterpolator.getInterpolation(f11) * zd.b;
+                        canvas.scale(interpolation, interpolation, 0.0f, 0.0f);
+                    }
+                    if (u1Var.f[this.l]) {
+                        float min = (Math.min(u1Var.o, 3.5f) * (f12 / 1000.0f)) + this.p;
+                        this.p = min;
+                        canvas.scale((float) Math.cos(min * 3.141592653589793d), 1.0f, 0.0f, 0.0f);
+                    }
+                    Utilities.CallbackReturn callbackReturn = u1Var.l;
+                    Paint paint = callbackReturn == null ? (Paint) callbackReturn.run(Integer.valueOf(this.b)) : u1Var.i;
+                    float f14 = 1.0f - f10;
+                    paint.setAlpha((int) (this.m * f14 * f7));
+                    Bitmap bitmap = u1Var.d[this.l];
+                    if (u1Var.m) {
+                        float f15 = this.c * f14 * f7 * this.o;
+                        canvas.scale(f15, f15);
+                    }
+                    canvas.drawBitmap(bitmap, -(bitmap.getWidth() >> 1), -(bitmap.getHeight() >> 1), paint);
+                    canvas.restore();
+                }
+            }
+            f10 = 0.0f;
+            f11 = this.o;
+            if (f11 >= 1.0f) {
+            }
+            float interpolation2 = AndroidUtilities.overshootInterpolator.getInterpolation(f11) * zd.b;
+            canvas.scale(interpolation2, interpolation2, 0.0f, 0.0f);
+            if (u1Var.f[this.l]) {
+            }
+            Utilities.CallbackReturn callbackReturn2 = u1Var.l;
+            if (callbackReturn2 == null) {
+            }
+            float f142 = 1.0f - f10;
+            paint.setAlpha((int) (this.m * f142 * f7));
+            Bitmap bitmap2 = u1Var.d[this.l];
+            if (u1Var.m) {
+            }
+            canvas.drawBitmap(bitmap2, -(bitmap2.getWidth() >> 1), -(bitmap2.getHeight() >> 1), paint);
+            canvas.restore();
+        }
+        if (u1Var.g) {
+            return;
+        }
+        float dp = (f12 / 660.0f) * AndroidUtilities.dp(4.0f);
+        float min2 = u1Var.f[this.l] ? Math.min(u1Var.o, 3.5f) * 4.0f * dp : dp * u1Var.o;
+        this.d = (this.j * min2) + this.d;
+        this.e = (this.k * min2) + this.e;
+        float f16 = this.o;
+        if (f16 != 1.0f) {
+            float f17 = (f12 / 200.0f) + f16;
+            this.o = f17;
+            if (f17 > 1.0f) {
+                this.o = 1.0f;
+            }
+        }
+    }
+
+    public final void b(long j3) {
+        float f7;
+        float f10;
+        float f11;
+        int i10;
+        float f12;
+        float f13;
+        u1 u1Var = this.r;
+        int i11 = u1Var.N;
+        ArrayList arrayList = u1Var.n;
+        RectF rectF = u1Var.a;
+        int i12 = 0;
+        if (i11 == 28) {
+            if (Utilities.fastRandom.nextFloat() < 0.13f) {
+                this.l = 0;
+            } else {
+                this.l = (int) Math.floor((r2 * (u1Var.d.length - 2)) + 1.0f);
+            }
+        } else {
+            this.l = Math.abs(Utilities.fastRandom.nextInt() % u1Var.d.length);
+        }
+        this.a = j3 + u1Var.x + Utilities.fastRandom.nextInt(u1Var.y * (u1Var.f[this.l] ? 3 : 1));
         this.n = 0.0f;
-        setOrientation(0);
-        setGravity(16);
-        setWillNotDraw(false);
-        setClipToPadding(false);
-        paint.setColor(822083583);
-        this.d = list.size() - (!z10 ? 1 : 0);
-        int i10 = 0;
-        int i11 = 0;
-        while (true) {
-            List list2 = qg.m.a;
-            if (i10 >= list2.size() + 2) {
-                return;
+        if (u1Var.m) {
+            this.c = (Utilities.fastRandom.nextFloat() * 0.6f) + 0.4f;
+        }
+        if (u1Var.B) {
+            float abs = Math.abs(Utilities.fastRandom.nextInt() % rectF.width()) + rectF.left;
+            float abs2 = Math.abs(Utilities.fastRandom.nextInt() % rectF.height()) + rectF.top;
+            int i13 = 0;
+            float f14 = 0.0f;
+            while (i13 < 10) {
+                float abs3 = Math.abs(Utilities.fastRandom.nextInt() % rectF.width()) + rectF.left;
+                float abs4 = Math.abs(Utilities.fastRandom.nextInt() % rectF.height()) + rectF.top;
+                float f15 = 2.14748365E9f;
+                while (i12 < arrayList.size()) {
+                    if (u1Var.h) {
+                        f12 = ((t1) arrayList.get(i12)).f - abs3;
+                        f13 = ((t1) arrayList.get(i12)).g;
+                    } else {
+                        f12 = ((t1) arrayList.get(i12)).d - abs3;
+                        f13 = ((t1) arrayList.get(i12)).e;
+                    }
+                    float f16 = f13 - abs4;
+                    float f17 = (f16 * f16) + (f12 * f12);
+                    if (f17 < f15) {
+                        f15 = f17;
+                    }
+                    i12++;
+                }
+                if (f15 > f14) {
+                    abs2 = abs4;
+                    f14 = f15;
+                    abs = abs3;
+                }
+                i13++;
+                i12 = 0;
             }
-            aj0[] aj0VarArr = this.a;
-            boolean z11 = i10 == 0;
-            boolean z12 = i10 == list2.size() + 1;
-            aj0 aj0Var = new aj0(getContext());
-            aj0Var.setPadding(AndroidUtilities.dp(z11 ? 0.0f : 8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(z12 ? 0.0f : 8.0f), AndroidUtilities.dp(8.0f));
-            aj0Var.setLayoutParams(x5.l(1.0f, 0, 40));
-            aj0Var.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
-            aj0VarArr[i11] = aj0Var;
-            if (i10 == 0) {
-                final int i12 = 0;
-                this.a[i11].setOnClickListener(new View.OnClickListener(this) { // from class: rg.r1
-                    public final /* synthetic */ t1 b;
-
-                    {
-                        this.b = this;
-                    }
-
-                    @Override // android.view.View.OnClickListener
-                    public final void onClick(View view) {
-                        switch (i12) {
-                            case 0:
-                                this.b.b.a();
-                                break;
-                            default:
-                                this.b.b.A();
-                                break;
-                        }
-                    }
-                });
-            } else if (i10 > 0 && i10 <= list2.size()) {
-                qg.m mVar = (qg.m) list2.get(i10 - 1);
-                if (z10 || !(mVar instanceof qg.b)) {
-                    this.a[i11].f(mVar.e(), 28, 28, null);
-                    this.a[i11].setOnClickListener(new ua(this, i11, mVar, 18));
+            f7 = 0.6f;
+            f10 = 0.0f;
+            this.d = abs;
+            this.e = abs2;
+        } else {
+            f7 = 0.6f;
+            f10 = 0.0f;
+            if (u1Var.J) {
+                float width = rectF.width();
+                float f18 = u1Var.j;
+                float z10 = e2.z(width, f18, p6.c(Utilities.fastRandom, MediaDataController.MAX_STYLE_RUNS_COUNT) / 1000.0f, f18);
+                float c10 = p6.c(Utilities.fastRandom, 360);
+                if (!u1Var.f[this.l] || this.q) {
+                    f11 = 0.0f;
                 } else {
-                    i10++;
+                    z10 = Math.min(z10, AndroidUtilities.dp(10.0f));
+                    f11 = AndroidUtilities.dp(30.0f) + 0.0f;
                 }
-            } else if (i10 == list2.size() + 1) {
-                this.a[i11].setImageResource(R.drawable.msg_add);
-                final int i13 = 1;
-                this.a[i11].setOnClickListener(new View.OnClickListener(this) { // from class: rg.r1
-                    public final /* synthetic */ t1 b;
-
-                    {
-                        this.b = this;
-                    }
-
-                    @Override // android.view.View.OnClickListener
-                    public final void onClick(View view) {
-                        switch (i13) {
-                            case 0:
-                                this.b.b.a();
-                                break;
-                            default:
-                                this.b.b.A();
-                                break;
-                        }
-                    }
-                });
-            }
-            addView(this.a[i11]);
-            i11++;
-            i10++;
-        }
-    }
-
-    public final void a(int i10) {
-        if (i10 >= 0) {
-            aj0[] aj0VarArr = this.a;
-            if (i10 >= aj0VarArr.length) {
-                return;
-            }
-            if (this.r == null || this.h != i10) {
-                aj0 aj0Var = aj0VarArr[i10];
-                if (aj0Var != null) {
-                    Drawable drawable = aj0Var.getDrawable();
-                    if (drawable instanceof xi0) {
-                        xi0 xi0Var = (xi0) drawable;
-                        xi0Var.K(0);
-                        xi0Var.start();
-                    }
-                }
-                ValueAnimator valueAnimator = this.r;
-                if (valueAnimator != null) {
-                    valueAnimator.cancel();
-                }
-                if (this.f == i10) {
-                    return;
-                }
-                if (this.e) {
-                    this.e = false;
-                    AndroidUtilities.updateImageViewImageAnimated(aj0VarArr[this.d + 1], R.drawable.msg_add);
-                }
-                this.h = i10;
-                this.n = 0.0f;
-                ValueAnimator duration = ValueAnimator.ofFloat(0.0f, 1.0f).setDuration(250L);
-                this.r = duration;
-                duration.setInterpolator(pr.f);
-                this.r.addUpdateListener(new ki.a(this, 11));
-                this.r.addListener(new oj1(this, 5));
-                this.r.start();
+                double d = z10;
+                double d10 = c10;
+                this.d = rectF.centerX() + 0.0f + ((float) (Math.sin(Math.toRadians(d10)) * d));
+                this.e = rectF.centerY() + f11 + u1Var.k + ((float) (Math.cos(Math.toRadians(d10)) * d));
+            } else {
+                this.d = Math.abs(Utilities.fastRandom.nextInt() % rectF.width()) + rectF.left;
+                this.e = Math.abs(Utilities.fastRandom.nextInt() % rectF.height()) + rectF.top;
             }
         }
-    }
-
-    public final void b(int i10) {
-        a(i10);
-        this.b.x().i(i10 - 1, true);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        if (motionEvent.getAction() == 0 || motionEvent.getAction() == 2 || motionEvent.getAction() == 1) {
-            float x10 = motionEvent.getX();
-            motionEvent.getY();
-            for (int i10 = 1; i10 < getChildCount() - 1; i10++) {
-                View childAt = getChildAt(i10);
-                if (x10 >= childAt.getLeft() && x10 <= childAt.getRight()) {
-                    if (this.r != null) {
-                        if (this.h != i10) {
-                            a(i10);
-                            post(new org.telegram.ui.web.b(childAt, 20));
-                            return true;
-                        }
-                    } else if (this.f != i10) {
-                        a(i10);
-                        post(new org.telegram.ui.web.b(childAt, 20));
-                        return true;
-                    }
-                }
-            }
+        if (u1Var.f[this.l]) {
+            this.p = Math.abs(Utilities.fastRandom.nextFloat() * 2.0f);
         }
-        return super.dispatchTouchEvent(motionEvent);
-    }
-
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        int i10 = this.f;
-        aj0[] aj0VarArr = this.a;
-        aj0 aj0Var = aj0VarArr[i10];
-        int i11 = this.h;
-        aj0 aj0Var2 = i11 != -1 ? aj0VarArr[i11] : null;
-        float f7 = 0.0f;
-        float f10 = aj0Var2 != null ? this.n : 0.0f;
-        float f11 = 1.0f;
-        if (f10 > 0.25f && f10 < 0.75f) {
-            f11 = (f10 <= 0.25f || f10 >= 0.5f) ? org.telegram.messenger.w1.y(0.75f, f10, 0.25f, 1.0f) : (0.5f - f10) / 0.25f;
+        double radians = u1Var.f[this.l] ? Math.toRadians(280.0f - (Utilities.fastRandom.nextFloat() * 200.0f)) : u1Var.h ? Utilities.fastRandom.nextDouble() * 3.141592653589793d * 2.0d : Math.atan2(this.e - (rectF.centerY() + u1Var.k), this.d - (rectF.centerX() + f10));
+        this.j = (float) Math.cos(radians);
+        this.k = (float) Math.sin(radians);
+        if (u1Var.e[this.l]) {
+            this.m = (int) (((Utilities.fastRandom.nextInt(50) + 50) / 100.0f) * 120.0f);
+        } else {
+            this.m = (int) (((Utilities.fastRandom.nextInt(50) + 50) / 100.0f) * 255.0f);
         }
-        float dp = (AndroidUtilities.dp(3.0f) * f11) + (Math.min((aj0Var.getWidth() - aj0Var.getPaddingLeft()) - aj0Var.getPaddingRight(), (aj0Var.getHeight() - aj0Var.getPaddingTop()) - aj0Var.getPaddingBottom()) / 2.0f) + AndroidUtilities.dp(3.0f);
-        float width = (aj0Var.getWidth() / 2.0f) + aj0Var.getX();
-        int i12 = this.f;
-        int i13 = this.d;
-        float dp2 = (i12 == i13 + 1 ? AndroidUtilities.dp(4.0f) : 0.0f) + width;
-        float width2 = aj0Var2 != null ? (aj0Var2.getWidth() / 2.0f) + aj0Var2.getX() : 0.0f;
-        int i14 = this.h;
-        if (i14 != -1 && i14 == i13 + 1) {
-            f7 = AndroidUtilities.dp(4.0f);
+        int i14 = u1Var.N;
+        if ((i14 == 6 && ((i10 = this.l) == 1 || i10 == 2)) || i14 == 9 || i14 == 3 || i14 == 7 || i14 == 24 || i14 == 11 || i14 == 22 || i14 == 4) {
+            this.n = (int) (((Utilities.fastRandom.nextInt() % 100) / 100.0f) * 45.0f);
         }
-        canvas.drawCircle(AndroidUtilities.lerp(dp2, width2 + f7, f10), (aj0Var.getHeight() / 2.0f) + aj0Var.getY(), dp, this.c);
-    }
-
-    public void setDelegate(s1 s1Var) {
-        this.b = s1Var;
-    }
-
-    public void setSelectedIndex(int i10) {
-        this.f = i10;
-        if (this.e) {
-            this.e = false;
-            AndroidUtilities.updateImageViewImageAnimated(this.a[this.d + 1], R.drawable.msg_add);
+        if (u1Var.N != 101) {
+            this.o = 0.0f;
         }
-        invalidate();
+        if (u1Var.h) {
+            float min = (Math.min(rectF.width(), rectF.height()) * ((Utilities.fastRandom.nextFloat() * 1.2f) + f7)) / 2.0f;
+            float cos = (((float) Math.cos(radians)) * min) + rectF.centerX() + 0.0f;
+            this.d = cos;
+            this.f = cos;
+            float sin = (((float) Math.sin(radians)) * min) + rectF.centerY() + u1Var.k;
+            this.e = sin;
+            this.g = sin;
+        }
+        this.q = false;
     }
 }

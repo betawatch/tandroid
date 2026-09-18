@@ -8,7 +8,7 @@ import rd.p;
 import v7.t7;
 import zd.c0;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 final class zzew extends j implements p {
     Object zza;
@@ -56,8 +56,8 @@ final class zzew extends j implements p {
             try {
                 t7.b(obj);
                 zzc = obj;
-            } catch (Exception e7) {
-                e = e7;
+            } catch (Exception e) {
+                e = e;
                 zzcgVar = (zzcg) pVar2.a;
                 if (zzcgVar != null) {
                     throw zzfp.zzd(this.zzd, e);
@@ -71,8 +71,8 @@ final class zzew extends j implements p {
                 j3 = this.zzc;
                 zzevVar = new zzev(this.zze, this.zzd, this.zzf, pVar3, null);
                 pVar = pVar3;
-            } catch (Exception e10) {
-                e = e10;
+            } catch (Exception e7) {
+                e = e7;
                 pVar = pVar3;
             }
             try {
@@ -83,8 +83,8 @@ final class zzew extends j implements p {
                     return aVar;
                 }
                 pVar2 = pVar;
-            } catch (Exception e11) {
-                e = e11;
+            } catch (Exception e10) {
+                e = e10;
                 pVar2 = pVar;
                 zzcgVar = (zzcg) pVar2.a;
                 if (zzcgVar != null) {

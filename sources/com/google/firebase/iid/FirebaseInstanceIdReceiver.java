@@ -22,7 +22,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import v7.n6;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class FirebaseInstanceIdReceiver extends BroadcastReceiver {
     public static SoftReference a;
@@ -61,13 +61,13 @@ public final class FirebaseInstanceIdReceiver extends BroadcastReceiver {
         }
         try {
             i11 = ((Integer) Tasks.await(new j(context).b(intent))).intValue();
-        } catch (InterruptedException | ExecutionException e7) {
-            Log.e("FirebaseMessaging", "Failed to send message to service.", e7);
+        } catch (InterruptedException | ExecutionException e) {
+            Log.e("FirebaseMessaging", "Failed to send message to service.", e);
         }
         try {
             Tasks.await(m10, TimeUnit.SECONDS.toMillis(1L), TimeUnit.MILLISECONDS);
-        } catch (InterruptedException | ExecutionException | TimeoutException e10) {
-            Log.w("CloudMessagingReceiver", "Message ack failed: ".concat(e10.toString()));
+        } catch (InterruptedException | ExecutionException | TimeoutException e7) {
+            Log.w("CloudMessagingReceiver", "Message ack failed: ".concat(e7.toString()));
         }
         return i11;
     }

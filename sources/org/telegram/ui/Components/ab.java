@@ -1,28 +1,40 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
-/* loaded from: classes3.dex */
-public final class ab {
-    public boolean a;
-    public int b;
-    public boolean c;
-    public boolean d;
-    public boolean e;
-    public int f;
-    public org.telegram.ui.ActionBar.f6 g;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.text.Layout;
+import android.text.Spanned;
+import android.text.style.LeadingMarginSpan;
 
-    public ab(ab abVar) {
-        this.a = abVar.a;
-        this.b = abVar.b;
-        this.c = abVar.c;
-        this.d = abVar.d;
-        this.e = abVar.e;
-        this.f = abVar.f;
-        this.g = abVar.g;
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* loaded from: classes3.dex */
+public final class ab implements LeadingMarginSpan {
+    public final int a;
+    public final int b;
+
+    public ab(int i10, int i11) {
+        this.a = i10;
+        this.b = i11;
     }
 
-    public ab() {
-        this.b = 1;
-        this.f = 1;
+    @Override // android.text.style.LeadingMarginSpan
+    public final void drawLeadingMargin(Canvas canvas, Paint paint, int i10, int i11, int i12, int i13, int i14, CharSequence charSequence, int i15, int i16, boolean z10, Layout layout) {
+        if (((Spanned) charSequence).getSpanStart(this) == i15) {
+            Paint.Style style = paint.getStyle();
+            int color = paint.getColor();
+            paint.setColor(-11491093);
+            paint.setStyle(Paint.Style.FILL);
+            if (layout != null) {
+                i14 -= layout.getLineForOffset(i15) != layout.getLineCount() + (-1) ? (int) layout.getSpacingAdd() : 0;
+            }
+            canvas.drawCircle((i11 * r7) + i10, (i12 + i14) / 2.0f, this.b, paint);
+            paint.setColor(color);
+            paint.setStyle(style);
+        }
+    }
+
+    @Override // android.text.style.LeadingMarginSpan
+    public final int getLeadingMargin(boolean z10) {
+        return (this.b * 2) + this.a;
     }
 }

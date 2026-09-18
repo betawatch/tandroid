@@ -5,75 +5,75 @@ import android.text.TextUtils;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r implements Utilities.Callback {
     public final /* synthetic */ int a;
-    public final /* synthetic */ i4 b;
+    public final /* synthetic */ h4 b;
 
-    public /* synthetic */ r(i4 i4Var, int i10) {
+    public /* synthetic */ r(h4 h4Var, int i10) {
         this.a = i10;
-        this.b = i4Var;
+        this.b = h4Var;
     }
 
     @Override // org.telegram.messenger.Utilities.Callback
     public final void run(Object obj) {
         switch (this.a) {
             case 0:
-                i4 i4Var = this.b;
-                bi.g5 g5Var = i4Var.q0;
+                h4 h4Var = this.b;
+                ai.x5 x5Var = h4Var.q0;
                 float f7 = -((Integer) obj).intValue();
-                i4Var.p0 = f7;
-                g5Var.setTranslationY(((1.0f - i4Var.Y0) * AndroidUtilities.dp(51.0f)) + f7);
+                h4Var.p0 = f7;
+                x5Var.setTranslationY(((1.0f - h4Var.Y0) * AndroidUtilities.dp(51.0f)) + f7);
                 break;
             case 1:
                 String str = (String) obj;
                 if (!TextUtils.isEmpty(str)) {
-                    i4 i4Var2 = this.b;
-                    i4Var2.h0.b0.setText(str);
-                    gi.o oVar = i4Var2.h0.b0;
+                    h4 h4Var2 = this.b;
+                    h4Var2.h0.b0.setText(str);
+                    fi.o oVar = h4Var2.h0.b0;
                     oVar.setSelection(oVar.getText().length());
-                    AndroidUtilities.showKeyboard(i4Var2.h0.b0);
+                    AndroidUtilities.showKeyboard(h4Var2.h0.b0);
                     break;
                 }
                 break;
             case 2:
                 String str2 = (String) obj;
-                i4 i4Var3 = this.b;
-                if (i4Var3.L != null && str2 != null) {
-                    i4Var3.h0.k(false);
-                    if (!of.f.f(Uri.parse(str2), false, null)) {
-                        if (!of.f.l(i4Var3.L, str2, false)) {
-                            m3 m3Var = i4Var3.u0[0];
-                            if (m3Var != null && m3Var.getWebView() != null) {
-                                i4Var3.u0[0].getWebView().loadUrl(str2);
+                h4 h4Var3 = this.b;
+                if (h4Var3.L != null && str2 != null) {
+                    h4Var3.h0.k(false);
+                    if (!nf.f.f(Uri.parse(str2), false, null)) {
+                        if (!nf.f.l(h4Var3.L, str2, false)) {
+                            l3 l3Var = h4Var3.u0[0];
+                            if (l3Var != null && l3Var.getWebView() != null) {
+                                h4Var3.u0[0].getWebView().loadUrl(str2);
                                 break;
                             } else {
-                                of.f.n(str2);
+                                nf.f.n(str2);
                                 break;
                             }
                         }
                     } else {
-                        v3 v3Var = i4Var3.K;
-                        if (v3Var != null) {
-                            v3Var.dismiss(true);
+                        u3 u3Var = h4Var3.K;
+                        if (u3Var != null) {
+                            u3Var.dismiss(true);
                         }
-                        of.f.k(i4Var3.L, str2, false, false, null);
+                        nf.f.k(h4Var3.L, str2, false, false, null);
                         break;
                     }
                 }
                 break;
             default:
                 org.telegram.ui.web.e1 e1Var = (org.telegram.ui.web.e1) obj;
-                i4 i4Var4 = this.b;
-                if (i4Var4.L != null && e1Var != null) {
-                    i4Var4.h0.k(false);
-                    m3 m3Var2 = i4Var4.u0[0];
-                    if (m3Var2 != null && m3Var2.getWebView() != null) {
-                        i4Var4.u0[0].getWebView().e(e1Var.c, e1Var.d);
+                h4 h4Var4 = this.b;
+                if (h4Var4.L != null && e1Var != null) {
+                    h4Var4.h0.k(false);
+                    l3 l3Var2 = h4Var4.u0[0];
+                    if (l3Var2 != null && l3Var2.getWebView() != null) {
+                        h4Var4.u0[0].getWebView().e(e1Var.c, e1Var.d);
                         break;
                     } else {
-                        of.f.n(e1Var.c);
+                        nf.f.n(e1Var.c);
                         break;
                     }
                 }

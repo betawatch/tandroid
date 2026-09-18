@@ -18,10 +18,10 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import org.telegram.messenger.NotificationsController;
-import org.telegram.ui.Components.xy0;
+import org.telegram.ui.Components.bz0;
 import org.telegram.ui.Components.zy0;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class i0 implements j4.a0 {
     public int a;
@@ -52,7 +52,7 @@ public final class i0 implements j4.a0 {
         }
     }
 
-    public static void a(float[] fArr, int i10, float f7, float f10, float f11, float f12) {
+    public static void c(float[] fArr, int i10, float f7, float f10, float f11, float f12) {
         int i11 = i10 * 8;
         fArr[i11] = f7;
         fArr[i11 + 1] = f10;
@@ -71,7 +71,7 @@ public final class i0 implements j4.a0 {
     }
 
     @Override // j4.a0
-    public void b(e2.v vVar) {
+    public void a(e2.v vVar) {
         e2.b0 b0Var;
         e2.b0 b0Var2;
         SparseArray sparseArray;
@@ -112,7 +112,7 @@ public final class i0 implements j4.a0 {
                     j4.g0 a2 = fVar.a(21, new j6.l(21, null, 0, null, e2.d0.b));
                     d0Var.r = a2;
                     if (a2 != null) {
-                        a2.c(b0Var, d0Var.m, new j4.f0(D, 21, 8192));
+                        a2.b(b0Var, d0Var.m, new j4.f0(D, 21, 8192));
                     }
                 }
                 sparseArray2.clear();
@@ -269,7 +269,7 @@ public final class i0 implements j4.a0 {
                         if (g0Var != d0Var.r) {
                             i10 = i25;
                             b0Var2 = b0Var6;
-                            g0Var.c(b0Var2, d0Var.m, new j4.f0(i10, keyAt, 8192));
+                            g0Var.b(b0Var2, d0Var.m, new j4.f0(i10, keyAt, 8192));
                         } else {
                             b0Var2 = b0Var6;
                             i10 = i25;
@@ -291,7 +291,7 @@ public final class i0 implements j4.a0 {
                     if (d0Var.o) {
                         return;
                     }
-                    d0Var.m.Z0();
+                    d0Var.m.e1();
                     d0Var.n = 0;
                     d0Var.o = true;
                     return;
@@ -300,7 +300,7 @@ public final class i0 implements j4.a0 {
                 int i27 = i13 == 1 ? 0 : d0Var.n - 1;
                 d0Var.n = i27;
                 if (i27 == 0) {
-                    d0Var.m.Z0();
+                    d0Var.m.e1();
                     d0Var.o = true;
                 }
             }
@@ -322,12 +322,12 @@ public final class i0 implements j4.a0 {
             return;
         }
         iArr[i10] = 1;
-        for (xy0 xy0Var : ((xy0[][]) this.c)[i10]) {
-            f(xy0Var.a.b);
-            xy0[] xy0VarArr = (xy0[]) this.b;
+        for (zy0 zy0Var : ((zy0[][]) this.c)[i10]) {
+            f(zy0Var.a.b);
+            zy0[] zy0VarArr = (zy0[]) this.b;
             int i11 = this.a;
             this.a = i11 - 1;
-            xy0VarArr[i11] = xy0Var;
+            zy0VarArr[i11] = zy0Var;
         }
         iArr[i10] = 2;
     }
@@ -414,7 +414,7 @@ public final class i0 implements j4.a0 {
             bundle2.putBoolean("android.support.allowGeneratedReplies", z10);
             int i19 = Build.VERSION.SDK_INT;
             if (i19 >= 24) {
-                androidx.emoji2.text.x.h(builder, z10);
+                androidx.emoji2.text.v.h(builder, z10);
             }
             bundle2.putInt("android.support.action.semanticAction", i17);
             if (i19 >= 28) {
@@ -569,7 +569,7 @@ public final class i0 implements j4.a0 {
         int i26 = Build.VERSION.SDK_INT;
         if (i26 >= 24) {
             ((Notification.Builder) this.c).setExtras(tVar.v);
-            androidx.emoji2.text.x.i((Notification.Builder) this.c);
+            androidx.emoji2.text.v.i((Notification.Builder) this.c);
         }
         if (i26 >= 26) {
             c2.d.i((Notification.Builder) this.c);
@@ -630,14 +630,14 @@ public final class i0 implements j4.a0 {
     }
 
     @Override // j4.a0
-    public void c(e2.b0 b0Var, c3.q qVar, j4.f0 f0Var) {
+    public void b(e2.b0 b0Var, c3.q qVar, j4.f0 f0Var) {
     }
 
-    public i0(c3.z zVar, c3.j0 j0Var, byte[] bArr, ai.a[] aVarArr, int i10) {
+    public i0(c3.z zVar, c3.j0 j0Var, byte[] bArr, c3.k0[] k0VarArr, int i10) {
         this.b = zVar;
         this.c = j0Var;
         this.d = bArr;
-        this.e = aVarArr;
+        this.e = k0VarArr;
         this.a = i10;
     }
 
@@ -649,30 +649,30 @@ public final class i0 implements j4.a0 {
         this.a = i10;
     }
 
-    public i0(zy0 zy0Var, xy0[] xy0VarArr) {
-        this.e = zy0Var;
-        int length = xy0VarArr.length;
-        this.b = new xy0[length];
+    public i0(bz0 bz0Var, zy0[] zy0VarArr) {
+        this.e = bz0Var;
+        int length = zy0VarArr.length;
+        this.b = new zy0[length];
         this.a = length - 1;
-        int e7 = zy0Var.e() + 1;
-        xy0[][] xy0VarArr2 = new xy0[e7][];
-        int[] iArr = new int[e7];
-        for (xy0 xy0Var : xy0VarArr) {
-            int i10 = xy0Var.a.a;
+        int e = bz0Var.e() + 1;
+        zy0[][] zy0VarArr2 = new zy0[e][];
+        int[] iArr = new int[e];
+        for (zy0 zy0Var : zy0VarArr) {
+            int i10 = zy0Var.a.a;
             iArr[i10] = iArr[i10] + 1;
         }
-        for (int i11 = 0; i11 < e7; i11++) {
-            xy0VarArr2[i11] = new xy0[iArr[i11]];
+        for (int i11 = 0; i11 < e; i11++) {
+            zy0VarArr2[i11] = new zy0[iArr[i11]];
         }
         Arrays.fill(iArr, 0);
-        for (xy0 xy0Var2 : xy0VarArr) {
-            int i12 = xy0Var2.a.a;
-            xy0[] xy0VarArr3 = xy0VarArr2[i12];
+        for (zy0 zy0Var2 : zy0VarArr) {
+            int i12 = zy0Var2.a.a;
+            zy0[] zy0VarArr3 = zy0VarArr2[i12];
             int i13 = iArr[i12];
             iArr[i12] = i13 + 1;
-            xy0VarArr3[i13] = xy0Var2;
+            zy0VarArr3[i13] = zy0Var2;
         }
-        this.c = xy0VarArr2;
-        this.d = new int[((zy0) this.e).e() + 1];
+        this.c = zy0VarArr2;
+        this.d = new int[((bz0) this.e).e() + 1];
     }
 }

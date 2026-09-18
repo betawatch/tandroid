@@ -1,27 +1,28 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.view.ViewGroup;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class eg extends kz {
-    public final /* synthetic */ ChatActivityEnterView P2;
+public final class eg extends r41 {
+    public final /* synthetic */ fg h;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public eg(ChatActivityEnterView chatActivityEnterView, org.telegram.ui.ActionBar.n2 n2Var, boolean z10, Context context, TLRPC.ChatFull chatFull, ViewGroup viewGroup, boolean z11, org.telegram.ui.ActionBar.f6 f6Var, boolean z12, boolean z13) {
-        super(n2Var, z10, true, true, context, true, chatFull, viewGroup, z11, f6Var, z12, z13);
-        this.P2 = chatActivityEnterView;
+    public eg(fg fgVar, Context context, org.telegram.ui.ActionBar.o2 o2Var, f51 f51Var, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context, o2Var, f51Var, f6Var);
+        this.h = fgVar;
     }
 
-    @Override // org.telegram.ui.Components.kz, android.view.View
-    public final void setTranslationY(float f7) {
-        super.setTranslationY(f7);
-        ChatActivityEnterView chatActivityEnterView = this.P2;
-        if (chatActivityEnterView.V0 == null || chatActivityEnterView.n3 != 0) {
-            return;
+    @Override // org.telegram.ui.Components.r41, org.telegram.ui.ActionBar.g3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.k2
+    public final void dismiss() {
+        super.dismiss();
+        ChatActivityEnterView chatActivityEnterView = this.h.a;
+        if (chatActivityEnterView.Z2 == this) {
+            chatActivityEnterView.Z2 = null;
         }
-        chatActivityEnterView.Y2.x(f7);
+        mg mgVar = chatActivityEnterView.Y2;
+        if (mgVar != null) {
+            mgVar.B(false);
+        }
     }
 }

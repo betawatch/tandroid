@@ -1,48 +1,114 @@
 package yh;
 
-import android.content.Context;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import bi.z4;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.j6;
-import w7.b6;
-import w7.x5;
-import zh.j5;
-import zh.s5;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.LinearGradient;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.graphics.Shader;
+import android.graphics.drawable.Drawable;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
-/* loaded from: classes.dex */
-public final class p2 extends org.telegram.ui.ActionBar.f3 {
-    public long b;
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* loaded from: classes4.dex */
+public final class p2 extends Drawable {
+    public final Paint a;
+    public final LinearGradient[] b;
+    public final Matrix c;
+    public final org.telegram.ui.Components.c6 d;
+    public final Path e;
+    public final k8 f;
+    public int g;
+    public int h;
 
-    public p2(Context context, long j3, TL_stars.SavedStarGift savedStarGift, f6 f6Var, Utilities.Callback0Return callback0Return) {
-        super(1, context, f6Var, false);
-        this.b = 0L;
-        fixNavigationBar();
-        LinearLayout linearLayout = new LinearLayout(context);
-        linearLayout.setOrientation(1);
-        TextView b10 = b6.b(context, 20.0f, j6.G6, true, f6Var);
-        b10.setText(LocaleController.getString(R.string.Gift2UnpinAlertTitle));
-        linearLayout.addView(b10, x5.k(22.0f, 12.0f, 22.0f, 0.0f, -1, -2));
-        TextView b11 = b6.b(context, 14.0f, j6.y6, false, f6Var);
-        b11.setText(LocaleController.getString(R.string.Gift2UnpinAlertSubtitle));
-        linearLayout.addView(b11, x5.k(22.0f, 4.33f, 22.0f, 10.0f, -1, -2));
-        di.d dVar = new di.d(context, f6Var, true);
-        j5 G = s5.y(this.currentAccount, false).G(j3, true);
-        o2 o2Var = new o2(context, this.currentAccount, 0, false, new bi.f0(22, this, G), new sg.x(13, this, dVar), null, f6Var);
-        o2Var.setSpanCount(3);
-        o2Var.setOverScrollMode(2);
-        o2Var.setScrollEnabled(false);
-        linearLayout.addView(o2Var, x5.k(11.0f, 0.0f, 11.0f, 0.0f, -1, -2));
-        dVar.g(LocaleController.getString(R.string.Gift2UnpinAlertButton), false, true);
-        linearLayout.addView(dVar, x5.k(22.0f, 9.0f, 22.0f, 9.0f, -1, 48));
-        dVar.setEnabled(false);
-        dVar.setOnClickListener(new z4(this, G, savedStarGift, callback0Return, 16));
-        setCustomView(linearLayout);
+    public p2() {
+        Paint paint = new Paint(1);
+        Paint paint2 = new Paint(1);
+        this.a = new Paint(1);
+        this.b = new LinearGradient[2];
+        this.c = new Matrix();
+        this.d = new org.telegram.ui.Components.c6(1.0f, new rg.w1(this, 27), 0L, 420L, qr.h);
+        this.e = new Path();
+        this.f = new k8(1, 45);
+        Paint.Style style = Paint.Style.STROKE;
+        paint.setStyle(style);
+        paint.setColor(117440511);
+        paint.setStrokeWidth(AndroidUtilities.dpf2(1.0f));
+        paint2.setStyle(style);
+        paint2.setColor(301989887);
+        paint2.setStrokeWidth(AndroidUtilities.dpf2(0.6666667f));
+    }
+
+    public final void a(int i10, int i11) {
+        if (this.g == i10 && this.h == i11) {
+            return;
+        }
+        LinearGradient[] linearGradientArr = this.b;
+        linearGradientArr[0] = linearGradientArr[1];
+        this.g = i10;
+        this.h = i11;
+        linearGradientArr[1] = new LinearGradient(0.0f, 0.0f, 100.0f, 0.0f, new int[]{i10, i11}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
+        this.d.d(0.0f, true);
+        invalidateSelf();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        AndroidUtilities.rectTmp.set(getBounds());
+        float dp = AndroidUtilities.dp(24.0f);
+        int i10 = 0;
+        float d = this.d.d(1.0f, false);
+        while (true) {
+            LinearGradient[] linearGradientArr = this.b;
+            if (i10 >= linearGradientArr.length) {
+                Path path = this.e;
+                path.rewind();
+                RectF rectF = AndroidUtilities.rectTmp;
+                path.addRoundRect(rectF, dp, dp, Path.Direction.CW);
+                canvas.save();
+                canvas.clipPath(path);
+                k8 k8Var = this.f;
+                k8Var.g(rectF);
+                k8Var.h = 30.0f;
+                k8Var.d();
+                k8Var.a(canvas, org.telegram.ui.ActionBar.j6.l1(0.6f, -1));
+                invalidateSelf();
+                canvas.restore();
+                AndroidUtilities.drawStroke(canvas, rectF, dp);
+                return;
+            }
+            if (linearGradientArr[i10] != null) {
+                float pow = (float) Math.pow(1.0f - Math.abs(i10 - d), 0.5d);
+                if (pow > 0.0f) {
+                    Matrix matrix = this.c;
+                    matrix.reset();
+                    RectF rectF2 = AndroidUtilities.rectTmp;
+                    matrix.postScale(rectF2.width() / 100.0f, 1.0f);
+                    linearGradientArr[i10].setLocalMatrix(matrix);
+                    LinearGradient linearGradient = linearGradientArr[i10];
+                    Paint paint = this.a;
+                    paint.setShader(linearGradient);
+                    paint.setAlpha((int) (pow * 255.0f));
+                    canvas.drawRoundRect(rectF2, dp, dp, paint);
+                }
+            }
+            i10++;
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

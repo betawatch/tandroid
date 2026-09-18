@@ -1,88 +1,74 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.RectF;
+import android.os.Bundle;
 import android.view.View;
-import org.telegram.messenger.MessageObject;
+import android.widget.LinearLayout;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.SharedConfig;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class he1 implements org.telegram.ui.Components.ek0 {
-    public final /* synthetic */ co a;
-    public final /* synthetic */ MessageObject b;
-    public final /* synthetic */ org.telegram.ui.Components.fk0 c;
-    public final /* synthetic */ le1 d;
+public final class he1 implements View.OnClickListener {
+    public final /* synthetic */ hi0 a;
+    public final /* synthetic */ bo b;
+    public final /* synthetic */ org.telegram.ui.Components.ml0 c;
+    public final /* synthetic */ LinearLayout d;
+    public final /* synthetic */ org.telegram.ui.Components.n70 e;
+    public final /* synthetic */ org.telegram.ui.Components.n70 f;
+    public final /* synthetic */ me1 h;
 
-    public he1(le1 le1Var, co coVar, MessageObject messageObject, org.telegram.ui.Components.fk0 fk0Var) {
-        this.d = le1Var;
-        this.a = coVar;
-        this.b = messageObject;
-        this.c = fk0Var;
+    public he1(me1 me1Var, hi0 hi0Var, bo boVar, org.telegram.ui.Components.ml0 ml0Var, LinearLayout linearLayout, org.telegram.ui.Components.n70 n70Var, org.telegram.ui.Components.n70 n70Var2) {
+        this.h = me1Var;
+        this.a = hi0Var;
+        this.b = boVar;
+        this.c = ml0Var;
+        this.d = linearLayout;
+        this.e = n70Var;
+        this.f = n70Var2;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:9:0x005f  */
-    @Override // org.telegram.ui.Components.ek0
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void B(View view, ah.j1 j1Var, boolean z10, boolean z11) {
-        float f7;
-        ah.k1 k1Var;
-        ah.h1 l4;
-        float f10;
-        int i10;
-        float f11;
-        int id2 = this.b.getId();
-        co coVar = this.a;
-        org.telegram.ui.Cells.a0 q82 = coVar.q8(id2, true);
-        float f12 = 0.0f;
-        if (q82 instanceof org.telegram.ui.Cells.t1) {
-            ah.k1 k1Var2 = ((org.telegram.ui.Cells.t1) q82).N;
-            ah.h1 l10 = k1Var2.l(j1Var);
-            if (l10 == null) {
-                f11 = 0.0f;
-                f7 = f11;
-                coVar.ab(q82, this.b, this.c, view, f12, f7, j1Var, false, (j1Var == null && j1Var.a) ? true : z10, z11, false);
-                this.d.c(false);
-            }
-            f12 = k1Var2.c + l10.x + (l10.A / 2.0f);
-            f10 = k1Var2.d + l10.y;
-            i10 = l10.B;
-        } else if (!(q82 instanceof org.telegram.ui.Cells.w0) || (l4 = (k1Var = ((org.telegram.ui.Cells.w0) q82).C0).l(j1Var)) == null) {
-            f7 = 0.0f;
-            coVar.ab(q82, this.b, this.c, view, f12, f7, j1Var, false, (j1Var == null && j1Var.a) ? true : z10, z11, false);
-            this.d.c(false);
-        } else {
-            f12 = k1Var.c + l4.x + (l4.A / 2.0f);
-            f10 = k1Var.d + l4.y;
-            i10 = l4.B;
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        hi0 hi0Var = this.a;
+        ArrayList arrayList = hi0Var.b;
+        ArrayList arrayList2 = hi0Var.c;
+        if (arrayList2.isEmpty()) {
+            return;
         }
-        f11 = f10 + (i10 / 2.0f);
-        f7 = f11;
-        coVar.ab(q82, this.b, this.c, view, f12, f7, j1Var, false, (j1Var == null && j1Var.a) ? true : z10, z11, false);
-        this.d.c(false);
-    }
-
-    @Override // org.telegram.ui.Components.ek0
-    public final /* synthetic */ boolean S() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.ek0
-    public final /* synthetic */ boolean n() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.ek0
-    public final /* synthetic */ boolean t() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.ek0
-    public final /* synthetic */ void J() {
-    }
-
-    @Override // org.telegram.ui.Components.ek0
-    public final /* synthetic */ void I(Canvas canvas, RectF rectF, float f7, float f10, float f11, int i10, boolean z10) {
+        int size = arrayList2.size();
+        me1 me1Var = this.h;
+        bo boVar = this.b;
+        if (size == 1 && (arrayList.size() <= 0 || ((Integer) arrayList.get(0)).intValue() <= 0)) {
+            TLObject tLObject = (TLObject) arrayList2.get(0);
+            if (tLObject == null) {
+                return;
+            }
+            Bundle bundle = new Bundle();
+            if (tLObject instanceof TLRPC.User) {
+                bundle.putLong("user_id", ((TLRPC.User) tLObject).id);
+            } else if (tLObject instanceof TLRPC.Chat) {
+                bundle.putLong("chat_id", ((TLRPC.Chat) tLObject).id);
+            }
+            boVar.presentFragment(new ProfileActivity(bundle, null));
+            me1Var.c(false);
+            return;
+        }
+        if (SharedConfig.messageSeenHintCount > 0 && boVar.X0.getKeyboardHeight() < AndroidUtilities.dp(20.0f)) {
+            org.telegram.ui.Components.oc t10 = new org.telegram.ui.Components.vc(org.telegram.ui.Components.jb.a(me1Var.getContext()), me1Var.a).t(AndroidUtilities.replaceTags(LocaleController.getString(R.string.MessageSeenTooltipMessage)), null);
+            boVar.n1 = t10;
+            t10.j = 4000;
+            t10.j();
+            SharedConfig.updateMessageSeenHintCount(SharedConfig.messageSeenHintCount - 1);
+        }
+        org.telegram.ui.Components.ml0 ml0Var = this.c;
+        ml0Var.requestLayout();
+        this.d.requestLayout();
+        ml0Var.getAdapter().l();
+        this.e.K(this.f);
     }
 }

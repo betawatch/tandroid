@@ -1,44 +1,60 @@
 package org.telegram.ui.Components;
 
-import android.app.Activity;
-import android.content.Context;
-import android.view.ViewGroup;
+import android.animation.ValueAnimator;
 import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class vx0 extends kl0 {
-    public final Context c;
-    public final /* synthetic */ wx0 d;
+public final /* synthetic */ class vx0 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ com.google.firebase.messaging.n b;
+    public final /* synthetic */ int c;
 
-    public vx0(wx0 wx0Var, Activity activity) {
-        this.d = wx0Var;
-        this.c = activity;
+    public /* synthetic */ vx0(com.google.firebase.messaging.n nVar, int i10, int i11) {
+        this.a = i11;
+        this.b = nVar;
+        this.c = i10;
     }
 
-    @Override // org.telegram.ui.Components.kl0
-    public final boolean D(s4.c1 c1Var) {
-        return false;
-    }
-
-    @Override // s4.h0
-    public final int h() {
-        return this.d.c.size();
-    }
-
-    @Override // s4.h0
-    public final void v(s4.c1 c1Var, int i10) {
-        org.telegram.ui.Cells.w wVar = (org.telegram.ui.Cells.w) c1Var.a;
-        ArrayList arrayList = this.d.c;
-        wVar.b((TLRPC.StickerSetCovered) arrayList.get(i10), i10 != arrayList.size() - 1);
-    }
-
-    @Override // s4.h0
-    public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        org.telegram.ui.Cells.w wVar = new org.telegram.ui.Cells.w(this.c, false);
-        wVar.setLayoutParams(new s4.p0(-1, AndroidUtilities.dp(82.0f)));
-        return new vk0(wVar);
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                ArrayList arrayList = (ArrayList) this.b.d;
+                Float f7 = (Float) valueAnimator.getAnimatedValue();
+                f7.getClass();
+                arrayList.set(this.c, f7);
+                break;
+            case 1:
+                ArrayList arrayList2 = (ArrayList) this.b.e;
+                Float f10 = (Float) valueAnimator.getAnimatedValue();
+                f10.getClass();
+                arrayList2.set(this.c, f10);
+                break;
+            case 2:
+                ArrayList arrayList3 = (ArrayList) this.b.f;
+                Float f11 = (Float) valueAnimator.getAnimatedValue();
+                f11.getClass();
+                arrayList3.set(this.c, f11);
+                break;
+            case 3:
+                ArrayList arrayList4 = (ArrayList) this.b.d;
+                Float f12 = (Float) valueAnimator.getAnimatedValue();
+                f12.getClass();
+                arrayList4.set(this.c, f12);
+                break;
+            case 4:
+                ArrayList arrayList5 = (ArrayList) this.b.e;
+                Float f13 = (Float) valueAnimator.getAnimatedValue();
+                f13.getClass();
+                arrayList5.set(this.c, f13);
+                break;
+            default:
+                ArrayList arrayList6 = (ArrayList) this.b.f;
+                Float f14 = (Float) valueAnimator.getAnimatedValue();
+                f14.getClass();
+                arrayList6.set(this.c, f14);
+                break;
+        }
     }
 }

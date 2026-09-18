@@ -1,23 +1,48 @@
 package org.telegram.ui;
 
-import android.view.ViewGroup;
+import android.graphics.Canvas;
+import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class y30 extends s4.s0 {
-    public final /* synthetic */ j60 a;
+public final class y30 extends org.telegram.ui.Components.ml0 {
+    public final /* synthetic */ k60 X2;
 
-    public y30(j60 j60Var) {
-        this.a = j60Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public y30(k60 k60Var, LaunchActivity launchActivity) {
+        super(launchActivity, null);
+        this.X2 = k60Var;
     }
 
-    @Override // s4.s0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        ViewGroup viewGroup;
-        j60 j60Var = this.a;
-        viewGroup = ((org.telegram.ui.ActionBar.f3) j60Var).containerView;
-        viewGroup.invalidate();
-        j60Var.a2.invalidate();
+    @Override // org.telegram.ui.Components.ml0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j3) {
+        org.telegram.ui.Components.r20 r20Var = (org.telegram.ui.Components.r20) view;
+        k60 k60Var = this.X2;
+        q50 q50Var = k60Var.Q;
+        c40 c40Var = k60Var.a2;
+        if (c40Var.r == null && !k60Var.N2.k()) {
+            r20Var.setAlpha(1.0f);
+            r20Var.setTranslationX(0.0f);
+            r20Var.setTranslationY(0.0f);
+        }
+        y30 y30Var = k60Var.m2;
+        r20Var.getClass();
+        y30Var.getClass();
+        if (RecyclerView.S(r20Var) == -1 && r20Var.getRenderer() != null) {
+            return true;
+        }
+        if (r20Var.getTranslationY() == 0.0f || r20Var.getRenderer() == null || r20Var.getRenderer().c == null) {
+            return super.drawChild(canvas, view, j3);
+        }
+        float top = q50Var.getTop() - getTop();
+        float measuredHeight = q50Var.getMeasuredHeight() + top;
+        float f7 = c40Var.c;
+        canvas.save();
+        float f10 = 1.0f - f7;
+        canvas.clipRect(0.0f, top * f10, getMeasuredWidth(), (getMeasuredHeight() * f7) + (measuredHeight * f10));
+        boolean drawChild = super.drawChild(canvas, view, j3);
+        canvas.restore();
+        return drawChild;
     }
 }

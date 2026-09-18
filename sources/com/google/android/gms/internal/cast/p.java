@@ -19,9 +19,9 @@ import java.util.Locale;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.telegram.tgnet.ConnectionsManager;
-import v7.c8;
 import v7.d7;
 import v7.d8;
+import v7.e8;
 import v7.f9;
 import v7.h9;
 import v7.j9;
@@ -34,7 +34,7 @@ import z7.hb;
 import z7.we;
 import z7.wf;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class p implements Runnable {
     public final /* synthetic */ int a;
@@ -65,29 +65,29 @@ public final /* synthetic */ class p implements Runnable {
         a5.a aVar = (a5.a) this.c;
         v7.j6 j6Var = (v7.j6) this.d;
         String str2 = (String) this.e;
-        fg.f fVar = (fg.f) aVar.c;
+        ni.f fVar = (ni.f) aVar.c;
         fVar.b = j6Var;
-        d8 d8Var = (d8) fVar.a;
-        if (d8Var != null) {
-            str = d8Var.d;
+        e8 e8Var = (e8) fVar.a;
+        if (e8Var != null) {
+            str = e8Var.d;
             int i10 = d7.a;
             if (str != null) {
             }
         }
         str = "NA";
-        c8 c8Var = new c8();
-        c8Var.a = y8Var.a;
-        c8Var.b = y8Var.b;
+        d8 d8Var = new d8();
+        d8Var.a = y8Var.a;
+        d8Var.b = y8Var.b;
         synchronized (y8.class) {
             j9Var = y8.j;
             if (j9Var == null) {
-                n0.c a2 = w7.y.a(Resources.getSystem().getConfiguration());
+                n0.c a2 = w7.z.a(Resources.getSystem().getConfiguration());
                 Object[] objArr = new Object[4];
                 int i11 = 0;
                 int i12 = 0;
                 while (i11 < a2.a.size()) {
                     Locale locale = a2.a.get(i11);
-                    m2.u uVar = qb.c.a;
+                    lf.g gVar = qb.c.a;
                     String languageTag = locale.toLanguageTag();
                     languageTag.getClass();
                     int i13 = i12 + 1;
@@ -112,14 +112,14 @@ public final /* synthetic */ class p implements Runnable {
                 y8.j = j9Var;
             }
         }
-        c8Var.k = j9Var;
-        c8Var.g = Boolean.TRUE;
-        c8Var.d = str;
-        c8Var.c = str2;
-        c8Var.e = y8Var.f.isSuccessful() ? (String) y8Var.f.getResult() : y8Var.d.a();
-        c8Var.i = 10;
-        c8Var.j = Integer.valueOf(y8Var.h);
-        aVar.d = c8Var;
+        d8Var.k = j9Var;
+        d8Var.g = Boolean.TRUE;
+        d8Var.d = str;
+        d8Var.c = str2;
+        d8Var.e = y8Var.f.isSuccessful() ? (String) y8Var.f.getResult() : y8Var.d.a();
+        d8Var.i = 10;
+        d8Var.j = Integer.valueOf(y8Var.h);
+        aVar.d = d8Var;
         y8Var.c.a(aVar);
     }
 
@@ -147,19 +147,19 @@ public final /* synthetic */ class p implements Runnable {
             }
         }
         str = "NA";
-        c8 c8Var = new c8();
-        c8Var.a = faVar.a;
-        c8Var.b = faVar.b;
+        d8 d8Var = new d8();
+        d8Var.a = faVar.a;
+        d8Var.b = faVar.b;
         synchronized (fa.class) {
             sVar = fa.k;
             if (sVar == null) {
-                n0.c a2 = w7.y.a(Resources.getSystem().getConfiguration());
+                n0.c a2 = w7.z.a(Resources.getSystem().getConfiguration());
                 Object[] objArr = new Object[4];
                 int i11 = 0;
                 int i12 = 0;
                 while (i11 < a2.a.size()) {
                     Locale locale = a2.a.get(i11);
-                    m2.u uVar = qb.c.a;
+                    lf.g gVar = qb.c.a;
                     String languageTag = locale.toLanguageTag();
                     languageTag.getClass();
                     int i13 = i12 + 1;
@@ -184,20 +184,20 @@ public final /* synthetic */ class p implements Runnable {
                 fa.k = sVar;
             }
         }
-        c8Var.k = sVar;
-        c8Var.g = Boolean.TRUE;
-        c8Var.d = str;
-        c8Var.c = str2;
-        c8Var.e = faVar.f.isSuccessful() ? (String) faVar.f.getResult() : faVar.d.a();
-        c8Var.i = 10;
-        c8Var.j = Integer.valueOf(faVar.h);
-        aVar.d = c8Var;
+        d8Var.k = sVar;
+        d8Var.g = Boolean.TRUE;
+        d8Var.d = str;
+        d8Var.c = str2;
+        d8Var.e = faVar.f.isSuccessful() ? (String) faVar.f.getResult() : faVar.d.a();
+        d8Var.i = 10;
+        d8Var.j = Integer.valueOf(faVar.h);
+        aVar.d = d8Var;
         faVar.c.a(aVar);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:8:0x0033, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:8:0x0034, code lost:
     
-        if (r7.isEmpty() == false) goto L11;
+        if (r5.isEmpty() == false) goto L11;
      */
     @Override // java.lang.Runnable
     /*
@@ -209,7 +209,8 @@ public final /* synthetic */ class p implements Runnable {
         String str;
         z7.m mVar;
         c6.r rVar = null;
-        int i11 = 0;
+        int i11 = 2;
+        int i12 = 0;
         switch (this.a) {
             case 0:
                 q qVar = (q) this.b;
@@ -249,17 +250,17 @@ public final /* synthetic */ class p implements Runnable {
                 Iterator it = new HashSet(set).iterator();
                 while (it.hasNext()) {
                     a1 a1Var = (a1) it.next();
-                    int i12 = uVar.e;
+                    int i13 = uVar.e;
                     switch (a1Var.a) {
                         case 0:
-                            c1.j.b("onTransferring with type = %d", Integer.valueOf(i12));
+                            c1.j.b("onTransferring with type = %d", Integer.valueOf(i13));
                             c1 c1Var = (c1) a1Var.b;
                             c1Var.i = true;
                             c1Var.c();
                             t1 b10 = c1Var.c.b(c1Var.g);
                             o1 m10 = p1.m(b10.d());
                             m10.c();
-                            p1.v((p1) m10.b, i12);
+                            p1.v((p1) m10.b, i13);
                             b10.e((p1) m10.a());
                             c1Var.a.a((u1) b10.a(), 230);
                             break;
@@ -267,11 +268,11 @@ public final /* synthetic */ class p implements Runnable {
                             a5.a aVar = new a5.a(10, 2);
                             cf.c cVar = (cf.c) a1Var.b;
                             aVar.d = Boolean.valueOf(((d) cVar.b).d == 2);
-                            cf.c.y(cVar, new y6(aVar));
-                            x6 A = cVar.A();
-                            b bVar2 = new b(new a(i12));
-                            bVar2.c = A.h;
-                            A.c.add(bVar2);
+                            cf.c.E(cVar, new y6(aVar));
+                            x6 F = cVar.F();
+                            b bVar2 = new b(new a(i13));
+                            bVar2.c = F.h;
+                            F.c.add(bVar2);
                             break;
                     }
                 }
@@ -281,16 +282,16 @@ public final /* synthetic */ class p implements Runnable {
                     a2.g = new TaskCompletionSource();
                     e6.h.k.b("create SessionState with cached mediaInfo and mediaStatus", new Object[0]);
                     MediaInfo d = a2.d();
-                    c6.q e7 = a2.e();
-                    if (d != null && e7 != null) {
+                    c6.q e = a2.e();
+                    if (d != null && e != null) {
                         Boolean bool = Boolean.TRUE;
                         long a10 = a2.a();
-                        c6.n nVar = e7.L;
-                        double d10 = e7.d;
+                        c6.n nVar = e.L;
+                        double d10 = e.d;
                         if (Double.compare(d10, 2.0d) > 0 || Double.compare(d10, 0.5d) < 0) {
                             throw new IllegalArgumentException("playbackRate must be between PLAYBACK_RATE_MIN and PLAYBACK_RATE_MAX");
                         }
-                        rVar = new c6.r(new c6.k(d, nVar, bool, a10, d10, e7.v, e7.E, null, null, null, null, 0L), null);
+                        rVar = new c6.r(new c6.k(d, nVar, bool, a10, d10, e.v, e.E, null, null, null, null, 0L), null);
                     }
                     if (rVar != null) {
                         a2.g.setResult(rVar);
@@ -309,24 +310,24 @@ public final /* synthetic */ class p implements Runnable {
                 c0Var.postDelayed(tVar, 10000L);
                 return;
             case 1:
-                l.f fVar = (l.f) ((l.d) this.e).b;
-                l.n nVar2 = (l.n) this.c;
-                l.e eVar = (l.e) this.b;
-                if (eVar != null) {
-                    fVar.P = true;
-                    eVar.b.c(false);
-                    fVar.P = false;
+                l.e eVar = (l.e) ((k2.u) this.e).b;
+                l.m mVar2 = (l.m) this.c;
+                l.d dVar = (l.d) this.b;
+                if (dVar != null) {
+                    eVar.P = true;
+                    dVar.b.c(false);
+                    eVar.P = false;
                 }
-                if (nVar2.isEnabled() && nVar2.hasSubMenu()) {
-                    ((l.l) this.d).q(nVar2, null, 4);
+                if (mVar2.isEnabled() && mVar2.hasSubMenu()) {
+                    ((l.k) this.d).q(mVar2, null, 4);
                     return;
                 }
                 return;
             case 2:
-                ((l.d) this.b).u((p4.p) this.e, (p4.m) this.c, (Collection) this.d);
+                ((k2.c0) this.b).n((p4.p) this.e, (p4.m) this.c, (Collection) this.d);
                 return;
             case 3:
-                ((l.d) this.b).u((p4.p) this.e, (p4.m) this.c, (ArrayList) this.d);
+                ((k2.c0) this.b).n((p4.p) this.e, (p4.m) this.c, (ArrayList) this.d);
                 return;
             case 4:
                 r0.q0.h((View) this.b, (r0.v0) this.c, (o0.a) this.d);
@@ -335,12 +336,12 @@ public final /* synthetic */ class p implements Runnable {
             case 5:
                 Handler handler = (Handler) this.b;
                 if (((AtomicBoolean) this.e).compareAndSet(false, true)) {
-                    handler.removeCallbacks((org.telegram.ui.web.g1) this.d);
+                    handler.removeCallbacks((p2.b) this.d);
                     if (Looper.myLooper() == handler.getLooper()) {
-                        ((sf.b) this.c).a(false);
+                        ((rf.b) this.c).a(false);
                         return;
                     } else {
-                        handler.post(new sg.p0(this, 5));
+                        handler.post(new rg.w1(this, i11));
                         return;
                     }
                 }
@@ -361,55 +362,55 @@ public final /* synthetic */ class p implements Runnable {
                 we weVar = (we) p3Var.a;
                 if (weVar != null) {
                     str = weVar.d;
-                    int i13 = z7.l4.a;
+                    int i14 = z7.l4.a;
                     if (str != null) {
                         break;
                     }
                 }
                 str = "NA";
-                c8 c8Var = new c8();
-                c8Var.a = wfVar.a;
-                c8Var.b = wfVar.b;
+                d8 d8Var = new d8();
+                d8Var.a = wfVar.a;
+                d8Var.b = wfVar.b;
                 synchronized (wf.class) {
                     mVar = wf.k;
                     if (mVar == null) {
-                        n0.c a11 = w7.y.a(Resources.getSystem().getConfiguration());
+                        n0.c a11 = w7.z.a(Resources.getSystem().getConfiguration());
                         Object[] objArr = new Object[4];
-                        int i14 = 0;
-                        while (i11 < a11.a.size()) {
-                            Locale locale = a11.a.get(i11);
-                            m2.u uVar2 = qb.c.a;
+                        int i15 = 0;
+                        while (i12 < a11.a.size()) {
+                            Locale locale = a11.a.get(i12);
+                            lf.g gVar = qb.c.a;
                             String languageTag = locale.toLanguageTag();
                             languageTag.getClass();
-                            int i15 = i14 + 1;
+                            int i16 = i15 + 1;
                             int length = objArr.length;
-                            if (length < i15) {
-                                int i16 = length + (length >> 1) + 1;
-                                if (i16 < i15) {
-                                    int highestOneBit = Integer.highestOneBit(i14);
-                                    i16 = highestOneBit + highestOneBit;
+                            if (length < i16) {
+                                int i17 = length + (length >> 1) + 1;
+                                if (i17 < i16) {
+                                    int highestOneBit = Integer.highestOneBit(i15);
+                                    i17 = highestOneBit + highestOneBit;
                                 }
-                                if (i16 < 0) {
-                                    i16 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                                if (i17 < 0) {
+                                    i17 = ConnectionsManager.DEFAULT_DATACENTER_ID;
                                 }
-                                objArr = Arrays.copyOf(objArr, i16);
+                                objArr = Arrays.copyOf(objArr, i17);
                             }
-                            objArr[i14] = languageTag;
-                            i11++;
-                            i14 = i15;
+                            objArr[i15] = languageTag;
+                            i12++;
+                            i15 = i16;
                         }
-                        mVar = z7.i.r(i14, objArr);
+                        mVar = z7.i.r(i15, objArr);
                         wf.k = mVar;
                     }
                 }
-                c8Var.k = mVar;
-                c8Var.g = Boolean.TRUE;
-                c8Var.d = str;
-                c8Var.c = str2;
-                c8Var.e = wfVar.f.isSuccessful() ? (String) wfVar.f.getResult() : wfVar.d.a();
-                c8Var.i = 10;
-                c8Var.j = Integer.valueOf(wfVar.h);
-                aVar2.d = c8Var;
+                d8Var.k = mVar;
+                d8Var.g = Boolean.TRUE;
+                d8Var.d = str;
+                d8Var.c = str2;
+                d8Var.e = wfVar.f.isSuccessful() ? (String) wfVar.f.getResult() : wfVar.d.a();
+                d8Var.i = 10;
+                d8Var.j = Integer.valueOf(wfVar.h);
+                aVar2.d = d8Var;
                 wfVar.c.a(aVar2);
                 return;
         }
@@ -423,15 +424,15 @@ public final /* synthetic */ class p implements Runnable {
         this.d = obj4;
     }
 
-    public p(Handler handler, sf.b bVar, long j3) {
+    public p(Handler handler, rf.b bVar, long j3) {
         this.a = 5;
         this.e = new AtomicBoolean(false);
         this.b = handler;
         this.c = bVar;
-        org.telegram.ui.web.g1 g1Var = new org.telegram.ui.web.g1(22, this, bVar);
-        this.d = g1Var;
+        p2.b bVar2 = new p2.b(16, this, bVar);
+        this.d = bVar2;
         if (j3 > 0) {
-            handler.postDelayed(g1Var, j3);
+            handler.postDelayed(bVar2, j3);
         }
     }
 }

@@ -2,16 +2,16 @@ package org.telegram.ui.Components;
 
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class rm implements Utilities.Callback {
     public final /* synthetic */ int a;
-    public final /* synthetic */ tn b;
+    public final /* synthetic */ un b;
     public final /* synthetic */ int c;
 
-    public /* synthetic */ rm(tn tnVar, int i10, int i11) {
+    public /* synthetic */ rm(un unVar, int i10, int i11) {
         this.a = i11;
-        this.b = tnVar;
+        this.b = unVar;
         this.c = i10;
     }
 
@@ -19,12 +19,12 @@ public final /* synthetic */ class rm implements Utilities.Callback {
     public final void run(Object obj) {
         switch (this.a) {
             case 0:
-                this.b.e0(this.c, (rh.e) obj);
+                this.b.e0(this.c, (qh.e) obj);
                 break;
             default:
-                tn tnVar = this.b;
-                tnVar.getClass();
-                tnVar.e0(this.c, new sh.e((String) obj));
+                un unVar = this.b;
+                unVar.getClass();
+                unVar.e0(this.c, new rh.e((String) obj));
                 break;
         }
     }

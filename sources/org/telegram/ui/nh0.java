@@ -1,32 +1,37 @@
 package org.telegram.ui;
 
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class nh0 implements Runnable {
-    public final /* synthetic */ yh0 a;
+public final /* synthetic */ class nh0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ai0 b;
+    public final /* synthetic */ TLRPC.TL_chatInviteExported c;
+    public final /* synthetic */ TLRPC.TL_error d;
+    public final /* synthetic */ TLObject e;
+    public final /* synthetic */ boolean f;
 
-    public nh0(yh0 yh0Var) {
-        this.a = yh0Var;
+    public /* synthetic */ nh0(ai0 ai0Var, TLRPC.TL_chatInviteExported tL_chatInviteExported, TLRPC.TL_error tL_error, TLObject tLObject, boolean z10, int i10) {
+        this.a = i10;
+        this.b = ai0Var;
+        this.c = tL_chatInviteExported;
+        this.d = tL_error;
+        this.e = tLObject;
+        this.f = z10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        yh0 yh0Var = this.a;
-        if (yh0Var.b == null) {
-            return;
+        switch (this.a) {
+            case 0:
+                ai0 ai0Var = this.b;
+                ai0Var.getNotificationCenter().doOnIdle(new nh0(ai0Var, this.c, this.d, this.e, this.f, 1));
+                break;
+            default:
+                ai0.U(this.b, this.c, this.d, this.e, this.f);
+                break;
         }
-        for (int i10 = 0; i10 < yh0Var.b.getChildCount(); i10++) {
-            View childAt = yh0Var.b.getChildAt(i10);
-            if (childAt instanceof vh0) {
-                vh0 vh0Var = (vh0) childAt;
-                if (vh0Var.I) {
-                    vh0Var.b(vh0Var.n, vh0Var.r);
-                }
-            }
-        }
-        AndroidUtilities.runOnUIThread(this, 500L);
     }
 }

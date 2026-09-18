@@ -1,26 +1,53 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class si extends org.telegram.ui.Components.io {
-    public final /* synthetic */ co M;
+public final class si extends org.telegram.ui.ActionBar.o1 {
+    public final /* synthetic */ org.telegram.ui.Components.gk0 o;
+    public final /* synthetic */ bo p;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public si(co coVar, Activity activity, int i10, TLRPC.Document document, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(activity, i10, document, f6Var);
-        this.M = coVar;
+    public si(bo boVar, fb fbVar, org.telegram.ui.Components.gk0 gk0Var) {
+        super(fbVar, -2, -2);
+        this.p = boVar;
+        this.o = gk0Var;
     }
 
-    @Override // android.widget.LinearLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        float y3 = getY();
-        co coVar = this.M;
-        float y10 = coVar.R0.getY() + y3;
-        this.J = coVar.X0.getBackgroundSizeY();
-        this.I = y10;
+    @Override // org.telegram.ui.ActionBar.o1
+    public final void d(boolean z10) {
+        super.d(true);
+        org.telegram.ui.Components.gk0 gk0Var = this.o;
+        if (gk0Var != null) {
+            gk0Var.d();
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.o1, android.widget.PopupWindow
+    public final void dismiss() {
+        d(true);
+        bo boVar = this.p;
+        if (boVar.Q8 != this) {
+            return;
+        }
+        org.telegram.ui.Components.oc ocVar = org.telegram.ui.Components.oc.w;
+        org.telegram.ui.Components.oc ocVar2 = boVar.n1;
+        if (ocVar == ocVar2 && ocVar2 != null) {
+            ocVar2.b();
+            boVar.n1 = null;
+        }
+        boVar.Q8 = null;
+        boVar.T8 = null;
+        boVar.S8 = null;
+        boVar.z0.R = true;
+        if (boVar.R8) {
+            boVar.g8(false, true, 0.0f);
+        } else {
+            boVar.R8 = true;
+        }
+        nk nkVar = boVar.Y;
+        if (nkVar == null || nkVar.getEditField() == null) {
+            return;
+        }
+        boVar.Y.getEditField().setAllowDrawCursor(true);
     }
 }

@@ -1,42 +1,25 @@
 package p2;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
-/* loaded from: classes.dex */
-public abstract class j implements Comparable {
-    public final String a;
-    public final i b;
-    public final long c;
-    public final int d;
-    public final long e;
-    public final b2.o f;
-    public final String h;
-    public final String n;
-    public final long r;
-    public final long s;
-    public final boolean v;
+import e9.a1;
+import e9.g0;
+import e9.i0;
+import java.util.List;
 
-    public j(String str, i iVar, long j3, int i10, long j10, b2.o oVar, String str2, String str3, long j11, long j12, boolean z10) {
-        this.a = str;
-        this.b = iVar;
-        this.c = j3;
-        this.d = i10;
-        this.e = j10;
-        this.f = oVar;
-        this.h = str2;
-        this.n = str3;
-        this.r = j11;
-        this.s = j12;
-        this.v = z10;
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* loaded from: classes.dex */
+public final class j extends k {
+    public final String w;
+    public final i0 x;
+
+    /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
+    public j(String str, long j3, long j10, String str2, String str3) {
+        this(str, null, "", 0L, -1, -9223372036854775807L, null, str2, str3, j3, j10, false, a1.e);
+        g0 g0Var = i0.b;
     }
 
-    @Override // java.lang.Comparable
-    public final int compareTo(Object obj) {
-        Long l4 = (Long) obj;
-        long longValue = l4.longValue();
-        long j3 = this.e;
-        if (j3 > longValue) {
-            return 1;
-        }
-        return j3 < l4.longValue() ? -1 : 0;
+    public j(String str, j jVar, String str2, long j3, int i10, long j10, b2.o oVar, String str3, String str4, long j11, long j12, boolean z10, List list) {
+        super(str, jVar, j3, i10, j10, oVar, str3, str4, j11, j12, z10);
+        this.w = str2;
+        this.x = i0.v(list);
     }
 }

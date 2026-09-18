@@ -1,7 +1,7 @@
 package org.telegram.messenger.voip;
 
 import android.text.TextUtils;
-import di.m2;
+import ci.m2;
 import java.io.File;
 import java.util.HashMap;
 import org.telegram.messenger.AndroidUtilities;
@@ -14,15 +14,15 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
-import org.telegram.ui.Components.voip.d2;
+import org.telegram.ui.Components.voip.f2;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public class VoIPDebugToSend {
     private final int currentAccount;
     private final HashMap<Long, Data> pending = new HashMap<>();
 
-    /* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+    /* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
     public final class Data {
         long access_hash;
         long callId;
@@ -90,9 +90,9 @@ public class VoIPDebugToSend {
     public void push(long j3, long j10, Instance.FinalState finalState, String str) {
         if (TextUtils.isEmpty(finalState.debugLog)) {
             try {
-                finalState.debugLog = VoIPService.getStringFromFile(d2.e("" + j3, true));
-            } catch (Exception e7) {
-                e7.printStackTrace();
+                finalState.debugLog = VoIPService.getStringFromFile(f2.e("" + j3, true));
+            } catch (Exception e) {
+                e.printStackTrace();
             }
         }
         Data data = new Data();

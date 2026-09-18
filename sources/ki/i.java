@@ -1,44 +1,104 @@
 package ki;
 
-import android.animation.ValueAnimator;
+import ai.r;
+import android.graphics.RectF;
 import android.view.View;
-import org.telegram.ui.Cells.bb;
-import org.telegram.ui.Cells.h0;
+import java.util.ArrayList;
+import org.telegram.messenger.R;
+import org.telegram.ui.Components.ml0;
+import org.telegram.ui.Components.mt;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes4.dex */
-public final class i implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ o c;
-    public final /* synthetic */ View d;
+public final class i {
+    public f a;
+    public long e;
+    public long f;
+    public long g;
+    public View h;
+    public long j;
+    public long k;
+    public long l;
+    public int n;
+    public int o;
+    public final c b = new c(this);
+    public final ArrayList c = new ArrayList();
+    public li.b d = li.b.c;
+    public final ArrayList i = new ArrayList();
+    public final RectF m = new RectF();
+    public final li.a p = new li.a();
+    public final li.a q = new li.a();
+    public final li.a r = new li.a();
+    public final ArrayList s = new ArrayList();
 
-    public /* synthetic */ i(o oVar, View view, float f7, int i10) {
-        this.a = i10;
-        this.c = oVar;
-        this.d = view;
-        this.b = f7;
+    public final void a(ml0 ml0Var) {
+        if (ml0Var == null) {
+            return;
+        }
+        ml0Var.E2.b.add(new mt() { // from class: ki.d
+            @Override // org.telegram.ui.Components.mt
+            public final void a(int i10, boolean z10) {
+                i.this.f++;
+            }
+        });
+        ml0Var.j(new r(this, 12));
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                o oVar = this.c;
-                float measuredHeight = ((oVar.G.getMeasuredHeight() - oVar.F.s9) - r2.Aa) / 2.0f;
-                h0 h0Var = (h0) this.d;
-                float measuredHeight2 = (measuredHeight - (h0Var.getMeasuredHeight() / 2.0f)) + oVar.F.s9;
-                h0Var.setTranslationY(((((float) h0Var.getTop()) > measuredHeight2 ? measuredHeight2 - h0Var.getTop() : 0.0f) * floatValue) + ((1.0f - floatValue) * this.b));
-                break;
-            default:
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                o oVar2 = this.c;
-                float measuredHeight3 = ((oVar2.G.getMeasuredHeight() - oVar2.F.s9) - r2.Aa) / 2.0f;
-                bb bbVar = (bb) this.d;
-                float measuredHeight4 = (measuredHeight3 - (bbVar.getMeasuredHeight() / 2.0f)) + oVar2.F.s9;
-                bbVar.setTranslationY(((((float) bbVar.getTop()) > measuredHeight4 ? measuredHeight4 - bbVar.getTop() : 0.0f) * floatValue2) + ((1.0f - floatValue2) * this.b));
-                break;
+    public final li.a b() {
+        li.a aVar = this.r;
+        li.a aVar2 = this.q;
+        if (aVar == aVar2) {
+            aVar.getClass();
+            return aVar;
+        }
+        aVar.b = 0;
+        int i10 = aVar2.b;
+        for (int i11 = 0; i11 < i10; i11++) {
+            RectF rectF = (RectF) aVar2.a.get(i11);
+            aVar.a(rectF.left, rectF.top, rectF.right, rectF.bottom);
+        }
+        return aVar;
+    }
+
+    public final void c(View view) {
+        tf.b a2;
+        tf.d dVar;
+        View view2 = this.h;
+        if (view2 != view) {
+            c cVar = this.b;
+            if (view2 != null && (dVar = (tf.d) view2.getTag(R.id.tag_view_on_post_draw_state)) != null) {
+                ArrayList arrayList = dVar.a;
+                if (arrayList.remove(cVar)) {
+                    tf.b bVar = dVar.b;
+                    if (bVar != null) {
+                        ((pe.b) bVar.a.b).remove(cVar);
+                    }
+                    if (arrayList.isEmpty()) {
+                        dVar.b = null;
+                        view2.removeOnAttachStateChangeListener(dVar.c);
+                        view2.setTag(R.id.tag_view_on_post_draw_state, null);
+                    }
+                }
+            }
+            if (view != null) {
+                if (view.isAttachedToWindow() && view == view.getRootView()) {
+                    throw new IllegalArgumentException("Cannot add OnPostDrawListener to root view");
+                }
+                tf.d dVar2 = (tf.d) view.getTag(R.id.tag_view_on_post_draw_state);
+                if (dVar2 == null) {
+                    dVar2 = new tf.d();
+                    view.setTag(R.id.tag_view_on_post_draw_state, dVar2);
+                    view.addOnAttachStateChangeListener(dVar2.c);
+                }
+                ArrayList arrayList2 = dVar2.a;
+                if (!arrayList2.contains(cVar)) {
+                    arrayList2.add(cVar);
+                    if (view.isAttachedToWindow() && (a2 = tf.e.a(view, dVar2)) != null) {
+                        ((pe.b) a2.a.b).add(cVar);
+                    }
+                }
+            }
+            this.h = view;
         }
     }
 }

@@ -1,58 +1,120 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import java.util.ArrayList;
+import java.util.HashMap;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.VideoEditedInfo;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class dv0 extends org.telegram.ui.Components.x50 {
-    public final /* synthetic */ ev0 d;
+public interface dv0 {
+    boolean A();
 
-    public dv0(ev0 ev0Var) {
-        this.d = ev0Var;
-    }
+    void B(int i10);
 
-    @Override // org.telegram.ui.Components.co0
-    public final CharSequence d() {
-        StringBuilder sb2 = new StringBuilder();
-        sb2.append(LocaleController.getString("AccDescrVideoQuality", R.string.AccDescrVideoQuality));
-        if (this.d.s.Y7 > 0) {
-            sb2.append(", ");
-            sb2.append(this.d.s.X7 + 1);
-            sb2.append(" / ");
-            sb2.append(this.d.s.Y7);
-        }
-        sb2.append(", ");
-        sb2.append(this.d.h);
-        sb2.append(" – ");
-        sb2.append(this.d.n);
-        return sb2.toString();
-    }
+    CharSequence C(int i10);
 
-    @Override // org.telegram.ui.Components.x50
-    public final int i() {
-        return Math.max(0, this.d.s.Y7 - 1);
-    }
+    void D();
 
-    @Override // org.telegram.ui.Components.x50
-    public final int j() {
-        return this.d.s.X7;
-    }
+    fv0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11);
 
-    @Override // org.telegram.ui.Components.x50
-    public final void k(int i10) {
-        int max;
-        if (this.d.s.Y7 > 0 && (max = Math.max(0, Math.min(this.d.s.Y7 - 1, i10))) != this.d.s.X7) {
-            ev0 ev0Var = this.d;
-            ev0Var.r = ev0Var.s.X7;
-            this.d.s.X7 = max;
-            this.d.s.R0();
-            this.d.invalidate();
-            int i11 = this.d.s.X7;
-            ev0 ev0Var2 = this.d;
-            if (i11 != ev0Var2.r) {
-                ev0Var2.s.p2(1);
-            }
-        }
-    }
+    void F(boolean z10);
+
+    void G();
+
+    int H();
+
+    void I();
+
+    boolean J();
+
+    boolean K();
+
+    void L(VideoEditedInfo videoEditedInfo);
+
+    boolean M();
+
+    boolean N();
+
+    boolean O();
+
+    boolean P();
+
+    int Q(Object obj);
+
+    int R(int i10);
+
+    boolean S();
+
+    boolean T();
+
+    MessageObject U();
+
+    void V();
+
+    void W(int i10);
+
+    void X(int i10);
+
+    boolean Y();
+
+    void Z(int i10);
+
+    long a();
+
+    String a0();
+
+    boolean b();
+
+    CharSequence b0(int i10);
+
+    ArrayList c();
+
+    void d();
+
+    void e(CharSequence charSequence);
+
+    void f(String str, String str2, boolean z10);
+
+    boolean g();
+
+    boolean h();
+
+    void i();
+
+    ImageReceiver.BitmapHolder j(int i10);
+
+    int k(int i10, VideoEditedInfo videoEditedInfo);
+
+    boolean l();
+
+    void m();
+
+    void n();
+
+    void o(int i10, VideoEditedInfo videoEditedInfo, boolean z10, int i11, int i12, boolean z11);
+
+    boolean p();
+
+    boolean q();
+
+    boolean r();
+
+    void s();
+
+    boolean t();
+
+    boolean u();
+
+    HashMap v();
+
+    boolean w();
+
+    boolean x(int i10);
+
+    int y();
+
+    boolean z();
 }

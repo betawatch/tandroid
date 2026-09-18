@@ -31,7 +31,7 @@ import w7.la;
 import x7.fa;
 import z7.wf;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class x implements Callable {
     public final /* synthetic */ int a;
@@ -97,11 +97,11 @@ public final /* synthetic */ class x implements Callable {
                                                 int readInt = V0.readInt();
                                                 V0.recycle();
                                                 i12 = readInt;
-                                            } catch (Exception e7) {
-                                                com.google.android.gms.internal.play_billing.u.i("BillingClient", "Exception while checking if billing is supported; try to reconnect", e7);
-                                                boolean z12 = e7 instanceof DeadObjectException;
-                                                int i13 = z12 ? 91 : e7 instanceof RemoteException ? 90 : e7 instanceof SecurityException ? 92 : 42;
-                                                String a2 = m1.j.b(i13, 42) ? e0.a(e7) : null;
+                                            } catch (Exception e) {
+                                                com.google.android.gms.internal.play_billing.u.i("BillingClient", "Exception while checking if billing is supported; try to reconnect", e);
+                                                boolean z12 = e instanceof DeadObjectException;
+                                                int i13 = z12 ? 91 : e instanceof RemoteException ? 90 : e instanceof SecurityException ? 92 : 42;
+                                                String a2 = m1.j.b(i13, 42) ? e0.a(e) : null;
                                                 yVar.d.k(0);
                                                 yVar.b(z12 ? g0.h : g0.f, i13, a2, z11);
                                                 yVar.c(z12 ? g0.h : g0.f);
@@ -205,7 +205,7 @@ public final /* synthetic */ class x implements Callable {
                                                 p5.c();
                                                 a4.o((a4) p5.b, longValue2);
                                             }
-                                            yVar.d.h.q0((a4) p5.a());
+                                            yVar.d.h.c0((a4) p5.a());
                                         }
                                     } catch (Throwable th2) {
                                         com.google.android.gms.internal.play_billing.u.i("BillingClient", "Unable to log.", th2);
@@ -277,7 +277,7 @@ public final /* synthetic */ class x implements Callable {
                 laVar.getClass();
                 return n6.i.c.a(laVar.g);
             case 7:
-                ((com.google.firebase.messaging.u) this.b).run();
+                ((com.google.firebase.messaging.w) this.b).run();
                 return null;
             case 8:
                 x1.a aVar3 = (x1.a) this.b;

@@ -1,30 +1,48 @@
 package org.telegram.ui.Components.voip;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.ValueAnimator;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
+import java.util.Random;
+import org.telegram.messenger.LiteMode;
+import org.telegram.ui.Components.z9;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class l3 extends AnimatorListenerAdapter {
-    public final /* synthetic */ m3 a;
-
-    public l3(m3 m3Var) {
-        this.a = m3Var;
-    }
-
-    @Override // android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator, boolean z10) {
-        m3 m3Var = this.a;
-        m3Var.e = m3Var.c;
-        m3Var.f = m3Var.d;
-        m3Var.c = AndroidUtilities.dp(12.0f) + Utilities.random.nextInt(AndroidUtilities.dp(16.0f));
-        m3Var.d = AndroidUtilities.dp(12.0f) + Utilities.random.nextInt(AndroidUtilities.dp(16.0f));
-        ValueAnimator valueAnimator = m3Var.b;
-        if (valueAnimator != null) {
-            valueAnimator.start();
+public final class l3 extends z9 {
+    public final void g(float f7, float f10) {
+        if (!LiteMode.isEnabled(this.r)) {
+            return;
+        }
+        int i10 = 0;
+        while (true) {
+            float f11 = i10;
+            float f12 = this.n;
+            if (f11 >= f12) {
+                return;
+            }
+            float[] fArr = this.i;
+            float f13 = fArr[i10];
+            float[] fArr2 = this.j;
+            float f14 = fArr2[i10];
+            float f15 = (f14 * f7 * 8.2f * 1.0f) + (0.8f * f14) + f13;
+            fArr[i10] = f15;
+            if (f15 >= 1.0f) {
+                fArr[i10] = 0.0f;
+                float[] fArr3 = this.g;
+                this.e[i10] = fArr3[i10];
+                float[] fArr4 = this.h;
+                this.f[i10] = fArr4[i10];
+                if (f10 < 1.0f) {
+                    float f16 = 360.0f / f12;
+                    float f17 = this.b;
+                    float f18 = this.a;
+                    Random random = this.m;
+                    fArr3[i10] = (Math.abs((random.nextInt() % 100.0f) / 100.0f) * (f17 - f18) * f10) + f18;
+                    fArr4[i10] = ((((random.nextInt() * f10) % 100.0f) / 100.0f) * 0.05f * f16) + (f16 * f11);
+                    fArr2[i10] = (float) (((Math.abs(random.nextInt() % 100.0f) / 100.0f) * 0.003d) + 0.017d);
+                } else {
+                    c(fArr3, fArr4, i10);
+                }
+            }
+            i10++;
         }
     }
 }

@@ -1,25 +1,35 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.os.Bundle;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class bg extends fi.p0 {
-    public final /* synthetic */ ChatActivityEnterView y;
+public final class bg extends org.telegram.ui.bo {
+    public boolean Pc;
+    public final /* synthetic */ TLRPC.User Qc;
+    public final /* synthetic */ TLRPC.User Rc;
+    public final /* synthetic */ long Sc;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public bg(ChatActivityEnterView chatActivityEnterView, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(context, f6Var);
-        this.y = chatActivityEnterView;
+    public bg(Bundle bundle, TLRPC.User user, TLRPC.User user2, long j3) {
+        super(bundle);
+        this.Qc = user;
+        this.Rc = user2;
+        this.Sc = j3;
     }
 
-    @Override // android.view.View
-    public final void setTranslationY(float f7) {
-        super.setTranslationY(f7);
-        ChatActivityEnterView chatActivityEnterView = this.y;
-        if (chatActivityEnterView.V0 == null || chatActivityEnterView.n3 != 1) {
+    @Override // org.telegram.ui.bo, org.telegram.ui.ActionBar.o2
+    public final void onBecomeFullyVisible() {
+        super.onBecomeFullyVisible();
+        if (this.Pc) {
             return;
         }
-        chatActivityEnterView.Y2.x(f7);
+        this.Pc = true;
+        vc.a0(this).M(LocaleController.formatString(R.string.CreateManagedBotCreatedTitle, UserObject.getUserName(this.Qc)), AndroidUtilities.replaceSingleTag(LocaleController.formatString(R.string.CreateManagedBotCreatedText, UserObject.getUserName(this.Rc)), new ai.j(this, this.Sc, 20)), R.raw.contact_check).j();
     }
 }

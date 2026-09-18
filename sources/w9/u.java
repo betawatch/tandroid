@@ -7,7 +7,7 @@ import java.util.Locale;
 import java.util.UUID;
 import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class u {
     public static final Pattern g = Pattern.compile("[^\\p{Alnum}]");
@@ -58,9 +58,9 @@ public final class u {
         bVar.c("Cached Firebase Installation ID: " + string);
         if (this.e.a()) {
             try {
-                str = (String) w.a(((qa.c) this.d).d());
-            } catch (Exception e7) {
-                Log.w("FirebaseCrashlytics", "Failed to retrieve Firebase Installation ID.", e7);
+                str = (String) x.a(((qa.c) this.d).d());
+            } catch (Exception e) {
+                Log.w("FirebaseCrashlytics", "Failed to retrieve Firebase Installation ID.", e);
                 str = null;
             }
             bVar.c("Fetched Firebase Installation ID: " + str);

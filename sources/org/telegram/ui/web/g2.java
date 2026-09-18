@@ -1,45 +1,86 @@
 package org.telegram.ui.web;
 
-import org.telegram.messenger.Utilities;
+import java.util.ArrayList;
+import org.telegram.messenger.SharedConfig;
+import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class g2 implements Utilities.Callback {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ h2 b;
+public final class g2 {
+    public final int a;
+    public boolean b;
+    public boolean c;
+    public String d;
+    public float e;
+    public boolean f;
+    public boolean g;
+    public TLRPC.WebPage h;
+    public boolean i;
+    public TLRPC.TL_webPage j;
+    public int k;
+    public u0 l;
+    public final ArrayList m = new ArrayList();
 
-    public /* synthetic */ g2(h2 h2Var, int i10) {
+    public g2(int i10) {
         this.a = i10;
-        this.b = h2Var;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        j2 j2Var = (j2) obj;
-        switch (this.a) {
-            case 0:
-                h2 h2Var = this.b;
-                h2Var.l = null;
-                h2Var.i = true;
-                TLRPC.TL_webPage tL_webPage = h2Var.j;
-                if (tL_webPage != null) {
-                    j2.o(tL_webPage);
-                }
-                h2Var.j = j2Var.c;
-                h2Var.c();
-                break;
-            default:
-                h2 h2Var2 = this.b;
-                h2Var2.l = null;
-                h2Var2.i = true;
-                TLRPC.TL_webPage tL_webPage2 = h2Var2.j;
-                if (tL_webPage2 != null) {
-                    j2.o(tL_webPage2);
-                }
-                h2Var2.j = j2Var.c;
-                h2Var2.c();
-                break;
+    public final void a() {
+        u0 u0Var;
+        if (this.c) {
+            return;
         }
+        this.c = true;
+        if (!this.g) {
+            ConnectionsManager.getInstance(this.a).cancelRequest(this.k, true);
+        }
+        if (this.i || (u0Var = this.l) == null) {
+            return;
+        }
+        u0Var.run();
+    }
+
+    public final TLRPC.WebPage b() {
+        TLRPC.WebPage webPage;
+        if (!SharedConfig.onlyLocalInstantView && (webPage = this.h) != null) {
+            return webPage;
+        }
+        TLRPC.TL_webPage tL_webPage = this.j;
+        if (tL_webPage != null) {
+            return tL_webPage;
+        }
+        return null;
+    }
+
+    public final void c() {
+        ArrayList arrayList = this.m;
+        int size = arrayList.size();
+        int i10 = 0;
+        while (i10 < size) {
+            Object obj = arrayList.get(i10);
+            i10++;
+            ((Runnable) obj).run();
+        }
+    }
+
+    public final void d(z0 z0Var) {
+        if (this.c) {
+            return;
+        }
+        TLRPC.TL_webPage tL_webPage = this.j;
+        if (tL_webPage != null) {
+            i2.o(tL_webPage);
+            this.j = null;
+        }
+        this.i = false;
+        this.d = z0Var.getUrl();
+        this.e = z0Var.getProgress();
+        this.f = z0Var.b;
+        u0 u0Var = this.l;
+        if (u0Var != null) {
+            u0Var.run();
+        }
+        this.l = i2.e(z0Var, new f2(this, 1));
     }
 }

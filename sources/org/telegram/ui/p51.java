@@ -3,16 +3,16 @@ package org.telegram.ui;
 import android.animation.ValueAnimator;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class p51 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ j71 b;
+    public final /* synthetic */ i71 b;
     public final /* synthetic */ boolean c;
 
-    public /* synthetic */ p51(j71 j71Var, boolean z10, int i10) {
+    public /* synthetic */ p51(i71 i71Var, boolean z10, int i10) {
         this.a = i10;
-        this.b = j71Var;
+        this.b = i71Var;
         this.c = z10;
     }
 
@@ -20,27 +20,27 @@ public final /* synthetic */ class p51 implements ValueAnimator.AnimatorUpdateLi
     public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                j71 j71Var = this.b;
-                g61 g61Var = j71Var.h0;
-                w51 w51Var = j71Var.i0;
+                i71 i71Var = this.b;
+                f61 f61Var = i71Var.h0;
+                v51 v51Var = i71Var.i0;
                 float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 if (!this.c) {
                     floatValue = 1.0f - floatValue;
                 }
                 float f7 = 1.0f - floatValue;
-                g61Var.setAlpha(f7);
-                g61Var.setTranslationY(AndroidUtilities.dp(8.0f) * floatValue);
-                w51Var.setAlpha(floatValue);
-                w51Var.setTranslationY(AndroidUtilities.dp(8.0f) * f7);
-                j71Var.j0.setAlpha(w51Var.getAlpha() * floatValue);
+                f61Var.setAlpha(f7);
+                f61Var.setTranslationY(AndroidUtilities.dp(8.0f) * floatValue);
+                v51Var.setAlpha(floatValue);
+                v51Var.setTranslationY(AndroidUtilities.dp(8.0f) * f7);
+                i71Var.j0.setAlpha(v51Var.getAlpha() * floatValue);
                 break;
             default:
                 float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 if (!this.c) {
                     floatValue2 = 1.0f - floatValue2;
                 }
-                j71 j71Var2 = this.b;
-                j71Var2.j0.setAlpha(j71Var2.i0.getAlpha() * floatValue2);
+                i71 i71Var2 = this.b;
+                i71Var2.j0.setAlpha(i71Var2.i0.getAlpha() * floatValue2);
                 break;
         }
     }

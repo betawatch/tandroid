@@ -1,77 +1,50 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
+import android.content.Context;
+import android.graphics.Point;
+import android.widget.LinearLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessagesController;
-import org.telegram.ui.StickersActivity;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class m4 extends l51 {
-    public final /* synthetic */ int e;
-    public Object f;
+public final class m4 extends LinearLayout {
+    public boolean a;
+    public final /* synthetic */ uc0 b;
+    public final /* synthetic */ uc0 c;
+    public final /* synthetic */ uc0 d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ m4(Object obj, int i10) {
-        super("@stickers", (n01) null);
-        this.e = i10;
-        this.f = obj;
+    public m4(Context context, uc0 uc0Var, uc0 uc0Var2, uc0 uc0Var3) {
+        super(context);
+        this.b = uc0Var;
+        this.c = uc0Var2;
+        this.d = uc0Var3;
+        this.a = false;
     }
 
-    @Override // org.telegram.ui.Components.l51, android.text.style.URLSpan, android.text.style.ClickableSpan
-    public final void onClick(View view) {
-        int i10;
-        int i11;
-        int i12;
-        switch (this.e) {
-            case 0:
-                ((org.telegram.ui.ActionBar.n2) this.f).dismissCurrentDialog();
-                super.onClick(view);
-                break;
-            case 1:
-                ux0 ux0Var = (ux0) this.f;
-                i10 = ((org.telegram.ui.ActionBar.f3) ux0Var).currentAccount;
-                MessagesController.getInstance(i10).openByUserName(getURL(), ux0Var.L, 1);
-                ux0Var.dismiss();
-                break;
-            case 2:
-                AndroidUtilities.addToClipboard(getURL());
-                yc.a0((ig.v) this.f).k(false).j();
-                break;
-            case 3:
-                org.telegram.ui.u70 u70Var = ((org.telegram.ui.s70) this.f).d;
-                i11 = ((org.telegram.ui.ActionBar.n2) u70Var).currentAccount;
-                MessagesController.getInstance(i11).openByUserName("stickers", u70Var, 1);
-                break;
-            case 4:
-                ((org.telegram.ui.xm0) this.f).a.dismissCurrentDialog();
-                super.onClick(view);
-                break;
-            default:
-                StickersActivity stickersActivity = (StickersActivity) this.f;
-                i12 = ((org.telegram.ui.ActionBar.n2) stickersActivity).currentAccount;
-                MessagesController.getInstance(i12).openByUserName("stickers", stickersActivity, 3);
-                break;
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        this.a = true;
+        Point point = AndroidUtilities.displaySize;
+        int i12 = point.x > point.y ? 3 : 5;
+        uc0 uc0Var = this.b;
+        uc0Var.setItemCount(i12);
+        uc0 uc0Var2 = this.c;
+        uc0Var2.setItemCount(i12);
+        uc0 uc0Var3 = this.d;
+        uc0Var3.setItemCount(i12);
+        uc0Var.getLayoutParams().height = AndroidUtilities.dp(42.0f) * i12;
+        uc0Var2.getLayoutParams().height = AndroidUtilities.dp(42.0f) * i12;
+        uc0Var3.getLayoutParams().height = AndroidUtilities.dp(42.0f) * i12;
+        this.a = false;
+        super.onMeasure(i10, i11);
+    }
+
+    @Override // android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.a) {
+            return;
         }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ m4(String str, int i10, Object obj) {
-        super(str, (n01) null);
-        this.e = i10;
-        this.f = obj;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ m4(String str, n01 n01Var) {
-        super(str, n01Var);
-        this.e = 2;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m4(org.telegram.ui.ActionBar.n2 n2Var, String str) {
-        super(str, (n01) null);
-        this.e = 0;
-        this.f = n2Var;
+        super.requestLayout();
     }
 }

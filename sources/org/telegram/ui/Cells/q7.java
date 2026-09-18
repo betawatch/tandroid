@@ -22,19 +22,19 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.vl;
+import org.telegram.messenger.wl;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.mp;
+import org.telegram.ui.Components.np;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class q7 extends FrameLayout {
-    public final org.telegram.ui.Components.x9 a;
+    public final org.telegram.ui.Components.u9 a;
     public final TextView b;
     public final p5 c;
     public final View d;
-    public final mp e;
+    public final np e;
     public final FrameLayout f;
     public AnimatorSet h;
     public MessageObject n;
@@ -48,11 +48,11 @@ public final class q7 extends FrameLayout {
         FrameLayout frameLayout = new FrameLayout(context);
         this.f = frameLayout;
         addView(frameLayout, w7.x5.c(-1.0f, -1));
-        org.telegram.ui.Components.x9 x9Var = new org.telegram.ui.Components.x9(context);
-        this.a = x9Var;
-        x9Var.getImageReceiver().setNeedsQualityThumb(true);
-        x9Var.getImageReceiver().setShouldGenerateQualityThumb(true);
-        frameLayout.addView(x9Var, w7.x5.c(-1.0f, -1));
+        org.telegram.ui.Components.u9 u9Var = new org.telegram.ui.Components.u9(context);
+        this.a = u9Var;
+        u9Var.getImageReceiver().setNeedsQualityThumb(true);
+        u9Var.getImageReceiver().setShouldGenerateQualityThumb(true);
+        frameLayout.addView(u9Var, w7.x5.c(-1.0f, -1));
         p5 p5Var = new p5(context, 1);
         p5Var.b = new RectF();
         this.c = p5Var;
@@ -73,13 +73,13 @@ public final class q7 extends FrameLayout {
         this.d = view;
         view.setBackgroundDrawable(org.telegram.ui.ActionBar.j6.K0(false));
         addView(view, w7.x5.c(-1.0f, -1));
-        mp mpVar = new mp(context, 21, null);
-        this.e = mpVar;
-        mpVar.setVisibility(4);
-        mpVar.b(-1, org.telegram.ui.ActionBar.j6.Lh, org.telegram.ui.ActionBar.j6.k7);
-        mpVar.setDrawUnchecked(false);
-        mpVar.setDrawBackgroundAsArc(1);
-        addView(mpVar, w7.x5.d(24, 24.0f, 53, 0.0f, 1.0f, 1.0f, 0.0f));
+        np npVar = new np(context, 21, null);
+        this.e = npVar;
+        npVar.setVisibility(4);
+        npVar.b(-1, org.telegram.ui.ActionBar.j6.Lh, org.telegram.ui.ActionBar.j6.k7);
+        npVar.setDrawUnchecked(false);
+        npVar.setDrawBackgroundAsArc(1);
+        addView(npVar, w7.x5.d(24, 24.0f, 53, 0.0f, 1.0f, 1.0f, 0.0f));
     }
 
     @Override // android.view.View
@@ -95,8 +95,8 @@ public final class q7 extends FrameLayout {
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         if (!this.e.a.q) {
-            org.telegram.ui.Components.x9 x9Var = this.a;
-            if (x9Var.getImageReceiver().hasBitmapImage() && x9Var.getImageReceiver().getCurrentAlpha() == 1.0f && !PhotoViewer.M1(this.n)) {
+            org.telegram.ui.Components.u9 u9Var = this.a;
+            if (u9Var.getImageReceiver().hasBitmapImage() && u9Var.getImageReceiver().getCurrentAlpha() == 1.0f && !PhotoViewer.M1(this.n)) {
                 return;
             }
         }
@@ -110,7 +110,7 @@ public final class q7 extends FrameLayout {
             accessibilityNodeInfo.setText(LocaleController.getString(R.string.AttachLivePhoto));
         } else if (this.n.isVideo()) {
             StringBuilder sb2 = new StringBuilder();
-            vl.l(R.string.AttachVideo, ", ", sb2);
+            wl.l(R.string.AttachVideo, ", ", sb2);
             sb2.append(LocaleController.formatDuration((int) this.n.getDuration()));
             accessibilityNodeInfo.setText(sb2.toString());
         } else {

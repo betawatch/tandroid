@@ -1,21 +1,41 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapShader;
-
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class a6 {
-    public final BitmapShader[] a = new BitmapShader[3];
-    public final Bitmap b;
-    public final int c;
-    public final int d;
-    public int e;
-    public boolean f;
+public final /* synthetic */ class a6 implements yf.g {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public a6(Bitmap bitmap) {
-        this.b = bitmap;
-        this.c = bitmap.getWidth();
-        this.d = bitmap.getHeight();
+    public /* synthetic */ a6(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
+    }
+
+    @Override // yf.g
+    public final void doFrame(long j3) {
+        switch (this.a) {
+            case 0:
+                b6 b6Var = (b6) this.b;
+                int i10 = b6Var.Q0 + 1;
+                b6Var.Q0 = i10;
+                if (i10 > 10) {
+                    b6Var.R0 = true;
+                }
+                b6Var.i();
+                if (b6Var.U0) {
+                    b6Var.T0 = true;
+                    b6Var.t();
+                    break;
+                }
+                break;
+            case 1:
+                EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) this.b;
+                int i11 = EditTextBoldCursor.a;
+                editTextBoldCursor.invalidate();
+                break;
+            default:
+                yi0.g((yi0) this.b);
+                break;
+        }
     }
 }

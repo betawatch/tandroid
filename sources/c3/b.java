@@ -12,9 +12,9 @@ import java.util.Arrays;
 import java.util.List;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.OneUIUtilities;
-import org.telegram.ui.sw0;
+import org.telegram.ui.bs0;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public abstract class b {
     public static final int[] a = {96000, 88200, 64000, 48000, 44100, 32000, 24000, 22050, androidx.car.app.media.b.AUDIO_CONTENT_SAMPLING_RATE, 12000, 11025, 8000, 7350};
@@ -382,7 +382,7 @@ public abstract class b {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static a3.k m(a4.h hVar) {
+    public static a3.l m(a4.h hVar) {
         int i10;
         int i11;
         int i12 = hVar.i(16);
@@ -436,7 +436,7 @@ public abstract class b {
             }
             i11 = i18 + 1;
         }
-        return new a3.k(i16, i14, i11);
+        return new a3.l(i16, i14, i11);
     }
 
     public static a n(a4.h hVar, boolean z10) {
@@ -446,7 +446,7 @@ public abstract class b {
         }
         int l4 = l(hVar);
         int i11 = hVar.i(4);
-        String i12 = i2.g.i(i10, "mp4a.40.");
+        String i12 = hg.k0.i(i10, "mp4a.40.");
         if (i10 == 5 || i10 == 29) {
             l4 = l(hVar);
             int i13 = hVar.i(5);
@@ -603,13 +603,13 @@ public abstract class b {
     }
 
     public static p0 s(p pVar, boolean z10) {
-        sw0 sw0Var = z10 ? null : q3.i.b;
+        bs0 bs0Var = z10 ? null : q3.i.b;
         e2.v vVar = new e2.v(10);
         p0 p0Var = null;
         int i10 = 0;
         while (true) {
             try {
-                pVar.b(0, 10, vVar.a);
+                pVar.a(0, 10, vVar.a);
                 vVar.J(0);
                 if (vVar.A() != 4801587) {
                     break;
@@ -620,17 +620,17 @@ public abstract class b {
                 if (p0Var == null) {
                     byte[] bArr = new byte[i11];
                     System.arraycopy(vVar.a, 0, bArr, 0, 10);
-                    pVar.b(10, w10, bArr);
-                    p0Var = new q3.i(sw0Var).c(i11, bArr);
+                    pVar.a(10, w10, bArr);
+                    p0Var = new q3.i(bs0Var).c(i11, bArr);
                 } else {
-                    pVar.l(w10);
+                    pVar.k(w10);
                 }
                 i10 += i11;
             } catch (EOFException unused) {
             }
         }
-        pVar.q();
-        pVar.l(i10);
+        pVar.p();
+        pVar.k(i10);
         if (p0Var == null || p0Var.a.length == 0) {
             return null;
         }
@@ -664,7 +664,7 @@ public abstract class b {
         }
     }
 
-    public static pf.b u(e2.v vVar) {
+    public static of.b u(e2.v vVar) {
         vVar.K(1);
         int A = vVar.A();
         long j3 = vVar.b + A;
@@ -688,7 +688,7 @@ public abstract class b {
             i11++;
         }
         vVar.K((int) (j3 - vVar.b));
-        return new pf.b(jArr, jArr2, false, 6);
+        return new of.b(jArr, jArr2, false, 6);
     }
 
     public static j0 v(e2.v vVar, boolean z10, boolean z11) {

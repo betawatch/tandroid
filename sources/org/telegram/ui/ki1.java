@@ -1,29 +1,23 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.webrtc.RendererCommon;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class ki1 implements RendererCommon.RendererEvents {
-    public final /* synthetic */ ui1 a;
+public final class ki1 extends AnimatorListenerAdapter {
+    public final /* synthetic */ ti1 a;
 
-    public ki1(ui1 ui1Var) {
-        this.a = ui1Var;
+    public ki1(ti1 ti1Var) {
+        this.a = ti1Var;
     }
 
-    @Override // org.webrtc.RendererCommon.RendererEvents
-    public final void onFirstFrameRendered() {
-        ui1 ui1Var = this.a;
-        com.google.android.gms.internal.cast.p pVar = ui1Var.l1;
-        if (pVar != null) {
-            pVar.run();
-            ui1Var.l1 = null;
-        }
-        AndroidUtilities.runOnUIThread(new f01(this, 22));
-    }
-
-    @Override // org.webrtc.RendererCommon.RendererEvents
-    public final void onFrameResolutionChanged(int i10, int i11, int i12) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        ti1 ti1Var = this.a;
+        ti1Var.E.setText(LocaleController.getString(R.string.VoipCallEnded));
+        ti1Var.E.animate().alpha(1.0f).setDuration(70L).setListener(null).start();
     }
 }

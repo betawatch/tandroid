@@ -4,16 +4,16 @@ import android.content.Intent;
 import java.util.concurrent.CountDownLatch;
 import org.telegram.messenger.support.JobIntentService;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public class KeepAliveJob extends JobIntentService {
     private static volatile CountDownLatch countDownLatch;
     private static volatile boolean startingJob;
     private static final Object sync = new Object();
-    private static Runnable finishJobByTimeoutRunnable = new u1(9);
+    private static Runnable finishJobByTimeoutRunnable = new u1(11);
 
     public static void finishJob() {
-        Utilities.globalQueue.postRunnable(new u1(9));
+        Utilities.globalQueue.postRunnable(new u1(11));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -56,7 +56,7 @@ public class KeepAliveJob extends JobIntentService {
     }
 
     public static void startJob() {
-        Utilities.globalQueue.postRunnable(new u1(10));
+        Utilities.globalQueue.postRunnable(new u1(12));
     }
 
     @Override // org.telegram.messenger.support.JobIntentService

@@ -1,104 +1,52 @@
 package yh;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.h51;
-import org.telegram.ui.Components.n70;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class u2 implements Utilities.Callback5 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ g4 b;
-    public final /* synthetic */ n70 c;
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* loaded from: classes4.dex */
+public final class u2 extends View {
+    public final Paint a;
+    public final org.telegram.ui.Components.c6 b;
+    public final org.telegram.ui.Components.c6 c;
+    public float d;
+    public float e;
 
-    public /* synthetic */ u2(g4 g4Var, n70 n70Var, int i10) {
-        this.a = i10;
-        this.b = g4Var;
-        this.c = n70Var;
+    public u2(Context context) {
+        super(context);
+        Paint paint = new Paint(1);
+        this.a = paint;
+        int i10 = 29;
+        rg.w1 w1Var = new rg.w1(this, i10);
+        qr qrVar = qr.h;
+        this.b = new org.telegram.ui.Components.c6(w1Var, 420L, qrVar, 0);
+        this.c = new org.telegram.ui.Components.c6(new rg.w1(this, i10), 420L, qrVar, 0);
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeCap(Paint.Cap.ROUND);
+        paint.setStrokeJoin(Paint.Join.ROUND);
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback5
-    public final void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        int i10 = this.a;
-        h51 h51Var = (h51) obj;
-        g4 g4Var = this.b;
-        g4Var.getClass();
-        switch (i10) {
-            case 0:
-                long j3 = ((TL_stars.starGiftAttributePattern) h51Var.G).document.id;
-                t3 t3Var = g4Var.d;
-                HashSet hashSet = t3Var.l;
-                if (hashSet.contains(Long.valueOf(j3))) {
-                    hashSet.remove(Long.valueOf(j3));
-                } else if (hashSet.isEmpty()) {
-                    ArrayList arrayList = t3Var.h;
-                    int size = arrayList.size();
-                    int i11 = 0;
-                    while (i11 < size) {
-                        Object obj6 = arrayList.get(i11);
-                        i11++;
-                        long j10 = ((TL_stars.starGiftAttributePattern) obj6).document.id;
-                        if (j10 != j3) {
-                            hashSet.add(Long.valueOf(j10));
-                        }
-                    }
-                } else {
-                    hashSet.add(Long.valueOf(j3));
-                }
-                t3Var.h();
-                this.c.u();
-                break;
-            case 1:
-                int i12 = ((TL_stars.starGiftAttributeBackdrop) h51Var.G).backdrop_id;
-                t3 t3Var2 = g4Var.d;
-                HashSet hashSet2 = t3Var2.k;
-                if (hashSet2.contains(Integer.valueOf(i12))) {
-                    hashSet2.remove(Integer.valueOf(i12));
-                } else if (hashSet2.isEmpty()) {
-                    ArrayList arrayList2 = t3Var2.g;
-                    int size2 = arrayList2.size();
-                    int i13 = 0;
-                    while (i13 < size2) {
-                        Object obj7 = arrayList2.get(i13);
-                        i13++;
-                        int i14 = ((TL_stars.starGiftAttributeBackdrop) obj7).backdrop_id;
-                        if (i14 != i12) {
-                            hashSet2.add(Integer.valueOf(i14));
-                        }
-                    }
-                } else {
-                    hashSet2.add(Integer.valueOf(i12));
-                }
-                t3Var2.h();
-                this.c.u();
-                break;
-            default:
-                long j11 = ((TL_stars.starGiftAttributeModel) h51Var.G).document.id;
-                t3 t3Var3 = g4Var.d;
-                HashSet hashSet3 = t3Var3.j;
-                if (hashSet3.contains(Long.valueOf(j11))) {
-                    hashSet3.remove(Long.valueOf(j11));
-                } else if (hashSet3.isEmpty()) {
-                    ArrayList arrayList3 = t3Var3.f;
-                    int size3 = arrayList3.size();
-                    int i15 = 0;
-                    while (i15 < size3) {
-                        Object obj8 = arrayList3.get(i15);
-                        i15++;
-                        long j12 = ((TL_stars.starGiftAttributeModel) obj8).document.id;
-                        if (j12 != j11) {
-                            hashSet3.add(Long.valueOf(j12));
-                        }
-                    }
-                } else {
-                    hashSet3.add(Long.valueOf(j11));
-                }
-                t3Var3.h();
-                this.c.u();
-                break;
+    @Override // android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        float d = this.b.d(this.d, false);
+        float e = this.c.e(this.d > 0.0f);
+        float width = getWidth() / 2.0f;
+        float height = getHeight() / 2.0f;
+        float f7 = this.e;
+        RectF rectF = AndroidUtilities.rectTmp;
+        rectF.set(width - f7, height - f7, width + f7, height + f7);
+        int l1 = org.telegram.ui.ActionBar.j6.l1(0.25f, -1);
+        Paint paint = this.a;
+        paint.setColor(l1);
+        canvas.drawArc(rectF, 135.0f, 270.0f, false, paint);
+        if (e > 0.0f) {
+            paint.setColor(org.telegram.ui.ActionBar.j6.l1(e, -1));
+            canvas.drawArc(rectF, 135.0f, d * 270.0f, false, paint);
         }
     }
 }

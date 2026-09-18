@@ -6,7 +6,7 @@ import android.content.IntentFilter;
 import android.os.Build;
 import android.os.Trace;
 import android.util.Log;
-import androidx.emoji2.text.x;
+import androidx.emoji2.text.v;
 import com.google.firebase.FirebaseCommonRegistrar;
 import com.google.firebase.components.ComponentDiscoveryService;
 import com.google.firebase.concurrent.ExecutorsRegistrar;
@@ -16,14 +16,13 @@ import java.util.ArrayList;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicReference;
-import k2.g0;
+import k2.u;
 import n4.y;
 import n6.l;
-import n7.z0;
 import q9.n;
 import r9.k;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class h {
     public static final Object k = new Object();
@@ -53,24 +52,24 @@ public final class h {
         a aVar = FirebaseInitProvider.a;
         Trace.beginSection("Firebase");
         Trace.beginSection("ComponentDiscovery");
-        ArrayList u10 = new z0(11, context, new g0(ComponentDiscoveryService.class, 16)).u();
+        ArrayList g10 = new o0.a(12, context, new u(ComponentDiscoveryService.class, 19)).g();
         Trace.endSection();
         Trace.beginSection("Runtime");
         k kVar = k.a;
         ArrayList arrayList = new ArrayList();
         ArrayList arrayList2 = new ArrayList();
-        arrayList.addAll(u10);
+        arrayList.addAll(g10);
         int i10 = 1;
         arrayList.add(new q9.c(new FirebaseCommonRegistrar(), i10));
         arrayList.add(new q9.c(new ExecutorsRegistrar(), i10));
         arrayList2.add(q9.a.c(context, Context.class, new Class[0]));
         arrayList2.add(q9.a.c(this, h.class, new Class[0]));
         arrayList2.add(q9.a.c(jVar, j.class, new Class[0]));
-        ob.a aVar2 = new ob.a(6);
-        if ((Build.VERSION.SDK_INT >= 24 ? x.g(context) : true) && FirebaseInitProvider.b.get()) {
+        na.d dVar = new na.d(6);
+        if ((Build.VERSION.SDK_INT >= 24 ? v.g(context) : true) && FirebaseInitProvider.b.get()) {
             arrayList2.add(q9.a.c(aVar, a.class, new Class[0]));
         }
-        q9.g gVar = new q9.g(kVar, arrayList, arrayList2, aVar2);
+        q9.g gVar = new q9.g(kVar, arrayList, arrayList2, dVar);
         this.d = gVar;
         Trace.endSection();
         this.g = new n(new d(0, this, context));
@@ -174,7 +173,7 @@ public final class h {
     public final void e() {
         int i10 = Build.VERSION.SDK_INT;
         Context context = this.a;
-        boolean g10 = i10 >= 24 ? x.g(context) : true;
+        boolean g10 = i10 >= 24 ? v.g(context) : true;
         String str = this.b;
         if (g10) {
             StringBuilder sb2 = new StringBuilder("Device unlocked: initializing all Firebase APIs for app ");
@@ -182,7 +181,7 @@ public final class h {
             sb2.append(str);
             Log.i("FirebaseApp", sb2.toString());
             a();
-            this.d.e("[DEFAULT]".equals(str));
+            this.d.g("[DEFAULT]".equals(str));
             ((na.c) this.h.get()).c();
             return;
         }
@@ -227,8 +226,8 @@ public final class h {
 
     public final String toString() {
         y yVar = new y(this);
-        yVar.y(this.b, "name");
-        yVar.y(this.c, "options");
+        yVar.e(this.b, "name");
+        yVar.e(this.c, "options");
         return yVar.toString();
     }
 }

@@ -6,12 +6,12 @@ import java.util.Collections;
 import java.util.Map;
 import v7.m7;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class r0 implements y2.j {
     public final Uri a;
     public final g2.b0 b;
-    public final m2.t c;
+    public final lf.i c;
     public final u0 d;
     public final e2.g e;
     public volatile boolean h;
@@ -23,11 +23,11 @@ public final class r0 implements y2.j {
     public final c3.s f = new c3.s();
     public boolean n = true;
 
-    public r0(u0 u0Var, Uri uri, g2.h hVar, m2.t tVar, u0 u0Var2, e2.g gVar) {
+    public r0(u0 u0Var, Uri uri, g2.h hVar, lf.i iVar, u0 u0Var2, e2.g gVar) {
         this.x = u0Var;
         this.a = uri;
         this.b = new g2.b0(hVar);
-        this.c = tVar;
+        this.c = iVar;
         this.d = u0Var2;
         this.e = gVar;
         t.b.getAndIncrement();
@@ -35,7 +35,7 @@ public final class r0 implements y2.j {
     }
 
     @Override // y2.j
-    public final void W() {
+    public final void H() {
         this.h = true;
     }
 
@@ -52,8 +52,8 @@ public final class r0 implements y2.j {
                 this.s = b10;
                 long open = this.b.open(b10);
                 if (this.h) {
-                    if (i11 != 1 && this.c.z() != -1) {
-                        this.f.a = this.c.z();
+                    if (i11 != 1 && this.c.E() != -1) {
+                        this.f.a = this.c.E();
                     }
                     m7.a(this.b);
                     return;
@@ -71,11 +71,11 @@ public final class r0 implements y2.j {
                     hVar = b0Var;
                 } else {
                     hVar = new s(b0Var, i10, this);
-                    c3.h0 A = this.x.A(new t0(0, true));
-                    this.v = A;
-                    A.b(u0.h0);
+                    c3.h0 z10 = this.x.z(new t0(0, true));
+                    this.v = z10;
+                    z10.b(u0.h0);
                 }
-                this.c.H(hVar, this.a, this.b.a.getResponseHeaders(), j3, j10, this.d);
+                this.c.O(hVar, this.a, this.b.a.getResponseHeaders(), j3, j10, this.d);
                 if (this.x.J != null && (oVar = (c3.o) this.c.c) != null) {
                     c3.o c10 = oVar.c();
                     if (c10 instanceof v3.d) {
@@ -83,9 +83,9 @@ public final class r0 implements y2.j {
                     }
                 }
                 if (this.n) {
-                    m2.t tVar = this.c;
+                    lf.i iVar = this.c;
                     long j11 = this.r;
-                    c3.o oVar2 = (c3.o) tVar.c;
+                    c3.o oVar2 = (c3.o) iVar.c;
                     oVar2.getClass();
                     oVar2.h(j3, j11);
                     this.n = false;
@@ -99,19 +99,19 @@ public final class r0 implements y2.j {
                                 gVar.wait();
                             }
                         }
-                        m2.t tVar2 = this.c;
+                        lf.i iVar2 = this.c;
                         c3.s sVar = this.f;
-                        c3.o oVar3 = (c3.o) tVar2.c;
+                        c3.o oVar3 = (c3.o) iVar2.c;
                         oVar3.getClass();
-                        c3.l lVar = (c3.l) tVar2.d;
+                        c3.l lVar = (c3.l) iVar2.d;
                         lVar.getClass();
                         i11 = oVar3.m(lVar, sVar);
-                        long z10 = this.c.z();
-                        if (z10 > this.x.s + j3) {
+                        long E = this.c.E();
+                        if (E > this.x.s + j3) {
                             this.e.d();
                             u0 u0Var2 = this.x;
                             u0Var2.H.post(u0Var2.G);
-                            j3 = z10;
+                            j3 = E;
                         }
                     } catch (InterruptedException unused) {
                         throw new InterruptedIOException();
@@ -119,13 +119,13 @@ public final class r0 implements y2.j {
                 }
                 if (i11 == 1) {
                     i11 = 0;
-                } else if (this.c.z() != -1) {
-                    this.f.a = this.c.z();
+                } else if (this.c.E() != -1) {
+                    this.f.a = this.c.E();
                 }
                 m7.a(this.b);
             } catch (Throwable th2) {
-                if (i11 != 1 && this.c.z() != -1) {
-                    this.f.a = this.c.z();
+                if (i11 != 1 && this.c.E() != -1) {
+                    this.f.a = this.c.E();
                 }
                 m7.a(this.b);
                 throw th2;

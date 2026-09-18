@@ -1,42 +1,11 @@
 package v0;
 
-import android.os.Bundle;
-import java.util.Set;
-import org.json.JSONObject;
-
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class p {
-    public final Bundle a;
-    public final Bundle b;
-    public final Set c;
-    public final String d;
+    public final b2.g a;
 
-    public p(String requestJson) {
-        kotlin.jvm.internal.i.e(requestJson, "requestJson");
-        Bundle bundle = new Bundle();
-        bundle.putString("androidx.credentials.BUNDLE_KEY_SUBTYPE", "androidx.credentials.BUNDLE_VALUE_SUBTYPE_GET_PUBLIC_KEY_CREDENTIAL_OPTION");
-        bundle.putString("androidx.credentials.BUNDLE_KEY_REQUEST_JSON", requestJson);
-        bundle.putByteArray("androidx.credentials.BUNDLE_KEY_CLIENT_DATA_HASH", null);
-        Bundle bundle2 = new Bundle();
-        bundle2.putString("androidx.credentials.BUNDLE_KEY_SUBTYPE", "androidx.credentials.BUNDLE_VALUE_SUBTYPE_GET_PUBLIC_KEY_CREDENTIAL_OPTION");
-        bundle2.putString("androidx.credentials.BUNDLE_KEY_REQUEST_JSON", requestJson);
-        bundle2.putByteArray("androidx.credentials.BUNDLE_KEY_CLIENT_DATA_HASH", null);
-        this.a = bundle;
-        this.b = bundle2;
-        this.c = hd.q.a;
-        bundle.putBoolean("androidx.credentials.BUNDLE_KEY_IS_AUTO_SELECT_ALLOWED", true);
-        bundle2.putBoolean("androidx.credentials.BUNDLE_KEY_IS_AUTO_SELECT_ALLOWED", true);
-        bundle.putInt("androidx.credentials.BUNDLE_KEY_TYPE_PRIORITY_VALUE", 100);
-        bundle2.putInt("androidx.credentials.BUNDLE_KEY_TYPE_PRIORITY_VALUE", 100);
-        this.d = requestJson;
-        if (requestJson.length() != 0) {
-            try {
-                new JSONObject(requestJson);
-                return;
-            } catch (Exception unused) {
-            }
-        }
-        throw new IllegalArgumentException("requestJson must not be empty, and must be a valid JSON");
+    public p(b2.g gVar) {
+        this.a = gVar;
     }
 }

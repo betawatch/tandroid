@@ -12,11 +12,11 @@ import java.util.Random;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.d90;
+import org.telegram.ui.Components.c90;
 import org.telegram.ui.Components.t00;
-import org.telegram.ui.Components.yc;
+import org.telegram.ui.Components.vc;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public abstract /* synthetic */ class p6 {
     public static float a(float f7, float f10, float f11, float f12) {
@@ -91,12 +91,12 @@ public abstract /* synthetic */ class p6 {
         arrayList2.add(num);
     }
 
-    public static void p(int i10, d90 d90Var) {
-        d90Var.setText(AndroidUtilities.replaceTags(LocaleController.getString(i10)));
+    public static void p(int i10, c90 c90Var) {
+        c90Var.setText(AndroidUtilities.replaceTags(LocaleController.getString(i10)));
     }
 
     public static void q(FrameLayout frameLayout, org.telegram.ui.ActionBar.f6 f6Var, TLRPC.TL_error tL_error, boolean z10) {
-        new yc(frameLayout, f6Var).d0(tL_error, z10);
+        new vc(frameLayout, f6Var).d0(tL_error, z10);
     }
 
     public static void r(String str, int i10, ArrayList arrayList) {

@@ -1,29 +1,29 @@
 package rc;
 
 import com.google.android.gms.internal.vision.e2;
-import com.google.firebase.messaging.s;
+import com.google.firebase.messaging.t;
 import com.googlecode.mp4parser.g;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
+import k2.c0;
 import mc.c;
-import mg.n;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class a extends com.googlecode.mp4parser.a {
-    public static final /* synthetic */ n b;
-    public static final /* synthetic */ n c;
-    public static final /* synthetic */ n d;
-    public static final /* synthetic */ n e;
-    public static final /* synthetic */ n f;
-    public static final /* synthetic */ n h;
-    public static final /* synthetic */ n n;
-    public static final /* synthetic */ n r;
-    public static final /* synthetic */ n s;
-    public static final /* synthetic */ n v;
-    public static final /* synthetic */ n w;
-    public static final /* synthetic */ n x;
-    public static final /* synthetic */ n y;
+    public static final /* synthetic */ c0 b;
+    public static final /* synthetic */ c0 c;
+    public static final /* synthetic */ c0 d;
+    public static final /* synthetic */ c0 e;
+    public static final /* synthetic */ c0 f;
+    public static final /* synthetic */ c0 h;
+    public static final /* synthetic */ c0 n;
+    public static final /* synthetic */ c0 r;
+    public static final /* synthetic */ c0 s;
+    public static final /* synthetic */ c0 v;
+    public static final /* synthetic */ c0 w;
+    public static final /* synthetic */ c0 x;
+    public static final /* synthetic */ c0 y;
     public b a;
 
     static {
@@ -228,7 +228,7 @@ public final class a extends com.googlecode.mp4parser.a {
     }
 
     public final String toString() {
-        s b10 = re.a.b(y, this, this);
+        t b10 = re.a.b(y, this, this);
         g.a().getClass();
         g.b(b10);
         return "AvcConfigurationBox{avcDecoderConfigurationRecord=" + this.a + '}';

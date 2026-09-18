@@ -1,34 +1,54 @@
 package org.telegram.ui.Components;
 
-import android.text.Editable;
-import android.text.TextWatcher;
+import android.content.Context;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class l implements TextWatcher {
-    public final /* synthetic */ f0 a;
+public final class l extends iq0 {
+    public final /* synthetic */ e0 b1;
 
-    public l(f0 f0Var) {
-        this.a = f0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public l(e0 e0Var, Context context, String str, String str2, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context, null, str, false, str2, false, f6Var);
+        this.b1 = e0Var;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        e0 e0Var;
-        f0 f0Var = this.a;
-        e0 e0Var2 = f0Var.w0;
-        if ((e0Var2 != null ? e0Var2.getSelectedTab() : 0) == 1 && (e0Var = f0Var.x0) != null && (e0Var.getSelectedTone() instanceof a0)) {
-            f0Var.c0();
-            f0Var.q0();
-            f0Var.p0(true);
+    @Override // org.telegram.ui.Components.iq0
+    public final void R0(a0.i iVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
+        FrameLayout frameLayout = this.b1.G0;
+        if (z10) {
+            vc vcVar = new vc(frameLayout, this.resourcesProvider);
+            if (iVar.m() == 1) {
+                long j3 = iVar.j(0);
+                if (j3 == UserConfig.getInstance(this.currentAccount).clientUserId) {
+                    oc G = vcVar.G(R.raw.saved_messages, 5000, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.AIEditorStyleSharedToSavedMessages, new Object[0])));
+                    G.r = false;
+                    G.j();
+                } else if (j3 < 0) {
+                    oc G2 = vcVar.G(R.raw.forward, 5000, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.AIEditorStyleSharedTo, tL_forumTopic != null ? tL_forumTopic.title : MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-j3)).title)));
+                    G2.r = false;
+                    G2.j();
+                } else {
+                    oc G3 = vcVar.G(R.raw.forward, 5000, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.AIEditorStyleSharedTo, MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(j3)).first_name)));
+                    G3.r = false;
+                    G3.j();
+                }
+            } else {
+                oc Q = vcVar.Q(R.raw.forward, 36, AndroidUtilities.replaceTags(LocaleController.formatPluralString("AIEditorStyleSharedToManyChats", iVar.m(), Integer.valueOf(iVar.m()))));
+                Q.r = false;
+                Q.j();
+            }
+            try {
+                frameLayout.performHapticFeedback(3);
+            } catch (Exception unused) {
+            }
         }
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

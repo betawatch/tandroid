@@ -1,51 +1,24 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class u5 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ MediaController b;
+    public final /* synthetic */ LocationSharingService b;
 
-    public /* synthetic */ u5(MediaController mediaController, int i10) {
+    public /* synthetic */ u5(LocationSharingService locationSharingService, int i10) {
         this.a = i10;
-        this.b = mediaController;
+        this.b = locationSharingService;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$startRaiseToEarSensors$8();
-                break;
-            case 1:
-                this.b.lambda$playMessage$20();
-                break;
-            case 2:
-                this.b.lambda$setTextureView$15();
-                break;
-            case 3:
-                this.b.lambda$toggleRecordingPause$29();
-                break;
-            case 4:
-                this.b.lambda$toggleRecordingPause$30();
-                break;
-            case 5:
-                this.b.lambda$stopRaiseToEarSensors$9();
-                break;
-            case 6:
-                this.b.lambda$new$2();
-                break;
-            case 7:
-                this.b.lambda$new$3();
-                break;
-            case 8:
-                this.b.lambda$new$4();
-                break;
-            case 9:
-                this.b.lambda$toggleRecordingPause$31();
+                this.b.lambda$onCreate$1();
                 break;
             default:
-                this.b.lambda$setCurrentVideoVisible$14();
+                this.b.lambda$didReceivedNotification$2();
                 break;
         }
     }

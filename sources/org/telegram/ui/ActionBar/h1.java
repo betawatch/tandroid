@@ -1,64 +1,27 @@
 package org.telegram.ui.ActionBar;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.view.View;
-import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
+import org.telegram.ui.Components.xu;
+import org.telegram.ui.z61;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class h1 extends AnimatorListenerAdapter {
+public final /* synthetic */ class h1 implements ViewTreeObserver.OnScrollChangedListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ n1 b;
 
-    public /* synthetic */ h1(n1 n1Var, int i10) {
-        this.a = i10;
-        this.b = n1Var;
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout;
+    @Override // android.view.ViewTreeObserver.OnScrollChangedListener
+    public final void onScrollChanged() {
         switch (this.a) {
             case 0:
-                n1 n1Var = this.b;
-                ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout2 = null;
-                n1Var.a = null;
-                ViewGroup viewGroup = (ViewGroup) n1Var.getContentView();
-                if (viewGroup instanceof ActionBarPopupWindow$ActionBarPopupWindowLayout) {
-                    actionBarPopupWindow$ActionBarPopupWindowLayout = (ActionBarPopupWindow$ActionBarPopupWindowLayout) viewGroup;
-                    actionBarPopupWindow$ActionBarPopupWindowLayout.n = false;
-                } else {
-                    for (int i10 = 0; i10 < viewGroup.getChildCount(); i10++) {
-                        if (viewGroup.getChildAt(i10) instanceof ActionBarPopupWindow$ActionBarPopupWindowLayout) {
-                            actionBarPopupWindow$ActionBarPopupWindowLayout2 = (ActionBarPopupWindow$ActionBarPopupWindowLayout) viewGroup.getChildAt(i10);
-                            actionBarPopupWindow$ActionBarPopupWindowLayout2.n = false;
-                        }
-                    }
-                    actionBarPopupWindow$ActionBarPopupWindowLayout = actionBarPopupWindow$ActionBarPopupWindowLayout2;
-                }
-                int itemsCount = actionBarPopupWindow$ActionBarPopupWindowLayout.getItemsCount();
-                for (int i11 = 0; i11 < itemsCount; i11++) {
-                    View childAt = actionBarPopupWindow$ActionBarPopupWindowLayout.L.getChildAt(i11);
-                    if (!(childAt instanceof k1)) {
-                        childAt.setAlpha(childAt.isEnabled() ? 1.0f : 0.5f);
-                    }
-                }
+                Method method = o1.k;
+                break;
+            case 1:
+                Field field = xu.f;
                 break;
             default:
-                n1 n1Var2 = this.b;
-                n1Var2.a = null;
-                n1Var2.d = false;
-                n1Var2.setFocusable(false);
-                try {
-                    super/*android.widget.PopupWindow*/.dismiss();
-                } catch (Exception unused) {
-                }
-                n1Var2.j();
-                if (n1Var2.e) {
-                    n1Var2.j.unlock();
-                    break;
-                }
+                Field field2 = z61.c;
                 break;
         }
     }

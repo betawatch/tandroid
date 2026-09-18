@@ -5,7 +5,7 @@ import com.google.android.gms.common.api.Status;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class y0 implements OnCompleteListener {
     public final h a;
@@ -85,7 +85,7 @@ public final class y0 implements OnCompleteListener {
                             int i17 = nVar.d;
                             int i18 = nVar.e;
                             int i19 = nVar.a;
-                            if (gVar.Q == null || gVar.f()) {
+                            if (gVar.Q == null || gVar.g()) {
                                 i11 = i19;
                                 i12 = i18;
                             } else {

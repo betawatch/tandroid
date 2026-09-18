@@ -2,30 +2,30 @@ package o2;
 
 import b2.r0;
 import java.util.ArrayList;
-import v7.x7;
+import v7.y7;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class c {
     public static final int[] c = {8, 13, 11, 2, 0, 1, 7};
-    public rb.a a;
+    public qb.b a;
     public boolean b;
 
     public static void a(int i10, ArrayList arrayList) {
-        if (x7.d(i10, 0, 7, c) == -1 || arrayList.contains(Integer.valueOf(i10))) {
+        if (y7.d(i10, 0, 7, c) == -1 || arrayList.contains(Integer.valueOf(i10))) {
             return;
         }
         arrayList.add(Integer.valueOf(i10));
     }
 
     public final b2.s b(b2.s sVar) {
-        if (!this.b || !this.a.i0(sVar)) {
+        if (!this.b || !this.a.W(sVar)) {
             return sVar;
         }
         b2.r a2 = sVar.a();
         String str = sVar.k;
         a2.q = r0.n("application/x-media3-cues");
-        a2.O = this.a.J(sVar);
+        a2.O = this.a.D(sVar);
         StringBuilder sb2 = new StringBuilder();
         sb2.append(sVar.r);
         sb2.append(str != null ? " ".concat(str) : "");

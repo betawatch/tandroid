@@ -12,15 +12,15 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import v7.m8;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class x implements db.v {
-    public final pf.b a;
+    public final of.b a;
     public final fb.f b;
     public final j c;
     public final ArrayList d;
 
-    public x(pf.b bVar, fb.f fVar, j jVar, ArrayList arrayList) {
+    public x(of.b bVar, fb.f fVar, j jVar, ArrayList arrayList) {
         this.a = bVar;
         this.b = fVar;
         this.c = jVar;
@@ -219,6 +219,6 @@ public final class x implements db.v {
             return new db.d(2);
         }
         fb.d.f(this.d);
-        return ib.c.a.d(cls) ? new w(cls, b(gVar, aVar, cls, true)) : new u(this.a.T(aVar), b(gVar, aVar, cls, false));
+        return ib.c.a.d(cls) ? new w(cls, b(gVar, aVar, cls, true)) : new u(this.a.K(aVar), b(gVar, aVar, cls, false));
     }
 }

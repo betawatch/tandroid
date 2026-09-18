@@ -1,25 +1,114 @@
 package bb;
 
+import a6.m;
+import android.content.Context;
+import android.os.Bundle;
 import org.telegram.tgnet.TLObject;
+import v7.t7;
+import w7.q;
+import za.b0;
+import za.r;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
-public final class h extends kd.c {
-    public i a;
-    public /* synthetic */ Object b;
-    public final /* synthetic */ i c;
-    public int d;
+public final class h {
+    public static final f c = new f();
+    public static final m1.c d = q.a(r.b);
+    public final m a;
+    public final d b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public h(i iVar, kd.c cVar) {
-        super(cVar);
-        this.c = iVar;
+    public h(k9.h hVar, id.h hVar2, id.h hVar3, qa.d dVar) {
+        hVar.a();
+        Context context = hVar.a;
+        kotlin.jvm.internal.i.d(context, "firebaseApp.applicationContext");
+        b0 b0Var = b0.a;
+        za.b a2 = b0.a(hVar);
+        m mVar = new m(context);
+        aa.a aVar = new aa.a(a2, hVar2);
+        c.getClass();
+        d dVar2 = new d(hVar3, dVar, a2, aVar, d.a(context, f.a[0]));
+        this.a = mVar;
+        this.b = dVar2;
     }
 
-    @Override // kd.a
-    public final Object invokeSuspend(Object obj) {
-        this.b = obj;
-        this.d |= TLObject.FLAG_31;
-        return this.c.b(this);
+    public final double a() {
+        Bundle bundle = (Bundle) this.a.b;
+        Double valueOf = bundle.containsKey("firebase_sessions_sampling_rate") ? Double.valueOf(bundle.getDouble("firebase_sessions_sampling_rate")) : null;
+        if (valueOf != null) {
+            double doubleValue = valueOf.doubleValue();
+            if (0.0d <= doubleValue && doubleValue <= 1.0d) {
+                return doubleValue;
+            }
+        }
+        e eVar = this.b.c.b;
+        if (eVar == null) {
+            kotlin.jvm.internal.i.h("sessionConfigs");
+            throw null;
+        }
+        Double d10 = eVar.b;
+        if (d10 != null) {
+            double doubleValue2 = d10.doubleValue();
+            if (0.0d <= doubleValue2 && doubleValue2 <= 1.0d) {
+                return doubleValue2;
+            }
+        }
+        return 1.0d;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:11:0x0058 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x0057 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x003a  */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x0024  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final Object b(kd.c cVar) {
+        g gVar;
+        int i10;
+        h hVar;
+        if (cVar instanceof g) {
+            gVar = (g) cVar;
+            int i11 = gVar.d;
+            if ((i11 & TLObject.FLAG_31) != 0) {
+                gVar.d = i11 - TLObject.FLAG_31;
+                Object obj = gVar.b;
+                jd.a aVar = jd.a.a;
+                i10 = gVar.d;
+                gd.i iVar = gd.i.a;
+                if (i10 != 0) {
+                    t7.b(obj);
+                    gVar.a = this;
+                    gVar.d = 1;
+                    this.a.getClass();
+                    if (iVar != aVar) {
+                        hVar = this;
+                    }
+                }
+                if (i10 != 1) {
+                    if (i10 == 2) {
+                        t7.b(obj);
+                    }
+                    throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                }
+                hVar = gVar.a;
+                t7.b(obj);
+                d dVar = hVar.b;
+                gVar.a = null;
+                gVar.d = 2;
+                return dVar.c(gVar) != aVar ? aVar : iVar;
+            }
+        }
+        gVar = new g(this, cVar);
+        Object obj2 = gVar.b;
+        jd.a aVar2 = jd.a.a;
+        i10 = gVar.d;
+        gd.i iVar2 = gd.i.a;
+        if (i10 != 0) {
+        }
+        d dVar2 = hVar.b;
+        gVar.a = null;
+        gVar.d = 2;
+        if (dVar2.c(gVar) != aVar2) {
+        }
     }
 }

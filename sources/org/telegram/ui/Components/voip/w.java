@@ -1,53 +1,40 @@
 package org.telegram.ui.Components.voip;
 
 import android.animation.ValueAnimator;
-import org.telegram.ui.ui1;
+import org.telegram.ui.g50;
+import org.telegram.ui.k60;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ float c;
-    public final /* synthetic */ float d;
-    public final /* synthetic */ Object e;
+    public final /* synthetic */ m0 b;
 
-    public /* synthetic */ w(Object obj, float f7, float f10, float f11, int i10) {
+    public /* synthetic */ w(m0 m0Var, int i10) {
         this.a = i10;
-        this.e = obj;
-        this.b = f7;
-        this.c = f10;
-        this.d = f11;
+        this.b = m0Var;
     }
 
     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
     public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                l0 l0Var = (l0) this.e;
-                l0Var.getClass();
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                l0Var.y0 = com.google.android.gms.internal.vision.e2.z(1.0f, floatValue, 1.0f, this.b * floatValue);
-                l0Var.r0 = this.c * floatValue;
-                l0Var.s0 = this.d * floatValue;
-                l0Var.invalidate();
-                break;
-            case 1:
-                ui1 ui1Var = (ui1) this.e;
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                ui1Var.f1 = com.google.android.gms.internal.vision.e2.z(1.0f, floatValue2, 1.0f, this.b * floatValue2);
-                ui1Var.Y0 = this.c * floatValue2;
-                ui1Var.Z0 = this.d * floatValue2;
-                ui1Var.s.invalidate();
+                m0 m0Var = this.b;
+                m0Var.getClass();
+                m0Var.I0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                m0Var.invalidate();
                 break;
             default:
-                tg.e eVar = (tg.e) this.e;
-                eVar.getClass();
-                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                tg.a aVar = eVar.b;
-                aVar.d = this.b * floatValue3;
-                aVar.e = this.c * floatValue3;
-                aVar.g = floatValue3 * this.d;
+                m0 m0Var2 = this.b;
+                m0Var2.getClass();
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                m0Var2.c = floatValue;
+                k60 k60Var = m0Var2.j0;
+                k60Var.z1.setAlpha(1.0f - floatValue);
+                g50 g50Var = k60Var.O;
+                g50Var.setAlpha((1.0f - k60Var.a2.c) * (g50Var.getTag() != null ? 1.0f : 0.0f));
+                k60Var.E1(k60Var.y0);
+                m0Var2.l();
                 break;
         }
     }

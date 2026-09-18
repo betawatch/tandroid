@@ -1,32 +1,101 @@
 package org.telegram.ui;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class yi implements NotificationCenter.NotificationCenterDelegate {
+public final class yi extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ bi.k8 b;
-    public final /* synthetic */ co c;
-    public final /* synthetic */ co d;
+    public final /* synthetic */ bo b;
 
-    public yi(co coVar, int i10, bi.k8 k8Var, co coVar2) {
-        this.d = coVar;
+    public /* synthetic */ yi(bo boVar, int i10) {
         this.a = i10;
-        this.b = k8Var;
-        this.c = coVar2;
+        this.b = boVar;
     }
 
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        int i12;
-        int i13 = NotificationCenter.messagesDidLoad;
-        if (i10 == i13 && ((Integer) objArr[10]).intValue() == this.a) {
-            this.b.run();
-            AndroidUtilities.runOnUIThread(new i2.a0(this.c, i10, i11, objArr), 50L);
-            i12 = ((org.telegram.ui.ActionBar.n2) this.d).currentAccount;
-            NotificationCenter.getInstance(i12).removeObserver(this, i13);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        vj vjVar;
+        switch (this.a) {
+            case 0:
+                bo boVar = this.b;
+                gl glVar = boVar.b3;
+                if (glVar != null) {
+                    glVar.setIsMessageTransition(false);
+                    boVar.b3.h(true);
+                    boVar.b3.setVisibility(4);
+                    break;
+                }
+                break;
+            case 1:
+                float dp = AndroidUtilities.dp(30.0f);
+                bo boVar2 = this.b;
+                boVar2.A9 = dp;
+                boVar2.o9();
+                break;
+            case 2:
+                bo boVar3 = this.b;
+                if (boVar3.fragmentView != null && (vjVar = boVar3.x0) != null) {
+                    vjVar.invalidate();
+                    boVar3.fragmentView.invalidate();
+                    break;
+                }
+                break;
+            case 3:
+                this.b.P.setVisibility(4);
+                break;
+            case 4:
+                AndroidUtilities.runOnUIThread(new ej(this, 3), 2000L);
+                break;
+            case 5:
+                bo boVar4 = this.b;
+                if (animator.equals(boVar4.g3)) {
+                    boVar4.g3 = null;
+                    break;
+                }
+                break;
+            case 6:
+                bo boVar5 = this.b;
+                if (animator.equals(boVar5.g3)) {
+                    boVar5.g3 = null;
+                    break;
+                }
+                break;
+            case 7:
+                bo boVar6 = this.b;
+                if (animator.equals(boVar6.h3)) {
+                    boVar6.i3 = 1.0f;
+                    boVar6.lc();
+                    boVar6.h3 = null;
+                    break;
+                }
+                break;
+            case 8:
+                bo boVar7 = this.b;
+                if (animator.equals(boVar7.h3)) {
+                    boVar7.i3 = 0.0f;
+                    boVar7.lc();
+                    boVar7.h3 = null;
+                    break;
+                }
+                break;
+            case 9:
+                this.b.T4 = null;
+                break;
+            case 10:
+                bo boVar8 = this.b;
+                boVar8.Da = 1.0f;
+                boVar8.Y.setVisibility(4);
+                boVar8.O0.setVisibility(4);
+                boVar8.o9();
+                break;
+            default:
+                bo boVar9 = this.b;
+                boVar9.Da = 0.0f;
+                boVar9.o9();
+                break;
         }
     }
 }

@@ -1,37 +1,37 @@
 package org.telegram.ui;
 
-import android.app.Activity;
+import android.content.Context;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class w31 implements a41 {
-    public final /* synthetic */ co a;
-    public final /* synthetic */ Activity b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.f6 c;
-    public final /* synthetic */ MessageObject d;
+public final class w31 implements z31 {
+    public final /* synthetic */ org.telegram.messenger.video.a a;
+    public final /* synthetic */ org.telegram.ui.Components.vc b;
+    public final /* synthetic */ Context c;
+    public final /* synthetic */ ai.a1 d;
+    public final /* synthetic */ org.telegram.messenger.video.d e;
 
-    public w31(co coVar, Activity activity, org.telegram.ui.ActionBar.f6 f6Var, MessageObject messageObject) {
-        this.a = coVar;
-        this.b = activity;
-        this.c = f6Var;
-        this.d = messageObject;
+    public w31(org.telegram.messenger.video.a aVar, org.telegram.ui.Components.vc vcVar, Context context, ai.a1 a1Var, org.telegram.messenger.video.d dVar) {
+        this.a = aVar;
+        this.b = vcVar;
+        this.c = context;
+        this.d = a1Var;
+        this.e = dVar;
     }
 
-    @Override // org.telegram.ui.a41
+    @Override // org.telegram.ui.z31
     public final void a() {
-        AndroidUtilities.runOnUIThread(new p31(this.a, this.b, this.c, this.d, 2), 200L);
+        AndroidUtilities.runOnUIThread(new s31(this.a, this.b, this.c, this.d, 2), 200L);
     }
 
-    @Override // org.telegram.ui.a41
+    @Override // org.telegram.ui.z31
     public final void b() {
-        AndroidUtilities.runOnUIThread(new te(this.a, this.d, 8), 200L);
+        AndroidUtilities.runOnUIThread(new ky0(19, this.a, this.b), 200L);
     }
 
-    @Override // org.telegram.ui.a41
+    @Override // org.telegram.ui.z31
     public final void c() {
-        co coVar = this.a;
-        coVar.showDialog(new sg.a1((org.telegram.ui.ActionBar.n2) coVar, 3, true));
+        this.e.run();
     }
 }

@@ -4,7 +4,7 @@ import androidx.car.app.model.Action;
 import androidx.car.app.model.CarIcon;
 import androidx.car.app.model.CarText;
 import androidx.car.app.model.q;
-import androidx.car.app.utils.i;
+import androidx.car.app.utils.g;
 import e0.p0;
 import j$.util.Objects;
 import java.util.ArrayList;
@@ -12,7 +12,7 @@ import java.util.Collections;
 import java.util.List;
 import v7.u;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public class ConversationItem implements q {
     private final List<Action> mActions;
@@ -34,7 +34,7 @@ public class ConversationItem implements q {
         this.mSelf = validateSender(fVar.c);
         this.mIcon = fVar.d;
         this.mIsGroupConversation = fVar.e;
-        List<CarMessage> g10 = i.g(fVar.f);
+        List<CarMessage> g10 = g.g(fVar.f);
         Objects.requireNonNull(g10);
         List<CarMessage> list = g10;
         this.mMessages = list;
@@ -44,7 +44,7 @@ public class ConversationItem implements q {
         c cVar = fVar.g;
         Objects.requireNonNull(cVar);
         this.mConversationCallbackDelegate = cVar;
-        this.mActions = i.g(fVar.h);
+        this.mActions = g.g(fVar.h);
     }
 
     public static p0 validateSender(p0 p0Var) {
@@ -115,7 +115,7 @@ public class ConversationItem implements q {
         this.mIcon = null;
         this.mIsGroupConversation = false;
         this.mMessages = new ArrayList();
-        this.mConversationCallbackDelegate = new ConversationCallbackDelegateImpl(new qb.b(2));
+        this.mConversationCallbackDelegate = new ConversationCallbackDelegateImpl(new ob.a(2));
         this.mActions = Collections.EMPTY_LIST;
     }
 }

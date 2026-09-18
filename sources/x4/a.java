@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import org.xmlpull.v1.XmlPullParser;
 import v7.g8;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public abstract class a {
     public static final int[] a = {R.attr.name, R.attr.tint, R.attr.height, R.attr.width, R.attr.alpha, R.attr.autoMirrored, R.attr.tintMode, R.attr.viewportWidth, R.attr.viewportHeight};
@@ -37,40 +37,40 @@ public abstract class a {
     public static final int[] j = {R.attr.value, R.attr.interpolator, R.attr.valueType, R.attr.fraction};
     public static final int[] k = {R.attr.propertyName, R.attr.pathData, R.attr.propertyXName, R.attr.propertyYName};
 
-    /* JADX WARN: Code restructure failed: missing block: B:10:0x03a1, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:10:0x03a2, code lost:
     
         r2 = new android.animation.Animator[r10.size()];
         r3 = r10.size();
         r11 = 0;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:11:0x03ac, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:11:0x03ad, code lost:
     
         if (r1 >= r3) goto L221;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:12:0x03ae, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:12:0x03af, code lost:
     
         r4 = r10.get(r1);
         r1 = r1 + 1;
         r2[r11] = (android.animation.Animator) r4;
         r11 = r11 + 1;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:14:0x03bc, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:14:0x03bd, code lost:
     
         if (r32 != 0) goto L212;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:15:0x03be, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:15:0x03bf, code lost:
     
         r31.playTogether(r2);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:16:0x03c1, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:16:0x03c2, code lost:
     
         return r0;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:18:0x03c2, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:18:0x03c3, code lost:
     
         r31.playSequentially(r2);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:19:0x03c5, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:19:0x03c6, code lost:
     
         return r0;
      */
@@ -78,20 +78,20 @@ public abstract class a {
     
         r1 = 0;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:8:0x039d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:8:0x039e, code lost:
     
         if (r31 == null) goto L213;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:9:0x039f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:9:0x03a0, code lost:
     
         if (r10 == null) goto L213;
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:152:0x0259  */
-    /* JADX WARN: Removed duplicated region for block: B:166:0x028c  */
-    /* JADX WARN: Removed duplicated region for block: B:193:0x030b  */
-    /* JADX WARN: Removed duplicated region for block: B:31:0x0375 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:33:0x0379  */
+    /* JADX WARN: Removed duplicated region for block: B:152:0x025a  */
+    /* JADX WARN: Removed duplicated region for block: B:166:0x028d  */
+    /* JADX WARN: Removed duplicated region for block: B:193:0x030c  */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x0376 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x037a  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -394,8 +394,8 @@ public abstract class a {
         if (i10 == 2) {
             String string = typedArray.getString(i11);
             String string2 = typedArray.getString(i12);
-            i0.e[] c10 = g8.c(string);
-            i0.e[] c11 = g8.c(string2);
+            i0.d[] c10 = g8.c(string);
+            i0.d[] c11 = g8.c(string2);
             if (c10 != null || c11 != null) {
                 if (c10 != null) {
                     e eVar = new e();

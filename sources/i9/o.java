@@ -13,10 +13,11 @@ import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 import java.util.concurrent.locks.LockSupport;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.telegram.messenger.BuildConfig;
 import org.telegram.ui.Cells.p6;
 import v7.k8;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public abstract class o extends j9.a implements w {
     public static final boolean d;
@@ -326,7 +327,7 @@ public abstract class o extends j9.a implements w {
 
     public final void f(StringBuilder sb2, Object obj) {
         if (obj == null) {
-            sb2.append("null");
+            sb2.append(BuildConfig.BETA_URL);
         } else {
             if (obj == this) {
                 sb2.append("this future");

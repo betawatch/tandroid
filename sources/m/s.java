@@ -24,7 +24,7 @@ import android.widget.TextView;
 import org.telegram.messenger.beta.R;
 import w7.q7;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class s extends EditText implements r0.o, u0.k {
     public final e2.c a;
@@ -139,14 +139,14 @@ public final class s extends EditText implements r0.o, u0.k {
 
     @Override // android.widget.TextView, android.view.View
     public final InputConnection onCreateInputConnection(EditorInfo editorInfo) {
-        String[] e7;
+        String[] e;
         InputConnection onCreateInputConnection = super.onCreateInputConnection(editorInfo);
         this.b.getClass();
         w0.h(editorInfo, onCreateInputConnection, this);
         w7.n.a(editorInfo, onCreateInputConnection, this);
-        if (onCreateInputConnection != null && Build.VERSION.SDK_INT <= 30 && (e7 = r0.i0.e(this)) != null) {
-            t0.c.b(editorInfo, e7);
-            onCreateInputConnection = t0.g.a(onCreateInputConnection, editorInfo, new rg.p2(this, 2));
+        if (onCreateInputConnection != null && Build.VERSION.SDK_INT <= 30 && (e = r0.i0.e(this)) != null) {
+            t0.c.b(editorInfo, e);
+            onCreateInputConnection = t0.g.a(onCreateInputConnection, editorInfo, new r5.d(this, 3));
         }
         return this.e.c(onCreateInputConnection, editorInfo);
     }

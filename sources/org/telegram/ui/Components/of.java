@@ -1,47 +1,174 @@
 package org.telegram.ui.Components;
 
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.content.Context;
-import android.graphics.Paint;
+import android.graphics.Canvas;
+import android.text.SpannableStringBuilder;
+import android.text.TextUtils;
+import android.view.MotionEvent;
+import android.view.View;
+import java.util.ArrayList;
+import java.util.HashMap;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Emoji;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.MessagesController;
+import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class of extends fi.y {
-    public boolean s;
-    public final /* synthetic */ ChatActivityEnterView v;
+public final class of extends lg {
+    public boolean e;
+    public float f;
+    public float h;
+    public boolean n;
+    public final /* synthetic */ ChatActivityEnterView r;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public of(ChatActivityEnterView chatActivityEnterView, Context context) {
-        super(context);
-        this.v = chatActivityEnterView;
-        this.a = null;
-        Paint paint = new Paint(1);
-        this.d = paint;
-        this.f = true;
-        this.b = new b2.q0();
-        bi.o0 o0Var = new bi.o0(this, context, 2);
-        this.c = o0Var;
-        o0Var.setOverScrollMode(2);
-        o0Var.setClipToPadding(false);
-        o0Var.setClipToOutline(true);
-        o0Var.j(new ah.e0(this, 5));
-        addView(o0Var);
-        paint.setColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Ii, false));
-        dh.d dVar = this.r;
-        if (dVar != null) {
-            dVar.u();
-        }
-        invalidate();
-        setClipChildren(false);
-        this.s = false;
+    public of(ChatActivityEnterView chatActivityEnterView, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(chatActivityEnterView, context, f6Var);
+        this.r = chatActivityEnterView;
+        this.e = true;
     }
 
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        if (this.s) {
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.du, android.widget.TextView, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        ChatActivityEnterView chatActivityEnterView = this.r;
+        View view = chatActivityEnterView.J4;
+        if (view != null) {
+            setWindowView(view);
             return;
         }
-        this.s = true;
-        this.v.C1();
+        org.telegram.ui.bo boVar = chatActivityEnterView.O2;
+        if (boVar == null || boVar.getParentLayout() == null || !((ActionBarLayout) chatActivityEnterView.O2.getParentLayout()).b) {
+            setWindowView(chatActivityEnterView.N2.getWindow().getDecorView());
+        } else {
+            setWindowView(chatActivityEnterView.O2.getParentLayout().getWindow().getDecorView());
+        }
+    }
+
+    @Override // org.telegram.ui.Components.bu, org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.du, android.widget.TextView, android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        if (getLayout() == null || !this.e) {
+            return;
+        }
+        this.e = false;
+        this.r.L(true);
+    }
+
+    @Override // org.telegram.ui.Components.lg, org.telegram.ui.Components.bu, org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, i11);
+        ChatActivityEnterView chatActivityEnterView = this.r;
+        if (chatActivityEnterView.T != chatActivityEnterView.E0.getLineCount()) {
+            boolean z10 = false;
+            chatActivityEnterView.p1((chatActivityEnterView.E0.getLineCount() <= 2 || chatActivityEnterView.E0.getText() == null || TextUtils.isEmpty(chatActivityEnterView.E0.getText().toString().trim())) ? false : true);
+            if (chatActivityEnterView.E0.getLineCount() > 2 && chatActivityEnterView.E0.getText() != null && !TextUtils.isEmpty(chatActivityEnterView.E0.getText().toString().trim())) {
+                z10 = true;
+            }
+            chatActivityEnterView.v1(z10);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.lg, org.telegram.ui.Components.bu, android.widget.EditText, android.widget.TextView
+    public final boolean onTextContextMenuItem(int i10) {
+        if (i10 == 16908322) {
+            ChatActivityEnterView chatActivityEnterView = this.r;
+            if (chatActivityEnterView.E0 != null) {
+                try {
+                    ClipboardManager clipboardManager = (ClipboardManager) chatActivityEnterView.getContext().getSystemService("clipboard");
+                    ClipData primaryClip = clipboardManager == null ? null : clipboardManager.getPrimaryClip();
+                    if (primaryClip != null && primaryClip.getItemCount() >= 1 && primaryClip.getDescription() != null && primaryClip.getDescription().hasMimeType("text/html")) {
+                        String htmlText = primaryClip.getItemAt(0).getHtmlText();
+                        if (!TextUtils.isEmpty(htmlText)) {
+                            HashMap hashMap = new HashMap();
+                            ArrayList z10 = ii.d4.z(htmlText, hashMap);
+                            if (!z10.isEmpty()) {
+                                if (!ii.c5.f(z10, hashMap)) {
+                                    SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(ii.c5.j(z10, false));
+                                    Emoji.replaceEmoji((CharSequence) spannableStringBuilder, chatActivityEnterView.E0.getPaint().getFontMetricsInt(), false, (int[]) null);
+                                    x5[] x5VarArr = (x5[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), x5.class);
+                                    if (x5VarArr != null) {
+                                        for (x5 x5Var : x5VarArr) {
+                                            x5Var.applyFontMetrics(chatActivityEnterView.E0.getPaint().getFontMetricsInt(), o5.g());
+                                        }
+                                    }
+                                    int max = Math.max(0, chatActivityEnterView.E0.getSelectionStart());
+                                    int min = Math.min(chatActivityEnterView.E0.getText().length(), chatActivityEnterView.E0.getSelectionEnd());
+                                    si0[] si0VarArr = (si0[]) chatActivityEnterView.E0.getText().getSpans(max, min, si0.class);
+                                    if (si0VarArr == null || si0VarArr.length <= 0) {
+                                        ti0.a(spannableStringBuilder);
+                                    } else {
+                                        si0[] si0VarArr2 = (si0[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), si0.class);
+                                        for (int i11 = 0; i11 < si0VarArr2.length; i11++) {
+                                            spannableStringBuilder.removeSpan(si0VarArr2[i11]);
+                                            spannableStringBuilder.removeSpan(si0VarArr2[i11].a);
+                                        }
+                                    }
+                                    of ofVar = chatActivityEnterView.E0;
+                                    ofVar.setText(ofVar.getText().replace(max, min, spannableStringBuilder));
+                                    chatActivityEnterView.E0.setSelection(Math.min(max + spannableStringBuilder.length(), chatActivityEnterView.E0.getText().length()));
+                                    return true;
+                                }
+                                if (MessagesController.getInstance(chatActivityEnterView.Q).richEditorAvailable()) {
+                                    int max2 = Math.max(0, chatActivityEnterView.E0.getSelectionStart());
+                                    int min2 = Math.min(chatActivityEnterView.E0.getText().length(), chatActivityEnterView.E0.getSelectionEnd());
+                                    chatActivityEnterView.L0(chatActivityEnterView.E0.getText().subSequence(0, Math.min(max2, min2)), htmlText, chatActivityEnterView.E0.getText().subSequence(Math.max(max2, min2), chatActivityEnterView.E0.getText().length()));
+                                    return true;
+                                }
+                            }
+                        }
+                    }
+                } catch (Exception e) {
+                    FileLog.e(e);
+                }
+            }
+        }
+        return super.onTextContextMenuItem(i10);
+    }
+
+    @Override // org.telegram.ui.Components.lg, org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        ChatActivityEnterView chatActivityEnterView = this.r;
+        if (!chatActivityEnterView.w()) {
+            if (motionEvent.getAction() == 0 && chatActivityEnterView.Y2 != null) {
+                int i10 = org.telegram.ui.ActionBar.j6.vf;
+                int i11 = ChatActivityEnterView.n5;
+                setHandlesColor(chatActivityEnterView.j0(i10));
+                chatActivityEnterView.Y2.r1();
+            }
+            return super.onTouchEvent(motionEvent);
+        }
+        if (motionEvent.getAction() == 0) {
+            this.f = motionEvent.getX();
+            this.h = motionEvent.getY();
+            this.n = true;
+        } else if (this.n && motionEvent.getAction() == 2) {
+            if (Math.abs(motionEvent.getX() - this.f) > AndroidUtilities.touchSlop || Math.abs(motionEvent.getY() - this.h) > AndroidUtilities.touchSlop) {
+                this.n = false;
+            }
+        } else if (this.n) {
+            if (chatActivityEnterView.Y2 != null) {
+                int i12 = org.telegram.ui.ActionBar.j6.vf;
+                int i13 = ChatActivityEnterView.n5;
+                setHandlesColor(chatActivityEnterView.j0(i12));
+                chatActivityEnterView.Y2.r1();
+            }
+            of ofVar = chatActivityEnterView.E0;
+            if (ofVar != null && !AndroidUtilities.showKeyboard(ofVar)) {
+                chatActivityEnterView.E0.clearFocus();
+                chatActivityEnterView.E0.requestFocus();
+            }
+        }
+        return this.n;
+    }
+
+    @Override // org.telegram.ui.Components.lg, org.telegram.ui.Components.du
+    public final void setOffsetY(float f7) {
+        super.setOffsetY(f7);
+        this.r.x1.invalidate();
     }
 }

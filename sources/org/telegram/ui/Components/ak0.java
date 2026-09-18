@@ -1,36 +1,149 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
-/* loaded from: classes3.dex */
-public final class ak0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ dk0 b;
+import android.animation.ValueAnimator;
+import android.graphics.Paint;
+import androidx.recyclerview.widget.RecyclerView;
 
-    public /* synthetic */ ak0(dk0 dk0Var, int i10) {
-        this.a = i10;
-        this.b = dk0Var;
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* loaded from: classes3.dex */
+public final class ak0 extends s4.s0 {
+    public boolean a;
+    public boolean b;
+    public ValueAnimator c;
+    public ValueAnimator d;
+    public final /* synthetic */ gk0 e;
+
+    public ak0(gk0 gk0Var) {
+        this.e = gk0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                if (this.b.a.getImageReceiver().getLottieAnimation() != null && !this.b.a.getImageReceiver().getLottieAnimation().l0 && !this.b.a.getImageReceiver().getLottieAnimation().w()) {
-                    this.b.a.getImageReceiver().getLottieAnimation().start();
+    public static ValueAnimator c(float f7, float f10, q0.a aVar, Runnable runnable) {
+        ValueAnimator duration = ValueAnimator.ofFloat(f7, f10).setDuration((long) (Math.abs(f10 - f7) * 150.0f));
+        duration.addUpdateListener(new h70(aVar, 8));
+        duration.addListener(new org.telegram.ui.q0(1, runnable));
+        duration.start();
+        return duration;
+    }
+
+    @Override // s4.s0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        gk0 gk0Var = this.e;
+        gg.j0 j0Var = gk0Var.W;
+        boolean z10 = j0Var.L0() != 0;
+        if (z10 != this.a) {
+            ValueAnimator valueAnimator = this.c;
+            if (valueAnimator != null) {
+                valueAnimator.cancel();
+            }
+            final int i12 = 0;
+            final int i13 = 0;
+            this.c = c(gk0Var.r, z10 ? 1.0f : 0.0f, new q0.a(this) { // from class: org.telegram.ui.Components.yj0
+                public final /* synthetic */ ak0 b;
+
+                {
+                    this.b = this;
                 }
-                this.b.E = false;
-                break;
-            default:
-                dk0 dk0Var = this.b;
-                fk0 fk0Var = dk0Var.P;
-                try {
-                    dk0Var.performHapticFeedback(0);
-                } catch (Exception unused) {
+
+                @Override // q0.a
+                public final void accept(Object obj) {
+                    Float f7 = (Float) obj;
+                    switch (i12) {
+                        case 0:
+                            gk0 gk0Var2 = this.b.e;
+                            Paint paint = gk0Var2.h;
+                            float floatValue = f7.floatValue();
+                            gk0Var2.r = floatValue;
+                            paint.setAlpha((int) (floatValue * 255.0f));
+                            gk0Var2.invalidate();
+                            break;
+                        default:
+                            gk0 gk0Var3 = this.b.e;
+                            Paint paint2 = gk0Var3.n;
+                            float floatValue2 = f7.floatValue();
+                            gk0Var3.s = floatValue2;
+                            paint2.setAlpha((int) (floatValue2 * 255.0f));
+                            gk0Var3.invalidate();
+                            break;
+                    }
                 }
-                fk0Var.m0 = fk0Var.T.indexOf(dk0Var.e);
-                fk0Var.l0 = dk0Var.e;
-                fk0Var.invalidate();
-                break;
+            }, new Runnable(this) { // from class: org.telegram.ui.Components.zj0
+                public final /* synthetic */ ak0 b;
+
+                {
+                    this.b = this;
+                }
+
+                @Override // java.lang.Runnable
+                public final void run() {
+                    switch (i13) {
+                        case 0:
+                            this.b.c = null;
+                            break;
+                        default:
+                            this.b.d = null;
+                            break;
+                    }
+                }
+            });
+            this.a = z10;
+        }
+        boolean z11 = j0Var.N0() != gk0Var.a0.h() - 1;
+        if (z11 != this.b) {
+            ValueAnimator valueAnimator2 = this.d;
+            if (valueAnimator2 != null) {
+                valueAnimator2.cancel();
+            }
+            final int i14 = 1;
+            final int i15 = 1;
+            this.d = c(gk0Var.s, z11 ? 1.0f : 0.0f, new q0.a(this) { // from class: org.telegram.ui.Components.yj0
+                public final /* synthetic */ ak0 b;
+
+                {
+                    this.b = this;
+                }
+
+                @Override // q0.a
+                public final void accept(Object obj) {
+                    Float f7 = (Float) obj;
+                    switch (i14) {
+                        case 0:
+                            gk0 gk0Var2 = this.b.e;
+                            Paint paint = gk0Var2.h;
+                            float floatValue = f7.floatValue();
+                            gk0Var2.r = floatValue;
+                            paint.setAlpha((int) (floatValue * 255.0f));
+                            gk0Var2.invalidate();
+                            break;
+                        default:
+                            gk0 gk0Var3 = this.b.e;
+                            Paint paint2 = gk0Var3.n;
+                            float floatValue2 = f7.floatValue();
+                            gk0Var3.s = floatValue2;
+                            paint2.setAlpha((int) (floatValue2 * 255.0f));
+                            gk0Var3.invalidate();
+                            break;
+                    }
+                }
+            }, new Runnable(this) { // from class: org.telegram.ui.Components.zj0
+                public final /* synthetic */ ak0 b;
+
+                {
+                    this.b = this;
+                }
+
+                @Override // java.lang.Runnable
+                public final void run() {
+                    switch (i15) {
+                        case 0:
+                            this.b.c = null;
+                            break;
+                        default:
+                            this.b.d = null;
+                            break;
+                    }
+                }
+            });
+            this.b = z11;
         }
     }
 }

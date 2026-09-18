@@ -7,9 +7,9 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class h31 extends org.telegram.ui.Components.kl0 {
+public final class h31 extends org.telegram.ui.Components.ll0 {
     public final Context c;
     public final /* synthetic */ i31 d;
 
@@ -18,7 +18,7 @@ public final class h31 extends org.telegram.ui.Components.kl0 {
         this.c = context;
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.ll0
     public final boolean D(s4.c1 c1Var) {
         int b10 = c1Var.b();
         if (b10 == 0) {
@@ -125,6 +125,6 @@ public final class h31 extends org.telegram.ui.Components.kl0 {
             e9Var.setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.d6, false));
         }
         e9Var.setLayoutParams(new s4.p0(-1, -2));
-        return new org.telegram.ui.Components.vk0(e9Var);
+        return new org.telegram.ui.Components.wk0(e9Var);
     }
 }

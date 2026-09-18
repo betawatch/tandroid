@@ -1,47 +1,152 @@
 package org.telegram.ui;
 
-import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class x81 implements View.OnClickListener {
+public final class x81 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ int a;
-    public final /* synthetic */ i91 b;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ x81(i91 i91Var, int i10) {
+    public /* synthetic */ x81(Object obj, int i10) {
         this.a = i10;
-        this.b = i91Var;
+        this.b = obj;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    @Override // org.telegram.ui.ActionBar.j
+    public final void b(int i10) {
+        org.telegram.ui.ActionBar.k kVar;
+        org.telegram.ui.ActionBar.k kVar2;
         switch (this.a) {
             case 0:
-                i91 i91Var = this.b;
-                of.f.s(i91Var.getParentActivity(), i91Var.getMessagesController().premiumManageSubscriptionUrl);
-                i91Var.getMessagesController().removeSuggestion(0L, "PREMIUM_GRACE");
+                g91 g91Var = (g91) this.b;
+                if (i10 != -1) {
+                    if (i10 == 2) {
+                        g91Var.l0(new ah0(null));
+                        break;
+                    }
+                } else {
+                    g91Var.finishFragment();
+                    break;
+                }
                 break;
             case 1:
-                i91 i91Var2 = this.b;
-                i91Var2.getClass();
-                i91Var2.presentFragment(new h(3));
+                if (i10 == -1) {
+                    ((ab1) this.b).finishFragment();
+                    break;
+                }
                 break;
             case 2:
-                this.b.getMessagesController().removeSuggestion(0L, "VALIDATE_PHONE_NUMBER");
+                StickersActivity stickersActivity = (StickersActivity) this.b;
+                if (i10 != -1) {
+                    StickersActivity.d0(stickersActivity, i10);
+                    break;
+                } else if (stickersActivity.onBackPressed(true)) {
+                    stickersActivity.finishFragment();
+                    break;
+                }
                 break;
             case 3:
-                i91 i91Var3 = this.b;
-                i91Var3.getClass();
-                i91Var3.presentFragment(new hh1(8, null));
+                ce1 ce1Var = (ce1) this.b;
+                if (i10 != -1) {
+                    if (i10 == 1) {
+                        ce1.Y(ce1Var);
+                        break;
+                    }
+                } else {
+                    ce1Var.finishFragment();
+                    break;
+                }
                 break;
             case 4:
-                this.b.getMessagesController().removeSuggestion(0L, "VALIDATE_PASSWORD");
+                if (i10 == -1) {
+                    ((ue1) this.b).finishFragment();
+                    break;
+                }
                 break;
             case 5:
-                i91.W(this.b);
+                if (i10 == -1) {
+                    ((lg1) this.b).finishFragment();
+                    break;
+                }
+                break;
+            case 6:
+                if (i10 == -1) {
+                    TwoStepVerificationActivity twoStepVerificationActivity = (TwoStepVerificationActivity) this.b;
+                    if (twoStepVerificationActivity.X < 0) {
+                        twoStepVerificationActivity.finishFragment();
+                        break;
+                    } else {
+                        twoStepVerificationActivity.x0();
+                        break;
+                    }
+                }
+                break;
+            case 7:
+                UserInfoActivity userInfoActivity = (UserInfoActivity) this.b;
+                if (i10 != -1) {
+                    if (i10 == 1) {
+                        userInfoActivity.c0(true);
+                        break;
+                    }
+                } else if (userInfoActivity.onBackPressed(true)) {
+                    userInfoActivity.finishFragment();
+                    break;
+                }
+                break;
+            case 8:
+                UsersSelectActivity usersSelectActivity = (UsersSelectActivity) this.b;
+                if (i10 != -1) {
+                    if (i10 == 1) {
+                        usersSelectActivity.X();
+                        break;
+                    }
+                } else {
+                    usersSelectActivity.finishFragment();
+                    break;
+                }
+                break;
+            case 9:
+                org.telegram.ui.web.h1 h1Var = (org.telegram.ui.web.h1) this.b;
+                if (i10 == -1) {
+                    kVar = ((org.telegram.ui.ActionBar.o2) h1Var).actionBar;
+                    if (!kVar.s()) {
+                        h1Var.finishFragment();
+                        break;
+                    } else {
+                        kVar2 = ((org.telegram.ui.ActionBar.o2) h1Var).actionBar;
+                        kVar2.r();
+                        h1Var.v.clear();
+                        AndroidUtilities.forEachViews((RecyclerView) h1Var.a, (e2.h) new org.telegram.ui.web.m(1));
+                        break;
+                    }
+                }
+                break;
+            case 10:
+                if (i10 == -1) {
+                    ((rg.x0) this.b).dismiss();
+                    break;
+                }
+                break;
+            case 11:
+                if (i10 == -1) {
+                    ((xh.h4) this.b).finishFragment();
+                    break;
+                }
+                break;
+            case 12:
+                if (i10 == -1) {
+                    ((yh.g) this.b).finishFragment();
+                    break;
+                }
                 break;
             default:
-                i91.Z(this.b);
+                zg.q qVar = (zg.q) this.b;
+                if (i10 == -1 && !qVar.X(true)) {
+                    qVar.finishFragment();
+                    break;
+                }
                 break;
         }
     }

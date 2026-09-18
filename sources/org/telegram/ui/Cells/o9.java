@@ -7,9 +7,9 @@ import android.view.MenuItem;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.wt;
+import org.telegram.ui.Components.yt;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class o9 extends ActionMode.Callback2 {
     public final /* synthetic */ int a = 0;
@@ -30,7 +30,7 @@ public final class o9 extends ActionMode.Callback2 {
             case 1:
                 return this.b.onActionItemClicked(actionMode, menuItem);
             default:
-                return ((wt) this.b).onActionItemClicked(actionMode, menuItem);
+                return ((yt) this.b).onActionItemClicked(actionMode, menuItem);
         }
     }
 
@@ -43,7 +43,7 @@ public final class o9 extends ActionMode.Callback2 {
             case 1:
                 return this.b.onCreateActionMode(actionMode, menu);
             default:
-                return ((wt) this.b).onCreateActionMode(actionMode, menu);
+                return ((yt) this.b).onCreateActionMode(actionMode, menu);
         }
     }
 
@@ -59,7 +59,7 @@ public final class o9 extends ActionMode.Callback2 {
                 ((EditTextBoldCursor) this.c).floatingActionMode = null;
                 break;
             default:
-                ((wt) this.b).onDestroyActionMode(actionMode);
+                ((yt) this.b).onDestroyActionMode(actionMode);
                 break;
         }
     }
@@ -100,20 +100,20 @@ public final class o9 extends ActionMode.Callback2 {
                 break;
             case 1:
                 ActionMode.Callback callback = this.b;
-                if (!org.telegram.ui.Components.p2.d(callback)) {
+                if (!org.telegram.ui.Components.l2.d(callback)) {
                     super.onGetContentRect(actionMode, view, rect);
                     break;
                 } else {
-                    m4.t0.d(callback).onGetContentRect(actionMode, view, rect);
+                    m4.u0.e(callback).onGetContentRect(actionMode, view, rect);
                     break;
                 }
             default:
                 ActionMode.Callback callback2 = (ActionMode.Callback) this.c;
-                if (!org.telegram.ui.Components.p2.d(callback2)) {
+                if (!org.telegram.ui.Components.l2.d(callback2)) {
                     super.onGetContentRect(actionMode, view, rect);
                     break;
                 } else {
-                    m4.t0.d(callback2).onGetContentRect(actionMode, view, rect);
+                    m4.u0.e(callback2).onGetContentRect(actionMode, view, rect);
                     break;
                 }
         }
@@ -128,12 +128,12 @@ public final class o9 extends ActionMode.Callback2 {
             case 1:
                 return this.b.onPrepareActionMode(actionMode, menu);
             default:
-                return ((wt) this.b).a.onPrepareActionMode(actionMode, menu);
+                return ((yt) this.b).a.onPrepareActionMode(actionMode, menu);
         }
     }
 
-    public o9(wt wtVar, ActionMode.Callback callback) {
-        this.b = wtVar;
+    public o9(yt ytVar, ActionMode.Callback callback) {
+        this.b = ytVar;
         this.c = callback;
     }
 

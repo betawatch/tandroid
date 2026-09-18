@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Set;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class r extends h {
     public static final g6.b j = new g6.b("MediaRouterProxy", null);
@@ -38,21 +38,21 @@ public final class r extends h {
         if (!isEmpty) {
             f2.a(f1.a0);
         }
-        rVar.f(new String[]{"com.google.android.gms.cast.FLAG_OUTPUT_SWITCHER_ENABLED"}).addOnCompleteListener(new pf.b(this, bVar, false, 11));
+        rVar.f(new String[]{"com.google.android.gms.cast.FLAG_OUTPUT_SWITCHER_ENABLED"}).addOnCompleteListener(new of.b(this, bVar, false, 11));
     }
 
-    public final void L0(android.support.v4.media.session.c0 c0Var) {
+    public final void L0(android.support.v4.media.session.b0 b0Var) {
         this.c.getClass();
         p4.x.b();
         p4.e c10 = p4.x.c();
-        c10.D = c0Var;
-        m2.t tVar = c0Var != null ? new m2.t(c10, c0Var) : null;
-        m2.t tVar2 = c10.C;
-        if (tVar2 != null) {
-            tVar2.q();
+        c10.D = b0Var;
+        lf.i iVar = b0Var != null ? new lf.i(c10, b0Var) : null;
+        lf.i iVar2 = c10.C;
+        if (iVar2 != null) {
+            iVar2.v();
         }
-        c10.C = tVar;
-        if (tVar != null) {
+        c10.C = iVar;
+        if (iVar != null) {
             c10.l();
         }
     }

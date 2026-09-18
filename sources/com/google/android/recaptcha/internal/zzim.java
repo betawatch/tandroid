@@ -13,7 +13,7 @@ import zd.b0;
 import zd.c0;
 import zd.f1;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 final class zzim extends j implements p {
     public static final /* synthetic */ int zze = 0;
@@ -68,7 +68,7 @@ final class zzim extends j implements p {
                 zzzu zzzuVar = (zzzu) list.get(zzizVar.zza());
                 try {
                     zzip.zzf(this.zzd, zzzuVar, zzizVar);
-                } catch (Exception e7) {
+                } catch (Exception e) {
                     zzzuVar.zzk();
                     new Integer(zzzuVar.zzg());
                     List zzj = zzzuVar.zzj();
@@ -82,7 +82,7 @@ final class zzim extends j implements p {
                     }, 31);
                     zziz zzizVar2 = this.zzb;
                     this.zza = 1;
-                    zzh = zzipVar.zzh(e7, zzizVar2, this);
+                    zzh = zzipVar.zzh(e, zzizVar2, this);
                     if (zzh == aVar) {
                         return aVar;
                     }

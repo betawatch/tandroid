@@ -14,14 +14,14 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class mz extends FrameLayout {
     public static final /* synthetic */ int h = 0;
     public final org.telegram.ui.ActionBar.f6 a;
     public final TextView b;
     public final View c;
-    public final aj0 d;
+    public final bj0 d;
     public boolean e;
     public int f;
 
@@ -37,12 +37,12 @@ public final class mz extends FrameLayout {
         linearLayout.setClipChildren(false);
         linearLayout.setClipToPadding(false);
         linearLayout.setOrientation(1);
-        aj0 aj0Var = new aj0(context);
-        this.d = aj0Var;
-        aj0Var.setScaleType(ImageView.ScaleType.FIT_XY);
-        aj0Var.setImportantForAccessibility(2);
-        aj0Var.setVisibility(8);
-        linearLayout.addView(aj0Var, w7.x5.t(ImageReceiver.DEFAULT_CROSSFADE_DURATION, ImageReceiver.DEFAULT_CROSSFADE_DURATION, 17, 0, 0, 0, 20));
+        bj0 bj0Var = new bj0(context);
+        this.d = bj0Var;
+        bj0Var.setScaleType(ImageView.ScaleType.FIT_XY);
+        bj0Var.setImportantForAccessibility(2);
+        bj0Var.setVisibility(8);
+        linearLayout.addView(bj0Var, w7.x5.t(ImageReceiver.DEFAULT_CROSSFADE_DURATION, ImageReceiver.DEFAULT_CROSSFADE_DURATION, 17, 0, 0, 0, 20));
         TextView textView = new TextView(context);
         this.b = textView;
         textView.setTextSize(1, 20.0f);
@@ -53,16 +53,16 @@ public final class mz extends FrameLayout {
         addView(linearLayout, w7.x5.c(-2.0f, -2));
         AndroidUtilities.updateViewVisibilityAnimated(textView, false, 2.0f, false);
         AndroidUtilities.updateViewVisibilityAnimated(radialProgressView, false, 1.0f, false);
-        setOnTouchListener(new ci.d(18));
+        setOnTouchListener(new bi.d(18));
     }
 
     public final void a(int i10, int i11, int i12) {
         int i13 = i10 != 0 ? 0 : 8;
-        aj0 aj0Var = this.d;
-        aj0Var.setVisibility(i13);
+        bj0 bj0Var = this.d;
+        bj0Var.setVisibility(i13);
         if (i10 != 0) {
-            aj0Var.f(i10, i11, i12, null);
-            aj0Var.d();
+            bj0Var.f(i10, i11, i12, null);
+            bj0Var.d();
         }
     }
 

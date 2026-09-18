@@ -1,16 +1,19 @@
 package v7;
 
-import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
-
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public abstract class p5 {
-    public static /* synthetic */ boolean a(AtomicReferenceFieldUpdater atomicReferenceFieldUpdater, com.google.android.gms.internal.cast.h4 h4Var, Object obj, Object obj2) {
-        while (!atomicReferenceFieldUpdater.compareAndSet(h4Var, obj, obj2)) {
-            if (atomicReferenceFieldUpdater.get(h4Var) != obj && atomicReferenceFieldUpdater.get(h4Var) != obj) {
-                return false;
-            }
-        }
-        return true;
-    }
+    public abstract com.google.android.gms.internal.cast.b4 a(com.google.android.gms.internal.cast.h4 h4Var);
+
+    public abstract com.google.android.gms.internal.cast.g4 b(com.google.android.gms.internal.cast.h4 h4Var);
+
+    public abstract void c(com.google.android.gms.internal.cast.g4 g4Var, com.google.android.gms.internal.cast.g4 g4Var2);
+
+    public abstract void d(com.google.android.gms.internal.cast.g4 g4Var, Thread thread);
+
+    public abstract boolean e(com.google.android.gms.internal.cast.h4 h4Var, com.google.android.gms.internal.cast.b4 b4Var, com.google.android.gms.internal.cast.b4 b4Var2);
+
+    public abstract boolean f(com.google.android.gms.internal.cast.h4 h4Var, Object obj, Object obj2);
+
+    public abstract boolean g(com.google.android.gms.internal.cast.h4 h4Var, com.google.android.gms.internal.cast.g4 g4Var, com.google.android.gms.internal.cast.g4 g4Var2);
 }

@@ -4,7 +4,7 @@ import android.util.SparseIntArray;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public class nz extends s4.s {
     public final boolean Q;
@@ -22,26 +22,26 @@ public class nz extends s4.s {
         this.Q = z10;
     }
 
-    public static iv0 C1(iv0 iv0Var) {
-        if (iv0Var == null) {
+    public static kv0 C1(kv0 kv0Var) {
+        if (kv0Var == null) {
             return null;
         }
-        if (iv0Var.a == 0.0f) {
-            iv0Var.a = 100.0f;
+        if (kv0Var.a == 0.0f) {
+            kv0Var.a = 100.0f;
         }
-        if (iv0Var.b == 0.0f) {
-            iv0Var.b = 100.0f;
+        if (kv0Var.b == 0.0f) {
+            kv0Var.b = 100.0f;
         }
-        float f7 = iv0Var.a;
-        float f10 = iv0Var.b;
+        float f7 = kv0Var.a;
+        float f10 = kv0Var.b;
         float f11 = f7 / f10;
         if (f11 <= 4.0f && f11 >= 0.2f) {
-            return iv0Var;
+            return kv0Var;
         }
         float max = Math.max(f7, f10);
-        iv0Var.a = max;
-        iv0Var.b = max;
-        return iv0Var;
+        kv0Var.a = max;
+        kv0Var.b = max;
+        return kv0Var;
     }
 
     public final void B1() {
@@ -77,7 +77,7 @@ public class nz extends s4.s {
         int i15 = 0;
         int i16 = 0;
         while (i15 < i13) {
-            iv0 C1 = i15 < A ? C1(D1(i15)) : null;
+            kv0 C1 = i15 < A ? C1(D1(i15)) : null;
             if (C1 == null) {
                 z10 = i16 != 0;
                 i10 = dp;
@@ -150,8 +150,8 @@ public class nz extends s4.s {
         this.V++;
     }
 
-    public iv0 D1(int i10) {
-        return new iv0(100.0f, 100.0f);
+    public kv0 D1(int i10) {
+        return new kv0(100.0f, 100.0f);
     }
 
     public final boolean E1(int i10) {
@@ -160,12 +160,12 @@ public class nz extends s4.s {
     }
 
     @Override // s4.s, s4.o0
-    public final int I(pf.e eVar, s4.z0 z0Var) {
+    public final int I(of.e eVar, s4.z0 z0Var) {
         return z0Var.b();
     }
 
     @Override // s4.s, s4.o0
-    public final int u(pf.e eVar, s4.z0 z0Var) {
+    public final int u(of.e eVar, s4.z0 z0Var) {
         return 1;
     }
 

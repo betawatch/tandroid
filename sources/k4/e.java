@@ -5,7 +5,7 @@ import c3.p;
 import com.google.android.gms.internal.vision.e2;
 import e2.v;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public abstract class e {
     public static final byte[] a = {0, 0, 0, 0, 16, 0, Byte.MIN_VALUE, 0, 0, -86, 0, 56, -101, 113};
@@ -17,7 +17,7 @@ public abstract class e {
         if (i10 != 1380533830 && i10 != 1380333108) {
             return false;
         }
-        pVar.b(0, 4, vVar.a);
+        pVar.a(0, 4, vVar.a);
         vVar.J(0);
         int j3 = vVar.j();
         if (j3 == 1463899717) {
@@ -34,7 +34,7 @@ public abstract class e {
             if (i11 == i10) {
                 return b10;
             }
-            e2.n(i11, "Ignoring unknown WAV chunk: ", "WavHeaderReader");
+            e2.m(i11, "Ignoring unknown WAV chunk: ", "WavHeaderReader");
             long j3 = b10.b;
             long j10 = 8 + j3;
             if (j3 % 2 != 0) {
@@ -43,7 +43,7 @@ public abstract class e {
             if (j10 > 2147483647L) {
                 throw s0.c("Chunk is too large (~2GB+) to skip; id: " + i11);
             }
-            pVar.r((int) j10);
+            pVar.q((int) j10);
             b10 = d.b(pVar, vVar);
         }
     }

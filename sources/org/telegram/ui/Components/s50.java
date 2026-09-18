@@ -23,11 +23,11 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.eg1;
+import org.telegram.ui.fg1;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class s50 implements d5, org.telegram.ui.ActionBar.a2, ImageReceiver.ImageReceiverDelegate, MessagesStorage.BooleanCallback, t5.b, s5.e, x2.m, org.telegram.ui.oy {
+public final /* synthetic */ class s50 implements b5, org.telegram.ui.ActionBar.b2, ImageReceiver.ImageReceiverDelegate, MessagesStorage.BooleanCallback, t5.b, s5.e, x2.m, org.telegram.ui.qy {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -40,12 +40,12 @@ public final /* synthetic */ class s50 implements d5, org.telegram.ui.ActionBar.
         this.d = obj3;
     }
 
-    @Override // org.telegram.ui.oy
-    public /* synthetic */ boolean B() {
+    @Override // org.telegram.ui.qy
+    public /* synthetic */ boolean A() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.d5
+    @Override // org.telegram.ui.Components.b5
     public void J(int i10, int i11, boolean z10) {
         v50 v50Var = (v50) this.b;
         q50 q50Var = (q50) this.c;
@@ -60,8 +60,8 @@ public final /* synthetic */ class s50 implements d5, org.telegram.ui.ActionBar.
         w50Var.m(false, false);
     }
 
-    @Override // org.telegram.ui.oy
-    public /* synthetic */ boolean K(org.telegram.ui.uy uyVar) {
+    @Override // org.telegram.ui.qy
+    public /* synthetic */ boolean K(org.telegram.ui.wy wyVar) {
         return false;
     }
 
@@ -87,9 +87,9 @@ public final /* synthetic */ class s50 implements d5, org.telegram.ui.ActionBar.
         int i16 = 0;
         s5.g gVar = (s5.g) this.b;
         switch (i10) {
-            case 6:
+            case 7:
                 l5.h hVar = (l5.h) obj3;
-                l5.l lVar = hVar.c;
+                l5.m mVar = hVar.c;
                 String str = hVar.a;
                 l5.i iVar = (l5.i) obj2;
                 SQLiteDatabase sQLiteDatabase = (SQLiteDatabase) obj;
@@ -114,14 +114,14 @@ public final /* synthetic */ class s50 implements d5, org.telegram.ui.ActionBar.
                     insert = sQLiteDatabase.insert("transport_contexts", null, contentValues);
                 }
                 int i17 = aVar.e;
-                byte[] bArr2 = lVar.b;
+                byte[] bArr2 = mVar.b;
                 boolean z10 = bArr2.length <= i17;
                 ContentValues contentValues2 = new ContentValues();
                 contentValues2.put("context_id", Long.valueOf(insert));
                 contentValues2.put("transport_name", str);
                 contentValues2.put("timestamp_ms", Long.valueOf(hVar.d));
                 contentValues2.put("uptime_ms", Long.valueOf(hVar.e));
-                contentValues2.put("payload_encoding", lVar.a.a);
+                contentValues2.put("payload_encoding", mVar.a.a);
                 contentValues2.put("code", hVar.b);
                 contentValues2.put("num_attempts", (Integer) 0);
                 contentValues2.put("inline", Boolean.valueOf(z10));
@@ -146,7 +146,7 @@ public final /* synthetic */ class s50 implements d5, org.telegram.ui.ActionBar.
                     sQLiteDatabase.insert("event_metadata", null, contentValues4);
                 }
                 return Long.valueOf(insert2);
-            case 7:
+            case 8:
                 ArrayList arrayList = (ArrayList) obj3;
                 l5.i iVar2 = (l5.i) obj2;
                 Cursor cursor2 = (Cursor) obj;
@@ -164,7 +164,7 @@ public final /* synthetic */ class s50 implements d5, org.telegram.ui.ActionBar.
                     nVar.e = Long.valueOf(cursor2.getLong(3));
                     if (z11) {
                         String string2 = cursor2.getString(4);
-                        nVar.c = new l5.l(string2 == null ? s5.g.f : new i5.c(string2), cursor2.getBlob(5));
+                        nVar.c = new l5.m(string2 == null ? s5.g.f : new i5.c(string2), cursor2.getBlob(5));
                     } else {
                         String string3 = cursor2.getString(4);
                         i5.c cVar3 = string3 == null ? s5.g.f : new i5.c(string3);
@@ -197,7 +197,7 @@ public final /* synthetic */ class s50 implements d5, org.telegram.ui.ActionBar.
                                 }
                             }
                             query.close();
-                            nVar.c = new l5.l(cVar3, bArr3);
+                            nVar.c = new l5.m(cVar3, bArr3);
                         } catch (Throwable th3) {
                             th = th3;
                             cursor = query;
@@ -213,8 +213,8 @@ public final /* synthetic */ class s50 implements d5, org.telegram.ui.ActionBar.
                 return null;
             default:
                 HashMap hashMap = (HashMap) obj3;
-                com.google.firebase.messaging.s sVar = (com.google.firebase.messaging.s) obj2;
-                ArrayList arrayList4 = (ArrayList) sVar.d;
+                com.google.firebase.messaging.t tVar = (com.google.firebase.messaging.t) obj2;
+                ArrayList arrayList4 = (ArrayList) tVar.d;
                 Cursor cursor3 = (Cursor) obj;
                 gVar.getClass();
                 while (cursor3.moveToNext()) {
@@ -262,21 +262,21 @@ public final /* synthetic */ class s50 implements d5, org.telegram.ui.ActionBar.
                     new ArrayList();
                     arrayList4.add(new o5.e((String) entry2.getKey(), DesugarCollections.unmodifiableList((List) entry2.getValue())));
                 }
-                long l4 = gVar.b.l();
+                long q6 = gVar.b.q();
                 SQLiteDatabase a2 = gVar.a();
                 a2.beginTransaction();
                 try {
                     Cursor rawQuery = a2.rawQuery("SELECT last_metrics_upload_ms FROM global_log_event_state LIMIT 1", new String[0]);
                     try {
                         rawQuery.moveToNext();
-                        o5.g gVar2 = new o5.g(rawQuery.getLong(0), l4);
+                        o5.g gVar2 = new o5.g(rawQuery.getLong(0), q6);
                         rawQuery.close();
                         a2.setTransactionSuccessful();
                         a2.endTransaction();
-                        sVar.c = gVar2;
-                        sVar.e = new o5.b(new o5.f(gVar.a().compileStatement("PRAGMA page_size").simpleQueryForLong() * gVar.a().compileStatement("PRAGMA page_count").simpleQueryForLong(), s5.a.f.a));
-                        sVar.b = (String) gVar.e.get();
-                        return new o5.a((o5.g) sVar.c, DesugarCollections.unmodifiableList(arrayList4), (o5.b) sVar.e, (String) sVar.b);
+                        tVar.c = gVar2;
+                        tVar.e = new o5.b(new o5.f(gVar.a().compileStatement("PRAGMA page_size").simpleQueryForLong() * gVar.a().compileStatement("PRAGMA page_count").simpleQueryForLong(), s5.a.f.a));
+                        tVar.b = (String) gVar.e.get();
+                        return new o5.a((o5.g) tVar.c, DesugarCollections.unmodifiableList(arrayList4), (o5.b) tVar.e, (String) tVar.b);
                     } catch (Throwable th4) {
                         rawQuery.close();
                         throw th4;
@@ -303,51 +303,51 @@ public final /* synthetic */ class s50 implements d5, org.telegram.ui.ActionBar.
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public void didSetImage(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
         Bitmap bitmap;
-        t11 t11Var = (t11) this.b;
-        kp kpVar = (kp) this.c;
+        v11 v11Var = (v11) this.b;
+        lp lpVar = (lp) this.c;
         TLRPC.WallPaper wallPaper = (TLRPC.WallPaper) this.d;
         ImageReceiver.BitmapHolder bitmapSafe = imageReceiver.getBitmapSafe();
         if (!z10 || bitmapSafe == null || (bitmap = bitmapSafe.bitmap) == null) {
             return;
         }
-        Drawable drawable = kpVar.b;
-        if (drawable instanceof dc0) {
-            dc0 dc0Var = (dc0) drawable;
+        Drawable drawable = lpVar.b;
+        if (drawable instanceof cc0) {
+            cc0 cc0Var = (cc0) drawable;
             TLRPC.WallPaperSettings wallPaperSettings = wallPaper.settings;
-            dc0Var.t(t11.e(bitmap), (wallPaperSettings == null || wallPaperSettings.intensity >= 0) ? 100 : -100);
-            dc0Var.u(t11Var.L);
-            t11Var.invalidate();
+            cc0Var.t(v11.e(bitmap), (wallPaperSettings == null || wallPaperSettings.intensity >= 0) ? 100 : -100);
+            cc0Var.u(v11Var.L);
+            v11Var.invalidate();
         }
     }
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public /* synthetic */ void didSetImageBitmap(int i10, String str, Drawable drawable) {
-        org.telegram.messenger.g5.a(this, i10, str, drawable);
+        org.telegram.messenger.h5.a(this, i10, str, drawable);
     }
 
-    @Override // org.telegram.ui.ActionBar.a2
-    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+    @Override // org.telegram.ui.ActionBar.b2
+    public void f(org.telegram.ui.ActionBar.c2 c2Var, int i10) {
         switch (this.a) {
             case 1:
-                xu0 xu0Var = (xu0) this.b;
-                bi.b8 b8Var = (bi.b8) this.c;
+                zu0 zu0Var = (zu0) this.b;
+                ai.t8 t8Var = (ai.t8) this.c;
                 ArrayList arrayList = (ArrayList) this.d;
-                b8Var.F(arrayList);
-                yc.a0(xu0Var.v1).Q(R.raw.ic_delete, 36, LocaleController.formatPluralString("BotPreviewsDeleted", arrayList.size(), new Object[0])).j();
-                xu0Var.L(false);
+                t8Var.F(arrayList);
+                vc.a0(zu0Var.v1).Q(R.raw.ic_delete, 36, LocaleController.formatPluralString("BotPreviewsDeleted", arrayList.size(), new Object[0])).j();
+                zu0Var.L(false);
                 break;
             case 4:
                 boolean[] zArr = (boolean[]) this.b;
                 JsPromptResult jsPromptResult = (JsPromptResult) this.c;
-                zt ztVar = (zt) this.d;
+                bu buVar = (bu) this.d;
                 if (!zArr[0]) {
                     zArr[0] = true;
-                    jsPromptResult.confirm(ztVar.getText().toString());
+                    jsPromptResult.confirm(buVar.getText().toString());
                     break;
                 }
                 break;
             default:
-                sg.k0.P((sg.k0) this.b, (ArrayList) this.c, (TLRPC.User) this.d);
+                rg.j0.P((rg.j0) this.b, (ArrayList) this.c, (TLRPC.User) this.d);
                 break;
         }
     }
@@ -366,25 +366,25 @@ public final /* synthetic */ class s50 implements d5, org.telegram.ui.ActionBar.
         if (Log.isLoggable(c10, 3)) {
             Log.d(c10, "Storing event with priority=" + dVar + ", name=" + str + " for destination " + str2);
         }
-        ((Long) gVar.c(new s50(gVar, hVar, iVar, 6))).getClass();
-        aVar.a.O(iVar, 1, false);
+        ((Long) gVar.c(new s50(gVar, hVar, iVar, 7))).getClass();
+        aVar.a.V(iVar, 1, false);
         return null;
     }
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public /* synthetic */ void onAnimationReady(ImageReceiver imageReceiver) {
-        org.telegram.messenger.g5.b(this, imageReceiver);
+        org.telegram.messenger.h5.b(this, imageReceiver);
     }
 
     @Override // org.telegram.messenger.MessagesStorage.BooleanCallback
     public void run(boolean z10) {
         TLRPC.Chat chat = (TLRPC.Chat) this.b;
-        org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) this.c;
-        org.telegram.ui.Components.voip.d2.l(chat, null, true, null, n2Var.getParentActivity(), n2Var, (AccountInstance) this.d);
+        org.telegram.ui.ActionBar.o2 o2Var = (org.telegram.ui.ActionBar.o2) this.c;
+        org.telegram.ui.Components.voip.f2.l(chat, null, true, null, o2Var.getParentActivity(), o2Var, (AccountInstance) this.d);
     }
 
-    @Override // org.telegram.ui.oy
-    public boolean u(org.telegram.ui.uy uyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, eg1 eg1Var) {
-        return zh.w3.X((zh.w3) this.b, (TL_stars.TL_starGiftUnique) this.c, (org.telegram.ui.uy) this.d, arrayList);
+    @Override // org.telegram.ui.qy
+    public boolean u(org.telegram.ui.wy wyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, fg1 fg1Var) {
+        return yh.a4.X((yh.a4) this.b, (TL_stars.TL_starGiftUnique) this.c, (org.telegram.ui.wy) this.d, arrayList);
     }
 }

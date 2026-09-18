@@ -1,38 +1,100 @@
 package fi;
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.Components.d61;
-import org.telegram.ui.Components.g51;
-import org.telegram.ui.Components.h51;
-import org.telegram.ui.Components.ll0;
-import org.telegram.ui.Components.v51;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.DialogObject;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_communities;
+import org.telegram.ui.Components.j51;
+import org.telegram.ui.Components.vc;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes4.dex */
-public final class i extends g51 {
-    static {
-        g51.setup(new i());
+public final /* synthetic */ class i implements Utilities.Callback2 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ p b;
+
+    public /* synthetic */ i(p pVar, int i10) {
+        this.a = i10;
+        this.b = pVar;
     }
 
-    public static h51 a(int i10, int i11, int i12, CharSequence charSequence, String str) {
-        h51 J = h51.J(i.class);
-        J.d = i10;
-        J.z = i11;
-        J.k = i12;
-        J.l = charSequence;
-        J.m = str;
-        return J;
-    }
-
-    @Override // org.telegram.ui.Components.g51
-    public final void bindView(View view, h51 h51Var, boolean z10, v51 v51Var, d61 d61Var) {
-        ((j) view).a(h51Var.z, h51Var.k, h51Var.l, h51Var.m);
-    }
-
-    @Override // org.telegram.ui.Components.g51
-    public final View createView(Context context, ll0 ll0Var, int i10, int i11, f6 f6Var) {
-        return new j(context, f6Var);
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
+        ArrayList<TL_communities.CommunityPeer> arrayList;
+        switch (this.a) {
+            case 0:
+                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
+                p pVar = this.b;
+                pVar.getClass();
+                if (tL_error != null) {
+                    vc.a0(pVar).d0(tL_error, false);
+                    break;
+                }
+                break;
+            default:
+                ArrayList arrayList2 = (ArrayList) obj;
+                p pVar2 = this.b;
+                n nVar = pVar2.r;
+                j51 j51Var = new j51(-4);
+                j51Var.d = 140;
+                j51Var.c = nVar;
+                j51Var.z = -1;
+                arrayList2.add(j51Var);
+                int i10 = 0;
+                if (ChatObject.canUserDoAdminAction(pVar2.H, 1)) {
+                    j51 c10 = j51.c(141, R.drawable.outline_profile_photo, LocaleController.getString(ChatObject.hasPhoto(pVar2.H) ? R.string.CommunitySettingsChangePhoto : R.string.CommunitySettingsSetPhoto));
+                    c10.q = true;
+                    arrayList2.add(c10);
+                    arrayList2.add(j51.D(2, AndroidUtilities.dp(14.0f)));
+                    arrayList2.add(j51.s(0, LocaleController.getString(R.string.CommunitySectionCommunityName)));
+                    arrayList2.add(j51.j(7, pVar2.n));
+                    arrayList2.add(j51.D(1, AndroidUtilities.dp(14.0f)));
+                }
+                if (ChatObject.canBlockUsers(pVar2.H)) {
+                    arrayList2.add(j51.s(3, LocaleController.getString(R.string.CommunitySectionWhoCanAddChats)));
+                    j51 x10 = j51.x(ImageReceiver.DEFAULT_CROSSFADE_DURATION, LocaleController.getString(R.string.CommunityWhoCanAddChatsAllMembers), LocaleController.getString(R.string.CommunityWhoCanAddChatsAllMembersInfo));
+                    x10.K(pVar2.h);
+                    arrayList2.add(x10);
+                    j51 x11 = j51.x(151, LocaleController.getString(R.string.CommunityWhoCanAddChatsOnlyAdmins), LocaleController.getString(R.string.CommunityWhoCanAddChatsOnlyAdminsInfo));
+                    x11.K(!pVar2.h);
+                    arrayList2.add(x11);
+                    arrayList2.add(j51.D(4, AndroidUtilities.dp(14.0f)));
+                }
+                if (ChatObject.hasAdminRights(pVar2.H)) {
+                    int i11 = R.drawable.msg_admins;
+                    String string = LocaleController.getString(R.string.CommunityAdministrators);
+                    TLRPC.ChatFull chatFull = pVar2.I;
+                    arrayList2.add(j51.d(142, i11, string, chatFull != null ? Integer.toString(chatFull.admins_count) : ""));
+                    int i12 = R.drawable.community_requests_outline_24;
+                    String string2 = LocaleController.getString(R.string.CommunityPendingRequests);
+                    TLRPC.ChatFull chatFull2 = pVar2.I;
+                    arrayList2.add(j51.d(143, i12, string2, chatFull2 != null ? Integer.toString(chatFull2.requests_pending) : ""));
+                    int i13 = R.drawable.msg_user_remove;
+                    String string3 = LocaleController.getString(R.string.CommunityRemovedUsers);
+                    TLRPC.ChatFull chatFull3 = pVar2.I;
+                    arrayList2.add(j51.d(144, i13, string3, chatFull3 != null ? Integer.toString(chatFull3.kicked_count) : ""));
+                }
+                arrayList2.add(j51.D(5, AndroidUtilities.dp(14.0f)));
+                j51 c11 = j51.c(146, R.drawable.msg_groups_create, LocaleController.getString(R.string.CommunityMenuAddChat));
+                c11.q = true;
+                arrayList2.add(c11);
+                TLRPC.ChatFull chatFull4 = pVar2.I;
+                if (chatFull4 != null && (arrayList = chatFull4.linked_peers) != null) {
+                    int size = arrayList.size();
+                    while (i10 < size) {
+                        TL_communities.CommunityPeer communityPeer = arrayList.get(i10);
+                        i10++;
+                        arrayList2.add(j51.v(pVar2.getMessagesController().getUserOrChat(DialogObject.getPeerDialogId(communityPeer.peer))));
+                    }
+                    break;
+                }
+                break;
+        }
     }
 }

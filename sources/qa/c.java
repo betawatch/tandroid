@@ -17,18 +17,19 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.regex.Pattern;
 import n6.l;
-import n7.z0;
+import n7.a1;
 import org.json.JSONException;
 import org.json.JSONObject;
 import q9.n;
+import t7.u;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class c implements d {
     public static final Object m = new Object();
     public final k9.h a;
     public final sa.c b;
-    public final z0 c;
+    public final a1 c;
     public final j d;
     public final n e;
     public final h f;
@@ -46,13 +47,13 @@ public final class c implements d {
     public c(k9.h hVar, pa.b bVar, ExecutorService executorService, r9.j jVar) {
         hVar.a();
         sa.c cVar = new sa.c(hVar.a, bVar);
-        z0 z0Var = new z0(hVar);
-        if (na.d.a == null) {
-            na.d.a = new na.d();
+        a1 a1Var = new a1(hVar);
+        if (u.b == null) {
+            u.b = new u();
         }
-        na.d dVar = na.d.a;
+        u uVar = u.b;
         if (j.d == null) {
-            j.d = new j(dVar);
+            j.d = new j(uVar);
         }
         j jVar2 = j.d;
         n nVar = new n(new q9.c(hVar, 2));
@@ -62,7 +63,7 @@ public final class c implements d {
         this.l = new ArrayList();
         this.a = hVar;
         this.b = cVar;
-        this.c = z0Var;
+        this.c = a1Var;
         this.d = jVar2;
         this.e = nVar;
         this.f = hVar2;
@@ -84,32 +85,32 @@ public final class c implements d {
         r2.c = r3;
         r2.b = 3;
         r2 = r2.a();
-        r4.A(r2);
+        r4.z(r2);
      */
     /* JADX WARN: Finally extract failed */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void b() {
-        ra.b F;
+        ra.b E;
         synchronized (m) {
             try {
                 k9.h hVar = this.a;
                 hVar.a();
-                o0.a d = o0.a.d(hVar.a);
+                a1 e = a1.e(hVar.a);
                 try {
-                    F = this.c.F();
-                    int i10 = F.b;
+                    E = this.c.E();
+                    int i10 = E.b;
                     boolean z10 = true;
                     if (i10 != 2 && i10 != 1) {
                         z10 = false;
                     }
-                    if (d != null) {
-                        d.J();
+                    if (e != null) {
+                        e.I();
                     }
                 } catch (Throwable th2) {
-                    if (d != null) {
-                        d.J();
+                    if (e != null) {
+                        e.I();
                     }
                     throw th2;
                 }
@@ -117,7 +118,7 @@ public final class c implements d {
                 throw th3;
             }
         }
-        k(F);
+        k(E);
         this.i.execute(new b(this, 1));
     }
 
@@ -161,7 +162,7 @@ public final class c implements d {
                 if (responseCode == 401 || responseCode == 404) {
                     a5.a a10 = sa.b.a();
                     a10.b = 3;
-                    f7 = a10.b();
+                    f7 = a10.c();
                 } else {
                     if (responseCode == 429) {
                         throw new e("Firebase servers have received too many requests from this client in a short period of time. Please try again later.");
@@ -170,7 +171,7 @@ public final class c implements d {
                         Log.e("Firebase-Installations", "Firebase Installations can not communicate with Firebase server APIs due to invalid configuration. Please update your Firebase initialization process and set valid Firebase options (API key, Project ID, Application ID) when initializing Firebase.");
                         a5.a a11 = sa.b.a();
                         a11.b = 2;
-                        f7 = a11.b();
+                        f7 = a11.c();
                     }
                 }
             }
@@ -237,15 +238,15 @@ public final class c implements d {
             try {
                 k9.h hVar = this.a;
                 hVar.a();
-                o0.a d = o0.a.d(hVar.a);
+                a1 e = a1.e(hVar.a);
                 try {
-                    this.c.A(bVar);
-                    if (d != null) {
-                        d.J();
+                    this.c.z(bVar);
+                    if (e != null) {
+                        e.I();
                     }
                 } catch (Throwable th2) {
-                    if (d != null) {
-                        d.J();
+                    if (e != null) {
+                        e.I();
                     }
                     throw th2;
                 }
@@ -380,10 +381,10 @@ public final class c implements d {
                 } catch (IOException | AssertionError unused2) {
                 }
                 if (responseCode >= 200 && responseCode < 300) {
-                    sa.a e7 = sa.c.e(c10);
+                    sa.a e = sa.c.e(c10);
                     c10.disconnect();
                     TrafficStats.clearThreadStatsTag();
-                    aVar = e7;
+                    aVar = e;
                 } else {
                     try {
                         sa.c.b(c10, str7, str4, str6);

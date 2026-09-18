@@ -1,15 +1,15 @@
 package p4;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class c implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ androidx.emoji2.text.p b;
+    public final /* synthetic */ androidx.emoji2.text.o b;
     public final /* synthetic */ int c;
 
-    public /* synthetic */ c(androidx.emoji2.text.p pVar, int i10, int i11) {
+    public /* synthetic */ c(androidx.emoji2.text.o oVar, int i10, int i11) {
         this.a = i11;
-        this.b = pVar;
+        this.b = oVar;
         this.c = i10;
     }
 
@@ -17,14 +17,14 @@ public final /* synthetic */ class c implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                v vVar = ((e) ((m2.t) this.b.f).d).d;
+                v vVar = ((e) ((lf.i) this.b.f).d).d;
                 if (vVar != null) {
                     vVar.j(this.c);
                     break;
                 }
                 break;
             default:
-                v vVar2 = ((e) ((m2.t) this.b.f).d).d;
+                v vVar2 = ((e) ((lf.i) this.b.f).d).d;
                 if (vVar2 != null) {
                     vVar2.k(this.c);
                     break;

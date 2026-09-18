@@ -2,23 +2,19 @@ package org.telegram.ui;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class p7 extends org.telegram.ui.Cells.i7 {
-    public final /* synthetic */ k7 l0;
-    public final /* synthetic */ q7 m0;
+public final class p7 extends org.telegram.ui.Cells.t7 {
+    public final /* synthetic */ q7 G0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public p7(q7 q7Var, Context context, k7 k7Var) {
-        super(context, 0, null);
-        this.m0 = q7Var;
-        this.l0 = k7Var;
+    public p7(q7 q7Var, Context context, org.telegram.ui.Cells.s7 s7Var, int i10) {
+        super(context, s7Var, i10);
+        this.G0 = q7Var;
     }
 
-    @Override // org.telegram.ui.Cells.i7
-    public final void a() {
-        s7 s7Var = this.m0.n;
-        k7 k7Var = this.l0;
-        s7.b(s7Var, (ai.b) k7Var.getTag(), k7Var);
+    @Override // org.telegram.ui.Cells.t7
+    public final void h() {
+        this.G0.v.E.H0(null, (zh.a) getTag(), true);
     }
 }

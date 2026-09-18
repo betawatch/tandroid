@@ -14,7 +14,7 @@ import org.xmlpull.v1.XmlPullParserException;
 import v7.f8;
 import x4.p;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class e extends f implements j0.b {
     public boolean E;
@@ -293,10 +293,10 @@ public final class e extends f implements j0.b {
             this.I = -1;
             this.H = -1;
             b bVar2 = this.F;
-            int e7 = bVar2.e(i10);
-            int e10 = bVar2.e(f7);
-            if (e10 != 0 && e7 != 0) {
-                long j3 = e10 | (e7 << 32);
+            int e = bVar2.e(i10);
+            int e7 = bVar2.e(f7);
+            if (e7 != 0 && e != 0) {
+                long j3 = e7 | (e << 32);
                 int longValue = (int) ((Long) bVar2.I.g(-1L, j3)).longValue();
                 if (longValue >= 0) {
                     boolean z10 = (((Long) bVar2.I.g(-1L, j3)).longValue() & 8589934592L) != 0;

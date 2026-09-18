@@ -32,7 +32,6 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.WeakHashMap;
-import ji.u4;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
@@ -51,7 +50,7 @@ import u0.g;
 import u0.h;
 import w7.o7;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public class NestedScrollView extends FrameLayout implements m {
     public static final float T = (float) (Math.log(0.78d) / Math.log(0.9d));
@@ -141,7 +140,7 @@ public class NestedScrollView extends FrameLayout implements m {
     }
 
     @Override // r0.l
-    public final void b(ViewGroup viewGroup, int i10, int i11, int i12, int i13, int i14) {
+    public final void c(ViewGroup viewGroup, int i10, int i11, int i12, int i13, int i14) {
         q(i13, i14, null);
     }
 
@@ -280,7 +279,7 @@ public class NestedScrollView extends FrameLayout implements m {
 
     @Override // android.view.ViewGroup, android.view.View
     public final boolean dispatchKeyEvent(KeyEvent keyEvent) {
-        return super.dispatchKeyEvent(keyEvent) || j(keyEvent);
+        return super.dispatchKeyEvent(keyEvent) || i(keyEvent);
     }
 
     @Override // android.view.View
@@ -365,7 +364,7 @@ public class NestedScrollView extends FrameLayout implements m {
         View view = findFocus;
         View findNextFocus = FocusFinder.getInstance().findNextFocus(this, view, i10);
         int maxScrollAmount = getMaxScrollAmount();
-        if (findNextFocus == null || !o(findNextFocus, maxScrollAmount, getHeight())) {
+        if (findNextFocus == null || !n(findNextFocus, maxScrollAmount, getHeight())) {
             if (i10 == 33 && getScrollY() < maxScrollAmount) {
                 maxScrollAmount = getScrollY();
             } else if (i10 == 130 && getChildCount() > 0) {
@@ -386,7 +385,7 @@ public class NestedScrollView extends FrameLayout implements m {
             w(f(rect), -1, null, 0, 1, true);
             findNextFocus.requestFocus(i10);
         }
-        if (view != null && view.isFocused() && !o(view, 0, getHeight())) {
+        if (view != null && view.isFocused() && !n(view, 0, getHeight())) {
             int descendantFocusability = getDescendantFocusability();
             setDescendantFocusability(131072);
             requestFocus();
@@ -491,17 +490,7 @@ public class NestedScrollView extends FrameLayout implements m {
         return this.P.f(0);
     }
 
-    @Override // r0.m
-    public final void i(ViewGroup viewGroup, int i10, int i11, int i12, int i13, int i14, int[] iArr) {
-        q(i13, i14, iArr);
-    }
-
-    @Override // android.view.View
-    public final boolean isNestedScrollingEnabled() {
-        return this.P.d;
-    }
-
-    public final boolean j(KeyEvent keyEvent) {
+    public final boolean i(KeyEvent keyEvent) {
         this.c.setEmpty();
         if (getChildCount() > 0) {
             View childAt = getChildAt(0);
@@ -550,6 +539,16 @@ public class NestedScrollView extends FrameLayout implements m {
         return false;
     }
 
+    @Override // android.view.View
+    public final boolean isNestedScrollingEnabled() {
+        return this.P.d;
+    }
+
+    @Override // r0.m
+    public final void j(ViewGroup viewGroup, int i10, int i11, int i12, int i13, int i14, int[] iArr) {
+        q(i13, i14, iArr);
+    }
+
     public void k(int i10) {
         if (getChildCount() > 0) {
             this.d.fling(getScrollX(), getScrollY(), 0, i10, 0, 0, TLObject.FLAG_31, ConnectionsManager.DEFAULT_DATACENTER_ID, 0, 0);
@@ -590,8 +589,15 @@ public class NestedScrollView extends FrameLayout implements m {
         view.measure(ViewGroup.getChildMeasureSpec(i10, getPaddingRight() + getPaddingLeft() + marginLayoutParams.leftMargin + marginLayoutParams.rightMargin + i11, marginLayoutParams.width), View.MeasureSpec.makeMeasureSpec(marginLayoutParams.topMargin + marginLayoutParams.bottomMargin, 0));
     }
 
+    public final boolean n(View view, int i10, int i11) {
+        Rect rect = this.c;
+        view.getDrawingRect(rect);
+        offsetDescendantRectToMyCoords(view, rect);
+        return rect.bottom + i10 >= getScrollY() && rect.top - i10 <= getScrollY() + i11;
+    }
+
     @Override // r0.l
-    public final void n(int i10, View view) {
+    public final void o(int i10, View view) {
         q0 q0Var = this.O;
         if (i10 == 1) {
             q0Var.b = 0;
@@ -599,13 +605,6 @@ public class NestedScrollView extends FrameLayout implements m {
             q0Var.a = 0;
         }
         B(i10);
-    }
-
-    public final boolean o(View view, int i10, int i11) {
-        Rect rect = this.c;
-        view.getDrawingRect(rect);
-        offsetDescendantRectToMyCoords(view, rect);
-        return rect.bottom + i10 >= getScrollY() && rect.top - i10 <= getScrollY() + i11;
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -1062,7 +1061,7 @@ public class NestedScrollView extends FrameLayout implements m {
             i10 = 33;
         }
         View findNextFocus = rect == null ? FocusFinder.getInstance().findNextFocus(this, null, i10) : FocusFinder.getInstance().findNextFocusFromRect(this, rect, i10);
-        if (findNextFocus != null && o(findNextFocus, 0, getHeight())) {
+        if (findNextFocus != null && n(findNextFocus, 0, getHeight())) {
             return findNextFocus.requestFocus(i10, rect);
         }
         return false;
@@ -1100,7 +1099,7 @@ public class NestedScrollView extends FrameLayout implements m {
     public final void onSizeChanged(int i10, int i11, int i12, int i13) {
         super.onSizeChanged(i10, i11, i12, i13);
         View findFocus = findFocus();
-        if (findFocus == null || this == findFocus || !o(findFocus, 0, i13)) {
+        if (findFocus == null || this == findFocus || !n(findFocus, 0, i13)) {
             return;
         }
         Rect rect = this.c;
@@ -1123,7 +1122,7 @@ public class NestedScrollView extends FrameLayout implements m {
 
     @Override // android.view.ViewGroup, android.view.ViewParent
     public final void onStopNestedScroll(View view) {
-        n(0, view);
+        o(0, view);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:48:0x011e  */
@@ -1705,7 +1704,7 @@ public class NestedScrollView extends FrameLayout implements m {
         this.I = -1;
         this.J = new int[2];
         this.K = new int[2];
-        this.S = new r0.h(getContext(), new u4(this, 26));
+        this.S = new r0.h(getContext(), new k2.u(this, 26));
         int i11 = Build.VERSION.SDK_INT;
         if (i11 >= 31) {
             edgeEffect = c.a(context, attributeSet);

@@ -6,7 +6,7 @@ import android.graphics.drawable.Drawable;
 import android.view.accessibility.AccessibilityEvent;
 import android.widget.ImageView;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class j30 extends ImageView {
     public final /* synthetic */ int a;
@@ -26,12 +26,12 @@ public final class j30 extends ImageView {
         switch (this.a) {
             case 1:
                 super.onDraw(canvas);
-                org.telegram.ui.a20 a20Var = (org.telegram.ui.a20) this.c;
-                h90 h90Var = a20Var.s;
-                if (a20Var.r) {
+                org.telegram.ui.b20 b20Var = (org.telegram.ui.b20) this.c;
+                g90 g90Var = b20Var.s;
+                if (b20Var.r) {
                     int i10 = this.b / 2;
-                    h90Var.setBounds(i10, i10, getWidth() - i10, getHeight() - i10);
-                    h90Var.draw(canvas);
+                    g90Var.setBounds(i10, i10, getWidth() - i10, getHeight() - i10);
+                    g90Var.draw(canvas);
                     break;
                 }
                 break;
@@ -61,7 +61,7 @@ public final class j30 extends ImageView {
     public boolean verifyDrawable(Drawable drawable) {
         switch (this.a) {
             case 1:
-                return drawable == ((org.telegram.ui.a20) this.c).s || super.verifyDrawable(drawable);
+                return drawable == ((org.telegram.ui.b20) this.c).s || super.verifyDrawable(drawable);
             default:
                 return super.verifyDrawable(drawable);
         }

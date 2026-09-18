@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import android.widget.ScrollView;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public class f20 extends ScrollView {
     public final int a;
@@ -82,7 +82,7 @@ public class f20 extends ScrollView {
         e20Var.b = false;
         AnimatorSet animatorSet2 = new AnimatorSet();
         e20Var.a = animatorSet2;
-        animatorSet2.addListener(new bi.t(26, e20Var, arrayList3));
+        animatorSet2.addListener(new ai.z(26, e20Var, arrayList3));
         arrayList.clear();
         for (int i11 = 0; i11 < arrayList3.size(); i11++) {
             m30 m30Var = (m30) arrayList3.get(i11);
@@ -112,7 +112,7 @@ public class f20 extends ScrollView {
         e20Var.b = false;
         AnimatorSet animatorSet2 = new AnimatorSet();
         e20Var.a = animatorSet2;
-        animatorSet2.addListener(new bi.t(25, e20Var, m30Var));
+        animatorSet2.addListener(new ai.z(25, e20Var, m30Var));
         e20Var.a.setDuration(150L);
         arrayList.clear();
         arrayList.add(m30Var);

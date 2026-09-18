@@ -6,14 +6,14 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public abstract class d0 {
     public static void A(Parcel parcel, int i10, int i11) {
         if (i10 == i11) {
             return;
         }
-        throw new androidx.car.app.j(a4.a.s(com.google.android.gms.internal.vision.e2.k("Expected size ", i11, " got ", i10, " (0x"), Integer.toHexString(i10), ")"), parcel);
+        throw new androidx.car.app.j(a4.a.s(hg.k0.m("Expected size ", i11, " got ", i10, " (0x"), Integer.toHexString(i10), ")"), parcel);
     }
 
     public static void B(Parcel parcel, int i10, int i11) {
@@ -21,7 +21,7 @@ public abstract class d0 {
         if (x10 == i11) {
             return;
         }
-        throw new androidx.car.app.j(a4.a.s(com.google.android.gms.internal.vision.e2.k("Expected size ", i11, " got ", x10, " (0x"), Integer.toHexString(x10), ")"), parcel);
+        throw new androidx.car.app.j(a4.a.s(hg.k0.m("Expected size ", i11, " got ", x10, " (0x"), Integer.toHexString(x10), ")"), parcel);
     }
 
     public static Bundle a(Parcel parcel, int i10) {
@@ -166,7 +166,7 @@ public abstract class d0 {
 
     public static void m(Parcel parcel, int i10) {
         if (parcel.dataPosition() != i10) {
-            throw new androidx.car.app.j(i2.g.i(i10, "Overread allowed size end="), parcel);
+            throw new androidx.car.app.j(hg.k0.i(i10, "Overread allowed size end="), parcel);
         }
     }
 

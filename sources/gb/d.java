@@ -8,13 +8,13 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class d implements db.v {
     public final /* synthetic */ int a;
-    public final pf.b b;
+    public final of.b b;
 
-    public /* synthetic */ d(pf.b bVar, int i10) {
+    public /* synthetic */ d(of.b bVar, int i10) {
         this.a = i10;
         this.b = bVar;
     }
@@ -24,7 +24,7 @@ public final class d implements db.v {
         Class cls;
         Type[] actualTypeArguments;
         int i10 = this.a;
-        pf.b bVar = this.b;
+        of.b bVar = this.b;
         cls = Object.class;
         switch (i10) {
             case 0:
@@ -39,7 +39,7 @@ public final class d implements db.v {
                 fb.d.b(Collection.class.isAssignableFrom(cls2));
                 Type j3 = fb.d.j(type, cls2, fb.d.g(type, cls2, Collection.class), new HashMap());
                 cls = j3 instanceof ParameterizedType ? ((ParameterizedType) j3).getActualTypeArguments()[0] : Object.class;
-                return new c(gVar, cls, gVar.b(new kb.a(cls)), bVar.T(aVar));
+                return new c(gVar, cls, gVar.b(new kb.a(cls)), bVar.K(aVar));
             default:
                 Type type2 = aVar.b;
                 Class cls3 = aVar.a;
@@ -59,9 +59,9 @@ public final class d implements db.v {
                 Type type3 = actualTypeArguments[0];
                 db.u b10 = (type3 == Boolean.TYPE || type3 == Boolean.class) ? h1.c : gVar.b(new kb.a(type3));
                 db.u b11 = gVar.b(new kb.a(actualTypeArguments[1]));
-                fb.n T = bVar.T(aVar);
+                fb.n K = bVar.K(aVar);
                 Type[] typeArr = actualTypeArguments;
-                return new o(this, gVar, typeArr[0], b10, typeArr[1], b11, T);
+                return new o(this, gVar, typeArr[0], b10, typeArr[1], b11, K);
         }
     }
 }

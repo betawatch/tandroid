@@ -1,37 +1,122 @@
 package org.telegram.ui.Components;
 
-import android.app.Activity;
-import android.widget.ImageView;
+import android.view.MotionEvent;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class ol0 extends ic {
-    public final pl0 c;
+public final class ol0 implements s4.r0 {
+    public RecyclerView a;
+    public boolean c;
+    public int d;
+    public int e;
+    public int f;
+    public boolean g;
+    public boolean h;
+    public int i;
+    public final nl0 k;
+    public int b = -1;
+    public final int j = AndroidUtilities.dp(80.0f);
+    public final org.telegram.ui.Cells.l7 l = new org.telegram.ui.Cells.l7(this, 21);
 
-    public ol0(Activity activity, String str) {
-        super(activity, null);
-        this.b.setText(str);
-        this.b.setTranslationY(-1.0f);
-        ImageView imageView = this.a;
-        pl0 pl0Var = new pl0();
-        this.c = pl0Var;
-        imageView.setImageDrawable(pl0Var);
+    public ol0(nl0 nl0Var) {
+        this.k = nl0Var;
     }
 
-    @Override // org.telegram.ui.Components.ub
-    public final void onEnterTransitionEnd() {
-        super.onEnterTransitionEnd();
-        pl0 pl0Var = this.c;
-        pl0Var.getClass();
-        pl0Var.g = System.currentTimeMillis();
-        pl0Var.invalidateSelf();
+    @Override // s4.r0
+    public final void a(RecyclerView recyclerView, MotionEvent motionEvent) {
+        View F = recyclerView.F(motionEvent.getX(), motionEvent.getY());
+        int S = F != null ? RecyclerView.S(F) : -1;
+        float y3 = motionEvent.getY();
+        int action = motionEvent.getAction();
+        nl0 nl0Var = this.k;
+        org.telegram.ui.Cells.l7 l7Var = this.l;
+        if (action == 1) {
+            this.c = false;
+            this.g = false;
+            this.h = false;
+            AndroidUtilities.cancelRunOnUIThread(l7Var);
+            nl0Var.a(false);
+            return;
+        }
+        if (action != 2) {
+            return;
+        }
+        if (this.j > -1) {
+            float f7 = 0;
+            if (y3 >= f7 && y3 <= this.d) {
+                this.h = false;
+                if (!this.g) {
+                    this.g = true;
+                    AndroidUtilities.cancelRunOnUIThread(l7Var);
+                    AndroidUtilities.runOnUIThread(l7Var);
+                }
+                this.i = ((int) (this.d - (y3 - f7))) / 2;
+            } else if (y3 >= this.e && y3 <= this.f) {
+                this.g = false;
+                if (!this.h) {
+                    this.h = true;
+                    AndroidUtilities.cancelRunOnUIThread(l7Var);
+                    AndroidUtilities.runOnUIThread(l7Var);
+                }
+                this.i = ((int) ((y3 + this.f) - (this.e + r11))) / 2;
+            } else if (this.g || this.h) {
+                AndroidUtilities.cancelRunOnUIThread(l7Var);
+                this.g = false;
+                this.h = false;
+            }
+        }
+        if (S == -1 || this.b == S) {
+            return;
+        }
+        this.b = S;
+        nl0Var.c(F, !nl0Var.d(S));
     }
 
-    @Override // org.telegram.ui.Components.ub
-    public final void onExitTransitionEnd() {
-        super.onExitTransitionEnd();
-        pl0 pl0Var = this.c;
-        pl0Var.g = -1L;
-        pl0Var.invalidateSelf();
+    @Override // s4.r0
+    public final boolean b(RecyclerView recyclerView, MotionEvent motionEvent) {
+        boolean z10 = this.c && !(recyclerView.getAdapter() == null || recyclerView.getAdapter().h() == 0);
+        if (z10) {
+            this.a = recyclerView;
+            int i10 = this.j;
+            if (i10 > -1) {
+                this.d = i10;
+                this.e = recyclerView.getMeasuredHeight() - i10;
+                this.f = recyclerView.getMeasuredHeight();
+            }
+        }
+        if (z10 && motionEvent.getAction() == 1) {
+            this.c = false;
+            this.g = false;
+            this.h = false;
+            AndroidUtilities.cancelRunOnUIThread(this.l);
+            this.k.a(false);
+        }
+        return z10;
+    }
+
+    public final void d(View view, int i10, boolean z10) {
+        if (this.c) {
+            return;
+        }
+        this.b = -1;
+        AndroidUtilities.cancelRunOnUIThread(this.l);
+        this.g = false;
+        this.h = false;
+        nl0 nl0Var = this.k;
+        if (!nl0Var.b(i10)) {
+            this.c = false;
+            return;
+        }
+        nl0Var.a(true);
+        nl0Var.c(view, z10);
+        this.c = true;
+        this.b = i10;
+    }
+
+    @Override // s4.r0
+    public final void c(boolean z10) {
     }
 }

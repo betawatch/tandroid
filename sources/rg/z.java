@@ -1,79 +1,24 @@
 package rg;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.MediaController;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.hh;
-import org.telegram.ui.Components.ti;
-import org.telegram.ui.Components.vi;
+import android.content.Context;
+import org.telegram.ui.ActionBar.f6;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class z implements ti {
-    public final /* synthetic */ vi a;
-    public final /* synthetic */ o0 b;
+public final class z extends p0 {
+    public final /* synthetic */ j0 P;
 
-    public z(o0 o0Var, vi viVar) {
-        this.b = o0Var;
-        this.a = viVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public z(j0 j0Var, Context context, f6 f6Var) {
+        super(context, f6Var, true);
+        this.P = j0Var;
     }
 
-    @Override // org.telegram.ui.Components.ti
-    public final void B(hh hhVar) {
-        hhVar.run();
-    }
-
-    @Override // org.telegram.ui.Components.ti
-    public final boolean D0() {
-        System.currentTimeMillis();
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.ti
-    public final void l0(int i10, boolean z10, boolean z11, int i11, int i12, long j3, boolean z12, boolean z13, long j10) {
-        vi viVar = this.a;
-        try {
-            HashMap<Object, Object> selectedPhotos = viVar.j0.getSelectedPhotos();
-            if (selectedPhotos.isEmpty()) {
-                return;
-            }
-            MediaController.PhotoEntry photoEntry = (MediaController.PhotoEntry) selectedPhotos.values().iterator().next();
-            String str = photoEntry.imagePath;
-            if (str == null) {
-                str = photoEntry.path;
-            }
-            o0 o0Var = this.b;
-            o0Var.f0(o0Var.h0(str, true));
-            viVar.dismiss();
-        } catch (Throwable th2) {
-            FileLog.e(th2);
+    @Override // android.view.View
+    public final void invalidate() {
+        if (this.P.f0) {
+            return;
         }
-    }
-
-    @Override // org.telegram.ui.Components.ti
-    public final /* synthetic */ boolean q() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.ti
-    public final /* synthetic */ void H() {
-    }
-
-    @Override // org.telegram.ui.Components.ti
-    public final /* synthetic */ void K(Object obj) {
-    }
-
-    @Override // org.telegram.ui.Components.ti
-    public final /* synthetic */ void X(TLRPC.User user) {
-    }
-
-    @Override // org.telegram.ui.Components.ti
-    public final /* synthetic */ void x() {
-    }
-
-    @Override // org.telegram.ui.Components.ti
-    public final /* synthetic */ void E0(ArrayList arrayList, CharSequence charSequence, boolean z10, int i10, int i11, long j3, boolean z11, long j10) {
+        super.invalidate();
     }
 }

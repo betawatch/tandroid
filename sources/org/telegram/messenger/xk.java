@@ -1,37 +1,76 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.Utilities;
+import java.util.ArrayList;
+import java.util.Set;
+import org.telegram.messenger.TranslateController;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class xk implements Utilities.Callback2 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ TranslateController b;
-    public final /* synthetic */ Utilities.Callback4 c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ String f;
-    public final /* synthetic */ long g;
+public final /* synthetic */ class xk implements Runnable {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ BaseController d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object h;
+    public final /* synthetic */ Object n;
 
-    public /* synthetic */ xk(TranslateController translateController, Utilities.Callback4 callback4, boolean z10, int i10, String str, long j3, int i11) {
-        this.a = i11;
-        this.b = translateController;
-        this.c = callback4;
-        this.d = z10;
-        this.e = i10;
-        this.f = str;
-        this.g = j3;
+    public /* synthetic */ xk(long j3, Set set, TranslateController.PendingTranslation pendingTranslation, TranslateController translateController, TLObject tLObject, TLRPC.TL_error tL_error, boolean z10) {
+        this.d = translateController;
+        this.e = pendingTranslation;
+        this.f = tLObject;
+        this.b = z10;
+        this.h = tL_error;
+        this.c = j3;
+        this.n = set;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback2
-    public final void run(Object obj, Object obj2) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$pushToTranslate$21(this.c, this.d, this.e, this.f, this.g, (String) obj, (Boolean) obj2);
+                TranslateController translateController = (TranslateController) this.d;
+                TranslateController.PendingTranslation pendingTranslation = (TranslateController.PendingTranslation) this.e;
+                TLObject tLObject = (TLObject) this.f;
+                TLRPC.TL_error tL_error = (TLRPC.TL_error) this.h;
+                Set set = (Set) this.n;
+                translateController.lambda$pushToTranslate$22(pendingTranslation, tLObject, this.b, tL_error, this.c, set);
+                break;
+            case 1:
+                ((MediaDataController) this.d).lambda$broadcastReplyMessages$179((ArrayList) this.e, this.b, (ArrayList) this.f, (ArrayList) this.h, (a0.i) this.n, this.c);
                 break;
             default:
-                this.b.lambda$pushToTranslate$20(this.c, this.d, this.e, this.f, this.g, (String) obj, (Boolean) obj2);
+                MemberRequestsController memberRequestsController = (MemberRequestsController) this.d;
+                TLRPC.TL_error tL_error2 = (TLRPC.TL_error) this.h;
+                TLObject tLObject2 = (TLObject) this.f;
+                TLRPC.TL_chatInviteImporter tL_chatInviteImporter = (TLRPC.TL_chatInviteImporter) this.e;
+                RequestDelegate requestDelegate = (RequestDelegate) this.n;
+                memberRequestsController.lambda$getImporters$0(tL_error2, tLObject2, tL_chatInviteImporter, this.b, this.c, requestDelegate);
                 break;
         }
+    }
+
+    public /* synthetic */ xk(long j3, MemberRequestsController memberRequestsController, RequestDelegate requestDelegate, TLObject tLObject, TLRPC.TL_chatInviteImporter tL_chatInviteImporter, TLRPC.TL_error tL_error, boolean z10) {
+        this.d = memberRequestsController;
+        this.h = tL_error;
+        this.f = tLObject;
+        this.e = tL_chatInviteImporter;
+        this.b = z10;
+        this.c = j3;
+        this.n = requestDelegate;
+    }
+
+    public /* synthetic */ xk(MediaDataController mediaDataController, ArrayList arrayList, boolean z10, ArrayList arrayList2, ArrayList arrayList3, a0.i iVar, long j3) {
+        this.d = mediaDataController;
+        this.e = arrayList;
+        this.b = z10;
+        this.f = arrayList2;
+        this.h = arrayList3;
+        this.n = iVar;
+        this.c = j3;
     }
 }

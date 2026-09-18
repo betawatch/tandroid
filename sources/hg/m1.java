@@ -1,31 +1,39 @@
 package hg;
 
-import android.content.Context;
 import android.view.View;
-import bi.d8;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.Components.d61;
-import org.telegram.ui.Components.g51;
-import org.telegram.ui.Components.h51;
-import org.telegram.ui.Components.ll0;
-import org.telegram.ui.Components.v51;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.Components.j51;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class m1 extends g51 {
-    public static final /* synthetic */ int a = 0;
+public final /* synthetic */ class m1 implements Utilities.Callback5, Utilities.Callback5Return {
+    public final /* synthetic */ y1 a;
 
-    static {
-        g51.setup(new m1());
+    @Override // org.telegram.messenger.Utilities.Callback5
+    public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
+        ((Integer) obj3).getClass();
+        ((Float) obj4).getClass();
+        ((Float) obj5).getClass();
+        y1.W(this.a, (j51) obj, (View) obj2);
     }
 
-    @Override // org.telegram.ui.Components.g51
-    public final void bindView(View view, h51 h51Var, boolean z10, v51 v51Var, d61 d61Var) {
-        ((n1) view).a((d8) h51Var.G);
-    }
-
-    @Override // org.telegram.ui.Components.g51
-    public final View createView(Context context, ll0 ll0Var, int i10, int i11, f6 f6Var) {
-        return new n1(context, f6Var);
+    @Override // org.telegram.messenger.Utilities.Callback5Return
+    public Object run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
+        boolean z10;
+        j51 j51Var = (j51) obj;
+        View view = (View) obj2;
+        ((Integer) obj3).getClass();
+        ((Float) obj4).getClass();
+        ((Float) obj5).getClass();
+        if (j51Var.a == 16) {
+            Object obj6 = j51Var.G;
+            if (!(obj6 instanceof a2) || !((a2) obj6).g) {
+                this.a.e0(j51Var, view);
+                z10 = true;
+                return Boolean.valueOf(z10);
+            }
+        }
+        z10 = false;
+        return Boolean.valueOf(z10);
     }
 }

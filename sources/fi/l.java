@@ -1,54 +1,53 @@
 package fi;
 
-import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.vl;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.j6;
-import w7.x5;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.R;
+import org.telegram.ui.Components.c5;
+import org.telegram.ui.bo;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes4.dex */
-public final class l extends FrameLayout {
-    public final ImageView a;
-    public final TextView b;
-    public final TextView c;
+public final /* synthetic */ class l implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate e;
 
-    public l(Context context, f6 f6Var, boolean z10) {
-        super(context);
-        ImageView imageView = new ImageView(context);
-        this.a = imageView;
-        imageView.setScaleType(ImageView.ScaleType.CENTER);
-        int i10 = j6.G6;
-        imageView.setColorFilter(new PorterDuffColorFilter(j6.v0(i10, f6Var), PorterDuff.Mode.SRC_IN));
-        addView(imageView, x5.d(24, 24.0f, 51, 20.0f, 11.46f, 0.0f, 0.0f));
-        LinearLayout linearLayout = new LinearLayout(context);
-        linearLayout.setOrientation(1);
-        addView(linearLayout, x5.d(-1, -2.0f, 23, 64.0f, z10 ? 2.0f : 9.8f, 24.0f, z10 ? 4.0f : 9.8f));
-        TextView textView = new TextView(context);
-        this.b = textView;
-        textView.setTextColor(j6.v0(i10, f6Var));
-        textView.setTypeface(AndroidUtilities.bold());
-        textView.setTextSize(1, 14.0f);
-        TextView h = com.google.android.gms.internal.vision.e2.h(linearLayout, textView, x5.t(-1, -2, 55, 0, 0, 0, 1), context);
-        this.c = h;
-        vl.n(j6.z6, f6Var, h, 1, 14.0f);
-        linearLayout.addView(h, x5.t(-1, -2, 55, 0, 0, 0, 0));
+    public /* synthetic */ l(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, boolean z10, boolean z11, long j3, int i10) {
+        this.a = i10;
+        this.e = notificationCenterDelegate;
+        this.b = z10;
+        this.c = z11;
+        this.d = j3;
     }
 
-    public final void a(CharSequence charSequence, CharSequence charSequence2, int i10) {
-        this.a.setImageResource(i10);
-        this.b.setText(charSequence);
-        this.c.setText(charSequence2);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                p pVar = (p) this.e;
+                c5.v0(pVar, LocaleController.getString(R.string.CommunityMenuRemoveFromCommunity), LocaleController.getString(this.b ? R.string.CommunityMenuRemoveBotFromCommunityConfirm : this.c ? R.string.CommunityMenuRemoveChannelFromCommunityConfirm : R.string.CommunityMenuRemoveGroupFromCommunityConfirm), LocaleController.getString(R.string.Remove), true, new g(pVar, this.d, 0));
+                break;
+            case 1:
+                k0.q((k0) this.e, this.b, this.c, this.d);
+                break;
+            case 2:
+                ((MessagesController) this.e).lambda$setLastCreatedDialogId$55(this.b, this.c, this.d);
+                break;
+            default:
+                bo.c1((bo) this.e, this.d, this.b, this.c);
+                break;
+        }
     }
 
-    public void setText(CharSequence charSequence) {
-        this.c.setText(charSequence);
+    public /* synthetic */ l(bo boVar, long j3, boolean z10, boolean z11) {
+        this.a = 3;
+        this.e = boVar;
+        this.d = j3;
+        this.b = z10;
+        this.c = z11;
     }
 }

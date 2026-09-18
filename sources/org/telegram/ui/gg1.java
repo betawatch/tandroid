@@ -1,28 +1,24 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLRPC;
+import java.util.Iterator;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class gg1 implements x11 {
-    public final /* synthetic */ TLRPC.TL_forumTopic a;
-    public final /* synthetic */ hg1 b;
+public final /* synthetic */ class gg1 implements org.telegram.ui.ActionBar.b2 {
+    public final /* synthetic */ ig1 a;
 
-    public gg1(hg1 hg1Var, TLRPC.TL_forumTopic tL_forumTopic) {
-        this.b = hg1Var;
-        this.a = tL_forumTopic;
+    public /* synthetic */ gg1(ig1 ig1Var) {
+        this.a = ig1Var;
     }
 
-    @Override // org.telegram.ui.x11
-    public final void b0() {
-        kg1 kg1Var = this.b.a;
-        TLRPC.TL_forumTopic tL_forumTopic = this.a;
-        kg1.U(kg1Var, tL_forumTopic.id);
-        AndroidUtilities.runOnUIThread(new w81(14, this, tL_forumTopic), 300L);
-    }
-
-    @Override // org.telegram.ui.x11
-    public final void v(wk0 wk0Var) {
+    @Override // org.telegram.ui.ActionBar.b2
+    public void f(org.telegram.ui.ActionBar.c2 c2Var, int i10) {
+        lg1 lg1Var = this.a.a;
+        Iterator it = lg1Var.e.iterator();
+        while (it.hasNext()) {
+            lg1.U(lg1Var, ((Integer) it.next()).intValue());
+        }
+        lg1Var.e.clear();
+        lg1Var.V();
     }
 }

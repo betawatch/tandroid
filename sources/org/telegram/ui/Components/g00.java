@@ -8,7 +8,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class g00 {
     public int a;
@@ -32,11 +32,11 @@ public final class g00 {
         int i11;
         CharSequence charSequence = this.b;
         k00 k00Var = this.h;
-        int ceil = (int) Math.ceil(di.f4.g(charSequence, k00Var.b));
+        int ceil = (int) Math.ceil(ci.f4.g(charSequence, k00Var.b));
         this.c = ceil;
         int i12 = 0;
         if (z10) {
-            i10 = ((org.telegram.ui.tw) k00Var.J).a(this.a);
+            i10 = ((org.telegram.ui.vw) k00Var.J).a(this.a);
             if (i10 < 0) {
                 i10 = 0;
             }

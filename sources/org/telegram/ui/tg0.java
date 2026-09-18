@@ -1,53 +1,52 @@
 package org.telegram.ui;
 
+import android.content.Context;
+import android.graphics.drawable.Drawable;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.TextView;
+import android.widget.ViewSwitcher;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.RadialProgressView;
+import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class tg0 implements Runnable {
+public final /* synthetic */ class tg0 implements ViewSwitcher.ViewFactory {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ug0 b;
-    public final /* synthetic */ kg0 c;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ tg0(int i10, kg0 kg0Var, ug0 ug0Var) {
+    public /* synthetic */ tg0(Object obj, int i10) {
         this.a = i10;
-        this.b = ug0Var;
-        this.c = kg0Var;
+        this.b = obj;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.widget.ViewSwitcher.ViewFactory
+    public final View makeView() {
         int i10 = this.a;
-        kg0 kg0Var = this.c;
-        ug0 ug0Var = this.b;
+        int i11 = 1;
+        Object obj = this.b;
         switch (i10) {
             case 0:
-                int i11 = kg0.E;
-                kg0Var.a();
-                AndroidUtilities.runOnUIThread(new tg0(1, kg0Var, ug0Var), 150L);
-                break;
+                TextView textView = new TextView((Context) obj);
+                textView.setPadding(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(12.0f));
+                textView.setTextSize(1, 16.0f);
+                textView.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.G6, false));
+                textView.setHintTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.H6, false));
+                textView.setMaxLines(1);
+                textView.setSingleLine(true);
+                textView.setEllipsize(TextUtils.TruncateAt.END);
+                textView.setGravity((LocaleController.isRTL ? 5 : 3) | 1);
+                return textView;
+            case 1:
+                TextView textView2 = new TextView((Context) obj);
+                com.google.android.gms.internal.vision.e2.p(org.telegram.ui.ActionBar.j6.D6, null, false, textView2, 1);
+                textView2.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
+                textView2.setTextSize(1, 15.0f);
+                return textView2;
             default:
-                vg0 vg0Var = ug0Var.a;
-                vg0Var.h(null);
-                RadialProgressView radialProgressView = vg0Var.V.N.d;
-                RadialProgressView radialProgressView2 = kg0Var.h.d;
-                radialProgressView.getClass();
-                radialProgressView.a = radialProgressView2.a;
-                radialProgressView.b = radialProgressView2.b;
-                radialProgressView.H = radialProgressView2.H;
-                radialProgressView.I = radialProgressView2.I;
-                radialProgressView.J = radialProgressView2.J;
-                radialProgressView.c = radialProgressView2.c;
-                radialProgressView.n = radialProgressView2.n;
-                radialProgressView.e = radialProgressView2.e;
-                radialProgressView.y = radialProgressView2.y;
-                radialProgressView.F = radialProgressView2.F;
-                radialProgressView.G = radialProgressView2.G;
-                radialProgressView.d = radialProgressView2.d;
-                radialProgressView.E = radialProgressView2.E;
-                radialProgressView.b(85L);
-                break;
+                PhotoViewer photoViewer = (PhotoViewer) obj;
+                Drawable[] drawableArr = PhotoViewer.U8;
+                return new su0(photoViewer.E, photoViewer.T1, photoViewer.Q, new rr0(photoViewer, 0), new qg0(photoViewer, i11));
         }
     }
 }

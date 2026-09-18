@@ -8,19 +8,18 @@ import android.content.IntentSender;
 import android.os.Build;
 import android.util.Log;
 import android.view.KeyEvent;
+import ci.b9;
+import ci.g7;
 import com.google.firebase.messaging.FirebaseMessaging;
-import di.b7;
-import di.g7;
 import j$.util.Objects;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.concurrent.Executor;
-import ji.u4;
+import org.telegram.ui.Components.ng;
 import org.telegram.ui.Components.ok;
-import org.telegram.ui.Components.pg;
 import p4.s0;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class g extends BroadcastReceiver {
     public final /* synthetic */ int a;
@@ -34,7 +33,7 @@ public final class g extends BroadcastReceiver {
         if (Log.isLoggable("FirebaseMessaging", 3) || (Build.VERSION.SDK_INT == 23 && Log.isLoggable("FirebaseMessaging", 3))) {
             Log.d("FirebaseMessaging", "Connectivity change received registered");
         }
-        ((FirebaseMessaging) ((com.google.firebase.messaging.u) this.b).d).b.registerReceiver(this, new IntentFilter("android.net.conn.CONNECTIVITY_CHANGE"));
+        ((FirebaseMessaging) ((com.google.firebase.messaging.w) this.b).d).b.registerReceiver(this, new IntentFilter("android.net.conn.CONNECTIVITY_CHANGE"));
     }
 
     @Override // android.content.BroadcastReceiver
@@ -48,21 +47,21 @@ public final class g extends BroadcastReceiver {
                 }
                 return;
             case 1:
-                com.google.firebase.messaging.u uVar = (com.google.firebase.messaging.u) this.b;
-                if (uVar != null && uVar.a()) {
+                com.google.firebase.messaging.w wVar = (com.google.firebase.messaging.w) this.b;
+                if (wVar != null && wVar.a()) {
                     if (Log.isLoggable("FirebaseMessaging", 3) || (Build.VERSION.SDK_INT == 23 && Log.isLoggable("FirebaseMessaging", 3))) {
                         Log.d("FirebaseMessaging", "Connectivity changed. Starting background sync.");
                     }
-                    com.google.firebase.messaging.u uVar2 = (com.google.firebase.messaging.u) this.b;
-                    ((FirebaseMessaging) uVar2.d).getClass();
-                    FirebaseMessaging.b(uVar2, 0L);
-                    ((FirebaseMessaging) ((com.google.firebase.messaging.u) this.b).d).b.unregisterReceiver(this);
+                    com.google.firebase.messaging.w wVar2 = (com.google.firebase.messaging.w) this.b;
+                    ((FirebaseMessaging) wVar2.d).getClass();
+                    FirebaseMessaging.b(wVar2, 0L);
+                    ((FirebaseMessaging) ((com.google.firebase.messaging.w) this.b).d).b.unregisterReceiver(this);
                     this.b = null;
                     return;
                 }
                 return;
             case 2:
-                ((Executor) ((e2.u) this.b).c).execute(new b7(19, this, context));
+                ((Executor) ((e2.u) this.b).c).execute(new b9(13, this, context));
                 return;
             case 3:
                 ((g.p) this.b).k();
@@ -79,21 +78,21 @@ public final class g extends BroadcastReceiver {
                     return;
                 }
                 g7 g7Var = (g7) this.b;
-                g7Var.a(k2.b.b(context, intent, (b2.e) g7Var.j, (u4) g7Var.i));
+                g7Var.a(k2.b.b(context, intent, (b2.e) g7Var.j, (a6.m) g7Var.i));
                 return;
             case 6:
                 if (Objects.equals(intent.getAction(), "android.intent.action.MEDIA_BUTTON") && (keyEvent = (KeyEvent) intent.getParcelableExtra("android.intent.extra.KEY_EVENT")) != null) {
-                    ((n4.j) ((k2.g0) ((m4.k0) this.b).k.c).b).a.dispatchMediaButtonEvent(keyEvent);
+                    ((n4.j) ((k2.u) ((m4.l0) this.b).k.c).b).a.dispatchMediaButtonEvent(keyEvent);
                     return;
                 }
                 return;
             case 7:
-                pg pgVar = new pg(this, 22);
+                ng ngVar = new ng(this, 22);
                 if ("android.intent.action.MEDIA_UNMOUNTED".equals(intent.getAction())) {
-                    ((ok) this.b).r.postDelayed(pgVar, 1000L);
+                    ((ok) this.b).r.postDelayed(ngVar, 1000L);
                     return;
                 } else {
-                    pgVar.run();
+                    ngVar.run();
                     return;
                 }
             case 8:
@@ -103,7 +102,7 @@ public final class g extends BroadcastReceiver {
                 if ("PIP_CUSTOM_EVENT".equals(intent.getAction())) {
                     String stringExtra = intent.getStringExtra("source_id");
                     intent.getIntExtra("action_id", -1);
-                    ArrayList arrayList = (ArrayList) ((qf.c) this.b).c.get(stringExtra);
+                    ArrayList arrayList = (ArrayList) ((pf.c) this.b).c.get(stringExtra);
                     if (arrayList == null) {
                         return;
                     }

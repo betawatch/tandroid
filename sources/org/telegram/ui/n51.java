@@ -4,26 +4,26 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class n51 implements org.telegram.ui.ActionBar.a2, org.telegram.ui.Components.nk0 {
-    public final /* synthetic */ j71 a;
+public final /* synthetic */ class n51 implements org.telegram.ui.ActionBar.b2, org.telegram.ui.Components.ok0 {
+    public final /* synthetic */ i71 a;
 
-    public /* synthetic */ n51(j71 j71Var) {
-        this.a = j71Var;
+    public /* synthetic */ n51(i71 i71Var) {
+        this.a = i71Var;
     }
 
-    @Override // org.telegram.ui.Components.nk0
-    public void b() {
+    @Override // org.telegram.ui.Components.ok0
+    public void a() {
         this.a.m();
     }
 
-    @Override // org.telegram.ui.ActionBar.a2
-    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
-        j71 j71Var = this.a;
-        int i11 = j71Var.V;
+    @Override // org.telegram.ui.ActionBar.b2
+    public void f(org.telegram.ui.ActionBar.c2 c2Var, int i10) {
+        i71 i71Var = this.a;
+        int i11 = i71Var.V;
         ConnectionsManager.getInstance(i11).sendRequest(new TL_account.clearRecentEmojiStatuses(), null);
         MediaDataController.getInstance(i11).clearRecentEmojiStatuses();
-        j71Var.B(false, true, true);
+        i71Var.B(false, true, true);
     }
 }

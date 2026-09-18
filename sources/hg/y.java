@@ -1,74 +1,130 @@
 package hg;
 
-import android.view.View;
-import android.widget.TextView;
+import ai.t5;
+import android.text.TextUtils;
 import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.MessagesStorage;
+import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.bl0;
-import org.telegram.ui.gy;
-import org.telegram.ui.uy;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.Components.qd;
+import org.telegram.ui.Components.vc;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class y implements g0, bl0 {
-    public final /* synthetic */ i0 a;
+public final class y {
+    public static volatile y[] e = new y[4];
+    public static final Object[] f = new Object[4];
+    public final int a;
+    public final ArrayList b = new ArrayList();
+    public boolean c = false;
+    public boolean d = false;
 
-    public /* synthetic */ y(i0 i0Var) {
-        this.a = i0Var;
+    static {
+        for (int i10 = 0; i10 < 4; i10++) {
+            f[i10] = new Object();
+        }
     }
 
-    @Override // org.telegram.ui.Components.bl0
-    public boolean a(int i10, View view) {
-        TLRPC.User user;
-        gy gyVar = this.a.U;
-        if (gyVar != null) {
-            Long l4 = (Long) view.getTag();
-            long longValue = l4.longValue();
-            uy uyVar = gyVar.a;
-            if (uyVar.getParentActivity() != null && (user = uyVar.getMessagesController().getUser(l4)) != null) {
-                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(uyVar.getParentActivity());
-                String string = LocaleController.getString(R.string.ChatHintsDeleteAlertTitle);
-                org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
-                b2Var.R = string;
-                b2Var.T = AndroidUtilities.replaceTags(LocaleController.formatString("ChatHintsDeleteAlert", R.string.ChatHintsDeleteAlert, ContactsController.formatName(user.first_name, user.last_name)));
-                alertDialog$Builder.k(LocaleController.getString(R.string.StickersRemove), new bi.p1(gyVar, longValue, 9));
-                alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-                uyVar.showDialog(b2Var);
-                TextView textView = (TextView) b2Var.d(-1);
-                if (textView != null) {
-                    textView.setTextColor(uyVar.getThemedColor(j6.q7));
+    public y(int i10) {
+        this.a = i10;
+    }
+
+    public static y d(int i10) {
+        y yVar;
+        y yVar2 = e[i10];
+        if (yVar2 != null) {
+            return yVar2;
+        }
+        synchronized (f[i10]) {
+            try {
+                yVar = e[i10];
+                if (yVar == null) {
+                    y[] yVarArr = e;
+                    y yVar3 = new y(i10);
+                    yVarArr[i10] = yVar3;
+                    yVar = yVar3;
                 }
+            } catch (Throwable th2) {
+                throw th2;
             }
         }
-        return true;
+        return yVar;
     }
 
-    @Override // hg.g0
-    public void b(a0.i iVar, ArrayList arrayList) {
-        i0 i0Var = this.a;
-        int i10 = i0Var.s0;
-        i0Var.t0 = arrayList;
-        i0Var.x0 = iVar;
-        for (int i11 = 0; i11 < i0Var.t0.size(); i11++) {
-            h0 h0Var = (h0) i0Var.t0.get(i11);
-            TLObject tLObject = h0Var.a;
-            if (tLObject instanceof TLRPC.User) {
-                MessagesController.getInstance(i10).putUser((TLRPC.User) h0Var.a, true);
-            } else if (tLObject instanceof TLRPC.Chat) {
-                MessagesController.getInstance(i10).putChat((TLRPC.Chat) h0Var.a, true);
-            } else if (tLObject instanceof TLRPC.EncryptedChat) {
-                MessagesController.getInstance(i10).putEncryptedChat((TLRPC.EncryptedChat) h0Var.a, true);
+    public final void a(v vVar, String str) {
+        TL_account.TL_businessChatLink c10 = c(str);
+        if (c10 != null) {
+            ArrayList arrayList = this.b;
+            int indexOf = arrayList.indexOf(c10);
+            arrayList.remove(c10);
+            NotificationCenter.getInstance(this.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.businessLinksUpdated, new Object[0]);
+            vc.a0(vVar).U(LocaleController.getString(R.string.BusinessLinkDeleted), true, new ai.s1(this, indexOf, c10, 12), new gg.t(this, str, c10, 8)).j();
+        }
+    }
+
+    public final void b(TL_account.TL_businessChatLink tL_businessChatLink, TL_account.TL_inputBusinessChatLink tL_inputBusinessChatLink, qd qdVar) {
+        TL_account.editBusinessChatLink editbusinesschatlink = new TL_account.editBusinessChatLink();
+        editbusinesschatlink.slug = tL_businessChatLink.link;
+        if (!tL_inputBusinessChatLink.entities.isEmpty()) {
+            tL_inputBusinessChatLink.flags |= 1;
+        }
+        if (!TextUtils.isEmpty(tL_inputBusinessChatLink.title)) {
+            tL_inputBusinessChatLink.flags |= 2;
+        }
+        editbusinesschatlink.link = tL_inputBusinessChatLink;
+        ConnectionsManager.getInstance(this.a).sendRequest(editbusinesschatlink, new t5(this, tL_businessChatLink, qdVar, 4));
+    }
+
+    public final TL_account.TL_businessChatLink c(String str) {
+        TL_account.TL_businessChatLink tL_businessChatLink;
+        int i10 = 0;
+        while (true) {
+            ArrayList arrayList = this.b;
+            if (i10 >= arrayList.size()) {
+                return null;
+            }
+            tL_businessChatLink = (TL_account.TL_businessChatLink) arrayList.get(i10);
+            if (!TextUtils.equals(tL_businessChatLink.link, str)) {
+                if (!TextUtils.equals(tL_businessChatLink.link, "https://" + str)) {
+                    if (TextUtils.equals(tL_businessChatLink.link, "https://t.me/m/" + str)) {
+                        break;
+                    }
+                    if (TextUtils.equals(tL_businessChatLink.link, "tg://message?slug=" + str)) {
+                        break;
+                    }
+                    i10++;
+                } else {
+                    break;
+                }
+            } else {
+                break;
             }
         }
-        i0Var.G(null);
-        i0Var.l();
+        return tL_businessChatLink;
+    }
+
+    public final void e(boolean z10, boolean z11) {
+        if (this.c) {
+            return;
+        }
+        if (!this.d || (z11 && !z10)) {
+            this.c = true;
+            int i10 = this.a;
+            if (z10) {
+                MessagesStorage messagesStorage = MessagesStorage.getInstance(i10);
+                messagesStorage.getStorageQueue().postRunnable(new ci.y0(this, messagesStorage, z11));
+            } else {
+                ConnectionsManager.getInstance(i10).sendRequest(new TL_account.getBusinessChatLinks(), new x(this, 0));
+            }
+        }
+    }
+
+    public final void f() {
+        ArrayList arrayList = new ArrayList(this.b);
+        MessagesStorage messagesStorage = MessagesStorage.getInstance(this.a);
+        messagesStorage.getStorageQueue().postRunnable(new ci.w0(1, arrayList, messagesStorage));
     }
 }

@@ -10,16 +10,16 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class v60 extends kl0 {
+public final class v60 extends ll0 {
     public final /* synthetic */ b70 c;
 
     public v60(b70 b70Var) {
         this.c = b70Var;
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.ll0
     public final boolean D(s4.c1 c1Var) {
         int i10 = c1Var.f;
         return i10 == 3 || i10 == 1;
@@ -34,10 +34,10 @@ public final class v60 extends kl0 {
         }
         TLRPC.Dialog dialog = (TLRPC.Dialog) b70Var.n0.get(i10 - b70Var.Y);
         if (DialogObject.isUserDialog(dialog.id)) {
-            i12 = ((org.telegram.ui.ActionBar.f3) b70Var).currentAccount;
+            i12 = ((org.telegram.ui.ActionBar.g3) b70Var).currentAccount;
             return MessagesController.getInstance(i12).getUser(Long.valueOf(dialog.id));
         }
-        i11 = ((org.telegram.ui.ActionBar.f3) b70Var).currentAccount;
+        i11 = ((org.telegram.ui.ActionBar.g3) b70Var).currentAccount;
         return MessagesController.getInstance(i11).getChat(Long.valueOf(-dialog.id));
     }
 
@@ -115,19 +115,19 @@ public final class v60 extends kl0 {
                 u60 u60Var = new u60(context, null, 0, null, 0);
                 u60Var.setLayoutParams(new s4.p0(-1, -1));
                 u60Var.e.setVisibility(8);
-                org.telegram.ui.iu iuVar = b70Var.m0;
-                wh.p pVar = u60Var.d;
-                if (iuVar != null) {
-                    pVar.setText(LocaleController.getString(R.string.FilterNoChats));
+                org.telegram.ui.gu guVar = b70Var.m0;
+                vh.o oVar = u60Var.d;
+                if (guVar != null) {
+                    oVar.setText(LocaleController.getString(R.string.FilterNoChats));
                 } else {
-                    pVar.setText(LocaleController.getString(R.string.NoContacts));
+                    oVar.setText(LocaleController.getString(R.string.NoContacts));
                 }
                 u60Var.setAnimateLayoutChange(true);
                 view = u60Var;
             }
         } else {
-            view = new di.eb(this, context, 18);
+            view = new ci.eb(this, context, 18);
         }
-        return new vk0(view);
+        return new wk0(view);
     }
 }

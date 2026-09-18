@@ -1,16 +1,15 @@
 package z3;
 
 import b2.s;
-import t7.u;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public interface k {
-    public static final u D = new u(28);
+    public static final rb.a D = new rb.a(28);
 
-    int J(s sVar);
+    int D(s sVar);
 
-    boolean i0(s sVar);
+    boolean W(s sVar);
 
-    m v(s sVar);
+    m x(s sVar);
 }

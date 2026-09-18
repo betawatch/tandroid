@@ -1,28 +1,113 @@
 package org.telegram.ui.Components;
 
-import android.animation.AnimatorSet;
-import android.content.Context;
-import android.widget.FrameLayout;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public abstract class f8 extends FrameLayout {
-    public final x9[] a;
-    public int b;
-    public AnimatorSet c;
+public final /* synthetic */ class f8 implements Runnable {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ g8 b;
+    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ String d;
 
-    public f8(Context context) {
-        super(context);
-        this.a = new x9[2];
-        for (int i10 = 0; i10 < 2; i10++) {
-            this.a[i10] = new x9(context);
-            this.a[i10].getImageReceiver().setDelegate(new i2.t(this, i10, 5));
-            this.a[i10].setRoundRadius(AndroidUtilities.dp(4.0f));
-            if (i10 == 1) {
-                this.a[i10].setVisibility(8);
-            }
-            addView(this.a[i10], w7.x5.c(-1.0f, -1));
+    public /* synthetic */ f8(g8 g8Var, String str, ArrayList arrayList) {
+        this.b = g8Var;
+        this.d = str;
+        this.c = arrayList;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        boolean z10;
+        String str;
+        int i10 = this.a;
+        String str2 = this.d;
+        ArrayList arrayList = this.c;
+        g8 g8Var = this.b;
+        switch (i10) {
+            case 0:
+                g8Var.getClass();
+                String lowerCase = str2.trim().toLowerCase();
+                if (lowerCase.length() == 0) {
+                    AndroidUtilities.runOnUIThread(new f8(g8Var, new ArrayList(), str2));
+                    break;
+                } else {
+                    String translitString = LocaleController.getInstance().getTranslitString(lowerCase);
+                    if (lowerCase.equals(translitString) || translitString.length() == 0) {
+                        translitString = null;
+                    }
+                    int i11 = (translitString != null ? 1 : 0) + 1;
+                    String[] strArr = new String[i11];
+                    strArr[0] = lowerCase;
+                    if (translitString != null) {
+                        strArr[1] = translitString;
+                    }
+                    ArrayList arrayList2 = new ArrayList();
+                    for (int i12 = 0; i12 < arrayList.size(); i12++) {
+                        MessageObject messageObject = (MessageObject) arrayList.get(i12);
+                        int i13 = 0;
+                        while (true) {
+                            if (i13 < i11) {
+                                String str3 = strArr[i13];
+                                String documentName = messageObject.getDocumentName();
+                                if (documentName != null && documentName.length() != 0) {
+                                    if (documentName.toLowerCase().contains(str3)) {
+                                        arrayList2.add(messageObject);
+                                    } else {
+                                        TLRPC.Document document = messageObject.type == 0 ? messageObject.messageOwner.media.webpage.document : messageObject.messageOwner.media.document;
+                                        int i14 = 0;
+                                        while (true) {
+                                            if (i14 < document.attributes.size()) {
+                                                TLRPC.DocumentAttribute documentAttribute = document.attributes.get(i14);
+                                                if (documentAttribute instanceof TLRPC.TL_documentAttributeAudio) {
+                                                    String str4 = documentAttribute.performer;
+                                                    z10 = str4 != null ? str4.toLowerCase().contains(str3) : false;
+                                                    if (!z10 && (str = documentAttribute.title) != null) {
+                                                        z10 = str.toLowerCase().contains(str3);
+                                                    }
+                                                } else {
+                                                    i14++;
+                                                }
+                                            } else {
+                                                z10 = false;
+                                            }
+                                        }
+                                        if (z10) {
+                                            arrayList2.add(messageObject);
+                                        }
+                                    }
+                                }
+                                i13++;
+                            }
+                        }
+                    }
+                    AndroidUtilities.runOnUIThread(new f8(g8Var, arrayList2, str2));
+                    break;
+                }
+                break;
+            default:
+                h8 h8Var = g8Var.n;
+                if (h8Var.h) {
+                    h8Var.f = true;
+                    g8Var.d = arrayList;
+                    g8Var.e = str2;
+                    g8Var.l();
+                    h8Var.r.n0(0);
+                    org.telegram.messenger.wl.p(R.string.NoAudioFoundPlayerInfo, new Object[]{str2}, h8Var.y);
+                    break;
+                }
+                break;
         }
+    }
+
+    public /* synthetic */ f8(g8 g8Var, ArrayList arrayList, String str) {
+        this.b = g8Var;
+        this.c = arrayList;
+        this.d = str;
     }
 }

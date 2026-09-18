@@ -15,9 +15,9 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.e51;
+import org.telegram.ui.Components.g51;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class q2 {
     public final r2 a;
@@ -59,7 +59,7 @@ public final class q2 {
                     return;
                 }
                 ArrayList arrayList = new ArrayList(topics);
-                Collections.sort(arrayList, Comparator$-CC.comparingInt(new bi.o6(5)));
+                Collections.sort(arrayList, Comparator$-CC.comparingInt(new ai.f7(5)));
                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
                 if (messageObject == null || ChatObject.isMonoForum(chat)) {
                     j3 = 0;
@@ -69,7 +69,7 @@ public final class q2 {
                     j3 = MessageObject.getTopicId(i10, messageObject.messageOwner, true);
                     TLRPC.TL_forumTopic findTopic = MessagesController.getInstance(i10).getTopicsController().findTopic(chat.id, j3);
                     if (findTopic != null) {
-                        CharSequence j10 = og.d.j(findTopic, textPaint, null);
+                        CharSequence j10 = ng.d.j(findTopic, textPaint, null);
                         spannableStringBuilder.append(j10);
                         i11 = findTopic.unread_count > 0 ? j10.length() : 0;
                         q2Var.c = j10.length();
@@ -117,7 +117,7 @@ public final class q2 {
                                     spannableStringBuilder.append((CharSequence) ", ");
                                 }
                             }
-                            spannableStringBuilder.append(og.d.j((TLRPC.ForumTopic) arrayList.get(i13), textPaint, null));
+                            spannableStringBuilder.append(ng.d.j((TLRPC.ForumTopic) arrayList.get(i13), textPaint, null));
                             z11 = false;
                         }
                         i13++;
@@ -126,11 +126,11 @@ public final class q2 {
                 if (i11 > 0) {
                     Typeface bold = AndroidUtilities.bold();
                     int i15 = org.telegram.ui.ActionBar.j6.X8;
-                    e51 e51Var = new e51();
-                    e51Var.a = bold;
-                    e51Var.c = i15;
-                    e51Var.b = org.telegram.ui.ActionBar.j6.w0(null, i15, false);
-                    spannableStringBuilder.setSpan(e51Var, 0, Math.min(spannableStringBuilder.length(), i11 + 2), 0);
+                    g51 g51Var = new g51();
+                    g51Var.a = bold;
+                    g51Var.c = i15;
+                    g51Var.b = org.telegram.ui.ActionBar.j6.w0(null, i15, false);
+                    spannableStringBuilder.setSpan(g51Var, 0, Math.min(spannableStringBuilder.length(), i11 + 2), 0);
                 }
                 q2Var.g = spannableStringBuilder;
             }

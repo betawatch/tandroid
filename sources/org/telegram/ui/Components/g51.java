@@ -1,87 +1,56 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.util.LongSparseArray;
-import android.view.View;
-import java.util.ArrayList;
-import java.util.HashMap;
+import android.graphics.Typeface;
+import android.text.TextPaint;
+import android.text.style.MetricAffectingSpan;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public abstract class g51 {
-    private ArrayList<View> cache;
-    public final int viewType;
+public final class g51 extends MetricAffectingSpan {
+    public Typeface a;
+    public int b;
+    public int c;
+
+    public g51(Typeface typeface) {
+        this.c = -1;
+        this.a = typeface;
+    }
+
+    @Override // android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        int i10 = this.c;
+        if (i10 >= 0) {
+            this.b = org.telegram.ui.ActionBar.j6.w0(null, i10, false);
+        }
+        Typeface typeface = this.a;
+        if (typeface != null) {
+            textPaint.setTypeface(typeface);
+        }
+        int i11 = this.b;
+        if (i11 != 0) {
+            textPaint.setColor(i11);
+        }
+        textPaint.setFlags(textPaint.getFlags() | 128);
+    }
+
+    @Override // android.text.style.MetricAffectingSpan
+    public final void updateMeasureState(TextPaint textPaint) {
+        Typeface typeface = this.a;
+        if (typeface != null) {
+            textPaint.setTypeface(typeface);
+        }
+        textPaint.setFlags(textPaint.getFlags() | 128);
+    }
 
     public g51() {
-        int i10 = h51.J;
-        h51.J = i10 + 1;
-        this.viewType = i10;
+        Typeface typeface = Typeface.DEFAULT;
+        this.c = -1;
+        this.a = typeface;
     }
 
-    public static void setup(g51 g51Var) {
-        if (h51.L == null) {
-            h51.L = new HashMap();
-        }
-        if (h51.K == null) {
-            h51.K = new LongSparseArray();
-        }
-        Class<?> cls = g51Var.getClass();
-        if (h51.L.containsKey(cls)) {
-            return;
-        }
-        h51.L.put(cls, g51Var);
-        h51.K.put(g51Var.viewType, g51Var);
-    }
-
-    public boolean contentsEquals(h51 h51Var, h51 h51Var2) {
-        return h51Var.H(h51Var2);
-    }
-
-    public abstract View createView(Context context, ll0 ll0Var, int i10, int i11, org.telegram.ui.ActionBar.f6 f6Var);
-
-    public boolean equals(h51 h51Var, h51 h51Var2) {
-        return h51Var.I(h51Var2);
-    }
-
-    public View getCached() {
-        ArrayList<View> arrayList = this.cache;
-        if (arrayList == null || arrayList.isEmpty()) {
-            return null;
-        }
-        return this.cache.remove(0);
-    }
-
-    public boolean isClickable() {
-        return !(this instanceof ej);
-    }
-
-    public boolean isShadow() {
-        return false;
-    }
-
-    public void precache(org.telegram.ui.ActionBar.n2 n2Var, int i10) {
-        precache(n2Var.getContext(), n2Var.getCurrentAccount(), n2Var.getClassGuid(), n2Var.getResourceProvider(), i10);
-    }
-
-    public void precache(Context context, int i10, int i11, org.telegram.ui.ActionBar.f6 f6Var, int i12) {
-        if (context == null) {
-            return;
-        }
-        if (this.cache == null) {
-            this.cache = new ArrayList<>();
-        }
-        int i13 = 0;
-        while (i13 < this.cache.size() - i12) {
-            Context context2 = context;
-            this.cache.add(createView(context2, null, i10, i11, f6Var));
-            i13++;
-            context = context2;
-        }
-    }
-
-    public void attachedView(ll0 ll0Var, View view, h51 h51Var) {
-    }
-
-    public void bindView(View view, h51 h51Var, boolean z10, v51 v51Var, d61 d61Var) {
+    public g51(Typeface typeface, int i10) {
+        this.c = -1;
+        this.a = typeface;
+        this.b = i10;
     }
 }

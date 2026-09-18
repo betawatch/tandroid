@@ -18,11 +18,12 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.concurrent.atomic.AtomicInteger;
+import n7.a1;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.Cells.p6;
-import org.telegram.ui.Components.ng;
-import v7.a6;
-import v7.c8;
+import org.telegram.ui.Components.lg;
+import v7.d8;
+import v7.r1;
 import w7.j7;
 import w7.l9;
 import w7.la;
@@ -32,7 +33,7 @@ import w7.sa;
 import w7.ua;
 import y8.k0;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class v implements Runnable {
     public final /* synthetic */ int a;
@@ -67,12 +68,12 @@ public final /* synthetic */ class v implements Runnable {
         String str;
         ua uaVar;
         la laVar = (la) this.b;
-        o0.a aVar = (o0.a) this.c;
+        a1 a1Var = (a1) this.c;
         j7 j7Var = j7.b;
         String str2 = (String) this.d;
-        a6 a6Var = (a6) aVar.b;
-        a6Var.c = j7Var;
-        l9 l9Var = (l9) a6Var.b;
+        r1 r1Var = (r1) a1Var.b;
+        r1Var.d = j7Var;
+        l9 l9Var = (l9) r1Var.b;
         if (l9Var != null) {
             str = l9Var.d;
             int i10 = r2.a;
@@ -80,19 +81,19 @@ public final /* synthetic */ class v implements Runnable {
             }
         }
         str = "NA";
-        c8 c8Var = new c8();
-        c8Var.a = laVar.a;
-        c8Var.b = laVar.b;
+        d8 d8Var = new d8();
+        d8Var.a = laVar.a;
+        d8Var.b = laVar.b;
         synchronized (la.class) {
             uaVar = la.j;
             if (uaVar == null) {
-                n0.c a2 = w7.y.a(Resources.getSystem().getConfiguration());
+                n0.c a2 = w7.z.a(Resources.getSystem().getConfiguration());
                 Object[] objArr = new Object[4];
                 int i11 = 0;
                 int i12 = 0;
                 while (i11 < a2.a.size()) {
                     Locale locale = a2.a.get(i11);
-                    m2.u uVar = qb.c.a;
+                    lf.g gVar = qb.c.a;
                     String languageTag = locale.toLanguageTag();
                     languageTag.getClass();
                     int i13 = i12 + 1;
@@ -117,15 +118,15 @@ public final /* synthetic */ class v implements Runnable {
                 la.j = uaVar;
             }
         }
-        c8Var.k = uaVar;
-        c8Var.g = Boolean.TRUE;
-        c8Var.d = str;
-        c8Var.c = str2;
-        c8Var.e = laVar.f.isSuccessful() ? (String) laVar.f.getResult() : laVar.d.a();
-        c8Var.i = 10;
-        c8Var.j = Integer.valueOf(laVar.h);
-        aVar.c = c8Var;
-        laVar.c.a(aVar);
+        d8Var.k = uaVar;
+        d8Var.g = Boolean.TRUE;
+        d8Var.d = str;
+        d8Var.c = str2;
+        d8Var.e = laVar.f.isSuccessful() ? (String) laVar.f.getResult() : laVar.d.a();
+        d8Var.i = 10;
+        d8Var.j = Integer.valueOf(laVar.h);
+        a1Var.c = d8Var;
+        laVar.c.a(a1Var);
     }
 
     @Override // java.lang.Runnable
@@ -142,7 +143,7 @@ public final /* synthetic */ class v implements Runnable {
                 jVar.a(hVar, iVar.a);
                 return;
             case 1:
-                super/*c5.c*/.c((xa.c) this.c, (org.telegram.messenger.c0) this.d);
+                super/*c5.c*/.c((a4.m) this.c, (org.telegram.messenger.c0) this.d);
                 return;
             case 2:
                 super/*c5.c*/.a((i) this.d, (j) this.c);
@@ -212,7 +213,7 @@ public final /* synthetic */ class v implements Runnable {
                 ((Handler) this.d).post(new i9.s(20, (z) this.c, obj));
                 return;
             case 9:
-                ((ng) this.d).n((File) this.c, (ArrayList) this.b);
+                ((lg) this.d).n((File) this.c, (ArrayList) this.b);
                 return;
             case 10:
                 u4.f fVar2 = (u4.f) this.d;
@@ -224,8 +225,8 @@ public final /* synthetic */ class v implements Runnable {
                 try {
                     lVar2.get();
                     return;
-                } catch (Exception e7) {
-                    fVar2.c.l(e7);
+                } catch (Exception e) {
+                    fVar2.c.l(e);
                     return;
                 }
             case 11:
@@ -256,9 +257,9 @@ public final /* synthetic */ class v implements Runnable {
                         }
                         throw th2;
                     }
-                } catch (IOException | OutOfMemoryError | RuntimeException e10) {
-                    Log.wtf("ShortcutInfoCompatSaver", "Unable to write bitmap to file", e10);
-                    throw new RuntimeException(p6.i("Unable to write bitmap to file ", str3), e10);
+                } catch (IOException | OutOfMemoryError | RuntimeException e7) {
+                    Log.wtf("ShortcutInfoCompatSaver", "Unable to write bitmap to file", e7);
+                    throw new RuntimeException(p6.i("Unable to write bitmap to file ", str3), e7);
                 }
             case 12:
                 b();
@@ -272,7 +273,7 @@ public final /* synthetic */ class v implements Runnable {
                     x8.m.M0(e0Var, false, null);
                     return;
                 } else {
-                    onRequest.addOnCompleteListener(new k2.g0(e0Var, 25));
+                    onRequest.addOnCompleteListener(new ka.c(e0Var, 21));
                     return;
                 }
         }
@@ -299,10 +300,10 @@ public final /* synthetic */ class v implements Runnable {
         this.c = obj3;
     }
 
-    public /* synthetic */ v(la laVar, o0.a aVar, String str) {
+    public /* synthetic */ v(la laVar, a1 a1Var, String str) {
         this.a = 12;
         this.b = laVar;
-        this.c = aVar;
+        this.c = a1Var;
         this.d = str;
     }
 }

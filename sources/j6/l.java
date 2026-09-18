@@ -41,13 +41,13 @@ import m.l1;
 import m.q;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Cells.p2;
-import org.telegram.ui.Components.p6;
-import org.telegram.ui.ug;
+import org.telegram.ui.Components.m6;
+import org.telegram.ui.wg;
 import r0.i0;
-import v7.u7;
-import w7.b0;
+import v7.v7;
+import w7.c0;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class l implements OnSuccessListener, le.k {
     public static l e;
@@ -84,7 +84,12 @@ public final class l implements OnSuccessListener, le.k {
         return lVar;
     }
 
+    @Override // le.k
     public void a() {
+        h();
+    }
+
+    public void b() {
         ImageView imageView = (ImageView) this.b;
         Drawable drawable = imageView.getDrawable();
         if (drawable != null) {
@@ -123,7 +128,12 @@ public final class l implements OnSuccessListener, le.k {
         }
     }
 
-    public l b() {
+    @Override // le.k
+    public void c(le.l lVar) {
+        h();
+    }
+
+    public l d() {
         if (TextUtils.isEmpty((String) this.b)) {
             throw new IllegalArgumentException("Title must be set and non-empty.");
         }
@@ -155,22 +165,12 @@ public final class l implements OnSuccessListener, le.k {
         return lVar;
     }
 
-    @Override // le.k
-    public void c() {
-        h();
-    }
-
-    public int d() {
+    public int e() {
         int i10 = this.a;
         if (i10 != 2) {
             return i10 != 3 ? 0 : 512;
         }
         return 2048;
-    }
-
-    @Override // le.k
-    public void e(le.l lVar) {
-        h();
     }
 
     public void f(AttributeSet attributeSet, int i10) {
@@ -180,21 +180,21 @@ public final class l implements OnSuccessListener, le.k {
         ImageView imageView = (ImageView) this.b;
         Context context = imageView.getContext();
         int[] iArr = f.a.f;
-        aa.a y3 = aa.a.y(context, attributeSet, iArr, i10);
-        TypedArray typedArray = (TypedArray) y3.c;
-        i0.j(imageView, imageView.getContext(), iArr, attributeSet, (TypedArray) y3.c, i10);
+        lf.i Q = lf.i.Q(context, attributeSet, iArr, i10);
+        TypedArray typedArray = (TypedArray) Q.c;
+        i0.j(imageView, imageView.getContext(), iArr, attributeSet, (TypedArray) Q.c, i10);
         try {
             Drawable drawable3 = imageView.getDrawable();
-            if (drawable3 == null && (resourceId = typedArray.getResourceId(1, -1)) != -1 && (drawable3 = u7.b(imageView.getContext(), resourceId)) != null) {
+            if (drawable3 == null && (resourceId = typedArray.getResourceId(1, -1)) != -1 && (drawable3 = v7.b(imageView.getContext(), resourceId)) != null) {
                 imageView.setImageDrawable(drawable3);
             }
             if (drawable3 != null) {
                 l1.a(drawable3);
             }
             if (typedArray.hasValue(2)) {
-                ColorStateList q6 = y3.q(2);
+                ColorStateList D = Q.D(2);
                 int i11 = Build.VERSION.SDK_INT;
-                imageView.setImageTintList(q6);
+                imageView.setImageTintList(D);
                 if (i11 == 21 && (drawable2 = imageView.getDrawable()) != null && imageView.getImageTintList() != null) {
                     if (drawable2.isStateful()) {
                         drawable2.setState(imageView.getDrawableState());
@@ -213,9 +213,9 @@ public final class l implements OnSuccessListener, le.k {
                     imageView.setImageDrawable(drawable);
                 }
             }
-            y3.A();
+            Q.R();
         } catch (Throwable th2) {
-            y3.A();
+            Q.R();
             throw th2;
         }
     }
@@ -248,7 +248,7 @@ public final class l implements OnSuccessListener, le.k {
             le.g gVar = (le.g) it.next();
             fArr[((Integer) gVar.a).intValue()] = gVar.c();
         }
-        ((ug) this.c).run();
+        ((wg) this.c).run();
     }
 
     public void i() {
@@ -271,7 +271,7 @@ public final class l implements OnSuccessListener, le.k {
 
     public void j(int i10, boolean z10, boolean z11) {
         int numberOfLeadingZeros = 31 - Integer.numberOfLeadingZeros(this.a);
-        int b10 = b0.b(this.a, 1 << i10, z10);
+        int b10 = c0.b(this.a, 1 << i10, z10);
         this.a = b10;
         int numberOfLeadingZeros2 = 31 - Integer.numberOfLeadingZeros(b10);
         if (numberOfLeadingZeros != numberOfLeadingZeros2) {
@@ -361,6 +361,38 @@ public final class l implements OnSuccessListener, le.k {
         }
     }
 
+    public l(int i10) {
+        switch (i10) {
+            case 2:
+                this.b = null;
+                this.c = null;
+                this.d = null;
+                this.a = 0;
+                break;
+            case 8:
+                this.b = new Object();
+                this.c = null;
+                this.d = null;
+                this.a = 0;
+                break;
+            default:
+                m6 m6Var = new m6(true, true, true, false);
+                this.d = m6Var;
+                Paint paint = new Paint(1);
+                m6Var.t(AndroidUtilities.dp(13.0f));
+                m6Var.r(-1);
+                m6Var.u(AndroidUtilities.bold());
+                paint.setColor(i0.a.k(-16777216, 58));
+                SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
+                this.b = spannableStringBuilder;
+                spannableStringBuilder.append((CharSequence) " ").setSpan(new p2(AndroidUtilities.dp(1.0f)), 0, 1, 0);
+                SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder();
+                this.c = spannableStringBuilder2;
+                spannableStringBuilder2.append((CharSequence) " ").setSpan(new p2(AndroidUtilities.dp(1.0f)), 0, 1, 0);
+                break;
+        }
+    }
+
     public l(ImageView imageView) {
         this.a = 0;
         this.b = imageView;
@@ -377,37 +409,5 @@ public final class l implements OnSuccessListener, le.k {
         }
         this.c = unmodifiableList;
         this.d = bArr;
-    }
-
-    public l(int i10) {
-        switch (i10) {
-            case 3:
-                p6 p6Var = new p6(true, true, true, false);
-                this.d = p6Var;
-                Paint paint = new Paint(1);
-                p6Var.t(AndroidUtilities.dp(13.0f));
-                p6Var.r(-1);
-                p6Var.u(AndroidUtilities.bold());
-                paint.setColor(i0.a.k(-16777216, 58));
-                SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-                this.b = spannableStringBuilder;
-                spannableStringBuilder.append((CharSequence) " ").setSpan(new p2(AndroidUtilities.dp(1.0f)), 0, 1, 0);
-                SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder();
-                this.c = spannableStringBuilder2;
-                spannableStringBuilder2.append((CharSequence) " ").setSpan(new p2(AndroidUtilities.dp(1.0f)), 0, 1, 0);
-                break;
-            case 7:
-                this.b = new Object();
-                this.c = null;
-                this.d = null;
-                this.a = 0;
-                break;
-            default:
-                this.b = null;
-                this.c = null;
-                this.d = null;
-                this.a = 0;
-                break;
-        }
     }
 }

@@ -1,14 +1,30 @@
 package org.telegram.ui.ActionBar;
 
-import android.view.animation.Interpolator;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class t4 implements Interpolator {
-    public final float a = 1.0f / ((float) (1.0d - Math.pow(100, -1.0f)));
+public final class t4 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ w4 b;
 
-    @Override // android.animation.TimeInterpolator
-    public final float getInterpolation(float f7) {
-        return 1.0f - (((float) (1.0d - Math.pow(100, -(1.0f - f7)))) * this.a);
+    public /* synthetic */ t4(w4 w4Var, int i10) {
+        this.a = i10;
+        this.b = w4Var;
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                NotificationCenter.getInstance(UserConfig.selectedAccount).doOnIdle(new r(this, 13));
+                break;
+            default:
+                NotificationCenter.getInstance(UserConfig.selectedAccount).doOnIdle(new r(this, 14));
+                break;
+        }
     }
 }

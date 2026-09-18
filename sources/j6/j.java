@@ -20,7 +20,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import n4.y;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class j implements ServiceConnection {
     public int a = 0;
@@ -172,8 +172,8 @@ public final class j implements ServiceConnection {
                 try {
                     a2 = t6.a.a();
                     context = (Context) this.f.b;
-                } catch (SecurityException e7) {
-                    e = e7;
+                } catch (SecurityException e) {
+                    e = e;
                 }
                 try {
                     if (a2.c(context, context.getClass().getName(), intent, this, 1, null)) {
@@ -181,8 +181,8 @@ public final class j implements ServiceConnection {
                     } else {
                         a("Unable to bind to service");
                     }
-                } catch (SecurityException e10) {
-                    e = e10;
+                } catch (SecurityException e7) {
+                    e = e7;
                     b("Unable to bind to service", e);
                     return true;
                 }

@@ -3,19 +3,18 @@ package org.telegram.ui;
 import android.animation.LayoutTransition;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewTreeObserver;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class cl implements LayoutTransition.TransitionListener {
-    public bl a;
+    public h6 a;
     public int b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.z c;
-    public final /* synthetic */ co d;
+    public final /* synthetic */ org.telegram.ui.ActionBar.a0 c;
+    public final /* synthetic */ bo d;
 
-    public cl(co coVar, org.telegram.ui.ActionBar.z zVar) {
-        this.d = coVar;
-        this.c = zVar;
+    public cl(bo boVar, org.telegram.ui.ActionBar.a0 a0Var) {
+        this.d = boVar;
+        this.c = a0Var;
     }
 
     @Override // android.animation.LayoutTransition.TransitionListener
@@ -29,19 +28,10 @@ public final class cl implements LayoutTransition.TransitionListener {
         this.a = null;
     }
 
-    /* JADX WARN: Type inference failed for: r1v5, types: [org.telegram.ui.bl] */
     @Override // android.animation.LayoutTransition.TransitionListener
     public final void startTransition(LayoutTransition layoutTransition, ViewGroup viewGroup, View view, int i10) {
         if (this.b == 0 && this.a == null) {
-            this.a = new ViewTreeObserver.OnPreDrawListener() { // from class: org.telegram.ui.bl
-                @Override // android.view.ViewTreeObserver.OnPreDrawListener
-                public final boolean onPreDraw() {
-                    org.telegram.ui.ActionBar.k kVar;
-                    kVar = ((org.telegram.ui.ActionBar.n2) cl.this.d).actionBar;
-                    kVar.invalidate();
-                    return true;
-                }
-            };
+            this.a = new h6(this, 1);
             this.c.getViewTreeObserver().addOnPreDrawListener(this.a);
         }
         this.b++;

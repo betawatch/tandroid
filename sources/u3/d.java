@@ -13,6 +13,7 @@ import c3.h0;
 import c3.i0;
 import c3.l;
 import c3.o;
+import c3.p;
 import c3.q;
 import c3.s;
 import c3.t;
@@ -24,7 +25,6 @@ import e2.d0;
 import e2.v;
 import e9.a1;
 import e9.g0;
-import f2.p;
 import j$.util.DesugarCollections;
 import java.math.RoundingMode;
 import java.nio.ByteBuffer;
@@ -39,13 +39,14 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.UUID;
+import k2.c0;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLObject;
 import z3.k;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class d implements o {
     public static final byte[] f0 = {49, 10, 48, 48, 58, 48, 48, 58, 48, 48, 44, 48, 48, 48, 32, 45, 45, 62, 32, 48, 48, 58, 48, 48, 58, 48, 48, 44, 48, 48, 48, 10};
@@ -134,7 +135,7 @@ public final class d implements o {
         this.D = -1L;
         this.E = -9223372036854775807L;
         this.a = bVar;
-        bVar.d = new l.d(this, 28);
+        bVar.d = new c0(this, 28);
         this.f = kVar;
         this.d = (i10 & 1) == 0;
         this.e = (i10 & 2) == 0;
@@ -143,7 +144,7 @@ public final class d implements o {
         this.i = new v(4);
         this.j = new v(ByteBuffer.allocate(4).putInt(-1).array());
         this.k = new v(4);
-        this.g = new v(p.a);
+        this.g = new v(f2.o.a);
         this.h = new v(4);
         this.l = new v();
         this.m = new v();
@@ -165,14 +166,8 @@ public final class d implements o {
         return format.getBytes(StandardCharsets.UTF_8);
     }
 
-    public final void a(int i10) {
-        if (this.F == null || this.G == null) {
-            throw s0.a(null, "Element " + i10 + " must be in a Cues");
-        }
-    }
-
     @Override // c3.o
-    public final boolean b(c3.p pVar) {
+    public final boolean a(p pVar) {
         b0 b0Var = new b0(8, (byte) 0);
         v vVar = (v) b0Var.c;
         l lVar = (l) pVar;
@@ -182,7 +177,7 @@ public final class d implements o {
             j10 = j3;
         }
         int i10 = (int) j10;
-        lVar.j(vVar.a, 0, 4, false);
+        lVar.h(vVar.a, 0, 4, false);
         long z10 = vVar.z();
         b0Var.b = 4;
         while (true) {
@@ -192,7 +187,7 @@ public final class d implements o {
                 if (i11 == i10) {
                     break;
                 }
-                lVar.j(vVar.a, 0, 1, false);
+                lVar.h(vVar.a, 0, 1, false);
                 z10 = ((z10 << 8) & (-256)) | (vVar.a[0] & 255);
             } else {
                 long h = b0Var.h(lVar);
@@ -209,7 +204,7 @@ public final class d implements o {
                                 }
                                 if (h10 != 0) {
                                     int i12 = (int) h10;
-                                    lVar.v(i12, false);
+                                    lVar.s(i12, false);
                                     b0Var.b += i12;
                                 }
                             } else {
@@ -223,6 +218,12 @@ public final class d implements o {
             }
         }
         return false;
+    }
+
+    public final void b(int i10) {
+        if (this.F == null || this.G == null) {
+            throw s0.a(null, "Element " + i10 + " must be in a Cues");
+        }
     }
 
     public final void d(int i10) {
@@ -352,7 +353,7 @@ public final class d implements o {
         return a1.e;
     }
 
-    public final void j(c3.p pVar, int i10) {
+    public final void j(p pVar, int i10) {
         v vVar = this.i;
         if (vVar.c >= i10) {
             return;
@@ -464,8 +465,8 @@ public final class d implements o {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final int m(c3.p pVar, s sVar) {
-        c3.p pVar2;
+    public final int m(p pVar, s sVar) {
+        p pVar2;
         boolean z10;
         int i10;
         boolean z11;
@@ -495,7 +496,7 @@ public final class d implements o {
         byte[] bArr;
         int i18;
         String str5;
-        f2.a a10;
+        com.google.android.gms.internal.clearcut.e a10;
         c3.b0 tVar;
         int i19;
         long[] jArr;
@@ -519,9 +520,9 @@ public final class d implements o {
                             long b10 = eVar.b(pVar2, true, false, 4);
                             if (b10 == -2) {
                                 byte[] bArr2 = bVar.a;
-                                pVar2.q();
+                                pVar2.p();
                                 while (true) {
-                                    pVar2.b(i21, i22, bArr2);
+                                    pVar2.a(i21, i22, bArr2);
                                     byte b11 = bArr2[i21];
                                     int i23 = 0;
                                     while (true) {
@@ -539,11 +540,11 @@ public final class d implements o {
                                         if (a2 == 357149030 || a2 == 524531317 || a2 == 475249515 || a2 == 374648427) {
                                         }
                                     }
-                                    pVar2.r(1);
+                                    pVar2.q(1);
                                     i22 = 4;
                                     i21 = 0;
                                 }
-                                pVar2.r(i11);
+                                pVar2.q(i11);
                                 j3 = a2;
                             } else {
                                 j3 = b10;
@@ -564,9 +565,9 @@ public final class d implements o {
                             bVar.g = eVar.b(pVar2, false, z10, 8);
                             bVar.e = 2;
                         }
-                        l.d dVar4 = bVar.d;
+                        c0 c0Var = bVar.d;
                         int i24 = bVar.f;
-                        Object obj2 = dVar4.b;
+                        Object obj2 = c0Var.b;
                         switch (i24) {
                             case 131:
                             case 136:
@@ -676,17 +677,17 @@ public final class d implements o {
                                 break;
                         }
                         if (i10 == 0) {
-                            pVar2.r((int) bVar.g);
+                            pVar2.q((int) bVar.g);
                             bVar.e = 0;
                             i20 = -1;
                         } else if (i10 == 1) {
                             long position = pVar2.getPosition();
                             arrayDeque.push(new a(bVar.f, bVar.g + position));
-                            l.d dVar5 = bVar.d;
+                            c0 c0Var2 = bVar.d;
                             int i25 = bVar.f;
                             long j10 = bVar.g;
-                            d dVar6 = (d) dVar5.b;
-                            e2.d.h(dVar6.e0);
+                            d dVar4 = (d) c0Var2.b;
+                            e2.d.h(dVar4.e0);
                             if (i25 != 160) {
                                 if (i25 == 174) {
                                     c cVar = new c();
@@ -725,42 +726,42 @@ public final class d implements o {
                                     cVar.U = 0L;
                                     cVar.X = true;
                                     cVar.Y = "eng";
-                                    dVar6.x = cVar;
-                                    cVar.a = dVar6.w;
+                                    dVar4.x = cVar;
+                                    cVar.a = dVar4.w;
                                 } else if (i25 == 187) {
-                                    dVar6.H = false;
+                                    dVar4.H = false;
                                 } else if (i25 == 19899) {
-                                    dVar6.z = -1;
-                                    dVar6.A = -1L;
+                                    dVar4.z = -1;
+                                    dVar4.A = -1L;
                                 } else if (i25 == 20533) {
-                                    dVar6.d(i25);
-                                    dVar6.x.i = true;
+                                    dVar4.d(i25);
+                                    dVar4.x.i = true;
                                 } else if (i25 == 21968) {
-                                    dVar6.d(i25);
-                                    dVar6.x.z = true;
+                                    dVar4.d(i25);
+                                    dVar4.x.z = true;
                                 } else if (i25 == 408125543) {
-                                    long j11 = dVar6.s;
+                                    long j11 = dVar4.s;
                                     if (j11 != -1 && j11 != position) {
                                         throw s0.a(null, "Multiple Segment elements not supported");
                                     }
-                                    dVar6.s = position;
-                                    dVar6.r = j10;
+                                    dVar4.s = position;
+                                    dVar4.r = j10;
                                 } else if (i25 == 475249515) {
-                                    dVar6.F = new b0(2, (byte) 0);
-                                    dVar6.G = new b0(2, (byte) 0);
-                                } else if (i25 == 524531317 && !dVar6.y) {
-                                    if (!dVar6.d || dVar6.C == -1) {
-                                        dVar6.e0.P1(new t(dVar6.v));
-                                        dVar6.y = true;
+                                    dVar4.F = new b0(2, (byte) 0);
+                                    dVar4.G = new b0(2, (byte) 0);
+                                } else if (i25 == 524531317 && !dVar4.y) {
+                                    if (!dVar4.d || dVar4.C == -1) {
+                                        dVar4.e0.X1(new t(dVar4.v));
+                                        dVar4.y = true;
                                     } else {
-                                        dVar6.B = true;
+                                        dVar4.B = true;
                                     }
                                 }
                                 z11 = false;
                             } else {
                                 z11 = false;
-                                dVar6.T = false;
-                                dVar6.U = 0L;
+                                dVar4.T = false;
+                                dVar4.U = 0L;
                             }
                             bVar.e = z11 ? 1 : 0;
                         } else if (i10 == 2) {
@@ -768,7 +769,7 @@ public final class d implements o {
                             if (j12 > 8) {
                                 throw s0.a(null, "Invalid integer size: " + bVar.g);
                             }
-                            dVar4.q(i24, bVar.a(pVar2, (int) j12));
+                            c0Var.k(i24, bVar.a(pVar2, (int) j12));
                             z11 = false;
                             bVar.e = 0;
                         } else if (i10 == 3) {
@@ -787,26 +788,26 @@ public final class d implements o {
                                 }
                                 str = new String(bArr3, 0, i26);
                             }
-                            d dVar7 = (d) dVar4.b;
+                            d dVar5 = (d) c0Var.b;
                             if (i24 == 134) {
-                                dVar7.d(i24);
-                                dVar7.x.c = str;
+                                dVar5.d(i24);
+                                dVar5.x.c = str;
                             } else if (i24 == 17026) {
                                 if (!"webm".equals(str) && !"matroska".equals(str)) {
                                     throw s0.a(null, "DocType " + str + " not supported");
                                 }
-                                dVar7.w = str.equals("webm");
+                                dVar5.w = str.equals("webm");
                             } else if (i24 == 21358) {
-                                dVar7.d(i24);
-                                dVar7.x.b = str;
+                                dVar5.d(i24);
+                                dVar5.x.b = str;
                             } else if (i24 == 2274716) {
-                                dVar7.d(i24);
-                                dVar7.x.Y = str;
+                                dVar5.d(i24);
+                                dVar5.x.Y = str;
                             }
                             z11 = false;
                             bVar.e = 0;
                         } else if (i10 == 4) {
-                            dVar4.c(i24, (int) bVar.g, pVar2);
+                            c0Var.h(i24, (int) bVar.g, pVar2);
                             z11 = false;
                             bVar.e = 0;
                         } else {
@@ -819,83 +820,83 @@ public final class d implements o {
                             }
                             int i27 = (int) j14;
                             double intBitsToFloat = i27 == 4 ? Float.intBitsToFloat((int) r5) : Double.longBitsToDouble(bVar.a(pVar2, i27));
-                            d dVar8 = (d) dVar4.b;
+                            d dVar6 = (d) c0Var.b;
                             if (i24 == 181) {
-                                dVar8.d(i24);
-                                dVar8.x.S = (int) intBitsToFloat;
+                                dVar6.d(i24);
+                                dVar6.x.S = (int) intBitsToFloat;
                             } else if (i24 != 17545) {
                                 switch (i24) {
                                     case 21969:
-                                        dVar8.d(i24);
-                                        dVar8.x.F = (float) intBitsToFloat;
+                                        dVar6.d(i24);
+                                        dVar6.x.F = (float) intBitsToFloat;
                                         break;
                                     case 21970:
-                                        dVar8.d(i24);
-                                        dVar8.x.G = (float) intBitsToFloat;
+                                        dVar6.d(i24);
+                                        dVar6.x.G = (float) intBitsToFloat;
                                         break;
                                     case 21971:
-                                        dVar8.d(i24);
-                                        dVar8.x.H = (float) intBitsToFloat;
+                                        dVar6.d(i24);
+                                        dVar6.x.H = (float) intBitsToFloat;
                                         break;
                                     case 21972:
-                                        dVar8.d(i24);
-                                        dVar8.x.I = (float) intBitsToFloat;
+                                        dVar6.d(i24);
+                                        dVar6.x.I = (float) intBitsToFloat;
                                         break;
                                     case 21973:
-                                        dVar8.d(i24);
-                                        dVar8.x.J = (float) intBitsToFloat;
+                                        dVar6.d(i24);
+                                        dVar6.x.J = (float) intBitsToFloat;
                                         break;
                                     case 21974:
-                                        dVar8.d(i24);
-                                        dVar8.x.K = (float) intBitsToFloat;
+                                        dVar6.d(i24);
+                                        dVar6.x.K = (float) intBitsToFloat;
                                         break;
                                     case 21975:
-                                        dVar8.d(i24);
-                                        dVar8.x.L = (float) intBitsToFloat;
+                                        dVar6.d(i24);
+                                        dVar6.x.L = (float) intBitsToFloat;
                                         break;
                                     case 21976:
-                                        dVar8.d(i24);
-                                        dVar8.x.M = (float) intBitsToFloat;
+                                        dVar6.d(i24);
+                                        dVar6.x.M = (float) intBitsToFloat;
                                         break;
                                     case 21977:
-                                        dVar8.d(i24);
-                                        dVar8.x.N = (float) intBitsToFloat;
+                                        dVar6.d(i24);
+                                        dVar6.x.N = (float) intBitsToFloat;
                                         break;
                                     case 21978:
-                                        dVar8.d(i24);
-                                        dVar8.x.O = (float) intBitsToFloat;
+                                        dVar6.d(i24);
+                                        dVar6.x.O = (float) intBitsToFloat;
                                         break;
                                     default:
                                         switch (i24) {
                                             case 30323:
-                                                dVar8.d(i24);
-                                                dVar8.x.u = (float) intBitsToFloat;
+                                                dVar6.d(i24);
+                                                dVar6.x.u = (float) intBitsToFloat;
                                                 break;
                                             case 30324:
-                                                dVar8.d(i24);
-                                                dVar8.x.v = (float) intBitsToFloat;
+                                                dVar6.d(i24);
+                                                dVar6.x.v = (float) intBitsToFloat;
                                                 break;
                                             case 30325:
-                                                dVar8.d(i24);
-                                                dVar8.x.w = (float) intBitsToFloat;
+                                                dVar6.d(i24);
+                                                dVar6.x.w = (float) intBitsToFloat;
                                                 break;
                                         }
                                 }
                             } else {
-                                dVar8.u = (long) intBitsToFloat;
+                                dVar6.u = (long) intBitsToFloat;
                             }
                             z11 = false;
                             bVar.e = 0;
                         }
                     } else {
-                        l.d dVar9 = bVar.d;
+                        c0 c0Var3 = bVar.d;
                         int i28 = ((a) arrayDeque.pop()).a;
-                        d dVar10 = (d) dVar9.b;
-                        SparseArray sparseArray = dVar10.c;
-                        e2.d.h(dVar10.e0);
+                        d dVar7 = (d) c0Var3.b;
+                        SparseArray sparseArray = dVar7.c;
+                        e2.d.h(dVar7.e0);
                         if (i28 != 160) {
                             if (i28 == 174) {
-                                ?? r32 = dVar10.x;
+                                ?? r32 = dVar7.x;
                                 e2.d.h(r32);
                                 String str6 = r32.c;
                                 if (str6 == null) {
@@ -936,7 +937,7 @@ public final class d implements o {
                                     case "A_EAC3":
                                     case "A_FLAC":
                                     case "A_OPUS":
-                                        q qVar = dVar10.e0;
+                                        q qVar = dVar7.e0;
                                         int i29 = r32.d;
                                         switch (str6.hashCode()) {
                                             case -2095576542:
@@ -1186,14 +1187,14 @@ public final class d implements o {
                                             case 0:
                                             case 1:
                                             case '\t':
-                                                dVar2 = dVar10;
+                                                dVar2 = dVar7;
                                                 byte[] bArr4 = r32.l;
                                                 str7 = "video/mp4v-es";
                                                 singletonList = bArr4 == null ? null : Collections.singletonList(bArr4);
                                                 i12 = -1;
                                                 str2 = null;
                                                 i13 = -1;
-                                                if (r32.P != null && (a10 = f2.a.a(new v(r32.P))) != null) {
+                                                if (r32.P != null && (a10 = com.google.android.gms.internal.clearcut.e.a(new v(r32.P))) != null) {
                                                     str2 = a10.a;
                                                     str7 = "video/dolby-vision";
                                                 }
@@ -1302,14 +1303,14 @@ public final class d implements o {
                                                 rVar.j = str2;
                                                 rVar.u = r32.m;
                                                 b2.s sVar2 = new b2.s(rVar);
-                                                h0 R1 = qVar.R1(r32.d, i15);
-                                                r32.Z = R1;
-                                                R1.b(sVar2);
+                                                h0 Z1 = qVar.Z1(r32.d, i15);
+                                                r32.Z = Z1;
+                                                Z1.b(sVar2);
                                                 sparseArray.put(r32.d, r32);
-                                                dVar10 = dVar2;
+                                                dVar7 = dVar2;
                                                 break;
                                             case 2:
-                                                dVar2 = dVar10;
+                                                dVar2 = dVar7;
                                                 v vVar = new v(r32.a(r32.c));
                                                 try {
                                                     int q6 = vVar.q();
@@ -1354,11 +1355,11 @@ public final class d implements o {
                                                         rVar.j = str2;
                                                         rVar.u = r32.m;
                                                         b2.s sVar22 = new b2.s(rVar);
-                                                        h0 R12 = qVar.R1(r32.d, i15);
-                                                        r32.Z = R12;
-                                                        R12.b(sVar22);
+                                                        h0 Z12 = qVar.Z1(r32.d, i15);
+                                                        r32.Z = Z12;
+                                                        Z12.b(sVar22);
                                                         sparseArray.put(r32.d, r32);
-                                                        dVar10 = dVar2;
+                                                        dVar7 = dVar2;
                                                     }
                                                     int i37 = r32.R;
                                                     String str9 = d0.a;
@@ -1391,11 +1392,11 @@ public final class d implements o {
                                                         rVar.j = str2;
                                                         rVar.u = r32.m;
                                                         b2.s sVar222 = new b2.s(rVar);
-                                                        h0 R122 = qVar.R1(r32.d, i15);
-                                                        r32.Z = R122;
-                                                        R122.b(sVar222);
+                                                        h0 Z122 = qVar.Z1(r32.d, i15);
+                                                        r32.Z = Z122;
+                                                        Z122.b(sVar222);
                                                         sparseArray.put(r32.d, r32);
-                                                        dVar10 = dVar2;
+                                                        dVar7 = dVar2;
                                                     } else {
                                                         i12 = B;
                                                         str7 = "audio/raw";
@@ -1423,18 +1424,18 @@ public final class d implements o {
                                                         rVar.j = str2;
                                                         rVar.u = r32.m;
                                                         b2.s sVar2222 = new b2.s(rVar);
-                                                        h0 R1222 = qVar.R1(r32.d, i15);
-                                                        r32.Z = R1222;
-                                                        R1222.b(sVar2222);
+                                                        h0 Z1222 = qVar.Z1(r32.d, i15);
+                                                        r32.Z = Z1222;
+                                                        Z1222.b(sVar2222);
                                                         sparseArray.put(r32.d, r32);
-                                                        dVar10 = dVar2;
+                                                        dVar7 = dVar2;
                                                     }
                                                 } catch (ArrayIndexOutOfBoundsException unused) {
                                                     throw s0.a(null, "Error parsing MS/ACM codec private");
                                                 }
                                                 break;
                                             case 3:
-                                                dVar2 = dVar10;
+                                                dVar2 = dVar7;
                                                 r32.V = new i0();
                                                 str7 = "audio/true-hd";
                                                 i12 = -1;
@@ -1462,11 +1463,11 @@ public final class d implements o {
                                                 rVar.j = str2;
                                                 rVar.u = r32.m;
                                                 b2.s sVar22222 = new b2.s(rVar);
-                                                h0 R12222 = qVar.R1(r32.d, i15);
-                                                r32.Z = R12222;
-                                                R12222.b(sVar22222);
+                                                h0 Z12222 = qVar.Z1(r32.d, i15);
+                                                r32.Z = Z12222;
+                                                Z12222.b(sVar22222);
                                                 sparseArray.put(r32.d, r32);
-                                                dVar10 = dVar2;
+                                                dVar7 = dVar2;
                                                 break;
                                             case 4:
                                                 byte[] a11 = r32.a(str6);
@@ -1509,7 +1510,7 @@ public final class d implements o {
                                                                             throw s0.a(null, "Error parsing vorbis codec private");
                                                                         }
                                                                         byte[] bArr7 = new byte[a11.length - i49];
-                                                                        dVar2 = dVar10;
+                                                                        dVar2 = dVar7;
                                                                         System.arraycopy(a11, i49, bArr7, 0, a11.length - i49);
                                                                         ArrayList arrayList = new ArrayList(2);
                                                                         arrayList.add(bArr6);
@@ -1540,11 +1541,11 @@ public final class d implements o {
                                                                         rVar.j = str2;
                                                                         rVar.u = r32.m;
                                                                         b2.s sVar222222 = new b2.s(rVar);
-                                                                        h0 R122222 = qVar.R1(r32.d, i15);
-                                                                        r32.Z = R122222;
-                                                                        R122222.b(sVar222222);
+                                                                        h0 Z122222 = qVar.Z1(r32.d, i15);
+                                                                        r32.Z = Z122222;
+                                                                        Z122222.b(sVar222222);
                                                                         sparseArray.put(r32.d, r32);
-                                                                        dVar10 = dVar2;
+                                                                        dVar7 = dVar2;
                                                                     }
                                                                 }
                                                             }
@@ -1558,7 +1559,7 @@ public final class d implements o {
                                                 break;
                                             case 5:
                                                 str7 = "audio/mpeg-L2";
-                                                dVar2 = dVar10;
+                                                dVar2 = dVar7;
                                                 i12 = -1;
                                                 str2 = null;
                                                 i13 = 4096;
@@ -1584,15 +1585,15 @@ public final class d implements o {
                                                 rVar.j = str2;
                                                 rVar.u = r32.m;
                                                 b2.s sVar2222222 = new b2.s(rVar);
-                                                h0 R1222222 = qVar.R1(r32.d, i15);
-                                                r32.Z = R1222222;
-                                                R1222222.b(sVar2222222);
+                                                h0 Z1222222 = qVar.Z1(r32.d, i15);
+                                                r32.Z = Z1222222;
+                                                Z1222222.b(sVar2222222);
                                                 sparseArray.put(r32.d, r32);
-                                                dVar10 = dVar2;
+                                                dVar7 = dVar2;
                                                 break;
                                             case 6:
                                                 str7 = "audio/mpeg";
-                                                dVar2 = dVar10;
+                                                dVar2 = dVar7;
                                                 i12 = -1;
                                                 str2 = null;
                                                 i13 = 4096;
@@ -1618,11 +1619,11 @@ public final class d implements o {
                                                 rVar.j = str2;
                                                 rVar.u = r32.m;
                                                 b2.s sVar22222222 = new b2.s(rVar);
-                                                h0 R12222222 = qVar.R1(r32.d, i15);
-                                                r32.Z = R12222222;
-                                                R12222222.b(sVar22222222);
+                                                h0 Z12222222 = qVar.Z1(r32.d, i15);
+                                                r32.Z = Z12222222;
+                                                Z12222222.b(sVar22222222);
                                                 sparseArray.put(r32.d, r32);
-                                                dVar10 = dVar2;
+                                                dVar7 = dVar2;
                                                 break;
                                             case 7:
                                                 v vVar2 = new v(r32.a(r32.c));
@@ -1659,7 +1660,7 @@ public final class d implements o {
                                                         str3 = null;
                                                         pair = new Pair("video/x-unknown", null);
                                                         str7 = (String) pair.first;
-                                                        dVar2 = dVar10;
+                                                        dVar2 = dVar7;
                                                         str2 = str3;
                                                         singletonList = (List) pair.second;
                                                         i12 = -1;
@@ -1685,15 +1686,15 @@ public final class d implements o {
                                                         rVar.j = str2;
                                                         rVar.u = r32.m;
                                                         b2.s sVar222222222 = new b2.s(rVar);
-                                                        h0 R122222222 = qVar.R1(r32.d, i15);
-                                                        r32.Z = R122222222;
-                                                        R122222222.b(sVar222222222);
+                                                        h0 Z122222222 = qVar.Z1(r32.d, i15);
+                                                        r32.Z = Z122222222;
+                                                        Z122222222.b(sVar222222222);
                                                         sparseArray.put(r32.d, r32);
-                                                        dVar10 = dVar2;
+                                                        dVar7 = dVar2;
                                                     }
                                                     str3 = null;
                                                     str7 = (String) pair.first;
-                                                    dVar2 = dVar10;
+                                                    dVar2 = dVar7;
                                                     str2 = str3;
                                                     singletonList = (List) pair.second;
                                                     i12 = -1;
@@ -1719,11 +1720,11 @@ public final class d implements o {
                                                     rVar.j = str2;
                                                     rVar.u = r32.m;
                                                     b2.s sVar2222222222 = new b2.s(rVar);
-                                                    h0 R1222222222 = qVar.R1(r32.d, i15);
-                                                    r32.Z = R1222222222;
-                                                    R1222222222.b(sVar2222222222);
+                                                    h0 Z1222222222 = qVar.Z1(r32.d, i15);
+                                                    r32.Z = Z1222222222;
+                                                    Z1222222222.b(sVar2222222222);
                                                     sparseArray.put(r32.d, r32);
-                                                    dVar10 = dVar2;
+                                                    dVar7 = dVar2;
                                                 } catch (ArrayIndexOutOfBoundsException unused6) {
                                                     runtimeException = null;
                                                 }
@@ -1732,7 +1733,7 @@ public final class d implements o {
                                                 byte[] bArr9 = new byte[4];
                                                 System.arraycopy(r32.a(str6), 0, bArr9, 0, 4);
                                                 singletonList = e9.i0.z(bArr9);
-                                                dVar2 = dVar10;
+                                                dVar2 = dVar7;
                                                 str7 = "application/dvbsubs";
                                                 i12 = -1;
                                                 str2 = null;
@@ -1758,11 +1759,11 @@ public final class d implements o {
                                                 rVar.j = str2;
                                                 rVar.u = r32.m;
                                                 b2.s sVar22222222222 = new b2.s(rVar);
-                                                h0 R12222222222 = qVar.R1(r32.d, i15);
-                                                r32.Z = R12222222222;
-                                                R12222222222.b(sVar22222222222);
+                                                h0 Z12222222222 = qVar.Z1(r32.d, i15);
+                                                r32.Z = Z12222222222;
+                                                Z12222222222.b(sVar22222222222);
                                                 sparseArray.put(r32.d, r32);
-                                                dVar10 = dVar2;
+                                                dVar7 = dVar2;
                                                 break;
                                             case '\n':
                                                 c3.d a12 = c3.d.a(new v(r32.a(r32.c)));
@@ -1771,7 +1772,7 @@ public final class d implements o {
                                                 str4 = a12.l;
                                                 str7 = MediaController.VIDEO_MIME_TYPE;
                                                 str2 = str4;
-                                                dVar2 = dVar10;
+                                                dVar2 = dVar7;
                                                 i12 = -1;
                                                 i13 = -1;
                                                 if (r32.P != null) {
@@ -1795,15 +1796,15 @@ public final class d implements o {
                                                 rVar.j = str2;
                                                 rVar.u = r32.m;
                                                 b2.s sVar222222222222 = new b2.s(rVar);
-                                                h0 R122222222222 = qVar.R1(r32.d, i15);
-                                                r32.Z = R122222222222;
-                                                R122222222222.b(sVar222222222222);
+                                                h0 Z122222222222 = qVar.Z1(r32.d, i15);
+                                                r32.Z = Z122222222222;
+                                                Z122222222222.b(sVar222222222222);
                                                 sparseArray.put(r32.d, r32);
-                                                dVar10 = dVar2;
+                                                dVar7 = dVar2;
                                                 break;
                                             case 11:
                                                 singletonList = e9.i0.z(r32.a(str6));
-                                                dVar2 = dVar10;
+                                                dVar2 = dVar7;
                                                 str7 = "application/vobsub";
                                                 i12 = -1;
                                                 str2 = null;
@@ -1829,15 +1830,15 @@ public final class d implements o {
                                                 rVar.j = str2;
                                                 rVar.u = r32.m;
                                                 b2.s sVar2222222222222 = new b2.s(rVar);
-                                                h0 R1222222222222 = qVar.R1(r32.d, i15);
-                                                r32.Z = R1222222222222;
-                                                R1222222222222.b(sVar2222222222222);
+                                                h0 Z1222222222222 = qVar.Z1(r32.d, i15);
+                                                r32.Z = Z1222222222222;
+                                                Z1222222222222.b(sVar2222222222222);
                                                 sparseArray.put(r32.d, r32);
-                                                dVar10 = dVar2;
+                                                dVar7 = dVar2;
                                                 break;
                                             case '\f':
                                                 str7 = "audio/vnd.dts.hd";
-                                                dVar2 = dVar10;
+                                                dVar2 = dVar7;
                                                 i12 = -1;
                                                 str2 = null;
                                                 i13 = -1;
@@ -1863,11 +1864,11 @@ public final class d implements o {
                                                 rVar.j = str2;
                                                 rVar.u = r32.m;
                                                 b2.s sVar22222222222222 = new b2.s(rVar);
-                                                h0 R12222222222222 = qVar.R1(r32.d, i15);
-                                                r32.Z = R12222222222222;
-                                                R12222222222222.b(sVar22222222222222);
+                                                h0 Z12222222222222 = qVar.Z1(r32.d, i15);
+                                                r32.Z = Z12222222222222;
+                                                Z12222222222222.b(sVar22222222222222);
                                                 sparseArray.put(r32.d, r32);
-                                                dVar10 = dVar2;
+                                                dVar7 = dVar2;
                                                 break;
                                             case '\r':
                                                 List singletonList2 = Collections.singletonList(r32.a(str6));
@@ -1877,7 +1878,7 @@ public final class d implements o {
                                                 r32.Q = n10.c;
                                                 String str10 = n10.a;
                                                 str7 = MediaController.AUDIO_MIME_TYPE;
-                                                dVar2 = dVar10;
+                                                dVar2 = dVar7;
                                                 str2 = str10;
                                                 i13 = -1;
                                                 singletonList = singletonList2;
@@ -1903,15 +1904,15 @@ public final class d implements o {
                                                 rVar.j = str2;
                                                 rVar.u = r32.m;
                                                 b2.s sVar222222222222222 = new b2.s(rVar);
-                                                h0 R122222222222222 = qVar.R1(r32.d, i15);
-                                                r32.Z = R122222222222222;
-                                                R122222222222222.b(sVar222222222222222);
+                                                h0 Z122222222222222 = qVar.Z1(r32.d, i15);
+                                                r32.Z = Z122222222222222;
+                                                Z122222222222222.b(sVar222222222222222);
                                                 sparseArray.put(r32.d, r32);
-                                                dVar10 = dVar2;
+                                                dVar7 = dVar2;
                                                 break;
                                             case 14:
                                                 str7 = "audio/ac3";
-                                                dVar2 = dVar10;
+                                                dVar2 = dVar7;
                                                 i12 = -1;
                                                 str2 = null;
                                                 i13 = -1;
@@ -1937,16 +1938,16 @@ public final class d implements o {
                                                 rVar.j = str2;
                                                 rVar.u = r32.m;
                                                 b2.s sVar2222222222222222 = new b2.s(rVar);
-                                                h0 R1222222222222222 = qVar.R1(r32.d, i15);
-                                                r32.Z = R1222222222222222;
-                                                R1222222222222222.b(sVar2222222222222222);
+                                                h0 Z1222222222222222 = qVar.Z1(r32.d, i15);
+                                                r32.Z = Z1222222222222222;
+                                                Z1222222222222222.b(sVar2222222222222222);
                                                 sparseArray.put(r32.d, r32);
-                                                dVar10 = dVar2;
+                                                dVar7 = dVar2;
                                                 break;
                                             case 15:
                                             case 21:
                                                 str7 = "audio/vnd.dts";
-                                                dVar2 = dVar10;
+                                                dVar2 = dVar7;
                                                 i12 = -1;
                                                 str2 = null;
                                                 i13 = -1;
@@ -1972,18 +1973,18 @@ public final class d implements o {
                                                 rVar.j = str2;
                                                 rVar.u = r32.m;
                                                 b2.s sVar22222222222222222 = new b2.s(rVar);
-                                                h0 R12222222222222222 = qVar.R1(r32.d, i15);
-                                                r32.Z = R12222222222222222;
-                                                R12222222222222222.b(sVar22222222222222222);
+                                                h0 Z12222222222222222 = qVar.Z1(r32.d, i15);
+                                                r32.Z = Z12222222222222222;
+                                                Z12222222222222222.b(sVar22222222222222222);
                                                 sparseArray.put(r32.d, r32);
-                                                dVar10 = dVar2;
+                                                dVar7 = dVar2;
                                                 break;
                                             case 16:
                                                 byte[] bArr11 = r32.l;
                                                 z13 = bArr11 == null ? null : e9.i0.z(bArr11);
                                                 str7 = "video/av01";
                                                 singletonList = z13;
-                                                dVar2 = dVar10;
+                                                dVar2 = dVar7;
                                                 i12 = -1;
                                                 str2 = null;
                                                 i13 = -1;
@@ -2008,15 +2009,15 @@ public final class d implements o {
                                                 rVar.j = str2;
                                                 rVar.u = r32.m;
                                                 b2.s sVar222222222222222222 = new b2.s(rVar);
-                                                h0 R122222222222222222 = qVar.R1(r32.d, i15);
-                                                r32.Z = R122222222222222222;
-                                                R122222222222222222.b(sVar222222222222222222);
+                                                h0 Z122222222222222222 = qVar.Z1(r32.d, i15);
+                                                r32.Z = Z122222222222222222;
+                                                Z122222222222222222.b(sVar222222222222222222);
                                                 sparseArray.put(r32.d, r32);
-                                                dVar10 = dVar2;
+                                                dVar7 = dVar2;
                                                 break;
                                             case 17:
                                                 str7 = "video/x-vnd.on2.vp8";
-                                                dVar2 = dVar10;
+                                                dVar2 = dVar7;
                                                 i12 = -1;
                                                 str2 = null;
                                                 i13 = -1;
@@ -2042,18 +2043,18 @@ public final class d implements o {
                                                 rVar.j = str2;
                                                 rVar.u = r32.m;
                                                 b2.s sVar2222222222222222222 = new b2.s(rVar);
-                                                h0 R1222222222222222222 = qVar.R1(r32.d, i15);
-                                                r32.Z = R1222222222222222222;
-                                                R1222222222222222222.b(sVar2222222222222222222);
+                                                h0 Z1222222222222222222 = qVar.Z1(r32.d, i15);
+                                                r32.Z = Z1222222222222222222;
+                                                Z1222222222222222222.b(sVar2222222222222222222);
                                                 sparseArray.put(r32.d, r32);
-                                                dVar10 = dVar2;
+                                                dVar7 = dVar2;
                                                 break;
                                             case 18:
                                                 byte[] bArr12 = r32.l;
                                                 z13 = bArr12 == null ? null : e9.i0.z(bArr12);
                                                 str7 = "video/x-vnd.on2.vp9";
                                                 singletonList = z13;
-                                                dVar2 = dVar10;
+                                                dVar2 = dVar7;
                                                 i12 = -1;
                                                 str2 = null;
                                                 i13 = -1;
@@ -2078,14 +2079,14 @@ public final class d implements o {
                                                 rVar.j = str2;
                                                 rVar.u = r32.m;
                                                 b2.s sVar22222222222222222222 = new b2.s(rVar);
-                                                h0 R12222222222222222222 = qVar.R1(r32.d, i15);
-                                                r32.Z = R12222222222222222222;
-                                                R12222222222222222222.b(sVar22222222222222222222);
+                                                h0 Z12222222222222222222 = qVar.Z1(r32.d, i15);
+                                                r32.Z = Z12222222222222222222;
+                                                Z12222222222222222222.b(sVar22222222222222222222);
                                                 sparseArray.put(r32.d, r32);
-                                                dVar10 = dVar2;
+                                                dVar7 = dVar2;
                                                 break;
                                             case 19:
-                                                dVar2 = dVar10;
+                                                dVar2 = dVar7;
                                                 str7 = "application/pgs";
                                                 i12 = -1;
                                                 str2 = null;
@@ -2112,14 +2113,14 @@ public final class d implements o {
                                                 rVar.j = str2;
                                                 rVar.u = r32.m;
                                                 b2.s sVar222222222222222222222 = new b2.s(rVar);
-                                                h0 R122222222222222222222 = qVar.R1(r32.d, i15);
-                                                r32.Z = R122222222222222222222;
-                                                R122222222222222222222.b(sVar222222222222222222222);
+                                                h0 Z122222222222222222222 = qVar.Z1(r32.d, i15);
+                                                r32.Z = Z122222222222222222222;
+                                                Z122222222222222222222.b(sVar222222222222222222222);
                                                 sparseArray.put(r32.d, r32);
-                                                dVar10 = dVar2;
+                                                dVar7 = dVar2;
                                                 break;
                                             case 20:
-                                                dVar2 = dVar10;
+                                                dVar2 = dVar7;
                                                 i12 = -1;
                                                 str2 = null;
                                                 i13 = -1;
@@ -2145,15 +2146,15 @@ public final class d implements o {
                                                 rVar.j = str2;
                                                 rVar.u = r32.m;
                                                 b2.s sVar2222222222222222222222 = new b2.s(rVar);
-                                                h0 R1222222222222222222222 = qVar.R1(r32.d, i15);
-                                                r32.Z = R1222222222222222222222;
-                                                R1222222222222222222222.b(sVar2222222222222222222222);
+                                                h0 Z1222222222222222222222 = qVar.Z1(r32.d, i15);
+                                                r32.Z = Z1222222222222222222222;
+                                                Z1222222222222222222222.b(sVar2222222222222222222222);
                                                 sparseArray.put(r32.d, r32);
-                                                dVar10 = dVar2;
+                                                dVar7 = dVar2;
                                                 break;
                                             case 22:
                                                 if (r32.R == 32) {
-                                                    dVar2 = dVar10;
+                                                    dVar2 = dVar7;
                                                     str7 = "audio/raw";
                                                     i12 = 4;
                                                     str2 = null;
@@ -2180,14 +2181,14 @@ public final class d implements o {
                                                     rVar.j = str2;
                                                     rVar.u = r32.m;
                                                     b2.s sVar22222222222222222222222 = new b2.s(rVar);
-                                                    h0 R12222222222222222222222 = qVar.R1(r32.d, i15);
-                                                    r32.Z = R12222222222222222222222;
-                                                    R12222222222222222222222.b(sVar22222222222222222222222);
+                                                    h0 Z12222222222222222222222 = qVar.Z1(r32.d, i15);
+                                                    r32.Z = Z12222222222222222222222;
+                                                    Z12222222222222222222222.b(sVar22222222222222222222222);
                                                     sparseArray.put(r32.d, r32);
-                                                    dVar10 = dVar2;
+                                                    dVar7 = dVar2;
                                                 } else {
                                                     e2.a.n("MatroskaExtractor", "Unsupported floating point PCM bit depth: " + r32.R + ". Setting mimeType to audio/x-unknown");
-                                                    dVar2 = dVar10;
+                                                    dVar2 = dVar7;
                                                     str7 = "audio/x-unknown";
                                                     i12 = -1;
                                                     str2 = null;
@@ -2214,17 +2215,17 @@ public final class d implements o {
                                                     rVar.j = str2;
                                                     rVar.u = r32.m;
                                                     b2.s sVar222222222222222222222222 = new b2.s(rVar);
-                                                    h0 R122222222222222222222222 = qVar.R1(r32.d, i15);
-                                                    r32.Z = R122222222222222222222222;
-                                                    R122222222222222222222222.b(sVar222222222222222222222222);
+                                                    h0 Z122222222222222222222222 = qVar.Z1(r32.d, i15);
+                                                    r32.Z = Z122222222222222222222222;
+                                                    Z122222222222222222222222.b(sVar222222222222222222222222);
                                                     sparseArray.put(r32.d, r32);
-                                                    dVar10 = dVar2;
+                                                    dVar7 = dVar2;
                                                 }
                                                 break;
                                             case 23:
                                                 int i51 = r32.R;
                                                 if (i51 == 8) {
-                                                    dVar2 = dVar10;
+                                                    dVar2 = dVar7;
                                                     str7 = "audio/raw";
                                                     i12 = 3;
                                                     str2 = null;
@@ -2251,11 +2252,11 @@ public final class d implements o {
                                                     rVar.j = str2;
                                                     rVar.u = r32.m;
                                                     b2.s sVar2222222222222222222222222 = new b2.s(rVar);
-                                                    h0 R1222222222222222222222222 = qVar.R1(r32.d, i15);
-                                                    r32.Z = R1222222222222222222222222;
-                                                    R1222222222222222222222222.b(sVar2222222222222222222222222);
+                                                    h0 Z1222222222222222222222222 = qVar.Z1(r32.d, i15);
+                                                    r32.Z = Z1222222222222222222222222;
+                                                    Z1222222222222222222222222.b(sVar2222222222222222222222222);
                                                     sparseArray.put(r32.d, r32);
-                                                    dVar10 = dVar2;
+                                                    dVar7 = dVar2;
                                                 } else {
                                                     if (i51 == 16) {
                                                         i12 = TLObject.FLAG_28;
@@ -2265,7 +2266,7 @@ public final class d implements o {
                                                         i12 = 1610612736;
                                                     } else {
                                                         e2.a.n("MatroskaExtractor", "Unsupported big endian PCM bit depth: " + r32.R + ". Setting mimeType to audio/x-unknown");
-                                                        dVar2 = dVar10;
+                                                        dVar2 = dVar7;
                                                         str7 = "audio/x-unknown";
                                                         i12 = -1;
                                                         str2 = null;
@@ -2292,13 +2293,13 @@ public final class d implements o {
                                                         rVar.j = str2;
                                                         rVar.u = r32.m;
                                                         b2.s sVar22222222222222222222222222 = new b2.s(rVar);
-                                                        h0 R12222222222222222222222222 = qVar.R1(r32.d, i15);
-                                                        r32.Z = R12222222222222222222222222;
-                                                        R12222222222222222222222222.b(sVar22222222222222222222222222);
+                                                        h0 Z12222222222222222222222222 = qVar.Z1(r32.d, i15);
+                                                        r32.Z = Z12222222222222222222222222;
+                                                        Z12222222222222222222222222.b(sVar22222222222222222222222222);
                                                         sparseArray.put(r32.d, r32);
-                                                        dVar10 = dVar2;
+                                                        dVar7 = dVar2;
                                                     }
-                                                    dVar2 = dVar10;
+                                                    dVar2 = dVar7;
                                                     str7 = "audio/raw";
                                                     str2 = null;
                                                     i13 = -1;
@@ -2324,11 +2325,11 @@ public final class d implements o {
                                                     rVar.j = str2;
                                                     rVar.u = r32.m;
                                                     b2.s sVar222222222222222222222222222 = new b2.s(rVar);
-                                                    h0 R122222222222222222222222222 = qVar.R1(r32.d, i15);
-                                                    r32.Z = R122222222222222222222222222;
-                                                    R122222222222222222222222222.b(sVar222222222222222222222222222);
+                                                    h0 Z122222222222222222222222222 = qVar.Z1(r32.d, i15);
+                                                    r32.Z = Z122222222222222222222222222;
+                                                    Z122222222222222222222222222.b(sVar222222222222222222222222222);
                                                     sparseArray.put(r32.d, r32);
-                                                    dVar10 = dVar2;
+                                                    dVar7 = dVar2;
                                                 }
                                                 break;
                                             case 24:
@@ -2337,7 +2338,7 @@ public final class d implements o {
                                                 int B2 = d0.B(i52, ByteOrder.LITTLE_ENDIAN);
                                                 if (B2 == 0) {
                                                     e2.a.n("MatroskaExtractor", "Unsupported little endian PCM bit depth: " + r32.R + ". Setting mimeType to audio/x-unknown");
-                                                    dVar2 = dVar10;
+                                                    dVar2 = dVar7;
                                                     str7 = "audio/x-unknown";
                                                     i12 = -1;
                                                     str2 = null;
@@ -2364,13 +2365,13 @@ public final class d implements o {
                                                     rVar.j = str2;
                                                     rVar.u = r32.m;
                                                     b2.s sVar2222222222222222222222222222 = new b2.s(rVar);
-                                                    h0 R1222222222222222222222222222 = qVar.R1(r32.d, i15);
-                                                    r32.Z = R1222222222222222222222222222;
-                                                    R1222222222222222222222222222.b(sVar2222222222222222222222222222);
+                                                    h0 Z1222222222222222222222222222 = qVar.Z1(r32.d, i15);
+                                                    r32.Z = Z1222222222222222222222222222;
+                                                    Z1222222222222222222222222222.b(sVar2222222222222222222222222222);
                                                     sparseArray.put(r32.d, r32);
-                                                    dVar10 = dVar2;
+                                                    dVar7 = dVar2;
                                                 } else {
-                                                    dVar2 = dVar10;
+                                                    dVar2 = dVar7;
                                                     i12 = B2;
                                                     str7 = "audio/raw";
                                                     str2 = null;
@@ -2397,17 +2398,17 @@ public final class d implements o {
                                                     rVar.j = str2;
                                                     rVar.u = r32.m;
                                                     b2.s sVar22222222222222222222222222222 = new b2.s(rVar);
-                                                    h0 R12222222222222222222222222222 = qVar.R1(r32.d, i15);
-                                                    r32.Z = R12222222222222222222222222222;
-                                                    R12222222222222222222222222222.b(sVar22222222222222222222222222222);
+                                                    h0 Z12222222222222222222222222222 = qVar.Z1(r32.d, i15);
+                                                    r32.Z = Z12222222222222222222222222222;
+                                                    Z12222222222222222222222222222.b(sVar22222222222222222222222222222);
                                                     sparseArray.put(r32.d, r32);
-                                                    dVar10 = dVar2;
+                                                    dVar7 = dVar2;
                                                 }
                                                 break;
                                             case 25:
                                             case 26:
                                                 singletonList = e9.i0.A(g0, r32.a(str6));
-                                                dVar2 = dVar10;
+                                                dVar2 = dVar7;
                                                 str7 = "text/x-ssa";
                                                 i12 = -1;
                                                 str2 = null;
@@ -2433,11 +2434,11 @@ public final class d implements o {
                                                 rVar.j = str2;
                                                 rVar.u = r32.m;
                                                 b2.s sVar222222222222222222222222222222 = new b2.s(rVar);
-                                                h0 R122222222222222222222222222222 = qVar.R1(r32.d, i15);
-                                                r32.Z = R122222222222222222222222222222;
-                                                R122222222222222222222222222222.b(sVar222222222222222222222222222222);
+                                                h0 Z122222222222222222222222222222 = qVar.Z1(r32.d, i15);
+                                                r32.Z = Z122222222222222222222222222222;
+                                                Z122222222222222222222222222222.b(sVar222222222222222222222222222222);
                                                 sparseArray.put(r32.d, r32);
-                                                dVar10 = dVar2;
+                                                dVar7 = dVar2;
                                                 break;
                                             case 27:
                                                 x a13 = x.a(new v(r32.a(r32.c)), false, null);
@@ -2446,7 +2447,7 @@ public final class d implements o {
                                                 str4 = a13.n;
                                                 str7 = "video/hevc";
                                                 str2 = str4;
-                                                dVar2 = dVar10;
+                                                dVar2 = dVar7;
                                                 i12 = -1;
                                                 i13 = -1;
                                                 if (r32.P != null) {
@@ -2470,14 +2471,14 @@ public final class d implements o {
                                                 rVar.j = str2;
                                                 rVar.u = r32.m;
                                                 b2.s sVar2222222222222222222222222222222 = new b2.s(rVar);
-                                                h0 R1222222222222222222222222222222 = qVar.R1(r32.d, i15);
-                                                r32.Z = R1222222222222222222222222222222;
-                                                R1222222222222222222222222222222.b(sVar2222222222222222222222222222222);
+                                                h0 Z1222222222222222222222222222222 = qVar.Z1(r32.d, i15);
+                                                r32.Z = Z1222222222222222222222222222222;
+                                                Z1222222222222222222222222222222.b(sVar2222222222222222222222222222222);
                                                 sparseArray.put(r32.d, r32);
-                                                dVar10 = dVar2;
+                                                dVar7 = dVar2;
                                                 break;
                                             case 28:
-                                                dVar2 = dVar10;
+                                                dVar2 = dVar7;
                                                 str7 = "text/vtt";
                                                 i12 = -1;
                                                 str2 = null;
@@ -2504,14 +2505,14 @@ public final class d implements o {
                                                 rVar.j = str2;
                                                 rVar.u = r32.m;
                                                 b2.s sVar22222222222222222222222222222222 = new b2.s(rVar);
-                                                h0 R12222222222222222222222222222222 = qVar.R1(r32.d, i15);
-                                                r32.Z = R12222222222222222222222222222222;
-                                                R12222222222222222222222222222222.b(sVar22222222222222222222222222222222);
+                                                h0 Z12222222222222222222222222222222 = qVar.Z1(r32.d, i15);
+                                                r32.Z = Z12222222222222222222222222222222;
+                                                Z12222222222222222222222222222222.b(sVar22222222222222222222222222222222);
                                                 sparseArray.put(r32.d, r32);
-                                                dVar10 = dVar2;
+                                                dVar7 = dVar2;
                                                 break;
                                             case 29:
-                                                dVar2 = dVar10;
+                                                dVar2 = dVar7;
                                                 str7 = "application/x-subrip";
                                                 i12 = -1;
                                                 str2 = null;
@@ -2538,15 +2539,15 @@ public final class d implements o {
                                                 rVar.j = str2;
                                                 rVar.u = r32.m;
                                                 b2.s sVar222222222222222222222222222222222 = new b2.s(rVar);
-                                                h0 R122222222222222222222222222222222 = qVar.R1(r32.d, i15);
-                                                r32.Z = R122222222222222222222222222222222;
-                                                R122222222222222222222222222222222.b(sVar222222222222222222222222222222222);
+                                                h0 Z122222222222222222222222222222222 = qVar.Z1(r32.d, i15);
+                                                r32.Z = Z122222222222222222222222222222222;
+                                                Z122222222222222222222222222222222.b(sVar222222222222222222222222222222222);
                                                 sparseArray.put(r32.d, r32);
-                                                dVar10 = dVar2;
+                                                dVar7 = dVar2;
                                                 break;
                                             case MessageObject.TYPE_GIFT_STARS /* 30 */:
                                                 str7 = "video/mpeg2";
-                                                dVar2 = dVar10;
+                                                dVar2 = dVar7;
                                                 i12 = -1;
                                                 str2 = null;
                                                 i13 = -1;
@@ -2572,15 +2573,15 @@ public final class d implements o {
                                                 rVar.j = str2;
                                                 rVar.u = r32.m;
                                                 b2.s sVar2222222222222222222222222222222222 = new b2.s(rVar);
-                                                h0 R1222222222222222222222222222222222 = qVar.R1(r32.d, i15);
-                                                r32.Z = R1222222222222222222222222222222222;
-                                                R1222222222222222222222222222222222.b(sVar2222222222222222222222222222222222);
+                                                h0 Z1222222222222222222222222222222222 = qVar.Z1(r32.d, i15);
+                                                r32.Z = Z1222222222222222222222222222222222;
+                                                Z1222222222222222222222222222222222.b(sVar2222222222222222222222222222222222);
                                                 sparseArray.put(r32.d, r32);
-                                                dVar10 = dVar2;
+                                                dVar7 = dVar2;
                                                 break;
                                             case MessageObject.TYPE_GIFT_THEME_UPDATE /* 31 */:
                                                 str7 = "audio/eac3";
-                                                dVar2 = dVar10;
+                                                dVar2 = dVar7;
                                                 i12 = -1;
                                                 str2 = null;
                                                 i13 = -1;
@@ -2606,17 +2607,17 @@ public final class d implements o {
                                                 rVar.j = str2;
                                                 rVar.u = r32.m;
                                                 b2.s sVar22222222222222222222222222222222222 = new b2.s(rVar);
-                                                h0 R12222222222222222222222222222222222 = qVar.R1(r32.d, i15);
-                                                r32.Z = R12222222222222222222222222222222222;
-                                                R12222222222222222222222222222222222.b(sVar22222222222222222222222222222222222);
+                                                h0 Z12222222222222222222222222222222222 = qVar.Z1(r32.d, i15);
+                                                r32.Z = Z12222222222222222222222222222222222;
+                                                Z12222222222222222222222222222222222.b(sVar22222222222222222222222222222222222);
                                                 sparseArray.put(r32.d, r32);
-                                                dVar10 = dVar2;
+                                                dVar7 = dVar2;
                                                 break;
                                             case ' ':
                                                 z13 = Collections.singletonList(r32.a(str6));
                                                 str7 = "audio/flac";
                                                 singletonList = z13;
-                                                dVar2 = dVar10;
+                                                dVar2 = dVar7;
                                                 i12 = -1;
                                                 str2 = null;
                                                 i13 = -1;
@@ -2641,11 +2642,11 @@ public final class d implements o {
                                                 rVar.j = str2;
                                                 rVar.u = r32.m;
                                                 b2.s sVar222222222222222222222222222222222222 = new b2.s(rVar);
-                                                h0 R122222222222222222222222222222222222 = qVar.R1(r32.d, i15);
-                                                r32.Z = R122222222222222222222222222222222222;
-                                                R122222222222222222222222222222222222.b(sVar222222222222222222222222222222222222);
+                                                h0 Z122222222222222222222222222222222222 = qVar.Z1(r32.d, i15);
+                                                r32.Z = Z122222222222222222222222222222222222;
+                                                Z122222222222222222222222222222222222.b(sVar222222222222222222222222222222222222);
                                                 sparseArray.put(r32.d, r32);
-                                                dVar10 = dVar2;
+                                                dVar7 = dVar2;
                                                 break;
                                             case '!':
                                                 ArrayList arrayList2 = new ArrayList(3);
@@ -2656,7 +2657,7 @@ public final class d implements o {
                                                 arrayList2.add(ByteBuffer.allocate(8).order(byteOrder).putLong(r32.U).array());
                                                 str7 = "audio/opus";
                                                 singletonList = arrayList2;
-                                                dVar2 = dVar10;
+                                                dVar2 = dVar7;
                                                 i12 = -1;
                                                 str2 = null;
                                                 i13 = 5760;
@@ -2681,32 +2682,32 @@ public final class d implements o {
                                                 rVar.j = str2;
                                                 rVar.u = r32.m;
                                                 b2.s sVar2222222222222222222222222222222222222 = new b2.s(rVar);
-                                                h0 R1222222222222222222222222222222222222 = qVar.R1(r32.d, i15);
-                                                r32.Z = R1222222222222222222222222222222222222;
-                                                R1222222222222222222222222222222222222.b(sVar2222222222222222222222222222222222222);
+                                                h0 Z1222222222222222222222222222222222222 = qVar.Z1(r32.d, i15);
+                                                r32.Z = Z1222222222222222222222222222222222222;
+                                                Z1222222222222222222222222222222222222.b(sVar2222222222222222222222222222222222222);
                                                 sparseArray.put(r32.d, r32);
-                                                dVar10 = dVar2;
+                                                dVar7 = dVar2;
                                                 break;
                                             default:
                                                 throw s0.a(null, "Unrecognized codec identifier.");
                                         }
                                     default:
-                                        dVar10.x = null;
+                                        dVar7.x = null;
                                         break;
                                 }
                             } else if (i28 == 19899) {
-                                int i53 = dVar10.z;
+                                int i53 = dVar7.z;
                                 if (i53 != i20) {
-                                    long j15 = dVar10.A;
+                                    long j15 = dVar7.A;
                                     if (j15 != -1) {
                                         if (i53 == 475249515) {
-                                            dVar10.C = j15;
+                                            dVar7.C = j15;
                                         }
                                     }
                                 }
                             } else if (i28 == 25152) {
-                                dVar10.d(i28);
-                                c cVar2 = dVar10.x;
+                                dVar7.d(i28);
+                                c cVar2 = dVar7.x;
                                 if (cVar2.i) {
                                     c3.g0 g0Var = cVar2.k;
                                     if (g0Var == null) {
@@ -2715,31 +2716,31 @@ public final class d implements o {
                                     cVar2.m = new b2.o(null, true, new n(i.a, null, "video/webm", g0Var.b));
                                 }
                             } else if (i28 == 28032) {
-                                dVar10.d(i28);
-                                c cVar3 = dVar10.x;
+                                dVar7.d(i28);
+                                c cVar3 = dVar7.x;
                                 if (cVar3.i && cVar3.j != null) {
                                     throw s0.a(null, "Combining encryption and compression is not supported");
                                 }
                             } else if (i28 == 357149030) {
-                                if (dVar10.t == -9223372036854775807L) {
-                                    dVar10.t = 1000000L;
+                                if (dVar7.t == -9223372036854775807L) {
+                                    dVar7.t = 1000000L;
                                 }
-                                long j16 = dVar10.u;
+                                long j16 = dVar7.u;
                                 if (j16 != -9223372036854775807L) {
-                                    dVar10.v = dVar10.l(j16);
+                                    dVar7.v = dVar7.l(j16);
                                 }
                             } else if (i28 == 374648427) {
                                 if (sparseArray.size() == 0) {
                                     throw s0.a(null, "No valid tracks were found");
                                 }
-                                dVar10.e0.Z0();
+                                dVar7.e0.e1();
                             } else if (i28 == 475249515) {
-                                if (!dVar10.y) {
-                                    q qVar2 = dVar10.e0;
-                                    b0 b0Var = dVar10.F;
-                                    b0 b0Var2 = dVar10.G;
-                                    if (dVar10.s == -1 || dVar10.v == -9223372036854775807L || b0Var == null || (i19 = b0Var.b) == 0 || b0Var2 == null || b0Var2.b != i19) {
-                                        tVar = new t(dVar10.v);
+                                if (!dVar7.y) {
+                                    q qVar2 = dVar7.e0;
+                                    b0 b0Var = dVar7.F;
+                                    b0 b0Var2 = dVar7.G;
+                                    if (dVar7.s == -1 || dVar7.v == -9223372036854775807L || b0Var == null || (i19 = b0Var.b) == 0 || b0Var2 == null || b0Var2.b != i19) {
+                                        tVar = new t(dVar7.v);
                                     } else {
                                         int[] iArr = new int[i19];
                                         long[] jArr2 = new long[i19];
@@ -2748,7 +2749,7 @@ public final class d implements o {
                                         int i54 = 0;
                                         while (i54 < i19) {
                                             jArr4[i54] = b0Var.f(i54);
-                                            jArr2[i54] = b0Var2.f(i54) + dVar10.s;
+                                            jArr2[i54] = b0Var2.f(i54) + dVar7.s;
                                             i54++;
                                             jArr4 = jArr4;
                                         }
@@ -2763,11 +2764,11 @@ public final class d implements o {
                                                 i55 = i57;
                                             } else {
                                                 int i58 = i56;
-                                                while (i58 > 0 && jArr5[i58] > dVar10.v) {
+                                                while (i58 > 0 && jArr5[i58] > dVar7.v) {
                                                     i58--;
                                                 }
-                                                iArr[i58] = (int) ((dVar10.s + dVar10.r) - jArr2[i58]);
-                                                jArr3[i58] = dVar10.v - jArr5[i58];
+                                                iArr[i58] = (int) ((dVar7.s + dVar7.r) - jArr2[i58]);
+                                                jArr3[i58] = dVar7.v - jArr5[i58];
                                                 if (i58 < i56) {
                                                     e2.a.n("MatroskaExtractor", "Discarding trailing cue points with timestamps greater than total duration");
                                                     int i59 = i58 + 1;
@@ -2782,40 +2783,40 @@ public final class d implements o {
                                             }
                                         }
                                     }
-                                    qVar2.P1(tVar);
-                                    dVar10.y = true;
+                                    qVar2.X1(tVar);
+                                    dVar7.y = true;
                                 }
-                                dVar10.F = null;
-                                dVar10.G = null;
+                                dVar7.F = null;
+                                dVar7.G = null;
                             }
-                        } else if (dVar10.J == 2) {
-                            c cVar4 = (c) sparseArray.get(dVar10.P);
+                        } else if (dVar7.J == 2) {
+                            c cVar4 = (c) sparseArray.get(dVar7.P);
                             cVar4.Z.getClass();
-                            if (dVar10.U > 0 && "A_OPUS".equals(cVar4.c)) {
-                                v vVar3 = dVar10.p;
-                                byte[] array = ByteBuffer.allocate(8).order(ByteOrder.LITTLE_ENDIAN).putLong(dVar10.U).array();
+                            if (dVar7.U > 0 && "A_OPUS".equals(cVar4.c)) {
+                                v vVar3 = dVar7.p;
+                                byte[] array = ByteBuffer.allocate(8).order(ByteOrder.LITTLE_ENDIAN).putLong(dVar7.U).array();
                                 vVar3.getClass();
                                 vVar3.H(array.length, array);
                             }
                             int i60 = 0;
-                            for (int i61 = 0; i61 < dVar10.N; i61++) {
-                                i60 += dVar10.O[i61];
+                            for (int i61 = 0; i61 < dVar7.N; i61++) {
+                                i60 += dVar7.O[i61];
                             }
                             int i62 = 0;
-                            while (i62 < dVar10.N) {
-                                long j17 = dVar10.K + ((cVar4.f * i62) / MediaDataController.MAX_STYLE_RUNS_COUNT);
-                                int i63 = dVar10.R;
-                                if (i62 == 0 && !dVar10.T) {
+                            while (i62 < dVar7.N) {
+                                long j17 = dVar7.K + ((cVar4.f * i62) / MediaDataController.MAX_STYLE_RUNS_COUNT);
+                                int i63 = dVar7.R;
+                                if (i62 == 0 && !dVar7.T) {
                                     i63 |= 1;
                                 }
-                                int i64 = dVar10.O[i62];
+                                int i64 = dVar7.O[i62];
                                 int i65 = i60 - i64;
-                                dVar10.e(cVar4, j17, i63, i64, i65);
+                                dVar7.e(cVar4, j17, i63, i64, i65);
                                 i62++;
                                 i60 = i65;
                             }
                             z11 = false;
-                            dVar10.J = 0;
+                            dVar7.J = 0;
                             pVar2 = pVar;
                         }
                         z11 = false;
@@ -2850,7 +2851,7 @@ public final class d implements o {
         }
     }
 
-    public final int n(c3.p pVar, c cVar, int i10, boolean z10) {
+    public final int n(p pVar, c cVar, int i10, boolean z10) {
         int a2;
         int a10;
         int i11;
@@ -3048,7 +3049,7 @@ public final class d implements o {
         return i27;
     }
 
-    public final void o(c3.p pVar, byte[] bArr, int i10) {
+    public final void o(p pVar, byte[] bArr, int i10) {
         int length = bArr.length + i10;
         v vVar = this.m;
         byte[] bArr2 = vVar.a;

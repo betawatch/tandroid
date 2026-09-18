@@ -1,13 +1,16 @@
 package com.google.android.gms.internal.clearcut;
 
 /* loaded from: classes.dex */
-public final class p {
-    public static final /* synthetic */ int a = 0;
+public abstract class p {
+    public static final Class a;
 
     static {
+        Class<?> cls;
         try {
-            Class.forName("com.google.protobuf.Extension");
+            cls = Class.forName("com.google.protobuf.ExtensionRegistry");
         } catch (ClassNotFoundException unused) {
+            cls = null;
         }
+        a = cls;
     }
 }

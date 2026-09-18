@@ -1,48 +1,53 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.R;
+import android.app.Activity;
+import java.util.ArrayList;
+import java.util.List;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class mh1 implements Utilities.Callback {
+public final /* synthetic */ class mh1 implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ UserInfoActivity b;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object g;
 
-    public /* synthetic */ mh1(UserInfoActivity userInfoActivity, int i10) {
+    public /* synthetic */ mh1(Object obj, Object obj2, Object obj3, Object obj4, Object obj5, Object obj6, int i10) {
         this.a = i10;
-        this.b = userInfoActivity;
+        this.b = obj;
+        this.c = obj2;
+        this.d = obj3;
+        this.e = obj4;
+        this.f = obj5;
+        this.g = obj6;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                UserInfoActivity userInfoActivity = this.b;
-                userInfoActivity.J = (TL_account.TL_birthday) obj;
-                org.telegram.ui.Components.x51 x51Var = userInfoActivity.x;
-                if (x51Var != null) {
-                    x51Var.Y2.N(true);
-                }
-                userInfoActivity.b0(true);
+                AndroidUtilities.runOnUIThread(new ii.k((UserInfoActivity) this.b, tL_error, (TLObject) this.c, (TL_account.TL_birthday) this.d, (TLRPC.UserFull) this.e, tLObject, (int[]) this.f, (ArrayList) this.g));
+                break;
+            case 1:
+                AndroidUtilities.runOnUIThread(new ii.k(tL_error, (tg.w) this.b, tLObject, (List) this.c, (c5.h) this.d, (tg.w) this.e, (org.telegram.ui.ActionBar.o2) this.f, (TLRPC.TL_inputStorePaymentPremiumGiveaway) this.g, 3));
+                break;
+            case 2:
+                AndroidUtilities.runOnUIThread(new ii.k(tL_error, (Utilities.Callback) this.b, tLObject, (List) this.c, (c5.h) this.d, (Utilities.Callback) this.e, (org.telegram.ui.ActionBar.o2) this.f, (TLRPC.TL_inputStorePaymentPremiumGiftCode) this.g, 4));
+                break;
+            case 3:
+                AndroidUtilities.runOnUIThread(new ii.k(tLObject, (c5.o) this.b, (c5.h) this.c, (ai.m0) this.d, (Activity) this.e, (TLRPC.TL_inputStorePaymentStarsGiveaway) this.f, (List) this.g, tL_error, 5));
                 break;
             default:
-                TLRPC.Chat chat = (TLRPC.Chat) obj;
-                UserInfoActivity userInfoActivity2 = this.b;
-                if (userInfoActivity2.K != chat) {
-                    userInfoActivity2.K = chat;
-                    if (chat != null) {
-                        org.telegram.messenger.w1.o(R.string.EditProfileChannelSet, org.telegram.ui.Components.yc.a0(userInfoActivity2), R.raw.contact_check, 36);
-                    }
-                    userInfoActivity2.b0(true);
-                    org.telegram.ui.Components.x51 x51Var2 = userInfoActivity2.x;
-                    if (x51Var2 != null) {
-                        x51Var2.Y2.N(true);
-                        break;
-                    }
-                }
+                AndroidUtilities.runOnUIThread(new ii.k(tLObject, (c5.o) this.b, (c5.h) this.c, (org.telegram.ui.Components.d80) this.d, (Activity) this.e, (TLRPC.TL_inputStorePaymentStarsGift) this.f, (List) this.g, tL_error, 6));
                 break;
         }
     }

@@ -16,16 +16,16 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.logging.Level;
 import java.util.zip.GZIPOutputStream;
-import org.telegram.ui.Components.yg;
+import org.telegram.ui.Components.wg;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class g implements Closeable {
     public final f a;
     public final String b;
     public final InputStream c;
     public final long d;
-    public final yg e = new yg(this, 1);
+    public final wg e = new wg(this, 1);
     public final HashMap f = new HashMap();
     public int h;
     public boolean n;
@@ -123,8 +123,8 @@ public final class g implements Closeable {
             }
             outputStream.flush();
             i.d(inputStream);
-        } catch (IOException e7) {
-            i.d.log(Level.SEVERE, "Could not send response to the client", (Throwable) e7);
+        } catch (IOException e) {
+            i.d.log(Level.SEVERE, "Could not send response to the client", (Throwable) e);
         }
     }
 

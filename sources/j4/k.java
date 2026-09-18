@@ -7,7 +7,7 @@ import i2.l0;
 import java.util.Arrays;
 import java.util.Collections;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class k implements i {
     public static final double[] r = {23.976023976023978d, 24.0d, 25.0d, 29.97002997002997d, 30.0d, 50.0d, 59.94005994005994d, 60.0d};
@@ -55,7 +55,7 @@ public final class k implements i {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void b(e2.v vVar) {
+    public final void a(e2.v vVar) {
         j jVar;
         l0 l0Var;
         int i10;
@@ -76,7 +76,7 @@ public final class k implements i {
         this.i += vVar.a();
         this.b.d(vVar.a(), vVar);
         while (true) {
-            int b10 = f2.p.b(bArr, i14, i15, this.g);
+            int b10 = f2.o.b(bArr, i14, i15, this.g);
             jVar = this.h;
             l0Var = this.f;
             if (b10 == i15) {
@@ -181,7 +181,7 @@ public final class k implements i {
                     i11 = -i18;
                 }
                 if (l0Var.e(i11)) {
-                    int m10 = f2.p.m(l0Var.e, (byte[]) l0Var.f);
+                    int m10 = f2.o.m(l0Var.e, (byte[]) l0Var.f);
                     String str2 = e2.d0.a;
                     byte[] bArr2 = (byte[]) l0Var.f;
                     e2.v vVar2 = this.e;
@@ -267,8 +267,8 @@ public final class k implements i {
     }
 
     @Override // j4.i
-    public final void d() {
-        f2.p.a(this.g);
+    public final void c() {
+        f2.o.a(this.g);
         j jVar = this.h;
         jVar.a = false;
         jVar.b = 0;
@@ -284,12 +284,12 @@ public final class k implements i {
     }
 
     @Override // j4.i
-    public final void e(c3.q qVar, f0 f0Var) {
+    public final void d(c3.q qVar, f0 f0Var) {
         f0Var.a();
         f0Var.b();
         this.a = f0Var.e;
         f0Var.b();
-        this.b = qVar.R1(f0Var.d, 2);
+        this.b = qVar.Z1(f0Var.d, 2);
         c0 c0Var = this.c;
         if (c0Var != null) {
             c0Var.b(qVar, f0Var);
@@ -297,7 +297,7 @@ public final class k implements i {
     }
 
     @Override // j4.i
-    public final void f(boolean z10) {
+    public final void e(boolean z10) {
         e2.d.h(this.b);
         if (z10) {
             boolean z11 = this.p;
@@ -306,7 +306,7 @@ public final class k implements i {
     }
 
     @Override // j4.i
-    public final void g(int i10, long j3) {
+    public final void f(int i10, long j3) {
         this.m = j3;
     }
 }

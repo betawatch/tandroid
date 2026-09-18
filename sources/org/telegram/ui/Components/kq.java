@@ -1,13 +1,30 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import org.telegram.messenger.R;
+
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public interface kq {
-    void B0(int i10, int i11, boolean z10);
+public final class kq extends AnimatorListenerAdapter {
+    public final /* synthetic */ mq a;
 
-    int M0(int i10);
+    public kq(mq mqVar) {
+        this.a = mqVar;
+    }
 
-    void k(boolean z10);
-
-    void z();
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        mq mqVar = this.a;
+        ColorPicker$RadioButton[] colorPicker$RadioButtonArr = mqVar.v;
+        if (mqVar.K == 1) {
+            mqVar.F.setVisibility(4);
+        }
+        for (int i10 = 0; i10 < colorPicker$RadioButtonArr.length; i10++) {
+            if (colorPicker$RadioButtonArr[i10].getTag(R.id.index_tag) == null) {
+                colorPicker$RadioButtonArr[i10].setVisibility(4);
+            }
+        }
+        mqVar.y = null;
+    }
 }

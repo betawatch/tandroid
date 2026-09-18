@@ -8,12 +8,13 @@ import com.google.android.gms.cast.framework.media.MediaIntentReceiver;
 import com.google.android.gms.internal.cast.h0;
 import com.google.android.gms.internal.cast.j0;
 import com.google.android.gms.internal.cast.o0;
+import hg.k0;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import w7.e0;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class f extends o6.a {
     public static final Parcelable.Creator<f> CREATOR;
@@ -59,7 +60,7 @@ public final class f extends o6.a {
         Object[] objArr = {MediaIntentReceiver.ACTION_TOGGLE_PLAYBACK, MediaIntentReceiver.ACTION_STOP_CASTING};
         for (int i10 = 0; i10 < 2; i10++) {
             if (objArr[i10] == null) {
-                throw new NullPointerException(i2.g.i(i10, "at index "));
+                throw new NullPointerException(k0.i(i10, "at index "));
             }
         }
         Y = j0.r(2, objArr);

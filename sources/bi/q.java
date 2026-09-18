@@ -1,53 +1,28 @@
 package bi;
 
-import android.view.ViewGroup;
-import org.telegram.ui.Components.vk0;
-import org.telegram.ui.lx;
+import android.content.Context;
+import org.telegram.ui.ActionBar.f6;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes4.dex */
-public final class q extends pg.b {
-    public final boolean d;
-    public final /* synthetic */ lx e;
+public final class q extends ci.d {
+    public final /* synthetic */ int h0;
 
-    public q(lx lxVar, boolean z10) {
-        this.e = lxVar;
-        this.d = z10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ q(int i10, Context context, f6 f6Var, boolean z10) {
+        super(context, f6Var, z10);
+        this.h0 = i10;
     }
 
-    @Override // org.telegram.ui.Components.kl0
-    public final boolean D(s4.c1 c1Var) {
-        return false;
-    }
-
-    @Override // s4.h0
-    public final int h() {
-        boolean z10 = this.d;
-        lx lxVar = this.e;
-        return (z10 ? lxVar.y : lxVar.x).size();
-    }
-
-    @Override // s4.h0
-    public final void v(s4.c1 c1Var, int i10) {
-        u uVar = (u) c1Var.a;
-        uVar.b = i10;
-        boolean z10 = this.d;
-        lx lxVar = this.e;
-        if (z10) {
-            uVar.setDialogId(((r) lxVar.y.get(i10)).c);
-        } else {
-            uVar.setDialogId(((r) lxVar.x.get(i10)).c);
+    @Override // ci.d
+    public boolean i() {
+        switch (this.h0) {
+            case 1:
+                return false;
+            case 2:
+                return false;
+            default:
+                return super.i();
         }
-    }
-
-    @Override // s4.h0
-    public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        u uVar = new u(this.e, viewGroup.getContext());
-        boolean z10 = this.d;
-        uVar.N = z10;
-        if (z10) {
-            uVar.d(1.0f, 1.0f, 0.0f, false);
-        }
-        return new vk0(uVar);
     }
 }

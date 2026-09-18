@@ -6,11 +6,11 @@ import android.view.View;
 import androidx.appcompat.widget.ActionBarContextView;
 import java.lang.ref.WeakReference;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
-public final class a0 extends k.a implements l.j {
+public final class a0 extends k.a implements l.i {
     public final Context c;
-    public final l.l d;
+    public final l.k d;
     public n4.y e;
     public WeakReference f;
     public final /* synthetic */ b0 h;
@@ -19,10 +19,19 @@ public final class a0 extends k.a implements l.j {
         this.h = b0Var;
         this.c = context;
         this.e = yVar;
-        l.l lVar = new l.l(context);
-        lVar.l = 1;
-        this.d = lVar;
-        lVar.e = this;
+        l.k kVar = new l.k(context);
+        kVar.l = 1;
+        this.d = kVar;
+        kVar.e = this;
+    }
+
+    @Override // l.i
+    public final boolean A(l.k kVar, MenuItem menuItem) {
+        n4.y yVar = this.e;
+        if (yVar != null) {
+            return ((ni.f) yVar.b).G(this, menuItem);
+        }
+        return false;
     }
 
     @Override // k.a
@@ -35,7 +44,7 @@ public final class a0 extends k.a implements l.j {
             b0Var.j = this;
             b0Var.k = this.e;
         } else {
-            this.e.I(this);
+            this.e.T(this);
         }
         this.e = null;
         b0Var.a(false);
@@ -57,7 +66,7 @@ public final class a0 extends k.a implements l.j {
     }
 
     @Override // k.a
-    public final l.l c() {
+    public final l.k c() {
         return this.d;
     }
 
@@ -81,12 +90,12 @@ public final class a0 extends k.a implements l.j {
         if (this.h.i != this) {
             return;
         }
-        l.l lVar = this.d;
-        lVar.w();
+        l.k kVar = this.d;
+        kVar.w();
         try {
-            this.e.J(this, lVar);
+            this.e.U(this, kVar);
         } finally {
-            lVar.v();
+            kVar.v();
         }
     }
 
@@ -121,8 +130,14 @@ public final class a0 extends k.a implements l.j {
         this.h.f.setTitle(charSequence);
     }
 
-    @Override // l.j
-    public final void n(l.l lVar) {
+    @Override // k.a
+    public final void n(boolean z10) {
+        this.b = z10;
+        this.h.f.setTitleOptional(z10);
+    }
+
+    @Override // l.i
+    public final void t(l.k kVar) {
         if (this.e == null) {
             return;
         }
@@ -131,20 +146,5 @@ public final class a0 extends k.a implements l.j {
         if (hVar != null) {
             hVar.l();
         }
-    }
-
-    @Override // k.a
-    public final void o(boolean z10) {
-        this.b = z10;
-        this.h.f.setTitleOptional(z10);
-    }
-
-    @Override // l.j
-    public final boolean s(l.l lVar, MenuItem menuItem) {
-        n4.y yVar = this.e;
-        if (yVar != null) {
-            return ((fg.f) yVar.b).H(this, menuItem);
-        }
-        return false;
     }
 }

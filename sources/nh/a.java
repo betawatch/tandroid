@@ -1,33 +1,33 @@
 package nh;
 
-import android.text.SpannableStringBuilder;
-import android.util.SparseArray;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.nq;
+import ai.s1;
+import android.content.Context;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.Components.f61;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public abstract class a {
-    public static final SparseArray a = new SparseArray(6);
+public abstract class a extends f61 {
+    public a(Context context, int i10, Utilities.Callback2 callback2, Utilities.Callback5 callback5, f6 f6Var) {
+        super(context, i10, -1, false, callback2, callback5, null, f6Var, -1, 0);
+        this.z2 = true;
+        setOverScrollMode(2);
+    }
 
-    public static SpannableStringBuilder a(int i10, CharSequence charSequence, boolean z10) {
-        SpannableStringBuilder spannableStringBuilder = charSequence instanceof SpannableStringBuilder ? (SpannableStringBuilder) charSequence : new SpannableStringBuilder(charSequence);
-        if (z10) {
-            spannableStringBuilder.insert(0, (CharSequence) "* \u2068");
-        } else {
-            spannableStringBuilder.insert(0, (CharSequence) "* ");
+    public final void J1(View view) {
+        if (view == null) {
+            return;
         }
-        SparseArray sparseArray = a;
-        nq nqVar = (nq) sparseArray.get(i10);
-        if (nqVar == null) {
-            nqVar = new nq(i10, 0);
-            nqVar.setColorKey(j6.il);
-            sparseArray.put(i10, nqVar);
+        float dp = AndroidUtilities.dp(92.0f);
+        float width = getWidth() - dp;
+        float x10 = view.getX();
+        float width2 = view.getWidth() + x10;
+        int i10 = x10 < dp ? (int) (x10 - dp) : width2 > width ? (int) (width2 - width) : 0;
+        if (i10 != 0) {
+            AndroidUtilities.doOnLayout(this, new s1(this, view, i10, 17));
         }
-        spannableStringBuilder.setSpan(nqVar, 0, 1, 33);
-        if (z10) {
-            spannableStringBuilder.append((char) 8297);
-        }
-        return spannableStringBuilder;
     }
 }

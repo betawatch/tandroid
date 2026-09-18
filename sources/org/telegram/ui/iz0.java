@@ -1,45 +1,46 @@
 package org.telegram.ui;
 
-import android.view.View;
+import android.animation.ValueAnimator;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class iz0 extends s4.c0 {
-    public final /* synthetic */ ProfileActivity I;
+public final class iz0 extends s4.j {
+    public int F = -1;
+    public final /* synthetic */ ProfileActivity G;
 
     public iz0(ProfileActivity profileActivity) {
-        this.I = profileActivity;
+        this.G = profileActivity;
     }
 
-    @Override // s4.c0, s4.o0
-    public final int o0(int i10, pf.e eVar, s4.z0 z0Var) {
-        ProfileActivity profileActivity = this.I;
-        View m10 = profileActivity.c.m(0);
-        if (m10 != null && !profileActivity.F0) {
-            int top = m10.getTop() - profileActivity.T3();
-            boolean z10 = profileActivity.o2;
-            if (z10 || top <= i10) {
-                if (z10) {
-                    if (i10 >= top) {
-                        profileActivity.o2 = false;
-                    } else if (profileActivity.a.getScrollState() == 1 && !profileActivity.p2) {
-                        i10 /= 2;
-                    }
-                }
-            } else if (!profileActivity.n0.X0.isEmpty() && profileActivity.e0.getImageReceiver().hasNotThumb() && !AndroidUtilities.isAccessibilityScreenReaderEnabled() && ((!profileActivity.n2 && !AndroidUtilities.isTablet()) || profileActivity.I0)) {
-                profileActivity.o2 = profileActivity.J2 == null;
-            }
-            i10 = top;
-        }
-        if (!profileActivity.O1 || profileActivity.a.O0) {
-            return super.o0(i10, eVar, z0Var);
-        }
-        return 0;
+    @Override // s4.j
+    public final long K(long j3, long j10, long j11) {
+        return 0L;
     }
 
-    @Override // s4.c0, s4.o0
-    public final boolean y0() {
-        return this.I.q0 != null;
+    @Override // s4.j
+    public final void N() {
+        AndroidUtilities.runOnUIThread(new sl0(this, 28));
+    }
+
+    @Override // s4.j
+    public final void P(s4.c1 c1Var) {
+        this.G.U4();
+    }
+
+    @Override // s4.j, s4.m0
+    public final void m() {
+        boolean isEmpty = this.p.isEmpty();
+        boolean isEmpty2 = this.r.isEmpty();
+        boolean isEmpty3 = this.s.isEmpty();
+        boolean isEmpty4 = this.q.isEmpty();
+        if (!isEmpty || !isEmpty2 || !isEmpty4 || !isEmpty3) {
+            ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+            ofFloat.addUpdateListener(new b3(this, 25));
+            ofFloat.setDuration(this.e);
+            ofFloat.start();
+            this.F = this.G.getNotificationCenter().setAnimationInProgress(this.F, null);
+        }
+        super.m();
     }
 }

@@ -1,48 +1,125 @@
 package gi;
 
+import android.content.Context;
+import android.text.TextUtils;
 import android.view.View;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.h51;
-import r0.l1;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import com.google.android.gms.internal.vision.e2;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.wl;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ActionBar.a6;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.Components.qb0;
+import w7.x5;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class j implements Utilities.Callback5, Utilities.Callback5Return, r0.n, MessagesStorage.BooleanCallback {
-    public final /* synthetic */ p a;
+public final class j extends LinearLayout implements a6 {
+    public final f6 a;
+    public final qb0 b;
+    public final FrameLayout c;
+    public final ImageView d;
+    public final TextView e;
+    public final TextView f;
+    public final boolean h;
+    public boolean n;
 
-    public /* synthetic */ j(p pVar) {
-        this.a = pVar;
+    public j(Context context, f6 f6Var, boolean z10) {
+        super(context);
+        this.a = f6Var;
+        this.h = z10;
+        setOrientation(0);
+        FrameLayout frameLayout = new FrameLayout(context);
+        this.c = frameLayout;
+        qb0 qb0Var = new qb0(1);
+        this.b = qb0Var;
+        frameLayout.setBackground(qb0Var);
+        ImageView imageView = new ImageView(context);
+        this.d = imageView;
+        imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
+        frameLayout.addView(imageView, x5.e(24, 24, 17));
+        LinearLayout f7 = wl.f(context, 1);
+        TextView textView = new TextView(context);
+        this.e = textView;
+        textView.setTextSize(1, 16.0f);
+        TextView h = e2.h(f7, textView, x5.k(0.0f, 0.0f, 0.0f, 0.0f, -1, -2), context);
+        this.f = h;
+        h.setGravity(17);
+        h.setMinWidth(AndroidUtilities.dp(20.66f));
+        h.setPadding(AndroidUtilities.dp(6.33f), 0, AndroidUtilities.dp(6.33f), 0);
+        h.setTextSize(1, 16.0f);
+        if (LocaleController.isRTL) {
+            addView(h, x5.j(13.33f, 0.0f));
+            addView(f7, x5.p(0, -2, 1.0f, 23, 20, 0, z10 ? 12 : 16, 0));
+            addView(frameLayout, x5.t(28, 28, 21, 0, 0, z10 ? 9 : 14, 0));
+        } else {
+            addView(frameLayout, x5.t(28, 28, 19, z10 ? 9 : 14, 0, 0, 0));
+            addView(f7, x5.p(0, -2, 1.0f, 23, z10 ? 12 : 16, 0, 20, 0));
+            addView(h, x5.j(0.0f, 13.33f));
+        }
+        e();
+        setUnreadMode(true);
     }
 
-    @Override // r0.n
-    public l1 T0(View view, l1 l1Var) {
-        i0.c f7 = l1Var.a.f(519);
-        this.a.d.setPadding(0, f7.b, 0, f7.d);
-        return l1.b;
+    public final void a(int i10, int i11, int i12, CharSequence charSequence, CharSequence charSequence2, boolean z10) {
+        this.c.setVisibility(i12 != 0 ? 0 : 8);
+        this.e.setTranslationX(i12 == 0 ? AndroidUtilities.dp(2.0f) : 0.0f);
+        this.b.b(i10, i11);
+        this.d.setImageResource(i12);
+        setTitle(charSequence);
+        setValue(charSequence2);
+        setUnreadMode(z10);
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback5Return
-    public Object run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        ((Integer) obj3).getClass();
-        ((Float) obj4).getClass();
-        ((Float) obj5).getClass();
-        return Boolean.valueOf(p.U(this.a, (h51) obj, (View) obj2));
+    @Override // org.telegram.ui.ActionBar.a6
+    public final void e() {
+        int i10 = j6.G6;
+        f6 f6Var = this.a;
+        this.e.setTextColor(j6.v0(i10, f6Var));
+        int v02 = j6.v0(this.n ? j6.W8 : j6.n6, f6Var);
+        TextView textView = this.f;
+        textView.setTextColor(v02);
+        textView.setBackground(this.n ? j6.b0(AndroidUtilities.dp(10.33f), j6.v0(j6.U8, f6Var)) : null);
+        this.b.b = f6Var != null ? f6Var.a() : j6.I.q();
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback5
-    public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        ((Integer) obj3).getClass();
-        ((Float) obj4).getClass();
-        ((Float) obj5).getClass();
-        p.V(this.a, (h51) obj);
+    public /* bridge */ /* synthetic */ int[] getColorKeys() {
+        return null;
     }
 
-    @Override // org.telegram.messenger.MessagesStorage.BooleanCallback
-    public void run(boolean z10) {
-        p pVar = this.a;
-        pVar.finishFragment();
-        pVar.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needDeleteDialog, Long.valueOf(-pVar.b), null, pVar.H, Boolean.valueOf(z10));
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(this.h ? 44.0f : 50.0f), TLObject.FLAG_30));
+    }
+
+    public void setTitle(CharSequence charSequence) {
+        this.e.setText(charSequence);
+    }
+
+    public void setUnreadMode(boolean z10) {
+        if (this.n != z10) {
+            this.n = z10;
+            float f7 = z10 ? 13.0f : 16.0f;
+            TextView textView = this.f;
+            textView.setTextSize(1, f7);
+            textView.setTypeface(z10 ? AndroidUtilities.bold() : null);
+            int i10 = z10 ? j6.W8 : j6.n6;
+            f6 f6Var = this.a;
+            textView.setTextColor(j6.v0(i10, f6Var));
+            textView.setBackground(z10 ? j6.b0(AndroidUtilities.dp(10.33f), j6.v0(j6.U8, f6Var)) : null);
+        }
+    }
+
+    public void setValue(CharSequence charSequence) {
+        int i10 = !TextUtils.isEmpty(charSequence) ? 0 : 8;
+        TextView textView = this.f;
+        textView.setVisibility(i10);
+        textView.setText(charSequence);
     }
 }

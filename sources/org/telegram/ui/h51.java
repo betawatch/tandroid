@@ -3,9 +3,9 @@ package org.telegram.ui;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class h51 implements r0.n, org.telegram.ui.ActionBar.a2 {
+public final /* synthetic */ class h51 implements r0.n, org.telegram.ui.ActionBar.b2 {
     public final /* synthetic */ int a;
     public final /* synthetic */ k51 b;
 
@@ -15,8 +15,8 @@ public final /* synthetic */ class h51 implements r0.n, org.telegram.ui.ActionBa
     }
 
     @Override // r0.n
-    public r0.l1 T0(View view, r0.l1 l1Var) {
-        i0.c defaultWindowInsets = AndroidUtilities.getDefaultWindowInsets(l1Var, false);
+    public r0.l1 Q0(View view, r0.l1 l1Var) {
+        i0.b defaultWindowInsets = AndroidUtilities.getDefaultWindowInsets(l1Var, false);
         k51 k51Var = this.b;
         k51Var.e = defaultWindowInsets;
         k51Var.c.setPadding(defaultWindowInsets.a, defaultWindowInsets.b, defaultWindowInsets.c, defaultWindowInsets.d);
@@ -24,21 +24,21 @@ public final /* synthetic */ class h51 implements r0.n, org.telegram.ui.ActionBa
         return r0.l1.b;
     }
 
-    @Override // org.telegram.ui.ActionBar.a2
-    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+    @Override // org.telegram.ui.ActionBar.b2
+    public void f(org.telegram.ui.ActionBar.c2 c2Var, int i10) {
         switch (this.a) {
             case 1:
-                org.telegram.ui.ActionBar.b2 b2Var2 = this.b.c0;
-                if (b2Var2 != null) {
-                    b2Var2.dismiss();
+                org.telegram.ui.ActionBar.c2 c2Var2 = this.b.c0;
+                if (c2Var2 != null) {
+                    c2Var2.dismiss();
                     break;
                 }
                 break;
             default:
                 k51 k51Var = this.b;
-                org.telegram.ui.ActionBar.b2 b2Var3 = k51Var.c0;
-                if (b2Var3 != null) {
-                    b2Var3.dismiss();
+                org.telegram.ui.ActionBar.c2 c2Var3 = k51Var.c0;
+                if (c2Var3 != null) {
+                    c2Var3.dismiss();
                     k51Var.c0 = null;
                 }
                 k51Var.dismiss();

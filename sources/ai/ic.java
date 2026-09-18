@@ -1,0 +1,134 @@
+package ai;
+
+import android.view.SurfaceView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.video.VideoPlayerHolderBase;
+
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* loaded from: classes4.dex */
+public final class ic extends VideoPlayerHolderBase {
+    public boolean a;
+    public final /* synthetic */ jc b;
+
+    public ic(jc jcVar, SurfaceView surfaceView, bc bcVar) {
+        this.b = jcVar;
+        if (jcVar.a) {
+            with(surfaceView);
+        } else {
+            with(bcVar);
+        }
+    }
+
+    @Override // org.telegram.messenger.video.VideoPlayerHolderBase
+    public final boolean needRepeat() {
+        return this.b.m1;
+    }
+
+    @Override // org.telegram.messenger.video.VideoPlayerHolderBase
+    public final void onRenderedFirstFrame() {
+        jc jcVar = this.b;
+        e6 e6Var = jcVar.G0;
+        if (e6Var == null) {
+            return;
+        }
+        e6Var.a = true;
+        this.firstFrameRendered = true;
+        e6Var.b();
+        if (!this.paused || jcVar.C0 == null) {
+            return;
+        }
+        prepareStub();
+    }
+
+    @Override // org.telegram.messenger.video.VideoPlayerHolderBase
+    public final void onStateChanged(boolean z10, int i10) {
+        if (i10 == 3 || i10 == 2) {
+            if (this.firstFrameRendered && i10 == 2) {
+                this.a = true;
+                final int i11 = 0;
+                AndroidUtilities.runOnUIThread(new Runnable(this) { // from class: ai.hc
+                    public final /* synthetic */ ic b;
+
+                    {
+                        this.b = this;
+                    }
+
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i11) {
+                            case 0:
+                                f6 t10 = this.b.b.t();
+                                if (t10 != null) {
+                                    d6 d6Var = t10.O1;
+                                    if (d6Var.a != null) {
+                                        StringBuilder sb2 = new StringBuilder("StoryViewer displayed story buffering dialogId=");
+                                        sb2.append(t10.getCurrentPeer());
+                                        sb2.append(" storyId=");
+                                        hg.k0.p(d6Var.a.id, sb2);
+                                        break;
+                                    }
+                                }
+                                break;
+                            default:
+                                f6 t11 = this.b.b.t();
+                                if (t11 != null) {
+                                    d6 d6Var2 = t11.O1;
+                                    if (d6Var2.a != null) {
+                                        StringBuilder sb3 = new StringBuilder("StoryViewer displayed story playing dialogId=");
+                                        sb3.append(t11.getCurrentPeer());
+                                        sb3.append(" storyId=");
+                                        hg.k0.p(d6Var2.a.id, sb3);
+                                        break;
+                                    }
+                                }
+                                break;
+                        }
+                    }
+                });
+            }
+            if (this.a && i10 == 3) {
+                this.a = false;
+                final int i12 = 1;
+                AndroidUtilities.runOnUIThread(new Runnable(this) { // from class: ai.hc
+                    public final /* synthetic */ ic b;
+
+                    {
+                        this.b = this;
+                    }
+
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i12) {
+                            case 0:
+                                f6 t10 = this.b.b.t();
+                                if (t10 != null) {
+                                    d6 d6Var = t10.O1;
+                                    if (d6Var.a != null) {
+                                        StringBuilder sb2 = new StringBuilder("StoryViewer displayed story buffering dialogId=");
+                                        sb2.append(t10.getCurrentPeer());
+                                        sb2.append(" storyId=");
+                                        hg.k0.p(d6Var.a.id, sb2);
+                                        break;
+                                    }
+                                }
+                                break;
+                            default:
+                                f6 t11 = this.b.b.t();
+                                if (t11 != null) {
+                                    d6 d6Var2 = t11.O1;
+                                    if (d6Var2.a != null) {
+                                        StringBuilder sb3 = new StringBuilder("StoryViewer displayed story playing dialogId=");
+                                        sb3.append(t11.getCurrentPeer());
+                                        sb3.append(" storyId=");
+                                        hg.k0.p(d6Var2.a.id, sb3);
+                                        break;
+                                    }
+                                }
+                                break;
+                        }
+                    }
+                });
+            }
+        }
+    }
+}

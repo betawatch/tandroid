@@ -3,11 +3,11 @@ package org.telegram.ui.Cells;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.view.MotionEvent;
-import org.telegram.ui.Components.bc0;
+import org.telegram.ui.Components.ac0;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class m6 extends org.telegram.ui.Components.x9 {
+public final class m6 extends org.telegram.ui.Components.u9 {
     public final /* synthetic */ int G;
     public final /* synthetic */ n6 H;
 
@@ -18,16 +18,16 @@ public final class m6 extends org.telegram.ui.Components.x9 {
         this.G = i10;
     }
 
-    @Override // org.telegram.ui.Components.x9, android.view.View
+    @Override // org.telegram.ui.Components.u9, android.view.View
     public final void onDraw(Canvas canvas) {
         n6 n6Var = this.H;
         l6 l6Var = n6Var.y;
-        bc0 bc0Var = n6.G;
+        ac0 ac0Var = n6.G;
         if (this.G != 1) {
             super.onDraw(canvas);
         } else {
             l6Var.F.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
-            bi.p9.h(n6Var.x, canvas, getImageReceiver(), l6Var);
+            ai.ia.h(n6Var.x, canvas, getImageReceiver(), l6Var);
         }
     }
 

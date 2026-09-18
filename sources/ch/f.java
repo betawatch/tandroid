@@ -1,0 +1,23 @@
+package ch;
+
+import android.graphics.Canvas;
+
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* loaded from: classes3.dex */
+public final class f extends d {
+    public final fh.a G;
+
+    public f(fh.a aVar) {
+        this.G = aVar;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        c(canvas, this.G);
+    }
+
+    @Override // ch.d
+    public final fh.a i() {
+        return this.G;
+    }
+}

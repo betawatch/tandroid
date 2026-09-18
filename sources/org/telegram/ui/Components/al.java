@@ -6,9 +6,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class al extends hg.u0 {
+public final class al extends gg.u0 {
     public final /* synthetic */ gl N;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -21,9 +21,9 @@ public final class al extends hg.u0 {
     public final void l() {
         gl glVar = this.N;
         al alVar = glVar.R;
-        org.telegram.ui.ActionBar.v0 v0Var = glVar.E;
-        if (v0Var != null) {
-            v0Var.setShowSearchProgress(alVar.J);
+        org.telegram.ui.ActionBar.w0 w0Var = glVar.E;
+        if (w0Var != null) {
+            w0Var.setShowSearchProgress(alVar.J);
         }
         TextView textView = glVar.y;
         if (textView != null) {

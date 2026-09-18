@@ -5,7 +5,7 @@ import android.view.View;
 import android.view.accessibility.AccessibilityEvent;
 import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class e1 extends r0.b {
     public final RecyclerView d;
@@ -18,14 +18,14 @@ public final class e1 extends r0.b {
     @Override // r0.b
     public final void b(View view, AccessibilityEvent accessibilityEvent) {
         super.b(view, accessibilityEvent);
-        if (!(view instanceof RecyclerView) || this.d.Z()) {
+        if (!(view instanceof RecyclerView) || this.d.a0()) {
             return;
         }
         RecyclerView recyclerView = (RecyclerView) view;
         if (recyclerView.getLayoutManager() != null) {
             c0 c0Var = (c0) recyclerView.getLayoutManager();
             RecyclerView recyclerView2 = c0Var.b;
-            pf.e eVar = recyclerView2.b;
+            of.e eVar = recyclerView2.b;
             if (accessibilityEvent != null) {
                 boolean z10 = true;
                 if (!recyclerView2.canScrollVertically(1) && !c0Var.b.canScrollVertically(-1) && !c0Var.b.canScrollHorizontally(-1) && !c0Var.b.canScrollHorizontally(1)) {
@@ -48,7 +48,7 @@ public final class e1 extends r0.b {
     public final void c(View view, s0.c cVar) {
         this.a.onInitializeAccessibilityNodeInfo(view, cVar.a);
         RecyclerView recyclerView = this.d;
-        if (recyclerView.Z() || recyclerView.getLayoutManager() == null) {
+        if (recyclerView.a0() || recyclerView.getLayoutManager() == null) {
             return;
         }
         o0 layoutManager = recyclerView.getLayoutManager();
@@ -68,23 +68,23 @@ public final class e1 extends r0.b {
             return true;
         }
         RecyclerView recyclerView = this.d;
-        if (!recyclerView.Z() && recyclerView.getLayoutManager() != null) {
+        if (!recyclerView.a0() && recyclerView.getLayoutManager() != null) {
             o0 layoutManager = recyclerView.getLayoutManager();
             RecyclerView recyclerView2 = layoutManager.b;
-            pf.e eVar = recyclerView2.b;
+            of.e eVar = recyclerView2.b;
             if (i10 == 4096) {
                 F = recyclerView2.canScrollVertically(1) ? (layoutManager.n - layoutManager.F()) - layoutManager.C() : 0;
                 if (layoutManager.b.canScrollHorizontally(1)) {
                     D = (layoutManager.m - layoutManager.D()) - layoutManager.E();
                     if (F == 0) {
                     }
-                    layoutManager.b.v0(D, F, null);
+                    layoutManager.b.w0(D, F, null);
                     return true;
                 }
                 D = 0;
                 if (F == 0) {
                 }
-                layoutManager.b.v0(D, F, null);
+                layoutManager.b.w0(D, F, null);
                 return true;
             }
             if (i10 != 8192) {
@@ -98,7 +98,7 @@ public final class e1 extends r0.b {
                 D = 0;
             }
             if (F == 0 || D != 0) {
-                layoutManager.b.v0(D, F, null);
+                layoutManager.b.w0(D, F, null);
                 return true;
             }
         }

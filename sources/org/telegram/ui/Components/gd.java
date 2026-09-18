@@ -1,205 +1,425 @@
 package org.telegram.ui.Components;
 
-import android.R;
-import android.content.res.ColorStateList;
 import android.graphics.Canvas;
-import android.graphics.CornerPathEffect;
-import android.graphics.Paint;
+import android.graphics.ColorFilter;
 import android.graphics.Path;
-import android.graphics.RectF;
-import android.util.StateSet;
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.ViewConfiguration;
-import java.util.ArrayList;
+import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
+import android.os.SystemClock;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.LiteMode;
+import org.telegram.messenger.voip.VoIPService;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class gd {
-    public static final int[] p = {R.attr.state_enabled, R.attr.state_pressed};
-    public tq a;
-    public final ArrayList b = new ArrayList();
-    public int c;
-    public boolean d;
-    public final org.telegram.ui.Cells.z e;
-    public final View f;
-    public final Paint g;
-    public Runnable h;
-    public boolean i;
-    public Runnable j;
-    public final org.telegram.ui.Cells.l7 k;
-    public boolean l;
-    public final CornerPathEffect m;
-    public boolean n;
-    public final Paint o;
+public final class gd extends Drawable {
+    public static final ed H = new ed(0);
+    public int B;
+    public int C;
+    public int D;
+    public float h;
+    public float i;
+    public float j;
+    public float k;
+    public float l;
+    public float m;
+    public float n;
+    public float o;
+    public float p;
+    public final fd q;
+    public final fd r;
+    public float s;
+    public long t;
+    public boolean u;
+    public float v;
+    public float w;
+    public float x;
+    public final float a = AndroidUtilities.dp(18.0f);
+    public final float b = AndroidUtilities.dp(22.0f);
+    public final float c = 2.4f;
+    public final float d = AndroidUtilities.dp(12.0f);
+    public final float e = AndroidUtilities.dp(1.5f);
+    public final float f = 3600.0f;
+    public final float g = 0.25f;
+    public final Path y = new Path();
+    public final float[] z = new float[4];
+    public int A = -1;
+    public float E = 1.0f;
+    public final ng F = new ng(this, 16);
+    public int G = 255;
 
-    public gd(View view) {
-        Paint paint = new Paint(1);
-        this.g = paint;
-        this.k = new org.telegram.ui.Cells.l7(this, 5);
-        float dp = AndroidUtilities.dp(12.0f);
-        this.f = view;
-        CornerPathEffect cornerPathEffect = new CornerPathEffect(dp);
-        this.m = cornerPathEffect;
-        paint.setPathEffect(cornerPathEffect);
-        Paint paint2 = new Paint(1);
-        this.o = paint2;
-        paint2.setFilterBitmap(true);
-        paint2.setPathEffect(new CornerPathEffect(AndroidUtilities.dp(12.0f)));
-        paint2.setColor(-1);
-        Paint paint3 = new Paint(1);
-        paint3.setFilterBitmap(true);
-        paint3.setColor(-1);
-        org.telegram.ui.Cells.z zVar = new org.telegram.ui.Cells.z(new ColorStateList(new int[][]{StateSet.WILD_CARD}, new int[]{org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.i6, false) & 436207615}), null, new fd(this, paint3));
-        this.e = zVar;
-        zVar.setCallback(view);
+    public gd() {
+        fd fdVar = new fd();
+        this.q = fdVar;
+        fdVar.a = 1.0f;
+        fdVar.b = 0.0f;
+        fdVar.c = AndroidUtilities.dp(0.5f);
+        fdVar.d = AndroidUtilities.dp(8.5f);
+        fdVar.e = 1.0f;
+        fdVar.f = 1.0f;
+        fdVar.g = 61;
+        fd fdVar2 = new fd();
+        this.r = fdVar2;
+        fdVar2.a = 0.82f;
+        fdVar2.b = 0.6f;
+        fdVar2.c = AndroidUtilities.dp(0.0f);
+        fdVar2.d = AndroidUtilities.dp(4.25f);
+        fdVar2.e = 0.55f;
+        fdVar2.f = 0.55f;
+        fdVar2.g = 128;
+        e(0, false);
     }
 
-    public final void a(RectF rectF) {
-        int i10 = this.c + 1;
-        this.c = i10;
-        ArrayList arrayList = this.b;
-        if (i10 > arrayList.size()) {
-            arrayList.add(new RectF());
-        }
-        ((RectF) arrayList.get(this.c - 1)).set(rectF);
+    public final void a(float f7, float f10, float f11, float[] fArr) {
+        double d = f11;
+        float cos = (float) Math.cos(d);
+        float sin = (float) Math.sin(d);
+        float f12 = this.j;
+        fArr[0] = (f12 * cos) + f7;
+        fArr[1] = (f12 * sin) + f10;
+        fArr[2] = -sin;
+        fArr[3] = cos;
     }
 
-    public final boolean b(MotionEvent motionEvent) {
-        Runnable runnable;
-        int x10 = (int) motionEvent.getX();
-        int y3 = (int) motionEvent.getY();
-        int action = motionEvent.getAction();
-        View view = this.f;
-        org.telegram.ui.Cells.l7 l7Var = this.k;
-        org.telegram.ui.Cells.z zVar = this.e;
-        if (action == 0) {
-            for (int i10 = 0; i10 < this.c; i10++) {
-                float f7 = x10;
-                float f10 = y3;
-                if (((RectF) this.b.get(i10)).contains(f7, f10)) {
-                    this.d = true;
-                    if (zVar != null) {
-                        zVar.setHotspot(f7, f10);
-                        zVar.setState(p);
-                    }
-                    AndroidUtilities.cancelRunOnUIThread(l7Var);
-                    if (this.l) {
-                        AndroidUtilities.runOnUIThread(l7Var, ViewConfiguration.getLongPressTimeout());
-                    }
-                    view.invalidate();
-                    return true;
-                }
-            }
-        } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-            if (this.d) {
-                if (motionEvent.getAction() == 1 && (runnable = this.h) != null) {
-                    runnable.run();
-                }
-                view.playSoundEffect(0);
-                if (zVar != null) {
-                    zVar.setState(StateSet.NOTHING);
-                }
-                this.d = false;
-                view.invalidate();
-            }
-            AndroidUtilities.cancelRunOnUIThread(l7Var);
-        } else if (motionEvent.getAction() == 2 && this.d && zVar != null) {
-            zVar.setHotspot(x10, y3);
-        }
-        return this.d;
-    }
-
-    public final void c(Canvas canvas, Paint paint) {
-        int i10 = this.c;
-        CornerPathEffect cornerPathEffect = this.m;
-        org.telegram.ui.Cells.z zVar = this.e;
-        int i11 = 0;
-        ArrayList arrayList = this.b;
-        if (i10 <= 1) {
-            if (i10 == 1) {
-                if (zVar != null) {
-                    zVar.setBounds((int) ((RectF) arrayList.get(0)).left, (int) ((RectF) arrayList.get(0)).top, (int) ((RectF) arrayList.get(0)).right, (int) ((RectF) arrayList.get(0)).bottom);
-                }
-                if (!this.n) {
-                    paint.setPathEffect(cornerPathEffect);
-                    canvas.drawRoundRect((RectF) arrayList.get(0), 0.0f, 0.0f, paint);
-                    return;
-                } else {
-                    paint.setPathEffect(null);
-                    float min = Math.min(((RectF) arrayList.get(0)).width(), ((RectF) arrayList.get(0)).height()) / 2.0f;
-                    canvas.drawRoundRect((RectF) arrayList.get(0), min, min, paint);
-                    return;
-                }
-            }
+    public final void b(Canvas canvas, fd fdVar, float f7, float f10, float f11) {
+        char c10;
+        char c11;
+        int i10 = fdVar.x;
+        if (i10 == 0) {
             return;
         }
-        if (!this.i) {
-            tq tqVar = this.a;
-            if (tqVar == null) {
-                this.a = new tq(0);
-            } else {
-                tqVar.rewind();
-            }
+        float f12 = fdVar.c;
+        float f13 = fdVar.d - f12;
+        float f14 = this.v;
+        float f15 = (f13 * f14) + f12;
+        float B = com.google.android.gms.internal.vision.e2.B(f14, 1.0f, 0.0f, this.d * fdVar.e);
+        float[] fArr = fdVar.u;
+        float[] fArr2 = fdVar.v;
+        float[] fArr3 = fdVar.w;
+        char c12 = 0;
+        for (int i11 = 0; i11 < i10; i11++) {
+            float interpolation = H.getInterpolation(fdVar.o[i11]);
+            float f16 = 1.0f - interpolation;
+            fArr[i11] = (fdVar.l[i11] * interpolation) + (fdVar.k[i11] * f16);
+            fArr3[i11] = (fdVar.n[i11] * interpolation) + (fdVar.m[i11] * f16);
+        }
+        float f17 = this.g;
+        char c13 = 2;
+        if (f17 > 0.0f) {
             int i12 = 0;
-            int i13 = 0;
-            int i14 = 0;
-            int i15 = 0;
-            while (true) {
-                int i16 = this.c;
-                if (i11 >= i16) {
-                    break;
+            while (i12 < 2) {
+                int i13 = 0;
+                while (i13 < i10) {
+                    int i14 = i13 + 1;
+                    float f18 = (fArr[i13 == 0 ? i10 - 1 : i13 - 1] + fArr[i14 == i10 ? 0 : i14]) * 0.5f;
+                    float f19 = fArr[i13];
+                    fArr2[i13] = com.google.android.gms.internal.vision.e2.z(f18, f19, f17, f19);
+                    i13 = i14;
                 }
-                int i17 = i11 + 1;
-                if (i17 < i16) {
-                    float f7 = ((RectF) arrayList.get(i11)).right;
-                    float f10 = ((RectF) arrayList.get(i17)).right;
-                    if (Math.abs(f7 - f10) < AndroidUtilities.dp(4.0f)) {
-                        RectF rectF = (RectF) arrayList.get(i17);
-                        RectF rectF2 = (RectF) arrayList.get(i11);
-                        float max = Math.max(f7, f10);
-                        rectF2.right = max;
-                        rectF.right = max;
+                i12++;
+                float[] fArr4 = fArr2;
+                fArr2 = fArr;
+                fArr = fArr4;
+            }
+        }
+        int i15 = 0;
+        while (i15 < i10) {
+            float f20 = (i15 / i10) + fArr3[i15];
+            float floor = (f20 - ((float) Math.floor(f20))) * this.p;
+            float f21 = this.m;
+            float[] fArr5 = this.z;
+            if (floor < f21) {
+                fArr5[c12] = (-this.k) + floor;
+                fArr5[1] = -this.i;
+                fArr5[c13] = 1.0f;
+                fArr5[3] = 0.0f;
+                c10 = 0;
+                c11 = 2;
+            } else {
+                float f22 = floor - f21;
+                float f23 = this.o;
+                c10 = 0;
+                float f24 = this.c;
+                if (f22 < f23) {
+                    c11 = 2;
+                    a(this.k, -this.l, (f22 / (f24 * this.j)) - 1.5707964f, fArr5);
+                } else {
+                    c11 = 2;
+                    float f25 = f22 - f23;
+                    float f26 = this.n;
+                    if (f25 < f26) {
+                        fArr5[0] = this.h;
+                        fArr5[1] = (-this.l) + f25;
+                        fArr5[2] = 0.0f;
+                        fArr5[3] = 1.0f;
+                    } else {
+                        float f27 = f25 - f26;
+                        if (f27 < f23) {
+                            a(this.k, this.l, f27 / (f24 * this.j), fArr5);
+                        } else {
+                            float f28 = f27 - f23;
+                            if (f28 < f21) {
+                                fArr5[0] = this.k - f28;
+                                fArr5[1] = this.i;
+                                fArr5[2] = -1.0f;
+                                fArr5[3] = 0.0f;
+                            } else {
+                                float f29 = f28 - f21;
+                                if (f29 < f23) {
+                                    a(-this.k, this.l, (f29 / (f24 * this.j)) + 1.5707964f, fArr5);
+                                } else {
+                                    float f30 = f29 - f23;
+                                    if (f30 < f26) {
+                                        fArr5[0] = -this.h;
+                                        fArr5[1] = this.l - f30;
+                                        fArr5[2] = 0.0f;
+                                        fArr5[3] = -1.0f;
+                                    } else {
+                                        a(-this.k, -this.l, ((f30 - f26) / (f24 * this.j)) + 3.1415927f, fArr5);
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
-                if (i11 == 0 || ((RectF) arrayList.get(i11)).bottom > i12) {
-                    i12 = (int) ((RectF) arrayList.get(i11)).bottom;
-                }
-                if (i11 == 0 || ((RectF) arrayList.get(i11)).right > i13) {
-                    i13 = (int) ((RectF) arrayList.get(i11)).right;
-                }
-                if (i11 == 0 || ((RectF) arrayList.get(i11)).left < i14) {
-                    i14 = (int) ((RectF) arrayList.get(i11)).left;
-                }
-                if (i11 == 0 || ((RectF) arrayList.get(i11)).top < i15) {
-                    i15 = (int) ((RectF) arrayList.get(i11)).top;
-                }
-                this.a.addRect((RectF) arrayList.get(i11), Path.Direction.CCW);
-                if (zVar != null) {
-                    zVar.setBounds(i14, i15, i13, i12);
-                }
-                i11 = i17;
             }
-            this.a.a();
-            this.i = true;
+            float f31 = fArr5[3];
+            float f32 = -fArr5[c11];
+            float f33 = (fArr[i15] * B) + f15 + f11;
+            fdVar.q[i15] = (f31 * f33) + f7 + fArr5[c10];
+            fdVar.r[i15] = (f32 * f33) + f10 + fArr5[1];
+            fdVar.s[i15] = fArr5[c11];
+            fdVar.t[i15] = fArr5[3];
+            i15++;
+            c12 = 0;
+            c13 = 2;
         }
-        paint.setPathEffect(cornerPathEffect);
-        tq tqVar2 = this.a;
-        if (tqVar2 != null) {
-            canvas.drawPath(tqVar2, paint);
+        Path path = this.y;
+        path.rewind();
+        path.moveTo(fdVar.q[0], fdVar.r[0]);
+        int i16 = 0;
+        while (i16 < i10) {
+            int i17 = i16 + 1;
+            int i18 = i17 < i10 ? i17 : 0;
+            float[] fArr6 = fdVar.q;
+            float f34 = fArr6[i18] - fArr6[i16];
+            float[] fArr7 = fdVar.r;
+            float f35 = fArr7[i18] - fArr7[i16];
+            float sqrt = ((float) Math.sqrt((f35 * f35) + (f34 * f34))) / 3.0f;
+            float[] fArr8 = fdVar.q;
+            float f36 = fArr8[i16];
+            float[] fArr9 = fdVar.s;
+            float f37 = (fArr9[i16] * sqrt) + f36;
+            float[] fArr10 = fdVar.r;
+            float f38 = fArr10[i16];
+            float[] fArr11 = fdVar.t;
+            float f39 = (fArr11[i16] * sqrt) + f38;
+            float f40 = fArr8[i18];
+            float f41 = f40 - (fArr9[i18] * sqrt);
+            float f42 = fArr10[i18];
+            path.cubicTo(f37, f39, f41, f42 - (fArr11[i18] * sqrt), f40, f42);
+            i16 = i17;
+        }
+        path.close();
+        canvas.drawPath(path, fdVar.i);
+    }
+
+    public final float c() {
+        fd fdVar = this.q;
+        float f7 = fdVar.d;
+        float f10 = fdVar.f;
+        float f11 = this.e;
+        float f12 = (f10 * f11) + f7;
+        float f13 = fdVar.e;
+        float f14 = this.d;
+        float f15 = (f13 * f14) + f12;
+        fd fdVar2 = this.r;
+        return Math.max(f15, (f14 * fdVar2.e) + (f11 * fdVar2.f) + fdVar2.d);
+    }
+
+    public final void d(float f7) {
+        this.w = f7;
+        if (LiteMode.isEnabled(512)) {
+            float f10 = this.w - this.v;
+            this.x = f10 / (((f10 > 0.0f ? 400.0f : 500.0f) * 0.55f) + 100.0f);
         }
     }
 
-    public final void d(int i10) {
-        this.g.setColor(i10);
-        org.telegram.ui.Cells.z zVar = this.e;
-        if (zVar != null) {
-            org.telegram.ui.ActionBar.j6.B1(zVar, i10, true);
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        Rect bounds = getBounds();
+        if (bounds.isEmpty() || this.h < 1.0f) {
+            return;
+        }
+        long elapsedRealtime = SystemClock.elapsedRealtime();
+        long min = (this.u || this.E < 1.0f) ? Math.min(40L, Math.max(0L, elapsedRealtime - this.t)) : 0L;
+        this.t = elapsedRealtime;
+        boolean isEnabled = LiteMode.isEnabled(512);
+        fd fdVar = this.r;
+        fd fdVar2 = this.q;
+        if (isEnabled && min > 0) {
+            float f7 = this.w;
+            float f10 = this.v;
+            if (f7 != f10) {
+                float f11 = this.x;
+                float f12 = (min * f11) + f10;
+                this.v = f12;
+                if (f11 > 0.0f) {
+                    if (f12 > f7) {
+                        this.v = f7;
+                    }
+                } else if (f12 < f7) {
+                    this.v = f7;
+                }
+            }
+            this.s = a4.a.e(min, this.f, 6.2831855f, this.s);
+            fdVar2.d(this.v);
+            fdVar.d(this.v);
+        }
+        float f13 = this.E;
+        if (f13 < 1.0f && min > 0) {
+            float f14 = (min / 250.0f) + f13;
+            this.E = f14;
+            if (f14 > 1.0f) {
+                this.E = 1.0f;
+            }
+            int d = i0.a.d(this.E, this.C, this.D);
+            this.B = d;
+            fdVar2.h = d;
+            fdVar.h = d;
+            fdVar2.a();
+            fdVar.a();
+        }
+        float exactCenterX = bounds.exactCenterX();
+        float exactCenterY = bounds.exactCenterY();
+        float f15 = 1.0f - (this.v * 0.7f);
+        float f16 = fdVar2.f;
+        float f17 = this.e;
+        float B = com.google.android.gms.internal.vision.e2.B((float) Math.sin(this.s), 0.5f, 0.5f, f16 * f17 * f15);
+        float B2 = com.google.android.gms.internal.vision.e2.B((float) Math.sin(this.s + fdVar.b), 0.5f, 0.5f, f17 * fdVar.f * f15);
+        b(canvas, this.q, exactCenterX, exactCenterY, B);
+        b(canvas, this.r, exactCenterX, exactCenterY, B2);
+        if (this.E < 1.0f) {
+            invalidateSelf();
         }
     }
 
-    public final void e(org.telegram.ui.Cells.h2 h2Var) {
-        this.h = h2Var;
+    public final void e(int i10, boolean z10) {
+        if (i10 != this.A || this.E < 1.0f) {
+            this.A = i10;
+            int w02 = i10 != 0 ? i10 != 1 ? i10 != 3 ? org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.bh, false) : i0.a.d(0.5f, i0.a.d(0.5f, org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.ih, false), org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.jh, false)), org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.kh, false)) : i0.a.d(0.5f, org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Zg, false), org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.ah, false)) : i0.a.d(0.5f, org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Xg, false), org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Yg, false));
+            if (z10 && this.B != 0 && LiteMode.isEnabled(512)) {
+                this.C = this.B;
+                this.D = w02;
+                this.E = 0.0f;
+            } else {
+                this.E = 1.0f;
+                this.B = w02;
+                fd fdVar = this.q;
+                fdVar.h = w02;
+                fd fdVar2 = this.r;
+                fdVar2.h = w02;
+                fdVar.a();
+                fdVar2.a();
+            }
+            invalidateSelf();
+        }
+    }
+
+    public final void f(boolean z10) {
+        VoIPService sharedInstance = VoIPService.getSharedInstance();
+        if (sharedInstance == null) {
+            return;
+        }
+        int callState = sharedInstance.getCallState();
+        if (!sharedInstance.isSwitchingStream() && (callState == 1 || callState == 2 || callState == 6 || callState == 5)) {
+            e(2, z10);
+            return;
+        }
+        ChatObject.Call call = sharedInstance.groupCall;
+        if (call == null) {
+            e(sharedInstance.isMicMute() ? 1 : 0, z10);
+            return;
+        }
+        TLRPC.GroupCallParticipant groupCallParticipant = (TLRPC.GroupCallParticipant) call.participants.f(sharedInstance.getSelfId());
+        if ((groupCallParticipant == null || groupCallParticipant.can_self_unmute || !groupCallParticipant.muted || ChatObject.canManageCalls(sharedInstance.getChat())) && !sharedInstance.groupCall.call.rtmp_stream) {
+            e(sharedInstance.isMicMute() ? 1 : 0, z10);
+        } else {
+            sharedInstance.setMicMute(true, false, false);
+            e(3, z10);
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getAlpha() {
+        return this.G;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -3;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void onBoundsChange(Rect rect) {
+        super.onBoundsChange(rect);
+        if (getBounds().isEmpty()) {
+            return;
+        }
+        float c10 = c() + AndroidUtilities.dp(1.0f);
+        float min = (Math.min(r6.width(), r6.height()) / 2.0f) - AndroidUtilities.dp(2.0f);
+        if (c10 > min) {
+            c10 = Math.max(0.0f, min);
+        }
+        this.h = (r6.width() / 2.0f) - c10;
+        float height = (r6.height() / 2.0f) - c10;
+        this.i = height;
+        float f7 = this.h;
+        if (f7 < 1.0f || height < 1.0f) {
+            return;
+        }
+        float min2 = Math.min(this.a, Math.min(f7, height));
+        this.j = min2;
+        float f10 = this.h - min2;
+        this.k = f10;
+        float f11 = this.i - min2;
+        this.l = f11;
+        float f12 = f10 * 2.0f;
+        this.m = f12;
+        float f13 = f11 * 2.0f;
+        this.n = f13;
+        float f14 = this.c * 1.5707964f * min2;
+        this.o = f14;
+        float f15 = (f13 * 2.0f) + (f12 * 2.0f);
+        this.p = (f14 * 4.0f) + f15;
+        int max = Math.max(12, Math.min(80, Math.round(((min2 * 6.2831855f) + f15) / this.b)));
+        fd fdVar = this.q;
+        if (max != fdVar.x) {
+            fdVar.c(max);
+            this.r.c(max);
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        if (this.G != i10) {
+            this.G = i10;
+            fd fdVar = this.q;
+            fdVar.y = i10;
+            fdVar.a();
+            fd fdVar2 = this.r;
+            fdVar2.y = i10;
+            fdVar2.a();
+            invalidateSelf();
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        this.q.i.setColorFilter(colorFilter);
+        this.r.i.setColorFilter(colorFilter);
+        invalidateSelf();
     }
 }

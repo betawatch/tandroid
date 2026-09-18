@@ -5,11 +5,11 @@ import m.d2;
 import m.z2;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.d11;
-import org.telegram.ui.f01;
+import org.telegram.ui.e11;
+import org.telegram.ui.g01;
 import z4.g;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class a extends DataSetObserver {
     public final /* synthetic */ int a;
@@ -31,25 +31,25 @@ public final class a extends DataSetObserver {
             case 1:
                 d2 d2Var = (d2) this.b;
                 if (d2Var.O.isShowing()) {
-                    d2Var.g();
+                    d2Var.h();
                     break;
                 }
                 break;
             case 2:
-                d11 d11Var = (d11) this.b;
-                ProfileActivity profileActivity = d11Var.n;
+                e11 e11Var = (e11) this.b;
+                ProfileActivity profileActivity = e11Var.n;
                 int realCount = profileActivity.n0.getRealCount();
                 if (profileActivity.A0 == 0 && realCount > 1 && realCount <= 20 && profileActivity.N.E) {
                     profileActivity.A0 = 1;
                 }
-                d11Var.a(false);
-                d11Var.b(1.0f);
+                e11Var.a(false);
+                e11Var.b(1.0f);
                 if (profileActivity.q0 != null) {
                     if (!profileActivity.T0.t()) {
-                        d11Var.c();
+                        e11Var.c();
                         break;
                     } else {
-                        AndroidUtilities.runOnUIThread(new f01(d11Var, 2), 500L);
+                        AndroidUtilities.runOnUIThread(new g01(e11Var, 2), 500L);
                         break;
                     }
                 }

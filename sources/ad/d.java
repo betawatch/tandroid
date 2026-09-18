@@ -16,7 +16,7 @@ import java.util.Set;
 import m1.j;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class d extends pb.a {
     public static final Set g = DesugarCollections.unmodifiableSet(new HashSet(Arrays.asList("a", "abbr", "acronym", "b", "bdo", "big", "br", "button", "cite", "code", "dfn", "em", "i", "img", "input", "kbd", "label", "map", "object", "q", "samp", "script", "select", "small", "span", "strong", "sub", "sup", "textarea", "time", "tt", "var")));
@@ -35,7 +35,7 @@ public final class d extends pb.a {
     }
 
     public static Map a(i iVar) {
-        cd.c cVar = iVar.v;
+        cd.c cVar = iVar.k;
         int i10 = cVar.a;
         if (i10 <= 0) {
             return Collections.EMPTY_MAP;
@@ -129,7 +129,7 @@ public final class d extends pb.a {
     /* JADX WARN: Code restructure failed: missing block: B:99:0x0173, code lost:
     
         r8.getClass();
-        r8 = qb.b.v2(r6);
+        r8 = qb.b.Y3(r6);
      */
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r17v0, types: [java.lang.Appendable] */
@@ -188,14 +188,14 @@ public final class d extends pb.a {
                             }
                             this.f = false;
                         }
-                        if (set3.contains(str3) || iVar.s) {
+                        if (set3.contains(str3) || iVar.j) {
                             bVar2.getClass();
-                            String v22 = qb.b.v2(bVar3);
-                            if (v22 != null && v22.length() > 0) {
+                            String Y3 = qb.b.Y3(bVar3);
+                            if (Y3 != null && Y3.length() > 0) {
                                 try {
-                                    appendable.append(v22);
-                                } catch (IOException e7) {
-                                    throw new RuntimeException(e7);
+                                    appendable.append(Y3);
+                                } catch (IOException e) {
+                                    throw new RuntimeException(e);
                                 }
                             }
                             int length4 = charSequence.length();
@@ -234,15 +234,15 @@ public final class d extends pb.a {
                         Map a2 = a(iVar);
                         a aVar = this.d;
                         a aVar2 = new a(str4, length7, a2, aVar);
-                        boolean z10 = set3.contains(str4) || iVar.s;
+                        boolean z10 = set3.contains(str4) || iVar.j;
                         if (z10) {
                             bVar2.getClass();
-                            String v23 = qb.b.v2(aVar2);
-                            if (v23 != null && v23.length() > 0) {
+                            String Y32 = qb.b.Y3(aVar2);
+                            if (Y32 != null && Y32.length() > 0) {
                                 try {
-                                    appendable.append(v23);
-                                } catch (IOException e10) {
-                                    throw new RuntimeException(e10);
+                                    appendable.append(Y32);
+                                } catch (IOException e7) {
+                                    throw new RuntimeException(e7);
                                 }
                             }
                             aVar2.b(charSequence4.length());
@@ -278,12 +278,12 @@ public final class d extends pb.a {
                             CharSequence charSequence5 = (CharSequence) appendable;
                             if (bVar.b == charSequence5.length()) {
                                 bVar2.getClass();
-                                String v24 = qb.b.v2(bVar);
-                                if (v24 != null) {
+                                String Y33 = qb.b.Y3(bVar);
+                                if (Y33 != null) {
                                     try {
-                                        appendable.append(v24);
-                                    } catch (IOException e11) {
-                                        throw new RuntimeException(e11);
+                                        appendable.append(Y33);
+                                    } catch (IOException e10) {
+                                        throw new RuntimeException(e10);
                                     }
                                 }
                             }
@@ -304,8 +304,8 @@ public final class d extends pb.a {
                     if (this.e) {
                         try {
                             appendable.append(dVar3.c);
-                        } catch (IOException e12) {
-                            throw new RuntimeException(e12);
+                        } catch (IOException e11) {
+                            throw new RuntimeException(e11);
                         }
                     } else {
                         if (this.f) {
@@ -339,7 +339,7 @@ public final class d extends pb.a {
                         }
                     }
                 }
-                dVar.f();
+                dVar.b();
             } else {
                 lVar.c.d(lVar, lVar.a);
             }

@@ -7,15 +7,16 @@ import android.os.IBinder;
 import android.os.IInterface;
 import android.os.Looper;
 import android.os.Parcel;
+import t7.u;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class b extends Binder implements IInterface {
     public final Handler a;
-    public final /* synthetic */ ob.a b;
+    public final /* synthetic */ u b;
 
-    public b(ob.a aVar) {
-        this.b = aVar;
+    public b(u uVar) {
+        this.b = uVar;
         attachInterface(this, "android.support.customtabs.ICustomTabsCallback");
         this.a = new Handler(Looper.getMainLooper());
     }

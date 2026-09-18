@@ -16,7 +16,7 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.util.List;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class q extends AsyncTask {
     public final Bitmap a;
@@ -116,8 +116,8 @@ public final class q extends AsyncTask {
                             } catch (IOException unused3) {
                                 return null;
                             }
-                        } catch (IOException e7) {
-                            e = e7;
+                        } catch (IOException e) {
+                            e = e;
                             Log.w("MediaRouteCtrlDialog", "Unable to open: " + uri, e);
                             if (bufferedInputStream != null) {
                                 try {
@@ -129,15 +129,15 @@ public final class q extends AsyncTask {
                             if (bitmap == null) {
                             }
                             if (bitmap != null) {
-                                androidx.emoji2.text.p pVar = new androidx.emoji2.text.p(bitmap);
-                                pVar.a = 1;
-                                List list = (List) pVar.b().a;
+                                androidx.emoji2.text.o oVar = new androidx.emoji2.text.o(bitmap);
+                                oVar.a = 1;
+                                List list = (List) oVar.b().a;
                                 this.c = DesugarCollections.unmodifiableList(list).isEmpty() ? 0 : ((q4.d) DesugarCollections.unmodifiableList(list).get(0)).d;
                             }
                             return bitmap;
                         }
-                    } catch (IOException e10) {
-                        e = e10;
+                    } catch (IOException e7) {
+                        e = e7;
                         bufferedInputStream = null;
                     } catch (Throwable th2) {
                         th = th2;
@@ -161,9 +161,9 @@ public final class q extends AsyncTask {
             return null;
         }
         if (bitmap != null && bitmap.getWidth() < bitmap.getHeight()) {
-            androidx.emoji2.text.p pVar2 = new androidx.emoji2.text.p(bitmap);
-            pVar2.a = 1;
-            List list2 = (List) pVar2.b().a;
+            androidx.emoji2.text.o oVar2 = new androidx.emoji2.text.o(bitmap);
+            oVar2.a = 1;
+            List list2 = (List) oVar2.b().a;
             this.c = DesugarCollections.unmodifiableList(list2).isEmpty() ? 0 : ((q4.d) DesugarCollections.unmodifiableList(list2).get(0)).d;
         }
         return bitmap;

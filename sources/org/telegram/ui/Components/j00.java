@@ -9,10 +9,10 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class j00 extends s4.v {
-    public final wp d = new wp(this, 17);
+    public final xp d = new xp(this, 17);
     public final /* synthetic */ k00 e;
 
     public j00(k00 k00Var) {
@@ -77,18 +77,18 @@ public final class j00 extends s4.v {
             e00 e00Var = k00Var.J;
             int i14 = g00Var2.a;
             int i15 = g00Var.a;
-            org.telegram.ui.tw twVar = (org.telegram.ui.tw) e00Var;
+            org.telegram.ui.vw vwVar = (org.telegram.ui.vw) e00Var;
             while (true) {
-                org.telegram.ui.ty[] tyVarArr = twVar.b.e0;
-                if (i10 >= tyVarArr.length) {
+                org.telegram.ui.vy[] vyVarArr = vwVar.b.e0;
+                if (i10 >= vyVarArr.length) {
                     break;
                 }
-                org.telegram.ui.ty tyVar = tyVarArr[i10];
-                int i16 = tyVar.h;
+                org.telegram.ui.vy vyVar = vyVarArr[i10];
+                int i16 = vyVar.h;
                 if (i16 == i14) {
-                    tyVar.h = i15;
+                    vyVar.h = i15;
                 } else if (i16 == i15) {
-                    tyVar.h = i14;
+                    vyVar.h = i14;
                 }
                 i10++;
             }
@@ -122,13 +122,13 @@ public final class j00 extends s4.v {
     public final void p(s4.c1 c1Var, int i10) {
         if (i10 != 0) {
             k00 k00Var = this.e;
-            k00Var.F.I0(false);
+            k00Var.F.J0(false);
             c1Var.a.setPressed(true);
             c1Var.a.setBackgroundColor(org.telegram.ui.ActionBar.j6.v0(k00Var.b0, k00Var.a));
         } else {
-            wp wpVar = this.d;
-            AndroidUtilities.cancelRunOnUIThread(wpVar);
-            AndroidUtilities.runOnUIThread(wpVar, 320L);
+            xp xpVar = this.d;
+            AndroidUtilities.cancelRunOnUIThread(xpVar);
+            AndroidUtilities.runOnUIThread(xpVar, 320L);
         }
         if (c1Var != null) {
             c1Var.a.setTag(R.id.dragging, i10 == 2 ? Boolean.TRUE : null);

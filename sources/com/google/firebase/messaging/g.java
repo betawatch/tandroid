@@ -1,7 +1,6 @@
 package com.google.firebase.messaging;
 
-import a3.j0;
-import ah.i0;
+import a3.k0;
 import android.app.Service;
 import android.content.Intent;
 import android.os.Binder;
@@ -16,7 +15,7 @@ import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public abstract class g extends Service {
     static final long MESSAGE_TIMEOUT_S = 20;
@@ -37,7 +36,7 @@ public abstract class g extends Service {
 
     public final void a(Intent intent) {
         if (intent != null) {
-            b0.b(intent);
+            d0.b(intent);
         }
         synchronized (this.lock) {
             try {
@@ -57,7 +56,7 @@ public abstract class g extends Service {
             return Tasks.forResult(null);
         }
         TaskCompletionSource taskCompletionSource = new TaskCompletionSource();
-        this.executor.execute(new j0(this, intent, taskCompletionSource, 12));
+        this.executor.execute(new k0(this, intent, taskCompletionSource, 21));
         return taskCompletionSource.getTask();
     }
 
@@ -76,7 +75,7 @@ public abstract class g extends Service {
                 Log.d(TAG, "Service received bind request");
             }
             if (this.binder == null) {
-                this.binder = new c0(new a6.m(this, 12));
+                this.binder = new e0(new xa.c(this, 13));
             }
         } catch (Throwable th2) {
             throw th2;
@@ -106,7 +105,7 @@ public abstract class g extends Service {
             a(intent);
             return 2;
         }
-        b10.addOnCompleteListener(new a3.a(2), new i0(7, this, intent));
+        b10.addOnCompleteListener(new a3.b(2), new ah.b(7, this, intent));
         return 3;
     }
 

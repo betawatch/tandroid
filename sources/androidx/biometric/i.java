@@ -5,7 +5,7 @@ import android.os.Build;
 import android.os.Handler;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class i implements androidx.lifecycle.a0 {
     public final /* synthetic */ int a;
@@ -17,7 +17,7 @@ public final class i implements androidx.lifecycle.a0 {
     }
 
     @Override // androidx.lifecycle.a0
-    public final void f0(Object obj) {
+    public final void p0(Object obj) {
         int i10;
         int i11 = this.a;
         p pVar = this.b;
@@ -100,11 +100,11 @@ public final class i implements androidx.lifecycle.a0 {
                 if (((Boolean) obj).booleanValue()) {
                     pVar.N(1);
                     pVar.O();
-                    y yVar = pVar.l0;
-                    if (yVar.x == null) {
-                        yVar.x = new androidx.lifecycle.z();
+                    x xVar = pVar.l0;
+                    if (xVar.x == null) {
+                        xVar.x = new androidx.lifecycle.z();
                     }
-                    y.h(yVar.x, Boolean.FALSE);
+                    x.h(xVar.x, Boolean.FALSE);
                     break;
                 }
                 break;

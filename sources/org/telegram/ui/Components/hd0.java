@@ -1,11 +1,12 @@
 package org.telegram.ui.Components;
 
 import android.animation.ValueAnimator;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class hd0 implements Runnable {
+public final /* synthetic */ class hd0 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
     public final /* synthetic */ sd0 b;
 
@@ -14,26 +15,29 @@ public final /* synthetic */ class hd0 implements Runnable {
         this.b = sd0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        sd0 sd0Var = this.b;
-        switch (i10) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
             case 0:
-                EditTextBoldCursor editTextBoldCursor = sd0Var.r;
-                if (sd0Var.x.getVisibility() != 0 && editTextBoldCursor != null) {
-                    editTextBoldCursor.requestFocus();
-                    AndroidUtilities.showKeyboard(editTextBoldCursor);
-                    break;
-                }
+                sd0 sd0Var = this.b;
+                sd0Var.getClass();
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                sd0Var.P = floatValue;
+                sd0Var.f(floatValue);
+                sd0Var.setAlpha(sd0Var.P);
                 break;
             default:
-                ValueAnimator ofFloat = ValueAnimator.ofFloat(sd0Var.P, 0.0f);
-                ofFloat.addUpdateListener(new id0(sd0Var, 0));
-                ofFloat.addListener(new r80(sd0Var, 3));
-                ofFloat.setDuration(420L);
-                ofFloat.setInterpolator(pr.h);
-                ofFloat.start();
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                sd0 sd0Var2 = this.b;
+                ai.x5 x5Var = sd0Var2.e;
+                x5Var.setScaleX(AndroidUtilities.lerp(0.8f, 1.0f, floatValue2));
+                x5Var.setScaleY(AndroidUtilities.lerp(0.8f, 1.0f, floatValue2));
+                x5Var.setAlpha(AndroidUtilities.lerp(0.0f, 1.0f, floatValue2));
+                TextView textView = sd0Var2.w;
+                textView.setScaleX(AndroidUtilities.lerp(1.0f, 0.9f, floatValue2));
+                textView.setScaleY(AndroidUtilities.lerp(1.0f, 0.9f, floatValue2));
+                textView.setAlpha(AndroidUtilities.lerp(1.0f, 0.0f, floatValue2));
+                sd0Var2.s.setAlpha(AndroidUtilities.lerp(0.0f, 1.0f, floatValue2));
                 break;
         }
     }

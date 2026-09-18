@@ -1,10 +1,11 @@
 package i2;
 
+import ai.s1;
 import android.util.Pair;
-import fi.l3;
+import ei.l3;
 import java.io.IOException;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class c1 implements u2.k0, n2.k {
     public final e1 a;
@@ -19,7 +20,7 @@ public final class c1 implements u2.k0, n2.k {
     public final void a(int i10, u2.f0 f0Var, int i11) {
         Pair l4 = l(i10, f0Var);
         if (l4 != null) {
-            this.b.i.c(new ah.p(this, l4, i11, 13));
+            this.b.i.c(new s1(this, l4, i11, 13));
         }
     }
 
@@ -27,7 +28,7 @@ public final class c1 implements u2.k0, n2.k {
     public final void b(int i10, u2.f0 f0Var, Exception exc) {
         Pair l4 = l(i10, f0Var);
         if (l4 != null) {
-            this.b.i.c(new hg.t(this, l4, exc, 6));
+            this.b.i.c(new gg.t(this, l4, exc, 14));
         }
     }
 

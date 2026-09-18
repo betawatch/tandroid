@@ -1,11 +1,51 @@
 package a5;
 
+import android.content.pm.PackageInfo;
 import android.net.Uri;
 import android.webkit.WebView;
-import b5.h;
+import b5.m;
+import b5.n;
+import b5.o;
+import java.util.Set;
+import java.util.WeakHashMap;
+import k2.v;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
-public interface b {
-    void c(WebView webView, a aVar, Uri uri, boolean z10, h hVar);
+public abstract class b {
+    public static final boolean a;
+    public static final WeakHashMap b;
+
+    static {
+        Uri.parse("*");
+        Uri.parse("");
+        a = true;
+        b = new WeakHashMap();
+    }
+
+    public static void a(WebView webView, String str, Set set, v vVar) {
+        if (!m.c.b()) {
+            throw new UnsupportedOperationException("This method is not supported by the current version of the framework and the current WebView APK");
+        }
+        o c10 = c(webView);
+        c10.a.addWebMessageListener(str, (String[]) set.toArray(new String[0]), new se.a(new a6.m(vVar, 7)));
+    }
+
+    public static PackageInfo b() {
+        return (PackageInfo) Class.forName("android.webkit.WebViewFactory").getMethod("getLoadedPackageInfo", null).invoke(null, null);
+    }
+
+    public static o c(WebView webView) {
+        if (!m.e.b() || !a) {
+            return new o(n.a.createWebView(webView));
+        }
+        WeakHashMap weakHashMap = b;
+        o oVar = (o) weakHashMap.get(webView);
+        if (oVar != null) {
+            return oVar;
+        }
+        o oVar2 = new o(n.a.createWebView(webView));
+        weakHashMap.put(webView, oVar2);
+        return oVar2;
+    }
 }

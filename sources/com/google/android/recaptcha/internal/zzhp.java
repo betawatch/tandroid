@@ -11,7 +11,7 @@ import java.util.zip.GZIPInputStream;
 import kotlin.jvm.internal.i;
 import v7.s7;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class zzhp implements zzhn {
     private final c zza;
@@ -34,20 +34,20 @@ public final class zzhp implements zzhn {
                 zzxn zzxnVar = (zzxn) zza;
                 zzhlVar.zzd();
                 return zzxnVar;
-            } catch (zzcg e7) {
+            } catch (zzcg e) {
                 if (zzhlVar == null) {
-                    throw e7;
+                    throw e;
                 }
-                if (!i.a(e7.zza(), zzcd.zzax)) {
-                    throw e7;
+                if (!i.a(e.zza(), zzcd.zzax)) {
+                    throw e;
                 }
                 try {
                     throw zzcf.zza(zzzj.zzg(zzhlVar.zzb().getErrorStream()).zzi());
-                } catch (Exception e10) {
-                    throw new zzcg(zzce.zzc, zzcd.zzG, e10.getMessage(), null, 8, null);
+                } catch (Exception e7) {
+                    throw new zzcg(zzce.zzc, zzcd.zzG, e7.getMessage(), null, 8, null);
                 }
-            } catch (Exception e11) {
-                throw new zzcg(zzce.zzc, zzcd.zzF, e11.getMessage(), null, 8, null);
+            } catch (Exception e10) {
+                throw new zzcg(zzce.zzc, zzcd.zzF, e10.getMessage(), null, 8, null);
             }
         } finally {
         }

@@ -1,34 +1,64 @@
 package lg;
 
-import android.graphics.Paint;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.j6;
+import android.animation.ValueAnimator;
+import com.google.android.gms.internal.vision.e2;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class h extends f {
-    public final Paint q;
-    public int r;
-    public final f6 s;
+public final /* synthetic */ class h implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ p b;
+    public final /* synthetic */ float c;
+    public final /* synthetic */ float[] d;
+    public final /* synthetic */ float e;
+    public final /* synthetic */ float f;
 
-    public h(kg.a aVar, f6 f6Var) {
-        super(aVar, false, null);
-        Paint paint = new Paint();
-        this.q = paint;
-        this.r = 0;
-        this.s = f6Var;
-        this.c.setStrokeWidth(AndroidUtilities.dpf2(1.0f));
-        Paint paint2 = this.c;
-        Paint.Style style = Paint.Style.STROKE;
-        paint2.setStyle(style);
-        paint.setStyle(style);
-        this.c.setAntiAlias(false);
+    public /* synthetic */ h(p pVar, float f7, float[] fArr, float f10, float f11, int i10) {
+        this.a = i10;
+        this.b = pVar;
+        this.c = f7;
+        this.d = fArr;
+        this.e = f10;
+        this.f = f11;
     }
 
-    @Override // lg.f
-    public final void a() {
-        super.a();
-        this.r = i0.a.d(0.3f, j6.v0(j6.d6, this.s), this.m);
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                p pVar = this.b;
+                pVar.getClass();
+                float z10 = e2.z(this.c, 1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue(), 1.0f);
+                float[] fArr = this.d;
+                float f7 = fArr[0];
+                float f10 = z10 / f7;
+                fArr[0] = f7 * f10;
+                n.g(pVar.L, f10, this.e, this.f);
+                pVar.r(false);
+                break;
+            default:
+                p pVar2 = this.b;
+                pVar2.getClass();
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                float f11 = this.c * floatValue;
+                float[] fArr2 = this.d;
+                float f12 = fArr2[1];
+                float f13 = f11 - f12;
+                fArr2[1] = f12 + f13;
+                float f14 = this.e * floatValue;
+                float f15 = fArr2[2];
+                float f16 = f14 - f15;
+                fArr2[2] = f15 + f16;
+                n nVar = pVar2.L;
+                float f17 = fArr2[0];
+                n.f(nVar, f13 * f17, f16 * f17);
+                float f18 = ((this.f - 1.0f) * floatValue) + 1.0f;
+                float f19 = fArr2[0];
+                float f20 = f18 / f19;
+                fArr2[0] = f19 * f20;
+                n.g(pVar2.L, f20, 0.0f, 0.0f);
+                pVar2.r(false);
+                break;
+        }
     }
 }

@@ -5,23 +5,23 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class l1 extends a {
     public final g2.m h;
     public final g2.g i;
     public final b2.s j;
-    public final rb.a l;
+    public final qb.b l;
     public final h1 n;
     public final b2.k0 o;
     public g2.c0 p;
     public final long k = -9223372036854775807L;
     public final boolean m = true;
 
-    public l1(b2.j0 j0Var, pf.b bVar, rb.a aVar) {
+    public l1(b2.j0 j0Var, of.b bVar, qb.b bVar2) {
         b2.f0 f0Var;
         this.i = bVar;
-        this.l = aVar;
+        this.l = bVar2;
         boolean z10 = true;
         b2.y yVar = new b2.y();
         b2.b0 b0Var = new b2.b0();

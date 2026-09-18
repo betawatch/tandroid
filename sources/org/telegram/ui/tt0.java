@@ -1,55 +1,23 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.media.MediaFormat;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class tt0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ut0 b;
+public final class tt0 implements a3.y {
+    public final /* synthetic */ PhotoViewer a;
 
-    public tt0(ut0 ut0Var, int i10) {
-        this.b = ut0Var;
-        this.a = i10;
+    public tt0(PhotoViewer photoViewer) {
+        this.a = photoViewer;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        if (this.b.b.j8) {
-            PhotoViewer photoViewer = this.b.b;
-            if (photoViewer.r1) {
-                photoViewer.B3();
-            }
-        }
-        if (this.a == 3) {
-            PhotoViewer photoViewer2 = this.b.b;
-            photoViewer2.G2(photoViewer2.P4, false, true, true);
-        }
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationStart(Animator animator) {
-        PhotoViewer photoViewer = this.b.b;
-        photoViewer.P0.setVisibility(0);
-        if (photoViewer.E3()) {
-            photoViewer.n0.setVisibility(0);
-        } else {
-            photoViewer.S0.setVisibility(0);
-        }
-        photoViewer.F.setVisibility(0);
-        if (photoViewer.i2) {
-            qu0 qu0Var = photoViewer.Q1;
-            qu0Var.setVisibility(qu0Var.getTag() != null ? 0 : 4);
-        }
-        if (photoViewer.d2 || photoViewer.e2) {
-            return;
-        }
-        int i10 = photoViewer.c2;
-        if ((i10 == 0 || i10 == 4 || ((i10 == 2 || i10 == 5) && photoViewer.g7.size() > 1)) && !photoViewer.f4) {
-            photoViewer.N0.setVisibility(0);
-            photoViewer.O0.setVisibility(0);
-            photoViewer.s3();
+    @Override // a3.y
+    public final void b(long j3, long j10, b2.s sVar, MediaFormat mediaFormat) {
+        org.telegram.ui.Components.h71 h71Var;
+        PhotoViewer photoViewer = this.a;
+        if (photoViewer.J4 && (h71Var = photoViewer.F2) != null) {
+            AndroidUtilities.runOnUIThread(new pl0(16, this, h71Var));
         }
     }
 }

@@ -1,9 +1,10 @@
 package androidx.lifecycle;
 
+import ai.q4;
 import android.os.Looper;
 import java.util.Map;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public class z {
     public static final Object k = new Object();
@@ -16,12 +17,12 @@ public class z {
     public int g;
     public boolean h;
     public boolean i;
-    public final androidx.activity.i j;
+    public final q4 j;
 
     public z() {
         Object obj = k;
         this.f = obj;
-        this.j = new androidx.activity.i(this, 5);
+        this.j = new q4(this, 8);
         this.e = obj;
         this.g = -1;
     }
@@ -45,7 +46,7 @@ public class z {
                 return;
             }
             yVar.c = i11;
-            yVar.a.f0(this.e);
+            yVar.a.p0(this.e);
         }
     }
 
@@ -111,7 +112,7 @@ public class z {
         tVar.m().a(liveData$LifecycleBoundObserver);
     }
 
-    public final void e(a4.m mVar) {
+    public final void e(a6.m mVar) {
         Object obj;
         a("observeForever");
         x xVar = new x(this, mVar);

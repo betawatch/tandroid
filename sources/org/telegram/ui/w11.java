@@ -13,9 +13,9 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class w11 extends org.telegram.ui.Components.kl0 {
+public final class w11 extends org.telegram.ui.Components.ll0 {
     public final Context c;
     public final /* synthetic */ y11 d;
 
@@ -24,7 +24,7 @@ public final class w11 extends org.telegram.ui.Components.kl0 {
         this.c = context;
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.ll0
     public final boolean D(s4.c1 c1Var) {
         int b10 = c1Var.b();
         y11 y11Var = this.d;
@@ -111,7 +111,7 @@ public final class w11 extends org.telegram.ui.Components.kl0 {
             case 1:
                 org.telegram.ui.Cells.ea eaVar = (org.telegram.ui.Cells.ea) view;
                 String sharedPrefKey = NotificationsController.getSharedPrefKey(j10, j3);
-                i11 = ((org.telegram.ui.ActionBar.n2) y11Var).currentAccount;
+                i11 = ((org.telegram.ui.ActionBar.o2) y11Var).currentAccount;
                 SharedPreferences notificationsSettings = MessagesController.getNotificationsSettings(i11);
                 if (i10 != y11Var.W) {
                     eaVar.setTextColor(y11Var.getThemedColor(org.telegram.ui.ActionBar.j6.G6));
@@ -235,7 +235,7 @@ public final class w11 extends org.telegram.ui.Components.kl0 {
                         long j11 = notificationsSettings.getLong("sound_document_id_" + sharedPrefKey, 0L);
                         if (j11 != 0) {
                             TLRPC.Document c15 = y11Var.getMediaDataController().ringtoneDataStore.c(j11);
-                            string10 = c15 == null ? LocaleController.getString(R.string.CustomSound) : bl0.a0(c15, c15.file_name_fixed);
+                            string10 = c15 == null ? LocaleController.getString(R.string.CustomSound) : al0.a0(c15, c15.file_name_fixed);
                         } else if (string10.equals("NoSound")) {
                             string10 = LocaleController.getString(R.string.NoSound);
                         } else if (string10.equals("Default")) {
@@ -279,7 +279,7 @@ public final class w11 extends org.telegram.ui.Components.kl0 {
             case 3:
                 org.telegram.ui.Cells.y8 y8Var = (org.telegram.ui.Cells.y8) view;
                 String sharedPrefKey2 = NotificationsController.getSharedPrefKey(j10, j3);
-                i12 = ((org.telegram.ui.ActionBar.n2) y11Var).currentAccount;
+                i12 = ((org.telegram.ui.ActionBar.o2) y11Var).currentAccount;
                 SharedPreferences notificationsSettings2 = MessagesController.getNotificationsSettings(i12);
                 StringBuilder sb2 = new StringBuilder("color_");
                 sb2.append(sharedPrefKey2);
@@ -298,7 +298,7 @@ public final class w11 extends org.telegram.ui.Components.kl0 {
                 break;
             case 4:
                 org.telegram.ui.Cells.j6 j6Var = (org.telegram.ui.Cells.j6) view;
-                i13 = ((org.telegram.ui.ActionBar.n2) y11Var).currentAccount;
+                i13 = ((org.telegram.ui.ActionBar.o2) y11Var).currentAccount;
                 SharedPreferences notificationsSettings3 = MessagesController.getNotificationsSettings(i13);
                 int c17 = org.telegram.messenger.w1.c("popup_", NotificationsController.getSharedPrefKey(j10, j3), notificationsSettings3, 0);
                 if (c17 == 0) {
@@ -317,15 +317,15 @@ public final class w11 extends org.telegram.ui.Components.kl0 {
                 }
                 break;
             case 5:
-                org.telegram.ui.Cells.ya yaVar = (org.telegram.ui.Cells.ya) view;
+                org.telegram.ui.Cells.za zaVar = (org.telegram.ui.Cells.za) view;
                 if (DialogObject.isUserDialog(j10)) {
-                    i15 = ((org.telegram.ui.ActionBar.n2) y11Var).currentAccount;
+                    i15 = ((org.telegram.ui.ActionBar.o2) y11Var).currentAccount;
                     chat = MessagesController.getInstance(i15).getUser(Long.valueOf(j10));
                 } else {
-                    i14 = ((org.telegram.ui.ActionBar.n2) y11Var).currentAccount;
+                    i14 = ((org.telegram.ui.ActionBar.o2) y11Var).currentAccount;
                     chat = MessagesController.getInstance(i14).getChat(Long.valueOf(-j10));
                 }
-                yaVar.a(chat, null);
+                zaVar.a(chat, null);
                 break;
             case 6:
                 org.telegram.ui.Cells.a7 a7Var = (org.telegram.ui.Cells.a7) view;
@@ -346,7 +346,7 @@ public final class w11 extends org.telegram.ui.Components.kl0 {
                 break;
             case 7:
                 org.telegram.ui.Cells.w8 w8Var = (org.telegram.ui.Cells.w8) view;
-                i16 = ((org.telegram.ui.ActionBar.n2) y11Var).currentAccount;
+                i16 = ((org.telegram.ui.ActionBar.o2) y11Var).currentAccount;
                 SharedPreferences notificationsSettings4 = MessagesController.getNotificationsSettings(i16);
                 if (i10 != y11Var.y) {
                     if (i10 != y11Var.E) {
@@ -398,7 +398,7 @@ public final class w11 extends org.telegram.ui.Components.kl0 {
                 l4Var.setBackgroundColor(y11Var.getThemedColor(org.telegram.ui.ActionBar.j6.d6));
                 break;
             case 5:
-                l4Var = new org.telegram.ui.Cells.ya(context, f6Var);
+                l4Var = new org.telegram.ui.Cells.za(context, f6Var);
                 l4Var.setBackgroundColor(y11Var.getThemedColor(org.telegram.ui.ActionBar.j6.d6));
                 break;
             case 6:
@@ -409,7 +409,7 @@ public final class w11 extends org.telegram.ui.Components.kl0 {
                 l4Var.setBackgroundColor(y11Var.getThemedColor(org.telegram.ui.ActionBar.j6.d6));
                 break;
         }
-        return com.google.android.gms.internal.vision.e2.l(l4Var, l4Var, -1, -2);
+        return com.google.android.gms.internal.vision.e2.k(l4Var, l4Var, -1, -2);
     }
 
     @Override // s4.h0

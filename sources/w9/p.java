@@ -20,7 +20,7 @@ import y9.o0;
 import y9.p0;
 import y9.u0;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class p {
     public static final HashMap f;
@@ -49,20 +49,20 @@ public final class p {
         this.e = bVar;
     }
 
-    public static p0 c(com.google.firebase.messaging.s sVar, int i10) {
+    public static p0 c(com.google.firebase.messaging.t tVar, int i10) {
         int i11;
-        String str = (String) sVar.c;
-        String str2 = (String) sVar.b;
-        StackTraceElement[] stackTraceElementArr = (StackTraceElement[]) sVar.d;
+        String str = (String) tVar.c;
+        String str2 = (String) tVar.b;
+        StackTraceElement[] stackTraceElementArr = (StackTraceElement[]) tVar.d;
         int i12 = 0;
         if (stackTraceElementArr == null) {
             stackTraceElementArr = new StackTraceElement[0];
         }
-        com.google.firebase.messaging.s sVar2 = (com.google.firebase.messaging.s) sVar.e;
+        com.google.firebase.messaging.t tVar2 = (com.google.firebase.messaging.t) tVar.e;
         if (i10 >= 8) {
-            com.google.firebase.messaging.s sVar3 = sVar2;
-            while (sVar3 != null) {
-                sVar3 = (com.google.firebase.messaging.s) sVar3.e;
+            com.google.firebase.messaging.t tVar3 = tVar2;
+            while (tVar3 != null) {
+                tVar3 = (com.google.firebase.messaging.t) tVar3.e;
                 i12++;
             }
             i11 = i12;
@@ -74,8 +74,8 @@ public final class p {
             throw new NullPointerException("Null frames");
         }
         p0 p0Var = null;
-        if (sVar2 != null && i11 == 0) {
-            p0Var = c(sVar2, i10 + 1);
+        if (tVar2 != null && i11 == 0) {
+            p0Var = c(tVar2, i10 + 1);
         }
         return new p0(str, str2, d, p0Var, i11);
     }
@@ -99,7 +99,7 @@ public final class p {
             cVar.b = str;
             cVar.c = fileName;
             cVar.d = Long.valueOf(j3);
-            arrayList.add(cVar.l());
+            arrayList.add(cVar.p());
         }
         return DesugarCollections.unmodifiableList(arrayList);
     }
@@ -127,8 +127,8 @@ public final class p {
         int i11 = 2;
         try {
             registerReceiver = context.registerReceiver(null, new IntentFilter("android.intent.action.BATTERY_CHANGED"));
-        } catch (IllegalStateException e7) {
-            e = e7;
+        } catch (IllegalStateException e) {
+            e = e;
             z10 = false;
         }
         if (registerReceiver != null) {
@@ -140,8 +140,8 @@ public final class p {
                 if (intExtra2 != -1 && intExtra3 != -1) {
                     f7 = Float.valueOf(intExtra2 / intExtra3);
                 }
-            } catch (IllegalStateException e10) {
-                e = e10;
+            } catch (IllegalStateException e7) {
+                e = e7;
                 Log.e("FirebaseCrashlytics", "An error occurred getting battery state.", e);
                 f7 = null;
                 if (f7 != null) {

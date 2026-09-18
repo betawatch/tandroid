@@ -1,113 +1,220 @@
 package fi;
 
-import android.app.Activity;
-import android.content.DialogInterface;
-import bi.k9;
-import java.util.Iterator;
-import java.util.concurrent.atomic.AtomicBoolean;
-import org.json.JSONObject;
+import android.content.Context;
+import android.text.SpannableStringBuilder;
+import android.view.ViewGroup;
+import android.widget.TextView;
+import ci.id;
+import ci.r9;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.Cells.b6;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.DialogObject;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_communities;
+import org.telegram.ui.ActionBar.c2;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.Components.c5;
+import org.telegram.ui.Components.c90;
+import org.telegram.ui.Components.f61;
+import org.telegram.ui.Components.i9;
+import org.telegram.ui.Components.j51;
+import org.telegram.ui.Components.mc;
+import org.telegram.ui.Components.nc;
+import org.telegram.ui.Components.vc;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class t0 implements DialogInterface.OnDismissListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
+public final class t0 implements gi.e {
+    public final Context a;
+    public final f6 b;
+    public final vc c;
+    public final int d;
+    public final long e;
+    public final TLRPC.Chat f;
+    public s0 h;
+    public r9 i;
+    public String k;
+    public int l;
+    public boolean m;
+    public boolean n;
+    public long o;
+    public int p;
+    public c2 q;
+    public int r;
+    public final a0.i g = new a0.i();
+    public ArrayList j = new ArrayList();
 
-    public /* synthetic */ t0(Object obj, Object obj2, Object obj3, int i10) {
-        this.a = i10;
-        this.c = obj;
-        this.b = obj2;
-        this.d = obj3;
+    public t0(Context context, f6 f6Var, vc vcVar, int i10, long j3) {
+        this.a = context;
+        this.b = f6Var;
+        this.c = vcVar;
+        this.d = i10;
+        this.e = j3;
+        this.f = MessagesController.getInstance(i10).getChat(Long.valueOf(j3));
+        this.o = MessagesController.getMainSettings(i10).getLong(a4.a.o(j3, "community_requests_last_view_time_"), 0L);
     }
 
-    @Override // android.content.DialogInterface.OnDismissListener
-    public final void onDismiss(DialogInterface dialogInterface) {
-        switch (this.a) {
-            case 0:
-                w0 w0Var = (w0) this.c;
-                boolean[] zArr = (boolean[]) this.b;
-                org.telegram.ui.web.s sVar = (org.telegram.ui.web.s) this.d;
-                w0Var.getClass();
-                if (!zArr[0]) {
-                    w0Var.d = true;
-                    w0Var.e = false;
-                    w0Var.l();
-                    Iterator it = w0Var.f.iterator();
-                    while (it.hasNext()) {
-                        ((Runnable) it.next()).run();
-                    }
-                    zArr[0] = true;
-                    sVar.run(Boolean.TRUE, Boolean.FALSE);
-                    break;
+    public final void a() {
+        this.p = 0;
+        ArrayList arrayList = this.j;
+        if (arrayList == null) {
+            return;
+        }
+        int size = arrayList.size();
+        for (int i10 = 0; i10 < size; i10++) {
+            if (!this.g.d(DialogObject.getPeerDialogId(((TL_communities.CommunityPeerRequest) this.j.get(i10)).peer))) {
+                if (r2.date <= this.o) {
+                    return;
+                } else {
+                    this.p++;
                 }
-                break;
-            case 1:
-                boolean[] zArr2 = (boolean[]) this.b;
-                boolean[] zArr3 = (boolean[]) this.c;
-                Utilities.Callback callback = (Utilities.Callback) this.d;
-                if (!zArr2[0] && !zArr3[0]) {
-                    zArr3[0] = true;
-                    callback.run("USER_DECLINED");
-                    break;
-                }
-                break;
-            case 2:
-                EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) this.c;
-                org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) this.b;
-                Activity activity = (Activity) this.d;
-                AndroidUtilities.hideKeyboard(editTextBoldCursor);
-                if (n2Var != null) {
-                    AndroidUtilities.requestAdjustResize(activity, n2Var.getClassGuid());
-                    break;
-                }
-                break;
-            case 3:
-                Utilities.Callback callback2 = (Utilities.Callback) this.c;
-                org.telegram.ui.Components.q3 q3Var = (org.telegram.ui.Components.q3) this.b;
-                org.telegram.ui.Components.s3 s3Var = (org.telegram.ui.Components.s3) this.d;
-                callback2.run(Integer.valueOf(s3Var.getValue() + (q3Var.getValue() * 60)));
-                break;
-            case 4:
-                org.telegram.ui.web.d1 d1Var = (org.telegram.ui.web.d1) this.c;
-                AtomicBoolean atomicBoolean = (AtomicBoolean) this.b;
-                k9 k9Var = (k9) this.d;
-                d1Var.getClass();
-                if (!atomicBoolean.get()) {
-                    d1Var.y(k9Var, "popup_closed", new JSONObject());
-                }
-                d1Var.c0 = null;
-                d1Var.e0 = System.currentTimeMillis();
-                break;
-            case 5:
-                b6 b6Var = (b6) this.c;
-                org.telegram.ui.ActionBar.n2 n2Var2 = (org.telegram.ui.ActionBar.n2) this.b;
-                Activity activity2 = (Activity) this.d;
-                AndroidUtilities.hideKeyboard(b6Var);
-                if (n2Var2 != null) {
-                    AndroidUtilities.requestAdjustResize(activity2, n2Var2.getClassGuid());
-                    break;
-                }
-                break;
-            default:
-                yh.q2 q2Var = (yh.q2) this.c;
-                yh.y1 y1Var = (yh.y1) this.b;
-                Activity activity3 = (Activity) this.d;
-                AndroidUtilities.hideKeyboard(y1Var);
-                AndroidUtilities.requestAdjustResize(activity3, q2Var.a.getClassGuid());
-                break;
+            }
         }
     }
 
-    public /* synthetic */ t0(boolean[] zArr, boolean[] zArr2, Utilities.Callback callback) {
-        this.a = 1;
-        this.b = zArr;
-        this.c = zArr2;
-        this.d = callback;
+    public final void b(f61 f61Var) {
+        if (this.m || this.n || f61Var.X2.N0() + 10 <= f61Var.Y2.x.size()) {
+            return;
+        }
+        d();
+    }
+
+    public final void c(ArrayList arrayList) {
+        ArrayList arrayList2 = this.j;
+        if (arrayList2 == null || arrayList2.isEmpty()) {
+            return;
+        }
+        ArrayList arrayList3 = this.j;
+        if (arrayList3 != null && !arrayList3.isEmpty()) {
+            int size = arrayList3.size();
+            int i10 = 0;
+            while (i10 < size) {
+                TL_communities.CommunityPeerRequest communityPeerRequest = (TL_communities.CommunityPeerRequest) arrayList3.get(i10);
+                long peerDialogId = DialogObject.getPeerDialogId(communityPeerRequest.peer);
+                a0.i iVar = this.g;
+                if (iVar == null || !iVar.d(peerDialogId)) {
+                    TLRPC.User user = MessagesController.getInstance(this.d).getUser(Long.valueOf(communityPeerRequest.requested_by));
+                    boolean z10 = !communityPeerRequest.visible;
+                    boolean z11 = i10 < size + (-1);
+                    int i11 = gi.g.a;
+                    j51 J = j51.J(gi.g.class);
+                    J.G = new gi.f(peerDialogId, user, z10);
+                    J.H = this;
+                    J.j = !z11;
+                    arrayList.add(J);
+                }
+                i10++;
+            }
+        }
+        if (this.n) {
+            return;
+        }
+        arrayList.add(j51.n(29));
+    }
+
+    public final void d() {
+        if (this.m || this.n || !ChatObject.canUserDoAdminAction(this.f, 27)) {
+            return;
+        }
+        this.m = true;
+        MessagesController.getInstance(this.d).fetchCommunityPendingJoinRequests(this.e, this.k, new r0(this, 1));
+    }
+
+    public final void e() {
+        int i10 = this.d;
+        long currentTime = ConnectionsManager.getInstance(i10).getCurrentTime();
+        this.o = currentTime;
+        MessagesController.getMainSettings(i10).edit().putLong("community_requests_last_view_time_" + this.e, currentTime).apply();
+        a();
+    }
+
+    public final void f(boolean z10, boolean z11) {
+        TextView textView;
+        if (this.q == null && this.r == 0) {
+            if (z11) {
+                c2 P = c5.P(this.a, this.b, LocaleController.getString(z10 ? R.string.CommunityAddAllChatsTitle : R.string.CommunityDeclineAllTitle), AndroidUtilities.replaceTags(LocaleController.formatPluralString(z10 ? "CommunityAddAllChatsMessage" : "CommunityDeclineAllMessage", this.l, new Object[0])), LocaleController.getString(z10 ? R.string.Add : R.string.Decline), new bi.f(6, this, z10));
+                P.show();
+                if (z10 || (textView = (TextView) P.d(-1)) == null) {
+                    return;
+                }
+                textView.setTextColor(j6.w0(null, j6.q7, false));
+                return;
+            }
+            r9 r9Var = this.i;
+            if (r9Var != null) {
+                r9Var.run();
+            }
+            this.i = null;
+            c2 c2Var = new c2(this.a, 3, this.b);
+            this.q = c2Var;
+            c2Var.setOnCancelListener(new id(this, 3));
+            this.q.q(500L);
+            this.r = MessagesController.getInstance(this.d).resolveCommunityAllJoinPendingRequests(this.e, !z10, new r0(this, 0));
+        }
+    }
+
+    public final void g(long j3, boolean z10) {
+        int i10;
+        this.g.k(null, j3);
+        this.l--;
+        a();
+        s0 s0Var = this.h;
+        if (s0Var != null) {
+            s0Var.e();
+        }
+        int i11 = z10 ? R.string.CommunityRequestApprovedToast : R.string.CommunityRequestDeclinedToast;
+        int i12 = this.d;
+        SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(LocaleController.formatString(i11, DialogObject.getShortName(i12, j3)));
+        r9 r9Var = this.i;
+        if (r9Var != null) {
+            r9Var.run();
+        }
+        this.i = new r9(this, j3, z10, 1);
+        Context context = this.a;
+        f6 f6Var = this.b;
+        nc ncVar = new nc(context, f6Var, false);
+        TLObject userOrChat = MessagesController.getInstance(i12).getUserOrChat(j3);
+        i9 i9Var = ncVar.a;
+        if (userOrChat != null) {
+            i9Var.setCount(1);
+            i9Var.b(0, userOrChat, UserConfig.selectedAccount);
+            i10 = 1;
+        } else {
+            i10 = 0;
+        }
+        i9Var.setTranslationX(AndroidUtilities.dp(7.0f));
+        i9Var.setScaleX(1.333f);
+        i9Var.setScaleY(1.333f);
+        i9Var.a(false);
+        c90 c90Var = ncVar.b;
+        c90Var.setSingleLine(false);
+        c90Var.setMaxLines(2);
+        c90Var.setTextSize(1, 14.0f);
+        c90Var.setText(replaceTags);
+        if (c90Var.getLayoutParams() instanceof ViewGroup.MarginLayoutParams) {
+            int dp = AndroidUtilities.dp(74 - ((3 - i10) * 12));
+            if (LocaleController.isRTL) {
+                ((ViewGroup.MarginLayoutParams) c90Var.getLayoutParams()).rightMargin = dp;
+            } else {
+                ((ViewGroup.MarginLayoutParams) c90Var.getLayoutParams()).leftMargin = dp;
+            }
+        }
+        if (LocaleController.isRTL) {
+            i9Var.setTranslationX(AndroidUtilities.dp(32 - ((i10 - 1) * 12)));
+        }
+        mc mcVar = new mc(context, f6Var, true, true);
+        mcVar.e(LocaleController.getString(R.string.UndoNoCaps));
+        mcVar.a = new ai.j(this, j3, 9);
+        mcVar.b = this.i;
+        ncVar.setButton(mcVar);
+        this.c.b(ncVar, 5000).j();
     }
 }

@@ -6,7 +6,7 @@ import android.os.Looper;
 import android.os.Message;
 import android.os.RemoteException;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class x extends Handler {
     public boolean a;
@@ -38,63 +38,63 @@ public final class x extends Handler {
     public final void handleMessage(Message message) {
         r rVar;
         int i10;
-        h1 h1Var;
+        i1 i1Var;
         a0 a0Var = this.c;
-        f1 f1Var = a0Var.g;
+        g1 g1Var = a0Var.g;
         if (message.what != 1) {
             throw new IllegalStateException("Invalid message what=" + message.what);
         }
-        h1 c10 = a0Var.s.c(a0Var.t.Q0(), a0Var.t.O0(), a0Var.s.k);
+        i1 c10 = a0Var.s.c(a0Var.t.Q0(), a0Var.t.O0(), a0Var.s.k);
         a0Var.s = c10;
         boolean z10 = this.a;
         boolean z11 = this.b;
-        h1 H0 = f1Var.H0(c10);
-        fg.f fVar = f1Var.b;
-        e9.i0 t10 = fVar.t();
-        for (int i11 = 0; i11 < t10.size(); i11++) {
-            r rVar2 = (r) t10.get(i11);
+        i1 H0 = g1Var.H0(c10);
+        ni.f fVar = g1Var.b;
+        e9.i0 s10 = fVar.s();
+        for (int i11 = 0; i11 < s10.size(); i11++) {
+            r rVar2 = (r) s10.get(i11);
             try {
-                com.google.android.gms.common.api.internal.v y3 = fVar.y(rVar2);
-                if (y3 != null) {
-                    i10 = y3.e();
+                com.google.android.gms.common.api.internal.v x10 = fVar.x(rVar2);
+                if (x10 != null) {
+                    i10 = x10.e();
                 } else if (!a0Var.h(rVar2)) {
                     break;
                 } else {
                     i10 = 0;
                 }
-                h1 x10 = fVar.x(rVar2);
-                if (x10 == null) {
-                    fVar.w(rVar2);
-                    b2.x0 a2 = w7.t.a(fVar.s(rVar2), a0Var.t.t());
+                i1 w10 = fVar.w(rVar2);
+                if (w10 == null) {
+                    fVar.v(rVar2);
+                    b2.x0 a2 = w7.t.a(fVar.r(rVar2), a0Var.t.t());
                     try {
                         q qVar = rVar2.d;
                         e2.d.h(qVar);
-                        if (x10 == null) {
+                        if (w10 == null) {
                             rVar = rVar2;
-                            h1Var = H0;
+                            i1Var = H0;
                         } else {
                             rVar = rVar2;
-                            h1Var = x10;
+                            i1Var = w10;
                         }
                         try {
-                            qVar.g(i10, h1Var, a2, z10, z11);
+                            qVar.g(i10, i1Var, a2, z10, z11);
                         } catch (DeadObjectException unused) {
-                            f1Var.b.N(rVar);
-                        } catch (RemoteException e7) {
-                            e = e7;
+                            g1Var.b.M(rVar);
+                        } catch (RemoteException e) {
+                            e = e;
                             e2.a.o("MediaSessionImpl", "Exception in " + rVar, e);
                         }
                     } catch (DeadObjectException unused2) {
                         rVar = rVar2;
-                    } catch (RemoteException e10) {
-                        e = e10;
+                    } catch (RemoteException e7) {
+                        e = e7;
                         rVar = rVar2;
                     }
                 }
             } catch (DeadObjectException unused3) {
                 rVar = rVar2;
-            } catch (RemoteException e11) {
-                e = e11;
+            } catch (RemoteException e10) {
+                e = e10;
                 rVar = rVar2;
             }
         }

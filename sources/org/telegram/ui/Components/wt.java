@@ -1,51 +1,35 @@
 package org.telegram.ui.Components;
 
-import android.view.ActionMode;
-import android.view.Menu;
-import android.view.MenuItem;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.tl.TL_payments;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class wt implements ActionMode.Callback {
-    public final /* synthetic */ ActionMode.Callback a;
-    public final /* synthetic */ zt b;
+public final /* synthetic */ class wt implements org.telegram.ui.ActionBar.b2 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ Object c;
 
-    public wt(zt ztVar, ActionMode.Callback callback) {
-        this.b = ztVar;
-        this.a = callback;
+    public /* synthetic */ wt(int i10, int i11, org.telegram.ui.ActionBar.o2 o2Var) {
+        this.a = i10;
+        this.b = i11;
+        this.c = o2Var;
     }
 
-    @Override // android.view.ActionMode.Callback
-    public final boolean onActionItemClicked(ActionMode actionMode, MenuItem menuItem) {
-        if (this.b.performMenuAction(menuItem.getItemId())) {
-            actionMode.finish();
-            return true;
-        }
-        try {
-            return this.a.onActionItemClicked(actionMode, menuItem);
-        } catch (Exception unused) {
-            return true;
-        }
+    @Override // org.telegram.ui.ActionBar.b2
+    public void f(org.telegram.ui.ActionBar.c2 c2Var, int i10) {
+        org.telegram.ui.ActionBar.o2 o2Var = (org.telegram.ui.ActionBar.o2) this.c;
+        nf.e g10 = c2Var.g(-1, true, true);
+        g10.d();
+        TL_payments.TL_resolveStarGiftOffer tL_resolveStarGiftOffer = new TL_payments.TL_resolveStarGiftOffer();
+        tL_resolveStarGiftOffer.offer_msg_id = this.a;
+        int i11 = this.b;
+        ConnectionsManager.getInstance(i11).sendRequestTyped(tL_resolveStarGiftOffer, new ei.h1(i11, o2Var, g10, c2Var));
     }
 
-    @Override // android.view.ActionMode.Callback
-    public final boolean onCreateActionMode(ActionMode actionMode, Menu menu) {
-        zt ztVar = this.b;
-        ztVar.copyPasteShowed = true;
-        ztVar.onContextMenuOpen();
-        return this.a.onCreateActionMode(actionMode, menu);
-    }
-
-    @Override // android.view.ActionMode.Callback
-    public final void onDestroyActionMode(ActionMode actionMode) {
-        zt ztVar = this.b;
-        ztVar.copyPasteShowed = false;
-        ztVar.onContextMenuClose();
-        this.a.onDestroyActionMode(actionMode);
-    }
-
-    @Override // android.view.ActionMode.Callback
-    public final boolean onPrepareActionMode(ActionMode actionMode, Menu menu) {
-        return this.a.onPrepareActionMode(actionMode, menu);
+    public /* synthetic */ wt(bu buVar, int i10, int i11) {
+        this.c = buVar;
+        this.a = i10;
+        this.b = i11;
     }
 }

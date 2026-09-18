@@ -1,38 +1,39 @@
 package org.telegram.ui.Components;
 
-import android.os.Bundle;
+import android.graphics.Rect;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class bs0 extends org.telegram.ui.co {
-    public boolean Qc;
-    public final /* synthetic */ int Rc;
-    public final /* synthetic */ xu0 Sc;
+public final class bs0 extends s4.n0 {
+    public final /* synthetic */ vr0 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public bs0(xu0 xu0Var, Bundle bundle, int i10) {
-        super(bundle);
-        this.Sc = xu0Var;
-        this.Rc = i10;
-        this.Qc = true;
+    public bs0(vr0 vr0Var) {
+        this.a = vr0Var;
     }
 
-    @Override // org.telegram.ui.co, org.telegram.ui.ActionBar.n2
-    public final void onTransitionAnimationStart(boolean z10, boolean z11) {
-        xu0 xu0Var = this.Sc;
-        iu0 iu0Var = xu0Var.S;
-        if (this.Qc) {
-            if (this.j0 != null) {
-                la("");
-                this.j0.H(iu0Var.w, false);
-            }
-            org.telegram.ui.yk ykVar = this.o1;
-            if (ykVar != null) {
-                ykVar.e(iu0Var.x, false);
-            }
-            xu0Var.v1.getMediaDataController().portSavedSearchResults(getClassGuid(), iu0Var.x, iu0Var.w, iu0Var.n, iu0Var.h, this.Rc, iu0Var.v, iu0Var.s);
-            this.Qc = false;
+    @Override // s4.n0
+    public final void a(Rect rect, View view, RecyclerView recyclerView, s4.z0 z0Var) {
+        if (!(view instanceof org.telegram.ui.Cells.t7)) {
+            rect.left = 0;
+            rect.top = 0;
+            rect.bottom = 0;
+            rect.right = 0;
+            return;
         }
-        super.onTransitionAnimationStart(z10, z11);
+        org.telegram.ui.Cells.t7 t7Var = (org.telegram.ui.Cells.t7) view;
+        vr0 vr0Var = this.a;
+        vr0Var.r.getClass();
+        int S = RecyclerView.S(t7Var);
+        int i10 = vr0Var.s.J;
+        t7Var.a0 = S < i10;
+        int i11 = S % i10;
+        t7Var.V = i11 == 0;
+        t7Var.W = i11 == i10 - 1;
+        rect.left = 0;
+        rect.top = 0;
+        rect.bottom = 0;
+        rect.right = 0;
     }
 }

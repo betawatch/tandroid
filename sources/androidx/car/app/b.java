@@ -7,9 +7,9 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.Map;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class b implements androidx.car.app.utils.c, androidx.activity.result.b {
+public final /* synthetic */ class b implements androidx.car.app.utils.a, androidx.activity.result.b {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -20,7 +20,7 @@ public final /* synthetic */ class b implements androidx.car.app.utils.c, androi
         this.c = obj2;
     }
 
-    @Override // androidx.car.app.utils.c
+    @Override // androidx.car.app.utils.a
     public Object a() {
         Object lambda$onConfigurationChanged$6;
         Object lambda$onNewIntent$5;
@@ -35,7 +35,7 @@ public final /* synthetic */ class b implements androidx.car.app.utils.c, androi
     }
 
     @Override // androidx.activity.result.b
-    public void j(Object obj) {
+    public void k(Object obj) {
         CarAppPermissionActivity carAppPermissionActivity = (CarAppPermissionActivity) this.b;
         IOnRequestPermissionsListener iOnRequestPermissionsListener = (IOnRequestPermissionsListener) this.c;
         int i10 = CarAppPermissionActivity.J;
@@ -52,8 +52,8 @@ public final /* synthetic */ class b implements androidx.car.app.utils.c, androi
         }
         try {
             iOnRequestPermissionsListener.onRequestPermissionsResult((String[]) arrayList.toArray(new String[0]), (String[]) arrayList2.toArray(new String[0]));
-        } catch (RemoteException e7) {
-            Log.e("CarApp", "CarAppService dead when accepting/rejecting permissions", e7);
+        } catch (RemoteException e) {
+            Log.e("CarApp", "CarAppService dead when accepting/rejecting permissions", e);
         }
         carAppPermissionActivity.finish();
     }

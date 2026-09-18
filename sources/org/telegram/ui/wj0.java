@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class wj0 implements Choreographer.FrameCallback {
     public static final Matrix E = new Matrix();
@@ -31,7 +31,7 @@ public final class wj0 implements Choreographer.FrameCallback {
     public long r = 0;
     public float s = AndroidUtilities.dp(40.0f);
     public View v;
-    public bi.h7 w;
+    public ai.y7 w;
 
     static {
         Paint paint = new Paint(1);
@@ -50,7 +50,7 @@ public final class wj0 implements Choreographer.FrameCallback {
         if (i10 < 0 || i10 >= lineCount) {
             return;
         }
-        vj0 iuVar = vj0Var != null ? vj0Var : new iu(layout, 24);
+        vj0 guVar = vj0Var != null ? vj0Var : new gu(layout, 25);
         int width = layout.getWidth();
         layout.getHeight();
         int lineTop = layout.getLineTop(i10);
@@ -58,7 +58,7 @@ public final class wj0 implements Choreographer.FrameCallback {
         if (lineTop > 0) {
             canvas.save();
             canvas.clipRect(0.0f, 0.0f, width, lineTop);
-            iuVar.b(canvas);
+            guVar.a(canvas);
             canvas.restore();
         }
         float lineLeft = layout.getLineLeft(i10);
@@ -78,7 +78,7 @@ public final class wj0 implements Choreographer.FrameCallback {
         if (a2 >= f10) {
             canvas.save();
             canvas.clipRect(0.0f, lineTop, width, lineBottom);
-            iuVar.b(canvas);
+            guVar.a(canvas);
             canvas.restore();
             return;
         }
@@ -89,7 +89,7 @@ public final class wj0 implements Choreographer.FrameCallback {
         int saveLayer = canvas.saveLayer(min, f12, max, f13, null);
         canvas.save();
         canvas.clipRect(min, f12, max, f13);
-        iuVar.b(canvas);
+        guVar.a(canvas);
         canvas.restore();
         Matrix matrix = E;
         matrix.reset();
@@ -244,9 +244,9 @@ public final class wj0 implements Choreographer.FrameCallback {
                     view = parentView;
                 }
             }
-            bi.h7 h7Var = this.w;
-            if (h7Var != null) {
-                h7Var.run();
+            ai.y7 y7Var = this.w;
+            if (y7Var != null) {
+                y7Var.run();
                 this.w = null;
             }
         }
@@ -400,7 +400,7 @@ public final class wj0 implements Choreographer.FrameCallback {
         e();
     }
 
-    public final void m(bi.h7 h7Var) {
-        this.w = h7Var;
+    public final void m(ai.y7 y7Var) {
+        this.w = y7Var;
     }
 }

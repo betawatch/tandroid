@@ -4,7 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class th extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -31,7 +31,7 @@ public final class th extends AnimatorListenerAdapter {
                 }
                 int dp = z10 ? AndroidUtilities.dp(36.0f) : 0;
                 for (int i10 = 0; i10 < viVar.x0.size(); i10++) {
-                    ((fi.r4) viVar.x0.valueAt(i10)).setMeasureOffsetY(dp);
+                    ((ei.q4) viVar.x0.valueAt(i10)).setMeasureOffsetY(dp);
                 }
                 if (biVar.a == animator) {
                     biVar.a = null;
@@ -60,7 +60,7 @@ public final class th extends AnimatorListenerAdapter {
                     viVar.E1.setVisibility(0);
                     int dp = AndroidUtilities.dp(36.0f);
                     for (int i10 = 0; i10 < viVar.x0.size(); i10++) {
-                        ((fi.r4) viVar.x0.valueAt(i10)).setMeasureOffsetY(dp);
+                        ((ei.q4) viVar.x0.valueAt(i10)).setMeasureOffsetY(dp);
                     }
                     break;
                 } else {

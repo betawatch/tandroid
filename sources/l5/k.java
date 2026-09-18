@@ -1,6 +1,19 @@
 package l5;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+import java.io.Closeable;
+
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
-public interface k {
+public final class k implements Closeable {
+    public fd.a a;
+    public a9.r b;
+    public fd.a c;
+    public ka.c d;
+    public fd.a e;
+    public fd.a f;
+
+    @Override // java.io.Closeable, java.lang.AutoCloseable
+    public final void close() {
+        ((s5.g) ((s5.d) this.e.get())).close();
+    }
 }

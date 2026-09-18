@@ -21,19 +21,19 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.ui.Cells.t1;
-import org.telegram.ui.Components.qs;
-import org.telegram.ui.Components.ss;
-import org.telegram.ui.Components.v51;
-import org.telegram.ui.Components.wv0;
-import org.telegram.ui.ai0;
-import org.telegram.ui.co;
-import org.telegram.ui.ej0;
-import org.telegram.ui.j60;
+import org.telegram.ui.Components.rs;
+import org.telegram.ui.Components.ts;
+import org.telegram.ui.Components.x51;
+import org.telegram.ui.Components.yv0;
+import org.telegram.ui.bo;
+import org.telegram.ui.gm0;
+import org.telegram.ui.k60;
 import org.telegram.ui.nl;
-import org.telegram.ui.pn0;
-import org.telegram.ui.sm0;
+import org.telegram.ui.pl0;
+import org.telegram.ui.qn0;
+import org.telegram.ui.tm0;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class l0 implements Runnable {
     public final /* synthetic */ int a;
@@ -51,7 +51,7 @@ public final /* synthetic */ class l0 implements Runnable {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:31:0x0108 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:40:0x011b A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x011a A[SYNTHETIC] */
     @Override // java.lang.Runnable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -73,68 +73,68 @@ public final /* synthetic */ class l0 implements Runnable {
                 boolean z10 = this.c;
                 ArrayList arrayList = (ArrayList) this.e;
                 int i11 = this.b;
-                co coVar = nlVar.b;
+                bo boVar = nlVar.b;
                 if (!z10) {
-                    if (coVar.h4) {
+                    if (boVar.h4) {
                         for (int i12 = 0; i12 < arrayList.size(); i12++) {
-                            coVar.getMessagesController().pinMessage(coVar.e, coVar.f, ((Integer) arrayList.get(i12)).intValue(), true, false, false);
+                            boVar.getMessagesController().pinMessage(boVar.e, boVar.f, ((Integer) arrayList.get(i12)).intValue(), true, false, false);
                         }
                     } else {
-                        coVar.getMessagesController().unpinAllMessages(coVar.e, coVar.f);
+                        boVar.getMessagesController().unpinAllMessages(boVar.e, boVar.f);
                     }
                 }
-                if (i11 == coVar.C3) {
-                    coVar.A3 = null;
+                if (i11 == boVar.C3) {
+                    boVar.A3 = null;
                     break;
                 }
                 break;
             case 3:
-                qs qsVar = (qs) this.d;
+                rs rsVar = (rs) this.d;
                 int i13 = this.b;
                 TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal = (TLRPC.TL_messages_searchGlobal) this.e;
                 boolean z11 = this.c;
-                if (i13 == qsVar.d0 && TextUtils.equals(tL_messages_searchGlobal.q, qsVar.e0)) {
-                    ConnectionsManager.getInstance(qsVar.N).sendRequest(tL_messages_searchGlobal, new k0(qsVar, i13, tL_messages_searchGlobal, z11, 1));
+                if (i13 == rsVar.d0 && TextUtils.equals(tL_messages_searchGlobal.q, rsVar.e0)) {
+                    ConnectionsManager.getInstance(rsVar.N).sendRequest(tL_messages_searchGlobal, new k0(rsVar, i13, tL_messages_searchGlobal, z11, 1));
                     break;
                 }
                 break;
             case 4:
-                ss ssVar = (ss) this.d;
+                ts tsVar = (ts) this.d;
                 int i14 = this.b;
                 TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal2 = (TLRPC.TL_messages_searchGlobal) this.e;
                 boolean z12 = this.c;
-                if (i14 == ssVar.a0 && TextUtils.equals(tL_messages_searchGlobal2.q, ssVar.b0)) {
-                    ConnectionsManager.getInstance(ssVar.N).sendRequest(tL_messages_searchGlobal2, new k0(ssVar, i14, tL_messages_searchGlobal2, z12, 2));
+                if (i14 == tsVar.a0 && TextUtils.equals(tL_messages_searchGlobal2.q, tsVar.b0)) {
+                    ConnectionsManager.getInstance(tsVar.N).sendRequest(tL_messages_searchGlobal2, new k0(tsVar, i14, tL_messages_searchGlobal2, z12, 2));
                     break;
                 }
                 break;
             case 5:
-                wv0 wv0Var = (wv0) this.d;
+                yv0 yv0Var = (yv0) this.d;
                 boolean z13 = this.c;
                 int i15 = this.b;
                 t1 t1Var = (t1) this.e;
-                if (z13 && wv0Var.S == null && wv0Var.R == null && wv0Var.Q == null) {
-                    wv0Var.K = 2;
-                    wv0Var.X0 = true;
+                if (z13 && yv0Var.Q == null && yv0Var.R == null && yv0Var.P == null) {
+                    yv0Var.J = 2;
+                    yv0Var.X0 = true;
                 }
-                wv0Var.V0 = false;
-                if (wv0Var.Y0 || !wv0Var.W0) {
-                    wv0Var.U0 = wv0Var.i1[0];
+                yv0Var.V0 = false;
+                if (yv0Var.Y0 || !yv0Var.W0) {
+                    yv0Var.U0 = yv0Var.i1[0];
                     DownloadController.getInstance(i15).removeLoadingFileObserver(t1Var);
-                    wv0Var.G();
-                    wv0Var.v();
+                    yv0Var.I();
+                    yv0Var.x();
                     break;
                 } else {
-                    wv0Var.A(true);
+                    yv0Var.C(true);
                     break;
                 }
                 break;
             case 6:
-                j60 j60Var = (j60) this.d;
+                k60 k60Var = (k60) this.d;
                 TLObject tLObject = (TLObject) this.e;
                 int i16 = this.b;
                 boolean z14 = this.c;
-                String[] strArr = j60Var.T2;
+                String[] strArr = k60Var.T2;
                 if (tLObject instanceof TL_phone.exportedGroupCallInvite) {
                     strArr[i16] = ((TL_phone.exportedGroupCallInvite) tLObject).link;
                 } else {
@@ -150,23 +150,23 @@ public final /* synthetic */ class l0 implements Runnable {
                         }
                     }
                 }
-                if (!z14 && j60Var.Q0() && !j60Var.a1.call.join_muted) {
+                if (!z14 && k60Var.Q0() && !k60Var.a1.call.join_muted) {
                     strArr[0] = null;
                 }
-                if (strArr[0] != null || strArr[1] != null || !ChatObject.isPublic(j60Var.Z0)) {
-                    j60Var.u1(strArr[0], strArr[1], false, z14);
+                if (strArr[0] != null || strArr[1] != null || !ChatObject.isPublic(k60Var.Z0)) {
+                    k60Var.u1(strArr[0], strArr[1], false, z14);
                     break;
                 } else {
-                    j60Var.u1(null, j60Var.d.getMessagesController().linkPrefix + "/" + ChatObject.getPublicUsername(j60Var.Z0), true, z14);
+                    k60Var.u1(null, k60Var.d.getMessagesController().linkPrefix + "/" + ChatObject.getPublicUsername(k60Var.Z0), true, z14);
                     break;
                 }
                 break;
             default:
-                pn0 pn0Var = (pn0) this.d;
+                qn0 qn0Var = (qn0) this.d;
                 ArrayList arrayList2 = (ArrayList) this.e;
                 int i18 = this.b;
                 boolean z15 = this.c;
-                int i19 = pn0Var.S0;
+                int i19 = qn0Var.S0;
                 int min = Math.min((i19 == 0 || i19 == 4) ? 20 : 1, arrayList2.size());
                 boolean z16 = false;
                 int i20 = 0;
@@ -181,8 +181,8 @@ public final /* synthetic */ class l0 implements Runnable {
                         tL_secureFile.dc_id = (int) scaleAndSaveImage.location.volume_id;
                         tL_secureFile.id = r0.local_id;
                         tL_secureFile.date = (int) (System.currentTimeMillis() / 1000);
-                        sm0 sm0Var = (sm0) pn0Var.B1;
-                        sm0Var.getClass();
+                        tm0 tm0Var = (tm0) qn0Var.B1;
+                        tm0Var.getClass();
                         StringBuilder sb2 = new StringBuilder();
                         sb2.append(FileLoader.getDirectory(4));
                         sb2.append("/");
@@ -190,7 +190,7 @@ public final /* synthetic */ class l0 implements Runnable {
                         sb2.append("_");
                         i10 = i20;
                         String r10 = a4.a.r(sb2, tL_secureFile.id, ".jpg");
-                        pn0 pn0Var2 = sm0Var.d;
+                        qn0 qn0Var2 = tm0Var.d;
                         byte[] bArr = new byte[(int) new File(r10).length()];
                         RandomAccessFile randomAccessFile2 = null;
                         try {
@@ -202,16 +202,16 @@ public final /* synthetic */ class l0 implements Runnable {
                         } catch (Exception unused2) {
                             randomAccessFile2 = randomAccessFile;
                             randomAccessFile = randomAccessFile2;
-                            cf.c k12 = pn0Var2.k1(bArr);
+                            cf.c k12 = qn0Var2.k1(bArr);
                             randomAccessFile.seek(0L);
                             randomAccessFile.write((byte[]) k12.c);
                             randomAccessFile.close();
                             SecureDocument secureDocument = new SecureDocument((SecureDocumentKey) k12.e, tL_secureFile, r10, (byte[]) k12.d, (byte[]) k12.a);
                             secureDocument.type = i18;
-                            AndroidUtilities.runOnUIThread(new ai0(pn0Var, secureDocument, i18, 1));
+                            AndroidUtilities.runOnUIThread(new gm0(qn0Var, secureDocument, i18, 0));
                             if (z15) {
                                 try {
-                                    recognize = MrzRecognizer.recognize(loadBitmap, pn0Var.F.type instanceof TLRPC.TL_secureValueTypeDriverLicense);
+                                    recognize = MrzRecognizer.recognize(loadBitmap, qn0Var.F.type instanceof TLRPC.TL_secureValueTypeDriverLicense);
                                     if (recognize == null) {
                                     }
                                 } catch (Throwable th2) {
@@ -221,7 +221,7 @@ public final /* synthetic */ class l0 implements Runnable {
                             i20 = i10 + 1;
                             z16 = false;
                         }
-                        cf.c k122 = pn0Var2.k1(bArr);
+                        cf.c k122 = qn0Var2.k1(bArr);
                         try {
                             randomAccessFile.seek(0L);
                             randomAccessFile.write((byte[]) k122.c);
@@ -230,12 +230,12 @@ public final /* synthetic */ class l0 implements Runnable {
                         }
                         SecureDocument secureDocument2 = new SecureDocument((SecureDocumentKey) k122.e, tL_secureFile, r10, (byte[]) k122.d, (byte[]) k122.a);
                         secureDocument2.type = i18;
-                        AndroidUtilities.runOnUIThread(new ai0(pn0Var, secureDocument2, i18, 1));
+                        AndroidUtilities.runOnUIThread(new gm0(qn0Var, secureDocument2, i18, 0));
                         if (z15 && !z17) {
-                            recognize = MrzRecognizer.recognize(loadBitmap, pn0Var.F.type instanceof TLRPC.TL_secureValueTypeDriverLicense);
+                            recognize = MrzRecognizer.recognize(loadBitmap, qn0Var.F.type instanceof TLRPC.TL_secureValueTypeDriverLicense);
                             if (recognize == null) {
                                 try {
-                                    AndroidUtilities.runOnUIThread(new ej0(8, pn0Var, recognize));
+                                    AndroidUtilities.runOnUIThread(new pl0(2, qn0Var, recognize));
                                     z17 = true;
                                 } catch (Throwable th3) {
                                     th = th3;
@@ -263,17 +263,17 @@ public final /* synthetic */ class l0 implements Runnable {
         this.b = i10;
     }
 
-    public /* synthetic */ l0(wv0 wv0Var, boolean z10, int i10, t1 t1Var) {
+    public /* synthetic */ l0(yv0 yv0Var, boolean z10, int i10, t1 t1Var) {
         this.a = 5;
-        this.d = wv0Var;
+        this.d = yv0Var;
         this.c = z10;
         this.b = i10;
         this.e = t1Var;
     }
 
-    public /* synthetic */ l0(v51 v51Var, int i10, TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal, boolean z10, int i11) {
+    public /* synthetic */ l0(x51 x51Var, int i10, TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal, boolean z10, int i11) {
         this.a = i11;
-        this.d = v51Var;
+        this.d = x51Var;
         this.b = i10;
         this.e = tL_messages_searchGlobal;
         this.c = z10;

@@ -1,50 +1,25 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.app.Activity;
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Context;
+import org.telegram.messenger.ChatObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class nf1 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ eg1 c;
+public final class nf1 extends org.telegram.ui.Components.b70 {
+    public final /* synthetic */ long A0;
+    public final /* synthetic */ pf1 B0;
 
-    public /* synthetic */ nf1(eg1 eg1Var, boolean z10, int i10) {
-        this.a = i10;
-        this.c = eg1Var;
-        this.b = z10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public nf1(pf1 pf1Var, Context context, int i10, a0.i iVar, long j3, org.telegram.ui.ActionBar.o2 o2Var, long j10) {
+        super(context, i10, iVar, j3, o2Var, null);
+        this.B0 = pf1Var;
+        this.A0 = j10;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        int i10;
-        switch (this.a) {
-            case 0:
-                super.onAnimationEnd(animator);
-                boolean z10 = this.b;
-                float f7 = z10 ? 1.0f : 0.0f;
-                eg1 eg1Var = this.c;
-                eg1Var.S0(f7);
-                if (!z10) {
-                    Activity parentActivity = eg1Var.getParentActivity();
-                    i10 = ((org.telegram.ui.ActionBar.n2) eg1Var).classGuid;
-                    AndroidUtilities.setAdjustResizeToNothing(parentActivity, i10);
-                    eg1Var.r0.setVisibility(8);
-                    eg1Var.Q0(true);
-                    break;
-                } else {
-                    eg1Var.q0.setVisibility(8);
-                    break;
-                }
-            default:
-                if (!this.b) {
-                    this.c.o0.setVisibility(8);
-                    break;
-                }
-                break;
-        }
+    @Override // org.telegram.ui.Components.b70
+    public final boolean X() {
+        TLRPC.Chat chat = this.B0.b.getMessagesController().getChat(Long.valueOf(this.A0));
+        return chat != null && ChatObject.canUserDoAdminAction(chat, 3);
     }
 }

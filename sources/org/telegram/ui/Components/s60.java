@@ -6,14 +6,14 @@ import android.graphics.Paint;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class s60 extends m61 {
+public final class s60 extends n61 {
     public float f;
     public float h;
     public final Paint n;
     public float r;
-    public n7.z0 s;
+    public n7.a1 s;
     public final /* synthetic */ b70 v;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -23,16 +23,16 @@ public final class s60 extends m61 {
         this.n = new Paint();
     }
 
-    @Override // org.telegram.ui.Components.m61, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.n61, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         int i10;
         b70 b70Var = this.v;
         int i11 = b70Var.y;
-        i10 = ((org.telegram.ui.ActionBar.f3) b70Var).backgroundPaddingTop;
+        i10 = ((org.telegram.ui.ActionBar.g3) b70Var).backgroundPaddingTop;
         b70Var.V.setTranslationY(AndroidUtilities.dp(64.0f) + AndroidUtilities.dp(6.0f) + (i11 - i10));
         float f7 = b70Var.o0 + b70Var.u0;
-        xw0 xw0Var = b70Var.s;
-        if (xw0Var.getVisibility() != 0) {
+        zw0 zw0Var = b70Var.s;
+        if (zw0Var.getVisibility() != 0) {
             this.f = f7;
             this.h = f7;
         } else if (this.h != f7) {
@@ -53,7 +53,7 @@ public final class s60 extends m61 {
                 this.f = f11;
             }
         }
-        xw0Var.setTranslationY(b70Var.y + this.f);
+        zw0Var.setTranslationY(b70Var.y + this.f);
         super.dispatchDraw(canvas);
     }
 
@@ -78,16 +78,16 @@ public final class s60 extends m61 {
     @Override // android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        n7.z0 z0Var = this.s;
-        if (z0Var != null) {
-            ((r61) z0Var.b).b = true;
+        n7.a1 a1Var = this.s;
+        if (a1Var != null) {
+            ((s61) a1Var.b).b = true;
         }
     }
 
     @Override // android.view.ViewGroup
     public final void onViewAdded(View view) {
         if (view == this.v.t0 && this.s == null) {
-            this.s = new n7.z0(view);
+            this.s = new n7.a1(view);
         }
     }
 }

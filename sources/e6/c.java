@@ -2,10 +2,10 @@ package e6;
 
 import android.os.Looper;
 import android.util.SparseIntArray;
+import ci.p2;
 import com.google.android.gms.cast.MediaInfo;
 import com.google.android.gms.common.api.internal.BasePendingResult;
 import com.google.android.gms.internal.cast.c0;
-import di.p2;
 import j$.util.DesugarCollections;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
@@ -13,7 +13,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class c {
     public long b;
@@ -122,15 +122,15 @@ public final class c {
     }
 
     public final long e() {
-        c6.q e7 = this.c.e();
-        if (e7 == null) {
+        c6.q e = this.c.e();
+        if (e == null) {
             return 0L;
         }
-        MediaInfo mediaInfo = e7.a;
+        MediaInfo mediaInfo = e.a;
         int i10 = mediaInfo == null ? -1 : mediaInfo.b;
-        int i11 = e7.e;
-        int i12 = e7.f;
-        int i13 = e7.w;
+        int i11 = e.e;
+        int i12 = e.f;
+        int i13 = e.w;
         if (i11 == 1) {
             if (i12 != 1) {
                 if (i12 != 2) {
@@ -145,7 +145,7 @@ public final class c {
                 return 0L;
             }
         }
-        return e7.b;
+        return e.b;
     }
 
     public final void f() {

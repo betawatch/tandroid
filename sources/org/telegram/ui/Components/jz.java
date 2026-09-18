@@ -10,7 +10,7 @@ import android.widget.HorizontalScrollView;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public class jz extends s4.s0 {
     public final int a;
@@ -45,7 +45,7 @@ public class jz extends s4.s0 {
                     xyVar = kzVar.V;
                 } else {
                     if (i11 != 2) {
-                        throw new IllegalArgumentException(i2.g.i(i11, "Unexpected argument: "));
+                        throw new IllegalArgumentException(hg.k0.i(i11, "Unexpected argument: "));
                     }
                     xyVar = kzVar.o0;
                 }
@@ -59,7 +59,7 @@ public class jz extends s4.s0 {
             }
             if (i11 == 0) {
                 if (kzVar.T0 == null) {
-                    hg.g1 g1Var = new hg.g1(kzVar, kzVar.c1, kzVar.t1.a(), kzVar.t1.f(), 1);
+                    gg.g1 g1Var = new gg.g1(kzVar, kzVar.c1, kzVar.t1.a(), kzVar.t1.f(), 1);
                     kzVar.T0 = g1Var;
                     g1Var.a();
                 }
@@ -70,16 +70,16 @@ public class jz extends s4.s0 {
         }
         if (!this.b) {
             int[] iArr = kzVar.Q0;
-            ly lyVar = kzVar.t1;
-            if ((lyVar == null || !lyVar.z()) && i11 != 0) {
+            ky kyVar = kzVar.t1;
+            if ((kyVar == null || !kyVar.z()) && i11 != 0) {
                 float dpf2 = AndroidUtilities.dpf2(i11 == 1 ? 36.0f : 48.0f);
                 float f7 = iArr[i11] / (-dpf2);
                 if (f7 <= 0.0f || f7 >= 1.0f) {
-                    ll0 x10 = kzVar.x(i11);
+                    ml0 x10 = kzVar.x(i11);
                     int dp = AndroidUtilities.dp(i11 == 1 ? 38.0f : 48.0f);
-                    s4.c1 K = x10.K(0);
-                    if (K != null) {
-                        int bottom = K.a.getBottom();
+                    s4.c1 L = x10.L(0);
+                    if (L != null) {
+                        int bottom = L.a.getBottom();
                         int i12 = iArr[i11];
                         float f10 = (bottom - (dp + i12)) / kzVar.b1;
                         if (f10 > 0.0f || f10 < 1.0f) {
@@ -99,7 +99,7 @@ public class jz extends s4.s0 {
                     if (objectAnimator2 == null) {
                         ObjectAnimator ofFloat = ObjectAnimator.ofFloat(y3, (Property<HorizontalScrollView, Float>) View.TRANSLATION_Y, y3.getTranslationY(), i13);
                         objectAnimatorArr[i11] = ofFloat;
-                        ofFloat.addUpdateListener(new org.telegram.ui.ActionBar.q2(kzVar, i11, 3));
+                        ofFloat.addUpdateListener(new org.telegram.ui.ActionBar.r2(kzVar, i11, 3));
                         objectAnimatorArr[i11].setDuration(200L);
                     } else {
                         objectAnimator2.setFloatValues(y3.getTranslationY(), i13);
@@ -132,18 +132,18 @@ public class jz extends s4.s0 {
         }
         float f7 = i11;
         FrameLayout frameLayout = kzVar.n;
-        if (SystemClock.elapsedRealtime() - kzVar.F2 < ViewConfiguration.getTapTimeout()) {
+        if (SystemClock.elapsedRealtime() - kzVar.E2 < ViewConfiguration.getTapTimeout()) {
             return;
         }
         kzVar.H += f7;
         int dp = kzVar.h.getCurrentItem() == 0 ? AndroidUtilities.dp(38.0f) : AndroidUtilities.dp(48.0f);
         float f10 = kzVar.H;
         if (f10 >= dp) {
-            kzVar.O(false);
+            kzVar.M(false);
             return;
         }
         if (f10 <= (-dp)) {
-            kzVar.O(true);
+            kzVar.M(true);
         } else {
             if ((frameLayout.getTag() != null || kzVar.H >= 0.0f) && (frameLayout.getTag() == null || kzVar.H <= 0.0f)) {
                 return;

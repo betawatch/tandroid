@@ -26,7 +26,7 @@ import org.telegram.messenger.MediaController;
 import v7.m7;
 import v7.r6;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class j extends v2.k {
     public static final AtomicInteger c0 = new AtomicInteger();
@@ -98,7 +98,7 @@ public final class j extends v2.k {
     }
 
     @Override // y2.j
-    public final void W() {
+    public final void H() {
         this.W = true;
     }
 
@@ -150,7 +150,7 @@ public final class j extends v2.k {
         try {
             c3.l h = h(hVar, b10);
             if (z11) {
-                h.i(this.U, false);
+                h.g(this.U, false);
             }
             do {
                 try {
@@ -158,9 +158,9 @@ public final class j extends v2.k {
                         if (this.W) {
                             break;
                         }
-                    } catch (EOFException e7) {
+                    } catch (EOFException e) {
                         if ((this.d.f & 16384) == 0) {
-                            throw e7;
+                            throw e;
                         }
                         this.S.a.h(0L, 0L);
                         j3 = h.d;
@@ -219,7 +219,7 @@ public final class j extends v2.k {
                 lVar.f = 0;
                 try {
                     vVar.G(10);
-                    lVar.j(vVar.a, 0, 10, false);
+                    lVar.h(vVar.a, 0, 10, false);
                 } catch (EOFException unused) {
                     j3 = -9223372036854775807L;
                 }
@@ -236,7 +236,7 @@ public final class j extends v2.k {
                         vVar.G(i12);
                         System.arraycopy(bArr, 0, vVar.a, 0, 10);
                     }
-                    lVar.j(vVar.a, 10, w10, false);
+                    lVar.h(vVar.a, 10, w10, false);
                     p0 c10 = this.O.c(w10, vVar.a);
                     if (c10 != null) {
                         for (o0 o0Var : c10.a) {
@@ -387,7 +387,7 @@ public final class j extends v2.k {
                         }
                         aVar.getClass();
                         try {
-                            z10 = aVar.b(lVar);
+                            z10 = aVar.a(lVar);
                             lVar.f = 0;
                         } catch (EOFException unused2) {
                             lVar.f = 0;
@@ -483,8 +483,8 @@ public final class j extends v2.k {
             return lVar;
         } catch (InterruptedException unused3) {
             throw new InterruptedIOException();
-        } catch (TimeoutException e7) {
-            throw new IOException(e7);
+        } catch (TimeoutException e) {
+            throw new IOException(e);
         }
     }
 }

@@ -7,7 +7,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class sy {
     public final ArrayList a = new ArrayList();
@@ -24,7 +24,7 @@ public final class sy {
         if (z10 && kzVar.l0.containsKey(p5)) {
             return;
         }
-        di.t1 t1Var = new di.t1(this, str, z10, p5);
+        ci.t1 t1Var = new ci.t1(this, str, z10, p5);
         ArrayList arrayList = this.a;
         if (z10) {
             arrayList.add(p5);

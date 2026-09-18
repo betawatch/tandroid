@@ -1,6 +1,6 @@
 package y9;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class c1 {
     public final String a;
@@ -8,9 +8,9 @@ public final class c1 {
     public final String c;
     public final String d;
     public final int e;
-    public final n7.z0 f;
+    public final n7.a1 f;
 
-    public c1(String str, String str2, String str3, String str4, int i10, n7.z0 z0Var) {
+    public c1(String str, String str2, String str3, String str4, int i10, n7.a1 a1Var) {
         if (str == null) {
             throw new NullPointerException("Null appIdentifier");
         }
@@ -28,7 +28,7 @@ public final class c1 {
         }
         this.d = str4;
         this.e = i10;
-        this.f = z0Var;
+        this.f = a1Var;
     }
 
     public final boolean equals(Object obj) {

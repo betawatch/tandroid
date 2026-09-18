@@ -1,40 +1,28 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Rect;
-import android.view.MotionEvent;
-import android.view.View;
+import org.telegram.messenger.LanguageDetector;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class h31 extends ll0 {
-    public final /* synthetic */ u31 X2;
+public final /* synthetic */ class h31 implements LanguageDetector.StringCallback, LanguageDetector.ExceptionCallback {
+    public final /* synthetic */ String a;
+    public final /* synthetic */ String b;
+    public final /* synthetic */ Utilities.Callback2 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public h31(u31 u31Var, Context context) {
-        super(context, null);
-        this.X2 = u31Var;
+    public /* synthetic */ h31(String str, String str2, Utilities.Callback2 callback2) {
+        this.a = str;
+        this.b = str2;
+        this.c = callback2;
     }
 
-    @Override // org.telegram.ui.Components.ll0, android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        if (motionEvent.getAction() == 0) {
-            float y3 = motionEvent.getY();
-            u31 u31Var = this.X2;
-            if (y3 < u31Var.A(true) - getTop()) {
-                u31Var.dismiss();
-                return true;
-            }
-        }
-        return super.dispatchTouchEvent(motionEvent);
+    @Override // org.telegram.messenger.LanguageDetector.StringCallback
+    public void run(String str) {
+        w31.x(this.a, str, this.b, this.c);
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
-    public final boolean onRequestFocusInDescendants(int i10, Rect rect) {
-        return true;
-    }
-
-    @Override // androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.ViewParent
-    public final void requestChildFocus(View view, View view2) {
+    @Override // org.telegram.messenger.LanguageDetector.ExceptionCallback
+    public void run(Exception exc) {
+        w31.x(this.a, "en", this.b, this.c);
     }
 }

@@ -28,25 +28,25 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SvgHelper;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.vl;
+import org.telegram.messenger.wl;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.jt;
-import org.telegram.ui.Components.mp;
-import org.telegram.ui.Components.pr;
+import org.telegram.ui.Components.kt;
+import org.telegram.ui.Components.np;
+import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class m8 extends FrameLayout {
     public final TextView E;
-    public final sg.r0 F;
+    public final rg.p0 F;
     public final ImageView G;
     public AnimatorSet H;
     public final int a;
-    public final bi.c4 b;
+    public final ai.p4 b;
     public final TextView c;
-    public final org.telegram.ui.Components.x9 d;
-    public final mp e;
+    public final org.telegram.ui.Components.u9 d;
+    public final np e;
     public boolean f;
     public final ImageView h;
     public final ImageView n;
@@ -61,12 +61,12 @@ public final class m8 extends FrameLayout {
         super(context);
         this.v = new Rect();
         this.a = i10;
-        org.telegram.ui.Components.x9 x9Var = new org.telegram.ui.Components.x9(context);
-        this.d = x9Var;
-        x9Var.setAspectFit(true);
-        x9Var.setLayerNum(1);
+        org.telegram.ui.Components.u9 u9Var = new org.telegram.ui.Components.u9(context);
+        this.d = u9Var;
+        u9Var.setAspectFit(true);
+        u9Var.setLayerNum(1);
         boolean z10 = LocaleController.isRTL;
-        addView(x9Var, w7.x5.d(40, 40.0f, (z10 ? 5 : 3) | 48, z10 ? 0.0f : 13.0f, 9.0f, z10 ? 13.0f : 0.0f, 0.0f));
+        addView(u9Var, w7.x5.d(40, 40.0f, (z10 ? 5 : 3) | 48, z10 ? 0.0f : 13.0f, 9.0f, z10 ? 13.0f : 0.0f, 0.0f));
         if (i10 != 0) {
             ImageView imageView = new ImageView(context);
             this.h = imageView;
@@ -92,12 +92,12 @@ public final class m8 extends FrameLayout {
                 imageView2.setImageResource(R.drawable.list_reorder);
                 imageView2.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.j6.w0(null, i11, false), mode));
                 addView(imageView2, w7.x5.h(58.0f, 58.0f, 8388613));
-                mp mpVar = new mp(context, 21, null);
-                this.e = mpVar;
-                mpVar.b(-1, org.telegram.ui.ActionBar.j6.d6, org.telegram.ui.ActionBar.j6.k7);
-                mpVar.setDrawUnchecked(false);
-                mpVar.setDrawBackgroundAsArc(3);
-                addView(mpVar, w7.x5.i(24.0f, 24.0f, 8388611, 34.0f, 30.0f, 0.0f, 0.0f));
+                np npVar = new np(context, 21, null);
+                this.e = npVar;
+                npVar.b(-1, org.telegram.ui.ActionBar.j6.d6, org.telegram.ui.ActionBar.j6.k7);
+                npVar.setDrawUnchecked(false);
+                npVar.setDrawBackgroundAsArc(3);
+                addView(npVar, w7.x5.i(24.0f, 24.0f, 8388611, 34.0f, 30.0f, 0.0f, 0.0f));
             } else if (i10 == 3) {
                 imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Mh, false), PorterDuff.Mode.MULTIPLY));
                 imageView.setImageResource(R.drawable.floating_check);
@@ -109,11 +109,11 @@ public final class m8 extends FrameLayout {
         this.x = frameLayout;
         TextView textView = new TextView(context);
         this.y = textView;
-        com.google.android.gms.internal.vision.e2.m(14.0f, 1, textView);
+        com.google.android.gms.internal.vision.e2.l(14.0f, 1, textView);
         textView.setText(LocaleController.getString(R.string.Add));
         textView.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Sh, false));
         int i12 = org.telegram.ui.ActionBar.j6.Oh;
-        textView.setBackground(org.telegram.ui.ActionBar.y5.d(new float[]{14.0f}, org.telegram.ui.ActionBar.j6.w0(null, i12, false), org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Qh, false)));
+        textView.setBackground(org.telegram.ui.ActionBar.z5.d(new float[]{14.0f}, org.telegram.ui.ActionBar.j6.w0(null, i12, false), org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Qh, false)));
         textView.setPadding(AndroidUtilities.dp(14.0f), 0, AndroidUtilities.dp(14.0f), 0);
         textView.setGravity(17);
         textView.setOnClickListener(new g8(this, 0));
@@ -121,28 +121,28 @@ public final class m8 extends FrameLayout {
         w7.z5.a(textView);
         TextView textView2 = new TextView(context);
         this.E = textView2;
-        com.google.android.gms.internal.vision.e2.m(14.0f, 1, textView2);
+        com.google.android.gms.internal.vision.e2.l(14.0f, 1, textView2);
         textView2.setText(LocaleController.getString(R.string.StickersRemove));
         textView2.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Rh, false));
-        textView2.setBackground(org.telegram.ui.ActionBar.y5.d(new float[]{14.0f}, 0, org.telegram.ui.ActionBar.j6.w0(null, i12, false) & 452984831));
+        textView2.setBackground(org.telegram.ui.ActionBar.z5.d(new float[]{14.0f}, 0, org.telegram.ui.ActionBar.j6.w0(null, i12, false) & 452984831));
         textView2.setPadding(AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f), 0);
         textView2.setGravity(17);
         textView2.setOnClickListener(new g8(this, 0));
         frameLayout.addView(textView2, w7.x5.i(-2.0f, 32.0f, (LocaleController.isRTL ? 3 : 5) | 16, 0.0f, -2.0f, 0.0f, 0.0f));
         w7.z5.a(textView2);
-        sg.r0 r0Var = new sg.r0(AndroidUtilities.dp(4.0f), context, null, false);
-        this.F = r0Var;
-        r0Var.setIcon(R.raw.unlock_icon);
-        r0Var.a(LocaleController.getString(R.string.Unlock), new g8(this, 0), false);
+        rg.p0 p0Var = new rg.p0(AndroidUtilities.dp(4.0f), context, null, false);
+        this.F = p0Var;
+        p0Var.setIcon(R.raw.unlock_icon);
+        p0Var.a(LocaleController.getString(R.string.Unlock), new g8(this, 0), false);
         try {
-            ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) r0Var.getIconView().getLayoutParams();
+            ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) p0Var.getIconView().getLayoutParams();
             marginLayoutParams.leftMargin = AndroidUtilities.dp(1.0f);
             marginLayoutParams.topMargin = AndroidUtilities.dp(1.0f);
             int dp = AndroidUtilities.dp(20.0f);
             marginLayoutParams.height = dp;
             marginLayoutParams.width = dp;
-            ((ViewGroup.MarginLayoutParams) r0Var.getTextView().getLayoutParams()).leftMargin = AndroidUtilities.dp(3.0f);
-            r0Var.getChildAt(0).setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f), 0);
+            ((ViewGroup.MarginLayoutParams) p0Var.getTextView().getLayoutParams()).leftMargin = AndroidUtilities.dp(3.0f);
+            p0Var.getChildAt(0).setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f), 0);
         } catch (Exception unused) {
         }
         this.x.addView(this.F, w7.x5.h(-2.0f, 28.0f, (LocaleController.isRTL ? 3 : 5) | 16));
@@ -150,21 +150,21 @@ public final class m8 extends FrameLayout {
         this.x.setPadding(AndroidUtilities.dp(10.0f), 0, AndroidUtilities.dp(10.0f), 0);
         addView(this.x, w7.x5.d(-2, -1.0f, LocaleController.isRTL ? 3 : 5, 0.0f, 0.0f, 0.0f, 0.0f));
         this.x.setOnClickListener(new g8(this, 1));
-        bi.c4 c4Var = new bi.c4(context, 8);
-        this.b = c4Var;
-        NotificationCenter.listenEmojiLoading(c4Var);
-        c4Var.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.G6, false));
-        c4Var.setTextSize(1, 16.0f);
-        c4Var.setTypeface(AndroidUtilities.bold());
-        c4Var.setLines(1);
-        c4Var.setMaxLines(1);
-        c4Var.setSingleLine(true);
-        c4Var.setEllipsize(TextUtils.TruncateAt.END);
-        c4Var.setGravity(w7.x5.y());
-        addView(c4Var, w7.x5.i(-2.0f, -2.0f, 8388611, 71.0f, 9.0f, 70.0f, 0.0f));
+        ai.p4 p4Var = new ai.p4(context, 8);
+        this.b = p4Var;
+        NotificationCenter.listenEmojiLoading(p4Var);
+        p4Var.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.G6, false));
+        p4Var.setTextSize(1, 16.0f);
+        p4Var.setTypeface(AndroidUtilities.bold());
+        p4Var.setLines(1);
+        p4Var.setMaxLines(1);
+        p4Var.setSingleLine(true);
+        p4Var.setEllipsize(TextUtils.TruncateAt.END);
+        p4Var.setGravity(w7.x5.y());
+        addView(p4Var, w7.x5.i(-2.0f, -2.0f, 8388611, 71.0f, 9.0f, 70.0f, 0.0f));
         TextView textView3 = new TextView(context);
         this.c = textView3;
-        vl.r(textView3, org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.z6, false), 1, 13.0f, 1);
+        wl.r(textView3, org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.z6, false), 1, 13.0f, 1);
         textView3.setMaxLines(1);
         textView3.setSingleLine(true);
         textView3.setGravity(w7.x5.y());
@@ -254,8 +254,8 @@ public final class m8 extends FrameLayout {
             ImageView imageView = this.n;
             imageView.setVisibility(0);
             ViewPropertyAnimator duration = imageView.animate().alpha(fArr[0]).scaleX(fArr2[0]).scaleY(fArr2[0]).setDuration(200L);
-            pr prVar = jt.a;
-            duration.setInterpolator(prVar).withEndAction(new Runnable(this) { // from class: org.telegram.ui.Cells.h8
+            qr qrVar = kt.a;
+            duration.setInterpolator(qrVar).withEndAction(new Runnable(this) { // from class: org.telegram.ui.Cells.h8
                 public final /* synthetic */ m8 b;
 
                 {
@@ -301,7 +301,7 @@ public final class m8 extends FrameLayout {
             if (this.w) {
                 FrameLayout frameLayout = this.x;
                 frameLayout.setVisibility(0);
-                frameLayout.animate().alpha(fArr[1]).scaleX(fArr2[1]).scaleY(fArr2[1]).setDuration(200L).setInterpolator(prVar).withEndAction(new Runnable(this) { // from class: org.telegram.ui.Cells.h8
+                frameLayout.animate().alpha(fArr[1]).scaleX(fArr2[1]).scaleY(fArr2[1]).setDuration(200L).setInterpolator(qrVar).withEndAction(new Runnable(this) { // from class: org.telegram.ui.Cells.h8
                     public final /* synthetic */ m8 b;
 
                     {
@@ -347,7 +347,7 @@ public final class m8 extends FrameLayout {
             } else {
                 ImageView imageView2 = this.h;
                 imageView2.setVisibility(0);
-                imageView2.animate().alpha(fArr[1]).scaleX(fArr2[1]).scaleY(fArr2[1]).setDuration(200L).setInterpolator(prVar).withEndAction(new Runnable(this) { // from class: org.telegram.ui.Cells.h8
+                imageView2.animate().alpha(fArr[1]).scaleX(fArr2[1]).scaleY(fArr2[1]).setDuration(200L).setInterpolator(qrVar).withEndAction(new Runnable(this) { // from class: org.telegram.ui.Cells.h8
                     public final /* synthetic */ m8 b;
 
                     {
@@ -399,38 +399,38 @@ public final class m8 extends FrameLayout {
         this.f = z10;
         this.r = tL_messages_stickerSet;
         this.s = z11;
-        org.telegram.ui.Components.x9 x9Var = this.d;
-        x9Var.setVisibility(0);
-        bi.c4 c4Var = this.b;
-        c4Var.setTranslationY(0.0f);
-        c4Var.setText(this.r.set.title);
+        org.telegram.ui.Components.u9 u9Var = this.d;
+        u9Var.setVisibility(0);
+        ai.p4 p4Var = this.b;
+        p4Var.setTranslationY(0.0f);
+        p4Var.setText(this.r.set.title);
         boolean z12 = this.r.set.archived;
         TextView textView = this.c;
         if (z12) {
-            c4Var.setAlpha(0.5f);
+            p4Var.setAlpha(0.5f);
             textView.setAlpha(0.5f);
-            x9Var.setAlpha(0.5f);
+            u9Var.setAlpha(0.5f);
         } else {
-            c4Var.setAlpha(1.0f);
+            p4Var.setAlpha(1.0f);
             textView.setAlpha(1.0f);
-            x9Var.setAlpha(1.0f);
+            u9Var.setAlpha(1.0f);
         }
         boolean z13 = tL_messages_stickerSet.set.emojis;
         this.w = z13;
         this.x.setVisibility(z13 ? 0 : 8);
         this.h.setVisibility(this.w ? 8 : 0);
         TLRPC.Document document = null;
-        x9Var.setColorFilter(null);
+        u9Var.setColorFilter(null);
         ArrayList<TLRPC.Document> arrayList = tL_messages_stickerSet.documents;
         if (arrayList == null || arrayList.isEmpty()) {
             tL_messages_stickerSet2 = tL_messages_stickerSet;
             textView.setText(LocaleController.formatPluralString(tL_messages_stickerSet2.set.emojis ? "EmojiCount" : "Stickers", 0, new Object[0]));
-            x9Var.setImageDrawable(null);
+            u9Var.setImageDrawable(null);
             if (tL_messages_stickerSet2.set.thumb_document_id != 0) {
-                org.telegram.ui.Components.q5.h(UserConfig.selectedAccount).b(tL_messages_stickerSet2.set.thumb_document_id, new org.telegram.ui.Components.n5() { // from class: org.telegram.ui.Cells.i8
-                    @Override // org.telegram.ui.Components.n5
+                org.telegram.ui.Components.o5.h(UserConfig.selectedAccount).b(tL_messages_stickerSet2.set.thumb_document_id, new org.telegram.ui.Components.l5() { // from class: org.telegram.ui.Cells.i8
+                    @Override // org.telegram.ui.Components.l5
                     public final void a(TLRPC.Document document2) {
-                        AndroidUtilities.runOnUIThread(new na(7, m8.this, document2));
+                        AndroidUtilities.runOnUIThread(new oa(7, m8.this, document2));
                     }
                 });
             }
@@ -463,21 +463,21 @@ public final class m8 extends FrameLayout {
             String concat = "50_50".concat(!LiteMode.isEnabled(this.w ? LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD : 1) ? "_firstframe" : "");
             if (z14 && (MessageObject.isAnimatedStickerDocument(document, true) || MessageObject.isVideoSticker(document))) {
                 if (svgThumb != null) {
-                    x9Var.n(ImageLocation.getForDocument(document), concat, svgThumb, tL_messages_stickerSet);
+                    u9Var.n(ImageLocation.getForDocument(document), concat, svgThumb, tL_messages_stickerSet);
                     tL_messages_stickerSet2 = tL_messages_stickerSet;
                 } else {
-                    x9Var.j(ImageLocation.getForDocument(document), concat, forDocument, null, 0, tL_messages_stickerSet);
+                    u9Var.j(ImageLocation.getForDocument(document), concat, forDocument, null, 0, tL_messages_stickerSet);
                     tL_messages_stickerSet2 = tL_messages_stickerSet;
                 }
                 if (MessageObject.isTextColorEmoji(document)) {
-                    x9Var.setColorFilter(org.telegram.ui.ActionBar.j6.v3);
+                    u9Var.setColorFilter(org.telegram.ui.ActionBar.j6.v3);
                 }
             } else {
                 tL_messages_stickerSet2 = tL_messages_stickerSet;
                 if (forDocument == null || forDocument.imageType != 1) {
-                    x9Var.i(forDocument, concat, "webp", svgThumb, tL_messages_stickerSet2);
+                    u9Var.i(forDocument, concat, "webp", svgThumb, tL_messages_stickerSet2);
                 } else {
-                    x9Var.i(forDocument, concat, "tgs", svgThumb, tL_messages_stickerSet2);
+                    u9Var.i(forDocument, concat, "tgs", svgThumb, tL_messages_stickerSet2);
                 }
             }
         }
@@ -495,23 +495,23 @@ public final class m8 extends FrameLayout {
             animatorSet.cancel();
             this.H = null;
         }
-        sg.r0 r0Var = this.F;
+        rg.p0 p0Var = this.F;
         if (i10 == 1) {
-            r0Var.a(LocaleController.getString(R.string.Unlock), new g8(this, 0), false);
+            p0Var.a(LocaleController.getString(R.string.Unlock), new g8(this, 0), false);
         } else if (i10 == 2) {
-            r0Var.a(LocaleController.getString(R.string.Restore), new g8(this, 0), false);
+            p0Var.a(LocaleController.getString(R.string.Restore), new g8(this, 0), false);
         }
-        r0Var.setEnabled(i10 == 1 || i10 == 2);
+        p0Var.setEnabled(i10 == 1 || i10 == 2);
         boolean z10 = i10 == 3;
         TextView textView = this.y;
         textView.setEnabled(z10);
         boolean z11 = i10 == 4;
         TextView textView2 = this.E;
         textView2.setEnabled(z11);
-        r0Var.setAlpha((i10 == 1 || i10 == 2) ? 1.0f : 0.0f);
-        r0Var.setScaleX((i10 == 1 || i10 == 2) ? 1.0f : 0.6f);
-        r0Var.setScaleY((i10 == 1 || i10 == 2) ? 1.0f : 0.6f);
-        r0Var.setVisibility((i10 == 1 || i10 == 2) ? 0 : 8);
+        p0Var.setAlpha((i10 == 1 || i10 == 2) ? 1.0f : 0.0f);
+        p0Var.setScaleX((i10 == 1 || i10 == 2) ? 1.0f : 0.6f);
+        p0Var.setScaleY((i10 == 1 || i10 == 2) ? 1.0f : 0.6f);
+        p0Var.setVisibility((i10 == 1 || i10 == 2) ? 0 : 8);
         textView.setAlpha(i10 == 3 ? 1.0f : 0.0f);
         textView.setScaleX(i10 == 3 ? 1.0f : 0.6f);
         textView.setScaleY(i10 == 3 ? 1.0f : 0.6f);
@@ -527,12 +527,12 @@ public final class m8 extends FrameLayout {
         int measuredWidth = frameLayout.getMeasuredWidth() + AndroidUtilities.dp(26.0f);
         boolean z12 = LocaleController.isRTL;
         TextView textView3 = this.c;
-        bi.c4 c4Var = this.b;
+        ai.p4 p4Var = this.b;
         if (z12) {
-            ((ViewGroup.MarginLayoutParams) c4Var.getLayoutParams()).leftMargin = measuredWidth;
+            ((ViewGroup.MarginLayoutParams) p4Var.getLayoutParams()).leftMargin = measuredWidth;
             ((ViewGroup.MarginLayoutParams) textView3.getLayoutParams()).leftMargin = measuredWidth;
         } else {
-            ((ViewGroup.MarginLayoutParams) c4Var.getLayoutParams()).rightMargin = measuredWidth;
+            ((ViewGroup.MarginLayoutParams) p4Var.getLayoutParams()).rightMargin = measuredWidth;
             ((ViewGroup.MarginLayoutParams) textView3.getLayoutParams()).rightMargin = measuredWidth;
         }
     }
@@ -551,8 +551,8 @@ public final class m8 extends FrameLayout {
     @Override // android.view.View
     public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
         super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        mp mpVar = this.e;
-        if (mpVar == null || !mpVar.a.q) {
+        np npVar = this.e;
+        if (npVar == null || !npVar.a.q) {
             return;
         }
         accessibilityNodeInfo.setCheckable(true);

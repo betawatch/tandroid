@@ -1,29 +1,22 @@
 package vh;
 
-import android.view.animation.Interpolator;
-import w7.p;
+import android.content.Context;
+import android.view.TextureView;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class e implements Interpolator {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ float c;
-    public final /* synthetic */ Interpolator d;
+public final class e extends TextureView {
+    public final /* synthetic */ g a;
 
-    public /* synthetic */ e(boolean z10, float f7, float f10, Interpolator interpolator) {
-        this.a = z10;
-        this.b = f7;
-        this.c = f10;
-        this.d = interpolator;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public e(g gVar, Context context) {
+        super(context);
+        this.a = gVar;
     }
 
-    @Override // android.animation.TimeInterpolator
-    public final float getInterpolation(float f7) {
-        boolean z10 = this.a;
-        float f10 = this.b;
-        float f11 = this.c;
-        Interpolator interpolator = this.d;
-        return z10 ? 1.0f - interpolator.getInterpolation(1.0f - p.a((f7 - f10) / (f11 - f10), 0.0f, 1.0f)) : interpolator.getInterpolation(p.a((f7 - f10) / (f11 - f10), 0.0f, 1.0f));
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        g gVar = this.a;
+        setMeasuredDimension(gVar.g, gVar.h);
     }
 }

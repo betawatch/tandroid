@@ -1,33 +1,18 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+import android.view.View;
+import org.telegram.messenger.MessageObject;
+
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class y10 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ FiltersSetupActivity b;
+public interface y10 {
+    void a();
 
-    public /* synthetic */ y10(FiltersSetupActivity filtersSetupActivity, int i10) {
-        this.a = i10;
-        this.b = filtersSetupActivity;
-    }
+    boolean c(r10 r10Var);
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                FiltersSetupActivity filtersSetupActivity = this.b;
-                filtersSetupActivity.getClass();
-                filtersSetupActivity.presentFragment(new PremiumPreviewFragment(0, "settings"));
-                break;
-            case 1:
-                FiltersSetupActivity filtersSetupActivity2 = this.b;
-                filtersSetupActivity2.a.d1(new iu(filtersSetupActivity2, 9), 700, true);
-                break;
-            default:
-                FiltersSetupActivity filtersSetupActivity3 = this.b;
-                filtersSetupActivity3.getClass();
-                filtersSetupActivity3.showDialog(new sg.a1((org.telegram.ui.ActionBar.n2) filtersSetupActivity3, 9, true));
-                break;
-        }
-    }
+    void d(MessageObject messageObject);
+
+    void e(MessageObject messageObject, View view, int i10);
+
+    boolean g();
 }

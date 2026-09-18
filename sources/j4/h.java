@@ -2,10 +2,11 @@ package j4;
 
 import b2.r0;
 import c3.h0;
+import hg.k0;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class h implements i {
     public final /* synthetic */ int a;
@@ -24,7 +25,7 @@ public final class h implements i {
     }
 
     @Override // j4.i
-    public final void b(e2.v vVar) {
+    public final void a(e2.v vVar) {
         boolean z10;
         boolean z11;
         switch (this.a) {
@@ -97,7 +98,7 @@ public final class h implements i {
     }
 
     @Override // j4.i
-    public final void d() {
+    public final void c() {
         switch (this.a) {
             case 0:
                 this.b = false;
@@ -111,7 +112,7 @@ public final class h implements i {
     }
 
     @Override // j4.i
-    public final void e(c3.q qVar, f0 f0Var) {
+    public final void d(c3.q qVar, f0 f0Var) {
         switch (this.a) {
             case 0:
                 h0[] h0VarArr = (h0[]) this.g;
@@ -119,7 +120,7 @@ public final class h implements i {
                     e0 e0Var = (e0) ((List) this.f).get(i10);
                     f0Var.a();
                     f0Var.b();
-                    h0 R1 = qVar.R1(f0Var.d, 3);
+                    h0 Z1 = qVar.Z1(f0Var.d, 3);
                     b2.r rVar = new b2.r();
                     f0Var.b();
                     rVar.a = f0Var.e;
@@ -127,27 +128,27 @@ public final class h implements i {
                     rVar.q = r0.n("application/dvbsubs");
                     rVar.t = Collections.singletonList(e0Var.b);
                     rVar.d = e0Var.a;
-                    i2.g.u(rVar, R1);
-                    h0VarArr[i10] = R1;
+                    k0.u(rVar, Z1);
+                    h0VarArr[i10] = Z1;
                 }
                 break;
             default:
                 f0Var.a();
                 f0Var.b();
-                h0 R12 = qVar.R1(f0Var.d, 5);
-                this.g = R12;
+                h0 Z12 = qVar.Z1(f0Var.d, 5);
+                this.g = Z12;
                 b2.r rVar2 = new b2.r();
                 f0Var.b();
                 rVar2.a = f0Var.e;
                 rVar2.p = r0.n("video/mp2t");
                 rVar2.q = r0.n("application/id3");
-                i2.g.u(rVar2, R12);
+                k0.u(rVar2, Z12);
                 break;
         }
     }
 
     @Override // j4.i
-    public final void f(boolean z10) {
+    public final void e(boolean z10) {
         int i10;
         switch (this.a) {
             case 0:
@@ -173,7 +174,7 @@ public final class h implements i {
     }
 
     @Override // j4.i
-    public final void g(int i10, long j3) {
+    public final void f(int i10, long j3) {
         switch (this.a) {
             case 0:
                 if ((i10 & 4) != 0) {

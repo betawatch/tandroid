@@ -5,7 +5,7 @@ import j$.util.DesugarCollections;
 import java.util.ArrayList;
 import java.util.List;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class f {
     public final Context a;
@@ -15,11 +15,11 @@ public final class f {
     public final r e;
 
     public f(Context context, d6.b bVar, r rVar) {
-        String N;
+        String c02;
         ArrayList arrayList = bVar.b;
         String str = bVar.a;
         if (DesugarCollections.unmodifiableList(arrayList).isEmpty()) {
-            N = c6.y.a(str);
+            c02 = c6.y.a(str);
         } else {
             List unmodifiableList = DesugarCollections.unmodifiableList(bVar.b);
             if (str == null) {
@@ -28,12 +28,12 @@ public final class f {
             if (unmodifiableList == null) {
                 throw new IllegalArgumentException("namespaces cannot be null");
             }
-            N = n4.y.N(new n4.y(8, str, unmodifiableList));
+            c02 = n4.y.c0(new n4.y(8, str, unmodifiableList));
         }
         this.c = new d6.j(this);
         this.a = context.getApplicationContext();
-        n6.l.f(N);
-        this.b = N;
+        n6.l.f(c02);
+        this.b = c02;
         this.d = bVar;
         this.e = rVar;
     }

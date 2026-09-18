@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class a70 extends ViewGroup {
     public boolean a;
@@ -43,7 +43,7 @@ public final class a70 extends ViewGroup {
             b70Var.d0 = animatorSet2;
             animatorSet2.addListener(new z60(this, i10));
             b70Var.d0.setDuration(150L);
-            b70Var.d0.setInterpolator(pr.f);
+            b70Var.d0.setInterpolator(qr.f);
             ArrayList arrayList = this.b;
             arrayList.clear();
             arrayList.add(ObjectAnimator.ofFloat(m30Var, (Property<m30, Float>) View.SCALE_X, 0.01f, 1.0f));
@@ -66,7 +66,7 @@ public final class a70 extends ViewGroup {
         this.a = false;
         AnimatorSet animatorSet2 = new AnimatorSet();
         b70Var.d0 = animatorSet2;
-        animatorSet2.addListener(new bi.t(27, this, m30Var));
+        animatorSet2.addListener(new ai.z(27, this, m30Var));
         b70Var.d0.setDuration(150L);
         this.c = m30Var;
         ArrayList arrayList = this.b;
@@ -89,14 +89,14 @@ public final class a70 extends ViewGroup {
     @Override // android.view.View
     public final void onMeasure(int i10, int i11) {
         ArrayList arrayList;
-        s4.c1 K;
+        s4.c1 L;
         ViewGroup viewGroup;
         AnimatorSet animatorSet;
-        org.telegram.ui.ActionBar.v1 v1Var;
+        org.telegram.ui.ActionBar.w1 w1Var;
         int i12;
         b70 b70Var = this.e;
-        org.telegram.ui.ActionBar.v1 v1Var2 = b70Var.V;
-        bi.o0 o0Var = b70Var.d;
+        org.telegram.ui.ActionBar.w1 w1Var2 = b70Var.V;
+        ai.w0 w0Var = b70Var.d;
         int childCount = getChildCount();
         int size = View.MeasureSpec.getSize(i10);
         int dp = size - AndroidUtilities.dp(26.0f);
@@ -112,7 +112,7 @@ public final class a70 extends ViewGroup {
             }
             View childAt = getChildAt(i13);
             if (childAt instanceof m30) {
-                v1Var = v1Var2;
+                w1Var = w1Var2;
                 childAt.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(32.0f), TLObject.FLAG_30));
                 if (childAt != this.c && childAt.getMeasuredWidth() + i14 > dp) {
                     dp2 = org.telegram.messenger.w1.C(8.0f, childAt.getMeasuredHeight(), dp2);
@@ -152,27 +152,27 @@ public final class a70 extends ViewGroup {
                 }
                 i15 = org.telegram.messenger.w1.C(9.0f, childAt.getMeasuredWidth(), i15);
             } else {
-                v1Var = v1Var2;
+                w1Var = w1Var2;
             }
             i13++;
-            v1Var2 = v1Var;
+            w1Var2 = w1Var;
         }
-        org.telegram.ui.ActionBar.v1 v1Var3 = v1Var2;
+        org.telegram.ui.ActionBar.w1 w1Var3 = w1Var2;
         int dp5 = AndroidUtilities.dp(42.0f) + dp3;
         final int dp6 = AndroidUtilities.dp(42.0f) + dp2;
-        int min = b70Var.m0 != null ? b70Var.g0 ? Math.min(b70Var.s0, dp6) : 0 : i2.g.f(52.0f, Math.min(b70Var.s0, dp6), 0);
+        int min = b70Var.m0 != null ? b70Var.g0 ? Math.min(b70Var.s0, dp6) : 0 : hg.k0.f(52.0f, Math.min(b70Var.s0, dp6), 0);
         int i16 = b70Var.u0;
         int dp7 = (b70Var.m0 != null || b70Var.f0.m() <= 0) ? 0 : AndroidUtilities.dp(56.0f);
         b70Var.u0 = dp7;
         if (min != b70Var.o0 || i16 != dp7) {
             b70Var.o0 = min;
-            if (o0Var.getAdapter() != null && o0Var.getAdapter().h() > 0 && (K = o0Var.K(0)) != null) {
-                o0Var.getAdapter().m(0);
-                b70Var.R.h1(0, K.a.getTop() - o0Var.getPaddingTop());
-                if (o0Var.getItemAnimator() != null) {
+            if (w0Var.getAdapter() != null && w0Var.getAdapter().h() > 0 && (L = w0Var.L(0)) != null) {
+                w0Var.getAdapter().m(0);
+                b70Var.R.h1(0, L.a.getTop() - w0Var.getPaddingTop());
+                if (w0Var.getItemAnimator() != null) {
                     ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-                    ofFloat.addUpdateListener(new bi.u5(this, 8));
-                    ofFloat.setDuration(o0Var.getItemAnimator().i()).start();
+                    ofFloat.addUpdateListener(new ai.l6(this, 8));
+                    ofFloat.setDuration(w0Var.getItemAnimator().i()).start();
                 }
             }
         }
@@ -180,7 +180,7 @@ public final class a70 extends ViewGroup {
         int i17 = b70Var.k0;
         if (i17 != min2) {
             ValueAnimator ofInt = ValueAnimator.ofInt(i17, min2);
-            ofInt.addUpdateListener(new l6(this, 28));
+            ofInt.addUpdateListener(new i6(this, 28));
             arrayList.add(ofInt);
         }
         boolean z10 = this.d;
@@ -207,7 +207,7 @@ public final class a70 extends ViewGroup {
                     }
                 }
             });
-        } else if (!z10 && v1Var3.getMeasuredHeight() + v1Var3.getScrollY() > dp6) {
+        } else if (!z10 && w1Var3.getMeasuredHeight() + w1Var3.getScrollY() > dp6) {
             final int i19 = 1;
             AndroidUtilities.runOnUIThread(new Runnable(this) { // from class: org.telegram.ui.Components.y60
                 public final /* synthetic */ a70 b;
@@ -239,10 +239,10 @@ public final class a70 extends ViewGroup {
         }
         if (b70Var.d0 == null) {
             b70Var.k0 = min2;
-            viewGroup = ((org.telegram.ui.ActionBar.f3) b70Var).containerView;
+            viewGroup = ((org.telegram.ui.ActionBar.g3) b70Var).containerView;
             viewGroup.invalidate();
         }
         setMeasuredDimension(size, Math.max(dp6, dp5));
-        o0Var.setTranslationY(0.0f);
+        w0Var.setTranslationY(0.0f);
     }
 }

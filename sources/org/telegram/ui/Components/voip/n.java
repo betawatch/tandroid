@@ -2,15 +2,15 @@ package org.telegram.ui.Components.voip;
 
 import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ t b;
+    public final /* synthetic */ u b;
 
-    public /* synthetic */ n(t tVar, int i10) {
+    public /* synthetic */ n(u uVar, int i10) {
         this.a = i10;
-        this.b = tVar;
+        this.b = uVar;
     }
 
     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
@@ -19,14 +19,14 @@ public final /* synthetic */ class n implements ValueAnimator.AnimatorUpdateList
         switch (this.a) {
             case 0:
                 float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                t tVar = this.b;
-                tVar.a0 = floatValue;
-                tVar.b0.setAlpha(floatValue);
-                tVar.a.invalidate();
+                u uVar = this.b;
+                uVar.a0 = floatValue;
+                uVar.b0.setAlpha(floatValue);
+                uVar.a.invalidate();
                 break;
             default:
-                t tVar2 = this.b;
-                o oVar = tVar2.a;
+                u uVar2 = this.b;
+                p pVar = uVar2.a;
                 float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 if (floatValue2 < 0.5f) {
                     z10 = false;
@@ -34,14 +34,14 @@ public final /* synthetic */ class n implements ValueAnimator.AnimatorUpdateList
                     floatValue2 -= 1.0f;
                     z10 = true;
                 }
-                if (z10 && !tVar2.K0) {
-                    tVar2.x0.setAlpha(1.0f);
-                    tVar2.K0 = true;
-                    oVar.d.clearImage();
+                if (z10 && !uVar2.K0) {
+                    uVar2.x0.setAlpha(1.0f);
+                    uVar2.K0 = true;
+                    pVar.d.clearImage();
                 }
                 float f7 = floatValue2 * 180.0f;
-                tVar2.x0.setRotationY(f7);
-                oVar.d.setRotationY(f7);
+                uVar2.x0.setRotationY(f7);
+                pVar.d.setRotationY(f7);
                 break;
         }
     }

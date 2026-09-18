@@ -1,6 +1,6 @@
 package i2;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class n1 {
     public final f a;
@@ -21,7 +21,7 @@ public final class n1 {
         if (i10 == 2) {
             e2.d.g(i10 == 2);
             fVar.n = 1;
-            fVar.t();
+            fVar.u();
         }
     }
 
@@ -38,22 +38,22 @@ public final class n1 {
         }
     }
 
-    public final void a(f fVar, a3.p pVar) {
+    public final void a(f fVar, a3.q qVar) {
         e2.d.g(this.a == fVar || this.c == fVar);
         if (h(fVar)) {
-            if (fVar == ((f) pVar.e)) {
-                pVar.f = null;
-                pVar.e = null;
-                pVar.a = true;
+            if (fVar == ((f) qVar.e)) {
+                qVar.f = null;
+                qVar.e = null;
+                qVar.a = true;
             }
             b(fVar);
             e2.d.g(fVar.n == 1);
-            fVar.c.A();
+            fVar.c.h();
             fVar.n = 0;
             fVar.r = null;
             fVar.s = null;
             fVar.y = false;
-            fVar.n();
+            fVar.o();
             fVar.G = null;
         }
     }
@@ -138,8 +138,8 @@ public final class n1 {
             if (this.e) {
                 f fVar = this.a;
                 e2.d.g(fVar.n == 0);
-                fVar.c.A();
-                fVar.r();
+                fVar.c.h();
+                fVar.s();
                 this.e = false;
                 return;
             }
@@ -149,13 +149,13 @@ public final class n1 {
             f fVar2 = this.c;
             fVar2.getClass();
             e2.d.g(fVar2.n == 0);
-            fVar2.c.A();
-            fVar2.r();
+            fVar2.c.h();
+            fVar2.s();
             this.f = false;
         }
     }
 
-    public final int j(f fVar, t0 t0Var, x2.v vVar, a3.p pVar) {
+    public final int j(f fVar, t0 t0Var, x2.v vVar, a3.q qVar) {
         f fVar2;
         int i10;
         if (fVar == null || fVar.n == 0 || (fVar == (fVar2 = this.a) && ((i10 = this.d) == 2 || i10 == 4))) {
@@ -180,13 +180,13 @@ public final class n1 {
                 }
                 u2.b1 b1Var2 = t0Var.c[i11];
                 b1Var2.getClass();
-                fVar.x(sVarArr, b1Var2, t0Var.e(), t0Var.p, t0Var.g.a);
+                fVar.y(sVarArr, b1Var2, t0Var.e(), t0Var.p, t0Var.g.a);
                 return 3;
             }
             if (!fVar.l()) {
                 return 0;
             }
-            a(fVar, pVar);
+            a(fVar, qVar);
             if (!b10 || f()) {
                 i(fVar == fVar2);
                 return 1;
@@ -213,7 +213,7 @@ public final class n1 {
         if (i11 == 1 && this.d != 4) {
             e2.d.g(i11 == 1);
             fVar.n = 2;
-            fVar.s();
+            fVar.t();
             return;
         }
         f fVar2 = this.c;
@@ -222,6 +222,6 @@ public final class n1 {
         }
         e2.d.g(i10 == 1);
         fVar2.n = 2;
-        fVar2.s();
+        fVar2.t();
     }
 }

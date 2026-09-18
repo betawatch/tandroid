@@ -1,35 +1,12 @@
 package yh;
 
-import android.content.Context;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.Components.x51;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class p implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Context b;
-    public final /* synthetic */ f6 c;
-    public final /* synthetic */ TL_stars.StarGift d;
-
-    public /* synthetic */ p(Context context, f6 f6Var, TL_stars.StarGift starGift, int i10) {
-        this.a = i10;
-        this.b = context;
-        this.c = f6Var;
-        this.d = starGift;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                f6 f6Var = this.c;
-                v.U(this.b, this.d, f6Var);
-                break;
-            default:
-                f6 f6Var2 = this.c;
-                v.U(this.b, this.d, f6Var2);
-                break;
-        }
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* loaded from: classes4.dex */
+public final class p extends x51 {
+    @Override // org.telegram.ui.Components.x51, org.telegram.ui.Components.ll0
+    public final boolean D(s4.c1 c1Var) {
+        return false;
     }
 }

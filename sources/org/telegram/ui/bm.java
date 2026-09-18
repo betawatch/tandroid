@@ -6,31 +6,31 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class bm extends su0 {
-    public final /* synthetic */ co a;
+public final class bm extends vu0 {
+    public final /* synthetic */ bo a;
 
-    public bm(co coVar) {
-        this.a = coVar;
+    public bm(bo boVar) {
+        this.a = boVar;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:17:0x0076 A[LOOP:0: B:10:0x002a->B:17:0x0076, LOOP_END] */
     /* JADX WARN: Removed duplicated region for block: B:18:0x004b A[SYNTHETIC] */
-    @Override // org.telegram.ui.su0, org.telegram.ui.av0
+    @Override // org.telegram.ui.vu0, org.telegram.ui.dv0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final cv0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
-        fk fkVar;
+    public final fv0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
+        gk gkVar;
         ImageReceiver imageReceiver;
         if (i10 >= 0) {
-            co coVar = this.a;
-            if (i10 < coVar.Ha.size() && (fkVar = coVar.I1) != null && fkVar.getListView() != null) {
-                int childCount = coVar.I1.getListView().getChildCount();
-                Object obj = coVar.Ha.get(i10);
+            bo boVar = this.a;
+            if (i10 < boVar.Ha.size() && (gkVar = boVar.I1) != null && gkVar.getListView() != null) {
+                int childCount = boVar.I1.getListView().getChildCount();
+                Object obj = boVar.Ha.get(i10);
                 for (int i11 = 0; i11 < childCount; i11++) {
-                    View childAt = coVar.I1.getListView().getChildAt(i11);
+                    View childAt = boVar.I1.getListView().getChildAt(i11);
                     if (childAt instanceof org.telegram.ui.Cells.e2) {
                         org.telegram.ui.Cells.e2 e2Var = (org.telegram.ui.Cells.e2) childAt;
                         if (e2Var.getResult() == obj) {
@@ -38,14 +38,14 @@ public final class bm extends su0 {
                             if (imageReceiver == null) {
                                 int[] iArr = new int[2];
                                 childAt.getLocationInWindow(iArr);
-                                cv0 cv0Var = new cv0();
-                                cv0Var.b = iArr[0];
-                                cv0Var.c = iArr[1];
-                                cv0Var.d = coVar.I1.getListView();
-                                cv0Var.a = imageReceiver;
-                                cv0Var.e = imageReceiver.getBitmapSafe();
-                                cv0Var.h = imageReceiver.getRoundRadius(true);
-                                return cv0Var;
+                                fv0 fv0Var = new fv0();
+                                fv0Var.b = iArr[0];
+                                fv0Var.c = iArr[1];
+                                fv0Var.d = boVar.I1.getListView();
+                                fv0Var.a = imageReceiver;
+                                fv0Var.e = imageReceiver.getBitmapSafe();
+                                fv0Var.h = imageReceiver.getRoundRadius(true);
+                                return fv0Var;
                             }
                         }
                     }
@@ -58,14 +58,14 @@ public final class bm extends su0 {
         return null;
     }
 
-    @Override // org.telegram.ui.su0, org.telegram.ui.av0
+    @Override // org.telegram.ui.vu0, org.telegram.ui.dv0
     public final void o(int i10, VideoEditedInfo videoEditedInfo, boolean z10, int i11, int i12, boolean z11) {
         if (i10 >= 0) {
-            co coVar = this.a;
-            if (i10 >= coVar.Ha.size()) {
+            bo boVar = this.a;
+            if (i10 >= boVar.Ha.size()) {
                 return;
             }
-            coVar.cb((TLRPC.BotInlineResult) coVar.Ha.get(i10), z10, i11, 0L);
+            boVar.cb((TLRPC.BotInlineResult) boVar.Ha.get(i10), z10, i11, 0L);
         }
     }
 }

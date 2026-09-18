@@ -1,117 +1,41 @@
 package yh;
 
-import android.content.Context;
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.TextView;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.d61;
-import org.telegram.ui.Components.d90;
-import org.telegram.ui.Components.g51;
-import org.telegram.ui.Components.h51;
-import org.telegram.ui.Components.ll0;
-import org.telegram.ui.Components.v51;
-import org.telegram.ui.cc1;
-import w7.x5;
-import w7.z5;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
-/* loaded from: classes.dex */
-public final class n1 extends g51 {
-    public static final /* synthetic */ int a = 0;
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class n1 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ a4 b;
+    public final /* synthetic */ TLRPC.TL_error c;
+    public final /* synthetic */ Runnable d;
 
-    static {
-        g51.setup(new n1());
+    public /* synthetic */ n1(a4 a4Var, TLRPC.TL_error tL_error, Runnable runnable, int i10) {
+        this.a = i10;
+        this.b = a4Var;
+        this.c = tL_error;
+        this.d = runnable;
     }
 
-    @Override // org.telegram.ui.Components.g51
-    public final void bindView(View view, h51 h51Var, boolean z10, v51 v51Var, d61 d61Var) {
-        o1 o1Var = (o1) view;
-        int i10 = h51Var.d;
-        ArrayList arrayList = (ArrayList) h51Var.G;
-        int i11 = h51Var.z;
-        Utilities.Callback callback = (Utilities.Callback) h51Var.H;
-        cc1 cc1Var = o1Var.a;
-        ArrayList arrayList2 = o1Var.d;
-        boolean z11 = o1Var.r == i10;
-        o1Var.r = i10;
-        if (arrayList2.size() != arrayList.size()) {
-            int i12 = 0;
-            int i13 = 0;
-            while (true) {
-                if (i12 >= arrayList2.size()) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.getBulletinFactory().d0(this.c, false);
+                Runnable runnable = this.d;
+                if (runnable != null) {
+                    runnable.run();
                     break;
                 }
-                CharSequence charSequence = i13 < arrayList.size() ? (CharSequence) arrayList.get(i13) : null;
-                if (charSequence == null) {
-                    cc1Var.removeView((View) arrayList2.remove(i12));
-                    i12--;
-                } else {
-                    ((TextView) arrayList2.get(i12)).setText(charSequence);
+                break;
+            default:
+                this.b.getBulletinFactory().d0(this.c, false);
+                Runnable runnable2 = this.d;
+                if (runnable2 != null) {
+                    runnable2.run();
+                    break;
                 }
-                i13++;
-                i12++;
-            }
-            while (i13 < arrayList.size()) {
-                d90 d90Var = new d90(o1Var.getContext(), null);
-                d90Var.setGravity(17);
-                d90Var.setText((CharSequence) arrayList.get(i13));
-                d90Var.setTypeface(AndroidUtilities.bold());
-                d90Var.setTextColor(j6.v(j6.w0(null, j6.b6, false), j6.w0(null, j6.c6, false)));
-                d90Var.setTextSize(1, 14.0f);
-                d90Var.setPadding(AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f), 0);
-                d90Var.setEllipsize(TextUtils.TruncateAt.END);
-                d90Var.setSingleLine();
-                d90Var.setMaxLines(1);
-                z5.b(d90Var, 0.075f, 1.4f);
-                cc1Var.addView(d90Var, x5.n(-2, 26));
-                arrayList2.add(d90Var);
-                i13++;
-            }
+                break;
         }
-        o1Var.b = i11;
-        if (!z11) {
-            o1Var.c.d(i11, true);
-        }
-        cc1Var.invalidate();
-        for (int i14 = 0; i14 < arrayList2.size(); i14++) {
-            ((TextView) arrayList2.get(i14)).setOnClickListener(new org.telegram.ui.Components.b0(i14, 1, callback));
-        }
-    }
-
-    @Override // org.telegram.ui.Components.g51
-    public final boolean contentsEquals(h51 h51Var, h51 h51Var2) {
-        return h51Var.z == h51Var2.z && h51Var.H == h51Var2.H && equals(h51Var, h51Var2);
-    }
-
-    @Override // org.telegram.ui.Components.g51
-    public final View createView(Context context, ll0 ll0Var, int i10, int i11, f6 f6Var) {
-        return new o1(context);
-    }
-
-    @Override // org.telegram.ui.Components.g51
-    public final boolean equals(h51 h51Var, h51 h51Var2) {
-        if (h51Var.d == h51Var2.d) {
-            ArrayList arrayList = (ArrayList) h51Var.G;
-            ArrayList arrayList2 = (ArrayList) h51Var2.G;
-            if (arrayList == arrayList2) {
-                return true;
-            }
-            if (arrayList == null && arrayList2 == null) {
-                return true;
-            }
-            if (arrayList != null && arrayList2 != null && arrayList.size() == arrayList2.size()) {
-                for (int i10 = 0; i10 < arrayList.size(); i10++) {
-                    if (TextUtils.equals((CharSequence) arrayList.get(i10), (CharSequence) arrayList2.get(i10))) {
-                    }
-                }
-                return true;
-            }
-        }
-        return false;
     }
 }

@@ -1,99 +1,35 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.CornerPathEffect;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import android.text.StaticLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class zl0 extends Drawable {
-    public int a = 255;
-    public final /* synthetic */ x80 b;
-    public final /* synthetic */ int[] c;
-    public final /* synthetic */ org.telegram.ui.Cells.t1 d;
-    public final /* synthetic */ int[] e;
-    public final /* synthetic */ Bitmap f;
-    public final /* synthetic */ RectF g;
-    public final /* synthetic */ Paint h;
-    public final /* synthetic */ Paint i;
-    public final /* synthetic */ StaticLayout j;
+public final /* synthetic */ class zl0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ bm0 b;
 
-    public zl0(x80 x80Var, int[] iArr, org.telegram.ui.Cells.t1 t1Var, int[] iArr2, Bitmap bitmap, RectF rectF, Paint paint, Paint paint2, StaticLayout staticLayout) {
-        this.b = x80Var;
-        this.c = iArr;
-        this.d = t1Var;
-        this.e = iArr2;
-        this.f = bitmap;
-        this.g = rectF;
-        this.h = paint;
-        this.i = paint2;
-        this.j = staticLayout;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        if (this.a <= 0) {
-            return;
-        }
-        RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(getBounds());
-        float f7 = rectF.left;
-        CornerPathEffect cornerPathEffect = x80.w;
-        rectF.left = f7 - (AndroidUtilities.dp(5.0f) / 2.0f);
-        canvas.save();
-        canvas.saveLayerAlpha(rectF, this.a, 31);
-        int[] iArr = this.c;
-        canvas.translate(iArr[0], iArr[1]);
-        x80 x80Var = this.b;
-        org.telegram.ui.Cells.t1 t1Var = this.d;
-        if (t1Var == null || !t1Var.C1()) {
-            canvas.drawPath(x80Var, this.i);
-        } else {
-            org.telegram.ui.ActionBar.f5 f5Var = t1Var.t8;
-            if (f5Var == null || f5Var.c == null) {
-                canvas.translate(-iArr[0], -iArr[1]);
-                int[] iArr2 = this.e;
-                canvas.translate(iArr2[0], t1Var.getPaddingTop() + iArr2[1]);
-                t1Var.D1(canvas, true, false);
-                canvas.translate(-iArr2[0], (-iArr2[1]) - t1Var.getPaddingTop());
-                canvas.translate(iArr[0], iArr[1]);
-            } else {
-                canvas.save();
-                t1Var.setBackgroundTopY(true);
-                canvas.translate(0.0f, -t1Var.t8.r);
-                canvas.drawPaint(t1Var.t8.c);
-                canvas.restore();
-            }
-            Bitmap bitmap = this.f;
-            if (bitmap != null) {
-                canvas.save();
-                RectF rectF2 = this.g;
-                canvas.drawBitmap(bitmap, rectF2.left, rectF2.top, this.h);
-                canvas.restore();
-            }
-        }
-        canvas.clipPath(x80Var);
-        this.j.draw(canvas);
-        canvas.restore();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
+    public /* synthetic */ zl0(bm0 bm0Var, int i10) {
         this.a = i10;
+        this.b = bm0Var;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                bm0 bm0Var = this.b;
+                bm0Var.getClass();
+                AndroidUtilities.runOnUIThread(new zl0(bm0Var, 2));
+                break;
+            case 1:
+                AndroidUtilities.runOnUIThread(new zl0(this.b, 3));
+                break;
+            case 2:
+                super/*android.app.Dialog*/.dismiss();
+                break;
+            default:
+                super/*android.app.Dialog*/.dismiss();
+                break;
+        }
     }
 }

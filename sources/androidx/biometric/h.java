@@ -2,7 +2,7 @@ package androidx.biometric;
 
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class h implements androidx.lifecycle.a0 {
     public final /* synthetic */ int a;
@@ -14,20 +14,20 @@ public final class h implements androidx.lifecycle.a0 {
     }
 
     @Override // androidx.lifecycle.a0
-    public final void f0(Object obj) {
+    public final void p0(Object obj) {
         int i10 = this.a;
         CharSequence charSequence = null;
         p pVar = this.b;
         switch (i10) {
             case 0:
-                t tVar = (t) obj;
-                if (tVar != null) {
-                    pVar.V(tVar);
-                    y yVar = pVar.l0;
-                    if (yVar.r == null) {
-                        yVar.r = new androidx.lifecycle.z();
+                s sVar = (s) obj;
+                if (sVar != null) {
+                    pVar.V(sVar);
+                    x xVar = pVar.l0;
+                    if (xVar.r == null) {
+                        xVar.r = new androidx.lifecycle.z();
                     }
-                    y.h(yVar.r, null);
+                    x.h(xVar.r, null);
                     break;
                 }
                 break;
@@ -36,12 +36,12 @@ public final class h implements androidx.lifecycle.a0 {
                     if (pVar.Q()) {
                         pVar.S();
                     } else {
-                        y yVar2 = pVar.l0;
-                        String str = yVar2.k;
+                        x xVar2 = pVar.l0;
+                        String str = xVar2.k;
                         if (str != null) {
                             charSequence = str;
                         } else {
-                            j6.l lVar = yVar2.f;
+                            j6.l lVar = xVar2.f;
                             if (lVar != null && (charSequence = (CharSequence) lVar.d) == null) {
                                 charSequence = "";
                             }

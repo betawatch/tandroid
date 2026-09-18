@@ -20,7 +20,7 @@ import android.webkit.WebView;
 import android.widget.TextView;
 import androidx.core.graphics.drawable.IconCompat;
 import com.google.android.gms.common.api.internal.BasePendingResult;
-import com.google.android.gms.internal.clearcut.f2;
+import com.google.android.gms.internal.clearcut.g2;
 import e0.p0;
 import java.util.concurrent.atomic.AtomicInteger;
 import m.z0;
@@ -30,17 +30,17 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.v9;
+import org.telegram.ui.x9;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public abstract class d {
     public static int a;
     public static AtomicInteger b;
     public static boolean c;
     public static int d;
-    public static f2 e;
+    public static g2 e;
 
     public static void A(float f7) {
         BasePendingResult basePendingResult;
@@ -61,7 +61,7 @@ public abstract class d {
         } else {
             basePendingResult = e6.h.t();
         }
-        basePendingResult.b(new v9(2));
+        basePendingResult.b(new x9(2));
     }
 
     public static boolean B(ViewConfiguration viewConfiguration) {
@@ -71,7 +71,7 @@ public abstract class d {
     public static void C() {
         int i10 = a;
         if (i10 == 0) {
-            PhotoViewer.t1().i3();
+            PhotoViewer.t1().h3();
         } else if (i10 == 1) {
             MediaController.getInstance().syncCastedPlayer();
         }
@@ -122,10 +122,10 @@ public abstract class d {
     public static void d(boolean z10) {
         Context f7;
         AudioManager audioManager;
-        f2 f2Var = e;
-        if ((f2Var != null) != z10) {
+        g2 g2Var = e;
+        if ((g2Var != null) != z10) {
             if (!z10) {
-                if (f2Var == null || (f7 = f()) == null) {
+                if (g2Var == null || (f7 = f()) == null) {
                     return;
                 }
                 f7.getContentResolver().unregisterContentObserver(e);
@@ -145,9 +145,9 @@ public abstract class d {
             d = audioManager.getStreamVolume(3);
             ContentResolver contentResolver = f10.getContentResolver();
             Uri uri = Settings.System.CONTENT_URI;
-            f2 f2Var2 = new f2(new Handler(), 1);
-            e = f2Var2;
-            contentResolver.registerContentObserver(uri, true, f2Var2);
+            g2 g2Var2 = new g2(new Handler(), 1);
+            e = g2Var2;
+            contentResolver.registerContentObserver(uri, true, g2Var2);
             A(g());
             audioManager.adjustStreamVolume(3, 0, 1);
         }
@@ -269,7 +269,7 @@ public abstract class d {
             b = new AtomicInteger(0);
         }
         b.incrementAndGet();
-        e7.q(new c6.p(j3)).b(new v9(3));
+        e7.q(new c6.p(j3)).b(new x9(3));
     }
 
     public static void w(int i10, TextView textView) {
@@ -296,7 +296,7 @@ public abstract class d {
             } else {
                 basePendingResult2 = e6.h.t();
             }
-            basePendingResult2.b(new v9(0));
+            basePendingResult2.b(new x9(0));
             return;
         }
         n6.l.e("Must be called from the main thread.");
@@ -307,7 +307,7 @@ public abstract class d {
         } else {
             basePendingResult = e6.h.t();
         }
-        basePendingResult.b(new v9(1));
+        basePendingResult.b(new x9(1));
     }
 
     public static void y(Notification.Action.Builder builder, int i10) {
@@ -333,6 +333,6 @@ public abstract class d {
         } else {
             basePendingResult = e6.h.t();
         }
-        basePendingResult.b(new v9(4));
+        basePendingResult.b(new x9(4));
     }
 }

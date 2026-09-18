@@ -2,20 +2,20 @@ package n2;
 
 import android.os.Looper;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public interface m {
-    public static final qb.b z = new qb.b(13);
+    public static final ob.a z = new ob.a(13);
 
-    void B(Looper looper, j2.k kVar);
+    void C(Looper looper, j2.k kVar);
 
-    int H0(b2.s sVar);
+    int L0(b2.s sVar);
 
-    g T0(j jVar, b2.s sVar);
+    g Y0(j jVar, b2.s sVar);
 
     void b();
 
-    l h0(j jVar, b2.s sVar);
+    l j0(j jVar, b2.s sVar);
 
     void release();
 }

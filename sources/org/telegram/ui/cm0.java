@@ -8,62 +8,62 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.UserConfig;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class cm0 implements org.telegram.ui.ActionBar.a2, au, dn0 {
+public final /* synthetic */ class cm0 implements org.telegram.ui.ActionBar.b2, bu, en0 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ pn0 b;
+    public final /* synthetic */ qn0 b;
 
-    public /* synthetic */ cm0(pn0 pn0Var, int i10) {
+    public /* synthetic */ cm0(qn0 qn0Var, int i10) {
         this.a = i10;
-        this.b = pn0Var;
+        this.b = qn0Var;
     }
 
-    @Override // org.telegram.ui.au
-    public void a1(vt vtVar) {
+    @Override // org.telegram.ui.bu
+    public void a1(xt xtVar) {
         switch (this.a) {
             case 2:
-                pn0 pn0Var = this.b;
-                pn0Var.Y[5].setText(vtVar.a);
-                pn0Var.s = vtVar.d;
+                qn0 qn0Var = this.b;
+                qn0Var.Y[5].setText(xtVar.a);
+                qn0Var.s = xtVar.d;
                 break;
             default:
-                pn0 pn0Var2 = this.b;
-                pn0Var2.Y[0].setText(vtVar.a);
-                if (pn0Var2.U0.indexOf(vtVar.a) != -1) {
-                    pn0Var2.Z0 = true;
-                    String str = (String) pn0Var2.V0.get(vtVar.a);
-                    pn0Var2.Y[1].setText(str);
-                    String str2 = (String) pn0Var2.X0.get(str);
-                    pn0Var2.Y[2].setHintText(str2 != null ? str2.replace('X', (char) 8211) : null);
-                    pn0Var2.Z0 = false;
+                qn0 qn0Var2 = this.b;
+                qn0Var2.Y[0].setText(xtVar.a);
+                if (qn0Var2.U0.indexOf(xtVar.a) != -1) {
+                    qn0Var2.Z0 = true;
+                    String str = (String) qn0Var2.V0.get(xtVar.a);
+                    qn0Var2.Y[1].setText(str);
+                    String str2 = (String) qn0Var2.X0.get(str);
+                    qn0Var2.Y[2].setHintText(str2 != null ? str2.replace('X', (char) 8211) : null);
+                    qn0Var2.Z0 = false;
                 }
-                AndroidUtilities.runOnUIThread(new zl0(pn0Var2, 3), 300L);
-                pn0Var2.Y[2].requestFocus();
-                EditTextBoldCursor editTextBoldCursor = pn0Var2.Y[2];
+                AndroidUtilities.runOnUIThread(new zl0(qn0Var2, 3), 300L);
+                qn0Var2.Y[2].requestFocus();
+                EditTextBoldCursor editTextBoldCursor = qn0Var2.Y[2];
                 editTextBoldCursor.setSelection(editTextBoldCursor.length());
                 break;
         }
     }
 
-    @Override // org.telegram.ui.dn0
+    @Override // org.telegram.ui.en0
     public void b(String str, String str2) {
         this.b.x1();
     }
 
-    @Override // org.telegram.ui.ActionBar.a2
-    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+    @Override // org.telegram.ui.ActionBar.b2
+    public void f(org.telegram.ui.ActionBar.c2 c2Var, int i10) {
         switch (this.a) {
             case 0:
-                pn0 pn0Var = this.b;
-                pn0Var.getClass();
+                qn0 qn0Var = this.b;
+                qn0Var.getClass();
                 try {
                     Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
                     intent.setData(Uri.parse("package:" + ApplicationLoader.applicationContext.getPackageName()));
-                    pn0Var.getParentActivity().startActivity(intent);
+                    qn0Var.getParentActivity().startActivity(intent);
                     break;
-                } catch (Exception e7) {
-                    FileLog.e(e7);
+                } catch (Exception e) {
+                    FileLog.e(e);
                     return;
                 }
             case 1:
@@ -72,10 +72,10 @@ public final /* synthetic */ class cm0 implements org.telegram.ui.ActionBar.a2, 
             case 2:
             case 3:
             default:
-                pn0.a0(this.b);
+                qn0.a0(this.b);
                 break;
             case 4:
-                of.f.s(r3.getParentActivity(), "https://telegram.org/deactivate?phone=" + UserConfig.getInstance(this.b.currentAccount).getClientPhone());
+                nf.f.s(r3.getParentActivity(), "https://telegram.org/deactivate?phone=" + UserConfig.getInstance(this.b.currentAccount).getClientPhone());
                 break;
         }
     }

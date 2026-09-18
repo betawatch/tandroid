@@ -1,43 +1,149 @@
 package com.google.firebase.messaging;
 
-import android.content.SharedPreferences;
-import android.text.TextUtils;
-import java.lang.ref.WeakReference;
-import java.util.concurrent.ScheduledThreadPoolExecutor;
-import java.util.regex.Pattern;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.os.PowerManager;
+import android.util.Log;
+import java.io.IOException;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
-public final class w {
-    public static WeakReference d;
-    public final SharedPreferences a;
-    public cf.c b;
-    public final ScheduledThreadPoolExecutor c;
+public final class w implements Runnable {
+    public final /* synthetic */ int a;
+    public final long b;
+    public final Object c;
+    public final Object d;
+    public final Object e;
 
-    public w(SharedPreferences sharedPreferences, ScheduledThreadPoolExecutor scheduledThreadPoolExecutor) {
-        this.c = scheduledThreadPoolExecutor;
-        this.a = sharedPreferences;
+    public w(FirebaseMessaging firebaseMessaging, long j3) {
+        this.a = 0;
+        this.e = new ThreadPoolExecutor(0, 1, 30L, TimeUnit.SECONDS, new LinkedBlockingQueue(), new c5.w("firebase-iid-executor"));
+        this.d = firebaseMessaging;
+        this.b = j3;
+        PowerManager.WakeLock newWakeLock = ((PowerManager) firebaseMessaging.b.getSystemService("power")).newWakeLock(1, "fiid-sync");
+        this.c = newWakeLock;
+        newWakeLock.setReferenceCounted(false);
     }
 
-    public final synchronized v a() {
-        v vVar;
-        String q6 = this.b.q();
-        Pattern pattern = v.d;
-        vVar = null;
-        if (!TextUtils.isEmpty(q6)) {
-            String[] split = q6.split("!", -1);
-            if (split.length == 2) {
-                vVar = new v(split[0], split[1]);
+    public boolean a() {
+        ConnectivityManager connectivityManager = (ConnectivityManager) ((FirebaseMessaging) this.d).b.getSystemService("connectivity");
+        NetworkInfo activeNetworkInfo = connectivityManager != null ? connectivityManager.getActiveNetworkInfo() : null;
+        return activeNetworkInfo != null && activeNetworkInfo.isConnected();
+    }
+
+    public boolean b() {
+        try {
+            if (((FirebaseMessaging) this.d).a() == null) {
+                Log.e("FirebaseMessaging", "Token retrieval failed: null");
+                return false;
             }
+            if (!Log.isLoggable("FirebaseMessaging", 3)) {
+                return true;
+            }
+            Log.d("FirebaseMessaging", "Token successfully retrieved");
+            return true;
+        } catch (IOException e) {
+            String message = e.getMessage();
+            if (!"SERVICE_NOT_AVAILABLE".equals(message) && !"INTERNAL_SERVER_ERROR".equals(message) && !"InternalServerError".equals(message)) {
+                if (e.getMessage() != null) {
+                    throw e;
+                }
+                Log.w("FirebaseMessaging", "Token retrieval failed without exception message. Will retry token retrieval");
+                return false;
+            }
+            Log.w("FirebaseMessaging", "Token retrieval failed: " + e.getMessage() + ". Will retry token retrieval");
+            return false;
+        } catch (SecurityException unused) {
+            Log.w("FirebaseMessaging", "Token retrieval failed with SecurityException. Will retry token retrieval");
+            return false;
         }
-        return vVar;
     }
 
-    public final synchronized void b() {
-        this.b = cf.c.o(this.a, this.c);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                PowerManager.WakeLock wakeLock = (PowerManager.WakeLock) this.c;
+                t c10 = t.c();
+                FirebaseMessaging firebaseMessaging = (FirebaseMessaging) this.d;
+                if (c10.e(firebaseMessaging.b)) {
+                    wakeLock.acquire();
+                }
+                try {
+                    try {
+                        synchronized (firebaseMessaging) {
+                            firebaseMessaging.j = true;
+                        }
+                        if (!firebaseMessaging.i.e()) {
+                            firebaseMessaging.e(false);
+                            if (!t.c().e(firebaseMessaging.b)) {
+                                return;
+                            }
+                        } else if (!t.c().d(firebaseMessaging.b) || a()) {
+                            if (b()) {
+                                firebaseMessaging.e(false);
+                            } else {
+                                firebaseMessaging.f(this.b);
+                            }
+                            if (!t.c().e(firebaseMessaging.b)) {
+                                return;
+                            }
+                        } else {
+                            androidx.mediarouter.app.g gVar = new androidx.mediarouter.app.g();
+                            gVar.b = this;
+                            gVar.a();
+                            if (!t.c().e(firebaseMessaging.b)) {
+                                return;
+                            }
+                        }
+                    } catch (IOException e) {
+                        Log.e("FirebaseMessaging", "Topic sync or token retrieval failed on hard failure exceptions: " + e.getMessage() + ". Won't retry the operation.");
+                        firebaseMessaging.e(false);
+                        if (!t.c().e(firebaseMessaging.b)) {
+                            return;
+                        }
+                    }
+                    wakeLock.release();
+                    return;
+                } catch (Throwable th2) {
+                    if (t.c().e(firebaseMessaging.b)) {
+                        wakeLock.release();
+                    }
+                    throw th2;
+                }
+            default:
+                w9.m mVar = (w9.m) this.e;
+                w9.q qVar = mVar.n;
+                if (qVar == null || !qVar.e.get()) {
+                    long j3 = this.b / 1000;
+                    String e7 = mVar.e();
+                    if (e7 == null) {
+                        Log.w("FirebaseCrashlytics", "Tried to write a non-fatal exception while no session was open.", null);
+                        return;
+                    }
+                    n nVar = mVar.m;
+                    Throwable th3 = (Throwable) this.c;
+                    Thread thread = (Thread) this.d;
+                    nVar.getClass();
+                    String concat = "Persisting non-fatal event for session ".concat(e7);
+                    if (Log.isLoggable("FirebaseCrashlytics", 2)) {
+                        Log.v("FirebaseCrashlytics", concat, null);
+                    }
+                    nVar.v(th3, thread, e7, "error", j3, false);
+                    return;
+                }
+                return;
+        }
     }
 
-    public final synchronized void c(v vVar) {
-        this.b.r(vVar.c);
+    public w(w9.m mVar, long j3, Throwable th2, Thread thread) {
+        this.a = 1;
+        this.e = mVar;
+        this.b = j3;
+        this.c = th2;
+        this.d = thread;
     }
 }

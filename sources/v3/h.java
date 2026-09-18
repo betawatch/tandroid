@@ -4,7 +4,7 @@ import c3.a0;
 import c3.c0;
 import e2.d0;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class h implements f {
     public final long a;
@@ -26,7 +26,7 @@ public final class h implements f {
     }
 
     @Override // v3.f
-    public final long a(long j3) {
+    public final long b(long j3) {
         long j10 = j3 - this.a;
         if (!f() || j10 <= this.b) {
             return 0L;
@@ -34,13 +34,13 @@ public final class h implements f {
         long[] jArr = this.g;
         e2.d.h(jArr);
         double d = (j10 * 256.0d) / this.e;
-        int e7 = d0.e(jArr, (long) d, true);
+        int e = d0.e(jArr, (long) d, true);
         long j11 = this.c;
-        long j12 = (e7 * j11) / 100;
-        long j13 = jArr[e7];
-        int i10 = e7 + 1;
+        long j12 = (e * j11) / 100;
+        long j13 = jArr[e];
+        int i10 = e + 1;
         long j14 = (j11 * i10) / 100;
-        return Math.round((j13 == (e7 == 99 ? 256L : jArr[i10]) ? 0.0d : (d - j13) / (r0 - j13)) * (j14 - j12)) + j12;
+        return Math.round((j13 == (e == 99 ? 256L : jArr[i10]) ? 0.0d : (d - j13) / (r0 - j13)) * (j14 - j12)) + j12;
     }
 
     @Override // v3.f

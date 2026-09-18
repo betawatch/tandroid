@@ -1,66 +1,65 @@
 package rg;
 
-import org.telegram.ui.ir0;
-import org.telegram.ui.zt0;
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.g3;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.ActionBar.k5;
+import org.telegram.ui.t5;
+import w7.x5;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class f0 implements qg.b1 {
-    public final /* synthetic */ ir0 a;
-    public final /* synthetic */ zt0 b;
+public final class f0 extends FrameLayout {
+    public final ImageView a;
+    public final k5 b;
+    public final t5 c;
+    public final k5 d;
+    public e0 e;
+    public d0 f;
 
-    public f0(zt0 zt0Var, ir0 ir0Var) {
-        this.b = zt0Var;
-        this.a = ir0Var;
+    public f0(j0 j0Var, Context context, f6 f6Var) {
+        super(context);
+        int i10;
+        int i11;
+        i10 = ((g3) j0Var).backgroundPaddingLeft;
+        i11 = ((g3) j0Var).backgroundPaddingLeft;
+        setPadding(i10, 0, i11, 0);
+        ImageView imageView = new ImageView(context);
+        this.a = imageView;
+        imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
+        imageView.setColorFilter(new PorterDuffColorFilter(j6.v0(j6.Lj, f6Var), PorterDuff.Mode.SRC_IN));
+        addView(imageView, x5.d(24, 24.0f, (LocaleController.isRTL ? 5 : 3) | 16, 24.0f, 0.0f, 24.0f, 0.0f));
+        k5 k5Var = new k5(context);
+        this.b = k5Var;
+        k5Var.setWidthWrapContent(true);
+        k5Var.setTextColor(j6.v0(j6.j5, f6Var));
+        k5Var.setTextSize(14);
+        boolean z10 = LocaleController.isRTL;
+        addView(k5Var, x5.d(-2, -2.0f, (z10 ? 5 : 3) | 16, z10 ? 30.0f : 60.0f, 0.0f, z10 ? 60.0f : 30.0f, 0.0f));
+        k5 k5Var2 = new k5(context);
+        this.d = k5Var2;
+        k5Var2.setTextColor(-1);
+        k5Var2.setWidthWrapContent(true);
+        k5Var2.setTypeface(AndroidUtilities.bold());
+        k5Var2.setTextSize(14);
+        t5 t5Var = new t5(this, context, f6Var);
+        this.c = t5Var;
+        t5Var.setWillNotDraw(false);
+        t5Var.addView(k5Var2, x5.e(-2, -2, 17));
+        addView(t5Var, x5.c(-1.0f, -1));
     }
 
-    @Override // qg.b1
-    public final void a() {
-        this.a.run();
-    }
-
-    @Override // qg.b1
-    public final void b() {
-        g0 g0Var = this.b.X0;
-        if (g0Var != null) {
-            g0Var.invalidate();
-        }
-    }
-
-    @Override // qg.b1
-    public final void c() {
-        zt0 zt0Var = this.b;
-        if (zt0Var.k1) {
-            zt0Var.k1 = false;
-        } else {
-            zt0Var.t1.b(1);
-            zt0Var.o((qg.m) qg.m.a.get(0));
-        }
-    }
-
-    @Override // qg.b1
-    public final boolean d() {
-        zt0 zt0Var = this.b;
-        boolean z10 = zt0Var.S0 == null;
-        if (!z10) {
-            zt0Var.r0(null, true);
-        }
-        return z10;
-    }
-
-    @Override // qg.b1
-    public final void e() {
-        zt0 zt0Var = this.b;
-        zt0Var.F0.a.f();
-        zt0Var.l1.setViewHidden(false);
-    }
-
-    @Override // qg.b1
-    public final void f() {
-        zt0 zt0Var = this.b;
-        if (zt0Var.S0 != null) {
-            zt0Var.r0(null, true);
-        }
-        zt0Var.l1.setViewHidden(true);
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(this.f != null ? 49.0f : 36.0f), TLObject.FLAG_30));
     }
 }

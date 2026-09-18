@@ -22,10 +22,9 @@ import android.view.inputmethod.InputConnection;
 import android.widget.AbsSeekBar;
 import android.widget.EditText;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
-import ji.u4;
-import w7.k6;
+import w7.n6;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public class y {
     public static final int[] d = {R.attr.indeterminateDrawable, R.attr.progressDrawable};
@@ -40,7 +39,7 @@ public class y {
         if (keyListener instanceof NumberKeyListener) {
             return keyListener;
         }
-        ((o0.a) ((u4) this.c).b).getClass();
+        ((n7.a1) ((k2.c0) this.c).b).getClass();
         if (keyListener instanceof q1.e) {
             return keyListener;
         }
@@ -54,29 +53,29 @@ public class y {
         switch (this.a) {
             case 0:
                 AbsSeekBar absSeekBar = (AbsSeekBar) this.b;
-                aa.a y3 = aa.a.y(absSeekBar.getContext(), attributeSet, d, i10);
-                Drawable s10 = y3.s(0);
-                if (s10 != null) {
-                    if (s10 instanceof AnimationDrawable) {
-                        AnimationDrawable animationDrawable = (AnimationDrawable) s10;
+                lf.i Q = lf.i.Q(absSeekBar.getContext(), attributeSet, d, i10);
+                Drawable G = Q.G(0);
+                if (G != null) {
+                    if (G instanceof AnimationDrawable) {
+                        AnimationDrawable animationDrawable = (AnimationDrawable) G;
                         int numberOfFrames = animationDrawable.getNumberOfFrames();
                         AnimationDrawable animationDrawable2 = new AnimationDrawable();
                         animationDrawable2.setOneShot(animationDrawable.isOneShot());
                         for (int i11 = 0; i11 < numberOfFrames; i11++) {
-                            Drawable e7 = e(animationDrawable.getFrame(i11), true);
-                            e7.setLevel(10000);
-                            animationDrawable2.addFrame(e7, animationDrawable.getDuration(i11));
+                            Drawable e = e(animationDrawable.getFrame(i11), true);
+                            e.setLevel(10000);
+                            animationDrawable2.addFrame(e, animationDrawable.getDuration(i11));
                         }
                         animationDrawable2.setLevel(10000);
-                        s10 = animationDrawable2;
+                        G = animationDrawable2;
                     }
-                    absSeekBar.setIndeterminateDrawable(s10);
+                    absSeekBar.setIndeterminateDrawable(G);
                 }
-                Drawable s11 = y3.s(1);
-                if (s11 != null) {
-                    absSeekBar.setProgressDrawable(e(s11, false));
+                Drawable G2 = Q.G(1);
+                if (G2 != null) {
+                    absSeekBar.setProgressDrawable(e(G2, false));
                 }
-                y3.A();
+                Q.R();
                 return;
             default:
                 TypedArray obtainStyledAttributes = ((EditText) this.b).getContext().obtainStyledAttributes(attributeSet, f.a.i, i10, 0);
@@ -93,28 +92,28 @@ public class y {
     }
 
     public q1.b c(InputConnection inputConnection, EditorInfo editorInfo) {
-        u4 u4Var = (u4) this.c;
+        k2.c0 c0Var = (k2.c0) this.c;
         if (inputConnection == null) {
-            u4Var.getClass();
+            c0Var.getClass();
             inputConnection = null;
         } else {
-            o0.a aVar = (o0.a) u4Var.b;
-            aVar.getClass();
+            n7.a1 a1Var = (n7.a1) c0Var.b;
+            a1Var.getClass();
             if (!(inputConnection instanceof q1.b)) {
-                inputConnection = new q1.b((EditText) aVar.b, inputConnection, editorInfo);
+                inputConnection = new q1.b((EditText) a1Var.b, inputConnection, editorInfo);
             }
         }
         return (q1.b) inputConnection;
     }
 
     public void d(boolean z10) {
-        q1.i iVar = (q1.i) ((o0.a) ((u4) this.c).b).c;
+        q1.i iVar = (q1.i) ((n7.a1) ((k2.c0) this.c).b).c;
         if (iVar.c != z10) {
             if (iVar.b != null) {
                 androidx.emoji2.text.l a2 = androidx.emoji2.text.l.a();
                 q1.h hVar = iVar.b;
                 a2.getClass();
-                k6.a(hVar, "initCallback cannot be null");
+                n6.a(hVar, "initCallback cannot be null");
                 ReentrantReadWriteLock reentrantReadWriteLock = a2.a;
                 reentrantReadWriteLock.writeLock().lock();
                 try {
@@ -178,6 +177,6 @@ public class y {
 
     public y(EditText editText) {
         this.b = editText;
-        this.c = new u4(editText);
+        this.c = new k2.c0(editText);
     }
 }

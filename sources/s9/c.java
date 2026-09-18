@@ -6,15 +6,15 @@ import android.util.Log;
 import b5.g;
 import c5.x;
 import com.google.android.gms.tasks.TaskCompletionSource;
-import com.google.firebase.messaging.s;
-import com.google.firebase.messaging.u;
+import com.google.firebase.messaging.t;
+import com.google.firebase.messaging.w;
 import java.util.concurrent.atomic.AtomicMarkableReference;
 import m.p3;
 import w9.m;
 import w9.o;
 import w9.r;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class c {
     public final o a;
@@ -32,10 +32,10 @@ public final class c {
         Thread currentThread = Thread.currentThread();
         mVar.getClass();
         long currentTimeMillis = System.currentTimeMillis();
-        s sVar = mVar.e;
-        u uVar = new u(mVar, currentTimeMillis, th2, currentThread);
-        sVar.getClass();
-        sVar.h(new x(uVar, 7));
+        t tVar = mVar.e;
+        w wVar = new w(mVar, currentTimeMillis, th2, currentThread);
+        tVar.getClass();
+        tVar.k(new x(wVar, 7));
     }
 
     public final void b() {
@@ -70,10 +70,10 @@ public final class c {
         mVar.getClass();
         try {
             ((com.google.firebase.messaging.m) mVar.d.d).u(str, str2);
-        } catch (IllegalArgumentException e7) {
+        } catch (IllegalArgumentException e) {
             Context context = mVar.a;
             if (context != null && (context.getApplicationInfo().flags & 2) != 0) {
-                throw e7;
+                throw e;
             }
             Log.e("FirebaseCrashlytics", "Attempting to set custom attribute with null key, ignoring.", null);
         }
@@ -90,7 +90,7 @@ public final class c {
                     return;
                 }
                 ((AtomicMarkableReference) p3Var.h).set(b10, true);
-                ((s) p3Var.b).h(new g(p3Var, 1));
+                ((t) p3Var.b).k(new g(p3Var, 1));
             } finally {
             }
         }

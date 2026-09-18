@@ -1,45 +1,36 @@
 package fi;
 
-import android.view.View;
-import j$.util.Objects;
-import java.util.Locale;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
+import ci.m2;
+import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Cells.a7;
-import org.telegram.ui.Cells.e9;
-import org.telegram.ui.Components.v51;
-import org.telegram.ui.b20;
+import org.telegram.ui.Components.j51;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class c implements Utilities.CallbackReturn {
-    public final /* synthetic */ int a;
+public final /* synthetic */ class c implements Utilities.Callback5, Utilities.Callback5Return, MessagesStorage.StringCallback {
+    public final /* synthetic */ f a;
 
-    public /* synthetic */ c(int i10) {
-        this.a = i10;
+    @Override // org.telegram.messenger.Utilities.Callback5Return
+    public Object run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
+        ((Integer) obj3).intValue();
+        ((Float) obj4).floatValue();
+        ((Float) obj5).floatValue();
+        this.a.getClass();
+        return Boolean.FALSE;
     }
 
-    @Override // org.telegram.messenger.Utilities.CallbackReturn
-    public final Object run(Object obj) {
-        switch (this.a) {
-            case 0:
-                return String.format(Locale.US, "%.1f%%", Float.valueOf(((Integer) obj).intValue() / 10.0f));
-            case 1:
-                MessageObject messageObject = (MessageObject) obj;
-                return Boolean.valueOf((messageObject == null || messageObject.getFactCheck() == null) ? false : true);
-            case 2:
-                MessageObject messageObject2 = (MessageObject) obj;
-                return Boolean.valueOf((messageObject2 == null || messageObject2.getEffect() == null) ? false : true);
-            case 3:
-                return LocaleController.formatPluralString("Hours", ((Integer) obj).intValue(), new Object[0]);
-            case 4:
-                return LocaleController.formatPluralString("Minutes", ((Integer) obj).intValue(), new Object[0]);
-            case 5:
-                View view = (View) obj;
-                return Boolean.valueOf(((view instanceof e9) || (view instanceof a7) || (view instanceof b20) || (view instanceof org.telegram.ui.Cells.u3) || (view instanceof org.telegram.ui.Cells.a2) || Objects.equals(view.getTag(), -33024)) ? false : true);
-            default:
-                return Boolean.valueOf(v51.K(((Integer) obj).intValue()));
-        }
+    @Override // org.telegram.messenger.Utilities.Callback5
+    public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
+        ((Integer) obj3).getClass();
+        ((Float) obj4).getClass();
+        ((Float) obj5).getClass();
+        f.U(this.a, (j51) obj);
+    }
+
+    @Override // org.telegram.messenger.MessagesStorage.StringCallback
+    public void run(String str) {
+        f fVar = this.a;
+        fVar.getMessagesController().getChat(Long.valueOf(-fVar.a));
+        fVar.showDialog(new hi.b(fVar.getParentActivity(), null, fVar.a, new m2(13, fVar, str)));
     }
 }

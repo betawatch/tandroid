@@ -1,50 +1,31 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class mj1 {
-    public org.telegram.ui.Cells.z1 a;
-    public org.telegram.ui.ActionBar.b2 b;
-    public TextView c;
+public final class mj1 extends org.telegram.ui.ActionBar.j {
+    public final /* synthetic */ oj1 a;
 
-    public static void a(Context context, e2.h hVar, Runnable runnable) {
-        mj1 mj1Var = new mj1();
-        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context);
-        alertDialog$Builder.a.R = LocaleController.getString(R.string.TermsOfUse);
-        LinearLayout f7 = org.telegram.messenger.vl.f(context, 1);
-        TextView textView = new TextView(context);
-        textView.setLetterSpacing(0.025f);
-        textView.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.j5, false));
-        textView.setTextSize(1, 14.0f);
-        f7.addView(textView, w7.x5.t(-1, -2, 0, 24, 0, 24, 0));
-        org.telegram.ui.Cells.z1 z1Var = new org.telegram.ui.Cells.z1(context, 1, null);
-        mj1Var.a = z1Var;
-        z1Var.getTextView().getLayoutParams().width = -1;
-        mj1Var.a.getTextView().setTextSize(1, 14.0f);
-        f7.addView(mj1Var.a, w7.x5.t(-1, 48, 3, 8, 0, 8, 0));
-        boolean[] zArr = new boolean[1];
-        org.telegram.messenger.w1.n(R.string.BotWebAppDisclaimerSubtitle, textView);
-        mj1Var.a.e(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.BotWebAppDisclaimerCheck), new pv(context, 8)), "", false, false, false);
-        alertDialog$Builder.n(f7);
-        alertDialog$Builder.k(LocaleController.getString(R.string.Continue), new qv0(21, hVar, zArr));
-        alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new sw0(5));
-        org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
-        mj1Var.b = b2Var;
-        b2Var.show();
-        TextView textView2 = (TextView) mj1Var.b.d(-1);
-        mj1Var.c = textView2;
-        textView2.setEnabled(false);
-        mj1Var.c.setAlpha(0.5f);
-        mj1Var.a.setOnClickListener(new j41(mj1Var, 9));
-        mj1Var.a.setBackground(org.telegram.ui.ActionBar.j6.f0(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.i6, false), 7, -1));
-        mj1Var.b.setOnDismissListener(new org.telegram.ui.Components.n2(zArr, runnable));
+    public mj1(oj1 oj1Var) {
+        this.a = oj1Var;
+    }
+
+    @Override // org.telegram.ui.ActionBar.j
+    public final void b(int i10) {
+        oj1 oj1Var = this.a;
+        MessageObject messageObject = oj1Var.n;
+        if (i10 == -1) {
+            oj1Var.finishFragment();
+            return;
+        }
+        if (i10 != 1) {
+            if (i10 == 2) {
+                oj1.V(oj1Var.d, messageObject, oj1Var.getParentActivity(), oj1Var.r, oj1Var.e);
+            }
+        } else if (messageObject != null) {
+            messageObject.messageOwner.with_my_score = false;
+            oj1Var.showDialog(org.telegram.ui.Components.iq0.N0(oj1Var.getParentActivity(), messageObject, null, false, oj1Var.h));
+        }
     }
 }

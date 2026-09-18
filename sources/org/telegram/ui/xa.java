@@ -1,38 +1,45 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.ConnectionsManager;
+import android.graphics.Canvas;
+import android.graphics.RectF;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class xa implements Runnable {
+public final /* synthetic */ class xa implements bh.a {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ub b;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ xa(ub ubVar, int i10) {
+    public /* synthetic */ xa(Object obj, int i10) {
         this.a = i10;
-        this.b = ubVar;
+        this.b = obj;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    /* JADX WARN: Failed to find 'out' block for switch in B:2:0x0002. Please report as an issue. */
+    @Override // bh.a
+    public final void b(ah.a aVar, RectF rectF) {
+        switch (this.a) {
+        }
+        aVar.a = true;
+    }
+
+    @Override // bh.a
+    public final void f(Canvas canvas, RectF rectF) {
         switch (this.a) {
             case 0:
-                ub ubVar = this.b;
-                ubVar.K0 = ConnectionsManager.DEFAULT_DATACENTER_ID;
-                ubVar.L0 = -1;
-                ubVar.e1();
-                ubVar.M0 = null;
+                ((tb) this.b).Z(canvas, rectF);
                 break;
             case 1:
-                ub ubVar2 = this.b;
-                ubVar2.X0(false);
-                ubVar2.I.l();
-                break;
-            case 2:
-                this.b.W0();
+                cq0 cq0Var = (cq0) this.b;
+                j0 j0Var = cq0Var.d;
+                np0 np0Var = cq0Var.h.b;
+                gh.d.a(np0Var, canvas, rectF, np0Var, j0Var);
+                np0 np0Var2 = cq0Var.n.b;
+                gh.d.a(np0Var2, canvas, rectF, np0Var2, j0Var);
                 break;
             default:
-                this.b.U0(2);
+                PremiumPreviewFragment premiumPreviewFragment = (PremiumPreviewFragment) this.b;
+                org.telegram.ui.Components.ml0 ml0Var = premiumPreviewFragment.a;
+                gh.d.a(ml0Var, canvas, rectF, ml0Var, premiumPreviewFragment.d0);
                 break;
         }
     }

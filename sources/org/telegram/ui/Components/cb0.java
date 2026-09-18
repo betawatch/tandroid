@@ -1,89 +1,63 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
 import android.view.View;
-import android.widget.FrameLayout;
-import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagePreviewParams;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.messenger.BuildVars;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class cb0 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ FrameLayout c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
+public final class cb0 extends s4.t {
+    public final /* synthetic */ pb0 S;
 
-    public /* synthetic */ cb0(FrameLayout frameLayout, boolean z10, Object obj, Object obj2, Object obj3, int i10) {
-        this.a = i10;
-        this.c = frameLayout;
-        this.b = z10;
-        this.d = obj;
-        this.e = obj2;
-        this.f = obj3;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public cb0(pb0 pb0Var) {
+        super(true);
+        this.S = pb0Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        int i10 = this.a;
-        Object obj = this.f;
-        Object obj2 = this.e;
-        Object obj3 = this.d;
-        boolean z10 = this.b;
-        FrameLayout frameLayout = this.c;
-        int i11 = 0;
-        switch (i10) {
-            case 0:
-                qb0 qb0Var = (qb0) frameLayout;
-                Context context = (Context) obj3;
-                vb0 vb0Var = (vb0) obj2;
-                vb0 vb0Var2 = (vb0) obj;
-                wb0 wb0Var = qb0Var.c0;
-                MessagePreviewParams messagePreviewParams = wb0Var.d;
-                if (!z10) {
-                    new yc(wb0Var, wb0Var.F).Q(R.raw.star_premium_2, 36, AndroidUtilities.replaceSingleTag("Subscribe to **Telegram Premium** to forward formatted messages without the sender’s name.", new ab0(qb0Var, context, i11))).j();
-                    break;
-                } else {
-                    boolean z11 = messagePreviewParams.hideForwardSendersName;
-                    messagePreviewParams.hideForwardSendersName = !z11;
-                    wb0Var.x = false;
-                    if (z11) {
-                        messagePreviewParams.hideCaption = false;
-                        if (vb0Var != null) {
-                            vb0Var.a(false, true);
+    @Override // s4.t
+    public final boolean B1(int i10) {
+        byte b10;
+        pb0 pb0Var = this.S;
+        MessageObject messageObject = pb0Var.r.previewMessages.get(i10);
+        MessageObject.GroupedMessages a2 = pb0.a(pb0Var, messageObject);
+        if (a2 != null) {
+            MessageObject.GroupedMessagePosition position = a2.getPosition(messageObject);
+            if (position.minX != position.maxX && (b10 = position.minY) == position.maxY && b10 != 0) {
+                int size = a2.posArray.size();
+                for (int i11 = 0; i11 < size; i11++) {
+                    MessageObject.GroupedMessagePosition groupedMessagePosition = a2.posArray.get(i11);
+                    if (groupedMessagePosition != position) {
+                        byte b11 = groupedMessagePosition.minY;
+                        byte b12 = position.minY;
+                        if (b11 <= b12 && groupedMessagePosition.maxY >= b12) {
+                            return true;
                         }
                     }
-                    vb0Var2.a(messagePreviewParams.hideForwardSendersName, true);
-                    qb0Var.h();
-                    qb0Var.k(true);
-                    break;
                 }
-            default:
-                TL_stars.TL_starGiftCollection tL_starGiftCollection = (TL_stars.TL_starGiftCollection) obj3;
-                TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj2;
-                n70 n70Var = (n70) obj;
-                nr0 nr0Var = ((yh.m2) frameLayout).a;
-                if (z10) {
-                    nr0Var.e.k(tL_starGiftCollection.collection_id, savedStarGift);
-                    yc.a0(nr0Var.a).R(savedStarGift.gift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2RemovedFromCollection, zh.w3.D1(savedStarGift.gift), tL_starGiftCollection.title))).j();
-                } else {
-                    zh.i5 i5Var = nr0Var.e;
-                    int i12 = tL_starGiftCollection.collection_id;
-                    i5Var.getClass();
-                    ArrayList arrayList = new ArrayList();
-                    arrayList.add(savedStarGift);
-                    i5Var.a(i12, arrayList);
-                    yc.a0(nr0Var.a).R(savedStarGift.gift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2AddedToCollection, zh.w3.D1(savedStarGift.gift), tL_starGiftCollection.title))).j();
-                }
-                n70Var.u();
-                nr0Var.n();
-                break;
+            }
+        }
+        return false;
+    }
+
+    @Override // s4.t
+    public final boolean C1(View view) {
+        return false;
+    }
+
+    @Override // s4.s, s4.c0, s4.o0
+    public final void b0(of.e eVar, s4.z0 z0Var) {
+        if (BuildVars.DEBUG_PRIVATE_VERSION) {
+            super.b0(eVar, z0Var);
+            return;
+        }
+        try {
+            super.b0(eVar, z0Var);
+        } catch (Exception e) {
+            FileLog.e(e);
+            AndroidUtilities.runOnUIThread(new xp(this, 28));
         }
     }
 }

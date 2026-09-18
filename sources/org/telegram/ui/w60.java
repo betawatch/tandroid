@@ -1,47 +1,35 @@
 package org.telegram.ui;
 
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class w60 implements View.OnClickListener {
+public final /* synthetic */ class w60 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ f70 b;
+    public final /* synthetic */ g70 b;
 
-    public /* synthetic */ w60(f70 f70Var, int i10) {
+    public /* synthetic */ w60(g70 g70Var, int i10) {
         this.a = i10;
-        this.b = f70Var;
+        this.b = g70Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                f70 f70Var = this.b;
-                f70Var.f.r.clearFocus();
-                f70Var.f.r.requestFocus();
-                AndroidUtilities.showKeyboard(f70Var.f.r);
+                this.b.finishFragment();
                 break;
             case 1:
-                this.b.o0();
+                g70 g70Var = this.b;
+                g70Var.i0();
+                g70Var.e0();
                 break;
             case 2:
-                f70 f70Var2 = this.b;
-                f70Var2.n0(f70Var2.l0());
-                break;
-            case 3:
-                f70 f70Var3 = this.b;
-                f70Var3.n0(f70Var3.l0());
+                g70 g70Var2 = this.b;
+                g70Var2.getClass();
+                g70Var2.presentFragment(new PremiumPreviewFragment(0, "noncontacts"));
                 break;
             default:
-                f70 f70Var4 = this.b;
-                f70Var4.X = null;
-                f70Var4.Z.b();
-                f70Var4.h.b();
-                f70Var4.k0();
-                f70Var4.r0();
-                f70Var4.s0();
+                g70 g70Var3 = this.b;
+                g70Var3.n.postOnAnimation(new w60(g70Var3, 1));
                 break;
         }
     }

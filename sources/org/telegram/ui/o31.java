@@ -3,14 +3,14 @@ package org.telegram.ui;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o31 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ boolean[] b;
     public final /* synthetic */ Utilities.Callback c;
 
-    public /* synthetic */ o31(zh.s5 s5Var, boolean[] zArr, Utilities.Callback callback) {
+    public /* synthetic */ o31(yh.v5 v5Var, boolean[] zArr, Utilities.Callback callback) {
         this.a = 2;
         this.b = zArr;
         this.c = callback;
@@ -28,7 +28,7 @@ public final /* synthetic */ class o31 implements Runnable {
                     zArr[0] = true;
                     callback.run(Boolean.TRUE);
                 }
-                AndroidUtilities.runOnUIThread(new q31(0), 220L);
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.sh(29), 220L);
                 break;
             case 1:
                 boolean[] zArr2 = this.b;

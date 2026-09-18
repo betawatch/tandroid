@@ -1,25 +1,10 @@
 package org.telegram.ui;
 
-import android.text.TextUtils;
-import org.telegram.messenger.AndroidUtilities;
-
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class vq0 extends g.p {
-    public final /* synthetic */ br0 c;
-
-    public vq0(br0 br0Var) {
-        this.c = br0Var;
-    }
-
-    @Override // g.p
-    public final int i(int i10) {
-        br0 br0Var = this.c;
-        if (br0Var.L.j(i10) == 1 || br0Var.Y || (br0Var.J == null && TextUtils.isEmpty(br0Var.v))) {
-            return br0Var.M.J;
-        }
-        int i11 = br0Var.R;
-        int i12 = br0Var.g0;
-        return i11 + (i10 % i12 != i12 - 1 ? AndroidUtilities.dp(2.0f) : 0);
+public final class vq0 extends s4.s {
+    @Override // s4.s, s4.c0, s4.o0
+    public final boolean y0() {
+        return false;
     }
 }

@@ -28,7 +28,7 @@ import com.google.android.gms.fido.common.Transport;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.concurrent.Executor;
-import n7.s0;
+import n7.t0;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -37,7 +37,7 @@ import org.telegram.messenger.MediaDataController;
 import v0.i;
 import v7.o6;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class e extends b1.d {
     public final Context e;
@@ -56,11 +56,11 @@ public final class e extends b1.d {
         JSONObject jSONObject;
         try {
             k kVar = uVar.f;
-            s0 s0Var = uVar.c;
+            t0 t0Var = uVar.c;
             try {
                 JSONObject jSONObject2 = new JSONObject();
-                if (s0Var != null && s0Var.u().length > 0) {
-                    jSONObject2.put("rawId", u6.b.c(s0Var.u()));
+                if (t0Var != null && t0Var.u().length > 0) {
+                    jSONObject2.put("rawId", u6.b.c(t0Var.u()));
                 }
                 String str = uVar.n;
                 if (str != null) {
@@ -95,8 +95,8 @@ public final class e extends b1.d {
                                 }
                                 str4 = "error";
                                 jSONObject = jSONObject3;
-                            } catch (JSONException e7) {
-                                throw new RuntimeException("Error encoding AuthenticatorErrorResponse to JSON object", e7);
+                            } catch (JSONException e) {
+                                throw new RuntimeException("Error encoding AuthenticatorErrorResponse to JSON object", e);
                             }
                         } else {
                             jSONObject = null;
@@ -117,8 +117,8 @@ public final class e extends b1.d {
                 Bundle bundle = new Bundle();
                 bundle.putString("androidx.credentials.BUNDLE_KEY_REGISTRATION_RESPONSE_JSON", jSONObject4);
                 return new v0.f(jSONObject4, bundle);
-            } catch (JSONException e10) {
-                throw new RuntimeException("Error encoding PublicKeyCredential to JSON object", e10);
+            } catch (JSONException e7) {
+                throw new RuntimeException("Error encoding PublicKeyCredential to JSON object", e7);
             }
         } catch (Throwable th2) {
             throw new w0.c("The PublicKeyCredential response json had an unexpected exception when parsing: " + th2.getMessage(), 2);
@@ -252,8 +252,8 @@ public final class e extends b1.d {
                             arrayList.add(Transport.a(jSONArray4.getString(i13)));
                             i13++;
                             jSONArray4 = jSONArray5;
-                        } catch (a7.a e7) {
-                            throw new y0.a(new x0.a(4), e7.getMessage());
+                        } catch (a7.a e) {
+                            throw new y0.a(new x0.a(4), e.getMessage());
                         }
                     }
                 } else {

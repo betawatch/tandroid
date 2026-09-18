@@ -3,7 +3,7 @@ package org.telegram.ui;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.ui.web.HttpGetFileTask;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b0 implements Runnable {
     public final /* synthetic */ int a;
@@ -20,35 +20,35 @@ public final /* synthetic */ class b0 implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                i4 i4Var = (i4) this.c;
-                i4Var.h0.M.c(this.b, true);
+                h4 h4Var = (h4) this.c;
+                h4Var.h0.M.c(this.b, true);
                 break;
             case 1:
-                org.telegram.ui.Components.ib ibVar = (org.telegram.ui.Components.ib) this.c;
-                if (ibVar.a.getTranslationX() == this.b) {
-                    ibVar.y.b();
+                org.telegram.ui.Components.gb gbVar = (org.telegram.ui.Components.gb) this.c;
+                if (gbVar.a.getTranslationX() == this.b) {
+                    gbVar.y.b();
                     break;
                 }
                 break;
             case 2:
-                org.telegram.ui.Components.voip.y0 y0Var = (org.telegram.ui.Components.voip.y0) this.c;
+                org.telegram.ui.Components.voip.a1 a1Var = (org.telegram.ui.Components.voip.a1) this.c;
                 float f7 = this.b;
-                ni1 ni1Var = y0Var.c;
+                mi1 mi1Var = a1Var.c;
                 if (f7 > 0.0f) {
-                    int i10 = ni1Var.w;
+                    int i10 = mi1Var.w;
                     if (i10 < 2) {
-                        ni1Var.c(i10 + 1, true);
+                        mi1Var.c(i10 + 1, true);
                     }
                 } else {
-                    int i11 = ni1Var.w;
+                    int i11 = mi1Var.w;
                     if (i11 > 0) {
-                        ni1Var.c(i11 - 1, true);
+                        mi1Var.c(i11 - 1, true);
                     }
                 }
-                y0Var.b = false;
+                a1Var.b = false;
                 break;
             case 3:
-                ((j80) this.c).f.e.smoothScrollTo(0, (int) this.b);
+                ((l80) this.c).f.e.smoothScrollTo(0, (int) this.b);
                 break;
             case 4:
                 ApplicationLoader.applicationContext.getSharedPreferences("media_saved_pos", 0).edit().putFloat((String) this.c, this.b).commit();

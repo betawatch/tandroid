@@ -9,7 +9,7 @@ import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityManager;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class p implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -40,17 +40,17 @@ public final class p implements View.OnClickListener {
                             break;
                         }
                     } else {
-                        pf.b bVar = uVar.i0;
-                        if (bVar != null && (playbackStateCompat = uVar.k0) != null) {
+                        n4.y yVar = uVar.i0;
+                        if (yVar != null && (playbackStateCompat = uVar.k0) != null) {
                             i10 = playbackStateCompat.a != 3 ? 0 : 1;
                             if (i10 != 0 && (playbackStateCompat.e & 514) != 0) {
-                                bVar.Y().a.pause();
+                                yVar.R().a.pause();
                                 i12 = R.string.mr_controller_pause;
                             } else if (i10 != 0 && (playbackStateCompat.e & 1) != 0) {
-                                bVar.Y().a.stop();
+                                yVar.R().a.stop();
                                 i12 = R.string.mr_controller_stop;
                             } else if (i10 == 0 && (playbackStateCompat.e & 516) != 0) {
-                                bVar.Y().a.play();
+                                yVar.R().a.play();
                                 i12 = R.string.mr_controller_play;
                             }
                             if (accessibilityManager != null && accessibilityManager.isEnabled() && i12 != 0) {
@@ -78,8 +78,8 @@ public final class p implements View.OnClickListener {
                 uVar.dismiss();
                 break;
             case 2:
-                pf.b bVar2 = uVar.i0;
-                if (bVar2 != null && (sessionActivity = ((android.support.v4.media.session.h) bVar2.b).a.getSessionActivity()) != null) {
+                n4.y yVar2 = uVar.i0;
+                if (yVar2 != null && (sessionActivity = ((android.support.v4.media.session.h) yVar2.b).a.getSessionActivity()) != null) {
                     try {
                         sessionActivity.send();
                         uVar.dismiss();

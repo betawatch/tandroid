@@ -15,7 +15,7 @@ import zd.b0;
 import zd.e0;
 import zd.f1;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 final class zzfb extends j implements p {
     int zza;
@@ -93,7 +93,7 @@ final class zzfb extends j implements p {
             }
             this.zze = null;
             this.zza = 2;
-        } catch (zzcg e7) {
+        } catch (zzcg e) {
             zzfp zzfpVar2 = this.zzb;
             f1 f1Var = (f1) zzfp.zzf(zzfpVar2).zzd().c().get(b0Var);
             if (f1Var != null && (children = f1Var.getChildren()) != null) {
@@ -108,10 +108,10 @@ final class zzfb extends j implements p {
                 throw new IllegalStateException(("Current context doesn't contain Job in it: " + c10).toString());
             }
             List a2 = d.a(f1Var2.getChildren());
-            this.zze = e7;
+            this.zze = e;
             this.zza = 3;
             if (e0.o(a2, this) != aVar) {
-                throw e7;
+                throw e;
             }
         }
     }

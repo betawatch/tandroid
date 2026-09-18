@@ -12,7 +12,7 @@ import j$.util.Objects;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class b {
     public static final String A;
@@ -118,31 +118,31 @@ public final class b {
             bundle.putCharSequence(s, charSequence);
             if (charSequence instanceof Spanned) {
                 Spanned spanned = (Spanned) charSequence;
-                String str = d.a;
+                String str = e.a;
                 ArrayList<? extends Parcelable> arrayList = new ArrayList<>();
-                for (f fVar : (f[]) spanned.getSpans(0, spanned.length(), f.class)) {
-                    fVar.getClass();
-                    Bundle bundle2 = new Bundle();
-                    bundle2.putString(f.c, fVar.a);
-                    bundle2.putInt(f.d, fVar.b);
-                    arrayList.add(d.a(spanned, fVar, 1, bundle2));
-                }
                 for (g gVar : (g[]) spanned.getSpans(0, spanned.length(), g.class)) {
                     gVar.getClass();
-                    Bundle bundle3 = new Bundle();
-                    bundle3.putInt(g.d, gVar.a);
-                    bundle3.putInt(g.e, gVar.b);
-                    bundle3.putInt(g.f, gVar.c);
-                    arrayList.add(d.a(spanned, gVar, 2, bundle3));
-                }
-                for (e eVar : (e[]) spanned.getSpans(0, spanned.length(), e.class)) {
-                    arrayList.add(d.a(spanned, eVar, 3, null));
+                    Bundle bundle2 = new Bundle();
+                    bundle2.putString(g.c, gVar.a);
+                    bundle2.putInt(g.d, gVar.b);
+                    arrayList.add(e.a(spanned, gVar, 1, bundle2));
                 }
                 for (h hVar : (h[]) spanned.getSpans(0, spanned.length(), h.class)) {
                     hVar.getClass();
+                    Bundle bundle3 = new Bundle();
+                    bundle3.putInt(h.d, hVar.a);
+                    bundle3.putInt(h.e, hVar.b);
+                    bundle3.putInt(h.f, hVar.c);
+                    arrayList.add(e.a(spanned, hVar, 2, bundle3));
+                }
+                for (f fVar : (f[]) spanned.getSpans(0, spanned.length(), f.class)) {
+                    arrayList.add(e.a(spanned, fVar, 3, null));
+                }
+                for (i iVar : (i[]) spanned.getSpans(0, spanned.length(), i.class)) {
+                    iVar.getClass();
                     Bundle bundle4 = new Bundle();
-                    bundle4.putString(h.b, hVar.a);
-                    arrayList.add(d.a(spanned, hVar, 4, bundle4));
+                    bundle4.putString(i.b, iVar.a);
+                    arrayList.add(e.a(spanned, iVar, 4, bundle4));
                 }
                 if (!arrayList.isEmpty()) {
                     bundle.putParcelableArrayList(t, arrayList);

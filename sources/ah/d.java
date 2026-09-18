@@ -1,99 +1,191 @@
 package ah;
 
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.Cells.p6;
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import ii.u0;
+import org.telegram.ui.Components.cd;
+import org.telegram.ui.Components.e31;
+import org.telegram.ui.Components.eq;
+import org.telegram.ui.Components.lo0;
+import yh.o3;
+import zg.n0;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class d {
-    public float a;
-    public float b;
-    public float c;
-    public float d;
-    public float e;
-    public float f;
-    public float g;
-    public float h;
-    public long i;
-    public boolean j;
-    public float k;
-    public final /* synthetic */ e l;
+public final class d implements Drawable.Callback {
+    public final /* synthetic */ int a;
+    public Object b;
 
-    public d(e eVar) {
-        this.l = eVar;
-    }
-
-    public final void a() {
-        e eVar;
-        float f7 = 0.0f;
-        this.h = 0.0f;
-        float b10 = b();
-        float c10 = c();
-        int i10 = 0;
-        while (true) {
-            eVar = this.l;
-            if (i10 >= 20) {
+    @Override // android.graphics.drawable.Drawable.Callback
+    public final void invalidateDrawable(Drawable drawable) {
+        switch (this.a) {
+            case 0:
+                ((e) this.b).invalidateSelf();
                 break;
-            }
-            float b11 = b();
-            float c11 = c();
-            float f10 = 2.14748365E9f;
-            for (int i11 = 0; i11 < eVar.c.size(); i11++) {
-                float f11 = ((d) eVar.c.get(i11)).c - b11;
-                float f12 = ((d) eVar.c.get(i11)).d - c11;
-                float f13 = (f12 * f12) + (f11 * f11);
-                if (f13 < f10) {
-                    f10 = f13;
+            case 1:
+                break;
+            case 2:
+                ((u0) this.b).b.invalidate();
+                break;
+            case 3:
+                ((eq) this.b).invalidateSelf();
+                break;
+            case 4:
+                ((lo0) this.b).b.run();
+                break;
+            case 5:
+                ((cd) this.b).invalidateSelf();
+                break;
+            case 6:
+                ((e31) this.b).invalidateSelf();
+                break;
+            case 7:
+                ((wg.a) this.b).c.invalidate();
+                break;
+            case 8:
+                ((wg.c) this.b).c.invalidate();
+                break;
+            case 9:
+                ((x4.d) this.b).invalidateSelf();
+                break;
+            case 10:
+                ((o3) this.b).f.invalidate();
+                break;
+            default:
+                n0 n0Var = (n0) this.b;
+                View view = n0Var.W;
+                if (view != null) {
+                    view.invalidate();
+                    if (n0Var.R && n0Var.W.getParent() != null && (n0Var.W.getParent().getParent() instanceof View)) {
+                        ((View) n0Var.W.getParent().getParent()).invalidate();
+                        break;
+                    }
                 }
-            }
-            if (f10 > f7) {
-                b10 = b11;
-                c10 = c11;
-                f7 = f10;
-            }
-            i10++;
+                break;
         }
-        float f14 = eVar.f ? 0.8f : 0.5f;
-        this.c = b10;
-        if (b10 > eVar.b.width() * f14) {
-            this.a = eVar.b.width() * f14;
-        } else {
-            float width = eVar.b.width() * f14;
-            this.a = width;
-            if (this.c > width) {
-                this.c = width - 0.1f;
-            }
-        }
-        this.b = a4.a.e(p6.c(Utilities.fastRandom, 100), 100.0f, eVar.b.height() * 0.1f, eVar.b.height() * 0.45f);
-        if (eVar.f) {
-            float e7 = a4.a.e(p6.c(Utilities.fastRandom, 100), 100.0f, eVar.b.width() * 0.1f, eVar.b.width() * 0.05f);
-            this.f = e7;
-            this.g = (((p6.c(Utilities.fastRandom, 100) / 100.0f) * 1.5f) + 1.5f) * e7;
-            this.d = a4.a.e(p6.c(Utilities.fastRandom, 100), 100.0f, eVar.b.height() * 0.1f, this.f / 2.0f);
-            this.e = eVar.b.height() + this.f;
-            this.i = Math.abs(Utilities.fastRandom.nextInt() % 600) + MediaDataController.MAX_STYLE_RUNS_COUNT;
-        } else {
-            float e10 = a4.a.e(p6.c(Utilities.fastRandom, 100), 100.0f, eVar.b.width() * 0.1f, eVar.b.width() * 0.05f);
-            this.f = e10;
-            this.g = (((p6.c(Utilities.fastRandom, 100) / 100.0f) * 0.5f) + 1.5f) * e10;
-            this.d = c10;
-            this.e = c10 + eVar.b.height();
-            this.i = 1800L;
-        }
-        this.i = (long) (this.i / 1.75f);
-        this.j = Utilities.fastRandom.nextBoolean();
-        this.k = ((Utilities.fastRandom.nextInt() % 100) / 100.0f) * 20.0f;
     }
 
-    public final float b() {
-        if (!this.l.f) {
-            return (p6.c(Utilities.fastRandom, 100) / 100.0f) * r0.b.width();
+    @Override // android.graphics.drawable.Drawable.Callback
+    public final void scheduleDrawable(Drawable drawable, Runnable runnable, long j3) {
+        switch (this.a) {
+            case 0:
+                ((e) this.b).scheduleSelf(runnable, j3);
+                break;
+            case 1:
+                Drawable.Callback callback = (Drawable.Callback) this.b;
+                if (callback != null) {
+                    callback.scheduleDrawable(drawable, runnable, j3);
+                    break;
+                }
+                break;
+            case 2:
+                break;
+            case 3:
+                ((eq) this.b).scheduleSelf(runnable, j3);
+                break;
+            case 4:
+                break;
+            case 5:
+                ((cd) this.b).scheduleSelf(runnable, j3);
+                break;
+            case 6:
+                break;
+            case 7:
+                ((wg.a) this.b).c.invalidate();
+                break;
+            case 8:
+                ((wg.c) this.b).c.invalidate();
+                break;
+            case 9:
+                ((x4.d) this.b).scheduleSelf(runnable, j3);
+                break;
+            case 10:
+                break;
+            default:
+                View view = ((n0) this.b).W;
+                if (view != null) {
+                    view.scheduleDrawable(drawable, runnable, j3);
+                    break;
+                }
+                break;
         }
-        return a4.a.e(p6.c(Utilities.fastRandom, 100), 100.0f, r0.b.width() * 1.5f, r0.b.width() * (-0.25f));
     }
 
-    public final float c() {
-        return (p6.c(Utilities.fastRandom, 100) / 100.0f) * this.l.b.height() * 0.5f;
+    @Override // android.graphics.drawable.Drawable.Callback
+    public final void unscheduleDrawable(Drawable drawable, Runnable runnable) {
+        switch (this.a) {
+            case 0:
+                ((e) this.b).unscheduleSelf(runnable);
+                break;
+            case 1:
+                Drawable.Callback callback = (Drawable.Callback) this.b;
+                if (callback != null) {
+                    callback.unscheduleDrawable(drawable, runnable);
+                    break;
+                }
+                break;
+            case 2:
+                break;
+            case 3:
+                ((eq) this.b).unscheduleSelf(runnable);
+                break;
+            case 4:
+                break;
+            case 5:
+                ((cd) this.b).unscheduleSelf(runnable);
+                break;
+            case 6:
+                break;
+            case 7:
+                ((wg.a) this.b).c.invalidate();
+                break;
+            case 8:
+                ((wg.c) this.b).c.invalidate();
+                break;
+            case 9:
+                ((x4.d) this.b).unscheduleSelf(runnable);
+                break;
+            case 10:
+                break;
+            default:
+                View view = ((n0) this.b).W;
+                if (view != null) {
+                    view.unscheduleDrawable(drawable, runnable);
+                    break;
+                }
+                break;
+        }
+    }
+
+    public /* synthetic */ d(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
+    }
+
+    private final void a(Drawable drawable) {
+    }
+
+    private final void f(Drawable drawable, Runnable runnable) {
+    }
+
+    private final void g(Drawable drawable, Runnable runnable) {
+    }
+
+    private final void h(Drawable drawable, Runnable runnable) {
+    }
+
+    private final void i(Drawable drawable, Runnable runnable) {
+    }
+
+    private final void b(Drawable drawable, Runnable runnable, long j3) {
+    }
+
+    private final void c(Drawable drawable, Runnable runnable, long j3) {
+    }
+
+    private final void d(Drawable drawable, Runnable runnable, long j3) {
+    }
+
+    private final void e(Drawable drawable, Runnable runnable, long j3) {
     }
 }

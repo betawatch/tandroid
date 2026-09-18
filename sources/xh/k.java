@@ -1,28 +1,126 @@
 package xh;
 
-import android.view.GestureDetector;
-import android.view.MotionEvent;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.view.View;
+import android.widget.LinearLayout;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Emoji;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.UserObject;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.Components.f9;
+import org.telegram.ui.Components.n6;
+import org.telegram.ui.Components.oq;
+import org.telegram.ui.Components.u9;
+import w7.x5;
+import yh.y7;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
-/* loaded from: classes3.dex */
-public final class k extends GestureDetector.SimpleOnGestureListener {
-    public final /* synthetic */ l a;
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* loaded from: classes.dex */
+public final class k extends LinearLayout implements NotificationCenter.NotificationCenterDelegate {
+    public final u9 a;
+    public final n6 b;
+    public final n6 c;
+    public final n6 d;
+    public final oq[] e;
+    public boolean f;
 
-    public k(l lVar) {
-        this.a = lVar;
+    public k(Context context, f6 f6Var) {
+        super(context);
+        this.e = new oq[1];
+        setOrientation(0);
+        n6 n6Var = new n6(context, false, false, false);
+        this.c = n6Var;
+        int i10 = j6.G6;
+        n6Var.setTextColor(j6.v0(i10, f6Var));
+        n6Var.setTextSize(AndroidUtilities.dp(15.0f));
+        n6Var.setPadding(AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f), 0);
+        n6Var.setEllipsizeByGradient(true);
+        n6 n6Var2 = new n6(context, false, false, false);
+        this.d = n6Var2;
+        n6Var2.setTextColor(j6.v0(j6.y6, f6Var));
+        n6Var2.setTextSize(AndroidUtilities.dp(15.0f));
+        u9 u9Var = new u9(context);
+        this.a = u9Var;
+        n6 n6Var3 = new n6(context, false, false, false);
+        this.b = n6Var3;
+        n6Var3.setTextSize(AndroidUtilities.dp(15.0f));
+        n6Var3.setPadding(AndroidUtilities.dp(20.0f), 0, 0, 0);
+        n6Var3.setTextColor(j6.v0(i10, f6Var));
+        n6Var3.setTypeface(AndroidUtilities.bold());
+        n6Var3.setGravity(17);
+        addView(n6Var3, x5.o(66, -2, 0.0f, 16));
+        addView(u9Var, x5.o(32, 32, 0.0f, 16));
+        addView(n6Var, x5.o(0, -2, 1.0f, 16));
+        addView(n6Var2, x5.p(-2, -2, 0.0f, 16, 0, 0, 20, 0));
     }
 
-    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
-    public final boolean onDown(MotionEvent motionEvent) {
-        return true;
+    public final void a(long j3, boolean z10) {
+        this.d.c(y7.X0(false, hg.k0.k((int) j3, ',', new StringBuilder("⭐️")), 0.78f, this.e), z10, true);
     }
 
-    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
-    public final boolean onSingleTapUp(MotionEvent motionEvent) {
-        l lVar = this.a;
-        if (!lVar.e.c.getBounds().contains((int) motionEvent.getX(), (int) motionEvent.getY()) && (lVar.e.f.getLeft() >= motionEvent.getX() || motionEvent.getX() >= lVar.e.f.getRight() || lVar.e.f.getTop() >= motionEvent.getY() || motionEvent.getY() >= lVar.e.f.getBottom())) {
-            lVar.e.e(false);
+    public final void b(int i10, boolean z10, boolean z11) {
+        n6 n6Var = this.b;
+        if (!z10 || i10 > 3) {
+            if (i10 >= 10000) {
+                n6Var.setTextSize(AndroidUtilities.dp(12.0f));
+            } else if (i10 >= 1000) {
+                n6Var.setTextSize(AndroidUtilities.dp(14.0f));
+            } else {
+                n6Var.setTextSize(AndroidUtilities.dp(15.0f));
+            }
+            n6Var.c(Integer.toString(i10), z11, true);
+            return;
         }
-        return super.onSingleTapUp(motionEvent);
+        if (i10 == 1) {
+            n6Var.c(Emoji.replaceWithRestrictedEmoji("🥇", n6Var.getPaint().getFontMetricsInt(), (Runnable) null), z11, true);
+        } else if (i10 == 2) {
+            n6Var.c(Emoji.replaceWithRestrictedEmoji("🥈", n6Var.getPaint().getFontMetricsInt(), (Runnable) null), z11, true);
+        } else if (i10 == 3) {
+            n6Var.c(Emoji.replaceWithRestrictedEmoji("🥉", n6Var.getPaint().getFontMetricsInt(), (Runnable) null), z11, true);
+        }
+    }
+
+    public final void c(TLRPC.User user) {
+        f9 f9Var = new f9((f6) null);
+        f9Var.r(user);
+        u9 u9Var = this.a;
+        u9Var.e(user, f9Var);
+        u9Var.setRoundRadius(AndroidUtilities.dp(16.0f));
+        this.c.setText(UserObject.getUserName(user));
+    }
+
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        this.b.invalidate();
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        if (this.f) {
+            canvas.drawLine(AndroidUtilities.dp(112.0f), getMeasuredHeight() - 1, getMeasuredWidth() - AndroidUtilities.dp(16.0f), getMeasuredHeight(), j6.k0);
+        }
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.emojiLoaded);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.emojiLoaded);
+    }
+
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(52.0f), TLObject.FLAG_30));
     }
 }

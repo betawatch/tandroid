@@ -16,7 +16,7 @@ import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class xl extends cm {
     public final /* synthetic */ ChatAttachAlertPhotoLayout b;
@@ -27,28 +27,28 @@ public final class xl extends cm {
         this.b = chatAttachAlertPhotoLayout;
     }
 
-    @Override // org.telegram.ui.su0, org.telegram.ui.av0
+    @Override // org.telegram.ui.vu0, org.telegram.ui.dv0
     public final boolean A() {
         vi viVar = this.b.b;
         return viVar != null && viVar.c0;
     }
 
-    @Override // org.telegram.ui.su0, org.telegram.ui.av0
+    @Override // org.telegram.ui.vu0, org.telegram.ui.dv0
     public final void D() {
         boolean z10 = ChatAttachAlertPhotoLayout.q1;
         ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.b;
         chatAttachAlertPhotoLayout.m0();
-        AndroidUtilities.runOnUIThread(new pg(this, 23), 150L);
-        chatAttachAlertPhotoLayout.B(ChatAttachAlertPhotoLayout.s1.size());
+        AndroidUtilities.runOnUIThread(new ng(this, 23), 150L);
+        chatAttachAlertPhotoLayout.A(ChatAttachAlertPhotoLayout.s1.size());
     }
 
-    @Override // org.telegram.ui.su0, org.telegram.ui.av0
-    public final org.telegram.ui.cv0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
-        ot otVar;
-        org.telegram.ui.cv0 closeIntoObject;
+    @Override // org.telegram.ui.vu0, org.telegram.ui.dv0
+    public final org.telegram.ui.fv0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
+        qt qtVar;
+        org.telegram.ui.fv0 closeIntoObject;
         ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.b;
         vi viVar = chatAttachAlertPhotoLayout.b;
-        if (z11 && (otVar = viVar.R0) != null && (closeIntoObject = ((t40) otVar.b).getCloseIntoObject()) != null) {
+        if (z11 && (qtVar = viVar.R0) != null && (closeIntoObject = ((t40) qtVar.b).getCloseIntoObject()) != null) {
             return closeIntoObject;
         }
         org.telegram.ui.Cells.s5 L = ChatAttachAlertPhotoLayout.L(chatAttachAlertPhotoLayout, i10);
@@ -60,20 +60,20 @@ public final class xl extends cm {
         if (Build.VERSION.SDK_INT < 26) {
             iArr[0] = iArr[0] - viVar.getLeftInset();
         }
-        org.telegram.ui.cv0 cv0Var = new org.telegram.ui.cv0();
-        cv0Var.b = iArr[0];
-        cv0Var.c = iArr[1];
-        cv0Var.d = chatAttachAlertPhotoLayout.E;
+        org.telegram.ui.fv0 fv0Var = new org.telegram.ui.fv0();
+        fv0Var.b = iArr[0];
+        fv0Var.c = iArr[1];
+        fv0Var.d = chatAttachAlertPhotoLayout.E;
         ImageReceiver imageReceiver = L.getImageView().getImageReceiver();
-        cv0Var.a = imageReceiver;
-        cv0Var.e = imageReceiver.getBitmapSafe();
-        cv0Var.k = L.getScale();
-        cv0Var.i = (int) viVar.l1();
+        fv0Var.a = imageReceiver;
+        fv0Var.e = imageReceiver.getBitmapSafe();
+        fv0Var.k = L.getScale();
+        fv0Var.i = (int) viVar.l1();
         L.g(false);
-        return cv0Var;
+        return fv0Var;
     }
 
-    @Override // org.telegram.ui.su0, org.telegram.ui.av0
+    @Override // org.telegram.ui.vu0, org.telegram.ui.dv0
     public final void F(boolean z10) {
         ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.b;
         vi viVar = chatAttachAlertPhotoLayout.b;
@@ -84,7 +84,7 @@ public final class xl extends cm {
         chatAttachAlertPhotoLayout.d1.a(!chatAttachAlertPhotoLayout.b.c0, true);
     }
 
-    @Override // org.telegram.ui.su0, org.telegram.ui.av0
+    @Override // org.telegram.ui.vu0, org.telegram.ui.dv0
     public final void G() {
         tl tlVar = this.b.E;
         int childCount = tlVar.getChildCount();
@@ -96,7 +96,7 @@ public final class xl extends cm {
         }
     }
 
-    @Override // org.telegram.ui.su0, org.telegram.ui.av0
+    @Override // org.telegram.ui.vu0, org.telegram.ui.dv0
     public final void W(int i10) {
         ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.b;
         org.telegram.ui.Cells.s5 L = ChatAttachAlertPhotoLayout.L(chatAttachAlertPhotoLayout, i10);
@@ -127,7 +127,7 @@ public final class xl extends cm {
         }
     }
 
-    @Override // org.telegram.ui.su0, org.telegram.ui.av0
+    @Override // org.telegram.ui.vu0, org.telegram.ui.dv0
     public final void Z(int i10) {
         org.telegram.ui.Cells.s5 L = ChatAttachAlertPhotoLayout.L(this.b, i10);
         if (L != null) {
@@ -135,16 +135,16 @@ public final class xl extends cm {
         }
     }
 
-    @Override // org.telegram.ui.su0, org.telegram.ui.av0
+    @Override // org.telegram.ui.vu0, org.telegram.ui.dv0
     public final long a() {
-        org.telegram.ui.ActionBar.n2 n2Var = this.b.b.f0;
-        if (n2Var instanceof org.telegram.ui.co) {
-            return ((org.telegram.ui.co) n2Var).a();
+        org.telegram.ui.ActionBar.o2 o2Var = this.b.b.f0;
+        if (o2Var instanceof org.telegram.ui.bo) {
+            return ((org.telegram.ui.bo) o2Var).a();
         }
         return 0L;
     }
 
-    @Override // org.telegram.ui.su0, org.telegram.ui.av0
+    @Override // org.telegram.ui.vu0, org.telegram.ui.dv0
     public final void d() {
         boolean z10 = ChatAttachAlertPhotoLayout.q1;
         ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.b;
@@ -152,7 +152,7 @@ public final class xl extends cm {
         chatAttachAlertPhotoLayout.p0(-1, true);
     }
 
-    @Override // org.telegram.ui.su0, org.telegram.ui.av0
+    @Override // org.telegram.ui.vu0, org.telegram.ui.dv0
     public final void e(CharSequence charSequence) {
         CharSequence charSequence2;
         ArrayList<TLRPC.MessageEntity> arrayList;
@@ -180,17 +180,17 @@ public final class xl extends cm {
                     MessageObject.addEntitiesToText(spannableStringBuilder, arrayList3, false, false, false, false);
                     charSequence2 = spannableStringBuilder;
                 }
-                this.b.b.m1().setText(z5.cloneSpans(charSequence2, 3));
+                this.b.b.m1().setText(x5.cloneSpans(charSequence2, 3));
             }
         }
     }
 
-    @Override // org.telegram.ui.su0, org.telegram.ui.av0
+    @Override // org.telegram.ui.vu0, org.telegram.ui.dv0
     public final void i() {
         boolean z10 = ChatAttachAlertPhotoLayout.q1;
     }
 
-    @Override // org.telegram.ui.su0, org.telegram.ui.av0
+    @Override // org.telegram.ui.vu0, org.telegram.ui.dv0
     public final ImageReceiver.BitmapHolder j(int i10) {
         org.telegram.ui.Cells.s5 L = ChatAttachAlertPhotoLayout.L(this.b, i10);
         if (L != null) {
@@ -199,13 +199,13 @@ public final class xl extends cm {
         return null;
     }
 
-    @Override // org.telegram.ui.su0, org.telegram.ui.av0
+    @Override // org.telegram.ui.vu0, org.telegram.ui.dv0
     public final boolean l() {
         vi viVar = this.b.b;
-        return viVar != null && (viVar.f0 instanceof org.telegram.ui.co);
+        return viVar != null && (viVar.f0 instanceof org.telegram.ui.bo);
     }
 
-    @Override // org.telegram.ui.su0, org.telegram.ui.av0
+    @Override // org.telegram.ui.vu0, org.telegram.ui.dv0
     public final void o(int i10, VideoEditedInfo videoEditedInfo, boolean z10, int i11, int i12, boolean z11) {
         ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.b;
         vi viVar = chatAttachAlertPhotoLayout.b;
@@ -251,29 +251,29 @@ public final class xl extends cm {
         PhotoViewer.t1();
         PhotoViewer.t1().O = false;
         PhotoViewer.t1().u2 = false;
-        e5.a0(viVar.J1, viVar.j1() + ChatAttachAlertPhotoLayout.s1.size(), viVar.n1(), new pl(this, z10, i11, z11));
+        c5.a0(viVar.J1, viVar.j1() + ChatAttachAlertPhotoLayout.s1.size(), viVar.n1(), new pl(this, z10, i11, z11));
     }
 
-    @Override // org.telegram.ui.su0, org.telegram.ui.av0
+    @Override // org.telegram.ui.vu0, org.telegram.ui.dv0
     public final boolean q() {
         vi viVar = this.b.b;
         return (viVar == null || viVar.H1 == null) ? false : true;
     }
 
-    @Override // org.telegram.ui.su0, org.telegram.ui.av0
+    @Override // org.telegram.ui.vu0, org.telegram.ui.dv0
     public final void s() {
         boolean z10 = ChatAttachAlertPhotoLayout.q1;
         this.b.p0(-1, false);
     }
 
-    @Override // org.telegram.ui.su0, org.telegram.ui.av0
+    @Override // org.telegram.ui.vu0, org.telegram.ui.dv0
     public final boolean w() {
         MessageObject messageObject;
         vi viVar = this.b.b;
         return (viVar == null || (messageObject = viVar.H1) == null || !messageObject.needResendWhenEdit()) ? false : true;
     }
 
-    @Override // org.telegram.ui.su0, org.telegram.ui.av0
+    @Override // org.telegram.ui.vu0, org.telegram.ui.dv0
     public final boolean z() {
         vi viVar = this.b.b;
         return (viVar.F || viVar.H) ? false : true;

@@ -1,33 +1,36 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class o7 implements Utilities.Callback2 {
+public final /* synthetic */ class o7 implements RequestDelegate {
     public final /* synthetic */ int a;
     public final /* synthetic */ MediaDataController b;
-    public final /* synthetic */ String c;
-    public final /* synthetic */ Utilities.Callback d;
+    public final /* synthetic */ int c;
 
-    public /* synthetic */ o7(MediaDataController mediaDataController, String str, Utilities.Callback callback, int i10) {
-        this.a = i10;
+    public /* synthetic */ o7(MediaDataController mediaDataController, int i10, int i11) {
+        this.a = i11;
         this.b = mediaDataController;
-        this.c = str;
-        this.d = callback;
+        this.c = i10;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback2
-    public final void run(Object obj, Object obj2) {
-        Boolean bool = (Boolean) obj;
-        TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) obj2;
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                this.b.lambda$getStickerSet$32(this.c, this.d, bool, tL_messages_stickerSet);
+                this.b.lambda$loadArchivedStickersCount$72(this.c, tLObject, tL_error);
+                break;
+            case 1:
+                this.b.lambda$loadRecents$50(this.c, tLObject, tL_error);
+                break;
+            case 2:
+                this.b.lambda$loadRecents$51(this.c, tLObject, tL_error);
                 break;
             default:
-                this.b.lambda$getStickerSet$35(this.c, this.d, bool, tL_messages_stickerSet);
+                this.b.lambda$fetchEmojiStatuses$233(this.c, tLObject, tL_error);
                 break;
         }
     }

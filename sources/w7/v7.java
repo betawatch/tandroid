@@ -3,7 +3,7 @@ package w7;
 import android.os.Bundle;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public abstract class v7 {
     public static b2.g a(String str, Bundle data) {
@@ -15,11 +15,11 @@ public abstract class v7 {
                         try {
                             String string = data.getString("androidx.credentials.BUNDLE_KEY_REQUEST_JSON");
                             kotlin.jvm.internal.i.b(string);
-                            v0.m mVar = new v0.m("androidx.credentials.TYPE_DIGITAL_CREDENTIAL", data);
+                            v0.n nVar = new v0.n("androidx.credentials.TYPE_DIGITAL_CREDENTIAL", data);
                             if (string.length() != 0) {
                                 try {
                                     new JSONObject(string);
-                                    return mVar;
+                                    return nVar;
                                 } catch (Exception unused) {
                                 }
                             }
@@ -35,11 +35,11 @@ public abstract class v7 {
                         if (string2 == null) {
                             throw new w0.k("The device does not contain a restore credential.");
                         }
-                        v0.m mVar2 = new v0.m("androidx.credentials.TYPE_RESTORE_CREDENTIAL", data);
+                        v0.n nVar2 = new v0.n("androidx.credentials.TYPE_RESTORE_CREDENTIAL", data);
                         if (string2.length() != 0) {
                             try {
                                 new JSONObject(string2);
-                                return mVar2;
+                                return nVar2;
                             } catch (Exception unused3) {
                             }
                         }
@@ -53,7 +53,7 @@ public abstract class v7 {
                             String string4 = data.getString("androidx.credentials.BUNDLE_KEY_PASSWORD");
                             kotlin.jvm.internal.i.b(string3);
                             kotlin.jvm.internal.i.b(string4);
-                            return new v0.m(string4, 2, data);
+                            return new v0.n(string4, 2, data);
                         } catch (Exception unused4) {
                             throw new z0.a();
                         }
@@ -64,7 +64,7 @@ public abstract class v7 {
                         try {
                             String string5 = data.getString("androidx.credentials.BUNDLE_KEY_AUTHENTICATION_RESPONSE_JSON");
                             kotlin.jvm.internal.i.b(string5);
-                            return new v0.m(string5, 3, data);
+                            return new v0.n(string5, 3, data);
                         } catch (Exception unused5) {
                             throw new z0.a();
                         }
@@ -74,7 +74,7 @@ public abstract class v7 {
                     throw new z0.a();
             }
         } catch (z0.a unused6) {
-            return new v0.m(str, 0, data);
+            return new v0.n(str, 0, data);
         }
     }
 }

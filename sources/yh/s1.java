@@ -1,48 +1,44 @@
 package yh;
 
-import java.util.ArrayList;
-import org.telegram.messenger.MessagesController;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.nr0;
-import zh.i5;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.DialogObject;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.Components.oc;
+import org.telegram.ui.Components.vc;
+import org.telegram.ui.bo;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
-/* loaded from: classes.dex */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* loaded from: classes4.dex */
 public final /* synthetic */ class s1 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ nr0 b;
+    public final /* synthetic */ a4 b;
+    public final /* synthetic */ bo c;
+    public final /* synthetic */ long d;
 
-    public /* synthetic */ s1(nr0 nr0Var, int i10) {
+    public /* synthetic */ s1(a4 a4Var, bo boVar, long j3, int i10) {
         this.a = i10;
-        this.b = nr0Var;
+        this.b = a4Var;
+        this.c = boVar;
+        this.d = j3;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        switch (this.a) {
+        int i10 = this.a;
+        long j3 = this.d;
+        bo boVar = this.c;
+        a4 a4Var = this.b;
+        switch (i10) {
             case 0:
-                this.b.a();
-                break;
-            case 1:
-                this.b.setReorderingCollections(true);
+                oc M = vc.a0(boVar).M(LocaleController.getString(R.string.Gift2TransferredTitle), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2TransferredText, a4Var.C1(), DialogObject.getShortName(j3))), R.raw.forward);
+                M.t = true;
+                M.j();
                 break;
             default:
-                i5 i5Var = this.b.e;
-                i5Var.getClass();
-                TL_stars.reorderStarGiftCollections reorderstargiftcollections = new TL_stars.reorderStarGiftCollections();
-                int i10 = i5Var.a;
-                reorderstargiftcollections.peer = MessagesController.getInstance(i10).getInputPeer(i5Var.b);
-                ArrayList arrayList = i5Var.e;
-                int size = arrayList.size();
-                int i11 = 0;
-                while (i11 < size) {
-                    Object obj = arrayList.get(i11);
-                    i11++;
-                    reorderstargiftcollections.order.add(Integer.valueOf(((TL_stars.TL_starGiftCollection) obj).collection_id));
-                }
-                ConnectionsManager.getInstance(i10).sendRequest(reorderstargiftcollections, null);
-                i5Var.j();
+                oc M2 = vc.a0(boVar).M(LocaleController.getString(R.string.Gift2TransferredTitle), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2TransferredText, a4Var.C1(), DialogObject.getShortName(j3))), R.raw.forward);
+                M2.t = true;
+                M2.j();
                 break;
         }
     }

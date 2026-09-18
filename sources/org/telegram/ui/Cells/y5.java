@@ -11,17 +11,17 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
-import org.telegram.messenger.vl;
+import org.telegram.messenger.wl;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.mp;
+import org.telegram.ui.Components.np;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class y5 extends FrameLayout {
-    public org.telegram.ui.Components.x9 a;
+    public org.telegram.ui.Components.u9 a;
     public FrameLayout b;
-    public mp c;
+    public np c;
     public TextView d;
     public org.telegram.ui.t5 e;
     public int f;
@@ -40,37 +40,37 @@ public final class y5 extends FrameLayout {
 
     public void setImage(MediaController.PhotoEntry photoEntry) {
         org.telegram.ui.t5 t5Var = this.e;
-        org.telegram.ui.Components.x9 x9Var = this.a;
+        org.telegram.ui.Components.u9 u9Var = this.a;
         Drawable drawable = getResources().getDrawable(R.drawable.nophotos);
         String str = photoEntry.thumbPath;
         if (str != null) {
-            x9Var.f(str, null, drawable);
+            u9Var.f(str, null, drawable);
             return;
         }
         if (photoEntry.path == null) {
-            x9Var.setImageDrawable(drawable);
+            u9Var.setImageDrawable(drawable);
             return;
         }
-        x9Var.p(photoEntry.orientation, photoEntry.invert, true);
+        u9Var.p(photoEntry.orientation, photoEntry.invert, true);
         if (photoEntry.isLivePhoto()) {
             t5Var.setVisibility(4);
             setContentDescription(LocaleController.getString(R.string.AttachLivePhoto));
-            x9Var.f("thumb://" + photoEntry.imageId + ":" + photoEntry.path, null, drawable);
+            u9Var.f("thumb://" + photoEntry.imageId + ":" + photoEntry.path, null, drawable);
             return;
         }
         if (!photoEntry.isVideo) {
             t5Var.setVisibility(4);
             setContentDescription(LocaleController.getString(R.string.AttachPhoto));
-            x9Var.f("thumb://" + photoEntry.imageId + ":" + photoEntry.path, null, drawable);
+            u9Var.f("thumb://" + photoEntry.imageId + ":" + photoEntry.path, null, drawable);
             return;
         }
         t5Var.setVisibility(0);
         this.d.setText(AndroidUtilities.formatShortDuration(photoEntry.duration));
         StringBuilder sb2 = new StringBuilder();
-        vl.l(R.string.AttachVideo, ", ", sb2);
+        wl.l(R.string.AttachVideo, ", ", sb2);
         sb2.append(LocaleController.formatDuration(photoEntry.duration));
         setContentDescription(sb2.toString());
-        x9Var.f("vthumb://" + photoEntry.imageId + ":" + photoEntry.path, null, drawable);
+        u9Var.f("vthumb://" + photoEntry.imageId + ":" + photoEntry.path, null, drawable);
     }
 
     public void setNum(int i10) {
@@ -78,30 +78,30 @@ public final class y5 extends FrameLayout {
     }
 
     public void setImage(MediaController.SearchImage searchImage) {
-        org.telegram.ui.Components.x9 x9Var = this.a;
+        org.telegram.ui.Components.u9 u9Var = this.a;
         Drawable drawable = getResources().getDrawable(R.drawable.nophotos);
         TLRPC.PhotoSize photoSize = searchImage.thumbPhotoSize;
         if (photoSize != null) {
-            x9Var.h(ImageLocation.getForPhoto(photoSize, searchImage.photo), null, drawable, searchImage);
+            u9Var.h(ImageLocation.getForPhoto(photoSize, searchImage.photo), null, drawable, searchImage);
             return;
         }
         TLRPC.PhotoSize photoSize2 = searchImage.photoSize;
         if (photoSize2 != null) {
-            x9Var.h(ImageLocation.getForPhoto(photoSize2, searchImage.photo), "80_80", drawable, searchImage);
+            u9Var.h(ImageLocation.getForPhoto(photoSize2, searchImage.photo), "80_80", drawable, searchImage);
             return;
         }
         String str = searchImage.thumbPath;
         if (str != null) {
-            x9Var.f(str, null, drawable);
+            u9Var.f(str, null, drawable);
             return;
         }
         String str2 = searchImage.thumbUrl;
         if (str2 != null && str2.length() > 0) {
-            x9Var.f(searchImage.thumbUrl, null, drawable);
+            u9Var.f(searchImage.thumbUrl, null, drawable);
         } else if (MessageObject.isDocumentHasThumb(searchImage.document)) {
-            x9Var.h(ImageLocation.getForDocument(FileLoader.getClosestPhotoSizeWithSize(searchImage.document.thumbs, 320), searchImage.document), null, drawable, searchImage);
+            u9Var.h(ImageLocation.getForDocument(FileLoader.getClosestPhotoSizeWithSize(searchImage.document.thumbs, 320), searchImage.document), null, drawable, searchImage);
         } else {
-            x9Var.setImageDrawable(drawable);
+            u9Var.setImageDrawable(drawable);
         }
     }
 }

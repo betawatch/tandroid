@@ -1,20 +1,40 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
-/* loaded from: classes3.dex */
-public final class k30 extends g.p {
-    public final /* synthetic */ j60 c;
+import android.graphics.Rect;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.AndroidUtilities;
 
-    public k30(j60 j60Var) {
-        this.c = j60Var;
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* loaded from: classes3.dex */
+public final class k30 extends s4.n0 {
+    public final /* synthetic */ k60 a;
+
+    public k30(k60 k60Var) {
+        this.a = k60Var;
     }
 
-    @Override // g.p
-    public final int i(int i10) {
-        int size = this.c.o2.e.size();
-        if (size > 1 && size != 2) {
-            return (size != 3 || i10 == 0 || i10 == 1) ? 3 : 6;
+    @Override // s4.n0
+    public final void a(Rect rect, View view, RecyclerView recyclerView, s4.z0 z0Var) {
+        recyclerView.getClass();
+        int S = RecyclerView.S(view);
+        if (S >= 0) {
+            rect.setEmpty();
+            e60 e60Var = this.a.P;
+            int i10 = e60Var.G;
+            if (S < i10 || S >= e60Var.H) {
+                return;
+            }
+            int i11 = S - i10;
+            int i12 = k60.F3 ? 6 : 2;
+            int i13 = i11 % i12;
+            if (i13 == 0) {
+                rect.right = AndroidUtilities.dp(2.0f);
+            } else if (i13 == i12 - 1) {
+                rect.left = AndroidUtilities.dp(2.0f);
+            } else {
+                rect.left = AndroidUtilities.dp(1.0f);
+            }
         }
-        return 6;
     }
 }

@@ -1,35 +1,57 @@
 package org.telegram.ui.Components;
 
-import java.util.function.ToDoubleFunction;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class k71 implements ToDoubleFunction {
+public final /* synthetic */ class k71 implements Runnable {
     public final /* synthetic */ int a;
+    public final /* synthetic */ o71 b;
 
-    public /* synthetic */ k71(int i10) {
+    public /* synthetic */ k71(o71 o71Var, int i10) {
         this.a = i10;
+        this.b = o71Var;
     }
 
-    @Override // java.util.function.ToDoubleFunction
-    public final double applyAsDouble(Object obj) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                return ((m71) obj).a;
+                o71 o71Var = this.b;
+                o71Var.h = 0.0f;
+                b6 b6Var = o71Var.b;
+                if (b6Var != null) {
+                    b6Var.u();
+                    o71Var.b = null;
+                    break;
+                }
+                break;
             case 1:
-                return ((TLRPC.TL_topPeer) obj).rating;
-            case 2:
-                return ((TLRPC.TL_topPeer) obj).rating;
-            case 3:
-                return ((TLRPC.TL_topPeer) obj).rating;
-            case 4:
-                return zh.s0.P((TL_stars.starGiftAttributeBackdrop) obj);
-            case 5:
-                return zh.s0.P((TL_stars.starGiftAttributePattern) obj);
+                o71 o71Var2 = this.b;
+                o71Var2.a = true;
+                o71Var2.e = null;
+                if (o71Var2.b != null) {
+                    o71Var2.s = true;
+                    PhotoViewer photoViewer = o71Var2.M.a;
+                    if (photoViewer.u3) {
+                        photoViewer.a3(true);
+                        break;
+                    }
+                }
+                break;
             default:
-                return zh.s0.P((TL_stars.starGiftAttributeModel) obj);
+                o71 o71Var3 = this.b;
+                o71Var3.a = true;
+                o71Var3.e = null;
+                if (o71Var3.b != null) {
+                    o71Var3.s = true;
+                    PhotoViewer photoViewer2 = o71Var3.M.a;
+                    if (photoViewer2.u3) {
+                        photoViewer2.a3(true);
+                        break;
+                    }
+                }
+                break;
         }
     }
 }

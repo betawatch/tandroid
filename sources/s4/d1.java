@@ -6,7 +6,7 @@ import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
 import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class d1 extends r0.b {
     public final /* synthetic */ int d = 0;
@@ -60,7 +60,7 @@ public final class d1 extends r0.b {
                 e1 e1Var = (e1) this.e;
                 RecyclerView recyclerView = e1Var.d;
                 RecyclerView recyclerView2 = e1Var.d;
-                if (!recyclerView.Z() && recyclerView2.getLayoutManager() != null) {
+                if (!recyclerView.a0() && recyclerView2.getLayoutManager() != null) {
                     recyclerView2.getLayoutManager().T(view, cVar);
                     break;
                 }
@@ -91,8 +91,8 @@ public final class d1 extends r0.b {
                 if (!super.d(view, i10, bundle)) {
                     RecyclerView recyclerView = e1Var.d;
                     RecyclerView recyclerView2 = e1Var.d;
-                    if (!recyclerView.Z() && recyclerView2.getLayoutManager() != null) {
-                        pf.e eVar = recyclerView2.getLayoutManager().b.b;
+                    if (!recyclerView.a0() && recyclerView2.getLayoutManager() != null) {
+                        of.e eVar = recyclerView2.getLayoutManager().b.b;
                         break;
                     }
                 }

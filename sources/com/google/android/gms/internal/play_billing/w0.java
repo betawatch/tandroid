@@ -10,9 +10,10 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import java.util.concurrent.locks.LockSupport;
 import java.util.logging.Level;
-import v7.x5;
+import org.telegram.messenger.BuildConfig;
+import v7.y5;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class w0 extends l0 implements g0 {
     public t0 n;
@@ -75,8 +76,8 @@ public final class w0 extends l0 implements g0 {
                     try {
                         obj = t0Var.get();
                         break;
-                    } catch (Error e7) {
-                        e = e7;
+                    } catch (Error e) {
+                        e = e;
                         return new e0(e);
                     }
                 } catch (InterruptedException unused) {
@@ -87,13 +88,13 @@ public final class w0 extends l0 implements g0 {
                     }
                     throw th3;
                 }
-            } catch (Error | Exception e10) {
-                e = e10;
+            } catch (Error | Exception e7) {
+                e = e7;
                 return new e0(e);
-            } catch (CancellationException e11) {
-                return !isCancelled ? new e0(new IllegalArgumentException("get() threw CancellationException, despite reporting isCancelled() == false: ".concat(String.valueOf(t0Var)), e11)) : new b0(e11, false);
-            } catch (ExecutionException e12) {
-                return isCancelled ? new b0(new IllegalArgumentException("get() did not throw CancellationException, despite reporting isCancelled() == true: ".concat(String.valueOf(t0Var)), e12), false) : new e0(e12.getCause());
+            } catch (CancellationException e10) {
+                return !isCancelled ? new e0(new IllegalArgumentException("get() threw CancellationException, despite reporting isCancelled() == false: ".concat(String.valueOf(t0Var)), e10)) : new b0(e10, false);
+            } catch (ExecutionException e11) {
+                return isCancelled ? new b0(new IllegalArgumentException("get() did not throw CancellationException, despite reporting isCancelled() == true: ".concat(String.valueOf(t0Var)), e11), false) : new e0(e11.getCause());
             }
         }
         if (z10) {
@@ -163,8 +164,8 @@ public final class w0 extends l0 implements g0 {
     public static void k(Runnable runnable, Executor executor) {
         try {
             executor.execute(runnable);
-        } catch (Exception e7) {
-            l0.e.b().logp(Level.SEVERE, "com.google.common.util.concurrent.AbstractFuture", "executeListener", com.google.android.gms.internal.vision.e2.j("RuntimeException while executing runnable ", String.valueOf(runnable), " with executor ", String.valueOf(executor)), (Throwable) e7);
+        } catch (Exception e) {
+            l0.e.b().logp(Level.SEVERE, "com.google.common.util.concurrent.AbstractFuture", "executeListener", com.google.android.gms.internal.vision.e2.j("RuntimeException while executing runnable ", String.valueOf(runnable), " with executor ", String.valueOf(executor)), (Throwable) e);
         }
     }
 
@@ -281,9 +282,9 @@ public final class w0 extends l0 implements g0 {
         if (k0Var2 != k0Var) {
             k0 k0Var3 = new k0();
             do {
-                x5 x5Var = l0.h;
-                x5Var.c(k0Var3, k0Var2);
-                if (x5Var.g(this, k0Var2, k0Var3)) {
+                y5 y5Var = l0.h;
+                y5Var.c(k0Var3, k0Var2);
+                if (y5Var.g(this, k0Var2, k0Var3)) {
                     do {
                         LockSupport.park(this);
                         if (Thread.interrupted()) {
@@ -321,14 +322,14 @@ public final class w0 extends l0 implements g0 {
             } catch (CancellationException unused2) {
                 sb2.append("CANCELLED");
                 return;
-            } catch (ExecutionException e7) {
+            } catch (ExecutionException e) {
                 sb2.append("FAILURE, cause=[");
-                sb2.append(e7.getCause());
+                sb2.append(e.getCause());
                 sb2.append("]");
                 return;
-            } catch (Exception e10) {
+            } catch (Exception e7) {
                 sb2.append("UNKNOWN, cause=[");
-                sb2.append(e10.getClass());
+                sb2.append(e7.getClass());
                 sb2.append(" thrown from get()]");
                 return;
             }
@@ -338,7 +339,7 @@ public final class w0 extends l0 implements g0 {
         }
         sb2.append("SUCCESS, result=[");
         if (obj == null) {
-            sb2.append("null");
+            sb2.append(BuildConfig.BETA_URL);
         } else if (obj == this) {
             sb2.append("this future");
         } else {
@@ -454,9 +455,9 @@ public final class w0 extends l0 implements g0 {
                 if (k0Var2 != k0Var) {
                     k0 k0Var3 = new k0();
                     while (true) {
-                        x5 x5Var = l0.h;
-                        x5Var.c(k0Var3, k0Var2);
-                        if (x5Var.g(this, k0Var2, k0Var3)) {
+                        y5 y5Var = l0.h;
+                        y5Var.c(k0Var3, k0Var2);
+                        if (y5Var.g(this, k0Var2, k0Var3)) {
                             j10 = j11;
                             while (true) {
                                 LockSupport.parkNanos(this, Math.min(nanos, 2147483647999999999L));

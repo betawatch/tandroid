@@ -29,7 +29,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class h implements Handler.Callback {
     public static final Status E = new Status(4, "Sign-out occurred while this API call was in progress.", null, null);
@@ -193,7 +193,7 @@ public final class h implements Handler.Callback {
                         com.google.android.gms.common.api.c cVar = p0Var.b;
                         if (cVar instanceof n6.g) {
                             n6.g gVar = (n6.g) cVar;
-                            if (gVar.Q != null && !gVar.f()) {
+                            if (gVar.Q != null && !gVar.g()) {
                                 n6.e a2 = y0.a(p0Var, gVar, i10);
                                 if (a2 != null) {
                                     p0Var.n++;
@@ -294,7 +294,7 @@ public final class h implements Handler.Callback {
                     }
                 }
                 if (p0Var == null) {
-                    Log.wtf("GoogleApiManager", i2.g.j(i11, "Could not find API instance ", " while trying to fail enqueued calls."), new Exception());
+                    Log.wtf("GoogleApiManager", hg.k0.j(i11, "Could not find API instance ", " while trying to fail enqueued calls."), new Exception());
                     return true;
                 }
                 int i12 = aVar.b;

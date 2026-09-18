@@ -3,7 +3,7 @@ package le;
 import android.view.View;
 import android.view.animation.Interpolator;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class b implements d {
     public final int a;
@@ -19,10 +19,15 @@ public final class b implements d {
     }
 
     @Override // le.d
-    public final void E(int i10, float f7, float f10, e eVar) {
+    public final void C(float f7, int i10) {
+        this.b.C(f7, this.a);
+    }
+
+    @Override // le.d
+    public final void D(int i10, float f7, float f10, e eVar) {
         if (this.e != f7) {
             this.e = f7;
-            this.b.E(this.a, f7, -1.0f, null);
+            this.b.D(this.a, f7, -1.0f, null);
         }
     }
 
@@ -53,15 +58,10 @@ public final class b implements d {
             d dVar = this.b;
             if (f10 != f7) {
                 this.e = f7;
-                dVar.E(i10, f7, -1.0f, null);
+                dVar.D(i10, f7, -1.0f, null);
             }
-            dVar.z(f7, i10);
+            dVar.C(f7, i10);
         }
-    }
-
-    @Override // le.d
-    public final void z(float f7, int i10) {
-        this.b.z(f7, this.a);
     }
 
     public b(int i10, d dVar, Interpolator interpolator, long j3) {

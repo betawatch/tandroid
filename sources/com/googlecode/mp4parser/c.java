@@ -2,13 +2,13 @@ package com.googlecode.mp4parser;
 
 import com.google.android.gms.internal.vision.e2;
 import java.nio.ByteBuffer;
-import mg.n;
+import k2.c0;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public abstract class c extends a {
-    public static final /* synthetic */ n c;
-    public static final /* synthetic */ n d;
+    public static final /* synthetic */ c0 c;
+    public static final /* synthetic */ c0 d;
     public int a;
     public int b;
 

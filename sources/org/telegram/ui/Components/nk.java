@@ -24,9 +24,9 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class nk extends hl0 {
+public final class nk extends il0 {
     public long E;
     public long F;
     public int G;
@@ -39,11 +39,11 @@ public final class nk extends hl0 {
     public final /* synthetic */ ok X;
     public final Context r;
     public jk v;
-    public uc w;
+    public oh w;
     public long x;
-    public hg.q0 y;
+    public gg.q0 y;
     public ArrayList s = new ArrayList();
-    public final org.telegram.ui.p10 H = new org.telegram.ui.p10(0, 0);
+    public final org.telegram.ui.r10 H = new org.telegram.ui.r10(0, 0);
     public final ArrayList L = new ArrayList();
     public final ArrayList M = new ArrayList();
     public final ArrayList N = new ArrayList();
@@ -59,18 +59,18 @@ public final class nk extends hl0 {
         this.r = context;
     }
 
-    @Override // org.telegram.ui.Components.tk0
+    @Override // org.telegram.ui.Components.uk0
     public final String F(int i10) {
         return null;
     }
 
-    @Override // org.telegram.ui.Components.tk0
-    public final void G(ll0 ll0Var, float f7, int[] iArr) {
+    @Override // org.telegram.ui.Components.uk0
+    public final void G(ml0 ml0Var, float f7, int[] iArr) {
         iArr[0] = 0;
         iArr[1] = 0;
     }
 
-    @Override // org.telegram.ui.Components.hl0
+    @Override // org.telegram.ui.Components.il0
     public final int M(int i10) {
         if (i10 == 0) {
             return this.s.size();
@@ -92,7 +92,7 @@ public final class nk extends hl0 {
         return size + i12;
     }
 
-    @Override // org.telegram.ui.Components.hl0
+    @Override // org.telegram.ui.Components.il0
     public final Object O(int i10, int i11) {
         ArrayList arrayList;
         if (i10 == 0) {
@@ -113,7 +113,7 @@ public final class nk extends hl0 {
         return arrayList.get(i13);
     }
 
-    @Override // org.telegram.ui.Components.hl0
+    @Override // org.telegram.ui.Components.il0
     public final int P(int i10, int i11) {
         if (i10 == 0) {
             return 1;
@@ -128,7 +128,7 @@ public final class nk extends hl0 {
         return 2;
     }
 
-    @Override // org.telegram.ui.Components.hl0
+    @Override // org.telegram.ui.Components.il0
     public final int R() {
         ArrayList arrayList = this.P;
         if (arrayList.isEmpty()) {
@@ -137,7 +137,7 @@ public final class nk extends hl0 {
         return arrayList.size() + (!this.V ? 1 : 0) + 2;
     }
 
-    @Override // org.telegram.ui.Components.hl0
+    @Override // org.telegram.ui.Components.il0
     public final View T(int i10, View view) {
         org.telegram.ui.Cells.u3 u3Var = (org.telegram.ui.Cells.u3) view;
         if (u3Var == null) {
@@ -161,13 +161,13 @@ public final class nk extends hl0 {
         return view;
     }
 
-    @Override // org.telegram.ui.Components.hl0
+    @Override // org.telegram.ui.Components.il0
     public final boolean V(int i10, int i11, s4.c1 c1Var) {
         int i12 = c1Var.f;
         return i12 == 1 || i12 == 4;
     }
 
-    @Override // org.telegram.ui.Components.hl0
+    @Override // org.telegram.ui.Components.il0
     public final void W(int i10, int i11, s4.c1 c1Var) {
         int i12 = i11;
         int i13 = c1Var.f;
@@ -229,9 +229,9 @@ public final class nk extends hl0 {
         ok okVar = this.X;
         hk hkVar = okVar.v;
         dk dkVar = okVar.r;
-        uc ucVar = this.w;
-        if (ucVar != null) {
-            AndroidUtilities.cancelRunOnUIThread(ucVar);
+        oh ohVar = this.w;
+        if (ohVar != null) {
+            AndroidUtilities.cancelRunOnUIThread(ohVar);
             this.w = null;
         }
         if (TextUtils.isEmpty(str)) {
@@ -243,9 +243,9 @@ public final class nk extends hl0 {
             }
             l();
         } else {
-            uc ucVar2 = new uc(14, this, str);
-            this.w = ucVar2;
-            AndroidUtilities.runOnUIThread(ucVar2, 300L);
+            oh ohVar2 = new oh(8, this, str);
+            this.w = ohVar2;
+            AndroidUtilities.runOnUIThread(ohVar2, 300L);
         }
         if (okVar.W || !hkVar.d.isEmpty()) {
             return;
@@ -257,10 +257,10 @@ public final class nk extends hl0 {
         while (true) {
             ArrayList arrayList = this.R;
             if (i10 >= arrayList.size()) {
-                Z(j10, j11, j12, hg.s0.c3[2], str, z10);
+                Z(j10, j11, j12, gg.s0.c3[2], str, z10);
                 return;
             }
-            hg.q0 q0Var = (hg.q0) arrayList.get(i10);
+            gg.q0 q0Var = (gg.q0) arrayList.get(i10);
             int i11 = q0Var.d;
             if (i11 == 4) {
                 TLObject tLObject = q0Var.f;
@@ -271,7 +271,7 @@ public final class nk extends hl0 {
                 }
                 j10 = j3;
             } else if (i11 == 6) {
-                hg.o0 o0Var = q0Var.g;
+                gg.o0 o0Var = q0Var.g;
                 j11 = o0Var.b;
                 j12 = o0Var.c;
             }
@@ -280,10 +280,10 @@ public final class nk extends hl0 {
     }
 
     /* JADX WARN: Type inference failed for: r0v6, types: [java.lang.Runnable, org.telegram.ui.Components.jk] */
-    public final void Z(final long j3, final long j10, final long j11, hg.q0 q0Var, final String str, boolean z10) {
+    public final void Z(final long j3, final long j10, final long j11, gg.q0 q0Var, final String str, boolean z10) {
         ok okVar = this.X;
         dk dkVar = okVar.r;
-        bi.m6 m6Var = okVar.L;
+        ai.d7 d7Var = okVar.L;
         Locale locale = Locale.ENGLISH;
         final String str2 = j3 + j10 + j11 + q0Var.d + str;
         String str3 = this.I;
@@ -310,7 +310,7 @@ public final class nk extends hl0 {
             this.P.clear();
             this.Q.clear();
             this.S = true;
-            m6Var.setVisibility(0);
+            d7Var.setVisibility(0);
             l();
             this.T++;
             if (dkVar.getPinnedHeader() != null) {
@@ -323,7 +323,7 @@ public final class nk extends hl0 {
         l();
         if (!z11) {
             l7Var.run();
-            m6Var.e(true, !z10);
+            d7Var.e(true, !z10);
         }
         if (TextUtils.isEmpty(str)) {
             arrayList.clear();
@@ -365,7 +365,7 @@ public final class nk extends hl0 {
                         tL_messages_search.max_date = (int) (j16 / 1000);
                     }
                     if (z13 && str5.equals(nkVar.J) && !arrayList5.isEmpty()) {
-                        tL_messages_search.offset_id = ((MessageObject) i2.g.h(1, arrayList5)).getId();
+                        tL_messages_search.offset_id = ((MessageObject) hg.k0.h(1, arrayList5)).getId();
                     } else {
                         tL_messages_search.offset_id = 0;
                     }
@@ -397,7 +397,7 @@ public final class nk extends hl0 {
                         tL_messages_searchGlobal2.max_date = (int) (j12 / 1000);
                     }
                     if (z13 && str4.equals(nkVar.J) && !arrayList5.isEmpty()) {
-                        MessageObject messageObject = (MessageObject) i2.g.h(1, arrayList5);
+                        MessageObject messageObject = (MessageObject) hg.k0.h(1, arrayList5);
                         tL_messages_searchGlobal2.offset_id = messageObject.getId();
                         tL_messages_searchGlobal2.offset_rate = nkVar.G;
                         TLRPC.Peer peer = messageObject.messageOwner.peer_id;
@@ -423,7 +423,7 @@ public final class nk extends hl0 {
                 nkVar.J = str4;
                 nkVar.I = str2;
                 final ArrayList arrayList7 = new ArrayList();
-                hg.s0.x1(nkVar.J, arrayList7);
+                gg.s0.z1(nkVar.J, arrayList7);
                 ConnectionsManager connectionsManager = accountInstance2.getConnectionsManager();
                 final int i12 = i10;
                 final String str6 = str4;
@@ -443,7 +443,7 @@ public final class nk extends hl0 {
                                 arrayList9.add(messageObject2);
                             }
                         }
-                        AndroidUtilities.runOnUIThread(new fi.t3(nk.this, i12, tL_error, tLObject, accountInstance3, z13, str7, arrayList9, j14, j15, arrayList8, arrayList7));
+                        AndroidUtilities.runOnUIThread(new ei.t3(nk.this, i12, tL_error, tLObject, accountInstance3, z13, str7, arrayList9, j14, j15, arrayList8, arrayList7));
                     }
                 });
             }
@@ -471,7 +471,7 @@ public final class nk extends hl0 {
         boolean z11;
         AnimatorSet animatorSet;
         ok okVar = this.X;
-        hg.s0 s0Var = okVar.H;
+        gg.s0 s0Var = okVar.H;
         int i10 = 0;
         boolean z12 = false;
         boolean z13 = false;
@@ -481,11 +481,11 @@ public final class nk extends hl0 {
             if (i10 >= arrayList3.size()) {
                 break;
             }
-            if (((hg.q0) arrayList3.get(i10)).a()) {
+            if (((gg.q0) arrayList3.get(i10)).a()) {
                 z12 = true;
-            } else if (((hg.q0) arrayList3.get(i10)).d == 4) {
+            } else if (((gg.q0) arrayList3.get(i10)).d == 4) {
                 z13 = true;
-            } else if (((hg.q0) arrayList3.get(i10)).d == 6) {
+            } else if (((gg.q0) arrayList3.get(i10)).d == 6) {
                 z14 = true;
             }
             i10++;
@@ -499,10 +499,10 @@ public final class nk extends hl0 {
                 arrayList2 = null;
             }
             if (arrayList != null || arrayList2 != null) {
-                s0Var.z1(arrayList, arrayList2, false);
+                s0Var.B1(arrayList, arrayList2, false);
                 z11 = true;
                 if (!z11) {
-                    s0Var.z1(null, null, false);
+                    s0Var.B1(null, null, false);
                 }
                 s0Var.setEnabled(z11);
                 if (z11 || s0Var.getTag() == null) {
@@ -521,9 +521,9 @@ public final class nk extends hl0 {
                     okVar.I = animatorSet2;
                     dk dkVar = okVar.r;
                     Property property = View.TRANSLATION_Y;
-                    animatorSet2.playTogether(ObjectAnimator.ofFloat(dkVar, (Property<dk, Float>) property, !z11 ? AndroidUtilities.dp(44.0f) : 0.0f), ObjectAnimator.ofFloat(s0Var, (Property<hg.s0, Float>) property, !z11 ? 0.0f : -AndroidUtilities.dp(44.0f)), ObjectAnimator.ofFloat(okVar.J, (Property<t00, Float>) property, !z11 ? AndroidUtilities.dp(44.0f) : 0.0f), ObjectAnimator.ofFloat(okVar.L, (Property<bi.m6, Float>) property, z11 ? AndroidUtilities.dp(44.0f) : 0.0f));
-                    okVar.I.addListener(new j6(this, 11));
-                    okVar.I.setInterpolator(pr.g);
+                    animatorSet2.playTogether(ObjectAnimator.ofFloat(dkVar, (Property<dk, Float>) property, !z11 ? AndroidUtilities.dp(44.0f) : 0.0f), ObjectAnimator.ofFloat(s0Var, (Property<gg.s0, Float>) property, !z11 ? 0.0f : -AndroidUtilities.dp(44.0f)), ObjectAnimator.ofFloat(okVar.J, (Property<t00, Float>) property, !z11 ? AndroidUtilities.dp(44.0f) : 0.0f), ObjectAnimator.ofFloat(okVar.L, (Property<ai.d7, Float>) property, z11 ? AndroidUtilities.dp(44.0f) : 0.0f));
+                    okVar.I.addListener(new p8(this, 8));
+                    okVar.I.setInterpolator(qr.g);
                     okVar.I.setDuration(180L);
                     okVar.I.start();
                 }
@@ -548,14 +548,14 @@ public final class nk extends hl0 {
         okVar.I = animatorSet22;
         dk dkVar2 = okVar.r;
         Property property2 = View.TRANSLATION_Y;
-        animatorSet22.playTogether(ObjectAnimator.ofFloat(dkVar2, (Property<dk, Float>) property2, !z11 ? AndroidUtilities.dp(44.0f) : 0.0f), ObjectAnimator.ofFloat(s0Var, (Property<hg.s0, Float>) property2, !z11 ? 0.0f : -AndroidUtilities.dp(44.0f)), ObjectAnimator.ofFloat(okVar.J, (Property<t00, Float>) property2, !z11 ? AndroidUtilities.dp(44.0f) : 0.0f), ObjectAnimator.ofFloat(okVar.L, (Property<bi.m6, Float>) property2, z11 ? AndroidUtilities.dp(44.0f) : 0.0f));
-        okVar.I.addListener(new j6(this, 11));
-        okVar.I.setInterpolator(pr.g);
+        animatorSet22.playTogether(ObjectAnimator.ofFloat(dkVar2, (Property<dk, Float>) property2, !z11 ? AndroidUtilities.dp(44.0f) : 0.0f), ObjectAnimator.ofFloat(s0Var, (Property<gg.s0, Float>) property2, !z11 ? 0.0f : -AndroidUtilities.dp(44.0f)), ObjectAnimator.ofFloat(okVar.J, (Property<t00, Float>) property2, !z11 ? AndroidUtilities.dp(44.0f) : 0.0f), ObjectAnimator.ofFloat(okVar.L, (Property<ai.d7, Float>) property2, z11 ? AndroidUtilities.dp(44.0f) : 0.0f));
+        okVar.I.addListener(new p8(this, 8));
+        okVar.I.setInterpolator(qr.g);
         okVar.I.setDuration(180L);
         okVar.I.start();
     }
 
-    @Override // org.telegram.ui.Components.hl0, s4.h0
+    @Override // org.telegram.ui.Components.il0, s4.h0
     public final void l() {
         X(false);
         this.X.T();
@@ -578,16 +578,16 @@ public final class nk extends hl0 {
                 } else if (i10 != 4) {
                     view = new View(context);
                     view.setTag(-33024);
-                    return com.google.android.gms.internal.vision.e2.l(view, view, -1, -2);
+                    return com.google.android.gms.internal.vision.e2.k(view, view, -1, -2);
                 }
             }
             org.telegram.ui.Cells.j7 j7Var = new org.telegram.ui.Cells.j7(context, i10 == 1 ? 1 : 2, okVar.a);
             j7Var.setDrawDownloadIcon(false);
             view = j7Var;
-            return com.google.android.gms.internal.vision.e2.l(view, view, -1, -2);
+            return com.google.android.gms.internal.vision.e2.k(view, view, -1, -2);
         }
         u3Var = new org.telegram.ui.Cells.u3(context, okVar.a);
         view = u3Var;
-        return com.google.android.gms.internal.vision.e2.l(view, view, -1, -2);
+        return com.google.android.gms.internal.vision.e2.k(view, view, -1, -2);
     }
 }

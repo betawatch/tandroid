@@ -4,14 +4,14 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import java.lang.reflect.Field;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 final class ImmLeaksCleaner implements androidx.lifecycle.r {
     public static int b;
     public static Field c;
     public static Field d;
     public static Field e;
-    public m a;
+    public l a;
 
     @Override // androidx.lifecycle.r
     public final void d(androidx.lifecycle.t tVar, androidx.lifecycle.m mVar) {

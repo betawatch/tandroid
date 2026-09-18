@@ -23,11 +23,11 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.Components.at;
-import org.telegram.ui.Components.oq;
+import org.telegram.ui.Components.bt;
+import org.telegram.ui.Components.pq;
 import org.telegram.ui.Components.t00;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class u6 extends FrameLayout {
     public int a;
@@ -35,17 +35,17 @@ public final class u6 extends FrameLayout {
     public TextView c;
     public TextView d;
     public TextView e;
-    public org.telegram.ui.Components.x9 f;
-    public org.telegram.ui.Components.x9 h;
-    public org.telegram.ui.Components.i9 n;
+    public org.telegram.ui.Components.u9 f;
+    public org.telegram.ui.Components.u9 h;
+    public org.telegram.ui.Components.f9 n;
     public boolean r;
     public boolean s;
-    public org.telegram.ui.Components.e6 v;
+    public org.telegram.ui.Components.c6 v;
     public t00 w;
     public LinearLayout x;
     public int y;
 
-    public static oq a(int i10, String str) {
+    public static pq a(int i10, String str) {
         TLRPC.TL_authorization tL_authorization = new TLRPC.TL_authorization();
         tL_authorization.device_model = str;
         tL_authorization.platform = str;
@@ -53,7 +53,7 @@ public final class u6 extends FrameLayout {
         return b(i10, tL_authorization);
     }
 
-    public static oq b(int i10, TLRPC.TL_authorization tL_authorization) {
+    public static pq b(int i10, TLRPC.TL_authorization tL_authorization) {
         int i11;
         int i12;
         int i13;
@@ -150,13 +150,13 @@ public final class u6 extends FrameLayout {
         Paint paint = new Paint(1);
         m0Var.b = paint;
         paint.setShader(new LinearGradient(0.0f, 0.0f, 0.0f, dp, new int[]{w02, w03}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP));
-        oq oqVar = new oq(m0Var, mutate);
+        pq pqVar = new pq(m0Var, mutate);
         if (lowerCase != null && lowerCase.contains("fragment")) {
             int intrinsicWidth = (int) ((mutate.getIntrinsicWidth() / 44.0f) * f7);
-            oqVar.e = intrinsicWidth;
-            oqVar.f = (int) ((mutate.getIntrinsicHeight() / 44.0f) * f7);
+            pqVar.e = intrinsicWidth;
+            pqVar.f = (int) ((mutate.getIntrinsicHeight() / 44.0f) * f7);
         }
-        return oqVar;
+        return pqVar;
     }
 
     private void setContentAlpha(float f7) {
@@ -176,13 +176,13 @@ public final class u6 extends FrameLayout {
         if (textView4 != null) {
             textView4.setAlpha(f7);
         }
-        org.telegram.ui.Components.x9 x9Var = this.h;
-        if (x9Var != null) {
-            x9Var.setAlpha(f7);
+        org.telegram.ui.Components.u9 u9Var = this.h;
+        if (u9Var != null) {
+            u9Var.setAlpha(f7);
         }
-        org.telegram.ui.Components.x9 x9Var2 = this.f;
-        if (x9Var2 != null) {
-            x9Var2.setAlpha(1.0f - f7);
+        org.telegram.ui.Components.u9 u9Var2 = this.f;
+        if (u9Var2 != null) {
+            u9Var2.setAlpha(1.0f - f7);
         }
         LinearLayout linearLayout = this.x;
         if (linearLayout != null) {
@@ -198,16 +198,16 @@ public final class u6 extends FrameLayout {
         TextView textView3 = this.d;
         TextView textView4 = this.b;
         int i10 = this.y;
-        org.telegram.ui.Components.i9 i9Var = this.n;
+        org.telegram.ui.Components.f9 f9Var = this.n;
         this.r = z10;
-        org.telegram.ui.Components.x9 x9Var = this.h;
-        x9Var.setRoundRadius(AndroidUtilities.dp(10.0f));
+        org.telegram.ui.Components.u9 u9Var = this.h;
+        u9Var.setRoundRadius(AndroidUtilities.dp(10.0f));
         if (tLObject instanceof TL_account.TL_connectedBot) {
             TL_account.TL_connectedBot tL_connectedBot = (TL_account.TL_connectedBot) tLObject;
             TLRPC.User user = MessagesController.getInstance(i10).getUser(Long.valueOf(tL_connectedBot.bot_id));
-            i9Var.r(user);
-            x9Var.setRoundRadius(AndroidUtilities.dp(21.0f));
-            x9Var.e(user, i9Var);
+            f9Var.r(user);
+            u9Var.setRoundRadius(AndroidUtilities.dp(21.0f));
+            u9Var.e(user, f9Var);
             textView4.setText(UserObject.getUserName(user));
             textView3.setText(LocaleController.getString(R.string.SessionBot));
             if (TLObject.hasFlag(tL_connectedBot.flags, 2)) {
@@ -215,7 +215,7 @@ public final class u6 extends FrameLayout {
             }
         } else if (tLObject instanceof TLRPC.TL_authorization) {
             TLRPC.TL_authorization tL_authorization = (TLRPC.TL_authorization) tLObject;
-            x9Var.setImageDrawable(b(42, tL_authorization));
+            u9Var.setImageDrawable(b(42, tL_authorization));
             StringBuilder sb2 = new StringBuilder();
             if (tL_authorization.device_model.length() != 0) {
                 sb2.append(tL_authorization.device_model);
@@ -244,9 +244,9 @@ public final class u6 extends FrameLayout {
                 spannableStringBuilder.append((CharSequence) tL_authorization.country);
             }
             if (spannableStringBuilder.length() != 0) {
-                at atVar = new at();
-                atVar.b = AndroidUtilities.dp(1.5f);
-                spannableStringBuilder.append((CharSequence) " . ").setSpan(atVar, spannableStringBuilder.length() - 2, spannableStringBuilder.length() - 1, 0);
+                bt btVar = new bt();
+                btVar.b = AndroidUtilities.dp(1.5f);
+                spannableStringBuilder.append((CharSequence) " . ").setSpan(btVar, spannableStringBuilder.length() - 2, spannableStringBuilder.length() - 1, 0);
             }
             spannableStringBuilder.append((CharSequence) stringForMessageListDate);
             textView2.setText(spannableStringBuilder);
@@ -260,9 +260,9 @@ public final class u6 extends FrameLayout {
             TLRPC.User user2 = MessagesController.getInstance(i10).getUser(Long.valueOf(tL_webAuthorization.bot_id));
             textView4.setText(tL_webAuthorization.domain);
             if (user2 != null) {
-                i9Var.m(i10, user2);
+                f9Var.m(i10, user2);
                 str = UserObject.getFirstName(user2);
-                x9Var.e(user2, i9Var);
+                u9Var.e(user2, f9Var);
             } else {
                 str = "";
             }
@@ -317,7 +317,7 @@ public final class u6 extends FrameLayout {
                 rectF.set(0.0f, 0.0f, getWidth(), getHeight());
                 canvas.saveLayerAlpha(rectF, (int) (d * 255.0f), 31);
             }
-            this.w.d();
+            this.w.e();
             this.w.h();
             if (getParent() != null) {
                 View view = (View) getParent();

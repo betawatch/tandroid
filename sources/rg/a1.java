@@ -1,60 +1,106 @@
 package rg;
 
-import android.content.Context;
-import android.graphics.ColorMatrix;
-import android.graphics.ColorMatrixColorFilter;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.text.TextPaint;
-import di.c6;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.ui.Components.na;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.drawable.Drawable;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserConfig;
+import org.telegram.ui.ActionBar.j6;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class a1 extends org.telegram.ui.Cells.w0 {
-    public final na k2;
-    public final TextPaint l2;
-    public final /* synthetic */ c1 m2;
+public final class a1 {
+    public static a1 j;
+    public final z0 a;
+    public final Paint b;
+    public Paint c;
+    public final Drawable d;
+    public final Drawable e;
+    public y0 f;
+    public y0 g;
+    public final y0 h;
+    public int i;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public a1(c1 c1Var, Context context, com.google.firebase.messaging.n nVar) {
-        super(context, nVar, false);
-        this.m2 = c1Var;
-        this.k2 = new na(c1Var.d, this, 10, false);
-        TextPaint textPaint = new TextPaint(1);
-        this.l2 = textPaint;
-        textPaint.setTypeface(AndroidUtilities.bold());
-        textPaint.setTextSize(AndroidUtilities.dp(Math.max(16, SharedConfig.fontSize) - 2));
-        textPaint.setColor(-1);
+    public a1() {
+        z0 z0Var = new z0(j6.Lj, j6.Mj, j6.Nj, j6.Oj, null);
+        this.a = z0Var;
+        z0 z0Var2 = new z0(j6.fk, j6.gk, -1, -1, null);
+        this.b = z0Var.f;
+        this.e = ApplicationLoader.applicationContext.getDrawable(R.drawable.msg_premium_liststar).mutate();
+        this.f = c(ApplicationLoader.applicationContext.getDrawable(R.drawable.msg_settings_premium), z0Var);
+        this.h = c(ApplicationLoader.applicationContext.getDrawable(R.drawable.msg_settings_premium), z0Var2);
+        this.g = c(ApplicationLoader.applicationContext.getDrawable(R.drawable.msg_premium_normal), z0Var);
+        this.d = ApplicationLoader.applicationContext.getDrawable(R.drawable.msg_premium_liststar).mutate();
+        z0Var.a();
+        b();
     }
 
-    @Override // org.telegram.ui.Cells.w0
-    public final Paint H(String str) {
-        if ("paintChatActionText".equals(str) || "paintChatActionText2".equals(str)) {
-            return this.l2;
+    public static y0 c(Drawable drawable, z0 z0Var) {
+        if (drawable == null) {
+            return null;
         }
-        if ("paintChatActionBackground".equals(str)) {
-            c6 c6Var = this.m2.h;
-            c6Var.v0 = true;
-            boolean z10 = c6Var.B0;
-            na naVar = this.k2;
-            if (naVar.r != z10) {
-                naVar.r = z10;
-                if (naVar.i == 10) {
-                    ColorMatrix colorMatrix = new ColorMatrix();
-                    colorMatrix.setSaturation(1.6f);
-                    AndroidUtilities.multiplyBrightnessColorMatrix(colorMatrix, naVar.r ? 0.97f : 0.92f);
-                    AndroidUtilities.adjustBrightnessColorMatrix(colorMatrix, naVar.r ? 0.12f : -0.06f);
-                    naVar.h.setColorFilter(new ColorMatrixColorFilter(colorMatrix));
-                    naVar.g.setColorFilter(new ColorMatrixColorFilter(colorMatrix));
-                }
-            }
-            Paint c10 = naVar.c(1.0f);
-            if (c10 != null) {
-                return c10;
-            }
+        int intrinsicWidth = drawable.getIntrinsicWidth();
+        int minimumHeight = drawable.getMinimumHeight();
+        Bitmap createBitmap = Bitmap.createBitmap(intrinsicWidth, minimumHeight, Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(createBitmap);
+        drawable.setBounds(0, 0, intrinsicWidth, minimumHeight);
+        drawable.draw(canvas);
+        z0Var.f.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
+        z0Var.d(0, -intrinsicWidth, 0, intrinsicWidth, 0.0f, minimumHeight);
+        canvas.drawRect(0.0f, 0.0f, intrinsicWidth, minimumHeight, z0Var.f);
+        z0Var.f.setXfermode(null);
+        int[] iArr = z0Var.l;
+        y0 y0Var = new y0(ApplicationLoader.applicationContext.getResources(), createBitmap);
+        y0Var.b = drawable;
+        int[] iArr2 = new int[iArr.length];
+        y0Var.a = iArr2;
+        System.arraycopy(iArr, 0, iArr2, 0, iArr.length);
+        return y0Var;
+    }
+
+    public static a1 d() {
+        if (j == null) {
+            j = new a1();
         }
-        return super.H(str);
+        return j;
+    }
+
+    public final y0 a(y0 y0Var) {
+        z0 z0Var = this.a;
+        int[] iArr = z0Var.l;
+        int i10 = iArr[0];
+        int[] iArr2 = y0Var.a;
+        return (i10 == iArr2[0] && iArr[1] == iArr2[1] && iArr[2] == iArr2[2] && iArr[3] == iArr2[3]) ? y0Var : c(y0Var.b, z0Var);
+    }
+
+    public final void b() {
+        int i10 = j6.z9;
+        if (j6.w0(null, i10, false) != this.i) {
+            this.i = j6.w0(null, i10, false);
+            this.e.setColorFilter(new PorterDuffColorFilter(this.i, PorterDuff.Mode.MULTIPLY));
+        }
+        this.f = a(this.f);
+        this.g = a(this.g);
+    }
+
+    public final Paint e() {
+        if (!MessagesController.getInstance(UserConfig.selectedAccount).premiumFeaturesBlocked()) {
+            return this.b;
+        }
+        if (this.c == null) {
+            this.c = new Paint(1);
+        }
+        this.c.setColor(j6.w0(null, j6.Oh, false));
+        return this.c;
+    }
+
+    public final void f(float f7, float f10, int i10, int i11) {
+        this.a.d(0, f7, 0, i10, f10, i11);
     }
 }

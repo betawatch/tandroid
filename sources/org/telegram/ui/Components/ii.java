@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.SendMessagesHelper;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class ii implements fk {
     public final /* synthetic */ vi a;
@@ -32,8 +32,8 @@ public final class ii implements fk {
             ((fk) obj).k(arrayList, str, arrayList2, arrayList3, z10, i10, j3, z11, j10);
             return;
         }
-        if (obj instanceof org.telegram.ui.pn0) {
-            org.telegram.ui.pn0 pn0Var = (org.telegram.ui.pn0) obj;
+        if (obj instanceof org.telegram.ui.qn0) {
+            org.telegram.ui.qn0 qn0Var = (org.telegram.ui.qn0) obj;
             ArrayList arrayList4 = new ArrayList();
             int size = arrayList.size();
             for (int i11 = 0; i11 < size; i11++) {
@@ -41,7 +41,7 @@ public final class ii implements fk {
                 sendingMediaInfo.path = (String) arrayList.get(i11);
                 arrayList4.add(sendingMediaInfo);
             }
-            pn0Var.G1(arrayList4);
+            qn0Var.G1(arrayList4);
         }
     }
 
@@ -53,11 +53,11 @@ public final class ii implements fk {
             fkVar.l(j3, arrayList, z10, i10);
             return;
         }
-        org.telegram.ui.ActionBar.n2 n2Var = viVar.f0;
-        if (n2Var instanceof org.telegram.ui.co) {
-            ((org.telegram.ui.co) n2Var).l(j3, arrayList, z10, i10);
-        } else if (n2Var instanceof org.telegram.ui.pn0) {
-            ((org.telegram.ui.pn0) n2Var).G1(arrayList);
+        org.telegram.ui.ActionBar.o2 o2Var = viVar.f0;
+        if (o2Var instanceof org.telegram.ui.bo) {
+            ((org.telegram.ui.bo) o2Var).l(j3, arrayList, z10, i10);
+        } else if (o2Var instanceof org.telegram.ui.qn0) {
+            ((org.telegram.ui.qn0) o2Var).G1(arrayList);
         }
     }
 
@@ -74,16 +74,16 @@ public final class ii implements fk {
             ((fk) obj).w();
             return;
         }
-        if (obj instanceof org.telegram.ui.pn0) {
-            org.telegram.ui.pn0 pn0Var = (org.telegram.ui.pn0) obj;
-            pn0Var.getClass();
+        if (obj instanceof org.telegram.ui.qn0) {
+            org.telegram.ui.qn0 qn0Var = (org.telegram.ui.qn0) obj;
+            qn0Var.getClass();
             try {
                 Intent intent = new Intent("android.intent.action.GET_CONTENT");
                 intent.putExtra("android.intent.extra.ALLOW_MULTIPLE", true);
                 intent.setType("*/*");
-                pn0Var.startActivityForResult(intent, 21);
-            } catch (Exception e7) {
-                FileLog.e(e7);
+                qn0Var.startActivityForResult(intent, 21);
+            } catch (Exception e) {
+                FileLog.e(e);
             }
         }
     }

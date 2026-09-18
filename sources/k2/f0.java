@@ -1,33 +1,22 @@
 package k2;
 
-import android.content.Context;
-import android.media.AudioAttributes;
 import android.media.AudioTrack;
-import android.os.Build;
+import android.os.Handler;
+import android.os.Looper;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
-public final class f0 implements u {
-    public static AudioAttributes b(b2.e eVar, boolean z10) {
-        return z10 ? new AudioAttributes.Builder().setContentType(3).setFlags(16).setUsage(1).build() : (AudioAttributes) eVar.b().a;
+public final class f0 {
+    public final Handler a = new Handler(Looper.myLooper());
+    public final e0 b = new e0(this);
+    public final /* synthetic */ g0 c;
+
+    public f0(g0 g0Var) {
+        this.c = g0Var;
     }
 
-    public final AudioTrack a(k kVar, b2.e eVar, int i10, Context context) {
-        boolean z10 = kVar.d;
-        int i11 = kVar.a;
-        int i12 = kVar.c;
-        int i13 = kVar.b;
-        int i14 = Build.VERSION.SDK_INT;
-        if (i14 < 23) {
-            return new AudioTrack(b(eVar, z10), e2.d0.r(i13, i12, i11), kVar.f, 1, i10);
-        }
-        AudioTrack.Builder sessionId = new AudioTrack.Builder().setAudioAttributes(b(eVar, z10)).setAudioFormat(e2.d0.r(i13, i12, i11)).setTransferMode(1).setBufferSizeInBytes(kVar.f).setSessionId(i10);
-        if (i14 >= 29) {
-            sessionId.setOffloadedPlayback(kVar.e);
-        }
-        if (i14 >= 34 && context != null) {
-            sessionId.setContext(context);
-        }
-        return sessionId.build();
+    public final void a(AudioTrack audioTrack) {
+        audioTrack.unregisterStreamEventCallback(this.b);
+        this.a.removeCallbacksAndMessages(null);
     }
 }

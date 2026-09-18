@@ -4,27 +4,27 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class i0 extends of.e {
+public final class i0 extends nf.e {
     public final /* synthetic */ int d = 0;
     public final /* synthetic */ Object e;
     public final /* synthetic */ Object f;
     public final /* synthetic */ Object g;
 
-    public i0(i4 i4Var, b3 b3Var, org.telegram.ui.Components.e90 e90Var) {
-        this.e = i4Var;
-        this.f = b3Var;
-        this.g = e90Var;
+    public i0(h4 h4Var, a3 a3Var, org.telegram.ui.Components.d90 d90Var) {
+        this.e = h4Var;
+        this.f = a3Var;
+        this.g = d90Var;
     }
 
-    @Override // of.e
+    @Override // nf.e
     public void b() {
         switch (this.d) {
             case 0:
-                i4 i4Var = (i4) this.e;
-                i4Var.c.l(i4Var.v, true);
-                View view = i4Var.s;
+                h4 h4Var = (h4) this.e;
+                h4Var.c.l(h4Var.v, true);
+                View view = h4Var.s;
                 if (view != null) {
                     view.invalidate();
                 }
@@ -36,12 +36,12 @@ public final class i0 extends of.e {
         }
     }
 
-    @Override // of.e
+    @Override // nf.e
     public void c(boolean z10) {
         switch (this.d) {
             case 1:
                 if (!z10) {
-                    AndroidUtilities.runOnUIThread(new ak(((on) this.g).a, 9), 250L);
+                    AndroidUtilities.runOnUIThread(new bk(((nn) this.g).a, 9), 250L);
                     break;
                 }
                 break;
@@ -51,42 +51,42 @@ public final class i0 extends of.e {
         }
     }
 
-    @Override // of.e
+    @Override // nf.e
     public final void d() {
         switch (this.d) {
             case 0:
-                org.telegram.ui.Components.e90 e90Var = (org.telegram.ui.Components.e90) this.g;
-                i4 i4Var = (i4) this.e;
-                org.telegram.ui.Components.a90 a90Var = i4Var.c;
-                b3 b3Var = (b3) this.f;
-                i4Var.s = b3Var != null ? b3Var.b : null;
-                a90Var.l(i4Var.v, true);
-                if (b3Var != null) {
-                    i4Var.v = org.telegram.ui.Components.a90.i(b3Var.d, e90Var.i, 0.0f);
+                org.telegram.ui.Components.d90 d90Var = (org.telegram.ui.Components.d90) this.g;
+                h4 h4Var = (h4) this.e;
+                org.telegram.ui.Components.z80 z80Var = h4Var.c;
+                a3 a3Var = (a3) this.f;
+                h4Var.s = a3Var != null ? a3Var.b : null;
+                z80Var.l(h4Var.v, true);
+                if (a3Var != null) {
+                    h4Var.v = org.telegram.ui.Components.z80.i(a3Var.d, d90Var.i, 0.0f);
                     int w02 = org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Ld, false);
-                    i4Var.v.f(org.telegram.ui.ActionBar.j6.l1(0.8f, w02), org.telegram.ui.ActionBar.j6.l1(1.3f, w02), org.telegram.ui.ActionBar.j6.l1(1.0f, w02), org.telegram.ui.ActionBar.j6.l1(4.0f, w02));
-                    i4Var.v.w.setStrokeWidth(AndroidUtilities.dpf2(1.25f));
-                    a90Var.b(i4Var.v, b3Var);
+                    h4Var.v.f(org.telegram.ui.ActionBar.j6.l1(0.8f, w02), org.telegram.ui.ActionBar.j6.l1(1.3f, w02), org.telegram.ui.ActionBar.j6.l1(1.0f, w02), org.telegram.ui.ActionBar.j6.l1(4.0f, w02));
+                    h4Var.v.w.setStrokeWidth(AndroidUtilities.dpf2(1.25f));
+                    z80Var.b(h4Var.v, a3Var);
                 }
-                View view = i4Var.s;
+                View view = h4Var.s;
                 if (view != null) {
                     view.invalidate();
                 }
                 super.d();
                 break;
             default:
-                on onVar = (on) this.g;
-                onVar.a.wb = ((MessageObject) this.e).getId();
-                co coVar = onVar.a;
-                coVar.xb = 0;
-                coVar.yb = null;
+                nn nnVar = (nn) this.g;
+                nnVar.a.vb = ((MessageObject) this.e).getId();
+                bo boVar = nnVar.a;
+                boVar.wb = 0;
+                boVar.xb = null;
                 ((org.telegram.ui.Cells.t1) this.f).invalidate();
                 break;
         }
     }
 
-    public i0(on onVar, MessageObject messageObject, org.telegram.ui.Cells.t1 t1Var) {
-        this.g = onVar;
+    public i0(nn nnVar, MessageObject messageObject, org.telegram.ui.Cells.t1 t1Var) {
+        this.g = nnVar;
         this.e = messageObject;
         this.f = t1Var;
     }

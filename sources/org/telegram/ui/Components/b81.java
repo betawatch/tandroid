@@ -1,51 +1,33 @@
 package org.telegram.ui.Components;
 
 import android.view.View;
-import org.telegram.messenger.Utilities;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class b81 implements al0, bl0 {
-    public final /* synthetic */ h81 a;
+public abstract class b81 {
+    public abstract void b(View view, int i10, int i11);
 
-    public /* synthetic */ b81(h81 h81Var) {
-        this.a = h81Var;
-    }
-
-    @Override // org.telegram.ui.Components.bl0
-    public boolean a(int i10, View view) {
-        Utilities.Callback2Return callback2Return = this.a.b;
-        if (callback2Return == null) {
-            return false;
-        }
-        return ((Boolean) callback2Return.run(Integer.valueOf(((f81) view).a.a), view)).booleanValue();
-    }
-
-    @Override // org.telegram.ui.Components.al0
-    public void d(float f7, float f10, int i10, View view) {
-        h81 h81Var = this.a;
-        g81 g81Var = h81Var.y;
-        if (g81Var != null) {
-            i81 i81Var = (i81) ((k2.g0) g81Var).b;
-            if (i81Var.x || i81Var.H) {
-                return;
-            }
-        }
-        f81 f81Var = (f81) view;
-        if (i10 != h81Var.F || g81Var == null) {
-            Utilities.Callback2Return callback2Return = h81Var.l0;
-            if (callback2Return == null || !((Boolean) callback2Return.run(Integer.valueOf(f81Var.a.a), Integer.valueOf(i10))).booleanValue()) {
-                h81Var.d(f81Var.a.a, i10);
-            }
-        }
-    }
-
-    @Override // org.telegram.ui.Components.al0
-    public /* synthetic */ boolean d1(View view) {
+    public boolean c(int i10) {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.al0
-    public /* synthetic */ void q0(View view, float f7, float f10) {
+    public abstract View d(int i10);
+
+    public abstract int e();
+
+    public CharSequence g(int i10) {
+        return "";
+    }
+
+    public int h(int i10) {
+        return 0;
+    }
+
+    public void a(ArrayList arrayList) {
+    }
+
+    public int f(int i10) {
+        return i10;
     }
 }

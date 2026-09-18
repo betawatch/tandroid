@@ -1,57 +1,141 @@
 package ji;
 
-import android.content.Intent;
-import java.util.ArrayList;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.MessageObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.fk;
-import org.telegram.ui.Components.vi;
+import android.content.Context;
+import android.graphics.PointF;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.animation.DecelerateInterpolator;
+import android.view.animation.LinearInterpolator;
+import org.telegram.messenger.AndroidUtilities;
+import s4.c0;
+import s4.o0;
+import s4.p0;
+import s4.x0;
+import s4.y0;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes4.dex */
-public final class o implements fk {
-    public final /* synthetic */ vi a;
-    public final /* synthetic */ r b;
+public class o extends y0 {
+    public final LinearInterpolator i;
+    public final DecelerateInterpolator j;
+    public final float k;
+    public int l;
+    public int m;
+    public final int n;
+    public final float o;
+    public int p;
 
-    public o(r rVar, vi viVar) {
-        this.b = rVar;
-        this.a = viVar;
+    public o(Context context, int i10) {
+        this.i = new LinearInterpolator();
+        this.j = new DecelerateInterpolator(1.5f);
+        this.l = 0;
+        this.m = 0;
+        this.o = 1.0f;
+        this.k = 25.0f / context.getResources().getDisplayMetrics().densityDpi;
+        this.n = i10;
     }
 
-    @Override // org.telegram.ui.Components.fk
-    public final void k(ArrayList arrayList, String str, ArrayList arrayList2, ArrayList arrayList3, boolean z10, int i10, long j3, boolean z11, long j10) {
-        v3 v3Var = this.b.r;
-        if (!arrayList.isEmpty()) {
-            v3Var.b2((String) arrayList.get(0));
-        } else if (!arrayList3.isEmpty()) {
-            MessageObject messageObject = (MessageObject) arrayList3.get(0);
-            v3Var.getClass();
-            if (messageObject != null && messageObject.getDocument() != null) {
-                TLRPC.Document document = messageObject.getDocument();
-                TLRPC.Message message = messageObject.messageOwner;
-                v3Var.c2(document, message != null ? message.attachPath : null);
+    @Override // s4.y0
+    public final PointF a(int i10) {
+        o0 o0Var = this.c;
+        if (o0Var instanceof c0) {
+            return ((c0) o0Var).E0(i10);
+        }
+        return null;
+    }
+
+    @Override // s4.y0
+    public final void d(int i10, int i11, x0 x0Var) {
+        if (this.b.x.r() == 0) {
+            h();
+            return;
+        }
+        int i12 = this.l;
+        int i13 = i12 - i10;
+        if (i12 * i13 <= 0) {
+            i13 = 0;
+        }
+        this.l = i13;
+        int i14 = this.m;
+        int i15 = i14 - i11;
+        int i16 = i14 * i15 > 0 ? i15 : 0;
+        this.m = i16;
+        if (i13 == 0 && i16 == 0) {
+            PointF a2 = a(this.a);
+            if (a2 == null || (a2.x == 0.0f && a2.y == 0.0f)) {
+                x0Var.d = this.a;
+                h();
+            } else {
+                y0.b(a2);
+                this.l = (int) (a2.x * 10000.0f);
+                this.m = (int) (a2.y * 10000.0f);
+                x0Var.b((int) (this.l * 1.2f), (int) (this.m * 1.2f), (int) (((int) Math.ceil(Math.abs(10000) * this.k)) * 1.2f), this.i);
             }
         }
-        this.a.dismiss(true);
     }
 
-    @Override // org.telegram.ui.Components.fk
-    public final void w() {
-        try {
-            Intent intent = new Intent("android.intent.action.GET_CONTENT");
-            intent.setType("*/*");
-            this.b.b.f0.startActivityForResult(intent, 21);
-        } catch (Exception e7) {
-            FileLog.e(e7);
+    @Override // s4.y0
+    public final void f() {
+        this.m = 0;
+        this.l = 0;
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:11:0x005a, code lost:
+    
+        if (r0 < 0) goto L22;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x007b  */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x008d  */
+    @Override // s4.y0
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void g(View view, x0 x0Var) {
+        int i10;
+        int ceil;
+        o0 o0Var = this.c;
+        if (o0Var != null && o0Var.e()) {
+            p0 p0Var = (p0) view.getLayoutParams();
+            int z10 = o0.z(view) - ((ViewGroup.MarginLayoutParams) p0Var).topMargin;
+            int v = o0.v(view) + ((ViewGroup.MarginLayoutParams) p0Var).bottomMargin;
+            int C = (o0Var.n - o0Var.C()) - o0Var.F();
+            int i11 = v - z10;
+            int i12 = this.n;
+            int F = i12 == 2 ? o0Var.F() + this.p : i11 > C ? 0 : i12 == 0 ? (C - i11) / 2 : (o0Var.F() + this.p) - AndroidUtilities.dp(88.0f);
+            int i13 = i11 + F;
+            i10 = F - z10;
+            if (i10 <= 0) {
+                i10 = i13 - v;
+            }
+            ceil = (int) Math.ceil(((int) Math.ceil(Math.abs(i10) * this.k)) / 0.3356d);
+            if (ceil <= 0) {
+                x0Var.b(0, -i10, Math.max((int) (this.o * 400.0f), ceil), this.j);
+                return;
+            } else {
+                i();
+                return;
+            }
+        }
+        i10 = 0;
+        ceil = (int) Math.ceil(((int) Math.ceil(Math.abs(i10) * this.k)) / 0.3356d);
+        if (ceil <= 0) {
         }
     }
 
-    @Override // org.telegram.ui.Components.fk
-    public final /* synthetic */ void O() {
+    public o(Context context, int i10, float f7) {
+        this.i = new LinearInterpolator();
+        this.j = new DecelerateInterpolator(1.5f);
+        this.l = 0;
+        this.m = 0;
+        this.o = f7;
+        this.k = (25.0f / context.getResources().getDisplayMetrics().densityDpi) * f7;
+        this.n = i10;
     }
 
-    @Override // org.telegram.ui.Components.fk
-    public final /* synthetic */ void l(long j3, ArrayList arrayList, boolean z10, int i10) {
+    @Override // s4.y0
+    public void e() {
+    }
+
+    public void i() {
     }
 }

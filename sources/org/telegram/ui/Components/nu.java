@@ -1,89 +1,27 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.KeyEvent;
-import android.view.MotionEvent;
-import android.webkit.WebView;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.View;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class nu extends WebView {
+public final /* synthetic */ class nu implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Context b;
-    public final /* synthetic */ KeyEvent.Callback c;
+    public final /* synthetic */ View b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ nu(KeyEvent.Callback callback, Context context, Context context2, int i10) {
-        super(context);
+    public /* synthetic */ nu(int i10, View view) {
         this.a = i10;
-        this.c = callback;
-        this.b = context2;
+        this.b = view;
     }
 
-    @Override // android.view.View
-    public void draw(Canvas canvas) {
-        switch (this.a) {
-            case 1:
-                org.telegram.ui.hu0 hu0Var = (org.telegram.ui.hu0) this.c;
-                super.draw(canvas);
-                if (eg0.p0.f == this && hu0Var.h.getVisibility() == 0) {
-                    canvas.drawColor(-16777216);
-                    hu0Var.j(canvas, getWidth(), getHeight());
-                    break;
-                }
-                break;
-            default:
-                super.draw(canvas);
-                break;
-        }
-    }
-
-    @Override // android.webkit.WebView, android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                AndroidUtilities.checkAndroidTheme(this.b, true);
-                super.onAttachedToWindow();
+                this.b.callOnClick();
                 break;
             default:
-                AndroidUtilities.checkAndroidTheme(this.b, true);
-                super.onAttachedToWindow();
+                this.b.invalidate();
                 break;
-        }
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        switch (this.a) {
-            case 0:
-                AndroidUtilities.checkAndroidTheme(this.b, false);
-                super.onDetachedFromWindow();
-                break;
-            default:
-                AndroidUtilities.checkAndroidTheme(this.b, false);
-                super.onDetachedFromWindow();
-                break;
-        }
-    }
-
-    @Override // android.webkit.WebView, android.view.View
-    public boolean onTouchEvent(MotionEvent motionEvent) {
-        switch (this.a) {
-            case 0:
-                tu tuVar = (tu) this.c;
-                boolean onTouchEvent = super.onTouchEvent(motionEvent);
-                if (onTouchEvent) {
-                    if (motionEvent.getAction() == 1) {
-                        tuVar.setDisableScroll(false);
-                    } else {
-                        tuVar.setDisableScroll(true);
-                    }
-                }
-                return onTouchEvent;
-            default:
-                return super.onTouchEvent(motionEvent);
         }
     }
 }

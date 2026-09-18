@@ -1,9 +1,8 @@
 package zd;
 
 import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
-import v7.t8;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class k0 extends ee.s {
     public static final /* synthetic */ AtomicIntegerFieldUpdater e = AtomicIntegerFieldUpdater.newUpdater(k0.class, "_decision$volatile");
@@ -24,7 +23,7 @@ public final class k0 extends ee.s {
                 if (i10 != 1) {
                     throw new IllegalStateException("Already resumed");
                 }
-                ee.a.g(e0.r(obj), t8.b(this.d));
+                ee.a.g(e0.r(obj), w7.g.b(this.d));
                 return;
             }
         } while (!atomicIntegerFieldUpdater.compareAndSet(this, 0, 2));

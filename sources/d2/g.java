@@ -2,26 +2,22 @@ package d2;
 
 import e2.d0;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class g {
+    public static final String c;
     public static final String d;
-    public static final String e;
-    public static final String f;
-    public final int a;
+    public final String a;
     public final int b;
-    public final int c;
 
     static {
         String str = d0.a;
-        d = Integer.toString(0, 36);
-        e = Integer.toString(1, 36);
-        f = Integer.toString(2, 36);
+        c = Integer.toString(0, 36);
+        d = Integer.toString(1, 36);
     }
 
-    public g(int i10, int i11, int i12) {
-        this.a = i10;
-        this.b = i11;
-        this.c = i12;
+    public g(String str, int i10) {
+        this.a = str;
+        this.b = i10;
     }
 }

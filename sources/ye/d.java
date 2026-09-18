@@ -5,6 +5,7 @@ import bf.p;
 import bf.q;
 import bf.r;
 import bf.t;
+import hg.k0;
 import j$.util.DesugarCollections;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -15,10 +16,9 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.regex.Pattern;
-import k2.g0;
 import t7.s;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class d {
     public static final LinkedHashSet p = new LinkedHashSet(Arrays.asList(bf.b.class, bf.i.class, bf.h.class, bf.j.class, t.class, bf.n.class, bf.l.class));
@@ -180,157 +180,190 @@ public final class d {
     }
 
     public final df.a h() {
-        return (df.a) i2.g.h(1, this.n);
+        return (df.a) k0.h(1, this.n);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:237:0x0210, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:232:0x01ef, code lost:
     
-        if (r8 != ' ') goto L134;
+        if (r8 < 1) goto L118;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:425:0x05e6, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:233:0x01f1, code lost:
     
-        if (r11 != 0) goto L344;
+        r5 = r15 + 1;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:427:0x05ec, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:234:0x01f7, code lost:
     
-        if (r5.isEmpty() != false) goto L344;
+        if (r5 >= r14.length()) goto L132;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:429:0x05ef, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:235:0x01f9, code lost:
     
-        if (r13 != ':') goto L346;
+        r8 = r14.charAt(r5);
+        r22 = r6;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:430:0x05f1, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:236:0x0201, code lost:
+    
+        if (r8 == '\t') goto L133;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:238:0x0205, code lost:
+    
+        if (r8 == ' ') goto L133;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:239:0x020a, code lost:
+    
+        r6 = r14.subSequence(r11, r15).toString();
+        r8 = new bf.q();
+        r8.g = java.lang.Integer.parseInt(r6);
+        r8.h = r4;
+        r4 = new ye.j(r8, r5);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:240:0x0208, code lost:
+    
+        r22 = r6;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:427:0x05dd, code lost:
+    
+        if (r11 != 0) goto L346;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:429:0x05e3, code lost:
+    
+        if (r5.isEmpty() != false) goto L346;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:431:0x05e6, code lost:
+    
+        if (r13 != ':') goto L348;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:432:0x05e8, code lost:
     
         r8 = r8 + 1;
         r11 = true;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:431:0x05f6, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:433:0x05ed, code lost:
     
         r13 = false;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:433:0x05fb, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:435:0x05f2, code lost:
     
-        if (r8 >= r3.length()) goto L497;
+        if (r8 >= r3.length()) goto L498;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:435:0x0603, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:437:0x05fa, code lost:
     
-        if (r3.charAt(r8) != '-') goto L496;
+        if (r3.charAt(r8) != '-') goto L499;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:436:0x0605, code lost:
-    
-        r8 = r8 + 1;
-        r13 = true;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:438:0x060d, code lost:
-    
-        if (r13 != false) goto L356;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:440:0x0614, code lost:
-    
-        if (r8 >= r3.length()) goto L361;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:442:0x061c, code lost:
-    
-        if (r3.charAt(r8) != ':') goto L361;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:443:0x061e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:438:0x05fc, code lost:
     
         r8 = r8 + 1;
         r13 = true;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:444:0x0623, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:440:0x0604, code lost:
     
-        if (r11 == false) goto L365;
+        if (r13 != false) goto L358;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:445:0x0625, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:442:0x060b, code lost:
     
-        if (r13 == false) goto L365;
+        if (r8 >= r3.length()) goto L363;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:446:0x0627, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:444:0x0613, code lost:
     
-        r11 = we.c.b;
+        if (r3.charAt(r8) != ':') goto L363;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:449:0x062a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:445:0x0615, code lost:
+    
+        r8 = r8 + 1;
+        r13 = true;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:446:0x061a, code lost:
     
         if (r11 == false) goto L367;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:450:0x062c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:447:0x061c, code lost:
+    
+        if (r13 == false) goto L367;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:448:0x061e, code lost:
+    
+        r11 = we.c.b;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:451:0x0621, code lost:
+    
+        if (r11 == false) goto L369;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:452:0x0623, code lost:
     
         r11 = we.c.a;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:452:0x062f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:454:0x0626, code lost:
     
-        if (r13 == false) goto L369;
+        if (r13 == false) goto L371;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:453:0x0631, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:455:0x0628, code lost:
     
         r11 = we.c.c;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:455:0x0634, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:457:0x062b, code lost:
     
         r11 = null;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:457:0x0622, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:459:0x0619, code lost:
     
         r13 = false;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:461:0x05f5, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:463:0x05ec, code lost:
     
         r11 = false;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:465:0x0640, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:467:0x0637, code lost:
     
-        if (r6 == false) goto L373;
+        if (r6 == false) goto L375;
      */
     /* JADX WARN: Code restructure failed: missing block: B:53:0x00c0, code lost:
     
-        r20 = r6;
+        r22 = r6;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:54:0x06de, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:54:0x06d6, code lost:
     
-        k(r22.e);
+        k(r23.e);
      */
-    /* JADX WARN: Failed to find 'out' block for switch in B:174:0x01e5. Please report as an issue. */
-    /* JADX WARN: Removed duplicated region for block: B:182:0x025d  */
-    /* JADX WARN: Removed duplicated region for block: B:206:0x02ae  */
-    /* JADX WARN: Removed duplicated region for block: B:287:0x0457  */
-    /* JADX WARN: Removed duplicated region for block: B:288:0x0469  */
-    /* JADX WARN: Removed duplicated region for block: B:296:0x04af  */
-    /* JADX WARN: Removed duplicated region for block: B:366:0x0533  */
+    /* JADX WARN: Failed to find 'out' block for switch in B:175:0x01da. Please report as an issue. */
+    /* JADX WARN: Removed duplicated region for block: B:183:0x0253  */
+    /* JADX WARN: Removed duplicated region for block: B:207:0x02a4  */
+    /* JADX WARN: Removed duplicated region for block: B:288:0x044c  */
+    /* JADX WARN: Removed duplicated region for block: B:289:0x045e  */
+    /* JADX WARN: Removed duplicated region for block: B:297:0x04a4  */
+    /* JADX WARN: Removed duplicated region for block: B:367:0x0529  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void i(String str) {
         df.a aVar;
         t8.b bVar;
+        t8.b bVar2;
         we.c cVar;
         char charAt;
         int i10;
         e eVar;
-        t8.b bVar2;
         f fVar;
         int i11;
-        StringBuilder r10;
+        StringBuilder f7;
+        t8.b bVar3;
         boolean z10;
         j jVar;
         char charAt2;
         j jVar2;
         boolean z11;
-        char charAt3;
         int i12;
         String str2 = str;
         int length = str2.length();
         StringBuilder sb2 = null;
         for (int i13 = 0; i13 < length; i13++) {
-            char charAt4 = str2.charAt(i13);
-            if (charAt4 == 0) {
+            char charAt3 = str2.charAt(i13);
+            if (charAt3 == 0) {
                 if (sb2 == null) {
                     sb2 = new StringBuilder(length);
                     sb2.append((CharSequence) str2, 0, i13);
                 }
                 sb2.append((char) 65533);
             } else if (sb2 != null) {
-                sb2.append(charAt4);
+                sb2.append(charAt3);
             }
         }
         if (sb2 != null) {
@@ -373,35 +406,37 @@ public final class d {
                 if (!this.h) {
                     int i17 = 4;
                     if (this.g >= 4 || !Character.isLetter(Character.codePointAt(this.a, this.e))) {
-                        g0 g0Var = new g0(aVar3, 26);
+                        ka.c cVar2 = new ka.c(aVar3, 22);
                         Iterator it = this.i.iterator();
                         while (true) {
                             if (it.hasNext()) {
+                                int i18 = ((xe.a) it.next()).a;
                                 char c10 = ' ';
-                                switch (((xe.a) it.next()).a) {
+                                Object obj = cVar2.b;
+                                switch (i18) {
                                     case 0:
                                         aVar = aVar3;
                                         CharSequence charSequence = this.a;
-                                        StringBuilder r11 = g0Var.r();
-                                        if (r11 != null && r11.toString().contains("|") && !r11.toString().contains("\n")) {
+                                        StringBuilder f10 = cVar2.f();
+                                        if (f10 != null && f10.toString().contains("|") && !f10.toString().contains("\n")) {
                                             CharSequence subSequence = charSequence.subSequence(this.b, charSequence.length());
                                             ArrayList arrayList3 = new ArrayList();
                                             boolean z13 = false;
-                                            int i18 = 0;
+                                            int i19 = 0;
                                             while (true) {
-                                                int i19 = 0;
+                                                int i20 = 0;
                                                 while (true) {
-                                                    if (i18 >= subSequence.length()) {
+                                                    if (i19 >= subSequence.length()) {
                                                         break;
                                                     } else {
-                                                        char charAt5 = subSequence.charAt(i18);
-                                                        if (charAt5 == '\t' || charAt5 == ' ') {
-                                                            i18++;
-                                                        } else if (charAt5 != '-' && charAt5 != ':') {
-                                                            if (charAt5 == '|') {
-                                                                i18++;
+                                                        char charAt4 = subSequence.charAt(i19);
+                                                        if (charAt4 == '\t' || charAt4 == ' ') {
+                                                            i19++;
+                                                        } else if (charAt4 != '-' && charAt4 != ':') {
+                                                            if (charAt4 == '|') {
                                                                 i19++;
-                                                                if (i19 <= 1) {
+                                                                i20++;
+                                                                if (i20 <= 1) {
                                                                     z13 = true;
                                                                 }
                                                             }
@@ -412,12 +447,12 @@ public final class d {
                                             }
                                             arrayList3 = null;
                                             if (arrayList3 != null && !arrayList3.isEmpty()) {
-                                                ArrayList i20 = xe.b.i(r11);
-                                                if (arrayList3.size() >= i20.size()) {
-                                                    t8.b bVar3 = new t8.b(new xe.b(arrayList3, i20));
-                                                    bVar3.a = this.b;
-                                                    bVar3.c = true;
-                                                    bVar = bVar3;
+                                                ArrayList i21 = xe.b.i(f10);
+                                                if (arrayList3.size() >= i21.size()) {
+                                                    bVar2 = new t8.b(new xe.b(arrayList3, i21));
+                                                    bVar2.a = this.b;
+                                                    bVar2.c = true;
+                                                    bVar = bVar2;
                                                     break;
                                                 }
                                             }
@@ -426,58 +461,58 @@ public final class d {
                                         break;
                                     case 1:
                                         aVar = aVar3;
-                                        int i21 = this.e;
-                                        if (a.i(this, i21)) {
-                                            int i22 = this.c + this.g;
-                                            int i23 = i22 + 1;
+                                        int i22 = this.e;
+                                        if (a.i(this, i22)) {
+                                            int i23 = this.c + this.g;
+                                            int i24 = i23 + 1;
                                             CharSequence charSequence2 = this.a;
-                                            int i24 = i21 + 1;
-                                            if (i24 < charSequence2.length() && ((charAt = charSequence2.charAt(i24)) == '\t' || charAt == ' ')) {
-                                                i23 = i22 + 2;
+                                            int i25 = i22 + 1;
+                                            if (i25 < charSequence2.length() && ((charAt = charSequence2.charAt(i25)) == '\t' || charAt == ' ')) {
+                                                i24 = i23 + 2;
                                             }
                                             bVar = new t8.b(new a());
-                                            bVar.b = i23;
+                                            bVar.b = i24;
                                             break;
                                         }
                                         bVar = null;
                                         break;
                                     case 2:
                                         aVar = aVar3;
-                                        int i25 = this.g;
-                                        if (i25 < 4) {
-                                            int i26 = this.e;
+                                        int i26 = this.g;
+                                        if (i26 < 4) {
+                                            int i27 = this.e;
                                             CharSequence charSequence3 = this.a;
                                             int length2 = charSequence3.length();
-                                            int i27 = i26;
-                                            int i28 = 0;
+                                            int i28 = i27;
                                             int i29 = 0;
+                                            int i30 = 0;
                                             while (true) {
-                                                i10 = i26;
-                                                if (i27 < length2) {
-                                                    char charAt6 = charSequence3.charAt(i27);
-                                                    if (charAt6 == '`') {
-                                                        i28++;
-                                                    } else if (charAt6 == '~') {
+                                                i10 = i27;
+                                                if (i28 < length2) {
+                                                    char charAt5 = charSequence3.charAt(i28);
+                                                    if (charAt5 == '`') {
                                                         i29++;
+                                                    } else if (charAt5 == '~') {
+                                                        i30++;
                                                     }
-                                                    i27++;
-                                                    i26 = i10;
+                                                    i28++;
+                                                    i27 = i10;
                                                 }
                                             }
-                                            int i30 = 3;
-                                            if (i28 >= 3) {
-                                                if (i29 == 0) {
-                                                    int i31 = i10 + i28;
+                                            int i31 = 3;
+                                            if (i29 >= 3) {
+                                                if (i30 == 0) {
+                                                    int i32 = i10 + i29;
                                                     int length3 = charSequence3.length();
                                                     while (true) {
-                                                        if (i31 >= length3) {
-                                                            i31 = -1;
-                                                        } else if (charSequence3.charAt(i31) != '`') {
-                                                            i31++;
+                                                        if (i32 >= length3) {
+                                                            i32 = -1;
+                                                        } else if (charSequence3.charAt(i32) != '`') {
+                                                            i32++;
                                                         }
                                                     }
-                                                    if (i31 == -1) {
-                                                        eVar = new e('`', i28, i25);
+                                                    if (i32 == -1) {
+                                                        eVar = new e('`', i29, i26);
                                                         if (eVar != null) {
                                                             bVar2 = new t8.b(eVar);
                                                             bVar2.a = i10 + eVar.a.h;
@@ -489,11 +524,11 @@ public final class d {
                                                     if (eVar != null) {
                                                     }
                                                 } else {
-                                                    i30 = 3;
+                                                    i31 = 3;
                                                 }
                                             }
-                                            if (i29 >= i30 && i28 == 0) {
-                                                eVar = new e('~', i29, i25);
+                                            if (i30 >= i31 && i29 == 0) {
+                                                eVar = new e('~', i30, i26);
                                                 if (eVar != null) {
                                                 }
                                             }
@@ -507,76 +542,81 @@ public final class d {
                                         aVar = aVar3;
                                         if (this.g < 4) {
                                             CharSequence charSequence4 = this.a;
-                                            int i32 = this.e;
-                                            int b10 = s.b('#', charSequence4, i32, charSequence4.length()) - i32;
+                                            int i33 = this.e;
+                                            int b10 = s.b('#', charSequence4, i33, charSequence4.length()) - i33;
                                             if (b10 != 0 && b10 <= 6) {
-                                                int i33 = i32 + b10;
-                                                if (i33 >= charSequence4.length()) {
+                                                int i34 = i33 + b10;
+                                                if (i34 >= charSequence4.length()) {
                                                     fVar = new f(b10, "");
                                                 } else {
-                                                    char charAt7 = charSequence4.charAt(i33);
+                                                    char charAt6 = charSequence4.charAt(i34);
                                                     char c11 = ' ';
                                                     char c12 = '\t';
-                                                    if (charAt7 == ' ' || charAt7 == '\t') {
+                                                    if (charAt6 == ' ' || charAt6 == '\t') {
                                                         int length4 = charSequence4.length() - 1;
                                                         while (true) {
-                                                            if (length4 < i33) {
-                                                                length4 = i33 - 1;
+                                                            if (length4 < i34) {
+                                                                length4 = i34 - 1;
                                                             } else {
-                                                                char charAt8 = charSequence4.charAt(length4);
-                                                                if (charAt8 == c12 || charAt8 == c11) {
+                                                                char charAt7 = charSequence4.charAt(length4);
+                                                                if (charAt7 == c12 || charAt7 == c11) {
                                                                     length4--;
-                                                                    c11 = ' ';
                                                                     c12 = '\t';
+                                                                    c11 = ' ';
                                                                 }
                                                             }
                                                         }
-                                                        int i34 = length4;
+                                                        int i35 = length4;
                                                         while (true) {
-                                                            if (i34 < i33) {
-                                                                i34 = i33 - 1;
-                                                            } else if (charSequence4.charAt(i34) == '#') {
-                                                                i34--;
+                                                            if (i35 < i34) {
+                                                                i35 = i34 - 1;
+                                                            } else if (charSequence4.charAt(i35) == '#') {
+                                                                i35--;
                                                             }
                                                         }
-                                                        int i35 = i34;
+                                                        int i36 = i35;
                                                         while (true) {
-                                                            if (i35 < i33) {
-                                                                i35 = i33 - 1;
+                                                            if (i36 < i34) {
+                                                                i36 = i34 - 1;
                                                             } else {
-                                                                char charAt9 = charSequence4.charAt(i35);
-                                                                if (charAt9 == '\t' || charAt9 == ' ') {
-                                                                    i35--;
+                                                                char charAt8 = charSequence4.charAt(i36);
+                                                                if (charAt8 == '\t' || charAt8 == ' ') {
+                                                                    i36--;
                                                                 }
                                                             }
                                                         }
-                                                        fVar = i35 != i34 ? new f(b10, charSequence4.subSequence(i33, i35 + 1).toString()) : new f(b10, charSequence4.subSequence(i33, length4 + 1).toString());
+                                                        fVar = i36 != i35 ? new f(b10, charSequence4.subSequence(i34, i36 + 1).toString()) : new f(b10, charSequence4.subSequence(i34, length4 + 1).toString());
                                                     }
                                                 }
                                                 if (fVar == null) {
-                                                    bVar2 = new t8.b(fVar);
-                                                    bVar2.a = charSequence4.length();
+                                                    bVar3 = new t8.b(fVar);
+                                                    bVar3.a = charSequence4.length();
+                                                    bVar = bVar3;
+                                                    break;
                                                 } else {
-                                                    char charAt10 = charSequence4.charAt(i32);
-                                                    if (charAt10 != '-') {
-                                                        if (charAt10 == '=') {
-                                                            if (s.c(s.b('=', charSequence4, i32 + 1, charSequence4.length()), charSequence4.length(), charSequence4) >= charSequence4.length()) {
+                                                    char charAt9 = charSequence4.charAt(i33);
+                                                    if (charAt9 != '-') {
+                                                        if (charAt9 == '=') {
+                                                            if (s.c(s.b('=', charSequence4, i33 + 1, charSequence4.length()), charSequence4.length(), charSequence4) >= charSequence4.length()) {
                                                                 i11 = 1;
-                                                                if (i11 > 0 && (r10 = g0Var.r()) != null) {
-                                                                    bVar2 = new t8.b(new f(i11, r10.toString()));
-                                                                    bVar2.a = charSequence4.length();
-                                                                    bVar2.c = true;
+                                                                if (i11 > 0 && (f7 = cVar2.f()) != null) {
+                                                                    t8.b bVar4 = new t8.b(new f(i11, f7.toString()));
+                                                                    bVar4.a = charSequence4.length();
+                                                                    bVar4.c = true;
+                                                                    bVar = bVar4;
+                                                                    break;
                                                                 }
                                                             }
                                                         }
                                                         i11 = 0;
                                                         if (i11 > 0) {
-                                                            bVar2 = new t8.b(new f(i11, r10.toString()));
-                                                            bVar2.a = charSequence4.length();
-                                                            bVar2.c = true;
+                                                            t8.b bVar42 = new t8.b(new f(i11, f7.toString()));
+                                                            bVar42.a = charSequence4.length();
+                                                            bVar42.c = true;
+                                                            bVar = bVar42;
                                                         }
                                                     }
-                                                    if (s.c(s.b('-', charSequence4, i32 + 1, charSequence4.length()), charSequence4.length(), charSequence4) >= charSequence4.length()) {
+                                                    if (s.c(s.b('-', charSequence4, i33 + 1, charSequence4.length()), charSequence4.length(), charSequence4) >= charSequence4.length()) {
                                                         i11 = 2;
                                                         if (i11 > 0) {
                                                         }
@@ -585,27 +625,24 @@ public final class d {
                                                     if (i11 > 0) {
                                                     }
                                                 }
-                                                bVar = bVar2;
-                                                break;
                                             }
                                             fVar = null;
                                             if (fVar == null) {
                                             }
-                                            bVar = bVar2;
                                         }
                                         bVar = null;
                                         break;
                                     case 4:
                                         aVar = aVar3;
-                                        int i36 = this.e;
+                                        int i37 = this.e;
                                         CharSequence charSequence5 = this.a;
-                                        if (this.g < 4 && charSequence5.charAt(i36) == '<') {
-                                            for (int i37 = 1; i37 <= 7; i37++) {
-                                                if (i37 != 7 || !(((df.a) g0Var.b).e() instanceof r)) {
-                                                    Pattern[] patternArr = g.e[i37];
+                                        if (this.g < 4 && charSequence5.charAt(i37) == '<') {
+                                            for (int i38 = 1; i38 <= 7; i38++) {
+                                                if (i38 != 7 || !(((df.a) obj).e() instanceof r)) {
+                                                    Pattern[] patternArr = g.e[i38];
                                                     Pattern pattern = patternArr[0];
                                                     Pattern pattern2 = patternArr[1];
-                                                    if (pattern.matcher(charSequence5.subSequence(i36, charSequence5.length())).find()) {
+                                                    if (pattern.matcher(charSequence5.subSequence(i37, charSequence5.length())).find()) {
                                                         bVar = new t8.b(new g(pattern2));
                                                         bVar.a = this.b;
                                                         break;
@@ -617,75 +654,75 @@ public final class d {
                                         break;
                                     case 5:
                                         aVar = aVar3;
-                                        if (this.g >= 4) {
-                                            if (!this.h && !(h().e() instanceof r)) {
-                                                bVar = new t8.b(new f());
-                                                bVar.b = this.c + 4;
-                                                break;
-                                            }
+                                        if (this.g >= 4 && !this.h && !(h().e() instanceof r)) {
+                                            bVar = new t8.b(new f());
+                                            bVar.b = this.c + 4;
+                                            break;
+                                        } else {
+                                            bVar = null;
+                                            break;
                                         }
-                                        bVar = null;
                                         break;
                                     case 6:
-                                        df.a aVar4 = (df.a) g0Var.b;
-                                        int i38 = this.g;
-                                        if (i38 >= 4) {
+                                        df.a aVar4 = (df.a) obj;
+                                        int i39 = this.g;
+                                        if (i39 >= 4) {
                                             aVar = aVar3;
                                         } else {
-                                            int i39 = this.e;
-                                            int i40 = this.c + i38;
-                                            boolean z14 = g0Var.r() != null;
+                                            int i40 = this.e;
+                                            int i41 = this.c + i39;
+                                            boolean z14 = cVar2.f() != null;
                                             CharSequence charSequence6 = this.a;
-                                            char charAt11 = charSequence6.charAt(i39);
-                                            if (charAt11 == '*' || charAt11 == '+' || charAt11 == '-') {
+                                            char charAt10 = charSequence6.charAt(i40);
+                                            if (charAt10 == '*' || charAt10 == '+' || charAt10 == '-') {
                                                 z10 = z14;
                                                 aVar = aVar3;
-                                                int i41 = i39 + 1;
-                                                if (i41 >= charSequence6.length() || (charAt2 = charSequence6.charAt(i41)) == '\t' || charAt2 == ' ') {
-                                                    bf.c cVar2 = new bf.c();
-                                                    cVar2.g = charAt11;
-                                                    jVar = new j(cVar2, i41);
+                                                int i42 = i40 + 1;
+                                                if (i42 >= charSequence6.length() || (charAt2 = charSequence6.charAt(i42)) == '\t' || charAt2 == ' ') {
+                                                    bf.c cVar3 = new bf.c();
+                                                    cVar3.g = charAt10;
+                                                    jVar = new j(cVar3, i42);
                                                     if (jVar != null) {
                                                         bf.n nVar = jVar.a;
-                                                        int i42 = jVar.b;
-                                                        int i43 = (i42 - i39) + i40;
+                                                        int i43 = jVar.b;
+                                                        int i44 = (i43 - i40) + i41;
                                                         int length5 = charSequence6.length();
-                                                        int i44 = i43;
+                                                        int i45 = i44;
                                                         while (true) {
-                                                            if (i42 >= length5) {
+                                                            if (i43 >= length5) {
                                                                 z11 = false;
                                                             } else {
-                                                                char charAt12 = charSequence6.charAt(i42);
-                                                                if (charAt12 == '\t') {
-                                                                    i44 = (4 - (i44 % 4)) + i44;
-                                                                } else if (charAt12 == ' ') {
-                                                                    i44++;
+                                                                char charAt11 = charSequence6.charAt(i43);
+                                                                if (charAt11 == '\t') {
+                                                                    i45 = (4 - (i45 % 4)) + i45;
+                                                                } else if (charAt11 == ' ') {
+                                                                    i45++;
                                                                 } else {
                                                                     z11 = true;
                                                                 }
-                                                                i42++;
+                                                                i43++;
                                                             }
                                                         }
                                                         if (!z10 || ((!(nVar instanceof q) || ((q) nVar).g == 1) && z11)) {
-                                                            if (!z11 || i44 - i43 > 4) {
-                                                                i44 = i43 + 1;
+                                                            if (!z11 || i45 - i44 > 4) {
+                                                                i45 = i44 + 1;
                                                             }
-                                                            jVar2 = new j(nVar, i44);
+                                                            jVar2 = new j(nVar, i45);
                                                             if (jVar2 != null) {
                                                                 bf.n nVar2 = jVar2.a;
-                                                                int i45 = jVar2.b;
-                                                                l lVar = new l(i45 - this.c);
+                                                                int i46 = jVar2.b;
+                                                                l lVar = new l(i46 - this.c);
                                                                 if (aVar4 instanceof k) {
                                                                     bf.n nVar3 = ((k) aVar4).a;
                                                                     if (((nVar3 instanceof bf.c) && (nVar2 instanceof bf.c)) ? Character.valueOf(((bf.c) nVar3).g).equals(Character.valueOf(((bf.c) nVar2).g)) : ((nVar3 instanceof q) && (nVar2 instanceof q)) ? Character.valueOf(((q) nVar3).h).equals(Character.valueOf(((q) nVar2).h)) : false) {
-                                                                        bVar2 = new t8.b(lVar);
-                                                                        bVar2.b = i45;
-                                                                        bVar = bVar2;
+                                                                        bVar3 = new t8.b(lVar);
+                                                                        bVar3.b = i46;
+                                                                        bVar = bVar3;
                                                                         break;
                                                                     }
                                                                 }
                                                                 bVar = new t8.b(new k(nVar2), lVar);
-                                                                bVar.b = i45;
+                                                                bVar.b = i46;
                                                                 break;
                                                             }
                                                         }
@@ -702,15 +739,15 @@ public final class d {
                                                 }
                                             } else {
                                                 int length6 = charSequence6.length();
-                                                int i46 = i39;
-                                                int i47 = 0;
+                                                int i47 = i40;
+                                                int i48 = 0;
                                                 while (true) {
-                                                    if (i46 < length6) {
-                                                        int i48 = length6;
-                                                        charAt3 = charSequence6.charAt(i46);
+                                                    if (i47 < length6) {
+                                                        int i49 = length6;
+                                                        char charAt12 = charSequence6.charAt(i47);
                                                         z10 = z14;
-                                                        if (charAt3 != ')' && charAt3 != '.') {
-                                                            switch (charAt3) {
+                                                        if (charAt12 != ')' && charAt12 != '.') {
+                                                            switch (charAt12) {
                                                                 case '0':
                                                                 case Maneuver.TYPE_FERRY_TRAIN_LEFT /* 49 */:
                                                                 case Maneuver.TYPE_FERRY_TRAIN_RIGHT /* 50 */:
@@ -721,12 +758,12 @@ public final class d {
                                                                 case '7':
                                                                 case '8':
                                                                 case '9':
-                                                                    i47++;
-                                                                    if (i47 > 9) {
+                                                                    i48++;
+                                                                    if (i48 > 9) {
                                                                         break;
                                                                     } else {
-                                                                        i46++;
-                                                                        length6 = i48;
+                                                                        i47++;
+                                                                        length6 = i49;
                                                                         z14 = z10;
                                                                     }
                                                             }
@@ -738,28 +775,6 @@ public final class d {
                                                         }
                                                     } else {
                                                         z10 = z14;
-                                                    }
-                                                }
-                                                if (i47 >= 1) {
-                                                    int i49 = i46 + 1;
-                                                    if (i49 < charSequence6.length()) {
-                                                        char charAt13 = charSequence6.charAt(i49);
-                                                        aVar = aVar3;
-                                                        if (charAt13 != '\t') {
-                                                            break;
-                                                        }
-                                                    } else {
-                                                        aVar = aVar3;
-                                                    }
-                                                    String charSequence7 = charSequence6.subSequence(i39, i46).toString();
-                                                    q qVar = new q();
-                                                    qVar.g = Integer.parseInt(charSequence7);
-                                                    qVar.h = charAt3;
-                                                    jVar = new j(qVar, i49);
-                                                    if (jVar != null) {
-                                                    }
-                                                    jVar2 = null;
-                                                    if (jVar2 != null) {
                                                     }
                                                 }
                                                 aVar = aVar3;
@@ -776,29 +791,27 @@ public final class d {
                                     case 7:
                                         if (this.g < 4) {
                                             int i50 = this.e;
-                                            CharSequence charSequence8 = this.a;
-                                            int length7 = charSequence8.length();
+                                            CharSequence charSequence7 = this.a;
+                                            int length7 = charSequence7.length();
                                             int i51 = 0;
                                             int i52 = 0;
                                             int i53 = 0;
                                             while (true) {
                                                 if (i50 >= length7) {
-                                                    int i54 = i52;
-                                                    int i55 = i53;
-                                                    if ((i51 >= 3 && i54 == 0 && i55 == 0) || ((i54 >= 3 && i51 == 0 && i55 == 0) || (i55 >= 3 && i51 == 0 && i54 == 0))) {
+                                                    int i54 = i53;
+                                                    if ((i51 >= 3 && i52 == 0 && i54 == 0) || ((i52 >= 3 && i51 == 0 && i54 == 0) || (i54 >= 3 && i51 == 0 && i52 == 0))) {
                                                         bVar = new t8.b(new c(1));
-                                                        bVar.a = charSequence8.length();
+                                                        bVar.a = charSequence7.length();
                                                     }
                                                 } else {
-                                                    char charAt14 = charSequence8.charAt(i50);
-                                                    if (charAt14 == '\t' || charAt14 == c10) {
-                                                        i52 = i52;
+                                                    char charAt13 = charSequence7.charAt(i50);
+                                                    if (charAt13 == '\t' || charAt13 == c10) {
                                                         i53 = i53;
-                                                    } else if (charAt14 == '*') {
+                                                    } else if (charAt13 == '*') {
                                                         i53++;
-                                                    } else if (charAt14 == '-') {
+                                                    } else if (charAt13 == '-') {
                                                         i51++;
-                                                    } else if (charAt14 == '_') {
+                                                    } else if (charAt13 == '_') {
                                                         i52++;
                                                     }
                                                     i50++;
@@ -811,20 +824,20 @@ public final class d {
                                         break;
                                     default:
                                         if (this.g < i17) {
-                                            int i56 = this.e;
-                                            CharSequence charSequence9 = this.a;
-                                            int length8 = charSequence9.length();
-                                            int i57 = i56;
+                                            int i55 = this.e;
+                                            CharSequence charSequence8 = this.a;
+                                            int length8 = charSequence8.length();
+                                            int i56 = i55;
                                             while (true) {
-                                                if (i57 >= length8) {
-                                                    i12 = length8 - i56;
-                                                } else if ('$' != charSequence9.charAt(i57)) {
-                                                    i12 = i57 - i56;
+                                                if (i56 >= length8) {
+                                                    i12 = length8 - i55;
+                                                } else if ('$' != charSequence8.charAt(i56)) {
+                                                    i12 = i56 - i55;
                                                 } else {
-                                                    i57++;
+                                                    i56++;
                                                 }
                                             }
-                                            if (i12 >= 2 && s.b(' ', charSequence9, i56 + i12, length8) == length8) {
+                                            if (i12 >= 2 && s.b(' ', charSequence8, i55 + i12, length8) == length8) {
                                                 bVar = new t8.b(new zc.b(i12));
                                                 bVar.a = length8 + 1;
                                                 aVar = aVar3;
@@ -851,13 +864,13 @@ public final class d {
                                 f(arrayList2);
                                 isEmpty = true;
                             }
-                            int i58 = bVar.a;
-                            if (i58 != -1) {
-                                k(i58);
+                            int i57 = bVar.a;
+                            if (i57 != -1) {
+                                k(i57);
                             } else {
-                                int i59 = bVar.b;
-                                if (i59 != -1) {
-                                    j(i59);
+                                int i58 = bVar.b;
+                                if (i58 != -1) {
+                                    j(i58);
                                 }
                             }
                             if (bVar.c) {
@@ -871,12 +884,12 @@ public final class d {
                             }
                             df.a[] aVarArr = (df.a[]) bVar.d;
                             int length9 = aVarArr.length;
-                            int i60 = 0;
-                            while (i60 < length9) {
-                                df.a aVar5 = aVarArr[i60];
+                            int i59 = 0;
+                            while (i59 < length9) {
+                                df.a aVar5 = aVarArr[i59];
                                 a(aVar5);
                                 z12 = aVar5.f();
-                                i60++;
+                                i59++;
                                 aVar = aVar5;
                             }
                             aVar3 = aVar;

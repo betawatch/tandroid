@@ -1,86 +1,117 @@
 package qg;
 
-import android.graphics.Bitmap;
+import android.content.Context;
 import android.graphics.PointF;
-import org.telegram.ui.Components.iv0;
+import android.view.ViewGroup;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.wl;
+import org.telegram.ui.Components.ik0;
+import w7.x5;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class t0 {
-    public final float a;
-    public final float b;
-    public final PointF c;
-    public final PointF d;
-    public final float e;
-    public final PointF f;
-    public final PointF g;
+public final class t0 extends j {
+    public final r0 q0;
+    public int r0;
+    public int s0;
+    public boolean t0;
+    public q0 u0;
 
-    public t0(t8.a aVar, Bitmap bitmap, iv0 iv0Var, boolean z10) {
-        PointF pointF = null;
-        PointF pointF2 = null;
-        PointF pointF3 = null;
-        PointF pointF4 = null;
-        for (t8.d dVar : aVar.b) {
-            PointF pointF5 = dVar.a;
-            int i10 = dVar.b;
-            if (i10 == 4) {
-                pointF = b(pointF5, bitmap, iv0Var, z10);
-            } else if (i10 == 5) {
-                pointF3 = b(pointF5, bitmap, iv0Var, z10);
-            } else if (i10 == 10) {
-                pointF2 = b(pointF5, bitmap, iv0Var, z10);
-            } else if (i10 == 11) {
-                pointF4 = b(pointF5, bitmap, iv0Var, z10);
-            }
-        }
-        if (pointF != null && pointF2 != null) {
-            if (pointF.x < pointF2.x) {
-                PointF pointF6 = pointF2;
-                pointF2 = pointF;
-                pointF = pointF6;
-            }
-            PointF pointF7 = new PointF((pointF2.x * 0.5f) + (pointF.x * 0.5f), (pointF2.y * 0.5f) + (pointF.y * 0.5f));
-            this.d = pointF7;
-            float hypot = (float) Math.hypot(pointF2.x - pointF.x, pointF2.y - pointF.y);
-            this.e = hypot;
-            this.b = (float) Math.toDegrees(Math.atan2(pointF2.y - pointF.y, pointF2.x - pointF.x) + 3.141592653589793d);
-            this.a = 2.35f * hypot;
-            float f7 = hypot * 0.8f;
-            double radians = (float) Math.toRadians(r0 - 90.0f);
-            this.c = new PointF((((float) Math.cos(radians)) * f7) + pointF7.x, (f7 * ((float) Math.sin(radians))) + pointF7.y);
-        }
-        if (pointF3 == null || pointF4 == null) {
-            return;
-        }
-        if (pointF3.x < pointF4.x) {
-            PointF pointF8 = pointF4;
-            pointF4 = pointF3;
-            pointF3 = pointF8;
-        }
-        PointF pointF9 = new PointF((pointF4.x * 0.5f) + (pointF3.x * 0.5f), (pointF4.y * 0.5f) + (pointF3.y * 0.5f));
-        this.f = pointF9;
-        float f10 = this.e * 0.7f;
-        double radians2 = (float) Math.toRadians(this.b + 90.0f);
-        this.g = new PointF((((float) Math.cos(radians2)) * f10) + pointF9.x, (f10 * ((float) Math.sin(radians2))) + pointF9.y);
+    public t0(Context context, PointF pointF, int i10, q0 q0Var, float f7, int i11) {
+        super(context, pointF);
+        r0 r0Var = new r0(context, f7);
+        this.q0 = r0Var;
+        r0Var.setMaxWidth(i11);
+        this.u0 = q0Var;
+        r0Var.b(i10, q0Var, false);
+        m();
+        this.s0 = 3;
+        r0Var.c(3, this.r0);
+        addView(r0Var, x5.e(-2, -2, 51));
+        setClipChildren(false);
+        setClipToPadding(false);
+        k();
     }
 
-    public static PointF b(PointF pointF, Bitmap bitmap, iv0 iv0Var, boolean z10) {
-        return new PointF((iv0Var.a * pointF.x) / (z10 ? bitmap.getHeight() : bitmap.getWidth()), (iv0Var.b * pointF.y) / (z10 ? bitmap.getWidth() : bitmap.getHeight()));
+    @Override // qg.j
+    public final i a() {
+        return new s0(this, getContext());
     }
 
-    public final PointF a(int i10) {
-        if (i10 == 0) {
-            return this.c;
+    public int getColor() {
+        return this.r0;
+    }
+
+    @Override // qg.j
+    public float getMaxScale() {
+        return 1.5f;
+    }
+
+    public int getNextType() {
+        int i10 = this.s0 + 1;
+        return i10 == 4 ? !this.t0 ? 1 : 0 : i10;
+    }
+
+    @Override // qg.j
+    public ik0 getSelectionBounds() {
+        ViewGroup viewGroup = (ViewGroup) getParent();
+        if (viewGroup == null) {
+            return new ik0();
         }
-        if (i10 == 1) {
-            return this.d;
-        }
-        if (i10 == 2) {
-            return this.f;
-        }
-        if (i10 != 3) {
-            return null;
-        }
-        return this.g;
+        float scaleX = viewGroup.getScaleX();
+        float dp = (AndroidUtilities.dp(64.0f) / scaleX) + (getScale() * getMeasuredWidth());
+        float dp2 = (AndroidUtilities.dp(64.0f) / scaleX) + (getScale() * getMeasuredHeight());
+        float u10 = wl.u(dp, 2.0f, getPositionX(), scaleX);
+        return new ik0(u10, wl.u(dp2, 2.0f, getPositionY(), scaleX), ((dp * scaleX) + u10) - u10, dp2 * scaleX);
+    }
+
+    @Override // qg.j
+    public float getStickyPaddingBottom() {
+        return this.q0.h;
+    }
+
+    @Override // qg.j
+    public float getStickyPaddingLeft() {
+        return this.q0.f;
+    }
+
+    @Override // qg.j
+    public float getStickyPaddingRight() {
+        return this.q0.f;
+    }
+
+    @Override // qg.j
+    public float getStickyPaddingTop() {
+        return this.q0.h;
+    }
+
+    public int getType() {
+        return this.s0;
+    }
+
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        k();
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, i11);
+        k();
+    }
+
+    public void setColor(int i10) {
+        this.t0 = true;
+        this.r0 = i10;
+    }
+
+    public void setMaxWidth(int i10) {
+        this.q0.setMaxWidth(i10);
+    }
+
+    public void setType(int i10) {
+        this.s0 = i10;
+        this.q0.c(i10, this.r0);
     }
 }

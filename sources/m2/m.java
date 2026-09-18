@@ -7,7 +7,7 @@ import java.math.RoundingMode;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public abstract class m {
     public final b2.s a;
@@ -32,9 +32,9 @@ public abstract class m {
         this.c = d0.Y(j3, 1000000L, j10, RoundingMode.DOWN);
     }
 
-    public abstract String b();
+    public abstract String a();
 
     public abstract l2.h d();
 
-    public abstract j h();
+    public abstract j e();
 }

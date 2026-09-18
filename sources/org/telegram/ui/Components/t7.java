@@ -1,94 +1,71 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.MotionEvent;
-import android.view.accessibility.AccessibilityNodeInfo;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MediaController;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class t7 extends aj0 {
-    public float r;
-    public float s;
-    public boolean v;
-    public final org.telegram.ui.Cells.l7 w;
-    public final /* synthetic */ float x;
-    public final /* synthetic */ k8 y;
+public final class t7 extends s4.v {
+    public final /* synthetic */ h8 d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public t7(k8 k8Var, Context context, float f7) {
-        super(context);
-        this.y = k8Var;
-        this.x = f7;
-        this.w = new org.telegram.ui.Cells.l7(this, 3);
+    public t7(h8 h8Var) {
+        this.d = h8Var;
     }
 
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        accessibilityNodeInfo.addAction(16);
+    @Override // s4.v
+    public final void a(RecyclerView recyclerView, s4.c1 c1Var) {
+        super.a(recyclerView, c1Var);
+        View view = c1Var.a;
+        view.setPressed(false);
+        view.setTag(R.id.dragging, null);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:11:0x0029, code lost:
-    
-        if (r5 != 3) goto L20;
-     */
-    @Override // android.view.View
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        k8 k8Var = this.y;
-        t7 t7Var = k8Var.L;
-        if (k8Var.T.v || k8Var.H0 == -1) {
-            return false;
+    @Override // s4.v
+    public final int e(RecyclerView recyclerView, s4.c1 c1Var) {
+        if (c1Var.f != 0) {
+            return 0;
         }
-        float rawX = motionEvent.getRawX();
-        float rawY = motionEvent.getRawY();
-        int action = motionEvent.getAction();
-        org.telegram.ui.Cells.l7 l7Var = this.w;
-        if (action == 0) {
-            this.v = false;
-            this.r = rawX;
-            this.s = rawY;
-            AndroidUtilities.runOnUIThread(l7Var, 300L);
-            if (getBackground() != null) {
-                getBackground().setHotspot(this.r, this.s);
+        return s4.v.l(3, 0);
+    }
+
+    @Override // s4.v
+    public final boolean n(RecyclerView recyclerView, s4.c1 c1Var, s4.c1 c1Var2) {
+        int b10 = c1Var.b();
+        int b11 = c1Var2.b();
+        h8 h8Var = this.d;
+        if (!h8Var.v0) {
+            h8Var.w0.move(b10, b11);
+        } else {
+            if (b10 <= 0 || b11 <= 0) {
+                return false;
             }
-            setPressed(true);
-            return true;
+            h8Var.w0.move(b10 - 1, b11 - 1);
         }
-        if (action != 1) {
-            if (action == 2) {
-                float f7 = rawX - this.r;
-                float f10 = rawY - this.s;
-                float f11 = (f10 * f10) + (f7 * f7);
-                float f12 = this.x;
-                if (f11 > f12 * f12 && !this.v) {
-                    AndroidUtilities.cancelRunOnUIThread(l7Var);
-                    setPressed(false);
-                }
-            }
-            return true;
-        }
-        if (!this.v && motionEvent.getAction() == 1 && isPressed()) {
-            MediaController.getInstance().playNextMessage();
-            t7Var.setProgress(0.0f);
-            t7Var.d();
-        }
-        AndroidUtilities.cancelRunOnUIThread(l7Var);
-        if (k8Var.J0 > 0) {
-            MediaController.getInstance().setPlaybackSpeed(true, 1.0f);
-            if (MediaController.getInstance().isMessagePaused()) {
-                k8Var.L0 = 0L;
-                k8Var.N0.run();
-            }
-        }
-        k8Var.H0 = 0;
-        setPressed(false);
-        k8Var.J0 = 0;
-        k8Var.I0 = -1.0f;
+        h8Var.x0.clear();
+        h8Var.x0.addAll(h8Var.w0.list);
+        h8Var.s.p(b10, b11);
         return true;
+    }
+
+    @Override // s4.v
+    public final void p(s4.c1 c1Var, int i10) {
+        s7 s7Var = this.d.n;
+        if (c1Var != null) {
+            s7Var.e1(false);
+        }
+        if (i10 != 0) {
+            s7Var.J0(false);
+            if (c1Var != null) {
+                c1Var.a.setPressed(true);
+            }
+        }
+        if (c1Var != null) {
+            c1Var.a.setTag(R.id.dragging, i10 == 2 ? Boolean.TRUE : null);
+        }
+    }
+
+    @Override // s4.v
+    public final void q(s4.c1 c1Var) {
     }
 }

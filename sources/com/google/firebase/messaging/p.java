@@ -8,7 +8,7 @@ import android.content.pm.ResolveInfo;
 import android.util.Log;
 import java.util.List;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class p {
     public int a;
@@ -65,8 +65,8 @@ public final class p {
     public PackageInfo d(String str) {
         try {
             return ((Context) this.c).getPackageManager().getPackageInfo(str, 0);
-        } catch (PackageManager.NameNotFoundException e7) {
-            Log.w("FirebaseMessaging", "Failed to find package " + e7);
+        } catch (PackageManager.NameNotFoundException e) {
+            Log.w("FirebaseMessaging", "Failed to find package " + e);
             return null;
         }
     }

@@ -4,9 +4,9 @@ import android.os.Binder;
 import androidx.car.app.model.AlertCallbackDelegateImpl;
 import androidx.car.app.model.OnSelectedDelegateImpl;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class g implements androidx.car.app.utils.c {
+public final /* synthetic */ class g implements androidx.car.app.utils.a {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
     public final /* synthetic */ Binder c;
@@ -17,7 +17,7 @@ public final /* synthetic */ class g implements androidx.car.app.utils.c {
         this.b = i10;
     }
 
-    @Override // androidx.car.app.utils.c
+    @Override // androidx.car.app.utils.a
     public final Object a() {
         Object lambda$onAlertCancelled$0;
         Object lambda$onSelected$0;

@@ -1,150 +1,134 @@
 package org.telegram.ui.ActionBar;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.drawable.Drawable;
-import android.view.animation.DecelerateInterpolator;
+import android.R;
+import android.app.Activity;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.res.TypedArray;
+import android.util.TypedValue;
+import android.view.ContextThemeWrapper;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.FrameLayout;
+import java.util.WeakHashMap;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class g2 extends Drawable {
-    public final Paint a;
-    public boolean b;
-    public long c;
-    public float d;
-    public float e;
-    public int f;
-    public final boolean g;
-    public final DecelerateInterpolator h;
-    public int i;
-    public int j;
-    public float k;
-    public int l;
+public final class g2 extends c2 {
+    public static final int[] n1 = {R.attr.windowEnterAnimation, R.attr.windowExitAnimation};
+    public int d1;
+    public int e1;
+    public FrameLayout f1;
+    public ViewGroup g1;
+    public View h1;
+    public DialogInterface.OnShowListener i1;
+    public DialogInterface.OnDismissListener j1;
+    public boolean k1;
+    public long l1;
+    public final r m1;
 
-    public g2(boolean z10) {
-        Paint paint = new Paint(1);
-        this.a = paint;
-        Paint paint2 = new Paint(1);
-        this.h = new DecelerateInterpolator();
-        this.i = -1;
-        this.j = -9079435;
-        this.k = 300.0f;
-        paint.setStrokeWidth(AndroidUtilities.dp(2.0f));
-        paint.setStrokeCap(Paint.Cap.ROUND);
-        paint2.setStrokeWidth(AndroidUtilities.dp(2.0f));
-        paint2.setColor(-65536);
-        this.g = z10;
+    public g2(Context context, int i10, f6 f6Var) {
+        super(context, i10, f6Var);
+        this.k1 = false;
+        this.l1 = 0L;
+        this.m1 = new r(this, 7);
     }
 
-    public final void a(int i10) {
-        this.i = i10;
-        invalidateSelf();
-    }
-
-    public final void b(int i10) {
-        this.j = i10;
-        invalidateSelf();
-    }
-
-    public final void c(float f7, boolean z10) {
-        this.c = 0L;
-        float f10 = this.e;
-        if (f10 == 1.0f) {
-            this.b = true;
-        } else if (f10 == 0.0f) {
-            this.b = false;
+    public static Activity r(Context context) {
+        if (context instanceof Activity) {
+            return (Activity) context;
         }
-        this.c = 0L;
-        if (z10) {
-            if (f10 < f7) {
-                this.f = (int) (f10 * this.k);
-            } else {
-                this.f = (int) ((1.0f - f10) * this.k);
+        if (context instanceof ContextThemeWrapper) {
+            return r(((ContextThemeWrapper) context).getBaseContext());
+        }
+        return null;
+    }
+
+    @Override // org.telegram.ui.ActionBar.c2, android.app.Dialog, android.content.DialogInterface
+    public final void dismiss() {
+        if (isShowing() && !this.k1) {
+            this.k1 = true;
+            AndroidUtilities.cancelRunOnUIThread(this.m1);
+            if (this.f1.getVisibility() != 0) {
+                s().removeView(this.f1);
+                return;
             }
-            this.c = System.currentTimeMillis();
-            this.d = f7;
+            Animation loadAnimation = AnimationUtils.loadAnimation(getContext(), this.e1);
+            loadAnimation.setAnimationListener(new e2(this, 0));
+            this.g1.clearAnimation();
+            this.g1.startAnimation(loadAnimation);
+            this.h1.animate().setListener(null).cancel();
+            this.h1.animate().setDuration(300L).alpha(0.0f).setListener(new d2(this, 1)).start();
+        }
+    }
+
+    @Override // android.app.Dialog
+    public final boolean isShowing() {
+        return (s().indexOfChild(this.f1) == -1 || this.k1) ? false : true;
+    }
+
+    @Override // org.telegram.ui.ActionBar.c2
+    public final void q(long j3) {
+        if (isShowing()) {
+            return;
+        }
+        this.l1 = j3;
+        show();
+    }
+
+    public final ViewGroup s() {
+        return (ViewGroup) r(getContext()).getWindow().getDecorView();
+    }
+
+    @Override // android.app.Dialog
+    public final void setOnDismissListener(DialogInterface.OnDismissListener onDismissListener) {
+        this.j1 = onDismissListener;
+    }
+
+    @Override // android.app.Dialog
+    public final void setOnShowListener(DialogInterface.OnShowListener onShowListener) {
+        this.i1 = onShowListener;
+    }
+
+    @Override // org.telegram.ui.ActionBar.c2, android.app.Dialog
+    public final void show() {
+        TypedValue typedValue = new TypedValue();
+        getContext().getTheme().resolveAttribute(R.attr.windowAnimationStyle, typedValue, true);
+        TypedArray obtainStyledAttributes = getContext().obtainStyledAttributes(typedValue.resourceId, n1);
+        this.d1 = obtainStyledAttributes.getResourceId(0, -1);
+        this.e1 = obtainStyledAttributes.getResourceId(1, -1);
+        obtainStyledAttributes.recycle();
+        this.h0 = true;
+        ViewGroup f7 = f(false);
+        this.g1 = f7;
+        f7.setClickable(true);
+        WindowManager.LayoutParams attributes = getWindow().getAttributes();
+        FrameLayout frameLayout = new FrameLayout(getContext());
+        frameLayout.setOnClickListener(new y(this, 1));
+        View view = new View(getContext());
+        this.h1 = view;
+        view.setBackgroundColor(j6.l1(attributes.dimAmount, -16777216));
+        frameLayout.addView(this.h1, new FrameLayout.LayoutParams(-1, -1));
+        FrameLayout frameLayout2 = new FrameLayout(getContext());
+        frameLayout2.addView(this.g1, new FrameLayout.LayoutParams(-1, -2, 17));
+        frameLayout.addView(frameLayout2, new FrameLayout.LayoutParams(attributes.width, -2, 17));
+        this.f1 = frameLayout;
+        s().addView(this.f1);
+        FrameLayout frameLayout3 = this.f1;
+        WeakHashMap weakHashMap = r0.i0.a;
+        r0.y.c(frameLayout3);
+        r0.a0.j(this.f1, new p(frameLayout2, 3));
+        this.f1.setVisibility(4);
+        long j3 = this.l1;
+        r rVar = this.m1;
+        if (j3 == 0) {
+            rVar.run();
         } else {
-            this.e = f7;
-            this.d = f7;
+            AndroidUtilities.runOnUIThread(rVar, j3);
         }
-        invalidateSelf();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        if (this.e != this.d) {
-            if (this.c != 0) {
-                int currentTimeMillis = this.f + ((int) (System.currentTimeMillis() - this.c));
-                this.f = currentTimeMillis;
-                float f7 = currentTimeMillis;
-                float f10 = this.k;
-                if (f7 >= f10) {
-                    this.e = this.d;
-                } else {
-                    float f11 = this.e;
-                    float f12 = this.d;
-                    DecelerateInterpolator decelerateInterpolator = this.h;
-                    if (f11 < f12) {
-                        this.e = decelerateInterpolator.getInterpolation(f7 / f10) * this.d;
-                    } else {
-                        this.e = 1.0f - decelerateInterpolator.getInterpolation(f7 / f10);
-                    }
-                }
-            }
-            this.c = System.currentTimeMillis();
-            invalidateSelf();
-        }
-        int d = i0.a.d(this.e, this.i, this.j);
-        Paint paint = this.a;
-        paint.setColor(d);
-        canvas.save();
-        canvas.translate(AndroidUtilities.dp(24.0f) / 2.0f, AndroidUtilities.dp(24.0f) / 2.0f);
-        int i10 = this.l;
-        if (i10 != 0) {
-            canvas.rotate(i10);
-        }
-        float f13 = this.e;
-        canvas.translate(-AndroidUtilities.dp(0.66f), 0.0f);
-        if (this.g) {
-            canvas.rotate((this.e * (this.b ? -180 : 180)) + 135.0f);
-            f13 = 1.0f;
-        } else {
-            canvas.rotate(this.e * (this.b ? -225 : 135));
-        }
-        float f14 = 1.0f - f13;
-        canvas.drawLine(AndroidUtilities.dp(AndroidUtilities.lerp(-6.75f, -8.0f, f13)), 0.0f, AndroidUtilities.dp(8.0f) - ((paint.getStrokeWidth() / 2.0f) * f14), 0.0f, paint);
-        float dp = AndroidUtilities.dp(-0.25f);
-        float dp2 = AndroidUtilities.dp(AndroidUtilities.lerp(7.0f, 8.0f, f13)) - ((paint.getStrokeWidth() / 4.0f) * f14);
-        float dp3 = AndroidUtilities.dp(AndroidUtilities.lerp(-7.25f, 0.0f, f13));
-        canvas.drawLine(dp3, -dp, 0.0f, -dp2, paint);
-        canvas.drawLine(dp3, dp, 0.0f, dp2, paint);
-        canvas.restore();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return AndroidUtilities.dp(24.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return AndroidUtilities.dp(24.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        this.a.setAlpha(i10);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        this.a.setColorFilter(colorFilter);
     }
 }

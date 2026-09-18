@@ -1,20 +1,21 @@
 package c3;
 
+import ai.w1;
 import android.net.Uri;
 import e9.a1;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class m implements r {
     public static final int[] e = {5, 4, 12, 8, 3, 10, 9, 11, 6, 2, 0, 1, 7, 16, 15, 14, 17, 18, 19, 20, 21};
-    public static final n4.y f = new n4.y(new androidx.emoji2.text.w(18));
-    public static final n4.y h = new n4.y(new androidx.emoji2.text.w(19));
+    public static final n4.y f = new n4.y(new w1(18));
+    public static final n4.y h = new n4.y(new w1(19));
     public a1 a;
     public int d;
-    public rb.a c = new rb.a(28);
+    public qb.b c = new qb.b(28);
     public boolean b = true;
 
     public final void a(int i10, ArrayList arrayList) {
@@ -32,12 +33,12 @@ public final class m implements r {
                 arrayList.add(new d3.a(1));
                 break;
             case 4:
-                o G = f.G(0);
-                if (G == null) {
+                o P = f.P(0);
+                if (P == null) {
                     arrayList.add(new h3.b());
                     break;
                 } else {
-                    arrayList.add(G);
+                    arrayList.add(P);
                     break;
                 }
             case 5:
@@ -50,10 +51,10 @@ public final class m implements r {
                 arrayList.add(new v3.d(1));
                 break;
             case 8:
-                rb.a aVar = this.c;
+                qb.b bVar = this.c;
                 int i11 = this.b ? 0 : 32;
                 e9.g0 g0Var = e9.i0.b;
-                arrayList.add(new w3.h(aVar, i11, null, a1.e, null));
+                arrayList.add(new w3.h(bVar, i11, null, a1.e, null));
                 arrayList.add(new w3.k(this.c, this.b ? 0 : 16));
                 break;
             case 9:
@@ -81,9 +82,9 @@ public final class m implements r {
                 arrayList.add(new k3.a(this.d));
                 break;
             case 15:
-                o G2 = h.G(new Object[0]);
-                if (G2 != null) {
-                    arrayList.add(G2);
+                o P2 = h.P(new Object[0]);
+                if (P2 != null) {
+                    arrayList.add(P2);
                     break;
                 }
                 break;
@@ -114,7 +115,7 @@ public final class m implements r {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final synchronized o[] c(Uri uri, Map map) {
+    public final synchronized o[] d(Uri uri, Map map) {
         ArrayList arrayList;
         String str;
         int a2;

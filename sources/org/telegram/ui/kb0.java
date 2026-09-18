@@ -1,77 +1,132 @@
 package org.telegram.ui;
 
-import android.view.Window;
-import java.lang.ref.WeakReference;
+import android.animation.AnimatorSet;
+import android.app.Activity;
+import android.window.BackEvent;
+import android.window.OnBackAnimationCallback;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.AnimationNotificationsLocker;
+import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class kb0 implements yf.k0 {
-    public final /* synthetic */ int a = 0;
+public final class kb0 implements OnBackAnimationCallback {
     public boolean b;
-    public boolean c;
-    public final Object d;
+    public boolean e;
+    public final /* synthetic */ LaunchActivity f;
+    public final AnimationNotificationsLocker a = new AnimationNotificationsLocker();
+    public boolean c = false;
+    public boolean d = false;
 
-    public kb0(yf.l0 l0Var) {
-        this.d = l0Var;
+    public kb0(LaunchActivity launchActivity) {
+        this.f = launchActivity;
     }
 
-    @Override // yf.k0
-    public final void a(boolean z10) {
-        switch (this.a) {
-            case 0:
-                if (this.b != z10 && !this.c) {
-                    this.b = z10;
-                    LaunchActivity launchActivity = (LaunchActivity) ((WeakReference) this.d).get();
-                    if (launchActivity != null) {
-                        int i10 = launchActivity.A1 + (z10 ? 1 : -1);
-                        launchActivity.A1 = i10;
-                        j0 j0Var = launchActivity.w0;
-                        if (j0Var != null) {
-                            j0Var.setVisibility(i10 > 0 ? 8 : 0);
-                        }
-                        launchActivity.getWindow();
-                        break;
-                    }
-                }
-                break;
-            default:
-                yf.l0 l0Var = (yf.l0) this.d;
-                if (this.b != z10 && !this.c) {
-                    this.b = z10;
-                    if (z10) {
-                        l0Var.a++;
-                    } else {
-                        l0Var.a--;
-                    }
-                    boolean z11 = l0Var.a > 0;
-                    if (l0Var.b != z11) {
-                        l0Var.b = z11;
-                        Window window = (Window) ((WeakReference) l0Var.c.b).get();
-                        if (window != null) {
-                            window.getDecorView().setVisibility(z11 ? 8 : 0);
-                            break;
-                        }
-                    }
-                }
-                break;
+    @Override // android.window.OnBackAnimationCallback
+    public final void onBackCancelled() {
+        ActionBarLayout actionBarLayout;
+        this.c = false;
+        this.d = false;
+        if (this.b) {
+            this.a.unlock();
+            this.b = false;
+        }
+        if (AndroidUtilities.isTablet() || (actionBarLayout = this.f.q0) == null || !actionBarLayout.c1) {
+            return;
+        }
+        actionBarLayout.c1 = false;
+        actionBarLayout.e(true);
+    }
+
+    @Override // android.window.OnBackInvokedCallback
+    public final void onBackInvoked() {
+        this.d = true;
+        if (this.b) {
+            this.a.unlock();
+            this.b = false;
+        }
+        if (AndroidUtilities.isTablet()) {
+            this.f.onBackPressed();
+            return;
+        }
+        if (this.f.c0(true)) {
+            LaunchActivity launchActivity = this.f;
+            ActionBarLayout actionBarLayout = launchActivity.q0;
+            if (actionBarLayout == null) {
+                launchActivity.onBackPressed();
+            } else if (!actionBarLayout.c1) {
+                actionBarLayout.G();
+            } else {
+                actionBarLayout.c1 = false;
+                actionBarLayout.e(false);
+            }
         }
     }
 
-    @Override // yf.k0
-    public final void destroy() {
-        switch (this.a) {
-            case 0:
-                a(false);
-                this.c = true;
-                break;
-            default:
-                a(false);
-                this.c = true;
-                break;
+    /* JADX WARN: Code restructure failed: missing block: B:22:0x004f, code lost:
+    
+        if (r1.T != false) goto L68;
+     */
+    @Override // android.window.OnBackAnimationCallback
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void onBackProgressed(BackEvent backEvent) {
+        ActionBarLayout actionBarLayout;
+        ActionBarLayout actionBarLayout2;
+        org.telegram.ui.ActionBar.t tVar;
+        if (this.c && this.d) {
+            return;
         }
+        float progress = backEvent.getProgress();
+        if (!this.e && progress > 0.015f) {
+            this.e = true;
+            if (!AndroidUtilities.isTablet() && this.f.c0(false) && (actionBarLayout2 = this.f.q0) != null) {
+                float touchX = backEvent.getTouchX();
+                float touchY = backEvent.getTouchY();
+                Activity activity = actionBarLayout2.K0;
+                if (actionBarLayout2.T) {
+                    AnimatorSet animatorSet = actionBarLayout2.h1;
+                    if (animatorSet != null) {
+                        animatorSet.end();
+                        actionBarLayout2.h1 = null;
+                    }
+                }
+                if (!actionBarLayout2.d1 && !actionBarLayout2.c1 && !actionBarLayout2.a0 && !actionBarLayout2.Q && !actionBarLayout2.j() && actionBarLayout2.O0.size() > 1 && !actionBarLayout2.y() && ((tVar = actionBarLayout2.G) == null || !tVar.hasShownSheet())) {
+                    org.telegram.ui.ActionBar.o2 o2Var = (org.telegram.ui.ActionBar.o2) org.telegram.ui.Cells.p6.g(1, actionBarLayout2.O0);
+                    if (o2Var.onBackPressed(false) && !o2Var.hasShownSheet() && o2Var.canBeginSlide()) {
+                        actionBarLayout2.e1 = false;
+                        actionBarLayout2.d1 = true;
+                        actionBarLayout2.c1 = true;
+                        actionBarLayout2.g1 = touchX < ((float) AndroidUtilities.displaySize.x) / 2.0f;
+                        actionBarLayout2.f1 = touchY;
+                        actionBarLayout2.O();
+                        if (activity != null && activity.getCurrentFocus() != null) {
+                            AndroidUtilities.hideKeyboard(activity.getCurrentFocus());
+                        }
+                        o2Var.onBeginSlide();
+                        if (!this.b) {
+                            this.a.lock();
+                            this.b = true;
+                        }
+                    }
+                }
+            }
+        }
+        float max = Math.max(0.0f, progress - 0.015f) / 0.985f;
+        if (AndroidUtilities.isTablet() || (actionBarLayout = this.f.q0) == null || !actionBarLayout.c1) {
+            return;
+        }
+        float interpolation = org.telegram.ui.Components.qr.l.getInterpolation(max) * AndroidUtilities.dp(56.0f);
+        actionBarLayout.e1 = max > 0.0f;
+        actionBarLayout.s.setTranslationX(interpolation);
+        actionBarLayout.setInnerTranslationX(interpolation);
     }
 
-    public kb0(LaunchActivity launchActivity, boolean z10) {
-        this.d = new WeakReference(launchActivity);
+    @Override // android.window.OnBackAnimationCallback
+    public final void onBackStarted(BackEvent backEvent) {
+        this.c = true;
+        this.d = false;
+        this.e = false;
     }
 }

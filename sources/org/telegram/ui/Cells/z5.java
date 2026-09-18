@@ -10,11 +10,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.vl;
+import org.telegram.messenger.wl;
 import org.telegram.ui.Components.Switch;
-import org.telegram.ui.Components.rb0;
+import org.telegram.ui.Components.qb0;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class z5 extends FrameLayout {
     public final TextView a;
@@ -35,7 +35,7 @@ public final class z5 extends FrameLayout {
         addView(imageView, w7.x5.d(28, 28.0f, (LocaleController.isRTL ? 5 : 3) | 48, 18.0f, 16.0f, 18.0f, 9.0f));
         TextView textView = new TextView(context);
         this.a = textView;
-        vl.n(org.telegram.ui.ActionBar.j6.G6, f6Var, textView, 1, 16.0f);
+        wl.n(org.telegram.ui.ActionBar.j6.G6, f6Var, textView, 1, 16.0f);
         textView.setLines(1);
         textView.setMaxLines(1);
         textView.setSingleLine(true);
@@ -45,7 +45,7 @@ public final class z5 extends FrameLayout {
         addView(textView, w7.x5.d(-1, -2.0f, (z10 ? 5 : 3) | 48, z10 ? 66.0f : 64.0f, 8.0f, z10 ? 64.0f : 66.0f, 0.0f));
         TextView textView2 = new TextView(context);
         this.b = textView2;
-        vl.n(org.telegram.ui.ActionBar.j6.z6, f6Var, textView2, 1, 13.0f);
+        wl.n(org.telegram.ui.ActionBar.j6.z6, f6Var, textView2, 1, 13.0f);
         textView2.setGravity(LocaleController.isRTL ? 5 : 3);
         textView2.setLines(0);
         textView2.setMaxLines(0);
@@ -68,7 +68,7 @@ public final class z5 extends FrameLayout {
         this.a.setText(str);
         org.telegram.ui.ActionBar.f6 f6Var = this.h;
         boolean a2 = f6Var != null ? f6Var.a() : org.telegram.ui.ActionBar.j6.I.q();
-        rb0 rb0Var = new rb0(1);
+        qb0 qb0Var = new qb0(1);
         int i12 = -14899731;
         switch (i10) {
             case 1:
@@ -139,10 +139,10 @@ public final class z5 extends FrameLayout {
             default:
                 throw null;
         }
-        rb0Var.b(i12, i13);
-        rb0Var.b = a2;
+        qb0Var.b(i12, i13);
+        qb0Var.b = a2;
         ImageView imageView = this.c;
-        imageView.setBackground(rb0Var);
+        imageView.setBackground(qb0Var);
         imageView.setImageResource(i11);
         boolean z11 = this.e;
         Switch r02 = this.d;

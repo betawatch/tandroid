@@ -6,9 +6,9 @@ import android.view.Menu;
 import android.view.MotionEvent;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class di extends hu {
+public final class di extends ju {
     public final /* synthetic */ vi V;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -17,23 +17,23 @@ public final class di extends hu {
         this.V = viVar;
     }
 
-    @Override // org.telegram.ui.Components.hu
+    @Override // org.telegram.ui.Components.ju
     public final void f() {
         super.f();
         kz emojiView = getEmojiView();
         if (emojiView != null) {
             emojiView.w0 = false;
-            emojiView.x2 = false;
+            emojiView.w2 = false;
             emojiView.setShouldDrawBackground(false);
             emojiView.setBottomInset(AndroidUtilities.navigationBarHeight);
         }
     }
 
-    @Override // org.telegram.ui.Components.hu
+    @Override // org.telegram.ui.Components.ju
     public final void i(Menu menu) {
-        org.telegram.ui.ActionBar.n2 n2Var = this.V.f0;
-        if (n2Var instanceof org.telegram.ui.co) {
-            org.telegram.ui.co.k8(menu, ((org.telegram.ui.co) n2Var).h, true, true, true, true);
+        org.telegram.ui.ActionBar.o2 o2Var = this.V.f0;
+        if (o2Var instanceof org.telegram.ui.bo) {
+            org.telegram.ui.bo.k8(menu, ((org.telegram.ui.bo) o2Var).h, true, true, true, true);
         }
     }
 
@@ -57,7 +57,7 @@ public final class di extends hu {
         this.V.b2();
     }
 
-    @Override // org.telegram.ui.Components.hu
+    @Override // org.telegram.ui.Components.ju
     public final void q(int i10, int i11) {
         vi viVar = this.V;
         viVar.b2();

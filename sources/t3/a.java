@@ -4,9 +4,9 @@ import b2.m0;
 import b2.o0;
 import b2.s;
 import v7.r6;
-import v7.x7;
+import v7.y7;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class a implements o0 {
     public final String a;
@@ -93,21 +93,21 @@ public final class a implements o0 {
         String str2 = this.b;
         switch (c10) {
             case 0:
-                Integer g10 = x7.g(str2);
+                Integer g10 = y7.g(str2);
                 if (g10 != null) {
                     m0Var.o = g10;
                     break;
                 }
                 break;
             case 1:
-                Integer g11 = x7.g(str2);
+                Integer g11 = y7.g(str2);
                 if (g11 != null) {
                     m0Var.C = g11;
                     break;
                 }
                 break;
             case 2:
-                Integer g12 = x7.g(str2);
+                Integer g12 = y7.g(str2);
                 if (g12 != null) {
                     m0Var.n = g12;
                     break;
@@ -126,7 +126,7 @@ public final class a implements o0 {
                 m0Var.g = str2;
                 break;
             case 7:
-                Integer g13 = x7.g(str2);
+                Integer g13 = y7.g(str2);
                 if (g13 != null) {
                     m0Var.B = g13;
                     break;

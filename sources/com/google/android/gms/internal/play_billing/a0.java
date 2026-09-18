@@ -3,10 +3,10 @@ package com.google.android.gms.internal.play_billing;
 import j$.util.Objects;
 import java.util.Arrays;
 import org.telegram.tgnet.TLObject;
-import v7.t5;
-import v7.v5;
+import v7.u5;
+import v7.w5;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class a0 extends com.google.android.gms.internal.cast.l0 {
     public static final a0 n = new a0(null, new Object[0], 0);
@@ -47,7 +47,7 @@ public final class a0 extends com.google.android.gms.internal.cast.l0 {
             Objects.requireNonNull(objArr2[1]);
             return new a0(null, objArr2, 1);
         }
-        t5.b(i12, objArr2.length >> 1);
+        u5.b(i12, objArr2.length >> 1);
         int max = Math.max(i12, 2);
         if (max < 751619276) {
             i11 = Integer.highestOneBit(max - 1);
@@ -80,7 +80,7 @@ public final class a0 extends com.google.android.gms.internal.cast.l0 {
                     Objects.requireNonNull(obj2);
                     Object obj3 = objArr2[i18 ^ i13];
                     Objects.requireNonNull(obj3);
-                    int a2 = v5.a(obj2.hashCode());
+                    int a2 = w5.a(obj2.hashCode());
                     while (true) {
                         int i19 = a2 & i14;
                         int i20 = bArr[i19] & 255;
@@ -129,7 +129,7 @@ public final class a0 extends com.google.android.gms.internal.cast.l0 {
                         Objects.requireNonNull(obj5);
                         Object obj6 = objArr2[i25 ^ 1];
                         Objects.requireNonNull(obj6);
-                        int a10 = v5.a(obj5.hashCode());
+                        int a10 = w5.a(obj5.hashCode());
                         while (true) {
                             int i26 = a10 & i14;
                             int i27 = iArr[i26];
@@ -183,7 +183,7 @@ public final class a0 extends com.google.android.gms.internal.cast.l0 {
                     Objects.requireNonNull(obj10);
                     Object obj11 = objArr2[i32 ^ 1];
                     Objects.requireNonNull(obj11);
-                    int a11 = v5.a(obj10.hashCode());
+                    int a11 = w5.a(obj10.hashCode());
                     while (true) {
                         int i33 = a11 & i14;
                         char c13 = (char) sArr[i33];
@@ -246,7 +246,7 @@ public final class a0 extends com.google.android.gms.internal.cast.l0 {
                     if (obj4 instanceof byte[]) {
                         byte[] bArr = (byte[]) obj4;
                         int length = bArr.length - 1;
-                        int a2 = v5.a(obj.hashCode());
+                        int a2 = w5.a(obj.hashCode());
                         while (true) {
                             int i11 = a2 & length;
                             int i12 = bArr[i11] & 255;
@@ -262,7 +262,7 @@ public final class a0 extends com.google.android.gms.internal.cast.l0 {
                     } else if (obj4 instanceof short[]) {
                         short[] sArr = (short[]) obj4;
                         int length2 = sArr.length - 1;
-                        int a10 = v5.a(obj.hashCode());
+                        int a10 = w5.a(obj.hashCode());
                         while (true) {
                             int i13 = a10 & length2;
                             char c10 = (char) sArr[i13];
@@ -278,7 +278,7 @@ public final class a0 extends com.google.android.gms.internal.cast.l0 {
                     } else {
                         int[] iArr = (int[]) obj4;
                         int length3 = iArr.length - 1;
-                        int a11 = v5.a(obj.hashCode());
+                        int a11 = w5.a(obj.hashCode());
                         while (true) {
                             int i14 = a11 & length3;
                             int i15 = iArr[i14];

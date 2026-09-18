@@ -1,52 +1,91 @@
 package ci;
 
-import android.content.Context;
-import android.widget.LinearLayout;
-import android.widget.TextView;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.vl;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.j6;
-import w7.x5;
+import org.telegram.ui.Components.yi0;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes4.dex */
-public final class q extends LinearLayout {
-    public final TextView a;
-    public final p b;
-    public final n c;
-    public final di.d d;
+public final class q extends Drawable {
+    public final Paint a;
+    public float b;
+    public float c;
+    public long d;
+    public boolean e;
+    public boolean f;
+    public boolean g;
+    public final yi0 h;
+    public final ec i;
+    public final /* synthetic */ ec j;
 
-    public q(Context context, f6 f6Var) {
-        super(context);
-        setPadding(AndroidUtilities.dp(24.0f), AndroidUtilities.dp(21.0f), AndroidUtilities.dp(24.0f), AndroidUtilities.dp(21.0f));
-        setOrientation(1);
-        TextView textView = new TextView(context);
-        this.a = textView;
-        int i10 = j6.y6;
-        vl.n(i10, f6Var, textView, 1, 14.0f);
-        textView.setGravity(17);
-        textView.setTextAlignment(4);
-        addView(textView, x5.k(0.0f, 0.0f, 0.0f, 19.0f, -1, -2));
-        p pVar = new p(0, context, f6Var, true);
-        this.b = pVar;
-        pVar.setMinWidth(AndroidUtilities.dp(200.0f));
-        pVar.g(LocaleController.getString(R.string.ProfileBotAddPreview), false, true);
-        addView(pVar, x5.q(-2, 44, 17));
-        n nVar = new n(context, f6Var);
-        this.c = nVar;
-        nVar.setTextColor(j6.v0(i10, f6Var));
-        nVar.setText(LocaleController.getString(R.string.ProfileBotOr));
-        nVar.setTextSize(1, 14.0f);
-        nVar.setTextAlignment(4);
-        nVar.setGravity(17);
-        nVar.setTypeface(AndroidUtilities.bold());
-        addView(nVar, x5.t(165, -2, 17, 0, 17, 0, 12));
-        di.d dVar = new di.d(context, f6Var, false);
-        this.d = dVar;
-        dVar.setMinWidth(AndroidUtilities.dp(200.0f));
-        addView(dVar, x5.q(-2, 44, 17));
+    public q(ec ecVar, ec ecVar2) {
+        this.j = ecVar;
+        Paint paint = new Paint(1);
+        this.a = paint;
+        this.c = 1.0f;
+        this.i = ecVar2;
+        yi0 yi0Var = new yi0(R.raw.chat_audio_record_delete_3, AndroidUtilities.dp(28.0f), AndroidUtilities.dp(28.0f), false, null);
+        this.h = yi0Var;
+        yi0Var.o0 = true;
+        paint.setColor(-2406842);
+        yi0Var.Z = true;
+        yi0Var.Q(-2406842, "Cup Red");
+        yi0Var.Q(-2406842, "Box");
+        yi0Var.o();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        boolean z10 = this.g;
+        yi0 yi0Var = this.h;
+        if (z10) {
+            yi0Var.setAlpha((int) (this.b * 255.0f * this.c));
+        }
+        int i10 = (int) (this.b * 255.0f * this.c);
+        Paint paint = this.a;
+        paint.setAlpha(i10);
+        long currentTimeMillis = System.currentTimeMillis() - this.d;
+        if (this.e || this.g) {
+            float f7 = (currentTimeMillis / 600.0f) + this.b;
+            this.b = f7;
+            if (f7 >= 1.0f) {
+                this.b = 1.0f;
+                this.e = false;
+            }
+        } else {
+            float f10 = this.b - (currentTimeMillis / 600.0f);
+            this.b = f10;
+            if (f10 <= 0.0f) {
+                this.b = 0.0f;
+                this.e = true;
+            }
+        }
+        this.d = System.currentTimeMillis();
+        yi0Var.setBounds(getBounds());
+        if (this.g) {
+            yi0Var.draw(canvas);
+        }
+        if (!this.g || !yi0Var.u()) {
+            canvas.drawCircle(getBounds().centerX(), getBounds().centerY(), AndroidUtilities.dp(5.0f), paint);
+        }
+        this.j.invalidate();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        this.c = i10 / 255.0f;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

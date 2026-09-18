@@ -1,21 +1,53 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import android.text.TextPaint;
+import android.text.style.ClickableSpan;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_fragment;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class u01 extends org.telegram.ui.Cells.c9 {
-    public final /* synthetic */ a11 r;
+public final class u01 extends ClickableSpan {
+    public final /* synthetic */ TLRPC.TL_username a;
+    public final /* synthetic */ String b;
+    public final /* synthetic */ b11 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public u01(a11 a11Var, Context context, org.telegram.ui.ActionBar.f6 f6Var, boolean z10, boolean z11) {
-        super(18, context, f6Var, z10, z11);
-        this.r = a11Var;
+    public u01(b11 b11Var, TLRPC.TL_username tL_username, String str) {
+        this.c = b11Var;
+        this.a = tL_username;
+        this.b = str;
     }
 
-    @Override // org.telegram.ui.Cells.c9
-    public final int a(int i10) {
-        this.r.e.getClass();
-        return i10;
+    @Override // android.text.style.ClickableSpan
+    public final void onClick(View view) {
+        ProfileActivity profileActivity = this.c.e;
+        TLRPC.TL_username tL_username = this.a;
+        if (!tL_username.editable) {
+            if (profileActivity.i5 == this) {
+                return;
+            }
+            profileActivity.M4(this);
+            TL_fragment.TL_getCollectibleInfo tL_getCollectibleInfo = new TL_fragment.TL_getCollectibleInfo();
+            TL_fragment.TL_inputCollectibleUsername tL_inputCollectibleUsername = new TL_fragment.TL_inputCollectibleUsername();
+            tL_inputCollectibleUsername.username = tL_username.username;
+            tL_getCollectibleInfo.collectible = tL_inputCollectibleUsername;
+            profileActivity.getConnectionsManager().bindRequestToGuid(profileActivity.getConnectionsManager().sendRequest(tL_getCollectibleInfo, new dc0(18, this, tL_username)), profileActivity.getClassGuid());
+            return;
+        }
+        profileActivity.M4(null);
+        String str = profileActivity.getMessagesController().linkPrefix + "/" + this.b;
+        TLRPC.Chat chat = profileActivity.E2;
+        if (chat == null || !chat.noforwards) {
+            AndroidUtilities.addToClipboard(str);
+            profileActivity.M.j(56, 0L, null);
+        }
+    }
+
+    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        textPaint.setUnderlineText(false);
+        textPaint.setColor(textPaint.linkColor);
     }
 }

@@ -13,7 +13,7 @@ import e2.v;
 import e9.a1;
 import e9.g0;
 import e9.i0;
-import i2.g;
+import hg.k0;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
@@ -22,7 +22,7 @@ import w.f;
 import z3.l;
 import z3.m;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class a implements m {
     public final v a = new v();
@@ -90,12 +90,12 @@ public final class a implements m {
     }
 
     @Override // z3.m
-    public final int U() {
+    public final int A() {
         return 2;
     }
 
     @Override // z3.m
-    public final void e0(byte[] bArr, int i10, int i11, l lVar, h hVar) {
+    public final void B(byte[] bArr, int i10, int i11, l lVar, h hVar) {
         String v;
         int i12;
         v vVar = this.a;
@@ -148,7 +148,7 @@ public final class a implements m {
                     vVar.K(i13);
                     int j11 = vVar.j();
                     if (D4 > spannableStringBuilder.length()) {
-                        StringBuilder l4 = g.l(D4, "Truncating styl end (", ") to cueText.length() (");
+                        StringBuilder l4 = k0.l(D4, "Truncating styl end (", ") to cueText.length() (");
                         l4.append(spannableStringBuilder.length());
                         l4.append(").");
                         e2.a.n("Tx3gParser", l4.toString());
@@ -182,7 +182,7 @@ public final class a implements m {
     }
 
     @Override // z3.m
-    public final /* synthetic */ z3.d p(int i10, int i11, byte[] bArr) {
+    public final /* synthetic */ z3.d r(int i10, int i11, byte[] bArr) {
         return f.a(this, bArr, i11);
     }
 

@@ -1,11 +1,12 @@
 package ge;
 
-import ee.v;
+import ee.w;
+import hg.k0;
 import java.util.concurrent.Executor;
 import zd.a0;
 import zd.x0;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class d extends x0 implements Executor {
     public static final d c = new d();
@@ -13,18 +14,18 @@ public final class d extends x0 implements Executor {
 
     static {
         a0 a0Var = l.c;
-        int i10 = v.a;
+        int i10 = w.a;
         if (64 >= i10) {
             i10 = 64;
         }
         int j3 = ee.a.j(i10, 12, "kotlinx.coroutines.io.parallelism");
         a0Var.getClass();
         if (j3 < 1) {
-            throw new IllegalArgumentException(i2.g.i(j3, "Expected positive parallelism level, but got ").toString());
+            throw new IllegalArgumentException(k0.i(j3, "Expected positive parallelism level, but got ").toString());
         }
         if (j3 < k.d) {
             if (j3 < 1) {
-                throw new IllegalArgumentException(i2.g.i(j3, "Expected positive parallelism level, but got ").toString());
+                throw new IllegalArgumentException(k0.i(j3, "Expected positive parallelism level, but got ").toString());
             }
             a0Var = new ee.i(a0Var, j3);
         }

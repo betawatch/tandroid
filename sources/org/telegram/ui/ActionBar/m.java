@@ -6,9 +6,9 @@ import android.text.TextUtils;
 import android.widget.FrameLayout;
 import java.util.Iterator;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.pr;
+import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public abstract class m extends FrameLayout implements le.k {
     public final f6 a;
@@ -17,12 +17,12 @@ public abstract class m extends FrameLayout implements le.k {
 
     public m(Context context, f6 f6Var, com.google.firebase.messaging.m mVar) {
         super(context);
-        this.c = new le.l(this, pr.h, 350L);
+        this.c = new le.l(this, qr.h, 350L);
         this.a = f6Var;
         this.b = mVar;
     }
 
-    public final void a(CharSequence charSequence) {
+    public final void b(CharSequence charSequence) {
         boolean z10;
         CharSequence charSequence2;
         boolean isEmpty = TextUtils.isEmpty(charSequence);
@@ -57,19 +57,7 @@ public abstract class m extends FrameLayout implements le.k {
         lVar.i(lVar2, true);
     }
 
-    public final void b() {
-        Iterator it = this.c.iterator();
-        while (it.hasNext()) {
-            le.g gVar = (le.g) it.next();
-            l lVar = (l) gVar.a;
-            int i10 = j6.gl;
-            f6 f6Var = this.a;
-            lVar.setTextColor(j6.v0(i10, f6Var));
-            ((l) gVar.a).setLinkTextColor(j6.v0(i10, f6Var));
-        }
-    }
-
-    public void e(le.l lVar) {
+    public void c(le.l lVar) {
         Iterator it = this.c.iterator();
         while (it.hasNext()) {
             le.g gVar = (le.g) it.next();
@@ -84,11 +72,23 @@ public abstract class m extends FrameLayout implements le.k {
         }
     }
 
+    public final void d() {
+        Iterator it = this.c.iterator();
+        while (it.hasNext()) {
+            le.g gVar = (le.g) it.next();
+            l lVar = (l) gVar.a;
+            int i10 = j6.gl;
+            f6 f6Var = this.a;
+            lVar.setTextColor(j6.v0(i10, f6Var));
+            ((l) gVar.a).setLinkTextColor(j6.v0(i10, f6Var));
+        }
+    }
+
     public float getTotalVisibility() {
         return this.c.a.d.c.a;
     }
 
     @Override // le.k
-    public final /* synthetic */ void c() {
+    public final /* synthetic */ void a() {
     }
 }

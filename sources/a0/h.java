@@ -19,7 +19,7 @@ import s4.c0;
 import s4.o0;
 import s4.z0;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class h {
     public int a;
@@ -80,14 +80,14 @@ public final class h {
         if (hVar.a >= 100) {
             throw new b0("Protocol message had too many levels of nesting.  May be malicious.  Use CodedInputStream.setRecursionLimit() to increase the depth limit.");
         }
-        int e7 = hVar.e(A);
+        int e = hVar.e(A);
         Object a2 = b1Var.a();
         hVar.a++;
         b1Var.c(a2, this, mVar);
         b1Var.d(a2);
         hVar.a(0);
         hVar.a--;
-        hVar.d(e7);
+        hVar.d(e);
         return a2;
     }
 
@@ -486,7 +486,7 @@ public final class h {
                     i10 += i11;
                 }
             }
-        } else if (!recyclerView.Z()) {
+        } else if (!recyclerView.a0()) {
             int i13 = this.a;
             int i14 = this.b;
             z0 z0Var = recyclerView.t0;

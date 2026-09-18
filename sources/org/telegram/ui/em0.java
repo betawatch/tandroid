@@ -5,31 +5,31 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class em0 implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ pn0 b;
+    public final /* synthetic */ qn0 b;
 
-    public /* synthetic */ em0(pn0 pn0Var, int i10) {
+    public /* synthetic */ em0(qn0 qn0Var, int i10) {
         this.a = i10;
-        this.b = pn0Var;
+        this.b = qn0Var;
     }
 
     @Override // org.telegram.tgnet.RequestDelegate
     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                AndroidUtilities.runOnUIThread(new pf0(this.b, tL_error, tLObject, 10));
+                AndroidUtilities.runOnUIThread(new rf0(this.b, tL_error, tLObject, 10));
                 break;
             case 1:
-                AndroidUtilities.runOnUIThread(new ej0(10, this.b, tL_error));
+                AndroidUtilities.runOnUIThread(new pl0(4, this.b, tL_error));
                 break;
             case 2:
                 AndroidUtilities.runOnUIThread(new zl0(this.b, 5));
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new ej0(9, this.b, tLObject));
+                AndroidUtilities.runOnUIThread(new pl0(3, this.b, tLObject));
                 break;
         }
     }

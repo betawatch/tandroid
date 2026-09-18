@@ -1,15 +1,15 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class z11 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ d21 b;
+    public final /* synthetic */ c21 b;
     public final /* synthetic */ int c;
 
-    public /* synthetic */ z11(d21 d21Var, int i10, int i11) {
+    public /* synthetic */ z11(c21 c21Var, int i10, int i11) {
         this.a = i11;
-        this.b = d21Var;
+        this.b = c21Var;
         this.c = i10;
     }
 
@@ -17,18 +17,18 @@ public final /* synthetic */ class z11 implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                d21 d21Var = this.b;
-                org.telegram.ui.Components.h81 h81Var = d21Var.n;
-                c21 c21Var = d21Var.s;
+                c21 c21Var = this.b;
+                org.telegram.ui.Components.i81 i81Var = c21Var.n;
+                b21 b21Var = c21Var.s;
                 int i10 = this.c;
-                h81Var.d(i10, c21Var.i(i10));
+                i81Var.d(i10, b21Var.i(i10));
                 break;
             default:
-                d21 d21Var2 = this.b;
-                org.telegram.ui.Components.h81 h81Var2 = d21Var2.n;
-                c21 c21Var2 = d21Var2.s;
+                c21 c21Var2 = this.b;
+                org.telegram.ui.Components.i81 i81Var2 = c21Var2.n;
+                b21 b21Var2 = c21Var2.s;
                 int i11 = this.c;
-                h81Var2.d(i11, c21Var2.i(i11));
+                i81Var2.d(i11, b21Var2.i(i11));
                 break;
         }
     }

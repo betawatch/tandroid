@@ -12,7 +12,7 @@ import org.telegram.messenger.SvgHelper;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.WebFile;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class xi implements Utilities.CallbackReturn {
     public final /* synthetic */ int a;
@@ -29,16 +29,16 @@ public final /* synthetic */ class xi implements Utilities.CallbackReturn {
             case 0:
                 return Boolean.valueOf(gj.K((gj) this.b, (MessageObject) obj));
             case 1:
-                sh.f fVar = (sh.f) this.b;
+                rh.f fVar = (rh.f) this.b;
                 View view = (View) obj;
                 ImageReceiver imageReceiver = new ImageReceiver(view);
                 SvgHelper.SvgDrawable svgThumb = DocumentObject.getSvgThumb(R.raw.map_placeholder, org.telegram.ui.ActionBar.j6.Pb, (org.telegram.ui.ActionBar.j6.I.q() ? 3 : 6) * 0.12f);
                 svgThumb.setAspectCenter(true);
                 svgThumb.setColorKey(org.telegram.ui.ActionBar.j6.qe);
-                imageReceiver.setImage(ImageLocation.getForWebFile(WebFile.createWithGeoPoint(fVar.b.geo, 300, 168, 15, Math.min(2, (int) Math.ceil(AndroidUtilities.density)))), (String) null, (ImageLocation) null, (String) null, new dq(svgThumb), (Object) null, 0);
+                imageReceiver.setImage(ImageLocation.getForWebFile(WebFile.createWithGeoPoint(fVar.b.geo, 300, 168, 15, Math.min(2, (int) Math.ceil(AndroidUtilities.density)))), (String) null, (ImageLocation) null, (String) null, new eq(svgThumb), (Object) null, 0);
                 view.addOnAttachStateChangeListener(new org.telegram.ui.Cells.q8(imageReceiver, 1));
                 imageReceiver.setRoundRadius(AndroidUtilities.dp(14.0f));
-                return new fd(imageReceiver, view.getContext().getResources().getDrawable(R.drawable.map_pin).mutate());
+                return new cd(imageReceiver, view.getContext().getResources().getDrawable(R.drawable.map_pin).mutate());
             case 2:
                 int i10 = ((SparseIntArray) this.b).get(((Integer) obj).intValue(), -1);
                 if (i10 == -1) {
@@ -46,10 +46,10 @@ public final /* synthetic */ class xi implements Utilities.CallbackReturn {
                 }
                 return Boolean.valueOf(i10 == 1);
             default:
-                d61 d61Var = (d61) this.b;
+                f61 f61Var = (f61) this.b;
                 View view2 = (View) obj;
-                d61Var.getClass();
-                return view2.getParent() != d61Var ? Boolean.FALSE : Boolean.valueOf(!v51.K(d61Var.T(view2).f));
+                f61Var.getClass();
+                return view2.getParent() != f61Var ? Boolean.FALSE : Boolean.valueOf(!x51.K(f61Var.U(view2).f));
         }
     }
 }

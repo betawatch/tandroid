@@ -1,15 +1,62 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
+import android.graphics.Canvas;
+import android.os.SystemClock;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class kg0 extends ng0 {
-    public final /* synthetic */ lg0 e;
+public final class kg0 extends ml0 {
+    public final yf.y X2;
+    public long Y2;
+    public final /* synthetic */ qg0 Z2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public kg0(lg0 lg0Var, Context context) {
-        super(lg0Var.s, context);
-        this.e = lg0Var;
+    public kg0(qg0 qg0Var, Context context) {
+        super(context, null);
+        this.Z2 = qg0Var;
+        this.X2 = new yf.y(8);
+    }
+
+    @Override // org.telegram.ui.Components.ml0
+    public final boolean F0(float f7) {
+        return f7 >= ((float) (this.Z2.E + AndroidUtilities.statusBarHeight));
+    }
+
+    @Override // org.telegram.ui.Components.ml0, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        float f7;
+        qg0 qg0Var = this.Z2;
+        if (qg0Var.L) {
+            long elapsedRealtime = SystemClock.elapsedRealtime();
+            long abs = Math.abs(this.Y2 - elapsedRealtime);
+            if (abs > 17) {
+                abs = 16;
+            }
+            this.Y2 = elapsedRealtime;
+            qg0Var.J += (abs * qg0Var.K) / 1800.0f;
+            while (true) {
+                f7 = qg0Var.J;
+                float f10 = qg0Var.K * 2.0f;
+                if (f7 < f10) {
+                    break;
+                } else {
+                    qg0Var.J = f7 - f10;
+                }
+            }
+            qg0Var.I.setTranslate(f7, 0.0f);
+            qg0Var.H.setLocalMatrix(qg0Var.I);
+            g1();
+            invalidate();
+        }
+        super.dispatchDraw(canvas);
+        int measuredHeight = getMeasuredHeight() - AndroidUtilities.navigationBarHeight;
+        int measuredWidth = getMeasuredWidth();
+        int measuredHeight2 = getMeasuredHeight();
+        yf.y yVar = this.X2;
+        yVar.setBounds(0, measuredHeight, measuredWidth, measuredHeight2);
+        yVar.b(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.i5, this.p2));
+        yVar.draw(canvas);
     }
 }

@@ -9,31 +9,31 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class h9 extends FrameLayout {
     public final ImageView a;
-    public final org.telegram.ui.ActionBar.j5 b;
+    public final org.telegram.ui.ActionBar.k5 b;
     public final org.telegram.ui.ActionBar.f6 c;
     public boolean d;
 
     public h9(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
         super(context);
         this.c = f6Var;
-        org.telegram.ui.ActionBar.j5 j5Var = new org.telegram.ui.ActionBar.j5(context);
-        this.b = j5Var;
-        j5Var.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.j5, f6Var));
-        j5Var.setTextSize(16);
-        j5Var.setGravity(19);
-        addView(j5Var, w7.x5.d(-1, 48.0f, 16, 22.0f, 0.0f, 56.0f, 0.0f));
+        org.telegram.ui.ActionBar.k5 k5Var = new org.telegram.ui.ActionBar.k5(context);
+        this.b = k5Var;
+        k5Var.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.j5, f6Var));
+        k5Var.setTextSize(16);
+        k5Var.setGravity(19);
+        addView(k5Var, w7.x5.d(-1, 48.0f, 16, 22.0f, 0.0f, 56.0f, 0.0f));
         ImageView imageView = new ImageView(context);
         this.a = imageView;
         imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.C6, f6Var), PorterDuff.Mode.SRC_IN));
         addView(imageView, w7.x5.d(24, 24.0f, 8388629, 0.0f, 0.0f, 16.0f, 0.0f));
         int i10 = org.telegram.ui.ActionBar.j6.h5;
-        int i11 = org.telegram.ui.ActionBar.y5.a;
+        int i11 = org.telegram.ui.ActionBar.z5.a;
         int w02 = org.telegram.ui.ActionBar.j6.w0(null, i10, false);
-        setBackground(org.telegram.ui.ActionBar.y5.d(new float[0], w02, org.telegram.ui.ActionBar.y5.b(w02)));
+        setBackground(org.telegram.ui.ActionBar.z5.d(new float[0], w02, org.telegram.ui.ActionBar.z5.b(w02)));
     }
 
     @Override // android.view.ViewGroup, android.view.View

@@ -4,18 +4,18 @@ import android.content.Context;
 import androidx.lifecycle.k0;
 import java.util.List;
 import k1.a0;
-import k2.g0;
+import k2.u;
 import rd.l;
 import zd.c0;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class c {
     public final String a;
     public final l b;
     public final c0 c;
     public final Object d;
-    public volatile g0 e;
+    public volatile u e;
 
     public c(String name, l lVar, c0 c0Var) {
         kotlin.jvm.internal.i.e(name, "name");
@@ -25,14 +25,14 @@ public final class c {
         this.d = new Object();
     }
 
-    public final g0 a(Object obj, vd.g property) {
-        g0 g0Var;
+    public final u a(Object obj, vd.g property) {
+        u uVar;
         Context thisRef = (Context) obj;
         kotlin.jvm.internal.i.e(thisRef, "thisRef");
         kotlin.jvm.internal.i.e(property, "property");
-        g0 g0Var2 = this.e;
-        if (g0Var2 != null) {
-            return g0Var2;
+        u uVar2 = this.e;
+        if (uVar2 != null) {
+            return uVar2;
         }
         synchronized (this.d) {
             try {
@@ -44,14 +44,14 @@ public final class c {
                     c0 c0Var = this.c;
                     b bVar = new b(applicationContext, this);
                     kotlin.jvm.internal.i.e(migrations, "migrations");
-                    this.e = new g0(new a0(new k0(bVar, 2), hd.h.b(new bb.j(migrations, null, 1)), new ob.a(12), c0Var), 3);
+                    this.e = new u(new a0(new k0(bVar, 2), hd.h.b(new bb.i(migrations, null, 1)), new na.d(12), c0Var), 6);
                 }
-                g0Var = this.e;
-                kotlin.jvm.internal.i.b(g0Var);
+                uVar = this.e;
+                kotlin.jvm.internal.i.b(uVar);
             } catch (Throwable th2) {
                 throw th2;
             }
         }
-        return g0Var;
+        return uVar;
     }
 }

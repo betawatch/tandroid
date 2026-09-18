@@ -1,38 +1,31 @@
 package qg;
 
+import android.content.Context;
 import android.graphics.Bitmap;
-import java.util.ArrayList;
-import org.telegram.messenger.NotificationCenter;
+import org.telegram.ui.cu0;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class e0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ArrayList b;
+public final class e0 extends pg.c1 {
+    public final /* synthetic */ Bitmap E;
+    public final /* synthetic */ cu0 F;
 
-    public /* synthetic */ e0(ArrayList arrayList, int i10) {
-        this.a = i10;
-        this.b = arrayList;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public e0(cu0 cu0Var, Context context, pg.q0 q0Var, Bitmap bitmap, Bitmap bitmap2) {
+        super(context, q0Var, bitmap, null, null);
+        this.F = cu0Var;
+        this.E = bitmap2;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                j0.h = this.b;
-                j0.i = false;
-                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.customTypefacesLoaded, new Object[0]);
-                break;
-            default:
-                ArrayList arrayList = this.b;
-                int size = arrayList.size();
-                int i10 = 0;
-                while (i10 < size) {
-                    Object obj = arrayList.get(i10);
-                    i10++;
-                    ((Bitmap) obj).recycle();
-                }
-                break;
+    @Override // pg.c1
+    public final void g(pg.m mVar) {
+        int indexOf = pg.m.a.indexOf(mVar);
+        int i10 = indexOf + 1;
+        if (i10 <= 1 || this.E != null) {
+            indexOf = i10;
         }
+        cu0 cu0Var = this.F;
+        cu0Var.t1.b(indexOf);
+        cu0Var.b(mVar);
     }
 }

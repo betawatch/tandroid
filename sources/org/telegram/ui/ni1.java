@@ -1,23 +1,27 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import org.webrtc.RendererCommon;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class ni1 extends org.telegram.ui.Components.voip.b1 {
-    public final /* synthetic */ ui1 V;
+public final class ni1 implements RendererCommon.RendererEvents {
+    public final /* synthetic */ ti1 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ni1(ui1 ui1Var, Context context, float f7, float f10) {
-        super(context, f7, f10);
-        this.V = ui1Var;
+    public ni1(ti1 ti1Var) {
+        this.a = ti1Var;
     }
 
-    @Override // org.telegram.ui.Components.voip.b1
-    public final int[] getFloatingViewLocation() {
-        int[] iArr = new int[2];
-        ui1 ui1Var = this.V;
-        ui1Var.Y.getLocationOnScreen(iArr);
-        return new int[]{iArr[0], iArr[1], ui1Var.Y.getMeasuredWidth()};
+    @Override // org.webrtc.RendererCommon.RendererEvents
+    public final void onFirstFrameRendered() {
+        ti1 ti1Var = this.a;
+        com.google.android.gms.internal.cast.p pVar = ti1Var.l1;
+        if (pVar != null) {
+            pVar.run();
+            ti1Var.l1 = null;
+        }
+    }
+
+    @Override // org.webrtc.RendererCommon.RendererEvents
+    public final void onFrameResolutionChanged(int i10, int i11, int i12) {
     }
 }

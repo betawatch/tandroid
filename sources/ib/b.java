@@ -5,7 +5,7 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import v7.m8;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class b extends m8 {
     public final Method a = Class.class.getMethod("isRecord", null);
@@ -23,8 +23,8 @@ public final class b extends m8 {
     public final Method a(Class cls, Field field) {
         try {
             return cls.getMethod(field.getName(), null);
-        } catch (ReflectiveOperationException e7) {
-            throw new RuntimeException("Unexpected ReflectiveOperationException occurred (Gson 2.11.0). To support Java records, reflection is utilized to read out information about records. All these invocations happens after it is established that records exist in the JVM. This exception is unexpected behavior.", e7);
+        } catch (ReflectiveOperationException e) {
+            throw new RuntimeException("Unexpected ReflectiveOperationException occurred (Gson 2.11.0). To support Java records, reflection is utilized to read out information about records. All these invocations happens after it is established that records exist in the JVM. This exception is unexpected behavior.", e);
         }
     }
 
@@ -37,8 +37,8 @@ public final class b extends m8 {
                 clsArr[i10] = (Class) this.d.invoke(objArr[i10], null);
             }
             return cls.getDeclaredConstructor(clsArr);
-        } catch (ReflectiveOperationException e7) {
-            throw new RuntimeException("Unexpected ReflectiveOperationException occurred (Gson 2.11.0). To support Java records, reflection is utilized to read out information about records. All these invocations happens after it is established that records exist in the JVM. This exception is unexpected behavior.", e7);
+        } catch (ReflectiveOperationException e) {
+            throw new RuntimeException("Unexpected ReflectiveOperationException occurred (Gson 2.11.0). To support Java records, reflection is utilized to read out information about records. All these invocations happens after it is established that records exist in the JVM. This exception is unexpected behavior.", e);
         }
     }
 
@@ -51,8 +51,8 @@ public final class b extends m8 {
                 strArr[i10] = (String) this.c.invoke(objArr[i10], null);
             }
             return strArr;
-        } catch (ReflectiveOperationException e7) {
-            throw new RuntimeException("Unexpected ReflectiveOperationException occurred (Gson 2.11.0). To support Java records, reflection is utilized to read out information about records. All these invocations happens after it is established that records exist in the JVM. This exception is unexpected behavior.", e7);
+        } catch (ReflectiveOperationException e) {
+            throw new RuntimeException("Unexpected ReflectiveOperationException occurred (Gson 2.11.0). To support Java records, reflection is utilized to read out information about records. All these invocations happens after it is established that records exist in the JVM. This exception is unexpected behavior.", e);
         }
     }
 
@@ -60,8 +60,8 @@ public final class b extends m8 {
     public final boolean d(Class cls) {
         try {
             return ((Boolean) this.a.invoke(cls, null)).booleanValue();
-        } catch (ReflectiveOperationException e7) {
-            throw new RuntimeException("Unexpected ReflectiveOperationException occurred (Gson 2.11.0). To support Java records, reflection is utilized to read out information about records. All these invocations happens after it is established that records exist in the JVM. This exception is unexpected behavior.", e7);
+        } catch (ReflectiveOperationException e) {
+            throw new RuntimeException("Unexpected ReflectiveOperationException occurred (Gson 2.11.0). To support Java records, reflection is utilized to read out information about records. All these invocations happens after it is established that records exist in the JVM. This exception is unexpected behavior.", e);
         }
     }
 }

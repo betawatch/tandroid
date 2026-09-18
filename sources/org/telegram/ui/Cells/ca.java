@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class ca extends View {
     public final Paint a;
@@ -309,7 +309,7 @@ public final class ca extends View {
                 actionMode.invalidateContentRect();
                 ActionMode actionMode2 = daVar.Y;
                 if (actionMode2 != null) {
-                    ((org.telegram.ui.ActionBar.i4) actionMode2).e();
+                    ((org.telegram.ui.ActionBar.j4) actionMode2).e();
                 }
             }
             if (daVar.k) {

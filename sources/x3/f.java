@@ -5,7 +5,7 @@ import c3.p;
 import e2.v;
 import java.io.EOFException;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class f {
     public int a;
@@ -27,10 +27,10 @@ public final class f {
         v vVar = this.g;
         vVar.G(27);
         try {
-            z11 = pVar.j(vVar.a, 0, 27, z10);
-        } catch (EOFException e7) {
+            z11 = pVar.h(vVar.a, 0, 27, z10);
+        } catch (EOFException e) {
             if (!z10) {
-                throw e7;
+                throw e;
             }
             z11 = false;
         }
@@ -46,10 +46,10 @@ public final class f {
                 this.d = x10 + 27;
                 vVar.G(x10);
                 try {
-                    z12 = pVar.j(vVar.a, 0, this.c, z10);
-                } catch (EOFException e10) {
+                    z12 = pVar.h(vVar.a, 0, this.c, z10);
+                } catch (EOFException e7) {
                     if (!z10) {
-                        throw e10;
+                        throw e7;
                     }
                     z12 = false;
                 }
@@ -70,7 +70,7 @@ public final class f {
 
     public final boolean b(p pVar, long j3) {
         boolean z10;
-        e2.d.b(pVar.getPosition() == pVar.k());
+        e2.d.b(pVar.getPosition() == pVar.i());
         v vVar = this.g;
         vVar.G(4);
         while (true) {
@@ -78,7 +78,7 @@ public final class f {
                 break;
             }
             try {
-                z10 = pVar.j(vVar.a, 0, 4, true);
+                z10 = pVar.h(vVar.a, 0, 4, true);
             } catch (EOFException unused) {
                 z10 = false;
             }
@@ -87,10 +87,10 @@ public final class f {
             }
             vVar.J(0);
             if (vVar.z() == 1332176723) {
-                pVar.q();
+                pVar.p();
                 return true;
             }
-            pVar.r(1);
+            pVar.q(1);
         }
         do {
             if (j3 != -1 && pVar.getPosition() >= j3) {

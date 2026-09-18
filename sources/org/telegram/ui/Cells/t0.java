@@ -2,40 +2,40 @@ package org.telegram.ui.Cells;
 
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public interface t0 {
-    void C1(w0 w0Var, TLRPC.TL_premiumGiftOption tL_premiumGiftOption, String str);
+    void J1(w0 w0Var, TLRPC.TL_premiumGiftOption tL_premiumGiftOption, String str);
 
-    void K(w0 w0Var, int i10);
+    org.telegram.ui.ActionBar.o2 O0();
 
-    org.telegram.ui.ActionBar.n2 K0();
+    void Q0(TLRPC.TL_chatInviteExported tL_chatInviteExported);
 
-    void M0(TLRPC.TL_chatInviteExported tL_chatInviteExported);
+    void U(w0 w0Var, int i10);
 
-    void X(w0 w0Var);
-
-    void Z1(w0 w0Var, String str);
+    void Z(w0 w0Var);
 
     long a();
-
-    void b0(w0 w0Var, int i10, int i11);
-
-    void b1(w0 w0Var, TLRPC.Document document, TLRPC.VideoSize videoSize);
 
     long d();
 
     boolean f();
 
-    void i0(w0 w0Var);
+    void g0(w0 w0Var, int i10, int i11);
 
-    boolean j2(w0 w0Var, float f7, float f10);
+    void g1(w0 w0Var, TLRPC.Document document, TLRPC.VideoSize videoSize);
 
-    void l2(w0 w0Var, TLRPC.ReactionCount reactionCount, boolean z10, float f7, float f10);
+    void h2(w0 w0Var, String str);
 
-    void q0(w0 w0Var);
+    void k0(w0 w0Var);
 
-    void r1(long j3);
+    void r0(w0 w0Var);
 
-    void s1(w0 w0Var);
+    boolean r2(w0 w0Var, float f7, float f10);
+
+    void u2(w0 w0Var, TLRPC.ReactionCount reactionCount, boolean z10, float f7, float f10);
+
+    void x1(long j3);
+
+    void y1(w0 w0Var);
 }

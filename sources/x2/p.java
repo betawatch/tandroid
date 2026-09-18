@@ -20,27 +20,27 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.RandomAccess;
 import org.telegram.messenger.TranslateController;
-import org.telegram.ui.f11;
+import org.telegram.ui.lb1;
 import u2.o1;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class p extends u {
-    public static final y0 l = new w(new f11(13));
+    public static final y0 l = new w(new lb1(11));
     public final Object d;
     public final Context e;
-    public final rb.a f;
+    public final qb.b f;
     public i g;
     public Thread h;
     public k i;
     public b2.e j;
     public Boolean k;
 
-    public p(Context context, rb.a aVar) {
+    public p(Context context, qb.b bVar) {
         i iVar = i.x0;
         this.d = new Object();
         this.e = context != null ? context.getApplicationContext() : null;
-        this.f = aVar;
+        this.f = bVar;
         if (iVar != null) {
             this.g = iVar;
         } else {

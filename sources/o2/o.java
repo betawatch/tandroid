@@ -4,11 +4,12 @@ import b2.r0;
 import c3.g0;
 import c3.h0;
 import e2.v;
+import hg.k0;
 import j$.util.Objects;
 import java.io.EOFException;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class o implements h0 {
     public static final b2.s f;
@@ -34,7 +35,7 @@ public final class o implements h0 {
             this.b = f;
         } else {
             if (i10 != 3) {
-                throw new IllegalArgumentException(i2.g.i(i10, "Unknown metadataType: "));
+                throw new IllegalArgumentException(k0.i(i10, "Unknown metadataType: "));
             }
             this.b = g;
         }

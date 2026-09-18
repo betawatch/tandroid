@@ -1,6 +1,6 @@
 package z7;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class we {
     public final String a;
@@ -15,17 +15,17 @@ public final class we {
     public final Integer j;
     public final Integer k;
 
-    public /* synthetic */ we(v7.c8 c8Var) {
-        this.a = c8Var.a;
-        this.b = c8Var.b;
-        this.c = c8Var.c;
-        this.d = c8Var.d;
-        this.e = (m) c8Var.k;
-        this.f = c8Var.e;
-        this.g = (Boolean) c8Var.f;
-        this.h = (Boolean) c8Var.g;
-        this.i = (Boolean) c8Var.h;
-        this.j = c8Var.i;
-        this.k = (Integer) c8Var.j;
+    public /* synthetic */ we(v7.d8 d8Var) {
+        this.a = d8Var.a;
+        this.b = d8Var.b;
+        this.c = d8Var.c;
+        this.d = d8Var.d;
+        this.e = (m) d8Var.k;
+        this.f = d8Var.e;
+        this.g = (Boolean) d8Var.f;
+        this.h = (Boolean) d8Var.g;
+        this.i = (Boolean) d8Var.h;
+        this.j = d8Var.i;
+        this.k = (Integer) d8Var.j;
     }
 }

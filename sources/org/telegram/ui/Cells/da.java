@@ -27,17 +27,17 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
-import org.telegram.ui.Components.ll0;
-import org.telegram.ui.Components.tq;
+import org.telegram.ui.Components.ml0;
+import org.telegram.ui.Components.uq;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public abstract class da {
     public final ActionMode.Callback A;
     public final Rect B;
     public ca C;
     public w7.h0 D;
-    public ll0 E;
+    public ml0 E;
     public ViewGroup F;
     public Magnifier G;
     public float H;
@@ -86,12 +86,12 @@ public abstract class da {
     public final int m;
     public ValueAnimator m0;
     public final float n;
-    public org.telegram.ui.ActionBar.n1 n0;
+    public org.telegram.ui.ActionBar.o1 n0;
     public final Paint o;
     public ActionBarPopupWindow$ActionBarPopupWindowLayout o0;
     public final Paint p;
     public TextView p0;
-    public final tq q;
+    public final uq q;
     public Rect q0;
     public final Path r;
     public final g r0;
@@ -113,10 +113,10 @@ public abstract class da {
         Paint paint = new Paint(1);
         this.o = paint;
         this.p = new Paint(1);
-        tq tqVar = new tq();
-        this.q = tqVar;
+        uq uqVar = new uq();
+        this.q = uqVar;
         this.r = new Path();
-        new u9().a = tqVar;
+        new u9().a = uqVar;
         this.u = -1;
         this.v = -1;
         n9 n9Var = new n9(this);
@@ -143,7 +143,7 @@ public abstract class da {
         float dp = AndroidUtilities.dp(6.0f);
         this.n = dp;
         paint.setPathEffect(new CornerPathEffect(dp));
-        tqVar.d = 1.0f;
+        uqVar.d = 1.0f;
     }
 
     public static void a(da daVar, int i10) {
@@ -164,7 +164,7 @@ public abstract class da {
         int[] m10 = daVar.m();
         int lineTop = (int) (((((layout.getLineTop(lineForOffset) + daVar.b) + m10[1]) - lineBottom) - AndroidUtilities.dp(8.0f)) + t9Var.c);
         Object obj = daVar.W;
-        if (obj instanceof org.telegram.ui.u2) {
+        if (obj instanceof org.telegram.ui.t2) {
             i11 = m10[0];
             lineRight = ((View) obj).getMeasuredWidth() + i11;
         } else {
@@ -371,8 +371,8 @@ public abstract class da {
         return false;
     }
 
-    public final void R(bi.f3 f3Var) {
-        this.D = f3Var;
+    public final void R(ai.s3 s3Var) {
+        this.D = s3Var;
     }
 
     public final void S() {
@@ -380,8 +380,8 @@ public abstract class da {
     }
 
     public final void T(ViewGroup viewGroup) {
-        if (viewGroup instanceof ll0) {
-            this.E = (ll0) viewGroup;
+        if (viewGroup instanceof ml0) {
+            this.E = (ml0) viewGroup;
         }
         this.F = viewGroup;
     }
@@ -404,9 +404,9 @@ public abstract class da {
             if (!this.i && y() && d()) {
                 if (!this.P) {
                     if (this.Y == null) {
-                        org.telegram.ui.ActionBar.i4 i4Var = new org.telegram.ui.ActionBar.i4(this.C.getContext(), m4.t0.d(callback), this.C, new org.telegram.ui.ActionBar.x4(this.C.getContext(), this.C, 1, r(), null));
-                        this.Y = i4Var;
-                        callback.onCreateActionMode(i4Var, i4Var.c);
+                        org.telegram.ui.ActionBar.j4 j4Var = new org.telegram.ui.ActionBar.j4(this.C.getContext(), m4.u0.e(callback), this.C, new org.telegram.ui.ActionBar.y4(this.C.getContext(), this.C, 1, r(), null));
+                        this.Y = j4Var;
+                        callback.onCreateActionMode(j4Var, j4Var.c);
                     }
                     ActionMode actionMode = this.Y;
                     callback.onPrepareActionMode(actionMode, actionMode.getMenu());
@@ -436,10 +436,10 @@ public abstract class da {
                 this.o0.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.Cells.i9
                     @Override // android.view.View.OnTouchListener
                     public final boolean onTouch(View view, MotionEvent motionEvent) {
-                        org.telegram.ui.ActionBar.n1 n1Var;
+                        org.telegram.ui.ActionBar.o1 o1Var;
                         da daVar = da.this;
                         daVar.getClass();
-                        if (motionEvent.getActionMasked() != 0 || (n1Var = daVar.n0) == null || !n1Var.isShowing()) {
+                        if (motionEvent.getActionMasked() != 0 || (o1Var = daVar.n0) == null || !o1Var.isShowing()) {
                             return false;
                         }
                         view.getHitRect(daVar.q0);
@@ -487,13 +487,13 @@ public abstract class da {
                     }
                 });
                 this.o0.addView(this.p0, w7.x5.c(48.0f, -2));
-                boolean z10 = this instanceof ji.i3;
+                boolean z10 = this instanceof ii.j3;
                 if (z10) {
                     TextView textView3 = new TextView(this.C.getContext());
                     textView3.setBackgroundDrawable(org.telegram.ui.ActionBar.j6.f0(org.telegram.ui.ActionBar.j6.v0(i12, this.h0), 2, -1));
                     textView3.setGravity(16);
                     textView3.setPadding(AndroidUtilities.dp(20.0f), 0, AndroidUtilities.dp(20.0f), 0);
-                    com.google.android.gms.internal.vision.e2.m(15.0f, 1, textView3);
+                    com.google.android.gms.internal.vision.e2.l(15.0f, 1, textView3);
                     textView3.setText(this.C.getContext().getString(android.R.string.cut));
                     textView3.setTextColor(org.telegram.ui.ActionBar.j6.v0(i13, this.h0));
                     final int i15 = 1;
@@ -530,7 +530,7 @@ public abstract class da {
                     textView4.setBackgroundDrawable(org.telegram.ui.ActionBar.j6.f0(org.telegram.ui.ActionBar.j6.v0(i12, this.h0), 2, -1));
                     textView4.setGravity(16);
                     textView4.setPadding(AndroidUtilities.dp(20.0f), 0, AndroidUtilities.dp(20.0f), 0);
-                    com.google.android.gms.internal.vision.e2.m(15.0f, 1, textView4);
+                    com.google.android.gms.internal.vision.e2.l(15.0f, 1, textView4);
                     textView4.setText(this.C.getContext().getString(android.R.string.paste));
                     textView4.setTextColor(org.telegram.ui.ActionBar.j6.v0(i13, this.h0));
                     final int i16 = 2;
@@ -562,10 +562,10 @@ public abstract class da {
                     });
                     this.o0.addView(textView4, w7.x5.c(48.0f, -2));
                 }
-                org.telegram.ui.ActionBar.n1 n1Var = new org.telegram.ui.ActionBar.n1(this.o0, -2, -2);
-                this.n0 = n1Var;
-                n1Var.b = false;
-                n1Var.setAnimationStyle(R.style.PopupContextAnimation);
+                org.telegram.ui.ActionBar.o1 o1Var = new org.telegram.ui.ActionBar.o1(this.o0, -2, -2);
+                this.n0 = o1Var;
+                o1Var.b = false;
+                o1Var.setAnimationStyle(R.style.PopupContextAnimation);
                 this.n0.setOutsideTouchable(true);
                 ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout2 = this.o0;
                 if (actionBarPopupWindow$ActionBarPopupWindowLayout2 != null) {
@@ -675,7 +675,7 @@ public abstract class da {
         float f10;
         float f11;
         int i13;
-        tq tqVar;
+        uq uqVar;
         float f12;
         x9 x9Var = this.t0;
         x9Var.reset();
@@ -692,23 +692,23 @@ public abstract class da {
         int i14 = 0;
         while (true) {
             i13 = x9Var.c;
-            tqVar = this.q;
+            uqVar = this.q;
             f12 = this.n;
             if (i14 >= i13) {
                 break;
             }
             RectF rectF = (RectF) x9Var.b.get(i14);
             rectF.set((int) (Math.max(f7, rectF.left) - (z10 ? f12 / 2.0f : 0.0f)), (int) com.google.android.gms.internal.vision.e2.z(rectF.top, f11, f10, f11), (int) (Math.max(f7, rectF.right) + (z11 ? f12 / 2.0f : 0.0f)), (int) com.google.android.gms.internal.vision.e2.z(rectF.bottom, f11, f10, f11));
-            tqVar.addRect(rectF, Path.Direction.CW);
+            uqVar.addRect(rectF, Path.Direction.CW);
             i14++;
         }
         if (i13 != 0 || z11) {
             return;
         }
         try {
-            tqVar.addRect(((int) layout.getPrimaryHorizontal(i11)) - (f12 / 2.0f), layout.getLineTop(i10), (f12 / 4.0f) + ((int) layout.getPrimaryHorizontal(i12)), layout.getLineBottom(i10), Path.Direction.CW);
-        } catch (Exception e7) {
-            FileLog.e(e7);
+            uqVar.addRect(((int) layout.getPrimaryHorizontal(i11)) - (f12 / 2.0f), layout.getLineTop(i10), (f12 / 4.0f) + ((int) layout.getPrimaryHorizontal(i12)), layout.getLineBottom(i10), Path.Direction.CW);
+        } catch (Exception e) {
+            FileLog.e(e);
         }
     }
 
@@ -729,14 +729,14 @@ public abstract class da {
         da daVar;
         int i17;
         float lineRight;
-        tq tqVar;
+        uq uqVar;
         if (layout == null || layout.getText() == null) {
             return;
         }
         int clamp = Utilities.clamp(i10, layout.getText().length(), 0);
         int clamp2 = Utilities.clamp(i11, layout.getText().length(), 0);
-        tq tqVar2 = this.q;
-        tqVar2.reset();
+        uq uqVar2 = this.q;
+        uqVar2.reset();
         Path path2 = this.r;
         path2.reset();
         float f11 = this.n;
@@ -780,7 +780,7 @@ public abstract class da {
                     if (rect != null) {
                         RectF rectF = AndroidUtilities.rectTmp;
                         rectF.set(rect);
-                        tqVar2.addRect(rectF, Path.Direction.CW);
+                        uqVar2.addRect(rectF, Path.Direction.CW);
                     }
                     i13 = lineForOffset + 1;
                     while (i13 < lineForOffset2) {
@@ -790,7 +790,7 @@ public abstract class da {
                         int max2 = Math.max(lineLeft, lineRight2);
                         float max3 = Math.max(f7, min2);
                         float f13 = i18;
-                        tqVar2.addRect(max3 - f13, layout.getLineTop(i13), Math.max(f7, max2) + f13, layout.getLineBottom(i13) + 1, Path.Direction.CW);
+                        uqVar2.addRect(max3 - f13, layout.getLineTop(i13), Math.max(f7, max2) + f13, layout.getLineBottom(i13) + 1, Path.Direction.CW);
                         i13++;
                         lineForOffset2 = lineForOffset2;
                         i18 = i18;
@@ -846,13 +846,13 @@ public abstract class da {
             if (i22 >= 26) {
                 canvas.clipOutRect(rect2);
             }
-            tqVar = tqVar2;
+            uqVar = uqVar2;
         } else {
             if (!z10 || layout.isRtlCharAt(i16)) {
-                tqVar = tqVar2;
+                uqVar = uqVar2;
             } else {
                 Rect rect3 = AndroidUtilities.rectTmp2;
-                tqVar = tqVar2;
+                uqVar = uqVar2;
                 rect3.set((int) primaryHorizontal2, (int) (lineBottom - f10), (int) Math.min(primaryHorizontal2 + f10, layout.getLineRight(i15)), (int) lineBottom);
                 RectF rectF3 = AndroidUtilities.rectTmp;
                 rectF3.set(rect3);
@@ -873,8 +873,8 @@ public abstract class da {
                 }
             }
         }
-        tqVar.a();
-        canvas.drawPath(tqVar, daVar.o);
+        uqVar.a();
+        canvas.drawPath(uqVar, daVar.o);
         if (z12) {
             canvas.restore();
             canvas.drawPath(path, daVar.p);
@@ -964,9 +964,9 @@ public abstract class da {
             actionMode.finish();
             this.Y = null;
         }
-        org.telegram.ui.ActionBar.n1 n1Var = this.n0;
-        if (n1Var != null) {
-            n1Var.d(true);
+        org.telegram.ui.ActionBar.o1 o1Var = this.n0;
+        if (o1Var != null) {
+            o1Var.d(true);
         }
     }
 

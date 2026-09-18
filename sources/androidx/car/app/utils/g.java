@@ -1,31 +1,73 @@
 package androidx.car.app.utils;
 
-import android.graphics.Rect;
+import a3.k0;
+import ai.i5;
+import ai.r5;
+import android.os.RemoteException;
+import android.util.Log;
+import androidx.car.app.IOnDoneCallback;
+import androidx.car.app.j;
+import androidx.car.app.k;
+import androidx.lifecycle.o;
+import j$.util.DesugarCollections;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class g implements c {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ RemoteUtils$SurfaceCallbackStub b;
-    public final /* synthetic */ Rect c;
+public abstract class g {
+    public static IOnDoneCallback a() {
+        final k kVar = null;
+        return new IOnDoneCallback.Stub(kVar) { // from class: androidx.car.app.utils.RemoteUtils$1
+            final /* synthetic */ k val$callback;
 
-    public /* synthetic */ g(RemoteUtils$SurfaceCallbackStub remoteUtils$SurfaceCallbackStub, Rect rect, int i10) {
-        this.a = i10;
-        this.b = remoteUtils$SurfaceCallbackStub;
-        this.c = rect;
+            @Override // androidx.car.app.IOnDoneCallback
+            public void onFailure(w.b bVar) {
+                throw null;
+            }
+
+            @Override // androidx.car.app.IOnDoneCallback
+            public void onSuccess(w.b bVar) {
+                throw null;
+            }
+        };
     }
 
-    @Override // androidx.car.app.utils.c
-    public final Object a() {
-        Object lambda$onVisibleAreaChanged$1;
-        Object lambda$onStableAreaChanged$2;
-        switch (this.a) {
-            case 0:
-                lambda$onVisibleAreaChanged$1 = this.b.lambda$onVisibleAreaChanged$1(this.c);
-                return lambda$onVisibleAreaChanged$1;
-            default:
-                lambda$onStableAreaChanged$2 = this.b.lambda$onStableAreaChanged$2(this.c);
-                return lambda$onStableAreaChanged$2;
+    public static void b(IOnDoneCallback iOnDoneCallback, String str, a aVar) {
+        h.a(new k0(iOnDoneCallback, str, aVar, 10));
+    }
+
+    public static void c(o oVar, IOnDoneCallback iOnDoneCallback, String str, a aVar) {
+        h.a(new i5(oVar, iOnDoneCallback, str, aVar, 4));
+    }
+
+    public static void d(String str, b bVar) {
+        try {
+            e(str, bVar);
+        } catch (RemoteException e) {
+            Log.e("CarApp.Dispatch", "Host unresponsive when dispatching call " + str, e);
         }
+    }
+
+    public static void e(String str, b bVar) {
+        try {
+            if (Log.isLoggable("CarApp", 3)) {
+                Log.d("CarApp", "Dispatching call " + str + " to host");
+            }
+            bVar.call();
+        } catch (SecurityException e) {
+            throw e;
+        } catch (RuntimeException e7) {
+            throw new j(a4.a.p("Remote ", str, " call failed"), e7);
+        }
+    }
+
+    public static void f(IOnDoneCallback iOnDoneCallback, String str, Exception exc) {
+        d(str.concat(" onFailure"), new r5(iOnDoneCallback, exc, str, 3));
+    }
+
+    public static List g(List list) {
+        return list == null ? Collections.EMPTY_LIST : DesugarCollections.unmodifiableList(new ArrayList(list));
     }
 }

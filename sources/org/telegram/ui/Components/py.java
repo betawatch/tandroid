@@ -16,10 +16,10 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class py extends kl0 {
-    public zu E;
+public final class py extends ll0 {
+    public ny E;
     public boolean F;
     public int G;
     public int H;
@@ -48,7 +48,7 @@ public final class py extends kl0 {
         this.e = z10 ? null : new ry(kzVar, context);
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.ll0
     public final boolean D(s4.c1 c1Var) {
         return c1Var.f == 0;
     }
@@ -132,7 +132,7 @@ public final class py extends kl0 {
         }
         if (z11 && !TextUtils.isEmpty(str) && TextUtils.isEmpty(str2)) {
             kzVar.i0.h1(0, 0);
-            kzVar.H(2);
+            kzVar.F(2);
         }
     }
 
@@ -153,8 +153,8 @@ public final class py extends kl0 {
         }
         int i11 = kzVar.c1;
         HashMap hashMap = kzVar.l0;
-        nw nwVar = kzVar.h0;
-        qw qwVar = kzVar.o0;
+        mw mwVar = kzVar.h0;
+        pw pwVar = kzVar.o0;
         int i12 = kzVar.c1;
         TLObject userOrChat = MessagesController.getInstance(i11).getUserOrChat(MessagesController.getInstance(i12).gifSearchBot);
         boolean z13 = userOrChat instanceof TLRPC.User;
@@ -165,22 +165,22 @@ public final class py extends kl0 {
                     this.F = true;
                     TLRPC.TL_contacts_resolveUsername tL_contacts_resolveUsername = new TLRPC.TL_contacts_resolveUsername();
                     tL_contacts_resolveUsername.username = MessagesController.getInstance(i12).gifSearchBot;
-                    ConnectionsManager.getInstance(i12).sendRequest(tL_contacts_resolveUsername, new y1(this, 5));
+                    ConnectionsManager.getInstance(i12).sendRequest(tL_contacts_resolveUsername, new x1(this, 5));
                 }
                 if (z14) {
                     return;
                 }
-                qwVar.e(true);
+                pwVar.e(true);
                 return;
             }
             return;
         }
         if (!z14 && TextUtils.isEmpty(str2)) {
-            qwVar.e(true);
+            pwVar.e(true);
         }
         this.n = (TLRPC.User) userOrChat;
         final String j3 = com.google.android.gms.internal.vision.e2.j("gif_search_", str, "_", str2);
-        RequestDelegate requestDelegate = new RequestDelegate() { // from class: org.telegram.ui.Components.ny
+        RequestDelegate requestDelegate = new RequestDelegate() { // from class: org.telegram.ui.Components.my
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(final TLObject tLObject, TLRPC.TL_error tL_error) {
                 final py pyVar = py.this;
@@ -201,12 +201,12 @@ public final class py extends kl0 {
         if (!z12 && !z14 && z11 && TextUtils.isEmpty(str2)) {
             this.x.clear();
             this.y.clear();
-            if (nwVar.getAdapter() != this) {
-                nwVar.setAdapter(this);
+            if (mwVar.getAdapter() != this) {
+                mwVar.setAdapter(this);
             }
             l();
             kzVar.i0.h1(0, 0);
-            kzVar.H(2);
+            kzVar.F(2);
         }
         if (z12 && hashMap.containsKey(j3)) {
             E(str, str2, z10, z11, true, j3, (TLObject) hashMap.get(j3));
@@ -248,9 +248,9 @@ public final class py extends kl0 {
         if (ryVar != null) {
             ryVar.a(false);
         }
-        zu zuVar = this.E;
-        if (zuVar != null) {
-            AndroidUtilities.cancelRunOnUIThread(zuVar);
+        ny nyVar = this.E;
+        if (nyVar != null) {
+            AndroidUtilities.cancelRunOnUIThread(nyVar);
         }
         if (!TextUtils.isEmpty(str)) {
             String lowerCase = str.toLowerCase();
@@ -258,9 +258,9 @@ public final class py extends kl0 {
             if (TextUtils.isEmpty(lowerCase)) {
                 return;
             }
-            zu zuVar2 = new zu(6, this, str);
-            this.E = zuVar2;
-            AndroidUtilities.runOnUIThread(zuVar2, z10 ? 300L : 0L);
+            ny nyVar2 = new ny(0, this, str);
+            this.E = nyVar2;
+            AndroidUtilities.runOnUIThread(nyVar2, z10 ? 300L : 0L);
             return;
         }
         this.w = null;
@@ -268,17 +268,17 @@ public final class py extends kl0 {
             F("", "", true, true, true);
             return;
         }
-        rx rxVar = kzVar.p0;
-        nw nwVar = kzVar.h0;
-        int currentPosition = rxVar.getCurrentPosition();
+        qx qxVar = kzVar.p0;
+        mw mwVar = kzVar.h0;
+        int currentPosition = qxVar.getCurrentPosition();
         if (currentPosition != kzVar.r0 && currentPosition != kzVar.s0) {
             H(MessagesController.getInstance(kzVar.c1).gifSearchEmojies.get(currentPosition - kzVar.t0));
             return;
         }
-        s4.h0 adapter = nwVar.getAdapter();
+        s4.h0 adapter = mwVar.getAdapter();
         py pyVar = kzVar.n0;
         if (adapter != pyVar) {
-            nwVar.setAdapter(pyVar);
+            mwVar.setAdapter(pyVar);
         }
     }
 
@@ -338,9 +338,9 @@ public final class py extends kl0 {
             if (i10 == Integer.MAX_VALUE) {
                 this.H = kzVar.i1.size();
             } else {
-                nw nwVar = kzVar.h0;
+                mw mwVar = kzVar.h0;
                 qy qyVar = kzVar.i0;
-                if (nwVar.getMeasuredWidth() != 0) {
+                if (mwVar.getMeasuredWidth() != 0) {
                     int measuredWidth = kzVar.h0.getMeasuredWidth();
                     int i11 = qyVar.J;
                     int dp = AndroidUtilities.dp(100.0f);
@@ -351,7 +351,7 @@ public final class py extends kl0 {
                     int i14 = 0;
                     for (int i15 = 0; i15 < size; i15++) {
                         TLRPC.Document document = (TLRPC.Document) kzVar.i1.get(i15);
-                        iv0 C1 = nz.C1(qyVar.F1(document, document.attributes));
+                        kv0 C1 = nz.C1(qyVar.F1(document, document.attributes));
                         int min = Math.min(i11, (int) Math.floor((((C1.a / C1.b) * dp) / measuredWidth) * i11));
                         if (i12 < min) {
                             this.H += i13;
@@ -420,6 +420,6 @@ public final class py extends kl0 {
             e2Var.setCanPreviewGif(true);
             view = e2Var;
         }
-        return new vk0(view);
+        return new wk0(view);
     }
 }

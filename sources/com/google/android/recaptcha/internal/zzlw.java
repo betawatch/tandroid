@@ -8,7 +8,7 @@ import rd.p;
 import v7.t7;
 import zd.c0;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 final class zzlw extends j implements p {
     Object zza;
@@ -71,9 +71,9 @@ final class zzlw extends j implements p {
             }
             zzlv zzlvVar = new zzlv(this.zzc, this.zzd, null);
             this.zzb = 2;
-        } catch (Exception e7) {
-            e7.getMessage();
-            zzcg zza = zzh.zza(e7, new zzcg(zzce.zzb, zzcd.zzV, e7.getMessage(), null, 8, null));
+        } catch (Exception e) {
+            e.getMessage();
+            zzcg zza = zzh.zza(e, new zzcg(zzce.zzb, zzcd.zzV, e.getMessage(), null, 8, null));
             zzdj zzn = this.zzc.zzn();
             zzmc zzmcVar = zzmc.zza;
             this.zza = zza;

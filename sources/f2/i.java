@@ -1,21 +1,24 @@
 package f2;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+import e9.a1;
+import e9.i0;
+
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class i {
-    public final int a;
-    public final boolean b;
-    public final int c;
-    public final int d;
-    public final int[] e;
-    public final int f;
+    public final i0 a;
+    public final int[] b;
 
-    public i(int i10, int i11, int i12, int i13, boolean z10, int[] iArr) {
-        this.a = i10;
-        this.b = z10;
-        this.c = i11;
-        this.d = i12;
-        this.e = iArr;
-        this.f = i13;
+    public i(a1 a1Var, int[] iArr, int i10) {
+        switch (i10) {
+            case 1:
+                this.a = i0.v(a1Var);
+                this.b = iArr;
+                break;
+            default:
+                this.a = i0.v(a1Var);
+                this.b = iArr;
+                break;
+        }
     }
 }

@@ -15,12 +15,13 @@ import android.widget.TextView;
 import androidx.appcompat.app.AlertController$RecycleListView;
 import b2.q0;
 import com.google.android.gms.internal.play_billing.h4;
+import hg.k0;
 import j$.util.DesugarCollections;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b0 implements r2.u {
     public final /* synthetic */ int a;
@@ -32,8 +33,8 @@ public final /* synthetic */ class b0 implements r2.u {
     }
 
     @Override // r2.u
-    public boolean K0() {
-        return true;
+    public boolean Z(String str, MediaCodecInfo.CodecCapabilities codecCapabilities) {
+        return codecCapabilities.isFeatureRequired(str);
     }
 
     public Object a() {
@@ -50,15 +51,7 @@ public final /* synthetic */ class b0 implements r2.u {
         return obj;
     }
 
-    @Override // r2.u
-    public MediaCodecInfo b(int i10) {
-        if (((MediaCodecInfo[]) this.c) == null) {
-            this.c = new MediaCodecList(this.b).getCodecInfos();
-        }
-        return ((MediaCodecInfo[]) this.c)[i10];
-    }
-
-    public void c(long j3) {
+    public void b(long j3) {
         int i10 = this.b;
         long[] jArr = (long[]) this.c;
         if (i10 == jArr.length) {
@@ -68,6 +61,14 @@ public final /* synthetic */ class b0 implements r2.u {
         int i11 = this.b;
         this.b = i11 + 1;
         jArr2[i11] = j3;
+    }
+
+    @Override // r2.u
+    public MediaCodecInfo c(int i10) {
+        if (((MediaCodecInfo[]) this.c) == null) {
+            this.c = new MediaCodecList(this.b).getCodecInfos();
+        }
+        return ((MediaCodecInfo[]) this.c)[i10];
     }
 
     public void d(long[] jArr) {
@@ -112,9 +113,9 @@ public final /* synthetic */ class b0 implements r2.u {
         }
         CharSequence charSequence2 = cVar.f;
         if (charSequence2 != null) {
-            androidx.biometric.x xVar = cVar.g;
+            androidx.biometric.w wVar = cVar.g;
             fVar.getClass();
-            Message obtainMessage = xVar != null ? fVar.z.obtainMessage(-2, xVar) : null;
+            Message obtainMessage = wVar != null ? fVar.z.obtainMessage(-2, wVar) : null;
             fVar.j = charSequence2;
             fVar.k = obtainMessage;
         }
@@ -145,9 +146,9 @@ public final /* synthetic */ class b0 implements r2.u {
         gVar.setCanceledOnTouchOutside(true);
         gVar.setOnCancelListener(null);
         gVar.setOnDismissListener(null);
-        l.m mVar = cVar.h;
-        if (mVar != null) {
-            gVar.setOnKeyListener(mVar);
+        l.l lVar = cVar.h;
+        if (lVar != null) {
+            gVar.setOnKeyListener(lVar);
         }
         return gVar;
     }
@@ -156,7 +157,7 @@ public final /* synthetic */ class b0 implements r2.u {
         if (i10 >= 0 && i10 < this.b) {
             return ((long[]) this.c)[i10];
         }
-        StringBuilder l4 = i2.g.l(i10, "Invalid index ", ", size is ");
+        StringBuilder l4 = k0.l(i10, "Invalid index ", ", size is ");
         l4.append(this.b);
         throw new IndexOutOfBoundsException(l4.toString());
     }
@@ -165,10 +166,18 @@ public final /* synthetic */ class b0 implements r2.u {
         return DesugarCollections.unmodifiableList(new ArrayList((ArrayList) this.c));
     }
 
+    @Override // r2.u
+    public int g0() {
+        if (((MediaCodecInfo[]) this.c) == null) {
+            this.c = new MediaCodecList(this.b).getCodecInfos();
+        }
+        return ((MediaCodecInfo[]) this.c).length;
+    }
+
     public long h(c3.l lVar) {
         e2.v vVar = (e2.v) this.c;
         int i10 = 0;
-        lVar.j(vVar.a, 0, 1, false);
+        lVar.h(vVar.a, 0, 1, false);
         int i11 = vVar.a[0] & 255;
         if (i11 == 0) {
             return Long.MIN_VALUE;
@@ -180,7 +189,7 @@ public final /* synthetic */ class b0 implements r2.u {
             i13++;
         }
         int i14 = i11 & (~i12);
-        lVar.j(vVar.a, 1, i13, false);
+        lVar.h(vVar.a, 1, i13, false);
         while (i10 < i13) {
             i10++;
             i14 = (vVar.a[i10] & 255) + (i14 << 8);
@@ -230,30 +239,17 @@ public final /* synthetic */ class b0 implements r2.u {
                 U0.recycle();
                 throw th2;
             }
-        } catch (Exception e7) {
+        } catch (Exception e) {
             d0Var.F(95, 28, g0.p);
-            com.google.android.gms.internal.play_billing.u.i("BillingClientTesting", "An error occurred while retrieving billing override.", e7);
+            com.google.android.gms.internal.play_billing.u.i("BillingClientTesting", "An error occurred while retrieving billing override.", e);
             h4Var.a(0);
             return "billingOverrideService.getBillingOverride";
         }
     }
 
     @Override // r2.u
-    public boolean p(String str, String str2, MediaCodecInfo.CodecCapabilities codecCapabilities) {
-        return codecCapabilities.isFeatureSupported(str);
-    }
-
-    @Override // r2.u
-    public boolean q0(String str, MediaCodecInfo.CodecCapabilities codecCapabilities) {
-        return codecCapabilities.isFeatureRequired(str);
-    }
-
-    @Override // r2.u
-    public int r0() {
-        if (((MediaCodecInfo[]) this.c) == null) {
-            this.c = new MediaCodecList(this.b).getCodecInfos();
-        }
-        return ((MediaCodecInfo[]) this.c).length;
+    public boolean p0() {
+        return true;
     }
 
     public String toString() {
@@ -263,6 +259,11 @@ public final /* synthetic */ class b0 implements r2.u {
             default:
                 return super.toString();
         }
+    }
+
+    @Override // r2.u
+    public boolean v(String str, String str2, MediaCodecInfo.CodecCapabilities codecCapabilities) {
+        return codecCapabilities.isFeatureSupported(str);
     }
 
     public /* synthetic */ b0(Object obj, int i10, int i11) {
@@ -324,9 +325,9 @@ public final /* synthetic */ class b0 implements r2.u {
 
     public b0(Context context) {
         this.a = 3;
-        int e7 = g.g.e(context, 0);
-        this.c = new g.c(new ContextThemeWrapper(context, g.g.e(context, e7)));
-        this.b = e7;
+        int e = g.g.e(context, 0);
+        this.c = new g.c(new ContextThemeWrapper(context, g.g.e(context, e)));
+        this.b = e;
     }
 
     public b0(boolean z10, boolean z11, boolean z12) {

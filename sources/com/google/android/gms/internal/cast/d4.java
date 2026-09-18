@@ -1,9 +1,9 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
-public final class d4 extends v7.o5 {
-    @Override // v7.o5
+public final class d4 extends v7.p5 {
+    @Override // v7.p5
     public final b4 a(h4 h4Var) {
         b4 b4Var;
         b4 b4Var2 = b4.d;
@@ -20,7 +20,7 @@ public final class d4 extends v7.o5 {
         return b4Var;
     }
 
-    @Override // v7.o5
+    @Override // v7.p5
     public final g4 b(h4 h4Var) {
         g4 g4Var;
         g4 g4Var2 = g4.c;
@@ -37,17 +37,17 @@ public final class d4 extends v7.o5 {
         return g4Var;
     }
 
-    @Override // v7.o5
+    @Override // v7.p5
     public final void c(g4 g4Var, g4 g4Var2) {
         g4Var.b = g4Var2;
     }
 
-    @Override // v7.o5
+    @Override // v7.p5
     public final void d(g4 g4Var, Thread thread) {
         g4Var.a = thread;
     }
 
-    @Override // v7.o5
+    @Override // v7.p5
     public final boolean e(h4 h4Var, b4 b4Var, b4 b4Var2) {
         synchronized (h4Var) {
             try {
@@ -62,7 +62,7 @@ public final class d4 extends v7.o5 {
         }
     }
 
-    @Override // v7.o5
+    @Override // v7.p5
     public final boolean f(h4 h4Var, Object obj, Object obj2) {
         synchronized (h4Var) {
             try {
@@ -77,7 +77,7 @@ public final class d4 extends v7.o5 {
         }
     }
 
-    @Override // v7.o5
+    @Override // v7.p5
     public final boolean g(h4 h4Var, g4 g4Var, g4 g4Var2) {
         synchronized (h4Var) {
             try {

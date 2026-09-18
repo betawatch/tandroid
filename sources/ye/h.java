@@ -14,10 +14,10 @@ import java.util.Map;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import n7.z0;
+import n7.a1;
 import org.telegram.ui.Cells.p6;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class h implements cf.a {
     public static final Pattern i = Pattern.compile("^[!\"#\\$%&'\\(\\)\\*\\+,\\-\\./:;<=>\\?@\\[\\\\\\]\\^_`\\{\\|\\}~\\p{Pc}\\p{Pd}\\p{Pe}\\p{Pf}\\p{Pi}\\p{Po}\\p{Ps}]");
@@ -35,14 +35,14 @@ public final class h implements cf.a {
     public final BitSet a;
     public final BitSet b;
     public final HashMap c;
-    public final z0 d;
+    public final a1 d;
     public String e;
     public int f;
     public b g;
     public f6.f h;
 
-    public h(z0 z0Var) {
-        List list = (List) z0Var.b;
+    public h(a1 a1Var) {
+        List list = (List) a1Var.b;
         HashMap hashMap = new HashMap();
         c(Arrays.asList(new ze.a(0), new ze.a(1)), hashMap);
         c(list, hashMap);
@@ -65,7 +65,7 @@ public final class h implements cf.a {
         bitSet2.set(60);
         bitSet2.set(38);
         this.a = bitSet2;
-        this.d = z0Var;
+        this.d = a1Var;
     }
 
     public static void b(char c10, ef.a aVar, HashMap hashMap) {
@@ -80,25 +80,25 @@ public final class h implements cf.a {
         Iterator it = iterable.iterator();
         while (it.hasNext()) {
             ef.a aVar = (ef.a) it.next();
-            char e7 = aVar.e();
+            char e = aVar.e();
             char a2 = aVar.a();
-            if (e7 == a2) {
-                ef.a aVar2 = (ef.a) hashMap.get(Character.valueOf(e7));
+            if (e == a2) {
+                ef.a aVar2 = (ef.a) hashMap.get(Character.valueOf(e));
                 if (aVar2 == null || aVar2.e() != aVar2.a()) {
-                    b(e7, aVar, hashMap);
+                    b(e, aVar, hashMap);
                 } else {
                     if (aVar2 instanceof n) {
                         nVar = (n) aVar2;
                     } else {
-                        n nVar2 = new n(e7);
+                        n nVar2 = new n(e);
                         nVar2.f(aVar2);
                         nVar = nVar2;
                     }
                     nVar.f(aVar);
-                    hashMap.put(Character.valueOf(e7), nVar);
+                    hashMap.put(Character.valueOf(e), nVar);
                 }
             } else {
-                b(e7, aVar, hashMap);
+                b(e, aVar, hashMap);
                 b(a2, aVar, hashMap);
             }
         }
@@ -576,12 +576,12 @@ public final class h implements cf.a {
             if (!bVar2.d || aVar == null) {
                 bVar2 = bVar2.f;
             } else {
-                char e7 = aVar.e();
+                char e = aVar.e();
                 b bVar4 = bVar2.e;
                 int i10 = 0;
                 boolean z11 = false;
                 while (bVar4 != null && bVar4 != bVar && bVar4 != hashMap.get(Character.valueOf(c10))) {
-                    if (bVar4.c && bVar4.b == e7) {
+                    if (bVar4.c && bVar4.b == e) {
                         i10 = aVar.b(bVar4, bVar2);
                         z11 = true;
                         if (i10 > 0) {

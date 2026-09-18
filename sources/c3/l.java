@@ -6,7 +6,7 @@ import java.io.InterruptedIOException;
 import java.util.Arrays;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class l implements p {
     public final b2.k b;
@@ -27,17 +27,17 @@ public final class l implements p {
         this.c = j10;
     }
 
-    public final void a(int i10) {
+    @Override // c3.p
+    public final void a(int i10, int i11, byte[] bArr) {
+        h(bArr, i10, i11, false);
+    }
+
+    public final void b(int i10) {
         int i11 = this.f + i10;
         byte[] bArr = this.e;
         if (i11 > bArr.length) {
             this.e = Arrays.copyOf(this.e, e2.d0.h(bArr.length * 2, 65536 + i11, i11 + TLObject.FLAG_19));
         }
-    }
-
-    @Override // c3.p
-    public final void b(int i10, int i11, byte[] bArr) {
-        j(bArr, i10, i11, false);
     }
 
     public final int c(byte[] bArr, int i10, int i11, int i12, boolean z10) {
@@ -63,7 +63,7 @@ public final class l implements p {
         } else {
             min = Math.min(i12, i11);
             System.arraycopy(this.e, 0, bArr, i10, min);
-            e(min);
+            f(min);
         }
         int i13 = min;
         while (i13 < i11 && i13 != -1) {
@@ -75,31 +75,11 @@ public final class l implements p {
         return i13 != -1;
     }
 
-    public final void e(int i10) {
-        int i11 = this.h - i10;
-        this.h = i11;
-        this.f = 0;
-        byte[] bArr = this.e;
-        byte[] bArr2 = i11 < bArr.length - TLObject.FLAG_19 ? new byte[65536 + i11] : bArr;
-        System.arraycopy(bArr, i10, bArr2, 0, i11);
-        this.e = bArr2;
-    }
-
     @Override // c3.p
-    public final long getLength() {
-        return this.c;
-    }
-
-    @Override // c3.p
-    public final long getPosition() {
-        return this.d;
-    }
-
-    @Override // c3.p
-    public final int h(int i10, int i11, byte[] bArr) {
+    public final int e(int i10, int i11, byte[] bArr) {
         l lVar;
         int min;
-        a(i11);
+        b(i11);
         int i12 = this.h;
         int i13 = this.f;
         int i14 = i12 - i13;
@@ -119,10 +99,20 @@ public final class l implements p {
         return min;
     }
 
+    public final void f(int i10) {
+        int i11 = this.h - i10;
+        this.h = i11;
+        this.f = 0;
+        byte[] bArr = this.e;
+        byte[] bArr2 = i11 < bArr.length - TLObject.FLAG_19 ? new byte[65536 + i11] : bArr;
+        System.arraycopy(bArr, i10, bArr2, 0, i11);
+        this.e = bArr2;
+    }
+
     @Override // c3.p
-    public final boolean i(int i10, boolean z10) {
+    public final boolean g(int i10, boolean z10) {
         int min = Math.min(this.h, i10);
-        e(min);
+        f(min);
         int i11 = min;
         while (i11 < i10 && i11 != -1) {
             byte[] bArr = this.a;
@@ -135,8 +125,18 @@ public final class l implements p {
     }
 
     @Override // c3.p
-    public final boolean j(byte[] bArr, int i10, int i11, boolean z10) {
-        if (!v(i11, z10)) {
+    public final long getLength() {
+        return this.c;
+    }
+
+    @Override // c3.p
+    public final long getPosition() {
+        return this.d;
+    }
+
+    @Override // c3.p
+    public final boolean h(byte[] bArr, int i10, int i11, boolean z10) {
+        if (!s(i11, z10)) {
             return false;
         }
         System.arraycopy(this.e, this.f - i11, bArr, i10, i11);
@@ -144,23 +144,23 @@ public final class l implements p {
     }
 
     @Override // c3.p
-    public final long k() {
+    public final long i() {
         return this.d + this.f;
     }
 
     @Override // c3.p
-    public final void l(int i10) {
-        v(i10, false);
+    public final void k(int i10) {
+        s(i10, false);
     }
 
     @Override // c3.p
-    public final void q() {
+    public final void p() {
         this.f = 0;
     }
 
     @Override // c3.p
-    public final void r(int i10) {
-        i(i10, false);
+    public final void q(int i10) {
+        g(i10, false);
     }
 
     @Override // b2.k
@@ -171,7 +171,7 @@ public final class l implements p {
         if (i12 != 0) {
             int min = Math.min(i12, i11);
             System.arraycopy(this.e, 0, bArr, i10, min);
-            e(min);
+            f(min);
             i13 = min;
         }
         if (i13 == 0) {
@@ -192,26 +192,8 @@ public final class l implements p {
     }
 
     @Override // c3.p
-    public final int skip(int i10) {
-        l lVar;
-        int min = Math.min(this.h, i10);
-        e(min);
-        if (min == 0) {
-            byte[] bArr = this.a;
-            lVar = this;
-            min = lVar.c(bArr, 0, Math.min(i10, bArr.length), 0, true);
-        } else {
-            lVar = this;
-        }
-        if (min != -1) {
-            lVar.d += min;
-        }
-        return min;
-    }
-
-    @Override // c3.p
-    public final boolean v(int i10, boolean z10) {
-        a(i10);
+    public final boolean s(int i10, boolean z10) {
+        b(i10);
         int i11 = this.h - this.f;
         while (i11 < i10) {
             int i12 = i10;
@@ -226,5 +208,23 @@ public final class l implements p {
         }
         this.f += i10;
         return true;
+    }
+
+    @Override // c3.p
+    public final int skip(int i10) {
+        l lVar;
+        int min = Math.min(this.h, i10);
+        f(min);
+        if (min == 0) {
+            byte[] bArr = this.a;
+            lVar = this;
+            min = lVar.c(bArr, 0, Math.min(i10, bArr.length), 0, true);
+        } else {
+            lVar = this;
+        }
+        if (min != -1) {
+            lVar.d += min;
+        }
+        return min;
     }
 }

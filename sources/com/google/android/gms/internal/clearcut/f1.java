@@ -1,52 +1,53 @@
 package com.google.android.gms.internal.clearcut;
 
-import java.util.Iterator;
-import java.util.Map;
+import java.util.ListIterator;
 
 /* loaded from: classes.dex */
-public final class f1 implements Iterator {
-    public final /* synthetic */ int a;
-    public Iterator b;
+public final class f1 implements ListIterator {
+    public ListIterator a;
 
-    @Override // java.util.Iterator
+    @Override // java.util.ListIterator
+    public final /* synthetic */ void add(Object obj) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.ListIterator, java.util.Iterator
     public final boolean hasNext() {
-        switch (this.a) {
-        }
-        return this.b.hasNext();
+        return this.a.hasNext();
     }
 
-    @Override // java.util.Iterator
-    public final Object next() {
-        switch (this.a) {
-        }
-        return ((Map.Entry) this.b.next()).getValue();
+    @Override // java.util.ListIterator
+    public final boolean hasPrevious() {
+        return this.a.hasPrevious();
     }
 
-    @Override // java.util.Iterator
+    @Override // java.util.ListIterator, java.util.Iterator
+    public final /* synthetic */ Object next() {
+        return (String) this.a.next();
+    }
+
+    @Override // java.util.ListIterator
+    public final int nextIndex() {
+        return this.a.nextIndex();
+    }
+
+    @Override // java.util.ListIterator
+    public final /* synthetic */ Object previous() {
+        return (String) this.a.previous();
+    }
+
+    @Override // java.util.ListIterator
+    public final int previousIndex() {
+        return this.a.previousIndex();
+    }
+
+    @Override // java.util.ListIterator, java.util.Iterator
     public final void remove() {
-        switch (this.a) {
-            case 0:
-                throw new UnsupportedOperationException();
-            case 1:
-                this.b.remove();
-                return;
-            default:
-                this.b.remove();
-                return;
-        }
+        throw new UnsupportedOperationException();
     }
 
-    public f1(Iterator it, int i10) {
-        this.a = i10;
-        switch (i10) {
-            case 2:
-                it.getClass();
-                this.b = it;
-                break;
-            default:
-                it.getClass();
-                this.b = it;
-                break;
-        }
+    @Override // java.util.ListIterator
+    public final /* synthetic */ void set(Object obj) {
+        throw new UnsupportedOperationException();
     }
 }

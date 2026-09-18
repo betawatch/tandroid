@@ -19,14 +19,14 @@ import org.telegram.messenger.MediaController;
 import org.telegram.ui.BubbleActivity;
 import org.telegram.ui.Components.Crop.CropAreaView;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class ue0 extends FrameLayout {
     public final re0 E;
     public final re0 F;
     public te0 a;
-    public final mg.q b;
-    public final mg.f c;
+    public final lg.p b;
+    public final lg.f c;
     public final boolean d;
     public final ImageReceiver e;
     public boolean f;
@@ -49,69 +49,69 @@ public final class ue0 extends FrameLayout {
         this.F = new re0(this, 1);
         this.y = f6Var;
         this.d = contextThemeWrapper instanceof BubbleActivity;
-        mg.q qVar = new mg.q(contextThemeWrapper);
-        this.b = qVar;
-        qVar.setListener(new ji.u4(this, 12));
-        qVar.setBottomPadding(AndroidUtilities.dp(64.0f));
-        addView(qVar);
+        lg.p pVar = new lg.p(contextThemeWrapper);
+        this.b = pVar;
+        pVar.setListener(new k2.u(this, 13));
+        pVar.setBottomPadding(AndroidUtilities.dp(64.0f));
+        addView(pVar);
         this.e = new ImageReceiver(this);
-        mg.f fVar = new mg.f(contextThemeWrapper);
+        lg.f fVar = new lg.f(contextThemeWrapper);
         this.c = fVar;
-        fVar.setListener(new di.h0(2, this));
+        fVar.setListener(new ci.h0(2, this));
         addView(fVar, w7.x5.d(-1, -2.0f, 81, 0.0f, 0.0f, 0.0f, 0.0f));
     }
 
     public final void a() {
-        mg.q qVar = this.b;
-        qVar.b.setVisibility(4);
-        CropAreaView cropAreaView = qVar.a;
+        lg.p pVar = this.b;
+        pVar.b.setVisibility(4);
+        CropAreaView cropAreaView = pVar.a;
         cropAreaView.setDimVisibility(false);
         cropAreaView.f(false, false);
         cropAreaView.invalidate();
     }
 
-    public final void b(Bitmap bitmap, int i10, boolean z10, boolean z11, mg.g gVar, u61 u61Var, MediaController.CropState cropState) {
+    public final void b(Bitmap bitmap, int i10, boolean z10, boolean z11, lg.g gVar, v61 v61Var, MediaController.CropState cropState) {
         requestLayout();
         this.f = false;
         this.e.setImageBitmap((Drawable) null);
-        mg.q qVar = this.b;
-        ImageView imageView = qVar.b;
-        qVar.x = z10;
-        qVar.d = u61Var;
-        qVar.e = gVar;
-        qVar.K = i10;
-        qVar.w = bitmap;
-        CropAreaView cropAreaView = qVar.a;
-        cropAreaView.setIsVideo(u61Var != null);
-        if (bitmap == null && u61Var == null) {
-            qVar.L = null;
+        lg.p pVar = this.b;
+        ImageView imageView = pVar.b;
+        pVar.x = z10;
+        pVar.d = v61Var;
+        pVar.e = gVar;
+        pVar.K = i10;
+        pVar.w = bitmap;
+        CropAreaView cropAreaView = pVar.a;
+        cropAreaView.setIsVideo(v61Var != null);
+        if (bitmap == null && v61Var == null) {
+            pVar.L = null;
             imageView.setImageDrawable(null);
         } else {
-            int currentWidth = qVar.getCurrentWidth();
-            int currentHeight = qVar.getCurrentHeight();
-            mg.o oVar = qVar.L;
-            if (oVar == null || !z11) {
-                qVar.L = new mg.o(qVar, currentWidth, currentHeight);
-                cropAreaView.getViewTreeObserver().addOnPreDrawListener(new mg.l(qVar, cropState, currentHeight, currentWidth));
+            int currentWidth = pVar.getCurrentWidth();
+            int currentHeight = pVar.getCurrentHeight();
+            lg.n nVar = pVar.L;
+            if (nVar == null || !z11) {
+                pVar.L = new lg.n(pVar, currentWidth, currentHeight);
+                cropAreaView.getViewTreeObserver().addOnPreDrawListener(new lg.l(pVar, cropState, currentHeight, currentWidth));
             } else {
                 float f7 = currentWidth;
-                oVar.e *= oVar.a / f7;
-                oVar.a = f7;
-                oVar.b = currentHeight;
-                oVar.h();
-                Matrix matrix = oVar.k;
-                mg.q qVar2 = oVar.l;
-                matrix.getValues(qVar2.H);
+                nVar.e *= nVar.a / f7;
+                nVar.a = f7;
+                nVar.b = currentHeight;
+                nVar.h();
+                Matrix matrix = nVar.k;
+                lg.p pVar2 = nVar.l;
+                matrix.getValues(pVar2.H);
                 matrix.reset();
-                float f10 = oVar.e;
+                float f10 = nVar.e;
                 matrix.postScale(f10, f10);
-                float[] fArr = qVar2.H;
+                float[] fArr = pVar2.H;
                 matrix.postTranslate(fArr[2], fArr[5]);
-                qVar2.r(false);
+                pVar2.r(false);
             }
-            imageView.setImageBitmap(u61Var == null ? qVar.w : null);
+            imageView.setImageBitmap(v61Var == null ? pVar.w : null);
         }
-        mg.f fVar = this.c;
+        lg.f fVar = this.c;
         fVar.setFreeform(z10);
         fVar.b(0.0f);
         fVar.setMirrored(false);
@@ -129,14 +129,14 @@ public final class ue0 extends FrameLayout {
 
     @Override // android.view.ViewGroup
     public final boolean drawChild(Canvas canvas, View view, long j3) {
-        mg.q qVar;
+        lg.p pVar;
         boolean drawChild = super.drawChild(canvas, view, j3);
-        if (this.f && view == (qVar = this.b)) {
-            RectF actualRect = qVar.getActualRect();
+        if (this.f && view == (pVar = this.b)) {
+            RectF actualRect = pVar.getActualRect();
             int dp = AndroidUtilities.dp(32.0f);
-            org.telegram.ui.ss0 ss0Var = (org.telegram.ui.ss0) this.a;
-            ss0Var.getClass();
-            int dp2 = AndroidUtilities.dp(2.0f) + (((int) (((r1.R7.getMeasuredWidth() - AndroidUtilities.dp(32.0f)) * ss0Var.a.v8) + AndroidUtilities.dp(16.0f))) - (dp / 2));
+            org.telegram.ui.vs0 vs0Var = (org.telegram.ui.vs0) this.a;
+            vs0Var.getClass();
+            int dp2 = AndroidUtilities.dp(2.0f) + (((int) (((r1.S7.getMeasuredWidth() - AndroidUtilities.dp(32.0f)) * vs0Var.a.w8) + AndroidUtilities.dp(16.0f))) - (dp / 2));
             int measuredHeight = getMeasuredHeight() - AndroidUtilities.dp(156.0f);
             float f7 = actualRect.left;
             float f10 = this.r;
@@ -197,7 +197,7 @@ public final class ue0 extends FrameLayout {
         if (this.h && this.f) {
             if (this.e.isInsideImage(motionEvent.getX(), motionEvent.getY())) {
                 if (motionEvent.getAction() == 1) {
-                    ((org.telegram.ui.ss0) this.a).f();
+                    ((org.telegram.ui.vs0) this.a).f();
                 }
                 return true;
             }
@@ -207,19 +207,19 @@ public final class ue0 extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        mg.o oVar;
+        lg.n nVar;
         super.onLayout(z10, i10, i11, i12, i13);
-        mg.q qVar = this.b;
-        CropAreaView cropAreaView = qVar.a;
+        lg.p pVar = this.b;
+        CropAreaView cropAreaView = pVar.a;
         float cropWidth = cropAreaView.getCropWidth();
-        if (cropWidth == 0.0f || (oVar = qVar.L) == null) {
+        if (cropWidth == 0.0f || (nVar = pVar.L) == null) {
             return;
         }
-        cropAreaView.a(qVar.h, oVar.a / oVar.b);
+        cropAreaView.a(pVar.h, nVar.a / nVar.b);
         cropAreaView.setActualRect(cropAreaView.getAspectRatio());
-        cropAreaView.d(qVar.f);
-        mg.o.g(qVar.L, cropAreaView.getCropWidth() / cropWidth, 0.0f, 0.0f);
-        qVar.r(false);
+        cropAreaView.d(pVar.f);
+        lg.n.g(pVar.L, cropAreaView.getCropWidth() / cropWidth, 0.0f, 0.0f);
+        pVar.r(false);
     }
 
     @Override // android.view.View
@@ -227,7 +227,7 @@ public final class ue0 extends FrameLayout {
         if (this.h && this.f) {
             if (this.e.isInsideImage(motionEvent.getX(), motionEvent.getY())) {
                 if (motionEvent.getAction() == 1) {
-                    ((org.telegram.ui.ss0) this.a).f();
+                    ((org.telegram.ui.vs0) this.a).f();
                 }
                 return true;
             }

@@ -1,87 +1,40 @@
 package org.telegram.ui;
 
-import android.view.KeyEvent;
-import android.view.View;
-import java.util.ArrayList;
-import org.telegram.messenger.MessagesController;
+import android.content.Context;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class y60 implements View.OnKeyListener {
-    public final /* synthetic */ int a;
-    public boolean b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.n2 c;
+public final class y60 extends org.telegram.ui.Components.f20 {
+    public final /* synthetic */ g70 r;
 
-    public /* synthetic */ y60(int i10, org.telegram.ui.ActionBar.n2 n2Var) {
-        this.a = i10;
-        this.c = n2Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public y60(g70 g70Var, Context context, int i10) {
+        super(context, i10);
+        this.r = g70Var;
     }
 
-    @Override // android.view.View.OnKeyListener
-    public final boolean onKey(View view, int i10, KeyEvent keyEvent) {
-        switch (this.a) {
-            case 0:
-                f70 f70Var = (f70) this.c;
-                if (i10 == 67) {
-                    if (keyEvent.getAction() != 0) {
-                        if (keyEvent.getAction() == 1 && this.b && !f70Var.a0.isEmpty()) {
-                            f70Var.h.c((org.telegram.ui.Components.m30) i2.g.h(1, f70Var.a0));
-                            f70Var.s0();
-                            f70Var.k0();
-                            break;
-                        }
-                    } else {
-                        this.b = f70Var.f.r.length() == 0;
-                        break;
-                    }
-                }
-                break;
-            default:
-                UsersSelectActivity usersSelectActivity = (UsersSelectActivity) this.c;
-                ArrayList arrayList = usersSelectActivity.O;
-                if (i10 == 67) {
-                    if (keyEvent.getAction() != 0) {
-                        if (keyEvent.getAction() == 1 && this.b && !arrayList.isEmpty()) {
-                            org.telegram.ui.Components.m30 m30Var = (org.telegram.ui.Components.m30) i2.g.h(1, arrayList);
-                            usersSelectActivity.b.b(m30Var);
-                            if (usersSelectActivity.x == 2) {
-                                if (m30Var.getUid() == -9223372036854775800L) {
-                                    usersSelectActivity.J &= -2;
-                                } else if (m30Var.getUid() == -9223372036854775799L) {
-                                    usersSelectActivity.J &= -3;
-                                } else if (m30Var.getUid() == Long.MIN_VALUE) {
-                                    usersSelectActivity.J &= -5;
-                                } else if (m30Var.getUid() == -9223372036854775807L) {
-                                    usersSelectActivity.J &= -9;
-                                }
-                            } else if (m30Var.getUid() == Long.MIN_VALUE) {
-                                usersSelectActivity.J = (~MessagesController.DIALOG_FILTER_FLAG_CONTACTS) & usersSelectActivity.J;
-                            } else if (m30Var.getUid() == -9223372036854775807L) {
-                                usersSelectActivity.J = (~MessagesController.DIALOG_FILTER_FLAG_NON_CONTACTS) & usersSelectActivity.J;
-                            } else if (m30Var.getUid() == -9223372036854775806L) {
-                                usersSelectActivity.J = (~MessagesController.DIALOG_FILTER_FLAG_GROUPS) & usersSelectActivity.J;
-                            } else if (m30Var.getUid() == -9223372036854775805L) {
-                                usersSelectActivity.J = (~MessagesController.DIALOG_FILTER_FLAG_CHANNELS) & usersSelectActivity.J;
-                            } else if (m30Var.getUid() == -9223372036854775804L) {
-                                usersSelectActivity.J = (~MessagesController.DIALOG_FILTER_FLAG_BOTS) & usersSelectActivity.J;
-                            } else if (m30Var.getUid() == -9223372036854775803L) {
-                                usersSelectActivity.J = (~MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_MUTED) & usersSelectActivity.J;
-                            } else if (m30Var.getUid() == -9223372036854775802L) {
-                                usersSelectActivity.J = (~MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_READ) & usersSelectActivity.J;
-                            } else if (m30Var.getUid() == -9223372036854775801L) {
-                                usersSelectActivity.J = (~MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_ARCHIVED) & usersSelectActivity.J;
-                            }
-                            usersSelectActivity.Y();
-                            usersSelectActivity.W();
-                            break;
-                        }
-                    } else {
-                        this.b = usersSelectActivity.c.length() == 0;
-                        break;
-                    }
-                }
-                break;
+    @Override // org.telegram.ui.Components.f20
+    public final void a(org.telegram.ui.Components.m30 m30Var) {
+        super.a(m30Var);
+        g70.Z(this.r);
+    }
+
+    @Override // org.telegram.ui.Components.f20
+    public final void b() {
+        super.b();
+        g70.Z(this.r);
+    }
+
+    @Override // org.telegram.ui.Components.f20
+    public final void c(org.telegram.ui.Components.m30 m30Var) {
+        g70 g70Var = this.r;
+        if (m30Var == g70Var.X) {
+            g70Var.X = null;
         }
-        return true;
+        if (m30Var == g70Var.Y) {
+            g70Var.Y = null;
+        }
+        super.c(m30Var);
+        g70.Z(g70Var);
     }
 }

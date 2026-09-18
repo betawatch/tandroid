@@ -18,7 +18,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class nm {
     public TextPaint B;
@@ -33,7 +33,7 @@ public final class nm {
     public float m;
     public float n;
     public float o;
-    public wh.g s;
+    public vh.g s;
     public Bitmap v;
     public RectF f = null;
     public final RectF g = new RectF();
@@ -79,7 +79,7 @@ public final class nm {
         if (nmVar.c == null) {
             nmVar.c = new ImageReceiver(omVar.z);
             nmVar.d = new ImageReceiver(omVar.z);
-            nmVar.c.setDelegate(new b3(6, nmVar, photoEntry));
+            nmVar.c.setDelegate(new mf(5, nmVar, photoEntry));
         }
         String str = photoEntry.thumbPath;
         if (str != null) {
@@ -120,16 +120,16 @@ public final class nm {
         }
         nmVar.i = groupedMessagePosition.flags;
         if (z10) {
-            float e7 = nmVar.e();
+            float e = nmVar.e();
             RectF rectF4 = nmVar.f;
             if (rectF4 != null) {
-                AndroidUtilities.lerp(rectF4, rectF2, e7, rectF4);
+                AndroidUtilities.lerp(rectF4, rectF2, e, rectF4);
             }
             RectF rectF5 = nmVar.p;
             if (rectF5 != null) {
-                AndroidUtilities.lerp(rectF5, rectF, e7, rectF5);
+                AndroidUtilities.lerp(rectF5, rectF, e, rectF5);
             }
-            nmVar.j = AndroidUtilities.lerp(nmVar.j, nmVar.k, e7);
+            nmVar.j = AndroidUtilities.lerp(nmVar.j, nmVar.k, e);
             nmVar.h = SystemClock.elapsedRealtime();
         }
         float f7 = groupedMessagePosition.left;
@@ -185,7 +185,7 @@ public final class nm {
         String str2;
         char c12;
         RectF rectF;
-        float e7 = e();
+        float e = e();
         if (this.g == null || this.c == null) {
             return false;
         }
@@ -193,7 +193,7 @@ public final class nm {
         pm pmVar2 = omVar.z;
         qm qmVar = pmVar2.P;
         float f14 = pmVar2.P.J == this ? pmVar2.G : 0.0f;
-        float lerp = AndroidUtilities.lerp(this.j, this.k, e7);
+        float lerp = AndroidUtilities.lerp(this.j, this.k, e);
         if (lerp <= 0.0f) {
             return false;
         }
@@ -204,11 +204,11 @@ public final class nm {
         float f16 = rectF2.top;
         float f17 = rectF2.right;
         float f18 = rectF2.bottom;
-        if (e7 < 1.0f && (rectF = this.p) != null) {
-            f15 = AndroidUtilities.lerp(rectF.left, f15, e7);
-            f16 = AndroidUtilities.lerp(this.p.top, f16, e7);
-            f17 = AndroidUtilities.lerp(this.p.right, f17, e7);
-            f18 = AndroidUtilities.lerp(this.p.bottom, f18, e7);
+        if (e < 1.0f && (rectF = this.p) != null) {
+            f15 = AndroidUtilities.lerp(rectF.left, f15, e);
+            f16 = AndroidUtilities.lerp(this.p.top, f16, e);
+            f17 = AndroidUtilities.lerp(this.p.right, f17, e);
+            f18 = AndroidUtilities.lerp(this.p.bottom, f18, e);
         }
         float lerp2 = AndroidUtilities.lerp(f15, dp, f14);
         float lerp3 = AndroidUtilities.lerp(f16, dp, f14);
@@ -267,9 +267,9 @@ public final class nm {
                 this.d.setAlpha(lerp);
                 this.d.draw(canvas);
                 if (this.s == null) {
-                    this.s = wh.g.e(pmVar2);
+                    this.s = vh.g.e(pmVar2);
                 }
-                wh.g gVar = this.s;
+                vh.g gVar = this.s;
                 int width = pmVar2.getWidth();
                 int height = pmVar2.getHeight();
                 pmVar = pmVar2;
@@ -302,7 +302,7 @@ public final class nm {
             this.d.draw(canvas);
             if (this.s == null) {
             }
-            wh.g gVar2 = this.s;
+            vh.g gVar2 = this.s;
             int width2 = pmVar2.getWidth();
             int height2 = pmVar2.getHeight();
             pmVar = pmVar2;
@@ -477,7 +477,7 @@ public final class nm {
         if (z10) {
             canvas.restore();
         }
-        return e7 < 1.0f || z11;
+        return e < 1.0f || z11;
     }
 
     public final Object clone() {

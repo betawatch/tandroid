@@ -21,10 +21,10 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.SvgHelper;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.dc0;
-import org.telegram.ui.Components.w9;
+import org.telegram.ui.Components.cc0;
+import org.telegram.ui.Components.t9;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class e6 implements NotificationCenter.NotificationCenterDelegate {
     public static e6 c;
@@ -55,7 +55,7 @@ public final class e6 implements NotificationCenter.NotificationCenterDelegate {
             e6 e6Var = new e6();
             e6Var.a = UserConfig.selectedAccount;
             if (arrayList2 != null) {
-                Utilities.globalQueue.postRunnable(new c6(0, e6Var, arrayList2));
+                Utilities.globalQueue.postRunnable(new m4.g0(24, e6Var, arrayList2));
             }
             c = e6Var;
         }
@@ -105,11 +105,11 @@ public final class e6 implements NotificationCenter.NotificationCenterDelegate {
                 i14 = j6.B(i6Var, i13, i10);
             }
             if (i17 != 0) {
-                patternColor = dc0.g(i14, i15, i17, i18);
+                patternColor = cc0.g(i14, i15, i17, i18);
             } else if (i15 != 0) {
-                Drawable w9Var = new w9(w9.d(h6Var.n), new int[]{i14, i15});
+                Drawable t9Var = new t9(t9.d(h6Var.n), new int[]{i14, i15});
                 patternColor = AndroidUtilities.getPatternColor(AndroidUtilities.getAverageColor(i14, i15));
-                drawable = w9Var;
+                drawable = t9Var;
             } else {
                 drawable = new ColorDrawable(i14);
                 patternColor = AndroidUtilities.getPatternColor(i14);
@@ -160,7 +160,7 @@ public final class e6 implements NotificationCenter.NotificationCenterDelegate {
         if (i10 == NotificationCenter.fileLoaded) {
             d6 d6Var = (d6) hashMap.remove((String) objArr[0]);
             if (d6Var != null) {
-                Utilities.globalQueue.postRunnable(new c6(1, this, d6Var));
+                Utilities.globalQueue.postRunnable(new m4.g0(25, this, d6Var));
                 return;
             }
             return;
@@ -168,6 +168,6 @@ public final class e6 implements NotificationCenter.NotificationCenterDelegate {
         if (i10 != NotificationCenter.fileLoadFailed || hashMap.remove((String) objArr[0]) == null) {
             return;
         }
-        AndroidUtilities.runOnUIThread(new di.y0(this, (Object) null, z10, 10));
+        AndroidUtilities.runOnUIThread(new ci.y0(this, (Object) null, z10, 10));
     }
 }

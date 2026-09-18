@@ -3,31 +3,31 @@ package org.telegram.ui.Cells;
 import android.content.Context;
 import android.view.View;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.d61;
-import org.telegram.ui.Components.g51;
-import org.telegram.ui.Components.h51;
-import org.telegram.ui.Components.ll0;
-import org.telegram.ui.Components.v51;
+import org.telegram.ui.Components.f61;
+import org.telegram.ui.Components.i51;
+import org.telegram.ui.Components.j51;
+import org.telegram.ui.Components.ml0;
+import org.telegram.ui.Components.x51;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class n3 extends g51 {
+public final class n3 extends i51 {
     public static final /* synthetic */ int a = 0;
 
     static {
-        g51.setup(new n3());
+        i51.setup(new n3());
     }
 
-    @Override // org.telegram.ui.Components.g51
-    public final void bindView(View view, h51 h51Var, boolean z10, v51 v51Var, d61 d61Var) {
+    @Override // org.telegram.ui.Components.i51
+    public final void bindView(View view, j51 j51Var, boolean z10, x51 x51Var, f61 f61Var) {
         o3 o3Var = (o3) view;
-        o3Var.a((TLRPC.StickerSetCovered) h51Var.G, z10, h51Var.t, false);
-        o3Var.e.a(h51Var.t, false);
-        o3Var.setAddOnClickListener(h51Var.D);
+        o3Var.a((TLRPC.StickerSetCovered) j51Var.G, z10, j51Var.t, false);
+        o3Var.e.a(j51Var.t, false);
+        o3Var.setAddOnClickListener(j51Var.D);
     }
 
-    @Override // org.telegram.ui.Components.g51
-    public final View createView(Context context, ll0 ll0Var, int i10, int i11, org.telegram.ui.ActionBar.f6 f6Var) {
+    @Override // org.telegram.ui.Components.i51
+    public final View createView(Context context, ml0 ml0Var, int i10, int i11, org.telegram.ui.ActionBar.f6 f6Var) {
         return new o3(context, f6Var);
     }
 }

@@ -19,9 +19,9 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public class t00 extends View implements org.telegram.ui.ActionBar.z5 {
+public class t00 extends View implements org.telegram.ui.ActionBar.a6 {
     public int E;
     public int F;
     public int G;
@@ -139,12 +139,16 @@ public class t00 extends View implements org.telegram.ui.ActionBar.z5 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.z5
-    public final void d() {
+    public final int d(int i10) {
+        return org.telegram.ui.ActionBar.j6.v0(i10, this.L);
+    }
+
+    @Override // org.telegram.ui.ActionBar.a6
+    public final void e() {
         int i10;
         t00 t00Var = this.R;
         if (t00Var != null) {
-            t00Var.d();
+            t00Var.e();
             return;
         }
         int i11 = this.H;
@@ -170,10 +174,6 @@ public class t00 extends View implements org.telegram.ui.ActionBar.z5 {
             this.b = new LinearGradient(0.0f, 0.0f, 0.0f, this.a, new int[]{v03, v02, v02, v03}, new float[]{0.0f, 0.4f, 0.6f, 1.0f}, Shader.TileMode.CLAMP);
         }
         this.c.setShader(this.b);
-    }
-
-    public final int e(int i10) {
-        return org.telegram.ui.ActionBar.j6.v0(i10, this.L);
     }
 
     public final void f(int i10, int i11, int i12) {
@@ -282,14 +282,14 @@ public class t00 extends View implements org.telegram.ui.ActionBar.z5 {
         if (getViewType() == 34 || getViewType() == 35 || getViewType() == 36) {
             this.Q = -getX();
         }
-        d();
+        e();
         h();
         int i10 = this.F;
         if (this.x) {
             int dp = AndroidUtilities.dp(32.0f) + i10;
             int i11 = this.J;
             if (i11 >= 0) {
-                this.d.setColor(e(i11));
+                this.d.setColor(d(i11));
             }
             canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), AndroidUtilities.dp(32.0f), this.J >= 0 ? this.d : paint3);
             canvas2 = canvas;

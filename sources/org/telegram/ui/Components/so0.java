@@ -1,43 +1,27 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.MotionEvent;
 import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class so0 extends FrameLayout {
-    public final /* synthetic */ ff a;
+public final class so0 extends s4.s0 {
+    public final /* synthetic */ cf a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public so0(ff ffVar, Context context) {
-        super(context);
-        this.a = ffVar;
+    public so0(cf cfVar) {
+        this.a = cfVar;
     }
 
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        ff ffVar = this.a;
-        View contentView = ffVar.getContentView();
-        int[] iArr = new int[2];
-        contentView.getLocationInWindow(iArr);
-        iArr[0] = iArr[0] + ffVar.E;
-        iArr[1] = iArr[1] + ffVar.F;
-        getLocationInWindow(new int[2]);
-        if (motionEvent.getAction() != 0 || motionEvent.getX() > iArr[0]) {
-            if (motionEvent.getX() < contentView.getWidth() + iArr[0] && motionEvent.getY() > iArr[1]) {
-                if (motionEvent.getY() < contentView.getHeight() + iArr[1]) {
-                    motionEvent.offsetLocation(r2[0] - iArr[0], (AndroidUtilities.statusBarHeight + r2[1]) - iArr[1]);
-                    return contentView.dispatchTouchEvent(motionEvent);
-                }
-            }
+    @Override // s4.s0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        cf cfVar = this.a;
+        View view = cfVar.u;
+        boolean z10 = cfVar.w.I0() != 0;
+        Boolean bool = cfVar.x;
+        if (bool == null || z10 != bool.booleanValue()) {
+            view.animate().cancel();
+            view.animate().alpha(z10 ? 1.0f : 0.0f).setDuration(150L).start();
+            cfVar.x = Boolean.valueOf(z10);
         }
-        if (!ffVar.A && !ffVar.D) {
-            ffVar.D = true;
-            ffVar.l(new o1.k[0]);
-        }
-        return true;
     }
 }

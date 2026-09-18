@@ -5,7 +5,7 @@ import android.util.Log;
 import java.math.BigInteger;
 import java.util.Map;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class e1 {
     public static final g6.b d = new g6.b("ApplicationAnalyticsUtils", null);
@@ -16,8 +16,8 @@ public final class e1 {
 
     public e1(String str, Bundle bundle) {
         this.a = str;
-        this.b = v7.h5.a("com.google.android.gms.cast.DICTIONARY_CAST_STATUS_CODES_TO_APP_SESSION_ERROR", bundle);
-        this.c = v7.h5.a("com.google.android.gms.cast.DICTIONARY_CAST_STATUS_CODES_TO_APP_SESSION_CHANGE_REASON", bundle);
+        this.b = v7.i5.a("com.google.android.gms.cast.DICTIONARY_CAST_STATUS_CODES_TO_APP_SESSION_ERROR", bundle);
+        this.c = v7.i5.a("com.google.android.gms.cast.DICTIONARY_CAST_STATUS_CODES_TO_APP_SESSION_CHANGE_REASON", bundle);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:8:0x0039  */

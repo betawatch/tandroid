@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.animation.ValueAnimator;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class h70 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -34,83 +34,83 @@ public final /* synthetic */ class h70 implements ValueAnimator.AnimatorUpdateLi
                 sd0Var.f(floatValue2);
                 break;
             case 3:
-                ((eg0) this.b).h.setAlpha(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                ((fg0) this.b).h.setAlpha(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
             case 4:
-                ih0 ih0Var = (ih0) this.b;
-                ih0Var.H.E = AndroidUtilities.lerp(ih0Var.J, 0.0f, valueAnimator.getAnimatedFraction());
+                jh0 jh0Var = (jh0) this.b;
+                jh0Var.H.E = AndroidUtilities.lerp(jh0Var.J, 0.0f, valueAnimator.getAnimatedFraction());
                 break;
             case 5:
-                pj0 pj0Var = (pj0) this.b;
+                qj0 qj0Var = (qj0) this.b;
                 float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                pj0Var.e.setAlpha(floatValue3);
-                pj0Var.h.setAlpha(1.0f - floatValue3);
+                qj0Var.e.setAlpha(floatValue3);
+                qj0Var.h.setAlpha(1.0f - floatValue3);
                 break;
             case 6:
-                fk0 fk0Var = (fk0) this.b;
-                fk0Var.B0 = ((Float) fk0Var.y0.getAnimatedValue()).floatValue();
-                ah.w wVar = fk0Var.S;
-                if (wVar != null) {
-                    wVar.invalidate();
+                gk0 gk0Var = (gk0) this.b;
+                gk0Var.B0 = ((Float) gk0Var.y0.getAnimatedValue()).floatValue();
+                ci.n6 n6Var = gk0Var.S;
+                if (n6Var != null) {
+                    n6Var.invalidate();
                 }
-                fk0Var.invalidate();
+                gk0Var.invalidate();
                 break;
             case 7:
-                rr rrVar = (rr) this.b;
-                rrVar.getClass();
+                sr srVar = (sr) this.b;
+                srVar.getClass();
                 float floatValue4 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                rrVar.setScaleX(floatValue4);
-                rrVar.setScaleY(floatValue4);
-                ((fk0) rrVar.c).S.invalidate();
+                srVar.setScaleX(floatValue4);
+                srVar.setScaleY(floatValue4);
+                ((gk0) srVar.c).S.invalidate();
                 break;
             case 8:
                 ((q0.a) this.b).accept((Float) valueAnimator.getAnimatedValue());
                 break;
             case 9:
-                dk0 dk0Var = (dk0) this.b;
+                ek0 ek0Var = (ek0) this.b;
                 float floatValue5 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                dk0Var.I = floatValue5;
-                ck0 ck0Var = dk0Var.b;
-                ck0Var.setScaleY(floatValue5 * (dk0Var.w ? 0.76f : 1.0f));
-                ck0Var.setScaleX(dk0Var.I * (dk0Var.w ? 0.76f : 1.0f));
+                ek0Var.I = floatValue5;
+                dk0 dk0Var = ek0Var.b;
+                dk0Var.setScaleY(floatValue5 * (ek0Var.w ? 0.76f : 1.0f));
+                dk0Var.setScaleX(ek0Var.I * (ek0Var.w ? 0.76f : 1.0f));
                 break;
             case 10:
-                ql0 ql0Var = (ql0) this.b;
-                ql0Var.getClass();
-                ql0Var.h = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                ql0Var.invalidateSelf();
+                rl0 rl0Var = (rl0) this.b;
+                rl0Var.getClass();
+                rl0Var.h = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                rl0Var.invalidateSelf();
                 break;
             case 11:
-                am0 am0Var = (am0) this.b;
+                bm0 bm0Var = (bm0) this.b;
                 float floatValue6 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                am0Var.r = floatValue6;
-                am0Var.y.setScaleX(AndroidUtilities.lerp(0.8f, 1.0f, floatValue6));
-                am0Var.y.setScaleY(AndroidUtilities.lerp(0.8f, 1.0f, am0Var.r));
-                am0Var.y.setAlpha(am0Var.r);
-                am0Var.s.invalidate();
-                am0Var.v.invalidate();
+                bm0Var.r = floatValue6;
+                bm0Var.y.setScaleX(AndroidUtilities.lerp(0.8f, 1.0f, floatValue6));
+                bm0Var.y.setScaleY(AndroidUtilities.lerp(0.8f, 1.0f, bm0Var.r));
+                bm0Var.y.setAlpha(bm0Var.r);
+                bm0Var.s.invalidate();
+                bm0Var.v.invalidate();
                 break;
             case 12:
-                im0 im0Var = (im0) this.b;
-                im0Var.getClass();
-                im0Var.v = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                im0Var.j();
+                jm0 jm0Var = (jm0) this.b;
+                jm0Var.getClass();
+                jm0Var.v = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                jm0Var.j();
                 break;
             case 13:
-                ((im0) ((em0) this.b).b).invalidate();
+                ((jm0) ((fm0) this.b).b).invalidate();
                 break;
             case 14:
-                mm0 mm0Var = (mm0) this.b;
-                mm0Var.getClass();
-                mm0Var.setScrollX((int) ((Float) valueAnimator.getAnimatedValue()).floatValue());
+                nm0 nm0Var = (nm0) this.b;
+                nm0Var.getClass();
+                nm0Var.setScrollX((int) ((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
             case 15:
-                hn0 hn0Var = (hn0) this.b;
-                hn0Var.getClass();
+                jn0 jn0Var = (jn0) this.b;
+                jn0Var.getClass();
                 float floatValue7 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                hn0Var.F = floatValue7;
-                hn0Var.setShown(floatValue7);
-                hn0Var.b(false);
+                jn0Var.F = floatValue7;
+                jn0Var.setShown(floatValue7);
+                jn0Var.b(false);
                 break;
             case 16:
                 xo0 xo0Var = (xo0) this.b;
@@ -119,70 +119,70 @@ public final /* synthetic */ class h70 implements ValueAnimator.AnimatorUpdateLi
                 xo0Var.invalidate();
                 break;
             case 17:
-                lp0 lp0Var = (lp0) this.b;
-                hq0 hq0Var = lp0Var.b;
-                hq0Var.u0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                hq0Var.c.invalidate();
-                lp0Var.invalidate();
+                mp0 mp0Var = (mp0) this.b;
+                iq0 iq0Var = mp0Var.b;
+                iq0Var.u0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                iq0Var.c.invalidate();
+                mp0Var.invalidate();
                 break;
             case 18:
-                ((zt) this.b).setOffsetY(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                ((bu) this.b).setOffsetY(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
             case 19:
-                xu0 xu0Var = (xu0) this.b;
-                xu0Var.M0(xu0Var.getTabProgress());
+                zu0 zu0Var = (zu0) this.b;
+                zu0Var.M0(zu0Var.getTabProgress());
                 break;
             case 20:
-                ((qt0) this.b).h.invalidate();
+                ((st0) this.b).h.invalidate();
                 break;
             case 21:
-                ev0 ev0Var = (ev0) this.b;
-                ev0Var.getClass();
-                ev0Var.d = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                ev0Var.invalidate();
+                gv0 gv0Var = (gv0) this.b;
+                gv0Var.getClass();
+                gv0Var.d = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                gv0Var.invalidate();
                 break;
             case 22:
-                ov0 ov0Var = (ov0) ((androidx.activity.g) this.b).c;
-                ov0Var.f0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                ov0Var.N();
+                qv0 qv0Var = (qv0) ((androidx.activity.g) this.b).c;
+                qv0Var.f0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                qv0Var.N();
                 break;
             case 23:
-                ((vw0) this.b).setCategoriesShownT(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                ((xw0) this.b).setCategoriesShownT(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
             case 24:
-                xw0 xw0Var = (xw0) this.b;
-                xw0Var.I = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                xw0Var.a();
+                zw0 zw0Var = (zw0) this.b;
+                zw0Var.I = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                zw0Var.a();
                 break;
             case 25:
-                cy0 cy0Var = (cy0) this.b;
-                cy0Var.getClass();
-                cy0Var.G = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                cy0Var.invalidate();
+                ey0 ey0Var = (ey0) this.b;
+                ey0Var.getClass();
+                ey0Var.G = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                ey0Var.invalidate();
                 break;
             case 26:
-                fy0 fy0Var = (fy0) this.b;
-                fy0Var.getClass();
-                fy0Var.i = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                fy0Var.a.invalidate();
+                hy0 hy0Var = (hy0) this.b;
+                hy0Var.getClass();
+                hy0Var.i = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                hy0Var.a.invalidate();
                 break;
             case 27:
-                t11 t11Var = (t11) this.b;
-                t11Var.getClass();
-                t11Var.M = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                t11Var.invalidate();
+                v11 v11Var = (v11) this.b;
+                v11Var.getClass();
+                v11Var.M = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                v11Var.invalidate();
                 break;
             case 28:
-                w21 w21Var = (w21) this.b;
-                w21Var.getClass();
-                w21Var.R = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                w21Var.n();
+                y21 y21Var = (y21) this.b;
+                y21Var.getClass();
+                y21Var.R = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                y21Var.n();
                 break;
             default:
-                o41 o41Var = (o41) this.b;
-                o41Var.getClass();
-                o41Var.B0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                o41Var.invalidate();
+                q41 q41Var = (q41) this.b;
+                q41Var.getClass();
+                q41Var.B0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                q41Var.invalidate();
                 break;
         }
     }

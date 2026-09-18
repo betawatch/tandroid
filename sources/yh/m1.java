@@ -1,113 +1,71 @@
 package yh;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import android.os.Build;
-import org.telegram.messenger.LiteMode;
-import zh.h8;
+import java.util.ArrayList;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
-/* loaded from: classes.dex */
-public final class m1 extends Drawable {
-    public final int a;
-    public final RectF b;
-    public final Path c;
-    public final Paint d;
-    public final h8 e;
-    public boolean f;
-    public sg.p0 g;
-    public org.telegram.ui.web.b1 h;
-    public boolean i;
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class m1 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ a4 b;
+    public final /* synthetic */ TL_stars.TL_starGiftUnique c;
+    public final /* synthetic */ zf.a d;
+    public final /* synthetic */ Runnable e;
 
-    public m1(int i10) {
-        this(i0.a.k(i10, 128), i10);
-    }
-
-    public final void a() {
-        boolean z10 = this.e != null && this.i && LiteMode.isEnabled(131072);
-        if (this.f == z10) {
-            return;
-        }
-        this.f = z10;
-        if (z10) {
-            yf.h d = yf.h.d();
-            sg.p0 p0Var = new sg.p0(this, 21);
-            this.g = p0Var;
-            d.a(15, p0Var);
-        } else {
-            yf.h.d().f(this.g);
-        }
-        invalidateSelf();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        Paint paint = this.d;
-        Path path = this.c;
-        canvas.drawPath(path, paint);
-        h8 h8Var = this.e;
-        if (h8Var != null) {
-            if (this.f || !this.i) {
-                canvas.save();
-                canvas.clipPath(path);
-                if (this.g == null) {
-                    h8Var.d();
-                }
-                h8Var.a(canvas, this.a);
-                canvas.restore();
-                if (this.g == null) {
-                    invalidateSelf();
-                }
-            }
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void onBoundsChange(Rect rect) {
-        super.onBoundsChange(rect);
-        float min = Math.min(rect.width(), rect.height()) / 2.0f;
-        RectF rectF = this.b;
-        rectF.set(rect);
-        Path path = this.c;
-        path.rewind();
-        path.addRoundRect(rectF, min, min, Path.Direction.CW);
-        h8 h8Var = this.e;
-        if (h8Var != null) {
-            h8Var.g(rectF);
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        this.d.setAlpha(i10);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        this.d.setColorFilter(colorFilter);
-    }
-
-    public m1(int i10, int i11) {
-        this.b = new RectF();
-        this.c = new Path();
-        Paint paint = new Paint(1);
-        this.d = paint;
+    public /* synthetic */ m1(a4 a4Var, TL_stars.TL_starGiftUnique tL_starGiftUnique, zf.a aVar, Runnable runnable, int i10) {
         this.a = i10;
-        paint.setColor(i11);
-        if (Build.VERSION.SDK_INT >= 29) {
-            this.e = new h8(1, 25);
-        } else {
-            this.e = null;
+        this.b = a4Var;
+        this.c = tL_starGiftUnique;
+        this.d = aVar;
+        this.e = runnable;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10 = this.a;
+        zf.b bVar = zf.b.a;
+        zf.b bVar2 = zf.b.b;
+        Runnable runnable = this.e;
+        zf.a aVar = this.d;
+        TL_stars.TL_starGiftUnique tL_starGiftUnique = this.c;
+        a4 a4Var = this.b;
+        switch (i10) {
+            case 0:
+                a4Var.getClass();
+                tL_starGiftUnique.flags |= 16;
+                tL_starGiftUnique.resale_ton_only = aVar.a == bVar2;
+                ArrayList<TL_stars.StarsAmount> arrayList = new ArrayList<>();
+                tL_starGiftUnique.resell_amount = arrayList;
+                arrayList.add(aVar.e(bVar).o());
+                tL_starGiftUnique.resell_amount.add(aVar.e(bVar2).o());
+                a4Var.e0.setResellPrice(aVar);
+                xh.c2 c2Var = a4Var.d1;
+                if (c2Var != null) {
+                    c2Var.run();
+                }
+                if (runnable != null) {
+                    runnable.run();
+                }
+                hg.k0.s(R.string.Gift2ResaleEnable, new Object[]{a4Var.C1()}, a4Var.getBulletinFactory(), R.raw.contact_check, 36);
+                break;
+            default:
+                tL_starGiftUnique.flags |= 16;
+                tL_starGiftUnique.resale_ton_only = aVar.a == bVar2;
+                ArrayList<TL_stars.StarsAmount> arrayList2 = new ArrayList<>();
+                tL_starGiftUnique.resell_amount = arrayList2;
+                arrayList2.add(aVar.e(bVar).o());
+                tL_starGiftUnique.resell_amount.add(aVar.e(bVar2).o());
+                a4Var.e0.setResellPrice(aVar);
+                xh.c2 c2Var2 = a4Var.d1;
+                if (c2Var2 != null) {
+                    c2Var2.run();
+                }
+                if (runnable != null) {
+                    runnable.run();
+                    break;
+                }
+                break;
         }
     }
 }

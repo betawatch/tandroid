@@ -1,0 +1,17 @@
+package kg;
+
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* loaded from: classes3.dex */
+public final class j {
+    public float a;
+    public float b;
+    public float c;
+    public float d;
+    public float e;
+    public float f;
+    public float[] g;
+    public float[] h;
+    public float[] i;
+    public float[] j;
+    public float[] k;
+}

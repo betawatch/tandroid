@@ -1,55 +1,36 @@
 package rg;
 
-import android.view.View;
-import di.c6;
-import java.util.ArrayList;
-import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class d1 extends s4.t {
-    public final /* synthetic */ c6 S;
+public final /* synthetic */ class d1 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ k1 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d1(c6 c6Var) {
-        super(true);
-        this.S = c6Var;
+    public /* synthetic */ d1(k1 k1Var, int i10) {
+        this.a = i10;
+        this.b = k1Var;
     }
 
-    @Override // s4.t
-    public final boolean B1(int i10) {
-        MessageObject.GroupedMessagePosition position;
-        byte b10;
-        c6 c6Var = this.S;
-        ArrayList arrayList = c6Var.s0;
-        int size = (arrayList.size() - 1) - i10;
-        MessageObject.GroupedMessages groupedMessages = c6Var.t0;
-        if (groupedMessages != null && size >= 0 && size < arrayList.size() && (position = groupedMessages.getPosition((MessageObject) arrayList.get(size))) != null && position.minX != position.maxX && (b10 = position.minY) == position.maxY && b10 != 0) {
-            int size2 = groupedMessages.posArray.size();
-            for (int i11 = 0; i11 < size2; i11++) {
-                MessageObject.GroupedMessagePosition groupedMessagePosition = groupedMessages.posArray.get(i11);
-                if (groupedMessagePosition != position) {
-                    byte b11 = groupedMessagePosition.minY;
-                    byte b12 = position.minY;
-                    if (b11 <= b12 && groupedMessagePosition.maxY >= b12) {
-                        return true;
-                    }
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                k1 k1Var = this.b;
+                nf.f.s(k1Var.getContext(), "https://" + MessagesController.getInstance(k1Var.Y).linkPrefix + "/nft/" + k1Var.D0.slug);
+                break;
+            case 1:
+                k1 k1Var2 = this.b;
+                try {
+                    k1Var2.container.performHapticFeedback(3, 2);
+                } catch (Exception unused) {
                 }
-            }
+                k1Var2.o0.c(k1Var2.K0);
+                break;
+            default:
+                this.b.O0[0].setVisibility(8);
+                break;
         }
-        return false;
-    }
-
-    @Override // s4.t
-    public final boolean C1(View view) {
-        if (view instanceof org.telegram.ui.Cells.t1) {
-            return !((org.telegram.ui.Cells.t1) view).getMessageObject().isOutOwner();
-        }
-        return false;
-    }
-
-    @Override // s4.s, s4.c0, s4.o0
-    public final boolean y0() {
-        return false;
     }
 }

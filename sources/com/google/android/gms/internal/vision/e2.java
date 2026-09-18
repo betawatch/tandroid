@@ -9,10 +9,12 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
+import org.telegram.messenger.LocaleController;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.vk0;
+import org.telegram.ui.Components.j51;
+import org.telegram.ui.Components.wk0;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public abstract /* synthetic */ class e2 {
     public static float A(float f7, float f10, float f11, float f12) {
@@ -104,27 +106,22 @@ public abstract /* synthetic */ class e2 {
         return str + str2 + str3 + str4;
     }
 
-    public static StringBuilder k(String str, int i10, String str2, int i11, String str3) {
-        StringBuilder sb2 = new StringBuilder(str);
-        sb2.append(i10);
-        sb2.append(str2);
-        sb2.append(i11);
-        sb2.append(str3);
-        return sb2;
-    }
-
-    public static vk0 l(View view, View view2, int i10, int i11) {
+    public static wk0 k(View view, View view2, int i10, int i11) {
         view.setLayoutParams(new s4.p0(i10, i11));
-        return new vk0(view2);
+        return new wk0(view2);
     }
 
-    public static void m(float f7, int i10, TextView textView) {
+    public static void l(float f7, int i10, TextView textView) {
         textView.setTextSize(i10, f7);
         textView.setTypeface(AndroidUtilities.bold());
     }
 
-    public static void n(int i10, String str, String str2) {
+    public static void m(int i10, String str, String str2) {
         e2.a.n(str2, str + i10);
+    }
+
+    public static void n(int i10, ArrayList arrayList) {
+        arrayList.add(j51.t(LocaleController.getString(i10)));
     }
 
     public static void o(int i10, HashMap hashMap, String str, int i11, String str2) {
@@ -137,13 +134,13 @@ public abstract /* synthetic */ class e2 {
         textView.setGravity(i11);
     }
 
-    public static void q(com.google.firebase.messaging.s sVar) {
+    public static void q(com.google.firebase.messaging.t tVar) {
         com.googlecode.mp4parser.g.a().getClass();
-        com.googlecode.mp4parser.g.b(sVar);
+        com.googlecode.mp4parser.g.b(tVar);
     }
 
-    public static void r(hg.m mVar, int i10, ArrayList arrayList) {
-        arrayList.add(new hg.k(mVar, i10));
+    public static void r(gg.m mVar, int i10, ArrayList arrayList) {
+        arrayList.add(new gg.k(mVar, i10));
     }
 
     public static void s(String str, String str2, String str3) {
@@ -163,8 +160,8 @@ public abstract /* synthetic */ class e2 {
         return (f11 - (f7 * f10)) / f12;
     }
 
-    public static int w(int i10, int i11, int i12, int i13) {
-        return ((i10 - i11) * i12) + i13;
+    public static void w(int i10, ArrayList arrayList) {
+        arrayList.add(j51.B(LocaleController.getString(i10)));
     }
 
     public static float x(float f7, float f10, float f11, float f12) {

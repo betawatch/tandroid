@@ -3,17 +3,18 @@ package qa;
 import android.text.TextUtils;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Pattern;
+import t7.u;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class j {
     public static final long b = TimeUnit.HOURS.toSeconds(1);
     public static final Pattern c = Pattern.compile("\\AA[\\w-]{38}\\z");
     public static j d;
-    public final na.d a;
+    public final u a;
 
-    public j(na.d dVar) {
-        this.a = dVar;
+    public j(u uVar) {
+        this.a = uVar;
     }
 
     public final boolean a(ra.b bVar) {

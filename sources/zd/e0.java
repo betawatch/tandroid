@@ -10,19 +10,18 @@ import v7.h7;
 import v7.i7;
 import v7.r7;
 import v7.t7;
-import v7.t8;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public abstract class e0 {
-    public static final d9.f a = new d9.f("RESUME_TOKEN", 1);
-    public static final d9.f b = new d9.f("REMOVED_TASK", 1);
-    public static final d9.f c = new d9.f("CLOSED_EMPTY", 1);
-    public static final d9.f d = new d9.f("COMPLETING_ALREADY", 1);
-    public static final d9.f e = new d9.f("COMPLETING_WAITING_CHILDREN", 1);
-    public static final d9.f f = new d9.f("COMPLETING_RETRY", 1);
-    public static final d9.f g = new d9.f("TOO_LATE_TO_CANCEL", 1);
-    public static final d9.f h = new d9.f("SEALED", 1);
+    public static final ee.v a = new ee.v("RESUME_TOKEN", 0);
+    public static final ee.v b = new ee.v("REMOVED_TASK", 0);
+    public static final ee.v c = new ee.v("CLOSED_EMPTY", 0);
+    public static final ee.v d = new ee.v("COMPLETING_ALREADY", 0);
+    public static final ee.v e = new ee.v("COMPLETING_WAITING_CHILDREN", 0);
+    public static final ee.v f = new ee.v("COMPLETING_RETRY", 0);
+    public static final ee.v g = new ee.v("TOO_LATE_TO_CANCEL", 0);
+    public static final ee.v h = new ee.v("SEALED", 0);
     public static final q0 i = new q0(false);
     public static final q0 j = new q0(true);
 
@@ -57,7 +56,7 @@ public abstract class e0 {
             return hd.o.a;
         }
         e eVar = new e(h0VarArr);
-        m mVar = new m(1, t8.b(jVar));
+        m mVar = new m(1, w7.g.b(jVar));
         mVar.s();
         int length = h0VarArr.length;
         c[] cVarArr = new c[length];
@@ -100,7 +99,7 @@ public abstract class e0 {
 
     public static final Object g(long j3, kd.c cVar) {
         if (j3 > 0) {
-            m mVar = new m(1, t8.b(cVar));
+            m mVar = new m(1, w7.g.b(cVar));
             mVar.s();
             if (j3 < Long.MAX_VALUE) {
                 j(mVar.e).b(j3, mVar);
@@ -155,18 +154,18 @@ public abstract class e0 {
             return new m(1, cVar);
         }
         ee.h hVar = (ee.h) cVar;
-        d9.f fVar = ee.a.d;
+        ee.v vVar = ee.a.d;
         AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = ee.h.n;
         loop0: while (true) {
             Object obj = atomicReferenceFieldUpdater.get(hVar);
             mVar = null;
             if (obj == null) {
-                atomicReferenceFieldUpdater.set(hVar, fVar);
+                atomicReferenceFieldUpdater.set(hVar, vVar);
                 mVar2 = null;
                 break;
             }
             if (obj instanceof m) {
-                while (!atomicReferenceFieldUpdater.compareAndSet(hVar, obj, fVar)) {
+                while (!atomicReferenceFieldUpdater.compareAndSet(hVar, obj, vVar)) {
                     if (atomicReferenceFieldUpdater.get(hVar) != obj) {
                         break;
                     }
@@ -174,7 +173,7 @@ public abstract class e0 {
                 mVar2 = (m) obj;
                 break loop0;
             }
-            if (obj != fVar && !(obj instanceof Throwable)) {
+            if (obj != vVar && !(obj instanceof Throwable)) {
                 throw new IllegalStateException(("Inconsistent state " + obj).toString());
             }
         }

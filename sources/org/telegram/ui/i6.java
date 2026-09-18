@@ -1,16 +1,27 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
-/* loaded from: classes3.dex */
-public final class i6 extends s4.j {
-    public final /* synthetic */ z6 F;
+import android.content.Context;
 
-    public i6(z6 z6Var) {
-        this.F = z6Var;
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* loaded from: classes3.dex */
+public final class i6 extends org.telegram.ui.Components.wf0 {
+    public final /* synthetic */ a7 F0;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public i6(a7 a7Var, Context context) {
+        super(context);
+        this.F0 = a7Var;
     }
 
-    @Override // s4.j
-    public final void P(s4.c1 c1Var) {
-        this.F.b.invalidate();
+    @Override // org.telegram.ui.Components.qv0, android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        getViewTreeObserver().addOnPreDrawListener(this.F0.k0);
+    }
+
+    @Override // org.telegram.ui.Components.qv0, android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        getViewTreeObserver().removeOnPreDrawListener(this.F0.k0);
+        super.onDetachedFromWindow();
     }
 }

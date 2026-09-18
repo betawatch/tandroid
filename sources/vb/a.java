@@ -9,9 +9,10 @@ import java.util.concurrent.TimeUnit;
 import m.p3;
 import n6.i;
 import n6.l;
+import n7.a1;
 import org.telegram.tgnet.ConnectionsManager;
 import qb.m;
-import v7.a6;
+import v7.r1;
 import w7.d7;
 import w7.e7;
 import w7.ia;
@@ -20,7 +21,7 @@ import w7.la;
 import w7.na;
 import w7.y6;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class a {
     public volatile Bitmap a;
@@ -91,9 +92,9 @@ public final class a {
         p3Var.a = Long.valueOf(Long.MAX_VALUE & elapsedRealtime2);
         p3Var.h = Integer.valueOf(i10 & ConnectionsManager.DEFAULT_DATACENTER_ID);
         e7 e7Var = new e7(p3Var);
-        a6 a6Var = new a6(3, false);
-        a6Var.d = e7Var;
-        m.a.execute(new v(a2, new o0.a(a6Var), task.isSuccessful() ? (String) task.getResult() : i.c.a(a2.g)));
+        r1 r1Var = new r1(5, false);
+        r1Var.c = e7Var;
+        m.a.execute(new v(a2, new a1(r1Var), task.isSuccessful() ? (String) task.getResult() : i.c.a(a2.g)));
         return aVar;
     }
 }

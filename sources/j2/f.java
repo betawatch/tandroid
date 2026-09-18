@@ -27,7 +27,11 @@ import e9.a1;
 import e9.f1;
 import e9.g0;
 import e9.i0;
-import i2.o;
+import ei.d5;
+import i2.a0;
+import i2.e0;
+import i2.s;
+import i2.y;
 import java.io.IOException;
 import java.util.List;
 import org.telegram.messenger.MediaDataController;
@@ -36,7 +40,7 @@ import u2.f0;
 import u2.k0;
 import u2.t;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class f implements z0, k0, n2.k {
     public final x a;
@@ -54,7 +58,7 @@ public final class f implements z0, k0, n2.k {
         this.a = xVar;
         String str = d0.a;
         Looper myLooper = Looper.myLooper();
-        this.f = new p(myLooper == null ? Looper.getMainLooper() : myLooper, xVar, new i0.b(25));
+        this.f = new p(myLooper == null ? Looper.getMainLooper() : myLooper, xVar, new ga.a(27));
         h1 h1Var = new h1();
         this.b = h1Var;
         this.c = new j1();
@@ -70,43 +74,43 @@ public final class f implements z0, k0, n2.k {
     @Override // n2.k
     public final void a(int i10, f0 f0Var, int i11) {
         a o9 = o(i10, f0Var);
-        q(o9, 1022, new c(o9, i11, 12, (byte) 0));
+        q(o9, 1022, new c(o9, i11, 14, (byte) 0));
     }
 
     @Override // n2.k
     public final void b(int i10, f0 f0Var, Exception exc) {
         a o9 = o(i10, f0Var);
-        q(o9, 1024, new c(o9, exc, 13));
+        q(o9, 1024, new c(o9, exc, 15));
     }
 
     @Override // u2.k0
     public final void c(int i10, f0 f0Var, b0 b0Var) {
         a o9 = o(i10, f0Var);
-        q(o9, 1005, new c(o9, b0Var, 21));
+        q(o9, 1005, new c(o9, b0Var, 23));
     }
 
     @Override // u2.k0
     public final void d(int i10, f0 f0Var, b0 b0Var) {
         a o9 = o(i10, f0Var);
-        q(o9, 1004, new ah.i0(18, o9, b0Var));
+        q(o9, 1004, new ah.b(21, o9, b0Var));
     }
 
     @Override // u2.k0
     public final void e(int i10, f0 f0Var, t tVar, b0 b0Var) {
         a o9 = o(i10, f0Var);
-        q(o9, 1001, new c(o9, (Object) tVar, (Object) b0Var, 14));
+        q(o9, 1001, new c(o9, (Object) tVar, (Object) b0Var, 16));
     }
 
     @Override // u2.k0
     public final void f(int i10, f0 f0Var, t tVar, b0 b0Var, IOException iOException, boolean z10) {
         a o9 = o(i10, f0Var);
-        q(o9, 1003, new fi.f(o9, tVar, b0Var, iOException, z10));
+        q(o9, 1003, new d5(o9, tVar, b0Var, iOException, z10));
     }
 
     @Override // n2.k
     public final void g(int i10, f0 f0Var) {
         a o9 = o(i10, f0Var);
-        q(o9, 1027, new c(o9, 22));
+        q(o9, 1027, new c(o9, 24));
     }
 
     @Override // u2.k0
@@ -118,19 +122,19 @@ public final class f implements z0, k0, n2.k {
     @Override // n2.k
     public final void i(int i10, f0 f0Var) {
         a o9 = o(i10, f0Var);
-        q(o9, 1025, new c(o9, 27));
+        q(o9, 1025, new c(o9, 29));
     }
 
     @Override // u2.k0
     public final void j(int i10, f0 f0Var, t tVar, b0 b0Var) {
         a o9 = o(i10, f0Var);
-        q(o9, 1002, new c(o9, (Object) tVar, (Object) b0Var, 10));
+        q(o9, 1002, new c(o9, (Object) tVar, (Object) b0Var, 12));
     }
 
     @Override // n2.k
     public final void k(int i10, f0 f0Var) {
         a o9 = o(i10, f0Var);
-        q(o9, 1023, new c(o9, 29));
+        q(o9, 1023, new e((Object) o9, 1));
     }
 
     public final a l() {
@@ -184,37 +188,37 @@ public final class f implements z0, k0, n2.k {
     @Override // b2.z0
     public final void onAudioAttributesChanged(b2.e eVar) {
         a p5 = p();
-        q(p5, 20, new i0.b(p5, eVar, 15));
+        q(p5, 20, new ga.a(p5, eVar, 17));
     }
 
     @Override // b2.z0
     public final void onAudioSessionIdChanged(int i10) {
         a p5 = p();
-        q(p5, 21, new c(p5, i10, 18, (byte) 0));
+        q(p5, 21, new c(p5, i10, 20, (byte) 0));
     }
 
     @Override // b2.z0
     public final void onAvailableCommandsChanged(x0 x0Var) {
         a l4 = l();
-        q(l4, 13, new e(2, l4, x0Var));
+        q(l4, 13, new e(4, l4, x0Var));
     }
 
     @Override // b2.z0
     public final void onCues(List list) {
         a l4 = l();
-        q(l4, 27, new i2.z(l4, list));
+        q(l4, 27, new y(l4, list));
     }
 
     @Override // b2.z0
     public final void onIsLoadingChanged(boolean z10) {
         a l4 = l();
-        q(l4, 3, new c(l4, z10, 16));
+        q(l4, 3, new c(l4, z10, 18));
     }
 
     @Override // b2.z0
     public final void onIsPlayingChanged(boolean z10) {
         a l4 = l();
-        q(l4, 7, new i0.b(l4, z10));
+        q(l4, 7, new ga.a(l4, z10));
     }
 
     @Override // b2.z0
@@ -226,63 +230,63 @@ public final class f implements z0, k0, n2.k {
     @Override // b2.z0
     public final void onMediaMetadataChanged(n0 n0Var) {
         a l4 = l();
-        q(l4, 14, new c(l4, n0Var, 6));
+        q(l4, 14, new c(l4, n0Var, 8));
     }
 
     @Override // b2.z0
     public final void onMetadata(p0 p0Var) {
         a l4 = l();
-        q(l4, 28, new i0.b(l4, p0Var, 16));
+        q(l4, 28, new ga.a(l4, p0Var, 18));
     }
 
     @Override // b2.z0
     public final void onPlayWhenReadyChanged(boolean z10, int i10) {
         a l4 = l();
-        q(l4, 5, new i0.b(l4, z10, i10, 23));
+        q(l4, 5, new ga.a(l4, z10, i10, 25));
     }
 
     @Override // b2.z0
     public final void onPlaybackParametersChanged(v0 v0Var) {
         a l4 = l();
-        q(l4, 12, new i0.b(l4, v0Var, 12));
+        q(l4, 12, new ga.a(l4, v0Var, 14));
     }
 
     @Override // b2.z0
     public final void onPlaybackStateChanged(int i10) {
         a l4 = l();
-        q(l4, 4, new i0.b(l4, i10, 26));
+        q(l4, 4, new ga.a(l4, i10, 28));
     }
 
     @Override // b2.z0
     public final void onPlaybackSuppressionReasonChanged(int i10) {
         a l4 = l();
-        q(l4, 6, new i0.b(l4, i10, 19));
+        q(l4, 6, new ga.a(l4, i10, 21));
     }
 
     @Override // b2.z0
     public final void onPlayerError(u0 u0Var) {
         f0 f0Var;
-        a l4 = (!(u0Var instanceof o) || (f0Var = ((o) u0Var).E) == null) ? l() : n(f0Var);
-        q(l4, 10, new fi.f(l4, u0Var, 15));
+        a l4 = (!(u0Var instanceof i2.n) || (f0Var = ((i2.n) u0Var).E) == null) ? l() : n(f0Var);
+        q(l4, 10, new d5(l4, u0Var, 23));
     }
 
     @Override // b2.z0
     public final void onPlayerErrorChanged(u0 u0Var) {
         f0 f0Var;
-        a l4 = (!(u0Var instanceof o) || (f0Var = ((o) u0Var).E) == null) ? l() : n(f0Var);
-        q(l4, 10, new i0.b(l4, u0Var, 21));
+        a l4 = (!(u0Var instanceof i2.n) || (f0Var = ((i2.n) u0Var).E) == null) ? l() : n(f0Var);
+        q(l4, 10, new ga.a(l4, u0Var, 23));
     }
 
     @Override // b2.z0
     public final void onPlayerStateChanged(boolean z10, int i10) {
         a l4 = l();
-        q(l4, -1, new i0.b(l4, z10, i10, 14));
+        q(l4, -1, new ga.a(l4, z10, i10, 16));
     }
 
     @Override // b2.z0
     public final void onPlaylistMetadataChanged(n0 n0Var) {
         a l4 = l();
-        q(l4, 15, new c(l4, n0Var, 28));
+        q(l4, 15, new e(0, l4, n0Var));
     }
 
     @Override // b2.z0
@@ -292,7 +296,7 @@ public final class f implements z0, k0, n2.k {
     @Override // b2.z0
     public final void onRepeatModeChanged(int i10) {
         a l4 = l();
-        q(l4, 8, new i0.b(l4, i10, 27));
+        q(l4, 8, new ga.a(l4, i10, 29));
     }
 
     @Override // b2.z0
@@ -304,7 +308,7 @@ public final class f implements z0, k0, n2.k {
     @Override // b2.z0
     public final void onSkipSilenceEnabledChanged(boolean z10) {
         a p5 = p();
-        q(p5, 23, new c(p5, z10, 26));
+        q(p5, 23, new c(p5, z10, 28));
     }
 
     @Override // b2.z0
@@ -327,19 +331,19 @@ public final class f implements z0, k0, n2.k {
     @Override // b2.z0
     public final void onTrackSelectionParametersChanged(q1 q1Var) {
         a l4 = l();
-        q(l4, 19, new c(l4, q1Var, 24));
+        q(l4, 19, new c(l4, q1Var, 26));
     }
 
     @Override // b2.z0
     public final void onTracksChanged(s1 s1Var) {
         a l4 = l();
-        q(l4, 2, new i0.b(l4, s1Var, 22));
+        q(l4, 2, new ga.a(l4, s1Var, 24));
     }
 
     @Override // b2.z0
     public final void onVideoSizeChanged(x1 x1Var) {
         a p5 = p();
-        q(p5, 25, new i2.b0(p5, x1Var));
+        q(p5, 25, new a0(p5, x1Var));
     }
 
     @Override // b2.z0
@@ -357,13 +361,13 @@ public final class f implements z0, k0, n2.k {
         this.f.e(i10, mVar);
     }
 
-    public final void r(i2.f0 f0Var, Looper looper) {
+    public final void r(e0 e0Var, Looper looper) {
         e2.d.g(this.h == null || ((i0) this.d.b).isEmpty());
-        f0Var.getClass();
-        this.h = f0Var;
+        e0Var.getClass();
+        this.h = e0Var;
         this.n = this.a.a(looper, null);
         p pVar = this.f;
-        this.f = new p(pVar.d, looper, pVar.a, new ah.i0(17, this, f0Var), pVar.i);
+        this.f = new p(pVar.d, looper, pVar.a, new ah.b(20, this, e0Var), pVar.i);
     }
 
     @Override // b2.z0
@@ -376,13 +380,13 @@ public final class f implements z0, k0, n2.k {
         n nVar = this.d;
         nVar.d = n.p(b1Var, (i0) nVar.b, (f0) nVar.e, (h1) nVar.a);
         a l4 = l();
-        q(l4, 11, new i2.t(l4, i10, a1Var, a1Var2));
+        q(l4, 11, new s(l4, i10, a1Var, a1Var2));
     }
 
     @Override // b2.z0
-    public final void onCues(d2.c cVar) {
+    public final void onCues(d2.d dVar) {
         a l4 = l();
-        q(l4, 27, new i0.b(l4, cVar, 28));
+        q(l4, 27, new c(l4, dVar, 0));
     }
 
     @Override // b2.z0

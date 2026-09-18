@@ -1,80 +1,28 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.SharedConfig;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class a7 implements org.telegram.ui.ActionBar.r0, bl0 {
+public final /* synthetic */ class a7 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ k8 b;
+    public final /* synthetic */ h8 b;
+    public final /* synthetic */ MessageObject c;
 
-    public /* synthetic */ a7(k8 k8Var, int i10) {
+    public /* synthetic */ a7(h8 h8Var, MessageObject messageObject, int i10) {
         this.a = i10;
-        this.b = k8Var;
+        this.b = h8Var;
+        this.c = messageObject;
     }
 
-    @Override // org.telegram.ui.Components.bl0
-    public boolean a(int i10, View view) {
-        boolean z10 = view instanceof org.telegram.ui.Cells.x;
-        k8 k8Var = this.b;
-        if (!z10) {
-            k8Var.getClass();
-            return false;
-        }
-        if (k8Var.s0()) {
-            return false;
-        }
-        org.telegram.ui.Cells.x xVar = (org.telegram.ui.Cells.x) view;
-        k8Var.B0(xVar, xVar.getMessageObject());
-        return true;
-    }
-
-    @Override // org.telegram.ui.ActionBar.r0
-    public void m(int i10) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                k8 k8Var = this.b;
-                k8Var.getClass();
-                if (i10 >= 0) {
-                    float[] fArr = k8.U0;
-                    if (i10 < 6) {
-                        MediaController.getInstance().setPlaybackSpeed(true, fArr[i10]);
-                        k8Var.F0(true);
-                        break;
-                    }
-                }
-                break;
-            case 1:
-                k8 k8Var2 = this.b;
-                if (i10 == 1 || i10 == 2) {
-                    boolean z10 = SharedConfig.playOrderReversed;
-                    if ((z10 && i10 == 1) || (SharedConfig.shuffleMusic && i10 == 2)) {
-                        MediaController.getInstance().setPlaybackOrderType(0);
-                    } else {
-                        MediaController.getInstance().setPlaybackOrderType(i10);
-                    }
-                    k8Var2.s.l();
-                    if (z10 != SharedConfig.playOrderReversed) {
-                        k8Var2.n.B0();
-                        k8Var2.w0(false);
-                    }
-                } else if (i10 == 4) {
-                    if (SharedConfig.repeatMode == 1) {
-                        SharedConfig.setRepeatMode(0);
-                    } else {
-                        SharedConfig.setRepeatMode(1);
-                    }
-                } else if (SharedConfig.repeatMode == 2) {
-                    SharedConfig.setRepeatMode(0);
-                } else {
-                    SharedConfig.setRepeatMode(2);
-                }
-                k8Var2.H0();
+                h8.m(this.b, this.c);
                 break;
             default:
-                this.b.t0(i10);
+                h8.p(this.b, this.c);
                 break;
         }
     }

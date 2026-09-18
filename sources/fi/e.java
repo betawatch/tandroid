@@ -1,56 +1,79 @@
 package fi;
 
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.tl.TL_bots;
-import org.telegram.tgnet.tl.TL_payments;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ActionBar.a6;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.Components.u9;
+import w7.x5;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class e implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ m b;
+public final class e extends FrameLayout implements a6 {
+    public final u9 a;
+    public final f6 b;
+    public final TextView c;
+    public final TextView d;
 
-    public /* synthetic */ e(m mVar, int i10) {
-        this.a = i10;
-        this.b = mVar;
+    public e(Context context, f6 f6Var) {
+        super(context);
+        this.b = f6Var;
+        u9 u9Var = new u9(context);
+        this.a = u9Var;
+        u9Var.setRoundRadius(AndroidUtilities.dp(20.0f));
+        addView(u9Var, x5.d(72, 72.0f, 49, 0.0f, 36.0f, 0.0f, 0.0f));
+        TextView textView = new TextView(context);
+        this.c = textView;
+        textView.setTypeface(AndroidUtilities.bold());
+        textView.setTextSize(1, 20.0f);
+        textView.setGravity(17);
+        addView(textView, x5.d(-1, -2.0f, 49, 24.0f, 123.0f, 24.0f, 0.0f));
+        TextView textView2 = new TextView(context);
+        this.d = textView2;
+        textView2.setTextSize(1, 14.0f);
+        textView2.setGravity(17);
+        textView2.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
+        addView(textView2, x5.d(-1, -2.0f, 49, 32.0f, 157.0f, 32.0f, 0.0f));
+        e();
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                m mVar = this.b;
-                mVar.T.f(mVar.Y.end_date == 0 ? null : yg.l.f((r2 - mVar.getConnectionsManager().getCurrentTime()) * 1000), true);
-                if (mVar.Y.end_date != 0 && mVar.b0) {
-                    AndroidUtilities.runOnUIThread(mVar.V, 1000L);
-                    break;
-                }
-                break;
-            case 1:
-                TL_bots.updateStarRefProgram updatestarrefprogram = new TL_bots.updateStarRefProgram();
-                m mVar2 = this.b;
-                updatestarrefprogram.bot = mVar2.getMessagesController().getInputUser(mVar2.P);
-                TL_payments.starRefProgram starrefprogram = mVar2.Y;
-                updatestarrefprogram.commission_permille = starrefprogram.commission_permille;
-                int i10 = starrefprogram.duration_months;
-                updatestarrefprogram.duration_months = i10;
-                if (i10 > 0) {
-                    updatestarrefprogram.flags |= 1;
-                    starrefprogram.duration_months = i10 | 1;
-                } else {
-                    updatestarrefprogram.flags &= -2;
-                    starrefprogram.duration_months = i10 & (-2);
-                }
-                org.telegram.ui.ActionBar.b2 b2Var = new org.telegram.ui.ActionBar.b2(mVar2.getParentActivity(), 3, null);
-                b2Var.q(150L);
-                mVar2.getConnectionsManager().sendRequest(updatestarrefprogram, new b(mVar2, b2Var, 1));
-                break;
-            default:
-                m mVar3 = this.b;
-                of.f.s(mVar3.getParentActivity(), LocaleController.getString((mVar3.W || mVar3.Y.end_date != 0) ? R.string.AffiliateProgramUpdateInfoLink : R.string.AffiliateProgramStartInfoLink));
-                break;
-        }
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        Drawable drawable = j6.S0;
+        u9 u9Var = this.a;
+        yf.p.a(canvas, drawable, (u9Var.getWidth() / 2.0f) + u9Var.getLeft(), (u9Var.getHeight() / 2.0f) + u9Var.getTop(), u9Var.getHeight());
+    }
+
+    @Override // org.telegram.ui.ActionBar.a6
+    public final void e() {
+        int i10 = j6.G6;
+        f6 f6Var = this.b;
+        this.c.setTextColor(j6.v0(i10, f6Var));
+        this.d.setTextColor(j6.v0(j6.z6, f6Var));
+    }
+
+    public /* bridge */ /* synthetic */ int[] getColorKeys() {
+        return null;
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(218.0f), TLObject.FLAG_30));
+    }
+
+    public void setSubtitle(CharSequence charSequence) {
+        this.d.setText(charSequence);
+    }
+
+    public void setTitle(CharSequence charSequence) {
+        this.c.setText(charSequence);
     }
 }

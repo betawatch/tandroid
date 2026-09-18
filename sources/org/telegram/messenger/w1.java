@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import org.telegram.SQLite.SQLiteDatabase;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public abstract /* synthetic */ class w1 {
     public static float A(float f7, float f10, float f11, float f12) {
@@ -99,12 +99,12 @@ public abstract /* synthetic */ class w1 {
         textView.setText(AndroidUtilities.replaceTags(LocaleController.getString(i10)));
     }
 
-    public static void o(int i10, org.telegram.ui.Components.yc ycVar, int i11, int i12) {
-        ycVar.Q(i11, i12, LocaleController.getString(i10)).j();
+    public static void o(int i10, org.telegram.ui.Components.vc vcVar, int i11, int i12) {
+        vcVar.Q(i11, i12, LocaleController.getString(i10)).j();
     }
 
-    public static void p(int i10, org.telegram.ui.Components.yc ycVar, org.telegram.ui.ActionBar.f6 f6Var) {
-        ycVar.t(LocaleController.getString(i10), f6Var).j();
+    public static void p(int i10, org.telegram.ui.Components.vc vcVar, org.telegram.ui.ActionBar.f6 f6Var) {
+        vcVar.t(LocaleController.getString(i10), f6Var).j();
     }
 
     public static void q(TextView textView, int i10, int i11, float f7) {

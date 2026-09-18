@@ -1,43 +1,51 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
 import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class c81 extends s4.d0 {
-    public final /* synthetic */ hg.j0 r;
+public final /* synthetic */ class c81 implements bl0, cl0 {
+    public final /* synthetic */ i81 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c81(hg.j0 j0Var, Context context) {
-        super(context);
-        this.r = j0Var;
+    public /* synthetic */ c81(i81 i81Var) {
+        this.a = i81Var;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:10:0x0033, code lost:
-    
-        if ((org.telegram.messenger.AndroidUtilities.dp(21.0f) + r6.getRight()) > ((org.telegram.ui.Components.h81) r5.r.J).getMeasuredWidth()) goto L13;
-     */
-    @Override // s4.d0, s4.y0
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void g(View view, s4.x0 x0Var) {
-        int j3 = j(o(), view);
-        if (j3 > 0 || (j3 == 0 && view.getLeft() - AndroidUtilities.dp(21.0f) < 0)) {
-            j3 += AndroidUtilities.dp(60.0f);
-        } else {
-            if (j3 >= 0) {
-                if (j3 == 0) {
-                }
+    @Override // org.telegram.ui.Components.bl0
+    public void c(float f7, float f10, int i10, View view) {
+        i81 i81Var = this.a;
+        h81 h81Var = i81Var.y;
+        if (h81Var != null) {
+            j81 j81Var = (j81) ((ka.c) h81Var).b;
+            if (j81Var.x || j81Var.H) {
+                return;
             }
-            j3 -= AndroidUtilities.dp(60.0f);
         }
-        int k10 = k(p(), view);
-        int max = Math.max(180, m((int) Math.sqrt((k10 * k10) + (j3 * j3))));
-        if (max > 0) {
-            x0Var.b(-j3, -k10, max, this.j);
+        g81 g81Var = (g81) view;
+        if (i10 != i81Var.F || h81Var == null) {
+            Utilities.Callback2Return callback2Return = i81Var.l0;
+            if (callback2Return == null || !((Boolean) callback2Return.run(Integer.valueOf(g81Var.a.a), Integer.valueOf(i10))).booleanValue()) {
+                i81Var.d(g81Var.a.a, i10);
+            }
         }
+    }
+
+    @Override // org.telegram.ui.Components.cl0
+    public boolean d(int i10, View view) {
+        Utilities.Callback2Return callback2Return = this.a.b;
+        if (callback2Return == null) {
+            return false;
+        }
+        return ((Boolean) callback2Return.run(Integer.valueOf(((g81) view).a.a), view)).booleanValue();
+    }
+
+    @Override // org.telegram.ui.Components.bl0
+    public /* synthetic */ boolean d1(View view) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.bl0
+    public /* synthetic */ void r0(View view, float f7, float f10) {
     }
 }

@@ -1,41 +1,26 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
 import android.view.View;
-import java.util.ArrayList;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public abstract class y51 extends org.telegram.ui.ActionBar.n2 {
-    public x51 a;
-    public int b;
-    public int c;
+public final /* synthetic */ class y51 implements Utilities.Callback5, Utilities.Callback5Return {
+    public final /* synthetic */ a61 a;
 
-    public y51() {
-        super(null);
-        this.b = -1;
+    @Override // org.telegram.messenger.Utilities.Callback5Return
+    public Object run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
+        ((Integer) obj3).getClass();
+        ((Float) obj4).getClass();
+        ((Float) obj5).getClass();
+        return Boolean.valueOf(this.a.X((j51) obj, (View) obj2));
     }
 
-    public abstract void U(ArrayList arrayList, v51 v51Var);
-
-    public abstract CharSequence V();
-
-    public abstract void W(h51 h51Var, View view);
-
-    public abstract boolean X(h51 h51Var, View view);
-
-    @Override // org.telegram.ui.ActionBar.n2
-    public View createView(Context context) {
-        i2.g.x(false, this.actionBar);
-        this.actionBar.setAllowOverlayTitle(true);
-        this.actionBar.setTitle(V());
-        this.actionBar.setActionBarMenuOnItemClick(new org.telegram.ui.ic(this, 14));
-        ig.q1 q1Var = new ig.q1(context, null, 1);
-        q1Var.setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.a7, false));
-        x51 x51Var = new x51(this, this, new d(this, 22), new w51(this), new w51(this));
-        this.a = x51Var;
-        q1Var.addView(x51Var, w7.x5.c(-1.0f, -1));
-        this.fragmentView = q1Var;
-        return q1Var;
+    @Override // org.telegram.messenger.Utilities.Callback5
+    public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
+        ((Integer) obj3).getClass();
+        ((Float) obj4).getClass();
+        ((Float) obj5).getClass();
+        this.a.W((j51) obj, (View) obj2);
     }
 }

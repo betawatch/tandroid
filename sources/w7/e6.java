@@ -3,25 +3,25 @@ package w7;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.ui.lb0;
+import org.telegram.ui.nb0;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public abstract class e6 {
-    public static boolean a(lb0 lb0Var) {
+    public static boolean a(nb0 nb0Var) {
         Context context = ApplicationLoader.applicationContext;
-        int componentEnabledSetting = context.getPackageManager().getComponentEnabledSetting(lb0Var.a(context));
-        return componentEnabledSetting == 1 || (componentEnabledSetting == 0 && lb0Var == lb0.h);
+        int componentEnabledSetting = context.getPackageManager().getComponentEnabledSetting(nb0Var.a(context));
+        return componentEnabledSetting == 1 || (componentEnabledSetting == 0 && nb0Var == nb0.h);
     }
 
-    public static void b(lb0 lb0Var) {
+    public static void b(nb0 nb0Var) {
         Context context = ApplicationLoader.applicationContext;
         PackageManager packageManager = context.getPackageManager();
-        lb0[] values = lb0.values();
+        nb0[] values = nb0.values();
         int length = values.length;
         for (int i10 = 0; i10 < length; i10++) {
-            lb0 lb0Var2 = values[i10];
-            packageManager.setComponentEnabledSetting(lb0Var2.a(context), lb0Var2 == lb0Var ? 1 : 2, 1);
+            nb0 nb0Var2 = values[i10];
+            packageManager.setComponentEnabledSetting(nb0Var2.a(context), nb0Var2 == nb0Var ? 1 : 2, 1);
         }
     }
 }

@@ -9,14 +9,14 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class hf0 extends View {
     public long E;
     public float F;
     public float G;
     public float H;
-    public cc0 I;
+    public bc0 I;
     public TextPaint a;
     public TextPaint b;
     public StaticLayout c;
@@ -26,19 +26,19 @@ public final class hf0 extends View {
     public float h;
     public float n;
     public boolean r;
-    public e6 s;
+    public c6 s;
     public boolean v;
     public jf0 w;
-    public di.ka x;
+    public ci.ka x;
     public boolean y;
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
-        float e7 = this.s.e(this.r);
-        if (e7 <= 0.0f || this.c == null || this.f == null) {
+        float e = this.s.e(this.r);
+        if (e <= 0.0f || this.c == null || this.f == null) {
             return;
         }
-        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), (int) (e7 * 255.0f), 31);
+        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), (int) (e * 255.0f), 31);
         canvas.save();
         canvas.translate(((getWidth() - this.d) / 2.0f) - this.e, getHeight() * 0.22f);
         this.c.draw(canvas);

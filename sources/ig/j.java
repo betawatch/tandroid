@@ -1,139 +1,244 @@
 package ig;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Path;
+import android.animation.ValueAnimator;
 import android.graphics.Rect;
-import android.graphics.RectF;
-import android.view.View;
-import android.widget.FrameLayout;
+import android.view.MotionEvent;
+import ci.o7;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.e6;
-import org.telegram.ui.Components.pr;
-import org.telegram.ui.Components.vi;
-import org.telegram.ui.l20;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class j extends FrameLayout {
-    public final /* synthetic */ int a = 0;
-    public int b;
-    public final Object c;
-    public final Object d;
-    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate e;
+public final class j {
+    public g a;
+    public float b;
+    public boolean c;
+    public float d;
+    public float e;
+    public long f;
+    public ValueAnimator g;
+    public Rect h;
+    public Rect i;
+    public Rect j;
+    public float k;
+    public float l;
+    public float m;
+    public h[] n;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j(m mVar, Context context) {
-        super(context);
-        this.e = mVar;
-        this.b = -1;
-        this.c = new Rect();
-        this.d = new e6(this, 220L, pr.h);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public void dispatchDraw(Canvas canvas) {
-        switch (this.a) {
-            case 1:
-                l20 l20Var = (l20) this.d;
-                Path path = (Path) this.c;
-                vi viVar = (vi) this.e;
-                dh.d dVar = viVar.B0;
-                if (dVar != null) {
-                    dVar.setBounds(0, (int) viVar.V1, getMeasuredWidth(), getMeasuredHeight());
-                    viVar.B0.draw(canvas);
+    public final boolean a(int i10, int i11, int i12) {
+        h hVar;
+        Rect rect = this.i;
+        Rect rect2 = this.h;
+        h[] hVarArr = this.n;
+        if (i12 != 0) {
+            if (i12 == 1 && (hVar = hVarArr[0]) != null && hVar.a != 4) {
+                if (rect2.contains(i10, i11) && hVarArr[0].a != 1) {
+                    h hVar2 = new h(this, 1);
+                    hVarArr[1] = hVar2;
+                    hVar2.c = this.k;
+                    hVar2.b = i10;
+                    hVar2.a();
+                    ValueAnimator valueAnimator = this.g;
+                    if (valueAnimator != null) {
+                        valueAnimator.cancel();
+                        return true;
+                    }
+                } else if (rect.contains(i10, i11) && hVarArr[0].a != 2) {
+                    h hVar3 = new h(this, 2);
+                    hVarArr[1] = hVar3;
+                    hVar3.d = this.l;
+                    hVar3.b = i10;
+                    hVar3.a();
+                    ValueAnimator valueAnimator2 = this.g;
+                    if (valueAnimator2 != null) {
+                        valueAnimator2.cancel();
+                    }
                 }
-                float dp = AndroidUtilities.dp(20.0f);
-                int dp2 = AndroidUtilities.dp(7.0f);
-                int dp3 = AndroidUtilities.dp(7.0f);
-                RectF rectF = AndroidUtilities.rectTmp;
-                float f7 = dp2;
-                rectF.set(getPaddingLeft(), f7, getWidth() - getPaddingRight(), getHeight() - dp3);
-                path.rewind();
-                path.addRoundRect(rectF, dp, dp, Path.Direction.CW);
-                canvas.save();
-                canvas.clipPath(path);
-                canvas.saveLayerAlpha(rectF, 255, 31);
-                super.dispatchDraw(canvas);
-                rectF.set(getPaddingLeft(), f7, getWidth() - getPaddingRight(), AndroidUtilities.dp(6.0f) + dp2);
-                l20Var.b(canvas, rectF, 1, 1.0f);
-                rectF.set(getPaddingLeft(), (getHeight() - dp3) - AndroidUtilities.dp(6.0f), getWidth() - getPaddingRight(), getHeight() - dp3);
-                l20Var.b(canvas, rectF, 3, 1.0f);
-                canvas.restore();
-                canvas.restore();
-                break;
-            default:
-                super.dispatchDraw(canvas);
-                break;
+                return true;
+            }
+            return false;
         }
-    }
-
-    @Override // android.view.ViewGroup
-    public boolean drawChild(Canvas canvas, View view, long j3) {
-        switch (this.a) {
-            case 0:
-                float width = getWidth() / 2.0f;
-                e6 e6Var = (e6) this.d;
-                m mVar = (m) this.e;
-                float d = e6Var.d(mVar.n.getWidth(), false);
-                Rect rect = (Rect) this.c;
-                float f7 = d / 2.0f;
-                rect.set((int) (width - (mVar.n.getScaleX() * f7)), (int) (((1.0f - mVar.n.getScaleY()) * mVar.n.getHeight()) + mVar.n.getY()), (int) ((mVar.n.getScaleX() * f7) + width), (int) (mVar.n.getY() + mVar.n.getHeight()));
-                mVar.r.setBounds(rect);
-                mVar.r.draw(canvas);
-                return super.drawChild(canvas, view, j3);
-            default:
-                return super.drawChild(canvas, view, j3);
-        }
-    }
-
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        switch (this.a) {
-            case 1:
-                int i14 = this.b;
-                vi viVar = (vi) this.e;
-                int top = i14 - viVar.w.getTop();
-                super.onLayout(z10, i10, i11, i12, i13);
-                this.b = getHeight();
-                if (viVar.w.getVisibility() == 0 && getHeight() - viVar.w.getTop() != top) {
-                    viVar.w.setTranslationY(viVar.w.getTranslationY() + ((getHeight() - viVar.w.getTop()) - top));
-                    viVar.w.animate().translationY(0.0f).setDuration(320L).setInterpolator(pr.h).start();
-                    break;
+        if (rect2.contains(i10, i11)) {
+            h hVar4 = hVarArr[0];
+            if (hVar4 != null) {
+                hVarArr[1] = hVar4;
+            }
+            h hVar5 = new h(this, 1);
+            hVarArr[0] = hVar5;
+            hVar5.c = this.k;
+            hVar5.b = i10;
+            hVar5.a();
+            ValueAnimator valueAnimator3 = this.g;
+            if (valueAnimator3 != null) {
+                valueAnimator3.cancel();
+                return true;
+            }
+        } else if (rect.contains(i10, i11)) {
+            h hVar6 = hVarArr[0];
+            if (hVar6 != null) {
+                hVarArr[1] = hVar6;
+            }
+            h hVar7 = new h(this, 2);
+            hVarArr[0] = hVar7;
+            hVar7.d = this.l;
+            hVar7.b = i10;
+            hVar7.a();
+            ValueAnimator valueAnimator4 = this.g;
+            if (valueAnimator4 != null) {
+                valueAnimator4.cancel();
+                return true;
+            }
+        } else {
+            if (!this.j.contains(i10, i11)) {
+                if (i11 < rect2.bottom && i11 > rect2.top) {
+                    this.c = true;
+                    this.d = i10;
+                    this.e = i11;
+                    this.f = System.currentTimeMillis();
+                    ValueAnimator valueAnimator5 = this.g;
+                    if (valueAnimator5 != null) {
+                        if (valueAnimator5.isRunning()) {
+                            this.a.a(this.k, this.l, true);
+                        }
+                        this.g.cancel();
+                        return true;
+                    }
                 }
-                break;
-            default:
-                super.onLayout(z10, i10, i11, i12, i13);
-                break;
+                return false;
+            }
+            h hVar8 = new h(this, 4);
+            hVarArr[0] = hVar8;
+            hVar8.d = this.l;
+            hVar8.c = this.k;
+            hVar8.b = i10;
+            hVar8.a();
+            ValueAnimator valueAnimator6 = this.g;
+            if (valueAnimator6 != null) {
+                valueAnimator6.cancel();
+                return true;
+            }
         }
+        return true;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public void onMeasure(int i10, int i11) {
-        switch (this.a) {
-            case 0:
-                m mVar = (m) this.e;
-                mVar.n.measure(i10, i11);
-                invalidate();
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(Math.max(this.b, AndroidUtilities.dp(36.0f) + mVar.n.getMeasuredHeight()), TLObject.FLAG_30));
-                if (this.b < 0) {
-                    this.b = getMeasuredHeight();
-                    break;
+    public final boolean b(int i10, int i11) {
+        h hVar;
+        boolean z10;
+        if (this.c || (hVar = this.n[i11]) == null) {
+            return false;
+        }
+        int i12 = hVar.a;
+        float f7 = hVar.c;
+        float f10 = hVar.d;
+        int i13 = hVar.b;
+        if (i12 == 1) {
+            float f11 = f7 - ((i13 - i10) / this.b);
+            this.k = f11;
+            if (f11 < 0.0f) {
+                this.k = 0.0f;
+            }
+            float f12 = this.l;
+            float f13 = f12 - this.k;
+            float f14 = this.m;
+            if (f13 < f14) {
+                this.k = f12 - f14;
+            }
+            z10 = true;
+        } else {
+            z10 = false;
+        }
+        if (i12 == 2) {
+            float f15 = f10 - ((i13 - i10) / this.b);
+            this.l = f15;
+            if (f15 > 1.0f) {
+                this.l = 1.0f;
+            }
+            float f16 = this.l;
+            float f17 = this.k;
+            float f18 = f16 - f17;
+            float f19 = this.m;
+            if (f18 < f19) {
+                this.l = f17 + f19;
+            }
+            z10 = true;
+        }
+        if (i12 == 4) {
+            float f20 = (i13 - i10) / this.b;
+            float f21 = f7 - f20;
+            this.k = f21;
+            this.l = f10 - f20;
+            if (f21 < 0.0f) {
+                this.k = 0.0f;
+                this.l = f10 - f7;
+            }
+            if (this.l > 1.0f) {
+                this.l = 1.0f;
+                this.k = 1.0f - (f10 - f7);
+            }
+            z10 = true;
+        }
+        if (z10) {
+            this.a.A(true, false, false);
+        }
+        return true;
+    }
+
+    public final boolean c(int i10, MotionEvent motionEvent) {
+        ValueAnimator valueAnimator;
+        ValueAnimator valueAnimator2;
+        float f7;
+        float f10;
+        h[] hVarArr = this.n;
+        if (i10 != 0) {
+            h hVar = hVarArr[1];
+            if (hVar != null && (valueAnimator = hVar.e) != null) {
+                valueAnimator.cancel();
+            }
+            hVarArr[1] = null;
+            return false;
+        }
+        if (!this.c) {
+            h hVar2 = hVarArr[0];
+            if (hVar2 != null && (valueAnimator2 = hVar2.e) != null) {
+                valueAnimator2.cancel();
+            }
+            hVarArr[0] = null;
+            h hVar3 = hVarArr[1];
+            if (hVar3 != null) {
+                hVarArr[0] = hVar3;
+                hVarArr[1] = null;
+            }
+            return false;
+        }
+        this.c = false;
+        float x10 = this.d - motionEvent.getX();
+        float y3 = this.e - motionEvent.getY();
+        if (motionEvent.getAction() == 1 && System.currentTimeMillis() - this.f < 300) {
+            if (Math.sqrt((y3 * y3) + (x10 * x10)) < AndroidUtilities.dp(10.0f)) {
+                float f11 = (this.d - g.k1) / this.b;
+                float f12 = this.l;
+                float f13 = this.k;
+                float f14 = f12 - f13;
+                float f15 = f14 / 2.0f;
+                float f16 = f11 - f15;
+                float f17 = f11 + f15;
+                if (f16 < 0.0f) {
+                    f7 = f14;
+                    f10 = 0.0f;
+                } else if (f17 > 1.0f) {
+                    f10 = 1.0f - f14;
+                    f7 = 1.0f;
+                } else {
+                    f7 = f17;
+                    f10 = f16;
                 }
-                break;
-            default:
-                super.onMeasure(i10, i11);
-                break;
+                this.g = ValueAnimator.ofFloat(0.0f, 1.0f);
+                this.a.a(f10, f7, true);
+                this.g.addUpdateListener(new o7(this, f13, f10, f12, f7, 1));
+                this.g.setInterpolator(g.C1);
+                this.g.start();
+                return true;
+            }
         }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j(vi viVar, Context context) {
-        super(context);
-        this.e = viVar;
-        this.c = new Path();
-        this.d = new l20();
+        return true;
     }
 }

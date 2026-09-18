@@ -5,12 +5,12 @@ import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
-import org.telegram.ui.Components.jk0;
+import org.telegram.ui.Components.kk0;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public abstract class m0 {
-    public k2.g0 a;
+    public ka.c a;
     public ArrayList b;
     public long c;
     public long d;
@@ -44,9 +44,9 @@ public abstract class m0 {
     public abstract boolean c(c1 c1Var, List list);
 
     public final void d(c1 c1Var) {
-        k2.g0 g0Var = this.a;
-        if (g0Var != null) {
-            RecyclerView recyclerView = (RecyclerView) g0Var.b;
+        ka.c cVar = this.a;
+        if (cVar != null) {
+            RecyclerView recyclerView = (RecyclerView) cVar.b;
             boolean z10 = true;
             c1Var.q(true);
             View view = c1Var.a;
@@ -57,27 +57,27 @@ public abstract class m0 {
             if ((c1Var.l & 16) != 0) {
                 return;
             }
-            pf.e eVar = recyclerView.b;
-            recyclerView.y0();
-            m2.t tVar = recyclerView.e;
-            e6.n nVar = (e6.n) tVar.d;
-            l.d dVar = (l.d) tVar.c;
-            int indexOfChild = ((RecyclerView) dVar.b).indexOfChild(view);
+            of.e eVar = recyclerView.b;
+            recyclerView.z0();
+            lf.i iVar = recyclerView.e;
+            e6.n nVar = (e6.n) iVar.c;
+            k2.c0 c0Var = (k2.c0) iVar.b;
+            int indexOfChild = ((RecyclerView) c0Var.b).indexOfChild(view);
             if (indexOfChild == -1) {
-                tVar.R(view);
-            } else if (nVar.D(indexOfChild)) {
-                nVar.F(indexOfChild);
-                tVar.R(view);
-                dVar.C(indexOfChild);
+                iVar.Y(view);
+            } else if (nVar.z(indexOfChild)) {
+                nVar.B(indexOfChild);
+                iVar.Y(view);
+                c0Var.r(indexOfChild);
             } else {
                 z10 = false;
             }
             if (z10) {
-                c1 U = RecyclerView.U(view);
-                eVar.k(U);
-                eVar.h(U);
+                c1 V = RecyclerView.V(view);
+                eVar.k(V);
+                eVar.h(V);
             }
-            recyclerView.z0(!z10);
+            recyclerView.A0(!z10);
             if (z10 || !c1Var.l()) {
                 return;
             }
@@ -89,8 +89,8 @@ public abstract class m0 {
         ArrayList arrayList = this.b;
         int size = arrayList.size();
         for (int i10 = 0; i10 < size; i10++) {
-            jk0 jk0Var = (jk0) arrayList.get(i10);
-            jk0Var.a.c(jk0Var.b, jk0Var.c, jk0Var.d, false);
+            kk0 kk0Var = (kk0) arrayList.get(i10);
+            kk0Var.a.d(kk0Var.b, kk0Var.c, kk0Var.d, false);
         }
         arrayList.clear();
     }

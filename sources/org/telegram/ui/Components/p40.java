@@ -7,7 +7,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class p40 implements ti {
     public final /* synthetic */ u40 a;
@@ -17,26 +17,11 @@ public final class p40 implements ti {
     }
 
     @Override // org.telegram.ui.Components.ti
-    public final void B(hh hhVar) {
-        hhVar.run();
-    }
-
-    @Override // org.telegram.ui.Components.ti
-    public final /* synthetic */ boolean D0() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.ti
-    public final void H() {
-        AndroidUtilities.hideKeyboard(this.a.a.getFragmentView().findFocus());
-    }
-
-    @Override // org.telegram.ui.Components.ti
-    public final void l0(int i10, boolean z10, boolean z11, int i11, int i12, long j3, boolean z12, boolean z13, long j10) {
+    public final void B1(int i10, boolean z10, boolean z11, int i11, int i12, long j3, boolean z12, boolean z13, long j10) {
         vi viVar;
         u40 u40Var = this.a;
-        org.telegram.ui.ActionBar.n2 n2Var = u40Var.a;
-        if (n2Var == null || n2Var.getParentActivity() == null || (viVar = u40Var.c) == null) {
+        org.telegram.ui.ActionBar.o2 o2Var = u40Var.a;
+        if (o2Var == null || o2Var.getParentActivity() == null || (viVar = u40Var.c) == null) {
             return;
         }
         if (i10 != 8 && i10 != 7) {
@@ -109,24 +94,39 @@ public final class p40 implements ti {
     }
 
     @Override // org.telegram.ui.Components.ti
-    public final boolean q() {
+    public final void K0() {
+        AndroidUtilities.hideKeyboard(this.a.a.getFragmentView().findFocus());
+    }
+
+    @Override // org.telegram.ui.Components.ti
+    public final /* synthetic */ boolean S1() {
         return false;
     }
 
     @Override // org.telegram.ui.Components.ti
-    public final void x() {
+    public final boolean c0() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.ti
+    public final void u0() {
         this.a.r();
     }
 
     @Override // org.telegram.ui.Components.ti
-    public final /* synthetic */ void K(Object obj) {
+    public final void x0(fh fhVar) {
+        fhVar.run();
     }
 
     @Override // org.telegram.ui.Components.ti
-    public final void X(TLRPC.User user) {
+    public final /* synthetic */ void U0(Object obj) {
     }
 
     @Override // org.telegram.ui.Components.ti
-    public final /* synthetic */ void E0(ArrayList arrayList, CharSequence charSequence, boolean z10, int i10, int i11, long j3, boolean z11, long j10) {
+    public final void j1(TLRPC.User user) {
+    }
+
+    @Override // org.telegram.ui.Components.ti
+    public final /* synthetic */ void W1(ArrayList arrayList, CharSequence charSequence, boolean z10, int i10, int i11, long j3, boolean z11, long j10) {
     }
 }

@@ -29,7 +29,7 @@ import w7.c9;
 import z3.l;
 import z3.m;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class e implements m {
     public static final Pattern b = Pattern.compile("^([0-9][0-9]+):([0-9][0-9]):([0-9][0-9])(?:(\\.[0-9]+)|:([0-9][0-9])(?:\\.([0-9]+))?)?$");
@@ -155,8 +155,8 @@ public final class e implements m {
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Removed duplicated region for block: B:32:0x022e  */
-    /* JADX WARN: Removed duplicated region for block: B:79:0x01dc  */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x022f  */
+    /* JADX WARN: Removed duplicated region for block: B:79:0x01dd  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -503,10 +503,10 @@ public final class e implements m {
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Removed duplicated region for block: B:109:0x02ce  */
-    /* JADX WARN: Removed duplicated region for block: B:73:0x0228  */
-    /* JADX WARN: Removed duplicated region for block: B:83:0x0258  */
-    /* JADX WARN: Removed duplicated region for block: B:97:0x02ae  */
+    /* JADX WARN: Removed duplicated region for block: B:109:0x02d0  */
+    /* JADX WARN: Removed duplicated region for block: B:73:0x022a  */
+    /* JADX WARN: Removed duplicated region for block: B:83:0x025a  */
+    /* JADX WARN: Removed duplicated region for block: B:97:0x02b0  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1207,17 +1207,17 @@ public final class e implements m {
     }
 
     @Override // z3.m
-    public final int U() {
+    public final int A() {
         return 1;
     }
 
     @Override // z3.m
-    public final void e0(byte[] bArr, int i10, int i11, l lVar, h hVar) {
-        c9.b(p(i10, i11, bArr), lVar, hVar);
+    public final void B(byte[] bArr, int i10, int i11, l lVar, h hVar) {
+        c9.b(r(i10, i11, bArr), lVar, hVar);
     }
 
     @Override // z3.m
-    public final z3.d p(int i10, int i11, byte[] bArr) {
+    public final z3.d r(int i10, int i11, byte[] bArr) {
         try {
             XmlPullParser newPullParser = this.a.newPullParser();
             HashMap hashMap = new HashMap();

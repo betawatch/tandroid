@@ -1,80 +1,27 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.RectF;
-import android.view.MotionEvent;
-import android.view.ViewConfiguration;
-import org.telegram.messenger.AndroidUtilities;
-
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public class y80 extends org.telegram.ui.ActionBar.j5 {
-    public final a90 M0;
-    public final Paint N0;
-    public e90 O0;
+public final /* synthetic */ class y80 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ z80 b;
+    public final /* synthetic */ d90 c;
 
-    public y80(Context context) {
-        super(context);
-        this.M0 = new a90(this);
-        this.N0 = new Paint(1);
+    public /* synthetic */ y80(z80 z80Var, d90 d90Var, int i10) {
+        this.a = i10;
+        this.b = z80Var;
+        this.c = d90Var;
     }
 
-    private int getLinkColor() {
-        return i0.a.k(getTextColor(), (int) (Color.alpha(getTextColor()) * 0.1175f));
-    }
-
-    @Override // org.telegram.ui.ActionBar.j5, android.view.View
-    public final void onDraw(Canvas canvas) {
-        if (isClickable()) {
-            RectF rectF = AndroidUtilities.rectTmp;
-            rectF.set(0.0f, 0.0f, getPaddingRight() + getTextWidth() + getPaddingLeft(), getHeight());
-            int linkColor = getLinkColor();
-            Paint paint = this.N0;
-            paint.setColor(linkColor);
-            canvas.drawRoundRect(rectF, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), paint);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.k(this.c, false);
+                break;
+            default:
+                this.b.k(this.c, false);
+                break;
         }
-        super.onDraw(canvas);
-        if (isClickable() && this.M0.f(canvas)) {
-            invalidate();
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.j5, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        if (!isClickable()) {
-            return super.onTouchEvent(motionEvent);
-        }
-        a90 a90Var = this.M0;
-        if (a90Var != null) {
-            if (motionEvent.getAction() == 0) {
-                e90 e90Var = new e90(null, null, motionEvent.getX(), motionEvent.getY(), 0);
-                e90Var.d(getLinkColor());
-                this.O0 = e90Var;
-                a90Var.a(e90Var, null);
-                x80 b10 = this.O0.b();
-                b10.e(null, 0, 0.0f, 0.0f);
-                b10.addRect(0.0f, 0.0f, getPaddingRight() + getTextWidth() + getPaddingLeft(), getHeight(), Path.Direction.CW);
-                AndroidUtilities.runOnUIThread(new zu(19, this, e90Var), ViewConfiguration.getLongPressTimeout());
-                return true;
-            }
-            if (motionEvent.getAction() == 1) {
-                a90Var.d(true);
-                if (this.O0 != null) {
-                    performClick();
-                }
-                this.O0 = null;
-                return true;
-            }
-            if (motionEvent.getAction() == 3) {
-                a90Var.d(true);
-                this.O0 = null;
-                return true;
-            }
-        }
-        return this.O0 != null || super.onTouchEvent(motionEvent);
     }
 }

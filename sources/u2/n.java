@@ -2,7 +2,7 @@ package u2;
 
 import java.util.List;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class n implements d1 {
     public final e9.a1 a;
@@ -55,7 +55,7 @@ public final class n implements d1 {
     }
 
     @Override // u2.d1
-    public final boolean p(i2.r0 r0Var) {
+    public final boolean m(i2.r0 r0Var) {
         boolean z10;
         boolean z11 = false;
         do {
@@ -73,7 +73,7 @@ public final class n implements d1 {
                 long d10 = ((m) a1Var.get(i10)).a.d();
                 boolean z12 = d10 != Long.MIN_VALUE && d10 <= r0Var.a;
                 if (d10 == d || z12) {
-                    z10 |= ((m) a1Var.get(i10)).a.p(r0Var);
+                    z10 |= ((m) a1Var.get(i10)).a.m(r0Var);
                 }
                 i10++;
             }

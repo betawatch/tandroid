@@ -19,9 +19,10 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import org.telegram.messenger.beta.R;
+import org.telegram.ui.Cells.ia;
 import s4.c1;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class m0 extends s4.h0 {
     public final ArrayList c = new ArrayList();
@@ -69,8 +70,8 @@ public final class m0 extends s4.h0 {
                 if (createFromStream != null) {
                     return createFromStream;
                 }
-            } catch (IOException e7) {
-                Log.w("MediaRouteCtrlDialog", "Failed to load " + uri, e7);
+            } catch (IOException e) {
+                Log.w("MediaRouteCtrlDialog", "Failed to load " + uri, e);
             }
         }
         int i10 = vVar.n;
@@ -88,7 +89,7 @@ public final class m0 extends s4.h0 {
         uVar.getClass();
         p4.x.b();
         for (p4.v vVar : DesugarCollections.unmodifiableList(uVar.b)) {
-            mg.n b10 = o0Var.r.b(vVar);
+            ia b10 = o0Var.r.b(vVar);
             if (b10 != null && (oVar = (p4.o) b10.b) != null && oVar.d) {
                 arrayList3.add(vVar);
             }
@@ -187,7 +188,7 @@ public final class m0 extends s4.h0 {
 
     @Override // s4.h0
     public final void v(c1 c1Var, int i10) {
-        mg.n b10;
+        ia b10;
         p4.o oVar;
         ArrayList arrayList = this.c;
         int i11 = (i10 == 0 ? this.r : (k0) arrayList.get(i10 - 1)).b;

@@ -1,29 +1,67 @@
 package org.telegram.ui.Components;
 
-import androidx.recyclerview.widget.RecyclerView;
+import android.content.Context;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import org.telegram.messenger.MessagesController;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class jj0 extends s4.s0 {
-    public final /* synthetic */ s4.c0 a;
-    public final /* synthetic */ pj0 b;
+public final class jj0 extends s4.h0 {
+    public final /* synthetic */ int c;
+    public final /* synthetic */ Context d;
+    public final /* synthetic */ org.telegram.ui.ActionBar.f6 e;
+    public final /* synthetic */ boolean f;
+    public final /* synthetic */ qj0 h;
 
-    public jj0(pj0 pj0Var, s4.c0 c0Var) {
-        this.b = pj0Var;
-        this.a = c0Var;
+    public jj0(qj0 qj0Var, int i10, Context context, org.telegram.ui.ActionBar.f6 f6Var, boolean z10) {
+        this.h = qj0Var;
+        this.c = i10;
+        this.d = context;
+        this.e = f6Var;
+        this.f = z10;
     }
 
-    @Override // s4.s0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        int loadCount;
-        pj0 pj0Var = this.b;
-        if (pj0Var.w && pj0Var.x && !pj0Var.v) {
-            int N0 = this.a.N0();
-            int h = pj0Var.f.h() - 1;
-            loadCount = pj0Var.getLoadCount();
-            if (N0 >= h - loadCount) {
-                pj0Var.c();
-            }
+    @Override // s4.h0
+    public final int h() {
+        qj0 qj0Var = this.h;
+        return qj0Var.n.size() + ((qj0Var.H.isEmpty() || MessagesController.getInstance(this.c).premiumFeaturesBlocked()) ? 0 : 1);
+    }
+
+    @Override // s4.h0
+    public final int j(int i10) {
+        return i10 < this.h.n.size() ? 0 : 1;
+    }
+
+    @Override // s4.h0
+    public final void v(s4.c1 c1Var, int i10) {
+        if (c1Var.f == 0) {
+            ((org.telegram.ui.Cells.n6) c1Var.a).setUserReaction((TLRPC.MessagePeerReaction) this.h.n.get(i10));
         }
+    }
+
+    @Override // s4.h0
+    public final s4.c1 x(ViewGroup viewGroup, int i10) {
+        FrameLayout n6Var;
+        if (i10 != 0) {
+            qj0 qj0Var = this.h;
+            ta0 ta0Var = qj0Var.J;
+            if (ta0Var == null) {
+                qj0Var.i();
+            } else if (ta0Var.getParent() != null) {
+                ((ViewGroup) qj0Var.J.getParent()).removeView(qj0Var.J);
+            }
+            Context context = this.d;
+            n6Var = new FrameLayout(context);
+            View view = new View(context);
+            view.setBackgroundColor(org.telegram.ui.ActionBar.j6.l1(0.06f, org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.E8, this.e)));
+            n6Var.addView(view, w7.x5.c(8.0f, -1));
+            n6Var.addView(qj0Var.J, w7.x5.d(-1, -1.0f, 0, 0.0f, 8.0f, 0.0f, 0.0f));
+        } else {
+            n6Var = new org.telegram.ui.Cells.n6(0, this.c, this.d, this.e, true, this.f);
+        }
+        return new wk0(n6Var);
     }
 }

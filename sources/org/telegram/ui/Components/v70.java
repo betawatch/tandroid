@@ -11,9 +11,9 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class v70 extends kl0 {
+public final class v70 extends ll0 {
     public final Context c;
     public final /* synthetic */ w70 d;
 
@@ -22,7 +22,7 @@ public final class v70 extends kl0 {
         this.c = context;
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.ll0
     public final boolean D(s4.c1 c1Var) {
         return true;
     }
@@ -47,11 +47,11 @@ public final class v70 extends kl0 {
         w70 w70Var = this.d;
         long peerId = MessageObject.getPeerId((TLRPC.Peer) w70Var.h.get(i10));
         if (peerId > 0) {
-            i12 = ((org.telegram.ui.ActionBar.f3) w70Var).currentAccount;
+            i12 = ((org.telegram.ui.ActionBar.g3) w70Var).currentAccount;
             chat = MessagesController.getInstance(i12).getUser(Long.valueOf(peerId));
             str = LocaleController.getString(R.string.VoipGroupPersonalAccount);
         } else {
-            i11 = ((org.telegram.ui.ActionBar.f3) w70Var).currentAccount;
+            i11 = ((org.telegram.ui.ActionBar.g3) w70Var).currentAccount;
             chat = MessagesController.getInstance(i11).getChat(Long.valueOf(-peerId));
             str = null;
         }
@@ -72,7 +72,7 @@ public final class v70 extends kl0 {
         } else {
             f4Var = new org.telegram.ui.Cells.f4(2, 0, this.c, null, false, w70Var.s == 2);
         }
-        return new vk0(f4Var);
+        return new wk0(f4Var);
     }
 
     @Override // s4.h0

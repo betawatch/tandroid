@@ -12,10 +12,10 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class m31 extends FrameLayout {
-    public final org.telegram.ui.Components.o5 a;
+    public final org.telegram.ui.Components.m5 a;
     public final /* synthetic */ n31 b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -26,34 +26,34 @@ public final class m31 extends FrameLayout {
         g10.setTextColor(n31Var.getThemedColor(org.telegram.ui.ActionBar.j6.G6));
         g10.setText(LocaleController.getString(R.string.DoubleTapSetting));
         addView(g10, w7.x5.d(-1, -2.0f, 23, 20.0f, 0.0f, 48.0f, 0.0f));
-        this.a = new org.telegram.ui.Components.o5(AndroidUtilities.dp(24.0f), this);
+        this.a = new org.telegram.ui.Components.m5(AndroidUtilities.dp(24.0f), this);
     }
 
     public final void a(boolean z10) {
         int i10;
         int i11;
         n31 n31Var = this.b;
-        i10 = ((org.telegram.ui.ActionBar.n2) n31Var).currentAccount;
+        i10 = ((org.telegram.ui.ActionBar.o2) n31Var).currentAccount;
         String doubleTapReaction = MediaDataController.getInstance(i10).getDoubleTapReaction();
-        org.telegram.ui.Components.o5 o5Var = this.a;
+        org.telegram.ui.Components.m5 m5Var = this.a;
         if (doubleTapReaction != null && doubleTapReaction.startsWith("animated_")) {
             try {
-                o5Var.j(Long.parseLong(doubleTapReaction.substring(9)), z10);
+                m5Var.j(Long.parseLong(doubleTapReaction.substring(9)), z10);
                 return;
             } catch (Exception unused) {
             }
         }
-        i11 = ((org.telegram.ui.ActionBar.n2) n31Var).currentAccount;
+        i11 = ((org.telegram.ui.ActionBar.o2) n31Var).currentAccount;
         TLRPC.TL_availableReaction tL_availableReaction = MediaDataController.getInstance(i11).getReactionsMap().get(doubleTapReaction);
         if (tL_availableReaction != null) {
-            o5Var.i(tL_availableReaction.static_icon, z10);
+            m5Var.i(tL_availableReaction.static_icon, z10);
         }
     }
 
     public final void b() {
         int width = getWidth();
-        org.telegram.ui.Components.o5 o5Var = this.a;
-        o5Var.setBounds((width - o5Var.s) - AndroidUtilities.dp(21.0f), (getHeight() - o5Var.s) / 2, getWidth() - AndroidUtilities.dp(21.0f), (getHeight() + o5Var.s) / 2);
+        org.telegram.ui.Components.m5 m5Var = this.a;
+        m5Var.setBounds((width - m5Var.s) - AndroidUtilities.dp(21.0f), (getHeight() - m5Var.s) / 2, getWidth() - AndroidUtilities.dp(21.0f), (getHeight() + m5Var.s) / 2);
     }
 
     @Override // android.view.ViewGroup, android.view.View

@@ -1,23 +1,40 @@
 package org.telegram.ui.Components;
 
 import android.view.View;
+import android.widget.FrameLayout;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class u51 extends View {
+public final class u51 extends FrameLayout {
     public int a;
+    public boolean b;
 
-    @Override // android.view.View
+    @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(this.a, TLObject.FLAG_30));
-    }
-
-    public void setHeight(int i10) {
-        if (this.a == i10) {
+        int i12 = this.a;
+        View view = getParent() instanceof View ? (View) getParent() : null;
+        if (this.b && view != null) {
+            i12 = view.getPaddingBottom() + view.getPaddingTop() + i12;
+        }
+        if (view != null && view.getMeasuredHeight() > 0) {
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(view.getMeasuredHeight() - i12, TLObject.FLAG_30));
             return;
         }
-        this.a = i10;
-        requestLayout();
+        if (View.MeasureSpec.getMode(i11) != 0) {
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i11) - i12, TLObject.FLAG_30));
+            return;
+        }
+        int size = View.MeasureSpec.getSize(i11);
+        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30);
+        measureChildren(makeMeasureSpec, i11);
+        int i13 = 0;
+        for (int i14 = 0; i14 < getChildCount(); i14++) {
+            i13 = Math.max(i13, getChildAt(i14).getMeasuredHeight());
+        }
+        if (size > 0) {
+            i13 = Math.min(i13, size - i12);
+        }
+        super.onMeasure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(i13, TLObject.FLAG_30));
     }
 }

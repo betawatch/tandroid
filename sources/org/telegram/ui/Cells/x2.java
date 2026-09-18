@@ -13,14 +13,14 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.vl;
+import org.telegram.messenger.wl;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.aj0;
-import org.telegram.ui.Components.jt;
-import org.telegram.ui.Components.p01;
+import org.telegram.ui.Components.bj0;
+import org.telegram.ui.Components.kt;
+import org.telegram.ui.Components.r01;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class x2 extends LinearLayout {
     public static final /* synthetic */ int w = 0;
@@ -29,9 +29,9 @@ public final class x2 extends LinearLayout {
     public q0.a c;
     public boolean d;
     public ValueAnimator e;
-    public final aj0 f;
+    public final bj0 f;
     public final TextView h;
-    public final p01 n;
+    public final r01 n;
     public int r;
     public int s;
     public final int v;
@@ -42,12 +42,12 @@ public final class x2 extends LinearLayout {
         this.v = UserConfig.selectedAccount;
         setGravity(17);
         setOrientation(1);
-        setOnTouchListener(new ci.d(5));
-        aj0 aj0Var = new aj0(context);
-        this.f = aj0Var;
-        aj0Var.setScaleType(ImageView.ScaleType.CENTER);
-        addView(aj0Var, w7.x5.d(100, 100.0f, 17, 52.0f, 4.0f, 52.0f, 0.0f));
-        aj0Var.setOnClickListener(new a(this, 3));
+        setOnTouchListener(new bi.d(5));
+        bj0 bj0Var = new bj0(context);
+        this.f = bj0Var;
+        bj0Var.setScaleType(ImageView.ScaleType.CENTER);
+        addView(bj0Var, w7.x5.d(100, 100.0f, 17, 52.0f, 4.0f, 52.0f, 0.0f));
+        bj0Var.setOnClickListener(new a(this, 3));
         TextView textView = new TextView(context);
         this.h = textView;
         textView.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.m9, false));
@@ -55,9 +55,9 @@ public final class x2 extends LinearLayout {
         textView.setTypeface(AndroidUtilities.bold());
         textView.setGravity(17);
         addView(textView, w7.x5.d(-1, -2.0f, 51, 52.0f, 10.0f, 52.0f, 0.0f));
-        p01 p01Var = new p01(context);
-        this.n = p01Var;
-        p01Var.setFactory(new ViewSwitcher.ViewFactory() { // from class: org.telegram.ui.Cells.u2
+        r01 r01Var = new r01(context);
+        this.n = r01Var;
+        r01Var.setFactory(new ViewSwitcher.ViewFactory() { // from class: org.telegram.ui.Cells.u2
             @Override // android.widget.ViewSwitcher.ViewFactory
             public final View makeView() {
                 TextView textView2 = new TextView(context);
@@ -68,9 +68,9 @@ public final class x2 extends LinearLayout {
                 return textView2;
             }
         });
-        p01Var.setInAnimation(context, R.anim.alpha_in);
-        p01Var.setOutAnimation(context, R.anim.alpha_out);
-        addView(p01Var, w7.x5.d(-1, -2.0f, 51, 52.0f, 7.0f, 52.0f, 0.0f));
+        r01Var.setInAnimation(context, R.anim.alpha_in);
+        r01Var.setOutAnimation(context, R.anim.alpha_out);
+        addView(r01Var, w7.x5.d(-1, -2.0f, 51, 52.0f, 7.0f, 52.0f, 0.0f));
     }
 
     public final void a(boolean z10) {
@@ -88,7 +88,7 @@ public final class x2 extends LinearLayout {
         }
         ValueAnimator duration = ValueAnimator.ofFloat(this.a, 1.0f).setDuration(250L);
         this.e = duration;
-        duration.setInterpolator(jt.d);
+        duration.setInterpolator(kt.d);
         this.e.addUpdateListener(new v2(this, 0));
         this.e.addListener(new w2(this, 1));
         this.e.start();
@@ -157,12 +157,12 @@ public final class x2 extends LinearLayout {
         if (size2 == 0) {
             size2 = (AndroidUtilities.displaySize.y - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) - AndroidUtilities.statusBarHeight;
         }
-        if (getParent() instanceof org.telegram.ui.Components.ia) {
-            size2 -= ((org.telegram.ui.Components.ia) getParent()).X2;
+        if (getParent() instanceof org.telegram.ui.Components.ga) {
+            size2 -= ((org.telegram.ui.Components.ga) getParent()).X2;
         }
         ArrayList<TLRPC.RecentMeUrl> arrayList = MessagesController.getInstance(this.v).hintDialogs;
         if (!arrayList.isEmpty()) {
-            size2 = vl.v(50.0f, (arrayList.size() + (arrayList.size() * AndroidUtilities.dp(72.0f))) - 1, size2);
+            size2 = wl.v(50.0f, (arrayList.size() + (arrayList.size() * AndroidUtilities.dp(72.0f))) - 1, size2);
         }
         super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30));
     }

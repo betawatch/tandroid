@@ -3,7 +3,7 @@ package r0;
 import android.view.ViewGroup;
 import android.view.WindowInsetsAnimation;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class t0 extends u0 {
     public final WindowInsetsAnimation e;
@@ -13,15 +13,15 @@ public final class t0 extends u0 {
         this.e = windowInsetsAnimation;
     }
 
-    public static i0.c e(WindowInsetsAnimation.Bounds bounds) {
-        return i0.c.c(bounds.getUpperBound());
+    public static i0.b e(WindowInsetsAnimation.Bounds bounds) {
+        return i0.b.c(bounds.getUpperBound());
     }
 
-    public static i0.c f(WindowInsetsAnimation.Bounds bounds) {
-        return i0.c.c(bounds.getLowerBound());
+    public static i0.b f(WindowInsetsAnimation.Bounds bounds) {
+        return i0.b.c(bounds.getLowerBound());
     }
 
-    public static void g(ViewGroup viewGroup, qh.e eVar) {
+    public static void g(ViewGroup viewGroup, ph.e eVar) {
         viewGroup.setWindowInsetsAnimationCallback(new s0(eVar));
     }
 

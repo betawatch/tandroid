@@ -19,7 +19,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class u4 extends FrameLayout {
     public final /* synthetic */ int a = 0;
@@ -33,11 +33,11 @@ public final class u4 extends FrameLayout {
     public u4(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
         super(context);
         this.b = AndroidUtilities.dp(64.0f);
-        org.telegram.ui.Components.x9 x9Var = new org.telegram.ui.Components.x9(context);
-        this.d = x9Var;
-        x9Var.setAspectFit(true);
-        x9Var.setRoundRadius(AndroidUtilities.dp(12.0f));
-        addView(x9Var, w7.x5.c(-1.0f, -1));
+        org.telegram.ui.Components.u9 u9Var = new org.telegram.ui.Components.u9(context);
+        this.d = u9Var;
+        u9Var.setAspectFit(true);
+        u9Var.setRoundRadius(AndroidUtilities.dp(12.0f));
+        addView(u9Var, w7.x5.c(-1.0f, -1));
         RadialProgress2 radialProgress2 = new RadialProgress2(this, f6Var);
         this.e = radialProgress2;
         radialProgress2.E = 0.0f;
@@ -56,9 +56,9 @@ public final class u4 extends FrameLayout {
                 RadialProgress2 radialProgress2 = (RadialProgress2) obj;
                 super.dispatchDraw(canvas);
                 if (this.c) {
-                    Drawable drawable = ((org.telegram.ui.Components.x9) this.d).getImageReceiver().getDrawable();
+                    Drawable drawable = ((org.telegram.ui.Components.u9) this.d).getImageReceiver().getDrawable();
                     final int i12 = 1;
-                    if ((drawable instanceof org.telegram.ui.Components.d6) && ((org.telegram.ui.Components.d6) drawable).d[4] > 0) {
+                    if ((drawable instanceof org.telegram.ui.Components.b6) && ((org.telegram.ui.Components.b6) drawable).d[4] > 0) {
                         ValueAnimator valueAnimator = (ValueAnimator) this.h;
                         if (valueAnimator != null) {
                             valueAnimator.cancel();
@@ -67,8 +67,8 @@ public final class u4 extends FrameLayout {
                             }
                             ValueAnimator ofFloat = ValueAnimator.ofFloat(((Float) ((ValueAnimator) this.h).getAnimatedValue()).floatValue(), 0.0f);
                             this.f = ofFloat;
-                            ofFloat.addListener(new s0(this, 3));
-                            ((ValueAnimator) this.f).addUpdateListener(new ValueAnimator.AnimatorUpdateListener(this) { // from class: org.telegram.ui.t4
+                            ofFloat.addListener(new t4(this, i11));
+                            ((ValueAnimator) this.f).addUpdateListener(new ValueAnimator.AnimatorUpdateListener(this) { // from class: org.telegram.ui.s4
                                 public final /* synthetic */ u4 b;
 
                                 {
@@ -95,7 +95,7 @@ public final class u4 extends FrameLayout {
                     } else if (((ValueAnimator) this.h) == null) {
                         ValueAnimator ofFloat2 = ValueAnimator.ofFloat(0.0f, 1.0f);
                         this.h = ofFloat2;
-                        ofFloat2.addUpdateListener(new ValueAnimator.AnimatorUpdateListener(this) { // from class: org.telegram.ui.t4
+                        ofFloat2.addUpdateListener(new ValueAnimator.AnimatorUpdateListener(this) { // from class: org.telegram.ui.s4
                             public final /* synthetic */ u4 b;
 
                             {
@@ -135,18 +135,18 @@ public final class u4 extends FrameLayout {
                 break;
             default:
                 Paint paint = (Paint) obj;
-                wd1 wd1Var = (wd1) this.h;
-                wc1 wc1Var = wd1Var.a;
+                xd1 xd1Var = (xd1) this.h;
+                xc1 xc1Var = xd1Var.a;
                 if (this.c) {
                     RectF rectF = AndroidUtilities.rectTmp;
                     rectF.set(0.0f, 0.0f, getWidth(), getHeight());
                     canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), 255, 31);
-                    org.telegram.ui.ActionBar.j6.s(this, wd1Var.x0, wc1Var);
-                    Paint G = wc1Var.G("paintChatActionBackground");
+                    org.telegram.ui.ActionBar.j6.s(this, xd1Var.x0, xc1Var);
+                    Paint G = xc1Var.G("paintChatActionBackground");
                     ColorFilter colorFilter = G.getColorFilter();
                     G.setColorFilter((ColorMatrixColorFilter) this.f);
-                    ld1 ld1Var = wd1Var.x0;
-                    if (ld1Var != null && (ld1Var.getBackground() instanceof org.telegram.ui.Components.dc0) && wd1Var.l1 < 0.0f) {
+                    md1 md1Var = xd1Var.x0;
+                    if (md1Var != null && (md1Var.getBackground() instanceof org.telegram.ui.Components.cc0) && xd1Var.l1 < 0.0f) {
                         f7 = 0.33f;
                     }
                     int alpha = G.getAlpha();
@@ -154,10 +154,10 @@ public final class u4 extends FrameLayout {
                     canvas.drawRect(rectF, G);
                     G.setAlpha(alpha);
                     G.setColorFilter(colorFilter);
-                    if (wd1Var.M1) {
-                        float f10 = wd1Var.n1;
+                    if (xd1Var.M1) {
+                        float f10 = xd1Var.n1;
                         if (f10 > 0.0f) {
-                            canvas.drawColor(i0.a.k(-16777216, (int) (f10 * 255.0f * wd1Var.o1)));
+                            canvas.drawColor(i0.a.k(-16777216, (int) (f10 * 255.0f * xd1Var.o1)));
                         }
                     }
                     canvas.save();
@@ -213,9 +213,9 @@ public final class u4 extends FrameLayout {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public u4(wd1 wd1Var, Context context, boolean z10) {
+    public u4(xd1 xd1Var, Context context, boolean z10) {
         super(context);
-        this.h = wd1Var;
+        this.h = xd1Var;
         this.c = z10;
         Paint paint = new Paint(3);
         this.e = paint;

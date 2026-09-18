@@ -10,9 +10,9 @@ import android.graphics.Shader;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class yh extends ll0 {
+public final class yh extends ml0 {
     public final /* synthetic */ int X2;
     public final Paint Y2;
     public final Paint Z2;
@@ -32,16 +32,16 @@ public final class yh extends ll0 {
                 this.Y2 = paint;
                 Paint paint2 = new Paint(1);
                 this.Z2 = paint2;
-                this.c3 = new e6(this);
-                this.d3 = new e6(this);
+                this.c3 = new c6(this);
+                this.d3 = new c6(this);
                 Shader.TileMode tileMode = Shader.TileMode.CLAMP;
                 paint.setShader(new LinearGradient(0.0f, 0.0f, 0.0f, AndroidUtilities.dp(8.0f), new int[]{-16777216, 0}, new float[]{0.0f, 1.0f}, tileMode));
                 paint2.setShader(new LinearGradient(0.0f, 0.0f, 0.0f, AndroidUtilities.dp(8.0f), new int[]{0, -16777216}, new float[]{0.0f, 1.0f}, tileMode));
                 break;
             default:
-                pr prVar = pr.h;
-                this.c3 = new le.b(this, prVar, 320L);
-                this.d3 = new le.b(this, prVar, 320L);
+                qr qrVar = qr.h;
+                this.c3 = new le.b(this, qrVar, 320L);
+                this.d3 = new le.b(this, qrVar, 320L);
                 Shader.TileMode tileMode2 = Shader.TileMode.CLAMP;
                 LinearGradient linearGradient = new LinearGradient(0.0f, 0.0f, AndroidUtilities.dp(8.0f), 0.0f, new int[]{0, -16777216}, (float[]) null, tileMode2);
                 LinearGradient linearGradient2 = new LinearGradient(0.0f, 0.0f, AndroidUtilities.dp(8.0f), 0.0f, new int[]{-16777216, 0}, (float[]) null, tileMode2);
@@ -58,7 +58,7 @@ public final class yh extends ll0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.ll0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.ml0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         switch (this.X2) {
             case 0:
@@ -70,11 +70,11 @@ public final class yh extends ll0 {
                 break;
             default:
                 super.dispatchDraw(canvas);
-                int d = (int) (((e6) this.c3).d(this.a3 ? 1.0f : 0.0f, false) * 255.0f);
+                int d = (int) (((c6) this.c3).d(this.a3 ? 1.0f : 0.0f, false) * 255.0f);
                 Paint paint = this.Y2;
                 paint.setAlpha(d);
                 canvas.drawRect(0.0f, 0.0f, getWidth(), AndroidUtilities.dp(8.0f), paint);
-                int d10 = (int) (((e6) this.d3).d(this.b3 ? 1.0f : 0.0f, false) * 255.0f);
+                int d10 = (int) (((c6) this.d3).d(this.b3 ? 1.0f : 0.0f, false) * 255.0f);
                 Paint paint2 = this.Z2;
                 paint2.setAlpha(d10);
                 canvas.save();
@@ -85,7 +85,7 @@ public final class yh extends ll0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.ll0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.ml0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     public boolean drawChild(Canvas canvas, View view, long j3) {
         switch (this.X2) {
             case 0:
@@ -132,7 +132,7 @@ public final class yh extends ll0 {
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView
-    public void k0(int i10, int i11) {
+    public void l0(int i10, int i11) {
         switch (this.X2) {
             case 1:
                 boolean canScrollVertically = canScrollVertically(-1);
@@ -147,7 +147,7 @@ public final class yh extends ll0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.ll0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    @Override // org.telegram.ui.Components.ml0, androidx.recyclerview.widget.RecyclerView, android.view.View
     public void onMeasure(int i10, int i11) {
         switch (this.X2) {
             case 0:

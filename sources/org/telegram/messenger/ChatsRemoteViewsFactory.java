@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.e10;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
     private AccountInstance accountInstance;
@@ -98,7 +98,7 @@ class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
         SpannableStringBuilder spannableStringBuilder;
         CharSequence charSequence2;
         CharSequence charSequence3;
-        org.telegram.ui.Components.i9 i9Var;
+        org.telegram.ui.Components.f9 f9Var;
         TLRPC.UserProfilePhoto userProfilePhoto;
         TLRPC.FileLocation fileLocation3;
         if (this.deleted) {
@@ -142,7 +142,7 @@ class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
             TLRPC.Chat chat3 = this.accountInstance.getMessagesController().getChat(Long.valueOf(-l4.longValue()));
             if (chat3 != null) {
                 if (ChatObject.isMonoForum(chat3)) {
-                    str2 = og.d.i(chat3, this.accountInstance.getCurrentAccount(), false);
+                    str2 = ng.d.i(chat3, this.accountInstance.getCurrentAccount(), false);
                     TLRPC.Chat chat4 = this.accountInstance.getMessagesController().getChat(Long.valueOf(chat3.linked_monoforum_id));
                     if (chat4 == null || (chatPhoto = chat4.photo) == null || (fileLocation2 = chatPhoto.photo_small) == null || fileLocation2.volume_id == 0 || fileLocation2.local_id == 0) {
                         fileLocation2 = null;
@@ -203,18 +203,18 @@ class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
         Canvas canvas = new Canvas(createBitmap);
         if (decodeFile == null) {
             if (user != null) {
-                i9Var = new org.telegram.ui.Components.i9(0, user);
+                f9Var = new org.telegram.ui.Components.f9(0, user);
                 if (UserObject.isReplyUser(user)) {
-                    i9Var.g(12);
+                    f9Var.g(12);
                 } else if (UserObject.isUserSelf(user)) {
-                    i9Var.g(1);
+                    f9Var.g(1);
                 }
             } else {
-                i9Var = new org.telegram.ui.Components.i9((org.telegram.ui.ActionBar.f6) null);
-                i9Var.k(this.accountInstance.getCurrentAccount(), chat);
+                f9Var = new org.telegram.ui.Components.f9((org.telegram.ui.ActionBar.f6) null);
+                f9Var.k(this.accountInstance.getCurrentAccount(), chat);
             }
-            i9Var.setBounds(0, 0, dp, dp);
-            i9Var.draw(canvas);
+            f9Var.setBounds(0, 0, dp, dp);
+            f9Var.draw(canvas);
             c10 = 1;
         } else {
             Shader.TileMode tileMode = Shader.TileMode.CLAMP;
@@ -370,8 +370,8 @@ class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
                             try {
                                 valueOf2.setSpan(new e10(org.telegram.ui.ActionBar.j6.o9, null), string2.length() + 2, valueOf2.length(), 33);
                                 spannableStringBuilder = valueOf2;
-                            } catch (Exception e7) {
-                                FileLog.e(e7);
+                            } catch (Exception e) {
+                                FileLog.e(e);
                                 spannableStringBuilder = valueOf2;
                             }
                             spannableStringBuilder.setSpan(new e10(org.telegram.ui.ActionBar.j6.k9, null), 0, string2.length() + 1, 33);
@@ -379,8 +379,8 @@ class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
                         }
                         spannableStringBuilder.setSpan(new e10(org.telegram.ui.ActionBar.j6.k9, null), 0, string2.length() + 1, 33);
                         charSequence2 = spannableStringBuilder;
-                    } catch (Exception e10) {
-                        FileLog.e(e10);
+                    } catch (Exception e7) {
+                        FileLog.e(e7);
                         charSequence2 = spannableStringBuilder;
                     }
                     spannableStringBuilder = valueOf;

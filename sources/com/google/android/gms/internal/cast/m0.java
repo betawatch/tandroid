@@ -5,7 +5,7 @@ import java.util.Iterator;
 import java.util.Set;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public abstract class m0 extends g0 implements Set, j$.util.Set {
     public static final /* synthetic */ int c = 0;
@@ -43,10 +43,10 @@ public abstract class m0 extends g0 implements Set, j$.util.Set {
         for (int i14 = 0; i14 < i10; i14++) {
             Object obj2 = objArr[i14];
             if (obj2 == null) {
-                throw new NullPointerException(i2.g.i(i14, "at index "));
+                throw new NullPointerException(hg.k0.i(i14, "at index "));
             }
             int hashCode = obj2.hashCode();
-            int a2 = v7.m5.a(hashCode);
+            int a2 = v7.n5.a(hashCode);
             while (true) {
                 int i15 = a2 & i11;
                 Object obj3 = objArr2[i15];

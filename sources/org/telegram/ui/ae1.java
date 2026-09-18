@@ -1,51 +1,11 @@
 package org.telegram.ui;
 
-import android.text.Editable;
-import android.text.SpannableStringBuilder;
-import android.text.TextUtils;
-import android.text.TextWatcher;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import android.content.DialogInterface;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class ae1 implements TextWatcher {
-    public final /* synthetic */ be1 a;
-
-    public ae1(be1 be1Var) {
-        this.a = be1Var;
-    }
-
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        be1 be1Var = this.a;
-        if (be1Var.I) {
-            return;
-        }
-        if (be1Var.a.length() <= 0) {
-            be1Var.d.setText(be1Var.H);
-            return;
-        }
-        String str = "https://" + be1Var.getMessagesController().linkPrefix + "/addtheme/" + ((Object) be1Var.a.getText());
-        String formatString = LocaleController.formatString("ThemeHelpLink", R.string.ThemeHelpLink, str);
-        int indexOf = formatString.indexOf(str);
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(formatString);
-        if (indexOf >= 0) {
-            spannableStringBuilder.setSpan(new org.telegram.ui.Cells.i(str, be1Var, 8), indexOf, str.length() + indexOf, 33);
-        }
-        be1Var.d.setText(TextUtils.concat(be1Var.H, "\n\n", spannableStringBuilder));
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-        be1 be1Var = this.a;
-        if (be1Var.G) {
-            return;
-        }
-        be1Var.Z(be1Var.a.getText().toString(), false);
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+public final /* synthetic */ class ae1 implements DialogInterface.OnCancelListener {
+    @Override // android.content.DialogInterface.OnCancelListener
+    public final void onCancel(DialogInterface dialogInterface) {
     }
 }

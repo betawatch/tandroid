@@ -1,50 +1,26 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Path;
-import android.graphics.RectF;
-import org.telegram.messenger.SharedConfig;
+import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class xs0 extends org.telegram.ui.Components.r71 {
-    public final org.telegram.ui.Components.na g0;
-    public final /* synthetic */ PhotoViewer h0;
+public final class xs0 implements org.telegram.ui.Components.u30 {
+    public final /* synthetic */ PhotoViewer a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public xs0(Context context, PhotoViewer photoViewer) {
-        super(context);
-        this.h0 = photoViewer;
-        new Path();
-        this.g0 = new org.telegram.ui.Components.na(photoViewer.b0, this, 0, false);
+    public xs0(PhotoViewer photoViewer) {
+        this.a = photoViewer;
     }
 
-    @Override // org.telegram.ui.Components.r71
-    public final void b(Canvas canvas, RectF rectF) {
-        canvas.save();
-        canvas.clipRect(rectF);
-        float f7 = -getX();
-        PhotoViewer photoViewer = this.h0;
-        canvas.translate(f7 - photoViewer.Q7.getX(), (-getY()) - photoViewer.Q7.getY());
-        photoViewer.T0(canvas, this.g0, -14803426, 855638016, false, true, false);
-        canvas.restore();
-    }
-
-    @Override // android.view.View
-    public final void invalidate() {
-        int i10;
-        if (SharedConfig.photoViewerBlur && ((i10 = this.h0.n4) == 1 || i10 == 2 || i10 == 3)) {
-            return;
+    public final void a(int i10) {
+        PhotoViewer photoViewer = this.a;
+        photoViewer.P4 = -1;
+        ImageReceiver.BitmapHolder bitmapHolder = photoViewer.j5;
+        if (bitmapHolder != null) {
+            bitmapHolder.release();
+            photoViewer.j5 = null;
         }
-        super.invalidate();
-    }
-
-    @Override // android.view.View
-    public final void setTranslationY(float f7) {
-        if (getTranslationY() != f7) {
-            super.setTranslationY(f7);
-            this.h0.e0.invalidate();
-        }
+        photoViewer.l5 = true;
+        photoViewer.A2(i10);
+        photoViewer.l5 = false;
     }
 }

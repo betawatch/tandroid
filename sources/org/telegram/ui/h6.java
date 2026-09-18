@@ -1,60 +1,30 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.ActionBar.ActionBarLayout;
+import android.view.ViewTreeObserver;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class h6 extends org.telegram.ui.Components.nc0 {
-    public final /* synthetic */ z6 D0;
+public final /* synthetic */ class h6 implements ViewTreeObserver.OnPreDrawListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public h6(z6 z6Var, Context context) {
-        super(context);
-        this.D0 = z6Var;
+    public /* synthetic */ h6(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:11:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:8:0x003a  */
-    @Override // org.telegram.ui.Components.ov0, android.view.ViewGroup, android.view.View
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void dispatchDraw(Canvas canvas) {
-        org.telegram.ui.ActionBar.d5 d5Var;
-        org.telegram.ui.ActionBar.d5 d5Var2;
-        super.dispatchDraw(canvas);
-        boolean Z = Z();
-        z6 z6Var = this.D0;
-        if (Z) {
-            float f7 = z6Var.j0;
-            if (f7 != 0.0f) {
-                z6Var.j0 = f7 - 0.16f;
-                invalidate();
-                z6Var.j0 = Utilities.clamp(z6Var.j0, 1.0f, 0.0f);
-                d5Var = ((org.telegram.ui.ActionBar.n2) z6Var).parentLayout;
-                if (d5Var == null) {
-                    d5Var2 = ((org.telegram.ui.ActionBar.n2) z6Var).parentLayout;
-                    ActionBarLayout actionBarLayout = (ActionBarLayout) d5Var2;
-                    actionBarLayout.p(canvas, (int) (z6Var.h0 * 255.0f * z6Var.j0), org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() + AndroidUtilities.statusBarHeight);
-                    return;
-                }
-                return;
-            }
+    @Override // android.view.ViewTreeObserver.OnPreDrawListener
+    public final boolean onPreDraw() {
+        org.telegram.ui.ActionBar.k kVar;
+        switch (this.a) {
+            case 0:
+                ((a7) this.b).z0();
+                break;
+            default:
+                kVar = ((org.telegram.ui.ActionBar.o2) ((cl) this.b).d).actionBar;
+                kVar.invalidate();
+                break;
         }
-        if (!Z) {
-            float f10 = z6Var.j0;
-            if (f10 != 1.0f) {
-                z6Var.j0 = f10 + 0.16f;
-                invalidate();
-            }
-        }
-        z6Var.j0 = Utilities.clamp(z6Var.j0, 1.0f, 0.0f);
-        d5Var = ((org.telegram.ui.ActionBar.n2) z6Var).parentLayout;
-        if (d5Var == null) {
-        }
+        return true;
     }
 }

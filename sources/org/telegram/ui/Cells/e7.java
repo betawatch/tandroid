@@ -14,18 +14,18 @@ import android.graphics.drawable.Drawable;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.xi0;
+import org.telegram.ui.Components.yi0;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class e7 extends Drawable {
     public final Paint a;
-    public final xi0 b;
+    public final yi0 b;
     public final Drawable c;
     public int d;
 
-    public e7(Context context, org.telegram.ui.Components.x9 x9Var, boolean z10, org.telegram.ui.ActionBar.f6 f6Var) {
-        this(context, x9Var, z10, R.drawable.large_repost_story, f6Var);
+    public e7(Context context, org.telegram.ui.Components.u9 u9Var, boolean z10, org.telegram.ui.ActionBar.f6 f6Var) {
+        this(context, u9Var, z10, R.drawable.large_repost_story, f6Var);
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -86,10 +86,10 @@ public final class e7 extends Drawable {
             mutate.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
             return;
         }
-        xi0 xi0Var = new xi0(R.raw.story_repost, AndroidUtilities.dp(42.0f), AndroidUtilities.dp(42.0f), true, null);
-        this.b = xi0Var;
-        xi0Var.v0 = view;
-        AndroidUtilities.runOnUIThread(new q0(xi0Var, 1), 450L);
+        yi0 yi0Var = new yi0(R.raw.story_repost, AndroidUtilities.dp(42.0f), AndroidUtilities.dp(42.0f), true, null);
+        this.b = yi0Var;
+        yi0Var.R(view);
+        AndroidUtilities.runOnUIThread(new q0(yi0Var, 1), 450L);
         this.c = null;
     }
 

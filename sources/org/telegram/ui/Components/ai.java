@@ -8,9 +8,9 @@ import android.view.Menu;
 import android.view.MotionEvent;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class ai extends hu {
+public final class ai extends ju {
     public boolean V;
     public int W;
     public int a0;
@@ -23,7 +23,7 @@ public final class ai extends hu {
         this.c0 = viVar;
     }
 
-    @Override // org.telegram.ui.Components.hu
+    @Override // org.telegram.ui.Components.ju
     public final void c(float f7) {
         vi viVar = this.c0;
         viVar.g2 = f7;
@@ -37,45 +37,45 @@ public final class ai extends hu {
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         if (this.V) {
-            zt editText = this.c0.E0.getEditText();
+            bu editText = this.c0.E0.getEditText();
             editText.setOffsetY(editText.getOffsetY() - ((this.a0 - editText.getScrollY()) + (this.W - editText.getMeasuredHeight())));
             ValueAnimator ofFloat = ValueAnimator.ofFloat(editText.getOffsetY(), 0.0f);
-            ofFloat.addUpdateListener(new ah.m0(15, this, editText));
+            ofFloat.addUpdateListener(new ai.x(14, this, editText));
             ValueAnimator valueAnimator = this.b0;
             if (valueAnimator != null) {
                 valueAnimator.cancel();
             }
             this.b0 = ofFloat;
             ofFloat.setDuration(200L);
-            ofFloat.setInterpolator(pr.f);
+            ofFloat.setInterpolator(qr.f);
             ofFloat.start();
             this.V = false;
         }
         super.dispatchDraw(canvas);
     }
 
-    @Override // org.telegram.ui.Components.hu
+    @Override // org.telegram.ui.Components.ju
     public final void e() {
-        super/*org.telegram.ui.ActionBar.f3*/.dismiss();
+        super/*org.telegram.ui.ActionBar.g3*/.dismiss();
     }
 
-    @Override // org.telegram.ui.Components.hu
+    @Override // org.telegram.ui.Components.ju
     public final void f() {
         super.f();
         kz emojiView = getEmojiView();
         if (emojiView != null) {
             emojiView.w0 = false;
-            emojiView.x2 = false;
+            emojiView.w2 = false;
             emojiView.setShouldDrawBackground(false);
             emojiView.setBottomInset(AndroidUtilities.navigationBarHeight);
         }
     }
 
-    @Override // org.telegram.ui.Components.hu
+    @Override // org.telegram.ui.Components.ju
     public final void i(Menu menu) {
-        org.telegram.ui.ActionBar.n2 n2Var = this.c0.f0;
-        if (n2Var instanceof org.telegram.ui.co) {
-            org.telegram.ui.co.k8(menu, ((org.telegram.ui.co) n2Var).h, true, true, true, true);
+        org.telegram.ui.ActionBar.o2 o2Var = this.c0.f0;
+        if (o2Var instanceof org.telegram.ui.bo) {
+            org.telegram.ui.bo.k8(menu, ((org.telegram.ui.bo) o2Var).h, true, true, true, true);
         }
     }
 
@@ -99,7 +99,7 @@ public final class ai extends hu {
         this.c0.U1();
     }
 
-    @Override // org.telegram.ui.Components.hu
+    @Override // org.telegram.ui.Components.ju
     public final void q(int i10, int i11) {
         vi viVar = this.c0;
         xh xhVar = viVar.D0;

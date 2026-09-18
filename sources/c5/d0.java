@@ -29,9 +29,9 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import org.telegram.messenger.BillingController;
-import v7.z5;
+import v7.a6;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class d0 extends c {
     public final Context C;
@@ -40,8 +40,8 @@ public final class d0 extends c {
     public volatile a9.d F;
     public volatile ScheduledExecutorService G;
 
-    public d0(rb.a aVar, Context context, androidx.emoji2.text.f fVar) {
-        super(aVar, context, fVar);
+    public d0(qb.b bVar, Context context, androidx.emoji2.text.f fVar) {
+        super(bVar, context, fVar);
         this.D = 0;
         this.C = context;
     }
@@ -62,11 +62,11 @@ public final class d0 extends c {
             b0Var.j(h4Var);
             h4Var.a = "billingOverrideService.getBillingOverride";
             return j4Var;
-        } catch (Exception e7) {
-            g2 g2Var = new g2(e7);
-            z5 z5Var = g4.f;
+        } catch (Exception e) {
+            g2 g2Var = new g2(e);
+            a6 a6Var = g4.f;
             i4 i4Var = j4Var.b;
-            if (z5Var.d(i4Var, null, g2Var)) {
+            if (a6Var.d(i4Var, null, g2Var)) {
                 g4.d(i4Var);
             }
             return j4Var;
@@ -77,7 +77,7 @@ public final class d0 extends c {
         int i12 = e0.a;
         g3 b10 = e0.b(i10, i11, hVar, null, m3.b);
         Objects.requireNonNull(b10, "ApiFailure should not be null");
-        this.h.l0(b10);
+        this.h.X(b10);
     }
 
     public final void G(int i10, q0.a aVar, Runnable runnable) {
@@ -136,15 +136,15 @@ public final class d0 extends c {
         int i10 = 0;
         try {
             i10 = ((Integer) E(2).get(28500L, TimeUnit.MILLISECONDS)).intValue();
-        } catch (TimeoutException e7) {
+        } catch (TimeoutException e) {
             F(102, 28, g0.p);
-            com.google.android.gms.internal.play_billing.u.i("BillingClientTesting", "Asynchronous call to Billing Override Service timed out.", e7);
-        } catch (Exception e10) {
-            if (e10 instanceof InterruptedException) {
+            com.google.android.gms.internal.play_billing.u.i("BillingClientTesting", "Asynchronous call to Billing Override Service timed out.", e);
+        } catch (Exception e7) {
+            if (e7 instanceof InterruptedException) {
                 Thread.currentThread().interrupt();
             }
             F(95, 28, g0.p);
-            com.google.android.gms.internal.play_billing.u.i("BillingClientTesting", "An error occurred while retrieving billing override.", e10);
+            com.google.android.gms.internal.play_billing.u.i("BillingClientTesting", "An error occurred while retrieving billing override.", e7);
         }
         if (i10 > 0) {
             h a2 = g0.a(i10, "Billing override value was set by a license tester.");
@@ -154,17 +154,17 @@ public final class d0 extends c {
         }
         try {
             return super.b(activity, gVar);
-        } catch (Exception e11) {
+        } catch (Exception e10) {
             h hVar = g0.f;
             F(103, 2, hVar);
-            com.google.android.gms.internal.play_billing.u.i("BillingClientTesting", "An internal error occurred.", e11);
+            com.google.android.gms.internal.play_billing.u.i("BillingClientTesting", "An internal error occurred.", e10);
             return hVar;
         }
     }
 
     @Override // c5.c, c5.b
-    public final void c(xa.c cVar, org.telegram.messenger.c0 c0Var) {
-        G(7, new z(c0Var, 0), new v(this, cVar, c0Var, 1));
+    public final void c(a4.m mVar, org.telegram.messenger.c0 c0Var) {
+        G(7, new z(c0Var, 0), new v(this, mVar, c0Var, 1));
     }
 
     @Override // c5.c, c5.b
@@ -175,10 +175,10 @@ public final class d0 extends c {
                 int i10 = e0.a;
                 i3 c10 = e0.c(26, m3.b);
                 Objects.requireNonNull(c10, "ApiSuccess should not be null");
-                pf.b bVar = this.h;
+                of.b bVar = this.h;
                 bVar.getClass();
                 try {
-                    bVar.t0(c10, (p3) bVar.b);
+                    bVar.f0(c10, (p3) bVar.b);
                 } catch (Throwable th2) {
                     com.google.android.gms.internal.play_billing.u.i("BillingLogger", "Unable to log.", th2);
                 }
@@ -228,8 +228,8 @@ public final class d0 extends c {
         l(billingController);
     }
 
-    public d0(rb.a aVar, Context context, q qVar, androidx.emoji2.text.f fVar) {
-        super(aVar, context, qVar, fVar);
+    public d0(qb.b bVar, Context context, q qVar, androidx.emoji2.text.f fVar) {
+        super(bVar, context, qVar, fVar);
         this.D = 0;
         this.C = context;
     }

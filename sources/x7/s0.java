@@ -1,15 +1,15 @@
 package x7;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class s0 {
     public final r0 a;
     public final Integer b;
     public final a7 c;
 
-    public /* synthetic */ s0(v7.a6 a6Var) {
-        this.a = (r0) a6Var.b;
-        this.b = (Integer) a6Var.c;
-        this.c = (a7) a6Var.d;
+    public /* synthetic */ s0(v7.r1 r1Var) {
+        this.a = (r0) r1Var.b;
+        this.b = (Integer) r1Var.d;
+        this.c = (a7) r1Var.c;
     }
 }

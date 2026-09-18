@@ -1,43 +1,73 @@
 package org.telegram.ui.Components;
 
 import android.view.View;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.UserConfig;
+import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class an0 extends s4.j {
-    @Override // s4.j, s4.f1
-    public final boolean r(s4.c1 c1Var, b2.q0 q0Var, int i10, int i11, int i12, int i13) {
-        gn0 gn0Var;
-        fn0 fn0Var;
-        View view = c1Var.a;
-        if ((view instanceof gn0) && (fn0Var = (gn0Var = (gn0) view).a) != null) {
-            fn0Var.i = fn0Var.N;
-            fn0Var.g = fn0Var.O;
-            fn0Var.h = fn0Var.P;
-            gn0Var.b.d(0.0f, true);
-            gn0Var.invalidate();
-        }
-        int translationX = i10 + ((int) view.getTranslationX());
-        int translationY = i11 + ((int) view.getTranslationY());
-        R(c1Var);
-        int i14 = i12 - translationX;
-        int i15 = i13 - translationY;
-        if (i14 == 0 && i15 == 0) {
-            v(c1Var);
-            return false;
-        }
-        if (i14 != 0) {
-            view.setTranslationX(-i14);
-        }
-        if (i15 != 0) {
-            view.setTranslationY(-i15);
-        }
-        this.r.add(new s4.i(c1Var, translationX, translationY, i12, i13));
-        return true;
+public final /* synthetic */ class an0 implements al0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.o2 c;
+    public final /* synthetic */ Object d;
+
+    public /* synthetic */ an0(Object obj, int i10, org.telegram.ui.ActionBar.o2 o2Var, int i11) {
+        this.a = i11;
+        this.d = obj;
+        this.b = i10;
+        this.c = o2Var;
     }
 
-    @Override // s4.f1
-    public final boolean t(s4.c1 c1Var) {
-        return true;
+    @Override // org.telegram.ui.Components.al0
+    public final void d(int i10, View view) {
+        switch (this.a) {
+            case 0:
+                jn0 jn0Var = (jn0) this.d;
+                ArrayList arrayList = jn0Var.r;
+                ai.w0 w0Var = jn0Var.d;
+                if (i10 >= 0 && i10 < arrayList.size()) {
+                    if (!UserConfig.getInstance(this.b).isPremium()) {
+                        new rg.x0(this.c, 24, true).show();
+                        break;
+                    } else {
+                        long j3 = ((gn0) arrayList.get(i10)).a.h;
+                        if (jn0Var.f(jn0Var.h == j3 ? null : ((gn0) arrayList.get(i10)).a)) {
+                            int i11 = 0;
+                            while (i11 < w0Var.getChildCount()) {
+                                if (w0Var.getChildAt(i11) == view) {
+                                    if (i11 <= 1) {
+                                        w0Var.w0(-AndroidUtilities.dp(i11 == 0 ? 90.0f : 50.0f), 0, null);
+                                    } else if (i11 >= w0Var.getChildCount() - 2) {
+                                        w0Var.w0(AndroidUtilities.dp(i11 == w0Var.getChildCount() - 1 ? 80.0f : 50.0f), 0, null);
+                                    }
+                                }
+                                i11++;
+                            }
+                            w0Var.N(new org.telegram.ui.kr(3));
+                            if (jn0Var.h != j3) {
+                                jn0Var.h = j3;
+                                ((in0) view).a(true, true);
+                                break;
+                            } else {
+                                jn0Var.h = 0L;
+                                break;
+                            }
+                        }
+                    }
+                }
+                break;
+            default:
+                rg.k1 k1Var = (rg.k1) this.d;
+                if (view instanceof org.telegram.ui.ww0) {
+                    org.telegram.ui.ww0 ww0Var = (org.telegram.ui.ww0) view;
+                    PremiumPreviewFragment.q0(this.b, ww0Var.f.a);
+                    k1Var.showDialog(new rg.x0(this.c, ww0Var.f.a, false));
+                    break;
+                }
+                break;
+        }
     }
 }

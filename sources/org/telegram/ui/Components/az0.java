@@ -1,41 +1,29 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLObject;
+import android.util.Pair;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public class az0 {
-    public int a;
-    public int b;
-    public int c;
+public final class az0 extends ArrayList {
+    public final Class a;
+    public final Class b;
 
-    public az0() {
-        c();
+    public az0(Class cls, Class cls2) {
+        this.a = cls;
+        this.b = cls2;
     }
 
-    public int a(jz0 jz0Var, cz0 cz0Var, vy0 vy0Var, int i10, boolean z10) {
-        return this.a - vy0Var.a(cz0Var, i10);
-    }
-
-    public void b(int i10, int i11) {
-        this.a = Math.max(this.a, i10);
-        this.b = Math.max(this.b, i11);
-    }
-
-    public void c() {
-        this.a = TLObject.FLAG_31;
-        this.b = TLObject.FLAG_31;
-        this.c = 2;
-    }
-
-    public int d(boolean z10) {
-        if (!z10) {
-            int i10 = this.c;
-            vy0 vy0Var = jz0.R;
-            if ((i10 & 2) != 0) {
-                return 100000;
-            }
+    /* JADX WARN: Multi-variable type inference failed */
+    public final lf.i i() {
+        int size = size();
+        Object[] objArr = (Object[]) Array.newInstance((Class<?>) this.a, size);
+        Object[] objArr2 = (Object[]) Array.newInstance((Class<?>) this.b, size);
+        for (int i10 = 0; i10 < size; i10++) {
+            objArr[i10] = ((Pair) get(i10)).first;
+            objArr2[i10] = ((Pair) get(i10)).second;
         }
-        return this.a + this.b;
+        return new lf.i(objArr, objArr2);
     }
 }

@@ -1,39 +1,44 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
-
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class lf implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ MessagesStorage b;
-    public final /* synthetic */ ArrayList c;
-    public final /* synthetic */ Runnable d;
+    public final /* synthetic */ long c;
 
-    public /* synthetic */ lf(MessagesStorage messagesStorage, ArrayList arrayList, Runnable runnable, int i10) {
+    public /* synthetic */ lf(int i10, long j3, MessagesStorage messagesStorage) {
         this.a = i10;
         this.b = messagesStorage;
-        this.c = arrayList;
-        this.d = runnable;
+        this.c = j3;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$loadMessageAttachPaths$235(this.c, this.d);
+                this.b.lambda$deleteStoryPushMessage$39(this.c);
                 break;
             case 1:
-                this.b.lambda$processAnchoredEphemeralMessages$203(this.c, this.d);
+                this.b.lambda$clearUserPhotos$92(this.c);
                 break;
             case 2:
-                this.b.lambda$processEphemeralMessages$201(this.c, this.d);
+                this.b.lambda$removeAllTopics$56(this.c);
                 break;
             case 3:
-                this.b.lambda$checkLoadedRemoteFilters$69(this.c, this.d);
+                this.b.lambda$deleteWallpaper$79(this.c);
+                break;
+            case 4:
+                this.b.lambda$deleteSavedDialog$55(this.c);
+                break;
+            case 5:
+                this.b.lambda$onDeleteQueryComplete$91(this.c);
+                break;
+            case 6:
+                this.b.lambda$removePendingTask$11(this.c);
                 break;
             default:
-                this.b.lambda$processEphemeralEditedMessages$202(this.c, this.d);
+                this.b.lambda$loadChannelAdmins$123(this.c);
                 break;
         }
     }

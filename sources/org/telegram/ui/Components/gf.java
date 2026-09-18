@@ -1,21 +1,26 @@
 package org.telegram.ui.Components;
 
-import android.view.ViewTreeObserver;
-
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class gf implements ViewTreeObserver.OnDrawListener {
-    public final /* synthetic */ ev0 a;
-    public final /* synthetic */ uo0 b;
+public final class gf implements o1.g {
+    public boolean a = false;
+    public final /* synthetic */ float b;
+    public final /* synthetic */ gv0 c;
 
-    public gf(ev0 ev0Var, uo0 uo0Var) {
-        this.a = ev0Var;
-        this.b = uo0Var;
+    public gf(float f7, gv0 gv0Var) {
+        this.b = f7;
+        this.c = gv0Var;
     }
 
-    @Override // android.view.ViewTreeObserver.OnDrawListener
-    public final void onDraw() {
-        ev0 ev0Var = this.a;
-        ev0Var.post(new org.telegram.ui.ActionBar.p(this, ev0Var, this.b, 8));
+    @Override // o1.g
+    public final void a(o1.h hVar, float f7, float f10) {
+        if (this.a || f7 < this.b) {
+            return;
+        }
+        this.a = true;
+        try {
+            this.c.performHapticFeedback(3, 2);
+        } catch (Exception unused) {
+        }
     }
 }

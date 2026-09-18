@@ -7,7 +7,7 @@ import java.util.Map;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public abstract class h5 extends v4 {
     private static final Map zzb = new ConcurrentHashMap();
@@ -28,10 +28,10 @@ public abstract class h5 extends v4 {
     public static Object c(Method method, h5 h5Var, Object... objArr) {
         try {
             return method.invoke(h5Var, objArr);
-        } catch (IllegalAccessException e7) {
-            throw new RuntimeException("Couldn't use Java reflection to implement protocol message reflection.", e7);
-        } catch (InvocationTargetException e10) {
-            Throwable cause = e10.getCause();
+        } catch (IllegalAccessException e) {
+            throw new RuntimeException("Couldn't use Java reflection to implement protocol message reflection.", e);
+        } catch (InvocationTargetException e7) {
+            Throwable cause = e7.getCause();
             if (cause instanceof RuntimeException) {
                 throw ((RuntimeException) cause);
             }
@@ -54,8 +54,8 @@ public abstract class h5 extends v4 {
             try {
                 Class.forName(cls.getName(), true, cls.getClassLoader());
                 h5Var = (h5) map.get(cls);
-            } catch (ClassNotFoundException e7) {
-                throw new IllegalStateException("Class initialization cannot fail.", e7);
+            } catch (ClassNotFoundException e) {
+                throw new IllegalStateException("Class initialization cannot fail.", e);
             }
         }
         if (h5Var != null) {
@@ -76,7 +76,7 @@ public abstract class h5 extends v4 {
             if (g10 >= 0) {
                 return g10;
             }
-            throw new IllegalStateException(i2.g.i(g10, "serialized size must be non-negative, was "));
+            throw new IllegalStateException(hg.k0.i(g10, "serialized size must be non-negative, was "));
         }
         int i10 = this.zzd & ConnectionsManager.DEFAULT_DATACENTER_ID;
         if (i10 != Integer.MAX_VALUE) {
@@ -84,7 +84,7 @@ public abstract class h5 extends v4 {
         }
         int g11 = j6Var.g(this);
         if (g11 < 0) {
-            throw new IllegalStateException(i2.g.i(g11, "serialized size must be non-negative, was "));
+            throw new IllegalStateException(hg.k0.i(g11, "serialized size must be non-negative, was "));
         }
         this.zzd = (this.zzd & TLObject.FLAG_31) | g11;
         return g11;
@@ -133,7 +133,7 @@ public abstract class h5 extends v4 {
             if (g10 >= 0) {
                 return g10;
             }
-            throw new IllegalStateException(i2.g.i(g10, "serialized size must be non-negative, was "));
+            throw new IllegalStateException(hg.k0.i(g10, "serialized size must be non-negative, was "));
         }
         int i10 = this.zzd & ConnectionsManager.DEFAULT_DATACENTER_ID;
         if (i10 != Integer.MAX_VALUE) {
@@ -141,7 +141,7 @@ public abstract class h5 extends v4 {
         }
         int g11 = g6.c.a(getClass()).g(this);
         if (g11 < 0) {
-            throw new IllegalStateException(i2.g.i(g11, "serialized size must be non-negative, was "));
+            throw new IllegalStateException(hg.k0.i(g11, "serialized size must be non-negative, was "));
         }
         this.zzd = (this.zzd & TLObject.FLAG_31) | g11;
         return g11;

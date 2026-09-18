@@ -1,7 +1,51 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+import android.view.ActionMode;
+import android.view.Menu;
+import android.view.MenuItem;
+
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public interface yt {
-    void run(String str);
+public final class yt implements ActionMode.Callback {
+    public final /* synthetic */ ActionMode.Callback a;
+    public final /* synthetic */ bu b;
+
+    public yt(bu buVar, ActionMode.Callback callback) {
+        this.b = buVar;
+        this.a = callback;
+    }
+
+    @Override // android.view.ActionMode.Callback
+    public final boolean onActionItemClicked(ActionMode actionMode, MenuItem menuItem) {
+        if (this.b.performMenuAction(menuItem.getItemId())) {
+            actionMode.finish();
+            return true;
+        }
+        try {
+            return this.a.onActionItemClicked(actionMode, menuItem);
+        } catch (Exception unused) {
+            return true;
+        }
+    }
+
+    @Override // android.view.ActionMode.Callback
+    public final boolean onCreateActionMode(ActionMode actionMode, Menu menu) {
+        bu buVar = this.b;
+        buVar.copyPasteShowed = true;
+        buVar.onContextMenuOpen();
+        return this.a.onCreateActionMode(actionMode, menu);
+    }
+
+    @Override // android.view.ActionMode.Callback
+    public final void onDestroyActionMode(ActionMode actionMode) {
+        bu buVar = this.b;
+        buVar.copyPasteShowed = false;
+        buVar.onContextMenuClose();
+        this.a.onDestroyActionMode(actionMode);
+    }
+
+    @Override // android.view.ActionMode.Callback
+    public final boolean onPrepareActionMode(ActionMode actionMode, Menu menu) {
+        return this.a.onPrepareActionMode(actionMode, menu);
+    }
 }

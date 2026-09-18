@@ -1,10 +1,10 @@
 package yf;
 
+import ai.f7;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import b2.n1;
-import bi.o6;
 import j$.util.Comparator$-CC;
 import j$.util.concurrent.ConcurrentHashMap;
 import java.io.File;
@@ -27,11 +27,11 @@ import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.pf;
-import org.telegram.ui.Components.xi0;
-import org.telegram.ui.q31;
+import org.telegram.messenger.qf;
+import org.telegram.ui.Components.yi0;
+import org.telegram.ui.p91;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class e {
     public static int A;
@@ -54,7 +54,7 @@ public final class e {
     public final File m;
     public int n;
     public final AtomicBoolean o;
-    public final rg.b0 p;
+    public final qg.b0 p;
     public volatile boolean q;
     public volatile boolean r;
     public RandomAccessFile s;
@@ -70,7 +70,7 @@ public final class e {
         this.e = arrayList;
         this.h = new Object();
         this.o = new AtomicBoolean(false);
-        this.p = new rg.b0(this, 9);
+        this.p = new qg.b0(this, 9);
         this.a = (BitmapDrawable) cVar;
         this.b = i10;
         this.c = i11;
@@ -92,7 +92,7 @@ public final class e {
         sb2.append("_");
         sb2.append(i11);
         sb2.append(z10 ? "_nolimit" : " ");
-        File file3 = new File(file2, a4.a.s(sb2, i12 != 0 ? i2.g.i(i12, "_fitz") : "", ".pcache2"));
+        File file3 = new File(file2, a4.a.s(sb2, i12 != 0 ? hg.k0.i(i12, "_fitz") : "", ".pcache2"));
         this.m = file3;
         this.f = i10 < AndroidUtilities.dp(60.0f) && i11 < AndroidUtilities.dp(60.0f);
         if (SharedConfig.getDevicePerformanceClass() < 2) {
@@ -144,8 +144,8 @@ public final class e {
                 th = th3;
                 randomAccessFile = null;
             }
-        } catch (IOException e7) {
-            e7.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
@@ -154,7 +154,7 @@ public final class e {
         A = i10;
         if (i10 <= 0) {
             A = 0;
-            xi0.T0.postRunnable(new q31(16));
+            yi0.T0.postRunnable(new p91(16));
         }
     }
 
@@ -163,8 +163,8 @@ public final class e {
         if (randomAccessFile != null) {
             try {
                 randomAccessFile.close();
-            } catch (IOException e7) {
-                e7.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
             }
         }
     }
@@ -200,10 +200,10 @@ public final class e {
             } finally {
                 this.a.c();
             }
-        } catch (FileNotFoundException e7) {
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e7) {
             e7.printStackTrace();
-        } catch (IOException e10) {
-            e10.printStackTrace();
         }
         if (this.m.exists()) {
             try {
@@ -230,7 +230,7 @@ public final class e {
                 B.a(this.c, this.b);
                 a5.a aVar = B;
                 bitmapArr = (Bitmap[]) aVar.d;
-                a0[] a0VarArr = (a0[]) aVar.c;
+                z[] zVarArr = (z[]) aVar.c;
                 countDownLatchArr = new CountDownLatch[y];
                 ArrayList arrayList = new ArrayList();
                 randomAccessFile2.writeBoolean(false);
@@ -293,7 +293,7 @@ public final class e {
         B.a(this.c, this.b);
         a5.a aVar2 = B;
         bitmapArr = (Bitmap[]) aVar2.d;
-        a0[] a0VarArr2 = (a0[]) aVar2.c;
+        z[] zVarArr2 = (z[]) aVar2.c;
         countDownLatchArr = new CountDownLatch[y];
         ArrayList arrayList2 = new ArrayList();
         randomAccessFile22.writeBoolean(false);
@@ -307,8 +307,8 @@ public final class e {
             if (countDownLatch != null) {
                 try {
                     countDownLatch.await();
-                } catch (InterruptedException e11) {
-                    e11.printStackTrace();
+                } catch (InterruptedException e10) {
+                    e10.printStackTrace();
                 }
             }
             if (!this.o.get() || atomicBoolean2.get()) {
@@ -321,22 +321,22 @@ public final class e {
                     if (countDownLatch2 != null) {
                         try {
                             countDownLatch2.await();
-                        } catch (InterruptedException e12) {
-                            e12.printStackTrace();
+                        } catch (InterruptedException e11) {
+                            e11.printStackTrace();
                         }
                     }
                 }
                 int length = (int) randomAccessFile22.length();
-                Collections.sort(arrayList2, Comparator$-CC.comparingInt(new o6(13)));
-                a0VarArr2[0].b();
+                Collections.sort(arrayList2, Comparator$-CC.comparingInt(new f7(13)));
+                zVarArr2[0].b();
                 int size = arrayList2.size();
-                a0VarArr2[0].c(size);
+                zVarArr2[0].c(size);
                 for (int i14 = 0; i14 < arrayList2.size(); i14++) {
-                    a0VarArr2[0].c(((d) arrayList2.get(i14)).c);
-                    a0VarArr2[0].c(((d) arrayList2.get(i14)).b);
+                    zVarArr2[0].c(((d) arrayList2.get(i14)).c);
+                    zVarArr2[0].c(((d) arrayList2.get(i14)).b);
                 }
-                randomAccessFile22.write(a0VarArr2[0].a, 0, (size * 8) + 4);
-                a0VarArr2[0].b();
+                randomAccessFile22.write(zVarArr2[0].a, 0, (size * 8) + 4);
+                zVarArr2[0].b();
                 randomAccessFile22.seek(0L);
                 randomAccessFile22.writeBoolean(true);
                 randomAccessFile22.writeInt(length);
@@ -350,7 +350,7 @@ public final class e {
                 this.k = true;
             } else {
                 countDownLatchArr[i11] = new CountDownLatch(1);
-                z.execute(new pf(this, atomicBoolean2, bitmapArr, i11, a0VarArr2, i12, randomAccessFile22, arrayList2, countDownLatchArr));
+                z.execute(new qf(this, atomicBoolean2, bitmapArr, i11, zVarArr2, i12, randomAccessFile22, arrayList2, countDownLatchArr));
                 i11++;
                 i12++;
                 if (i11 >= y) {
@@ -368,8 +368,8 @@ public final class e {
             if (countDownLatch3 != null) {
                 try {
                     countDownLatch3.await();
-                } catch (InterruptedException e13) {
-                    e13.printStackTrace();
+                } catch (InterruptedException e12) {
+                    e12.printStackTrace();
                 }
             }
             Bitmap bitmap = bitmapArr[i10];
@@ -449,8 +449,8 @@ public final class e {
                             if (this.j && randomAccessFile != null) {
                                 try {
                                     randomAccessFile.close();
-                                } catch (IOException e7) {
-                                    e7.printStackTrace();
+                                } catch (IOException e) {
+                                    e.printStackTrace();
                                 }
                             }
                             return -1;
@@ -472,8 +472,8 @@ public final class e {
                         if (this.e.size() != 0) {
                             d dVar = (d) this.e.get(Utilities.clamp(i10, this.e.size() - 1, 0));
                             randomAccessFile.seek(dVar.c);
-                            byte[] e10 = e(dVar);
-                            randomAccessFile.readFully(e10, 0, dVar.b);
+                            byte[] e7 = e(dVar);
+                            randomAccessFile.readFully(e7, 0, dVar.b);
                             if (this.r) {
                                 this.s = null;
                                 randomAccessFile.close();
@@ -496,7 +496,7 @@ public final class e {
                             } else {
                                 this.t.inBitmap = bitmap;
                             }
-                            BitmapFactory.decodeByteArray(e10, 0, dVar.b, this.t);
+                            BitmapFactory.decodeByteArray(e7, 0, dVar.b, this.t);
                             if (z10) {
                                 Utilities.extractAlpha(this.u, bitmap);
                             }

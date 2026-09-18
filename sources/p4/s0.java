@@ -17,12 +17,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.concurrent.Executor;
-import ji.k5;
 import org.telegram.messenger.MessageObject;
 import org.telegram.ui.Cells.l7;
-import org.telegram.ui.ai0;
+import org.telegram.ui.gm0;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class s0 {
     public boolean a;
@@ -47,18 +46,18 @@ public final class s0 {
     public FileInputStream a(AssetManager assetManager, String str) {
         try {
             return assetManager.openFd(str).createInputStream();
-        } catch (FileNotFoundException e7) {
-            String message = e7.getMessage();
+        } catch (FileNotFoundException e) {
+            String message = e.getMessage();
             if (message == null || !message.contains("compressed")) {
                 return null;
             }
-            ((r4.c) this.c).v();
+            ((r4.c) this.c).q();
             return null;
         }
     }
 
     public void b(int i10, Serializable serializable) {
-        ((Executor) this.b).execute(new ai0(this, i10, serializable, 13));
+        ((Executor) this.b).execute(new gm0(this, i10, serializable, 13));
     }
 
     public void c() {
@@ -115,7 +114,7 @@ public final class s0 {
                     }
                     if (i13 < 0) {
                         r0 r0Var = new r0((Context) this.b, new ComponentName(serviceInfo.packageName, serviceInfo.name));
-                        r0Var.F = new k5(this, r0Var);
+                        r0Var.F = new k2.v(this, r0Var);
                         if (!r0Var.w) {
                             r0Var.w = true;
                             r0Var.r();

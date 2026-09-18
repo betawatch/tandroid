@@ -1,77 +1,230 @@
 package zh;
 
-import android.text.SpannableStringBuilder;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.vl;
-import org.telegram.ui.Components.nq;
-import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.ub;
-import org.telegram.ui.Components.yb;
+import android.util.LongSparseArray;
+import android.util.SparseArray;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
+import org.telegram.ui.t6;
+import org.telegram.ui.u6;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class b implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ g b;
+public final class b {
+    public final boolean a;
+    public long k;
+    public boolean m;
+    public boolean n;
+    public boolean o;
+    public boolean p;
+    public boolean q;
+    public long r;
+    public long s;
+    public long t;
+    public long u;
+    public long v;
+    public ArrayList b = new ArrayList();
+    public final LongSparseArray c = new LongSparseArray();
+    public final ArrayList d = new ArrayList();
+    public final ArrayList e = new ArrayList();
+    public final ArrayList f = new ArrayList();
+    public final ArrayList g = new ArrayList();
+    public final ArrayList h = new ArrayList();
+    public final HashSet i = new HashSet();
+    public final HashSet j = new HashSet();
+    public final HashSet l = new HashSet();
 
-    public /* synthetic */ b(g gVar, int i10) {
-        this.a = i10;
-        this.b = gVar;
+    public b(boolean z10) {
+        this.a = z10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        g gVar = this.b;
-        switch (i10) {
-            case 0:
-                b bVar = gVar.n0;
-                int currentTime = gVar.getConnectionsManager().getCurrentTime();
-                gVar.R.setEnabled(gVar.P > 0 || gVar.G > currentTime);
-                if (currentTime >= gVar.G) {
-                    gVar.R.f(null, true);
-                    gVar.R.g(v7.V0(false, gVar.O ? LocaleController.getString(R.string.BotStarsButtonWithdrawShortAll) : LocaleController.formatPluralStringSpaced("BotStarsButtonWithdrawShort", (int) gVar.P), gVar.T), true, true);
-                    break;
+    public final void a(int i10, boolean z10) {
+        if (this.a) {
+            if (!z10) {
+                if (i10 == 0) {
+                    this.m = false;
+                    return;
+                }
+                if (i10 == 1) {
+                    this.n = false;
+                    return;
+                }
+                if (i10 == 2) {
+                    this.o = false;
+                    return;
+                } else if (i10 == 3) {
+                    this.p = false;
+                    return;
                 } else {
-                    gVar.R.g(LocaleController.getString(R.string.BotStarsButtonWithdrawShortUntil), true, true);
-                    if (gVar.m0 == null) {
-                        gVar.m0 = new SpannableStringBuilder("l");
-                        nq nqVar = new nq(R.drawable.mini_switch_lock, 0);
-                        nqVar.setTopOffset(1);
-                        gVar.m0.setSpan(nqVar, 0, 1, 33);
+                    if (i10 == 4) {
+                        this.q = false;
+                        return;
                     }
-                    SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-                    spannableStringBuilder.append((CharSequence) gVar.m0).append((CharSequence) g.j0(gVar.G - currentTime));
-                    gVar.R.f(spannableStringBuilder, true);
-                    qc qcVar = gVar.a0;
-                    if (qcVar != null) {
-                        ub ubVar = qcVar.e;
-                        if ((ubVar instanceof yb) && ubVar.isAttachedToWindow()) {
-                            vl.p(R.string.BotStarsWithdrawalToast, new Object[]{g.j0(gVar.G - currentTime)}, ((yb) gVar.a0.e).b);
+                    return;
+                }
+            }
+            ArrayList arrayList = this.d;
+            if (i10 == 0) {
+                this.m = b(i10, arrayList);
+                return;
+            }
+            if (i10 == 1) {
+                this.n = b(i10, arrayList);
+                return;
+            }
+            if (i10 == 2) {
+                this.o = b(i10, this.e);
+                return;
+            }
+            if (i10 == 3) {
+                this.p = b(i10, this.f);
+            } else if (i10 == 4) {
+                this.q = b(i10, this.g);
+            } else if (i10 == 7) {
+                b(i10, this.h);
+            }
+        }
+    }
+
+    public final boolean b(int i10, ArrayList arrayList) {
+        for (int i11 = 0; i11 < arrayList.size(); i11++) {
+            if (((a) arrayList.get(i11)).d == i10 && !this.j.contains(arrayList.get(i11))) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public final void c() {
+        if (this.a) {
+            return;
+        }
+        HashSet hashSet = this.i;
+        hashSet.clear();
+        HashSet hashSet2 = this.j;
+        Iterator it = hashSet2.iterator();
+        while (it.hasNext()) {
+            long j3 = ((a) it.next()).b;
+            if (j3 != 0) {
+                hashSet.add(Long.valueOf(j3));
+            }
+        }
+        HashSet hashSet3 = this.l;
+        hashSet3.clear();
+        Iterator it2 = hashSet.iterator();
+        while (it2.hasNext()) {
+            t6 t6Var = (t6) this.c.get(((Long) it2.next()).longValue());
+            if (t6Var != null) {
+                SparseArray sparseArray = t6Var.d;
+                int i10 = 0;
+                while (true) {
+                    if (i10 >= sparseArray.size()) {
+                        hashSet3.add(Long.valueOf(t6Var.a));
+                        break;
+                    }
+                    ArrayList arrayList = ((u6) sparseArray.valueAt(i10)).b;
+                    int size = arrayList.size();
+                    int i11 = 0;
+                    while (i11 < size) {
+                        Object obj = arrayList.get(i11);
+                        i11++;
+                        if (!hashSet2.contains((a) obj)) {
+                            break;
                         }
                     }
-                    AndroidUtilities.cancelRunOnUIThread(bVar);
-                    AndroidUtilities.runOnUIThread(bVar, 1000L);
-                    break;
+                    i10++;
                 }
-                break;
-            case 1:
-                g.U(gVar);
-                break;
-            case 2:
-                g.V(gVar);
-                break;
-            case 3:
-                of.f.s(gVar.getParentActivity(), LocaleController.getString(R.string.BotMonetizationBalanceInfoLink));
-                break;
-            case 4:
-                of.f.s(gVar.getParentActivity(), LocaleController.getString(R.string.BotStarsWithdrawInfoLink));
-                break;
-            default:
-                gVar.S.setLoading(false);
-                break;
+            }
         }
+    }
+
+    public final void d() {
+        this.k = 0L;
+        this.j.clear();
+        this.l.clear();
+    }
+
+    public final ArrayList e(int i10) {
+        if (i10 == 0 || i10 == 1) {
+            return this.d;
+        }
+        if (i10 == 2) {
+            return this.e;
+        }
+        if (i10 == 3) {
+            return this.f;
+        }
+        if (i10 == 4) {
+            return this.g;
+        }
+        if (i10 == 7) {
+            return this.h;
+        }
+        return null;
+    }
+
+    public final long f(int i10) {
+        if (i10 == 0) {
+            return this.r;
+        }
+        if (i10 == 1) {
+            return this.s;
+        }
+        if (i10 == 2) {
+            return this.t;
+        }
+        if (i10 == 3) {
+            return this.u;
+        }
+        if (i10 == 4) {
+            return this.v;
+        }
+        return -1L;
+    }
+
+    public final void g(a aVar, boolean z10) {
+        long j3 = aVar.c;
+        if (!z10) {
+            j3 = -j3;
+        }
+        int i10 = aVar.d;
+        if (i10 == 0) {
+            this.r += j3;
+            return;
+        }
+        if (i10 == 1) {
+            this.s += j3;
+            return;
+        }
+        if (i10 == 2) {
+            this.t += j3;
+        } else if (i10 == 3) {
+            this.u += j3;
+        } else if (i10 == 4) {
+            this.v += j3;
+        }
+    }
+
+    public final boolean h() {
+        if (this.d.isEmpty() && this.e.isEmpty() && this.f.isEmpty()) {
+            return this.a || this.b.isEmpty();
+        }
+        return false;
+    }
+
+    public final void i(a aVar) {
+        HashSet hashSet = this.j;
+        if (hashSet.contains(aVar)) {
+            hashSet.remove(aVar);
+            g(aVar, false);
+            this.k -= aVar.c;
+            a(aVar.d, false);
+        } else {
+            hashSet.add(aVar);
+            g(aVar, true);
+            this.k += aVar.c;
+            a(aVar.d, true);
+        }
+        c();
     }
 }

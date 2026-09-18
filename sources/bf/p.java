@@ -6,7 +6,7 @@ import java.io.EOFException;
 import java.io.IOException;
 import v7.i0;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public abstract class p {
     public final /* synthetic */ int a;
@@ -41,13 +41,13 @@ public abstract class p {
         }
     }
 
-    public lf.b c() {
+    public kf.b c() {
         com.google.firebase.messaging.d dVar = (com.google.firebase.messaging.d) this.b;
         DataInputStream dataInputStream = (DataInputStream) this.e;
-        lf.b bVar = (lf.b) this.f;
+        kf.b bVar = (kf.b) this.f;
         if (bVar != null) {
             while (bVar.i() > 0) {
-                if (((nf.a) ((com.google.firebase.messaging.d) bVar.b)).skip(bVar.i()) == 0) {
+                if (((mf.a) ((com.google.firebase.messaging.d) bVar.b)).skip(bVar.i()) == 0) {
                     throw new EOFException("Cannot skip atom");
                 }
             }
@@ -55,13 +55,13 @@ public abstract class p {
         int readInt = dataInputStream.readInt();
         byte[] bArr = new byte[4];
         dataInputStream.readFully(bArr);
-        lf.b bVar2 = new lf.b(readInt == 1 ? new nf.a(dVar, 16L, dataInputStream.readLong() - 16) : new nf.a(dVar, 8L, readInt - 8), this, new String(bArr, "ISO8859_1"), 0);
+        kf.b bVar2 = new kf.b(readInt == 1 ? new mf.a(dVar, 16L, dataInputStream.readLong() - 16) : new mf.a(dVar, 8L, readInt - 8), this, new String(bArr, "ISO8859_1"), 0);
         this.f = bVar2;
         return bVar2;
     }
 
-    public lf.b d(String str) {
-        lf.b c10 = c();
+    public kf.b d(String str) {
+        kf.b c10 = c();
         String str2 = (String) c10.d;
         if (str2.matches(str)) {
             return c10;

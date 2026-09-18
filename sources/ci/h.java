@@ -1,98 +1,102 @@
 package ci;
 
-import android.view.View;
-import android.view.accessibility.AccessibilityNodeInfo;
-import org.telegram.ui.Cells.u7;
-import org.telegram.ui.Components.d61;
-import org.telegram.ui.Components.iv0;
-import org.telegram.ui.Components.nz;
-import s4.z0;
+import android.animation.ObjectAnimator;
+import android.text.Editable;
+import android.text.TextWatcher;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.BotWebViewVibrationEffect;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes4.dex */
-public final class h extends nz {
-    public final /* synthetic */ int X = 0;
-    public final Object Y;
+public final class h implements TextWatcher {
+    public int a;
+    public boolean b;
+    public final /* synthetic */ m c;
 
-    public h() {
-        super(100, false);
-        this.Y = new iv0();
+    public h(m mVar) {
+        this.c = mVar;
     }
 
-    @Override // s4.o0
-    public int A() {
-        switch (this.X) {
-            case 0:
-                return 0;
-            default:
-                return super.A();
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        String str;
+        m mVar = this.c;
+        e eVar = mVar.c0;
+        org.telegram.ui.Components.n6 n6Var = mVar.v;
+        mVar.w = Character.codePointCount(editable, 0, editable.length());
+        int captionLimit = mVar.getCaptionLimit();
+        if (mVar.w + 25 > captionLimit) {
+            str = "" + (captionLimit - mVar.w);
+        } else {
+            str = null;
+        }
+        n6Var.a();
+        n6Var.setText(str);
+        n6Var.setTextColor(mVar.w >= captionLimit ? -1280137 : -1);
+        if (mVar.w > captionLimit && !UserConfig.getInstance(mVar.U).isPremium() && mVar.w < mVar.getCaptionPremiumLimit() && mVar.w > this.a && (mVar.e() || MessagesController.getInstance(mVar.U).premiumFeaturesBlocked())) {
+            int i10 = -mVar.N;
+            mVar.N = i10;
+            AndroidUtilities.shakeViewSpring(n6Var, i10);
+            BotWebViewVibrationEffect.APP_ERROR.vibrate();
+        }
+        int i11 = mVar.w;
+        this.a = i11;
+        boolean z10 = i11 > captionLimit;
+        if (z10 != this.b) {
+            mVar.q(z10);
+        }
+        this.b = z10;
+        if (!mVar.V) {
+            AndroidUtilities.cancelRunOnUIThread(eVar);
+            AndroidUtilities.runOnUIThread(eVar, 1500L);
+        }
+        mVar.V = false;
+        AndroidUtilities.runOnUIThread(new androidx.fragment.app.a0(this, 5));
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        m mVar = this.c;
+        ObjectAnimator objectAnimator = mVar.g0;
+        if (objectAnimator == null || !objectAnimator.isRunning()) {
+            mVar.a0 = mVar.f.getEditText().getScrollY();
+            mVar.W = true;
         }
     }
 
-    @Override // org.telegram.ui.Components.nz
-    public iv0 D1(int i10) {
-        switch (this.X) {
-            case 0:
-                iv0 iv0Var = (iv0) this.Y;
-                iv0Var.b = 100.0f;
-                iv0Var.a = 100.0f;
-                return iv0Var;
-            default:
-                return super.D1(i10);
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        m mVar = this.c;
+        g gVar = mVar.f;
+        if (gVar.getEditText().suppressOnTextChanged) {
+            return;
         }
-    }
-
-    @Override // s4.s, s4.o0
-    public void U(pf.e eVar, z0 z0Var, View view, s0.c cVar) {
-        switch (this.X) {
-            case 0:
-                super.U(eVar, z0Var, view, cVar);
-                AccessibilityNodeInfo accessibilityNodeInfo = cVar.a;
-                AccessibilityNodeInfo.CollectionItemInfo collectionItemInfo = accessibilityNodeInfo.getCollectionItemInfo();
-                he.c cVar2 = collectionItemInfo != null ? new he.c(collectionItemInfo) : null;
-                if (cVar2 != null) {
-                    Object obj = cVar2.a;
-                    if (((AccessibilityNodeInfo.CollectionItemInfo) obj).isHeading()) {
-                        accessibilityNodeInfo.setCollectionItemInfo(AccessibilityNodeInfo.CollectionItemInfo.obtain(((AccessibilityNodeInfo.CollectionItemInfo) obj).getRowIndex(), ((AccessibilityNodeInfo.CollectionItemInfo) obj).getRowSpan(), ((AccessibilityNodeInfo.CollectionItemInfo) obj).getColumnIndex(), ((AccessibilityNodeInfo.CollectionItemInfo) obj).getColumnSpan(), false));
-                        break;
-                    }
-                }
-                break;
-            default:
-                super.U(eVar, z0Var, view, cVar);
-                break;
+        if (mVar.M == null) {
+            i iVar = new i(mVar, mVar.getContext(), mVar.x, LaunchActivity.R(), new ai.d(), 0);
+            mVar.M = iVar;
+            mVar.T = new org.telegram.ui.Components.la(mVar.O, iVar, 0, false);
+            mVar.M.p(new a6.i(mVar, 11));
+            ah.c cVar = mVar.h0;
+            if (cVar != null) {
+                i iVar2 = mVar.M;
+                ch.d c10 = cVar.c(iVar2, null, false);
+                c10.o(eh.b.i(mVar.a));
+                iVar2.setBackgroundDrawable(c10);
+            }
+            mVar.b.addView(mVar.M, w7.x5.e(-1, -1, 83));
+            mVar.w();
         }
-    }
-
-    @Override // s4.c0
-    public int W0(z0 z0Var) {
-        switch (this.X) {
-            case 1:
-                if (!((d61) this.Y).a3) {
-                    break;
-                } else {
-                    break;
-                }
+        if (mVar.M.getAdapter() != null) {
+            gg.k1 adapter = mVar.M.getAdapter();
+            MessagesController.getInstance(mVar.U).getUser(Long.valueOf(mVar.x));
+            TLRPC.Chat chat = MessagesController.getInstance(mVar.U).getChat(Long.valueOf(-mVar.x));
+            adapter.getClass();
+            adapter.l0 = chat;
+            mVar.M.getAdapter().U(charSequence, gVar.getEditText().getSelectionStart(), null, false, false);
         }
-        return super.W0(z0Var);
-    }
-
-    @Override // s4.c0
-    public void z0(z0 z0Var, int[] iArr) {
-        switch (this.X) {
-            case 0:
-                super.z0(z0Var, iArr);
-                iArr[1] = Math.max(iArr[1], u7.a(1) * 2);
-                break;
-            default:
-                super.z0(z0Var, iArr);
-                break;
-        }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public h(d61 d61Var, int i10) {
-        super(i10, false);
-        this.Y = d61Var;
     }
 }

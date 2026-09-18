@@ -1,8 +1,9 @@
 package x2;
 
 import b2.l1;
+import hg.k0;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class f extends n implements Comparable {
     public final int e;
@@ -11,7 +12,7 @@ public final class f extends n implements Comparable {
     public f(int i10, l1 l1Var, int i11, i iVar, int i12) {
         super(i10, l1Var, i11);
         int i13;
-        this.e = i2.g.d(i12, iVar.t0) ? 1 : 0;
+        this.e = k0.d(i12, iVar.t0) ? 1 : 0;
         b2.s sVar = this.d;
         int i14 = sVar.y;
         int i15 = -1;

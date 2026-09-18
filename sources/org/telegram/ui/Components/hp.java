@@ -7,26 +7,25 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.ResultCallback;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class hp implements ResultCallback {
     public final /* synthetic */ ChatThemeController a;
-    public final /* synthetic */ lp b;
+    public final /* synthetic */ mp b;
 
-    public hp(lp lpVar, ChatThemeController chatThemeController) {
-        this.b = lpVar;
+    public hp(mp mpVar, ChatThemeController chatThemeController) {
+        this.b = mpVar;
         this.a = chatThemeController;
     }
 
     @Override // org.telegram.tgnet.ResultCallback
     public final void onComplete(Object obj) {
         int i10;
-        ChatThemeController chatThemeController = this.a;
-        List<org.telegram.ui.ActionBar.d4> emojiThemes = chatThemeController.getEmojiThemes((chatThemeController.isGiftThemesFullyLoaded() ? 2 : 0) | 5);
-        lp lpVar = this.b;
-        i10 = ((org.telegram.ui.ActionBar.f3) lpVar).currentAccount;
-        NotificationCenter.getInstance(i10).doOnIdle(new uc(22, this, emojiThemes));
-        lpVar.b0 = false;
+        List<org.telegram.ui.ActionBar.e4> emojiThemes = this.a.getEmojiThemes(7);
+        mp mpVar = this.b;
+        i10 = ((org.telegram.ui.ActionBar.g3) mpVar).currentAccount;
+        NotificationCenter.getInstance(i10).doOnIdle(new oh(15, this, emojiThemes));
+        mpVar.b0 = false;
     }
 
     @Override // org.telegram.tgnet.ResultCallback

@@ -10,7 +10,7 @@ import android.graphics.Shader;
 import android.util.Pair;
 import android.view.TextureView;
 import android.widget.TextView;
-import di.c6;
+import ci.c6;
 import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.messenger.AndroidUtilities;
@@ -25,22 +25,23 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ActionBar.f3;
+import org.telegram.ui.ActionBar.g3;
 import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.ActionBar.o2;
+import org.telegram.ui.Components.mc;
 import org.telegram.ui.Components.oc;
-import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.v51;
+import org.telegram.ui.Components.wb;
 import org.telegram.ui.Components.x51;
-import org.telegram.ui.Components.yb;
+import org.telegram.ui.Components.z51;
 import org.telegram.ui.LaunchActivity;
-import rg.v2;
-import yh.e4;
-import yh.g4;
-import yh.x3;
-import yh.x4;
-import zh.s5;
+import qg.v2;
+import xh.f4;
+import xh.h4;
+import xh.y3;
+import xh.y4;
+import yh.v5;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b1 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -53,7 +54,7 @@ public final /* synthetic */ class b1 implements Utilities.Callback {
 
     @Override // org.telegram.messenger.Utilities.Callback
     public final void run(Object obj) {
-        v51 v51Var;
+        x51 x51Var;
         int i10;
         TLRPC.TL_messageMediaGiveaway tL_messageMediaGiveaway;
         String str;
@@ -69,27 +70,27 @@ public final /* synthetic */ class b1 implements Utilities.Callback {
                 z0Var.d(sb2.toString());
                 break;
             case 1:
-                i1 i1Var = (i1) obj2;
-                i1Var.e = (ArrayList) obj;
-                x51 x51Var = i1Var.a;
-                if (x51Var.G) {
-                    x51Var.Y2.N(true);
+                h1 h1Var = (h1) obj2;
+                h1Var.f = (ArrayList) obj;
+                z51 z51Var = h1Var.a;
+                if (z51Var.G) {
+                    z51Var.Y2.N(true);
                     break;
                 }
                 break;
             case 2:
-                a2 a2Var = (a2) obj2;
-                a2Var.n = ((ArrayList) obj).size();
-                x51 x51Var2 = a2Var.a;
-                if (x51Var2 != null && (v51Var = x51Var2.Y2) != null && x51Var2.G) {
-                    v51Var.N(true);
+                z1 z1Var = (z1) obj2;
+                z1Var.r = ((ArrayList) obj).size();
+                z51 z51Var2 = z1Var.a;
+                if (z51Var2 != null && (x51Var = z51Var2.Y2) != null && z51Var2.G) {
+                    x51Var.N(true);
                     break;
                 }
                 break;
             case 3:
-                qg.d0 d0Var = (qg.d0) obj2;
-                qg.f1 f1Var = (qg.f1) obj;
-                qg.c1 c1Var = d0Var.a;
+                pg.d0 d0Var = (pg.d0) obj2;
+                pg.f1 f1Var = (pg.f1) obj;
+                pg.c1 c1Var = d0Var.a;
                 if (f1Var != null) {
                     float currentWeight = c1Var.getCurrentWeight();
                     f1Var.f = currentWeight;
@@ -101,15 +102,15 @@ public final /* synthetic */ class b1 implements Utilities.Callback {
                         f1Var.k *= f1Var.f;
                     }
                 }
-                qg.q0 painting = c1Var.getPainting();
+                pg.q0 painting = c1Var.getPainting();
                 if (painting.L == null) {
-                    painting.f.f(new qg.m0(painting, f1Var, i12));
+                    painting.f.f(new pg.m0(painting, f1Var, i12));
                     break;
                 }
                 break;
             case 4:
-                qh.i iVar = (qh.i) obj2;
-                if (((qh.b) obj) == qh.b.d && ((i10 = iVar.s) == 2 || i10 == 3)) {
+                ph.i iVar = (ph.i) obj2;
+                if (((ph.b) obj) == ph.b.d && ((i10 = iVar.s) == 2 || i10 == 3)) {
                     iVar.s = 1;
                 }
                 iVar.h.run();
@@ -140,21 +141,21 @@ public final /* synthetic */ class b1 implements Utilities.Callback {
                 v2Var.v = new Matrix();
                 break;
             case 7:
-                rh.c cVar = (rh.c) obj2;
-                rh.e eVar = (rh.e) obj;
+                qh.c cVar = (qh.c) obj2;
+                qh.e eVar = (qh.e) obj;
                 cVar.h = eVar;
                 cVar.c.a(eVar, true);
-                AndroidUtilities.runOnUIThread(new b(cVar, 23), 200L);
+                AndroidUtilities.runOnUIThread(new u0(cVar, 18), 200L);
                 break;
             case 8:
-                ((sg.k0) obj2).E1((HashMap) obj);
+                ((rg.j0) obj2).E1((HashMap) obj);
                 break;
             case 9:
-                sg.z1 z1Var = (sg.z1) obj2;
+                rg.v1 v1Var = (rg.v1) obj2;
                 boolean isEnabled = LiteMode.isEnabled(131072);
-                if (z1Var.d != isEnabled) {
-                    z1Var.d = isEnabled;
-                    z1Var.invalidate();
+                if (v1Var.d != isEnabled) {
+                    v1Var.d = isEnabled;
+                    v1Var.invalidate();
                     break;
                 }
                 break;
@@ -179,57 +180,57 @@ public final /* synthetic */ class b1 implements Utilities.Callback {
                 }
                 TLRPC.TL_messageMediaGiveaway tL_messageMediaGiveaway2 = tL_messageMediaGiveaway;
                 long j3 = messageObject.messageOwner.date * 1000;
-                org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
+                o2 R = LaunchActivity.R();
                 if (R != null) {
-                    String b10 = ug.j.b(messageObject);
+                    String b10 = tg.k.b(messageObject);
                     TLRPC.Chat chat = MessagesController.getInstance(UserConfig.selectedAccount).getChat(Long.valueOf(-messageObject.getFromChatId()));
                     boolean z10 = chat != null && ChatObject.isChannelAndNotMegaGroup(chat);
-                    yb ybVar = new yb(R.getParentActivity(), R.getResourceProvider());
+                    wb wbVar = new wb(R.getParentActivity(), R.getResourceProvider());
                     if (payments_giveawayinfo instanceof TLRPC.TL_payments_giveawayInfoResults) {
-                        ybVar.c(R.raw.chats_infotip, 30, 30, new String[0]);
-                        ybVar.b.setText(LocaleController.getString(R.string.BoostingGiveawayShortStatusEnded));
+                        wbVar.c(R.raw.chats_infotip, 30, 30, new String[0]);
+                        wbVar.b.setText(LocaleController.getString(R.string.BoostingGiveawayShortStatusEnded));
                     } else if (payments_giveawayinfo instanceof TLRPC.TL_payments_giveawayInfo) {
                         if (((TLRPC.TL_payments_giveawayInfo) payments_giveawayinfo).participating) {
-                            ybVar.c(R.raw.forward, 30, 30, new String[0]);
-                            ybVar.b.setText(LocaleController.getString(R.string.BoostingGiveawayShortStatusParticipating));
+                            wbVar.c(R.raw.forward, 30, 30, new String[0]);
+                            wbVar.b.setText(LocaleController.getString(R.string.BoostingGiveawayShortStatusParticipating));
                         } else {
-                            ybVar.c(R.raw.chats_infotip, 30, 30, new String[0]);
-                            ybVar.b.setText(LocaleController.getString(R.string.BoostingGiveawayShortStatusNotParticipating));
+                            wbVar.c(R.raw.chats_infotip, 30, 30, new String[0]);
+                            wbVar.b.setText(LocaleController.getString(R.string.BoostingGiveawayShortStatusNotParticipating));
                         }
                     }
-                    ybVar.b.setSingleLine(false);
-                    ybVar.b.setMaxLines(2);
-                    oc ocVar = new oc(R.getParentActivity(), R.getResourceProvider(), true);
-                    ocVar.e(LocaleController.getString(R.string.LearnMore));
-                    ocVar.a = new di.u1(payments_giveawayinfo, z10, b10, j3, tL_messageMediaGiveaway2, R);
-                    ybVar.setButton(ocVar);
-                    qc.g(R, ybVar, 2750).j();
+                    wbVar.b.setSingleLine(false);
+                    wbVar.b.setMaxLines(2);
+                    mc mcVar = new mc(R.getParentActivity(), R.getResourceProvider(), true);
+                    mcVar.e(LocaleController.getString(R.string.LearnMore));
+                    mcVar.a = new ci.u1(payments_giveawayinfo, z10, b10, j3, tL_messageMediaGiveaway2, R);
+                    wbVar.setButton(mcVar);
+                    oc.g(R, wbVar, 2750).j();
                     break;
                 }
                 break;
             case 11:
-                ug.t0 t0Var = (ug.t0) obj2;
+                tg.t0 t0Var = (tg.t0) obj2;
                 t0Var.a0.setLoading(false);
-                ug.j.j(t0Var.getContext(), (TLRPC.TL_error) obj);
+                tg.k.j(t0Var.getContext(), (TLRPC.TL_error) obj);
                 break;
             case 12:
-                uh.f.P((uh.f) obj2, (Pair) obj);
+                th.f.P((th.f) obj2, (Pair) obj);
                 break;
             case 13:
-                HashMap hashMap = ((vg.b) obj2).w;
+                HashMap hashMap = ((ug.b) obj2).w;
                 hashMap.clear();
                 hashMap.putAll((HashMap) obj);
                 break;
             case 14:
-                ((vg.e) obj2).F((TLObject) obj);
+                ((ug.e) obj2).F((TLObject) obj);
                 break;
             case 15:
-                HashMap hashMap2 = ((vg.g) obj2).r;
+                HashMap hashMap2 = ((ug.g) obj2).r;
                 hashMap2.clear();
                 hashMap2.putAll((HashMap) obj);
                 break;
             case 16:
-                vh.h hVar = (vh.h) obj2;
+                uh.h hVar = (uh.h) obj2;
                 Bitmap bitmap2 = (Bitmap) obj;
                 Matrix matrix = hVar.K;
                 if (!hVar.T) {
@@ -253,25 +254,25 @@ public final /* synthetic */ class b1 implements Utilities.Callback {
                     break;
                 }
             case 17:
-                ((yh.m1) obj2).a();
+                ((xh.n1) obj2).a();
                 break;
             case 18:
-                ((g4) obj2).e0(((Boolean) obj).booleanValue());
+                ((h4) obj2).e0(((Boolean) obj).booleanValue());
                 break;
             case 19:
                 ((Boolean) obj).getClass();
-                x3 x3Var = ((e4) obj2).d;
-                if (x3Var != null) {
-                    x3Var.run();
+                y3 y3Var = ((f4) obj2).d;
+                if (y3Var != null) {
+                    y3Var.run();
                     break;
                 }
                 break;
             case 20:
-                ug.j.j(((x4) obj2).getContext(), (TLRPC.TL_error) obj);
+                tg.k.j(((y4) obj2).getContext(), (TLRPC.TL_error) obj);
                 break;
             case 21:
-                zh.a0 a0Var = (zh.a0) obj2;
-                int i13 = zh.a0.w0[((Integer) obj).intValue()];
+                yh.a0 a0Var = (yh.a0) obj2;
+                int i13 = yh.a0.w0[((Integer) obj).intValue()];
                 if (a0Var.n0 != i13) {
                     a0Var.n0 = i13;
                     a0Var.f0.setText(LocaleController.formatPluralString("GiftOfferHours", i13 / 3600, new Object[0]));
@@ -279,29 +280,29 @@ public final /* synthetic */ class b1 implements Utilities.Callback {
                 a0Var.T(true);
                 break;
             case 22:
-                zh.s0 s0Var = (zh.s0) obj2;
+                yh.s0 s0Var = (yh.s0) obj2;
                 s0Var.i0.g();
                 s0Var.k0.N(true);
                 break;
             case 23:
-                zh.i2 i2Var = (zh.i2) obj2;
-                i2Var.getClass();
-                i2Var.s = new Matrix();
-                i2Var.v = new Matrix();
+                yh.l2 l2Var = (yh.l2) obj2;
+                l2Var.getClass();
+                l2Var.s = new Matrix();
+                l2Var.v = new Matrix();
                 Shader.TileMode tileMode3 = Shader.TileMode.CLAMP;
                 BitmapShader bitmapShader2 = new BitmapShader((Bitmap) obj, tileMode3, tileMode3);
-                i2Var.r = bitmapShader2;
-                Paint paint3 = i2Var.c;
+                l2Var.r = bitmapShader2;
+                Paint paint3 = l2Var.c;
                 paint3.setShader(bitmapShader2);
                 ColorMatrix colorMatrix3 = new ColorMatrix();
                 AndroidUtilities.adjustSaturationColorMatrix(colorMatrix3, 0.25f);
                 paint3.setColorFilter(new ColorMatrixColorFilter(colorMatrix3));
                 break;
             case 24:
-                s5.a((s5) obj2, (TL_stars.StarGifts) obj);
+                v5.a((v5) obj2, (TL_stars.StarGifts) obj);
                 break;
             case 25:
-                ((f3) obj2).dismiss(((Boolean) obj).booleanValue());
+                ((g3) obj2).dismiss(((Boolean) obj).booleanValue());
                 break;
             default:
                 TextView textView = (TextView) obj2;

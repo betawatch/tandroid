@@ -1,21 +1,22 @@
 package i9;
 
+import ai.z9;
 import java.util.concurrent.Callable;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.concurrent.locks.LockSupport;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class d0 extends AtomicReference implements Runnable {
-    public static final androidx.emoji2.text.n c;
-    public static final androidx.emoji2.text.n d;
+    public static final z9 c;
+    public static final z9 d;
     public final Callable a;
     public final /* synthetic */ e0 b;
 
     static {
         int i10 = 2;
-        c = new androidx.emoji2.text.n(i10);
-        d = new androidx.emoji2.text.n(i10);
+        c = new z9(i10);
+        d = new z9(i10);
     }
 
     public d0(e0 e0Var, Callable callable) {
@@ -31,8 +32,8 @@ public final class d0 extends AtomicReference implements Runnable {
         int i10 = 0;
         while (true) {
             boolean z11 = runnable instanceof v;
-            androidx.emoji2.text.n nVar = d;
-            if (!z11 && runnable != nVar) {
+            z9 z9Var = d;
+            if (!z11 && runnable != z9Var) {
                 break;
             }
             if (z11) {
@@ -41,7 +42,7 @@ public final class d0 extends AtomicReference implements Runnable {
             i10++;
             if (i10 <= 1000) {
                 Thread.yield();
-            } else if (runnable == nVar || compareAndSet(runnable, nVar)) {
+            } else if (runnable == z9Var || compareAndSet(runnable, z9Var)) {
                 z10 = Thread.interrupted() || z10;
                 LockSupport.park(vVar);
             }
@@ -59,7 +60,7 @@ public final class d0 extends AtomicReference implements Runnable {
         if (compareAndSet(null, currentThread)) {
             e0 e0Var = this.b;
             boolean isDone = e0Var.isDone();
-            androidx.emoji2.text.n nVar = c;
+            z9 z9Var = c;
             if (!isDone) {
                 try {
                     obj = this.a.call();
@@ -68,7 +69,7 @@ public final class d0 extends AtomicReference implements Runnable {
                         if (th2 instanceof InterruptedException) {
                             Thread.currentThread().interrupt();
                         }
-                        if (!compareAndSet(currentThread, nVar)) {
+                        if (!compareAndSet(currentThread, z9Var)) {
                             a(currentThread);
                         }
                         if (isDone) {
@@ -77,7 +78,7 @@ public final class d0 extends AtomicReference implements Runnable {
                         e0Var.n(th2);
                         return;
                     } finally {
-                        if (!compareAndSet(currentThread, nVar)) {
+                        if (!compareAndSet(currentThread, z9Var)) {
                             a(currentThread);
                         }
                         if (!isDone) {

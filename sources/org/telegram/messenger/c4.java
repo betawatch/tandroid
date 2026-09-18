@@ -1,39 +1,26 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_payments;
+import java.util.function.ToIntFunction;
+import org.telegram.messenger.GiftAuctionController;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class c4 implements Utilities.Callback {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ BaseController c;
-    public final /* synthetic */ Object d;
+public final /* synthetic */ class c4 implements ToIntFunction {
+    public final /* synthetic */ int a;
 
-    public /* synthetic */ c4(GiftAuctionController giftAuctionController, long j3, TL_payments.TL_StarGiftAuctionState tL_StarGiftAuctionState) {
-        this.c = giftAuctionController;
-        this.b = j3;
-        this.d = tL_StarGiftAuctionState;
+    public /* synthetic */ c4(int i10) {
+        this.a = i10;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
+    @Override // java.util.function.ToIntFunction
+    public final int applyAsInt(Object obj) {
+        int lambda$updateActiveAuctions$13;
         switch (this.a) {
             case 0:
-                ((GiftAuctionController) this.c).lambda$subscribeToGiftAuctionStateInternal$0(this.b, (TL_payments.TL_StarGiftAuctionState) this.d, (ArrayList) obj);
-                break;
+                lambda$updateActiveAuctions$13 = GiftAuctionController.lambda$updateActiveAuctions$13((GiftAuctionController.Auction) obj);
+                return lambda$updateActiveAuctions$13;
             default:
-                ((TranslateController) this.c).lambda$checkTranslation$4((MessageObject) this.d, this.b, (TLRPC.TL_textWithEntities) obj);
-                break;
+                return Integer.parseInt((String) obj);
         }
-    }
-
-    public /* synthetic */ c4(TranslateController translateController, MessageObject messageObject, long j3) {
-        this.c = translateController;
-        this.d = messageObject;
-        this.b = j3;
     }
 }

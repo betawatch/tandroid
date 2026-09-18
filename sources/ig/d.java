@@ -1,41 +1,41 @@
 package ig;
 
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.tl.TL_account;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class d implements Runnable {
+public final class d implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ e b;
+    public final /* synthetic */ g b;
 
-    public /* synthetic */ d(e eVar, int i10) {
+    public /* synthetic */ d(g gVar, int i10) {
         this.a = i10;
-        this.b = eVar;
+        this.b = gVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        e eVar = this.b;
-        switch (i10) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
             case 0:
-                eVar.a();
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                g gVar = this.b;
+                gVar.j0 = floatValue;
+                gVar.H = true;
+                gVar.invalidate();
                 break;
             case 1:
-                eVar.getClass();
-                TL_account.disablePeerConnectedBot disablepeerconnectedbot = new TL_account.disablePeerConnectedBot();
-                int i11 = eVar.a;
-                disablepeerconnectedbot.peer = MessagesController.getInstance(i11).getInputPeer(eVar.s);
-                ConnectionsManager.getInstance(i11).sendRequest(disablepeerconnectedbot, null);
-                MessagesController.getNotificationsSettings(i11).edit().remove("dialog_botid" + eVar.s).remove("dialog_boturl" + eVar.s).remove("dialog_botflags" + eVar.s).apply();
-                NotificationCenter.getInstance(i11).lambda$postNotificationNameOnUIThread$1(NotificationCenter.peerSettingsDidLoad, Long.valueOf(eVar.s));
-                f.a(i11).f = false;
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                g gVar2 = this.b;
+                gVar2.k0 = floatValue2;
+                gVar2.H = true;
+                gVar2.invalidate();
                 break;
             default:
-                of.f.s(eVar.getContext(), eVar.x);
+                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                g gVar3 = this.b;
+                gVar3.v0 = floatValue3;
+                gVar3.t0.setAlpha(gVar3.v0);
+                gVar3.invalidate();
                 break;
         }
     }

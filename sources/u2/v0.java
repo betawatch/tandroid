@@ -1,24 +1,22 @@
 package u2;
 
-import rg.p2;
-
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class v0 implements e0 {
     public final g2.g a;
-    public final p2 b;
-    public final m2.t c;
-    public final rb.a d;
+    public final r5.d b;
+    public final lf.i c;
+    public final qb.b d;
     public final int e;
 
     public v0(g2.g gVar, c3.m mVar) {
-        p2 p2Var = new p2(mVar, 4);
-        m2.t tVar = new m2.t(4);
-        rb.a aVar = new rb.a(26);
+        r5.d dVar = new r5.d(mVar, 10);
+        lf.i iVar = new lf.i(5);
+        qb.b bVar = new qb.b(26);
         this.a = gVar;
-        this.b = p2Var;
-        this.c = tVar;
-        this.d = aVar;
+        this.b = dVar;
+        this.c = iVar;
+        this.d = bVar;
         this.e = 1048576;
     }
 
@@ -26,7 +24,7 @@ public final class v0 implements e0 {
     /* renamed from: e, reason: merged with bridge method [inline-methods] */
     public final w0 a(b2.k0 k0Var) {
         k0Var.b.getClass();
-        return new w0(k0Var, this.a, this.b, this.c.w(k0Var), this.d, this.e, null);
+        return new w0(k0Var, this.a, this.b, this.c.A(k0Var), this.d, this.e, null);
     }
 
     @Override // u2.e0
@@ -40,7 +38,7 @@ public final class v0 implements e0 {
     }
 
     @Override // u2.e0
-    public final e0 d(rb.a aVar) {
+    public final e0 d(qb.b bVar) {
         return this;
     }
 }

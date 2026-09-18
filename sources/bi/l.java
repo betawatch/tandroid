@@ -1,16 +1,94 @@
 package bi;
 
-import android.graphics.Canvas;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.KeyEvent;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.LocaleController;
+import org.telegram.ui.Components.hj;
+import org.telegram.ui.Components.ni;
+import org.telegram.ui.Components.wx0;
+import org.telegram.ui.Components.zl;
+import s4.z0;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes4.dex */
-public final class l extends org.telegram.ui.Components.p5 {
-    @Override // org.telegram.ui.Components.p5, android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        canvas.save();
-        canvas.translate(AndroidUtilities.dp(-2.0f), AndroidUtilities.dp(1.0f));
-        super.draw(canvas);
-        canvas.restore();
+public final class l extends s4.s {
+    public final /* synthetic */ int Q;
+    public final /* synthetic */ KeyEvent.Callback R;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ l(ni niVar, int i10, int i11) {
+        super(i10);
+        this.Q = i11;
+        this.R = niVar;
+    }
+
+    @Override // s4.c0
+    public boolean Y0() {
+        switch (this.Q) {
+            case 3:
+                return ((wx0) this.R).W != null && LocaleController.isRTL;
+            default:
+                return super.Y0();
+        }
+    }
+
+    @Override // s4.s, s4.c0, s4.o0
+    public int o0(int i10, of.e eVar, z0 z0Var) {
+        switch (this.Q) {
+            case 0:
+                if (((u) this.R).b) {
+                    i10 = 0;
+                }
+                return super.o0(i10, eVar, z0Var);
+            default:
+                return super.o0(i10, eVar, z0Var);
+        }
+    }
+
+    @Override // s4.c0, s4.o0
+    public void v0(RecyclerView recyclerView, z0 z0Var, int i10) {
+        switch (this.Q) {
+            case 1:
+                hj hjVar = new hj(this, recyclerView.getContext());
+                hjVar.a = i10;
+                w0(hjVar);
+                break;
+            case 2:
+                zl zlVar = new zl(this, recyclerView.getContext());
+                zlVar.a = i10;
+                w0(zlVar);
+                break;
+            default:
+                super.v0(recyclerView, z0Var, i10);
+                break;
+        }
+    }
+
+    @Override // s4.s, s4.c0, s4.o0
+    public boolean y0() {
+        switch (this.Q) {
+            case 0:
+                return false;
+            case 1:
+                return false;
+            case 2:
+                return false;
+            default:
+                return super.y0();
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public l(wx0 wx0Var) {
+        super(5);
+        this.Q = 3;
+        this.R = wx0Var;
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public l(u uVar) {
+        super(3);
+        this.Q = 0;
+        this.R = uVar;
     }
 }

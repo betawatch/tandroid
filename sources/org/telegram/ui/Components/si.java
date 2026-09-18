@@ -16,9 +16,9 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class si extends kl0 {
+public final class si extends ll0 {
     public int E;
     public int F;
     public int G;
@@ -43,7 +43,7 @@ public final class si extends kl0 {
         this.c = context;
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.ll0
     public final boolean D(s4.c1 c1Var) {
         return false;
     }
@@ -52,7 +52,7 @@ public final class si extends kl0 {
     public final int h() {
         int i10 = this.I;
         vi viVar = this.J;
-        return (viVar.H1 == null && (viVar.f0 instanceof org.telegram.ui.co) && !viVar.H) ? MediaDataController.getInstance(viVar.J1).inlineBots.size() + i10 : i10;
+        return (viVar.H1 == null && (viVar.f0 instanceof org.telegram.ui.bo) && !viVar.H) ? MediaDataController.getInstance(viVar.J1).inlineBots.size() + i10 : i10;
     }
 
     @Override // s4.h0
@@ -83,47 +83,47 @@ public final class si extends kl0 {
         this.f = -1;
         vi viVar = this.J;
         int i11 = viVar.J1;
-        org.telegram.ui.ActionBar.n2 n2Var = viVar.f0;
+        org.telegram.ui.ActionBar.o2 o2Var = viVar.f0;
         if (viVar.H) {
             this.I = 1;
             this.d = 0;
             int i12 = viVar.I;
-            if (i12 == 0 || w7.b0.a(i12, 16)) {
+            if (i12 == 0 || w7.c0.a(i12, 16)) {
                 int i13 = this.I;
                 this.I = i13 + 1;
                 this.n = i13;
             }
             int i14 = viVar.I;
-            if (i14 == 0 || w7.b0.a(i14, 8192)) {
+            if (i14 == 0 || w7.c0.a(i14, 8192)) {
                 int i15 = this.I;
                 this.I = i15 + 1;
                 this.E = i15;
             }
             int i16 = viVar.I;
-            if (i16 == 0 || w7.b0.a(i16, 16384)) {
+            if (i16 == 0 || w7.c0.a(i16, 16384)) {
                 int i17 = this.I;
                 this.I = i17 + 1;
                 this.F = i17;
             }
             int i18 = viVar.I;
-            if (i18 == 0 || w7.b0.a(i18, 8)) {
+            if (i18 == 0 || w7.c0.a(i18, 8)) {
                 int i19 = this.I;
                 this.I = i19 + 1;
                 this.r = i19;
             }
             int i20 = viVar.I;
-            if (i20 == 0 || w7.b0.a(i20, 64)) {
+            if (i20 == 0 || w7.c0.a(i20, 64)) {
                 int i21 = this.I;
                 this.I = i21 + 1;
                 this.y = i21;
             }
             int i22 = viVar.I;
-            if (i22 == 0 || w7.b0.a(i22, 32768)) {
+            if (i22 == 0 || w7.c0.a(i22, 32768)) {
                 int i23 = this.I;
                 this.I = i23 + 1;
                 this.G = i23;
             }
-        } else if (!(n2Var instanceof org.telegram.ui.co)) {
+        } else if (!(o2Var instanceof org.telegram.ui.bo)) {
             this.d = 0;
             this.I = 2;
             this.n = 1;
@@ -155,15 +155,15 @@ public final class si extends kl0 {
                 }
             }
         } else {
-            TLRPC.User i27 = ((org.telegram.ui.co) n2Var).i();
-            TLRPC.Chat chat = n2Var instanceof org.telegram.ui.co ? ((org.telegram.ui.co) n2Var).e : null;
-            boolean z10 = i27 != null && ((org.telegram.ui.co) n2Var).getMessagesController().getSendPaidMessagesStars(i27.id) > 0;
+            TLRPC.User i27 = ((org.telegram.ui.bo) o2Var).i();
+            TLRPC.Chat chat = o2Var instanceof org.telegram.ui.bo ? ((org.telegram.ui.bo) o2Var).e : null;
+            boolean z10 = i27 != null && ((org.telegram.ui.bo) o2Var).getMessagesController().getSendPaidMessagesStars(i27.id) > 0;
             int i28 = this.I;
             this.I = i28 + 1;
             this.d = i28;
-            if ((viVar.L1 || viVar.M1) && !z10 && ((chat == null || !ChatObject.isMonoForum(chat)) && (n2Var instanceof org.telegram.ui.co) && !((org.telegram.ui.co) n2Var).c() && !((org.telegram.ui.co) n2Var).v())) {
-                org.telegram.ui.co coVar = (org.telegram.ui.co) n2Var;
-                if (coVar.R3 != 5) {
+            if ((viVar.L1 || viVar.M1) && !z10 && ((chat == null || !ChatObject.isMonoForum(chat)) && (o2Var instanceof org.telegram.ui.bo) && !((org.telegram.ui.bo) o2Var).c() && !((org.telegram.ui.bo) o2Var).v())) {
+                org.telegram.ui.bo boVar = (org.telegram.ui.bo) o2Var;
+                if (boVar.R3 != 5) {
                     this.e = this.I;
                     ArrayList arrayList = this.h;
                     arrayList.clear();
@@ -174,9 +174,9 @@ public final class si extends kl0 {
                         i10++;
                         TLRPC.TL_attachMenuBot tL_attachMenuBot2 = tL_attachMenuBot;
                         if (tL_attachMenuBot2.show_in_attach_menu) {
-                            TLObject tLObject = coVar.e;
+                            TLObject tLObject = boVar.e;
                             if (tLObject == null) {
-                                tLObject = coVar.i();
+                                tLObject = boVar.i();
                             }
                             if (MediaDataController.canShowAttachMenuBot(tL_attachMenuBot2, tLObject)) {
                                 arrayList.add(tL_attachMenuBot2);
@@ -217,7 +217,7 @@ public final class si extends kl0 {
                 this.I = i34 + 1;
                 this.w = i34;
             }
-            if ((n2Var instanceof org.telegram.ui.co) && ((org.telegram.ui.co) n2Var).R3 == 0 && i27 != null && !z10 && !i27.bot && !ig.b2.f(i11).b.isEmpty()) {
+            if ((o2Var instanceof org.telegram.ui.bo) && ((org.telegram.ui.bo) o2Var).R3 == 0 && i27 != null && !z10 && !i27.bot && !hg.b2.f(i11).b.isEmpty()) {
                 int i35 = this.I;
                 this.I = i35 + 1;
                 this.x = i35;
@@ -260,7 +260,7 @@ public final class si extends kl0 {
                 return;
             }
             oi oiVar = (oi) view;
-            ph.b bVar = oiVar.a;
+            oh.b bVar = oiVar.a;
             vi viVar = oiVar.d;
             bVar.getClass();
             int i13 = this.e;
@@ -270,7 +270,7 @@ public final class si extends kl0 {
                 TLRPC.TL_attachMenuBot tL_attachMenuBot = (TLRPC.TL_attachMenuBot) this.h.get(i14);
                 TLRPC.User user = MessagesController.getInstance(i11).getUser(Long.valueOf(tL_attachMenuBot.bot_id));
                 if (user != null) {
-                    ph.b bVar2 = oiVar.a;
+                    oh.b bVar2 = oiVar.a;
                     bVar2.getClass();
                     bVar2.y = null;
                     bVar2.E = tL_attachMenuBot;
@@ -298,7 +298,7 @@ public final class si extends kl0 {
             if (user2 == null) {
                 return;
             }
-            ph.b bVar3 = oiVar.a;
+            oh.b bVar3 = oiVar.a;
             int i16 = viVar.J1;
             bVar3.y = null;
             bVar3.E = null;
@@ -306,7 +306,7 @@ public final class si extends kl0 {
             bVar3.P = 0L;
             bVar3.a.setText(ContactsController.formatName(user2.first_name, user2.last_name));
             if (bVar3.U == null) {
-                bVar3.U = new i9((org.telegram.ui.ActionBar.f6) null);
+                bVar3.U = new f9((org.telegram.ui.ActionBar.f6) null);
             }
             bVar3.U.m(i16, user2);
             bVar3.c.e(user2, bVar3.U);
@@ -327,48 +327,48 @@ public final class si extends kl0 {
         int i17 = this.d;
         Context context = this.c;
         if (i10 == i17) {
-            piVar.a(1, LocaleController.getString(R.string.ChatGallery), ph.a.x);
+            piVar.a(1, LocaleController.getString(R.string.ChatGallery), oh.a.x);
             piVar.setTag(1);
             int i18 = Build.VERSION.SDK_INT;
             z12 = i18 < 33 ? true : true;
         } else {
             if (i10 != this.n) {
                 if (i10 == this.y) {
-                    piVar.a(6, LocaleController.getString(R.string.ChatLocation), ph.a.y);
+                    piVar.a(6, LocaleController.getString(R.string.ChatLocation), oh.a.y);
                     piVar.setTag(6);
                 } else if (i10 == this.r) {
-                    piVar.a(3, LocaleController.getString(R.string.AttachMusic), ph.a.H);
+                    piVar.a(3, LocaleController.getString(R.string.AttachMusic), oh.a.H);
                     piVar.setTag(3);
                     int i19 = Build.VERSION.SDK_INT;
                     if (i19 >= 23) {
                     }
                 } else if (i10 == this.s) {
-                    piVar.a(9, LocaleController.getString(R.string.Poll), ph.a.I);
+                    piVar.a(9, LocaleController.getString(R.string.Poll), oh.a.I);
                     piVar.setTag(9);
                 } else {
                     if (i10 != this.w) {
                         if (i10 == this.x) {
-                            piVar.a(11, LocaleController.getString(R.string.AttachQuickReplies), ph.a.K);
+                            piVar.a(11, LocaleController.getString(R.string.AttachQuickReplies), oh.a.K);
                             piVar.setTag(11);
                         } else if (i10 == this.v) {
-                            piVar.a(12, LocaleController.getString(R.string.Todo), ph.a.s);
+                            piVar.a(12, LocaleController.getString(R.string.Todo), oh.a.s);
                             piVar.setTag(12);
                         } else if (i10 == this.E) {
-                            piVar.a(13, LocaleController.getString(R.string.ChatSticker), ph.a.E);
+                            piVar.a(13, LocaleController.getString(R.string.ChatSticker), oh.a.E);
                             piVar.setTag(13);
                         } else if (i10 == this.G) {
-                            piVar.a(15, LocaleController.getString(R.string.ChatLink), ph.a.L);
+                            piVar.a(15, LocaleController.getString(R.string.ChatLink), oh.a.L);
                             piVar.setTag(15);
                         } else if (i10 == this.F) {
-                            piVar.a(14, LocaleController.getString(R.string.ChatEmoji), ph.a.F);
+                            piVar.a(14, LocaleController.getString(R.string.ChatEmoji), oh.a.F);
                             piVar.setTag(14);
                         } else if (i10 == this.H) {
-                            piVar.a(16, LocaleController.getString(R.string.AttachArticle), ph.a.M);
+                            piVar.a(16, LocaleController.getString(R.string.AttachArticle), oh.a.M);
                             piVar.setTag(16);
                             z10 = !MessagesController.getInstance(i11).storyEntitiesAllowed();
                             z11 = false;
                             piVar.a.d(z11 ? "!" : null, z11, false);
-                            ph.b bVar4 = piVar.a;
+                            oh.b bVar4 = piVar.a;
                             if (z10 && !UserConfig.getInstance(i11).isPremium()) {
                                 z13 = true;
                             }
@@ -377,13 +377,13 @@ public final class si extends kl0 {
                         z11 = false;
                         z10 = true;
                         piVar.a.d(z11 ? "!" : null, z11, false);
-                        ph.b bVar42 = piVar.a;
+                        oh.b bVar42 = piVar.a;
                         if (z10) {
                             z13 = true;
                         }
                         bVar42.setPremiumBadge(z13);
                     }
-                    piVar.a(5, LocaleController.getString(R.string.AttachContact), ph.a.f);
+                    piVar.a(5, LocaleController.getString(R.string.AttachContact), oh.a.f);
                     piVar.setTag(5);
                     if (Build.VERSION.SDK_INT >= 23) {
                     }
@@ -391,12 +391,12 @@ public final class si extends kl0 {
                 z11 = false;
                 z10 = false;
                 piVar.a.d(z11 ? "!" : null, z11, false);
-                ph.b bVar422 = piVar.a;
+                oh.b bVar422 = piVar.a;
                 if (z10) {
                 }
                 bVar422.setPremiumBadge(z13);
             }
-            piVar.a(4, LocaleController.getString(R.string.ChatDocument), ph.a.w);
+            piVar.a(4, LocaleController.getString(R.string.ChatDocument), oh.a.w);
             piVar.setTag(4);
             int i20 = Build.VERSION.SDK_INT;
             if (i20 < 33) {
@@ -405,7 +405,7 @@ public final class si extends kl0 {
         z11 = !z12;
         z10 = false;
         piVar.a.d(z11 ? "!" : null, z11, false);
-        ph.b bVar4222 = piVar.a;
+        oh.b bVar4222 = piVar.a;
         if (z10) {
         }
         bVar4222.setPremiumBadge(z13);
@@ -419,7 +419,7 @@ public final class si extends kl0 {
         oiVar.setImportantForAccessibility(1);
         oiVar.setFocusable(true);
         oiVar.setLayoutParams(new s4.p0(-2, -1));
-        return new vk0(oiVar);
+        return new wk0(oiVar);
     }
 
     @Override // s4.h0

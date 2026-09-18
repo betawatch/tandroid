@@ -1,15 +1,27 @@
 package org.telegram.ui;
 
+import android.content.Context;
 import android.graphics.Canvas;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class ub0 extends org.telegram.ui.Cells.w8 {
-    @Override // org.telegram.ui.Cells.w8, android.view.View
-    public final void onDraw(Canvas canvas) {
-        canvas.save();
-        canvas.clipRect(0, 0, getWidth(), getHeight());
-        super.onDraw(canvas);
-        canvas.restore();
+public final class ub0 extends zd {
+    public final /* synthetic */ zb0 c;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ub0(zb0 zb0Var, Context context) {
+        super(context);
+        this.c = zb0Var;
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        this.c.getClass();
+    }
+
+    @Override // org.telegram.ui.zd, android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, i11);
     }
 }

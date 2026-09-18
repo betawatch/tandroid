@@ -1,27 +1,23 @@
 package com.google.android.gms.internal.clearcut;
 
+import java.nio.charset.Charset;
+
 /* loaded from: classes.dex */
-public final class k0 implements o0 {
-    public o0[] a;
+public final class k0 {
+    public static final w b = new w(1);
+    public final l0 a;
 
-    @Override // com.google.android.gms.internal.clearcut.o0
-    public final boolean zza(Class cls) {
-        for (o0 o0Var : this.a) {
-            if (o0Var.zza(cls)) {
-                return true;
-            }
+    public k0() {
+        p0 p0Var;
+        try {
+            p0Var = (p0) Class.forName("com.google.protobuf.DescriptorMessageInfoFactory").getDeclaredMethod("getInstance", null).invoke(null, null);
+        } catch (Exception unused) {
+            p0Var = b;
         }
-        return false;
-    }
-
-    @Override // com.google.android.gms.internal.clearcut.o0
-    public final x0 zzb(Class cls) {
-        for (o0 o0Var : this.a) {
-            if (o0Var.zza(cls)) {
-                return o0Var.zzb(cls);
-            }
-        }
-        String name = cls.getName();
-        throw new UnsupportedOperationException(name.length() != 0 ? "No factory is available for message type: ".concat(name) : new String("No factory is available for message type: "));
+        p0[] p0VarArr = {w.b, p0Var};
+        l0 l0Var = new l0();
+        l0Var.a = p0VarArr;
+        Charset charset = a0.a;
+        this.a = l0Var;
     }
 }

@@ -1,43 +1,27 @@
 package org.telegram.ui;
 
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.FileLog;
+import android.content.Context;
+import android.view.View;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class x51 extends s4.s {
-    public final /* synthetic */ int Q;
-    public final /* synthetic */ j71 R;
+public final class x51 extends e71 {
+    public final /* synthetic */ View Q;
+    public final /* synthetic */ TL_stars.TL_starGiftUnique R;
+    public final /* synthetic */ y51 S;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ x51(j71 j71Var, int i10) {
-        super(40);
-        this.Q = i10;
-        this.R = j71Var;
+    public x51(y51 y51Var, Context context, Runnable runnable, View view, r61 r61Var, org.telegram.ui.ActionBar.f6 f6Var, View view2, TL_stars.TL_starGiftUnique tL_starGiftUnique) {
+        super(y51Var.e, context, runnable, view, r61Var, f6Var);
+        this.S = y51Var;
+        this.Q = view2;
+        this.R = tL_starGiftUnique;
     }
 
-    @Override // s4.c0, s4.o0
-    public final void v0(RecyclerView recyclerView, s4.z0 z0Var, int i10) {
-        switch (this.Q) {
-            case 0:
-                try {
-                    di.m1 m1Var = new di.m1(this, recyclerView.getContext(), 3);
-                    m1Var.a = i10;
-                    w0(m1Var);
-                    break;
-                } catch (Exception e7) {
-                    FileLog.e(e7);
-                }
-            default:
-                try {
-                    di.m1 m1Var2 = new di.m1(this, recyclerView.getContext(), 5);
-                    m1Var2.a = i10;
-                    w0(m1Var2);
-                    break;
-                } catch (Exception e10) {
-                    FileLog.e(e10);
-                    return;
-                }
-        }
+    @Override // org.telegram.ui.e71, android.app.Dialog, android.content.DialogInterface
+    public final void dismiss() {
+        super.dismiss();
+        this.S.e.X0 = null;
     }
 }

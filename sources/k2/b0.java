@@ -1,38 +1,41 @@
 package k2;
 
-import android.media.AudioTrack;
+import android.os.SystemClock;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
-public final class b0 extends AudioTrack.StreamEventCallback {
-    public final /* synthetic */ c0 a;
+public final class b0 {
+    public Exception a;
+    public long b = -9223372036854775807L;
+    public long c = -9223372036854775807L;
 
-    public b0(c0 c0Var) {
-        this.a = c0Var;
-    }
-
-    @Override // android.media.AudioTrack.StreamEventCallback
-    public final void onDataRequest(AudioTrack audioTrack, int i10) {
-        d0 d0Var;
-        n nVar;
-        if (audioTrack.equals(this.a.c.x) && (nVar = (d0Var = this.a.c).t) != null && d0Var.X) {
-            nVar.T();
+    public final void a(Exception exc) {
+        boolean z10;
+        long elapsedRealtime = SystemClock.elapsedRealtime();
+        if (this.a == null) {
+            this.a = exc;
         }
-    }
-
-    @Override // android.media.AudioTrack.StreamEventCallback
-    public final void onPresentationEnded(AudioTrack audioTrack) {
-        if (audioTrack.equals(this.a.c.x)) {
-            this.a.c.W = true;
+        if (this.b == -9223372036854775807L) {
+            synchronized (g0.o0) {
+                z10 = g0.q0 > 0;
+            }
+            if (!z10) {
+                this.b = 200 + elapsedRealtime;
+            }
         }
-    }
-
-    @Override // android.media.AudioTrack.StreamEventCallback
-    public final void onTearDown(AudioTrack audioTrack) {
-        d0 d0Var;
-        n nVar;
-        if (audioTrack.equals(this.a.c.x) && (nVar = (d0Var = this.a.c).t) != null && d0Var.X) {
-            nVar.T();
+        long j3 = this.b;
+        if (j3 == -9223372036854775807L || elapsedRealtime < j3) {
+            this.c = elapsedRealtime + 50;
+            return;
         }
+        Exception exc2 = this.a;
+        if (exc2 != exc) {
+            exc2.addSuppressed(exc);
+        }
+        Exception exc3 = this.a;
+        this.a = null;
+        this.b = -9223372036854775807L;
+        this.c = -9223372036854775807L;
+        throw exc3;
     }
 }

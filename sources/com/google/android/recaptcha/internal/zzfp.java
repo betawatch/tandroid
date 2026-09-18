@@ -13,7 +13,7 @@ import kotlin.jvm.internal.i;
 import v7.s7;
 import zd.d2;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class zzfp {
     private final String zza;
@@ -108,8 +108,8 @@ public final class zzfp {
             zzxg zzj = zzxg.zzj(zzdb.zza(str));
             int i10 = zzby.zza;
             ((zziq) s7.a(zzeu.zza).a()).zza(zzj);
-        } catch (Exception e7) {
-            throw new zzcg(zzce.zzl, zzcd.zzan, e7.getMessage(), null, 8, null);
+        } catch (Exception e) {
+            throw new zzcg(zzce.zzl, zzcd.zzan, e.getMessage(), null, 8, null);
         }
     }
 

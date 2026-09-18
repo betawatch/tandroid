@@ -1,22 +1,41 @@
 package pg;
 
-import hg.g;
-import java.util.ArrayList;
-import org.telegram.ui.Components.kl0;
-import s4.o;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public abstract class b extends kl0 {
-    public final g c = new g();
+public final class b extends m {
+    @Override // pg.m
+    public final float a() {
+        return 1.0f;
+    }
 
-    public final void E(ArrayList arrayList, ArrayList arrayList2) {
-        if (arrayList2 == null) {
-            arrayList2 = new ArrayList();
+    @Override // pg.m
+    public final float d() {
+        return 1.0f;
+    }
+
+    @Override // pg.m
+    public final int e() {
+        return R.raw.photo_blur;
+    }
+
+    @Override // pg.m
+    public final float g() {
+        return 0.35f;
+    }
+
+    @Override // pg.m
+    public final String i(int i10) {
+        if (i10 == 0) {
+            return "blitWithMaskBlurer";
         }
-        g gVar = this.c;
-        gVar.c = arrayList;
-        gVar.d = arrayList2;
-        o.c(gVar, true).b(this);
+        if (i10 == 1) {
+            return "compositeWithMaskBlurer";
+        }
+        if (i10 != 2) {
+            return null;
+        }
+        return "brush";
     }
 }

@@ -1,72 +1,75 @@
 package fi;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import di.nb;
+import android.content.Context;
+import android.view.View;
+import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.e6;
-import org.telegram.ui.Components.pr;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.Components.f61;
+import org.telegram.ui.Components.j51;
+import org.telegram.ui.Components.qr;
+import s4.c1;
+import w7.x5;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes4.dex */
-public final class h0 extends Drawable {
-    public final Paint a = new Paint(1);
-    public final RectF b = new RectF();
-    public final int c;
-    public final Path d;
+public abstract class h0 extends FrameLayout {
+    public org.telegram.ui.ActionBar.k a;
+    public final jh.f b;
+    public final FrameLayout c;
+    public f61 d;
     public boolean e;
-    public int f;
-    public final e6 g;
-    public final e6 h;
+    public final /* synthetic */ k0 f;
 
-    public h0(int i10) {
-        Path path = new Path();
-        this.d = path;
-        nb nbVar = new nb(this, 10);
-        pr prVar = pr.h;
-        this.g = new e6(nbVar, 320L, prVar, 0);
-        this.h = new e6(new nb(this, 10), 320L, prVar, 0);
-        this.c = i10;
-        path.moveTo(-AndroidUtilities.dp(6.5f), 0.0f);
-        path.lineTo(AndroidUtilities.dp(6.5f), 0.0f);
-        path.lineTo(0.0f, -AndroidUtilities.dp(6.16f));
-        path.close();
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public h0(k0 k0Var, Context context) {
+        super(context);
+        this.f = k0Var;
+        FrameLayout frameLayout = new FrameLayout(context);
+        this.c = frameLayout;
+        frameLayout.setPadding(0, 0, 0, 0);
+        frameLayout.setClipToPadding(true);
+        addView(frameLayout, x5.e(-1, -1, 119));
+        jh.f fVar = new jh.f(getContext());
+        this.b = fVar;
+        fVar.setupColorKey(j6.a7);
+        fVar.setFadeZoneBottom(AndroidUtilities.dp(72.0f) + AndroidUtilities.navigationBarHeight);
+        fVar.setFadeHeightBottom(AndroidUtilities.dp(24.0f));
+        fVar.setFadeZoneTop(AndroidUtilities.dp(64.0f) + AndroidUtilities.statusBarHeight);
+        fVar.a.b(-AndroidUtilities.dp(20.0f), false);
+        frameLayout.addView(fVar, x5.g());
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        Rect bounds = getBounds();
-        RectF rectF = this.b;
-        rectF.set(bounds);
-        rectF.inset(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
-        int i10 = this.c;
-        Paint paint = this.a;
-        canvas.drawRoundRect(rectF, i10, i10, paint);
-        float e7 = this.g.e(this.e);
-        float dp = (rectF.right + AndroidUtilities.dp(8.0f)) - this.h.d(this.f, false);
-        if (e7 > 0.0f) {
-            canvas.save();
-            canvas.translate(dp, com.google.android.gms.internal.vision.e2.z(1.0f, e7, AndroidUtilities.dp(6.16f), AndroidUtilities.dp(8.0f)));
-            canvas.drawPath(this.d, paint);
-            canvas.restore();
+    public final void a() {
+        this.d.j(new ai.r(this, 7));
+        g0 g0Var = new g0(this);
+        g0Var.n(350L);
+        g0Var.o(qr.h);
+        g0Var.C = false;
+        g0Var.m = false;
+        this.d.setItemAnimator(g0Var);
+    }
+
+    public float b() {
+        float f7 = AndroidUtilities.displaySize.y;
+        for (int i10 = 0; i10 < this.d.getChildCount(); i10++) {
+            View childAt = this.d.getChildAt(i10);
+            c1 U = this.d.U(childAt);
+            if (U != null) {
+                j51 G = this.d.Y2.G(U.b());
+                if (G != null && G.d != 99) {
+                    f7 = Math.min(childAt.getY() + this.c.getPaddingTop(), f7);
+                }
+            }
         }
+        return f7;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+    public void c() {
+        float b10 = b();
+        org.telegram.ui.ActionBar.k kVar = this.a;
+        if (kVar != null) {
+            kVar.setTranslationY(Math.max(AndroidUtilities.statusBarHeight, b10));
+        }
     }
 }

@@ -1,94 +1,103 @@
 package hg;
 
 import android.content.Context;
-import android.text.SpannableStringBuilder;
 import android.view.View;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.LocaleController;
+import android.widget.FrameLayout;
+import ci.uc;
+import ei.d5;
+import java.util.ArrayList;
 import org.telegram.messenger.R;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.i9;
-import org.telegram.ui.Components.oq;
-import org.telegram.ui.Components.x9;
-import org.telegram.ui.d10;
+import org.telegram.ui.ActionBar.o2;
+import org.telegram.ui.Components.f61;
+import org.telegram.ui.Components.ml0;
 import w7.x5;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class i1 extends LinearLayout {
-    public final f6 a;
-    public final x9 b;
-    public final i9 c;
-    public final TextView d;
-    public final TextView e;
+public final class i1 extends o2 {
+    public final CharSequence a;
+    public final ArrayList b;
+    public final int c;
+    public final int d;
+    public final int e;
+    public uc f;
+    public gg.x1 h;
+    public f61 n;
+    public boolean r;
 
-    public i1(Context context, f6 f6Var, boolean z10) {
-        super(context);
-        this.c = new i9((f6) null);
-        this.a = f6Var;
-        setOrientation(0);
-        x9 x9Var = new x9(context);
-        this.b = x9Var;
-        x9Var.setRoundRadius(AndroidUtilities.dp(28.0f));
-        addView(x9Var, x5.t(28, 28, 19, 12, 0, 12, 0));
-        LinearLayout linearLayout = new LinearLayout(context);
-        linearLayout.setOrientation(1);
-        addView(linearLayout, x5.t(-1, -2, 55, 0, 4, 12, 4));
-        TextView textView = new TextView(context);
-        this.d = textView;
-        textView.setTextSize(1, 15.0f);
-        int i10 = j6.G6;
-        textView.setTextColor(j6.v0(i10, f6Var));
-        TextView h = com.google.android.gms.internal.vision.e2.h(linearLayout, textView, x5.n(-1, -2), context);
-        this.e = h;
-        h.setTextSize(1, 13.0f);
-        h.setTextColor(z10 ? j6.l1(0.5f, j6.v0(i10, f6Var)) : j6.v0(j6.z6, f6Var));
-        linearLayout.addView(h, x5.n(-1, -2));
+    public i1(CharSequence charSequence, ArrayList arrayList, int i10, int i11, int i12) {
+        super(null);
+        this.a = charSequence;
+        this.b = arrayList;
+        this.c = i10;
+        this.d = i11;
+        this.e = i12;
+        this.r = !arrayList.isEmpty();
     }
 
-    public final void a(int i10, String str, TLRPC.Chat chat) {
-        if (str == null) {
-            return;
-        }
-        TextView textView = this.e;
-        TextView textView2 = this.d;
-        x9 x9Var = this.b;
-        if (i10 == 0) {
-            oq oqVar = new oq(j6.b0(AndroidUtilities.dp(28.0f), j6.v0(j6.Oh, this.a)), getContext().getResources().getDrawable(R.drawable.menu_hashtag).mutate());
-            oqVar.s = AndroidUtilities.dp(-0.66f);
-            oqVar.v = 0;
-            int dp = AndroidUtilities.dp(20.0f);
-            int dp2 = AndroidUtilities.dp(20.0f);
-            oqVar.e = dp;
-            oqVar.f = dp2;
-            x9Var.setImageDrawable(oqVar);
-            textView2.setText(LocaleController.formatString(R.string.HashtagSuggestion1Title, str));
-            textView.setText(LocaleController.getString(R.string.HashtagSuggestion1Text));
-            return;
-        }
-        i9 i9Var = this.c;
-        i9Var.q(chat);
-        x9Var.e(chat, i9Var);
-        int i11 = R.string.HashtagSuggestion2Title;
-        StringBuilder g10 = w.f.g(str, "@");
-        g10.append(ChatObject.getPublicUsername(chat));
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(LocaleController.formatString(i11, g10.toString()));
-        spannableStringBuilder.append((CharSequence) "  d");
-        d10 d10Var = new d10(8);
-        d10Var.f = j6.w0(null, j6.Lj, false);
-        spannableStringBuilder.setSpan(d10Var, spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 0);
-        textView2.setText(spannableStringBuilder);
-        textView.setText(LocaleController.getString(R.string.HashtagSuggestion2Text));
+    public final boolean U() {
+        ArrayList arrayList = this.b;
+        return arrayList.size() == 1 && ((f1) arrayList.get(0)).a == 0 && ((f1) arrayList.get(0)).b == 1439;
     }
 
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
+    public final boolean V() {
+        ArrayList arrayList = this.b;
+        if (arrayList.size() >= this.e) {
+            return false;
+        }
+        return arrayList.isEmpty() || U() || ((f1) k0.h(1, arrayList)).b < Math.min(1438, this.d + (-2));
+    }
+
+    @Override // org.telegram.ui.ActionBar.o2
+    public final View createView(Context context) {
+        this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
+        this.actionBar.setAllowOverlayTitle(true);
+        this.actionBar.setTitle(this.a);
+        this.actionBar.setActionBarMenuOnItemClick(new ei.t(this, 15));
+        FrameLayout frameLayout = new FrameLayout(context);
+        frameLayout.setBackgroundColor(j6.w0(null, j6.a7, false));
+        f61 f61Var = new f61(this, new bi.v(this, 28), new d5(this, 4), null);
+        this.n = f61Var;
+        f61Var.q1();
+        frameLayout.addView(this.n, x5.c(-1.0f, -1));
+        this.fragmentView = frameLayout;
+        return frameLayout;
+    }
+
+    @Override // org.telegram.ui.ActionBar.o2
+    public final ml0 getListViewForSimpleGlass() {
+        return this.n;
+    }
+
+    @Override // org.telegram.ui.ActionBar.o2
+    public final boolean isSupportEdgeToEdge() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.ActionBar.o2
+    public final void onBecomeFullyHidden() {
+        gg.x1 x1Var = this.h;
+        if (x1Var != null) {
+            x1Var.run();
+        }
+        super.onBecomeFullyHidden();
+    }
+
+    @Override // org.telegram.ui.ActionBar.o2
+    public final void onFragmentDestroy() {
+        super.onFragmentDestroy();
+        if (this.r) {
+            return;
+        }
+        ArrayList arrayList = this.b;
+        if (arrayList.isEmpty()) {
+            return;
+        }
+        arrayList.clear();
+        uc ucVar = this.f;
+        if (ucVar != null) {
+            ucVar.run();
+        }
     }
 }

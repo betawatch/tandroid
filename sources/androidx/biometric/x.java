@@ -1,35 +1,80 @@
 package androidx.biometric;
 
-import android.content.DialogInterface;
-import java.lang.ref.WeakReference;
+import android.os.Looper;
+import androidx.lifecycle.p0;
+import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
-public final class x implements DialogInterface.OnClickListener {
-    public final /* synthetic */ int a = 1;
-    public final Object b;
+public class x extends p0 {
+    public androidx.lifecycle.z A;
+    public Executor d;
+    public v7.n e;
+    public j6.l f;
+    public t g;
+    public aa.a h;
+    public of.b i;
+    public w j;
+    public String k;
+    public boolean m;
+    public boolean n;
+    public boolean o;
+    public boolean p;
+    public boolean q;
+    public androidx.lifecycle.z r;
+    public androidx.lifecycle.z s;
+    public androidx.lifecycle.z t;
+    public androidx.lifecycle.z u;
+    public androidx.lifecycle.z v;
+    public androidx.lifecycle.z x;
+    public androidx.lifecycle.z z;
+    public int l = 0;
+    public boolean w = true;
+    public int y = 0;
 
-    public x(y yVar) {
-        this.b = new WeakReference(yVar);
-    }
-
-    @Override // android.content.DialogInterface.OnClickListener
-    public final void onClick(DialogInterface dialogInterface, int i10) {
-        switch (this.a) {
-            case 0:
-                WeakReference weakReference = (WeakReference) this.b;
-                if (weakReference.get() != null) {
-                    ((y) weakReference.get()).g(true);
-                    break;
-                }
-                break;
-            default:
-                ((f0) this.b).C0.g(true);
-                break;
+    public static void h(androidx.lifecycle.z zVar, Object obj) {
+        if (Thread.currentThread() == Looper.getMainLooper().getThread()) {
+            zVar.j(obj);
+        } else {
+            zVar.h(obj);
         }
     }
 
-    public x(f0 f0Var) {
-        this.b = f0Var;
+    public final int c() {
+        j6.l lVar = this.f;
+        if (lVar == null) {
+            return 0;
+        }
+        t tVar = this.g;
+        int i10 = lVar.a;
+        return i10 != 0 ? i10 : tVar != null ? 15 : 255;
+    }
+
+    public final void d(e eVar) {
+        if (this.s == null) {
+            this.s = new androidx.lifecycle.z();
+        }
+        h(this.s, eVar);
+    }
+
+    public final void e(CharSequence charSequence) {
+        if (this.A == null) {
+            this.A = new androidx.lifecycle.z();
+        }
+        h(this.A, charSequence);
+    }
+
+    public final void f(int i10) {
+        if (this.z == null) {
+            this.z = new androidx.lifecycle.z();
+        }
+        h(this.z, Integer.valueOf(i10));
+    }
+
+    public final void g(boolean z10) {
+        if (this.v == null) {
+            this.v = new androidx.lifecycle.z();
+        }
+        h(this.v, Boolean.valueOf(z10));
     }
 }

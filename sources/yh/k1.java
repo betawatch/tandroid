@@ -1,119 +1,125 @@
 package yh;
 
-import android.graphics.Canvas;
-import android.graphics.CornerPathEffect;
-import android.graphics.LinearGradient;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.Shader;
-import android.view.View;
+import android.view.KeyEvent;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.f01;
-import org.telegram.ui.Components.qq;
-import zh.h8;
+import org.telegram.ui.Components.bj0;
+import org.telegram.ui.Components.u9;
+import org.telegram.ui.p91;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
-/* loaded from: classes.dex */
-public final class k1 extends qq {
-    public f01 b;
-    public final Path c;
-    public final Paint d;
-    public final float e;
-    public h8 f;
-    public boolean g;
-    public int h;
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class k1 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ KeyEvent.Callback b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ TLObject e;
 
-    public k1(View view) {
-        super(view);
-        Path path = new Path();
-        this.c = path;
-        Paint paint = new Paint(1);
-        this.d = paint;
-        this.h = -1;
-        this.e = 1.0f;
-        c(path, 1.0f, false);
-        this.a.setColor(-698031);
-        this.a.setPathEffect(new CornerPathEffect(AndroidUtilities.dp(2.33f)));
-        paint.setColor(0);
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeJoin(Paint.Join.ROUND);
-        paint.setStrokeCap(Paint.Cap.ROUND);
+    public /* synthetic */ k1(a3 a3Var, TL_stars.StarGift starGift, ArrayList arrayList, Runnable runnable) {
+        this.a = 2;
+        this.b = a3Var;
+        this.e = starGift;
+        this.d = arrayList;
+        this.c = runnable;
     }
 
-    public static void c(Path path, float f7, final boolean z10) {
-        Utilities.CallbackReturn callbackReturn = new Utilities.CallbackReturn() { // from class: yh.j1
-            @Override // org.telegram.messenger.Utilities.CallbackReturn
-            public final Object run(Object obj) {
-                Float f10 = (Float) obj;
-                return Float.valueOf(z10 ? 48.0f - f10.floatValue() : f10.floatValue());
-            }
-        };
-        path.rewind();
-        float f10 = f7 * 24.5f;
-        path.moveTo(w.f.d((Float) callbackReturn.run(Float.valueOf(46.83f)), f7), AndroidUtilities.dp(f10));
-        path.lineTo(w.f.d((Float) callbackReturn.run(Float.valueOf(23.5f)), f7), AndroidUtilities.dp(1.17f * f7));
-        path.cubicTo(w.f.d((Float) callbackReturn.run(Float.valueOf(22.75f)), f7), AndroidUtilities.dp(0.42f * f7), w.f.d((Float) callbackReturn.run(Float.valueOf(21.73f)), f7), 0.0f, w.f.d((Float) callbackReturn.run(Float.valueOf(20.68f)), f7), 0.0f);
-        float f11 = f7 * 0.05f;
-        path.cubicTo(w.f.d((Float) callbackReturn.run(Float.valueOf(19.62f)), f7), 0.0f, w.f.d((Float) callbackReturn.run(Float.valueOf(2.73f)), f7), AndroidUtilities.dp(f11), w.f.d((Float) callbackReturn.run(Float.valueOf(1.55f)), f7), AndroidUtilities.dp(f11));
-        path.cubicTo(w.f.d((Float) callbackReturn.run(Float.valueOf(0.36f)), f7), AndroidUtilities.dp(f11), w.f.d((Float) callbackReturn.run(Float.valueOf(-0.23f)), f7), AndroidUtilities.dp(1.4885f * f7), w.f.d((Float) callbackReturn.run(Float.valueOf(0.6f)), f7), AndroidUtilities.dp(2.32f * f7));
-        path.lineTo(w.f.d((Float) callbackReturn.run(Float.valueOf(45.72f)), f7), AndroidUtilities.dp(47.44f * f7));
-        float d = w.f.d((Float) callbackReturn.run(Float.valueOf(46.56f)), f7);
-        float dp = AndroidUtilities.dp(48.28f * f7);
-        Float valueOf = Float.valueOf(48.0f);
-        path.cubicTo(d, dp, w.f.d((Float) callbackReturn.run(valueOf), f7), AndroidUtilities.dp(47.68f * f7), w.f.d((Float) callbackReturn.run(valueOf), f7), AndroidUtilities.dp(46.5f * f7));
-        path.cubicTo(w.f.d((Float) callbackReturn.run(valueOf), f7), AndroidUtilities.dp(45.31f * f7), w.f.d((Float) callbackReturn.run(valueOf), f7), AndroidUtilities.dp(28.38f * f7), w.f.d((Float) callbackReturn.run(valueOf), f7), AndroidUtilities.dp(27.32f * f7));
-        path.cubicTo(w.f.d((Float) callbackReturn.run(valueOf), f7), AndroidUtilities.dp(26.26f * f7), w.f.d((Float) callbackReturn.run(Float.valueOf(47.5f)), f7), AndroidUtilities.dp(25.24f * f7), w.f.d((Float) callbackReturn.run(Float.valueOf(46.82f)), f7), AndroidUtilities.dp(f10));
-        path.close();
-    }
-
-    public final void d(TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop, boolean z10, boolean z11) {
-        Paint paint = this.a;
-        if (stargiftattributebackdrop == null) {
-            paint.setShader(null);
-        } else {
-            boolean z12 = this.g ? !z10 : z10;
-            paint.setShader(new LinearGradient(0.0f, 0.0f, AndroidUtilities.dp(48.0f), AndroidUtilities.dp(48.0f), new int[]{j6.b(z12 ? 0.07f : 0.05f, (z12 ? -0.15f : -0.1f) - (z11 ? 0.125f : 0.0f), stargiftattributebackdrop.center_color | (-16777216)), j6.b(z12 ? 0.07f : 0.05f, (z12 ? -0.15f : -0.1f) - (z11 ? 0.125f : 0.0f), stargiftattributebackdrop.edge_color | (-16777216))}, new float[]{z12 ? 1.0f : 0.0f, z12 ? 0.0f : 1.0f}, Shader.TileMode.CLAMP));
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                a4.S0((a4) this.b, (MessageObject) this.c, (ArrayList) this.d, (TL_stars.StarGift) this.e);
+                break;
+            case 1:
+                a4 a4Var = (a4) this.b;
+                TLRPC.TL_error tL_error = (TLRPC.TL_error) this.c;
+                TLObject tLObject = (TLObject) this.d;
+                TL_stars.InputSavedStarGift inputSavedStarGift = (TL_stars.InputSavedStarGift) this.e;
+                if (tL_error != null || !(tLObject instanceof TLRPC.Updates)) {
+                    a4Var.getBulletinFactory().d0(tL_error, false);
+                    break;
+                } else {
+                    a4Var.q0 = true;
+                    a4Var.l1 = null;
+                    a4Var.r1(inputSavedStarGift, (TLRPC.Updates) tLObject, new b1(a4Var, 5));
+                    Utilities.stageQueue.postRunnable(new uh.i(13, a4Var, tLObject));
+                    break;
+                }
+            default:
+                a3 a3Var = (a3) this.b;
+                TL_stars.StarGift starGift = (TL_stars.StarGift) this.e;
+                ArrayList arrayList = (ArrayList) this.d;
+                Runnable runnable = (Runnable) this.c;
+                org.telegram.ui.Components.n6 n6Var = a3Var.H;
+                a3Var.h0 = false;
+                if (starGift != null) {
+                    AndroidUtilities.runOnUIThread(runnable);
+                    break;
+                } else {
+                    bj0 bj0Var = a3Var.l0;
+                    if (bj0Var != null) {
+                        bj0Var.d();
+                        AndroidUtilities.runOnUIThread(new p91(17), 750L);
+                    }
+                    a3Var.Q.animate().alpha(0.0f).start();
+                    a3Var.S.animate().alpha(1.0f).start();
+                    a3Var.G.animate().alpha(1.0f).start();
+                    a3Var.R.animate().alpha(0.0f).start();
+                    a3Var.P.animate().alpha(1.0f).start();
+                    a3Var.M.setText(AndroidUtilities.replaceTags(LocaleController.formatPluralString("GiftCraftFailedText", arrayList.size(), new Object[0])));
+                    n6Var.setText(LocaleController.getString(R.string.GiftCraftButtonFailed));
+                    n6Var.setTranslationY(AndroidUtilities.dp(6.0f));
+                    a3Var.I.setAlpha(0.0f);
+                    if (a3Var.O != null) {
+                        int i10 = 0;
+                        while (true) {
+                            xh.i1[] i1VarArr = a3Var.O;
+                            if (i10 < i1VarArr.length) {
+                                AndroidUtilities.removeFromParent(i1VarArr[i10]);
+                                i10++;
+                            } else {
+                                a3Var.O = null;
+                            }
+                        }
+                    }
+                    a3Var.O = new xh.i1[arrayList.size()];
+                    int i11 = 0;
+                    while (i11 < arrayList.size()) {
+                        TL_stars.StarGift starGift2 = (TL_stars.StarGift) arrayList.get(i11);
+                        xh.i1 i1Var = new xh.i1(a3Var.getContext(), a3Var.W, a3Var.a);
+                        i1Var.g(starGift2, false, false, false, false, true);
+                        i1Var.x.setVisibility(8);
+                        i1Var.setRibbonColor(-3065286);
+                        u9 u9Var = i1Var.y;
+                        FrameLayout.LayoutParams e = w7.x5.e(42, 42, 17);
+                        i1Var.E = e;
+                        u9Var.setLayoutParams(e);
+                        int i12 = i11 + 1;
+                        boolean z10 = i12 >= arrayList.size();
+                        LinearLayout linearLayout = a3Var.N;
+                        a3Var.O[i11] = i1Var;
+                        linearLayout.addView(i1Var, w7.x5.p(74, 74, 0.0f, 51, 0, 0, z10 ? 0 : 6, 0));
+                        i11 = i12;
+                    }
+                    break;
+                }
         }
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        Canvas canvas2;
-        canvas.save();
-        canvas.translate(getBounds().right - AndroidUtilities.dp(48.0f), getBounds().top);
-        Paint paint = this.d;
-        int alpha = paint.getAlpha();
-        Path path = this.c;
-        if (alpha > 0) {
-            paint.setStrokeWidth(AndroidUtilities.dp(1.33f) * 2);
-            canvas.drawPath(path, paint);
-        }
-        canvas.drawPath(path, this.a);
-        if (this.f != null) {
-            canvas.clipPath(path);
-            this.f.f(0, 0, AndroidUtilities.dp(48.0f), AndroidUtilities.dp(48.0f));
-            this.f.d();
-            this.f.a(canvas, -1);
-            invalidateSelf();
-        }
-        if (this.b != null) {
-            canvas.save();
-            canvas.rotate(this.g ? -45.0f : 45.0f, (getBounds().width() / 2.0f) + AndroidUtilities.dp(this.g ? -7.0f : 6.0f), (getBounds().height() / 2.0f) - AndroidUtilities.dp(this.g ? 5.0f : 6.0f));
-            float min = Math.min(1.0f, AndroidUtilities.dp(40.0f) / this.b.c);
-            canvas.scale(min, min, (getBounds().width() / 2.0f) + AndroidUtilities.dp(this.g ? -7.0f : 6.0f), (getBounds().height() / 2.0f) - AndroidUtilities.dp(this.g ? 5.0f : 6.0f));
-            canvas2 = canvas;
-            this.b.c(((getBounds().width() / 2.0f) + AndroidUtilities.dp(this.g ? -7.0f : 6.0f)) - (this.b.l() / 2.0f), (getBounds().height() / 2.0f) - AndroidUtilities.dp(this.g ? 4.0f : 5.0f), 1.0f, this.h, canvas2);
-            canvas2.restore();
-        } else {
-            canvas2 = canvas;
-        }
-        canvas2.restore();
-    }
-
-    public final void e(int i10, CharSequence charSequence, boolean z10) {
-        this.b = new f01(charSequence, i10, z10 ? AndroidUtilities.bold() : null);
+    public /* synthetic */ k1(a4 a4Var, Object obj, Object obj2, TLObject tLObject, int i10) {
+        this.a = i10;
+        this.b = a4Var;
+        this.c = obj;
+        this.d = obj2;
+        this.e = tLObject;
     }
 }

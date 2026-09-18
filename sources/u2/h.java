@@ -2,7 +2,7 @@ package u2;
 
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class h extends p1 {
     public final long l;
@@ -77,8 +77,8 @@ public final class h extends p1 {
             f fVar2 = new f(k1Var, j3, j11, this.q);
             this.t = fVar2;
             n(fVar2);
-        } catch (g e7) {
-            this.u = e7;
+        } catch (g e) {
+            this.u = e;
             for (int i11 = 0; i11 < arrayList.size(); i11++) {
                 ((d) arrayList.get(i11)).h = this.u;
             }

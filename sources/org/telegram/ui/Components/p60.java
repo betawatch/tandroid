@@ -5,15 +5,15 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class p60 extends org.telegram.ui.Cells.za {
+public final class p60 extends org.telegram.ui.Cells.ab {
     public final TextView a0;
     public final TextView b0;
 
     public p60(Context context) {
         super(context, 6, 0, true);
-        LinearLayout f7 = org.telegram.messenger.vl.f(context, 1);
+        LinearLayout f7 = org.telegram.messenger.wl.f(context, 1);
         TextView textView = new TextView(context);
         this.a0 = textView;
         org.telegram.messenger.w1.q(textView, org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.G6, false), 1, 16.0f);

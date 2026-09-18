@@ -1,14 +1,42 @@
 package yh;
 
+import android.content.Context;
 import android.view.View;
+import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.d61;
+import org.telegram.ui.Components.l40;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
-/* loaded from: classes.dex */
-public final class e3 extends d61 {
-    @Override // org.telegram.ui.Components.ll0, androidx.recyclerview.widget.RecyclerView, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(Math.min((int) (AndroidUtilities.displaySize.y * 0.35f), View.MeasureSpec.getSize(i11)), View.MeasureSpec.getMode(i11)));
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* loaded from: classes4.dex */
+public final class e3 extends FrameLayout {
+    public final int[] a;
+    public final /* synthetic */ f3 b;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public e3(f3 f3Var, Context context) {
+        super(context);
+        this.b = f3Var;
+        this.a = new int[2];
+    }
+
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        FrameLayout frameLayout;
+        super.onLayout(z10, i10, i11, i12, i13);
+        f3 f3Var = this.b;
+        l40 l40Var = f3Var.i;
+        if (l40Var == null || l40Var.d.getChildCount() < 2 || f3Var.r == null || (frameLayout = f3Var.m) == null) {
+            return;
+        }
+        int[] iArr = this.a;
+        frameLayout.getLocationInWindow(iArr);
+        float translationX = iArr[0] - f3Var.m.getTranslationX();
+        float translationY = iArr[1] - f3Var.m.getTranslationY();
+        View childAt = l40Var.d.getChildAt(1);
+        childAt.getLocationInWindow(iArr);
+        float translationX2 = iArr[0] - childAt.getTranslationX();
+        float translationY2 = iArr[1] - childAt.getTranslationY();
+        f3Var.r.setTranslationY(((translationY2 - translationY) - r1.getMeasuredHeight()) - l40Var.getMeasuredHeight());
+        f3Var.r.m(0.0f, ((childAt.getMeasuredWidth() / 2.0f) + (translationX2 - translationX)) - AndroidUtilities.dp(12.0f));
     }
 }

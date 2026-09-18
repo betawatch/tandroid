@@ -7,7 +7,7 @@ import c3.o;
 import c3.q;
 import c3.s;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class d implements q {
     public static final s s = new s();
@@ -28,12 +28,12 @@ public final class d implements q {
     }
 
     @Override // c3.q
-    public final void P1(b0 b0Var) {
+    public final void X1(b0 b0Var) {
         this.n = b0Var;
     }
 
     @Override // c3.q
-    public final h0 R1(int i10, int i11) {
+    public final h0 Z1(int i10, int i11) {
         SparseArray sparseArray = this.d;
         c cVar = (c) sparseArray.get(i10);
         if (cVar == null) {
@@ -55,18 +55,6 @@ public final class d implements q {
             sparseArray.put(i10, cVar);
         }
         return cVar;
-    }
-
-    @Override // c3.q
-    public final void Z0() {
-        SparseArray sparseArray = this.d;
-        b2.s[] sVarArr = new b2.s[sparseArray.size()];
-        for (int i10 = 0; i10 < sparseArray.size(); i10++) {
-            b2.s sVar = ((c) sparseArray.valueAt(i10)).d;
-            e2.d.h(sVar);
-            sVarArr[i10] = sVar;
-        }
-        this.r = sVarArr;
     }
 
     public final void a(o0.a aVar, long j3, long j10) {
@@ -106,5 +94,17 @@ public final class d implements q {
             }
             i10++;
         }
+    }
+
+    @Override // c3.q
+    public final void e1() {
+        SparseArray sparseArray = this.d;
+        b2.s[] sVarArr = new b2.s[sparseArray.size()];
+        for (int i10 = 0; i10 < sparseArray.size(); i10++) {
+            b2.s sVar = ((c) sparseArray.valueAt(i10)).d;
+            e2.d.h(sVar);
+            sVarArr[i10] = sVar;
+        }
+        this.r = sVarArr;
     }
 }

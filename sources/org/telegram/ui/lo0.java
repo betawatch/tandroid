@@ -1,41 +1,34 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
+import org.json.JSONObject;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class lo0 implements vo0 {
-    public final /* synthetic */ xo0 a;
-
-    public lo0(xo0 xo0Var) {
-        this.a = xo0Var;
-    }
-
-    @Override // org.telegram.ui.vo0
-    public final void a(TL_account.Password password) {
-        this.a.a0 = password;
-    }
-
-    @Override // org.telegram.ui.vo0
-    public final void b() {
-        this.a.f0 = null;
-    }
-
-    @Override // org.telegram.ui.vo0
-    public final boolean c(String str, String str2, boolean z10, TLRPC.TL_inputPaymentCredentialsGooglePay tL_inputPaymentCredentialsGooglePay, TLRPC.TL_paymentSavedCredentialsCard tL_paymentSavedCredentialsCard) {
-        xo0 xo0Var = this.a;
-        vo0 vo0Var = xo0Var.T;
-        if (vo0Var != null) {
-            vo0Var.c(str, str2, z10, tL_inputPaymentCredentialsGooglePay, tL_paymentSavedCredentialsCard);
+public final class lo0 extends JSONObject {
+    public lo0(yo0 yo0Var, int i10) {
+        switch (i10) {
+            case 3:
+                put(TeXSymbolParser.TYPE_ATTR, "PAYMENT_GATEWAY");
+                Object obj = yo0Var.M0;
+                if (obj == null) {
+                    lo0 lo0Var = new lo0();
+                    lo0Var.put("gateway", "stripe");
+                    lo0Var.put("stripe:publishableKey", yo0Var.j0);
+                    lo0Var.put("stripe:version", "3.5.0");
+                    put("parameters", lo0Var);
+                    break;
+                } else {
+                    put("parameters", obj);
+                    break;
+                }
+            default:
+                put(TeXSymbolParser.TYPE_ATTR, "DIRECT");
+                lo0 lo0Var2 = new lo0();
+                lo0Var2.put("protocolVersion", "ECv2");
+                lo0Var2.put("publicKey", yo0Var.K0);
+                put("parameters", lo0Var2);
+                break;
         }
-        if (xo0Var.S0) {
-            xo0Var.removeSelfFromStack();
-        }
-        return xo0Var.T != null;
-    }
-
-    @Override // org.telegram.ui.vo0
-    public final /* synthetic */ void d(TLRPC.TL_payments_validateRequestedInfo tL_payments_validateRequestedInfo) {
     }
 }

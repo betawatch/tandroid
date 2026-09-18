@@ -1,16 +1,19 @@
 package org.telegram.ui;
 
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ml0 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ PasscodeActivity b;
+    public final /* synthetic */ boolean c;
 
-    public /* synthetic */ ml0(PasscodeActivity passcodeActivity, int i10) {
+    public /* synthetic */ ml0(PasscodeActivity passcodeActivity, boolean z10, int i10) {
         this.a = i10;
         this.b = passcodeActivity;
+        this.c = z10;
     }
 
     @Override // java.lang.Runnable
@@ -18,42 +21,23 @@ public final /* synthetic */ class ml0 implements Runnable {
         switch (this.a) {
             case 0:
                 PasscodeActivity passcodeActivity = this.b;
-                passcodeActivity.n.postDelayed(passcodeActivity.O, 3000L);
-                passcodeActivity.N = true;
-                break;
-            case 1:
-                PasscodeActivity passcodeActivity2 = new PasscodeActivity(0);
-                PasscodeActivity passcodeActivity3 = this.b;
-                passcodeActivity3.presentFragment(passcodeActivity2, true);
-                ac0 ac0Var = passcodeActivity3.Q;
-                if (ac0Var != null) {
-                    AndroidUtilities.runOnUIThread(ac0Var);
-                    passcodeActivity3.Q = null;
-                    break;
-                }
-                break;
-            case 2:
-                PasscodeActivity passcodeActivity4 = this.b;
-                AndroidUtilities.runOnUIThread(new ml0(passcodeActivity4, 3), passcodeActivity4.e0() ? 150L : 1000L);
-                break;
-            case 3:
-                PasscodeActivity passcodeActivity5 = this.b;
-                if (passcodeActivity5.e0()) {
-                    for (gs gsVar : passcodeActivity5.n.f) {
-                        gsVar.i(0.0f);
+                passcodeActivity.getMediaDataController().buildShortcuts();
+                if (this.c) {
+                    passcodeActivity.presentFragment(new PasscodeActivity(0), true);
+                    cc0 cc0Var = passcodeActivity.Q;
+                    if (cc0Var != null) {
+                        AndroidUtilities.runOnUIThread(cc0Var);
+                        passcodeActivity.Q = null;
                     }
-                    break;
                 } else {
-                    passcodeActivity5.f.a(0.0f);
-                    break;
+                    passcodeActivity.finishFragment();
                 }
-            case 4:
-                PasscodeActivity passcodeActivity6 = this.b;
-                passcodeActivity6.N = false;
-                AndroidUtilities.updateViewVisibilityAnimated(passcodeActivity6.r, false);
+                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.didSetPasscode, new Object[0]);
                 break;
             default:
-                this.b.k0();
+                PasscodeActivity passcodeActivity2 = this.b;
+                passcodeActivity2.w.e(true, this.c);
+                AndroidUtilities.cancelRunOnUIThread(passcodeActivity2.P);
                 break;
         }
     }

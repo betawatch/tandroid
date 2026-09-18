@@ -3,7 +3,7 @@ package i2;
 import android.os.SystemClock;
 import java.util.List;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class g1 {
     public static final u2.f0 u = new u2.f0(new Object());
@@ -12,7 +12,7 @@ public final class g1 {
     public final long c;
     public final long d;
     public final int e;
-    public final o f;
+    public final n f;
     public final boolean g;
     public final u2.o1 h;
     public final x2.v i;
@@ -28,13 +28,13 @@ public final class g1 {
     public volatile long s;
     public volatile long t;
 
-    public g1(b2.k1 k1Var, u2.f0 f0Var, long j3, long j10, int i10, o oVar, boolean z10, u2.o1 o1Var, x2.v vVar, List list, u2.f0 f0Var2, boolean z11, int i11, int i12, b2.v0 v0Var, long j11, long j12, long j13, long j14, boolean z12) {
+    public g1(b2.k1 k1Var, u2.f0 f0Var, long j3, long j10, int i10, n nVar, boolean z10, u2.o1 o1Var, x2.v vVar, List list, u2.f0 f0Var2, boolean z11, int i11, int i12, b2.v0 v0Var, long j11, long j12, long j13, long j14, boolean z12) {
         this.a = k1Var;
         this.b = f0Var;
         this.c = j3;
         this.d = j10;
         this.e = i10;
-        this.f = oVar;
+        this.f = nVar;
         this.g = z10;
         this.h = o1Var;
         this.i = vVar;
@@ -80,8 +80,8 @@ public final class g1 {
         return new g1(this.a, this.b, this.c, this.d, this.e, this.f, this.g, this.h, this.i, this.j, this.k, z10, i10, i11, this.o, this.q, this.r, this.s, this.t, this.p);
     }
 
-    public final g1 f(o oVar) {
-        return new g1(this.a, this.b, this.c, this.d, this.e, oVar, this.g, this.h, this.i, this.j, this.k, this.l, this.m, this.n, this.o, this.q, this.r, this.s, this.t, this.p);
+    public final g1 f(n nVar) {
+        return new g1(this.a, this.b, this.c, this.d, this.e, nVar, this.g, this.h, this.i, this.j, this.k, this.l, this.m, this.n, this.o, this.q, this.r, this.s, this.t, this.p);
     }
 
     public final g1 g(b2.v0 v0Var) {

@@ -1,39 +1,120 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import androidx.recyclerview.widget.RecyclerView;
+import android.view.View;
+import android.view.ViewGroup;
 import java.util.ArrayList;
-import org.telegram.messenger.SavedMessagesController;
+import java.util.Calendar;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class gu0 extends org.telegram.ui.Cells.r2 {
-    public final /* synthetic */ hu0 W4;
+public final class gu0 extends ll0 {
+    public final Context c;
+    public final int d;
+    public final org.telegram.ui.ActionBar.f6 e;
+    public final eu0 f;
+    public final ArrayList h = new ArrayList(10);
+    public final ArrayList n = new ArrayList();
+    public rt0 r;
+    public final /* synthetic */ zu0 s;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public gu0(hu0 hu0Var, Context context) {
-        super(context, true);
-        this.W4 = hu0Var;
+    public gu0(zu0 zu0Var, Context context, int i10, org.telegram.ui.ActionBar.f6 f6Var) {
+        this.s = zu0Var;
+        this.c = context;
+        this.d = i10;
+        this.e = f6Var;
+        this.f = new eu0(this, i10, f6Var);
+        E();
     }
 
-    @Override // org.telegram.ui.Cells.r2
-    public final boolean Q() {
+    @Override // org.telegram.ui.Components.ll0
+    public final boolean D(s4.c1 c1Var) {
         return false;
     }
 
-    @Override // org.telegram.ui.Cells.r2
-    public final boolean getIsPinned() {
-        hu0 hu0Var = this.W4;
-        ArrayList arrayList = hu0Var.f;
-        pt0 pt0Var = hu0Var.s;
-        if (pt0Var == null || pt0Var.getAdapter() != hu0Var) {
-            return false;
+    public final void E() {
+        ArrayList arrayList = this.n;
+        arrayList.clear();
+        ArrayList c10 = this.s.t1[8].c();
+        int i10 = 0;
+        for (int i11 = 0; i11 < c10.size(); i11++) {
+            MessageObject messageObject = (MessageObject) c10.get(i11);
+            if (messageObject.dateKeyInt != i10) {
+                int i12 = messageObject.messageOwner.date;
+                TLRPC.TL_message tL_message = new TLRPC.TL_message();
+                long j3 = i12;
+                tL_message.message = LocaleController.formatDateChat(j3);
+                tL_message.id = 0;
+                Calendar calendar = Calendar.getInstance();
+                calendar.setTimeInMillis(j3 * 1000);
+                calendar.set(11, 0);
+                calendar.set(12, 0);
+                calendar.set(13, 0);
+                calendar.set(14, 0);
+                tL_message.date = (int) (calendar.getTimeInMillis() / 1000);
+                MessageObject messageObject2 = new MessageObject(this.d, tL_message, false, false);
+                messageObject2.type = 10;
+                messageObject2.contentType = 1;
+                messageObject2.isDateObject = true;
+                arrayList.add(messageObject2);
+                i10 = messageObject.dateKeyInt;
+            }
+            arrayList.add(messageObject);
         }
-        hu0Var.s.getClass();
-        int R = RecyclerView.R(this);
-        if (R < 0 || R >= arrayList.size()) {
-            return false;
+    }
+
+    @Override // s4.h0
+    public final int h() {
+        return this.n.size();
+    }
+
+    @Override // s4.h0
+    public final int j(int i10) {
+        if (i10 < 0) {
+            return 0;
         }
-        return ((SavedMessagesController.SavedDialog) arrayList.get(R)).pinned;
+        ArrayList arrayList = this.n;
+        if (i10 >= arrayList.size()) {
+            return 0;
+        }
+        return ((MessageObject) arrayList.get(i10)).contentType;
+    }
+
+    @Override // s4.h0
+    public final void l() {
+        E();
+        super.l();
+    }
+
+    @Override // s4.h0
+    public final void v(s4.c1 c1Var, int i10) {
+        if (i10 >= 0) {
+            ArrayList arrayList = this.n;
+            if (i10 >= arrayList.size()) {
+                return;
+            }
+            MessageObject messageObject = (MessageObject) arrayList.get(i10);
+            int i11 = c1Var.f;
+            View view = c1Var.a;
+            if (i11 == 0) {
+                ((org.telegram.ui.Cells.t1) view).X3(messageObject, null, false, false, false, false);
+            } else {
+                ((org.telegram.ui.Cells.w0) view).setMessageObject(messageObject);
+            }
+        }
+    }
+
+    @Override // s4.h0
+    public final s4.c1 x(ViewGroup viewGroup, int i10) {
+        if (i10 != 0) {
+            return new wk0(new org.telegram.ui.Cells.w0(this.c, this.e, false));
+        }
+        org.telegram.ui.ActionBar.f6 f6Var = this.e;
+        fu0 fu0Var = new fu0(this.c, this.d, false, null, f6Var);
+        fu0Var.setDelegate(this.f);
+        return new wk0(fu0Var);
     }
 }

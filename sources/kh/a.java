@@ -1,7 +1,61 @@
 package kh;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+import i2.g0;
+import le.d;
+import le.e;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.qr;
+import org.telegram.ui.Components.voip.v2;
+
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public interface a {
-    void k(int i10);
+public final class a implements d {
+    public final e a;
+    public final e b;
+    public final le.b c;
+    public final le.b d;
+    public final v2 e;
+    public final g0 f;
+    public boolean h;
+
+    public a(v2 v2Var, g0 g0Var) {
+        qr qrVar = qr.h;
+        this.a = new e(1, this, qrVar, 350L);
+        this.b = new e(2, this, qrVar, 350L);
+        this.c = new le.b(0, this, qrVar, 350L, true);
+        this.d = new le.b(3, this, qrVar, 350L, true);
+        this.h = true;
+        this.e = v2Var;
+        this.f = g0Var;
+    }
+
+    @Override // le.d
+    public final void D(int i10, float f7, float f10, e eVar) {
+        v2 v2Var = this.e;
+        if (i10 == 1) {
+            v2Var.setTranslationX(this.a.e);
+        }
+        if (i10 == 2) {
+            v2Var.setTranslationY(this.b.e);
+        }
+        le.b bVar = this.d;
+        le.b bVar2 = this.c;
+        if (i10 == 0) {
+            v2Var.setAlpha(AndroidUtilities.lerp(0.5f, 1.0f, bVar.e) * bVar2.e);
+            v2Var.setScaleX(AndroidUtilities.lerp(0.3f, 1.0f, f7));
+            v2Var.setScaleY(AndroidUtilities.lerp(0.3f, 1.0f, f7));
+            v2Var.setVisibility(f7 > 0.0f ? 0 : 8);
+        }
+        if (i10 == 3) {
+            v2Var.setAlpha(AndroidUtilities.lerp(0.5f, 1.0f, bVar.e) * bVar2.e);
+        }
+        g0 g0Var = this.f;
+        if (g0Var != null) {
+            g0Var.run();
+        }
+    }
+
+    @Override // le.d
+    public final /* synthetic */ void C(float f7, int i10) {
+    }
 }

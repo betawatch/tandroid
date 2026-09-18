@@ -1,62 +1,26 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.view.View;
-import android.widget.LinearLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class lj0 extends LinearLayout {
-    public boolean a;
+public final class lj0 extends t00 {
+    public final /* synthetic */ qj0 U;
 
-    public lj0(Context context) {
-        super(context);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public lj0(qj0 qj0Var, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context, f6Var);
+        this.U = qj0Var;
     }
 
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        int i12;
-        hj0 hj0Var = null;
-        if (this.a) {
-            i12 = 0;
-        } else {
-            i12 = 0;
-            for (int i13 = 0; i13 < getChildCount(); i13++) {
-                if (getChildAt(i13) instanceof pj0) {
-                    hj0Var = ((pj0) getChildAt(i13)).e;
-                    if (hj0Var.getAdapter().h() == hj0Var.getChildCount()) {
-                        int childCount = hj0Var.getChildCount();
-                        for (int i14 = 0; i14 < childCount; i14++) {
-                            hj0Var.getChildAt(i14).measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), 0), i11);
-                            if (hj0Var.getChildAt(i14).getMeasuredWidth() > i12) {
-                                i12 = hj0Var.getChildAt(i14).getMeasuredWidth();
-                            }
-                        }
-                        i12 += AndroidUtilities.dp(16.0f);
-                    }
-                }
-            }
+    @Override // org.telegram.ui.Components.t00
+    public final int getAdditionalHeight() {
+        ta0 ta0Var;
+        qj0 qj0Var = this.U;
+        if (qj0Var.H.isEmpty() || (ta0Var = qj0Var.J) == null) {
+            return 0;
         }
-        int size = View.MeasureSpec.getSize(i10);
-        if (size < AndroidUtilities.dp(240.0f)) {
-            size = AndroidUtilities.dp(240.0f);
-        }
-        if (size > AndroidUtilities.dp(280.0f)) {
-            size = AndroidUtilities.dp(280.0f);
-        }
-        if (size < 0) {
-            size = 0;
-        }
-        if (i12 == 0 || i12 >= size) {
-            i12 = size;
-        }
-        if (hj0Var != null) {
-            for (int i15 = 0; i15 < hj0Var.getChildCount(); i15++) {
-                hj0Var.getChildAt(i15).measure(View.MeasureSpec.makeMeasureSpec(i12, TLObject.FLAG_30), i11);
-            }
-        }
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(i12, TLObject.FLAG_30), i11);
+        return AndroidUtilities.dp(8.0f) + ta0Var.getMeasuredHeight();
     }
 }

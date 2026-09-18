@@ -8,9 +8,9 @@ import android.graphics.Path;
 import android.graphics.RectF;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class ml extends org.telegram.ui.Components.x9 {
+public final class ml extends org.telegram.ui.Components.u9 {
     public final /* synthetic */ int G = 0;
     public Object H;
     public Object I;
@@ -24,10 +24,10 @@ public final class ml extends org.telegram.ui.Components.x9 {
     public void draw(Canvas canvas) {
         switch (this.G) {
             case 1:
-                wh.h hVar = (wh.h) this.I;
+                vh.h hVar = (vh.h) this.I;
                 Path path = (Path) this.H;
                 super.draw(canvas);
-                if (((org.telegram.ui.Components.po) this.J).h) {
+                if (((org.telegram.ui.Components.qo) this.J).h) {
                     path.rewind();
                     RectF rectF = AndroidUtilities.rectTmp;
                     rectF.set(this.a.getImageX(), this.a.getImageY(), this.a.getImageX2(), this.a.getImageY2());
@@ -48,12 +48,12 @@ public final class ml extends org.telegram.ui.Components.x9 {
         }
     }
 
-    @Override // org.telegram.ui.Components.x9, android.view.View
+    @Override // org.telegram.ui.Components.u9, android.view.View
     public void onDraw(Canvas canvas) {
         switch (this.G) {
             case 0:
                 float[] fArr = (float[]) this.J;
-                wh.h hVar = (wh.h) this.I;
+                vh.h hVar = (vh.h) this.I;
                 Path path = (Path) this.H;
                 super.onDraw(canvas);
                 if (this.r) {
@@ -110,9 +110,9 @@ public final class ml extends org.telegram.ui.Components.x9 {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ml(org.telegram.ui.Components.po poVar, Context context, wh.h hVar) {
+    public ml(org.telegram.ui.Components.qo qoVar, Context context, vh.h hVar) {
         super(context);
-        this.J = poVar;
+        this.J = qoVar;
         this.I = hVar;
         this.H = new Path();
     }

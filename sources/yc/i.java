@@ -13,7 +13,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public abstract class i {
     public static final Logger d;
@@ -31,8 +31,8 @@ public abstract class i {
     public static String b(String str) {
         try {
             return URLDecoder.decode(str, "UTF8");
-        } catch (UnsupportedEncodingException e7) {
-            d.log(Level.WARNING, "Encoding not supported, ignored", (Throwable) e7);
+        } catch (UnsupportedEncodingException e) {
+            d.log(Level.WARNING, "Encoding not supported, ignored", (Throwable) e);
             return null;
         }
     }
@@ -54,8 +54,8 @@ public abstract class i {
                 str3 = str5;
             }
             bArr = str2.getBytes(str3);
-        } catch (UnsupportedEncodingException e7) {
-            d.log(Level.SEVERE, "encoding problem, responding nothing", (Throwable) e7);
+        } catch (UnsupportedEncodingException e) {
+            d.log(Level.SEVERE, "encoding problem, responding nothing", (Throwable) e);
             bArr = new byte[0];
         }
         return new g(fVar, bVar.a, new ByteArrayInputStream(bArr), bArr.length);
@@ -74,8 +74,8 @@ public abstract class i {
                     }
                     ((ServerSocket) obj).close();
                 }
-            } catch (IOException e7) {
-                d.log(Level.SEVERE, "Could not close", (Throwable) e7);
+            } catch (IOException e) {
+                d.log(Level.SEVERE, "Could not close", (Throwable) e);
             }
         }
     }
@@ -93,19 +93,19 @@ public abstract class i {
     public final void f() {
         this.a = new ServerSocket();
         this.a.setReuseAddress(true);
-        ki.h hVar = new ki.h(this);
-        Thread thread = new Thread(hVar);
+        ji.g gVar = new ji.g(this);
+        Thread thread = new Thread(gVar);
         this.b = thread;
         thread.setDaemon(true);
         this.b.setName("NanoHttpd Main Listener");
         this.b.start();
-        while (!hVar.b && ((IOException) hVar.c) == null) {
+        while (!gVar.b && ((IOException) gVar.c) == null) {
             try {
                 Thread.sleep(10L);
             } catch (Throwable unused) {
             }
         }
-        IOException iOException = (IOException) hVar.c;
+        IOException iOException = (IOException) gVar.c;
         if (iOException != null) {
             throw iOException;
         }

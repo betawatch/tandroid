@@ -1,100 +1,46 @@
 package org.telegram.ui.Components.voip;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.RectF;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.Components.dc0;
-import org.telegram.ui.ni1;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class z0 extends TextView {
-    public final Paint a;
-    public final Paint[] b;
-    public final /* synthetic */ ni1 c;
+public final class z0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ d1 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z0(ni1 ni1Var, Context context) {
-        super(context);
-        this.c = ni1Var;
-        Paint paint = new Paint();
-        this.a = paint;
-        this.b = new Paint[ni1Var.e.length];
-        dc0 dc0Var = ni1Var.R;
-        dc0Var.setBounds(0, 0, 80, 80);
-        dc0 dc0Var2 = ni1Var.S;
-        dc0Var2.setBounds(0, 0, 80, 80);
-        com.google.firebase.messaging.n nVar = ni1Var.P;
-        nVar.z(0.0f, 0.0f, 80.0f, 80.0f);
-        com.google.firebase.messaging.n nVar2 = ni1Var.Q;
-        nVar2.z(0.0f, 0.0f, 80.0f, 80.0f);
-        dc0Var.setAlpha(255);
-        dc0Var2.setAlpha(255);
-        Canvas canvas = (Canvas) nVar.b;
-        PorterDuff.Mode mode = PorterDuff.Mode.CLEAR;
-        canvas.drawColor(0, mode);
-        ((Canvas) nVar2.b).drawColor(0, mode);
-        dc0Var.draw((Canvas) nVar.b);
-        dc0Var2.draw((Canvas) nVar2.b);
-        paint.setColor(-1);
+    public /* synthetic */ z0(d1 d1Var, int i10) {
+        this.a = i10;
+        this.b = d1Var;
     }
 
-    @Override // android.widget.TextView, android.view.View
-    public final void onDraw(Canvas canvas) {
-        int i10;
-        ni1 ni1Var = this.c;
-        z0 z0Var = ni1Var.c;
-        ni1Var.P.z(-getX(), -getY(), ni1Var.getWidth() - getX(), ni1Var.getHeight() - getY());
-        ni1Var.Q.z(-getX(), -getY(), ni1Var.getWidth() - getX(), ni1Var.getHeight() - getY());
-        RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
-        int i11 = ni1Var.v;
-        Paint[] paintArr = this.b;
-        paintArr[i11].setAlpha(255);
-        float dp = AndroidUtilities.dp(8.0f) + ((int) ((1.0f - ni1Var.y) * (AndroidUtilities.dp(26.0f) - AndroidUtilities.dp(8.0f))));
-        canvas.drawRoundRect(rectF, dp, dp, paintArr[ni1Var.v]);
-        float f7 = ni1Var.s;
-        if (f7 > 0.0f && (i10 = ni1Var.v + 1) < paintArr.length) {
-            paintArr[i10].setAlpha((int) (f7 * 255.0f));
-            canvas.drawRoundRect(rectF, dp, dp, paintArr[ni1Var.v + 1]);
-        }
-        float f10 = ni1Var.y;
-        if (f10 < 1.0f) {
-            Paint paint = this.a;
-            paint.setAlpha((int) ((1.0f - f10) * 255.0f));
-            canvas.drawRoundRect(rectF, dp, dp, paint);
-        }
-        super.onDraw(canvas);
-        if (ni1Var.O) {
-            canvas.drawText(LocaleController.getString(R.string.VoipShareVideo), getWidth() / 2, (int) ((getHeight() / 2) - ((z0Var.getPaint().ascent() + z0Var.getPaint().descent()) / 2.0f)), z0Var.getPaint());
-        }
-    }
-
-    @Override // android.view.View
-    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
-        ni1 ni1Var = this.c;
-        com.google.firebase.messaging.n nVar = ni1Var.P;
-        super.onSizeChanged(i10, i11, i12, i13);
-        int i14 = 0;
-        while (true) {
-            Paint[] paintArr = this.b;
-            if (i14 >= paintArr.length) {
-                return;
-            }
-            if (i14 == 0) {
-                paintArr[i14] = (Paint) nVar.a;
-            } else if (i14 == 1) {
-                paintArr[i14] = (Paint) ni1Var.Q.a;
-            } else {
-                paintArr[i14] = (Paint) nVar.a;
-            }
-            i14++;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                super.onAnimationEnd(animator);
+                d1 d1Var = this.b;
+                if (d1Var.getParent() != null) {
+                    ((ViewGroup) d1Var.getParent()).removeView(d1Var);
+                    break;
+                }
+                break;
+            case 1:
+                d1 d1Var2 = this.b;
+                if (d1Var2.getParent() != null) {
+                    ((ViewGroup) d1Var2.getParent()).removeView(d1Var2);
+                    break;
+                }
+                break;
+            default:
+                super.onAnimationEnd(animator);
+                d1 d1Var3 = this.b;
+                if (d1Var3.getParent() != null) {
+                    ((ViewGroup) d1Var3.getParent()).removeView(d1Var3);
+                    break;
+                }
+                break;
         }
     }
 }

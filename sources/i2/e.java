@@ -7,10 +7,10 @@ import android.os.Looper;
 import com.google.android.gms.internal.vision.e2;
 import v7.v6;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class e {
-    public final d9.j a;
+    public final d9.i a;
     public final Handler b;
     public o0 c;
     public b2.e d;
@@ -119,7 +119,7 @@ public final class e {
                             eVar3.a();
                             eVar3.c(1);
                         } else if (i13 != 1) {
-                            e2.n(i13, "Unknown focus change type: ", "AudioFocusManager");
+                            e2.m(i13, "Unknown focus change type: ", "AudioFocusManager");
                         } else {
                             eVar3.c(2);
                             eVar3.b(1);

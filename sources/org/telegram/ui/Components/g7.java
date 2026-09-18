@@ -1,75 +1,35 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g7 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ k8 b;
-    public final /* synthetic */ n70 c;
-    public final /* synthetic */ MessageObject d;
+    public final /* synthetic */ h8 b;
+    public final /* synthetic */ TLRPC.TL_error c;
 
-    public /* synthetic */ g7(k8 k8Var, MessageObject messageObject, n70 n70Var, int i10) {
+    public /* synthetic */ g7(h8 h8Var, TLRPC.TL_error tL_error, int i10) {
         this.a = i10;
-        this.b = k8Var;
-        this.d = messageObject;
-        this.c = n70Var;
+        this.b = h8Var;
+        this.c = tL_error;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                k8 k8Var = this.b;
-                k8Var.getClass();
-                this.c.u();
-                k8Var.q0(this.d);
+                h8.s(this.b, this.c);
                 break;
             case 1:
-                k8 k8Var2 = this.b;
-                k8Var2.getClass();
-                this.c.u();
-                k8Var2.z0(this.d);
+                h8.w(this.b, this.c);
                 break;
             case 2:
-                k8 k8Var3 = this.b;
-                MessageObject messageObject = this.d;
-                k8Var3.v0(messageObject, false, new g7(k8Var3, messageObject, this.c, 5), false);
-                break;
-            case 3:
-                k8 k8Var4 = this.b;
-                k8Var4.getClass();
-                this.c.u();
-                k8Var4.q0(this.d);
-                break;
-            case 4:
-                k8 k8Var5 = this.b;
-                k8Var5.getClass();
-                this.c.u();
-                k8Var5.z0(this.d);
-                break;
-            case 5:
-                k8.v(this.b, this.d, this.c);
-                break;
-            case 6:
-                k8 k8Var6 = this.b;
-                k8Var6.v0(this.d, true, new h7(k8Var6, this.c, 4), false);
-                break;
-            case 7:
-                k8.L(this.b, this.d, this.c);
+                h8.H(this.b, this.c);
                 break;
             default:
-                this.b.u0(this.d);
-                this.c.u();
+                h8.I(this.b, this.c);
                 break;
         }
-    }
-
-    public /* synthetic */ g7(k8 k8Var, n70 n70Var, MessageObject messageObject, int i10) {
-        this.a = i10;
-        this.b = k8Var;
-        this.c = n70Var;
-        this.d = messageObject;
     }
 }

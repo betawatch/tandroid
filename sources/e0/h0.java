@@ -12,7 +12,7 @@ import android.media.metrics.LogSessionId;
 import android.media.session.MediaSession;
 import android.os.Build;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public abstract class h0 {
     public static k2.e a(AudioFormat audioFormat, AudioAttributes audioAttributes, boolean z10) {
@@ -73,11 +73,11 @@ public abstract class h0 {
             MediaSession mediaSession = ((n4.r) yVar.b).a;
             mediaSession.getClass();
             mediaSession.setMediaButtonBroadcastReceiver(componentName);
-        } catch (IllegalArgumentException e7) {
+        } catch (IllegalArgumentException e) {
             if (!Build.MANUFACTURER.equals("motorola")) {
-                throw e7;
+                throw e;
             }
-            e2.a.f("MediaSessionLegacyStub", "caught IllegalArgumentException on a motorola device when attempting to set the media button broadcast receiver. See https://github.com/androidx/media/issues/1730 for details.", e7);
+            e2.a.f("MediaSessionLegacyStub", "caught IllegalArgumentException on a motorola device when attempting to set the media button broadcast receiver. See https://github.com/androidx/media/issues/1730 for details.", e);
         }
     }
 }

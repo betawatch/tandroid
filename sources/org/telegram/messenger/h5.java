@@ -1,42 +1,14 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.LocaleController;
-import org.telegram.tgnet.TLObject;
+import android.graphics.drawable.Drawable;
+import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class h5 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ LocaleController b;
-    public final /* synthetic */ LocaleController.LocaleInfo c;
-    public final /* synthetic */ TLObject d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ Runnable f;
-
-    public /* synthetic */ h5(LocaleController localeController, LocaleController.LocaleInfo localeInfo, TLObject tLObject, int i10, Runnable runnable, int i11) {
-        this.a = i11;
-        this.b = localeController;
-        this.c = localeInfo;
-        this.d = tLObject;
-        this.e = i10;
-        this.f = runnable;
+public abstract /* synthetic */ class h5 {
+    public static void b(ImageReceiver.ImageReceiverDelegate imageReceiverDelegate, ImageReceiver imageReceiver) {
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.lambda$applyRemoteLanguage$16(this.c, this.d, this.e, this.f);
-                break;
-            case 1:
-                this.b.lambda$applyRemoteLanguage$20(this.c, this.d, this.e, this.f);
-                break;
-            case 2:
-                this.b.lambda$applyRemoteLanguage$18(this.c, this.d, this.e, this.f);
-                break;
-            default:
-                this.b.lambda$applyRemoteLanguage$14(this.c, this.d, this.e, this.f);
-                break;
-        }
+    public static void a(ImageReceiver.ImageReceiverDelegate imageReceiverDelegate, int i10, String str, Drawable drawable) {
     }
 }

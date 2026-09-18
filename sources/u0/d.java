@@ -8,10 +8,10 @@ import android.view.animation.AccelerateInterpolator;
 import android.view.animation.AnimationUtils;
 import java.util.WeakHashMap;
 import m.r1;
+import qg.b0;
 import r0.i0;
-import rg.b0;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class d implements View.OnTouchListener {
     public static final int H = ViewConfiguration.getTapTimeout();
@@ -164,9 +164,9 @@ public final class d implements View.OnTouchListener {
         return false;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:8:0x0014, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:9:0x0014, code lost:
     
-        if (r0 != 3) goto L29;
+        if (r0 != 3) goto L30;
      */
     @Override // android.view.View.OnTouchListener
     /*
@@ -176,7 +176,6 @@ public final class d implements View.OnTouchListener {
         int i10;
         if (this.F) {
             int actionMasked = motionEvent.getActionMasked();
-            int i11 = 3;
             if (actionMasked != 0) {
                 if (actionMasked != 1) {
                     if (actionMasked != 2) {
@@ -197,7 +196,7 @@ public final class d implements View.OnTouchListener {
             aVar.d = a10;
             if (!this.E && e()) {
                 if (this.d == null) {
-                    this.d = new b0(this, i11);
+                    this.d = new b0(this, 5);
                 }
                 this.E = true;
                 this.x = true;

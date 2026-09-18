@@ -4,7 +4,7 @@ import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Proxy;
 import t7.s;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public abstract class b {
     public static Object a(Class cls, InvocationHandler invocationHandler) {
@@ -114,9 +114,9 @@ public abstract class b {
                 c10 = ')';
             }
         }
-        int e7 = e(charSequence, i10 + 1, c10);
-        if (e7 != -1 && e7 < charSequence.length() && charSequence.charAt(e7) == c10) {
-            return e7 + 1;
+        int e = e(charSequence, i10 + 1, c10);
+        if (e != -1 && e < charSequence.length() && charSequence.charAt(e) == c10) {
+            return e + 1;
         }
         return -1;
     }

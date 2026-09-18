@@ -1,78 +1,36 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_communities;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class w9 implements RequestDelegate {
+public final /* synthetic */ class w9 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
     public final /* synthetic */ MessagesController b;
-    public final /* synthetic */ long c;
+    public final /* synthetic */ Utilities.Callback2 c;
 
-    public /* synthetic */ w9(MessagesController messagesController, long j3, int i10) {
+    public /* synthetic */ w9(MessagesController messagesController, Utilities.Callback2 callback2, int i10) {
         this.a = i10;
         this.b = messagesController;
-        this.c = j3;
+        this.c = callback2;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
-                this.b.lambda$markMessageAsRead2$235(this.c, tLObject, tL_error);
+                this.b.lambda$toggleChatNoForwards$278(this.c, (TLRPC.Updates) obj, (TLRPC.TL_error) obj2);
                 break;
             case 1:
-                this.b.lambda$markMessageAsRead2$236(this.c, tLObject, tL_error);
+                this.b.lambda$fetchCommunityPendingJoinRequests$246(this.c, (TL_communities.PeerLinkRequests) obj, (TLRPC.TL_error) obj2);
                 break;
             case 2:
-                this.b.lambda$pinDialog$364(this.c, tLObject, tL_error);
-                break;
-            case 3:
-                this.b.lambda$saveWallpaperToServer$121(this.c, tLObject, tL_error);
-                break;
-            case 4:
-                this.b.lambda$updateTimerProc$160(this.c, tLObject, tL_error);
-                break;
-            case 5:
-                this.b.lambda$deleteUserPhoto$115(this.c, tLObject, tL_error);
-                break;
-            case 6:
-                this.b.lambda$reorderPinnedDialogs$363(this.c, tLObject, tL_error);
-                break;
-            case 7:
-                this.b.lambda$loadPeerSettings$80(this.c, tLObject, tL_error);
-                break;
-            case 8:
-                this.b.lambda$setChannelSlowMode$94(this.c, tLObject, tL_error);
-                break;
-            case 9:
-                this.b.lambda$loadChannelAdmins$65(this.c, tLObject, tL_error);
-                break;
-            case 10:
-                this.b.lambda$deleteDialog$141(this.c, tLObject, tL_error);
-                break;
-            case 11:
-                this.b.lambda$addDialogToFolder$198(this.c, tLObject, tL_error);
-                break;
-            case 12:
-                this.b.lambda$setDefaultSendAs$275(this.c, tLObject, tL_error);
-                break;
-            case 13:
-                this.b.lambda$deleteMessages$122(this.c, tLObject, tL_error);
-                break;
-            case 14:
-                this.b.lambda$deleteMessages$123(this.c, tLObject, tL_error);
-                break;
-            case 15:
-                this.b.lambda$deleteMessages$125(this.c, tLObject, tL_error);
-                break;
-            case 16:
-                this.b.lambda$setBoostsToUnblockRestrictions$96(this.c, tLObject, tL_error);
+                this.b.lambda$fetchCommunityJoinedChats$247(this.c, (TL_communities.ParticipantJoinedChats) obj, (TLRPC.TL_error) obj2);
                 break;
             default:
-                this.b.lambda$markDialogAsUnread$360(this.c, tLObject, tL_error);
+                this.b.lambda$fetchChatsToAddToCommunity$252(this.c, (TLRPC.messages_Chats) obj, (TLRPC.TL_error) obj2);
                 break;
         }
     }

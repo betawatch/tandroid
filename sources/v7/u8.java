@@ -1,27 +1,20 @@
 package v7;
 
-import com.google.android.gms.tasks.Task;
-import java.util.concurrent.CancellationException;
-
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public abstract class u8 {
-    public static final Object a(Task task, kd.c cVar) {
-        if (!task.isComplete()) {
-            zd.m mVar = new zd.m(1, t8.b(cVar));
-            mVar.s();
-            task.addOnCompleteListener(je.a.a, new a4.m(mVar, 27));
-            Object r10 = mVar.r();
-            jd.a aVar = jd.a.a;
-            return r10;
+    public static String a(String str, String str2) {
+        int length = str.length() - str2.length();
+        if (length < 0 || length > 1) {
+            throw new IllegalArgumentException("Invalid input received");
         }
-        Exception exception = task.getException();
-        if (exception != null) {
-            throw exception;
+        StringBuilder sb2 = new StringBuilder(str2.length() + str.length());
+        for (int i10 = 0; i10 < str.length(); i10++) {
+            sb2.append(str.charAt(i10));
+            if (str2.length() > i10) {
+                sb2.append(str2.charAt(i10));
+            }
         }
-        if (!task.isCanceled()) {
-            return task.getResult();
-        }
-        throw new CancellationException("Task " + task + " was cancelled normally.");
+        return sb2.toString();
     }
 }

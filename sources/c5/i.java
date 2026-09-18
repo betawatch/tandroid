@@ -1,50 +1,72 @@
 package c5;
 
-import android.content.ContentResolver;
-import android.net.Uri;
+import android.text.TextUtils;
 import android.util.Log;
-import com.google.android.gms.internal.clearcut.e2;
 import java.util.HashMap;
-import org.telegram.ui.Cells.p6;
+import org.json.JSONObject;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
-public final class i implements com.google.android.gms.internal.clearcut.g {
+public final class i {
     public String a;
 
-    @Override // com.google.android.gms.internal.clearcut.g
-    public Object zzp() {
-        Object obj;
-        boolean z10;
+    public static void a(aa.a aVar, da.d dVar) {
+        String str = dVar.a;
+        if (str != null) {
+            aVar.s("X-CRASHLYTICS-GOOGLE-APP-ID", str);
+        }
+        aVar.s("X-CRASHLYTICS-API-CLIENT-TYPE", "android");
+        aVar.s("X-CRASHLYTICS-API-CLIENT-VERSION", "18.6.0");
+        aVar.s("Accept", "application/json");
+        String str2 = dVar.b;
+        if (str2 != null) {
+            aVar.s("X-CRASHLYTICS-DEVICE-MODEL", str2);
+        }
+        String str3 = dVar.c;
+        if (str3 != null) {
+            aVar.s("X-CRASHLYTICS-OS-BUILD-VERSION", str3);
+        }
+        String str4 = dVar.d;
+        if (str4 != null) {
+            aVar.s("X-CRASHLYTICS-OS-DISPLAY-VERSION", str4);
+        }
+        String str5 = dVar.e.b().a;
+        if (str5 != null) {
+            aVar.s("X-CRASHLYTICS-INSTALLATION-ID", str5);
+        }
+    }
+
+    public static HashMap b(da.d dVar) {
+        HashMap hashMap = new HashMap();
+        hashMap.put("build_version", dVar.h);
+        hashMap.put("display_version", dVar.g);
+        hashMap.put("source", Integer.toString(dVar.i));
+        String str = dVar.f;
+        if (!TextUtils.isEmpty(str)) {
+            hashMap.put("instance", str);
+        }
+        return hashMap;
+    }
+
+    public JSONObject c(aa.b bVar) {
         String str = this.a;
-        ContentResolver contentResolver = com.google.android.gms.internal.clearcut.d.g.getContentResolver();
-        Uri uri = e2.a;
-        synchronized (e2.class) {
-            e2.c(contentResolver);
-            obj = e2.k;
-        }
-        HashMap hashMap = e2.g;
-        Boolean bool = Boolean.FALSE;
-        Boolean bool2 = (Boolean) e2.a(hashMap, str, bool);
-        if (bool2 != null) {
-            z10 = bool2.booleanValue();
-        } else {
-            String b10 = e2.b(contentResolver, str);
-            boolean z11 = false;
-            if (b10 != null && !b10.equals("")) {
-                if (e2.c.matcher(b10).matches()) {
-                    bool = Boolean.TRUE;
-                    z11 = true;
-                } else if (!e2.d.matcher(b10).matches()) {
-                    Log.w("Gservices", p6.j("attempt to read gservices key ", str, " (value \"", b10, "\") as boolean"));
-                }
-                e2.e(obj, hashMap, str, bool);
-                z10 = z11;
+        int i10 = bVar.c;
+        t9.b bVar2 = t9.b.a;
+        bVar2.c("Settings response code was: " + i10);
+        if (i10 != 200 && i10 != 201 && i10 != 202 && i10 != 203) {
+            String str2 = "Settings request failed; (status: " + i10 + ") from " + str;
+            if (bVar2.a(6)) {
+                Log.e("FirebaseCrashlytics", str2, null);
             }
-            bool = bool2;
-            e2.e(obj, hashMap, str, bool);
-            z10 = z11;
+            return null;
         }
-        return Boolean.valueOf(z10);
+        String str3 = bVar.b;
+        try {
+            return new JSONObject(str3);
+        } catch (Exception e) {
+            bVar2.d("Failed to parse settings JSON from " + str, e);
+            bVar2.d("Settings response " + str3, null);
+            return null;
+        }
     }
 }

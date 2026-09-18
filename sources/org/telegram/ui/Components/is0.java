@@ -1,32 +1,15 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessageObject;
+import android.graphics.Outline;
+import android.view.View;
+import android.view.ViewOutlineProvider;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class is0 extends org.telegram.ui.Cells.i7 {
-    public final /* synthetic */ xu0 l0;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public is0(xu0 xu0Var, Context context) {
-        super(context);
-        this.l0 = xu0Var;
-    }
-
-    @Override // org.telegram.ui.Cells.i7
-    public final boolean d(MessageObject messageObject) {
-        boolean isVoice = messageObject.isVoice();
-        xu0 xu0Var = this.l0;
-        if (isVoice || messageObject.isRoundVideo()) {
-            boolean playMessage = MediaController.getInstance().playMessage(messageObject);
-            MediaController.getInstance().setVoiceMessagesPlaylist(playMessage ? xu0Var.t1[4].a : null, false);
-            return playMessage;
-        }
-        if (messageObject.isMusic()) {
-            return MediaController.getInstance().setPlaylist(xu0Var.t1[4].a, messageObject, xu0Var.c1);
-        }
-        return false;
+public final class is0 extends ViewOutlineProvider {
+    @Override // android.view.ViewOutlineProvider
+    public final void getOutline(View view, Outline outline) {
+        outline.setRoundRect(0, 0, view.getWidth(), view.getHeight(), AndroidUtilities.dp(16.0f));
     }
 }

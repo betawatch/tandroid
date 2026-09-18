@@ -1,71 +1,27 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import android.content.DialogInterface;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class xf0 extends org.telegram.ui.Components.voip.l2 {
-    public final /* synthetic */ int e;
-    public final /* synthetic */ org.telegram.ui.Components.tv0 f;
+public final /* synthetic */ class xf0 implements DialogInterface.OnDismissListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ bg0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public xf0(zf0 zf0Var, Context context, int i10) {
-        super(zf0Var.s0, context);
-        this.e = i10;
-        switch (i10) {
-            case 1:
-                this.f = zf0Var;
-                super(zf0Var.s0, context);
-                break;
-            default:
-                this.f = zf0Var;
-                break;
-        }
+    public /* synthetic */ xf0(bg0 bg0Var, int i10) {
+        this.a = i10;
+        this.b = bg0Var;
     }
 
-    @Override // org.telegram.ui.Components.voip.l2
-    public final boolean a() {
-        switch (this.e) {
+    @Override // android.content.DialogInterface.OnDismissListener
+    public final void onDismiss(DialogInterface dialogInterface) {
+        switch (this.a) {
             case 0:
-                return ((zf0) this.f).i0;
-            case 1:
-                return ((zf0) this.f).i0;
-            default:
-                return ((xe0) this.f).M;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.voip.l2
-    public final boolean b() {
-        xf0 xf0Var;
-        switch (this.e) {
-            case 0:
-                if (getVisibility() == 0) {
-                    zf0 zf0Var = (zf0) this.f;
-                    if (zf0Var.V <= 0 || zf0Var.R == null) {
-                    }
-                }
-                break;
-            case 1:
-                zf0 zf0Var2 = (zf0) this.f;
-                if (!isClickable() || getVisibility() != 0 || zf0Var2.d0 || (((xf0Var = zf0Var2.v) != null && xf0Var.getVisibility() != 8) || zf0Var2.i0)) {
-                }
+                this.b.s0.finishFragment();
                 break;
             default:
-                if (getVisibility() == 0) {
-                    xe0 xe0Var = (xe0) this.f;
-                    if (xe0Var.P <= 0 || xe0Var.N == null) {
-                    }
-                }
+                this.b.s0.finishFragment();
                 break;
         }
-        return false;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public xf0(xe0 xe0Var, Context context) {
-        super(xe0Var.a0, context);
-        this.e = 2;
-        this.f = xe0Var;
     }
 }

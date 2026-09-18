@@ -4,15 +4,15 @@ import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.view.ViewConfiguration;
 import android.view.ViewGroup;
-import org.telegram.ui.Components.lv0;
+import org.telegram.ui.Components.nv0;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public abstract class a0 extends ViewGroup implements lv0 {
+public abstract class a0 extends ViewGroup implements nv0 {
     public boolean a;
     public androidx.emoji2.text.j b;
     public int c;
-    public androidx.activity.i d;
+    public ai.q4 d;
     public Runnable e;
 
     public a0(Context context) {
@@ -44,7 +44,7 @@ public abstract class a0 extends ViewGroup implements lv0 {
         drawable.setBounds(i10, i11, drawable.getIntrinsicWidth() + i10, drawable.getIntrinsicHeight() + i11);
     }
 
-    @Override // org.telegram.ui.Components.lv0
+    @Override // org.telegram.ui.Components.nv0
     public final void g(Runnable runnable) {
         this.e = runnable;
     }
@@ -77,9 +77,9 @@ public abstract class a0 extends ViewGroup implements lv0 {
         if (jVar != null) {
             removeCallbacks(jVar);
         }
-        androidx.activity.i iVar = this.d;
-        if (iVar != null) {
-            removeCallbacks(iVar);
+        ai.q4 q4Var = this.d;
+        if (q4Var != null) {
+            removeCallbacks(q4Var);
         }
     }
 
@@ -97,7 +97,7 @@ public abstract class a0 extends ViewGroup implements lv0 {
         }
         this.a = true;
         if (this.d == null) {
-            this.d = new androidx.activity.i(this, 27);
+            this.d = new ai.q4(this, 27);
         }
         postDelayed(this.d, ViewConfiguration.getTapTimeout());
     }

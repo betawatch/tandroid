@@ -5,9 +5,10 @@ import android.util.Log;
 import com.google.android.gms.common.data.DataHolder;
 import java.util.HashMap;
 import java.util.Map;
+import org.telegram.messenger.BuildConfig;
 import org.telegram.ui.Cells.p6;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class k extends l6.a {
     public final /* synthetic */ int d;
@@ -58,7 +59,7 @@ public final class k extends l6.a {
                 int i17 = this.b;
                 dataHolder2.c(i17, "path");
                 sb2.append("uri=".concat(String.valueOf(Uri.parse(dataHolder2.d[this.c].getString(i17, dataHolder2.c.getInt("path"))))));
-                sb2.append(", dataSz=".concat((blob == null ? "null" : Integer.valueOf(blob.length)).toString()));
+                sb2.append(", dataSz=".concat((blob == null ? BuildConfig.BETA_URL : Integer.valueOf(blob.length)).toString()));
                 sb2.append(", numAssets=" + hashMap.size());
                 if (isLoggable && !hashMap.isEmpty()) {
                     sb2.append(", assets=[");

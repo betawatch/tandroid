@@ -1,26 +1,24 @@
 package v7;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+import android.os.Bundle;
+import j$.util.DesugarCollections;
+import java.util.HashMap;
+import java.util.Map;
+
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public abstract class i5 {
-    public static String a(String str) {
-        int length = str.length();
-        int i10 = 0;
-        while (i10 < length) {
-            char charAt = str.charAt(i10);
-            if (charAt >= 'a' && charAt <= 'z') {
-                char[] charArray = str.toCharArray();
-                while (i10 < length) {
-                    char c10 = charArray[i10];
-                    if (c10 >= 'a' && c10 <= 'z') {
-                        charArray[i10] = (char) (c10 ^ ' ');
-                    }
-                    i10++;
-                }
-                return String.valueOf(charArray);
-            }
-            i10++;
+    public static Map a(String str, Bundle bundle) {
+        Map map = (Map) bundle.getSerializable(str);
+        if (map == null) {
+            return com.google.android.gms.internal.cast.u0.n;
         }
-        return str;
+        HashMap hashMap = new HashMap();
+        for (Map.Entry entry : map.entrySet()) {
+            if (entry != null && entry.getKey() != null && entry.getValue() != null) {
+                hashMap.put((Integer) entry.getKey(), (Integer) entry.getValue());
+            }
+        }
+        return DesugarCollections.unmodifiableMap(hashMap);
     }
 }

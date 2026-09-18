@@ -8,7 +8,7 @@ import android.view.ViewTreeObserver;
 import android.widget.ListAdapter;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class m0 extends d2 implements o0 {
     public CharSequence S;
@@ -29,28 +29,28 @@ public final class m0 extends d2 implements o0 {
     }
 
     @Override // m.o0
-    public final CharSequence e() {
+    public final CharSequence d() {
         return this.S;
     }
 
     @Override // m.o0
-    public final void i(CharSequence charSequence) {
+    public final void g(CharSequence charSequence) {
         this.S = charSequence;
     }
 
     @Override // m.o0
-    public final void l(int i10) {
+    public final void k(int i10) {
         this.V = i10;
     }
 
     @Override // m.o0
-    public final void m(int i10, int i11) {
+    public final void l(int i10, int i11) {
         ViewTreeObserver viewTreeObserver;
         x xVar = this.O;
         boolean isShowing = xVar.isShowing();
-        s();
+        q();
         xVar.setInputMethodMode(2);
-        g();
+        h();
         r1 r1Var = this.c;
         r1Var.setChoiceMode(1);
         g0.d(r1Var, i10);
@@ -74,12 +74,12 @@ public final class m0 extends d2 implements o0 {
     }
 
     @Override // m.d2, m.o0
-    public final void p(ListAdapter listAdapter) {
-        super.p(listAdapter);
+    public final void n(ListAdapter listAdapter) {
+        super.n(listAdapter);
         this.T = (j0) listAdapter;
     }
 
-    public final void s() {
+    public final void q() {
         int i10;
         p0 p0Var = this.W;
         Rect rect = p0Var.n;
@@ -103,11 +103,11 @@ public final class m0 extends d2 implements o0 {
             if (a2 > i12) {
                 a2 = i12;
             }
-            r(Math.max(a2, (width - paddingLeft) - paddingRight));
+            p(Math.max(a2, (width - paddingLeft) - paddingRight));
         } else if (i11 == -1) {
-            r((width - paddingLeft) - paddingRight);
+            p((width - paddingLeft) - paddingRight);
         } else {
-            r(i11);
+            p(i11);
         }
         this.f = s3.a(p0Var) ? (((width - paddingRight) - this.e) - this.V) + i10 : paddingLeft + this.V + i10;
     }

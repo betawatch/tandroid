@@ -16,9 +16,9 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.Cells.p6;
 import v7.s6;
 import v7.t6;
-import v7.x7;
+import v7.y7;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public abstract class q {
     public final /* synthetic */ int a = 2;
@@ -34,7 +34,7 @@ public abstract class q {
     public static void d(int i10, Object[] objArr) {
         for (int i11 = 0; i11 < i10; i11++) {
             if (objArr[i11] == null) {
-                throw new NullPointerException(i2.g.i(i11, "at index "));
+                throw new NullPointerException(hg.k0.i(i11, "at index "));
             }
         }
     }
@@ -48,7 +48,7 @@ public abstract class q {
 
     public static Object f(int i10) {
         if (i10 < 2 || i10 > 1073741824 || Integer.highestOneBit(i10) != i10) {
-            throw new IllegalArgumentException(i2.g.i(i10, "must be power of 2 between 2^1 and 2^30: "));
+            throw new IllegalArgumentException(hg.k0.i(i10, "must be power of 2 between 2^1 and 2^30: "));
         }
         return i10 <= 256 ? new byte[i10] : i10 <= 65536 ? new short[i10] : new int[i10];
     }
@@ -81,25 +81,25 @@ public abstract class q {
         }
     }
 
-    public static j1 j(Set set, d9.g gVar) {
+    public static j1 j(Set set, d9.f fVar) {
         if (set instanceof SortedSet) {
             Set set2 = (SortedSet) set;
             if (!(set2 instanceof j1)) {
-                return new k1(set2, gVar);
+                return new k1(set2, fVar);
             }
             j1 j1Var = (j1) set2;
-            d9.g gVar2 = j1Var.b;
-            gVar2.getClass();
-            return new k1((SortedSet) j1Var.a, new d9.h(Arrays.asList(gVar2, gVar)));
+            d9.f fVar2 = j1Var.b;
+            fVar2.getClass();
+            return new k1((SortedSet) j1Var.a, new d9.g(Arrays.asList(fVar2, fVar)));
         }
         if (!(set instanceof j1)) {
             set.getClass();
-            return new j1(set, gVar);
+            return new j1(set, fVar);
         }
         j1 j1Var2 = (j1) set;
-        d9.g gVar3 = j1Var2.b;
-        gVar3.getClass();
-        return new j1(j1Var2.a, new d9.h(Arrays.asList(gVar3, gVar)));
+        d9.f fVar3 = j1Var2.b;
+        fVar3.getClass();
+        return new j1(j1Var2.a, new d9.g(Arrays.asList(fVar3, fVar)));
     }
 
     public static Object k(AbstractCollection abstractCollection, String str) {
@@ -146,7 +146,7 @@ public abstract class q {
     public static ArrayList p(Object... objArr) {
         int length = objArr.length;
         e(length, "arraySize");
-        ArrayList arrayList = new ArrayList(x7.e(length + 5 + (length / 10)));
+        ArrayList arrayList = new ArrayList(y7.e(length + 5 + (length / 10)));
         Collections.addAll(arrayList, objArr);
         return arrayList;
     }
@@ -202,9 +202,9 @@ public abstract class q {
         return -1;
     }
 
-    public static void r(List list, d9.g gVar, int i10, int i11) {
+    public static void r(List list, d9.f fVar, int i10, int i11) {
         for (int size = list.size() - 1; size > i11; size--) {
-            if (gVar.apply(list.get(size))) {
+            if (fVar.apply(list.get(size))) {
                 list.remove(size);
             }
         }

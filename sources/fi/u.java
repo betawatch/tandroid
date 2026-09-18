@@ -1,100 +1,120 @@
 package fi;
 
-import android.app.Activity;
-import android.content.Context;
-import android.content.SharedPreferences;
-import android.text.SpannableStringBuilder;
 import android.view.View;
-import android.widget.FrameLayout;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.WeakHashMap;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.d61;
-import org.telegram.ui.Components.h51;
-import org.telegram.ui.Components.v51;
-import org.telegram.ui.g5;
-import w7.x5;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.j51;
+import org.telegram.ui.Components.n70;
+import r0.i1;
+import r0.l1;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes4.dex */
-public final class u extends org.telegram.ui.ActionBar.n2 {
-    public d61 a;
-    public final ArrayList b;
-    public final HashMap c;
+public final /* synthetic */ class u implements Utilities.Callback5, r0.n, Utilities.Callback5Return {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ k0 b;
 
-    public u() {
-        super(null);
-        this.b = new ArrayList();
-        this.c = new HashMap();
+    public /* synthetic */ u(k0 k0Var, int i10) {
+        this.a = i10;
+        this.b = k0Var;
     }
 
-    public static void U(u uVar, ArrayList arrayList) {
-        HashMap hashMap = uVar.c;
-        ArrayList arrayList2 = uVar.b;
-        for (int i10 = 0; i10 < arrayList2.size(); i10++) {
-            r rVar = (r) arrayList2.get(i10);
-            SpannableStringBuilder spannableStringBuilder = (SpannableStringBuilder) hashMap.get(rVar);
-            if (spannableStringBuilder == null) {
-                spannableStringBuilder = new SpannableStringBuilder();
-                spannableStringBuilder.append((CharSequence) "a   ");
-                g5 g5Var = new g5(null, 24.0f, uVar.currentAccount);
-                g5Var.e(rVar.a);
-                spannableStringBuilder.setSpan(g5Var, 0, 1, 33);
-                spannableStringBuilder.append((CharSequence) UserObject.getUserName(rVar.a));
-                hashMap.put(rVar, spannableStringBuilder);
+    @Override // r0.n
+    public l1 Q0(View view, l1 l1Var) {
+        i1 i1Var = l1Var.a;
+        i0.b f7 = i1Var.f(527);
+        k0 k0Var = this.b;
+        k0Var.T = f7;
+        k0Var.U = i1Var.f(519);
+        k0Var.F.j(AndroidUtilities.dp(56.0f) + k0Var.T.b, k0Var.T.d, false);
+        k0Var.H.invalidate();
+        return l1.b;
+    }
+
+    @Override // org.telegram.messenger.Utilities.Callback5Return
+    public Object run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
+        boolean canRemoveBotFromCommunity;
+        long j3;
+        boolean z10;
+        boolean z11;
+        View view = (View) obj2;
+        ((Integer) obj3).getClass();
+        ((Float) obj4).getClass();
+        ((Float) obj5).getClass();
+        int i10 = k0.V;
+        Object obj6 = ((j51) obj).G;
+        boolean z12 = obj6 instanceof TLRPC.Chat;
+        k0 k0Var = this.b;
+        boolean z13 = false;
+        if (!z12) {
+            if (obj6 instanceof TLRPC.User) {
+                TLRPC.User user = (TLRPC.User) obj6;
+                long j10 = user.id;
+                boolean isBot = UserObject.isBot(user);
+                canRemoveBotFromCommunity = ChatObject.canRemoveBotFromCommunity(user, k0Var.f);
+                j3 = j10;
+                z10 = false;
+                z11 = isBot;
             }
-            h51 i11 = h51.i(i10, spannableStringBuilder);
-            i11.K(!rVar.b);
-            arrayList.add(i11);
+            return Boolean.valueOf(z13);
         }
-        i2.g.A(R.string.PrivacyBiometryBotsInfo, arrayList);
+        TLRPC.Chat chat = (TLRPC.Chat) obj6;
+        long j11 = -chat.id;
+        boolean isChannelAndNotMegaGroup = ChatObject.isChannelAndNotMegaGroup(chat);
+        canRemoveBotFromCommunity = ChatObject.canRemoveChatFromCommunity(chat, k0Var.f);
+        j3 = j11;
+        z11 = false;
+        z10 = isChannelAndNotMegaGroup;
+        if (canRemoveBotFromCommunity) {
+            n70 F = n70.F(k0Var.container, null, view);
+            F.c(R.drawable.msg_cancel, LocaleController.getString(R.string.CommunityMenuRemoveFromCommunity), new l(k0Var, z11, z10, j3, 1), true);
+            F.W(k0Var.v.d.W0(view, true));
+            F.Z();
+            z13 = true;
+        }
+        return Boolean.valueOf(z13);
     }
 
-    public static void V(u uVar, h51 h51Var) {
-        int i10;
-        v51 v51Var;
-        ArrayList arrayList = uVar.b;
-        if (h51Var.a != 4 || (i10 = h51Var.d) < 0 || i10 >= arrayList.size()) {
-            return;
+    @Override // org.telegram.messenger.Utilities.Callback5
+    public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
+        int i10 = this.a;
+        k0 k0Var = this.b;
+        j51 j51Var = (j51) obj;
+        View view = (View) obj2;
+        Integer num = (Integer) obj3;
+        switch (i10) {
+            case 0:
+                num.getClass();
+                ((Float) obj4).getClass();
+                ((Float) obj5).getClass();
+                k0Var.W(j51Var);
+                break;
+            case 1:
+            default:
+                num.intValue();
+                ((Float) obj4).floatValue();
+                ((Float) obj5).floatValue();
+                int i11 = k0.V;
+                k0Var.T(j51Var);
+                break;
+            case 2:
+                num.getClass();
+                ((Float) obj4).getClass();
+                ((Float) obj5).getClass();
+                int i12 = k0.V;
+                k0Var.W(j51Var);
+                break;
+            case 3:
+                num.getClass();
+                ((Float) obj4).getClass();
+                ((Float) obj5).getClass();
+                k0.y(k0Var, j51Var, view);
+                break;
         }
-        r rVar = (r) arrayList.get(h51Var.d);
-        rVar.b = !rVar.b;
-        Activity parentActivity = uVar.getParentActivity();
-        int i11 = uVar.currentAccount;
-        long j3 = rVar.a.id;
-        boolean z10 = rVar.b;
-        WeakHashMap weakHashMap = s.k;
-        SharedPreferences sharedPreferences = parentActivity.getSharedPreferences("2botbiometry_" + i11, 0);
-        SharedPreferences.Editor edit = sharedPreferences.edit();
-        edit.putBoolean(j3 + "_disabled", z10);
-        if (!z10 && sharedPreferences.getString(String.valueOf(j3), null) == null) {
-            edit.putString(String.valueOf(j3), "");
-        }
-        edit.apply();
-        d61 d61Var = uVar.a;
-        if (d61Var == null || (v51Var = d61Var.Y2) == null) {
-            return;
-        }
-        v51Var.N(true);
-    }
-
-    @Override // org.telegram.ui.ActionBar.n2
-    public final View createView(Context context) {
-        i2.g.x(false, this.actionBar);
-        this.actionBar.setAllowOverlayTitle(true);
-        this.actionBar.setTitle(LocaleController.getString(R.string.PrivacyBiometryBots));
-        this.actionBar.setActionBarMenuOnItemClick(new ah.t(this, 1));
-        FrameLayout frameLayout = new FrameLayout(context);
-        frameLayout.setBackgroundColor(j6.v0(j6.a7, this.resourceProvider));
-        d61 d61Var = new d61(this, new ci.u(this, 13), new t(this), new t(this));
-        this.a = d61Var;
-        frameLayout.addView(d61Var, x5.e(-1, -1, 119));
-        s.d(getParentActivity(), this.currentAccount, new bi.o1(this, 15));
-        this.fragmentView = frameLayout;
-        return frameLayout;
     }
 }

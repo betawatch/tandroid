@@ -4,7 +4,7 @@ import java.util.Iterator;
 import java.util.Map;
 import v7.m8;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public abstract class t extends db.u {
     public final v a;
@@ -39,11 +39,11 @@ public abstract class t extends db.u {
             }
             aVar.f();
             return b(a2);
-        } catch (IllegalAccessException e7) {
+        } catch (IllegalAccessException e) {
             m8 m8Var = ib.c.a;
-            throw new RuntimeException("Unexpected IllegalAccessException occurred (Gson 2.11.0). Certain ReflectionAccessFilter features require Java >= 9 to work correctly. If you are not using ReflectionAccessFilter, report this to the Gson maintainers.", e7);
-        } catch (IllegalStateException e10) {
-            throw new db.j(e10);
+            throw new RuntimeException("Unexpected IllegalAccessException occurred (Gson 2.11.0). Certain ReflectionAccessFilter features require Java >= 9 to work correctly. If you are not using ReflectionAccessFilter, report this to the Gson maintainers.", e);
+        } catch (IllegalStateException e7) {
+            throw new db.j(e7);
         }
     }
 
@@ -60,9 +60,9 @@ public abstract class t extends db.u {
                 ((s) it.next()).a(bVar, obj);
             }
             bVar.f();
-        } catch (IllegalAccessException e7) {
+        } catch (IllegalAccessException e) {
             m8 m8Var = ib.c.a;
-            throw new RuntimeException("Unexpected IllegalAccessException occurred (Gson 2.11.0). Certain ReflectionAccessFilter features require Java >= 9 to work correctly. If you are not using ReflectionAccessFilter, report this to the Gson maintainers.", e7);
+            throw new RuntimeException("Unexpected IllegalAccessException occurred (Gson 2.11.0). Certain ReflectionAccessFilter features require Java >= 9 to work correctly. If you are not using ReflectionAccessFilter, report this to the Gson maintainers.", e);
         }
     }
 }

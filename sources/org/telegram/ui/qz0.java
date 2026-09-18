@@ -1,22 +1,38 @@
 package org.telegram.ui;
 
 import android.content.Context;
+import android.graphics.Canvas;
+import android.view.accessibility.AccessibilityNodeInfo;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class qz0 extends org.telegram.ui.Components.oh0 {
-    public final /* synthetic */ ProfileActivity s1;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public qz0(ProfileActivity profileActivity, Context context, long j3, org.telegram.ui.ActionBar.k kVar, gz0 gz0Var, pz0 pz0Var, org.telegram.ui.Components.jh0 jh0Var, org.telegram.ui.Components.fh0 fh0Var) {
-        super(context, j3, kVar, gz0Var, pz0Var, jh0Var, fh0Var);
-        this.s1 = profileActivity;
+public final class qz0 extends o01 {
+    public qz0(Context context) {
+        super(context);
     }
 
-    @Override // org.telegram.ui.Components.oh0
-    public final void setCustomAvatarProgress(float f7) {
-        ProfileActivity profileActivity = this.s1;
-        profileActivity.n5 = f7;
-        profileActivity.B3();
+    @Override // android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        ai.l4 l4Var;
+        super.dispatchDraw(canvas);
+        org.telegram.ui.Components.o5 o5Var = this.e;
+        if (o5Var == null || (l4Var = o5Var.k) == null) {
+            return;
+        }
+        l4Var.startAnimation();
+    }
+
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        if (!getImageReceiver().hasNotThumb()) {
+            accessibilityNodeInfo.setVisibleToUser(false);
+            return;
+        }
+        accessibilityNodeInfo.setText(LocaleController.getString(R.string.AccDescrProfilePicture));
+        accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(16, LocaleController.getString(R.string.Open)));
+        accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(32, LocaleController.getString(R.string.AccDescrOpenInPhotoViewer)));
     }
 }

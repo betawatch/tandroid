@@ -1,126 +1,84 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Bitmap;
+import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
 import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.DispatchQueue;
-import org.telegram.messenger.Utilities;
+import android.widget.LinearLayout;
+import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class fa {
-    public DispatchQueue a;
-    public final int b;
-    public final View c;
-    public final di.r6 d;
-    public Bitmap[] e;
-    public Bitmap[] f;
-    public Bitmap[] g;
-    public Canvas[] h;
-    public Canvas[] i;
-    public Canvas[] j;
-    public boolean k;
-    public float m;
-    public boolean n;
-    public boolean o;
-    public int q;
-    public int r;
-    public int s;
-    public boolean t;
-    public float u;
-    public final Paint x;
-    public final org.telegram.ui.ActionBar.f6 y;
-    public boolean l = true;
-    public boolean p = true;
-    public ea v = new ea(this);
-    public final Paint w = new Paint(2);
+public final class fa extends LinearLayout {
+    public final qv0 a;
+    public Paint b;
+    public int c;
+    public final boolean d;
+    public final boolean e;
+    public final Rect f;
 
-    public fa(View view, di.r6 r6Var, org.telegram.ui.ActionBar.f6 f6Var) {
-        Paint paint = new Paint();
-        this.x = paint;
-        this.b = 1;
-        this.c = view;
-        this.d = r6Var;
-        this.y = f6Var;
-        paint.setColor(-16777216);
+    public fa(Context context, qv0 qv0Var) {
+        super(context);
+        this.c = 0;
+        this.d = true;
+        this.e = true;
+        this.f = new Rect();
+        this.a = qv0Var;
     }
 
-    public final void a() {
-        Bitmap[] bitmapArr = this.g;
-        if (bitmapArr == null) {
-            bitmapArr = new Bitmap[2];
-            this.g = bitmapArr;
-            this.h = new Canvas[2];
-        }
-        if (this.e == null) {
-            this.e = new Bitmap[2];
-            this.j = new Canvas[2];
-        }
-        this.v.a = true;
-        this.v = new ea(this);
-        for (int i10 = 0; i10 < 2; i10++) {
-            di.r6 r6Var = this.d;
-            int measuredHeight = r6Var.getMeasuredHeight();
-            int measuredWidth = r6Var.getMeasuredWidth();
-            int dp = AndroidUtilities.dp(200.0f) + AndroidUtilities.statusBarHeight;
-            this.s = dp;
-            if (i10 != 0) {
-                dp = measuredHeight;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        Canvas canvas2;
+        qv0 qv0Var;
+        if (!SharedConfig.chatBlurEnabled() || this.a == null || !this.e || this.c == 0) {
+            canvas2 = canvas;
+        } else {
+            if (this.b == null) {
+                this.b = new Paint();
             }
-            Bitmap bitmap = bitmapArr[i10];
-            if (bitmap == null || bitmap.getHeight() != dp || bitmapArr[i10].getWidth() != r6Var.getMeasuredWidth()) {
-                DispatchQueue dispatchQueue = this.a;
-                if (dispatchQueue != null) {
-                    dispatchQueue.cleanupQueue();
+            this.b.setColor(this.c);
+            this.f.set(0, 0, getMeasuredWidth(), getMeasuredHeight());
+            float f7 = 0.0f;
+            View view = this;
+            while (true) {
+                qv0Var = this.a;
+                if (view == qv0Var) {
+                    break;
                 }
-                Bitmap[] bitmapArr2 = this.e;
-                int i11 = (int) (measuredWidth / 15.0f);
-                Bitmap.Config config = Bitmap.Config.ARGB_8888;
-                bitmapArr2[i10] = Bitmap.createBitmap(i11, (int) (dp / 15.0f), config);
-                org.telegram.ui.ActionBar.f6 f6Var = this.y;
-                if (i10 == 1) {
-                    this.e[i10].eraseColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.d6, f6Var));
-                }
-                this.j[i10] = new Canvas(this.e[i10]);
-                if (i10 == 0) {
-                    measuredHeight = this.s;
-                }
-                this.g[i10] = Bitmap.createBitmap(i11, (int) (measuredHeight / 15.0f), config);
-                this.h[i10] = new Canvas(this.g[i10]);
-                this.h[i10].scale(this.g[i10].getWidth() / this.e[i10].getWidth(), this.g[i10].getHeight() / this.e[i10].getHeight());
-                this.j[i10].save();
-                this.j[i10].scale(0.06666667f, 0.06666667f, 0.0f, 0.0f);
-                View view = this.c;
-                Drawable background = view.getBackground();
-                if (background == null) {
-                    background = f6Var instanceof org.telegram.ui.ao ? ((org.telegram.ui.ao) f6Var).d() : org.telegram.ui.ActionBar.j6.s0();
-                }
-                view.setTag(67108867, Integer.valueOf(i10));
-                if (i10 == 0) {
-                    this.j[i10].translate(0.0f, -this.u);
-                    view.draw(this.j[i10]);
-                }
-                if (i10 == 1) {
-                    Rect bounds = background.getBounds();
-                    background.setBounds(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight());
-                    background.draw(this.j[i10]);
-                    background.setBounds(bounds);
-                    view.draw(this.j[i10]);
-                }
-                view.setTag(67108867, null);
-                this.j[i10].restore();
-                Utilities.stackBlurBitmap(this.e[i10], 15);
-                Paint paint = this.w;
-                paint.setAlpha(255);
-                if (i10 == 1) {
-                    this.g[i10].eraseColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.d6, f6Var));
-                }
-                this.h[i10].drawBitmap(this.e[i10], 0.0f, 0.0f, paint);
+                f7 += view.getY();
+                view = (View) view.getParent();
             }
+            canvas2 = canvas;
+            qv0Var.J(canvas2, f7, this.f, this.b, this.d);
+        }
+        super.dispatchDraw(canvas2);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        qv0 qv0Var;
+        if (SharedConfig.chatBlurEnabled() && (qv0Var = this.a) != null) {
+            qv0Var.T.add(this);
+        }
+        super.onAttachedToWindow();
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        qv0 qv0Var = this.a;
+        if (qv0Var != null) {
+            qv0Var.T.remove(this);
+        }
+        super.onDetachedFromWindow();
+    }
+
+    @Override // android.view.View
+    public void setBackgroundColor(int i10) {
+        if (!SharedConfig.chatBlurEnabled() || this.a == null) {
+            super.setBackgroundColor(i10);
+        } else {
+            this.c = i10;
         }
     }
 }

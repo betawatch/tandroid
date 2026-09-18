@@ -1,49 +1,42 @@
 package androidx.activity;
 
-import android.window.OnBackInvokedCallback;
-import bi.pb;
-import di.pc;
-import org.telegram.ui.LaunchActivity;
+import android.window.BackEvent;
+import android.window.OnBackAnimationCallback;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class r implements OnBackInvokedCallback {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class r implements OnBackAnimationCallback {
+    public final /* synthetic */ rd.l a;
+    public final /* synthetic */ rd.l b;
+    public final /* synthetic */ rd.a c;
+    public final /* synthetic */ rd.a d;
 
-    public /* synthetic */ r(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public r(rd.l lVar, rd.l lVar2, rd.a aVar, rd.a aVar2) {
+        this.a = lVar;
+        this.b = lVar2;
+        this.c = aVar;
+        this.d = aVar2;
+    }
+
+    @Override // android.window.OnBackAnimationCallback
+    public final void onBackCancelled() {
+        this.d.invoke();
     }
 
     @Override // android.window.OnBackInvokedCallback
     public final void onBackInvoked() {
-        switch (this.a) {
-            case 0:
-                rd.a onBackInvoked = (rd.a) this.b;
-                kotlin.jvm.internal.i.e(onBackInvoked, "$onBackInvoked");
-                onBackInvoked.invoke();
-                break;
-            case 1:
-                pb pbVar = (pb) this.b;
-                pbVar.getClass();
-                LaunchActivity launchActivity = LaunchActivity.G1;
-                if (launchActivity == null) {
-                    pbVar.onAttachedBackPressed();
-                    break;
-                } else {
-                    launchActivity.onBackPressed();
-                    break;
-                }
-            case 2:
-                ((pc) this.b).M();
-                break;
-            case 3:
-                ((g.s) this.b).t();
-                break;
-            default:
-                ((Runnable) this.b).run();
-                break;
-        }
+        this.c.invoke();
+    }
+
+    @Override // android.window.OnBackAnimationCallback
+    public final void onBackProgressed(BackEvent backEvent) {
+        kotlin.jvm.internal.i.e(backEvent, "backEvent");
+        this.b.invoke(new b(backEvent));
+    }
+
+    @Override // android.window.OnBackAnimationCallback
+    public final void onBackStarted(BackEvent backEvent) {
+        kotlin.jvm.internal.i.e(backEvent, "backEvent");
+        this.a.invoke(new b(backEvent));
     }
 }

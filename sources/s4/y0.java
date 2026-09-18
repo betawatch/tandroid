@@ -6,7 +6,7 @@ import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public abstract class y0 {
     public int a = -1;
@@ -56,7 +56,7 @@ public abstract class y0 {
         if (this.d && this.f == null && this.c != null && (a2 = a(this.a)) != null) {
             float f7 = a2.x;
             if (f7 != 0.0f || a2.y != 0.0f) {
-                recyclerView.t0((int) Math.signum(f7), (int) Math.signum(a2.y), null);
+                recyclerView.u0((int) Math.signum(f7), (int) Math.signum(a2.y), null);
             }
         }
         this.d = false;
@@ -64,7 +64,7 @@ public abstract class y0 {
         x0 x0Var = this.g;
         if (view != null) {
             this.b.getClass();
-            if (RecyclerView.S(view) == this.a) {
+            if (RecyclerView.T(view) == this.a) {
                 View view2 = this.f;
                 z0 z0Var = recyclerView.t0;
                 g(view2, x0Var);

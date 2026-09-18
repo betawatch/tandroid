@@ -2,15 +2,16 @@ package f5;
 
 import com.google.android.gms.internal.vision.e2;
 import java.nio.ByteBuffer;
-import w7.p6;
+import k2.c0;
+import w7.s6;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class o extends com.googlecode.mp4parser.c {
-    public static final /* synthetic */ mg.n n;
-    public static final /* synthetic */ mg.n r;
-    public static final /* synthetic */ mg.n s;
-    public static final /* synthetic */ mg.n v;
+    public static final /* synthetic */ c0 n;
+    public static final /* synthetic */ c0 r;
+    public static final /* synthetic */ c0 s;
+    public static final /* synthetic */ c0 v;
     public long e;
     public long[] f;
     public int h;
@@ -30,7 +31,7 @@ public final class o extends com.googlecode.mp4parser.c {
     public final void _parseDetails(ByteBuffer byteBuffer) {
         f(byteBuffer);
         this.e = e5.b.i(byteBuffer);
-        int a2 = p6.a(e5.b.i(byteBuffer));
+        int a2 = s6.a(e5.b.i(byteBuffer));
         this.h = a2;
         if (this.e == 0) {
             this.f = new long[a2];
@@ -60,7 +61,7 @@ public final class o extends com.googlecode.mp4parser.c {
     }
 
     public final String toString() {
-        com.google.firebase.messaging.s b10 = re.a.b(v, this, this);
+        com.google.firebase.messaging.t b10 = re.a.b(v, this, this);
         com.googlecode.mp4parser.g.a().getClass();
         com.googlecode.mp4parser.g.b(b10);
         StringBuilder sb2 = new StringBuilder("SampleSizeBox[sampleSize=");

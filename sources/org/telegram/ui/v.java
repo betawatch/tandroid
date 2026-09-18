@@ -2,15 +2,15 @@ package org.telegram.ui;
 
 import android.content.DialogInterface;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ i4 b;
+    public final /* synthetic */ h4 b;
 
-    public /* synthetic */ v(i4 i4Var, int i10) {
+    public /* synthetic */ v(h4 h4Var, int i10) {
         this.a = i10;
-        this.b = i4Var;
+        this.b = h4Var;
     }
 
     @Override // android.content.DialogInterface.OnDismissListener

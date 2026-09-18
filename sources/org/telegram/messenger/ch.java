@@ -1,12 +1,38 @@
 package org.telegram.messenger;
 
-import android.graphics.ImageDecoder;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class ch implements ImageDecoder.OnHeaderDecodedListener {
-    @Override // android.graphics.ImageDecoder.OnHeaderDecodedListener
-    public final void onHeaderDecoded(ImageDecoder imageDecoder, ImageDecoder.ImageInfo imageInfo, ImageDecoder.Source source) {
-        NotificationsController.lambda$loadRoundAvatar$47(imageDecoder, imageInfo, source);
+public final /* synthetic */ class ch implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ NotificationsController b;
+    public final /* synthetic */ ArrayList c;
+
+    public /* synthetic */ ch(NotificationsController notificationsController, ArrayList arrayList, int i10) {
+        this.a = i10;
+        this.b = notificationsController;
+        this.c = arrayList;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.lambda$removeDeletedHisoryFromNotifications$11(this.c);
+                break;
+            case 1:
+                this.b.lambda$processReadMessages$20(this.c);
+                break;
+            case 2:
+                this.b.lambda$forceShowPopupForReply$6(this.c);
+                break;
+            case 3:
+                this.b.lambda$removeDeletedMessagesFromNotifications$8(this.c);
+                break;
+            default:
+                this.b.lambda$processDialogsUpdateRead$28(this.c);
+                break;
+        }
     }
 }

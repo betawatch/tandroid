@@ -12,23 +12,23 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public abstract class n20 extends org.telegram.ui.ActionBar.f3 {
-    public n20(Context context, org.telegram.ui.ActionBar.n2 n2Var) {
+public abstract class n20 extends org.telegram.ui.ActionBar.g3 {
+    public n20(Context context, org.telegram.ui.ActionBar.o2 o2Var) {
         super(context, true);
         setApplyBottomPadding(false);
         setApplyTopPadding(false);
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
         setCustomView(linearLayout);
-        aj0 aj0Var = new aj0(context);
-        aj0Var.setAutoRepeat(true);
-        aj0Var.f(R.raw.utyan_gigagroup, 120, 120, null);
-        aj0Var.d();
-        linearLayout.addView(aj0Var, w7.x5.t(160, 160, 49, 17, 30, 17, 0));
+        bj0 bj0Var = new bj0(context);
+        bj0Var.setAutoRepeat(true);
+        bj0Var.f(R.raw.utyan_gigagroup, 120, 120, null);
+        bj0Var.d();
+        linearLayout.addView(bj0Var, w7.x5.t(160, 160, 49, 17, 30, 17, 0));
         TextView textView = new TextView(context);
-        org.telegram.messenger.vl.j(24.0f, 1, textView);
+        org.telegram.messenger.wl.j(24.0f, 1, textView);
         textView.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.j5, false));
         textView.setText(LocaleController.getString(R.string.GigagroupConvertTitle));
         linearLayout.addView(textView, w7.x5.t(-2, -2, 49, 17, 18, 17, 0));
@@ -36,7 +36,7 @@ public abstract class n20 extends org.telegram.ui.ActionBar.f3 {
         linearLayout2.setOrientation(1);
         linearLayout.addView(linearLayout2, w7.x5.t(-2, -2, 1, 0, 12, 0, 0));
         for (int i10 = 0; i10 < 3; i10++) {
-            LinearLayout f7 = org.telegram.messenger.vl.f(context, 0);
+            LinearLayout f7 = org.telegram.messenger.wl.f(context, 0);
             linearLayout2.addView(f7, w7.x5.t(-2, -2, LocaleController.isRTL ? 5 : 3, 0, 8, 0, 0));
             ImageView imageView = new ImageView(context);
             int i11 = org.telegram.ui.ActionBar.j6.r5;
@@ -64,7 +64,7 @@ public abstract class n20 extends org.telegram.ui.ActionBar.f3 {
         }
         m20 m20Var = new m20(context);
         View view = new View(context);
-        view.setBackground(org.telegram.ui.ActionBar.y5.f(new float[]{4.0f}, org.telegram.ui.ActionBar.j6.Oh));
+        view.setBackground(org.telegram.ui.ActionBar.z5.f(new float[]{4.0f}, org.telegram.ui.ActionBar.j6.Oh));
         m20Var.addView(view, w7.x5.d(-1, -1.0f, 0, 16.0f, 16.0f, 16.0f, 16.0f));
         TextView textView3 = new TextView(context);
         m20Var.a = textView3;
@@ -77,14 +77,14 @@ public abstract class n20 extends org.telegram.ui.ActionBar.f3 {
         m20Var.addView(textView3, w7.x5.e(-2, -2, 17));
         m20Var.setBackground(null);
         m20Var.setText(LocaleController.getString(R.string.GigagroupConvertProcessButton));
-        view.setOnClickListener(new bi.x(this, context, n2Var, 22));
+        view.setOnClickListener(new ai.d0(this, context, o2Var, 22));
         linearLayout.addView(m20Var, w7.x5.t(-1, 50, 51, 0, 29, 0, 0));
         TextView textView4 = new TextView(context);
         textView4.setTextSize(1, 14.0f);
         textView4.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.n5, false));
-        org.telegram.messenger.vl.k(R.string.GigagroupConvertCancelButton, textView4, 17);
+        org.telegram.messenger.wl.k(R.string.GigagroupConvertCancelButton, textView4, 17);
         linearLayout.addView(textView4, w7.x5.t(-2, 48, 49, 17, 0, 17, 16));
-        textView4.setOnClickListener(new g0(this, 20));
+        textView4.setOnClickListener(new f0(this, 20));
     }
 
     public abstract void m();

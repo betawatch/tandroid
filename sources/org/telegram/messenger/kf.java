@@ -1,44 +1,26 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class kf implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ MessagesStorage b;
-    public final /* synthetic */ long c;
+    public final /* synthetic */ boolean c;
 
-    public /* synthetic */ kf(int i10, long j3, MessagesStorage messagesStorage) {
+    public /* synthetic */ kf(MessagesStorage messagesStorage, boolean z10, int i10) {
         this.a = i10;
         this.b = messagesStorage;
-        this.c = j3;
+        this.c = z10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$deleteStoryPushMessage$39(this.c);
-                break;
-            case 1:
-                this.b.lambda$clearUserPhotos$92(this.c);
-                break;
-            case 2:
-                this.b.lambda$removeAllTopics$56(this.c);
-                break;
-            case 3:
-                this.b.lambda$deleteWallpaper$79(this.c);
-                break;
-            case 4:
-                this.b.lambda$deleteSavedDialog$55(this.c);
-                break;
-            case 5:
-                this.b.lambda$onDeleteQueryComplete$91(this.c);
-                break;
-            case 6:
-                this.b.lambda$removePendingTask$11(this.c);
+                this.b.lambda$getCachedPhoneBook$150(this.c);
                 break;
             default:
-                this.b.lambda$loadChannelAdmins$123(this.c);
+                this.b.lambda$cleanup$6(this.c);
                 break;
         }
     }

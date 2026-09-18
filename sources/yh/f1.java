@@ -1,41 +1,46 @@
 package yh;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class f1 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ h1 b;
-    public final /* synthetic */ boolean c;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-    public /* synthetic */ f1(h1 h1Var, boolean z10, int i10) {
-        this.a = i10;
-        this.b = h1Var;
-        this.c = z10;
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class f1 implements RequestDelegate {
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ a4 b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ long e;
+    public final /* synthetic */ Object f;
+
+    public /* synthetic */ f1(a4 a4Var, long j3, long j10, Utilities.Callback callback, long j11) {
+        this.b = a4Var;
+        this.c = j3;
+        this.d = j10;
+        this.f = callback;
+        this.e = j11;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                boolean z10 = this.c;
-                h1 h1Var = this.b;
-                if (!z10) {
-                    h1Var.G.setVisibility(8);
-                    break;
-                } else {
-                    h1Var.getClass();
-                    break;
-                }
+                AndroidUtilities.runOnUIThread(new p1(this.b, (org.telegram.ui.ActionBar.c2) this.f, tLObject, this.c, this.d, this.e, tL_error));
+                break;
             default:
-                boolean z11 = this.c;
-                h1 h1Var2 = this.b;
-                if (!z11) {
-                    h1Var2.v.setVisibility(8);
-                    break;
-                } else {
-                    h1Var2.getClass();
-                    break;
-                }
+                AndroidUtilities.runOnUIThread(new p1(this.b, tLObject, this.c, this.d, (Utilities.Callback) this.f, tL_error, this.e));
+                break;
         }
+    }
+
+    public /* synthetic */ f1(a4 a4Var, org.telegram.ui.ActionBar.c2 c2Var, long j3, long j10, long j11) {
+        this.b = a4Var;
+        this.f = c2Var;
+        this.c = j3;
+        this.d = j10;
+        this.e = j11;
     }
 }

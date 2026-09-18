@@ -1,15 +1,14 @@
 package lb;
 
-import com.google.android.gms.internal.vision.e2;
-import i2.g;
+import hg.k0;
 import j$.util.Objects;
 import java.io.Closeable;
 import java.io.EOFException;
 import java.io.Reader;
 import java.util.Arrays;
-import t7.u;
+import org.telegram.messenger.BuildConfig;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public class a implements Closeable {
     public final Reader a;
@@ -28,7 +27,7 @@ public class a implements Closeable {
     public int w = 1;
 
     static {
-        u.c = new u(12);
+        rb.a.b = new rb.a(12);
     }
 
     public a(Reader reader) {
@@ -218,7 +217,7 @@ public class a implements Closeable {
     public final IllegalStateException E(String str) {
         String str2 = x() == 9 ? "adapter-not-null-safe" : "unexpected-json-structure";
         StringBuilder v = a4.a.v("Expected ", str, " but was ");
-        v.append(g.E(x()));
+        v.append(k0.E(x()));
         v.append(m());
         v.append("\nSee ");
         v.append("https://github.com/google/gson/blob/main/Troubleshooting.md#".concat(str2));
@@ -452,7 +451,7 @@ public class a implements Closeable {
                     i10 = 6;
                 } else {
                     if (c11 == 'n' || c11 == 'N') {
-                        str = "null";
+                        str = BuildConfig.BETA_URL;
                         str2 = "NULL";
                         i10 = 7;
                     }
@@ -681,7 +680,7 @@ public class a implements Closeable {
                 case 8:
                     break;
                 default:
-                    throw new AssertionError(g.i(i12, "Unknown scope value: "));
+                    throw new AssertionError(k0.i(i12, "Unknown scope value: "));
             }
             i10++;
         }
@@ -729,9 +728,9 @@ public class a implements Closeable {
     }
 
     final String m() {
-        StringBuilder k10 = e2.k(" at line ", this.e + 1, " column ", (this.c - this.f) + 1, " path ");
-        k10.append(h());
-        return k10.toString();
+        StringBuilder m10 = k0.m(" at line ", this.e + 1, " column ", (this.c - this.f) + 1, " path ");
+        m10.append(h());
+        return m10.toString();
     }
 
     public boolean n() {
@@ -966,7 +965,7 @@ public class a implements Closeable {
             i10 = d();
         }
         if (i10 != 7) {
-            throw E("null");
+            throw E(BuildConfig.BETA_URL);
         }
         this.h = 0;
         int[] iArr = this.y;

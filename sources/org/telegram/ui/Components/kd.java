@@ -1,41 +1,58 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class kd implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ld b;
-    public final /* synthetic */ boolean c;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
+import androidx.mediarouter.app.MediaRouteButton;
+import java.lang.reflect.Field;
 
-    public /* synthetic */ kd(ld ldVar, boolean z10, int i10) {
-        this.a = i10;
-        this.b = ldVar;
-        this.c = z10;
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* loaded from: classes3.dex */
+public abstract class kd extends MediaRouteButton {
+    public boolean a;
+
+    public final void a() {
+        boolean b10 = b();
+        if (this.a != b10) {
+            this.a = b10;
+            c(b10);
+        }
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                boolean z10 = this.c;
-                ld ldVar = this.b;
-                if (!z10) {
-                    ldVar.Z0.setVisibility(8);
-                    break;
-                } else {
-                    ldVar.getClass();
-                    break;
-                }
-            default:
-                boolean z11 = this.c;
-                ld ldVar2 = this.b;
-                if (!z11) {
-                    ldVar2.V0.setVisibility(8);
-                    break;
-                } else {
-                    ldVar2.getClass();
-                    break;
-                }
+    public final boolean b() {
+        Field declaredField;
+        try {
+            declaredField = MediaRouteButton.class.getDeclaredField("mConnectionState");
+            declaredField.setAccessible(true);
+        } catch (Exception unused) {
         }
+        return ((Integer) declaredField.get(this)).intValue() > 0;
+    }
+
+    public abstract void c(boolean z10);
+
+    @Override // android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        a();
+    }
+
+    @Override // android.view.View
+    public final void invalidate() {
+        super.invalidate();
+        a();
+    }
+
+    @Override // androidx.mediarouter.app.MediaRouteButton, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        a();
+    }
+
+    @Override // androidx.mediarouter.app.MediaRouteButton, android.view.View
+    public final void onDraw(Canvas canvas) {
+        a();
+    }
+
+    @Override // android.view.View
+    public void setBackground(Drawable drawable) {
     }
 }

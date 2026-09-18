@@ -7,10 +7,10 @@ import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class m11 extends Drawable implements org.telegram.ui.ActionBar.i5 {
-    public final org.telegram.ui.Components.p6 a;
+public final class m11 extends Drawable implements org.telegram.ui.ActionBar.j5 {
+    public final org.telegram.ui.Components.m6 a;
     public final Paint b;
     public int c;
     public float d;
@@ -24,12 +24,12 @@ public final class m11 extends Drawable implements org.telegram.ui.ActionBar.i5 
         this.d = 1.0f;
         this.e = 1.0f;
         this.f = new org.telegram.ui.Cells.l0(this);
-        org.telegram.ui.Components.p6 p6Var = new org.telegram.ui.Components.p6(false, false, false, false);
-        this.a = p6Var;
-        p6Var.setCallback(new yr(1, this));
-        p6Var.q(str, true, true);
-        p6Var.t(AndroidUtilities.dp(11.0f));
-        p6Var.b = 17;
+        org.telegram.ui.Components.m6 m6Var = new org.telegram.ui.Components.m6(false, false, false, false);
+        this.a = m6Var;
+        m6Var.setCallback(new zr(1, this));
+        m6Var.q(str, true, true);
+        m6Var.t(AndroidUtilities.dp(11.0f));
+        m6Var.b = 17;
         paint.setColor(520093696);
     }
 
@@ -58,11 +58,11 @@ public final class m11 extends Drawable implements org.telegram.ui.ActionBar.i5 
         canvas.drawRoundRect(rectF, AndroidUtilities.dp(20.0f), AndroidUtilities.dp(20.0f), paint);
         paint.setAlpha(alpha);
         int i10 = this.c;
-        org.telegram.ui.Components.p6 p6Var = this.a;
-        p6Var.r(i10);
-        p6Var.w = (int) (f7 * 255.0f);
-        p6Var.setBounds((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
-        p6Var.draw(canvas);
+        org.telegram.ui.Components.m6 m6Var = this.a;
+        m6Var.r(i10);
+        m6Var.w = (int) (f7 * 255.0f);
+        m6Var.setBounds((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
+        m6Var.draw(canvas);
         canvas.restore();
     }
 

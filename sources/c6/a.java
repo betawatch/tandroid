@@ -10,7 +10,7 @@ import java.util.regex.Pattern;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class a extends o6.a {
     public static final Parcelable.Creator<a> CREATOR = new v(0);
@@ -47,9 +47,9 @@ public final class a extends o6.a {
         }
         try {
             this.x = new JSONObject(str6);
-        } catch (JSONException e7) {
+        } catch (JSONException e) {
             Locale locale = Locale.ROOT;
-            Log.w("AdBreakClipInfo", "Error creating AdBreakClipInfo: " + e7.getMessage());
+            Log.w("AdBreakClipInfo", "Error creating AdBreakClipInfo: " + e.getMessage());
             this.h = null;
             this.x = new JSONObject();
         }

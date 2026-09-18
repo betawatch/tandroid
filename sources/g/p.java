@@ -5,7 +5,7 @@ import android.content.IntentFilter;
 import android.util.SparseIntArray;
 import android.view.MenuItem;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public abstract class p {
     public Object a;
@@ -35,16 +35,16 @@ public abstract class p {
             return menuItem;
         }
         l0.a aVar = (l0.a) menuItem;
-        if (((a0.l) this.b) == null) {
-            this.b = new a0.l(0);
+        if (((a0.m) this.b) == null) {
+            this.b = new a0.m(0);
         }
-        MenuItem menuItem2 = (MenuItem) ((a0.l) this.b).get(aVar);
+        MenuItem menuItem2 = (MenuItem) ((a0.m) this.b).get(aVar);
         if (menuItem2 != null) {
             return menuItem2;
         }
-        l.s sVar = new l.s((Context) this.a, aVar);
-        ((a0.l) this.b).put(aVar, sVar);
-        return sVar;
+        l.r rVar = new l.r((Context) this.a, aVar);
+        ((a0.m) this.b).put(aVar, rVar);
+        return rVar;
     }
 
     public int g(int i10, int i11) {

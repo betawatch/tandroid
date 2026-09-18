@@ -21,7 +21,7 @@ import x7.m4;
 import x7.n6;
 import x7.y;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class c implements b {
     public final Context a;
@@ -95,8 +95,8 @@ public final class c implements b {
                 arrayList.add(new xb.a(m4Var.c, m4Var.d, m4Var.b, m4Var.a));
             }
             return arrayList;
-        } catch (RemoteException e7) {
-            throw new mb.a("Failed to run legacy image labeler.", e7);
+        } catch (RemoteException e) {
+            throw new mb.a("Failed to run legacy image labeler.", e);
         }
     }
 
@@ -126,11 +126,11 @@ public final class c implements b {
             Log.d("LegacyLabelDelegate", "Request ICA optional module download.");
             j.b(context);
             this.d = true;
-        } catch (RemoteException e7) {
-            throw new mb.a("Failed to create legacy image labeler.", e7);
-        } catch (y6.b e10) {
+        } catch (RemoteException e) {
+            throw new mb.a("Failed to create legacy image labeler.", e);
+        } catch (y6.b e7) {
             if (str.equals("com.google.android.gms.vision.dynamite")) {
-                throw new mb.a("Failed to load deprecated vision dynamite module.", e10);
+                throw new mb.a("Failed to load deprecated vision dynamite module.", e7);
             }
             if (this.d) {
                 return;
@@ -147,8 +147,8 @@ public final class c implements b {
         if (m0Var != null) {
             try {
                 m0Var.S0(m0Var.O0(), 2);
-            } catch (RemoteException e7) {
-                Log.e("LegacyLabelDelegate", "Failed to release legacy image labeler.", e7);
+            } catch (RemoteException e) {
+                Log.e("LegacyLabelDelegate", "Failed to release legacy image labeler.", e);
             }
             this.e = null;
         }

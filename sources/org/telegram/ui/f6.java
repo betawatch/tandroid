@@ -1,237 +1,158 @@
 package org.telegram.ui;
 
-import android.graphics.drawable.Drawable;
-import android.util.Pair;
-import android.view.View;
-import java.util.Comparator;
-import org.telegram.messenger.ContactsController;
-import org.telegram.messenger.DownloadController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.camera.Size;
-import org.telegram.tgnet.TLObject;
+import android.text.TextUtils;
+import android.util.LongSparseArray;
+import android.util.SparseArray;
+import java.util.ArrayList;
+import java.util.Collections;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class f6 implements Comparator {
+public final /* synthetic */ class f6 implements Runnable {
     public final /* synthetic */ int a;
+    public final /* synthetic */ a7 b;
+    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ ArrayList d;
+    public final /* synthetic */ ArrayList e;
+    public final /* synthetic */ zh.b f;
 
-    public /* synthetic */ f6(int i10) {
+    public /* synthetic */ f6(a7 a7Var, ArrayList arrayList, ArrayList arrayList2, ArrayList arrayList3, zh.b bVar, int i10) {
         this.a = i10;
+        this.b = a7Var;
+        this.c = arrayList;
+        this.d = arrayList2;
+        this.e = arrayList3;
+        this.f = bVar;
     }
 
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        int i10;
-        int i11;
-        int id2;
-        int id3;
+    @Override // java.lang.Runnable
+    public final void run() {
+        boolean z10;
         switch (this.a) {
             case 0:
-                return Long.compare(((u6) obj2).g, ((u6) obj).g);
-            case 1:
-                org.telegram.ui.Cells.r1 r1Var = (org.telegram.ui.Cells.r1) obj;
-                org.telegram.ui.Cells.r1 r1Var2 = (org.telegram.ui.Cells.r1) obj2;
-                float f7 = r1Var.e;
-                float f10 = r1Var2.e;
-                if (f7 <= f10) {
-                    if (f7 < f10 || (i10 = r1Var.d) > (i11 = r1Var2.d)) {
-                        return 1;
-                    }
-                    if (i10 >= i11) {
-                        return 0;
-                    }
-                }
-                return -1;
-            case 2:
-                return ((MessageObject) obj).getId() - ((MessageObject) obj2).getId();
-            case 3:
-                id2 = ((MessageObject) obj2).getId();
-                id3 = ((MessageObject) obj).getId();
-                break;
-            case 4:
-                return ((Integer) obj2).compareTo((Integer) obj);
-            case 5:
-                id2 = ((MessageObject) obj2).getId();
-                id3 = ((MessageObject) obj).getId();
-                break;
-            case 6:
-                TLObject tLObject = (TLObject) obj;
-                TLObject tLObject2 = (TLObject) obj2;
-                int j02 = vr.j0(tLObject);
-                int j03 = vr.j0(tLObject2);
-                if (j02 > j03) {
-                    return 1;
-                }
-                if (j02 < j03) {
-                    return -1;
-                }
-                if ((tLObject instanceof TLRPC.ChannelParticipant) && (tLObject2 instanceof TLRPC.ChannelParticipant)) {
-                    return (int) (MessageObject.getPeerId(((TLRPC.ChannelParticipant) tLObject).peer) - MessageObject.getPeerId(((TLRPC.ChannelParticipant) tLObject2).peer));
-                }
-                return 0;
-            case 7:
-                int j04 = vr.j0((TLObject) obj);
-                int j05 = vr.j0((TLObject) obj2);
-                if (j04 > j05) {
-                    return 1;
-                }
-                return j04 < j05 ? -1 : 0;
-            case 8:
-                id2 = ((org.telegram.ui.Components.o9) obj2).b;
-                id3 = ((org.telegram.ui.Components.o9) obj).b;
-                break;
-            case 9:
-                id2 = ((org.telegram.ui.Components.o9) obj2).b;
-                id3 = ((org.telegram.ui.Components.o9) obj).b;
-                break;
-            case 10:
-                return Long.compare(((org.telegram.ui.Components.dd) obj).c, ((org.telegram.ui.Components.dd) obj2).c);
-            case 11:
-                Size size = (Size) obj;
-                Size size2 = (Size) obj2;
-                float abs = Math.abs(1.0f - (Math.min(size.mHeight, size.mWidth) / Math.max(size.mHeight, size.mWidth)));
-                float abs2 = Math.abs(1.0f - (Math.min(size2.mHeight, size2.mWidth) / Math.max(size2.mHeight, size2.mWidth)));
-                if (abs < abs2) {
-                    return -1;
-                }
-                return abs > abs2 ? 1 : 0;
-            case 12:
-                ad.a aVar = (ad.a) obj;
-                ad.a aVar2 = (ad.a) obj2;
-                int compare = Integer.compare(aVar.b, aVar2.b);
-                return compare != 0 ? compare : Integer.compare(aVar2.d, aVar.d);
-            case 13:
-                id2 = ((Integer) obj2).intValue();
-                id3 = ((Integer) obj).intValue();
-                break;
-            case 14:
-                float f11 = ((org.telegram.ui.Components.mg0) obj).a;
-                float f12 = ((org.telegram.ui.Components.mg0) obj2).a;
-                if (f11 > f12) {
-                    return -1;
-                }
-                return f11 < f12 ? 1 : 0;
-            case 15:
-                return Float.compare(((org.telegram.ui.Components.il0) obj).a, ((org.telegram.ui.Components.il0) obj2).a);
-            case 16:
-                Pair pair = (Pair) obj;
-                Pair pair2 = (Pair) obj2;
-                if (((Float) pair.first).floatValue() > ((Float) pair2.first).floatValue()) {
-                    return 1;
-                }
-                return ((Float) pair2.first).floatValue() > ((Float) pair.first).floatValue() ? -1 : 0;
-            case 17:
-                Pair pair3 = (Pair) obj;
-                Pair pair4 = (Pair) obj2;
-                if (((Float) pair3.first).floatValue() > ((Float) pair4.first).floatValue()) {
-                    return 1;
-                }
-                return ((Float) pair4.first).floatValue() > ((Float) pair3.first).floatValue() ? -1 : 0;
-            case 18:
-                int i12 = ((org.telegram.ui.Components.vp0) obj).c;
-                int i13 = ((org.telegram.ui.Components.vp0) obj2).c;
-                if (i12 < i13) {
-                    return 1;
-                }
-                return i12 > i13 ? -1 : 0;
-            case 19:
-                id2 = ((org.telegram.ui.Components.vt0) obj2).c;
-                id3 = ((org.telegram.ui.Components.vt0) obj).c;
-                break;
-            case 20:
-                Pair pair5 = (Pair) obj;
-                Pair pair6 = (Pair) obj2;
-                if (((Float) pair5.first).floatValue() > ((Float) pair6.first).floatValue()) {
-                    return 1;
-                }
-                return ((Float) pair6.first).floatValue() > ((Float) pair5.first).floatValue() ? -1 : 0;
-            case 21:
-                DownloadController.Preset preset = (DownloadController.Preset) obj;
-                DownloadController.Preset preset2 = (DownloadController.Preset) obj2;
-                int typeToIndex = DownloadController.typeToIndex(4);
-                int typeToIndex2 = DownloadController.typeToIndex(8);
-                int i14 = 0;
-                boolean z10 = false;
-                boolean z11 = false;
-                while (true) {
-                    int[] iArr = preset.mask;
-                    if (i14 < iArr.length) {
-                        int i15 = iArr[i14];
-                        if ((i15 & 4) != 0) {
-                            z10 = true;
-                        }
-                        if ((i15 & 8) != 0) {
-                            z11 = true;
-                        }
-                        if (!z10 || !z11) {
-                            i14++;
-                        }
+                a7 a7Var = this.b;
+                ArrayList<Long> arrayList = this.c;
+                ArrayList arrayList2 = this.d;
+                ArrayList arrayList3 = this.e;
+                zh.b bVar = this.f;
+                ArrayList<TLRPC.User> arrayList4 = new ArrayList<>();
+                ArrayList<TLRPC.Chat> arrayList5 = new ArrayList<>();
+                if (!arrayList.isEmpty()) {
+                    try {
+                        a7Var.getMessagesStorage().getUsersInternal(arrayList, arrayList4);
+                    } catch (Exception e) {
+                        FileLog.e(e);
                     }
                 }
-                int i16 = 0;
-                boolean z12 = false;
-                boolean z13 = false;
-                while (true) {
-                    int[] iArr2 = preset2.mask;
-                    if (i16 < iArr2.length) {
-                        int i17 = iArr2[i16];
-                        if ((i17 & 4) != 0) {
-                            z12 = true;
-                        }
-                        if ((i17 & 8) != 0) {
-                            z13 = true;
-                        }
-                        if (!z12 || !z13) {
-                            i16++;
-                        }
+                if (!arrayList2.isEmpty()) {
+                    try {
+                        a7Var.getMessagesStorage().getChatsInternal(TextUtils.join(",", arrayList2), arrayList5);
+                    } catch (Exception e7) {
+                        FileLog.e(e7);
                     }
                 }
-                long j3 = (z10 ? preset.sizes[typeToIndex] : 0L) + (z11 ? preset.sizes[typeToIndex2] : 0L) + (preset.preloadStories ? 1L : 0L);
-                long j10 = (z12 ? preset2.sizes[typeToIndex] : 0L) + (z13 ? preset2.sizes[typeToIndex2] : 0L) + (preset2.preloadStories ? 1L : 0L);
-                if (j3 > j10) {
-                    return 1;
+                int i10 = 0;
+                while (i10 < arrayList3.size()) {
+                    if (((t6) arrayList3.get(i10)).c <= 0) {
+                        arrayList3.remove(i10);
+                        i10--;
+                    }
+                    i10++;
                 }
-                return j3 < j10 ? -1 : 0;
-            case 22:
-                return Long.compare(((vu) obj2).c, ((vu) obj).c);
-            case 23:
-                long j11 = UserConfig.getInstance(((Integer) obj).intValue()).loginTime;
-                long j12 = UserConfig.getInstance(((Integer) obj2).intValue()).loginTime;
-                if (j11 > j12) {
-                    return 1;
-                }
-                return j11 < j12 ? -1 : 0;
-            case 24:
-                int i18 = ((ContactsController.Contact) obj).imported;
-                int i19 = ((ContactsController.Contact) obj2).imported;
-                if (i18 > i19) {
-                    return -1;
-                }
-                return i18 < i19 ? 1 : 0;
-            case 25:
-                long j13 = UserConfig.getInstance(((Integer) obj).intValue()).loginTime;
-                long j14 = UserConfig.getInstance(((Integer) obj2).intValue()).loginTime;
-                if (j13 > j14) {
-                    return 1;
-                }
-                return j13 < j14 ? -1 : 0;
-            case 26:
-                long j15 = UserConfig.getInstance(((Integer) obj).intValue()).loginTime;
-                long j16 = UserConfig.getInstance(((Integer) obj2).intValue()).loginTime;
-                if (j15 > j16) {
-                    return 1;
-                }
-                return j15 < j16 ? -1 : 0;
-            case 27:
-                return ((String) obj).compareTo((String) obj2);
-            case 28:
-                Drawable[] drawableArr = PhotoViewer.T8;
-                return ((MessageObject) obj).getId() - ((MessageObject) obj2).getId();
+                Collections.sort(arrayList3, new a4.e(27));
+                AndroidUtilities.runOnUIThread(new f6(a7Var, arrayList4, arrayList5, arrayList3, bVar, 1));
+                break;
             default:
-                return (int) (((View) obj).getY() - ((View) obj2).getY());
+                a7 a7Var2 = this.b;
+                ArrayList<TLRPC.User> arrayList6 = this.c;
+                ArrayList<TLRPC.Chat> arrayList7 = this.d;
+                ArrayList arrayList8 = this.e;
+                zh.b bVar2 = this.f;
+                a7Var2.getMessagesController().putUsers(arrayList6, true);
+                a7Var2.getMessagesController().putChats(arrayList7, true);
+                boolean z11 = false;
+                t6 t6Var = null;
+                int i11 = 0;
+                while (i11 < arrayList8.size()) {
+                    t6 t6Var2 = (t6) arrayList8.get(i11);
+                    if (a7Var2.getMessagesController().getUserOrChat(t6Var2.a) == null) {
+                        t6Var2.a = Long.MAX_VALUE;
+                        if (t6Var != null) {
+                            SparseArray sparseArray = t6Var.d;
+                            int i12 = 0;
+                            while (true) {
+                                SparseArray sparseArray2 = t6Var2.d;
+                                if (i12 < sparseArray2.size()) {
+                                    int keyAt = sparseArray2.keyAt(i12);
+                                    u6 u6Var = (u6) sparseArray2.valueAt(i12);
+                                    u6 u6Var2 = (u6) sparseArray.get(keyAt, z11);
+                                    if (u6Var2 == null) {
+                                        u6Var2 = new u6();
+                                        sparseArray.put(keyAt, u6Var2);
+                                    }
+                                    u6Var.getClass();
+                                    t6 t6Var3 = t6Var;
+                                    u6Var2.a += u6Var.a;
+                                    t6Var3.c += u6Var.a;
+                                    u6Var2.b.addAll(u6Var.b);
+                                    i12++;
+                                    t6Var = t6Var3;
+                                    z11 = false;
+                                } else {
+                                    t6Var.b += t6Var2.b;
+                                    arrayList8.remove(i11);
+                                    i11--;
+                                    z10 = true;
+                                }
+                            }
+                        } else {
+                            t6Var = t6Var2;
+                            z10 = false;
+                        }
+                        if (z10) {
+                            Collections.sort(arrayList8, new a4.e(27));
+                        }
+                    }
+                    i11++;
+                    z11 = false;
+                }
+                bVar2.b = arrayList8;
+                LongSparseArray longSparseArray = bVar2.c;
+                longSparseArray.clear();
+                int size = arrayList8.size();
+                int i13 = 0;
+                while (i13 < size) {
+                    Object obj = arrayList8.get(i13);
+                    i13++;
+                    t6 t6Var4 = (t6) obj;
+                    longSparseArray.put(t6Var4.a, t6Var4);
+                }
+                if (!a7.l0) {
+                    a7Var2.c0 = bVar2;
+                    x6 x6Var = a7Var2.M;
+                    if (x6Var != null) {
+                        x6Var.setCacheModel(bVar2);
+                    }
+                    a7Var2.y0(true);
+                    a7Var2.w0();
+                    if (a7Var2.V != null && !a7Var2.K && System.currentTimeMillis() - a7Var2.Y > 120) {
+                        l6 l6Var = a7Var2.V;
+                        long j3 = a7Var2.G;
+                        boolean z12 = j3 > 0;
+                        long j10 = a7Var2.H;
+                        float f7 = 0.0f;
+                        float f10 = j10 <= 0 ? 0.0f : j3 / j10;
+                        if (a7Var2.I > 0 && j10 > 0) {
+                            f7 = (j10 - r11) / j10;
+                        }
+                        l6Var.b(f10, f7, z12);
+                        break;
+                    }
+                }
+                break;
         }
-        return id2 - id3;
     }
 }

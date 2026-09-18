@@ -8,13 +8,13 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.WeakHashMap;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
-public final class r1 extends androidx.fragment.app.r implements m {
+public final class r1 extends androidx.fragment.app.s implements m {
     public static final WeakHashMap l0 = new WeakHashMap();
     public final a5.a k0 = new a5.a(1, (byte) 0);
 
-    @Override // androidx.fragment.app.r
+    @Override // androidx.fragment.app.s
     public final void A() {
         this.U = true;
         a5.a aVar = this.k0;
@@ -25,7 +25,7 @@ public final class r1 extends androidx.fragment.app.r implements m {
         }
     }
 
-    @Override // androidx.fragment.app.r
+    @Override // androidx.fragment.app.s
     public final void F() {
         this.U = true;
         a5.a aVar = this.k0;
@@ -36,12 +36,12 @@ public final class r1 extends androidx.fragment.app.r implements m {
         }
     }
 
-    @Override // androidx.fragment.app.r
+    @Override // androidx.fragment.app.s
     public final void G(Bundle bundle) {
         this.k0.D(bundle);
     }
 
-    @Override // androidx.fragment.app.r
+    @Override // androidx.fragment.app.s
     public final void H() {
         this.U = true;
         a5.a aVar = this.k0;
@@ -52,7 +52,7 @@ public final class r1 extends androidx.fragment.app.r implements m {
         }
     }
 
-    @Override // androidx.fragment.app.r
+    @Override // androidx.fragment.app.s
     public final void I() {
         this.U = true;
         a5.a aVar = this.k0;
@@ -73,7 +73,7 @@ public final class r1 extends androidx.fragment.app.r implements m {
         return (l) cls.cast(((Map) this.k0.c).get(str));
     }
 
-    @Override // androidx.fragment.app.r
+    @Override // androidx.fragment.app.s
     public final void i(String str, FileDescriptor fileDescriptor, PrintWriter printWriter, String[] strArr) {
         super.i(str, fileDescriptor, printWriter, strArr);
         Iterator it = ((Map) this.k0.c).values().iterator();
@@ -82,7 +82,7 @@ public final class r1 extends androidx.fragment.app.r implements m {
         }
     }
 
-    @Override // androidx.fragment.app.r
+    @Override // androidx.fragment.app.s
     public final void x(int i10, int i11, Intent intent) {
         super.x(i10, i11, intent);
         Iterator it = ((Map) this.k0.c).values().iterator();
@@ -91,7 +91,7 @@ public final class r1 extends androidx.fragment.app.r implements m {
         }
     }
 
-    @Override // androidx.fragment.app.r
+    @Override // androidx.fragment.app.s
     public final void z(Bundle bundle) {
         super.z(bundle);
         this.k0.C(bundle);

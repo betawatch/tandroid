@@ -1,16 +1,17 @@
 package androidx.fragment.app;
 
+import ai.ba;
 import android.util.Log;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class d implements Animation.AnimationListener {
     public final /* synthetic */ ViewGroup a;
     public final /* synthetic */ e b;
 
-    public d(t0 t0Var, ViewGroup viewGroup, e eVar) {
+    public d(v0 v0Var, ViewGroup viewGroup, e eVar) {
         this.a = viewGroup;
         this.b = eVar;
     }
@@ -19,8 +20,8 @@ public final class d implements Animation.AnimationListener {
     public final void onAnimationEnd(Animation animation) {
         kotlin.jvm.internal.i.e(animation, "animation");
         ViewGroup viewGroup = this.a;
-        viewGroup.post(new a1.e(11, viewGroup, this.b));
-        if (i0.K(2)) {
+        viewGroup.post(new ba(4, viewGroup, this.b));
+        if (k0.K(2)) {
             Log.v("FragmentManager", "Animation from operation " + ((Object) null) + " has ended.");
         }
     }
@@ -33,7 +34,7 @@ public final class d implements Animation.AnimationListener {
     @Override // android.view.animation.Animation.AnimationListener
     public final void onAnimationStart(Animation animation) {
         kotlin.jvm.internal.i.e(animation, "animation");
-        if (i0.K(2)) {
+        if (k0.K(2)) {
             Log.v("FragmentManager", "Animation from operation " + ((Object) null) + " has reached onAnimationStart.");
         }
     }

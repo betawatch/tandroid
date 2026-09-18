@@ -1,101 +1,47 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class xi extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ co b;
+public final class xi implements Runnable {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ boolean d;
+    public final /* synthetic */ org.telegram.ui.Components.gk0 e;
+    public final /* synthetic */ float f;
+    public final /* synthetic */ float h;
+    public final /* synthetic */ zg.p0 n;
+    public final /* synthetic */ MessageObject r;
+    public final /* synthetic */ bo s;
 
-    public /* synthetic */ xi(co coVar, int i10) {
-        this.a = i10;
-        this.b = coVar;
+    public xi(bo boVar, boolean z10, boolean z11, int i10, boolean z12, org.telegram.ui.Components.gk0 gk0Var, float f7, float f10, zg.p0 p0Var, MessageObject messageObject) {
+        this.s = boVar;
+        this.a = z10;
+        this.b = z11;
+        this.c = i10;
+        this.d = z12;
+        this.e = gk0Var;
+        this.f = f7;
+        this.h = f10;
+        this.n = p0Var;
+        this.r = messageObject;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        uj ujVar;
-        switch (this.a) {
-            case 0:
-                co coVar = this.b;
-                gl glVar = coVar.b3;
-                if (glVar != null) {
-                    glVar.setIsMessageTransition(false);
-                    coVar.b3.h(true);
-                    coVar.b3.setVisibility(4);
-                    break;
+    @Override // java.lang.Runnable
+    public final void run() {
+        if (!this.a) {
+            bo boVar = this.s;
+            if (boVar.bc != null) {
+                boVar.bc = null;
+                if (this.b) {
+                    boVar.h8(new wi(this, this.c, this.d, this.e, this.f, this.h, this.n, 0));
+                } else {
+                    boVar.h8(new wh(4, this, this.r));
                 }
-                break;
-            case 1:
-                float dp = AndroidUtilities.dp(30.0f);
-                co coVar2 = this.b;
-                coVar2.A9 = dp;
-                coVar2.o9();
-                break;
-            case 2:
-                co coVar3 = this.b;
-                if (coVar3.fragmentView != null && (ujVar = coVar3.x0) != null) {
-                    ujVar.invalidate();
-                    coVar3.fragmentView.invalidate();
-                    break;
-                }
-                break;
-            case 3:
-                this.b.P.setVisibility(4);
-                break;
-            case 4:
-                AndroidUtilities.runOnUIThread(new dj(this, 3), 2000L);
-                break;
-            case 5:
-                co coVar4 = this.b;
-                if (animator.equals(coVar4.g3)) {
-                    coVar4.g3 = null;
-                    break;
-                }
-                break;
-            case 6:
-                co coVar5 = this.b;
-                if (animator.equals(coVar5.g3)) {
-                    coVar5.g3 = null;
-                    break;
-                }
-                break;
-            case 7:
-                co coVar6 = this.b;
-                if (animator.equals(coVar6.h3)) {
-                    coVar6.i3 = 1.0f;
-                    coVar6.lc();
-                    coVar6.h3 = null;
-                    break;
-                }
-                break;
-            case 8:
-                co coVar7 = this.b;
-                if (animator.equals(coVar7.h3)) {
-                    coVar7.i3 = 0.0f;
-                    coVar7.lc();
-                    coVar7.h3 = null;
-                    break;
-                }
-                break;
-            case 9:
-                this.b.T4 = null;
-                break;
-            case 10:
-                co coVar8 = this.b;
-                coVar8.Da = 1.0f;
-                coVar8.Y.setVisibility(4);
-                coVar8.O0.setVisibility(4);
-                coVar8.o9();
-                break;
-            default:
-                co coVar9 = this.b;
-                coVar9.Da = 0.0f;
-                coVar9.o9();
-                break;
+                boVar.A7(true);
+            }
         }
     }
 }

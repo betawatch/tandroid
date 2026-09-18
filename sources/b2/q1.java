@@ -5,9 +5,9 @@ import android.os.Parcelable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
-import v7.x7;
+import v7.y7;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public class q1 {
     public static final q1 F = new q1(new p1());
@@ -226,7 +226,7 @@ public class q1 {
         p1Var.B = bundle.getBoolean(a0, q1Var.B);
         p1Var.C = bundle.getBoolean(b0, q1Var.C);
         ArrayList parcelableArrayList = bundle.getParcelableArrayList(c0);
-        e9.a1 j3 = parcelableArrayList == null ? e9.a1.e : e2.d.j(new androidx.emoji2.text.w(8), parcelableArrayList);
+        e9.a1 j3 = parcelableArrayList == null ? e9.a1.e : e2.d.j(new ai.w1(15), parcelableArrayList);
         p1Var.D = new HashMap();
         for (int i11 = 0; i11 < j3.d; i11++) {
             m1 m1Var = (m1) j3.get(i11);
@@ -297,11 +297,11 @@ public class q1 {
             m1Var.getClass();
             Bundle bundle3 = new Bundle();
             bundle3.putBundle(m1.c, m1Var.a.c());
-            bundle3.putIntArray(m1.d, x7.f(m1Var.b));
+            bundle3.putIntArray(m1.d, y7.f(m1Var.b));
             arrayList.add(bundle3);
         }
         bundle.putParcelableArrayList(c0, arrayList);
-        bundle.putIntArray(d0, x7.f(this.E));
+        bundle.putIntArray(d0, y7.f(this.E));
         return bundle;
     }
 

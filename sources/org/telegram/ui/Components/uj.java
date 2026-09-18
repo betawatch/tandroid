@@ -8,9 +8,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ContactsController;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class uj extends kl0 {
+public final class uj extends ll0 {
     public final Context c;
     public ArrayList d = new ArrayList();
     public ArrayList e = new ArrayList();
@@ -23,7 +23,7 @@ public final class uj extends kl0 {
         this.c = context;
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.ll0
     public final boolean D(s4.c1 c1Var) {
         return c1Var.f == 0;
     }
@@ -77,11 +77,11 @@ public final class uj extends kl0 {
                 xjVar.a(user, (CharSequence) this.e.get(i10 - 1), new rj(1, user), z10);
             }
             boolean containsKey = this.n.w.containsKey(oj.a(E));
-            mp mpVar = xjVar.d;
-            if (mpVar.getVisibility() != 0) {
-                mpVar.setVisibility(0);
+            np npVar = xjVar.d;
+            if (npVar.getVisibility() != 0) {
+                npVar.setVisibility(0);
             }
-            mpVar.a(containsKey, false);
+            npVar.a(containsKey, false);
         }
     }
 
@@ -99,6 +99,6 @@ public final class uj extends kl0 {
             xjVar.setLayoutParams(new s4.p0(-1, AndroidUtilities.dp(56.0f)));
             xjVar.setTag(-33024);
         }
-        return new vk0(xjVar);
+        return new wk0(xjVar);
     }
 }

@@ -9,10 +9,11 @@ import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import k2.c0;
 import t7.u;
 import w7.l;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class c extends l {
     public final v a = new v();
@@ -24,10 +25,10 @@ public final class c extends l {
         b eVar;
         long j3;
         b0 b0Var = this.c;
-        if (b0Var == null || aVar.v != b0Var.e()) {
-            b0 b0Var2 = new b0(aVar.h);
+        if (b0Var == null || aVar.r != b0Var.e()) {
+            b0 b0Var2 = new b0(aVar.e);
             this.c = b0Var2;
-            b0Var2.a(aVar.h - aVar.v);
+            b0Var2.a(aVar.e - aVar.r);
         }
         byte[] array = byteBuffer.array();
         int limit = byteBuffer.limit();
@@ -68,7 +69,7 @@ public final class c extends l {
                         for (int i15 = 0; i15 < x12; i15++) {
                             vVar.x();
                             vVar.z();
-                            arrayList3.add(new na.d());
+                            arrayList3.add(new u());
                         }
                         arrayList2 = arrayList3;
                     }
@@ -80,7 +81,7 @@ public final class c extends l {
                     vVar.x();
                     vVar.x();
                 }
-                arrayList.add(new l.d(arrayList2));
+                arrayList.add(new c0(arrayList2));
             }
             eVar = new f(arrayList);
         } else if (i12 == 5) {
@@ -102,7 +103,7 @@ public final class c extends l {
                     for (int i16 = 0; i16 < x14; i16++) {
                         vVar.x();
                         b0Var3.b(!z17 ? a.d(i10, vVar) : -9223372036854775807L);
-                        arrayList4.add(new u(21));
+                        arrayList4.add(new rb.a(21));
                     }
                     list = arrayList4;
                 }

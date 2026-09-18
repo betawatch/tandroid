@@ -16,9 +16,9 @@ import org.telegram.messenger.beta.R;
 import r0.i0;
 import w7.v6;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
-public abstract class u extends androidx.activity.n {
+public abstract class u extends androidx.activity.m {
     public s d;
     public final t e;
 
@@ -53,7 +53,7 @@ public abstract class u extends androidx.activity.n {
         c10.a();
     }
 
-    @Override // androidx.activity.n, android.app.Dialog
+    @Override // androidx.activity.m, android.app.Dialog
     public final void addContentView(View view, ViewGroup.LayoutParams layoutParams) {
         s sVar = (s) c();
         sVar.k();
@@ -112,12 +112,12 @@ public abstract class u extends androidx.activity.n {
     public final void invalidateOptionsMenu() {
         s sVar = (s) c();
         if (sVar.n != null) {
-            sVar.q().getClass();
-            sVar.r(0);
+            sVar.p().getClass();
+            sVar.q(0);
         }
     }
 
-    @Override // androidx.activity.n, android.app.Dialog
+    @Override // androidx.activity.m, android.app.Dialog
     public void onCreate(Bundle bundle) {
         s sVar = (s) c();
         LayoutInflater from = LayoutInflater.from(sVar.e);
@@ -130,18 +130,18 @@ public abstract class u extends androidx.activity.n {
         c().a();
     }
 
-    @Override // androidx.activity.n, android.app.Dialog
+    @Override // androidx.activity.m, android.app.Dialog
     public final void onStop() {
         bc.d dVar;
         super.onStop();
-        b0 q6 = ((s) c()).q();
-        if (q6 == null || (dVar = q6.s) == null) {
+        b0 p5 = ((s) c()).p();
+        if (p5 == null || (dVar = p5.s) == null) {
             return;
         }
         dVar.a();
     }
 
-    @Override // androidx.activity.n, android.app.Dialog
+    @Override // androidx.activity.m, android.app.Dialog
     public final void setContentView(int i10) {
         s sVar = (s) c();
         sVar.k();
@@ -184,7 +184,7 @@ public abstract class u extends androidx.activity.n {
         }
     }
 
-    @Override // androidx.activity.n, android.app.Dialog
+    @Override // androidx.activity.m, android.app.Dialog
     public final void setContentView(View view) {
         s sVar = (s) c();
         sVar.k();
@@ -194,7 +194,7 @@ public abstract class u extends androidx.activity.n {
         sVar.h.a(sVar.f.getCallback());
     }
 
-    @Override // androidx.activity.n, android.app.Dialog
+    @Override // androidx.activity.m, android.app.Dialog
     public final void setContentView(View view, ViewGroup.LayoutParams layoutParams) {
         s sVar = (s) c();
         sVar.k();

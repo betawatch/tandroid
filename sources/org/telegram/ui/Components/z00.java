@@ -10,46 +10,46 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class z00 extends FrameLayout {
-    public final q6 a;
-    public final q6 b;
+    public final n6 a;
+    public final n6 b;
 
     public z00(Context context) {
         super(context);
-        q6 q6Var = new q6(context, true, true, false);
-        this.a = q6Var;
-        q6Var.setTextSize(AndroidUtilities.dp(15.0f));
-        q6Var.setTypeface(AndroidUtilities.bold());
+        n6 n6Var = new n6(context, true, true, false);
+        this.a = n6Var;
+        n6Var.setTextSize(AndroidUtilities.dp(15.0f));
+        n6Var.setTypeface(AndroidUtilities.bold());
         int i10 = org.telegram.ui.ActionBar.j6.L6;
-        q6Var.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, i10, false));
-        q6Var.setGravity(LocaleController.isRTL ? 5 : 3);
-        addView(q6Var, w7.x5.d(-1, 20.0f, (LocaleController.isRTL ? 5 : 3) | 80, 21.0f, 15.0f, 21.0f, 2.0f));
-        q6 q6Var2 = new q6(context, true, true, true);
-        this.b = q6Var2;
-        q6Var2.b(0.45f, 250L, pr.h);
-        q6Var2.setTextSize(AndroidUtilities.dp(15.0f));
-        q6Var2.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, i10, false));
-        q6Var2.setGravity(LocaleController.isRTL ? 3 : 5);
-        addView(q6Var2, w7.x5.d(-2, 20.0f, (LocaleController.isRTL ? 3 : 5) | 80, 21.0f, 15.0f, 21.0f, 2.0f));
+        n6Var.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, i10, false));
+        n6Var.setGravity(LocaleController.isRTL ? 5 : 3);
+        addView(n6Var, w7.x5.d(-1, 20.0f, (LocaleController.isRTL ? 5 : 3) | 80, 21.0f, 15.0f, 21.0f, 2.0f));
+        n6 n6Var2 = new n6(context, true, true, true);
+        this.b = n6Var2;
+        n6Var2.b(0.45f, 250L, qr.h);
+        n6Var2.setTextSize(AndroidUtilities.dp(15.0f));
+        n6Var2.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, i10, false));
+        n6Var2.setGravity(LocaleController.isRTL ? 3 : 5);
+        addView(n6Var2, w7.x5.d(-2, 20.0f, (LocaleController.isRTL ? 3 : 5) | 80, 21.0f, 15.0f, 21.0f, 2.0f));
         WeakHashMap weakHashMap = r0.i0.a;
         new r0.w(R.id.tag_accessibility_heading, Boolean.class, 0, 28, 2).d(this, Boolean.TRUE);
     }
 
     public final void a(String str, Runnable runnable) {
         boolean z10 = !LocaleController.isRTL;
-        q6 q6Var = this.b;
-        q6Var.c(str, z10, true);
-        q6Var.setOnClickListener(new v6(1, runnable));
+        n6 n6Var = this.b;
+        n6Var.c(str, z10, true);
+        n6Var.setOnClickListener(new s6(1, runnable));
     }
 
     public final void b(String str, boolean z10) {
-        q6 q6Var = this.a;
+        n6 n6Var = this.a;
         if (z10) {
-            q6Var.a();
+            n6Var.a();
         }
-        q6Var.c(str, z10 && !LocaleController.isRTL, true);
+        n6Var.c(str, z10 && !LocaleController.isRTL, true);
     }
 
     @Override // android.view.View

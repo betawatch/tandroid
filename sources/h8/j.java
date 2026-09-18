@@ -12,11 +12,11 @@ import android.widget.TextView;
 import androidx.mediarouter.app.a0;
 import java.util.ArrayList;
 import java.util.LinkedList;
-import ji.u4;
+import k2.u;
 import n6.q;
 import v7.j8;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class j {
     public aa.a a;
@@ -24,8 +24,8 @@ public final class j {
     public LinkedList c;
     public final d e;
     public final Context f;
-    public u4 g;
-    public final u4 d = new u4(this, 28);
+    public u g;
+    public final u d = new u(this, 28);
     public final ArrayList h = new ArrayList();
 
     public j(d dVar, Context context) {
@@ -93,17 +93,17 @@ public final class j {
                 if (X0 == null) {
                     return;
                 }
-                this.g.C(new aa.a(this.e, X0));
+                this.g.b0(new aa.a(this.e, X0));
                 int size = arrayList.size();
                 int i10 = 0;
                 while (i10 < size) {
                     Object obj = arrayList.get(i10);
                     i10++;
-                    this.a.u((f) obj);
+                    this.a.p((f) obj);
                 }
                 arrayList.clear();
-            } catch (RemoteException e7) {
-                throw new androidx.car.app.j(e7);
+            } catch (RemoteException e) {
+                throw new androidx.car.app.j(e);
             } catch (k6.f unused) {
             }
         }

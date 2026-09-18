@@ -1,84 +1,141 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Rect;
+import android.graphics.Bitmap;
+import android.graphics.RecordingCanvas;
+import android.graphics.RenderEffect;
+import android.graphics.RenderNode;
+import android.graphics.Shader;
+import android.os.Build;
 import android.view.View;
-import android.widget.LinearLayout;
-import org.telegram.messenger.SharedConfig;
+import java.util.ArrayList;
+import javax.microedition.khronos.egl.EGLContext;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class ha extends LinearLayout {
-    public final ov0 a;
-    public Paint b;
-    public int c;
-    public final boolean d;
-    public final boolean e;
-    public final Rect f;
+public final class ha {
+    public int a;
+    public final View b;
+    public final ArrayList c;
+    public final ArrayList d;
+    public final ArrayList e;
+    public final Object f;
+    public EGLContext g;
+    public final Object h;
+    public int i;
+    public ci.ac j;
+    public Object k;
+    public Object l;
+    public na m;
+    public final ma n;
+    public Bitmap o;
+    public int p;
 
-    public ha(Context context, ov0 ov0Var) {
-        super(context);
-        this.c = 0;
-        this.d = true;
-        this.e = true;
-        this.f = new Rect();
-        this.a = ov0Var;
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        Canvas canvas2;
-        ov0 ov0Var;
-        if (!SharedConfig.chatBlurEnabled() || this.a == null || !this.e || this.c == 0) {
-            canvas2 = canvas;
-        } else {
-            if (this.b == null) {
-                this.b = new Paint();
-            }
-            this.b.setColor(this.c);
-            this.f.set(0, 0, getMeasuredWidth(), getMeasuredHeight());
-            float f7 = 0.0f;
-            View view = this;
-            while (true) {
-                ov0Var = this.a;
-                if (view == ov0Var) {
+    public ha(View view) {
+        ArrayList arrayList = new ArrayList();
+        this.c = arrayList;
+        this.d = new ArrayList();
+        this.e = new ArrayList();
+        this.f = new Object();
+        this.h = new Object();
+        this.n = new ma(0, new ng(this, 14));
+        this.p = 0;
+        this.b = view;
+        if (view.isAttachedToWindow()) {
+            arrayList.clear();
+            for (View view2 = view; view2 != null; view2 = (View) view2.getParent()) {
+                arrayList.add(0, view2);
+                if (!(view2.getParent() instanceof View)) {
                     break;
                 }
-                f7 += view.getY();
-                view = (View) view.getParent();
             }
-            canvas2 = canvas;
-            ov0Var.J(canvas2, f7, this.f, this.b, this.d);
         }
-        super.dispatchDraw(canvas2);
+        view.addOnAttachStateChangeListener(new ai.u2(this, 5));
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        ov0 ov0Var;
-        if (SharedConfig.chatBlurEnabled() && (ov0Var = this.a) != null) {
-            ov0Var.T.add(this);
+    public final void a(EGLContext eGLContext) {
+        synchronized (this.f) {
+            try {
+                if (this.g == null) {
+                    this.g = eGLContext;
+                }
+            } catch (Throwable th2) {
+                throw th2;
+            }
         }
-        super.onAttachedToWindow();
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        ov0 ov0Var = this.a;
-        if (ov0Var != null) {
-            ov0Var.T.remove(this);
+    public final Bitmap b() {
+        Bitmap bitmap;
+        na naVar = this.m;
+        if (naVar == null) {
+            return this.o;
         }
-        super.onDetachedFromWindow();
+        synchronized (naVar.n) {
+            try {
+                bitmap = !naVar.q ? null : naVar.p;
+            } finally {
+            }
+        }
+        return bitmap == null ? this.o : bitmap;
     }
 
-    @Override // android.view.View
-    public void setBackgroundColor(int i10) {
-        if (!SharedConfig.chatBlurEnabled() || this.a == null) {
-            super.setBackgroundColor(i10);
-        } else {
-            this.c = i10;
+    public final boolean c() {
+        return this.l != null;
+    }
+
+    public final void d() {
+        ArrayList arrayList = this.d;
+        int size = arrayList.size();
+        int i10 = 0;
+        int i11 = 0;
+        while (i11 < size) {
+            Object obj = arrayList.get(i11);
+            i11++;
+            ((la) obj).b.invalidate();
         }
+        ArrayList arrayList2 = this.e;
+        int size2 = arrayList2.size();
+        while (i10 < size2) {
+            Object obj2 = arrayList2.get(i10);
+            i10++;
+            ((Runnable) obj2).run();
+        }
+    }
+
+    public final void e() {
+        na naVar = this.m;
+        if (naVar != null) {
+            synchronized (naVar.n) {
+                naVar.q = false;
+            }
+        }
+    }
+
+    public final void f(Bitmap bitmap, boolean z10) {
+        StringBuilder sb2 = new StringBuilder("");
+        int i10 = this.p;
+        this.p = i10 + 1;
+        sb2.append(i10);
+        this.o = this.n.b(bitmap, sb2.toString(), 0, 0, z10);
+    }
+
+    public final void g(ci.ac acVar, Object obj) {
+        this.j = acVar;
+        this.k = obj;
+        this.i = -14737633;
+        if (obj == null || Build.VERSION.SDK_INT < 31) {
+            this.l = null;
+            return;
+        }
+        RenderNode renderNode = (RenderNode) obj;
+        RenderNode renderNode2 = new RenderNode("blurRenderNode");
+        renderNode2.setRenderEffect(RenderEffect.createBlurEffect(AndroidUtilities.dp(35.0f), AndroidUtilities.dp(35.0f), Shader.TileMode.CLAMP));
+        renderNode2.setPosition(0, 0, renderNode.getWidth(), renderNode.getHeight());
+        RecordingCanvas beginRecording = renderNode2.beginRecording();
+        beginRecording.drawColor(-14737633);
+        beginRecording.drawRenderNode(renderNode);
+        renderNode2.endRecording();
+        this.l = renderNode2;
     }
 }

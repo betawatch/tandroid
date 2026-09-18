@@ -8,7 +8,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class o0 extends l {
     public static final b2.k0 s;
@@ -16,7 +16,7 @@ public final class o0 extends l {
     public final ArrayList l;
     public final b2.k1[] m;
     public final ArrayList n;
-    public final qb.b o;
+    public final ob.a o;
     public int p;
     public long[][] q;
     public b5 r;
@@ -32,9 +32,9 @@ public final class o0 extends l {
     }
 
     public o0(a... aVarArr) {
-        qb.b bVar = new qb.b(23);
+        ob.a aVar = new ob.a(23);
         this.k = aVarArr;
-        this.o = bVar;
+        this.o = aVar;
         this.n = new ArrayList(Arrays.asList(aVarArr));
         this.p = -1;
         this.l = new ArrayList(aVarArr.length);

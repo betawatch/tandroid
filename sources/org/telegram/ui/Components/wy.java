@@ -3,9 +3,9 @@ package org.telegram.ui.Components;
 import android.content.Context;
 import org.telegram.messenger.LiteMode;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class wy extends vw0 {
+public final class wy extends xw0 {
     public final /* synthetic */ xy A3;
     public final /* synthetic */ int z3;
 
@@ -16,29 +16,29 @@ public final class wy extends vw0 {
         this.z3 = i11;
     }
 
-    @Override // org.telegram.ui.Components.vw0
-    public final void D1(int i10) {
-        xw xwVar;
-        jw jwVar;
-        super.D1(i10);
+    @Override // org.telegram.ui.Components.xw0
+    public final boolean B1() {
+        return LiteMode.isEnabled(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS);
+    }
+
+    @Override // org.telegram.ui.Components.xw0
+    public final void F1(int i10) {
+        ww wwVar;
+        nx nxVar;
+        super.F1(i10);
         xy xyVar = this.A3;
         kz kzVar = xyVar.G;
         wy wyVar = xyVar.r;
         boolean z10 = wyVar.getSelectedCategory() == null;
         int i11 = kz.O2;
-        kzVar.O(z10);
+        kzVar.M(z10);
         int i12 = this.z3;
-        if (i12 == 1 && (jwVar = kzVar.I) != null) {
-            jwVar.n(wyVar.getSelectedCategory() == null);
-        } else if (i12 == 0 && (xwVar = kzVar.B0) != null) {
-            xwVar.o0 = wyVar.getSelectedCategory() == null;
-            xwVar.invalidate();
+        if (i12 == 1 && (nxVar = kzVar.I) != null) {
+            nxVar.n(wyVar.getSelectedCategory() == null);
+        } else if (i12 == 0 && (wwVar = kzVar.B0) != null) {
+            wwVar.o0 = wyVar.getSelectedCategory() == null;
+            wwVar.invalidate();
         }
         xyVar.g(false);
-    }
-
-    @Override // org.telegram.ui.Components.vw0
-    public final boolean z1() {
-        return LiteMode.isEnabled(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS);
     }
 }

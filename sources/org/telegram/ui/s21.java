@@ -5,7 +5,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SvgHelper;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class s21 implements Runnable {
     public final /* synthetic */ int a;
@@ -29,11 +29,11 @@ public final /* synthetic */ class s21 implements Runnable {
             case 1:
                 g31 g31Var = this.b;
                 g31Var.d0(0, g31Var.J, true);
-                org.telegram.ui.Components.xi0 animatedDrawable = g31Var.F.getAnimatedDrawable();
+                org.telegram.ui.Components.yi0 animatedDrawable = g31Var.F.getAnimatedDrawable();
                 if (g31Var.I == null && animatedDrawable != null) {
                     g31Var.I = Bitmap.createBitmap(animatedDrawable.b, animatedDrawable.c, Bitmap.Config.ARGB_8888);
                     animatedDrawable.b();
-                    animatedDrawable.E0 = 33;
+                    animatedDrawable.C0 = 33;
                     animatedDrawable.a(g31Var.I);
                     animatedDrawable.c();
                     break;
@@ -42,12 +42,12 @@ public final /* synthetic */ class s21 implements Runnable {
             case 2:
                 int i10 = R.raw.default_pattern;
                 g31 g31Var2 = this.b;
-                AndroidUtilities.runOnUIThread(new rx0(20, g31Var2, SvgHelper.getBitmap(i10, g31Var2.w.getWidth(), g31Var2.w.getHeight(), -16777216)));
+                AndroidUtilities.runOnUIThread(new ky0(14, g31Var2, SvgHelper.getBitmap(i10, g31Var2.w.getWidth(), g31Var2.w.getHeight(), -16777216)));
                 break;
             case 3:
                 g31 g31Var3 = this.b;
                 o0.a aVar = g31Var3.a;
-                aVar.b = g31Var3.J.b(((org.telegram.ui.ActionBar.n2) ((g31) aVar.c)).currentAccount, g31Var3.K ? 1 : 0);
+                aVar.b = g31Var3.J.b(((org.telegram.ui.ActionBar.o2) ((g31) aVar.c)).currentAccount, g31Var3.K ? 1 : 0);
                 break;
             case 4:
                 g31.X(this.b);

@@ -9,9 +9,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class fj extends FrameLayout implements org.telegram.ui.ActionBar.z5 {
+public final class fj extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
     public final org.telegram.ui.ActionBar.f6 a;
     public final TextView b;
     public final TextView c;
@@ -24,9 +24,9 @@ public final class fj extends FrameLayout implements org.telegram.ui.ActionBar.z
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
         addView(linearLayout, w7.x5.q(-1, -2, 17));
-        x9 x9Var = new x9(context);
-        x9Var.setImageDrawable(new xi0(R.raw.utyan_empty, AndroidUtilities.dp(120.0f), AndroidUtilities.dp(120.0f)));
-        linearLayout.addView(x9Var, w7.x5.t(120, 120, 17, 0, 0, 0, 0));
+        u9 u9Var = new u9(context);
+        u9Var.setImageDrawable(new yi0(R.raw.utyan_empty, AndroidUtilities.dp(120.0f), AndroidUtilities.dp(120.0f)));
+        linearLayout.addView(u9Var, w7.x5.t(120, 120, 17, 0, 0, 0, 0));
         TextView textView = new TextView(context);
         this.b = textView;
         textView.setTextSize(1, 20.0f);
@@ -37,11 +37,11 @@ public final class fj extends FrameLayout implements org.telegram.ui.ActionBar.z
         h.setTextSize(1, 14.0f);
         h.setGravity(17);
         linearLayout.addView(h, w7.x5.t(-1, -2, 17, 32, 0, 32, 0));
-        d();
+        e();
     }
 
-    @Override // org.telegram.ui.ActionBar.z5
-    public final void d() {
+    @Override // org.telegram.ui.ActionBar.a6
+    public final void e() {
         int i10 = org.telegram.ui.ActionBar.j6.G6;
         org.telegram.ui.ActionBar.f6 f6Var = this.a;
         this.b.setTextColor(org.telegram.ui.ActionBar.j6.v0(i10, f6Var));

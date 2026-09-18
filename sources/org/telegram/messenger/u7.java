@@ -1,68 +1,28 @@
 package org.telegram.messenger;
 
-import java.util.List;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class u7 implements RequestDelegate {
+public final /* synthetic */ class u7 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ BaseController b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
+    public final /* synthetic */ MediaDataController b;
+    public final /* synthetic */ ArrayList c;
 
-    public /* synthetic */ u7(BaseController baseController, Object obj, Object obj2, int i10) {
+    public /* synthetic */ u7(MediaDataController mediaDataController, ArrayList arrayList, int i10) {
         this.a = i10;
-        this.b = baseController;
-        this.c = obj;
-        this.d = obj2;
+        this.b = mediaDataController;
+        this.c = arrayList;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                ((MediaDataController) this.b).lambda$addRecentSticker$21(this.c, (TLRPC.TL_messages_faveSticker) this.d, tLObject, tL_error);
-                break;
-            case 1:
-                ((MediaDataController) this.b).lambda$addRecentSticker$22(this.c, (TLRPC.TL_messages_saveRecentSticker) this.d, tLObject, tL_error);
-                break;
-            case 2:
-                ((MessagesController) this.b).lambda$createChat$258((org.telegram.ui.ActionBar.n2) this.c, (TLRPC.TL_messages_createChat) this.d, tLObject, tL_error);
-                break;
-            case 3:
-                ((MessagesController) this.b).lambda$createChat$261((org.telegram.ui.ActionBar.n2) this.c, (TLRPC.TL_channels_createChannel) this.d, tLObject, tL_error);
-                break;
-            case 4:
-                ((MessagesController) this.b).lambda$saveGif$146(this.c, (TLRPC.TL_messages_saveGif) this.d, tLObject, tL_error);
-                break;
-            case 5:
-                ((MessagesController) this.b).lambda$unpinAllMessages$129((TLRPC.Chat) this.c, (TLRPC.User) this.d, tLObject, tL_error);
-                break;
-            case 6:
-                ((MessagesController) this.b).lambda$saveRecentSticker$147(this.c, (TLRPC.TL_messages_saveRecentSticker) this.d, tLObject, tL_error);
-                break;
-            case 7:
-                ((MessagesController) this.b).lambda$toggleChatJoinToSend$280((Runnable) this.c, (Runnable) this.d, tLObject, tL_error);
-                break;
-            case 8:
-                ((MessagesController) this.b).lambda$loadChannelParticipants$149((Long) this.c, (Utilities.Callback) this.d, tLObject, tL_error);
-                break;
-            case 9:
-                ((MessagesController) this.b).lambda$updateChatAbout$290((TLRPC.ChatFull) this.c, (String) this.d, tLObject, tL_error);
-                break;
-            case 10:
-                ((SendMessagesHelper) this.b).lambda$performSendDelayedMessage$58((SendMessagesHelper.DelayedMessage) this.c, (String) this.d, tLObject, tL_error);
-                break;
-            case 11:
-                ((SendMessagesHelper) this.b).lambda$sendNotificationCallback$29((String) this.c, (List) this.d, tLObject, tL_error);
+                this.b.lambda$loadRepliesOfDraftReplies$0(this.c);
                 break;
             default:
-                ((SendMessagesHelper) this.b).lambda$editMessage$21((org.telegram.ui.ActionBar.n2) this.c, (TLRPC.TL_messages_editMessage) this.d, tLObject, tL_error);
+                this.b.lambda$broadcastPinnedMessage$168(this.c);
                 break;
         }
     }

@@ -14,22 +14,22 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class g20 extends LinearLayout {
-    public final di.d a;
-    public final di.d b;
-    public final di.d c;
+    public final ci.d a;
+    public final ci.d b;
+    public final ci.d c;
     public final long d;
 
     public g20(Context context, int i10) {
         super(context);
-        TLRPC.TL_emojiList a2 = h9.a(i10);
+        TLRPC.TL_emojiList a2 = e9.a(i10);
         setOrientation(1);
-        x9 x9Var = new x9(context);
-        x9Var.setImageDrawable(new xi0(R.raw.utyan_gallery, AndroidUtilities.dp(110.0f), AndroidUtilities.dp(110.0f)));
+        u9 u9Var = new u9(context);
+        u9Var.setImageDrawable(new yi0(R.raw.utyan_gallery, AndroidUtilities.dp(110.0f), AndroidUtilities.dp(110.0f)));
         if (!AndroidUtilities.isTablet()) {
-            addView(x9Var, w7.x5.q(110, 110, 49));
+            addView(u9Var, w7.x5.q(110, 110, 49));
         }
         TextView g10 = org.telegram.messenger.w1.g(context, 1, 20.0f);
         com.google.android.gms.internal.vision.e2.p(org.telegram.ui.ActionBar.j6.G6, null, false, g10, 1);
@@ -43,20 +43,20 @@ public final class g20 extends LinearLayout {
         textView.setMaxWidth(AndroidUtilities.dp(260.0f));
         textView.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
         addView(textView, w7.x5.t(-2, -2, 49, 0, 0, 0, 14));
-        di.d dVar = new di.d(context, null, true);
+        ci.d dVar = new ci.d(context, null, true);
         this.a = dVar;
         dVar.e();
         dVar.g(LocaleController.getString(R.string.GalleryAccessAllowAccessButton), false, true);
         addView(dVar, w7.x5.q(-2, 44, 49));
-        di.d dVar2 = new di.d(context, null, false);
+        ci.d dVar2 = new ci.d(context, null, false);
         this.b = dVar2;
         dVar2.e();
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("c");
-        spannableStringBuilder.setSpan(new nq(R.drawable.outline_attach_camera_24, 0), 0, 1, 33);
+        spannableStringBuilder.setSpan(new oq(R.drawable.outline_attach_camera_24, 0), 0, 1, 33);
         spannableStringBuilder.append((CharSequence) "  ").append((CharSequence) LocaleController.getString(R.string.GalleryAccessAllowAccessOpenCamera));
         dVar2.g(spannableStringBuilder, false, true);
         addView(dVar2, w7.x5.t(-2, 44, 49, 0, 8, 0, 0));
-        di.d dVar3 = new di.d(context, null, false);
+        ci.d dVar3 = new ci.d(context, null, false);
         this.c = dVar3;
         dVar3.e();
         dVar3.setVisibility(8);
@@ -67,7 +67,7 @@ public final class g20 extends LinearLayout {
         } else {
             long longValue = a2.document_id.get(0).longValue();
             this.d = longValue;
-            spannableStringBuilder2.setSpan(new z5(longValue, (Paint.FontMetricsInt) null), 0, 1, 33);
+            spannableStringBuilder2.setSpan(new x5(longValue, (Paint.FontMetricsInt) null), 0, 1, 33);
             spannableStringBuilder2.append((CharSequence) "  ");
         }
         spannableStringBuilder2.append((CharSequence) LocaleController.getString(R.string.UseEmoji));
@@ -79,11 +79,11 @@ public final class g20 extends LinearLayout {
     public final void onMeasure(int i10, int i11) {
         int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_31);
         int makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(44.0f), TLObject.FLAG_30);
-        di.d dVar = this.a;
+        ci.d dVar = this.a;
         dVar.setUseWrapContent(true);
-        di.d dVar2 = this.b;
+        ci.d dVar2 = this.b;
         dVar2.setUseWrapContent(true);
-        di.d dVar3 = this.c;
+        ci.d dVar3 = this.c;
         dVar3.setUseWrapContent(true);
         dVar.measure(makeMeasureSpec, makeMeasureSpec2);
         dVar2.measure(makeMeasureSpec, makeMeasureSpec2);

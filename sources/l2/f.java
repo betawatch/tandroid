@@ -13,13 +13,13 @@ import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class f implements y2.o {
     public static final Pattern a = Pattern.compile("(.+?)(Z|((\\+|-|−)(\\d\\d)(:?(\\d\\d))?))");
 
     @Override // y2.o
-    public final Object f2(Uri uri, g2.k kVar) {
+    public final Object n2(Uri uri, g2.k kVar) {
         String readLine = new BufferedReader(new InputStreamReader(kVar, StandardCharsets.UTF_8)).readLine();
         try {
             Matcher matcher = a.matcher(readLine);
@@ -37,8 +37,8 @@ public final class f implements y2.o {
                 time -= (((parseLong * 60) + (TextUtils.isEmpty(group2) ? 0L : Long.parseLong(group2))) * 60000) * j3;
             }
             return Long.valueOf(time);
-        } catch (ParseException e7) {
-            throw s0.b(null, e7);
+        } catch (ParseException e) {
+            throw s0.b(null, e);
         }
     }
 }

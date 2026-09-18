@@ -1,41 +1,32 @@
 package ph;
 
-import android.content.Context;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
 import org.telegram.messenger.AndroidUtilities;
-import w7.x5;
+import org.telegram.ui.web.b1;
+import org.telegram.ui.web.u0;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public abstract class c extends FrameLayout {
-    public final LinearLayout a;
-    public float b;
-    public final Rect c;
-    public final Rect d;
-    public final Paint e;
+public final class c {
+    public final b1 a;
+    public b c = b.a;
+    public final u0 d = new u0(this, 13);
+    public final long b = (long) ((AndroidUtilities.getAnimatorDurationScale() * 250.0f) * 1.1f);
 
-    public c(Context context) {
-        super(context);
-        this.c = new Rect();
-        this.d = new Rect();
-        this.e = new Paint(1);
-        setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
-        LinearLayout linearLayout = new LinearLayout(context);
-        this.a = linearLayout;
-        linearLayout.setOrientation(0);
-        addView(linearLayout, x5.c(-1.0f, -1));
+    public c(b1 b1Var) {
+        this.a = b1Var;
     }
 
-    public void setLensVisibility(float f7) {
-        this.b = f7;
-        int dp = AndroidUtilities.dp(f7 * 7.0f);
-        Rect rect = this.c;
-        Rect rect2 = this.d;
-        rect2.set(rect);
-        int i10 = -dp;
-        rect2.inset(i10, i10);
+    public final void a(b bVar, boolean z10) {
+        if (this.c != bVar) {
+            u0 u0Var = this.d;
+            AndroidUtilities.cancelRunOnUIThread(u0Var);
+            this.c = bVar;
+            if (z10) {
+                this.a.run(bVar);
+            }
+            if (bVar == b.b || bVar == b.c) {
+                AndroidUtilities.runOnUIThread(u0Var, this.b);
+            }
+        }
     }
 }

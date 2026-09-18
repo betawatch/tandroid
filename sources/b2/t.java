@@ -2,14 +2,14 @@ package b2;
 
 import java.util.List;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class t implements z0 {
-    public final m4.j1 a;
+    public final m4.k1 a;
     public final z0 b;
 
-    public t(m4.j1 j1Var, z0 z0Var) {
-        this.a = j1Var;
+    public t(m4.k1 k1Var, z0 z0Var) {
+        this.a = k1Var;
         this.b = z0Var;
     }
 
@@ -182,8 +182,8 @@ public final class t implements z0 {
     }
 
     @Override // b2.z0
-    public final void onCues(d2.c cVar) {
-        this.b.onCues(cVar);
+    public final void onCues(d2.d dVar) {
+        this.b.onCues(dVar);
     }
 
     @Override // b2.z0

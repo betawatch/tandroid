@@ -6,7 +6,7 @@ import android.util.Log;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public abstract class z7 {
     public static long a;
@@ -29,12 +29,12 @@ public abstract class z7 {
                 b = Trace.class.getMethod("isTagEnabled", Long.TYPE);
             }
             return ((Boolean) b.invoke(null, Long.valueOf(a))).booleanValue();
-        } catch (Exception e7) {
-            if (!(e7 instanceof InvocationTargetException)) {
-                Log.v("Trace", "Unable to call isTagEnabled via reflection", e7);
+        } catch (Exception e) {
+            if (!(e instanceof InvocationTargetException)) {
+                Log.v("Trace", "Unable to call isTagEnabled via reflection", e);
                 return false;
             }
-            Throwable cause = e7.getCause();
+            Throwable cause = e.getCause();
             if (cause instanceof RuntimeException) {
                 throw ((RuntimeException) cause);
             }

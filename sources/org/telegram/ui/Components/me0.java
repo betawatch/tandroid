@@ -14,7 +14,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class me0 {
     public final /* synthetic */ pe0 a;
@@ -117,21 +117,21 @@ public final class me0 {
                 if (userStatus == null || userStatus.expires == 0) {
                     str = null;
                 } else {
-                    i11 = ((org.telegram.ui.ActionBar.f3) pe0Var).currentAccount;
+                    i11 = ((org.telegram.ui.ActionBar.g3) pe0Var).currentAccount;
                     str = LocaleController.formatUserStatus(i11, tL_userContact_old2);
                 }
                 z10 = true;
             }
-            i9 i9Var = new i9((org.telegram.ui.ActionBar.f6) null);
-            i9Var.u(AndroidUtilities.dp(30.0f));
-            i12 = ((org.telegram.ui.ActionBar.f3) pe0Var).currentAccount;
-            i9Var.m(i12, tL_userContact_old2);
-            x9 x9Var = new x9(context);
-            x9Var.setRoundRadius(AndroidUtilities.dp(40.0f));
-            x9Var.e(tL_userContact_old2, i9Var);
-            oe0Var.addView(x9Var, w7.x5.t(80, 80, 49, 0, 32, 0, 0));
+            f9 f9Var = new f9((org.telegram.ui.ActionBar.f6) null);
+            f9Var.u(AndroidUtilities.dp(30.0f));
+            i12 = ((org.telegram.ui.ActionBar.g3) pe0Var).currentAccount;
+            f9Var.m(i12, tL_userContact_old2);
+            u9 u9Var = new u9(context);
+            u9Var.setRoundRadius(AndroidUtilities.dp(40.0f));
+            u9Var.e(tL_userContact_old2, f9Var);
+            oe0Var.addView(u9Var, w7.x5.t(80, 80, 49, 0, 32, 0, 0));
             TextView textView3 = new TextView(context);
-            org.telegram.messenger.vl.j(17.0f, 1, textView3);
+            org.telegram.messenger.wl.j(17.0f, 1, textView3);
             textView3.setTextColor(pe0Var.getThemedColor(org.telegram.ui.ActionBar.j6.j5));
             textView3.setSingleLine(true);
             TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;

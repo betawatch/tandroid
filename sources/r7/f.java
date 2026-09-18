@@ -4,9 +4,9 @@ import android.location.Location;
 import android.os.Parcel;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.tasks.TaskCompletionSource;
-import v7.f5;
+import v7.g5;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class f extends b8.b {
     public final /* synthetic */ int b;
@@ -35,7 +35,7 @@ public final class f extends b8.b {
                     Status status = (Status) d.a(parcel, Status.CREATOR);
                     Location location = (Location) d.a(parcel, Location.CREATOR);
                     d.b(parcel);
-                    f5.a(status, location, this.c);
+                    g5.a(status, location, this.c);
                     break;
                 }
                 break;
@@ -46,7 +46,7 @@ public final class f extends b8.b {
                     Status status2 = gVar.a;
                     g8.f fVar = new g8.f();
                     fVar.a = gVar;
-                    f5.a(status2, fVar, this.c);
+                    g5.a(status2, fVar, this.c);
                     break;
                 }
                 break;

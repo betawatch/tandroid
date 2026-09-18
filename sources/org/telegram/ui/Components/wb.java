@@ -1,16 +1,86 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
-/* loaded from: classes3.dex */
-public final class wb extends yb implements vb {
-    public d90 d;
+import android.content.Context;
+import android.graphics.Typeface;
+import android.text.TextUtils;
+import android.widget.ImageView;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.tgnet.TLRPC;
 
-    @Override // org.telegram.ui.Components.yb
-    public void setTextColor(int i10) {
-        super.setTextColor(i10);
-        d90 d90Var = this.d;
-        if (d90Var != null) {
-            d90Var.setTextColor(i10);
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* loaded from: classes3.dex */
+public class wb extends lb {
+    public final bj0 a;
+    public TextView b;
+    public int c;
+
+    public wb(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context, f6Var);
+        bj0 bj0Var = new bj0(context);
+        this.a = bj0Var;
+        bj0Var.setScaleType(ImageView.ScaleType.CENTER);
+        addView(bj0Var, w7.x5.h(56.0f, 48.0f, 8388627));
+        vb vbVar = new vb(context, 0, null);
+        vbVar.setDisablePaddingsOffset(true);
+        this.b = vbVar;
+        NotificationCenter.listenEmojiLoading(vbVar);
+        this.b.setSingleLine();
+        this.b.setTypeface(Typeface.SANS_SERIF);
+        this.b.setTextSize(1, 15.0f);
+        this.b.setEllipsize(TextUtils.TruncateAt.END);
+        this.b.setPadding(0, AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f));
+        addView(this.b, w7.x5.i(-2.0f, -2.0f, 8388627, 56.0f, 0.0f, 16.0f, 0.0f));
+        this.b.setLinkTextColor(getThemedColor(org.telegram.ui.ActionBar.j6.Gi));
+        setTextColor(getThemedColor(org.telegram.ui.ActionBar.j6.Hi));
+        setBackground(getThemedColor(org.telegram.ui.ActionBar.j6.Fi));
+    }
+
+    public final void c(int i10, int i11, int i12, String... strArr) {
+        bj0 bj0Var = this.a;
+        bj0Var.f(i10, i11, i12, null);
+        for (String str : strArr) {
+            bj0Var.h(this.c, str);
         }
+    }
+
+    public final void d(int i10, String... strArr) {
+        c(i10, 32, 32, strArr);
+    }
+
+    public final void e(TLRPC.Document document, String... strArr) {
+        bj0 bj0Var = this.a;
+        bj0Var.setAutoRepeat(true);
+        bj0Var.g(36, 36, document);
+        for (String str : strArr) {
+            bj0Var.h(this.c, str);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.sb
+    public CharSequence getAccessibilityText() {
+        return this.b.getText();
+    }
+
+    @Override // org.telegram.ui.Components.sb
+    public final void onShow() {
+        super.onShow();
+        this.a.d();
+    }
+
+    public void setIconPaddingBottom(int i10) {
+        this.a.setLayoutParams(w7.x5.i(56.0f, 48 - i10, 8388627, 0.0f, 0.0f, 0.0f, i10));
+    }
+
+    public void setTextColor(int i10) {
+        this.c = i10;
+        this.b.setTextColor(i10);
+    }
+
+    public wb(int i10, int i11, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+        this(context, f6Var);
+        setBackground(i10);
+        setTextColor(i11);
     }
 }

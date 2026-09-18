@@ -4,7 +4,7 @@ import n4.y;
 import u2.a1;
 import u2.b1;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class f implements b1 {
     public final h a;
@@ -20,7 +20,7 @@ public final class f implements b1 {
         this.c = i10;
     }
 
-    public final void a() {
+    public final void b() {
         if (this.d) {
             return;
         }
@@ -28,35 +28,35 @@ public final class f implements b1 {
         a5.a aVar = hVar.h;
         int[] iArr = hVar.b;
         int i10 = this.c;
-        aVar.j(iArr[i10], hVar.c[i10], 0, null, hVar.J);
+        aVar.k(iArr[i10], hVar.c[i10], 0, null, hVar.J);
         this.d = true;
     }
 
     @Override // u2.b1
     public final boolean e() {
         h hVar = this.e;
-        return !hVar.z() && this.b.x(hVar.O);
+        return !hVar.y() && this.b.x(hVar.O);
     }
 
     @Override // u2.b1
-    public final int f(y yVar, h2.g gVar, int i10) {
-        h hVar = this.e;
-        if (hVar.z()) {
+    public final int f(y yVar, h2.h hVar, int i10) {
+        h hVar2 = this.e;
+        if (hVar2.y()) {
             return -3;
         }
-        a aVar = hVar.L;
+        a aVar = hVar2.L;
         a1 a1Var = this.b;
         if (aVar != null && aVar.d(this.c + 1) <= a1Var.t()) {
             return -3;
         }
-        a();
-        return a1Var.C(yVar, gVar, i10, hVar.O);
+        b();
+        return a1Var.C(yVar, hVar, i10, hVar2.O);
     }
 
     @Override // u2.b1
-    public final int m(long j3) {
+    public final int j(long j3) {
         h hVar = this.e;
-        if (hVar.z()) {
+        if (hVar.y()) {
             return 0;
         }
         boolean z10 = hVar.O;
@@ -68,12 +68,12 @@ public final class f implements b1 {
         }
         a1Var.H(v);
         if (v > 0) {
-            a();
+            b();
         }
         return v;
     }
 
     @Override // u2.b1
-    public final void b() {
+    public final void a() {
     }
 }

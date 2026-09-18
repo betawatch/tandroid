@@ -2,7 +2,7 @@ package j4;
 
 import com.google.android.gms.internal.vision.e2;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class w implements g0 {
     public final i a;
@@ -41,7 +41,7 @@ public final class w implements g0 {
                     if (this.j != -1) {
                         e2.a.n("PesReader", "Unexpected start indicator: expected " + this.j + " more bytes");
                     }
-                    iVar.f(vVar.c == 0);
+                    iVar.e(vVar.c == 0);
                 }
             }
             this.c = 1;
@@ -54,7 +54,7 @@ public final class w implements g0 {
                 a4.h hVar = this.b;
                 if (i16 != 1) {
                     if (i16 == i13) {
-                        if (b(vVar, hVar.b, Math.min(10, this.i)) && b(vVar, null, this.i)) {
+                        if (d(vVar, hVar.b, Math.min(10, this.i)) && d(vVar, null, this.i)) {
                             hVar.q(0);
                             this.l = -9223372036854775807L;
                             if (this.f) {
@@ -74,7 +74,7 @@ public final class w implements g0 {
                                 this.l = this.e.b(i17);
                             }
                             i15 |= this.k ? 4 : 0;
-                            iVar.g(i15, this.l);
+                            iVar.f(i15, this.l);
                             this.c = 3;
                             this.d = 0;
                         }
@@ -89,19 +89,19 @@ public final class w implements g0 {
                             a2 -= i19;
                             vVar.I(vVar.b + a2);
                         }
-                        iVar.b(vVar);
+                        iVar.a(vVar);
                         int i20 = this.j;
                         if (i20 != i12) {
                             int i21 = i20 - a2;
                             this.j = i21;
                             if (i21 == 0) {
-                                iVar.f(false);
+                                iVar.e(false);
                                 this.c = 1;
                                 this.d = 0;
                             }
                         }
                     }
-                } else if (b(vVar, hVar.b, 9)) {
+                } else if (d(vVar, hVar.b, 9)) {
                     this.c = e() ? 2 : 0;
                     this.d = 0;
                 }
@@ -113,7 +113,21 @@ public final class w implements g0 {
         }
     }
 
-    public final boolean b(e2.v vVar, byte[] bArr, int i10) {
+    @Override // j4.g0
+    public final void b(e2.b0 b0Var, c3.q qVar, f0 f0Var) {
+        this.e = b0Var;
+        this.a.d(qVar, f0Var);
+    }
+
+    @Override // j4.g0
+    public final void c() {
+        this.c = 0;
+        this.d = 0;
+        this.h = false;
+        this.a.c();
+    }
+
+    public final boolean d(e2.v vVar, byte[] bArr, int i10) {
         int min = Math.min(vVar.a(), i10 - this.d);
         if (min <= 0) {
             return true;
@@ -128,26 +142,12 @@ public final class w implements g0 {
         return i11 == i10;
     }
 
-    @Override // j4.g0
-    public final void c(e2.b0 b0Var, c3.q qVar, f0 f0Var) {
-        this.e = b0Var;
-        this.a.e(qVar, f0Var);
-    }
-
-    @Override // j4.g0
-    public final void d() {
-        this.c = 0;
-        this.d = 0;
-        this.h = false;
-        this.a.d();
-    }
-
     public final boolean e() {
         a4.h hVar = this.b;
         hVar.q(0);
         int i10 = hVar.i(24);
         if (i10 != 1) {
-            e2.n(i10, "Unexpected start code prefix: ", "PesReader");
+            e2.m(i10, "Unexpected start code prefix: ", "PesReader");
             this.j = -1;
             return false;
         }

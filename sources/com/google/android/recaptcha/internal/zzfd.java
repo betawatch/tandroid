@@ -9,7 +9,7 @@ import v7.t7;
 import zd.d2;
 import zd.e0;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 final class zzfd extends j implements p {
     int zza;
@@ -55,12 +55,12 @@ final class zzfd extends j implements p {
                 }
             }
             return i.a;
-        } catch (zzcg e7) {
-            throw e7;
-        } catch (d2 e10) {
-            throw new zzcg(zzce.zzb, zzcd.zzb, e10.getMessage(), null, 8, null);
-        } catch (Exception e11) {
-            throw new zzcg(zzce.zzb, zzcd.zzap, e11.getMessage(), null, 8, null);
+        } catch (zzcg e) {
+            throw e;
+        } catch (d2 e7) {
+            throw new zzcg(zzce.zzb, zzcd.zzb, e7.getMessage(), null, 8, null);
+        } catch (Exception e10) {
+            throw new zzcg(zzce.zzb, zzcd.zzap, e10.getMessage(), null, 8, null);
         }
     }
 }

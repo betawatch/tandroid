@@ -27,7 +27,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class m30 extends View {
     public static final TextPaint J = new TextPaint(1);
@@ -45,7 +45,7 @@ public final class m30 extends View {
     public final RectF f;
     public final ImageReceiver h;
     public final StaticLayout n;
-    public final i9 r;
+    public final f9 r;
     public final ContactsController.Contact s;
     public final int v;
     public final float w;
@@ -221,9 +221,9 @@ public final class m30 extends View {
         float dp = AndroidUtilities.dp(z10 ? 13.0f : 14.0f);
         TextPaint textPaint = J;
         textPaint.setTextSize(dp);
-        i9 i9Var = new i9((org.telegram.ui.ActionBar.f6) null);
-        this.r = i9Var;
-        i9Var.u(AndroidUtilities.dp(20.0f));
+        f9 f9Var = new f9((org.telegram.ui.ActionBar.f6) null);
+        this.r = f9Var;
+        f9Var.u(AndroidUtilities.dp(20.0f));
         boolean z11 = obj instanceof String;
         if (!z11) {
             if (obj instanceof TLRPC.User) {
@@ -231,14 +231,14 @@ public final class m30 extends View {
                 this.b = user.id;
                 if (UserObject.isReplyUser(user)) {
                     str2 = LocaleController.getString(R.string.RepliesTitle);
-                    i9Var.p = 0.8f;
-                    i9Var.g(12);
+                    f9Var.p = 0.8f;
+                    f9Var.g(12);
                 } else if (UserObject.isUserSelf(user)) {
                     str2 = LocaleController.getString(R.string.SavedMessages);
-                    i9Var.p = 0.8f;
-                    i9Var.g(1);
+                    f9Var.p = 0.8f;
+                    f9Var.g(1);
                 } else {
-                    i9Var.r(user);
+                    f9Var.r(user);
                     String firstName = UserObject.getFirstName(user);
                     int indexOf = firstName.indexOf(32);
                     firstName = indexOf >= 0 ? firstName.substring(0, indexOf) : firstName;
@@ -253,7 +253,7 @@ public final class m30 extends View {
                 chat = chat2;
             } else if (obj instanceof TLRPC.Chat) {
                 TLRPC.Chat chat3 = (TLRPC.Chat) obj;
-                i9Var.q(chat3);
+                f9Var.q(chat3);
                 this.b = -chat3.id;
                 String str4 = chat3.title;
                 forUserOrChat = ImageLocation.getForUserOrChat(chat3, 1);
@@ -263,19 +263,19 @@ public final class m30 extends View {
                 TLRPC.TL_help_country tL_help_country = (TLRPC.TL_help_country) obj;
                 String languageFlag = LocaleController.getLanguageFlag(tL_help_country.iso2);
                 String str5 = tL_help_country.default_name;
-                i9Var.g(17);
-                i9Var.u(AndroidUtilities.dp(24.0f));
+                f9Var.g(17);
+                f9Var.u(AndroidUtilities.dp(24.0f));
                 str = "premium";
-                i9Var.o(0L, languageFlag, null, null, null);
-                i9Var.h(org.telegram.ui.ActionBar.j6.l1(0.7f, org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.p7, f6Var)));
+                f9Var.o(0L, languageFlag, null, null, null);
+                f9Var.h(org.telegram.ui.ActionBar.j6.l1(0.7f, org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.p7, f6Var)));
                 this.I = false;
-                i9Var.w = false;
+                f9Var.w = false;
                 this.b = tL_help_country.default_name.hashCode();
                 this.a = tL_help_country.iso2;
                 str2 = str5;
             } else {
                 str = "premium";
-                i9Var.n(contact.contact_id, contact.first_name, contact.last_name);
+                f9Var.n(contact.contact_id, contact.first_name, contact.last_name);
                 this.b = contact.contact_id;
                 this.c = contact.key;
                 str2 = !TextUtils.isEmpty(contact.first_name) ? contact.first_name : contact.last_name;
@@ -288,7 +288,7 @@ public final class m30 extends View {
             imageReceiver.setImageCoords(!this.I ? 0.0f : AndroidUtilities.dp(4.0f), 0.0f, AndroidUtilities.dp(!z10 ? 28.0f : 32.0f), AndroidUtilities.dp(z10 ? 28.0f : 32.0f));
             if (AndroidUtilities.isTablet()) {
                 Point point = AndroidUtilities.displaySize;
-                y3 = org.telegram.messenger.vl.y((z10 ? 28 : 32) + 132, Math.min(point.x, point.y), 2);
+                y3 = org.telegram.messenger.wl.y((z10 ? 28 : 32) + 132, Math.min(point.x, point.y), 2);
             } else {
                 y3 = AndroidUtilities.dp(398 - (z10 ? 28 : 32)) / 2;
             }
@@ -301,7 +301,7 @@ public final class m30 extends View {
             if (!z11 && str.equals((String) obj)) {
                 imageReceiver.setImageBitmap(org.telegram.ui.Cells.f4.b(getContext(), true));
             } else if (z11 || !"miniapps".equals((String) obj)) {
-                imageReceiver.setImage(forUserOrChat, "50_50", i9Var, 0L, (String) null, chat, 1);
+                imageReceiver.setImage(forUserOrChat, "50_50", f9Var, 0L, (String) null, chat, 1);
             } else {
                 getContext();
                 imageReceiver.setImageBitmap(org.telegram.ui.Cells.f4.a(true));
@@ -310,137 +310,137 @@ public final class m30 extends View {
             NotificationCenter.listenEmojiLoading(this);
         }
         String str6 = (String) obj;
-        i9Var.p = 0.8f;
+        f9Var.p = 0.8f;
         switch (str6.hashCode()) {
             case -1716307998:
                 str6.equals("archived");
-                i9Var.g(11);
+                f9Var.g(11);
                 this.b = -9223372036854775801L;
                 str2 = LocaleController.getString(R.string.FilterArchived);
                 break;
             case -1359418551:
                 if (str6.equals("miniapps")) {
                     this.d = true;
-                    i9Var.i(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.T7, f6Var), org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.a8, f6Var));
+                    f9Var.i(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.T7, f6Var), org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.a8, f6Var));
                     str2 = LocaleController.getString(R.string.PrivacyMiniapps);
                     break;
                 }
-                i9Var.g(11);
+                f9Var.g(11);
                 this.b = -9223372036854775801L;
                 str2 = LocaleController.getString(R.string.FilterArchived);
                 break;
             case -1237460524:
                 if (str6.equals("groups")) {
-                    i9Var.g(6);
+                    f9Var.g(6);
                     this.b = -9223372036854775806L;
                     str2 = LocaleController.getString(R.string.FilterGroups);
                     break;
                 }
-                i9Var.g(11);
+                f9Var.g(11);
                 this.b = -9223372036854775801L;
                 str2 = LocaleController.getString(R.string.FilterArchived);
                 break;
             case -1197490811:
                 if (str6.equals("non_contacts")) {
-                    i9Var.g(5);
+                    f9Var.g(5);
                     this.b = -9223372036854775807L;
                     str2 = LocaleController.getString(R.string.FilterNonContacts);
                     break;
                 }
-                i9Var.g(11);
+                f9Var.g(11);
                 this.b = -9223372036854775801L;
                 str2 = LocaleController.getString(R.string.FilterArchived);
                 break;
             case -567451565:
                 if (str6.equals("contacts")) {
-                    i9Var.g(4);
+                    f9Var.g(4);
                     this.b = Long.MIN_VALUE;
                     str2 = LocaleController.getString(R.string.FilterContacts);
                     break;
                 }
-                i9Var.g(11);
+                f9Var.g(11);
                 this.b = -9223372036854775801L;
                 str2 = LocaleController.getString(R.string.FilterArchived);
                 break;
             case -318452137:
                 if (str6.equals("premium")) {
                     this.d = true;
-                    i9Var.h(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Qj, f6Var));
+                    f9Var.h(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Qj, f6Var));
                     str2 = LocaleController.getString(R.string.PrivacyPremium);
                     break;
                 }
-                i9Var.g(11);
+                f9Var.g(11);
                 this.b = -9223372036854775801L;
                 str2 = LocaleController.getString(R.string.FilterArchived);
                 break;
             case -268161860:
                 if (str6.equals("new_chats")) {
-                    i9Var.g(24);
+                    f9Var.g(24);
                     this.b = -9223372036854775799L;
                     str2 = LocaleController.getString(R.string.FilterNewChats);
                     break;
                 }
-                i9Var.g(11);
+                f9Var.g(11);
                 this.b = -9223372036854775801L;
                 str2 = LocaleController.getString(R.string.FilterArchived);
                 break;
             case 3029900:
                 if (str6.equals("bots")) {
-                    i9Var.g(8);
+                    f9Var.g(8);
                     this.b = -9223372036854775804L;
                     str2 = LocaleController.getString(R.string.FilterBots);
                     break;
                 }
-                i9Var.g(11);
+                f9Var.g(11);
                 this.b = -9223372036854775801L;
                 str2 = LocaleController.getString(R.string.FilterArchived);
                 break;
             case 3496342:
                 if (str6.equals("read")) {
-                    i9Var.g(10);
+                    f9Var.g(10);
                     this.b = -9223372036854775802L;
                     str2 = LocaleController.getString(R.string.FilterRead);
                     break;
                 }
-                i9Var.g(11);
+                f9Var.g(11);
                 this.b = -9223372036854775801L;
                 str2 = LocaleController.getString(R.string.FilterArchived);
                 break;
             case 104264043:
                 if (str6.equals("muted")) {
-                    i9Var.g(9);
+                    f9Var.g(9);
                     this.b = -9223372036854775803L;
                     str2 = LocaleController.getString(R.string.FilterMuted);
                     break;
                 }
-                i9Var.g(11);
+                f9Var.g(11);
                 this.b = -9223372036854775801L;
                 str2 = LocaleController.getString(R.string.FilterArchived);
                 break;
             case 151051367:
                 if (str6.equals("existing_chats")) {
-                    i9Var.g(23);
+                    f9Var.g(23);
                     this.b = -9223372036854775800L;
                     str2 = LocaleController.getString(R.string.FilterExistingChats);
                     break;
                 }
-                i9Var.g(11);
+                f9Var.g(11);
                 this.b = -9223372036854775801L;
                 str2 = LocaleController.getString(R.string.FilterArchived);
                 break;
             case 1432626128:
                 if (str6.equals("channels")) {
-                    i9Var.g(7);
+                    f9Var.g(7);
                     this.b = -9223372036854775805L;
                     str2 = LocaleController.getString(R.string.FilterChannels);
                     break;
                 }
-                i9Var.g(11);
+                f9Var.g(11);
                 this.b = -9223372036854775801L;
                 str2 = LocaleController.getString(R.string.FilterArchived);
                 break;
             default:
-                i9Var.g(11);
+                f9Var.g(11);
                 this.b = -9223372036854775801L;
                 str2 = LocaleController.getString(R.string.FilterArchived);
                 break;
@@ -463,7 +463,7 @@ public final class m30 extends View {
         }
         if (z11) {
         }
-        imageReceiver.setImage(forUserOrChat, "50_50", i9Var, 0L, (String) null, chat, 1);
+        imageReceiver.setImage(forUserOrChat, "50_50", f9Var, 0L, (String) null, chat, 1);
         c();
         NotificationCenter.listenEmojiLoading(this);
     }

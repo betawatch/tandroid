@@ -13,13 +13,13 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesStorage;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class l40 extends HorizontalScrollView {
     public static final RectF v = new RectF();
     public final org.telegram.ui.ActionBar.f6 a;
-    public final e6 b;
-    public final e6 c;
+    public final c6 b;
+    public final c6 c;
     public final LinearLayout d;
     public final Paint e;
     public final TextPaint f;
@@ -44,7 +44,7 @@ public final class l40 extends HorizontalScrollView {
         textPaint.setTextSize(AndroidUtilities.dp(13.0f));
         textPaint.setTypeface(AndroidUtilities.bold());
         final int i10 = 0;
-        e6 e6Var = new e6(new Runnable(this) { // from class: org.telegram.ui.Components.k40
+        c6 c6Var = new c6(new Runnable(this) { // from class: org.telegram.ui.Components.k40
             public final /* synthetic */ l40 b;
 
             {
@@ -75,10 +75,10 @@ public final class l40 extends HorizontalScrollView {
                 }
             }
         });
-        this.b = e6Var;
-        e6Var.g = 180L;
+        this.b = c6Var;
+        c6Var.g = 180L;
         final int i11 = 1;
-        e6 e6Var2 = new e6(new Runnable(this) { // from class: org.telegram.ui.Components.k40
+        c6 c6Var2 = new c6(new Runnable(this) { // from class: org.telegram.ui.Components.k40
             public final /* synthetic */ l40 b;
 
             {
@@ -109,8 +109,8 @@ public final class l40 extends HorizontalScrollView {
                 }
             }
         });
-        this.c = e6Var2;
-        e6Var2.g = 180L;
+        this.c = c6Var2;
+        c6Var2.g = 180L;
         setVerticalScrollBarEnabled(false);
         setHorizontalScrollBarEnabled(false);
     }
@@ -128,15 +128,15 @@ public final class l40 extends HorizontalScrollView {
         linearLayout.removeAllViews();
         for (int i10 = 0; i10 < arrayList.size(); i10++) {
             CharSequence charSequence = (CharSequence) arrayList.get(i10);
-            di.eb ebVar = new di.eb(getContext());
+            ci.eb ebVar = new ci.eb(getContext());
             ebVar.setDrawingCacheEnabled(false);
-            ebVar.setOnClickListener(new org.telegram.ui.Cells.ua(this, i10, intCallback, 7));
+            ebVar.setOnClickListener(new org.telegram.ui.Cells.va(this, i10, intCallback, 7));
             ebVar.setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(5.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(5.0f));
             LinearLayout.LayoutParams n10 = w7.x5.n(-2, -2);
             if (i10 < arrayList.size() - 1) {
                 n10.rightMargin = AndroidUtilities.dp(4.0f);
             }
-            ebVar.b = new f01(charSequence, this.f);
+            ebVar.b = new h01(charSequence, this.f);
             linearLayout.addView(ebVar, n10);
         }
     }

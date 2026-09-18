@@ -13,7 +13,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class f extends Handler {
     public final /* synthetic */ int a = 0;
@@ -41,9 +41,9 @@ public final class f extends Handler {
                 SystemClock.elapsedRealtime();
                 SystemClock.elapsedRealtime();
                 Throwable b5Var = vVar.getCause() instanceof IOException ? (IOException) vVar.getCause() : new b5(vVar.getCause());
-                rb.a aVar2 = ((n2.b) this.c).i;
+                qb.b bVar = ((n2.b) this.c).i;
                 int i11 = aVar.d;
-                aVar2.getClass();
+                bVar.getClass();
                 if (!(b5Var instanceof s0) && !(b5Var instanceof FileNotFoundException) && !(b5Var instanceof g2.u) && !(b5Var instanceof y2.l)) {
                     int i12 = g2.j.b;
                     while (b5Var != null) {
@@ -84,7 +84,7 @@ public final class f extends Handler {
                 if (this.b) {
                     switch (message.what) {
                         case 1:
-                            c0.a(message.getData());
+                            b0.a(message.getData());
                             return;
                         case 2:
                             rVar.b((PlaybackStateCompat) message.obj);
@@ -99,7 +99,7 @@ public final class f extends Handler {
                         case 6:
                             return;
                         case 7:
-                            c0.a((Bundle) message.obj);
+                            b0.a((Bundle) message.obj);
                             return;
                         case 8:
                             rVar.d();
@@ -132,19 +132,19 @@ public final class f extends Handler {
                         n2.b bVar = (n2.b) this.c;
                         th2 = bVar.k.i(bVar.l, (n2.o) aVar.c);
                     }
-                } catch (n2.v e7) {
-                    boolean a2 = a(message, e7);
-                    th2 = e7;
+                } catch (n2.v e) {
+                    boolean a2 = a(message, e);
+                    th2 = e;
                     if (a2) {
                         return;
                     }
-                } catch (Exception e10) {
-                    e2.a.o("DefaultDrmSession", "Key/provisioning request produced an unexpected exception. Not retrying.", e10);
-                    th2 = e10;
+                } catch (Exception e7) {
+                    e2.a.o("DefaultDrmSession", "Key/provisioning request produced an unexpected exception. Not retrying.", e7);
+                    th2 = e7;
                 }
-                rb.a aVar2 = ((n2.b) this.c).i;
+                qb.b bVar2 = ((n2.b) this.c).i;
                 long j3 = aVar.a;
-                aVar2.getClass();
+                bVar2.getClass();
                 synchronized (this) {
                     try {
                         if (!this.b) {

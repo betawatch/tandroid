@@ -29,7 +29,7 @@ import java.util.regex.Pattern;
 import org.telegram.tgnet.TLObject;
 import v7.p6;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public abstract class h {
     public static final Pattern a = Pattern.compile("^(\\S+)\\s+-->\\s+(\\S+)((?:.|\\f)*)?$");
@@ -159,7 +159,7 @@ public abstract class h {
                 spannableStringBuilder.setSpan(new UnderlineSpan(), i13, length, 33);
                 break;
             case 5:
-                spannableStringBuilder.setSpan(new d2.h(eVar.c), i13, length, 33);
+                spannableStringBuilder.setSpan(new d2.i(eVar.c), i13, length, 33);
                 break;
             case 7:
                 int c11 = c(list2, str, eVar);
@@ -180,7 +180,7 @@ public abstract class h {
                         int i19 = dVar.b - i17;
                         CharSequence subSequence = spannableStringBuilder.subSequence(i18, i19);
                         spannableStringBuilder.delete(i18, i19);
-                        spannableStringBuilder.setSpan(new d2.f(subSequence.toString(), c12), i15, i18, 33);
+                        spannableStringBuilder.setSpan(new d2.g(subSequence.toString(), c12), i15, i18, 33);
                         i17 = subSequence.length() + i17;
                         i15 = i18;
                     }
@@ -243,7 +243,7 @@ public abstract class h {
                 p6.a(new RelativeSizeSpan(bVar.o / 100.0f), spannableStringBuilder, i13, length);
             }
             if (bVar.q) {
-                spannableStringBuilder.setSpan(new d2.e(), i13, length, 33);
+                spannableStringBuilder.setSpan(new d2.f(), i13, length, 33);
             }
         }
     }

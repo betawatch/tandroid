@@ -1,63 +1,20 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Bitmap;
-import android.graphics.Rect;
-import android.graphics.drawable.GradientDrawable;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class q9 implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ w9 b;
-    public final /* synthetic */ Runnable[] c;
-    public final /* synthetic */ y50 d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ w7.i0[] f;
+public final class q9 extends w7.i0 {
+    public final /* synthetic */ ViewGroup a;
+    public final /* synthetic */ t9 b;
 
-    public /* synthetic */ q9(w9 w9Var, y50 y50Var, Runnable[] runnableArr, int i10, w7.i0[] i0VarArr) {
-        this.b = w9Var;
-        this.d = y50Var;
-        this.c = runnableArr;
-        this.e = i10;
-        this.f = i0VarArr;
+    public q9(t9 t9Var, ViewGroup viewGroup) {
+        this.b = t9Var;
+        this.a = viewGroup;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                w9 w9Var = this.b;
-                y50 y50Var = this.d;
-                Runnable[] runnableArr = this.c;
-                int i10 = this.e;
-                w7.i0[] i0VarArr = this.f;
-                try {
-                    GradientDrawable.Orientation orientation = w9Var.getOrientation();
-                    int[] iArr = w9Var.a;
-                    int i11 = y50Var.a;
-                    int i12 = y50Var.b;
-                    Rect e7 = w9.e(orientation, i11, i12);
-                    Bitmap createBitmap = Bitmap.createBitmap(i11, i12, Bitmap.Config.ARGB_8888);
-                    Utilities.drawDitheredGradient(createBitmap, iArr, e7.left, e7.top, e7.right, e7.bottom);
-                    AndroidUtilities.runOnUIThread(new bi.ia(w9Var, runnableArr, createBitmap, y50Var, i10, i0VarArr, 7));
-                    return;
-                } catch (Throwable th2) {
-                    AndroidUtilities.runOnUIThread(new q9(w9Var, runnableArr, y50Var, i10, i0VarArr));
-                    throw th2;
-                }
-            default:
-                w9.a(this.b, this.c, null, this.d, this.e, this.f);
-                return;
-        }
-    }
-
-    public /* synthetic */ q9(w9 w9Var, Runnable[] runnableArr, y50 y50Var, int i10, w7.i0[] i0VarArr) {
-        this.b = w9Var;
-        this.c = runnableArr;
-        this.d = y50Var;
-        this.e = i10;
-        this.f = i0VarArr;
+    @Override // w7.i0
+    public final void a() {
+        this.a.invalidate();
     }
 }

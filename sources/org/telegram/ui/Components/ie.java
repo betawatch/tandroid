@@ -1,51 +1,95 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+import android.content.Context;
+import android.graphics.Canvas;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.BotForumHelper;
+
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ie implements Runnable {
+public final class ie extends FrameLayout {
     public final /* synthetic */ int a;
     public final /* synthetic */ ChatActivityEnterView b;
 
-    public /* synthetic */ ie(ChatActivityEnterView chatActivityEnterView, int i10) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ ie(ChatActivityEnterView chatActivityEnterView, Context context, int i10) {
+        super(context);
         this.a = i10;
         this.b = chatActivityEnterView;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        ChatActivityEnterView chatActivityEnterView = this.b;
-        switch (i10) {
+    @Override // android.view.ViewGroup, android.view.View
+    public boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        switch (this.a) {
             case 0:
-                og ogVar = chatActivityEnterView.Y2;
-                if (ogVar != null) {
-                    ogVar.k1();
-                    break;
-                }
-                break;
+                ChatActivityEnterView chatActivityEnterView = this.b;
+                ei.f4 f4Var = chatActivityEnterView.k0;
+                return (f4Var == null || f4Var.getVisibility() != 0) ? super.dispatchTouchEvent(motionEvent) : chatActivityEnterView.k0.dispatchTouchEvent(motionEvent);
             case 1:
-                qf qfVar = chatActivityEnterView.E0;
-                if (qfVar != null) {
-                    qfVar.setText("");
-                    break;
+                ChatActivityEnterView chatActivityEnterView2 = this.b;
+                if (!chatActivityEnterView2.J || chatActivityEnterView2.T4 == BotForumHelper.SteamingSendButtonState.BLOCKING) {
+                    return false;
                 }
-                break;
-            case 2:
-                qf qfVar2 = chatActivityEnterView.E0;
-                if (qfVar2 != null) {
-                    qfVar2.setText("");
+                return super.dispatchTouchEvent(motionEvent);
+            default:
+                return super.dispatchTouchEvent(motionEvent);
+        }
+    }
+
+    @Override // android.view.ViewGroup
+    public boolean drawChild(Canvas canvas, View view, long j3) {
+        switch (this.a) {
+            case 1:
+                ChatActivityEnterView chatActivityEnterView = this.b;
+                if (view == chatActivityEnterView.J0 && chatActivityEnterView.h0) {
+                    return true;
                 }
-                chatActivityEnterView.K(true);
-                break;
-            case 3:
-                chatActivityEnterView.p0.callOnClick();
-                break;
-            case 4:
-                chatActivityEnterView.p0.callOnClick();
+                return super.drawChild(canvas, view, j3);
+            default:
+                return super.drawChild(canvas, view, j3);
+        }
+    }
+
+    @Override // android.view.View
+    public void onSizeChanged(int i10, int i11, int i12, int i13) {
+        switch (this.a) {
+            case 1:
+                super.onSizeChanged(i10, i11, i12, i13);
+                setPivotX(i10 - AndroidUtilities.dp(22.0f));
+                setPivotY(i11 - AndroidUtilities.dp(22.0f));
                 break;
             default:
-                int i11 = ChatActivityEnterView.m5;
-                chatActivityEnterView.C();
+                super.onSizeChanged(i10, i11, i12, i13);
+                break;
+        }
+    }
+
+    @Override // android.view.View
+    public boolean onTouchEvent(MotionEvent motionEvent) {
+        switch (this.a) {
+            case 1:
+                ChatActivityEnterView chatActivityEnterView = this.b;
+                if (!chatActivityEnterView.J || chatActivityEnterView.T4 == BotForumHelper.SteamingSendButtonState.BLOCKING) {
+                    return false;
+                }
+                return super.onTouchEvent(motionEvent);
+            default:
+                return super.onTouchEvent(motionEvent);
+        }
+    }
+
+    @Override // android.view.View
+    public void setVisibility(int i10) {
+        switch (this.a) {
+            case 2:
+                super.setVisibility(i10);
+                this.b.Q1(true);
+                break;
+            default:
+                super.setVisibility(i10);
                 break;
         }
     }

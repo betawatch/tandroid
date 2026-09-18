@@ -1,54 +1,63 @@
 package hg;
 
-import bi.c3;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.app.Activity;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.ui.Components.f5;
+import org.telegram.ui.Components.m6;
+import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class b1 implements Runnable {
-    public final /* synthetic */ String a;
-    public final /* synthetic */ String b;
-    public final /* synthetic */ MessagesController c;
-    public final /* synthetic */ MessagesStorage d;
-    public final /* synthetic */ k1 e;
+public final class b1 extends EditTextBoldCursor {
+    public final f5 b;
+    public int c;
+    public final m6 d;
+    public final /* synthetic */ e1 e;
 
-    public b1(k1 k1Var, String str, String str2, MessagesController messagesController, MessagesStorage messagesStorage) {
-        this.e = k1Var;
-        this.a = str;
-        this.b = str2;
-        this.c = messagesController;
-        this.d = messagesStorage;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public b1(e1 e1Var, Activity activity) {
+        super(activity);
+        this.e = e1Var;
+        this.b = new f5(this);
+        m6 m6Var = new m6(false, true, true, false);
+        this.d = m6Var;
+        m6Var.k(0.2f, 160L, qr.h);
+        m6Var.t(AndroidUtilities.dp(15.33f));
+        m6Var.setCallback(this);
+        m6Var.b = 5;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        k1 k1Var = this.e;
-        if (k1Var.y0 != this) {
-            return;
-        }
-        k1Var.y0 = null;
-        TLRPC.User user = k1Var.w0;
-        if (user != null || k1Var.v0) {
-            if (k1Var.v0) {
-                return;
+    @Override // android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        int a2 = this.b.a(j6.v0(this.c < 0 ? j6.p7 : j6.P5, this.e.getResourceProvider()), false);
+        m6 m6Var = this.d;
+        m6Var.r(a2);
+        m6Var.setBounds(getScrollX(), 0, getWidth() + getScrollX(), getHeight());
+        m6Var.draw(canvas);
+    }
+
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.du, android.widget.TextView
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        super.onTextChanged(charSequence, i10, i11, i12);
+        m6 m6Var = this.d;
+        if (m6Var != null) {
+            this.c = 96 - charSequence.length();
+            m6Var.b();
+            String str = "";
+            if (this.c <= 12) {
+                str = "" + this.c;
             }
-            k1Var.T(true, user, this.a, "");
-            return;
+            m6Var.q(str, true, true);
         }
-        String str = this.b;
-        k1Var.q0 = str;
-        MessagesController messagesController = this.c;
-        TLObject userOrChat = messagesController.getUserOrChat(str);
-        if (userOrChat instanceof TLRPC.User) {
-            k1Var.R((TLRPC.User) userOrChat);
-            return;
-        }
-        TLRPC.TL_contacts_resolveUsername tL_contacts_resolveUsername = new TLRPC.TL_contacts_resolveUsername();
-        tL_contacts_resolveUsername.username = k1Var.q0;
-        k1Var.t0 = ConnectionsManager.getInstance(k1Var.f).sendRequest(tL_contacts_resolveUsername, new c3(this, str, messagesController, this.d, 2));
+    }
+
+    @Override // android.widget.TextView, android.view.View
+    public final boolean verifyDrawable(Drawable drawable) {
+        return drawable == this.d || super.verifyDrawable(drawable);
     }
 }

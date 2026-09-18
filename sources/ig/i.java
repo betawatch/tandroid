@@ -1,14 +1,9 @@
 package ig;
 
-import org.telegram.ui.Components.io;
-
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class i extends io {
-    @Override // org.telegram.ui.Components.io, android.widget.LinearLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, i11);
-        setPivotX(getMeasuredWidth() / 2.0f);
-        setPivotY(getMeasuredHeight());
-    }
+public interface i {
+    void a(float f7, float f10, boolean z10);
+
+    void invalidate();
 }

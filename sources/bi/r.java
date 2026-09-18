@@ -1,25 +1,52 @@
 package bi;
 
-import j$.util.Objects;
+import android.content.Context;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.wl;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.j6;
+import w7.x5;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes4.dex */
-public final class r extends pg.a {
-    public final long c;
+public final class r extends LinearLayout {
+    public final TextView a;
+    public final q b;
+    public final o c;
+    public final ci.d d;
 
-    public r(long j3) {
-        super(0, false);
-        this.c = j3;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        return (obj instanceof r) && this.c == ((r) obj).c;
-    }
-
-    public final int hashCode() {
-        return Objects.hash(Long.valueOf(this.c));
+    public r(Context context, f6 f6Var) {
+        super(context);
+        setPadding(AndroidUtilities.dp(24.0f), AndroidUtilities.dp(21.0f), AndroidUtilities.dp(24.0f), AndroidUtilities.dp(21.0f));
+        setOrientation(1);
+        TextView textView = new TextView(context);
+        this.a = textView;
+        int i10 = j6.y6;
+        wl.n(i10, f6Var, textView, 1, 14.0f);
+        textView.setGravity(17);
+        textView.setTextAlignment(4);
+        addView(textView, x5.k(0.0f, 0.0f, 0.0f, 19.0f, -1, -2));
+        q qVar = new q(0, context, f6Var, true);
+        this.b = qVar;
+        qVar.setMinWidth(AndroidUtilities.dp(200.0f));
+        qVar.g(LocaleController.getString(R.string.ProfileBotAddPreview), false, true);
+        addView(qVar, x5.q(-2, 44, 17));
+        o oVar = new o(context, f6Var);
+        this.c = oVar;
+        oVar.setTextColor(j6.v0(i10, f6Var));
+        oVar.setText(LocaleController.getString(R.string.ProfileBotOr));
+        oVar.setTextSize(1, 14.0f);
+        oVar.setTextAlignment(4);
+        oVar.setGravity(17);
+        oVar.setTypeface(AndroidUtilities.bold());
+        addView(oVar, x5.t(165, -2, 17, 0, 17, 0, 12));
+        ci.d dVar = new ci.d(context, f6Var, false);
+        this.d = dVar;
+        dVar.setMinWidth(AndroidUtilities.dp(200.0f));
+        addView(dVar, x5.q(-2, 44, 17));
     }
 }

@@ -4,7 +4,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public abstract class z4 {
     public final y4 a = new y4(this);
@@ -12,7 +12,7 @@ public abstract class z4 {
     public final Object c;
     public final int d;
     public final int e;
-    public di.l5 f;
+    public ci.l5 f;
     public boolean g;
 
     public z4(int i10, TLObject tLObject, int i11) {

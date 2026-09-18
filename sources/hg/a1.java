@@ -1,21 +1,114 @@
 package hg;
 
-import org.telegram.messenger.SendMessagesHelper;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.vc;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class a1 extends SendMessagesHelper.LocationProvider {
-    public final /* synthetic */ k1 a;
+public final /* synthetic */ class a1 implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ e1 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public a1(k1 k1Var, z0 z0Var) {
-        super(z0Var);
-        this.a = k1Var;
+    public /* synthetic */ a1(e1 e1Var, int i10) {
+        this.a = i10;
+        this.b = e1Var;
     }
 
-    @Override // org.telegram.messenger.SendMessagesHelper.LocationProvider
-    public final void stop() {
-        super.stop();
-        this.a.z0 = null;
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(final TLObject tLObject, final TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                final int i10 = 1;
+                final e1 e1Var = this.b;
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: hg.y0
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i10) {
+                            case 0:
+                                e1 e1Var2 = e1Var;
+                                e1Var2.b.a(0.0f);
+                                TLRPC.TL_error tL_error2 = tL_error;
+                                if (tL_error2 == null) {
+                                    if (!(tLObject instanceof TLRPC.TL_boolFalse)) {
+                                        e1Var2.finishFragment();
+                                        break;
+                                    } else {
+                                        org.telegram.messenger.w1.p(R.string.UnknownError, vc.a0(e1Var2), null);
+                                        break;
+                                    }
+                                } else {
+                                    vc.b0(tL_error2);
+                                    break;
+                                }
+                            default:
+                                e1 e1Var3 = e1Var;
+                                TLRPC.TL_error tL_error3 = tL_error;
+                                if (tL_error3 == null) {
+                                    if (!(tLObject instanceof TLRPC.TL_boolFalse)) {
+                                        e1Var3.finishFragment();
+                                        break;
+                                    } else {
+                                        e1Var3.b.a(0.0f);
+                                        org.telegram.messenger.w1.p(R.string.UnknownError, vc.a0(e1Var3), null);
+                                        break;
+                                    }
+                                } else {
+                                    e1Var3.b.a(0.0f);
+                                    vc.b0(tL_error3);
+                                    break;
+                                }
+                        }
+                    }
+                });
+                break;
+            default:
+                final int i11 = 0;
+                final e1 e1Var2 = this.b;
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: hg.y0
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i11) {
+                            case 0:
+                                e1 e1Var22 = e1Var2;
+                                e1Var22.b.a(0.0f);
+                                TLRPC.TL_error tL_error2 = tL_error;
+                                if (tL_error2 == null) {
+                                    if (!(tLObject instanceof TLRPC.TL_boolFalse)) {
+                                        e1Var22.finishFragment();
+                                        break;
+                                    } else {
+                                        org.telegram.messenger.w1.p(R.string.UnknownError, vc.a0(e1Var22), null);
+                                        break;
+                                    }
+                                } else {
+                                    vc.b0(tL_error2);
+                                    break;
+                                }
+                            default:
+                                e1 e1Var3 = e1Var2;
+                                TLRPC.TL_error tL_error3 = tL_error;
+                                if (tL_error3 == null) {
+                                    if (!(tLObject instanceof TLRPC.TL_boolFalse)) {
+                                        e1Var3.finishFragment();
+                                        break;
+                                    } else {
+                                        e1Var3.b.a(0.0f);
+                                        org.telegram.messenger.w1.p(R.string.UnknownError, vc.a0(e1Var3), null);
+                                        break;
+                                    }
+                                } else {
+                                    e1Var3.b.a(0.0f);
+                                    vc.b0(tL_error3);
+                                    break;
+                                }
+                        }
+                    }
+                });
+                break;
+        }
     }
 }

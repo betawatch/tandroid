@@ -1,29 +1,97 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+import java.util.ArrayList;
+import java.util.List;
+import java.util.regex.Pattern;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.wy;
+
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class gg implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ MessagesStorage b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ boolean d;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
 
-    public /* synthetic */ gg(MessagesStorage messagesStorage, int i10, boolean z10, long j3) {
-        this.a = i10;
-        this.b = messagesStorage;
-        this.c = j3;
-        this.d = z10;
+    public /* synthetic */ gg(BaseController baseController, long j3, List list, boolean z10, int i10, int i11) {
+        this.a = i11;
+        this.e = baseController;
+        this.b = j3;
+        this.f = list;
+        this.c = z10;
+        this.d = i10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        switch (this.a) {
+        ai.u9 u9Var;
+        TL_stories.StoryItem storyItem;
+        int i10 = this.a;
+        Object obj = this.f;
+        Object obj2 = this.e;
+        switch (i10) {
             case 0:
-                this.b.lambda$setDialogUnread$248(this.c, this.d);
+                ((MessagesStorage) obj2).lambda$saveTopics$47(this.b, (List) obj, this.c, this.d);
+                break;
+            case 1:
+                ((TopicsController) obj2).lambda$loadTopics$0(this.b, (ArrayList) obj, this.c, this.d);
                 break;
             default:
-                this.b.lambda$setDialogViewThreadAsMessages$249(this.c, this.d);
+                LaunchActivity launchActivity = (LaunchActivity) obj2;
+                TLObject tLObject = (TLObject) obj;
+                Pattern pattern = LaunchActivity.B1;
+                if (tLObject instanceof TL_stories.TL_stories_stories) {
+                    TL_stories.TL_stories_stories tL_stories_stories = (TL_stories.TL_stories_stories) tLObject;
+                    int i11 = 0;
+                    while (true) {
+                        u9Var = null;
+                        if (i11 >= tL_stories_stories.stories.size()) {
+                            storyItem = null;
+                        } else if (tL_stories_stories.stories.get(i11).id == this.d) {
+                            storyItem = tL_stories_stories.stories.get(i11);
+                        } else {
+                            i11++;
+                        }
+                    }
+                    if (storyItem != null) {
+                        long j3 = this.b;
+                        storyItem.dialogId = j3;
+                        org.telegram.ui.ActionBar.o2 R = LaunchActivity.R();
+                        if (R != null) {
+                            if (R instanceof wy) {
+                                try {
+                                    u9Var = ai.u9.a(((wy) R).E0.h);
+                                } catch (Exception unused) {
+                                }
+                            }
+                            ai.u9 u9Var2 = u9Var;
+                            R.getOrCreateStoryViewer().v();
+                            ArrayList arrayList = new ArrayList();
+                            arrayList.add(Long.valueOf(j3));
+                            if (this.c) {
+                                R.getOrCreateStoryViewer().w1 = true;
+                            }
+                            R.getOrCreateStoryViewer().G(launchActivity, storyItem, arrayList, 0, null, null, u9Var2, false);
+                            break;
+                        }
+                    }
+                }
+                org.telegram.ui.Components.vc.X().Q(R.raw.error, 36, LocaleController.getString(R.string.StoryNotFound)).k(false);
                 break;
         }
+    }
+
+    public /* synthetic */ gg(LaunchActivity launchActivity, TLObject tLObject, int i10, long j3, boolean z10) {
+        this.a = 2;
+        this.e = launchActivity;
+        this.f = tLObject;
+        this.d = i10;
+        this.b = j3;
+        this.c = z10;
     }
 }

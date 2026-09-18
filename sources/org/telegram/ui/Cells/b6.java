@@ -14,13 +14,13 @@ import android.view.inputmethod.InputConnection;
 import android.widget.FrameLayout;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.zt;
-import org.telegram.ui.a61;
-import org.telegram.ui.w61;
+import org.telegram.ui.Components.bu;
+import org.telegram.ui.v61;
+import org.telegram.ui.z51;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class b6 extends zt {
+public final class b6 extends bu {
     public final /* synthetic */ int c;
     public final /* synthetic */ Object d;
 
@@ -46,7 +46,7 @@ public final class b6 extends zt {
         }
     }
 
-    @Override // org.telegram.ui.Components.bu
+    @Override // org.telegram.ui.Components.du
     public int emojiCacheType() {
         switch (this.c) {
             case 0:
@@ -63,7 +63,7 @@ public final class b6 extends zt {
     public void invalidate() {
         switch (this.c) {
             case 1:
-                if (!ah.y0.b) {
+                if (!zg.f0.b) {
                     super.invalidate();
                     break;
                 }
@@ -93,7 +93,7 @@ public final class b6 extends zt {
         }
     }
 
-    @Override // org.telegram.ui.Components.zt, org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.bu, android.widget.TextView, android.view.View
+    @Override // org.telegram.ui.Components.bu, org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.du, android.widget.TextView, android.view.View
     public void onDraw(Canvas canvas) {
         switch (this.c) {
             case 0:
@@ -115,8 +115,8 @@ public final class b6 extends zt {
                 break;
             case 1:
                 if (z10) {
-                    ((a61) this.d).y.q();
-                    AndroidUtilities.runOnUIThread(new w61(this, 0), 200L);
+                    ((z51) this.d).y.q();
+                    AndroidUtilities.runOnUIThread(new v61(this, 0), 200L);
                 }
                 super.onFocusChanged(z10, i10, rect);
                 break;
@@ -126,12 +126,12 @@ public final class b6 extends zt {
         }
     }
 
-    @Override // org.telegram.ui.Components.bu, android.view.View
+    @Override // org.telegram.ui.Components.du, android.view.View
     public void onSizeChanged(int i10, int i11, int i12, int i13) {
         switch (this.c) {
             case 2:
                 super.onSizeChanged(i10, i11, i12, i13);
-                postOnAnimation(new org.telegram.ui.web.b(this, 24));
+                postOnAnimation(new org.telegram.ui.web.u0(this, 19));
                 break;
             default:
                 super.onSizeChanged(i10, i11, i12, i13);
@@ -139,7 +139,7 @@ public final class b6 extends zt {
         }
     }
 
-    @Override // org.telegram.ui.Components.zt, android.widget.EditText, android.widget.TextView
+    @Override // org.telegram.ui.Components.bu, android.widget.EditText, android.widget.TextView
     public boolean onTextContextMenuItem(int i10) {
         ClipData primaryClip;
         switch (this.c) {
@@ -180,17 +180,17 @@ public final class b6 extends zt {
                 }
                 break;
             case 1:
-                if (motionEvent.getAction() != 1 || !((a61) this.d).y.u()) {
+                if (motionEvent.getAction() != 1 || !((z51) this.d).y.u()) {
                     break;
                 } else {
-                    AndroidUtilities.runOnUIThread(new w61(this, 1), 200L);
+                    AndroidUtilities.runOnUIThread(new v61(this, 1), 200L);
                     break;
                 }
         }
         return super.onTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.ui.Components.zt, org.telegram.ui.Components.EditTextBoldCursor, android.view.View
+    @Override // org.telegram.ui.Components.bu, org.telegram.ui.Components.EditTextBoldCursor, android.view.View
     public ActionMode startActionMode(ActionMode.Callback callback, int i10) {
         switch (this.c) {
             case 0:
@@ -209,7 +209,7 @@ public final class b6 extends zt {
         this.d = drawable;
     }
 
-    @Override // org.telegram.ui.Components.zt, org.telegram.ui.Components.EditTextBoldCursor, android.view.View
+    @Override // org.telegram.ui.Components.bu, org.telegram.ui.Components.EditTextBoldCursor, android.view.View
     public ActionMode startActionMode(ActionMode.Callback callback) {
         switch (this.c) {
             case 0:

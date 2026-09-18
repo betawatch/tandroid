@@ -1,24 +1,41 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ls implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ qs b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.c2[] b;
 
-    public /* synthetic */ ls(qs qsVar, int i10) {
+    public /* synthetic */ ls(org.telegram.ui.ActionBar.c2[] c2VarArr, int i10) {
         this.a = i10;
-        this.b = qsVar;
+        this.b = c2VarArr;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.W(false);
+                org.telegram.ui.ActionBar.c2 c2Var = this.b[0];
+                if (c2Var != null) {
+                    c2Var.dismiss();
+                    break;
+                }
+                break;
+            case 1:
+                org.telegram.ui.ActionBar.c2[] c2VarArr = this.b;
+                try {
+                    c2VarArr[0].dismiss();
+                } catch (Throwable unused) {
+                }
+                c2VarArr[0] = null;
                 break;
             default:
-                this.b.N(true);
+                org.telegram.ui.ActionBar.c2[] c2VarArr2 = this.b;
+                try {
+                    c2VarArr2[0].dismiss();
+                } catch (Throwable unused2) {
+                }
+                c2VarArr2[0] = null;
                 break;
         }
     }

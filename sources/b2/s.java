@@ -9,8 +9,9 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Locale;
 import java.util.UUID;
+import org.telegram.messenger.BuildConfig;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class s {
     public static final String A0;
@@ -237,7 +238,7 @@ public final class s {
         String str2;
         o oVar;
         if (sVar == null) {
-            return "null";
+            return BuildConfig.BETA_URL;
         }
         int i11 = sVar.e;
         e9.i0 i0Var = sVar.c;
@@ -257,7 +258,7 @@ public final class s {
         int i19 = sVar.j;
         String str5 = sVar.q;
         int i20 = sVar.f;
-        d9.f fVar = new d9.f(String.valueOf(','));
+        xa.c cVar = new xa.c(String.valueOf(','));
         StringBuilder u10 = a4.a.u("id=");
         u10.append(sVar.a);
         u10.append(", mimeType=");
@@ -301,7 +302,7 @@ public final class s {
                 oVar2 = oVar;
             }
             u10.append(", drm=[");
-            fVar.a(u10, linkedHashSet.iterator());
+            cVar.j(u10, linkedHashSet.iterator());
             u10.append(']');
         } else {
             c10 = 0;
@@ -365,11 +366,9 @@ public final class s {
             u10.append(", language=");
             u10.append(str3);
         }
-        boolean isEmpty = i0Var.isEmpty();
-        int i25 = 3;
-        if (!isEmpty) {
+        if (!i0Var.isEmpty()) {
             u10.append(", labels=[");
-            fVar.a(u10, e9.q.w(i0Var, new androidx.emoji2.text.w(i25)).iterator());
+            cVar.j(u10, e9.q.w(i0Var, new ai.w1(10)).iterator());
             u10.append("]");
         }
         if (i11 != 0) {
@@ -385,7 +384,7 @@ public final class s {
             if ((i11 & 2) != 0) {
                 arrayList.add("forced");
             }
-            fVar.a(u10, arrayList.iterator());
+            cVar.j(u10, arrayList.iterator());
             u10.append("]");
         }
         if (i20 != 0) {
@@ -441,25 +440,25 @@ public final class s {
             if ((i10 & 32768) != 0) {
                 arrayList2.add("auxiliary");
             }
-            fVar.a(u10, arrayList2.iterator());
+            cVar.j(u10, arrayList2.iterator());
             u10.append("]");
         } else {
             i10 = i20;
         }
         if ((i10 & 32768) != 0) {
             u10.append(", auxiliaryTrackType=");
-            int i26 = sVar.g;
+            int i25 = sVar.g;
             String str10 = e2.d0.a;
-            if (i26 == 0) {
+            if (i25 == 0) {
                 str = "undefined";
-            } else if (i26 == 1) {
+            } else if (i25 == 1) {
                 str = "original";
-            } else if (i26 == 2) {
+            } else if (i25 == 2) {
                 str = "depth-linear";
-            } else if (i26 == 3) {
+            } else if (i25 == 3) {
                 str = "depth-inverse";
             } else {
-                if (i26 != 4) {
+                if (i25 != 4) {
                     throw new IllegalStateException("Unsupported auxiliary track type");
                 }
                 str = "depth metadata";

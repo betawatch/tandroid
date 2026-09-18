@@ -1,142 +1,134 @@
 package hg;
 
-import android.animation.ValueAnimator;
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
+import ai.e4;
+import android.os.Bundle;
+import android.view.KeyEvent;
 import android.widget.TextView;
-import bi.d8;
 import java.util.ArrayList;
+import java.util.regex.Pattern;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.MessagesStorage;
+import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Cells.p6;
-import org.telegram.ui.Components.k9;
-import w7.x5;
+import org.telegram.messenger.UserObject;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.ActionBarLayout;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.fg1;
+import org.telegram.ui.qy;
+import org.telegram.ui.wy;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class n1 extends FrameLayout {
-    public final f6 a;
-    public final k9 b;
-    public final TextView[] c;
-    public final TextView[] d;
-    public float e;
-    public ValueAnimator f;
+public final /* synthetic */ class n1 implements org.telegram.ui.ActionBar.b2, qy {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ KeyEvent.Callback b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
 
-    public n1(Context context, f6 f6Var) {
-        super(context);
-        this.c = new TextView[2];
-        this.d = new TextView[2];
-        this.a = f6Var;
-        setWillNotDraw(false);
-        k9 k9Var = new k9(this, false);
-        this.b = k9Var;
-        k9Var.l = true;
-        k9Var.p = AndroidUtilities.dp(75.0f);
-        k9Var.o = AndroidUtilities.dp(48.0f);
-        k9Var.x = true;
-        k9Var.s = AndroidUtilities.dp(22.0f);
-        int i10 = 0;
-        while (i10 < 2) {
-            this.c[i10] = new TextView(context);
-            this.c[i10].setTextColor(j6.v0(j6.G6, f6Var));
-            this.c[i10].setTypeface(AndroidUtilities.bold());
-            this.c[i10].setTextSize(1, 14.0f);
-            int i11 = 8;
-            this.c[i10].setVisibility(i10 == 0 ? 0 : 8);
-            addView(this.c[i10], x5.d(-1, -2.0f, 48, 76.0f, 7.0f, 40.0f, 0.0f));
-            this.d[i10] = new TextView(context);
-            this.d[i10].setTextColor(j6.v0(j6.z6, f6Var));
-            this.d[i10].setTextSize(1, 12.0f);
-            TextView textView = this.d[i10];
-            if (i10 == 0) {
-                i11 = 0;
-            }
-            textView.setVisibility(i11);
-            addView(this.d[i10], x5.d(-1, -2.0f, 48, 76.0f, 26.33f, 40.0f, 0.0f));
-            i10++;
-        }
-        ImageView imageView = new ImageView(context);
-        imageView.setImageResource(R.drawable.msg_arrowright);
-        imageView.setColorFilter(new PorterDuffColorFilter(j6.v0(j6.P5, f6Var), PorterDuff.Mode.SRC_IN));
-        addView(imageView, x5.d(24, 24.0f, 21, 0.0f, 0.0f, 8.66f, 0.0f));
+    public /* synthetic */ n1(r1 r1Var, e4 e4Var, int i10, a2 a2Var, TextView textView, Utilities.Callback callback) {
+        this.b = r1Var;
+        this.c = e4Var;
+        this.a = i10;
+        this.d = a2Var;
+        this.e = textView;
+        this.f = callback;
     }
 
-    public final boolean a(d8 d8Var) {
-        String str;
-        k9 k9Var;
-        int i10 = 0;
-        int i11 = 0;
-        while (true) {
-            ArrayList arrayList = d8Var.i;
-            str = d8Var.D;
-            int size = arrayList.size();
-            k9Var = this.b;
-            if (i10 >= size || i11 >= 3) {
-                break;
-            }
-            MessageObject messageObject = (MessageObject) d8Var.i.get(i10);
-            long j3 = messageObject.storyItem.dialogId;
-            TextUtils.isEmpty(str);
-            k9Var.l(i11, messageObject.storyItem, d8Var.c);
-            i11++;
-            i10++;
+    @Override // org.telegram.ui.qy
+    public /* synthetic */ boolean A() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.qy
+    public /* synthetic */ boolean K(wy wyVar) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.ActionBar.b2
+    public void f(org.telegram.ui.ActionBar.c2 c2Var, int i10) {
+        r1 r1Var = (r1) this.b;
+        e4 e4Var = (e4) this.c;
+        a2 a2Var = (a2) this.d;
+        TextView textView = (TextView) this.e;
+        Utilities.Callback callback = (Utilities.Callback) this.f;
+        String obj = r1Var.getText().toString();
+        if (obj.length() <= 0 || obj.length() > 32) {
+            AndroidUtilities.shakeView(r1Var);
+            e4Var.run(Boolean.FALSE);
+            return;
         }
-        k9Var.k(i11);
-        k9Var.b(false, true);
-        boolean isEmpty = TextUtils.isEmpty(str);
-        TextView[] textViewArr = this.c;
-        if (isEmpty) {
-            textViewArr[0].setText(LocaleController.formatPluralStringSpaced("HashtagStoriesFound", d8Var.J));
+        b2 f7 = b2.f(this.a);
+        int i11 = a2Var == null ? -1 : a2Var.a;
+        a2 d = f7.d(obj);
+        if (d == null || d.a == i11) {
+            callback.run(obj);
+            c2Var.dismiss();
         } else {
-            textViewArr[0].setText(AndroidUtilities.replaceSingleLink(LocaleController.formatPluralStringSpaced("HashtagStoriesFoundChannel", d8Var.J, "@" + str), j6.v0(j6.Oh, this.a), null));
+            AndroidUtilities.shakeView(r1Var);
+            textView.setText(LocaleController.getString(R.string.BusinessRepliesNameBusy));
+            e4Var.run(Boolean.TRUE);
         }
-        this.d[0].setText(LocaleController.formatString(R.string.HashtagStoriesFoundSubtitle, d8Var.C));
-        return i11 > 0;
     }
 
-    public final void b(int i10, String str, String str2) {
-        boolean isEmpty = TextUtils.isEmpty(str2);
-        TextView[] textViewArr = this.c;
-        if (isEmpty) {
-            textViewArr[1].setText(LocaleController.formatPluralStringSpaced("HashtagMessagesFound", i10));
+    @Override // org.telegram.ui.qy
+    public boolean u(wy wyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, fg1 fg1Var) {
+        TLRPC.TL_chatAdminRights tL_chatAdminRights;
+        final LaunchActivity launchActivity = (LaunchActivity) this.b;
+        final TLRPC.User user = (TLRPC.User) this.c;
+        final String str = (String) this.d;
+        final String str2 = (String) this.e;
+        final wy wyVar2 = (wy) this.f;
+        Pattern pattern = LaunchActivity.B1;
+        final long j3 = ((MessagesStorage.TopicKey) arrayList.get(0)).dialogId;
+        final TLRPC.Chat chat = MessagesController.getInstance(launchActivity.O).getChat(Long.valueOf(-j3));
+        final int i12 = this.a;
+        if (chat == null || (!chat.creator && ((tL_chatAdminRights = chat.admin_rights) == null || !tL_chatAdminRights.add_admins))) {
+            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(launchActivity);
+            String string = LocaleController.getString(R.string.AddBot);
+            org.telegram.ui.ActionBar.c2 c2Var = alertDialog$Builder.a;
+            c2Var.R = string;
+            c2Var.T = AndroidUtilities.replaceTags(LocaleController.formatString("AddMembersAlertNamesText", R.string.AddMembersAlertNamesText, UserObject.getUserName(user), chat == null ? "" : chat.title));
+            alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
+            alertDialog$Builder.k(LocaleController.getString(R.string.AddBot), new org.telegram.ui.ActionBar.b2() { // from class: org.telegram.ui.t90
+                @Override // org.telegram.ui.ActionBar.b2
+                public final void f(org.telegram.ui.ActionBar.c2 c2Var2, int i13) {
+                    Pattern pattern2 = LaunchActivity.B1;
+                    Bundle i14 = a4.a.i("scrollToTopOnResume", true);
+                    long j10 = -j3;
+                    i14.putLong("chat_id", j10);
+                    bo boVar = new bo(i14);
+                    int i15 = i12;
+                    NotificationCenter.getInstance(i15).lambda$postNotificationNameOnUIThread$1(NotificationCenter.closeChats, new Object[0]);
+                    MessagesController.getInstance(i15).addUserToChat(j10, user, 0, str2, boVar, null);
+                    ((ActionBarLayout) LaunchActivity.this.O()).S(boVar, true, false);
+                }
+            });
+            alertDialog$Builder.o();
         } else {
-            textViewArr[1].setText(AndroidUtilities.replaceSingleLink(LocaleController.formatPluralStringSpaced("HashtagMessagesFoundChannel", i10, p6.i("@", str2)), j6.v0(j6.Oh, this.a), null));
+            MessagesController.getInstance(i12).checkIsInChat(false, chat, user, new MessagesController.IsInChatCheckedCallback() { // from class: org.telegram.ui.s90
+                @Override // org.telegram.messenger.MessagesController.IsInChatCheckedCallback
+                public final void run(boolean z12, TLRPC.TL_chatAdminRights tL_chatAdminRights2, String str3) {
+                    Pattern pattern2 = LaunchActivity.B1;
+                    AndroidUtilities.runOnUIThread(new org.telegram.messenger.m8(LaunchActivity.this, str, tL_chatAdminRights2, z12, str2, i12, chat, wyVar2, user, j3, str3));
+                }
+            });
         }
-        this.d[1].setText(LocaleController.formatString(R.string.HashtagMessagesFoundSubtitle, str));
+        return true;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        if (this.e > 0.0f) {
-            canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), (int) ((1.0f - this.e) * 255.0f), 31);
-        } else {
-            canvas.save();
-        }
-        canvas.translate(AndroidUtilities.lerp(0, -AndroidUtilities.dp(62.0f), this.e), 0.0f);
-        this.b.i(canvas);
-        canvas.restore();
-        super.onDraw(canvas);
-        Paint T0 = j6.T0("paintDivider", this.a);
-        if (T0 == null) {
-            T0 = j6.k0;
-        }
-        canvas.drawRect(0.0f, getHeight() - 1, getWidth(), getHeight(), T0);
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLObject.FLAG_30));
+    public /* synthetic */ n1(LaunchActivity launchActivity, int i10, TLRPC.User user, String str, String str2, wy wyVar) {
+        this.b = launchActivity;
+        this.a = i10;
+        this.c = user;
+        this.d = str;
+        this.e = str2;
+        this.f = wyVar;
     }
 }

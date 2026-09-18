@@ -1,46 +1,29 @@
 package yh;
 
-import android.view.KeyEvent;
-import android.view.View;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
-/* loaded from: classes.dex */
-public final class z1 implements TextView.OnEditorActionListener {
-    public final /* synthetic */ y1 a;
-    public final /* synthetic */ Utilities.Callback b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.b2[] c;
-    public final /* synthetic */ View d;
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class z1 implements org.telegram.ui.ActionBar.b2 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ a4 b;
+    public final /* synthetic */ TL_stars.TL_starGiftUnique c;
 
-    public z1(y1 y1Var, Utilities.Callback callback, org.telegram.ui.ActionBar.b2[] b2VarArr, View view) {
-        this.a = y1Var;
-        this.b = callback;
-        this.c = b2VarArr;
-        this.d = view;
+    public /* synthetic */ z1(a4 a4Var, TL_stars.TL_starGiftUnique tL_starGiftUnique, int i10) {
+        this.a = i10;
+        this.b = a4Var;
+        this.c = tL_starGiftUnique;
     }
 
-    @Override // android.widget.TextView.OnEditorActionListener
-    public final boolean onEditorAction(TextView textView, int i10, KeyEvent keyEvent) {
-        if (i10 != 6) {
-            return false;
+    @Override // org.telegram.ui.ActionBar.b2
+    public final void f(org.telegram.ui.ActionBar.c2 c2Var, int i10) {
+        switch (this.a) {
+            case 0:
+                a4.N0(this.b, this.c, c2Var);
+                break;
+            default:
+                nf.f.u(this.b.getContext(), "https://fragment.com/gift/" + this.c.slug);
+                break;
         }
-        y1 y1Var = this.a;
-        String obj = y1Var.getText().toString();
-        if (obj.length() <= 0 || obj.length() > 12) {
-            AndroidUtilities.shakeView(y1Var);
-            return true;
-        }
-        this.b.run(obj);
-        org.telegram.ui.ActionBar.b2 b2Var = this.c[0];
-        if (b2Var != null) {
-            b2Var.dismiss();
-        }
-        View view = this.d;
-        if (view != null) {
-            view.requestFocus();
-        }
-        return true;
     }
 }

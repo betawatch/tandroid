@@ -1,118 +1,46 @@
 package org.telegram.ui;
 
 import android.view.View;
-import android.view.ViewGroup;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class ha extends org.telegram.ui.Components.kl0 {
-    public final /* synthetic */ qa c;
+public final class ha implements org.telegram.ui.Components.al0 {
+    public final /* synthetic */ sa a;
 
-    public ha(qa qaVar) {
-        this.c = qaVar;
+    public ha(sa saVar) {
+        this.a = saVar;
     }
 
-    @Override // org.telegram.ui.Components.kl0
-    public final boolean D(s4.c1 c1Var) {
-        return c1Var.f == 4;
-    }
-
-    @Override // s4.h0
-    public final int h() {
-        qa qaVar = this.c;
-        org.telegram.ui.Components.ll0 ll0Var = qaVar.b;
-        ArrayList arrayList = qaVar.v;
-        if (ll0Var != null) {
-            ArrayList arrayList2 = ll0Var.K2;
-            if (arrayList2 != null) {
-                arrayList2.clear();
-            } else {
-                ll0Var.K2 = new ArrayList();
+    @Override // org.telegram.ui.Components.al0
+    public final void d(int i10, View view) {
+        boolean z10 = view instanceof pa;
+        sa saVar = this.a;
+        if (!z10) {
+            if (view instanceof ma) {
+                saVar.e0(true);
+                return;
             }
-            if (arrayList.size() > 0) {
-                qaVar.b.K2.add(Long.valueOf(AndroidUtilities.pack(3, arrayList.size() + 3)));
-            }
-        }
-        return (qaVar.v.size() > 0 ? qaVar.v.size() + 2 : 0) + 3;
-    }
-
-    @Override // s4.h0
-    public final int j(int i10) {
-        if (i10 == 0) {
-            return 0;
-        }
-        if (i10 == 1) {
-            return 3;
-        }
-        if (i10 == 2) {
-            return 1;
-        }
-        if (i10 == 3) {
-            return 0;
-        }
-        return i10 != h() - 1 ? 4 : 2;
-    }
-
-    @Override // s4.h0
-    public final void v(s4.c1 c1Var, int i10) {
-        qa qaVar = this.c;
-        long j3 = qaVar.x;
-        int i11 = c1Var.f;
-        View view = c1Var.a;
-        if (i11 == 0) {
-            ((org.telegram.ui.Cells.l4) view).setText(LocaleController.getString(i10 == 0 ? j3 != 0 ? R.string.BotSetPublicLinkHeader : R.string.SetUsernameHeader : R.string.UsernamesProfileHeader));
             return;
         }
-        if (i11 == 2) {
-            ((org.telegram.ui.Cells.e9) view).setText(LocaleController.getString(j3 != 0 ? R.string.BotUsernamesHelp : R.string.UsernamesProfileHelp));
+        pa paVar = (pa) view;
+        TLRPC.TL_username tL_username = paVar.v;
+        if (tL_username == null || paVar.r) {
             return;
         }
-        if (i11 == 3) {
-            qaVar.n = true;
-            ka kaVar = (ka) view;
-            qaVar.y = kaVar;
-            kaVar.a.setText(qaVar.r);
-            qaVar.n = false;
+        if (tL_username.editable && saVar.x == 0) {
+            saVar.b.y0(0);
+            saVar.e0(true);
             return;
         }
-        if (i11 != 4) {
-            return;
-        }
-        TLRPC.TL_username tL_username = (TLRPC.TL_username) qaVar.v.get(i10 - 4);
-        na naVar = (na) view;
-        if (tL_username.editable) {
-            qaVar.E = naVar;
-        } else if (qaVar.E == naVar) {
-            qaVar.E = null;
-        }
-        naVar.a(tL_username, i10 < h() - 2, false, qaVar.x);
-    }
-
-    @Override // s4.h0
-    public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        qa qaVar = this.c;
-        if (i10 == 0) {
-            return new org.telegram.ui.Components.vk0(new org.telegram.ui.Cells.l4(qaVar.getParentActivity()));
-        }
-        if (i10 == 1) {
-            pa paVar = new pa(qaVar, qaVar.getParentActivity());
-            paVar.setTag(-33024);
-            return new org.telegram.ui.Components.vk0(paVar);
-        }
-        if (i10 == 2) {
-            return new org.telegram.ui.Components.vk0(new org.telegram.ui.Cells.e9(qaVar.getParentActivity()));
-        }
-        if (i10 == 3) {
-            return new org.telegram.ui.Components.vk0(new ka(qaVar, qaVar.getParentActivity()));
-        }
-        if (i10 != 4) {
-            return null;
-        }
-        return new org.telegram.ui.Components.vk0(new ga(this, qaVar.getParentActivity(), qaVar.getResourceProvider()));
+        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(saVar.getParentActivity(), 0, saVar.getResourceProvider());
+        alertDialog$Builder.a.R = LocaleController.getString(tL_username.active ? R.string.UsernameDeactivateLink : R.string.UsernameActivateLink);
+        alertDialog$Builder.a.T = LocaleController.getString(tL_username.active ? R.string.UsernameDeactivateLinkProfileMessage : R.string.UsernameActivateLinkProfileMessage);
+        alertDialog$Builder.k(LocaleController.getString(tL_username.active ? R.string.Hide : R.string.Show), new fa(this, tL_username, i10, view, 0));
+        alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new m4.u0(19));
+        alertDialog$Builder.o();
     }
 }

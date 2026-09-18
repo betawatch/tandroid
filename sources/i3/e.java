@@ -3,9 +3,9 @@ package i3;
 import b2.g;
 import c3.h0;
 import e2.v;
-import f2.p;
+import f2.o;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class e extends g {
     public final v b;
@@ -17,7 +17,7 @@ public final class e extends g {
 
     public e(h0 h0Var) {
         super(h0Var);
-        this.b = new v(p.a);
+        this.b = new v(o.a);
         this.c = new v(4);
     }
 }

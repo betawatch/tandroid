@@ -3,24 +3,23 @@ package za;
 import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.os.Build;
-import ji.u4;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class b0 {
     public static final b0 a = new b0();
-    public static final u4 b;
+    public static final ka.c b;
 
     static {
-        ka.d dVar = new ka.d();
-        dVar.j(a0.class, g.a);
-        dVar.j(j0.class, h.a);
-        dVar.j(j.class, e.a);
-        dVar.j(b.class, d.a);
-        dVar.j(a.class, c.a);
-        dVar.j(p.class, f.a);
-        dVar.d = true;
-        b = new u4(dVar, 2);
+        ka.e eVar = new ka.e();
+        eVar.m(a0.class, g.a);
+        eVar.m(j0.class, h.a);
+        eVar.m(j.class, e.a);
+        eVar.m(b.class, d.a);
+        eVar.m(a.class, c.a);
+        eVar.m(p.class, f.a);
+        eVar.d = true;
+        b = new ka.c(eVar, 0);
     }
 
     public static b a(k9.h hVar) {

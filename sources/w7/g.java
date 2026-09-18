@@ -1,20 +1,22 @@
 package w7;
 
-import android.graphics.Rect;
-import android.text.Layout;
-import android.text.StaticLayout;
-import android.text.TextPaint;
-
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public abstract class g {
-    public static StaticLayout a;
-
-    public static ji.b0 a(int i10, int i11, int i12, int i13) {
-        Rect rect = new Rect(i10, i11, i12, i13);
-        if (a == null) {
-            a = new StaticLayout(" ", new TextPaint(), 1, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+    /* JADX WARN: Multi-variable type inference failed */
+    public static id.c a(id.c cVar, id.c cVar2, rd.p pVar) {
+        kotlin.jvm.internal.i.e(pVar, "<this>");
+        if (pVar instanceof kd.a) {
+            return ((kd.a) pVar).create(cVar, cVar2);
         }
-        return new ji.b0(a, rect);
+        id.h context = cVar2.getContext();
+        return context == id.i.a ? new jd.b(cVar2, cVar, pVar) : new jd.c(cVar2, context, pVar, cVar);
+    }
+
+    public static id.c b(id.c cVar) {
+        id.c intercepted;
+        kotlin.jvm.internal.i.e(cVar, "<this>");
+        kd.c cVar2 = cVar instanceof kd.c ? (kd.c) cVar : null;
+        return (cVar2 == null || (intercepted = cVar2.intercepted()) == null) ? cVar : intercepted;
     }
 }

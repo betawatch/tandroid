@@ -21,7 +21,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public abstract class c5 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int F = 0;
@@ -32,7 +32,7 @@ public abstract class c5 extends FrameLayout implements NotificationCenter.Notif
     public final ActionBarPopupWindow$ActionBarPopupWindowLayout d;
     public final v4 e;
     public final org.telegram.ui.ActionBar.f6 f;
-    public final gh.b h;
+    public final fh.b h;
     public AnimatorSet n;
     public boolean r;
     public d5[] s;
@@ -44,12 +44,14 @@ public abstract class c5 extends FrameLayout implements NotificationCenter.Notif
     public c5(Context context, org.telegram.ui.ActionBar.f6 f6Var, v4 v4Var) {
         super(context);
         this.a = new OvershootInterpolator(1.02f);
-        gh.b bVar = new gh.b();
+        fh.b bVar = new fh.b();
         this.h = bVar;
+        ah.c cVar = new ah.c(bVar);
         new Matrix();
         this.e = v4Var;
         this.f = f6Var;
-        ih.k kVar = new ih.k(this);
+        cVar.f = new hh.k(this);
+        cVar.g = this;
         View view = new View(context);
         this.v = view;
         view.setOnClickListener(new a(this, 4));
@@ -60,10 +62,9 @@ public abstract class c5 extends FrameLayout implements NotificationCenter.Notif
         u4 u4Var = new u4(context, f6Var);
         this.c = u4Var;
         float dp = AndroidUtilities.dp(12.0f);
-        bi.z1 z1Var = yf.j0.a;
-        u4Var.setOutlineProvider(new yf.i0(0, dp));
+        ai.k2 k2Var = yf.j0.a;
+        u4Var.setOutlineProvider(new yf.h0(0, dp));
         u4Var.setElevation(AndroidUtilities.dp(4.0f));
-        int i10 = 1;
         u4Var.setClipToOutline(true);
         j0Var.addView(u4Var, w7.x5.e(0, 0, 1));
         if (Build.VERSION.SDK_INT >= 28) {
@@ -72,14 +73,12 @@ public abstract class c5 extends FrameLayout implements NotificationCenter.Notif
         }
         ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = new ActionBarPopupWindow$ActionBarPopupWindowLayout(R.drawable.popup_fixed_alert, 0, context, f6Var);
         this.d = actionBarPopupWindow$ActionBarPopupWindowLayout;
-        dh.d k10 = bVar.k();
-        k10.n(null);
-        kVar.d(actionBarPopupWindow$ActionBarPopupWindowLayout, this, new ah.i0(i10, k10, actionBarPopupWindow$ActionBarPopupWindowLayout), false);
-        k10.n(fh.b.k(f6Var));
-        k10.o(AndroidUtilities.dp(8.0f));
-        k10.h.e = true;
-        k10.p(AndroidUtilities.dp(12.0f));
-        actionBarPopupWindow$ActionBarPopupWindowLayout.setBackground(k10);
+        ch.d c10 = cVar.c(actionBarPopupWindow$ActionBarPopupWindowLayout, null, false);
+        c10.o(eh.b.k(f6Var));
+        c10.p(AndroidUtilities.dp(8.0f));
+        c10.j.e = true;
+        c10.q(AndroidUtilities.dp(12.0f));
+        actionBarPopupWindow$ActionBarPopupWindowLayout.setBackground(c10);
         j0Var.addView(actionBarPopupWindow$ActionBarPopupWindowLayout, w7.x5.h(-2.0f, -2.0f, 8388611));
     }
 
@@ -101,7 +100,7 @@ public abstract class c5 extends FrameLayout implements NotificationCenter.Notif
         z4 z4Var2 = x4Var.j;
         if (z4Var2 != null) {
             this.y = z4Var2;
-            di.l5 l5Var = new di.l5(1, this, x4Var);
+            ci.l5 l5Var = new ci.l5(1, this, x4Var);
             if (!z4Var2.g) {
                 z4Var2.g = true;
                 z4Var2.f = l5Var;
@@ -117,10 +116,10 @@ public abstract class c5 extends FrameLayout implements NotificationCenter.Notif
         String str2 = x4Var.d;
         BitmapDrawable bitmapDrawable = x4Var.g;
         Object obj = x4Var.h;
-        org.telegram.ui.Components.x9 x9Var = (org.telegram.ui.Components.x9) u4Var.d;
-        x9Var.getImageReceiver().setCurrentAccount(i10);
-        x9Var.getImageReceiver().setImage(imageLocation, str, imageLocation2, null, imageLocation3, str2, bitmapDrawable, 0L, null, obj, 1);
-        x9Var.d();
+        org.telegram.ui.Components.u9 u9Var = (org.telegram.ui.Components.u9) u4Var.d;
+        u9Var.getImageReceiver().setCurrentAccount(i10);
+        u9Var.getImageReceiver().setImage(imageLocation, str, imageLocation2, null, imageLocation3, str2, bitmapDrawable, 0L, null, obj, 1);
+        u9Var.d();
         ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = this.d;
         actionBarPopupWindow$ActionBarPopupWindowLayout.d();
         int i11 = 0;
@@ -132,9 +131,9 @@ public abstract class c5 extends FrameLayout implements NotificationCenter.Notif
             }
             d5 d5Var = d5VarArr[i11];
             ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout2 = actionBarPopupWindow$ActionBarPopupWindowLayout;
-            org.telegram.ui.ActionBar.f1 c10 = org.telegram.ui.ActionBar.v0.c(i11 == 0, i11 == this.s.length - 1, actionBarPopupWindow$ActionBarPopupWindowLayout2, d5Var.c, LocaleController.getString(d5Var.a, d5Var.b), false, this.f);
+            org.telegram.ui.ActionBar.g1 c10 = org.telegram.ui.ActionBar.w0.c(i11 == 0, i11 == this.s.length - 1, actionBarPopupWindow$ActionBarPopupWindowLayout2, d5Var.c, LocaleController.getString(d5Var.a, d5Var.b), false, this.f);
             c10.setTag(Integer.valueOf(i11));
-            c10.setOnClickListener(new bi.u1(24, this, d5Var));
+            c10.setOnClickListener(new ai.f2(24, this, d5Var));
             i11++;
             actionBarPopupWindow$ActionBarPopupWindowLayout = actionBarPopupWindow$ActionBarPopupWindowLayout2;
         }
@@ -146,7 +145,7 @@ public abstract class c5 extends FrameLayout implements NotificationCenter.Notif
         }
         this.r = z10;
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-        ofFloat.setInterpolator(z10 ? this.a : org.telegram.ui.Components.pr.h);
+        ofFloat.setInterpolator(z10 ? this.a : org.telegram.ui.Components.qr.h);
         final int i10 = 0;
         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener(this) { // from class: org.telegram.ui.a5
             public final /* synthetic */ c5 b;
@@ -242,7 +241,7 @@ public abstract class c5 extends FrameLayout implements NotificationCenter.Notif
         this.n = animatorSet2;
         animatorSet2.setDuration(z10 ? 190L : 150L);
         this.n.playTogether(ofFloat, ofFloat2);
-        this.n.addListener(new ah.q0(21, this, z10));
+        this.n.addListener(new ai.n(20, this, z10));
         this.n.start();
     }
 
@@ -304,9 +303,9 @@ public abstract class c5 extends FrameLayout implements NotificationCenter.Notif
     public final void onSizeChanged(int i10, int i11, int i12, int i13) {
         if (i10 != 0 && i11 != 0 && this.r) {
             this.v.setBackground(null);
-            AndroidUtilities.runOnUIThread(new lu0(this, 12));
+            AndroidUtilities.runOnUIThread(new ou0(this, 12));
         }
-        hh.d.c(this.h, this);
+        gh.d.c(this.h, this);
         ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = this.d;
         if (actionBarPopupWindow$ActionBarPopupWindowLayout != null) {
             actionBarPopupWindow$ActionBarPopupWindowLayout.invalidate();

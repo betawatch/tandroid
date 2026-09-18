@@ -1,43 +1,46 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import org.telegram.messenger.ImageReceiver;
+import android.content.Context;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.Stories.ProfileStoriesView;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class tz0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ ProfileActivity a;
+public final class tz0 extends ProfileStoriesView {
+    public final /* synthetic */ Context t0;
+    public final /* synthetic */ ProfileActivity u0;
 
-    public tz0(ProfileActivity profileActivity) {
-        this.a = profileActivity;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public tz0(ProfileActivity profileActivity, Context context, int i10, long j3, boolean z10, j0 j0Var, qz0 qz0Var, org.telegram.ui.ActionBar.f6 f6Var, Context context2) {
+        super(context, i10, j3, z10, j0Var, qz0Var, f6Var);
+        this.u0 = profileActivity;
+        this.t0 = context2;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        org.telegram.ui.ActionBar.k kVar;
-        ProfileActivity profileActivity = this.a;
-        kVar = ((org.telegram.ui.ActionBar.n2) profileActivity).actionBar;
-        kVar.B(profileActivity.p2 ? 1090519039 : profileActivity.Q5 != null ? 553648127 : org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.f8, profileActivity.z0), false);
-        pz0 pz0Var = profileActivity.e0;
-        ImageReceiver imageReceiver = pz0Var.U;
-        org.telegram.ui.Components.d6 animation = imageReceiver.getAnimation();
-        if (animation != null) {
-            animation.w(pz0Var);
+    @Override // org.telegram.ui.Stories.ProfileStoriesView
+    public final void e(a6.i iVar) {
+        TL_stories.PeerStories peerStories;
+        TL_stories.PeerStories peerStories2;
+        ProfileActivity profileActivity = this.u0;
+        long a2 = profileActivity.a();
+        ai.l9 storiesController = profileActivity.getMessagesController().getStoriesController();
+        boolean I = storiesController.I(a2);
+        Context context = this.t0;
+        if (I || storiesController.K(a2) || storiesController.N(a2)) {
+            profileActivity.getOrCreateStoryViewer().D(context, a2, iVar);
+            return;
         }
-        imageReceiver.clearImage();
-        ImageReceiver.BitmapHolder bitmapHolder = pz0Var.W;
-        if (bitmapHolder != null) {
-            bitmapHolder.release();
-            pz0Var.W = null;
+        TLRPC.UserFull userFull = profileActivity.v2;
+        if (userFull != null && (peerStories2 = userFull.stories) != null && !peerStories2.stories.isEmpty() && profileActivity.e1 != profileActivity.getUserConfig().clientUserId) {
+            profileActivity.getOrCreateStoryViewer().E(context, profileActivity.v2.stories, iVar);
+            return;
         }
-        pz0Var.V = 0.0f;
-        pz0Var.invalidate();
-        profileActivity.H0 = false;
-        profileActivity.l5(false);
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationStart(Animator animator) {
+        TLRPC.ChatFull chatFull = profileActivity.u2;
+        if (chatFull == null || (peerStories = chatFull.stories) == null || peerStories.stories.isEmpty()) {
+            profileActivity.K3();
+        } else {
+            profileActivity.getOrCreateStoryViewer().E(context, profileActivity.u2.stories, iVar);
+        }
     }
 }

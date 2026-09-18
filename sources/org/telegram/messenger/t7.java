@@ -1,28 +1,33 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
-
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class t7 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ MediaDataController b;
-    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ BaseController e;
 
-    public /* synthetic */ t7(MediaDataController mediaDataController, ArrayList arrayList, int i10) {
-        this.a = i10;
-        this.b = mediaDataController;
-        this.c = arrayList;
+    public /* synthetic */ t7(BaseController baseController, long j3, long j10, int i10, int i11) {
+        this.a = i11;
+        this.e = baseController;
+        this.b = j3;
+        this.c = j10;
+        this.d = i10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$loadRepliesOfDraftReplies$0(this.c);
+                ((MediaDataController) this.e).lambda$getMediaCounts$131(this.b, this.c, this.d);
+                break;
+            case 1:
+                ((NotificationsController) this.e).lambda$deleteNotificationChannel$42(this.b, this.c, this.d);
                 break;
             default:
-                this.b.lambda$broadcastPinnedMessage$168(this.c);
+                ((TopicsController) this.e).lambda$updateMentionsUnread$21(this.b, this.c, this.d);
                 break;
         }
     }

@@ -24,10 +24,10 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import u6.c;
-import v7.n5;
+import v7.o5;
 import w7.e0;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public class MediaInfo extends a implements ReflectedParcelable {
     public static final Parcelable.Creator<MediaInfo> CREATOR;
@@ -209,8 +209,8 @@ public class MediaInfo extends a implements ReflectedParcelable {
                             for (int i12 = 0; i12 < optJSONArray.length(); i12++) {
                                 try {
                                     strArr[i12] = optJSONArray.getString(i12);
-                                } catch (JSONException e7) {
-                                    e = e7;
+                                } catch (JSONException e) {
+                                    e = e;
                                     String message = e.getMessage();
                                     Locale locale = Locale.ROOT;
                                     Log.d("AdBreakInfo", "Error while creating an AdBreakInfo from JSON: " + message);
@@ -223,8 +223,8 @@ public class MediaInfo extends a implements ReflectedParcelable {
                             j3 = j10;
                         }
                         bVar = new b(j12, string, optLong, optBoolean, strArr, jSONObject2.optBoolean("isEmbedded"), jSONObject2.optBoolean("expanded"));
-                    } catch (JSONException e10) {
-                        e = e10;
+                    } catch (JSONException e7) {
+                        e = e7;
                         j3 = j10;
                     }
                     if (bVar == null) {
@@ -273,8 +273,8 @@ public class MediaInfo extends a implements ReflectedParcelable {
                         String a15 = g6.a.a("hlsSegmentFormat", jSONObject3);
                         JSONObject optJSONObject2 = jSONObject3.optJSONObject("vastAdsRequest");
                         aVar = new c6.a(string2, a12, optLong2, a10, str, a2, (optJSONObject == null || optJSONObject.length() == 0) ? null : optJSONObject.toString(), a13, a14, intValue, a15, optJSONObject2 == null ? null : new t(g6.a.a("adTagUrl", optJSONObject2), g6.a.a("adsResponse", optJSONObject2)));
-                    } catch (JSONException e11) {
-                        String message2 = e11.getMessage();
+                    } catch (JSONException e10) {
+                        String message2 = e10.getMessage();
                         Locale locale2 = Locale.ROOT;
                         Log.d("AdBreakClipInfo", "Error while creating an AdBreakClipInfo from JSON: " + message2);
                     }
@@ -434,7 +434,7 @@ public class MediaInfo extends a implements ReflectedParcelable {
                         int i17 = i16 + 1;
                         int length = objArr.length;
                         if (length < i17) {
-                            objArr = Arrays.copyOf(objArr, n5.a(length, i17));
+                            objArr = Arrays.copyOf(objArr, o5.a(length, i17));
                         }
                         objArr[i16] = optString3;
                         i15++;

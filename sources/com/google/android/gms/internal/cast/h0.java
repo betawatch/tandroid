@@ -3,7 +3,7 @@ package com.google.android.gms.internal.cast;
 import java.util.ListIterator;
 import java.util.NoSuchElementException;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class h0 extends a9.o implements ListIterator {
     public final int b;
@@ -14,7 +14,7 @@ public final class h0 extends a9.o implements ListIterator {
     public h0(j0 j0Var, int i10) {
         super(1);
         int size = j0Var.size();
-        v7.j5.b(i10, size);
+        v7.k5.b(i10, size);
         this.b = size;
         this.c = i10;
         this.d = j0Var;

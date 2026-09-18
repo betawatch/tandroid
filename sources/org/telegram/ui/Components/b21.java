@@ -1,39 +1,77 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
+import android.graphics.Canvas;
+import android.view.MotionEvent;
 import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class b21 implements le.d, Utilities.Callback5, Utilities.Callback5Return {
-    public final /* synthetic */ w21 a;
+public abstract class b21 extends View {
+    public final c21 a;
+    public Utilities.Callback b;
+    public final org.telegram.ui.ActionBar.f6 c;
+    public int d;
 
-    public /* synthetic */ b21(w21 w21Var) {
-        this.a = w21Var;
+    public b21(Context context, int i10, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context);
+        this.c = f6Var;
+        c21 c21Var = new c21(i10, this, f6Var, false);
+        this.a = c21Var;
+        c21Var.r = new kq0(this, 18);
     }
 
-    @Override // le.d
-    public void E(int i10, float f7, float f10, le.e eVar) {
-        this.a.g();
+    @Override // android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        org.telegram.ui.ActionBar.f6 f6Var = this.c;
+        if (f6Var != null) {
+            f6Var.m(0.0f, 0.0f, getMeasuredWidth(), this.d);
+        } else {
+            org.telegram.ui.ActionBar.j6.q(0.0f, 0.0f, getMeasuredWidth(), this.d);
+        }
+        this.a.c(canvas, getWidth(), 0.0f, 0.0f, 0.75f, 1.0f, true);
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback5Return
-    public Object run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        ((Integer) obj3).getClass();
-        ((Float) obj4).getClass();
-        ((Float) obj5).getClass();
-        return Boolean.valueOf(w21.c(this.a, (h51) obj, (View) obj2));
+    @Override // android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.a.a();
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback5
-    public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        ((Integer) obj3).getClass();
-        ((Float) obj4).getClass();
-        ((Float) obj5).getClass();
-        w21.a(this.a, (h51) obj);
+    @Override // android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.a.b();
     }
 
-    @Override // le.d
-    public /* synthetic */ void z(float f7, int i10) {
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(33.0f), TLObject.FLAG_30));
+    }
+
+    @Override // android.view.View
+    public boolean onTouchEvent(MotionEvent motionEvent) {
+        return this.a.d(motionEvent, false) || super.onTouchEvent(motionEvent);
+    }
+
+    public void set(MessageObject messageObject) {
+        c21 c21Var = this.a;
+        c21Var.f(messageObject);
+        if (isAttachedToWindow()) {
+            c21Var.a();
+        }
+    }
+
+    public void setBackgroundHeight(int i10) {
+        this.d = i10;
+    }
+
+    public void setOnTopicClickListener(Utilities.Callback<Long> callback) {
+        this.b = callback;
     }
 }

@@ -6,7 +6,7 @@ import java.lang.annotation.RetentionPolicy;
 /* JADX WARN: Method from annotation default annotation not found: i */
 /* JADX WARN: Method from annotation default annotation not found: n */
 /* JADX WARN: Method from annotation default annotation not found: s */
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 @Retention(RetentionPolicy.RUNTIME)
 /* loaded from: classes.dex */
 public @interface e {

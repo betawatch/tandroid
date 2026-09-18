@@ -1,20 +1,43 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class w51 extends l61 {
-    public final /* synthetic */ j71 f3;
+public final class w51 extends s4.s {
+    public final /* synthetic */ int Q;
+    public final /* synthetic */ i71 R;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public w51(j71 j71Var, Context context) {
-        super(j71Var, context);
-        this.f3 = j71Var;
+    public /* synthetic */ w51(i71 i71Var, int i10) {
+        super(40);
+        this.Q = i10;
+        this.R = i71Var;
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView
-    public final void k0(int i10, int i11) {
-        this.f3.h();
+    @Override // s4.c0, s4.o0
+    public final void v0(RecyclerView recyclerView, s4.z0 z0Var, int i10) {
+        switch (this.Q) {
+            case 0:
+                try {
+                    ci.m1 m1Var = new ci.m1(this, recyclerView.getContext(), 3);
+                    m1Var.a = i10;
+                    w0(m1Var);
+                    break;
+                } catch (Exception e) {
+                    FileLog.e(e);
+                }
+            default:
+                try {
+                    ci.m1 m1Var2 = new ci.m1(this, recyclerView.getContext(), 5);
+                    m1Var2.a = i10;
+                    w0(m1Var2);
+                    break;
+                } catch (Exception e7) {
+                    FileLog.e(e7);
+                    return;
+                }
+        }
     }
 }

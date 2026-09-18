@@ -13,12 +13,12 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class xo0 extends View {
-    public static final hv0 v;
+    public static final jv0 v;
     public ImageReceiver a;
-    public i9 b;
+    public f9 b;
     public org.telegram.ui.Cells.z c;
     public Paint d;
     public Paint e;
@@ -29,9 +29,9 @@ public final class xo0 extends View {
     public boolean s;
 
     static {
-        hv0 hv0Var = new hv0(new p2(29), new wo0(0));
-        hv0Var.c = 100.0f;
-        v = hv0Var;
+        jv0 jv0Var = new jv0(new bn0(2), new bn0(3));
+        jv0Var.c = 100.0f;
+        v = jv0Var;
     }
 
     public final void a(boolean z10, boolean z11, float f7) {
@@ -53,9 +53,9 @@ public final class xo0 extends View {
         if (!z11) {
             ValueAnimator duration = ValueAnimator.ofFloat(this.n, f7).setDuration(200L);
             this.h = duration;
-            duration.setInterpolator(pr.f);
+            duration.setInterpolator(qr.f);
             this.h.addUpdateListener(new h70(this, 16));
-            this.h.addListener(new r80(this, 14));
+            this.h.addListener(new jd0(this, 11));
             this.h.start();
             return;
         }
@@ -73,8 +73,8 @@ public final class xo0 extends View {
         lVar.b(450.0f);
         lVar.a(1.0f);
         kVar2.u = lVar;
-        this.f.b(new oh(this, z12, f10, f11));
-        this.f.a(new hb(this, 3));
+        this.f.b(new mh(this, z12, f10, f11));
+        this.f.a(new fb(this, 3));
         this.f.f();
     }
 
@@ -141,10 +141,10 @@ public final class xo0 extends View {
     }
 
     public void setAvatar(TLObject tLObject) {
-        i9 i9Var = this.b;
+        f9 f9Var = this.b;
         setContentDescription(LocaleController.formatString("AccDescrSendAsPeer", R.string.AccDescrSendAsPeer, tLObject instanceof TLRPC.User ? UserObject.getFirstName((TLRPC.User) tLObject) : tLObject instanceof TLRPC.Chat ? ((TLRPC.Chat) tLObject).title : tLObject instanceof TLRPC.ChatInvite ? ((TLRPC.ChatInvite) tLObject).title : ""));
-        i9Var.p(tLObject);
-        this.a.setForUserOrChat(tLObject, i9Var);
+        f9Var.p(tLObject);
+        this.a.setForUserOrChat(tLObject, f9Var);
     }
 
     public void setProgress(float f7) {

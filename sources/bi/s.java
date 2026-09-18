@@ -1,35 +1,12 @@
 package bi;
 
-import android.animation.ValueAnimator;
-import org.telegram.ui.lx;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class s implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ u b;
-
-    public /* synthetic */ s(u uVar, int i10) {
-        this.a = i10;
-        this.b = uVar;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                lx lxVar = this.b.b0;
-                ValueAnimator valueAnimator = lxVar.j0;
-                if (valueAnimator != null) {
-                    valueAnimator.start();
-                }
-                lxVar.k0 = null;
-                break;
-            default:
-                u uVar = this.b;
-                uVar.w = false;
-                uVar.invalidate();
-                break;
-        }
+public final class s extends MessageObject {
+    @Override // org.telegram.messenger.MessageObject
+    public final float getProgress() {
+        return this.uploadingStory.h;
     }
 }

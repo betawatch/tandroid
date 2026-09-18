@@ -5,9 +5,9 @@ import android.media.MediaExtractor;
 import android.media.MediaFormat;
 import android.media.MediaMuxer;
 import android.os.Build;
-import com.google.android.gms.internal.vision.e2;
-import di.n8;
-import di.t;
+import ci.n8;
+import ci.t;
+import hg.k0;
 import java.io.File;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
@@ -18,7 +18,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.VideoEditedInfo;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public class MediaCodecVideoConvertor {
     private static final int MEDIACODEC_TIMEOUT_DEFAULT = 2500;
@@ -35,14 +35,14 @@ public class MediaCodecVideoConvertor {
     private Muxer muxer;
     private String outputMimeType;
 
-    /* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+    /* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
     public class ConversionCanceledException extends RuntimeException {
         public ConversionCanceledException() {
             super("canceled conversion");
         }
     }
 
-    /* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+    /* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
     public static class ConvertVideoParams {
         int account;
         long avatarStartTime;
@@ -135,7 +135,7 @@ public class MediaCodecVideoConvertor {
         }
     }
 
-    /* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+    /* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
     public static class MixedSoundInfo {
         final String audioFile;
         public long audioOffset;
@@ -176,8 +176,8 @@ public class MediaCodecVideoConvertor {
                     audioDecoder.setEndTimeUs(j10 + j11);
                 }
                 arrayList2.add(cVar);
-            } catch (Exception e7) {
-                FileLog.e(e7);
+            } catch (Exception e) {
+                FileLog.e(e);
             }
         }
     }
@@ -190,7 +190,7 @@ public class MediaCodecVideoConvertor {
     }
 
     /*  JADX ERROR: Type inference failed
-        jadx.core.utils.exceptions.JadxOverflowException: Type update terminated with stack overflow, arg: (r1v186 ??), method size: 7788
+        jadx.core.utils.exceptions.JadxOverflowException: Type update terminated with stack overflow, arg: (r1v183 ?? I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY]), method size: 7788
         	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
         	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
         	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
@@ -250,22 +250,22 @@ public class MediaCodecVideoConvertor {
         if ((min2 & 1) == 0) {
             f16 += 0.01f;
         }
-        StringBuilder k10 = e2.k("source size ", i10, "x", i11, "    dest size ");
-        i2.g.v(k10, i12, "x", i13, "   rotated ");
-        k10.append(z11);
-        k10.append("   ratio ");
-        k10.append(f10);
-        k10.append("x");
-        k10.append(f12);
-        k10.append("   samples ");
-        k10.append(min);
-        k10.append("x");
-        k10.append(min2);
-        k10.append("   kernel scale ");
-        k10.append(f13);
-        k10.append("x");
-        k10.append(f14);
-        FileLog.d(k10.toString());
+        StringBuilder m10 = k0.m("source size ", i10, "x", i11, "    dest size ");
+        k0.v(m10, i12, "x", i13, "   rotated ");
+        m10.append(z11);
+        m10.append("   ratio ");
+        m10.append(f10);
+        m10.append("x");
+        m10.append(f12);
+        m10.append("   samples ");
+        m10.append(min);
+        m10.append("x");
+        m10.append(min2);
+        m10.append("   kernel scale ");
+        m10.append(f13);
+        m10.append("x");
+        m10.append(f14);
+        FileLog.d(m10.toString());
         String glslFloat = glslFloat(f15);
         String glslFloat2 = glslFloat(f16);
         String glslFloat3 = glslFloat(f13);
@@ -328,9 +328,9 @@ public class MediaCodecVideoConvertor {
                 String str = (String) arrayList.remove(0);
                 mediaFormat.setString("mime", str);
                 return MediaCodec.createDecoderByType(str);
-            } catch (Exception e7) {
+            } catch (Exception e) {
                 if (exc == null) {
-                    exc = e7;
+                    exc = e;
                 }
             }
         }
@@ -385,22 +385,22 @@ public class MediaCodecVideoConvertor {
         if ((min2 & 1) == 0) {
             f16 += 0.01f;
         }
-        StringBuilder k10 = e2.k("HDR source size ", i10, "x", i11, "    dest size ");
-        i2.g.v(k10, i12, "x", i13, "   rotated ");
-        k10.append(z11);
-        k10.append("   ratio ");
-        k10.append(f10);
-        k10.append("x");
-        k10.append(f12);
-        k10.append("   samples ");
-        k10.append(min);
-        k10.append("x");
-        k10.append(min2);
-        k10.append("   kernel scale ");
-        k10.append(f13);
-        k10.append("x");
-        k10.append(f14);
-        FileLog.d(k10.toString());
+        StringBuilder m10 = k0.m("HDR source size ", i10, "x", i11, "    dest size ");
+        k0.v(m10, i12, "x", i13, "   rotated ");
+        m10.append(z11);
+        m10.append("   ratio ");
+        m10.append(f10);
+        m10.append("x");
+        m10.append(f12);
+        m10.append("   samples ");
+        m10.append(min);
+        m10.append("x");
+        m10.append(min2);
+        m10.append("   kernel scale ");
+        m10.append(f13);
+        m10.append("x");
+        m10.append(f14);
+        FileLog.d(m10.toString());
         String glslFloat = glslFloat(f15);
         String glslFloat2 = glslFloat(f16);
         String glslFloat3 = glslFloat(f13);
@@ -462,8 +462,8 @@ public class MediaCodecVideoConvertor {
             i11 = muxer.addTrack(trackFormat, false);
             try {
                 i19 = trackFormat.getInteger("max-input-size");
-            } catch (Exception e7) {
-                FileLog.e(e7);
+            } catch (Exception e) {
+                FileLog.e(e);
                 i19 = 0;
             }
             if (j3 > 0) {
@@ -486,8 +486,8 @@ public class MediaCodecVideoConvertor {
                 i12 = muxer.addTrack(trackFormat2, true);
                 try {
                     i10 = Math.max(trackFormat2.getInteger("max-input-size"), i10);
-                } catch (Exception e10) {
-                    FileLog.e(e10);
+                } catch (Exception e7) {
+                    FileLog.e(e7);
                 }
                 if (j3 > 0) {
                     mediaExtractor.seekTo(j3, 0);
@@ -648,7 +648,7 @@ public class MediaCodecVideoConvertor {
         return this.endPresentationTime;
     }
 
-    /* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+    /* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
     public static class Muxer {
         public final MediaMuxer mediaMuxer;
         public final MP4Builder mp4Builder;

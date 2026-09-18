@@ -5,7 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public class pz extends s4.c0 {
     public final SparseArray I;
@@ -21,13 +21,13 @@ public class pz extends s4.c0 {
     public int S;
     public final boolean T;
 
-    public pz(ll0 ll0Var, int i10) {
+    public pz(ml0 ml0Var, int i10) {
         this.I = new SparseArray();
         this.J = -1;
         this.P = true;
         this.Q = true;
         this.T = true;
-        this.N = ll0Var;
+        this.N = ml0Var;
         this.M = i10;
     }
 
@@ -35,8 +35,8 @@ public class pz extends s4.c0 {
     public final void P(View view) {
         if (this.T) {
             RecyclerView recyclerView = this.N;
-            View F = recyclerView.F(view);
-            if ((F == null ? null : recyclerView.T(F)).b() == B() - 1) {
+            View G = recyclerView.G(view);
+            if ((G == null ? null : recyclerView.U(G)).b() == B() - 1) {
                 ((ViewGroup.MarginLayoutParams) ((s4.p0) view.getLayoutParams())).height = Math.max(this.J, 0);
             }
         }
@@ -82,7 +82,7 @@ public class pz extends s4.c0 {
     }
 
     @Override // s4.o0
-    public final void d0(pf.e eVar, s4.z0 z0Var, int i10, int i11) {
+    public final void d0(of.e eVar, s4.z0 z0Var, int i10, int i11) {
         int i12 = this.K;
         this.L = View.MeasureSpec.getSize(i10);
         int size = View.MeasureSpec.getSize(i11);
@@ -146,14 +146,14 @@ public class pz extends s4.c0 {
         }
     }
 
-    public pz(int i10, int i11, ll0 ll0Var) {
+    public pz(int i10, int i11, ml0 ml0Var) {
         super(1, false);
         this.I = new SparseArray();
         this.J = -1;
         this.P = true;
         this.Q = true;
         this.T = true;
-        this.N = ll0Var;
+        this.N = ml0Var;
         this.M = i10;
     }
 }

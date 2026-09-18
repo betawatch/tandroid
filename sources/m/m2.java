@@ -17,15 +17,15 @@ import java.lang.ref.WeakReference;
 import java.util.WeakHashMap;
 import org.telegram.messenger.beta.R;
 import org.xmlpull.v1.XmlPullParserException;
-import v7.o8;
+import v7.r8;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class m2 {
     public static m2 i;
     public WeakHashMap a;
-    public a0.l b;
-    public a0.m c;
+    public a0.m b;
+    public a0.n c;
     public final WeakHashMap d = new WeakHashMap(0);
     public TypedValue e;
     public boolean f;
@@ -75,7 +75,7 @@ public final class m2 {
 
     public final void a(String str, l2 l2Var) {
         if (this.b == null) {
-            this.b = new a0.l(0);
+            this.b = new a0.m(0);
         }
         this.b.put(str, l2Var);
     }
@@ -103,9 +103,9 @@ public final class m2 {
         TypedValue typedValue = this.e;
         context.getResources().getValue(i10, typedValue, true);
         long j3 = (typedValue.assetCookie << 32) | typedValue.data;
-        Drawable e7 = e(context, j3);
-        if (e7 != null) {
-            return e7;
+        Drawable e = e(context, j3);
+        if (e != null) {
+            return e;
         }
         LayerDrawable layerDrawable = null;
         if (this.g != null) {
@@ -178,25 +178,25 @@ public final class m2 {
 
     public final synchronized ColorStateList i(Context context, int i10) {
         ColorStateList colorStateList;
-        a0.m mVar;
+        a0.n nVar;
         WeakHashMap weakHashMap = this.a;
         ColorStateList colorStateList2 = null;
-        colorStateList = (weakHashMap == null || (mVar = (a0.m) weakHashMap.get(context)) == null) ? null : (ColorStateList) mVar.c(i10);
+        colorStateList = (weakHashMap == null || (nVar = (a0.n) weakHashMap.get(context)) == null) ? null : (ColorStateList) nVar.c(i10);
         if (colorStateList == null) {
-            com.google.firebase.messaging.n nVar = this.g;
-            if (nVar != null) {
-                colorStateList2 = nVar.t(context, i10);
+            com.google.firebase.messaging.n nVar2 = this.g;
+            if (nVar2 != null) {
+                colorStateList2 = nVar2.t(context, i10);
             }
             if (colorStateList2 != null) {
                 if (this.a == null) {
                     this.a = new WeakHashMap();
                 }
-                a0.m mVar2 = (a0.m) this.a.get(context);
-                if (mVar2 == null) {
-                    mVar2 = new a0.m();
-                    this.a.put(context, mVar2);
+                a0.n nVar3 = (a0.n) this.a.get(context);
+                if (nVar3 == null) {
+                    nVar3 = new a0.n();
+                    this.a.put(context, nVar3);
                 }
-                mVar2.a(i10, colorStateList2);
+                nVar3.a(i10, colorStateList2);
             }
             colorStateList = colorStateList2;
         }
@@ -205,13 +205,13 @@ public final class m2 {
 
     public final Drawable k(Context context, int i10) {
         int next;
-        a0.l lVar = this.b;
-        if (lVar == null || lVar.isEmpty()) {
+        a0.m mVar = this.b;
+        if (mVar == null || mVar.isEmpty()) {
             return null;
         }
-        a0.m mVar = this.c;
-        if (mVar != null) {
-            String str = (String) mVar.c(i10);
+        a0.n nVar = this.c;
+        if (nVar != null) {
+            String str = (String) nVar.c(i10);
             if ("appcompat_skip_skip".equals(str)) {
                 return null;
             }
@@ -219,7 +219,7 @@ public final class m2 {
                 return null;
             }
         } else {
-            this.c = new a0.m();
+            this.c = new a0.n();
         }
         if (this.e == null) {
             this.e = new TypedValue();
@@ -228,9 +228,9 @@ public final class m2 {
         Resources resources = context.getResources();
         resources.getValue(i10, typedValue, true);
         long j3 = (typedValue.assetCookie << 32) | typedValue.data;
-        Drawable e7 = e(context, j3);
-        if (e7 != null) {
-            return e7;
+        Drawable e = e(context, j3);
+        if (e != null) {
+            return e;
         }
         CharSequence charSequence = typedValue.string;
         if (charSequence != null && charSequence.toString().endsWith(".xml")) {
@@ -250,20 +250,20 @@ public final class m2 {
                 this.c.a(i10, name);
                 l2 l2Var = (l2) this.b.get(name);
                 if (l2Var != null) {
-                    e7 = l2Var.a(context, xml, asAttributeSet, context.getTheme());
+                    e = l2Var.a(context, xml, asAttributeSet, context.getTheme());
                 }
-                if (e7 != null) {
-                    e7.setChangingConfigurations(typedValue.changingConfigurations);
-                    b(context, j3, e7);
+                if (e != null) {
+                    e.setChangingConfigurations(typedValue.changingConfigurations);
+                    b(context, j3, e);
                 }
-            } catch (Exception e10) {
-                Log.e("ResourceManagerInternal", "Exception while inflating drawable", e10);
+            } catch (Exception e7) {
+                Log.e("ResourceManagerInternal", "Exception while inflating drawable", e7);
             }
         }
-        if (e7 == null) {
+        if (e == null) {
             this.c.a(i10, "appcompat_skip_skip");
         }
-        return e7;
+        return e;
     }
 
     public final synchronized void l(com.google.firebase.messaging.n nVar) {
@@ -282,7 +282,7 @@ public final class m2 {
         PorterDuff.Mode mode = null;
         if (i12 != null) {
             int[] iArr = l1.a;
-            Drawable d = o8.d(drawable.mutate());
+            Drawable d = r8.d(drawable.mutate());
             d.setTintList(i12);
             if (this.g != null && i10 == R.drawable.abc_switch_thumb_material) {
                 mode = PorterDuff.Mode.MULTIPLY;

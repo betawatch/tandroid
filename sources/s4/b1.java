@@ -8,7 +8,7 @@ import java.util.Arrays;
 import java.util.WeakHashMap;
 import org.telegram.ui.Cells.l2;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class b1 implements Runnable {
     public int a;
@@ -98,7 +98,7 @@ public final class b1 implements Runnable {
         }
         this.f = false;
         this.e = true;
-        recyclerView.p();
+        recyclerView.q();
         OverScroller overScroller = this.c;
         recyclerView.O0 = true;
         if (overScroller.computeScrollOffset()) {
@@ -111,7 +111,7 @@ public final class b1 implements Runnable {
             int[] iArr2 = recyclerView.I0;
             iArr2[0] = 0;
             iArr2[1] = 0;
-            if (recyclerView.v(i14, i15, 1, iArr2, null)) {
+            if (recyclerView.w(i14, i15, 1, iArr2, null)) {
                 i10 = i14 - iArr[0];
                 i11 = i15 - iArr[1];
             } else {
@@ -119,12 +119,12 @@ public final class b1 implements Runnable {
                 i11 = i15;
             }
             if (recyclerView.getOverScrollMode() != 2) {
-                recyclerView.o(i10, i11);
+                recyclerView.p(i10, i11);
             }
             if (recyclerView.w != null) {
                 iArr[0] = 0;
                 iArr[1] = 0;
-                recyclerView.t0(i10, i11, iArr);
+                recyclerView.u0(i10, i11, iArr);
                 i12 = iArr[0];
                 i13 = iArr[1];
                 i10 -= i12;
@@ -151,11 +151,11 @@ public final class b1 implements Runnable {
             int[] iArr3 = recyclerView.I0;
             iArr3[0] = 0;
             iArr3[1] = 0;
-            recyclerView.w(i12, i13, i10, i11, null, 1, iArr3);
+            recyclerView.x(i12, i13, i10, i11, null, 1, iArr3);
             int i16 = i10 - iArr[0];
             int i17 = i11 - iArr[1];
             if (i12 != 0 || i13 != 0) {
-                recyclerView.x(i12, i13);
+                recyclerView.y(i12, i13);
             }
             awakenScrollBars = recyclerView.awakenScrollBars();
             if (!awakenScrollBars) {
@@ -173,23 +173,23 @@ public final class b1 implements Runnable {
                         currVelocity = 0;
                     }
                     if (i18 < 0) {
-                        recyclerView.z();
+                        recyclerView.A();
                         if (recyclerView.V.isFinished()) {
                             recyclerView.V.onAbsorb(-i18);
                         }
                     } else if (i18 > 0) {
-                        recyclerView.A();
+                        recyclerView.B();
                         if (recyclerView.a0.isFinished()) {
                             recyclerView.a0.onAbsorb(i18);
                         }
                     }
                     if (currVelocity < 0) {
-                        recyclerView.B();
+                        recyclerView.C();
                         if (recyclerView.W.isFinished()) {
                             recyclerView.W.onAbsorb(-currVelocity);
                         }
                     } else if (currVelocity > 0) {
-                        recyclerView.y();
+                        recyclerView.z();
                         if (recyclerView.b0.isFinished()) {
                             recyclerView.b0.onAbsorb(currVelocity);
                         }
@@ -223,7 +223,7 @@ public final class b1 implements Runnable {
         this.e = false;
         if (!this.f) {
             recyclerView.setScrollState(0);
-            recyclerView.A0(1);
+            recyclerView.B0(1);
         } else {
             recyclerView.removeCallbacks(this);
             WeakHashMap weakHashMap2 = r0.i0.a;

@@ -2,11 +2,12 @@ package j4;
 
 import b2.r0;
 import c3.h0;
+import hg.k0;
 import java.util.Arrays;
 import java.util.Collections;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class e implements i {
     public static final byte[] x = {73, 68, 51};
@@ -43,7 +44,7 @@ public final class e implements i {
 
     /* JADX WARN: Multi-variable type inference failed */
     @Override // j4.i
-    public final void b(e2.v vVar) {
+    public final void a(e2.v vVar) {
         int i10;
         byte b10;
         int i11;
@@ -294,7 +295,7 @@ public final class e implements i {
     }
 
     @Override // j4.i
-    public final void d() {
+    public final void c() {
         this.u = -9223372036854775807L;
         this.n = false;
         this.j = 0;
@@ -303,36 +304,36 @@ public final class e implements i {
     }
 
     @Override // j4.i
-    public final void e(c3.q qVar, f0 f0Var) {
+    public final void d(c3.q qVar, f0 f0Var) {
         f0Var.a();
         f0Var.b();
         this.g = f0Var.e;
         f0Var.b();
-        h0 R1 = qVar.R1(f0Var.d, 1);
-        this.h = R1;
-        this.v = R1;
+        h0 Z1 = qVar.Z1(f0Var.d, 1);
+        this.h = Z1;
+        this.v = Z1;
         if (!this.a) {
             this.i = new c3.n();
             return;
         }
         f0Var.a();
         f0Var.b();
-        h0 R12 = qVar.R1(f0Var.d, 5);
-        this.i = R12;
+        h0 Z12 = qVar.Z1(f0Var.d, 5);
+        this.i = Z12;
         b2.r rVar = new b2.r();
         f0Var.b();
         rVar.a = f0Var.e;
         rVar.p = r0.n(this.f);
         rVar.q = r0.n("application/id3");
-        i2.g.u(rVar, R12);
+        k0.u(rVar, Z12);
     }
 
     @Override // j4.i
-    public final void g(int i10, long j3) {
+    public final void f(int i10, long j3) {
         this.u = j3;
     }
 
     @Override // j4.i
-    public final void f(boolean z10) {
+    public final void e(boolean z10) {
     }
 }

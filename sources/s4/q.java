@@ -7,8 +7,9 @@ import java.util.Collections;
 import java.util.concurrent.TimeUnit;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
+import rg.w1;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class q implements Runnable {
     public static final ThreadLocal e = new ThreadLocal();
@@ -19,17 +20,17 @@ public final class q implements Runnable {
     public ArrayList d;
 
     public static c1 c(RecyclerView recyclerView, int i10, long j3) {
-        int E = recyclerView.e.E();
-        for (int i11 = 0; i11 < E; i11++) {
-            c1 U = RecyclerView.U(recyclerView.e.D(i11));
-            if (U.c == i10 && !U.h()) {
+        int L = recyclerView.e.L();
+        for (int i11 = 0; i11 < L; i11++) {
+            c1 V = RecyclerView.V(recyclerView.e.K(i11));
+            if (V.c == i10 && !V.h()) {
                 return null;
             }
         }
-        pf.e eVar = recyclerView.b;
+        of.e eVar = recyclerView.b;
         try {
             try {
-                recyclerView.g0();
+                recyclerView.h0();
                 c1 j10 = eVar.j(i10, j3);
                 if (j10 != null) {
                     if (!j10.g() || j10.h()) {
@@ -38,16 +39,16 @@ public final class q implements Runnable {
                         eVar.g(j10.a);
                     }
                 }
-                recyclerView.h0(false);
+                recyclerView.i0(false);
                 return j10;
             } catch (Exception e7) {
                 FileLog.e(e7);
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.web.b(recyclerView, 27));
-                recyclerView.h0(false);
+                AndroidUtilities.runOnUIThread(new w1(recyclerView, 1));
+                recyclerView.i0(false);
                 return null;
             }
         } catch (Throwable th2) {
-            recyclerView.h0(false);
+            recyclerView.i0(false);
             throw th2;
         }
     }
@@ -109,8 +110,8 @@ public final class q implements Runnable {
         for (int i16 = 0; i16 < arrayList.size() && (recyclerView = (pVar = (p) arrayList.get(i16)).d) != null; i16++) {
             c1 c10 = c(recyclerView, pVar.e, pVar.a ? Long.MAX_VALUE : j3);
             if (c10 != null && c10.b != null && c10.g() && !c10.h() && (recyclerView2 = (RecyclerView) c10.b.get()) != null) {
-                if (recyclerView2.Q && recyclerView2.e.E() != 0) {
-                    recyclerView2.o0();
+                if (recyclerView2.Q && recyclerView2.e.L() != 0) {
+                    recyclerView2.p0();
                 }
                 a0.h hVar3 = recyclerView2.s0;
                 hVar3.c(recyclerView2, true);

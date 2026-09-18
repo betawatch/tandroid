@@ -1,0 +1,357 @@
+package ai;
+
+import android.app.Activity;
+import android.app.ActivityManager;
+import android.content.Context;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.WindowManager;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.BringAppForegroundService;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.SharedConfig;
+import org.telegram.messenger.voip.NativeInstance;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.ChatActivityEnterView;
+import org.telegram.ui.Components.fg0;
+import org.telegram.ui.Components.ik0;
+import org.telegram.ui.Components.kf;
+import org.telegram.ui.Components.nu;
+import org.telegram.ui.Components.qd;
+import org.telegram.ui.Components.uh;
+import org.telegram.ui.Components.vc;
+import org.telegram.ui.Components.vi;
+import org.telegram.ui.Components.vu;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.PhotoViewer;
+import org.telegram.ui.bo;
+import org.telegram.ui.cr0;
+import org.telegram.ui.dc1;
+import org.telegram.ui.fv0;
+import org.telegram.ui.hr0;
+import org.telegram.ui.ir0;
+import org.telegram.ui.jt0;
+import org.telegram.ui.ku0;
+import org.telegram.ui.wu0;
+import org.telegram.ui.xg0;
+import org.telegram.ui.yg0;
+import org.telegram.ui.zb0;
+
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class j3 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ Object c;
+
+    public /* synthetic */ j3(int i10, Object obj, boolean z10) {
+        this.a = i10;
+        this.c = obj;
+        this.b = z10;
+    }
+
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        kf kfVar;
+        switch (this.a) {
+            case 0:
+                f6 f6Var = (f6) this.c;
+                boolean z10 = this.b;
+                MessagesController.getInstance(f6Var.C2).setStoryQuality(!z10);
+                new vc(f6Var.c1, f6Var.B0).M(LocaleController.getString(!z10 ? R.string.StoryQualityIncreasedTitle : R.string.StoryQualityDecreasedTitle), LocaleController.getString(!z10 ? R.string.StoryQualityIncreasedMessage : R.string.StoryQualityDecreasedMessage), R.raw.chats_infotip).j();
+                w5 w5Var = f6Var.t1;
+                if (w5Var != null) {
+                    w5Var.a();
+                    break;
+                }
+                break;
+            case 1:
+                w5 w5Var2 = (w5) this.c;
+                boolean z11 = this.b;
+                d2 d2Var = d2.W;
+                if (d2Var != null) {
+                    boolean z12 = !z11;
+                    if (d2Var.n && d2Var.r != z12) {
+                        d2Var.r = z12;
+                        NativeInstance nativeInstance = d2Var.E;
+                        if (nativeInstance != null) {
+                            nativeInstance.setMuteMicrophone(z12);
+                        }
+                    }
+                }
+                w5 w5Var3 = w5Var2.l.t1;
+                if (w5Var3 != null) {
+                    w5Var3.a();
+                    break;
+                }
+                break;
+            case 2:
+                org.telegram.ui.ActionBar.w0 w0Var = (org.telegram.ui.ActionBar.w0) this.c;
+                boolean z13 = this.b;
+                org.telegram.ui.ActionBar.o1 o1Var = w0Var.d;
+                if (o1Var != null && o1Var.isShowing() && z13) {
+                    if (!w0Var.T) {
+                        w0Var.T = true;
+                        w0Var.d.d(w0Var.R);
+                    }
+                }
+                org.telegram.ui.ActionBar.a0 a0Var = w0Var.c;
+                if (a0Var != null) {
+                    a0Var.o(((Integer) view.getTag()).intValue());
+                    break;
+                } else {
+                    org.telegram.ui.ActionBar.s0 s0Var = w0Var.P;
+                    if (s0Var != null) {
+                        s0Var.m(((Integer) view.getTag()).intValue());
+                        break;
+                    }
+                }
+                break;
+            case 3:
+                dc1 dc1Var = (dc1) this.c;
+                boolean z14 = this.b;
+                for (int i10 = 0; i10 < 2; i10++) {
+                    org.telegram.ui.Cells.y0 y0Var = ((org.telegram.ui.Cells.y0[]) dc1Var.b)[i10];
+                    y0Var.a.a(y0Var == view, true);
+                }
+                SharedConfig.setUseThreeLinesLayout(z14);
+                break;
+            case 4:
+                ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.c;
+                boolean z15 = this.b;
+                qd qdVar = chatActivityEnterView.F4;
+                chatActivityEnterView.M0 = System.currentTimeMillis();
+                boolean T0 = chatActivityEnterView.T0();
+                if (!z15 && (kfVar = chatActivityEnterView.L0) != null) {
+                    kfVar.h(!T0);
+                    chatActivityEnterView.L0 = null;
+                    break;
+                } else {
+                    chatActivityEnterView.E4 = !T0;
+                    AndroidUtilities.cancelRunOnUIThread(qdVar);
+                    AndroidUtilities.runOnUIThread(qdVar, 500L);
+                    break;
+                }
+            case 5:
+                vi viVar = (vi) this.c;
+                boolean z16 = this.b;
+                org.telegram.ui.ActionBar.o2 o2Var = viVar.f0;
+                if (viVar.Q0 != 0) {
+                    viVar.Z1.u0();
+                    viVar.dismiss();
+                    break;
+                } else {
+                    HashMap hashMap = new HashMap();
+                    ArrayList arrayList = new ArrayList();
+                    ir0 ir0Var = new ir0(hashMap, arrayList, 0, true, (bo) o2Var);
+                    uh uhVar = new uh(viVar, hashMap, arrayList);
+                    cr0 cr0Var = ir0Var.a;
+                    cr0Var.s0 = uhVar;
+                    cr0 cr0Var2 = ir0Var.b;
+                    cr0Var2.s0 = uhVar;
+                    cr0Var.t0 = new hr0(ir0Var, 0);
+                    cr0Var2.t0 = new hr0(ir0Var, 1);
+                    int i11 = viVar.S1;
+                    boolean z17 = viVar.T1;
+                    cr0Var.f0(i11, z17);
+                    ir0Var.b.f0(i11, z17);
+                    if (z16) {
+                        o2Var.showAsSheet(ir0Var);
+                    } else {
+                        o2Var.presentFragment(ir0Var);
+                    }
+                    viVar.dismiss();
+                    break;
+                }
+            case 6:
+                fg0 fg0Var = (fg0) this.c;
+                boolean z18 = this.b;
+                fg0Var.getClass();
+                List<ActivityManager.RunningAppProcessInfo> runningAppProcesses = ((ActivityManager) view.getContext().getSystemService("activity")).getRunningAppProcesses();
+                boolean z19 = runningAppProcesses == null || runningAppProcesses.isEmpty() || runningAppProcesses.get(0).importance == 100;
+                if (!z18 && (!z19 || !LaunchActivity.E1)) {
+                    LaunchActivity.F1 = new nu(0, view);
+                    Context context = ApplicationLoader.applicationContext;
+                    Intent intent = new Intent(context, (Class<?>) LaunchActivity.class);
+                    intent.addFlags(TLObject.FLAG_28);
+                    context.startActivity(intent);
+                    break;
+                } else {
+                    vu vuVar = fg0Var.U;
+                    if (vuVar != null) {
+                        vuVar.I();
+                        break;
+                    } else {
+                        PhotoViewer photoViewer = fg0Var.V;
+                        if (photoViewer != null && photoViewer.J3) {
+                            if (PhotoViewer.a9 != null) {
+                                PhotoViewer.a9.G0(false, true);
+                            }
+                            ku0 ku0Var = photoViewer.f0;
+                            if (ku0Var != null && ku0Var.f != null) {
+                                if (ApplicationLoader.mainInterfacePaused) {
+                                    try {
+                                        ku0Var.getContext().startService(new Intent(ApplicationLoader.applicationContext, (Class<?>) BringAppForegroundService.class));
+                                    } catch (Throwable th2) {
+                                        FileLog.e(th2);
+                                    }
+                                }
+                                ku0Var.h.setVisibility(0);
+                                ViewGroup viewGroup = (ViewGroup) ku0Var.f.getParent();
+                                if (viewGroup != null) {
+                                    viewGroup.removeView(ku0Var.f);
+                                }
+                                ku0Var.addView(ku0Var.f, 0, w7.x5.e(-1, -1, 51));
+                                fg0.j(false);
+                            }
+                            PhotoViewer.a9 = PhotoViewer.b9;
+                            PhotoViewer.b9 = null;
+                            if (photoViewer.f0 == null) {
+                                photoViewer.L3 = true;
+                                Bitmap bitmap = photoViewer.C3;
+                                if (bitmap != null) {
+                                    bitmap.recycle();
+                                    photoViewer.C3 = null;
+                                }
+                                photoViewer.F3 = true;
+                            }
+                            photoViewer.J3 = false;
+                            View view2 = photoViewer.D2 ? photoViewer.C2 : photoViewer.B2;
+                            if (photoViewer.f0 == null && view2 != null) {
+                                AndroidUtilities.removeFromParent(view2);
+                                view2.setVisibility(4);
+                                photoViewer.y2.addView(view2);
+                            }
+                            if (ApplicationLoader.mainInterfacePaused) {
+                                try {
+                                    photoViewer.y.startService(new Intent(ApplicationLoader.applicationContext, (Class<?>) BringAppForegroundService.class));
+                                } catch (Throwable th3) {
+                                    FileLog.e(th3);
+                                }
+                            }
+                            if (photoViewer.f0 != null) {
+                                photoViewer.m6 = 0.0f;
+                            } else if (view2 != null) {
+                                photoViewer.B3 = true;
+                                ik0 o9 = fg0.o(photoViewer.y2.getAspectRatio(), false);
+                                float f7 = o9.c / photoViewer.x3.getLayoutParams().width;
+                                photoViewer.x3.setScaleX(f7);
+                                photoViewer.x3.setScaleY(f7);
+                                photoViewer.x3.setTranslationX(o9.a);
+                                photoViewer.x3.setTranslationY(o9.b);
+                                view2.setScaleX(f7);
+                                view2.setScaleY(f7);
+                                view2.setTranslationX(o9.a - photoViewer.y2.getX());
+                                view2.setTranslationY(o9.b - photoViewer.y2.getY());
+                                wu0 wu0Var = photoViewer.E2;
+                                if (wu0Var != null) {
+                                    wu0Var.setScaleX(f7);
+                                    photoViewer.E2.setScaleY(f7);
+                                    photoViewer.E2.setTranslationX(view2.getTranslationX());
+                                    photoViewer.E2.setTranslationY(view2.getTranslationY());
+                                }
+                                photoViewer.W = 0.0f;
+                                jt0 jt0Var = new jt0(photoViewer, f7, 1);
+                                view2.setOutlineProvider(jt0Var);
+                                view2.setClipToOutline(true);
+                                photoViewer.x3.setOutlineProvider(jt0Var);
+                                photoViewer.x3.setClipToOutline(true);
+                                wu0 wu0Var2 = photoViewer.E2;
+                                if (wu0Var2 != null) {
+                                    wu0Var2.setOutlineProvider(jt0Var);
+                                    photoViewer.E2.setClipToOutline(true);
+                                }
+                            } else {
+                                fg0.j(true);
+                            }
+                            try {
+                                photoViewer.e = true;
+                                photoViewer.f = true;
+                                ((WindowManager) photoViewer.y.getSystemService("window")).addView(photoViewer.g0, photoViewer.d0);
+                                Activity activity = photoViewer.y;
+                                if (activity instanceof LaunchActivity) {
+                                    ((LaunchActivity) activity).a1.add(photoViewer.s1);
+                                }
+                                fv0 fv0Var = photoViewer.d5;
+                                if (fv0Var != null && !fv0Var.s) {
+                                    fv0Var.a.setVisible(false, false);
+                                }
+                            } catch (Exception e) {
+                                FileLog.e(e);
+                            }
+                            if (photoViewer.D2) {
+                                i2.e0 e0Var = photoViewer.F2.d;
+                                if (e0Var != null) {
+                                    e0Var.v1(null);
+                                }
+                                photoViewer.F2.U(photoViewer.C2);
+                                photoViewer.C2.setVisibility(4);
+                                photoViewer.G3 = 2;
+                                photoViewer.F3 = false;
+                                photoViewer.e0.invalidate();
+                                photoViewer.v3 = 4;
+                                break;
+                            } else {
+                                photoViewer.v3 = 4;
+                                break;
+                            }
+                        }
+                    }
+                }
+                break;
+            case 7:
+                zb0 zb0Var = (zb0) this.c;
+                if (!this.b) {
+                    org.telegram.ui.Cells.w8 w8Var = zb0Var.n;
+                    if (w8Var == null || !w8Var.e.h) {
+                        org.telegram.ui.Cells.w8 w8Var2 = (org.telegram.ui.Cells.w8) view;
+                        boolean z20 = w8Var2.e.h;
+                        w8Var2.setChecked(!z20);
+                        zb0Var.Z(z20);
+                        org.telegram.ui.Cells.w8 w8Var3 = zb0Var.n;
+                        if (w8Var3 != null) {
+                            if (w8Var2.e.h) {
+                                w8Var3.setChecked(false);
+                                zb0Var.n.setCheckBoxIcon(R.drawable.permission_locked);
+                                zb0Var.r.setVisibility(8);
+                                break;
+                            } else if (zb0Var.e == null) {
+                                w8Var3.setCheckBoxIcon(0);
+                                break;
+                            }
+                        }
+                    } else {
+                        int i12 = -zb0Var.N;
+                        zb0Var.N = i12;
+                        AndroidUtilities.shakeViewSpring(w8Var, i12);
+                        break;
+                    }
+                }
+                break;
+            default:
+                xg0 xg0Var = (xg0) this.c;
+                boolean z21 = this.b;
+                yg0 yg0Var = xg0Var.V;
+                if (yg0Var.getParentActivity() != null) {
+                    boolean z22 = !yg0Var.E;
+                    yg0Var.E = z22;
+                    ((org.telegram.ui.Cells.z1) view).c(z22, true);
+                    if ((z21 && yg0Var.getConnectionsManager().isTestBackend()) != yg0Var.E) {
+                        yg0Var.getConnectionsManager().switchBackend(false);
+                    }
+                    xg0Var.s();
+                    break;
+                }
+                break;
+        }
+    }
+}

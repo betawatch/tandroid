@@ -1,69 +1,36 @@
 package org.telegram.ui.Components;
 
-import android.view.MotionEvent;
-import org.telegram.tgnet.TLRPC;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class fx extends a51 {
-    public final /* synthetic */ kz b;
+public final class fx extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ kz c;
 
-    public fx(kz kzVar) {
-        this.b = kzVar;
+    public /* synthetic */ fx(kz kzVar, boolean z10, int i10) {
+        this.a = i10;
+        this.c = kzVar;
+        this.b = z10;
     }
 
-    @Override // org.telegram.ui.Components.a51
-    public final boolean a() {
-        return this.b.t1.b();
-    }
-
-    @Override // org.telegram.ui.Components.a51
-    public final String[] b() {
-        return this.b.W0;
-    }
-
-    @Override // org.telegram.ui.Components.a51
-    public final boolean c() {
-        return this.b.t1.c();
-    }
-
-    @Override // org.telegram.ui.Components.a51
-    public final boolean d(t41 t41Var, MotionEvent motionEvent) {
-        org.telegram.ui.st q6 = org.telegram.ui.st.q();
-        kz kzVar = this.b;
-        kzVar.getMeasuredHeight();
-        return q6.r(motionEvent, t41Var, kzVar.g2, kzVar.Z1);
-    }
-
-    @Override // org.telegram.ui.Components.a51
-    public final boolean e(t41 t41Var, k kVar, MotionEvent motionEvent) {
-        org.telegram.ui.st q6 = org.telegram.ui.st.q();
-        kz kzVar = this.b;
-        kzVar.getMeasuredHeight();
-        return q6.s(motionEvent, t41Var, kVar, kzVar.g2, kzVar.Z1);
-    }
-
-    @Override // org.telegram.ui.Components.a51
-    public final void f(TLRPC.Document document, Object obj, boolean z10, int i10) {
-        this.b.t1.m(null, document, null, obj, null, z10, i10);
-    }
-
-    @Override // org.telegram.ui.Components.a51
-    public final void g(TLRPC.StickerSetCovered stickerSetCovered, boolean z10) {
-        kz kzVar = this.b;
-        kzVar.t1.r(stickerSetCovered);
-        if (z10) {
-            kzVar.Z(true);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                if (!this.b) {
+                    this.c.x.setVisibility(4);
+                    break;
+                }
+                break;
+            default:
+                if (!this.b) {
+                    this.c.y.setVisibility(4);
+                    break;
+                }
+                break;
         }
-    }
-
-    @Override // org.telegram.ui.Components.a51
-    public final void h(TLRPC.StickerSetCovered stickerSetCovered) {
-        this.b.t1.h(stickerSetCovered);
-    }
-
-    @Override // org.telegram.ui.Components.a51
-    public final void i(String[] strArr) {
-        this.b.W0 = strArr;
     }
 }

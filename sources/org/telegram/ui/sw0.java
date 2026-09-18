@@ -1,133 +1,229 @@
 package org.telegram.ui;
 
-import android.graphics.Typeface;
-import android.media.AudioRecordingConfiguration;
-import android.media.MediaRoute2Info;
-import com.google.firebase.components.ComponentRegistrar;
-import com.google.firebase.concurrent.ExecutorsRegistrar;
-import com.google.firebase.installations.FirebaseInstallationsRegistrar;
-import java.util.List;
-import java.util.concurrent.ScheduledExecutorService;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.Utilities;
+import android.view.View;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagesController;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class sw0 implements Utilities.Callback2Return, org.telegram.ui.ActionBar.a2, org.telegram.ui.Components.rv0, g2.g, q3.g, q9.e, pa.a, q9.d, qg.h0, androidx.car.app.utils.d {
-    public final /* synthetic */ int a;
+public final class sw0 implements org.telegram.ui.Components.mg {
+    public final /* synthetic */ PopupNotificationActivity a;
 
-    public /* synthetic */ sw0(int i10) {
-        this.a = i10;
+    public sw0(PopupNotificationActivity popupNotificationActivity) {
+        this.a = popupNotificationActivity;
     }
 
-    public static /* bridge */ /* synthetic */ AudioRecordingConfiguration d(Object obj) {
-        return (AudioRecordingConfiguration) obj;
+    @Override // org.telegram.ui.Components.mg
+    public final /* synthetic */ boolean C0() {
+        return true;
     }
 
-    public static /* bridge */ /* synthetic */ MediaRoute2Info e(Object obj) {
-        return (MediaRoute2Info) obj;
-    }
-
-    @Override // q9.d
-    public Object D(cf.c cVar) {
-        qa.d lambda$getComponents$0;
-        switch (this.a) {
-            case 16:
-                lambda$getComponents$0 = FirebaseInstallationsRegistrar.lambda$getComponents$0(cVar);
-                return lambda$getComponents$0;
-            case 28:
-                return (ScheduledExecutorService) ExecutorsRegistrar.a.get();
-            default:
-                return (ScheduledExecutorService) ExecutorsRegistrar.c.get();
+    @Override // org.telegram.ui.Components.mg
+    public final void E1() {
+        PopupNotificationActivity popupNotificationActivity = this.a;
+        MessageObject messageObject = popupNotificationActivity.Q;
+        if (messageObject != null) {
+            MessagesController.getInstance(messageObject.currentAccount).sendTyping(popupNotificationActivity.Q.getDialogId(), 0L, 0, popupNotificationActivity.K);
         }
     }
 
-    @Override // qg.h0
-    public Typeface a() {
-        switch (this.a) {
-            case 17:
-                return AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM);
-            case 18:
-                return AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM_ITALIC);
-            case 19:
-                return Typeface.create("serif", 1);
-            case 20:
-                return AndroidUtilities.getTypeface("fonts/rcondensedbold.ttf");
-            case 21:
-                return AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MONO);
-            default:
-                return AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_MERRIWEATHER_BOLD);
+    @Override // org.telegram.ui.Components.mg
+    public final void H(CharSequence charSequence, boolean z10, int i10, int i11, long j3) {
+        PopupNotificationActivity popupNotificationActivity = this.a;
+        if (popupNotificationActivity.Q == null) {
+            return;
         }
+        int i12 = popupNotificationActivity.S;
+        if (i12 >= 0 && i12 < popupNotificationActivity.a0.size()) {
+            popupNotificationActivity.a0.remove(popupNotificationActivity.S);
+        }
+        MessagesController.getInstance(popupNotificationActivity.Q.currentAccount).markDialogAsRead(popupNotificationActivity.Q.getDialogId(), popupNotificationActivity.Q.getId(), Math.max(0, popupNotificationActivity.Q.getId()), popupNotificationActivity.Q.messageOwner.date, true, 0L, 0, true, 0);
+        popupNotificationActivity.Q = null;
+        popupNotificationActivity.f();
     }
 
-    @Override // q9.e
-    public List b(ComponentRegistrar componentRegistrar) {
-        return componentRegistrar.getComponents();
+    @Override // org.telegram.ui.Components.mg
+    public final /* synthetic */ TLRPC.TL_channels_sendAsPeers J() {
+        return null;
     }
 
-    @Override // q3.g
-    public boolean c(int i10, int i11, int i12, int i13, int i14) {
+    @Override // org.telegram.ui.Components.mg
+    public final /* synthetic */ int b1() {
+        return 0;
+    }
+
+    @Override // org.telegram.ui.Components.mg
+    public final /* synthetic */ TL_stories.StoryItem d1() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.Components.mg
+    public final /* synthetic */ boolean f1(long j3) {
         return false;
     }
 
-    @Override // androidx.car.app.utils.d
-    public void call() {
-        throw null;
+    @Override // org.telegram.ui.Components.mg
+    public final boolean i1() {
+        return false;
     }
 
-    @Override // g2.g
-    public g2.h createDataSource() {
-        return new g2.b(ApplicationLoader.applicationContext);
+    @Override // org.telegram.ui.Components.mg
+    public final /* synthetic */ boolean m() {
+        return false;
     }
 
-    @Override // org.telegram.ui.ActionBar.a2
-    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
-        switch (this.a) {
-            case 1:
-                b2Var.dismiss();
-                break;
-            case 2:
-                b2Var.dismiss();
-                break;
-            case 3:
-            default:
-                b2Var.dismiss();
-                break;
-            case 4:
-                b2Var.dismiss();
-                break;
-            case 5:
-                b2Var.dismiss();
-                break;
-            case 6:
-                b2Var.dismiss();
-                break;
-        }
+    @Override // org.telegram.ui.Components.mg
+    public final /* synthetic */ boolean o1() {
+        return false;
     }
 
-    @Override // org.telegram.ui.Components.rv0
-    public void i(int i10) {
-        SharedConfig.proxyRotationTimeout = i10;
-        SharedConfig.saveConfig();
+    @Override // org.telegram.ui.Components.mg
+    public final /* synthetic */ rn p0() {
+        return null;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback2Return
-    public Object run(Object obj, Object obj2) {
-        return ((Integer) obj).intValue() == 0 ? zh.v7.X0(false, LocaleController.formatPluralStringComma("Stars", ((Integer) obj2).intValue()), 0.66f, null) : LocaleController.formatNumber(r4.intValue(), ',');
+    @Override // org.telegram.ui.Components.mg
+    public final /* synthetic */ int q() {
+        return 0;
     }
 
-    public /* synthetic */ sw0(r.a aVar, int i10, w.b bVar) {
-        this.a = 23;
+    @Override // org.telegram.ui.Components.mg
+    public final /* synthetic */ TLRPC.Peer v() {
+        return null;
     }
 
-    @Override // pa.a
-    public void h(pa.b bVar) {
+    @Override // org.telegram.ui.Components.mg
+    public final /* synthetic */ boolean w1() {
+        return false;
     }
 
-    @Override // org.telegram.ui.Components.rv0
-    public /* synthetic */ void l() {
+    @Override // org.telegram.ui.Components.mg
+    public final void A2() {
+    }
+
+    @Override // org.telegram.ui.Components.mg
+    public final /* synthetic */ void B(boolean z10) {
+    }
+
+    @Override // org.telegram.ui.Components.mg
+    public final void D() {
+    }
+
+    @Override // org.telegram.ui.Components.mg
+    public final /* synthetic */ void G0() {
+    }
+
+    @Override // org.telegram.ui.Components.mg
+    public final /* synthetic */ void J0() {
+    }
+
+    @Override // org.telegram.ui.Components.mg
+    public final /* synthetic */ void T0() {
+    }
+
+    @Override // org.telegram.ui.Components.mg
+    public final /* synthetic */ void W() {
+    }
+
+    @Override // org.telegram.ui.Components.mg
+    public final void X(boolean z10) {
+    }
+
+    @Override // org.telegram.ui.Components.mg
+    public final void a1(int i10) {
+    }
+
+    @Override // org.telegram.ui.Components.mg
+    public final /* synthetic */ void d2() {
+    }
+
+    @Override // org.telegram.ui.Components.mg
+    public final void f2(int i10) {
+    }
+
+    @Override // org.telegram.ui.Components.mg
+    public final void g() {
+    }
+
+    @Override // org.telegram.ui.Components.mg
+    public final void i2() {
+    }
+
+    @Override // org.telegram.ui.Components.mg
+    public final void j2(boolean z10) {
+    }
+
+    @Override // org.telegram.ui.Components.mg
+    public final /* synthetic */ void l() {
+    }
+
+    @Override // org.telegram.ui.Components.mg
+    public final /* synthetic */ void m0() {
+    }
+
+    @Override // org.telegram.ui.Components.mg
+    public final void n1() {
+    }
+
+    @Override // org.telegram.ui.Components.mg
+    public final void o2() {
+    }
+
+    @Override // org.telegram.ui.Components.mg
+    public final /* synthetic */ void q1() {
+    }
+
+    @Override // org.telegram.ui.Components.mg
+    public final /* synthetic */ void r1() {
+    }
+
+    @Override // org.telegram.ui.Components.mg
+    public final void s0() {
+    }
+
+    @Override // org.telegram.ui.Components.mg
+    public final void s1() {
+    }
+
+    @Override // org.telegram.ui.Components.mg
+    public final void v1(CharSequence charSequence) {
+    }
+
+    @Override // org.telegram.ui.Components.mg
+    public final void w2() {
+    }
+
+    @Override // org.telegram.ui.Components.mg
+    public final void x() {
+    }
+
+    @Override // org.telegram.ui.Components.mg
+    public final /* synthetic */ void y(float f7) {
+    }
+
+    @Override // org.telegram.ui.Components.mg
+    public final /* synthetic */ void z1() {
+    }
+
+    @Override // org.telegram.ui.Components.mg
+    public final void E0(int i10, int i11) {
+    }
+
+    @Override // org.telegram.ui.Components.mg
+    public final void K(float f7, int i10) {
+    }
+
+    @Override // org.telegram.ui.Components.mg
+    public final void l1(CharSequence charSequence, boolean z10, boolean z11) {
+    }
+
+    @Override // org.telegram.ui.Components.mg
+    public final void t1(View view, CharSequence charSequence, boolean z10) {
+    }
+
+    @Override // org.telegram.ui.Components.mg
+    public final void k2(int i10, int i11, int i12, long j3, long j10, boolean z10) {
     }
 }

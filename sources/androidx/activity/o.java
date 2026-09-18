@@ -1,209 +1,118 @@
 package androidx.activity;
 
-import android.os.Bundle;
-import android.os.Handler;
-import androidx.lifecycle.m;
-import androidx.lifecycle.t;
-import androidx.savedstate.Recreator;
-import b2.x0;
-import bi.e4;
-import com.google.android.gms.tasks.TaskCompletionSource;
-import e2.d0;
+import android.util.Log;
+import androidx.fragment.app.b0;
+import androidx.fragment.app.j0;
+import androidx.fragment.app.k0;
+import androidx.fragment.app.u0;
+import androidx.fragment.app.v0;
 import java.util.ArrayList;
-import java.util.Map;
-import ji.b5;
-import kotlin.jvm.internal.i;
-import m.p;
-import m4.a0;
-import m4.k0;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
-public final class o implements i9.r, com.google.android.gms.common.api.internal.s {
-    public final /* synthetic */ int a;
-    public boolean b;
-    public Object c;
-    public Object d;
+public final class o extends kotlin.jvm.internal.j implements rd.l {
+    public final /* synthetic */ int b;
+    public final /* synthetic */ v c;
 
-    public /* synthetic */ o() {
-        this.a = 5;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ o(v vVar, int i10) {
+        super(1);
+        this.b = i10;
+        this.c = vVar;
     }
 
-    @Override // com.google.android.gms.common.api.internal.s
-    public void accept(Object obj, Object obj2) {
-        com.google.android.gms.common.api.internal.n nVar;
-        boolean z10;
-        r7.k kVar = (r7.k) obj;
-        TaskCompletionSource taskCompletionSource = (TaskCompletionSource) obj2;
-        synchronized (this) {
-            nVar = ((com.google.android.gms.common.api.internal.p) this.c).c;
-            z10 = this.b;
-            com.google.android.gms.common.api.internal.p pVar = (com.google.android.gms.common.api.internal.p) this.c;
-            pVar.b = null;
-            pVar.c = null;
-        }
-        if (nVar == null) {
-            taskCompletionSource.setResult(Boolean.FALSE);
-        } else {
-            r7.a.a.a(kVar, nVar, z10, taskCompletionSource);
-        }
-    }
-
-    public void b() {
-        t4.e eVar = (t4.e) this.c;
-        androidx.lifecycle.o m10 = eVar.m();
-        if (((androidx.lifecycle.v) m10).c != androidx.lifecycle.n.b) {
-            throw new IllegalStateException("Restarter must be created only during owner's initialization stage");
-        }
-        m10.a(new Recreator(eVar));
-        final m.p pVar = (m.p) this.d;
-        pVar.getClass();
-        if (pVar.c) {
-            throw new IllegalStateException("SavedStateRegistry was already attached.");
-        }
-        m10.a(new androidx.lifecycle.r() { // from class: t4.b
-            @Override // androidx.lifecycle.r
-            public final void d(t tVar, m mVar) {
-                p this$0 = p.this;
-                i.e(this$0, "this$0");
-                if (mVar == m.ON_START) {
-                    this$0.e = true;
-                } else if (mVar == m.ON_STOP) {
-                    this$0.e = false;
+    @Override // rd.l
+    public final Object invoke(Object obj) {
+        Object obj2;
+        Object obj3;
+        switch (this.b) {
+            case 0:
+                kotlin.jvm.internal.i.e((b) obj, "backEvent");
+                v vVar = this.c;
+                hd.e eVar = vVar.b;
+                eVar.getClass();
+                ListIterator listIterator = eVar.listIterator(eVar.c);
+                while (true) {
+                    if (listIterator.hasPrevious()) {
+                        obj2 = listIterator.previous();
+                        if (((b0) obj2).a) {
+                        }
+                    } else {
+                        obj2 = null;
+                    }
                 }
-            }
-        });
-        pVar.c = true;
-        this.b = true;
-    }
-
-    public void c(Bundle bundle) {
-        if (!this.b) {
-            b();
-        }
-        androidx.lifecycle.v vVar = (androidx.lifecycle.v) ((t4.e) this.c).m();
-        if (vVar.c.compareTo(androidx.lifecycle.n.d) >= 0) {
-            throw new IllegalStateException(("performRestore cannot be called when owner is " + vVar.c).toString());
-        }
-        m.p pVar = (m.p) this.d;
-        if (!pVar.c) {
-            throw new IllegalStateException("You must call performAttach() before calling performRestore(Bundle).");
-        }
-        if (pVar.d) {
-            throw new IllegalStateException("SavedStateRegistry was already restored.");
-        }
-        pVar.a = bundle != null ? bundle.getBundle("androidx.lifecycle.BundlableSavedStateRegistry.key") : null;
-        pVar.d = true;
-    }
-
-    public void d(Bundle bundle) {
-        m.p pVar = (m.p) this.d;
-        pVar.getClass();
-        Bundle bundle2 = new Bundle();
-        Bundle bundle3 = (Bundle) pVar.a;
-        if (bundle3 != null) {
-            bundle2.putAll(bundle3);
-        }
-        o.f fVar = (o.f) pVar.f;
-        fVar.getClass();
-        o.d dVar = new o.d(fVar);
-        fVar.c.put(dVar, Boolean.FALSE);
-        while (dVar.hasNext()) {
-            Map.Entry entry = (Map.Entry) dVar.next();
-            bundle2.putBundle((String) entry.getKey(), ((t4.d) entry.getValue()).a());
-        }
-        if (bundle2.isEmpty()) {
-            return;
-        }
-        bundle.putBundle("androidx.lifecycle.BundlableSavedStateRegistry.key", bundle2);
-    }
-
-    public synchronized com.google.android.gms.common.api.internal.p e() {
-        return (com.google.android.gms.common.api.internal.p) this.c;
-    }
-
-    @Override // i9.r
-    public void h(Throwable th2) {
-        switch (this.a) {
-            case 2:
-                a0 a0Var = (a0) this.d;
-                if (th2 instanceof UnsupportedOperationException) {
-                    e2.a.o("MediaSessionImpl", "UnsupportedOperationException: Make sure to implement MediaSession.Callback.onPlaybackResumption() if you add a media button receiver to your manifest or if you implement the recent media item contract with your MediaLibraryService.", th2);
-                } else {
-                    e2.a.f("MediaSessionImpl", "Failure calling MediaSession.Callback.onPlaybackResumption(): " + th2.getMessage(), th2);
+                b0 b0Var = (b0) obj2;
+                vVar.c = b0Var;
+                if (b0Var != null) {
+                    k0 k0Var = b0Var.d;
+                    if (k0.K(3)) {
+                        Log.d("FragmentManager", "handleOnBackStarted. PREDICTIVE_BACK = true fragment manager " + k0Var);
+                    }
+                    k0Var.x();
+                    k0Var.y(new j0(k0Var), false);
                 }
-                d0.H(a0Var.t);
-                if (this.b) {
-                    a0Var.p((m4.r) this.c);
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // i9.r
-    public void onSuccess(Object obj) {
-        switch (this.a) {
-            case 2:
-                a0 a0Var = (a0) this.d;
-                m4.r rVar = (m4.r) this.c;
-                boolean z10 = this.b;
-                w7.t.b(a0Var.t, (m4.s) obj);
-                d0.H(a0Var.t);
-                if (z10) {
-                    a0Var.p(rVar);
-                    break;
-                }
-                break;
+                return gd.i.a;
             default:
-                m4.s sVar = (m4.s) obj;
-                a0 a0Var2 = ((k0) this.d).g;
-                Handler handler = a0Var2.l;
-                m4.r rVar2 = (m4.r) this.c;
-                d0.U(handler, new b5(a0Var2, rVar2, new e4(this, sVar, this.b, rVar2, 7)));
-                break;
+                b backEvent = (b) obj;
+                kotlin.jvm.internal.i.e(backEvent, "backEvent");
+                v vVar2 = this.c;
+                b0 b0Var2 = vVar2.c;
+                if (b0Var2 == null) {
+                    hd.e eVar2 = vVar2.b;
+                    eVar2.getClass();
+                    ListIterator listIterator2 = eVar2.listIterator(eVar2.c);
+                    while (true) {
+                        if (listIterator2.hasPrevious()) {
+                            obj3 = listIterator2.previous();
+                            if (((b0) obj3).a) {
+                            }
+                        } else {
+                            obj3 = null;
+                        }
+                    }
+                    b0Var2 = (b0) obj3;
+                }
+                if (b0Var2 != null) {
+                    k0 k0Var2 = b0Var2.d;
+                    if (k0.K(2)) {
+                        Log.v("FragmentManager", "handleOnBackProgressed. PREDICTIVE_BACK = true fragment manager " + k0Var2);
+                    }
+                    if (k0Var2.h != null) {
+                        Iterator it = k0Var2.f(0, 1, new ArrayList(Collections.singletonList(k0Var2.h))).iterator();
+                        while (it.hasNext()) {
+                            androidx.fragment.app.l lVar = (androidx.fragment.app.l) it.next();
+                            lVar.getClass();
+                            if (k0.K(2)) {
+                                Log.v("FragmentManager", "SpecialEffectsController: Processing Progress " + backEvent.c);
+                            }
+                            ArrayList arrayList = lVar.c;
+                            ArrayList arrayList2 = new ArrayList();
+                            int size = arrayList.size();
+                            int i10 = 0;
+                            while (i10 < size) {
+                                Object obj4 = arrayList.get(i10);
+                                i10++;
+                                ((v0) obj4).getClass();
+                                hd.m.e(arrayList2, null);
+                            }
+                            List m10 = hd.g.m(hd.g.p(arrayList2));
+                            int size2 = m10.size();
+                            for (int i11 = 0; i11 < size2; i11++) {
+                                ((u0) m10.get(i11)).b(backEvent, lVar.a);
+                            }
+                        }
+                        Iterator it2 = k0Var2.n.iterator();
+                        if (it2.hasNext()) {
+                            it2.next().getClass();
+                            throw new ClassCastException();
+                        }
+                    }
+                }
+                return gd.i.a;
         }
-    }
-
-    public /* synthetic */ o(Object obj, Object obj2, boolean z10, int i10) {
-        this.a = i10;
-        this.d = obj;
-        this.c = obj2;
-        this.b = z10;
-    }
-
-    public o(r7.c cVar, com.google.android.gms.common.api.internal.p pVar) {
-        this.a = 6;
-        this.d = cVar;
-        this.b = true;
-        this.c = pVar;
-    }
-
-    public o(t4.e eVar) {
-        this.a = 7;
-        this.c = eVar;
-        this.d = new m.p();
-    }
-
-    public o(l lVar, d dVar) {
-        this.a = 0;
-        this.c = new Object();
-        this.d = new ArrayList();
-    }
-
-    public o(jh.a aVar, le.b bVar) {
-        this.a = 1;
-        this.c = aVar;
-        this.d = bVar;
-    }
-
-    public o(a0 a0Var, m4.r rVar, boolean z10, x0 x0Var) {
-        this.a = 2;
-        this.d = a0Var;
-        this.c = rVar;
-        this.b = z10;
-    }
-
-    private final void a(Throwable th2) {
     }
 }

@@ -10,7 +10,7 @@ import java.util.Set;
 import java.util.concurrent.locks.Lock;
 import m.p3;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class d0 implements Runnable {
     public final /* synthetic */ g0 a;
@@ -49,7 +49,7 @@ public final class d0 implements Runnable {
                 if (arrayList.isEmpty()) {
                     int size = arrayList2.size();
                     while (i10 < size) {
-                        i11 = yVar.M(context, (com.google.android.gms.common.api.c) arrayList2.get(i10));
+                        i11 = yVar.a0(context, (com.google.android.gms.common.api.c) arrayList2.get(i10));
                         i10++;
                         if (i11 == 0) {
                         }
@@ -57,7 +57,7 @@ public final class d0 implements Runnable {
                 } else {
                     int size2 = arrayList.size();
                     while (i10 < size2) {
-                        i11 = yVar.M(context, (com.google.android.gms.common.api.c) arrayList.get(i10));
+                        i11 = yVar.a0(context, (com.google.android.gms.common.api.c) arrayList.get(i10));
                         i10++;
                         if (i11 != 0) {
                         }
@@ -74,7 +74,7 @@ public final class d0 implements Runnable {
                 }
                 for (com.google.android.gms.common.api.c cVar2 : hashMap.keySet()) {
                     n6.b bVar = (n6.b) hashMap.get(cVar2);
-                    if (!cVar2.k() || yVar.M(context, cVar2) == 0) {
+                    if (!cVar2.k() || yVar.a0(context, cVar2) == 0) {
                         cVar2.e(bVar);
                     } else {
                         z zVar = new z(g0Var, bVar);
@@ -121,9 +121,9 @@ public final class d0 implements Runnable {
                 if (!Thread.interrupted()) {
                     a();
                 }
-            } catch (RuntimeException e7) {
+            } catch (RuntimeException e) {
                 h0 h0Var = g0Var.a.e;
-                h0Var.sendMessage(h0Var.obtainMessage(2, e7));
+                h0Var.sendMessage(h0Var.obtainMessage(2, e));
             }
         } finally {
             lock.unlock();

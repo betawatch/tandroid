@@ -3,7 +3,7 @@ package u2;
 import android.net.Uri;
 import java.util.Map;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class s implements g2.h {
     public final g2.h a;
@@ -72,7 +72,7 @@ public final class s implements g2.h {
                     if (i14 > 0) {
                         e2.v vVar = new e2.v(bArr3, i14);
                         r0 r0Var = this.c;
-                        long max = !r0Var.w ? r0Var.r : Math.max(r0Var.x.m(true), r0Var.r);
+                        long max = !r0Var.w ? r0Var.r : Math.max(r0Var.x.j(true), r0Var.r);
                         int a2 = vVar.a();
                         c3.h0 h0Var = r0Var.v;
                         h0Var.getClass();

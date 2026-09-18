@@ -5,17 +5,17 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.vl;
+import org.telegram.messenger.wl;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.j60;
-import org.telegram.ui.p60;
+import org.telegram.ui.k60;
+import org.telegram.ui.q60;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public abstract class l extends FrameLayout {
     public int a;
-    public p60 b;
-    public t c;
+    public q60 b;
+    public u c;
     public ChatObject.VideoParticipant d;
     public boolean e;
     public final boolean f;
@@ -33,7 +33,7 @@ public abstract class l extends FrameLayout {
         return this.d;
     }
 
-    public t getRenderer() {
+    public u getRenderer() {
         return this.c;
     }
 
@@ -55,13 +55,13 @@ public abstract class l extends FrameLayout {
             ((View) getParent()).getMeasuredWidth();
             super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(this.b.F(), TLObject.FLAG_30));
         } else {
-            float f7 = j60.F3 ? 3.0f : 2.0f;
-            float A = vl.A(14.0f, 2, AndroidUtilities.displaySize.x) + (j60.F3 ? -AndroidUtilities.dp(90.0f) : 0);
-            super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec((int) ((j60.G3 ? A / 2.0f : A / f7) + AndroidUtilities.dp(4.0f)), TLObject.FLAG_30));
+            float f7 = k60.F3 ? 3.0f : 2.0f;
+            float A = wl.A(14.0f, 2, AndroidUtilities.displaySize.x) + (k60.F3 ? -AndroidUtilities.dp(90.0f) : 0);
+            super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec((int) ((k60.G3 ? A / 2.0f : A / f7) + AndroidUtilities.dp(4.0f)), TLObject.FLAG_30));
         }
     }
 
-    public void setRenderer(t tVar) {
-        this.c = tVar;
+    public void setRenderer(u uVar) {
+        this.c = uVar;
     }
 }

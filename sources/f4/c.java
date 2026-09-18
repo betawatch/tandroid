@@ -11,6 +11,7 @@ import android.text.style.StyleSpan;
 import android.text.style.TypefaceSpan;
 import android.text.style.UnderlineSpan;
 import android.util.Pair;
+import d2.h;
 import e2.d0;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
@@ -22,7 +23,7 @@ import java.util.TreeSet;
 import v7.f7;
 import v7.p6;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class c {
     public final String a;
@@ -238,7 +239,7 @@ public final class c {
                             if (i20 == -2) {
                                 i20 = 1;
                             }
-                            p6.a(new d2.g(i19, i13, i20), spannableStringBuilder, intValue, intValue2);
+                            p6.a(new h(i19, i13, i20), spannableStringBuilder, intValue, intValue2);
                         }
                         int i21 = a10.m;
                         if (i21 == 2) {
@@ -282,9 +283,9 @@ public final class c {
                                         if (i22 == -1 && (a2 = f7.a(cVar2.f, cVar2.g, map2)) != null) {
                                             i22 = a2.n;
                                         }
-                                        spannableStringBuilder.setSpan(new d2.f(str5, i22), intValue, intValue2, 33);
+                                        spannableStringBuilder.setSpan(new d2.g(str5, i22), intValue, intValue2, 33);
                                         if (a10.q == 1) {
-                                            p6.a(new d2.e(), spannableStringBuilder, intValue, intValue2);
+                                            p6.a(new d2.f(), spannableStringBuilder, intValue, intValue2);
                                         }
                                         i11 = a10.j;
                                         if (i11 == 1) {
@@ -389,10 +390,10 @@ public final class c {
         String str3 = this.h;
         String str4 = "".equals(str3) ? str : str3;
         if (this.c && z10) {
-            SpannableStringBuilder e7 = e(str4, treeMap);
+            SpannableStringBuilder e = e(str4, treeMap);
             String str5 = this.b;
             str5.getClass();
-            e7.append((CharSequence) str5);
+            e.append((CharSequence) str5);
             return;
         }
         if ("br".equals(str2) && z10) {
@@ -411,13 +412,13 @@ public final class c {
                 b(i10).i(j3, z10 || equals, str4, treeMap);
             }
             if (equals) {
-                SpannableStringBuilder e10 = e(str4, treeMap);
-                int length = e10.length() - 1;
-                while (length >= 0 && e10.charAt(length) == ' ') {
+                SpannableStringBuilder e7 = e(str4, treeMap);
+                int length = e7.length() - 1;
+                while (length >= 0 && e7.charAt(length) == ' ') {
                     length--;
                 }
-                if (length >= 0 && e10.charAt(length) != '\n') {
-                    e10.append('\n');
+                if (length >= 0 && e7.charAt(length) != '\n') {
+                    e7.append('\n');
                 }
             }
             for (Map.Entry entry2 : treeMap.entrySet()) {

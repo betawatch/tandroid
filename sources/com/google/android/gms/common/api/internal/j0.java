@@ -17,7 +17,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.locks.ReentrantLock;
 import m.p3;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class j0 extends com.google.android.gms.common.api.m implements v0 {
     public final a0.f E;
@@ -25,7 +25,7 @@ public final class j0 extends com.google.android.gms.common.api.m implements v0 
     public final p3 G;
     public final a0.f H;
     public final a8.d I;
-    public final a6.m J;
+    public final xa.c J;
     public final ArrayList K;
     public Integer L;
     public final g1 M;
@@ -51,12 +51,12 @@ public final class j0 extends com.google.android.gms.common.api.m implements v0 
         this.s = 120000L;
         this.v = 5000L;
         this.F = new HashSet();
-        this.J = new a6.m(10);
+        this.J = new xa.c(11);
         this.L = null;
-        a6.i iVar = new a6.i(this, 11);
+        a4.m mVar = new a4.m(this, 10);
         this.f = context;
         this.b = reentrantLock;
-        this.c = new n6.s(looper, iVar);
+        this.c = new n6.s(looper, mVar);
         this.h = looper;
         int i11 = 0;
         this.w = new h0(this, looper, i11);
@@ -86,7 +86,7 @@ public final class j0 extends com.google.android.gms.common.api.m implements v0 
                     throw th2;
                 }
             }
-            if (sVar.a.t()) {
+            if (sVar.a.v0()) {
                 com.google.android.gms.internal.cast.c0 c0Var = sVar.n;
                 c0Var.sendMessage(c0Var.obtainMessage(1, kVar));
             }
@@ -452,7 +452,7 @@ public final class j0 extends com.google.android.gms.common.api.m implements v0 
     }
 
     @Override // com.google.android.gms.common.api.internal.v0
-    public final void v(Bundle bundle) {
+    public final void r(Bundle bundle) {
         while (!this.n.isEmpty()) {
             e eVar = (e) this.n.remove();
             a0.f fVar = this.E;
@@ -500,7 +500,7 @@ public final class j0 extends com.google.android.gms.common.api.m implements v0 
                     Object obj = arrayList.get(i11);
                     i11++;
                     com.google.android.gms.common.api.k kVar = (com.google.android.gms.common.api.k) obj;
-                    if (!sVar.e || !sVar.a.t() || sVar.f.get() != i10) {
+                    if (!sVar.e || !sVar.a.v0() || sVar.f.get() != i10) {
                         break;
                     } else if (!sVar.c.contains(kVar)) {
                         kVar.onConnected(bundle);

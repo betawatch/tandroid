@@ -1,32 +1,32 @@
 package org.telegram.messenger;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import org.telegram.messenger.MediaDataController;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class k7 implements Runnable {
+public final /* synthetic */ class k7 implements Comparator {
     public final /* synthetic */ int a;
-    public final /* synthetic */ MediaDataController.KeywordResultCallback b;
-    public final /* synthetic */ ArrayList c;
-    public final /* synthetic */ String d;
+    public final /* synthetic */ ArrayList b;
 
-    public /* synthetic */ k7(MediaDataController.KeywordResultCallback keywordResultCallback, ArrayList arrayList, String str, int i10) {
+    public /* synthetic */ k7(ArrayList arrayList, int i10) {
         this.a = i10;
-        this.b = keywordResultCallback;
-        this.c = arrayList;
-        this.d = str;
+        this.b = arrayList;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        int lambda$getEmojiSuggestions$220;
+        int lambda$reorderStickers$54;
         switch (this.a) {
             case 0:
-                this.b.run(this.c, this.d);
-                break;
+                lambda$getEmojiSuggestions$220 = MediaDataController.lambda$getEmojiSuggestions$220(this.b, (MediaDataController.KeywordResult) obj, (MediaDataController.KeywordResult) obj2);
+                return lambda$getEmojiSuggestions$220;
             default:
-                this.b.run(this.c, this.d);
-                break;
+                lambda$reorderStickers$54 = MediaDataController.lambda$reorderStickers$54(this.b, (TLRPC.TL_messages_stickerSet) obj, (TLRPC.TL_messages_stickerSet) obj2);
+                return lambda$reorderStickers$54;
         }
     }
 }

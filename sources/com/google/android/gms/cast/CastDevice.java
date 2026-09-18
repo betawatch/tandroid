@@ -19,7 +19,7 @@ import o6.a;
 import org.telegram.ui.Cells.p6;
 import w7.e0;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public class CastDevice extends a implements ReflectedParcelable {
     public static final Parcelable.Creator<CastDevice> CREATOR = new v(22);
@@ -50,8 +50,8 @@ public class CastDevice extends a implements ReflectedParcelable {
         if (!TextUtils.isEmpty(str2)) {
             try {
                 this.c = InetAddress.getByName(str2);
-            } catch (UnknownHostException e7) {
-                Log.i("CastDevice", "Unable to convert host address (" + this.b + ") to ipaddress: " + e7.getMessage());
+            } catch (UnknownHostException e) {
+                Log.i("CastDevice", "Unable to convert host address (" + this.b + ") to ipaddress: " + e.getMessage());
             }
         }
         this.d = str3 == null ? "" : str3;

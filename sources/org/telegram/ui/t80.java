@@ -1,27 +1,50 @@
 package org.telegram.ui;
 
-import android.view.View;
+import android.telephony.PhoneNumberUtils;
+import j$.util.function.Predicate$-CC;
+import java.util.function.Predicate;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class t80 extends s4.j {
-    public final /* synthetic */ LanguageSelectActivity F;
+public final /* synthetic */ class t80 implements Predicate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public t80(LanguageSelectActivity languageSelectActivity) {
-        this.F = languageSelectActivity;
+    public /* synthetic */ t80(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // s4.j
-    public final void P(s4.c1 c1Var) {
-        View view;
-        LanguageSelectActivity languageSelectActivity = this.F;
-        languageSelectActivity.b.invalidate();
-        org.telegram.ui.Components.ll0 ll0Var = languageSelectActivity.b;
-        int i10 = ll0Var.E1;
-        if (i10 == -1 || (view = ll0Var.F1) == null) {
-            return;
+    public /* synthetic */ Predicate and(Predicate predicate) {
+        int i10 = this.a;
+        return Predicate$-CC.$default$and(this, predicate);
+    }
+
+    public /* synthetic */ Predicate negate() {
+        switch (this.a) {
         }
-        ll0Var.h1(i10, view);
-        ll0Var.invalidate();
+        return Predicate$-CC.$default$negate(this);
+    }
+
+    public /* synthetic */ Predicate or(Predicate predicate) {
+        int i10 = this.a;
+        return Predicate$-CC.$default$or(this, predicate);
+    }
+
+    @Override // java.util.function.Predicate
+    public final boolean test(Object obj) {
+        switch (this.a) {
+            case 0:
+                String str = (String) obj;
+                return str != null && str.equals((String) this.b);
+            case 1:
+                return PhoneNumberUtils.compare((String) this.b, (String) obj);
+            case 2:
+                String str2 = (String) obj;
+                return str2 != null && str2.equals((String) this.b);
+            default:
+                return bo.v1((bo) this.b, (TLRPC.MessageEntity) obj);
+        }
     }
 }

@@ -43,18 +43,18 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class ok extends ni {
     public static final /* synthetic */ int g0 = 0;
-    public final ig.e0 E;
-    public final org.telegram.ui.ActionBar.v0 F;
-    public final org.telegram.ui.ActionBar.v0 G;
-    public final hg.s0 H;
+    public final hg.e0 E;
+    public final org.telegram.ui.ActionBar.w0 F;
+    public final org.telegram.ui.ActionBar.w0 G;
+    public final gg.s0 H;
     public AnimatorSet I;
     public final t00 J;
     public boolean K;
-    public final bi.m6 L;
+    public final ai.d7 L;
     public float M;
     public boolean N;
     public File O;
@@ -144,15 +144,15 @@ public final class ok extends ni {
                         }
                     }
                     query.close();
-                } catch (Exception e7) {
-                    FileLog.e(e7);
+                } catch (Exception e) {
+                    FileLog.e(e);
                 }
             } else {
                 L(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS));
                 Collections.sort(hkVar.e, new bk(this, 1));
             }
-        } catch (Exception e10) {
-            FileLog.e(e10);
+        } catch (Exception e7) {
+            FileLog.e(e7);
         }
         this.b0 = false;
         if (!this.P) {
@@ -174,10 +174,10 @@ public final class ok extends ni {
                 ApplicationLoader.applicationContext.registerReceiver(this.e0, intentFilter);
             }
         }
-        org.telegram.ui.ActionBar.z n10 = this.b.X0.n();
-        org.telegram.ui.ActionBar.v0 a2 = n10.a(0, R.drawable.outline_header_search);
+        org.telegram.ui.ActionBar.a0 n10 = this.b.X0.n();
+        org.telegram.ui.ActionBar.w0 a2 = n10.a(0, R.drawable.outline_header_search);
         a2.F();
-        a2.H = new ig.d2(this, 5);
+        a2.H = new hg.d2(this, 6);
         this.F = a2;
         a2.setSearchFieldHint(LocaleController.getString(R.string.Search));
         a2.setContentDescription(LocaleController.getString(R.string.Search));
@@ -186,17 +186,17 @@ public final class ok extends ni {
         searchField.setTextColor(org.telegram.ui.ActionBar.j6.v0(i11, this.a));
         searchField.setCursorColor(org.telegram.ui.ActionBar.j6.v0(i11, this.a));
         searchField.setHintTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Vd, this.a));
-        org.telegram.ui.ActionBar.v0 a10 = n10.a(6, this.c0 ? R.drawable.msg_contacts_time : R.drawable.msg_contacts_name);
+        org.telegram.ui.ActionBar.w0 a10 = n10.a(6, this.c0 ? R.drawable.msg_contacts_time : R.drawable.msg_contacts_name);
         this.G = a10;
         a10.setContentDescription(LocaleController.getString(R.string.AccDescrContactSorting));
         t00 t00Var = new t00(context, f6Var);
         this.J = t00Var;
         addView(t00Var);
-        bi.m6 m6Var = new bi.m6(this, context, t00Var, f6Var);
-        this.L = m6Var;
-        addView(m6Var, w7.x5.c(-1.0f, -1));
-        m6Var.setVisibility(8);
-        m6Var.setOnTouchListener(new ci.d(14));
+        ai.d7 d7Var = new ai.d7(this, context, t00Var, f6Var);
+        this.L = d7Var;
+        addView(d7Var, w7.x5.c(-1.0f, -1));
+        d7Var.setVisibility(8);
+        d7Var.setOnTouchListener(new bi.d(14));
         dk dkVar = new dk(this, context, f6Var, 0);
         this.s = dkVar;
         dkVar.setSectionsType(2);
@@ -212,47 +212,47 @@ public final class ok extends ni {
         dkVar.setVisibility(8);
         dk dkVar2 = new dk(this, context, f6Var, 1);
         this.r = dkVar2;
-        dkVar2.o1();
+        dkVar2.q1();
         this.c = dkVar2;
         this.d = dkVar2;
         this.h = true;
         this.f = true;
         dkVar2.setSectionsType(2);
         dkVar2.setVerticalScrollBarEnabled(false);
-        ig.e0 e0Var = new ig.e0(this, AndroidUtilities.dp(56.0f) + AndroidUtilities.statusBarHeight, dkVar2, 2);
+        hg.e0 e0Var = new hg.e0(this, AndroidUtilities.dp(56.0f) + AndroidUtilities.statusBarHeight, dkVar2, 2);
         this.E = e0Var;
         dkVar2.setLayoutManager(e0Var);
         dkVar2.setClipToPadding(false);
         dkVar2.setAdapter(this.v);
         addView(dkVar2, w7.x5.c(-1.0f, -1));
         this.y = new nk(this, context);
-        dkVar2.setOnScrollListener(new ah.e0(this, 20));
+        dkVar2.setOnScrollListener(new ai.r(this, 20));
         final int i12 = 0;
-        dkVar2.setOnItemClickListener(new zk0(this) { // from class: org.telegram.ui.Components.zj
+        dkVar2.setOnItemClickListener(new al0(this) { // from class: org.telegram.ui.Components.zj
             public final /* synthetic */ ok b;
 
             {
                 this.b = this;
             }
 
-            @Override // org.telegram.ui.Components.zk0
-            public final void a(int i13, View view) {
+            @Override // org.telegram.ui.Components.al0
+            public final void d(int i13, View view) {
                 switch (i12) {
                     case 0:
                         ok.K(this.b, view, i13);
                         break;
                     default:
                         ok okVar = this.b;
-                        hg.s0 s0Var = okVar.H;
-                        s0Var.I0(true);
+                        gg.s0 s0Var = okVar.H;
+                        s0Var.J0(true);
                         nk nkVar = okVar.y;
                         ArrayList arrayList = s0Var.X2;
-                        hg.q0 q0Var = arrayList.isEmpty() ? hg.s0.c3[i13] : (hg.q0) arrayList.get(i13);
+                        gg.q0 q0Var = arrayList.isEmpty() ? gg.s0.c3[i13] : (gg.q0) arrayList.get(i13);
                         vi viVar2 = nkVar.X.b;
                         ArrayList arrayList2 = nkVar.R;
                         if (!arrayList2.isEmpty()) {
                             for (int i14 = 0; i14 < arrayList2.size(); i14++) {
-                                if (q0Var.b((hg.q0) arrayList2.get(i14))) {
+                                if (q0Var.b((gg.q0) arrayList2.get(i14))) {
                                     break;
                                 }
                             }
@@ -265,35 +265,35 @@ public final class ok extends ni {
                 }
             }
         });
-        dkVar2.setOnItemLongClickListener(new t(this, 20));
-        hg.s0 s0Var = new hg.s0(context, f6Var);
+        dkVar2.setOnItemLongClickListener(new s(this, 20));
+        gg.s0 s0Var = new gg.s0(context, f6Var);
         this.H = s0Var;
         final int i13 = 1;
-        s0Var.setOnItemClickListener(new zk0(this) { // from class: org.telegram.ui.Components.zj
+        s0Var.setOnItemClickListener(new al0(this) { // from class: org.telegram.ui.Components.zj
             public final /* synthetic */ ok b;
 
             {
                 this.b = this;
             }
 
-            @Override // org.telegram.ui.Components.zk0
-            public final void a(int i132, View view) {
+            @Override // org.telegram.ui.Components.al0
+            public final void d(int i132, View view) {
                 switch (i13) {
                     case 0:
                         ok.K(this.b, view, i132);
                         break;
                     default:
                         ok okVar = this.b;
-                        hg.s0 s0Var2 = okVar.H;
-                        s0Var2.I0(true);
+                        gg.s0 s0Var2 = okVar.H;
+                        s0Var2.J0(true);
                         nk nkVar = okVar.y;
                         ArrayList arrayList = s0Var2.X2;
-                        hg.q0 q0Var = arrayList.isEmpty() ? hg.s0.c3[i132] : (hg.q0) arrayList.get(i132);
+                        gg.q0 q0Var = arrayList.isEmpty() ? gg.s0.c3[i132] : (gg.q0) arrayList.get(i132);
                         vi viVar2 = nkVar.X.b;
                         ArrayList arrayList2 = nkVar.R;
                         if (!arrayList2.isEmpty()) {
                             for (int i14 = 0; i14 < arrayList2.size(); i14++) {
-                                if (q0Var.b((hg.q0) arrayList2.get(i14))) {
+                                if (q0Var.b((gg.q0) arrayList2.get(i14))) {
                                     break;
                                 }
                             }
@@ -346,9 +346,9 @@ public final class ok extends ni {
             }
             gk gkVar = new gk();
             View childAt = dkVar.getChildAt(0);
-            s4.c1 G = dkVar.G(childAt);
-            if (G != null) {
-                G.b();
+            s4.c1 H = dkVar.H(childAt);
+            if (H != null) {
+                H.b();
                 childAt.getTop();
                 gkVar.a = okVar.O;
                 gkVar.b = viVar.X0.getTitle();
@@ -369,19 +369,19 @@ public final class ok extends ni {
         if (i12 == R.drawable.files_gallery) {
             HashMap hashMap = new HashMap();
             ArrayList arrayList = new ArrayList();
-            org.telegram.ui.ActionBar.n2 n2Var = viVar.f0;
-            org.telegram.ui.co coVar = n2Var instanceof org.telegram.ui.co ? (org.telegram.ui.co) n2Var : null;
-            org.telegram.ui.br0 br0Var = new org.telegram.ui.br0(0, MediaController.allMediaAlbumEntry, hashMap, arrayList, 0, coVar != null, coVar, false);
-            br0Var.l0 = true;
-            br0Var.s0 = new m2.t(okVar, hashMap, arrayList);
-            br0Var.f0(okVar.V, false);
-            org.telegram.ui.ActionBar.n2 n2Var2 = viVar.f0;
-            if (n2Var2 != null) {
-                n2Var2.presentFragment(br0Var);
+            org.telegram.ui.ActionBar.o2 o2Var = viVar.f0;
+            org.telegram.ui.bo boVar = o2Var instanceof org.telegram.ui.bo ? (org.telegram.ui.bo) o2Var : null;
+            org.telegram.ui.cr0 cr0Var = new org.telegram.ui.cr0(0, MediaController.allMediaAlbumEntry, hashMap, arrayList, 0, boVar != null, boVar, false);
+            cr0Var.l0 = true;
+            cr0Var.s0 = new lf.i(okVar, hashMap, arrayList, false, 14);
+            cr0Var.f0(okVar.V, false);
+            org.telegram.ui.ActionBar.o2 o2Var2 = viVar.f0;
+            if (o2Var2 != null) {
+                o2Var2.presentFragment(cr0Var);
             } else {
-                org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
+                org.telegram.ui.ActionBar.o2 R = LaunchActivity.R();
                 if (R != null) {
-                    R.presentFragment(br0Var);
+                    R.presentFragment(cr0Var);
                 }
             }
             viVar.dismiss(true);
@@ -397,7 +397,7 @@ public final class ok extends ni {
         }
         int topForScroll = okVar.getTopForScroll();
         okVar.Q();
-        gk gkVar2 = (gk) i2.g.z(1, hkVar.d);
+        gk gkVar2 = (gk) hg.k0.z(1, hkVar.d);
         viVar.X0.setTitle(gkVar2.b);
         File file2 = gkVar2.a;
         if (file2 != null) {
@@ -413,25 +413,13 @@ public final class ok extends ni {
     private int getTopForScroll() {
         dk dkVar = this.r;
         View childAt = dkVar.getChildAt(0);
-        s4.c1 G = dkVar.G(childAt);
+        s4.c1 H = dkVar.H(childAt);
         int i10 = -dkVar.getPaddingTop();
-        return (G == null || G.b() != 0) ? i10 : childAt.getTop() + i10;
+        return (H == null || H.b() != 0) ? i10 : childAt.getTop() + i10;
     }
 
     @Override // org.telegram.ui.Components.ni
-    public final void A() {
-        hk hkVar = this.v;
-        if (hkVar != null) {
-            hkVar.l();
-        }
-        nk nkVar = this.y;
-        if (nkVar != null) {
-            nkVar.l();
-        }
-    }
-
-    @Override // org.telegram.ui.Components.ni
-    public final void D(ni niVar) {
+    public final void E(ni niVar) {
         this.R.clear();
         this.T.clear();
         this.y.R.clear();
@@ -447,7 +435,7 @@ public final class ok extends ni {
 
     @Override // org.telegram.ui.Components.ni
     public final void G() {
-        this.r.x0(0);
+        this.r.y0(0);
     }
 
     @Override // org.telegram.ui.Components.ni
@@ -460,14 +448,14 @@ public final class ok extends ni {
         final ArrayList arrayList = new ArrayList();
         Iterator it = hashMap.keySet().iterator();
         while (it.hasNext()) {
-            arrayList.add((MessageObject) hashMap.get((org.telegram.ui.p10) it.next()));
+            arrayList.add((MessageObject) hashMap.get((org.telegram.ui.r10) it.next()));
         }
         final ArrayList arrayList2 = new ArrayList(this.S);
         vi viVar = this.b;
         CharSequence[] charSequenceArr = {viVar.m1().getText()};
         final ArrayList<TLRPC.MessageEntity> entities = MediaDataController.getInstance(viVar.J1).getEntities(charSequenceArr, true);
         final String charSequence = charSequenceArr[0].toString();
-        return e5.b0(viVar.J1, viVar.n1(), viVar.j1() + arrayList2.size() + (1 ^ (TextUtils.isEmpty(charSequence) ? 1 : 0)), new Utilities.Callback() { // from class: org.telegram.ui.Components.ck
+        return c5.b0(viVar.J1, viVar.n1(), viVar.j1() + arrayList2.size() + (1 ^ (TextUtils.isEmpty(charSequence) ? 1 : 0)), new Utilities.Callback() { // from class: org.telegram.ui.Components.ck
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
                 ok okVar = ok.this;
@@ -508,11 +496,11 @@ public final class ok extends ni {
         String fileExtension = FileLoader.getFileExtension(file);
         String mimeTypeFromExtension = fileExtension != null ? MimeTypeMap.getSingleton().getMimeTypeFromExtension(fileExtension) : null;
         if (file.length() == 0 || mimeTypeFromExtension == null || !uf.c.i.contains(mimeTypeFromExtension)) {
-            new yc(this.b.getContainer(), null).u(LocaleController.formatString("InvalidFormatError", R.string.InvalidFormatError, new Object[0]), LocaleController.getString(R.string.ErrorRingtoneInvalidFormat), null).j();
+            new vc(this.b.getContainer(), null).u(LocaleController.formatString("InvalidFormatError", R.string.InvalidFormatError, new Object[0]), LocaleController.getString(R.string.ErrorRingtoneInvalidFormat), null).j();
             return false;
         }
         if (file.length() > MessagesController.getInstance(UserConfig.selectedAccount).ringtoneSizeMax) {
-            new yc(this.b.getContainer(), null).u(LocaleController.formatString("TooLargeError", R.string.TooLargeError, new Object[0]), LocaleController.formatString("ErrorRingtoneSizeTooBig", R.string.ErrorRingtoneSizeTooBig, Integer.valueOf(MessagesController.getInstance(UserConfig.selectedAccount).ringtoneSizeMax / 1024)), null).j();
+            new vc(this.b.getContainer(), null).u(LocaleController.formatString("TooLargeError", R.string.TooLargeError, new Object[0]), LocaleController.formatString("ErrorRingtoneSizeTooBig", R.string.ErrorRingtoneSizeTooBig, Integer.valueOf(MessagesController.getInstance(UserConfig.selectedAccount).ringtoneSizeMax / 1024)), null).j();
             return false;
         }
         try {
@@ -525,7 +513,7 @@ public final class ok extends ni {
         if (i10 <= MessagesController.getInstance(UserConfig.selectedAccount).ringtoneDurationMax * MediaDataController.MAX_STYLE_RUNS_COUNT) {
             return true;
         }
-        new yc(this.b.getContainer(), null).u(LocaleController.formatString("TooLongError", R.string.TooLongError, new Object[0]), LocaleController.formatString("ErrorRingtoneDurationTooLong", R.string.ErrorRingtoneDurationTooLong, Integer.valueOf(MessagesController.getInstance(UserConfig.selectedAccount).ringtoneDurationMax)), null).j();
+        new vc(this.b.getContainer(), null).u(LocaleController.formatString("TooLongError", R.string.TooLongError, new Object[0]), LocaleController.formatString("ErrorRingtoneDurationTooLong", R.string.ErrorRingtoneDurationTooLong, Integer.valueOf(MessagesController.getInstance(UserConfig.selectedAccount).ringtoneDurationMax)), null).j();
         return false;
     }
 
@@ -584,7 +572,7 @@ public final class ok extends ni {
             ik ikVar2 = new ik();
             ikVar2.b = "..";
             if (arrayList2.size() > 0) {
-                File file3 = ((gk) i2.g.h(1, arrayList2)).a;
+                File file3 = ((gk) hg.k0.h(1, arrayList2)).a;
                 if (file3 == null) {
                     ikVar2.c = LocaleController.getString(R.string.Folder);
                 } else {
@@ -606,8 +594,8 @@ public final class ok extends ni {
             hkVar.l();
             this.E.h1(0, topForScroll);
             return true;
-        } catch (Exception e7) {
-            S(e7.getLocalizedMessage());
+        } catch (Exception e) {
+            S(e.getLocalizedMessage());
             return false;
         }
     }
@@ -650,8 +638,8 @@ public final class ok extends ni {
         }
         try {
             bufferedReader = new BufferedReader(new FileReader("/proc/mounts"));
-        } catch (Exception e7) {
-            e = e7;
+        } catch (Exception e) {
+            e = e;
             bufferedReader = null;
         } catch (Throwable th2) {
             th = th2;
@@ -688,8 +676,8 @@ public final class ok extends ni {
                                 ikVar2.a = R.drawable.files_internal;
                                 ikVar2.f = new File(nextToken);
                                 this.v.c.add(ikVar2);
-                            } catch (Exception e10) {
-                                FileLog.e(e10);
+                            } catch (Exception e7) {
+                                FileLog.e(e7);
                             }
                         }
                     }
@@ -699,20 +687,20 @@ public final class ok extends ni {
                     if (bufferedReader2 != null) {
                         try {
                             bufferedReader2.close();
-                        } catch (Exception e11) {
-                            FileLog.e(e11);
+                        } catch (Exception e10) {
+                            FileLog.e(e10);
                         }
                     }
                     throw th;
                 }
-            } catch (Exception e12) {
-                e = e12;
+            } catch (Exception e11) {
+                e = e11;
                 FileLog.e(e);
             }
             try {
                 break;
-            } catch (Exception e13) {
-                FileLog.e(e13);
+            } catch (Exception e12) {
+                FileLog.e(e12);
             }
         }
         bufferedReader.close();
@@ -726,8 +714,8 @@ public final class ok extends ni {
                 ikVar3.f = file;
                 this.v.c.add(ikVar3);
             }
-        } catch (Exception e14) {
-            FileLog.e(e14);
+        } catch (Exception e13) {
+            FileLog.e(e13);
         }
         if (!this.d0 && ((viVar = this.b) == null || !viVar.H)) {
             ik ikVar4 = new ik();
@@ -769,11 +757,11 @@ public final class ok extends ni {
         if (!z11) {
             if (obj instanceof MessageObject) {
                 MessageObject messageObject = (MessageObject) obj;
-                org.telegram.ui.p10 p10Var = new org.telegram.ui.p10(messageObject.getId(), messageObject.getDialogId());
-                if (hashMap2.containsKey(p10Var)) {
-                    hashMap2.remove(p10Var);
+                org.telegram.ui.r10 r10Var = new org.telegram.ui.r10(messageObject.getId(), messageObject.getDialogId());
+                if (hashMap2.containsKey(r10Var)) {
+                    hashMap2.remove(r10Var);
                 } else if (hashMap2.size() < 100) {
-                    hashMap2.put(p10Var, messageObject);
+                    hashMap2.put(r10Var, messageObject);
                     z12 = true;
                 }
                 z10 = z12;
@@ -800,10 +788,10 @@ public final class ok extends ni {
                     return false;
                 }
                 if ((ikVar.f.length() > FileLoader.DEFAULT_MAX_FILE_SIZE && !UserConfig.getInstance(UserConfig.selectedAccount).isPremium()) || ikVar.f.length() > 4194304000L) {
-                    sg.k0 k0Var = new sg.k0(6, UserConfig.selectedAccount, viVar.getContainer().getContext(), viVar.f0, null);
-                    k0Var.N0 = true;
-                    k0Var.L1();
-                    k0Var.show();
+                    rg.j0 j0Var = new rg.j0(6, UserConfig.selectedAccount, viVar.getContainer().getContext(), viVar.f0, null);
+                    j0Var.N0 = true;
+                    j0Var.L1();
+                    j0Var.show();
                     return false;
                 }
                 if (this.V >= 0) {
@@ -833,7 +821,7 @@ public final class ok extends ni {
                 ArrayList arrayList2 = new ArrayList();
                 Iterator it = hashMap2.keySet().iterator();
                 while (it.hasNext()) {
-                    arrayList2.add((MessageObject) hashMap2.get((org.telegram.ui.p10) it.next()));
+                    arrayList2.add((MessageObject) hashMap2.get((org.telegram.ui.r10) it.next()));
                 }
                 this.Q.k(new ArrayList(arrayList), null, null, arrayList2, false, 0, 0L, false, 0L);
             }
@@ -860,7 +848,7 @@ public final class ok extends ni {
         dkVar.setVisibility(0);
         dk dkVar2 = this.r;
         dkVar.setPadding(dkVar2.getPaddingLeft(), dkVar2.getPaddingTop(), dkVar2.getPaddingRight(), dkVar2.getPaddingBottom());
-        ig.e0 e0Var = this.E;
+        hg.e0 e0Var = this.E;
         int L0 = e0Var.L0();
         if (L0 < 0 || (m10 = e0Var.m(L0)) == null) {
             return;
@@ -918,23 +906,23 @@ public final class ok extends ni {
             this.f0 = ValueAnimator.ofFloat(0.0f, 1.0f);
         }
         this.f0.addUpdateListener(new ak(this, i10, dp, i11));
-        this.f0.addListener(new j6(this, 10));
+        this.f0.addListener(new p8(this, 7));
         if (i10 == 1) {
             this.f0.setDuration(220L);
         } else {
             this.f0.setDuration(200L);
         }
-        this.f0.setInterpolator(pr.f);
+        this.f0.setInterpolator(qr.f);
         this.f0.start();
     }
 
     public final void S(String str) {
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getContext(), 0, this.a);
         String string = LocaleController.getString(R.string.AppName);
-        org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
-        b2Var.R = string;
-        b2Var.T = str;
-        i2.g.B(R.string.OK, alertDialog$Builder, null);
+        org.telegram.ui.ActionBar.c2 c2Var = alertDialog$Builder.a;
+        c2Var.R = string;
+        c2Var.T = str;
+        hg.k0.A(R.string.OK, alertDialog$Builder, null);
     }
 
     public final void T() {
@@ -950,20 +938,20 @@ public final class ok extends ni {
 
     public final void U() {
         View childAt;
-        bi.m6 m6Var = this.L;
-        if (m6Var.getVisibility() == 0 && (childAt = this.r.getChildAt(0)) != null) {
-            float translationY = m6Var.getTranslationY();
-            this.M = (childAt.getTop() + (m6Var.getMeasuredHeight() - getMeasuredHeight())) / 2;
-            m6Var.setTranslationY(translationY);
+        ai.d7 d7Var = this.L;
+        if (d7Var.getVisibility() == 0 && (childAt = this.r.getChildAt(0)) != null) {
+            float translationY = d7Var.getTranslationY();
+            this.M = (childAt.getTop() + (d7Var.getMeasuredHeight() - getMeasuredHeight())) / 2;
+            d7Var.setTranslationY(translationY);
         }
     }
 
     public final void V() {
-        org.telegram.ui.ActionBar.v0 v0Var = this.F;
-        if (v0Var == null || v0Var.s()) {
+        org.telegram.ui.ActionBar.w0 w0Var = this.F;
+        if (w0Var == null || w0Var.s()) {
             return;
         }
-        v0Var.setVisibility((this.N || this.v.d.isEmpty()) ? 0 : 8);
+        w0Var.setVisibility((this.N || this.v.d.isEmpty()) ? 0 : 8);
     }
 
     @Override // org.telegram.ui.Components.ni
@@ -979,12 +967,12 @@ public final class ok extends ni {
         }
         int i10 = 0;
         View childAt = dkVar.getChildAt(0);
-        vk0 vk0Var = (vk0) dkVar.G(childAt);
+        wk0 wk0Var = (wk0) dkVar.H(childAt);
         int y3 = ((((int) childAt.getY()) - AndroidUtilities.statusBarHeight) - AndroidUtilities.dp(4.0f)) - AndroidUtilities.dp(8.0f);
-        if (y3 > 0 && vk0Var != null && vk0Var.b() == 0) {
+        if (y3 > 0 && wk0Var != null && wk0Var.b() == 0) {
             i10 = y3;
         }
-        if (y3 < 0 || vk0Var == null || vk0Var.b() != 0) {
+        if (y3 < 0 || wk0Var == null || wk0Var.b() != 0) {
             y3 = i10;
         }
         return AndroidUtilities.dp(13.0f) + y3;
@@ -1038,7 +1026,7 @@ public final class ok extends ni {
             return false;
         }
         Q();
-        gk gkVar = (gk) i2.g.z(1, hkVar.d);
+        gk gkVar = (gk) hg.k0.z(1, hkVar.d);
         this.b.X0.setTitle(gkVar.b);
         int topForScroll = getTopForScroll();
         File file = gkVar.a;
@@ -1060,11 +1048,11 @@ public final class ok extends ni {
                 ApplicationLoader.applicationContext.unregisterReceiver(this.e0);
                 this.P = false;
             }
-        } catch (Exception e7) {
-            FileLog.e(e7);
+        } catch (Exception e) {
+            FileLog.e(e);
         }
         this.b.X0.h(true);
-        org.telegram.ui.ActionBar.z n10 = this.b.X0.n();
+        org.telegram.ui.ActionBar.a0 n10 = this.b.X0.n();
         n10.removeView(this.G);
         n10.removeView(this.F);
     }
@@ -1144,7 +1132,19 @@ public final class ok extends ni {
             }
             viVar.setAllowNestedScroll(true);
         }
-        this.r.n1(0, dp + AndroidUtilities.statusBarHeight, 0, this.e);
+        this.r.p1(0, dp + AndroidUtilities.statusBarHeight, 0, this.e);
         ((FrameLayout.LayoutParams) this.H.getLayoutParams()).topMargin = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
+    }
+
+    @Override // org.telegram.ui.Components.ni
+    public final void z() {
+        hk hkVar = this.v;
+        if (hkVar != null) {
+            hkVar.l();
+        }
+        nk nkVar = this.y;
+        if (nkVar != null) {
+            nkVar.l();
+        }
     }
 }

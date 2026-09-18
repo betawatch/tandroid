@@ -12,7 +12,7 @@ import e9.g0;
 import e9.i0;
 import java.util.List;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class a implements o {
     public final /* synthetic */ int a;
@@ -38,30 +38,30 @@ public final class a implements o {
     }
 
     @Override // c3.o
-    public final boolean b(p pVar) {
+    public final boolean a(p pVar) {
         switch (this.a) {
             case 0:
                 l lVar = (l) pVar;
-                lVar.v(4, false);
+                lVar.s(4, false);
                 v vVar = this.b;
                 vVar.G(4);
-                lVar.j(vVar.a, 0, 4, false);
+                lVar.h(vVar.a, 0, 4, false);
                 if (vVar.z() == 1718909296) {
                     vVar.G(4);
-                    lVar.j(vVar.a, 0, 4, false);
+                    lVar.h(vVar.a, 0, 4, false);
                     if (vVar.z() == 1635150182) {
                     }
                 }
                 break;
             case 1:
                 l lVar2 = (l) pVar;
-                lVar2.v(4, false);
+                lVar2.s(4, false);
                 v vVar2 = this.b;
                 vVar2.G(4);
-                lVar2.j(vVar2.a, 0, 4, false);
+                lVar2.h(vVar2.a, 0, 4, false);
                 if (vVar2.z() == 1718909296) {
                     vVar2.G(4);
-                    lVar2.j(vVar2.a, 0, 4, false);
+                    lVar2.h(vVar2.a, 0, 4, false);
                     if (vVar2.z() == 1751476579) {
                     }
                 }
@@ -70,11 +70,11 @@ public final class a implements o {
                 v vVar3 = this.b;
                 vVar3.G(4);
                 l lVar3 = (l) pVar;
-                lVar3.j(vVar3.a, 0, 4, false);
+                lVar3.h(vVar3.a, 0, 4, false);
                 if (vVar3.z() == 1380533830) {
-                    lVar3.v(4, false);
+                    lVar3.s(4, false);
                     vVar3.G(4);
-                    lVar3.j(vVar3.a, 0, 4, false);
+                    lVar3.h(vVar3.a, 0, 4, false);
                     if (vVar3.z() == 1464156752) {
                     }
                 }
@@ -140,7 +140,7 @@ public final class a implements o {
         int i10 = this.a;
     }
 
-    private final void a() {
+    private final void b() {
     }
 
     private final void d() {

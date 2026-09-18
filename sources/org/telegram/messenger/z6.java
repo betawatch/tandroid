@@ -1,31 +1,54 @@
 package org.telegram.messenger;
 
+import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class z6 implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ MediaDataController b;
-    public final /* synthetic */ String c;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ Object e;
 
-    public /* synthetic */ z6(MediaDataController mediaDataController, String str, int i10) {
+    public /* synthetic */ z6(Object obj, Object obj2, long j3, long j10, int i10) {
         this.a = i10;
-        this.b = mediaDataController;
-        this.c = str;
+        this.b = obj;
+        this.e = obj2;
+        this.c = j3;
+        this.d = j10;
     }
 
     @Override // org.telegram.tgnet.RequestDelegate
     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                this.b.lambda$verifyAnimatedStickerMessageInternal$70(this.c, tLObject, tL_error);
+                ((MediaDataController) this.b).lambda$loadPinnedMessageInternal$164(this.c, this.d, (TLRPC.TL_channels_getMessages) this.e, tLObject, tL_error);
+                break;
+            case 1:
+                ((MediaDataController) this.b).lambda$getMediaCounts$129((int[]) this.e, this.c, this.d, tLObject, tL_error);
+                break;
+            case 2:
+                ((MessagesController) this.b).lambda$requestContactToken$476((Utilities.Callback) this.e, this.c, this.d, tLObject, tL_error);
+                break;
+            case 3:
+                ((TopicsController) this.b).lambda$getTopicRepliesCount$30((TLRPC.TL_forumTopic) this.e, this.c, this.d, tLObject, tL_error);
                 break;
             default:
-                this.b.lambda$fetchStickerSetInternal$42(this.c, tLObject, tL_error);
+                yh.a4 a4Var = (yh.a4) this.b;
+                yh.a4.J0(this.c, this.d, (Utilities.Callback) this.e, tLObject, tL_error, a4Var);
                 break;
         }
+    }
+
+    public /* synthetic */ z6(MediaDataController mediaDataController, long j3, long j10, TLRPC.TL_channels_getMessages tL_channels_getMessages) {
+        this.a = 0;
+        this.b = mediaDataController;
+        this.c = j3;
+        this.d = j10;
+        this.e = tL_channels_getMessages;
     }
 }

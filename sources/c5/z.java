@@ -2,7 +2,7 @@ package c5;
 
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class z implements q0.a {
     public final /* synthetic */ int a;
@@ -25,18 +25,18 @@ public final /* synthetic */ class z implements q0.a {
                 if (gVar == null) {
                     gVar = new o0.g(-3);
                 }
-                ((o0.a) this.b).H(gVar);
+                ((o0.a) this.b).J(gVar);
                 return;
             default:
                 o0.g gVar2 = (o0.g) obj;
                 synchronized (o0.h.c) {
                     try {
-                        a0.l lVar = o0.h.d;
-                        ArrayList arrayList = (ArrayList) lVar.get((String) this.b);
+                        a0.m mVar = o0.h.d;
+                        ArrayList arrayList = (ArrayList) mVar.get((String) this.b);
                         if (arrayList == null) {
                             return;
                         }
-                        lVar.remove((String) this.b);
+                        mVar.remove((String) this.b);
                         for (int i10 = 0; i10 < arrayList.size(); i10++) {
                             ((q0.a) arrayList.get(i10)).accept(gVar2);
                         }

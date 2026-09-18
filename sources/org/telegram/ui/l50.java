@@ -1,106 +1,118 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.RectF;
-import android.os.Build;
-import android.view.View;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
-public final class l50 implements org.telegram.ui.Components.ek0 {
-    public final Path a = new Path();
-    public final Paint b;
-    public final /* synthetic */ j60 c;
+public final class l50 extends s4.o {
+    public final /* synthetic */ k60 b;
 
-    public l50(j60 j60Var) {
-        this.c = j60Var;
-        Paint paint = new Paint(1);
-        this.b = paint;
-        paint.setColor(-14603467);
+    public l50(k60 k60Var) {
+        this.b = k60Var;
     }
 
-    @Override // org.telegram.ui.Components.ek0
-    public final void B(View view, ah.j1 j1Var, boolean z10, boolean z11) {
-        TLRPC.TL_messageEntityCustomEmoji tL_messageEntityCustomEmoji = new TLRPC.TL_messageEntityCustomEmoji();
-        String str = j1Var.f;
-        if (str == null) {
-            str = "👍";
-        }
-        TLRPC.TL_textWithEntities tL_textWithEntities = new TLRPC.TL_textWithEntities();
-        tL_textWithEntities.text = str;
-        long j3 = j1Var.g;
-        if (j3 != 0) {
-            tL_messageEntityCustomEmoji.document_id = j3;
-            tL_messageEntityCustomEmoji.offset = 0;
-            tL_messageEntityCustomEmoji.length = str.length();
-            tL_textWithEntities.entities.add(tL_messageEntityCustomEmoji);
-        }
-        j60 j60Var = this.c;
-        j60Var.A1(tL_textWithEntities);
-        i40 i40Var = j60Var.H;
-        if (i40Var.m()) {
-            i40Var.j();
-        } else {
-            i40Var.d();
-        }
-        ah.u0 reactionsWindow = j60Var.K.getReactionsWindow();
-        if (reactionsWindow == null || reactionsWindow.q) {
-            return;
-        }
-        j60Var.K.getReactionsWindow().e();
-        j60Var.K.n();
-    }
-
-    @Override // org.telegram.ui.Components.ek0
-    public final void I(Canvas canvas, RectF rectF, float f7, float f10, float f11, int i10, boolean z10) {
-        Paint paint = this.b;
-        if (f7 > 0.0f) {
-            canvas.drawRoundRect(rectF, f7, f7, paint);
-        } else {
-            canvas.drawRect(rectF, paint);
-        }
-        if (Build.VERSION.SDK_INT < 29 || !canvas.isHardwareAccelerated()) {
-            return;
-        }
-        j60 j60Var = this.c;
-        if (j60Var.Q2 != null) {
-            canvas.save();
-            if (f7 > 0.0f) {
-                Path path = this.a;
-                path.rewind();
-                path.addRoundRect(rectF, f7, f7, Path.Direction.CW);
-                path.close();
-                canvas.clipPath(path);
-            } else {
-                canvas.clipRect(rectF);
-            }
-            canvas.translate(-j60Var.K.getX(), -j60Var.K.getY());
-            float f12 = j60Var.R2;
-            canvas.scale(f12, f12);
-            canvas.drawRenderNode(j60Var.Q2);
-            canvas.restore();
-        }
-    }
-
-    @Override // org.telegram.ui.Components.ek0
-    public final boolean S() {
+    @Override // s4.o
+    public final boolean a(int i10, int i11) {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.ek0
-    public final boolean n() {
+    @Override // s4.o
+    public final boolean b(int i10, int i11) {
+        int i12;
+        int i13;
+        int i14;
+        int i15;
+        int i16;
+        k60 k60Var = this.b;
+        e60 e60Var = k60Var.P;
+        int i17 = e60Var.w;
+        if (i17 >= 0) {
+            int i18 = k60Var.h3;
+            if (i10 == i18 && i11 == i17) {
+                return true;
+            }
+            if ((i10 == i18 && i11 != i17) || (i10 != i18 && i11 == i17)) {
+                return false;
+            }
+        }
+        int i19 = e60Var.x;
+        if (i19 >= 0) {
+            int i20 = k60Var.u3;
+            if (i10 == i20 && i11 == i19) {
+                return true;
+            }
+            if ((i10 == i20 && i11 != i19) || (i10 != i20 && i11 == i19)) {
+                return false;
+            }
+        }
+        int i21 = e60Var.y;
+        if (i21 >= 0) {
+            int i22 = k60Var.v3;
+            if (i10 == i22 && i11 == i21) {
+                return true;
+            }
+            if ((i10 == i22 && i11 != i21) || (i10 != i22 && i11 == i21)) {
+                return false;
+            }
+        }
+        int i23 = e60Var.K;
+        if (i23 >= 0) {
+            int i24 = k60Var.g3;
+            if (i10 == i24 && i11 == i23) {
+                return true;
+            }
+            if ((i10 == i24 && i11 != i23) || (i10 != i24 && i11 == i23)) {
+                return false;
+            }
+        }
+        int i25 = e60Var.J;
+        if (i25 >= 0) {
+            int i26 = k60Var.t3;
+            if (i10 == i26 && i11 == i25) {
+                return true;
+            }
+            if ((i10 == i26 && i11 != i25) || (i10 != i26 && i11 == i25)) {
+                return false;
+            }
+        }
+        int i27 = e60Var.I;
+        if (i27 >= 0 && i27 == i11 && i10 == k60Var.s3) {
+            return true;
+        }
+        int i28 = k60Var.I0;
+        if (i10 == i28 - 1 && i11 == e60Var.F - 1) {
+            return true;
+        }
+        if (i10 != i28 - 1 && i11 != e60Var.F - 1) {
+            if (i11 >= e60Var.G && i11 < e60Var.H && i10 >= (i16 = k60Var.q3) && i10 < k60Var.r3) {
+                return ((ChatObject.VideoParticipant) k60Var.E0.get(i10 - i16)).equals((ChatObject.VideoParticipant) k60Var.q0.get(i11 - k60Var.P.G));
+            }
+            if (i11 >= e60Var.d && i11 < e60Var.e && i10 >= (i15 = k60Var.i3) && i10 < k60Var.j3) {
+                TLRPC.GroupCallParticipant groupCallParticipant = (TLRPC.GroupCallParticipant) k60Var.D0.get(i10 - i15);
+                return MessageObject.getPeerId(groupCallParticipant.peer) == MessageObject.getPeerId(k60Var.a1.visibleParticipants.get(i11 - k60Var.P.d).peer) && (i10 == i11 || groupCallParticipant.lastActiveDate == ((long) groupCallParticipant.active_date));
+            }
+            if (i11 >= e60Var.f && i11 < e60Var.h && i10 >= (i14 = k60Var.k3) && i10 < k60Var.l3) {
+                return ((Long) k60Var.F0.get(i10 - i14)).equals(k60Var.a1.invitedUsers.get(i11 - k60Var.P.f));
+            }
+            if (i11 >= e60Var.n && i11 < e60Var.r && i10 >= (i13 = k60Var.m3) && i10 < k60Var.n3) {
+                return ((Long) k60Var.G0.get(i10 - i13)).equals(k60Var.a1.shadyJoinParticipants.get(i11 - k60Var.P.n));
+            }
+            if (i11 >= e60Var.s && i11 < e60Var.v && i10 >= (i12 = k60Var.o3) && i10 < k60Var.p3) {
+                return ((Long) k60Var.H0.get(i10 - i12)).equals(k60Var.a1.shadyLeftParticipants.get(i11 - k60Var.P.s));
+            }
+        }
         return false;
     }
 
-    @Override // org.telegram.ui.Components.ek0
-    public final /* synthetic */ boolean t() {
-        return false;
+    @Override // s4.o
+    public final int d() {
+        return this.b.P.F;
     }
 
-    @Override // org.telegram.ui.Components.ek0
-    public final /* synthetic */ void J() {
+    @Override // s4.o
+    public final int e() {
+        return this.b.I0;
     }
 }

@@ -8,7 +8,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class dz implements yy {
     public String a;
@@ -30,17 +30,17 @@ public final class dz implements yy {
 
     public final void a(Runnable runnable, boolean z10) {
         String[] currentKeyboardLanguage = AndroidUtilities.getCurrentKeyboardLanguage();
-        MediaDataController.getInstance(this.w.Q.c1).searchStickers(false, (currentKeyboardLanguage == null || currentKeyboardLanguage.length == 0) ? "" : currentKeyboardLanguage[0], this.a, new di.hd(this, z10, runnable, 2), z10);
+        MediaDataController.getInstance(this.w.Q.c1).searchStickers(false, (currentKeyboardLanguage == null || currentKeyboardLanguage.length == 0) ? "" : currentKeyboardLanguage[0], this.a, new ci.hd(this, z10, runnable, 2), z10);
     }
 
     @Override // org.telegram.ui.Components.yy
     public final void d() {
-        ww wwVar = this.w.Q.G0;
-        if (wwVar.F) {
+        vw vwVar = this.w.Q.G0;
+        if (vwVar.F) {
             return;
         }
-        wwVar.e(true);
-        Utilities.raceCallbacks(new wp(this, 16), new cz(this, 0));
+        vwVar.e(true);
+        Utilities.raceCallbacks(new xp(this, 16), new cz(this, 0));
     }
 
     @Override // java.lang.Runnable
@@ -72,9 +72,9 @@ public final class dz implements yy {
         this.v.clear();
         kzVar.G0.e(true);
         if ("premium".equalsIgnoreCase(this.a)) {
-            Utilities.raceCallbacks(new wp(this, 16), new cz(this, i10));
+            Utilities.raceCallbacks(new xp(this, 16), new cz(this, i10));
         } else {
-            Utilities.raceCallbacks(new wp(this, 16), new cz(this, 2), new cz(this, 3), new cz(this, 4), new cz(this, 5), new cz(this, 6), new cz(this, 7));
+            Utilities.raceCallbacks(new xp(this, 16), new cz(this, 2), new cz(this, 3), new cz(this, 4), new cz(this, 5), new cz(this, 6), new cz(this, 7));
         }
     }
 }

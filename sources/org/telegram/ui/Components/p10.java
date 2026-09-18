@@ -5,7 +5,7 @@ import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes3.dex */
 public final class p10 implements Runnable {
     public final /* synthetic */ FragmentContextView a;
@@ -17,8 +17,8 @@ public final class p10 implements Runnable {
     @Override // java.lang.Runnable
     public final void run() {
         FragmentContextView fragmentContextView = this.a;
-        org.telegram.ui.ActionBar.n2 n2Var = fragmentContextView.h;
-        if (fragmentContextView.f0 == null || !(n2Var instanceof org.telegram.ui.co)) {
+        org.telegram.ui.ActionBar.o2 o2Var = fragmentContextView.h;
+        if (fragmentContextView.f0 == null || !(o2Var instanceof org.telegram.ui.bo)) {
             fragmentContextView.k0 = false;
             return;
         }
@@ -28,13 +28,13 @@ public final class p10 implements Runnable {
             fragmentContextView.k0 = false;
             return;
         }
-        int currentTime = groupCall.call.schedule_date - n2Var.getConnectionsManager().getCurrentTime();
+        int currentTime = groupCall.call.schedule_date - o2Var.getConnectionsManager().getCurrentTime();
         String formatPluralString = currentTime >= 86400 ? LocaleController.formatPluralString("Days", Math.round(currentTime / 86400.0f), new Object[0]) : AndroidUtilities.formatFullDuration(currentTime);
-        p6 p6Var = fragmentContextView.i0;
+        m6 m6Var = fragmentContextView.i0;
         if (!fragmentContextView.h0) {
             formatPluralString = LocaleController.getString(R.string.VoipChatNotify);
         }
-        p6Var.q(formatPluralString, true, true);
+        m6Var.q(formatPluralString, true, true);
         AndroidUtilities.runOnUIThread(fragmentContextView.l0, 1000L);
         fragmentContextView.r.invalidate();
     }

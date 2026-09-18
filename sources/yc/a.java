@@ -7,9 +7,9 @@ import java.net.SocketException;
 import java.net.SocketTimeoutException;
 import java.util.List;
 import java.util.logging.Level;
-import ji.b4;
+import org.telegram.ui.Cells.ia;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class a implements Runnable {
     public final InputStream a;
@@ -32,20 +32,20 @@ public final class a implements Runnable {
         try {
             try {
                 outputStream = socket.getOutputStream();
-            } catch (Exception e7) {
-                e = e7;
+            } catch (Exception e) {
+                e = e;
             }
         } catch (Throwable th2) {
             th = th2;
         }
         try {
-            d dVar = new d(iVar, new b4(1), this.a, outputStream, socket.getInetAddress());
+            d dVar = new d(iVar, new ia(), this.a, outputStream, socket.getInetAddress());
             while (!socket.isClosed()) {
                 dVar.c();
             }
             i.d(outputStream);
-        } catch (Exception e10) {
-            e = e10;
+        } catch (Exception e7) {
+            e = e7;
             outputStream2 = outputStream;
             if ((!(e instanceof SocketException) || !"NanoHttpd Shutdown".equals(e.getMessage())) && !(e instanceof SocketTimeoutException)) {
                 i.d.log(Level.SEVERE, "Communication with the client broken, or an bug in the handler code", (Throwable) e);

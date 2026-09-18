@@ -1,36 +1,31 @@
 package a9;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+import android.os.BadParcelableException;
+import android.os.Bundle;
+import android.os.Parcel;
+import android.os.Parcelable;
+
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
-public final class v {
-    public final int a;
-    public final long b;
+public abstract class v {
+    public static final /* synthetic */ int a = 0;
 
-    public v(int i10, long j3) {
-        this.a = i10;
-        this.b = j3;
+    static {
+        v.class.getClassLoader();
     }
 
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
+    public static Parcelable a(Parcel parcel) {
+        Parcelable.Creator creator = Bundle.CREATOR;
+        if (parcel.readInt() == 0) {
+            return null;
         }
-        if (!(obj instanceof v)) {
-            return false;
+        return (Parcelable) creator.createFromParcel(parcel);
+    }
+
+    public static void b(Parcel parcel) {
+        int dataAvail = parcel.dataAvail();
+        if (dataAvail > 0) {
+            throw new BadParcelableException(hg.k0.i(dataAvail, "Parcel data not fully consumed, unread size: "));
         }
-        v vVar = (v) obj;
-        return this.a == vVar.a && this.b == vVar.b;
-    }
-
-    public final int hashCode() {
-        long j3 = this.b;
-        return ((this.a ^ 1000003) * 1000003) ^ ((int) (j3 ^ (j3 >>> 32)));
-    }
-
-    public final String toString() {
-        StringBuilder sb2 = new StringBuilder("EventRecord{eventType=");
-        sb2.append(this.a);
-        sb2.append(", eventTimestamp=");
-        return a4.a.r(sb2, this.b, "}");
     }
 }

@@ -4,9 +4,8 @@ import android.os.Build;
 import android.view.View;
 import java.nio.ByteBuffer;
 import r0.i0;
-import t7.u;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public abstract class c {
     public int a;
@@ -15,8 +14,8 @@ public abstract class c {
     public Object d;
 
     public c() {
-        if (u.d == null) {
-            u.d = new u(18);
+        if (rb.a.c == null) {
+            rb.a.c = new rb.a(18);
         }
     }
 

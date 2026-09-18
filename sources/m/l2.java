@@ -7,7 +7,7 @@ import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.util.Log;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class l2 {
     public final /* synthetic */ int a;
@@ -25,8 +25,8 @@ public final class l2 {
                         Drawable drawable = (Drawable) l2.class.getClassLoader().loadClass(classAttribute).asSubclass(Drawable.class).getDeclaredConstructor(null).newInstance(null);
                         j.b.c(drawable, context.getResources(), xmlResourceParser, attributeSet, theme);
                         break;
-                    } catch (Exception e7) {
-                        Log.e("DrawableDelegate", "Exception while inflating <drawable>", e7);
+                    } catch (Exception e) {
+                        Log.e("DrawableDelegate", "Exception while inflating <drawable>", e);
                         return null;
                     }
                 }
@@ -34,8 +34,8 @@ public final class l2 {
             case 1:
                 try {
                     break;
-                } catch (Exception e10) {
-                    Log.e("AsldcInflateDelegate", "Exception while inflating <animated-selector>", e10);
+                } catch (Exception e7) {
+                    Log.e("AsldcInflateDelegate", "Exception while inflating <animated-selector>", e7);
                     return null;
                 }
             case 2:
@@ -44,8 +44,8 @@ public final class l2 {
                     x4.d dVar = new x4.d(context);
                     dVar.inflate(resources, xmlResourceParser, attributeSet, theme);
                     break;
-                } catch (Exception e11) {
-                    Log.e("AvdcInflateDelegate", "Exception while inflating <animated-vector>", e11);
+                } catch (Exception e10) {
+                    Log.e("AvdcInflateDelegate", "Exception while inflating <animated-vector>", e10);
                     return null;
                 }
             default:
@@ -54,8 +54,8 @@ public final class l2 {
                     x4.p pVar = new x4.p();
                     pVar.inflate(resources2, xmlResourceParser, attributeSet, theme);
                     break;
-                } catch (Exception e12) {
-                    Log.e("VdcInflateDelegate", "Exception while inflating <vector>", e12);
+                } catch (Exception e11) {
+                    Log.e("VdcInflateDelegate", "Exception while inflating <vector>", e11);
                     return null;
                 }
         }

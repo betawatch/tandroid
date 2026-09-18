@@ -8,9 +8,8 @@ import java.util.concurrent.CancellationException;
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 import v7.n8;
 import v7.r7;
-import v7.t8;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public class u1 implements f1, r, y1 {
     public static final /* synthetic */ AtomicReferenceFieldUpdater a = AtomicReferenceFieldUpdater.newUpdater(u1.class, Object.class, "_state$volatile");
@@ -378,7 +377,7 @@ public class u1 implements f1, r, y1 {
                 return e0.u(u10);
             }
         } while (I(u10) < 0);
-        l1 l1Var = new l1(t8.b(cVar), this);
+        l1 l1Var = new l1(w7.g.b(cVar), this);
         l1Var.s();
         l1Var.v(new j(e0.n(this, false, new p0(l1Var, 3), 3), 2));
         Object r10 = l1Var.r();
@@ -394,7 +393,7 @@ public class u1 implements f1, r, y1 {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final boolean i(Object obj) {
-        d9.f fVar;
+        ee.v vVar;
         Object obj2 = e0.d;
         if (s()) {
             do {
@@ -412,7 +411,7 @@ public class u1 implements f1, r, y1 {
                 Object u11 = u();
                 if (!(u11 instanceof n1)) {
                     if (!(u11 instanceof a1)) {
-                        fVar = e0.g;
+                        vVar = e0.g;
                         break;
                     }
                     if (th2 == null) {
@@ -430,7 +429,7 @@ public class u1 implements f1, r, y1 {
                                 }
                             }
                             E(t10, th2);
-                            fVar = e0.d;
+                            vVar = e0.d;
                             break loop1;
                         }
                         continue;
@@ -447,7 +446,7 @@ public class u1 implements f1, r, y1 {
                 } else {
                     synchronized (u11) {
                         if (n1.d.get((n1) u11) == e0.h) {
-                            fVar = e0.g;
+                            vVar = e0.g;
                         } else {
                             boolean d = ((n1) u11).d();
                             if (th2 == null) {
@@ -458,12 +457,12 @@ public class u1 implements f1, r, y1 {
                             if (b10 != null) {
                                 E(((n1) u11).a, b10);
                             }
-                            fVar = e0.d;
+                            vVar = e0.d;
                         }
                     }
                 }
             }
-            obj2 = fVar;
+            obj2 = vVar;
         }
         if (obj2 != e0.d && obj2 != e0.e) {
             if (obj2 == e0.g) {
@@ -517,7 +516,7 @@ public class u1 implements f1, r, y1 {
                 return iVar;
             }
         } while (I(u10) < 0);
-        m mVar = new m(1, t8.b(cVar));
+        m mVar = new m(1, w7.g.b(cVar));
         mVar.s();
         mVar.v(new j(e0.n(this, false, new p0(mVar, 4), 3), 2));
         Object r10 = mVar.r();

@@ -8,7 +8,7 @@ import android.os.Trace;
 import java.io.IOException;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class i extends Handler implements Runnable {
     public final int a;
@@ -45,7 +45,7 @@ public final class i extends Handler implements Runnable {
             synchronized (this) {
                 try {
                     this.n = true;
-                    this.b.W();
+                    this.b.H();
                     Thread thread = this.h;
                     if (thread != null) {
                         thread.interrupt();
@@ -60,7 +60,7 @@ public final class i extends Handler implements Runnable {
             long elapsedRealtime = SystemClock.elapsedRealtime();
             h hVar = this.d;
             hVar.getClass();
-            hVar.w(this.b, elapsedRealtime, elapsedRealtime - this.c, true);
+            hVar.V(this.b, elapsedRealtime, elapsedRealtime - this.c, true);
             this.d = null;
         }
     }
@@ -70,7 +70,7 @@ public final class i extends Handler implements Runnable {
         long j3 = elapsedRealtime - this.c;
         h hVar = this.d;
         hVar.getClass();
-        hVar.h(this.b, elapsedRealtime, j3, this.f);
+        hVar.o(this.b, elapsedRealtime, j3, this.f);
         this.e = null;
         m mVar = this.s;
         z2.a aVar = mVar.a;
@@ -98,17 +98,17 @@ public final class i extends Handler implements Runnable {
         h hVar = this.d;
         hVar.getClass();
         if (this.n) {
-            hVar.w(this.b, elapsedRealtime, j3, false);
+            hVar.V(this.b, elapsedRealtime, j3, false);
             return;
         }
         int i11 = message.what;
         if (i11 == 2) {
             try {
-                hVar.i(this.b, elapsedRealtime, j3);
+                hVar.q(this.b, elapsedRealtime, j3);
                 return;
-            } catch (RuntimeException e7) {
-                e2.a.f("LoadTask", "Unexpected exception handling load completed", e7);
-                this.s.c = new l(e7);
+            } catch (RuntimeException e) {
+                e2.a.f("LoadTask", "Unexpected exception handling load completed", e);
+                this.s.c = new l(e);
                 return;
             }
         }
@@ -119,8 +119,8 @@ public final class i extends Handler implements Runnable {
         this.e = iOException;
         int i12 = this.f + 1;
         this.f = i12;
-        k4.d g10 = hVar.g(this.b, elapsedRealtime, j3, iOException, i12);
-        int i13 = g10.a;
+        k4.d n10 = hVar.n(this.b, elapsedRealtime, j3, iOException, i12);
+        int i13 = n10.a;
         if (i13 == 3) {
             this.s.c = this.e;
             return;
@@ -129,7 +129,7 @@ public final class i extends Handler implements Runnable {
             if (i13 == 1) {
                 this.f = 1;
             }
-            long j10 = g10.b;
+            long j10 = n10.b;
             if (j10 == -9223372036854775807L) {
                 j10 = Math.min((this.f - 1) * MediaDataController.MAX_STYLE_RUNS_COUNT, 5000);
             }
@@ -170,29 +170,29 @@ public final class i extends Handler implements Runnable {
                 return;
             }
             sendEmptyMessage(2);
-        } catch (IOException e7) {
+        } catch (IOException e) {
             if (this.r) {
                 return;
             }
-            obtainMessage(3, e7).sendToTarget();
-        } catch (Exception e10) {
+            obtainMessage(3, e).sendToTarget();
+        } catch (Exception e7) {
             if (this.r) {
                 return;
             }
-            e2.a.f("LoadTask", "Unexpected exception loading stream", e10);
+            e2.a.f("LoadTask", "Unexpected exception loading stream", e7);
+            obtainMessage(3, new l(e7)).sendToTarget();
+        } catch (OutOfMemoryError e10) {
+            if (this.r) {
+                return;
+            }
+            e2.a.f("LoadTask", "OutOfMemory error loading stream", e10);
             obtainMessage(3, new l(e10)).sendToTarget();
-        } catch (OutOfMemoryError e11) {
-            if (this.r) {
-                return;
-            }
-            e2.a.f("LoadTask", "OutOfMemory error loading stream", e11);
-            obtainMessage(3, new l(e11)).sendToTarget();
-        } catch (Error e12) {
+        } catch (Error e11) {
             if (!this.r) {
-                e2.a.f("LoadTask", "Unexpected error loading stream", e12);
-                obtainMessage(4, e12).sendToTarget();
+                e2.a.f("LoadTask", "Unexpected error loading stream", e11);
+                obtainMessage(4, e11).sendToTarget();
             }
-            throw e12;
+            throw e11;
         }
     }
 }

@@ -2,7 +2,7 @@ package i2;
 
 import android.util.Pair;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public abstract class a extends b2.k1 {
     public static final /* synthetic */ int g = 0;
@@ -64,9 +64,9 @@ public abstract class a extends b2.k1 {
     public final int e(int i10, int i11, boolean z10) {
         int s10 = s(i10);
         int v = v(s10);
-        int e7 = x(s10).e(i10 - v, i11 == 2 ? 0 : i11, z10);
-        if (e7 != -1) {
-            return v + e7;
+        int e = x(s10).e(i10 - v, i11 == 2 ? 0 : i11, z10);
+        if (e != -1) {
+            return v + e;
         }
         int w10 = w(s10, z10);
         while (w10 != -1 && x(w10).p()) {

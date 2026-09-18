@@ -1,66 +1,27 @@
 package yf;
 
-import android.text.Editable;
-import android.text.TextUtils;
-import android.text.TextWatcher;
-import android.widget.EditText;
-import di.h2;
-import org.telegram.ui.ActionBar.g5;
+import android.graphics.Outline;
+import android.view.View;
+import android.view.ViewOutlineProvider;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
-public final class h0 implements TextWatcher {
-    public final g5 a;
-    public final EditText b;
-    public String c;
-    public boolean d;
-    public boolean e;
+public final class h0 extends ViewOutlineProvider {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ float b;
 
-    public h0(h2 h2Var, g5 g5Var) {
-        this.a = g5Var;
-        this.b = h2Var;
+    public h0(int i10, float f7) {
+        this.a = i10;
+        this.b = f7;
     }
 
-    public final void a() {
-        this.e = true;
-    }
-
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        String obj = editable.toString();
-        boolean isEmpty = TextUtils.isEmpty(this.c);
-        boolean isEmpty2 = TextUtils.isEmpty(obj);
-        if (isEmpty && !isEmpty2) {
-            b(true);
-        }
-        this.c = obj;
-        this.a.q(this.b);
-        if (isEmpty || !isEmpty2 || this.e) {
-            return;
-        }
-        b(false);
-    }
-
-    public final void b(boolean z10) {
-        if (this.d == z10) {
-            return;
-        }
-        g5 g5Var = this.a;
-        if (g5Var.c()) {
-            if (z10) {
-                g5Var.n();
-            } else {
-                g5Var.m();
-            }
-            this.d = z10;
-        }
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    @Override // android.view.ViewOutlineProvider
+    public final void getOutline(View view, Outline outline) {
+        int width = view.getWidth();
+        int i10 = this.a;
+        int height = view.getHeight() - i10;
+        float f7 = this.b;
+        int i11 = this.a;
+        outline.setRoundRect(i11, i11, width - i10, height, f7);
     }
 }

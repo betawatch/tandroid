@@ -3,26 +3,26 @@ package za;
 import android.util.Log;
 import com.google.android.gms.tasks.Task;
 import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Cells.ia;
 import v7.t7;
-import v7.u8;
 
-/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
+/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
 /* loaded from: classes.dex */
 public final class g0 implements c0 {
     public static final double f = Math.random();
     public static final /* synthetic */ int g = 0;
     public final k9.h a;
     public final qa.d b;
-    public final bb.i c;
-    public final v8.s d;
+    public final bb.h c;
+    public final ia d;
     public final id.h e;
 
-    public g0(k9.h hVar, qa.d dVar, bb.i iVar, v8.s sVar, id.h hVar2) {
+    public g0(k9.h hVar, qa.d dVar, bb.h hVar2, ia iaVar, id.h hVar3) {
         this.a = hVar;
         this.b = dVar;
-        this.c = iVar;
-        this.d = sVar;
-        this.e = hVar2;
+        this.c = hVar2;
+        this.d = iaVar;
+        this.e = hVar3;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:17:0x002f  */
@@ -47,7 +47,7 @@ public final class g0 implements c0 {
                         Task d = ((qa.c) g0Var.b).d();
                         kotlin.jvm.internal.i.d(d, "firebaseInstallations.id");
                         d0Var.c = 1;
-                        obj = u8.a(d, d0Var);
+                        obj = w7.h.a(d, d0Var);
                         if (obj == aVar) {
                             return aVar;
                         }
@@ -63,8 +63,8 @@ public final class g0 implements c0 {
             if (i10 != 0) {
             }
             return (String) obj;
-        } catch (Exception e7) {
-            Log.e("SessionFirelogPublisher", "Error getting Firebase Installation ID. Using an empty ID", e7);
+        } catch (Exception e) {
+            Log.e("SessionFirelogPublisher", "Error getting Firebase Installation ID. Using an empty ID", e);
             return "";
         }
         d0Var = new d0(g0Var, cVar);
@@ -86,7 +86,7 @@ public final class g0 implements c0 {
         f0 f0Var;
         int i10;
         boolean z10;
-        Boolean a2;
+        Boolean e;
         if (cVar instanceof f0) {
             f0Var = (f0) cVar;
             int i11 = f0Var.d;
@@ -99,10 +99,10 @@ public final class g0 implements c0 {
                 if (i10 != 0) {
                     t7.b(obj);
                     Log.d("SessionFirelogPublisher", "Data Collection is enabled for at least one Subscriber");
-                    bb.i iVar = g0Var.c;
+                    bb.h hVar = g0Var.c;
                     f0Var.a = g0Var;
                     f0Var.d = 1;
-                    if (iVar.b(f0Var) == aVar) {
+                    if (hVar.b(f0Var) == aVar) {
                         return aVar;
                     }
                 } else {
@@ -112,14 +112,14 @@ public final class g0 implements c0 {
                     g0Var = f0Var.a;
                     t7.b(obj);
                 }
-                bb.i iVar2 = g0Var.c;
-                a2 = iVar2.a.a();
-                if (a2 == null) {
-                    z10 = a2.booleanValue();
+                bb.h hVar2 = g0Var.c;
+                e = hVar2.a.e();
+                if (e == null) {
+                    z10 = e.booleanValue();
                 } else {
-                    Boolean a10 = iVar2.b.a();
-                    if (a10 != null) {
-                        z10 = a10.booleanValue();
+                    Boolean a2 = hVar2.b.a();
+                    if (a2 != null) {
+                        z10 = a2.booleanValue();
                     }
                 }
                 if (z10) {
@@ -140,9 +140,9 @@ public final class g0 implements c0 {
         z10 = true;
         if (i10 != 0) {
         }
-        bb.i iVar22 = g0Var.c;
-        a2 = iVar22.a.a();
-        if (a2 == null) {
+        bb.h hVar22 = g0Var.c;
+        e = hVar22.a.e();
+        if (e == null) {
         }
         if (z10) {
         }
