@@ -25,6 +25,7 @@ import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
@@ -35,7 +36,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
+/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
 /* loaded from: classes3.dex */
 public class e70 extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate, le.d, View.OnClickListener, ph.d {
     public boolean E;
@@ -306,7 +307,7 @@ public class e70 extends org.telegram.ui.ActionBar.n2 implements NotificationCen
         }
         dVar.y(canvas, rectF.left, rectF.top, rectF.right, rectF.bottom);
         int alpha = paint.getAlpha();
-        paint.setAlpha(178);
+        paint.setAlpha(MessagesStorage.LAST_DB_VERSION);
         canvas.drawRect(rectF, paint);
         paint.setAlpha(alpha);
     }

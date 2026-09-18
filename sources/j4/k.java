@@ -6,8 +6,9 @@ import c3.h0;
 import i2.l0;
 import java.util.Arrays;
 import java.util.Collections;
+import org.telegram.messenger.MessagesStorage;
 
-/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
+/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
 /* loaded from: classes.dex */
 public final class k implements i {
     public static final double[] r = {23.976023976023978d, 24.0d, 25.0d, 29.97002997002997d, 30.0d, 50.0d, 59.94005994005994d, 60.0d};
@@ -36,7 +37,7 @@ public final class k implements i {
         jVar.d = new byte[128];
         this.h = jVar;
         if (c0Var != null) {
-            this.f = new l0(178);
+            this.f = new l0(MessagesStorage.LAST_DB_VERSION);
             this.e = new e2.v();
         } else {
             this.f = null;

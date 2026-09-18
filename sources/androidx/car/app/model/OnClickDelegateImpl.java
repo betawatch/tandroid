@@ -5,13 +5,13 @@ import androidx.car.app.IOnDoneCallback;
 import androidx.car.app.model.IOnClickListener;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
+/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
 /* loaded from: classes.dex */
 public class OnClickDelegateImpl implements b0 {
     private final boolean mIsParkedOnly;
     private final IOnClickListener mListener;
 
-    /* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
+    /* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
     public static class OnClickListenerStub extends IOnClickListener.Stub {
         private final c0 mOnClickListener;
 

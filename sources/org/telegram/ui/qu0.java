@@ -9,9 +9,10 @@ import android.text.Spanned;
 import android.text.style.ClickableSpan;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
+/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
 /* loaded from: classes3.dex */
 public final class qu0 extends vh.o {
     public final org.telegram.ui.Cells.aa R;
@@ -132,7 +133,7 @@ public final class qu0 extends vh.o {
             this.a0.draw(canvas);
         }
         if (this.W) {
-            canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), 178, 31);
+            canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), MessagesStorage.LAST_DB_VERSION, 31);
         }
         if (this.S != null && this.T) {
             canvas.save();

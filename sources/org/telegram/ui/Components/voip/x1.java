@@ -8,7 +8,7 @@ import org.telegram.ui.Components.d80;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.i60;
 
-/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
+/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class x1 implements d80, org.telegram.ui.ActionBar.a2 {
     public final /* synthetic */ TLRPC.User a;

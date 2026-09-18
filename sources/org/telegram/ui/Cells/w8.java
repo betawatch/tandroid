@@ -26,7 +26,7 @@ import org.telegram.ui.Components.Switch;
 import org.telegram.ui.Components.lj0;
 import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
+/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
 /* loaded from: classes3.dex */
 public class w8 extends FrameLayout {
     public static final t8 J = new t8("animationProgress", 0);

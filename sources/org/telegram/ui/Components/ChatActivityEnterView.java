@@ -111,7 +111,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
+/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
 /* loaded from: classes3.dex */
 public class ChatActivityEnterView extends FrameLayout implements NotificationCenter.NotificationCenterDelegate, aw0, ey0, xy0, le.d, org.telegram.ui.ActionBar.z5 {
     public static final /* synthetic */ int m5 = 0;
@@ -421,7 +421,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     public boolean z3;
     public boolean z4;
 
-    /* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
+    /* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
     public class RecordCircle extends View {
         public final float E;
         public float F;
@@ -986,7 +986,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         }
     }
 
-    /* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
+    /* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
     public class SlideTextView extends View {
         public final int E;
         public final Path F;

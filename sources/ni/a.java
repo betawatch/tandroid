@@ -8,7 +8,7 @@ import java.io.IOException;
 import l.d;
 import org.telegram.tgnet.SerializedData;
 
-/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
+/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
 /* loaded from: classes4.dex */
 public final class a {
     public static SparseIntArray b;
@@ -49,38 +49,43 @@ public final class a {
         }
     }
 
-    public final String b(Context context, int i10) {
-        if (context == null || i10 == 0) {
+    public final String b(String str) {
+        if (str == null) {
             return null;
         }
-        if (b == null) {
-            try {
-                BufferedInputStream bufferedInputStream = new BufferedInputStream(context.getResources().getAssets().open("string_resource_ids.bin"));
-                try {
-                    SerializedData serializedData = new SerializedData(bufferedInputStream);
-                    int readInt32 = serializedData.readInt32(true);
-                    SparseIntArray sparseIntArray = new SparseIntArray(readInt32);
-                    for (int i11 = 0; i11 < readInt32; i11++) {
-                        sparseIntArray.append(serializedData.readInt32(true), serializedData.readInt32(true));
-                    }
-                    bufferedInputStream.close();
-                    b = sparseIntArray;
-                } finally {
-                }
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-        }
-        int i12 = b.get(i10);
-        if (i12 == 0) {
-            return null;
-        }
-        return (String) this.a.get(i12);
+        return (String) this.a.get(str.hashCode());
     }
 
     public final String c(Context context, String str, int i10) {
-        String str2 = str != null ? (String) this.a.get(str.hashCode()) : null;
-        return (str2 != null || i10 == 0) ? str2 : b(context, i10);
+        String b10 = str != null ? b(str) : null;
+        if (b10 != null || i10 == 0) {
+            return b10;
+        }
+        if (context != null && i10 != 0) {
+            if (b == null) {
+                try {
+                    BufferedInputStream bufferedInputStream = new BufferedInputStream(context.getResources().getAssets().open("string_resource_ids.bin"));
+                    try {
+                        SerializedData serializedData = new SerializedData(bufferedInputStream);
+                        int readInt32 = serializedData.readInt32(true);
+                        SparseIntArray sparseIntArray = new SparseIntArray(readInt32);
+                        for (int i11 = 0; i11 < readInt32; i11++) {
+                            sparseIntArray.append(serializedData.readInt32(true), serializedData.readInt32(true));
+                        }
+                        bufferedInputStream.close();
+                        b = sparseIntArray;
+                    } finally {
+                    }
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+            int i12 = b.get(i10);
+            if (i12 != 0) {
+                return (String) this.a.get(i12);
+            }
+        }
+        return null;
     }
 
     public a(d dVar) {

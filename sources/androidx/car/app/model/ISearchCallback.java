@@ -6,7 +6,7 @@ import android.os.IInterface;
 import android.os.Parcel;
 import androidx.car.app.IOnDoneCallback;
 
-/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
+/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
 /* loaded from: classes.dex */
 public interface ISearchCallback extends IInterface {
     public static final String DESCRIPTOR = "androidx$car$app$model$ISearchCallback".replace('$', '.');
@@ -15,12 +15,12 @@ public interface ISearchCallback extends IInterface {
 
     void onSearchTextChanged(String str, IOnDoneCallback iOnDoneCallback);
 
-    /* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
+    /* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
     public static abstract class Stub extends Binder implements ISearchCallback {
         static final int TRANSACTION_onSearchSubmitted = 3;
         static final int TRANSACTION_onSearchTextChanged = 2;
 
-        /* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
+        /* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
         public static class Proxy implements ISearchCallback {
             private IBinder mRemote;
 
@@ -103,7 +103,7 @@ public interface ISearchCallback extends IInterface {
         }
     }
 
-    /* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
+    /* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
     public static class Default implements ISearchCallback {
         @Override // android.os.IInterface
         public IBinder asBinder() {

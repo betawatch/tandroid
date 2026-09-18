@@ -21,7 +21,7 @@ import org.telegram.ui.Components.qr;
 import org.telegram.ui.Components.v01;
 import org.telegram.ui.l20;
 
-/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
+/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
 /* loaded from: classes.dex */
 public class BotFullscreenButtons extends View {
     private final org.telegram.ui.Components.e6 animatedBack;
@@ -65,7 +65,7 @@ public class BotFullscreenButtons extends View {
     private Drawable verifiedForeground;
     public WebView webView;
 
-    /* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
+    /* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
     public static class OptionsIcon extends Drawable {
         private final org.telegram.ui.Components.e6 animatedDownloading;
         private final Paint downloadPaint;

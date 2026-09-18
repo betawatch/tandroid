@@ -4,7 +4,7 @@ import android.os.Handler;
 import android.os.Looper;
 import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
+/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
 /* loaded from: classes.dex */
 public final class ContactsLoadingObserver {
     private final Callback callback;
@@ -16,7 +16,7 @@ public final class ContactsLoadingObserver {
     private final Runnable releaseRunnable;
     private boolean released;
 
-    /* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
+    /* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
     public interface Callback {
         void onResult(boolean z10);
     }

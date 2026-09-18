@@ -9,11 +9,11 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.n;
 
-/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
+/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
 /* loaded from: classes3.dex */
 public class TL_communities {
 
-    /* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
+    /* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
     public static class CommunityPeer extends TLObject {
         public static final int constructor = 1981030077;
         public boolean can_view_history;
@@ -49,7 +49,7 @@ public class TL_communities {
         }
     }
 
-    /* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
+    /* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
     public static class CommunityPeerRequest extends TLObject {
         public static final int constructor = 2078997125;
         public int date;
@@ -84,7 +84,7 @@ public class TL_communities {
         }
     }
 
-    /* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
+    /* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
     public static class ParticipantJoinedChats extends TLObject {
         public static final int constructor = -1921494742;
         public ArrayList<Long> creator_chat_ids = new ArrayList<>();
@@ -114,7 +114,7 @@ public class TL_communities {
         }
     }
 
-    /* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
+    /* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
     public static class PeerLinkRequests extends TLObject {
         public static final int constructor = 574926765;
         public int flags;
@@ -156,7 +156,7 @@ public class TL_communities {
         }
     }
 
-    /* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
+    /* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
     public static class TL_communities_create extends TLMethod<TLRPC.Updates> {
         public static final int constructor = -1506256404;
         public String about;
@@ -186,7 +186,7 @@ public class TL_communities {
         }
     }
 
-    /* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
+    /* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
     public static class TL_communities_getJoinedCommunities extends TLMethod<TLRPC.messages_Chats> {
         public static final int constructor = -1503401936;
 
@@ -201,7 +201,7 @@ public class TL_communities {
         }
     }
 
-    /* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
+    /* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
     public static class TL_communities_getParticipantJoinedChats extends TLMethod<ParticipantJoinedChats> {
         public static final int constructor = -125916245;
         public TLRPC.InputChannel community;
@@ -220,7 +220,7 @@ public class TL_communities {
         }
     }
 
-    /* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
+    /* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
     public static class TL_communities_getPeerLinkRequests extends TLMethod<PeerLinkRequests> {
         public static final int constructor = -1820904636;
         public TLRPC.InputChannel community;
@@ -241,7 +241,7 @@ public class TL_communities {
         }
     }
 
-    /* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
+    /* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
     public static class TL_communities_toggleAllPeerLinkRequestApproval extends TLMethod<TLRPC.Bool> {
         public static final int constructor = -1075585731;
         public TLRPC.InputChannel community;
@@ -263,7 +263,7 @@ public class TL_communities {
         }
     }
 
-    /* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
+    /* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
     public static class TL_communities_toggleCommunityCollapsedInDialogs extends TLMethod<TLRPC.Updates> {
         public static final int constructor = -681122838;
         public boolean collapsed;
@@ -285,7 +285,7 @@ public class TL_communities {
         }
     }
 
-    /* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
+    /* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
     public static class TL_communities_toggleParticipantBanned extends TLMethod<TLRPC.Bool> {
         public static final int constructor = -1721258737;
         public TLRPC.InputChannel community;
@@ -309,7 +309,7 @@ public class TL_communities {
         }
     }
 
-    /* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
+    /* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
     public static class TL_communities_togglePeerLink extends TLMethod<TLRPC.Bool> {
         public static final int constructor = 1936576490;
         public TLRPC.InputChannel community;
@@ -339,7 +339,7 @@ public class TL_communities {
         }
     }
 
-    /* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
+    /* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
     public static class TL_communities_togglePeerLinkRequestApproval extends TLMethod<TLRPC.Bool> {
         public static final int constructor = -1937630808;
         public TLRPC.InputChannel community;

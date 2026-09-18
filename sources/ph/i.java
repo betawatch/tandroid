@@ -7,9 +7,10 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.AnimationNotificationsLocker;
 import org.telegram.ui.ActionBar.p1;
 import org.telegram.ui.web.b1;
+import r0.j1;
 import r0.m1;
 
-/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
+/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
 /* loaded from: classes3.dex */
 public final class i implements g, f, d {
     public View E;
@@ -128,34 +129,40 @@ public final class i implements g, f, d {
     }
 
     public final void k(m1 m1Var, boolean z10) {
+        i0.b bVar;
         int i10;
         le.e eVar;
         this.r = m1Var;
-        i0.b bVar = i0.b.e;
-        i0.b g10 = m1Var != null ? m1Var.a.g(647) : bVar;
+        i0.b bVar2 = i0.b.e;
         if (m1Var != null) {
-            bVar = m1Var.a.f(8);
+            j1 j1Var = m1Var.a;
+            bVar = i0.b.a(j1Var.f(647), j1Var.g(647));
+        } else {
+            bVar = bVar2;
+        }
+        if (m1Var != null) {
+            bVar2 = m1Var.a.f(8);
         }
         c cVar = this.f;
-        b bVar2 = cVar.c;
-        boolean z11 = bVar.d > 0;
-        b bVar3 = !z10 ? z11 ? b.d : b.a : z11 ? b.c : b.b;
-        if (bVar2 != bVar3) {
-            cVar.a(bVar3, false);
+        b bVar3 = cVar.c;
+        boolean z11 = bVar2.d > 0;
+        b bVar4 = !z10 ? z11 ? b.d : b.a : z11 ? b.c : b.b;
+        if (bVar3 != bVar4) {
+            cVar.a(bVar4, false);
         }
         int i11 = this.s;
         if (i11 == 2) {
             this.v = 0;
         }
-        if (i11 == 3 && bVar.d > 0) {
+        if (i11 == 3 && bVar2.d > 0) {
             this.v = 0;
         }
-        i0.b a2 = i0.b.a(bVar, i0.b.b(0, 0, 0, this.v));
+        i0.b a2 = i0.b.a(bVar2, i0.b.b(0, 0, 0, this.v));
         int i12 = a2.c;
         int i13 = a2.b;
         int i14 = a2.a;
         int i15 = a2.d;
-        i0.b a10 = i0.b.a(g10, a2);
+        i0.b a10 = i0.b.a(bVar, a2);
         int i16 = a10.d;
         int i17 = a10.c;
         int i18 = a10.b;
@@ -173,7 +180,7 @@ public final class i implements g, f, d {
                 eVar = eVar2;
                 i10 = i17;
                 if (!nVar2.b(i19, i18, i17, i16) && !nVar.b(i14, i13, i12, i15)) {
-                    if (bVar2 != bVar3) {
+                    if (bVar3 != bVar4) {
                         runnable.run();
                     }
                 }

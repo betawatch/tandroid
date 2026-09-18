@@ -29,6 +29,7 @@ import android.provider.Settings;
 import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
 import android.util.Log;
+import android.util.SparseArray;
 import android.util.SparseIntArray;
 import android.view.ActionMode;
 import android.view.KeyEvent;
@@ -138,7 +139,7 @@ import org.telegram.ui.Components.UndoView;
 import org.webrtc.MediaStreamTrack;
 import org.webrtc.voiceengine.WebRtcAudioTrack;
 
-/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
+/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
 /* loaded from: classes3.dex */
 public class LaunchActivity extends h5 implements org.telegram.ui.ActionBar.a5, NotificationCenter.NotificationCenterDelegate, oy, qf.a {
     public static final Pattern B1 = Pattern.compile("^(?:http(?:s|)://|)([A-z0-9-]+?)\\.t\\.me");
@@ -1434,7 +1435,7 @@ public class LaunchActivity extends h5 implements org.telegram.ui.ActionBar.a5, 
             AndroidUtilities.setScrollViewEdgeEffectColor(scrollView, org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.s8, false));
             scrollView.setPadding(0, AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f));
             scrollView.setClipToPadding(false);
-            daVar.addView(scrollView, w7.y5.d(-1, -1.0f, 51, 27.0f, i13 + 178, 27.0f, 130.0f));
+            daVar.addView(scrollView, w7.y5.d(-1, -1.0f, 51, 27.0f, i13 + MessagesStorage.LAST_DB_VERSION, 27.0f, 130.0f));
             scrollView.addView(frameLayout2);
             TextView textView = new TextView(this);
             int i14 = org.telegram.ui.ActionBar.j6.G6;
@@ -15326,7 +15327,10 @@ public class LaunchActivity extends h5 implements org.telegram.ui.ActionBar.a5, 
                 iVar.e.edit().putFloat("x", (float) iVar.c.u.i).putFloat("y", (float) iVar.d.u.i).commit();
             }
             w7.y.a = null;
-            org.telegram.ui.Components.q5.q.clear();
+            SparseArray sparseArray = org.telegram.ui.Components.q5.q;
+            if (sparseArray != null) {
+                sparseArray.clear();
+            }
         }
         MediaController.getInstance().setBaseActivity(this, false);
         MediaController.getInstance().setFeedbackView(this.s1, false);

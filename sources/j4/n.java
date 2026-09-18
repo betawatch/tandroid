@@ -6,8 +6,9 @@ import hg.k0;
 import i2.l0;
 import java.util.Arrays;
 import java.util.Collections;
+import org.telegram.messenger.MessagesStorage;
 
-/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
+/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
 /* loaded from: classes.dex */
 public final class n implements i {
     public static final float[] l = {1.0f, 1.0f, 1.0909091f, 0.90909094f, 1.4545455f, 1.2121212f, 1.0f};
@@ -29,7 +30,7 @@ public final class n implements i {
         lVar.e = new byte[128];
         this.d = lVar;
         this.k = -9223372036854775807L;
-        this.e = new l0(178);
+        this.e = new l0(MessagesStorage.LAST_DB_VERSION);
         this.b = new e2.v();
     }
 

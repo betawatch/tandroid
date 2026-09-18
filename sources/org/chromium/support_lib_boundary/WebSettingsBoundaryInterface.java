@@ -7,11 +7,11 @@ import java.lang.annotation.Target;
 import java.util.Map;
 import java.util.Set;
 
-/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
+/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
 /* loaded from: classes.dex */
 public interface WebSettingsBoundaryInterface {
 
-    /* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
+    /* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
     @Retention(RetentionPolicy.SOURCE)
     public @interface AttributionBehavior {
         public static final int APP_SOURCE_AND_APP_TRIGGER = 3;
@@ -20,7 +20,7 @@ public interface WebSettingsBoundaryInterface {
         public static final int WEB_SOURCE_AND_WEB_TRIGGER = 2;
     }
 
-    /* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
+    /* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
     @Retention(RetentionPolicy.SOURCE)
     public @interface ForceDarkBehavior {
         public static final int FORCE_DARK_ONLY = 0;
@@ -28,14 +28,14 @@ public interface WebSettingsBoundaryInterface {
         public static final int PREFER_MEDIA_QUERY_OVER_FORCE_DARK = 2;
     }
 
-    /* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
+    /* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
     @Retention(RetentionPolicy.SOURCE)
     public @interface SpeculativeLoadingStatus {
         public static final int DISABLED = 0;
         public static final int PRERENDER_ENABLED = 1;
     }
 
-    /* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
+    /* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
     @Target({ElementType.TYPE_USE})
     @Retention(RetentionPolicy.SOURCE)
     public @interface WebViewMediaIntegrityApiStatus {
@@ -44,7 +44,7 @@ public interface WebSettingsBoundaryInterface {
         public static final int ENABLED_WITHOUT_APP_IDENTITY = 1;
     }
 
-    /* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
+    /* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
     @Retention(RetentionPolicy.SOURCE)
     public @interface WebauthnSupport {
         public static final int APP = 1;

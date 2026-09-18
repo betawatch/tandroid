@@ -15,11 +15,12 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SendMessagesHelper;
 
-/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
+/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
 /* loaded from: classes3.dex */
 public final class w40 extends org.telegram.ui.ActionBar.f3 implements NotificationCenter.NotificationCenterDelegate {
     public final TextView[] b;
@@ -61,7 +62,7 @@ public final class w40 extends org.telegram.ui.ActionBar.f3 implements Notificat
         lj0Var.f(R.raw.import_loop, 120, 120, null);
         lj0Var.d();
         frameLayout.addView(lj0Var, w7.y5.d(160, 160.0f, 49, 17.0f, 79.0f, 17.0f, 0.0f));
-        lj0Var.getAnimatedDrawable().S(178, xpVar);
+        lj0Var.getAnimatedDrawable().S(MessagesStorage.LAST_DB_VERSION, xpVar);
         TextView textView2 = new TextView(context);
         this.c = textView2;
         textView2.setTypeface(AndroidUtilities.bold());
