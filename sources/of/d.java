@@ -29,7 +29,7 @@ import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.logging.Level;
 import m1.j;
-import m4.r0;
+import m4.q0;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.BuildConfig;
 import org.telegram.messenger.FileLog;
@@ -38,13 +38,13 @@ import org.telegram.ui.Components.xg;
 import t7.u;
 import yc.i;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class d extends i {
     public static final f l;
     public static final HashMap m;
     public final ExtendedDefaultDataSourceFactory e;
-    public final r0 f;
+    public final q0 f;
     public final u g;
     public final HashMap h;
     public Pair i;
@@ -67,7 +67,7 @@ public final class d extends i {
         this.i = null;
         this.j = false;
         this.k = new AtomicInteger();
-        this.f = new r0(14);
+        this.f = new q0(16);
         this.g = new u();
         this.e = new ExtendedDefaultDataSourceFactory(ApplicationLoader.applicationContext, "Mozilla/5.0 (X11; Linux x86_64; rv:10.0) Gecko/20150101 Firefox/47.0 (Chrome)");
     }
@@ -105,7 +105,7 @@ public final class d extends i {
     public final yc.g e(yc.d dVar) {
         String str;
         int incrementAndGet = this.k.incrementAndGet();
-        StringBuilder j3 = k0.j(incrementAndGet, "Request ", " ");
+        StringBuilder k10 = k0.k(incrementAndGet, "Request ", " ");
         switch (dVar.g) {
             case 1:
                 str = "GET";
@@ -159,20 +159,20 @@ public final class d extends i {
                 str = BuildConfig.BETA_URL;
                 break;
         }
-        j3.append(str);
-        j3.append(" ");
-        j3.append(dVar.f);
-        j3.append(" ");
-        j3.append((String) dVar.i.get("range"));
-        Log.d("CAST_SERVER", j3.toString());
+        k10.append(str);
+        k10.append(" ");
+        k10.append(dVar.f);
+        k10.append(" ");
+        k10.append((String) dVar.i.get("range"));
+        Log.d("CAST_SERVER", k10.toString());
         try {
-            yc.g k10 = k(dVar);
-            xg xgVar = k10.e;
+            yc.g k11 = k(dVar);
+            xg xgVar = k11.e;
             xgVar.put("Access-Control-Allow-Origin", "*");
             xgVar.put("Access-Control-Max-Age", "3628800");
             xgVar.put("Access-Control-Allow-Methods", "*");
             xgVar.put("Access-Control-Allow-Headers", "*");
-            return k10;
+            return k11;
         } catch (Throwable unused) {
             Log.d("CAST_SERVER", "Error " + incrementAndGet);
             yc.g c10 = i.c(yc.f.n, "text/plain", "Error reading file");

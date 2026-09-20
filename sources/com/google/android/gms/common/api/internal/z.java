@@ -1,6 +1,6 @@
 package com.google.android.gms.common.api.internal;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class z extends l0 {
     public final /* synthetic */ int b = 0;
@@ -16,7 +16,7 @@ public final class z extends l0 {
     public final void a() {
         switch (this.b) {
             case 0:
-                ((a0) this.c).x(1);
+                ((a0) this.c).u(1);
                 break;
             default:
                 ((n6.b) this.c).a(new k6.a(16, null));

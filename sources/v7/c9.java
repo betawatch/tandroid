@@ -1,60 +1,27 @@
 package v7;
 
-import android.graphics.Bitmap;
-import android.os.Parcel;
-import android.os.RemoteException;
+import android.content.Context;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
-public abstract class c9 {
-    public static t7.r a;
-    public static s7.e b;
+public final class c9 implements y8 {
+    public final q9.n a;
+    public final w8 b;
 
-    public static xa.c a(Bitmap bitmap) {
-        n6.l.i(bitmap, "image must not be null");
-        try {
-            s7.e eVar = b;
-            n6.l.i(eVar, "IBitmapDescriptorFactory is not initialized");
-            s7.c cVar = (s7.c) eVar;
-            Parcel O0 = cVar.O0();
-            s7.b.b(O0, bitmap);
-            Parcel N0 = cVar.N0(O0, 6);
-            x6.a L0 = x6.b.L0(N0.readStrongBinder());
-            N0.recycle();
-            return new xa.c(L0);
-        } catch (RemoteException e) {
-            throw new androidx.car.app.j(e);
+    public c9(Context context, w8 w8Var) {
+        this.b = w8Var;
+        j5.a aVar = j5.a.e;
+        l5.s.b(context);
+        l5.q c10 = l5.s.a().c(aVar);
+        if (j5.a.d.contains(new i5.c("json"))) {
+            new q9.n(new b9(c10, 0));
         }
+        this.a = new q9.n(new b9(c10, 1));
     }
 
-    public static xa.c b(int i10) {
-        try {
-            s7.e eVar = b;
-            n6.l.i(eVar, "IBitmapDescriptorFactory is not initialized");
-            s7.c cVar = (s7.c) eVar;
-            Parcel O0 = cVar.O0();
-            O0.writeInt(i10);
-            Parcel N0 = cVar.N0(O0, 1);
-            x6.a L0 = x6.b.L0(N0.readStrongBinder());
-            N0.recycle();
-            return new xa.c(L0);
-        } catch (RemoteException e) {
-            throw new androidx.car.app.j(e);
-        }
-    }
-
-    public static synchronized y8 c(v8 v8Var) {
-        y8 y8Var;
-        synchronized (c9.class) {
-            try {
-                if (a == null) {
-                    a = new t7.r(1);
-                }
-                y8Var = (y8) a.O0(v8Var);
-            } catch (Throwable th2) {
-                throw th2;
-            }
-        }
-        return y8Var;
+    @Override // v7.y8
+    public final void a(a5.a aVar) {
+        this.b.getClass();
+        ((l5.r) this.a.get()).a(aVar.b != 0 ? new i5.a(null, aVar.B(), i5.d.a, null) : new i5.a(null, aVar.B(), i5.d.b, null), new j2.e(22));
     }
 }

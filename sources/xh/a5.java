@@ -15,26 +15,26 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.o5;
-import org.telegram.ui.Components.z5;
-import yh.t5;
-import yh.v7;
+import org.telegram.ui.Components.n5;
+import org.telegram.ui.Components.y5;
+import yh.u5;
+import yh.w7;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class a5 extends View {
     public final yh.a4 a;
-    public final e6 b;
+    public final f6 b;
     public float c;
     public float d;
     public Drawable e;
 
-    public a5(Context context, int i10, e6 e6Var) {
+    public a5(Context context, int i10, f6 f6Var) {
         super(context);
-        this.b = e6Var;
-        yh.a4 a4Var = new yh.a4(i10, this, e6Var);
+        this.b = f6Var;
+        yh.a4 a4Var = new yh.a4(i10, this, f6Var);
         this.a = a4Var;
         a4Var.y.setCallback(this);
         NotificationCenter.listenEmojiLoading(this);
@@ -42,32 +42,32 @@ public final class a5 extends View {
 
     public final void a(TL_stars.TL_starGiftUnique tL_starGiftUnique, long j3, TLRPC.TL_textWithEntities tL_textWithEntities, String str, boolean z10) {
         yh.a4 a4Var = this.a;
-        o5 o5Var = a4Var.e;
+        n5 n5Var = a4Var.e;
         m1 m1Var = a4Var.j;
         ImageReceiver imageReceiver = a4Var.d;
         a4Var.K = false;
         a4Var.N = null;
         a4Var.O = null;
         a4Var.p = false;
-        a4Var.k = (TL_stars.starGiftAttributeBackdrop) t5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeBackdrop.class);
-        a4Var.l = (TL_stars.starGiftAttributePattern) t5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributePattern.class);
+        a4Var.k = (TL_stars.starGiftAttributeBackdrop) u5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeBackdrop.class);
+        a4Var.l = (TL_stars.starGiftAttributePattern) u5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributePattern.class);
         TL_stars.starGiftAttributeModel stargiftattributemodel = a4Var.m;
-        a4Var.m = (TL_stars.starGiftAttributeModel) t5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeModel.class);
+        a4Var.m = (TL_stars.starGiftAttributeModel) u5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeModel.class);
         Paint paint = a4Var.f;
         a4Var.h = null;
         paint.setShader(null);
         TL_stars.starGiftAttributePattern stargiftattributepattern = a4Var.l;
         if (stargiftattributepattern != null) {
-            o5Var.i(stargiftattributepattern.document, false);
+            n5Var.i(stargiftattributepattern.document, false);
         } else {
-            o5Var.g(null, false);
+            n5Var.g(null, false);
         }
         TL_stars.starGiftAttributeModel stargiftattributemodel2 = a4Var.m;
         if (stargiftattributemodel2 != null && (stargiftattributemodel == null || stargiftattributemodel.document.id != stargiftattributemodel2.document.id)) {
             imageReceiver.setAutoRepeatCount(0);
             imageReceiver.clearDecorators();
             imageReceiver.setAutoRepeat(0);
-            v7.Z0(imageReceiver, a4Var.m.document, 110);
+            w7.Z0(imageReceiver, a4Var.m.document, 110);
         }
         boolean z11 = tL_starGiftUnique.burned;
         a4Var.J = z11;
@@ -83,7 +83,7 @@ public final class a5 extends View {
         }
         if (a4Var.P) {
             imageReceiver.onAttachedToWindow();
-            o5Var.a();
+            n5Var.a();
             a4Var.y.d.onAttachedToWindow();
         }
         a4Var.L = Math.min((int) (AndroidUtilities.isTablet() ? AndroidUtilities.getMinTabletSide() * 0.6f : (AndroidUtilities.displaySize.x * 0.62f) - AndroidUtilities.dp(34.0f)), ((AndroidUtilities.displaySize.y - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) - AndroidUtilities.statusBarHeight) - AndroidUtilities.dp(64.0f));
@@ -131,16 +131,16 @@ public final class a5 extends View {
         a4Var.e.b();
         k0 k0Var = a4Var.y;
         k0Var.d.onDetachedFromWindow();
-        z5.release((View) null, k0Var.q);
+        y5.release((View) null, k0Var.q);
         k0Var.q = null;
     }
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         int height = getParent() instanceof View ? ((View) getParent()).getHeight() : 0;
-        e6 e6Var = this.b;
-        if (e6Var != null) {
-            e6Var.m(0.0f, getY(), getMeasuredWidth(), height);
+        f6 f6Var = this.b;
+        if (f6Var != null) {
+            f6Var.m(0.0f, getY(), getMeasuredWidth(), height);
         } else {
             j6.q(0.0f, getY(), getMeasuredWidth(), height);
         }

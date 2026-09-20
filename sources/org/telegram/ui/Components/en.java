@@ -8,7 +8,7 @@ import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class en implements ti {
     public final /* synthetic */ org.telegram.ui.ActionBar.n2 a;
@@ -22,13 +22,13 @@ public final class en implements ti {
     }
 
     @Override // org.telegram.ui.Components.ti
-    public final void B1(int i10, boolean z10, boolean z11, int i11, int i12, long j3, boolean z12, boolean z13, long j10) {
+    public final void C1(int i10, boolean z10, boolean z11, int i11, int i12, long j3, boolean z12, boolean z13, long j10) {
         cn cnVar = this.c;
         ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = cnVar.j0;
         Utilities.Callback callback = this.b;
         if (i10 == 15) {
             org.telegram.ui.ActionBar.n2 n2Var = this.a;
-            e5.g0(n2Var.getContext(), n2Var.getResourceProvider(), null, null, new dn(0, callback), null);
+            d5.g0(n2Var.getContext(), n2Var.getResourceProvider(), null, null, new dn(0, callback), null);
         } else if (i10 == 7 || i10 == 8) {
             HashMap<Object, Object> selectedPhotos = chatAttachAlertPhotoLayout.getSelectedPhotos();
             ArrayList<Object> selectedPhotosOrder = chatAttachAlertPhotoLayout.getSelectedPhotosOrder();
@@ -92,29 +92,29 @@ public final class en implements ti {
     }
 
     @Override // org.telegram.ui.Components.ti
-    public final boolean c0() {
+    public final boolean f0() {
         return false;
     }
 
     @Override // org.telegram.ui.Components.ti
-    public final void x0(gh ghVar) {
+    public final void y0(gh ghVar) {
         NotificationCenter.getInstance(this.a.getCurrentAccount()).doOnIdle(ghVar);
     }
 
     @Override // org.telegram.ui.Components.ti
-    public final void K0() {
+    public final void L0() {
     }
 
     @Override // org.telegram.ui.Components.ti
-    public final /* synthetic */ void U0(Object obj) {
+    public final /* synthetic */ void V0(Object obj) {
     }
 
     @Override // org.telegram.ui.Components.ti
-    public final void j1(TLRPC.User user) {
+    public final void k1(TLRPC.User user) {
     }
 
     @Override // org.telegram.ui.Components.ti
-    public final /* synthetic */ void u0() {
+    public final /* synthetic */ void v0() {
     }
 
     @Override // org.telegram.ui.Components.ti

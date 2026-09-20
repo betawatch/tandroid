@@ -7,26 +7,26 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class fz0 extends org.telegram.ui.Components.wl0 implements ai.s9 {
+public final class fz0 extends org.telegram.ui.Components.vl0 implements ai.s9 {
     public final /* synthetic */ ProfileActivity X2;
     public VelocityTracker Y2;
     public final /* synthetic */ ProfileActivity Z2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public fz0(ProfileActivity profileActivity, Context context, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(context, e6Var);
+    public fz0(ProfileActivity profileActivity, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context, f6Var);
         this.Z2 = profileActivity;
         this.X2 = profileActivity;
     }
 
-    @Override // org.telegram.ui.Components.wl0
+    @Override // org.telegram.ui.Components.vl0
     public final boolean G0(View view) {
         return view != this.Z2.O;
     }
 
-    @Override // org.telegram.ui.Components.wl0
+    @Override // org.telegram.ui.Components.vl0
     public final boolean I0(View view, float f7, float f10) {
         return !(view instanceof org.telegram.ui.Cells.j);
     }
@@ -48,7 +48,7 @@ public final class fz0 extends org.telegram.ui.Components.wl0 implements ai.s9 {
         }
     }
 
-    @Override // org.telegram.ui.Components.wl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.vl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
         ProfileActivity profileActivity = this.Z2;
         l01 l01Var = profileActivity.O;
@@ -61,29 +61,29 @@ public final class fz0 extends org.telegram.ui.Components.wl0 implements ai.s9 {
             }
             if (profileActivity.O.C()) {
                 l01 l01Var3 = profileActivity.O;
-                if (l01Var3.C1 && (l01Var3.getClosestTab() == 8 || org.telegram.ui.Components.kv0.w0(profileActivity.O.getClosestTab()))) {
+                if (l01Var3.C1 && (l01Var3.getClosestTab() == 8 || org.telegram.ui.Components.jv0.w0(profileActivity.O.getClosestTab()))) {
                     return false;
                 }
             }
-            org.telegram.ui.Components.zr0 zr0Var = profileActivity.O.V;
-            if (zr0Var != null && zr0Var.g()) {
+            org.telegram.ui.Components.yr0 yr0Var = profileActivity.O.V;
+            if (yr0Var != null && yr0Var.g()) {
                 return false;
             }
-            org.telegram.ui.Components.fs0 fs0Var = profileActivity.O.W;
-            if (fs0Var != null && fs0Var.w) {
+            org.telegram.ui.Components.es0 es0Var = profileActivity.O.W;
+            if (es0Var != null && es0Var.w) {
                 return false;
             }
         }
         return super.onInterceptTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.ui.Components.wl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.vl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         super.onLayout(z10, i10, i11, i12, i13);
         this.Z2.U4();
     }
 
-    @Override // org.telegram.ui.Components.wl0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    @Override // org.telegram.ui.Components.vl0, androidx.recyclerview.widget.RecyclerView, android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         VelocityTracker velocityTracker;
         View m10;

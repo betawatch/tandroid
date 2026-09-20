@@ -5,16 +5,16 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocationController;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class j10 implements org.telegram.ui.ActionBar.r0, le.k, org.telegram.ui.ActionBar.a2, nv0 {
+public final /* synthetic */ class j10 implements org.telegram.ui.ActionBar.r0, le.k, org.telegram.ui.ActionBar.a2, mv0 {
     public final /* synthetic */ FragmentContextView a;
 
     public /* synthetic */ j10(FragmentContextView fragmentContextView) {
         this.a = fragmentContextView;
     }
 
-    @Override // org.telegram.ui.Components.nv0
+    @Override // org.telegram.ui.Components.mv0
     public void b(LocationController.SharingLocationInfo sharingLocationInfo) {
         float[] fArr = FragmentContextView.O0;
         this.a.k(sharingLocationInfo);
@@ -42,7 +42,7 @@ public final /* synthetic */ class j10 implements org.telegram.ui.ActionBar.r0, 
     }
 
     @Override // org.telegram.ui.ActionBar.a2
-    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+    public void k(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
         FragmentContextView fragmentContextView = this.a;
         org.telegram.ui.ActionBar.n2 n2Var = fragmentContextView.h;
         if (!(n2Var instanceof org.telegram.ui.uy)) {

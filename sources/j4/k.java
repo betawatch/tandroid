@@ -8,7 +8,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import org.telegram.messenger.MessagesStorage;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class k implements i {
     public static final double[] r = {23.976023976023978d, 24.0d, 25.0d, 29.97002997002997d, 30.0d, 50.0d, 59.94005994005994d, 60.0d};
@@ -56,7 +56,7 @@ public final class k implements i {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void a(e2.v vVar) {
+    public final void b(e2.v vVar) {
         j jVar;
         l0 l0Var;
         int i10;
@@ -268,7 +268,7 @@ public final class k implements i {
     }
 
     @Override // j4.i
-    public final void c() {
+    public final void d() {
         f2.o.a(this.g);
         j jVar = this.h;
         jVar.a = false;
@@ -285,7 +285,7 @@ public final class k implements i {
     }
 
     @Override // j4.i
-    public final void d(c3.q qVar, f0 f0Var) {
+    public final void e(c3.q qVar, f0 f0Var) {
         f0Var.a();
         f0Var.b();
         this.a = f0Var.e;
@@ -298,7 +298,7 @@ public final class k implements i {
     }
 
     @Override // j4.i
-    public final void e(boolean z10) {
+    public final void f(boolean z10) {
         e2.d.h(this.b);
         if (z10) {
             boolean z11 = this.p;
@@ -307,7 +307,7 @@ public final class k implements i {
     }
 
     @Override // j4.i
-    public final void f(int i10, long j3) {
+    public final void g(int i10, long j3) {
         this.m = j3;
     }
 }

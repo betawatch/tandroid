@@ -9,21 +9,21 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class f9 extends FrameLayout {
     public final Paint a;
-    public final org.telegram.ui.Components.e6 b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.e6 c;
+    public final org.telegram.ui.Components.d6 b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.f6 c;
     public final /* synthetic */ i9 d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f9(i9 i9Var, Context context, org.telegram.ui.ActionBar.e6 e6Var) {
+    public f9(i9 i9Var, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
         super(context);
         this.d = i9Var;
-        this.c = e6Var;
+        this.c = f6Var;
         this.a = new Paint(1);
-        this.b = new org.telegram.ui.Components.e6(this, 0L, 350L, qr.h);
+        this.b = new org.telegram.ui.Components.d6(this, 0L, 350L, qr.h);
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -38,14 +38,14 @@ public final class f9 extends FrameLayout {
         i9 i9Var = this.d;
         float max = Math.max(0.0f, i9Var.s());
         boolean z10 = max < ((float) AndroidUtilities.statusBarHeight);
-        org.telegram.ui.Components.e6 e6Var = this.b;
-        float lerp = AndroidUtilities.lerp(max, 0.0f, e6Var.e(z10));
+        org.telegram.ui.Components.d6 d6Var = this.b;
+        float lerp = AndroidUtilities.lerp(max, 0.0f, d6Var.e(z10));
         RectF rectF = AndroidUtilities.rectTmp;
         i10 = ((org.telegram.ui.ActionBar.f3) i9Var).backgroundPaddingLeft;
         int width = getWidth();
         i11 = ((org.telegram.ui.ActionBar.f3) i9Var).backgroundPaddingLeft;
         rectF.set(i10, lerp, width - i11, AndroidUtilities.dp(14.0f) + getHeight());
-        float dp = (1.0f - e6Var.c) * AndroidUtilities.dp(14.0f);
+        float dp = (1.0f - d6Var.c) * AndroidUtilities.dp(14.0f);
         canvas.drawRoundRect(rectF, dp, dp, paint);
         i9Var.n.setTranslationY(Math.max(AndroidUtilities.dp(8.0f) + AndroidUtilities.statusBarHeight, AndroidUtilities.dp(14.0f) + lerp));
         canvas.save();

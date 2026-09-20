@@ -1,11 +1,11 @@
 package ii;
 
 import java.util.ArrayList;
-import org.telegram.ui.Cells.q9;
+import org.telegram.ui.Cells.r9;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
-public final class j3 extends q9 {
+public final class j3 extends r9 {
     public final /* synthetic */ u3 K0;
     public final /* synthetic */ w3 L0;
 
@@ -14,7 +14,7 @@ public final class j3 extends q9 {
         this.K0 = u3Var;
     }
 
-    @Override // org.telegram.ui.Cells.da
+    @Override // org.telegram.ui.Cells.ea
     public final boolean D() {
         w3 w3Var = this.L0;
         CharSequence s10 = w3Var.n3.s();
@@ -25,7 +25,7 @@ public final class j3 extends q9 {
         return true;
     }
 
-    @Override // org.telegram.ui.Cells.da
+    @Override // org.telegram.ui.Cells.ea
     public final void E() {
         w3 w3Var = this.L0;
         CharSequence s10 = w3Var.n3.s();
@@ -35,18 +35,18 @@ public final class j3 extends q9 {
         w3Var.F2();
     }
 
-    @Override // org.telegram.ui.Cells.q9, org.telegram.ui.Cells.da
+    @Override // org.telegram.ui.Cells.r9, org.telegram.ui.Cells.ea
     public final void G() {
         super.G();
-        this.K0.l();
+        this.K0.n();
     }
 
-    @Override // org.telegram.ui.Cells.da
+    @Override // org.telegram.ui.Cells.ea
     public final void I() {
         this.L0.d4();
     }
 
-    @Override // org.telegram.ui.Cells.da
+    @Override // org.telegram.ui.Cells.ea
     public final boolean K() {
         if (b0()) {
             return true;
@@ -54,7 +54,7 @@ public final class j3 extends q9 {
         return this.L0.T4();
     }
 
-    @Override // org.telegram.ui.Cells.da
+    @Override // org.telegram.ui.Cells.ea
     public final void L(float f7, float f10) {
         w3 w3Var = this.L0;
         w3Var.s3 = true;
@@ -62,7 +62,7 @@ public final class j3 extends q9 {
         w3Var.u3 = f10;
     }
 
-    @Override // org.telegram.ui.Cells.da
+    @Override // org.telegram.ui.Cells.ea
     public final boolean k() {
         boolean z10;
         int size;
@@ -84,12 +84,12 @@ public final class j3 extends q9 {
         return !z10;
     }
 
-    @Override // org.telegram.ui.Cells.da
+    @Override // org.telegram.ui.Cells.ea
     public final int p() {
         return this.L0.getPaddingBottom();
     }
 
-    @Override // org.telegram.ui.Cells.da
+    @Override // org.telegram.ui.Cells.ea
     public final int q() {
         return this.L0.getPaddingTop();
     }

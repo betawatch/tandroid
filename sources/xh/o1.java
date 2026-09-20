@@ -11,7 +11,7 @@ import android.os.Build;
 import org.telegram.messenger.LiteMode;
 import yh.i8;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class o1 extends Drawable {
     public final int a;
@@ -20,7 +20,7 @@ public final class o1 extends Drawable {
     public final Paint d;
     public final i8 e;
     public boolean f;
-    public rg.w1 g;
+    public rg.q1 g;
     public org.telegram.ui.web.b1 h;
     public boolean i;
 
@@ -36,9 +36,9 @@ public final class o1 extends Drawable {
         this.f = z10;
         if (z10) {
             yf.h d = yf.h.d();
-            rg.w1 w1Var = new rg.w1(this, 16);
-            this.g = w1Var;
-            d.a(15, w1Var);
+            rg.q1 q1Var = new rg.q1(this, 17);
+            this.g = q1Var;
+            d.a(15, q1Var);
         } else {
             yf.h.d().f(this.g);
         }

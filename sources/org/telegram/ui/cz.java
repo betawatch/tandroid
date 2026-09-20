@@ -34,11 +34,11 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class cz extends FrameLayout {
-    public org.telegram.ui.Components.u9 a;
-    public org.telegram.ui.Components.u9 b;
+    public org.telegram.ui.Components.t9 a;
+    public org.telegram.ui.Components.t9 b;
     public Drawable c;
     public Drawable d;
     public final Drawable e;
@@ -57,15 +57,15 @@ public final class cz extends FrameLayout {
         int i10 = 0;
         setWillNotDraw(false);
         setPadding(0, AndroidUtilities.dp(24.0f), 0, AndroidUtilities.dp(24.0f));
-        LinearLayout e = org.telegram.messenger.wh.e(context, 1);
-        addView(e, w7.y5.e(-2, -2, 17));
+        LinearLayout f7 = org.telegram.messenger.rk.f(context, 1);
+        addView(f7, w7.y5.e(-2, -2, 17));
         org.telegram.ui.Cells.w0 w0Var = new org.telegram.ui.Cells.w0(context);
         w0Var.setCustomText(LocaleController.getString(R.string.WidgetPreview));
-        e.addView(w0Var, w7.y5.t(-2, -2, 17, 0, 0, 0, 4));
+        f7.addView(w0Var, w7.y5.t(-2, -2, 17, 0, 0, 0, 4));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
         linearLayout.setBackgroundResource(R.drawable.widget_bg);
-        e.addView(linearLayout, w7.y5.t(-2, -2, 17, 10, 0, 10, 0));
+        f7.addView(linearLayout, w7.y5.t(-2, -2, 17, 10, 0, 10, 0));
         dzVar.d = new ImageView(context);
         int i11 = dzVar.w;
         if (i11 == 0) {
@@ -124,7 +124,7 @@ public final class cz extends FrameLayout {
         TLRPC.User user;
         Bitmap decodeFile;
         int i10;
-        org.telegram.ui.Components.h9 h9Var;
+        org.telegram.ui.Components.g9 g9Var;
         TLRPC.UserProfilePhoto userProfilePhoto;
         long j3;
         TLRPC.Dialog dialog2;
@@ -141,33 +141,33 @@ public final class cz extends FrameLayout {
         CharSequence charSequence;
         SpannableStringBuilder valueOf;
         char c11;
-        String i12;
+        String k10;
         SpannableStringBuilder spannableStringBuilder;
         CharSequence charSequence2;
         CharSequence charSequence3;
         Canvas canvas;
-        org.telegram.ui.Components.h9 h9Var2;
+        org.telegram.ui.Components.g9 g9Var2;
         TLRPC.UserProfilePhoto userProfilePhoto2;
         dz dzVar = this.r;
         ArrayList arrayList = dzVar.e;
-        int i13 = dzVar.w;
-        int i14 = 8;
-        int i15 = 2;
+        int i12 = dzVar.w;
+        int i13 = 8;
+        int i14 = 2;
         ?? r12 = 1;
-        int i16 = 0;
+        int i15 = 0;
         ViewGroup[] viewGroupArr = this.n;
-        if (i13 == 0) {
-            int i17 = 0;
-            while (i17 < i15) {
+        if (i12 == 0) {
+            int i16 = 0;
+            while (i16 < i14) {
                 if (arrayList.isEmpty()) {
-                    dialog2 = i17 < dzVar.getMessagesController().dialogsServerOnly.size() ? dzVar.getMessagesController().dialogsServerOnly.get(i17) : null;
+                    dialog2 = i16 < dzVar.getMessagesController().dialogsServerOnly.size() ? dzVar.getMessagesController().dialogsServerOnly.get(i16) : null;
                     j3 = 0;
-                } else if (i17 < arrayList.size()) {
+                } else if (i16 < arrayList.size()) {
                     j3 = 0;
-                    TLRPC.Dialog dialog3 = (TLRPC.Dialog) dzVar.getMessagesController().dialogs_dict.f(((Long) arrayList.get(i17)).longValue());
+                    TLRPC.Dialog dialog3 = (TLRPC.Dialog) dzVar.getMessagesController().dialogs_dict.f(((Long) arrayList.get(i16)).longValue());
                     if (dialog3 == null) {
                         dialog3 = new TLRPC.TL_dialog();
-                        dialog3.id = ((Long) arrayList.get(i17)).longValue();
+                        dialog3.id = ((Long) arrayList.get(i16)).longValue();
                     }
                     dialog2 = dialog3;
                 } else {
@@ -175,18 +175,18 @@ public final class cz extends FrameLayout {
                     dialog2 = null;
                 }
                 if (dialog2 == null) {
-                    viewGroupArr[i17].setVisibility(i14);
-                    i11 = i17;
+                    viewGroupArr[i16].setVisibility(i13);
+                    i11 = i16;
                 } else {
-                    viewGroupArr[i17].setVisibility(i16);
+                    viewGroupArr[i16].setVisibility(i15);
                     if (DialogObject.isUserDialog(dialog2.id)) {
                         user2 = dzVar.getMessagesController().getUser(Long.valueOf(dialog2.id));
                         if (user2 != null) {
                             str2 = UserObject.isUserSelf(user2) ? LocaleController.getString(R.string.SavedMessages) : UserObject.isReplyUser(user2) ? LocaleController.getString(R.string.RepliesTitle) : UserObject.isDeleted(user2) ? LocaleController.getString(R.string.HiddenName) : ContactsController.formatName(user2.first_name, user2.last_name);
                             if (UserObject.isReplyUser(user2) || UserObject.isUserSelf(user2) || (userProfilePhoto2 = user2.photo) == null || (fileLocation2 = userProfilePhoto2.photo_small) == null) {
-                                i11 = i17;
+                                i11 = i16;
                             } else {
-                                i11 = i17;
+                                i11 = i16;
                                 if (fileLocation2.volume_id != j3 && fileLocation2.local_id != 0) {
                                     chat2 = null;
                                     ((TextView) viewGroupArr[i11].findViewById(R.id.shortcut_widget_item_text)).setText(str2);
@@ -204,37 +204,37 @@ public final class cz extends FrameLayout {
                                             }
                                             if (dialog2.unread_count <= 0) {
                                             }
-                                            i17 = i11 + 1;
-                                            i14 = 8;
-                                            i15 = 2;
+                                            i16 = i11 + 1;
+                                            i13 = 8;
+                                            i14 = 2;
                                             r12 = 1;
-                                            i16 = 0;
+                                            i15 = 0;
                                         }
                                     } else {
                                         decodeFile2 = null;
                                     }
                                     int dp = AndroidUtilities.dp(48.0f);
                                     Bitmap createBitmap = Bitmap.createBitmap(dp, dp, Bitmap.Config.ARGB_8888);
-                                    createBitmap.eraseColor(i16);
+                                    createBitmap.eraseColor(i15);
                                     Canvas canvas2 = new Canvas(createBitmap);
                                     if (decodeFile2 != null) {
                                         if (user2 != null) {
-                                            org.telegram.ui.Components.h9 h9Var3 = new org.telegram.ui.Components.h9(i16, user2);
+                                            org.telegram.ui.Components.g9 g9Var3 = new org.telegram.ui.Components.g9(i15, user2);
                                             if (UserObject.isReplyUser(user2)) {
-                                                h9Var3.g(12);
-                                                h9Var2 = h9Var3;
+                                                g9Var3.g(12);
+                                                g9Var2 = g9Var3;
                                             } else {
-                                                h9Var2 = h9Var3;
+                                                g9Var2 = g9Var3;
                                                 if (UserObject.isUserSelf(user2)) {
-                                                    h9Var3.g(r12);
-                                                    h9Var2 = h9Var3;
+                                                    g9Var3.g(r12);
+                                                    g9Var2 = g9Var3;
                                                 }
                                             }
                                         } else {
-                                            h9Var2 = new org.telegram.ui.Components.h9(chat2);
+                                            g9Var2 = new org.telegram.ui.Components.g9(chat2);
                                         }
-                                        h9Var2.setBounds(i16, i16, dp, dp);
-                                        h9Var2.draw(canvas2);
+                                        g9Var2.setBounds(i15, i15, dp, dp);
+                                        g9Var2.draw(canvas2);
                                         canvas = canvas2;
                                         c10 = 1;
                                     } else {
@@ -257,7 +257,7 @@ public final class cz extends FrameLayout {
                                     canvas.setBitmap(null);
                                     ((ImageView) viewGroupArr[i11].findViewById(R.id.shortcut_widget_item_avatar)).setImageBitmap(createBitmap);
                                     ArrayList arrayList22 = (ArrayList) dzVar.getMessagesController().dialogMessage.f(dialog2.id);
-                                    messageObject = (arrayList22 != null || arrayList22.size() <= 0) ? null : (MessageObject) arrayList22.get(i16);
+                                    messageObject = (arrayList22 != null || arrayList22.size() <= 0) ? null : (MessageObject) arrayList22.get(i15);
                                     if (messageObject == null) {
                                         long fromChatId = messageObject.getFromChatId();
                                         if (fromChatId > j3) {
@@ -311,7 +311,7 @@ public final class cz extends FrameLayout {
                                                         charSequence = com.google.android.gms.internal.vision.e2.j("🎧 ", messageObject.getMusicAuthor(), " - ", messageObject.getMusicTitle());
                                                     } else {
                                                         charSequence = messageObject.messageText;
-                                                        AndroidUtilities.highlightText(charSequence, messageObject.highlightedWords, (org.telegram.ui.ActionBar.e6) null);
+                                                        AndroidUtilities.highlightText(charSequence, messageObject.highlightedWords, (org.telegram.ui.ActionBar.f6) null);
                                                     }
                                                     CharSequence charSequence4 = charSequence;
                                                     charSequence2 = charSequence4;
@@ -369,14 +369,14 @@ public final class cz extends FrameLayout {
                                                             color = getContext().getResources().getColor(R.color.widget_action_text);
                                                             TLRPC.MessageMedia messageMedia2 = messageObject.messageOwner.media;
                                                             if (messageMedia2 instanceof TLRPC.TL_messageMediaPoll) {
-                                                                i12 = a4.a.p("📊 \u2068", ((TLRPC.TL_messageMediaPoll) messageMedia2).poll.question.text, "\u2069");
+                                                                k10 = a4.a.p("📊 \u2068", ((TLRPC.TL_messageMediaPoll) messageMedia2).poll.question.text, "\u2069");
                                                             } else if (messageMedia2 instanceof TLRPC.TL_messageMediaGame) {
-                                                                i12 = a4.a.p("🎮 \u2068", messageMedia2.game.title, "\u2069");
+                                                                k10 = a4.a.p("🎮 \u2068", messageMedia2.game.title, "\u2069");
                                                             } else {
-                                                                i12 = messageObject.type == 14 ? org.telegram.ui.Cells.c1.i("🎧 \u2068", messageObject.getMusicAuthor(), " - ", messageObject.getMusicTitle(), "\u2069") : messageObject.messageText.toString();
+                                                                k10 = messageObject.type == 14 ? org.telegram.ui.Cells.c1.k("🎧 \u2068", messageObject.getMusicAuthor(), " - ", messageObject.getMusicTitle(), "\u2069") : messageObject.messageText.toString();
                                                                 c12 = '\n';
                                                             }
-                                                            String replace = i12.replace(c12, ' ');
+                                                            String replace = k10.replace(c12, ' ');
                                                             Object[] objArr3 = new Object[2];
                                                             objArr3[0] = replace;
                                                             objArr3[c10] = string;
@@ -426,7 +426,7 @@ public final class cz extends FrameLayout {
                                 }
                             }
                         } else {
-                            i11 = i17;
+                            i11 = i16;
                             str2 = "";
                         }
                         chat2 = null;
@@ -436,7 +436,7 @@ public final class cz extends FrameLayout {
                         }
                         int dp2 = AndroidUtilities.dp(48.0f);
                         Bitmap createBitmap2 = Bitmap.createBitmap(dp2, dp2, Bitmap.Config.ARGB_8888);
-                        createBitmap2.eraseColor(i16);
+                        createBitmap2.eraseColor(i15);
                         Canvas canvas22 = new Canvas(createBitmap2);
                         if (decodeFile2 != null) {
                         }
@@ -450,7 +450,7 @@ public final class cz extends FrameLayout {
                         if (dialog2.unread_count <= 0) {
                         }
                     } else {
-                        i11 = i17;
+                        i11 = i16;
                         TLRPC.Chat chat4 = dzVar.getMessagesController().getChat(Long.valueOf(-dialog2.id));
                         if (chat4 != null) {
                             str2 = chat4.title;
@@ -465,7 +465,7 @@ public final class cz extends FrameLayout {
                                 }
                                 int dp22 = AndroidUtilities.dp(48.0f);
                                 Bitmap createBitmap22 = Bitmap.createBitmap(dp22, dp22, Bitmap.Config.ARGB_8888);
-                                createBitmap22.eraseColor(i16);
+                                createBitmap22.eraseColor(i15);
                                 Canvas canvas222 = new Canvas(createBitmap22);
                                 if (decodeFile2 != null) {
                                 }
@@ -490,7 +490,7 @@ public final class cz extends FrameLayout {
                         }
                         int dp222 = AndroidUtilities.dp(48.0f);
                         Bitmap createBitmap222 = Bitmap.createBitmap(dp222, dp222, Bitmap.Config.ARGB_8888);
-                        createBitmap222.eraseColor(i16);
+                        createBitmap222.eraseColor(i15);
                         Canvas canvas2222 = new Canvas(createBitmap222);
                         if (decodeFile2 != null) {
                         }
@@ -505,26 +505,26 @@ public final class cz extends FrameLayout {
                         }
                     }
                 }
-                i17 = i11 + 1;
-                i14 = 8;
-                i15 = 2;
+                i16 = i11 + 1;
+                i13 = 8;
+                i14 = 2;
                 r12 = 1;
-                i16 = 0;
+                i15 = 0;
             }
             viewGroupArr[0].findViewById(R.id.shortcut_widget_item_divider).setVisibility(viewGroupArr[1].getVisibility());
             viewGroupArr[1].findViewById(R.id.shortcut_widget_item_divider).setVisibility(8);
-        } else if (i13 == 1) {
-            int i18 = 0;
+        } else if (i12 == 1) {
+            int i17 = 0;
             while (true) {
-                if (i18 >= 2) {
+                if (i17 >= 2) {
                     break;
                 }
-                int i19 = 0;
-                for (int i20 = 2; i19 < i20; i20 = 2) {
-                    int i21 = (i18 * 2) + i19;
+                int i18 = 0;
+                for (int i19 = 2; i18 < i19; i19 = 2) {
+                    int i20 = (i17 * 2) + i18;
                     if (arrayList.isEmpty()) {
-                        if (i21 < dzVar.getMediaDataController().hints.size()) {
-                            long j10 = dzVar.getMediaDataController().hints.get(i21).peer.user_id;
+                        if (i20 < dzVar.getMediaDataController().hints.size()) {
+                            long j10 = dzVar.getMediaDataController().hints.get(i20).peer.user_id;
                             dialog = (TLRPC.Dialog) dzVar.getMessagesController().dialogs_dict.f(j10);
                             if (dialog == null) {
                                 dialog = new TLRPC.TL_dialog();
@@ -533,24 +533,24 @@ public final class cz extends FrameLayout {
                         }
                         dialog = null;
                     } else {
-                        if (i21 < arrayList.size()) {
-                            dialog = (TLRPC.Dialog) dzVar.getMessagesController().dialogs_dict.f(((Long) arrayList.get(i21)).longValue());
+                        if (i20 < arrayList.size()) {
+                            dialog = (TLRPC.Dialog) dzVar.getMessagesController().dialogs_dict.f(((Long) arrayList.get(i20)).longValue());
                             if (dialog == null) {
                                 dialog = new TLRPC.TL_dialog();
-                                dialog.id = ((Long) arrayList.get(i21)).longValue();
+                                dialog.id = ((Long) arrayList.get(i20)).longValue();
                             }
                         }
                         dialog = null;
                     }
                     if (dialog == null) {
-                        viewGroupArr[i18].findViewById(i19 == 0 ? R.id.contacts_widget_item1 : R.id.contacts_widget_item2).setVisibility(4);
-                        if (i21 == 0 || i21 == 2) {
-                            viewGroupArr[i18].setVisibility(8);
+                        viewGroupArr[i17].findViewById(i18 == 0 ? R.id.contacts_widget_item1 : R.id.contacts_widget_item2).setVisibility(4);
+                        if (i20 == 0 || i20 == 2) {
+                            viewGroupArr[i17].setVisibility(8);
                         }
                     } else {
-                        viewGroupArr[i18].findViewById(i19 == 0 ? R.id.contacts_widget_item1 : R.id.contacts_widget_item2).setVisibility(0);
-                        if (i21 == 0 || i21 == 2) {
-                            viewGroupArr[i18].setVisibility(0);
+                        viewGroupArr[i17].findViewById(i18 == 0 ? R.id.contacts_widget_item1 : R.id.contacts_widget_item2).setVisibility(0);
+                        if (i20 == 0 || i20 == 2) {
+                            viewGroupArr[i17].setVisibility(0);
                         }
                         if (DialogObject.isUserDialog(dialog.id)) {
                             user = dzVar.getMessagesController().getUser(Long.valueOf(dialog.id));
@@ -579,7 +579,7 @@ public final class cz extends FrameLayout {
                             chat = chat5;
                             user = null;
                         }
-                        ((TextView) viewGroupArr[i18].findViewById(i19 == 0 ? R.id.contacts_widget_item_text1 : R.id.contacts_widget_item_text2)).setText(str);
+                        ((TextView) viewGroupArr[i17].findViewById(i18 == 0 ? R.id.contacts_widget_item_text1 : R.id.contacts_widget_item_text2)).setText(str);
                         if (fileLocation != null) {
                             try {
                                 decodeFile = BitmapFactory.decodeFile(dzVar.getFileLoader().getPathToAttach(fileLocation, true).toString());
@@ -589,7 +589,7 @@ public final class cz extends FrameLayout {
                                 i10 = dialog.unread_count;
                                 if (i10 > 0) {
                                 }
-                                i19++;
+                                i18++;
                             }
                         } else {
                             decodeFile = null;
@@ -601,29 +601,29 @@ public final class cz extends FrameLayout {
                         if (decodeFile == null) {
                             if (user != null) {
                                 try {
-                                    h9Var = new org.telegram.ui.Components.h9(0, user);
+                                    g9Var = new org.telegram.ui.Components.g9(0, user);
                                     if (UserObject.isReplyUser(user)) {
                                         try {
-                                            h9Var.g(12);
+                                            g9Var.g(12);
                                         } catch (Throwable th4) {
                                             th = th4;
                                             FileLog.e(th);
                                             i10 = dialog.unread_count;
                                             if (i10 > 0) {
                                             }
-                                            i19++;
+                                            i18++;
                                         }
                                     } else if (UserObject.isUserSelf(user)) {
-                                        h9Var.g(1);
+                                        g9Var.g(1);
                                     }
                                 } catch (Throwable th5) {
                                     th = th5;
                                 }
                             } else {
-                                h9Var = new org.telegram.ui.Components.h9(chat);
+                                g9Var = new org.telegram.ui.Components.g9(chat);
                             }
-                            h9Var.setBounds(0, 0, dp3, dp3);
-                            h9Var.draw(canvas3);
+                            g9Var.setBounds(0, 0, dp3, dp3);
+                            g9Var.draw(canvas3);
                         } else {
                             Shader.TileMode tileMode2 = Shader.TileMode.CLAMP;
                             BitmapShader bitmapShader2 = new BitmapShader(decodeFile, tileMode2, tileMode2);
@@ -641,31 +641,31 @@ public final class cz extends FrameLayout {
                                 i10 = dialog.unread_count;
                                 if (i10 > 0) {
                                 }
-                                i19++;
+                                i18++;
                             }
                         }
                         try {
                             canvas3.setBitmap(null);
-                            ((ImageView) viewGroupArr[i18].findViewById(i19 == 0 ? R.id.contacts_widget_item_avatar1 : R.id.contacts_widget_item_avatar2)).setImageBitmap(createBitmap3);
+                            ((ImageView) viewGroupArr[i17].findViewById(i18 == 0 ? R.id.contacts_widget_item_avatar1 : R.id.contacts_widget_item_avatar2)).setImageBitmap(createBitmap3);
                         } catch (Throwable th7) {
                             th = th7;
                             FileLog.e(th);
                             i10 = dialog.unread_count;
                             if (i10 > 0) {
                             }
-                            i19++;
+                            i18++;
                         }
                         i10 = dialog.unread_count;
                         if (i10 > 0) {
-                            ((TextView) viewGroupArr[i18].findViewById(i19 == 0 ? R.id.contacts_widget_item_badge1 : R.id.contacts_widget_item_badge2)).setText(i10 > 99 ? String.format("%d+", 99) : String.format("%d", Integer.valueOf(i10)));
-                            viewGroupArr[i18].findViewById(i19 == 0 ? R.id.contacts_widget_item_badge_bg1 : R.id.contacts_widget_item_badge_bg2).setVisibility(0);
+                            ((TextView) viewGroupArr[i17].findViewById(i18 == 0 ? R.id.contacts_widget_item_badge1 : R.id.contacts_widget_item_badge2)).setText(i10 > 99 ? String.format("%d+", 99) : String.format("%d", Integer.valueOf(i10)));
+                            viewGroupArr[i17].findViewById(i18 == 0 ? R.id.contacts_widget_item_badge_bg1 : R.id.contacts_widget_item_badge_bg2).setVisibility(0);
                         } else {
-                            viewGroupArr[i18].findViewById(i19 == 0 ? R.id.contacts_widget_item_badge_bg1 : R.id.contacts_widget_item_badge_bg2).setVisibility(8);
+                            viewGroupArr[i17].findViewById(i18 == 0 ? R.id.contacts_widget_item_badge_bg1 : R.id.contacts_widget_item_badge_bg2).setVisibility(8);
                         }
                     }
-                    i19++;
+                    i18++;
                 }
-                i18++;
+                i17++;
             }
         }
         if (viewGroupArr[0].getVisibility() == 0) {
@@ -683,14 +683,14 @@ public final class cz extends FrameLayout {
     @Override // android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        org.telegram.ui.Components.u9 u9Var = this.a;
-        if (u9Var != null) {
-            u9Var.dispose();
+        org.telegram.ui.Components.t9 t9Var = this.a;
+        if (t9Var != null) {
+            t9Var.dispose();
             this.a = null;
         }
-        org.telegram.ui.Components.u9 u9Var2 = this.b;
-        if (u9Var2 != null) {
-            u9Var2.dispose();
+        org.telegram.ui.Components.t9 t9Var2 = this.b;
+        if (t9Var2 != null) {
+            t9Var2.dispose();
             this.b = null;
         }
     }
@@ -704,7 +704,7 @@ public final class cz extends FrameLayout {
     */
     public final void onDraw(Canvas canvas) {
         org.telegram.ui.ActionBar.d5 d5Var;
-        org.telegram.ui.Components.u9 u9Var;
+        org.telegram.ui.Components.t9 t9Var;
         org.telegram.ui.ActionBar.d5 d5Var2;
         Drawable s02 = org.telegram.ui.ActionBar.j6.s0();
         Drawable drawable = this.c;
@@ -713,9 +713,9 @@ public final class cz extends FrameLayout {
                 this.d = drawable;
                 this.b = this.a;
             } else {
-                org.telegram.ui.Components.u9 u9Var2 = this.a;
-                if (u9Var2 != null) {
-                    u9Var2.dispose();
+                org.telegram.ui.Components.t9 t9Var2 = this.a;
+                if (t9Var2 != null) {
+                    t9Var2.dispose();
                     this.a = null;
                 }
             }
@@ -732,12 +732,12 @@ public final class cz extends FrameLayout {
                     d5Var2 = ((org.telegram.ui.ActionBar.n2) dzVar).parentLayout;
                     if (d5Var2 != null) {
                         drawable2.setAlpha((int) (255.0f * themeAnimationValue));
-                        if (!(drawable2 instanceof ColorDrawable) || (drawable2 instanceof GradientDrawable) || (drawable2 instanceof org.telegram.ui.Components.lc0)) {
+                        if (!(drawable2 instanceof ColorDrawable) || (drawable2 instanceof GradientDrawable) || (drawable2 instanceof org.telegram.ui.Components.kc0)) {
                             drawable2.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
-                            if (drawable2 instanceof org.telegram.ui.Components.v9) {
+                            if (drawable2 instanceof org.telegram.ui.Components.u9) {
                                 drawable2.draw(canvas);
                             } else {
-                                this.a = ((org.telegram.ui.Components.v9) drawable2).c(canvas, this);
+                                this.a = ((org.telegram.ui.Components.u9) drawable2).c(canvas, this);
                             }
                         } else if (drawable2 instanceof BitmapDrawable) {
                             if (((BitmapDrawable) drawable2).getTileModeX() == Shader.TileMode.REPEAT) {
@@ -760,9 +760,9 @@ public final class cz extends FrameLayout {
                             canvas.restore();
                         }
                         if (i10 == 0 && this.d != null && themeAnimationValue >= 1.0f) {
-                            u9Var = this.b;
-                            if (u9Var != null) {
-                                u9Var.dispose();
+                            t9Var = this.b;
+                            if (t9Var != null) {
+                                t9Var.dispose();
                                 this.b = null;
                             }
                             this.d = null;
@@ -774,11 +774,11 @@ public final class cz extends FrameLayout {
                 if (drawable2 instanceof ColorDrawable) {
                 }
                 drawable2.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
-                if (drawable2 instanceof org.telegram.ui.Components.v9) {
+                if (drawable2 instanceof org.telegram.ui.Components.u9) {
                 }
                 if (i10 == 0) {
-                    u9Var = this.b;
-                    if (u9Var != null) {
+                    t9Var = this.b;
+                    if (t9Var != null) {
                     }
                     this.d = null;
                     invalidate();

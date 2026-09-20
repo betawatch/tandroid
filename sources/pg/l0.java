@@ -10,13 +10,13 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.qc;
+import org.telegram.ui.Components.pc;
 import org.telegram.ui.Components.xc;
 import yh.l5;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class l0 implements Runnable {
     public final /* synthetic */ int a;
@@ -52,7 +52,7 @@ public final /* synthetic */ class l0 implements Runnable {
             case 1:
                 xc xcVar = (xc) obj3;
                 TLRPC.Chat chat = (TLRPC.Chat) obj2;
-                e6 e6Var = (e6) obj;
+                f6 f6Var = (f6) obj;
                 int i12 = R.raw.star_premium_2;
                 String string2 = z10 ? LocaleController.getString("BoostingGiveawayCreated", R.string.BoostingGiveawayCreated) : LocaleController.getString("BoostingAwardsCreated", R.string.BoostingAwardsCreated);
                 if (z10) {
@@ -60,7 +60,7 @@ public final /* synthetic */ class l0 implements Runnable {
                 } else {
                     string = LocaleController.getString(ChatObject.isChannelAndNotMegaGroup(chat) ? R.string.BoostingCheckGiftsStatistic : R.string.BoostingCheckGiftsStatisticGroup);
                 }
-                qc M = xcVar.M(string2, AndroidUtilities.replaceSingleTag(string, j6.Gi, 0, new tg.c(chat), e6Var), i12);
+                pc M = xcVar.M(string2, AndroidUtilities.replaceSingleTag(string, j6.Gi, 0, new tg.c(chat), f6Var), i12);
                 M.j = 5000;
                 M.j();
                 break;
@@ -94,11 +94,11 @@ public final /* synthetic */ class l0 implements Runnable {
         }
     }
 
-    public /* synthetic */ l0(xc xcVar, boolean z10, TLRPC.Chat chat, e6 e6Var) {
+    public /* synthetic */ l0(xc xcVar, boolean z10, TLRPC.Chat chat, f6 f6Var) {
         this.a = 1;
         this.c = xcVar;
         this.b = z10;
         this.d = chat;
-        this.e = e6Var;
+        this.e = f6Var;
     }
 }

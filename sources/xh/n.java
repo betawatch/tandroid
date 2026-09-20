@@ -4,10 +4,10 @@ import android.content.Context;
 import android.view.View;
 import java.util.ArrayList;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.Components.bb;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.Components.ab;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final /* synthetic */ class n implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -17,10 +17,10 @@ public final /* synthetic */ class n implements View.OnClickListener {
     public final /* synthetic */ Object e;
     public final /* synthetic */ Object f;
 
-    public /* synthetic */ n(Context context, e6 e6Var, long j3, TL_stars.StarGift starGift, ArrayList arrayList) {
+    public /* synthetic */ n(Context context, f6 f6Var, long j3, TL_stars.StarGift starGift, ArrayList arrayList) {
         this.a = 2;
         this.c = context;
-        this.d = e6Var;
+        this.d = f6Var;
         this.b = j3;
         this.f = starGift;
         this.e = arrayList;
@@ -30,20 +30,20 @@ public final /* synthetic */ class n implements View.OnClickListener {
     public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                v.Q((v) this.f, this.b, this.c, (e6) this.d, (Runnable) this.e);
+                v.Q((v) this.f, this.b, this.c, (f6) this.d, (Runnable) this.e);
                 break;
             case 1:
                 c0 c0Var = (c0) this.f;
-                e6 e6Var = (e6) this.d;
+                f6 f6Var = (f6) this.d;
                 Runnable runnable = (Runnable) this.e;
                 c0Var.getClass();
-                m mVar = new m(this.c, e6Var, new l(this.b, true, null), c0Var.d0);
+                m mVar = new m(this.c, f6Var, new l(this.b, true, null), c0Var.d0);
                 mVar.show();
                 mVar.n0 = runnable;
                 c0Var.dismiss();
                 break;
             case 2:
-                new c0(this.c, (e6) this.d, this.b, (TL_stars.StarGift) this.f, (ArrayList) this.e, null, true).show();
+                new c0(this.c, (f6) this.d, this.b, (TL_stars.StarGift) this.f, (ArrayList) this.e, null, true).show();
                 break;
             default:
                 z4.S((z4) this.f, this.b, this.c, (Runnable) this.e, (TL_stars.StarGift) this.d);
@@ -51,12 +51,12 @@ public final /* synthetic */ class n implements View.OnClickListener {
         }
     }
 
-    public /* synthetic */ n(bb bbVar, long j3, Context context, e6 e6Var, Runnable runnable, int i10) {
+    public /* synthetic */ n(ab abVar, long j3, Context context, f6 f6Var, Runnable runnable, int i10) {
         this.a = i10;
-        this.f = bbVar;
+        this.f = abVar;
         this.b = j3;
         this.c = context;
-        this.d = e6Var;
+        this.d = f6Var;
         this.e = runnable;
     }
 

@@ -8,9 +8,9 @@ import org.telegram.messenger.Emoji;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.ly;
-import org.telegram.ui.Components.t51;
+import org.telegram.ui.Components.s51;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class p implements ly {
     public final /* synthetic */ r a;
@@ -114,9 +114,9 @@ public final class p implements ly {
                 str = "😀";
             }
             SpannableString spannableString = new SpannableString(str);
-            org.telegram.ui.Components.z5 z5Var = document != null ? new org.telegram.ui.Components.z5(document, M.getPaint().getFontMetricsInt()) : new org.telegram.ui.Components.z5(j3, M.getPaint().getFontMetricsInt());
-            z5Var.cacheType = org.telegram.ui.Components.q5.g();
-            spannableString.setSpan(z5Var, 0, spannableString.length(), 33);
+            org.telegram.ui.Components.y5 y5Var = document != null ? new org.telegram.ui.Components.y5(document, M.getPaint().getFontMetricsInt()) : new org.telegram.ui.Components.y5(j3, M.getPaint().getFontMetricsInt());
+            y5Var.cacheType = org.telegram.ui.Components.p5.g();
+            spannableString.setSpan(y5Var, 0, spannableString.length(), 33);
             M.setText(M.getText().insert(N, spannableString));
             int length = N + spannableString.length();
             M.setSelection(length, length);
@@ -137,7 +137,7 @@ public final class p implements ly {
     }
 
     @Override // org.telegram.ui.Components.ly
-    public final /* synthetic */ void o(t51 t51Var) {
+    public final /* synthetic */ void o(s51 s51Var) {
     }
 
     @Override // org.telegram.ui.Components.ly

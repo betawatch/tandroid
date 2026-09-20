@@ -7,10 +7,10 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.rk;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class g2 extends FrameLayout {
     public final org.telegram.ui.ActionBar.j5 a;
@@ -18,7 +18,7 @@ public final class g2 extends FrameLayout {
     public boolean c;
     public int d;
 
-    public g2(Context context, int i10, org.telegram.ui.ActionBar.e6 e6Var) {
+    public g2(Context context, int i10, org.telegram.ui.ActionBar.f6 f6Var) {
         super(context);
         this.d = i10;
         org.telegram.ui.ActionBar.j5 j5Var = new org.telegram.ui.ActionBar.j5(context);
@@ -26,7 +26,7 @@ public final class g2 extends FrameLayout {
         j5Var.setTextSize(16);
         j5Var.setGravity(LocaleController.isRTL ? 5 : 3);
         int i11 = org.telegram.ui.ActionBar.j6.o6;
-        j5Var.setTextColor(org.telegram.ui.ActionBar.j6.v0(i11, e6Var));
+        j5Var.setTextColor(org.telegram.ui.ActionBar.j6.v0(i11, f6Var));
         j5Var.setTag(Integer.valueOf(i11));
         addView(j5Var);
         ImageView imageView = new ImageView(context);
@@ -66,7 +66,7 @@ public final class g2 extends FrameLayout {
     public final void onMeasure(int i10, int i11) {
         int size = View.MeasureSpec.getSize(i10);
         AndroidUtilities.dp(48.0f);
-        this.a.measure(wh.y(94.0f, size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(20.0f), TLObject.FLAG_30));
+        this.a.measure(rk.c(94.0f, size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(20.0f), TLObject.FLAG_30));
         this.b.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f), TLObject.FLAG_30));
         setMeasuredDimension(size, AndroidUtilities.dp(50.0f));
     }

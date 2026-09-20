@@ -6,7 +6,7 @@ import android.os.RemoteException;
 import com.google.android.gms.common.api.Status;
 import java.util.Set;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class a0 implements k0 {
     public final m0 a;
@@ -55,18 +55,18 @@ public final class a0 implements k0 {
     }
 
     @Override // com.google.android.gms.common.api.internal.k0
-    public final void x(int i10) {
+    public final void u(int i10) {
         m0 m0Var = this.a;
         m0Var.h();
-        m0Var.p.q(i10);
+        m0Var.p.j(i10);
     }
 
     @Override // com.google.android.gms.common.api.internal.k0
-    public final void j() {
+    public final void g() {
     }
 
     @Override // com.google.android.gms.common.api.internal.k0
-    public final void y() {
+    public final void z() {
     }
 
     @Override // com.google.android.gms.common.api.internal.k0
@@ -74,6 +74,6 @@ public final class a0 implements k0 {
     }
 
     @Override // com.google.android.gms.common.api.internal.k0
-    public final void v(k6.a aVar, com.google.android.gms.common.api.e eVar, boolean z10) {
+    public final void r(k6.a aVar, com.google.android.gms.common.api.e eVar, boolean z10) {
     }
 }

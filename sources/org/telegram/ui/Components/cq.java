@@ -17,7 +17,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class cq extends org.telegram.ui.ActionBar.f3 {
     public final Drawable b;
@@ -32,7 +32,7 @@ public final class cq extends org.telegram.ui.ActionBar.f3 {
     public org.telegram.ui.db v;
 
     public cq(Activity activity, TLRPC.Chat chat) {
-        super(1, (Context) activity, (org.telegram.ui.ActionBar.e6) null, false);
+        super(1, (Context) activity, (org.telegram.ui.ActionBar.f6) null, false);
         this.h = new int[2];
         this.e = true;
         setApplyBottomPadding(false);
@@ -69,14 +69,14 @@ public final class cq extends org.telegram.ui.ActionBar.f3 {
         setCustomView(zpVar);
         UserConfig.getInstance(this.currentAccount).getClientUserId();
         int i13 = MessagesController.getInstance(this.currentAccount).revokeTimeLimit;
-        lj0 lj0Var = new lj0(activity);
-        lj0Var.setAutoRepeat(false);
-        lj0Var.f(R.raw.utyan_private, 120, 120, null);
-        lj0Var.setPadding(0, AndroidUtilities.dp(20.0f), 0, 0);
-        lj0Var.d();
-        zpVar.addView(lj0Var, w7.y5.t(160, 160, 49, 17, 0, 17, 0));
+        kj0 kj0Var = new kj0(activity);
+        kj0Var.setAutoRepeat(false);
+        kj0Var.f(R.raw.utyan_private, 120, 120, null);
+        kj0Var.setPadding(0, AndroidUtilities.dp(20.0f), 0, 0);
+        kj0Var.d();
+        zpVar.addView(kj0Var, w7.y5.t(160, 160, 49, 17, 0, 17, 0));
         TextView textView = new TextView(activity);
-        org.telegram.messenger.wh.j(24.0f, 1, textView);
+        org.telegram.messenger.rk.k(24.0f, 1, textView);
         textView.setTextColor(getThemedColor(org.telegram.ui.ActionBar.j6.j5));
         textView.setText(LocaleController.getString(R.string.AutoDeleteAlertTitle));
         zpVar.addView(textView, w7.y5.t(-2, -2, 49, 17, 18, 17, 0));
@@ -90,18 +90,18 @@ public final class cq extends org.telegram.ui.ActionBar.f3 {
             textView2.setText(LocaleController.getString(R.string.AutoDeleteAlertChannelInfo));
         }
         zpVar.addView(textView2, w7.y5.t(-2, -2, 49, 30, 22, 30, 20));
-        fw0 fw0Var = new fw0(activity, null);
-        fw0Var.setCallback(new aq(this, ypVar));
-        fw0Var.b(this.n, null, LocaleController.getString(R.string.AutoDeleteNever), LocaleController.getString(R.string.AutoDelete24Hours), LocaleController.getString(R.string.AutoDelete7Days), LocaleController.getString(R.string.AutoDelete1Month));
-        zpVar.addView(fw0Var, w7.y5.k(0.0f, 8.0f, 0.0f, 0.0f, -1, -2));
+        ew0 ew0Var = new ew0(activity, null);
+        ew0Var.setCallback(new aq(this, ypVar));
+        ew0Var.b(this.n, null, LocaleController.getString(R.string.AutoDeleteNever), LocaleController.getString(R.string.AutoDelete24Hours), LocaleController.getString(R.string.AutoDelete7Days), LocaleController.getString(R.string.AutoDelete1Month));
+        zpVar.addView(ew0Var, w7.y5.k(0.0f, 8.0f, 0.0f, 0.0f, -1, -2));
         FrameLayout frameLayout = new FrameLayout(activity);
         pq pqVar = new pq(new ColorDrawable(getThemedColor(org.telegram.ui.ActionBar.j6.a7)), org.telegram.ui.ActionBar.j6.V0(activity, R.drawable.greydivider_bottom, org.telegram.ui.ActionBar.j6.b7));
         pqVar.w = true;
         frameLayout.setBackgroundDrawable(pqVar);
         zpVar.addView(frameLayout, w7.y5.n(-1, -2));
-        org.telegram.ui.Cells.e9 e9Var = new org.telegram.ui.Cells.e9(activity, null);
-        e9Var.setText(LocaleController.getString(R.string.AutoDeleteInfo));
-        frameLayout.addView(e9Var);
+        org.telegram.ui.Cells.f9 f9Var = new org.telegram.ui.Cells.f9(activity, null);
+        f9Var.setText(LocaleController.getString(R.string.AutoDeleteInfo));
+        frameLayout.addView(f9Var);
         bq bqVar = new bq(activity);
         this.d = bqVar;
         bqVar.setBackgroundColor(getThemedColor(i11));

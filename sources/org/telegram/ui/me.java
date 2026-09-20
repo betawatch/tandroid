@@ -18,7 +18,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class me implements Runnable {
     public final /* synthetic */ int a;
@@ -96,7 +96,7 @@ public final /* synthetic */ class me implements Runnable {
                 znVar.t7();
                 break;
             case 6:
-                ze1 a02 = ze1.a0(-znVar.T5, 0L);
+                bf1 a02 = bf1.a0(-znVar.T5, 0L);
                 a02.y = znVar;
                 znVar.presentFragment(a02);
                 break;
@@ -226,10 +226,10 @@ public final /* synthetic */ class me implements Runnable {
                                 View view = (View) u1Var.getParent();
                                 qpVar3.measure(View.MeasureSpec.makeMeasureSpec(MediaDataController.MAX_STYLE_RUNS_COUNT, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(MediaDataController.MAX_STYLE_RUNS_COUNT, TLObject.FLAG_31));
                                 if (i16 > AndroidUtilities.dp(10.0f) + qpVar3.getMeasuredHeight()) {
-                                    int D = org.telegram.messenger.q.D(6.0f, u1Var.getChecksY(), i16);
+                                    int C = org.telegram.messenger.l0.C(6.0f, u1Var.getChecksY(), i16);
                                     int dp = AndroidUtilities.dp(5.0f) + u1Var.getChecksX();
                                     int measuredWidth = view.getMeasuredWidth();
-                                    float measuredHeight = D - qpVar3.getMeasuredHeight();
+                                    float measuredHeight = C - qpVar3.getMeasuredHeight();
                                     qpVar3.f = measuredHeight;
                                     qpVar3.setTranslationY(measuredHeight);
                                     int left = u1Var.getLeft() + dp;

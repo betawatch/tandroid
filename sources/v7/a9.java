@@ -1,39 +1,24 @@
 package v7;
 
-import w7.pa;
-import x7.ia;
-import z7.zf;
+import android.content.Context;
+import java.util.concurrent.atomic.AtomicLong;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
-public final /* synthetic */ class a9 implements pa.b {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ l5.q b;
+public final class a9 {
+    public final p6.b a;
+    public final AtomicLong b;
 
-    public /* synthetic */ a9(l5.q qVar, int i10) {
-        this.a = i10;
-        this.b = qVar;
-    }
-
-    @Override // pa.b
-    public final Object get() {
-        switch (this.a) {
-            case 0:
-                return this.b.a("FIREBASE_ML_SDK", new i5.c("json"), d9.e);
+    public a9(Context context, int i10) {
+        switch (i10) {
             case 1:
-                return this.b.a("FIREBASE_ML_SDK", new i5.c("proto"), d9.d);
-            case 2:
-                return this.b.a("FIREBASE_ML_SDK", new i5.c("json"), pa.e);
-            case 3:
-                return this.b.a("FIREBASE_ML_SDK", new i5.c("proto"), pa.d);
-            case 4:
-                return this.b.a("FIREBASE_ML_SDK", new i5.c("json"), ia.e);
-            case 5:
-                return this.b.a("FIREBASE_ML_SDK", new i5.c("proto"), ia.d);
-            case 6:
-                return this.b.a("FIREBASE_ML_SDK", new i5.c("json"), zf.e);
+                this.b = new AtomicLong(-1L);
+                this.a = new p6.b(context, p6.b.k, new n6.p("mlkit:vision"), com.google.android.gms.common.api.i.c);
+                break;
             default:
-                return this.b.a("FIREBASE_ML_SDK", new i5.c("proto"), zf.d);
+                this.b = new AtomicLong(-1L);
+                this.a = new p6.b(context, p6.b.k, new n6.p("mlkit:natural_language"), com.google.android.gms.common.api.i.c);
+                break;
         }
     }
 }

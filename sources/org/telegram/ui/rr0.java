@@ -9,28 +9,28 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.ui.Components.ClippingImageView;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class rr0 implements org.telegram.ui.Components.d5, org.telegram.ui.ActionBar.a2, ImageReceiver.ImageReceiverDelegate, r0.n {
+public final /* synthetic */ class rr0 implements org.telegram.ui.Components.c5, org.telegram.ui.ActionBar.a2, ImageReceiver.ImageReceiverDelegate, r0.n {
     public final /* synthetic */ PhotoViewer a;
 
     public /* synthetic */ rr0(PhotoViewer photoViewer) {
         this.a = photoViewer;
     }
 
-    @Override // org.telegram.ui.Components.d5
+    @Override // org.telegram.ui.Components.c5
     public void J(int i10, int i11, boolean z10) {
         Drawable[] drawableArr = PhotoViewer.U8;
         this.a.v2(z10, i10, i11, false, false, false);
     }
 
     @Override // r0.n
-    public r0.m1 Q0(View view, r0.m1 m1Var) {
+    public r0.l1 P0(View view, r0.l1 l1Var) {
         PhotoViewer photoViewer = this.a;
         jr0 jr0Var = photoViewer.v4;
         Rect rect = photoViewer.s2;
         Rect rect2 = new Rect(rect);
-        i0.b defaultWindowInsets = AndroidUtilities.getDefaultWindowInsets(m1Var, false);
+        i0.b defaultWindowInsets = AndroidUtilities.getDefaultWindowInsets(l1Var, false);
         int i10 = defaultWindowInsets.a;
         int i11 = defaultWindowInsets.b;
         int i12 = defaultWindowInsets.c;
@@ -63,7 +63,7 @@ public final /* synthetic */ class rr0 implements org.telegram.ui.Components.d5,
                 AndroidUtilities.runOnUIThread(jr0Var, 200L);
             }
         }
-        return r0.m1.b;
+        return r0.l1.b;
     }
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
@@ -75,10 +75,10 @@ public final /* synthetic */ class rr0 implements org.telegram.ui.Components.d5,
         PhotoViewer photoViewer = this.a;
         if (imageReceiver == photoViewer.C4 && z10 && !z11) {
             if (!photoViewer.r1 && ((photoViewer.u4 == 1 || (i11 = photoViewer.c2) == 1 || i11 == 11) && photoViewer.C1 != null && (bitmap = imageReceiver.getBitmap()) != null)) {
-                org.telegram.ui.Components.df0 df0Var = photoViewer.C1;
+                org.telegram.ui.Components.cf0 cf0Var = photoViewer.C1;
                 int orientation = imageReceiver.getOrientation();
                 int i12 = photoViewer.c2;
-                df0Var.b(bitmap, orientation, (i12 == 1 || i12 == 11) ? false : true, true, photoViewer.D1, null, null);
+                cf0Var.b(bitmap, orientation, (i12 == 1 || i12 == 11) ? false : true, true, photoViewer.D1, null, null);
             }
             if (photoViewer.y4.getVisibility() == 0) {
                 photoViewer.e0.requestLayout();
@@ -101,7 +101,7 @@ public final /* synthetic */ class rr0 implements org.telegram.ui.Components.d5,
     }
 
     @Override // org.telegram.ui.ActionBar.a2
-    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+    public void k(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
         Drawable[] drawableArr = PhotoViewer.U8;
         this.a.d3(0);
     }

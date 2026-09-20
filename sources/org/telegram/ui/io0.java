@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class io0 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ xo0 a;
@@ -36,11 +36,11 @@ public final class io0 extends org.telegram.ui.ActionBar.j {
         int i12 = 0;
         if (i11 == 1) {
             while (true) {
-                org.telegram.ui.Cells.k6[] k6VarArr = xo0Var.h;
-                if (i12 >= k6VarArr.length) {
+                org.telegram.ui.Cells.l6[] l6VarArr = xo0Var.h;
+                if (i12 >= l6VarArr.length) {
                     break;
                 }
-                if (k6VarArr[i12].b.f) {
+                if (l6VarArr[i12].b.f) {
                     xo0Var.G0 = xo0Var.E0.shipping_options.get(i12);
                     break;
                 }

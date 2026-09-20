@@ -13,13 +13,13 @@ import android.widget.ImageView;
 import le.d;
 import le.e;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.Components.qr;
 import org.telegram.ui.Components.tp;
 import w7.y5;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class a extends FrameLayout implements d {
     public final le.b a;
@@ -27,7 +27,7 @@ public final class a extends FrameLayout implements d {
     public ImageView c;
     public ImageView d;
     public tp e;
-    public e6 f;
+    public f6 f;
     public float h;
     public ch.d n;
 
@@ -39,10 +39,10 @@ public final class a extends FrameLayout implements d {
         this.h = 1.0f;
     }
 
-    public static a c(c cVar, Context context, dh.a aVar, e6 e6Var) {
-        int v02 = j6.v0(j6.Wk, e6Var);
+    public static a c(c cVar, Context context, dh.a aVar, f6 f6Var) {
+        int v02 = j6.v0(j6.Wk, f6Var);
         a aVar2 = new a(context);
-        aVar2.f = e6Var;
+        aVar2.f = f6Var;
         aVar2.setBlurredBackgroundDrawable(cVar.c(aVar2, aVar, false));
         aVar2.setIconColor(v02);
         int dp = AndroidUtilities.dp(22.0f);
@@ -52,10 +52,10 @@ public final class a extends FrameLayout implements d {
         return aVar2;
     }
 
-    public static a d(Context context, c cVar, dh.a aVar, e6 e6Var, int i10, int i11) {
-        int v02 = j6.v0(j6.Wk, e6Var);
+    public static a d(Context context, c cVar, dh.a aVar, f6 f6Var, int i10, int i11) {
+        int v02 = j6.v0(j6.Wk, f6Var);
         a aVar2 = new a(context);
-        aVar2.f = e6Var;
+        aVar2.f = f6Var;
         aVar2.setBlurredBackgroundDrawable(cVar.c(aVar2, aVar, false));
         aVar2.f(i10, i11);
         aVar2.setIconColor(v02);

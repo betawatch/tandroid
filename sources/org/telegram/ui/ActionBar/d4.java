@@ -22,7 +22,7 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.tgnet.ResultCallback;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class d4 {
     public static final int[] h = {j6.ra, j6.Aa, j6.Oh, j6.Nd, j6.Od, j6.Pd, j6.Qd, j6.Rd};
@@ -122,11 +122,11 @@ public final class d4 {
 
     public static void q(i6 i6Var, int i10) {
         SparseArray sparseArray;
-        g6 g6Var;
+        h6 h6Var;
         if (i6Var == null) {
             return;
         }
-        if (i10 < 0 || (sparseArray = i6Var.a0) == null || !((g6Var = (g6) sparseArray.get(i10)) == null || g6Var.z)) {
+        if (i10 < 0 || (sparseArray = i6Var.a0) == null || !((h6Var = (h6) sparseArray.get(i10)) == null || h6Var.z)) {
             if (i6Var.m().equals("Blue") && i10 == 99) {
                 return;
             }
@@ -145,7 +145,7 @@ public final class d4 {
     }
 
     public final SparseIntArray b(int i10, int i11) {
-        g6 g6Var;
+        h6 h6Var;
         SparseIntArray Q0;
         int indexOfKey;
         i6 i6Var;
@@ -157,12 +157,12 @@ public final class d4 {
             TLRPC.ThemeSettings b10 = c4Var.b(i12);
             TLRPC.TL_theme tL_theme = ((c4) arrayList.get(i11)).b;
             i6 i6Var2 = new i6(j6.N0(j6.q0(b10)));
-            g6Var = i6Var2.e(c4Var.a(), b10, tL_theme, i10, true);
-            i6Var2.u(g6Var.a);
+            h6Var = i6Var2.e(c4Var.a(), b10, tL_theme, i10, true);
+            i6Var2.u(h6Var.a);
             j3 = i6Var2;
         } else {
             SparseArray sparseArray = j3.a0;
-            g6Var = sparseArray != null ? (g6) sparseArray.get(((c4) arrayList.get(i11)).e) : null;
+            h6Var = sparseArray != null ? (h6) sparseArray.get(((c4) arrayList.get(i11)).e) : null;
         }
         String[] strArr = new String[1];
         if (j3.b != null) {
@@ -173,12 +173,12 @@ public final class d4 {
         }
         c4 c4Var2 = (c4) arrayList.get(i11);
         c4Var2.g = strArr[0];
-        if (g6Var != null) {
+        if (h6Var != null) {
             SparseIntArray clone = Q0.clone();
-            g6Var.c(Q0, clone);
+            h6Var.c(Q0, clone);
             fg.b bVar = this.c;
-            if (bVar != null && !TextUtils.isEmpty(bVar.b) && (i6Var = g6Var.b) != null && i6Var.b == null && !i6Var.q()) {
-                g6.g(clone);
+            if (bVar != null && !TextUtils.isEmpty(bVar.b) && (i6Var = h6Var.b) != null && i6Var.b == null && !i6Var.q()) {
+                h6.g(clone);
             }
             Q0 = clone;
         }
@@ -211,11 +211,11 @@ public final class d4 {
     }
 
     public final SparseIntArray h(int i10, int i11) {
-        g6 g6Var;
+        h6 h6Var;
         SparseIntArray Q0;
         int indexOfKey;
         i6 i6Var;
-        g6 g6Var2;
+        h6 h6Var2;
         ArrayList arrayList = this.f;
         SparseIntArray sparseIntArray = ((c4) arrayList.get(i11)).f;
         if (sparseIntArray != null) {
@@ -231,23 +231,23 @@ public final class d4 {
                 i6 i6Var2 = new i6(N0);
                 if (aVar != null) {
                     c4 c4Var = (c4) aVar;
-                    g6Var2 = i6Var2.e(c4Var.a(), c4Var.b(i12), tL_theme, i10, true);
+                    h6Var2 = i6Var2.e(c4Var.a(), c4Var.b(i12), tL_theme, i10, true);
                 } else {
-                    g6Var2 = null;
+                    h6Var2 = null;
                 }
-                if (g6Var2 != null) {
-                    i6Var2.u(g6Var2.a);
+                if (h6Var2 != null) {
+                    i6Var2.u(h6Var2.a);
                 }
-                g6Var = g6Var2;
+                h6Var = h6Var2;
                 j3 = i6Var2;
             }
-            g6Var = null;
+            h6Var = null;
         } else {
             SparseArray sparseArray = j3.a0;
             if (sparseArray != null) {
-                g6Var = (g6) sparseArray.get(((c4) arrayList.get(i11)).e);
+                h6Var = (h6) sparseArray.get(((c4) arrayList.get(i11)).e);
             }
-            g6Var = null;
+            h6Var = null;
         }
         if (j3 == null) {
             return sparseIntArray;
@@ -261,12 +261,12 @@ public final class d4 {
         }
         int i13 = 0;
         ((c4) arrayList.get(i11)).g = strArr[0];
-        if (g6Var != null) {
+        if (h6Var != null) {
             SparseIntArray clone = Q0.clone();
-            g6Var.c(Q0, clone);
+            h6Var.c(Q0, clone);
             fg.b bVar = this.c;
-            if (bVar != null && !TextUtils.isEmpty(bVar.b) && (i6Var = g6Var.b) != null && i6Var.b == null && !i6Var.q()) {
-                g6.g(clone);
+            if (bVar != null && !TextUtils.isEmpty(bVar.b) && (i6Var = h6Var.b) != null && i6Var.b == null && !i6Var.q()) {
+                h6.g(clone);
             }
             Q0 = clone;
         }
@@ -376,7 +376,7 @@ public final class d4 {
             long i11 = i(i10);
             if (i11 != 0) {
                 Bitmap wallpaperThumbBitmap = ChatThemeController.getInstance(this.g).getWallpaperThumbBitmap(i11);
-                File file = new File(ApplicationLoader.getFilesDirFixed(), org.telegram.ui.Cells.c1.h(i11, "wallpaper_thumb_", ".png"));
+                File file = new File(ApplicationLoader.getFilesDirFixed(), org.telegram.ui.Cells.c1.j(i11, "wallpaper_thumb_", ".png"));
                 if (wallpaperThumbBitmap == null && file.exists() && file.length() > 0) {
                     try {
                         wallpaperThumbBitmap = BitmapFactory.decodeFile(file.getAbsolutePath());

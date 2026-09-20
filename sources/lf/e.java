@@ -5,20 +5,20 @@ import hg.k0;
 import java.io.EOFException;
 import java.io.InputStream;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class e {
     public static final n1 e = new n1(1);
     public final mf.a a;
-    public final j b;
+    public final i b;
     public final f c;
     public final a4.m d;
 
-    public e(InputStream inputStream, long j3, int i10, j jVar, f fVar) {
+    public e(InputStream inputStream, long j3, int i10, i iVar, f fVar) {
         mf.a aVar = new mf.a(inputStream, j3, i10);
         this.a = aVar;
         this.d = new a4.m(aVar, 27);
-        this.b = jVar;
+        this.b = iVar;
         this.c = fVar;
     }
 
@@ -47,20 +47,20 @@ public final class e {
     }
 
     public final b b() {
-        byte y02 = this.d.y0();
-        if (y02 == 0) {
+        byte x02 = this.d.x0();
+        if (x02 == 0) {
             return b.c;
         }
-        if (y02 == 1) {
+        if (x02 == 1) {
             return b.d;
         }
-        if (y02 == 2) {
+        if (x02 == 2) {
             return b.e;
         }
-        if (y02 == 3) {
+        if (x02 == 3) {
             return b.f;
         }
-        throw new c(k0.h(y02, "Invalid encoding: "));
+        throw new c(k0.h(x02, "Invalid encoding: "));
     }
 
     public final String c(int i10, b bVar) {
@@ -106,9 +106,9 @@ public final class e {
         byte[] bArr2 = dVar.a;
         int i11 = 0;
         for (int i12 = 0; i12 < min; i12++) {
-            byte y02 = this.d.y0();
-            bArr2[i12] = y02;
-            if (y02 != 0 || (bVar == b.d && i11 == 0 && i12 % 2 != 0)) {
+            byte x02 = this.d.x0();
+            bArr2[i12] = x02;
+            if (x02 != 0 || (bVar == b.d && i11 == 0 && i12 % 2 != 0)) {
                 i11 = 0;
             } else {
                 i11++;

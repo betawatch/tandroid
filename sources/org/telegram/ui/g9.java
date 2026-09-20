@@ -9,36 +9,36 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.CheckBoxBase;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class g9 extends FrameLayout {
     public final int a;
-    public final org.telegram.ui.Components.k9 b;
+    public final org.telegram.ui.Components.j9 b;
     public final ImageView c;
-    public final org.telegram.ui.Cells.i6 d;
+    public final org.telegram.ui.Cells.j6 d;
     public final org.telegram.ui.Components.np e;
 
     public g9(Context context, int i10) {
         super(context);
         this.a = i10;
-        org.telegram.ui.Cells.i6 i6Var = new org.telegram.ui.Cells.i6(context, null);
-        this.d = i6Var;
-        i6Var.M0 = true;
-        i6Var.E0 = true;
-        i6Var.setPadding(LocaleController.isRTL ? AndroidUtilities.dp(32.0f) : 0, 0, LocaleController.isRTL ? 0 : AndroidUtilities.dp(32.0f), 0);
+        org.telegram.ui.Cells.j6 j6Var = new org.telegram.ui.Cells.j6(context, null);
+        this.d = j6Var;
+        j6Var.M0 = true;
+        j6Var.E0 = true;
+        j6Var.setPadding(LocaleController.isRTL ? AndroidUtilities.dp(32.0f) : 0, 0, LocaleController.isRTL ? 0 : AndroidUtilities.dp(32.0f), 0);
         int dp = AndroidUtilities.dp(LocaleController.isRTL ? 2.0f : -2.0f);
         int i11 = -AndroidUtilities.dp(7.0f);
-        i6Var.b0 = dp;
-        i6Var.c0 = i11;
-        addView(i6Var, w7.y5.c(-1.0f, -1));
-        org.telegram.ui.Components.k9 k9Var = new org.telegram.ui.Components.k9(context, false);
-        this.b = k9Var;
-        k9Var.setAvatarsTextSize(AndroidUtilities.dp(18.0f));
-        k9Var.setStepFactor(0.4f);
-        k9Var.setSize(AndroidUtilities.dp(29.0f));
-        k9Var.setCentered(true);
-        k9Var.setVisibility(8);
-        addView(k9Var, w7.y5.d(72, -1.0f, LocaleController.isRTL ? 5 : 3, -2.0f, 0.0f, 0.0f, 0.0f));
+        j6Var.b0 = dp;
+        j6Var.c0 = i11;
+        addView(j6Var, w7.y5.c(-1.0f, -1));
+        org.telegram.ui.Components.j9 j9Var = new org.telegram.ui.Components.j9(context, false);
+        this.b = j9Var;
+        j9Var.setAvatarsTextSize(AndroidUtilities.dp(18.0f));
+        j9Var.setStepFactor(0.4f);
+        j9Var.setSize(AndroidUtilities.dp(29.0f));
+        j9Var.setCentered(true);
+        j9Var.setVisibility(8);
+        addView(j9Var, w7.y5.d(72, -1.0f, LocaleController.isRTL ? 5 : 3, -2.0f, 0.0f, 0.0f, 0.0f));
         ImageView imageView = new ImageView(context);
         this.c = imageView;
         imageView.setColorFilter(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.il, false), PorterDuff.Mode.SRC_IN);

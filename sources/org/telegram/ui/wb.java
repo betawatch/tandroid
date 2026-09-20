@@ -10,9 +10,9 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class wb implements org.telegram.ui.Components.kl0 {
+public final /* synthetic */ class wb implements org.telegram.ui.Components.jl0 {
     public final /* synthetic */ int a = 1;
     public final /* synthetic */ long b;
     public final /* synthetic */ Context c;
@@ -20,21 +20,21 @@ public final /* synthetic */ class wb implements org.telegram.ui.Components.kl0 
     public final /* synthetic */ Object e;
     public final /* synthetic */ Object f;
 
-    public /* synthetic */ wb(dc dcVar, Context context, long j3, org.telegram.ui.ActionBar.e6 e6Var, za1 za1Var) {
+    public /* synthetic */ wb(dc dcVar, Context context, long j3, org.telegram.ui.ActionBar.f6 f6Var, bb1 bb1Var) {
         this.d = dcVar;
         this.c = context;
         this.b = j3;
-        this.e = e6Var;
-        this.f = za1Var;
+        this.e = f6Var;
+        this.f = bb1Var;
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.jl0
     public final void d(int i10, View view) {
         switch (this.a) {
             case 0:
                 dc dcVar = (dc) this.d;
-                org.telegram.ui.ActionBar.e6 e6Var = (org.telegram.ui.ActionBar.e6) this.e;
-                za1 za1Var = (za1) this.f;
+                org.telegram.ui.ActionBar.f6 f6Var = (org.telegram.ui.ActionBar.f6) this.e;
+                bb1 bb1Var = (bb1) this.f;
                 boolean z10 = view instanceof yg.b;
                 long j3 = this.b;
                 if (z10) {
@@ -60,26 +60,26 @@ public final /* synthetic */ class wb implements org.telegram.ui.Components.kl0 
                             } else {
                                 tL_payments_checkedGiftCode.boost = boost;
                             }
-                            new tg.c0(za1Var, tL_payments_checkedGiftCode, boost.used_gift_slug).show();
+                            new tg.c0(bb1Var, tL_payments_checkedGiftCode, boost.used_gift_slug).show();
                         } else if (z11 && boost.user_id == -1) {
-                            org.telegram.ui.Components.yb ybVar = new org.telegram.ui.Components.yb(za1Var.getParentActivity(), za1Var.getResourceProvider());
-                            ybVar.c(R.raw.chats_infotip, 36, 36, new String[0]);
-                            ybVar.b.setText(LocaleController.getString(R.string.BoostingRecipientWillBeSelected));
-                            ybVar.b.setSingleLine(false);
-                            ybVar.b.setMaxLines(2);
-                            org.telegram.ui.Components.qc.g(za1Var, ybVar, 2750).j();
+                            org.telegram.ui.Components.xb xbVar = new org.telegram.ui.Components.xb(bb1Var.getParentActivity(), bb1Var.getResourceProvider());
+                            xbVar.c(R.raw.chats_infotip, 36, 36, new String[0]);
+                            xbVar.b.setText(LocaleController.getString(R.string.BoostingRecipientWillBeSelected));
+                            xbVar.b.setSingleLine(false);
+                            xbVar.b.setMaxLines(2);
+                            org.telegram.ui.Components.pc.g(bb1Var, xbVar, 2750).j();
                         } else if (!z12 && !z11) {
-                            za1Var.presentFragment(ProfileActivity.m4(bVar.getDialogId()));
+                            bb1Var.presentFragment(ProfileActivity.m4(bVar.getDialogId()));
                         }
                     } else {
-                        yh.v7.e1(this.c, dcVar.b, j3, boost, e6Var);
+                        yh.w7.e1(this.c, dcVar.b, j3, boost, f6Var);
                     }
                 }
-                if (view instanceof org.telegram.ui.Cells.r8) {
-                    tg.m.m(za1Var, e6Var, j3, null);
+                if (view instanceof org.telegram.ui.Cells.s8) {
+                    tg.m.m(bb1Var, f6Var, j3, null);
                 }
                 if (view instanceof yg.c) {
-                    tg.m.m(za1Var, e6Var, j3, ((yg.c) view).getPrepaidGiveaway());
+                    tg.m.m(bb1Var, f6Var, j3, ((yg.c) view).getPrepaidGiveaway());
                 }
                 if (((cc) dcVar.x.get(i10)).a == 9) {
                     dcVar.c(Boolean.valueOf(dcVar.y == 1));
@@ -87,13 +87,13 @@ public final /* synthetic */ class wb implements org.telegram.ui.Components.kl0 
                 }
                 break;
             default:
-                org.telegram.ui.Components.k70.M((org.telegram.ui.Components.k70) this.d, this.b, (org.telegram.ui.ActionBar.n2) this.e, (a0.i) this.f, this.c, i10);
+                org.telegram.ui.Components.j70.M((org.telegram.ui.Components.j70) this.d, this.b, (org.telegram.ui.ActionBar.n2) this.e, (a0.i) this.f, this.c, i10);
                 break;
         }
     }
 
-    public /* synthetic */ wb(org.telegram.ui.Components.k70 k70Var, long j3, org.telegram.ui.ActionBar.n2 n2Var, a0.i iVar, Context context) {
-        this.d = k70Var;
+    public /* synthetic */ wb(org.telegram.ui.Components.j70 j70Var, long j3, org.telegram.ui.ActionBar.n2 n2Var, a0.i iVar, Context context) {
+        this.d = j70Var;
         this.b = j3;
         this.e = n2Var;
         this.f = iVar;

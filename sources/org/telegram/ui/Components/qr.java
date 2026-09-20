@@ -4,7 +4,7 @@ import android.graphics.PointF;
 import android.view.animation.Interpolator;
 import android.view.animation.PathInterpolator;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class qr implements Interpolator {
     public static final qr f = new qr(0.25d, 0.1d, 0.25d, 1.0d);
@@ -21,7 +21,7 @@ public final class qr implements Interpolator {
     public final PointF e;
 
     static {
-        new PathInterpolator(v7.g8.d("M 0,0 C 0.05, 0, 0.133333, 0.06, 0.166666, 0.4 C 0.208333, 0.82, 0.25, 1, 1, 1"));
+        new PathInterpolator(v7.h8.d("M 0,0 C 0.05, 0, 0.133333, 0.06, 0.166666, 0.4 C 0.208333, 0.82, 0.25, 1, 1, 1"));
         new PathInterpolator(0.05f, 0.7f, 0.1f, 1.0f);
         new PathInterpolator(0.3f, 0.0f, 0.8f, 0.15f);
         l = new PathInterpolator(0.0f, 0.0f, 0.0f, 1.0f);

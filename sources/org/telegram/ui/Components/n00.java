@@ -19,7 +19,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class n00 extends org.telegram.ui.ActionBar.f3 implements NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int w = 0;
@@ -110,9 +110,9 @@ public final class n00 extends org.telegram.ui.ActionBar.f3 implements Notificat
         }
         int i10 = 0;
         View childAt = w0Var.getChildAt(0);
-        gl0 gl0Var = (gl0) w0Var.H(childAt);
+        fl0 fl0Var = (fl0) w0Var.H(childAt);
         int top = childAt.getTop();
-        if (top < 0 || gl0Var == null || gl0Var.b() != 0) {
+        if (top < 0 || fl0Var == null || fl0Var.b() != 0) {
             n00Var.J(true);
         } else {
             n00Var.J(false);
@@ -133,9 +133,9 @@ public final class n00 extends org.telegram.ui.ActionBar.f3 implements Notificat
         for (int i10 = 0; i10 < size; i10++) {
             long longValue = ((Long) arrayList.get(i10)).longValue();
             if (DialogObject.isEncryptedDialog(longValue)) {
-                TLRPC.EncryptedChat m10 = org.telegram.messenger.q.m(n2Var.getMessagesController(), longValue);
-                if (m10 != null) {
-                    longValue = m10.user_id;
+                TLRPC.EncryptedChat k10 = org.telegram.messenger.l0.k(n2Var.getMessagesController(), longValue);
+                if (k10 != null) {
+                    longValue = k10.user_id;
                     if (arrayList2.contains(Long.valueOf(longValue))) {
                         continue;
                     }
@@ -170,7 +170,7 @@ public final class n00 extends org.telegram.ui.ActionBar.f3 implements Notificat
         this.e = animatorSet2;
         animatorSet2.playTogether(ObjectAnimator.ofFloat(view, (Property<View, Float>) View.ALPHA, z10 ? 1.0f : 0.0f));
         this.e.setDuration(150L);
-        this.e.addListener(new ca(8, this, z10));
+        this.e.addListener(new ba(8, this, z10));
         this.e.start();
     }
 

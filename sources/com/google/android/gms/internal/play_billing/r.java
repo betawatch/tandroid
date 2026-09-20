@@ -8,10 +8,10 @@ import java.util.List;
 import java.util.ListIterator;
 import java.util.RandomAccess;
 import java.util.function.UnaryOperator;
-import v7.u5;
-import v7.x5;
+import v7.v5;
+import v7.y5;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public abstract class r extends o implements List, RandomAccess, j$.util.List {
     public static final p b = new p(v.e, 0);
@@ -25,7 +25,7 @@ public abstract class r extends o implements List, RandomAccess, j$.util.List {
         if (!(list instanceof o)) {
             Object[] array = list.toArray();
             int length = array.length;
-            x5.a(length, array);
+            y5.a(length, array);
             return t(length, array);
         }
         r p5 = ((o) list).p();
@@ -156,7 +156,7 @@ public abstract class r extends o implements List, RandomAccess, j$.util.List {
     @Override // java.util.List
     /* renamed from: s */
     public r subList(int i10, int i11) {
-        u5.c(i10, i11, size());
+        v5.c(i10, i11, size());
         int i12 = i11 - i10;
         return i12 == size() ? this : i12 == 0 ? v.e : new q(this, i10, i12);
     }
@@ -174,7 +174,7 @@ public abstract class r extends o implements List, RandomAccess, j$.util.List {
     @Override // java.util.List
     /* renamed from: v, reason: merged with bridge method [inline-methods] */
     public final p listIterator(int i10) {
-        u5.b(i10, size());
+        v5.b(i10, size());
         return isEmpty() ? b : new p(this, i10);
     }
 

@@ -1,94 +1,28 @@
 package x2;
 
-import android.content.Context;
-import android.media.AudioAttributes;
-import android.media.AudioFormat;
-import android.media.AudioManager;
 import android.media.Spatializer;
-import android.os.Handler;
-import android.os.Looper;
-import e2.d0;
-import j$.util.Objects;
-import k2.c0;
+import e9.y0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
-public final class k {
-    public final Spatializer a;
-    public final boolean b;
-    public final Handler c;
-    public final j d;
+public final class k implements Spatializer.OnSpatializerStateChangedListener {
+    public final /* synthetic */ q a;
 
-    public k(Context context, p pVar, Boolean bool) {
-        AudioManager e = context == null ? null : c2.d.e(context);
-        if (e == null || (bool != null && bool.booleanValue())) {
-            this.a = null;
-            this.b = false;
-            this.c = null;
-            this.d = null;
-            return;
-        }
-        Spatializer spatializer = e.getSpatializer();
-        this.a = spatializer;
-        this.b = spatializer.getImmersiveAudioLevel() != 0;
-        j jVar = new j(pVar);
-        this.d = jVar;
-        Looper myLooper = Looper.myLooper();
-        e2.d.h(myLooper);
-        Handler handler = new Handler(myLooper);
-        this.c = handler;
-        spatializer.addOnSpatializerStateChangedListener(new c0(handler, 0), jVar);
+    public k(q qVar) {
+        this.a = qVar;
     }
 
-    public final boolean a(b2.e eVar, b2.s sVar) {
-        String str = sVar.r;
-        String str2 = sVar.r;
-        int i10 = sVar.J;
-        if (Objects.equals(str, "audio/eac3-joc")) {
-            if (i10 == 16) {
-                i10 = 12;
-            }
-        } else if (Objects.equals(str2, "audio/iamf")) {
-            if (i10 == -1) {
-                i10 = 6;
-            }
-        } else if (Objects.equals(str2, "audio/ac4") && (i10 == 18 || i10 == 21)) {
-            i10 = 24;
-        }
-        int s10 = d0.s(i10);
-        if (s10 == 0) {
-            return false;
-        }
-        AudioFormat.Builder channelMask = new AudioFormat.Builder().setEncoding(2).setChannelMask(s10);
-        int i11 = sVar.K;
-        if (i11 != -1) {
-            channelMask.setSampleRate(i11);
-        }
-        Spatializer spatializer = this.a;
-        spatializer.getClass();
-        return spatializer.canBeSpatialized((AudioAttributes) eVar.b().a, channelMask.build());
+    @Override // android.media.Spatializer.OnSpatializerStateChangedListener
+    public final void onSpatializerAvailableChanged(Spatializer spatializer, boolean z10) {
+        q qVar = this.a;
+        y0 y0Var = q.l;
+        qVar.f();
     }
 
-    public final boolean b() {
-        Spatializer spatializer = this.a;
-        spatializer.getClass();
-        return spatializer.isAvailable();
-    }
-
-    public final boolean c() {
-        Spatializer spatializer = this.a;
-        spatializer.getClass();
-        return spatializer.isEnabled();
-    }
-
-    public final void d() {
-        j jVar;
-        Handler handler;
-        Spatializer spatializer = this.a;
-        if (spatializer == null || (jVar = this.d) == null || (handler = this.c) == null) {
-            return;
-        }
-        spatializer.removeOnSpatializerStateChangedListener(jVar);
-        handler.removeCallbacksAndMessages(null);
+    @Override // android.media.Spatializer.OnSpatializerStateChangedListener
+    public final void onSpatializerEnabledChanged(Spatializer spatializer, boolean z10) {
+        q qVar = this.a;
+        y0 y0Var = q.l;
+        qVar.f();
     }
 }

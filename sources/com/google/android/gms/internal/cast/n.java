@@ -12,7 +12,7 @@ import java.util.LinkedHashSet;
 import java.util.Map;
 import java.util.Set;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class n extends p4.s {
     public static final g6.b f = new g6.b("MRDiscoveryCallback", null);
@@ -57,10 +57,10 @@ public final class n extends p4.s {
 
     public final void n() {
         n4.y yVar = this.e;
-        if (((p4.x) yVar.c) == null) {
-            yVar.c = p4.x.d((Context) yVar.b);
+        if (((p4.x) yVar.b) == null) {
+            yVar.b = p4.x.d((Context) yVar.a);
         }
-        p4.x xVar = (p4.x) yVar.c;
+        p4.x xVar = (p4.x) yVar.b;
         if (xVar != null) {
             xVar.h(this);
         }
@@ -85,10 +85,10 @@ public final class n extends p4.s {
                     }
                     f.b("Adding mediaRouter callback for control category " + c6.y.a(str), new Object[0]);
                     n4.y yVar2 = this.e;
-                    if (((p4.x) yVar2.c) == null) {
-                        yVar2.c = p4.x.d((Context) yVar2.b);
+                    if (((p4.x) yVar2.b) == null) {
+                        yVar2.b = p4.x.d((Context) yVar2.a);
                     }
-                    ((p4.x) yVar2.c).a(rVar, this, 4);
+                    ((p4.x) yVar2.b).a(rVar, this, 4);
                 }
             } catch (Throwable th2) {
                 throw th2;
@@ -150,7 +150,7 @@ public final class n extends p4.s {
                     HashMap hashMap = new HashMap();
                     synchronized (this.c) {
                         for (String str2 : this.c.keySet()) {
-                            l lVar2 = (l) this.c.get(v7.j5.a(str2));
+                            l lVar2 = (l) this.c.get(v7.k5.a(str2));
                             if (lVar2 == null) {
                                 int i10 = m0.c;
                                 r10 = v0.s;

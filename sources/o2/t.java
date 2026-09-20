@@ -18,7 +18,7 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class t implements c3.o {
     public static final Pattern i = Pattern.compile("LOCAL:([^,]+)");
@@ -42,14 +42,14 @@ public final class t implements c3.o {
     @Override // c3.o
     public final boolean a(c3.p pVar) {
         c3.l lVar = (c3.l) pVar;
-        lVar.h(this.g, 0, 6, false);
+        lVar.i(this.g, 0, 6, false);
         byte[] bArr = this.g;
         v vVar = this.c;
         vVar.H(6, bArr);
         if (i4.i.a(vVar)) {
             return true;
         }
-        lVar.h(this.g, 6, 3, false);
+        lVar.i(this.g, 6, 3, false);
         vVar.H(9, this.g);
         return i4.i.a(vVar);
     }
@@ -60,8 +60,8 @@ public final class t implements c3.o {
         rVar.q = r0.n("text/vtt");
         rVar.d = this.a;
         rVar.v = j3;
-        k0.r(rVar, Z1);
-        this.f.e1();
+        k0.s(rVar, Z1);
+        this.f.f1();
         return Z1;
     }
 

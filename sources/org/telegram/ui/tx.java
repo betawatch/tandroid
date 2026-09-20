@@ -5,7 +5,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class tx implements k70 {
     public final /* synthetic */ org.telegram.ui.ActionBar.b2 a;
@@ -53,7 +53,7 @@ public final class tx implements k70 {
                     default:
                         tx txVar = this.b;
                         uy uyVar2 = txVar.b;
-                        uyVar2.Q4(uyVar2.getMessagesController().getChat(Long.valueOf(j3)), runnable, new cu(9, txVar, n2VarArr));
+                        uyVar2.Q4(uyVar2.getMessagesController().getChat(Long.valueOf(j3)), runnable, new yt(11, txVar, n2VarArr));
                         break;
                 }
             }
@@ -90,7 +90,7 @@ public final class tx implements k70 {
                     default:
                         tx txVar = this.b;
                         uy uyVar2 = txVar.b;
-                        uyVar2.Q4(uyVar2.getMessagesController().getChat(Long.valueOf(j3)), runnable, new cu(9, txVar, n2VarArr));
+                        uyVar2.Q4(uyVar2.getMessagesController().getChat(Long.valueOf(j3)), runnable, new yt(11, txVar, n2VarArr));
                         break;
                 }
             }

@@ -5,9 +5,9 @@ import android.graphics.RectF;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ft implements r0.n, org.telegram.ui.Components.pk0 {
+public final /* synthetic */ class ft implements r0.n, org.telegram.ui.Components.ok0 {
     public final /* synthetic */ st a;
 
     public /* synthetic */ ft(st stVar) {
@@ -15,12 +15,12 @@ public final /* synthetic */ class ft implements r0.n, org.telegram.ui.Component
     }
 
     @Override // r0.n
-    public r0.m1 Q0(View view, r0.m1 m1Var) {
-        this.a.q = AndroidUtilities.getDefaultWindowInsets(m1Var, false);
-        return m1Var;
+    public r0.l1 P0(View view, r0.l1 l1Var) {
+        this.a.q = AndroidUtilities.getDefaultWindowInsets(l1Var, false);
+        return l1Var;
     }
 
-    @Override // org.telegram.ui.Components.pk0
+    @Override // org.telegram.ui.Components.ok0
     public void h(View view, zg.o0 o0Var, boolean z10, boolean z11) {
         if (o0Var == null) {
             return;
@@ -49,26 +49,26 @@ public final /* synthetic */ class ft implements r0.n, org.telegram.ui.Component
         }
     }
 
-    @Override // org.telegram.ui.Components.pk0
+    @Override // org.telegram.ui.Components.ok0
     public /* synthetic */ boolean j() {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.pk0
+    @Override // org.telegram.ui.Components.ok0
     public /* synthetic */ boolean k() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.pk0
+    @Override // org.telegram.ui.Components.ok0
     public /* synthetic */ boolean r() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.pk0
-    public /* synthetic */ void p() {
+    @Override // org.telegram.ui.Components.ok0
+    public /* synthetic */ void o() {
     }
 
-    @Override // org.telegram.ui.Components.pk0
+    @Override // org.telegram.ui.Components.ok0
     public /* synthetic */ void n(Canvas canvas, RectF rectF, float f7, float f10, float f11, int i10, boolean z10) {
     }
 }

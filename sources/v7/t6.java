@@ -1,54 +1,12 @@
 package v7;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public abstract class t6 {
-    public static String a(int i10, int i11, String str) {
-        if (i10 < 0) {
-            return u6.a("%s (%s) must not be negative", str, Integer.valueOf(i10));
+    public static boolean a(Object obj, Object obj2) {
+        if (obj != obj2) {
+            return obj != null && obj.equals(obj2);
         }
-        if (i11 >= 0) {
-            return u6.a("%s (%s) must not be greater than size (%s)", str, Integer.valueOf(i10), Integer.valueOf(i11));
-        }
-        throw new IllegalArgumentException(hg.k0.h(i11, "negative size: "));
-    }
-
-    public static void b(long j3, String str, boolean z10) {
-        if (!z10) {
-            throw new IllegalArgumentException(u6.a(str, Long.valueOf(j3)));
-        }
-    }
-
-    public static void c(int i10, int i11) {
-        String a2;
-        if (i10 < 0 || i10 >= i11) {
-            if (i10 < 0) {
-                a2 = u6.a("%s (%s) must not be negative", "index", Integer.valueOf(i10));
-            } else {
-                if (i11 < 0) {
-                    throw new IllegalArgumentException(hg.k0.h(i11, "negative size: "));
-                }
-                a2 = u6.a("%s (%s) must be less than size (%s)", "index", Integer.valueOf(i10), Integer.valueOf(i11));
-            }
-            throw new IndexOutOfBoundsException(a2);
-        }
-    }
-
-    public static void d(Object obj, String str) {
-        if (obj == null) {
-            throw new NullPointerException(str);
-        }
-    }
-
-    public static void e(int i10, int i11) {
-        if (i10 < 0 || i10 > i11) {
-            throw new IndexOutOfBoundsException(a(i10, i11, "index"));
-        }
-    }
-
-    public static void f(int i10, int i11, int i12) {
-        if (i10 < 0 || i11 < i10 || i11 > i12) {
-            throw new IndexOutOfBoundsException((i10 < 0 || i10 > i12) ? a(i10, i12, "start index") : (i11 < 0 || i11 > i12) ? a(i11, i12, "end index") : u6.a("end index (%s) must not be less than start index (%s)", Integer.valueOf(i11), Integer.valueOf(i10)));
-        }
+        return true;
     }
 }

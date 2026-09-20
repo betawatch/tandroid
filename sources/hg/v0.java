@@ -2,10 +2,10 @@ package hg;
 
 import android.os.Bundle;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.x51;
+import org.telegram.ui.Components.w51;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v0 implements org.telegram.ui.ActionBar.a2, Utilities.Callback5 {
     public final /* synthetic */ int a;
@@ -17,7 +17,7 @@ public final /* synthetic */ class v0 implements org.telegram.ui.ActionBar.a2, U
     }
 
     @Override // org.telegram.ui.ActionBar.a2
-    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+    public void k(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
         switch (this.a) {
             case 0:
                 this.b.X();
@@ -30,16 +30,16 @@ public final /* synthetic */ class v0 implements org.telegram.ui.ActionBar.a2, U
 
     @Override // org.telegram.messenger.Utilities.Callback5
     public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        x51 x51Var = (x51) obj;
+        w51 w51Var = (w51) obj;
         ((Integer) obj3).getClass();
         ((Float) obj4).getClass();
         ((Float) obj5).getClass();
         w0 w0Var = this.b;
-        if (w0Var.d.h(x51Var)) {
+        if (w0Var.d.h(w51Var)) {
             return;
         }
-        int i10 = x51Var.d;
-        if (i10 == 2 || x51Var.a == 17) {
+        int i10 = w51Var.d;
+        if (i10 == 2 || w51Var.a == 17) {
             Bundle bundle = new Bundle();
             bundle.putLong("user_id", w0Var.getUserConfig().getClientUserId());
             bundle.putInt("chatMode", 5);

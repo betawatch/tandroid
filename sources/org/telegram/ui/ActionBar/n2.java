@@ -45,20 +45,20 @@ import org.telegram.messenger.SecretChatHelper;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.ui.Components.ob;
-import org.telegram.ui.Components.wl0;
+import org.telegram.ui.Components.nb;
+import org.telegram.ui.Components.vl0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.hz;
-import org.telegram.ui.l41;
+import org.telegram.ui.m41;
 import org.telegram.ui.ol0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public abstract class n2 {
     protected k actionBar;
     protected Bundle arguments;
     private int bottomInset;
-    private ob bulletinDelegate;
+    private nb bulletinDelegate;
     protected boolean finishing;
     protected boolean fragmentBeginToShow;
     public View fragmentView;
@@ -71,9 +71,9 @@ public abstract class n2 {
     protected Dialog parentDialog;
     protected d5 parentLayout;
     private m2 previewDelegate;
-    private wl0 recyclerListViewForSimpleGlass;
+    private vl0 recyclerListViewForSimpleGlass;
     private boolean removingFromStack;
-    protected e6 resourceProvider;
+    protected f6 resourceProvider;
     public ArrayList<j2> sheetsStack;
     private li.b simpleGlass;
     public Dialog visibleDialog;
@@ -322,7 +322,7 @@ public abstract class n2 {
         } else if (!this.inPreviewMode || (m2Var = this.previewDelegate) == null) {
             finishFragment(true);
         } else {
-            ((l41) ((ol0) m2Var).b).a();
+            ((m41) ((ol0) m2Var).b).a();
         }
     }
 
@@ -387,7 +387,7 @@ public abstract class n2 {
         return this.bottomInset;
     }
 
-    public ob getBulletinDelegate() {
+    public nb getBulletinDelegate() {
         return this.bulletinDelegate;
     }
 
@@ -495,7 +495,7 @@ public abstract class n2 {
         return null;
     }
 
-    public wl0 getListViewForSimpleGlass() {
+    public vl0 getListViewForSimpleGlass() {
         return null;
     }
 
@@ -577,7 +577,7 @@ public abstract class n2 {
         return -1;
     }
 
-    public e6 getResourceProvider() {
+    public f6 getResourceProvider() {
         return this.resourceProvider;
     }
 
@@ -698,13 +698,13 @@ public abstract class n2 {
             return false;
         }
         if (!hasForceLightStatusBar() || j6.A0().q()) {
-            e6 resourceProvider = getResourceProvider();
+            f6 resourceProvider = getResourceProvider();
             int i10 = j6.s8;
             k kVar = this.actionBar;
             if (kVar != null && kVar.s()) {
                 i10 = j6.w8;
             }
-            if (i0.a.f(resourceProvider != null ? resourceProvider.g0(i10) : j6.w0(null, i10, true)) <= 0.699999988079071d) {
+            if (i0.a.f(resourceProvider != null ? resourceProvider.f0(i10) : j6.w0(null, i10, true)) <= 0.699999988079071d) {
                 return false;
             }
         }
@@ -863,12 +863,12 @@ public abstract class n2 {
         }
     }
 
-    public r0.m1 onInsetsInternal(View view, r0.m1 m1Var) {
-        i0.b f7 = m1Var.a.f(3);
+    public r0.l1 onInsetsInternal(View view, r0.l1 l1Var) {
+        i0.b f7 = l1Var.a.f(3);
         this.mSystemInsets = f7;
-        wl0 wl0Var = this.recyclerListViewForSimpleGlass;
-        if (wl0Var != null) {
-            li.b.a(wl0Var, f7.b, f7.d, k.getCurrentActionBarHeight());
+        vl0 vl0Var = this.recyclerListViewForSimpleGlass;
+        if (vl0Var != null) {
+            li.b.a(vl0Var, f7.b, f7.d, k.getCurrentActionBarHeight());
         }
         int i10 = f7.a;
         int i11 = f7.b;
@@ -876,7 +876,7 @@ public abstract class n2 {
         int i13 = f7.d;
         this.bottomInset = i13;
         onInsets(i10, i11, i12, i13);
-        return r0.m1.b;
+        return r0.l1.b;
     }
 
     public void onPause() {
@@ -986,13 +986,13 @@ public abstract class n2 {
     public View performCreateView(Context context) {
         View createView = createView(context);
         onViewCreated(createView);
-        wl0 listViewForSimpleGlass = getListViewForSimpleGlass();
+        vl0 listViewForSimpleGlass = getListViewForSimpleGlass();
         this.recyclerListViewForSimpleGlass = listViewForSimpleGlass;
         if (listViewForSimpleGlass != null && (createView instanceof FrameLayout)) {
             getBaseSimpleGlass().b((FrameLayout) createView, this.recyclerListViewForSimpleGlass, this.actionBar, this.resourceProvider);
-            wl0 wl0Var = this.recyclerListViewForSimpleGlass;
+            vl0 vl0Var = this.recyclerListViewForSimpleGlass;
             i0.b bVar = this.mSystemInsets;
-            li.b.a(wl0Var, bVar.b, bVar.d, k.getCurrentActionBarHeight());
+            li.b.a(vl0Var, bVar.b, bVar.d, k.getCurrentActionBarHeight());
         }
         return createView;
     }
@@ -1063,8 +1063,8 @@ public abstract class n2 {
         }
     }
 
-    public void setBulletinDelegate(ob obVar) {
-        this.bulletinDelegate = obVar;
+    public void setBulletinDelegate(nb nbVar) {
+        this.bulletinDelegate = nbVar;
     }
 
     public void setCurrentAccount(int i10) {
@@ -1223,8 +1223,8 @@ public abstract class n2 {
         this.removingFromStack = z10;
     }
 
-    public void setResourceProvider(e6 e6Var) {
-        this.resourceProvider = e6Var;
+    public void setResourceProvider(f6 f6Var) {
+        this.resourceProvider = f6Var;
     }
 
     public void setTitleOverlayText(String str, int i10, Runnable runnable) {

@@ -1,189 +1,98 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.CornerPathEffect;
 import android.graphics.Paint;
-import android.graphics.Path;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
-import android.graphics.RectF;
-import android.os.SystemClock;
-import android.text.style.CharacterStyle;
-import android.view.ViewConfiguration;
-import java.util.ArrayList;
+import android.graphics.drawable.Drawable;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LiteMode;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class m90 {
-    public static final ArrayList s = new ArrayList();
-    public int a;
-    public int b;
-    public Paint c;
-    public Paint d;
-    public int e;
-    public int f;
-    public final CharacterStyle i;
-    public final float j;
-    public final float k;
-    public Rect m;
-    public float n;
-    public final long q;
-    public final ArrayList g = new ArrayList();
-    public int h = 0;
-    public final Path l = new Path();
-    public long o = -1;
-    public long p = -1;
-    public final boolean r = !LiteMode.isEnabled(LiteMode.FLAGS_CHAT);
+public final class m90 extends View {
+    public final Drawable a;
+    public final Paint b;
+    public final Paint c;
+    public final d6 d;
+    public boolean e;
 
-    public m90(CharacterStyle characterStyle, org.telegram.ui.ActionBar.e6 e6Var, float f7, float f10, int i10) {
-        this.i = characterStyle;
-        d(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Ld, e6Var));
-        this.j = f7;
-        this.k = f10;
-        this.q = (long) Math.min(ViewConfiguration.getTapTimeout() * 1.8f, ViewConfiguration.getLongPressTimeout() * 0.8f);
+    public m90(Context context) {
+        super(context);
+        Paint paint = new Paint(1);
+        this.b = paint;
+        Paint paint2 = new Paint(1);
+        this.c = paint2;
+        this.d = new d6(this, 0L, 320L, qr.h);
+        w7.b6.a(this);
+        this.a = context.getResources().getDrawable(R.drawable.media_live_on).mutate();
+        Paint.Style style = Paint.Style.STROKE;
+        paint2.setStyle(style);
+        paint2.setColor(-65536);
+        paint2.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
+        paint.setStyle(style);
+        paint.setColor(-1);
     }
 
-    public final boolean a(Canvas canvas) {
-        boolean z10;
-        float f7;
-        boolean z11;
-        boolean z12;
-        boolean z13 = this.r;
-        int dp = z13 ? 0 : AndroidUtilities.dp(4.0f);
-        boolean z14 = this.a != dp;
-        if (this.c == null) {
-            Paint paint = new Paint(1);
-            this.c = paint;
-            paint.setStyle(Paint.Style.FILL_AND_STROKE);
-            this.c.setColor(this.b);
-            this.e = Color.alpha(this.b);
-        }
-        if (this.d == null) {
-            Paint paint2 = new Paint(1);
-            this.d = paint2;
-            paint2.setStyle(Paint.Style.FILL_AND_STROKE);
-            this.d.setColor(this.b);
-            this.f = Color.alpha(this.b);
-        }
-        if (z14) {
-            this.a = dp;
-            if (dp <= 0) {
-                this.c.setPathEffect(null);
-                this.d.setPathEffect(null);
-            } else {
-                this.c.setPathEffect(new CornerPathEffect(this.a));
-                this.d.setPathEffect(new CornerPathEffect(this.a));
-            }
-        }
-        Rect rect = this.m;
-        float f10 = this.k;
-        float f11 = this.j;
-        ArrayList arrayList = this.g;
-        if (rect != null || this.h <= 0) {
-            z10 = z13;
-            f7 = f11;
-            z11 = false;
-            z12 = true;
-        } else {
-            f90 f90Var = (f90) arrayList.get(0);
-            RectF rectF = AndroidUtilities.rectTmp;
-            f90Var.computeBounds(rectF, false);
-            this.m = new Rect((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
-            for (int i10 = 1; i10 < this.h; i10++) {
-                f90 f90Var2 = (f90) arrayList.get(i10);
-                RectF rectF2 = AndroidUtilities.rectTmp;
-                f90Var2.computeBounds(rectF2, false);
-                Rect rect2 = this.m;
-                rect2.left = Math.min(rect2.left, (int) rectF2.left);
-                Rect rect3 = this.m;
-                rect3.top = Math.min(rect3.top, (int) rectF2.top);
-                Rect rect4 = this.m;
-                rect4.right = Math.max(rect4.right, (int) rectF2.right);
-                Rect rect5 = this.m;
-                rect5.bottom = Math.max(rect5.bottom, (int) rectF2.bottom);
-            }
-            z10 = z13;
-            z11 = false;
-            f7 = f11;
-            z12 = true;
-            this.n = (float) Math.sqrt(Math.max(Math.max(Math.pow(this.m.top - f10, 2.0d) + Math.pow(this.m.left - f11, 2.0d), Math.pow(this.m.top - f10, 2.0d) + Math.pow(this.m.right - f11, 2.0d)), Math.max(Math.pow(this.m.bottom - f10, 2.0d) + Math.pow(this.m.left - f11, 2.0d), Math.pow(this.m.bottom - f10, 2.0d) + Math.pow(this.m.right - f11, 2.0d))));
-        }
-        if (z10) {
-            for (int i11 = 0; i11 < this.h; i11++) {
-                canvas.drawPath((Path) arrayList.get(i11), this.d);
-            }
-        } else {
-            long elapsedRealtime = SystemClock.elapsedRealtime();
-            if (this.o < 0) {
-                this.o = elapsedRealtime;
-            }
-            float interpolation = qr.f.getInterpolation(Math.min(1.0f, (elapsedRealtime - this.o) / this.q));
-            float min = 1.0f - (this.p < 0 ? 0.0f : Math.min(1.0f, Math.max(0.0f, ((elapsedRealtime - 75) - r11) / 100.0f)));
-            this.c.setAlpha((int) (Math.min(1.0f, interpolation * 5.0f) * this.e * 0.2f * min));
-            this.c.setStrokeWidth(Math.min(1.0f, 0.0f) * AndroidUtilities.dp(5.0f));
-            for (int i12 = 0; i12 < this.h; i12++) {
-                ((f90) arrayList.get(i12)).a();
-                canvas.drawPath((Path) arrayList.get(i12), this.c);
-            }
-            this.d.setAlpha((int) (this.f * 0.8f * min));
-            this.d.setStrokeWidth(Math.min(1.0f, 0.0f) * AndroidUtilities.dp(5.0f));
-            if (interpolation < 1.0f) {
-                float f12 = interpolation * this.n;
-                canvas.save();
-                Path path = this.l;
-                path.reset();
-                path.addCircle(f7, f10, f12, Path.Direction.CW);
-                canvas.clipPath(path);
-                for (int i13 = 0; i13 < this.h; i13++) {
-                    canvas.drawPath((Path) arrayList.get(i13), this.d);
-                }
-                canvas.restore();
-            } else {
-                for (int i14 = 0; i14 < this.h; i14++) {
-                    canvas.drawPath((Path) arrayList.get(i14), this.d);
-                }
-            }
-            if (interpolation < 1.0f || this.p >= 0) {
-                return z12;
-            }
-        }
-        return z11;
-    }
-
-    public final f90 b() {
-        ArrayList arrayList = s;
-        f90 f90Var = !arrayList.isEmpty() ? (f90) arrayList.remove(0) : new f90(0);
-        f90Var.c = !this.r;
-        f90Var.reset();
-        ArrayList arrayList2 = this.g;
-        arrayList2.add(f90Var);
-        this.h = arrayList2.size();
-        return f90Var;
-    }
-
-    public final void c() {
-        ArrayList arrayList = this.g;
-        if (arrayList.isEmpty()) {
+    public final void a(boolean z10, boolean z11) {
+        if (this.e == z10) {
             return;
         }
-        s.addAll(arrayList);
-        arrayList.clear();
-        this.h = 0;
+        this.e = z10;
+        if (!z11) {
+            this.d.a(z10);
+        }
+        invalidate();
     }
 
-    public final void d(int i10) {
-        this.b = i10;
-        Paint paint = this.c;
-        if (paint != null) {
-            paint.setColor(i10);
-            this.e = Color.alpha(i10);
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        Canvas canvas2;
+        float e = this.d.e(!this.e);
+        int width = getWidth();
+        Drawable drawable = this.a;
+        drawable.setBounds((width - drawable.getIntrinsicWidth()) / 2, (getHeight() - drawable.getIntrinsicHeight()) / 2, (drawable.getIntrinsicWidth() + getWidth()) / 2, (drawable.getIntrinsicHeight() + getHeight()) / 2);
+        Rect bounds = drawable.getBounds();
+        float width2 = (bounds.width() * 0.325f) + bounds.left;
+        float height = (bounds.height() * 0.152f) + bounds.top;
+        float height2 = bounds.bottom - (bounds.height() * 0.152f);
+        float width3 = bounds.right - (bounds.width() * 0.101f);
+        if (e > 0.0f) {
+            float dp = AndroidUtilities.dp(4.0f);
+            Paint paint = this.c;
+            paint.setStrokeWidth(dp);
+            canvas.saveLayerAlpha(bounds.left, bounds.top, bounds.right, bounds.bottom, 255, 31);
+            drawable.draw(canvas);
+            if (this.e) {
+                canvas.drawLine(width3 - AndroidUtilities.dp(4.0f), height2 - AndroidUtilities.dp(4.0f), AndroidUtilities.lerp(width3 - AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f) + width2, e), AndroidUtilities.lerp(height2 - AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f) + height, e), paint);
+                canvas2 = canvas;
+            } else {
+                canvas2 = canvas;
+                canvas2.drawLine(width2 + AndroidUtilities.dp(4.0f), height + AndroidUtilities.dp(4.0f), AndroidUtilities.lerp(AndroidUtilities.dp(4.0f) + width2, width3 - AndroidUtilities.dp(4.0f), e), AndroidUtilities.lerp(AndroidUtilities.dp(4.0f) + height, height2 - AndroidUtilities.dp(4.0f), e), paint);
+            }
+            canvas2.restore();
+        } else {
+            canvas2 = canvas;
+            drawable.draw(canvas2);
         }
-        Paint paint2 = this.d;
-        if (paint2 != null) {
-            paint2.setColor(i10);
-            this.f = Color.alpha(i10);
+        if (e > 0.0f) {
+            float dp2 = AndroidUtilities.dp(2.0f);
+            Paint paint2 = this.b;
+            paint2.setStrokeWidth(dp2);
+            if (this.e) {
+                canvas2.drawLine(width3, height2, AndroidUtilities.lerp(width3, width2, e), AndroidUtilities.lerp(height2, height, e), paint2);
+            } else {
+                canvas.drawLine(width2, height, AndroidUtilities.lerp(width2, width3, e), AndroidUtilities.lerp(height, height2, e), paint2);
+            }
         }
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(45.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(45.0f), TLObject.FLAG_30));
     }
 }

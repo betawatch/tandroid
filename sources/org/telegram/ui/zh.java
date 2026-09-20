@@ -8,9 +8,9 @@ import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.FlagSecureReason;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class zh implements FlagSecureReason.FlagSecureCondition, mv0, r0.n, yf.b0, org.telegram.ui.ActionBar.a2 {
+public final /* synthetic */ class zh implements FlagSecureReason.FlagSecureCondition, mv0, r0.n, yf.a0, org.telegram.ui.ActionBar.a2 {
     public final /* synthetic */ zn a;
 
     public /* synthetic */ zh(zn znVar) {
@@ -18,8 +18,8 @@ public final /* synthetic */ class zh implements FlagSecureReason.FlagSecureCond
     }
 
     @Override // r0.n
-    public r0.m1 Q0(View view, r0.m1 m1Var) {
-        i0.b defaultWindowInsets = AndroidUtilities.getDefaultWindowInsets(m1Var, false);
+    public r0.l1 P0(View view, r0.l1 l1Var) {
+        i0.b defaultWindowInsets = AndroidUtilities.getDefaultWindowInsets(l1Var, false);
         int i10 = defaultWindowInsets.a;
         int i11 = defaultWindowInsets.c;
         zn znVar = this.a;
@@ -28,7 +28,7 @@ public final /* synthetic */ class zh implements FlagSecureReason.FlagSecureCond
             znVar.Ua = i11;
             znVar.X0.requestLayout();
         }
-        znVar.v.i(m1Var);
+        znVar.v.i(l1Var);
         hh.f fVar = znVar.K3;
         if (fVar != null) {
             fVar.setPadding(i10, 0, i11, 0);
@@ -36,19 +36,19 @@ public final /* synthetic */ class zh implements FlagSecureReason.FlagSecureCond
         znVar.n7();
         znVar.r7();
         znVar.p9();
-        boolean p5 = m1Var.a.p(8);
+        boolean p5 = l1Var.a.p(8);
         if (znVar.Sa != p5) {
             znVar.Sa = p5;
             znVar.X0.S();
         }
         ci.i1 i1Var = znVar.q1;
         if (i1Var != null) {
-            r0.i0.b(i1Var, m1Var);
+            r0.i0.b(i1Var, l1Var);
         }
-        return r0.m1.b;
+        return r0.l1.b;
     }
 
-    @Override // yf.b0
+    @Override // yf.a0
     public void a(int i10) {
         zn.V0(this.a, i10);
     }
@@ -61,7 +61,7 @@ public final /* synthetic */ class zh implements FlagSecureReason.FlagSecureCond
     }
 
     @Override // org.telegram.ui.ActionBar.a2
-    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+    public void k(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
         zn znVar = this.a;
         znVar.getClass();
         try {

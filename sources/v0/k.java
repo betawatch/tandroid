@@ -9,11 +9,11 @@ import android.os.Bundle;
 import android.os.OutcomeReceiver;
 import android.util.Log;
 import k2.u;
-import w7.c9;
-import w7.v7;
+import w7.d9;
 import w7.w7;
+import w7.x7;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class k implements OutcomeReceiver {
     public final /* synthetic */ int a = 0;
@@ -33,7 +33,7 @@ public final class k implements OutcomeReceiver {
                 u uVar = (u) this.b;
                 String type = error.getType();
                 kotlin.jvm.internal.i.d(type, "getType(...)");
-                uVar.onError(c9.a(error.getMessage(), type));
+                uVar.onError(d9.a(error.getMessage(), type));
                 break;
             default:
                 GetCredentialException error2 = (GetCredentialException) th2;
@@ -42,7 +42,7 @@ public final class k implements OutcomeReceiver {
                 i iVar = this.b;
                 String type2 = error2.getType();
                 kotlin.jvm.internal.i.d(type2, "getType(...)");
-                iVar.onError(c9.b(error2.getMessage(), type2));
+                iVar.onError(d9.b(error2.getMessage(), type2));
                 break;
         }
     }
@@ -57,7 +57,7 @@ public final class k implements OutcomeReceiver {
                 u uVar = (u) this.b;
                 Bundle data = response.getData();
                 kotlin.jvm.internal.i.d(data, "getData(...)");
-                uVar.onResult(v7.a("androidx.credentials.TYPE_PUBLIC_KEY_CREDENTIAL", data));
+                uVar.onResult(w7.a("androidx.credentials.TYPE_PUBLIC_KEY_CREDENTIAL", data));
                 break;
             default:
                 GetCredentialResponse response2 = (GetCredentialResponse) obj;
@@ -70,7 +70,7 @@ public final class k implements OutcomeReceiver {
                 kotlin.jvm.internal.i.d(type, "getType(...)");
                 Bundle data2 = credential.getData();
                 kotlin.jvm.internal.i.d(data2, "getData(...)");
-                iVar.onResult(new o(w7.a(type, data2)));
+                iVar.onResult(new o(x7.a(type, data2)));
                 break;
         }
     }

@@ -1,21 +1,29 @@
 package yh;
 
+import android.content.Context;
 import android.text.TextPaint;
 import android.text.style.ClickableSpan;
 import android.view.View;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class r6 extends ClickableSpan {
-    public final /* synthetic */ w5 a;
+    public final /* synthetic */ org.telegram.ui.ActionBar.f3[] a;
+    public final /* synthetic */ Context b;
+    public final /* synthetic */ boolean c;
 
-    public r6(w5 w5Var) {
-        this.a = w5Var;
+    public r6(org.telegram.ui.ActionBar.f3[] f3VarArr, Context context, boolean z10) {
+        this.a = f3VarArr;
+        this.b = context;
+        this.c = z10;
     }
 
     @Override // android.text.style.ClickableSpan
     public final void onClick(View view) {
-        this.a.run();
+        this.a[0].dismiss();
+        nf.f.s(this.b, LocaleController.getString(this.c ? R.string.StarsTransactionTONFromFragmentLink : R.string.StarsTransactionUnknownLink));
     }
 
     @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle

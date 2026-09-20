@@ -5,10 +5,10 @@ import android.graphics.Matrix;
 import android.graphics.Paint;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.vv0;
+import org.telegram.ui.Components.uv0;
 import org.telegram.ui.fm0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class r1 {
     public e1 a;
@@ -37,13 +37,13 @@ public final class r1 {
         return (float) Math.sqrt((f18 * f18) + (f17 * f17));
     }
 
-    public final void b(Canvas canvas, vv0 vv0Var, q1 q1Var) {
-        float width = (q1Var.d / vv0Var.a) * canvas.getWidth();
-        float height = (q1Var.e / vv0Var.b) * canvas.getHeight();
+    public final void b(Canvas canvas, uv0 uv0Var, q1 q1Var) {
+        float width = (q1Var.d / uv0Var.a) * canvas.getWidth();
+        float height = (q1Var.e / uv0Var.b) * canvas.getHeight();
         float dp = AndroidUtilities.dp(5.0f);
         boolean z10 = q1Var.a;
         canvas.drawCircle(width, height, dp, z10 ? this.d : this.f);
-        canvas.drawCircle((q1Var.d / vv0Var.a) * canvas.getWidth(), (q1Var.e / vv0Var.b) * canvas.getHeight(), AndroidUtilities.dp(5.0f), z10 ? this.e : this.g);
+        canvas.drawCircle((q1Var.d / uv0Var.a) * canvas.getWidth(), (q1Var.e / uv0Var.b) * canvas.getHeight(), AndroidUtilities.dp(5.0f), z10 ? this.e : this.g);
     }
 
     public final void c(float f7, float f10, boolean z10) {
@@ -64,10 +64,10 @@ public final class r1 {
                 fArr[1] = fArr[1] - h1Var.c;
                 double d = f7 * (z10 ? -1 : 1);
                 float cos = (float) ((Math.cos(d) * f10) - (Math.sin(d) * fArr[1]));
-                float a2 = (float) org.telegram.messenger.q.a(d, fArr[1], Math.sin(d) * fArr[0]);
+                float e = (float) hg.k0.e(d, fArr[1], Math.sin(d) * fArr[0]);
                 h1 h1Var2 = this.h;
                 fArr[0] = cos + h1Var2.b;
-                fArr[1] = a2 + h1Var2.c;
+                fArr[1] = e + h1Var2.c;
             }
         }
     }

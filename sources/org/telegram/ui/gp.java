@@ -6,16 +6,16 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class gp extends org.telegram.ui.Components.vl0 {
+public final class gp extends org.telegram.ui.Components.ul0 {
     public final /* synthetic */ hp c;
 
     public gp(hp hpVar) {
         this.c = hpVar;
     }
 
-    @Override // org.telegram.ui.Components.vl0
+    @Override // org.telegram.ui.Components.ul0
     public final boolean D(s4.c1 c1Var) {
         return c1Var.f == 1;
     }
@@ -40,18 +40,18 @@ public final class gp extends org.telegram.ui.Components.vl0 {
         int i11 = c1Var.f;
         View view = c1Var.a;
         if (i11 == 0) {
-            org.telegram.ui.Cells.m4 m4Var = (org.telegram.ui.Cells.m4) view;
-            m4Var.setBackgroundColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.d6, hpVar.p2));
-            m4Var.setText(LocaleController.getString(R.string.UsernamesChannelHeader));
+            org.telegram.ui.Cells.n4 n4Var = (org.telegram.ui.Cells.n4) view;
+            n4Var.setBackgroundColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.d6, hpVar.p2));
+            n4Var.setText(LocaleController.getString(R.string.UsernamesChannelHeader));
             return;
         }
         if (i11 != 1) {
             if (i11 != 2) {
                 return;
             }
-            org.telegram.ui.Cells.e9 e9Var = (org.telegram.ui.Cells.e9) view;
-            e9Var.setText(LocaleController.getString(R.string.UsernamesChannelHelp));
-            e9Var.setBackground(org.telegram.ui.ActionBar.j6.V0(hpVar.getContext(), R.drawable.greydivider_bottom, org.telegram.ui.ActionBar.j6.b7));
+            org.telegram.ui.Cells.f9 f9Var = (org.telegram.ui.Cells.f9) view;
+            f9Var.setText(LocaleController.getString(R.string.UsernamesChannelHelp));
+            f9Var.setBackground(org.telegram.ui.ActionBar.j6.V0(hpVar.getContext(), R.drawable.greydivider_bottom, org.telegram.ui.ActionBar.j6.b7));
             return;
         }
         TLRPC.TL_username tL_username = (TLRPC.TL_username) ipVar.N.get(i10 - 1);
@@ -69,16 +69,16 @@ public final class gp extends org.telegram.ui.Components.vl0 {
     @Override // s4.h0
     public final s4.c1 x(ViewGroup viewGroup, int i10) {
         hp hpVar = this.c;
-        org.telegram.ui.ActionBar.e6 e6Var = hpVar.p2;
+        org.telegram.ui.ActionBar.f6 f6Var = hpVar.p2;
         if (i10 == 0) {
-            return new org.telegram.ui.Components.gl0(new org.telegram.ui.Cells.m4(hpVar.getContext(), e6Var));
+            return new org.telegram.ui.Components.fl0(new org.telegram.ui.Cells.n4(hpVar.getContext(), f6Var));
         }
         if (i10 == 1) {
-            return new org.telegram.ui.Components.gl0(new ha(this, hpVar.getContext(), e6Var));
+            return new org.telegram.ui.Components.fl0(new ha(this, hpVar.getContext(), f6Var));
         }
         if (i10 != 2) {
             return null;
         }
-        return new org.telegram.ui.Components.gl0(new org.telegram.ui.Cells.e9(hpVar.getContext(), 12, e6Var));
+        return new org.telegram.ui.Components.fl0(new org.telegram.ui.Cells.f9(hpVar.getContext(), 12, f6Var));
     }
 }

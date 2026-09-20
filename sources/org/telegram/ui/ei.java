@@ -3,16 +3,16 @@ package org.telegram.ui;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class ei implements org.telegram.ui.Components.n8 {
+public final class ei implements org.telegram.ui.Components.m8 {
     public final /* synthetic */ zn a;
 
     public ei(zn znVar) {
         this.a = znVar;
     }
 
-    @Override // org.telegram.ui.Components.n8
+    @Override // org.telegram.ui.Components.m8
     public final void U0(int i10, int i11) {
         zn znVar = this.a;
         znVar.getMessagesController().setDialogHistoryTTL(znVar.T5, i10);
@@ -30,7 +30,7 @@ public final class ei implements org.telegram.ui.Components.n8 {
         undoView.k(j3, i11, user, Integer.valueOf(userFull != null ? userFull.ttl_period : znVar.Z7.ttl_period), null, null);
     }
 
-    @Override // org.telegram.ui.Components.n8
+    @Override // org.telegram.ui.Components.m8
     public final void dismiss() {
         org.telegram.ui.ActionBar.n1 n1Var = this.a.Q8;
         if (n1Var != null) {
@@ -38,7 +38,7 @@ public final class ei implements org.telegram.ui.Components.n8 {
         }
     }
 
-    @Override // org.telegram.ui.Components.n8
+    @Override // org.telegram.ui.Components.m8
     public final /* synthetic */ void j1() {
     }
 }

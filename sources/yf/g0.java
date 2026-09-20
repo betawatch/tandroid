@@ -1,26 +1,66 @@
 package yf;
 
-import android.graphics.ColorMatrix;
-import android.graphics.ColorMatrixColorFilter;
-import android.graphics.RenderEffect;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
+import android.widget.EditText;
+import ci.h2;
+import org.telegram.ui.ActionBar.g5;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
-public abstract class g0 {
-    public static RenderEffect a;
+public final class g0 implements TextWatcher {
+    public final g5 a;
+    public final EditText b;
+    public String c;
+    public boolean d;
+    public boolean e;
 
-    public static RenderEffect a() {
-        ColorMatrix colorMatrix = new ColorMatrix();
-        colorMatrix.setSaturation(1.125f);
-        return RenderEffect.createColorFilterEffect(new ColorMatrixColorFilter(colorMatrix));
+    public g0(h2 h2Var, g5 g5Var) {
+        this.a = g5Var;
+        this.b = h2Var;
     }
 
-    public static RenderEffect b() {
-        if (a == null) {
-            ColorMatrix colorMatrix = new ColorMatrix();
-            colorMatrix.setSaturation(3.0f);
-            a = RenderEffect.createColorFilterEffect(new ColorMatrixColorFilter(colorMatrix));
+    public final void a() {
+        this.e = true;
+    }
+
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        String obj = editable.toString();
+        boolean isEmpty = TextUtils.isEmpty(this.c);
+        boolean isEmpty2 = TextUtils.isEmpty(obj);
+        if (isEmpty && !isEmpty2) {
+            b(true);
         }
-        return a;
+        this.c = obj;
+        this.a.q(this.b);
+        if (isEmpty || !isEmpty2 || this.e) {
+            return;
+        }
+        b(false);
+    }
+
+    public final void b(boolean z10) {
+        if (this.d == z10) {
+            return;
+        }
+        g5 g5Var = this.a;
+        if (g5Var.c()) {
+            if (z10) {
+                g5Var.n();
+            } else {
+                g5Var.m();
+            }
+            this.d = z10;
+        }
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

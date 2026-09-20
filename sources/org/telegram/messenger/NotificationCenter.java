@@ -17,7 +17,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public class NotificationCenter {
     private static final long EXPIRE_NOTIFICATIONS_TIME = 5017;
@@ -389,7 +389,7 @@ public class NotificationCenter {
     private final SparseArray<AllowedNotifications> allowedNotifications = new SparseArray<>();
     SparseArray<Runnable> alreadyPostedRunnubles = new SparseArray<>();
 
-    /* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+    /* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
     public static class AllowedNotifications {
         int[] allowedIds;
         final long time;
@@ -399,7 +399,7 @@ public class NotificationCenter {
         }
     }
 
-    /* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+    /* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
     public static class DelayedPost {
         private Object[] args;
         private int id;
@@ -410,12 +410,12 @@ public class NotificationCenter {
         }
     }
 
-    /* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+    /* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
     public interface NotificationCenterDelegate {
         void didReceivedNotification(int i10, int i11, Object... objArr);
     }
 
-    /* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+    /* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
     public interface ObserversGroup {
         ObserversGroup add(int i10);
 
@@ -424,7 +424,7 @@ public class NotificationCenter {
         void removeAllObservers();
     }
 
-    /* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+    /* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
     public static final class ObserversGroupImpl implements ObserversGroup {
         private NotificationCenterDelegate delegate;
         private ObserversGroupImpl globalGroup;
@@ -484,9 +484,9 @@ public class NotificationCenter {
                 } else if (i11 < lVar.b) {
                     notificationCenter.removeObserver(notificationCenterDelegate, lVar.a[i11]);
                 }
-                StringBuilder j3 = hg.k0.j(i11, "Index ", " must be in 0..");
-                j3.append(lVar.b - 1);
-                throw new IndexOutOfBoundsException(j3.toString());
+                StringBuilder k10 = hg.k0.k(i11, "Index ", " must be in 0..");
+                k10.append(lVar.b - 1);
+                throw new IndexOutOfBoundsException(k10.toString());
             }
             this.ids.b = 0;
             this.notificationCenter = null;
@@ -502,12 +502,12 @@ public class NotificationCenter {
         }
     }
 
-    /* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+    /* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
     public interface PostponeNotificationCallback {
         boolean needPostpone(int i10, int i11, Object[] objArr);
     }
 
-    /* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+    /* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
     public static final class WeakObserversGroupImpl implements ObserversGroup, NotificationCenterDelegate {
         private final ObserversGroupImpl observersGroup;
         private final WeakReference<NotificationCenterDelegate> reference;
@@ -978,18 +978,18 @@ public class NotificationCenter {
             if (intValue2 == -1) {
                 Log.i("ObserverDiff", "key=" + keyAt + " REMOVED (was " + intValue + ")");
             } else if (intValue != intValue2) {
-                StringBuilder k10 = hg.k0.k("key=", keyAt, " CHANGED: ", intValue, " -> ");
-                k10.append(intValue2);
-                Log.i("ObserverDiff", k10.toString());
+                StringBuilder l4 = hg.k0.l("key=", keyAt, " CHANGED: ", intValue, " -> ");
+                l4.append(intValue2);
+                Log.i("ObserverDiff", l4.toString());
             }
         }
         for (int i11 = 0; i11 < sparseArray2.size(); i11++) {
             int keyAt2 = sparseArray2.keyAt(i11);
             if (sparseArray.get(keyAt2, -1).intValue() == -1) {
-                StringBuilder j3 = hg.k0.j(keyAt2, "key=", " ADDED (size=");
-                j3.append(sparseArray2.valueAt(i11));
-                j3.append(")");
-                Log.i("ObserverDiff", j3.toString());
+                StringBuilder k10 = hg.k0.k(keyAt2, "key=", " ADDED (size=");
+                k10.append(sparseArray2.valueAt(i11));
+                k10.append(")");
+                Log.i("ObserverDiff", k10.toString());
             }
         }
     }
@@ -1426,7 +1426,7 @@ public class NotificationCenter {
         }
     }
 
-    /* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+    /* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
     public class UniqArrayList<T> extends ArrayList<T> {
         HashSet<T> set;
 

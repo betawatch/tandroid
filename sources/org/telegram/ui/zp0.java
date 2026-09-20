@@ -15,10 +15,10 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class zp0 extends View {
-    public final org.telegram.ui.ActionBar.e6 a;
+    public final org.telegram.ui.ActionBar.f6 a;
     public final Paint b;
     public final int c;
     public final int d;
@@ -31,7 +31,7 @@ public final class zp0 extends View {
     public Utilities.Callback v;
     public yp0 w;
 
-    public zp0(int i10, int i11, Context context, org.telegram.ui.ActionBar.e6 e6Var) {
+    public zp0(int i10, int i11, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
         super(context);
         Paint paint = new Paint(1);
         this.b = paint;
@@ -42,7 +42,7 @@ public final class zp0 extends View {
         this.s = 0;
         this.c = i10;
         this.d = i11;
-        this.a = e6Var;
+        this.a = f6Var;
     }
 
     public final void a(int i10, boolean z10) {
@@ -82,7 +82,7 @@ public final class zp0 extends View {
                 invalidate();
                 return;
             }
-            org.telegram.ui.ActionBar.e6 e6Var = this.a;
+            org.telegram.ui.ActionBar.f6 f6Var = this.a;
             int[] iArr = this.h;
             if (i11 == 2) {
                 yp0 yp0Var = yp0VarArr[i12];
@@ -95,7 +95,7 @@ public final class zp0 extends View {
                     int[] iArr2 = org.telegram.ui.ActionBar.j6.r8;
                     i10 = iArr2[i13 % iArr2.length];
                 }
-                int v02 = org.telegram.ui.ActionBar.j6.v0(i10, e6Var);
+                int v02 = org.telegram.ui.ActionBar.j6.v0(i10, f6Var);
                 yp0Var.g = false;
                 yp0Var.f = false;
                 yp0Var.a.setColor(v02);
@@ -103,7 +103,7 @@ public final class zp0 extends View {
                 yp0 yp0Var2 = yp0VarArr[i12];
                 int i14 = iArr[i12];
                 yp0Var2.o = i14;
-                int v03 = org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.r8[i14], e6Var);
+                int v03 = org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.r8[i14], f6Var);
                 yp0Var2.g = false;
                 yp0Var2.f = false;
                 yp0Var2.a.setColor(v03);
@@ -171,7 +171,7 @@ public final class zp0 extends View {
                             yp0Var.k = drawable;
                             drawable.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
                         }
-                        yp0Var.k.setBounds((int) org.telegram.messenger.wh.b(yp0Var.k.getIntrinsicWidth(), 2.0f, 1.2f, rectF.centerX()), (int) org.telegram.messenger.wh.b(yp0Var.k.getIntrinsicHeight(), 2.0f, 1.2f, rectF.centerY()), (int) a4.a.e(yp0Var.k.getIntrinsicWidth(), 2.0f, 1.2f, rectF.centerX()), (int) a4.a.e(yp0Var.k.getIntrinsicHeight(), 2.0f, 1.2f, rectF.centerY()));
+                        yp0Var.k.setBounds((int) org.telegram.messenger.rk.b(yp0Var.k.getIntrinsicWidth(), 2.0f, 1.2f, rectF.centerX()), (int) org.telegram.messenger.rk.b(yp0Var.k.getIntrinsicHeight(), 2.0f, 1.2f, rectF.centerY()), (int) a4.a.e(yp0Var.k.getIntrinsicWidth(), 2.0f, 1.2f, rectF.centerX()), (int) a4.a.e(yp0Var.k.getIntrinsicHeight(), 2.0f, 1.2f, rectF.centerY()));
                         yp0Var.k.draw(canvas);
                     } else {
                         if (yp0Var.i == null) {

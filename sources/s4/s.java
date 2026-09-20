@@ -14,7 +14,7 @@ import java.util.WeakHashMap;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.fv;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public class s extends c0 {
     public boolean I;
@@ -190,7 +190,7 @@ public class s extends c0 {
                             } else {
                                 if (view4 == null) {
                                     i14 = i19;
-                                    if (!(this.c.H(q6) && this.d.H(q6))) {
+                                    if (!(this.c.J(q6) && this.d.J(q6))) {
                                         if (min <= i21) {
                                             if (min == i21) {
                                             }
@@ -244,11 +244,11 @@ public class s extends c0 {
     }
 
     @Override // s4.o0
-    public void U(of.e eVar, z0 z0Var, View view, s0.c cVar) {
-        AccessibilityNodeInfo accessibilityNodeInfo = cVar.a;
+    public void U(of.e eVar, z0 z0Var, View view, s0.d dVar) {
+        AccessibilityNodeInfo accessibilityNodeInfo = dVar.a;
         ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
         if (!(layoutParams instanceof r)) {
-            T(view, cVar);
+            T(view, dVar);
             return;
         }
         r rVar = (r) layoutParams;
@@ -329,7 +329,7 @@ public class s extends c0 {
             int i22 = a0Var.d;
             int v12 = v1(i22, eVar, z0Var);
             if (v12 > this.J) {
-                throw new IllegalArgumentException(a4.a.n(this.J, " spans.", hg.k0.k("Item at position ", i22, " requires ", v12, " spans but GridLayoutManager has only ")));
+                throw new IllegalArgumentException(a4.a.n(this.J, " spans.", hg.k0.l("Item at position ", i22, " requires ", v12, " spans but GridLayoutManager has only ")));
             }
             i20 -= v12;
             if (i20 < 0 || (c10 = a0Var.c(eVar)) == null) {

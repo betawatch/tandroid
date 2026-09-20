@@ -12,7 +12,7 @@ import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.messenger.camera.CameraController;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class ul extends cm {
     public final /* synthetic */ boolean b;
@@ -39,10 +39,10 @@ public final class ul extends cm {
         int childCount = tlVar.getChildCount();
         for (int i10 = 0; i10 < childCount; i10++) {
             View childAt = tlVar.getChildAt(i10);
-            if (childAt instanceof org.telegram.ui.Cells.t5) {
-                org.telegram.ui.Cells.t5 t5Var = (org.telegram.ui.Cells.t5) childAt;
-                t5Var.a.getImageReceiver().setVisible(true, true);
-                t5Var.g(true);
+            if (childAt instanceof org.telegram.ui.Cells.u5) {
+                org.telegram.ui.Cells.u5 u5Var = (org.telegram.ui.Cells.u5) childAt;
+                u5Var.a.getImageReceiver().setVisible(true, true);
+                u5Var.g(true);
             }
         }
     }
@@ -92,7 +92,7 @@ public final class ul extends cm {
         chatAttachAlertPhotoLayout.t0 = false;
         if (ChatAttachAlertPhotoLayout.q1) {
             vi viVar = chatAttachAlertPhotoLayout.b;
-            viVar.Z1.B1(0, true, true, 0, 0, 0L, viVar.s1(), false, 0L);
+            viVar.Z1.C1(0, true, true, 0, 0, 0L, viVar.s1(), false, 0L);
             return;
         }
         if (!chatAttachAlertPhotoLayout.b0) {
@@ -128,7 +128,7 @@ public final class ul extends cm {
         PhotoViewer.t1();
         PhotoViewer.t1().O = false;
         PhotoViewer.t1().u2 = false;
-        e5.a0(viVar.J1, viVar.j1() + ChatAttachAlertPhotoLayout.s1.size(), viVar.n1(), new pl(this, z11, z10, i11));
+        d5.a0(viVar.J1, viVar.j1() + ChatAttachAlertPhotoLayout.s1.size(), viVar.n1(), new pl(this, z11, z10, i11));
     }
 
     @Override // org.telegram.ui.tu0, org.telegram.ui.bv0

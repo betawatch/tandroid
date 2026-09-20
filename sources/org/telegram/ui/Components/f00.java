@@ -3,9 +3,9 @@ package org.telegram.ui.Components;
 import android.content.Context;
 import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class f00 extends vl0 {
+public final class f00 extends ul0 {
     public final Context c;
     public final /* synthetic */ k00 d;
 
@@ -14,7 +14,7 @@ public final class f00 extends vl0 {
         this.c = context;
     }
 
-    @Override // org.telegram.ui.Components.vl0
+    @Override // org.telegram.ui.Components.ul0
     public final boolean D(s4.c1 c1Var) {
         return true;
     }
@@ -46,15 +46,15 @@ public final class f00 extends vl0 {
         boolean z10 = i00Var.n;
         g00 g00Var2 = i00Var.b;
         if (z10 != (g00Var2 != null && g00Var2.g)) {
-            z5.release(i00Var, i00Var.r);
-            z5.release(i00Var, i00Var.O);
-            z5.release(i00Var, i00Var.Q);
-            z5.release(i00Var, i00Var.S);
+            y5.release(i00Var, i00Var.r);
+            y5.release(i00Var, i00Var.O);
+            y5.release(i00Var, i00Var.Q);
+            y5.release(i00Var, i00Var.S);
             if (i00Var.l0) {
-                i00Var.r = z5.update(i00Var.b.g ? 26 : 0, i00Var, i00Var.r, i00Var.s);
-                i00Var.O = z5.update(i00Var.b.g ? 26 : 0, i00Var, i00Var.O, i00Var.P);
-                i00Var.Q = z5.update(i00Var.b.g ? 26 : 0, i00Var, i00Var.Q, i00Var.R);
-                i00Var.S = z5.update(i00Var.b.g ? 26 : 0, i00Var, i00Var.S, i00Var.T);
+                i00Var.r = y5.update(i00Var.b.g ? 26 : 0, i00Var, i00Var.r, i00Var.s);
+                i00Var.O = y5.update(i00Var.b.g ? 26 : 0, i00Var, i00Var.O, i00Var.P);
+                i00Var.Q = y5.update(i00Var.b.g ? 26 : 0, i00Var, i00Var.Q, i00Var.R);
+                i00Var.S = y5.update(i00Var.b.g ? 26 : 0, i00Var, i00Var.S, i00Var.T);
             }
             i00Var.n = i00Var.b.g;
         }
@@ -65,6 +65,6 @@ public final class f00 extends vl0 {
 
     @Override // s4.h0
     public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        return new gl0(new i00(this.d, this.c));
+        return new fl0(new i00(this.d, this.c));
     }
 }

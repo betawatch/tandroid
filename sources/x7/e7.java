@@ -1,30 +1,31 @@
 package x7;
 
-import java.util.Arrays;
-
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
-public final class e7 {
-    public final d7 a;
-    public final Integer b;
+public enum e7 implements a0 {
+    b(0),
+    c(1),
+    d(2),
+    e(3),
+    f(7),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF9(8),
+    h(4),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF79(5),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF88(6),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF101(9);
 
-    public /* synthetic */ e7(o0.a aVar) {
-        this.a = (d7) aVar.b;
-        this.b = (Integer) aVar.c;
+    public final int a;
+
+    e7(int i10) {
+        this.a = i10;
     }
 
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
-        }
-        if (!(obj instanceof e7)) {
-            return false;
-        }
-        e7 e7Var = (e7) obj;
-        return n6.l.l(this.a, e7Var.a) && n6.l.l(this.b, e7Var.b) && n6.l.l(null, null) && n6.l.l(null, null);
-    }
-
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{this.a, this.b, null, null});
+    @Override // x7.a0
+    public final int zza() {
+        return this.a;
     }
 }

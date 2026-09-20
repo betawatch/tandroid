@@ -4,7 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class gi extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -35,14 +35,14 @@ public final class gi extends AnimatorListenerAdapter {
                 o1.k kVar = new o1.k(viVar.z0, o1.h.n, 0.0f);
                 kVar.u.a(0.75f);
                 kVar.u.b(500.0f);
-                kVar.b(new k7(this, 3));
+                kVar.b(new j7(this, 3));
                 kVar.a(new ei.m4(3, this, (gh) this.c));
                 viVar.t1 = kVar;
                 kVar.f();
                 break;
             case 1:
                 a5.a aVar = (a5.a) this.d;
-                ((wl0) aVar.d).scrollBy(0, this.b - ((int[]) this.c)[0]);
+                ((vl0) aVar.d).scrollBy(0, this.b - ((int[]) this.c)[0]);
                 aVar.c = null;
                 break;
             default:

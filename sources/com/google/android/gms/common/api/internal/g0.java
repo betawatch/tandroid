@@ -20,7 +20,7 @@ import java.util.concurrent.locks.Lock;
 import m.p3;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class g0 implements k0 {
     public n6.h E;
@@ -75,11 +75,11 @@ public final class g0 implements k0 {
 
     @Override // com.google.android.gms.common.api.internal.k0
     public final void a(Bundle bundle) {
-        if (h(1)) {
+        if (i(1)) {
             if (bundle != null) {
                 this.r.putAll(bundle);
             }
-            if (i()) {
+            if (j()) {
                 d();
             }
         }
@@ -129,7 +129,7 @@ public final class g0 implements k0 {
         try {
             m0Var.o.h();
             m0Var.m = new a0(m0Var);
-            m0Var.m.y();
+            m0Var.m.z();
             m0Var.b.signalAll();
             m0Var.a.unlock();
             n0.a.execute(new q4(this, 13));
@@ -162,7 +162,7 @@ public final class g0 implements k0 {
                 n6.l.h(cVar);
                 cVar.disconnect();
             }
-            this.a.p.r(this.r.isEmpty() ? null : this.r);
+            this.a.p.o(this.r.isEmpty() ? null : this.r);
         } catch (Throwable th2) {
             m0Var.a.unlock();
             throw th2;
@@ -179,7 +179,7 @@ public final class g0 implements k0 {
         c(!aVar.b());
         m0 m0Var = this.a;
         m0Var.h();
-        m0Var.p.m(aVar);
+        m0Var.p.i(aVar);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:6:0x0017, code lost:
@@ -200,7 +200,7 @@ public final class g0 implements k0 {
         this.a.i.put(eVar.b, aVar);
     }
 
-    public final void g() {
+    public final void h() {
         if (this.n != 0) {
             return;
         }
@@ -214,7 +214,7 @@ public final class g0 implements k0 {
             for (com.google.android.gms.common.api.d dVar : map2.keySet()) {
                 if (!m0Var.i.containsKey(dVar)) {
                     arrayList.add((com.google.android.gms.common.api.c) map2.get(dVar));
-                } else if (i()) {
+                } else if (j()) {
                     d();
                 }
             }
@@ -225,7 +225,7 @@ public final class g0 implements k0 {
         }
     }
 
-    public final boolean h(int i10) {
+    public final boolean i(int i10) {
         if (this.h == i10) {
             return true;
         }
@@ -251,7 +251,7 @@ public final class g0 implements k0 {
         return false;
     }
 
-    public final boolean i() {
+    public final boolean j() {
         m0 m0Var = this.a;
         int i10 = this.n - 1;
         this.n = i10;
@@ -286,22 +286,22 @@ public final class g0 implements k0 {
     }
 
     @Override // com.google.android.gms.common.api.internal.k0
-    public final void v(k6.a aVar, com.google.android.gms.common.api.e eVar, boolean z10) {
-        if (h(1)) {
+    public final void r(k6.a aVar, com.google.android.gms.common.api.e eVar, boolean z10) {
+        if (i(1)) {
             f(aVar, eVar, z10);
-            if (i()) {
+            if (j()) {
                 d();
             }
         }
     }
 
     @Override // com.google.android.gms.common.api.internal.k0
-    public final void x(int i10) {
+    public final void u(int i10) {
         e(new k6.a(8, null));
     }
 
     @Override // com.google.android.gms.common.api.internal.k0
-    public final void y() {
+    public final void z() {
         m0 m0Var = this.a;
         HashMap hashMap = m0Var.i;
         j0 j0Var = m0Var.o;
@@ -344,6 +344,6 @@ public final class g0 implements k0 {
     }
 
     @Override // com.google.android.gms.common.api.internal.k0
-    public final void j() {
+    public final void g() {
     }
 }

@@ -21,7 +21,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class vr0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -89,7 +89,7 @@ public final /* synthetic */ class vr0 implements View.OnClickListener {
                     if (messageObject2 != null && messageObject2.isSponsored() && photoViewer.o0.getAlpha() > 0.5f) {
                         final int i15 = photoViewer.T4.currentAccount;
                         final ai.d dVar = new ai.d();
-                        org.telegram.ui.Components.w70 G = org.telegram.ui.Components.w70.G(photoViewer.e0, dVar, photoViewer.o0, true);
+                        org.telegram.ui.Components.v70 G = org.telegram.ui.Components.v70.G(photoViewer.e0, dVar, photoViewer.o0, true);
                         G.a0(0.0f, -AndroidUtilities.dp(46.0f));
                         G.V(5);
                         MessageObject messageObject3 = photoViewer.T4;
@@ -146,7 +146,7 @@ public final /* synthetic */ class vr0 implements View.OnClickListener {
                                 }, false);
                             }
                             if (photoViewer.T4.sponsoredCanReport) {
-                                G.c(R.drawable.msg_info, LocaleController.getString(R.string.AboutRevenueSharingAds), new ak0(14, photoViewer, dVar), false);
+                                G.c(R.drawable.msg_info, LocaleController.getString(R.string.AboutRevenueSharingAds), new fj0(16, photoViewer, dVar), false);
                                 if ((photoViewer.m4 instanceof zn) && !MessagesController.getInstance(i15).premiumFeaturesBlocked()) {
                                     G.k();
                                     final int i16 = 1;
@@ -202,12 +202,12 @@ public final /* synthetic */ class vr0 implements View.OnClickListener {
                                 break;
                             }
                         }
-                        org.telegram.ui.Components.w70 J = G.J();
+                        org.telegram.ui.Components.v70 J = G.J();
                         org.telegram.ui.ActionBar.f1 f1Var = new org.telegram.ui.ActionBar.f1(0, photoViewer.E, dVar, true, false);
                         f1Var.setItemHeight(44);
                         f1Var.g(LocaleController.getString(R.string.Back), R.drawable.msg_arrow_back, null);
                         f1Var.getTextView().setPadding(LocaleController.isRTL ? 0 : AndroidUtilities.dp(40.0f), 0, LocaleController.isRTL ? AndroidUtilities.dp(40.0f) : 0, 0);
-                        f1Var.setOnClickListener(new gh(G, 1));
+                        f1Var.setOnClickListener(new hh(G, 1));
                         J.r(f1Var, w7.y5.n(-1, -2));
                         J.r(new org.telegram.ui.ActionBar.k1(photoViewer.E, dVar), w7.y5.n(-1, 8));
                         ArrayList arrayList = new ArrayList();
@@ -216,7 +216,7 @@ public final /* synthetic */ class vr0 implements View.OnClickListener {
                             f7 = 300.0f;
                             if (!TextUtils.equals(AndroidUtilities.getHostAuthority(str2), MessagesController.getInstance(photoViewer.T).linkPrefix)) {
                                 TextView textView = new TextView(photoViewer.E);
-                                textView.setTextColor(dVar.G0(org.telegram.ui.ActionBar.j6.gc));
+                                textView.setTextColor(dVar.F0(org.telegram.ui.ActionBar.j6.gc));
                                 textView.setTextSize(1, 14.0f);
                                 f10 = 10.0f;
                                 textView.setPadding(AndroidUtilities.dp(18.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(18.0f), AndroidUtilities.dp(10.0f));
@@ -229,7 +229,7 @@ public final /* synthetic */ class vr0 implements View.OnClickListener {
                                 arrayList.add(textView);
                                 if (photoViewer.T4.sponsoredInfo != null) {
                                     TextView textView2 = new TextView(photoViewer.E);
-                                    textView2.setTextColor(dVar.G0(org.telegram.ui.ActionBar.j6.E8));
+                                    textView2.setTextColor(dVar.F0(org.telegram.ui.ActionBar.j6.E8));
                                     textView2.setTextSize(1, 14.0f);
                                     textView2.setPadding(AndroidUtilities.dp(18.0f), AndroidUtilities.dp(f10), AndroidUtilities.dp(18.0f), AndroidUtilities.dp(f10));
                                     textView2.setMaxWidth(AndroidUtilities.dp(f7));
@@ -242,14 +242,14 @@ public final /* synthetic */ class vr0 implements View.OnClickListener {
                                                 case 0:
                                                     PhotoViewer photoViewer2 = photoViewer;
                                                     if (AndroidUtilities.addToClipboard(photoViewer2.T4.sponsoredInfo)) {
-                                                        org.telegram.messenger.wh.n(R.string.TextCopied, new org.telegram.ui.Components.xc(org.telegram.ui.Components.lb.a(photoViewer2.E), dVar));
+                                                        org.telegram.messenger.rk.o(R.string.TextCopied, new org.telegram.ui.Components.xc(org.telegram.ui.Components.kb.a(photoViewer2.E), dVar));
                                                         break;
                                                     }
                                                     break;
                                                 default:
                                                     PhotoViewer photoViewer3 = photoViewer;
                                                     if (AndroidUtilities.addToClipboard(photoViewer3.T4.sponsoredAdditionalInfo)) {
-                                                        org.telegram.messenger.wh.n(R.string.TextCopied, new org.telegram.ui.Components.xc(org.telegram.ui.Components.lb.a(photoViewer3.E), dVar));
+                                                        org.telegram.messenger.rk.o(R.string.TextCopied, new org.telegram.ui.Components.xc(org.telegram.ui.Components.kb.a(photoViewer3.E), dVar));
                                                         break;
                                                     }
                                                     break;
@@ -260,7 +260,7 @@ public final /* synthetic */ class vr0 implements View.OnClickListener {
                                 }
                                 if (photoViewer.T4.sponsoredAdditionalInfo != null) {
                                     TextView textView3 = new TextView(photoViewer.E);
-                                    textView3.setTextColor(dVar.G0(org.telegram.ui.ActionBar.j6.E8));
+                                    textView3.setTextColor(dVar.F0(org.telegram.ui.ActionBar.j6.E8));
                                     textView3.setTextSize(1, 14.0f);
                                     textView3.setPadding(AndroidUtilities.dp(18.0f), AndroidUtilities.dp(f10), AndroidUtilities.dp(18.0f), AndroidUtilities.dp(f10));
                                     textView3.setMaxWidth(AndroidUtilities.dp(f7));
@@ -274,14 +274,14 @@ public final /* synthetic */ class vr0 implements View.OnClickListener {
                                                 case 0:
                                                     PhotoViewer photoViewer2 = photoViewer;
                                                     if (AndroidUtilities.addToClipboard(photoViewer2.T4.sponsoredInfo)) {
-                                                        org.telegram.messenger.wh.n(R.string.TextCopied, new org.telegram.ui.Components.xc(org.telegram.ui.Components.lb.a(photoViewer2.E), dVar));
+                                                        org.telegram.messenger.rk.o(R.string.TextCopied, new org.telegram.ui.Components.xc(org.telegram.ui.Components.kb.a(photoViewer2.E), dVar));
                                                         break;
                                                     }
                                                     break;
                                                 default:
                                                     PhotoViewer photoViewer3 = photoViewer;
                                                     if (AndroidUtilities.addToClipboard(photoViewer3.T4.sponsoredAdditionalInfo)) {
-                                                        org.telegram.messenger.wh.n(R.string.TextCopied, new org.telegram.ui.Components.xc(org.telegram.ui.Components.lb.a(photoViewer3.E), dVar));
+                                                        org.telegram.messenger.rk.o(R.string.TextCopied, new org.telegram.ui.Components.xc(org.telegram.ui.Components.kb.a(photoViewer3.E), dVar));
                                                         break;
                                                     }
                                                     break;
@@ -294,7 +294,7 @@ public final /* synthetic */ class vr0 implements View.OnClickListener {
                                     View view2 = (View) arrayList.get(i10);
                                     if (i10 > 0) {
                                         FrameLayout frameLayout = new FrameLayout(photoViewer.E);
-                                        frameLayout.setBackgroundColor(dVar.G0(org.telegram.ui.ActionBar.j6.d7));
+                                        frameLayout.setBackgroundColor(dVar.F0(org.telegram.ui.ActionBar.j6.d7));
                                         i11 = -1;
                                         LinearLayout.LayoutParams n10 = w7.y5.n(-1, 1);
                                         n10.height = 1;
@@ -386,18 +386,18 @@ public final /* synthetic */ class vr0 implements View.OnClickListener {
                     if (messageObject5 != null && (message = messageObject5.messageOwner) != null && message.media != null && messageObject5.hasVideoQualities()) {
                         int i18 = messageObject5.currentAccount;
                         TLRPC.MessageMedia messageMedia = messageObject5.messageOwner.media;
-                        ArrayList s10 = org.telegram.ui.Components.u71.s(i18, messageMedia.document, messageMedia.alt_documents, 0, true);
+                        ArrayList s10 = org.telegram.ui.Components.t71.s(i18, messageMedia.document, messageMedia.alt_documents, 0, true);
                         linearLayout.removeAllViews();
                         int i19 = 0;
                         while (i19 < s10.size()) {
-                            org.telegram.ui.Components.q71 q71Var = (org.telegram.ui.Components.q71) s10.get(i19);
-                            org.telegram.ui.Components.s71 a2 = q71Var.a();
+                            org.telegram.ui.Components.p71 p71Var = (org.telegram.ui.Components.p71) s10.get(i19);
+                            org.telegram.ui.Components.r71 a2 = p71Var.a();
                             StringBuilder sb2 = new StringBuilder();
                             int i20 = R.string.QualitySaveIn;
                             Object[] objArr = new Object[i14];
-                            objArr[0] = Integer.valueOf(q71Var.b());
+                            objArr[0] = Integer.valueOf(p71Var.b());
                             sb2.append(LocaleController.formatString(i20, objArr));
-                            sb2.append(q71Var.a ? " (" + LocaleController.getString(R.string.QualitySource) + ")" : "");
+                            sb2.append(p71Var.a ? " (" + LocaleController.getString(R.string.QualitySource) + ")" : "");
                             String sb3 = sb2.toString();
                             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
                             if (a2.b()) {
@@ -417,7 +417,7 @@ public final /* synthetic */ class vr0 implements View.OnClickListener {
                             c10.setSubtext(spannableStringBuilder);
                             c10.c(-328966, -328966);
                             c10.b.setPadding(0, 0, 0, 0);
-                            c10.setOnClickListener(new z(wrVar, messageObject5, q71Var, 9));
+                            c10.setOnClickListener(new z(wrVar, messageObject5, p71Var, 9));
                             c10.setSelectorColor(268435455);
                             i19++;
                             f11 = 0.0f;
@@ -427,8 +427,8 @@ public final /* synthetic */ class vr0 implements View.OnClickListener {
                         break;
                     }
                 }
-                org.telegram.ui.Components.y7 y7Var = photoViewer.F;
-                if (y7Var != null && y7Var.getActionBarMenuOnItemClick() != null) {
+                org.telegram.ui.Components.x7 x7Var = photoViewer.F;
+                if (x7Var != null && x7Var.getActionBarMenuOnItemClick() != null) {
                     photoViewer.F.getActionBarMenuOnItemClick().b(2);
                     photoViewer.o0.M(null, null);
                     break;

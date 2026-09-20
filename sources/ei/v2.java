@@ -3,17 +3,17 @@ package ei;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.bl0;
+import org.telegram.ui.Components.al0;
+import org.telegram.ui.Components.c8;
 import org.telegram.ui.Components.cy;
-import org.telegram.ui.Components.d8;
-import org.telegram.ui.Components.ft0;
-import org.telegram.ui.Components.o6;
+import org.telegram.ui.Components.et0;
+import org.telegram.ui.Components.n6;
 import org.telegram.ui.Components.qp;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.th0;
+import org.telegram.ui.Components.sh0;
 import org.telegram.ui.zq;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class v2 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -60,17 +60,17 @@ public final class v2 extends AnimatorListenerAdapter {
                 u4Var.invalidate();
                 break;
             case 3:
-                org.telegram.ui.Cells.e4 e4Var = (org.telegram.ui.Cells.e4) this.c;
-                if (!e4Var.c()) {
-                    e4Var.b(this.b);
+                org.telegram.ui.Cells.f4 f4Var = (org.telegram.ui.Cells.f4) this.c;
+                if (!f4Var.c()) {
+                    f4Var.b(this.b);
                 }
-                e4Var.d0 = null;
+                f4Var.d0 = null;
                 break;
             case 4:
-                ((o6) this.c).r(this.b);
+                ((n6) this.c).r(this.b);
                 break;
             case 5:
-                ((d8) this.c).a[this.b].setVisibility(8);
+                ((c8) this.c).a[this.b].setVisibility(8);
                 break;
             case 6:
                 ((qp) this.c).a[this.b].animate().scaleX(1.0f).scaleY(1.0f).setInterpolator(qr.g).setStartDelay(0L).setDuration(100L).start();
@@ -84,21 +84,21 @@ public final class v2 extends AnimatorListenerAdapter {
                 cyVar.f.setVisibility(i10 == 3 ? 0 : 8);
                 break;
             case 8:
-                th0 th0Var = (th0) this.c;
-                th0Var.H = null;
-                th0Var.P.d1.delete(this.b);
+                sh0 sh0Var = (sh0) this.c;
+                sh0Var.H = null;
+                sh0Var.P.d1.delete(this.b);
                 break;
             case 9:
                 zq zqVar = (zq) this.c;
-                ((bl0) zqVar.d).b.remove(this.b);
-                bl0 bl0Var = (bl0) zqVar.d;
-                bl0Var.d = true;
-                bl0Var.a.invalidate();
+                ((al0) zqVar.d).b.remove(this.b);
+                al0 al0Var = (al0) zqVar.d;
+                al0Var.d = true;
+                al0Var.a.invalidate();
                 break;
             case 10:
-                ft0 ft0Var = (ft0) this.c;
-                ft0Var.e.O1.remove(this.b);
-                ft0Var.a.invalidate();
+                et0 et0Var = (et0) this.c;
+                et0Var.e.O1.remove(this.b);
+                et0Var.a.invalidate();
                 break;
             default:
                 org.telegram.ui.Components.voip.d1 d1Var = (org.telegram.ui.Components.voip.d1) this.c;

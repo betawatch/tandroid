@@ -21,7 +21,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public abstract class f81 extends View {
     public static final Object f0 = new Object();
@@ -49,7 +49,7 @@ public abstract class f81 extends View {
     public int b;
     public final Paint b0;
     public int c;
-    public final e6 c0;
+    public final d6 c0;
     public float d;
     public final Path d0;
     public float e;
@@ -90,7 +90,7 @@ public abstract class f81 extends View {
         this.a0 = paint5;
         Paint paint6 = new Paint(1);
         this.b0 = paint6;
-        this.c0 = new e6(0.0f, this, 0L, 200L, qr.j);
+        this.c0 = new d6(0.0f, this, 0L, 200L, qr.j);
         this.d0 = new Path();
         paint.setColor(-1);
         paint2.setColor(-256);
@@ -530,9 +530,9 @@ public abstract class f81 extends View {
                     if (e81Var10 != null) {
                         com.google.android.gms.common.api.internal.v vVar3 = (com.google.android.gms.common.api.internal.v) e81Var10;
                         PhotoViewer photoViewer3 = (PhotoViewer) vVar3.d;
-                        u71 u71Var = photoViewer3.F2;
-                        if (u71Var != null) {
-                            if (u71Var.y()) {
+                        t71 t71Var = photoViewer3.F2;
+                        if (t71Var != null) {
+                            if (t71Var.y()) {
                                 photoViewer3.H2 = false;
                                 photoViewer3.F2.B();
                                 photoViewer3.e0.invalidate();

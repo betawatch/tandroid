@@ -17,9 +17,9 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.StatsController;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class wu extends org.telegram.ui.Components.wl0 {
+public final class wu extends org.telegram.ui.Components.vl0 {
     public static final /* synthetic */ int p3 = 0;
     public boolean X2;
     public int Y2;
@@ -202,7 +202,7 @@ public final class wu extends org.telegram.ui.Components.wl0 {
                     format = String.format("%d%%", objArr2);
                 }
                 SpannableString spannableString3 = new SpannableString(format);
-                spannableString3.setSpan(new org.telegram.ui.Components.u51(AndroidUtilities.bold()), i12, spannableString3.length(), 33);
+                spannableString3.setSpan(new org.telegram.ui.Components.t51(AndroidUtilities.bold()), i12, spannableString3.length(), 33);
                 spannableString3.setSpan(new RelativeSizeSpan(0.8f), i12, spannableString3.length(), 33);
                 qu quVar = new qu();
                 quVar.a = 0.1d;
@@ -221,15 +221,15 @@ public final class wu extends org.telegram.ui.Components.wl0 {
             SpannableString spannableString4 = new SpannableString("^");
             Drawable mutate = getContext().getResources().getDrawable(R.drawable.msg_mini_upload).mutate();
             int i18 = org.telegram.ui.ActionBar.j6.G6;
-            org.telegram.ui.ActionBar.e6 e6Var = this.p2;
-            int v02 = org.telegram.ui.ActionBar.j6.v0(i18, e6Var);
+            org.telegram.ui.ActionBar.f6 f6Var = this.p2;
+            int v02 = org.telegram.ui.ActionBar.j6.v0(i18, f6Var);
             PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
             mutate.setColorFilter(new PorterDuffColorFilter(v02, mode));
             mutate.setBounds(0, AndroidUtilities.dp(2.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(18.0f));
             spannableString4.setSpan(new ImageSpan(mutate, 2), 0, 1, 33);
             SpannableString spannableString5 = new SpannableString("v");
             Drawable mutate2 = getContext().getResources().getDrawable(R.drawable.msg_mini_download).mutate();
-            mutate2.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.j6.v0(i18, e6Var), mode));
+            mutate2.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.j6.v0(i18, f6Var), mode));
             mutate2.setBounds(0, AndroidUtilities.dp(2.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(18.0f));
             spannableString5.setSpan(new ImageSpan(mutate2, 2), 0, 1, 33);
             int i19 = 0;
@@ -330,7 +330,7 @@ public final class wu extends org.telegram.ui.Components.wl0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.wl0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    @Override // org.telegram.ui.Components.vl0, androidx.recyclerview.widget.RecyclerView, android.view.View
     public final void onMeasure(int i10, int i11) {
         super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i11), TLObject.FLAG_30));
     }

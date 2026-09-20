@@ -29,9 +29,9 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import org.telegram.messenger.BuildConfig;
 import org.telegram.messenger.MediaController;
-import v7.y7;
+import v7.z7;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class f0 implements p {
     public static final Object o0 = new Object();
@@ -618,7 +618,7 @@ public final class f0 implements p {
                 eVar2 = eVar;
                 int i29 = c3.b.i(intValue);
                 e2.d.g(i29 != -2147483647);
-                h = y7.b((50000000 * i29) / 1000000);
+                h = z7.b((50000000 * i29) / 1000000);
             } else {
                 if (i13 != 2) {
                     throw new IllegalArgumentException();
@@ -673,13 +673,13 @@ public final class f0 implements p {
                         e2.d.g(i17 != -2147483647);
                     }
                     eVar2 = eVar;
-                    h = y7.b((i16 * i17) / 1000000);
+                    h = z7.b((i16 * i17) / 1000000);
                 }
                 i15 = -1;
                 if (i27 == i15) {
                 }
                 eVar2 = eVar;
-                h = y7.b((i16 * i17) / 1000000);
+                h = z7.b((i16 * i17) / 1000000);
             }
             i14 = i11;
         } else {
@@ -688,7 +688,7 @@ public final class f0 implements p {
             long j10 = i10;
             long j11 = 250000 * j10;
             long j12 = i28;
-            h = e2.d0.h(minBufferSize * 4, y7.b((j11 * j12) / 1000000), y7.b(((MediaController.VIDEO_BITRATE_360 * j10) * j12) / 1000000));
+            h = e2.d0.h(minBufferSize * 4, z7.b((j11 * j12) / 1000000), z7.b(((MediaController.VIDEO_BITRATE_360 * j10) * j12) / 1000000));
         }
         this.g0 = false;
         boolean z12 = z11;
@@ -1423,7 +1423,7 @@ public final class f0 implements p {
             long e02 = e2.d0.e0(sVar.h);
             f0 f0Var = (f0) iVar.b;
             if (f0Var.t != null) {
-                f0Var.t.y(i29, e02, SystemClock.elapsedRealtime() - f0Var.f0);
+                f0Var.t.x(i29, e02, SystemClock.elapsedRealtime() - f0Var.f0);
             }
         }
         z11 = true;

@@ -6,10 +6,10 @@ import android.graphics.Path;
 import android.graphics.RectF;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class ys0 extends org.telegram.ui.Components.f81 {
-    public final org.telegram.ui.Components.na g0;
+    public final org.telegram.ui.Components.ma g0;
     public final /* synthetic */ PhotoViewer h0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -17,7 +17,7 @@ public final class ys0 extends org.telegram.ui.Components.f81 {
         super(context);
         this.h0 = photoViewer;
         new Path();
-        this.g0 = new org.telegram.ui.Components.na(photoViewer.b0, this, 0, false);
+        this.g0 = new org.telegram.ui.Components.ma(photoViewer.b0, this, 0, false);
     }
 
     @Override // org.telegram.ui.Components.f81

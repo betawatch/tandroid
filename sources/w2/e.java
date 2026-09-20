@@ -21,14 +21,14 @@ import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import n4.y;
-import u2.b1;
+import u2.c1;
 import u2.f0;
-import yf.q;
+import v7.j0;
 import z3.i;
 import z3.j;
 import z3.m;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class e extends f implements Handler.Callback {
     public final na.d I;
@@ -67,7 +67,7 @@ public final class e extends f implements Handler.Callback {
         this.L = cVar;
         this.I = new na.d(28);
         this.J = new h(1, 0);
-        this.V = new y(17);
+        this.V = new y();
         this.a0 = -9223372036854775807L;
         this.Z = -9223372036854775807L;
     }
@@ -158,7 +158,7 @@ public final class e extends f implements Handler.Callback {
             bVar.a(this.w);
         }
         if (!bVar2.W(sVar)) {
-            throw new IllegalArgumentException(t8.b.i("Attempted to create decoder for unsupported MIME type: ", str));
+            throw new IllegalArgumentException(j0.g("Attempted to create decoder for unsupported MIME type: ", str));
         }
         m x10 = bVar2.x(sVar);
         bVar = new b(x10.getClass().getSimpleName().concat("Decoder"), x10);
@@ -218,9 +218,9 @@ public final class e extends f implements Handler.Callback {
                 aVar.getClass();
                 if (aVar.b(this.Z) == Long.MIN_VALUE) {
                     try {
-                        b1 b1Var = this.r;
-                        b1Var.getClass();
-                        b1Var.a();
+                        c1 c1Var = this.r;
+                        c1Var.getClass();
+                        c1Var.a();
                         return true;
                     } catch (IOException unused) {
                         return false;
@@ -365,7 +365,7 @@ public final class e extends f implements Handler.Callback {
                         obtain.recycle();
                         ArrayList parcelableArrayList = readBundle.getParcelableArrayList("c");
                         parcelableArrayList.getClass();
-                        z3.a aVar = new z3.a(j13, readBundle.getLong("d"), e2.d.j(new q(3), parcelableArrayList));
+                        z3.a aVar = new z3.a(j13, readBundle.getLong("d"), e2.d.j(new x2.h(9), parcelableArrayList));
                         hVar.clear();
                         z11 = this.K.e(aVar, j3);
                     }
@@ -380,14 +380,14 @@ public final class e extends f implements Handler.Callback {
             }
             if (z11) {
                 i0 d = this.K.d(j3);
-                long l4 = this.K.l(j3);
-                d2.d dVar = new d2.d(E(l4), d);
+                long i10 = this.K.i(j3);
+                d2.d dVar = new d2.d(E(i10), d);
                 if (handler != null) {
                     handler.obtainMessage(1, dVar).sendToTarget();
                 } else {
                     G(dVar);
                 }
-                this.K.m(l4);
+                this.K.m(i10);
             }
             this.Z = j3;
             return;
@@ -511,7 +511,7 @@ public final class e extends f implements Handler.Callback {
                         this.W = true;
                         this.M = false;
                     } else {
-                        s sVar2 = (s) yVar.c;
+                        s sVar2 = (s) yVar.b;
                         if (sVar2 == null) {
                             return;
                         }

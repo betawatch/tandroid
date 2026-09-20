@@ -1,45 +1,120 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatMessageSharedResources;
+import android.view.View;
+import android.view.ViewGroup;
+import java.util.ArrayList;
+import java.util.Calendar;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class qu0 extends org.telegram.ui.Cells.u1 {
-    public final /* synthetic */ int Ge = 1;
+public final class qu0 extends ul0 {
+    public final Context c;
+    public final int d;
+    public final org.telegram.ui.ActionBar.f6 e;
+    public final ou0 f;
+    public final ArrayList h = new ArrayList(10);
+    public final ArrayList n = new ArrayList();
+    public bu0 r;
+    public final /* synthetic */ jv0 s;
 
-    public /* synthetic */ qu0(Context context, int i10) {
-        super(context, i10);
+    public qu0(jv0 jv0Var, Context context, int i10, org.telegram.ui.ActionBar.f6 f6Var) {
+        this.s = jv0Var;
+        this.c = context;
+        this.d = i10;
+        this.e = f6Var;
+        this.f = new ou0(this, i10, f6Var);
+        E();
     }
 
-    @Override // org.telegram.ui.Cells.u1
-    public int getParentWidth() {
-        int i10;
-        int dp;
-        switch (this.Ge) {
-            case 1:
-                if (getMeasuredWidth() != 0) {
-                    i10 = getMeasuredWidth();
-                    dp = AndroidUtilities.dp(24.0f);
-                } else {
-                    i10 = AndroidUtilities.displaySize.x;
-                    dp = AndroidUtilities.dp(24.0f);
-                }
-                return i10 - dp;
-            default:
-                return super.getParentWidth();
-        }
-    }
-
-    @Override // android.view.View
-    public final boolean isPressed() {
-        switch (this.Ge) {
-        }
+    @Override // org.telegram.ui.Components.ul0
+    public final boolean D(s4.c1 c1Var) {
         return false;
     }
 
-    public /* synthetic */ qu0(Context context, int i10, boolean z10, ChatMessageSharedResources chatMessageSharedResources, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(context, i10, z10, chatMessageSharedResources, e6Var);
+    public final void E() {
+        ArrayList arrayList = this.n;
+        arrayList.clear();
+        ArrayList c10 = this.s.t1[8].c();
+        int i10 = 0;
+        for (int i11 = 0; i11 < c10.size(); i11++) {
+            MessageObject messageObject = (MessageObject) c10.get(i11);
+            if (messageObject.dateKeyInt != i10) {
+                int i12 = messageObject.messageOwner.date;
+                TLRPC.TL_message tL_message = new TLRPC.TL_message();
+                long j3 = i12;
+                tL_message.message = LocaleController.formatDateChat(j3);
+                tL_message.id = 0;
+                Calendar calendar = Calendar.getInstance();
+                calendar.setTimeInMillis(j3 * 1000);
+                calendar.set(11, 0);
+                calendar.set(12, 0);
+                calendar.set(13, 0);
+                calendar.set(14, 0);
+                tL_message.date = (int) (calendar.getTimeInMillis() / 1000);
+                MessageObject messageObject2 = new MessageObject(this.d, tL_message, false, false);
+                messageObject2.type = 10;
+                messageObject2.contentType = 1;
+                messageObject2.isDateObject = true;
+                arrayList.add(messageObject2);
+                i10 = messageObject.dateKeyInt;
+            }
+            arrayList.add(messageObject);
+        }
+    }
+
+    @Override // s4.h0
+    public final int h() {
+        return this.n.size();
+    }
+
+    @Override // s4.h0
+    public final int j(int i10) {
+        if (i10 < 0) {
+            return 0;
+        }
+        ArrayList arrayList = this.n;
+        if (i10 >= arrayList.size()) {
+            return 0;
+        }
+        return ((MessageObject) arrayList.get(i10)).contentType;
+    }
+
+    @Override // s4.h0
+    public final void l() {
+        E();
+        super.l();
+    }
+
+    @Override // s4.h0
+    public final void v(s4.c1 c1Var, int i10) {
+        if (i10 >= 0) {
+            ArrayList arrayList = this.n;
+            if (i10 >= arrayList.size()) {
+                return;
+            }
+            MessageObject messageObject = (MessageObject) arrayList.get(i10);
+            int i11 = c1Var.f;
+            View view = c1Var.a;
+            if (i11 == 0) {
+                ((org.telegram.ui.Cells.u1) view).X3(messageObject, null, false, false, false, false);
+            } else {
+                ((org.telegram.ui.Cells.w0) view).setMessageObject(messageObject);
+            }
+        }
+    }
+
+    @Override // s4.h0
+    public final s4.c1 x(ViewGroup viewGroup, int i10) {
+        if (i10 != 0) {
+            return new fl0(new org.telegram.ui.Cells.w0(this.c, this.e, false));
+        }
+        org.telegram.ui.ActionBar.f6 f6Var = this.e;
+        pu0 pu0Var = new pu0(this.c, this.d, false, null, f6Var);
+        pu0Var.setDelegate(this.f);
+        return new fl0(pu0Var);
     }
 }

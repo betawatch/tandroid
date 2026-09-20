@@ -45,9 +45,9 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.vd1;
+import org.telegram.ui.xd1;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 @Deprecated
 /* loaded from: classes3.dex */
 public class UndoView extends FrameLayout {
@@ -69,7 +69,7 @@ public class UndoView extends FrameLayout {
     public CharSequence S;
     public int T;
     public final ShapeDrawable U;
-    public final org.telegram.ui.ActionBar.e6 V;
+    public final org.telegram.ui.ActionBar.f6 V;
     public int W;
     public int a;
     public StaticLayout a0;
@@ -80,8 +80,8 @@ public class UndoView extends FrameLayout {
     public final TextView d;
     public float d0;
     public final ImageView e;
-    public final lj0 f;
-    public final w9 h;
+    public final kj0 f;
+    public final v9 h;
     public final LinearLayout n;
     public int r;
     public final org.telegram.ui.ActionBar.n2 s;
@@ -175,7 +175,7 @@ public class UndoView extends FrameLayout {
                 animatorSet.setDuration(180L);
             }
             animatorSet.setInterpolator(new DecelerateInterpolator());
-            animatorSet.addListener(new ed0(this, i12));
+            animatorSet.addListener(new dd0(this, i12));
             animatorSet.start();
         }
     }
@@ -207,9 +207,9 @@ public class UndoView extends FrameLayout {
         org.telegram.ui.ActionBar.j6.w1(-115203550, this.U);
         this.b.setTextColor(-1);
         this.c.setTextColor(-1);
-        lj0 lj0Var = this.f;
-        lj0Var.h(-14540254, "info1");
-        lj0Var.h(-14540254, "info2");
+        kj0 kj0Var = this.f;
+        kj0Var.h(-14540254, "info1");
+        kj0Var.h(-14540254, "info2");
     }
 
     @Override // android.view.View
@@ -240,12 +240,12 @@ public class UndoView extends FrameLayout {
     /* JADX WARN: Removed duplicated region for block: B:100:0x0861  */
     /* JADX WARN: Removed duplicated region for block: B:37:0x0845  */
     /* JADX WARN: Removed duplicated region for block: B:39:0x0868  */
-    /* JADX WARN: Removed duplicated region for block: B:45:0x16fb  */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x1720  */
-    /* JADX WARN: Removed duplicated region for block: B:54:0x180b  */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x16fa  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x171f  */
+    /* JADX WARN: Removed duplicated region for block: B:54:0x180a  */
     /* JADX WARN: Removed duplicated region for block: B:69:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:70:0x175f  */
-    /* JADX WARN: Removed duplicated region for block: B:98:0x170e  */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x175e  */
+    /* JADX WARN: Removed duplicated region for block: B:98:0x170d  */
     /* JADX WARN: Removed duplicated region for block: B:99:0x089d  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -258,7 +258,7 @@ public class UndoView extends FrameLayout {
         ImageView imageView;
         TextView textView;
         int i12;
-        lj0 lj0Var;
+        kj0 kj0Var;
         long j3;
         boolean z10;
         int dp;
@@ -299,14 +299,14 @@ public class UndoView extends FrameLayout {
         textView2.setText(string2);
         ImageView imageView2 = this.e;
         imageView2.setVisibility(0);
-        lj0 lj0Var2 = this.f;
-        lj0Var2.setPadding(0, 0, 0, 0);
-        lj0Var2.setScaleX(1.0f);
-        lj0Var2.setScaleY(1.0f);
+        kj0 kj0Var2 = this.f;
+        kj0Var2.setPadding(0, 0, 0, 0);
+        kj0Var2.setScaleX(1.0f);
+        kj0Var2.setScaleY(1.0f);
         org.telegram.ui.Cells.y1 y1Var2 = this.b;
         y1Var2.setTextSize(1, 15.0f);
-        w9 w9Var = this.h;
-        w9Var.setVisibility(8);
+        v9 v9Var = this.h;
+        v9Var.setVisibility(8);
         y1Var2.setGravity(51);
         TextView textView3 = this.c;
         ((FrameLayout.LayoutParams) textView3.getLayoutParams()).leftMargin = AndroidUtilities.dp(58.0f);
@@ -314,8 +314,8 @@ public class UndoView extends FrameLayout {
         layoutParams.height = -2;
         layoutParams.topMargin = AndroidUtilities.dp(13.0f);
         layoutParams.bottomMargin = 0;
-        lj0Var2.setScaleType(ImageView.ScaleType.CENTER);
-        FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) lj0Var2.getLayoutParams();
+        kj0Var2.setScaleType(ImageView.ScaleType.CENTER);
+        FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) kj0Var2.getLayoutParams();
         layoutParams2.gravity = 19;
         layoutParams2.bottomMargin = 0;
         layoutParams2.topMargin = 0;
@@ -324,7 +324,7 @@ public class UndoView extends FrameLayout {
         layoutParams2.height = -2;
         y1Var2.setMinHeight(0);
         if ((runnable == null && runnable2 == null) || i10 == 83) {
-            setOnClickListener(new f61(this, 1));
+            setOnClickListener(new e61(this, 1));
             movementMethod = null;
             setOnTouchListener(null);
         } else {
@@ -361,11 +361,11 @@ public class UndoView extends FrameLayout {
                         i18 = 0;
                         replaceTags3 = AndroidUtilities.replaceTags(LocaleController.formatString("VoipGroupInvitedUser", R.string.VoipGroupInvitedUser, UserObject.getFirstName(user)));
                     }
-                    h9 h9Var = new h9();
-                    h9Var.u(AndroidUtilities.dp(12.0f));
-                    h9Var.m(i21, user);
-                    w9Var.e(user, h9Var);
-                    w9Var.setVisibility(i18);
+                    g9 g9Var = new g9();
+                    g9Var.u(AndroidUtilities.dp(12.0f));
+                    g9Var.m(i21, user);
+                    v9Var.e(user, g9Var);
+                    v9Var.setVisibility(i18);
                     this.G = 3000L;
                     replaceTags = replaceTags3;
                 } else if (i10 == 44) {
@@ -379,25 +379,25 @@ public class UndoView extends FrameLayout {
                     } else {
                         replaceTags = "";
                     }
-                    h9 h9Var2 = new h9();
-                    h9Var2.u(AndroidUtilities.dp(12.0f));
+                    g9 g9Var2 = new g9();
+                    g9Var2.u(AndroidUtilities.dp(12.0f));
                     TLObject tLObject = (TLObject) obj;
-                    h9Var2.j(i21, tLObject);
-                    w9Var.e(tLObject, h9Var2);
-                    w9Var.setVisibility(0);
+                    g9Var2.j(i21, tLObject);
+                    v9Var.e(tLObject, g9Var2);
+                    v9Var.setVisibility(0);
                     this.G = 3000L;
                 } else if (i10 == 37) {
-                    h9 h9Var3 = new h9();
-                    h9Var3.u(AndroidUtilities.dp(12.0f));
+                    g9 g9Var3 = new g9();
+                    g9Var3.u(AndroidUtilities.dp(12.0f));
                     if (obj instanceof TLRPC.User) {
                         TLRPC.User user3 = (TLRPC.User) obj;
-                        h9Var3.m(i21, user3);
-                        w9Var.e(user3, h9Var3);
+                        g9Var3.m(i21, user3);
+                        v9Var.e(user3, g9Var3);
                         str2 = ContactsController.formatName(user3.first_name, user3.last_name);
                     } else {
                         TLRPC.Chat chat3 = (TLRPC.Chat) obj;
-                        h9Var3.k(i21, chat3);
-                        w9Var.e(chat3, h9Var3);
+                        g9Var3.k(i21, chat3);
+                        v9Var.e(chat3, g9Var3);
                         str2 = chat3.title;
                     }
                     if (ChatObject.isChannelOrGiga((TLRPC.Chat) obj2)) {
@@ -407,7 +407,7 @@ public class UndoView extends FrameLayout {
                         i17 = 0;
                         replaceTags = AndroidUtilities.replaceTags(LocaleController.formatString("VoipGroupUserChanged", R.string.VoipGroupUserChanged, str2));
                     }
-                    w9Var.setVisibility(i17);
+                    v9Var.setVisibility(i17);
                     this.G = 3000L;
                 } else {
                     if (i10 == 33) {
@@ -525,7 +525,7 @@ public class UndoView extends FrameLayout {
                                                                 long j10 = longValue;
                                                                 if (j10 != 0) {
                                                                     if (DialogObject.isEncryptedDialog(j10)) {
-                                                                        j10 = org.telegram.messenger.q.m(MessagesController.getInstance(i21), j10).user_id;
+                                                                        j10 = org.telegram.messenger.l0.k(MessagesController.getInstance(i21), j10).user_id;
                                                                     }
                                                                     if (DialogObject.isUserDialog(j10)) {
                                                                         TLRPC.User user5 = MessagesController.getInstance(i21).getUser(Long.valueOf(j10));
@@ -574,15 +574,15 @@ public class UndoView extends FrameLayout {
                                                     }
                                                     y1Var.setText(replaceTags);
                                                     if (i14 == 0) {
-                                                        lj0Var2.e(i14, i22, i22);
-                                                        ij0 animatedDrawable = lj0Var2.getAnimatedDrawable();
+                                                        kj0Var2.e(i14, i22, i22);
+                                                        hj0 animatedDrawable = kj0Var2.getAnimatedDrawable();
                                                         animatedDrawable.h = false;
                                                         animatedDrawable.P(animatedDrawable.s());
-                                                        lj0Var2.setVisibility(0);
-                                                        lj0Var2.setProgress(0.0f);
-                                                        lj0Var2.d();
+                                                        kj0Var2.setVisibility(0);
+                                                        kj0Var2.setProgress(0.0f);
+                                                        kj0Var2.d();
                                                     } else {
-                                                        lj0Var2.setVisibility(8);
+                                                        kj0Var2.setVisibility(8);
                                                     }
                                                     if (charSequence == null) {
                                                         layoutParams.leftMargin = AndroidUtilities.dp(58.0f);
@@ -627,7 +627,7 @@ public class UndoView extends FrameLayout {
                                             spannableStringBuilder.replace(lastIndexOf, lastIndexOf + 2, (CharSequence) "");
                                             spannableStringBuilder.replace(indexOf, indexOf + 2, (CharSequence) "");
                                             try {
-                                                spannableStringBuilder.setSpan(new b61("tg://openmessage?user_id=" + UserConfig.getInstance(i21).getClientUserId()), indexOf, lastIndexOf - 2, 33);
+                                                spannableStringBuilder.setSpan(new a61("tg://openmessage?user_id=" + UserConfig.getInstance(i21).getClientUserId()), indexOf, lastIndexOf - 2, 33);
                                             } catch (Exception e) {
                                                 FileLog.e(e);
                                             }
@@ -693,18 +693,18 @@ public class UndoView extends FrameLayout {
                         int intValue2 = ((Integer) obj).intValue();
                         TLRPC.User user6 = (TLRPC.User) obj2;
                         imageView2.setVisibility(8);
-                        lj0Var2.setVisibility(0);
+                        kj0Var2.setVisibility(0);
                         if (intValue2 != 0) {
                             y1Var.setTypeface(AndroidUtilities.bold());
                             y1Var.setTextSize(1, 14.0f);
-                            lj0Var2.a.clear();
+                            kj0Var2.a.clear();
                             int i29 = org.telegram.ui.ActionBar.j6.Hi;
-                            lj0Var2.h(c(i29), "BODY");
-                            lj0Var2.h(c(i29), "Wibe Big");
-                            lj0Var2.h(c(i29), "Wibe Big 3");
-                            lj0Var2.h(c(i29), "Wibe Small");
+                            kj0Var2.h(c(i29), "BODY");
+                            kj0Var2.h(c(i29), "Wibe Big");
+                            kj0Var2.h(c(i29), "Wibe Big 3");
+                            kj0Var2.h(c(i29), "Wibe Small");
                             y1Var.setText(LocaleController.getString(R.string.ProximityAlertSet));
-                            lj0Var2.e(R.raw.ic_unmute, 28, 28);
+                            kj0Var2.e(R.raw.ic_unmute, 28, 28);
                             textView3.setVisibility(0);
                             textView3.setSingleLine(false);
                             textView3.setMaxLines(3);
@@ -718,26 +718,26 @@ public class UndoView extends FrameLayout {
                         } else {
                             y1Var.setTypeface(Typeface.DEFAULT);
                             y1Var.setTextSize(1, 15.0f);
-                            lj0Var2.a.clear();
+                            kj0Var2.a.clear();
                             int i30 = org.telegram.ui.ActionBar.j6.Hi;
-                            lj0Var2.h(c(i30), "Body Main");
-                            lj0Var2.h(c(i30), "Body Top");
-                            lj0Var2.h(c(i30), "Line");
-                            lj0Var2.h(c(i30), "Curve Big");
-                            lj0Var2.h(c(i30), "Curve Small");
+                            kj0Var2.h(c(i30), "Body Main");
+                            kj0Var2.h(c(i30), "Body Top");
+                            kj0Var2.h(c(i30), "Line");
+                            kj0Var2.h(c(i30), "Curve Big");
+                            kj0Var2.h(c(i30), "Curve Small");
                             layoutParams.topMargin = AndroidUtilities.dp(14.0f);
                             y1Var.setText(LocaleController.getString(R.string.ProximityAlertCancelled));
-                            lj0Var2.e(R.raw.ic_mute, 28, 28);
+                            kj0Var2.e(R.raw.ic_mute, 28, 28);
                             textView3.setVisibility(8);
                             textView2.setTextColor(c(org.telegram.ui.ActionBar.j6.Gi));
                             linearLayout.setVisibility(0);
                         }
                         layoutParams.leftMargin = AndroidUtilities.dp(58.0f);
-                        lj0Var2.setProgress(0.0f);
-                        lj0Var2.d();
+                        kj0Var2.setProgress(0.0f);
+                        kj0Var2.d();
                     } else if (i28 == 11) {
                         y1Var.setText(LocaleController.getString(R.string.AuthAnotherClientOk));
-                        lj0Var2.e(R.raw.contact_check, 36, 36);
+                        kj0Var2.e(R.raw.contact_check, 36, 36);
                         layoutParams.leftMargin = AndroidUtilities.dp(58.0f);
                         layoutParams.topMargin = AndroidUtilities.dp(6.0f);
                         textView3.setText(((TLRPC.TL_authorization) obj).app_name);
@@ -747,14 +747,14 @@ public class UndoView extends FrameLayout {
                         textView2.setTextColor(c(org.telegram.ui.ActionBar.j6.p7));
                         imageView2.setVisibility(8);
                         linearLayout.setVisibility(0);
-                        lj0Var2.setVisibility(0);
-                        lj0Var2.setProgress(0.0f);
-                        lj0Var2.d();
+                        kj0Var2.setVisibility(0);
+                        kj0Var2.setProgress(0.0f);
+                        kj0Var2.d();
                     } else if (i28 == 15) {
                         this.G = 10000L;
                         textView2.setText(LocaleController.getString(R.string.Open));
                         y1Var.setText(LocaleController.getString(R.string.FilterAvailableTitle));
-                        lj0Var2.e(R.raw.filter_new, 36, 36);
+                        kj0Var2.e(R.raw.filter_new, 36, 36);
                         int dp2 = AndroidUtilities.dp(26.0f) + ((int) Math.ceil(textView2.getPaint().measureText(textView2.getText().toString())));
                         layoutParams.leftMargin = AndroidUtilities.dp(58.0f);
                         layoutParams.rightMargin = dp2;
@@ -767,7 +767,7 @@ public class UndoView extends FrameLayout {
                         if (indexOf2 >= 0 && lastIndexOf2 >= 0 && indexOf2 != lastIndexOf2) {
                             spannableStringBuilder2.replace(lastIndexOf2, lastIndexOf2 + 1, (CharSequence) "");
                             spannableStringBuilder2.replace(indexOf2, indexOf2 + 1, (CharSequence) "");
-                            spannableStringBuilder2.setSpan(new b61("tg://settings/folders"), indexOf2, lastIndexOf2 - 1, 33);
+                            spannableStringBuilder2.setSpan(new a61("tg://settings/folders"), indexOf2, lastIndexOf2 - 1, 33);
                         }
                         textView3.setText(spannableStringBuilder2);
                         textView3.setVisibility(0);
@@ -775,9 +775,9 @@ public class UndoView extends FrameLayout {
                         textView3.setMaxLines(2);
                         linearLayout.setVisibility(0);
                         imageView2.setVisibility(8);
-                        lj0Var2.setVisibility(0);
-                        lj0Var2.setProgress(0.0f);
-                        lj0Var2.d();
+                        kj0Var2.setVisibility(0);
+                        kj0Var2.setProgress(0.0f);
+                        kj0Var2.d();
                     } else if (i28 == 16 || i28 == 17) {
                         str = "";
                         this.G = 4000L;
@@ -787,7 +787,7 @@ public class UndoView extends FrameLayout {
                         String str3 = (String) obj;
                         if ("🎲".equals(str3)) {
                             y1Var.setText(AndroidUtilities.replaceTags(LocaleController.getString(R.string.DiceInfo2)));
-                            lj0Var2.setImageResource(R.drawable.dice);
+                            kj0Var2.setImageResource(R.drawable.dice);
                         } else {
                             if ("🎯".equals(str3)) {
                                 y1Var.setText(AndroidUtilities.replaceTags(LocaleController.getString(R.string.DartInfo)));
@@ -799,8 +799,8 @@ public class UndoView extends FrameLayout {
                                     y1Var.setText(Emoji.replaceEmoji(serverString, y1Var.getPaint().getFontMetricsInt(), false));
                                 }
                             }
-                            lj0Var2.setImageDrawable(Emoji.getEmojiDrawable(str3));
-                            lj0Var2.setScaleType(ImageView.ScaleType.FIT_XY);
+                            kj0Var2.setImageDrawable(Emoji.getEmojiDrawable(str3));
+                            kj0Var2.setScaleType(ImageView.ScaleType.FIT_XY);
                             layoutParams.topMargin = AndroidUtilities.dp(14.0f);
                             layoutParams.bottomMargin = AndroidUtilities.dp(14.0f);
                             layoutParams2.leftMargin = AndroidUtilities.dp(14.0f);
@@ -825,7 +825,7 @@ public class UndoView extends FrameLayout {
                         layoutParams.bottomMargin = AndroidUtilities.dp(7.0f);
                         layoutParams.height = -1;
                         textView3.setVisibility(8);
-                        lj0Var2.setVisibility(0);
+                        kj0Var2.setVisibility(0);
                     } else if (i28 == 18) {
                         this.G = Math.max(4000, Math.min((r0.length() / 50) * 1600, 10000));
                         y1Var.setTextSize(1, 14.0f);
@@ -842,14 +842,14 @@ public class UndoView extends FrameLayout {
                         int dp3 = AndroidUtilities.dp(8.0f);
                         layoutParams2.bottomMargin = dp3;
                         layoutParams2.topMargin = dp3;
-                        lj0Var2.setVisibility(0);
-                        lj0Var2.e(R.raw.chats_infotip, 36, 36);
-                        lj0Var2.setProgress(0.0f);
-                        lj0Var2.d();
+                        kj0Var2.setVisibility(0);
+                        kj0Var2.e(R.raw.chats_infotip, 36, 36);
+                        kj0Var2.setProgress(0.0f);
+                        kj0Var2.d();
                         y1Var.setMovementMethod(new AndroidUtilities.LinkMovementMethodMy());
                     } else if (i28 == 12) {
                         y1Var.setText(LocaleController.getString(R.string.ColorThemeChanged));
-                        lj0Var2.setImageResource(R.drawable.toast_pallete);
+                        kj0Var2.setImageResource(R.drawable.toast_pallete);
                         layoutParams.leftMargin = AndroidUtilities.dp(58.0f);
                         layoutParams.rightMargin = AndroidUtilities.dp(48.0f);
                         layoutParams.topMargin = AndroidUtilities.dp(6.0f);
@@ -861,7 +861,7 @@ public class UndoView extends FrameLayout {
                         if (indexOf3 >= 0 && lastIndexOf3 >= 0 && indexOf3 != lastIndexOf3) {
                             spannableStringBuilder3.replace(lastIndexOf3, lastIndexOf3 + 1, (CharSequence) "");
                             spannableStringBuilder3.replace(indexOf3, indexOf3 + 1, (CharSequence) "");
-                            spannableStringBuilder3.setSpan(new b61("tg://settings/themes"), indexOf3, lastIndexOf3 - 1, 33);
+                            spannableStringBuilder3.setSpan(new a61("tg://settings/themes"), indexOf3, lastIndexOf3 - 1, 33);
                         }
                         textView3.setText(spannableStringBuilder3);
                         textView3.setVisibility(0);
@@ -869,7 +869,7 @@ public class UndoView extends FrameLayout {
                         textView3.setMaxLines(2);
                         textView2.setVisibility(8);
                         linearLayout.setVisibility(0);
-                        lj0Var2.setVisibility(0);
+                        kj0Var2.setVisibility(0);
                     } else {
                         str = "";
                         if (i28 == 84) {
@@ -877,17 +877,17 @@ public class UndoView extends FrameLayout {
                             y1Var.setTextSize(1, 15.0f);
                             y1Var.setTypeface(Typeface.DEFAULT);
                             y1Var.setText(AndroidUtilities.replaceTags(LocaleController.getString(R.string.UnlockPremiumTranscriptionHint)));
-                            lj0Var2.setVisibility(0);
-                            lj0Var2.e(R.raw.voice_to_text, 36, 36);
-                            lj0Var2.setProgress(0.0f);
-                            lj0Var2.d();
-                            layoutParams.leftMargin = org.telegram.ui.Cells.c1.b(58.0f, R.string.PremiumMore, textView2);
+                            kj0Var2.setVisibility(0);
+                            kj0Var2.e(R.raw.voice_to_text, 36, 36);
+                            kj0Var2.setProgress(0.0f);
+                            kj0Var2.d();
+                            layoutParams.leftMargin = org.telegram.ui.Cells.c1.c(58.0f, R.string.PremiumMore, textView2);
                             layoutParams.rightMargin = AndroidUtilities.dp(26.0f) + ((int) Math.ceil(textView2.getPaint().measureText(textView2.getText().toString())));
                             int dp4 = AndroidUtilities.dp(6.0f);
                             layoutParams.bottomMargin = dp4;
                             layoutParams.topMargin = dp4;
                             layoutParams.height = -2;
-                            w9Var.setVisibility(8);
+                            v9Var.setVisibility(8);
                             textView3.setVisibility(8);
                             textView2.setVisibility(0);
                             linearLayout.setVisibility(0);
@@ -897,16 +897,16 @@ public class UndoView extends FrameLayout {
                             y1Var.setTextSize(1, 15.0f);
                             y1Var.setTypeface(AndroidUtilities.bold());
                             y1Var.setText(LocaleController.getString(R.string.SwipeToReplyHint));
-                            lj0Var2.setVisibility(0);
-                            lj0Var2.e(R.raw.hint_swipe_reply, 64, 64);
-                            lj0Var2.setProgress(0.0f);
-                            lj0Var2.d();
+                            kj0Var2.setVisibility(0);
+                            kj0Var2.e(R.raw.hint_swipe_reply, 64, 64);
+                            kj0Var2.setProgress(0.0f);
+                            kj0Var2.d();
                             textView3.setVisibility(0);
-                            layoutParams.leftMargin = org.telegram.ui.Cells.c1.b(58.0f, R.string.SwipeToReplyHintMessage, textView3);
+                            layoutParams.leftMargin = org.telegram.ui.Cells.c1.c(58.0f, R.string.SwipeToReplyHintMessage, textView3);
                             layoutParams.rightMargin = AndroidUtilities.dp(26.0f) + ((int) Math.ceil(textView2.getPaint().measureText(textView2.getText().toString())));
                             layoutParams.topMargin = AndroidUtilities.dp(6.0f);
                             layoutParams.height = -2;
-                            w9Var.setVisibility(8);
+                            v9Var.setVisibility(8);
                             linearLayout.setVisibility(8);
                         } else if (i28 == 90 || i28 == 91 || i28 == 92 || i28 == 93 || i28 == 94) {
                             switch (i28) {
@@ -932,10 +932,10 @@ public class UndoView extends FrameLayout {
                             linearLayout.setVisibility(8);
                             y1Var.setTypeface(Typeface.DEFAULT);
                             textView3.setVisibility(8);
-                            lj0Var2.setVisibility(0);
-                            lj0Var2.e(R.raw.chats_infotip, 36, 36);
-                            lj0Var2.setProgress(0.0f);
-                            lj0Var2.d();
+                            kj0Var2.setVisibility(0);
+                            kj0Var2.e(R.raw.chats_infotip, 36, 36);
+                            kj0Var2.setProgress(0.0f);
+                            kj0Var2.d();
                         } else if (i28 == 2 || i28 == 4) {
                             if (i10 == 2) {
                                 y1Var.setText(LocaleController.getString(R.string.ChatArchived));
@@ -949,10 +949,10 @@ public class UndoView extends FrameLayout {
                             linearLayout.setVisibility(0);
                             y1Var.setTypeface(Typeface.DEFAULT);
                             textView3.setVisibility(8);
-                            lj0Var2.setVisibility(0);
-                            lj0Var2.e(R.raw.chats_archived, 36, 36);
-                            lj0Var2.setProgress(0.0f);
-                            lj0Var2.d();
+                            kj0Var2.setVisibility(0);
+                            kj0Var2.e(R.raw.chats_archived, 36, 36);
+                            kj0Var2.setProgress(0.0f);
+                            kj0Var2.d();
                         } else if (i10 == 82) {
                             layoutParams.leftMargin = AndroidUtilities.dp(58.0f);
                             MediaController.PhotoEntry photoEntry = (MediaController.PhotoEntry) obj;
@@ -961,20 +961,20 @@ public class UndoView extends FrameLayout {
                             y1Var.setTextSize(1, 15.0f);
                             y1Var.setTypeface(Typeface.DEFAULT);
                             textView3.setVisibility(8);
-                            w9Var.setVisibility(0);
-                            w9Var.setRoundRadius(AndroidUtilities.dp(2.0f));
+                            v9Var.setVisibility(0);
+                            v9Var.setRoundRadius(AndroidUtilities.dp(2.0f));
                             String str4 = photoEntry.thumbPath;
                             if (str4 != null) {
-                                w9Var.f(str4, null, org.telegram.ui.ActionBar.j6.R4);
+                                v9Var.f(str4, null, org.telegram.ui.ActionBar.j6.R4);
                             } else if (photoEntry.path != null) {
-                                w9Var.p(photoEntry.orientation, photoEntry.invert, true);
+                                v9Var.p(photoEntry.orientation, photoEntry.invert, true);
                                 if (photoEntry.isVideo) {
-                                    w9Var.f("vthumb://" + photoEntry.imageId + ":" + photoEntry.path, null, org.telegram.ui.ActionBar.j6.R4);
+                                    v9Var.f("vthumb://" + photoEntry.imageId + ":" + photoEntry.path, null, org.telegram.ui.ActionBar.j6.R4);
                                 } else {
-                                    w9Var.f("thumb://" + photoEntry.imageId + ":" + photoEntry.path, null, org.telegram.ui.ActionBar.j6.R4);
+                                    v9Var.f("thumb://" + photoEntry.imageId + ":" + photoEntry.path, null, org.telegram.ui.ActionBar.j6.R4);
                                 }
                             } else {
-                                w9Var.setImageDrawable(org.telegram.ui.ActionBar.j6.R4);
+                                v9Var.setImageDrawable(org.telegram.ui.ActionBar.j6.R4);
                             }
                         } else {
                             layoutParams.leftMargin = AndroidUtilities.dp(45.0f);
@@ -985,7 +985,7 @@ public class UndoView extends FrameLayout {
                             Typeface typeface = Typeface.DEFAULT;
                             y1Var.setTypeface(typeface);
                             textView3.setVisibility(8);
-                            lj0Var2.setVisibility(8);
+                            kj0Var2.setVisibility(8);
                             int i31 = this.K;
                             if (i31 == 88) {
                                 String str5 = (String) obj;
@@ -1059,7 +1059,7 @@ public class UndoView extends FrameLayout {
                         if (measuredWidth == 0) {
                             measuredWidth = AndroidUtilities.displaySize.x;
                         }
-                        measureChildWithMargins(textView3, org.telegram.messenger.wh.y(16.0f, measuredWidth, TLObject.FLAG_30), 0, View.MeasureSpec.makeMeasureSpec(0, 0), 0);
+                        measureChildWithMargins(textView3, org.telegram.messenger.rk.c(16.0f, measuredWidth, TLObject.FLAG_30), 0, View.MeasureSpec.makeMeasureSpec(0, 0), 0);
                         this.r = AndroidUtilities.dp(37.0f) + textView3.getMeasuredHeight();
                     } else if (d()) {
                         this.r = AndroidUtilities.dp(52.0f);
@@ -1070,7 +1070,7 @@ public class UndoView extends FrameLayout {
                             measuredWidth2 = AndroidUtilities.displaySize.x;
                         }
                         View view = y1Var;
-                        measureChildWithMargins(view, org.telegram.messenger.wh.y(16.0f, measuredWidth2, TLObject.FLAG_30), 0, View.MeasureSpec.makeMeasureSpec(0, 0), 0);
+                        measureChildWithMargins(view, org.telegram.messenger.rk.c(16.0f, measuredWidth2, TLObject.FLAG_30), 0, View.MeasureSpec.makeMeasureSpec(0, 0), 0);
                         int measuredHeight = view.getMeasuredHeight();
                         int i35 = this.K;
                         int dp6 = AndroidUtilities.dp((i35 == 16 || i35 == 17 || i35 == 18 || i35 == 84 || i35 == 86) ? 14.0f : 28.0f) + measuredHeight;
@@ -1104,58 +1104,58 @@ public class UndoView extends FrameLayout {
                 i12 = 8;
             }
             imageView.setVisibility(i12);
-            lj0Var2.setVisibility(0);
+            kj0Var2.setVisibility(0);
             y1Var.setTypeface(Typeface.DEFAULT);
             int i37 = this.K;
             long j11 = -1;
             if (i37 == 76) {
                 y1Var.setText(LocaleController.getString(R.string.BroadcastGroupConvertSuccess));
-                lj0Var2.e(R.raw.gigagroup_convert, 36, 36);
+                kj0Var2.e(R.raw.gigagroup_convert, 36, 36);
                 layoutParams.topMargin = AndroidUtilities.dp(9.0f);
                 z10 = true;
                 y1Var.setTextSize(1, 14.0f);
-                lj0Var = lj0Var2;
+                kj0Var = kj0Var2;
                 j3 = -1;
             } else {
                 if (i37 == 75) {
                     y1Var.setText(LocaleController.getString(R.string.GigagroupConvertCancelHint));
-                    lj0Var2.e(R.raw.chats_infotip, 36, 36);
+                    kj0Var2.e(R.raw.chats_infotip, 36, 36);
                     layoutParams.topMargin = AndroidUtilities.dp(9.0f);
                     y1Var.setTextSize(1, 14.0f);
                 } else if (i10 == 70) {
                     int intValue4 = ((Integer) obj2).intValue();
                     textView3.setSingleLine(false);
                     y1Var.setText(LocaleController.formatString("AutoDeleteHintOnText", R.string.AutoDeleteHintOnText, LocaleController.formatTTLString(intValue4)));
-                    lj0Var2.e(R.raw.fire_on, 36, 36);
+                    kj0Var2.e(R.raw.fire_on, 36, 36);
                     layoutParams.topMargin = AndroidUtilities.dp(9.0f);
                     this.G = 4000L;
-                    lj0Var2.setPadding(0, 0, 0, AndroidUtilities.dp(3.0f));
+                    kj0Var2.setPadding(0, 0, 0, AndroidUtilities.dp(3.0f));
                 } else {
                     if (i37 == 71) {
                         y1Var.setText(LocaleController.getString(R.string.AutoDeleteHintOffText));
-                        lj0Var2.e(R.raw.fire_off, 36, 36);
+                        kj0Var2.e(R.raw.fire_off, 36, 36);
                         y1Var.setTextSize(1, 14.0f);
                         this.G = 3000L;
-                        lj0Var2.setPadding(0, 0, 0, AndroidUtilities.dp(4.0f));
+                        kj0Var2.setPadding(0, 0, 0, AndroidUtilities.dp(4.0f));
                     } else if (i37 == 45) {
                         y1Var.setText(LocaleController.getString(R.string.ImportMutualError));
-                        lj0Var2.e(R.raw.error, 36, 36);
+                        kj0Var2.e(R.raw.error, 36, 36);
                         layoutParams.topMargin = AndroidUtilities.dp(9.0f);
                         y1Var.setTextSize(1, 14.0f);
                     } else if (i37 == 46) {
                         y1Var.setText(LocaleController.getString(R.string.ImportNotAdmin));
-                        lj0Var2.e(R.raw.error, 36, 36);
+                        kj0Var2.e(R.raw.error, 36, 36);
                         layoutParams.topMargin = AndroidUtilities.dp(9.0f);
                         y1Var.setTextSize(1, 14.0f);
                     } else if (i37 == 47) {
                         y1Var.setText(LocaleController.getString(R.string.ImportedInfo));
-                        lj0Var2.e(R.raw.imported, 36, 36);
-                        lj0Var2.setPadding(0, 0, 0, AndroidUtilities.dp(5.0f));
+                        kj0Var2.e(R.raw.imported, 36, 36);
+                        kj0Var2.setPadding(0, 0, 0, AndroidUtilities.dp(5.0f));
                         layoutParams.topMargin = AndroidUtilities.dp(9.0f);
                         y1Var.setTextSize(1, 14.0f);
                     } else {
                         if (i37 == 52 || i37 == 56 || i37 == 57 || i37 == 58 || i37 == 59 || i37 == 60 || i37 == 80) {
-                            lj0Var = lj0Var2;
+                            kj0Var = kj0Var2;
                             if (!AndroidUtilities.shouldShowClipboardToast()) {
                                 return;
                             }
@@ -1177,17 +1177,17 @@ public class UndoView extends FrameLayout {
                             } else {
                                 y1Var.setText(LocaleController.getString(R.string.TextCopied));
                             }
-                            lj0Var.e(i38, 30, 30);
+                            kj0Var.e(i38, 30, 30);
                             this.G = 3000L;
                             y1Var.setTextSize(1, 15.0f);
                         } else if (i37 == 54) {
                             y1Var.setText(LocaleController.getString(R.string.ChannelNotifyMembersInfoOn));
-                            lj0Var2.e(R.raw.silent_unmute, 30, 30);
+                            kj0Var2.e(R.raw.silent_unmute, 30, 30);
                             this.G = 3000L;
                             y1Var.setTextSize(1, 15.0f);
                         } else if (i37 == 55) {
                             y1Var.setText(LocaleController.getString(R.string.ChannelNotifyMembersInfoOff));
-                            lj0Var2.e(R.raw.silent_mute, 30, 30);
+                            kj0Var2.e(R.raw.silent_mute, 30, 30);
                             this.G = 3000L;
                             y1Var.setTextSize(1, 15.0f);
                         } else if (i37 == 41) {
@@ -1200,19 +1200,19 @@ public class UndoView extends FrameLayout {
                             } else {
                                 y1Var.setText(AndroidUtilities.replaceTags(LocaleController.formatString("InvLinkToUser", R.string.InvLinkToUser, UserObject.getFirstName(MessagesController.getInstance(i11).getUser(l4)))));
                             }
-                            lj0Var2.e(R.raw.contact_check, 36, 36);
+                            kj0Var2.e(R.raw.contact_check, 36, 36);
                             this.G = 3000L;
                         } else if (i37 == 53) {
                             Integer num = (Integer) obj;
                             if (obj2 == null || (obj2 instanceof TLRPC.TL_forumTopic)) {
-                                lj0Var = lj0Var2;
+                                kj0Var = kj0Var2;
                                 if (longValue == UserConfig.getInstance(i11).clientUserId) {
                                     if (num.intValue() == 1) {
-                                        y1Var.setText(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.FwdMessageToSavedMessages), new sh(12)));
+                                        y1Var.setText(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.FwdMessageToSavedMessages), new sh(14)));
                                     } else {
-                                        y1Var.setText(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.FwdMessagesToSavedMessages), new sh(12)));
+                                        y1Var.setText(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.FwdMessagesToSavedMessages), new sh(14)));
                                     }
-                                    lj0Var.e(R.raw.saved_messages, 30, 30);
+                                    kj0Var.e(R.raw.saved_messages, 30, 30);
                                 } else {
                                     if (DialogObject.isChatDialog(longValue)) {
                                         TLRPC.Chat chat8 = MessagesController.getInstance(i11).getChat(Long.valueOf(-longValue));
@@ -1239,7 +1239,7 @@ public class UndoView extends FrameLayout {
                                             y1Var.setText(AndroidUtilities.replaceTags(LocaleController.formatString("FwdMessagesToUser", R.string.FwdMessagesToUser, UserObject.getFirstName(user7))));
                                         }
                                     }
-                                    lj0Var.e(R.raw.forward, 30, 30);
+                                    kj0Var.e(R.raw.forward, 30, 30);
                                     j11 = 300;
                                 }
                             } else {
@@ -1249,28 +1249,28 @@ public class UndoView extends FrameLayout {
                                 } else {
                                     y1Var.setText(AndroidUtilities.replaceTags(LocaleController.formatPluralString("FwdMessagesToManyChats", intValue5, new Object[0])));
                                 }
-                                lj0Var2.e(R.raw.forward, 30, 30);
+                                kj0Var2.e(R.raw.forward, 30, 30);
                                 j11 = 300;
-                                lj0Var = lj0Var2;
+                                kj0Var = kj0Var2;
                             }
                             this.G = 3000L;
                         } else {
-                            lj0Var = lj0Var2;
+                            kj0Var = kj0Var2;
                             int i43 = i11;
                             if (i37 == 61) {
                                 if (obj2 != null) {
                                     y1Var.setText(AndroidUtilities.replaceTags(LocaleController.formatString("BackgroundToChats", R.string.BackgroundToChats, LocaleController.formatPluralString("Chats", ((Integer) obj2).intValue(), new Object[0]))));
-                                    lj0Var.e(R.raw.forward, 30, 30);
+                                    kj0Var.e(R.raw.forward, 30, 30);
                                 } else if (longValue == UserConfig.getInstance(i43).clientUserId) {
                                     y1Var.setText(AndroidUtilities.replaceTags(LocaleController.getString(R.string.BackgroundToSavedMessages)));
-                                    lj0Var.e(R.raw.saved_messages, 30, 30);
+                                    kj0Var.e(R.raw.saved_messages, 30, 30);
                                 } else {
                                     if (DialogObject.isChatDialog(longValue)) {
                                         y1Var.setText(AndroidUtilities.replaceTags(LocaleController.formatString("BackgroundToGroup", R.string.BackgroundToGroup, MessagesController.getInstance(i43).getChat(Long.valueOf(-longValue)).title)));
                                     } else {
                                         y1Var.setText(AndroidUtilities.replaceTags(LocaleController.formatString("BackgroundToUser", R.string.BackgroundToUser, UserObject.getFirstName(MessagesController.getInstance(i43).getUser(l4)))));
                                     }
-                                    lj0Var.e(R.raw.forward, 30, 30);
+                                    kj0Var.e(R.raw.forward, 30, 30);
                                 }
                                 this.G = 3000L;
                             }
@@ -1278,11 +1278,11 @@ public class UndoView extends FrameLayout {
                         j3 = j11;
                         z10 = false;
                     }
-                    lj0Var = lj0Var2;
+                    kj0Var = kj0Var2;
                     j3 = j11;
                     z10 = false;
                 }
-                lj0Var = lj0Var2;
+                kj0Var = kj0Var2;
                 j3 = -1;
                 z10 = true;
             }
@@ -1291,10 +1291,10 @@ public class UndoView extends FrameLayout {
             linearLayout.setVisibility(8);
             layoutParams.leftMargin = AndroidUtilities.dp(58.0f);
             layoutParams.rightMargin = AndroidUtilities.dp(8.0f);
-            lj0Var.setProgress(0.0f);
-            lj0Var.d();
+            kj0Var.setProgress(0.0f);
+            kj0Var.d();
             if (j3 > 0) {
-                lj0Var.postDelayed(new xq0(this, 27), j3);
+                kj0Var.postDelayed(new wq0(this, 27), j3);
             }
             StringBuilder sb22 = new StringBuilder();
             sb22.append((Object) y1Var.getText());
@@ -1438,11 +1438,11 @@ public class UndoView extends FrameLayout {
         this.S = charSequence;
     }
 
-    public UndoView(Context context, vd1 vd1Var) {
-        this(context, vd1Var, false, null);
+    public UndoView(Context context, xd1 xd1Var) {
+        this(context, xd1Var, false, null);
     }
 
-    public UndoView(Context context, org.telegram.ui.ActionBar.n2 n2Var, boolean z10, org.telegram.ui.ActionBar.e6 e6Var) {
+    public UndoView(Context context, org.telegram.ui.ActionBar.n2 n2Var, boolean z10, org.telegram.ui.ActionBar.f6 f6Var) {
         super(context);
         this.a = 0;
         this.x = UserConfig.selectedAccount;
@@ -1450,68 +1450,68 @@ public class UndoView extends FrameLayout {
         this.T = 1;
         this.W = AndroidUtilities.dp(8.0f);
         this.c0 = 1.0f;
-        this.V = e6Var;
+        this.V = f6Var;
         this.s = n2Var;
         this.R = z10;
-        org.telegram.ui.Cells.y1 y1Var = new org.telegram.ui.Cells.y1(this, context, e6Var);
+        org.telegram.ui.Cells.y1 y1Var = new org.telegram.ui.Cells.y1(this, context, f6Var);
         this.b = y1Var;
         y1Var.setTextSize(1, 15.0f);
         int i10 = org.telegram.ui.ActionBar.j6.Hi;
-        y1Var.setTextColor(org.telegram.ui.ActionBar.j6.v0(i10, e6Var));
+        y1Var.setTextColor(org.telegram.ui.ActionBar.j6.v0(i10, f6Var));
         int i11 = org.telegram.ui.ActionBar.j6.Gi;
-        y1Var.setLinkTextColor(org.telegram.ui.ActionBar.j6.v0(i11, e6Var));
-        y1Var.setMovementMethod(new g61(this));
+        y1Var.setLinkTextColor(org.telegram.ui.ActionBar.j6.v0(i11, f6Var));
+        y1Var.setMovementMethod(new f61(this));
         addView(y1Var, w7.y5.d(-2, -2.0f, 51, 45.0f, 13.0f, 0.0f, 0.0f));
         TextView textView = new TextView(context);
         this.c = textView;
         textView.setTextSize(1, 13.0f);
-        textView.setTextColor(org.telegram.ui.ActionBar.j6.v0(i10, e6Var));
-        textView.setLinkTextColor(org.telegram.ui.ActionBar.j6.v0(i11, e6Var));
+        textView.setTextColor(org.telegram.ui.ActionBar.j6.v0(i10, f6Var));
+        textView.setLinkTextColor(org.telegram.ui.ActionBar.j6.v0(i11, f6Var));
         textView.setHighlightColor(0);
         textView.setSingleLine(true);
         textView.setEllipsize(TextUtils.TruncateAt.END);
         textView.setMovementMethod(new AndroidUtilities.LinkMovementMethodMy());
         addView(textView, w7.y5.d(-2, -2.0f, 51, 58.0f, 27.0f, 8.0f, 0.0f));
-        lj0 lj0Var = new lj0(context);
-        this.f = lj0Var;
-        lj0Var.setScaleType(ImageView.ScaleType.CENTER);
+        kj0 kj0Var = new kj0(context);
+        this.f = kj0Var;
+        kj0Var.setScaleType(ImageView.ScaleType.CENTER);
         int i12 = org.telegram.ui.ActionBar.j6.Fi;
-        lj0Var.h(org.telegram.ui.ActionBar.j6.v0(i12, e6Var) | (-16777216), "info1");
-        lj0Var.h(org.telegram.ui.ActionBar.j6.v0(i12, e6Var) | (-16777216), "info2");
-        lj0Var.h(org.telegram.ui.ActionBar.j6.v0(i10, e6Var), "luc12");
-        lj0Var.h(org.telegram.ui.ActionBar.j6.v0(i10, e6Var), "luc11");
-        lj0Var.h(org.telegram.ui.ActionBar.j6.v0(i10, e6Var), "luc10");
-        lj0Var.h(org.telegram.ui.ActionBar.j6.v0(i10, e6Var), "luc9");
-        lj0Var.h(org.telegram.ui.ActionBar.j6.v0(i10, e6Var), "luc8");
-        lj0Var.h(org.telegram.ui.ActionBar.j6.v0(i10, e6Var), "luc7");
-        lj0Var.h(org.telegram.ui.ActionBar.j6.v0(i10, e6Var), "luc6");
-        lj0Var.h(org.telegram.ui.ActionBar.j6.v0(i10, e6Var), "luc5");
-        lj0Var.h(org.telegram.ui.ActionBar.j6.v0(i10, e6Var), "luc4");
-        lj0Var.h(org.telegram.ui.ActionBar.j6.v0(i10, e6Var), "luc3");
-        lj0Var.h(org.telegram.ui.ActionBar.j6.v0(i10, e6Var), "luc2");
-        lj0Var.h(org.telegram.ui.ActionBar.j6.v0(i10, e6Var), "luc1");
-        lj0Var.h(org.telegram.ui.ActionBar.j6.v0(i10, e6Var), "Oval");
-        addView(lj0Var, w7.y5.d(54, -2.0f, 19, 3.0f, 0.0f, 0.0f, 0.0f));
-        w9 w9Var = new w9(context);
-        this.h = w9Var;
-        w9Var.setRoundRadius(AndroidUtilities.dp(15.0f));
-        addView(w9Var, w7.y5.d(30, 30.0f, 19, 15.0f, 0.0f, 0.0f, 0.0f));
+        kj0Var.h(org.telegram.ui.ActionBar.j6.v0(i12, f6Var) | (-16777216), "info1");
+        kj0Var.h(org.telegram.ui.ActionBar.j6.v0(i12, f6Var) | (-16777216), "info2");
+        kj0Var.h(org.telegram.ui.ActionBar.j6.v0(i10, f6Var), "luc12");
+        kj0Var.h(org.telegram.ui.ActionBar.j6.v0(i10, f6Var), "luc11");
+        kj0Var.h(org.telegram.ui.ActionBar.j6.v0(i10, f6Var), "luc10");
+        kj0Var.h(org.telegram.ui.ActionBar.j6.v0(i10, f6Var), "luc9");
+        kj0Var.h(org.telegram.ui.ActionBar.j6.v0(i10, f6Var), "luc8");
+        kj0Var.h(org.telegram.ui.ActionBar.j6.v0(i10, f6Var), "luc7");
+        kj0Var.h(org.telegram.ui.ActionBar.j6.v0(i10, f6Var), "luc6");
+        kj0Var.h(org.telegram.ui.ActionBar.j6.v0(i10, f6Var), "luc5");
+        kj0Var.h(org.telegram.ui.ActionBar.j6.v0(i10, f6Var), "luc4");
+        kj0Var.h(org.telegram.ui.ActionBar.j6.v0(i10, f6Var), "luc3");
+        kj0Var.h(org.telegram.ui.ActionBar.j6.v0(i10, f6Var), "luc2");
+        kj0Var.h(org.telegram.ui.ActionBar.j6.v0(i10, f6Var), "luc1");
+        kj0Var.h(org.telegram.ui.ActionBar.j6.v0(i10, f6Var), "Oval");
+        addView(kj0Var, w7.y5.d(54, -2.0f, 19, 3.0f, 0.0f, 0.0f, 0.0f));
+        v9 v9Var = new v9(context);
+        this.h = v9Var;
+        v9Var.setRoundRadius(AndroidUtilities.dp(15.0f));
+        addView(v9Var, w7.y5.d(30, 30.0f, 19, 15.0f, 0.0f, 0.0f, 0.0f));
         LinearLayout linearLayout = new LinearLayout(context);
         this.n = linearLayout;
         linearLayout.setOrientation(0);
-        linearLayout.setBackground(org.telegram.ui.ActionBar.j6.Y(org.telegram.ui.ActionBar.j6.v0(i11, e6Var) & 587202559, AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f)));
+        linearLayout.setBackground(org.telegram.ui.ActionBar.j6.Y(org.telegram.ui.ActionBar.j6.v0(i11, f6Var) & 587202559, AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f)));
         addView(linearLayout, w7.y5.d(-2, -2.0f, 21, 0.0f, 0.0f, 11.0f, 0.0f));
-        linearLayout.setOnClickListener(new f61(this, 0));
+        linearLayout.setOnClickListener(new e61(this, 0));
         ImageView imageView = new ImageView(context);
         this.e = imageView;
         imageView.setImageResource(R.drawable.chats_undo);
-        imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.j6.v0(i11, e6Var), PorterDuff.Mode.MULTIPLY));
+        imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.j6.v0(i11, f6Var), PorterDuff.Mode.MULTIPLY));
         linearLayout.addView(imageView, w7.y5.t(-2, -2, 19, 4, 4, 0, 4));
         TextView textView2 = new TextView(context);
         this.d = textView2;
         textView2.setTextSize(1, 14.0f);
         textView2.setTypeface(AndroidUtilities.bold());
-        textView2.setTextColor(org.telegram.ui.ActionBar.j6.v0(i11, e6Var));
+        textView2.setTextColor(org.telegram.ui.ActionBar.j6.v0(i11, f6Var));
         textView2.setText(LocaleController.getString(R.string.UndoNoCaps));
         linearLayout.addView(textView2, w7.y5.t(-2, -2, 19, 6, 4, 8, 4));
         this.F = new RectF(AndroidUtilities.dp(15.0f), AndroidUtilities.dp(15.0f), AndroidUtilities.dp(33.0f), AndroidUtilities.dp(33.0f));
@@ -1520,14 +1520,14 @@ public class UndoView extends FrameLayout {
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeWidth(AndroidUtilities.dp(2.0f));
         paint.setStrokeCap(Paint.Cap.ROUND);
-        paint.setColor(org.telegram.ui.ActionBar.j6.v0(i10, e6Var));
+        paint.setColor(org.telegram.ui.ActionBar.j6.v0(i10, f6Var));
         TextPaint textPaint = new TextPaint(1);
         this.y = textPaint;
         textPaint.setTextSize(AndroidUtilities.dp(12.0f));
         textPaint.setTypeface(AndroidUtilities.bold());
-        textPaint.setColor(org.telegram.ui.ActionBar.j6.v0(i10, e6Var));
+        textPaint.setColor(org.telegram.ui.ActionBar.j6.v0(i10, f6Var));
         setWillNotDraw(false);
-        this.U = org.telegram.ui.ActionBar.j6.b0(AndroidUtilities.dp(10.0f), org.telegram.ui.ActionBar.j6.v0(i12, e6Var));
+        this.U = org.telegram.ui.ActionBar.j6.b0(AndroidUtilities.dp(10.0f), org.telegram.ui.ActionBar.j6.v0(i12, f6Var));
         setOnTouchListener(new bi.d(25));
         setVisibility(4);
     }

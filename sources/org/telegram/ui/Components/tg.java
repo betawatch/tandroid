@@ -7,7 +7,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class tg extends View {
     public float a;
@@ -15,7 +15,7 @@ public final class tg extends View {
     public boolean c;
     public boolean d;
     public boolean e;
-    public final ij0 f;
+    public final hj0 f;
     public boolean h;
     public final /* synthetic */ ChatActivityEnterView n;
 
@@ -23,9 +23,9 @@ public final class tg extends View {
     public tg(ChatActivityEnterView chatActivityEnterView, Context context) {
         super(context);
         this.n = chatActivityEnterView;
-        ij0 ij0Var = new ij0(R.raw.chat_audio_record_delete_2, AndroidUtilities.dp(28.0f), AndroidUtilities.dp(28.0f), false, null);
-        this.f = ij0Var;
-        ij0Var.o0 = true;
+        hj0 hj0Var = new hj0(R.raw.chat_audio_record_delete_2, AndroidUtilities.dp(28.0f), AndroidUtilities.dp(28.0f), false, null);
+        this.f = hj0Var;
+        hj0Var.o0 = true;
         a();
     }
 
@@ -36,14 +36,14 @@ public final class tg extends View {
         int i02 = chatActivityEnterView.i0(i10);
         int i03 = chatActivityEnterView.i0(org.telegram.ui.ActionBar.j6.Sd);
         chatActivityEnterView.v3.setColor(i02);
-        ij0 ij0Var = this.f;
-        ij0Var.Z = true;
-        ij0Var.Q(i02, "Cup Red");
-        ij0Var.Q(i02, "Box");
-        ij0Var.Q(i03, "Line 1");
-        ij0Var.Q(i03, "Line 2");
-        ij0Var.Q(i03, "Line 3");
-        ij0Var.o();
+        hj0 hj0Var = this.f;
+        hj0Var.Z = true;
+        hj0Var.Q(i02, "Cup Red");
+        hj0Var.Q(i02, "Box");
+        hj0Var.Q(i03, "Line 1");
+        hj0Var.Q(i03, "Line 2");
+        hj0Var.Q(i03, "Line 3");
+        hj0Var.o();
     }
 
     @Override // android.view.View
@@ -51,29 +51,29 @@ public final class tg extends View {
         super.onAttachedToWindow();
         this.d = true;
         boolean z10 = this.e;
-        ij0 ij0Var = this.f;
+        hj0 hj0Var = this.f;
         if (z10) {
-            ij0Var.start();
+            hj0Var.start();
         }
-        ij0Var.R(this);
+        hj0Var.R(this);
     }
 
     @Override // android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         this.d = false;
-        ij0 ij0Var = this.f;
-        ij0Var.stop();
-        ij0Var.R(null);
+        hj0 hj0Var = this.f;
+        hj0Var.stop();
+        hj0Var.R(null);
     }
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         Paint paint = this.n.v3;
         boolean z10 = this.e;
-        ij0 ij0Var = this.f;
+        hj0 hj0Var = this.f;
         if (z10) {
-            ij0Var.setAlpha((int) (this.a * 255.0f));
+            hj0Var.setAlpha((int) (this.a * 255.0f));
         }
         paint.setAlpha((int) (this.a * 255.0f));
         long currentTimeMillis = System.currentTimeMillis() - this.b;
@@ -96,9 +96,9 @@ public final class tg extends View {
         }
         this.b = System.currentTimeMillis();
         if (this.e) {
-            ij0Var.draw(canvas);
+            hj0Var.draw(canvas);
         }
-        if (!this.e || !ij0Var.u()) {
+        if (!this.e || !hj0Var.u()) {
             canvas.drawCircle(getMeasuredWidth() >> 1, getMeasuredHeight() >> 1, AndroidUtilities.dp(5.0f), paint);
         }
         invalidate();

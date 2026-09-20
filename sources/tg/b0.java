@@ -7,32 +7,32 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.d3;
-import org.telegram.ui.ActionBar.e6;
 import org.telegram.ui.ActionBar.f3;
+import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class b0 extends ug.e {
     public final /* synthetic */ c0 r;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b0(c0 c0Var, e6 e6Var) {
-        super(e6Var);
+    public b0(c0 c0Var, f6 f6Var) {
+        super(f6Var);
         this.r = c0Var;
     }
 
     @Override // ug.e
     public final void E() {
-        e6 e6Var;
+        f6 f6Var;
         c0 c0Var = this.r;
         String str = c0Var.a0;
         String string = ((str == null || str.isEmpty()) && c0Var.X.to_id == -1) ? LocaleController.getString(R.string.BoostingOnlyGiveawayCreatorSeeLink) : LocaleController.getString(R.string.BoostingOnlyRecipientCode);
         d3 d3Var = c0Var.container;
-        e6Var = ((f3) c0Var).resourcesProvider;
-        new xc(d3Var, e6Var).Q(R.raw.chats_infotip, 36, string).k(true);
+        f6Var = ((f3) c0Var).resourcesProvider;
+        new xc(d3Var, f6Var).Q(R.raw.chats_infotip, 36, string).k(true);
     }
 
     @Override // ug.e

@@ -4,7 +4,7 @@ import hg.k0;
 import java.nio.ByteBuffer;
 import org.webrtc.VideoFrame;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public class JavaI420Buffer implements VideoFrame.I420Buffer {
     private final ByteBuffer dataU;
@@ -52,9 +52,9 @@ public class JavaI420Buffer implements VideoFrame.I420Buffer {
         if (byteBuffer.capacity() >= f7) {
             return;
         }
-        StringBuilder j3 = k0.j(f7, "Buffer must be at least ", " bytes, but was ");
-        j3.append(byteBuffer.capacity());
-        throw new IllegalArgumentException(j3.toString());
+        StringBuilder k10 = k0.k(f7, "Buffer must be at least ", " bytes, but was ");
+        k10.append(byteBuffer.capacity());
+        throw new IllegalArgumentException(k10.toString());
     }
 
     public static VideoFrame.Buffer cropAndScaleI420(VideoFrame.I420Buffer i420Buffer, int i10, int i11, int i12, int i13, int i14, int i15) {

@@ -14,7 +14,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class m5 implements Runnable {
     public final /* synthetic */ int a;
@@ -71,9 +71,9 @@ public final /* synthetic */ class m5 implements Runnable {
                             obj = obj2;
                             if (i6Var2.b0 != null) {
                                 for (int i17 = 0; i17 < i6Var2.b0.size(); i17++) {
-                                    g6 g6Var = (g6) i6Var2.b0.get(i17);
-                                    if (g6Var.r != null && g6Var.t == i15) {
-                                        arrayList4.add(g6Var);
+                                    h6 h6Var = (h6) i6Var2.b0.get(i17);
+                                    if (h6Var.r != null && h6Var.t == i15) {
+                                        arrayList4.add(h6Var);
                                     }
                                 }
                             }
@@ -106,7 +106,7 @@ public final /* synthetic */ class m5 implements Runnable {
                                 if (i6Var3 == null) {
                                     i6Var3 = new i6();
                                     i6Var3.E = i15;
-                                    i6Var3.b = new File(ApplicationLoader.getFilesDirFixed(), t8.b.v(str, ".attheme")).getAbsolutePath();
+                                    i6Var3.b = new File(ApplicationLoader.getFilesDirFixed(), v7.j0.s(str, ".attheme")).getAbsolutePath();
                                     arrayList2.add(i6Var3);
                                     arrayList.add(i6Var3);
                                     z12 = true;
@@ -131,18 +131,18 @@ public final /* synthetic */ class m5 implements Runnable {
                                         if (i6Var.b0 != null) {
                                             tL_themes2 = tL_themes3;
                                             i13 = i18;
-                                            g6 g6Var2 = (g6) i6Var.c0.get(tL_theme.id);
-                                            if (g6Var2 != null) {
-                                                if (i6.a(g6Var2, themeSettings)) {
+                                            h6 h6Var2 = (h6) i6Var.c0.get(tL_theme.id);
+                                            if (h6Var2 != null) {
+                                                if (i6.a(h6Var2, themeSettings)) {
                                                     num2 = num3;
                                                 } else {
-                                                    File d = g6Var2.d();
+                                                    File d = h6Var2.d();
                                                     if (d != null) {
                                                         d.delete();
                                                     }
-                                                    i6.i(g6Var2, themeSettings);
+                                                    i6.i(h6Var2, themeSettings);
                                                     i6 i6Var4 = j6.I;
-                                                    if (i6Var4 == i6Var && i6Var4.Y == g6Var2.a) {
+                                                    if (i6Var4 == i6Var && i6Var4.Y == h6Var2.a) {
                                                         j6.n1(false, false);
                                                         NotificationCenter globalInstance = NotificationCenter.getGlobalInstance();
                                                         int i20 = NotificationCenter.needSetDayNightTheme;
@@ -156,16 +156,16 @@ public final /* synthetic */ class m5 implements Runnable {
                                                     z12 = true;
                                                 }
                                                 TLRPC.WallPaper wallPaper = themeSettings.wallpaper;
-                                                g6Var2.q = (wallPaper == null || (wallPaperSettings = wallPaper.settings) == null || !wallPaperSettings.motion) ? false : true;
-                                                arrayList4.remove(g6Var2);
+                                                h6Var2.q = (wallPaper == null || (wallPaperSettings = wallPaper.settings) == null || !wallPaperSettings.motion) ? false : true;
+                                                arrayList4.remove(h6Var2);
                                             } else {
                                                 num2 = num3;
-                                                g6Var2 = i6Var.f(tL_theme, i15, i19);
-                                                if (!TextUtils.isEmpty(g6Var2.o)) {
+                                                h6Var2 = i6Var.f(tL_theme, i15, i19);
+                                                if (!TextUtils.isEmpty(h6Var2.o)) {
                                                     z11 = true;
                                                 }
                                             }
-                                            g6Var2.z = tL_theme.isDefault;
+                                            h6Var2.z = tL_theme.isDefault;
                                             i19++;
                                             size2 = i12;
                                             tL_themes3 = tL_themes2;
@@ -220,9 +220,9 @@ public final /* synthetic */ class m5 implements Runnable {
                             z10 = false;
                             if (j6.I == i6Var6) {
                             }
-                        } else if (obj4 instanceof g6) {
-                            g6 g6Var3 = (g6) obj4;
-                            if (j6.j0(g6Var3.b, g6Var3, false) && j6.I == g6Var3.b) {
+                        } else if (obj4 instanceof h6) {
+                            h6 h6Var3 = (h6) obj4;
+                            if (j6.j0(h6Var3.b, h6Var3, false) && j6.I == h6Var3.b) {
                                 j6.n1(false, false);
                                 NotificationCenter globalInstance2 = NotificationCenter.getGlobalInstance();
                                 int i22 = NotificationCenter.needSetDayNightTheme;
@@ -237,7 +237,7 @@ public final /* synthetic */ class m5 implements Runnable {
                         NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.themeListUpdated, new Object[0]);
                     }
                     if (z11) {
-                        d6.a(true);
+                        e6.a(true);
                     }
                     MediaDataController.getInstance(i15).generateEmojiPreviewThemes(arrayList3, i15);
                     break;

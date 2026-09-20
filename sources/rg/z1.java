@@ -31,12 +31,12 @@ import org.telegram.messenger.SvgHelper;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.o91;
+import org.telegram.ui.u21;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class z1 extends FrameLayout implements l0, NotificationCenter.NotificationCenterDelegate {
     public static final float[] U = {0.02f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 0.02f};
@@ -49,8 +49,8 @@ public final class z1 extends FrameLayout implements l0, NotificationCenter.Noti
     public final j0.a K;
     public final org.telegram.ui.Components.voip.g L;
     public float M;
-    public final u1 N;
-    public final s1 O;
+    public final v1 N;
+    public final t1 O;
     public org.telegram.ui.Cells.u0 P;
     public final ra.a Q;
     public final TLRPC.Document R;
@@ -64,7 +64,7 @@ public final class z1 extends FrameLayout implements l0, NotificationCenter.Noti
     public float f;
     public final String h;
     public final ImageReceiver n;
-    public w1 r;
+    public q1 r;
     public final int s;
     public final int v;
     public boolean w;
@@ -78,7 +78,7 @@ public final class z1 extends FrameLayout implements l0, NotificationCenter.Noti
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public z1(Context context, SvgHelper.SvgDrawable svgDrawable, int i10, int i11, e6 e6Var) {
+    public z1(Context context, SvgHelper.SvgDrawable svgDrawable, int i10, int i11, f6 f6Var) {
         super(context);
         boolean[] zArr;
         Paint paint = new Paint(1);
@@ -92,7 +92,7 @@ public final class z1 extends FrameLayout implements l0, NotificationCenter.Noti
         this.v = i11;
         this.a = svgDrawable;
         paint.setColor(-16777216);
-        paint2.setColor(i0.a.d(0.5f, j6.v0(j6.Mj, e6Var), -16777216));
+        paint2.setColor(i0.a.d(0.5f, j6.v0(j6.Mj, f6Var), -16777216));
         imageReceiver.setLayerNum(ConnectionsManager.DEFAULT_DATACENTER_ID);
         TLRPC.TL_help_premiumPromo premiumPromo = MediaDataController.getInstance(i10).getPremiumPromo();
         String l02 = PremiumPreviewFragment.l0(i11);
@@ -130,7 +130,7 @@ public final class z1 extends FrameLayout implements l0, NotificationCenter.Noti
                 this.n.setImage(null, null, y1Var, null, premiumPromo, 1);
                 FileLoader.getInstance(this.s).loadFile(document, premiumPromo, 3, 0);
                 this.R = document;
-                Utilities.globalQueue.postRunnable(new org.telegram.ui.web.p1(18, this, document));
+                Utilities.globalQueue.postRunnable(new org.telegram.ui.web.g1(20, this, document));
                 if (i11 != 1) {
                     ra.a aVar = new ra.a(2);
                     aVar.c = new RectF();
@@ -154,42 +154,42 @@ public final class z1 extends FrameLayout implements l0, NotificationCenter.Noti
                         i14++;
                     }
                 } else if (i11 == 6 || i11 == 9 || i11 == 3 || i11 == 7 || i11 == 11 || i11 == 4 || i11 == 24 || i11 == 43) {
-                    u1 u1Var = new u1(40);
-                    this.N = u1Var;
-                    u1Var.o = 3.0f;
-                    u1Var.N = i11;
+                    v1 v1Var = new v1(40);
+                    this.N = v1Var;
+                    v1Var.o = 3.0f;
+                    v1Var.N = i11;
                     if (i11 == 3 || i11 == 24 || i11 == 43) {
-                        u1Var.r = 14;
-                        u1Var.s = 18;
-                        u1Var.t = 18;
+                        v1Var.r = 14;
+                        v1Var.s = 18;
+                        v1Var.t = 18;
                     } else {
-                        u1Var.r = 14;
-                        u1Var.s = 16;
-                        u1Var.t = 15;
+                        v1Var.r = 14;
+                        v1Var.s = 16;
+                        v1Var.t = 15;
                     }
                     if (i11 == 43) {
-                        u1Var.G = true;
+                        v1Var.G = true;
                     }
-                    u1Var.w = 0.98f;
-                    u1Var.v = 0.98f;
-                    u1Var.u = 0.98f;
-                    u1Var.o = 4.0f;
-                    u1Var.O = e6Var;
-                    u1Var.P = j6.Zj;
-                    u1Var.c();
+                    v1Var.w = 0.98f;
+                    v1Var.v = 0.98f;
+                    v1Var.u = 0.98f;
+                    v1Var.o = 4.0f;
+                    v1Var.O = f6Var;
+                    v1Var.P = j6.Zj;
+                    v1Var.c();
                 } else if (i11 == 2) {
-                    s1 s1Var = new s1();
-                    this.O = s1Var;
-                    ArrayList arrayList = s1Var.e;
+                    t1 t1Var = new t1();
+                    this.O = t1Var;
+                    ArrayList arrayList = t1Var.e;
                     if (arrayList.isEmpty()) {
-                        for (int i17 = 0; i17 < s1Var.g; i17++) {
-                            arrayList.add(new r1(s1Var));
+                        for (int i17 = 0; i17 < t1Var.g; i17++) {
+                            arrayList.add(new s1(t1Var));
                         }
                     }
                     int k10 = i0.a.k(j6.w0(zArr, j6.Zj, false), 80);
-                    if (s1Var.i != k10) {
-                        s1Var.i = k10;
-                        s1Var.c.setColor(k10);
+                    if (t1Var.i != k10) {
+                        t1Var.i = k10;
+                        t1Var.c.setColor(k10);
                     }
                 } else if (i11 == 13) {
                     org.telegram.ui.Cells.u0 u0Var = new org.telegram.ui.Cells.u0();
@@ -201,21 +201,21 @@ public final class z1 extends FrameLayout implements l0, NotificationCenter.Noti
                         }
                     }
                 } else {
-                    u1 u1Var2 = new u1(SharedConfig.getDevicePerformanceClass() == 2 ? 800 : SharedConfig.getDevicePerformanceClass() == 1 ? 400 : 100);
-                    this.N = u1Var2;
-                    u1Var2.O = e6Var;
-                    u1Var2.P = j6.Zj;
-                    u1Var2.r = 4;
-                    u1Var2.w = 0.98f;
-                    u1Var2.v = 0.98f;
-                    u1Var2.u = 0.98f;
-                    u1Var2.G = true;
-                    u1Var2.o = 4.0f;
-                    u1Var2.H = true;
-                    u1Var2.I = true;
-                    u1Var2.K = true;
-                    u1Var2.M = false;
-                    u1Var2.c();
+                    v1 v1Var2 = new v1(SharedConfig.getDevicePerformanceClass() == 2 ? 800 : SharedConfig.getDevicePerformanceClass() == 1 ? 400 : 100);
+                    this.N = v1Var2;
+                    v1Var2.O = f6Var;
+                    v1Var2.P = j6.Zj;
+                    v1Var2.r = 4;
+                    v1Var2.w = 0.98f;
+                    v1Var2.v = 0.98f;
+                    v1Var2.u = 0.98f;
+                    v1Var2.G = true;
+                    v1Var2.o = 4.0f;
+                    v1Var2.H = true;
+                    v1Var2.I = true;
+                    v1Var2.K = true;
+                    v1Var2.M = false;
+                    v1Var2.c();
                 }
                 if (i11 != 1 || i11 == 3 || i11 == 11) {
                     this.d = true;
@@ -254,13 +254,13 @@ public final class z1 extends FrameLayout implements l0, NotificationCenter.Noti
                 this.f = 0.671f;
             } else {
                 if ((NotificationCenter.getGlobalInstance().getCurrentHeavyOperationFlags() & 512) != 0) {
-                    w1 w1Var = this.r;
-                    if (w1Var != null) {
-                        AndroidUtilities.cancelRunOnUIThread(w1Var);
+                    q1 q1Var = this.r;
+                    if (q1Var != null) {
+                        AndroidUtilities.cancelRunOnUIThread(q1Var);
                     }
-                    w1 w1Var2 = new w1(this, 0);
-                    this.r = w1Var2;
-                    AndroidUtilities.runOnUIThread(w1Var2, 300L);
+                    q1 q1Var2 = new q1(this, 1);
+                    this.r = q1Var2;
+                    AndroidUtilities.runOnUIThread(q1Var2, 300L);
                     return;
                 }
                 try {
@@ -399,10 +399,10 @@ public final class z1 extends FrameLayout implements l0, NotificationCenter.Noti
         j0.a aVar2;
         org.telegram.ui.Components.voip.g gVar;
         ra.a aVar3 = this.Q;
-        s1 s1Var = this.O;
+        t1 t1Var = this.O;
         int i14 = 0;
-        u1 u1Var = this.N;
-        if (u1Var != null || s1Var != null || this.P != null || aVar3 != null) {
+        v1 v1Var = this.N;
+        if (v1Var != null || t1Var != null || this.P != null || aVar3 != null) {
             if (this.G < 0.5f) {
                 float pow = (float) Math.pow(1.0f - r9, 2.0d);
                 canvas.save();
@@ -427,7 +427,7 @@ public final class z1 extends FrameLayout implements l0, NotificationCenter.Noti
                         for (int i16 = 0; i16 <= width; i16++) {
                             ((ArrayList[]) aVar3.f)[i16] = new ArrayList();
                             k0 k0Var = new k0();
-                            k0Var.a = org.telegram.ui.Cells.c1.d(Utilities.fastRandom, height);
+                            k0Var.a = org.telegram.ui.Cells.c1.e(Utilities.fastRandom, height);
                             k0Var.c = currentTimeMillis;
                             k0Var.b = Math.abs(Utilities.fastRandom.nextInt() % 6) + 4;
                             ((ArrayList[]) aVar3.f)[i16].add(k0Var);
@@ -455,9 +455,9 @@ public final class z1 extends FrameLayout implements l0, NotificationCenter.Noti
                                 h1VarArr3[i19] = h1Var;
                                 com.google.android.gms.internal.play_billing.h1 h1Var2 = h1VarArr2[i18][i19];
                                 h1Var2.getClass();
-                                h1Var2.a = org.telegram.ui.Cells.c1.d(Utilities.fastRandom, i17);
-                                h1Var2.b = org.telegram.ui.Cells.c1.d(Utilities.fastRandom, i17);
-                                h1Var2.c = org.telegram.ui.Cells.c1.d(Utilities.fastRandom, 300) + currentTimeMillis + 150;
+                                h1Var2.a = org.telegram.ui.Cells.c1.e(Utilities.fastRandom, i17);
+                                h1Var2.b = org.telegram.ui.Cells.c1.e(Utilities.fastRandom, i17);
+                                h1Var2.c = org.telegram.ui.Cells.c1.e(Utilities.fastRandom, 300) + currentTimeMillis + 150;
                                 i19++;
                                 i17 = 16;
                             }
@@ -521,15 +521,15 @@ public final class z1 extends FrameLayout implements l0, NotificationCenter.Noti
                                             Paint paint = (Paint) aVar4.h;
                                             Bitmap[] bitmapArr = (Bitmap[]) aVar4.d;
                                             i13 = width;
-                                            paint.setAlpha((int) org.telegram.messenger.q.A(1.0f, clamp2, clamp, 255.0f));
+                                            paint.setAlpha((int) org.telegram.messenger.l0.z(1.0f, clamp2, clamp, 255.0f));
                                             canvas.drawBitmap(bitmapArr[h1Var3.a], f14, f15, paint);
                                             paint.setAlpha((int) (clamp * clamp2 * 255.0f));
                                             canvas.drawBitmap(bitmapArr[h1Var3.b], f14, f15, paint);
                                             paint.setAlpha(255);
                                             if (clamp2 >= 1.0f) {
                                                 h1Var3.a = h1Var3.b;
-                                                h1Var3.b = org.telegram.ui.Cells.c1.d(Utilities.fastRandom, 16);
-                                                h1Var3.c = org.telegram.ui.Cells.c1.d(Utilities.fastRandom, 300) + currentTimeMillis + 150;
+                                                h1Var3.b = org.telegram.ui.Cells.c1.e(Utilities.fastRandom, 16);
+                                                h1Var3.c = org.telegram.ui.Cells.c1.e(Utilities.fastRandom, 300) + currentTimeMillis + 150;
                                             }
                                         } else {
                                             i13 = width;
@@ -568,9 +568,9 @@ public final class z1 extends FrameLayout implements l0, NotificationCenter.Noti
                 } else {
                     f7 = 0.9f;
                     f10 = 2.0f;
-                    if (u1Var != null) {
-                        u1Var.d(canvas);
-                    } else if (s1Var != null) {
+                    if (v1Var != null) {
+                        v1Var.d(canvas);
+                    } else if (t1Var != null) {
                         if (this.H != null) {
                             float clamp3 = Utilities.clamp(r3.getCurrentPosition() / this.H.getDuration(), 1.0f, 0.0f);
                             float f16 = 1.0f / 9;
@@ -582,39 +582,39 @@ public final class z1 extends FrameLayout implements l0, NotificationCenter.Noti
                         } else {
                             f11 = 0.2f;
                         }
-                        s1Var.f = (((1.0f - Utilities.clamp(this.G / 0.1f, 1.0f, 0.0f)) * 0.9f) + 0.1f) * 150.0f * f11;
-                        ArrayList arrayList3 = s1Var.e;
+                        t1Var.f = (((1.0f - Utilities.clamp(this.G / 0.1f, 1.0f, 0.0f)) * 0.9f) + 0.1f) * 150.0f * f11;
+                        ArrayList arrayList3 = t1Var.e;
                         long currentTimeMillis2 = System.currentTimeMillis();
                         for (int i26 = 0; i26 < arrayList3.size(); i26++) {
-                            r1 r1Var = (r1) arrayList3.get(i26);
-                            s1 s1Var2 = r1Var.g;
-                            float[] fArr2 = s1Var2.d;
+                            s1 s1Var = (s1) arrayList3.get(i26);
+                            t1 t1Var2 = s1Var.g;
+                            float[] fArr2 = t1Var2.d;
                             int i27 = i26 * 4;
-                            float f17 = r1Var.a;
+                            float f17 = s1Var.a;
                             fArr2[i27] = f17;
-                            fArr2[i27 + 1] = r1Var.b;
-                            fArr2[i27 + 2] = (AndroidUtilities.dp(30.0f) * r1Var.c) + f17;
-                            fArr2[i27 + 3] = (AndroidUtilities.dp(30.0f) * r1Var.d) + r1Var.b;
+                            fArr2[i27 + 1] = s1Var.b;
+                            fArr2[i27 + 2] = (AndroidUtilities.dp(30.0f) * s1Var.c) + f17;
+                            fArr2[i27 + 3] = (AndroidUtilities.dp(30.0f) * s1Var.d) + s1Var.b;
                             float dp = AndroidUtilities.dp(4.0f);
-                            float f18 = s1Var2.j;
-                            float f19 = (f18 / 660.0f) * dp * s1Var2.f;
-                            float f20 = (r1Var.c * f19) + r1Var.a;
-                            r1Var.a = f20;
-                            float f21 = (r1Var.d * f19) + r1Var.b;
-                            r1Var.b = f21;
-                            float f22 = r1Var.f;
+                            float f18 = t1Var2.j;
+                            float f19 = (f18 / 660.0f) * dp * t1Var2.f;
+                            float f20 = (s1Var.c * f19) + s1Var.a;
+                            s1Var.a = f20;
+                            float f21 = (s1Var.d * f19) + s1Var.b;
+                            s1Var.b = f21;
+                            float f22 = s1Var.f;
                             if (f22 != 1.0f) {
                                 float f23 = (f18 / 200.0f) + f22;
-                                r1Var.f = f23;
+                                s1Var.f = f23;
                                 if (f23 > 1.0f) {
-                                    r1Var.f = 1.0f;
+                                    s1Var.f = 1.0f;
                                 }
                             }
-                            if (currentTimeMillis2 > r1Var.e || !s1Var.b.contains(f20, f21)) {
-                                r1Var.a(currentTimeMillis2, false);
+                            if (currentTimeMillis2 > s1Var.e || !t1Var.b.contains(f20, f21)) {
+                                s1Var.a(currentTimeMillis2, false);
                             }
                         }
-                        canvas.drawLines(s1Var.d, s1Var.c);
+                        canvas.drawLines(t1Var.d, t1Var.c);
                     } else {
                         org.telegram.ui.Cells.u0 u0Var = this.P;
                         if (u0Var != null) {
@@ -780,7 +780,7 @@ public final class z1 extends FrameLayout implements l0, NotificationCenter.Noti
         ci.c0 c0Var = this.H;
         if (c0Var != null) {
             this.T = c0Var.getCurrentPosition();
-            this.H.release(new o91(13));
+            this.H.release(new u21(15));
             this.H = null;
         }
     }
@@ -805,10 +805,10 @@ public final class z1 extends FrameLayout implements l0, NotificationCenter.Noti
                 rectF.set(AndroidUtilities.rectTmp);
                 rectF.inset(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f));
             }
-            u1 u1Var = this.N;
-            if (u1Var != null) {
-                RectF rectF2 = u1Var.c;
-                RectF rectF3 = u1Var.a;
+            v1 v1Var = this.N;
+            if (v1Var != null) {
+                RectF rectF2 = v1Var.c;
+                RectF rectF3 = v1Var.a;
                 int i14 = this.v;
                 if (i14 == 6 || i14 == 9 || i14 == 3 || i14 == 7 || i14 == 24 || i14 == 43 || i14 == 11 || i14 == 4) {
                     rectF3.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
@@ -817,23 +817,23 @@ public final class z1 extends FrameLayout implements l0, NotificationCenter.Noti
                     RectF rectF4 = AndroidUtilities.rectTmp;
                     float width = (int) (rectF4.width() * 0.4f);
                     rectF3.set(rectF4.centerX() - width, rectF4.centerY() - width, rectF4.centerX() + width, rectF4.centerY() + width);
-                    u1Var.b.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
+                    v1Var.b.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
                 }
-                u1Var.f();
+                v1Var.f();
                 rectF2.set(AndroidUtilities.rectTmp);
                 rectF2.inset(AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f));
             }
-            s1 s1Var = this.O;
-            if (s1Var != null) {
-                RectF rectF5 = s1Var.a;
+            t1 t1Var = this.O;
+            if (t1Var != null) {
+                RectF rectF5 = t1Var.a;
                 rectF5.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
-                s1Var.b.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
+                t1Var.b.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
                 rectF5.inset(AndroidUtilities.dp(100.0f), AndroidUtilities.dp(100.0f));
                 rectF5.offset(0.0f, getMeasuredHeight() * 0.1f);
-                ArrayList arrayList = s1Var.e;
+                ArrayList arrayList = t1Var.e;
                 long currentTimeMillis = System.currentTimeMillis();
                 for (int i15 = 0; i15 < arrayList.size(); i15++) {
-                    ((r1) arrayList.get(i15)).a(currentTimeMillis, true);
+                    ((s1) arrayList.get(i15)).a(currentTimeMillis, true);
                 }
             }
             org.telegram.ui.Cells.u0 u0Var = this.P;
@@ -923,7 +923,7 @@ public final class z1 extends FrameLayout implements l0, NotificationCenter.Noti
             ci.c0 c0Var = this.H;
             if (c0Var != null) {
                 this.T = c0Var.getCurrentPosition();
-                this.H.release(new o91(13));
+                this.H.release(new u21(15));
                 this.H = null;
             }
             imageReceiver.stopAnimation();

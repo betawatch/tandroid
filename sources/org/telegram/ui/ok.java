@@ -6,9 +6,9 @@ import android.graphics.PorterDuffColorFilter;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class ok extends org.telegram.ui.Components.nd {
+public final class ok extends org.telegram.ui.Components.od {
     public final /* synthetic */ boolean e;
     public final /* synthetic */ zn f;
 
@@ -19,7 +19,7 @@ public final class ok extends org.telegram.ui.Components.nd {
         this.e = z10;
     }
 
-    @Override // org.telegram.ui.Components.nd
+    @Override // org.telegram.ui.Components.od
     public final void d() {
         int dp = this.e ? AndroidUtilities.dp(4.0f) : 0;
         int i10 = org.telegram.ui.ActionBar.j6.ve;
@@ -29,7 +29,7 @@ public final class ok extends org.telegram.ui.Components.nd {
         getTextView().setTextColor(znVar.getThemedColor(i10));
     }
 
-    @Override // org.telegram.ui.Components.nd
+    @Override // org.telegram.ui.Components.od
     public final void setEditButton(boolean z10) {
         super.setEditButton(z10);
         if (this.e) {

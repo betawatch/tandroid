@@ -5,13 +5,13 @@ import android.graphics.Canvas;
 import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.ImageView;
 import java.util.ArrayList;
+import org.telegram.ui.Components.m90;
 import org.telegram.ui.Components.mq;
-import org.telegram.ui.Components.n90;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.gh1;
+import org.telegram.ui.ih1;
 import org.telegram.ui.zs0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class k0 extends ImageView {
     public final /* synthetic */ int a;
@@ -70,7 +70,7 @@ public final class k0 extends ImageView {
             case 3:
                 super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
                 accessibilityNodeInfo.setCheckable(true);
-                accessibilityNodeInfo.setChecked(((gh1) this.b).n.getTransformationMethod() == null);
+                accessibilityNodeInfo.setChecked(((ih1) this.b).n.getTransformationMethod() == null);
                 break;
             default:
                 super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
@@ -111,9 +111,9 @@ public final class k0 extends ImageView {
                 if (zs0Var != null) {
                     zs0Var.setTranslationY(f7);
                 }
-                n90 n90Var = photoViewer.f1;
-                if (n90Var != null) {
-                    n90Var.setTranslationY(f7);
+                m90 m90Var = photoViewer.f1;
+                if (m90Var != null) {
+                    m90Var.setTranslationY(f7);
                     break;
                 }
                 break;

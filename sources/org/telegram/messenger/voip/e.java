@@ -21,15 +21,15 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.ui.ActionBar.b2;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.Components.a70;
+import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.Components.xc;
-import org.telegram.ui.b41;
+import org.telegram.ui.Components.z60;
+import org.telegram.ui.c41;
 import org.telegram.ui.le;
-import org.telegram.ui.t31;
+import org.telegram.ui.u31;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final /* synthetic */ class e implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -59,19 +59,19 @@ public final /* synthetic */ class e implements Runnable {
                 ((ConferenceCall) this.c).lambda$poll$7((TL_phone.getGroupCallChainBlocks) this.d, this.b, (TLObject) this.e, (TLRPC.TL_error) this.f, (AtomicBoolean) this.h, (AtomicInteger) this.n);
                 break;
             case 1:
-                a70.n((a70) this.c, (b2) this.d, (Context) this.e, this.b, (TLRPC.TL_chatInviteExported) this.f, (TLRPC.TL_chatInviteImporter) this.h, (TLRPC.ChannelParticipant) this.n);
+                z60.n((z60) this.c, (b2) this.d, (Context) this.e, this.b, (TLRPC.TL_chatInviteExported) this.f, (TLRPC.TL_chatInviteImporter) this.h, (TLRPC.ChannelParticipant) this.n);
                 break;
             case 2:
                 TLObject tLObject = (TLObject) this.e;
                 Activity activity = (Activity) this.c;
-                e6 e6Var = (e6) this.d;
+                f6 f6Var = (f6) this.d;
                 byte[] bArr = (byte[]) this.f;
                 zn znVar = (zn) this.h;
                 MessageObject messageObject = (MessageObject) this.n;
-                b41 b41Var = new b41(activity, e6Var, this.b, bArr);
-                b41Var.O((TLRPC.TL_channels_sponsoredMessageReportResultChooseOption) tLObject);
-                b41Var.s = new t31(znVar, activity, e6Var, messageObject);
-                b41Var.show();
+                c41 c41Var = new c41(activity, f6Var, this.b, bArr);
+                c41Var.O((TLRPC.TL_channels_sponsoredMessageReportResultChooseOption) tLObject);
+                c41Var.s = new u31(znVar, activity, f6Var, messageObject);
+                c41Var.show();
                 break;
             default:
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) this.f;
@@ -131,10 +131,10 @@ public final /* synthetic */ class e implements Runnable {
         }
     }
 
-    public /* synthetic */ e(TLObject tLObject, Activity activity, e6 e6Var, long j3, byte[] bArr, zn znVar, MessageObject messageObject) {
+    public /* synthetic */ e(TLObject tLObject, Activity activity, f6 f6Var, long j3, byte[] bArr, zn znVar, MessageObject messageObject) {
         this.e = tLObject;
         this.c = activity;
-        this.d = e6Var;
+        this.d = f6Var;
         this.b = j3;
         this.f = bArr;
         this.h = znVar;
@@ -151,8 +151,8 @@ public final /* synthetic */ class e implements Runnable {
         this.b = j3;
     }
 
-    public /* synthetic */ e(a70 a70Var, b2 b2Var, Context context, long j3, TLRPC.TL_chatInviteExported tL_chatInviteExported, TLRPC.TL_chatInviteImporter tL_chatInviteImporter, TLRPC.ChannelParticipant channelParticipant) {
-        this.c = a70Var;
+    public /* synthetic */ e(z60 z60Var, b2 b2Var, Context context, long j3, TLRPC.TL_chatInviteExported tL_chatInviteExported, TLRPC.TL_chatInviteImporter tL_chatInviteImporter, TLRPC.ChannelParticipant channelParticipant) {
+        this.c = z60Var;
         this.d = b2Var;
         this.e = context;
         this.b = j3;

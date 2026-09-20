@@ -1,25 +1,25 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class re implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.Components.nm0 b;
+    public final /* synthetic */ org.telegram.ui.Components.mm0 b;
 
-    public /* synthetic */ re(org.telegram.ui.Components.nm0 nm0Var, int i10) {
+    public /* synthetic */ re(org.telegram.ui.Components.mm0 mm0Var, int i10) {
         this.a = i10;
-        this.b = nm0Var;
+        this.b = mm0Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                org.telegram.ui.Components.nm0 nm0Var = this.b;
-                if (!nm0Var.M) {
-                    nm0Var.M = true;
-                    nm0Var.c(new org.telegram.ui.Components.lm0(nm0Var, 0), false);
-                    nm0Var.s.invalidate();
+                org.telegram.ui.Components.mm0 mm0Var = this.b;
+                if (!mm0Var.M) {
+                    mm0Var.M = true;
+                    mm0Var.c(new org.telegram.ui.Components.km0(mm0Var, 0), false);
+                    mm0Var.s.invalidate();
                     break;
                 }
                 break;

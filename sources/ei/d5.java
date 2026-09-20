@@ -38,18 +38,18 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Cells.j5;
-import org.telegram.ui.Cells.r8;
-import org.telegram.ui.Cells.w8;
-import org.telegram.ui.Components.w70;
-import org.telegram.ui.Components.x51;
+import org.telegram.ui.Cells.k5;
+import org.telegram.ui.Cells.s8;
+import org.telegram.ui.Cells.x8;
+import org.telegram.ui.Components.v70;
+import org.telegram.ui.Components.w51;
 import org.telegram.ui.Components.zt;
-import org.telegram.ui.dg1;
+import org.telegram.ui.fg1;
 import org.telegram.ui.oy;
 import org.telegram.ui.uy;
-import w7.g6;
+import w7.h6;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class d5 implements Utilities.Callback5, OnSuccessListener, c3.g, org.telegram.ui.ActionBar.a2, e2.m, zt, ii.p0, oy, p5, f2.s {
     public final /* synthetic */ int a;
@@ -71,8 +71,8 @@ public final /* synthetic */ class d5 implements Utilities.Callback5, OnSuccessL
     }
 
     @Override // ii.p0
-    public w70 a(ii.i1 i1Var) {
-        return w70.H((ii.d2) ((a6.i) this.b).b, i1Var);
+    public v70 a(ii.i1 i1Var) {
+        return v70.H((ii.d2) ((a6.i) this.b).b, i1Var);
     }
 
     @Override // f2.s
@@ -90,7 +90,7 @@ public final /* synthetic */ class d5 implements Utilities.Callback5, OnSuccessL
     public ii.b0 c(aa.a aVar) {
         j5.b bVar = (j5.b) this.b;
         URL url = (URL) aVar.c;
-        String c10 = g6.c("CctTransportBackend");
+        String c10 = h6.c("CctTransportBackend");
         if (Log.isLoggable(c10, 4)) {
             Log.i(c10, String.format("Making request to: %s", url));
         }
@@ -127,12 +127,12 @@ public final /* synthetic */ class d5 implements Utilities.Callback5, OnSuccessL
                     }
                     int responseCode = httpURLConnection.getResponseCode();
                     Integer valueOf = Integer.valueOf(responseCode);
-                    String c11 = g6.c("CctTransportBackend");
+                    String c11 = h6.c("CctTransportBackend");
                     if (Log.isLoggable(c11, 4)) {
                         Log.i(c11, String.format("Status Code: %d", valueOf));
                     }
-                    g6.a(httpURLConnection.getHeaderField("Content-Type"), "CctTransportBackend", "Content-Type: %s");
-                    g6.a(httpURLConnection.getHeaderField("Content-Encoding"), "CctTransportBackend", "Content-Encoding: %s");
+                    h6.a(httpURLConnection.getHeaderField("Content-Type"), "CctTransportBackend", "Content-Type: %s");
+                    h6.a(httpURLConnection.getHeaderField("Content-Encoding"), "CctTransportBackend", "Content-Encoding: %s");
                     if (responseCode == 302 || responseCode == 301 || responseCode == 307) {
                         return new ii.b0(responseCode, new URL(httpURLConnection.getHeaderField("Location")), 0L);
                     }
@@ -161,19 +161,19 @@ public final /* synthetic */ class d5 implements Utilities.Callback5, OnSuccessL
             }
         } catch (ia.b e) {
             e = e;
-            g6.b("CctTransportBackend", "Couldn't encode request, returning with 400", e);
+            h6.b("CctTransportBackend", "Couldn't encode request, returning with 400", e);
             return new ii.b0(400, null, 0L);
         } catch (ConnectException e7) {
             e = e7;
-            g6.b("CctTransportBackend", "Couldn't open connection, returning with 500", e);
+            h6.b("CctTransportBackend", "Couldn't open connection, returning with 500", e);
             return new ii.b0(500, null, 0L);
         } catch (UnknownHostException e10) {
             e = e10;
-            g6.b("CctTransportBackend", "Couldn't open connection, returning with 500", e);
+            h6.b("CctTransportBackend", "Couldn't open connection, returning with 500", e);
             return new ii.b0(500, null, 0L);
         } catch (IOException e11) {
             e = e11;
-            g6.b("CctTransportBackend", "Couldn't encode request, returning with 400", e);
+            h6.b("CctTransportBackend", "Couldn't encode request, returning with 400", e);
             return new ii.b0(400, null, 0L);
         }
     }
@@ -184,8 +184,87 @@ public final /* synthetic */ class d5 implements Utilities.Callback5, OnSuccessL
         a0Var.f(i10);
     }
 
+    @Override // e2.m
+    public void invoke(Object obj) {
+        switch (this.a) {
+            case 7:
+                ((b2.z0) obj).onMediaMetadataChanged((b2.n0) this.b);
+                break;
+            case 8:
+                ((b2.z0) obj).onAudioAttributesChanged((b2.e) this.b);
+                break;
+            case 9:
+                ((b2.z0) obj).onTrackSelectionParametersChanged((b2.q1) this.b);
+                break;
+            case 10:
+                ((b2.z0) obj).onCues((d2.d) this.b);
+                break;
+            case 11:
+                ((b2.z0) obj).onMediaMetadataChanged(((i2.b0) this.b).a.O);
+                break;
+            case 12:
+                ((b2.z0) obj).onMetadata((b2.p0) this.b);
+                break;
+            case 23:
+                ((j2.b) obj).h((b2.u0) this.b);
+                break;
+            case 24:
+                ((j2.b) obj).onSeekStarted((j2.a) this.b);
+                break;
+            case 25:
+                ((j2.b) obj).a((i2.g) this.b);
+                break;
+            default:
+                ((j2.b) obj).b((u2.b0) this.b);
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.zt
+    public void j() {
+        switch (this.a) {
+            case 15:
+                ii.u0 u0Var = (ii.u0) this.b;
+                ii.i1 i1Var = u0Var.d;
+                ii.a aVar = u0Var.f;
+                if (aVar != null) {
+                    aVar.s = true;
+                    aVar.r = i1Var.E;
+                }
+                if (aVar != null) {
+                    TL_iv.PageBlock pageBlock = aVar.b;
+                    if (pageBlock instanceof TL_iv.pageBlockDetails) {
+                        ((TL_iv.pageBlockDetails) pageBlock).title = f6.f(i1Var.getText());
+                    }
+                }
+                ii.d3 d3Var = u0Var.h;
+                if (d3Var != null && u0Var.f != null) {
+                    ii.w3.P1(d3Var.a);
+                    break;
+                }
+                break;
+            case 20:
+                ((g5) this.b).h();
+                break;
+            default:
+                o5 o5Var = (o5) this.b;
+                ii.a aVar2 = o5Var.a;
+                if (aVar2 != null) {
+                    aVar2.s = true;
+                    aVar2.r = o5Var.r.E;
+                }
+                o5Var.u();
+                ii.c3 c3Var = o5Var.E;
+                if (c3Var != null && o5Var.a != null) {
+                    ii.w3.P1(c3Var.a);
+                    break;
+                }
+                break;
+        }
+    }
+
     @Override // org.telegram.ui.ActionBar.a2
-    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+    public void k(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
         int i11;
         switch (this.a) {
             case 5:
@@ -241,85 +320,6 @@ public final /* synthetic */ class d5 implements Utilities.Callback5, OnSuccessL
         }
     }
 
-    @Override // org.telegram.ui.Components.zt
-    public void h() {
-        switch (this.a) {
-            case 15:
-                ii.u0 u0Var = (ii.u0) this.b;
-                ii.i1 i1Var = u0Var.d;
-                ii.a aVar = u0Var.f;
-                if (aVar != null) {
-                    aVar.s = true;
-                    aVar.r = i1Var.E;
-                }
-                if (aVar != null) {
-                    TL_iv.PageBlock pageBlock = aVar.b;
-                    if (pageBlock instanceof TL_iv.pageBlockDetails) {
-                        ((TL_iv.pageBlockDetails) pageBlock).title = f6.f(i1Var.getText());
-                    }
-                }
-                ii.d3 d3Var = u0Var.h;
-                if (d3Var != null && u0Var.f != null) {
-                    ii.w3.P1(d3Var.a);
-                    break;
-                }
-                break;
-            case 20:
-                ((g5) this.b).h();
-                break;
-            default:
-                o5 o5Var = (o5) this.b;
-                ii.a aVar2 = o5Var.a;
-                if (aVar2 != null) {
-                    aVar2.s = true;
-                    aVar2.r = o5Var.r.E;
-                }
-                o5Var.u();
-                ii.c3 c3Var = o5Var.E;
-                if (c3Var != null && o5Var.a != null) {
-                    ii.w3.P1(c3Var.a);
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // e2.m
-    public void invoke(Object obj) {
-        switch (this.a) {
-            case 7:
-                ((b2.z0) obj).onMediaMetadataChanged((b2.n0) this.b);
-                break;
-            case 8:
-                ((b2.z0) obj).onAudioAttributesChanged((b2.e) this.b);
-                break;
-            case 9:
-                ((b2.z0) obj).onTrackSelectionParametersChanged((b2.q1) this.b);
-                break;
-            case 10:
-                ((b2.z0) obj).onCues((d2.d) this.b);
-                break;
-            case 11:
-                ((b2.z0) obj).onMediaMetadataChanged(((i2.b0) this.b).a.O);
-                break;
-            case 12:
-                ((b2.z0) obj).onMetadata((b2.p0) this.b);
-                break;
-            case 23:
-                ((j2.b) obj).h((b2.u0) this.b);
-                break;
-            case 24:
-                ((j2.b) obj).onSeekStarted((j2.a) this.b);
-                break;
-            case 25:
-                ((j2.b) obj).a((i2.g) this.b);
-                break;
-            default:
-                ((j2.b) obj).b((u2.b0) this.b);
-                break;
-        }
-    }
-
     @Override // c3.g
     public long m(long j3) {
         return e2.d0.i((j3 * r0.e) / 1000000, 0L, ((c3.u) this.b).j - 1);
@@ -338,7 +338,7 @@ public final /* synthetic */ class d5 implements Utilities.Callback5, OnSuccessL
                 ((Integer) obj3).getClass();
                 ((Float) obj4).getClass();
                 ((Float) obj5).getClass();
-                ((e5) this.b).V((x51) obj);
+                ((e5) this.b).V((w51) obj);
                 break;
             case 1:
             case 2:
@@ -360,16 +360,16 @@ public final /* synthetic */ class d5 implements Utilities.Callback5, OnSuccessL
                 break;
             case 3:
                 hg.g1 g1Var = (hg.g1) this.b;
-                x51 x51Var = (x51) obj;
+                w51 w51Var = (w51) obj;
                 View view2 = (View) obj2;
                 ((Integer) obj3).getClass();
                 float floatValue = ((Float) obj4).floatValue();
                 ((Float) obj5).getClass();
-                int i11 = x51Var.d;
+                int i11 = w51Var.d;
                 if (i11 == -1) {
                     boolean z10 = !g1Var.e;
                     g1Var.e = z10;
-                    ((w8) view2).setChecked(z10);
+                    ((x8) view2).setChecked(z10);
                     g1Var.a.Y2.N(true);
                     g1Var.Y(true);
                     break;
@@ -379,9 +379,9 @@ public final /* synthetic */ class d5 implements Utilities.Callback5, OnSuccessL
                     e2Var.c = new ci.m2(17, g1Var, view2);
                     g1Var.presentFragment(e2Var);
                     break;
-                } else if (x51Var.a == 5 && i11 >= 0 && i11 < g1Var.h.length) {
+                } else if (w51Var.a == 5 && i11 >= 0 && i11 < g1Var.h.length) {
                     if (!LocaleController.isRTL ? floatValue < view2.getMeasuredWidth() - AndroidUtilities.dp(76.0f) : floatValue > AndroidUtilities.dp(76.0f)) {
-                        int i12 = (x51Var.d + 6) % 7;
+                        int i12 = (w51Var.d + 6) % 7;
                         int i13 = 0;
                         for (int i14 = 0; i14 < g1Var.h[i12].size(); i14++) {
                             if (((hg.f1) g1Var.h[i12].get(i14)).b > i13) {
@@ -389,7 +389,7 @@ public final /* synthetic */ class d5 implements Utilities.Callback5, OnSuccessL
                             }
                         }
                         int max = Math.max(0, i13 - 1439);
-                        int i15 = (x51Var.d + 1) % 7;
+                        int i15 = (w51Var.d + 1) % 7;
                         int i16 = 1440;
                         for (int i17 = 0; i17 < g1Var.h[i15].size(); i17++) {
                             if (((hg.f1) g1Var.h[i15].get(i17)).a < i16) {
@@ -397,8 +397,8 @@ public final /* synthetic */ class d5 implements Utilities.Callback5, OnSuccessL
                             }
                         }
                         int i18 = i16 + 1439;
-                        CharSequence charSequence = x51Var.l;
-                        ArrayList arrayList = g1Var.h[x51Var.d];
+                        CharSequence charSequence = w51Var.l;
+                        ArrayList arrayList = g1Var.h[w51Var.d];
                         int i19 = 0;
                         for (int i20 = 0; i20 < 7; i20++) {
                             ArrayList arrayList2 = g1Var.h[i20];
@@ -408,19 +408,19 @@ public final /* synthetic */ class d5 implements Utilities.Callback5, OnSuccessL
                         }
                         hg.i1 i1Var = new hg.i1(charSequence, arrayList, max, i18, 28 - i19);
                         i1Var.f = new uc(g1Var, 23);
-                        i1Var.h = new gg.x1(5, g1Var, x51Var);
+                        i1Var.h = new gg.x1(5, g1Var, w51Var);
                         g1Var.presentFragment(i1Var);
                         break;
                     } else {
-                        if (g1Var.h[x51Var.d].isEmpty()) {
-                            ((j5) view2).setChecked(true);
-                            g1Var.h[x51Var.d].add(new hg.f1(0, 1439));
-                            g1Var.X(x51Var.d);
+                        if (g1Var.h[w51Var.d].isEmpty()) {
+                            ((k5) view2).setChecked(true);
+                            g1Var.h[w51Var.d].add(new hg.f1(0, 1439));
+                            g1Var.X(w51Var.d);
                         } else {
-                            g1Var.h[x51Var.d].clear();
-                            ((j5) view2).setChecked(false);
+                            g1Var.h[w51Var.d].clear();
+                            ((k5) view2).setChecked(false);
                         }
-                        ((j5) view2).setValue(hg.g1.a0(g1Var.h[x51Var.d]));
+                        ((k5) view2).setValue(hg.g1.a0(g1Var.h[w51Var.d]));
                         g1Var.Y(true);
                         break;
                     }
@@ -428,7 +428,7 @@ public final /* synthetic */ class d5 implements Utilities.Callback5, OnSuccessL
                 break;
             case 4:
                 final hg.i1 i1Var2 = (hg.i1) this.b;
-                x51 x51Var2 = (x51) obj;
+                w51 w51Var2 = (w51) obj;
                 final View view3 = (View) obj2;
                 ((Integer) obj3).getClass();
                 ((Float) obj4).getClass();
@@ -436,19 +436,19 @@ public final /* synthetic */ class d5 implements Utilities.Callback5, OnSuccessL
                 int i21 = i1Var2.c;
                 int i22 = i1Var2.d;
                 ArrayList arrayList3 = i1Var2.b;
-                int i23 = x51Var2.d;
+                int i23 = w51Var2.d;
                 if (i23 == -1) {
                     i1Var2.r = !i1Var2.r;
                     arrayList3.clear();
                     if (i1Var2.r) {
                         arrayList3.add(new hg.f1(0, 1439));
                     }
-                    w8 w8Var = (w8) view3;
+                    x8 x8Var = (x8) view3;
                     boolean z11 = i1Var2.r;
-                    x51Var2.e = z11;
-                    w8Var.setChecked(z11);
+                    w51Var2.e = z11;
+                    x8Var.setChecked(z11);
                     boolean z12 = i1Var2.r;
-                    w8Var.b(j6.w0(null, z12 ? j6.f6 : j6.e6, false), z12);
+                    x8Var.b(j6.w0(null, z12 ? j6.f6 : j6.e6, false), z12);
                     i1Var2.n.Y2.N(true);
                     uc ucVar = i1Var2.f;
                     if (ucVar != null) {
@@ -473,13 +473,13 @@ public final /* synthetic */ class d5 implements Utilities.Callback5, OnSuccessL
                     }
                     i1Var2.n.Y2.N(true);
                     break;
-                } else if (x51Var2.a == 3 && (i10 = i23 / 3) >= 0 && i10 < arrayList3.size()) {
+                } else if (w51Var2.a == 3 && (i10 = i23 / 3) >= 0 && i10 < arrayList3.size()) {
                     int i25 = i10 - 1;
                     hg.f1 f1Var = i25 >= 0 ? (hg.f1) arrayList3.get(i25) : null;
                     final hg.f1 f1Var2 = (hg.f1) arrayList3.get(i10);
                     int i26 = i10 + 1;
                     hg.f1 f1Var3 = i26 < arrayList3.size() ? (hg.f1) arrayList3.get(i26) : null;
-                    int i27 = x51Var2.d % 3;
+                    int i27 = w51Var2.d % 3;
                     if (i27 == 0) {
                         Activity parentActivity = i1Var2.getParentActivity();
                         String string = LocaleController.getString(R.string.BusinessHoursDayOpenHourPicker);
@@ -488,7 +488,7 @@ public final /* synthetic */ class d5 implements Utilities.Callback5, OnSuccessL
                             i21 = f1Var.b + 1;
                         }
                         final int i29 = 0;
-                        org.telegram.ui.Components.e5.X(parentActivity, string, i28, i21, f1Var2.b - 1, new Utilities.Callback() { // from class: hg.h1
+                        org.telegram.ui.Components.d5.X(parentActivity, string, i28, i21, f1Var2.b - 1, new Utilities.Callback() { // from class: hg.h1
                             @Override // org.telegram.messenger.Utilities.Callback
                             public final void run(Object obj6) {
                                 Integer num2 = (Integer) obj6;
@@ -496,10 +496,10 @@ public final /* synthetic */ class d5 implements Utilities.Callback5, OnSuccessL
                                     case 0:
                                         i1 i1Var3 = i1Var2;
                                         boolean V = i1Var3.V();
-                                        r8 r8Var = (r8) view3;
+                                        s8 s8Var = (s8) view3;
                                         int intValue = num2.intValue();
                                         f1Var2.a = intValue;
-                                        r8Var.u(f1.a(intValue), true);
+                                        s8Var.u(f1.a(intValue), true);
                                         if (V != i1Var3.V()) {
                                             i1Var3.n.Y2.N(true);
                                         }
@@ -512,10 +512,10 @@ public final /* synthetic */ class d5 implements Utilities.Callback5, OnSuccessL
                                     default:
                                         i1 i1Var4 = i1Var2;
                                         boolean V2 = i1Var4.V();
-                                        r8 r8Var2 = (r8) view3;
+                                        s8 s8Var2 = (s8) view3;
                                         int intValue2 = num2.intValue();
                                         f1Var2.b = intValue2;
-                                        r8Var2.u(f1.a(intValue2), true);
+                                        s8Var2.u(f1.a(intValue2), true);
                                         if (V2 != i1Var4.V()) {
                                             i1Var4.n.Y2.N(true);
                                         }
@@ -538,7 +538,7 @@ public final /* synthetic */ class d5 implements Utilities.Callback5, OnSuccessL
                             i22 = f1Var3.a - 1;
                         }
                         final int i32 = 1;
-                        org.telegram.ui.Components.e5.X(parentActivity2, string2, i30, i31, i22, new Utilities.Callback() { // from class: hg.h1
+                        org.telegram.ui.Components.d5.X(parentActivity2, string2, i30, i31, i22, new Utilities.Callback() { // from class: hg.h1
                             @Override // org.telegram.messenger.Utilities.Callback
                             public final void run(Object obj6) {
                                 Integer num2 = (Integer) obj6;
@@ -546,10 +546,10 @@ public final /* synthetic */ class d5 implements Utilities.Callback5, OnSuccessL
                                     case 0:
                                         i1 i1Var3 = i1Var2;
                                         boolean V = i1Var3.V();
-                                        r8 r8Var = (r8) view3;
+                                        s8 s8Var = (s8) view3;
                                         int intValue = num2.intValue();
                                         f1Var2.a = intValue;
-                                        r8Var.u(f1.a(intValue), true);
+                                        s8Var.u(f1.a(intValue), true);
                                         if (V != i1Var3.V()) {
                                             i1Var3.n.Y2.N(true);
                                         }
@@ -562,10 +562,10 @@ public final /* synthetic */ class d5 implements Utilities.Callback5, OnSuccessL
                                     default:
                                         i1 i1Var4 = i1Var2;
                                         boolean V2 = i1Var4.V();
-                                        r8 r8Var2 = (r8) view3;
+                                        s8 s8Var2 = (s8) view3;
                                         int intValue2 = num2.intValue();
                                         f1Var2.b = intValue2;
-                                        r8Var2.u(f1.a(intValue2), true);
+                                        s8Var2.u(f1.a(intValue2), true);
                                         if (V2 != i1Var4.V()) {
                                             i1Var4.n.Y2.N(true);
                                         }
@@ -597,13 +597,13 @@ public final /* synthetic */ class d5 implements Utilities.Callback5, OnSuccessL
                 ((Integer) obj3).getClass();
                 ((Float) obj4).getClass();
                 ((Float) obj5).getClass();
-                hg.e2.U((hg.e2) this.b, (x51) obj, (View) obj2);
+                hg.e2.U((hg.e2) this.b, (w51) obj, (View) obj2);
                 break;
         }
     }
 
     @Override // org.telegram.ui.oy
-    public boolean u(uy uyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, dg1 dg1Var) {
+    public boolean u(uy uyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, fg1 fg1Var) {
         ii.i4 i4Var = (ii.i4) this.b;
         if (arrayList.isEmpty() || ((MessagesStorage.TopicKey) arrayList.get(0)).dialogId <= 0) {
             return false;

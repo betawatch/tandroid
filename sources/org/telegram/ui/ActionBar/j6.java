@@ -86,30 +86,30 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.ThemeEditorView;
-import org.telegram.ui.Components.f90;
-import org.telegram.ui.Components.gm0;
-import org.telegram.ui.Components.ie0;
-import org.telegram.ui.Components.ij0;
-import org.telegram.ui.Components.k8;
-import org.telegram.ui.Components.km0;
-import org.telegram.ui.Components.lc0;
-import org.telegram.ui.Components.lp0;
+import org.telegram.ui.Components.e90;
+import org.telegram.ui.Components.fm0;
+import org.telegram.ui.Components.he0;
+import org.telegram.ui.Components.hj0;
+import org.telegram.ui.Components.j8;
+import org.telegram.ui.Components.jm0;
+import org.telegram.ui.Components.kc0;
+import org.telegram.ui.Components.kp0;
+import org.telegram.ui.Components.p9;
 import org.telegram.ui.Components.pq;
-import org.telegram.ui.Components.q9;
-import org.telegram.ui.Components.rg0;
+import org.telegram.ui.Components.qg0;
+import org.telegram.ui.Components.rc0;
 import org.telegram.ui.Components.rp;
-import org.telegram.ui.Components.sc0;
-import org.telegram.ui.Components.v51;
-import org.telegram.ui.Components.v9;
+import org.telegram.ui.Components.u51;
+import org.telegram.ui.Components.u9;
 import org.telegram.ui.Components.w10;
+import org.telegram.ui.Components.ww0;
 import org.telegram.ui.Components.x10;
 import org.telegram.ui.Components.xc;
-import org.telegram.ui.Components.xw0;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.kd1;
+import org.telegram.ui.md1;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public abstract class j6 {
     public static int A;
@@ -134,7 +134,7 @@ public abstract class j6 {
     public static final int Ai;
     public static final int Aj;
     public static final int Ak;
-    public static lf.i Al;
+    public static lf.h Al;
     public static int B;
     public static TextPaint[] B0;
     public static boolean B1;
@@ -205,7 +205,7 @@ public abstract class j6 {
     public static TextPaint E0;
     public static int E1;
     public static TextPaint E2;
-    public static sc0 E3;
+    public static rc0 E3;
     public static Drawable E4;
     public static final int E5;
     public static final int E6;
@@ -271,7 +271,7 @@ public abstract class j6 {
     public static Bitmap Gl;
     public static final HashMap H;
     public static TextPaint[] H0;
-    public static ij0 H1;
+    public static hj0 H1;
     public static TextPaint H2;
     public static Drawable H3;
     public static final int H5;
@@ -293,7 +293,7 @@ public abstract class j6 {
     public static final Paint Hl;
     public static i6 I;
     public static TextPaint I0;
-    public static ij0 I1;
+    public static hj0 I1;
     public static TextPaint I2;
     public static Drawable I3;
     public static final int I5;
@@ -315,7 +315,7 @@ public abstract class j6 {
     public static final Paint Il;
     public static i6 J;
     public static TextPaint J0;
-    public static ij0 J1;
+    public static hj0 J1;
     public static TextPaint J2;
     public static Drawable J3;
     public static final int J5;
@@ -337,7 +337,7 @@ public abstract class j6 {
     public static final Paint Jl;
     public static i6 K;
     public static TextPaint K0;
-    public static ij0 K1;
+    public static hj0 K1;
     public static TextPaint K2;
     public static Drawable K3;
     public static final int K5;
@@ -359,7 +359,7 @@ public abstract class j6 {
     public static final Paint Kl;
     public static final i6 L;
     public static TextPaint L0;
-    public static ij0 L1;
+    public static hj0 L1;
     public static TextPaint L2;
     public static Drawable L3;
     public static final int L5;
@@ -381,7 +381,7 @@ public abstract class j6 {
     public static final Paint Ll;
     public static i6 M;
     public static TextPaint M0;
-    public static ij0 M1;
+    public static hj0 M1;
     public static TextPaint M2;
     public static Drawable M3;
     public static final int M5;
@@ -403,7 +403,7 @@ public abstract class j6 {
     public static final Paint Ml;
     public static boolean N;
     public static TextPaint N0;
-    public static ij0 N1;
+    public static hj0 N1;
     public static TextPaint N2;
     public static Drawable N3;
     public static final int N5;
@@ -424,7 +424,7 @@ public abstract class j6 {
     public static final int Nk;
     public static boolean O;
     public static TextPaint O0;
-    public static ij0 O1;
+    public static hj0 O1;
     public static TextPaint O2;
     public static Drawable O3;
     public static Drawable O4;
@@ -573,7 +573,7 @@ public abstract class j6 {
     public static final int Ui;
     public static final int Uj;
     public static final int Uk;
-    public static q9 V;
+    public static p9 V;
     public static Drawable V0;
     public static Paint V1;
     public static TextPaint V2;
@@ -618,7 +618,7 @@ public abstract class j6 {
     public static final int Wj;
     public static final int Wk;
     public static int X;
-    public static sc0 X0;
+    public static rc0 X0;
     public static Paint X1;
     public static TextPaint X2;
     public static Drawable X3;
@@ -754,7 +754,7 @@ public abstract class j6 {
     public static Paint d2;
     public static TextPaint d3;
     public static Drawable d4;
-    public static k8 d5;
+    public static j8 d5;
     public static final int d6;
     public static final int d7;
     public static final int d8;
@@ -819,7 +819,7 @@ public abstract class j6 {
     public static final int fl;
     public static boolean g;
     public static int g0;
-    public static km0 g1;
+    public static jm0 g1;
     public static Paint g2;
     public static TextPaint g3;
     public static Drawable g4;
@@ -841,7 +841,7 @@ public abstract class j6 {
     public static final int gk;
     public static final int gl;
     public static String h0;
-    public static km0 h1;
+    public static jm0 h1;
     public static Paint h2;
     public static Drawable h3;
     public static Drawable h4;
@@ -1136,7 +1136,7 @@ public abstract class j6 {
     public static boolean tl;
     public static int u;
     public static Paint u0;
-    public static ij0 u1;
+    public static hj0 u1;
     public static TextPaint u2;
     public static Drawable u4;
     public static final int u5;
@@ -1158,7 +1158,7 @@ public abstract class j6 {
     public static final ThreadLocal ul;
     public static int v;
     public static Paint v0;
-    public static ij0 v1;
+    public static hj0 v1;
     public static TextPaint v2;
     public static PorterDuffColorFilter v3;
     public static Drawable v4;
@@ -1181,7 +1181,7 @@ public abstract class j6 {
     public static final ThreadLocal vl;
     public static String w;
     public static Paint w0;
-    public static ij0 w1;
+    public static hj0 w1;
     public static TextPaint w2;
     public static PorterDuffColorFilter w3;
     public static Drawable w4;
@@ -1204,9 +1204,9 @@ public abstract class j6 {
     public static final ThreadLocal wl;
     public static double x;
     public static Paint x0;
-    public static ij0 x1;
+    public static hj0 x1;
     public static TextPaint x2;
-    public static ie0 x3;
+    public static he0 x3;
     public static Drawable x4;
     public static final int x5;
     public static final int x6;
@@ -1227,7 +1227,7 @@ public abstract class j6 {
     public static final ThreadLocal xl;
     public static double y;
     public static Paint y0;
-    public static ij0 y1;
+    public static hj0 y1;
     public static TextPaint[] y2;
     public static Drawable y3;
     public static Drawable y4;
@@ -1249,7 +1249,7 @@ public abstract class j6 {
     public static final int yk;
     public static final ThreadLocal yl;
     public static Paint z0;
-    public static ij0 z1;
+    public static hj0 z1;
     public static TextPaint z2;
     public static Drawable z3;
     public static Drawable z4;
@@ -1280,7 +1280,7 @@ public abstract class j6 {
     public static final int[] D = new int[4];
     public static final long[] E = new long[4];
     public static final Drawable[] r0 = new Drawable[25];
-    public static final xw0[] u3 = new xw0[6];
+    public static final ww0[] u3 = new ww0[6];
     public static final Drawable[] G4 = new Drawable[2];
     public static final Drawable[] H4 = new Drawable[2];
     public static final Drawable[] I4 = new Drawable[2];
@@ -1319,7 +1319,7 @@ public abstract class j6 {
         TLRPC.TL_theme tL_theme;
         TLRPC.TL_theme tL_theme2;
         SparseArray sparseArray;
-        g6 k10;
+        h6 k10;
         int i12 = 3;
         l = new z9(i12);
         o = 0;
@@ -4445,40 +4445,40 @@ public abstract class j6 {
                             int i930 = 0;
                             while (true) {
                                 if (i930 >= size) {
-                                    g6 g6Var = new g6();
-                                    g6Var.a = 100;
-                                    g6Var.c = i929;
-                                    g6Var.b = i6Var9;
-                                    i6Var9.a0.put(100, g6Var);
-                                    arrayList2.add(0, g6Var);
+                                    h6 h6Var = new h6();
+                                    h6Var.a = 100;
+                                    h6Var.c = i929;
+                                    h6Var.b = i6Var9;
+                                    i6Var9.a0.put(100, h6Var);
+                                    arrayList2.add(0, h6Var);
                                     i6Var9.Y = 100;
                                     i6Var9.f0 = 101;
                                     SerializedData serializedData = new SerializedData(72);
                                     serializedData.writeInt32(9);
                                     serializedData.writeInt32(1);
-                                    serializedData.writeInt32(g6Var.a);
-                                    serializedData.writeInt32(g6Var.c);
-                                    serializedData.writeInt32(g6Var.e);
-                                    serializedData.writeInt32(g6Var.f);
-                                    serializedData.writeInt32(g6Var.g);
-                                    serializedData.writeInt32(g6Var.h);
-                                    serializedData.writeBool(g6Var.i);
-                                    serializedData.writeInt64(g6Var.j);
-                                    serializedData.writeInt64(g6Var.k);
-                                    serializedData.writeInt64(g6Var.l);
-                                    serializedData.writeInt64(g6Var.m);
-                                    serializedData.writeInt32(g6Var.n);
+                                    serializedData.writeInt32(h6Var.a);
+                                    serializedData.writeInt32(h6Var.c);
+                                    serializedData.writeInt32(h6Var.e);
+                                    serializedData.writeInt32(h6Var.f);
+                                    serializedData.writeInt32(h6Var.g);
+                                    serializedData.writeInt32(h6Var.h);
+                                    serializedData.writeBool(h6Var.i);
+                                    serializedData.writeInt64(h6Var.j);
+                                    serializedData.writeInt64(h6Var.k);
+                                    serializedData.writeInt64(h6Var.l);
+                                    serializedData.writeInt64(h6Var.m);
+                                    serializedData.writeInt32(h6Var.n);
                                     serializedData.writeInt64(0L);
-                                    serializedData.writeDouble(g6Var.p);
-                                    serializedData.writeBool(g6Var.q);
-                                    serializedData.writeString(g6Var.o);
+                                    serializedData.writeDouble(h6Var.p);
+                                    serializedData.writeBool(h6Var.q);
+                                    serializedData.writeString(h6Var.o);
                                     serializedData.writeBool(false);
                                     editor2.putString("accents_" + i6Var9.d, Base64.encodeToString(serializedData.toByteArray(), 3));
                                     break;
                                 }
-                                g6 g6Var2 = (g6) i6Var9.b0.get(i930);
-                                if (g6Var2.c == i929) {
-                                    i6Var9.Y = g6Var2.a;
+                                h6 h6Var2 = (h6) i6Var9.b0.get(i930);
+                                if (h6Var2.c == i929) {
+                                    i6Var9.Y = h6Var2.a;
                                     break;
                                 }
                                 i930++;
@@ -4506,72 +4506,72 @@ public abstract class j6 {
                             int readInt322 = serializedData2.readInt32(true);
                             for (int i931 = 0; i931 < readInt322; i931 = i10 + 1) {
                                 try {
-                                    g6 g6Var3 = new g6();
-                                    g6Var3.a = serializedData2.readInt32(z11);
-                                    g6Var3.c = serializedData2.readInt32(z11);
+                                    h6 h6Var3 = new h6();
+                                    h6Var3.a = serializedData2.readInt32(z11);
+                                    h6Var3.c = serializedData2.readInt32(z11);
                                     if (readInt32 >= 9) {
-                                        g6Var3.d = serializedData2.readInt32(z11);
+                                        h6Var3.d = serializedData2.readInt32(z11);
                                     }
-                                    g6Var3.b = i6Var9;
-                                    g6Var3.e = serializedData2.readInt32(true);
-                                    g6Var3.f = serializedData2.readInt32(true);
+                                    h6Var3.b = i6Var9;
+                                    h6Var3.e = serializedData2.readInt32(true);
+                                    h6Var3.f = serializedData2.readInt32(true);
                                     if (readInt32 >= 7) {
-                                        g6Var3.g = serializedData2.readInt32(true);
-                                        g6Var3.h = serializedData2.readInt32(true);
+                                        h6Var3.g = serializedData2.readInt32(true);
+                                        h6Var3.h = serializedData2.readInt32(true);
                                     }
                                     if (readInt32 >= 8) {
                                         z10 = true;
-                                        g6Var3.i = serializedData2.readBool(true);
+                                        h6Var3.i = serializedData2.readBool(true);
                                     } else {
                                         z10 = true;
                                     }
                                     if (readInt32 >= 3) {
                                         i10 = i931;
                                         it2 = it3;
-                                        g6Var3.j = serializedData2.readInt64(z10);
+                                        h6Var3.j = serializedData2.readInt64(z10);
                                     } else {
                                         i10 = i931;
                                         it2 = it3;
-                                        g6Var3.j = serializedData2.readInt32(z10);
+                                        h6Var3.j = serializedData2.readInt32(z10);
                                     }
                                     if (readInt32 >= 2) {
-                                        g6Var3.k = serializedData2.readInt64(z10);
+                                        h6Var3.k = serializedData2.readInt64(z10);
                                     } else {
-                                        g6Var3.k = serializedData2.readInt32(z10);
+                                        h6Var3.k = serializedData2.readInt32(z10);
                                     }
                                     ?? r11 = z10;
                                     if (readInt32 >= 6) {
-                                        g6Var3.l = serializedData2.readInt64(z10);
-                                        g6Var3.m = serializedData2.readInt64(z10);
+                                        h6Var3.l = serializedData2.readInt64(z10);
+                                        h6Var3.m = serializedData2.readInt64(z10);
                                         r11 = 1;
                                     }
                                     if (readInt32 >= r11) {
-                                        g6Var3.n = serializedData2.readInt32(r11);
+                                        h6Var3.n = serializedData2.readInt32(r11);
                                     }
                                     if (readInt32 >= 4) {
                                         serializedData2.readInt64(r11);
                                         str2 = str3;
-                                        g6Var3.p = (float) serializedData2.readDouble(r11);
-                                        g6Var3.q = serializedData2.readBool(r11);
+                                        h6Var3.p = (float) serializedData2.readDouble(r11);
+                                        h6Var3.q = serializedData2.readBool(r11);
                                         i11 = 5;
                                         if (readInt32 >= 5) {
-                                            g6Var3.o = serializedData2.readString(r11);
+                                            h6Var3.o = serializedData2.readString(r11);
                                         }
                                         if (readInt32 >= i11 && serializedData2.readBool(true)) {
-                                            g6Var3.t = serializedData2.readInt32(true);
-                                            g6Var3.r = TLRPC.Theme.TLdeserialize(serializedData2, serializedData2.readInt32(true), true);
+                                            h6Var3.t = serializedData2.readInt32(true);
+                                            h6Var3.r = TLRPC.Theme.TLdeserialize(serializedData2, serializedData2.readInt32(true), true);
                                         }
-                                        tL_theme = g6Var3.r;
+                                        tL_theme = h6Var3.r;
                                         if (tL_theme != null) {
-                                            g6Var3.z = tL_theme.isDefault;
+                                            h6Var3.z = tL_theme.isDefault;
                                         }
-                                        i6Var9.a0.put(g6Var3.a, g6Var3);
-                                        tL_theme2 = g6Var3.r;
+                                        i6Var9.a0.put(h6Var3.a, h6Var3);
+                                        tL_theme2 = h6Var3.r;
                                         if (tL_theme2 != null) {
-                                            i6Var9.c0.put(tL_theme2.id, g6Var3);
+                                            i6Var9.c0.put(tL_theme2.id, h6Var3);
                                         }
-                                        arrayList2.add(g6Var3);
-                                        i6Var9.f0 = Math.max(i6Var9.f0, g6Var3.a);
+                                        arrayList2.add(h6Var3);
+                                        i6Var9.f0 = Math.max(i6Var9.f0, h6Var3.a);
                                         str3 = str2;
                                         it3 = it2;
                                         z11 = true;
@@ -4580,18 +4580,18 @@ public abstract class j6 {
                                     }
                                     i11 = 5;
                                     if (readInt32 >= i11) {
-                                        g6Var3.t = serializedData2.readInt32(true);
-                                        g6Var3.r = TLRPC.Theme.TLdeserialize(serializedData2, serializedData2.readInt32(true), true);
+                                        h6Var3.t = serializedData2.readInt32(true);
+                                        h6Var3.r = TLRPC.Theme.TLdeserialize(serializedData2, serializedData2.readInt32(true), true);
                                     }
-                                    tL_theme = g6Var3.r;
+                                    tL_theme = h6Var3.r;
                                     if (tL_theme != null) {
                                     }
-                                    i6Var9.a0.put(g6Var3.a, g6Var3);
-                                    tL_theme2 = g6Var3.r;
+                                    i6Var9.a0.put(h6Var3.a, h6Var3);
+                                    tL_theme2 = h6Var3.r;
                                     if (tL_theme2 != null) {
                                     }
-                                    arrayList2.add(g6Var3);
-                                    i6Var9.f0 = Math.max(i6Var9.f0, g6Var3.a);
+                                    arrayList2.add(h6Var3);
+                                    i6Var9.f0 = Math.max(i6Var9.f0, h6Var3.a);
                                     str3 = str2;
                                     it3 = it2;
                                     z11 = true;
@@ -4752,11 +4752,11 @@ public abstract class j6 {
             int numberOfLayers = zVar.getNumberOfLayers();
             for (int i12 = 0; i12 < numberOfLayers; i12++) {
                 Drawable drawable = zVar.getDrawable(i12);
-                if (drawable instanceof f6) {
-                    f6 f6Var = (f6) drawable;
+                if (drawable instanceof g6) {
+                    g6 g6Var = (g6) drawable;
                     float f10 = i10;
                     float f11 = i11;
-                    float[] fArr = f6Var.b;
+                    float[] fArr = g6Var.b;
                     float dp = AndroidUtilities.dp(f10);
                     fArr[3] = dp;
                     fArr[2] = dp;
@@ -4767,8 +4767,8 @@ public abstract class j6 {
                     fArr[6] = dp2;
                     fArr[5] = dp2;
                     fArr[4] = dp2;
-                    f6Var.c = true;
-                    f6Var.invalidateSelf();
+                    g6Var.c = true;
+                    g6Var.invalidateSelf();
                     return;
                 }
             }
@@ -4793,7 +4793,7 @@ public abstract class j6 {
             return 0;
         }
         int valueAt = ql.valueAt(indexOfKey);
-        g6 k10 = I.k(false);
+        h6 k10 = I.k(false);
         if (k10 == null) {
             return 0;
         }
@@ -4881,7 +4881,7 @@ public abstract class j6 {
         return i12 != -1 ? C0(i12) : ((i10 >= za && i10 < Ga) || i10 == D9 || i10 == N9 || i10 == E9 || i10 == Pd || i10 == Qd) ? 0 : -65536;
     }
 
-    public static void C1(i6 i6Var, g6 g6Var, TLRPC.TL_theme tL_theme, int i10, boolean z10) {
+    public static void C1(i6 i6Var, h6 h6Var, TLRPC.TL_theme tL_theme, int i10, boolean z10) {
         String str;
         TLRPC.WallPaperSettings wallPaperSettings;
         if (tL_theme == null) {
@@ -4895,37 +4895,37 @@ public abstract class j6 {
                 if (q02 == null || (i6Var = (i6) hashMap.get(q02)) == null) {
                     return;
                 } else {
-                    g6Var = (g6) i6Var.c0.get(tL_theme.id);
+                    h6Var = (h6) i6Var.c0.get(tL_theme.id);
                 }
             }
-            if (g6Var == null) {
+            if (h6Var == null) {
                 return;
             }
-            TLRPC.TL_theme tL_theme2 = g6Var.r;
+            TLRPC.TL_theme tL_theme2 = h6Var.r;
             if (tL_theme2 != null) {
                 i6Var.c0.remove(tL_theme2.id);
             }
-            g6Var.r = tL_theme;
-            g6Var.t = i10;
-            i6Var.c0.put(tL_theme.id, g6Var);
-            if (!i6.a(g6Var, themeSettings)) {
-                File d10 = g6Var.d();
+            h6Var.r = tL_theme;
+            h6Var.t = i10;
+            i6Var.c0.put(tL_theme.id, h6Var);
+            if (!i6.a(h6Var, themeSettings)) {
+                File d10 = h6Var.d();
                 if (d10 != null) {
                     d10.delete();
                 }
-                i6.i(g6Var, themeSettings);
+                i6.i(h6Var, themeSettings);
                 i6 i6Var2 = I;
-                if (i6Var2 == i6Var && i6Var2.Y == g6Var.a) {
+                if (i6Var2 == i6Var && i6Var2.Y == h6Var.a) {
                     n1(false, false);
                     NotificationCenter globalInstance = NotificationCenter.getGlobalInstance();
                     int i11 = NotificationCenter.needSetDayNightTheme;
                     i6 i6Var3 = I;
                     globalInstance.lambda$postNotificationNameOnUIThread$1(i11, i6Var3, Boolean.valueOf(J == i6Var3), null, -1);
                 }
-                d6.a(true);
+                e6.a(true);
             }
             TLRPC.WallPaper wallPaper = themeSettings.wallpaper;
-            g6Var.q = (wallPaper == null || (wallPaperSettings = wallPaper.settings) == null || !wallPaperSettings.motion) ? false : true;
+            h6Var.q = (wallPaper == null || (wallPaperSettings = wallPaper.settings) == null || !wallPaperSettings.motion) ? false : true;
             i6Var.T = false;
         } else {
             if (i6Var != null) {
@@ -4941,7 +4941,7 @@ public abstract class j6 {
             i6Var.F = tL_theme;
             i6Var.a = tL_theme.title;
             File file = new File(i6Var.b);
-            File file2 = new File(ApplicationLoader.getFilesDirFixed(), t8.b.v(str, ".attheme"));
+            File file2 = new File(ApplicationLoader.getFilesDirFixed(), v7.j0.s(str, ".attheme"));
             if (!file.equals(file2)) {
                 try {
                     AndroidUtilities.copyFile(file, file2);
@@ -5097,7 +5097,7 @@ public abstract class j6 {
                 while (i11 < 2) {
                     i6 i6Var = i11 == 0 ? K : J;
                     if (i6Var != null && UserConfig.getInstance(i6Var.E).isClientActivated()) {
-                        g6 k10 = i6Var.k(false);
+                        h6 k10 = i6Var.k(false);
                         TLRPC.TL_theme tL_theme = i6Var.F;
                         if (tL_theme != null) {
                             i10 = i6Var.E;
@@ -5159,12 +5159,12 @@ public abstract class j6 {
     }
 
     public static void G1(MessageObject messageObject) {
-        k8 k8Var = d5;
-        if (k8Var == null) {
+        j8 j8Var = d5;
+        if (j8Var == null) {
             return;
         }
-        if (k8Var.i == null || messageObject == null) {
-            k8Var.i = null;
+        if (j8Var.i == null || messageObject == null) {
+            j8Var.i = null;
             return;
         }
         if (e5 == null) {
@@ -5180,7 +5180,7 @@ public abstract class j6 {
         float f10;
         float f11;
         boolean z11 = i6Var.S && i6Var.Y == n;
-        g6 k10 = i6Var.k(false);
+        h6 k10 = i6Var.k(false);
         File d10 = k10 != null ? k10.d() : null;
         boolean z12 = k10 != null && k10.q;
         b6 b6Var = i6Var.i0;
@@ -5239,7 +5239,7 @@ public abstract class j6 {
                         cVar.a = Drawable.createFromPath(file.getAbsolutePath());
                         z15 = true;
                     } else {
-                        lc0 lc0Var = new lc0(false, i16, i19, i18, i17);
+                        kc0 kc0Var = new kc0(false, i16, i19, i18, i17);
                         BitmapFactory.Options options = new BitmapFactory.Options();
                         Bitmap.Config config = Bitmap.Config.ALPHA_8;
                         options.inPreferredConfig = config;
@@ -5251,9 +5251,9 @@ public abstract class j6 {
                         }
                         z15 = decodeFile != null;
                         try {
-                            lc0Var.t(decodeFile, i11);
-                            lc0Var.u(lc0Var.f());
-                            cVar.a = lc0Var;
+                            kc0Var.t(decodeFile, i11);
+                            kc0Var.u(kc0Var.f());
+                            cVar.a = kc0Var;
                         } catch (Throwable th2) {
                             th = th2;
                             FileLog.e(th);
@@ -5286,12 +5286,12 @@ public abstract class j6 {
                         if (i19 == 0 || i19 == i21) {
                             cVar.a = new ColorDrawable(i21);
                         } else {
-                            v9 v9Var = new v9(v9.d(i20), new int[]{i21, i19});
-                            V = v9Var.f(n2.e.E(0.5f, 3), new r5(), 100L);
-                            cVar.a = v9Var;
+                            u9 u9Var = new u9(u9.d(i20), new int[]{i21, i19});
+                            V = u9Var.f(n2.e.B(0.5f, 3), new r5(), 100L);
+                            cVar.a = u9Var;
                         }
                     } else {
-                        lc0 lc0Var2 = new lc0(false, i16, i19, i18, i17);
+                        kc0 kc0Var2 = new kc0(false, i16, i19, i18, i17);
                         if (file != null) {
                             Point point = AndroidUtilities.displaySize;
                             int min = Math.min(point.x, point.y);
@@ -5313,9 +5313,9 @@ public abstract class j6 {
                         } else {
                             bitmap = null;
                         }
-                        lc0Var2.t(bitmap, i11);
-                        lc0Var2.v(i12);
-                        cVar.a = lc0Var2;
+                        kc0Var2.t(bitmap, i11);
+                        kc0Var2.v(i12);
+                        cVar.a = kc0Var2;
                     }
                     cVar.e = Boolean.TRUE;
                 } else if (str != null) {
@@ -5366,16 +5366,16 @@ public abstract class j6 {
                                 cVar.e = Boolean.FALSE;
                             }
                         } else if (b6Var.e != 0 && b6Var.f != 0) {
-                            lc0 lc0Var3 = new lc0(false, b6Var.d, b6Var.e, b6Var.f, b6Var.g);
-                            lc0Var3.v(i12);
+                            kc0 kc0Var3 = new kc0(false, b6Var.d, b6Var.e, b6Var.f, b6Var.g);
+                            kc0Var3.v(i12);
                             if (((Boolean) cVar.d).booleanValue()) {
                                 File file3 = new File(ApplicationLoader.getFilesDirFixed(), b6Var.a);
                                 if (file3.exists()) {
-                                    lc0Var3.t(i1(new FileInputStream(file3), 0), (int) (b6Var.k * 100.0f));
+                                    kc0Var3.t(i1(new FileInputStream(file3), 0), (int) (b6Var.k * 100.0f));
                                     cVar.e = Boolean.TRUE;
                                 }
                             }
-                            cVar.a = lc0Var3;
+                            cVar.a = kc0Var3;
                         } else if (((Boolean) cVar.d).booleanValue()) {
                             File file4 = new File(ApplicationLoader.getFilesDirFixed(), b6Var.a);
                             if (file4.exists() && (i15 = i1(new FileInputStream(file4), 0)) != null) {
@@ -5387,9 +5387,9 @@ public abstract class j6 {
                         } else {
                             int i23 = b6Var.e;
                             if (i23 != 0) {
-                                v9 v9Var2 = new v9(v9.d(b6Var.h), new int[]{i22, i23});
-                                V = v9Var2.f(n2.e.E(0.5f, 3), new s5(), 100L);
-                                cVar.a = v9Var2;
+                                u9 u9Var2 = new u9(u9.d(b6Var.h), new int[]{i22, i23});
+                                V = u9Var2.f(n2.e.B(0.5f, 3), new s5(), 100L);
+                                cVar.a = u9Var2;
                             } else {
                                 cVar.a = new ColorDrawable(i22);
                             }
@@ -5410,9 +5410,9 @@ public abstract class j6 {
         }
         if (!LiteMode.isEnabled(32)) {
             Drawable drawable = (Drawable) cVar.a;
-            if (drawable instanceof lc0) {
-                lc0 lc0Var4 = (lc0) drawable;
-                Bitmap bitmap2 = lc0Var4.u;
+            if (drawable instanceof kc0) {
+                kc0 kc0Var4 = (kc0) drawable;
+                Bitmap bitmap2 = kc0Var4.u;
                 if (bitmap2 == null) {
                     Point point3 = AndroidUtilities.displaySize;
                     i13 = Math.min(point3.x, point3.y);
@@ -5420,7 +5420,7 @@ public abstract class j6 {
                     height = Math.max(point4.x, point4.y);
                 } else {
                     int width = bitmap2.getWidth();
-                    height = lc0Var4.u.getHeight();
+                    height = kc0Var4.u.getHeight();
                     i13 = width;
                 }
                 Bitmap createBitmap = Bitmap.createBitmap(i13, height, Bitmap.Config.ARGB_8888);
@@ -5433,8 +5433,8 @@ public abstract class j6 {
         return cVar;
     }
 
-    public static org.telegram.ui.Cells.z I0(int i10, int i11, e6 e6Var) {
-        return i11 >= 0 ? new org.telegram.ui.Cells.z(new ColorStateList(new int[][]{StateSet.WILD_CARD}, new int[]{i10}), new ColorDrawable(v0(i11, e6Var)), new ColorDrawable(-1)) : f0(i10, 2, -1);
+    public static org.telegram.ui.Cells.z I0(int i10, int i11, f6 f6Var) {
+        return i11 >= 0 ? new org.telegram.ui.Cells.z(new ColorStateList(new int[][]{StateSet.WILD_CARD}, new int[]{i10}), new ColorDrawable(v0(i11, f6Var)), new ColorDrawable(-1)) : f0(i10, 2, -1);
     }
 
     public static void J(Context context, boolean z10) {
@@ -5460,16 +5460,16 @@ public abstract class j6 {
             r3 = new f5(1, false, true, null);
             s3 = new f5(1, true, false, null);
             t3 = new f5(1, true, true, null);
-            ie0 ie0Var = new ie0();
-            ie0Var.a = new Path();
-            ie0Var.b = -1.0f;
-            ie0Var.g = new ArrayList();
-            ie0Var.c = 0.293f;
-            ie0Var.d = -26.0f;
-            ie0Var.e = -28.0f;
-            ie0Var.f = 1.0f;
-            x3 = ie0Var;
-            ie0Var.a("M 34.141 16.042 C 37.384 17.921 40.886 20.001 44.211 21.965 C 46.139 23.104 49.285 24.729 49.586 25.917 C 50.289 28.687 48.484 30 46.274 30 L 6 30.021 C 3.79 30.021 2.075 30.023 2 26.021 L 2.009 3.417 C 2.009 0.417 5.326 -0.58 7.068 0.417 C 10.545 2.406 25.024 10.761 34.141 16.042 Z", 166.0f);
+            he0 he0Var = new he0();
+            he0Var.a = new Path();
+            he0Var.b = -1.0f;
+            he0Var.g = new ArrayList();
+            he0Var.c = 0.293f;
+            he0Var.d = -26.0f;
+            he0Var.e = -28.0f;
+            he0Var.f = 1.0f;
+            x3 = he0Var;
+            he0Var.a("M 34.141 16.042 C 37.384 17.921 40.886 20.001 44.211 21.965 C 46.139 23.104 49.285 24.729 49.586 25.917 C 50.289 28.687 48.484 30 46.274 30 L 6 30.021 C 3.79 30.021 2.075 30.023 2 26.021 L 2.009 3.417 C 2.009 0.417 5.326 -0.58 7.068 0.417 C 10.545 2.406 25.024 10.761 34.141 16.042 Z", 166.0f);
             x3.a("M 37.843 17.769 C 41.143 19.508 44.131 21.164 47.429 23.117 C 48.542 23.775 49.623 24.561 49.761 25.993 C 50.074 28.708 48.557 30 46.347 30 L 6 30.012 C 3.79 30.012 2 28.222 2 26.012 L 2.009 4.609 C 2.009 1.626 5.276 0.664 7.074 1.541 C 10.608 3.309 28.488 12.842 37.843 17.769 Z", 200.0f);
             x3.a("M 40.644 18.756 C 43.986 20.389 49.867 23.108 49.884 25.534 C 49.897 27.154 49.88 24.441 49.894 26.059 C 49.911 28.733 48.6 30 46.39 30 L 6 30.013 C 3.79 30.013 2 28.223 2 26.013 L 2.008 5.52 C 2.008 2.55 5.237 1.614 7.079 2.401 C 10.656 4 31.106 14.097 40.644 18.756 Z", 217.0f);
             x3.a("M 43.782 19.218 C 47.117 20.675 50.075 21.538 50.041 24.796 C 50.022 26.606 50.038 24.309 50.039 26.104 C 50.038 28.736 48.663 30 46.453 30 L 6 29.986 C 3.79 29.986 2 28.196 2 25.986 L 2.008 6.491 C 2.008 3.535 5.196 2.627 7.085 3.316 C 10.708 4.731 33.992 14.944 43.782 19.218 Z", 234.0f);
@@ -5486,7 +5486,7 @@ public abstract class j6 {
             D3 = resources.getDrawable(R.drawable.msg_halfcheck).mutate();
             G3 = resources.getDrawable(R.drawable.msg_halfcheck_s).mutate();
             I3 = resources.getDrawable(R.drawable.msg_halfcheck_s).mutate();
-            E3 = new sc0();
+            E3 = new rc0();
             L3 = resources.getDrawable(R.drawable.ic_lock_header).mutate();
             M3 = resources.getDrawable(R.drawable.msg_views).mutate();
             N3 = resources.getDrawable(R.drawable.msg_views).mutate();
@@ -5740,9 +5740,9 @@ public abstract class j6 {
         e3.setTypeface(AndroidUtilities.bold());
     }
 
-    public static org.telegram.ui.Cells.z J0(e6 e6Var, boolean z10) {
-        int v02 = v0(i6, e6Var);
-        return z10 ? I0(v02, d6, e6Var) : f0(v02, 2, -1);
+    public static org.telegram.ui.Cells.z J0(f6 f6Var, boolean z10) {
+        int v02 = v0(i6, f6Var);
+        return z10 ? I0(v02, d6, f6Var) : f0(v02, 2, -1);
     }
 
     public static ShapeDrawable K(int i10, int i11) {
@@ -5838,13 +5838,13 @@ public abstract class j6 {
             I2 = new TextPaint(1);
             Paint paint3 = new Paint();
             U1 = paint3;
-            paint3.setPathEffect(f90.c());
+            paint3.setPathEffect(e90.c());
             Paint paint4 = new Paint();
             V1 = paint4;
-            paint4.setPathEffect(f90.c());
+            paint4.setPathEffect(e90.c());
             Paint paint5 = new Paint();
             W1 = paint5;
-            paint5.setPathEffect(f90.c());
+            paint5.setPathEffect(e90.c());
             Paint paint6 = new Paint(1);
             k2 = paint6;
             paint6.setStrokeCap(cap);
@@ -6056,7 +6056,7 @@ public abstract class j6 {
             p0 = new Paint(1);
             Paint paint5 = new Paint();
             m0 = paint5;
-            paint5.setPathEffect(f90.c());
+            paint5.setPathEffect(e90.c());
             Resources resources = context.getResources();
             Drawable drawable = resources.getDrawable(R.drawable.chats_saved);
             Drawable[] drawableArr = r0;
@@ -6085,65 +6085,65 @@ public abstract class j6 {
             drawableArr[22] = resources.getDrawable(R.drawable.filled_giveaway_premium);
             drawableArr[23] = resources.getDrawable(R.drawable.filled_giveaway_stars);
             drawableArr[24] = resources.getDrawable(R.drawable.filled_suggest_chat_avatar);
-            ij0 ij0Var = u1;
-            if (ij0Var != null) {
-                ij0Var.setCallback(null);
+            hj0 hj0Var = u1;
+            if (hj0Var != null) {
+                hj0Var.setCallback(null);
                 u1.C(false);
             }
-            ij0 ij0Var2 = v1;
-            if (ij0Var2 != null) {
-                ij0Var2.C(false);
+            hj0 hj0Var2 = v1;
+            if (hj0Var2 != null) {
+                hj0Var2.C(false);
             }
-            ij0 ij0Var3 = w1;
-            if (ij0Var3 != null) {
-                ij0Var3.C(false);
+            hj0 hj0Var3 = w1;
+            if (hj0Var3 != null) {
+                hj0Var3.C(false);
             }
-            ij0 ij0Var4 = x1;
-            if (ij0Var4 != null) {
-                ij0Var4.C(false);
+            hj0 hj0Var4 = x1;
+            if (hj0Var4 != null) {
+                hj0Var4.C(false);
             }
-            ij0 ij0Var5 = y1;
-            if (ij0Var5 != null) {
-                ij0Var5.C(false);
+            hj0 hj0Var5 = y1;
+            if (hj0Var5 != null) {
+                hj0Var5.C(false);
             }
-            ij0 ij0Var6 = z1;
-            if (ij0Var6 != null) {
-                ij0Var6.C(false);
+            hj0 hj0Var6 = z1;
+            if (hj0Var6 != null) {
+                hj0Var6.C(false);
             }
-            u1 = new ij0(R.raw.chats_archiveavatar, AndroidUtilities.dp(36.0f), AndroidUtilities.dp(36.0f), false, null);
-            v1 = new ij0(R.raw.chats_archive, AndroidUtilities.dp(36.0f), AndroidUtilities.dp(36.0f), false, null);
-            w1 = new ij0(R.raw.chats_unarchive, AndroidUtilities.dp(36.0f), AndroidUtilities.dp(36.0f), false, null);
-            x1 = new ij0(R.raw.chats_hide, AndroidUtilities.dp(36.0f), AndroidUtilities.dp(36.0f), false, null);
-            y1 = new ij0(R.raw.chats_unhide, AndroidUtilities.dp(36.0f), AndroidUtilities.dp(36.0f), false, null);
-            z1 = new ij0(R.raw.chat_audio_record_delete, AndroidUtilities.dp(30.0f), AndroidUtilities.dp(30.0f), false, null);
-            H1 = new ij0(R.raw.swipe_mute, AndroidUtilities.dp(36.0f), AndroidUtilities.dp(36.0f), false, null);
-            I1 = new ij0(R.raw.swipe_unmute, AndroidUtilities.dp(36.0f), AndroidUtilities.dp(36.0f), false, null);
-            L1 = new ij0(R.raw.swipe_read, AndroidUtilities.dp(36.0f), AndroidUtilities.dp(36.0f), false, null);
-            M1 = new ij0(R.raw.swipe_unread, AndroidUtilities.dp(36.0f), AndroidUtilities.dp(36.0f), false, null);
-            J1 = new ij0(R.raw.swipe_delete, AndroidUtilities.dp(36.0f), AndroidUtilities.dp(36.0f), false, null);
-            O1 = new ij0(R.raw.swipe_unpin, AndroidUtilities.dp(36.0f), AndroidUtilities.dp(36.0f), false, null);
-            N1 = new ij0(R.raw.swipe_pin, AndroidUtilities.dp(36.0f), AndroidUtilities.dp(36.0f), false, null);
-            K1 = new ij0(R.raw.swipe_community_ungroup, AndroidUtilities.dp(28.0f), AndroidUtilities.dp(28.0f), false, null);
+            u1 = new hj0(R.raw.chats_archiveavatar, AndroidUtilities.dp(36.0f), AndroidUtilities.dp(36.0f), false, null);
+            v1 = new hj0(R.raw.chats_archive, AndroidUtilities.dp(36.0f), AndroidUtilities.dp(36.0f), false, null);
+            w1 = new hj0(R.raw.chats_unarchive, AndroidUtilities.dp(36.0f), AndroidUtilities.dp(36.0f), false, null);
+            x1 = new hj0(R.raw.chats_hide, AndroidUtilities.dp(36.0f), AndroidUtilities.dp(36.0f), false, null);
+            y1 = new hj0(R.raw.chats_unhide, AndroidUtilities.dp(36.0f), AndroidUtilities.dp(36.0f), false, null);
+            z1 = new hj0(R.raw.chat_audio_record_delete, AndroidUtilities.dp(30.0f), AndroidUtilities.dp(30.0f), false, null);
+            H1 = new hj0(R.raw.swipe_mute, AndroidUtilities.dp(36.0f), AndroidUtilities.dp(36.0f), false, null);
+            I1 = new hj0(R.raw.swipe_unmute, AndroidUtilities.dp(36.0f), AndroidUtilities.dp(36.0f), false, null);
+            L1 = new hj0(R.raw.swipe_read, AndroidUtilities.dp(36.0f), AndroidUtilities.dp(36.0f), false, null);
+            M1 = new hj0(R.raw.swipe_unread, AndroidUtilities.dp(36.0f), AndroidUtilities.dp(36.0f), false, null);
+            J1 = new hj0(R.raw.swipe_delete, AndroidUtilities.dp(36.0f), AndroidUtilities.dp(36.0f), false, null);
+            O1 = new hj0(R.raw.swipe_unpin, AndroidUtilities.dp(36.0f), AndroidUtilities.dp(36.0f), false, null);
+            N1 = new hj0(R.raw.swipe_pin, AndroidUtilities.dp(36.0f), AndroidUtilities.dp(36.0f), false, null);
+            K1 = new hj0(R.raw.swipe_community_ungroup, AndroidUtilities.dp(28.0f), AndroidUtilities.dp(28.0f), false, null);
             k();
         }
     }
 
-    public static Drawable P0(String str, e6 e6Var) {
-        Drawable drawable = e6Var != null ? e6Var.getDrawable(str) : null;
+    public static Drawable P0(String str, f6 f6Var) {
+        Drawable drawable = f6Var != null ? f6Var.getDrawable(str) : null;
         return drawable != null ? drawable : (Drawable) jl.get(str);
     }
 
-    public static lc0 Q(int i10, int i11) {
-        lc0 lc0Var = new lc0(i10 != 0, -2368069, -9722489, -2762611, -7817084);
+    public static kc0 Q(int i10, int i11) {
+        kc0 kc0Var = new kc0(i10 != 0, -2368069, -9722489, -2762611, -7817084);
         if (i10 <= 0 || i11 <= 0) {
             Point point = AndroidUtilities.displaySize;
             i10 = Math.min(point.x, point.y);
             Point point2 = AndroidUtilities.displaySize;
             i11 = Math.max(point2.x, point2.y);
         }
-        lc0Var.t(SvgHelper.getBitmap(R.raw.default_pattern, i10, i11, -16777216, 1.0f, SvgHelper.ScaleMode.ByWidth), 34);
-        lc0Var.u(lc0Var.f());
-        return lc0Var;
+        kc0Var.t(SvgHelper.getBitmap(R.raw.default_pattern, i10, i11, -16777216, 1.0f, SvgHelper.ScaleMode.ByWidth), 34);
+        kc0Var.u(kc0Var.f());
+        return kc0Var;
     }
 
     public static SparseIntArray Q0(File file, String str, String[] strArr) {
@@ -6307,15 +6307,15 @@ public abstract class j6 {
             U0 = resources.getDrawable(R.drawable.minithumb_play).mutate();
             V0 = resources.getDrawable(R.drawable.list_check).mutate();
             W0 = resources.getDrawable(R.drawable.list_halfcheck);
-            X0 = new sc0();
+            X0 = new rc0();
             Y0 = resources.getDrawable(R.drawable.list_warning_sign);
             Z0 = resources.getDrawable(R.drawable.list_reorder).mutate();
             c1 = resources.getDrawable(R.drawable.list_mute).mutate();
             d1 = resources.getDrawable(R.drawable.list_unmute).mutate();
             e1 = resources.getDrawable(R.drawable.mini_ephemeral_hidden_16).mutate();
             f1 = resources.getDrawable(R.drawable.verified_area).mutate();
-            g1 = new km0(0);
-            h1 = new km0(1);
+            g1 = new jm0(0);
+            h1 = new jm0(1);
             i1 = resources.getDrawable(R.drawable.verified_check).mutate();
             m1 = resources.getDrawable(R.drawable.filled_chatlist_mention).mutate();
             n1 = resources.getDrawable(R.drawable.filled_chatlist_reaction).mutate();
@@ -6389,9 +6389,9 @@ public abstract class j6 {
         return u5Var;
     }
 
-    public static Paint T0(String str, e6 e6Var) {
+    public static Paint T0(String str, f6 f6Var) {
         Paint G10;
-        return (e6Var == null || (G10 = e6Var.G(str)) == null) ? S0(str) : G10;
+        return (f6Var == null || (G10 = f6Var.G(str)) == null) ? S0(str) : G10;
     }
 
     public static u5 U(Context context, int i10, int i11, int i12) {
@@ -6448,7 +6448,7 @@ public abstract class j6 {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public static Drawable W0(View view, boolean z10) {
-        lc0 lc0Var;
+        kc0 kc0Var;
         File file;
         int i10;
         Throwable th2;
@@ -6467,20 +6467,20 @@ public abstract class j6 {
             if (i13 == 0) {
                 return new ColorDrawable(i11);
             }
-            g6 k10 = I.k(false);
+            h6 k10 = I.k(false);
             file = (k10 == null || TextUtils.isEmpty(k10.o) || M != null || (d10 = k10.d()) == null || !d10.exists()) ? null : d10;
             if (i14 != 0) {
-                lc0Var = new lc0(true, i11, i13, i14, i15);
+                kc0Var = new kc0(true, i11, i13, i14, i15);
                 if (file == null) {
-                    return lc0Var;
+                    return kc0Var;
                 }
             } else {
                 if (file == null) {
-                    v9 v9Var = new v9(v9.d(i16), new int[]{i11, i13});
-                    v9Var.f(!z10 ? n2.e.E(0.5f, 3) : n2.e.E(0.125f, 1), view != null ? new t5(view, z10) : null, 0L);
-                    return v9Var;
+                    u9 u9Var = new u9(u9.d(i16), new int[]{i11, i13});
+                    u9Var.f(!z10 ? n2.e.B(0.5f, 3) : n2.e.B(0.125f, 1), view != null ? new t5(view, z10) : null, 0L);
+                    return u9Var;
                 }
-                lc0Var = null;
+                kc0Var = null;
             }
         } else {
             if (g0 > 0) {
@@ -6489,7 +6489,7 @@ public abstract class j6 {
                     String str = i6Var.d;
                     file = str != null ? p0(str) : new File(I.b);
                     i10 = g0;
-                    lc0Var = null;
+                    kc0Var = null;
                     if (file != null) {
                         try {
                             fileInputStream = new FileInputStream(file);
@@ -6516,7 +6516,7 @@ public abstract class j6 {
                                 options.inJustDecodeBounds = false;
                                 options.inSampleSize = i12;
                                 Bitmap decodeStream = BitmapFactory.decodeStream(fileInputStream, null, options);
-                                if (lc0Var == null) {
+                                if (kc0Var == null) {
                                     if (decodeStream == null) {
                                         fileInputStream.close();
                                         return null;
@@ -6530,21 +6530,21 @@ public abstract class j6 {
                                         return bitmapDrawable;
                                     }
                                 }
-                                g6 k11 = I.k(false);
+                                h6 k11 = I.k(false);
                                 int i17 = k11 != null ? (int) (k11.p * 100.0f) : 100;
                                 if (decodeStream != null && decodeStream.getConfig() != config) {
                                     Bitmap copy = decodeStream.copy(config, false);
                                     decodeStream.recycle();
                                     decodeStream = copy;
                                 }
-                                lc0Var.t(decodeStream, i17);
-                                lc0Var.u(lc0Var.f());
+                                kc0Var.t(decodeStream, i17);
+                                kc0Var.u(kc0Var.f());
                                 try {
                                     fileInputStream.close();
-                                    return lc0Var;
+                                    return kc0Var;
                                 } catch (Exception e11) {
                                     FileLog.e(e11);
-                                    return lc0Var;
+                                    return kc0Var;
                                 }
                             } catch (Throwable th3) {
                                 th2 = th3;
@@ -6565,7 +6565,7 @@ public abstract class j6 {
                     return null;
                 }
             }
-            lc0Var = null;
+            kc0Var = null;
             file = null;
         }
         i10 = 0;
@@ -6594,7 +6594,7 @@ public abstract class j6 {
 
     public static org.telegram.ui.Cells.z Y(int i10, int i11, int i12) {
         z.setColor(-1);
-        return new org.telegram.ui.Cells.z(new ColorStateList(new int[][]{StateSet.WILD_CARD}, new int[]{i10}), null, new f6(i11, i12));
+        return new org.telegram.ui.Cells.z(new ColorStateList(new int[][]{StateSet.WILD_CARD}, new int[]{i10}), null, new g6(i11, i12));
     }
 
     public static String Y0(b6 b6Var) {
@@ -6625,9 +6625,9 @@ public abstract class j6 {
             String lowerCase4 = i13 != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i13 >> 16)) & 255), Integer.valueOf(((byte) (b6Var.g >> 8)) & 255), Byte.valueOf((byte) (b6Var.g & 255))).toLowerCase() : null;
             if (lowerCase2 == null || lowerCase3 == null) {
                 if (lowerCase2 != null) {
-                    StringBuilder j10 = t8.b.j(a4.a.C(lowerCase, "-", lowerCase2), "&rotation=");
-                    j10.append(b6Var.h);
-                    lowerCase = j10.toString();
+                    StringBuilder h10 = v7.j0.h(a4.a.C(lowerCase, "-", lowerCase2), "&rotation=");
+                    h10.append(b6Var.h);
+                    lowerCase = h10.toString();
                 }
             } else if (lowerCase4 != null) {
                 StringBuilder sb3 = new StringBuilder();
@@ -6645,16 +6645,16 @@ public abstract class j6 {
         if (sb2.length() <= 0) {
             return str;
         }
-        StringBuilder j11 = t8.b.j(str, "&mode=");
-        j11.append(sb2.toString());
-        return j11.toString();
+        StringBuilder h11 = v7.j0.h(str, "&mode=");
+        h11.append(sb2.toString());
+        return h11.toString();
     }
 
     public static org.telegram.ui.Cells.z Z(int i10, int i11, int i12, int i13) {
         z.setColor(-1);
         float f10 = i12;
         float f11 = i13;
-        return new org.telegram.ui.Cells.z(new ColorStateList(new int[][]{StateSet.WILD_CARD}, new int[]{i11}), c0(AndroidUtilities.dp(f10), AndroidUtilities.dp(f11), i10), new f6(f10, f11));
+        return new org.telegram.ui.Cells.z(new ColorStateList(new int[][]{StateSet.WILD_CARD}, new int[]{i11}), c0(AndroidUtilities.dp(f10), AndroidUtilities.dp(f11), i10), new g6(f10, f11));
     }
 
     public static boolean Z0() {
@@ -6670,15 +6670,15 @@ public abstract class j6 {
 
     public static org.telegram.ui.Cells.z a0(int i10, int i11, int i12, int i13, int i14) {
         z.setColor(-1);
-        f6 f6Var = new f6();
-        f6Var.a = new Path();
-        f6Var.b = new float[]{r5, r5, r5, r5, r5, r5, r5, r5};
-        f6Var.c = true;
+        g6 g6Var = new g6();
+        g6Var.a = new Path();
+        g6Var.b = new float[]{r5, r5, r5, r5, r5, r5, r5, r5};
+        g6Var.c = true;
         float dp = AndroidUtilities.dp(i11);
         float dp2 = AndroidUtilities.dp(i12);
         float dp3 = AndroidUtilities.dp(i13);
         float dp4 = AndroidUtilities.dp(i14);
-        return new org.telegram.ui.Cells.z(new ColorStateList(new int[][]{StateSet.WILD_CARD}, new int[]{i10}), null, f6Var);
+        return new org.telegram.ui.Cells.z(new ColorStateList(new int[][]{StateSet.WILD_CARD}, new int[]{i10}), null, g6Var);
     }
 
     public static boolean a1() {
@@ -6890,18 +6890,18 @@ public abstract class j6 {
         return new org.telegram.ui.Cells.z(new ColorStateList(new int[][]{StateSet.WILD_CARD}, new int[]{i11}), new ColorDrawable(i10), new ColorDrawable(i10));
     }
 
-    public static boolean g1(g6 g6Var) {
-        i6 i6Var = g6Var.b;
+    public static boolean g1(h6 h6Var) {
+        i6 i6Var = h6Var.b;
         if (i6Var == null) {
             return false;
         }
-        if (i6Var.m().equals("Blue") && g6Var.a == 99) {
+        if (i6Var.m().equals("Blue") && h6Var.a == 99) {
             return true;
         }
-        if (g6Var.b.m().equals("Day") && g6Var.a == 9) {
+        if (h6Var.b.m().equals("Day") && h6Var.a == 9) {
             return true;
         }
-        return (g6Var.b.m().equals("Night") || g6Var.b.m().equals("Dark Blue")) && g6Var.a == 0;
+        return (h6Var.b.m().equals("Night") || h6Var.b.m().equals("Dark Blue")) && h6Var.a == 0;
     }
 
     public static void h(Drawable drawable) {
@@ -6910,8 +6910,8 @@ public abstract class j6 {
             return;
         }
         int i10 = rl.get(Hc);
-        boolean z10 = (drawable instanceof lc0) && SharedConfig.getDevicePerformanceClass() != 0 && i10 == 0;
-        if (z10 && Y != (bitmap = ((lc0) drawable).k)) {
+        boolean z10 = (drawable instanceof kc0) && SharedConfig.getDevicePerformanceClass() != 0 && i10 == 0;
+        if (z10 && Y != (bitmap = ((kc0) drawable).k)) {
             Y = bitmap;
             Bitmap bitmap2 = Y;
             Shader.TileMode tileMode = Shader.TileMode.CLAMP;
@@ -6981,10 +6981,10 @@ public abstract class j6 {
         int valueAt = indexOfKey >= 0 ? rl.valueAt(indexOfKey) : X;
         int indexOfKey2 = rl.indexOfKey(mc);
         int valueAt2 = indexOfKey2 >= 0 ? rl.valueAt(indexOfKey2) : b0;
-        boolean z10 = drawable instanceof lc0;
+        boolean z10 = drawable instanceof kc0;
         if ((z10 || (drawable instanceof BitmapDrawable)) && SharedConfig.getDevicePerformanceClass() != 0 && LiteMode.isEnabled(32)) {
             if (z10) {
-                bitmap = ((lc0) drawable).k;
+                bitmap = ((kc0) drawable).k;
             } else {
                 if (drawable instanceof BitmapDrawable) {
                     WeakReference weakReference = Fl;
@@ -7089,7 +7089,7 @@ public abstract class j6 {
         }
         ColorMatrix colorMatrix2 = new ColorMatrix();
         if (z10) {
-            if (((lc0) drawable).q >= 0.0f) {
+            if (((kc0) drawable).q >= 0.0f) {
                 colorMatrix2.setSaturation(1.6f);
                 AndroidUtilities.multiplyBrightnessColorMatrix(colorMatrix2, I.q() ? 0.97f : 0.92f);
                 AndroidUtilities.adjustBrightnessColorMatrix(colorMatrix2, I.q() ? 0.12f : -0.06f);
@@ -7341,11 +7341,11 @@ public abstract class j6 {
         x1(i31, Y4);
         int i32 = 0;
         while (true) {
-            xw0[] xw0VarArr = u3;
-            if (i32 >= xw0VarArr.length) {
+            ww0[] ww0VarArr = u3;
+            if (i32 >= ww0VarArr.length) {
                 break;
             }
-            x1(p9, xw0VarArr[i32]);
+            x1(p9, ww0VarArr[i32]);
             i32++;
         }
         for (int i33 = 0; i33 < 5; i33++) {
@@ -7385,37 +7385,37 @@ public abstract class j6 {
         h(e0);
     }
 
-    public static boolean j0(i6 i6Var, g6 g6Var, boolean z10) {
+    public static boolean j0(i6 i6Var, h6 h6Var, boolean z10) {
         boolean z11 = false;
-        if (g6Var == null || i6Var == null || i6Var.b0 == null) {
+        if (h6Var == null || i6Var == null || i6Var.b0 == null) {
             return false;
         }
-        boolean z12 = g6Var.a == i6Var.Y;
-        File d10 = g6Var.d();
+        boolean z12 = h6Var.a == i6Var.Y;
+        File d10 = h6Var.d();
         if (d10 != null) {
             d10.delete();
         }
-        i6Var.a0.remove(g6Var.a);
-        i6Var.b0.remove(g6Var);
-        TLRPC.TL_theme tL_theme = g6Var.r;
+        i6Var.a0.remove(h6Var.a);
+        i6Var.b0.remove(h6Var);
+        TLRPC.TL_theme tL_theme = h6Var.r;
         if (tL_theme != null) {
             i6Var.c0.remove(tL_theme.id);
         }
-        b6 b6Var = g6Var.y;
+        b6 b6Var = h6Var.y;
         if (b6Var != null) {
             b6.a(b6Var);
         }
         if (z12) {
-            i6Var.u(((g6) i6Var.b0.get(0)).a);
+            i6Var.u(((h6) i6Var.b0.get(0)).a);
         }
         if (z10) {
             t1(i6Var, true, false, false, false, false);
-            if (g6Var.r != null) {
-                MessagesController messagesController = MessagesController.getInstance(g6Var.t);
+            if (h6Var.r != null) {
+                MessagesController messagesController = MessagesController.getInstance(h6Var.t);
                 if (z12 && i6Var == J) {
                     z11 = true;
                 }
-                messagesController.saveTheme(i6Var, g6Var, z11, true);
+                messagesController.saveTheme(i6Var, h6Var, z11, true);
             }
         }
         return z12;
@@ -7438,7 +7438,7 @@ public abstract class j6 {
         }
         i6 i6Var = I;
         boolean z12 = i6Var.S && i6Var.Y == n;
-        g6 k10 = i6Var.k(false);
+        h6 k10 = i6Var.k(false);
         TLRPC.Document document2 = null;
         if (k10 != null) {
             File d10 = k10.d();
@@ -7501,47 +7501,47 @@ public abstract class j6 {
             int length = drawableArr.length;
             int i11 = J7;
             if (i10 >= length) {
-                ij0 ij0Var = u1;
-                ij0Var.Z = true;
+                hj0 hj0Var = u1;
+                hj0Var.Z = true;
                 int i12 = M7;
-                ij0Var.Q(w0(null, i12, true), "Arrow1");
+                hj0Var.Q(w0(null, i12, true), "Arrow1");
                 u1.Q(w0(null, i12, true), "Arrow2");
                 u1.Q(w0(null, i11, true), "Box2");
                 u1.Q(w0(null, i11, true), "Box1");
                 u1.o();
                 C1 = false;
                 u1.J(true);
-                ij0 ij0Var2 = x1;
-                ij0Var2.Z = true;
+                hj0 hj0Var2 = x1;
+                hj0Var2.Z = true;
                 int i13 = e9;
-                ij0Var2.Q(w0(null, i13, true), "Arrow");
+                hj0Var2.Q(w0(null, i13, true), "Arrow");
                 x1.Q(w0(null, i13, true), "Line");
                 x1.o();
-                ij0 ij0Var3 = y1;
-                ij0Var3.Z = true;
-                ij0Var3.Q(w0(null, i13, true), "Arrow");
+                hj0 hj0Var3 = y1;
+                hj0Var3.Z = true;
+                hj0Var3.Q(w0(null, i13, true), "Arrow");
                 y1.Q(w0(null, i13, true), "Line");
                 y1.o();
-                ij0 ij0Var4 = z1;
-                ij0Var4.Z = true;
+                hj0 hj0Var4 = z1;
+                hj0Var4.Z = true;
                 int i14 = c9;
-                ij0Var4.Q(w0(null, i14, true), "Line 1");
+                hj0Var4.Q(w0(null, i14, true), "Line 1");
                 z1.Q(w0(null, i14, true), "Line 2");
                 z1.Q(w0(null, i14, true), "Line 3");
                 z1.Q(w0(null, i13, true), "Cup Red");
                 z1.Q(w0(null, i13, true), "Box");
                 z1.o();
                 B1 = false;
-                ij0 ij0Var5 = v1;
-                ij0Var5.Z = true;
-                ij0Var5.Q(w0(null, i14, true), "Arrow");
+                hj0 hj0Var5 = v1;
+                hj0Var5.Z = true;
+                hj0Var5.Q(w0(null, i14, true), "Arrow");
                 v1.Q(w0(null, i13, true), "Box2");
                 v1.Q(w0(null, i13, true), "Box1");
                 v1.o();
                 A1 = false;
-                ij0 ij0Var6 = w1;
-                ij0Var6.Z = true;
-                ij0Var6.Q(w0(null, i13, true), "Arrow1");
+                hj0 hj0Var6 = w1;
+                hj0Var6.Z = true;
+                hj0Var6.Q(w0(null, i13, true), "Arrow1");
                 w1.Q(w0(null, d9, true), "Arrow2");
                 w1.Q(w0(null, i13, true), "Box2");
                 w1.Q(w0(null, i13, true), "Box1");
@@ -7854,9 +7854,9 @@ public abstract class j6 {
                 x1(z9, f1);
                 x1(A9, i1);
                 x1(A8, s1);
-                km0 km0Var = g1;
+                jm0 jm0Var = g1;
                 int i23 = j9;
-                x1(i23, km0Var);
+                x1(i23, jm0Var);
                 x1(i23, h1);
                 return;
             }
@@ -7871,14 +7871,14 @@ public abstract class j6 {
         }
     }
 
-    public static ColorFilter n0(e6 e6Var) {
-        return e6Var != null ? e6Var.x() : v3;
+    public static ColorFilter n0(f6 f6Var) {
+        return f6Var != null ? f6Var.x() : v3;
     }
 
     public static void n1(boolean z10, boolean z11) {
         rl = ql.clone();
         tl = true;
-        g6 k10 = I.k(false);
+        h6 k10 = I.k(false);
         if (k10 != null) {
             tl = k10.c(ql, rl);
         }
@@ -7911,23 +7911,23 @@ public abstract class j6 {
         E(false);
     }
 
-    public static k8 o0(MessageObject messageObject) {
+    public static j8 o0(MessageObject messageObject) {
         HashMap hashMap = e5;
         if (hashMap == null || messageObject == null) {
             return null;
         }
-        return (k8) hashMap.get(messageObject);
+        return (j8) hashMap.get(messageObject);
     }
 
     public static void o1(boolean z10) {
-        q9 q9Var = V;
-        if (q9Var != null) {
-            q9Var.dispose();
+        p9 p9Var = V;
+        if (p9Var != null) {
+            p9Var.dispose();
             V = null;
         }
         Drawable drawable = e0;
-        if (drawable instanceof lc0) {
-            S = ((lc0) drawable).i;
+        if (drawable instanceof kc0) {
+            S = ((kc0) drawable).i;
         } else {
             S = 0;
         }
@@ -8171,7 +8171,7 @@ public abstract class j6 {
         if (z11 && drawable != null) {
             f0 = e0;
         }
-        g6 k10 = I.k(false);
+        h6 k10 = I.k(false);
         boolean z13 = I.S && k10.a == n;
         SparseIntArray sparseIntArray = z13 ? null : rl;
         StringBuilder sb2 = new StringBuilder();
@@ -8292,7 +8292,7 @@ public abstract class j6 {
         }
     }
 
-    public static void s(View view, View view2, e6 e6Var) {
+    public static void s(View view, View view2, f6 f6Var) {
         if (view == null || view2 == null) {
             return;
         }
@@ -8301,18 +8301,18 @@ public abstract class j6 {
         int i10 = iArr[0];
         int i11 = iArr[1];
         view2.getLocationOnScreen(iArr);
-        if (view2 instanceof kd1) {
+        if (view2 instanceof md1) {
             Bitmap bitmap = Y;
             if (bitmap != null) {
                 float width = bitmap.getWidth();
-                i10 = (int) ((((view2.getMeasuredWidth() - (Math.max(view2.getMeasuredWidth() / width, view2.getMeasuredHeight() / Y.getHeight()) * width)) / 2.0f) - ((kd1) view2).I) + i10);
+                i10 = (int) ((((view2.getMeasuredWidth() - (Math.max(view2.getMeasuredWidth() / width, view2.getMeasuredHeight() / Y.getHeight()) * width)) / 2.0f) - ((md1) view2).I) + i10);
             } else {
-                i10 = (int) (i10 + (-((kd1) view2).I));
+                i10 = (int) (i10 + (-((md1) view2).I));
             }
-            i11 = (int) (i11 + (-((kd1) view2).J));
+            i11 = (int) (i11 + (-((md1) view2).J));
         }
-        if (e6Var != null) {
-            e6Var.m(i10, i11 - iArr[1], view2.getMeasuredWidth(), view2.getMeasuredHeight());
+        if (f6Var != null) {
+            f6Var.m(i10, i11 - iArr[1], view2.getMeasuredWidth(), view2.getMeasuredHeight());
         } else {
             q(i10, i11 - iArr[1], view2.getMeasuredWidth(), view2.getMeasuredHeight());
         }
@@ -8536,32 +8536,32 @@ public abstract class j6 {
         }
     }
 
-    public static xw0 t0(int i10) {
+    public static ww0 t0(int i10) {
         if (i10 < 0 || i10 > 5) {
             return null;
         }
-        xw0[] xw0VarArr = u3;
-        xw0 xw0Var = xw0VarArr[i10];
-        if (xw0Var != null) {
-            return xw0Var;
+        ww0[] ww0VarArr = u3;
+        ww0 ww0Var = ww0VarArr[i10];
+        if (ww0Var != null) {
+            return ww0Var;
         }
         if (i10 == 0) {
-            xw0VarArr[0] = new v51(true);
+            ww0VarArr[0] = new u51(true);
         } else if (i10 == 1) {
-            xw0VarArr[1] = new rp(true);
+            ww0VarArr[1] = new rp(true);
         } else if (i10 == 2) {
-            xw0VarArr[2] = new lp0(true);
+            ww0VarArr[2] = new kp0(true);
         } else if (i10 == 3) {
-            xw0VarArr[3] = new rg0(null, true);
+            ww0VarArr[3] = new qg0(null, true);
         } else if (i10 == 4) {
-            xw0VarArr[4] = new gm0(true);
+            ww0VarArr[4] = new fm0(true);
         } else if (i10 == 5) {
-            xw0VarArr[5] = new rp();
+            ww0VarArr[5] = new rp();
         }
-        xw0 xw0Var2 = xw0VarArr[i10];
-        xw0Var2.d();
-        xw0Var2.b(w0(null, p9, false));
-        return xw0Var2;
+        ww0 ww0Var2 = ww0VarArr[i10];
+        ww0Var2.d();
+        ww0Var2.b(w0(null, p9, false));
+        return ww0Var2;
     }
 
     public static void t1(i6 i6Var, boolean z10, boolean z11, boolean z12, boolean z13, boolean z14) {
@@ -8574,30 +8574,30 @@ public abstract class j6 {
                 serializedData.writeInt32(9);
                 serializedData.writeInt32(max);
                 for (int i10 = 0; i10 < size; i10++) {
-                    g6 g6Var = (g6) i6Var.b0.get(i10);
-                    int i11 = g6Var.a;
+                    h6 h6Var = (h6) i6Var.b0.get(i10);
+                    int i11 = h6Var.a;
                     if (i11 >= 100) {
                         serializedData.writeInt32(i11);
-                        serializedData.writeInt32(g6Var.c);
-                        serializedData.writeInt32(g6Var.d);
-                        serializedData.writeInt32(g6Var.e);
-                        serializedData.writeInt32(g6Var.f);
-                        serializedData.writeInt32(g6Var.g);
-                        serializedData.writeInt32(g6Var.h);
-                        serializedData.writeBool(g6Var.i);
-                        serializedData.writeInt64(g6Var.j);
-                        serializedData.writeInt64(g6Var.k);
-                        serializedData.writeInt64(g6Var.l);
-                        serializedData.writeInt64(g6Var.m);
-                        serializedData.writeInt32(g6Var.n);
+                        serializedData.writeInt32(h6Var.c);
+                        serializedData.writeInt32(h6Var.d);
+                        serializedData.writeInt32(h6Var.e);
+                        serializedData.writeInt32(h6Var.f);
+                        serializedData.writeInt32(h6Var.g);
+                        serializedData.writeInt32(h6Var.h);
+                        serializedData.writeBool(h6Var.i);
+                        serializedData.writeInt64(h6Var.j);
+                        serializedData.writeInt64(h6Var.k);
+                        serializedData.writeInt64(h6Var.l);
+                        serializedData.writeInt64(h6Var.m);
+                        serializedData.writeInt32(h6Var.n);
                         serializedData.writeInt64(0L);
-                        serializedData.writeDouble(g6Var.p);
-                        serializedData.writeBool(g6Var.q);
-                        serializedData.writeString(g6Var.o);
-                        serializedData.writeBool(g6Var.r != null);
-                        if (g6Var.r != null) {
-                            serializedData.writeInt32(g6Var.t);
-                            g6Var.r.serializeToStream(serializedData);
+                        serializedData.writeDouble(h6Var.p);
+                        serializedData.writeBool(h6Var.q);
+                        serializedData.writeString(h6Var.o);
+                        serializedData.writeBool(h6Var.r != null);
+                        if (h6Var.r != null) {
+                            serializedData.writeInt32(h6Var.t);
+                            h6Var.r.serializeToStream(serializedData);
                         }
                     }
                 }
@@ -8614,16 +8614,16 @@ public abstract class j6 {
         } else {
             if (i6Var.Z != -1) {
                 if (z11) {
-                    g6 g6Var2 = (g6) i6Var.a0.get(i6Var.Y);
-                    i6Var.a0.remove(g6Var2.a);
-                    i6Var.b0.remove(g6Var2);
-                    TLRPC.TL_theme tL_theme = g6Var2.r;
+                    h6 h6Var2 = (h6) i6Var.a0.get(i6Var.Y);
+                    i6Var.a0.remove(h6Var2.a);
+                    i6Var.b0.remove(h6Var2);
+                    TLRPC.TL_theme tL_theme = h6Var2.r;
                     if (tL_theme != null) {
                         i6Var.c0.remove(tL_theme.id);
                     }
                 }
                 i6Var.Y = i6Var.Z;
-                g6 k10 = i6Var.k(false);
+                h6 k10 = i6Var.k(false);
                 if (k10 != null) {
                     i6Var.i0 = k10.y;
                 } else {
@@ -8754,8 +8754,8 @@ public abstract class j6 {
         return Color.argb((int) (255.0f * f11), (int) ((((Color.red(i10) * alpha2) * f10) + (Color.red(i11) * alpha)) / f11), (int) ((((Color.green(i10) * alpha2) * f10) + (Color.green(i11) * alpha)) / f11), (int) ((((Color.blue(i10) * alpha2) * f10) + (Color.blue(i11) * alpha)) / f11));
     }
 
-    public static int v0(int i10, e6 e6Var) {
-        return e6Var != null ? e6Var.G0(i10) : w0(null, i10, false);
+    public static int v0(int i10, f6 f6Var) {
+        return f6Var != null ? f6Var.F0(i10) : w0(null, i10, false);
     }
 
     public static void v1(Drawable drawable, int i10, boolean z10) {
@@ -8817,10 +8817,10 @@ public abstract class j6 {
                 if (i10 < Ha || i10 >= Tb) {
                     if (Nd != i10 && Od != i10 && Pd != i10 && Qd != i10 && i6Var.S) {
                         if (i6Var.Y != i14) {
-                            g6 g6Var = (g6) i6Var.a0.get(i14);
-                            g6 g6Var2 = (g6) i6Var.a0.get(i6Var.Y);
-                            if (g6Var2 != null) {
-                                if (g6Var != null) {
+                            h6 h6Var = (h6) i6Var.a0.get(i14);
+                            h6 h6Var2 = (h6) i6Var.a0.get(i6Var.Y);
+                            if (h6Var2 != null) {
+                                if (h6Var != null) {
                                 }
                             }
                         }
@@ -8828,15 +8828,15 @@ public abstract class j6 {
                     }
                 } else if (i6Var.S) {
                     if (i6Var.Y != i14) {
-                        g6 g6Var3 = (g6) i6Var.a0.get(i14);
-                        g6 g6Var4 = (g6) i6Var.a0.get(i6Var.Y);
-                        if (g6Var3 != null) {
-                            if (g6Var4 != null) {
-                                if (g6Var3.d == g6Var4.d) {
-                                    if (g6Var3.e == g6Var4.e) {
-                                        if (g6Var3.f == g6Var4.f) {
-                                            if (g6Var3.g == g6Var4.g) {
-                                                if (g6Var3.h == g6Var4.h) {
+                        h6 h6Var3 = (h6) i6Var.a0.get(i14);
+                        h6 h6Var4 = (h6) i6Var.a0.get(i6Var.Y);
+                        if (h6Var3 != null) {
+                            if (h6Var4 != null) {
+                                if (h6Var3.d == h6Var4.d) {
+                                    if (h6Var3.e == h6Var4.e) {
+                                        if (h6Var3.f == h6Var4.f) {
+                                            if (h6Var3.g == h6Var4.g) {
+                                                if (h6Var3.h == h6Var4.h) {
                                                 }
                                             }
                                         }
@@ -8850,14 +8850,14 @@ public abstract class j6 {
                 }
             } else if (i6Var.S) {
                 if (i6Var.Y != i14) {
-                    g6 g6Var5 = (g6) i6Var.a0.get(i14);
-                    g6 g6Var6 = (g6) i6Var.a0.get(i6Var.Y);
-                    if (g6Var5 != null) {
-                        if (g6Var6 != null) {
-                            if (g6Var5.e == g6Var6.e) {
-                                if (g6Var5.f == g6Var6.f) {
-                                    if (g6Var5.g == g6Var6.g) {
-                                        if (g6Var5.h == g6Var6.h) {
+                    h6 h6Var5 = (h6) i6Var.a0.get(i14);
+                    h6 h6Var6 = (h6) i6Var.a0.get(i6Var.Y);
+                    if (h6Var5 != null) {
+                        if (h6Var6 != null) {
+                            if (h6Var5.e == h6Var6.e) {
+                                if (h6Var5.f == h6Var6.f) {
+                                    if (h6Var5.g == h6Var6.g) {
+                                        if (h6Var5.h == h6Var6.h) {
                                         }
                                     }
                                 }
@@ -8888,18 +8888,18 @@ public abstract class j6 {
         if (drawable == null) {
             return;
         }
-        if (drawable instanceof xw0) {
-            ((xw0) drawable).b(i10);
+        if (drawable instanceof ww0) {
+            ((ww0) drawable).b(i10);
             return;
         }
-        if (drawable instanceof sc0) {
-            ((sc0) drawable).a(i10);
+        if (drawable instanceof rc0) {
+            ((rc0) drawable).a(i10);
             return;
         }
         if (drawable instanceof ShapeDrawable) {
             ((ShapeDrawable) drawable).getPaint().setColor(i10);
-        } else if (drawable instanceof km0) {
-            ((km0) drawable).b(i10);
+        } else if (drawable instanceof jm0) {
+            ((jm0) drawable).b(i10);
         } else {
             drawable.setColorFilter(new PorterDuffColorFilter(i10, PorterDuff.Mode.MULTIPLY));
         }
@@ -8915,9 +8915,9 @@ public abstract class j6 {
         return (!z11 || M02[1] <= 0.02f) ? i11 : c(i11, i10);
     }
 
-    public static k8 x0() {
+    public static j8 x0() {
         if (d5 == null) {
-            d5 = new k8();
+            d5 = new j8();
         }
         return d5;
     }
@@ -9043,9 +9043,9 @@ public abstract class j6 {
             int numberOfLayers = zVar.getNumberOfLayers();
             for (int i10 = 0; i10 < numberOfLayers; i10++) {
                 Drawable drawable = zVar.getDrawable(i10);
-                if (drawable instanceof f6) {
-                    f6 f6Var = (f6) drawable;
-                    float[] fArr = f6Var.b;
+                if (drawable instanceof g6) {
+                    g6 g6Var = (g6) drawable;
+                    float[] fArr = g6Var.b;
                     float dp = AndroidUtilities.dp(f10);
                     fArr[1] = dp;
                     fArr[0] = dp;
@@ -9058,8 +9058,8 @@ public abstract class j6 {
                     float dp4 = AndroidUtilities.dp(f13);
                     fArr[7] = dp4;
                     fArr[6] = dp4;
-                    f6Var.c = true;
-                    f6Var.invalidateSelf();
+                    g6Var.c = true;
+                    g6Var.invalidateSelf();
                     return;
                 }
             }

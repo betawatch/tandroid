@@ -4,14 +4,14 @@ import android.content.Context;
 import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class hj extends org.telegram.ui.Components.i40 {
     public final /* synthetic */ int I;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ hj(int i10, int i11, Context context, org.telegram.ui.ActionBar.e6 e6Var, boolean z10) {
-        super(i10, context, e6Var, z10);
+    public /* synthetic */ hj(int i10, int i11, Context context, org.telegram.ui.ActionBar.f6 f6Var, boolean z10) {
+        super(i10, context, f6Var, z10);
         this.I = i11;
     }
 

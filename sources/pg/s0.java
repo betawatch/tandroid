@@ -26,13 +26,14 @@ import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.ja;
-import org.telegram.ui.Components.pa;
-import org.telegram.ui.Components.vv0;
-import w7.l6;
-import w7.n6;
+import org.telegram.ui.Cells.f3;
+import org.telegram.ui.Components.ia;
+import org.telegram.ui.Components.oa;
+import org.telegram.ui.Components.uv0;
+import w7.m6;
+import w7.o6;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class s0 {
     public final Bitmap A;
@@ -40,7 +41,7 @@ public final class s0 {
     public Bitmap C;
     public t1 D;
     public boolean E;
-    public final ja F;
+    public final ia F;
     public boolean H;
     public float I;
     public float J;
@@ -52,7 +53,7 @@ public final class s0 {
     public h1 c;
     public h1 d;
     public e1 f;
-    public final vv0 g;
+    public final uv0 g;
     public RectF h;
     public m i;
     public t1 k;
@@ -75,13 +76,13 @@ public final class s0 {
     public boolean G = false;
     public final x0 e = new x0();
 
-    public s0(vv0 vv0Var, Bitmap bitmap, int i10, ja jaVar) {
-        this.F = jaVar;
-        this.g = vv0Var;
+    public s0(uv0 uv0Var, Bitmap bitmap, int i10, ia iaVar) {
+        this.F = iaVar;
+        this.g = uv0Var;
         this.A = bitmap;
         this.B = i10;
-        this.u = ByteBuffer.allocateDirect(((int) vv0Var.a) * ((int) vv0Var.b) * 4);
-        this.x = l6.b(vv0Var.a, vv0Var.b);
+        this.u = ByteBuffer.allocateDirect(((int) uv0Var.a) * ((int) uv0Var.b) * 4);
+        this.x = m6.b(uv0Var.a, uv0Var.b);
         if (this.m == null) {
             ByteBuffer allocateDirect = ByteBuffer.allocateDirect(32);
             this.m = allocateDirect;
@@ -89,12 +90,12 @@ public final class s0 {
         }
         this.m.putFloat(0.0f);
         this.m.putFloat(0.0f);
-        this.m.putFloat(vv0Var.a);
+        this.m.putFloat(uv0Var.a);
         this.m.putFloat(0.0f);
         this.m.putFloat(0.0f);
-        this.m.putFloat(vv0Var.b);
-        this.m.putFloat(vv0Var.a);
-        this.m.putFloat(vv0Var.b);
+        this.m.putFloat(uv0Var.b);
+        this.m.putFloat(uv0Var.a);
+        this.m.putFloat(uv0Var.b);
         this.m.rewind();
         if (this.n == null) {
             ByteBuffer allocateDirect2 = ByteBuffer.allocateDirect(32);
@@ -170,17 +171,17 @@ public final class s0 {
     public final void b() {
         GLES20.glBindFramebuffer(36160, i());
         GLES20.glFramebufferTexture2D(36160, 36064, 3553, g(), 0);
-        n6.a();
+        o6.a();
         if (GLES20.glCheckFramebufferStatus(36160) == 36053) {
-            vv0 vv0Var = this.g;
-            GLES20.glViewport(0, 0, (int) vv0Var.a, (int) vv0Var.b);
+            uv0 uv0Var = this.g;
+            GLES20.glViewport(0, 0, (int) uv0Var.a, (int) uv0Var.b);
             GLES20.glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
             GLES20.glClear(16384);
         }
         GLES20.glBindFramebuffer(36160, 0);
         n2.e eVar = this.a;
         if (eVar != null) {
-            eVar.t();
+            eVar.p();
         }
         x0 x0Var = this.e;
         x0Var.h = 0;
@@ -246,8 +247,8 @@ public final class s0 {
                 mVar2 = new d();
             }
             GLES20.glFramebufferTexture2D(36160, 36064, 3553, j3, 0);
-            vv0 vv0Var = this.g;
-            GLES20.glViewport(0, 0, (int) vv0Var.a, (int) vv0Var.b);
+            uv0 uv0Var = this.g;
+            GLES20.glViewport(0, 0, (int) uv0Var.a, (int) uv0Var.b);
             f1 f1Var = (f1) this.r.get(mVar2.i(1));
             if (f1Var == null) {
                 return null;
@@ -265,11 +266,11 @@ public final class s0 {
             if (mVar2 instanceof b) {
                 GLES20.glUniform1i(f1Var.d("blured"), 2);
                 GLES20.glActiveTexture(33986);
-                ja jaVar = this.F;
-                if (jaVar != null) {
-                    obj = jaVar.h;
-                    pa paVar = jaVar.m;
-                    GLES20.glBindTexture(3553, paVar != null ? paVar.s[2] : -1);
+                ia iaVar = this.F;
+                if (iaVar != null) {
+                    obj = iaVar.h;
+                    oa oaVar = iaVar.m;
+                    GLES20.glBindTexture(3553, oaVar != null ? oaVar.s[2] : -1);
                     GLES20.glBlendFunc(1, 0);
                     GLES20.glVertexAttribPointer(0, 2, 5126, false, 8, (Buffer) this.m);
                     GLES20.glEnableVertexAttribArray(0);
@@ -301,7 +302,7 @@ public final class s0 {
         }
         GLES20.glBindFramebuffer(36160, 0);
         if (this.s <= 0 && (eVar = this.a) != null) {
-            eVar.t();
+            eVar.p();
         }
         this.s--;
         x0 x0Var = this.e;
@@ -325,8 +326,8 @@ public final class s0 {
         this.s++;
         GLES20.glBindFramebuffer(36160, i());
         GLES20.glFramebufferTexture2D(36160, 36064, 3553, j(), 0);
-        vv0 vv0Var = this.g;
-        GLES20.glViewport(0, 0, (int) vv0Var.a, (int) vv0Var.b);
+        uv0 uv0Var = this.g;
+        GLES20.glViewport(0, 0, (int) uv0Var.a, (int) uv0Var.b);
         f1 f1Var = (f1) this.r.get(mVar.i(1));
         if (f1Var == null) {
             return null;
@@ -348,7 +349,7 @@ public final class s0 {
         }
         if (mVar instanceof l) {
             GLES20.glUniform1i(f1Var.d(TeXSymbolParser.TYPE_ATTR), h1Var.a.o());
-            GLES20.glUniform2f(f1Var.d("resolution"), vv0Var.a, vv0Var.b);
+            GLES20.glUniform2f(f1Var.d("resolution"), uv0Var.a, uv0Var.b);
             GLES20.glUniform2f(f1Var.d("center"), h1Var.b, h1Var.c);
             GLES20.glUniform2f(f1Var.d("radius"), h1Var.d, h1Var.e);
             GLES20.glUniform1f(f1Var.d("thickness"), h1Var.f);
@@ -371,7 +372,7 @@ public final class s0 {
         GLES20.glBindFramebuffer(36160, 0);
         n2.e eVar = this.a;
         if (eVar != null && this.s <= 0) {
-            eVar.t();
+            eVar.p();
         }
         this.s--;
         x0 x0Var = this.e;
@@ -391,8 +392,8 @@ public final class s0 {
     }
 
     public final RectF f() {
-        vv0 vv0Var = this.g;
-        return new RectF(0.0f, 0.0f, vv0Var.a, vv0Var.b);
+        uv0 uv0Var = this.g;
+        return new RectF(0.0f, 0.0f, uv0Var.a, uv0Var.b);
     }
 
     public final int g() {
@@ -402,9 +403,9 @@ public final class s0 {
         return this.p;
     }
 
-    public final n7.z0 h(RectF rectF, boolean z10, boolean z11, boolean z12) {
+    public final f3 h(RectF rectF, boolean z10, boolean z11, boolean z12) {
         t1 t1Var;
-        n7.z0 z0Var;
+        f3 f3Var;
         f1 f1Var;
         t1 t1Var2;
         int i10 = (int) rectF.left;
@@ -423,8 +424,8 @@ public final class s0 {
         GLES20.glTexParameteri(3553, 10240, 9728);
         GLES20.glTexImage2D(3553, 0, 6408, width, height, 0, 6408, 5121, null);
         GLES20.glFramebufferTexture2D(36160, 36064, 3553, i13, 0);
-        vv0 vv0Var = this.g;
-        GLES20.glViewport(0, 0, (int) vv0Var.a, (int) vv0Var.b);
+        uv0 uv0Var = this.g;
+        GLES20.glViewport(0, 0, (int) uv0Var.a, (int) uv0Var.b);
         Map map = this.r;
         Object obj = null;
         if (map != null) {
@@ -433,7 +434,7 @@ public final class s0 {
                 GLES20.glUseProgram(f1Var2.a);
                 Matrix matrix = new Matrix();
                 matrix.preTranslate(-i10, -i11);
-                float[] c10 = l6.c(this.x, l6.a(matrix));
+                float[] c10 = m6.c(this.x, m6.a(matrix));
                 GLES20.glUniformMatrix4fv(f1Var2.d("mvpMatrix"), 1, false, FloatBuffer.wrap(c10));
                 if (z10 || !this.G) {
                     GLES20.glUniform1i(f1Var2.d("texture"), 0);
@@ -466,8 +467,8 @@ public final class s0 {
                     GLES20.glTexParameteri(3553, 10241, 9729);
                     GLES20.glUniform1i(f1Var.d("blured"), 1);
                     GLES20.glActiveTexture(33985);
-                    pa paVar = this.F.m;
-                    GLES20.glBindTexture(3553, paVar != null ? paVar.s[2] : -1);
+                    oa oaVar = this.F.m;
+                    GLES20.glBindTexture(3553, oaVar != null ? oaVar.s[2] : -1);
                     GLES20.glUniform1f(f1Var.d("eraser"), 0.0f);
                     GLES20.glUniform1i(f1Var.d("mask"), 2);
                     GLES20.glActiveTexture(33986);
@@ -484,11 +485,11 @@ public final class s0 {
                 this.u.limit(width * height * 4);
                 GLES20.glReadPixels(0, 0, width, height, 6408, 5121, this.u);
                 if (z10) {
-                    z0Var = new n7.z0(11, obj, this.u);
+                    f3Var = new f3(obj, this.u, false, 8);
                 } else {
                     Bitmap createBitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
                     createBitmap.copyPixelsFromBuffer(this.u);
-                    z0Var = new n7.z0(11, createBitmap, obj);
+                    f3Var = new f3(createBitmap, obj, false, 8);
                 }
                 this.u.rewind();
                 int[] iArr = this.t;
@@ -497,7 +498,7 @@ public final class s0 {
                 int[] iArr2 = this.t;
                 iArr2[0] = i13;
                 GLES20.glDeleteTextures(1, iArr2, 0);
-                return z0Var;
+                return f3Var;
             }
         }
         return null;
@@ -508,7 +509,7 @@ public final class s0 {
             int[] iArr = new int[1];
             GLES20.glGenFramebuffers(1, iArr, 0);
             this.o = iArr[0];
-            n6.a();
+            o6.a();
         }
         return this.o;
     }
@@ -556,11 +557,11 @@ public final class s0 {
         }
         GLES20.glBindFramebuffer(36160, i());
         GLES20.glFramebufferTexture2D(36160, 36064, 3553, g(), 0);
-        n6.a();
+        o6.a();
         RectF rectF2 = null;
         if (GLES20.glCheckFramebufferStatus(36160) == 36053) {
-            vv0 vv0Var = this.g;
-            GLES20.glViewport(0, 0, (int) vv0Var.a, (int) vv0Var.b);
+            uv0 uv0Var = this.g;
+            GLES20.glViewport(0, 0, (int) uv0Var.a, (int) uv0Var.b);
             if (z10) {
                 GLES20.glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
                 GLES20.glClear(16384);
@@ -808,7 +809,7 @@ public final class s0 {
                     GLES20.glBindFramebuffer(36160, i10);
                     eVar = this.a;
                     if (eVar != null) {
-                        eVar.t();
+                        eVar.p();
                     }
                     rectF = this.h;
                     if (rectF == null) {
@@ -883,11 +884,11 @@ public final class s0 {
         if (mVar instanceof b) {
             GLES20.glUniform1i(f1Var.d("blured"), 2);
             GLES20.glActiveTexture(33986);
-            ja jaVar = this.F;
-            if (jaVar != null) {
-                obj = jaVar.h;
-                pa paVar = jaVar.m;
-                GLES20.glBindTexture(3553, paVar != null ? paVar.s[2] : -1);
+            ia iaVar = this.F;
+            if (iaVar != null) {
+                obj = iaVar.h;
+                oa oaVar = iaVar.m;
+                GLES20.glBindTexture(3553, oaVar != null ? oaVar.s[2] : -1);
                 GLES20.glBlendFunc(1, 771);
                 GLES20.glVertexAttribPointer(0, 2, 5126, false, 8, (Buffer) this.m);
                 GLES20.glEnableVertexAttribArray(0);
@@ -900,7 +901,7 @@ public final class s0 {
                 } else {
                     GLES20.glDrawArrays(5, 0, 4);
                 }
-                n6.a();
+                o6.a();
             }
             t1 t1Var = this.z;
             if (t1Var != null) {
@@ -915,7 +916,7 @@ public final class s0 {
         GLES20.glEnableVertexAttribArray(1);
         if (obj == null) {
         }
-        n6.a();
+        o6.a();
     }
 
     public final void o(int i10, int i11, h1 h1Var, float f7) {
@@ -943,8 +944,8 @@ public final class s0 {
         if (mVar instanceof l) {
             GLES20.glUniform1i(f1Var.d(TeXSymbolParser.TYPE_ATTR), ((l) mVar).o());
             int d = f1Var.d("resolution");
-            vv0 vv0Var = this.g;
-            GLES20.glUniform2f(d, vv0Var.a, vv0Var.b);
+            uv0 uv0Var = this.g;
+            GLES20.glUniform2f(d, uv0Var.a, uv0Var.b);
             GLES20.glUniform2f(f1Var.d("center"), h1Var.b, h1Var.c);
             GLES20.glUniform2f(f1Var.d("radius"), h1Var.d, h1Var.e);
             GLES20.glUniform1f(f1Var.d("thickness"), h1Var.f);
@@ -962,7 +963,7 @@ public final class s0 {
         GLES20.glVertexAttribPointer(1, 2, 5126, false, 8, (Buffer) this.n);
         GLES20.glEnableVertexAttribArray(1);
         GLES20.glDrawArrays(5, 0, 4);
-        n6.a();
+        o6.a();
     }
 
     public final void p(a5.a aVar, boolean z10) {
@@ -1015,7 +1016,7 @@ public final class s0 {
         RectF rectF = (RectF) aVar.c;
         GLES20.glTexSubImage2D(3553, 0, (int) rectF.left, (int) rectF.top, (int) rectF.width(), (int) ((RectF) aVar.c).height(), 6408, 5121, byteBuffer);
         if (this.s <= 0 && (eVar = this.a) != null) {
-            eVar.t();
+            eVar.p();
         }
         if (!z10 || (file = (File) aVar.d) == null) {
             return;

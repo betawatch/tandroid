@@ -27,7 +27,7 @@ import org.telegram.ui.i60;
 import org.telegram.ui.nq;
 import org.telegram.ui.uy;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class h3 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -66,9 +66,9 @@ public final /* synthetic */ class h3 implements Runnable {
                 final long j10 = this.c;
                 final boolean z11 = this.b;
                 storiesController.i0(j10, z11, false);
-                o0.a aVar = new o0.a(3, (byte) 0);
+                m5.e eVar = new m5.e((char) 0, 7);
                 final int i11 = 0;
-                aVar.b = new Runnable() { // from class: ai.l3
+                eVar.b = new Runnable() { // from class: ai.l3
                     @Override // java.lang.Runnable
                     public final void run() {
                         switch (i11) {
@@ -82,7 +82,7 @@ public final /* synthetic */ class h3 implements Runnable {
                     }
                 };
                 final int i12 = 1;
-                aVar.c = new Runnable() { // from class: ai.l3
+                eVar.c = new Runnable() { // from class: ai.l3
                     @Override // java.lang.Runnable
                     public final void run() {
                         switch (i12) {
@@ -95,7 +95,7 @@ public final /* synthetic */ class h3 implements Runnable {
                         }
                     }
                 };
-                org.telegram.ui.Components.qc V = new xc(f6Var.d1, f6Var.B0).V(Arrays.asList(tLObject), !z11 ? AndroidUtilities.replaceTags(LocaleController.formatString(R.string.StoriesMovedToDialogs, ContactsController.formatName(str, null, 10))) : AndroidUtilities.replaceTags(LocaleController.formatString(R.string.StoriesMovedToContacts, ContactsController.formatName(str, null, 10))), null, aVar);
+                org.telegram.ui.Components.pc V = new xc(f6Var.d1, f6Var.B0).V(Arrays.asList(tLObject), !z11 ? AndroidUtilities.replaceTags(LocaleController.formatString(R.string.StoriesMovedToDialogs, ContactsController.formatName(str, null, 10))) : AndroidUtilities.replaceTags(LocaleController.formatString(R.string.StoriesMovedToContacts, ContactsController.formatName(str, null, 10))), null, eVar);
                 V.a = 2;
                 V.k(true);
                 return;
@@ -103,7 +103,7 @@ public final /* synthetic */ class h3 implements Runnable {
                 l9 l9Var = (l9) obj4;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj3;
                 e2.h hVar = (e2.h) obj;
-                org.telegram.ui.ActionBar.e6 e6Var = (org.telegram.ui.ActionBar.e6) obj2;
+                org.telegram.ui.ActionBar.f6 f6Var2 = (org.telegram.ui.ActionBar.f6) obj2;
                 if (tL_error == null) {
                     hVar.accept(Boolean.TRUE);
                     return;
@@ -122,12 +122,12 @@ public final /* synthetic */ class h3 implements Runnable {
                 if (tL_error.text.startsWith("STORY_LIVE_ALREADY_")) {
                     org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
                     if (z10 && R != null) {
-                        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(R.getContext(), 0, e6Var);
+                        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(R.getContext(), 0, f6Var2);
                         String string = LocaleController.getString(R.string.LiveStoryAlreadyStreamingTitle);
                         org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
                         b2Var.R = string;
                         b2Var.T = LocaleController.getString(R.string.LiveStoryAlreadyStreaming);
-                        org.telegram.messenger.q.p(R.string.OK, alertDialog$Builder, null);
+                        org.telegram.messenger.l0.n(R.string.OK, alertDialog$Builder, null);
                     }
                     hVar.accept(Boolean.FALSE);
                     return;
@@ -165,12 +165,12 @@ public final /* synthetic */ class h3 implements Runnable {
                             str2 = "😀";
                         }
                         SpannableString spannableString = new SpannableString(str2);
-                        org.telegram.ui.Components.z5 z5Var = document != null ? new org.telegram.ui.Components.z5(document, editTextBoldCursor.getPaint().getFontMetricsInt()) : new org.telegram.ui.Components.z5(j3, editTextBoldCursor.getPaint().getFontMetricsInt());
+                        org.telegram.ui.Components.y5 y5Var = document != null ? new org.telegram.ui.Components.y5(document, editTextBoldCursor.getPaint().getFontMetricsInt()) : new org.telegram.ui.Components.y5(j3, editTextBoldCursor.getPaint().getFontMetricsInt());
                         if (!z10) {
-                            z5Var.fromEmojiKeyboard = true;
+                            y5Var.fromEmojiKeyboard = true;
                         }
-                        z5Var.cacheType = org.telegram.ui.Components.q5.g();
-                        spannableString.setSpan(z5Var, 0, spannableString.length(), 33);
+                        y5Var.cacheType = org.telegram.ui.Components.p5.g();
+                        spannableString.setSpan(y5Var, 0, spannableString.length(), 33);
                         editTextBoldCursor.setText(editTextBoldCursor.getText().insert(selectionEnd, spannableString));
                         editTextBoldCursor.setSelection(spannableString.length() + selectionEnd, selectionEnd + spannableString.length());
                     } catch (Exception e) {
@@ -207,13 +207,13 @@ public final /* synthetic */ class h3 implements Runnable {
         }
     }
 
-    public /* synthetic */ h3(l9 l9Var, TLRPC.TL_error tL_error, boolean z10, long j3, e2.h hVar, org.telegram.ui.ActionBar.e6 e6Var) {
+    public /* synthetic */ h3(l9 l9Var, TLRPC.TL_error tL_error, boolean z10, long j3, e2.h hVar, org.telegram.ui.ActionBar.f6 f6Var) {
         this.d = l9Var;
         this.e = tL_error;
         this.b = z10;
         this.c = j3;
         this.f = hVar;
-        this.h = e6Var;
+        this.h = f6Var;
     }
 
     public /* synthetic */ h3(gg ggVar, EditTextBoldCursor editTextBoldCursor, String str, TLRPC.Document document, long j3, boolean z10) {

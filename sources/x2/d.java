@@ -2,15 +2,15 @@ package x2;
 
 import android.os.Build;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d implements d9.f {
-    public final /* synthetic */ p a;
-    public final /* synthetic */ i b;
+    public final /* synthetic */ q a;
+    public final /* synthetic */ j b;
 
-    public /* synthetic */ d(p pVar, i iVar) {
-        this.a = pVar;
-        this.b = iVar;
+    public /* synthetic */ d(q qVar, j jVar) {
+        this.a = qVar;
+        this.b = jVar;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:33:0x0069, code lost:
@@ -23,11 +23,11 @@ public final /* synthetic */ class d implements d9.f {
     */
     public final boolean apply(Object obj) {
         Boolean bool;
-        k kVar;
+        l lVar;
         b2.s sVar = (b2.s) obj;
-        p pVar = this.a;
-        pVar.getClass();
-        if (this.b.s0 && ((bool = pVar.k) == null || !bool.booleanValue())) {
+        q qVar = this.a;
+        qVar.getClass();
+        if (this.b.s0 && ((bool = qVar.k) == null || !bool.booleanValue())) {
             int i10 = sVar.J;
             if (i10 != -1 && i10 > 2) {
                 String str = sVar.r;
@@ -38,14 +38,14 @@ public final /* synthetic */ class d implements d9.f {
                         case "audio/ac4":
                         case "audio/eac3":
                             if (Build.VERSION.SDK_INT >= 32) {
-                                k kVar2 = pVar.i;
-                                if (kVar2 != null) {
+                                l lVar2 = qVar.i;
+                                if (lVar2 != null) {
                                     break;
                                 }
                             }
                             break;
                         default:
-                            if (Build.VERSION.SDK_INT >= 32 || (kVar = pVar.i) == null || !kVar.b || !kVar.b() || !pVar.i.c() || !pVar.i.a(pVar.j, sVar)) {
+                            if (Build.VERSION.SDK_INT >= 32 || (lVar = qVar.i) == null || !lVar.b || !lVar.b() || !qVar.i.c() || !qVar.i.a(qVar.j, sVar)) {
                                 return false;
                             }
                             break;

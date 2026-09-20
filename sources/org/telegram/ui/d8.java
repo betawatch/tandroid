@@ -16,7 +16,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class d8 extends GestureDetector.SimpleOnGestureListener {
     public final /* synthetic */ Context a;
@@ -217,7 +217,7 @@ public final class d8 extends GestureDetector.SimpleOnGestureListener {
                                 d5Var4 = ((org.telegram.ui.ActionBar.n2) i8Var2).parentLayout;
                                 org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) fragmentStack.get(d5Var4.getFragmentStack().size() - 3);
                                 if (n2Var instanceof zn) {
-                                    org.telegram.ui.Components.e5.r(i8Var2, 1, i8Var2.getMessagesController().getUser(Long.valueOf(i8Var2.x)), null, false, new c8(d8Var, (zn) n2Var), null);
+                                    org.telegram.ui.Components.d5.r(i8Var2, 1, i8Var2.getMessagesController().getUser(Long.valueOf(i8Var2.x)), null, false, new c8(d8Var, (zn) n2Var), null);
                                 }
                             }
                             i8Var2.finishPreviewFragment();
@@ -256,7 +256,7 @@ public final class d8 extends GestureDetector.SimpleOnGestureListener {
                             d5Var4 = ((org.telegram.ui.ActionBar.n2) i8Var2).parentLayout;
                             org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) fragmentStack.get(d5Var4.getFragmentStack().size() - 3);
                             if (n2Var instanceof zn) {
-                                org.telegram.ui.Components.e5.r(i8Var2, 1, i8Var2.getMessagesController().getUser(Long.valueOf(i8Var2.x)), null, false, new c8(d8Var, (zn) n2Var), null);
+                                org.telegram.ui.Components.d5.r(i8Var2, 1, i8Var2.getMessagesController().getUser(Long.valueOf(i8Var2.x)), null, false, new c8(d8Var, (zn) n2Var), null);
                             }
                         }
                         i8Var2.finishPreviewFragment();
@@ -306,16 +306,16 @@ public final class d8 extends GestureDetector.SimpleOnGestureListener {
                 } else {
                     int id3 = messageObject.getId();
                     int i10 = a2.c;
-                    org.telegram.ui.Components.kv0 kv0Var = (org.telegram.ui.Components.kv0) cVar.b;
+                    org.telegram.ui.Components.jv0 jv0Var = (org.telegram.ui.Components.jv0) cVar.b;
                     int i11 = -1;
-                    for (int i12 = 0; i12 < kv0Var.t1[0].a.size(); i12++) {
-                        if (((MessageObject) kv0Var.t1[0].a.get(i12)).getId() == id3) {
+                    for (int i12 = 0; i12 < jv0Var.t1[0].a.size(); i12++) {
+                        if (((MessageObject) jv0Var.t1[0].a.get(i12)).getId() == id3) {
                             i11 = i12;
                         }
                     }
-                    org.telegram.ui.Components.du0 W = kv0Var.W(0);
+                    org.telegram.ui.Components.cu0 W = jv0Var.W(0);
                     if (i11 < 0 || W == null) {
-                        kv0Var.y0(0, id3, i10, true);
+                        jv0Var.y0(0, id3, i10, true);
                     } else {
                         W.x.h1(i11, 0);
                     }

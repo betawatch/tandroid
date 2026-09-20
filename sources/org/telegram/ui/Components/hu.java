@@ -12,7 +12,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class hu implements ly {
     public final /* synthetic */ ju a;
@@ -57,9 +57,9 @@ public final class hu implements ly {
         if (juVar.b()) {
             juVar.x = i10 != 0;
             juVar.y();
-            bw0 bw0Var = juVar.f;
-            if (bw0Var != null) {
-                bw0Var.S();
+            aw0 aw0Var = juVar.f;
+            if (aw0Var != null) {
+                aw0Var.S();
             }
         }
     }
@@ -102,7 +102,7 @@ public final class hu implements ly {
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(juVar.getContext(), 0, juVar.M);
         alertDialog$Builder.a.R = LocaleController.getString(R.string.ClearRecentEmojiTitle);
         alertDialog$Builder.a.T = LocaleController.getString(R.string.ClearRecentEmojiText);
-        alertDialog$Builder.k(LocaleController.getString(R.string.ClearButton), new g91(this));
+        alertDialog$Builder.k(LocaleController.getString(R.string.ClearButton), new s(this, 29));
         alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
         org.telegram.ui.ActionBar.n2 n2Var = juVar.h;
         if (n2Var != null) {
@@ -137,9 +137,9 @@ public final class hu implements ly {
         }
         try {
             SpannableString spannableString = new SpannableString(str);
-            z5 z5Var = document != null ? new z5(document, euVar.getPaint().getFontMetricsInt()) : new z5(j3, euVar.getPaint().getFontMetricsInt());
-            z5Var.cacheType = juVar.d.c;
-            spannableString.setSpan(z5Var, 0, spannableString.length(), 33);
+            y5 y5Var = document != null ? new y5(document, euVar.getPaint().getFontMetricsInt()) : new y5(j3, euVar.getPaint().getFontMetricsInt());
+            y5Var.cacheType = juVar.d.c;
+            spannableString.setSpan(y5Var, 0, spannableString.length(), 33);
             euVar.setText(euVar.getText().insert(selectionEnd, spannableString));
             int length = selectionEnd + spannableString.length();
             euVar.setSelection(length, length);
@@ -160,7 +160,7 @@ public final class hu implements ly {
     }
 
     @Override // org.telegram.ui.Components.ly
-    public final /* synthetic */ void o(t51 t51Var) {
+    public final /* synthetic */ void o(s51 s51Var) {
     }
 
     @Override // org.telegram.ui.Components.ly

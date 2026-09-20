@@ -9,14 +9,14 @@ import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.e6;
 import org.telegram.ui.ActionBar.f3;
+import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j5;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.t5;
 import w7.y5;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class f0 extends FrameLayout {
     public final ImageView a;
@@ -26,7 +26,7 @@ public final class f0 extends FrameLayout {
     public e0 e;
     public d0 f;
 
-    public f0(j0 j0Var, Context context, e6 e6Var) {
+    public f0(j0 j0Var, Context context, f6 f6Var) {
         super(context);
         int i10;
         int i11;
@@ -36,12 +36,12 @@ public final class f0 extends FrameLayout {
         ImageView imageView = new ImageView(context);
         this.a = imageView;
         imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
-        imageView.setColorFilter(new PorterDuffColorFilter(j6.v0(j6.Lj, e6Var), PorterDuff.Mode.SRC_IN));
+        imageView.setColorFilter(new PorterDuffColorFilter(j6.v0(j6.Lj, f6Var), PorterDuff.Mode.SRC_IN));
         addView(imageView, y5.d(24, 24.0f, (LocaleController.isRTL ? 5 : 3) | 16, 24.0f, 0.0f, 24.0f, 0.0f));
         j5 j5Var = new j5(context);
         this.b = j5Var;
         j5Var.setWidthWrapContent(true);
-        j5Var.setTextColor(j6.v0(j6.j5, e6Var));
+        j5Var.setTextColor(j6.v0(j6.j5, f6Var));
         j5Var.setTextSize(14);
         boolean z10 = LocaleController.isRTL;
         addView(j5Var, y5.d(-2, -2.0f, (z10 ? 5 : 3) | 16, z10 ? 30.0f : 60.0f, 0.0f, z10 ? 60.0f : 30.0f, 0.0f));
@@ -51,7 +51,7 @@ public final class f0 extends FrameLayout {
         j5Var2.setWidthWrapContent(true);
         j5Var2.setTypeface(AndroidUtilities.bold());
         j5Var2.setTextSize(14);
-        t5 t5Var = new t5(this, context, e6Var);
+        t5 t5Var = new t5(this, context, f6Var);
         this.c = t5Var;
         t5Var.setWillNotDraw(false);
         t5Var.addView(j5Var2, y5.e(-2, -2, 17));

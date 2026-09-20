@@ -6,23 +6,23 @@ import android.graphics.RectF;
 import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class bx0 extends uw0 {
     public final /* synthetic */ int r = 0;
-    public final /* synthetic */ org.telegram.ui.Components.vl0 s;
+    public final /* synthetic */ org.telegram.ui.Components.ul0 s;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public bx0(rg.j1 j1Var, Context context, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(context, e6Var);
+    public bx0(rg.j1 j1Var, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context, f6Var);
         this.s = j1Var;
     }
 
     @Override // org.telegram.ui.uw0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
-        org.telegram.ui.ActionBar.e6 e6Var;
+        org.telegram.ui.ActionBar.f6 f6Var;
         boolean q6;
-        org.telegram.ui.ActionBar.e6 e6Var2;
+        org.telegram.ui.ActionBar.f6 f6Var2;
         switch (this.r) {
             case 0:
                 float dp = AndroidUtilities.dp(10.0f);
@@ -35,10 +35,10 @@ public final class bx0 extends uw0 {
                 premiumPreviewFragment.S.postTranslate(0.0f, -this.f.e);
                 premiumPreviewFragment.R.setLocalMatrix(premiumPreviewFragment.S);
                 canvas.drawRoundRect(rectF, dp, dp, premiumPreviewFragment.T);
-                e6Var = ((org.telegram.ui.ActionBar.n2) premiumPreviewFragment).resourceProvider;
-                if (e6Var != null) {
-                    e6Var2 = ((org.telegram.ui.ActionBar.n2) premiumPreviewFragment).resourceProvider;
-                    q6 = e6Var2.a();
+                f6Var = ((org.telegram.ui.ActionBar.n2) premiumPreviewFragment).resourceProvider;
+                if (f6Var != null) {
+                    f6Var2 = ((org.telegram.ui.ActionBar.n2) premiumPreviewFragment).resourceProvider;
+                    q6 = f6Var2.a();
                 } else {
                     q6 = org.telegram.ui.ActionBar.j6.I.q();
                 }

@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.view.View;
 import android.widget.LinearLayout;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q0 implements View.OnClickListener {
     public final /* synthetic */ int a = 1;
@@ -24,8 +24,8 @@ public final /* synthetic */ class q0 implements View.OnClickListener {
                 int childCount = linearLayout.getChildCount();
                 for (int i10 = 0; i10 < childCount; i10++) {
                     View childAt = linearLayout.getChildAt(i10);
-                    if (childAt instanceof org.telegram.ui.Cells.l6) {
-                        ((org.telegram.ui.Cells.l6) childAt).c.a(childAt == view, true);
+                    if (childAt instanceof org.telegram.ui.Cells.m6) {
+                        ((org.telegram.ui.Cells.m6) childAt).c.a(childAt == view, true);
                     }
                 }
                 break;
@@ -33,10 +33,10 @@ public final /* synthetic */ class q0 implements View.OnClickListener {
                 LinearLayout linearLayout2 = this.b;
                 int childCount2 = linearLayout2.getChildCount();
                 for (int i11 = 0; i11 < childCount2; i11++) {
-                    org.telegram.ui.Cells.l6 l6Var = (org.telegram.ui.Cells.l6) linearLayout2.getChildAt(i11);
-                    l6Var.c.a(l6Var == view, true);
+                    org.telegram.ui.Cells.m6 m6Var = (org.telegram.ui.Cells.m6) linearLayout2.getChildAt(i11);
+                    m6Var.c.a(m6Var == view, true);
                 }
-                this.c[0] = org.telegram.ui.Cells.y8.f[((Integer) view.getTag()).intValue()];
+                this.c[0] = org.telegram.ui.Cells.z8.f[((Integer) view.getTag()).intValue()];
                 break;
         }
     }

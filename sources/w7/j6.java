@@ -1,21 +1,17 @@
 package w7;
 
-import java.io.Closeable;
+import java.io.ByteArrayOutputStream;
+import java.io.InputStream;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public abstract class j6 {
-    public static final void a(Closeable closeable, Throwable th2) {
-        if (closeable != null) {
-            if (th2 == null) {
-                closeable.close();
-                return;
-            }
-            try {
-                closeable.close();
-            } catch (Throwable th3) {
-                v7.r7.a(th2, th3);
-            }
+    public static void a(InputStream inputStream, ByteArrayOutputStream byteArrayOutputStream) {
+        byte[] bArr = new byte[8192];
+        int read = inputStream.read(bArr);
+        while (read >= 0) {
+            byteArrayOutputStream.write(bArr, 0, read);
+            read = inputStream.read(bArr);
         }
     }
 }

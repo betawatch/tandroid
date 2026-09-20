@@ -13,16 +13,16 @@ import java.util.HashMap;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.RichMessageLayout;
 import org.telegram.messenger.SharedConfig;
-import org.telegram.ui.r41;
+import org.telegram.ui.u41;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class g {
     public static HashMap n;
     public final double a;
     public final double b;
     public final int c;
-    public final r41 d;
+    public final u41 d;
     public final e e;
     public f f;
     public final int g;
@@ -33,19 +33,19 @@ public final class g {
     public int l = 0;
     public final d m = new d(this, 0);
 
-    public g(int i10, r41 r41Var, int i11, int i12) {
+    public g(int i10, u41 u41Var, int i11, int i12) {
         double d = 1.0d / ((int) AndroidUtilities.screenRefreshRate);
         this.a = d;
         this.b = d * 4.0d;
         this.c = i10;
         this.g = i11;
         this.h = i12;
-        this.d = r41Var;
-        e eVar = new e(this, r41Var.getContext());
+        this.d = u41Var;
+        e eVar = new e(this, u41Var.getContext());
         this.e = eVar;
         eVar.setSurfaceTextureListener(new ki.c(this, 5));
         eVar.setOpaque(false);
-        r41Var.addView(eVar);
+        u41Var.addView(eVar);
     }
 
     public static g d(int i10, View view, ViewGroup viewGroup) {
@@ -74,9 +74,9 @@ public final class g {
             }
             HashMap hashMap = n;
             Integer valueOf = Integer.valueOf(i10);
-            r41 r41Var = new r41(viewGroup.getContext(), 12);
-            viewGroup.addView(r41Var);
-            g gVar2 = new g(i10, r41Var, min, min);
+            u41 u41Var = new u41(viewGroup.getContext(), 12);
+            viewGroup.addView(u41Var);
+            g gVar2 = new g(i10, u41Var, min, min);
             hashMap.put(valueOf, gVar2);
             gVar = gVar2;
         }

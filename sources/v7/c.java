@@ -1,8 +1,8 @@
 package v7;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
-public final class c extends h9 {
+public final class c extends i9 {
     public final transient Object[] c;
     public final transient int d;
     public final transient int e = 1;
@@ -14,7 +14,7 @@ public final class c extends h9 {
 
     @Override // java.util.List
     public final Object get(int i10) {
-        w7.x7.a(i10, this.e);
+        w7.y7.a(i10, this.e);
         Object obj = this.c[i10 + i10 + this.d];
         obj.getClass();
         return obj;

@@ -1,66 +1,37 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class zg1 implements RequestDelegate {
+public final /* synthetic */ class zg1 implements org.telegram.ui.ActionBar.a2 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ gh1 b;
+    public final /* synthetic */ ih1 b;
 
-    public /* synthetic */ zg1(gh1 gh1Var, int i10) {
+    public /* synthetic */ zg1(ih1 ih1Var, int i10) {
         this.a = i10;
-        this.b = gh1Var;
+        this.b = ih1Var;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(final TLObject tLObject, final TLRPC.TL_error tL_error) {
+    @Override // org.telegram.ui.ActionBar.a2
+    public final void k(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
         switch (this.a) {
             case 0:
-                final int i10 = 0;
-                final gh1 gh1Var = this.b;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.bh1
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i10) {
-                            case 0:
-                                gh1.b0(gh1Var, tL_error, tLObject);
-                                break;
-                            default:
-                                gh1.h0(gh1Var, tL_error, tLObject);
-                                break;
-                        }
-                    }
-                });
+                this.b.finishFragment();
                 break;
             case 1:
-                AndroidUtilities.runOnUIThread(new ch1(this.b, tL_error, 0));
+                ih1 ih1Var = this.b;
+                ih1Var.B0();
+                ih1Var.finishFragment();
                 break;
             case 2:
-                AndroidUtilities.runOnUIThread(new ch1(this.b, tL_error, 1));
+                ih1 ih1Var2 = this.b;
+                ih1Var2.R = "";
+                ih1Var2.E0(false);
                 break;
             case 3:
-                AndroidUtilities.runOnUIThread(new ch1(this.b, tL_error, 2));
+                ih1.a0(this.b);
                 break;
             default:
-                final int i11 = 1;
-                final gh1 gh1Var2 = this.b;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.bh1
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i11) {
-                            case 0:
-                                gh1.b0(gh1Var2, tL_error, tLObject);
-                                break;
-                            default:
-                                gh1.h0(gh1Var2, tL_error, tLObject);
-                                break;
-                        }
-                    }
-                });
+                ih1.X(this.b);
                 break;
         }
     }

@@ -2,9 +2,9 @@ package org.telegram.ui.Components;
 
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class ao implements n8 {
+public final class ao implements m8 {
     public final /* synthetic */ org.telegram.ui.ActionBar.n1[] a;
     public final /* synthetic */ eo b;
 
@@ -13,7 +13,7 @@ public final class ao implements n8 {
         this.a = n1VarArr;
     }
 
-    @Override // org.telegram.ui.Components.n8
+    @Override // org.telegram.ui.Components.m8
     public final void U0(int i10, int i11) {
         org.telegram.ui.zn znVar = this.b.G;
         if (znVar == null) {
@@ -32,7 +32,7 @@ public final class ao implements n8 {
         }
     }
 
-    @Override // org.telegram.ui.Components.n8
+    @Override // org.telegram.ui.Components.m8
     public final void dismiss() {
         org.telegram.ui.ActionBar.n1 n1Var = this.a[0];
         if (n1Var != null) {
@@ -40,7 +40,7 @@ public final class ao implements n8 {
         }
     }
 
-    @Override // org.telegram.ui.Components.n8
+    @Override // org.telegram.ui.Components.m8
     public final /* synthetic */ void j1() {
     }
 }

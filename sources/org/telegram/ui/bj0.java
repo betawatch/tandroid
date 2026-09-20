@@ -1,49 +1,52 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import org.telegram.tgnet.ConnectionsManager;
+import android.graphics.Point;
+import android.graphics.Rect;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class bj0 extends org.telegram.ui.Cells.u1 {
-    public int Ge;
-    public int He;
-    public int Ie;
-    public final /* synthetic */ cj0 Je;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public bj0(cj0 cj0Var, Context context, int i10, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(context, i10, true, null, e6Var);
-        this.Je = cj0Var;
-        this.Ge = ConnectionsManager.DEFAULT_DATACENTER_ID;
-        this.He = ConnectionsManager.DEFAULT_DATACENTER_ID;
-        this.Ie = -1;
-    }
-
-    @Override // android.view.View
-    public final boolean isPressed() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Cells.u1, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        if (!this.Zc.w0 || i11 == 0 || this.Ge == Integer.MAX_VALUE || i13 == 0 || this.He == Integer.MAX_VALUE) {
+public final class bj0 extends s4.n0 {
+    @Override // s4.n0
+    public final void a(Rect rect, View view, RecyclerView recyclerView, s4.z0 z0Var) {
+        org.telegram.ui.Cells.u1 u1Var;
+        MessageObject.GroupedMessages currentMessagesGroup;
+        MessageObject.GroupedMessagePosition currentPosition;
+        int i10 = 0;
+        rect.bottom = 0;
+        if (!(view instanceof org.telegram.ui.Cells.u1) || (currentMessagesGroup = (u1Var = (org.telegram.ui.Cells.u1) view).getCurrentMessagesGroup()) == null || (currentPosition = u1Var.getCurrentPosition()) == null || currentPosition.siblingHeights == null) {
             return;
         }
-        if (this.Ie == (getMessageObject() == null ? 0 : getMessageObject().getId())) {
-            if (!this.Je.w0) {
-                setTranslationY(-(i11 - this.Ge));
-                animate().translationY(0.0f).setDuration(320L).setInterpolator(org.telegram.ui.Components.qr.h).start();
+        Point point = AndroidUtilities.displaySize;
+        float max = Math.max(point.x, point.y) * 0.5f;
+        int extraInsetHeight = u1Var.getExtraInsetHeight();
+        int i11 = 0;
+        while (true) {
+            if (i11 >= currentPosition.siblingHeights.length) {
+                break;
             }
-            this.Ge = getTop();
-            this.He = getBottom();
-            this.Ie = getMessageObject() != null ? getMessageObject().getId() : 0;
+            extraInsetHeight += (int) Math.ceil(r3[i11] * max);
+            i11++;
         }
-    }
-
-    @Override // org.telegram.ui.Cells.u1
-    public final vh.g w3() {
-        return vh.g.d(1, this, this.Je.F);
+        int round = (Math.round(AndroidUtilities.density * 7.0f) * (currentPosition.maxY - currentPosition.minY)) + extraInsetHeight;
+        int size = currentMessagesGroup.posArray.size();
+        while (true) {
+            if (i10 < size) {
+                MessageObject.GroupedMessagePosition groupedMessagePosition = currentMessagesGroup.posArray.get(i10);
+                byte b10 = groupedMessagePosition.minY;
+                byte b11 = currentPosition.minY;
+                if (b10 == b11 && ((groupedMessagePosition.minX != currentPosition.minX || groupedMessagePosition.maxX != currentPosition.maxX || b10 != b11 || groupedMessagePosition.maxY != currentPosition.maxY) && b10 == b11)) {
+                    round = org.telegram.messenger.l0.A(4.0f, (int) Math.ceil(max * groupedMessagePosition.ph), round);
+                    break;
+                }
+                i10++;
+            } else {
+                break;
+            }
+        }
+        rect.bottom = -round;
     }
 }

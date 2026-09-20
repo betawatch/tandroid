@@ -17,7 +17,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class zz {
     public int A;
@@ -372,8 +372,8 @@ public final class zz {
                                         arrayList2.add(new PointF(0.0f, 0.0f));
                                         arrayList2.add(new PointF(0.47f, 0.57f));
                                         arrayList2.add(new PointF(1.0f, 1.0f));
-                                        float[] D = n2.e.D(arrayList2);
-                                        float[] D2 = n2.e.D(arrayList);
+                                        float[] y3 = n2.e.y(arrayList2);
+                                        float[] y10 = n2.e.y(arrayList);
                                         GLES20.glGenTextures(1, iArr4, 0);
                                         GLES20.glBindTexture(3553, iArr4[0]);
                                         GLES20.glTexParameteri(3553, 10241, 9729);
@@ -382,15 +382,15 @@ public final class zz {
                                         GLES20.glTexParameteri(3553, 10243, 33071);
                                         ByteBuffer allocateDirect = ByteBuffer.allocateDirect(1024);
                                         allocateDirect.order(ByteOrder.LITTLE_ENDIAN);
-                                        if (D2.length >= 256 && D2.length >= 256 && D2.length >= 256 && D.length >= 256) {
+                                        if (y10.length >= 256 && y10.length >= 256 && y10.length >= 256 && y3.length >= 256) {
                                             for (int i10 = 0; i10 < 256; i10++) {
                                                 float f7 = i10;
-                                                int min = (int) Math.min(Math.max(D2[i10] + f7, 0.0f), 255.0f);
-                                                int min2 = (int) Math.min(Math.max(D2[i10] + f7, 0.0f), 255.0f);
-                                                int min3 = (int) Math.min(Math.max(f7 + D2[i10], 0.0f), 255.0f);
-                                                allocateDirect.put((byte) Math.min(Math.max(min3 + D[min3], 0.0f), 255.0f));
-                                                allocateDirect.put((byte) Math.min(Math.max(min2 + D[min2], 0.0f), 255.0f));
-                                                allocateDirect.put((byte) Math.min(Math.max(min + D[min], 0.0f), 255.0f));
+                                                int min = (int) Math.min(Math.max(y10[i10] + f7, 0.0f), 255.0f);
+                                                int min2 = (int) Math.min(Math.max(y10[i10] + f7, 0.0f), 255.0f);
+                                                int min3 = (int) Math.min(Math.max(f7 + y10[i10], 0.0f), 255.0f);
+                                                allocateDirect.put((byte) Math.min(Math.max(min3 + y3[min3], 0.0f), 255.0f));
+                                                allocateDirect.put((byte) Math.min(Math.max(min2 + y3[min2], 0.0f), 255.0f));
+                                                allocateDirect.put((byte) Math.min(Math.max(min + y3[min], 0.0f), 255.0f));
                                                 allocateDirect.put((byte) -1);
                                             }
                                             allocateDirect.position(0);

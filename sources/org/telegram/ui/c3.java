@@ -11,12 +11,12 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class c3 extends FrameLayout {
     public final LinearLayout a;
     public boolean b;
-    public final org.telegram.ui.Components.w9 c;
+    public final org.telegram.ui.Components.v9 c;
     public final TextView d;
     public final TextView e;
     public final TextView f;
@@ -34,9 +34,9 @@ public final class c3 extends FrameLayout {
         linearLayout.setOrientation(1);
         linearLayout.setGravity(3);
         addView(linearLayout, w7.y5.e(-2, -2, 17));
-        org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(context);
-        this.c = w9Var;
-        linearLayout.addView(w9Var, w7.y5.n(100, 100));
+        org.telegram.ui.Components.v9 v9Var = new org.telegram.ui.Components.v9(context);
+        this.c = v9Var;
+        linearLayout.addView(v9Var, w7.y5.n(100, 100));
         TextView textView = new TextView(context);
         this.d = textView;
         textView.setTextSize(1, 19.0f);
@@ -63,7 +63,7 @@ public final class c3 extends FrameLayout {
 
     public final void a(String str, String str2) {
         this.d.setText(LocaleController.getString(R.string.WebErrorTitle));
-        org.telegram.messenger.wh.p(R.string.WebErrorInfoBot, new Object[]{str}, this.e);
+        org.telegram.messenger.rk.q(R.string.WebErrorInfoBot, new Object[]{str}, this.e);
         this.f.setText(str2);
     }
 

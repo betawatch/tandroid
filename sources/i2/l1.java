@@ -3,7 +3,7 @@ package i2;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class l1 extends a {
     public final int h;
@@ -14,8 +14,8 @@ public final class l1 extends a {
     public final Object[] m;
     public final HashMap n;
 
-    public l1(b2.k1[] k1VarArr, Object[] objArr, u2.g1 g1Var) {
-        super(g1Var);
+    public l1(b2.k1[] k1VarArr, Object[] objArr, u2.h1 h1Var) {
+        super(h1Var);
         int length = k1VarArr.length;
         this.l = k1VarArr;
         this.j = new int[length];
@@ -95,8 +95,8 @@ public final class l1 extends a {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public l1(ArrayList arrayList, u2.g1 g1Var) {
-        this(r0, r1, g1Var);
+    public l1(ArrayList arrayList, u2.h1 h1Var) {
+        this(r0, r1, h1Var);
         b2.k1[] k1VarArr = new b2.k1[arrayList.size()];
         int size = arrayList.size();
         int i10 = 0;

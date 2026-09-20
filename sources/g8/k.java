@@ -6,7 +6,7 @@ import hg.k0;
 import java.util.Arrays;
 import w7.f0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class k extends o6.a {
     public static final Parcelable.Creator<k> CREATOR = new j(2);
@@ -37,11 +37,11 @@ public final class k extends o6.a {
     }
 
     public final String toString() {
-        StringBuilder k10 = k0.k("NetworkLocationStatus: Wifi status: ", this.a, " Cell status: ", this.b, " elapsed time NS: ");
-        k10.append(this.d);
-        k10.append(" system time ms: ");
-        k10.append(this.c);
-        return k10.toString();
+        StringBuilder l4 = k0.l("NetworkLocationStatus: Wifi status: ", this.a, " Cell status: ", this.b, " elapsed time NS: ");
+        l4.append(this.d);
+        l4.append(" system time ms: ");
+        l4.append(this.c);
+        return l4.toString();
     }
 
     @Override // android.os.Parcelable

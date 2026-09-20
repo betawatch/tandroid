@@ -17,7 +17,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public class RadialProgress2 {
     public float A;
@@ -25,7 +25,7 @@ public class RadialProgress2 {
     public Bitmap C;
     public Canvas D;
     public float E;
-    public org.telegram.ui.ActionBar.e6 F;
+    public org.telegram.ui.ActionBar.f6 F;
     public int G;
     public float H;
     public float I;
@@ -35,8 +35,8 @@ public class RadialProgress2 {
     public final Paint f;
     public final Paint g;
     public final Paint h;
-    public final ba0 i;
-    public final ba0 j;
+    public final aa0 i;
+    public final aa0 j;
     public float k;
     public int l;
     public int m;
@@ -56,7 +56,7 @@ public class RadialProgress2 {
     public final RectF a = new RectF();
     public int d = -1;
 
-    public RadialProgress2(View view, org.telegram.ui.ActionBar.e6 e6Var) {
+    public RadialProgress2(View view, org.telegram.ui.ActionBar.f6 f6Var) {
         Paint paint = new Paint(1);
         this.f = paint;
         this.g = new Paint(1);
@@ -73,26 +73,26 @@ public class RadialProgress2 {
         this.E = 1.0f;
         this.H = 1.0f;
         this.I = 1.0f;
-        this.F = e6Var;
+        this.F = f6Var;
         this.e = new Paint(1);
         this.b = view;
         ImageReceiver imageReceiver = new ImageReceiver(view);
         this.w = imageReceiver;
         imageReceiver.setInvalidateAll(true);
-        ba0 ba0Var = new ba0();
-        this.i = ba0Var;
-        ba0 ba0Var2 = new ba0();
-        this.j = ba0Var2;
-        ba0Var2.j = true;
-        ba0Var2.b.setStrokeWidth(AndroidUtilities.dp(2.0f));
-        ba0Var2.d(4, false);
+        aa0 aa0Var = new aa0();
+        this.i = aa0Var;
+        aa0 aa0Var2 = new aa0();
+        this.j = aa0Var2;
+        aa0Var2.j = true;
+        aa0Var2.b.setStrokeWidth(AndroidUtilities.dp(2.0f));
+        aa0Var2.d(4, false);
         int dp = AndroidUtilities.dp(22.0f);
         this.x = dp;
         imageReceiver.setRoundRadius(dp);
         paint.setColor(1677721600);
         if (view != null) {
-            ba0Var.A = new lv(view, 13);
-            ba0Var2.A = new lv(view, 13);
+            aa0Var.A = new mv(view, 14);
+            aa0Var2.A = new mv(view, 14);
         }
     }
 
@@ -101,16 +101,16 @@ public class RadialProgress2 {
     }
 
     public final float b() {
-        ba0 ba0Var = this.i;
-        int i10 = ba0Var.q;
-        int i11 = ba0Var.p;
+        aa0 aa0Var = this.i;
+        int i10 = aa0Var.q;
+        int i11 = aa0Var.p;
         if ((i10 == 3 || i10 == 6 || i10 == 10 || i10 == 8 || i10 == 0) && i11 == 4) {
-            return ba0Var.b();
+            return aa0Var.b();
         }
         if (i10 != 4) {
             return 1.0f;
         }
-        return 1.0f - ba0Var.b();
+        return 1.0f - aa0Var.b();
     }
 
     public final void c() {
@@ -150,25 +150,25 @@ public class RadialProgress2 {
         Canvas canvas3;
         Canvas canvas4;
         int argb;
-        ba0 ba0Var = this.i;
-        int i14 = ba0Var.q;
-        Paint paint2 = ba0Var.c;
-        if (i14 != 4 || ba0Var.b() < 1.0f) {
+        aa0 aa0Var = this.i;
+        int i14 = aa0Var.q;
+        Paint paint2 = aa0Var.c;
+        if (i14 != 4 || aa0Var.b() < 1.0f) {
             RectF rectF = this.a;
             if (rectF.isEmpty()) {
                 return;
             }
-            int i15 = ba0Var.q;
+            int i15 = aa0Var.q;
             float b10 = b();
             boolean z10 = this.z;
-            ba0 ba0Var2 = this.j;
+            aa0 aa0Var2 = this.j;
             Paint paint3 = this.h;
             if (!z10 || this.q >= 0) {
                 int i16 = this.u;
                 if (i16 >= 0) {
-                    ba0Var2.c(org.telegram.ui.ActionBar.j6.v0(i16, this.F));
+                    aa0Var2.c(org.telegram.ui.ActionBar.j6.v0(i16, this.F));
                 } else {
-                    ba0Var2.c(this.n);
+                    aa0Var2.c(this.n);
                 }
                 int i17 = this.p;
                 if (i17 < 0) {
@@ -181,9 +181,9 @@ public class RadialProgress2 {
             } else {
                 int i18 = this.v;
                 if (i18 >= 0) {
-                    ba0Var2.c(org.telegram.ui.ActionBar.j6.v0(i18, this.F));
+                    aa0Var2.c(org.telegram.ui.ActionBar.j6.v0(i18, this.F));
                 } else {
-                    ba0Var2.c(this.o);
+                    aa0Var2.c(this.o);
                 }
                 int i19 = this.t;
                 if (i19 >= 0) {
@@ -198,11 +198,11 @@ public class RadialProgress2 {
                 int i20 = this.v;
                 if (i20 >= 0) {
                     i10 = org.telegram.ui.ActionBar.j6.v0(i20, this.F);
-                    ba0Var.c(i10);
+                    aa0Var.c(i10);
                     paint2.setColor((-16777216) | org.telegram.ui.ActionBar.j6.v0(this.t, this.F));
                 } else {
                     i10 = this.o;
-                    ba0Var.c(i10);
+                    aa0Var.c(i10);
                     paint2.setColor((-16777216) | this.m);
                 }
                 int i21 = this.t;
@@ -215,11 +215,11 @@ public class RadialProgress2 {
                 int i22 = this.u;
                 if (i22 >= 0) {
                     i10 = org.telegram.ui.ActionBar.j6.v0(i22, this.F);
-                    ba0Var.c(i10);
+                    aa0Var.c(i10);
                     paint2.setColor((-16777216) | org.telegram.ui.ActionBar.j6.v0(this.p, this.F));
                 } else {
                     i10 = this.n;
-                    ba0Var.c(i10);
+                    aa0Var.c(i10);
                     paint2.setColor((-16777216) | this.l);
                 }
                 int i23 = this.p;
@@ -264,7 +264,7 @@ public class RadialProgress2 {
                     paint = paint3;
                     argb = Color.argb(Color.alpha(i10) + ((int) ((255 - r9) * currentAlpha)), red + ((int) ((255 - red) * currentAlpha)), green + ((int) ((255 - green) * currentAlpha)), blue + ((int) ((255 - blue) * currentAlpha)));
                 }
-                ba0Var.c(argb);
+                aa0Var.c(argb);
                 int i25 = this.x;
                 float f12 = ceil - i25;
                 float f13 = ceil2 - i25;
@@ -310,18 +310,18 @@ public class RadialProgress2 {
                 float f15 = this.I;
                 canvas.scale(f15, f15, ceil, ceil2);
             }
-            ba0Var.setBounds(ceil - i26, ceil2 - i26, ceil + i26, ceil2 + i26);
-            ba0Var.E = imageReceiver.hasBitmapImage();
+            aa0Var.setBounds(ceil - i26, ceil2 - i26, ceil + i26, ceil2 + i26);
+            aa0Var.E = imageReceiver.hasBitmapImage();
             if (this.c || this.q >= 0) {
                 Canvas canvas6 = this.D;
                 if (canvas6 != null) {
-                    ba0Var.draw(canvas6);
+                    aa0Var.draw(canvas6);
                 } else {
-                    ba0Var.draw(canvas);
+                    aa0Var.draw(canvas);
                 }
             } else {
-                ba0Var.o = this.E;
-                ba0Var.draw(canvas);
+                aa0Var.o = this.E;
+                aa0Var.draw(canvas);
             }
             if (i11 != Integer.MIN_VALUE && (canvas2 = this.D) != null) {
                 canvas2.restoreToCount(i11);
@@ -340,7 +340,7 @@ public class RadialProgress2 {
                 }
                 int i28 = i12 / 2;
                 if (this.c) {
-                    float b12 = ba0Var2.q != 4 ? 1.0f : 1.0f - ba0Var2.b();
+                    float b12 = aa0Var2.q != 4 ? 1.0f : 1.0f - aa0Var2.b();
                     if (b12 == 0.0f) {
                         this.c = false;
                     }
@@ -371,8 +371,8 @@ public class RadialProgress2 {
                 float f19 = i28;
                 canvas.drawCircle(centerX, centerY, com.google.android.gms.internal.vision.e2.z(1.0f, this.s, AndroidUtilities.dp(1.0f), AndroidUtilities.dp(f19) * f11), paint);
                 if (this.c) {
-                    ba0Var2.setBounds((int) (centerX - (AndroidUtilities.dp(f19) * f11)), (int) (centerY - (AndroidUtilities.dp(f19) * f11)), (int) ((AndroidUtilities.dp(f19) * f11) + centerX), (int) ((AndroidUtilities.dp(f19) * f11) + centerY));
-                    ba0Var2.draw(canvas);
+                    aa0Var2.setBounds((int) (centerX - (AndroidUtilities.dp(f19) * f11)), (int) (centerY - (AndroidUtilities.dp(f19) * f11)), (int) ((AndroidUtilities.dp(f19) * f11) + centerX), (int) ((AndroidUtilities.dp(f19) * f11) + centerY));
+                    aa0Var2.draw(canvas);
                 }
                 if (i13 != Integer.MIN_VALUE) {
                     canvas.restoreToCount(i13);
@@ -425,12 +425,12 @@ public class RadialProgress2 {
 
     public final void k(int i10, boolean z10, boolean z11) {
         if (i10 == 2 || i10 == 3 || i10 == 4) {
-            ba0 ba0Var = this.j;
-            if (z10 && i10 == ba0Var.q) {
+            aa0 aa0Var = this.j;
+            if (z10 && i10 == aa0Var.q) {
                 return;
             }
-            ba0Var.d(i10, z11);
-            boolean z12 = i10 != 4 || ba0Var.b() < 1.0f;
+            aa0Var.d(i10, z11);
+            boolean z12 = i10 != 4 || aa0Var.b() < 1.0f;
             this.c = z12;
             if (z12) {
                 c();
@@ -451,8 +451,8 @@ public class RadialProgress2 {
         this.b = view;
         this.w.setParentView(view);
         Objects.requireNonNull(view);
-        this.i.A = new lv(view, 13);
-        this.j.A = new lv(view, 13);
+        this.i.A = new mv(view, 14);
+        this.j.A = new mv(view, 14);
     }
 
     public final void n(boolean z10, boolean z11) {
@@ -481,18 +481,18 @@ public class RadialProgress2 {
     }
 
     public void setAsMini() {
-        ba0 ba0Var = this.i;
-        ba0Var.j = true;
-        ba0Var.b.setStrokeWidth(AndroidUtilities.dp(2.0f));
+        aa0 aa0Var = this.i;
+        aa0Var.j = true;
+        aa0Var.b.setStrokeWidth(AndroidUtilities.dp(2.0f));
     }
 
     public void setBackgroundGradientDrawable(LinearGradient linearGradient) {
-        ba0 ba0Var = this.i;
-        ba0Var.C = linearGradient;
-        ba0Var.D = new Matrix();
-        ba0 ba0Var2 = this.j;
-        ba0Var2.C = linearGradient;
-        ba0Var2.D = new Matrix();
+        aa0 aa0Var = this.i;
+        aa0Var.C = linearGradient;
+        aa0Var.D = new Matrix();
+        aa0 aa0Var2 = this.j;
+        aa0Var2.C = linearGradient;
+        aa0Var2.D = new Matrix();
     }
 
     public void setCircleRadius(int i10) {
@@ -512,11 +512,11 @@ public class RadialProgress2 {
     }
 
     public void setIcon(int i10, boolean z10, boolean z11) {
-        ba0 ba0Var = this.i;
-        if (z10 && i10 == ba0Var.q) {
+        aa0 aa0Var = this.i;
+        if (z10 && i10 == aa0Var.q) {
             return;
         }
-        ba0Var.d(i10, z11);
+        aa0Var.d(i10, z11);
         View view = this.b;
         if (view != null) {
             if (z11) {

@@ -5,7 +5,7 @@ import java.nio.charset.Charset;
 import java.util.Iterator;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public class z4 implements Iterable, Serializable {
     public static final z4 c = new z4(n5.b);
@@ -105,10 +105,10 @@ public class z4 implements Iterable, Serializable {
         String hexString = Integer.toHexString(System.identityHashCode(this));
         int o9 = o();
         if (o() <= 50) {
-            concat = v7.t5.a(this);
+            concat = v7.u5.a(this);
         } else {
             p(o());
-            concat = v7.t5.a(new y4(this.b)).concat("...");
+            concat = v7.u5.a(new y4(this.b)).concat("...");
         }
         StringBuilder sb2 = new StringBuilder("<ByteString@");
         sb2.append(hexString);

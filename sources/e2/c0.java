@@ -1,9 +1,9 @@
 package e2;
 
 import java.util.concurrent.ThreadFactory;
-import org.telegram.ui.Components.ij0;
+import org.telegram.ui.Components.hj0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final /* synthetic */ class c0 implements ThreadFactory {
     public final /* synthetic */ int a;
@@ -18,9 +18,9 @@ public final /* synthetic */ class c0 implements ThreadFactory {
             case 2:
                 return new Thread(runnable, "RoundVideoOutput");
             case 3:
-                return new Thread(runnable, "Lottie-" + ij0.P0.getAndIncrement());
+                return new Thread(runnable, "Lottie-" + hj0.P0.getAndIncrement());
             default:
-                return new Thread(runnable, "LottieLow-" + ij0.Q0.getAndIncrement());
+                return new Thread(runnable, "LottieLow-" + hj0.Q0.getAndIncrement());
         }
     }
 }

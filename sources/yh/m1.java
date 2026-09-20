@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class m1 implements Runnable {
     public final /* synthetic */ int a;
@@ -47,7 +47,7 @@ public final /* synthetic */ class m1 implements Runnable {
                 if (runnable != null) {
                     runnable.run();
                 }
-                hg.k0.p(R.string.Gift2ResaleEnable, new Object[]{y3Var.C1()}, y3Var.getBulletinFactory(), R.raw.contact_check, 36);
+                hg.k0.q(R.string.Gift2ResaleEnable, new Object[]{y3Var.C1()}, y3Var.getBulletinFactory(), R.raw.contact_check, 36);
                 break;
             default:
                 tL_starGiftUnique.flags |= 16;

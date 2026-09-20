@@ -20,36 +20,36 @@ import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
-import org.telegram.ui.Components.a71;
 import org.telegram.ui.Components.ey;
+import org.telegram.ui.Components.jv0;
 import org.telegram.ui.Components.k30;
-import org.telegram.ui.Components.kv0;
+import org.telegram.ui.Components.kd0;
 import org.telegram.ui.Components.kz;
 import org.telegram.ui.Components.l30;
-import org.telegram.ui.Components.ld0;
-import org.telegram.ui.Components.nd0;
+import org.telegram.ui.Components.md0;
+import org.telegram.ui.Components.z61;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.PopupNotificationActivity;
 import org.telegram.ui.ProfileActivity;
+import org.telegram.ui.bb1;
 import org.telegram.ui.cr0;
-import org.telegram.ui.cy0;
 import org.telegram.ui.dq0;
-import org.telegram.ui.eh0;
 import org.telegram.ui.fh0;
+import org.telegram.ui.gh0;
 import org.telegram.ui.k01;
 import org.telegram.ui.l01;
-import org.telegram.ui.li1;
 import org.telegram.ui.lq0;
+import org.telegram.ui.mi1;
 import org.telegram.ui.n80;
 import org.telegram.ui.om0;
 import org.telegram.ui.p80;
 import org.telegram.ui.pn0;
 import org.telegram.ui.pq0;
-import org.telegram.ui.xh1;
-import org.telegram.ui.za1;
+import org.telegram.ui.rx0;
+import org.telegram.ui.zh1;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class o4 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -102,7 +102,7 @@ public final /* synthetic */ class o4 implements View.OnClickListener {
             case 4:
                 jh.a aVar = ((jh.h) obj).h;
                 if (aVar != null) {
-                    aVar.i(i15);
+                    aVar.h(i15);
                     break;
                 }
                 break;
@@ -142,9 +142,9 @@ public final /* synthetic */ class o4 implements View.OnClickListener {
                 l30Var.dismiss();
                 break;
             case 11:
-                nd0 nd0Var = (nd0) obj;
-                if (nd0Var.e.getAdapter() instanceof ld0) {
-                    kz kzVar = ((ey) ((ld0) nd0Var.e.getAdapter())).c;
+                md0 md0Var = (md0) obj;
+                if (md0Var.e.getAdapter() instanceof kd0) {
+                    kz kzVar = ((ey) ((kd0) md0Var.e.getAdapter())).c;
                     if ((i15 != 1 && i15 != 2) || !kzVar.w1) {
                         if (i15 == 0 && kzVar.v1) {
                             kzVar.P(true, true, false);
@@ -155,34 +155,34 @@ public final /* synthetic */ class o4 implements View.OnClickListener {
                         break;
                     }
                 }
-                nd0Var.e.x(i15, false);
+                md0Var.e.x(i15, false);
                 break;
             case 12:
-                org.telegram.ui.Components.q4 q4Var = (org.telegram.ui.Components.q4) obj;
-                EditTextBoldCursor editTextBoldCursor = q4Var.c;
+                org.telegram.ui.Components.p4 p4Var = (org.telegram.ui.Components.p4) obj;
+                EditTextBoldCursor editTextBoldCursor = p4Var.c;
                 AndroidUtilities.hideKeyboard(editTextBoldCursor);
-                q4Var.d.run(Integer.valueOf(i15), editTextBoldCursor.getText().toString());
-                q4Var.dismiss();
+                p4Var.d.run(Integer.valueOf(i15), editTextBoldCursor.getText().toString());
+                p4Var.dismiss();
                 break;
             case 13:
                 ScrollSlidingTextTabStrip scrollSlidingTextTabStrip = (ScrollSlidingTextTabStrip) obj;
                 scrollSlidingTextTabStrip.h(view, i15, scrollSlidingTextTabStrip.a.indexOfChild(view));
                 break;
             case 14:
-                a71 a71Var = (a71) obj;
-                int i16 = a71Var.b.i.q;
+                z61 z61Var = (z61) obj;
+                int i16 = z61Var.b.i.q;
                 if (i16 == 2) {
                     ApplicationLoader.applicationLoaderInstance.downloadUpdate();
-                    a71Var.updateAppUpdateViews(i15, true);
+                    z61Var.updateAppUpdateViews(i15, true);
                     break;
                 } else if (i16 == 3) {
                     ApplicationLoader.applicationLoaderInstance.cancelDownloadingUpdate();
-                    a71Var.updateAppUpdateViews(i15, true);
+                    z61Var.updateAppUpdateViews(i15, true);
                     break;
                 } else {
                     File downloadedUpdateFile = ApplicationLoader.applicationLoaderInstance.getDownloadedUpdateFile();
                     if (downloadedUpdateFile != null) {
-                        AndroidUtilities.openForView(downloadedUpdateFile, "Telegram.apk", "application/vnd.android.package-archive", a71Var.d, null, false);
+                        AndroidUtilities.openForView(downloadedUpdateFile, "Telegram.apk", "application/vnd.android.package-archive", z61Var.d, null, false);
                         break;
                     }
                 }
@@ -191,9 +191,9 @@ public final /* synthetic */ class o4 implements View.OnClickListener {
                 ((org.telegram.ui.Components.voip.x0) obj).b.x(i15, true);
                 break;
             case 16:
-                li1 li1Var = (li1) obj;
-                if (li1Var.U == null && view.getAlpha() != 0.0f) {
-                    li1Var.c(i15, true);
+                mi1 mi1Var = (mi1) obj;
+                if (mi1Var.U == null && view.getAlpha() != 0.0f) {
+                    mi1Var.c(i15, true);
                     break;
                 }
                 break;
@@ -220,20 +220,20 @@ public final /* synthetic */ class o4 implements View.OnClickListener {
                 }
                 break;
             case 19:
-                fh0 fh0Var = (fh0) obj;
-                ValueAnimator valueAnimator = fh0Var.c.R;
+                gh0 gh0Var = (gh0) obj;
+                ValueAnimator valueAnimator = gh0Var.c.R;
                 if (valueAnimator == null || !valueAnimator.isRunning()) {
-                    xh1 xh1Var = fh0Var.c;
-                    if (!xh1Var.H) {
-                        if (xh1Var.getCurrentPosition() == i15) {
-                            Object X = fh0Var.X();
-                            if (X instanceof eh0) {
-                                ((eh0) X).r();
+                    zh1 zh1Var = gh0Var.c;
+                    if (!zh1Var.H) {
+                        if (zh1Var.getCurrentPosition() == i15) {
+                            Object X = gh0Var.X();
+                            if (X instanceof fh0) {
+                                ((fh0) X).r();
                                 break;
                             }
                         } else {
-                            fh0Var.m0(i15, true);
-                            fh0Var.c.E(i15);
+                            gh0Var.m0(i15, true);
+                            gh0Var.c.E(i15);
                             break;
                         }
                     }
@@ -289,7 +289,7 @@ public final /* synthetic */ class o4 implements View.OnClickListener {
                     lq0Var.I.d(true);
                 }
                 if (i15 == 0) {
-                    org.telegram.ui.Components.e5.L(lq0Var.getParentActivity(), lq0Var.F.a(), new dq0(lq0Var, i13));
+                    org.telegram.ui.Components.d5.L(lq0Var.getParentActivity(), lq0Var.F.a(), new dq0(lq0Var, i13));
                     break;
                 } else {
                     lq0Var.V(lq0Var.b, lq0Var.c, true, 0);
@@ -304,7 +304,7 @@ public final /* synthetic */ class o4 implements View.OnClickListener {
                     cr0Var.m0.d(true);
                 }
                 if (i15 == 0) {
-                    org.telegram.ui.Components.e5.L(cr0Var.getParentActivity(), cr0Var.U.a(), new pq0(cr0Var, i14));
+                    org.telegram.ui.Components.d5.L(cr0Var.getParentActivity(), cr0Var.U.a(), new pq0(cr0Var, i14));
                     break;
                 } else {
                     cr0Var.e0(0, true);
@@ -325,7 +325,7 @@ public final /* synthetic */ class o4 implements View.OnClickListener {
                 if (i15 == 0) {
                     l01 l01Var = profileActivity.O;
                     if (!l01Var.C1) {
-                        if (kv0.w0(l01Var.getClosestTab())) {
+                        if (jv0.w0(l01Var.getClosestTab())) {
                             l01 l01Var2 = profileActivity.O;
                             profileActivity.O.O0(profileActivity, profileActivity.a(), l01Var2.h1(l01Var2.getClosestTab()));
                             break;
@@ -341,14 +341,14 @@ public final /* synthetic */ class o4 implements View.OnClickListener {
                         }
                     }
                 }
-                if (!kv0.w0(profileActivity.O.getClosestTab())) {
+                if (!jv0.w0(profileActivity.O.getClosestTab())) {
                     long clientUserId = profileActivity.getUserConfig().getClientUserId();
                     org.telegram.messenger.t8 t8Var = profileActivity.x5;
                     if (t8Var != null) {
                         t8Var.run();
                         profileActivity.x5 = null;
                     }
-                    org.telegram.ui.Components.qc.e();
+                    org.telegram.ui.Components.pc.e();
                     boolean z12 = profileActivity.O.getClosestTab() == 9;
                     ArrayList arrayList6 = new ArrayList();
                     SparseArray<MessageObject> actionModeSelected = profileActivity.O.getActionModeSelected();
@@ -380,7 +380,7 @@ public final /* synthetic */ class o4 implements View.OnClickListener {
                         boolean z13 = z12;
                         profileActivity.x5 = new org.telegram.messenger.t8(profileActivity, clientUserId, arrayList6, z12, 9);
                         org.telegram.messenger.voip.f fVar = new org.telegram.messenger.voip.f(profileActivity, zArr3, arrayList6, zArr2, clientUserId, 7);
-                        (z13 ? org.telegram.ui.Components.xc.a0(profileActivity).K(R.raw.contact_check, LocaleController.formatPluralString("StorySavedTitle", i10, new Object[0]), LocaleController.getString(R.string.StorySavedSubtitle), LocaleController.getString(R.string.UndoNoCaps), fVar).j() : org.telegram.ui.Components.xc.a0(profileActivity).I(R.raw.chats_archived, LocaleController.formatPluralString("StoryArchived", i10, new Object[0]), LocaleController.getString(R.string.UndoNoCaps), 5000, false, fVar).j()).v = new cy0(10, profileActivity, zArr3);
+                        (z13 ? org.telegram.ui.Components.xc.a0(profileActivity).K(R.raw.contact_check, LocaleController.formatPluralString("StorySavedTitle", i10, new Object[0]), LocaleController.getString(R.string.StorySavedSubtitle), LocaleController.getString(R.string.UndoNoCaps), fVar).j() : org.telegram.ui.Components.xc.a0(profileActivity).I(R.raw.chats_archived, LocaleController.formatPluralString("StoryArchived", i10, new Object[0]), LocaleController.getString(R.string.UndoNoCaps), 5000, false, fVar).j()).v = new rx0(12, profileActivity, zArr3);
                         break;
                     }
                 } else {
@@ -393,7 +393,7 @@ public final /* synthetic */ class o4 implements View.OnClickListener {
                         t8Var2.run();
                         profileActivity.x5 = null;
                     }
-                    org.telegram.ui.Components.qc.e();
+                    org.telegram.ui.Components.pc.e();
                     ArrayList arrayList7 = new ArrayList();
                     SparseArray<MessageObject> actionModeSelected2 = profileActivity.O.getActionModeSelected();
                     if (actionModeSelected2 != null) {
@@ -414,9 +414,9 @@ public final /* synthetic */ class o4 implements View.OnClickListener {
                 }
                 break;
             case 25:
-                za1 za1Var = (za1) obj;
-                za1Var.i0.E(i15);
-                za1Var.m0(i15, true);
+                bb1 bb1Var = (bb1) obj;
+                bb1Var.i0.E(i15);
+                bb1Var.m0(i15, true);
                 break;
             case 26:
                 yh.r0 r0Var = ((yh.s0) obj).j0;

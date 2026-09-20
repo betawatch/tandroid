@@ -9,16 +9,16 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class aj implements org.telegram.ui.Components.ll0 {
+public final class aj implements org.telegram.ui.Components.kl0 {
     public final /* synthetic */ zn a;
 
     public aj(zn znVar) {
         this.a = znVar;
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.kl0
     public final void c(float f7, float f10, int i10, View view) {
         boolean z10;
         org.telegram.ui.ActionBar.k kVar;
@@ -59,7 +59,7 @@ public final class aj implements org.telegram.ui.Components.ll0 {
         if (z11) {
             org.telegram.ui.Cells.w0 w0Var3 = (org.telegram.ui.Cells.w0) view;
             if (w0Var3.getMessageObject() != null && (w0Var3.getMessageObject().messageOwner.action instanceof TLRPC.TL_messageActionSetSameChatWallPaper)) {
-                AndroidUtilities.runOnUIThread(new ai.n8(this, w0Var3.getMessageObject().getReplyMsgId(), 21), 16L);
+                AndroidUtilities.runOnUIThread(new ai.n8(this, w0Var3.getMessageObject().getReplyMsgId(), 19), 16L);
                 return;
             }
         }
@@ -89,8 +89,8 @@ public final class aj implements org.telegram.ui.Components.ll0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.ll0
-    public final boolean d1(View view) {
+    @Override // org.telegram.ui.Components.kl0
+    public final boolean c1(View view) {
         String doubleTapReaction;
         TLRPC.TL_availableReaction tL_availableReaction;
         MessageObject messageObject;
@@ -122,8 +122,8 @@ public final class aj implements org.telegram.ui.Components.ll0 {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.ll0
-    public final void r0(View view, float f7, float f10) {
+    @Override // org.telegram.ui.Components.kl0
+    public final void q0(View view, float f7, float f10) {
         MessageObject messageObject;
         boolean z10;
         TLRPC.ChatFull chatFull;

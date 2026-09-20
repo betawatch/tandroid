@@ -25,13 +25,13 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.kn;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.uv0;
+import org.telegram.ui.Components.tv0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class m2 implements NotificationCenter.NotificationCenterDelegate, rf.a {
-    public static final uv0 X = new uv0(new w1(1), new w1(2));
-    public static final uv0 Y = new uv0(new w1(3), new w1(4));
+    public static final tv0 X = new tv0(new w1(1), new w1(2));
+    public static final tv0 Y = new tv0(new w1(3), new w1(4));
     public static final m2 Z;
     public boolean E;
     public boolean F;
@@ -59,7 +59,7 @@ public final class m2 implements NotificationCenter.NotificationCenterDelegate, 
     public f0 e;
     public ci.l4 f;
     public FrameLayout h;
-    public org.telegram.ui.Components.w9 n;
+    public org.telegram.ui.Components.v9 n;
     public kn r;
     public boolean s;
     public d2 v;
@@ -126,9 +126,9 @@ public final class m2 implements NotificationCenter.NotificationCenterDelegate, 
         m2Var.e.setOutlineProvider(new k2(i11));
         m2Var.e.setClipToOutline(true);
         m2Var.e.setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.gg, false));
-        org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(context);
-        m2Var.n = w9Var;
-        m2Var.e.addView(w9Var, w7.y5.c(-1.0f, -1));
+        org.telegram.ui.Components.v9 v9Var = new org.telegram.ui.Components.v9(context);
+        m2Var.n = v9Var;
+        m2Var.e.addView(v9Var, w7.y5.c(-1.0f, -1));
         ci.l4 l4Var = new ci.l4(context, m2Var.w);
         m2Var.f = l4Var;
         l4Var.setAlpha(0.0f);

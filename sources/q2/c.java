@@ -10,9 +10,9 @@ import h2.j;
 import h2.l;
 import java.io.IOException;
 import java.nio.ByteBuffer;
-import v7.l7;
+import v7.m7;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class c extends l {
     public final Context o;
@@ -75,7 +75,7 @@ public final class c extends l {
                     i10 = 4096;
                 }
             }
-            aVar.a = l7.a(byteBuffer.remaining(), i10, byteBuffer.array());
+            aVar.a = m7.a(byteBuffer.remaining(), i10, byteBuffer.array());
             aVar.timeUs = hVar.e;
             return null;
         } catch (s0 e) {

@@ -16,10 +16,10 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class py extends vl0 {
-    public uw E;
+public final class py extends ul0 {
+    public bv E;
     public boolean F;
     public int G;
     public int H;
@@ -48,7 +48,7 @@ public final class py extends vl0 {
         this.e = z10 ? null : new ry(kzVar, context);
     }
 
-    @Override // org.telegram.ui.Components.vl0
+    @Override // org.telegram.ui.Components.ul0
     public final boolean D(s4.c1 c1Var) {
         return c1Var.f == 0;
     }
@@ -153,8 +153,8 @@ public final class py extends vl0 {
         }
         int i11 = kzVar.c1;
         HashMap hashMap = kzVar.l0;
-        mw mwVar = kzVar.h0;
-        pw pwVar = kzVar.o0;
+        nw nwVar = kzVar.h0;
+        qw qwVar = kzVar.o0;
         int i12 = kzVar.c1;
         TLObject userOrChat = MessagesController.getInstance(i11).getUserOrChat(MessagesController.getInstance(i12).gifSearchBot);
         boolean z13 = userOrChat instanceof TLRPC.User;
@@ -170,13 +170,13 @@ public final class py extends vl0 {
                 if (z14) {
                     return;
                 }
-                pwVar.e(true);
+                qwVar.e(true);
                 return;
             }
             return;
         }
         if (!z14 && TextUtils.isEmpty(str2)) {
-            pwVar.e(true);
+            qwVar.e(true);
         }
         this.n = (TLRPC.User) userOrChat;
         final String j3 = com.google.android.gms.internal.vision.e2.j("gif_search_", str, "_", str2);
@@ -201,8 +201,8 @@ public final class py extends vl0 {
         if (!z12 && !z14 && z11 && TextUtils.isEmpty(str2)) {
             this.x.clear();
             this.y.clear();
-            if (mwVar.getAdapter() != this) {
-                mwVar.setAdapter(this);
+            if (nwVar.getAdapter() != this) {
+                nwVar.setAdapter(this);
             }
             l();
             kzVar.i0.h1(0, 0);
@@ -248,9 +248,9 @@ public final class py extends vl0 {
         if (ryVar != null) {
             ryVar.a(false);
         }
-        uw uwVar = this.E;
-        if (uwVar != null) {
-            AndroidUtilities.cancelRunOnUIThread(uwVar);
+        bv bvVar = this.E;
+        if (bvVar != null) {
+            AndroidUtilities.cancelRunOnUIThread(bvVar);
         }
         if (!TextUtils.isEmpty(str)) {
             String lowerCase = str.toLowerCase();
@@ -258,9 +258,9 @@ public final class py extends vl0 {
             if (TextUtils.isEmpty(lowerCase)) {
                 return;
             }
-            uw uwVar2 = new uw(4, this, str);
-            this.E = uwVar2;
-            AndroidUtilities.runOnUIThread(uwVar2, z10 ? 300L : 0L);
+            bv bvVar2 = new bv(6, this, str);
+            this.E = bvVar2;
+            AndroidUtilities.runOnUIThread(bvVar2, z10 ? 300L : 0L);
             return;
         }
         this.w = null;
@@ -269,16 +269,16 @@ public final class py extends vl0 {
             return;
         }
         rx rxVar = kzVar.p0;
-        mw mwVar = kzVar.h0;
+        nw nwVar = kzVar.h0;
         int currentPosition = rxVar.getCurrentPosition();
         if (currentPosition != kzVar.r0 && currentPosition != kzVar.s0) {
             H(MessagesController.getInstance(kzVar.c1).gifSearchEmojies.get(currentPosition - kzVar.t0));
             return;
         }
-        s4.h0 adapter = mwVar.getAdapter();
+        s4.h0 adapter = nwVar.getAdapter();
         py pyVar = kzVar.n0;
         if (adapter != pyVar) {
-            mwVar.setAdapter(pyVar);
+            nwVar.setAdapter(pyVar);
         }
     }
 
@@ -338,9 +338,9 @@ public final class py extends vl0 {
             if (i10 == Integer.MAX_VALUE) {
                 this.H = kzVar.i1.size();
             } else {
-                mw mwVar = kzVar.h0;
+                nw nwVar = kzVar.h0;
                 qy qyVar = kzVar.i0;
-                if (mwVar.getMeasuredWidth() != 0) {
+                if (nwVar.getMeasuredWidth() != 0) {
                     int measuredWidth = kzVar.h0.getMeasuredWidth();
                     int i11 = qyVar.J;
                     int dp = AndroidUtilities.dp(100.0f);
@@ -351,7 +351,7 @@ public final class py extends vl0 {
                     int i14 = 0;
                     for (int i15 = 0; i15 < size; i15++) {
                         TLRPC.Document document = (TLRPC.Document) kzVar.i1.get(i15);
-                        vv0 C1 = nz.C1(qyVar.F1(document, document.attributes));
+                        uv0 C1 = nz.C1(qyVar.F1(document, document.attributes));
                         int min = Math.min(i11, (int) Math.floor((((C1.a / C1.b) * dp) / measuredWidth) * i11));
                         if (i12 < min) {
                             this.H += i13;
@@ -406,13 +406,13 @@ public final class py extends vl0 {
                 view3.setLayoutParams(p0Var);
                 view = view3;
             } else {
-                org.telegram.ui.Cells.o8 o8Var = new org.telegram.ui.Cells.o8(this.c, false, false, kzVar.Z1, kzVar.i2);
-                o8Var.b(0, LocaleController.getString(R.string.FeaturedGifs));
+                org.telegram.ui.Cells.p8 p8Var = new org.telegram.ui.Cells.p8(this.c, false, false, kzVar.Z1, kzVar.i2);
+                p8Var.b(0, LocaleController.getString(R.string.FeaturedGifs));
                 s4.p0 p0Var2 = new s4.p0(-1, -2);
                 ((ViewGroup.MarginLayoutParams) p0Var2).topMargin = AndroidUtilities.dp(2.5f);
                 ((ViewGroup.MarginLayoutParams) p0Var2).bottomMargin = AndroidUtilities.dp(5.5f);
-                o8Var.setLayoutParams(p0Var2);
-                view = o8Var;
+                p8Var.setLayoutParams(p0Var2);
+                view = p8Var;
             }
         } else {
             org.telegram.ui.Cells.f2 f2Var = new org.telegram.ui.Cells.f2(this.c);
@@ -420,6 +420,6 @@ public final class py extends vl0 {
             f2Var.setCanPreviewGif(true);
             view = f2Var;
         }
-        return new gl0(view);
+        return new fl0(view);
     }
 }

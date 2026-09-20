@@ -22,7 +22,7 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class wp0 extends FrameLayout {
     public static final /* synthetic */ int q0 = 0;
@@ -53,7 +53,7 @@ public final class wp0 extends FrameLayout {
     public int c0;
     public final pp0 d;
     public int d0;
-    public final n7.z0 e;
+    public final org.telegram.ui.Cells.f3 e;
     public int e0;
     public zp0 f;
     public int f0;
@@ -80,14 +80,13 @@ public final class wp0 extends FrameLayout {
     public wp0(cq0 cq0Var, Context context, int i10) {
         super(context);
         org.telegram.ui.ActionBar.d5 d5Var;
-        org.telegram.ui.ActionBar.e6 e6Var;
-        org.telegram.ui.ActionBar.e6 e6Var2;
-        org.telegram.ui.ActionBar.e6 e6Var3;
+        org.telegram.ui.ActionBar.f6 f6Var;
+        org.telegram.ui.ActionBar.f6 f6Var2;
+        org.telegram.ui.ActionBar.f6 f6Var3;
         int i11;
-        org.telegram.ui.ActionBar.e6 e6Var4;
+        org.telegram.ui.ActionBar.f6 f6Var4;
         this.p0 = cq0Var;
-        int i12 = 7;
-        this.e = new n7.z0(i12);
+        this.e = new org.telegram.ui.Cells.f3(4);
         this.h = -1;
         this.n = 0L;
         this.r = null;
@@ -107,7 +106,7 @@ public final class wp0 extends FrameLayout {
         this.c0 = -1;
         this.d0 = -1;
         this.e0 = -1;
-        int i13 = 0;
+        int i12 = 0;
         this.f0 = 0;
         this.g0 = -1;
         this.h0 = -1;
@@ -117,7 +116,7 @@ public final class wp0 extends FrameLayout {
         this.m0 = i10;
         d();
         Context context2 = getContext();
-        org.telegram.ui.ActionBar.e6 resourceProvider = cq0Var.getResourceProvider();
+        org.telegram.ui.ActionBar.f6 resourceProvider = cq0Var.getResourceProvider();
         ah.c cVar = cq0Var.G;
         np0 np0Var = new np0(this, context2, resourceProvider, i10);
         this.b = np0Var;
@@ -128,12 +127,12 @@ public final class wp0 extends FrameLayout {
         s4.s sVar = new s4.s(3);
         this.c = sVar;
         sVar.O = new ci.x1(this, 6);
-        np0Var.i(new ci.r1(this, i12));
+        np0Var.i(new ci.r1(this, 7));
         np0Var.setLayoutManager(sVar);
         pp0 pp0Var = new pp0(this, context, i10);
         this.d = pp0Var;
         np0Var.setAdapter(pp0Var);
-        np0Var.setOnItemClickListener(new org.telegram.ui.Components.cn0(this, i10, 1));
+        np0Var.setOnItemClickListener(new org.telegram.ui.Components.bn0(this, i10, 1));
         np0Var.j(new qp0(this, i10));
         addView(np0Var, w7.y5.c(-1.0f, -1));
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("l");
@@ -159,8 +158,8 @@ public final class wp0 extends FrameLayout {
         if (i10 == 0) {
             Context context3 = getContext();
             i11 = ((org.telegram.ui.ActionBar.n2) cq0Var).currentAccount;
-            e6Var4 = ((org.telegram.ui.ActionBar.n2) cq0Var).resourceProvider;
-            this.a = new aq0(i11, 0L, context3, e6Var4);
+            f6Var4 = ((org.telegram.ui.ActionBar.n2) cq0Var).resourceProvider;
+            this.a = new aq0(i11, 0L, context3, f6Var4);
             j(false);
         } else {
             View view2 = new View(getContext());
@@ -171,34 +170,34 @@ public final class wp0 extends FrameLayout {
             addView(view2, w7.y5.e(-1, 16, 55));
             Context context4 = getContext();
             d5Var = ((org.telegram.ui.ActionBar.n2) cq0Var).parentLayout;
-            e6Var = ((org.telegram.ui.ActionBar.n2) cq0Var).resourceProvider;
-            rp0 rp0Var = new rp0(context4, d5Var, 3, 0L, e6Var);
+            f6Var = ((org.telegram.ui.ActionBar.n2) cq0Var).resourceProvider;
+            rp0 rp0Var = new rp0(context4, d5Var, 3, 0L, f6Var);
             this.v = rp0Var;
             rp0Var.setImportantForAccessibility(4);
             rp0Var.r = cq0Var;
             rp0Var.setClipToOutline(true);
             float dp = AndroidUtilities.dp(16.0f);
-            ai.k2 k2Var = yf.k0.a;
-            rp0Var.setOutlineProvider(new yf.i0(0, dp));
+            ai.k2 k2Var = yf.j0.a;
+            rp0Var.setOutlineProvider(new yf.h0(0, dp));
             addView(rp0Var, w7.y5.d(-1, -2.0f, 55, 12.0f, 0.0f, 12.0f, 0.0f));
         }
         Context context5 = getContext();
-        e6Var2 = ((org.telegram.ui.ActionBar.n2) cq0Var).resourceProvider;
-        bq0 bq0Var = new bq0(cq0Var, context5, e6Var2);
+        f6Var2 = ((org.telegram.ui.ActionBar.n2) cq0Var).resourceProvider;
+        bq0 bq0Var = new bq0(cq0Var, context5, f6Var2);
         this.E = bq0Var;
         ch.d c10 = cq0Var.E.c(bq0Var, null, false);
-        e6Var3 = ((org.telegram.ui.ActionBar.n2) cq0Var).resourceProvider;
-        dh.e eVar3 = new dh.e(e6Var3);
+        f6Var3 = ((org.telegram.ui.ActionBar.n2) cq0Var).resourceProvider;
+        dh.e eVar3 = new dh.e(f6Var3);
         eVar3.e = new d2.c(9);
         eVar3.f(0, 0);
         eVar3.e(0, 0);
-        eVar3.d(0, 0);
+        eVar3.c(0, 0);
         c10.o(eVar3);
         c10.q(AndroidUtilities.dp(18.0f));
         c10.j.e = true;
         bq0Var.H = c10;
         bq0Var.G = c10;
-        bq0Var.F = new mp0(this, i13);
+        bq0Var.F = new mp0(this, i12);
         bq0Var.setVisibility(4);
         addView(bq0Var, w7.y5.d(-1, 36.0f, 55, 12.0f, 0.0f, 12.0f, 0.0f));
         View view3 = this.a;
@@ -346,24 +345,24 @@ public final class wp0 extends FrameLayout {
     public final void f(boolean z10) {
         TL_stars.TL_starGiftUnique tL_starGiftUnique = this.I;
         cq0 cq0Var = this.p0;
-        n7.z0 z0Var = this.e;
+        org.telegram.ui.Cells.f3 f3Var = this.e;
         if (tL_starGiftUnique != null) {
             zf.a resellAmount = tL_starGiftUnique.getResellAmount(zf.b.a);
             if (tL_starGiftUnique.resale_ton_only) {
-                z0Var.b = yh.v7.S0(LocaleController.formatString(R.string.ResellGiftBuyTON, tL_starGiftUnique.getResellAmount(zf.b.b).d()), true);
-                z0Var.c = yh.v7.Q0(LocaleController.formatPluralStringComma("ResellGiftBuyEq", (int) resellAmount.a()));
+                f3Var.b = yh.w7.S0(LocaleController.formatString(R.string.ResellGiftBuyTON, tL_starGiftUnique.getResellAmount(zf.b.b).d()), true);
+                f3Var.c = yh.w7.Q0(LocaleController.formatPluralStringComma("ResellGiftBuyEq", (int) resellAmount.a()));
             } else {
-                z0Var.b = yh.v7.Q0(LocaleController.formatPluralStringComma("ResellGiftBuy", (int) resellAmount.a()));
-                z0Var.c = null;
+                f3Var.b = yh.w7.Q0(LocaleController.formatPluralStringComma("ResellGiftBuy", (int) resellAmount.a()));
+                f3Var.c = null;
             }
         } else {
-            z0Var.b = (cq0Var.getUserConfig().isPremium() || cq0Var.a) ? this.r != null ? this.P : this.O : this.N;
-            z0Var.c = null;
+            f3Var.b = (cq0Var.getUserConfig().isPremium() || cq0Var.a) ? this.r != null ? this.P : this.O : this.N;
+            f3Var.c = null;
         }
         if (cq0Var.C0() == this) {
             cq0Var.R = this;
-            cq0Var.Q.g((CharSequence) z0Var.b, z10, true);
-            cq0Var.Q.f((SpannableStringBuilder) z0Var.c, z10);
+            cq0Var.Q.g((CharSequence) f3Var.b, z10, true);
+            cq0Var.Q.f((SpannableStringBuilder) f3Var.c, z10);
         }
     }
 

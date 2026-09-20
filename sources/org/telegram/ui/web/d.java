@@ -8,34 +8,34 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.l61;
-import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.k61;
+import org.telegram.ui.Components.s61;
+import org.telegram.ui.Components.v51;
+import org.telegram.ui.Components.vl0;
 import org.telegram.ui.Components.w51;
-import org.telegram.ui.Components.wl0;
-import org.telegram.ui.Components.x51;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
-public final class d extends w51 {
+public final class d extends v51 {
     public static final /* synthetic */ int a = 0;
 
     static {
-        w51.setup(new d());
+        v51.setup(new d());
     }
 
-    @Override // org.telegram.ui.Components.w51
-    public final void bindView(View view, x51 x51Var, boolean z10, l61 l61Var, t61 t61Var) {
+    @Override // org.telegram.ui.Components.v51
+    public final void bindView(View view, w51 w51Var, boolean z10, k61 k61Var, s61 s61Var) {
         e eVar = (e) view;
-        if (x51Var.G == null) {
-            eVar.setAsShowMore((k) x51Var.H);
+        if (w51Var.G == null) {
+            eVar.setAsShowMore((k) w51Var.H);
             return;
         }
-        int i10 = x51Var.z;
-        String charSequence = x51Var.l.toString();
-        View.OnClickListener onClickListener = x51Var.D;
-        k kVar = (k) x51Var.H;
+        int i10 = w51Var.z;
+        String charSequence = w51Var.l.toString();
+        View.OnClickListener onClickListener = w51Var.D;
+        k kVar = (k) w51Var.H;
         ImageView imageView = eVar.a;
         imageView.setVisibility(0);
         int i11 = kVar.F;
@@ -56,8 +56,8 @@ public final class d extends w51 {
         eVar.setWillNotDraw(!z10);
     }
 
-    @Override // org.telegram.ui.Components.w51
-    public final View createView(Context context, wl0 wl0Var, int i10, int i11, e6 e6Var) {
+    @Override // org.telegram.ui.Components.v51
+    public final View createView(Context context, vl0 vl0Var, int i10, int i11, f6 f6Var) {
         return new e(context);
     }
 }

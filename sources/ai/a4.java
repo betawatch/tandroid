@@ -19,7 +19,7 @@ import org.telegram.ui.Components.NumberTextView;
 import org.telegram.ui.Components.ke;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class a4 extends ChatActivityEnterView {
     public ValueAnimator n5;
@@ -92,7 +92,7 @@ public final class a4 extends ChatActivityEnterView {
         if (!f6Var.D0(true)) {
             if (formatTextWithEntities instanceof Spannable) {
                 Spannable spannable = (Spannable) formatTextWithEntities;
-                i10 = ((org.telegram.ui.Components.z5[]) spannable.getSpans(0, formatTextWithEntities.length(), org.telegram.ui.Components.z5.class)).length + ((Emoji.EmojiSpan[]) spannable.getSpans(0, formatTextWithEntities.length(), Emoji.EmojiSpan.class)).length;
+                i10 = ((org.telegram.ui.Components.y5[]) spannable.getSpans(0, formatTextWithEntities.length(), org.telegram.ui.Components.y5.class)).length + ((Emoji.EmojiSpan[]) spannable.getSpans(0, formatTextWithEntities.length(), Emoji.EmojiSpan.class)).length;
             } else {
                 i10 = 0;
             }

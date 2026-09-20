@@ -28,15 +28,16 @@ import k5.w;
 import l5.l;
 import m.p3;
 import m1.j;
-import m5.e;
+import m5.f;
 import org.json.JSONObject;
 import org.telegram.ui.rv0;
 import s5.h;
-import w7.g6;
+import v7.j0;
+import w7.h6;
 import y9.b0;
 import y9.k0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class b {
     public Object a;
@@ -64,19 +65,19 @@ public final class b {
             str = str.concat(" processName");
         }
         if (((Integer) this.c) == null) {
-            str = t8.b.v(str, " reasonCode");
+            str = j0.s(str, " reasonCode");
         }
         if (((Integer) this.d) == null) {
-            str = t8.b.v(str, " importance");
+            str = j0.s(str, " importance");
         }
         if (((Long) this.e) == null) {
-            str = t8.b.v(str, " pss");
+            str = j0.s(str, " pss");
         }
         if (((Long) this.f) == null) {
-            str = t8.b.v(str, " rss");
+            str = j0.s(str, " rss");
         }
         if (((Long) this.g) == null) {
-            str = t8.b.v(str, " timestamp");
+            str = j0.s(str, " timestamp");
         }
         if (str.isEmpty()) {
             return new b0(((Integer) this.a).intValue(), (String) this.b, ((Integer) this.c).intValue(), ((Integer) this.d).intValue(), ((Long) this.e).longValue(), ((Long) this.f).longValue(), ((Long) this.g).longValue(), (String) this.h, (List) this.i);
@@ -90,25 +91,25 @@ public final class b {
             str = str.concat(" model");
         }
         if (((Integer) this.c) == null) {
-            str = t8.b.v(str, " cores");
+            str = j0.s(str, " cores");
         }
         if (((Long) this.d) == null) {
-            str = t8.b.v(str, " ram");
+            str = j0.s(str, " ram");
         }
         if (((Long) this.e) == null) {
-            str = t8.b.v(str, " diskSpace");
+            str = j0.s(str, " diskSpace");
         }
         if (((Boolean) this.f) == null) {
-            str = t8.b.v(str, " simulator");
+            str = j0.s(str, " simulator");
         }
         if (((Integer) this.g) == null) {
-            str = t8.b.v(str, " state");
+            str = j0.s(str, " state");
         }
         if (((String) this.h) == null) {
-            str = t8.b.v(str, " manufacturer");
+            str = j0.s(str, " manufacturer");
         }
         if (((String) this.i) == null) {
-            str = t8.b.v(str, " modelClass");
+            str = j0.s(str, " modelClass");
         }
         if (str.isEmpty()) {
             return new k0(((Integer) this.a).intValue(), (String) this.b, ((Integer) this.c).intValue(), ((Long) this.d).longValue(), ((Long) this.e).longValue(), ((Boolean) this.f).booleanValue(), ((Integer) this.g).intValue(), (String) this.h, (String) this.i);
@@ -178,7 +179,7 @@ public final class b {
         final l5.i iVar2 = iVar;
         byte[] bArr2 = iVar2.b;
         t5.c cVar = (t5.c) bVar.f;
-        e a2 = ((m5.d) bVar.b).a(iVar2.a);
+        f a2 = ((m5.d) bVar.b).a(iVar2.a);
         long j10 = 0;
         while (true) {
             final int i13 = 0;
@@ -191,7 +192,7 @@ public final class b {
                 }
 
                 @Override // t5.b
-                public final Object h() {
+                public final Object i() {
                     Boolean bool;
                     switch (i13) {
                         case 0:
@@ -238,7 +239,7 @@ public final class b {
                 }
 
                 @Override // t5.b
-                public final Object h() {
+                public final Object i() {
                     Boolean bool;
                     switch (i14) {
                         case 0:
@@ -277,7 +278,7 @@ public final class b {
                 return;
             }
             if (a2 == null) {
-                g6.a(iVar2, "Uploader", "Unknown backend for %s, deleting event batch for it...");
+                h6.a(iVar2, "Uploader", "Unknown backend for %s, deleting event batch for it...");
                 aVar2 = new m5.a(3, -1L);
                 bArr = bArr2;
                 j3 = j10;
@@ -359,7 +360,7 @@ public final class b {
                             p3Var2.e = str4;
                             p3Var = p3Var2;
                         } else {
-                            String c11 = g6.c("CctTransportBackend");
+                            String c11 = h6.c("CctTransportBackend");
                             if (Log.isLoggable(c11, 5)) {
                                 Log.w(c11, "Received event of unsupported encoding " + cVar4 + ". Skipping...");
                             }
@@ -381,7 +382,7 @@ public final class b {
                             str6 = str6.concat(" eventUptimeMs");
                         }
                         if (((Long) p3Var.f) == null) {
-                            str6 = t8.b.v(str6, " timezoneOffsetSeconds");
+                            str6 = j0.s(str6, " timezoneOffsetSeconds");
                         }
                         if (!str6.isEmpty()) {
                             throw new IllegalStateException("Missing required properties:".concat(str6));
@@ -424,7 +425,7 @@ public final class b {
                         c10 = d5Var.c(aVar5);
                         URL url2 = (URL) c10.c;
                         if (url2 != null) {
-                            g6.a(url2, "CctTransportBackend", "Following redirect to: %s");
+                            h6.a(url2, "CctTransportBackend", "Following redirect to: %s");
                             aVar5 = new aa.a(url2, (k5.i) aVar5.d, (String) aVar5.b, i17);
                         } else {
                             aVar5 = null;
@@ -446,7 +447,7 @@ public final class b {
                                 aVar = new m5.a(4, -1L);
                             } catch (IOException e) {
                                 e = e;
-                                g6.b("CctTransportBackend", "Could not make request to the backend", e);
+                                h6.b("CctTransportBackend", "Could not make request to the backend", e);
                                 i11 = 2;
                                 aVar2 = new m5.a(2, -1L);
                                 i12 = aVar2.a;
@@ -466,7 +467,7 @@ public final class b {
             i12 = aVar2.a;
             if (i12 != i11) {
                 hVar.f(new z6(this, iterable, iVar, j3, 4));
-                ((lf.i) this.d).V(iVar, i10 + 1, true);
+                ((lf.h) this.d).V(iVar, i10 + 1, true);
                 return;
             }
             bVar = this;

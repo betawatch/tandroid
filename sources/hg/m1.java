@@ -2,9 +2,9 @@ package hg;
 
 import android.view.View;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.x51;
+import org.telegram.ui.Components.w51;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class m1 implements Utilities.Callback5, Utilities.Callback5Return {
     public final /* synthetic */ y1 a;
@@ -14,21 +14,21 @@ public final /* synthetic */ class m1 implements Utilities.Callback5, Utilities.
         ((Integer) obj3).getClass();
         ((Float) obj4).getClass();
         ((Float) obj5).getClass();
-        y1.W(this.a, (x51) obj, (View) obj2);
+        y1.W(this.a, (w51) obj, (View) obj2);
     }
 
     @Override // org.telegram.messenger.Utilities.Callback5Return
     public Object run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
         boolean z10;
-        x51 x51Var = (x51) obj;
+        w51 w51Var = (w51) obj;
         View view = (View) obj2;
         ((Integer) obj3).getClass();
         ((Float) obj4).getClass();
         ((Float) obj5).getClass();
-        if (x51Var.a == 16) {
-            Object obj6 = x51Var.G;
+        if (w51Var.a == 16) {
+            Object obj6 = w51Var.G;
             if (!(obj6 instanceof a2) || !((a2) obj6).g) {
-                this.a.e0(x51Var, view);
+                this.a.e0(w51Var, view);
                 z10 = true;
                 return Boolean.valueOf(z10);
             }

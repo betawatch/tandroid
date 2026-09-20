@@ -4,7 +4,7 @@ import android.content.SharedPreferences;
 import android.util.Log;
 import java.nio.charset.Charset;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class w5 implements d6.h {
     public static final f5 b = new f5(1);
@@ -12,6 +12,36 @@ public final class w5 implements d6.h {
 
     public w5(c1 c1Var) {
         this.a = c1Var;
+    }
+
+    @Override // d6.h
+    public /* synthetic */ void B(d6.f fVar) {
+        ((c1) this.a).h = (d6.c) fVar;
+    }
+
+    @Override // d6.h
+    public void D(d6.f fVar, String str) {
+        c1.j.b("onSessionStarted with sessionId = %s", str);
+        c1 c1Var = (c1) this.a;
+        c1Var.h = (d6.c) fVar;
+        c1Var.c();
+        d1 d1Var = c1Var.g;
+        d1Var.f = str;
+        c1Var.a.a((u1) c1Var.c.b(d1Var).a(), 222);
+        c1.b(c1Var);
+        c1Var.e();
+    }
+
+    @Override // d6.h
+    public void H(d6.f fVar, int i10) {
+        c1.j.b("onSessionSuspended with reason = %d", Integer.valueOf(i10));
+        c1 c1Var = (c1) this.a;
+        c1Var.h = (d6.c) fVar;
+        c1Var.c();
+        n6.l.h(c1Var.g);
+        c1Var.a.a(c1Var.c.a(c1Var.g, i10), 225);
+        c1.b(c1Var);
+        c1Var.e.removeCallbacks(c1Var.d);
     }
 
     public void a(int i10, Object obj, j6 j6Var) {
@@ -35,7 +65,7 @@ public final class w5 implements d6.h {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public void c(d6.f fVar, String str) {
+    public void g(d6.f fVar, String str) {
         d1 d1Var;
         g6.b bVar = c1.j;
         boolean z10 = false;
@@ -118,14 +148,14 @@ public final class w5 implements d6.h {
     }
 
     @Override // d6.h
-    public /* bridge */ /* synthetic */ void f(d6.f fVar, int i10) {
+    public /* bridge */ /* synthetic */ void k(d6.f fVar, int i10) {
         c1 c1Var = (c1) this.a;
         c1Var.h = (d6.c) fVar;
         c1.a(c1Var, i10);
     }
 
     @Override // d6.h
-    public void h(d6.f fVar, boolean z10) {
+    public void o(d6.f fVar, boolean z10) {
         c1.j.b("onSessionResumed with wasSuspended = %b", Boolean.valueOf(z10));
         c1 c1Var = (c1) this.a;
         c1Var.h = (d6.c) fVar;
@@ -143,14 +173,14 @@ public final class w5 implements d6.h {
     }
 
     @Override // d6.h
-    public /* bridge */ /* synthetic */ void j(d6.f fVar, int i10) {
+    public /* bridge */ /* synthetic */ void u(d6.f fVar, int i10) {
         c1 c1Var = (c1) this.a;
         c1Var.h = (d6.c) fVar;
         c1.a(c1Var, i10);
     }
 
     @Override // d6.h
-    public void k(d6.f fVar) {
+    public void v(d6.f fVar) {
         g6.b bVar = c1.j;
         bVar.b("onSessionStarting", new Object[0]);
         c1 c1Var = (c1) this.a;
@@ -172,40 +202,10 @@ public final class w5 implements d6.h {
     }
 
     @Override // d6.h
-    public /* bridge */ /* synthetic */ void m(d6.f fVar, int i10) {
+    public /* bridge */ /* synthetic */ void z(d6.f fVar, int i10) {
         c1 c1Var = (c1) this.a;
         c1Var.h = (d6.c) fVar;
         c1.a(c1Var, i10);
-    }
-
-    @Override // d6.h
-    public /* synthetic */ void v(d6.f fVar) {
-        ((c1) this.a).h = (d6.c) fVar;
-    }
-
-    @Override // d6.h
-    public void x(d6.f fVar, String str) {
-        c1.j.b("onSessionStarted with sessionId = %s", str);
-        c1 c1Var = (c1) this.a;
-        c1Var.h = (d6.c) fVar;
-        c1Var.c();
-        d1 d1Var = c1Var.g;
-        d1Var.f = str;
-        c1Var.a.a((u1) c1Var.c.b(d1Var).a(), 222);
-        c1.b(c1Var);
-        c1Var.e();
-    }
-
-    @Override // d6.h
-    public void y(d6.f fVar, int i10) {
-        c1.j.b("onSessionSuspended with reason = %d", Integer.valueOf(i10));
-        c1 c1Var = (c1) this.a;
-        c1Var.h = (d6.c) fVar;
-        c1Var.c();
-        n6.l.h(c1Var.g);
-        c1Var.a.a(c1Var.c.a(c1Var.g, i10), 225);
-        c1.b(c1Var);
-        c1Var.e.removeCallbacks(c1Var.d);
     }
 
     public w5() {

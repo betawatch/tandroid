@@ -27,12 +27,12 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.v01;
+import org.telegram.ui.Components.u01;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.lk;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class o3 extends FrameLayout {
     public static final HashMap K = new HashMap();
@@ -50,11 +50,11 @@ public final class o3 extends FrameLayout {
     public final ActionBarLayout d;
     public final m3 e;
     public int f;
-    public final org.telegram.ui.Components.h5 h;
+    public final org.telegram.ui.Components.g5 h;
     public int n;
-    public final org.telegram.ui.Components.h5 r;
+    public final org.telegram.ui.Components.g5 r;
     public boolean s;
-    public final org.telegram.ui.Components.e6 v;
+    public final org.telegram.ui.Components.d6 v;
     public int w;
     public boolean x;
     public boolean y;
@@ -65,9 +65,9 @@ public final class o3 extends FrameLayout {
         this.b = true;
         this.c = false;
         qr qrVar = qr.h;
-        this.h = new org.telegram.ui.Components.h5(this, 200L, qrVar, 0);
-        this.r = new org.telegram.ui.Components.h5(this, 200L, qrVar, 0);
-        this.v = new org.telegram.ui.Components.e6(this, 0L, 200L, qrVar);
+        this.h = new org.telegram.ui.Components.g5(this, 200L, qrVar, 0);
+        this.r = new org.telegram.ui.Components.g5(this, 200L, qrVar, 0);
+        this.v = new org.telegram.ui.Components.d6(this, 0L, 200L, qrVar);
         this.w = UserConfig.selectedAccount;
         this.E = new RectF();
         this.I = new HashSet();
@@ -491,7 +491,7 @@ public final class o3 extends FrameLayout {
                 if (replaceEmoji == null) {
                     l3Var.u = null;
                 } else {
-                    l3Var.u = new v01(replaceEmoji, 17.0f, AndroidUtilities.bold());
+                    l3Var.u = new u01(replaceEmoji, 17.0f, AndroidUtilities.bold());
                 }
             }
             charSequence = replaceEmoji;

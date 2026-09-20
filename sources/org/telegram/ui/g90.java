@@ -9,7 +9,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g90 implements Runnable {
     public final /* synthetic */ int a;
@@ -29,12 +29,12 @@ public final /* synthetic */ class g90 implements Runnable {
         switch (i10) {
             case 0:
                 Pattern pattern = LaunchActivity.B1;
-                org.telegram.ui.Components.yb ybVar = new org.telegram.ui.Components.yb(launchActivity, null);
-                ybVar.d(R.raw.email_check_inbox, new String[0]);
-                ybVar.b.setText(LocaleController.getString(R.string.YourLoginEmailChangedSuccess));
+                org.telegram.ui.Components.xb xbVar = new org.telegram.ui.Components.xb(launchActivity, null);
+                xbVar.d(R.raw.email_check_inbox, new String[0]);
+                xbVar.b.setText(LocaleController.getString(R.string.YourLoginEmailChangedSuccess));
                 org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
                 if (R != null) {
-                    org.telegram.ui.Components.qc.g(R, ybVar, 1500).j();
+                    org.telegram.ui.Components.pc.g(R, xbVar, 1500).j();
                     try {
                         R.fragmentView.performHapticFeedback(3, 2);
                         break;
@@ -60,7 +60,7 @@ public final /* synthetic */ class g90 implements Runnable {
                 break;
             case 3:
                 if (!launchActivity.q0.getFragmentStack().isEmpty()) {
-                    launchActivity.q0.getFragmentStack().get(0).showDialog(new org.telegram.ui.Components.hy0(launchActivity, launchActivity.j0, launchActivity.h0, launchActivity.i0));
+                    launchActivity.q0.getFragmentStack().get(0).showDialog(new org.telegram.ui.Components.gy0(launchActivity, launchActivity.j0, launchActivity.h0, launchActivity.i0));
                     break;
                 }
                 break;
@@ -88,7 +88,7 @@ public final /* synthetic */ class g90 implements Runnable {
             case 6:
                 if (!launchActivity.v1) {
                     try {
-                        org.telegram.ui.ActionBar.b2 C = org.telegram.ui.Components.e5.C(launchActivity);
+                        org.telegram.ui.ActionBar.b2 C = org.telegram.ui.Components.d5.C(launchActivity);
                         C.setOnDismissListener(new i90(launchActivity, i11));
                         launchActivity.v1 = true;
                         C.show();
@@ -104,7 +104,7 @@ public final /* synthetic */ class g90 implements Runnable {
                     TLRPC.TL_theme tL_theme = launchActivity.T0;
                     org.telegram.ui.ActionBar.i6 u10 = org.telegram.ui.ActionBar.j6.u(file, tL_theme.title, tL_theme, true);
                     if (u10 != null) {
-                        launchActivity.p0(new vd1(u10, true, 0, false, false));
+                        launchActivity.p0(new xd1(u10, true, 0, false, false));
                     }
                     launchActivity.h0();
                     break;
@@ -113,7 +113,7 @@ public final /* synthetic */ class g90 implements Runnable {
             case 8:
                 Pattern pattern4 = LaunchActivity.B1;
                 launchActivity.getClass();
-                launchActivity.p0(new oc0());
+                launchActivity.p0(new pc0());
                 break;
             case 9:
                 launchActivity.t1 = null;

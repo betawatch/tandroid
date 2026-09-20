@@ -1,82 +1,185 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import android.app.Activity;
+import android.os.Bundle;
+import android.text.TextUtils;
+import android.util.LongSparseArray;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.UserObject;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.MessagesStorage;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.SendMessagesHelper;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class aj1 implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
+public final /* synthetic */ class aj1 implements org.telegram.ui.ActionBar.a2, oy {
+    public final /* synthetic */ cj1 a;
 
-    public /* synthetic */ aj1(int i10, Object obj, Object obj2) {
-        this.a = i10;
-        this.b = obj;
-        this.c = obj2;
+    public /* synthetic */ aj1(cj1 cj1Var) {
+        this.a = cj1Var;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                AndroidUtilities.runOnUIThread(new x81(21, (bj1) this.b, (int[]) this.c));
-                break;
-            case 1:
-                AndroidUtilities.runOnUIThread(new fs0((qg.m2) this.b, tLObject, (qg.k2) this.c, tL_error, 24));
-                break;
-            case 2:
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.dn0(tLObject, (MessagesController) this.b, (tg.x0) this.c, 28));
-                break;
-            case 3:
-                MessagesController messagesController = (MessagesController) this.b;
-                nj0 nj0Var = (nj0) this.c;
-                if (tLObject instanceof TLRPC.TL_contacts_found) {
-                    TLRPC.TL_contacts_found tL_contacts_found = (TLRPC.TL_contacts_found) tLObject;
-                    messagesController.putUsers(tL_contacts_found.users, false);
-                    ArrayList arrayList = new ArrayList();
-                    for (int i10 = 0; i10 < tL_contacts_found.users.size(); i10++) {
-                        TLRPC.User user = tL_contacts_found.users.get(i10);
-                        if (!user.self && !UserObject.isDeleted(user) && !UserObject.isService(user.id)) {
-                            arrayList.add(user);
-                        }
-                    }
-                    AndroidUtilities.runOnUIThread(new org.telegram.ui.web.p1(23, nj0Var, arrayList));
-                    break;
+    @Override // org.telegram.ui.oy
+    public /* synthetic */ boolean A() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.oy
+    public /* synthetic */ boolean K(uy uyVar) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.ActionBar.a2
+    public void k(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+        org.telegram.ui.ActionBar.k kVar;
+        org.telegram.ui.ActionBar.k kVar2;
+        int i11;
+        cj1 cj1Var = this.a;
+        WallpapersListActivity wallpapersListActivity = cj1Var.a;
+        Activity parentActivity = wallpapersListActivity.getParentActivity();
+        LongSparseArray longSparseArray = wallpapersListActivity.g0;
+        org.telegram.ui.ActionBar.b2 b2Var2 = new org.telegram.ui.ActionBar.b2(parentActivity, 3, null);
+        wallpapersListActivity.N = b2Var2;
+        b2Var2.g0 = false;
+        b2Var2.show();
+        new ArrayList();
+        int[] iArr = {0};
+        for (int i12 = 0; i12 < longSparseArray.size(); i12++) {
+            Object valueAt = longSparseArray.valueAt(i12);
+            if (valueAt instanceof fj1) {
+                fj1 fj1Var = (fj1) valueAt;
+                TLRPC.WallPaper wallPaper = fj1Var.l;
+                if (wallPaper == null || wallPaper.id >= 0) {
+                    valueAt = wallPaper;
+                } else {
+                    wallpapersListActivity.getMessagesStorage().deleteWallpaper(fj1Var.l.id);
+                    wallpapersListActivity.d0.remove(fj1Var);
+                    wallpapersListActivity.b0.remove(fj1Var.a());
                 }
-                break;
-            case 4:
-                AndroidUtilities.runOnUIThread(new tg.r((org.telegram.ui.Components.zr0) this.b, tL_error, (org.telegram.ui.ActionBar.n2) this.c, 4));
-                break;
-            case 5:
-                AndroidUtilities.runOnUIThread(new tg.r((xh.v3) this.b, tLObject, (TL_stars.getResaleStarGifts) this.c, 7));
-                break;
-            case 6:
-                AndroidUtilities.runOnUIThread(new tg.r((yh.g) this.b, tLObject, (Context) this.c, 8));
-                break;
-            case 7:
-                AndroidUtilities.runOnUIThread(new fs0((yh.y3) this.b, tLObject, (tg.r) this.c, tL_error, 29));
-                break;
-            case 8:
-                yh.y3.f1((yh.y3) this.b, (TL_stars.InputSavedStarGift) this.c, tLObject, tL_error);
-                break;
-            case 9:
-                yh.y3.V0((yh.y3) this.b, (org.telegram.ui.ActionBar.b2) this.c, tLObject, tL_error);
-                break;
-            case 10:
-                AndroidUtilities.runOnUIThread(new tg.r((yh.t5) this.b, tLObject, tL_error, (Utilities.Callback) this.c, 17));
-                break;
-            default:
-                AndroidUtilities.runOnUIThread(new tg.r((yh.t5) this.b, tLObject, (Runnable) this.c, 18));
-                break;
+            }
+            if (valueAt instanceof TLRPC.WallPaper) {
+                iArr[0] = iArr[0] + 1;
+                TLRPC.WallPaper wallPaper2 = (TLRPC.WallPaper) valueAt;
+                TL_account.saveWallPaper savewallpaper = new TL_account.saveWallPaper();
+                savewallpaper.settings = new TLRPC.TL_wallPaperSettings();
+                savewallpaper.unsave = true;
+                if (valueAt instanceof TLRPC.TL_wallPaperNoFile) {
+                    TLRPC.TL_inputWallPaperNoFile tL_inputWallPaperNoFile = new TLRPC.TL_inputWallPaperNoFile();
+                    tL_inputWallPaperNoFile.id = wallPaper2.id;
+                    savewallpaper.wallpaper = tL_inputWallPaperNoFile;
+                } else {
+                    TLRPC.TL_inputWallPaper tL_inputWallPaper = new TLRPC.TL_inputWallPaper();
+                    tL_inputWallPaper.id = wallPaper2.id;
+                    tL_inputWallPaper.access_hash = wallPaper2.access_hash;
+                    savewallpaper.wallpaper = tL_inputWallPaper;
+                }
+                String str = wallPaper2.slug;
+                if (str != null && str.equals(wallpapersListActivity.Q)) {
+                    wallpapersListActivity.Q = org.telegram.ui.ActionBar.j6.d1() ? "t" : "d";
+                    org.telegram.ui.ActionBar.j6.I.v(null);
+                    org.telegram.ui.ActionBar.j6.o1(true);
+                }
+                i11 = ((org.telegram.ui.ActionBar.n2) wallpapersListActivity).currentAccount;
+                ConnectionsManager.getInstance(i11).sendRequest(savewallpaper, new bj1(0, cj1Var, iArr));
+            }
         }
+        if (iArr[0] == 0) {
+            wallpapersListActivity.B0(true);
+        }
+        longSparseArray.clear();
+        kVar = ((org.telegram.ui.ActionBar.n2) wallpapersListActivity).actionBar;
+        kVar.r();
+        kVar2 = ((org.telegram.ui.ActionBar.n2) wallpapersListActivity).actionBar;
+        kVar2.h(true);
+    }
+
+    @Override // org.telegram.ui.oy
+    public boolean u(uy uyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, fg1 fg1Var) {
+        LongSparseArray longSparseArray;
+        org.telegram.ui.ActionBar.k kVar;
+        org.telegram.ui.ActionBar.k kVar2;
+        int i12;
+        int i13;
+        int i14;
+        int i15;
+        int i16;
+        int i17;
+        String b10;
+        WallpapersListActivity wallpapersListActivity = this.a.a;
+        StringBuilder sb2 = new StringBuilder();
+        int i18 = 0;
+        while (true) {
+            longSparseArray = wallpapersListActivity.g0;
+            if (i18 >= longSparseArray.size()) {
+                break;
+            }
+            Object valueAt = longSparseArray.valueAt(i18);
+            if (valueAt instanceof TLRPC.TL_wallPaper) {
+                b10 = AndroidUtilities.getWallPaperUrl(valueAt);
+            } else if (valueAt instanceof fj1) {
+                b10 = ((fj1) valueAt).b();
+            } else {
+                i18++;
+            }
+            if (!TextUtils.isEmpty(b10)) {
+                if (sb2.length() > 0) {
+                    sb2.append('\n');
+                }
+                sb2.append(b10);
+            }
+            i18++;
+        }
+        longSparseArray.clear();
+        kVar = ((org.telegram.ui.ActionBar.n2) wallpapersListActivity).actionBar;
+        kVar.r();
+        kVar2 = ((org.telegram.ui.ActionBar.n2) wallpapersListActivity).actionBar;
+        kVar2.h(true);
+        if (arrayList.size() <= 1) {
+            long j3 = ((MessagesStorage.TopicKey) arrayList.get(0)).dialogId;
+            i14 = ((org.telegram.ui.ActionBar.n2) wallpapersListActivity).currentAccount;
+            if (j3 != UserConfig.getInstance(i14).getClientUserId() && charSequence == null) {
+                long j10 = ((MessagesStorage.TopicKey) arrayList.get(0)).dialogId;
+                Bundle i19 = a4.a.i("scrollToTopOnResume", true);
+                if (DialogObject.isEncryptedDialog(j10)) {
+                    i19.putInt("enc_id", DialogObject.getEncryptedChatId(j10));
+                } else {
+                    if (DialogObject.isUserDialog(j10)) {
+                        i19.putLong("user_id", j10);
+                    } else if (DialogObject.isChatDialog(j10)) {
+                        i19.putLong("chat_id", -j10);
+                    }
+                    i15 = ((org.telegram.ui.ActionBar.n2) wallpapersListActivity).currentAccount;
+                    if (!MessagesController.getInstance(i15).checkCanOpenChat(i19, uyVar)) {
+                        return true;
+                    }
+                }
+                i16 = ((org.telegram.ui.ActionBar.n2) wallpapersListActivity).currentAccount;
+                NotificationCenter.getInstance(i16).lambda$postNotificationNameOnUIThread$1(NotificationCenter.closeChats, new Object[0]);
+                wallpapersListActivity.presentFragment(new zn(i19), true);
+                i17 = ((org.telegram.ui.ActionBar.n2) wallpapersListActivity).currentAccount;
+                SendMessagesHelper.getInstance(i17).sendMessage(SendMessagesHelper.SendMessageParams.of(sb2.toString(), j10, null, null, null, true, null, null, null, true, 0, 0, null, false));
+                return true;
+            }
+        }
+        wallpapersListActivity.D0();
+        for (int i20 = 0; i20 < arrayList.size(); i20++) {
+            long j11 = ((MessagesStorage.TopicKey) arrayList.get(i20)).dialogId;
+            if (charSequence != null) {
+                i13 = ((org.telegram.ui.ActionBar.n2) wallpapersListActivity).currentAccount;
+                SendMessagesHelper.getInstance(i13).sendMessage(SendMessagesHelper.SendMessageParams.of(charSequence.toString(), j11, null, null, null, true, null, null, null, true, 0, 0, null, false));
+            }
+            if (!TextUtils.isEmpty(sb2)) {
+                i12 = ((org.telegram.ui.ActionBar.n2) wallpapersListActivity).currentAccount;
+                SendMessagesHelper.getInstance(i12).sendMessage(SendMessagesHelper.SendMessageParams.of(sb2.toString(), j11, null, null, null, true, null, null, null, true, 0, 0, null, false));
+            }
+        }
+        uyVar.finishFragment();
+        return true;
     }
 }

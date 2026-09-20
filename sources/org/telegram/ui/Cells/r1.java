@@ -34,7 +34,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class r1 extends AccessibilityNodeProvider {
     public final Path a = new Path();
@@ -2202,7 +2202,7 @@ public final class r1 extends AccessibilityNodeProvider {
             if (i10 == 5000) {
                 l1 l1Var2 = u1Var.Jc;
                 if (l1Var2 != null) {
-                    l1Var2.t0(u1Var, u1Var.Yb, 0.0f, 0.0f);
+                    l1Var2.u0(u1Var, u1Var.Yb, 0.0f, 0.0f);
                     return true;
                 }
             } else if (i10 >= 6000) {
@@ -2216,7 +2216,7 @@ public final class r1 extends AccessibilityNodeProvider {
             } else if (i10 >= 3000) {
                 ClickableSpan a2 = a(i10, true);
                 if (a2 != null) {
-                    u1Var.Jc.V0(u1Var, a2, false);
+                    u1Var.Jc.W0(u1Var, a2, false);
                     u1Var.I3(i10, 1, null);
                     return true;
                 }
@@ -2234,7 +2234,7 @@ public final class r1 extends AccessibilityNodeProvider {
                                 } else {
                                     TL_keyboard.KeyboardInlineButton keyboardInlineButton = e0Var.i;
                                     if (keyboardInlineButton != null) {
-                                        l1Var3.m1(u1Var, keyboardInlineButton);
+                                        l1Var3.n1(u1Var, keyboardInlineButton);
                                     }
                                 }
                             }
@@ -2261,31 +2261,31 @@ public final class r1 extends AccessibilityNodeProvider {
                         if (i10 == 499) {
                             l1 l1Var4 = u1Var.Jc;
                             if (l1Var4 != null) {
-                                l1Var4.P0(u1Var.b3, u1Var);
+                                l1Var4.Q0(u1Var.b3, u1Var);
                                 return true;
                             }
                         } else if (i10 == 492) {
                             l1 l1Var5 = u1Var.Jc;
                             if (l1Var5 != null) {
-                                l1Var5.P0(5, u1Var);
+                                l1Var5.Q0(5, u1Var);
                                 return true;
                             }
                         } else if (i10 == 491) {
                             l1 l1Var6 = u1Var.Jc;
                             if (l1Var6 != null) {
-                                l1Var6.P0(5, u1Var);
+                                l1Var6.Q0(5, u1Var);
                                 return true;
                             }
                         } else if (i10 == 490) {
                             l1 l1Var7 = u1Var.Jc;
                             if (l1Var7 != null) {
-                                l1Var7.P0(31, u1Var);
+                                l1Var7.Q0(31, u1Var);
                                 return true;
                             }
                         } else if (i10 == 489) {
                             l1 l1Var8 = u1Var.Jc;
                             if (l1Var8 != null) {
-                                l1Var8.P0(30, u1Var);
+                                l1Var8.Q0(30, u1Var);
                                 return true;
                             }
                         } else if (i10 == 498) {
@@ -2309,7 +2309,7 @@ public final class r1 extends AccessibilityNodeProvider {
                                 }
                                 TLRPC.User user = u1Var.hc;
                                 if (user != null) {
-                                    l1Var10.t0(u1Var, user, u1Var.g1, u1Var.h1);
+                                    l1Var10.u0(u1Var, user, u1Var.g1, u1Var.h1);
                                     return true;
                                 }
                                 if (u1Var.kc != null) {
@@ -2336,7 +2336,7 @@ public final class r1 extends AccessibilityNodeProvider {
                 }
                 ClickableSpan a10 = a(i10, false);
                 if (a10 != null) {
-                    u1Var.Jc.V0(u1Var, a10, false);
+                    u1Var.Jc.W0(u1Var, a10, false);
                     u1Var.I3(i10, 1, null);
                     return true;
                 }
@@ -2344,7 +2344,7 @@ public final class r1 extends AccessibilityNodeProvider {
         } else if (i11 == 32) {
             ClickableSpan a11 = a(i10, i10 >= 3000);
             if (a11 != null && (l1Var = u1Var.Jc) != null) {
-                l1Var.V0(u1Var, a11, true);
+                l1Var.W0(u1Var, a11, true);
                 u1Var.I3(i10, 2, null);
             }
         }

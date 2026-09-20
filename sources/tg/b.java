@@ -10,13 +10,13 @@ import android.view.View;
 import android.view.animation.OvershootInterpolator;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.o6;
+import org.telegram.ui.Components.n6;
 import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class b extends View {
-    public final o6 a;
+    public final n6 a;
     public float b;
     public ValueAnimator c;
     public int d;
@@ -25,15 +25,15 @@ public final class b extends View {
     public b(Context context) {
         super(context);
         this.b = 1.0f;
-        o6 o6Var = new o6(false, false, true, false);
-        this.a = o6Var;
-        o6Var.k(0.3f, 250L, qr.h);
-        o6Var.setCallback(this);
-        o6Var.t(AndroidUtilities.dp(11.5f));
-        o6Var.u(AndroidUtilities.bold());
-        o6Var.r(-1);
-        o6Var.q("", true, true);
-        o6Var.b = 17;
+        n6 n6Var = new n6(false, false, true, false);
+        this.a = n6Var;
+        n6Var.k(0.3f, 250L, qr.h);
+        n6Var.setCallback(this);
+        n6Var.t(AndroidUtilities.dp(11.5f));
+        n6Var.u(AndroidUtilities.bold());
+        n6Var.r(-1);
+        n6Var.q("", true, true);
+        n6Var.b = 17;
         Paint paint = new Paint(1);
         this.e = paint;
         paint.setColor(-6915073);
@@ -47,9 +47,9 @@ public final class b extends View {
         if (i10 > 0) {
             setVisibility(0);
         }
-        o6 o6Var = this.a;
+        n6 n6Var = this.a;
         if (z10) {
-            o6Var.b();
+            n6Var.b();
         }
         if (z10 && i10 != this.d && i10 > 0) {
             ValueAnimator valueAnimator = this.c;
@@ -66,9 +66,9 @@ public final class b extends View {
             this.c.start();
         }
         this.d = i10;
-        int length = o6Var.g.length();
-        o6Var.q("x" + i10, z10, true);
-        int length2 = o6Var.g.length();
+        int length = n6Var.g.length();
+        n6Var.q("x" + i10, z10, true);
+        int length2 = n6Var.g.length();
         invalidate();
         if (length != length2) {
             requestLayout();
@@ -82,8 +82,8 @@ public final class b extends View {
         canvas.translate(AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f));
         Rect rect = AndroidUtilities.rectTmp2;
         int dp = AndroidUtilities.dp(8.0f);
-        o6 o6Var = this.a;
-        rect.set(0, 0, dp + ((int) o6Var.d()), AndroidUtilities.dp(20.0f));
+        n6 n6Var = this.a;
+        rect.set(0, 0, dp + ((int) n6Var.d()), AndroidUtilities.dp(20.0f));
         RectF rectF = AndroidUtilities.rectTmp;
         rectF.set(rect);
         if (this.b != 1.0f) {
@@ -93,8 +93,8 @@ public final class b extends View {
         }
         canvas.drawRoundRect(rectF, AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), this.e);
         rect.set(0, 0, (int) rectF.width(), AndroidUtilities.dp(19.0f));
-        o6Var.setBounds(rect);
-        o6Var.draw(canvas);
+        n6Var.setBounds(rect);
+        n6Var.draw(canvas);
         if (this.b != 1.0f) {
             canvas.restore();
         }

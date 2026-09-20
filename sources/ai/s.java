@@ -5,7 +5,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.lx;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class s extends org.telegram.ui.ActionBar.m {
     public final /* synthetic */ int d = 1;
@@ -37,8 +37,8 @@ public final class s extends org.telegram.ui.ActionBar.m {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public s(org.telegram.ui.ActionBar.k kVar, Context context, org.telegram.ui.ActionBar.e6 e6Var, com.google.firebase.messaging.m mVar) {
-        super(context, e6Var, mVar);
+    public s(org.telegram.ui.ActionBar.k kVar, Context context, org.telegram.ui.ActionBar.f6 f6Var, com.google.firebase.messaging.m mVar) {
+        super(context, f6Var, mVar);
         this.e = kVar;
     }
 }

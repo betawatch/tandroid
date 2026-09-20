@@ -6,7 +6,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.VideoEditedInfo;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class wh extends org.telegram.ui.tu0 {
     public final /* synthetic */ MediaController.PhotoEntry a;
@@ -26,7 +26,7 @@ public final class wh extends org.telegram.ui.tu0 {
         }
         final MediaController.PhotoEntry photoEntry = this.a;
         photoEntry.editedInfo = videoEditedInfo;
-        e5.a0(viVar.J1, viVar.j1() + 1, 0L, new Utilities.Callback() { // from class: org.telegram.ui.Components.vh
+        d5.a0(viVar.J1, viVar.j1() + 1, 0L, new Utilities.Callback() { // from class: org.telegram.ui.Components.vh
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
                 ArrayList arrayList = ChatAttachAlertPhotoLayout.t1;
@@ -35,7 +35,7 @@ public final class wh extends org.telegram.ui.tu0 {
                 hashMap.clear();
                 arrayList.add(0);
                 hashMap.put(0, photoEntry);
-                wh.this.b.Z1.B1(7, true, z10, i11, 0, 0L, false, z11, ((Long) obj).longValue());
+                wh.this.b.Z1.C1(7, true, z10, i11, 0, 0L, false, z11, ((Long) obj).longValue());
             }
         });
     }

@@ -11,13 +11,13 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.b2;
 import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.h9;
-import org.telegram.ui.Components.ij0;
+import org.telegram.ui.Components.g9;
+import org.telegram.ui.Components.hj0;
 import org.telegram.ui.Components.t40;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.f91;
 import org.telegram.ui.g10;
 import org.telegram.ui.i60;
+import org.telegram.ui.i91;
 import org.telegram.ui.ko;
 import org.telegram.ui.l70;
 import org.telegram.ui.md;
@@ -25,7 +25,7 @@ import org.telegram.ui.oo;
 import org.telegram.ui.p50;
 import org.telegram.ui.uo;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class k implements Runnable {
     public final /* synthetic */ int a;
@@ -183,15 +183,15 @@ public final /* synthetic */ class k implements Runnable {
                 } else {
                     z5 z5Var = uoVar.e;
                     ImageLocation forLocal = ImageLocation.getForLocal(fileLocation3);
-                    h9 h9Var = uoVar.r;
+                    g9 g9Var = uoVar.r;
                     Object obj = uoVar.D0;
                     if (obj == null) {
                         obj = uoVar.x0;
                     }
-                    z5Var.h(forLocal, "50_50", h9Var, obj);
+                    z5Var.h(forLocal, "50_50", g9Var, obj);
                     uoVar.b0.m(R.drawable.msg_addphoto, LocaleController.getString("ChatSetNewPhoto", R.string.ChatSetNewPhoto), true);
                     if (uoVar.R0 == null) {
-                        uoVar.R0 = new ij0(R.raw.camera_outline, AndroidUtilities.dp(50.0f), AndroidUtilities.dp(50.0f), false, null);
+                        uoVar.R0 = new hj0(R.raw.camera_outline, AndroidUtilities.dp(50.0f), AndroidUtilities.dp(50.0f), false, null);
                     }
                     uoVar.b0.e.setTranslationX(-AndroidUtilities.dp(8.0f));
                     uoVar.b0.e.setAnimation(uoVar.R0);
@@ -273,7 +273,7 @@ public final /* synthetic */ class k implements Runnable {
                 ProfileActivity.d0((ProfileActivity) this.r, this.b, this.c, this.d, this.f, this.e, this.h, this.n);
                 break;
             default:
-                f91.e0((f91) this.r, this.b, this.c, this.d, this.f, this.e, this.h, this.n);
+                i91.e0((i91) this.r, this.b, this.c, this.d, this.f, this.e, this.h, this.n);
                 break;
         }
     }

@@ -1,50 +1,79 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import java.math.BigInteger;
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.SecureRandom;
+import java.util.Arrays;
+import javax.crypto.Cipher;
+import javax.crypto.spec.GCMParameterSpec;
+import javax.crypto.spec.SecretKeySpec;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class kj1 {
-    public org.telegram.ui.Cells.a2 a;
-    public org.telegram.ui.ActionBar.b2 b;
-    public TextView c;
+public abstract class kj1 {
+    public static final BigInteger a = new BigInteger("FFFFFFFFFFFFFFFFC90FDAA22168C234C4C6628B80DC1CD129024E088A67CC74020BBEA63B139B22514A08798E3404DDEF9519B3CD3A431B302B0A6DF25F14374FE1356D6D51C245E485B576625E7EC6F44C42E9A637ED6B0BFF5CB6F406B7EDEE386BFB5A899FA5AE9F24117C4B1FE649286651ECE45B3DC2007CB8A163BF0598DA48361C55D39A69163FA8FD24CF5F83655D23DCA3AD961C62F356208552BB9ED529077096966D670C354E4ABC9804F1746C08CA18217C32905E462E36CE3BE39E772C180E86039B2783A2EC07A28FB5C55DF06F4C52C9DE2BCBF6955817183995497CEA956AE515D2261898FA051015728E5A8AACAA68FFFFFFFFFFFFFFFF", 16);
+    public static final BigInteger b = BigInteger.valueOf(2);
+    public static org.telegram.ui.ActionBar.f3 c;
+    public static cf.c d;
 
-    public static void a(Context context, e2.h hVar, Runnable runnable) {
-        kj1 kj1Var = new kj1();
-        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context);
-        alertDialog$Builder.a.R = LocaleController.getString(R.string.TermsOfUse);
-        LinearLayout e = org.telegram.messenger.wh.e(context, 1);
-        TextView textView = new TextView(context);
-        textView.setLetterSpacing(0.025f);
-        textView.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.j5, false));
-        textView.setTextSize(1, 14.0f);
-        e.addView(textView, w7.y5.t(-1, -2, 0, 24, 0, 24, 0));
-        org.telegram.ui.Cells.a2 a2Var = new org.telegram.ui.Cells.a2(context, 1, null);
-        kj1Var.a = a2Var;
-        a2Var.getTextView().getLayoutParams().width = -1;
-        kj1Var.a.getTextView().setTextSize(1, 14.0f);
-        e.addView(kj1Var.a, w7.y5.t(-1, 48, 3, 8, 0, 8, 0));
-        boolean[] zArr = new boolean[1];
-        org.telegram.messenger.q.n(R.string.BotWebAppDisclaimerSubtitle, textView);
-        kj1Var.a.e(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.BotWebAppDisclaimerCheck), new pv(context, 8)), "", false, false, false);
-        alertDialog$Builder.n(e);
-        alertDialog$Builder.k(LocaleController.getString(R.string.Continue), new rv0(21, hVar, zArr));
-        alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new wk0(10));
-        org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
-        kj1Var.b = b2Var;
-        b2Var.show();
-        TextView textView2 = (TextView) kj1Var.b.d(-1);
-        kj1Var.c = textView2;
-        textView2.setEnabled(false);
-        kj1Var.c.setAlpha(0.5f);
-        kj1Var.a.setOnClickListener(new g41(kj1Var, 9));
-        kj1Var.a.setBackground(org.telegram.ui.ActionBar.j6.f0(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.i6, false), 7, -1));
-        kj1Var.b.setOnDismissListener(new org.telegram.ui.Components.n2(zArr, runnable));
+    public static byte[] a(BigInteger bigInteger) {
+        byte[] byteArray = bigInteger.toByteArray();
+        if (byteArray.length == 256) {
+            return byteArray;
+        }
+        if (byteArray.length == 257 && byteArray[0] == 0) {
+            return Arrays.copyOfRange(byteArray, 1, byteArray.length);
+        }
+        if (byteArray.length < 256) {
+            byte[] bArr = new byte[256];
+            System.arraycopy(byteArray, 0, bArr, 256 - byteArray.length, byteArray.length);
+            return bArr;
+        }
+        throw new IllegalStateException("unexpected DH value size " + byteArray.length);
+    }
+
+    public static byte[] b(byte[][] bArr) {
+        try {
+            MessageDigest messageDigest = MessageDigest.getInstance("SHA-256");
+            for (byte[] bArr2 : bArr) {
+                messageDigest.update(bArr2);
+            }
+            return messageDigest.digest();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public static byte[] c(cf.c cVar, String str, int i10, boolean z10) {
+        byte[] bytes = str.getBytes(StandardCharsets.UTF_8);
+        ByteBuffer allocate = ByteBuffer.allocate(bytes.length + 9);
+        allocate.order(ByteOrder.BIG_ENDIAN);
+        allocate.putInt(bytes.length);
+        allocate.put(bytes);
+        allocate.putInt(i10);
+        allocate.put(z10 ? (byte) 1 : (byte) 0);
+        byte[] array = allocate.array();
+        byte[] bArr = new byte[12];
+        new SecureRandom().nextBytes(bArr);
+        byte[] bArr2 = (byte[]) cVar.e;
+        Cipher cipher = Cipher.getInstance("AES/GCM/NoPadding");
+        cipher.init(1, new SecretKeySpec(bArr2, "AES"), new GCMParameterSpec(128, bArr));
+        byte[] doFinal = cipher.doFinal(array);
+        byte[] bArr3 = new byte[doFinal.length + 28];
+        System.arraycopy((byte[]) cVar.b, 0, bArr3, 0, 16);
+        System.arraycopy(bArr, 0, bArr3, 16, 12);
+        System.arraycopy(doFinal, 0, bArr3, 28, doFinal.length);
+        return bArr3;
+    }
+
+    public static String d(byte[] bArr) {
+        StringBuilder sb2 = new StringBuilder(bArr.length * 2);
+        for (byte b10 : bArr) {
+            sb2.append(String.format("%02x", Byte.valueOf(b10)));
+        }
+        return sb2.toString();
     }
 }

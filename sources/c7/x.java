@@ -5,7 +5,7 @@ import android.os.Parcelable;
 import java.util.Arrays;
 import org.telegram.ui.Cells.c1;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class x extends o6.a {
     public static final Parcelable.Creator<x> CREATOR = new w.a(27);
@@ -39,7 +39,7 @@ public final class x extends o6.a {
     }
 
     public final String toString() {
-        return c1.i("PublicKeyCredentialParameters{\n type=", String.valueOf(this.a), ", \n algorithm=", String.valueOf(this.b), "\n }");
+        return c1.k("PublicKeyCredentialParameters{\n type=", String.valueOf(this.a), ", \n algorithm=", String.valueOf(this.b), "\n }");
     }
 
     /* JADX WARN: Type inference failed for: r0v3, types: [c7.a, java.lang.Enum] */

@@ -6,18 +6,18 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.rk;
 import org.telegram.ui.Components.cy;
 import org.telegram.ui.Components.kz;
-import org.telegram.ui.Components.rv;
 import org.telegram.ui.Components.sv;
-import org.telegram.ui.Components.wl0;
+import org.telegram.ui.Components.tv;
+import org.telegram.ui.Components.vl0;
 import org.telegram.ui.Components.wx;
-import org.telegram.ui.gi0;
-import org.telegram.ui.sj0;
+import org.telegram.ui.hi0;
+import org.telegram.ui.uj0;
 import org.telegram.ui.wp0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class r1 extends s4.n0 {
     public final /* synthetic */ int a;
@@ -49,7 +49,7 @@ public final class r1 extends s4.n0 {
                         rect.right = AndroidUtilities.dp(24.0f);
                         break;
                     } else {
-                        rect.right = wh.B(58.0f, h, tVar.getWidth() - AndroidUtilities.dp(36.0f)) / (h - 1);
+                        rect.right = rk.B(58.0f, h, tVar.getWidth() - AndroidUtilities.dp(36.0f)) / (h - 1);
                         break;
                     }
                 } else {
@@ -57,8 +57,8 @@ public final class r1 extends s4.n0 {
                     break;
                 }
             case 2:
-                v vVar = ((sv) this.b).h;
-                if (!(view instanceof rv)) {
+                v vVar = ((tv) this.b).h;
+                if (!(view instanceof sv)) {
                     vVar.getClass();
                     if (RecyclerView.S(view) == 1) {
                         rect.top = AndroidUtilities.dp(14.0f);
@@ -73,9 +73,9 @@ public final class r1 extends s4.n0 {
             case 3:
                 kz kzVar = (kz) this.b;
                 wx wxVar = kzVar.P;
-                if (!(view instanceof org.telegram.ui.Cells.o8)) {
-                    if (!(view instanceof wl0) && !(view instanceof cy)) {
-                        if (view instanceof org.telegram.ui.Components.w9) {
+                if (!(view instanceof org.telegram.ui.Cells.p8)) {
+                    if (!(view instanceof vl0) && !(view instanceof cy)) {
+                        if (view instanceof org.telegram.ui.Components.v9) {
                             rect.bottom = AndroidUtilities.dp(12.0f);
                             break;
                         }
@@ -106,7 +106,7 @@ public final class r1 extends s4.n0 {
                 break;
             case 5:
                 recyclerView.getClass();
-                if (RecyclerView.S(view) == ((gi0) this.b).c.size() - 1) {
+                if (RecyclerView.S(view) == ((hi0) this.b).c.size() - 1) {
                     rect.bottom = AndroidUtilities.dp(4.0f);
                     break;
                 }
@@ -115,9 +115,9 @@ public final class r1 extends s4.n0 {
                 super.a(rect, view, recyclerView, z0Var);
                 recyclerView.getClass();
                 int S = RecyclerView.S(view);
-                sj0 sj0Var = (sj0) this.b;
-                if (S == sj0Var.c0.size()) {
-                    rect.bottom = sj0Var.l0;
+                uj0 uj0Var = (uj0) this.b;
+                if (S == uj0Var.c0.size()) {
+                    rect.bottom = uj0Var.l0;
                     break;
                 }
                 break;

@@ -1,59 +1,77 @@
 package org.telegram.ui;
 
-import android.content.ComponentName;
-import android.content.Context;
-import org.telegram.messenger.R;
+import android.view.Window;
+import java.lang.ref.WeakReference;
 
-/* JADX WARN: Enum visitor error
-jadx.core.utils.exceptions.JadxRuntimeException: Init of enum field 'h' uses external variables
-	at jadx.core.dex.visitors.EnumVisitor.createEnumFieldByConstructor(EnumVisitor.java:451)
-	at jadx.core.dex.visitors.EnumVisitor.processEnumFieldByRegister(EnumVisitor.java:395)
-	at jadx.core.dex.visitors.EnumVisitor.extractEnumFieldsFromFilledArray(EnumVisitor.java:324)
-	at jadx.core.dex.visitors.EnumVisitor.extractEnumFieldsFromInsn(EnumVisitor.java:262)
-	at jadx.core.dex.visitors.EnumVisitor.convertToEnum(EnumVisitor.java:151)
-	at jadx.core.dex.visitors.EnumVisitor.visit(EnumVisitor.java:100)
- */
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class mb0 {
-    public static final mb0 h;
-    public static final /* synthetic */ mb0[] n;
-    public final String a;
-    public final int b;
-    public final int c;
-    public final int d;
-    public final boolean e;
-    public ComponentName f;
+public final class mb0 implements yf.k0 {
+    public final /* synthetic */ int a = 0;
+    public boolean b;
+    public boolean c;
+    public final Object d;
 
-    static {
-        int i10 = R.drawable.icon_background_sa;
-        int i11 = R.mipmap.icon_foreground_sa;
-        mb0 mb0Var = new mb0("DEFAULT", 0, "DefaultIcon", i10, i11, R.string.AppIconDefault, false);
-        h = mb0Var;
-        n = new mb0[]{mb0Var, new mb0("VINTAGE", 1, "VintageIcon", R.drawable.icon_6_background_sa, R.mipmap.icon_6_foreground_sa, R.string.AppIconVintage, false), new mb0("AQUA", 2, "AquaIcon", R.drawable.icon_4_background_sa, i11, R.string.AppIconAqua, false), new mb0("PREMIUM", 3, "PremiumIcon", R.drawable.icon_3_background_sa, R.mipmap.icon_3_foreground_sa, R.string.AppIconPremium, true), new mb0("TURBO", 4, "TurboIcon", R.drawable.icon_5_background_sa, R.mipmap.icon_5_foreground_sa, R.string.AppIconTurbo, true), new mb0("NOX", 5, "NoxIcon", R.mipmap.icon_2_background_sa, i11, R.string.AppIconNox, true)};
+    public mb0(yf.l0 l0Var) {
+        this.d = l0Var;
     }
 
-    public mb0(String str, int i10, String str2, int i11, int i12, int i13, boolean z10) {
-        this.a = str2;
-        this.b = i11;
-        this.c = i12;
-        this.d = i13;
-        this.e = z10;
-    }
-
-    public static mb0 valueOf(String str) {
-        return (mb0) Enum.valueOf(mb0.class, str);
-    }
-
-    public static mb0[] values() {
-        return (mb0[]) n.clone();
-    }
-
-    public final ComponentName a(Context context) {
-        if (this.f == null) {
-            this.f = new ComponentName(context.getPackageName(), "org.telegram.messenger." + this.a);
+    @Override // yf.k0
+    public final void a(boolean z10) {
+        switch (this.a) {
+            case 0:
+                if (this.b != z10 && !this.c) {
+                    this.b = z10;
+                    LaunchActivity launchActivity = (LaunchActivity) ((WeakReference) this.d).get();
+                    if (launchActivity != null) {
+                        int i10 = launchActivity.A1 + (z10 ? 1 : -1);
+                        launchActivity.A1 = i10;
+                        j0 j0Var = launchActivity.w0;
+                        if (j0Var != null) {
+                            j0Var.setVisibility(i10 > 0 ? 8 : 0);
+                        }
+                        launchActivity.getWindow();
+                        break;
+                    }
+                }
+                break;
+            default:
+                yf.l0 l0Var = (yf.l0) this.d;
+                if (this.b != z10 && !this.c) {
+                    this.b = z10;
+                    if (z10) {
+                        l0Var.a++;
+                    } else {
+                        l0Var.a--;
+                    }
+                    boolean z11 = l0Var.a > 0;
+                    if (l0Var.b != z11) {
+                        l0Var.b = z11;
+                        Window window = (Window) ((WeakReference) l0Var.c.b).get();
+                        if (window != null) {
+                            window.getDecorView().setVisibility(z11 ? 8 : 0);
+                            break;
+                        }
+                    }
+                }
+                break;
         }
-        return this.f;
+    }
+
+    @Override // yf.k0
+    public final void destroy() {
+        switch (this.a) {
+            case 0:
+                a(false);
+                this.c = true;
+                break;
+            default:
+                a(false);
+                this.c = true;
+                break;
+        }
+    }
+
+    public mb0(LaunchActivity launchActivity, boolean z10) {
+        this.d = new WeakReference(launchActivity);
     }
 }

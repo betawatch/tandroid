@@ -4,7 +4,7 @@ import android.os.Handler;
 import e2.d0;
 import i2.g0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class d implements m {
     public final k a;
@@ -21,6 +21,6 @@ public final class d implements m {
     public final void release() {
         Handler handler = this.d.J;
         handler.getClass();
-        d0.U(handler, new g0(this, 12));
+        d0.U(handler, new g0(this, 13));
     }
 }

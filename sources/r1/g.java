@@ -27,9 +27,9 @@ import java.util.Map;
 import java.util.regex.Pattern;
 import java.util.zip.CRC32;
 import org.chromium.support_lib_boundary.WebViewProviderFactoryBoundaryInterface;
-import w7.z6;
+import w7.a7;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class g {
     public static final String[] E;
@@ -829,7 +829,7 @@ public final class g {
                 if (Arrays.equals(bArr2, y)) {
                     byte[] bArr3 = new byte[readInt];
                     if (bVar.read(bArr3) != readInt) {
-                        throw new IOException("Failed to read given length for given PNG chunk type: " + z6.a(bArr2));
+                        throw new IOException("Failed to read given length for given PNG chunk type: " + a7.a(bArr2));
                     }
                     int readInt2 = bVar.readInt();
                     CRC32 crc32 = new CRC32();
@@ -966,7 +966,7 @@ public final class g {
                         x(new b(bArr3));
                         return;
                     } else {
-                        throw new IOException("Failed to read given length for given PNG chunk type: " + z6.a(bArr2));
+                        throw new IOException("Failed to read given length for given PNG chunk type: " + a7.a(bArr2));
                     }
                 }
                 if (readInt2 % 2 == 1) {
@@ -1176,9 +1176,9 @@ public final class g {
             if (i10 >= hashMapArr.length) {
                 return;
             }
-            StringBuilder j3 = k0.j(i10, "The size of tag group[", "]: ");
-            j3.append(hashMapArr[i10].size());
-            Log.d("ExifInterface", j3.toString());
+            StringBuilder k10 = k0.k(i10, "The size of tag group[", "]: ");
+            k10.append(hashMapArr[i10].size());
+            Log.d("ExifInterface", k10.toString());
             for (Map.Entry entry : hashMapArr[i10].entrySet()) {
                 c cVar = (c) entry.getValue();
                 Log.d("ExifInterface", "tagName: " + ((String) entry.getKey()) + ", tagType: " + cVar.toString() + ", tagValue: '" + cVar.f(this.g) + "'");
@@ -1487,8 +1487,8 @@ public final class g {
                 if (cVar4 == null || cVar5 == null) {
                     return;
                 }
-                long[] b10 = z6.b(cVar4.g(this.g));
-                long[] b11 = z6.b(cVar5.g(this.g));
+                long[] b10 = a7.b(cVar4.g(this.g));
+                long[] b11 = a7.b(cVar5.g(this.g));
                 if (b10 == null || b10.length == 0) {
                     Log.w("ExifInterface", "stripOffsets should not be null or have zero length.");
                     return;

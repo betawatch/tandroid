@@ -10,19 +10,19 @@ import android.widget.TextView;
 import com.google.android.gms.internal.vision.e2;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.rk;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.ActionBar.z5;
-import org.telegram.ui.Components.zb0;
+import org.telegram.ui.Components.yb0;
 import w7.y5;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class j extends LinearLayout implements z5 {
-    public final e6 a;
-    public final zb0 b;
+    public final f6 a;
+    public final yb0 b;
     public final FrameLayout c;
     public final ImageView d;
     public final TextView e;
@@ -30,25 +30,25 @@ public final class j extends LinearLayout implements z5 {
     public final boolean h;
     public boolean n;
 
-    public j(Context context, e6 e6Var, boolean z10) {
+    public j(Context context, f6 f6Var, boolean z10) {
         super(context);
-        this.a = e6Var;
+        this.a = f6Var;
         this.h = z10;
         setOrientation(0);
         FrameLayout frameLayout = new FrameLayout(context);
         this.c = frameLayout;
-        zb0 zb0Var = new zb0(1);
-        this.b = zb0Var;
-        frameLayout.setBackground(zb0Var);
+        yb0 yb0Var = new yb0(1);
+        this.b = yb0Var;
+        frameLayout.setBackground(yb0Var);
         ImageView imageView = new ImageView(context);
         this.d = imageView;
         imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
         frameLayout.addView(imageView, y5.e(24, 24, 17));
-        LinearLayout e = wh.e(context, 1);
+        LinearLayout f7 = rk.f(context, 1);
         TextView textView = new TextView(context);
         this.e = textView;
         textView.setTextSize(1, 16.0f);
-        TextView h = e2.h(e, textView, y5.k(0.0f, 0.0f, 0.0f, 0.0f, -1, -2), context);
+        TextView h = e2.h(f7, textView, y5.k(0.0f, 0.0f, 0.0f, 0.0f, -1, -2), context);
         this.f = h;
         h.setGravity(17);
         h.setMinWidth(AndroidUtilities.dp(20.66f));
@@ -56,11 +56,11 @@ public final class j extends LinearLayout implements z5 {
         h.setTextSize(1, 16.0f);
         if (LocaleController.isRTL) {
             addView(h, y5.j(13.33f, 0.0f));
-            addView(e, y5.p(0, -2, 1.0f, 23, 20, 0, z10 ? 12 : 16, 0));
+            addView(f7, y5.p(0, -2, 1.0f, 23, 20, 0, z10 ? 12 : 16, 0));
             addView(frameLayout, y5.t(28, 28, 21, 0, 0, z10 ? 9 : 14, 0));
         } else {
             addView(frameLayout, y5.t(28, 28, 19, z10 ? 9 : 14, 0, 0, 0));
-            addView(e, y5.p(0, -2, 1.0f, 23, z10 ? 12 : 16, 0, 20, 0));
+            addView(f7, y5.p(0, -2, 1.0f, 23, z10 ? 12 : 16, 0, 20, 0));
             addView(h, y5.j(0.0f, 13.33f));
         }
         e();
@@ -80,13 +80,13 @@ public final class j extends LinearLayout implements z5 {
     @Override // org.telegram.ui.ActionBar.z5
     public final void e() {
         int i10 = j6.G6;
-        e6 e6Var = this.a;
-        this.e.setTextColor(j6.v0(i10, e6Var));
-        int v02 = j6.v0(this.n ? j6.W8 : j6.n6, e6Var);
+        f6 f6Var = this.a;
+        this.e.setTextColor(j6.v0(i10, f6Var));
+        int v02 = j6.v0(this.n ? j6.W8 : j6.n6, f6Var);
         TextView textView = this.f;
         textView.setTextColor(v02);
-        textView.setBackground(this.n ? j6.b0(AndroidUtilities.dp(10.33f), j6.v0(j6.U8, e6Var)) : null);
-        this.b.b = e6Var != null ? e6Var.a() : j6.I.q();
+        textView.setBackground(this.n ? j6.b0(AndroidUtilities.dp(10.33f), j6.v0(j6.U8, f6Var)) : null);
+        this.b.b = f6Var != null ? f6Var.a() : j6.I.q();
     }
 
     public /* bridge */ /* synthetic */ int[] getColorKeys() {
@@ -110,9 +110,9 @@ public final class j extends LinearLayout implements z5 {
             textView.setTextSize(1, f7);
             textView.setTypeface(z10 ? AndroidUtilities.bold() : null);
             int i10 = z10 ? j6.W8 : j6.n6;
-            e6 e6Var = this.a;
-            textView.setTextColor(j6.v0(i10, e6Var));
-            textView.setBackground(z10 ? j6.b0(AndroidUtilities.dp(10.33f), j6.v0(j6.U8, e6Var)) : null);
+            f6 f6Var = this.a;
+            textView.setTextColor(j6.v0(i10, f6Var));
+            textView.setBackground(z10 ? j6.b0(AndroidUtilities.dp(10.33f), j6.v0(j6.U8, f6Var)) : null);
         }
     }
 

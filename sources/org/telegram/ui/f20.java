@@ -8,12 +8,12 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class f20 extends FrameLayout {
     public TextView a;
     public TextView b;
-    public org.telegram.ui.Components.ii0 c;
+    public org.telegram.ui.Components.hi0 c;
     public boolean d;
     public TLRPC.TL_dialogFilterSuggested e;
 
@@ -41,9 +41,9 @@ public final class f20 extends FrameLayout {
         setMeasuredDimension(View.MeasureSpec.getSize(i10), AndroidUtilities.dp(64.0f));
         measureChildWithMargins(this.c, i10, 0, i11, 0);
         TextView textView = this.a;
-        org.telegram.ui.Components.ii0 ii0Var = this.c;
-        measureChildWithMargins(textView, i10, ii0Var.getMeasuredWidth(), i11, 0);
-        measureChildWithMargins(this.b, i10, ii0Var.getMeasuredWidth(), i11, 0);
+        org.telegram.ui.Components.hi0 hi0Var = this.c;
+        measureChildWithMargins(textView, i10, hi0Var.getMeasuredWidth(), i11, 0);
+        measureChildWithMargins(this.b, i10, hi0Var.getMeasuredWidth(), i11, 0);
     }
 
     public void setAddOnClickListener(View.OnClickListener onClickListener) {

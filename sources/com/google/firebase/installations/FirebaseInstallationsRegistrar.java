@@ -10,23 +10,23 @@ import k2.v;
 import k9.h;
 import m9.a;
 import na.e;
-import org.telegram.ui.wk0;
 import q9.b;
 import q9.j;
-import q9.r;
+import q9.p;
+import q9.s;
 import qa.c;
 import qa.d;
 import r9.i;
-import w7.p8;
+import w7.q8;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public class FirebaseInstallationsRegistrar implements ComponentRegistrar {
     private static final String LIBRARY_NAME = "fire-installations";
 
     /* JADX INFO: Access modifiers changed from: private */
     public static d lambda$getComponents$0(b bVar) {
-        return new c((h) bVar.a(h.class), bVar.c(e.class), (ExecutorService) bVar.i(new r(a.class, ExecutorService.class)), new i((Executor) bVar.i(new r(m9.b.class, Executor.class))));
+        return new c((h) bVar.a(h.class), bVar.c(e.class), (ExecutorService) bVar.i(new s(a.class, ExecutorService.class)), new i((Executor) bVar.i(new s(m9.b.class, Executor.class))));
     }
 
     @Override // com.google.firebase.components.ComponentRegistrar
@@ -35,14 +35,14 @@ public class FirebaseInstallationsRegistrar implements ComponentRegistrar {
         a2.d = LIBRARY_NAME;
         a2.a(j.a(h.class));
         a2.a(new j(0, 1, e.class));
-        a2.a(new j(new r(a.class, ExecutorService.class), 1, 0));
-        a2.a(new j(new r(m9.b.class, Executor.class), 1, 0));
-        a2.f = new wk0(25);
+        a2.a(new j(new s(a.class, ExecutorService.class), 1, 0));
+        a2.a(new j(new s(m9.b.class, Executor.class), 1, 0));
+        a2.f = new p(1);
         q9.a b10 = a2.b();
         na.d dVar = new na.d(0);
         i0 a10 = q9.a.a(na.d.class);
         a10.b = 1;
         a10.f = new v(dVar, 18);
-        return Arrays.asList(b10, a10.b(), p8.a(LIBRARY_NAME, "17.2.0"));
+        return Arrays.asList(b10, a10.b(), q8.a(LIBRARY_NAME, "17.2.0"));
     }
 }

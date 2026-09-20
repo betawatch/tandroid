@@ -8,7 +8,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class vv implements DialogInterface.OnClickListener {
     public final /* synthetic */ int a;
@@ -49,16 +49,16 @@ public final /* synthetic */ class vv implements DialogInterface.OnClickListener
                 }
                 break;
             case 1:
-                wg0 wg0Var = (wg0) this.b;
+                xg0 xg0Var = (xg0) this.b;
                 if (i10 != 0) {
-                    ProfileActivity.H4(wg0Var.V.getParentActivity(), false);
+                    ProfileActivity.H4(xg0Var.V.getParentActivity(), false);
                     break;
                 } else {
                     BuildVars.LOGS_ENABLED = !BuildVars.LOGS_ENABLED;
                     ApplicationLoader.applicationContext.getSharedPreferences("systemConfig", 0).edit().putBoolean("logsEnabled", BuildVars.LOGS_ENABLED).commit();
-                    org.telegram.ui.Components.xc.a0(wg0Var.V).Q(R.raw.chats_infotip, 36, BuildVars.LOGS_ENABLED ? "Logs enabled." : "Logs disabled.").j();
+                    org.telegram.ui.Components.xc.a0(xg0Var.V).Q(R.raw.chats_infotip, 36, BuildVars.LOGS_ENABLED ? "Logs enabled." : "Logs disabled.").j();
                     if (BuildVars.LOGS_ENABLED) {
-                        org.telegram.messenger.q.s(new StringBuilder("app start time = "), ApplicationLoader.startTime);
+                        hg.k0.u(new StringBuilder("app start time = "), ApplicationLoader.startTime);
                         try {
                             FileLog.d("buildVersion = " + ApplicationLoader.applicationContext.getPackageManager().getPackageInfo(ApplicationLoader.applicationContext.getPackageName(), 0).versionCode);
                             break;
@@ -86,7 +86,7 @@ public final /* synthetic */ class vv implements DialogInterface.OnClickListener
                     break;
                 }
             default:
-                f91.d0((f91) this.b, i10);
+                i91.d0((i91) this.b, i10);
                 break;
         }
     }

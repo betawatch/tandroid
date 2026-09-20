@@ -20,16 +20,16 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_payments;
-import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.Components.dk;
-import org.telegram.ui.Components.l90;
+import org.telegram.ui.Components.k90;
 import org.telegram.ui.Components.nk;
 import org.telegram.ui.Components.ok;
 import org.telegram.ui.Components.t00;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class t3 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -46,7 +46,7 @@ public final /* synthetic */ class t3 implements Runnable {
     public final /* synthetic */ Object w;
     public final /* synthetic */ Object x;
 
-    public /* synthetic */ t3(ci.d dVar, TLObject tLObject, int i10, long j3, org.telegram.ui.ActionBar.f3 f3Var, TL_payments.starRefProgram starrefprogram, long j10, boolean z10, Context context, e6 e6Var, TLRPC.User user, TLRPC.TL_error tL_error) {
+    public /* synthetic */ t3(ci.d dVar, TLObject tLObject, int i10, long j3, org.telegram.ui.ActionBar.f3 f3Var, TL_payments.starRefProgram starrefprogram, long j10, boolean z10, Context context, f6 f6Var, TLRPC.User user, TLRPC.TL_error tL_error) {
         this.n = dVar;
         this.d = tLObject;
         this.b = i10;
@@ -56,7 +56,7 @@ public final /* synthetic */ class t3 implements Runnable {
         this.h = j10;
         this.e = z10;
         this.v = context;
-        this.w = e6Var;
+        this.w = f6Var;
         this.x = user;
         this.c = tL_error;
     }
@@ -102,12 +102,12 @@ public final /* synthetic */ class t3 implements Runnable {
                 org.telegram.ui.ActionBar.f3 f3Var = (org.telegram.ui.ActionBar.f3) obj5;
                 TL_payments.starRefProgram starrefprogram = (TL_payments.starRefProgram) obj4;
                 Context context = (Context) obj3;
-                e6 e6Var = (e6) obj2;
+                f6 f6Var = (f6) obj2;
                 TLRPC.User user = (TLRPC.User) obj;
                 ((ci.d) obj6).setLoading(false);
                 if (!(tLObject instanceof TL_payments.connectedStarRefBots)) {
                     if (tL_error != null) {
-                        org.telegram.ui.Cells.c1.p(f3Var.topBulletinContainer, e6Var, tL_error, false);
+                        org.telegram.ui.Cells.c1.s(f3Var.topBulletinContainer, f6Var, tL_error, false);
                         break;
                     }
                 } else {
@@ -165,7 +165,7 @@ public final /* synthetic */ class t3 implements Runnable {
                                 }
                             }
                         }
-                        new xc(e4.H0(context, i12, connectedbotstarref, j10, e6Var).topBulletinContainer, e6Var).V(Arrays.asList(user), LocaleController.getString(R.string.AffiliateProgramJoinedTitle), LocaleController.getString(R.string.AffiliateProgramJoinedText), null).j();
+                        new xc(e4.H0(context, i12, connectedbotstarref, j10, f6Var).topBulletinContainer, f6Var).V(Arrays.asList(user), LocaleController.getString(R.string.AffiliateProgramJoinedTitle), LocaleController.getString(R.string.AffiliateProgramJoinedText), null).j();
                         break;
                     }
                 }
@@ -190,7 +190,7 @@ public final /* synthetic */ class t3 implements Runnable {
                     if (tL_error == null) {
                         dk dkVar = okVar.r;
                         d7Var.e(false, true);
-                        l90 l90Var = d7Var.e;
+                        k90 k90Var = d7Var.e;
                         vh.o oVar = d7Var.d;
                         TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject;
                         nkVar.G = messages_messages.next_rate;
@@ -232,12 +232,12 @@ public final /* synthetic */ class t3 implements Runnable {
                         if (arrayList9.isEmpty()) {
                             if (TextUtils.isEmpty(nkVar.K) && this.f == 0 && j3 == 0) {
                                 oVar.setText(LocaleController.getString(R.string.SearchEmptyViewTitle));
-                                l90Var.setVisibility(0);
-                                l90Var.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitleFiles));
+                                k90Var.setVisibility(0);
+                                k90Var.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitleFiles));
                             } else {
                                 oVar.setText(LocaleController.getString(R.string.SearchEmptyViewTitle2));
-                                l90Var.setVisibility(0);
-                                l90Var.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitle2));
+                                k90Var.setVisibility(0);
+                                k90Var.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitle2));
                             }
                         }
                         if (!z10) {
@@ -285,10 +285,10 @@ public final /* synthetic */ class t3 implements Runnable {
                         }
                     } else {
                         vh.o oVar2 = d7Var.d;
-                        l90 l90Var2 = d7Var.e;
+                        k90 k90Var2 = d7Var.e;
                         oVar2.setText(LocaleController.getString(R.string.SearchEmptyViewTitle2));
-                        l90Var2.setVisibility(0);
-                        l90Var2.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitle2));
+                        k90Var2.setVisibility(0);
+                        k90Var2.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitle2));
                         d7Var.e(false, true);
                         break;
                     }

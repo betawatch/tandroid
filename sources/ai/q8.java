@@ -4,19 +4,19 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ua0;
+import org.telegram.ui.va0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class q8 implements RequestDelegate {
     public final /* synthetic */ long a;
-    public final /* synthetic */ ua0 b;
+    public final /* synthetic */ va0 b;
     public final /* synthetic */ l9 c;
 
-    public q8(l9 l9Var, long j3, ua0 ua0Var) {
+    public q8(l9 l9Var, long j3, va0 va0Var) {
         this.c = l9Var;
         this.a = j3;
-        this.b = ua0Var;
+        this.b = va0Var;
     }
 
     @Override // org.telegram.tgnet.RequestDelegate

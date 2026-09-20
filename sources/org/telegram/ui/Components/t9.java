@@ -1,42 +1,7 @@
 package org.telegram.ui.Components;
 
-import android.graphics.drawable.GradientDrawable;
-
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public abstract /* synthetic */ class t9 {
-    public static final /* synthetic */ int[] a;
-
-    static {
-        int[] iArr = new int[GradientDrawable.Orientation.values().length];
-        a = iArr;
-        try {
-            iArr[GradientDrawable.Orientation.TOP_BOTTOM.ordinal()] = 1;
-        } catch (NoSuchFieldError unused) {
-        }
-        try {
-            a[GradientDrawable.Orientation.TR_BL.ordinal()] = 2;
-        } catch (NoSuchFieldError unused2) {
-        }
-        try {
-            a[GradientDrawable.Orientation.RIGHT_LEFT.ordinal()] = 3;
-        } catch (NoSuchFieldError unused3) {
-        }
-        try {
-            a[GradientDrawable.Orientation.BR_TL.ordinal()] = 4;
-        } catch (NoSuchFieldError unused4) {
-        }
-        try {
-            a[GradientDrawable.Orientation.BOTTOM_TOP.ordinal()] = 5;
-        } catch (NoSuchFieldError unused5) {
-        }
-        try {
-            a[GradientDrawable.Orientation.BL_TR.ordinal()] = 6;
-        } catch (NoSuchFieldError unused6) {
-        }
-        try {
-            a[GradientDrawable.Orientation.LEFT_RIGHT.ordinal()] = 7;
-        } catch (NoSuchFieldError unused7) {
-        }
-    }
+public interface t9 {
+    void dispose();
 }

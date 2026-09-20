@@ -10,9 +10,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class bs implements MessagesStorage.LongCallback, ll0 {
+public final /* synthetic */ class bs implements MessagesStorage.LongCallback, kl0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ fs b;
 
@@ -21,11 +21,11 @@ public final /* synthetic */ class bs implements MessagesStorage.LongCallback, l
         this.b = fsVar;
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.kl0
     public void c(float f7, float f10, int i10, View view) {
         boolean z10;
         fs fsVar = this.b;
-        x51 G = fsVar.X.G(i10 - 1);
+        w51 G = fsVar.X.G(i10 - 1);
         if (G == null) {
             return;
         }
@@ -38,7 +38,7 @@ public final /* synthetic */ class bs implements MessagesStorage.LongCallback, l
         if (i11 == 103) {
             boolean z11 = !fsVar.p0;
             fsVar.p0 = z11;
-            ((org.telegram.ui.Cells.v8) view).setChecked(z11);
+            ((org.telegram.ui.Cells.w8) view).setChecked(z11);
             return;
         }
         int i12 = G.a;
@@ -193,7 +193,7 @@ public final /* synthetic */ class bs implements MessagesStorage.LongCallback, l
                                 if (i15 >= fsVar.X.x.size()) {
                                     break;
                                 }
-                                x51 G2 = fsVar.X.G(i15);
+                                w51 G2 = fsVar.X.G(i15);
                                 if (G2.a == 39 && G2.d == 0) {
                                     s4.c1 L = fsVar.d.L(i15 + 1);
                                     if (L != null) {
@@ -232,8 +232,8 @@ public final /* synthetic */ class bs implements MessagesStorage.LongCallback, l
         }
     }
 
-    @Override // org.telegram.ui.Components.ll0
-    public /* synthetic */ boolean d1(View view) {
+    @Override // org.telegram.ui.Components.kl0
+    public /* synthetic */ boolean c1(View view) {
         return false;
     }
 
@@ -261,7 +261,7 @@ public final /* synthetic */ class bs implements MessagesStorage.LongCallback, l
         }
     }
 
-    @Override // org.telegram.ui.Components.ll0
-    public /* synthetic */ void r0(View view, float f7, float f10) {
+    @Override // org.telegram.ui.Components.kl0
+    public /* synthetic */ void q0(View view, float f7, float f10) {
     }
 }

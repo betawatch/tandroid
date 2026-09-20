@@ -4,10 +4,10 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BillingController;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.m80;
-import org.telegram.ui.ja0;
+import org.telegram.ui.Components.l80;
+import org.telegram.ui.ka0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class l5 implements q0.a {
     public final /* synthetic */ int a;
@@ -55,23 +55,23 @@ public final /* synthetic */ class l5 implements q0.a {
                 c5.h hVar2 = (c5.h) this.b;
                 tg.v vVar = (tg.v) this.c;
                 if (hVar2.a == 0) {
-                    AndroidUtilities.runOnUIThread(new rg.w1(vVar, 6));
+                    AndroidUtilities.runOnUIThread(new rg.q1(vVar, 7));
                     break;
                 }
                 break;
             case 4:
                 c5.h hVar3 = (c5.h) this.b;
-                m80 m80Var = (m80) this.c;
+                l80 l80Var = (l80) this.c;
                 int i10 = hVar3.a;
                 boolean z10 = i10 == 0;
-                AndroidUtilities.runOnUIThread(new ja0(m80Var, z10, z10 ? null : BillingController.getResponseCodeString(i10), 14));
+                AndroidUtilities.runOnUIThread(new ka0(l80Var, z10, z10 ? null : BillingController.getResponseCodeString(i10), 14));
                 break;
             default:
                 c5.h hVar4 = (c5.h) this.b;
                 ai.m0 m0Var = (ai.m0) this.c;
                 int i11 = hVar4.a;
                 boolean z11 = i11 == 0;
-                AndroidUtilities.runOnUIThread(new ja0(m0Var, z11, z11 ? null : BillingController.getResponseCodeString(i11), 15));
+                AndroidUtilities.runOnUIThread(new ka0(m0Var, z11, z11 ? null : BillingController.getResponseCodeString(i11), 15));
                 break;
         }
     }

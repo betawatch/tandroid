@@ -16,7 +16,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class rn extends org.telegram.ui.ActionBar.g5 {
     public float f;
@@ -329,7 +329,7 @@ public final class rn extends org.telegram.ui.ActionBar.g5 {
         int i11;
         int i12;
         int i13;
-        org.telegram.ui.ActionBar.e6 e6Var;
+        org.telegram.ui.ActionBar.f6 f6Var;
         zn znVar = this.h;
         boolean z10 = false;
         znVar.Fc(0, 0, -1);
@@ -350,8 +350,8 @@ public final class rn extends org.telegram.ui.ActionBar.g5 {
             znVar.M7();
             if (znVar.t3.contains("@")) {
                 String str = znVar.t3;
-                e6Var = ((org.telegram.ui.ActionBar.n2) znVar).resourceProvider;
-                znVar.presentFragment(new org.telegram.ui.Components.b40(str, e6Var));
+                f6Var = ((org.telegram.ui.ActionBar.n2) znVar).resourceProvider;
+                znVar.presentFragment(new org.telegram.ui.Components.b40(str, f6Var));
                 return;
             }
             if (znVar.u3 == null) {

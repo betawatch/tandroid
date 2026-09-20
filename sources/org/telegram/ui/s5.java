@@ -11,7 +11,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class s5 extends FrameLayout {
     public final /* synthetic */ v5 a;
@@ -37,7 +37,7 @@ public final class s5 extends FrameLayout {
 
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                org.telegram.ui.ActionBar.e6 e6Var;
+                org.telegram.ui.ActionBar.f6 f6Var;
                 int i11 = i10;
                 s5 s5Var = this.b;
                 switch (i11) {
@@ -61,8 +61,8 @@ public final class s5 extends FrameLayout {
                         v5 v5Var3 = s5Var.a;
                         v5Var3.w0(true);
                         long j10 = v5Var3.P;
-                        e6Var = ((org.telegram.ui.ActionBar.n2) v5Var3).resourceProvider;
-                        tg.m.m(v5Var3, e6Var, j10, null);
+                        f6Var = ((org.telegram.ui.ActionBar.n2) v5Var3).resourceProvider;
+                        tg.m.m(v5Var3, f6Var, j10, null);
                         tg.m.e.setOnHideListener(new r5(s5Var, 0));
                         break;
                     default:
@@ -85,7 +85,7 @@ public final class s5 extends FrameLayout {
 
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                org.telegram.ui.ActionBar.e6 e6Var;
+                org.telegram.ui.ActionBar.f6 f6Var;
                 int i112 = i11;
                 s5 s5Var = this.b;
                 switch (i112) {
@@ -109,8 +109,8 @@ public final class s5 extends FrameLayout {
                         v5 v5Var3 = s5Var.a;
                         v5Var3.w0(true);
                         long j10 = v5Var3.P;
-                        e6Var = ((org.telegram.ui.ActionBar.n2) v5Var3).resourceProvider;
-                        tg.m.m(v5Var3, e6Var, j10, null);
+                        f6Var = ((org.telegram.ui.ActionBar.n2) v5Var3).resourceProvider;
+                        tg.m.m(v5Var3, f6Var, j10, null);
                         tg.m.e.setOnHideListener(new r5(s5Var, 0));
                         break;
                     default:
@@ -133,7 +133,7 @@ public final class s5 extends FrameLayout {
 
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                org.telegram.ui.ActionBar.e6 e6Var;
+                org.telegram.ui.ActionBar.f6 f6Var;
                 int i112 = i12;
                 s5 s5Var = this.b;
                 switch (i112) {
@@ -157,8 +157,8 @@ public final class s5 extends FrameLayout {
                         v5 v5Var3 = s5Var.a;
                         v5Var3.w0(true);
                         long j10 = v5Var3.P;
-                        e6Var = ((org.telegram.ui.ActionBar.n2) v5Var3).resourceProvider;
-                        tg.m.m(v5Var3, e6Var, j10, null);
+                        f6Var = ((org.telegram.ui.ActionBar.n2) v5Var3).resourceProvider;
+                        tg.m.m(v5Var3, f6Var, j10, null);
                         tg.m.e.setOnHideListener(new r5(s5Var, 0));
                         break;
                     default:

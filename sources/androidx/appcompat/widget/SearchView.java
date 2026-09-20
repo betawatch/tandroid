@@ -36,7 +36,7 @@ import ei.u2;
 import java.lang.reflect.Method;
 import java.util.WeakHashMap;
 import kd.f;
-import lf.i;
+import lf.h;
 import m.k0;
 import m.l;
 import m.q2;
@@ -54,7 +54,7 @@ import org.telegram.tgnet.TLObject;
 import r0.i0;
 import w7.p;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public class SearchView extends w1 implements k.b {
     public static final f w0;
@@ -99,7 +99,7 @@ public class SearchView extends w1 implements k.b {
     public final q2 u0;
     public final WeakHashMap v0;
 
-    /* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+    /* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
     public static class SearchAutoComplete extends l {
         public int e;
         public SearchView f;
@@ -882,7 +882,7 @@ public class SearchView extends w1 implements k.b {
         i2 i2Var = new i2(this, 4);
         int[] iArr = f.a.u;
         TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, iArr, i10, 0);
-        i iVar = new i(context, obtainStyledAttributes);
+        h hVar = new h(context, obtainStyledAttributes);
         i0.j(this, context, iArr, attributeSet, obtainStyledAttributes, i10);
         LayoutInflater.from(context).inflate(obtainStyledAttributes.getResourceId(9, R.layout.abc_search_view), (ViewGroup) this, true);
         SearchAutoComplete searchAutoComplete = (SearchAutoComplete) findViewById(R.id.search_src_text);
@@ -903,14 +903,14 @@ public class SearchView extends w1 implements k.b {
         this.M = imageView4;
         ImageView imageView5 = (ImageView) findViewById(R.id.search_mag_icon);
         this.T = imageView5;
-        findViewById.setBackground(iVar.F(10));
-        findViewById2.setBackground(iVar.F(14));
-        imageView.setImageDrawable(iVar.F(13));
-        imageView2.setImageDrawable(iVar.F(7));
-        imageView3.setImageDrawable(iVar.F(4));
-        imageView4.setImageDrawable(iVar.F(16));
-        imageView5.setImageDrawable(iVar.F(13));
-        this.U = iVar.F(12);
+        findViewById.setBackground(hVar.F(10));
+        findViewById2.setBackground(hVar.F(14));
+        imageView.setImageDrawable(hVar.F(13));
+        imageView2.setImageDrawable(hVar.F(7));
+        imageView3.setImageDrawable(hVar.F(4));
+        imageView4.setImageDrawable(hVar.F(16));
+        imageView5.setImageDrawable(hVar.F(13));
+        this.U = hVar.F(12);
         p.a(imageView, getResources().getString(R.string.abc_searchview_description_search));
         this.V = obtainStyledAttributes.getResourceId(15, R.layout.abc_search_dropdown_item_icons_2line);
         this.W = obtainStyledAttributes.getResourceId(5, 0);
@@ -941,7 +941,7 @@ public class SearchView extends w1 implements k.b {
             setInputType(i14);
         }
         setFocusable(obtainStyledAttributes.getBoolean(0, true));
-        iVar.R();
+        hVar.R();
         Intent intent = new Intent("android.speech.action.WEB_SEARCH");
         this.a0 = intent;
         intent.addFlags(TLObject.FLAG_28);

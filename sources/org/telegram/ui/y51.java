@@ -2,37 +2,26 @@ package org.telegram.ui;
 
 import android.content.Context;
 import android.view.View;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class y51 extends View {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Integer b;
+public final class y51 extends f71 {
+    public final /* synthetic */ View Q;
+    public final /* synthetic */ TL_stars.TL_starGiftUnique R;
+    public final /* synthetic */ z51 S;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ y51(Context context, Integer num, int i10) {
-        super(context);
-        this.a = i10;
-        this.b = num;
+    public y51(z51 z51Var, Context context, Runnable runnable, View view, s61 s61Var, org.telegram.ui.ActionBar.f6 f6Var, View view2, TL_stars.TL_starGiftUnique tL_starGiftUnique) {
+        super(z51Var.e, context, runnable, view, s61Var, f6Var);
+        this.S = z51Var;
+        this.Q = view2;
+        this.R = tL_starGiftUnique;
     }
 
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        switch (this.a) {
-            case 0:
-                super.onMeasure(i10, i11);
-                if (this.b != null) {
-                    setPivotX(r2.intValue());
-                    break;
-                }
-                break;
-            default:
-                super.onMeasure(i10, i11);
-                if (this.b != null) {
-                    setPivotX(r2.intValue());
-                    break;
-                }
-                break;
-        }
+    @Override // org.telegram.ui.f71, android.app.Dialog, android.content.DialogInterface
+    public final void dismiss() {
+        super.dismiss();
+        this.S.e.X0 = null;
     }
 }

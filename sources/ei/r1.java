@@ -10,10 +10,10 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.Components.RadioButton;
-import w7.c6;
+import w7.d6;
 import w7.y5;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class r1 extends FrameLayout {
     public final String a;
@@ -28,10 +28,10 @@ public final class r1 extends FrameLayout {
         radioButton.setSize(AndroidUtilities.dp(20.0f));
         radioButton.b(j6.w0(null, j6.D5, false), j6.w0(null, j6.E5, false));
         addView(radioButton, y5.d(22, 22.0f, 19, 20.0f, 0.0f, 0.0f, 0.0f));
-        TextView b10 = c6.b(context, 16.0f, j6.G6, true, null);
+        TextView b10 = d6.b(context, 16.0f, j6.G6, true, null);
         b10.setText(s1Var.c);
         addView(b10, y5.t(-1, -2, 7, 62, 9, 8, 0));
-        TextView b11 = c6.b(context, 14.0f, j6.y6, false, null);
+        TextView b11 = d6.b(context, 14.0f, j6.y6, false, null);
         b11.setText(LocaleController.formatString(R.string.BotRestoreStorageCreatedAt, LocaleController.formatString(R.string.formatDateAtTime, LocaleController.formatSmallDateChat(s1Var.d / 1000), LocaleController.getInstance().getFormatterDay().format(new Date(s1Var.d / 1000)))));
         addView(b11, y5.t(-1, -2, 7, 62, 32, 8, 0));
         this.c = z10;

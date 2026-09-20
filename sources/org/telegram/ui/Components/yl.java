@@ -2,17 +2,17 @@ package org.telegram.ui.Components;
 
 import android.content.Context;
 import android.view.accessibility.AccessibilityNodeInfo;
-import org.telegram.ui.vd1;
+import org.telegram.ui.xd1;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class yl extends org.telegram.ui.ActionBar.v0 {
     public final /* synthetic */ int v0;
     public final /* synthetic */ Object w0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ yl(ni niVar, Context context, org.telegram.ui.ActionBar.z zVar, org.telegram.ui.ActionBar.e6 e6Var, int i10) {
-        super(context, zVar, 0, 0, false, e6Var);
+    public /* synthetic */ yl(ni niVar, Context context, org.telegram.ui.ActionBar.z zVar, org.telegram.ui.ActionBar.f6 f6Var, int i10) {
+        super(context, zVar, 0, 0, false, f6Var);
         this.v0 = i10;
         this.w0 = niVar;
     }
@@ -30,15 +30,15 @@ public final class yl extends org.telegram.ui.ActionBar.v0 {
                 break;
             default:
                 super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                accessibilityNodeInfo.setText(((vd1) this.w0).h.getText());
+                accessibilityNodeInfo.setText(((xd1) this.w0).h.getText());
                 break;
         }
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public yl(vd1 vd1Var, Context context, org.telegram.ui.ActionBar.z zVar) {
+    public yl(xd1 xd1Var, Context context, org.telegram.ui.ActionBar.z zVar) {
         super(context, zVar, 0, 0);
         this.v0 = 2;
-        this.w0 = vd1Var;
+        this.w0 = xd1Var;
     }
 }

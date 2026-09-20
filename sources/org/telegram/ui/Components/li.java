@@ -18,9 +18,9 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class li extends bw0 {
+public final class li extends aw0 {
     public final ki A0;
     public final /* synthetic */ vi B0;
     public int w0;
@@ -36,7 +36,7 @@ public final class li extends bw0 {
         this.A0 = new ki(this, this);
     }
 
-    @Override // org.telegram.ui.Components.bw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.aw0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         int i10;
         int i11;
@@ -284,9 +284,9 @@ public final class li extends bw0 {
         ci.n6 n6Var = viVar.O0;
         ch.d dVar = viVar.A0;
         xh xhVar = viVar.i1;
-        y7 y7Var = viVar.X0;
+        x7 x7Var = viVar.X0;
         if (!(view instanceof ni) || view.getAlpha() <= 0.0f) {
-            if (view != y7Var) {
+            if (view != x7Var) {
                 if (!(view instanceof kz) || dVar == null) {
                     return super.drawChild(canvas, view, j3);
                 }
@@ -298,7 +298,7 @@ public final class li extends bw0 {
                 canvas.restore();
                 return drawChild2;
             }
-            float alpha2 = y7Var.getAlpha();
+            float alpha2 = x7Var.getAlpha();
             if (alpha2 <= 0.0f) {
                 return false;
             }
@@ -306,7 +306,7 @@ public final class li extends bw0 {
                 return super.drawChild(canvas, view, j3);
             }
             canvas.save();
-            float x10 = y7Var.getX();
+            float x10 = x7Var.getX();
             ni niVar2 = viVar.y0;
             if (niVar2 != null) {
                 int h = niVar2.h();
@@ -335,10 +335,10 @@ public final class li extends bw0 {
                                 dp = AndroidUtilities.dp(4.0f);
                             }
                             f10 = f14 - dp2;
-                            dp6 -= (int) (y7Var.getAlpha() * ((currentActionBarHeight - f10) + AndroidUtilities.statusBarHeight));
+                            dp6 -= (int) (x7Var.getAlpha() * ((currentActionBarHeight - f10) + AndroidUtilities.statusBarHeight));
                         }
                         f10 = f14 + dp;
-                        dp6 -= (int) (y7Var.getAlpha() * ((currentActionBarHeight - f10) + AndroidUtilities.statusBarHeight));
+                        dp6 -= (int) (x7Var.getAlpha() * ((currentActionBarHeight - f10) + AndroidUtilities.statusBarHeight));
                     }
                 }
                 if (!z10) {
@@ -348,7 +348,7 @@ public final class li extends bw0 {
             } else {
                 f7 = 0.0f;
             }
-            canvas.clipRect(x10, f7, y7Var.getX() + y7Var.getWidth(), y7Var.getY() + y7Var.getHeight());
+            canvas.clipRect(x10, f7, x7Var.getX() + x7Var.getWidth(), x7Var.getY() + x7Var.getHeight());
             boolean drawChild3 = super.drawChild(canvas, view, j3);
             canvas.restore();
             return drawChild3;
@@ -483,7 +483,7 @@ public final class li extends bw0 {
         return drawChild;
     }
 
-    @Override // org.telegram.ui.Components.bw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.aw0, android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         ki kiVar = this.A0;
@@ -494,7 +494,7 @@ public final class li extends bw0 {
         viVar.P0.setAdjustPanLayoutHelper(kiVar);
     }
 
-    @Override // org.telegram.ui.Components.bw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.aw0, android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         this.A0.d();
@@ -542,7 +542,7 @@ public final class li extends bw0 {
     /* JADX WARN: Removed duplicated region for block: B:77:0x012d  */
     /* JADX WARN: Removed duplicated region for block: B:84:0x0158  */
     /* JADX WARN: Removed duplicated region for block: B:88:0x0161  */
-    @Override // org.telegram.ui.Components.bw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.aw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -581,7 +581,7 @@ public final class li extends bw0 {
             viVar.k2.set(i10, i11, i12, i13);
             liVar.setSystemGestureExclusionRects(viVar.j2);
         }
-        r0.m1 f7 = r0.i0.f(liVar);
+        r0.l1 f7 = r0.i0.f(liVar);
         int i22 = 8;
         int i23 = f7 != null ? f7.a.f(8).d : 0;
         int paddingBottom = liVar.getPaddingBottom();
@@ -824,9 +824,9 @@ public final class li extends bw0 {
             } else {
                 o12 = viVar.o1();
             }
-            r0.m1 f7 = r0.i0.f(liVar);
+            r0.l1 f7 = r0.i0.f(liVar);
             int i19 = f7 != null ? f7.a.f(8).d : 0;
-            r0.m1 f10 = r0.i0.f(liVar);
+            r0.l1 f10 = r0.i0.f(liVar);
             Math.max(f10 != null ? f10.a.f(527).d : 0, o12);
             int max = Math.max(i19 > 0 ? 0 : AndroidUtilities.navigationBarHeight, o12);
             liVar.y0 = true;
@@ -965,7 +965,7 @@ public final class li extends bw0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.bw0
+    @Override // org.telegram.ui.Components.aw0
     public final void J(Canvas canvas, float f7, Rect rect, Paint paint, boolean z10) {
     }
 }

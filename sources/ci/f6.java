@@ -13,9 +13,9 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.ly;
-import org.telegram.ui.Components.t51;
+import org.telegram.ui.Components.s51;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class f6 implements ly {
     public final /* synthetic */ r6 a;
@@ -61,7 +61,7 @@ public final class f6 implements ly {
 
     @Override // org.telegram.ui.Components.ly
     public final boolean k() {
-        qg.b editText = ((qg.u2) this.a.J0).getEditText();
+        qg.b editText = ((qg.v2) this.a.J0).getEditText();
         if (editText == null || editText.length() == 0) {
             return false;
         }
@@ -71,17 +71,17 @@ public final class f6 implements ly {
 
     @Override // org.telegram.ui.Components.ly
     public final void l(String str) {
-        qg.u2 u2Var;
+        qg.v2 v2Var;
         qg.b editText;
         Emoji.EmojiSpan[] emojiSpanArr;
         qg.j jVar = this.a.J0;
-        if ((jVar instanceof qg.u2) && (editText = (u2Var = (qg.u2) jVar).getEditText()) != null) {
+        if ((jVar instanceof qg.v2) && (editText = (v2Var = (qg.v2) jVar).getEditText()) != null) {
             int selectionEnd = editText.getSelectionEnd();
             if (selectionEnd < 0) {
                 selectionEnd = 0;
             }
             try {
-                CharSequence replaceEmoji = Emoji.replaceEmoji(str, u2Var.getFontMetricsInt(), false);
+                CharSequence replaceEmoji = Emoji.replaceEmoji(str, v2Var.getFontMetricsInt(), false);
                 if ((replaceEmoji instanceof Spanned) && (emojiSpanArr = (Emoji.EmojiSpan[]) ((Spanned) replaceEmoji).getSpans(0, replaceEmoji.length(), Emoji.EmojiSpan.class)) != null) {
                     for (Emoji.EmojiSpan emojiSpan : emojiSpanArr) {
                         emojiSpan.scale = 0.85f;
@@ -105,7 +105,7 @@ public final class f6 implements ly {
         alertDialog$Builder.a.R = LocaleController.getString(R.string.ClearRecentEmojiTitle);
         alertDialog$Builder.a.T = LocaleController.getString(R.string.ClearRecentEmojiText);
         alertDialog$Builder.k(LocaleController.getString(R.string.ClearButton), new a1.c(this, 19));
-        hg.k0.o(R.string.Cancel, alertDialog$Builder, null);
+        hg.k0.p(R.string.Cancel, alertDialog$Builder, null);
     }
 
     @Override // org.telegram.ui.Components.ly
@@ -115,8 +115,8 @@ public final class f6 implements ly {
 
     @Override // org.telegram.ui.Components.ly
     public final void x(long j3, TLRPC.Document document, String str, boolean z10) {
-        org.telegram.ui.Components.z5 z5Var;
-        qg.b editText = ((qg.u2) this.a.J0).getEditText();
+        org.telegram.ui.Components.y5 y5Var;
+        qg.b editText = ((qg.v2) this.a.J0).getEditText();
         if (editText == null) {
             return;
         }
@@ -127,12 +127,12 @@ public final class f6 implements ly {
         try {
             SpannableString spannableString = new SpannableString(str);
             if (document != null) {
-                z5Var = new org.telegram.ui.Components.z5(document.id, 1.0f, editText.getPaint().getFontMetricsInt());
-                z5Var.document = document;
+                y5Var = new org.telegram.ui.Components.y5(document.id, 1.0f, editText.getPaint().getFontMetricsInt());
+                y5Var.document = document;
             } else {
-                z5Var = new org.telegram.ui.Components.z5(j3, 1.0f, editText.getPaint().getFontMetricsInt());
+                y5Var = new org.telegram.ui.Components.y5(j3, 1.0f, editText.getPaint().getFontMetricsInt());
             }
-            spannableString.setSpan(z5Var, 0, spannableString.length(), 33);
+            spannableString.setSpan(y5Var, 0, spannableString.length(), 33);
             editText.setText(editText.getText().insert(selectionEnd, spannableString));
             int length = selectionEnd + spannableString.length();
             editText.setSelection(length, length);
@@ -157,7 +157,7 @@ public final class f6 implements ly {
     }
 
     @Override // org.telegram.ui.Components.ly
-    public final /* synthetic */ void o(t51 t51Var) {
+    public final /* synthetic */ void o(s51 s51Var) {
     }
 
     @Override // org.telegram.ui.Components.ly

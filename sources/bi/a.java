@@ -4,13 +4,13 @@ import android.content.Context;
 import android.text.TextUtils;
 import android.view.MotionEvent;
 import android.widget.FrameLayout;
-import org.telegram.ui.Components.ds0;
-import org.telegram.ui.Components.fs0;
-import org.telegram.ui.Components.kv0;
+import org.telegram.ui.Components.cs0;
+import org.telegram.ui.Components.es0;
+import org.telegram.ui.Components.jv0;
 import org.telegram.ui.Components.x81;
-import org.telegram.ui.Components.yr0;
+import org.telegram.ui.Components.xr0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class a extends x81 {
     public final /* synthetic */ int U = 1;
@@ -18,28 +18,28 @@ public final class a extends x81 {
     public final /* synthetic */ FrameLayout W;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public a(fs0 fs0Var, Context context, ds0 ds0Var) {
+    public a(es0 es0Var, Context context, cs0 cs0Var) {
         super(context, null);
-        this.W = fs0Var;
-        this.V = ds0Var;
+        this.W = es0Var;
+        this.V = cs0Var;
     }
 
     @Override // org.telegram.ui.Components.x81
     public final void A(int i10) {
         switch (this.U) {
             case 0:
-                yr0 yr0Var = (yr0) this.W;
-                String currentLang = yr0Var.getCurrentLang();
+                xr0 xr0Var = (xr0) this.W;
+                String currentLang = xr0Var.getCurrentLang();
                 if (!TextUtils.equals((String) this.V, currentLang)) {
                     this.V = currentLang;
-                    yr0Var.G.L0();
+                    xr0Var.G.L0();
                     break;
                 }
                 break;
             default:
-                ds0 ds0Var = (ds0) this.V;
-                ((fs0) this.W).n.b0.get(i10, -1);
-                ds0Var.d.J0(1.0f);
+                cs0 cs0Var = (cs0) this.V;
+                ((es0) this.W).n.b0.get(i10, -1);
+                cs0Var.d.J0(1.0f);
                 break;
         }
     }
@@ -48,7 +48,7 @@ public final class a extends x81 {
     public boolean i(MotionEvent motionEvent) {
         switch (this.U) {
             case 0:
-                return !((yr0) this.W).G.C1;
+                return !((xr0) this.W).G.C1;
             default:
                 return super.i(motionEvent);
         }
@@ -58,17 +58,17 @@ public final class a extends x81 {
     public final void w(boolean z10) {
         switch (this.U) {
             case 0:
-                yr0 yr0Var = (yr0) this.W;
-                String currentLang = yr0Var.getCurrentLang();
+                xr0 xr0Var = (xr0) this.W;
+                String currentLang = xr0Var.getCurrentLang();
                 if (!TextUtils.equals((String) this.V, currentLang)) {
                     this.V = currentLang;
-                    yr0Var.G.L0();
+                    xr0Var.G.L0();
                     break;
                 }
                 break;
             default:
-                ds0 ds0Var = (ds0) this.V;
-                ds0Var.d.J0(((fs0) this.W).n.getAnimatingIndicatorProgress());
+                cs0 cs0Var = (cs0) this.V;
+                cs0Var.d.J0(((es0) this.W).n.getAnimatingIndicatorProgress());
                 break;
         }
     }
@@ -77,11 +77,11 @@ public final class a extends x81 {
     public void y(int i10) {
         switch (this.U) {
             case 0:
-                yr0 yr0Var = (yr0) this.W;
-                String currentLang = yr0Var.getCurrentLang();
+                xr0 xr0Var = (xr0) this.W;
+                String currentLang = xr0Var.getCurrentLang();
                 if (!TextUtils.equals((String) this.V, currentLang)) {
                     this.V = currentLang;
-                    yr0Var.G.L0();
+                    xr0Var.G.L0();
                     break;
                 }
                 break;
@@ -92,14 +92,14 @@ public final class a extends x81 {
     public void z(int i10, boolean z10) {
         switch (this.U) {
             case 1:
-                ds0 ds0Var = (ds0) this.V;
-                int i11 = ((fs0) this.W).n.b0.get(i10, -1);
-                kv0 kv0Var = ds0Var.d;
+                cs0 cs0Var = (cs0) this.V;
+                int i11 = ((es0) this.W).n.b0.get(i10, -1);
+                jv0 jv0Var = cs0Var.d;
                 if (i11 > 0) {
-                    kv0.t(kv0Var, kv0Var.i1(i11).a, z10);
+                    jv0.t(jv0Var, jv0Var.i1(i11).a, z10);
                     break;
                 } else {
-                    kv0.t(kv0Var, 8, z10);
+                    jv0.t(jv0Var, 8, z10);
                     break;
                 }
             default:
@@ -109,8 +109,8 @@ public final class a extends x81 {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public a(yr0 yr0Var, Context context) {
+    public a(xr0 xr0Var, Context context) {
         super(context, null);
-        this.W = yr0Var;
+        this.W = xr0Var;
     }
 }

@@ -7,7 +7,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class x4 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -104,19 +104,19 @@ public final /* synthetic */ class x4 implements ValueAnimator.AnimatorUpdateLis
                 u1Var.invalidate();
                 break;
             default:
-                qg.m0 m0Var = (qg.m0) this.b;
+                qg.n0 n0Var = (qg.n0) this.b;
                 View view3 = (View) this.c;
                 View view4 = (View) this.d;
-                m0Var.i1 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                m0Var.f1.invalidate();
-                m0Var.c1.invalidate();
-                m0Var.d1.invalidate();
+                n0Var.i1 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                n0Var.f1.invalidate();
+                n0Var.c1.invalidate();
+                n0Var.d1.invalidate();
                 int i11 = 0;
-                while (i11 < m0Var.f1.getChildCount()) {
-                    m0Var.f1.getChildAt(i11).setAlpha(((i11 == m0Var.h1 ? m0Var.i1 : i11 == m0Var.g1 ? 1.0f - m0Var.i1 : 0.0f) * 0.4f) + 0.6f);
+                while (i11 < n0Var.f1.getChildCount()) {
+                    n0Var.f1.getChildAt(i11).setAlpha(((i11 == n0Var.h1 ? n0Var.i1 : i11 == n0Var.g1 ? 1.0f - n0Var.i1 : 0.0f) * 0.4f) + 0.6f);
                     i11++;
                 }
-                float interpolation2 = qr.f.getInterpolation(m0Var.i1);
+                float interpolation2 = qr.f.getInterpolation(n0Var.i1);
                 if (view3 != null && view4 != null) {
                     float f12 = 1.0f - interpolation2;
                     float f13 = (f12 * 0.4f) + 0.6f;

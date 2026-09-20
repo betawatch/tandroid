@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class p2 {
     public final q2 a;
@@ -146,7 +146,7 @@ public final class p2 {
         this.b.add(new o2(6, z10 ? 1.0f : -1.0f, 0.0f, 0, -1, 0.0f, null, null));
     }
 
-    public final void e(v2 v2Var, int i10, float f7) {
-        this.b.add(new o2(5, 0.0f, 0.0f, 32, i10, f7, v2Var, null));
+    public final void e(w2 w2Var, int i10, float f7) {
+        this.b.add(new o2(5, 0.0f, 0.0f, 32, i10, f7, w2Var, null));
     }
 }

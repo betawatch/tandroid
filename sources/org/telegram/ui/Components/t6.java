@@ -1,30 +1,34 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Typeface;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.LaunchActivity;
+import android.view.View;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class t6 extends nb {
-    public t6(LaunchActivity launchActivity, org.telegram.ui.mb0 mb0Var) {
-        super(launchActivity, null);
-        org.telegram.ui.Cells.q qVar = new org.telegram.ui.Cells.q(getContext());
-        TextView textView = new TextView(getContext());
-        addView(qVar, w7.y5.i(30.0f, 30.0f, 8388627, 12.0f, 8.0f, 12.0f, 8.0f));
-        textView.setGravity(8388611);
-        textView.setPadding(0, AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f));
-        textView.setTextColor(getThemedColor(org.telegram.ui.ActionBar.j6.Hi));
-        textView.setTextSize(1, 15.0f);
-        textView.setTypeface(Typeface.SANS_SERIF);
-        addView(textView, w7.y5.i(-1.0f, -2.0f, 8388627, 56.0f, 0.0f, 16.0f, 0.0f));
-        qVar.setImageDrawable(launchActivity.getDrawable(mb0Var.b));
-        qVar.setOuterPadding(AndroidUtilities.dp(8.0f));
-        qVar.setBackgroundOuterPadding(AndroidUtilities.dp(24.0f));
-        qVar.setForeground(mb0Var.c);
-        org.telegram.messenger.wh.p(R.string.AppIconChangedTo, new Object[]{LocaleController.getString(mb0Var.d)}, textView);
+public final /* synthetic */ class t6 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Runnable b;
+
+    public /* synthetic */ t6(int i10, Runnable runnable) {
+        this.a = i10;
+        this.b = runnable;
+    }
+
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
+            case 0:
+                this.b.run();
+                break;
+            case 1:
+                Runnable runnable = this.b;
+                if (runnable != null) {
+                    runnable.run();
+                    break;
+                }
+                break;
+            default:
+                this.b.run();
+                break;
+        }
     }
 }

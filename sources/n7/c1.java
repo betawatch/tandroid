@@ -1,6 +1,40 @@
 package n7;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+import com.google.android.gms.internal.vision.e2;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.util.Arrays;
+
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
-public final class c1 extends Exception {
+public abstract class c1 implements Comparable {
+    public static int c(byte b10) {
+        return (b10 >> 5) & 7;
+    }
+
+    public static c1 d(byte... bArr) {
+        bArr.getClass();
+        e1 e1Var = new e1(new ByteArrayInputStream(Arrays.copyOf(bArr, bArr.length)));
+        try {
+            return a.k(e1Var);
+        } finally {
+            try {
+                e1Var.close();
+            } catch (IOException unused) {
+            }
+        }
+    }
+
+    public int a() {
+        return 0;
+    }
+
+    public final c1 b(Class cls) {
+        if (cls.isInstance(this)) {
+            return (c1) cls.cast(this);
+        }
+        throw new b1(e2.j("Expected a ", cls.getName(), " value, but got ", getClass().getName()));
+    }
+
+    public abstract int zza();
 }

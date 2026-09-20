@@ -13,11 +13,11 @@ import java.util.NoSuchElementException;
 import java.util.Set;
 import java.util.SortedSet;
 import org.telegram.tgnet.ConnectionsManager;
-import v7.s6;
 import v7.t6;
-import v7.y7;
+import v7.u6;
+import v7.z7;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public abstract class q {
     public final /* synthetic */ int a = 2;
@@ -113,7 +113,7 @@ public abstract class q {
             if (list.isEmpty()) {
                 throw new NoSuchElementException();
             }
-            return t8.b.h(1, list);
+            return org.telegram.ui.Cells.c1.i(1, list);
         }
         Iterator it = iterable.iterator();
         do {
@@ -133,8 +133,8 @@ public abstract class q {
     }
 
     public static i1 n(Set set, m0 m0Var) {
-        t6.d(set, "set1");
-        t6.d(m0Var, "set2");
+        u6.d(set, "set1");
+        u6.d(m0Var, "set2");
         return new i1(set, m0Var);
     }
 
@@ -145,7 +145,7 @@ public abstract class q {
     public static ArrayList p(Object... objArr) {
         int length = objArr.length;
         e(length, "arraySize");
-        ArrayList arrayList = new ArrayList(y7.e(length + 5 + (length / 10)));
+        ArrayList arrayList = new ArrayList(z7.e(length + 5 + (length / 10)));
         Collections.addAll(arrayList, objArr);
         return arrayList;
     }
@@ -188,7 +188,7 @@ public abstract class q {
             while (true) {
                 int i15 = u10 - 1;
                 int i16 = iArr[i15];
-                if ((i16 & i12) != i13 || !s6.a(obj, objArr[i15]) || (objArr2 != null && !s6.a(obj2, objArr2[i15]))) {
+                if ((i16 & i12) != i13 || !t6.a(obj, objArr[i15]) || (objArr2 != null && !t6.a(obj2, objArr2[i15]))) {
                     int i17 = i16 & i10;
                     if (i17 == 0) {
                         break;

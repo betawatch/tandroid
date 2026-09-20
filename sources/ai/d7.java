@@ -1,37 +1,37 @@
 package ai;
 
 import android.content.Context;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.rk;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.kx0;
+import org.telegram.ui.Components.jx0;
 import org.telegram.ui.Components.ok;
 import org.telegram.ui.Components.t00;
-import org.telegram.ui.dg1;
+import org.telegram.ui.fg1;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
-public final class d7 extends kx0 {
+public final class d7 extends jx0 {
     public final /* synthetic */ int K = 0;
     public final /* synthetic */ Object L;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d7(ok okVar, Context context, t00 t00Var, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(context, t00Var, 1, e6Var);
+    public d7(ok okVar, Context context, t00 t00Var, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context, t00Var, 1, f6Var);
         this.L = okVar;
     }
 
-    @Override // org.telegram.ui.Components.kx0
+    @Override // org.telegram.ui.Components.jx0
     public void e(boolean z10, boolean z11) {
         switch (this.K) {
             case 2:
-                dg1 dg1Var = (dg1) this.L;
+                fg1 fg1Var = (fg1) this.L;
                 super.e(z10, z11);
                 if (!z11) {
-                    dg1Var.n.a.animate().cancel();
-                    dg1Var.n.a.setAlpha(z10 ? 0.0f : 1.0f);
+                    fg1Var.n.a.animate().cancel();
+                    fg1Var.n.a.setAlpha(z10 ? 0.0f : 1.0f);
                     break;
                 } else {
-                    dg1Var.n.a.animate().alpha(z10 ? 0.0f : 1.0f).start();
+                    fg1Var.n.a.animate().alpha(z10 ? 0.0f : 1.0f).start();
                     break;
                 }
             default:
@@ -55,7 +55,7 @@ public final class d7 extends kx0 {
         switch (this.K) {
             case 0:
                 j7 j7Var = ((e7) this.L).d;
-                super.onMeasure(i10, wh.y(j7Var.e, j7Var.n - j7Var.r.getPaddingTop(), TLObject.FLAG_30));
+                super.onMeasure(i10, rk.c(j7Var.e, j7Var.n - j7Var.r.getPaddingTop(), TLObject.FLAG_30));
                 break;
             default:
                 super.onMeasure(i10, i11);
@@ -82,8 +82,8 @@ public final class d7 extends kx0 {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d7(dg1 dg1Var, Context context, t00 t00Var) {
+    public d7(fg1 fg1Var, Context context, t00 t00Var) {
         super(context, t00Var, 0, null);
-        this.L = dg1Var;
+        this.L = fg1Var;
     }
 }

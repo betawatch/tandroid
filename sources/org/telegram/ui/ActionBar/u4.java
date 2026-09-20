@@ -14,7 +14,7 @@ import android.widget.ListView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class u4 extends ListView {
     public final v4 a;
@@ -27,13 +27,13 @@ public final class u4 extends ListView {
         super(v4Var.a);
         float dp = AndroidUtilities.dp(16.0f);
         int[] iArr = new int[8];
-        PathInterpolator pathInterpolator = yf.z.i;
-        yf.z.a(pathInterpolator, -16777216, iArr);
+        PathInterpolator pathInterpolator = yf.y.i;
+        yf.y.a(pathInterpolator, -16777216, iArr);
         Shader.TileMode tileMode = Shader.TileMode.CLAMP;
         LinearGradient linearGradient = new LinearGradient(0.0f, dp, 0.0f, 0.0f, iArr, (float[]) null, tileMode);
         float dp2 = AndroidUtilities.dp(16.0f);
         int[] iArr2 = new int[8];
-        yf.z.a(pathInterpolator, -16777216, iArr2);
+        yf.y.a(pathInterpolator, -16777216, iArr2);
         LinearGradient linearGradient2 = new LinearGradient(0.0f, 0.0f, 0.0f, dp2, iArr2, (float[]) null, tileMode);
         this.b = linearGradient2;
         Paint paint = new Paint(1);

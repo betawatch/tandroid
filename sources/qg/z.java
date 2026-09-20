@@ -1,34 +1,79 @@
 package qg;
 
-import android.content.Context;
-import android.graphics.PointF;
+import java.util.ArrayList;
+import java.util.HashMap;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.MediaController;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.ij0;
-import org.telegram.ui.Components.u71;
-import org.telegram.ui.Components.vv0;
-import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.au0;
+import org.telegram.ui.Components.gh;
+import org.telegram.ui.Components.ti;
+import org.telegram.ui.Components.vi;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class z extends n2 {
-    public final /* synthetic */ m0 y0;
+public final class z implements ti {
+    public final /* synthetic */ vi a;
+    public final /* synthetic */ n0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z(m0 m0Var, Context context, PointF pointF, float f7, float f10, vv0 vv0Var, TLRPC.Document document, Object obj) {
-        super(context, pointF, f7, f10, vv0Var, document, obj);
-        this.y0 = m0Var;
+    public z(n0 n0Var, vi viVar) {
+        this.b = n0Var;
+        this.a = viVar;
     }
 
-    @Override // qg.n2
-    public final void q(ij0 ij0Var) {
-        PhotoViewer photoViewer = ((au0) this.y0).o2;
-        u71 u71Var = photoViewer.F2;
-        if (u71Var == null) {
-            return;
+    @Override // org.telegram.ui.Components.ti
+    public final void C1(int i10, boolean z10, boolean z11, int i11, int i12, long j3, boolean z12, boolean z13, long j10) {
+        vi viVar = this.a;
+        try {
+            HashMap<Object, Object> selectedPhotos = viVar.j0.getSelectedPhotos();
+            if (selectedPhotos.isEmpty()) {
+                return;
+            }
+            MediaController.PhotoEntry photoEntry = (MediaController.PhotoEntry) selectedPhotos.values().iterator().next();
+            String str = photoEntry.imagePath;
+            if (str == null) {
+                str = photoEntry.path;
+            }
+            n0 n0Var = this.b;
+            n0Var.f0(n0Var.h0(str, true));
+            viVar.dismiss();
+        } catch (Throwable th2) {
+            FileLog.e(th2);
         }
-        long n10 = u71Var.n();
-        long j3 = photoViewer.m8;
-        ij0Var.U(n10 - (j3 > 0 ? j3 / 1000 : 0L));
+    }
+
+    @Override // org.telegram.ui.Components.ti
+    public final boolean S1() {
+        System.currentTimeMillis();
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.ti
+    public final /* synthetic */ boolean f0() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.ti
+    public final void y0(gh ghVar) {
+        ghVar.run();
+    }
+
+    @Override // org.telegram.ui.Components.ti
+    public final /* synthetic */ void L0() {
+    }
+
+    @Override // org.telegram.ui.Components.ti
+    public final /* synthetic */ void V0(Object obj) {
+    }
+
+    @Override // org.telegram.ui.Components.ti
+    public final /* synthetic */ void k1(TLRPC.User user) {
+    }
+
+    @Override // org.telegram.ui.Components.ti
+    public final /* synthetic */ void v0() {
+    }
+
+    @Override // org.telegram.ui.Components.ti
+    public final /* synthetic */ void W1(ArrayList arrayList, CharSequence charSequence, boolean z10, int i10, int i11, long j3, boolean z11, long j10) {
     }
 }

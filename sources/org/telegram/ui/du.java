@@ -21,16 +21,16 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class du extends org.telegram.ui.Components.bb {
+public final class du extends org.telegram.ui.Components.ab {
     public final FrameLayout X;
     public final ci.d Y;
     public final ci.d Z;
     public final ArrayList a0;
     public final HashSet b0;
     public boolean c0;
-    public org.telegram.ui.Components.l61 d0;
+    public org.telegram.ui.Components.k61 d0;
 
     public du(Activity activity, HashSet hashSet) {
         super(activity, null, false, false, new ai.d());
@@ -44,15 +44,15 @@ public final class du extends org.telegram.ui.Components.bb {
         this.drawDoubleNavigationBar = false;
         FrameLayout frameLayout = new FrameLayout(activity);
         this.X = frameLayout;
-        LinearLayout f7 = org.telegram.messenger.q.f(activity, 1);
-        frameLayout.addView(f7, w7.y5.e(-1, -1, 119));
+        LinearLayout e = org.telegram.messenger.l0.e(activity, 1);
+        frameLayout.addView(e, w7.y5.e(-1, -1, 119));
         ImageView imageView = new ImageView(activity);
         imageView.setImageResource(R.drawable.ic_close_white);
         imageView.setColorFilter(new PorterDuffColorFilter(-8090220, PorterDuff.Mode.SRC_IN));
         frameLayout.addView(imageView, w7.y5.d(24, 24.0f, 53, 0.0f, 14.0f, 14.0f, 0.0f));
-        w7.a6.a(imageView);
+        w7.b6.a(imageView);
         final int i10 = 0;
-        imageView.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.bu
+        imageView.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.cu
             public final /* synthetic */ du b;
 
             {
@@ -79,20 +79,20 @@ public final class du extends org.telegram.ui.Components.bb {
         ImageView imageView2 = new ImageView(activity);
         imageView2.setImageResource(R.drawable.filled_calls_users);
         frameLayout2.addView(imageView2, w7.y5.e(56, 56, 17));
-        f7.addView(frameLayout2, w7.y5.t(80, 80, 1, 2, 21, 2, 13));
+        e.addView(frameLayout2, w7.y5.t(80, 80, 1, 2, 21, 2, 13));
         int i11 = org.telegram.ui.ActionBar.j6.G6;
-        org.telegram.ui.Components.l90 a2 = w7.c6.a(activity, 20.0f, i11, true, this.resourcesProvider);
+        org.telegram.ui.Components.k90 a2 = w7.d6.a(activity, 20.0f, i11, true, this.resourcesProvider);
         a2.setText(LocaleController.getString(R.string.GroupCallCreateTitle));
         a2.setGravity(17);
-        f7.addView(a2, w7.y5.t(-1, -2, 1, 2, 0, 2, 4));
-        org.telegram.ui.Components.l90 a10 = w7.c6.a(activity, 14.0f, i11, false, this.resourcesProvider);
+        e.addView(a2, w7.y5.t(-1, -2, 1, 2, 0, 2, 4));
+        org.telegram.ui.Components.k90 a10 = w7.d6.a(activity, 14.0f, i11, false, this.resourcesProvider);
         a10.setText(AndroidUtilities.replaceTags(LocaleController.getString(R.string.GroupCallCreateText)));
         a10.setGravity(17);
         a10.setMaxWidth(ci.f4.a(a10.getText(), a10.getPaint()));
-        f7.addView(a10, w7.y5.t(-1, -2, 1, 2, 0, 2, 23));
-        org.telegram.ui.Components.l61 l61Var = this.d0;
-        if (l61Var != null) {
-            l61Var.N(false);
+        e.addView(a10, w7.y5.t(-1, -2, 1, 2, 0, 2, 23));
+        org.telegram.ui.Components.k61 k61Var = this.d0;
+        if (k61Var != null) {
+            k61Var.N(false);
         }
         s4.j jVar = new s4.j();
         jVar.m = false;
@@ -102,9 +102,9 @@ public final class du extends org.telegram.ui.Components.bb {
         this.d.setItemAnimator(jVar);
         this.d.setOnItemClickListener(new y0(this, 29));
         FrameLayout frameLayout3 = new FrameLayout(activity);
-        LinearLayout f10 = org.telegram.messenger.q.f(activity, 0);
-        f10.setPadding(AndroidUtilities.dp(14.0f) + this.backgroundPaddingLeft, AndroidUtilities.dp(14.0f), AndroidUtilities.dp(14.0f) + this.backgroundPaddingLeft, AndroidUtilities.dp(14.0f));
-        frameLayout3.addView(f10, w7.y5.e(-1, -2, 87));
+        LinearLayout e7 = org.telegram.messenger.l0.e(activity, 0);
+        e7.setPadding(AndroidUtilities.dp(14.0f) + this.backgroundPaddingLeft, AndroidUtilities.dp(14.0f), AndroidUtilities.dp(14.0f) + this.backgroundPaddingLeft, AndroidUtilities.dp(14.0f));
+        frameLayout3.addView(e7, w7.y5.e(-1, -2, 87));
         ci.d dVar = new ci.d(activity, this.resourcesProvider, true);
         this.Y = dVar;
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
@@ -112,9 +112,9 @@ public final class du extends org.telegram.ui.Components.bb {
         spannableStringBuilder.setSpan(new org.telegram.ui.Components.oq(R.drawable.profile_phone, 0), 0, 1, 33);
         spannableStringBuilder.append((CharSequence) LocaleController.getString(R.string.GroupCallCreateVoice));
         dVar.g(spannableStringBuilder, false, true);
-        f10.addView(dVar, w7.y5.p(-1, 48, 1.0f, 119, 0, 0, 6, 0));
+        e7.addView(dVar, w7.y5.p(-1, 48, 1.0f, 119, 0, 0, 6, 0));
         final int i12 = 1;
-        dVar.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.bu
+        dVar.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.cu
             public final /* synthetic */ du b;
 
             {
@@ -143,9 +143,9 @@ public final class du extends org.telegram.ui.Components.bb {
         spannableStringBuilder2.setSpan(new org.telegram.ui.Components.oq(R.drawable.profile_video, 0), 0, 1, 33);
         spannableStringBuilder2.append((CharSequence) LocaleController.getString(R.string.GroupCallCreateVideo));
         dVar2.g(spannableStringBuilder2, false, true);
-        f10.addView(dVar2, w7.y5.p(-1, 48, 1.0f, 119, 6, 0, 0, 0));
+        e7.addView(dVar2, w7.y5.p(-1, 48, 1.0f, 119, 6, 0, 0, 0));
         final int i13 = 2;
-        dVar2.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.bu
+        dVar2.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.cu
             public final /* synthetic */ du b;
 
             {
@@ -168,16 +168,16 @@ public final class du extends org.telegram.ui.Components.bb {
             }
         });
         this.containerView.addView(frameLayout3, w7.y5.e(-1, -2, 87));
-        org.telegram.ui.Components.wl0 wl0Var = this.d;
+        org.telegram.ui.Components.vl0 vl0Var = this.d;
         int i14 = this.backgroundPaddingLeft;
-        wl0Var.setPadding(i14, 0, i14, AndroidUtilities.dp(76.0f));
+        vl0Var.setPadding(i14, 0, i14, AndroidUtilities.dp(76.0f));
     }
 
     public static void Q(du duVar, TLObject tLObject, ci.d dVar, boolean z10, HashSet hashSet, TLRPC.TL_error tL_error) {
         if (!(tLObject instanceof TLRPC.Updates)) {
             if (!(tLObject instanceof TL_phone.groupCall)) {
                 if (tL_error != null) {
-                    org.telegram.ui.Cells.c1.p(duVar.topBulletinContainer, duVar.resourcesProvider, tL_error, false);
+                    org.telegram.ui.Cells.c1.s(duVar.topBulletinContainer, duVar.resourcesProvider, tL_error, false);
                     return;
                 }
                 return;
@@ -210,7 +210,7 @@ public final class du extends org.telegram.ui.Components.bb {
             i10++;
             groupCall2 = ((TL_update.TL_updateGroupCall) obj).call;
         }
-        Utilities.stageQueue.postRunnable(new cu(0, duVar, updates));
+        Utilities.stageQueue.postRunnable(new yt(2, duVar, updates));
         if (groupCall2 == null || LaunchActivity.G1 == null) {
             duVar.c0 = false;
             dVar.setLoading(false);
@@ -224,8 +224,8 @@ public final class du extends org.telegram.ui.Components.bb {
     }
 
     public static void R(du duVar, ArrayList arrayList) {
-        arrayList.add(org.telegram.ui.Components.x51.k(duVar.X));
-        arrayList.add(org.telegram.ui.Components.x51.B(null));
+        arrayList.add(org.telegram.ui.Components.w51.k(duVar.X));
+        arrayList.add(org.telegram.ui.Components.w51.B(null));
         ArrayList arrayList2 = duVar.a0;
         if (arrayList2 == null || arrayList2.isEmpty()) {
             return;
@@ -239,7 +239,7 @@ public final class du extends org.telegram.ui.Components.bb {
                 return;
             }
             int i11 = xg.k.a;
-            org.telegram.ui.Components.x51 J = org.telegram.ui.Components.x51.J(xg.k.class);
+            org.telegram.ui.Components.w51 J = org.telegram.ui.Components.w51.J(xg.k.class);
             J.G = user;
             J.K(duVar.b0.contains(l4));
             arrayList.add(J);
@@ -260,14 +260,14 @@ public final class du extends org.telegram.ui.Components.bb {
         ConnectionsManager.getInstance(this.currentAccount).sendRequest(createconferencecall, new ci.t1(this, dVar, z10, hashSet));
     }
 
-    @Override // org.telegram.ui.Components.bb
-    public final org.telegram.ui.Components.vl0 v(org.telegram.ui.Components.wl0 wl0Var) {
-        org.telegram.ui.Components.l61 l61Var = new org.telegram.ui.Components.l61(wl0Var, getContext(), this.currentAccount, 0, true, new b5(this, 10), this.resourcesProvider);
-        this.d0 = l61Var;
-        return l61Var;
+    @Override // org.telegram.ui.Components.ab
+    public final org.telegram.ui.Components.ul0 v(org.telegram.ui.Components.vl0 vl0Var) {
+        org.telegram.ui.Components.k61 k61Var = new org.telegram.ui.Components.k61(vl0Var, getContext(), this.currentAccount, 0, true, new b5(this, 10), this.resourcesProvider);
+        this.d0 = k61Var;
+        return k61Var;
     }
 
-    @Override // org.telegram.ui.Components.bb
+    @Override // org.telegram.ui.Components.ab
     public final CharSequence y() {
         return LocaleController.getString(R.string.GroupCallCreateTitle);
     }

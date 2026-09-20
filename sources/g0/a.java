@@ -23,9 +23,9 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import v7.y7;
+import v7.z7;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public abstract class a {
     public static Paint a(Bitmap bitmap) {
@@ -47,7 +47,7 @@ public abstract class a {
     public static k2.b c(AudioManager audioManager, b2.e eVar) {
         List<AudioProfile> directProfilesForAttributes = audioManager.getDirectProfilesForAttributes((AudioAttributes) eVar.b().a);
         HashMap hashMap = new HashMap();
-        hashMap.put(2, new HashSet(y7.a(12)));
+        hashMap.put(2, new HashSet(z7.a(12)));
         for (int i10 = 0; i10 < directProfilesForAttributes.size(); i10++) {
             AudioProfile audioProfile = directProfilesForAttributes.get(i10);
             if (audioProfile.getEncapsulationType() != 1) {
@@ -56,9 +56,9 @@ public abstract class a {
                     if (hashMap.containsKey(Integer.valueOf(format))) {
                         Set set = (Set) hashMap.get(Integer.valueOf(format));
                         set.getClass();
-                        set.addAll(y7.a(audioProfile.getChannelMasks()));
+                        set.addAll(z7.a(audioProfile.getChannelMasks()));
                     } else {
-                        hashMap.put(Integer.valueOf(format), new HashSet(y7.a(audioProfile.getChannelMasks())));
+                        hashMap.put(Integer.valueOf(format), new HashSet(z7.a(audioProfile.getChannelMasks())));
                     }
                 }
             }
@@ -76,7 +76,7 @@ public abstract class a {
         if (audioDevicesForAttributes.isEmpty()) {
             return null;
         }
-        return new m(j2.e.b(audioDevicesForAttributes.get(0)), 29);
+        return new m(j2.e.d(audioDevicesForAttributes.get(0)), 29);
     }
 
     public static Object e(Bundle bundle) {

@@ -29,11 +29,10 @@ import java.util.WeakHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 import l.l;
 import l.n;
-import lf.i;
+import lf.h;
 import m.e3;
 import m.f3;
 import m.g3;
-import m.h;
 import m.h3;
 import m.i3;
 import m.j3;
@@ -48,10 +47,10 @@ import m.z0;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import r0.i0;
-import v7.v7;
+import v7.w7;
 import w7.p;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public class Toolbar extends ViewGroup {
     public final int E;
@@ -72,7 +71,7 @@ public class Toolbar extends ViewGroup {
     public final ArrayList T;
     public final ArrayList U;
     public final int[] V;
-    public final i W;
+    public final h W;
     public ActionMenuView a;
     public ArrayList a0;
     public z0 b;
@@ -80,7 +79,7 @@ public class Toolbar extends ViewGroup {
     public z0 c;
     public l3 c0;
     public u d;
-    public h d0;
+    public m.h d0;
     public v e;
     public g3 e0;
     public final Drawable f;
@@ -419,7 +418,7 @@ public class Toolbar extends ViewGroup {
         return null;
     }
 
-    public h getOuterActionMenuPresenter() {
+    public m.h getOuterActionMenuPresenter() {
         return this.d0;
     }
 
@@ -478,7 +477,7 @@ public class Toolbar extends ViewGroup {
             l3Var.i = getSubtitle();
             l3Var.g = l3Var.h != null;
             l3Var.f = getNavigationIcon();
-            i Q = i.Q(getContext(), null, f.a.a, R.attr.actionBarStyle);
+            h Q = h.Q(getContext(), null, f.a.a, R.attr.actionBarStyle);
             TypedArray typedArray = (TypedArray) Q.c;
             l3Var.o = Q.F(15);
             CharSequence text = typedArray.getText(27);
@@ -1160,7 +1159,7 @@ public class Toolbar extends ViewGroup {
 
     @Override // android.view.View
     public final Parcelable onSaveInstanceState() {
-        h hVar;
+        m.h hVar;
         n nVar;
         j3 j3Var = new j3(super.onSaveInstanceState());
         g3 g3Var = this.e0;
@@ -1243,7 +1242,7 @@ public class Toolbar extends ViewGroup {
     }
 
     public void setCollapseIcon(int i10) {
-        setCollapseIcon(v7.b(getContext(), i10));
+        setCollapseIcon(w7.b(getContext(), i10));
     }
 
     public void setCollapsible(boolean z10) {
@@ -1276,7 +1275,7 @@ public class Toolbar extends ViewGroup {
     }
 
     public void setLogo(int i10) {
-        setLogo(v7.b(getContext(), i10));
+        setLogo(w7.b(getContext(), i10));
     }
 
     public void setLogoDescription(int i10) {
@@ -1288,7 +1287,7 @@ public class Toolbar extends ViewGroup {
     }
 
     public void setNavigationIcon(int i10) {
-        setNavigationIcon(v7.b(getContext(), i10));
+        setNavigationIcon(w7.b(getContext(), i10));
     }
 
     public void setNavigationOnClickListener(View.OnClickListener onClickListener) {
@@ -1571,13 +1570,13 @@ public class Toolbar extends ViewGroup {
         this.T = new ArrayList();
         this.U = new ArrayList();
         this.V = new int[2];
-        this.W = new i(new e3(this, 1));
+        this.W = new h(new e3(this, 1));
         this.a0 = new ArrayList();
         this.b0 = new ka.c(this, 2);
         this.j0 = new q4(this, 26);
         Context context2 = getContext();
         int[] iArr = f.a.x;
-        i Q = i.Q(context2, attributeSet, iArr, i10);
+        h Q = h.Q(context2, attributeSet, iArr, i10);
         i0.j(this, context, iArr, attributeSet, (TypedArray) Q.c, i10);
         TypedArray typedArray = (TypedArray) Q.c;
         this.w = typedArray.getResourceId(28, 0);

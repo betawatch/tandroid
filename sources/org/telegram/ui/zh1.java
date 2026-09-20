@@ -1,91 +1,142 @@
 package org.telegram.ui;
 
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.view.MotionEvent;
 import android.view.View;
-import android.view.WindowInsets;
-import android.widget.FrameLayout;
+import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.voip.VoIPService;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class zh1 implements org.telegram.ui.ActionBar.a2, org.telegram.ui.Components.voip.t1, r0.n, org.telegram.ui.Components.voip.i3 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ si1 b;
+public final class zh1 extends org.telegram.ui.Components.x81 {
+    public boolean U;
+    public final Path V;
+    public final /* synthetic */ ai1 W;
 
-    public /* synthetic */ zh1(si1 si1Var, int i10) {
-        this.a = i10;
-        this.b = si1Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public zh1(ai1 ai1Var, Context context) {
+        super(context, null);
+        this.W = ai1Var;
+        this.V = new Path();
     }
 
-    @Override // r0.n
-    public r0.m1 Q0(View view, r0.m1 m1Var) {
-        WindowInsets g10 = m1Var.g();
-        si1 si1Var = this.b;
-        si1Var.r0 = g10;
-        ((FrameLayout.LayoutParams) si1Var.j0.getLayoutParams()).bottomMargin = si1Var.r0.getSystemWindowInsetBottom();
-        ((FrameLayout.LayoutParams) si1Var.e0.getLayoutParams()).bottomMargin = si1Var.r0.getSystemWindowInsetBottom();
-        ((FrameLayout.LayoutParams) si1Var.H.getLayoutParams()).topMargin = si1Var.r0.getSystemWindowInsetTop();
-        ((FrameLayout.LayoutParams) si1Var.I.getLayoutParams()).topMargin = si1Var.r0.getSystemWindowInsetTop();
-        ((FrameLayout.LayoutParams) si1Var.K.getLayoutParams()).topMargin = si1Var.r0.getSystemWindowInsetTop() + AndroidUtilities.dp(56.0f);
-        ((FrameLayout.LayoutParams) si1Var.X.getLayoutParams()).topMargin = si1Var.r0.getSystemWindowInsetTop() + AndroidUtilities.dp(135.0f);
-        ((FrameLayout.LayoutParams) si1Var.N.getLayoutParams()).topMargin = si1Var.r0.getSystemWindowInsetTop() + AndroidUtilities.dp(17.0f);
-        ((FrameLayout.LayoutParams) si1Var.y.getLayoutParams()).topMargin = si1Var.r0.getSystemWindowInsetTop() + AndroidUtilities.dp(93.0f);
-        ((FrameLayout.LayoutParams) si1Var.O.getLayoutParams()).topMargin = si1Var.r0.getSystemWindowInsetTop();
-        ((FrameLayout.LayoutParams) si1Var.R.getLayoutParams()).topMargin = si1Var.r0.getSystemWindowInsetTop() + AndroidUtilities.dp(118.0f);
-        ((FrameLayout.LayoutParams) si1Var.Q.getLayoutParams()).topMargin = si1Var.r0.getSystemWindowInsetTop() + AndroidUtilities.dp(380.0f);
-        ((FrameLayout.LayoutParams) si1Var.Z.getLayoutParams()).bottomMargin = si1Var.r0.getSystemWindowInsetBottom();
-        ((FrameLayout.LayoutParams) si1Var.M0.getLayoutParams()).bottomMargin = si1Var.r0.getSystemWindowInsetBottom();
-        si1Var.Y.setInsets(si1Var.r0);
-        si1Var.Z.setInsets(si1Var.r0);
-        si1Var.s.requestLayout();
-        li1 li1Var = si1Var.o0;
-        if (li1Var != null) {
-            li1Var.setBottomPadding(si1Var.r0.getSystemWindowInsetBottom());
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        if (this.U) {
+            Path path = this.V;
+            path.rewind();
+            float dpf2 = AndroidUtilities.dpf2(24.0f);
+            RectF rectF = AndroidUtilities.rectTmp;
+            rectF.set(0.0f, AndroidUtilities.statusBarHeight, getWidth(), getHeight());
+            path.addRoundRect(rectF, dpf2, dpf2, Path.Direction.CW);
+            canvas.save();
+            canvas.clipPath(path);
         }
-        return r0.m1.b;
-    }
-
-    @Override // org.telegram.ui.ActionBar.a2
-    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
-        switch (this.a) {
-            case 0:
-                ki1 ki1Var = this.b.u0;
-                if (ki1Var != null) {
-                    ki1Var.b();
-                    break;
-                }
-                break;
-            default:
-                this.b.u0.b();
-                break;
+        super.dispatchDraw(canvas);
+        if (this.U) {
+            canvas.restore();
         }
     }
 
-    @Override // org.telegram.ui.Components.voip.i3
-    public void h(org.telegram.ui.Components.voip.j3 j3Var) {
-        switch (this.a) {
-            case 5:
-                VoIPService sharedInstance = VoIPService.getSharedInstance();
-                if (sharedInstance != null) {
-                    si1 si1Var = this.b;
-                    AndroidUtilities.cancelRunOnUIThread(si1Var.S0);
-                    si1Var.R0 = false;
-                    boolean isMicMute = sharedInstance.isMicMute();
-                    boolean z10 = !isMicMute;
-                    if (si1Var.w0.isTouchExplorationEnabled()) {
-                        j3Var.announceForAccessibility(LocaleController.getString(!isMicMute ? R.string.AccDescrVoipMicOff : R.string.AccDescrVoipMicOn));
-                    }
-                    sharedInstance.setMicMute(z10, false, true);
-                    si1Var.q0 = si1Var.p0;
-                    si1Var.H();
-                    break;
-                }
-                break;
-            default:
-                si1.i(this.b);
-                break;
+    @Override // org.telegram.ui.Components.x81
+    public float getAvailableTranslationX() {
+        return getMeasuredWidth();
+    }
+
+    @Override // org.telegram.ui.Components.x81
+    public long getManualScrollDuration() {
+        return 320L;
+    }
+
+    @Override // org.telegram.ui.Components.x81
+    public final boolean j(MotionEvent motionEvent) {
+        Object X = ((gh0) this.W).X();
+        if (X instanceof fh0) {
+            return ((fh0) X).S(motionEvent, false);
         }
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.x81
+    public final boolean k(MotionEvent motionEvent) {
+        Object X = ((gh0) this.W).X();
+        if (X instanceof fh0) {
+            return ((fh0) X).S(motionEvent, true);
+        }
+        return false;
+    }
+
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+    }
+
+    @Override // android.view.View
+    public void setLayoutParams(ViewGroup.LayoutParams layoutParams) {
+        super.setLayoutParams(layoutParams);
+    }
+
+    public void setTabletLayout(boolean z10) {
+        if (this.U == z10) {
+            return;
+        }
+        this.U = z10;
+        invalidate();
+    }
+
+    @Override // org.telegram.ui.Components.x81
+    public final void t(View view, View view2, int i10, int i11) {
+        this.W.U();
+    }
+
+    @Override // org.telegram.ui.Components.x81
+    public final void u() {
+        uy uyVar;
+        ai1 ai1Var = this.W;
+        gh0 gh0Var = (gh0) ai1Var;
+        if (gh0Var.F != null) {
+            gh0Var.m0(gh0Var.c.getCurrentPosition(), true);
+            gh0Var.n0(0.0f, false);
+        }
+        gh0Var.d0();
+        zh1 zh1Var = gh0Var.c;
+        if (zh1Var != null) {
+            int currentPosition = zh1Var.getCurrentPosition();
+            if (currentPosition != 2 && gh0Var.x) {
+                gh0Var.W(2);
+                gh0Var.x = false;
+            }
+            if (currentPosition != 3) {
+                gh0Var.W(3);
+            }
+            Integer num = gh0Var.I;
+            if (num != null && currentPosition == 0 && (uyVar = gh0Var.J) != null) {
+                uyVar.w4(num.intValue());
+                gh0Var.I = null;
+            }
+        }
+        ai1Var.U();
+    }
+
+    @Override // org.telegram.ui.Components.x81
+    public final void w(boolean z10) {
+        ai1 ai1Var = this.W;
+        gh0 gh0Var = (gh0) ai1Var;
+        boolean z11 = !z10;
+        if (gh0Var.F != null) {
+            float positionAnimated = gh0Var.c.getPositionAnimated();
+            gh0Var.n0(positionAnimated, z11);
+            if (!z10) {
+                gh0Var.m0(Math.round(positionAnimated), true);
+            }
+        }
+        gh0Var.h0();
+        gh0Var.d0();
+        gh0Var.b.invalidate();
+        ai1Var.U();
+        ai1Var.checkSystemBarColors();
     }
 }

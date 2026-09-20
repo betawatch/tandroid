@@ -1,10 +1,10 @@
 package v0;
 
 import android.os.Bundle;
-import n7.z0;
 import org.json.JSONObject;
+import org.telegram.ui.Cells.f3;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class e extends b {
     public final String d;
@@ -21,7 +21,7 @@ public final class e extends b {
             String string = jSONObject.getString("name");
             String string2 = jSONObject.isNull("displayName") ? null : jSONObject.getString("displayName");
             kotlin.jvm.internal.i.b(string);
-            z0 z0Var = new z0(string, string2);
+            f3 f3Var = new f3(string, string2);
             Bundle bundle = new Bundle();
             bundle.putString("androidx.credentials.BUNDLE_KEY_SUBTYPE", "androidx.credentials.BUNDLE_VALUE_SUBTYPE_CREATE_PUBLIC_KEY_CREDENTIAL_REQUEST");
             bundle.putString("androidx.credentials.BUNDLE_KEY_REQUEST_JSON", requestJson);

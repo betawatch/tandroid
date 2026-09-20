@@ -3,9 +3,9 @@ package org.telegram.ui;
 import android.view.KeyEvent;
 import android.view.View;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class t implements mv0, org.telegram.ui.Components.ml0, org.telegram.ui.ActionBar.l1 {
+public final /* synthetic */ class t implements mv0, org.telegram.ui.Components.ll0, org.telegram.ui.ActionBar.l1 {
     public final /* synthetic */ h4 a;
 
     public /* synthetic */ t(h4 h4Var) {
@@ -19,7 +19,7 @@ public final /* synthetic */ class t implements mv0, org.telegram.ui.Components.
         fArr[1] = h4Var.u0[0].b.getMeasuredHeight();
     }
 
-    @Override // org.telegram.ui.Components.ml0
+    @Override // org.telegram.ui.Components.ll0
     public boolean d(int i10, View view) {
         h4 h4Var = this.a;
         h4Var.getClass();
@@ -32,7 +32,7 @@ public final /* synthetic */ class t implements mv0, org.telegram.ui.Components.
     }
 
     @Override // org.telegram.ui.ActionBar.l1
-    public void p(KeyEvent keyEvent) {
+    public void o(KeyEvent keyEvent) {
         org.telegram.ui.ActionBar.n1 n1Var;
         h4 h4Var = this.a;
         h4Var.getClass();

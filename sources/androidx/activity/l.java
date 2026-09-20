@@ -28,9 +28,9 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.CopyOnWriteArraySet;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.telegram.messenger.beta.R;
-import w7.a8;
+import w7.b8;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public abstract class l extends e0.h implements u0, androidx.lifecycle.i, t4.e {
     public final CopyOnWriteArrayList E;
@@ -39,7 +39,7 @@ public abstract class l extends e0.h implements u0, androidx.lifecycle.i, t4.e {
     public boolean H;
     public boolean I;
     public final f0 b;
-    public final lf.i c;
+    public final lf.h c;
     public final androidx.lifecycle.v d;
     public final n e;
     public t0 f;
@@ -56,7 +56,7 @@ public abstract class l extends e0.h implements u0, androidx.lifecycle.i, t4.e {
     public l() {
         f0 f0Var = new f0(1);
         this.b = f0Var;
-        this.c = new lf.i(new a3.d(this, 25));
+        this.c = new lf.h(new a3.d(this, 25));
         androidx.lifecycle.v vVar = new androidx.lifecycle.v(this);
         this.d = vVar;
         n nVar = new n(this);
@@ -408,8 +408,8 @@ public abstract class l extends e0.h implements u0, androidx.lifecycle.i, t4.e {
     @Override // android.app.Activity
     public final void reportFullyDrawn() {
         try {
-            if (a8.b()) {
-                a8.a("reportFullyDrawn() for ComponentActivity");
+            if (b8.b()) {
+                b8.a("reportFullyDrawn() for ComponentActivity");
             }
             super.reportFullyDrawn();
             n nVar = this.s;

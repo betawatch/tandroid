@@ -4,7 +4,7 @@ import android.graphics.RectF;
 import hg.k0;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class a {
     public final ArrayList a = new ArrayList();
@@ -62,17 +62,17 @@ public final class a {
         if (i10 >= 0 && i10 < this.b) {
             return (RectF) this.a.get(i10);
         }
-        StringBuilder j3 = k0.j(i10, "index=", ", size=");
-        j3.append(this.b);
-        throw new IndexOutOfBoundsException(j3.toString());
+        StringBuilder k10 = k0.k(i10, "index=", ", size=");
+        k10.append(this.b);
+        throw new IndexOutOfBoundsException(k10.toString());
     }
 
     public final void d(int i10) {
         int i11;
         if (i10 < 0 || i10 >= (i11 = this.b)) {
-            StringBuilder j3 = k0.j(i10, "index=", ", size=");
-            j3.append(this.b);
-            throw new IndexOutOfBoundsException(j3.toString());
+            StringBuilder k10 = k0.k(i10, "index=", ", size=");
+            k10.append(this.b);
+            throw new IndexOutOfBoundsException(k10.toString());
         }
         int i12 = i11 - 1;
         ArrayList arrayList = this.a;

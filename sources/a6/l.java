@@ -16,10 +16,10 @@ import com.google.android.gms.tasks.TaskCompletionSource;
 import hg.k0;
 import org.json.JSONException;
 import t7.u;
-import v7.g5;
-import w7.e9;
+import v7.h5;
+import w7.f9;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class l extends b8.b {
     public final /* synthetic */ int b = 0;
@@ -54,7 +54,7 @@ public final class l extends b8.b {
                         }
                         googleSignInOptions = null;
                     }
-                    v0 a10 = e9.a(revocationBoundService, googleSignInOptions);
+                    v0 a10 = f9.a(revocationBoundService, googleSignInOptions);
                     if (b10 != null) {
                         t0 t0Var = a10.h;
                         Context context = a10.a;
@@ -96,7 +96,7 @@ public final class l extends b8.b {
                 Status status2 = (Status) i7.f.a(parcel, Status.CREATOR);
                 x5.f fVar = (x5.f) i7.f.a(parcel, x5.f.CREATOR);
                 i7.f.b(parcel);
-                g5.a(status2, fVar, (TaskCompletionSource) obj);
+                h5.a(status2, fVar, (TaskCompletionSource) obj);
                 return true;
         }
     }

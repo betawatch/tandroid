@@ -34,13 +34,13 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.p6;
-import org.telegram.ui.Components.q90;
+import org.telegram.ui.Components.o6;
+import org.telegram.ui.Components.p90;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
 import w7.y5;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b0 implements Runnable {
     public final /* synthetic */ int a;
@@ -69,7 +69,7 @@ public final /* synthetic */ class b0 implements Runnable {
     /* JADX WARN: Type inference failed for: r4v7, types: [android.view.View, android.view.ViewGroup, android.widget.LinearLayout] */
     /* JADX WARN: Type inference failed for: r5v3, types: [org.telegram.ui.ActionBar.AlertDialog$Builder] */
     /* JADX WARN: Type inference failed for: r6v8, types: [android.view.View, android.view.ViewGroup, android.widget.LinearLayout] */
-    /* JADX WARN: Type inference failed for: r8v12, types: [android.view.View, java.lang.Object, org.telegram.ui.Components.p6] */
+    /* JADX WARN: Type inference failed for: r8v12, types: [android.view.View, java.lang.Object, org.telegram.ui.Components.o6] */
     @Override // java.lang.Runnable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -129,20 +129,20 @@ public final /* synthetic */ class b0 implements Runnable {
                     linearLayout.addView(imageView, y5.t(44, 44, 19, 0, 0, 10, 0));
                     ?? linearLayout2 = new LinearLayout(context);
                     linearLayout2.setOrientation(1);
-                    TextView g10 = org.telegram.messenger.q.g(context, 1, 15.0f);
-                    g10.setTypeface(AndroidUtilities.bold());
-                    g10.setText(str6);
-                    g10.setTextColor(j6.w0(null, j6.n5, false));
-                    linearLayout2.addView(g10, y5.k(0.0f, 0.0f, 0.0f, 3.0f, -1, -2));
-                    ?? p6Var = new p6(context, true, true, true);
-                    p6Var.setTextSize(AndroidUtilities.dp(12.0f));
+                    TextView f7 = org.telegram.messenger.l0.f(context, 1, 15.0f);
+                    f7.setTypeface(AndroidUtilities.bold());
+                    f7.setText(str6);
+                    f7.setTextColor(j6.w0(null, j6.n5, false));
+                    linearLayout2.addView(f7, y5.k(0.0f, 0.0f, 0.0f, 3.0f, -1, -2));
+                    ?? o6Var = new o6(context, true, true, true);
+                    o6Var.setTextSize(AndroidUtilities.dp(12.0f));
                     SpannableString spannableString = new SpannableString("l");
-                    q90 q90Var = new q90(AndroidUtilities.dp(55.0f), p6Var);
+                    p90 p90Var = new p90(AndroidUtilities.dp(55.0f), o6Var);
                     int i13 = j6.Ed;
-                    q90Var.a(j6.l1(0.35f, j6.w0(null, i13, false)), j6.l1(0.075f, j6.w0(null, i13, false)));
-                    spannableString.setSpan(q90Var, 0, 1, 33);
-                    p6Var.setText(spannableString);
-                    bi.v vVar = new bi.v(p6Var, 14);
+                    p90Var.a(j6.l1(0.35f, j6.w0(null, i13, false)), j6.l1(0.075f, j6.w0(null, i13, false)));
+                    spannableString.setSpan(p90Var, 0, 1, 33);
+                    o6Var.setText(spannableString);
+                    bi.v vVar = new bi.v(o6Var, 14);
                     HashMap hashMap2 = ei.l0.h;
                     if (hashMap2.containsKey(str5)) {
                         Pair pair = (Pair) hashMap2.get(str5);
@@ -150,14 +150,14 @@ public final /* synthetic */ class b0 implements Runnable {
                     } else {
                         new ei.f0(str5, vVar).execute(str5);
                     }
-                    p6Var.setTextColor(j6.w0(null, i13, false));
-                    linearLayout2.addView(p6Var, y5.n(-1, 15));
+                    o6Var.setTextColor(j6.w0(null, i13, false));
+                    linearLayout2.addView(o6Var, y5.n(-1, 15));
                     linearLayout.addView(linearLayout2, y5.t(-1, -2, 23, 0, 0, 0, 2));
                     alertDialog$Builder.n(linearLayout);
                     final boolean[] zArr = new boolean[1];
                     alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new org.telegram.ui.ActionBar.a2() { // from class: ei.d0
                         @Override // org.telegram.ui.ActionBar.a2
-                        public final void f(org.telegram.ui.ActionBar.b2 b2Var2, int i14) {
+                        public final void k(org.telegram.ui.ActionBar.b2 b2Var2, int i14) {
                             switch (i12) {
                                 case 0:
                                     boolean[] zArr2 = zArr;
@@ -180,7 +180,7 @@ public final /* synthetic */ class b0 implements Runnable {
                     });
                     alertDialog$Builder.k(LocaleController.getString(R.string.BotDownloadFileDownload), new org.telegram.ui.ActionBar.a2() { // from class: ei.d0
                         @Override // org.telegram.ui.ActionBar.a2
-                        public final void f(org.telegram.ui.ActionBar.b2 b2Var2, int i14) {
+                        public final void k(org.telegram.ui.ActionBar.b2 b2Var2, int i14) {
                             switch (i11) {
                                 case 0:
                                     boolean[] zArr2 = zArr;

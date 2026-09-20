@@ -1,7 +1,60 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+import android.animation.ValueAnimator;
+import java.util.ArrayList;
+
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public interface fy0 {
-    void a();
+public final /* synthetic */ class fy0 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ com.google.firebase.messaging.n b;
+    public final /* synthetic */ int c;
+
+    public /* synthetic */ fy0(com.google.firebase.messaging.n nVar, int i10, int i11) {
+        this.a = i11;
+        this.b = nVar;
+        this.c = i10;
+    }
+
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                ArrayList arrayList = (ArrayList) this.b.d;
+                Float f7 = (Float) valueAnimator.getAnimatedValue();
+                f7.getClass();
+                arrayList.set(this.c, f7);
+                break;
+            case 1:
+                ArrayList arrayList2 = (ArrayList) this.b.e;
+                Float f10 = (Float) valueAnimator.getAnimatedValue();
+                f10.getClass();
+                arrayList2.set(this.c, f10);
+                break;
+            case 2:
+                ArrayList arrayList3 = (ArrayList) this.b.f;
+                Float f11 = (Float) valueAnimator.getAnimatedValue();
+                f11.getClass();
+                arrayList3.set(this.c, f11);
+                break;
+            case 3:
+                ArrayList arrayList4 = (ArrayList) this.b.d;
+                Float f12 = (Float) valueAnimator.getAnimatedValue();
+                f12.getClass();
+                arrayList4.set(this.c, f12);
+                break;
+            case 4:
+                ArrayList arrayList5 = (ArrayList) this.b.e;
+                Float f13 = (Float) valueAnimator.getAnimatedValue();
+                f13.getClass();
+                arrayList5.set(this.c, f13);
+                break;
+            default:
+                ArrayList arrayList6 = (ArrayList) this.b.f;
+                Float f14 = (Float) valueAnimator.getAnimatedValue();
+                f14.getClass();
+                arrayList6.set(this.c, f14);
+                break;
+        }
+    }
 }

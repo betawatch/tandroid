@@ -7,25 +7,25 @@ import android.text.SpannableString;
 import android.text.style.ReplacementSpan;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class ad extends ReplacementSpan {
-    public final org.telegram.ui.ActionBar.e6 a;
+    public final org.telegram.ui.ActionBar.f6 a;
     public final Paint b = new Paint(1);
-    public final v01 c;
+    public final u01 c;
     public final Runnable d;
     public yc e;
     public Integer f;
 
-    public ad(CharSequence charSequence, Runnable runnable, org.telegram.ui.ActionBar.e6 e6Var) {
-        this.a = e6Var;
+    public ad(CharSequence charSequence, Runnable runnable, org.telegram.ui.ActionBar.f6 f6Var) {
+        this.a = f6Var;
         this.d = runnable;
-        this.c = new v01(charSequence, 12.0f, null);
+        this.c = new u01(charSequence, 12.0f, null);
     }
 
-    public static SpannableString b(CharSequence charSequence, Runnable runnable, org.telegram.ui.ActionBar.e6 e6Var, Integer num) {
+    public static SpannableString b(CharSequence charSequence, Runnable runnable, org.telegram.ui.ActionBar.f6 f6Var, Integer num) {
         SpannableString spannableString = new SpannableString("btn");
-        ad adVar = new ad(charSequence, runnable, e6Var);
+        ad adVar = new ad(charSequence, runnable, f6Var);
         spannableString.setSpan(adVar, 0, spannableString.length(), 33);
         adVar.f = num;
         return spannableString;

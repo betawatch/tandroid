@@ -9,7 +9,7 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.Executor;
 import java.util.concurrent.atomic.AtomicReference;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class k implements Callable {
     public final /* synthetic */ long a;
@@ -38,7 +38,7 @@ public final class k implements Callable {
             Log.e("FirebaseCrashlytics", "Tried to write a fatal exception while no session was open.", null);
             return Tasks.forResult(null);
         }
-        mVar.c.o();
+        mVar.c.k();
         com.google.firebase.messaging.n nVar = mVar.m;
         nVar.getClass();
         String concat = "Persisting fatal event for session ".concat(e);
@@ -64,6 +64,6 @@ public final class k implements Callable {
             return Tasks.forResult(null);
         }
         Executor executor = (Executor) mVar.e.b;
-        return ((TaskCompletionSource) ((AtomicReference) bVar.i).get()).getTask().onSuccessTask(executor, new o0.a(this, executor, e));
+        return ((TaskCompletionSource) ((AtomicReference) bVar.i).get()).getTask().onSuccessTask(executor, new m5.e(this, executor, e));
     }
 }

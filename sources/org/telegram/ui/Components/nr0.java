@@ -1,35 +1,74 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.tl.TL_stories;
+import android.content.DialogInterface;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class nr0 implements org.telegram.ui.ActionBar.a2, MessagesStorage.StringCallback {
-    public final /* synthetic */ kv0 a;
-    public final /* synthetic */ TL_stories.StoryItem b;
+public final /* synthetic */ class nr0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.ui.ActionBar.b2[] b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ int d;
 
-    public /* synthetic */ nr0(kv0 kv0Var, TL_stories.StoryItem storyItem) {
-        this.a = kv0Var;
-        this.b = storyItem;
+    public /* synthetic */ nr0(org.telegram.ui.ActionBar.b2[] b2VarArr, int i10, int i11, int i12) {
+        this.a = i12;
+        this.b = b2VarArr;
+        this.c = i10;
+        this.d = i11;
     }
 
-    @Override // org.telegram.ui.ActionBar.a2
-    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
-        ArrayList arrayList = new ArrayList(1);
-        arrayList.add(this.b);
-        kv0 kv0Var = this.a;
-        org.telegram.ui.ActionBar.n2 n2Var = kv0Var.v1;
-        n2Var.getMessagesController().getStoriesController().s(kv0Var.j1, arrayList);
-        xc.a0(n2Var).Q(R.raw.ic_delete, 36, LocaleController.formatPluralString("StoriesDeleted", 1, new Object[0])).j();
-        kv0Var.L(false);
-    }
-
-    @Override // org.telegram.messenger.MessagesStorage.StringCallback
-    public void run(String str) {
-        r0.getStoriesController().r(r0.j1, str, new org.telegram.ui.of(22, this.a, this.b));
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                org.telegram.ui.ActionBar.b2[] b2VarArr = this.b;
+                org.telegram.ui.ActionBar.b2 b2Var = b2VarArr[0];
+                if (b2Var != null) {
+                    final int i10 = 0;
+                    final int i11 = this.c;
+                    final int i12 = this.d;
+                    b2Var.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.ui.Components.tr0
+                        @Override // android.content.DialogInterface.OnCancelListener
+                        public final void onCancel(DialogInterface dialogInterface) {
+                            switch (i10) {
+                                case 0:
+                                    ConnectionsManager.getInstance(i11).cancelRequest(i12, true);
+                                    break;
+                                default:
+                                    ConnectionsManager.getInstance(i11).cancelRequest(i12, true);
+                                    break;
+                            }
+                        }
+                    });
+                    b2VarArr[0].show();
+                    break;
+                }
+                break;
+            default:
+                org.telegram.ui.ActionBar.b2[] b2VarArr2 = this.b;
+                org.telegram.ui.ActionBar.b2 b2Var2 = b2VarArr2[0];
+                if (b2Var2 != null) {
+                    final int i13 = 1;
+                    final int i14 = this.c;
+                    final int i15 = this.d;
+                    b2Var2.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.ui.Components.tr0
+                        @Override // android.content.DialogInterface.OnCancelListener
+                        public final void onCancel(DialogInterface dialogInterface) {
+                            switch (i13) {
+                                case 0:
+                                    ConnectionsManager.getInstance(i14).cancelRequest(i15, true);
+                                    break;
+                                default:
+                                    ConnectionsManager.getInstance(i14).cancelRequest(i15, true);
+                                    break;
+                            }
+                        }
+                    });
+                    b2VarArr2[0].show();
+                    break;
+                }
+                break;
+        }
     }
 }

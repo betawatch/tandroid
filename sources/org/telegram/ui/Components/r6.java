@@ -1,42 +1,26 @@
 package org.telegram.ui.Components;
 
-import android.util.Property;
+import android.view.animation.OvershootInterpolator;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public abstract class r6 extends Property {
-    public final /* synthetic */ int a;
+public abstract class r6 {
+    public static final OvershootInterpolator a = new OvershootInterpolator(1.9f);
+    public static final p6 b = new p6("alpha", 0);
+    public static final org.telegram.ui.Cells.u8 c;
+    public static final p6 d;
+    public static final p6 e;
+    public static final org.telegram.ui.Cells.u8 f;
+    public static final org.telegram.ui.Cells.u8 g;
+    public static final org.telegram.ui.Cells.u8 h;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public r6(String str, int i10) {
-        super(Float.class, str);
-        this.a = i10;
-        switch (i10) {
-            case 1:
-                super(Integer.class, str);
-                break;
-            default:
-                break;
-        }
-    }
-
-    public void a(Object obj, Float f7) {
-        c(obj, f7.floatValue());
-    }
-
-    public abstract void b(int i10, Object obj);
-
-    public abstract void c(Object obj, float f7);
-
-    @Override // android.util.Property
-    public final void set(Object obj, Object obj2) {
-        switch (this.a) {
-            case 0:
-                c(obj, ((Float) obj2).floatValue());
-                break;
-            default:
-                b(((Integer) obj2).intValue(), obj);
-                break;
-        }
+    static {
+        new p6("color", 1);
+        c = new org.telegram.ui.Cells.u8("currentAlpha", 4);
+        d = new p6("alpha", 2);
+        e = new p6("alpha", 3);
+        f = new org.telegram.ui.Cells.u8("animationProgress", 5);
+        g = new org.telegram.ui.Cells.u8("animationValue", 6);
+        h = new org.telegram.ui.Cells.u8("clipProgress", 7);
     }
 }

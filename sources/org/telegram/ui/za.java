@@ -1,17 +1,17 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class za implements org.telegram.ui.Components.yk0, li.f {
+public final /* synthetic */ class za implements org.telegram.ui.Components.xk0, li.f {
     public final /* synthetic */ vb a;
 
-    @Override // org.telegram.ui.Components.yk0
+    @Override // org.telegram.ui.Components.xk0
     public void a() {
         this.a.c1();
     }
 
     @Override // li.f
-    public void j(int i10) {
+    public void g(int i10) {
         vb.X(this.a, i10);
     }
 }

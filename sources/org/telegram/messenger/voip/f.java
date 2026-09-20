@@ -37,11 +37,11 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.b2;
 import org.telegram.ui.Components.CheckBox;
-import org.telegram.ui.Components.f80;
+import org.telegram.ui.Components.e80;
 import org.telegram.ui.Components.ps;
 import org.telegram.ui.Components.qs;
 import org.telegram.ui.Components.xc;
-import org.telegram.ui.Components.z5;
+import org.telegram.ui.Components.y5;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ProfileActivity;
@@ -55,16 +55,16 @@ import org.telegram.ui.zs0;
 import xh.r1;
 import xh.s1;
 import xh.w0;
-import yh.k7;
 import yh.l5;
+import yh.l7;
 import yh.o8;
 import yh.r5;
 import yh.s5;
 import yh.t5;
-import yh.w7;
+import yh.u5;
 import yh.x7;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final /* synthetic */ class f implements Runnable {
     public final /* synthetic */ int a;
@@ -83,17 +83,17 @@ public final /* synthetic */ class f implements Runnable {
         this.f = obj4;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:184:0x0557, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:184:0x0551, code lost:
     
         org.telegram.messenger.AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.ps(r2, 1));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:185:0x0560, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:185:0x055a, code lost:
     
         return;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:189:0x0554, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:193:0x054e, code lost:
     
-        if (r5 == null) goto L163;
+        if (r4 == null) goto L163;
      */
     @Override // java.lang.Runnable
     /*
@@ -101,13 +101,13 @@ public final /* synthetic */ class f implements Runnable {
     */
     public final void run() {
         String formatString;
-        String str;
+        w0 w0Var;
         TL_stars.StarGift starGift;
         TLRPC.Document document;
-        String str2;
+        String str;
         int i10 = 3;
-        int i11 = 2;
         SQLitePreparedStatement sQLitePreparedStatement = null;
+        int i11 = 2;
         int i12 = 1;
         int i13 = 0;
         switch (this.a) {
@@ -118,9 +118,9 @@ public final /* synthetic */ class f implements Runnable {
                 sr srVar = (sr) this.d;
                 long j3 = this.b;
                 TLRPC.TL_chatBannedRights tL_chatBannedRights = (TLRPC.TL_chatBannedRights) this.e;
-                String str3 = (String) this.f;
+                String str2 = (String) this.f;
                 TLObject tLObject = (TLObject) this.c;
-                nq nqVar = new nq(j3, srVar.N, null, srVar.E, tL_chatBannedRights, str3, 1, true, false, null);
+                nq nqVar = new nq(j3, srVar.N, null, srVar.E, tL_chatBannedRights, str2, 1, true, false, null);
                 nqVar.X0 = new dr(srVar, tLObject);
                 srVar.presentFragment(nqVar);
                 return;
@@ -128,9 +128,9 @@ public final /* synthetic */ class f implements Runnable {
                 sr srVar2 = (sr) this.d;
                 long j10 = this.b;
                 TLRPC.TL_chatAdminRights tL_chatAdminRights = (TLRPC.TL_chatAdminRights) this.e;
-                String str4 = (String) this.f;
+                String str3 = (String) this.f;
                 TLObject tLObject2 = (TLObject) this.c;
-                nq nqVar2 = new nq(j10, srVar2.N, tL_chatAdminRights, null, null, str4, 0, true, false, null);
+                nq nqVar2 = new nq(j10, srVar2.N, tL_chatAdminRights, null, null, str3, 0, true, false, null);
                 nqVar2.X0 = new er(srVar2, tLObject2);
                 srVar2.presentFragment(nqVar2);
                 return;
@@ -139,41 +139,42 @@ public final /* synthetic */ class f implements Runnable {
                 MessagesStorage messagesStorage = (MessagesStorage) this.c;
                 ArrayList arrayList = (ArrayList) this.e;
                 long j11 = this.b;
-                String str5 = (String) this.f;
+                String str4 = (String) this.f;
                 SQLiteDatabase database = messagesStorage.getDatabase();
                 try {
                     try {
                         database.executeFast("DELETE FROM popular_bots").stepThis().dispose();
                         sQLitePreparedStatement = database.executeFast("REPLACE INTO popular_bots VALUES(?, ?, ?, ?)");
-                        for (int i14 = 0; i14 < arrayList.size(); i14++) {
+                        while (i13 < arrayList.size()) {
                             sQLitePreparedStatement.requery();
-                            sQLitePreparedStatement.bindLong(1, ((Long) arrayList.get(i14)).longValue());
+                            sQLitePreparedStatement.bindLong(1, ((Long) arrayList.get(i13)).longValue());
                             sQLitePreparedStatement.bindLong(2, j11);
-                            sQLitePreparedStatement.bindString(3, str5);
-                            sQLitePreparedStatement.bindInteger(4, i14);
+                            sQLitePreparedStatement.bindString(3, str4);
+                            sQLitePreparedStatement.bindInteger(4, i13);
                             sQLitePreparedStatement.step();
+                            i13++;
                         }
                         break;
-                    } catch (Exception e) {
-                        FileLog.e(e);
-                        break;
+                    } finally {
+                        if (sQLitePreparedStatement != null) {
+                            sQLitePreparedStatement.dispose();
+                        }
                     }
-                } finally {
-                    if (sQLitePreparedStatement != null) {
-                        sQLitePreparedStatement.dispose();
-                    }
+                } catch (Exception e) {
+                    FileLog.e(e);
+                    break;
                 }
             case 4:
                 qs qsVar2 = (qs) this.d;
                 ArrayList<TLRPC.User> arrayList2 = (ArrayList) this.c;
                 long j12 = this.b;
-                String str6 = (String) this.e;
+                String str5 = (String) this.e;
                 ps psVar = (ps) this.f;
                 MessagesController.getInstance(qsVar2.a).putUsers(arrayList2, true);
                 qsVar2.h.addAll(arrayList2);
                 qsVar2.f = j12;
-                qsVar2.g = str6;
-                qsVar2.e = TextUtils.isEmpty(str6);
+                qsVar2.g = str5;
+                qsVar2.e = TextUtils.isEmpty(str5);
                 qsVar2.d = true;
                 psVar.run();
                 return;
@@ -190,10 +191,10 @@ public final /* synthetic */ class f implements Runnable {
                 }
                 if (tLObject3 != null) {
                     TL_phone.joinAsPeers joinaspeers = (TL_phone.joinAsPeers) tLObject3;
-                    f80.G = joinaspeers.peers;
-                    f80.I = j13;
-                    f80.H = SystemClock.elapsedRealtime();
-                    f80.J = accountInstance.getCurrentAccount();
+                    e80.G = joinaspeers.peers;
+                    e80.I = j13;
+                    e80.H = SystemClock.elapsedRealtime();
+                    e80.J = accountInstance.getCurrentAccount();
                     accountInstance.getMessagesController().putChats(joinaspeers.chats, false);
                     accountInstance.getMessagesController().putUsers(joinaspeers.users, false);
                     booleanCallback.run(joinaspeers.peers.size() == 1);
@@ -204,7 +205,7 @@ public final /* synthetic */ class f implements Runnable {
                 PhotoViewer photoViewer = (PhotoViewer) this.d;
                 MediaController.PhotoEntry photoEntry = (MediaController.PhotoEntry) this.c;
                 long j14 = this.b;
-                String str7 = (String) this.e;
+                String str6 = (String) this.e;
                 Bitmap bitmap = (Bitmap) this.f;
                 Drawable[] drawableArr = PhotoViewer.U8;
                 if (photoEntry.coverPath != null) {
@@ -215,7 +216,7 @@ public final /* synthetic */ class f implements Runnable {
                     }
                 }
                 photoEntry.coverSavedPosition = j14;
-                photoEntry.coverPath = str7;
+                photoEntry.coverPath = str6;
                 photoEntry.coverPhoto = null;
                 photoEntry.coverPhotoParentObject = null;
                 photoViewer.q5.b.setLoading(false);
@@ -242,8 +243,8 @@ public final /* synthetic */ class f implements Runnable {
                 long j15 = this.b;
                 zArr[0] = true;
                 AndroidUtilities.cancelRunOnUIThread(profileActivity.x5);
-                for (int i15 = 0; i15 < arrayList3.size(); i15++) {
-                    ((TL_stories.StoryItem) arrayList3.get(i15)).pinned = zArr2[i15];
+                for (int i14 = 0; i14 < arrayList3.size(); i14++) {
+                    ((TL_stories.StoryItem) arrayList3.get(i14)).pinned = zArr2[i14];
                 }
                 profileActivity.getMessagesController().getStoriesController().n0(j15, arrayList3, false);
                 return;
@@ -253,58 +254,58 @@ public final /* synthetic */ class f implements Runnable {
                 long j16 = this.b;
                 Utilities.Callback callback = (Utilities.Callback) this.e;
                 Context context = (Context) this.f;
-                w0 w0Var = r1Var.l0;
-                int i16 = 0;
-                while (i16 < i11) {
+                w0 w0Var2 = r1Var.l0;
+                int i15 = 0;
+                while (i15 < i11) {
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-                    if (i16 == i12) {
+                    if (i15 == i12) {
                         formatString = LocaleController.getString(R.string.Gift2StarsCollectibleInfo);
                     } else {
-                        int i17 = R.string.Gift2StarsInfo;
+                        int i16 = R.string.Gift2StarsInfo;
                         Object[] objArr = new Object[i12];
                         objArr[i13] = r1Var.e0;
-                        formatString = LocaleController.formatString(i17, objArr);
+                        formatString = LocaleController.formatString(i16, objArr);
                     }
                     spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceTags(formatString));
-                    String str8 = " ";
                     spannableStringBuilder.append((CharSequence) " ");
                     HashSet hashSet = new HashSet();
                     HashSet hashSet2 = new HashSet();
                     while (i13 < l5Var.l.size() && hashSet.size() < i10) {
                         TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) l5Var.l.get(i13);
                         if (savedStarGift == null || (starGift = savedStarGift.gift) == null || (document = starGift.getDocument()) == null) {
-                            str = str8;
+                            w0Var = w0Var2;
                         } else {
-                            str = str8;
+                            w0Var = w0Var2;
                             if (!hashSet.contains(Long.valueOf(document.id))) {
                                 hashSet2.add(document);
                                 hashSet.add(Long.valueOf(document.id));
                             }
                         }
                         i13++;
-                        str8 = str;
+                        w0Var2 = w0Var;
                         i10 = 3;
                     }
-                    String str9 = str8;
+                    w0 w0Var3 = w0Var2;
                     if (hashSet2.size() > 0) {
                         SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder();
-                        spannableStringBuilder2.append((CharSequence) LocaleController.formatString(R.string.Gift2StarsInfoProfileLink, DialogObject.getShortName(j16)).replaceAll(str9, " "));
+                        spannableStringBuilder2.append((CharSequence) LocaleController.formatString(R.string.Gift2StarsInfoProfileLink, DialogObject.getShortName(j16)).replaceAll(" ", " "));
                         spannableStringBuilder2.append((CharSequence) " ");
                         Iterator it = hashSet2.iterator();
                         while (it.hasNext()) {
                             TLRPC.Document document2 = (TLRPC.Document) it.next();
                             spannableStringBuilder2.append((CharSequence) "\u2060e");
-                            spannableStringBuilder2.setSpan(new z5(document2, w0Var.getPaint().getFontMetricsInt()), spannableStringBuilder2.length() - 1, spannableStringBuilder2.length(), 33);
+                            spannableStringBuilder2.setSpan(new y5(document2, w0Var3.getPaint().getFontMetricsInt()), spannableStringBuilder2.length() - 1, spannableStringBuilder2.length(), 33);
                         }
                         spannableStringBuilder2.append((CharSequence) " >");
                         spannableStringBuilder.append(AndroidUtilities.replaceArrows(AndroidUtilities.makeClickable(spannableStringBuilder2, new xh.p0(r1Var, callback, j16, 0)), true));
                     } else {
                         spannableStringBuilder.append(AndroidUtilities.replaceArrows(AndroidUtilities.makeClickable(LocaleController.getString(R.string.Gift2StarsInfoLink), new di.a(context, 5)), true));
                     }
-                    TextView textView = i16 == 0 ? w0Var : r1Var.m0;
+                    TextView textView = i15 == 0 ? w0Var3 : r1Var.m0;
                     textView.setText(spannableStringBuilder);
                     textView.setMaxWidth(f4.a(textView.getText(), textView.getPaint()));
-                    i16++;
+                    i15++;
+                    w0Var2 = w0Var3;
                     i10 = 3;
                     i11 = 2;
                     i12 = 1;
@@ -333,52 +334,52 @@ public final /* synthetic */ class f implements Runnable {
                 callback2.run(null);
                 return;
             case 10:
-                t5 t5Var = (t5) this.d;
+                u5 u5Var = (u5) this.d;
                 TLObject tLObject5 = (TLObject) this.c;
                 MessageObject messageObject = (MessageObject) this.e;
                 long j18 = this.b;
                 Runnable runnable = (Runnable) this.f;
-                int i18 = t5Var.a;
+                int i17 = u5Var.a;
                 if (!(tLObject5 instanceof TLRPC.TL_messages_messages)) {
                     runnable.run();
                     return;
                 }
                 TLRPC.TL_messages_messages tL_messages_messages = (TLRPC.TL_messages_messages) tLObject5;
-                MessagesController.getInstance(i18).putUsers(tL_messages_messages.users, false);
-                MessagesController.getInstance(i18).putChats(tL_messages_messages.chats, false);
+                MessagesController.getInstance(i17).putUsers(tL_messages_messages.users, false);
+                MessagesController.getInstance(i17).putChats(tL_messages_messages.chats, false);
                 if (tL_messages_messages.messages.size() != 1 || !(tL_messages_messages.messages.get(0) instanceof TLRPC.TL_message) || !(tL_messages_messages.messages.get(0).media instanceof TLRPC.TL_messageMediaPaidMedia)) {
                     runnable.run();
                     return;
                 } else {
                     messageObject.messageOwner = tL_messages_messages.messages.get(0);
-                    t5Var.l0(messageObject, j18, runnable, true);
+                    u5Var.l0(messageObject, j18, runnable, true);
                     return;
                 }
             case 11:
-                t5 t5Var2 = (t5) this.d;
+                u5 u5Var2 = (u5) this.d;
                 Utilities.Callback2 callback22 = (Utilities.Callback2) this.e;
                 long j19 = this.b;
                 TLObject tLObject6 = (TLObject) this.c;
                 TLRPC.TL_textWithEntities tL_textWithEntities = (TLRPC.TL_textWithEntities) this.f;
-                if (t5Var2.e) {
-                    t5Var2.g(j19, tLObject6, tL_textWithEntities, callback22);
+                if (u5Var2.e) {
+                    u5Var2.g(j19, tLObject6, tL_textWithEntities, callback22);
                     return;
                 } else {
-                    t5.e("NO_BALANCE");
+                    u5.e("NO_BALANCE");
                     callback22.run(Boolean.FALSE, null);
                     return;
                 }
             case 12:
-                t5 t5Var3 = (t5) this.d;
+                u5 u5Var3 = (u5) this.d;
                 Utilities.Callback2 callback23 = (Utilities.Callback2) this.c;
                 TLRPC.TL_payments_paymentFormStarGift tL_payments_paymentFormStarGift = (TLRPC.TL_payments_paymentFormStarGift) this.e;
                 TL_stars.StarGift starGift2 = (TL_stars.StarGift) this.f;
                 long j20 = this.b;
-                if (t5Var3.e) {
-                    t5Var3.h(tL_payments_paymentFormStarGift, starGift2, j20, null, true, callback23);
+                if (u5Var3.e) {
+                    u5Var3.h(tL_payments_paymentFormStarGift, starGift2, j20, null, true, callback23);
                     return;
                 } else {
-                    t5.e("NO_BALANCE");
+                    u5.e("NO_BALANCE");
                     callback23.run(Boolean.FALSE, null);
                     return;
                 }
@@ -387,65 +388,65 @@ public final /* synthetic */ class f implements Runnable {
                 TL_stars.StarGift starGift3 = (TL_stars.StarGift) this.c;
                 CharSequence charSequence = (CharSequence) this.e;
                 long j21 = this.b;
-                String str10 = (String) this.f;
+                String str7 = (String) this.f;
                 AndroidUtilities.runOnUIThread(new s1(profileActivity2, i11), 200L);
                 xc a02 = xc.a0(profileActivity2);
                 TLRPC.Document document3 = starGift3.sticker;
                 String string = LocaleController.getString(R.string.StarsGiftCompleted);
                 if (charSequence == null) {
-                    charSequence = AndroidUtilities.replaceTags(LocaleController.formatPluralString("StarsGiftCompletedChannelText", (int) j21, str10));
+                    charSequence = AndroidUtilities.replaceTags(LocaleController.formatPluralString("StarsGiftCompletedChannelText", (int) j21, str7));
                 }
                 a02.s(document3, string, charSequence).k(false);
                 return;
             case 14:
-                s5 s5Var = (s5) this.d;
+                t5 t5Var = (t5) this.d;
                 TLObject tLObject7 = (TLObject) this.c;
                 MessagesController messagesController = (MessagesController) this.f;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) this.e;
                 long j22 = this.b;
-                s5Var.getClass();
+                t5Var.getClass();
                 if (tLObject7 != null) {
-                    Utilities.stageQueue.postRunnable(new uf.b(28, messagesController, tLObject7));
+                    Utilities.stageQueue.postRunnable(new s5(i13, messagesController, tLObject7));
                     return;
                 }
                 if (tL_error != null) {
-                    s5Var.b.addPaidReactions((int) (-s5Var.h), s5Var.g, s5Var.c());
-                    NotificationCenter.getInstance(s5Var.q.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.didUpdateReactions, Long.valueOf(s5Var.b.getDialogId()), Integer.valueOf(s5Var.b.getId()), s5Var.b.messageOwner.reactions);
+                    t5Var.b.addPaidReactions((int) (-t5Var.h), t5Var.g, t5Var.c());
+                    NotificationCenter.getInstance(t5Var.q.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.didUpdateReactions, Long.valueOf(t5Var.b.getDialogId()), Integer.valueOf(t5Var.b.getId()), t5Var.b.messageOwner.reactions);
                     if ("BALANCE_TOO_LOW".equals(tL_error.text)) {
-                        if (s5Var.a.a >= 0) {
-                            str2 = UserObject.getForcedFirstName(s5Var.c.getMessagesController().getUser(Long.valueOf(s5Var.a.a)));
+                        if (t5Var.a.a >= 0) {
+                            str = UserObject.getForcedFirstName(t5Var.c.getMessagesController().getUser(Long.valueOf(t5Var.a.a)));
                         } else {
-                            TLRPC.Chat chat = s5Var.c.getMessagesController().getChat(Long.valueOf(-s5Var.a.a));
-                            str2 = chat == null ? "" : chat.title;
+                            TLRPC.Chat chat = t5Var.c.getMessagesController().getChat(Long.valueOf(-t5Var.a.a));
+                            str = chat == null ? "" : chat.title;
                         }
-                        String str11 = str2;
-                        Context parentActivity = s5Var.c.getParentActivity();
+                        String str8 = str;
+                        Context parentActivity = t5Var.c.getParentActivity();
                         if (parentActivity == null) {
                             parentActivity = LaunchActivity.G1;
                         }
                         if (parentActivity == null) {
                             parentActivity = ApplicationLoader.applicationContext;
                         }
-                        new k7(parentActivity, s5Var.c.getResourceProvider(), j22, 5, str11, new r5(s5Var, j22, i12), 0L).show();
+                        new l7(parentActivity, t5Var.c.getResourceProvider(), j22, 5, str8, new r5(t5Var, j22, i12), 0L).show();
                     }
-                    s5Var.q.T(false);
-                    s5Var.q.P();
+                    t5Var.q.T(false);
+                    t5Var.q.P();
                     return;
                 }
                 return;
             default:
                 o8 o8Var = (o8) this.d;
                 long j23 = this.b;
-                t5 t5Var4 = (t5) this.c;
+                u5 u5Var4 = (u5) this.c;
                 MessageObject messageObject2 = (MessageObject) this.e;
                 zn znVar = (zn) this.f;
                 a1.c cVar = o8Var.P;
                 if (cVar == null) {
-                    s5 d02 = t5Var4.d0(messageObject2, znVar, j23, false, true, Long.valueOf(o8Var.E));
+                    t5 d02 = u5Var4.d0(messageObject2, znVar, j23, false, true, Long.valueOf(o8Var.E));
                     if (d02 == null) {
                         return;
                     }
-                    AndroidUtilities.runOnUIThread(new x7(i13, o8Var, d02));
+                    AndroidUtilities.runOnUIThread(new s5(i11, o8Var, d02));
                     return;
                 }
                 int intValue = o1.a((o1) cVar.b, Long.valueOf(j23)).intValue();
@@ -454,7 +455,7 @@ public final /* synthetic */ class f implements Runnable {
                     o8Var.dismiss();
                     return;
                 } else {
-                    AndroidUtilities.runOnUIThread(new w7(o8Var, i13));
+                    AndroidUtilities.runOnUIThread(new x7(o8Var, i13));
                     return;
                 }
         }
@@ -505,18 +506,18 @@ public final /* synthetic */ class f implements Runnable {
         this.f = callback;
     }
 
-    public /* synthetic */ f(s5 s5Var, TLObject tLObject, MessagesController messagesController, TLRPC.TL_error tL_error, long j3) {
+    public /* synthetic */ f(t5 t5Var, TLObject tLObject, MessagesController messagesController, TLRPC.TL_error tL_error, long j3) {
         this.a = 14;
-        this.d = s5Var;
+        this.d = t5Var;
         this.c = tLObject;
         this.f = messagesController;
         this.e = tL_error;
         this.b = j3;
     }
 
-    public /* synthetic */ f(t5 t5Var, Utilities.Callback2 callback2, long j3, TLObject tLObject, TLRPC.TL_textWithEntities tL_textWithEntities) {
+    public /* synthetic */ f(u5 u5Var, Utilities.Callback2 callback2, long j3, TLObject tLObject, TLRPC.TL_textWithEntities tL_textWithEntities) {
         this.a = 11;
-        this.d = t5Var;
+        this.d = u5Var;
         this.e = callback2;
         this.b = j3;
         this.c = tLObject;

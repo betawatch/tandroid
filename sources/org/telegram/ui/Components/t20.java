@@ -7,9 +7,9 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
 import java.util.ArrayList;
-import org.telegram.ui.jb1;
+import org.telegram.ui.lb1;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class t20 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a = 0;
@@ -19,8 +19,8 @@ public final class t20 extends AnimatorListenerAdapter {
     public final /* synthetic */ Object e;
     public final /* synthetic */ Object f;
 
-    public t20(jb1 jb1Var, ui uiVar, org.telegram.ui.Cells.u1 u1Var, org.telegram.ui.lk lkVar, org.telegram.ui.zn znVar) {
-        this.f = jb1Var;
+    public t20(lb1 lb1Var, ui uiVar, org.telegram.ui.Cells.u1 u1Var, org.telegram.ui.lk lkVar, org.telegram.ui.zn znVar) {
+        this.f = lb1Var;
         this.b = uiVar;
         this.c = u1Var;
         this.d = lkVar;
@@ -47,10 +47,10 @@ public final class t20 extends AnimatorListenerAdapter {
                 }
                 break;
             default:
-                jb1 jb1Var = (jb1) this.f;
-                jb1Var.D.unlock();
+                lb1 lb1Var = (lb1) this.f;
+                lb1Var.D.unlock();
                 ui uiVar = (ui) this.b;
-                ((ArrayList) uiVar.c).remove(jb1Var);
+                ((ArrayList) uiVar.c).remove(lb1Var);
                 uiVar.a();
                 ((ViewGroup) uiVar.d).invalidate();
                 org.telegram.ui.Cells.u1 u1Var = (org.telegram.ui.Cells.u1) this.c;
@@ -62,7 +62,7 @@ public final class t20 extends AnimatorListenerAdapter {
                 org.telegram.ui.zn znVar = (org.telegram.ui.zn) this.e;
                 ((qo[]) znVar.a0.b)[0].c.setAlpha(1.0f);
                 ((qo[]) znVar.a0.b)[0].d.setAlpha(1.0f);
-                z5.release((View) null, jb1Var.H);
+                y5.release((View) null, lb1Var.H);
                 break;
         }
     }

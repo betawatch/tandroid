@@ -1,17 +1,17 @@
 package h0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class g implements d {
-    public final o0.e a;
-    public final o0.e b;
+    public final o0.d a;
+    public final o0.d b;
     public final int c;
     public final int d;
     public final String e;
 
-    public g(o0.e eVar, o0.e eVar2, int i10, int i11, String str) {
-        this.a = eVar;
-        this.b = eVar2;
+    public g(o0.d dVar, o0.d dVar2, int i10, int i11, String str) {
+        this.a = dVar;
+        this.b = dVar2;
         this.d = i10;
         this.c = i11;
         this.e = str;

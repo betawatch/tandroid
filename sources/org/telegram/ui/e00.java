@@ -3,9 +3,9 @@ package org.telegram.ui;
 import android.view.View;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class e00 implements org.telegram.ui.Components.ml0, org.telegram.ui.ActionBar.a2 {
+public final /* synthetic */ class e00 implements org.telegram.ui.Components.ll0, org.telegram.ui.ActionBar.a2 {
     public final /* synthetic */ int a;
     public final /* synthetic */ f10 b;
 
@@ -14,20 +14,20 @@ public final /* synthetic */ class e00 implements org.telegram.ui.Components.ml0
         this.b = f10Var;
     }
 
-    @Override // org.telegram.ui.Components.ml0
+    @Override // org.telegram.ui.Components.ll0
     public boolean d(int i10, View view) {
         f10 f10Var = this.b;
         w00 w00Var = (w00) f10Var.P.get(i10);
-        if (w00Var == null || !(view instanceof org.telegram.ui.Cells.za)) {
+        if (w00Var == null || !(view instanceof org.telegram.ui.Cells.ab)) {
             return false;
         }
-        org.telegram.ui.Cells.za zaVar = (org.telegram.ui.Cells.za) view;
-        f10Var.v0(w00Var, zaVar.getName(), zaVar.getCurrentObject(), w00Var.g);
+        org.telegram.ui.Cells.ab abVar = (org.telegram.ui.Cells.ab) view;
+        f10Var.v0(w00Var, abVar.getName(), abVar.getCurrentObject(), w00Var.g);
         return true;
     }
 
     @Override // org.telegram.ui.ActionBar.a2
-    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+    public void k(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
         switch (this.a) {
             case 1:
                 f10 f10Var = this.b;

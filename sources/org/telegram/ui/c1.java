@@ -26,9 +26,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class c1 extends FrameLayout implements org.telegram.ui.Cells.p9 {
+public final class c1 extends FrameLayout implements org.telegram.ui.Cells.q9 {
     public TL_iv.pageBlockChannel E;
     public final u70 a;
     public final f4 b;
@@ -57,7 +57,7 @@ public final class c1 extends FrameLayout implements org.telegram.ui.Cells.p9 {
         TextView textView = new TextView(context);
         this.d = textView;
         com.google.android.gms.internal.vision.e2.l(14.0f, 1, textView);
-        org.telegram.messenger.wh.k(R.string.ChannelJoin, textView, 19);
+        org.telegram.messenger.rk.l(R.string.ChannelJoin, textView, 19);
         addView(textView, w7.y5.e(-2, 39, 53));
         textView.setOnClickListener(new ai.f2(23, this, u70Var));
         ImageView imageView = new ImageView(context);
@@ -106,7 +106,7 @@ public final class c1 extends FrameLayout implements org.telegram.ui.Cells.p9 {
         this.x.start();
     }
 
-    @Override // org.telegram.ui.Cells.p9
+    @Override // org.telegram.ui.Cells.q9
     public final void fillTextLayoutBlocks(ArrayList arrayList) {
         a3 a3Var = this.h;
         if (a3Var != null) {
@@ -194,7 +194,7 @@ public final class c1 extends FrameLayout implements org.telegram.ui.Cells.p9 {
             String str = pageblockchannel.channel.title;
             int dp = (size - AndroidUtilities.dp(52.0f)) - this.n;
             TL_iv.pageBlockChannel pageblockchannel2 = this.E;
-            Layout.Alignment[] alignmentArr = org.telegram.ui.Components.vw0.a;
+            Layout.Alignment[] alignmentArr = org.telegram.ui.Components.uw0.a;
             this.h = h4.p(this.a, this, str, null, dp, this.s, pageblockchannel2, alignmentArr.length >= 5 ? alignmentArr[3] : Layout.Alignment.ALIGN_NORMAL, 1, this.b);
             int i12 = this.r;
             f4 f4Var = this.b;

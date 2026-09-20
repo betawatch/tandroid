@@ -9,7 +9,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class t3 extends j1.b {
     public final Rect o;
@@ -110,15 +110,15 @@ public final class t3 extends j1.b {
     }
 
     @Override // j1.b
-    public final void l(int i10, s0.c cVar) {
+    public final void l(int i10, s0.d dVar) {
         int i11;
         boolean z10;
         String str;
         String str2;
         x3 x3Var = this.p;
         ArrayList arrayList = x3Var.R;
-        cVar.i("android.widget.Button");
-        cVar.b(s0.b.c);
+        dVar.i("android.widget.Button");
+        dVar.b(s0.c.c);
         Rect rect = this.o;
         if (i10 == 1) {
             org.telegram.ui.Cells.z zVar = x3Var.i0;
@@ -126,10 +126,10 @@ public final class t3 extends j1.b {
                 rect.set(zVar.getBounds());
             } else {
                 rect.set(0, 0, 1, 1);
-                cVar.p(false);
+                dVar.p(false);
             }
-            cVar.h(rect);
-            cVar.j(LocaleController.getString(R.string.BotCloseAllTabs));
+            dVar.h(rect);
+            dVar.j(LocaleController.getString(R.string.BotCloseAllTabs));
             return;
         }
         if (i10 >= 2000) {
@@ -138,8 +138,8 @@ public final class t3 extends j1.b {
         } else {
             if (i10 < 1000) {
                 rect.set(0, 0, 1, 1);
-                cVar.h(rect);
-                cVar.p(false);
+                dVar.h(rect);
+                dVar.p(false);
                 return;
             }
             i11 = i10 - MediaDataController.MAX_STYLE_RUNS_COUNT;
@@ -147,8 +147,8 @@ public final class t3 extends j1.b {
         }
         if (i11 < 0 || i11 >= arrayList.size()) {
             rect.set(0, 0, 1, 1);
-            cVar.h(rect);
-            cVar.p(false);
+            dVar.h(rect);
+            dVar.p(false);
             return;
         }
         w3 w3Var = (w3) arrayList.get(i11);
@@ -157,23 +157,23 @@ public final class t3 extends j1.b {
         String b10 = (n3Var == null || n3Var.b() == null) ? "" : w3Var.c.b();
         if (!z10) {
             rect.set((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
-            cVar.h(rect);
+            dVar.h(rect);
             if (TextUtils.isEmpty(b10)) {
                 str = LocaleController.getString(R.string.Open);
             } else {
                 str = LocaleController.getString(R.string.Open) + ", " + b10;
             }
-            cVar.j(str);
+            dVar.j(str);
             return;
         }
         Rect bounds = w3Var.d.k.getBounds();
         rect.set((int) (rectF.left + bounds.left), (int) (rectF.top + AndroidUtilities.dp(24.0f) + bounds.top), (int) (rectF.left + bounds.right), (int) (rectF.top + AndroidUtilities.dp(24.0f) + bounds.bottom));
-        cVar.h(rect);
+        dVar.h(rect);
         if (TextUtils.isEmpty(b10)) {
             str2 = LocaleController.getString(R.string.Close);
         } else {
             str2 = LocaleController.getString(R.string.Close) + ", " + b10;
         }
-        cVar.j(str2);
+        dVar.j(str2);
     }
 }

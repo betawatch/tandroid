@@ -26,26 +26,25 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.rk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.ActionBar.g5;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.Components.h00;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.v80;
-import org.telegram.ui.Components.w70;
+import org.telegram.ui.Components.u80;
+import org.telegram.ui.Components.v70;
 import org.telegram.ui.h4;
 import org.telegram.ui.h70;
 import org.telegram.ui.l20;
 import org.telegram.ui.l3;
-import org.telegram.ui.o91;
+import org.telegram.ui.u21;
 import org.telegram.ui.u3;
-import org.telegram.ui.x81;
 import org.telegram.ui.yd;
 import w7.y5;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public abstract class w1 extends FrameLayout {
     public boolean A0;
@@ -75,7 +74,7 @@ public abstract class w1 extends FrameLayout {
     public float c;
     public int c0;
     public final float[] d;
-    public final v80 d0;
+    public final u80 d0;
     public final boolean[] e;
     public boolean e0;
     public final Paint[] f;
@@ -194,7 +193,7 @@ public abstract class w1 extends FrameLayout {
                         if (k0Var2.getParent() instanceof ViewGroup) {
                             a8 a8Var = new a8(k0Var2, 2);
                             Utilities.Callback callback2 = null;
-                            w70 F = w70.F((ViewGroup) k0Var2.getParent(), null, k0Var2.R);
+                            v70 F = v70.F((ViewGroup) k0Var2.getParent(), null, k0Var2.R);
                             F.s = 0;
                             F.S(k0Var2.m0, k0Var2.n0);
                             F.a0(0.0f, -AndroidUtilities.dp(52.0f));
@@ -254,9 +253,9 @@ public abstract class w1 extends FrameLayout {
                                     org.telegram.ui.ActionBar.f1 y3 = F.y();
                                     y3.setEnabled(instantViewLoader.b() != null);
                                     y3.setAlpha(y3.isEnabled() ? 1.0f : 0.5f);
-                                    x81 x81Var = new x81(29, y3, instantViewLoader);
-                                    instantViewLoader.m.add(x81Var);
-                                    F.p = new p1(3, instantViewLoader, x81Var);
+                                    g1 g1Var = new g1(1, y3, instantViewLoader);
+                                    instantViewLoader.m.add(g1Var);
+                                    F.p = new g1(5, instantViewLoader, g1Var);
                                 }
                                 F.c(R.drawable.msg_reset, LocaleController.getString(R.string.Refresh), (Runnable) a8Var.run(5), false);
                                 F.c(R.drawable.msg_search, LocaleController.getString(R.string.Search), (Runnable) a8Var.run(1), false);
@@ -269,7 +268,7 @@ public abstract class w1 extends FrameLayout {
                                 F.c(R.drawable.menu_browser_bookmarks, LocaleController.getString(R.string.WebBookmarks), (Runnable) a8Var.run(7), false);
                                 F.c(R.drawable.msg_settings_old, LocaleController.getString(R.string.Settings), (Runnable) a8Var.run(4), false);
                             }
-                            F.p = new o91(k0Var2);
+                            F.p = new u21(k0Var2);
                             F.Z();
                             break;
                         }
@@ -337,7 +336,7 @@ public abstract class w1 extends FrameLayout {
         oVar2.setTextSize(1, 15.66f);
         oVar2.setSingleLine(true);
         this.c0 = SharedConfig.searchEngineType;
-        oVar2.setHint(LocaleController.formatString(R.string.AddressPlaceholder, o1.a().a));
+        oVar2.setHint(LocaleController.formatString(R.string.AddressPlaceholder, p1.a().a));
         oVar2.setBackgroundResource(0);
         oVar2.setCursorWidth(1.5f);
         oVar2.setGravity(112);
@@ -391,7 +390,7 @@ public abstract class w1 extends FrameLayout {
                         if (k0Var2.getParent() instanceof ViewGroup) {
                             a8 a8Var = new a8(k0Var2, 2);
                             Utilities.Callback callback2 = null;
-                            w70 F = w70.F((ViewGroup) k0Var2.getParent(), null, k0Var2.R);
+                            v70 F = v70.F((ViewGroup) k0Var2.getParent(), null, k0Var2.R);
                             F.s = 0;
                             F.S(k0Var2.m0, k0Var2.n0);
                             F.a0(0.0f, -AndroidUtilities.dp(52.0f));
@@ -451,9 +450,9 @@ public abstract class w1 extends FrameLayout {
                                     org.telegram.ui.ActionBar.f1 y3 = F.y();
                                     y3.setEnabled(instantViewLoader.b() != null);
                                     y3.setAlpha(y3.isEnabled() ? 1.0f : 0.5f);
-                                    x81 x81Var = new x81(29, y3, instantViewLoader);
-                                    instantViewLoader.m.add(x81Var);
-                                    F.p = new p1(3, instantViewLoader, x81Var);
+                                    g1 g1Var = new g1(1, y3, instantViewLoader);
+                                    instantViewLoader.m.add(g1Var);
+                                    F.p = new g1(5, instantViewLoader, g1Var);
                                 }
                                 F.c(R.drawable.msg_reset, LocaleController.getString(R.string.Refresh), (Runnable) a8Var.run(5), false);
                                 F.c(R.drawable.msg_search, LocaleController.getString(R.string.Search), (Runnable) a8Var.run(1), false);
@@ -466,7 +465,7 @@ public abstract class w1 extends FrameLayout {
                                 F.c(R.drawable.menu_browser_bookmarks, LocaleController.getString(R.string.WebBookmarks), (Runnable) a8Var.run(7), false);
                                 F.c(R.drawable.msg_settings_old, LocaleController.getString(R.string.Settings), (Runnable) a8Var.run(4), false);
                             }
-                            F.p = new o91(k0Var2);
+                            F.p = new u21(k0Var2);
                             F.Z();
                             break;
                         }
@@ -478,11 +477,11 @@ public abstract class w1 extends FrameLayout {
             }
         });
         addView(imageView4, y5.e(54, 56, 85));
-        v80 v80Var = new v80(context);
-        this.d0 = v80Var;
-        v80Var.setPivotX(0.0f);
-        v80Var.setPivotY(AndroidUtilities.dp(2.0f));
-        addView(v80Var, y5.e(-1, 2, 87));
+        u80 u80Var = new u80(context);
+        this.d0 = u80Var;
+        u80Var.setPivotX(0.0f);
+        u80Var.setPivotY(AndroidUtilities.dp(2.0f));
+        addView(u80Var, y5.e(-1, 2, 87));
         setWillNotDraw(false);
         this.b[0] = new v1(k0Var);
         this.b[1] = new v1(k0Var);
@@ -845,7 +844,7 @@ public abstract class w1 extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.View
     public void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, wh.C(56.0f, this.e0 ? AndroidUtilities.statusBarHeight : 0, TLObject.FLAG_30));
+        super.onMeasure(i10, rk.C(56.0f, this.e0 ? AndroidUtilities.statusBarHeight : 0, TLObject.FLAG_30));
     }
 
     public void setBackButton(boolean z10) {

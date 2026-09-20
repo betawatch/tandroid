@@ -1,115 +1,34 @@
 package org.telegram.ui;
 
-import android.graphics.Bitmap;
-import java.io.File;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class ej1 {
-    public String a;
-    public final int b;
-    public final int c;
-    public final int d;
-    public final int e;
-    public int f;
-    public TLRPC.TL_wallPaper g;
-    public float h;
-    public final File i;
-    public final boolean j;
-    public final boolean k;
-    public TLRPC.WallPaper l;
-    public Bitmap m;
+public final class ej1 extends View {
+    public int a;
+    public final /* synthetic */ WallpapersListActivity b;
 
-    public ej1(int i10, int i11, String str, int i12) {
-        this.a = str;
-        this.b = i10 | (-16777216);
-        int i13 = i11 == 0 ? 0 : i11 | (-16777216);
-        this.c = i13;
-        this.f = i13 == 0 ? 0 : i12;
-        this.h = 1.0f;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ej1(WallpapersListActivity wallpapersListActivity, Context context) {
+        super(context);
+        this.b = wallpapersListActivity;
     }
 
-    public final String a() {
-        StringBuilder sb2 = new StringBuilder();
-        sb2.append(String.valueOf(this.b));
-        sb2.append(this.c);
-        sb2.append(this.d);
-        sb2.append(this.e);
-        sb2.append(this.f);
-        sb2.append(this.h);
-        String str = this.a;
-        if (str == null) {
-            str = "";
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        WallpapersListActivity wallpapersListActivity = this.b;
+        wallpapersListActivity.s.setColor(this.a);
+        canvas.drawCircle(AndroidUtilities.dp(25.0f), AndroidUtilities.dp(31.0f), AndroidUtilities.dp(18.0f), wallpapersListActivity.s);
+        if (this.a == org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.d6, false)) {
+            canvas.drawCircle(AndroidUtilities.dp(25.0f), AndroidUtilities.dp(31.0f), AndroidUtilities.dp(18.0f), wallpapersListActivity.v);
         }
-        sb2.append(str);
-        return Utilities.MD5(sb2.toString());
     }
 
-    public final String b() {
-        int i10 = this.c;
-        String lowerCase = i10 != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i10 >> 16)) & 255), Integer.valueOf(((byte) (i10 >> 8)) & 255), Byte.valueOf((byte) (i10 & 255))).toLowerCase() : null;
-        int i11 = this.b;
-        String lowerCase2 = String.format("%02x%02x%02x", Integer.valueOf(((byte) (i11 >> 16)) & 255), Integer.valueOf(((byte) (i11 >> 8)) & 255), Byte.valueOf((byte) (i11 & 255))).toLowerCase();
-        int i12 = this.d;
-        String lowerCase3 = i12 != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i12 >> 16)) & 255), Integer.valueOf(((byte) (i12 >> 8)) & 255), Byte.valueOf((byte) (i12 & 255))).toLowerCase() : null;
-        int i13 = this.e;
-        String lowerCase4 = i13 != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i13 >> 16)) & 255), Integer.valueOf(((byte) (i13 >> 8)) & 255), Byte.valueOf((byte) (i13 & 255))).toLowerCase() : null;
-        if (lowerCase == null || lowerCase3 == null) {
-            if (lowerCase != null) {
-                String C = a4.a.C(lowerCase2, "-", lowerCase);
-                if (this.g != null) {
-                    StringBuilder j3 = t8.b.j(C, "&rotation=");
-                    j3.append(AndroidUtilities.getWallpaperRotation(this.f, true));
-                    lowerCase2 = j3.toString();
-                } else {
-                    StringBuilder j10 = t8.b.j(C, "?rotation=");
-                    j10.append(AndroidUtilities.getWallpaperRotation(this.f, true));
-                    lowerCase2 = j10.toString();
-                }
-            }
-        } else if (lowerCase4 != null) {
-            StringBuilder sb2 = new StringBuilder();
-            sb2.append(lowerCase2);
-            sb2.append("~");
-            sb2.append(lowerCase);
-            sb2.append("~");
-            sb2.append(lowerCase3);
-            lowerCase2 = a4.a.s(sb2, "~", lowerCase4);
-        } else {
-            lowerCase2 = lowerCase2 + "~" + lowerCase + "~" + lowerCase3;
-        }
-        if (this.g == null) {
-            return a4.a.q(MessagesController.getInstance(UserConfig.selectedAccount).linkPrefix, "/bg/", lowerCase2, new StringBuilder("https://"));
-        }
-        String str = "https://" + MessagesController.getInstance(UserConfig.selectedAccount).linkPrefix + "/bg/" + this.g.slug + "?intensity=" + ((int) (this.h * 100.0f)) + "&bg_color=" + lowerCase2;
-        return this.j ? t8.b.v(str, "&mode=motion") : str;
-    }
-
-    public ej1(String str, int i10, int i11, int i12, int i13) {
-        this.a = str;
-        this.b = i10 | (-16777216);
-        this.c = i11 == 0 ? 0 : i11 | (-16777216);
-        this.d = i12 == 0 ? 0 : i12 | (-16777216);
-        this.e = i13 != 0 ? i13 | (-16777216) : 0;
-        this.h = 1.0f;
-        this.k = true;
-    }
-
-    public ej1(String str, int i10, int i11, int i12, int i13, int i14, float f7, boolean z10, File file) {
-        this.a = str;
-        this.b = i10 | (-16777216);
-        int i15 = i11 == 0 ? 0 : i11 | (-16777216);
-        this.c = i15;
-        this.d = i12 == 0 ? 0 : i12 | (-16777216);
-        this.e = i13 != 0 ? i13 | (-16777216) : 0;
-        this.f = i15 == 0 ? 45 : i14;
-        this.h = f7;
-        this.i = file;
-        this.j = z10;
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        setMeasuredDimension(AndroidUtilities.dp(50.0f), AndroidUtilities.dp(62.0f));
     }
 }

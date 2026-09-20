@@ -1,15 +1,15 @@
 package z7;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class va {
     public final Long a;
     public final gb b;
     public final Boolean c;
 
-    public /* synthetic */ va(v7.r1 r1Var) {
-        this.a = (Long) r1Var.b;
-        this.b = (gb) r1Var.d;
-        this.c = (Boolean) r1Var.c;
+    public /* synthetic */ va(v7.s1 s1Var) {
+        this.a = (Long) s1Var.b;
+        this.b = (gb) s1Var.d;
+        this.c = (Boolean) s1Var.c;
     }
 }

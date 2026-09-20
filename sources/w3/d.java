@@ -30,10 +30,10 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.tgnet.TLObject;
 import s4.g1;
-import u2.x0;
-import v7.y7;
+import u2.y0;
+import v7.z7;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public abstract class d {
     public static final byte[] a;
@@ -90,10 +90,10 @@ public abstract class d {
         int i23;
         int i24;
         int i25;
-        x0 x0Var;
+        y0 y0Var;
         String str5;
         String str6;
-        x0 x0Var2;
+        y0 y0Var2;
         int i26;
         int i27;
         int i28;
@@ -249,7 +249,7 @@ public abstract class d {
             str2 = "audio/raw";
             i17 = 2;
         }
-        x0 x0Var3 = null;
+        y0 y0Var3 = null;
         String str9 = null;
         List list2 = null;
         z zVar = null;
@@ -279,7 +279,7 @@ public abstract class d {
                 String str11 = format;
                 vVar3.h(0, D2, bArr);
                 list2 = list2 == null ? i0.z(bArr) : i0.A(bArr, (byte[]) list2.get(0));
-                x0Var = x0Var3;
+                y0Var = y0Var3;
                 str9 = str11;
                 str6 = str2;
                 i25 = i46;
@@ -293,7 +293,7 @@ public abstract class d {
                     vVar3.h(0, x11, bArr2);
                     list2 = list2 == null ? i0.z(bArr2) : i0.A((byte[]) list2.get(0), bArr2);
                 }
-                x0Var = x0Var3;
+                y0Var = y0Var3;
                 str6 = str2;
                 i25 = i46;
                 str4 = str8;
@@ -324,7 +324,7 @@ public abstract class d {
                     vVar3.J(i46 + 8);
                     vVar3.K(4);
                     z zVar2 = new z(vVar3.z(), vVar3.z());
-                    x0Var = x0Var3;
+                    y0Var = y0Var3;
                     str6 = str2;
                     i25 = i46;
                     zVar = zVar2;
@@ -796,7 +796,7 @@ public abstract class d {
                                 if (j3 <= 0) {
                                     throw s0.a(null, "Invalid sample rate for Dolby TrueHD MLP stream: " + j3);
                                 }
-                                x0Var = x0Var3;
+                                y0Var = y0Var3;
                                 y3 = j3;
                                 i17 = i47;
                                 str9 = str10;
@@ -847,7 +847,7 @@ public abstract class d {
                                         vVar4.J(20);
                                         Pair create = Pair.create(Integer.valueOf(vVar4.B()), Integer.valueOf(x12));
                                         int intValue = ((Integer) create.first).intValue();
-                                        x0Var = x0Var3;
+                                        y0Var = y0Var3;
                                         i16 = ((Integer) create.second).intValue();
                                         y3 = intValue;
                                         i17 = i47;
@@ -866,7 +866,7 @@ public abstract class d {
                                             long x13 = vVar3.x();
                                             j12 |= (x13 & 127) << (i92 * 7);
                                             if ((x13 & 128) == 0) {
-                                                int b13 = y7.b(j12);
+                                                int b13 = z7.b(j12);
                                                 byte[] bArr7 = new byte[b13];
                                                 vVar3.h(0, b13, bArr7);
                                                 byte[] bArr8 = e2.e.a;
@@ -897,7 +897,7 @@ public abstract class d {
                                                 Object[] objArr4 = {Integer.valueOf(x14), Integer.valueOf(x15), v};
                                                 String str13 = d0.a;
                                                 String format3 = String.format(Locale.US, "iamf.%03X.%03X.%s", objArr4);
-                                                x0Var = x0Var3;
+                                                y0Var = y0Var3;
                                                 list2 = i0.z(bArr7);
                                                 i17 = i47;
                                                 j10 = j10;
@@ -910,14 +910,14 @@ public abstract class d {
                                                 i46 = i25 + j10;
                                                 i44 = i94;
                                                 i45 = i12;
-                                                x0Var3 = x0Var;
+                                                y0Var3 = y0Var;
                                                 str2 = str6;
                                                 str8 = str4;
                                                 c10 = 0;
                                                 vVar3 = vVar;
                                             }
                                         }
-                                        int b132 = y7.b(j12);
+                                        int b132 = z7.b(j12);
                                         byte[] bArr72 = new byte[b132];
                                         vVar3.h(0, b132, bArr72);
                                         byte[] bArr82 = e2.e.a;
@@ -938,7 +938,7 @@ public abstract class d {
                                         Object[] objArr42 = {Integer.valueOf(x142), Integer.valueOf(x152), v};
                                         String str132 = d0.a;
                                         String format32 = String.format(Locale.US, "iamf.%03X.%03X.%s", objArr42);
-                                        x0Var = x0Var3;
+                                        y0Var = y0Var3;
                                         list2 = i0.z(bArr72);
                                         i17 = i47;
                                         j10 = j10;
@@ -951,7 +951,7 @@ public abstract class d {
                                         i46 = i25 + j10;
                                         i44 = i942;
                                         i45 = i12;
-                                        x0Var3 = x0Var;
+                                        y0Var3 = y0Var;
                                         str2 = str6;
                                         str8 = str4;
                                         c10 = 0;
@@ -971,7 +971,7 @@ public abstract class d {
                                             i17 = i47;
                                             i29 = -1;
                                         }
-                                        x0Var = x0Var3;
+                                        y0Var = y0Var3;
                                         str9 = str10;
                                         if (i17 != i29) {
                                             str6 = "audio/raw";
@@ -990,13 +990,13 @@ public abstract class d {
                                     i46 = i25 + j10;
                                     i44 = i9422;
                                     i45 = i12;
-                                    x0Var3 = x0Var;
+                                    y0Var3 = y0Var;
                                     str2 = str6;
                                     str8 = str4;
                                     c10 = 0;
                                     vVar3 = vVar;
                                 }
-                                x0Var = x0Var3;
+                                y0Var = y0Var3;
                                 i17 = i47;
                                 str9 = str10;
                                 j10 = j10;
@@ -1009,13 +1009,13 @@ public abstract class d {
                             i46 = i25 + j10;
                             i44 = i94222;
                             i45 = i12;
-                            x0Var3 = x0Var;
+                            y0Var3 = y0Var;
                             str2 = str6;
                             str8 = str4;
                             c10 = 0;
                             vVar3 = vVar;
                         }
-                        x0Var = x0Var3;
+                        y0Var = y0Var3;
                         i16 = i27;
                         y3 = i28;
                         i17 = i47;
@@ -1027,7 +1027,7 @@ public abstract class d {
                         i46 = i25 + j10;
                         i44 = i942222;
                         i45 = i12;
-                        x0Var3 = x0Var;
+                        y0Var3 = y0Var;
                         str2 = str6;
                         str8 = str4;
                         c10 = 0;
@@ -1035,7 +1035,7 @@ public abstract class d {
                     }
                     i28 = y3;
                     i21 = i44;
-                    x0Var = x0Var3;
+                    y0Var = y0Var3;
                     i16 = i27;
                     y3 = i28;
                     i17 = i47;
@@ -1047,7 +1047,7 @@ public abstract class d {
                     i46 = i25 + j10;
                     i44 = i9422222;
                     i45 = i12;
-                    x0Var3 = x0Var;
+                    y0Var3 = y0Var;
                     str2 = str6;
                     str8 = str4;
                     c10 = 0;
@@ -1077,7 +1077,7 @@ public abstract class d {
                     }
                 }
                 if (i24 != -1) {
-                    x0 c11 = c(i24, vVar3);
+                    y0 c11 = c(i24, vVar3);
                     str5 = (String) c11.c;
                     byte[] bArr9 = (byte[]) c11.d;
                     if (bArr9 != null) {
@@ -1093,14 +1093,14 @@ public abstract class d {
                             int i96 = 0;
                             while (true) {
                                 if (vVar5.a() > 0) {
-                                    x0Var2 = c11;
+                                    y0Var2 = c11;
                                     if ((vVar5.a[vVar5.b] & 255) == 255) {
                                         i96 += 255;
                                         vVar5.K(1);
-                                        c11 = x0Var2;
+                                        c11 = y0Var2;
                                     }
                                 } else {
-                                    x0Var2 = c11;
+                                    y0Var2 = c11;
                                 }
                             }
                             int x18 = vVar5.x() + i96;
@@ -1116,7 +1116,7 @@ public abstract class d {
                             i16 = i20;
                             str9 = str10;
                         } else {
-                            x0Var2 = c11;
+                            y0Var2 = c11;
                             if (MediaController.AUDIO_MIME_TYPE.equals(str5)) {
                                 c3.a n10 = c3.b.n(new a4.h(bArr9, bArr9.length), false);
                                 y3 = n10.b;
@@ -1129,15 +1129,15 @@ public abstract class d {
                             }
                             list = i0.z(bArr9);
                         }
-                        x0Var = x0Var2;
+                        y0Var = y0Var2;
                     } else {
-                        x0Var = c11;
+                        y0Var = c11;
                         y3 = i22;
                         i16 = i20;
                         str9 = str10;
                     }
                 } else {
-                    x0Var = x0Var3;
+                    y0Var = y0Var3;
                     y3 = i22;
                     i16 = i20;
                     str9 = str10;
@@ -1150,7 +1150,7 @@ public abstract class d {
                 i46 = i25 + j10;
                 i44 = i94222222;
                 i45 = i12;
-                x0Var3 = x0Var;
+                y0Var3 = y0Var;
                 str2 = str6;
                 str8 = str4;
                 c10 = 0;
@@ -1161,7 +1161,7 @@ public abstract class d {
             i46 = i25 + j10;
             i44 = i942222222;
             i45 = i12;
-            x0Var3 = x0Var;
+            y0Var3 = y0Var;
             str2 = str6;
             str8 = str4;
             c10 = 0;
@@ -1186,21 +1186,21 @@ public abstract class d {
         rVar5.t = list4;
         rVar5.u = oVar2;
         rVar5.d = str;
-        if (x0Var3 != null) {
-            x0 x0Var4 = x0Var3;
-            rVar5.h = y7.e(x0Var4.a);
-            rVar5.i = y7.e(x0Var4.b);
+        if (y0Var3 != null) {
+            y0 y0Var4 = y0Var3;
+            rVar5.h = z7.e(y0Var4.a);
+            rVar5.i = z7.e(y0Var4.b);
         } else {
             z zVar3 = zVar;
             if (zVar3 != null) {
-                rVar5.h = y7.e(zVar3.a);
-                rVar5.i = y7.e(zVar3.b);
+                rVar5.h = z7.e(zVar3.a);
+                rVar5.i = z7.e(zVar3.b);
             }
         }
         a0Var.d = new b2.s(rVar5);
     }
 
-    public static x0 c(int i10, v vVar) {
+    public static y0 c(int i10, v vVar) {
         vVar.J(i10 + 12);
         vVar.K(1);
         d(vVar);
@@ -1219,7 +1219,7 @@ public abstract class d {
         d(vVar);
         String e = r0.e(vVar.x());
         if ("audio/mpeg".equals(e) || "audio/vnd.dts".equals(e) || "audio/vnd.dts.hd".equals(e)) {
-            return new x0(e, null, -1L, -1L);
+            return new y0(e, null, -1L, -1L);
         }
         vVar.K(4);
         long z10 = vVar.z();
@@ -1232,7 +1232,7 @@ public abstract class d {
         if (j3 <= 0) {
             j3 = -1;
         }
-        return new x0(e, bArr, j3, z10 > 0 ? z10 : -1L);
+        return new y0(e, bArr, j3, z10 > 0 ? z10 : -1L);
     }
 
     public static int d(v vVar) {
@@ -1562,7 +1562,7 @@ public abstract class d {
                     int i51 = -1;
                     String str14 = null;
                     z zVar = null;
-                    x0 x0Var = null;
+                    y0 y0Var = null;
                     while (i14 - i12 < j11) {
                         vVar2.J(i14);
                         int i52 = vVar2.b;
@@ -2105,14 +2105,14 @@ public abstract class d {
                                                     str7 = "video/3gpp";
                                                 } else if (j14 == 1702061171) {
                                                     c3.b.c(null, str8 == null);
-                                                    x0 c10 = c(i52, vVar2);
+                                                    y0 c10 = c(i52, vVar2);
                                                     String str19 = (String) c10.c;
                                                     byte[] bArr8 = (byte[]) c10.d;
                                                     if (bArr8 != null) {
                                                         list = i0.z(bArr8);
                                                     }
                                                     i18 = i80;
-                                                    x0Var = c10;
+                                                    y0Var = c10;
                                                     str7 = str19;
                                                 } else if (j14 == 1651798644) {
                                                     vVar2.J(i52 + 8);
@@ -2324,13 +2324,13 @@ public abstract class d {
                         rVar.G = new b2.j(i43, i123, i46, byteBuffer != null ? byteBuffer.array() : null, i121, i124);
                         z zVar2 = zVar;
                         if (zVar2 != null) {
-                            rVar.h = y7.e(zVar2.a);
-                            rVar.i = y7.e(zVar2.b);
+                            rVar.h = z7.e(zVar2.a);
+                            rVar.i = z7.e(zVar2.b);
                         } else {
-                            x0 x0Var2 = x0Var;
-                            if (x0Var2 != null) {
-                                rVar.h = y7.e(x0Var2.a);
-                                rVar.i = y7.e(x0Var2.b);
+                            y0 y0Var2 = y0Var;
+                            if (y0Var2 != null) {
+                                rVar.h = z7.e(y0Var2.a);
+                                rVar.i = z7.e(y0Var2.b);
                             }
                         }
                         a0Var2 = a0Var3;
@@ -2361,7 +2361,7 @@ public abstract class d {
                 int i512 = -1;
                 String str142 = null;
                 z zVar3 = null;
-                x0 x0Var3 = null;
+                y0 y0Var3 = null;
                 while (i14 - i12 < j11) {
                 }
                 int i1212 = i422;
@@ -2422,7 +2422,7 @@ public abstract class d {
                                     int i129 = 0;
                                     while (i129 < bArr11.length - 3) {
                                         byte[] bArr12 = bArr11;
-                                        int c11 = y7.c(bArr11[i129], bArr11[i129 + 1], bArr11[i129 + 2], bArr12[i129 + 3]);
+                                        int c11 = z7.c(bArr11[i129], bArr11[i129 + 1], bArr11[i129 + 2], bArr12[i129 + 3]);
                                         int i130 = (c11 >> 16) & 255;
                                         int i131 = ((c11 >> 8) & 255) - 128;
                                         int i132 = (c11 & 255) - 128;
@@ -2432,14 +2432,14 @@ public abstract class d {
                                         i39 = i39;
                                     }
                                     i36 = i39;
-                                    StringBuilder k10 = k0.k("size: ", i127, "x", i128, "\npalette: ");
+                                    StringBuilder l4 = k0.l("size: ", i127, "x", i128, "\npalette: ");
                                     xa.c cVar = new xa.c(", ");
                                     Iterator it = arrayList.iterator();
                                     StringBuilder sb2 = new StringBuilder();
-                                    cVar.p(sb2, it);
-                                    k10.append(sb2.toString());
-                                    k10.append("\n");
-                                    String sb3 = k10.toString();
+                                    cVar.n(sb2, it);
+                                    l4.append(sb2.toString());
+                                    l4.append("\n");
+                                    String sb3 = l4.toString();
                                     String str21 = d0.a;
                                     a1Var = i0.z(sb3.getBytes(StandardCharsets.UTF_8));
                                     str10 = "application/vobsub";
@@ -3127,8 +3127,8 @@ public abstract class d {
                                         StringBuilder sb2 = new StringBuilder("Inconsistent stbl box for track ");
                                         jArr6 = jArr5;
                                         iArr4 = iArr2;
-                                        k0.s(sb2, pVar2.a, ": remainingSynchronizationSamples ", i25, ", remainingSamplesAtTimestampDelta ");
-                                        k0.s(sb2, i26, ", remainingSamplesInChunk ", i27, ", remainingTimestampDeltaChanges ");
+                                        k0.t(sb2, pVar2.a, ": remainingSynchronizationSamples ", i25, ", remainingSamplesAtTimestampDelta ");
+                                        k0.t(sb2, i26, ", remainingSamplesInChunk ", i27, ", remainingTimestampDeltaChanges ");
                                         sb2.append(i19);
                                         sb2.append(", remainingSamplesAtTimestampOffset ");
                                         sb2.append(i22);
@@ -3390,8 +3390,8 @@ public abstract class d {
                         StringBuilder sb22 = new StringBuilder("Inconsistent stbl box for track ");
                         jArr6 = jArr5;
                         iArr4 = iArr2;
-                        k0.s(sb22, pVar2.a, ": remainingSynchronizationSamples ", i25, ", remainingSamplesAtTimestampDelta ");
-                        k0.s(sb22, i26, ", remainingSamplesInChunk ", i27, ", remainingTimestampDeltaChanges ");
+                        k0.t(sb22, pVar2.a, ": remainingSynchronizationSamples ", i25, ", remainingSamplesAtTimestampDelta ");
+                        k0.t(sb22, i26, ", remainingSamplesInChunk ", i27, ", remainingTimestampDeltaChanges ");
                         sb22.append(i19);
                         sb22.append(", remainingSamplesAtTimestampOffset ");
                         sb22.append(i22);

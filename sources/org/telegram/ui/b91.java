@@ -1,56 +1,24 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.TextView;
+import android.app.Activity;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class b91 extends org.telegram.ui.Components.w51 {
-    static {
-        org.telegram.ui.Components.w51.setup(new b91());
+public final class b91 extends org.telegram.ui.Components.uq0 {
+    public final /* synthetic */ i91 b1;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public b91(i91 i91Var, Activity activity, String str) {
+        super(activity, null, str, false, null, false, null);
+        this.b1 = i91Var;
     }
 
-    public static org.telegram.ui.Components.x51 a(int i10, int i11, int i12, int i13, CharSequence charSequence, CharSequence charSequence2, CharSequence charSequence3) {
-        org.telegram.ui.Components.x51 J = org.telegram.ui.Components.x51.J(b91.class);
-        J.d = i10;
-        J.k = i13;
-        J.l = charSequence;
-        J.m = charSequence2;
-        J.n = charSequence3;
-        J.B = (i11 & 4294967295L) | (i12 << 32);
-        return J;
-    }
-
-    @Override // org.telegram.ui.Components.w51
-    public final void bindView(View view, org.telegram.ui.Components.x51 x51Var, boolean z10, org.telegram.ui.Components.l61 l61Var, org.telegram.ui.Components.t61 t61Var) {
-        long j3 = x51Var.B;
-        int i10 = (int) j3;
-        int i11 = (int) (j3 >>> 32);
-        c91 c91Var = (c91) view;
-        int i12 = x51Var.k;
-        CharSequence charSequence = x51Var.l;
-        CharSequence charSequence2 = x51Var.m;
-        CharSequence charSequence3 = x51Var.n;
-        TextView textView = c91Var.e;
-        TextView textView2 = c91Var.f;
-        c91Var.c.setVisibility(i12 != 0 ? 0 : 8);
-        textView.setTranslationX(i12 == 0 ? AndroidUtilities.dp(2.0f) : 0.0f);
-        textView2.setTranslationX(i12 == 0 ? AndroidUtilities.dp(2.0f) : 0.0f);
-        c91Var.b.b(i10, i11);
-        c91Var.d.setImageResource(i12);
-        textView.setText(charSequence);
-        boolean isEmpty = TextUtils.isEmpty(charSequence2);
-        c91Var.n = !isEmpty;
-        textView2.setVisibility(isEmpty ? 8 : 0);
-        textView2.setText(charSequence2);
-        c91Var.setValue(charSequence3);
-    }
-
-    @Override // org.telegram.ui.Components.w51
-    public final View createView(Context context, org.telegram.ui.Components.wl0 wl0Var, int i10, int i11, org.telegram.ui.ActionBar.e6 e6Var) {
-        return new c91(context, e6Var);
+    @Override // org.telegram.ui.Components.uq0
+    public final void R0(a0.i iVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
+        if (z10) {
+            AndroidUtilities.runOnUIThread(new w81(this, iVar, i10), 250L);
+        }
     }
 }

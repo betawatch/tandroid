@@ -8,9 +8,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.nj0;
+import org.telegram.ui.pj0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class l2 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -23,7 +23,7 @@ public final /* synthetic */ class l2 implements View.OnClickListener {
 
     @Override // android.view.View.OnClickListener
     public final void onClick(View view) {
-        v2 v2Var;
+        w2 w2Var;
         int i10 = this.a;
         boolean z10 = true;
         y2 y2Var = this.b;
@@ -51,16 +51,16 @@ public final /* synthetic */ class l2 implements View.OnClickListener {
             case 4:
                 y2 y2Var2 = this.b;
                 LinearLayout linearLayout = y2Var2.G;
-                v2[] v2VarArr = y2Var2.n;
+                w2[] w2VarArr = y2Var2.n;
                 if (y2Var2.getAlpha() >= 1.0f && !y2Var2.h0) {
                     if (y2Var2.j0) {
                         y2Var2.a(y2Var2.W, y2Var2.a0, y2Var2.b0, y2Var2.c0);
                         break;
                     } else {
                         ArrayList arrayList = new ArrayList();
-                        for (v2 v2Var2 : v2VarArr) {
-                            if (v2Var2 != null) {
-                                TL_stars.StarGift starGift = v2Var2.h;
+                        for (w2 w2Var2 : w2VarArr) {
+                            if (w2Var2 != null) {
+                                TL_stars.StarGift starGift = w2Var2.h;
                                 if ((starGift != null ? starGift : null) != null) {
                                     if (starGift == null) {
                                         starGift = null;
@@ -80,26 +80,26 @@ public final /* synthetic */ class l2 implements View.OnClickListener {
                             }
                             textView.setText("");
                             y2Var2.L.setText(LocaleController.formatString(R.string.GiftCraftProgressSuccessChance, ei.l.G0(y2Var2.getGiftsSuccessChance())));
-                            for (int i11 = 0; i11 < v2VarArr.length; i11++) {
-                                v2 v2Var3 = v2VarArr[i11];
-                                if (v2Var3 != null) {
-                                    v2Var3.setClickable(false);
-                                    v2 v2Var4 = v2VarArr[i11];
-                                    TL_stars.StarGift starGift2 = v2Var4.h;
+                            for (int i11 = 0; i11 < w2VarArr.length; i11++) {
+                                w2 w2Var3 = w2VarArr[i11];
+                                if (w2Var3 != null) {
+                                    w2Var3.setClickable(false);
+                                    w2 w2Var4 = w2VarArr[i11];
+                                    TL_stars.StarGift starGift2 = w2Var4.h;
                                     if (starGift2 == null) {
                                         starGift2 = null;
                                     }
                                     if (starGift2 == null) {
-                                        v2Var4.animate().alpha(0.0f).start();
+                                        w2Var4.animate().alpha(0.0f).start();
                                     }
                                 }
                             }
                             int i12 = 0;
                             while (true) {
-                                if (i12 < v2VarArr.length) {
-                                    v2 v2Var5 = v2VarArr[i12];
-                                    if (v2Var5 != null) {
-                                        TL_stars.StarGift starGift3 = v2Var5.h;
+                                if (i12 < w2VarArr.length) {
+                                    w2 w2Var5 = w2VarArr[i12];
+                                    if (w2Var5 != null) {
+                                        TL_stars.StarGift starGift3 = w2Var5.h;
                                         if ((starGift3 != null ? starGift3 : null) != null) {
                                             if (starGift3 == null) {
                                                 starGift3 = null;
@@ -116,8 +116,8 @@ public final /* synthetic */ class l2 implements View.OnClickListener {
                             y2Var2.P.animate().alpha(0.25f).start();
                             y2Var2.J.d();
                             ArrayList arrayList2 = new ArrayList();
-                            for (v2 v2Var6 : v2VarArr) {
-                                TL_stars.StarGift starGift4 = v2Var6.h;
+                            for (w2 w2Var6 : w2VarArr) {
+                                TL_stars.StarGift starGift4 = w2Var6.h;
                                 if ((starGift4 != null ? starGift4 : null) != null) {
                                     if (starGift4 == null) {
                                         starGift4 = null;
@@ -125,7 +125,7 @@ public final /* synthetic */ class l2 implements View.OnClickListener {
                                     arrayList2.add(starGift4);
                                 }
                             }
-                            y2Var2.e0.run(arrayList2, new ai.m0(23, y2Var2, arrayList2), new rg.w1(y2Var2, 26));
+                            y2Var2.e0.run(arrayList2, new ai.m0(23, y2Var2, arrayList2), new rg.q1(y2Var2, 27));
                             break;
                         } else {
                             AndroidUtilities.shakeViewSpring(linearLayout);
@@ -135,22 +135,22 @@ public final /* synthetic */ class l2 implements View.OnClickListener {
                 }
                 break;
             default:
-                v2 v2Var7 = (v2) view;
-                TL_stars.StarGift starGift5 = v2Var7.h;
+                w2 w2Var7 = (w2) view;
+                TL_stars.StarGift starGift5 = w2Var7.h;
                 if (starGift5 == null) {
                     starGift5 = null;
                 }
-                if (starGift5 != null && !v2Var7.n) {
-                    v2Var7.a(null, true);
+                if (starGift5 != null && !w2Var7.n) {
+                    w2Var7.a(null, true);
                     y2Var.d(true);
                     break;
                 } else {
                     int i13 = 0;
                     while (true) {
-                        v2[] v2VarArr2 = y2Var.n;
-                        if (i13 < v2VarArr2.length && (v2Var = v2VarArr2[i13]) != view) {
-                            if (v2Var != null) {
-                                TL_stars.StarGift starGift6 = v2Var.h;
+                        w2[] w2VarArr2 = y2Var.n;
+                        if (i13 < w2VarArr2.length && (w2Var = w2VarArr2[i13]) != view) {
+                            if (w2Var != null) {
+                                TL_stars.StarGift starGift6 = w2Var.h;
                                 if (starGift6 == null) {
                                     starGift6 = null;
                                 }
@@ -161,7 +161,7 @@ public final /* synthetic */ class l2 implements View.OnClickListener {
                             i13++;
                         }
                     }
-                    y2Var.f0.run(new nj0(19, y2Var, v2Var7), Boolean.valueOf(z10));
+                    y2Var.f0.run(new pj0(19, y2Var, w2Var7), Boolean.valueOf(z10));
                     break;
                 }
                 break;

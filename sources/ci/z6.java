@@ -13,19 +13,19 @@ import java.util.concurrent.TimeUnit;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.nm0;
+import org.telegram.ui.Components.mm0;
 import org.telegram.ui.Components.t40;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.dv0;
 import org.telegram.ui.h01;
 import org.telegram.ui.i60;
 import org.telegram.ui.uy;
-import org.telegram.ui.web.p1;
+import org.telegram.ui.web.g1;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class z6 implements m8, org.telegram.ui.Components.d5, org.telegram.ui.ActionBar.a2, t5.b, r9.g, t40 {
+public final /* synthetic */ class z6 implements m8, org.telegram.ui.Components.c5, org.telegram.ui.ActionBar.a2, t5.b, r9.g, t40 {
     public final /* synthetic */ int a;
     public final /* synthetic */ long b;
     public final /* synthetic */ Object c;
@@ -40,9 +40,9 @@ public final /* synthetic */ class z6 implements m8, org.telegram.ui.Components.
         this.e = obj3;
     }
 
-    @Override // org.telegram.ui.Components.d5
+    @Override // org.telegram.ui.Components.c5
     public void J(int i10, int i11, boolean z10) {
-        zn.d0((zn) this.c, (ArrayList) this.d, this.b, (nm0) this.e, z10, i10);
+        zn.d0((zn) this.c, (ArrayList) this.d, this.b, (mm0) this.e, z10, i10);
     }
 
     @Override // org.telegram.ui.Components.t40
@@ -86,7 +86,7 @@ public final /* synthetic */ class z6 implements m8, org.telegram.ui.Components.
                 return fVar2.b.schedule(new Callable() { // from class: r9.e
                     @Override // java.util.concurrent.Callable
                     public final Object call() {
-                        return f.this.a.submit(new p1(15, callable, eVar));
+                        return f.this.a.submit(new g1(17, callable, eVar));
                     }
                 }, this.b, (TimeUnit) this.e);
         }
@@ -97,8 +97,72 @@ public final /* synthetic */ class z6 implements m8, org.telegram.ui.Components.
         return true;
     }
 
+    @Override // ci.m8
+    public Bitmap f(BitmapFactory.Options options) {
+        d7 d7Var = (d7) this.c;
+        o8 o8Var = (o8) this.d;
+        long j3 = this.b;
+        String str = (String) this.e;
+        if (!o8Var.K) {
+            return BitmapFactory.decodeFile(str, options);
+        }
+        String str2 = o8Var.N;
+        if (str2 != null) {
+            return BitmapFactory.decodeFile(str2, options);
+        }
+        try {
+            return MediaStore.Video.Thumbnails.getThumbnail(d7Var.getContext().getContentResolver(), j3, 1, options);
+        } catch (Throwable unused) {
+            d7Var.invalidate();
+            return null;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.t40
+    public /* synthetic */ dv0 getCloseIntoObject() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.Components.t40
+    public /* synthetic */ String getInitialSearchString() {
+        return null;
+    }
+
+    @Override // t5.b
+    public Object i() {
+        da.b bVar = (da.b) this.c;
+        Iterable iterable = (Iterable) this.d;
+        l5.i iVar = (l5.i) this.e;
+        s5.h hVar = (s5.h) ((s5.d) bVar.c);
+        hVar.getClass();
+        if (iterable.iterator().hasNext()) {
+            String str = "UPDATE events SET num_attempts = num_attempts + 1 WHERE _id in " + s5.h.g(iterable);
+            SQLiteDatabase a2 = hVar.a();
+            a2.beginTransaction();
+            try {
+                a2.compileStatement(str).execute();
+                Cursor rawQuery = a2.rawQuery("SELECT COUNT(*), transport_name FROM events WHERE num_attempts >= 16 GROUP BY transport_name", null);
+                while (rawQuery.moveToNext()) {
+                    try {
+                        hVar.e(rawQuery.getInt(0), o5.c.f, rawQuery.getString(1));
+                    } catch (Throwable th2) {
+                        rawQuery.close();
+                        throw th2;
+                    }
+                }
+                rawQuery.close();
+                a2.compileStatement("DELETE FROM events WHERE num_attempts >= 16").execute();
+                a2.setTransactionSuccessful();
+            } finally {
+                a2.endTransaction();
+            }
+        }
+        hVar.c(new ai.z1(((u5.a) bVar.g).q() + this.b, iVar));
+        return null;
+    }
+
     @Override // org.telegram.ui.ActionBar.a2
-    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+    public void k(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
         switch (this.a) {
             case 2:
                 ChatObject.Call call = (ChatObject.Call) this.c;
@@ -132,70 +196,6 @@ public final /* synthetic */ class z6 implements m8, org.telegram.ui.Components.
                 }
                 break;
         }
-    }
-
-    @Override // ci.m8
-    public Bitmap g(BitmapFactory.Options options) {
-        d7 d7Var = (d7) this.c;
-        o8 o8Var = (o8) this.d;
-        long j3 = this.b;
-        String str = (String) this.e;
-        if (!o8Var.K) {
-            return BitmapFactory.decodeFile(str, options);
-        }
-        String str2 = o8Var.N;
-        if (str2 != null) {
-            return BitmapFactory.decodeFile(str2, options);
-        }
-        try {
-            return MediaStore.Video.Thumbnails.getThumbnail(d7Var.getContext().getContentResolver(), j3, 1, options);
-        } catch (Throwable unused) {
-            d7Var.invalidate();
-            return null;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.t40
-    public /* synthetic */ dv0 getCloseIntoObject() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.Components.t40
-    public /* synthetic */ String getInitialSearchString() {
-        return null;
-    }
-
-    @Override // t5.b
-    public Object h() {
-        da.b bVar = (da.b) this.c;
-        Iterable iterable = (Iterable) this.d;
-        l5.i iVar = (l5.i) this.e;
-        s5.h hVar = (s5.h) ((s5.d) bVar.c);
-        hVar.getClass();
-        if (iterable.iterator().hasNext()) {
-            String str = "UPDATE events SET num_attempts = num_attempts + 1 WHERE _id in " + s5.h.g(iterable);
-            SQLiteDatabase a2 = hVar.a();
-            a2.beginTransaction();
-            try {
-                a2.compileStatement(str).execute();
-                Cursor rawQuery = a2.rawQuery("SELECT COUNT(*), transport_name FROM events WHERE num_attempts >= 16 GROUP BY transport_name", null);
-                while (rawQuery.moveToNext()) {
-                    try {
-                        hVar.e(rawQuery.getInt(0), o5.c.f, rawQuery.getString(1));
-                    } catch (Throwable th2) {
-                        rawQuery.close();
-                        throw th2;
-                    }
-                }
-                rawQuery.close();
-                a2.compileStatement("DELETE FROM events WHERE num_attempts >= 16").execute();
-                a2.setTransactionSuccessful();
-            } finally {
-                a2.endTransaction();
-            }
-        }
-        hVar.c(new ai.z1(((u5.a) bVar.g).q() + this.b, iVar));
-        return null;
     }
 
     @Override // org.telegram.ui.Components.t40

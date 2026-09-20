@@ -2,19 +2,19 @@ package ai;
 
 import android.util.SparseIntArray;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
-public final class x3 extends o0.a {
+public final class x3 extends m5.e {
     public final /* synthetic */ int d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ x3(int i10, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(e6Var);
+    public /* synthetic */ x3(int i10, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(f6Var);
         this.d = i10;
     }
 
-    @Override // o0.a
-    public final void g() {
+    @Override // m5.e
+    public final void l() {
         switch (this.d) {
             case 0:
                 SparseIntArray sparseIntArray = (SparseIntArray) this.b;

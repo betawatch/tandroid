@@ -34,23 +34,23 @@ import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_stats;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.kw0;
-import org.telegram.ui.Components.sv;
-import org.telegram.ui.Components.w70;
+import org.telegram.ui.Components.jw0;
+import org.telegram.ui.Components.tv;
+import org.telegram.ui.Components.v70;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
+import org.telegram.ui.bb1;
 import org.telegram.ui.be;
 import org.telegram.ui.ke;
 import org.telegram.ui.sd;
 import org.telegram.ui.td;
 import org.telegram.ui.u70;
 import org.telegram.ui.vy0;
-import org.telegram.ui.za1;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class f2 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -102,7 +102,7 @@ public final /* synthetic */ class f2 implements View.OnClickListener {
                 sa saVar = (sa) this.c;
                 jc jcVar = f6Var.J0;
                 if (saVar.b == null) {
-                    org.telegram.ui.Components.qc Q = new xc(f6Var.c1, f6Var.B0).Q(R.raw.error, 36, LocaleController.getString(R.string.StoryHidAccount));
+                    org.telegram.ui.Components.pc Q = new xc(f6Var.c1, f6Var.B0).Q(R.raw.error, 36, LocaleController.getString(R.string.StoryHidAccount));
                     Q.a = 3;
                     Q.k(true);
                     break;
@@ -133,7 +133,7 @@ public final /* synthetic */ class f2 implements View.OnClickListener {
                 w5 w5Var = (w5) this.b;
                 db dbVar = (db) this.c;
                 f6 f6Var3 = w5Var.l;
-                sv alert = dbVar.getAlert();
+                tv alert = dbVar.getAlert();
                 if (alert != null && (y5Var = f6Var3.Q1) != null) {
                     ((ac) y5Var).h(alert);
                     f6Var3.t1.a();
@@ -148,7 +148,7 @@ public final /* synthetic */ class f2 implements View.OnClickListener {
             case 5:
                 ci.x8 x8Var = (ci.x8) this.b;
                 ba baVar = (ba) this.c;
-                org.telegram.ui.Cells.j3 j3Var = x8Var.Y;
+                org.telegram.ui.Cells.k3 k3Var = x8Var.Y;
                 try {
                     charSequence = ((ClipboardManager) x8Var.getContext().getSystemService("clipboard")).getPrimaryClip().getItemAt(0).coerceToText(x8Var.getContext());
                 } catch (Exception e) {
@@ -156,9 +156,9 @@ public final /* synthetic */ class f2 implements View.OnClickListener {
                     charSequence = null;
                 }
                 if (charSequence != null) {
-                    j3Var.b.setText(charSequence.toString());
-                    org.telegram.ui.Cells.h3 h3Var = j3Var.b;
-                    h3Var.setSelection(0, h3Var.getText().length());
+                    k3Var.b.setText(charSequence.toString());
+                    org.telegram.ui.Cells.i3 i3Var = k3Var.b;
+                    i3Var.setSelection(0, i3Var.getText().length());
                 }
                 baVar.run();
                 break;
@@ -170,7 +170,7 @@ public final /* synthetic */ class f2 implements View.OnClickListener {
                 ei.l.x0((ei.l) this.b, (Context) this.c);
                 break;
             case 8:
-                ei.k3 k3Var = (ei.k3) this.b;
+                ei.k3 k3Var2 = (ei.k3) this.b;
                 ei.k0 k0Var = (ei.k0) this.c;
                 if (k0Var.c()) {
                     k0Var.a();
@@ -181,10 +181,10 @@ public final /* synthetic */ class f2 implements View.OnClickListener {
                         AndroidUtilities.openForView(file2, file2.getName(), null, LaunchActivity.G1, null, true);
                     }
                 }
-                w70 w70Var = k3Var.K0;
-                if (w70Var != null) {
-                    w70Var.u();
-                    k3Var.K0 = null;
+                v70 v70Var = k3Var2.K0;
+                if (v70Var != null) {
+                    v70Var.u();
+                    k3Var2.K0 = null;
                     break;
                 }
                 break;
@@ -276,7 +276,7 @@ public final /* synthetic */ class f2 implements View.OnClickListener {
                 if (!((org.telegram.ui.ActionBar.w1) this.c).a) {
                     org.telegram.ui.ActionBar.a2 a2Var = b2Var.m0;
                     if (a2Var != null) {
-                        a2Var.f(b2Var, -1);
+                        a2Var.k(b2Var, -1);
                     }
                     if (b2Var.h0) {
                         b2Var.dismiss();
@@ -289,7 +289,7 @@ public final /* synthetic */ class f2 implements View.OnClickListener {
                 if (!((org.telegram.ui.ActionBar.w1) this.c).a) {
                     org.telegram.ui.ActionBar.a2 a2Var2 = b2Var2.o0;
                     if (a2Var2 != null) {
-                        a2Var2.f(b2Var2, -2);
+                        a2Var2.k(b2Var2, -2);
                     }
                     if (b2Var2.h0) {
                         b2Var2.cancel();
@@ -302,7 +302,7 @@ public final /* synthetic */ class f2 implements View.OnClickListener {
                 if (!((org.telegram.ui.ActionBar.w1) this.c).a) {
                     org.telegram.ui.ActionBar.a2 a2Var3 = b2Var3.s0;
                     if (a2Var3 != null) {
-                        a2Var3.f(b2Var3, -2);
+                        a2Var3.k(b2Var3, -2);
                     }
                     if (b2Var3.h0) {
                         b2Var3.dismiss();
@@ -315,7 +315,7 @@ public final /* synthetic */ class f2 implements View.OnClickListener {
                 if (!((org.telegram.ui.ActionBar.w1) this.c).a) {
                     ii.e4 e4Var = b2Var4.q0;
                     if (e4Var != null) {
-                        e4Var.f(b2Var4, -2);
+                        e4Var.k(b2Var4, -2);
                     }
                     if (b2Var4.h0) {
                         b2Var4.cancel();
@@ -334,10 +334,10 @@ public final /* synthetic */ class f2 implements View.OnClickListener {
                             l3Var.b.y0(0);
                             break;
                         } else {
-                            kw0 kw0Var = new kw0(activity);
-                            kw0Var.a = 1;
-                            kw0Var.s = -AndroidUtilities.dp(32.0f);
-                            l3Var.d.w0(kw0Var);
+                            jw0 jw0Var = new jw0(activity);
+                            jw0Var.a = 1;
+                            jw0Var.s = -AndroidUtilities.dp(32.0f);
+                            l3Var.d.w0(jw0Var);
                             break;
                         }
                     } else if (l3Var.getWebView() != null && !h4Var.h0.W) {
@@ -521,7 +521,7 @@ public final /* synthetic */ class f2 implements View.OnClickListener {
                 }
             case 28:
                 ke keVar = (ke) this.b;
-                za1 za1Var = (za1) this.c;
+                bb1 bb1Var = (bb1) this.c;
                 ci.d dVar = keVar.K0;
                 if (view.isEnabled() && !dVar.N) {
                     be beVar = keVar.Q0;
@@ -531,7 +531,7 @@ public final /* synthetic */ class f2 implements View.OnClickListener {
                         twoStepVerificationActivity.Z = 1;
                         twoStepVerificationActivity.b0 = sdVar;
                         dVar.setLoading(true);
-                        twoStepVerificationActivity.s0(new td(keVar, za1Var, twoStepVerificationActivity, 0));
+                        twoStepVerificationActivity.s0(new td(keVar, bb1Var, twoStepVerificationActivity, 0));
                         break;
                     }
                 }

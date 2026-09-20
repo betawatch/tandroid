@@ -2,9 +2,9 @@ package dh;
 
 import b2.z0;
 import e2.m;
-import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.f6;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c implements d, m {
     public final /* synthetic */ int a;
@@ -18,7 +18,7 @@ public final /* synthetic */ class c implements d, m {
     }
 
     @Override // dh.d
-    public int g(e6 e6Var, boolean z10) {
+    public int f(f6 f6Var, boolean z10) {
         return z10 ? this.b : this.c;
     }
 

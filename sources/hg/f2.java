@@ -14,7 +14,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class f2 {
     public static volatile f2[] e = new f2[4];
@@ -78,7 +78,7 @@ public final class f2 {
         StringBuilder u10 = a4.a.u(concat);
         u10.append(i11 < 10 ? "0" : "");
         u10.append(i11);
-        StringBuilder u11 = a4.a.u(t8.b.v(u10.toString(), ":"));
+        StringBuilder u11 = a4.a.u(v7.j0.s(u10.toString(), ":"));
         u11.append(i12 < 10 ? "0" : "");
         u11.append(i12);
         return u11.toString();

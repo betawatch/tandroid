@@ -6,28 +6,28 @@ import android.view.MotionEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.dg1;
+import org.telegram.ui.fg1;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class zn extends w9 {
-    public final org.telegram.ui.Cells.m6 G;
+public final class zn extends v9 {
+    public final org.telegram.ui.Cells.n6 G;
     public final /* synthetic */ org.telegram.ui.ActionBar.n2 H;
     public final /* synthetic */ boolean I;
-    public final /* synthetic */ org.telegram.ui.ActionBar.e6 J;
+    public final /* synthetic */ org.telegram.ui.ActionBar.f6 J;
     public final /* synthetic */ eo K;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zn(eo eoVar, Context context, org.telegram.ui.ActionBar.n2 n2Var, boolean z10, org.telegram.ui.ActionBar.e6 e6Var) {
+    public zn(eo eoVar, Context context, org.telegram.ui.ActionBar.n2 n2Var, boolean z10, org.telegram.ui.ActionBar.f6 f6Var) {
         super(context);
         this.K = eoVar;
         this.H = n2Var;
         this.I = z10;
-        this.J = e6Var;
-        this.G = new org.telegram.ui.Cells.m6(this);
+        this.J = f6Var;
+        this.G = new org.telegram.ui.Cells.n6(this);
     }
 
-    @Override // org.telegram.ui.Components.w9, android.view.View
+    @Override // org.telegram.ui.Components.v9, android.view.View
     public final void onDraw(Canvas canvas) {
         long j3;
         eo eoVar = this.K;
@@ -35,23 +35,23 @@ public final class zn extends w9 {
             super.onDraw(canvas);
             return;
         }
-        org.telegram.ui.Cells.m6 m6Var = this.G;
-        m6Var.F.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
-        m6Var.a = true;
-        m6Var.v = true;
-        m6Var.J = this.J;
+        org.telegram.ui.Cells.n6 n6Var = this.G;
+        n6Var.F.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
+        n6Var.a = true;
+        n6Var.v = true;
+        n6Var.J = this.J;
         Integer num = eoVar.c;
         if (num != null) {
-            m6Var.z = num.intValue();
+            n6Var.z = num.intValue();
         }
         org.telegram.ui.zn znVar = eoVar.G;
         if (znVar != null) {
             j3 = znVar.a();
         } else {
             org.telegram.ui.ActionBar.n2 n2Var = this.H;
-            j3 = n2Var instanceof dg1 ? -((dg1) n2Var).a : 0L;
+            j3 = n2Var instanceof fg1 ? -((fg1) n2Var).a : 0L;
         }
-        ai.ia.h(j3, canvas, this.a, m6Var);
+        ai.ia.h(j3, canvas, this.a, n6Var);
     }
 
     @Override // android.view.View

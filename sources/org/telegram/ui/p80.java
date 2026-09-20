@@ -11,10 +11,10 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class p80 extends ActionBarPopupWindow$ActionBarPopupWindowLayout {
-    public final org.telegram.ui.Components.l90 T;
+    public final org.telegram.ui.Components.k90 T;
     public final org.telegram.ui.ActionBar.f1 U;
     public final org.telegram.ui.ActionBar.f1 V;
     public final org.telegram.ui.ActionBar.f1 W;
@@ -66,21 +66,21 @@ public final class p80 extends ActionBarPopupWindow$ActionBarPopupWindowLayout {
         for (int i11 = 0; i11 < this.a0.size(); i11++) {
             ((o80) this.a0.get(i11)).a.setOnClickListener(new ci.o4(this, ((o80) this.a0.get(i11)).b, 18));
         }
-        org.telegram.ui.Components.l90 l90Var = new org.telegram.ui.Components.l90(context, null);
-        this.T = l90Var;
-        l90Var.setTag(R.id.fit_width_tag, 1);
-        l90Var.setPadding(AndroidUtilities.dp(13.0f), 0, AndroidUtilities.dp(13.0f), AndroidUtilities.dp(8.0f));
-        l90Var.setTextSize(1, 13.0f);
-        l90Var.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.E8, false));
-        l90Var.setMovementMethod(LinkMovementMethod.getInstance());
-        l90Var.setLinkTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.J6, false));
-        l90Var.setText(LocaleController.getString(R.string.KeepMediaPopupDescription));
-        a(l90Var, w7.y5.p(-1, -2, 0.0f, 0, 0, 8, 0, 0));
+        org.telegram.ui.Components.k90 k90Var = new org.telegram.ui.Components.k90(context, null);
+        this.T = k90Var;
+        k90Var.setTag(R.id.fit_width_tag, 1);
+        k90Var.setPadding(AndroidUtilities.dp(13.0f), 0, AndroidUtilities.dp(13.0f), AndroidUtilities.dp(8.0f));
+        k90Var.setTextSize(1, 13.0f);
+        k90Var.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.E8, false));
+        k90Var.setMovementMethod(LinkMovementMethod.getInstance());
+        k90Var.setLinkTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.J6, false));
+        k90Var.setText(LocaleController.getString(R.string.KeepMediaPopupDescription));
+        a(k90Var, w7.y5.p(-1, -2, 0.0f, 0, 0, 8, 0, 0));
     }
 
     public final void f() {
         if (this.f0 != null) {
-            ((org.telegram.ui.Components.k9) this.b0.d).setTranslationX((3 - Math.min(3, this.f0.size())) * AndroidUtilities.dp(12.0f));
+            ((org.telegram.ui.Components.j9) this.b0.d).setTranslationX((3 - Math.min(3, this.f0.size())) * AndroidUtilities.dp(12.0f));
         }
     }
 

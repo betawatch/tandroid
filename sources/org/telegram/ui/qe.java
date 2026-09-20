@@ -13,9 +13,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class qe implements org.telegram.ui.Components.c60, org.telegram.ui.Components.e60, org.telegram.ui.ActionBar.a2, org.telegram.ui.Components.io, MessagesStorage.BooleanCallback, org.telegram.ui.Components.xj0, ResultCallback, wh.c, jh.a, jh.b, z60, rs, org.telegram.ui.Components.ml0, jh.d, org.telegram.ui.Components.yk0 {
+public final /* synthetic */ class qe implements org.telegram.ui.Components.b60, org.telegram.ui.Components.d60, org.telegram.ui.ActionBar.a2, org.telegram.ui.Components.io, MessagesStorage.BooleanCallback, org.telegram.ui.Components.wj0, ResultCallback, wh.c, jh.a, jh.b, z60, rs, org.telegram.ui.Components.ll0, jh.d, org.telegram.ui.Components.xk0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ zn b;
 
@@ -24,7 +24,7 @@ public final /* synthetic */ class qe implements org.telegram.ui.Components.c60,
         this.b = znVar;
     }
 
-    @Override // org.telegram.ui.Components.yk0
+    @Override // org.telegram.ui.Components.xk0
     public void a() {
         zn znVar = this.b;
         znVar.q9(1);
@@ -53,7 +53,7 @@ public final /* synthetic */ class qe implements org.telegram.ui.Components.c60,
         }
     }
 
-    @Override // org.telegram.ui.Components.ml0
+    @Override // org.telegram.ui.Components.ll0
     public boolean d(int i10, View view) {
         zn znVar = this.b;
         boolean z10 = false;
@@ -67,7 +67,7 @@ public final /* synthetic */ class qe implements org.telegram.ui.Components.c60,
                 Object J = znVar.I1.getAdapter().J(i10 - 1);
                 if (J instanceof gg.h1) {
                     gg.h1 h1Var = (gg.h1) J;
-                    if (znVar.I1.getAdapter().J != null && org.telegram.ui.Components.y51.h) {
+                    if (znVar.I1.getAdapter().J != null && org.telegram.ui.Components.x51.h) {
                         znVar.Y.setFieldText("");
                         lk lkVar = znVar.Y;
                         String str = h1Var.a;
@@ -88,7 +88,7 @@ public final /* synthetic */ class qe implements org.telegram.ui.Components.c60,
                         znVar.showDialog(alertDialog$Builder.a);
                         return true;
                     }
-                    if (org.telegram.ui.Components.y51.h) {
+                    if (org.telegram.ui.Components.x51.h) {
                         znVar.Y.setFieldText("");
                         lk lkVar2 = znVar.Y;
                         String str2 = (String) J;
@@ -105,7 +105,7 @@ public final /* synthetic */ class qe implements org.telegram.ui.Components.c60,
         return false;
     }
 
-    @Override // org.telegram.ui.Components.xj0
+    @Override // org.telegram.ui.Components.wj0
     public void e(ArrayList arrayList) {
         switch (this.a) {
             case 11:
@@ -133,8 +133,59 @@ public final /* synthetic */ class qe implements org.telegram.ui.Components.c60,
         }
     }
 
+    @Override // wh.c
+    public void f(boolean z10, boolean z11) {
+        zn znVar = this.b;
+        znVar.M0.i(znVar.fa.c(), z10, z11);
+    }
+
+    @Override // jh.a
+    public void h(int i10) {
+        zn znVar = this.b;
+        if (i10 == 1) {
+            znVar.U9();
+            return;
+        }
+        if (i10 == 2) {
+            znVar.H9();
+            return;
+        }
+        if (i10 == 3) {
+            znVar.D4 = true;
+            znVar.getMessagesController().getNextReactionMention(znVar.T5, znVar.d(), znVar.l1, new qg(znVar, 0));
+            return;
+        }
+        if (i10 == 4) {
+            znVar.D4 = true;
+            znVar.getMessagesController().getNextPollVotesMention(znVar.T5, znVar.d(), znVar.m1, new qg(znVar, 1));
+            return;
+        }
+        if (i10 == 6) {
+            znVar.Y8(true);
+            return;
+        }
+        if (i10 == 5) {
+            znVar.Y8(false);
+        } else if (i10 == 0) {
+            ai.g4 g4Var = znVar.J1;
+            if (g4Var != null) {
+                g4Var.I1(null, 0);
+            }
+            znVar.X9();
+        }
+    }
+
+    @Override // org.telegram.ui.z60
+    public void i(int i10, ArrayList arrayList) {
+        zn znVar = this.b;
+        znVar.getMessagesController().addUsersToChat(znVar.e, znVar, arrayList, i10, null, null, null);
+        znVar.getMessagesController().hidePeerSettingsBar(znVar.T5, znVar.f, znVar.e);
+        znVar.Qc(true);
+        znVar.oc(true);
+    }
+
     @Override // org.telegram.ui.ActionBar.a2
-    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+    public void k(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
         switch (this.a) {
             case 2:
                 sk skVar = this.b.B0;
@@ -179,9 +230,9 @@ public final /* synthetic */ class qe implements org.telegram.ui.Components.c60,
                 adapter.w.c();
                 adapter.I.clear();
                 adapter.l();
-                org.telegram.ui.Components.ra0 ra0Var = adapter.V;
-                if (ra0Var != null) {
-                    ra0Var.a(false);
+                org.telegram.ui.Components.qa0 qa0Var = adapter.V;
+                if (qa0Var != null) {
+                    qa0Var.a(false);
                     break;
                 }
                 break;
@@ -215,57 +266,6 @@ public final /* synthetic */ class qe implements org.telegram.ui.Components.c60,
                 }
                 break;
         }
-    }
-
-    @Override // wh.c
-    public void h(boolean z10, boolean z11) {
-        zn znVar = this.b;
-        znVar.M0.i(znVar.fa.c(), z10, z11);
-    }
-
-    @Override // jh.a
-    public void i(int i10) {
-        zn znVar = this.b;
-        if (i10 == 1) {
-            znVar.U9();
-            return;
-        }
-        if (i10 == 2) {
-            znVar.H9();
-            return;
-        }
-        if (i10 == 3) {
-            znVar.D4 = true;
-            znVar.getMessagesController().getNextReactionMention(znVar.T5, znVar.d(), znVar.l1, new qg(znVar, 0));
-            return;
-        }
-        if (i10 == 4) {
-            znVar.D4 = true;
-            znVar.getMessagesController().getNextPollVotesMention(znVar.T5, znVar.d(), znVar.m1, new qg(znVar, 1));
-            return;
-        }
-        if (i10 == 6) {
-            znVar.Y8(true);
-            return;
-        }
-        if (i10 == 5) {
-            znVar.Y8(false);
-        } else if (i10 == 0) {
-            ai.g4 g4Var = znVar.J1;
-            if (g4Var != null) {
-                g4Var.I1(null, 0);
-            }
-            znVar.X9();
-        }
-    }
-
-    @Override // org.telegram.ui.z60
-    public void j(int i10, ArrayList arrayList) {
-        zn znVar = this.b;
-        znVar.getMessagesController().addUsersToChat(znVar.e, znVar, arrayList, i10, null, null, null);
-        znVar.getMessagesController().hidePeerSettingsBar(znVar.T5, znVar.f, znVar.e);
-        znVar.Qc(true);
-        znVar.oc(true);
     }
 
     @Override // org.telegram.tgnet.ResultCallback

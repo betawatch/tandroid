@@ -7,7 +7,7 @@ import android.graphics.Path;
 import android.graphics.RectF;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class kw0 extends org.telegram.ui.Cells.u1 {
     public final Path Ge;
@@ -18,8 +18,8 @@ public final class kw0 extends org.telegram.ui.Cells.u1 {
     public final /* synthetic */ mw0 Le;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public kw0(mw0 mw0Var, Context context, int i10, org.telegram.ui.ActionBar.e6 e6Var, byte[] bArr, int i11, int i12) {
-        super(context, i10, false, null, e6Var);
+    public kw0(mw0 mw0Var, Context context, int i10, org.telegram.ui.ActionBar.f6 f6Var, byte[] bArr, int i11, int i12) {
+        super(context, i10, false, null, f6Var);
         this.Le = mw0Var;
         this.Ie = bArr;
         this.Je = i11;

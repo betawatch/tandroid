@@ -15,9 +15,9 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class m00 extends vl0 {
+public final class m00 extends ul0 {
     public final Context c;
     public final /* synthetic */ n00 d;
 
@@ -26,7 +26,7 @@ public final class m00 extends vl0 {
         this.c = activity;
     }
 
-    @Override // org.telegram.ui.Components.vl0
+    @Override // org.telegram.ui.Components.ul0
     public final boolean D(s4.c1 c1Var) {
         return true;
     }
@@ -45,7 +45,7 @@ public final class m00 extends vl0 {
     @Override // s4.h0
     public final void v(s4.c1 c1Var, int i10) {
         int i11;
-        org.telegram.ui.ActionBar.e6 e6Var;
+        org.telegram.ui.ActionBar.f6 f6Var;
         int i12;
         org.telegram.ui.ActionBar.y2 y2Var = (org.telegram.ui.ActionBar.y2) c1Var.a;
         n00 n00Var = this.d;
@@ -81,10 +81,10 @@ public final class m00 extends vl0 {
             i11 = (MessagesController.DIALOG_FILTER_FLAG_ALL_CHATS & i13) == MessagesController.DIALOG_FILTER_FLAG_CHANNELS ? R.drawable.msg_channel : (MessagesController.DIALOG_FILTER_FLAG_ALL_CHATS & i13) == MessagesController.DIALOG_FILTER_FLAG_GROUPS ? R.drawable.msg_groups : (MessagesController.DIALOG_FILTER_FLAG_ALL_CHATS & i13) == MessagesController.DIALOG_FILTER_FLAG_CONTACTS ? R.drawable.msg_contacts : (i13 & MessagesController.DIALOG_FILTER_FLAG_ALL_CHATS) == MessagesController.DIALOG_FILTER_FLAG_BOTS ? R.drawable.msg_bots : R.drawable.msg_folders;
         }
         y2Var.a(MessageObject.replaceAnimatedEmoji(Emoji.replaceEmoji(dialogFilter.name, y2Var.getTextView().getPaint().getFontMetricsInt(), false), dialogFilter.entities, y2Var.getTextView().getPaint().getFontMetricsInt()), 0, new d10(n00Var.getContext(), i11, dialogFilter.color), false);
-        y5 textView = y2Var.getTextView();
+        x5 textView = y2Var.getTextView();
         int i15 = org.telegram.ui.ActionBar.j6.Oh;
-        e6Var = ((org.telegram.ui.ActionBar.f3) n00Var).resourcesProvider;
-        textView.setEmojiColor(org.telegram.ui.ActionBar.j6.v0(i15, e6Var));
+        f6Var = ((org.telegram.ui.ActionBar.f3) n00Var).resourcesProvider;
+        textView.setEmojiColor(org.telegram.ui.ActionBar.j6.v0(i15, f6Var));
         boolean z10 = true;
         for (int i16 = 0; i16 < arrayList.size(); i16++) {
             long longValue = ((Long) arrayList.get(i16)).longValue();
@@ -101,6 +101,6 @@ public final class m00 extends vl0 {
         org.telegram.ui.ActionBar.y2 y2Var = new org.telegram.ui.ActionBar.y2(this.c, 0, null);
         y2Var.setBackground(null);
         y2Var.setLayoutParams(new s4.p0(-1, -2));
-        return new gl0(y2Var);
+        return new fl0(y2Var);
     }
 }

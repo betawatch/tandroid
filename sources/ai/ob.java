@@ -11,14 +11,14 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class ob extends Drawable {
     public int a;
     public final View b;
     public final Paint c;
     public final Paint d;
-    public final org.telegram.ui.Components.e6 g;
+    public final org.telegram.ui.Components.d6 g;
     public boolean h;
     public Paint i;
     public int e = 255;
@@ -27,7 +27,7 @@ public final class ob extends Drawable {
 
     public ob(View view) {
         this.b = view;
-        this.g = new org.telegram.ui.Components.e6(view, 350L, qr.h);
+        this.g = new org.telegram.ui.Components.d6(view, 350L, qr.h);
         Paint paint = new Paint(1);
         this.c = paint;
         paint.setShadowLayer(AndroidUtilities.dp(4.0f), 0.0f, 0.0f, 1593835520);

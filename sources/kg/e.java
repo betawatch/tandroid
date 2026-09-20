@@ -11,6 +11,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import hg.k0;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.text.SimpleDateFormat;
@@ -21,17 +22,17 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BillingController;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.q;
-import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.Cells.z;
 import org.telegram.ui.Components.RadialProgressView;
 import org.telegram.ui.Components.pq;
+import org.telegram.ui.Components.x5;
 import org.telegram.ui.ke;
 import w7.y5;
-import yh.v7;
+import yh.w7;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public class e extends FrameLayout {
     public boolean E;
@@ -39,7 +40,7 @@ public class e extends FrameLayout {
     public boolean G;
     public Drawable H;
     public z I;
-    public final e6 J;
+    public final f6 J;
     public final q4 K;
     public DecimalFormat L;
     public boolean a;
@@ -57,7 +58,7 @@ public class e extends FrameLayout {
     public boolean x;
     public boolean y;
 
-    public e(Context context, e6 e6Var) {
+    public e(Context context, f6 f6Var) {
         super(context);
         this.n = new SimpleDateFormat("E, ");
         this.r = new SimpleDateFormat("MMM dd");
@@ -66,7 +67,7 @@ public class e extends FrameLayout {
         this.w = new SimpleDateFormat(" HH:mm");
         this.G = true;
         this.K = new q4(this, 23);
-        this.J = e6Var;
+        this.J = f6Var;
         setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
         LinearLayout linearLayout = new LinearLayout(getContext());
         this.b = linearLayout;
@@ -104,15 +105,15 @@ public class e extends FrameLayout {
 
     public void b() {
         int i10 = j6.j5;
-        e6 e6Var = this.J;
-        this.d.setTextColor(j6.v0(i10, e6Var));
-        this.e.setTextColor(j6.v0(i10, e6Var));
+        f6 f6Var = this.J;
+        this.d.setTextColor(j6.v0(i10, f6Var));
+        this.e.setTextColor(j6.v0(i10, f6Var));
         int i11 = j6.gj;
-        this.f.setColorFilter(j6.v0(i11, e6Var));
-        this.h.setProgressColor(j6.v0(i11, e6Var));
+        this.f.setColorFilter(j6.v0(i11, f6Var));
+        this.h.setProgressColor(j6.v0(i11, f6Var));
         this.H = getContext().getResources().getDrawable(R.drawable.stats_tooltip).mutate();
         int dp = AndroidUtilities.dp(4.0f);
-        this.I = j6.i0(dp, dp, dp, dp, j6.v0(j6.h5, e6Var), j6.v0(j6.i6, e6Var), -16777216);
+        this.I = j6.i0(dp, dp, dp, dp, j6.v0(j6.h5, f6Var), j6.v0(j6.i6, f6Var), -16777216);
         pq pqVar = new pq(this.H, this.I, AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f));
         pqVar.w = true;
         setBackground(pqVar);
@@ -173,7 +174,7 @@ public class e extends FrameLayout {
             jg.a aVar = fVar2.a;
             if (z13) {
                 LinearLayout linearLayout = (LinearLayout) fVar.d;
-                org.telegram.ui.Components.y5 y5Var = (org.telegram.ui.Components.y5) fVar.a;
+                x5 x5Var = (x5) fVar.a;
                 TextView textView2 = (TextView) fVar.c;
                 TextView textView3 = (TextView) fVar.b;
                 if (linearLayout.getMeasuredHeight() == 0) {
@@ -201,7 +202,7 @@ public class e extends FrameLayout {
                             i15 = 2;
                         }
                         decimalFormat2.setMaximumFractionDigits(i15);
-                        charSequence = ke.f0("TON " + this.L.format(j11 / 1.0E9d), y5Var.getPaint(), 0.82f, 0.0f, false);
+                        charSequence = ke.f0("TON " + this.L.format(j11 / 1.0E9d), x5Var.getPaint(), 0.82f, 0.0f, false);
                     } else {
                         charSequence = "≈" + BillingController.getInstance().formatCurrency((long) (j11 / f7), "USD");
                     }
@@ -219,31 +220,31 @@ public class e extends FrameLayout {
                         }
                         charSequence = String.format("%.2f", Float.valueOf(f10)) + AndroidUtilities.numbersSignatureArray[i23];
                     }
-                    y5Var.setText(charSequence);
+                    x5Var.setText(charSequence);
                     if (i11 != i12) {
                         int i24 = i21 == 0 ? R.string.ChartInTON : R.string.ChartInUSD;
                         Object[] objArr = new Object[i12];
                         objArr[0] = aVar.d;
                         textView3.setText(LocaleController.formatString(i24, objArr));
                     } else if (i11 == 2) {
-                        textView3.setText(v7.X0(false, LocaleController.formatString(i21 == 0 ? R.string.ChartInXTR : R.string.ChartInUSD, aVar.d), 0.7f, null));
+                        textView3.setText(w7.X0(false, LocaleController.formatString(i21 == 0 ? R.string.ChartInXTR : R.string.ChartInUSD, aVar.d), 0.7f, null));
                     } else {
                         textView3.setText(aVar.d);
                     }
                     i13 = aVar.g;
-                    e6 e6Var = this.J;
+                    f6 f6Var = this.J;
                     if (i13 >= 0 || !j6.c1(i13)) {
-                        y5Var.setTextColor(!j6.A0().q() ? aVar.i : aVar.h);
+                        x5Var.setTextColor(!j6.A0().q() ? aVar.i : aVar.h);
                     } else {
-                        y5Var.setTextColor(j6.v0(aVar.g, e6Var));
+                        x5Var.setTextColor(j6.v0(aVar.g, f6Var));
                     }
                     int i25 = j6.j5;
-                    textView3.setTextColor(j6.v0(i25, e6Var));
+                    textView3.setTextColor(j6.v0(i25, f6Var));
                     if (this.E || textView2 == null) {
                         i14 = i22;
                     } else {
                         textView2.setVisibility(0);
-                        textView2.setTextColor(j6.v0(i25, e6Var));
+                        textView2.setTextColor(j6.v0(i25, f6Var));
                         i14 = i22;
                         float f11 = ((f) arrayList.get(i14)).a.a[i10] / j10;
                         if (f11 >= 0.1f || f11 == 0.0f) {
@@ -258,21 +259,21 @@ public class e extends FrameLayout {
                         i18 = 0;
                     }
                 } else if (i21 == 0) {
-                    charSequence = v7.X0(false, q.i(j11, ' ', new StringBuilder("XTR ")), 0.7f, null);
+                    charSequence = w7.X0(false, k0.j(j11, ' ', new StringBuilder("XTR ")), 0.7f, null);
                 } else {
                     charSequence = "≈" + BillingController.getInstance().formatCurrency((long) (j11 / f7), "USD");
                 }
                 i12 = 1;
-                y5Var.setText(charSequence);
+                x5Var.setText(charSequence);
                 if (i11 != i12) {
                 }
                 i13 = aVar.g;
-                e6 e6Var2 = this.J;
+                f6 f6Var2 = this.J;
                 if (i13 >= 0) {
                 }
-                y5Var.setTextColor(!j6.A0().q() ? aVar.i : aVar.h);
+                x5Var.setTextColor(!j6.A0().q() ? aVar.i : aVar.h);
                 int i252 = j6.j5;
-                textView3.setTextColor(j6.v0(i252, e6Var2));
+                textView3.setTextColor(j6.v0(i252, f6Var2));
                 if (this.E) {
                 }
                 i14 = i22;
@@ -336,13 +337,13 @@ public class e extends FrameLayout {
             TextView textView2 = new TextView(getContext());
             fVar.b = textView2;
             linearLayout2.addView(textView2, y5.k(0.0f, 0.0f, 20.0f, 0.0f, -2, -2));
-            org.telegram.ui.Components.y5 y5Var = new org.telegram.ui.Components.y5(getContext());
-            fVar.a = y5Var;
-            linearLayout2.addView(y5Var, y5.n(-1, -2));
+            x5 x5Var = new x5(getContext());
+            fVar.a = x5Var;
+            linearLayout2.addView(x5Var, y5.n(-1, -2));
             textView2.setGravity(8388611);
-            y5Var.setGravity(8388613);
-            y5Var.setTypeface(AndroidUtilities.bold());
-            y5Var.setTextSize(1, 13.0f);
+            x5Var.setGravity(8388613);
+            x5Var.setTypeface(AndroidUtilities.bold());
+            x5Var.setTextSize(1, 13.0f);
             textView2.setTextSize(1, 13.0f);
             fVarArr[i11] = fVar;
             linearLayout.addView((LinearLayout) this.c[i11].d);

@@ -1,23 +1,9 @@
 package v7;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
-public enum h6 implements f {
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(0),
-    b(1),
-    c(2),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF33(3);
-
-    public final int a;
-
-    h6(int i10) {
-        this.a = i10;
-    }
-
-    @Override // v7.f
-    public final int zza() {
-        return this.a;
+public abstract class h6 {
+    public static boolean a(byte b10) {
+        return b10 > -65;
     }
 }

@@ -11,32 +11,32 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.h9;
+import org.telegram.ui.Components.g9;
 import org.telegram.ui.Components.pq;
-import org.telegram.ui.Components.w9;
+import org.telegram.ui.Components.v9;
 import org.telegram.ui.d10;
 import w7.y5;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class i1 extends LinearLayout {
-    public final e6 a;
-    public final w9 b;
-    public final h9 c;
+    public final f6 a;
+    public final v9 b;
+    public final g9 c;
     public final TextView d;
     public final TextView e;
 
-    public i1(Context context, e6 e6Var, boolean z10) {
+    public i1(Context context, f6 f6Var, boolean z10) {
         super(context);
-        this.c = new h9((e6) null);
-        this.a = e6Var;
+        this.c = new g9((f6) null);
+        this.a = f6Var;
         setOrientation(0);
-        w9 w9Var = new w9(context);
-        this.b = w9Var;
-        w9Var.setRoundRadius(AndroidUtilities.dp(28.0f));
-        addView(w9Var, y5.t(28, 28, 19, 12, 0, 12, 0));
+        v9 v9Var = new v9(context);
+        this.b = v9Var;
+        v9Var.setRoundRadius(AndroidUtilities.dp(28.0f));
+        addView(v9Var, y5.t(28, 28, 19, 12, 0, 12, 0));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
         addView(linearLayout, y5.t(-1, -2, 55, 0, 4, 12, 4));
@@ -44,11 +44,11 @@ public final class i1 extends LinearLayout {
         this.d = textView;
         textView.setTextSize(1, 15.0f);
         int i10 = j6.G6;
-        textView.setTextColor(j6.v0(i10, e6Var));
+        textView.setTextColor(j6.v0(i10, f6Var));
         TextView h = com.google.android.gms.internal.vision.e2.h(linearLayout, textView, y5.n(-1, -2), context);
         this.e = h;
         h.setTextSize(1, 13.0f);
-        h.setTextColor(z10 ? j6.l1(0.5f, j6.v0(i10, e6Var)) : j6.v0(j6.z6, e6Var));
+        h.setTextColor(z10 ? j6.l1(0.5f, j6.v0(i10, f6Var)) : j6.v0(j6.z6, f6Var));
         linearLayout.addView(h, y5.n(-1, -2));
     }
 
@@ -58,7 +58,7 @@ public final class i1 extends LinearLayout {
         }
         TextView textView = this.e;
         TextView textView2 = this.d;
-        w9 w9Var = this.b;
+        v9 v9Var = this.b;
         if (i10 == 0) {
             pq pqVar = new pq(j6.b0(AndroidUtilities.dp(28.0f), j6.v0(j6.Oh, this.a)), getContext().getResources().getDrawable(R.drawable.menu_hashtag).mutate());
             pqVar.s = AndroidUtilities.dp(-0.66f);
@@ -67,18 +67,18 @@ public final class i1 extends LinearLayout {
             int dp2 = AndroidUtilities.dp(20.0f);
             pqVar.e = dp;
             pqVar.f = dp2;
-            w9Var.setImageDrawable(pqVar);
+            v9Var.setImageDrawable(pqVar);
             textView2.setText(LocaleController.formatString(R.string.HashtagSuggestion1Title, str));
             textView.setText(LocaleController.getString(R.string.HashtagSuggestion1Text));
             return;
         }
-        h9 h9Var = this.c;
-        h9Var.q(chat);
-        w9Var.e(chat, h9Var);
+        g9 g9Var = this.c;
+        g9Var.q(chat);
+        v9Var.e(chat, g9Var);
         int i11 = R.string.HashtagSuggestion2Title;
-        StringBuilder j3 = t8.b.j(str, "@");
-        j3.append(ChatObject.getPublicUsername(chat));
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(LocaleController.formatString(i11, j3.toString()));
+        StringBuilder h = v7.j0.h(str, "@");
+        h.append(ChatObject.getPublicUsername(chat));
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(LocaleController.formatString(i11, h.toString()));
         spannableStringBuilder.append((CharSequence) "  d");
         d10 d10Var = new d10(8);
         d10Var.f = j6.w0(null, j6.Lj, false);

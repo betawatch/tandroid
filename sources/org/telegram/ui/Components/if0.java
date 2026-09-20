@@ -1,6 +1,195 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.text.TextPaint;
+import android.view.MotionEvent;
+import android.view.View;
+import java.util.Locale;
+import org.telegram.messenger.AndroidUtilities;
+
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public interface if0 {
+public final class if0 extends View {
+    public int a;
+    public boolean b;
+    public boolean c;
+    public float d;
+    public rk0 e;
+    public Paint f;
+    public Paint h;
+    public Paint n;
+    public TextPaint r;
+    public Path s;
+    public hf0 v;
+    public nf0 w;
+
+    public final void a(int i10, MotionEvent motionEvent) {
+        float x10 = motionEvent.getX();
+        float y3 = motionEvent.getY();
+        if (i10 == 1) {
+            if (this.a != 0) {
+                return;
+            }
+            rk0 rk0Var = this.e;
+            this.a = (int) Math.floor(com.google.android.gms.internal.vision.e2.A(x10, rk0Var.a, rk0Var.c / 5.0f, 1.0f));
+            return;
+        }
+        if (i10 != 2) {
+            if ((i10 == 3 || i10 == 4 || i10 == 5) && this.a != 0) {
+                this.a = 0;
+                return;
+            }
+            return;
+        }
+        float min = Math.min(2.0f, (this.d - y3) / 8.0f);
+        nf0 nf0Var = this.w;
+        int i11 = nf0Var.f;
+        of0 of0Var = i11 != 0 ? i11 != 1 ? i11 != 2 ? i11 != 3 ? null : nf0Var.d : nf0Var.c : nf0Var.b : nf0Var.a;
+        int i12 = this.a;
+        if (i12 == 1) {
+            of0Var.a = Math.max(0.0f, Math.min(100.0f, of0Var.a + min));
+        } else if (i12 == 2) {
+            of0Var.b = Math.max(0.0f, Math.min(100.0f, of0Var.b + min));
+        } else if (i12 == 3) {
+            of0Var.c = Math.max(0.0f, Math.min(100.0f, of0Var.c + min));
+        } else if (i12 == 4) {
+            of0Var.d = Math.max(0.0f, Math.min(100.0f, of0Var.d + min));
+        } else if (i12 == 5) {
+            of0Var.e = Math.max(0.0f, Math.min(100.0f, of0Var.e + min));
+        }
+        invalidate();
+        hf0 hf0Var = this.v;
+        if (hf0Var != null) {
+            rf0 rf0Var = ((jf0) hf0Var).a;
+            rf0Var.g();
+            vz vzVar = rf0Var.l0;
+            if (vzVar != null) {
+                vzVar.e(false, false, false);
+            }
+        }
+        this.d = y3;
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        of0 of0Var;
+        TextPaint textPaint = this.r;
+        Path path = this.s;
+        Paint paint = this.n;
+        nf0 nf0Var = this.w;
+        rk0 rk0Var = this.e;
+        float f7 = rk0Var.c / 5.0f;
+        for (int i10 = 0; i10 < 4; i10++) {
+            float f10 = rk0Var.a;
+            float f11 = i10 * f7;
+            float f12 = f10 + f7 + f11;
+            float f13 = rk0Var.b;
+            canvas.drawLine(f12, f13, f11 + f10 + f7, f13 + rk0Var.d, this.f);
+        }
+        float f14 = rk0Var.a;
+        float f15 = rk0Var.b;
+        canvas.drawLine(f14, f15 + rk0Var.d, f14 + rk0Var.c, f15, this.h);
+        int i11 = nf0Var.f;
+        int i12 = 3;
+        int i13 = 2;
+        if (i11 == 0) {
+            paint.setColor(-1);
+            of0Var = nf0Var.a;
+        } else if (i11 == 1) {
+            paint.setColor(-1229492);
+            of0Var = nf0Var.b;
+        } else if (i11 == 2) {
+            paint.setColor(-15667555);
+            of0Var = nf0Var.c;
+        } else if (i11 != 3) {
+            of0Var = null;
+        } else {
+            paint.setColor(-13404165);
+            of0Var = nf0Var.d;
+        }
+        int i14 = 0;
+        while (i14 < 5) {
+            String format = i14 != 0 ? i14 != 1 ? i14 != i13 ? i14 != i12 ? i14 != 4 ? "" : String.format(Locale.US, "%.2f", Float.valueOf(of0Var.e / 100.0f)) : String.format(Locale.US, "%.2f", Float.valueOf(of0Var.d / 100.0f)) : String.format(Locale.US, "%.2f", Float.valueOf(of0Var.c / 100.0f)) : String.format(Locale.US, "%.2f", Float.valueOf(of0Var.b / 100.0f)) : String.format(Locale.US, "%.2f", Float.valueOf(of0Var.a / 100.0f));
+            canvas.drawText(format, (i14 * f7) + com.google.android.gms.internal.vision.e2.A(f7, textPaint.measureText(format), 2.0f, rk0Var.a), (rk0Var.b + rk0Var.d) - AndroidUtilities.dp(4.0f), textPaint);
+            i14++;
+            i12 = 3;
+            i13 = 2;
+        }
+        float[] a2 = of0Var.a();
+        invalidate();
+        path.reset();
+        for (int i15 = 0; i15 < a2.length / 2; i15++) {
+            if (i15 == 0) {
+                int i16 = i15 * 2;
+                path.moveTo((a2[i16] * rk0Var.c) + rk0Var.a, ((1.0f - a2[i16 + 1]) * rk0Var.d) + rk0Var.b);
+            } else {
+                int i17 = i15 * 2;
+                path.lineTo((a2[i17] * rk0Var.c) + rk0Var.a, ((1.0f - a2[i17 + 1]) * rk0Var.d) + rk0Var.b);
+            }
+        }
+        canvas.drawPath(path, paint);
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:10:0x0014, code lost:
+    
+        if (r0 != 6) goto L44;
+     */
+    @Override // android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        int actionMasked = motionEvent.getActionMasked();
+        if (actionMasked != 0) {
+            if (actionMasked != 1) {
+                if (actionMasked != 2) {
+                    if (actionMasked != 3) {
+                        if (actionMasked != 5) {
+                        }
+                    }
+                } else if (this.b) {
+                    a(2, motionEvent);
+                    return true;
+                }
+                return true;
+            }
+            if (this.b) {
+                a(3, motionEvent);
+                this.b = false;
+            }
+            this.c = true;
+            return true;
+        }
+        if (motionEvent.getPointerCount() == 1) {
+            if (this.c && !this.b) {
+                float x10 = motionEvent.getX();
+                float y3 = motionEvent.getY();
+                this.d = y3;
+                rk0 rk0Var = this.e;
+                float f7 = rk0Var.a;
+                if (x10 >= f7 && x10 <= f7 + rk0Var.c) {
+                    float f10 = rk0Var.b;
+                    if (y3 >= f10 && y3 <= f10 + rk0Var.d) {
+                        this.b = true;
+                    }
+                }
+                this.c = false;
+                if (this.b) {
+                    a(1, motionEvent);
+                    return true;
+                }
+            }
+        } else if (this.b) {
+            a(3, motionEvent);
+            this.c = true;
+            this.b = false;
+        }
+        return true;
+    }
+
+    public void setDelegate(hf0 hf0Var) {
+        this.v = hf0Var;
+    }
 }

@@ -28,10 +28,10 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.qf;
-import org.telegram.ui.Components.ij0;
-import org.telegram.ui.o91;
+import org.telegram.ui.Components.hj0;
+import org.telegram.ui.u21;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class e {
     public static int A;
@@ -154,7 +154,7 @@ public final class e {
         A = i10;
         if (i10 <= 0) {
             A = 0;
-            ij0.T0.postRunnable(new o91(16));
+            hj0.T0.postRunnable(new u21(18));
         }
     }
 
@@ -230,7 +230,7 @@ public final class e {
                 B.a(this.c, this.b);
                 a5.a aVar = B;
                 bitmapArr = (Bitmap[]) aVar.d;
-                a0[] a0VarArr = (a0[]) aVar.c;
+                z[] zVarArr = (z[]) aVar.c;
                 countDownLatchArr = new CountDownLatch[y];
                 ArrayList arrayList = new ArrayList();
                 randomAccessFile2.writeBoolean(false);
@@ -293,7 +293,7 @@ public final class e {
         B.a(this.c, this.b);
         a5.a aVar2 = B;
         bitmapArr = (Bitmap[]) aVar2.d;
-        a0[] a0VarArr2 = (a0[]) aVar2.c;
+        z[] zVarArr2 = (z[]) aVar2.c;
         countDownLatchArr = new CountDownLatch[y];
         ArrayList arrayList2 = new ArrayList();
         randomAccessFile22.writeBoolean(false);
@@ -328,15 +328,15 @@ public final class e {
                 }
                 int length = (int) randomAccessFile22.length();
                 Collections.sort(arrayList2, Comparator$-CC.comparingInt(new f7(13)));
-                a0VarArr2[0].b();
+                zVarArr2[0].b();
                 int size = arrayList2.size();
-                a0VarArr2[0].c(size);
+                zVarArr2[0].c(size);
                 for (int i14 = 0; i14 < arrayList2.size(); i14++) {
-                    a0VarArr2[0].c(((d) arrayList2.get(i14)).c);
-                    a0VarArr2[0].c(((d) arrayList2.get(i14)).b);
+                    zVarArr2[0].c(((d) arrayList2.get(i14)).c);
+                    zVarArr2[0].c(((d) arrayList2.get(i14)).b);
                 }
-                randomAccessFile22.write(a0VarArr2[0].a, 0, (size * 8) + 4);
-                a0VarArr2[0].b();
+                randomAccessFile22.write(zVarArr2[0].a, 0, (size * 8) + 4);
+                zVarArr2[0].b();
                 randomAccessFile22.seek(0L);
                 randomAccessFile22.writeBoolean(true);
                 randomAccessFile22.writeInt(length);
@@ -350,7 +350,7 @@ public final class e {
                 this.k = true;
             } else {
                 countDownLatchArr[i11] = new CountDownLatch(1);
-                z.execute(new qf(this, atomicBoolean2, bitmapArr, i11, a0VarArr2, i12, randomAccessFile22, arrayList2, countDownLatchArr));
+                z.execute(new qf(this, atomicBoolean2, bitmapArr, i11, zVarArr2, i12, randomAccessFile22, arrayList2, countDownLatchArr));
                 i11++;
                 i12++;
                 if (i11 >= y) {

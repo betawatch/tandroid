@@ -15,13 +15,13 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.j5;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Cells.za;
-import org.telegram.ui.Components.h9;
+import org.telegram.ui.Cells.ab;
+import org.telegram.ui.Components.g9;
 import w7.y5;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class b extends za {
+public final class b extends ab {
     public final TextView a0;
     public final FrameLayout b0;
     public Drawable c0;
@@ -47,13 +47,13 @@ public final class b extends za {
     }
 
     private void setAvatarColorByMonths(int i10) {
-        h9 h9Var = this.E;
+        g9 g9Var = this.E;
         if (i10 == 12) {
-            h9Var.i(-31392, -2796986);
+            g9Var.i(-31392, -2796986);
         } else if (i10 == 6) {
-            h9Var.i(-10703110, -12481584);
+            g9Var.i(-10703110, -12481584);
         } else {
-            h9Var.i(-6631068, -11945404);
+            g9Var.i(-6631068, -11945404);
         }
     }
 
@@ -61,12 +61,12 @@ public final class b extends za {
         return this.e0;
     }
 
-    @Override // org.telegram.ui.Cells.za
+    @Override // org.telegram.ui.Cells.ab
     public /* bridge */ /* synthetic */ int[] getColorKeys() {
         return null;
     }
 
-    @Override // org.telegram.ui.Cells.za, android.view.View
+    @Override // org.telegram.ui.Cells.ab, android.view.View
     public final void onDraw(Canvas canvas) {
         if (this.S) {
             canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(70.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(70.0f) : 0), getMeasuredHeight() - 1, j6.k0);
@@ -84,23 +84,23 @@ public final class b extends za {
             int i10 = ((boost.expires - boost.date) / 30) / 86400;
             long j3 = boost.stars;
             z5 z5Var = this.a;
-            h9 h9Var = this.E;
+            g9 g9Var = this.E;
             if (j3 > 0) {
                 j5Var.l(LocaleController.formatPluralString("BoostingBoostStars", (int) j3, new Object[0]), false);
-                h9Var.g(26);
-                z5Var.e(null, h9Var);
+                g9Var.g(26);
+                z5Var.e(null, g9Var);
                 j5Var.i(null);
             } else if (boost.unclaimed) {
                 j5Var.l(LocaleController.getString(R.string.BoostingUnclaimed), false);
-                h9Var.g(18);
+                g9Var.g(18);
                 setAvatarColorByMonths(i10);
-                z5Var.e(null, h9Var);
+                z5Var.e(null, g9Var);
                 j5Var.i(null);
             } else if (boost.user_id == -1) {
                 j5Var.l(LocaleController.getString(R.string.BoostingToBeDistributed), false);
-                h9Var.g(19);
+                g9Var.g(19);
                 setAvatarColorByMonths(i10);
-                z5Var.e(null, h9Var);
+                z5Var.e(null, g9Var);
                 j5Var.i(null);
             }
             String format = LocaleController.getInstance().getFormatterBoostExpired().format(new Date(boost.expires * 1000));

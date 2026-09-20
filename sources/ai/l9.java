@@ -36,7 +36,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class l9 {
     public static final Comparator X = Comparator$-CC.comparingInt(new f7(1));
@@ -559,9 +559,9 @@ public final class l9 {
                                 FileLoader.getInstance(i10).loadFile(tL_availableReaction.select_animation, d, 0, 0);
                             }
                         } else {
-                            org.telegram.ui.Components.q5 q5Var = new org.telegram.ui.Components.q5(1, i10, d.g);
-                            q5Var.m = true;
-                            q5Var.v();
+                            org.telegram.ui.Components.p5 p5Var = new org.telegram.ui.Components.p5(1, i10, d.g);
+                            p5Var.m = true;
+                            p5Var.v();
                         }
                     }
                 }
@@ -860,7 +860,7 @@ public final class l9 {
             this.d = 0;
         }
         if (arrayList == null) {
-            arrayList = org.telegram.messenger.q.k(j3, iVar);
+            arrayList = org.telegram.messenger.l0.i(j3, iVar);
         }
         arrayList.add(k9Var);
     }
@@ -1163,11 +1163,11 @@ public final class l9 {
         NotificationCenter.getInstance(i10).lambda$postNotificationNameOnUIThread$1(NotificationCenter.storiesBlocklistUpdate, new Object[0]);
     }
 
-    public final void k(long j3, e2.h hVar, boolean z10, org.telegram.ui.ActionBar.e6 e6Var) {
+    public final void k(long j3, e2.h hVar, boolean z10, org.telegram.ui.ActionBar.f6 f6Var) {
         TL_stories.TL_stories_canSendStory tL_stories_canSendStory = new TL_stories.TL_stories_canSendStory();
         int i10 = this.a;
         tL_stories_canSendStory.peer = MessagesController.getInstance(i10).getInputPeer(j3);
-        ConnectionsManager.getInstance(i10).sendRequest(tL_stories_canSendStory, new b8(this, z10, j3, hVar, e6Var), 1024);
+        ConnectionsManager.getInstance(i10).sendRequest(tL_stories_canSendStory, new b8(this, z10, j3, hVar, f6Var), 1024);
     }
 
     public final void k0(long j3, List list) {
@@ -1293,7 +1293,7 @@ public final class l9 {
                         if (storyItem.firstFramePath == null) {
                             storyItem.firstFramePath = storyItem2.firstFramePath;
                         }
-                        org.telegram.messenger.q.o(storyItem.id, new StringBuilder("StoriesController update story for full peer storyId="));
+                        org.telegram.messenger.l0.m(storyItem.id, new StringBuilder("StoriesController update story for full peer storyId="));
                     }
                 } else {
                     i12++;
@@ -1301,9 +1301,9 @@ public final class l9 {
             }
             if (!z11) {
                 if (storyItem instanceof TL_stories.TL_storyItemDeleted) {
-                    org.telegram.messenger.q.o(storyItem.id, new StringBuilder("StoriesController story is not found, but already deleted storyId="));
+                    org.telegram.messenger.l0.m(storyItem.id, new StringBuilder("StoriesController story is not found, but already deleted storyId="));
                 } else if (z10) {
-                    org.telegram.messenger.q.o(storyItem.id, new StringBuilder("StoriesController add new story for full peer storyId="));
+                    org.telegram.messenger.l0.m(storyItem.id, new StringBuilder("StoriesController add new story for full peer storyId="));
                     peerStories.stories.add(storyItem);
                     peerStories.checkedExpired = false;
                 }

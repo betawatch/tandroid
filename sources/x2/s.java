@@ -1,26 +1,52 @@
 package x2;
 
+import b2.l1;
 import java.util.List;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
-public final class s extends c {
-    @Override // x2.r
-    public final int c() {
-        return 0;
-    }
+public interface s {
+    boolean a(int i10, long j3);
 
-    @Override // x2.r
-    public final int n() {
-        return 0;
-    }
+    l1 b();
 
-    @Override // x2.r
-    public final Object q() {
-        return null;
-    }
+    int c();
 
-    @Override // x2.r
-    public final void k(long j3, long j10, long j11, List list, v2.l[] lVarArr) {
-    }
+    boolean d(long j3, v2.e eVar, List list);
+
+    void e(boolean z10);
+
+    b2.s f(int i10);
+
+    void g();
+
+    int h(int i10);
+
+    int i(long j3, List list);
+
+    void j();
+
+    void k(long j3, long j10, long j11, List list, v2.l[] lVarArr);
+
+    int l();
+
+    int length();
+
+    b2.s m();
+
+    int n();
+
+    boolean o(int i10, long j3);
+
+    void p(float f7);
+
+    Object q();
+
+    void r();
+
+    int s(b2.s sVar);
+
+    void t();
+
+    int u(int i10);
 }

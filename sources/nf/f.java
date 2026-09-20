@@ -24,7 +24,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import n7.z0;
 import org.telegram.messenger.AccountInstance;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
@@ -46,18 +45,20 @@ import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.ActionBar.n3;
 import org.telegram.ui.ActionBar.o3;
 import org.telegram.ui.BubbleActivity;
+import org.telegram.ui.Cells.f3;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.h4;
 import org.telegram.ui.hz;
 import org.telegram.ui.l3;
+import org.telegram.ui.web.z0;
 import org.telegram.ui.y2;
 import t7.u;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public abstract class f {
-    public static z0 a;
-    public static o0.a b;
+    public static f3 a;
+    public static m5.e b;
     public static a9.d c;
     public static String d;
     public static WeakReference e;
@@ -117,23 +118,23 @@ public abstract class f {
         return null;
     }
 
-    public static z0 c() {
-        o0.a aVar = b;
-        z0 z0Var = null;
-        if (aVar == null) {
+    public static f3 c() {
+        m5.e eVar = b;
+        f3 f3Var = null;
+        if (eVar == null) {
             a = null;
         } else if (a == null) {
             u uVar = new u();
-            vf.e eVar = (vf.e) aVar.b;
+            vf.e eVar2 = (vf.e) eVar.b;
             vf.b bVar = new vf.b(uVar);
             try {
-                if (((vf.c) eVar).G0(bVar)) {
-                    z0Var = new z0(20, bVar, (ComponentName) aVar.c);
+                if (((vf.c) eVar2).G0(bVar)) {
+                    f3Var = new f3(bVar, (ComponentName) eVar.c, false, 17);
                 }
             } catch (RemoteException unused) {
             }
-            a = z0Var;
-            new WeakReference(z0Var);
+            a = f3Var;
+            new WeakReference(f3Var);
         }
         return a;
     }
@@ -467,7 +468,7 @@ public abstract class f {
                     if (h4Var != null && !h4Var.d0.isEmpty()) {
                         Object g10 = k0.g(1, n3Var.J.d0);
                         if (g10 instanceof y2) {
-                            org.telegram.ui.web.z0 z0Var = ((y2) g10).b;
+                            z0 z0Var = ((y2) g10).b;
                             if (z0Var == null && (l3VarArr = n3Var.J.u0) != null && (l3Var = l3VarArr[0]) != null) {
                                 z0Var = l3Var.getWebView();
                             }
@@ -617,7 +618,7 @@ public abstract class f {
         int i11 = UserConfig.selectedAccount;
         boolean[] zArr = {false};
         boolean f7 = f(uri, false, zArr);
-        int i12 = 14;
+        int i12 = 12;
         if (str != null) {
             switch (str) {
                 case "brave-browser":
@@ -759,7 +760,7 @@ public abstract class f {
                                 Intent intent2 = new Intent(ApplicationLoader.applicationContext, (Class<?>) ShareBroadcastReceiver.class);
                                 intent2.setAction("android.intent.action.SEND");
                                 PendingIntent broadcast = PendingIntent.getBroadcast(ApplicationLoader.applicationContext, 0, new Intent(ApplicationLoader.applicationContext, (Class<?>) CustomTabsCopyReceiver.class), 167772160);
-                                z0 c11 = c();
+                                f3 c11 = c();
                                 Intent intent3 = new Intent("android.intent.action.VIEW");
                                 if (c11 != null) {
                                     intent3.setPackage(((ComponentName) c11.c).getPackageName());

@@ -1,14 +1,29 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
-/* loaded from: classes3.dex */
-public final class kz0 {
-    public final qz0 a;
-    public final sz0 b;
-    public boolean c = true;
+import android.util.Pair;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 
-    public kz0(qz0 qz0Var, sz0 sz0Var) {
-        this.a = qz0Var;
-        this.b = sz0Var;
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* loaded from: classes3.dex */
+public final class kz0 extends ArrayList {
+    public final Class a;
+    public final Class b;
+
+    public kz0(Class cls, Class cls2) {
+        this.a = cls;
+        this.b = cls2;
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    public final lf.h i() {
+        int size = size();
+        Object[] objArr = (Object[]) Array.newInstance((Class<?>) this.a, size);
+        Object[] objArr2 = (Object[]) Array.newInstance((Class<?>) this.b, size);
+        for (int i10 = 0; i10 < size; i10++) {
+            objArr[i10] = ((Pair) get(i10)).first;
+            objArr2[i10] = ((Pair) get(i10)).second;
+        }
+        return new lf.h(objArr, objArr2);
     }
 }

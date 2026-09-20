@@ -6,19 +6,19 @@ import android.view.View;
 import android.view.animation.PathInterpolator;
 import java.util.Collections;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class o0 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ w0 a;
-    public final /* synthetic */ m1 b;
-    public final /* synthetic */ m1 c;
+    public final /* synthetic */ v0 a;
+    public final /* synthetic */ l1 b;
+    public final /* synthetic */ l1 c;
     public final /* synthetic */ int d;
     public final /* synthetic */ View e;
 
-    public o0(w0 w0Var, m1 m1Var, m1 m1Var2, int i10, View view) {
-        this.a = w0Var;
-        this.b = m1Var;
-        this.c = m1Var2;
+    public o0(v0 v0Var, l1 l1Var, l1 l1Var2, int i10, View view) {
+        this.a = v0Var;
+        this.b = l1Var;
+        this.c = l1Var2;
         this.d = i10;
         this.e = view;
     }
@@ -26,25 +26,25 @@ public final class o0 implements ValueAnimator.AnimatorUpdateListener {
     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
     public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         float animatedFraction = valueAnimator.getAnimatedFraction();
-        w0 w0Var = this.a;
-        v0 v0Var = w0Var.a;
-        v0Var.d(animatedFraction);
-        m1 m1Var = this.b;
-        j1 j1Var = m1Var.a;
-        float b10 = v0Var.b();
+        v0 v0Var = this.a;
+        u0 u0Var = v0Var.a;
+        u0Var.d(animatedFraction);
+        l1 l1Var = this.b;
+        i1 i1Var = l1Var.a;
+        float b10 = u0Var.b();
         PathInterpolator pathInterpolator = q0.e;
         int i10 = Build.VERSION.SDK_INT;
-        c1 b1Var = i10 >= 34 ? new b1(m1Var) : i10 >= 30 ? new a1(m1Var) : i10 >= 29 ? new z0(m1Var) : new y0(m1Var);
+        b1 a1Var = i10 >= 34 ? new a1(l1Var) : i10 >= 30 ? new z0(l1Var) : i10 >= 29 ? new y0(l1Var) : new x0(l1Var);
         for (int i11 = 1; i11 <= 512; i11 <<= 1) {
             if ((this.d & i11) == 0) {
-                b1Var.c(i11, j1Var.f(i11));
+                a1Var.c(i11, i1Var.f(i11));
             } else {
-                i0.b f7 = j1Var.f(i11);
+                i0.b f7 = i1Var.f(i11);
                 i0.b f10 = this.c.a.f(i11);
                 float f11 = 1.0f - b10;
-                b1Var.c(i11, m1.e(f7, (int) (((f7.a - f10.a) * f11) + 0.5d), (int) (((f7.b - f10.b) * f11) + 0.5d), (int) (((f7.c - f10.c) * f11) + 0.5d), (int) (((f7.d - f10.d) * f11) + 0.5d)));
+                a1Var.c(i11, l1.e(f7, (int) (((f7.a - f10.a) * f11) + 0.5d), (int) (((f7.b - f10.b) * f11) + 0.5d), (int) (((f7.c - f10.c) * f11) + 0.5d), (int) (((f7.d - f10.d) * f11) + 0.5d)));
             }
         }
-        q0.g(this.e, b1Var.b(), Collections.singletonList(w0Var));
+        q0.g(this.e, a1Var.b(), Collections.singletonList(v0Var));
     }
 }

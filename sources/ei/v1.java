@@ -11,19 +11,19 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.dg1;
+import org.telegram.ui.fg1;
 import org.telegram.ui.uy;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class v1 implements Utilities.Callback {
-    public final /* synthetic */ dg1 a;
+    public final /* synthetic */ fg1 a;
     public final /* synthetic */ uy b;
     public final /* synthetic */ long c;
     public final /* synthetic */ int d;
 
-    public /* synthetic */ v1(dg1 dg1Var, uy uyVar, long j3, int i10) {
-        this.a = dg1Var;
+    public /* synthetic */ v1(fg1 fg1Var, uy uyVar, long j3, int i10) {
+        this.a = fg1Var;
         this.b = uyVar;
         this.c = j3;
         this.d = i10;
@@ -35,10 +35,10 @@ public final /* synthetic */ class v1 implements Utilities.Callback {
         String str;
         TLRPC.Chat chat;
         Boolean bool = (Boolean) obj;
-        dg1 dg1Var = this.a;
+        fg1 fg1Var = this.a;
         uy uyVar = this.b;
-        if (dg1Var != null) {
-            dg1Var.finishFragment();
+        if (fg1Var != null) {
+            fg1Var.finishFragment();
             uyVar.removeSelfFromStack();
         } else {
             uyVar.finishFragment();

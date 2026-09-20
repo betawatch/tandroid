@@ -7,16 +7,16 @@ import android.view.View;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class cp extends org.telegram.ui.Cells.e9 {
+public final class cp extends org.telegram.ui.Cells.f9 {
     public ValueAnimator v;
     public int w;
     public final /* synthetic */ ip x;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public cp(ip ipVar, Context context, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(context, 12, e6Var);
+    public cp(ip ipVar, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context, 12, f6Var);
         this.x = ipVar;
         this.w = -1;
     }
@@ -61,11 +61,11 @@ public final class cp extends org.telegram.ui.Cells.e9 {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r7v0, types: [java.lang.Object, org.telegram.ui.Cells.e9, org.telegram.ui.cp] */
+    /* JADX WARN: Type inference failed for: r7v0, types: [java.lang.Object, org.telegram.ui.Cells.f9, org.telegram.ui.cp] */
     /* JADX WARN: Type inference failed for: r8v0, types: [java.lang.CharSequence] */
     /* JADX WARN: Type inference failed for: r8v1, types: [java.lang.CharSequence] */
     /* JADX WARN: Type inference failed for: r8v3, types: [android.text.SpannableStringBuilder] */
-    @Override // org.telegram.ui.Cells.e9
+    @Override // org.telegram.ui.Cells.f9
     public final void setText(CharSequence charSequence) {
         if (charSequence != 0) {
             charSequence = AndroidUtilities.replaceTags(charSequence.toString());
@@ -75,12 +75,12 @@ public final class cp extends org.telegram.ui.Cells.e9 {
                 charSequence.replace(indexOf, indexOf + 1, " ");
                 charSequence.setSpan(new ForegroundColorSpan(ipVar.getThemedColor(org.telegram.ui.ActionBar.j6.p7)), 0, indexOf, 33);
             }
-            org.telegram.ui.Components.u51[] u51VarArr = (org.telegram.ui.Components.u51[]) charSequence.getSpans(0, charSequence.length(), org.telegram.ui.Components.u51.class);
+            org.telegram.ui.Components.t51[] t51VarArr = (org.telegram.ui.Components.t51[]) charSequence.getSpans(0, charSequence.length(), org.telegram.ui.Components.t51.class);
             ci.h2 h2Var = ipVar.a;
             String obj = (h2Var == null || h2Var.getText() == null) ? "" : ipVar.a.getText().toString();
-            for (int i10 = 0; i10 < u51VarArr.length; i10++) {
-                charSequence.setSpan(new org.telegram.ui.Cells.i(5, (Object) this, obj), charSequence.getSpanStart(u51VarArr[i10]), charSequence.getSpanEnd(u51VarArr[i10]), 33);
-                charSequence.removeSpan(u51VarArr[i10]);
+            for (int i10 = 0; i10 < t51VarArr.length; i10++) {
+                charSequence.setSpan(new org.telegram.ui.Cells.i(5, (Object) this, obj), charSequence.getSpanStart(t51VarArr[i10]), charSequence.getSpanEnd(t51VarArr[i10]), 33);
+                charSequence.removeSpan(t51VarArr[i10]);
             }
         }
         super.setText(charSequence);

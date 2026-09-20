@@ -1,91 +1,47 @@
 package r0;
 
-import android.os.Build;
-import android.view.WindowInsets;
+import android.view.ViewGroup;
 import android.view.WindowInsetsAnimation;
-import j$.util.DesugarCollections;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
-public final class t0 extends WindowInsetsAnimation.Callback {
-    public final ph.e a;
-    public List b;
-    public ArrayList c;
-    public final HashMap d;
+public final class t0 extends u0 {
+    public final WindowInsetsAnimation e;
 
-    public t0(ph.e eVar) {
-        super(0);
-        this.d = new HashMap();
-        this.a = eVar;
+    public t0(WindowInsetsAnimation windowInsetsAnimation) {
+        super(0, 0L, null);
+        this.e = windowInsetsAnimation;
     }
 
-    public final w0 a(WindowInsetsAnimation windowInsetsAnimation) {
-        w0 w0Var = (w0) this.d.get(windowInsetsAnimation);
-        if (w0Var == null) {
-            w0Var = new w0(0, 0L, null);
-            if (Build.VERSION.SDK_INT >= 30) {
-                w0Var.a = new u0(windowInsetsAnimation);
-            }
-            this.d.put(windowInsetsAnimation, w0Var);
-        }
-        return w0Var;
+    public static i0.b e(WindowInsetsAnimation.Bounds bounds) {
+        return i0.b.c(bounds.getUpperBound());
     }
 
-    @Override // android.view.WindowInsetsAnimation.Callback
-    public final void onEnd(WindowInsetsAnimation windowInsetsAnimation) {
-        ph.e eVar = this.a;
-        a(windowInsetsAnimation);
-        eVar.S0();
-        this.d.remove(windowInsetsAnimation);
+    public static i0.b f(WindowInsetsAnimation.Bounds bounds) {
+        return i0.b.c(bounds.getLowerBound());
     }
 
-    @Override // android.view.WindowInsetsAnimation.Callback
-    public final void onPrepare(WindowInsetsAnimation windowInsetsAnimation) {
-        ph.e eVar = this.a;
-        a(windowInsetsAnimation);
-        eVar.getClass();
+    public static void g(ViewGroup viewGroup, ph.e eVar) {
+        viewGroup.setWindowInsetsAnimationCallback(new s0(eVar));
     }
 
-    @Override // android.view.WindowInsetsAnimation.Callback
-    public final WindowInsets onProgress(WindowInsets windowInsets, List list) {
-        ArrayList arrayList = this.c;
-        if (arrayList == null) {
-            ArrayList arrayList2 = new ArrayList(list.size());
-            this.c = arrayList2;
-            this.b = DesugarCollections.unmodifiableList(arrayList2);
-        } else {
-            arrayList.clear();
-        }
-        for (int size = list.size() - 1; size >= 0; size--) {
-            WindowInsetsAnimation windowInsetsAnimation = (WindowInsetsAnimation) list.get(size);
-            w0 a2 = a(windowInsetsAnimation);
-            a2.a.d(windowInsetsAnimation.getFraction());
-            this.c.add(a2);
-        }
-        ph.e eVar = this.a;
-        m1 h = m1.h(null, windowInsets);
-        eVar.T0(h, this.b);
-        return h.g();
+    @Override // r0.u0
+    public final long a() {
+        return this.e.getDurationMillis();
     }
 
-    @Override // android.view.WindowInsetsAnimation.Callback
-    public final WindowInsetsAnimation.Bounds onStart(WindowInsetsAnimation windowInsetsAnimation, WindowInsetsAnimation.Bounds bounds) {
-        ph.e eVar = this.a;
-        a(windowInsetsAnimation);
-        i0.b f7 = u0.f(bounds);
-        i0.b e = u0.e(bounds);
-        if (eVar.c == 0) {
-            Iterator it = eVar.d.iterator();
-            while (it.hasNext()) {
-                ((ph.d) it.next()).s();
-            }
-        }
-        eVar.c++;
-        r0.c();
-        return r0.a(f7.d(), e.d());
+    @Override // r0.u0
+    public final float b() {
+        return this.e.getInterpolatedFraction();
+    }
+
+    @Override // r0.u0
+    public final int c() {
+        return this.e.getTypeMask();
+    }
+
+    @Override // r0.u0
+    public final void d(float f7) {
+        this.e.setFraction(f7);
     }
 }

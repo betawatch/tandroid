@@ -10,20 +10,20 @@ import android.widget.ScrollView;
 import java.util.ArrayList;
 import java.util.Iterator;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.rk;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.Components.qr;
-import w7.a6;
+import w7.b6;
 import w7.y5;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public abstract class p0 extends LinearLayout implements ph.a, le.k {
-    public final e6 a;
+    public final f6 a;
     public final FrameLayout b;
     public TLRPC.TL_replyKeyboardMarkup c;
     public m0 d;
@@ -37,12 +37,12 @@ public abstract class p0 extends LinearLayout implements ph.a, le.k {
     public int w;
     public final le.l x;
 
-    public p0(Context context, e6 e6Var) {
+    public p0(Context context, f6 f6Var) {
         super(context);
         this.n = new ArrayList();
         this.v = new GradientDrawable(GradientDrawable.Orientation.BOTTOM_TOP, null);
         this.x = new le.l(this, qr.h, 320L);
-        this.a = e6Var;
+        this.a = f6Var;
         setOrientation(1);
         ScrollView scrollView = new ScrollView(context);
         this.r = scrollView;
@@ -121,7 +121,7 @@ public abstract class p0 extends LinearLayout implements ph.a, le.k {
         if (this.f) {
             return this.e;
         }
-        return wh.c(4.0f, this.c.rows.size() - 1, AndroidUtilities.dp(16.0f) + (AndroidUtilities.dp(this.h) * tL_replyKeyboardMarkup.rows.size()));
+        return org.telegram.messenger.l0.D(4.0f, this.c.rows.size() - 1, AndroidUtilities.dp(16.0f) + (AndroidUtilities.dp(this.h) * tL_replyKeyboardMarkup.rows.size()));
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:18:0x0046, code lost:
@@ -194,7 +194,7 @@ public abstract class p0 extends LinearLayout implements ph.a, le.k {
         this.b.addView(o0Var2);
         boolean z10 = tL_replyKeyboardMarkup.resize;
         this.f = !z10;
-        this.h = z10 ? 44 : (int) Math.max(44.0f, (wh.B(4.0f, this.c.rows.size() - 1, this.e - AndroidUtilities.dp(16.0f)) / this.c.rows.size()) / AndroidUtilities.density);
+        this.h = z10 ? 44 : (int) Math.max(44.0f, (rk.B(4.0f, this.c.rows.size() - 1, this.e - AndroidUtilities.dp(16.0f)) / this.c.rows.size()) / AndroidUtilities.density);
         int i11 = 0;
         while (i11 < tL_replyKeyboardMarkup.rows.size()) {
             TL_keyboard.KeyboardButtonRow keyboardButtonRow = tL_replyKeyboardMarkup.rows.get(i11);
@@ -218,7 +218,7 @@ public abstract class p0 extends LinearLayout implements ph.a, le.k {
                 frameLayout.addView(n0Var, y5.c(-1.0f, -1));
                 linearLayout.addView(frameLayout, y5.m(size, 0, -1, 0, i12 != keyboardButtonRow.buttons.size() - 1 ? 4 : 0, 0));
                 n0Var.setOnClickListener(new ai.v0(this, 15));
-                a6.b(n0Var, 0.02f, 1.5f);
+                b6.b(n0Var, 0.02f, 1.5f);
                 arrayList.add(n0Var);
                 n0Var.a();
                 i12++;
@@ -239,7 +239,7 @@ public abstract class p0 extends LinearLayout implements ph.a, le.k {
         if (!this.f || (tL_replyKeyboardMarkup = this.c) == null || tL_replyKeyboardMarkup.rows.isEmpty()) {
             return;
         }
-        int max = !this.f ? 44 : (int) Math.max(44.0f, (wh.B(4.0f, this.c.rows.size() - 1, this.e - AndroidUtilities.dp(16.0f)) / this.c.rows.size()) / AndroidUtilities.density);
+        int max = !this.f ? 44 : (int) Math.max(44.0f, (rk.B(4.0f, this.c.rows.size() - 1, this.e - AndroidUtilities.dp(16.0f)) / this.c.rows.size()) / AndroidUtilities.density);
         this.h = max;
         int dp = AndroidUtilities.dp(max);
         Iterator it = this.x.iterator();

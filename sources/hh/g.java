@@ -15,11 +15,11 @@ import android.view.WindowInsets;
 import android.widget.FrameLayout;
 import ci.eb;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.q;
-import r0.m1;
+import org.telegram.messenger.l0;
+import r0.l1;
 import w7.y5;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class g extends FrameLayout {
     public float E;
@@ -93,8 +93,8 @@ public final class g extends FrameLayout {
     }
 
     public final void c() {
-        m1 m1Var = ((ph.i) this.a).r;
-        int i10 = m1Var != null ? m1Var.a.f(2).d : 0;
+        l1 l1Var = ((ph.i) this.a).r;
+        int i10 = l1Var != null ? l1Var.a.f(2).d : 0;
         float b10 = ((ph.i) this.a).b();
         f0 f0Var = this.d;
         int childCount = f0Var.getChildCount();
@@ -147,7 +147,7 @@ public final class g extends FrameLayout {
 
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
-        this.h.setBounds(0, getMeasuredHeight() - ((int) this.v), getMeasuredWidth(), q.z(58.0f, getMeasuredHeight() - ((int) this.v), getMeasuredHeight()));
+        this.h.setBounds(0, getMeasuredHeight() - ((int) this.v), getMeasuredWidth(), l0.y(58.0f, getMeasuredHeight() - ((int) this.v), getMeasuredHeight()));
         int measuredHeight = getMeasuredHeight() - this.r;
         int round = Math.round(this.x);
         int measuredWidth = getMeasuredWidth() - Math.round(this.y);

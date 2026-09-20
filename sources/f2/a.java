@@ -7,10 +7,10 @@ import e2.d0;
 import e2.v;
 import java.util.ArrayList;
 import java.util.Arrays;
-import v7.u6;
-import v7.y7;
+import v7.v6;
+import v7.z7;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class a implements o0 {
     public final String a;
@@ -98,7 +98,7 @@ public final class a implements o0 {
             if (str.equals("auxiliary.tracks.map")) {
                 ArrayList d = d();
                 StringBuilder u10 = a4.a.u("track types = ");
-                new xa.c(String.valueOf(',')).p(u10, d.iterator());
+                new xa.c(String.valueOf(',')).n(u10, d.iterator());
                 sb2 = u10.toString();
             }
             sb2 = d0.c0(bArr);
@@ -108,16 +108,16 @@ public final class a implements o0 {
             boolean z10 = bArr.length >= 4;
             int length = bArr.length;
             if (!z10) {
-                throw new IllegalArgumentException(u6.a("array too small: %s < %s", Integer.valueOf(length), 4));
+                throw new IllegalArgumentException(v6.a("array too small: %s < %s", Integer.valueOf(length), 4));
             }
-            sb2 = String.valueOf(Float.intBitsToFloat(y7.c(bArr[0], bArr[1], bArr[2], bArr[3])));
+            sb2 = String.valueOf(Float.intBitsToFloat(z7.c(bArr[0], bArr[1], bArr[2], bArr[3])));
         } else if (i10 == 67) {
             boolean z11 = bArr.length >= 4;
             int length2 = bArr.length;
             if (!z11) {
-                throw new IllegalArgumentException(u6.a("array too small: %s < %s", Integer.valueOf(length2), 4));
+                throw new IllegalArgumentException(v6.a("array too small: %s < %s", Integer.valueOf(length2), 4));
             }
-            sb2 = String.valueOf(y7.c(bArr[0], bArr[1], bArr[2], bArr[3]));
+            sb2 = String.valueOf(z7.c(bArr[0], bArr[1], bArr[2], bArr[3]));
         } else if (i10 != 75) {
             if (i10 == 78) {
                 sb2 = String.valueOf(new v(bArr).C());

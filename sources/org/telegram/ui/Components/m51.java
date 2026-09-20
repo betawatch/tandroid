@@ -1,48 +1,29 @@
 package org.telegram.ui.Components;
 
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class m51 extends s4.s0 {
-    public final /* synthetic */ t51 a;
+public final class m51 implements dy0 {
+    public final /* synthetic */ s51 a;
 
-    public m51(t51 t51Var) {
-        this.a = t51Var;
+    public m51(s51 s51Var) {
+        this.a = s51Var;
     }
 
-    @Override // s4.s0
-    public final void a(RecyclerView recyclerView, int i10) {
-        s4.s0 s0Var = this.a.y;
-        if (s0Var != null) {
-            s0Var.a(recyclerView, i10);
-        }
+    @Override // org.telegram.ui.Components.dy0
+    public final boolean b() {
+        return this.a.b.a();
     }
 
-    @Override // s4.s0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        t51 t51Var = this.a;
-        s51 s51Var = t51Var.s;
-        j51 j51Var = t51Var.n;
-        s4.s0 s0Var = t51Var.y;
-        if (s0Var != null) {
-            s0Var.b(j51Var, i10, i11);
-        }
-        if (i11 <= 0 || j51Var.getAdapter() != s51Var || !t51Var.J || s51Var.r || s51Var.s) {
-            return;
-        }
-        if (t51Var.r.N0() >= ((s51Var.w + 1) - ((s51Var.v + 1) * 10)) - 1) {
-            t51 t51Var2 = s51Var.x;
-            if (!t51Var2.J || s51Var.r || s51Var.s) {
-                return;
-            }
-            s51Var.r = true;
-            TLRPC.TL_messages_getOldFeaturedStickers tL_messages_getOldFeaturedStickers = new TLRPC.TL_messages_getOldFeaturedStickers();
-            tL_messages_getOldFeaturedStickers.offset = s51Var.n.size();
-            tL_messages_getOldFeaturedStickers.limit = 40;
-            ConnectionsManager.getInstance(t51Var2.a).sendRequest(tL_messages_getOldFeaturedStickers, new x1(s51Var, 17));
-        }
+    @Override // org.telegram.ui.Components.dy0
+    public final boolean c() {
+        return this.a.b.c();
+    }
+
+    @Override // org.telegram.ui.Components.dy0
+    public final void d(TLRPC.Document document, String str, Object obj, MessageObject.SendAnimationData sendAnimationData, boolean z10, boolean z11, int i10, int i11) {
+        this.a.b.f(document, obj, z11, i10);
     }
 }

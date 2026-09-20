@@ -6,9 +6,9 @@ import android.os.Trace;
 import android.view.Surface;
 import androidx.media3.decoder.VideoDecoderOutputBuffer;
 import b2.x1;
-import u2.b1;
+import u2.c1;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public abstract class a extends i2.f {
     public final long I;
@@ -137,9 +137,9 @@ public abstract class a extends i2.f {
             } else {
                 if ((this.n == 2) && j3 != this.b0) {
                     if (j12 < -500000) {
-                        b1 b1Var = this.r;
-                        b1Var.getClass();
-                        int j14 = b1Var.j(j3 - this.v);
+                        c1 c1Var = this.r;
+                        c1Var.getClass();
+                        int j14 = c1Var.j(j3 - this.v);
                         if (j14 == 0) {
                             z11 = false;
                         } else {
@@ -203,7 +203,7 @@ public abstract class a extends i2.f {
                 return false;
             }
             n4.y yVar = this.c;
-            yVar.n();
+            yVar.e();
             int w10 = w(yVar, hVar2, 0);
             if (w10 == -5) {
                 H(yVar);
@@ -270,7 +270,7 @@ public abstract class a extends i2.f {
             return;
         }
         n2.h hVar = this.X;
-        hg.k0.y(this.W, hVar);
+        hg.k0.A(this.W, hVar);
         this.W = hVar;
         if (hVar != null && hVar.h() == null && this.W.g() == null) {
             return;
@@ -308,10 +308,10 @@ public abstract class a extends i2.f {
     public final void H(n4.y yVar) {
         i2.h hVar;
         this.d0 = true;
-        b2.s sVar = (b2.s) yVar.c;
+        b2.s sVar = (b2.s) yVar.b;
         sVar.getClass();
-        n2.h hVar2 = (n2.h) yVar.b;
-        hg.k0.y(this.X, hVar2);
+        n2.h hVar2 = (n2.h) yVar.a;
+        hg.k0.A(this.X, hVar2);
         this.X = hVar2;
         b2.s sVar2 = this.N;
         this.N = sVar;
@@ -371,7 +371,7 @@ public abstract class a extends i2.f {
             }
             this.P = null;
         }
-        hg.k0.y(this.W, null);
+        hg.k0.A(this.W, null);
         this.W = null;
     }
 
@@ -394,7 +394,7 @@ public abstract class a extends i2.f {
         if (x1Var == null || x1Var.a != i10 || x1Var.b != i11) {
             x1 x1Var2 = new x1(i10, i11);
             this.g0 = x1Var2;
-            bVar.W(x1Var2);
+            bVar.Z(x1Var2);
         }
         Surface surface = this.U;
         surface.getClass();
@@ -405,7 +405,7 @@ public abstract class a extends i2.f {
             this.a0 = 3;
             Surface surface2 = this.T;
             if (surface2 != null) {
-                bVar.S(surface2);
+                bVar.V(surface2);
             }
         }
     }
@@ -464,12 +464,12 @@ public abstract class a extends i2.f {
             if (obj != null) {
                 x1 x1Var = this.g0;
                 if (x1Var != null) {
-                    bVar.W(x1Var);
+                    bVar.Z(x1Var);
                 }
                 if (this.a0 != 3 || (surface = this.T) == null) {
                     return;
                 }
-                bVar.S(surface);
+                bVar.V(surface);
                 return;
             }
             return;
@@ -485,7 +485,7 @@ public abstract class a extends i2.f {
         }
         x1 x1Var2 = this.g0;
         if (x1Var2 != null) {
-            bVar.W(x1Var2);
+            bVar.Z(x1Var2);
         }
         this.a0 = Math.min(this.a0, 1);
         if (this.n == 2) {
@@ -529,11 +529,11 @@ public abstract class a extends i2.f {
         this.g0 = null;
         this.a0 = Math.min(this.a0, 0);
         try {
-            hg.k0.y(this.X, null);
+            hg.k0.A(this.X, null);
             this.X = null;
             I();
         } finally {
-            bVar.H(this.m0);
+            bVar.P(this.m0);
         }
     }
 
@@ -603,7 +603,7 @@ public abstract class a extends i2.f {
         }
         if (this.N == null) {
             n4.y yVar = this.c;
-            yVar.n();
+            yVar.e();
             this.M.clear();
             int w10 = w(yVar, this.M, 2);
             if (w10 != -5) {

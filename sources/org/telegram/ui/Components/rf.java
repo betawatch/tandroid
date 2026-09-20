@@ -9,7 +9,7 @@ import org.telegram.messenger.Emoji;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class rf implements TextWatcher {
     public boolean a;
@@ -128,7 +128,7 @@ public final class rf implements TextWatcher {
         }
         NumberTextView numberTextView2 = chatActivityEnterView.b0;
         if (numberTextView2 != null) {
-            numberTextView2.animate().alpha(0.0f).scaleX(0.5f).scaleY(0.5f).setDuration(100L).setListener(new r8(this, 2));
+            numberTextView2.animate().alpha(0.0f).scaleX(0.5f).scaleY(0.5f).setDuration(100L).setListener(new q8(this, 2));
         }
         z10 = true;
         if (chatActivityEnterView.p3 != z10) {
@@ -188,7 +188,7 @@ public final class rf implements TextWatcher {
             if (i11 > i13 || i12 - i11 > 2 || TextUtils.isEmpty(charSequence)) {
                 chatActivityEnterView.X2 = true;
             }
-            chatActivityEnterView.Y2.l1(charSequence, i11 > i13 || i12 - i11 > 2, false);
+            chatActivityEnterView.Y2.m1(charSequence, i11 > i13 || i12 - i11 > 2, false);
         }
         if (chatActivityEnterView.R2 != 2 && i12 - i11 > 1) {
             this.a = true;
@@ -197,7 +197,7 @@ public final class rf implements TextWatcher {
             chatActivityEnterView.B2 = System.currentTimeMillis();
             ng ngVar = chatActivityEnterView.Y2;
             if (ngVar != null) {
-                ngVar.E1();
+                ngVar.F1();
             }
         }
         chatActivityEnterView.R1();

@@ -9,10 +9,10 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.Components.rd;
+import org.telegram.ui.Components.sd;
 import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class y {
     public static volatile y[] e = new y[4];
@@ -65,7 +65,7 @@ public final class y {
         }
     }
 
-    public final void b(TL_account.TL_businessChatLink tL_businessChatLink, TL_account.TL_inputBusinessChatLink tL_inputBusinessChatLink, rd rdVar) {
+    public final void b(TL_account.TL_businessChatLink tL_businessChatLink, TL_account.TL_inputBusinessChatLink tL_inputBusinessChatLink, sd sdVar) {
         TL_account.editBusinessChatLink editbusinesschatlink = new TL_account.editBusinessChatLink();
         editbusinesschatlink.slug = tL_businessChatLink.link;
         if (!tL_inputBusinessChatLink.entities.isEmpty()) {
@@ -75,7 +75,7 @@ public final class y {
             tL_inputBusinessChatLink.flags |= 2;
         }
         editbusinesschatlink.link = tL_inputBusinessChatLink;
-        ConnectionsManager.getInstance(this.a).sendRequest(editbusinesschatlink, new t5(this, tL_businessChatLink, rdVar, 4));
+        ConnectionsManager.getInstance(this.a).sendRequest(editbusinesschatlink, new t5(this, tL_businessChatLink, sdVar, 4));
     }
 
     public final TL_account.TL_businessChatLink c(String str) {

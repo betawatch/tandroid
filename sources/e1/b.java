@@ -13,9 +13,9 @@ import java.util.concurrent.Executor;
 import rd.l;
 import v0.f;
 import v0.i;
-import w7.v7;
+import w7.w7;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b implements l {
     public final /* synthetic */ int a;
@@ -69,7 +69,7 @@ public final /* synthetic */ class b implements l {
                         }
                     }
                     if (gVar != null) {
-                        v0.c a2 = v7.a(gVar.a, gVar.b);
+                        v0.c a2 = w7.a(gVar.a, gVar.b);
                         if (a2 instanceof f) {
                             CredentialProviderPlayServicesImpl.Companion.getClass();
                             if (!a1.g.a(cancellationSignal)) {

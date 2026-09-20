@@ -12,7 +12,7 @@ import org.telegram.messenger.SvgHelper;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.WebFile;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class xi implements Utilities.CallbackReturn {
     public final /* synthetic */ int a;
@@ -36,7 +36,7 @@ public final /* synthetic */ class xi implements Utilities.CallbackReturn {
                 svgThumb.setAspectCenter(true);
                 svgThumb.setColorKey(org.telegram.ui.ActionBar.j6.qe);
                 imageReceiver.setImage(ImageLocation.getForWebFile(WebFile.createWithGeoPoint(fVar.b.geo, 300, 168, 15, Math.min(2, (int) Math.ceil(AndroidUtilities.density)))), (String) null, (ImageLocation) null, (String) null, new eq(svgThumb), (Object) null, 0);
-                view.addOnAttachStateChangeListener(new org.telegram.ui.Cells.q8(imageReceiver, 1));
+                view.addOnAttachStateChangeListener(new org.telegram.ui.Cells.r8(imageReceiver, 1));
                 imageReceiver.setRoundRadius(AndroidUtilities.dp(14.0f));
                 return new ed(imageReceiver, view.getContext().getResources().getDrawable(R.drawable.map_pin).mutate());
             case 2:
@@ -46,10 +46,10 @@ public final /* synthetic */ class xi implements Utilities.CallbackReturn {
                 }
                 return Boolean.valueOf(i10 == 1);
             default:
-                t61 t61Var = (t61) this.b;
+                s61 s61Var = (s61) this.b;
                 View view2 = (View) obj;
-                t61Var.getClass();
-                return view2.getParent() != t61Var ? Boolean.FALSE : Boolean.valueOf(!l61.K(t61Var.U(view2).f));
+                s61Var.getClass();
+                return view2.getParent() != s61Var ? Boolean.FALSE : Boolean.valueOf(!k61.K(s61Var.U(view2).f));
         }
     }
 }

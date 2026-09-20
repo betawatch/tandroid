@@ -11,9 +11,9 @@ import com.google.android.gms.tasks.Tasks;
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 import t7.u;
-import w7.i7;
+import w7.l7;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public abstract class j {
     public static final k6.c[] a = new k6.c[0];
@@ -88,7 +88,7 @@ public abstract class j {
     public static void b(Context context) {
         t7.b bVar = t7.d.b;
         Object[] objArr = {"ica"};
-        i7.a(1, objArr);
+        l7.a(1, objArr);
         t7.g gVar = new t7.g(1, objArr);
         k6.e.b.getClass();
         if (k6.e.a(context) < 221500000) {

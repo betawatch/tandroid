@@ -17,9 +17,9 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class ky extends vl0 {
+public final class ky extends ul0 {
     public boolean E;
     public final /* synthetic */ kz F;
     public final fy c;
@@ -37,7 +37,7 @@ public final class ky extends vl0 {
 
     public ky(kz kzVar, Context context) {
         this.F = kzVar;
-        fy fyVar = new fy(context, kzVar.c1, new d(this, 11), new lv(this, 1), kzVar.Z1);
+        fy fyVar = new fy(context, kzVar.c1, new d(this, 11), new mv(this, 1), kzVar.Z1);
         this.c = fyVar;
         fyVar.setPadding(AndroidUtilities.dp(10.0f), 0, AndroidUtilities.dp(10.0f), AndroidUtilities.dp(5.0f));
         fyVar.setClipToPadding(false);
@@ -58,7 +58,7 @@ public final class ky extends vl0 {
         MediaDataController.getInstance(kzVar.c1).searchStickers(true, str, str2, new ai.e4((Object) kyVar, str2, arrayList, (Object) runnable, 8), z10);
     }
 
-    @Override // org.telegram.ui.Components.vl0
+    @Override // org.telegram.ui.Components.ul0
     public final boolean D(s4.c1 c1Var) {
         int i10 = c1Var.f;
         return i10 == 0 || i10 == 4;
@@ -209,9 +209,9 @@ public final class ky extends vl0 {
             if (i11 != 3) {
                 return;
             }
-            org.telegram.ui.Cells.o8 o8Var = (org.telegram.ui.Cells.o8) view;
+            org.telegram.ui.Cells.p8 p8Var = (org.telegram.ui.Cells.p8) view;
             if (this.d != 0) {
-                o8Var.b(0, LocaleController.formatPluralString("EmojiCount", this.f.size(), new Object[0]));
+                p8Var.b(0, LocaleController.formatPluralString("EmojiCount", this.f.size(), new Object[0]));
                 return;
             }
             if (!arrayList.isEmpty()) {
@@ -220,10 +220,10 @@ public final class ky extends vl0 {
                 i12 = 2;
             }
             if (i10 == arrayList2.size() + i12) {
-                o8Var.b(0, LocaleController.getString(R.string.StickerOrEmojiGlobalSearchResult));
+                p8Var.b(0, LocaleController.getString(R.string.StickerOrEmojiGlobalSearchResult));
                 return;
             } else {
-                o8Var.b(0, LocaleController.getString(R.string.StickerOrEmojiSearchResult));
+                p8Var.b(0, LocaleController.getString(R.string.StickerOrEmojiSearchResult));
                 return;
             }
         }
@@ -263,12 +263,12 @@ public final class ky extends vl0 {
                     if (document == null) {
                         tyVar.a(null, z10);
                         if (tyVar.getSpan() == null || tyVar.getSpan().document != document) {
-                            tyVar.setSpan(new z5(document, (Paint.FontMetricsInt) null));
+                            tyVar.setSpan(new y5(document, (Paint.FontMetricsInt) null));
                         }
                     } else if (l4 != null) {
                         tyVar.a(null, z10);
                         if (tyVar.getSpan() == null || tyVar.getSpan().getDocumentId() != l4.longValue()) {
-                            tyVar.setSpan(new z5(l4.longValue(), (Paint.FontMetricsInt) null));
+                            tyVar.setSpan(new y5(l4.longValue(), (Paint.FontMetricsInt) null));
                         }
                     } else if (str3 != null) {
                         tyVar.a(Emoji.getEmojiBigDrawable(str3), z10);
@@ -327,7 +327,7 @@ public final class ky extends vl0 {
             view2.setLayoutParams(new s4.p0(-1, kzVar.b1));
             view = view2;
         } else if (i10 == 3) {
-            view = new org.telegram.ui.Cells.o8(kzVar.getContext(), true, false, kzVar.Z1, kzVar.i2);
+            view = new org.telegram.ui.Cells.p8(kzVar.getContext(), true, false, kzVar.Z1, kzVar.i2);
         } else if (i10 == 4) {
             ViewGroup.LayoutParams p0Var = new s4.p0(-1, AndroidUtilities.dp(79.0f));
             View view3 = this.c;
@@ -354,6 +354,6 @@ public final class ky extends vl0 {
             view4.setLayoutParams(new s4.p0(-1, AndroidUtilities.dp(68.0f)));
             view = view4;
         }
-        return new gl0(view);
+        return new fl0(view);
     }
 }

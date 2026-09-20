@@ -16,13 +16,13 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.ij0;
+import org.telegram.ui.Components.hj0;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.y21;
+import org.telegram.ui.Components.x21;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class c4 extends View {
     public ValueAnimator E;
@@ -41,10 +41,10 @@ public final class c4 extends View {
     public final RectF h;
     public final Paint n;
     public boolean r;
-    public final org.telegram.ui.Components.e6 s;
-    public final org.telegram.ui.Components.o6 v;
+    public final org.telegram.ui.Components.d6 s;
+    public final org.telegram.ui.Components.n6 v;
     public boolean w;
-    public final uf.b x;
+    public final u2.j0 x;
     public float y;
 
     public c4(zn znVar) {
@@ -55,23 +55,23 @@ public final class c4 extends View {
         this.h = new RectF();
         this.n = new Paint();
         new Paint();
-        this.s = new org.telegram.ui.Components.e6(this, 0L, 420L, qr.h);
-        org.telegram.ui.Components.o6 o6Var = new org.telegram.ui.Components.o6(false, false, false, false);
-        this.v = o6Var;
+        this.s = new org.telegram.ui.Components.d6(this, 0L, 420L, qr.h);
+        org.telegram.ui.Components.n6 n6Var = new org.telegram.ui.Components.n6(false, false, false, false);
+        this.v = n6Var;
         new Matrix();
         this.J = new ArrayList();
         this.K = new int[]{R.raw.star_reaction_effect1, R.raw.star_reaction_effect2, R.raw.star_reaction_effect3, R.raw.star_reaction_effect4, R.raw.star_reaction_effect5};
         this.a = znVar;
-        o6Var.setCallback(this);
-        o6Var.o(false, true, false);
-        o6Var.t(AndroidUtilities.dp(40.0f));
-        o6Var.u(AndroidUtilities.getTypeface("fonts/num.otf"));
-        o6Var.p(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(3.5f), 0);
-        o6Var.G = AndroidUtilities.displaySize.x;
-        o6Var.r(-1);
-        o6Var.b = 17;
+        n6Var.setCallback(this);
+        n6Var.o(false, true, false);
+        n6Var.t(AndroidUtilities.dp(40.0f));
+        n6Var.u(AndroidUtilities.getTypeface("fonts/num.otf"));
+        n6Var.p(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(3.5f), 0);
+        n6Var.G = AndroidUtilities.displaySize.x;
+        n6Var.r(-1);
+        n6Var.b = 17;
         this.H = new b4(this, 0);
-        this.x = new uf.b(24, this, znVar);
+        this.x = new u2.j0(26, this, znVar);
     }
 
     private MessageObject getMessageObject() {
@@ -90,14 +90,14 @@ public final class c4 extends View {
         if (getMessageObject() != null) {
             MessageObject messageObject = getMessageObject();
             zn znVar = this.a;
-            t5 y3 = t5.y(znVar.getCurrentAccount(), false);
+            u5 y3 = u5.y(znVar.getCurrentAccount(), false);
             long E = y3.E(messageObject);
             if (!y3.e || y3.q(false, false, null).amount >= E) {
                 return;
             }
-            s5 s5Var = t5.y(znVar.getCurrentAccount(), false).B;
-            if (s5Var != null) {
-                s5Var.a();
+            t5 t5Var = u5.y(znVar.getCurrentAccount(), false).B;
+            if (t5Var != null) {
+                t5Var.a();
             }
             long a2 = znVar.a();
             if (a2 >= 0) {
@@ -106,7 +106,7 @@ public final class c4 extends View {
                 TLRPC.Chat chat = znVar.getMessagesController().getChat(Long.valueOf(-a2));
                 str = chat == null ? "" : chat.title;
             }
-            new k7(znVar.getParentActivity(), znVar.getResourceProvider(), E, 5, str, new y21(this, y3, messageObject, E, 9), 0L).show();
+            new l7(znVar.getParentActivity(), znVar.getResourceProvider(), E, 5, str, new x21(this, y3, messageObject, E, 9), 0L).show();
         }
     }
 
@@ -145,23 +145,23 @@ public final class c4 extends View {
             return;
         }
         zn znVar = this.a;
-        t5 y3 = t5.y(znVar.getCurrentAccount(), false);
+        u5 y3 = u5.y(znVar.getCurrentAccount(), false);
         while (true) {
             arrayList = this.J;
             if (arrayList.size() <= 4) {
                 break;
             } else {
-                ((ij0) arrayList.remove(0)).C(true);
+                ((hj0) arrayList.remove(0)).C(true);
             }
         }
         Random random = Utilities.fastRandom;
         int[] iArr = this.K;
-        ij0 ij0Var = new ij0(iArr[random.nextInt(iArr.length)], AndroidUtilities.dp(70.0f), AndroidUtilities.dp(70.0f));
-        ij0Var.R(this);
-        ij0Var.J(true);
-        ij0Var.K(0);
-        ij0Var.start();
-        arrayList.add(ij0Var);
+        hj0 hj0Var = new hj0(iArr[random.nextInt(iArr.length)], AndroidUtilities.dp(70.0f), AndroidUtilities.dp(70.0f));
+        hj0Var.R(this);
+        hj0Var.J(true);
+        hj0Var.K(0);
+        hj0Var.start();
+        arrayList.add(hj0Var);
         invalidate();
         zg.m0 l4 = reactionsLayoutInBubble.l("stars");
         if (l4 != null) {
@@ -172,11 +172,11 @@ public final class c4 extends View {
                 performHapticFeedback(3, 1);
             } catch (Exception unused) {
             }
-            t5.y(znVar.getCurrentAccount(), false).d0(messageObject, this.a, 1L, true, false, null);
+            u5.y(znVar.getCurrentAccount(), false).d0(messageObject, this.a, 1L, true, false, null);
         }
-        org.telegram.ui.Components.o6 o6Var = this.v;
-        o6Var.b();
-        o6Var.q("+" + y3.E(messageObject), true, true);
+        org.telegram.ui.Components.n6 n6Var = this.v;
+        n6Var.b();
+        n6Var.q("+" + y3.E(messageObject), true, true);
         this.r = true;
         b4 b4Var = this.H;
         AndroidUtilities.cancelRunOnUIThread(b4Var);
@@ -284,10 +284,10 @@ public final class c4 extends View {
             org.telegram.ui.Cells.v0 v0Var = w0Var.j2;
             zg.p0 p0Var = w0Var.C0;
             float alpha = w0Var.getAlpha();
-            org.telegram.ui.ActionBar.e6 e6Var = w0Var.Y0;
-            if (e6Var != null) {
+            org.telegram.ui.ActionBar.f6 f6Var = w0Var.Y0;
+            if (f6Var != null) {
                 f10 = 255.0f;
-                e6Var.m(w0Var.u0, w0Var.t0 + AndroidUtilities.dp(f7), w0Var.getMeasuredWidth(), w0Var.v0);
+                f6Var.m(w0Var.u0, w0Var.t0 + AndroidUtilities.dp(f7), w0Var.getMeasuredWidth(), w0Var.v0);
             } else {
                 f10 = 255.0f;
                 org.telegram.ui.ActionBar.j6.q(w0Var.u0, w0Var.t0 + AndroidUtilities.dp(f7), w0Var.getMeasuredWidth(), w0Var.v0);
@@ -322,15 +322,15 @@ public final class c4 extends View {
                     if (i12 >= arrayList.size()) {
                         break;
                     }
-                    ij0 ij0Var = (ij0) arrayList.get(i12);
-                    if (ij0Var.a0 >= ij0Var.e[c11]) {
+                    hj0 hj0Var = (hj0) arrayList.get(i12);
+                    if (hj0Var.a0 >= hj0Var.e[c11]) {
                         arrayList.remove(i12);
                         i12--;
                     } else {
                         float f15 = dp / 2.0f;
-                        ij0Var.setBounds((int) (((AndroidUtilities.dp(15.0f) * lerp) + rectF.left) - f15), (int) (rectF.centerY() - f15), (int) t8.b.d(AndroidUtilities.dp(15.0f), lerp, rectF.left, f15), (int) (rectF.centerY() + f15));
-                        ij0Var.setAlpha((int) (this.y * f10));
-                        ij0Var.draw(canvas);
+                        hj0Var.setBounds((int) (((AndroidUtilities.dp(15.0f) * lerp) + rectF.left) - f15), (int) (rectF.centerY() - f15), (int) org.telegram.ui.Cells.c1.b(AndroidUtilities.dp(15.0f), lerp, rectF.left, f15), (int) (rectF.centerY() + f15));
+                        hj0Var.setAlpha((int) (this.y * f10));
+                        hj0Var.draw(canvas);
                     }
                     i12++;
                 }
@@ -348,11 +348,11 @@ public final class c4 extends View {
                 canvas.translate(0.0f, (f11 - e) * f12);
                 float lerp2 = AndroidUtilities.lerp(this.r ? 1.8f : 1.3f, f11, e);
                 canvas.scale(lerp2, lerp2, centerX, dp2);
-                org.telegram.ui.Components.o6 o6Var = this.v;
-                o6Var.w = (int) (e * f10);
-                o6Var.p(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(3.5f), org.telegram.ui.ActionBar.j6.l1(e, -1442840576));
-                o6Var.l(centerX - AndroidUtilities.dp(100.0f), rectF.top - AndroidUtilities.dp(48.0f), centerX + AndroidUtilities.dp(100.0f), rectF.top - AndroidUtilities.dp(24.0f));
-                o6Var.draw(canvas);
+                org.telegram.ui.Components.n6 n6Var = this.v;
+                n6Var.w = (int) (e * f10);
+                n6Var.p(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(3.5f), org.telegram.ui.ActionBar.j6.l1(e, -1442840576));
+                n6Var.l(centerX - AndroidUtilities.dp(100.0f), rectF.top - AndroidUtilities.dp(48.0f), centerX + AndroidUtilities.dp(100.0f), rectF.top - AndroidUtilities.dp(24.0f));
+                n6Var.draw(canvas);
                 canvas.restore();
             }
             if (!this.r) {
@@ -389,7 +389,7 @@ public final class c4 extends View {
             return false;
         }
         int action = motionEvent.getAction();
-        uf.b bVar = this.x;
+        u2.j0 j0Var = this.x;
         if (action == 0) {
             if (this.h.contains(motionEvent.getX(), motionEvent.getY())) {
                 this.w = true;
@@ -397,8 +397,8 @@ public final class c4 extends View {
                 if (l4 != null) {
                     l4.Y.c(true);
                 }
-                AndroidUtilities.cancelRunOnUIThread(bVar);
-                AndroidUtilities.runOnUIThread(bVar, ViewConfiguration.getLongPressTimeout());
+                AndroidUtilities.cancelRunOnUIThread(j0Var);
+                AndroidUtilities.runOnUIThread(j0Var, ViewConfiguration.getLongPressTimeout());
             }
         } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
             zg.m0 l10 = reactionsLayoutInBubble.l("stars");
@@ -409,7 +409,7 @@ public final class c4 extends View {
                 l10.Y.c(false);
             }
             this.w = false;
-            AndroidUtilities.cancelRunOnUIThread(bVar);
+            AndroidUtilities.cancelRunOnUIThread(j0Var);
         }
         return this.w;
     }

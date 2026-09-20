@@ -11,11 +11,11 @@ import java.util.concurrent.atomic.AtomicLongFieldUpdater;
 import java.util.concurrent.atomic.AtomicReferenceArray;
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 import k1.k;
-import v7.t7;
+import v7.u7;
 import zd.i2;
 import zd.l;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public class b {
     public static final /* synthetic */ AtomicLongFieldUpdater b = AtomicLongFieldUpdater.newUpdater(b.class, "sendersAndCloseStatus$volatile");
@@ -573,7 +573,7 @@ public class b {
         } else {
             f7 = f();
         }
-        cVar.resumeWith(t7.a(f7));
+        cVar.resumeWith(u7.a(f7));
     }
 
     public final boolean m(Object obj, k kVar) {

@@ -1,28 +1,196 @@
 package x2;
 
-import android.media.Spatializer;
-import e9.y0;
+import android.os.Bundle;
+import android.os.Parcelable;
+import android.util.SparseArray;
+import android.util.SparseBooleanArray;
+import b2.p1;
+import b2.q1;
+import e2.d0;
+import j$.util.Objects;
+import java.util.ArrayList;
+import java.util.Map;
+import org.telegram.messenger.MediaDataController;
+import v7.z7;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
-public final class j implements Spatializer.OnSpatializerStateChangedListener {
-    public final /* synthetic */ p a;
+public final class j extends q1 {
+    public static final String A0;
+    public static final String B0;
+    public static final String C0;
+    public static final String D0;
+    public static final String E0;
+    public static final String F0;
+    public static final String G0;
+    public static final String H0;
+    public static final String I0;
+    public static final String J0;
+    public static final String K0;
+    public static final String L0;
+    public static final String M0;
+    public static final String N0;
+    public static final String O0;
+    public static final String P0;
+    public static final String Q0;
+    public static final j x0 = new j(new i());
+    public static final String y0;
+    public static final String z0;
+    public final boolean o0;
+    public final boolean p0;
+    public final boolean q0;
+    public final boolean r0;
+    public final boolean s0;
+    public final boolean t0;
+    public final boolean u0;
+    public final SparseArray v0;
+    public final SparseBooleanArray w0;
 
-    public j(p pVar) {
-        this.a = pVar;
+    static {
+        String str = d0.a;
+        y0 = Integer.toString(MediaDataController.MAX_STYLE_RUNS_COUNT, 36);
+        z0 = Integer.toString(1001, 36);
+        A0 = Integer.toString(1002, 36);
+        B0 = Integer.toString(1003, 36);
+        C0 = Integer.toString(1004, 36);
+        D0 = Integer.toString(1005, 36);
+        E0 = Integer.toString(1006, 36);
+        F0 = Integer.toString(1007, 36);
+        G0 = Integer.toString(1008, 36);
+        H0 = Integer.toString(1009, 36);
+        I0 = Integer.toString(1010, 36);
+        J0 = Integer.toString(1011, 36);
+        K0 = Integer.toString(1012, 36);
+        L0 = Integer.toString(1013, 36);
+        M0 = Integer.toString(1014, 36);
+        N0 = Integer.toString(1015, 36);
+        O0 = Integer.toString(1016, 36);
+        P0 = Integer.toString(1017, 36);
+        Q0 = Integer.toString(1018, 36);
     }
 
-    @Override // android.media.Spatializer.OnSpatializerStateChangedListener
-    public final void onSpatializerAvailableChanged(Spatializer spatializer, boolean z10) {
-        p pVar = this.a;
-        y0 y0Var = p.l;
-        pVar.f();
+    public j(i iVar) {
+        super(iVar);
+        this.o0 = iVar.F;
+        this.p0 = iVar.G;
+        this.q0 = iVar.H;
+        this.r0 = iVar.I;
+        this.s0 = iVar.J;
+        this.t0 = iVar.K;
+        this.u0 = iVar.L;
+        this.v0 = iVar.M;
+        this.w0 = iVar.N;
     }
 
-    @Override // android.media.Spatializer.OnSpatializerStateChangedListener
-    public final void onSpatializerEnabledChanged(Spatializer spatializer, boolean z10) {
-        p pVar = this.a;
-        y0 y0Var = p.l;
-        pVar.f();
+    @Override // b2.q1
+    public final p1 a() {
+        return new i(this);
+    }
+
+    @Override // b2.q1
+    public final Bundle c() {
+        Bundle c10 = super.c();
+        c10.putBoolean(y0, this.o0);
+        c10.putBoolean(z0, false);
+        c10.putBoolean(A0, this.p0);
+        c10.putBoolean(M0, false);
+        c10.putBoolean(B0, this.q0);
+        c10.putBoolean(C0, false);
+        c10.putBoolean(D0, false);
+        c10.putBoolean(E0, false);
+        c10.putBoolean(N0, false);
+        c10.putBoolean(Q0, this.r0);
+        c10.putBoolean(O0, this.s0);
+        c10.putBoolean(F0, this.t0);
+        c10.putBoolean(G0, false);
+        c10.putBoolean(H0, this.u0);
+        c10.putBoolean(P0, false);
+        ArrayList arrayList = new ArrayList();
+        ArrayList arrayList2 = new ArrayList();
+        SparseArray sparseArray = new SparseArray();
+        int i10 = 0;
+        while (true) {
+            SparseArray sparseArray2 = this.v0;
+            if (i10 >= sparseArray2.size()) {
+                SparseBooleanArray sparseBooleanArray = this.w0;
+                int[] iArr = new int[sparseBooleanArray.size()];
+                for (int i11 = 0; i11 < sparseBooleanArray.size(); i11++) {
+                    iArr[i11] = sparseBooleanArray.keyAt(i11);
+                }
+                c10.putIntArray(L0, iArr);
+                return c10;
+            }
+            int keyAt = sparseArray2.keyAt(i10);
+            for (Map.Entry entry : ((Map) sparseArray2.valueAt(i10)).entrySet()) {
+                if (entry.getValue() != null) {
+                    throw new ClassCastException();
+                }
+                arrayList2.add((u2.p1) entry.getKey());
+                arrayList.add(Integer.valueOf(keyAt));
+            }
+            c10.putIntArray(I0, z7.f(arrayList));
+            c10.putParcelableArrayList(J0, e2.d.p(arrayList2, new h(0)));
+            SparseArray<? extends Parcelable> sparseArray3 = new SparseArray<>(sparseArray.size());
+            if (sparseArray.size() > 0) {
+                sparseArray.keyAt(0);
+                a4.a.y(sparseArray.valueAt(0));
+                throw null;
+            }
+            c10.putSparseParcelableArray(K0, sparseArray3);
+            i10++;
+        }
+    }
+
+    @Override // b2.q1
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj != null && j.class == obj.getClass()) {
+            j jVar = (j) obj;
+            if (super.equals(jVar) && this.o0 == jVar.o0 && this.p0 == jVar.p0 && this.q0 == jVar.q0 && this.r0 == jVar.r0 && this.s0 == jVar.s0 && this.t0 == jVar.t0 && this.u0 == jVar.u0) {
+                SparseBooleanArray sparseBooleanArray = jVar.w0;
+                SparseBooleanArray sparseBooleanArray2 = this.w0;
+                int size = sparseBooleanArray2.size();
+                if (sparseBooleanArray.size() == size) {
+                    int i10 = 0;
+                    while (true) {
+                        if (i10 >= size) {
+                            SparseArray sparseArray = jVar.v0;
+                            SparseArray sparseArray2 = this.v0;
+                            int size2 = sparseArray2.size();
+                            if (sparseArray.size() == size2) {
+                                for (int i11 = 0; i11 < size2; i11++) {
+                                    int indexOfKey = sparseArray.indexOfKey(sparseArray2.keyAt(i11));
+                                    if (indexOfKey >= 0) {
+                                        Map map = (Map) sparseArray2.valueAt(i11);
+                                        Map map2 = (Map) sparseArray.valueAt(indexOfKey);
+                                        if (map2.size() == map.size()) {
+                                            for (Map.Entry entry : map.entrySet()) {
+                                                u2.p1 p1Var = (u2.p1) entry.getKey();
+                                                if (map2.containsKey(p1Var) && Objects.equals(entry.getValue(), map2.get(p1Var))) {
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                return true;
+                            }
+                        } else {
+                            if (sparseBooleanArray.indexOfKey(sparseBooleanArray2.keyAt(i10)) < 0) {
+                                break;
+                            }
+                            i10++;
+                        }
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
+    @Override // b2.q1
+    public final int hashCode() {
+        return (((((((((((((((super.hashCode() + 31) * 31) + (this.o0 ? 1 : 0)) * 961) + (this.p0 ? 1 : 0)) * 961) + (this.q0 ? 1 : 0)) * 28629151) + (this.r0 ? 1 : 0)) * 31) + (this.s0 ? 1 : 0)) * 31) + (this.t0 ? 1 : 0)) * 961) + (this.u0 ? 1 : 0)) * 31;
     }
 }

@@ -44,7 +44,7 @@ import java.util.HashSet;
 import java.util.concurrent.TimeUnit;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class u extends g.g {
     public static final int F0;
@@ -368,14 +368,14 @@ public final class u extends g.g {
         n4.y yVar = this.i0;
         r rVar = this.j0;
         if (yVar != null) {
-            yVar.a0(rVar);
+            yVar.b0(rVar);
             this.i0 = null;
         }
         if (mediaSessionCompat$Token != null && this.w) {
             n4.y yVar2 = new n4.y(this.s, mediaSessionCompat$Token);
             this.i0 = yVar2;
             yVar2.W(rVar);
-            MediaMetadata metadata = ((android.support.v4.media.session.h) this.i0.b).a.getMetadata();
+            MediaMetadata metadata = ((android.support.v4.media.session.h) this.i0.a).a.getMetadata();
             if (metadata != null) {
                 a0.f fVar = MediaMetadataCompat.d;
                 Parcel obtain = Parcel.obtain();
@@ -388,7 +388,7 @@ public final class u extends g.g {
                 mediaMetadataCompat = null;
             }
             this.l0 = mediaMetadataCompat == null ? null : mediaMetadataCompat.a();
-            android.support.v4.media.session.h hVar = (android.support.v4.media.session.h) this.i0.b;
+            android.support.v4.media.session.h hVar = (android.support.v4.media.session.h) this.i0.a;
             MediaSessionCompat$Token mediaSessionCompat$Token2 = hVar.e;
             if (mediaSessionCompat$Token2.a() != null) {
                 try {

@@ -7,10 +7,10 @@ import java.util.ArrayList;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.n2;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class p1 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ y1 a;
@@ -23,7 +23,7 @@ public final class p1 extends org.telegram.ui.ActionBar.j {
     public final void b(int i10) {
         int i11;
         int i12;
-        e6 e6Var;
+        f6 f6Var;
         y1 y1Var = this.a;
         ArrayList arrayList = y1Var.b;
         if (i10 == -1) {
@@ -58,7 +58,7 @@ public final class p1 extends org.telegram.ui.ActionBar.j {
         }
         Activity parentActivity = y1Var.getParentActivity();
         i12 = ((n2) y1Var).currentAccount;
-        e6Var = ((n2) y1Var).resourceProvider;
-        y1.d0(parentActivity, i12, null, c10, e6Var, new b7(this, intValue, 1));
+        f6Var = ((n2) y1Var).resourceProvider;
+        y1.d0(parentActivity, i12, null, c10, f6Var, new b7(this, intValue, 1));
     }
 }

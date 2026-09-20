@@ -5,13 +5,13 @@ import android.graphics.drawable.Drawable;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.rk;
 import org.telegram.ui.Components.og;
 import org.telegram.ui.Components.qr;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.co;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class l4 extends ImageReceiver {
     public final /* synthetic */ int a;
@@ -24,7 +24,7 @@ public final class l4 extends ImageReceiver {
         this.b = view;
     }
 
-    @Override // org.telegram.messenger.ImageReceiver, org.telegram.ui.Components.w5
+    @Override // org.telegram.messenger.ImageReceiver, org.telegram.ui.Components.v5
     public void invalidate() {
         switch (this.a) {
             case 3:
@@ -35,7 +35,7 @@ public final class l4 extends ImageReceiver {
                 }
                 break;
             case 4:
-                ((org.telegram.ui.Components.q5) this.b).k();
+                ((org.telegram.ui.Components.p5) this.b).k();
                 super.invalidate();
                 break;
             default:
@@ -60,7 +60,7 @@ public final class l4 extends ImageReceiver {
                 return imageBitmapByKey;
             case 1:
                 if (drawable != null && i10 != 1) {
-                    wh.r(((hg.e1) ((z5) obj).H).n.animate().alpha(1.0f).translationY(0.0f), qr.k, 250L);
+                    rk.s(((hg.e1) ((z5) obj).H).n.animate().alpha(1.0f).translationY(0.0f), qr.k, 250L);
                 }
                 return super.setImageBitmapByKey(drawable, str, i10, z10, i11);
             case 2:
@@ -68,12 +68,12 @@ public final class l4 extends ImageReceiver {
             default:
                 return super.setImageBitmapByKey(drawable, str, i10, z10, i11);
             case 4:
-                org.telegram.ui.Components.q5 q5Var = (org.telegram.ui.Components.q5) obj;
-                q5Var.k();
+                org.telegram.ui.Components.p5 p5Var = (org.telegram.ui.Components.p5) obj;
+                p5Var.k();
                 boolean imageBitmapByKey2 = super.setImageBitmapByKey(drawable, str, i10, z10, i11);
-                if (q5Var.m && hasImageLoaded()) {
-                    q5Var.m = false;
-                    AndroidUtilities.runOnUIThread(new og(q5Var, 4));
+                if (p5Var.m && hasImageLoaded()) {
+                    p5Var.m = false;
+                    AndroidUtilities.runOnUIThread(new og(p5Var, 4));
                 }
                 return imageBitmapByKey2;
             case 5:

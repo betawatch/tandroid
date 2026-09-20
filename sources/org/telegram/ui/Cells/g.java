@@ -2,13 +2,13 @@ package org.telegram.ui.Cells;
 
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.p90;
-import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.wl0;
+import org.telegram.ui.Components.o90;
+import org.telegram.ui.Components.pc;
+import org.telegram.ui.Components.vl0;
 import org.telegram.ui.SessionsActivity;
 import org.telegram.ui.uy;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g implements Runnable {
     public final /* synthetic */ int a;
@@ -24,9 +24,9 @@ public final /* synthetic */ class g implements Runnable {
         switch (this.a) {
             case 0:
                 h hVar = (h) this.b;
-                p90 p90Var = hVar.d;
-                if (p90Var != null) {
-                    hVar.h.E.l(p90Var, true);
+                o90 o90Var = hVar.d;
+                if (o90Var != null) {
+                    hVar.h.E.l(o90Var, true);
                     break;
                 }
                 break;
@@ -44,34 +44,34 @@ public final /* synthetic */ class g implements Runnable {
                 AndroidUtilities.hideKeyboard(((xh.u4) this.b).b.getEditText());
                 break;
             case 4:
-                AndroidUtilities.hideKeyboard(((j3) this.b).b);
+                AndroidUtilities.hideKeyboard(((k3) this.b).b);
                 break;
             case 5:
-                i6 i6Var = (i6) this.b;
-                if (!(i6Var.getParent() instanceof wl0)) {
-                    i6Var.callOnClick();
+                j6 j6Var = (j6) this.b;
+                if (!(j6Var.getParent() instanceof vl0)) {
+                    j6Var.callOnClick();
                     break;
                 } else {
-                    ((wl0) i6Var.getParent()).getOnItemClickListener().d(RecyclerView.S(i6Var), i6Var);
+                    ((vl0) j6Var.getParent()).getOnItemClickListener().d(RecyclerView.S(j6Var), j6Var);
                     break;
                 }
             case 6:
-                ((t7) this.b).h();
+                ((u7) this.b).h();
                 break;
             case 7:
-                da daVar = (da) this.b;
-                daVar.C.invalidate();
-                daVar.U();
+                ea eaVar = (ea) this.b;
+                eaVar.C.invalidate();
+                eaVar.U();
                 break;
             case 8:
-                ((n9) this.b).b.U();
+                ((o9) this.b).b.U();
                 break;
             case 9:
-                ia iaVar = (ia) this.b;
-                iaVar.s = -1;
+                ja jaVar = (ja) this.b;
+                jaVar.s = -1;
                 int i10 = 0;
                 while (true) {
-                    u1[] u1VarArr = iaVar.e;
+                    u1[] u1VarArr = jaVar.e;
                     if (i10 >= u1VarArr.length) {
                         break;
                     } else {
@@ -84,7 +84,7 @@ public final /* synthetic */ class g implements Runnable {
                 }
             case 10:
                 uy uyVar = (uy) this.b;
-                qc.e();
+                pc.e();
                 uyVar.presentFragment(new SessionsActivity(0));
                 break;
             default:

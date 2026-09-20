@@ -2,43 +2,25 @@ package org.telegram.ui.Components;
 
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.text.style.ReplacementSpan;
-import android.view.KeyEvent;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class ab0 extends ReplacementSpan {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ KeyEvent.Callback b;
+public final class ab0 extends y5 {
+    public final /* synthetic */ bb0 a;
 
-    public /* synthetic */ ab0(KeyEvent.Callback callback, int i10) {
-        this.a = i10;
-        this.b = callback;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ab0(bb0 bb0Var, TLRPC.Document document, Paint.FontMetricsInt fontMetricsInt) {
+        super(document, fontMetricsInt);
+        this.a = bb0Var;
     }
 
-    @Override // android.text.style.ReplacementSpan
+    @Override // org.telegram.ui.Components.y5, android.text.style.ReplacementSpan
     public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
-        int i15 = this.a;
-    }
-
-    @Override // android.text.style.ReplacementSpan
-    public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
-        switch (this.a) {
-            case 0:
-                return ((cb0) this.b).x;
-            case 1:
-                return (int) ((org.telegram.ui.sj0) this.b).n0;
-            default:
-                return (int) ((tg.m1) this.b).t0;
-        }
-    }
-
-    private final void a(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
-    }
-
-    private final void b(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
-    }
-
-    private final void c(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
+        bb0 bb0Var = this.a;
+        int i15 = bb0Var.y;
+        int i16 = i14 + i12;
+        int i17 = this.measuredSize;
+        bb0Var.c.set((int) f7, hg.k0.z(i16, i17, 2, i15), (int) (f7 + i17), ((i16 + i17) / 2) + i15);
     }
 }

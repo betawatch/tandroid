@@ -1,100 +1,131 @@
 package v7;
 
 import android.content.Context;
-import android.content.pm.PackageManager;
-import android.os.IBinder;
-import android.os.IInterface;
-import android.os.Parcel;
-import android.os.RemoteException;
+import android.content.res.Resources;
+import android.net.Uri;
+import android.os.ParcelFileDescriptor;
+import android.os.Process;
+import android.os.StrictMode;
 import android.util.Log;
-import java.util.concurrent.atomic.AtomicBoolean;
-import org.telegram.messenger.BuildConfig;
+import java.io.Closeable;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.nio.MappedByteBuffer;
+import java.nio.channels.FileChannel;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public abstract class j8 {
-    public static Context a;
-    public static i8.e b;
-
-    public static i8.e a(Context context) {
-        i8.e eVar;
-        n6.l.h(context);
-        Log.d("j8", "preferredRenderer: ".concat(BuildConfig.BETA_URL));
-        i8.e eVar2 = b;
-        if (eVar2 != null) {
-            return eVar2;
-        }
-        AtomicBoolean atomicBoolean = k6.g.a;
-        int b10 = k6.g.b(context, 13400000);
-        if (b10 != 0) {
-            throw new k6.f(b10);
-        }
-        Log.i("j8", "Making Creator dynamically");
-        ClassLoader classLoader = b(context).getClassLoader();
-        try {
-            n6.l.h(classLoader);
-            Class<?> loadClass = classLoader.loadClass("com.google.android.gms.maps.internal.CreatorImpl");
+    public static void a(Closeable closeable) {
+        if (closeable != null) {
             try {
-                IBinder iBinder = (IBinder) loadClass.newInstance();
-                if (iBinder == null) {
-                    eVar = null;
-                } else {
-                    IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.maps.internal.ICreator");
-                    eVar = queryLocalInterface instanceof i8.e ? (i8.e) queryLocalInterface : new i8.e(iBinder, "com.google.android.gms.maps.internal.ICreator", 9);
-                }
-                b = eVar;
-                try {
-                    Context b11 = b(context);
-                    b11.getClass();
-                    x6.b bVar = new x6.b(b11.getResources());
-                    Parcel O0 = eVar.O0();
-                    s7.b.c(O0, bVar);
-                    O0.writeInt(12451000);
-                    eVar.S0(O0, 6);
-                    return b;
-                } catch (RemoteException e) {
-                    throw new androidx.car.app.j(e);
-                }
-            } catch (IllegalAccessException unused) {
-                throw new IllegalStateException("Unable to call the default constructor of ".concat(loadClass.getName()));
-            } catch (InstantiationException unused2) {
-                throw new IllegalStateException("Unable to instantiate the dynamic class ".concat(loadClass.getName()));
+                closeable.close();
+            } catch (IOException unused) {
             }
-        } catch (ClassNotFoundException unused3) {
-            throw new IllegalStateException("Unable to find dynamic class com.google.android.gms.maps.internal.CreatorImpl");
         }
     }
 
-    public static Context b(Context context) {
-        Context context2;
-        Context context3 = a;
-        if (context3 != null) {
-            return context3;
-        }
-        context.getApplicationContext();
+    public static boolean b(File file, Resources resources, int i10) {
+        InputStream inputStream;
         try {
-            context2 = y6.e.c(context, y6.e.b, "com.google.android.gms.maps_dynamite").a;
-        } catch (Exception e) {
+            inputStream = resources.openRawResource(i10);
             try {
-                if ("com.google.android.gms.maps_dynamite".equals("com.google.android.gms.maps_dynamite")) {
-                    Log.e("j8", "Failed to load maps module, use pre-Chimera", e);
-                    AtomicBoolean atomicBoolean = k6.g.a;
-                    context2 = context.createPackageContext("com.google.android.gms", 3);
-                } else {
-                    try {
-                        Log.d("j8", "Attempting to load maps_dynamite again.");
-                        context2 = y6.e.c(context, y6.e.b, "com.google.android.gms.maps_dynamite").a;
-                    } catch (Exception e7) {
-                        Log.e("j8", "Failed to load maps module, use pre-Chimera", e7);
-                        AtomicBoolean atomicBoolean2 = k6.g.a;
-                        context2 = context.createPackageContext("com.google.android.gms", 3);
-                    }
+                boolean c10 = c(inputStream, file);
+                a(inputStream);
+                return c10;
+            } catch (Throwable th2) {
+                th = th2;
+                a(inputStream);
+                throw th;
+            }
+        } catch (Throwable th3) {
+            th = th3;
+            inputStream = null;
+        }
+    }
+
+    public static boolean c(InputStream inputStream, File file) {
+        FileOutputStream fileOutputStream;
+        StrictMode.ThreadPolicy allowThreadDiskWrites = StrictMode.allowThreadDiskWrites();
+        FileOutputStream fileOutputStream2 = null;
+        try {
+            try {
+                fileOutputStream = new FileOutputStream(file, false);
+            } catch (IOException e) {
+                e = e;
+            }
+        } catch (Throwable th2) {
+            th = th2;
+        }
+        try {
+            byte[] bArr = new byte[1024];
+            while (true) {
+                int read = inputStream.read(bArr);
+                if (read == -1) {
+                    a(fileOutputStream);
+                    StrictMode.setThreadPolicy(allowThreadDiskWrites);
+                    return true;
                 }
-            } catch (PackageManager.NameNotFoundException unused) {
-                context2 = null;
+                fileOutputStream.write(bArr, 0, read);
+            }
+        } catch (IOException e7) {
+            e = e7;
+            fileOutputStream2 = fileOutputStream;
+            Log.e("TypefaceCompatUtil", "Error copying resource contents to temp file: " + e.getMessage());
+            a(fileOutputStream2);
+            StrictMode.setThreadPolicy(allowThreadDiskWrites);
+            return false;
+        } catch (Throwable th3) {
+            th = th3;
+            fileOutputStream2 = fileOutputStream;
+            a(fileOutputStream2);
+            StrictMode.setThreadPolicy(allowThreadDiskWrites);
+            throw th;
+        }
+    }
+
+    public static File d(Context context) {
+        File cacheDir = context.getCacheDir();
+        if (cacheDir == null) {
+            return null;
+        }
+        String str = ".font" + Process.myPid() + "-" + Process.myTid() + "-";
+        for (int i10 = 0; i10 < 100; i10++) {
+            File file = new File(cacheDir, str + i10);
+            if (file.createNewFile()) {
+                return file;
             }
         }
-        a = context2;
-        return context2;
+        return null;
+    }
+
+    public static MappedByteBuffer e(Context context, Uri uri) {
+        ParcelFileDescriptor openFileDescriptor;
+        try {
+            openFileDescriptor = context.getContentResolver().openFileDescriptor(uri, "r", null);
+        } catch (IOException unused) {
+        }
+        if (openFileDescriptor == null) {
+            if (openFileDescriptor != null) {
+                openFileDescriptor.close();
+                return null;
+            }
+            return null;
+        }
+        try {
+            FileInputStream fileInputStream = new FileInputStream(openFileDescriptor.getFileDescriptor());
+            try {
+                FileChannel channel = fileInputStream.getChannel();
+                MappedByteBuffer map = channel.map(FileChannel.MapMode.READ_ONLY, 0L, channel.size());
+                fileInputStream.close();
+                openFileDescriptor.close();
+                return map;
+            } finally {
+            }
+        } finally {
+        }
     }
 }

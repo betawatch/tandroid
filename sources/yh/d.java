@@ -1,10 +1,10 @@
 package yh;
 
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.x51;
-import org.telegram.ui.gh1;
+import org.telegram.ui.Components.w51;
+import org.telegram.ui.ih1;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class d implements org.telegram.ui.ActionBar.a2, Utilities.Callback5, Utilities.Callback5Return {
     public final /* synthetic */ g a;
@@ -14,10 +14,10 @@ public final /* synthetic */ class d implements org.telegram.ui.ActionBar.a2, Ut
     }
 
     @Override // org.telegram.ui.ActionBar.a2
-    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+    public void k(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
         g gVar = this.a;
         gVar.getClass();
-        gVar.presentFragment(new gh1(6, null));
+        gVar.presentFragment(new ih1(6, null));
     }
 
     @Override // org.telegram.messenger.Utilities.Callback5Return
@@ -34,6 +34,6 @@ public final /* synthetic */ class d implements org.telegram.ui.ActionBar.a2, Ut
         ((Integer) obj3).getClass();
         ((Float) obj4).getClass();
         ((Float) obj5).getClass();
-        g.W(this.a, (x51) obj);
+        g.W(this.a, (w51) obj);
     }
 }

@@ -37,10 +37,10 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.o20;
 import org.telegram.ui.Components.oq;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.v01;
+import org.telegram.ui.Components.u01;
 import org.telegram.ui.Components.yc;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public abstract class ia {
     public static o20 b;
@@ -50,7 +50,7 @@ public abstract class ia {
     public static RectF f;
     public static Paint g;
     public static Paint h;
-    public static v01 i;
+    public static u01 i;
     public static int j;
     public static BitmapDrawable m;
     public static final o20[] a = new o20[2];
@@ -92,7 +92,7 @@ public abstract class ia {
         }
     }
 
-    public static void c(org.telegram.ui.ActionBar.e6 e6Var) {
+    public static void c(org.telegram.ui.ActionBar.f6 f6Var) {
         if (e == null) {
             Paint paint = new Paint(1);
             e = paint;
@@ -100,7 +100,7 @@ public abstract class ia {
             e.setStrokeWidth(AndroidUtilities.dpf2(1.3f));
             e.setStrokeCap(Paint.Cap.ROUND);
         }
-        int v02 = org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.d6, e6Var);
+        int v02 = org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.d6, f6Var);
         if (j != v02) {
             j = v02;
             float computePerceivedBrightness = AndroidUtilities.computePerceivedBrightness(v02);
@@ -114,7 +114,7 @@ public abstract class ia {
         }
     }
 
-    public static void d(org.telegram.ui.ActionBar.e6 e6Var, boolean z10) {
+    public static void d(org.telegram.ui.ActionBar.f6 f6Var, boolean z10) {
         Paint[] paintArr = k;
         if (paintArr[z10 ? 1 : 0] == null) {
             Paint paint = new Paint(1);
@@ -123,7 +123,7 @@ public abstract class ia {
             paintArr[z10 ? 1 : 0].setStrokeWidth(AndroidUtilities.dpf2(1.3f));
             paintArr[z10 ? 1 : 0].setStrokeCap(Paint.Cap.ROUND);
         }
-        int v02 = org.telegram.ui.ActionBar.j6.v0(!z10 ? org.telegram.ui.ActionBar.j6.s8 : org.telegram.ui.ActionBar.j6.M8, e6Var);
+        int v02 = org.telegram.ui.ActionBar.j6.v0(!z10 ? org.telegram.ui.ActionBar.j6.s8 : org.telegram.ui.ActionBar.j6.M8, f6Var);
         int[] iArr = l;
         if (iArr[z10 ? 1 : 0] != v02) {
             iArr[z10 ? 1 : 0] = v02;
@@ -716,7 +716,7 @@ public abstract class ia {
     public static void k(Canvas canvas, RectF rectF, float f7, boolean z10, float f10) {
         Canvas canvas2;
         if (i == null) {
-            i = new v01(LocaleController.getString(R.string.LiveStoryBadge), 9.66f, AndroidUtilities.bold());
+            i = new u01(LocaleController.getString(R.string.LiveStoryBadge), 9.66f, AndroidUtilities.bold());
         }
         if (g == null) {
             Paint paint = new Paint(1);
@@ -748,10 +748,10 @@ public abstract class ia {
             f.set(rectF.centerX() - f11, rectF.bottom - f12, rectF.centerX() + f11, rectF.bottom + f13);
             RectF rectF3 = f;
             canvas.drawRoundRect(rectF3, rectF3.height() / 2.0f, f.height() / 2.0f, h);
-            v01 v01Var = i;
+            u01 u01Var = i;
             RectF rectF4 = f;
             canvas2 = canvas;
-            v01Var.c(rectF4.left + lerp, rectF4.centerY(), f7, -1, canvas2);
+            u01Var.c(rectF4.left + lerp, rectF4.centerY(), f7, -1, canvas2);
         } else {
             canvas2 = canvas;
         }
@@ -829,9 +829,9 @@ public abstract class ia {
         int max;
         Paint paint6;
         ca caVar2 = caVar;
-        org.telegram.ui.ActionBar.e6 e6Var = caVar2.J;
+        org.telegram.ui.ActionBar.f6 f6Var = caVar2.J;
         boolean z11 = caVar2.E;
-        c(e6Var);
+        c(f6Var);
         d(caVar2.J, caVar2.o);
         long j3 = caVar2.s;
         int i10 = 0;
@@ -1050,7 +1050,7 @@ public abstract class ia {
             }
             ((aa) daVar.e).setImage(null, null, ImageLocation.getForPhoto(FileLoader.getClosestPhotoSizeWithSize(arrayList2, ConnectionsManager.DEFAULT_DATACENTER_ID), photo2), s10, null, null, null, 0L, null, storyItem2, 0);
         } else {
-            ((aa) daVar.e).setImage(ImageLocation.getForDocument(document), t8.b.v(s10, "_pframe"), null, null, null, 0L, null, storyItem2, 0);
+            ((aa) daVar.e).setImage(ImageLocation.getForDocument(document), v7.j0.s(s10, "_pframe"), null, null, null, 0L, null, storyItem2, 0);
         }
         return daVar;
     }

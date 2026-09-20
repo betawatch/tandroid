@@ -26,12 +26,11 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.PriorityQueue;
 import java.util.UUID;
-import n4.y;
 import org.telegram.tgnet.ConnectionsManager;
-import v7.t6;
-import v7.z7;
+import v7.a8;
+import v7.u6;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class i implements c3.o {
     public static final byte[] O = {-94, 57, 79, 82, 90, -101, 79, 20, -94, 68, 108, 66, 124, 100, -115, -12};
@@ -68,7 +67,7 @@ public final class i implements c3.o {
     public long x;
     public int y;
     public long z;
-    public final y k = new y(27);
+    public final m5.e k = new m5.e(1, (byte) 0);
     public final v l = new v(16);
     public final v e = new v(f2.o.a);
     public final v f = new v(6);
@@ -146,9 +145,9 @@ public final class i implements c3.o {
         int i11 = rVar.e;
         v vVar2 = rVar.n;
         if (B != i11) {
-            StringBuilder j10 = k0.j(B, "Senc sample count ", " is different from fragment sample count");
-            j10.append(rVar.e);
-            throw s0.a(null, j10.toString());
+            StringBuilder k10 = k0.k(B, "Senc sample count ", " is different from fragment sample count");
+            k10.append(rVar.e);
+            throw s0.a(null, k10.toString());
         }
         Arrays.fill(rVar.l, 0, B, z10);
         vVar2.G(vVar.a());
@@ -446,7 +445,7 @@ public final class i implements c3.o {
                         j11 = arrayList;
                         c10 = 0;
                     }
-                    this.I.e1();
+                    this.I.f1();
                 } else {
                     ArrayList arrayList9 = j11;
                     e2.d.g(sparseArray.size() == size3);
@@ -707,9 +706,9 @@ public final class i implements c3.o {
                                         int x10 = vVar6.x();
                                         int B2 = vVar6.B();
                                         if (B2 > rVar2.e) {
-                                            StringBuilder j27 = k0.j(B2, "Saiz sample count ", " is greater than fragment sample count");
-                                            j27.append(rVar2.e);
-                                            throw s0.a(null, j27.toString());
+                                            StringBuilder k11 = k0.k(B2, "Saiz sample count ", " is greater than fragment sample count");
+                                            k11.append(rVar2.e);
+                                            throw s0.a(null, k11.toString());
                                         }
                                         if (x10 == 0) {
                                             boolean[] zArr2 = rVar2.l;
@@ -737,16 +736,16 @@ public final class i implements c3.o {
                                     if (e13 != null) {
                                         v vVar7 = e13.c;
                                         vVar7.J(8);
-                                        int j28 = vVar7.j();
+                                        int j27 = vVar7.j();
                                         byte[] bArr5 = d.a;
-                                        if ((j28 & 1) == 1) {
+                                        if ((j27 & 1) == 1) {
                                             vVar7.K(8);
                                         }
                                         int B3 = vVar7.B();
                                         if (B3 != 1) {
                                             throw s0.a(null, "Unexpected saio entry count: " + B3);
                                         }
-                                        rVar2.c += d.e(j28) == 0 ? vVar7.z() : vVar7.C();
+                                        rVar2.c += d.e(j27) == 0 ? vVar7.z() : vVar7.C();
                                     }
                                     f2.d e14 = cVar2.e(1936027235);
                                     if (e14 != null) {
@@ -866,11 +865,11 @@ public final class i implements c3.o {
                     int size7 = sparseArray.size();
                     for (int i58 = 0; i58 < size7; i58++) {
                         h hVar4 = (h) sparseArray.valueAt(i58);
-                        long j29 = this.z;
+                        long j28 = this.z;
                         int i59 = hVar4.f;
                         while (true) {
                             r rVar3 = hVar4.b;
-                            if (i59 < rVar3.e && rVar3.i[i59] <= j29) {
+                            if (i59 < rVar3.e && rVar3.i[i59] <= j28) {
                                 if (rVar3.j[i59]) {
                                     hVar4.i = i59;
                                 }
@@ -1535,7 +1534,7 @@ public final class i implements c3.o {
                             ((f2.c) arrayDeque.peek()).d.add(dVar);
                         } else if (i16 == 1936286840) {
                             Pair f7 = f(pVar.getPosition(), vVar3);
-                            cVar2.j((c3.j) f7.second);
+                            cVar2.m((c3.j) f7.second);
                             if (!this.L) {
                                 this.B = ((Long) f7.first).longValue();
                                 this.I.X1((c3.b0) f7.second);
@@ -1583,7 +1582,7 @@ public final class i implements c3.o {
                             String str2 = s11;
                             byte[] bArr = new byte[vVar3.a()];
                             vVar3.h(0, vVar3.a(), bArr);
-                            v vVar4 = new v(this.k.N(new n3.a(str, str2, Y, z10, bArr)));
+                            v vVar4 = new v(this.k.v(new n3.a(str, str2, Y, z10, bArr)));
                             int a2 = vVar4.a();
                             h0[] h0VarArr = this.J;
                             int length = h0VarArr.length;
@@ -1649,14 +1648,14 @@ public final class i implements c3.o {
                             j18 += iArr2.length;
                         }
                         int i19 = (int) j18;
-                        t6.b(j18, "the total number of elements (%s) in the arrays must fit in an int", j18 == ((long) i19));
+                        u6.b(j18, "the total number of elements (%s) in the arrays must fit in an int", j18 == ((long) i19));
                         int[] iArr3 = new int[i19];
                         int i20 = 0;
                         for (int[] iArr4 : iArr) {
                             System.arraycopy(iArr4, 0, iArr3, i20, iArr4.length);
                             i20 += iArr4.length;
                         }
-                        qVar.X1(new c3.j(iArr3, z7.a((long[][]) arrayList2.toArray(new long[arrayList2.size()][])), z7.a((long[][]) arrayList3.toArray(new long[arrayList3.size()][])), z7.a((long[][]) arrayList4.toArray(new long[arrayList4.size()][]))));
+                        qVar.X1(new c3.j(iArr3, a8.a((long[][]) arrayList2.toArray(new long[arrayList2.size()][])), a8.a((long[][]) arrayList3.toArray(new long[arrayList3.size()][])), a8.a((long[][]) arrayList4.toArray(new long[arrayList4.size()][]))));
                         this.M = true;
                         return 1;
                     }
@@ -1689,9 +1688,9 @@ public final class i implements c3.o {
                         vVar.G((int) j21);
                         System.arraycopy(vVar5.a, 0, vVar.a, 0, 8);
                         pVar.readFully(vVar.a, 8, (int) (this.u - this.v));
-                        cVar2.j((c3.j) f(pVar.i(), vVar).second);
+                        cVar2.m((c3.j) f(pVar.j(), vVar).second);
                     } else {
-                        pVar.g((int) (j21 - j22), true);
+                        pVar.h((int) (j21 - j22), true);
                     }
                     b();
                 } else {

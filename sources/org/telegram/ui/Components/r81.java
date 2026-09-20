@@ -11,10 +11,10 @@ import android.view.WindowManager;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.NotificationsCustomSettingsActivity;
-import org.telegram.ui.li1;
+import org.telegram.ui.mi1;
 import org.webrtc.OrientationHelper;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class r81 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -29,7 +29,7 @@ public final class r81 extends AnimatorListenerAdapter {
     public void onAnimationCancel(Animator animator) {
         switch (this.a) {
             case 26:
-                ((org.telegram.ui.if0) this.b).s = null;
+                ((org.telegram.ui.jf0) this.b).s = null;
                 break;
             default:
                 super.onAnimationCancel(animator);
@@ -51,15 +51,15 @@ public final class r81 extends AnimatorListenerAdapter {
                 w81Var.setEnabled(true);
                 v81 v81Var = w81Var.y;
                 if (v81Var != null) {
-                    ((l.d) v81Var).L(1.0f);
+                    ((l.d) v81Var).M(1.0f);
                 }
                 w81Var.invalidate();
                 break;
             case 1:
-                ((q91) this.b).e0 = null;
+                ((p91) this.b).e0 = null;
                 break;
             case 2:
-                ((s91) this.b).K = null;
+                ((r91) this.b).K = null;
                 break;
             case 3:
                 super.onAnimationEnd(animator);
@@ -81,10 +81,10 @@ public final class r81 extends AnimatorListenerAdapter {
                 }
                 break;
             case 6:
-                li1 li1Var = (li1) this.b;
-                if (!li1Var.a) {
-                    li1Var.V.v.S = true;
-                    li1Var.V.v.invalidate();
+                mi1 mi1Var = (mi1) this.b;
+                if (!mi1Var.a) {
+                    mi1Var.V.v.S = true;
+                    mi1Var.V.v.invalidate();
                     break;
                 }
                 break;
@@ -231,13 +231,13 @@ public final class r81 extends AnimatorListenerAdapter {
                 ((org.telegram.ui.qy) this.b).setScrollEnabled(true);
                 break;
             case 21:
-                a90 a90Var = (a90) this.b;
-                FrameLayout frameLayout = a90Var.b;
-                ci.s6 s6Var = (ci.s6) a90Var.c;
+                z80 z80Var = (z80) this.b;
+                FrameLayout frameLayout = z80Var.b;
+                ci.s6 s6Var = (ci.s6) z80Var.c;
                 if (s6Var.getParent() != null) {
                     frameLayout.removeView(s6Var);
                 }
-                frameLayout.getViewTreeObserver().removeOnPreDrawListener((org.telegram.ui.f7) a90Var.d);
+                frameLayout.getViewTreeObserver().removeOnPreDrawListener((org.telegram.ui.f7) z80Var.d);
                 break;
             case 22:
                 org.telegram.ui.i60 i60Var = ((org.telegram.ui.i50) this.b).o;
@@ -272,25 +272,25 @@ public final class r81 extends AnimatorListenerAdapter {
                 k80Var.b = false;
                 break;
             case 25:
-                org.telegram.ui.jd0 jd0Var = (org.telegram.ui.jd0) this.b;
-                jd0Var.H = false;
-                jd0Var.o0();
+                org.telegram.ui.kd0 kd0Var = (org.telegram.ui.kd0) this.b;
+                kd0Var.H = false;
+                kd0Var.o0();
                 break;
             case 26:
-                org.telegram.ui.if0 if0Var = (org.telegram.ui.if0) this.b;
-                if (if0Var.s != null && if0Var.n != null) {
-                    if0Var.r.setVisibility(4);
-                    if0Var.s = null;
+                org.telegram.ui.jf0 jf0Var = (org.telegram.ui.jf0) this.b;
+                if (jf0Var.s != null && jf0Var.n != null) {
+                    jf0Var.r.setVisibility(4);
+                    jf0Var.s = null;
                     break;
                 }
                 break;
             case 27:
-                ((org.telegram.ui.kj0) this.b).T.setVisibility(8);
+                ((org.telegram.ui.mj0) this.b).T.setVisibility(8);
                 break;
             case 28:
-                org.telegram.ui.gk0 gk0Var = (org.telegram.ui.gk0) this.b;
-                gk0Var.f = 1.0f;
-                gk0Var.invalidate();
+                org.telegram.ui.hk0 hk0Var = (org.telegram.ui.hk0) this.b;
+                hk0Var.f = 1.0f;
+                hk0Var.invalidate();
                 break;
             default:
                 NotificationsCustomSettingsActivity notificationsCustomSettingsActivity = (NotificationsCustomSettingsActivity) this.b;

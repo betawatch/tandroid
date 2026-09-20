@@ -4,19 +4,19 @@ import android.content.Context;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class u00 extends org.telegram.ui.Cells.m4 {
-    public final org.telegram.ui.Cells.u3 r;
+public final class u00 extends org.telegram.ui.Cells.n4 {
+    public final org.telegram.ui.Cells.v3 r;
 
-    public u00(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
+    public u00(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
         super(context);
-        org.telegram.ui.Cells.u3 u3Var = new org.telegram.ui.Cells.u3(context, true, true, true, 3);
-        this.r = u3Var;
-        u3Var.setGravity(LocaleController.isRTL ? 3 : 5);
-        u3Var.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.L6, e6Var));
-        u3Var.setTextSize(AndroidUtilities.dpf2(15.0f));
-        addView(u3Var, w7.y5.d(-1, 18.0f, (LocaleController.isRTL ? 3 : 5) | 48, 22.0f, 17.0f, 22.0f, 0.0f));
-        w7.a6.b(u3Var, 0.04f, 1.2f);
+        org.telegram.ui.Cells.v3 v3Var = new org.telegram.ui.Cells.v3(context, true, true, true, 3);
+        this.r = v3Var;
+        v3Var.setGravity(LocaleController.isRTL ? 3 : 5);
+        v3Var.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.L6, f6Var));
+        v3Var.setTextSize(AndroidUtilities.dpf2(15.0f));
+        addView(v3Var, w7.y5.d(-1, 18.0f, (LocaleController.isRTL ? 3 : 5) | 48, 22.0f, 17.0f, 22.0f, 0.0f));
+        w7.b6.b(v3Var, 0.04f, 1.2f);
     }
 }

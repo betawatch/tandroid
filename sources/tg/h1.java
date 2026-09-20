@@ -2,18 +2,18 @@ package tg;
 
 import android.content.Context;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.Components.wl0;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.Components.vl0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class h1 extends xg.i {
     public boolean J;
     public final /* synthetic */ m1 K;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public h1(m1 m1Var, Context context, e6 e6Var) {
-        super(context, e6Var);
+    public h1(m1 m1Var, Context context, f6 f6Var) {
+        super(context, f6Var);
         this.K = m1Var;
     }
 
@@ -28,11 +28,11 @@ public final class h1 extends xg.i {
             boolean isKeyboardVisible = m1Var.isKeyboardVisible();
             this.J = isKeyboardVisible;
             if (isKeyboardVisible) {
-                wl0 wl0Var = m1Var.d;
+                vl0 vl0Var = m1Var.d;
                 ji.o oVar = new ji.o(m1Var.getContext(), 2, 0.6f);
                 oVar.a = 1;
                 oVar.p = AndroidUtilities.dp(36.0f);
-                wl0Var.getLayoutManager().w0(oVar);
+                vl0Var.getLayoutManager().w0(oVar);
             }
         }
     }

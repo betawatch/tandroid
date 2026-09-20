@@ -6,9 +6,9 @@ import android.text.TextUtils;
 import android.util.Log;
 import java.util.ArrayList;
 import java.util.List;
-import org.telegram.ui.wk0;
+import org.telegram.ui.ja0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class j extends MediaRouter2.TransferCallback {
     public final /* synthetic */ k a;
@@ -54,7 +54,7 @@ public final class j extends MediaRouter2.TransferCallback {
             return;
         }
         int i10 = 0;
-        String id2 = wk0.e(selectedRoutes.get(0)).getId();
+        String id2 = ja0.f(selectedRoutes.get(0)).getId();
         this.a.v.put(routingController2, new g(this.a, routingController2, id2));
         e eVar2 = (e) this.a.s.b;
         ArrayList arrayList = eVar2.j;

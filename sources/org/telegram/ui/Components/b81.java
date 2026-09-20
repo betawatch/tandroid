@@ -32,7 +32,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public abstract class b81 extends View implements NotificationCenter.NotificationCenterDelegate {
     public int E;
@@ -56,7 +56,7 @@ public abstract class b81 extends View implements NotificationCenter.Notificatio
     public long W;
     public boolean a;
     public long a0;
-    public d6 b;
+    public c6 b;
     public int b0;
     public long c;
     public int c0;
@@ -96,7 +96,7 @@ public abstract class b81 extends View implements NotificationCenter.Notificatio
         ImageReceiver imageReceiver = new ImageReceiver();
         this.Q = imageReceiver;
         imageReceiver.setParentView(this);
-        imageReceiver.setDelegate(new lv(this, 29));
+        imageReceiver.setDelegate(new y71(this));
     }
 
     public final void a() {
@@ -108,17 +108,17 @@ public abstract class b81 extends View implements NotificationCenter.Notificatio
             Utilities.globalQueue.cancelRunnable(this.f);
             this.f = null;
         }
-        d6 d6Var = this.b;
-        if (d6Var != null) {
-            AnimatedFileDrawableStream animatedFileDrawableStream = d6Var.u0;
+        c6 c6Var = this.b;
+        if (c6Var != null) {
+            AnimatedFileDrawableStream animatedFileDrawableStream = c6Var.u0;
             if (animatedFileDrawableStream != null) {
                 animatedFileDrawableStream.cancel(true);
             }
-            if (d6Var.d0 != null) {
-                d6Var.d0.h();
+            if (c6Var.d0 != null) {
+                c6Var.d0.h();
             }
         }
-        Utilities.globalQueue.postRunnable(new x71(this, 0));
+        Utilities.globalQueue.postRunnable(new w71(this, 0));
         setVisibility(4);
         this.w = null;
         this.G = null;
@@ -158,53 +158,53 @@ public abstract class b81 extends View implements NotificationCenter.Notificatio
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void c(u71 u71Var, MessageObject messageObject) {
+    public final void c(t71 t71Var, MessageObject messageObject) {
         TLRPC.Document document;
         long j3;
-        if (u71Var == null) {
+        if (t71Var == null) {
             return;
         }
-        if (u71Var.t() > 0) {
-            s71 s71Var = null;
-            for (int i10 = 0; i10 < u71Var.t(); i10++) {
-                ArrayList arrayList = u71Var.u(i10).d;
+        if (t71Var.t() > 0) {
+            r71 r71Var = null;
+            for (int i10 = 0; i10 < t71Var.t(); i10++) {
+                ArrayList arrayList = t71Var.u(i10).d;
                 int size = arrayList.size();
                 int i11 = 0;
                 while (i11 < size) {
                     Object obj = arrayList.get(i11);
                     i11++;
-                    s71 s71Var2 = (s71) obj;
-                    if (s71Var == null || ((!s71Var.b() && s71Var2.b()) || (s71Var.b() == s71Var2.b() && s71Var2.i * s71Var2.j < s71Var.i * s71Var.j))) {
-                        s71Var = s71Var2;
+                    r71 r71Var2 = (r71) obj;
+                    if (r71Var == null || ((!r71Var.b() && r71Var2.b()) || (r71Var.b() == r71Var2.b() && r71Var2.i * r71Var2.j < r71Var.i * r71Var.j))) {
+                        r71Var = r71Var2;
                     }
                 }
             }
-            if (s71Var != null && !s71Var.b()) {
-                int o9 = u71Var.o();
-                q71 u10 = (o9 < 0 || o9 >= u71Var.t()) ? null : u71Var.u(o9);
+            if (r71Var != null && !r71Var.b()) {
+                int o9 = t71Var.o();
+                p71 u10 = (o9 < 0 || o9 >= t71Var.t()) ? null : t71Var.u(o9);
                 if (u10 != null) {
-                    s71Var = u10.a();
+                    r71Var = u10.a();
                 }
             }
-            if (s71Var != null && !s71Var.b()) {
+            if (r71Var != null && !r71Var.b()) {
                 a();
                 return;
             }
-            if (s71Var != null) {
-                s71Var.b();
+            if (r71Var != null) {
+                r71Var.b();
             }
-            if (s71Var != null && !s71Var.d.equals(this.d)) {
+            if (r71Var != null && !r71Var.d.equals(this.d)) {
                 if (this.a) {
                     a();
                 }
-                this.d = s71Var.d;
+                this.d = r71Var.d;
                 DispatchQueue dispatchQueue = Utilities.globalQueue;
-                dn0 dn0Var = new dn0((org.telegram.ui.mt0) this, s71Var, messageObject, 16);
-                this.e = dn0Var;
-                dispatchQueue.postRunnable(dn0Var);
+                cn0 cn0Var = new cn0((org.telegram.ui.mt0) this, r71Var, messageObject, 16);
+                this.e = cn0Var;
+                dispatchQueue.postRunnable(cn0Var);
             }
         } else {
-            Uri uri = u71Var.F;
+            Uri uri = t71Var.F;
             if (uri != null) {
                 "file".equalsIgnoreCase(uri.getScheme());
             }
@@ -214,9 +214,9 @@ public abstract class b81 extends View implements NotificationCenter.Notificatio
                 }
                 this.d = uri;
                 DispatchQueue dispatchQueue2 = Utilities.globalQueue;
-                dn0 dn0Var2 = new dn0((org.telegram.ui.mt0) this, uri, messageObject, 15);
-                this.e = dn0Var2;
-                dispatchQueue2.postRunnable(dn0Var2);
+                cn0 cn0Var2 = new cn0((org.telegram.ui.mt0) this, uri, messageObject, 15);
+                this.e = cn0Var2;
+                dispatchQueue2.postRunnable(cn0Var2);
             }
         }
         TLRPC.MessageMedia media = MessageObject.getMedia(messageObject);
@@ -282,7 +282,7 @@ public abstract class b81 extends View implements NotificationCenter.Notificatio
             while (true) {
                 String readLine = randomAccessFile.readLine();
                 if (readLine == null) {
-                    Collections.sort(arrayList, Comparator$-CC.comparingDouble(new y71(0)));
+                    Collections.sort(arrayList, Comparator$-CC.comparingDouble(new x71(0)));
                     this.a0 = j3;
                     this.b0 = i10;
                     this.c0 = i11;
@@ -394,14 +394,14 @@ public abstract class b81 extends View implements NotificationCenter.Notificatio
         if (z10) {
             return;
         }
-        d6 d6Var = this.b;
-        if (d6Var != null) {
-            AnimatedFileDrawableStream animatedFileDrawableStream = d6Var.u0;
+        c6 c6Var = this.b;
+        if (c6Var != null) {
+            AnimatedFileDrawableStream animatedFileDrawableStream = c6Var.u0;
             if (animatedFileDrawableStream != null) {
                 animatedFileDrawableStream.cancel(true);
             }
-            if (d6Var.d0 != null) {
-                d6Var.d0.e();
+            if (c6Var.d0 != null) {
+                c6Var.d0.e();
             }
         }
         DispatchQueue dispatchQueue = Utilities.globalQueue;
@@ -438,7 +438,7 @@ public abstract class b81 extends View implements NotificationCenter.Notificatio
                         q6 = null;
                     }
                 }
-                AndroidUtilities.runOnUIThread(new po0(22, b81Var, q6));
+                AndroidUtilities.runOnUIThread(new wn0(24, b81Var, q6));
             }
         };
         this.f = r52;

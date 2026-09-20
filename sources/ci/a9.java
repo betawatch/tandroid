@@ -12,7 +12,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public abstract class a9 extends FrameLayout implements x2 {
     public final z8 a;
@@ -67,7 +67,7 @@ public abstract class a9 extends FrameLayout implements x2 {
                 }
             }
         });
-        w7.a6.a(frameLayout);
+        w7.b6.a(frameLayout);
         FrameLayout frameLayout2 = new FrameLayout(context);
         this.d = frameLayout2;
         TextView textView2 = new TextView(context);
@@ -101,7 +101,7 @@ public abstract class a9 extends FrameLayout implements x2 {
                 }
             }
         });
-        w7.a6.a(frameLayout2);
+        w7.b6.a(frameLayout2);
         FrameLayout frameLayout3 = new FrameLayout(context);
         this.f = frameLayout3;
         TextView textView3 = new TextView(context);
@@ -135,7 +135,7 @@ public abstract class a9 extends FrameLayout implements x2 {
                 }
             }
         });
-        w7.a6.a(frameLayout3);
+        w7.b6.a(frameLayout3);
         addView(z8Var, w7.y5.e(-2, -1, 113));
     }
 

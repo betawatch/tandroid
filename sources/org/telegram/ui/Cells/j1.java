@@ -1,16 +1,16 @@
 package org.telegram.ui.Cells;
 
-import org.telegram.ui.Components.t31;
-import org.telegram.ui.Components.wo0;
+import org.telegram.ui.Components.s31;
+import org.telegram.ui.Components.vo0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class j1 extends t31 {
+public final class j1 extends s31 {
     public final /* synthetic */ u1 R;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j1(u1 u1Var, u1 u1Var2, wo0 wo0Var) {
-        super(u1Var2, wo0Var);
+    public j1(u1 u1Var, u1 u1Var2, vo0 vo0Var) {
+        super(u1Var2, vo0Var);
         this.R = u1Var;
     }
 }

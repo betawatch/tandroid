@@ -10,7 +10,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class av extends org.telegram.ui.ActionBar.n2 {
     public static final int[][] r = {new int[]{-14899731, -15431455}, new int[]{-11154873, -14175180}, new int[]{-11565578, -13276952}, new int[]{-1007845, -1996271}, new int[]{-765355, -2148011}, new int[]{-3903756, -6335009}, new int[]{-13451058, -14836538}};
@@ -68,14 +68,14 @@ public final class av extends org.telegram.ui.ActionBar.n2 {
         li.b baseSimpleGlass = getBaseSimpleGlass();
         org.telegram.ui.Components.x81 x81Var2 = this.a;
         org.telegram.ui.ActionBar.k kVar2 = this.actionBar;
-        org.telegram.ui.ActionBar.e6 e6Var = this.resourceProvider;
+        org.telegram.ui.ActionBar.f6 f6Var = this.resourceProvider;
         baseSimpleGlass.e = x5Var;
         baseSimpleGlass.f = x81Var2;
         li.i iVar = baseSimpleGlass.a;
         iVar.getClass();
         x81Var2.Q.add(new li.e(iVar));
         kVar2.setCenterTitleAndGlass(true);
-        kVar2.M(baseSimpleGlass.b, eh.b.m(e6Var), false);
+        kVar2.M(baseSimpleGlass.b, eh.b.m(f6Var), false);
         kVar2.setAddToContainer(false);
         AndroidUtilities.removeFromParent(kVar2);
         x5Var.addView(kVar2, w7.y5.e(-1, -2, 48));
@@ -94,7 +94,7 @@ public final class av extends org.telegram.ui.ActionBar.n2 {
     }
 
     @Override // org.telegram.ui.ActionBar.n2
-    public final org.telegram.ui.ActionBar.e6 getResourceProvider() {
+    public final org.telegram.ui.ActionBar.f6 getResourceProvider() {
         return null;
     }
 

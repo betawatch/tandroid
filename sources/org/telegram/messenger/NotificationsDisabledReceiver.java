@@ -8,7 +8,7 @@ import android.os.SystemClock;
 import android.text.TextUtils;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public class NotificationsDisabledReceiver extends BroadcastReceiver {
     @Override // android.content.BroadcastReceiver
@@ -86,7 +86,7 @@ public class NotificationsDisabledReceiver extends BroadcastReceiver {
                     FileLog.d("apply channel{else} " + stringExtra + " state");
                 }
                 SharedPreferences.Editor edit2 = notificationsSettings.edit();
-                edit2.putInt(t8.b.i(NotificationsSettingsFacade.PROPERTY_NOTIFY, sharedPrefKey), booleanExtra ? 2 : 0);
+                edit2.putInt(v7.j0.g(NotificationsSettingsFacade.PROPERTY_NOTIFY, sharedPrefKey), booleanExtra ? 2 : 0);
                 if (!booleanExtra) {
                     edit2.remove(NotificationsSettingsFacade.PROPERTY_NOTIFY_UNTIL + sharedPrefKey);
                 }

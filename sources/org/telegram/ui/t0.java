@@ -7,7 +7,7 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class t0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -28,9 +28,9 @@ public final class t0 extends AnimatorListenerAdapter {
                 h4Var.u0[1].b();
                 h4Var.u0[1].setVisibility(8);
                 h4Var.O0.T(h4Var.u0[0].b);
-                org.telegram.ui.Cells.q9 q9Var = h4Var.O0;
+                org.telegram.ui.Cells.r9 r9Var = h4Var.O0;
                 l3[] l3VarArr = h4Var.u0;
-                q9Var.E0 = l3VarArr[0].d;
+                r9Var.E0 = l3VarArr[0].d;
                 int i10 = this.b;
                 l3VarArr[i10].setBackgroundDrawable(null);
                 h4Var.u0[i10].setLayerType(0, null);

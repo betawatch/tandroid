@@ -9,7 +9,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stats;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ud implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -47,17 +47,17 @@ public final /* synthetic */ class ud implements RequestDelegate {
                                 TLObject tLObject2 = tLObject;
                                 if (tLObject2 instanceof TLRPC.TL_payments_starsRevenueStats) {
                                     TLRPC.TL_payments_starsRevenueStats tL_payments_starsRevenueStats = (TLRPC.TL_payments_starsRevenueStats) tLObject2;
-                                    la1 f02 = za1.f0(tL_payments_starsRevenueStats.top_hours_graph, LocaleController.getString(R.string.MonetizationGraphImpressions), 0, false);
+                                    na1 f02 = bb1.f0(tL_payments_starsRevenueStats.top_hours_graph, LocaleController.getString(R.string.MonetizationGraphImpressions), 0, false);
                                     ke keVar3 = keVar2;
                                     keVar3.o1 = f02;
                                     TL_stats.StatsGraph statsGraph = tL_payments_starsRevenueStats.revenue_graph;
                                     if (statsGraph != null) {
                                         statsGraph.rate = (float) (1.0E7d / tL_payments_starsRevenueStats.usd_rate);
                                     }
-                                    keVar3.p1 = za1.f0(statsGraph, LocaleController.getString(R.string.MonetizationGraphRevenue), 2, false);
-                                    la1 la1Var = keVar3.o1;
-                                    if (la1Var != null) {
-                                        la1Var.n = true;
+                                    keVar3.p1 = bb1.f0(statsGraph, LocaleController.getString(R.string.MonetizationGraphRevenue), 2, false);
+                                    na1 na1Var = keVar3.o1;
+                                    if (na1Var != null) {
+                                        na1Var.n = true;
                                     }
                                     keVar3.j1 = tL_payments_starsRevenueStats.usd_rate;
                                     keVar3.g0(true, tL_payments_starsRevenueStats.status);
@@ -92,17 +92,17 @@ public final /* synthetic */ class ud implements RequestDelegate {
                                 TLObject tLObject2 = tLObject;
                                 if (tLObject2 instanceof TLRPC.TL_payments_starsRevenueStats) {
                                     TLRPC.TL_payments_starsRevenueStats tL_payments_starsRevenueStats = (TLRPC.TL_payments_starsRevenueStats) tLObject2;
-                                    la1 f02 = za1.f0(tL_payments_starsRevenueStats.top_hours_graph, LocaleController.getString(R.string.MonetizationGraphImpressions), 0, false);
+                                    na1 f02 = bb1.f0(tL_payments_starsRevenueStats.top_hours_graph, LocaleController.getString(R.string.MonetizationGraphImpressions), 0, false);
                                     ke keVar32 = keVar3;
                                     keVar32.o1 = f02;
                                     TL_stats.StatsGraph statsGraph = tL_payments_starsRevenueStats.revenue_graph;
                                     if (statsGraph != null) {
                                         statsGraph.rate = (float) (1.0E7d / tL_payments_starsRevenueStats.usd_rate);
                                     }
-                                    keVar32.p1 = za1.f0(statsGraph, LocaleController.getString(R.string.MonetizationGraphRevenue), 2, false);
-                                    la1 la1Var = keVar32.o1;
-                                    if (la1Var != null) {
-                                        la1Var.n = true;
+                                    keVar32.p1 = bb1.f0(statsGraph, LocaleController.getString(R.string.MonetizationGraphRevenue), 2, false);
+                                    na1 na1Var = keVar32.o1;
+                                    if (na1Var != null) {
+                                        na1Var.n = true;
                                     }
                                     keVar32.j1 = tL_payments_starsRevenueStats.usd_rate;
                                     keVar32.g0(true, tL_payments_starsRevenueStats.status);

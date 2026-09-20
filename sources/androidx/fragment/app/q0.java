@@ -14,7 +14,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class q0 {
     public final n4.y a;
@@ -55,7 +55,7 @@ public final class q0 {
         l0Var.I = false;
         l0Var.O.i = false;
         l0Var.u(4);
-        this.a.v(sVar, false);
+        this.a.i(sVar, false);
     }
 
     public final void b() {
@@ -91,7 +91,7 @@ public final class q0 {
         sVar.K = k0Var.w;
         sVar.M = k0Var.y;
         n4.y yVar = this.a;
-        yVar.F(sVar, false);
+        yVar.v(sVar, false);
         ArrayList arrayList = sVar.h0;
         int size = arrayList.size();
         int i10 = 0;
@@ -117,7 +117,7 @@ public final class q0 {
         l0Var.I = false;
         l0Var.O.i = false;
         l0Var.u(0);
-        yVar.y(sVar, false);
+        yVar.k(sVar, false);
     }
 
     public final int c() {
@@ -229,7 +229,7 @@ public final class q0 {
             return;
         }
         n4.y yVar = this.a;
-        yVar.G(sVar, false);
+        yVar.w(sVar, false);
         sVar.L.R();
         sVar.a = 1;
         sVar.U = false;
@@ -245,7 +245,7 @@ public final class q0 {
         sVar.a0 = true;
         if (sVar.U) {
             sVar.d0.e(androidx.lifecycle.m.ON_CREATE);
-            yVar.z(sVar, false);
+            yVar.l(sVar, false);
         } else {
             throw new x0("Fragment " + sVar + " did not call through to super.onCreate()");
         }
@@ -341,7 +341,7 @@ public final class q0 {
         if (!sVar.U) {
             throw new x0("Fragment " + sVar + " did not call through to super.onDestroy()");
         }
-        this.a.A(sVar, false);
+        this.a.o(sVar, false);
         ArrayList p5 = fVar.p();
         int size = p5.size();
         while (i10 < size) {
@@ -383,7 +383,7 @@ public final class q0 {
             ((w1.a) nVar.b[i11]).k();
         }
         sVar.H = false;
-        this.a.M(sVar, false);
+        this.a.I(sVar, false);
         sVar.V = null;
         sVar.e0.j(null);
         sVar.E = false;
@@ -406,7 +406,7 @@ public final class q0 {
             l0Var.l();
             sVar.L = new l0();
         }
-        this.a.D(sVar, false);
+        this.a.q(sVar, false);
         sVar.a = -1;
         sVar.K = null;
         sVar.M = null;
@@ -556,7 +556,7 @@ public final class q0 {
         sVar.U = false;
         sVar.E();
         if (sVar.U) {
-            this.a.E(sVar, false);
+            this.a.u(sVar, false);
             return;
         }
         throw new x0("Fragment " + sVar + " did not call through to super.onPause()");
@@ -617,7 +617,7 @@ public final class q0 {
         l0Var.I = false;
         l0Var.O.i = false;
         l0Var.u(7);
-        this.a.H(sVar, false);
+        this.a.z(sVar, false);
         this.b.O(sVar.e, null);
         sVar.b = null;
         sVar.c = null;
@@ -644,7 +644,7 @@ public final class q0 {
         l0Var.I = false;
         l0Var.O.i = false;
         l0Var.u(5);
-        this.a.J(sVar, false);
+        this.a.F(sVar, false);
     }
 
     public final void o() {
@@ -662,7 +662,7 @@ public final class q0 {
         sVar.U = false;
         sVar.I();
         if (sVar.U) {
-            this.a.L(sVar, false);
+            this.a.H(sVar, false);
             return;
         }
         throw new x0("Fragment " + sVar + " did not call through to super.onStop()");

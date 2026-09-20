@@ -9,10 +9,10 @@ import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class p7 extends h7 {
-    public org.telegram.ui.Cells.s7 n;
+    public org.telegram.ui.Cells.t7 n;
     public final ArrayList r;
     public org.telegram.ui.Components.pq s;
     public final /* synthetic */ t7 v;
@@ -47,32 +47,32 @@ public final class p7 extends h7 {
             this.s = pqVar;
             pqVar.w = true;
         }
-        org.telegram.ui.Cells.t7 t7Var = (org.telegram.ui.Cells.t7) c1Var.a;
+        org.telegram.ui.Cells.u7 u7Var = (org.telegram.ui.Cells.u7) c1Var.a;
         zh.a aVar = ((n7) this.e.get(i10)).d;
-        Object tag = t7Var.getTag();
-        ImageReceiver imageReceiver = t7Var.c;
+        Object tag = u7Var.getTag();
+        ImageReceiver imageReceiver = u7Var.c;
         boolean z10 = aVar == tag;
-        t7Var.setTag(aVar);
+        u7Var.setTag(aVar);
         int max = (int) Math.max(100.0f, AndroidUtilities.getRealScreenSize().x / AndroidUtilities.density);
         int i11 = aVar.d;
         File file = aVar.a;
         if (i11 == 1) {
             imageReceiver.setImage(ImageLocation.getForPath("vthumb://0:" + file.getAbsolutePath()), a4.a.k(max, max, "_"), this.s, null, null, 0);
-            t7Var.m(AndroidUtilities.formatFileSize(aVar.c), true);
+            u7Var.m(AndroidUtilities.formatFileSize(aVar.c), true);
         } else {
             imageReceiver.setImage(ImageLocation.getForPath("thumb://0:" + file.getAbsolutePath()), a4.a.k(max, max, "_"), this.s, null, null, 0);
-            t7Var.m(AndroidUtilities.formatFileSize(aVar.c), false);
+            u7Var.m(AndroidUtilities.formatFileSize(aVar.c), false);
         }
-        t7Var.i(this.v.f.j.contains(aVar), z10);
+        u7Var.i(this.v.f.j.contains(aVar), z10);
     }
 
     @Override // s4.h0
     public final s4.c1 x(ViewGroup viewGroup, int i10) {
         if (this.n == null) {
-            this.n = new org.telegram.ui.Cells.s7(viewGroup.getContext(), null);
+            this.n = new org.telegram.ui.Cells.t7(viewGroup.getContext(), null);
         }
         o7 o7Var = new o7(this, viewGroup.getContext(), this.n, this.v.d.getCurrentAccount());
         o7Var.setStyle(1);
-        return new org.telegram.ui.Components.gl0(o7Var);
+        return new org.telegram.ui.Components.fl0(o7Var);
     }
 }

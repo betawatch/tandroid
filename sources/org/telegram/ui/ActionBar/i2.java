@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class i2 extends f3 {
     public final /* synthetic */ l2 b;
@@ -19,8 +19,8 @@ public final class i2 extends f3 {
     public final /* synthetic */ f3[] e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public i2(Activity activity, e6 e6Var, l2 l2Var, d5[] d5VarArr, n2 n2Var, f3[] f3VarArr) {
-        super(1, (Context) activity, e6Var, true);
+    public i2(Activity activity, f6 f6Var, l2 l2Var, d5[] d5VarArr, n2 n2Var, f3[] f3VarArr) {
+        super(1, (Context) activity, f6Var, true);
         this.b = l2Var;
         this.c = d5VarArr;
         this.d = n2Var;

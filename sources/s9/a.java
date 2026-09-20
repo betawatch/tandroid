@@ -6,7 +6,7 @@ import androidx.emoji2.text.f;
 import java.util.ArrayList;
 import t7.u;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final /* synthetic */ class a implements u9.a {
     public final /* synthetic */ f a;
@@ -20,7 +20,7 @@ public final /* synthetic */ class a implements u9.a {
         ((u) this.a.a).J(bundle);
     }
 
-    public void a(b bVar) {
+    public void a(s0.b bVar) {
         f fVar = this.a;
         synchronized (fVar) {
             ((ArrayList) fVar.b).add(bVar);

@@ -1,13 +1,27 @@
 package w7;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+import com.google.android.gms.tasks.Task;
+import com.google.mlkit.nl.languageid.internal.LanguageIdentifierImpl;
+import java.util.concurrent.Executor;
+
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public abstract class i7 {
-    public static void a(int i10, Object[] objArr) {
-        for (int i11 = 0; i11 < i10; i11++) {
-            if (objArr[i11] == null) {
-                throw new NullPointerException(hg.k0.h(i11, "at index "));
-            }
-        }
+    public static LanguageIdentifierImpl a() {
+        ub.a aVar = (ub.a) qb.g.c().a(ub.a.class);
+        ub.e eVar = aVar.b;
+        eVar.getClass();
+        v7.z8 z8Var = aVar.a;
+        LanguageIdentifierImpl languageIdentifierImpl = new LanguageIdentifierImpl(eVar, z8Var, (Executor) aVar.c.a.get());
+        oi.f fVar = new oi.f();
+        fVar.c = languageIdentifierImpl.f;
+        v7.s1 s1Var = new v7.s1(3, false);
+        s1Var.d = LanguageIdentifierImpl.k();
+        fVar.d = new v7.h7(s1Var);
+        a5.a aVar2 = new a5.a(fVar, 1);
+        Task task = z8Var.e;
+        qb.m.a.execute(new com.google.android.gms.internal.cast.p(z8Var, aVar2, v7.k6.c, task.isSuccessful() ? (String) task.getResult() : n6.i.c.a(z8Var.g), 6));
+        ((ub.e) languageIdentifierImpl.d.get()).b.incrementAndGet();
+        return languageIdentifierImpl;
     }
 }

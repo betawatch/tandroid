@@ -9,10 +9,10 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.qr;
 import org.telegram.ui.Stories.recorder.FfmpegAudioWaveformLoader;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class rc {
-    public final org.telegram.ui.Components.e6 a;
+    public final org.telegram.ui.Components.d6 a;
     public final int b;
     public final short[] d;
     public short e;
@@ -27,7 +27,7 @@ public final class rc {
 
     public rc(zc zcVar, String str, int i10) {
         this.l = zcVar;
-        this.a = new org.telegram.ui.Components.e6(zcVar, 0L, 600L, qr.h);
+        this.a = new org.telegram.ui.Components.d6(zcVar, 0L, 600L, qr.h);
         int i11 = 0;
         MediaExtractor mediaExtractor = new MediaExtractor();
         this.f = mediaExtractor;

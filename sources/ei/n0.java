@@ -9,12 +9,11 @@ import org.telegram.messenger.Emoji;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.z5;
 import w7.y5;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class n0 extends FrameLayout {
     public final vh.o a;
@@ -44,7 +43,7 @@ public final class n0 extends FrameLayout {
         TL_keyboard.KeyboardButtonStyle keyboardButtonStyle = keyboardButton.style;
         if (keyboardButtonStyle != null && keyboardButtonStyle.icon != 0) {
             spannableStringBuilder.append((CharSequence) "* ");
-            spannableStringBuilder.setSpan(new z5(keyboardButton.style.icon, oVar.getPaint().getFontMetricsInt()), 0, 1, 33);
+            spannableStringBuilder.setSpan(new org.telegram.ui.Components.y5(keyboardButton.style.icon, oVar.getPaint().getFontMetricsInt()), 0, 1, 33);
         }
         spannableStringBuilder.append(Emoji.replaceEmoji(keyboardButton.text, oVar.getPaint().getFontMetricsInt(), false));
         ImageView imageView = new ImageView(getContext());
@@ -68,21 +67,21 @@ public final class n0 extends FrameLayout {
         int dp = AndroidUtilities.dp(21.0f);
         int dp2 = AndroidUtilities.dp(11.0f);
         int i12 = j6.Ye;
-        e6 e6Var = this.n.a;
-        int v02 = j6.v0(i12, e6Var);
-        int v03 = j6.v0(j6.Ze, e6Var);
-        int v04 = j6.v0(j6.Xe, e6Var);
+        f6 f6Var = this.n.a;
+        int v02 = j6.v0(i12, f6Var);
+        int v03 = j6.v0(j6.Ze, f6Var);
+        int v04 = j6.v0(j6.Xe, f6Var);
         TL_keyboard.KeyboardButtonStyle keyboardButtonStyle = this.c.style;
         if (keyboardButtonStyle != null) {
             if (keyboardButtonStyle.bg_primary) {
-                l1 = j6.l1(0.8f, j6.v0(j6.dl, e6Var));
-                h = i0.a.h(j6.v0(j6.i6, e6Var), l1);
+                l1 = j6.l1(0.8f, j6.v0(j6.dl, f6Var));
+                h = i0.a.h(j6.v0(j6.i6, f6Var), l1);
             } else if (keyboardButtonStyle.bg_danger) {
-                l1 = j6.l1(0.8f, j6.v0(j6.el, e6Var));
-                h = i0.a.h(j6.v0(j6.i6, e6Var), l1);
+                l1 = j6.l1(0.8f, j6.v0(j6.el, f6Var));
+                h = i0.a.h(j6.v0(j6.i6, f6Var), l1);
             } else if (keyboardButtonStyle.bg_success) {
-                l1 = j6.l1(0.8f, j6.v0(j6.fl, e6Var));
-                h = i0.a.h(j6.v0(j6.i6, e6Var), l1);
+                l1 = j6.l1(0.8f, j6.v0(j6.fl, f6Var));
+                h = i0.a.h(j6.v0(j6.i6, f6Var), l1);
             }
             i10 = l1;
             i11 = h;

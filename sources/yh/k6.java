@@ -1,44 +1,59 @@
 package yh;
 
-import org.telegram.messenger.AndroidUtilities;
+import android.text.TextUtils;
+import android.view.View;
+import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class k6 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ EditTextBoldCursor b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.f3[] c;
+public final /* synthetic */ class k6 implements View.OnClickListener {
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ boolean[] b;
+    public final /* synthetic */ Utilities.Callback2 c;
+    public final /* synthetic */ ci.d d;
+    public final /* synthetic */ EditTextBoldCursor e;
+    public final /* synthetic */ org.telegram.ui.ActionBar.f3[] f;
 
-    public /* synthetic */ k6(EditTextBoldCursor editTextBoldCursor, org.telegram.ui.ActionBar.f3[] f3VarArr, int i10) {
-        this.a = i10;
-        this.b = editTextBoldCursor;
-        this.c = f3VarArr;
+    public /* synthetic */ k6(boolean[] zArr, Utilities.Callback2 callback2, ci.d dVar, EditTextBoldCursor editTextBoldCursor, org.telegram.ui.ActionBar.f3[] f3VarArr) {
+        this.b = zArr;
+        this.c = callback2;
+        this.d = dVar;
+        this.e = editTextBoldCursor;
+        this.f = f3VarArr;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                this.c[0].setFocusable(true);
-                EditTextBoldCursor editTextBoldCursor = this.b;
-                editTextBoldCursor.requestFocus();
-                AndroidUtilities.runOnUIThread(new w2(editTextBoldCursor, 3));
-                break;
-            case 1:
-                AndroidUtilities.hideKeyboard(this.b);
-                this.c[0].dismiss();
+                boolean[] zArr = this.b;
+                if (!zArr[0]) {
+                    EditTextBoldCursor editTextBoldCursor = this.e;
+                    String obj = editTextBoldCursor.getText().toString();
+                    zArr[0] = true;
+                    this.d.setLoading(true);
+                    this.c.run(Long.valueOf(TextUtils.isEmpty(obj) ? 0L : Long.parseLong(obj)), new l6(editTextBoldCursor, this.f, 1));
+                    break;
+                }
                 break;
             default:
-                AndroidUtilities.hideKeyboard(this.b);
-                this.c[0].dismiss();
+                boolean[] zArr2 = this.b;
+                if (!zArr2[0]) {
+                    zArr2[0] = true;
+                    this.d.setLoading(true);
+                    this.c.run(0L, new tg.r(zArr2, this.e, this.f, 20));
+                    break;
+                }
                 break;
         }
     }
 
-    public /* synthetic */ k6(org.telegram.ui.ActionBar.f3[] f3VarArr, EditTextBoldCursor editTextBoldCursor) {
-        this.a = 0;
-        this.c = f3VarArr;
-        this.b = editTextBoldCursor;
+    public /* synthetic */ k6(boolean[] zArr, Utilities.Callback2 callback2, EditTextBoldCursor editTextBoldCursor, ci.d dVar, org.telegram.ui.ActionBar.f3[] f3VarArr) {
+        this.b = zArr;
+        this.c = callback2;
+        this.e = editTextBoldCursor;
+        this.d = dVar;
+        this.f = f3VarArr;
     }
 }

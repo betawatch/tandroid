@@ -79,18 +79,17 @@ import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.b2;
-import org.telegram.ui.ActionBar.e6;
 import org.telegram.ui.ActionBar.f3;
 import org.telegram.ui.Components.AnimatedFileNative;
-import org.telegram.ui.Components.e5;
-import org.telegram.ui.Components.q5;
+import org.telegram.ui.Components.d5;
+import org.telegram.ui.Components.p5;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.web.d1;
-import v7.l8;
+import v7.m8;
 import w7.y5;
 import zg.q0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final /* synthetic */ class k0 implements Runnable {
     public final /* synthetic */ int a;
@@ -114,7 +113,7 @@ public final /* synthetic */ class k0 implements Runnable {
         zg.d dVar;
         TLRPC.TL_availableReaction tL_availableReaction;
         TLRPC.TL_availableReaction tL_availableReaction2;
-        q5 q5Var;
+        p5 p5Var;
         TL_stories.StoryItem storyItem;
         TLRPC.MessageMedia messageMedia;
         TLRPC.Document document;
@@ -162,9 +161,9 @@ public final /* synthetic */ class k0 implements Runnable {
                 f6Var.E0 = q9Var2;
                 q9Var2.setPadding(dp, dp, dp, dp);
                 f6Var.D0.addView(f6Var.E0, y5.e(40, 40, 3));
-                q5 q5Var2 = f6Var.o3;
-                if (q5Var2 != null) {
-                    q5Var2.o(f6Var);
+                p5 p5Var2 = f6Var.o3;
+                if (p5Var2 != null) {
+                    p5Var2.o(f6Var);
                     dVar = null;
                     f6Var.o3 = null;
                 } else {
@@ -178,9 +177,9 @@ public final /* synthetic */ class k0 implements Runnable {
                 f6Var.p3 = false;
                 if (o0Var.g != 0) {
                     f6Var.p3 = true;
-                    q5 q5Var3 = new q5(2, f6Var.C2, o0Var.g);
-                    f6Var.o3 = q5Var3;
-                    q5Var3.a(f6Var);
+                    p5 p5Var3 = new p5(2, f6Var.C2, o0Var.g);
+                    f6Var.o3 = p5Var3;
+                    p5Var3.a(f6Var);
                 } else if (o0Var.f != null && (tL_availableReaction = MediaDataController.getInstance(f6Var.C2).getReactionsMap().get(o0Var.f)) != null) {
                     f6Var.n3.setImage(null, null, ImageLocation.getForDocument(tL_availableReaction.select_animation), "60_60", null, null, null, 0L, null, null, 0);
                     imageReceiver.setImage(ImageLocation.getForDocument(tL_availableReaction.around_animation), zg.k0.a(), null, null, null, 0);
@@ -202,8 +201,8 @@ public final /* synthetic */ class k0 implements Runnable {
                         f6Var.k1(true);
                     }
                 }
-                if (o0Var.g != 0 && (q5Var = f6Var.E0.f) != null) {
-                    zg.d a2 = zg.d.a(q5Var, false, true);
+                if (o0Var.g != 0 && (p5Var = f6Var.E0.f) != null) {
+                    zg.d a2 = zg.d.a(p5Var, false, true);
                     f6Var.m3 = a2;
                     a2.f(f6Var);
                 }
@@ -233,11 +232,11 @@ public final /* synthetic */ class k0 implements Runnable {
                 return;
             case 2:
                 w5 w5Var = (w5) this.b;
-                e6 e6Var = (e6) this.c;
+                org.telegram.ui.ActionBar.f6 f6Var2 = (org.telegram.ui.ActionBar.f6) this.c;
                 TL_stories.StoryItem storyItem5 = (TL_stories.StoryItem) this.d;
-                f6 f6Var2 = w5Var.l;
-                e5.S(f6Var2.getContext(), null, e6Var, new r5(w5Var, storyItem5, e6Var, i14));
-                w5 w5Var2 = f6Var2.t1;
+                f6 f6Var3 = w5Var.l;
+                d5.S(f6Var3.getContext(), null, f6Var2, new r5(w5Var, storyItem5, f6Var2, i14));
+                w5 w5Var2 = f6Var3.t1;
                 if (w5Var2 != null) {
                     w5Var2.a();
                     return;
@@ -691,7 +690,7 @@ public final /* synthetic */ class k0 implements Runnable {
                 i9.c0 c0Var = (i9.c0) this.c;
                 try {
                     try {
-                        c0Var.o(((i9.p) this.d).apply(l8.a(wVar2)));
+                        c0Var.o(((i9.p) this.d).apply(m8.a(wVar2)));
                         return;
                     } catch (Throwable th3) {
                         c0Var.n(th3);
@@ -719,13 +718,13 @@ public final /* synthetic */ class k0 implements Runnable {
                 }
             case 23:
                 i9.c0 c0Var2 = (i9.c0) this.b;
-                ki.c0 c0Var3 = (ki.c0) this.c;
+                ki.l lVar = (ki.l) this.c;
                 m4.p1 p1Var = (m4.p1) this.d;
                 try {
                     if (c0Var2.a instanceof i9.a) {
                         return;
                     }
-                    c0Var3.run();
+                    lVar.run();
                     c0Var2.m(p1Var);
                     return;
                 } catch (Throwable th4) {

@@ -41,22 +41,22 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.rk;
 import org.telegram.messenger.voip.VoIPDebugToSend;
-import org.telegram.messenger.wh;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.ui.Components.RadioButton;
 import org.telegram.ui.Components.mr;
 import org.telegram.ui.Components.qr;
+import org.telegram.ui.Components.uq0;
+import org.telegram.ui.Components.v70;
 import org.telegram.ui.Components.vi;
-import org.telegram.ui.Components.vq0;
-import org.telegram.ui.Components.w70;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.lk;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class m2 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -107,7 +107,7 @@ public final /* synthetic */ class m2 implements Utilities.Callback {
                 str4 = h4Var.u0[0].getWebView().getUrl();
             }
             String v = org.telegram.ui.web.d1.v(str4);
-            h4Var.a0(new vq0(h4Var.L, null, v, false, v, false, AndroidUtilities.computePerceivedBrightness(h4Var.h0.getBackgroundColor()) < 0.721f ? new ai.d() : null));
+            h4Var.a0(new uq0(h4Var.L, null, v, false, v, false, AndroidUtilities.computePerceivedBrightness(h4Var.h0.getBackgroundColor()) < 0.721f ? new ai.d() : null));
             return;
         }
         if (num.intValue() == 6) {
@@ -144,7 +144,7 @@ public final /* synthetic */ class m2 implements Utilities.Callback {
             l2Var2.a = true;
             org.telegram.ui.ActionBar.n2 U2 = LaunchActivity.U();
             if (U2 != null) {
-                U2.showAsSheet(new org.telegram.ui.web.h1(u3Var != null ? new org.telegram.ui.a0(h4Var, 6) : null, new org.telegram.ui.r(h4Var, 3)), l2Var2);
+                U2.showAsSheet(new org.telegram.ui.web.i1(u3Var != null ? new org.telegram.ui.a0(h4Var, 6) : null, new org.telegram.ui.r(h4Var, 3)), l2Var2);
                 return;
             }
             return;
@@ -197,7 +197,7 @@ public final /* synthetic */ class m2 implements Utilities.Callback {
             org.telegram.ui.x xVar = new org.telegram.ui.x(h4Var, str, 1);
             org.telegram.ui.y yVar = new org.telegram.ui.y(h4Var, hostAuthority2, hostAuthority, 1);
             if (h4Var.u0[0].f() && MessagesController.getInstance(h4Var.X).isWebBrowserOpenInApp(hostAuthority2) && !MessagesController.getInstance(h4Var.X).isWebBrowserExceptionsLimitReached(true)) {
-                org.telegram.ui.Components.e5.o0(activity, null, str, true, new ai.m0(4, yVar, xVar));
+                org.telegram.ui.Components.d5.o0(activity, null, str, true, new ai.m0(4, yVar, xVar));
                 return;
             } else {
                 xVar.run();
@@ -228,19 +228,19 @@ public final /* synthetic */ class m2 implements Utilities.Callback {
             }
             return;
         }
-        org.telegram.ui.ActionBar.f3 f3Var = new org.telegram.ui.ActionBar.f3(1, (Context) h4Var.L, (org.telegram.ui.ActionBar.e6) null, false);
+        org.telegram.ui.ActionBar.f3 f3Var = new org.telegram.ui.ActionBar.f3(1, (Context) h4Var.L, (org.telegram.ui.ActionBar.f6) null, false);
         f3Var.fixNavigationBar();
         f3Var.applyTopPadding = false;
         LinearLayout linearLayout = new LinearLayout(h4Var.L);
         linearLayout.setPadding(0, 0, 0, AndroidUtilities.dp(4.0f));
         linearLayout.setOrientation(1);
-        org.telegram.ui.Cells.m4 m4Var = new org.telegram.ui.Cells.m4(h4Var.L, (org.telegram.ui.ActionBar.e6) null);
-        m4Var.setText(LocaleController.getString(R.string.FontSize));
-        linearLayout.addView(m4Var, w7.y5.t(-2, -2, 51, 3, 1, 3, 0));
+        org.telegram.ui.Cells.n4 n4Var = new org.telegram.ui.Cells.n4(h4Var.L, (org.telegram.ui.ActionBar.f6) null);
+        n4Var.setText(LocaleController.getString(R.string.FontSize));
+        linearLayout.addView(n4Var, w7.y5.t(-2, -2, 51, 3, 1, 3, 0));
         linearLayout.addView(new org.telegram.ui.d4(h4Var, h4Var.L), w7.y5.t(-1, -2, 51, 3, 0, 3, 0));
-        org.telegram.ui.Cells.m4 m4Var2 = new org.telegram.ui.Cells.m4(h4Var.L, (org.telegram.ui.ActionBar.e6) null);
-        m4Var2.setText(LocaleController.getString(R.string.FontType));
-        linearLayout.addView(m4Var2, w7.y5.t(-2, -2, 51, 3, 4, 3, 2));
+        org.telegram.ui.Cells.n4 n4Var2 = new org.telegram.ui.Cells.n4(h4Var.L, (org.telegram.ui.ActionBar.f6) null);
+        n4Var2.setText(LocaleController.getString(R.string.FontType));
+        linearLayout.addView(n4Var2, w7.y5.t(-2, -2, 51, 3, 4, 3, 2));
         int i10 = 0;
         for (int i11 = 2; i10 < i11; i11 = 2) {
             Activity activity3 = h4Var.L;
@@ -253,7 +253,7 @@ public final /* synthetic */ class m2 implements Utilities.Callback {
             boolean z10 = LocaleController.isRTL;
             j0Var.addView(radioButton, w7.y5.d(22, 22.0f, (z10 ? 5 : 3) | 48, z10 ? 0 : 22, 13.0f, z10 ? 22 : 0, 0.0f));
             TextView textView = new TextView(activity3);
-            wh.s(textView, org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.G6, false), 1, 16.0f, 1);
+            rk.t(textView, org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.G6, false), 1, 16.0f, 1);
             textView.setMaxLines(1);
             textView.setSingleLine(true);
             textView.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
@@ -352,7 +352,7 @@ public final /* synthetic */ class m2 implements Utilities.Callback {
                 qbVar.S();
                 if (max > 0) {
                     qg.j jVar = qbVar.J0;
-                    if ((jVar instanceof qg.u2) && ((qg.u2) jVar).getEditText().isFocused()) {
+                    if ((jVar instanceof qg.v2) && ((qg.v2) jVar).getEditText().isFocused()) {
                         z10 = true;
                         animatorSet = qbVar.N1;
                         if (animatorSet != null) {
@@ -360,15 +360,15 @@ public final /* synthetic */ class m2 implements Utilities.Callback {
                         }
                         qbVar.N1 = new AnimatorSet();
                         arrayList = new ArrayList();
-                        qg.w1 w1Var = qbVar.d1;
+                        qg.x1 x1Var = qbVar.d1;
                         Property property = View.TRANSLATION_Y;
-                        arrayList.add(ObjectAnimator.ofFloat(w1Var, (Property<qg.w1, Float>) property, max <= 0 ? Math.min(0.0f, ((-max) / 2.0f) - AndroidUtilities.dp(8.0f)) : 0.0f));
+                        arrayList.add(ObjectAnimator.ofFloat(x1Var, (Property<qg.x1, Float>) property, max <= 0 ? Math.min(0.0f, ((-max) / 2.0f) - AndroidUtilities.dp(8.0f)) : 0.0f));
                         arrayList.add(ObjectAnimator.ofFloat(qbVar.T0, (Property<m6, Float>) property, max <= 0 ? Math.min(0, AndroidUtilities.dp(40.0f) + (-max)) : 0));
                         x5 x5Var = qbVar.W0;
                         Property property2 = View.ALPHA;
                         arrayList.add(ObjectAnimator.ofFloat(x5Var, (Property<x5, Float>) property2, !z10 ? 0.0f : 1.0f));
-                        arrayList.add(ObjectAnimator.ofFloat(qbVar.B0, (Property<qg.j1, Float>) property2, (z10 || qbVar.B1) ? 1.0f : 0.0f));
-                        arrayList.add(ObjectAnimator.ofFloat(qbVar.A0, (Property<qg.f1, Float>) property2, (z10 || qbVar.B1) ? 1.0f : 0.0f));
+                        arrayList.add(ObjectAnimator.ofFloat(qbVar.B0, (Property<qg.k1, Float>) property2, (z10 || qbVar.B1) ? 1.0f : 0.0f));
+                        arrayList.add(ObjectAnimator.ofFloat(qbVar.A0, (Property<qg.g1, Float>) property2, (z10 || qbVar.B1) ? 1.0f : 0.0f));
                         qbVar.T0();
                         qbVar.N1.playTogether(arrayList);
                         if (z10) {
@@ -400,15 +400,15 @@ public final /* synthetic */ class m2 implements Utilities.Callback {
                 }
                 qbVar.N1 = new AnimatorSet();
                 arrayList = new ArrayList();
-                qg.w1 w1Var2 = qbVar.d1;
+                qg.x1 x1Var2 = qbVar.d1;
                 Property property3 = View.TRANSLATION_Y;
-                arrayList.add(ObjectAnimator.ofFloat(w1Var2, (Property<qg.w1, Float>) property3, max <= 0 ? Math.min(0.0f, ((-max) / 2.0f) - AndroidUtilities.dp(8.0f)) : 0.0f));
+                arrayList.add(ObjectAnimator.ofFloat(x1Var2, (Property<qg.x1, Float>) property3, max <= 0 ? Math.min(0.0f, ((-max) / 2.0f) - AndroidUtilities.dp(8.0f)) : 0.0f));
                 arrayList.add(ObjectAnimator.ofFloat(qbVar.T0, (Property<m6, Float>) property3, max <= 0 ? Math.min(0, AndroidUtilities.dp(40.0f) + (-max)) : 0));
                 x5 x5Var2 = qbVar.W0;
                 Property property22 = View.ALPHA;
                 arrayList.add(ObjectAnimator.ofFloat(x5Var2, (Property<x5, Float>) property22, !z10 ? 0.0f : 1.0f));
-                arrayList.add(ObjectAnimator.ofFloat(qbVar.B0, (Property<qg.j1, Float>) property22, (z10 || qbVar.B1) ? 1.0f : 0.0f));
-                arrayList.add(ObjectAnimator.ofFloat(qbVar.A0, (Property<qg.f1, Float>) property22, (z10 || qbVar.B1) ? 1.0f : 0.0f));
+                arrayList.add(ObjectAnimator.ofFloat(qbVar.B0, (Property<qg.k1, Float>) property22, (z10 || qbVar.B1) ? 1.0f : 0.0f));
+                arrayList.add(ObjectAnimator.ofFloat(qbVar.A0, (Property<qg.g1, Float>) property22, (z10 || qbVar.B1) ? 1.0f : 0.0f));
                 qbVar.T0();
                 qbVar.N1.playTogether(arrayList);
                 if (z10) {
@@ -435,22 +435,22 @@ public final /* synthetic */ class m2 implements Utilities.Callback {
                 break;
             case 3:
                 r6 r6Var2 = (r6) obj3;
-                qg.q0 q0Var = (qg.q0) obj2;
-                qg.n0 n0Var = (qg.n0) obj;
-                if (q0Var != null) {
+                qg.r0 r0Var = (qg.r0) obj2;
+                qg.o0 o0Var = (qg.o0) obj;
+                if (r0Var != null) {
                     int i16 = r6Var2.F1;
-                    q0Var.u0 = n0Var;
-                    q0Var.q0.b(i16, n0Var, false);
-                    q0Var.m();
-                    r6Var2.d0(q0Var);
+                    r0Var.u0 = o0Var;
+                    r0Var.q0.b(i16, o0Var, false);
+                    r0Var.m();
+                    r6Var2.d0(r0Var);
                     break;
                 } else {
-                    r6Var2.d0(r6Var2.i0(n0Var));
+                    r6Var2.d0(r6Var2.i0(o0Var));
                     break;
                 }
             case 4:
                 ba baVar = (ba) obj3;
-                ((w70) obj2).u();
+                ((v70) obj2).u();
                 baVar.g(true);
                 ia iaVar = baVar.W;
                 la laVar = iaVar.X;
@@ -914,7 +914,7 @@ public final /* synthetic */ class m2 implements Utilities.Callback {
                         if ((uRLSpanArr.length <= 0 || length != 0 || i22 <= 0) && (uriParseSafe == null || uriParseSafe.getScheme() == null)) {
                             org.telegram.ui.web.k.b(activity, str8);
                             org.telegram.ui.web.z0 webView = l3Var.getWebView();
-                            String str9 = org.telegram.ui.web.o1.a().b;
+                            String str9 = org.telegram.ui.web.p1.a().b;
                             if (str9 != null) {
                                 StringBuilder u10 = a4.a.u(str9);
                                 u10.append(URLEncoder.encode(str8));

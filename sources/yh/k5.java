@@ -13,7 +13,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class k5 {
     public final int a;
@@ -211,7 +211,7 @@ public final class k5 {
                         if (i12 >= arrayList.size()) {
                             break;
                         }
-                        if (t5.k(savedStarGift2, (TL_stars.SavedStarGift) arrayList.get(i12))) {
+                        if (u5.k(savedStarGift2, (TL_stars.SavedStarGift) arrayList.get(i12))) {
                             arrayList2.remove(i11);
                             e.n = Math.max(0, e.n - 1);
                             i11--;

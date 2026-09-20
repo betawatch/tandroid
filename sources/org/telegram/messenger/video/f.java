@@ -13,10 +13,10 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.video.VideoAds;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.Components.dd0;
-import org.telegram.ui.Components.e5;
-import org.telegram.ui.Components.qc;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.Components.cd0;
+import org.telegram.ui.Components.d5;
+import org.telegram.ui.Components.pc;
 import org.telegram.ui.b3;
 import org.telegram.ui.ba;
 import org.telegram.ui.i60;
@@ -25,7 +25,7 @@ import org.telegram.ui.o40;
 import org.telegram.ui.q40;
 import org.telegram.ui.s30;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final /* synthetic */ class f implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -60,11 +60,11 @@ public final /* synthetic */ class f implements View.OnClickListener {
         Object obj7 = this.b;
         switch (i10) {
             case 0:
-                ((VideoAds) obj7).lambda$show$17((qc) obj6, (TLRPC.TL_sponsoredMessage) obj5, (Context) obj4, (e6) obj3, (VideoAds.AdLayout) obj2, (e) obj, view);
+                ((VideoAds) obj7).lambda$show$17((pc) obj6, (TLRPC.TL_sponsoredMessage) obj5, (Context) obj4, (f6) obj3, (VideoAds.AdLayout) obj2, (e) obj, view);
                 break;
             default:
                 i60 i60Var = (i60) obj7;
-                dd0 dd0Var = (dd0) obj6;
+                cd0 cd0Var = (cd0) obj6;
                 n40 n40Var = (n40) obj5;
                 o40 o40Var = (o40) obj4;
                 TLRPC.Chat chat = (TLRPC.Chat) obj3;
@@ -83,8 +83,8 @@ public final /* synthetic */ class f implements View.OnClickListener {
                     s30Var.b(LocaleController.getString(R.string.VoipGroupVoiceChat), true);
                 }
                 Calendar calendar = Calendar.getInstance();
-                boolean g10 = e5.g(null, null, 0L, 604800L, 3, dd0Var, n40Var, o40Var);
-                calendar.setTimeInMillis((dd0Var.getValue() * 86400000) + System.currentTimeMillis());
+                boolean g10 = d5.g(null, null, 0L, 604800L, 3, cd0Var, n40Var, o40Var);
+                calendar.setTimeInMillis((cd0Var.getValue() * 86400000) + System.currentTimeMillis());
                 int i11 = 11;
                 calendar.set(11, n40Var.getValue());
                 calendar.set(12, o40Var.getValue());

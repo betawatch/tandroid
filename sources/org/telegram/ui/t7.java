@@ -14,9 +14,9 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public abstract class t7 extends FrameLayout implements org.telegram.ui.Components.uc0 {
+public abstract class t7 extends FrameLayout implements org.telegram.ui.Components.tc0 {
     public j7 E;
     public final ArrayList a;
     public final FrameLayout b;
@@ -103,7 +103,7 @@ public abstract class t7 extends FrameLayout implements org.telegram.ui.Componen
             public final void onClick(View view) {
                 switch (i13) {
                     case 0:
-                        this.b.E.i1();
+                        this.b.E.h1();
                         break;
                     default:
                         this.b.E.clear();
@@ -111,12 +111,12 @@ public abstract class t7 extends FrameLayout implements org.telegram.ui.Componen
                 }
             }
         });
-        org.telegram.ui.Components.p6 p6Var = new org.telegram.ui.Components.p6(context, true, true, true);
-        p6Var.setTextSize(AndroidUtilities.dp(18.0f));
-        p6Var.setTypeface(AndroidUtilities.bold());
-        p6Var.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, i11, false));
-        linearLayout.addView(p6Var, w7.y5.m(1.0f, 0, -1, 18, 0, 0));
-        this.a.add(p6Var);
+        org.telegram.ui.Components.o6 o6Var = new org.telegram.ui.Components.o6(context, true, true, true);
+        o6Var.setTextSize(AndroidUtilities.dp(18.0f));
+        o6Var.setTypeface(AndroidUtilities.bold());
+        o6Var.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, i11, false));
+        linearLayout.addView(o6Var, w7.y5.m(1.0f, 0, -1, 18, 0, 0));
+        this.a.add(o6Var);
         org.telegram.ui.ActionBar.v0 v0Var = new org.telegram.ui.ActionBar.v0(context, null, org.telegram.ui.ActionBar.j6.w0(null, i12, false), org.telegram.ui.ActionBar.j6.w0(null, i11, false), false, null);
         v0Var.setIcon(R.drawable.msg_clear);
         v0Var.setContentDescription(LocaleController.getString(R.string.Delete));
@@ -135,7 +135,7 @@ public abstract class t7 extends FrameLayout implements org.telegram.ui.Componen
             public final void onClick(View view) {
                 switch (i14) {
                     case 0:
-                        this.b.E.i1();
+                        this.b.E.h1();
                         break;
                     default:
                         this.b.E.clear();
@@ -145,13 +145,13 @@ public abstract class t7 extends FrameLayout implements org.telegram.ui.Componen
         });
     }
 
-    public static void a(t7 t7Var, n7 n7Var, p7 p7Var, org.telegram.ui.Components.wl0 wl0Var) {
+    public static void a(t7 t7Var, n7 n7Var, p7 p7Var, org.telegram.ui.Components.vl0 vl0Var) {
         ArrayList arrayList = p7Var.e;
         PhotoViewer.t1().J2(null, t7Var.d, null);
         if (t7Var.r == null) {
             t7Var.r = new i7(t7Var);
         }
-        t7Var.r.a = wl0Var;
+        t7Var.r.a = vl0Var;
         if (arrayList.indexOf(n7Var) >= 0) {
             PhotoViewer.t1().f2(p7Var.r, arrayList.indexOf(n7Var), -1, false, t7Var.r, null);
         }
@@ -159,16 +159,16 @@ public abstract class t7 extends FrameLayout implements org.telegram.ui.Componen
 
     public static void b(t7 t7Var, zh.a aVar, l7 l7Var) {
         org.telegram.ui.ActionBar.n2 n2Var = t7Var.d;
-        org.telegram.ui.Components.wl0 wl0Var = (org.telegram.ui.Components.wl0) t7Var.h.getCurrentView();
+        org.telegram.ui.Components.vl0 vl0Var = (org.telegram.ui.Components.vl0) t7Var.h.getCurrentView();
         if (l7Var.e == 2) {
-            if (!(wl0Var.getAdapter() instanceof m7)) {
+            if (!(vl0Var.getAdapter() instanceof m7)) {
                 return;
             }
             PhotoViewer.t1().J2(null, n2Var, null);
             if (t7Var.r == null) {
                 t7Var.r = new i7(t7Var);
             }
-            t7Var.r.a = wl0Var;
+            t7Var.r.a = vl0Var;
             File file = aVar.a;
             String lowerCase = file.getName().toLowerCase();
             if (file.getName().endsWith("mp4") || file.getName().endsWith(".jpg") || lowerCase.endsWith(".jpeg") || lowerCase.endsWith(".png") || lowerCase.endsWith(".gif")) {
@@ -199,9 +199,9 @@ public abstract class t7 extends FrameLayout implements org.telegram.ui.Componen
             if (i12 >= x81Var.getViewPages().length) {
                 return;
             }
-            org.telegram.ui.Components.wl0 wl0Var = (org.telegram.ui.Components.wl0) x81Var.getViewPages()[i12];
-            if (wl0Var != null) {
-                wl0Var.setPadding(wl0Var.getPaddingLeft(), i10, wl0Var.getPaddingRight(), i11);
+            org.telegram.ui.Components.vl0 vl0Var = (org.telegram.ui.Components.vl0) x81Var.getViewPages()[i12];
+            if (vl0Var != null) {
+                vl0Var.setPadding(vl0Var.getPaddingLeft(), i10, vl0Var.getPaddingRight(), i11);
             }
             i12++;
         }
@@ -270,17 +270,17 @@ public abstract class t7 extends FrameLayout implements org.telegram.ui.Componen
             if (i10 >= x81Var.getViewPages().length) {
                 return;
             }
-            AndroidUtilities.updateVisibleRows((org.telegram.ui.Components.wl0) x81Var.getViewPages()[i10]);
+            AndroidUtilities.updateVisibleRows((org.telegram.ui.Components.vl0) x81Var.getViewPages()[i10]);
             i10++;
         }
     }
 
-    public org.telegram.ui.Components.wl0 getListView() {
+    public org.telegram.ui.Components.vl0 getListView() {
         org.telegram.ui.Components.x81 x81Var = this.h;
         if (x81Var.getCurrentView() == null) {
             return null;
         }
-        return (org.telegram.ui.Components.wl0) x81Var.getCurrentView();
+        return (org.telegram.ui.Components.vl0) x81Var.getCurrentView();
     }
 
     @Override // android.view.ViewGroup, android.view.View

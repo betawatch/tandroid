@@ -1,41 +1,39 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Rect;
-import android.text.Layout;
-import android.view.View;
-import java.lang.ref.WeakReference;
-import org.telegram.messenger.Emoji;
+import java.util.ArrayList;
+import java.util.HashMap;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class u5 implements w5 {
-    public final WeakReference a;
-    public final boolean b;
-    public Layout c;
-    public z5 d;
-    public Rect e;
-    public q5 f;
-    public Emoji.EmojiDrawable h;
-    public boolean n;
-    public float r;
-    public float s;
-    public boolean v;
+public final class u5 {
+    public ArrayList a;
+    public HashMap b;
+    public ArrayList c;
 
-    public u5(View view, boolean z10) {
-        this.a = new WeakReference(view);
-        this.b = z10;
+    public final void a() {
+        ArrayList arrayList = this.a;
+        for (int i10 = 0; i10 < arrayList.size(); i10++) {
+            ((t5) arrayList.get(i10)).d.spanDrawn = false;
+        }
     }
 
-    @Override // org.telegram.ui.Components.w5
-    public final void invalidate() {
-        View view = (View) this.a.get();
-        if (view == null) {
-            return;
+    public final void b(int i10) {
+        t5 t5Var = (t5) this.a.remove(i10);
+        HashMap hashMap = this.b;
+        w5 w5Var = (w5) hashMap.get(t5Var.c);
+        if (w5Var == null) {
+            throw new RuntimeException("!!!");
         }
-        if (!this.b || view.getParent() == null) {
-            view.invalidate();
-        } else {
-            ((View) view.getParent()).invalidate();
+        ArrayList arrayList = w5Var.b;
+        arrayList.remove(t5Var);
+        w5Var.a();
+        if (arrayList.isEmpty()) {
+            hashMap.remove(t5Var.c);
+            this.c.remove(w5Var);
+        }
+        p5 p5Var = t5Var.f;
+        if (p5Var != null) {
+            p5Var.p(t5Var);
         }
     }
 }

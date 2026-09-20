@@ -12,11 +12,11 @@ import androidx.core.content.FileProvider;
 import java.io.File;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.a71;
+import org.telegram.ui.Components.y61;
 import org.telegram.ui.Components.z61;
 import org.telegram.ui.IUpdateLayout;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public class ApplicationLoaderImpl extends ApplicationLoader {
     private static long lastUpdateCheckTime;
@@ -28,11 +28,11 @@ public class ApplicationLoaderImpl extends ApplicationLoader {
     @Override // org.telegram.messenger.ApplicationLoader
     public void appCenterLogInternal(Throwable th2) {
         try {
-            s9.d dVar = (s9.d) k9.h.c().b(s9.d.class);
-            if (dVar == null) {
+            s9.c cVar = (s9.c) k9.h.c().b(s9.c.class);
+            if (cVar == null) {
                 throw new NullPointerException("FirebaseCrashlytics component is not present.");
             }
-            dVar.a(th2);
+            cVar.a(th2);
         } catch (Throwable th3) {
             FileLog.e(th3, false);
         }
@@ -50,7 +50,7 @@ public class ApplicationLoaderImpl extends ApplicationLoader {
         if (Build.VERSION.SDK_INT < 26 || ApplicationLoader.applicationContext.getPackageManager().canRequestPackageInstalls()) {
             return true;
         }
-        org.telegram.ui.Components.e5.j(context, null).show();
+        org.telegram.ui.Components.d5.j(context, null).show();
         return false;
     }
 
@@ -156,7 +156,7 @@ public class ApplicationLoaderImpl extends ApplicationLoader {
     @Override // org.telegram.messenger.ApplicationLoader
     public boolean showCustomUpdateAppPopup(Context context, BetaUpdate betaUpdate, int i10) {
         try {
-            new z61(context, betaUpdate).show();
+            new y61(context, betaUpdate).show();
             return true;
         } catch (Exception e) {
             FileLog.e(e);
@@ -179,24 +179,24 @@ public class ApplicationLoaderImpl extends ApplicationLoader {
                 if (ConnectionsManager.getInstance(UserConfig.selectedAccount).isTestBackend()) {
                     str2 = str2 + " [TEST SERVER]";
                 }
-                s9.d dVar = (s9.d) k9.h.c().b(s9.d.class);
-                if (dVar == null) {
+                s9.c cVar = (s9.c) k9.h.c().b(s9.c.class);
+                if (cVar == null) {
                     throw new NullPointerException("FirebaseCrashlytics component is not present.");
                 }
-                dVar.d(str2);
-                dVar.c("version", getVersionName(4));
-                dVar.c("model", Build.MODEL);
-                dVar.c("manufacturer", Build.MANUFACTURER);
+                cVar.d(str2);
+                cVar.c("version", getVersionName(4));
+                cVar.c("model", Build.MODEL);
+                cVar.c("manufacturer", Build.MANUFACTURER);
                 if (Build.VERSION.SDK_INT >= 31) {
                     str = Build.SOC_MODEL;
-                    dVar.c("soc_model", str);
-                    dVar.c("soc_manufacturer", Build.SOC_MANUFACTURER);
+                    cVar.c("soc_model", str);
+                    cVar.c("soc_manufacturer", Build.SOC_MANUFACTURER);
                 }
-                dVar.c("device", Build.DEVICE);
-                dVar.c("product", Build.PRODUCT);
-                dVar.c("hardware", Build.HARDWARE);
-                dVar.c("user", Build.USER);
-                dVar.b();
+                cVar.c("device", Build.DEVICE);
+                cVar.c("product", Build.PRODUCT);
+                cVar.c("hardware", Build.HARDWARE);
+                cVar.c("user", Build.USER);
+                cVar.b();
             }
         } catch (Throwable th2) {
             FileLog.e(th2);
@@ -206,7 +206,7 @@ public class ApplicationLoaderImpl extends ApplicationLoader {
     @Override // org.telegram.messenger.ApplicationLoader
     public IUpdateLayout takeUpdateLayout(Activity activity, ViewGroup viewGroup) {
         if (isCustomUpdate()) {
-            return new a71(activity, viewGroup);
+            return new z61(activity, viewGroup);
         }
         return null;
     }

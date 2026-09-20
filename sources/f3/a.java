@@ -12,7 +12,7 @@ import e9.g0;
 import e9.i0;
 import java.util.List;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class a implements o {
     public final /* synthetic */ int a;
@@ -45,10 +45,10 @@ public final class a implements o {
                 lVar.t(4, false);
                 v vVar = this.b;
                 vVar.G(4);
-                lVar.h(vVar.a, 0, 4, false);
+                lVar.i(vVar.a, 0, 4, false);
                 if (vVar.z() == 1718909296) {
                     vVar.G(4);
-                    lVar.h(vVar.a, 0, 4, false);
+                    lVar.i(vVar.a, 0, 4, false);
                     if (vVar.z() == 1635150182) {
                     }
                 }
@@ -58,10 +58,10 @@ public final class a implements o {
                 lVar2.t(4, false);
                 v vVar2 = this.b;
                 vVar2.G(4);
-                lVar2.h(vVar2.a, 0, 4, false);
+                lVar2.i(vVar2.a, 0, 4, false);
                 if (vVar2.z() == 1718909296) {
                     vVar2.G(4);
-                    lVar2.h(vVar2.a, 0, 4, false);
+                    lVar2.i(vVar2.a, 0, 4, false);
                     if (vVar2.z() == 1751476579) {
                     }
                 }
@@ -70,11 +70,11 @@ public final class a implements o {
                 v vVar3 = this.b;
                 vVar3.G(4);
                 l lVar3 = (l) pVar;
-                lVar3.h(vVar3.a, 0, 4, false);
+                lVar3.i(vVar3.a, 0, 4, false);
                 if (vVar3.z() == 1380533830) {
                     lVar3.t(4, false);
                     vVar3.G(4);
-                    lVar3.h(vVar3.a, 0, 4, false);
+                    lVar3.i(vVar3.a, 0, 4, false);
                     if (vVar3.z() == 1464156752) {
                     }
                 }

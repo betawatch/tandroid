@@ -11,9 +11,9 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class dh implements bl, le.k, org.telegram.ui.ActionBar.a2, ml0, dh.d, org.telegram.ui.ActionBar.r0, tn, AndroidUtilities.IntColorCallback, d5, dj {
+public final /* synthetic */ class dh implements bl, le.k, org.telegram.ui.ActionBar.a2, ll0, dh.d, org.telegram.ui.ActionBar.r0, tn, AndroidUtilities.IntColorCallback, c5, dj {
     public final /* synthetic */ int a;
     public final /* synthetic */ vi b;
 
@@ -22,7 +22,7 @@ public final /* synthetic */ class dh implements bl, le.k, org.telegram.ui.Actio
         this.b = viVar;
     }
 
-    @Override // org.telegram.ui.Components.d5
+    @Override // org.telegram.ui.Components.c5
     public void J(int i10, int i11, boolean z10) {
         boolean G1;
         switch (this.a) {
@@ -86,7 +86,7 @@ public final /* synthetic */ class dh implements bl, le.k, org.telegram.ui.Actio
         this.b.u1();
     }
 
-    @Override // org.telegram.ui.Components.ml0
+    @Override // org.telegram.ui.Components.ll0
     public boolean d(int i10, View view) {
         TLRPC.User user;
         if (!(view instanceof oi)) {
@@ -144,20 +144,13 @@ public final /* synthetic */ class dh implements bl, le.k, org.telegram.ui.Actio
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.a2
-    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
-        vi viVar = this.b;
-        viVar.A2 = true;
-        viVar.dismiss();
-    }
-
     @Override // dh.d
-    public int g(org.telegram.ui.ActionBar.e6 e6Var, boolean z10) {
+    public int f(org.telegram.ui.ActionBar.f6 f6Var, boolean z10) {
         switch (this.a) {
             case 4:
                 float f7 = LiteMode.isEnabled(262144) ? 0.85f : 0.76f;
-                int v02 = org.telegram.ui.ActionBar.j6.v0(z10 ? org.telegram.ui.ActionBar.j6.a7 : org.telegram.ui.ActionBar.j6.i5, e6Var);
-                int v03 = org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.d6, e6Var);
+                int v02 = org.telegram.ui.ActionBar.j6.v0(z10 ? org.telegram.ui.ActionBar.j6.a7 : org.telegram.ui.ActionBar.j6.i5, f6Var);
+                int v03 = org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.d6, f6Var);
                 vi viVar = this.b;
                 return viVar.m2 ? i0.a.d(0.75f, v03, viVar.n2) : eh.b.n(f7, v02, v03);
             case 5:
@@ -206,6 +199,13 @@ public final /* synthetic */ class dh implements bl, le.k, org.telegram.ui.Actio
             SendMessagesHelper.prepareSendingAudioDocuments(znVar.getAccountInstance(), arrayList, charSequence != null ? charSequence : null, znVar.T5, znVar.n5, znVar.X3, null, z10, i10, i11, znVar.p5, znVar.C8(), j3, z11, j10);
             znVar.y6();
         }
+    }
+
+    @Override // org.telegram.ui.ActionBar.a2
+    public void k(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+        vi viVar = this.b;
+        viVar.A2 = true;
+        viVar.dismiss();
     }
 
     @Override // org.telegram.ui.ActionBar.r0

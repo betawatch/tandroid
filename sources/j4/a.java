@@ -4,7 +4,7 @@ import e9.a1;
 import e9.i0;
 import java.util.List;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class a implements c3.o {
     public final b a = new b("audio/ac3");
@@ -31,7 +31,7 @@ public final class a implements c3.o {
         int i10 = 0;
         while (true) {
             lVar = (c3.l) pVar;
-            lVar.h(vVar.a, 0, 10, false);
+            lVar.i(vVar.a, 0, 10, false);
             vVar.J(0);
             if (vVar.A() != 4801587) {
                 break;
@@ -47,7 +47,7 @@ public final class a implements c3.o {
         loop1: while (true) {
             int i12 = 0;
             while (true) {
-                lVar.h(vVar.a, 0, 6, false);
+                lVar.i(vVar.a, 0, 6, false);
                 vVar.J(0);
                 if (vVar.D() != 2935) {
                     break;
@@ -77,15 +77,15 @@ public final class a implements c3.o {
 
     @Override // c3.o
     public final void g(c3.q qVar) {
-        this.a.d(qVar, new f0(0, 1));
-        qVar.e1();
+        this.a.e(qVar, new f0(0, 1));
+        qVar.f1();
         qVar.X1(new c3.t(-9223372036854775807L));
     }
 
     @Override // c3.o
     public final void h(long j3, long j10) {
         this.c = false;
-        this.a.c();
+        this.a.d();
     }
 
     @Override // c3.o
@@ -109,7 +109,7 @@ public final class a implements c3.o {
             bVar.o = 0L;
             this.c = true;
         }
-        bVar.a(vVar);
+        bVar.b(vVar);
         return 0;
     }
 

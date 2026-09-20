@@ -15,24 +15,24 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j5;
 import org.telegram.ui.ActionBar.j6;
 import w7.y5;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class t extends FrameLayout {
     public final j5 a;
     public final vh.o b;
     public final j5 c;
-    public final e6 d;
+    public final f6 d;
     public boolean e;
     public TL_account.TL_businessChatLink f;
 
-    public t(Context context, e6 e6Var) {
+    public t(Context context, f6 f6Var) {
         super(context);
-        this.d = e6Var;
+        this.d = f6Var;
         setWillNotDraw(false);
         ImageView imageView = new ImageView(context);
         imageView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
@@ -60,7 +60,7 @@ public final class t extends FrameLayout {
         oVar.setTextSize(1, 13.0f);
         oVar.setMaxLines(1);
         oVar.setEllipsize(TextUtils.TruncateAt.END);
-        oVar.setTextColor(j6.v0(i10, e6Var));
+        oVar.setTextColor(j6.v0(i10, f6Var));
         oVar.setGravity(LocaleController.isRTL ? 5 : 3);
         oVar.f = false;
         oVar.setUseAlphaForEmoji(false);

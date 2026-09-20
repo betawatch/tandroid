@@ -6,9 +6,9 @@ import java.util.ArrayList;
 import vh.i;
 import vh.j;
 import w7.q;
-import yf.y;
+import yf.x;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b implements Choreographer.FrameCallback {
     public final /* synthetic */ int a;
@@ -64,20 +64,20 @@ public final /* synthetic */ class b implements Choreographer.FrameCallback {
                 jVar.l = false;
                 break;
             default:
-                y yVar = (y) this.b;
-                if (yVar.F.get()) {
-                    long j10 = yVar.b;
+                x xVar = (x) this.b;
+                if (xVar.F.get()) {
+                    long j10 = xVar.b;
                     if (j10 == 0) {
-                        yVar.b = j3;
+                        xVar.b = j3;
                     } else if (j3 - j10 >= 1000000000) {
-                        yVar.c = yVar.a;
-                        yVar.f = yVar.e.getAndSet(0);
-                        yVar.a = 0;
-                        yVar.b = j3;
+                        xVar.c = xVar.a;
+                        xVar.f = xVar.e.getAndSet(0);
+                        xVar.a = 0;
+                        xVar.b = j3;
                     } else {
-                        yVar.a++;
+                        xVar.a++;
                     }
-                    Choreographer.getInstance().postFrameCallback(yVar.d);
+                    Choreographer.getInstance().postFrameCallback(xVar.d);
                     break;
                 }
                 break;

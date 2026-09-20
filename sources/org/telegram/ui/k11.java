@@ -7,10 +7,10 @@ import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class k11 extends Drawable implements org.telegram.ui.ActionBar.i5 {
-    public final org.telegram.ui.Components.o6 a;
+    public final org.telegram.ui.Components.n6 a;
     public final Paint b;
     public int c;
     public float d;
@@ -24,12 +24,12 @@ public final class k11 extends Drawable implements org.telegram.ui.ActionBar.i5 
         this.d = 1.0f;
         this.e = 1.0f;
         this.f = new org.telegram.ui.Cells.l0(this);
-        org.telegram.ui.Components.o6 o6Var = new org.telegram.ui.Components.o6(false, false, false, false);
-        this.a = o6Var;
-        o6Var.setCallback(new xr(1, this));
-        o6Var.q(str, true, true);
-        o6Var.t(AndroidUtilities.dp(11.0f));
-        o6Var.b = 17;
+        org.telegram.ui.Components.n6 n6Var = new org.telegram.ui.Components.n6(false, false, false, false);
+        this.a = n6Var;
+        n6Var.setCallback(new xr(1, this));
+        n6Var.q(str, true, true);
+        n6Var.t(AndroidUtilities.dp(11.0f));
+        n6Var.b = 17;
         paint.setColor(520093696);
     }
 
@@ -58,11 +58,11 @@ public final class k11 extends Drawable implements org.telegram.ui.ActionBar.i5 
         canvas.drawRoundRect(rectF, AndroidUtilities.dp(20.0f), AndroidUtilities.dp(20.0f), paint);
         paint.setAlpha(alpha);
         int i10 = this.c;
-        org.telegram.ui.Components.o6 o6Var = this.a;
-        o6Var.r(i10);
-        o6Var.w = (int) (f7 * 255.0f);
-        o6Var.setBounds((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
-        o6Var.draw(canvas);
+        org.telegram.ui.Components.n6 n6Var = this.a;
+        n6Var.r(i10);
+        n6Var.w = (int) (f7 * 255.0f);
+        n6Var.setBounds((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
+        n6Var.draw(canvas);
         canvas.restore();
     }
 

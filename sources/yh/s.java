@@ -6,13 +6,13 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.bb;
+import org.telegram.ui.Components.ab;
+import org.telegram.ui.Components.ul0;
 import org.telegram.ui.Components.vl0;
-import org.telegram.ui.Components.wl0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
-public final class s extends bb {
+public final class s extends ab {
     public p X;
     public final LinearLayout Y;
 
@@ -20,23 +20,23 @@ public final class s extends bb {
         super(context, null, false, false, null);
         this.v = 0.1f;
         fixNavigationBar();
-        wl0 wl0Var = this.d;
+        vl0 vl0Var = this.d;
         int i10 = this.backgroundPaddingLeft;
-        wl0Var.setPadding(i10, 0, i10, 0);
+        vl0Var.setPadding(i10, 0, i10, 0);
         LinearLayout linearLayout = new LinearLayout(context);
         this.Y = linearLayout;
         linearLayout.setOrientation(1);
         FrameLayout frameLayout = new FrameLayout(context);
         frameLayout.setClipChildren(false);
         frameLayout.setClipToPadding(false);
-        x6 x6Var = new x6(context, 70, 0);
-        frameLayout.addView(x6Var, w7.y5.c(-1.0f, -1));
+        y6 y6Var = new y6(context, 70, 0);
+        frameLayout.addView(y6Var, w7.y5.c(-1.0f, -1));
         sg.e eVar = new sg.e(context, 1, 2);
         sg.a aVar = eVar.b;
         aVar.w = org.telegram.ui.ActionBar.j6.fk;
         aVar.x = org.telegram.ui.ActionBar.j6.gk;
         aVar.b();
-        eVar.setStarParticlesView(x6Var);
+        eVar.setStarParticlesView(y6Var);
         frameLayout.addView(eVar, w7.y5.d(170, 170.0f, 17, 0.0f, 32.0f, 0.0f, 24.0f));
         eVar.setPaused(false);
         linearLayout.addView(frameLayout, w7.y5.c(150.0f, -1));
@@ -64,14 +64,14 @@ public final class s extends bb {
         this.X.N(false);
     }
 
-    @Override // org.telegram.ui.Components.bb
-    public final vl0 v(wl0 wl0Var) {
-        p pVar = new p(wl0Var, getContext(), this.currentAccount, 0, true, new hi.a(this, 22), this.resourcesProvider);
+    @Override // org.telegram.ui.Components.ab
+    public final ul0 v(vl0 vl0Var) {
+        p pVar = new p(vl0Var, getContext(), this.currentAccount, 0, true, new hi.a(this, 22), this.resourcesProvider);
         this.X = pVar;
         return pVar;
     }
 
-    @Override // org.telegram.ui.Components.bb
+    @Override // org.telegram.ui.Components.ab
     public final CharSequence y() {
         return LocaleController.getString(R.string.ExplainStarsTitle);
     }

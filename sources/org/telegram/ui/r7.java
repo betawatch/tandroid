@@ -8,7 +8,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class r7 extends h7 {
     public final /* synthetic */ t7 n;
@@ -22,7 +22,7 @@ public final class r7 extends h7 {
     @Override // s4.h0
     public final void v(s4.c1 c1Var, int i10) {
         l7 l7Var = (l7) c1Var.a;
-        org.telegram.ui.Cells.j7 j7Var = (org.telegram.ui.Cells.j7) l7Var.b.getChildAt(0);
+        org.telegram.ui.Cells.k7 k7Var = (org.telegram.ui.Cells.k7) l7Var.b.getChildAt(0);
         zh.a aVar = ((n7) this.e.get(i10)).d;
         boolean z10 = aVar == l7Var.getTag();
         boolean z11 = i10 != this.e.size() - 1;
@@ -77,15 +77,15 @@ public final class r7 extends h7 {
             aVar.f = messageObject;
             messageObject.mediaExists = true;
         }
-        j7Var.f(aVar.f, z11);
+        k7Var.f(aVar.f, z11);
         boolean z12 = aVar.e.b;
         boolean z13 = !z12;
         if (!z10) {
-            j7Var.g0 = !z12 ? 1.0f : 0.0f;
+            k7Var.g0 = !z12 ? 1.0f : 0.0f;
         }
-        if (j7Var.f0 != z13) {
-            j7Var.f0 = z13;
-            j7Var.invalidate();
+        if (k7Var.f0 != z13) {
+            k7Var.f0 = z13;
+            k7Var.invalidate();
         }
         l7Var.d = z11;
         l7Var.c.setText(AndroidUtilities.formatFileSize(aVar.c));
@@ -99,6 +99,6 @@ public final class r7 extends h7 {
         q7 q7Var = new q7(this, viewGroup.getContext(), l7Var);
         q7Var.setCheckForButtonPress(true);
         l7Var.b.addView(q7Var);
-        return new org.telegram.ui.Components.gl0(l7Var);
+        return new org.telegram.ui.Components.fl0(l7Var);
     }
 }

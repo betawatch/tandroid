@@ -14,7 +14,7 @@ import ru.noties.jlatexmath.awt.AndroidGraphics2D;
 import ru.noties.jlatexmath.awt.Color;
 import ru.noties.jlatexmath.awt.Insets;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public class JLatexMathDrawable extends Drawable {
     public static final int ALIGN_CENTER = 1;
@@ -27,12 +27,12 @@ public class JLatexMathDrawable extends Drawable {
     private final int iconHeight;
     private final int iconWidth;
 
-    /* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+    /* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
     @Retention(RetentionPolicy.CLASS)
     public @interface Align {
     }
 
-    /* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+    /* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
     public static class Builder {
         private int align;
         private Drawable background;

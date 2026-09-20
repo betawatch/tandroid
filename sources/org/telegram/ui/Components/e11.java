@@ -1,61 +1,44 @@
 package org.telegram.ui.Components;
 
-import android.text.TextPaint;
-import android.text.style.MetricAffectingSpan;
+import android.text.TextUtils;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
+import android.widget.ViewSwitcher;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class e11 extends MetricAffectingSpan {
-    public final int a;
-    public final d11 b;
-
-    public e11(d11 d11Var, int i10) {
-        this.b = d11Var;
-        if (i10 > 0) {
-            this.a = i10;
-        }
-    }
-
-    public final void a(TextPaint textPaint) {
-        d11 d11Var = this.b;
-        if (w7.d0.a(d11Var.a, 49152)) {
-            float textSize = textPaint.getTextSize();
-            textPaint.setTextSize(0.75f * textSize);
-            if (w7.d0.a(d11Var.a, 32768)) {
-                textPaint.baselineShift -= (int) (textSize * 0.35f);
-            } else if (w7.d0.a(d11Var.a, 16384)) {
-                textPaint.baselineShift += (int) (textSize * 0.12f);
+public class e11 extends ViewSwitcher {
+    public final void a(CharSequence charSequence, boolean z10, boolean z11) {
+        if (z11 || !TextUtils.equals(charSequence, getCurrentView().getText())) {
+            if (!z10) {
+                getCurrentView().setText(charSequence);
+            } else {
+                getNextView().setText(charSequence);
+                showNext();
             }
         }
     }
 
-    public final d11 b() {
-        return this.b;
-    }
-
-    public final boolean c() {
-        return (this.b.a & 256) > 0;
-    }
-
-    @Override // android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        int i10 = this.a;
-        if (i10 != 0) {
-            textPaint.setTextSize(i10);
+    @Override // android.widget.ViewSwitcher, android.widget.ViewAnimator, android.view.ViewGroup
+    public final void addView(View view, int i10, ViewGroup.LayoutParams layoutParams) {
+        if (!(view instanceof TextView)) {
+            throw new IllegalArgumentException();
         }
-        a(textPaint);
-        textPaint.setFlags(textPaint.getFlags() | 128);
-        this.b.a(textPaint);
+        super.addView(view, i10, layoutParams);
     }
 
-    @Override // android.text.style.MetricAffectingSpan
-    public final void updateMeasureState(TextPaint textPaint) {
-        int i10 = this.a;
-        if (i10 != 0) {
-            textPaint.setTextSize(i10);
-        }
-        a(textPaint);
-        textPaint.setFlags(textPaint.getFlags() | 128);
-        this.b.a(textPaint);
+    public void setText(CharSequence charSequence) {
+        a(charSequence, true, false);
+    }
+
+    @Override // android.widget.ViewAnimator
+    public TextView getCurrentView() {
+        return (TextView) super.getCurrentView();
+    }
+
+    @Override // android.widget.ViewSwitcher
+    public TextView getNextView() {
+        return (TextView) super.getNextView();
     }
 }

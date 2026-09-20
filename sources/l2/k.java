@@ -2,14 +2,13 @@ package l2;
 
 import b2.p;
 import b2.r0;
-import b2.s;
 import com.google.firebase.messaging.t;
 import j$.util.Objects;
 import java.util.ArrayList;
 import java.util.List;
-import x2.r;
+import x2.s;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class k {
     public final y2.n a;
@@ -21,17 +20,17 @@ public final class k {
     public final int g;
     public final n h;
     public final i[] i;
-    public r j;
+    public s j;
     public m2.c k;
     public int l;
     public u2.b m;
     public boolean n;
 
     /* JADX WARN: Type inference failed for: r0v0, types: [java.lang.Object, l2.k] */
-    public k(p pVar, y2.n nVar, m2.c cVar, t tVar, int i10, int[] iArr, r rVar, int i11, g2.h hVar, long j3, int i12, boolean z10, ArrayList arrayList, n nVar2) {
+    public k(p pVar, y2.n nVar, m2.c cVar, t tVar, int i10, int[] iArr, s sVar, int i11, g2.h hVar, long j3, int i12, boolean z10, ArrayList arrayList, n nVar2) {
         m2.m mVar;
         i[] iVarArr;
-        s sVar;
+        b2.s sVar2;
         c3.o iVar;
         v2.d dVar;
         ?? obj = new Object();
@@ -39,7 +38,7 @@ public final class k {
         obj.k = cVar;
         obj.b = tVar;
         obj.c = iArr;
-        obj.j = rVar;
+        obj.j = sVar;
         obj.d = i11;
         obj.e = hVar;
         obj.l = i10;
@@ -49,22 +48,22 @@ public final class k {
         obj.h = nVar3;
         long d = cVar.d(i10);
         ArrayList a2 = obj.a();
-        obj.i = new i[rVar.length()];
+        obj.i = new i[sVar.length()];
         int i13 = 0;
         int i14 = 0;
         k kVar = obj;
         while (i14 < kVar.i.length) {
-            m2.m mVar2 = (m2.m) a2.get(rVar.h(i14));
+            m2.m mVar2 = (m2.m) a2.get(sVar.h(i14));
             m2.b j10 = tVar.j(mVar2.b);
             i[] iVarArr2 = kVar.i;
             m2.b bVar = j10 == null ? (m2.b) mVar2.b.get(i13) : j10;
-            s sVar2 = mVar2.a;
+            b2.s sVar3 = mVar2.a;
             pVar.getClass();
-            String str = sVar2.q;
+            String str = sVar3.q;
             if (!r0.l(str)) {
                 if (str != null && (str.startsWith("video/webm") || str.startsWith("audio/webm") || str.startsWith("application/webm") || str.startsWith("video/x-matroska") || str.startsWith("audio/x-matroska") || str.startsWith("application/x-matroska"))) {
                     mVar = mVar2;
-                    sVar = sVar2;
+                    sVar2 = sVar3;
                     iVarArr = iVarArr2;
                     iVar = new u3.d((qb.b) pVar.c, pVar.b ? 1 : 3);
                 } else if (Objects.equals(str, "image/jpeg")) {
@@ -76,10 +75,10 @@ public final class k {
                     mVar = mVar2;
                     int i16 = pVar.b ? i15 : i15 | 32;
                     iVarArr = iVarArr2;
-                    sVar = sVar2;
+                    sVar2 = sVar3;
                     iVar = new w3.i((qb.b) pVar.c, i16, null, arrayList, nVar3);
                 }
-                dVar = new v2.d(iVar, i11, sVar);
+                dVar = new v2.d(iVar, i11, sVar2);
                 v2.d dVar2 = dVar;
                 int i17 = i14;
                 long j11 = d;
@@ -90,7 +89,7 @@ public final class k {
                 d = j11;
                 i13 = 0;
             } else if (pVar.b) {
-                iVar = new z3.h(((qb.b) pVar.c).x(sVar2), sVar2);
+                iVar = new z3.h(((qb.b) pVar.c).x(sVar3), sVar3);
             } else {
                 dVar = null;
                 mVar = mVar2;
@@ -106,9 +105,9 @@ public final class k {
                 i13 = 0;
             }
             mVar = mVar2;
-            sVar = sVar2;
+            sVar2 = sVar3;
             iVarArr = iVarArr2;
-            dVar = new v2.d(iVar, i11, sVar);
+            dVar = new v2.d(iVar, i11, sVar2);
             v2.d dVar222 = dVar;
             int i1722 = i14;
             long j1122 = d;

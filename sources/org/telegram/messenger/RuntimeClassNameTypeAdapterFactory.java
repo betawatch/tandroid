@@ -6,7 +6,7 @@ import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class RuntimeClassNameTypeAdapterFactory<T> implements db.v {
     private final Class<?> baseType;
@@ -105,7 +105,7 @@ public final class RuntimeClassNameTypeAdapterFactory<T> implements db.v {
                         try {
                             uVar = gVar.c(RuntimeClassNameTypeAdapterFactory.this, new kb.a(Class.forName(n10)));
                         } catch (ClassNotFoundException e10) {
-                            throw new androidx.car.app.j(t8.b.i("Cannot find class ", n10), e10);
+                            throw new androidx.car.app.j(v7.j0.g("Cannot find class ", n10), e10);
                         }
                     }
                     return uVar.fromJsonTree(iVar);

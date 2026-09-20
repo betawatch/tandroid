@@ -3,8 +3,8 @@ package ci;
 import android.graphics.Bitmap;
 import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
-import android.view.TextureView;
 import android.view.View;
+import android.widget.FrameLayout;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -35,36 +35,36 @@ import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.AnimatedPhoneNumberEditText;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.a60;
-import org.telegram.ui.Components.be0;
+import org.telegram.ui.Components.ae0;
 import org.telegram.ui.Components.c10;
-import org.telegram.ui.Components.hy0;
-import org.telegram.ui.Components.jh0;
-import org.telegram.ui.Components.ka0;
-import org.telegram.ui.Components.lc0;
-import org.telegram.ui.Components.sv;
+import org.telegram.ui.Components.gy0;
+import org.telegram.ui.Components.ih0;
+import org.telegram.ui.Components.ja0;
+import org.telegram.ui.Components.kc0;
+import org.telegram.ui.Components.s61;
 import org.telegram.ui.Components.t00;
-import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.tv;
 import org.telegram.ui.Components.vi;
 import org.telegram.ui.Components.z00;
+import org.telegram.ui.Components.z50;
 import org.telegram.ui.FiltersSetupActivity;
 import org.telegram.ui.LanguageSelectActivity;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.c00;
 import org.telegram.ui.f10;
 import org.telegram.ui.fp;
+import org.telegram.ui.gh;
 import org.telegram.ui.hp;
 import org.telegram.ui.ln;
 import org.telegram.ui.pp;
 import org.telegram.ui.q80;
-import org.telegram.ui.qh;
 import org.telegram.ui.qp;
 import org.telegram.ui.tw;
 import org.telegram.ui.up;
 import org.telegram.ui.uy;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class y0 implements Runnable {
     public final /* synthetic */ int a;
@@ -79,18 +79,18 @@ public final /* synthetic */ class y0 implements Runnable {
         this.b = z10;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:304:0x05f9, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:309:0x05f4, code lost:
     
         if (r6 == null) goto L267;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:381:0x06fb, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:375:0x06f6, code lost:
     
         if (r6 == null) goto L324;
      */
     /* JADX WARN: Finally extract failed */
-    /* JADX WARN: Removed duplicated region for block: B:184:0x03f6  */
-    /* JADX WARN: Removed duplicated region for block: B:189:0x0419  */
-    /* JADX WARN: Removed duplicated region for block: B:196:0x0403  */
+    /* JADX WARN: Removed duplicated region for block: B:184:0x03ef  */
+    /* JADX WARN: Removed duplicated region for block: B:189:0x0412  */
+    /* JADX WARN: Removed duplicated region for block: B:196:0x03fc  */
     @Override // java.lang.Runnable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -284,152 +284,149 @@ public final /* synthetic */ class y0 implements Runnable {
                 ii.j4.k((org.telegram.ui.ActionBar.n2) obj2, z10, new ii.g4(v3Var, i13));
                 return;
             case 7:
-                ki.f fVar = (ki.f) obj;
-                int i19 = fVar.a;
-                ki.h0 h0Var = (ki.h0) ((k2.u) obj2).b;
-                l.d dVar = h0Var.c;
-                int i20 = h0Var.Q;
-                if (i20 == 7 || i20 == 8 || i20 == 9 || i20 == 10) {
+                ki.g gVar = (ki.g) obj;
+                ki.h0 h0Var = gVar.a;
+                ki.o0 o0Var = (ki.o0) ((k2.u) obj2).b;
+                int i19 = o0Var.U;
+                if (i19 == 7 || i19 == 8 || i19 == 9 || i19 == 10) {
                     return;
                 }
-                int i21 = fVar.b;
-                h0Var.S = i19;
-                h0Var.T = i21;
-                h0Var.n = fVar.e;
-                if (i19 != 1) {
-                    if (fVar.f) {
+                ki.j0 j0Var = gVar.c;
+                ki.i0 i0Var = gVar.b;
+                o0Var.p = h0Var;
+                o0Var.q = i0Var;
+                o0Var.r = j0Var;
+                o0Var.s = gVar.f;
+                if (h0Var != ki.h0.a) {
+                    if (gVar.g) {
                         i10 = 2;
-                        h0Var.U = i10;
-                        b2.q0 q0Var = new b2.q0(h0Var.R, i10);
-                        a60 a60Var = (a60) dVar.a;
-                        a60Var.L = q0Var;
-                        a60.l(a60Var);
-                        ki.j jVar = h0Var.l;
+                        o0Var.V = i10;
+                        o0Var.m();
+                        ki.k kVar = o0Var.l;
                         StringBuilder sb3 = new StringBuilder("camera configured: facing=");
-                        sb3.append(hg.k0.z(i19));
+                        sb3.append(h0Var);
                         sb3.append(", mode=");
-                        sb3.append(hg.k0.A(i21));
+                        sb3.append(i0Var);
                         sb3.append(", preview=");
-                        sb3.append(fVar.c);
+                        sb3.append(gVar.d);
                         sb3.append(", recording=");
-                        sb3.append(fVar.d);
+                        sb3.append(gVar.e);
+                        sb3.append(", fps=");
+                        sb3.append(j0Var.a);
                         sb3.append(", maxZoom=");
-                        sb3.append(h0Var.n);
+                        sb3.append(o0Var.s);
                         sb3.append(", flash=");
-                        int i22 = h0Var.U;
-                        sb3.append(i22 == 1 ? i22 != 2 ? i22 != 3 ? BuildConfig.BETA_URL : "SCREEN" : "TORCH" : "NONE");
+                        int i20 = o0Var.V;
+                        sb3.append(i20 == 1 ? i20 != 2 ? i20 != 3 ? BuildConfig.BETA_URL : "SCREEN" : "TORCH" : "NONE");
                         sb3.append(", switch=");
                         sb3.append(z10);
-                        jVar.b(sb3.toString());
+                        kVar.b(sb3.toString());
                         if (z10) {
                         }
-                        h0Var.q = false;
-                        TextureView textureView = ((a60) dVar.a).v;
-                        textureView.animate().cancel();
-                        textureView.setRotationY(-90.0f);
-                        textureView.animate().rotationY(0.0f).setDuration(140L).start();
-                        h0Var.m();
+                        o0Var.v = false;
+                        FrameLayout frameLayout = ((z50) o0Var.c.a).v;
+                        frameLayout.animate().cancel();
+                        frameLayout.setRotationY(-90.0f);
+                        frameLayout.animate().rotationY(0.0f).setDuration(140L).start();
+                        o0Var.n();
                         return;
                     }
                     i10 = 1;
-                    h0Var.U = i10;
-                    b2.q0 q0Var2 = new b2.q0(h0Var.R, i10);
-                    a60 a60Var2 = (a60) dVar.a;
-                    a60Var2.L = q0Var2;
-                    a60.l(a60Var2);
-                    ki.j jVar2 = h0Var.l;
+                    o0Var.V = i10;
+                    o0Var.m();
+                    ki.k kVar2 = o0Var.l;
                     StringBuilder sb32 = new StringBuilder("camera configured: facing=");
-                    sb32.append(hg.k0.z(i19));
+                    sb32.append(h0Var);
                     sb32.append(", mode=");
-                    sb32.append(hg.k0.A(i21));
+                    sb32.append(i0Var);
                     sb32.append(", preview=");
-                    sb32.append(fVar.c);
+                    sb32.append(gVar.d);
                     sb32.append(", recording=");
-                    sb32.append(fVar.d);
+                    sb32.append(gVar.e);
+                    sb32.append(", fps=");
+                    sb32.append(j0Var.a);
                     sb32.append(", maxZoom=");
-                    sb32.append(h0Var.n);
+                    sb32.append(o0Var.s);
                     sb32.append(", flash=");
-                    int i222 = h0Var.U;
-                    sb32.append(i222 == 1 ? i222 != 2 ? i222 != 3 ? BuildConfig.BETA_URL : "SCREEN" : "TORCH" : "NONE");
+                    int i202 = o0Var.V;
+                    sb32.append(i202 == 1 ? i202 != 2 ? i202 != 3 ? BuildConfig.BETA_URL : "SCREEN" : "TORCH" : "NONE");
                     sb32.append(", switch=");
                     sb32.append(z10);
-                    jVar2.b(sb32.toString());
+                    kVar2.b(sb32.toString());
                     if (z10) {
                     }
-                    h0Var.q = false;
-                    TextureView textureView2 = ((a60) dVar.a).v;
-                    textureView2.animate().cancel();
-                    textureView2.setRotationY(-90.0f);
-                    textureView2.animate().rotationY(0.0f).setDuration(140L).start();
-                    h0Var.m();
+                    o0Var.v = false;
+                    FrameLayout frameLayout2 = ((z50) o0Var.c.a).v;
+                    frameLayout2.animate().cancel();
+                    frameLayout2.setRotationY(-90.0f);
+                    frameLayout2.animate().rotationY(0.0f).setDuration(140L).start();
+                    o0Var.n();
                     return;
                 }
-                if (h0Var.e != null) {
+                if (o0Var.e != null) {
                     i10 = 3;
-                    h0Var.U = i10;
-                    b2.q0 q0Var22 = new b2.q0(h0Var.R, i10);
-                    a60 a60Var22 = (a60) dVar.a;
-                    a60Var22.L = q0Var22;
-                    a60.l(a60Var22);
-                    ki.j jVar22 = h0Var.l;
+                    o0Var.V = i10;
+                    o0Var.m();
+                    ki.k kVar22 = o0Var.l;
                     StringBuilder sb322 = new StringBuilder("camera configured: facing=");
-                    sb322.append(hg.k0.z(i19));
+                    sb322.append(h0Var);
                     sb322.append(", mode=");
-                    sb322.append(hg.k0.A(i21));
+                    sb322.append(i0Var);
                     sb322.append(", preview=");
-                    sb322.append(fVar.c);
+                    sb322.append(gVar.d);
                     sb322.append(", recording=");
-                    sb322.append(fVar.d);
+                    sb322.append(gVar.e);
+                    sb322.append(", fps=");
+                    sb322.append(j0Var.a);
                     sb322.append(", maxZoom=");
-                    sb322.append(h0Var.n);
+                    sb322.append(o0Var.s);
                     sb322.append(", flash=");
-                    int i2222 = h0Var.U;
-                    sb322.append(i2222 == 1 ? i2222 != 2 ? i2222 != 3 ? BuildConfig.BETA_URL : "SCREEN" : "TORCH" : "NONE");
+                    int i2022 = o0Var.V;
+                    sb322.append(i2022 == 1 ? i2022 != 2 ? i2022 != 3 ? BuildConfig.BETA_URL : "SCREEN" : "TORCH" : "NONE");
                     sb322.append(", switch=");
                     sb322.append(z10);
-                    jVar22.b(sb322.toString());
-                    if (!z10 || h0Var.q) {
-                        h0Var.q = false;
-                        TextureView textureView22 = ((a60) dVar.a).v;
-                        textureView22.animate().cancel();
-                        textureView22.setRotationY(-90.0f);
-                        textureView22.animate().rotationY(0.0f).setDuration(140L).start();
-                        h0Var.m();
+                    kVar22.b(sb322.toString());
+                    if (!z10 || o0Var.v) {
+                        o0Var.v = false;
+                        FrameLayout frameLayout22 = ((z50) o0Var.c.a).v;
+                        frameLayout22.animate().cancel();
+                        frameLayout22.setRotationY(-90.0f);
+                        frameLayout22.animate().rotationY(0.0f).setDuration(140L).start();
+                        o0Var.n();
                         return;
                     }
                     return;
                 }
                 i10 = 1;
-                h0Var.U = i10;
-                b2.q0 q0Var222 = new b2.q0(h0Var.R, i10);
-                a60 a60Var222 = (a60) dVar.a;
-                a60Var222.L = q0Var222;
-                a60.l(a60Var222);
-                ki.j jVar222 = h0Var.l;
+                o0Var.V = i10;
+                o0Var.m();
+                ki.k kVar222 = o0Var.l;
                 StringBuilder sb3222 = new StringBuilder("camera configured: facing=");
-                sb3222.append(hg.k0.z(i19));
+                sb3222.append(h0Var);
                 sb3222.append(", mode=");
-                sb3222.append(hg.k0.A(i21));
+                sb3222.append(i0Var);
                 sb3222.append(", preview=");
-                sb3222.append(fVar.c);
+                sb3222.append(gVar.d);
                 sb3222.append(", recording=");
-                sb3222.append(fVar.d);
+                sb3222.append(gVar.e);
+                sb3222.append(", fps=");
+                sb3222.append(j0Var.a);
                 sb3222.append(", maxZoom=");
-                sb3222.append(h0Var.n);
+                sb3222.append(o0Var.s);
                 sb3222.append(", flash=");
-                int i22222 = h0Var.U;
-                sb3222.append(i22222 == 1 ? i22222 != 2 ? i22222 != 3 ? BuildConfig.BETA_URL : "SCREEN" : "TORCH" : "NONE");
+                int i20222 = o0Var.V;
+                sb3222.append(i20222 == 1 ? i20222 != 2 ? i20222 != 3 ? BuildConfig.BETA_URL : "SCREEN" : "TORCH" : "NONE");
                 sb3222.append(", switch=");
                 sb3222.append(z10);
-                jVar222.b(sb3222.toString());
+                kVar222.b(sb3222.toString());
                 if (z10) {
                 }
-                h0Var.q = false;
-                TextureView textureView222 = ((a60) dVar.a).v;
-                textureView222.animate().cancel();
-                textureView222.setRotationY(-90.0f);
-                textureView222.animate().rotationY(0.0f).setDuration(140L).start();
-                h0Var.m();
+                o0Var.v = false;
+                FrameLayout frameLayout222 = ((z50) o0Var.c.a).v;
+                frameLayout222.animate().cancel();
+                frameLayout222.setRotationY(-90.0f);
+                frameLayout222.animate().rotationY(0.0f).setDuration(140L).start();
+                o0Var.n();
                 return;
             case 8:
                 ((CameraController) obj2).lambda$initCamera$4(z10, (Runnable) obj);
@@ -453,27 +450,27 @@ public final /* synthetic */ class y0 implements Runnable {
                 }
                 return;
             case 11:
-                org.telegram.ui.ActionBar.d6 d6Var = (org.telegram.ui.ActionBar.d6) obj2;
+                org.telegram.ui.ActionBar.e6 e6Var = (org.telegram.ui.ActionBar.e6) obj2;
                 ArrayList arrayList10 = (ArrayList) obj;
-                int i23 = d6Var.a;
+                int i21 = e6Var.a;
                 if (arrayList10 != null && (arrayList = org.telegram.ui.ActionBar.j6.I.b0) != null && !arrayList.isEmpty() && arrayList10.contains(org.telegram.ui.ActionBar.j6.I.k(false))) {
                     org.telegram.ui.ActionBar.j6.o1(true);
                 }
                 if (!z10) {
-                    HashMap hashMap = d6Var.b;
+                    HashMap hashMap = e6Var.b;
                     if (hashMap == null || hashMap.isEmpty()) {
-                        NotificationCenter.getInstance(i23).removeObserver(d6Var, NotificationCenter.fileLoaded);
-                        NotificationCenter.getInstance(i23).removeObserver(d6Var, NotificationCenter.fileLoadFailed);
+                        NotificationCenter.getInstance(i21).removeObserver(e6Var, NotificationCenter.fileLoaded);
+                        NotificationCenter.getInstance(i21).removeObserver(e6Var, NotificationCenter.fileLoadFailed);
                         return;
                     }
                     return;
                 }
-                if (d6Var.b != null) {
-                    NotificationCenter.getInstance(i23).addObserver(d6Var, NotificationCenter.fileLoaded);
-                    NotificationCenter.getInstance(i23).addObserver(d6Var, NotificationCenter.fileLoadFailed);
-                    Iterator it2 = d6Var.b.entrySet().iterator();
+                if (e6Var.b != null) {
+                    NotificationCenter.getInstance(i21).addObserver(e6Var, NotificationCenter.fileLoaded);
+                    NotificationCenter.getInstance(i21).addObserver(e6Var, NotificationCenter.fileLoadFailed);
+                    Iterator it2 = e6Var.b.entrySet().iterator();
                     while (it2.hasNext()) {
-                        FileLoader.getInstance(i23).loadFile(ImageLocation.getForDocument(((org.telegram.ui.ActionBar.c6) ((Map.Entry) it2.next()).getValue()).a.document), "wallpaper", null, 0, 1);
+                        FileLoader.getInstance(i21).loadFile(ImageLocation.getForDocument(((org.telegram.ui.ActionBar.d6) ((Map.Entry) it2.next()).getValue()).a.document), "wallpaper", null, 0, 1);
                     }
                     return;
                 }
@@ -482,14 +479,14 @@ public final /* synthetic */ class y0 implements Runnable {
                 ((zn) obj2).rc((MessageObject) obj, z10);
                 return;
             case 13:
-                org.telegram.ui.ActionBar.g6 g6Var = (org.telegram.ui.ActionBar.g6) obj2;
+                org.telegram.ui.ActionBar.h6 h6Var = (org.telegram.ui.ActionBar.h6) obj2;
                 org.telegram.ui.ActionBar.i6 i6Var = (org.telegram.ui.ActionBar.i6) obj;
-                if (g6Var == null) {
+                if (h6Var == null) {
                     NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needSetDayNightTheme, i6Var, Boolean.FALSE, null, -1);
                     return;
                 }
-                org.telegram.ui.ActionBar.g6 k10 = i6Var.k(false);
-                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needSetDayNightTheme, i6Var, Boolean.FALSE, null, Integer.valueOf(g6Var.a));
+                org.telegram.ui.ActionBar.h6 k10 = i6Var.k(false);
+                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needSetDayNightTheme, i6Var, Boolean.FALSE, null, Integer.valueOf(h6Var.a));
                 if (z10) {
                     org.telegram.ui.ActionBar.j6.j0(i6Var, k10, true);
                     return;
@@ -514,16 +511,16 @@ public final /* synthetic */ class y0 implements Runnable {
                 tL_inputStickerSetID.access_hash = stickerSet.access_hash;
                 tL_inputStickerSetID.id = stickerSet.id;
                 if (!z10) {
-                    hy0 hy0Var = new hy0(znVar.getParentActivity(), znVar, tL_inputStickerSetID, null, znVar.Y, znVar.ea);
-                    hy0Var.setCalcMandatoryInsets(znVar.x9());
-                    znVar.showDialog(hy0Var);
+                    gy0 gy0Var = new gy0(znVar.getParentActivity(), znVar, tL_inputStickerSetID, null, znVar.Y, znVar.ea);
+                    gy0Var.setCalcMandatoryInsets(znVar.x9());
+                    znVar.showDialog(gy0Var);
                     return;
                 } else {
                     ArrayList arrayList11 = new ArrayList(1);
                     arrayList11.add(tL_inputStickerSetID);
-                    sv svVar = new sv(znVar, znVar.getParentActivity(), znVar.ea, arrayList11);
-                    svVar.setCalcMandatoryInsets(znVar.x9());
-                    znVar.showDialog(svVar);
+                    tv tvVar = new tv(znVar, znVar.getParentActivity(), znVar.ea, arrayList11);
+                    tvVar.setCalcMandatoryInsets(znVar.x9());
+                    znVar.showDialog(tvVar);
                     return;
                 }
             case 15:
@@ -547,7 +544,7 @@ public final /* synthetic */ class y0 implements Runnable {
                 }
                 chat.join_request = false;
                 upVar.P = true;
-                upVar.getMessagesController().toggleChatJoinRequest(chat.id, false, new pp(qpVar, i14), new qh(20, qpVar, chat));
+                upVar.getMessagesController().toggleChatJoinRequest(chat.id, false, new pp(qpVar, i14), new gh(22, qpVar, chat));
                 return;
             case 17:
                 AnimatedPhoneNumberEditText.j((AnimatedPhoneNumberEditText) obj2, z10, (String) obj);
@@ -565,47 +562,47 @@ public final /* synthetic */ class y0 implements Runnable {
                 ((c10) obj2).R((z00) obj, !z10);
                 return;
             case 20:
-                ka0 ka0Var = (ka0) obj2;
-                ka0Var.getMessagesController().getStoriesController().o0(ka0Var.e, (ArrayList) obj, this.b, null);
+                ja0 ja0Var = (ja0) obj2;
+                ja0Var.getMessagesController().getStoriesController().o0(ja0Var.e, (ArrayList) obj, this.b, null);
                 return;
             case 21:
-                be0 be0Var = (be0) obj2;
-                lc0 lc0Var = (lc0) obj;
+                ae0 ae0Var = (ae0) obj2;
+                kc0 kc0Var = (kc0) obj;
                 if (z10) {
-                    lc0Var.x(true);
+                    kc0Var.x(true);
                 } else {
-                    lc0Var.y();
+                    kc0Var.y();
                 }
-                be0Var.b(lc0Var);
+                ae0Var.b(kc0Var);
                 return;
             case 22:
                 i2 i2Var = (i2) obj2;
-                lc0 lc0Var2 = (lc0) obj;
+                kc0 kc0Var2 = (kc0) obj;
                 if (z10) {
-                    lc0Var2.x(true);
+                    kc0Var2.x(true);
                 } else {
-                    lc0Var2.y();
+                    kc0Var2.y();
                 }
-                ((be0) i2Var.b).b(lc0Var2);
+                ((ae0) i2Var.b).b(kc0Var2);
                 return;
             case 23:
-                jh0 jh0Var = (jh0) obj2;
-                t61 t61Var = jh0Var.c;
+                ih0 ih0Var = (ih0) obj2;
+                s61 s61Var = ih0Var.c;
                 ArrayList arrayList12 = (ArrayList) obj;
                 if (z10) {
-                    arrayList12 = jh0Var.e;
+                    arrayList12 = ih0Var.e;
                 }
                 if (arrayList12.isEmpty()) {
                     return;
                 }
-                if (t61Var.canScrollVertically(1)) {
-                    for (int i24 = 0; i24 < t61Var.getChildCount(); i24++) {
-                        if (!(t61Var.getChildAt(i24) instanceof t00)) {
+                if (s61Var.canScrollVertically(1)) {
+                    for (int i22 = 0; i22 < s61Var.getChildCount(); i22++) {
+                        if (!(s61Var.getChildAt(i22) instanceof t00)) {
                         }
                     }
                     return;
                 }
-                jh0Var.a(false);
+                ih0Var.a(false);
                 return;
             case 24:
                 org.telegram.ui.Components.voip.u uVar = (org.telegram.ui.Components.voip.u) obj2;
@@ -622,22 +619,22 @@ public final /* synthetic */ class y0 implements Runnable {
             case 26:
                 ArrayList arrayList13 = (ArrayList) obj;
                 uy uyVar = ((tw) obj2).b;
-                int i25 = 0;
-                for (int i26 = 0; i26 < arrayList13.size(); i26++) {
-                    TLRPC.Dialog dialog = (TLRPC.Dialog) arrayList13.get(i26);
+                int i23 = 0;
+                for (int i24 = 0; i24 < arrayList13.size(); i24++) {
+                    TLRPC.Dialog dialog = (TLRPC.Dialog) arrayList13.get(i24);
                     if (dialog != null) {
                         uyVar.getNotificationsController().setDialogNotificationsSettings(dialog.id, 0L, z10 ? 3 : 4);
-                        i25++;
+                        i23++;
                     }
                 }
-                org.telegram.ui.Components.yb ybVar = new org.telegram.ui.Components.yb(uyVar.getParentActivity(), null);
-                ybVar.b.setText(z10 ? LocaleController.formatPluralString("NotificationsMutedHintChats", i25, new Object[0]) : LocaleController.formatPluralString("NotificationsUnmutedHintChats", i25, new Object[0]));
+                org.telegram.ui.Components.xb xbVar = new org.telegram.ui.Components.xb(uyVar.getParentActivity(), null);
+                xbVar.b.setText(z10 ? LocaleController.formatPluralString("NotificationsMutedHintChats", i23, new Object[0]) : LocaleController.formatPluralString("NotificationsUnmutedHintChats", i23, new Object[0]));
                 if (z10) {
-                    ybVar.d(R.raw.ic_mute, "Body Main", "Body Top", "Line", "Curve Big", "Curve Small");
+                    xbVar.d(R.raw.ic_mute, "Body Main", "Body Top", "Line", "Curve Big", "Curve Small");
                 } else {
-                    ybVar.d(R.raw.ic_unmute, "BODY", "Wibe Big", "Wibe Big 3", "Wibe Small");
+                    xbVar.d(R.raw.ic_unmute, "BODY", "Wibe Big", "Wibe Big 3", "Wibe Small");
                 }
-                org.telegram.ui.Components.qc.g(uyVar, ybVar, 1500).j();
+                org.telegram.ui.Components.pc.g(uyVar, xbVar, 1500).j();
                 return;
             case 27:
                 ((c00) obj2).Z((z00) obj, !z10);

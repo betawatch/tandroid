@@ -8,29 +8,29 @@ import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class sc extends FrameLayout {
-    public final org.telegram.ui.ActionBar.e6 a;
-    public final dc1 b;
+    public final org.telegram.ui.ActionBar.f6 a;
+    public final fc1 b;
     public final s4.c0 c;
     public final int d;
     public int e;
 
-    public sc(int i10, Activity activity, org.telegram.ui.ActionBar.e6 e6Var) {
+    public sc(int i10, Activity activity, org.telegram.ui.ActionBar.f6 f6Var) {
         super(activity);
         this.d = i10;
-        this.a = e6Var;
-        dc1 dc1Var = new dc1(activity, 3, e6Var);
-        this.b = dc1Var;
-        dc1Var.setPadding(AndroidUtilities.dp(6.0f), AndroidUtilities.dp(5.0f), AndroidUtilities.dp(6.0f), 0);
-        dc1Var.setClipToPadding(false);
-        dc1Var.setAdapter(new qc(this, activity, e6Var, i10));
+        this.a = f6Var;
+        fc1 fc1Var = new fc1(activity, 3, f6Var);
+        this.b = fc1Var;
+        fc1Var.setPadding(AndroidUtilities.dp(6.0f), AndroidUtilities.dp(5.0f), AndroidUtilities.dp(6.0f), 0);
+        fc1Var.setClipToPadding(false);
+        fc1Var.setAdapter(new qc(this, activity, f6Var, i10));
         s4.c0 c0Var = new s4.c0();
         this.c = c0Var;
         c0Var.j1(0);
-        dc1Var.setLayoutManager(c0Var);
-        addView(dc1Var, w7.y5.c(-1.0f, -1));
+        fc1Var.setLayoutManager(c0Var);
+        addView(fc1Var, w7.y5.c(-1.0f, -1));
     }
 
     public final void a(int i10, boolean z10) {

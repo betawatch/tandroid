@@ -78,24 +78,24 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Cells.p9;
 import org.telegram.ui.Cells.q9;
-import org.telegram.ui.Components.d5;
-import org.telegram.ui.Components.kq0;
+import org.telegram.ui.Cells.r9;
+import org.telegram.ui.Components.c5;
+import org.telegram.ui.Components.jq0;
 import org.telegram.ui.Components.no0;
-import org.telegram.ui.cj0;
+import org.telegram.ui.dj0;
 import org.telegram.ui.zn;
 import pg.m;
 import pg.s1;
 import pg.u0;
-import qg.v1;
-import v7.i5;
-import v7.t7;
+import qg.w1;
+import v7.j5;
+import v7.u7;
 import w9.h;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
-public final class c implements s, kq0, a0, androidx.activity.result.b, ce.b, v1, v0, OnSuccessListener, SuccessContinuation, f6.a, n, s0, x, b2, he.a, no0, d5, k0 {
+public final class c implements s, jq0, a0, androidx.activity.result.b, ce.b, w1, v0, OnSuccessListener, SuccessContinuation, f6.a, n, s0, x, b2, he.a, no0, c5, k0 {
     public static volatile c c;
     public final /* synthetic */ int a;
     public Object b;
@@ -105,14 +105,14 @@ public final class c implements s, kq0, a0, androidx.activity.result.b, ce.b, v1
         this.b = strArr;
     }
 
-    public static p t(Looper looper, Object obj, String str) {
+    public static p p(Looper looper, Object obj, String str) {
         l.i(obj, "Listener must not be null");
         l.i(looper, "Looper must not be null");
         return new p(looper, obj, str);
     }
 
     @Override // ii.k0
-    public q9 C() {
+    public r9 B() {
         m4 m4Var = ((o4) this.b).G;
         if (m4Var != null) {
             return ((s3) m4Var).a.getTextSelectionHelper();
@@ -134,7 +134,12 @@ public final class c implements s, kq0, a0, androidx.activity.result.b, ce.b, v1
     }
 
     @Override // gg.b2
-    public void F(ArrayList arrayList) {
+    public /* synthetic */ boolean F(int i10) {
+        return true;
+    }
+
+    @Override // gg.b2
+    public void G(ArrayList arrayList) {
         k1 k1Var = (k1) this.b;
         String str = k1Var.Z;
         if (str != null) {
@@ -143,28 +148,19 @@ public final class c implements s, kq0, a0, androidx.activity.result.b, ce.b, v1
     }
 
     @Override // ii.k0
-    public p9 I() {
+    public q9 I() {
         return (o4) this.b;
     }
 
-    @Override // org.telegram.ui.Components.d5
+    @Override // org.telegram.ui.Components.c5
     public void J(int i10, int i11, boolean z10) {
         d2 d2Var = (d2) this.b;
         d2Var.s0(i10, i11, z10);
-        cj0 cj0Var = d2Var.O0;
-        if (cj0Var != null) {
-            cj0Var.i();
+        dj0 dj0Var = d2Var.O0;
+        if (dj0Var != null) {
+            dj0Var.i();
             d2Var.O0 = null;
         }
-    }
-
-    @Override // qg.v1
-    public void K(float f7) {
-        qb qbVar = (qb) this.b;
-        u0.e(qbVar.F1).k(String.valueOf(m.a.indexOf(qbVar.O0.getCurrentBrush())), f7);
-        s1 s1Var = qbVar.A1;
-        s1Var.c = f7;
-        qbVar.E0(s1Var, null, false);
     }
 
     @Override // ii.k0
@@ -271,7 +267,7 @@ public final class c implements s, kq0, a0, androidx.activity.result.b, ce.b, v1
         if (m4Var != null) {
             w3 w3Var = ((s3) m4Var).a;
             w3.N1(w3Var, i1Var);
-            w3Var.h3.t(i1Var, true);
+            w3Var.h3.x(i1Var, true);
         }
     }
 
@@ -338,7 +334,7 @@ public final class c implements s, kq0, a0, androidx.activity.result.b, ce.b, v1
         }
     }
 
-    @Override // qg.v1
+    @Override // qg.w1
     public float get() {
         qb qbVar = (qb) this.b;
         int i10 = qbVar.F1;
@@ -355,18 +351,37 @@ public final class c implements s, kq0, a0, androidx.activity.result.b, ce.b, v1
         }
     }
 
-    @Override // gg.b2
-    public /* synthetic */ a0.i i() {
-        return null;
+    @Override // com.google.android.gms.common.api.internal.v0
+    public void i(k6.a aVar) {
+        com.google.android.gms.common.api.internal.x xVar = (com.google.android.gms.common.api.internal.x) this.b;
+        xVar.o.lock();
+        try {
+            xVar.l = aVar;
+            com.google.android.gms.common.api.internal.x.l(xVar);
+        } finally {
+            xVar.o.unlock();
+        }
     }
 
-    public void j(j jVar) {
-        LinkedHashMap linkedHashMap = (LinkedHashMap) this.b;
-        long[] jArr = jVar.e;
-        if (jArr.length <= 0 || linkedHashMap.containsKey(Long.valueOf(jArr[0]))) {
-            return;
+    @Override // com.google.android.gms.common.api.internal.v0
+    public void j(int i10) {
+        k6.a aVar;
+        com.google.android.gms.common.api.internal.x xVar = (com.google.android.gms.common.api.internal.x) this.b;
+        Lock lock = xVar.o;
+        lock.lock();
+        try {
+            if (!xVar.n && (aVar = xVar.m) != null && aVar.c()) {
+                xVar.n = true;
+                xVar.e.onConnectionSuspended(i10);
+                lock.unlock();
+            }
+            xVar.n = false;
+            com.google.android.gms.common.api.internal.x.k(xVar, i10);
+            lock.unlock();
+        } catch (Throwable th2) {
+            lock.unlock();
+            throw th2;
         }
-        linkedHashMap.put(Long.valueOf(jVar.e[0]), jVar);
     }
 
     @Override // androidx.activity.result.b
@@ -397,84 +412,18 @@ public final class c implements s, kq0, a0, androidx.activity.result.b, ce.b, v1
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:21:0x0035  */
-    /* JADX WARN: Removed duplicated region for block: B:8:0x0023  */
-    @Override // ce.b
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public Object l(ce.c cVar, kd.c cVar2) {
-        ce.a aVar;
-        int i10;
-        Throwable th2;
-        de.g gVar;
-        if (cVar2 instanceof ce.a) {
-            aVar = (ce.a) cVar2;
-            int i11 = aVar.d;
-            if ((i11 & TLObject.FLAG_31) != 0) {
-                aVar.d = i11 - TLObject.FLAG_31;
-                Object obj = aVar.b;
-                jd.a aVar2 = jd.a.a;
-                i10 = aVar.d;
-                gd.i iVar = gd.i.a;
-                if (i10 != 0) {
-                    t7.b(obj);
-                    de.g gVar2 = new de.g(cVar, aVar.getContext());
-                    try {
-                        aVar.a = gVar2;
-                        aVar.d = 1;
-                        Object invoke = ((k1.m) this.b).invoke(gVar2, aVar);
-                        if (invoke != aVar2) {
-                            invoke = iVar;
-                        }
-                        if (invoke == aVar2) {
-                            return aVar2;
-                        }
-                        gVar = gVar2;
-                    } catch (Throwable th3) {
-                        th2 = th3;
-                        gVar = gVar2;
-                        gVar.releaseIntercepted();
-                        throw th2;
-                    }
-                } else {
-                    if (i10 != 1) {
-                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
-                    }
-                    gVar = aVar.a;
-                    try {
-                        t7.b(obj);
-                    } catch (Throwable th4) {
-                        th2 = th4;
-                        gVar.releaseIntercepted();
-                        throw th2;
-                    }
-                }
-                gVar.releaseIntercepted();
-                return iVar;
-            }
-        }
-        aVar = new ce.a(this, cVar2);
-        Object obj2 = aVar.b;
-        jd.a aVar22 = jd.a.a;
-        i10 = aVar.d;
-        gd.i iVar2 = gd.i.a;
-        if (i10 != 0) {
-        }
-        gVar.releaseIntercepted();
-        return iVar2;
+    @Override // gg.b2
+    public /* synthetic */ a0.i l() {
+        return null;
     }
 
-    @Override // com.google.android.gms.common.api.internal.v0
-    public void m(k6.a aVar) {
-        com.google.android.gms.common.api.internal.x xVar = (com.google.android.gms.common.api.internal.x) this.b;
-        xVar.o.lock();
-        try {
-            xVar.l = aVar;
-            com.google.android.gms.common.api.internal.x.l(xVar);
-        } finally {
-            xVar.o.unlock();
+    public void m(j jVar) {
+        LinkedHashMap linkedHashMap = (LinkedHashMap) this.b;
+        long[] jArr = jVar.e;
+        if (jArr.length <= 0 || linkedHashMap.containsKey(Long.valueOf(jArr[0]))) {
+            return;
         }
+        linkedHashMap.put(Long.valueOf(jVar.e[0]), jVar);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:26:0x0043, code lost:
@@ -532,23 +481,7 @@ public final class c implements s, kq0, a0, androidx.activity.result.b, ce.b, v1
         handler.postDelayed(q4Var, 2000L);
     }
 
-    @Override // f6.a
-    public void n(Bitmap bitmap) {
-        ((f6.i) this.b).e(bitmap, 3);
-    }
-
-    @Override // gg.b2
-    public /* synthetic */ a0.i o() {
-        return null;
-    }
-
-    @Override // com.google.android.gms.tasks.OnSuccessListener
-    public void onSuccess(Object obj) {
-        ((d6.a) this.b).getClass();
-        i5.a("com.google.android.gms.cast.MAP_CAST_STATUS_CODES_TO_CAST_REASON_CODES", (Bundle) obj);
-    }
-
-    public void p(StringBuilder sb2, Iterator it) {
+    public void n(StringBuilder sb2, Iterator it) {
         try {
             if (it.hasNext()) {
                 Object next = it.next();
@@ -566,42 +499,8 @@ public final class c implements s, kq0, a0, androidx.activity.result.b, ce.b, v1
         }
     }
 
-    @Override // fb.n
-    public Object p2() {
-        Type type = (Type) this.b;
-        if (!(type instanceof ParameterizedType)) {
-            throw new db.j("Invalid EnumMap type: " + type.toString());
-        }
-        Type type2 = ((ParameterizedType) type).getActualTypeArguments()[0];
-        if (type2 instanceof Class) {
-            return new EnumMap((Class) type2);
-        }
-        throw new db.j("Invalid EnumMap type: " + type.toString());
-    }
-
     @Override // com.google.android.gms.common.api.internal.v0
-    public void q(int i10) {
-        k6.a aVar;
-        com.google.android.gms.common.api.internal.x xVar = (com.google.android.gms.common.api.internal.x) this.b;
-        Lock lock = xVar.o;
-        lock.lock();
-        try {
-            if (!xVar.n && (aVar = xVar.m) != null && aVar.c()) {
-                xVar.n = true;
-                xVar.e.onConnectionSuspended(i10);
-                lock.unlock();
-            }
-            xVar.n = false;
-            com.google.android.gms.common.api.internal.x.k(xVar, i10);
-            lock.unlock();
-        } catch (Throwable th2) {
-            lock.unlock();
-            throw th2;
-        }
-    }
-
-    @Override // com.google.android.gms.common.api.internal.v0
-    public void r(Bundle bundle) {
+    public void o(Bundle bundle) {
         com.google.android.gms.common.api.internal.x xVar = (com.google.android.gms.common.api.internal.x) this.b;
         xVar.o.lock();
         try {
@@ -618,9 +517,113 @@ public final class c implements s, kq0, a0, androidx.activity.result.b, ce.b, v1
         }
     }
 
-    @Override // gg.b2
-    public /* synthetic */ boolean s(int i10) {
-        return true;
+    @Override // com.google.android.gms.tasks.OnSuccessListener
+    public void onSuccess(Object obj) {
+        ((d6.a) this.b).getClass();
+        j5.a("com.google.android.gms.cast.MAP_CAST_STATUS_CODES_TO_CAST_REASON_CODES", (Bundle) obj);
+    }
+
+    @Override // fb.n
+    public Object p2() {
+        Type type = (Type) this.b;
+        if (!(type instanceof ParameterizedType)) {
+            throw new db.j("Invalid EnumMap type: " + type.toString());
+        }
+        Type type2 = ((ParameterizedType) type).getActualTypeArguments()[0];
+        if (type2 instanceof Class) {
+            return new EnumMap((Class) type2);
+        }
+        throw new db.j("Invalid EnumMap type: " + type.toString());
+    }
+
+    @Override // f6.a
+    public void q(Bitmap bitmap) {
+        ((f6.i) this.b).e(bitmap, 3);
+    }
+
+    public Set r() {
+        Set unmodifiableSet;
+        synchronized (((HashSet) this.b)) {
+            unmodifiableSet = DesugarCollections.unmodifiableSet((HashSet) this.b);
+        }
+        return unmodifiableSet;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:21:0x0035  */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x0023  */
+    @Override // ce.b
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public Object s(ce.c cVar, kd.c cVar2) {
+        ce.a aVar;
+        int i10;
+        Throwable th2;
+        de.g gVar;
+        if (cVar2 instanceof ce.a) {
+            aVar = (ce.a) cVar2;
+            int i11 = aVar.d;
+            if ((i11 & TLObject.FLAG_31) != 0) {
+                aVar.d = i11 - TLObject.FLAG_31;
+                Object obj = aVar.b;
+                jd.a aVar2 = jd.a.a;
+                i10 = aVar.d;
+                gd.i iVar = gd.i.a;
+                if (i10 != 0) {
+                    u7.b(obj);
+                    de.g gVar2 = new de.g(cVar, aVar.getContext());
+                    try {
+                        aVar.a = gVar2;
+                        aVar.d = 1;
+                        Object invoke = ((k1.m) this.b).invoke(gVar2, aVar);
+                        if (invoke != aVar2) {
+                            invoke = iVar;
+                        }
+                        if (invoke == aVar2) {
+                            return aVar2;
+                        }
+                        gVar = gVar2;
+                    } catch (Throwable th3) {
+                        th2 = th3;
+                        gVar = gVar2;
+                        gVar.releaseIntercepted();
+                        throw th2;
+                    }
+                } else {
+                    if (i10 != 1) {
+                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                    }
+                    gVar = aVar.a;
+                    try {
+                        u7.b(obj);
+                    } catch (Throwable th4) {
+                        th2 = th4;
+                        gVar.releaseIntercepted();
+                        throw th2;
+                    }
+                }
+                gVar.releaseIntercepted();
+                return iVar;
+            }
+        }
+        aVar = new ce.a(this, cVar2);
+        Object obj2 = aVar.b;
+        jd.a aVar22 = jd.a.a;
+        i10 = aVar.d;
+        gd.i iVar2 = gd.i.a;
+        if (i10 != 0) {
+        }
+        gVar.releaseIntercepted();
+        return iVar2;
+    }
+
+    public void t() {
+        ((androidx.fragment.app.u) this.b).d.R();
+    }
+
+    @Override // org.telegram.ui.Components.jq0
+    public void t0() {
+        f6.j0((f6) this.b);
     }
 
     @Override // com.google.android.gms.tasks.SuccessContinuation
@@ -705,17 +708,17 @@ public final class c implements s, kq0, a0, androidx.activity.result.b, ce.b, v1
         return Tasks.forResult(null);
     }
 
-    public Set u() {
-        Set unmodifiableSet;
-        synchronized (((HashSet) this.b)) {
-            unmodifiableSet = DesugarCollections.unmodifiableSet((HashSet) this.b);
+    public void u() {
+        e6.h hVar = (e6.h) this.b;
+        Iterator it = hVar.h.iterator();
+        if (it.hasNext()) {
+            it.next().getClass();
+            throw new ClassCastException();
         }
-        return unmodifiableSet;
-    }
-
-    @Override // org.telegram.ui.Components.kq0
-    public void u0() {
-        f6.j0((f6) this.b);
+        Iterator it2 = hVar.i.iterator();
+        while (it2.hasNext()) {
+            ((e6.g) it2.next()).a();
+        }
     }
 
     @Override // l.x
@@ -729,21 +732,18 @@ public final class c implements s, kq0, a0, androidx.activity.result.b, ce.b, v1
         return true;
     }
 
-    public void w() {
-        ((androidx.fragment.app.u) this.b).d.R();
+    @Override // gg.b2
+    public /* synthetic */ a0.i w() {
+        return null;
     }
 
-    public void x() {
-        e6.h hVar = (e6.h) this.b;
-        Iterator it = hVar.h.iterator();
-        if (it.hasNext()) {
-            it.next().getClass();
-            throw new ClassCastException();
-        }
-        Iterator it2 = hVar.i.iterator();
-        while (it2.hasNext()) {
-            ((e6.g) it2.next()).a();
-        }
+    @Override // qg.w1
+    public void y(float f7) {
+        qb qbVar = (qb) this.b;
+        u0.e(qbVar.F1).k(String.valueOf(m.a.indexOf(qbVar.O0.getCurrentBrush())), f7);
+        s1 s1Var = qbVar.A1;
+        s1Var.c = f7;
+        qbVar.E0(s1Var, null, false);
     }
 
     public /* synthetic */ c(Object obj, int i10) {
@@ -780,7 +780,7 @@ public final class c implements s, kq0, a0, androidx.activity.result.b, ce.b, v1
         this.b = str;
     }
 
-    @Override // org.telegram.ui.Components.kq0
+    @Override // org.telegram.ui.Components.jq0
     public /* synthetic */ void U() {
     }
 }

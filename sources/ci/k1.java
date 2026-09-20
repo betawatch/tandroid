@@ -20,7 +20,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class k1 extends FrameLayout {
     public final Paint a;
@@ -29,7 +29,7 @@ public final class k1 extends FrameLayout {
     public Bitmap d;
     public BitmapShader e;
     public Matrix f;
-    public final org.telegram.ui.Components.e6 h;
+    public final org.telegram.ui.Components.d6 h;
     public final RectF n;
     public Boolean r;
     public final /* synthetic */ t2 s;
@@ -41,20 +41,20 @@ public final class k1 extends FrameLayout {
         this.a = new Paint(1);
         this.b = new Paint(3);
         this.c = new Paint(1);
-        this.h = new org.telegram.ui.Components.e6(this, 0L, 250L, qr.h);
+        this.h = new org.telegram.ui.Components.d6(this, 0L, 250L, qr.h);
         this.n = new RectF();
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
-        org.telegram.ui.ActionBar.e6 e6Var;
+        org.telegram.ui.ActionBar.f6 f6Var;
         int i10;
         int i11;
         int i12 = org.telegram.ui.ActionBar.j6.h5;
         t2 t2Var = this.s;
         i1 i1Var = t2Var.f;
-        e6Var = ((org.telegram.ui.ActionBar.f3) t2Var).resourcesProvider;
-        int v02 = org.telegram.ui.ActionBar.j6.v0(i12, e6Var);
+        f6Var = ((org.telegram.ui.ActionBar.f3) t2Var).resourcesProvider;
+        int v02 = org.telegram.ui.ActionBar.j6.v0(i12, f6Var);
         Paint paint = this.a;
         paint.setColor(v02);
         paint.setAlpha((int) ((this.d == null ? 1.0f : 0.85f) * 255.0f));
@@ -133,15 +133,15 @@ public final class k1 extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        org.telegram.ui.ActionBar.e6 e6Var;
-        org.telegram.ui.ActionBar.e6 e6Var2;
+        org.telegram.ui.ActionBar.f6 f6Var;
+        org.telegram.ui.ActionBar.f6 f6Var2;
         super.onLayout(z10, i10, i11, i12, i13);
         if (this.d == null) {
             t2 t2Var = this.s;
-            e6Var = ((org.telegram.ui.ActionBar.f3) t2Var).resourcesProvider;
-            if (e6Var != null) {
-                e6Var2 = ((org.telegram.ui.ActionBar.f3) t2Var).resourcesProvider;
-                if (!e6Var2.a()) {
+            f6Var = ((org.telegram.ui.ActionBar.f3) t2Var).resourcesProvider;
+            if (f6Var != null) {
+                f6Var2 = ((org.telegram.ui.ActionBar.f3) t2Var).resourcesProvider;
+                if (!f6Var2.a()) {
                     return;
                 }
             } else if (!org.telegram.ui.ActionBar.j6.I.q()) {

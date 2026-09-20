@@ -26,13 +26,13 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.camera.Camera2Session;
 import org.telegram.messenger.camera.CameraSession;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class m50 extends DispatchQueue {
     public Integer E;
     public int F;
     public int G;
-    public final /* synthetic */ b60 H;
+    public final /* synthetic */ a60 H;
     public final SurfaceTexture a;
     public EGL10 b;
     public EGLDisplay c;
@@ -49,9 +49,9 @@ public final class m50 extends DispatchQueue {
     public boolean y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m50(b60 b60Var, SurfaceTexture surfaceTexture, int i10, int i11) {
+    public m50(a60 a60Var, SurfaceTexture surfaceTexture, int i10, int i11) {
         super("CameraGLThread");
-        this.H = b60Var;
+        this.H = a60Var;
         this.n = new SurfaceTexture[2];
         this.E = 0;
         this.a = surfaceTexture;
@@ -67,26 +67,26 @@ public final class m50 extends DispatchQueue {
     }
 
     public final void c() {
-        b60 b60Var = this.H;
-        if (b60Var.l0[b60Var.d1] != null) {
-            b60 b60Var2 = this.H;
-            int width = b60Var2.l0[b60Var2.d1].getWidth();
-            b60 b60Var3 = this.H;
+        a60 a60Var = this.H;
+        if (a60Var.l0[a60Var.d1] != null) {
+            a60 a60Var2 = this.H;
+            int width = a60Var2.l0[a60Var2.d1].getWidth();
+            a60 a60Var3 = this.H;
             float min = this.F / Math.min(width, r1);
             int i10 = (int) (width * min);
-            int height = (int) (b60Var3.l0[b60Var3.d1].getHeight() * min);
+            int height = (int) (a60Var3.l0[a60Var3.d1].getHeight() * min);
             if (i10 == height) {
-                b60 b60Var4 = this.H;
-                b60Var4.E0 = 1.0f;
-                b60Var4.F0 = 1.0f;
+                a60 a60Var4 = this.H;
+                a60Var4.E0 = 1.0f;
+                a60Var4.F0 = 1.0f;
             } else if (i10 > height) {
-                b60 b60Var5 = this.H;
-                b60Var5.E0 = 1.0f;
-                b60Var5.F0 = i10 / this.G;
+                a60 a60Var5 = this.H;
+                a60Var5.E0 = 1.0f;
+                a60Var5.F0 = i10 / this.G;
             } else {
-                b60 b60Var6 = this.H;
-                b60Var6.E0 = height / this.F;
-                b60Var6.F0 = 1.0f;
+                a60 a60Var6 = this.H;
+                a60Var6.E0 = height / this.F;
+                a60Var6.F0 = 1.0f;
             }
             FileLog.d("InstantCamera camera scaleX = " + this.H.E0 + " scaleY = " + this.H.F0);
         }
@@ -149,8 +149,9 @@ public final class m50 extends DispatchQueue {
         boolean z11;
         u50 u50Var;
         int i10 = message.what;
-        final int i11 = 1;
-        final int i12 = 0;
+        int i11 = 7;
+        final int i12 = 1;
+        final int i13 = 0;
         if (i10 != 0) {
             if (i10 == 1) {
                 finish();
@@ -164,7 +165,7 @@ public final class m50 extends DispatchQueue {
                 }
                 return;
             }
-            int i13 = 6;
+            int i14 = 6;
             if (i10 != 2) {
                 if (i10 == 3) {
                     if (BuildVars.LOGS_ENABLED) {
@@ -187,17 +188,17 @@ public final class m50 extends DispatchQueue {
                 if (i10 != 4) {
                     return;
                 }
-                b60 b60Var = this.H;
-                b60Var.d1 = 1 - b60Var.d1;
+                a60 a60Var = this.H;
+                a60Var.d1 = 1 - a60Var.d1;
                 c();
-                b60 b60Var2 = this.H;
-                float f7 = (1.0f / b60Var2.E0) / 2.0f;
-                float f10 = (1.0f / b60Var2.F0) / 2.0f;
+                a60 a60Var2 = this.H;
+                float f7 = (1.0f / a60Var2.E0) / 2.0f;
+                float f10 = (1.0f / a60Var2.F0) / 2.0f;
                 float f11 = 0.5f - f7;
                 float f12 = 0.5f - f10;
                 float f13 = f7 + 0.5f;
                 float f14 = f10 + 0.5f;
-                b60Var2.C0 = org.telegram.messenger.wh.h(ByteBuffer.allocateDirect(32));
+                a60Var2.C0 = org.telegram.messenger.rk.i(ByteBuffer.allocateDirect(32));
                 this.H.C0.put(new float[]{f11, f12, f13, f12, f11, f14, f13, f14}).position(0);
                 return;
             }
@@ -216,15 +217,15 @@ public final class m50 extends DispatchQueue {
                 surfaceTexture.getTransformMatrix(this.H.A0);
                 this.n[0].setOnFrameAvailableListener(null);
                 this.n[0].release();
-                b60 b60Var3 = this.H;
-                int[] iArr = b60Var3.a0;
-                int[] iArr2 = b60Var3.W;
+                a60 a60Var3 = this.H;
+                int[] iArr = a60Var3.a0;
+                int[] iArr2 = a60Var3.W;
                 iArr[0] = iArr2[0];
-                b60Var3.b0 = 0.0f;
+                a60Var3.b0 = 0.0f;
                 iArr2[0] = 0;
-                b60Var3.D0 = b60Var3.C0.duplicate();
-                b60 b60Var4 = this.H;
-                b60Var4.G0 = b60Var4.l0[0];
+                a60Var3.D0 = a60Var3.C0.duplicate();
+                a60 a60Var4 = this.H;
+                a60Var4.G0 = a60Var4.l0[0];
             }
             this.E = Integer.valueOf(this.E.intValue() + 1);
             this.H.I = false;
@@ -236,23 +237,23 @@ public final class m50 extends DispatchQueue {
             GLES20.glTexParameteri(36197, 10243, 33071);
             this.n[0] = new SurfaceTexture(this.H.W[0]);
             this.n[0].setOnFrameAvailableListener(new uz(this, 1));
-            AndroidUtilities.runOnUIThread(new wm(this.H, i12, this.n[0], i13));
+            AndroidUtilities.runOnUIThread(new wm(this.H, i13, this.n[0], i14));
             c();
-            b60 b60Var5 = this.H;
-            float f15 = (1.0f / b60Var5.E0) / 2.0f;
-            float f16 = (1.0f / b60Var5.F0) / 2.0f;
+            a60 a60Var5 = this.H;
+            float f15 = (1.0f / a60Var5.E0) / 2.0f;
+            float f16 = (1.0f / a60Var5.F0) / 2.0f;
             float f17 = 0.5f - f15;
             float f18 = 0.5f - f16;
             float f19 = f15 + 0.5f;
             float f20 = f16 + 0.5f;
-            b60Var5.C0 = org.telegram.messenger.wh.h(ByteBuffer.allocateDirect(32));
+            a60Var5.C0 = org.telegram.messenger.rk.i(ByteBuffer.allocateDirect(32));
             this.H.C0.put(new float[]{f17, f18, f19, f18, f17, f20, f19, f20}).position(0);
             return;
         }
-        int i14 = message.arg1;
-        int i15 = message.arg2;
-        boolean z12 = (i15 & 1) != 0;
-        boolean z13 = (i15 & 2) != 0;
+        int i15 = message.arg1;
+        int i16 = message.arg2;
+        boolean z12 = (i16 & 1) != 0;
+        boolean z13 = (i16 & 2) != 0;
         if (this.f) {
             if (!this.d.equals(this.b.eglGetCurrentContext()) || !this.e.equals(this.b.eglGetCurrentSurface(12377))) {
                 EGL10 egl102 = this.b;
@@ -260,7 +261,7 @@ public final class m50 extends DispatchQueue {
                 EGLSurface eGLSurface2 = this.e;
                 if (!egl102.eglMakeCurrent(eGLDisplay2, eGLSurface2, eGLSurface2, this.d)) {
                     if (BuildVars.LOGS_ENABLED) {
-                        org.telegram.messenger.wh.t(this.b, new StringBuilder("eglMakeCurrent failed "));
+                        org.telegram.messenger.rk.u(this.b, new StringBuilder("eglMakeCurrent failed "));
                         return;
                     }
                     return;
@@ -275,13 +276,13 @@ public final class m50 extends DispatchQueue {
             if (this.y) {
                 z10 = false;
             } else {
-                b60 b60Var6 = this.H;
-                if (b60Var6.b1 == null) {
-                    b60Var6.b1 = new u50(b60Var6);
+                a60 a60Var6 = this.H;
+                if (a60Var6.b1 == null) {
+                    a60Var6.b1 = new u50(a60Var6);
                 }
-                b60 b60Var7 = this.H;
-                if (b60Var7.b1.F0) {
-                    if (!b60Var7.I) {
+                a60 a60Var7 = this.H;
+                if (a60Var7.b1.F0) {
+                    if (!a60Var7.I) {
                         this.H.I = true;
                         AndroidUtilities.runOnUIThread(new Runnable(this) { // from class: org.telegram.ui.Components.l50
                             public final /* synthetic */ m50 b;
@@ -292,19 +293,19 @@ public final class m50 extends DispatchQueue {
 
                             @Override // java.lang.Runnable
                             public final void run() {
-                                switch (i12) {
+                                switch (i13) {
                                     case 0:
                                         this.b.H.p0.animate().setDuration(120L).alpha(0.0f).setInterpolator(new DecelerateInterpolator()).start();
                                         break;
                                     default:
-                                        b60 b60Var8 = this.b.H;
-                                        if (b60Var8.o0 != null) {
-                                            Bitmap bitmap = b60Var8.c1;
+                                        a60 a60Var8 = this.b.H;
+                                        if (a60Var8.o0 != null) {
+                                            Bitmap bitmap = a60Var8.c1;
                                             if (bitmap != null) {
                                                 bitmap.recycle();
-                                                b60Var8.c1 = null;
+                                                a60Var8.c1 = null;
                                             }
-                                            b60Var8.c1 = b60Var8.o0.getBitmap();
+                                            a60Var8.c1 = a60Var8.o0.getBitmap();
                                             break;
                                         }
                                         break;
@@ -316,22 +317,22 @@ public final class m50 extends DispatchQueue {
                 } else {
                     z10 = true;
                 }
-                b60 b60Var8 = this.H;
-                u50 u50Var2 = b60Var8.b1;
-                i50 i50Var = b60Var8.d0;
+                a60 a60Var8 = this.H;
+                u50 u50Var2 = a60Var8.b1;
+                i50 i50Var = a60Var8.d0;
                 android.opengl.EGLContext eglGetCurrentContext = EGL14.eglGetCurrentContext();
                 if (u50Var2.F0 && u50Var2.T != null && u50Var2.T.getLooper() != null && u50Var2.T.getLooper().getThread() != null && u50Var2.T.getLooper().getThread().isAlive()) {
                     u50Var2.w = eglGetCurrentContext;
                     u50Var2.T.sendMessage(u50Var2.T.obtainMessage(0, 1, 0));
                 }
                 u50Var2.F0 = true;
-                int i16 = MessagesController.getInstance(u50Var2.H0.d).roundVideoSize;
-                int i17 = MessagesController.getInstance(u50Var2.H0.d).roundVideoBitrate * 1024;
-                AndroidUtilities.runOnUIThread(new q50(u50Var2, i11));
+                int i17 = MessagesController.getInstance(u50Var2.H0.d).roundVideoSize;
+                int i18 = MessagesController.getInstance(u50Var2.H0.d).roundVideoBitrate * 1024;
+                AndroidUtilities.runOnUIThread(new sh(i11));
                 u50Var2.a = i50Var;
-                u50Var2.d = i16;
-                u50Var2.e = i16;
-                u50Var2.f = i17;
+                u50Var2.d = i17;
+                u50Var2.e = i17;
+                u50Var2.f = i18;
                 u50Var2.w = eglGetCurrentContext;
                 synchronized (u50Var2.U) {
                     try {
@@ -362,30 +363,30 @@ public final class m50 extends DispatchQueue {
                 Object obj4 = this.h;
                 int currentOrientation = obj4 instanceof CameraSession ? ((CameraSession) obj4).getCurrentOrientation() : obj4 instanceof Camera2Session ? ((Camera2Session) obj4).getCurrentOrientation() : 0;
                 if (currentOrientation == 90 || currentOrientation == 270) {
-                    b60 b60Var9 = this.H;
-                    float f21 = b60Var9.E0;
-                    b60Var9.E0 = b60Var9.F0;
-                    b60Var9.F0 = f21;
+                    a60 a60Var9 = this.H;
+                    float f21 = a60Var9.E0;
+                    a60Var9.E0 = a60Var9.F0;
+                    a60Var9.F0 = f21;
                 }
                 this.y = true;
-                this.H.v();
+                this.H.u();
             }
-            b60 b60Var10 = this.H;
-            if (b60Var10.b1 != null && ((b60Var10.d1 == 0 && z12) || (this.H.d1 == 1 && z13))) {
-                b60 b60Var11 = this.H;
-                u50 u50Var3 = b60Var11.b1;
-                SurfaceTexture surfaceTexture2 = this.n[b60Var11.d1];
-                b60 b60Var12 = this.H;
-                if (b60Var12.s0) {
-                    i14 = b60Var12.d1;
+            a60 a60Var10 = this.H;
+            if (a60Var10.b1 != null && ((a60Var10.d1 == 0 && z12) || (this.H.d1 == 1 && z13))) {
+                a60 a60Var11 = this.H;
+                u50 u50Var3 = a60Var11.b1;
+                SurfaceTexture surfaceTexture2 = this.n[a60Var11.d1];
+                a60 a60Var12 = this.H;
+                if (a60Var12.s0) {
+                    i15 = a60Var12.d1;
                 }
-                u50Var3.f(surfaceTexture2, Integer.valueOf(i14), System.nanoTime());
+                u50Var3.f(surfaceTexture2, Integer.valueOf(i15), System.nanoTime());
             }
             this.n[this.H.d1].getTransformMatrix(this.H.z0);
             GLES20.glUseProgram(this.r);
             GLES20.glActiveTexture(33984);
-            b60 b60Var13 = this.H;
-            GLES20.glBindTexture(36197, b60Var13.W[b60Var13.d1]);
+            a60 a60Var13 = this.H;
+            GLES20.glBindTexture(36197, a60Var13.W[a60Var13.d1]);
             GLES20.glVertexAttribPointer(this.w, 3, 5126, false, 12, (Buffer) this.H.B0);
             GLES20.glEnableVertexAttribArray(this.w);
             GLES20.glVertexAttribPointer(this.x, 2, 5126, false, 8, (Buffer) this.H.C0);
@@ -408,19 +409,19 @@ public final class m50 extends DispatchQueue {
 
                     @Override // java.lang.Runnable
                     public final void run() {
-                        switch (i11) {
+                        switch (i12) {
                             case 0:
                                 this.b.H.p0.animate().setDuration(120L).alpha(0.0f).setInterpolator(new DecelerateInterpolator()).start();
                                 break;
                             default:
-                                b60 b60Var82 = this.b.H;
-                                if (b60Var82.o0 != null) {
-                                    Bitmap bitmap = b60Var82.c1;
+                                a60 a60Var82 = this.b.H;
+                                if (a60Var82.o0 != null) {
+                                    Bitmap bitmap = a60Var82.c1;
                                     if (bitmap != null) {
                                         bitmap.recycle();
-                                        b60Var82.c1 = null;
+                                        a60Var82.c1 = null;
                                     }
-                                    b60Var82.c1 = b60Var82.o0.getBitmap();
+                                    a60Var82.c1 = a60Var82.o0.getBitmap();
                                     break;
                                 }
                                 break;
@@ -458,7 +459,7 @@ public final class m50 extends DispatchQueue {
         z10 = false;
         if (eglGetDisplay == EGL10.EGL_NO_DISPLAY) {
             if (BuildVars.LOGS_ENABLED) {
-                org.telegram.messenger.wh.t(this.b, new StringBuilder("InstantCamera eglGetDisplay failed "));
+                org.telegram.messenger.rk.u(this.b, new StringBuilder("InstantCamera eglGetDisplay failed "));
             }
             finish();
         } else if (this.b.eglInitialize(eglGetDisplay, new int[2])) {
@@ -466,7 +467,7 @@ public final class m50 extends DispatchQueue {
             EGLConfig[] eGLConfigArr = new EGLConfig[1];
             if (!this.b.eglChooseConfig(this.c, new int[]{12352, 4, 12324, 8, 12323, 8, 12322, 8, 12321, 0, 12325, 0, 12326, 0, 12344}, eGLConfigArr, 1, iArr)) {
                 if (BuildVars.LOGS_ENABLED) {
-                    org.telegram.messenger.wh.t(this.b, new StringBuilder("InstantCamera eglChooseConfig failed "));
+                    org.telegram.messenger.rk.u(this.b, new StringBuilder("InstantCamera eglChooseConfig failed "));
                 }
                 finish();
             } else if (iArr[0] > 0) {
@@ -475,7 +476,7 @@ public final class m50 extends DispatchQueue {
                 this.d = eglCreateContext;
                 if (eglCreateContext == null) {
                     if (BuildVars.LOGS_ENABLED) {
-                        org.telegram.messenger.wh.t(this.b, new StringBuilder("InstantCamera eglCreateContext failed "));
+                        org.telegram.messenger.rk.u(this.b, new StringBuilder("InstantCamera eglCreateContext failed "));
                     }
                     finish();
                 } else {
@@ -485,16 +486,16 @@ public final class m50 extends DispatchQueue {
                         this.e = eglCreateWindowSurface;
                         if (eglCreateWindowSurface == null || eglCreateWindowSurface == EGL10.EGL_NO_SURFACE) {
                             if (BuildVars.LOGS_ENABLED) {
-                                org.telegram.messenger.wh.t(this.b, new StringBuilder("InstantCamera createWindowSurface failed "));
+                                org.telegram.messenger.rk.u(this.b, new StringBuilder("InstantCamera createWindowSurface failed "));
                             }
                             finish();
                         } else if (this.b.eglMakeCurrent(this.c, eglCreateWindowSurface, eglCreateWindowSurface, this.d)) {
                             c();
-                            b60 b60Var = this.H;
-                            float f7 = b60Var.E0;
-                            int[] iArr2 = b60Var.W;
+                            a60 a60Var = this.H;
+                            float f7 = a60Var.E0;
+                            int[] iArr2 = a60Var.W;
                             float f10 = (1.0f / f7) / 2.0f;
-                            float f11 = (1.0f / b60Var.F0) / 2.0f;
+                            float f11 = (1.0f / a60Var.F0) / 2.0f;
                             float[] fArr = {-1.0f, -1.0f, 0.0f, 1.0f, -1.0f, 0.0f, -1.0f, 1.0f, 0.0f, 1.0f, 1.0f, 0.0f};
                             float f12 = 0.5f - f10;
                             float f13 = 0.5f - f11;
@@ -502,19 +503,19 @@ public final class m50 extends DispatchQueue {
                             float f15 = f11 + 0.5f;
                             int i10 = 6;
                             float[] fArr2 = {f12, f13, f14, f13, f12, f15, f14, f15};
-                            if (b60Var.b1 == null) {
-                                b60Var.b1 = new u50(b60Var);
+                            if (a60Var.b1 == null) {
+                                a60Var.b1 = new u50(a60Var);
                             }
-                            FloatBuffer h = org.telegram.messenger.wh.h(ByteBuffer.allocateDirect(48));
-                            b60Var.B0 = h;
-                            h.put(fArr).position(0);
-                            FloatBuffer h10 = org.telegram.messenger.wh.h(ByteBuffer.allocateDirect(32));
-                            b60Var.C0 = h10;
-                            h10.put(fArr2).position(0);
-                            Matrix.setIdentityM(b60Var.z0, 0);
-                            int k10 = b60.k(b60Var, 35633, "uniform mat4 uMVPMatrix;\nuniform mat4 uSTMatrix;\nattribute vec4 aPosition;\nattribute vec4 aTextureCoord;\nvarying vec2 vTextureCoord;\nvoid main() {\n   gl_Position = uMVPMatrix * aPosition;\n   vTextureCoord = (uSTMatrix * aTextureCoord).xy;\n}\n");
-                            int k11 = b60.k(b60Var, 35632, "#extension GL_OES_EGL_image_external : require\nprecision lowp float;\nvarying vec2 vTextureCoord;\nuniform samplerExternalOES sTexture;\nvoid main() {\n   gl_FragColor = texture2D(sTexture, vTextureCoord);\n}\n");
-                            if (k10 == 0 || k11 == 0) {
+                            FloatBuffer i11 = org.telegram.messenger.rk.i(ByteBuffer.allocateDirect(48));
+                            a60Var.B0 = i11;
+                            i11.put(fArr).position(0);
+                            FloatBuffer i12 = org.telegram.messenger.rk.i(ByteBuffer.allocateDirect(32));
+                            a60Var.C0 = i12;
+                            i12.put(fArr2).position(0);
+                            Matrix.setIdentityM(a60Var.z0, 0);
+                            int j3 = a60.j(a60Var, 35633, "uniform mat4 uMVPMatrix;\nuniform mat4 uSTMatrix;\nattribute vec4 aPosition;\nattribute vec4 aTextureCoord;\nvarying vec2 vTextureCoord;\nvoid main() {\n   gl_Position = uMVPMatrix * aPosition;\n   vTextureCoord = (uSTMatrix * aTextureCoord).xy;\n}\n");
+                            int j10 = a60.j(a60Var, 35632, "#extension GL_OES_EGL_image_external : require\nprecision lowp float;\nvarying vec2 vTextureCoord;\nuniform samplerExternalOES sTexture;\nvoid main() {\n   gl_FragColor = texture2D(sTexture, vTextureCoord);\n}\n");
+                            if (j3 == 0 || j10 == 0) {
                                 if (BuildVars.LOGS_ENABLED) {
                                     FileLog.e("InstantCamera failed creating shader");
                                 }
@@ -522,8 +523,8 @@ public final class m50 extends DispatchQueue {
                             } else {
                                 int glCreateProgram = GLES20.glCreateProgram();
                                 this.r = glCreateProgram;
-                                GLES20.glAttachShader(glCreateProgram, k10);
-                                GLES20.glAttachShader(this.r, k11);
+                                GLES20.glAttachShader(glCreateProgram, j3);
+                                GLES20.glAttachShader(this.r, j10);
                                 GLES20.glLinkProgram(this.r);
                                 int[] iArr3 = new int[1];
                                 GLES20.glGetProgramiv(this.r, 35714, iArr3, 0);
@@ -539,27 +540,27 @@ public final class m50 extends DispatchQueue {
                                     this.s = GLES20.glGetUniformLocation(this.r, "uMVPMatrix");
                                     this.v = GLES20.glGetUniformLocation(this.r, "uSTMatrix");
                                 }
-                                Matrix.setIdentityM(b60Var.y0, 0);
+                                Matrix.setIdentityM(a60Var.y0, 0);
                                 GLES20.glGenTextures(2, iArr2, 0);
-                                for (final int i11 = 0; i11 < 2; i11++) {
-                                    GLES20.glBindTexture(36197, iArr2[i11]);
+                                for (final int i13 = 0; i13 < 2; i13++) {
+                                    GLES20.glBindTexture(36197, iArr2[i13]);
                                     GLES20.glTexParameteri(36197, 10241, 9729);
                                     GLES20.glTexParameteri(36197, 10240, 9729);
                                     GLES20.glTexParameteri(36197, 10242, 33071);
                                     GLES20.glTexParameteri(36197, 10243, 33071);
-                                    SurfaceTexture surfaceTexture2 = new SurfaceTexture(iArr2[i11]);
+                                    SurfaceTexture surfaceTexture2 = new SurfaceTexture(iArr2[i13]);
                                     SurfaceTexture[] surfaceTextureArr = this.n;
-                                    surfaceTextureArr[i11] = surfaceTexture2;
+                                    surfaceTextureArr[i13] = surfaceTexture2;
                                     surfaceTexture2.setOnFrameAvailableListener(new SurfaceTexture.OnFrameAvailableListener() { // from class: org.telegram.ui.Components.k50
                                         @Override // android.graphics.SurfaceTexture.OnFrameAvailableListener
                                         public final void onFrameAvailable(SurfaceTexture surfaceTexture3) {
                                             m50 m50Var = m50.this;
-                                            int i12 = i11;
+                                            int i14 = i13;
                                             m50Var.H.U = true;
-                                            m50Var.requestRender(i12 == 0, i12 == 1);
+                                            m50Var.requestRender(i14 == 0, i14 == 1);
                                         }
                                     });
-                                    AndroidUtilities.runOnUIThread(new wm(b60Var, i11, surfaceTextureArr[i11], i10));
+                                    AndroidUtilities.runOnUIThread(new wm(a60Var, i13, surfaceTextureArr[i13], i10));
                                 }
                                 if (BuildVars.LOGS_ENABLED) {
                                     FileLog.e("InstantCamera gl initied");
@@ -568,7 +569,7 @@ public final class m50 extends DispatchQueue {
                             }
                         } else {
                             if (BuildVars.LOGS_ENABLED) {
-                                org.telegram.messenger.wh.t(this.b, new StringBuilder("InstantCamera eglMakeCurrent failed "));
+                                org.telegram.messenger.rk.u(this.b, new StringBuilder("InstantCamera eglMakeCurrent failed "));
                             }
                             finish();
                         }
@@ -584,7 +585,7 @@ public final class m50 extends DispatchQueue {
             }
         } else {
             if (BuildVars.LOGS_ENABLED) {
-                org.telegram.messenger.wh.t(this.b, new StringBuilder("InstantCamera eglInitialize failed "));
+                org.telegram.messenger.rk.u(this.b, new StringBuilder("InstantCamera eglInitialize failed "));
             }
             finish();
         }

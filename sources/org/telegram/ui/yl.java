@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class yl extends AnimatorListenerAdapter {
     public final /* synthetic */ yn a;
@@ -82,12 +82,12 @@ public final class yl extends AnimatorListenerAdapter {
             znVar.B2[1].setImageBitmap(null);
             znVar.B2[1].setVisibility(4);
         }
-        org.telegram.ui.Components.w9[] w9VarArr = znVar.B2;
-        org.telegram.ui.Components.w9 w9Var = w9VarArr[1];
-        org.telegram.ui.Components.w9 w9Var2 = w9VarArr[0];
-        w9VarArr[1] = w9Var2;
-        w9VarArr[0] = w9Var;
-        w9Var2.setAlpha(1.0f);
+        org.telegram.ui.Components.v9[] v9VarArr = znVar.B2;
+        org.telegram.ui.Components.v9 v9Var = v9VarArr[1];
+        org.telegram.ui.Components.v9 v9Var2 = v9VarArr[0];
+        v9VarArr[1] = v9Var2;
+        v9VarArr[0] = v9Var;
+        v9Var2.setAlpha(1.0f);
         znVar.B2[1].setScaleX(1.0f);
         znVar.B2[1].setScaleY(1.0f);
         znVar.B2[1].setVisibility(4);

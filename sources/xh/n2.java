@@ -2,18 +2,18 @@ package xh;
 
 import android.content.Context;
 import android.view.View;
-import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class n2 extends yh.y3 {
     public final /* synthetic */ int r1;
     public final /* synthetic */ Object s1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ n2(o2 o2Var, Context context, int i10, long j3, e6 e6Var, int i11) {
-        super(context, i10, j3, e6Var, null);
+    public /* synthetic */ n2(o2 o2Var, Context context, int i10, long j3, f6 f6Var, int i11) {
+        super(context, i10, j3, f6Var, null);
         this.r1 = i11;
         this.s1 = o2Var;
     }
@@ -43,8 +43,8 @@ public final class n2 extends yh.y3 {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public n2(yh.y3 y3Var, Context context, int i10, long j3, e6 e6Var, View view) {
-        super(context, i10, j3, e6Var, view);
+    public n2(yh.y3 y3Var, Context context, int i10, long j3, f6 f6Var, View view) {
+        super(context, i10, j3, f6Var, view);
         this.r1 = 3;
         this.s1 = y3Var;
     }

@@ -11,7 +11,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class k0 extends org.telegram.ui.web.w1 {
     public final /* synthetic */ h4 B0;
@@ -121,7 +121,7 @@ public final class k0 extends org.telegram.ui.web.w1 {
                 int i12 = SharedConfig.searchEngineType;
                 if (i11 != i12) {
                     this.c0 = i12;
-                    oVar.setHint(LocaleController.formatString(R.string.AddressPlaceholder, org.telegram.ui.web.o1.a().a));
+                    oVar.setHint(LocaleController.formatString(R.string.AddressPlaceholder, org.telegram.ui.web.p1.a().a));
                 }
             }
             oVar.setVisibility(0);

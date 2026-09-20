@@ -3,7 +3,7 @@ package org.telegram.messenger;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final /* synthetic */ class kg implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -32,8 +32,8 @@ public final /* synthetic */ class kg implements Runnable {
                 ((MessagesStorage) obj).lambda$loadPendingTasks$15(this.b, this.d, (TLRPC.InputPeer) tLObject, this.c);
                 break;
             default:
-                yh.t5 t5Var = (yh.t5) obj;
-                int i11 = t5Var.a;
+                yh.u5 u5Var = (yh.u5) obj;
+                int i11 = u5Var.a;
                 if (tLObject instanceof TLRPC.TL_boolTrue) {
                     long j3 = this.b;
                     long j10 = this.c;
@@ -49,7 +49,7 @@ public final /* synthetic */ class kg implements Runnable {
                         NotificationCenter.getInstance(i11).lambda$postNotificationNameOnUIThread$1(NotificationCenter.messagesFeeUpdated, Long.valueOf(j10));
                         break;
                     } else {
-                        t5Var.b0(-j3, j10, this.d);
+                        u5Var.b0(-j3, j10, this.d);
                         break;
                     }
                 }
@@ -57,8 +57,8 @@ public final /* synthetic */ class kg implements Runnable {
         }
     }
 
-    public /* synthetic */ kg(yh.t5 t5Var, TLObject tLObject, long j3, long j10, boolean z10) {
-        this.e = t5Var;
+    public /* synthetic */ kg(yh.u5 u5Var, TLObject tLObject, long j3, long j10, boolean z10) {
+        this.e = u5Var;
         this.f = tLObject;
         this.b = j3;
         this.c = j10;

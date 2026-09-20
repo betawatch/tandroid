@@ -7,9 +7,9 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class ep extends org.telegram.ui.Components.t80 {
+public final class ep extends org.telegram.ui.Components.s80 {
     public final /* synthetic */ Context w;
     public final /* synthetic */ ip x;
 
@@ -20,19 +20,19 @@ public final class ep extends org.telegram.ui.Components.t80 {
         this.w = context2;
     }
 
-    @Override // org.telegram.ui.Components.t80
-    public final boolean a(final boolean z10, org.telegram.ui.Components.r80 r80Var) {
+    @Override // org.telegram.ui.Components.s80
+    public final boolean a(final boolean z10, org.telegram.ui.Components.q80 q80Var) {
         TLRPC.ChatFull chatFull;
         int i10;
-        org.telegram.ui.ActionBar.e6 e6Var;
+        org.telegram.ui.ActionBar.f6 f6Var;
         ip ipVar = this.x;
         if (!ipVar.V || (chatFull = ipVar.Y) == null || (i10 = chatFull.invitesCount) == 0) {
             return true;
         }
         String str = ipVar.a0 ? z10 ? "ApproveNewMembersEnableForLinksChannel" : "ApproveNewMembersDisableForLinksChannel" : z10 ? "ApproveNewMembersEnableForLinks" : "ApproveNewMembersDisableForLinks";
         Context context = this.w;
-        e6Var = ((org.telegram.ui.ActionBar.n2) ipVar).resourceProvider;
-        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context, 0, e6Var);
+        f6Var = ((org.telegram.ui.ActionBar.n2) ipVar).resourceProvider;
+        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context, 0, f6Var);
         alertDialog$Builder.a.R = LocaleController.getString(R.string.ApproveNewMembersApplyToLinksTitle);
         alertDialog$Builder.a.T = AndroidUtilities.replaceTags(LocaleController.formatPluralString(str, i10, new Object[0]));
         final int i11 = 0;
@@ -44,7 +44,7 @@ public final class ep extends org.telegram.ui.Components.t80 {
             }
 
             @Override // org.telegram.ui.ActionBar.a2
-            public final void f(org.telegram.ui.ActionBar.b2 b2Var, int i12) {
+            public final void k(org.telegram.ui.ActionBar.b2 b2Var, int i12) {
                 switch (i11) {
                     case 0:
                         boolean z11 = z10;
@@ -70,7 +70,7 @@ public final class ep extends org.telegram.ui.Components.t80 {
             }
 
             @Override // org.telegram.ui.ActionBar.a2
-            public final void f(org.telegram.ui.ActionBar.b2 b2Var, int i122) {
+            public final void k(org.telegram.ui.ActionBar.b2 b2Var, int i122) {
                 switch (i12) {
                     case 0:
                         boolean z11 = z10;

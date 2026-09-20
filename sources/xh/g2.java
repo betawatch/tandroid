@@ -8,11 +8,11 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.w81;
 import org.telegram.ui.Components.xc;
-import org.telegram.ui.Components.zr0;
+import org.telegram.ui.Components.yr0;
 import org.telegram.ui.ProfileActivity;
 import yh.k5;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final /* synthetic */ class g2 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -37,22 +37,22 @@ public final /* synthetic */ class g2 implements Utilities.Callback {
                 break;
             default:
                 TL_stars.TL_starGiftCollection tL_starGiftCollection = (TL_stars.TL_starGiftCollection) obj;
-                zr0 zr0Var = o2Var.a;
-                k5 k5Var = zr0Var.e;
+                yr0 yr0Var = o2Var.a;
+                k5 k5Var = yr0Var.e;
                 int i12 = tL_starGiftCollection.collection_id;
                 k5Var.getClass();
                 ArrayList arrayList = new ArrayList();
                 arrayList.add(savedStarGift);
                 k5Var.a(i12, arrayList);
-                zr0Var.f(true);
-                w81 w81Var = zr0Var.n;
+                yr0Var.f(true);
+                w81 w81Var = yr0Var.n;
                 int i13 = tL_starGiftCollection.collection_id;
-                w81Var.d(i13, zr0Var.e.f(i13) + 1);
-                org.telegram.ui.ActionBar.n2 n2Var = zr0Var.a;
+                w81Var.d(i13, yr0Var.e.f(i13) + 1);
+                org.telegram.ui.ActionBar.n2 n2Var = yr0Var.a;
                 if (n2Var instanceof ProfileActivity) {
                     ((ProfileActivity) n2Var).G4(true);
                 }
-                zr0Var.n();
+                yr0Var.n();
                 xc.a0(n2Var).R(savedStarGift.gift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2AddedToCollection, yh.y3.D1(savedStarGift.gift), tL_starGiftCollection.title))).j();
                 break;
         }

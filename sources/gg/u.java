@@ -13,14 +13,14 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.ar0;
 import org.telegram.ui.Components.e40;
+import org.telegram.ui.Components.zq0;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.e9;
 import org.telegram.ui.ea;
 import org.telegram.ui.my0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -63,7 +63,7 @@ public final /* synthetic */ class u implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new c9((e40) this.d, this.b, tLObject, (String) this.c, 20));
                 break;
             case 7:
-                AndroidUtilities.runOnUIThread(new c9((ar0) this.d, this.b, tLObject, (String) this.c, 22));
+                AndroidUtilities.runOnUIThread(new c9((zq0) this.d, this.b, tLObject, (String) this.c, 22));
                 break;
             case 8:
                 AndroidUtilities.runOnUIThread(new my0((ProfileActivity) this.d, tL_error, tLObject, (TLRPC.TL_channels_getParticipants) this.c, 0), this.b);
@@ -81,8 +81,8 @@ public final /* synthetic */ class u implements RequestDelegate {
                         String str2 = tL_premiumGiftCodeOption.store_product;
                         if (str2 != null) {
                             c5.a aVar = new c5.a();
-                            aVar.b = "inapp";
-                            aVar.a = str2;
+                            aVar.c = "inapp";
+                            aVar.b = str2;
                             arrayList2.add(aVar.a());
                         }
                     }

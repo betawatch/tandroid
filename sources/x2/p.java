@@ -1,256 +1,402 @@
 package x2;
 
-import android.content.Context;
-import android.os.Build;
-import android.text.TextUtils;
-import android.util.Pair;
 import b2.l1;
-import b2.m1;
-import b2.q1;
-import e2.d0;
-import e9.a1;
 import e9.i0;
-import e9.w;
+import e9.x0;
 import e9.y0;
-import i2.o0;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.List;
-import java.util.RandomAccess;
-import org.telegram.messenger.TranslateController;
-import org.telegram.ui.kb1;
-import u2.o1;
+import e9.z;
+import hg.k0;
+import j$.util.Objects;
+import org.telegram.messenger.MediaController;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
-public final class p extends u {
-    public static final y0 l = new w(new kb1(11));
-    public final Object d;
-    public final Context e;
-    public final qb.b f;
-    public i g;
-    public Thread h;
-    public k i;
-    public b2.e j;
-    public Boolean k;
+public final class p extends o {
+    public final int E;
+    public final boolean F;
+    public final int G;
+    public final boolean H;
+    public final int I;
+    public final boolean J;
+    public final boolean K;
+    public final int L;
+    public final boolean e;
+    public final j f;
+    public final boolean h;
+    public final boolean n;
+    public final boolean r;
+    public final int s;
+    public final int v;
+    public final int w;
+    public final int x;
+    public final int y;
 
-    public p(Context context, qb.b bVar) {
-        i iVar = i.x0;
-        this.d = new Object();
-        this.e = context != null ? context.getApplicationContext() : null;
-        this.f = bVar;
-        if (iVar != null) {
-            this.g = iVar;
-        } else {
-            iVar.getClass();
-            h hVar = new h(iVar);
-            hVar.d(iVar);
-            this.g = new i(hVar);
-        }
-        this.j = b2.e.h;
-        if (this.g.s0 && context == null) {
-            e2.a.n("DefaultTrackSelector", "Audio channel count constraints cannot be applied without reference to Context. Build the track selector instance with one of the non-deprecated constructors that take a Context argument.");
-        }
-    }
-
-    public static void c(o1 o1Var, i iVar, HashMap hashMap) {
-        for (int i10 = 0; i10 < o1Var.a; i10++) {
-            m1 m1Var = (m1) iVar.D.get(o1Var.a(i10));
-            if (m1Var != null) {
-                l1 l1Var = m1Var.a;
-                m1 m1Var2 = (m1) hashMap.get(Integer.valueOf(l1Var.c));
-                if (m1Var2 == null || (m1Var2.b.isEmpty() && !m1Var.b.isEmpty())) {
-                    hashMap.put(Integer.valueOf(l1Var.c), m1Var);
-                }
-            }
-        }
-    }
-
-    public static int d(b2.s sVar, String str, boolean z10) {
-        if (!TextUtils.isEmpty(str) && str.equals(sVar.d)) {
-            return 4;
-        }
-        String g10 = g(str);
-        String g11 = g(sVar.d);
-        if (g11 == null || g10 == null) {
-            return (z10 && g11 == null) ? 1 : 0;
-        }
-        if (g11.startsWith(g10) || g10.startsWith(g11)) {
-            return 3;
-        }
-        String str2 = d0.a;
-        return g11.split("-", 2)[0].equals(g10.split("-", 2)[0]) ? 2 : 0;
-    }
-
-    public static String g(String str) {
-        if (TextUtils.isEmpty(str) || TextUtils.equals(str, TranslateController.UNKNOWN_LANGUAGE)) {
-            return null;
-        }
-        return str;
-    }
-
-    public static boolean i(i iVar, int i10, b2.s sVar) {
-        if ((i10 & 3584) == 0) {
-            return false;
-        }
-        b2.o1 o1Var = iVar.u;
-        if (o1Var.c && (i10 & 2048) == 0) {
-            return false;
-        }
-        if (o1Var.b) {
-            boolean z10 = (sVar.M == 0 && sVar.N == 0) ? false : true;
-            boolean z11 = (i10 & 1024) != 0;
-            if (z10 && !z11) {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    public static Pair j(int i10, t tVar, int[][][] iArr, m mVar, Comparator comparator) {
-        int i11;
-        RandomAccess randomAccess;
-        t tVar2 = tVar;
-        ArrayList arrayList = new ArrayList();
-        int i12 = tVar2.a;
-        int i13 = 0;
-        while (i13 < i12) {
-            if (i10 == tVar2.b[i13]) {
-                o1 o1Var = tVar2.c[i13];
-                for (int i14 = 0; i14 < o1Var.a; i14++) {
-                    l1 a2 = o1Var.a(i14);
-                    a1 b10 = mVar.b(i13, a2, iArr[i13][i14]);
-                    int i15 = a2.a;
-                    boolean[] zArr = new boolean[i15];
-                    int i16 = 0;
-                    while (i16 < i15) {
-                        n nVar = (n) b10.get(i16);
-                        int a10 = nVar.a();
-                        if (zArr[i16] || a10 == 0) {
-                            i11 = i12;
-                        } else {
-                            if (a10 == 1) {
-                                randomAccess = i0.z(nVar);
+    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
+    /* JADX WARN: Removed duplicated region for block: B:137:0x012d  */
+    /* JADX WARN: Removed duplicated region for block: B:138:0x0122  */
+    /* JADX WARN: Removed duplicated region for block: B:142:0x0118 A[EDGE_INSN: B:142:0x0118->B:80:0x0118 BREAK  A[LOOP:1: B:72:0x00fd->B:140:0x0115], SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:143:0x00f3  */
+    /* JADX WARN: Removed duplicated region for block: B:146:0x00bd A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x0083  */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x0096  */
+    /* JADX WARN: Removed duplicated region for block: B:55:0x00ab  */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x00cf A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:65:0x00e2  */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x00f1  */
+    /* JADX WARN: Removed duplicated region for block: B:74:0x0103  */
+    /* JADX WARN: Removed duplicated region for block: B:82:0x0120  */
+    /* JADX WARN: Removed duplicated region for block: B:85:0x012b  */
+    /* JADX WARN: Removed duplicated region for block: B:88:0x0138  */
+    /* JADX WARN: Removed duplicated region for block: B:98:0x0197  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public p(int i10, l1 l1Var, int i11, j jVar, int i12, String str, int i13, boolean z10) {
+        super(i10, l1Var, i11);
+        boolean z11;
+        boolean z12;
+        int i14;
+        int size;
+        int i15;
+        int i16;
+        int i17;
+        b2.s sVar;
+        String str2;
+        int i18;
+        boolean z13;
+        j jVar2;
+        char c10;
+        int i19;
+        b2.s sVar2;
+        int i20;
+        int i21;
+        float f7;
+        int i22;
+        b2.s sVar3;
+        int i23;
+        int i24;
+        int i25;
+        this.f = jVar;
+        boolean z14 = jVar.p0;
+        i0 i0Var = jVar.m;
+        i0 i0Var2 = jVar.n;
+        int i26 = z14 ? 24 : 16;
+        int i27 = 0;
+        this.H = false;
+        if (z10 && (((i23 = (sVar3 = this.d).y) == -1 || i23 <= jVar.a) && ((i24 = sVar3.z) == -1 || i24 <= jVar.b))) {
+            float f10 = sVar3.C;
+            if ((f10 == -1.0f || f10 <= jVar.c) && ((i25 = sVar3.j) == -1 || i25 <= jVar.d)) {
+                z11 = true;
+                this.e = z11;
+                if (z10 && (((i20 = (sVar2 = this.d).y) == -1 || i20 >= jVar.e) && ((i21 = sVar2.z) == -1 || i21 >= jVar.f))) {
+                    f7 = sVar2.C;
+                    if ((f7 != -1.0f || f7 >= jVar.g) && ((i22 = sVar2.j) == -1 || i22 >= jVar.h)) {
+                        z12 = true;
+                        this.h = z12;
+                        this.n = k0.d(i12, false);
+                        b2.s sVar4 = this.d;
+                        float f11 = sVar4.C;
+                        this.r = f11 == -1.0f && f11 >= 10.0f;
+                        this.s = sVar4.j;
+                        int i28 = sVar4.y;
+                        this.v = (i28 != -1 || (i19 = sVar4.z) == -1) ? -1 : i28 * i19;
+                        i14 = 0;
+                        while (true) {
+                            size = i0Var2.size();
+                            i15 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                            if (i14 < size) {
+                                i14 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                                i16 = 0;
+                                break;
                             } else {
-                                ArrayList arrayList2 = new ArrayList();
-                                arrayList2.add(nVar);
-                                int i17 = i16 + 1;
-                                while (i17 < i15) {
-                                    n nVar2 = (n) b10.get(i17);
-                                    int i18 = i12;
-                                    if (nVar2.a() == 2 && nVar.b(nVar2)) {
-                                        arrayList2.add(nVar2);
-                                        zArr[i17] = true;
-                                    }
-                                    i17++;
-                                    i12 = i18;
+                                i16 = q.d(this.d, (String) i0Var2.get(i14), false);
+                                if (i16 > 0) {
+                                    break;
+                                } else {
+                                    i14++;
                                 }
-                                randomAccess = arrayList2;
                             }
-                            i11 = i12;
-                            arrayList.add(randomAccess);
                         }
-                        i16++;
-                        i12 = i11;
+                        this.x = i14;
+                        this.y = i16;
+                        int i29 = this.d.f;
+                        int i30 = jVar.o;
+                        y0 y0Var = q.l;
+                        this.E = (i29 == 0 && i29 == i30) ? ConnectionsManager.DEFAULT_DATACENTER_ID : Integer.bitCount(i29 & i30);
+                        int i31 = this.d.f;
+                        this.F = (i31 == 0 && (i31 & 1) == 0) ? false : true;
+                        this.G = q.d(this.d, str, q.g(str) != null);
+                        i17 = 0;
+                        while (true) {
+                            if (i17 < i0Var.size()) {
+                                String str3 = this.d.r;
+                                if (str3 != null && str3.equals(i0Var.get(i17))) {
+                                    i15 = i17;
+                                    break;
+                                }
+                                i17++;
+                            } else {
+                                break;
+                            }
+                        }
+                        this.w = i15;
+                        this.J = (i12 & 384) != 128;
+                        this.K = (i12 & 64) != 64;
+                        sVar = this.d;
+                        str2 = sVar.r;
+                        if (str2 != null) {
+                            i18 = 4;
+                            switch (str2.hashCode()) {
+                                case -1851077871:
+                                    if (str2.equals("video/dolby-vision")) {
+                                        c10 = 0;
+                                        break;
+                                    }
+                                    c10 = 65535;
+                                    break;
+                                case -1662735862:
+                                    if (str2.equals("video/av01")) {
+                                        c10 = 1;
+                                        break;
+                                    }
+                                    c10 = 65535;
+                                    break;
+                                case -1662541442:
+                                    if (str2.equals("video/hevc")) {
+                                        c10 = 2;
+                                        break;
+                                    }
+                                    c10 = 65535;
+                                    break;
+                                case 1331836730:
+                                    if (str2.equals(MediaController.VIDEO_MIME_TYPE)) {
+                                        c10 = 3;
+                                        break;
+                                    }
+                                    c10 = 65535;
+                                    break;
+                                case 1599127257:
+                                    if (str2.equals("video/x-vnd.on2.vp9")) {
+                                        c10 = 4;
+                                        break;
+                                    }
+                                    c10 = 65535;
+                                    break;
+                                default:
+                                    c10 = 65535;
+                                    break;
+                            }
+                            switch (c10) {
+                                case 0:
+                                    i18 = 5;
+                                    break;
+                                case 2:
+                                    i18 = 3;
+                                    break;
+                                case 3:
+                                    i18 = 1;
+                                    break;
+                                case 4:
+                                    i18 = 2;
+                                    break;
+                            }
+                            this.L = i18;
+                            z13 = this.e;
+                            jVar2 = this.f;
+                            if ((sVar.f & 16384) == 0 && k0.d(i12, jVar2.t0) && (z13 || jVar2.o0)) {
+                                i27 = (k0.d(i12, false) || !this.h || !z13 || sVar.j == -1 || jVar2.C || jVar2.B || (i26 & i12) == 0) ? 1 : 2;
+                            }
+                            this.I = i27;
+                        }
+                        i18 = 0;
+                        this.L = i18;
+                        z13 = this.e;
+                        jVar2 = this.f;
+                        if ((sVar.f & 16384) == 0) {
+                            if (k0.d(i12, false)) {
+                            }
+                        }
+                        this.I = i27;
                     }
                 }
-            }
-            i13++;
-            tVar2 = tVar;
-            i12 = i12;
-        }
-        if (arrayList.isEmpty()) {
-            return null;
-        }
-        List list = (List) Collections.max(arrayList, comparator);
-        int[] iArr2 = new int[list.size()];
-        for (int i19 = 0; i19 < list.size(); i19++) {
-            iArr2[i19] = ((n) list.get(i19)).c;
-        }
-        n nVar3 = (n) list.get(0);
-        return Pair.create(new q(nVar3.b, iArr2), Integer.valueOf(nVar3.a));
-    }
-
-    @Override // x2.u
-    public final void a() {
-        k kVar;
-        synchronized (this.d) {
-            try {
-                Thread thread = this.h;
-                if (thread != null) {
-                    e2.d.f("DefaultTrackSelector is accessed on the wrong thread.", thread == Thread.currentThread());
+                z12 = false;
+                this.h = z12;
+                this.n = k0.d(i12, false);
+                b2.s sVar42 = this.d;
+                float f112 = sVar42.C;
+                this.r = f112 == -1.0f && f112 >= 10.0f;
+                this.s = sVar42.j;
+                int i282 = sVar42.y;
+                this.v = (i282 != -1 || (i19 = sVar42.z) == -1) ? -1 : i282 * i19;
+                i14 = 0;
+                while (true) {
+                    size = i0Var2.size();
+                    i15 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                    if (i14 < size) {
+                    }
+                    i14++;
                 }
-            } catch (Throwable th2) {
-                throw th2;
+                this.x = i14;
+                this.y = i16;
+                int i292 = this.d.f;
+                int i302 = jVar.o;
+                y0 y0Var2 = q.l;
+                this.E = (i292 == 0 && i292 == i302) ? ConnectionsManager.DEFAULT_DATACENTER_ID : Integer.bitCount(i292 & i302);
+                int i312 = this.d.f;
+                this.F = (i312 == 0 && (i312 & 1) == 0) ? false : true;
+                this.G = q.d(this.d, str, q.g(str) != null);
+                i17 = 0;
+                while (true) {
+                    if (i17 < i0Var.size()) {
+                    }
+                    i17++;
+                }
+                this.w = i15;
+                this.J = (i12 & 384) != 128;
+                this.K = (i12 & 64) != 64;
+                sVar = this.d;
+                str2 = sVar.r;
+                if (str2 != null) {
+                }
+                i18 = 0;
+                this.L = i18;
+                z13 = this.e;
+                jVar2 = this.f;
+                if ((sVar.f & 16384) == 0) {
+                }
+                this.I = i27;
             }
         }
-        if (Build.VERSION.SDK_INT >= 32 && (kVar = this.i) != null) {
-            kVar.d();
-            this.i = null;
-        }
-        this.a = null;
-        this.b = null;
-    }
-
-    @Override // x2.u
-    public final void b(q1 q1Var) {
-        if (q1Var instanceof i) {
-            k((i) q1Var);
-        }
-        h hVar = new h(e());
-        hVar.d(q1Var);
-        k(new i(hVar));
-    }
-
-    public final i e() {
-        i iVar;
-        synchronized (this.d) {
-            iVar = this.g;
-        }
-        return iVar;
-    }
-
-    public final void f() {
-        boolean z10;
-        o0 o0Var;
-        k kVar;
-        synchronized (this.d) {
-            try {
-                z10 = this.g.s0 && Build.VERSION.SDK_INT >= 32 && (kVar = this.i) != null && kVar.b;
-            } catch (Throwable th2) {
-                throw th2;
+        z11 = false;
+        this.e = z11;
+        if (z10) {
+            f7 = sVar2.C;
+            if (f7 != -1.0f) {
             }
+            z12 = true;
+            this.h = z12;
+            this.n = k0.d(i12, false);
+            b2.s sVar422 = this.d;
+            float f1122 = sVar422.C;
+            this.r = f1122 == -1.0f && f1122 >= 10.0f;
+            this.s = sVar422.j;
+            int i2822 = sVar422.y;
+            this.v = (i2822 != -1 || (i19 = sVar422.z) == -1) ? -1 : i2822 * i19;
+            i14 = 0;
+            while (true) {
+                size = i0Var2.size();
+                i15 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                if (i14 < size) {
+                }
+                i14++;
+            }
+            this.x = i14;
+            this.y = i16;
+            int i2922 = this.d.f;
+            int i3022 = jVar.o;
+            y0 y0Var22 = q.l;
+            this.E = (i2922 == 0 && i2922 == i3022) ? ConnectionsManager.DEFAULT_DATACENTER_ID : Integer.bitCount(i2922 & i3022);
+            int i3122 = this.d.f;
+            this.F = (i3122 == 0 && (i3122 & 1) == 0) ? false : true;
+            this.G = q.d(this.d, str, q.g(str) != null);
+            i17 = 0;
+            while (true) {
+                if (i17 < i0Var.size()) {
+                }
+                i17++;
+            }
+            this.w = i15;
+            this.J = (i12 & 384) != 128;
+            this.K = (i12 & 64) != 64;
+            sVar = this.d;
+            str2 = sVar.r;
+            if (str2 != null) {
+            }
+            i18 = 0;
+            this.L = i18;
+            z13 = this.e;
+            jVar2 = this.f;
+            if ((sVar.f & 16384) == 0) {
+            }
+            this.I = i27;
         }
-        if (!z10 || (o0Var = this.a) == null) {
-            return;
+        z12 = false;
+        this.h = z12;
+        this.n = k0.d(i12, false);
+        b2.s sVar4222 = this.d;
+        float f11222 = sVar4222.C;
+        this.r = f11222 == -1.0f && f11222 >= 10.0f;
+        this.s = sVar4222.j;
+        int i28222 = sVar4222.y;
+        this.v = (i28222 != -1 || (i19 = sVar4222.z) == -1) ? -1 : i28222 * i19;
+        i14 = 0;
+        while (true) {
+            size = i0Var2.size();
+            i15 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+            if (i14 < size) {
+            }
+            i14++;
         }
-        o0Var.n.e(10);
+        this.x = i14;
+        this.y = i16;
+        int i29222 = this.d.f;
+        int i30222 = jVar.o;
+        y0 y0Var222 = q.l;
+        this.E = (i29222 == 0 && i29222 == i30222) ? ConnectionsManager.DEFAULT_DATACENTER_ID : Integer.bitCount(i29222 & i30222);
+        int i31222 = this.d.f;
+        this.F = (i31222 == 0 && (i31222 & 1) == 0) ? false : true;
+        this.G = q.d(this.d, str, q.g(str) != null);
+        i17 = 0;
+        while (true) {
+            if (i17 < i0Var.size()) {
+            }
+            i17++;
+        }
+        this.w = i15;
+        this.J = (i12 & 384) != 128;
+        this.K = (i12 & 64) != 64;
+        sVar = this.d;
+        str2 = sVar.r;
+        if (str2 != null) {
+        }
+        i18 = 0;
+        this.L = i18;
+        z13 = this.e;
+        jVar2 = this.f;
+        if ((sVar.f & 16384) == 0) {
+        }
+        this.I = i27;
     }
 
-    public final void h() {
-        synchronized (this.d) {
-            this.g.getClass();
+    public static int c(p pVar, p pVar2) {
+        z c10 = z.a.c(pVar.n, pVar2.n);
+        Integer valueOf = Integer.valueOf(pVar.x);
+        Integer valueOf2 = Integer.valueOf(pVar2.x);
+        x0 x0Var = x0.c;
+        z b10 = c10.b(valueOf, valueOf2, x0Var).a(pVar.y, pVar2.y).a(pVar.E, pVar2.E).c(pVar.F, pVar2.F).a(pVar.G, pVar2.G).c(pVar.r, pVar2.r).c(pVar.e, pVar2.e).c(pVar.h, pVar2.h).b(Integer.valueOf(pVar.w), Integer.valueOf(pVar2.w), x0Var);
+        boolean z10 = pVar.J;
+        z c11 = b10.c(z10, pVar2.J);
+        boolean z11 = pVar.K;
+        z c12 = c11.c(z11, pVar2.K);
+        if (z10 && z11) {
+            c12 = c12.a(pVar.L, pVar2.L);
         }
+        return c12.e();
     }
 
-    public final void k(i iVar) {
-        boolean equals;
-        iVar.getClass();
-        synchronized (this.d) {
-            equals = this.g.equals(iVar);
-            this.g = iVar;
+    @Override // x2.o
+    public final int a() {
+        return this.I;
+    }
+
+    @Override // x2.o
+    public final boolean b(o oVar) {
+        p pVar = (p) oVar;
+        if (!this.H && !Objects.equals(this.d.r, pVar.d.r)) {
+            return false;
         }
-        if (equals) {
-            return;
-        }
-        if (iVar.s0 && this.e == null) {
-            e2.a.n("DefaultTrackSelector", "Audio channel count constraints cannot be applied without reference to Context. Build the track selector instance with one of the non-deprecated constructors that take a Context argument.");
-        }
-        o0 o0Var = this.a;
-        if (o0Var != null) {
-            o0Var.n.e(10);
-        }
+        this.f.getClass();
+        return this.J == pVar.J && this.K == pVar.K;
     }
 }

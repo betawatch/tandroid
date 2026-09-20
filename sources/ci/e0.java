@@ -29,19 +29,19 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.camera.CameraView;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.v70;
+import org.telegram.ui.Components.u70;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
-public abstract class e0 extends FrameLayout implements v70 {
+public abstract class e0 extends FrameLayout implements u70 {
     public static final /* synthetic */ int x0 = 0;
     public final LinearGradient E;
     public final Matrix F;
-    public final org.telegram.ui.Components.ja G;
+    public final org.telegram.ui.Components.ia G;
     public final a0 H;
-    public final org.telegram.ui.Components.e6 I;
-    public final org.telegram.ui.Components.e6[] J;
-    public final org.telegram.ui.Components.e6 K;
+    public final org.telegram.ui.Components.d6 I;
+    public final org.telegram.ui.Components.d6[] J;
+    public final org.telegram.ui.Components.d6 K;
     public final float[] L;
     public final float[] M;
     public Object N;
@@ -92,7 +92,7 @@ public abstract class e0 extends FrameLayout implements v70 {
     public final float[] x;
     public final int y;
 
-    public e0(Context context, org.telegram.ui.Components.ja jaVar, FrameLayout frameLayout, ai.d dVar) {
+    public e0(Context context, org.telegram.ui.Components.ia iaVar, FrameLayout frameLayout, ai.d dVar) {
         super(context);
         this.c = new g7(new a0(this, 1));
         this.f = new t(".");
@@ -105,9 +105,9 @@ public abstract class e0 extends FrameLayout implements v70 {
         this.x = new float[8];
         this.H = new a0(this, 2);
         qr qrVar = qr.h;
-        this.I = new org.telegram.ui.Components.e6(this, 0L, 320L, qrVar);
-        this.J = new org.telegram.ui.Components.e6[]{new org.telegram.ui.Components.e6(this, 0L, 320L, qrVar), new org.telegram.ui.Components.e6(this, 0L, 320L, qrVar), new org.telegram.ui.Components.e6(this, 0L, 320L, qrVar), new org.telegram.ui.Components.e6(this, 0L, 320L, qrVar), new org.telegram.ui.Components.e6(this, 0L, 320L, qrVar)};
-        this.K = new org.telegram.ui.Components.e6(this, 0L, 320L, qrVar);
+        this.I = new org.telegram.ui.Components.d6(this, 0L, 320L, qrVar);
+        this.J = new org.telegram.ui.Components.d6[]{new org.telegram.ui.Components.d6(this, 0L, 320L, qrVar), new org.telegram.ui.Components.d6(this, 0L, 320L, qrVar), new org.telegram.ui.Components.d6(this, 0L, 320L, qrVar), new org.telegram.ui.Components.d6(this, 0L, 320L, qrVar), new org.telegram.ui.Components.d6(this, 0L, 320L, qrVar)};
+        this.K = new org.telegram.ui.Components.d6(this, 0L, 320L, qrVar);
         this.L = new float[5];
         this.M = new float[5];
         this.P = new RectF();
@@ -116,7 +116,7 @@ public abstract class e0 extends FrameLayout implements v70 {
         this.q0 = true;
         this.t0 = true;
         this.w0 = new a0(this, 3);
-        this.G = jaVar;
+        this.G = iaVar;
         this.a = frameLayout;
         this.b = dVar;
         setBackgroundColor(-14737633);
@@ -196,7 +196,7 @@ public abstract class e0 extends FrameLayout implements v70 {
         canvas.restore();
     }
 
-    @Override // org.telegram.ui.Components.v70
+    @Override // org.telegram.ui.Components.u70
     public final void a(RectF rectF) {
         d0 d0Var = this.j0;
         if (d0Var == null) {
@@ -212,7 +212,7 @@ public abstract class e0 extends FrameLayout implements v70 {
         rectF.set((getMeasuredWidth() / d) * i10, (getMeasuredHeight() / f7) * i11, (getMeasuredWidth() / d) * (i10 + 1), (getMeasuredHeight() / f7) * (i11 + 1));
     }
 
-    @Override // org.telegram.ui.Components.v70
+    @Override // org.telegram.ui.Components.u70
     public final void b(Canvas canvas, float f7) {
         d0 d0Var = this.j0;
         if (d0Var != null) {
@@ -265,7 +265,7 @@ public abstract class e0 extends FrameLayout implements v70 {
         RectF rectF;
         float f10;
         int i10;
-        org.telegram.ui.Components.ja jaVar;
+        org.telegram.ui.Components.ia iaVar;
         d0 d0Var;
         int i11;
         if (this.N == null || Build.VERSION.SDK_INT < 29 || !canvas.isHardwareAccelerated()) {
@@ -277,14 +277,14 @@ public abstract class e0 extends FrameLayout implements v70 {
         }
         super.dispatchDraw(canvas2);
         boolean j3 = j();
-        org.telegram.ui.Components.e6 e6Var = this.I;
-        org.telegram.ui.Components.e6[] e6VarArr = this.J;
+        org.telegram.ui.Components.d6 d6Var = this.I;
+        org.telegram.ui.Components.d6[] d6VarArr = this.J;
         if (!j3 && !this.f0 && !this.e0) {
-            float f11 = e6Var.c;
+            float f11 = d6Var.c;
             t tVar = this.f;
-            if (f11 == tVar.c && e6VarArr[0].c == tVar.d[0]) {
+            if (f11 == tVar.c && d6VarArr[0].c == tVar.d[0]) {
                 g7 g7Var = this.c;
-                if (!g7Var.a && ((org.telegram.ui.Components.e6) g7Var.d).c <= 0.0f) {
+                if (!g7Var.a && ((org.telegram.ui.Components.d6) g7Var.d).c <= 0.0f) {
                     setCameraNeedsBlur(false);
                     i(canvas);
                     return;
@@ -296,7 +296,7 @@ public abstract class e0 extends FrameLayout implements v70 {
         }
         canvas2.drawColor(-14737633);
         float e = this.K.e(this.e0);
-        float d10 = e6Var.d(this.f.c, false);
+        float d10 = d6Var.d(this.f.c, false);
         int i12 = 0;
         while (true) {
             double d11 = i12;
@@ -311,8 +311,8 @@ public abstract class e0 extends FrameLayout implements v70 {
             fArr[i12] = 0.0f;
             i12++;
         }
-        for (int i13 = this.f.c; i13 < e6VarArr.length; i13++) {
-            e6VarArr[i13].d(1.0f, false);
+        for (int i13 = this.f.c; i13 < d6VarArr.length; i13++) {
+            d6VarArr[i13].d(1.0f, false);
         }
         int i14 = 0;
         float f12 = 0.0f;
@@ -331,8 +331,8 @@ public abstract class e0 extends FrameLayout implements v70 {
             float f13 = e;
             int i16 = sVar.b;
             float f14 = d10;
-            org.telegram.ui.Components.e6[] e6VarArr2 = e6VarArr;
-            float d12 = e6VarArr[i15].d(sVar.a.d[i15], false);
+            org.telegram.ui.Components.d6[] d6VarArr2 = d6VarArr;
+            float d12 = d6VarArr[i15].d(sVar.a.d[i15], false);
             if (this.f0 || this.e0) {
                 i11 = i15;
                 AndroidUtilities.lerp(d0Var2.j, d0Var2.k, d0Var2.l, rectF);
@@ -352,11 +352,11 @@ public abstract class e0 extends FrameLayout implements v70 {
             i14++;
             e = f13;
             d10 = f14;
-            e6VarArr = e6VarArr2;
+            d6VarArr = d6VarArr2;
         }
         float f15 = e;
         float f16 = d10;
-        org.telegram.ui.Components.e6[] e6VarArr3 = e6VarArr;
+        org.telegram.ui.Components.d6[] d6VarArr3 = d6VarArr;
         int i17 = 0;
         while (true) {
             ArrayList arrayList2 = this.n;
@@ -368,7 +368,7 @@ public abstract class e0 extends FrameLayout implements v70 {
             int i18 = sVar2.c;
             int i19 = sVar2.b;
             int i20 = i17;
-            float d13 = e6VarArr3[i18].d(i18 >= this.f.d.length ? 1.0f : r9[i18], false);
+            float d13 = d6VarArr3[i18].d(i18 >= this.f.d.length ? 1.0f : r9[i18], false);
             rectF.set((getMeasuredWidth() / d13) * i19, (getMeasuredHeight() / f16) * i18, (getMeasuredWidth() / d13) * (i19 + 1), (i18 + 1) * (getMeasuredHeight() / f16));
             fArr2[i18] = Math.min(fArr2[i18], rectF.left);
             fArr[i18] = Math.max(fArr[i18], rectF.right);
@@ -401,7 +401,7 @@ public abstract class e0 extends FrameLayout implements v70 {
                     s sVar3 = d0Var.h;
                     int i22 = sVar3.c;
                     int i23 = sVar3.b;
-                    float d14 = e6VarArr3[i22].d(this.f.d[i22], false);
+                    float d14 = d6VarArr3[i22].d(this.f.d[i22], false);
                     if (this.e0) {
                         rectF.set((getMeasuredWidth() / d14) * i23, (getMeasuredHeight() / f16) * i22, (getMeasuredWidth() / d14) * (i23 + 1), (getMeasuredHeight() / f16) * (i22 + 1));
                     } else {
@@ -420,7 +420,7 @@ public abstract class e0 extends FrameLayout implements v70 {
                         int i24 = sVar4.c;
                         int i25 = sVar4.c;
                         int i26 = sVar4.b;
-                        float d16 = e6VarArr3[i24].d(sVar4.a.d[i24], false);
+                        float d16 = d6VarArr3[i24].d(sVar4.a.d[i24], false);
                         if (this.f0 || this.e0) {
                             AndroidUtilities.lerp(d0Var4.j, d0Var4.k, d0Var4.l, rectF);
                         } else {
@@ -464,8 +464,8 @@ public abstract class e0 extends FrameLayout implements v70 {
                         canvas2.drawPath(path, paint);
                     }
                 }
-                if (z10 && (jaVar = this.G) != null) {
-                    jaVar.d();
+                if (z10 && (iaVar = this.G) != null) {
+                    iaVar.d();
                 }
                 i(canvas);
             }
@@ -475,7 +475,7 @@ public abstract class e0 extends FrameLayout implements v70 {
             s sVar32 = d0Var.h;
             int i222 = sVar32.c;
             int i232 = sVar32.b;
-            float d142 = e6VarArr3[i222].d(this.f.d[i222], false);
+            float d142 = d6VarArr3[i222].d(this.f.d[i222], false);
             if (this.e0) {
             }
             canvas2.save();
@@ -486,7 +486,7 @@ public abstract class e0 extends FrameLayout implements v70 {
         while (i10 < arrayList.size()) {
         }
         if (z10) {
-            jaVar.d();
+            iaVar.d();
         }
         i(canvas);
     }
@@ -494,7 +494,7 @@ public abstract class e0 extends FrameLayout implements v70 {
     @Override // android.view.ViewGroup, android.view.View
     public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
         ArrayList arrayList;
-        org.telegram.ui.Components.e6[] e6VarArr;
+        org.telegram.ui.Components.d6[] d6VarArr;
         RectF rectF;
         d0 d0Var;
         a0 a0Var;
@@ -508,13 +508,13 @@ public abstract class e0 extends FrameLayout implements v70 {
         }
         float x10 = motionEvent.getX();
         float y3 = motionEvent.getY();
-        org.telegram.ui.Components.e6 e6Var = this.I;
-        float f7 = e6Var.c;
+        org.telegram.ui.Components.d6 d6Var = this.I;
+        float f7 = d6Var.c;
         int i10 = 0;
         while (true) {
             arrayList = this.h;
             int size = arrayList.size();
-            e6VarArr = this.J;
+            d6VarArr = this.J;
             rectF = this.P;
             if (i10 >= size) {
                 d0Var = null;
@@ -524,7 +524,7 @@ public abstract class e0 extends FrameLayout implements v70 {
             s sVar = d0Var.h;
             int i11 = sVar.c;
             int i12 = sVar.b;
-            float f10 = e6VarArr[i11].c;
+            float f10 = d6VarArr[i11].c;
             rectF.set((getMeasuredWidth() / f10) * i12, (getMeasuredHeight() / f7) * i11, (getMeasuredWidth() / f10) * (i12 + 1), (getMeasuredHeight() / f7) * (i11 + 1));
             if (rectF.contains(x10, y3)) {
                 break;
@@ -546,11 +546,11 @@ public abstract class e0 extends FrameLayout implements v70 {
                 AndroidUtilities.runOnUIThread(a0Var2, ViewConfiguration.getLongPressTimeout());
             }
         } else if (motionEvent.getAction() == 2) {
-            if (v7.z6.a(motionEvent.getX(), motionEvent.getY(), this.V, this.W) > AndroidUtilities.touchSlop * 1.2f && (a0Var = this.i0) != null) {
+            if (v7.a7.a(motionEvent.getX(), motionEvent.getY(), this.V, this.W) > AndroidUtilities.touchSlop * 1.2f && (a0Var = this.i0) != null) {
                 AndroidUtilities.cancelRunOnUIThread(a0Var);
                 this.i0 = null;
             }
-            if (!this.e0 && getFilledProgress() >= 1.0f && this.g0 != null && d0Var != null && v7.z6.a(motionEvent.getX(), motionEvent.getY(), this.V, this.W) > AndroidUtilities.touchSlop * 1.2f) {
+            if (!this.e0 && getFilledProgress() >= 1.0f && this.g0 != null && d0Var != null && v7.a7.a(motionEvent.getX(), motionEvent.getY(), this.V, this.W) > AndroidUtilities.touchSlop * 1.2f) {
                 this.e0 = true;
                 this.h0 = this.g0;
                 this.c0 = 0.0f;
@@ -566,7 +566,7 @@ public abstract class e0 extends FrameLayout implements v70 {
             } else if (this.e0 && this.h0 != null) {
                 float x11 = motionEvent.getX();
                 float y10 = motionEvent.getY();
-                float f11 = e6Var.c;
+                float f11 = d6Var.c;
                 int i13 = 0;
                 while (true) {
                     if (i13 >= arrayList.size()) {
@@ -576,7 +576,7 @@ public abstract class e0 extends FrameLayout implements v70 {
                     s sVar2 = ((d0) arrayList.get(i13)).h;
                     int i14 = sVar2.c;
                     int i15 = sVar2.b;
-                    float f12 = e6VarArr[i14].c;
+                    float f12 = d6VarArr[i14].c;
                     rectF.set((getMeasuredWidth() / f12) * i15, (getMeasuredHeight() / f11) * i14, (getMeasuredWidth() / f12) * (i15 + 1), (getMeasuredHeight() / f11) * (i14 + 1));
                     if (rectF.contains(x11, y10)) {
                         break;
@@ -593,7 +593,7 @@ public abstract class e0 extends FrameLayout implements v70 {
                     s sVar3 = this.h0.h;
                     int i16 = sVar3.c;
                     int i17 = sVar3.b;
-                    float f14 = e6VarArr[i16].c;
+                    float f14 = d6VarArr[i16].c;
                     rectF.set((getMeasuredWidth() / f14) * i17, (getMeasuredHeight() / f13) * i16, (getMeasuredWidth() / f14) * (i17 + 1), (getMeasuredHeight() / f13) * (i16 + 1));
                     this.a0 = this.c0;
                     this.b0 = this.d0;
@@ -666,15 +666,15 @@ public abstract class e0 extends FrameLayout implements v70 {
             return;
         }
         if (d0Var == this.h0) {
-            org.telegram.ui.Components.e6 e6Var = this.K;
-            if (e6Var.c > 0.0f) {
+            org.telegram.ui.Components.d6 d6Var = this.K;
+            if (d6Var.c > 0.0f) {
                 canvas.save();
                 Path path = this.Q;
                 path.rewind();
                 RectF rectF2 = AndroidUtilities.rectTmp;
                 rectF2.set(rectF);
-                rectF2.inset(AndroidUtilities.dp(10.0f) * e6Var.c, AndroidUtilities.dp(10.0f) * e6Var.c);
-                float dp = AndroidUtilities.dp(12.0f) * e6Var.c;
+                rectF2.inset(AndroidUtilities.dp(10.0f) * d6Var.c, AndroidUtilities.dp(10.0f) * d6Var.c);
+                float dp = AndroidUtilities.dp(12.0f) * d6Var.c;
                 path.addRoundRect(rectF2, dp, dp, Path.Direction.CW);
                 canvas.clipPath(path);
                 z10 = true;
@@ -924,17 +924,17 @@ public abstract class e0 extends FrameLayout implements v70 {
             return;
         }
         Paint paint = (Paint) g7Var.i;
-        org.telegram.ui.Components.e6[] e6VarArr = (org.telegram.ui.Components.e6[]) g7Var.h;
-        org.telegram.ui.Components.e6[] e6VarArr2 = (org.telegram.ui.Components.e6[]) g7Var.g;
+        org.telegram.ui.Components.d6[] d6VarArr = (org.telegram.ui.Components.d6[]) g7Var.h;
+        org.telegram.ui.Components.d6[] d6VarArr2 = (org.telegram.ui.Components.d6[]) g7Var.g;
         Path path = (Path) g7Var.j;
         f7 f7Var = (f7) g7Var.c;
         if (f7Var == null || f7Var.b.length <= 0) {
             return;
         }
-        float e = ((org.telegram.ui.Components.e6) g7Var.d).e(g7Var.a);
-        float d = ((org.telegram.ui.Components.e6) g7Var.e).d(((f7) g7Var.c).c, false);
+        float e = ((org.telegram.ui.Components.d6) g7Var.d).e(g7Var.a);
+        float d = ((org.telegram.ui.Components.d6) g7Var.e).d(((f7) g7Var.c).c, false);
         float width = (rectF2.width() * d) + rectF2.left;
-        float d10 = ((org.telegram.ui.Components.e6) g7Var.f).d(((f7) g7Var.c).d, false);
+        float d10 = ((org.telegram.ui.Components.d6) g7Var.f).d(((f7) g7Var.c).d, false);
         float height = (rectF2.height() * d10) + rectF2.top;
         float lerp = AndroidUtilities.lerp(0.5f, 1.1f, e);
         canvas.save();
@@ -955,24 +955,24 @@ public abstract class e0 extends FrameLayout implements v70 {
                 PointF pointF = pointFArr[i11];
                 int i14 = min;
                 PointF pointF2 = pointFArr[i10];
-                org.telegram.ui.Components.e6[] e6VarArr3 = e6VarArr;
+                org.telegram.ui.Components.d6[] d6VarArr3 = d6VarArr;
                 PointF pointF3 = pointFArr[i13];
-                org.telegram.ui.Components.e6[] e6VarArr4 = e6VarArr2;
+                org.telegram.ui.Components.d6[] d6VarArr4 = d6VarArr2;
                 float f10 = e;
-                float width2 = (rectF2.width() * (e6VarArr4[i11].d(pointF.x - f7Var2.c, false) + d)) + rectF2.left;
-                float height2 = (rectF2.height() * (e6VarArr3[i11].d(pointF.y - ((f7) g7Var.c).d, false) + d10)) + rectF2.top;
-                float width3 = (rectF2.width() * (e6VarArr4[i10].d(pointF2.x - ((f7) g7Var.c).c, false) + d)) + rectF2.left;
-                float height3 = (rectF2.height() * (e6VarArr3[i10].d(pointF2.y - ((f7) g7Var.c).d, false) + d10)) + rectF2.top;
-                float width4 = (rectF2.width() * (e6VarArr4[i13].d(pointF3.x - ((f7) g7Var.c).c, false) + d)) + rectF2.left;
-                float height4 = ((rectF.height() * (e6VarArr3[i13].d(pointF3.y - ((f7) g7Var.c).d, false) + d10)) + rectF2.top) - height3;
+                float width2 = (rectF2.width() * (d6VarArr4[i11].d(pointF.x - f7Var2.c, false) + d)) + rectF2.left;
+                float height2 = (rectF2.height() * (d6VarArr3[i11].d(pointF.y - ((f7) g7Var.c).d, false) + d10)) + rectF2.top;
+                float width3 = (rectF2.width() * (d6VarArr4[i10].d(pointF2.x - ((f7) g7Var.c).c, false) + d)) + rectF2.left;
+                float height3 = (rectF2.height() * (d6VarArr3[i10].d(pointF2.y - ((f7) g7Var.c).d, false) + d10)) + rectF2.top;
+                float width4 = (rectF2.width() * (d6VarArr4[i13].d(pointF3.x - ((f7) g7Var.c).c, false) + d)) + rectF2.left;
+                float height4 = ((rectF.height() * (d6VarArr3[i13].d(pointF3.y - ((f7) g7Var.c).d, false) + d10)) + rectF2.top) - height3;
                 path.moveTo(((width2 - width3) * 0.18f) + width3, ((height2 - height3) * 0.18f) + height3);
                 path.lineTo(width3, height3);
                 path.lineTo(((width4 - width3) * 0.18f) + width3, (height4 * 0.18f) + height3);
                 rectF2 = rectF;
-                e6VarArr2 = e6VarArr4;
+                d6VarArr2 = d6VarArr4;
                 i10 = i12;
                 min = i14;
-                e6VarArr = e6VarArr3;
+                d6VarArr = d6VarArr3;
                 e = f10;
             }
             paint.setAlpha((int) (e * 255.0f));
@@ -1322,9 +1322,9 @@ public abstract class e0 extends FrameLayout implements v70 {
         ArrayList arrayList = this.h;
         int i10 = 0;
         if (z10) {
-            org.telegram.ui.Components.ja jaVar = this.G;
-            if (jaVar != null) {
-                jaVar.d();
+            org.telegram.ui.Components.ia iaVar = this.G;
+            if (iaVar != null) {
+                iaVar.d();
             }
             for (int i11 = 0; i11 < arrayList.size(); i11++) {
                 ((d0) arrayList.get(i11)).a = i11;

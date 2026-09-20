@@ -8,7 +8,7 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public class t2 extends org.telegram.ui.ActionBar.f3 implements NotificationCenter.NotificationCenterDelegate {
     public static int G = 1;
@@ -28,8 +28,8 @@ public class t2 extends org.telegram.ui.ActionBar.f3 implements NotificationCent
     public float x;
     public Utilities.Callback3Return y;
 
-    public t2(Context context, org.telegram.ui.ActionBar.e6 e6Var, boolean z10, boolean z11) {
-        super(1, context, e6Var, true);
+    public t2(Context context, org.telegram.ui.ActionBar.f6 f6Var, boolean z10, boolean z11) {
+        super(1, context, f6Var, true);
         this.b = null;
         this.c = -1;
         this.d = new g1();
@@ -38,7 +38,7 @@ public class t2 extends org.telegram.ui.ActionBar.f3 implements NotificationCent
         this.r = z10;
         this.s = z11;
         this.useSmoothKeyboard = true;
-        fixNavigationBar(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.h5, e6Var));
+        fixNavigationBar(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.h5, f6Var));
         this.occupyNavigationBar = true;
         setUseLightStatusBar(false);
         this.containerView = new k1(this, context);

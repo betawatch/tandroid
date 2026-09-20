@@ -6,9 +6,9 @@ import id.c;
 import jd.a;
 import kd.j;
 import rd.p;
-import v7.t7;
+import v7.u7;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 final class zzgc extends j implements p {
     Object zza;
@@ -76,7 +76,7 @@ final class zzgc extends j implements p {
         int i10 = this.zzc;
         try {
             if (i10 == 0) {
-                t7.b(obj);
+                u7.b(obj);
                 zzhkVar = (zzhk) this.zzh;
                 zzge zzgeVar = this.zzd;
                 zzdvVar = zzgeVar.zzb;
@@ -103,13 +103,13 @@ final class zzgc extends j implements p {
                 d = this.zzb;
                 zzhkVar = (zzhk) this.zza;
                 zzhk zzhkVar4 = (zzhk) this.zzh;
-                t7.b(obj);
+                u7.b(obj);
                 zzhkVar2 = zzhkVar4;
                 zzl = obj;
             } else if (i10 == 2) {
                 d10 = this.zzb;
                 zzhk zzhkVar5 = (zzhk) this.zzh;
-                t7.b(obj);
+                u7.b(obj);
                 zzhkVar2 = zzhkVar5;
                 zza = obj;
                 zzxx zzxxVar = (zzxx) zza;
@@ -152,7 +152,7 @@ final class zzgc extends j implements p {
             } else if (i10 == 3) {
                 zzhk zzhkVar6 = (zzhk) this.zza;
                 zzhkVar3 = (zzhk) this.zzh;
-                t7.b(obj);
+                u7.b(obj);
                 zzhkVar2 = zzhkVar6;
                 zzm = obj;
                 this.zzh = zzhkVar3;
@@ -179,12 +179,12 @@ final class zzgc extends j implements p {
                 if (i10 != 4) {
                     if (i10 != 5) {
                         zzygVar2 = (zzyg) this.zzh;
-                        t7.b(obj);
+                        u7.b(obj);
                         return zzygVar2.zzj();
                     }
                     zzhk zzhkVar7 = (zzhk) this.zza;
                     zzyg zzygVar3 = (zzyg) this.zzh;
-                    t7.b(obj);
+                    u7.b(obj);
                     zzhkVar3 = zzhkVar7;
                     zzygVar = zzygVar3;
                     zzo = obj;
@@ -198,7 +198,7 @@ final class zzgc extends j implements p {
                     return zzygVar2.zzj();
                 }
                 zzhk zzhkVar8 = (zzhk) this.zzh;
-                t7.b(obj);
+                u7.b(obj);
                 zzhkVar3 = zzhkVar8;
                 zza2 = obj;
                 zzygVar = (zzyg) zza2;

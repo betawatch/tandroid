@@ -24,9 +24,9 @@ import org.telegram.ui.Components.tq;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.gp0;
 import org.telegram.ui.iu0;
-import org.telegram.ui.nj1;
+import org.telegram.ui.oj1;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class i extends WebViewClient {
     public final /* synthetic */ int a;
@@ -45,8 +45,8 @@ public final class i extends WebViewClient {
         if (!"tg".equals(parse.getScheme())) {
             return false;
         }
-        ((nj1) this.b).getClass();
-        ((nj1) this.b).finishFragment(false);
+        ((oj1) this.b).getClass();
+        ((oj1) this.b).finishFragment(false);
         try {
             Intent intent = new Intent("android.intent.action.VIEW", parse);
             intent.setComponent(new ComponentName(ApplicationLoader.applicationContext.getPackageName(), LaunchActivity.class.getName()));
@@ -93,13 +93,13 @@ public final class i extends WebViewClient {
                 break;
             case 2:
                 super.onPageFinished(webView, str);
-                nj1 nj1Var = (nj1) obj;
-                tq tqVar = nj1Var.c;
+                oj1 oj1Var = (oj1) obj;
+                tq tqVar = oj1Var.c;
                 if (tqVar != null && tqVar.getVisibility() == 0) {
                     AnimatorSet animatorSet = new AnimatorSet();
-                    nj1Var.b.getContentView().setVisibility(0);
-                    nj1Var.b.setEnabled(true);
-                    animatorSet.playTogether(ObjectAnimator.ofFloat(nj1Var.c, "scaleX", 1.0f, 0.1f), ObjectAnimator.ofFloat(nj1Var.c, "scaleY", 1.0f, 0.1f), ObjectAnimator.ofFloat(nj1Var.c, "alpha", 1.0f, 0.0f), ObjectAnimator.ofFloat(nj1Var.b.getContentView(), "scaleX", 0.0f, 1.0f), ObjectAnimator.ofFloat(nj1Var.b.getContentView(), "scaleY", 0.0f, 1.0f), ObjectAnimator.ofFloat(nj1Var.b.getContentView(), "alpha", 0.0f, 1.0f));
+                    oj1Var.b.getContentView().setVisibility(0);
+                    oj1Var.b.setEnabled(true);
+                    animatorSet.playTogether(ObjectAnimator.ofFloat(oj1Var.c, "scaleX", 1.0f, 0.1f), ObjectAnimator.ofFloat(oj1Var.c, "scaleY", 1.0f, 0.1f), ObjectAnimator.ofFloat(oj1Var.c, "alpha", 1.0f, 0.0f), ObjectAnimator.ofFloat(oj1Var.b.getContentView(), "scaleX", 0.0f, 1.0f), ObjectAnimator.ofFloat(oj1Var.b.getContentView(), "scaleY", 0.0f, 1.0f), ObjectAnimator.ofFloat(oj1Var.b.getContentView(), "alpha", 0.0f, 1.0f));
                     animatorSet.addListener(new gp0(this, 28));
                     animatorSet.setDuration(150L);
                     animatorSet.start();

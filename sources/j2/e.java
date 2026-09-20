@@ -12,7 +12,7 @@ import m4.q;
 import m4.r;
 import m4.z;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final /* synthetic */ class e implements m, d9.e, i5.g, z, e1 {
     public final /* synthetic */ int a;
@@ -21,11 +21,11 @@ public final /* synthetic */ class e implements m, d9.e, i5.g, z, e1 {
         this.a = i10;
     }
 
-    public static /* bridge */ /* synthetic */ AudioDeviceInfo b(Object obj) {
+    public static /* bridge */ /* synthetic */ AudioDeviceInfo d(Object obj) {
         return (AudioDeviceInfo) obj;
     }
 
-    public static /* bridge */ /* synthetic */ boolean e(Object obj) {
+    public static /* bridge */ /* synthetic */ boolean f(Object obj) {
         return obj instanceof MediaDrmResetException;
     }
 
@@ -37,10 +37,10 @@ public final /* synthetic */ class e implements m, d9.e, i5.g, z, e1 {
     @Override // m4.z
     public void c(q qVar, int i10) {
         switch (this.a) {
-            case 23:
+            case 25:
                 qVar.getClass();
                 break;
-            case 24:
+            case 26:
                 qVar.b(i10);
                 break;
             default:
@@ -50,16 +50,11 @@ public final /* synthetic */ class e implements m, d9.e, i5.g, z, e1 {
     }
 
     @Override // m4.e1
-    public Object i(a0 a0Var, r rVar, int i10) {
+    public Object h(a0 a0Var, r rVar, int i10) {
         switch (this.a) {
-            case 26:
-                a0Var.getClass();
-                throw new ClassCastException();
-            case 27:
-                a0Var.getClass();
-                throw new ClassCastException();
             case 28:
-                return a0Var.n(rVar);
+                a0Var.getClass();
+                throw new ClassCastException();
             default:
                 a0Var.getClass();
                 throw new ClassCastException();
@@ -97,10 +92,6 @@ public final /* synthetic */ class e implements m, d9.e, i5.g, z, e1 {
         }
     }
 
-    public /* synthetic */ e(int i10, Object obj, Object obj2) {
-        this.a = i10;
-    }
-
     public /* synthetic */ e(a aVar, float f7) {
         this.a = 7;
     }
@@ -113,6 +104,10 @@ public final /* synthetic */ class e implements m, d9.e, i5.g, z, e1 {
         this.a = 6;
     }
 
+    public /* synthetic */ e(a aVar, Object obj, int i10) {
+        this.a = i10;
+    }
+
     public /* synthetic */ e(a aVar, boolean z10) {
         this.a = 3;
     }
@@ -122,7 +117,7 @@ public final /* synthetic */ class e implements m, d9.e, i5.g, z, e1 {
     }
 
     public /* synthetic */ e(String str, int i10, int i11, n nVar) {
-        this.a = 27;
+        this.a = 29;
     }
 
     @Override // i5.g

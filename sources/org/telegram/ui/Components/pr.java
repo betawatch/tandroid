@@ -6,7 +6,7 @@ import android.graphics.ColorFilter;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class pr extends Drawable {
     public final Drawable a;
@@ -33,7 +33,7 @@ public final class pr extends Drawable {
         }
         ValueAnimator ofFloat = ValueAnimator.ofFloat(this.c, f7);
         this.e = ofFloat;
-        ofFloat.addUpdateListener(new k6(this, 15));
+        ofFloat.addUpdateListener(new j6(this, 15));
         this.e.setDuration((long) (Math.abs(this.c - f7) * 200.0f));
         this.e.setInterpolator(qr.f);
         this.e.start();

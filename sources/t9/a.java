@@ -3,20 +3,21 @@ package t9;
 import android.util.Log;
 import ci.t9;
 import java.util.concurrent.atomic.AtomicReference;
-import q9.p;
+import q9.q;
 import r5.d;
+import v7.j0;
 import y9.b1;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class a {
     public static final b c = new b();
-    public final p a;
+    public final q a;
     public final AtomicReference b = new AtomicReference(null);
 
-    public a(p pVar) {
-        this.a = pVar;
-        pVar.a(new d(this, 4));
+    public a(q qVar) {
+        this.a = qVar;
+        qVar.a(new d(this, 4));
     }
 
     public final b a(String str) {
@@ -35,9 +36,9 @@ public final class a {
     }
 
     public final void d(String str, long j3, b1 b1Var) {
-        String i10 = t8.b.i("Deferring native open session: ", str);
+        String g10 = j0.g("Deferring native open session: ", str);
         if (Log.isLoggable("FirebaseCrashlytics", 2)) {
-            Log.v("FirebaseCrashlytics", i10, null);
+            Log.v("FirebaseCrashlytics", g10, null);
         }
         this.a.a(new t9(str, j3, b1Var, 9));
     }

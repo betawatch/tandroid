@@ -5,13 +5,13 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.kk;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.Components.w70;
+import org.telegram.messenger.jk;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.Components.v70;
 import org.telegram.ui.vy0;
 import yh.l5;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class j4 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ org.telegram.ui.ActionBar.v0 a;
@@ -26,7 +26,7 @@ public final class j4 extends org.telegram.ui.ActionBar.j {
 
     @Override // org.telegram.ui.ActionBar.j
     public final void b(int i10) {
-        e6 e6Var;
+        f6 f6Var;
         int i11;
         int i12;
         boolean canUserDoAction;
@@ -41,13 +41,13 @@ public final class j4 extends org.telegram.ui.ActionBar.j {
             }
             return;
         }
-        w70 w70Var = m4Var.d0;
-        if (w70Var != null) {
-            w70Var.u();
+        v70 v70Var = m4Var.d0;
+        if (v70Var != null) {
+            v70Var.u();
         }
         org.telegram.ui.ActionBar.d3 d3Var = m4Var.container;
-        e6Var = ((org.telegram.ui.ActionBar.f3) m4Var).resourcesProvider;
-        w70 F = w70.F(d3Var, e6Var, this.a);
+        f6Var = ((org.telegram.ui.ActionBar.f3) m4Var).resourcesProvider;
+        v70 F = v70.F(d3Var, f6Var, this.a);
         m4Var.d0 = F;
         i11 = ((org.telegram.ui.ActionBar.f3) m4Var).currentAccount;
         long clientUserId = UserConfig.getInstance(i11).getClientUserId();
@@ -83,16 +83,16 @@ public final class j4 extends org.telegram.ui.ActionBar.j {
             f1Var = null;
             f1Var2 = null;
         }
-        kk kkVar = new kk(this, f1Var3, h, h10, h11, h12, canUserDoAction, f1Var, f1Var2, 4);
-        kkVar.run();
-        f1Var3.setOnClickListener(new vy0(28, this, kkVar));
-        s2.j(h, l5Var, kkVar, 1);
-        s2.j(h10, l5Var, kkVar, 2);
-        s2.j(h11, l5Var, kkVar, 4);
-        s2.j(h12, l5Var, kkVar, 8);
+        jk jkVar = new jk(this, f1Var3, h, h10, h11, h12, canUserDoAction, f1Var, f1Var2, 4);
+        jkVar.run();
+        f1Var3.setOnClickListener(new vy0(28, this, jkVar));
+        s2.j(h, l5Var, jkVar, 1);
+        s2.j(h10, l5Var, jkVar, 2);
+        s2.j(h11, l5Var, jkVar, 4);
+        s2.j(h12, l5Var, jkVar, 8);
         if (canUserDoAction) {
-            s2.j(f1Var, l5Var, kkVar, 256);
-            s2.j(f1Var2, l5Var, kkVar, 512);
+            s2.j(f1Var, l5Var, jkVar, 256);
+            s2.j(f1Var2, l5Var, jkVar, 512);
         }
         F.Y = true;
         F.J = false;

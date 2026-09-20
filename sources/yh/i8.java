@@ -14,7 +14,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class i8 {
     public final int a;
@@ -73,7 +73,7 @@ public final class i8 {
         float width = createBitmap.getWidth();
         float height = createBitmap.getHeight();
         for (int i14 = 0; i14 < i0Var.a; i14++) {
-            e0.i0.c((float[]) i0Var.c, i14, 0.0f, 0.0f, width, height);
+            e0.i0.a((float[]) i0Var.c, i14, 0.0f, 0.0f, width, height);
         }
         this.m = g0.a.a(createBitmap);
     }
@@ -100,7 +100,7 @@ public final class i8 {
                     e0.i0 i0Var = this.l;
                     float f14 = h8Var.a;
                     float f15 = h8Var.b;
-                    e0.i0.c((float[]) i0Var.b, i12, f14 - f12, f15 - f13, f14 + f12, f15 + f13);
+                    e0.i0.a((float[]) i0Var.b, i12, f14 - f12, f15 - f13, f14 + f12, f15 + f13);
                     this.l.e(i12, i0.a.k(i10, (int) (Utilities.clamp01(h8Var.h * f7) * 255.0f)));
                 }
                 g0.a.b(canvas, this.l, min, this.m);

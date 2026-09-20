@@ -35,7 +35,7 @@ import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public class ContactsController extends BaseController {
     public static final int PRIVACY_RULES_TYPE_ADDED_BY_PHONE = 7;
@@ -109,7 +109,7 @@ public class ContactsController extends BaseController {
     private static final String[] projectionNames = {"lookup", "data2", "data3", "data5"};
     private static volatile ContactsController[] Instance = new ContactsController[4];
 
-    /* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+    /* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
     public static class Contact {
         public int contact_id;
         public String first_name;
@@ -134,7 +134,7 @@ public class ContactsController extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+    /* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
     public class MyContentObserver extends ContentObserver {
         private Runnable checkRunnable;
 
@@ -175,7 +175,7 @@ public class ContactsController extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+    /* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
     public class PhoneBookContact {
         String id;
         String lookup_key;
@@ -364,7 +364,7 @@ public class ContactsController extends BaseController {
         if (z10) {
             Utilities.stageQueue.postRunnable(new f1(this, 3));
         } else {
-            AndroidUtilities.runOnUIThread(new g0((BaseController) this, (ArrayList) arrayList2, (Object) arrayList3, 16));
+            AndroidUtilities.runOnUIThread(new f0((BaseController) this, (ArrayList) arrayList2, (Object) arrayList3, 16));
         }
     }
 
@@ -745,7 +745,7 @@ public class ContactsController extends BaseController {
                 }
             }
         }
-        AndroidUtilities.runOnUIThread(new g0(this, updates, user, 14));
+        AndroidUtilities.runOnUIThread(new f0(this, updates, user, 14));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1006,7 +1006,7 @@ public class ContactsController extends BaseController {
                 }
             }
         }
-        AndroidUtilities.runOnUIThread(new vj(this, arrayList2, z10, str, 4));
+        AndroidUtilities.runOnUIThread(new uj(this, arrayList2, z10, str, 4));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1171,7 +1171,7 @@ public class ContactsController extends BaseController {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$loadPrivacySettings$65(int i10, TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new i0(this, tL_error, tLObject, i10, 2));
+        AndroidUtilities.runOnUIThread(new h0(this, tL_error, tLObject, i10, 2));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1945,9 +1945,9 @@ public class ContactsController extends BaseController {
                 i14 = 2;
             }
             if (BuildVars.LOGS_ENABLED) {
-                StringBuilder k10 = hg.k0.k("new phone book contacts ", i12, " serverContactsInPhonebook ", i11, " totalContacts ");
-                k10.append(this.contactsByPhone.size());
-                FileLog.d(k10.toString());
+                StringBuilder l4 = hg.k0.l("new phone book contacts ", i12, " serverContactsInPhonebook ", i11, " totalContacts ");
+                l4.append(this.contactsByPhone.size());
+                FileLog.d(l4.toString());
             }
             if (i14 == 0) {
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.u1
@@ -2327,7 +2327,7 @@ public class ContactsController extends BaseController {
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$reloadContactsStatuses$59(SharedPreferences.Editor editor, TLObject tLObject, TLRPC.TL_error tL_error) {
         if (tLObject instanceof Vector) {
-            AndroidUtilities.runOnUIThread(new g0(this, editor, (Vector) tLObject, 15));
+            AndroidUtilities.runOnUIThread(new f0(this, editor, (Vector) tLObject, 15));
         }
     }
 
@@ -2791,14 +2791,14 @@ public class ContactsController extends BaseController {
         buildContactsSectionsArrays(false);
         getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.updateInterfaces, Integer.valueOf(MessagesController.UPDATE_MASK_NAME));
         getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.contactsDidLoad, new Object[0]);
-        org.telegram.ui.Components.ic icVar = new org.telegram.ui.Components.ic(context, n2Var.getResourceProvider());
-        icVar.setTimer();
-        icVar.b.setText(LocaleController.formatPluralString("ContactsDeletedUndo", hashMap.size(), new Object[0]));
-        org.telegram.ui.Components.oc ocVar = new org.telegram.ui.Components.oc(context, n2Var.getResourceProvider(), true, true);
-        ocVar.a = new d3(27, this, hashMap);
-        ocVar.b = new p1(this, arrayList, 2);
-        icVar.setButton(ocVar);
-        org.telegram.ui.Components.qc.g(n2Var, icVar, 5000).j();
+        org.telegram.ui.Components.hc hcVar = new org.telegram.ui.Components.hc(context, n2Var.getResourceProvider());
+        hcVar.setTimer();
+        hcVar.b.setText(LocaleController.formatPluralString("ContactsDeletedUndo", hashMap.size(), new Object[0]));
+        org.telegram.ui.Components.nc ncVar = new org.telegram.ui.Components.nc(context, n2Var.getResourceProvider(), true, true);
+        ncVar.a = new d3(27, this, hashMap);
+        ncVar.b = new p1(this, arrayList, 2);
+        hcVar.setButton(ncVar);
+        org.telegram.ui.Components.pc.g(n2Var, hcVar, 5000).j();
     }
 
     public void deleteUnknownAppAccounts() {
@@ -3032,7 +3032,7 @@ public class ContactsController extends BaseController {
     }
 
     public void processLoadedContacts(ArrayList<TLRPC.TL_contact> arrayList, ArrayList<TLRPC.User> arrayList2, int i10) {
-        AndroidUtilities.runOnUIThread(new i0(this, arrayList2, i10, arrayList, 3));
+        AndroidUtilities.runOnUIThread(new h0(this, arrayList2, i10, arrayList, 3));
     }
 
     public void readContacts() {

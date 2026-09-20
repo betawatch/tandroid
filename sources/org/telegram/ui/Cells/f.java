@@ -8,11 +8,11 @@ import android.text.style.URLSpan;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.b61;
-import org.telegram.ui.Components.m90;
+import org.telegram.ui.Components.a61;
+import org.telegram.ui.Components.l90;
 import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class f implements Runnable {
     public final /* synthetic */ j a;
@@ -24,10 +24,10 @@ public final class f implements Runnable {
     @Override // java.lang.Runnable
     public final void run() {
         j jVar = this.a;
-        m90 m90Var = jVar.w;
-        if (m90Var != null) {
-            CharacterStyle characterStyle = m90Var.i;
-            final String url = characterStyle instanceof b61 ? ((b61) characterStyle).getURL() : characterStyle instanceof URLSpan ? ((URLSpan) characterStyle).getURL() : characterStyle.toString();
+        l90 l90Var = jVar.w;
+        if (l90Var != null) {
+            CharacterStyle characterStyle = l90Var.i;
+            final String url = characterStyle instanceof a61 ? ((a61) characterStyle).getURL() : characterStyle instanceof URLSpan ? ((URLSpan) characterStyle).getURL() : characterStyle.toString();
             try {
                 jVar.performHapticFeedback(0, 2);
             } catch (Exception unused) {
@@ -36,7 +36,7 @@ public final class f implements Runnable {
             final float f7 = jVar.x;
             if (jVar.getContext() != null) {
                 final ClickableSpan clickableSpan = (ClickableSpan) jVar.w.i;
-                org.telegram.ui.ActionBar.f3 f3Var = new org.telegram.ui.ActionBar.f3(1, jVar.getContext(), (org.telegram.ui.ActionBar.e6) null, false);
+                org.telegram.ui.ActionBar.f3 f3Var = new org.telegram.ui.ActionBar.f3(1, jVar.getContext(), (org.telegram.ui.ActionBar.f6) null, false);
                 f3Var.fixNavigationBar();
                 f3Var.title = url;
                 f3Var.bigTitle = false;
@@ -55,11 +55,11 @@ public final class f implements Runnable {
                             AndroidUtilities.addToClipboard(str);
                             if (AndroidUtilities.shouldShowClipboardToast()) {
                                 if (str.startsWith("@")) {
-                                    org.telegram.messenger.q.q(R.string.UsernameCopied, xc.a0(n2Var), R.raw.copy, 36);
+                                    org.telegram.messenger.l0.o(R.string.UsernameCopied, xc.a0(n2Var), R.raw.copy, 36);
                                 } else if (str.startsWith("#") || str.startsWith("$")) {
-                                    org.telegram.messenger.q.q(R.string.HashtagCopied, xc.a0(n2Var), R.raw.copy, 36);
+                                    org.telegram.messenger.l0.o(R.string.HashtagCopied, xc.a0(n2Var), R.raw.copy, 36);
                                 } else {
-                                    org.telegram.messenger.q.q(R.string.LinkCopied, xc.a0(n2Var), R.raw.copy, 36);
+                                    org.telegram.messenger.l0.o(R.string.LinkCopied, xc.a0(n2Var), R.raw.copy, 36);
                                 }
                             }
                         }

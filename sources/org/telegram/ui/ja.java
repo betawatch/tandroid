@@ -5,7 +5,7 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ja implements TextView.OnEditorActionListener {
     public final /* synthetic */ int a;
@@ -59,28 +59,28 @@ public final /* synthetic */ class ja implements TextView.OnEditorActionListener
             case 4:
                 return i10 == 6 && ((e70) this.b).o0();
             case 5:
-                qe0 qe0Var = (qe0) this.b;
+                re0 re0Var = (re0) this.b;
                 if (i10 == 5) {
-                    qe0Var.h(null);
+                    re0Var.h(null);
                     return true;
                 }
-                qe0Var.getClass();
+                re0Var.getClass();
                 return false;
             case 6:
-                ye0 ye0Var = (ye0) this.b;
+                ze0 ze0Var = (ze0) this.b;
                 if (i10 == 5) {
-                    ye0Var.h(null);
+                    ze0Var.h(null);
                     return true;
                 }
-                ye0Var.getClass();
+                ze0Var.getClass();
                 return false;
             case 7:
-                mf0 mf0Var = (mf0) this.b;
+                nf0 nf0Var = (nf0) this.b;
                 if (i10 == 5) {
-                    mf0Var.h(null);
+                    nf0Var.h(null);
                     return true;
                 }
-                mf0Var.getClass();
+                nf0Var.getClass();
                 return false;
             case 8:
                 PasscodeActivity passcodeActivity = (PasscodeActivity) this.b;
@@ -120,14 +120,14 @@ public final /* synthetic */ class ja implements TextView.OnEditorActionListener
                 editTextBoldCursorArr[intValue].requestFocus();
                 return true;
             case 11:
-                q71 q71Var = (q71) this.b;
+                t71 t71Var = (t71) this.b;
                 if (keyEvent == null) {
                     return false;
                 }
                 if ((keyEvent.getAction() != 1 || keyEvent.getKeyCode() != 84) && (keyEvent.getAction() != 0 || keyEvent.getKeyCode() != 66)) {
                     return false;
                 }
-                AndroidUtilities.hideKeyboard(q71Var.c0);
+                AndroidUtilities.hideKeyboard(t71Var.c0);
                 return false;
             default:
                 TwoStepVerificationActivity twoStepVerificationActivity = (TwoStepVerificationActivity) this.b;

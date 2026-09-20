@@ -1,92 +1,36 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLoader;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class pa0 extends nz {
-    public final vv0 X;
-    public final /* synthetic */ wa0 Y;
+public final class pa0 extends g.p {
+    public final /* synthetic */ va0 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public pa0(wa0 wa0Var) {
-        super(100, false);
-        this.Y = wa0Var;
-        this.X = new vv0();
+    public pa0(va0 va0Var) {
+        this.c = va0Var;
     }
 
-    @Override // s4.o0
-    public final int A() {
-        wa0 wa0Var = this.Y;
-        return (wa0Var.f.I() == null && wa0Var.f.U == null) ? B() : B() - 1;
-    }
-
-    @Override // org.telegram.ui.Components.nz
-    public final vv0 D1(int i10) {
-        TLRPC.PhotoSize closestPhotoSizeWithSize;
-        vv0 vv0Var = this.X;
-        int i11 = 0;
-        vv0Var.c = false;
-        wa0 wa0Var = this.Y;
+    @Override // g.p
+    public final int i(int i10) {
+        va0 va0Var = this.c;
+        gg.k1 k1Var = va0Var.f;
         if (i10 == 0) {
-            vv0Var.a = this.m;
-            vv0Var.b = wa0Var.e.h;
-            vv0Var.c = true;
-            return vv0Var;
+            return 100;
         }
-        int i12 = i10 - 1;
-        if (wa0Var.f.I() == null && wa0Var.f.U == null) {
-            i10 = i12;
+        int i11 = i10 - 1;
+        Object J = k1Var.J(i11);
+        if (J instanceof TLRPC.TL_inlineBotSwitchPM) {
+            return 100;
         }
-        vv0Var.a = 0.0f;
-        vv0Var.b = 0.0f;
-        Object J = wa0Var.f.J(i10);
-        if (J instanceof TLRPC.BotInlineResult) {
-            TLRPC.BotInlineResult botInlineResult = (TLRPC.BotInlineResult) J;
-            TLRPC.Document document = botInlineResult.document;
-            if (document != null) {
-                TLRPC.PhotoSize closestPhotoSizeWithSize2 = FileLoader.getClosestPhotoSizeWithSize(document.thumbs, 90);
-                vv0Var.a = closestPhotoSizeWithSize2 != null ? closestPhotoSizeWithSize2.w : 100.0f;
-                vv0Var.b = closestPhotoSizeWithSize2 != null ? closestPhotoSizeWithSize2.h : 100.0f;
-                while (i11 < botInlineResult.document.attributes.size()) {
-                    TLRPC.DocumentAttribute documentAttribute = botInlineResult.document.attributes.get(i11);
-                    if ((documentAttribute instanceof TLRPC.TL_documentAttributeImageSize) || (documentAttribute instanceof TLRPC.TL_documentAttributeVideo)) {
-                        vv0Var.a = documentAttribute.w;
-                        vv0Var.b = documentAttribute.h;
-                        break;
-                    }
-                    i11++;
-                }
-            } else if (botInlineResult.content != null) {
-                while (i11 < botInlineResult.content.attributes.size()) {
-                    TLRPC.DocumentAttribute documentAttribute2 = botInlineResult.content.attributes.get(i11);
-                    if ((documentAttribute2 instanceof TLRPC.TL_documentAttributeImageSize) || (documentAttribute2 instanceof TLRPC.TL_documentAttributeVideo)) {
-                        vv0Var.a = documentAttribute2.w;
-                        vv0Var.b = documentAttribute2.h;
-                        break;
-                    }
-                    i11++;
-                }
-            } else if (botInlineResult.thumb != null) {
-                while (i11 < botInlineResult.thumb.attributes.size()) {
-                    TLRPC.DocumentAttribute documentAttribute3 = botInlineResult.thumb.attributes.get(i11);
-                    if ((documentAttribute3 instanceof TLRPC.TL_documentAttributeImageSize) || (documentAttribute3 instanceof TLRPC.TL_documentAttributeVideo)) {
-                        vv0Var.a = documentAttribute3.w;
-                        vv0Var.b = documentAttribute3.h;
-                        break;
-                    }
-                    i11++;
-                }
-            } else {
-                TLRPC.Photo photo = botInlineResult.photo;
-                if (photo != null && (closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(photo.sizes, AndroidUtilities.getPhotoSize())) != null) {
-                    vv0Var.a = closestPhotoSizeWithSize.w;
-                    vv0Var.b = closestPhotoSizeWithSize.h;
-                }
-            }
+        if (J instanceof TLRPC.Document) {
+            return 20;
         }
-        return vv0Var;
+        if (k1Var.I() != null || k1Var.U != null) {
+            i10 = i11;
+        }
+        oa0 oa0Var = va0Var.d;
+        oa0Var.B1();
+        return oa0Var.R.get(i10);
     }
 }

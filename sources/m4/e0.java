@@ -17,12 +17,12 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.l61;
+import org.telegram.ui.Components.k61;
 import org.telegram.ui.Components.rs;
 import org.telegram.ui.Components.ts;
-import yh.a7;
+import yh.b7;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final /* synthetic */ class e0 implements Runnable {
     public final /* synthetic */ int a;
@@ -52,7 +52,7 @@ public final /* synthetic */ class e0 implements Runnable {
                 j0 j0Var = (j0) this.f;
                 a0 a0Var2 = k0Var.g;
                 if (!a0Var2.j()) {
-                    boolean isActive = ((n4.r) k0Var.k.b).a.isActive();
+                    boolean isActive = ((n4.r) k0Var.k.a).a.isActive();
                     int i10 = this.c;
                     if (isActive) {
                         r L = k0Var.L(a0Var);
@@ -61,7 +61,7 @@ public final /* synthetic */ class e0 implements Runnable {
                             a0Var2.s(L);
                             dVar.getClass();
                             try {
-                                j0Var.g(L);
+                                j0Var.f(L);
                             } catch (RemoteException e) {
                                 e2.a.o("MediaSessionLegacyStub", "Exception in " + L, e);
                             }
@@ -75,9 +75,9 @@ public final /* synthetic */ class e0 implements Runnable {
                             break;
                         }
                     } else {
-                        StringBuilder j3 = hg.k0.j(i10, "Ignore incoming player command before initialization. command=", ", pid=");
-                        j3.append(a0Var.a.b);
-                        e2.a.n("MediaSessionLegacyStub", j3.toString());
+                        StringBuilder k10 = hg.k0.k(i10, "Ignore incoming player command before initialization. command=", ", pid=");
+                        k10.append(a0Var.a.b);
+                        e2.a.n("MediaSessionLegacyStub", k10.toString());
                         break;
                     }
                 }
@@ -217,7 +217,7 @@ public final /* synthetic */ class e0 implements Runnable {
                 }
                 if (document != null) {
                     imageReceiver.setAllowStartLottieAnimation(true);
-                    imageReceiver.setDelegate(new a7(zArr));
+                    imageReceiver.setDelegate(new b7(zArr));
                     SvgHelper.SvgDrawable svgThumb = DocumentObject.getSvgThumb(document, j6.a7, 0.3f);
                     TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(document.thumbs, 160, true, null, true);
                     imageReceiver.setAutoRepeat(0);
@@ -240,9 +240,9 @@ public final /* synthetic */ class e0 implements Runnable {
         this.f = aVar;
     }
 
-    public /* synthetic */ e0(l61 l61Var, int i10, TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal, boolean z10, TLObject tLObject, int i11) {
+    public /* synthetic */ e0(k61 k61Var, int i10, TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal, boolean z10, TLObject tLObject, int i11) {
         this.a = i11;
-        this.d = l61Var;
+        this.d = k61Var;
         this.c = i10;
         this.e = tL_messages_searchGlobal;
         this.b = z10;

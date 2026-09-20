@@ -11,7 +11,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class xq implements Utilities.Callback {
     public final /* synthetic */ int a = 1;
@@ -23,12 +23,12 @@ public final /* synthetic */ class xq implements Utilities.Callback {
     public final /* synthetic */ Object g;
     public final /* synthetic */ Serializable h;
 
-    public /* synthetic */ xq(int i10, long j3, Activity activity, ArrayList arrayList, HashMap hashMap, Utilities.Callback callback, org.telegram.ui.ActionBar.e6 e6Var) {
+    public /* synthetic */ xq(int i10, long j3, Activity activity, ArrayList arrayList, HashMap hashMap, Utilities.Callback callback, org.telegram.ui.ActionBar.f6 f6Var) {
         this.b = i10;
         this.d = arrayList;
         this.c = j3;
         this.e = activity;
-        this.f = e6Var;
+        this.f = f6Var;
         this.g = callback;
         this.h = hashMap;
     }
@@ -55,7 +55,7 @@ public final /* synthetic */ class xq implements Utilities.Callback {
             default:
                 final ArrayList arrayList = (ArrayList) this.d;
                 final Activity activity = (Activity) this.e;
-                final org.telegram.ui.ActionBar.e6 e6Var = (org.telegram.ui.ActionBar.e6) this.f;
+                final org.telegram.ui.ActionBar.f6 f6Var = (org.telegram.ui.ActionBar.f6) this.f;
                 final Utilities.Callback callback = (Utilities.Callback) this.g;
                 final HashMap hashMap = (HashMap) this.h;
                 boolean booleanValue = ((Boolean) obj).booleanValue();
@@ -72,8 +72,8 @@ public final /* synthetic */ class xq implements Utilities.Callback {
                         if (sendPaidMessagesStars <= 0 && longValue > 0) {
                             sendPaidMessagesStars = DialogObject.getMessagesStarsPrice(MessagesController.getInstance(i10).isUserContactBlocked(longValue));
                         }
-                        edit.putLong(org.telegram.ui.Cells.c1.h(longValue, "ask_paid_message_", "_price"), sendPaidMessagesStars);
-                        yh.t5.y(i10, false).O.put(l4, Long.valueOf(System.currentTimeMillis()));
+                        edit.putLong(org.telegram.ui.Cells.c1.j(longValue, "ask_paid_message_", "_price"), sendPaidMessagesStars);
+                        yh.u5.y(i10, false).O.put(l4, Long.valueOf(System.currentTimeMillis()));
                     }
                     edit.apply();
                 }
@@ -82,7 +82,7 @@ public final /* synthetic */ class xq implements Utilities.Callback {
                     @Override // java.lang.Runnable
                     public final void run() {
                         int i12 = i10;
-                        long j12 = yh.t5.y(i12, false).p().amount;
+                        long j12 = yh.u5.y(i12, false).p().amount;
                         long j13 = j11;
                         Utilities.Callback callback2 = callback;
                         HashMap hashMap2 = hashMap;
@@ -95,14 +95,14 @@ public final /* synthetic */ class xq implements Utilities.Callback {
                             return;
                         }
                         long longValue2 = ((Long) arrayList.get(0)).longValue();
-                        new yh.k7(activity2, e6Var, j13, 13, DialogObject.getShortName(i12, longValue2), new a2(callback2, hashMap2, 0), longValue2).show();
+                        new yh.l7(activity2, f6Var, j13, 13, DialogObject.getShortName(i12, longValue2), new a2(callback2, hashMap2, 0), longValue2).show();
                     }
                 };
-                if (yh.t5.y(i10, false).e) {
+                if (yh.u5.y(i10, false).e) {
                     runnable.run();
                     break;
                 } else {
-                    yh.t5 y3 = yh.t5.y(i10, false);
+                    yh.u5 y3 = yh.u5.y(i10, false);
                     y3.e = false;
                     y3.q(false, true, runnable);
                     y3.e = true;

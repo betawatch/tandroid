@@ -19,10 +19,10 @@ import android.util.TypedValue;
 import java.util.ArrayDeque;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
-import v7.g8;
-import v7.r8;
+import v7.h8;
+import v7.s8;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class p extends g {
     public static final PorterDuff.Mode s = PorterDuff.Mode.SRC_IN;
@@ -101,7 +101,7 @@ public final class p extends g {
         }
         int save = canvas.save();
         canvas.translate(rect.left, rect.top);
-        if (isAutoMirrored() && r8.a(this) == 1) {
+        if (isAutoMirrored() && s8.a(this) == 1) {
             canvas.translate(rect.width(), 0.0f);
             canvas.scale(-1.0f, 1.0f);
         }
@@ -367,7 +367,7 @@ public final class p extends g {
     public final void setTint(int i10) {
         Drawable drawable = this.a;
         if (drawable != null) {
-            r8.c(i10, drawable);
+            s8.c(i10, drawable);
         } else {
             setTintList(ColorStateList.valueOf(i10));
         }
@@ -555,7 +555,7 @@ public final class p extends g {
                                 }
                                 String string3 = f12.getString(2);
                                 if (string3 != null) {
-                                    iVar.a = g8.c(string3);
+                                    iVar.a = h8.c(string3);
                                 }
                                 iVar.f = h0.b.a(f12, xmlPullParser, theme, "fillColor", 1);
                                 float f13 = iVar.h;
@@ -637,7 +637,7 @@ public final class p extends g {
                                 }
                                 String string5 = f20.getString(1);
                                 if (string5 != null) {
-                                    hVar.a = g8.c(string5);
+                                    hVar.a = h8.c(string5);
                                 }
                                 hVar.c = !h0.b.c(xmlPullParser, "fillType") ? 0 : f20.getInt(2, 0);
                                 f20.recycle();

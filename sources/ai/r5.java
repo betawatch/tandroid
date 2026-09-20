@@ -35,7 +35,6 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.wh;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
@@ -43,27 +42,27 @@ import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.bd0;
+import org.telegram.ui.Components.ad0;
 import org.telegram.ui.Components.bl;
-import org.telegram.ui.Components.dd0;
-import org.telegram.ui.Components.dl0;
+import org.telegram.ui.Components.cd0;
+import org.telegram.ui.Components.cl0;
 import org.telegram.ui.Components.dz;
 import org.telegram.ui.Components.gl;
-import org.telegram.ui.Components.jd0;
+import org.telegram.ui.Components.id0;
 import org.telegram.ui.Components.jy;
 import org.telegram.ui.Components.ky;
 import org.telegram.ui.Components.un;
 import org.telegram.ui.Components.vi;
-import org.telegram.ui.dg1;
+import org.telegram.ui.fg1;
 import org.telegram.ui.oo;
 import org.telegram.ui.oy;
 import org.telegram.ui.uy;
 import org.telegram.ui.wo0;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class r5 implements MessagesStorage.StringCallback, ec, androidx.car.app.utils.b, MediaDataController.KeywordResultCallback, org.telegram.ui.ActionBar.a2, SuccessContinuation, wo0, bl, m4.j0, i9.p, bd0, org.telegram.ui.ActionBar.r0, oy, org.telegram.ui.Components.d5 {
+public final /* synthetic */ class r5 implements MessagesStorage.StringCallback, ec, androidx.car.app.utils.b, MediaDataController.KeywordResultCallback, org.telegram.ui.ActionBar.a2, SuccessContinuation, wo0, bl, m4.j0, i9.p, ad0, org.telegram.ui.ActionBar.r0, oy, org.telegram.ui.Components.c5 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -81,7 +80,7 @@ public final /* synthetic */ class r5 implements MessagesStorage.StringCallback,
         return false;
     }
 
-    @Override // org.telegram.ui.Components.d5
+    @Override // org.telegram.ui.Components.c5
     public void J(int i10, int i11, boolean z10) {
         switch (this.a) {
             case 25:
@@ -107,19 +106,19 @@ public final /* synthetic */ class r5 implements MessagesStorage.StringCallback,
         switch (this.a) {
             case 8:
                 ei.f3 f3Var = (ei.f3) this.b;
-                jd0 jd0Var = (jd0) this.c;
+                id0 id0Var = (id0) this.c;
                 String str = (String) this.d;
                 if (i10 != 3) {
-                    jd0Var.dismiss();
+                    id0Var.dismiss();
                 }
                 f3Var.d.x.G(str, org.telegram.ui.Cells.c1.w(i10).toLowerCase(Locale.ROOT), false);
                 break;
             default:
-                jd0 jd0Var2 = (jd0) this.b;
+                id0 id0Var2 = (id0) this.b;
                 ei.q4 q4Var = (ei.q4) this.c;
                 String str2 = (String) this.d;
                 if (i10 != 3) {
-                    jd0Var2.dismiss();
+                    id0Var2.dismiss();
                 }
                 q4Var.getWebViewContainer().G(str2, org.telegram.ui.Cells.c1.w(i10).toLowerCase(Locale.ROOT), false);
                 break;
@@ -137,23 +136,23 @@ public final /* synthetic */ class r5 implements MessagesStorage.StringCallback,
             case 14:
                 m4.a0 a0Var = (m4.a0) obj4;
                 Handler handler = a0Var.l;
-                ki.c0 c0Var = new ki.c0(a0Var, (m4.r) obj3, new gg.t(a0Var, (m4.r0) obj2, (m4.s) obj, 26));
+                ki.l lVar = new ki.l(a0Var, (m4.r) obj3, new gg.t(a0Var, (m4.q0) obj2, (m4.s) obj, 26));
                 m4.p1 p1Var = new m4.p1(0);
                 String str = e2.d0.a;
-                i9.c0 c0Var2 = new i9.c0();
-                e2.d0.U(handler, new a3.k0(c0Var2, c0Var, p1Var, i11));
-                return c0Var2;
+                i9.c0 c0Var = new i9.c0();
+                e2.d0.U(handler, new a3.k0(c0Var, lVar, p1Var, i11));
+                return c0Var;
             default:
                 m4.a0 a0Var2 = (m4.a0) obj4;
                 m4.r rVar = (m4.r) obj3;
                 List list = (List) obj;
                 Handler handler2 = a0Var2.l;
-                ki.c0 c0Var3 = new ki.c0(a0Var2, rVar, new i5(a0Var2, (m4.d1) obj2, rVar, list, 24));
+                ki.l lVar2 = new ki.l(a0Var2, rVar, new i5(a0Var2, (m4.d1) obj2, rVar, list, 24));
                 m4.p1 p1Var2 = new m4.p1(0);
                 String str2 = e2.d0.a;
-                i9.c0 c0Var4 = new i9.c0();
-                e2.d0.U(handler2, new a3.k0(c0Var4, c0Var3, p1Var2, i11));
-                return c0Var4;
+                i9.c0 c0Var2 = new i9.c0();
+                e2.d0.U(handler2, new a3.k0(c0Var2, lVar2, p1Var2, i11));
+                return c0Var2;
         }
     }
 
@@ -248,8 +247,43 @@ public final /* synthetic */ class r5 implements MessagesStorage.StringCallback,
         }
     }
 
+    @Override // m4.j0
+    public void f(m4.r rVar) {
+        m4.k0 k0Var = (m4.k0) this.b;
+        Bundle bundle = (Bundle) this.c;
+        ResultReceiver resultReceiver = (ResultReceiver) this.d;
+        m4.a0 a0Var = k0Var.g;
+        if (bundle == null) {
+            Bundle bundle2 = Bundle.EMPTY;
+        }
+        i9.u n10 = a0Var.n(rVar);
+        if (resultReceiver != null) {
+            n10.a(new ki.l(6, n10, resultReceiver), i9.q.a);
+        }
+    }
+
+    @Override // ai.ec
+    public void h(Canvas canvas, RectF rectF, float f7) {
+        org.telegram.ui.Cells.u7 u7Var = (org.telegram.ui.Cells.u7) this.b;
+        cl0 cl0Var = (cl0) this.c;
+        int[] iArr = (int[]) this.d;
+        u7Var.c(canvas, rectF, f7);
+        u7Var.f(canvas, rectF, f7);
+        if (u7Var.h) {
+            u7Var.b(canvas, rectF, f7);
+        } else {
+            u7Var.e(canvas, rectF, f7);
+        }
+        if (cl0Var != null && cl0Var.a0 && cl0Var.getVisibility() == 0) {
+            canvas.saveLayerAlpha(0.0f, 0.0f, canvas.getWidth(), canvas.getHeight(), (int) (f7 * 255.0f), 31);
+            canvas.translate(iArr[0], iArr[1]);
+            cl0Var.draw(canvas);
+            canvas.restore();
+        }
+    }
+
     @Override // org.telegram.ui.ActionBar.a2
-    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+    public void k(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
         switch (this.a) {
             case 5:
                 ((ci.ia) this.b).g1((ci.ga) this.c, (Runnable) this.d, true);
@@ -333,70 +367,35 @@ public final /* synthetic */ class r5 implements MessagesStorage.StringCallback,
             default:
                 un unVar = (un) this.b;
                 View view = (View) this.c;
-                org.telegram.ui.Cells.d6 d6Var = (org.telegram.ui.Cells.d6) this.d;
+                org.telegram.ui.Cells.e6 e6Var = (org.telegram.ui.Cells.e6) this.d;
                 unVar.getClass();
                 view.setTag(null);
-                unVar.X(view, d6Var, false);
+                unVar.X(view, e6Var, false);
                 break;
-        }
-    }
-
-    @Override // m4.j0
-    public void g(m4.r rVar) {
-        m4.k0 k0Var = (m4.k0) this.b;
-        Bundle bundle = (Bundle) this.c;
-        ResultReceiver resultReceiver = (ResultReceiver) this.d;
-        m4.a0 a0Var = k0Var.g;
-        if (bundle == null) {
-            Bundle bundle2 = Bundle.EMPTY;
-        }
-        i9.u n10 = a0Var.n(rVar);
-        if (resultReceiver != null) {
-            n10.a(new ki.c0(4, n10, resultReceiver), i9.q.a);
-        }
-    }
-
-    @Override // ai.ec
-    public void i(Canvas canvas, RectF rectF, float f7) {
-        org.telegram.ui.Cells.t7 t7Var = (org.telegram.ui.Cells.t7) this.b;
-        dl0 dl0Var = (dl0) this.c;
-        int[] iArr = (int[]) this.d;
-        t7Var.c(canvas, rectF, f7);
-        t7Var.f(canvas, rectF, f7);
-        if (t7Var.h) {
-            t7Var.b(canvas, rectF, f7);
-        } else {
-            t7Var.e(canvas, rectF, f7);
-        }
-        if (dl0Var != null && dl0Var.a0 && dl0Var.getVisibility() == 0) {
-            canvas.saveLayerAlpha(0.0f, 0.0f, canvas.getWidth(), canvas.getHeight(), (int) (f7 * 255.0f), 31);
-            canvas.translate(iArr[0], iArr[1]);
-            dl0Var.draw(canvas);
-            canvas.restore();
         }
     }
 
     @Override // org.telegram.ui.ActionBar.r0
     public void m(int i10) {
         Runnable runnable;
-        org.telegram.ui.Components.d5 d5Var = (org.telegram.ui.Components.d5) this.b;
+        org.telegram.ui.Components.c5 c5Var = (org.telegram.ui.Components.c5) this.b;
         boolean[] zArr = (boolean[]) this.c;
         org.telegram.ui.ActionBar.a3 a3Var = (org.telegram.ui.ActionBar.a3) this.d;
         if (i10 == 1) {
-            d5Var.J(2147483646, 0, zArr[0]);
+            c5Var.J(2147483646, 0, zArr[0]);
             runnable = a3Var.a.dismissRunnable;
             runnable.run();
         }
     }
 
-    @Override // org.telegram.ui.Components.bd0
-    public void q(dd0 dd0Var, int i10) {
+    @Override // org.telegram.ui.Components.ad0
+    public void q(cd0 cd0Var, int i10) {
         switch (this.a) {
             case 17:
-                org.telegram.ui.Components.e5.g(null, null, 0L, 0L, 0, (dd0) this.b, (org.telegram.ui.Components.g4) this.c, (org.telegram.ui.Components.h4) this.d);
+                org.telegram.ui.Components.d5.g(null, null, 0L, 0L, 0, (cd0) this.b, (org.telegram.ui.Components.f4) this.c, (org.telegram.ui.Components.g4) this.d);
                 break;
             default:
-                org.telegram.ui.Components.e5.g(null, null, 0L, 0L, 0, (dd0) this.b, (org.telegram.ui.Components.x3) this.c, (org.telegram.ui.Components.z3) this.d);
+                org.telegram.ui.Components.d5.g(null, null, 0L, 0L, 0, (cd0) this.b, (org.telegram.ui.Components.w3) this.c, (org.telegram.ui.Components.y3) this.d);
                 break;
         }
     }
@@ -405,9 +404,9 @@ public final /* synthetic */ class r5 implements MessagesStorage.StringCallback,
     public void run(String str) {
         w5 w5Var = (w5) this.b;
         TL_stories.StoryItem storyItem = (TL_stories.StoryItem) this.c;
-        org.telegram.ui.ActionBar.e6 e6Var = (org.telegram.ui.ActionBar.e6) this.d;
-        f6 f6Var = w5Var.l;
-        f6Var.getStoriesController().r(f6Var.B1, str, new d5(w5Var, storyItem, e6Var, 2));
+        org.telegram.ui.ActionBar.f6 f6Var = (org.telegram.ui.ActionBar.f6) this.d;
+        f6 f6Var2 = w5Var.l;
+        f6Var2.getStoriesController().r(f6Var2.B1, str, new d5(w5Var, storyItem, f6Var, 2));
     }
 
     @Override // com.google.android.gms.tasks.SuccessContinuation
@@ -448,7 +447,7 @@ public final /* synthetic */ class r5 implements MessagesStorage.StringCallback,
     }
 
     @Override // org.telegram.ui.oy
-    public boolean u(uy uyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, dg1 dg1Var) {
+    public boolean u(uy uyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, fg1 fg1Var) {
         ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.b;
         MessageObject messageObject = (MessageObject) this.c;
         TL_keyboard.TL_inlineButtonTypeSwitchInline tL_inlineButtonTypeSwitchInline = (TL_keyboard.TL_inlineButtonTypeSwitchInline) this.d;
@@ -599,7 +598,7 @@ public final /* synthetic */ class r5 implements MessagesStorage.StringCallback,
                         TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) arrayList6.get(i18);
                         if (tL_messages_stickerSet != null && tL_messages_stickerSet.set != null) {
                             String translitSafe2 = AndroidUtilities.translitSafe((tL_messages_stickerSet.set.title + "").toLowerCase());
-                            if (translitSafe2.startsWith(translitSafe) || wh.u(" ", translitSafe, translitSafe2)) {
+                            if (translitSafe2.startsWith(translitSafe) || org.telegram.messenger.l0.v(" ", translitSafe, translitSafe2)) {
                                 int size = arrayList7.size();
                                 arrayList7.add(tL_messages_stickerSet);
                                 sparseIntArray.put(d2Var.x, size);

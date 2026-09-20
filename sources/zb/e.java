@@ -1,9 +1,9 @@
 package zb;
 
 import android.content.Context;
-import x7.ha;
+import x7.ia;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class e extends b2.g {
     public final qb.g b;
@@ -18,6 +18,6 @@ public final class e extends b2.g {
         yb.a aVar = (yb.a) obj;
         Context b10 = this.b.b();
         k6.e.b.getClass();
-        return new f(aVar, k6.e.a(b10) >= 204700000 ? new a(b10, aVar) : new c(b10, aVar), ha.b());
+        return new f(aVar, k6.e.a(b10) >= 204700000 ? new a(b10, aVar) : new c(b10, aVar), ia.b());
     }
 }

@@ -12,15 +12,15 @@ import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.SvgHelper;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.w9;
+import org.telegram.ui.Components.v9;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class q0 extends FrameLayout implements le.d {
-    public final org.telegram.ui.ActionBar.e6 a;
+    public final org.telegram.ui.ActionBar.f6 a;
     public final FrameLayout b;
     public final xh.f1 c;
-    public final w9 d;
+    public final v9 d;
     public final TextView e;
     public final TextView f;
     public Integer h;
@@ -29,21 +29,21 @@ public final class q0 extends FrameLayout implements le.d {
     public boolean s;
     public o0 v;
 
-    public q0(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
+    public q0(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
         super(context);
         this.r = new le.b(0, this, qr.h, 320L, false);
-        this.a = e6Var;
+        this.a = f6Var;
         FrameLayout frameLayout = new FrameLayout(context);
         this.b = frameLayout;
-        xh.f1 f1Var = new xh.f1(frameLayout, e6Var, true);
+        xh.f1 f1Var = new xh.f1(frameLayout, f6Var, true);
         this.c = f1Var;
         frameLayout.setBackground(f1Var);
         f1Var.v = 1;
         addView(frameLayout, w7.y5.e(-1, -1, 119));
-        w9 w9Var = new w9(context);
-        this.d = w9Var;
-        w9Var.getImageReceiver().setAutoRepeat(0);
-        addView(w9Var, w7.y5.d(80, 80.0f, 49, 0.0f, 17.0f, 0.0f, 0.0f));
+        v9 v9Var = new v9(context);
+        this.d = v9Var;
+        v9Var.getImageReceiver().setAutoRepeat(0);
+        addView(v9Var, w7.y5.d(80, 80.0f, 49, 0.0f, 17.0f, 0.0f, 0.0f));
         TextView textView = new TextView(context);
         this.e = textView;
         textView.setTypeface(AndroidUtilities.bold());
@@ -63,9 +63,9 @@ public final class q0 extends FrameLayout implements le.d {
     }
 
     public static void a(q0 q0Var, TLRPC.Document document, int i10, Object obj, boolean z10) {
-        w9 w9Var = q0Var.d;
+        v9 v9Var = q0Var.d;
         if (document == null) {
-            w9Var.b();
+            v9Var.b();
             q0Var.n = null;
             return;
         }
@@ -81,8 +81,8 @@ public final class q0 extends FrameLayout implements le.d {
         sb2.append(i10);
         sb2.append(z10 ? "_nolimit_pcache" : "");
         String sb3 = sb2.toString();
-        w9Var.setLayoutParams(w7.y5.d(i10, i10, 49, 0.0f, r3 + 17, 0.0f, (80 - i10) / 2));
-        w9Var.l(ImageLocation.getForDocument(document), sb3, ImageLocation.getForDocument(closestPhotoSizeWithSize, document), sb3, svgThumb, obj);
+        v9Var.setLayoutParams(w7.y5.d(i10, i10, 49, 0.0f, r3 + 17, 0.0f, (80 - i10) / 2));
+        v9Var.l(ImageLocation.getForDocument(document), sb3, ImageLocation.getForDocument(closestPhotoSizeWithSize, document), sb3, svgThumb, obj);
     }
 
     @Override // le.d

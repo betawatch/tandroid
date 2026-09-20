@@ -15,7 +15,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class sy extends s4.v {
     public s4.c1 d;
@@ -45,7 +45,7 @@ public final class sy extends s4.v {
             return 200L;
         }
         if (i10 == 8 && (s2Var = (uyVar = this.h).X0) != null) {
-            AndroidUtilities.runOnUIThread(new mh(1, s2Var), this.g.x.e);
+            AndroidUtilities.runOnUIThread(new nh(1, s2Var), this.g.x.e);
             uyVar.X0 = null;
         }
         return super.d(recyclerView, i10, f7, f10);
@@ -321,22 +321,22 @@ public final class sy extends s4.v {
         }
         if (uyVar.V0 == null) {
             qy qyVar2 = tyVar.a;
-            org.telegram.ui.Components.kd0 kd0Var = new org.telegram.ui.Components.kd0();
-            kd0Var.a = new Paint(1);
+            org.telegram.ui.Components.jd0 jd0Var = new org.telegram.ui.Components.jd0();
+            jd0Var.a = new Paint(1);
             Paint paint = new Paint(1);
-            kd0Var.b = paint;
-            kd0Var.e = 0L;
-            kd0Var.f = new RectF();
+            jd0Var.b = paint;
+            jd0Var.e = 0L;
+            jd0Var.f = new RectF();
             paint.setStyle(Paint.Style.STROKE);
             paint.setStrokeWidth(AndroidUtilities.dp(2.0f));
-            kd0Var.c = qyVar2;
-            uyVar.V0 = kd0Var;
+            jd0Var.c = qyVar2;
+            uyVar.V0 = jd0Var;
         }
-        org.telegram.ui.Components.kd0 kd0Var2 = uyVar.V0;
-        kd0Var2.d = zVar;
-        kd0Var2.h = 0.0f;
-        kd0Var2.g = 0.0f;
-        kd0Var2.e = System.currentTimeMillis();
-        kd0Var2.c.invalidate();
+        org.telegram.ui.Components.jd0 jd0Var2 = uyVar.V0;
+        jd0Var2.d = zVar;
+        jd0Var2.h = 0.0f;
+        jd0Var2.g = 0.0f;
+        jd0Var2.e = System.currentTimeMillis();
+        jd0Var2.c.invalidate();
     }
 }

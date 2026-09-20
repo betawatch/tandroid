@@ -11,7 +11,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class eh implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -33,7 +33,7 @@ public final /* synthetic */ class eh implements Utilities.Callback {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void run(Object obj) {
-        org.telegram.ui.ActionBar.e6 e6Var;
+        org.telegram.ui.ActionBar.f6 f6Var;
         SpannableStringBuilder spannableStringBuilder;
         int size;
         int i10;
@@ -55,19 +55,19 @@ public final /* synthetic */ class eh implements Utilities.Callback {
                     SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(LocaleController.formatString(i12, DialogObject.getShortName(j3)));
                     String formatPluralStringComma = l4.longValue() > 0 ? LocaleController.formatPluralStringComma("RemoveMessageFeeRefund", (int) l4.longValue()) : null;
                     String string2 = LocaleController.getString(R.string.Confirm);
-                    lh lhVar = new lh(mjVar, j3, this.c, l4, 1);
-                    e6Var = ((org.telegram.ui.ActionBar.n2) znVar).resourceProvider;
-                    org.telegram.ui.Components.e5.i0(parentActivity, string, replaceTags, formatPluralStringComma, string2, lhVar, e6Var, true);
+                    mh mhVar = new mh(mjVar, j3, this.c, l4, 1);
+                    f6Var = ((org.telegram.ui.ActionBar.n2) znVar).resourceProvider;
+                    org.telegram.ui.Components.d5.i0(parentActivity, string, replaceTags, formatPluralStringComma, string2, mhVar, f6Var, true);
                     break;
                 }
                 break;
             default:
                 yh.y2 y2Var = (yh.y2) obj2;
                 ArrayList arrayList = (ArrayList) obj;
-                org.telegram.ui.Components.y5 y5Var = y2Var.E;
+                org.telegram.ui.Components.x5 x5Var = y2Var.E;
                 if (this.b == this.c) {
                     y2Var.d0 = arrayList;
-                    y5Var.animate().alpha(y2Var.s ? 0.0f : y2Var.d0 != null ? 1.0f : 0.25f).setInterpolator(org.telegram.ui.Components.qr.h).setDuration(420L).start();
+                    x5Var.animate().alpha(y2Var.s ? 0.0f : y2Var.d0 != null ? 1.0f : 0.25f).setInterpolator(org.telegram.ui.Components.qr.h).setDuration(420L).start();
                     ArrayList arrayList2 = new ArrayList();
                     for (int i13 = 0; i13 < arrayList.size(); i13++) {
                         if ((arrayList.get(i13) instanceof TL_stars.starGiftAttributeModel) && !(((TL_stars.StarGiftAttribute) arrayList.get(i13)).rarity instanceof TL_stars.TL_starGiftAttributeRarity)) {
@@ -80,14 +80,14 @@ public final /* synthetic */ class eh implements Utilities.Callback {
                                     Object obj3 = arrayList2.get(i10);
                                     i10++;
                                     spannableStringBuilder.append((CharSequence) "x");
-                                    spannableStringBuilder.setSpan(new org.telegram.ui.Components.z5(((TL_stars.starGiftAttributeModel) obj3).document, y5Var.getPaint().getFontMetricsInt()), spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
+                                    spannableStringBuilder.setSpan(new org.telegram.ui.Components.y5(((TL_stars.starGiftAttributeModel) obj3).document, x5Var.getPaint().getFontMetricsInt()), spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
                                     spannableStringBuilder.append((CharSequence) " ");
                                 }
                                 if (spannableStringBuilder.length() > 0) {
                                     spannableStringBuilder.append((CharSequence) " ");
                                 }
                                 spannableStringBuilder.append(AndroidUtilities.replaceArrows(LocaleController.getString(R.string.GiftCraftViewAllVariants), false, AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f)));
-                                y5Var.setText(spannableStringBuilder);
+                                x5Var.setText(spannableStringBuilder);
                                 break;
                             }
                         }
@@ -100,7 +100,7 @@ public final /* synthetic */ class eh implements Utilities.Callback {
                     if (spannableStringBuilder.length() > 0) {
                     }
                     spannableStringBuilder.append(AndroidUtilities.replaceArrows(LocaleController.getString(R.string.GiftCraftViewAllVariants), false, AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f)));
-                    y5Var.setText(spannableStringBuilder);
+                    x5Var.setText(spannableStringBuilder);
                 }
                 break;
         }

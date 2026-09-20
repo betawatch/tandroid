@@ -5,23 +5,23 @@ import android.graphics.RectF;
 import android.view.View;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class gw0 implements org.telegram.ui.Components.pk0 {
+public final class gw0 implements org.telegram.ui.Components.ok0 {
     public final /* synthetic */ zn a;
     public final /* synthetic */ MessageObject b;
-    public final /* synthetic */ org.telegram.ui.Components.qk0 c;
+    public final /* synthetic */ org.telegram.ui.Components.pk0 c;
     public final /* synthetic */ mw0 d;
 
-    public gw0(mw0 mw0Var, zn znVar, MessageObject messageObject, org.telegram.ui.Components.qk0 qk0Var) {
+    public gw0(mw0 mw0Var, zn znVar, MessageObject messageObject, org.telegram.ui.Components.pk0 pk0Var) {
         this.d = mw0Var;
         this.a = znVar;
         this.b = messageObject;
-        this.c = qk0Var;
+        this.c = pk0Var;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:9:0x005f  */
-    @Override // org.telegram.ui.Components.pk0
+    @Override // org.telegram.ui.Components.ok0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -63,26 +63,26 @@ public final class gw0 implements org.telegram.ui.Components.pk0 {
         this.d.c(false);
     }
 
-    @Override // org.telegram.ui.Components.pk0
+    @Override // org.telegram.ui.Components.ok0
     public final /* synthetic */ boolean j() {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.pk0
+    @Override // org.telegram.ui.Components.ok0
     public final /* synthetic */ boolean k() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.pk0
+    @Override // org.telegram.ui.Components.ok0
     public final /* synthetic */ boolean r() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.pk0
-    public final /* synthetic */ void p() {
+    @Override // org.telegram.ui.Components.ok0
+    public final /* synthetic */ void o() {
     }
 
-    @Override // org.telegram.ui.Components.pk0
+    @Override // org.telegram.ui.Components.ok0
     public final /* synthetic */ void n(Canvas canvas, RectF rectF, float f7, float f10, float f11, int i10, boolean z10) {
     }
 }

@@ -25,7 +25,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Components.Premium.LimitPreviewView;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class v5 extends r20 implements NotificationCenter.NotificationCenterDelegate {
     public final long P;
@@ -96,20 +96,20 @@ public final class v5 extends r20 implements NotificationCenter.NotificationCent
                     }
                     new tg.c0(v5Var, tL_payments_checkedGiftCode, boost.used_gift_slug).show();
                 } else if (z10 && boost.user_id == -1) {
-                    org.telegram.ui.Components.yb ybVar = new org.telegram.ui.Components.yb(v5Var.getParentActivity(), v5Var.getResourceProvider());
-                    ybVar.c(R.raw.chats_infotip, 36, 36, new String[0]);
-                    ybVar.b.setText(LocaleController.getString(R.string.BoostingRecipientWillBeSelected));
-                    ybVar.b.setSingleLine(false);
-                    ybVar.b.setMaxLines(2);
-                    org.telegram.ui.Components.qc.g(v5Var, ybVar, 2750).j();
+                    org.telegram.ui.Components.xb xbVar = new org.telegram.ui.Components.xb(v5Var.getParentActivity(), v5Var.getResourceProvider());
+                    xbVar.c(R.raw.chats_infotip, 36, 36, new String[0]);
+                    xbVar.b.setText(LocaleController.getString(R.string.BoostingRecipientWillBeSelected));
+                    xbVar.b.setSingleLine(false);
+                    xbVar.b.setMaxLines(2);
+                    org.telegram.ui.Components.pc.g(v5Var, xbVar, 2750).j();
                 } else if (!z11 && !z10) {
                     v5Var.presentFragment(ProfileActivity.m4(bVar.getDialogId()));
                 }
             } else {
-                yh.v7.e1(context, v5Var.Q, v5Var.P, boost, v5Var.getResourceProvider());
+                yh.w7.e1(context, v5Var.Q, v5Var.P, boost, v5Var.getResourceProvider());
             }
         }
-        if (view instanceof org.telegram.ui.Cells.r8) {
+        if (view instanceof org.telegram.ui.Cells.s8) {
             tg.m.m(v5Var, v5Var.resourceProvider, j3, null);
         }
         if (view instanceof yg.c) {
@@ -307,12 +307,12 @@ public final class v5 extends r20 implements NotificationCenter.NotificationCent
         TLRPC.Chat chat = (TLRPC.Chat) objArr[0];
         boolean booleanValue = ((Boolean) objArr[1]).booleanValue();
         List fragmentStack = getParentLayout().getFragmentStack();
-        org.telegram.ui.ActionBar.n2 n2Var = fragmentStack.size() >= 2 ? (org.telegram.ui.ActionBar.n2) t8.b.h(2, fragmentStack) : null;
+        org.telegram.ui.ActionBar.n2 n2Var = fragmentStack.size() >= 2 ? (org.telegram.ui.ActionBar.n2) org.telegram.ui.Cells.c1.i(2, fragmentStack) : null;
         if (n2Var instanceof uo) {
             ((ActionBarLayout) getParentLayout()).a0(n2Var, false);
         }
         List fragmentStack2 = getParentLayout().getFragmentStack();
-        org.telegram.ui.ActionBar.n2 n2Var2 = fragmentStack2.size() >= 2 ? (org.telegram.ui.ActionBar.n2) t8.b.h(2, fragmentStack2) : null;
+        org.telegram.ui.ActionBar.n2 n2Var2 = fragmentStack2.size() >= 2 ? (org.telegram.ui.ActionBar.n2) org.telegram.ui.Cells.c1.i(2, fragmentStack2) : null;
         if (!booleanValue) {
             finishFragment();
             if ((n2Var2 instanceof ProfileActivity) || (n2Var2 instanceof zn)) {
@@ -321,7 +321,7 @@ public final class v5 extends r20 implements NotificationCenter.NotificationCent
             }
             return;
         }
-        org.telegram.ui.ActionBar.n2 n2Var3 = fragmentStack2.size() >= 3 ? (org.telegram.ui.ActionBar.n2) t8.b.h(3, fragmentStack2) : null;
+        org.telegram.ui.ActionBar.n2 n2Var3 = fragmentStack2.size() >= 3 ? (org.telegram.ui.ActionBar.n2) org.telegram.ui.Cells.c1.i(3, fragmentStack2) : null;
         if (n2Var2 instanceof ProfileActivity) {
             ((ActionBarLayout) getParentLayout()).a0(n2Var2, false);
         }

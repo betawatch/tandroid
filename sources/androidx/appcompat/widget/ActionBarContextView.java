@@ -25,9 +25,9 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import r0.i0;
 import r0.l0;
-import v7.v7;
+import v7.w7;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public class ActionBarContextView extends ViewGroup {
     public TextView E;
@@ -63,11 +63,11 @@ public class ActionBarContextView extends ViewGroup {
     public static int g(int i10, int i11, int i12, View view, boolean z10) {
         int measuredWidth = view.getMeasuredWidth();
         int measuredHeight = view.getMeasuredHeight();
-        int x10 = k0.x(i12, measuredHeight, 2, i11);
+        int z11 = k0.z(i12, measuredHeight, 2, i11);
         if (z10) {
-            view.layout(i10 - measuredWidth, x10, i10, measuredHeight + x10);
+            view.layout(i10 - measuredWidth, z11, i10, measuredHeight + z11);
         } else {
-            view.layout(i10, x10, i10 + measuredWidth, measuredHeight + x10);
+            view.layout(i10, z11, i10 + measuredWidth, measuredHeight + z11);
         }
         return z10 ? -measuredWidth : measuredWidth;
     }
@@ -461,7 +461,7 @@ public class ActionBarContextView extends ViewGroup {
         }
         TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, f.a.d, i10, 0);
         if (obtainStyledAttributes.hasValue(0) && (resourceId = obtainStyledAttributes.getResourceId(0, 0)) != 0) {
-            drawable = v7.b(context, resourceId);
+            drawable = w7.b(context, resourceId);
         } else {
             drawable = obtainStyledAttributes.getDrawable(0);
         }

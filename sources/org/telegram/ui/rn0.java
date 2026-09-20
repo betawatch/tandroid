@@ -14,7 +14,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class rn0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -80,7 +80,7 @@ public final /* synthetic */ class rn0 implements View.OnClickListener {
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(xo0Var.getParentActivity());
                 String string = LocaleController.getString(R.string.TurnPasswordOffQuestion);
                 if (xo0Var.a0.has_secure_values) {
-                    string = org.telegram.messenger.q.h(R.string.TurnPasswordOffPassport, t8.b.j(string, "\n\n"));
+                    string = org.telegram.messenger.l0.g(R.string.TurnPasswordOffPassport, v7.j0.h(string, "\n\n"));
                 }
                 org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
                 b2Var.T = string;
@@ -114,11 +114,11 @@ public final /* synthetic */ class rn0 implements View.OnClickListener {
                 int intValue = ((Integer) view.getTag()).intValue();
                 int i11 = 0;
                 while (true) {
-                    org.telegram.ui.Cells.k6[] k6VarArr = xo0Var.h;
-                    if (i11 >= k6VarArr.length) {
+                    org.telegram.ui.Cells.l6[] l6VarArr = xo0Var.h;
+                    if (i11 >= l6VarArr.length) {
                         break;
                     } else {
-                        k6VarArr[i11].a(intValue == i11, true);
+                        l6VarArr[i11].a(intValue == i11, true);
                         i11++;
                     }
                 }

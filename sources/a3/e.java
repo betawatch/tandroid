@@ -2,7 +2,7 @@ package a3;
 
 import b2.x1;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final /* synthetic */ class e implements Runnable {
     public final /* synthetic */ int a;
@@ -17,13 +17,13 @@ public final /* synthetic */ class e implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                ((f) this.b.c).g.onFirstFrameRendered();
+                ((f) this.b.b).g.onFirstFrameRendered();
                 break;
             case 1:
-                ((f) this.b.c).g.B();
+                ((f) this.b.b).g.v();
                 break;
             default:
-                ((f) this.b.c).g.K();
+                ((f) this.b.b).g.K();
                 break;
         }
     }

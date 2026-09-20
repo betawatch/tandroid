@@ -17,7 +17,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class w6 extends FrameLayout {
     public final int a;
@@ -101,7 +101,7 @@ public final class w6 extends FrameLayout {
     }
 
     public final void b(CharSequence charSequence) {
-        this.e.b0.b(org.telegram.ui.Components.z5.cloneSpans(new SpannableString(charSequence)), null, null, false, false);
+        this.e.b0.b(org.telegram.ui.Components.y5.cloneSpans(new SpannableString(charSequence)), null, null, false, false);
     }
 
     @Override // android.view.ViewGroup

@@ -16,7 +16,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MessagesController;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class pf extends mg {
     public boolean e;
@@ -26,8 +26,8 @@ public final class pf extends mg {
     public final /* synthetic */ ChatActivityEnterView r;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public pf(ChatActivityEnterView chatActivityEnterView, Context context, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(chatActivityEnterView, context, e6Var);
+    public pf(ChatActivityEnterView chatActivityEnterView, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(chatActivityEnterView, context, f6Var);
         this.r = chatActivityEnterView;
         this.e = true;
     }
@@ -90,22 +90,22 @@ public final class pf extends mg {
                                 if (!ii.c5.f(z10, hashMap)) {
                                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(ii.c5.j(z10, false));
                                     Emoji.replaceEmoji((CharSequence) spannableStringBuilder, chatActivityEnterView.E0.getPaint().getFontMetricsInt(), false, (int[]) null);
-                                    z5[] z5VarArr = (z5[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), z5.class);
-                                    if (z5VarArr != null) {
-                                        for (z5 z5Var : z5VarArr) {
-                                            z5Var.applyFontMetrics(chatActivityEnterView.E0.getPaint().getFontMetricsInt(), q5.g());
+                                    y5[] y5VarArr = (y5[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), y5.class);
+                                    if (y5VarArr != null) {
+                                        for (y5 y5Var : y5VarArr) {
+                                            y5Var.applyFontMetrics(chatActivityEnterView.E0.getPaint().getFontMetricsInt(), p5.g());
                                         }
                                     }
                                     int max = Math.max(0, chatActivityEnterView.E0.getSelectionStart());
                                     int min = Math.min(chatActivityEnterView.E0.getText().length(), chatActivityEnterView.E0.getSelectionEnd());
-                                    cj0[] cj0VarArr = (cj0[]) chatActivityEnterView.E0.getText().getSpans(max, min, cj0.class);
-                                    if (cj0VarArr == null || cj0VarArr.length <= 0) {
-                                        dj0.a(spannableStringBuilder);
+                                    bj0[] bj0VarArr = (bj0[]) chatActivityEnterView.E0.getText().getSpans(max, min, bj0.class);
+                                    if (bj0VarArr == null || bj0VarArr.length <= 0) {
+                                        cj0.a(spannableStringBuilder);
                                     } else {
-                                        cj0[] cj0VarArr2 = (cj0[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), cj0.class);
-                                        for (int i11 = 0; i11 < cj0VarArr2.length; i11++) {
-                                            spannableStringBuilder.removeSpan(cj0VarArr2[i11]);
-                                            spannableStringBuilder.removeSpan(cj0VarArr2[i11].a);
+                                        bj0[] bj0VarArr2 = (bj0[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), bj0.class);
+                                        for (int i11 = 0; i11 < bj0VarArr2.length; i11++) {
+                                            spannableStringBuilder.removeSpan(bj0VarArr2[i11]);
+                                            spannableStringBuilder.removeSpan(bj0VarArr2[i11].a);
                                         }
                                     }
                                     pf pfVar = chatActivityEnterView.E0;
@@ -138,7 +138,7 @@ public final class pf extends mg {
                 int i10 = org.telegram.ui.ActionBar.j6.vf;
                 int i11 = ChatActivityEnterView.m5;
                 setHandlesColor(chatActivityEnterView.i0(i10));
-                chatActivityEnterView.Y2.r1();
+                chatActivityEnterView.Y2.s1();
             }
             return super.onTouchEvent(motionEvent);
         }
@@ -155,7 +155,7 @@ public final class pf extends mg {
                 int i12 = org.telegram.ui.ActionBar.j6.vf;
                 int i13 = ChatActivityEnterView.m5;
                 setHandlesColor(chatActivityEnterView.i0(i12));
-                chatActivityEnterView.Y2.r1();
+                chatActivityEnterView.Y2.s1();
             }
             pf pfVar = chatActivityEnterView.E0;
             if (pfVar != null && !AndroidUtilities.showKeyboard(pfVar)) {

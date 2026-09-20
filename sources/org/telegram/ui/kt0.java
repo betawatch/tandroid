@@ -4,7 +4,7 @@ import android.view.MotionEvent;
 import org.telegram.messenger.video.VideoFramesRewinder;
 import org.telegram.messenger.video.VideoPlayerRewinder;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class kt0 extends VideoPlayerRewinder {
     public final /* synthetic */ PhotoViewer a;
@@ -21,7 +21,7 @@ public final class kt0 extends VideoPlayerRewinder {
         PhotoViewer photoViewer = this.a;
         PhotoViewer.k(photoViewer, obtain);
         photoViewer.z1.f(false);
-        org.telegram.ui.Components.pg0.p0.Q.f(false);
+        org.telegram.ui.Components.og0.p0.Q.f(false);
     }
 
     @Override // org.telegram.messenger.video.VideoPlayerRewinder
@@ -31,7 +31,7 @@ public final class kt0 extends VideoPlayerRewinder {
         photoViewer.z1.d(!z10);
         photoViewer.z1.f(true);
         photoViewer.e0.invalidate();
-        org.telegram.ui.Components.pg0.v(z10);
+        org.telegram.ui.Components.og0.v(z10);
     }
 
     @Override // org.telegram.messenger.video.VideoPlayerRewinder
@@ -42,17 +42,17 @@ public final class kt0 extends VideoPlayerRewinder {
             photoViewer.q3.h(f7, false);
             photoViewer.r3.invalidate();
         }
-        org.telegram.ui.Components.pg0 pg0Var = org.telegram.ui.Components.pg0.p0;
-        pg0Var.Q.g(0L);
+        org.telegram.ui.Components.og0 og0Var = org.telegram.ui.Components.og0.p0;
+        og0Var.Q.g(0L);
         if (z10) {
-            pg0Var.Z = f7;
-            ai.n4 n4Var = pg0Var.b0;
+            og0Var.Z = f7;
+            ai.n4 n4Var = og0Var.b0;
             if (n4Var != null) {
                 n4Var.invalidate();
             }
-            org.telegram.ui.Components.og0 og0Var = pg0Var.h;
-            if (og0Var != null) {
-                og0Var.invalidate();
+            org.telegram.ui.Components.ng0 ng0Var = og0Var.h;
+            if (ng0Var != null) {
+                ng0Var.invalidate();
             }
         }
     }

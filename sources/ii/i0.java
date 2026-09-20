@@ -9,16 +9,15 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.support.LongSparseIntArray;
-import org.telegram.messenger.wh;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Cells.q9;
+import org.telegram.ui.Cells.r9;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 import org.telegram.ui.Components.uj;
 import org.telegram.ui.Components.vi;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class i0 implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -64,10 +63,10 @@ public final /* synthetic */ class i0 implements Runnable {
         switch (i12) {
             case 0:
                 i1 i1Var = (i1) obj3;
-                q9 q9Var = (q9) obj2;
+                r9 r9Var = (r9) obj2;
                 k0 k0Var = (k0) obj;
-                l0 l0Var = (l0) ((n4.y) obj4).c;
-                if (i1Var.length() >= i14 && i1Var.getSelectionStart() != i1Var.getSelectionEnd() && q9Var.k0(k0Var.I(), 0, i13, i14)) {
+                l0 l0Var = (l0) ((n4.y) obj4).b;
+                if (i1Var.length() >= i14 && i1Var.getSelectionStart() != i1Var.getSelectionEnd() && r9Var.k0(k0Var.I(), 0, i13, i14)) {
                     l0Var.d = true;
                     i1Var.setSelection(i14);
                     l0Var.d = false;
@@ -90,12 +89,12 @@ public final /* synthetic */ class i0 implements Runnable {
                         fVar.d(rVar, i14, new m4.d() { // from class: m4.z0
                             @Override // m4.d
                             public final i9.w run() {
-                                return (i9.w) e1.this.i(a0Var, rVar, i13);
+                                return (i9.w) e1.this.h(a0Var, rVar, i13);
                             }
                         });
                         break;
                     } else {
-                        e1Var.i(a0Var, rVar, i13);
+                        e1Var.h(a0Var, rVar, i13);
                         fVar.d(rVar, i14, new m4.y0());
                         break;
                     }
@@ -146,10 +145,10 @@ public final /* synthetic */ class i0 implements Runnable {
                         while (i17 < i15) {
                             int i18 = i17;
                             String str4 = strArr2[i18];
-                            if ((str == null || !(str.startsWith(str4) || wh.u(" ", str4, str))) && (str2 == null || !(str2.startsWith(str4) || wh.u(" ", str4, str2)))) {
+                            if ((str == null || !(str.startsWith(str4) || org.telegram.messenger.l0.v(" ", str4, str))) && (str2 == null || !(str2.startsWith(str4) || org.telegram.messenger.l0.v(" ", str4, str2)))) {
                                 str3 = str;
                                 TLRPC.User user2 = contact.user;
-                                r22 = (user2 == null || (publicUsername = UserObject.getPublicUsername(user2)) == null || !publicUsername.startsWith(str4)) ? (lowerCase2.startsWith(str4) || wh.u(" ", str4, lowerCase2) || (translitString2 != null && (translitString2.startsWith(str4) || wh.u(" ", str4, translitString2)))) ? 3 : z10 : 2;
+                                r22 = (user2 == null || (publicUsername = UserObject.getPublicUsername(user2)) == null || !publicUsername.startsWith(str4)) ? (lowerCase2.startsWith(str4) || org.telegram.messenger.l0.v(" ", str4, lowerCase2) || (translitString2 != null && (translitString2.startsWith(str4) || org.telegram.messenger.l0.v(" ", str4, translitString2)))) ? 3 : z10 : 2;
                             } else {
                                 str3 = str;
                                 r22 = 1;
@@ -201,7 +200,7 @@ public final /* synthetic */ class i0 implements Runnable {
                             int i20 = 0;
                             while (i20 < i15) {
                                 String str6 = strArr3[i20];
-                                if (lowerCase3.startsWith(str6) || wh.u(" ", str6, lowerCase3) || (translitString3 != null && (translitString3.startsWith(str6) || wh.u(" ", str6, translitString3)))) {
+                                if (lowerCase3.startsWith(str6) || org.telegram.messenger.l0.v(" ", str6, lowerCase3) || (translitString3 != null && (translitString3.startsWith(str6) || org.telegram.messenger.l0.v(" ", str6, translitString3)))) {
                                     i10 = i19;
                                     c10 = 1;
                                 } else {
@@ -276,11 +275,11 @@ public final /* synthetic */ class i0 implements Runnable {
         }
     }
 
-    public /* synthetic */ i0(n4.y yVar, i1 i1Var, int i10, q9 q9Var, k0 k0Var, int i11) {
+    public /* synthetic */ i0(n4.y yVar, i1 i1Var, int i10, r9 r9Var, k0 k0Var, int i11) {
         this.d = yVar;
         this.e = i1Var;
         this.b = i10;
-        this.f = q9Var;
+        this.f = r9Var;
         this.h = k0Var;
         this.c = i11;
     }

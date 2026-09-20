@@ -14,9 +14,9 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.concurrent.Callable;
 import org.webrtc.audio.WebRtcAudioRecord;
-import v7.l7;
+import v7.m7;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final /* synthetic */ class h implements Callable {
     public final /* synthetic */ int a;
@@ -102,7 +102,7 @@ public final /* synthetic */ class h implements Callable {
             case 1:
                 g2.i iVar = (g2.i) this.b;
                 byte[] bArr = (byte[]) this.c;
-                return l7.a(bArr.length, iVar.c, bArr);
+                return m7.a(bArr.length, iVar.c, bArr);
             case 2:
                 g2.i iVar2 = (g2.i) this.b;
                 Uri uri = (Uri) this.c;
@@ -125,7 +125,7 @@ public final /* synthetic */ class h implements Callable {
                         }
                     }
                     byte[] copyOf = Arrays.copyOf(bArr2, i13);
-                    Bitmap a2 = l7.a(copyOf.length, i11, copyOf);
+                    Bitmap a2 = m7.a(copyOf.length, i11, copyOf);
                     nVar.close();
                     return a2;
                 } catch (Throwable th2) {

@@ -12,8 +12,9 @@ import k2.u;
 import l.d;
 import org.telegram.messenger.BuildVars;
 import s4.c1;
+import v7.j0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class a {
     public static boolean i = true;
@@ -36,7 +37,7 @@ public final class a {
             str = str.concat(" expiresInSecs");
         }
         if (((Long) this.h) == null) {
-            str = t8.b.v(str, " tokenCreationEpochInSecs");
+            str = j0.s(str, " tokenCreationEpochInSecs");
         }
         if (str.isEmpty()) {
             return new b((String) this.c, this.b, (String) this.d, (String) this.e, ((Long) this.g).longValue(), ((Long) this.h).longValue(), (String) this.f);

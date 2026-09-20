@@ -22,13 +22,13 @@ import org.telegram.messenger.DispatchQueue;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.ja;
+import org.telegram.ui.Components.ia;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.vv0;
-import v7.z6;
-import w7.l6;
+import org.telegram.ui.Components.uv0;
+import v7.a7;
+import w7.m6;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public class e1 extends TextureView {
     public d1 a;
@@ -46,14 +46,14 @@ public class e1 extends TextureView {
     public m x;
     public boolean y;
 
-    public e1(Context context, s0 s0Var, Bitmap bitmap, Bitmap bitmap2, ja jaVar) {
+    public e1(Context context, s0 s0Var, Bitmap bitmap, Bitmap bitmap2, ia iaVar) {
         super(context);
         setOpaque(false);
         this.h = bitmap;
         this.n = bitmap2;
         this.c = s0Var;
         s0Var.f = this;
-        setSurfaceTextureListener(new a1(this, jaVar));
+        setSurfaceTextureListener(new a1(this, iaVar));
         this.e = new e0(this);
         y0 y0Var = new y0(this, 0);
         r1 r1Var = new r1();
@@ -140,30 +140,30 @@ public class e1 extends TextureView {
             if (e1Var == null || e1Var.getPainting() == null) {
                 return;
             }
-            vv0 vv0Var = e1Var.getPainting().g;
+            uv0 uv0Var = e1Var.getPainting().g;
             for (int i10 = 0; i10 < arrayList.size(); i10++) {
                 q1 q1Var = (q1) arrayList.get(i10);
                 if (q1Var.c && !q1Var.b) {
-                    r1Var.b(canvas, vv0Var, q1Var);
+                    r1Var.b(canvas, uv0Var, q1Var);
                 }
             }
             h1 h1Var = r1Var.h;
             if (h1Var != null && h1Var.h != 0.0f) {
                 canvas.save();
-                canvas.rotate((float) (((-r1.h) / 3.141592653589793d) * 180.0d), (r1Var.h.b / vv0Var.a) * canvas.getWidth(), (r1Var.h.c / vv0Var.b) * canvas.getHeight());
+                canvas.rotate((float) (((-r1.h) / 3.141592653589793d) * 180.0d), (r1Var.h.b / uv0Var.a) * canvas.getWidth(), (r1Var.h.c / uv0Var.b) * canvas.getHeight());
             }
             h1 h1Var2 = r1Var.h;
             if (h1Var2 == null || h1Var2.a.o() != 4) {
                 canvas2 = canvas;
             } else {
                 canvas2 = canvas;
-                canvas2.drawLine(canvas.getWidth() * (r1Var.h.b / vv0Var.a), canvas.getHeight() * (r1Var.h.c / vv0Var.b), canvas.getWidth() * (r1Var.h.i / vv0Var.a), canvas.getHeight() * (r1Var.h.j / vv0Var.b), paint);
-                canvas2.drawLine(canvas2.getWidth() * (r1Var.h.d / vv0Var.a), canvas2.getHeight() * (r1Var.h.e / vv0Var.b), canvas2.getWidth() * (r1Var.h.i / vv0Var.a), canvas2.getHeight() * (r1Var.h.j / vv0Var.b), paint);
+                canvas2.drawLine(canvas.getWidth() * (r1Var.h.b / uv0Var.a), canvas.getHeight() * (r1Var.h.c / uv0Var.b), canvas.getWidth() * (r1Var.h.i / uv0Var.a), canvas.getHeight() * (r1Var.h.j / uv0Var.b), paint);
+                canvas2.drawLine(canvas2.getWidth() * (r1Var.h.d / uv0Var.a), canvas2.getHeight() * (r1Var.h.e / uv0Var.b), canvas2.getWidth() * (r1Var.h.i / uv0Var.a), canvas2.getHeight() * (r1Var.h.j / uv0Var.b), paint);
             }
             for (int i11 = 0; i11 < arrayList.size(); i11++) {
                 q1 q1Var2 = (q1) arrayList.get(i11);
                 if (q1Var2.c && q1Var2.b) {
-                    r1Var.b(canvas2, vv0Var, q1Var2);
+                    r1Var.b(canvas2, uv0Var, q1Var2);
                 }
             }
             h1 h1Var3 = r1Var.h;
@@ -293,7 +293,7 @@ public class e1 extends TextureView {
                     if (q1Var4.b) {
                         r1Var.c(f14, f15, r92);
                     }
-                    double a2 = z6.a(q1Var4.d, q1Var4.e, fArr[r92], fArr[1]);
+                    double a2 = a7.a(q1Var4.d, q1Var4.e, fArr[r92], fArr[1]);
                     if (a2 < AndroidUtilities.dp(40.0f) && (q1Var == null || a2 < d)) {
                         q1Var = q1Var4;
                         d = a2;
@@ -368,11 +368,11 @@ public class e1 extends TextureView {
                             }
                         }
                     } else if (r1Var.h.a.o() == 4) {
-                        vv0 vv0Var = e1Var.getPainting().g;
+                        uv0 uv0Var = e1Var.getPainting().g;
                         h1 h1Var5 = r1Var.h;
                         float a11 = r1.a(f14, f15, h1Var5.b, h1Var5.c, h1Var5.i, h1Var5.j);
                         h1 h1Var6 = r1Var.h;
-                        if (Math.min(a11, r1.a(f14, f15, h1Var6.d, h1Var6.e, h1Var6.i, h1Var6.j)) - (r1Var.h.f / 2.0f) < Math.min(vv0Var.a, vv0Var.b) * 0.1f) {
+                        if (Math.min(a11, r1.a(f14, f15, h1Var6.d, h1Var6.e, h1Var6.i, h1Var6.j)) - (r1Var.h.f / 2.0f) < Math.min(uv0Var.a, uv0Var.b) * 0.1f) {
                             f12 = f14;
                             f11 = f15;
                         }
@@ -625,7 +625,7 @@ public class e1 extends TextureView {
                         e0Var.e = true;
                         if (z10 && (e0Var.a.getCurrentBrush() instanceof f)) {
                             e0Var.A = e0Var.a.getCurrentBrush();
-                            e0Var.a.g((m) t8.b.h(1, m.a));
+                            e0Var.a.g((m) org.telegram.ui.Cells.c1.i(1, m.a));
                         }
                     }
                     e0Var.m[e0Var.n] = w0Var;
@@ -674,7 +674,7 @@ public class e1 extends TextureView {
                                                     double d22 = a13;
                                                     double d23 = atan2;
                                                     f10 = scaleX;
-                                                    e0Var.k = (float) Math.atan2((Math.sin(d23) * d22) + (Math.sin(d21) * d20), org.telegram.messenger.q.a(d23, d22, Math.cos(d21) * d20));
+                                                    e0Var.k = (float) Math.atan2((Math.sin(d23) * d22) + (Math.sin(d21) * d20), hg.k0.e(d23, d22, Math.cos(d21) * d20));
                                                     e0Var.c(e0Var.a.getCurrentBrush().j(), false);
                                                 }
                                             } else {
@@ -733,7 +733,7 @@ public class e1 extends TextureView {
         if (c1Var == null) {
             return;
         }
-        c1Var.postRunnable(new org.telegram.ui.web.p1(6, this, runnable));
+        c1Var.postRunnable(new org.telegram.ui.web.g1(8, this, runnable));
     }
 
     public m getCurrentBrush() {
@@ -772,10 +772,10 @@ public class e1 extends TextureView {
         s0 s0Var = this.c;
         float width = s0Var != null ? getWidth() / s0Var.g.a : 1.0f;
         float f7 = width > 0.0f ? width : 1.0f;
-        vv0 vv0Var = getPainting().g;
+        uv0 uv0Var = getPainting().g;
         matrix.preTranslate(getWidth() / 2.0f, getHeight() / 2.0f);
         matrix.preScale(f7, -f7);
-        matrix.preTranslate((-vv0Var.a) / 2.0f, (-vv0Var.b) / 2.0f);
+        matrix.preTranslate((-uv0Var.a) / 2.0f, (-uv0Var.b) / 2.0f);
         if (this.x instanceof l) {
             r1 r1Var = this.f;
             r1Var.getClass();
@@ -790,7 +790,7 @@ public class e1 extends TextureView {
             matrix.invert(matrix3);
         }
         c1 c1Var = this.d;
-        s0Var.y = l6.c(l6.b(c1Var.n, c1Var.r), l6.a(matrix));
+        s0Var.y = m6.c(m6.b(c1Var.n, c1Var.r), m6.a(matrix));
     }
 
     public void setBrush(m mVar) {
@@ -814,11 +814,11 @@ public class e1 extends TextureView {
             arrayList2.clear();
             arrayList.clear();
             r1Var.h = new h1(l.p(o9));
-            vv0 vv0Var = e1Var.getPainting().g;
+            uv0 uv0Var = e1Var.getPainting().g;
             h1 h1Var = r1Var.h;
-            float f7 = vv0Var.a;
+            float f7 = uv0Var.a;
             h1Var.b = f7 / 2.0f;
-            float f10 = vv0Var.b;
+            float f10 = uv0Var.b;
             h1Var.c = f10 / 2.0f;
             float min = Math.min(f7, f10) / 5.0f;
             h1Var.e = min;
@@ -828,11 +828,11 @@ public class e1 extends TextureView {
             r1Var.h.l = u0.e(UserConfig.selectedAccount).k;
             if (r1Var.h.a.o() == 4) {
                 h1 h1Var2 = r1Var.h;
-                float f11 = vv0Var.a / 2.0f;
+                float f11 = uv0Var.a / 2.0f;
                 h1Var2.d = f11;
                 h1Var2.b = f11;
                 h1Var2.i = f11 + 1.0f;
-                float f12 = vv0Var.b;
+                float f12 = uv0Var.b;
                 float f13 = f12 / 3.0f;
                 float f14 = 1.0f * f13;
                 h1Var2.c = f14;

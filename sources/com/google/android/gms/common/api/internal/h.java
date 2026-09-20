@@ -29,7 +29,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class h implements Handler.Callback {
     public static final Status E = new Status(4, "Sign-out occurred while this API call was in progress.", null, null);
@@ -42,7 +42,7 @@ public final class h implements Handler.Callback {
     public p6.b d;
     public final Context e;
     public final k6.d f;
-    public final n4.y h;
+    public final m5.e h;
     public final AtomicInteger n;
     public final AtomicInteger r;
     public final ConcurrentHashMap s;
@@ -65,7 +65,7 @@ public final class h implements Handler.Callback {
         com.google.android.gms.internal.cast.c0 c0Var = new com.google.android.gms.internal.cast.c0(looper, this);
         this.x = c0Var;
         this.f = dVar;
-        this.h = new n4.y((k6.e) dVar);
+        this.h = new m5.e((k6.e) dVar);
         PackageManager packageManager = context.getPackageManager();
         if (u6.b.e == null) {
             u6.b.e = Boolean.valueOf(u6.b.d() && packageManager.hasSystemFeature("android.hardware.type.automotive"));

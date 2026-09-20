@@ -5,8 +5,9 @@ import android.util.Base64;
 import b2.s0;
 import java.net.URLDecoder;
 import java.nio.charset.StandardCharsets;
+import v7.j0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class f extends c {
     public m a;
@@ -52,7 +53,7 @@ public final class f extends c {
             try {
                 this.b = Base64.decode(str2, 0);
             } catch (IllegalArgumentException e) {
-                throw new s0(t8.b.i("Error while parsing Base64 encoded string: ", str2), e, true, 0);
+                throw new s0(j0.g("Error while parsing Base64 encoded string: ", str2), e, true, 0);
             }
         } else {
             this.b = URLDecoder.decode(str2, StandardCharsets.US_ASCII.name()).getBytes(StandardCharsets.UTF_8);

@@ -8,7 +8,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class an0 implements Runnable {
     public final /* synthetic */ int a;
@@ -42,7 +42,7 @@ public final /* synthetic */ class an0 implements Runnable {
                     break;
                 } else {
                     if ("APP_VERSION_OUTDATED".equals(tL_error.text)) {
-                        org.telegram.ui.Components.e5.x0(pn0Var.getParentActivity(), LocaleController.getString(R.string.UpdateAppAlert), true);
+                        org.telegram.ui.Components.d5.x0(pn0Var.getParentActivity(), LocaleController.getString(R.string.UpdateAppAlert), true);
                     } else {
                         pn0Var.M1(LocaleController.getString(R.string.AppName), tL_error.text);
                     }
@@ -71,7 +71,7 @@ public final /* synthetic */ class an0 implements Runnable {
                     TL_account.Password password2 = (TL_account.Password) tLObject3;
                     bn0Var3.e.J = password2;
                     TwoStepVerificationActivity.m0(password2);
-                    Utilities.globalQueue.postRunnable(new qf0(bn0Var3, bn0Var3.b, bn0Var3.d, 12));
+                    Utilities.globalQueue.postRunnable(new rf0(bn0Var3, bn0Var3.b, bn0Var3.d, 12));
                     break;
                 }
                 break;

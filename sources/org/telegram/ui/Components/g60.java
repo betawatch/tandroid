@@ -1,34 +1,37 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public abstract class g60 extends qo0 {
-    @Override // org.telegram.ui.Components.qo0
-    public final boolean a() {
-        return j() > 0;
+public final class g60 {
+    public final int a;
+    public final int b;
+
+    public g60(int i10, int i11) {
+        this.a = i10;
+        this.b = i11;
     }
 
-    @Override // org.telegram.ui.Components.qo0
-    public final boolean b() {
-        return j() < i();
-    }
-
-    @Override // org.telegram.ui.Components.qo0
-    public final void c(boolean z10) {
-        int h = h();
-        if (z10) {
-            h *= -1;
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
-        k(Math.min(i(), Math.max(0, j() + h)));
+        if (obj != null && g60.class == obj.getClass()) {
+            g60 g60Var = (g60) obj;
+            if (this.a == g60Var.a && this.b == g60Var.b) {
+                return true;
+            }
+        }
+        return false;
     }
 
-    public int h() {
-        return 1;
+    public final int hashCode() {
+        return (this.a * 31) + this.b;
     }
 
-    public abstract int i();
-
-    public abstract int j();
-
-    public abstract void k(int i10);
+    public final String toString() {
+        StringBuilder sb2 = new StringBuilder("IntSize(");
+        sb2.append(this.a);
+        sb2.append(", ");
+        return a4.a.n(this.b, ")", sb2);
+    }
 }

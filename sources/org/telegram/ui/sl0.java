@@ -15,7 +15,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class sl0 implements Runnable {
     public final /* synthetic */ int a;
@@ -36,7 +36,7 @@ public final /* synthetic */ class sl0 implements Runnable {
         Object obj = this.b;
         switch (i12) {
             case 0:
-                ((PasscodeActivity) ((ee0) obj).n).h0();
+                ((PasscodeActivity) ((fe0) obj).n).h0();
                 break;
             case 1:
                 PasskeysActivity.X((PasskeysActivity) obj);
@@ -55,7 +55,7 @@ public final /* synthetic */ class sl0 implements Runnable {
                 ((xm0) obj).a.finishFragment();
                 break;
             case 4:
-                org.telegram.ui.Components.e5.x0(((bn0) obj).e.getParentActivity(), LocaleController.getString(R.string.UpdateAppAlert), true);
+                org.telegram.ui.Components.d5.x0(((bn0) obj).e.getParentActivity(), LocaleController.getString(R.string.UpdateAppAlert), true);
                 break;
             case 5:
                 double currentTimeMillis = System.currentTimeMillis();
@@ -227,21 +227,21 @@ public final /* synthetic */ class sl0 implements Runnable {
                 }
                 break;
             case 17:
-                org.telegram.ui.Components.al0 al0Var = (org.telegram.ui.Components.al0) ((gp0) obj).b;
-                PhotoViewer photoViewer3 = (PhotoViewer) al0Var.c;
+                org.telegram.ui.Components.zk0 zk0Var = (org.telegram.ui.Components.zk0) ((gp0) obj).b;
+                PhotoViewer photoViewer3 = (PhotoViewer) zk0Var.c;
                 photoViewer3.H2 = false;
-                org.telegram.ui.Components.u71 u71Var = photoViewer3.F2;
-                if (u71Var != null) {
-                    u71Var.C();
+                org.telegram.ui.Components.t71 t71Var = photoViewer3.F2;
+                if (t71Var != null) {
+                    t71Var.C();
                 }
-                ((PhotoViewer) al0Var.c).I2 = null;
+                ((PhotoViewer) zk0Var.c).I2 = null;
                 break;
             case 18:
                 PhotoViewer photoViewer4 = ((ts0) obj).a;
                 photoViewer4.H2 = false;
-                org.telegram.ui.Components.u71 u71Var2 = photoViewer4.F2;
-                if (u71Var2 != null) {
-                    u71Var2.C();
+                org.telegram.ui.Components.t71 t71Var2 = photoViewer4.F2;
+                if (t71Var2 != null) {
+                    t71Var2.C();
                 }
                 photoViewer4.I2 = null;
                 break;
@@ -273,10 +273,10 @@ public final /* synthetic */ class sl0 implements Runnable {
                 break;
             case 23:
                 PremiumPreviewFragment premiumPreviewFragment = ((cx0) obj).c;
-                premiumPreviewFragment.showDialog(new h41(premiumPreviewFragment.getParentActivity(), false, premiumPreviewFragment.getResourceProvider(), null));
+                premiumPreviewFragment.showDialog(new i41(premiumPreviewFragment.getParentActivity(), false, premiumPreviewFragment.getResourceProvider(), null));
                 break;
             case 24:
-                ((org.telegram.messenger.nk) obj).run(0);
+                ((org.telegram.messenger.mk) obj).run(0);
                 break;
             case 25:
                 AndroidUtilities.addToClipboard((String) obj);

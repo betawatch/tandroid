@@ -23,7 +23,6 @@ import android.view.View;
 import android.view.ViewTreeObserver;
 import androidx.car.app.j;
 import androidx.core.graphics.drawable.IconCompat;
-import androidx.lifecycle.j0;
 import androidx.lifecycle.n0;
 import androidx.lifecycle.p0;
 import androidx.lifecycle.q0;
@@ -46,6 +45,7 @@ import ci.n8;
 import ci.o8;
 import com.google.android.gms.cast.CastDevice;
 import com.google.android.gms.common.api.internal.s;
+import com.google.android.gms.internal.cast.v;
 import com.google.android.gms.internal.play_billing.k;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -56,7 +56,6 @@ import com.google.firebase.messaging.t;
 import e0.n;
 import e2.b0;
 import e2.d0;
-import e2.v;
 import g6.f;
 import g6.w;
 import hc.e;
@@ -99,18 +98,19 @@ import m.p3;
 import n6.l;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.Components.j71;
-import org.telegram.ui.Components.r71;
+import org.telegram.ui.Components.i71;
+import org.telegram.ui.Components.q71;
 import org.telegram.ui.Components.rz;
-import org.telegram.ui.Components.u71;
+import org.telegram.ui.Components.t71;
 import org.telegram.ui.Components.vz;
+import v7.j0;
 import v7.m;
 import v7.o;
 import z3.d;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
-public final class a implements s, r71, d, a0, OnCompleteListener, n5.b {
+public final class a implements s, q71, d, a0, OnCompleteListener, n5.b {
     public static a e;
     public final /* synthetic */ int a;
     public Object b;
@@ -121,7 +121,7 @@ public final class a implements s, r71, d, a0, OnCompleteListener, n5.b {
         this.a = i10;
     }
 
-    public static final URL c(a aVar) {
+    public static final URL a(a aVar) {
         Uri.Builder appendPath = new Uri.Builder().scheme("https").authority((String) aVar.b).appendPath("spi").appendPath("v2").appendPath("platforms").appendPath("android").appendPath("gmp");
         za.b bVar = (za.b) aVar.c;
         Uri.Builder appendPath2 = appendPath.appendPath(bVar.a).appendPath("settings");
@@ -153,11 +153,36 @@ public final class a implements s, r71, d, a0, OnCompleteListener, n5.b {
         if (!str.endsWith("&")) {
             sb3 = "&".concat(sb3);
         }
-        return t8.b.v(str, sb3);
+        return j0.s(str, sb3);
+    }
+
+    @Override // com.google.android.gms.common.api.internal.s
+    public void accept(Object obj, Object obj2) {
+        e0 e0Var = (e0) this.c;
+        String str = (String) this.b;
+        i iVar = (i) this.d;
+        w wVar = (w) obj;
+        TaskCompletionSource taskCompletionSource = (TaskCompletionSource) obj2;
+        l.j("Not connected to device", e0Var.F == 2);
+        f fVar = (f) wVar.u();
+        Parcel O0 = fVar.O0();
+        O0.writeString(str);
+        v.c(O0, iVar);
+        fVar.T0(O0, 13);
+        synchronized (e0Var.r) {
+            try {
+                if (e0Var.o != null) {
+                    e0Var.i(2477);
+                }
+                e0Var.o = taskCompletionSource;
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
     }
 
     @Override // j4.a0
-    public void a(v vVar) {
+    public void b(e2.v vVar) {
         long d;
         e2.d.h((b0) this.c);
         String str = d0.a;
@@ -186,33 +211,8 @@ public final class a implements s, r71, d, a0, OnCompleteListener, n5.b {
         ((h0) this.d).c(d, 1, a10, 0, null);
     }
 
-    @Override // com.google.android.gms.common.api.internal.s
-    public void accept(Object obj, Object obj2) {
-        e0 e0Var = (e0) this.c;
-        String str = (String) this.b;
-        i iVar = (i) this.d;
-        w wVar = (w) obj;
-        TaskCompletionSource taskCompletionSource = (TaskCompletionSource) obj2;
-        l.j("Not connected to device", e0Var.F == 2);
-        f fVar = (f) wVar.u();
-        Parcel O0 = fVar.O0();
-        O0.writeString(str);
-        com.google.android.gms.internal.cast.v.c(O0, iVar);
-        fVar.T0(O0, 13);
-        synchronized (e0Var.r) {
-            try {
-                if (e0Var.o != null) {
-                    e0Var.i(2477);
-                }
-                e0Var.o = taskCompletionSource;
-            } catch (Throwable th2) {
-                throw th2;
-            }
-        }
-    }
-
     @Override // j4.a0
-    public void b(b0 b0Var, q qVar, f0 f0Var) {
+    public void c(b0 b0Var, q qVar, f0 f0Var) {
         this.c = b0Var;
         f0Var.a();
         f0Var.b();
@@ -536,7 +536,7 @@ public final class a implements s, r71, d, a0, OnCompleteListener, n5.b {
             if (oVar != null) {
                 p pVar = n0Var.e;
                 kotlin.jvm.internal.i.b(pVar);
-                j0.a(p0Var, pVar, oVar);
+                androidx.lifecycle.j0.a(p0Var, pVar, oVar);
             }
         }
         kotlin.jvm.internal.i.c(p0Var, "null cannot be cast to non-null type T of androidx.lifecycle.ViewModelProvider.get");
@@ -575,53 +575,53 @@ public final class a implements s, r71, d, a0, OnCompleteListener, n5.b {
         scheduledFuture.cancel(false);
     }
 
-    @Override // org.telegram.ui.Components.r71
-    public void onError(u71 u71Var, Exception exc) {
+    @Override // org.telegram.ui.Components.q71
+    public void onError(t71 t71Var, Exception exc) {
         ka kaVar = ((d7) this.d).N;
         if (kaVar != null) {
             kaVar.run();
         }
     }
 
-    @Override // org.telegram.ui.Components.r71
+    @Override // org.telegram.ui.Components.q71
     public /* synthetic */ void onRenderedFirstFrame(j2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.r71
+    @Override // org.telegram.ui.Components.q71
     public void onStateChanged(boolean z10, int i10) {
         d7 d7Var = (d7) this.d;
         a7 a7Var = d7Var.K;
-        u71 u71Var = d7Var.e;
-        if (u71Var == null) {
+        t71 t71Var = d7Var.e;
+        if (t71Var == null) {
             return;
         }
-        if (u71Var.y()) {
+        if (t71Var.y()) {
             AndroidUtilities.runOnUIThread(a7Var);
         } else {
             AndroidUtilities.cancelRunOnUIThread(a7Var);
         }
     }
 
-    @Override // org.telegram.ui.Components.r71
+    @Override // org.telegram.ui.Components.q71
     public /* synthetic */ boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture) {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.r71
+    @Override // org.telegram.ui.Components.q71
     public void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
         ((d7) this.d).i();
     }
 
-    @Override // org.telegram.ui.Components.r71
+    @Override // org.telegram.ui.Components.q71
     public void onVideoSizeChanged(int i10, int i11, int i12, float f7) {
         d7 d7Var = (d7) this.d;
         o8 o8Var = (o8) this.b;
         if (o8Var != null) {
             n8 q6 = d7Var.e.q(o8Var.d1);
             o8Var.d1 = q6;
-            j71 j71Var = d7Var.n;
-            if (j71Var != null) {
-                j71Var.setHDRInfo(q6);
+            i71 i71Var = d7Var.n;
+            if (i71Var != null) {
+                i71Var.setHDRInfo(q6);
             }
         }
         int i13 = (int) (i10 * f7);
@@ -634,13 +634,13 @@ public final class a implements s, r71, d, a0, OnCompleteListener, n5.b {
             o8Var.A();
         }
         d7Var.b();
-        j71 j71Var2 = d7Var.n;
-        if (j71Var2 != null) {
+        i71 i71Var2 = d7Var.n;
+        if (i71Var2 != null) {
             int i15 = d7Var.f;
             int i16 = d7Var.h;
-            j71Var2.d = i15;
-            j71Var2.e = i16;
-            vz vzVar = j71Var2.b;
+            i71Var2.d = i15;
+            i71Var2.e = i16;
+            vz vzVar = i71Var2.b;
             if (vzVar == null) {
                 return;
             }
@@ -894,7 +894,7 @@ public final class a implements s, r71, d, a0, OnCompleteListener, n5.b {
         this.d = obj2;
     }
 
-    @Override // org.telegram.ui.Components.r71
+    @Override // org.telegram.ui.Components.q71
     public void onRenderedFirstFrame() {
         o8 o8Var = (o8) this.b;
         Runnable[] runnableArr = (Runnable[]) this.c;
@@ -913,10 +913,10 @@ public final class a implements s, r71, d, a0, OnCompleteListener, n5.b {
         }
         Runnable runnable = runnableArr[0];
         if (runnable == null) {
-            j71 j71Var = d7Var.n;
-            if (j71Var != null) {
+            i71 i71Var = d7Var.n;
+            if (i71Var != null) {
                 if (c7Var == null || !c7Var.g) {
-                    j71Var.animate().alpha(1.0f).setDuration(180L).withEndAction(new ba(21, this, o8Var)).start();
+                    i71Var.animate().alpha(1.0f).setDuration(180L).withEndAction(new ba(21, this, o8Var)).start();
                     return;
                 }
                 return;
@@ -1001,11 +1001,11 @@ public final class a implements s, r71, d, a0, OnCompleteListener, n5.b {
         }
     }
 
-    @Override // org.telegram.ui.Components.r71
+    @Override // org.telegram.ui.Components.q71
     public /* synthetic */ void onSeekFinished(j2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.r71
+    @Override // org.telegram.ui.Components.q71
     public /* synthetic */ void onSeekStarted(j2.a aVar) {
     }
 

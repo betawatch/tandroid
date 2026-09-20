@@ -17,11 +17,12 @@ import android.view.WindowInsets;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
+import org.telegram.messenger.rk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.zh1;
+import org.telegram.ui.bi1;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class u1 extends FrameLayout {
     public float E;
@@ -242,7 +243,7 @@ public final class u1 extends FrameLayout {
         canvas.scale((1.0f / getScaleX()) * u1Var.J * u1Var.K, (1.0f / getScaleY()) * u1Var.J * u1Var.K, f7, f10);
         canvas.drawCircle(f7, f10, AndroidUtilities.dp(14.0f), u1Var.w);
         Drawable drawable = u1Var.x;
-        drawable.setBounds(org.telegram.ui.Cells.c1.r(2, measuredWidth, drawable), org.telegram.ui.Cells.c1.c(2, measuredHeight, drawable), org.telegram.ui.Cells.c1.v(2, measuredWidth, drawable), org.telegram.ui.Cells.c1.u(2, measuredHeight, drawable));
+        drawable.setBounds(rk.y(2, measuredWidth, drawable), rk.d(2, measuredHeight, drawable), org.telegram.ui.Cells.c1.d(2, measuredWidth, drawable), rk.A(2, measuredHeight, drawable));
         drawable.draw(canvas);
         canvas.restore();
         if (u1Var.O) {
@@ -302,7 +303,7 @@ public final class u1 extends FrameLayout {
         }
         t1 t1Var = this.i0;
         if (t1Var != null) {
-            ((zh1) t1Var).b.d0.d(this.J, this.P);
+            ((bi1) t1Var).b.d0.d(this.J, this.P);
         }
         super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30));
         if (getMeasuredHeight() != this.f && getMeasuredWidth() != this.h) {

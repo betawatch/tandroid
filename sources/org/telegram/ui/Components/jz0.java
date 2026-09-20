@@ -1,31 +1,14 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLObject;
-
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class jz0 extends nz0 {
-    public int d;
+public final class jz0 {
+    public final pz0 a;
+    public final rz0 b;
+    public boolean c = true;
 
-    @Override // org.telegram.ui.Components.nz0
-    public final int a(wz0 wz0Var, pz0 pz0Var, iz0 iz0Var, int i10, boolean z10) {
-        return Math.max(0, this.a - iz0Var.a(pz0Var, i10));
-    }
-
-    @Override // org.telegram.ui.Components.nz0
-    public final void b(int i10, int i11) {
-        super.b(i10, i11);
-        this.d = Math.max(this.d, i10 + i11);
-    }
-
-    @Override // org.telegram.ui.Components.nz0
-    public final void c() {
-        super.c();
-        this.d = TLObject.FLAG_31;
-    }
-
-    @Override // org.telegram.ui.Components.nz0
-    public final int d(boolean z10) {
-        return Math.max(super.d(z10), this.d);
+    public jz0(pz0 pz0Var, rz0 rz0Var) {
+        this.a = pz0Var;
+        this.b = rz0Var;
     }
 }

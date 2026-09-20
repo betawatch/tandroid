@@ -8,7 +8,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class zm0 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -60,7 +60,7 @@ public final /* synthetic */ class zm0 implements RequestDelegate {
                                     ConnectionsManager.getInstance(i12).sendRequest(getpassword2, new zm0(bn0Var3, 3), 8);
                                     break;
                                 } else {
-                                    Utilities.globalQueue.postRunnable(new qf0(bn0Var3, bn0Var3.b, bn0Var3.d, 12));
+                                    Utilities.globalQueue.postRunnable(new rf0(bn0Var3, bn0Var3.b, bn0Var3.d, 12));
                                     break;
                                 }
                         }
@@ -102,7 +102,7 @@ public final /* synthetic */ class zm0 implements RequestDelegate {
                                     ConnectionsManager.getInstance(i12).sendRequest(getpassword2, new zm0(bn0Var3, 3), 8);
                                     break;
                                 } else {
-                                    Utilities.globalQueue.postRunnable(new qf0(bn0Var3, bn0Var3.b, bn0Var3.d, 12));
+                                    Utilities.globalQueue.postRunnable(new rf0(bn0Var3, bn0Var3.b, bn0Var3.d, 12));
                                     break;
                                 }
                         }

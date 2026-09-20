@@ -15,17 +15,17 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.b61;
-import org.telegram.ui.Components.d11;
+import org.telegram.ui.Components.a61;
+import org.telegram.ui.Components.c11;
 import org.telegram.ui.Components.np;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class n extends FrameLayout {
-    public final org.telegram.ui.Components.w9 a;
+    public final org.telegram.ui.Components.v9 a;
     public final org.telegram.ui.ActionBar.j5 b;
     public final org.telegram.ui.ActionBar.j5 c;
-    public final org.telegram.ui.Components.h9 d;
+    public final org.telegram.ui.Components.g9 d;
     public final ImageView e;
     public TLRPC.Chat f;
     public boolean h;
@@ -35,12 +35,12 @@ public final class n extends FrameLayout {
     public n(Context context, View.OnClickListener onClickListener, boolean z10, int i10) {
         super(context);
         this.n = UserConfig.selectedAccount;
-        this.d = new org.telegram.ui.Components.h9((org.telegram.ui.ActionBar.e6) null);
-        org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(context);
-        this.a = w9Var;
-        w9Var.setRoundRadius(AndroidUtilities.dp(24.0f));
+        this.d = new org.telegram.ui.Components.g9((org.telegram.ui.ActionBar.f6) null);
+        org.telegram.ui.Components.v9 v9Var = new org.telegram.ui.Components.v9(context);
+        this.a = v9Var;
+        v9Var.setRoundRadius(AndroidUtilities.dp(24.0f));
         boolean z11 = LocaleController.isRTL;
-        addView(w9Var, w7.y5.d(48, 48.0f, (z11 ? 5 : 3) | 48, z11 ? 0.0f : i10 + 12, 6.0f, z11 ? i10 + 12 : 0.0f, 6.0f));
+        addView(v9Var, w7.y5.d(48, 48.0f, (z11 ? 5 : 3) | 48, z11 ? 0.0f : i10 + 12, 6.0f, z11 ? i10 + 12 : 0.0f, 6.0f));
         if (z10) {
             np npVar = new np(context, 21, null);
             this.r = npVar;
@@ -82,15 +82,15 @@ public final class n extends FrameLayout {
         int i10 = this.n;
         String s10 = a4.a.s(sb2, MessagesController.getInstance(i10).linkPrefix, "/");
         this.f = chat;
-        org.telegram.ui.Components.h9 h9Var = this.d;
-        h9Var.k(i10, chat);
+        org.telegram.ui.Components.g9 g9Var = this.d;
+        g9Var.k(i10, chat);
         this.b.l(chat.title, false);
         StringBuilder u10 = a4.a.u(s10);
         u10.append(ChatObject.getPublicUsername(chat));
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(u10.toString());
-        spannableStringBuilder.setSpan(new b61("", (d11) null), s10.length(), spannableStringBuilder.length(), 33);
+        spannableStringBuilder.setSpan(new a61("", (c11) null), s10.length(), spannableStringBuilder.length(), 33);
         this.c.l(spannableStringBuilder, false);
-        this.a.e(chat, h9Var);
+        this.a.e(chat, g9Var);
         this.h = z10;
     }
 

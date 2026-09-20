@@ -32,14 +32,14 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public class gz implements NotificationCenter.NotificationCenterDelegate {
     public static final HashSet L = new HashSet();
     public static final HashSet M;
     public i9.s E;
     public final FrameLayout G;
-    public final org.telegram.ui.Components.wl0 H;
+    public final org.telegram.ui.Components.vl0 H;
     public final long I;
     public final long J;
     public HashMap K;
@@ -232,8 +232,8 @@ public class gz implements NotificationCenter.NotificationCenterDelegate {
                     ArrayList arrayList2 = this.F;
                     if (i13 >= arrayList2.size()) {
                         if (z10 && z14 && i14 > 0) {
-                            org.telegram.ui.Components.qc qcVar = org.telegram.ui.Components.qc.w;
-                            if (qcVar != null && qcVar.b == messageObject.getId()) {
+                            org.telegram.ui.Components.pc pcVar = org.telegram.ui.Components.pc.w;
+                            if (pcVar != null && pcVar.b == messageObject.getId()) {
                                 return false;
                             }
                             TLRPC.InputStickerSet inputStickerSet = messageObject.getInputStickerSet();
@@ -482,7 +482,7 @@ public class gz implements NotificationCenter.NotificationCenterDelegate {
                     JSONArray jSONArray = new JSONObject(tL_sendMessageEmojiInteraction.interaction.data).getJSONArray("a");
                     for (int i14 = 0; i14 < jSONArray.length(); i14++) {
                         JSONObject jSONObject = jSONArray.getJSONObject(i14);
-                        AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.cd0(this, i13, jSONObject.optInt("i", 1) - 1), (long) (jSONObject.optDouble("t", 0.0d) * 1000.0d));
+                        AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.bd0(this, i13, jSONObject.optInt("i", 1) - 1), (long) (jSONObject.optDouble("t", 0.0d) * 1000.0d));
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -725,18 +725,18 @@ public class gz implements NotificationCenter.NotificationCenterDelegate {
             }
             Integer printingStringType = MessagesController.getInstance(this.b).getPrintingStringType(j3, this.J);
             if ((printingStringType == null || printingStringType.intValue() != 5) && this.E == null && o9) {
-                org.telegram.ui.Components.qc qcVar = org.telegram.ui.Components.qc.w;
-                if ((qcVar == null || !qcVar.l) && SharedConfig.emojiInteractionsHintCount > 0 && UserConfig.getInstance(this.b).getClientUserId() != znVar.f.id) {
+                org.telegram.ui.Components.pc pcVar = org.telegram.ui.Components.pc.w;
+                if ((pcVar == null || !pcVar.l) && SharedConfig.emojiInteractionsHintCount > 0 && UserConfig.getInstance(this.b).getClientUserId() != znVar.f.id) {
                     SharedConfig.updateEmojiInteractionsHintCount(SharedConfig.emojiInteractionsHintCount - 1);
-                    org.telegram.ui.Components.mx0 mx0Var = new org.telegram.ui.Components.mx0(znVar.getParentActivity(), null, 1, -1, u1Var.getMessageObject().isAnimatedAnimatedEmoji() ? u1Var.getMessageObject().getDocument() : MediaDataController.getInstance(this.b).getEmojiAnimatedSticker(u1Var.getMessageObject().getStickerEmoji()), znVar.getResourceProvider());
-                    mx0Var.c.setVisibility(8);
+                    org.telegram.ui.Components.lx0 lx0Var = new org.telegram.ui.Components.lx0(znVar.getParentActivity(), null, 1, -1, u1Var.getMessageObject().isAnimatedAnimatedEmoji() ? u1Var.getMessageObject().getDocument() : MediaDataController.getInstance(this.b).getEmojiAnimatedSticker(u1Var.getMessageObject().getStickerEmoji()), znVar.getResourceProvider());
+                    lx0Var.c.setVisibility(8);
                     SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(LocaleController.formatString("EmojiInteractionTapHint", R.string.EmojiInteractionTapHint, znVar.f.first_name));
-                    TextView textView = mx0Var.b;
+                    TextView textView = lx0Var.b;
                     textView.setText(Emoji.replaceEmoji(replaceTags, textView.getPaint().getFontMetricsInt(), false));
                     textView.setTypeface(null);
                     textView.setMaxLines(3);
                     textView.setSingleLine(false);
-                    i9.s sVar = new i9.s(this, org.telegram.ui.Components.qc.g(znVar, mx0Var, 2750), z11, 23);
+                    i9.s sVar = new i9.s(this, org.telegram.ui.Components.pc.g(znVar, lx0Var, 2750), z11, 23);
                     this.E = sVar;
                     AndroidUtilities.runOnUIThread(sVar, 1500L);
                 }
@@ -806,22 +806,22 @@ public class gz implements NotificationCenter.NotificationCenterDelegate {
         if (znVar == null || MessagesController.getInstance(this.b).premiumFeaturesBlocked() || znVar.getParentActivity() == null) {
             return;
         }
-        org.telegram.ui.Components.mx0 mx0Var = new org.telegram.ui.Components.mx0(this.G.getContext(), null, 1, -1, messageObject.getDocument(), znVar.getResourceProvider());
-        mx0Var.b.setText(tL_messages_stickerSet.set.title);
-        mx0Var.c.setText(LocaleController.getString(R.string.PremiumStickerTooltip));
-        org.telegram.ui.Components.oc ocVar = new org.telegram.ui.Components.oc(znVar.getParentActivity(), znVar.getResourceProvider(), true);
-        mx0Var.setButton(ocVar);
-        ocVar.a = new cu(10, this, messageObject);
-        ocVar.e(LocaleController.getString(R.string.ViewAction));
-        org.telegram.ui.Components.qc g10 = org.telegram.ui.Components.qc.g(znVar, mx0Var, 2750);
+        org.telegram.ui.Components.lx0 lx0Var = new org.telegram.ui.Components.lx0(this.G.getContext(), null, 1, -1, messageObject.getDocument(), znVar.getResourceProvider());
+        lx0Var.b.setText(tL_messages_stickerSet.set.title);
+        lx0Var.c.setText(LocaleController.getString(R.string.PremiumStickerTooltip));
+        org.telegram.ui.Components.nc ncVar = new org.telegram.ui.Components.nc(znVar.getParentActivity(), znVar.getResourceProvider(), true);
+        lx0Var.setButton(ncVar);
+        ncVar.a = new yt(12, this, messageObject);
+        ncVar.e(LocaleController.getString(R.string.ViewAction));
+        org.telegram.ui.Components.pc g10 = org.telegram.ui.Components.pc.g(znVar, lx0Var, 2750);
         g10.b = messageObject.getId();
         g10.j();
     }
 
-    public gz(zn znVar, FrameLayout frameLayout, org.telegram.ui.Components.wl0 wl0Var, int i10, long j3, long j10) {
+    public gz(zn znVar, FrameLayout frameLayout, org.telegram.ui.Components.vl0 vl0Var, int i10, long j3, long j10) {
         this.a = znVar;
         this.G = frameLayout;
-        this.H = wl0Var;
+        this.H = vl0Var;
         this.b = i10;
         this.I = j3;
         this.J = j10;

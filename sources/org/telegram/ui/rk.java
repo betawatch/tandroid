@@ -10,7 +10,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.ui.Components.FragmentContextView;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class rk extends TextView {
     public final /* synthetic */ int a;
@@ -49,10 +49,10 @@ public final class rk extends TextView {
                 break;
             case 3:
                 super.draw(canvas);
-                q81 q81Var = (q81) this.b;
-                org.telegram.ui.Components.voip.h hVar = q81Var.c;
+                u81 u81Var = (u81) this.b;
+                org.telegram.ui.Components.voip.h hVar = u81Var.c;
                 if (hVar.g <= 1.0f) {
-                    SessionsActivity sessionsActivity = q81Var.d;
+                    SessionsActivity sessionsActivity = u81Var.d;
                     if (sessionsActivity.W && sessionsActivity.X) {
                         RectF rectF2 = AndroidUtilities.rectTmp;
                         rectF2.set(0.0f, 0.0f, getWidth(), getHeight());
@@ -101,7 +101,7 @@ public final class rk extends TextView {
             case 5:
                 super.onLayout(z10, i10, i11, i12, i13);
                 if (z10) {
-                    ((si1) this.b).H();
+                    ((ti1) this.b).H();
                     break;
                 }
                 break;
@@ -121,7 +121,7 @@ public final class rk extends TextView {
             case 2:
                 super.onMeasure(i10, i11);
                 if (LocaleController.isRTL) {
-                    ((org.telegram.ui.Components.i41) this.b).b.setPivotX(getMeasuredWidth());
+                    ((org.telegram.ui.Components.h41) this.b).b.setPivotX(getMeasuredWidth());
                     break;
                 }
                 break;

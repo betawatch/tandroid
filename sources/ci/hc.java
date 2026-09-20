@@ -2,7 +2,7 @@ package ci;
 
 import org.telegram.ui.m01;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class hc extends jc {
     public final /* synthetic */ int g;
@@ -29,8 +29,8 @@ public final class hc extends jc {
                 }
                 break;
             default:
-                org.telegram.ui.Components.w9 w9Var = (org.telegram.ui.Components.w9) this.h;
-                w9Var.post(new androidx.fragment.app.a0(w9Var, 27));
+                org.telegram.ui.Components.v9 v9Var = (org.telegram.ui.Components.v9) this.h;
+                v9Var.post(new androidx.fragment.app.a0(v9Var, 27));
                 break;
         }
     }
@@ -56,7 +56,7 @@ public final class hc extends jc {
                 }
                 break;
             default:
-                ((org.telegram.ui.Components.w9) this.h).setVisibility(0);
+                ((org.telegram.ui.Components.v9) this.h).setVisibility(0);
                 break;
         }
     }

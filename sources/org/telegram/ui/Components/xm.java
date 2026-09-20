@@ -12,7 +12,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class xm implements ly {
     public final /* synthetic */ un a;
@@ -67,8 +67,8 @@ public final class xm implements ly {
     @Override // org.telegram.ui.Components.ly
     public final boolean k() {
         EditTextBoldCursor editField;
-        org.telegram.ui.Cells.d6 d6Var = this.a.g1;
-        if (d6Var == null || (editField = d6Var.getEditField()) == null) {
+        org.telegram.ui.Cells.e6 e6Var = this.a.g1;
+        if (e6Var == null || (editField = e6Var.getEditField()) == null) {
             return false;
         }
         editField.dispatchKeyEvent(new KeyEvent(0, 67));
@@ -78,8 +78,8 @@ public final class xm implements ly {
     @Override // org.telegram.ui.Components.ly
     public final void l(String str) {
         EditTextBoldCursor editField;
-        org.telegram.ui.Cells.d6 d6Var = this.a.g1;
-        if (d6Var == null || (editField = d6Var.getEditField()) == null) {
+        org.telegram.ui.Cells.e6 e6Var = this.a.g1;
+        if (e6Var == null || (editField = e6Var.getEditField()) == null) {
             return;
         }
         int selectionEnd = editField.getSelectionEnd();
@@ -103,7 +103,7 @@ public final class xm implements ly {
         alertDialog$Builder.a.R = LocaleController.getString(R.string.ClearRecentEmojiTitle);
         alertDialog$Builder.a.T = LocaleController.getString(R.string.ClearRecentEmojiText);
         alertDialog$Builder.k(LocaleController.getString(R.string.ClearButton), new s(this, 24));
-        hg.k0.o(R.string.Cancel, alertDialog$Builder, null);
+        hg.k0.p(R.string.Cancel, alertDialog$Builder, null);
     }
 
     @Override // org.telegram.ui.Components.ly
@@ -114,8 +114,8 @@ public final class xm implements ly {
     @Override // org.telegram.ui.Components.ly
     public final void x(long j3, TLRPC.Document document, String str, boolean z10) {
         EditTextBoldCursor editField;
-        org.telegram.ui.Cells.d6 d6Var = this.a.g1;
-        if (d6Var == null || (editField = d6Var.getEditField()) == null) {
+        org.telegram.ui.Cells.e6 e6Var = this.a.g1;
+        if (e6Var == null || (editField = e6Var.getEditField()) == null) {
             return;
         }
         int selectionEnd = editField.getSelectionEnd();
@@ -124,9 +124,9 @@ public final class xm implements ly {
         }
         try {
             SpannableString spannableString = new SpannableString(str);
-            z5 z5Var = document != null ? new z5(document, editField.getPaint().getFontMetricsInt()) : new z5(j3, editField.getPaint().getFontMetricsInt());
-            z5Var.cacheType = 3;
-            spannableString.setSpan(z5Var, 0, spannableString.length(), 33);
+            y5 y5Var = document != null ? new y5(document, editField.getPaint().getFontMetricsInt()) : new y5(j3, editField.getPaint().getFontMetricsInt());
+            y5Var.cacheType = 3;
+            spannableString.setSpan(y5Var, 0, spannableString.length(), 33);
             editField.setText(editField.getText().insert(selectionEnd, spannableString));
             int length = selectionEnd + spannableString.length();
             editField.setSelection(length, length);
@@ -145,7 +145,7 @@ public final class xm implements ly {
     }
 
     @Override // org.telegram.ui.Components.ly
-    public final /* synthetic */ void o(t51 t51Var) {
+    public final /* synthetic */ void o(s51 s51Var) {
     }
 
     @Override // org.telegram.ui.Components.ly

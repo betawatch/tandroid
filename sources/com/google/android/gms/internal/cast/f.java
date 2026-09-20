@@ -5,7 +5,7 @@ import j$.util.DesugarCollections;
 import java.util.ArrayList;
 import java.util.List;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class f {
     public final Context a;
@@ -28,7 +28,7 @@ public final class f {
             if (unmodifiableList == null) {
                 throw new IllegalArgumentException("namespaces cannot be null");
             }
-            c02 = n4.y.c0(new n4.y(8, str, unmodifiableList));
+            c02 = n4.y.c0(new n4.y(str, unmodifiableList));
         }
         this.c = new d6.j(this);
         this.a = context.getApplicationContext();

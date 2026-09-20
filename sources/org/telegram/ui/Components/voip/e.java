@@ -20,13 +20,13 @@ import android.view.accessibility.AccessibilityNodeProvider;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.rk;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.ij0;
+import org.telegram.ui.Components.hj0;
 import org.telegram.ui.Components.yc;
-import org.telegram.ui.qi1;
+import org.telegram.ui.ri1;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class e extends View {
     public boolean E;
@@ -45,7 +45,7 @@ public final class e extends View {
     public boolean R;
     public org.telegram.ui.Cells.z S;
     public final Paint T;
-    public final ij0 U;
+    public final hj0 U;
     public final Drawable V;
     public final s0 W;
     public final FabBackgroundDrawable a;
@@ -111,11 +111,11 @@ public final class e extends View {
         Drawable mutate = activity.getDrawable(R.drawable.ic_close_white).mutate();
         this.d = mutate;
         mutate.setColorFilter(new PorterDuffColorFilter(-16777216, PorterDuff.Mode.MULTIPLY));
-        ij0 ij0Var = new ij0(R.raw.call_accept, AndroidUtilities.dp(48.0f), AndroidUtilities.dp(48.0f), true, null);
-        this.U = ij0Var;
-        ij0Var.K(1);
-        ij0Var.P(90);
-        ij0Var.R(this);
+        hj0 hj0Var = new hj0(R.raw.call_accept, AndroidUtilities.dp(48.0f), AndroidUtilities.dp(48.0f), true, null);
+        this.U = hj0Var;
+        hj0Var.K(1);
+        hj0Var.P(90);
+        hj0Var.R(this);
         this.V = activity.getDrawable(R.drawable.calls_video).mutate();
         paint.setColor(-1);
         paint.setAlpha(20);
@@ -197,11 +197,11 @@ public final class e extends View {
         this.x = (AndroidUtilities.dp(8.0f) * 0.005f) + this.x;
         int measuredWidth = getMeasuredWidth();
         int i10 = this.v;
-        int C = org.telegram.messenger.q.C(46.0f, measuredWidth, i10);
+        int B = org.telegram.messenger.l0.B(46.0f, measuredWidth, i10);
         int dp5 = AndroidUtilities.dp(40.0f);
         int measuredWidth2 = getMeasuredWidth() - AndroidUtilities.dp(46.0f);
         int dp6 = AndroidUtilities.dp(40.0f) + i10;
-        this.N.set(C, dp5, measuredWidth2, dp6);
+        this.N.set(B, dp5, measuredWidth2, dp6);
         canvas.save();
         canvas.translate(0.0f, AndroidUtilities.dp(40.0f));
         canvas.save();
@@ -321,9 +321,9 @@ public final class e extends View {
         super.onMeasure(i10, i11);
         int i12 = this.v;
         this.L = (getMeasuredWidth() / 2.0f) - ((i12 / 2.0f) + AndroidUtilities.dp(46.0f));
-        int A = wh.A(28.0f, i12, 2);
-        this.c.setBounds(A, A, AndroidUtilities.dp(28.0f) + A, AndroidUtilities.dp(28.0f) + A);
-        this.d.setBounds(A, A, AndroidUtilities.dp(28.0f) + A, AndroidUtilities.dp(28.0f) + A);
+        int z10 = rk.z(28.0f, i12, 2);
+        this.c.setBounds(z10, z10, AndroidUtilities.dp(28.0f) + z10, AndroidUtilities.dp(28.0f) + z10);
+        this.d.setBounds(z10, z10, AndroidUtilities.dp(28.0f) + z10, AndroidUtilities.dp(28.0f) + z10);
         float dp = AndroidUtilities.dp(3.0f);
         Paint paint = this.T;
         paint.setStrokeWidth(dp);
@@ -361,7 +361,7 @@ public final class e extends View {
                         ofFloat.start();
                         this.O = ofFloat;
                         if (this.Q != null && (Math.abs(y3) < f7 || this.J > this.L * 0.8f)) {
-                            ((qi1) this.Q).b();
+                            ((ri1) this.Q).b();
                         }
                     } else {
                         ValueAnimator ofFloat2 = ValueAnimator.ofFloat(this.K, 0.0f);
@@ -369,7 +369,7 @@ public final class e extends View {
                         ofFloat2.start();
                         this.P = ofFloat2;
                         if (this.Q != null && (Math.abs(y3) < f7 || (-this.K) > this.L * 0.8f)) {
-                            ((qi1) this.Q).a();
+                            ((ri1) this.Q).a();
                         }
                     }
                 }

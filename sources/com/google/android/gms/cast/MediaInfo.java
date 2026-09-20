@@ -24,10 +24,10 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import u6.c;
-import v7.o5;
+import v7.p5;
 import w7.f0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public class MediaInfo extends a implements ReflectedParcelable {
     public static final Parcelable.Creator<MediaInfo> CREATOR;
@@ -434,7 +434,7 @@ public class MediaInfo extends a implements ReflectedParcelable {
                         int i17 = i16 + 1;
                         int length = objArr.length;
                         if (length < i17) {
-                            objArr = Arrays.copyOf(objArr, o5.a(length, i17));
+                            objArr = Arrays.copyOf(objArr, p5.a(length, i17));
                         }
                         objArr[i16] = optString3;
                         i15++;

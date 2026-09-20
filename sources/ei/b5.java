@@ -19,28 +19,29 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.e6;
-import org.telegram.ui.Components.h9;
-import org.telegram.ui.Components.lj0;
-import org.telegram.ui.Components.q5;
+import org.telegram.ui.Components.d6;
+import org.telegram.ui.Components.g9;
+import org.telegram.ui.Components.kj0;
+import org.telegram.ui.Components.p5;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.v01;
-import org.telegram.ui.Components.x6;
+import org.telegram.ui.Components.u01;
+import org.telegram.ui.Components.w6;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
-public final class b5 extends Drawable implements x6, NotificationCenter.NotificationCenterDelegate {
+public final class b5 extends Drawable implements w6, NotificationCenter.NotificationCenterDelegate {
     public final Paint a;
     public final Paint b;
     public final ImageReceiver c;
     public final ImageReceiver d;
     public int e;
-    public final q5[] f;
-    public final v01 h;
+    public final p5[] f;
+    public final u01 h;
     public final RectF n;
     public final boolean r;
-    public final e6 s;
+    public final d6 s;
     public boolean v;
     public boolean w;
     public View x;
@@ -54,65 +55,65 @@ public final class b5 extends Drawable implements x6, NotificationCenter.Notific
         this.c = imageReceiver;
         this.d = new ImageReceiver();
         this.e = 1;
-        this.f = new q5[2];
+        this.f = new p5[2];
         this.n = new RectF();
-        this.s = new e6(new a5(this, 1), 320L, qr.h, 0);
+        this.s = new d6(new a5(this, 1), 320L, qr.h, 0);
         this.r = false;
         int i10 = j6.d6;
         paint.setColor(j6.w0(null, i10, false));
         paint2.setColor(j6.w0(null, i10, false));
         paint2.setShadowLayer(AndroidUtilities.dp(2.33f), 0.0f, AndroidUtilities.dp(2.0f), j6.l1(0.18f, -16777216));
-        h9 h9Var = new h9((org.telegram.ui.ActionBar.e6) null);
-        h9Var.r(user);
-        imageReceiver.setForUserOrChat(user, h9Var);
+        g9 g9Var = new g9((f6) null);
+        g9Var.r(user);
+        imageReceiver.setForUserOrChat(user, g9Var);
         imageReceiver.setRoundRadius(AndroidUtilities.dp(16.0f));
         d();
-        this.h = new v01(UserObject.getUserName(user), 14.0f, null);
+        this.h = new u01(UserObject.getUserName(user), 14.0f, null);
     }
 
-    @Override // org.telegram.ui.Components.x6
-    public final void a(lj0 lj0Var) {
-        this.x = lj0Var;
-        this.d.setParentView(lj0Var);
-        this.c.setParentView(lj0Var);
+    @Override // org.telegram.ui.Components.w6
+    public final void a(kj0 kj0Var) {
+        this.x = kj0Var;
+        this.d.setParentView(kj0Var);
+        this.c.setParentView(kj0Var);
     }
 
-    @Override // org.telegram.ui.Components.x6
+    @Override // org.telegram.ui.Components.w6
     public final void b(ImageReceiver imageReceiver) {
         this.w = false;
         this.c.onDetachedFromWindow();
         this.d.onDetachedFromWindow();
         NotificationCenter.getInstance(UserConfig.selectedAccount).removeObserver(this, NotificationCenter.recentEmojiStatusesUpdate);
-        q5[] q5VarArr = this.f;
-        q5 q5Var = q5VarArr[0];
-        if (q5Var != null) {
-            q5Var.o(this.x);
+        p5[] p5VarArr = this.f;
+        p5 p5Var = p5VarArr[0];
+        if (p5Var != null) {
+            p5Var.o(this.x);
         }
-        q5 q5Var2 = q5VarArr[1];
-        if (q5Var2 != null) {
-            q5Var2.o(this.x);
+        p5 p5Var2 = p5VarArr[1];
+        if (p5Var2 != null) {
+            p5Var2.o(this.x);
         }
     }
 
-    @Override // org.telegram.ui.Components.x6
+    @Override // org.telegram.ui.Components.w6
     public final void c(ImageReceiver imageReceiver) {
         this.w = true;
         this.c.onAttachedToWindow();
         this.d.onAttachedToWindow();
         NotificationCenter.getInstance(UserConfig.selectedAccount).addObserver(this, NotificationCenter.recentEmojiStatusesUpdate);
-        q5[] q5VarArr = this.f;
-        q5 q5Var = q5VarArr[0];
-        if (q5Var != null) {
-            q5Var.a(this.x);
+        p5[] p5VarArr = this.f;
+        p5 p5Var = p5VarArr[0];
+        if (p5Var != null) {
+            p5Var.a(this.x);
         }
-        q5 q5Var2 = q5VarArr[1];
-        if (q5Var2 != null) {
-            q5Var2.a(this.x);
+        p5 p5Var2 = p5VarArr[1];
+        if (p5Var2 != null) {
+            p5Var2.a(this.x);
         }
     }
 
     public final void d() {
-        q5 q5Var;
+        p5 p5Var;
         TLRPC.TL_messages_stickerSet stickerSet = MediaDataController.getInstance(UserConfig.selectedAccount).getStickerSet((TLRPC.InputStickerSet) new TLRPC.TL_inputStickerSetEmojiDefaultStatuses(), false);
         if (stickerSet == null || stickerSet.documents.isEmpty()) {
             this.v = true;
@@ -121,15 +122,15 @@ public final class b5 extends Drawable implements x6, NotificationCenter.Notific
         TLRPC.Document document = stickerSet.documents.get((int) Math.floor(Math.random() * stickerSet.documents.size()));
         int i10 = 1 - this.e;
         this.e = i10;
-        q5[] q5VarArr = this.f;
-        q5 q5Var2 = q5VarArr[i10];
-        if (q5Var2 != null) {
-            q5Var2.o(this.x);
+        p5[] p5VarArr = this.f;
+        p5 p5Var2 = p5VarArr[i10];
+        if (p5Var2 != null) {
+            p5Var2.o(this.x);
         }
-        q5VarArr[this.e] = q5.m(UserConfig.selectedAccount, 9, document);
-        q5VarArr[this.e].setColorFilter(new PorterDuffColorFilter(j6.w0(null, j6.Oh, false), PorterDuff.Mode.SRC_IN));
-        if (this.w && (q5Var = q5VarArr[this.e]) != null) {
-            q5Var.a(this.x);
+        p5VarArr[this.e] = p5.m(UserConfig.selectedAccount, 9, document);
+        p5VarArr[this.e].setColorFilter(new PorterDuffColorFilter(j6.w0(null, j6.Oh, false), PorterDuff.Mode.SRC_IN));
+        if (this.w && (p5Var = p5VarArr[this.e]) != null) {
+            p5Var.a(this.x);
         }
         AndroidUtilities.runOnUIThread(new a5(this, 0), 2500L);
     }
@@ -148,8 +149,8 @@ public final class b5 extends Drawable implements x6, NotificationCenter.Notific
         float f10;
         float f11;
         float f12;
-        q5 q5Var;
-        q5 q5Var2;
+        p5 p5Var;
+        p5 p5Var2;
         Rect bounds = getBounds();
         boolean z10 = this.r;
         float dp = AndroidUtilities.dp((z10 ? 48 : 28) + 38 + 6.66f) + this.h.c;
@@ -180,8 +181,8 @@ public final class b5 extends Drawable implements x6, NotificationCenter.Notific
         float d = this.s.d(this.e, false);
         canvas.save();
         canvas.translate((int) (rectF.right - AndroidUtilities.dp(30.66f)), (int) (rectF.centerY() - AndroidUtilities.dp(12.0f)));
-        q5[] q5VarArr = this.f;
-        if (d >= 1.0f || (q5Var2 = q5VarArr[0]) == null) {
+        p5[] p5VarArr = this.f;
+        if (d >= 1.0f || (p5Var2 = p5VarArr[0]) == null) {
             f7 = 24.0f;
             f10 = 0.4f;
             f11 = 255.0f;
@@ -196,19 +197,19 @@ public final class b5 extends Drawable implements x6, NotificationCenter.Notific
             f10 = 0.4f;
             f12 = 12.0f;
             canvas.scale(f17, f17, AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f));
-            q5Var2.setBounds(0, 0, AndroidUtilities.dp(24.0f), AndroidUtilities.dp(24.0f));
-            q5Var2.setAlpha((int) (f16 * 255.0f));
-            q5Var2.draw(canvas);
+            p5Var2.setBounds(0, 0, AndroidUtilities.dp(24.0f), AndroidUtilities.dp(24.0f));
+            p5Var2.setAlpha((int) (f16 * 255.0f));
+            p5Var2.draw(canvas);
             canvas.restore();
         }
-        if (d > 0.0f && (q5Var = q5VarArr[1]) != null) {
+        if (d > 0.0f && (p5Var = p5VarArr[1]) != null) {
             canvas.save();
             canvas.translate(0.0f, (1.0f - d) * AndroidUtilities.dp(9.0f) * (this.e != 1 ? 1 : -1));
             float f18 = (d * f10) + 0.6f;
             canvas.scale(f18, f18, AndroidUtilities.dp(f12), AndroidUtilities.dp(f12));
-            q5Var.setBounds(0, 0, AndroidUtilities.dp(f7), AndroidUtilities.dp(f7));
-            q5Var.setAlpha((int) (d * f11));
-            q5Var.draw(canvas);
+            p5Var.setBounds(0, 0, AndroidUtilities.dp(f7), AndroidUtilities.dp(f7));
+            p5Var.setAlpha((int) (d * f11));
+            p5Var.draw(canvas);
             canvas.restore();
         }
         canvas.restore();
@@ -229,20 +230,20 @@ public final class b5 extends Drawable implements x6, NotificationCenter.Notific
         ImageReceiver imageReceiver2 = new ImageReceiver();
         this.d = imageReceiver2;
         this.e = 1;
-        this.f = new q5[2];
+        this.f = new p5[2];
         this.n = new RectF();
-        this.s = new e6(new a5(this, 1), 320L, qr.h, 0);
+        this.s = new d6(new a5(this, 1), 320L, qr.h, 0);
         this.r = true;
         int i10 = j6.d6;
         paint.setColor(j6.w0(null, i10, false));
         paint2.setColor(j6.w0(null, i10, false));
         paint2.setShadowLayer(AndroidUtilities.dp(2.33f), 0.0f, AndroidUtilities.dp(2.0f), j6.l1(0.18f, -16777216));
-        h9 h9Var = new h9((org.telegram.ui.ActionBar.e6) null);
-        h9Var.r(user);
-        imageReceiver.setForUserOrChat(user, h9Var);
+        g9 g9Var = new g9((f6) null);
+        g9Var.r(user);
+        imageReceiver.setForUserOrChat(user, g9Var);
         imageReceiver.setRoundRadius(AndroidUtilities.dp(16.0f));
         imageReceiver2.setImage(ImageLocation.getForDocument(document), "120_120", ImageLocation.getForDocument(FileLoader.getClosestPhotoSizeWithSize(document.thumbs, 120), document), "120_120", DocumentObject.getSvgThumb(document.thumbs, j6.a7, 0.35f), 0L, null, null, 0);
-        this.h = new v01(UserObject.getUserName(user), 14.0f, null);
+        this.h = new u01(UserObject.getUserName(user), 14.0f, null);
     }
 
     @Override // android.graphics.drawable.Drawable

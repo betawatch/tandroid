@@ -1,6 +1,6 @@
 package k2;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final /* synthetic */ class g implements Runnable {
     public final /* synthetic */ int a;
@@ -21,7 +21,7 @@ public final /* synthetic */ class g implements Runnable {
                 i2.g gVar = this.c;
                 synchronized (gVar) {
                 }
-                j jVar = (j) yVar.c;
+                j jVar = (j) yVar.b;
                 String str = e2.d0.a;
                 j2.f fVar = ((i2.b0) jVar).a.s;
                 j2.a n10 = fVar.n((u2.f0) fVar.d.e);
@@ -30,7 +30,7 @@ public final /* synthetic */ class g implements Runnable {
             default:
                 n4.y yVar2 = this.b;
                 i2.g gVar2 = this.c;
-                j jVar2 = (j) yVar2.c;
+                j jVar2 = (j) yVar2.b;
                 String str2 = e2.d0.a;
                 j2.f fVar2 = ((i2.b0) jVar2).a.s;
                 j2.a p5 = fVar2.p();

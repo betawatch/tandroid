@@ -6,11 +6,11 @@ import java.nio.ByteOrder;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
-import v7.a8;
-import v7.t6;
-import v7.y7;
+import v7.b8;
+import v7.u6;
+import v7.z7;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class v {
     public static final char[] d = {'\r', '\n'};
@@ -26,7 +26,7 @@ public final class v {
 
     public static int b(int i10, int i11, int i12, int i13) {
         byte b10 = (byte) i12;
-        return y7.c((byte) 0, a8.a(((i10 & 7) << 2) | ((i11 & 48) >> 4)), a8.a(((((byte) i11) & 15) << 4) | ((b10 & 60) >> 2)), a8.a(((b10 & 3) << 6) | (((byte) i13) & 63)));
+        return z7.c((byte) 0, b8.a(((i10 & 7) << 2) | ((i11 & 48) >> 4)), b8.a(((((byte) i11) & 15) << 4) | ((b10 & 60) >> 2)), b8.a(((b10 & 3) << 6) | (((byte) i13) & 63)));
     }
 
     public static int d(Charset charset) {
@@ -254,15 +254,15 @@ public final class v {
         int g10;
         if (a() >= d(charset) && (g10 = g(charset)) != 0) {
             long j3 = g10 >>> 8;
-            t6.b(j3, "out of range: %s", (j3 >> 32) == 0);
+            u6.b(j3, "out of range: %s", (j3 >> 32) == 0);
             int i10 = (int) j3;
             if (!Character.isSupplementaryCodePoint(i10)) {
                 long j10 = i10;
                 char c10 = (char) j10;
-                t6.b(j10, "Out of range: %s", ((long) c10) == j10);
+                u6.b(j10, "Out of range: %s", ((long) c10) == j10);
                 for (char c11 : cArr) {
                     if (c11 == c10) {
-                        this.b = y7.b(g10 & 255) + this.b;
+                        this.b = z7.b(g10 & 255) + this.b;
                         return c10;
                     }
                 }

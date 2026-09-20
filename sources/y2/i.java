@@ -8,7 +8,7 @@ import android.os.Trace;
 import java.io.IOException;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class i extends Handler implements Runnable {
     public final int a;
@@ -45,7 +45,7 @@ public final class i extends Handler implements Runnable {
             synchronized (this) {
                 try {
                     this.n = true;
-                    this.b.D();
+                    this.b.H();
                     Thread thread = this.h;
                     if (thread != null) {
                         thread.interrupt();
@@ -60,7 +60,7 @@ public final class i extends Handler implements Runnable {
             long elapsedRealtime = SystemClock.elapsedRealtime();
             h hVar = this.d;
             hVar.getClass();
-            hVar.E(this.b, elapsedRealtime, elapsedRealtime - this.c, true);
+            hVar.F(this.b, elapsedRealtime, elapsedRealtime - this.c, true);
             this.d = null;
         }
     }
@@ -98,7 +98,7 @@ public final class i extends Handler implements Runnable {
         h hVar = this.d;
         hVar.getClass();
         if (this.n) {
-            hVar.E(this.b, elapsedRealtime, j3, false);
+            hVar.F(this.b, elapsedRealtime, j3, false);
             return;
         }
         int i11 = message.what;

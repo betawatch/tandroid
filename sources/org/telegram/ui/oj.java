@@ -3,14 +3,14 @@ package org.telegram.ui;
 import android.content.Context;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class oj extends org.telegram.ui.Components.eo {
     public final /* synthetic */ zn v0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public oj(zn znVar, Context context, zn znVar2, boolean z10, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(context, znVar2, z10, e6Var);
+    public oj(zn znVar, Context context, zn znVar2, boolean z10, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context, znVar2, z10, f6Var);
         this.v0 = znVar;
     }
 

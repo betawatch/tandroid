@@ -12,7 +12,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ug implements Runnable {
     public final /* synthetic */ int a;
@@ -161,7 +161,7 @@ public final /* synthetic */ class ug implements Runnable {
                 break;
             case 17:
                 znVar.A7(true);
-                org.telegram.messenger.q.q(R.string.TranscriptionReportSent, org.telegram.ui.Components.xc.a0(znVar), R.raw.chats_infotip, 36);
+                org.telegram.messenger.l0.o(R.string.TranscriptionReportSent, org.telegram.ui.Components.xc.a0(znVar), R.raw.chats_infotip, 36);
                 break;
             case 18:
                 znVar.A0.M.clear();

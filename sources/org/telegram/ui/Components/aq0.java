@@ -1,91 +1,50 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import android.content.Context;
-import android.graphics.Canvas;
-import android.text.TextUtils;
-import android.widget.FrameLayout;
+import java.util.ArrayList;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.MessagesController;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class aq0 extends ju {
-    public boolean V;
-    public int W;
-    public int a0;
-    public ValueAnimator b0;
-    public final /* synthetic */ vq0 c0;
+public final class aq0 implements gg.g0 {
+    public final /* synthetic */ uq0 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public aq0(vq0 vq0Var, Context context, gq0 gq0Var, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(context, gq0Var, null, 1, true, e6Var);
-        this.c0 = vq0Var;
+    public aq0(uq0 uq0Var) {
+        this.a = uq0Var;
     }
 
-    @Override // org.telegram.ui.Components.ju
-    public final void c(float f7) {
-        this.c0.Y0();
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        if (this.V) {
-            bu editText = this.c0.d.getEditText();
-            editText.setOffsetY(editText.getOffsetY() - ((this.a0 - editText.getScrollY()) + (this.W - editText.getMeasuredHeight())));
-            ValueAnimator ofFloat = ValueAnimator.ofFloat(editText.getOffsetY(), 0.0f);
-            ofFloat.addUpdateListener(new q70(editText, 18));
-            ValueAnimator valueAnimator = this.b0;
-            if (valueAnimator != null) {
-                valueAnimator.cancel();
+    @Override // gg.g0
+    public final void a(a0.i iVar, ArrayList arrayList) {
+        int i10;
+        int i11;
+        int i12;
+        int i13 = 0;
+        while (i13 < arrayList.size()) {
+            TLObject tLObject = ((gg.h0) arrayList.get(i13)).a;
+            if ((tLObject instanceof TLRPC.Chat) && !ChatObject.canWriteToChat((TLRPC.Chat) tLObject)) {
+                arrayList.remove(i13);
+                i13--;
             }
-            this.b0 = ofFloat;
-            ofFloat.setDuration(200L);
-            ofFloat.setInterpolator(qr.f);
-            ofFloat.start();
-            this.V = false;
+            i13++;
         }
-        super.dispatchDraw(canvas);
-    }
-
-    @Override // org.telegram.ui.Components.ju
-    public final void f() {
-        super.f();
-        kz emojiView = getEmojiView();
-        vq0 vq0Var = this.c0;
-        if (emojiView != null) {
-            emojiView.w0 = false;
-            emojiView.w2 = false;
-            emojiView.setShouldDrawBackground(false);
-            emojiView.setBottomInset(vq0Var.G0.d);
+        uq0 uq0Var = this.a;
+        uq0Var.E0 = arrayList;
+        for (int i14 = 0; i14 < uq0Var.E0.size(); i14++) {
+            gg.h0 h0Var = (gg.h0) uq0Var.E0.get(i14);
+            TLObject tLObject2 = h0Var.a;
+            if (tLObject2 instanceof TLRPC.User) {
+                i12 = ((org.telegram.ui.ActionBar.f3) uq0Var).currentAccount;
+                MessagesController.getInstance(i12).putUser((TLRPC.User) h0Var.a, true);
+            } else if (tLObject2 instanceof TLRPC.Chat) {
+                i11 = ((org.telegram.ui.ActionBar.f3) uq0Var).currentAccount;
+                MessagesController.getInstance(i11).putChat((TLRPC.Chat) h0Var.a, true);
+            } else if (tLObject2 instanceof TLRPC.EncryptedChat) {
+                i10 = ((org.telegram.ui.ActionBar.f3) uq0Var).currentAccount;
+                MessagesController.getInstance(i10).putEncryptedChat((TLRPC.EncryptedChat) h0Var.a, true);
+            }
         }
-        FrameLayout frameLayout = vq0Var.c0;
-        if (frameLayout != null) {
-            frameLayout.bringToFront();
-        }
-        zp0 zp0Var = vq0Var.c;
-        if (zp0Var != null) {
-            zp0Var.bringToFront();
-        }
-        zp0 zp0Var2 = vq0Var.f;
-        if (zp0Var2 != null) {
-            zp0Var2.bringToFront();
-        }
-    }
-
-    @Override // org.telegram.ui.Components.ju
-    public final void q(int i10, int i11) {
-        vq0 vq0Var = this.c0;
-        zp0 zp0Var = vq0Var.c;
-        if (TextUtils.isEmpty(getEditText().getText())) {
-            getEditText().animate().cancel();
-            getEditText().setOffsetY(0.0f);
-            this.V = false;
-        } else {
-            this.V = true;
-            this.W = getEditText().getMeasuredHeight();
-            this.a0 = getEditText().getScrollY();
-            invalidate();
-        }
-        vq0Var.v0 = zp0Var.getTop() + vq0Var.u0;
-        zp0Var.invalidate();
+        uq0Var.M.l();
     }
 }

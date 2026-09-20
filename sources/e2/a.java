@@ -11,8 +11,9 @@ import java.net.UnknownHostException;
 import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import v7.j0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public abstract class a {
     public static ExecutorService a;
@@ -44,10 +45,10 @@ public abstract class a {
         if (TextUtils.isEmpty(replace)) {
             return str;
         }
-        StringBuilder j3 = t8.b.j(str, "\n  ");
-        j3.append(replace.replace("\n", "\n  "));
-        j3.append('\n');
-        return j3.toString();
+        StringBuilder h = j0.h(str, "\n  ");
+        h.append(replace.replace("\n", "\n  "));
+        h.append('\n');
+        return h.toString();
     }
 
     public static void b() {

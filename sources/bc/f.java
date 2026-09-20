@@ -21,10 +21,10 @@ import n6.o;
 import qb.g;
 import qb.j;
 import qb.m;
-import v7.r1;
-import v7.z8;
-import w7.d8;
-import x7.da;
+import v7.a9;
+import v7.s1;
+import w7.e8;
+import x7.ea;
 import z7.ag;
 import z7.dg;
 import z7.eg;
@@ -41,7 +41,7 @@ import z7.jg;
 import z7.vf;
 import z7.wf;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class f extends qb.e {
     public static final k6.c[] k = {j.c};
@@ -49,18 +49,18 @@ public final class f extends qb.e {
     public final Context d;
     public final ac.e e;
     public final wf f;
-    public final z8 g;
+    public final a9 g;
     public boolean h = true;
     public boolean i;
     public dg j;
 
-    public f(g gVar, ac.e eVar, wf wfVar, z8 z8Var) {
+    public f(g gVar, ac.e eVar, wf wfVar, a9 a9Var) {
         l.i(gVar, "MlKitContext can not be null");
         l.i(eVar, "SubjectSegmenterOptions can not be null");
         this.d = gVar.b();
         this.e = eVar;
         this.f = wfVar;
-        this.g = z8Var;
+        this.g = a9Var;
     }
 
     @Override // qb.i
@@ -155,7 +155,7 @@ public final class f extends qb.e {
                     long elapsedRealtime = SystemClock.elapsedRealtime();
                     dg dgVar = this.j;
                     l.h(dgVar);
-                    ag agVar = new ag(aVar.e, aVar.b, aVar.c, SystemClock.elapsedRealtime(), d8.a(aVar.d));
+                    ag agVar = new ag(aVar.e, aVar.b, aVar.c, SystemClock.elapsedRealtime(), e8.a(aVar.d));
                     int i10 = aVar.e;
                     try {
                         if (i10 != -1) {
@@ -237,11 +237,11 @@ public final class f extends qb.e {
             public final a5.a zza() {
                 p3 p3Var = new p3();
                 p3Var.c = fb.b;
-                r1 r1Var = new r1(16, false);
-                r1Var.c = f.this.e.a();
-                r1Var.b = gbVar;
-                r1Var.d = Long.valueOf((SystemClock.elapsedRealtime() - j3) & Long.MAX_VALUE);
-                p3Var.e = new fe(r1Var);
+                s1 s1Var = new s1(16, false);
+                s1Var.c = f.this.e.a();
+                s1Var.b = gbVar;
+                s1Var.d = Long.valueOf((SystemClock.elapsedRealtime() - j3) & Long.MAX_VALUE);
+                p3Var.e = new fe(s1Var);
                 return new a5.a(p3Var, 0);
             }
         }, hb.O4);
@@ -250,22 +250,22 @@ public final class f extends qb.e {
     public final void g(gb gbVar, long j3, boolean z10, vb.a aVar, ig igVar) {
         long elapsedRealtime = SystemClock.elapsedRealtime() - j3;
         this.f.b(new d(this, elapsedRealtime, gbVar, z10, aVar, igVar), hb.P4);
-        r1 r1Var = new r1(14, false);
-        r1Var.c = this.e.a();
-        r1Var.b = gbVar;
-        r1Var.d = Boolean.valueOf(z10);
-        m.a.execute(new da(this.f, new i1(r1Var), elapsedRealtime));
+        s1 s1Var = new s1(14, false);
+        s1Var.c = this.e.a();
+        s1Var.b = gbVar;
+        s1Var.d = Boolean.valueOf(z10);
+        m.a.execute(new ea(this.f, new i1(s1Var), elapsedRealtime));
         long currentTimeMillis = System.currentTimeMillis();
         long j10 = currentTimeMillis - elapsedRealtime;
-        z8 z8Var = this.g;
+        a9 a9Var = this.g;
         int i10 = gbVar.a;
-        synchronized (z8Var) {
-            AtomicLong atomicLong = z8Var.b;
+        synchronized (a9Var) {
+            AtomicLong atomicLong = a9Var.b;
             long elapsedRealtime2 = SystemClock.elapsedRealtime();
-            if (atomicLong.get() != -1 && elapsedRealtime2 - z8Var.b.get() <= TimeUnit.MINUTES.toMillis(30L)) {
+            if (atomicLong.get() != -1 && elapsedRealtime2 - a9Var.b.get() <= TimeUnit.MINUTES.toMillis(30L)) {
                 return;
             }
-            z8Var.a.f(new o(0, Arrays.asList(new n6.j(24336, i10, 0, j10, currentTimeMillis, null, null, 0, -1)))).addOnFailureListener(new n(z8Var, elapsedRealtime2, 10));
+            a9Var.a.f(new o(0, Arrays.asList(new n6.j(24336, i10, 0, j10, currentTimeMillis, null, null, 0, -1)))).addOnFailureListener(new n(a9Var, elapsedRealtime2, 10));
         }
     }
 }

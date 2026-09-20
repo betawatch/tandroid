@@ -5,7 +5,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class h2 {
     public final int a;
@@ -19,7 +19,7 @@ public final class h2 {
     public boolean i;
     public TLRPC.TL_webPage j;
     public int k;
-    public u0 l;
+    public r0 l;
     public final ArrayList m = new ArrayList();
 
     public h2(int i10) {
@@ -27,7 +27,7 @@ public final class h2 {
     }
 
     public final void a() {
-        u0 u0Var;
+        r0 r0Var;
         if (this.c) {
             return;
         }
@@ -35,10 +35,10 @@ public final class h2 {
         if (!this.g) {
             ConnectionsManager.getInstance(this.a).cancelRequest(this.k, true);
         }
-        if (this.i || (u0Var = this.l) == null) {
+        if (this.i || (r0Var = this.l) == null) {
             return;
         }
-        u0Var.run();
+        r0Var.run();
     }
 
     public final TLRPC.WebPage b() {
@@ -77,9 +77,9 @@ public final class h2 {
         this.d = z0Var.getUrl();
         this.e = z0Var.getProgress();
         this.f = z0Var.b;
-        u0 u0Var = this.l;
-        if (u0Var != null) {
-            u0Var.run();
+        r0 r0Var = this.l;
+        if (r0Var != null) {
+            r0Var.run();
         }
         this.l = j2.e(z0Var, new g2(this, 1));
     }

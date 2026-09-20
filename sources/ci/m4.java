@@ -8,10 +8,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
 import org.telegram.messenger.ChannelBoostsController;
-import org.telegram.ui.Components.x51;
+import org.telegram.ui.Components.w51;
 import org.telegram.ui.s60;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class m4 implements e2.h {
     public final /* synthetic */ int a;
@@ -39,7 +39,7 @@ public final /* synthetic */ class m4 implements e2.h {
                 if (view instanceof t4) {
                     p4Var.getClass();
                     int S = RecyclerView.S(view);
-                    x51 G = p4Var.Y2.G(S);
+                    w51 G = p4Var.Y2.G(S);
                     if (G != null) {
                         t4 t4Var = (t4) view;
                         t4Var.setPosition(u4Var.b(S));

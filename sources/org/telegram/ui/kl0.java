@@ -4,15 +4,15 @@ import android.graphics.Canvas;
 import android.graphics.ColorFilter;
 import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class kl0 extends Drawable {
-    public final /* synthetic */ org.telegram.ui.Components.v01 a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.e6 b;
+    public final /* synthetic */ org.telegram.ui.Components.u01 a;
+    public final /* synthetic */ org.telegram.ui.ActionBar.f6 b;
 
-    public kl0(org.telegram.ui.Components.v01 v01Var, org.telegram.ui.ActionBar.e6 e6Var) {
-        this.a = v01Var;
-        this.b = e6Var;
+    public kl0(org.telegram.ui.Components.u01 u01Var, org.telegram.ui.ActionBar.f6 f6Var) {
+        this.a = u01Var;
+        this.b = f6Var;
     }
 
     @Override // android.graphics.drawable.Drawable

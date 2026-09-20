@@ -22,11 +22,11 @@ import java.util.WeakHashMap;
 import l.l;
 import l.n;
 import l.z;
-import lf.i;
+import lf.h;
 import org.telegram.messenger.beta.R;
 import r0.i0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public class ListMenuItemView extends LinearLayout implements z, AbsListView.SelectionBoundsAdjuster {
     public final boolean E;
@@ -349,7 +349,7 @@ public class ListMenuItemView extends LinearLayout implements z, AbsListView.Sel
 
     public ListMenuItemView(Context context, AttributeSet attributeSet, int i10) {
         super(context, attributeSet);
-        i Q = i.Q(getContext(), attributeSet, a.r, i10);
+        h Q = h.Q(getContext(), attributeSet, a.r, i10);
         this.s = Q.F(5);
         TypedArray typedArray = (TypedArray) Q.c;
         this.v = typedArray.getResourceId(1, -1);

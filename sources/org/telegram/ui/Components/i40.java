@@ -23,11 +23,11 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public class i40 extends FrameLayout {
     public long E;
-    public final org.telegram.ui.ActionBar.e6 F;
+    public final org.telegram.ui.ActionBar.f6 F;
     public boolean G;
     public boolean H;
     public final ai.p4 a;
@@ -178,9 +178,9 @@ public class i40 extends FrameLayout {
                     left = u1Var.getLeft() + forwardNameCenterX;
                     int dp3 = AndroidUtilities.dp(19.0f);
                     if (i14 == 5) {
-                        int c10 = org.telegram.messenger.q.c(19.1f, forwardNameCenterX - (getMeasuredWidth() / 2), 0);
-                        setTranslationX(c10);
-                        dp3 += c10;
+                        int b10 = org.telegram.messenger.l0.b(19.1f, forwardNameCenterX - (getMeasuredWidth() / 2), 0);
+                        setTranslationX(b10);
+                        dp3 += b10;
                     } else if (left > view.getMeasuredWidth() / 2) {
                         int measuredWidth2 = (measuredWidth - getMeasuredWidth()) - AndroidUtilities.dp(38.0f);
                         setTranslationX(measuredWidth2);
@@ -334,7 +334,7 @@ public class i40 extends FrameLayout {
                             dp = AndroidUtilities.dp(20.0f) + dp6;
                         }
                     } else {
-                        dp = org.telegram.messenger.wh.D(50.0f, u1Var.getMeasuredHeight() - Math.max(0, u1Var.getBottom() - view.getMeasuredHeight()), i16);
+                        dp = org.telegram.messenger.rk.D(50.0f, u1Var.getMeasuredHeight() - Math.max(0, u1Var.getBottom() - view.getMeasuredHeight()), i16);
                     }
                     i12 = dp;
                     if (!z11) {
@@ -442,9 +442,9 @@ public class i40 extends FrameLayout {
         if (i12 == 4) {
             dp += AndroidUtilities.dp(4.0f);
         } else if (i12 == 6 && z10) {
-            dp = org.telegram.messenger.q.D(10.0f, getMeasuredHeight() + view.getMeasuredHeight(), dp);
+            dp = org.telegram.messenger.l0.C(10.0f, getMeasuredHeight() + view.getMeasuredHeight(), dp);
         } else if (i12 == 7 || (i12 == 8 && z10)) {
-            dp = org.telegram.messenger.q.D(8.0f, getMeasuredHeight() + view.getMeasuredHeight(), dp);
+            dp = org.telegram.messenger.l0.C(8.0f, getMeasuredHeight() + view.getMeasuredHeight(), dp);
         } else if (i12 == 8) {
             dp -= AndroidUtilities.dp(10.0f);
         }
@@ -564,20 +564,20 @@ public class i40 extends FrameLayout {
         this.G = z10;
     }
 
-    public i40(Activity activity, org.telegram.ui.ActionBar.e6 e6Var) {
-        this(2, activity, e6Var, false);
+    public i40(Activity activity, org.telegram.ui.ActionBar.f6 f6Var) {
+        this(2, activity, f6Var, false);
     }
 
-    public i40(int i10, Context context, org.telegram.ui.ActionBar.e6 e6Var, boolean z10) {
+    public i40(int i10, Context context, org.telegram.ui.ActionBar.f6 f6Var, boolean z10) {
         super(context);
         this.E = 2000L;
-        this.F = e6Var;
+        this.F = f6Var;
         this.n = i10;
         this.r = z10;
         ai.p4 p4Var = new ai.p4(context, 22);
         this.a = p4Var;
         int i11 = org.telegram.ui.ActionBar.j6.pf;
-        p4Var.setTextColor(org.telegram.ui.ActionBar.j6.v0(i11, e6Var));
+        p4Var.setTextColor(org.telegram.ui.ActionBar.j6.v0(i11, f6Var));
         p4Var.setTextSize(1, 14.0f);
         p4Var.setMaxLines(2);
         if (i10 == 7 || i10 == 8 || i10 == 9) {
@@ -589,12 +589,12 @@ public class i40 extends FrameLayout {
         }
         if (i10 == 3) {
             p4Var.setGravity(19);
-            p4Var.setBackground(org.telegram.ui.ActionBar.j6.b0(AndroidUtilities.dp(5.0f), org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.qf, e6Var)));
+            p4Var.setBackground(org.telegram.ui.ActionBar.j6.b0(AndroidUtilities.dp(5.0f), org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.qf, f6Var)));
             p4Var.setPadding(AndroidUtilities.dp(10.0f), 0, AndroidUtilities.dp(10.0f), 0);
             addView(p4Var, w7.y5.d(-2, 30.0f, 51, 0.0f, z10 ? 6.0f : 0.0f, 0.0f, z10 ? 0.0f : 6.0f));
         } else {
             p4Var.setGravity(51);
-            p4Var.setBackground(org.telegram.ui.ActionBar.j6.b0(AndroidUtilities.dp(10.0f), org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.qf, e6Var)));
+            p4Var.setBackground(org.telegram.ui.ActionBar.j6.b0(AndroidUtilities.dp(10.0f), org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.qf, f6Var)));
             p4Var.setPadding(AndroidUtilities.dp(i10 == 0 ? 54.0f : 12.0f), AndroidUtilities.dp(9.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(10.0f));
             addView(p4Var, w7.y5.d(-2, -2.0f, 51, 0.0f, z10 ? 6.0f : 0.0f, 0.0f, z10 ? 0.0f : 6.0f));
         }
@@ -604,13 +604,13 @@ public class i40 extends FrameLayout {
             this.b = imageView;
             imageView.setImageResource(R.drawable.tooltip_sound);
             this.b.setScaleType(ImageView.ScaleType.CENTER);
-            this.b.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.j6.v0(i11, e6Var), PorterDuff.Mode.MULTIPLY));
+            this.b.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.j6.v0(i11, f6Var), PorterDuff.Mode.MULTIPLY));
             addView(this.b, w7.y5.d(38, 34.0f, 51, 7.0f, 7.0f, 0.0f, 0.0f));
         }
         ImageView imageView2 = new ImageView(context);
         this.c = imageView2;
         imageView2.setImageResource(z10 ? R.drawable.tooltip_arrow_up : R.drawable.tooltip_arrow);
-        imageView2.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.qf, e6Var), PorterDuff.Mode.MULTIPLY));
+        imageView2.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.qf, f6Var), PorterDuff.Mode.MULTIPLY));
         addView(imageView2, w7.y5.d(14, 6.0f, (z10 ? 48 : 80) | 3, 0.0f, 0.0f, 0.0f, 0.0f));
     }
 

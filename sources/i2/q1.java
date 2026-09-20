@@ -4,7 +4,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.SystemClock;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class q1 implements s0 {
     public long a;
@@ -13,9 +13,9 @@ public final class q1 implements s0 {
     public final Object d;
     public Object e;
 
-    public q1(org.telegram.ui.web.u0 u0Var) {
+    public q1(org.telegram.ui.web.r0 r0Var) {
         this.d = new Handler(Looper.getMainLooper());
-        this.e = u0Var;
+        this.e = r0Var;
     }
 
     @Override // i2.s0

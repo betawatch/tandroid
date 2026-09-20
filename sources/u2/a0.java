@@ -2,9 +2,9 @@ package u2;
 
 import android.util.Pair;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
-public final class a0 extends p1 {
+public final class a0 extends q1 {
     public final boolean l;
     public final b2.j1 m;
     public final b2.h1 n;
@@ -32,7 +32,7 @@ public final class a0 extends p1 {
     /* JADX WARN: Removed duplicated region for block: B:27:0x0086  */
     /* JADX WARN: Removed duplicated region for block: B:38:0x0092  */
     /* JADX WARN: Removed duplicated region for block: B:9:0x00cc  */
-    @Override // u2.p1
+    @Override // u2.q1
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -135,7 +135,7 @@ public final class a0 extends p1 {
         }
     }
 
-    @Override // u2.p1
+    @Override // u2.q1
     public final void C() {
         if (this.l) {
             return;
@@ -183,7 +183,7 @@ public final class a0 extends p1 {
         return true;
     }
 
-    @Override // u2.p1, u2.a
+    @Override // u2.q1, u2.a
     public final boolean a(b2.k0 k0Var) {
         return this.k.a(k0Var);
     }
@@ -208,7 +208,7 @@ public final class a0 extends p1 {
         super.q();
     }
 
-    @Override // u2.p1, u2.a
+    @Override // u2.q1, u2.a
     public final void t(b2.k0 k0Var) {
         if (this.s) {
             y yVar = this.o;
@@ -219,7 +219,7 @@ public final class a0 extends p1 {
         this.k.t(k0Var);
     }
 
-    @Override // u2.p1
+    @Override // u2.q1
     public final f0 z(f0 f0Var) {
         Object obj = f0Var.a;
         Object obj2 = this.o.g;

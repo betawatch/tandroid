@@ -4,8 +4,9 @@ import bf.p;
 import bf.s;
 import com.google.android.gms.internal.vision.e2;
 import java.util.regex.Pattern;
+import v7.j0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class a extends h {
     public static final Pattern e = Pattern.compile("^<([a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*)>");
@@ -16,7 +17,7 @@ public final class a extends h {
         String a2 = a(e);
         if (a2 != null) {
             String i10 = e2.i(1, 1, a2);
-            bf.k kVar = new bf.k(1, t8.b.i("mailto:", i10), null);
+            bf.k kVar = new bf.k(1, j0.g("mailto:", i10), null);
             kVar.b(new s(i10));
             return kVar;
         }

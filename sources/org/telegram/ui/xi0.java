@@ -1,52 +1,36 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class xi0 extends ji.n {
-    public Runnable W;
+public final /* synthetic */ class xi0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ yi0 b;
 
-    @Override // ji.n, s4.j
-    public final void N() {
-        super.N();
-        Runnable runnable = this.W;
-        if (runnable != null) {
-            AndroidUtilities.cancelRunOnUIThread(runnable);
-            this.W = null;
-        }
-        wi0 wi0Var = new wi0(this, 0);
-        this.W = wi0Var;
-        AndroidUtilities.runOnUIThread(wi0Var);
+    public /* synthetic */ xi0(yi0 yi0Var, int i10) {
+        this.a = i10;
+        this.b = yi0Var;
     }
 
-    @Override // ji.n
-    public final void W() {
-        Runnable runnable = this.W;
-        if (runnable != null) {
-            AndroidUtilities.cancelRunOnUIThread(runnable);
-            this.W = null;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.W = null;
+                if (BuildVars.LOGS_ENABLED) {
+                    FileLog.d("chatItemAnimator enable notifications");
+                    break;
+                }
+                break;
+            default:
+                this.b.W = null;
+                if (BuildVars.LOGS_ENABLED) {
+                    FileLog.d("chatItemAnimator enable notifications");
+                    break;
+                }
+                break;
         }
-        if (BuildVars.LOGS_ENABLED) {
-            FileLog.d("chatItemAnimator disable notifications");
-        }
-    }
-
-    @Override // ji.n, s4.j, s4.m0
-    public final void g() {
-        super.g();
-        Runnable runnable = this.W;
-        if (runnable != null) {
-            AndroidUtilities.cancelRunOnUIThread(runnable);
-        }
-        wi0 wi0Var = new wi0(this, 1);
-        this.W = wi0Var;
-        AndroidUtilities.runOnUIThread(wi0Var);
-    }
-
-    @Override // s4.j
-    public final void F() {
     }
 }

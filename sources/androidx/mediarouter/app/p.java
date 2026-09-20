@@ -9,7 +9,7 @@ import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityManager;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class p implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -44,13 +44,13 @@ public final class p implements View.OnClickListener {
                         if (yVar != null && (playbackStateCompat = uVar.k0) != null) {
                             i10 = playbackStateCompat.a != 3 ? 0 : 1;
                             if (i10 != 0 && (playbackStateCompat.e & 514) != 0) {
-                                yVar.R().a.pause();
+                                yVar.P().a.pause();
                                 i12 = R.string.mr_controller_pause;
                             } else if (i10 != 0 && (playbackStateCompat.e & 1) != 0) {
-                                yVar.R().a.stop();
+                                yVar.P().a.stop();
                                 i12 = R.string.mr_controller_stop;
                             } else if (i10 == 0 && (playbackStateCompat.e & 516) != 0) {
-                                yVar.R().a.play();
+                                yVar.P().a.play();
                                 i12 = R.string.mr_controller_play;
                             }
                             if (accessibilityManager != null && accessibilityManager.isEnabled() && i12 != 0) {
@@ -79,7 +79,7 @@ public final class p implements View.OnClickListener {
                 break;
             case 2:
                 n4.y yVar2 = uVar.i0;
-                if (yVar2 != null && (sessionActivity = ((android.support.v4.media.session.h) yVar2.b).a.getSessionActivity()) != null) {
+                if (yVar2 != null && (sessionActivity = ((android.support.v4.media.session.h) yVar2.a).a.getSessionActivity()) != null) {
                     try {
                         sessionActivity.send();
                         uVar.dismiss();

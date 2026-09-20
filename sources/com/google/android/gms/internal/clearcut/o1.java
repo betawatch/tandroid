@@ -55,17 +55,17 @@ public abstract class o1 {
             P += a6.m.R(bArr3.length) + bArr3.length + a6.m.Q(6);
         }
         if (str4 != null && !str4.equals("")) {
-            P += a6.m.I(8, str4);
+            P += a6.m.B(8, str4);
         }
         int i12 = x1Var.c;
         if (i12 != 0) {
             P += (i12 >= 0 ? a6.m.R(i12) : 10) + a6.m.Q(11);
         }
         if (str3 != null && !str3.equals("")) {
-            P += a6.m.I(13, str3);
+            P += a6.m.B(13, str3);
         }
         if (str2 != null && !str2.equals("")) {
-            P += a6.m.I(14, str2);
+            P += a6.m.B(14, str2);
         }
         long j10 = x1Var.s;
         if (j10 != 180000) {
@@ -94,7 +94,7 @@ public abstract class o1 {
             P = P + i13 + (iArr.length * 2);
         }
         if (str != null && !str.equals("")) {
-            P += a6.m.I(24, str);
+            P += a6.m.B(24, str);
         }
         return x1Var.y ? a6.m.Q(25) + 1 + P : P;
     }

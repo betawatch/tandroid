@@ -1,29 +1,26 @@
 package org.telegram.ui.Components;
 
-import androidx.recyclerview.widget.RecyclerView;
+import android.content.Context;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class uj0 extends s4.s0 {
-    public final /* synthetic */ s4.c0 a;
-    public final /* synthetic */ ak0 b;
+public final class uj0 extends t00 {
+    public final /* synthetic */ zj0 U;
 
-    public uj0(ak0 ak0Var, s4.c0 c0Var) {
-        this.b = ak0Var;
-        this.a = c0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public uj0(zj0 zj0Var, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context, f6Var);
+        this.U = zj0Var;
     }
 
-    @Override // s4.s0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        int loadCount;
-        ak0 ak0Var = this.b;
-        if (ak0Var.w && ak0Var.x && !ak0Var.v) {
-            int N0 = this.a.N0();
-            int h = ak0Var.f.h() - 1;
-            loadCount = ak0Var.getLoadCount();
-            if (N0 >= h - loadCount) {
-                ak0Var.c();
-            }
+    @Override // org.telegram.ui.Components.t00
+    public final int getAdditionalHeight() {
+        bb0 bb0Var;
+        zj0 zj0Var = this.U;
+        if (zj0Var.H.isEmpty() || (bb0Var = zj0Var.J) == null) {
+            return 0;
         }
+        return AndroidUtilities.dp(8.0f) + bb0Var.getMeasuredHeight();
     }
 }

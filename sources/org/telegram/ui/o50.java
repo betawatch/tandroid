@@ -6,9 +6,9 @@ import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.support.LongSparseIntArray;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class o50 extends org.telegram.ui.Components.wl0 {
+public final class o50 extends org.telegram.ui.Components.vl0 {
     public final LongSparseIntArray X2;
     public final /* synthetic */ i60 Y2;
 
@@ -21,7 +21,7 @@ public final class o50 extends org.telegram.ui.Components.wl0 {
 
     /* JADX WARN: Removed duplicated region for block: B:30:0x0099  */
     /* JADX WARN: Removed duplicated region for block: B:36:0x00bb  */
-    @Override // org.telegram.ui.Components.wl0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.vl0, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -54,12 +54,12 @@ public final class o50 extends org.telegram.ui.Components.wl0 {
                 } else {
                     if (i13 == 1) {
                         View view = H.a;
-                        if (view instanceof org.telegram.ui.Cells.e4) {
-                            org.telegram.ui.Cells.e4 e4Var = (org.telegram.ui.Cells.e4) view;
+                        if (view instanceof org.telegram.ui.Cells.f4) {
+                            org.telegram.ui.Cells.f4 f4Var = (org.telegram.ui.Cells.f4) view;
                             i10 = i12;
                             z11 = z13;
-                            i60Var.B2.append(e4Var.getPeerId(), 1);
-                            if (longSparseIntArray.get(e4Var.getPeerId(), 0) == 0) {
+                            i60Var.B2.append(f4Var.getPeerId(), 1);
+                            if (longSparseIntArray.get(f4Var.getPeerId(), 0) == 0) {
                                 z13 = true;
                                 if (!z12) {
                                     f11 = Math.max(f11, childAt.getY() + childAt.getMeasuredHeight());
@@ -70,7 +70,7 @@ public final class o50 extends org.telegram.ui.Components.wl0 {
                                 }
                                 i12 = i10 + 1;
                             } else {
-                                longSparseIntArray.delete(e4Var.getPeerId());
+                                longSparseIntArray.delete(f4Var.getPeerId());
                                 z13 = z11;
                                 if (!z12) {
                                 }
@@ -114,7 +114,7 @@ public final class o50 extends org.telegram.ui.Components.wl0 {
         canvas.restore();
     }
 
-    @Override // org.telegram.ui.Components.wl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.vl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     public final boolean drawChild(Canvas canvas, View view, long j3) {
         if (view == this.Y2.X2) {
             return false;
@@ -122,7 +122,7 @@ public final class o50 extends org.telegram.ui.Components.wl0 {
         return super.drawChild(canvas, view, j3);
     }
 
-    @Override // org.telegram.ui.Components.wl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.vl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         int i14;
         super.onLayout(z10, i10, i11, i12, i13);
@@ -156,7 +156,7 @@ public final class o50 extends org.telegram.ui.Components.wl0 {
         o50Var.invalidate();
     }
 
-    @Override // org.telegram.ui.Components.wl0, android.view.View
+    @Override // org.telegram.ui.Components.vl0, android.view.View
     public final void setVisibility(int i10) {
         if (getVisibility() != i10) {
             for (int i11 = 0; i11 < getChildCount(); i11++) {

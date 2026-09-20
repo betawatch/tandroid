@@ -8,25 +8,25 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class r4 implements RequestDelegate {
     public final /* synthetic */ int a = 1;
-    public final /* synthetic */ t5 b;
+    public final /* synthetic */ u5 b;
     public final /* synthetic */ Utilities.Callback2 c;
     public final /* synthetic */ Context d;
-    public final /* synthetic */ org.telegram.ui.ActionBar.e6 e;
+    public final /* synthetic */ org.telegram.ui.ActionBar.f6 e;
     public final /* synthetic */ long f;
     public final /* synthetic */ String g;
     public final /* synthetic */ long h;
     public final /* synthetic */ TLObject i;
     public final /* synthetic */ TLObject j;
 
-    public /* synthetic */ r4(t5 t5Var, Utilities.Callback2 callback2, Context context, org.telegram.ui.ActionBar.e6 e6Var, long j3, String str, long j10, TLObject tLObject, TLRPC.TL_textWithEntities tL_textWithEntities) {
-        this.b = t5Var;
+    public /* synthetic */ r4(u5 u5Var, Utilities.Callback2 callback2, Context context, org.telegram.ui.ActionBar.f6 f6Var, long j3, String str, long j10, TLObject tLObject, TLRPC.TL_textWithEntities tL_textWithEntities) {
+        this.b = u5Var;
         this.c = callback2;
         this.d = context;
-        this.e = e6Var;
+        this.e = f6Var;
         this.f = j3;
         this.g = str;
         this.h = j10;
@@ -46,11 +46,11 @@ public final /* synthetic */ class r4 implements RequestDelegate {
         }
     }
 
-    public /* synthetic */ r4(t5 t5Var, Utilities.Callback2 callback2, Context context, org.telegram.ui.ActionBar.e6 e6Var, long j3, String str, TLRPC.TL_payments_paymentFormStarGift tL_payments_paymentFormStarGift, TL_stars.StarGift starGift, long j10) {
-        this.b = t5Var;
+    public /* synthetic */ r4(u5 u5Var, Utilities.Callback2 callback2, Context context, org.telegram.ui.ActionBar.f6 f6Var, long j3, String str, TLRPC.TL_payments_paymentFormStarGift tL_payments_paymentFormStarGift, TL_stars.StarGift starGift, long j10) {
+        this.b = u5Var;
         this.c = callback2;
         this.d = context;
-        this.e = e6Var;
+        this.e = f6Var;
         this.f = j3;
         this.g = str;
         this.i = tL_payments_paymentFormStarGift;

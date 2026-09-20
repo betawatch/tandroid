@@ -3,9 +3,9 @@ package ii;
 import android.animation.ValueAnimator;
 import java.net.URL;
 import org.telegram.ui.Components.qr;
-import v7.o8;
+import v7.p8;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class b0 {
     public int a;
@@ -20,7 +20,7 @@ public final class b0 {
 
     public void a(a aVar, ei.d5 d5Var) {
         int i10;
-        int b10 = o8.b(aVar);
+        int b10 = p8.b(aVar);
         long j3 = aVar != null ? aVar.a : Long.MIN_VALUE;
         boolean z10 = j3 == this.b && this.a >= 0;
         this.b = j3;

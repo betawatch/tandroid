@@ -6,9 +6,9 @@ import android.content.Intent;
 import android.os.RemoteException;
 import android.util.Log;
 import j$.util.Objects;
-import w7.q6;
+import w7.r6;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public abstract class h3 {
     public final Context a;
@@ -114,7 +114,7 @@ public abstract class h3 {
                 try {
                     eVar = y6.e.c(this.a, y6.e.b, str);
                 } catch (y6.b e) {
-                    q6.a(e, "Error loading optional module %s", str);
+                    r6.a(e, "Error loading optional module %s", str);
                     if (!this.b) {
                         String str2 = (String) this.n;
                         if (Log.isLoggable("Vision", 3)) {

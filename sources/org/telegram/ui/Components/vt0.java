@@ -1,112 +1,22 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
 import android.view.View;
-import android.view.ViewGroup;
-import java.util.ArrayList;
-import org.telegram.messenger.DialogObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class vt0 extends vl0 {
-    public final Context c;
-    public final ArrayList d = new ArrayList();
-    public boolean e;
-    public boolean f;
-    public boolean h;
-    public final /* synthetic */ kv0 n;
+public interface vt0 {
+    void E();
 
-    public vt0(kv0 kv0Var, Context context) {
-        this.n = kv0Var;
-        this.c = context;
-    }
+    void R();
 
-    public static void E(vt0 vt0Var, long j3) {
-        kv0 kv0Var = vt0Var.n;
-        if (vt0Var.e) {
-            return;
-        }
-        TLRPC.TL_messages_getCommonChats tL_messages_getCommonChats = new TLRPC.TL_messages_getCommonChats();
-        long j10 = kv0Var.j1;
-        org.telegram.ui.ActionBar.n2 n2Var = kv0Var.v1;
-        if (DialogObject.isEncryptedDialog(j10)) {
-            j10 = org.telegram.messenger.q.m(n2Var.getMessagesController(), j10).user_id;
-        }
-        TLRPC.InputUser inputUser = n2Var.getMessagesController().getInputUser(j10);
-        tL_messages_getCommonChats.user_id = inputUser;
-        if (inputUser instanceof TLRPC.TL_inputUserEmpty) {
-            return;
-        }
-        tL_messages_getCommonChats.limit = 100;
-        tL_messages_getCommonChats.max_id = j3;
-        vt0Var.e = true;
-        vt0Var.l();
-        n2Var.getConnectionsManager().bindRequestToGuid(n2Var.getConnectionsManager().sendRequest(tL_messages_getCommonChats, new x1(vt0Var, 12)), n2Var.getClassGuid());
-    }
+    boolean T();
 
-    @Override // org.telegram.ui.Components.vl0
-    public final boolean D(s4.c1 c1Var) {
-        return c1Var.b() != this.d.size();
-    }
+    vl0 f();
 
-    @Override // s4.h0
-    public final int h() {
-        ArrayList arrayList = this.d;
-        if (arrayList.isEmpty() && !this.e) {
-            return 1;
-        }
-        int size = arrayList.size();
-        return (arrayList.isEmpty() || this.h) ? size : size + 1;
-    }
+    TLRPC.Chat g();
 
-    @Override // s4.h0
-    public final int j(int i10) {
-        ArrayList arrayList = this.d;
-        if (!arrayList.isEmpty() || this.e) {
-            return i10 < arrayList.size() ? 14 : 16;
-        }
-        return 15;
-    }
+    boolean h(TLRPC.ChatParticipant chatParticipant, boolean z10, boolean z11, View view);
 
-    @Override // s4.h0
-    public final void v(s4.c1 c1Var, int i10) {
-        if (c1Var.f == 14) {
-            View view = c1Var.a;
-            if (view instanceof org.telegram.ui.Cells.i6) {
-                org.telegram.ui.Cells.i6 i6Var = (org.telegram.ui.Cells.i6) view;
-                ArrayList arrayList = this.d;
-                i6Var.t((TLRPC.Chat) arrayList.get(i10), null, null, null, false, false);
-                boolean z10 = true;
-                if (i10 == arrayList.size() - 1 && this.h) {
-                    z10 = false;
-                }
-                i6Var.M = z10;
-            }
-        }
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    @Override // s4.h0
-    public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        org.telegram.ui.Cells.i6 i6Var;
-        kv0 kv0Var = this.n;
-        org.telegram.ui.ActionBar.e6 e6Var = kv0Var.F1;
-        Context context = this.c;
-        if (i10 == 14) {
-            i6Var = new org.telegram.ui.Cells.i6(context, e6Var);
-        } else {
-            if (i10 == 15) {
-                xt0 M = kv0.M(6, kv0Var.j1, context, e6Var);
-                M.setLayoutParams(new s4.p0(-1, -1));
-                return new gl0(M);
-            }
-            t00 t00Var = new t00(context, e6Var);
-            t00Var.setIsSingleCell(true);
-            t00Var.w = false;
-            t00Var.setViewType(1);
-            i6Var = t00Var;
-        }
-        return com.google.android.gms.internal.vision.e2.k(i6Var, i6Var, -1, -2);
-    }
+    boolean p();
 }

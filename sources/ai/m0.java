@@ -16,7 +16,6 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.wh;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
@@ -24,21 +23,21 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.k41;
+import org.telegram.ui.Components.j41;
 import org.telegram.ui.Components.rs;
 import org.telegram.ui.Components.ts;
 import org.telegram.ui.Components.un;
 import org.telegram.ui.Components.vi;
-import org.telegram.ui.Components.wl0;
-import org.telegram.ui.Components.x51;
+import org.telegram.ui.Components.vl0;
+import org.telegram.ui.Components.w51;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PasskeysActivity;
 import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.fm0;
-import org.telegram.ui.gc0;
-import org.telegram.ui.hb0;
+import org.telegram.ui.hc0;
 import org.telegram.ui.i60;
+import org.telegram.ui.ib0;
 import org.telegram.ui.jp0;
 import org.telegram.ui.ll0;
 import org.telegram.ui.ln;
@@ -47,7 +46,7 @@ import org.telegram.ui.uw0;
 import org.telegram.ui.zn;
 import org.telegram.ui.zo0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class m0 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -84,9 +83,9 @@ public final /* synthetic */ class m0 implements Utilities.Callback2 {
         TLRPC.WebPage webPage;
         ArrayList arrayList;
         int i10;
-        yh.v2 v2Var;
-        yh.v2 v2Var2;
-        yh.v2 v2Var3;
+        yh.w2 w2Var;
+        yh.w2 w2Var2;
+        yh.w2 w2Var3;
         int i11;
         boolean z11 = true;
         switch (this.a) {
@@ -175,7 +174,7 @@ public final /* synthetic */ class m0 implements Utilities.Callback2 {
                 ci.r6 r6Var = (ci.r6) this.b;
                 qg.j jVar = (qg.j) this.c;
                 r6Var.getClass();
-                ((qg.t0) jVar).r(r6Var.F1, (TLRPC.MessageMedia) obj, (TL_stories.MediaArea) obj2);
+                ((qg.u0) jVar).r(r6Var.F1, (TLRPC.MessageMedia) obj, (TL_stories.MediaArea) obj2);
                 r6Var.d0(jVar);
                 break;
             case 3:
@@ -277,7 +276,7 @@ public final /* synthetic */ class m0 implements Utilities.Callback2 {
                     z5Var.x.setDuration(200L);
                     z5Var.x.start();
                 }
-                ((org.telegram.ui.Cells.r8) view).setChecked(uoVar.F0);
+                ((org.telegram.ui.Cells.s8) view).setChecked(uoVar.F0);
                 uoVar.p0(false, true);
                 if (!uoVar.N0) {
                     TLRPC.Chat chat4 = uoVar.x0;
@@ -381,9 +380,9 @@ public final /* synthetic */ class m0 implements Utilities.Callback2 {
                             }
                         }
                     }
-                    wl0 wl0Var = rsVar.d;
-                    if (wl0Var != null) {
-                        wl0Var.v0(0);
+                    vl0 vl0Var = rsVar.d;
+                    if (vl0Var != null) {
+                        vl0Var.v0(0);
                     }
                     rsVar.N(true);
                     break;
@@ -441,7 +440,7 @@ public final /* synthetic */ class m0 implements Utilities.Callback2 {
                                     if (ChatObject.isNotInChat(chat6) && (chat7 == null || ChatObject.isNotInChat(chat7))) {
                                         String lowerCase2 = chat6.title.toLowerCase();
                                         String translitSafe2 = AndroidUtilities.translitSafe(lowerCase2);
-                                        if (lowerCase2.startsWith(lowerCase) || wh.u(" ", lowerCase, lowerCase2) || translitSafe2.startsWith(translitSafe) || wh.u(" ", translitSafe, translitSafe2)) {
+                                        if (lowerCase2.startsWith(lowerCase) || org.telegram.messenger.l0.v(" ", lowerCase, lowerCase2) || translitSafe2.startsWith(translitSafe) || org.telegram.messenger.l0.v(" ", translitSafe, translitSafe2)) {
                                             if (!hashSet2.contains(Long.valueOf(chat6.id))) {
                                                 hashSet2.add(Long.valueOf(chat6.id));
                                                 arrayList10.add(chat6);
@@ -472,40 +471,40 @@ public final /* synthetic */ class m0 implements Utilities.Callback2 {
                 }
                 break;
             case 13:
-                k41.m((k41) this.b, (TLRPC.TL_textWithEntities) this.c, (TLRPC.TL_textWithEntities) obj, (TLRPC.TL_error) obj2);
+                j41.m((j41) this.b, (TLRPC.TL_textWithEntities) this.c, (TLRPC.TL_textWithEntities) obj, (TLRPC.TL_error) obj2);
                 break;
             case 14:
                 i60.q((i60) this.b, (ChatObject.Call) this.c, (Boolean) obj, (HashSet) obj2);
                 break;
             case 15:
-                gc0 gc0Var = (gc0) this.b;
+                hc0 hc0Var = (hc0) this.b;
                 String str = (String) this.c;
                 TL_account.Passkeys passkeys = (TL_account.Passkeys) obj;
-                gc0Var.a();
+                hc0Var.a();
                 if (passkeys != null) {
-                    gc0Var.n(new PasskeysActivity(passkeys.passkeys), false);
+                    hc0Var.n(new PasskeysActivity(passkeys.passkeys), false);
                     if ("create".equalsIgnoreCase(str)) {
-                        gc0Var.o("addPasskeyRow");
+                        hc0Var.o("addPasskeyRow");
                         break;
                     }
                 }
                 break;
             case 16:
-                gc0 gc0Var2 = (gc0) this.b;
+                hc0 hc0Var2 = (hc0) this.b;
                 TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth = (TLRPC.TL_messages_requestUrlAuth) this.c;
                 TLRPC.UrlAuthResult urlAuthResult = (TLRPC.UrlAuthResult) obj;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
-                gc0Var2.a();
+                hc0Var2.a();
                 if (tL_error != null) {
                     if ("URL_EXPIRED".equalsIgnoreCase(tL_error.text)) {
-                        gc0.b().M(LocaleController.getString(R.string.BotAuthLoggedInFailTitle), LocaleController.getString(R.string.BotAuthLoggedInFailNoDomain), R.raw.error).j();
+                        hc0.b().M(LocaleController.getString(R.string.BotAuthLoggedInFailTitle), LocaleController.getString(R.string.BotAuthLoggedInFailNoDomain), R.raw.error).j();
                         break;
                     } else {
-                        gc0.b().d0(tL_error, false);
+                        hc0.b().d0(tL_error, false);
                         break;
                     }
                 } else {
-                    ll0.b(gc0Var2.d, gc0Var2.b, tL_messages_requestUrlAuth, urlAuthResult, null, null, null, false, null);
+                    ll0.b(hc0Var2.d, hc0Var2.b, tL_messages_requestUrlAuth, urlAuthResult, null, null, null, false, null);
                     break;
                 }
             case 17:
@@ -578,20 +577,20 @@ public final /* synthetic */ class m0 implements Utilities.Callback2 {
                 a0Var.q0.a.setLoading(false);
                 if (a0Var.getContext() != null) {
                     org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
-                    hb0 hb0Var = LaunchActivity.G1.x0;
+                    ib0 ib0Var = LaunchActivity.G1.x0;
                     if (U != null) {
                         if (bool2.booleanValue()) {
                             a0Var.dismiss();
                             zn R9 = zn.R9(-a0Var.b0.id);
                             U.presentFragment(R9);
-                            U.whenFullyVisible(new org.telegram.ui.web.p1(25, R9, tL_starsGiveawayOption));
-                            if (hb0Var != null) {
-                                hb0Var.c(true);
+                            U.whenFullyVisible(new org.telegram.ui.web.g1(27, R9, tL_starsGiveawayOption));
+                            if (ib0Var != null) {
+                                ib0Var.c(true);
                                 break;
                             }
                         } else if (str3 != null) {
                             a0Var.dismiss();
-                            hg.k0.p(R.string.UnknownErrorCode, new Object[]{str3}, xc.a0(U), R.raw.error, 36);
+                            hg.k0.q(R.string.UnknownErrorCode, new Object[]{str3}, xc.a0(U), R.raw.error, 36);
                             break;
                         }
                     }
@@ -609,7 +608,7 @@ public final /* synthetic */ class m0 implements Utilities.Callback2 {
                     TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj4;
                     if (savedStarGift.pinned_to_top) {
                         int i26 = jp0.a;
-                        x51 J = x51.J(jp0.class);
+                        w51 J = w51.J(jp0.class);
                         J.G = savedStarGift;
                         J.K(r2Var.b == savedStarGift.gift.id);
                         J.u = 1;
@@ -622,7 +621,7 @@ public final /* synthetic */ class m0 implements Utilities.Callback2 {
                 ArrayList arrayList17 = (ArrayList) this.c;
                 TL_stars.StarGift starGift = (TL_stars.StarGift) obj;
                 Runnable runnable = (Runnable) obj2;
-                yh.v2[] v2VarArr = y2Var.n;
+                yh.w2[] w2VarArr = y2Var.n;
                 ci.f4 f4Var = y2Var.T;
                 if (f4Var != null) {
                     f4Var.e(true);
@@ -634,10 +633,10 @@ public final /* synthetic */ class m0 implements Utilities.Callback2 {
                 yh.p2 p2Var = new yh.p2(y2Var.h);
                 ArrayList arrayList18 = p2Var.b;
                 ArrayList arrayList19 = new ArrayList();
-                for (int i27 = 0; i27 < v2VarArr.length; i27++) {
-                    yh.v2 v2Var4 = v2VarArr[i27];
-                    if (v2Var4 != null) {
-                        TL_stars.StarGift starGift2 = v2Var4.h;
+                for (int i27 = 0; i27 < w2VarArr.length; i27++) {
+                    yh.w2 w2Var4 = w2VarArr[i27];
+                    if (w2Var4 != null) {
+                        TL_stars.StarGift starGift2 = w2Var4.h;
                         if (starGift2 == null) {
                             starGift2 = null;
                         }
@@ -648,7 +647,7 @@ public final /* synthetic */ class m0 implements Utilities.Callback2 {
                 }
                 int i28 = 4;
                 if (arrayList19.size() == 1) {
-                    p2Var.e(v2VarArr[((Integer) arrayList19.get(0)).intValue()], 5, 0.0f);
+                    p2Var.e(w2VarArr[((Integer) arrayList19.get(0)).intValue()], 5, 0.0f);
                     p2Var.d(false);
                     p2Var.c(26.0f, -26.0f);
                     p2Var.a(90);
@@ -657,19 +656,19 @@ public final /* synthetic */ class m0 implements Utilities.Callback2 {
                     i11 = 40;
                 } else {
                     int[] iArr = {5, 0, 2, 3, 4};
-                    yh.v2 v2Var5 = v2VarArr[0];
-                    if (v2Var5 != null) {
-                        TL_stars.StarGift starGift3 = v2Var5.h;
+                    yh.w2 w2Var5 = w2VarArr[0];
+                    if (w2Var5 != null) {
+                        TL_stars.StarGift starGift3 = w2Var5.h;
                         if (starGift3 == null) {
                             starGift3 = null;
                         }
                         if (starGift3 != null) {
-                            p2Var.e(v2Var5, iArr[0], 0.0f);
+                            p2Var.e(w2Var5, iArr[0], 0.0f);
                             p2Var.c(25.0f, -22.0f);
                             i10 = 1;
-                            v2Var = v2VarArr[1];
-                            if (v2Var != null) {
-                                TL_stars.StarGift starGift4 = v2Var.h;
+                            w2Var = w2VarArr[1];
+                            if (w2Var != null) {
+                                TL_stars.StarGift starGift4 = w2Var.h;
                                 if (starGift4 == null) {
                                     starGift4 = null;
                                 }
@@ -677,14 +676,14 @@ public final /* synthetic */ class m0 implements Utilities.Callback2 {
                                     if (i10 > 0) {
                                         p2Var.a(42);
                                     }
-                                    p2Var.e(v2VarArr[1], iArr[i10], 0.0f);
+                                    p2Var.e(w2VarArr[1], iArr[i10], 0.0f);
                                     p2Var.c(25.0f, 31.0f);
                                     i10++;
                                 }
                             }
-                            v2Var2 = v2VarArr[2];
-                            if (v2Var2 != null) {
-                                TL_stars.StarGift starGift5 = v2Var2.h;
+                            w2Var2 = w2VarArr[2];
+                            if (w2Var2 != null) {
+                                TL_stars.StarGift starGift5 = w2Var2.h;
                                 if (starGift5 == null) {
                                     starGift5 = null;
                                 }
@@ -692,19 +691,19 @@ public final /* synthetic */ class m0 implements Utilities.Callback2 {
                                     if (i10 > 0) {
                                         p2Var.a(42);
                                     }
-                                    p2Var.e(v2VarArr[2], iArr[i10], 180.0f);
+                                    p2Var.e(w2VarArr[2], iArr[i10], 180.0f);
                                     p2Var.c(-36.0f, -36.0f);
                                     i10++;
                                 }
                             }
-                            v2Var3 = v2VarArr[3];
-                            if (v2Var3 != null) {
-                                TL_stars.StarGift starGift6 = v2Var3.h;
+                            w2Var3 = w2VarArr[3];
+                            if (w2Var3 != null) {
+                                TL_stars.StarGift starGift6 = w2Var3.h;
                                 if ((starGift6 != null ? starGift6 : null) != null) {
                                     if (i10 > 0) {
                                         p2Var.a(42);
                                     }
-                                    p2Var.e(v2VarArr[3], iArr[i10], 0.0f);
+                                    p2Var.e(w2VarArr[3], iArr[i10], 0.0f);
                                     p2Var.c(-31.0f, 31.0f);
                                     i10++;
                                 }
@@ -718,14 +717,14 @@ public final /* synthetic */ class m0 implements Utilities.Callback2 {
                         }
                     }
                     i10 = 0;
-                    v2Var = v2VarArr[1];
-                    if (v2Var != null) {
+                    w2Var = w2VarArr[1];
+                    if (w2Var != null) {
                     }
-                    v2Var2 = v2VarArr[2];
-                    if (v2Var2 != null) {
+                    w2Var2 = w2VarArr[2];
+                    if (w2Var2 != null) {
                     }
-                    v2Var3 = v2VarArr[3];
-                    if (v2Var3 != null) {
+                    w2Var3 = w2VarArr[3];
+                    if (w2Var3 != null) {
                     }
                     p2Var.d(false);
                     p2Var.a(40);
@@ -760,13 +759,13 @@ public final /* synthetic */ class m0 implements Utilities.Callback2 {
                 p2Var.b();
                 break;
             case 24:
-                yh.v7.z0((yh.v7) this.b, (x51) this.c, (Boolean) obj, (String) obj2);
+                yh.w7.z0((yh.w7) this.b, (w51) this.c, (Boolean) obj, (String) obj2);
                 break;
             case 25:
-                yh.k7.Q((yh.k7) this.b, (x51) this.c, (Boolean) obj, (String) obj2);
+                yh.l7.Q((yh.l7) this.b, (w51) this.c, (Boolean) obj, (String) obj2);
                 break;
             default:
-                yh.l7.Q((yh.l7) this.b, (x51) this.c, (Boolean) obj, (String) obj2);
+                yh.m7.Q((yh.m7) this.b, (w51) this.c, (Boolean) obj, (String) obj2);
                 break;
         }
     }

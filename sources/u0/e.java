@@ -8,7 +8,7 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.ScrollView;
 import androidx.core.widget.NestedScrollView;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class e extends r0.b {
     @Override // r0.b
@@ -24,23 +24,23 @@ public final class e extends r0.b {
     }
 
     @Override // r0.b
-    public final void c(View view, s0.c cVar) {
+    public final void c(View view, s0.d dVar) {
         int scrollRange;
-        AccessibilityNodeInfo accessibilityNodeInfo = cVar.a;
+        AccessibilityNodeInfo accessibilityNodeInfo = dVar.a;
         this.a.onInitializeAccessibilityNodeInfo(view, accessibilityNodeInfo);
         NestedScrollView nestedScrollView = (NestedScrollView) view;
-        cVar.i("android.widget.ScrollView");
+        dVar.i("android.widget.ScrollView");
         if (!nestedScrollView.isEnabled() || (scrollRange = nestedScrollView.getScrollRange()) <= 0) {
             return;
         }
         accessibilityNodeInfo.setScrollable(true);
         if (nestedScrollView.getScrollY() > 0) {
-            cVar.b(s0.b.e);
-            cVar.b(s0.b.f);
+            dVar.b(s0.c.e);
+            dVar.b(s0.c.f);
         }
         if (nestedScrollView.getScrollY() < scrollRange) {
-            cVar.b(s0.b.d);
-            cVar.b(s0.b.g);
+            dVar.b(s0.c.d);
+            dVar.b(s0.c.g);
         }
     }
 

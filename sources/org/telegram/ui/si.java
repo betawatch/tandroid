@@ -3,14 +3,14 @@ package org.telegram.ui;
 import android.app.Activity;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class si extends org.telegram.ui.Components.jo {
     public final /* synthetic */ zn M;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public si(zn znVar, Activity activity, int i10, TLRPC.Document document, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(activity, i10, document, e6Var);
+    public si(zn znVar, Activity activity, int i10, TLRPC.Document document, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(activity, i10, document, f6Var);
         this.M = znVar;
     }
 

@@ -18,7 +18,7 @@ import m.c3;
 import m.l1;
 import r0.i0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class c {
     public int a;
@@ -170,7 +170,7 @@ public final class c {
         View view = (View) this.b;
         Context context = view.getContext();
         int[] iArr = f.a.z;
-        lf.i Q = lf.i.Q(context, attributeSet, iArr, i10);
+        lf.h Q = lf.h.Q(context, attributeSet, iArr, i10);
         TypedArray typedArray = (TypedArray) Q.c;
         View view2 = (View) this.b;
         i0.j(view2, view2.getContext(), iArr, attributeSet, (TypedArray) Q.c, i10);

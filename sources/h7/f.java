@@ -5,9 +5,9 @@ import com.google.android.gms.tasks.TaskCompletionSource;
 import g7.l;
 import g7.q;
 import kotlin.jvm.internal.i;
-import v7.g5;
+import v7.h5;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class f extends b8.b implements a {
     public final /* synthetic */ int b;
@@ -26,7 +26,7 @@ public final class f extends b8.b implements a {
         switch (this.b) {
             case 1:
                 i.e(status, "status");
-                g5.a(status, lVar, this.c);
+                h5.a(status, lVar, this.c);
                 return;
             default:
                 i.e(status, "status");
@@ -45,7 +45,7 @@ public final class f extends b8.b implements a {
         switch (this.b) {
             case 0:
                 i.e(status, "status");
-                g5.a(status, eVar, this.c);
+                h5.a(status, eVar, this.c);
                 return;
             default:
                 i.e(status, "status");

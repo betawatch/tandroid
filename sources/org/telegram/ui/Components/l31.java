@@ -1,411 +1,2116 @@
 package org.telegram.ui.Components;
 
 import android.animation.ValueAnimator;
+import android.app.Activity;
 import android.content.Context;
+import android.content.SharedPreferences;
+import android.graphics.Canvas;
+import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
-import android.text.SpannableStringBuilder;
-import android.text.TextUtils;
+import android.graphics.RectF;
+import android.graphics.drawable.ShapeDrawable;
+import android.graphics.drawable.shapes.RoundRectShape;
 import android.view.View;
-import android.view.animation.OvershootInterpolator;
+import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
+import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
+import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
+import org.telegram.messenger.TopicsController;
 import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.UserObject;
+import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.ui.bf1;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class l31 extends FrameLayout {
-    public int E;
-    public SpannableStringBuilder F;
-    public SpannableStringBuilder G;
-    public int H;
-    public boolean I;
-    public boolean J;
-    public float K;
-    public ValueAnimator L;
-    public long M;
-    public boolean N;
-    public boolean O;
-    public p90 P;
-    public float Q;
-    public boolean R;
-    public ValueAnimator S;
-    public final int a;
-    public final org.telegram.ui.ActionBar.e6 b;
-    public mp0 c;
-    public final ci.x5 d;
-    public final FrameLayout.LayoutParams e;
-    public final o6 f;
-    public final ai.v7 h;
-    public final w9 n;
-    public final h9 r;
-    public final TextView s;
-    public final ImageView v;
-    public boolean w;
-    public boolean x;
-    public boolean y;
+public final class l31 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate, le.d {
+    public static final /* synthetic */ int f0 = 0;
+    public final ImageView E;
+    public final FrameLayout F;
+    public final b31 G;
+    public long H;
+    public long I;
+    public final le.b J;
+    public ch.d K;
+    public ch.d L;
+    public float M;
+    public float N;
+    public org.telegram.ui.me O;
+    public boolean P;
+    public boolean Q;
+    public float R;
+    public boolean S;
+    public Boolean T;
+    public ValueAnimator U;
+    public long V;
+    public boolean W;
+    public final le.b a;
+    public Utilities.Callback2 a0;
+    public final int b;
+    public Runnable b0;
+    public final long c;
+    public Utilities.Callback2 c0;
+    public final org.telegram.ui.ActionBar.f6 d;
+    public boolean d0;
+    public final boolean e;
+    public final HashSet e0;
+    public final boolean f;
+    public final org.telegram.ui.zn h;
+    public final boolean n;
+    public final FrameLayout r;
+    public final z21 s;
+    public final k31 v;
+    public final ImageView w;
+    public final ImageView x;
+    public final ImageView y;
 
-    public l31(Context context, int i10, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(context);
-        this.x = false;
-        this.y = false;
-        this.E = org.telegram.ui.ActionBar.j6.U8;
-        this.K = 1.0f;
-        this.M = 0L;
-        this.N = false;
-        this.O = false;
-        this.a = i10;
-        this.b = e6Var;
-        ci.x5 x5Var = new ci.x5(this, context);
-        this.d = x5Var;
-        x5Var.setWillNotDraw(false);
-        x5Var.setOrientation(1);
-        addView(x5Var, w7.y5.d(-1, -1.0f, 119, 1.0f, 0.0f, 0.0f, 0.0f));
-        w7.a6.a(x5Var);
-        o6 o6Var = new o6(false, false, false, false);
-        this.f = o6Var;
-        o6Var.t(AndroidUtilities.dp(11.0f));
-        o6Var.u(AndroidUtilities.bold());
-        o6Var.r(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.W8, e6Var));
-        o6Var.G = AndroidUtilities.displaySize.x;
-        o6Var.b = 17;
-        ai.v7 v7Var = new ai.v7(this, context, e6Var);
-        this.h = v7Var;
-        v7Var.setWillNotDraw(false);
-        v7Var.setPadding(0, AndroidUtilities.dp(4.0f), 0, 0);
-        x5Var.addView(v7Var, w7.y5.q(-1, -2, 17));
-        w9 w9Var = new w9(context);
-        this.n = w9Var;
-        FrameLayout.LayoutParams e = w7.y5.e(34, 34, 17);
-        this.e = e;
-        v7Var.addView(w9Var, e);
-        this.r = new h9((org.telegram.ui.ActionBar.e6) null);
-        TextView textView = new TextView(context);
-        this.s = textView;
-        int v02 = org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.z6, e6Var);
-        int i11 = org.telegram.ui.ActionBar.j6.Oh;
-        textView.setTextColor(i0.a.d(this.Q, v02, org.telegram.ui.ActionBar.j6.v0(i11, e6Var)));
-        textView.setTextSize(1, 10.0f);
-        textView.setGravity(17);
-        textView.setTypeface(AndroidUtilities.bold());
-        textView.setMaxLines(3);
-        textView.setEllipsize(TextUtils.TruncateAt.END);
-        x5Var.addView(textView, w7.y5.t(-1, -2, 17, 4, 0, 4, 0));
-        x5Var.setPadding(0, 0, 0, AndroidUtilities.dp(4.0f));
-        ImageView imageView = new ImageView(context);
-        this.v = imageView;
-        imageView.setBackground(org.telegram.ui.ActionBar.j6.b0(AndroidUtilities.dp(2.33f), org.telegram.ui.ActionBar.j6.v0(i11, e6Var)));
-        addView(imageView, w7.y5.d(6, -1.0f, 115, -3.0f, 3.0f, 0.0f, 3.0f));
-        imageView.setTranslationX(-AndroidUtilities.dp(3.0f));
-        imageView.setVisibility(8);
+    /* JADX WARN: Type inference failed for: r3v9, types: [org.telegram.ui.Components.y21] */
+    /* JADX WARN: Type inference failed for: r4v3, types: [org.telegram.ui.Components.y21] */
+    public l31(Activity activity, org.telegram.ui.zn znVar, int i10, long j3, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(activity);
+        ViewGroup viewGroup;
+        qr qrVar = qr.h;
+        this.a = new le.b(0, this, qrVar, 380L, true);
+        this.J = new le.b(0, new q21(this), qrVar, 320L, false);
+        this.R = 0.0f;
+        this.e0 = new HashSet();
+        this.h = znVar;
+        this.b = i10;
+        this.c = j3;
+        this.d = f6Var;
+        long j10 = -j3;
+        this.e = ChatObject.isMonoForum(MessagesController.getInstance(i10).getChat(Long.valueOf(j10)));
+        boolean isBotForumWithEditableTopics = UserObject.isBotForumWithEditableTopics(MessagesController.getInstance(i10).getUser(Long.valueOf(j3)));
+        this.f = isBotForumWithEditableTopics;
+        this.n = !org.telegram.messenger.l0.u("topics_end_reached_", j10, UserConfig.getInstance(i10).getPreferences(), false);
+        setClipChildren(true);
+        setClipToPadding(true);
+        setWillNotDraw(false);
+        FrameLayout frameLayout = new FrameLayout(activity);
+        this.r = frameLayout;
+        addView(frameLayout, w7.y5.d(-1, 36.0f, 55, 7.0f, 7.0f, 7.0f, 7.0f));
+        FrameLayout frameLayout2 = new FrameLayout(activity);
+        this.F = frameLayout2;
+        addView(frameLayout2, w7.y5.d(64, -1.0f, 115, 7.0f, 7.0f, 7.0f, 7.0f));
+        final int i11 = 0;
+        z21 z21Var = new z21(this, activity, i10, new Utilities.Callback2(this) { // from class: org.telegram.ui.Components.y21
+            public final /* synthetic */ l31 b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // org.telegram.messenger.Utilities.Callback2
+            public final void run(Object obj, Object obj2) {
+                boolean z10;
+                int i12;
+                boolean z11;
+                long j11;
+                long j12;
+                TopicsController topicsController;
+                boolean z12;
+                TLRPC.User user;
+                long j13;
+                long j14;
+                long j15;
+                int i13 = i11;
+                l31 l31Var = this.b;
+                switch (i13) {
+                    case 0:
+                        ArrayList arrayList = (ArrayList) obj;
+                        k61 k61Var = (k61) obj2;
+                        boolean z13 = l31Var.f;
+                        int i14 = l31Var.b;
+                        MessagesController messagesController = MessagesController.getInstance(i14);
+                        long j16 = l31Var.c;
+                        long j17 = -j16;
+                        TLRPC.Chat chat = messagesController.getChat(Long.valueOf(j17));
+                        TLRPC.User user2 = MessagesController.getInstance(i14).getUser(Long.valueOf(j16));
+                        TopicsController topicsController2 = MessagesController.getInstance(i14).getTopicsController();
+                        ArrayList<TLRPC.TL_forumTopic> topics = topicsController2.getTopics(j17);
+                        boolean z14 = l31Var.e;
+                        int i15 = f31.a;
+                        w51 J = w51.J(f31.class);
+                        J.d = 0;
+                        J.B = 0L;
+                        J.G = null;
+                        J.q = z14;
+                        J.K(l31Var.V == 0);
+                        arrayList.add(J);
+                        if (topics != null) {
+                            int size = topics.size();
+                            int i16 = 0;
+                            boolean z15 = false;
+                            while (i16 < size) {
+                                TLRPC.TL_forumTopic tL_forumTopic = topics.get(i16);
+                                int i17 = i16 + 1;
+                                TLRPC.TL_forumTopic tL_forumTopic2 = tL_forumTopic;
+                                int i18 = size;
+                                if (z13) {
+                                    i12 = i17;
+                                    if (tL_forumTopic2.id == 1) {
+                                        size = i18;
+                                        i16 = i12;
+                                    }
+                                } else {
+                                    i12 = i17;
+                                }
+                                if (l31Var.e0.contains(Integer.valueOf(tL_forumTopic2.id))) {
+                                    size = i18;
+                                    i16 = i12;
+                                } else {
+                                    boolean z16 = tL_forumTopic2.pinned;
+                                    if (!z16 && z15) {
+                                        if (!arrayList.isEmpty()) {
+                                            ((w51) hg.k0.g(1, arrayList)).y |= 8;
+                                        }
+                                        k61Var.L();
+                                        z15 = false;
+                                    } else if (z16 && !z15) {
+                                        k61Var.M();
+                                        z15 = true;
+                                    }
+                                    w51 J2 = w51.J(f31.class);
+                                    J2.x = j16;
+                                    J2.d = tL_forumTopic2.id;
+                                    J2.G = tL_forumTopic2;
+                                    if (z14) {
+                                        z11 = z15;
+                                        J2.B = DialogObject.getPeerDialogId(tL_forumTopic2.from_id);
+                                        J2.I = false;
+                                    } else {
+                                        z11 = z15;
+                                    }
+                                    long j18 = l31Var.V;
+                                    if (z14) {
+                                        j11 = j18;
+                                        j12 = DialogObject.getPeerDialogId(tL_forumTopic2.from_id);
+                                    } else {
+                                        j11 = j18;
+                                        j12 = tL_forumTopic2.id;
+                                    }
+                                    J2.K(j11 == j12);
+                                    arrayList.add(J2);
+                                    size = i18;
+                                    i16 = i12;
+                                    z15 = z11;
+                                }
+                            }
+                            z10 = z15;
+                        } else {
+                            z10 = false;
+                        }
+                        if (z10) {
+                            k61Var.L();
+                        }
+                        if (topics != null && !topics.isEmpty() && !topicsController2.endIsReached(j17) && l31Var.n) {
+                            w51 J3 = w51.J(f31.class);
+                            J3.d = -2;
+                            J3.r = true;
+                            arrayList.add(J3);
+                            w51 J4 = w51.J(f31.class);
+                            J4.d = -3;
+                            J4.r = true;
+                            arrayList.add(J4);
+                            w51 J5 = w51.J(f31.class);
+                            J5.d = -4;
+                            J5.r = true;
+                            arrayList.add(J5);
+                        }
+                        if (!z13 && !z14) {
+                            if ((chat != null && ChatObject.canCreateTopic(chat)) || UserObject.isBotForumWithEditableTopics(user2)) {
+                                w51 J6 = w51.J(f31.class);
+                                J6.d = -2;
+                                J6.B = -2L;
+                                J6.G = null;
+                                arrayList.add(J6);
+                                break;
+                            }
+                        }
+                        break;
+                    case 1:
+                        ((Integer) obj).getClass();
+                        l31.b(l31Var, (ArrayList) obj2);
+                        break;
+                    default:
+                        ArrayList arrayList2 = (ArrayList) obj;
+                        k61 k61Var2 = (k61) obj2;
+                        boolean z17 = l31Var.e;
+                        int i19 = l31Var.b;
+                        MessagesController messagesController2 = MessagesController.getInstance(i19);
+                        long j19 = l31Var.c;
+                        long j20 = -j19;
+                        TLRPC.Chat chat2 = messagesController2.getChat(Long.valueOf(j20));
+                        TLRPC.User user3 = MessagesController.getInstance(i19).getUser(Long.valueOf(j19));
+                        TopicsController topicsController3 = MessagesController.getInstance(i19).getTopicsController();
+                        ArrayList<TLRPC.TL_forumTopic> topics2 = topicsController3.getTopics(j20);
+                        boolean z18 = l31Var.f;
+                        if (z18) {
+                            topicsController = topicsController3;
+                        } else {
+                            int i20 = j31.a;
+                            w51 J7 = w51.J(j31.class);
+                            J7.d = 0;
+                            topicsController = topicsController3;
+                            J7.B = 0L;
+                            J7.G = null;
+                            J7.q = z17;
+                            J7.y = z18 ? 1 : 0;
+                            J7.K(l31Var.V == 0);
+                            arrayList2.add(J7);
+                        }
+                        if (topics2 != null) {
+                            int size2 = topics2.size();
+                            z12 = false;
+                            int i21 = 0;
+                            while (i21 < size2) {
+                                TLRPC.TL_forumTopic tL_forumTopic3 = topics2.get(i21);
+                                i21++;
+                                int i22 = size2;
+                                TLRPC.TL_forumTopic tL_forumTopic4 = tL_forumTopic3;
+                                TLRPC.Chat chat3 = chat2;
+                                if (z18) {
+                                    user = user3;
+                                    if (tL_forumTopic4.id == 1) {
+                                        chat2 = chat3;
+                                        size2 = i22;
+                                        user3 = user;
+                                    }
+                                } else {
+                                    user = user3;
+                                }
+                                if (l31Var.e0.contains(Integer.valueOf(tL_forumTopic4.id))) {
+                                    chat2 = chat3;
+                                    size2 = i22;
+                                    user3 = user;
+                                } else {
+                                    boolean z19 = tL_forumTopic4.pinned;
+                                    if (!z19 && z12) {
+                                        k61Var2.L();
+                                        z12 = false;
+                                    } else if (z19 && !z12) {
+                                        k61Var2.M();
+                                        z12 = true;
+                                    }
+                                    int i23 = j31.a;
+                                    w51 J8 = w51.J(j31.class);
+                                    J8.x = j19;
+                                    J8.d = tL_forumTopic4.id;
+                                    J8.G = tL_forumTopic4;
+                                    if (z17) {
+                                        j13 = j19;
+                                        J8.B = DialogObject.getPeerDialogId(tL_forumTopic4.from_id);
+                                        J8.I = false;
+                                    } else {
+                                        j13 = j19;
+                                    }
+                                    long j21 = l31Var.V;
+                                    if (z17) {
+                                        j14 = j21;
+                                        j15 = DialogObject.getPeerDialogId(tL_forumTopic4.from_id);
+                                    } else {
+                                        j14 = j21;
+                                        j15 = tL_forumTopic4.id;
+                                    }
+                                    J8.K(j14 == j15);
+                                    arrayList2.add(J8);
+                                    chat2 = chat3;
+                                    size2 = i22;
+                                    user3 = user;
+                                    j19 = j13;
+                                }
+                            }
+                        } else {
+                            z12 = false;
+                        }
+                        TLRPC.Chat chat4 = chat2;
+                        TLRPC.User user4 = user3;
+                        if (z12) {
+                            k61Var2.L();
+                        }
+                        if (topics2 != null && !topics2.isEmpty() && !topicsController.endIsReached(j20) && l31Var.n) {
+                            int i24 = j31.a;
+                            w51 J9 = w51.J(j31.class);
+                            J9.d = -2;
+                            J9.r = true;
+                            J9.e = false;
+                            arrayList2.add(J9);
+                            w51 J10 = w51.J(j31.class);
+                            J10.d = -3;
+                            J10.r = true;
+                            J10.e = false;
+                            arrayList2.add(J10);
+                            w51 J11 = w51.J(j31.class);
+                            J11.d = -4;
+                            J11.r = true;
+                            J11.e = false;
+                            arrayList2.add(J11);
+                        }
+                        if (!z18 && !z17) {
+                            if ((chat4 != null && ChatObject.canCreateTopic(chat4)) || UserObject.isBotForumWithEditableTopics(user4)) {
+                                int i25 = j31.a;
+                                w51 J12 = w51.J(j31.class);
+                                J12.d = -2;
+                                J12.B = -2L;
+                                J12.G = null;
+                                J12.q = false;
+                                arrayList2.add(J12);
+                                break;
+                            }
+                        }
+                        break;
+                }
+            }
+        }, new q21(this), new q21(this), f6Var);
+        this.s = z21Var;
+        final int i12 = 1;
+        z21Var.C1(new Utilities.Callback2(this) { // from class: org.telegram.ui.Components.y21
+            public final /* synthetic */ l31 b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // org.telegram.messenger.Utilities.Callback2
+            public final void run(Object obj, Object obj2) {
+                boolean z10;
+                int i122;
+                boolean z11;
+                long j11;
+                long j12;
+                TopicsController topicsController;
+                boolean z12;
+                TLRPC.User user;
+                long j13;
+                long j14;
+                long j15;
+                int i13 = i12;
+                l31 l31Var = this.b;
+                switch (i13) {
+                    case 0:
+                        ArrayList arrayList = (ArrayList) obj;
+                        k61 k61Var = (k61) obj2;
+                        boolean z13 = l31Var.f;
+                        int i14 = l31Var.b;
+                        MessagesController messagesController = MessagesController.getInstance(i14);
+                        long j16 = l31Var.c;
+                        long j17 = -j16;
+                        TLRPC.Chat chat = messagesController.getChat(Long.valueOf(j17));
+                        TLRPC.User user2 = MessagesController.getInstance(i14).getUser(Long.valueOf(j16));
+                        TopicsController topicsController2 = MessagesController.getInstance(i14).getTopicsController();
+                        ArrayList<TLRPC.TL_forumTopic> topics = topicsController2.getTopics(j17);
+                        boolean z14 = l31Var.e;
+                        int i15 = f31.a;
+                        w51 J = w51.J(f31.class);
+                        J.d = 0;
+                        J.B = 0L;
+                        J.G = null;
+                        J.q = z14;
+                        J.K(l31Var.V == 0);
+                        arrayList.add(J);
+                        if (topics != null) {
+                            int size = topics.size();
+                            int i16 = 0;
+                            boolean z15 = false;
+                            while (i16 < size) {
+                                TLRPC.TL_forumTopic tL_forumTopic = topics.get(i16);
+                                int i17 = i16 + 1;
+                                TLRPC.TL_forumTopic tL_forumTopic2 = tL_forumTopic;
+                                int i18 = size;
+                                if (z13) {
+                                    i122 = i17;
+                                    if (tL_forumTopic2.id == 1) {
+                                        size = i18;
+                                        i16 = i122;
+                                    }
+                                } else {
+                                    i122 = i17;
+                                }
+                                if (l31Var.e0.contains(Integer.valueOf(tL_forumTopic2.id))) {
+                                    size = i18;
+                                    i16 = i122;
+                                } else {
+                                    boolean z16 = tL_forumTopic2.pinned;
+                                    if (!z16 && z15) {
+                                        if (!arrayList.isEmpty()) {
+                                            ((w51) hg.k0.g(1, arrayList)).y |= 8;
+                                        }
+                                        k61Var.L();
+                                        z15 = false;
+                                    } else if (z16 && !z15) {
+                                        k61Var.M();
+                                        z15 = true;
+                                    }
+                                    w51 J2 = w51.J(f31.class);
+                                    J2.x = j16;
+                                    J2.d = tL_forumTopic2.id;
+                                    J2.G = tL_forumTopic2;
+                                    if (z14) {
+                                        z11 = z15;
+                                        J2.B = DialogObject.getPeerDialogId(tL_forumTopic2.from_id);
+                                        J2.I = false;
+                                    } else {
+                                        z11 = z15;
+                                    }
+                                    long j18 = l31Var.V;
+                                    if (z14) {
+                                        j11 = j18;
+                                        j12 = DialogObject.getPeerDialogId(tL_forumTopic2.from_id);
+                                    } else {
+                                        j11 = j18;
+                                        j12 = tL_forumTopic2.id;
+                                    }
+                                    J2.K(j11 == j12);
+                                    arrayList.add(J2);
+                                    size = i18;
+                                    i16 = i122;
+                                    z15 = z11;
+                                }
+                            }
+                            z10 = z15;
+                        } else {
+                            z10 = false;
+                        }
+                        if (z10) {
+                            k61Var.L();
+                        }
+                        if (topics != null && !topics.isEmpty() && !topicsController2.endIsReached(j17) && l31Var.n) {
+                            w51 J3 = w51.J(f31.class);
+                            J3.d = -2;
+                            J3.r = true;
+                            arrayList.add(J3);
+                            w51 J4 = w51.J(f31.class);
+                            J4.d = -3;
+                            J4.r = true;
+                            arrayList.add(J4);
+                            w51 J5 = w51.J(f31.class);
+                            J5.d = -4;
+                            J5.r = true;
+                            arrayList.add(J5);
+                        }
+                        if (!z13 && !z14) {
+                            if ((chat != null && ChatObject.canCreateTopic(chat)) || UserObject.isBotForumWithEditableTopics(user2)) {
+                                w51 J6 = w51.J(f31.class);
+                                J6.d = -2;
+                                J6.B = -2L;
+                                J6.G = null;
+                                arrayList.add(J6);
+                                break;
+                            }
+                        }
+                        break;
+                    case 1:
+                        ((Integer) obj).getClass();
+                        l31.b(l31Var, (ArrayList) obj2);
+                        break;
+                    default:
+                        ArrayList arrayList2 = (ArrayList) obj;
+                        k61 k61Var2 = (k61) obj2;
+                        boolean z17 = l31Var.e;
+                        int i19 = l31Var.b;
+                        MessagesController messagesController2 = MessagesController.getInstance(i19);
+                        long j19 = l31Var.c;
+                        long j20 = -j19;
+                        TLRPC.Chat chat2 = messagesController2.getChat(Long.valueOf(j20));
+                        TLRPC.User user3 = MessagesController.getInstance(i19).getUser(Long.valueOf(j19));
+                        TopicsController topicsController3 = MessagesController.getInstance(i19).getTopicsController();
+                        ArrayList<TLRPC.TL_forumTopic> topics2 = topicsController3.getTopics(j20);
+                        boolean z18 = l31Var.f;
+                        if (z18) {
+                            topicsController = topicsController3;
+                        } else {
+                            int i20 = j31.a;
+                            w51 J7 = w51.J(j31.class);
+                            J7.d = 0;
+                            topicsController = topicsController3;
+                            J7.B = 0L;
+                            J7.G = null;
+                            J7.q = z17;
+                            J7.y = z18 ? 1 : 0;
+                            J7.K(l31Var.V == 0);
+                            arrayList2.add(J7);
+                        }
+                        if (topics2 != null) {
+                            int size2 = topics2.size();
+                            z12 = false;
+                            int i21 = 0;
+                            while (i21 < size2) {
+                                TLRPC.TL_forumTopic tL_forumTopic3 = topics2.get(i21);
+                                i21++;
+                                int i22 = size2;
+                                TLRPC.TL_forumTopic tL_forumTopic4 = tL_forumTopic3;
+                                TLRPC.Chat chat3 = chat2;
+                                if (z18) {
+                                    user = user3;
+                                    if (tL_forumTopic4.id == 1) {
+                                        chat2 = chat3;
+                                        size2 = i22;
+                                        user3 = user;
+                                    }
+                                } else {
+                                    user = user3;
+                                }
+                                if (l31Var.e0.contains(Integer.valueOf(tL_forumTopic4.id))) {
+                                    chat2 = chat3;
+                                    size2 = i22;
+                                    user3 = user;
+                                } else {
+                                    boolean z19 = tL_forumTopic4.pinned;
+                                    if (!z19 && z12) {
+                                        k61Var2.L();
+                                        z12 = false;
+                                    } else if (z19 && !z12) {
+                                        k61Var2.M();
+                                        z12 = true;
+                                    }
+                                    int i23 = j31.a;
+                                    w51 J8 = w51.J(j31.class);
+                                    J8.x = j19;
+                                    J8.d = tL_forumTopic4.id;
+                                    J8.G = tL_forumTopic4;
+                                    if (z17) {
+                                        j13 = j19;
+                                        J8.B = DialogObject.getPeerDialogId(tL_forumTopic4.from_id);
+                                        J8.I = false;
+                                    } else {
+                                        j13 = j19;
+                                    }
+                                    long j21 = l31Var.V;
+                                    if (z17) {
+                                        j14 = j21;
+                                        j15 = DialogObject.getPeerDialogId(tL_forumTopic4.from_id);
+                                    } else {
+                                        j14 = j21;
+                                        j15 = tL_forumTopic4.id;
+                                    }
+                                    J8.K(j14 == j15);
+                                    arrayList2.add(J8);
+                                    chat2 = chat3;
+                                    size2 = i22;
+                                    user3 = user;
+                                    j19 = j13;
+                                }
+                            }
+                        } else {
+                            z12 = false;
+                        }
+                        TLRPC.Chat chat4 = chat2;
+                        TLRPC.User user4 = user3;
+                        if (z12) {
+                            k61Var2.L();
+                        }
+                        if (topics2 != null && !topics2.isEmpty() && !topicsController.endIsReached(j20) && l31Var.n) {
+                            int i24 = j31.a;
+                            w51 J9 = w51.J(j31.class);
+                            J9.d = -2;
+                            J9.r = true;
+                            J9.e = false;
+                            arrayList2.add(J9);
+                            w51 J10 = w51.J(j31.class);
+                            J10.d = -3;
+                            J10.r = true;
+                            J10.e = false;
+                            arrayList2.add(J10);
+                            w51 J11 = w51.J(j31.class);
+                            J11.d = -4;
+                            J11.r = true;
+                            J11.e = false;
+                            arrayList2.add(J11);
+                        }
+                        if (!z18 && !z17) {
+                            if ((chat4 != null && ChatObject.canCreateTopic(chat4)) || UserObject.isBotForumWithEditableTopics(user4)) {
+                                int i25 = j31.a;
+                                w51 J12 = w51.J(j31.class);
+                                J12.d = -2;
+                                J12.B = -2L;
+                                J12.G = null;
+                                J12.q = false;
+                                arrayList2.add(J12);
+                                break;
+                            }
+                        }
+                        break;
+                }
+            }
+        }, false);
+        z21Var.setWillNotDraw(false);
+        z21Var.Y2.r = false;
+        z21Var.getContext();
+        gg.j0 j0Var = new gg.j0((ViewGroup) z21Var, 6);
+        z21Var.X2 = j0Var;
+        z21Var.setLayoutManager(j0Var);
+        frameLayout.addView(z21Var, w7.y5.d(-1, -1.0f, 119, 41.0f, 0.0f, 0.0f, 0.0f));
+        z21Var.j(new a31(this, 0));
+        if (isBotForumWithEditableTopics) {
+            k31 k31Var = new k31(activity, i10, f6Var);
+            this.v = k31Var;
+            k31Var.c(true, false, this.V == 0);
+            final int i13 = 2;
+            k31Var.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.u21
+                public final /* synthetic */ l31 b;
+
+                {
+                    this.b = this;
+                }
+
+                @Override // android.view.View.OnClickListener
+                public final void onClick(View view) {
+                    switch (i13) {
+                        case 0:
+                            l31 l31Var = this.b;
+                            Boolean bool = l31Var.T;
+                            boolean z10 = false;
+                            if (bool == null ? !l31Var.Q : !bool.booleanValue()) {
+                                z10 = true;
+                            }
+                            l31Var.d(z10);
+                            break;
+                        case 1:
+                            l31 l31Var2 = this.b;
+                            b31 b31Var = l31Var2.G;
+                            b31Var.x1(false);
+                            z21 z21Var2 = l31Var2.s;
+                            z21Var2.x1(false);
+                            l31Var2.J.a(false, true);
+                            AndroidUtilities.updateVisibleRows(b31Var);
+                            AndroidUtilities.updateVisibleRows(z21Var2);
+                            break;
+                        default:
+                            this.b.a0.run(0, Boolean.FALSE);
+                            break;
+                    }
+                }
+            });
+            viewGroup = frameLayout2;
+            viewGroup.addView(k31Var, w7.y5.d(64, 42.0f, 51, 0.0f, 48.0f, 0.0f, 0.0f));
+        } else {
+            viewGroup = frameLayout2;
+            this.v = null;
+        }
+        final int i14 = 2;
+        ViewGroup viewGroup2 = viewGroup;
+        b31 b31Var = new b31(activity, i10, new Utilities.Callback2(this) { // from class: org.telegram.ui.Components.y21
+            public final /* synthetic */ l31 b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // org.telegram.messenger.Utilities.Callback2
+            public final void run(Object obj, Object obj2) {
+                boolean z10;
+                int i122;
+                boolean z11;
+                long j11;
+                long j12;
+                TopicsController topicsController;
+                boolean z12;
+                TLRPC.User user;
+                long j13;
+                long j14;
+                long j15;
+                int i132 = i14;
+                l31 l31Var = this.b;
+                switch (i132) {
+                    case 0:
+                        ArrayList arrayList = (ArrayList) obj;
+                        k61 k61Var = (k61) obj2;
+                        boolean z13 = l31Var.f;
+                        int i142 = l31Var.b;
+                        MessagesController messagesController = MessagesController.getInstance(i142);
+                        long j16 = l31Var.c;
+                        long j17 = -j16;
+                        TLRPC.Chat chat = messagesController.getChat(Long.valueOf(j17));
+                        TLRPC.User user2 = MessagesController.getInstance(i142).getUser(Long.valueOf(j16));
+                        TopicsController topicsController2 = MessagesController.getInstance(i142).getTopicsController();
+                        ArrayList<TLRPC.TL_forumTopic> topics = topicsController2.getTopics(j17);
+                        boolean z14 = l31Var.e;
+                        int i15 = f31.a;
+                        w51 J = w51.J(f31.class);
+                        J.d = 0;
+                        J.B = 0L;
+                        J.G = null;
+                        J.q = z14;
+                        J.K(l31Var.V == 0);
+                        arrayList.add(J);
+                        if (topics != null) {
+                            int size = topics.size();
+                            int i16 = 0;
+                            boolean z15 = false;
+                            while (i16 < size) {
+                                TLRPC.TL_forumTopic tL_forumTopic = topics.get(i16);
+                                int i17 = i16 + 1;
+                                TLRPC.TL_forumTopic tL_forumTopic2 = tL_forumTopic;
+                                int i18 = size;
+                                if (z13) {
+                                    i122 = i17;
+                                    if (tL_forumTopic2.id == 1) {
+                                        size = i18;
+                                        i16 = i122;
+                                    }
+                                } else {
+                                    i122 = i17;
+                                }
+                                if (l31Var.e0.contains(Integer.valueOf(tL_forumTopic2.id))) {
+                                    size = i18;
+                                    i16 = i122;
+                                } else {
+                                    boolean z16 = tL_forumTopic2.pinned;
+                                    if (!z16 && z15) {
+                                        if (!arrayList.isEmpty()) {
+                                            ((w51) hg.k0.g(1, arrayList)).y |= 8;
+                                        }
+                                        k61Var.L();
+                                        z15 = false;
+                                    } else if (z16 && !z15) {
+                                        k61Var.M();
+                                        z15 = true;
+                                    }
+                                    w51 J2 = w51.J(f31.class);
+                                    J2.x = j16;
+                                    J2.d = tL_forumTopic2.id;
+                                    J2.G = tL_forumTopic2;
+                                    if (z14) {
+                                        z11 = z15;
+                                        J2.B = DialogObject.getPeerDialogId(tL_forumTopic2.from_id);
+                                        J2.I = false;
+                                    } else {
+                                        z11 = z15;
+                                    }
+                                    long j18 = l31Var.V;
+                                    if (z14) {
+                                        j11 = j18;
+                                        j12 = DialogObject.getPeerDialogId(tL_forumTopic2.from_id);
+                                    } else {
+                                        j11 = j18;
+                                        j12 = tL_forumTopic2.id;
+                                    }
+                                    J2.K(j11 == j12);
+                                    arrayList.add(J2);
+                                    size = i18;
+                                    i16 = i122;
+                                    z15 = z11;
+                                }
+                            }
+                            z10 = z15;
+                        } else {
+                            z10 = false;
+                        }
+                        if (z10) {
+                            k61Var.L();
+                        }
+                        if (topics != null && !topics.isEmpty() && !topicsController2.endIsReached(j17) && l31Var.n) {
+                            w51 J3 = w51.J(f31.class);
+                            J3.d = -2;
+                            J3.r = true;
+                            arrayList.add(J3);
+                            w51 J4 = w51.J(f31.class);
+                            J4.d = -3;
+                            J4.r = true;
+                            arrayList.add(J4);
+                            w51 J5 = w51.J(f31.class);
+                            J5.d = -4;
+                            J5.r = true;
+                            arrayList.add(J5);
+                        }
+                        if (!z13 && !z14) {
+                            if ((chat != null && ChatObject.canCreateTopic(chat)) || UserObject.isBotForumWithEditableTopics(user2)) {
+                                w51 J6 = w51.J(f31.class);
+                                J6.d = -2;
+                                J6.B = -2L;
+                                J6.G = null;
+                                arrayList.add(J6);
+                                break;
+                            }
+                        }
+                        break;
+                    case 1:
+                        ((Integer) obj).getClass();
+                        l31.b(l31Var, (ArrayList) obj2);
+                        break;
+                    default:
+                        ArrayList arrayList2 = (ArrayList) obj;
+                        k61 k61Var2 = (k61) obj2;
+                        boolean z17 = l31Var.e;
+                        int i19 = l31Var.b;
+                        MessagesController messagesController2 = MessagesController.getInstance(i19);
+                        long j19 = l31Var.c;
+                        long j20 = -j19;
+                        TLRPC.Chat chat2 = messagesController2.getChat(Long.valueOf(j20));
+                        TLRPC.User user3 = MessagesController.getInstance(i19).getUser(Long.valueOf(j19));
+                        TopicsController topicsController3 = MessagesController.getInstance(i19).getTopicsController();
+                        ArrayList<TLRPC.TL_forumTopic> topics2 = topicsController3.getTopics(j20);
+                        boolean z18 = l31Var.f;
+                        if (z18) {
+                            topicsController = topicsController3;
+                        } else {
+                            int i20 = j31.a;
+                            w51 J7 = w51.J(j31.class);
+                            J7.d = 0;
+                            topicsController = topicsController3;
+                            J7.B = 0L;
+                            J7.G = null;
+                            J7.q = z17;
+                            J7.y = z18 ? 1 : 0;
+                            J7.K(l31Var.V == 0);
+                            arrayList2.add(J7);
+                        }
+                        if (topics2 != null) {
+                            int size2 = topics2.size();
+                            z12 = false;
+                            int i21 = 0;
+                            while (i21 < size2) {
+                                TLRPC.TL_forumTopic tL_forumTopic3 = topics2.get(i21);
+                                i21++;
+                                int i22 = size2;
+                                TLRPC.TL_forumTopic tL_forumTopic4 = tL_forumTopic3;
+                                TLRPC.Chat chat3 = chat2;
+                                if (z18) {
+                                    user = user3;
+                                    if (tL_forumTopic4.id == 1) {
+                                        chat2 = chat3;
+                                        size2 = i22;
+                                        user3 = user;
+                                    }
+                                } else {
+                                    user = user3;
+                                }
+                                if (l31Var.e0.contains(Integer.valueOf(tL_forumTopic4.id))) {
+                                    chat2 = chat3;
+                                    size2 = i22;
+                                    user3 = user;
+                                } else {
+                                    boolean z19 = tL_forumTopic4.pinned;
+                                    if (!z19 && z12) {
+                                        k61Var2.L();
+                                        z12 = false;
+                                    } else if (z19 && !z12) {
+                                        k61Var2.M();
+                                        z12 = true;
+                                    }
+                                    int i23 = j31.a;
+                                    w51 J8 = w51.J(j31.class);
+                                    J8.x = j19;
+                                    J8.d = tL_forumTopic4.id;
+                                    J8.G = tL_forumTopic4;
+                                    if (z17) {
+                                        j13 = j19;
+                                        J8.B = DialogObject.getPeerDialogId(tL_forumTopic4.from_id);
+                                        J8.I = false;
+                                    } else {
+                                        j13 = j19;
+                                    }
+                                    long j21 = l31Var.V;
+                                    if (z17) {
+                                        j14 = j21;
+                                        j15 = DialogObject.getPeerDialogId(tL_forumTopic4.from_id);
+                                    } else {
+                                        j14 = j21;
+                                        j15 = tL_forumTopic4.id;
+                                    }
+                                    J8.K(j14 == j15);
+                                    arrayList2.add(J8);
+                                    chat2 = chat3;
+                                    size2 = i22;
+                                    user3 = user;
+                                    j19 = j13;
+                                }
+                            }
+                        } else {
+                            z12 = false;
+                        }
+                        TLRPC.Chat chat4 = chat2;
+                        TLRPC.User user4 = user3;
+                        if (z12) {
+                            k61Var2.L();
+                        }
+                        if (topics2 != null && !topics2.isEmpty() && !topicsController.endIsReached(j20) && l31Var.n) {
+                            int i24 = j31.a;
+                            w51 J9 = w51.J(j31.class);
+                            J9.d = -2;
+                            J9.r = true;
+                            J9.e = false;
+                            arrayList2.add(J9);
+                            w51 J10 = w51.J(j31.class);
+                            J10.d = -3;
+                            J10.r = true;
+                            J10.e = false;
+                            arrayList2.add(J10);
+                            w51 J11 = w51.J(j31.class);
+                            J11.d = -4;
+                            J11.r = true;
+                            J11.e = false;
+                            arrayList2.add(J11);
+                        }
+                        if (!z18 && !z17) {
+                            if ((chat4 != null && ChatObject.canCreateTopic(chat4)) || UserObject.isBotForumWithEditableTopics(user4)) {
+                                int i25 = j31.a;
+                                w51 J12 = w51.J(j31.class);
+                                J12.d = -2;
+                                J12.B = -2L;
+                                J12.G = null;
+                                J12.q = false;
+                                arrayList2.add(J12);
+                                break;
+                            }
+                        }
+                        break;
+                }
+            }
+        }, new q21(this), new q21(this), f6Var);
+        this.G = b31Var;
+        final int i15 = 1;
+        b31Var.C1(new Utilities.Callback2(this) { // from class: org.telegram.ui.Components.y21
+            public final /* synthetic */ l31 b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // org.telegram.messenger.Utilities.Callback2
+            public final void run(Object obj, Object obj2) {
+                boolean z10;
+                int i122;
+                boolean z11;
+                long j11;
+                long j12;
+                TopicsController topicsController;
+                boolean z12;
+                TLRPC.User user;
+                long j13;
+                long j14;
+                long j15;
+                int i132 = i15;
+                l31 l31Var = this.b;
+                switch (i132) {
+                    case 0:
+                        ArrayList arrayList = (ArrayList) obj;
+                        k61 k61Var = (k61) obj2;
+                        boolean z13 = l31Var.f;
+                        int i142 = l31Var.b;
+                        MessagesController messagesController = MessagesController.getInstance(i142);
+                        long j16 = l31Var.c;
+                        long j17 = -j16;
+                        TLRPC.Chat chat = messagesController.getChat(Long.valueOf(j17));
+                        TLRPC.User user2 = MessagesController.getInstance(i142).getUser(Long.valueOf(j16));
+                        TopicsController topicsController2 = MessagesController.getInstance(i142).getTopicsController();
+                        ArrayList<TLRPC.TL_forumTopic> topics = topicsController2.getTopics(j17);
+                        boolean z14 = l31Var.e;
+                        int i152 = f31.a;
+                        w51 J = w51.J(f31.class);
+                        J.d = 0;
+                        J.B = 0L;
+                        J.G = null;
+                        J.q = z14;
+                        J.K(l31Var.V == 0);
+                        arrayList.add(J);
+                        if (topics != null) {
+                            int size = topics.size();
+                            int i16 = 0;
+                            boolean z15 = false;
+                            while (i16 < size) {
+                                TLRPC.TL_forumTopic tL_forumTopic = topics.get(i16);
+                                int i17 = i16 + 1;
+                                TLRPC.TL_forumTopic tL_forumTopic2 = tL_forumTopic;
+                                int i18 = size;
+                                if (z13) {
+                                    i122 = i17;
+                                    if (tL_forumTopic2.id == 1) {
+                                        size = i18;
+                                        i16 = i122;
+                                    }
+                                } else {
+                                    i122 = i17;
+                                }
+                                if (l31Var.e0.contains(Integer.valueOf(tL_forumTopic2.id))) {
+                                    size = i18;
+                                    i16 = i122;
+                                } else {
+                                    boolean z16 = tL_forumTopic2.pinned;
+                                    if (!z16 && z15) {
+                                        if (!arrayList.isEmpty()) {
+                                            ((w51) hg.k0.g(1, arrayList)).y |= 8;
+                                        }
+                                        k61Var.L();
+                                        z15 = false;
+                                    } else if (z16 && !z15) {
+                                        k61Var.M();
+                                        z15 = true;
+                                    }
+                                    w51 J2 = w51.J(f31.class);
+                                    J2.x = j16;
+                                    J2.d = tL_forumTopic2.id;
+                                    J2.G = tL_forumTopic2;
+                                    if (z14) {
+                                        z11 = z15;
+                                        J2.B = DialogObject.getPeerDialogId(tL_forumTopic2.from_id);
+                                        J2.I = false;
+                                    } else {
+                                        z11 = z15;
+                                    }
+                                    long j18 = l31Var.V;
+                                    if (z14) {
+                                        j11 = j18;
+                                        j12 = DialogObject.getPeerDialogId(tL_forumTopic2.from_id);
+                                    } else {
+                                        j11 = j18;
+                                        j12 = tL_forumTopic2.id;
+                                    }
+                                    J2.K(j11 == j12);
+                                    arrayList.add(J2);
+                                    size = i18;
+                                    i16 = i122;
+                                    z15 = z11;
+                                }
+                            }
+                            z10 = z15;
+                        } else {
+                            z10 = false;
+                        }
+                        if (z10) {
+                            k61Var.L();
+                        }
+                        if (topics != null && !topics.isEmpty() && !topicsController2.endIsReached(j17) && l31Var.n) {
+                            w51 J3 = w51.J(f31.class);
+                            J3.d = -2;
+                            J3.r = true;
+                            arrayList.add(J3);
+                            w51 J4 = w51.J(f31.class);
+                            J4.d = -3;
+                            J4.r = true;
+                            arrayList.add(J4);
+                            w51 J5 = w51.J(f31.class);
+                            J5.d = -4;
+                            J5.r = true;
+                            arrayList.add(J5);
+                        }
+                        if (!z13 && !z14) {
+                            if ((chat != null && ChatObject.canCreateTopic(chat)) || UserObject.isBotForumWithEditableTopics(user2)) {
+                                w51 J6 = w51.J(f31.class);
+                                J6.d = -2;
+                                J6.B = -2L;
+                                J6.G = null;
+                                arrayList.add(J6);
+                                break;
+                            }
+                        }
+                        break;
+                    case 1:
+                        ((Integer) obj).getClass();
+                        l31.b(l31Var, (ArrayList) obj2);
+                        break;
+                    default:
+                        ArrayList arrayList2 = (ArrayList) obj;
+                        k61 k61Var2 = (k61) obj2;
+                        boolean z17 = l31Var.e;
+                        int i19 = l31Var.b;
+                        MessagesController messagesController2 = MessagesController.getInstance(i19);
+                        long j19 = l31Var.c;
+                        long j20 = -j19;
+                        TLRPC.Chat chat2 = messagesController2.getChat(Long.valueOf(j20));
+                        TLRPC.User user3 = MessagesController.getInstance(i19).getUser(Long.valueOf(j19));
+                        TopicsController topicsController3 = MessagesController.getInstance(i19).getTopicsController();
+                        ArrayList<TLRPC.TL_forumTopic> topics2 = topicsController3.getTopics(j20);
+                        boolean z18 = l31Var.f;
+                        if (z18) {
+                            topicsController = topicsController3;
+                        } else {
+                            int i20 = j31.a;
+                            w51 J7 = w51.J(j31.class);
+                            J7.d = 0;
+                            topicsController = topicsController3;
+                            J7.B = 0L;
+                            J7.G = null;
+                            J7.q = z17;
+                            J7.y = z18 ? 1 : 0;
+                            J7.K(l31Var.V == 0);
+                            arrayList2.add(J7);
+                        }
+                        if (topics2 != null) {
+                            int size2 = topics2.size();
+                            z12 = false;
+                            int i21 = 0;
+                            while (i21 < size2) {
+                                TLRPC.TL_forumTopic tL_forumTopic3 = topics2.get(i21);
+                                i21++;
+                                int i22 = size2;
+                                TLRPC.TL_forumTopic tL_forumTopic4 = tL_forumTopic3;
+                                TLRPC.Chat chat3 = chat2;
+                                if (z18) {
+                                    user = user3;
+                                    if (tL_forumTopic4.id == 1) {
+                                        chat2 = chat3;
+                                        size2 = i22;
+                                        user3 = user;
+                                    }
+                                } else {
+                                    user = user3;
+                                }
+                                if (l31Var.e0.contains(Integer.valueOf(tL_forumTopic4.id))) {
+                                    chat2 = chat3;
+                                    size2 = i22;
+                                    user3 = user;
+                                } else {
+                                    boolean z19 = tL_forumTopic4.pinned;
+                                    if (!z19 && z12) {
+                                        k61Var2.L();
+                                        z12 = false;
+                                    } else if (z19 && !z12) {
+                                        k61Var2.M();
+                                        z12 = true;
+                                    }
+                                    int i23 = j31.a;
+                                    w51 J8 = w51.J(j31.class);
+                                    J8.x = j19;
+                                    J8.d = tL_forumTopic4.id;
+                                    J8.G = tL_forumTopic4;
+                                    if (z17) {
+                                        j13 = j19;
+                                        J8.B = DialogObject.getPeerDialogId(tL_forumTopic4.from_id);
+                                        J8.I = false;
+                                    } else {
+                                        j13 = j19;
+                                    }
+                                    long j21 = l31Var.V;
+                                    if (z17) {
+                                        j14 = j21;
+                                        j15 = DialogObject.getPeerDialogId(tL_forumTopic4.from_id);
+                                    } else {
+                                        j14 = j21;
+                                        j15 = tL_forumTopic4.id;
+                                    }
+                                    J8.K(j14 == j15);
+                                    arrayList2.add(J8);
+                                    chat2 = chat3;
+                                    size2 = i22;
+                                    user3 = user;
+                                    j19 = j13;
+                                }
+                            }
+                        } else {
+                            z12 = false;
+                        }
+                        TLRPC.Chat chat4 = chat2;
+                        TLRPC.User user4 = user3;
+                        if (z12) {
+                            k61Var2.L();
+                        }
+                        if (topics2 != null && !topics2.isEmpty() && !topicsController.endIsReached(j20) && l31Var.n) {
+                            int i24 = j31.a;
+                            w51 J9 = w51.J(j31.class);
+                            J9.d = -2;
+                            J9.r = true;
+                            J9.e = false;
+                            arrayList2.add(J9);
+                            w51 J10 = w51.J(j31.class);
+                            J10.d = -3;
+                            J10.r = true;
+                            J10.e = false;
+                            arrayList2.add(J10);
+                            w51 J11 = w51.J(j31.class);
+                            J11.d = -4;
+                            J11.r = true;
+                            J11.e = false;
+                            arrayList2.add(J11);
+                        }
+                        if (!z18 && !z17) {
+                            if ((chat4 != null && ChatObject.canCreateTopic(chat4)) || UserObject.isBotForumWithEditableTopics(user4)) {
+                                int i25 = j31.a;
+                                w51 J12 = w51.J(j31.class);
+                                J12.d = -2;
+                                J12.B = -2L;
+                                J12.G = null;
+                                J12.q = false;
+                                arrayList2.add(J12);
+                                break;
+                            }
+                        }
+                        break;
+                }
+            }
+        }, false);
+        b31Var.Y2.r = false;
+        b31Var.setClipToPadding(false);
+        b31Var.setClipChildren(false);
+        viewGroup2.addView(b31Var, w7.y5.d(-1, -1.0f, 119, 0.0f, isBotForumWithEditableTopics ? 90.0f : 48.0f, 0.0f, 0.0f));
+        b31Var.j(new a31(this, 1));
+        final int i16 = 0;
+        ImageView i17 = i(activity, R.drawable.menu_sidebar_left, new View.OnClickListener(this) { // from class: org.telegram.ui.Components.u21
+            public final /* synthetic */ l31 b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                switch (i16) {
+                    case 0:
+                        l31 l31Var = this.b;
+                        Boolean bool = l31Var.T;
+                        boolean z10 = false;
+                        if (bool == null ? !l31Var.Q : !bool.booleanValue()) {
+                            z10 = true;
+                        }
+                        l31Var.d(z10);
+                        break;
+                    case 1:
+                        l31 l31Var2 = this.b;
+                        b31 b31Var2 = l31Var2.G;
+                        b31Var2.x1(false);
+                        z21 z21Var2 = l31Var2.s;
+                        z21Var2.x1(false);
+                        l31Var2.J.a(false, true);
+                        AndroidUtilities.updateVisibleRows(b31Var2);
+                        AndroidUtilities.updateVisibleRows(z21Var2);
+                        break;
+                    default:
+                        this.b.a0.run(0, Boolean.FALSE);
+                        break;
+                }
+            }
+        });
+        this.y = i17;
+        final int i18 = 0;
+        ImageView i19 = i(activity, R.drawable.menu_sidebar_left, new View.OnClickListener(this) { // from class: org.telegram.ui.Components.u21
+            public final /* synthetic */ l31 b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                switch (i18) {
+                    case 0:
+                        l31 l31Var = this.b;
+                        Boolean bool = l31Var.T;
+                        boolean z10 = false;
+                        if (bool == null ? !l31Var.Q : !bool.booleanValue()) {
+                            z10 = true;
+                        }
+                        l31Var.d(z10);
+                        break;
+                    case 1:
+                        l31 l31Var2 = this.b;
+                        b31 b31Var2 = l31Var2.G;
+                        b31Var2.x1(false);
+                        z21 z21Var2 = l31Var2.s;
+                        z21Var2.x1(false);
+                        l31Var2.J.a(false, true);
+                        AndroidUtilities.updateVisibleRows(b31Var2);
+                        AndroidUtilities.updateVisibleRows(z21Var2);
+                        break;
+                    default:
+                        this.b.a0.run(0, Boolean.FALSE);
+                        break;
+                }
+            }
+        });
+        this.E = i19;
+        frameLayout.addView(i17, w7.y5.e(44, 36, 51));
+        viewGroup2.addView(i19, w7.y5.e(64, 48, 51));
+        final int i20 = 1;
+        ImageView i21 = i(activity, R.drawable.msg_select, new View.OnClickListener(this) { // from class: org.telegram.ui.Components.u21
+            public final /* synthetic */ l31 b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                switch (i20) {
+                    case 0:
+                        l31 l31Var = this.b;
+                        Boolean bool = l31Var.T;
+                        boolean z10 = false;
+                        if (bool == null ? !l31Var.Q : !bool.booleanValue()) {
+                            z10 = true;
+                        }
+                        l31Var.d(z10);
+                        break;
+                    case 1:
+                        l31 l31Var2 = this.b;
+                        b31 b31Var2 = l31Var2.G;
+                        b31Var2.x1(false);
+                        z21 z21Var2 = l31Var2.s;
+                        z21Var2.x1(false);
+                        l31Var2.J.a(false, true);
+                        AndroidUtilities.updateVisibleRows(b31Var2);
+                        AndroidUtilities.updateVisibleRows(z21Var2);
+                        break;
+                    default:
+                        this.b.a0.run(0, Boolean.FALSE);
+                        break;
+                }
+            }
+        });
+        this.w = i21;
+        final int i22 = 1;
+        ImageView i23 = i(activity, R.drawable.msg_select, new View.OnClickListener(this) { // from class: org.telegram.ui.Components.u21
+            public final /* synthetic */ l31 b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                switch (i22) {
+                    case 0:
+                        l31 l31Var = this.b;
+                        Boolean bool = l31Var.T;
+                        boolean z10 = false;
+                        if (bool == null ? !l31Var.Q : !bool.booleanValue()) {
+                            z10 = true;
+                        }
+                        l31Var.d(z10);
+                        break;
+                    case 1:
+                        l31 l31Var2 = this.b;
+                        b31 b31Var2 = l31Var2.G;
+                        b31Var2.x1(false);
+                        z21 z21Var2 = l31Var2.s;
+                        z21Var2.x1(false);
+                        l31Var2.J.a(false, true);
+                        AndroidUtilities.updateVisibleRows(b31Var2);
+                        AndroidUtilities.updateVisibleRows(z21Var2);
+                        break;
+                    default:
+                        this.b.a0.run(0, Boolean.FALSE);
+                        break;
+                }
+            }
+        });
+        this.x = i23;
+        frameLayout.addView(i21, w7.y5.e(44, 36, 51));
+        viewGroup2.addView(i23, w7.y5.e(64, 48, 51));
+        MessagesController.getInstance(i10).getTopicsController().loadTopics(j10, false, 3);
+        SharedPreferences mainSettings = MessagesController.getInstance(i10).getMainSettings();
+        if (org.telegram.messenger.l0.u("topicssidetabs", j3, mainSettings, false)) {
+            this.R = 1.0f;
+            this.Q = true;
+        }
+        boolean u10 = org.telegram.messenger.l0.u("topicssidetabsb", j3, mainSettings, false);
+        this.P = u10;
+        i19.setImageResource(u10 ? R.drawable.menu_sidebar_top : R.drawable.menu_sidebar_bottom);
+        f(false);
+        g();
+        n();
+        o();
     }
 
-    private void setLayout(boolean z10) {
-        if (this.x == z10) {
+    public static void a(l31 l31Var, w51 w51Var) {
+        if (l31Var.e) {
+            Utilities.Callback2 callback2 = l31Var.c0;
+            if (callback2 != null) {
+                callback2.run(Long.valueOf(w51Var.B), Boolean.FALSE);
+                return;
+            }
             return;
         }
-        this.x = z10;
-        this.n.setRoundRadius(AndroidUtilities.dp(z10 ? 36.0f : 3.0f));
-        this.h.setPadding(0, AndroidUtilities.dp(z10 ? 7.0f : 4.0f), 0, 0);
-        int dp = z10 ? AndroidUtilities.dp(28.0f) : AndroidUtilities.dp(30.0f);
-        FrameLayout.LayoutParams layoutParams = this.e;
-        layoutParams.width = dp;
-        layoutParams.height = z10 ? AndroidUtilities.dp(28.0f) : AndroidUtilities.dp(30.0f);
+        if (w51Var.B == -2) {
+            Runnable runnable = l31Var.b0;
+            if (runnable != null) {
+                runnable.run();
+                return;
+            }
+            return;
+        }
+        Utilities.Callback2 callback22 = l31Var.a0;
+        if (callback22 != null) {
+            callback22.run(Integer.valueOf(w51Var.d), Boolean.FALSE);
+        }
     }
 
-    public final void a(long j3, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
-        boolean z11;
-        boolean z12;
-        boolean z13;
-        setLayout(false);
-        long j10 = this.M;
-        long j11 = tL_forumTopic.id;
-        boolean z14 = j10 == j11;
-        this.O = false;
-        this.M = j11;
-        this.N = false;
-        String str = tL_forumTopic.title;
-        TextView textView = this.s;
-        textView.setText(str);
-        textView.setVisibility(0);
-        int i10 = tL_forumTopic.id;
-        w9 w9Var = this.n;
-        if (i10 == 1) {
-            this.O = true;
-            w9Var.b();
-            w9Var.setAnimatedEmojiDrawable(null);
-            w9Var.setImageResource(R.drawable.msg_filled_general);
-            w9Var.setScaleX(0.66f);
-            w9Var.setScaleY(0.66f);
-        } else if (tL_forumTopic.icon_emoji_id != 0) {
-            w9Var.b();
-            w9Var.setAnimatedEmojiDrawable(q5.n(UserConfig.selectedAccount, tL_forumTopic.icon_emoji_id, null, 3));
-            w9Var.setScaleX(1.0f);
-            w9Var.setScaleY(1.0f);
+    public static void b(l31 l31Var, ArrayList arrayList) {
+        long j3 = l31Var.c;
+        TopicsController topicsController = MessagesController.getInstance(l31Var.b).getTopicsController();
+        ArrayList<Integer> arrayList2 = new ArrayList<>();
+        int i10 = 0;
+        while (i10 < arrayList.size()) {
+            i10 = com.google.android.gms.internal.vision.e2.e(((w51) arrayList.get(i10)).d, i10, 1, arrayList2);
+        }
+        long j10 = -j3;
+        topicsController.reorderPinnedTopics(j10, arrayList2);
+        topicsController.sortTopics(j10, false);
+    }
+
+    /* JADX WARN: Type inference failed for: r6v10, types: [boolean, int] */
+    /* JADX WARN: Type inference failed for: r6v14 */
+    /* JADX WARN: Type inference failed for: r6v22 */
+    /* JADX WARN: Type inference failed for: r6v23 */
+    public static boolean c(final l31 l31Var, w51 w51Var, View view) {
+        org.telegram.ui.ActionBar.f6 f6Var;
+        int i10;
+        final int i11;
+        byte b10;
+        final v70 v70Var;
+        boolean z10;
+        ?? r62;
+        v70 v70Var2;
+        org.telegram.ui.ActionBar.f6 f6Var2 = l31Var.d;
+        org.telegram.ui.zn znVar = l31Var.h;
+        long j3 = l31Var.c;
+        int i12 = l31Var.b;
+        final int i13 = 0;
+        if (l31Var.G.c3 || l31Var.s.c3) {
+            return false;
+        }
+        Object obj = w51Var.G;
+        if (!(obj instanceof TLRPC.TL_forumTopic)) {
+            return false;
+        }
+        final TLRPC.TL_forumTopic tL_forumTopic = (TLRPC.TL_forumTopic) obj;
+        MessagesController messagesController = MessagesController.getInstance(i12);
+        TLRPC.Chat chat = j3 < 0 ? messagesController.getChat(Long.valueOf(-j3)) : null;
+        TLRPC.User user = j3 > 0 ? messagesController.getUser(Long.valueOf(j3)) : null;
+        final v70 I = v70.I(znVar, view);
+        if (ChatObject.isMonoForum(chat)) {
+            long peerDialogId = DialogObject.getPeerDialogId(tL_forumTopic.from_id);
+            if (peerDialogId == 0 || !ChatObject.canManageMonoForum(i12, chat)) {
+                return false;
+            }
+            TLRPC.Chat chat2 = chat;
+            I.c(R.drawable.msg_clear, LocaleController.getString(R.string.ClearHistory), new ai.p8(l31Var, I, peerDialogId, chat2, 29), false);
+            long j10 = chat2.id;
+            if (ChatObject.isMonoForum(chat2) && ChatObject.canManageMonoForum(i12, chat2)) {
+                long j11 = chat2.linked_monoforum_id;
+                if (j11 != 0) {
+                    j10 = j11;
+                }
+            }
+            TLRPC.Chat chat3 = MessagesController.getInstance(i12).getChat(Long.valueOf(j10));
+            TLRPC.User user2 = MessagesController.getInstance(i12).getUser(Long.valueOf(peerDialogId));
+            if (user2 == null || !ChatObject.canBlockUsers(chat3)) {
+                v70Var2 = I;
+                i10 = 8;
+            } else {
+                I.c(R.drawable.msg_remove, LocaleController.getString(R.string.BanUserMonoforum), null, false);
+                org.telegram.ui.ActionBar.f1 y3 = I.y();
+                i10 = 8;
+                y3.setVisibility(8);
+                v70Var2 = I;
+                MessagesController.getInstance(i12).checkIsInChat(true, chat3, user2, new r21(l31Var, y3, I, j10, user2, chat3));
+            }
+            v70Var = v70Var2;
+            f6Var = f6Var2;
+            r62 = 1;
+            i11 = 2;
+            b10 = 0;
         } else {
-            w9Var.setAnimatedEmojiDrawable(null);
-            w9Var.setImageDrawable(ng.d.e(tL_forumTopic));
-            w9Var.setScaleX(1.0f);
-            w9Var.setScaleY(1.0f);
+            TLRPC.Chat chat4 = chat;
+            if (ChatObject.canManageTopics(chat4) || UserObject.isBotForumWithEditableTopics(user)) {
+                boolean z11 = tL_forumTopic.pinned;
+                I.c(z11 ? R.drawable.msg_unpin : R.drawable.msg_pin, LocaleController.getString(z11 ? R.string.DialogUnpin : R.string.DialogPin), new vn0(l31Var, I, messagesController, tL_forumTopic), false);
+                if (tL_forumTopic.pinned) {
+                    I.c(R.drawable.tabs_reorder, LocaleController.getString(R.string.FilterReorder), new s21(l31Var, i13), false);
+                }
+            }
+            if (ChatObject.canManageTopics(chat4) || UserObject.isBotForumWithEditableTopics(user)) {
+                I.c(R.drawable.outline_profile_edit_24, LocaleController.getString(R.string.EditTopic), new Runnable(l31Var) { // from class: org.telegram.ui.Components.t21
+                    public final /* synthetic */ l31 b;
+
+                    {
+                        this.b = l31Var;
+                    }
+
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        boolean z12;
+                        int i14 = i13;
+                        l31 l31Var2 = this.b;
+                        TLRPC.TL_forumTopic tL_forumTopic2 = tL_forumTopic;
+                        v70 v70Var3 = I;
+                        switch (i14) {
+                            case 0:
+                                v70Var3.u();
+                                l31Var2.h.presentFragment(bf1.a0(-l31Var2.c, tL_forumTopic2.id));
+                                break;
+                            case 1:
+                                l31Var2.getClass();
+                                v70Var3.u();
+                                MessagesController.getInstance(l31Var2.b).getTopicsController().toggleCloseTopic(-l31Var2.c, tL_forumTopic2.id, true ^ tL_forumTopic2.closed);
+                                break;
+                            default:
+                                v70Var3.u();
+                                HashSet hashSet = new HashSet();
+                                hashSet.add(Integer.valueOf(tL_forumTopic2.id));
+                                sh shVar = new sh(13);
+                                l31 l31Var3 = this.b;
+                                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(l31Var3.getContext());
+                                String pluralString = LocaleController.getPluralString("DeleteTopics", hashSet.size());
+                                org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
+                                b2Var.R = pluralString;
+                                ArrayList arrayList = new ArrayList(hashSet);
+                                long j12 = l31Var3.V;
+                                if (hashSet.size() == 1) {
+                                    z12 = false;
+                                    b2Var.T = LocaleController.formatString(R.string.DeleteSelectedTopic, MessagesController.getInstance(l31Var3.b).getTopicsController().findTopic(-l31Var3.c, ((Integer) arrayList.get(0)).intValue()).title);
+                                } else {
+                                    z12 = false;
+                                    b2Var.T = LocaleController.getString(R.string.DeleteSelectedTopics);
+                                }
+                                alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new org.telegram.ui.xe(l31Var3, arrayList, j12, hashSet, shVar));
+                                alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new ig0(15));
+                                b2Var.show();
+                                TextView textView = (TextView) b2Var.d(-1);
+                                if (textView != null) {
+                                    textView.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.q7, z12));
+                                    break;
+                                }
+                                break;
+                        }
+                    }
+                }, false);
+            }
+            long j12 = l31Var.c;
+            long j13 = tL_forumTopic.id;
+            int currentAccount = znVar.getCurrentAccount();
+            org.telegram.ui.ActionBar.f6 resourceProvider = znVar.getResourceProvider();
+            ko koVar = new ko(I, currentAccount, j12, j13, znVar, resourceProvider);
+            v70 J = I.J();
+            J.c(R.drawable.msg_arrow_back, LocaleController.getString(R.string.Back), new org.telegram.ui.mu0(I, 25), false);
+            J.c(R.drawable.msg_tone_on, LocaleController.getString(R.string.SoundOn), new org.telegram.messenger.he(I, currentAccount, j12, j13, J, znVar, resourceProvider), false);
+            org.telegram.ui.ActionBar.f1 y10 = J.y();
+            J.c(R.drawable.msg_mute_period, LocaleController.getString(R.string.MuteForPopup), new ai.c9(I, resourceProvider, currentAccount, koVar, 17), false);
+            f6Var = f6Var2;
+            J.c(R.drawable.msg_customize, LocaleController.getString(R.string.NotificationsCustomize), new org.telegram.messenger.t2(I, j12, j13, znVar, resourceProvider, 7), false);
+            J.c(0, "", new ai.p0(I, currentAccount, j12, j13, znVar, resourceProvider), false);
+            new org.telegram.messenger.o9(currentAccount, j12, j13, J.y(), y10).run();
+            boolean isDialogMuted = messagesController.isDialogMuted(j3, tL_forumTopic.id);
+            i10 = 8;
+            i11 = 2;
+            b10 = 0;
+            v70Var = I;
+            v70Var.c(isDialogMuted ? R.drawable.msg_unmute : R.drawable.msg_mute, LocaleController.getString(isDialogMuted ? R.string.Unmute : R.string.Mute), new ai.m3(l31Var, messagesController, tL_forumTopic, I, J, 25), false);
+            if (!ChatObject.canManageTopic(i12, chat4, tL_forumTopic) || UserObject.isBotForum(user)) {
+                z10 = true;
+            } else {
+                boolean z12 = tL_forumTopic.closed;
+                int i14 = z12 ? R.drawable.msg_topic_restart : R.drawable.msg_topic_close;
+                String string = LocaleController.getString(z12 ? R.string.RestartTopic : R.string.CloseTopic);
+                z10 = true;
+                final boolean z13 = true ? 1 : 0;
+                v70Var.c(i14, string, new Runnable(l31Var) { // from class: org.telegram.ui.Components.t21
+                    public final /* synthetic */ l31 b;
+
+                    {
+                        this.b = l31Var;
+                    }
+
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        boolean z122;
+                        int i142 = z13;
+                        l31 l31Var2 = this.b;
+                        TLRPC.TL_forumTopic tL_forumTopic2 = tL_forumTopic;
+                        v70 v70Var3 = v70Var;
+                        switch (i142) {
+                            case 0:
+                                v70Var3.u();
+                                l31Var2.h.presentFragment(bf1.a0(-l31Var2.c, tL_forumTopic2.id));
+                                break;
+                            case 1:
+                                l31Var2.getClass();
+                                v70Var3.u();
+                                MessagesController.getInstance(l31Var2.b).getTopicsController().toggleCloseTopic(-l31Var2.c, tL_forumTopic2.id, true ^ tL_forumTopic2.closed);
+                                break;
+                            default:
+                                v70Var3.u();
+                                HashSet hashSet = new HashSet();
+                                hashSet.add(Integer.valueOf(tL_forumTopic2.id));
+                                sh shVar = new sh(13);
+                                l31 l31Var3 = this.b;
+                                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(l31Var3.getContext());
+                                String pluralString = LocaleController.getPluralString("DeleteTopics", hashSet.size());
+                                org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
+                                b2Var.R = pluralString;
+                                ArrayList arrayList = new ArrayList(hashSet);
+                                long j122 = l31Var3.V;
+                                if (hashSet.size() == 1) {
+                                    z122 = false;
+                                    b2Var.T = LocaleController.formatString(R.string.DeleteSelectedTopic, MessagesController.getInstance(l31Var3.b).getTopicsController().findTopic(-l31Var3.c, ((Integer) arrayList.get(0)).intValue()).title);
+                                } else {
+                                    z122 = false;
+                                    b2Var.T = LocaleController.getString(R.string.DeleteSelectedTopics);
+                                }
+                                alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new org.telegram.ui.xe(l31Var3, arrayList, j122, hashSet, shVar));
+                                alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new ig0(15));
+                                b2Var.show();
+                                TextView textView = (TextView) b2Var.d(-1);
+                                if (textView != null) {
+                                    textView.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.q7, z122));
+                                    break;
+                                }
+                                break;
+                        }
+                    }
+                }, false);
+            }
+            r62 = z10;
+            if (ChatObject.canDeleteTopic(i12, chat4, tL_forumTopic)) {
+                v70Var.c(R.drawable.msg_delete, LocaleController.getPluralString("DeleteTopics", z10 ? 1 : 0), new Runnable(l31Var) { // from class: org.telegram.ui.Components.t21
+                    public final /* synthetic */ l31 b;
+
+                    {
+                        this.b = l31Var;
+                    }
+
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        boolean z122;
+                        int i142 = i11;
+                        l31 l31Var2 = this.b;
+                        TLRPC.TL_forumTopic tL_forumTopic2 = tL_forumTopic;
+                        v70 v70Var3 = v70Var;
+                        switch (i142) {
+                            case 0:
+                                v70Var3.u();
+                                l31Var2.h.presentFragment(bf1.a0(-l31Var2.c, tL_forumTopic2.id));
+                                break;
+                            case 1:
+                                l31Var2.getClass();
+                                v70Var3.u();
+                                MessagesController.getInstance(l31Var2.b).getTopicsController().toggleCloseTopic(-l31Var2.c, tL_forumTopic2.id, true ^ tL_forumTopic2.closed);
+                                break;
+                            default:
+                                v70Var3.u();
+                                HashSet hashSet = new HashSet();
+                                hashSet.add(Integer.valueOf(tL_forumTopic2.id));
+                                sh shVar = new sh(13);
+                                l31 l31Var3 = this.b;
+                                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(l31Var3.getContext());
+                                String pluralString = LocaleController.getPluralString("DeleteTopics", hashSet.size());
+                                org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
+                                b2Var.R = pluralString;
+                                ArrayList arrayList = new ArrayList(hashSet);
+                                long j122 = l31Var3.V;
+                                if (hashSet.size() == 1) {
+                                    z122 = false;
+                                    b2Var.T = LocaleController.formatString(R.string.DeleteSelectedTopic, MessagesController.getInstance(l31Var3.b).getTopicsController().findTopic(-l31Var3.c, ((Integer) arrayList.get(0)).intValue()).title);
+                                } else {
+                                    z122 = false;
+                                    b2Var.T = LocaleController.getString(R.string.DeleteSelectedTopics);
+                                }
+                                alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new org.telegram.ui.xe(l31Var3, arrayList, j122, hashSet, shVar));
+                                alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new ig0(15));
+                                b2Var.show();
+                                TextView textView = (TextView) b2Var.d(-1);
+                                if (textView != null) {
+                                    textView.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.q7, z122));
+                                    break;
+                                }
+                                break;
+                        }
+                    }
+                }, false);
+                r62 = z10;
+            }
         }
-        setSelected(z10);
-        g();
-        boolean isDialogMuted = MessagesController.getInstance(this.a).isDialogMuted(j3, tL_forumTopic.id);
-        int i11 = tL_forumTopic.unread_count;
-        if (tL_forumTopic.unread_mentions_count > 0) {
-            z11 = z14;
-            z12 = isDialogMuted;
-            z13 = true;
+        if (view instanceof g31) {
+            cw cwVar = new cw(i11, b10);
+            Paint paint = new Paint((int) r62);
+            cwVar.c = paint;
+            cwVar.b = new RectF();
+            paint.setColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.G8, f6Var));
+            v70Var.W(cwVar);
+            v70Var.a0(AndroidUtilities.dp(16.0f), 0.0f);
         } else {
-            z11 = z14;
-            z12 = isDialogMuted;
-            z13 = false;
+            int dp = AndroidUtilities.dp(5.0f);
+            int dp2 = AndroidUtilities.dp(5.0f);
+            int v02 = org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.d6, f6Var);
+            float f7 = b10;
+            float f10 = dp;
+            float f11 = dp2;
+            float[] fArr = new float[i10];
+            fArr[b10] = f7;
+            fArr[r62] = f7;
+            fArr[i11] = f10;
+            fArr[3] = f10;
+            fArr[4] = f11;
+            fArr[5] = f11;
+            fArr[6] = f7;
+            fArr[7] = f7;
+            ShapeDrawable shapeDrawable = new ShapeDrawable(new RoundRectShape(fArr, null, null));
+            shapeDrawable.getPaint().setColor(v02);
+            v70Var.W(shapeDrawable);
         }
-        d(i11, z12, z13, tL_forumTopic.unread_reactions_count > 0, z11);
-        boolean z15 = tL_forumTopic.pinned;
-        if (this.y != z15) {
-            this.y = z15;
-        }
-        h();
+        v70Var.Z();
+        return r62;
     }
 
-    public final void b(boolean z10, boolean z11) {
-        setLayout(z10);
-        this.O = true;
-        this.N = true;
-        String string = LocaleController.getString(R.string.NewTopic);
-        TextView textView = this.s;
-        textView.setText(string);
-        textView.setVisibility(0);
-        w9 w9Var = this.n;
-        w9Var.b();
-        w9Var.setAnimatedEmojiDrawable(null);
-        w9Var.setImageResource(R.drawable.emoji_tabs_new3);
-        w9Var.setScaleX(1.0f);
-        w9Var.setScaleY(1.0f);
-        setSelected(z11);
-        g();
-        h();
-        d(0, true, false, false, false);
-        if (this.y) {
-            this.y = false;
-        }
+    public static ImageView i(Context context, int i10, View.OnClickListener onClickListener) {
+        ImageView imageView = new ImageView(context);
+        imageView.setImageResource(i10);
+        imageView.setScaleType(ImageView.ScaleType.CENTER);
+        imageView.setOnClickListener(onClickListener);
+        w7.b6.a(imageView);
+        return imageView;
     }
 
-    public final void c(boolean z10, boolean z11, boolean z12) {
-        setLayout(z11);
-        this.M = -1L;
-        this.O = true;
-        this.N = false;
-        String string = LocaleController.getString(z10 ? R.string.BotForumNewTopic : R.string.AllTopicsSide);
-        TextView textView = this.s;
-        textView.setText(string);
-        textView.setVisibility(z10 ? 8 : 0);
-        w9 w9Var = this.n;
-        w9Var.b();
-        w9Var.setAnimatedEmojiDrawable(null);
+    private void setAttached(boolean z10) {
+        if (this.W == z10) {
+            return;
+        }
+        this.W = z10;
+        long j3 = this.c;
+        int i10 = this.b;
         if (z10) {
-            e31 e31Var = new e31(getContext());
-            e31Var.b.setColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Oh, this.b));
-            w9Var.setImageDrawable(e31Var);
+            NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.topicsDidLoaded);
+            NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.updateInterfaces);
+            MessagesController.getInstance(i10).getTopicsController().onTopicFragmentResume(-j3);
         } else {
-            w9Var.setImageResource(R.drawable.other_chats);
-        }
-        w9Var.setScaleX(1.0f);
-        w9Var.setScaleY(1.0f);
-        setSelected(z12);
-        g();
-        h();
-        d(0, true, false, false, false);
-        if (this.y) {
-            this.y = false;
+            MessagesController.getInstance(i10).getTopicsController().onTopicFragmentPause(-j3);
+            NotificationCenter.getInstance(i10).removeObserver(this, NotificationCenter.topicsDidLoaded);
+            NotificationCenter.getInstance(i10).removeObserver(this, NotificationCenter.updateInterfaces);
         }
     }
 
-    public final void d(int i10, boolean z10, boolean z11, boolean z12, boolean z13) {
-        o6 o6Var = this.f;
-        int i11 = 1;
-        if (z12) {
-            this.E = org.telegram.ui.ActionBar.j6.Z5;
-            if (this.G == null) {
-                SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("❤️");
-                oq oqVar = new oq(R.drawable.mini_like_filled, 0);
-                oqVar.setScale(0.8f, 0.8f);
-                oqVar.spaceScaleX = 0.5f;
-                oqVar.translate(-AndroidUtilities.dp(3.0f), 0.0f);
-                spannableStringBuilder.setSpan(oqVar, 0, spannableStringBuilder.length(), 33);
-                this.G = spannableStringBuilder;
+    @Override // le.d
+    public final void D(int i10, float f7, float f10, le.e eVar) {
+        n();
+    }
+
+    public final void d(boolean z10) {
+        if (this.Q == z10) {
+            return;
+        }
+        ValueAnimator valueAnimator = this.U;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+            if (this.S) {
+                this.T = Boolean.valueOf(z10);
+                return;
             }
-            o6Var.q(this.G, z13, true);
-        } else if (z11) {
-            this.E = z10 ? org.telegram.ui.ActionBar.j6.V8 : org.telegram.ui.ActionBar.j6.U8;
-            if (this.F == null) {
-                SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder("@");
-                oq oqVar2 = new oq(R.drawable.mini_mention_filled_16, 0);
-                oqVar2.setScale(0.8f, 0.8f);
-                oqVar2.spaceScaleX = 0.5f;
-                oqVar2.translate(-AndroidUtilities.dp(3.0f), 0.0f);
-                spannableStringBuilder2.setSpan(oqVar2, 0, 1, 33);
-                this.F = spannableStringBuilder2;
+        }
+        if (!z10) {
+            this.P = !this.P;
+        }
+        this.Q = z10;
+        this.S = true;
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.R, z10 ? 1.0f : 0.0f);
+        this.U = ofFloat;
+        ofFloat.addUpdateListener(new p70(this, 28));
+        this.U.addListener(new c31(this, z10));
+        this.U.setInterpolator(ji.n.V);
+        this.U.setDuration(250L);
+        this.U.start();
+    }
+
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        int i12 = NotificationCenter.topicsDidLoaded;
+        long j3 = this.c;
+        if (i10 == i12) {
+            if (((Long) objArr[0]).longValue() != (-j3)) {
+                return;
             }
-            o6Var.q(this.F, z13, true);
-        } else if (i10 > 0) {
-            this.E = z10 ? org.telegram.ui.ActionBar.j6.V8 : org.telegram.ui.ActionBar.j6.U8;
-            o6Var.q(LocaleController.formatNumber(i10, ','), z13, true);
+            o();
         } else {
-            this.E = org.telegram.ui.ActionBar.j6.V8;
-            o6Var.q("", z13, true);
-        }
-        if (z13 && (this.H < i10 || ((!this.I && z11) || (!this.J && z12)))) {
-            ValueAnimator valueAnimator = this.L;
-            if (valueAnimator != null) {
-                valueAnimator.cancel();
-                this.L = null;
+            if (i10 != NotificationCenter.updateInterfaces || (((Integer) objArr[0]).intValue() & MessagesController.UPDATE_MASK_SELECT_DIALOG) <= 0) {
+                return;
             }
-            ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-            this.L = ofFloat;
-            ofFloat.addUpdateListener(new j31(this, i11));
-            this.L.addListener(new ed0(this, 25));
-            this.L.setInterpolator(new OvershootInterpolator(2.0f));
-            this.L.setDuration(200L);
-            this.L.start();
+            MessagesController.getInstance(this.b).getTopicsController().sortTopics(-j3, false);
+            o();
         }
-        this.H = i10;
-        this.I = z11;
-        this.J = z12;
-        this.h.invalidate();
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        FrameLayout frameLayout = this.F;
+        if (frameLayout.getVisibility() == 0) {
+            this.K.setBounds((int) frameLayout.getTranslationX(), (int) this.N, (int) (frameLayout.getTranslationX() + AndroidUtilities.dp(78.0f)), (int) (getMeasuredHeight() - this.M));
+            this.K.draw(canvas);
+        }
+        FrameLayout frameLayout2 = this.r;
+        if (frameLayout2.getVisibility() == 0) {
+            this.L.setAlpha((int) (frameLayout2.getAlpha() * 255.0f));
+            this.L.setBounds(0, (int) frameLayout2.getTranslationY(), getMeasuredWidth(), (int) (frameLayout2.getTranslationY() + AndroidUtilities.dp(50.0f)));
+            this.L.draw(canvas);
+        }
+        canvas.save();
+        canvas.clipRect(0, 0, getWidth(), getHeight());
+        super.dispatchDraw(canvas);
+        canvas.restore();
+    }
+
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j3) {
+        canvas.save();
+        if (view == this.F) {
+            canvas.clipPath(this.K.j.k);
+        }
+        if (view == this.r) {
+            canvas.clipPath(this.L.j.k);
+        }
+        boolean drawChild = super.drawChild(canvas, view, j3);
+        canvas.restore();
+        return drawChild;
     }
 
     public final void e() {
-        setLayout(false);
-        this.M = -1L;
-        this.O = true;
-        this.N = false;
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("x");
-        int dp = AndroidUtilities.dp(38.0f);
-        TextView textView = this.s;
-        q90 q90Var = new q90(dp, textView);
-        q90Var.e = 0.75f;
-        spannableStringBuilder.setSpan(q90Var, 0, 1, 33);
-        textView.setText(spannableStringBuilder);
-        textView.setVisibility(0);
-        w9 w9Var = this.n;
-        w9Var.b();
-        w9Var.setAnimatedEmojiDrawable(null);
-        if (this.P == null) {
-            org.telegram.ui.ActionBar.e6 e6Var = this.b;
-            p90 p90Var = new p90(e6Var);
-            this.P = p90Var;
-            p90Var.j(38.0f);
-            this.P.setCallback(w9Var);
-            int v02 = org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.z6, e6Var);
-            this.P.f(org.telegram.ui.ActionBar.j6.l1(0.15f, v02), org.telegram.ui.ActionBar.j6.l1(0.5f, v02), org.telegram.ui.ActionBar.j6.l1(0.6f, v02), org.telegram.ui.ActionBar.j6.l1(0.15f, v02));
-            this.P.n = false;
+        FrameLayout frameLayout = this.F;
+        int paddingBottom = frameLayout.getPaddingBottom();
+        int round = Math.round(this.M + this.N);
+        if (paddingBottom == round) {
+            return;
         }
-        w9Var.setImageDrawable(this.P);
-        w9Var.setScaleX(1.0f);
-        w9Var.setScaleY(1.0f);
-        setSelected(false);
-        g();
-        d(0, true, false, false, false);
-        if (this.y) {
-            this.y = false;
-        }
-        h();
+        frameLayout.setPadding(0, 0, 0, round);
     }
 
-    public final void f(TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
-        setLayout(true);
-        this.N = false;
-        this.O = false;
-        long peerDialogId = DialogObject.getPeerDialogId(tL_forumTopic.from_id);
-        boolean z11 = peerDialogId == this.M;
-        this.M = peerDialogId;
-        String name = DialogObject.getName(peerDialogId);
-        TextView textView = this.s;
-        textView.setText(name);
-        textView.setVisibility(0);
-        int i10 = this.a;
-        w9 w9Var = this.n;
-        h9 h9Var = this.r;
-        if (peerDialogId >= 0) {
-            TLRPC.User user = MessagesController.getInstance(i10).getUser(Long.valueOf(peerDialogId));
-            h9Var.r(user);
-            w9Var.e(user, h9Var);
-        } else {
-            TLRPC.Chat chat = MessagesController.getInstance(i10).getChat(Long.valueOf(-peerDialogId));
-            h9Var.q(chat);
-            w9Var.e(chat, h9Var);
-        }
-        w9Var.setScaleX(1.0f);
-        w9Var.setScaleY(1.0f);
-        h();
-        setSelected(z10);
-        d(tL_forumTopic.unread_count, false, false, tL_forumTopic.unread_reactions_count > 0, z11);
-        if (this.y) {
-            this.y = false;
-        }
+    public final void f(boolean z10) {
+        ArrayList<TLRPC.TL_forumTopic> topics = MessagesController.getInstance(this.b).getTopicsController().getTopics(-this.c);
+        this.a.a((topics == null || topics.isEmpty() || this.d0) ? false : true, z10);
     }
 
     public final void g() {
-        int i10 = org.telegram.ui.ActionBar.j6.z6;
-        org.telegram.ui.ActionBar.e6 e6Var = this.b;
-        int d = i0.a.d(this.N ? 1.0f : this.Q, org.telegram.ui.ActionBar.j6.v0(i10, e6Var), org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Oh, e6Var));
-        boolean z10 = this.O;
-        w9 w9Var = this.n;
-        if (z10) {
-            w9Var.setColorFilter(new PorterDuffColorFilter(d, PorterDuff.Mode.SRC_IN));
-        } else {
-            w9Var.setColorFilter(null);
-        }
-        w9Var.setEmojiColorFilter(new PorterDuffColorFilter(d, PorterDuff.Mode.SRC_IN));
-        w9Var.invalidate();
+        le.b bVar = this.J;
+        float f7 = bVar.e;
+        ImageView imageView = this.w;
+        imageView.setAlpha(f7);
+        imageView.setScaleX(AndroidUtilities.lerp(0.4f, 1.0f, f7));
+        imageView.setScaleY(AndroidUtilities.lerp(0.4f, 1.0f, f7));
+        imageView.setVisibility(f7 > 0.0f ? 0 : 8);
+        ImageView imageView2 = this.x;
+        imageView2.setAlpha(f7);
+        imageView2.setScaleX(AndroidUtilities.lerp(0.4f, 1.0f, f7));
+        imageView2.setScaleY(AndroidUtilities.lerp(0.4f, 1.0f, f7));
+        imageView2.setVisibility(f7 > 0.0f ? 0 : 8);
+        float f10 = 1.0f - bVar.e;
+        ImageView imageView3 = this.y;
+        imageView3.setAlpha(f10);
+        imageView3.setScaleX(AndroidUtilities.lerp(0.4f, 1.0f, f10));
+        imageView3.setScaleY(AndroidUtilities.lerp(0.4f, 1.0f, f10));
+        imageView3.setVisibility(f10 > 0.0f ? 0 : 8);
+        ImageView imageView4 = this.E;
+        imageView4.setAlpha(f10);
+        imageView4.setScaleX(AndroidUtilities.lerp(0.4f, 1.0f, f10));
+        imageView4.setScaleY(AndroidUtilities.lerp(0.4f, 1.0f, f10));
+        imageView4.setVisibility(f10 > 0.0f ? 0 : 8);
+    }
+
+    public h31 getCurrentTabsPosition() {
+        return this.Q ? h31.b : this.P ? h31.c : h31.a;
+    }
+
+    public float getSideMenuT() {
+        return this.R * this.a.e;
     }
 
     public final void h() {
-        float f7 = (1.0f - this.Q) * (-AndroidUtilities.dp(3.0f));
-        ImageView imageView = this.v;
-        imageView.setTranslationX(f7);
-        imageView.setVisibility(this.Q <= 0.0f ? 8 : 0);
+        float lerp = AndroidUtilities.lerp(1.0f, 0.0f, this.R);
+        FrameLayout frameLayout = this.r;
+        frameLayout.setAlpha(lerp);
+        frameLayout.setVisibility((1.0f - this.R) * this.a.e > 0.0f ? 0 : 8);
+        if (this.P) {
+            frameLayout.setTranslationY(((getMeasuredHeight() - AndroidUtilities.dp(50.0f)) - this.M) + AndroidUtilities.lerp(AndroidUtilities.dp(43.0f), 0, j(h31.c)));
+        } else {
+            frameLayout.setTranslationY(this.N + AndroidUtilities.lerp(-AndroidUtilities.dp(43.0f), 0, j(h31.a)));
+        }
+    }
+
+    public final float j(h31 h31Var) {
+        float f7;
+        float f10 = this.a.e;
+        if (h31Var == h31.b) {
+            f7 = this.R;
+        } else {
+            if ((h31Var != h31.a || this.P) && !(h31Var == h31.c && this.P)) {
+                return 0.0f;
+            }
+            f7 = 1.0f - this.R;
+        }
+        return f7 * f10;
+    }
+
+    public final boolean k() {
+        if (this.R <= 0.5f) {
+            int i10 = 0;
+            while (true) {
+                z21 z21Var = this.s;
+                if (i10 >= z21Var.getChildCount()) {
+                    break;
+                }
+                w51 G = z21Var.Y2.G(RecyclerView.S(z21Var.getChildAt(i10)));
+                if (G != null && G.r) {
+                    return true;
+                }
+                i10++;
+            }
+        } else {
+            int i11 = 0;
+            while (true) {
+                b31 b31Var = this.G;
+                if (i11 >= b31Var.getChildCount()) {
+                    break;
+                }
+                w51 G2 = b31Var.Y2.G(RecyclerView.S(b31Var.getChildAt(i11)));
+                if (G2 != null && G2.r) {
+                    return true;
+                }
+                i11++;
+            }
+        }
+        return false;
+    }
+
+    public final void l() {
+        TopicsController topicsController = MessagesController.getInstance(this.b).getTopicsController();
+        long j3 = this.c;
+        if (topicsController.endIsReached(-j3)) {
+            return;
+        }
+        topicsController.loadTopics(-j3);
+    }
+
+    public final void m(long j3, boolean z10) {
+        if (this.e) {
+            Utilities.Callback2 callback2 = this.c0;
+            if (callback2 != null) {
+                callback2.run(Long.valueOf(j3), Boolean.valueOf(z10));
+                return;
+            }
+            return;
+        }
+        Utilities.Callback2 callback22 = this.a0;
+        if (callback22 != null) {
+            callback22.run(Integer.valueOf((int) j3), Boolean.valueOf(z10));
+        }
+    }
+
+    public final void n() {
+        org.telegram.ui.me meVar = this.O;
+        if (meVar != null) {
+            meVar.run();
+        }
+        h();
+        float j3 = j(h31.b);
+        float lerp = AndroidUtilities.lerp(-AndroidUtilities.dp(78.0f), 0, j3);
+        FrameLayout frameLayout = this.F;
+        frameLayout.setTranslationX(lerp);
+        frameLayout.setVisibility(j3 <= 0.0f ? 8 : 0);
         int i10 = org.telegram.ui.ActionBar.j6.z6;
-        org.telegram.ui.ActionBar.e6 e6Var = this.b;
-        this.s.setTextColor(i0.a.d(this.N ? 1.0f : this.Q, org.telegram.ui.ActionBar.j6.v0(i10, e6Var), org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Oh, e6Var)));
+        org.telegram.ui.ActionBar.f6 f6Var = this.d;
+        int v02 = org.telegram.ui.ActionBar.j6.v0(i10, f6Var);
+        int i11 = org.telegram.ui.ActionBar.j6.Oh;
+        int d = i0.a.d(1.0f - this.R, v02, org.telegram.ui.ActionBar.j6.v0(i11, f6Var));
+        PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
+        this.y.setColorFilter(new PorterDuffColorFilter(d, mode));
+        this.E.setColorFilter(new PorterDuffColorFilter(i0.a.d(this.R, org.telegram.ui.ActionBar.j6.v0(i10, f6Var), org.telegram.ui.ActionBar.j6.v0(i11, f6Var)), mode));
+        this.w.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.j6.v0(i11, f6Var), mode));
+        this.x.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.j6.v0(i11, f6Var), mode));
+        invalidate();
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(64.0f), TLObject.FLAG_30), i11);
+    public final void o() {
+        f(true);
+        z21 z21Var = this.s;
+        boolean canScrollHorizontally = z21Var.canScrollHorizontally(-1);
+        z21Var.Y2.N(true);
+        if (!canScrollHorizontally) {
+            z21Var.v0(0);
+        }
+        b31 b31Var = this.G;
+        boolean canScrollVertically = b31Var.canScrollVertically(-1);
+        b31Var.Y2.N(true);
+        if (!canScrollVertically) {
+            b31Var.v0(0);
+        }
+        AndroidUtilities.runOnUIThread(new s21(this, 1));
     }
 
-    public void setReorder(boolean z10) {
-        this.w = z10;
-        this.d.invalidate();
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        setAttached(true);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        setAttached(false);
     }
 
     @Override // android.view.View
-    public void setSelected(boolean z10) {
-        if (this.R == z10) {
-            return;
+    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
+        super.onSizeChanged(i10, i11, i12, i13);
+        h();
+    }
+
+    public void setAllTopicsHidden(boolean z10) {
+        if (this.d0 != z10) {
+            this.d0 = z10;
+            f(true);
         }
-        this.R = z10;
-        ValueAnimator valueAnimator = this.S;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
+    }
+
+    public void setCurrentTopic(long j3) {
+        this.V = j3;
+        z21 z21Var = this.s;
+        z21Var.Y2.N(true);
+        z21Var.invalidate();
+        this.G.Y2.N(true);
+        k31 k31Var = this.v;
+        if (k31Var != null) {
+            k31Var.c(true, false, j3 == 0);
         }
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.Q, z10 ? 1.0f : 0.0f);
-        this.S = ofFloat;
-        ofFloat.addUpdateListener(new j31(this, 0));
-        this.S.addListener(new ca(22, this, z10));
-        this.S.setInterpolator(qr.h);
-        this.S.setDuration(320L);
-        this.S.start();
+    }
+
+    public void setOnDialogSelected(Utilities.Callback2<Long, Boolean> callback2) {
+        this.c0 = callback2;
+    }
+
+    public void setOnNewTopicSelected(Runnable runnable) {
+        this.b0 = runnable;
+    }
+
+    public void setOnTopicSelected(Utilities.Callback2<Integer, Boolean> callback2) {
+        this.a0 = callback2;
+    }
+
+    public void setSideMenuBackgroundDrawable(ch.d dVar) {
+        this.K = dVar;
+        dVar.q(AndroidUtilities.dp(16.0f));
+        this.K.p(AndroidUtilities.dp(7.0f));
+    }
+
+    public void setSideMenuBackgroundMarginBottom(float f7) {
+        this.M = f7;
+        h();
+        e();
+        invalidate();
+    }
+
+    public void setSideMenuBackgroundMarginTop(float f7) {
+        this.N = f7;
+        this.F.setTranslationY(f7);
+        h();
+        e();
+        invalidate();
+    }
+
+    public void setTopMenuBackgroundDrawable(ch.d dVar) {
+        this.L = dVar;
+        dVar.q(AndroidUtilities.dp(18.0f));
+        this.L.p(AndroidUtilities.dp(7.0f));
+    }
+
+    @Override // le.d
+    public final /* synthetic */ void C(float f7, int i10) {
     }
 }

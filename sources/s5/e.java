@@ -16,6 +16,7 @@ import c3.o;
 import c3.r;
 import com.google.firebase.FirebaseCommonRegistrar;
 import com.google.firebase.messaging.n;
+import hg.k0;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -32,25 +33,24 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.q;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.a2;
 import org.telegram.ui.ActionBar.b2;
-import org.telegram.ui.Cells.c6;
-import org.telegram.ui.Components.ll0;
-import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.x51;
+import org.telegram.ui.Cells.d6;
+import org.telegram.ui.Components.kl0;
+import org.telegram.ui.Components.pc;
+import org.telegram.ui.Components.w51;
 import org.telegram.ui.Components.xc;
-import org.telegram.ui.Components.zr0;
+import org.telegram.ui.Components.yr0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
-import org.telegram.ui.dg1;
-import org.telegram.ui.g61;
+import org.telegram.ui.fg1;
+import org.telegram.ui.j61;
 import org.telegram.ui.kp0;
 import org.telegram.ui.oy;
-import org.telegram.ui.tg1;
 import org.telegram.ui.uy;
+import org.telegram.ui.vg1;
 import org.telegram.ui.wo0;
 import tg.g0;
 import tg.m1;
@@ -65,9 +65,9 @@ import xh.r2;
 import yh.k2;
 import yh.y3;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
-public final /* synthetic */ class e implements f, a2, wo0, oy, r, androidx.car.app.utils.b, q9.d, k2, Utilities.Callback5, ll0, tg1, g61 {
+public final /* synthetic */ class e implements f, a2, wo0, oy, r, androidx.car.app.utils.b, q9.d, k2, Utilities.Callback5, kl0, vg1, j61 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -238,23 +238,23 @@ public final /* synthetic */ class e implements f, a2, wo0, oy, r, androidx.car.
     public void b(TL_stars.TL_starGiftUnique tL_starGiftUnique, long j3, boolean z10) {
         o2 o2Var = (o2) this.b;
         TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) this.c;
-        zr0 zr0Var = o2Var.a;
+        yr0 yr0Var = o2Var.a;
         o2Var.e.l.remove(savedStarGift);
         o2Var.f(true);
         int i10 = o2Var.b;
         if (j3 == UserConfig.getInstance(i10).getClientUserId()) {
-            xc a02 = xc.a0(zr0Var.a);
+            xc a02 = xc.a0(yr0Var.a);
             TLRPC.Document document = tL_starGiftUnique.getDocument();
             String string = LocaleController.getString(R.string.BoughtResoldGiftTitle);
             int i11 = R.string.BoughtResoldGiftText;
             StringBuilder sb2 = new StringBuilder();
             sb2.append(tL_starGiftUnique.title);
             sb2.append(" #");
-            qc O = a02.O(document, string, LocaleController.formatString(i11, q.i(tL_starGiftUnique.num, ',', sb2)));
+            pc O = a02.O(document, string, LocaleController.formatString(i11, k0.j(tL_starGiftUnique.num, ',', sb2)));
             O.r = false;
             O.j();
         } else {
-            qc O2 = xc.a0(zr0Var.a).O(tL_starGiftUnique.getDocument(), LocaleController.getString(R.string.BoughtResoldGiftToTitle), LocaleController.formatString(R.string.BoughtResoldGiftToText, DialogObject.getShortName(i10, j3)));
+            pc O2 = xc.a0(yr0Var.a).O(tL_starGiftUnique.getDocument(), LocaleController.getString(R.string.BoughtResoldGiftToTitle), LocaleController.formatString(R.string.BoughtResoldGiftToText, DialogObject.getShortName(i10, j3)));
             O2.r = false;
             O2.j();
         }
@@ -264,9 +264,14 @@ public final /* synthetic */ class e implements f, a2, wo0, oy, r, androidx.car.
         }
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.kl0
     public void c(float f7, float f10, int i10, View view) {
         h4.Q((h4) this.b, (g4) this.c, i10);
+    }
+
+    @Override // org.telegram.ui.Components.kl0
+    public /* synthetic */ boolean c1(View view) {
+        return false;
     }
 
     @Override // androidx.car.app.utils.b
@@ -284,12 +289,7 @@ public final /* synthetic */ class e implements f, a2, wo0, oy, r, androidx.car.
         return new o[]{pVar.c.W(sVar) ? new z3.h(pVar.c.x(sVar), null) : new k3.a(sVar)};
     }
 
-    @Override // org.telegram.ui.Components.ll0
-    public /* synthetic */ boolean d1(View view) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.tg1
+    @Override // org.telegram.ui.vg1
     public void e(TLRPC.TL_inputCheckPasswordSRP tL_inputCheckPasswordSRP) {
         switch (this.a) {
             case 15:
@@ -302,7 +302,7 @@ public final /* synthetic */ class e implements f, a2, wo0, oy, r, androidx.car.
     }
 
     @Override // org.telegram.ui.ActionBar.a2
-    public void f(b2 b2Var, int i10) {
+    public void k(b2 b2Var, int i10) {
         switch (this.a) {
             case 1:
                 AtomicBoolean atomicBoolean = (AtomicBoolean) this.b;
@@ -315,15 +315,15 @@ public final /* synthetic */ class e implements f, a2, wo0, oy, r, androidx.car.
                 break;
             case 10:
                 m mVar = (m) this.b;
-                c6 c6Var = (c6) this.c;
+                d6 d6Var = (d6) this.c;
                 try {
-                    int parseInt = Integer.parseInt(c6Var.getText().toString().trim());
+                    int parseInt = Integer.parseInt(d6Var.getText().toString().trim());
                     mVar.X(parseInt);
                     mVar.c0.setValue(parseInt);
                     b2Var.dismiss();
                     break;
                 } catch (Throwable th2) {
-                    AndroidUtilities.shakeView(c6Var);
+                    AndroidUtilities.shakeView(d6Var);
                     FileLog.e(th2);
                     return;
                 }
@@ -361,7 +361,7 @@ public final /* synthetic */ class e implements f, a2, wo0, oy, r, androidx.car.
         ci.d dVar = (ci.d) this.c;
         View view = (View) obj2;
         r2Var.getClass();
-        long j3 = ((TL_stars.SavedStarGift) ((x51) obj).G).gift.id;
+        long j3 = ((TL_stars.SavedStarGift) ((w51) obj).G).gift.id;
         if (r2Var.b == j3) {
             r2Var.b = 0L;
         } else {
@@ -381,7 +381,7 @@ public final /* synthetic */ class e implements f, a2, wo0, oy, r, androidx.car.
     }
 
     @Override // org.telegram.ui.oy
-    public boolean u(uy uyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, dg1 dg1Var) {
+    public boolean u(uy uyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, fg1 fg1Var) {
         switch (this.a) {
             case 5:
                 g0 g0Var = (g0) this.b;
@@ -412,7 +412,7 @@ public final /* synthetic */ class e implements f, a2, wo0, oy, r, androidx.car.
         return true;
     }
 
-    @Override // org.telegram.ui.Components.ll0
-    public /* synthetic */ void r0(View view, float f7, float f10) {
+    @Override // org.telegram.ui.Components.kl0
+    public /* synthetic */ void q0(View view, float f7, float f10) {
     }
 }

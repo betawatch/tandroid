@@ -4,7 +4,7 @@ import e9.i0;
 import java.util.ArrayList;
 import java.util.List;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class k extends m implements l2.h {
     public final n n;
@@ -15,7 +15,7 @@ public final class k extends m implements l2.h {
     }
 
     @Override // l2.h
-    public final long A(long j3, long j10) {
+    public final long E(long j3, long j10) {
         return this.n.b(j3, j10);
     }
 
@@ -34,18 +34,18 @@ public final class k extends m implements l2.h {
         return this.n.e(j3, j10);
     }
 
+    @Override // l2.h
+    public final long e(long j3, long j10) {
+        return this.n.c(j3, j10);
+    }
+
     @Override // m2.m
-    public final j e() {
+    public final j f() {
         return null;
     }
 
     @Override // l2.h
-    public final long f(long j3, long j10) {
-        return this.n.c(j3, j10);
-    }
-
-    @Override // l2.h
-    public final long j(long j3, long j10) {
+    public final long g(long j3, long j10) {
         n nVar = this.n;
         if (nVar.f != null) {
             return -9223372036854775807L;
@@ -65,12 +65,12 @@ public final class k extends m implements l2.h {
     }
 
     @Override // l2.h
-    public final boolean w() {
+    public final boolean v() {
         return this.n.i();
     }
 
     @Override // l2.h
-    public final long y() {
+    public final long w() {
         return this.n.d;
     }
 

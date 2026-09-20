@@ -1,48 +1,40 @@
 package org.telegram.ui.Components;
 
-import java.util.regex.Pattern;
-import org.telegram.tgnet.ConnectionsManager;
+import android.view.View;
 import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class d3 implements Runnable {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int[] c;
-    public final /* synthetic */ Runnable d;
+public final /* synthetic */ class d3 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.ui.ActionBar.f3 b;
 
-    public /* synthetic */ d3(int i10, int[] iArr, org.telegram.ui.y80 y80Var) {
-        this.b = i10;
-        this.c = iArr;
-        this.d = y80Var;
+    public /* synthetic */ d3(org.telegram.ui.ActionBar.f3 f3Var, int i10) {
+        this.a = i10;
+        this.b = f3Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        Runnable runnable = this.d;
-        int[] iArr = this.c;
-        int i11 = this.b;
-        switch (i10) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
             case 0:
-                iArr[0] = i11;
-                runnable.run();
+                this.b.dismiss();
                 break;
-            default:
-                Pattern pattern = LaunchActivity.B1;
-                ConnectionsManager.getInstance(i11).cancelRequest(iArr[0], true);
-                if (runnable != null) {
-                    runnable.run();
+            case 1:
+                org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
+                if (R != null) {
+                    R.presentFragment(new PremiumPreviewFragment(0, "contact"));
+                    this.b.dismiss();
                     break;
                 }
                 break;
+            case 2:
+                this.b.dismiss();
+                break;
+            default:
+                this.b.dismiss();
+                break;
         }
-    }
-
-    public /* synthetic */ d3(int[] iArr, Runnable runnable, int i10) {
-        this.c = iArr;
-        this.b = i10;
-        this.d = runnable;
     }
 }

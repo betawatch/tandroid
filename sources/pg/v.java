@@ -16,7 +16,7 @@ import org.telegram.ui.Components.qn;
 import org.telegram.ui.Components.r2;
 import w7.y5;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class v extends FrameLayout {
     public final TextView a;
@@ -32,7 +32,7 @@ public final class v extends FrameLayout {
         this.f = xVar;
         TextView textView = new TextView(context);
         this.a = textView;
-        org.telegram.messenger.q.r(textView, -1711276033, 1, 14.0f);
+        org.telegram.messenger.l0.p(textView, -1711276033, 1, 14.0f);
         addView(textView, y5.d(-2, -2.0f, 3, 8.0f, 0.0f, 8.0f, 0.0f));
         r rVar = new r(xVar, context);
         this.b = rVar;

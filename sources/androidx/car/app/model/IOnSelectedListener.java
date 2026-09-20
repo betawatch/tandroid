@@ -6,18 +6,18 @@ import android.os.IInterface;
 import android.os.Parcel;
 import androidx.car.app.IOnDoneCallback;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public interface IOnSelectedListener extends IInterface {
     public static final String DESCRIPTOR = "androidx$car$app$model$IOnSelectedListener".replace('$', '.');
 
     void onSelected(int i10, IOnDoneCallback iOnDoneCallback);
 
-    /* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+    /* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
     public static abstract class Stub extends Binder implements IOnSelectedListener {
         static final int TRANSACTION_onSelected = 2;
 
-        /* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+        /* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
         public static class Proxy implements IOnSelectedListener {
             private IBinder mRemote;
 
@@ -83,7 +83,7 @@ public interface IOnSelectedListener extends IInterface {
         }
     }
 
-    /* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+    /* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
     public static class Default implements IOnSelectedListener {
         @Override // android.os.IInterface
         public IBinder asBinder() {

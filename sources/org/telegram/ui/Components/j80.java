@@ -1,30 +1,39 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLRPC;
+import android.content.DialogInterface;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class j80 implements Runnable {
+public final /* synthetic */ class j80 implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ p80 b;
-    public final /* synthetic */ TLRPC.TL_chatInviteJoinResultWebView c;
-    public final /* synthetic */ long d;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ boolean c;
 
-    public /* synthetic */ j80(p80 p80Var, TLRPC.TL_chatInviteJoinResultWebView tL_chatInviteJoinResultWebView, long j3, int i10) {
+    public /* synthetic */ j80(int i10, Object obj, boolean z10) {
         this.a = i10;
-        this.b = p80Var;
-        this.c = tL_chatInviteJoinResultWebView;
-        this.d = j3;
+        this.b = obj;
+        this.c = z10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.content.DialogInterface.OnDismissListener
+    public final void onDismiss(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                p80.p(this.b, this.c, this.d);
+                o80 o80Var = (o80) this.b;
+                o80.w(o80Var.getContext(), o80Var.c, o80Var.n, this.c);
+                break;
+            case 1:
+                o80 o80Var2 = (o80) this.b;
+                o80.w(o80Var2.getContext(), o80Var2.c, o80Var2.n, this.c);
                 break;
             default:
-                p80.o(this.b, this.c, this.d);
+                ci.oc ocVar = (ci.oc) this.b;
+                ocVar.z2 = false;
+                ocVar.X0.x(7, true);
+                if (this.c) {
+                    ocVar.q(true);
+                    break;
+                }
                 break;
         }
     }

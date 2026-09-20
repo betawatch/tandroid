@@ -1,28 +1,35 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class y60 extends org.telegram.ui.Cells.za {
-    public final TextView a0;
-    public final TextView b0;
+public final class y60 extends org.telegram.ui.Cells.f9 {
+    public final org.telegram.ui.Cells.u6 v;
+    public boolean w;
+    public final /* synthetic */ z60 x;
 
-    public y60(Context context) {
-        super(context, 6, 0, true);
-        LinearLayout e = org.telegram.messenger.wh.e(context, 1);
-        TextView textView = new TextView(context);
-        this.a0 = textView;
-        org.telegram.messenger.q.r(textView, org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.G6, false), 1, 16.0f);
-        e.addView(textView, w7.y5.q(-2, -2, 5));
-        TextView textView2 = new TextView(context);
-        this.b0 = textView2;
-        textView2.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.z6, false));
-        textView2.setTextSize(1, 13.0f);
-        e.addView(textView2, w7.y5.t(-2, -2, 5, 0, 1, 0, 0));
-        addView(e, w7.y5.d(-2, -2.0f, (LocaleController.isRTL ? 3 : 5) | 16, 18.0f, 0.0f, 18.0f, 0.0f));
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public y60(z60 z60Var, Context context) {
+        super(context);
+        this.x = z60Var;
+        this.v = new org.telegram.ui.Cells.u6(this, 17);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        org.telegram.ui.Cells.u6 u6Var = this.v;
+        AndroidUtilities.cancelRunOnUIThread(u6Var);
+        if (this.w) {
+            AndroidUtilities.runOnUIThread(u6Var, 500L);
+        }
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        AndroidUtilities.cancelRunOnUIThread(this.v);
     }
 }

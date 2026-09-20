@@ -22,9 +22,9 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.UUID;
 import java.util.concurrent.atomic.AtomicInteger;
-import n7.z0;
+import org.telegram.ui.Cells.f3;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public abstract class s implements ComponentCallbacks, View.OnCreateContextMenuListener, androidx.lifecycle.t, androidx.lifecycle.u0, androidx.lifecycle.i, t4.e {
     public static final Object j0 = new Object();
@@ -367,11 +367,11 @@ public abstract class s implements ComponentCallbacks, View.OnCreateContextMenuL
             printWriter.println(this.V);
         }
         if (n() != null) {
-            new z0(this, f()).s(str, printWriter);
+            new f3(this, f()).o(str, printWriter);
         }
         printWriter.print(str);
         printWriter.println("Child " + this.L + ":");
-        this.L.w(t8.b.v(str, "  "), fileDescriptor, printWriter, strArr);
+        this.L.w(v7.j0.s(str, "  "), fileDescriptor, printWriter, strArr);
     }
 
     public final r j() {

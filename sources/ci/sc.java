@@ -1,11 +1,11 @@
 package ci;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public interface sc {
     void A(float f7, int i10);
 
-    void D(float f7);
+    void C(float f7);
 
     void F(float f7, boolean z10);
 
@@ -17,7 +17,7 @@ public interface sc {
 
     void T(float f7);
 
-    void Y(float f7);
+    void X(float f7);
 
     void Z(float f7, int i10);
 
@@ -27,17 +27,17 @@ public interface sc {
 
     void e(int i10);
 
-    void h0(float f7);
+    void g0(float f7);
+
+    void h0(int i10, long j3);
 
     void i(float f7);
-
-    void i0(int i10, long j3);
 
     void l(float f7);
 
     void l0(long j3);
 
-    void n(long j3, boolean z10);
+    void m(long j3, boolean z10);
 
     void r();
 

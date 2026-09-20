@@ -16,30 +16,30 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.ActionBar.z5;
-import org.telegram.ui.Components.h9;
-import org.telegram.ui.Components.w9;
+import org.telegram.ui.Components.g9;
+import org.telegram.ui.Components.v9;
 import w7.y5;
 import yf.p;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class c extends FrameLayout implements z5 {
-    public final e6 a;
-    public final w9 b;
+    public final f6 a;
+    public final v9 b;
     public final TextView c;
     public final TextView d;
     public final ImageView e;
 
-    public c(Context context, e6 e6Var) {
+    public c(Context context, f6 f6Var) {
         super(context);
-        this.a = e6Var;
-        w9 w9Var = new w9(context);
-        this.b = w9Var;
-        w9Var.setRoundRadius(AndroidUtilities.dp(9.0f));
-        addView(w9Var, y5.d(32, 32.0f, 19, 20.0f, 0.0f, 0.0f, 0.0f));
+        this.a = f6Var;
+        v9 v9Var = new v9(context);
+        this.b = v9Var;
+        v9Var.setRoundRadius(AndroidUtilities.dp(9.0f));
+        addView(v9Var, y5.d(32, 32.0f, 19, 20.0f, 0.0f, 0.0f, 0.0f));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
         linearLayout.setGravity(16);
@@ -73,24 +73,24 @@ public final class c extends FrameLayout implements z5 {
         TLRPC.ChatFull chatFull = MessagesController.getInstance(i10).getChatFull(chat.id);
         setTitle(DialogObject.getShortName(chat));
         setSubtitle(LocaleController.formatPluralString("CommunityWithChats", chatFull != null ? chatFull.linked_peers.size() : 0, new Object[0]));
-        this.b.e(chat, new h9(chat));
+        this.b.e(chat, new g9(chat));
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         Drawable drawable = j6.S0;
-        w9 w9Var = this.b;
-        p.a(canvas, drawable, (w9Var.getWidth() / 2.0f) + w9Var.getLeft(), (w9Var.getHeight() / 2.0f) + w9Var.getTop(), w9Var.getHeight());
+        v9 v9Var = this.b;
+        p.a(canvas, drawable, (v9Var.getWidth() / 2.0f) + v9Var.getLeft(), (v9Var.getHeight() / 2.0f) + v9Var.getTop(), v9Var.getHeight());
         super.dispatchDraw(canvas);
     }
 
     @Override // org.telegram.ui.ActionBar.z5
     public final void e() {
         int i10 = j6.z6;
-        e6 e6Var = this.a;
-        this.e.setColorFilter(j6.v0(i10, e6Var));
-        this.c.setTextColor(j6.v0(j6.G6, e6Var));
-        this.d.setTextColor(j6.v0(i10, e6Var));
+        f6 f6Var = this.a;
+        this.e.setColorFilter(j6.v0(i10, f6Var));
+        this.c.setTextColor(j6.v0(j6.G6, f6Var));
+        this.d.setTextColor(j6.v0(i10, f6Var));
     }
 
     public /* bridge */ /* synthetic */ int[] getColorKeys() {

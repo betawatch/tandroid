@@ -18,8 +18,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.telegram.ui.ko0;
+import v7.j0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class f {
     public static final Charset b = Charset.forName("UTF-8");
@@ -63,7 +64,7 @@ public final class f {
         JSONArray jSONArray = new JSONArray();
         for (int i10 = 0; i10 < list.size(); i10++) {
             try {
-                jSONArray.put(new JSONObject(l.a.J(list.get(i10))));
+                jSONArray.put(new JSONObject(l.a.U(list.get(i10))));
             } catch (JSONException e) {
                 Log.w("FirebaseCrashlytics", "Exception parsing rollout assignment!", e);
             }
@@ -163,9 +164,9 @@ public final class f {
                 closeable = r32;
             }
         }
-        String i10 = t8.b.i("No userId set for session ", str);
+        String g10 = j0.g("No userId set for session ", str);
         if (Log.isLoggable("FirebaseCrashlytics", 3)) {
-            Log.d("FirebaseCrashlytics", i10, null);
+            Log.d("FirebaseCrashlytics", g10, null);
         }
         f(b10);
         return null;

@@ -6,7 +6,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class jx extends FrameLayout {
     public final /* synthetic */ kz a;
@@ -21,15 +21,15 @@ public final class jx extends FrameLayout {
     public final boolean drawChild(Canvas canvas, View view, long j3) {
         kz kzVar = this.a;
         ox oxVar = kzVar.I;
-        jw jwVar = kzVar.V;
+        kw kwVar = kzVar.V;
         wx wxVar = kzVar.P;
-        if (view != wxVar && view != jwVar) {
+        if (view != wxVar && view != kwVar) {
             return super.drawChild(canvas, view, j3);
         }
         canvas.save();
         float y3 = oxVar.getY() + oxVar.getMeasuredHeight() + 1.0f;
-        if (view == wxVar && jwVar != null) {
-            y3 = Math.max(y3, jwVar.getY() + jwVar.getMeasuredHeight() + 1.0f);
+        if (view == wxVar && kwVar != null) {
+            y3 = Math.max(y3, kwVar.getY() + kwVar.getMeasuredHeight() + 1.0f);
         }
         canvas.clipRect(0.0f, y3 - (AndroidUtilities.dp(16.0f) * kzVar.b.e), getMeasuredWidth(), getMeasuredHeight());
         boolean drawChild = super.drawChild(canvas, view, j3);

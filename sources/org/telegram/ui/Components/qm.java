@@ -18,7 +18,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class qm extends ni {
     public static final HashMap U = new HashMap();
@@ -38,7 +38,7 @@ public final class qm extends ni {
     public int R;
     public boolean S;
     public boolean T;
-    public org.telegram.ui.ActionBar.e6 n;
+    public org.telegram.ui.ActionBar.f6 n;
     public ai.w0 r;
     public s4.c0 s;
     public pm v;
@@ -69,7 +69,7 @@ public final class qm extends ni {
             pmVar.c();
             pmVar.requestLayout();
             this.s.h1(0, 0);
-            this.r.post(new zd(17, this, niVar));
+            this.r.post(new tc(19, this, niVar));
             postDelayed(new og(this, 25), 250L);
             pmVar.i(this.P, false);
         } else {
@@ -167,10 +167,10 @@ public final class qm extends ni {
             return ConnectionsManager.DEFAULT_DATACENTER_ID;
         }
         View childAt = w0Var.getChildAt(0);
-        gl0 gl0Var = (gl0) w0Var.H(childAt);
+        fl0 fl0Var = (fl0) w0Var.H(childAt);
         int top = childAt.getTop();
         int dp = AndroidUtilities.dp(8.0f);
-        if (top < AndroidUtilities.dp(8.0f) || gl0Var == null || gl0Var.b() != 0) {
+        if (top < AndroidUtilities.dp(8.0f) || fl0Var == null || fl0Var.b() != 0) {
             top = dp;
         }
         w0Var.setTopGlowOffset(top);

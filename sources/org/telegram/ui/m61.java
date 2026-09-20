@@ -1,39 +1,26 @@
 package org.telegram.ui;
 
 import android.animation.ValueAnimator;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class m61 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ p61 b;
+public final class m61 extends FrameLayout {
+    public FrameLayout a;
+    public org.telegram.ui.Cells.v3 b;
+    public rg.p0 c;
+    public String d;
+    public ValueAnimator e;
+    public float f;
+    public Boolean h;
+    public ValueAnimator n;
 
-    public /* synthetic */ m61(p61 p61Var, int i10) {
-        this.a = i10;
-        this.b = p61Var;
-    }
-
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                p61 p61Var = this.b;
-                p61Var.N = floatValue;
-                p61Var.V.h0.invalidate();
-                break;
-            case 1:
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                p61 p61Var2 = this.b;
-                p61Var2.N = floatValue2;
-                p61Var2.V.h0.invalidate();
-                break;
-            default:
-                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                p61 p61Var3 = this.b;
-                p61Var3.N = floatValue3;
-                p61Var3.V.h0.invalidate();
-                break;
-        }
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        setPadding(AndroidUtilities.dp(5.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(5.0f), AndroidUtilities.dp(8.0f));
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(getPaddingBottom() + getPaddingTop() + AndroidUtilities.dp(44.0f), TLObject.FLAG_30));
     }
 }

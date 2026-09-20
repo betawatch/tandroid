@@ -3,9 +3,9 @@ package x3;
 import c3.h0;
 import c3.q;
 import e2.v;
-import n7.z0;
+import org.telegram.ui.Cells.f3;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public abstract class i {
     public h0 b;
@@ -20,7 +20,7 @@ public abstract class i {
     public boolean l;
     public boolean m;
     public final e a = new e();
-    public z0 j = new z0(25);
+    public f3 j = new f3(22);
 
     public void a(long j3) {
         this.g = j3;
@@ -28,11 +28,11 @@ public abstract class i {
 
     public abstract long b(v vVar);
 
-    public abstract boolean c(v vVar, long j3, z0 z0Var);
+    public abstract boolean c(v vVar, long j3, f3 f3Var);
 
     public void d(boolean z10) {
         if (z10) {
-            this.j = new z0(25);
+            this.j = new f3(22);
             this.f = 0L;
             this.h = 0;
         } else {

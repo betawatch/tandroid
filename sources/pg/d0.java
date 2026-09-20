@@ -8,12 +8,12 @@ import android.widget.ImageView;
 import java.util.Iterator;
 import org.telegram.ui.s00;
 import rg.z1;
-import yh.j7;
+import yh.k7;
 import yh.p2;
 import yh.q2;
-import yh.x7;
+import yh.s5;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class d0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -47,20 +47,20 @@ public final class d0 extends AnimatorListenerAdapter {
                 break;
             case 1:
                 super.onAnimationEnd(animator);
-                qg.l0 l0Var = (qg.l0) this.b;
-                ImageView imageView = l0Var.c;
-                l0Var.c = l0Var.d;
-                l0Var.d = imageView;
+                qg.m0 m0Var = (qg.m0) this.b;
+                ImageView imageView = m0Var.c;
+                m0Var.c = m0Var.d;
+                m0Var.d = imageView;
                 imageView.bringToFront();
-                l0Var.d.setVisibility(8);
-                l0Var.h = null;
+                m0Var.d.setVisibility(8);
+                m0Var.h = null;
                 break;
             case 2:
-                qg.r1 r1Var = (qg.r1) this.b;
-                if (animator == r1Var.r) {
-                    r1Var.f = r1Var.h;
-                    r1Var.h = -1;
-                    r1Var.r = null;
+                qg.s1 s1Var = (qg.s1) this.b;
+                if (animator == s1Var.r) {
+                    s1Var.f = s1Var.h;
+                    s1Var.h = -1;
+                    s1Var.r = null;
                     break;
                 }
                 break;
@@ -122,12 +122,12 @@ public final class d0 extends AnimatorListenerAdapter {
                 q2Var.G = null;
                 break;
             case 11:
-                s00 s00Var = ((j7) this.b).c;
+                s00 s00Var = ((k7) this.b).c;
                 s00Var.setScaleX(1.0f);
                 s00Var.setScaleY(1.0f);
                 break;
             case 12:
-                ((x7) this.b).run();
+                ((s5) this.b).run();
                 break;
             case 13:
                 zg.t tVar = (zg.t) this.b;

@@ -21,7 +21,7 @@ import java.util.concurrent.locks.ReentrantLock;
 import m.p3;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class x implements x0 {
     public final Context a;
@@ -60,7 +60,7 @@ public final class x implements x0 {
     }
 
     public static /* bridge */ /* synthetic */ void k(x xVar, int i10) {
-        xVar.b.q(i10);
+        xVar.b.j(i10);
         xVar.m = null;
         xVar.l = null;
     }
@@ -112,7 +112,7 @@ public final class x implements x0 {
             } else {
                 j0 j0Var = xVar.b;
                 n6.l.h(j0Var);
-                j0Var.r(xVar.k);
+                j0Var.o(xVar.k);
             }
         }
         xVar.i();
@@ -258,7 +258,7 @@ public final class x implements x0 {
                 Log.wtf("CompositeGAC", "Attempted to call failure callbacks in CONNECTION_MODE_NONE. Callbacks should be disabled via GmsClientSupervisor", new Exception());
                 this.p = 0;
             }
-            this.b.m(aVar);
+            this.b.i(aVar);
         }
         i();
         this.p = 0;

@@ -2,32 +2,32 @@ package ii;
 
 import android.content.Context;
 import android.view.View;
-import org.telegram.ui.Components.l61;
-import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.k61;
+import org.telegram.ui.Components.s61;
+import org.telegram.ui.Components.v51;
+import org.telegram.ui.Components.vl0;
 import org.telegram.ui.Components.w51;
-import org.telegram.ui.Components.wl0;
-import org.telegram.ui.Components.x51;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
-public final class n4 extends w51 {
+public final class n4 extends v51 {
     public static final /* synthetic */ int a = 0;
 
     static {
-        w51.setup(new n4());
+        v51.setup(new n4());
     }
 
-    @Override // org.telegram.ui.Components.w51
-    public final void bindView(View view, x51 x51Var, boolean z10, l61 l61Var, t61 t61Var) {
-        ((o4) view).h((a) x51Var.G, (m4) x51Var.H);
+    @Override // org.telegram.ui.Components.v51
+    public final void bindView(View view, w51 w51Var, boolean z10, k61 k61Var, s61 s61Var) {
+        ((o4) view).h((a) w51Var.G, (m4) w51Var.H);
     }
 
-    @Override // org.telegram.ui.Components.w51
-    public final View createView(Context context, wl0 wl0Var, int i10, int i11, org.telegram.ui.ActionBar.e6 e6Var) {
-        return new o4(context, i10, e6Var);
+    @Override // org.telegram.ui.Components.v51
+    public final View createView(Context context, vl0 vl0Var, int i10, int i11, org.telegram.ui.ActionBar.f6 f6Var) {
+        return new o4(context, i10, f6Var);
     }
 
-    @Override // org.telegram.ui.Components.w51
+    @Override // org.telegram.ui.Components.v51
     public final boolean isClickable() {
         return false;
     }

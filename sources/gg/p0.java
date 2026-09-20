@@ -9,28 +9,28 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.Components.pq;
-import org.telegram.ui.Components.w9;
+import org.telegram.ui.Components.v9;
 import w7.y5;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class p0 extends FrameLayout {
     public static final /* synthetic */ int f = 0;
-    public final e6 a;
-    public final w9 b;
+    public final f6 a;
+    public final v9 b;
     public final TextView c;
     public pq d;
     public q0 e;
 
-    public p0(Context context, e6 e6Var) {
+    public p0(Context context, f6 f6Var) {
         super(context);
-        this.a = e6Var;
-        w9 w9Var = new w9(context);
-        this.b = w9Var;
-        addView(w9Var, y5.c(30.0f, 30));
+        this.a = f6Var;
+        v9 v9Var = new v9(context);
+        this.b = v9Var;
+        addView(v9Var, y5.c(30.0f, 30));
         TextView textView = new TextView(context);
         this.c = textView;
         textView.setTextSize(1, 14.0f);
@@ -41,29 +41,29 @@ public final class p0 extends FrameLayout {
     public final void a() {
         int dp = AndroidUtilities.dp(28.0f);
         int i10 = j6.ci;
-        e6 e6Var = this.a;
-        setBackground(j6.b0(dp, j6.v0(i10, e6Var)));
-        this.c.setTextColor(j6.v0(j6.G6, e6Var));
+        f6 f6Var = this.a;
+        setBackground(j6.b0(dp, j6.v0(i10, f6Var)));
+        this.c.setTextColor(j6.v0(j6.G6, f6Var));
         pq pqVar = this.d;
         if (pqVar != null) {
             if (this.e.d == 7) {
-                j6.v1(pqVar, j6.v0(j6.Oh, e6Var), false);
-                j6.v1(this.d, j6.v0(j6.Sh, e6Var), true);
+                j6.v1(pqVar, j6.v0(j6.Oh, f6Var), false);
+                j6.v1(this.d, j6.v0(j6.Sh, f6Var), true);
             } else {
-                j6.v1(pqVar, j6.v0(j6.Oh, e6Var), false);
-                j6.v1(this.d, j6.v0(j6.Sh, e6Var), true);
+                j6.v1(pqVar, j6.v0(j6.Oh, f6Var), false);
+                j6.v1(this.d, j6.v0(j6.Sh, f6Var), true);
             }
         }
     }
 
     public void setData(q0 q0Var) {
         this.e = q0Var;
-        w9 w9Var = this.b;
-        w9Var.getImageReceiver().clearImage();
+        v9 v9Var = this.b;
+        v9Var.getImageReceiver().clearImage();
         int i10 = q0Var.d;
         String str = q0Var.c;
         TextView textView = this.c;
-        e6 e6Var = this.a;
+        f6 f6Var = this.a;
         if (i10 == 7) {
             pq L = j6.L(AndroidUtilities.dp(32.0f), R.drawable.chats_archive);
             this.d = L;
@@ -71,19 +71,19 @@ public final class p0 extends FrameLayout {
             int dp2 = AndroidUtilities.dp(16.0f);
             L.e = dp;
             L.f = dp2;
-            j6.v1(this.d, j6.v0(j6.Oh, e6Var), false);
-            j6.v1(this.d, j6.v0(j6.Sh, e6Var), true);
-            w9Var.setImageDrawable(this.d);
+            j6.v1(this.d, j6.v0(j6.Oh, f6Var), false);
+            j6.v1(this.d, j6.v0(j6.Sh, f6Var), true);
+            v9Var.setImageDrawable(this.d);
             textView.setText(str);
             return;
         }
         pq L2 = j6.L(AndroidUtilities.dp(32.0f), q0Var.a);
         this.d = L2;
         int i11 = j6.Oh;
-        j6.v1(L2, j6.v0(i11, e6Var), false);
+        j6.v1(L2, j6.v0(i11, f6Var), false);
         pq pqVar = this.d;
         int i12 = j6.Sh;
-        j6.v1(pqVar, j6.v0(i12, e6Var), true);
+        j6.v1(pqVar, j6.v0(i12, f6Var), true);
         if (q0Var.d == 4) {
             TLObject tLObject = q0Var.f;
             if (tLObject instanceof TLRPC.User) {
@@ -94,20 +94,20 @@ public final class p0 extends FrameLayout {
                     int dp4 = AndroidUtilities.dp(16.0f);
                     L3.e = dp3;
                     L3.f = dp4;
-                    j6.v1(L3, j6.v0(i11, e6Var), false);
-                    j6.v1(L3, j6.v0(i12, e6Var), true);
-                    w9Var.setImageDrawable(L3);
+                    j6.v1(L3, j6.v0(i11, f6Var), false);
+                    j6.v1(L3, j6.v0(i12, f6Var), true);
+                    v9Var.setImageDrawable(L3);
                 } else {
-                    w9Var.getImageReceiver().setRoundRadius(AndroidUtilities.dp(16.0f));
-                    w9Var.getImageReceiver().setForUserOrChat(user, this.d);
+                    v9Var.getImageReceiver().setRoundRadius(AndroidUtilities.dp(16.0f));
+                    v9Var.getImageReceiver().setForUserOrChat(user, this.d);
                 }
             } else if (tLObject instanceof TLRPC.Chat) {
                 TLRPC.Chat chat = (TLRPC.Chat) tLObject;
-                w9Var.getImageReceiver().setRoundRadius(AndroidUtilities.dp(ChatObject.isCommunity(chat) ? 10.0f : 16.0f));
-                w9Var.getImageReceiver().setForUserOrChat(chat, this.d);
+                v9Var.getImageReceiver().setRoundRadius(AndroidUtilities.dp(ChatObject.isCommunity(chat) ? 10.0f : 16.0f));
+                v9Var.getImageReceiver().setForUserOrChat(chat, this.d);
             }
         } else {
-            w9Var.setImageDrawable(this.d);
+            v9Var.setImageDrawable(this.d);
         }
         textView.setText(str);
     }

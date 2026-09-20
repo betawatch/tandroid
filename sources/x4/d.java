@@ -22,9 +22,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
-import v7.r8;
+import v7.s8;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class d extends g implements Animatable {
     public final Context c;
@@ -365,7 +365,7 @@ public final class d extends g implements Animatable {
     public final void setTint(int i10) {
         Drawable drawable = this.a;
         if (drawable != null) {
-            r8.c(i10, drawable);
+            s8.c(i10, drawable);
         } else {
             this.b.a.setTint(i10);
         }

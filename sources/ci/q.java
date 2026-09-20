@@ -6,9 +6,9 @@ import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.ij0;
+import org.telegram.ui.Components.hj0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class q extends Drawable {
     public final Paint a;
@@ -18,7 +18,7 @@ public final class q extends Drawable {
     public boolean e;
     public boolean f;
     public boolean g;
-    public final ij0 h;
+    public final hj0 h;
     public final ec i;
     public final /* synthetic */ ec j;
 
@@ -28,22 +28,22 @@ public final class q extends Drawable {
         this.a = paint;
         this.c = 1.0f;
         this.i = ecVar2;
-        ij0 ij0Var = new ij0(R.raw.chat_audio_record_delete_3, AndroidUtilities.dp(28.0f), AndroidUtilities.dp(28.0f), false, null);
-        this.h = ij0Var;
-        ij0Var.o0 = true;
+        hj0 hj0Var = new hj0(R.raw.chat_audio_record_delete_3, AndroidUtilities.dp(28.0f), AndroidUtilities.dp(28.0f), false, null);
+        this.h = hj0Var;
+        hj0Var.o0 = true;
         paint.setColor(-2406842);
-        ij0Var.Z = true;
-        ij0Var.Q(-2406842, "Cup Red");
-        ij0Var.Q(-2406842, "Box");
-        ij0Var.o();
+        hj0Var.Z = true;
+        hj0Var.Q(-2406842, "Cup Red");
+        hj0Var.Q(-2406842, "Box");
+        hj0Var.o();
     }
 
     @Override // android.graphics.drawable.Drawable
     public final void draw(Canvas canvas) {
         boolean z10 = this.g;
-        ij0 ij0Var = this.h;
+        hj0 hj0Var = this.h;
         if (z10) {
-            ij0Var.setAlpha((int) (this.b * 255.0f * this.c));
+            hj0Var.setAlpha((int) (this.b * 255.0f * this.c));
         }
         int i10 = (int) (this.b * 255.0f * this.c);
         Paint paint = this.a;
@@ -65,11 +65,11 @@ public final class q extends Drawable {
             }
         }
         this.d = System.currentTimeMillis();
-        ij0Var.setBounds(getBounds());
+        hj0Var.setBounds(getBounds());
         if (this.g) {
-            ij0Var.draw(canvas);
+            hj0Var.draw(canvas);
         }
-        if (!this.g || !ij0Var.u()) {
+        if (!this.g || !hj0Var.u()) {
             canvas.drawCircle(getBounds().centerX(), getBounds().centerY(), AndroidUtilities.dp(5.0f), paint);
         }
         this.j.invalidate();

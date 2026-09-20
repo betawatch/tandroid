@@ -8,7 +8,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d0 implements View.OnTouchListener {
     public final /* synthetic */ int a;
@@ -375,22 +375,22 @@ public final /* synthetic */ class d0 implements View.OnTouchListener {
                 }
                 break;
             case 6:
-                g71 g71Var = (g71) this.b;
-                g71Var.getClass();
-                if (motionEvent.getAction() == 0 && (runnable = g71Var.T1) != null) {
+                j71 j71Var = (j71) this.b;
+                j71Var.getClass();
+                if (motionEvent.getAction() == 0 && (runnable = j71Var.T1) != null) {
                     runnable.run();
                     break;
                 }
                 break;
             default:
-                ke1 ke1Var = (ke1) this.b;
-                if (ke1Var.S != null && motionEvent.getAction() == 0) {
-                    Drawable backgroundDrawable2 = ((ActionBarPopupWindow$ActionBarPopupWindowLayout) ke1Var.S).getBackgroundDrawable();
+                me1 me1Var = (me1) this.b;
+                if (me1Var.S != null && motionEvent.getAction() == 0) {
+                    Drawable backgroundDrawable2 = ((ActionBarPopupWindow$ActionBarPopupWindowLayout) me1Var.S).getBackgroundDrawable();
                     RectF rectF2 = AndroidUtilities.rectTmp;
                     rectF2.set(backgroundDrawable2.getBounds());
-                    rectF2.offset(ke1Var.S.getX(), ke1Var.S.getY());
+                    rectF2.offset(me1Var.S.getX(), me1Var.S.getY());
                     if (!rectF2.contains(motionEvent.getX(), motionEvent.getY())) {
-                        ke1Var.c(true);
+                        me1Var.c(true);
                         break;
                     }
                 }

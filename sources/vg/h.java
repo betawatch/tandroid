@@ -8,28 +8,28 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j5;
 import org.telegram.ui.ActionBar.j6;
 import w7.y5;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class h extends FrameLayout {
     public final j5 a;
     public long b;
 
-    public h(Context context, e6 e6Var) {
+    public h(Context context, f6 f6Var) {
         super(context);
         j5 j5Var = new j5(context);
         j5Var.setTextSize(16);
-        j5Var.setTextColor(j6.v0(j6.j5, e6Var));
+        j5Var.setTextColor(j6.v0(j6.j5, f6Var));
         j5Var.setGravity(LocaleController.isRTL ? 5 : 3);
         addView(j5Var);
         j5 j5Var2 = new j5(context);
         this.a = j5Var2;
         j5Var2.setTextSize(16);
-        j5Var2.setTextColor(j6.v0(j6.L6, e6Var));
+        j5Var2.setTextColor(j6.v0(j6.L6, f6Var));
         j5Var2.setGravity(LocaleController.isRTL ? 3 : 5);
         addView(j5Var2);
         j5Var.l(LocaleController.formatString("BoostingDateAndTime", R.string.BoostingDateAndTime, new Object[0]), false);
@@ -37,7 +37,7 @@ public final class h extends FrameLayout {
         j5Var.setLayoutParams(y5.d(-1, -2.0f, (z10 ? 5 : 3) | 16, z10 ? 0.0f : 21.0f, 0.0f, z10 ? 21.0f : 0.0f, 0.0f));
         boolean z11 = LocaleController.isRTL;
         j5Var2.setLayoutParams(y5.d(-1, -2.0f, (z11 ? 3 : 5) | 16, z11 ? 21.0f : 0.0f, 0.0f, z11 ? 0.0f : 21.0f, 0.0f));
-        setBackgroundColor(j6.v0(j6.h5, e6Var));
+        setBackgroundColor(j6.v0(j6.h5, f6Var));
     }
 
     public long getSelectedTime() {

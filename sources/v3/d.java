@@ -24,10 +24,10 @@ import java.io.EOFException;
 import java.math.RoundingMode;
 import java.util.List;
 import q3.m;
-import v7.p7;
-import v7.y7;
+import v7.q7;
+import v7.z7;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class d implements o {
     public final int a;
@@ -80,7 +80,7 @@ public final class d implements o {
 
     /* JADX WARN: Code restructure failed: missing block: B:6:0x0018, code lost:
     
-        if (r9.i() > (r2 - 4)) goto L12;
+        if (r9.j() > (r2 - 4)) goto L12;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -93,7 +93,7 @@ public final class d implements o {
             }
         }
         try {
-            return !pVar.h(this.c.a, 0, 4, true);
+            return !pVar.i(this.c.a, 0, 4, true);
         } catch (EOFException unused) {
             return true;
         }
@@ -160,7 +160,7 @@ public final class d implements o {
             if (p0Var != null) {
                 this.e.b(p0Var);
             }
-            i11 = (int) pVar.i();
+            i11 = (int) pVar.j();
             if (!z10) {
                 pVar.q(i11);
             }
@@ -219,7 +219,7 @@ public final class d implements o {
         h0 Z1 = qVar.Z1(0, 1);
         this.i = Z1;
         this.j = Z1;
-        this.h.e1();
+        this.h.f1();
     }
 
     @Override // c3.o
@@ -467,7 +467,7 @@ public final class d implements o {
                                             if (r27 != 0 && !r27.f() && (i25 & 1) != 0 && r27.l() != -9223372036854775807L && (r27.d() != -1 || pVar.getLength() != -1)) {
                                                 long e = r27.e() != -1 ? r27.e() : 0L;
                                                 long d = r27.d() != -1 ? r27.d() : pVar.getLength();
-                                                aVar2 = new a(d, y7.e(d0.Y(d - e, 8000000L, r27.l(), RoundingMode.HALF_UP)), -1, false, e);
+                                                aVar2 = new a(d, z7.e(d0.Y(d - e, 8000000L, r27.l(), RoundingMode.HALF_UP)), -1, false, e);
                                             } else if (r27 == 0 || !(r27.f() || (i25 & 1) == 0)) {
                                                 vVar = vVar2;
                                                 pVar.a(0, 4, vVar.a);
@@ -650,7 +650,7 @@ public final class d implements o {
                                 long j26 = length3;
                                 long j27 = j12;
                                 RoundingMode roundingMode = RoundingMode.HALF_UP;
-                                aVar = new a(j26, y7.b(d0.Y(j27, 8000000L, W3, roundingMode)), y7.b(p7.b(j27, j24, roundingMode)), false, position3 + i28);
+                                aVar = new a(j26, z7.b(d0.Y(j27, 8000000L, W3, roundingMode)), z7.b(q7.b(j27, j24, roundingMode)), false, position3 + i28);
                                 p0Var = this.l;
                                 long position2222 = pVar.getPosition();
                                 if (p0Var != null) {

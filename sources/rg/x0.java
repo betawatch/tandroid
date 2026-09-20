@@ -21,24 +21,24 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SvgHelper;
 import org.telegram.messenger.UserConfig;
-import org.telegram.ui.ActionBar.e6;
 import org.telegram.ui.ActionBar.f3;
+import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.al0;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.sa;
-import org.telegram.ui.Components.y7;
+import org.telegram.ui.Components.ra;
+import org.telegram.ui.Components.x7;
+import org.telegram.ui.Components.zk0;
 import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.c80;
 import org.telegram.ui.kx0;
 import org.telegram.ui.lx0;
+import org.telegram.ui.o81;
 import org.telegram.ui.t5;
-import org.telegram.ui.v81;
 import w7.y5;
 import yh.y3;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class x0 extends f3 implements NotificationCenter.NotificationCenterDelegate {
     public final boolean E;
@@ -50,7 +50,7 @@ public final class x0 extends f3 implements NotificationCenter.NotificationCente
     public int K;
     public int L;
     public int M;
-    public y7 N;
+    public x7 N;
     public final n2 b;
     public final p0 c;
     public final ArrayList d;
@@ -65,8 +65,8 @@ public final class x0 extends f3 implements NotificationCenter.NotificationCente
     public final SvgHelper.SvgDrawable x;
     public final int y;
 
-    public x0(Context context, int i10, e6 e6Var) {
-        this(null, context, UserConfig.selectedAccount, false, i10, true, null, e6Var);
+    public x0(Context context, int i10, f6 f6Var) {
+        this(null, context, UserConfig.selectedAccount, false, i10, true, null, f6Var);
     }
 
     public final void A() {
@@ -151,19 +151,19 @@ public final class x0 extends f3 implements NotificationCenter.NotificationCente
         NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.billingProductDetailsUpdated);
         NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.premiumPromoUpdated);
         NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.currentUserPremiumStatusChanged);
-        y7 y7Var = new y7(this, getContext(), 7);
-        this.N = y7Var;
-        y7Var.setBackgroundColor(getThemedColor(j6.h5));
+        x7 x7Var = new x7(this, getContext(), 7);
+        this.N = x7Var;
+        x7Var.setBackgroundColor(getThemedColor(j6.h5));
         this.N.setTitleColor(getThemedColor(j6.G6));
         this.N.A(getThemedColor(j6.z8), false);
-        y7 y7Var2 = this.N;
+        x7 x7Var2 = this.N;
         int i10 = j6.y8;
-        y7Var2.B(getThemedColor(i10), false);
+        x7Var2.B(getThemedColor(i10), false);
         this.N.B(getThemedColor(i10), true);
         this.N.setCastShadows(true);
         this.N.setExtraHeight(AndroidUtilities.dp(2.0f));
         this.N.setBackButtonImage(R.drawable.ic_ab_back);
-        this.N.setActionBarMenuOnItemClick(new v81(this, 10));
+        this.N.setActionBarMenuOnItemClick(new o81(this, 11));
         this.containerView.addView(this.N, y5.d(-1, -2.0f, 0, 0.0f, 0.0f, 0.0f, 0.0f));
         ((FrameLayout.LayoutParams) this.N.getLayoutParams()).topMargin = (-this.backgroundPaddingTop) - AndroidUtilities.dp(2.0f);
         AndroidUtilities.updateViewVisibilityAnimated(this.N, false, 1.0f, false);
@@ -195,7 +195,7 @@ public final class x0 extends f3 implements NotificationCenter.NotificationCente
                 n0Var.setOffset(r0.getMeasuredWidth());
                 this.w = true;
                 ofFloat.addUpdateListener(new l6(n0Var, 12));
-                ofFloat.addListener(new al0(20, this, n0Var));
+                ofFloat.addListener(new zk0(20, this, n0Var));
                 ofFloat.setDuration(500L);
                 ofFloat.setStartDelay(100L);
                 ofFloat.setInterpolator(qr.h);
@@ -304,18 +304,18 @@ public final class x0 extends f3 implements NotificationCenter.NotificationCente
     */
     public x0(n2 n2Var, Context context, int i10, boolean z10, int i11, boolean z11, lx0 lx0Var) {
         this(n2Var, context, i10, z10, i11, z11, lx0Var, r0);
-        e6 e6Var;
+        f6 f6Var;
         if (n2Var == null) {
-            e6Var = null;
+            f6Var = null;
         } else if (n2Var.getLastStoryViewer() != null && !n2Var.getLastStoryViewer().H0) {
-            e6Var = n2Var.getLastStoryViewer().y;
+            f6Var = n2Var.getLastStoryViewer().y;
         } else {
-            e6Var = n2Var.getResourceProvider();
+            f6Var = n2Var.getResourceProvider();
         }
     }
 
-    public x0(n2 n2Var, Context context, int i10, boolean z10, int i11, boolean z11, lx0 lx0Var, e6 e6Var) {
-        super(1, context, e6Var, false);
+    public x0(n2 n2Var, Context context, int i10, boolean z10, int i11, boolean z11, lx0 lx0Var, f6 f6Var) {
+        super(1, context, f6Var, false);
         ArrayList arrayList = new ArrayList();
         this.d = arrayList;
         this.K = 255;
@@ -404,19 +404,19 @@ public final class x0 extends f3 implements NotificationCenter.NotificationCente
         u0Var.setCurrentItem(i12);
         f0Var.addView(u0Var, y5.d(-1, 100.0f, 0, 0.0f, 18.0f, 0.0f, 0.0f));
         f0Var.addView(frameLayout, y5.d(52, 52.0f, 53, 0.0f, 24.0f, 0.0f, 0.0f));
-        sa saVar = new sa(getContext(), u0Var, this.d.size());
-        u0Var.b(new v0(this, saVar));
+        ra raVar = new ra(getContext(), u0Var, this.d.size());
+        u0Var.b(new v0(this, raVar));
         LinearLayout linearLayout = new LinearLayout(getContext());
         linearLayout.addView(f0Var);
         linearLayout.setOrientation(1);
         int i14 = j6.V8;
         int i15 = j6.P9;
-        saVar.n = i14;
-        saVar.r = i15;
+        raVar.n = i14;
+        raVar.r = i15;
         if (!z11) {
-            linearLayout.addView(saVar, y5.t(this.d.size() * 11, 5, 1, 0, 0, 0, 10));
+            linearLayout.addView(raVar, y5.t(this.d.size() * 11, 5, 1, 0, 0, 0, 10));
         }
-        p0 p0Var = new p0(getContext(), e6Var, true);
+        p0 p0Var = new p0(getContext(), f6Var, true);
         this.c = p0Var;
         p0Var.r.setOnClickListener(new m5(this, n2Var, z11, kx0Var2, 5));
         final int i16 = 1;

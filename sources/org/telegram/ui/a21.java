@@ -13,9 +13,9 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public abstract class a21 extends org.telegram.ui.Components.ga implements NotificationCenter.NotificationCenterDelegate {
+public abstract class a21 extends org.telegram.ui.Components.fa implements NotificationCenter.NotificationCenterDelegate {
     public boolean E;
     public final Rect F;
     public final e01 G;
@@ -28,17 +28,17 @@ public abstract class a21 extends org.telegram.ui.Components.ga implements Notif
     public ValueAnimator x;
     public float y;
 
-    public a21(Context context, org.telegram.ui.Components.bw0 bw0Var, ai.x8 x8Var, final org.telegram.ui.Components.ds0 ds0Var) {
-        super(context, bw0Var);
+    public a21(Context context, org.telegram.ui.Components.aw0 aw0Var, ai.x8 x8Var, final org.telegram.ui.Components.cs0 cs0Var) {
+        super(context, aw0Var);
         this.F = new Rect();
         this.r = x8Var;
         Objects.requireNonNull(x8Var);
         this.G = new e01(x8Var, 6);
-        final org.telegram.ui.Components.fs0 fs0Var = (org.telegram.ui.Components.fs0) this;
-        bi.a aVar = new bi.a(fs0Var, context, ds0Var);
+        final org.telegram.ui.Components.es0 es0Var = (org.telegram.ui.Components.es0) this;
+        bi.a aVar = new bi.a(es0Var, context, cs0Var);
         this.h = aVar;
         aVar.setAllowDisallowInterceptTouch(true);
-        z11 z11Var = new z11(fs0Var);
+        z11 z11Var = new z11(es0Var);
         this.s = z11Var;
         z11Var.a = x8Var.a();
         aVar.setAdapter(z11Var);
@@ -65,12 +65,12 @@ public abstract class a21 extends org.telegram.ui.Components.ga implements Notif
                 Integer num = (Integer) obj;
                 switch (i15) {
                     case 0:
-                        if (!fs0Var.w) {
+                        if (!es0Var.w) {
                             if (num.intValue() != -1) {
                                 break;
                             } else {
-                                org.telegram.ui.Components.ds0 ds0Var2 = ds0Var;
-                                org.telegram.ui.Components.e5.S(ds0Var2.a, ds0Var2.b, ds0Var2.c, new org.telegram.ui.Components.lv(ds0Var2, 19));
+                                org.telegram.ui.Components.cs0 cs0Var2 = cs0Var;
+                                org.telegram.ui.Components.d5.S(cs0Var2.a, cs0Var2.b, cs0Var2.c, new org.telegram.ui.Components.mv(cs0Var2, 20));
                                 break;
                             }
                         } else {
@@ -78,104 +78,104 @@ public abstract class a21 extends org.telegram.ui.Components.ga implements Notif
                         }
                     default:
                         View view = (View) obj2;
-                        if (num.intValue() != -1 && num.intValue() != 0 && !fs0Var.w) {
+                        if (num.intValue() != -1 && num.intValue() != 0 && !es0Var.w) {
                             final int intValue = num.intValue();
-                            final org.telegram.ui.Components.ds0 ds0Var3 = ds0Var;
-                            org.telegram.ui.Components.kv0 kv0Var = ds0Var3.d;
-                            org.telegram.ui.ActionBar.n2 n2Var = kv0Var.v1;
-                            storiesController = kv0Var.getStoriesController();
-                            if (storiesController.i(kv0Var.j1)) {
-                                org.telegram.ui.Components.w70 H = org.telegram.ui.Components.w70.H(n2Var, view);
-                                H.W(new org.telegram.ui.Components.cs0(ds0Var3));
+                            final org.telegram.ui.Components.cs0 cs0Var3 = cs0Var;
+                            org.telegram.ui.Components.jv0 jv0Var = cs0Var3.d;
+                            org.telegram.ui.ActionBar.n2 n2Var = jv0Var.v1;
+                            storiesController = jv0Var.getStoriesController();
+                            if (storiesController.i(jv0Var.j1)) {
+                                org.telegram.ui.Components.v70 H = org.telegram.ui.Components.v70.H(n2Var, view);
+                                H.W(new org.telegram.ui.Components.bs0(cs0Var3));
                                 final int i16 = 0;
-                                H.c(R.drawable.menu_add_stories, LocaleController.getString(R.string.StoriesAlbumMenuAddStories), new Runnable() { // from class: org.telegram.ui.Components.as0
+                                H.c(R.drawable.menu_add_stories, LocaleController.getString(R.string.StoriesAlbumMenuAddStories), new Runnable() { // from class: org.telegram.ui.Components.zr0
                                     @Override // java.lang.Runnable
                                     public final void run() {
                                         switch (i16) {
                                             case 0:
-                                                kv0 kv0Var2 = ds0Var3.d;
-                                                kv0Var2.O0(kv0Var2.v1, kv0Var2.j1, intValue);
+                                                jv0 jv0Var2 = cs0Var3.d;
+                                                jv0Var2.O0(jv0Var2.v1, jv0Var2.j1, intValue);
                                                 break;
                                             case 1:
-                                                kv0 kv0Var3 = ds0Var3.d;
-                                                kv0Var3.Q0(kv0Var3.v1, kv0Var3.j1, intValue);
+                                                jv0 jv0Var3 = cs0Var3.d;
+                                                jv0Var3.Q0(jv0Var3.v1, jv0Var3.j1, intValue);
                                                 break;
                                             case 2:
-                                                ds0Var3.d.d1(intValue);
+                                                cs0Var3.d.d1(intValue);
                                                 break;
                                             default:
-                                                kv0 kv0Var4 = ds0Var3.d;
-                                                kv0Var4.P0(kv0Var4.v1, kv0Var4.j1, intValue);
+                                                jv0 jv0Var4 = cs0Var3.d;
+                                                jv0Var4.P0(jv0Var4.v1, jv0Var4.j1, intValue);
                                                 break;
                                         }
                                     }
                                 }, false);
-                                kv0Var.x(H, n2Var, kv0Var.j1, intValue);
+                                jv0Var.x(H, n2Var, jv0Var.j1, intValue);
                                 final int i17 = 1;
-                                H.c(R.drawable.msg_edit, LocaleController.getString(R.string.StoriesAlbumMenuEditName), new Runnable() { // from class: org.telegram.ui.Components.as0
+                                H.c(R.drawable.msg_edit, LocaleController.getString(R.string.StoriesAlbumMenuEditName), new Runnable() { // from class: org.telegram.ui.Components.zr0
                                     @Override // java.lang.Runnable
                                     public final void run() {
                                         switch (i17) {
                                             case 0:
-                                                kv0 kv0Var2 = ds0Var3.d;
-                                                kv0Var2.O0(kv0Var2.v1, kv0Var2.j1, intValue);
+                                                jv0 jv0Var2 = cs0Var3.d;
+                                                jv0Var2.O0(jv0Var2.v1, jv0Var2.j1, intValue);
                                                 break;
                                             case 1:
-                                                kv0 kv0Var3 = ds0Var3.d;
-                                                kv0Var3.Q0(kv0Var3.v1, kv0Var3.j1, intValue);
+                                                jv0 jv0Var3 = cs0Var3.d;
+                                                jv0Var3.Q0(jv0Var3.v1, jv0Var3.j1, intValue);
                                                 break;
                                             case 2:
-                                                ds0Var3.d.d1(intValue);
+                                                cs0Var3.d.d1(intValue);
                                                 break;
                                             default:
-                                                kv0 kv0Var4 = ds0Var3.d;
-                                                kv0Var4.P0(kv0Var4.v1, kv0Var4.j1, intValue);
+                                                jv0 jv0Var4 = cs0Var3.d;
+                                                jv0Var4.P0(jv0Var4.v1, jv0Var4.j1, intValue);
                                                 break;
                                         }
                                     }
                                 }, false);
                                 final int i18 = 2;
-                                H.c(R.drawable.tabs_reorder, LocaleController.getString(R.string.StoriesAlbumMenuReorder), new Runnable() { // from class: org.telegram.ui.Components.as0
+                                H.c(R.drawable.tabs_reorder, LocaleController.getString(R.string.StoriesAlbumMenuReorder), new Runnable() { // from class: org.telegram.ui.Components.zr0
                                     @Override // java.lang.Runnable
                                     public final void run() {
                                         switch (i18) {
                                             case 0:
-                                                kv0 kv0Var2 = ds0Var3.d;
-                                                kv0Var2.O0(kv0Var2.v1, kv0Var2.j1, intValue);
+                                                jv0 jv0Var2 = cs0Var3.d;
+                                                jv0Var2.O0(jv0Var2.v1, jv0Var2.j1, intValue);
                                                 break;
                                             case 1:
-                                                kv0 kv0Var3 = ds0Var3.d;
-                                                kv0Var3.Q0(kv0Var3.v1, kv0Var3.j1, intValue);
+                                                jv0 jv0Var3 = cs0Var3.d;
+                                                jv0Var3.Q0(jv0Var3.v1, jv0Var3.j1, intValue);
                                                 break;
                                             case 2:
-                                                ds0Var3.d.d1(intValue);
+                                                cs0Var3.d.d1(intValue);
                                                 break;
                                             default:
-                                                kv0 kv0Var4 = ds0Var3.d;
-                                                kv0Var4.P0(kv0Var4.v1, kv0Var4.j1, intValue);
+                                                jv0 jv0Var4 = cs0Var3.d;
+                                                jv0Var4.P0(jv0Var4.v1, jv0Var4.j1, intValue);
                                                 break;
                                         }
                                     }
                                 }, false);
                                 final int i19 = 3;
-                                H.c(R.drawable.msg_delete, LocaleController.getString(R.string.StoriesAlbumMenuDeleteAlbum), new Runnable() { // from class: org.telegram.ui.Components.as0
+                                H.c(R.drawable.msg_delete, LocaleController.getString(R.string.StoriesAlbumMenuDeleteAlbum), new Runnable() { // from class: org.telegram.ui.Components.zr0
                                     @Override // java.lang.Runnable
                                     public final void run() {
                                         switch (i19) {
                                             case 0:
-                                                kv0 kv0Var2 = ds0Var3.d;
-                                                kv0Var2.O0(kv0Var2.v1, kv0Var2.j1, intValue);
+                                                jv0 jv0Var2 = cs0Var3.d;
+                                                jv0Var2.O0(jv0Var2.v1, jv0Var2.j1, intValue);
                                                 break;
                                             case 1:
-                                                kv0 kv0Var3 = ds0Var3.d;
-                                                kv0Var3.Q0(kv0Var3.v1, kv0Var3.j1, intValue);
+                                                jv0 jv0Var3 = cs0Var3.d;
+                                                jv0Var3.Q0(jv0Var3.v1, jv0Var3.j1, intValue);
                                                 break;
                                             case 2:
-                                                ds0Var3.d.d1(intValue);
+                                                cs0Var3.d.d1(intValue);
                                                 break;
                                             default:
-                                                kv0 kv0Var4 = ds0Var3.d;
-                                                kv0Var4.P0(kv0Var4.v1, kv0Var4.j1, intValue);
+                                                jv0 jv0Var4 = cs0Var3.d;
+                                                jv0Var4.P0(jv0Var4.v1, jv0Var4.j1, intValue);
                                                 break;
                                         }
                                     }
@@ -199,12 +199,12 @@ public abstract class a21 extends org.telegram.ui.Components.ga implements Notif
                 Integer num = (Integer) obj;
                 switch (i16) {
                     case 0:
-                        if (!fs0Var.w) {
+                        if (!es0Var.w) {
                             if (num.intValue() != -1) {
                                 break;
                             } else {
-                                org.telegram.ui.Components.ds0 ds0Var2 = ds0Var;
-                                org.telegram.ui.Components.e5.S(ds0Var2.a, ds0Var2.b, ds0Var2.c, new org.telegram.ui.Components.lv(ds0Var2, 19));
+                                org.telegram.ui.Components.cs0 cs0Var2 = cs0Var;
+                                org.telegram.ui.Components.d5.S(cs0Var2.a, cs0Var2.b, cs0Var2.c, new org.telegram.ui.Components.mv(cs0Var2, 20));
                                 break;
                             }
                         } else {
@@ -212,104 +212,104 @@ public abstract class a21 extends org.telegram.ui.Components.ga implements Notif
                         }
                     default:
                         View view = (View) obj2;
-                        if (num.intValue() != -1 && num.intValue() != 0 && !fs0Var.w) {
+                        if (num.intValue() != -1 && num.intValue() != 0 && !es0Var.w) {
                             final int intValue = num.intValue();
-                            final org.telegram.ui.Components.ds0 ds0Var3 = ds0Var;
-                            org.telegram.ui.Components.kv0 kv0Var = ds0Var3.d;
-                            org.telegram.ui.ActionBar.n2 n2Var = kv0Var.v1;
-                            storiesController = kv0Var.getStoriesController();
-                            if (storiesController.i(kv0Var.j1)) {
-                                org.telegram.ui.Components.w70 H = org.telegram.ui.Components.w70.H(n2Var, view);
-                                H.W(new org.telegram.ui.Components.cs0(ds0Var3));
+                            final org.telegram.ui.Components.cs0 cs0Var3 = cs0Var;
+                            org.telegram.ui.Components.jv0 jv0Var = cs0Var3.d;
+                            org.telegram.ui.ActionBar.n2 n2Var = jv0Var.v1;
+                            storiesController = jv0Var.getStoriesController();
+                            if (storiesController.i(jv0Var.j1)) {
+                                org.telegram.ui.Components.v70 H = org.telegram.ui.Components.v70.H(n2Var, view);
+                                H.W(new org.telegram.ui.Components.bs0(cs0Var3));
                                 final int i162 = 0;
-                                H.c(R.drawable.menu_add_stories, LocaleController.getString(R.string.StoriesAlbumMenuAddStories), new Runnable() { // from class: org.telegram.ui.Components.as0
+                                H.c(R.drawable.menu_add_stories, LocaleController.getString(R.string.StoriesAlbumMenuAddStories), new Runnable() { // from class: org.telegram.ui.Components.zr0
                                     @Override // java.lang.Runnable
                                     public final void run() {
                                         switch (i162) {
                                             case 0:
-                                                kv0 kv0Var2 = ds0Var3.d;
-                                                kv0Var2.O0(kv0Var2.v1, kv0Var2.j1, intValue);
+                                                jv0 jv0Var2 = cs0Var3.d;
+                                                jv0Var2.O0(jv0Var2.v1, jv0Var2.j1, intValue);
                                                 break;
                                             case 1:
-                                                kv0 kv0Var3 = ds0Var3.d;
-                                                kv0Var3.Q0(kv0Var3.v1, kv0Var3.j1, intValue);
+                                                jv0 jv0Var3 = cs0Var3.d;
+                                                jv0Var3.Q0(jv0Var3.v1, jv0Var3.j1, intValue);
                                                 break;
                                             case 2:
-                                                ds0Var3.d.d1(intValue);
+                                                cs0Var3.d.d1(intValue);
                                                 break;
                                             default:
-                                                kv0 kv0Var4 = ds0Var3.d;
-                                                kv0Var4.P0(kv0Var4.v1, kv0Var4.j1, intValue);
+                                                jv0 jv0Var4 = cs0Var3.d;
+                                                jv0Var4.P0(jv0Var4.v1, jv0Var4.j1, intValue);
                                                 break;
                                         }
                                     }
                                 }, false);
-                                kv0Var.x(H, n2Var, kv0Var.j1, intValue);
+                                jv0Var.x(H, n2Var, jv0Var.j1, intValue);
                                 final int i17 = 1;
-                                H.c(R.drawable.msg_edit, LocaleController.getString(R.string.StoriesAlbumMenuEditName), new Runnable() { // from class: org.telegram.ui.Components.as0
+                                H.c(R.drawable.msg_edit, LocaleController.getString(R.string.StoriesAlbumMenuEditName), new Runnable() { // from class: org.telegram.ui.Components.zr0
                                     @Override // java.lang.Runnable
                                     public final void run() {
                                         switch (i17) {
                                             case 0:
-                                                kv0 kv0Var2 = ds0Var3.d;
-                                                kv0Var2.O0(kv0Var2.v1, kv0Var2.j1, intValue);
+                                                jv0 jv0Var2 = cs0Var3.d;
+                                                jv0Var2.O0(jv0Var2.v1, jv0Var2.j1, intValue);
                                                 break;
                                             case 1:
-                                                kv0 kv0Var3 = ds0Var3.d;
-                                                kv0Var3.Q0(kv0Var3.v1, kv0Var3.j1, intValue);
+                                                jv0 jv0Var3 = cs0Var3.d;
+                                                jv0Var3.Q0(jv0Var3.v1, jv0Var3.j1, intValue);
                                                 break;
                                             case 2:
-                                                ds0Var3.d.d1(intValue);
+                                                cs0Var3.d.d1(intValue);
                                                 break;
                                             default:
-                                                kv0 kv0Var4 = ds0Var3.d;
-                                                kv0Var4.P0(kv0Var4.v1, kv0Var4.j1, intValue);
+                                                jv0 jv0Var4 = cs0Var3.d;
+                                                jv0Var4.P0(jv0Var4.v1, jv0Var4.j1, intValue);
                                                 break;
                                         }
                                     }
                                 }, false);
                                 final int i18 = 2;
-                                H.c(R.drawable.tabs_reorder, LocaleController.getString(R.string.StoriesAlbumMenuReorder), new Runnable() { // from class: org.telegram.ui.Components.as0
+                                H.c(R.drawable.tabs_reorder, LocaleController.getString(R.string.StoriesAlbumMenuReorder), new Runnable() { // from class: org.telegram.ui.Components.zr0
                                     @Override // java.lang.Runnable
                                     public final void run() {
                                         switch (i18) {
                                             case 0:
-                                                kv0 kv0Var2 = ds0Var3.d;
-                                                kv0Var2.O0(kv0Var2.v1, kv0Var2.j1, intValue);
+                                                jv0 jv0Var2 = cs0Var3.d;
+                                                jv0Var2.O0(jv0Var2.v1, jv0Var2.j1, intValue);
                                                 break;
                                             case 1:
-                                                kv0 kv0Var3 = ds0Var3.d;
-                                                kv0Var3.Q0(kv0Var3.v1, kv0Var3.j1, intValue);
+                                                jv0 jv0Var3 = cs0Var3.d;
+                                                jv0Var3.Q0(jv0Var3.v1, jv0Var3.j1, intValue);
                                                 break;
                                             case 2:
-                                                ds0Var3.d.d1(intValue);
+                                                cs0Var3.d.d1(intValue);
                                                 break;
                                             default:
-                                                kv0 kv0Var4 = ds0Var3.d;
-                                                kv0Var4.P0(kv0Var4.v1, kv0Var4.j1, intValue);
+                                                jv0 jv0Var4 = cs0Var3.d;
+                                                jv0Var4.P0(jv0Var4.v1, jv0Var4.j1, intValue);
                                                 break;
                                         }
                                     }
                                 }, false);
                                 final int i19 = 3;
-                                H.c(R.drawable.msg_delete, LocaleController.getString(R.string.StoriesAlbumMenuDeleteAlbum), new Runnable() { // from class: org.telegram.ui.Components.as0
+                                H.c(R.drawable.msg_delete, LocaleController.getString(R.string.StoriesAlbumMenuDeleteAlbum), new Runnable() { // from class: org.telegram.ui.Components.zr0
                                     @Override // java.lang.Runnable
                                     public final void run() {
                                         switch (i19) {
                                             case 0:
-                                                kv0 kv0Var2 = ds0Var3.d;
-                                                kv0Var2.O0(kv0Var2.v1, kv0Var2.j1, intValue);
+                                                jv0 jv0Var2 = cs0Var3.d;
+                                                jv0Var2.O0(jv0Var2.v1, jv0Var2.j1, intValue);
                                                 break;
                                             case 1:
-                                                kv0 kv0Var3 = ds0Var3.d;
-                                                kv0Var3.Q0(kv0Var3.v1, kv0Var3.j1, intValue);
+                                                jv0 jv0Var3 = cs0Var3.d;
+                                                jv0Var3.Q0(jv0Var3.v1, jv0Var3.j1, intValue);
                                                 break;
                                             case 2:
-                                                ds0Var3.d.d1(intValue);
+                                                cs0Var3.d.d1(intValue);
                                                 break;
                                             default:
-                                                kv0 kv0Var4 = ds0Var3.d;
-                                                kv0Var4.P0(kv0Var4.v1, kv0Var4.j1, intValue);
+                                                jv0 jv0Var4 = cs0Var3.d;
+                                                jv0Var4.P0(jv0Var4.v1, jv0Var4.j1, intValue);
                                                 break;
                                         }
                                     }
@@ -402,13 +402,13 @@ public abstract class a21 extends org.telegram.ui.Components.ga implements Notif
         return getMeasuredHeight() * this.y;
     }
 
-    @Override // org.telegram.ui.Components.ga, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.fa, android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         NotificationCenter.getInstance(this.r.a).addObserver(this, NotificationCenter.storyAlbumsCollectionsUpdate);
     }
 
-    @Override // org.telegram.ui.Components.ga, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.fa, android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         NotificationCenter.getInstance(this.r.a).removeObserver(this, NotificationCenter.storyAlbumsCollectionsUpdate);
@@ -440,18 +440,18 @@ public abstract class a21 extends org.telegram.ui.Components.ga implements Notif
         org.telegram.ui.Components.w81 w81Var = this.n;
         w81Var.setReordering(z10);
         boolean z11 = this.w;
-        org.telegram.ui.Components.fs0 fs0Var = (org.telegram.ui.Components.fs0) this;
-        org.telegram.ui.Components.kv0 kv0Var = fs0Var.H;
-        TextView textView = kv0Var.q0;
+        org.telegram.ui.Components.es0 es0Var = (org.telegram.ui.Components.es0) this;
+        org.telegram.ui.Components.jv0 jv0Var = es0Var.H;
+        TextView textView = jv0Var.q0;
         textView.setVisibility(0);
-        textView.animate().alpha(z11 ? 1.0f : 0.0f).scaleX(z11 ? 1.0f : 0.4f).scaleY(z11 ? 1.0f : 0.4f).withEndAction(new org.telegram.ui.Components.es0(0, fs0Var, z11)).start();
-        kv0Var.q1(true);
+        textView.animate().alpha(z11 ? 1.0f : 0.0f).scaleX(z11 ? 1.0f : 0.4f).scaleY(z11 ? 1.0f : 0.4f).withEndAction(new org.telegram.ui.Components.ds0(0, es0Var, z11)).start();
+        jv0Var.q1(true);
         if (z10) {
             org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
             if (U instanceof ProfileActivity) {
                 ProfileActivity profileActivity = (ProfileActivity) U;
                 profileActivity.G4(false);
-                AndroidUtilities.runOnUIThread(new zb0(profileActivity, 27));
+                AndroidUtilities.runOnUIThread(new ac0(profileActivity, 27));
             }
         }
         if (z10) {

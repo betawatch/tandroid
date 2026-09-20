@@ -3,15 +3,15 @@ package org.telegram.ui;
 import android.app.Activity;
 import android.content.Context;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class ha extends oa {
     public final /* synthetic */ int J = 1;
-    public final /* synthetic */ org.telegram.ui.Components.vl0 K;
+    public final /* synthetic */ org.telegram.ui.Components.ul0 K;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ha(ia iaVar, Activity activity, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(activity, e6Var);
+    public ha(ia iaVar, Activity activity, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(activity, f6Var);
         this.K = iaVar;
         this.a = true;
     }
@@ -31,8 +31,8 @@ public final class ha extends oa {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ha(gp gpVar, Context context, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(context, e6Var);
+    public ha(gp gpVar, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context, f6Var);
         this.K = gpVar;
     }
 }

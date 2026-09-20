@@ -8,11 +8,12 @@ import android.widget.FrameLayout;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.HashtagSearchController;
-import org.telegram.ui.Components.jh0;
-import org.telegram.ui.Components.la0;
+import org.telegram.ui.Components.ih0;
+import org.telegram.ui.Components.ka0;
+import org.telegram.ui.Components.s61;
 import org.telegram.ui.Components.t00;
-import org.telegram.ui.Components.t61;
-import org.telegram.ui.Components.zr0;
+import org.telegram.ui.Components.yr0;
+import org.telegram.ui.ai0;
 import org.telegram.ui.ee;
 import org.telegram.ui.fr0;
 import org.telegram.ui.hr0;
@@ -20,10 +21,9 @@ import org.telegram.ui.nv;
 import org.telegram.ui.ov;
 import org.telegram.ui.ss;
 import org.telegram.ui.uy;
-import org.telegram.ui.zh0;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class m3 extends s4.s0 {
     public final /* synthetic */ int a;
@@ -97,7 +97,7 @@ public final class m3 extends s4.s0 {
                 break;
             case 8:
                 ((s4.s0) this.b).a(recyclerView, i10);
-                ((la0) this.c).D.getClass();
+                ((ka0) this.c).D.getClass();
                 break;
         }
     }
@@ -113,7 +113,7 @@ public final class m3 extends s4.s0 {
         switch (this.a) {
             case 0:
                 w3 w3Var = (w3) this.c;
-                ((u3) this.b).u(i11);
+                ((u3) this.b).y(i11);
                 w3Var.n3.H();
                 i1 i1Var = w3Var.L3;
                 if (i1Var != null && (G = w3Var.G(i1Var)) != null) {
@@ -126,10 +126,10 @@ public final class m3 extends s4.s0 {
                 }
                 break;
             case 1:
-                t61 t61Var = ((ee) this.c).a;
-                if (t61Var.canScrollVertically(1)) {
-                    for (int i14 = 0; i14 < t61Var.getChildCount(); i14++) {
-                        if (!(t61Var.getChildAt(i14) instanceof t00)) {
+                s61 s61Var = ((ee) this.c).a;
+                if (s61Var.canScrollVertically(1)) {
+                    for (int i14 = 0; i14 < s61Var.getChildCount(); i14++) {
+                        if (!(s61Var.getChildAt(i14) instanceof t00)) {
                         }
                     }
                     break;
@@ -173,18 +173,18 @@ public final class m3 extends s4.s0 {
                 break;
             case 3:
                 uy uyVar = (uy) this.b;
-                jh0 jh0Var = (jh0) this.c;
-                t61 t61Var2 = jh0Var.c;
-                if (!(TextUtils.isEmpty(jh0Var.w) ? jh0Var.e : jh0Var.n).isEmpty()) {
-                    if (t61Var2.canScrollVertically(1)) {
-                        for (int i17 = 0; i17 < t61Var2.getChildCount(); i17++) {
-                            if (!(t61Var2.getChildAt(i17) instanceof t00)) {
+                ih0 ih0Var = (ih0) this.c;
+                s61 s61Var2 = ih0Var.c;
+                if (!(TextUtils.isEmpty(ih0Var.w) ? ih0Var.e : ih0Var.n).isEmpty()) {
+                    if (s61Var2.canScrollVertically(1)) {
+                        for (int i17 = 0; i17 < s61Var2.getChildCount(); i17++) {
+                            if (!(s61Var2.getChildAt(i17) instanceof t00)) {
                             }
                         }
                     }
-                    jh0Var.a(false);
+                    ih0Var.a(false);
                 }
-                if (t61Var2.K1 && !jh0Var.Q && uyVar.getParentActivity() != null) {
+                if (s61Var2.K1 && !ih0Var.Q && uyVar.getParentActivity() != null) {
                     AndroidUtilities.hideKeyboard(uyVar.getParentActivity().getCurrentFocus());
                     break;
                 }
@@ -215,10 +215,10 @@ public final class m3 extends s4.s0 {
                 }
                 break;
             case 6:
-                zh0 zh0Var = (zh0) this.c;
-                if (zh0Var.b0 && !zh0Var.W) {
-                    if (zh0Var.X - ((gg.b0) this.b).N0() < 10) {
-                        zh0Var.d0(true);
+                ai0 ai0Var = (ai0) this.c;
+                if (ai0Var.b0 && !ai0Var.W) {
+                    if (ai0Var.X - ((gg.b0) this.b).N0() < 10) {
+                        ai0Var.d0(true);
                         break;
                     }
                 }
@@ -243,7 +243,7 @@ public final class m3 extends s4.s0 {
                 break;
             case 8:
                 ((s4.s0) this.b).b(recyclerView, i10, i11);
-                ((la0) this.c).D.b(recyclerView, i10, i11);
+                ((ka0) this.c).D.b(recyclerView, i10, i11);
                 break;
             default:
                 xh.o2 o2Var = (xh.o2) this.c;
@@ -257,7 +257,7 @@ public final class m3 extends s4.s0 {
                     }
                     o2Var.e.a();
                 }
-                ((zr0) this.b).o();
+                ((yr0) this.b).o();
                 break;
         }
     }

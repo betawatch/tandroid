@@ -2,130 +2,75 @@ package v7;
 
 import android.content.Context;
 import android.content.res.Resources;
-import android.net.Uri;
-import android.os.ParcelFileDescriptor;
-import android.os.Process;
-import android.os.StrictMode;
-import android.util.Log;
-import java.io.Closeable;
+import android.graphics.Typeface;
+import j$.util.concurrent.ConcurrentHashMap;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
 import java.io.InputStream;
-import java.nio.MappedByteBuffer;
-import java.nio.channels.FileChannel;
+import java.util.List;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public abstract class i8 {
-    public static void a(Closeable closeable) {
-        if (closeable != null) {
-            try {
-                closeable.close();
-            } catch (IOException unused) {
-            }
-        }
+    public i8() {
+        new ConcurrentHashMap();
     }
 
-    public static boolean b(File file, Resources resources, int i10) {
-        InputStream inputStream;
-        try {
-            inputStream = resources.openRawResource(i10);
-            try {
-                boolean c10 = c(inputStream, file);
-                a(inputStream);
-                return c10;
-            } catch (Throwable th2) {
-                th = th2;
-                a(inputStream);
-                throw th;
-            }
-        } catch (Throwable th3) {
-            th = th3;
-            inputStream = null;
-        }
+    public abstract Typeface a(Context context, h0.e eVar, Resources resources, int i10);
+
+    public abstract Typeface b(Context context, o0.h[] hVarArr, int i10);
+
+    public Typeface c(Context context, List list, int i10) {
+        throw new IllegalStateException("createFromFontInfoWithFallback must only be called on API 29+");
     }
 
-    public static boolean c(InputStream inputStream, File file) {
-        FileOutputStream fileOutputStream;
-        StrictMode.ThreadPolicy allowThreadDiskWrites = StrictMode.allowThreadDiskWrites();
-        FileOutputStream fileOutputStream2 = null;
-        try {
-            try {
-                fileOutputStream = new FileOutputStream(file, false);
-            } catch (IOException e) {
-                e = e;
-            }
-        } catch (Throwable th2) {
-            th = th2;
-        }
-        try {
-            byte[] bArr = new byte[1024];
-            while (true) {
-                int read = inputStream.read(bArr);
-                if (read == -1) {
-                    a(fileOutputStream);
-                    StrictMode.setThreadPolicy(allowThreadDiskWrites);
-                    return true;
-                }
-                fileOutputStream.write(bArr, 0, read);
-            }
-        } catch (IOException e7) {
-            e = e7;
-            fileOutputStream2 = fileOutputStream;
-            Log.e("TypefaceCompatUtil", "Error copying resource contents to temp file: " + e.getMessage());
-            a(fileOutputStream2);
-            StrictMode.setThreadPolicy(allowThreadDiskWrites);
-            return false;
-        } catch (Throwable th3) {
-            th = th3;
-            fileOutputStream2 = fileOutputStream;
-            a(fileOutputStream2);
-            StrictMode.setThreadPolicy(allowThreadDiskWrites);
-            throw th;
-        }
-    }
-
-    public static File d(Context context) {
-        File cacheDir = context.getCacheDir();
-        if (cacheDir == null) {
-            return null;
-        }
-        String str = ".font" + Process.myPid() + "-" + Process.myTid() + "-";
-        for (int i10 = 0; i10 < 100; i10++) {
-            File file = new File(cacheDir, str + i10);
-            if (file.createNewFile()) {
-                return file;
-            }
-        }
-        return null;
-    }
-
-    public static MappedByteBuffer e(Context context, Uri uri) {
-        ParcelFileDescriptor openFileDescriptor;
-        try {
-            openFileDescriptor = context.getContentResolver().openFileDescriptor(uri, "r", null);
-        } catch (IOException unused) {
-        }
-        if (openFileDescriptor == null) {
-            if (openFileDescriptor != null) {
-                openFileDescriptor.close();
-                return null;
-            }
+    public Typeface d(Context context, InputStream inputStream) {
+        File d = j8.d(context);
+        if (d == null) {
             return null;
         }
         try {
-            FileInputStream fileInputStream = new FileInputStream(openFileDescriptor.getFileDescriptor());
-            try {
-                FileChannel channel = fileInputStream.getChannel();
-                MappedByteBuffer map = channel.map(FileChannel.MapMode.READ_ONLY, 0L, channel.size());
-                fileInputStream.close();
-                openFileDescriptor.close();
-                return map;
-            } finally {
+            if (j8.c(inputStream, d)) {
+                return Typeface.createFromFile(d.getPath());
             }
+            return null;
+        } catch (RuntimeException unused) {
+            return null;
         } finally {
+            d.delete();
         }
+    }
+
+    public Typeface e(Context context, Resources resources, int i10, String str, int i11) {
+        File d = j8.d(context);
+        if (d == null) {
+            return null;
+        }
+        try {
+            if (j8.b(d, resources, i10)) {
+                return Typeface.createFromFile(d.getPath());
+            }
+            return null;
+        } catch (RuntimeException unused) {
+            return null;
+        } finally {
+            d.delete();
+        }
+    }
+
+    public o0.h f(o0.h[] hVarArr, int i10) {
+        new ob.a(10);
+        int i11 = (i10 & 1) == 0 ? 400 : 700;
+        boolean z10 = (i10 & 2) != 0;
+        o0.h hVar = null;
+        int i12 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+        for (o0.h hVar2 : hVarArr) {
+            int abs = (Math.abs(hVar2.c - i11) * 2) + (hVar2.d == z10 ? 0 : 1);
+            if (hVar == null || i12 > abs) {
+                hVar = hVar2;
+                i12 = abs;
+            }
+        }
+        return hVar;
     }
 }

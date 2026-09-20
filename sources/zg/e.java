@@ -5,9 +5,8 @@ import android.view.MotionEvent;
 import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.ai1;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class e extends ImageView {
     public long a;
@@ -32,7 +31,7 @@ public final class e extends ImageView {
             this.a = System.currentTimeMillis();
             fVar.b = true;
             fVar.c = false;
-            AndroidUtilities.runOnUIThread(new ai1(fVar, 350, 8), 350);
+            AndroidUtilities.runOnUIThread(new qg.v(fVar, 350, 6), 350);
         } else if (motionEvent.getAction() == 3 || motionEvent.getAction() == 1) {
             fVar.b = false;
             if (!fVar.c && (callback = fVar.d) != null) {

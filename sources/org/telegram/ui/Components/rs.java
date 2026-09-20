@@ -12,9 +12,9 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public class rs extends l61 {
+public class rs extends k61 {
     public final int N;
     public final int O;
     public final boolean P;
@@ -35,34 +35,34 @@ public class rs extends l61 {
     public String e0;
     public final ms f0;
     public boolean g0;
-    public final y2 h0;
+    public final x2 h0;
 
-    public rs(wl0 wl0Var, Context context, int i10, int i11, boolean z10, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(wl0Var, context, i10, 0, true, null, e6Var);
+    public rs(vl0 vl0Var, Context context, int i10, int i11, boolean z10, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(vl0Var, context, i10, 0, true, null, f6Var);
         this.R = new ArrayList();
         this.S = new ArrayList();
         this.T = new ArrayList();
         this.f0 = new ms(this, 0);
         this.g0 = true;
-        this.h0 = new y2(this, 3);
+        this.h0 = new x2(this, 3);
         this.s = new d(this, 8);
         this.N = i10;
         this.O = i11;
         this.P = z10;
         this.Q = new qs(i10, new ms(this, 1));
-        this.W = AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.AppsTabInfo), new ns(this, e6Var, context)), true);
+        this.W = AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.AppsTabInfo), new ns(this, f6Var, context)), true);
         N(false);
         MediaDataController.getInstance(i10).loadHints(true);
     }
 
     public final void V() {
         boolean isEmpty = TextUtils.isEmpty(this.e0);
-        wl0 wl0Var = this.d;
+        vl0 vl0Var = this.d;
         if (isEmpty) {
             if (!this.g0) {
-                if (wl0Var != null) {
-                    for (int i10 = 0; i10 < wl0Var.getChildCount(); i10++) {
-                        if (!(wl0Var.getChildAt(i10) instanceof t00)) {
+                if (vl0Var != null) {
+                    for (int i10 = 0; i10 < vl0Var.getChildCount(); i10++) {
+                        if (!(vl0Var.getChildAt(i10) instanceof t00)) {
                         }
                     }
                 }
@@ -70,13 +70,13 @@ public class rs extends l61 {
             this.Q.a();
             break;
         }
-        if (this.b0 && !this.Z && wl0Var != null) {
+        if (this.b0 && !this.Z && vl0Var != null) {
             int i11 = 0;
             while (true) {
-                if (i11 >= wl0Var.getChildCount()) {
+                if (i11 >= vl0Var.getChildCount()) {
                     break;
                 }
-                if (!(wl0Var.getChildAt(i11) instanceof t00)) {
+                if (!(vl0Var.getChildAt(i11) instanceof t00)) {
                     i11++;
                 } else if (this.b0 && !this.Z && !TextUtils.isEmpty(this.e0)) {
                     W(true);

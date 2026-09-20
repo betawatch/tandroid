@@ -1,15 +1,41 @@
 package v7;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
-/* loaded from: classes.dex */
-public final class g7 {
-    public final b6 a;
-    public final f6 b;
-    public final e7 c;
+import java.util.Map;
 
-    public /* synthetic */ g7(r1 r1Var) {
-        this.a = (b6) r1Var.b;
-        this.b = (f6) r1Var.d;
-        this.c = (e7) r1Var.c;
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* loaded from: classes.dex */
+public abstract class g7 {
+    public static f4.g a(f4.g gVar, String[] strArr, Map map) {
+        int i10 = 0;
+        if (gVar == null) {
+            if (strArr == null) {
+                return null;
+            }
+            if (strArr.length == 1) {
+                return (f4.g) map.get(strArr[0]);
+            }
+            if (strArr.length > 1) {
+                f4.g gVar2 = new f4.g();
+                int length = strArr.length;
+                while (i10 < length) {
+                    gVar2.a((f4.g) map.get(strArr[i10]));
+                    i10++;
+                }
+                return gVar2;
+            }
+        } else {
+            if (strArr != null && strArr.length == 1) {
+                gVar.a((f4.g) map.get(strArr[0]));
+                return gVar;
+            }
+            if (strArr != null && strArr.length > 1) {
+                int length2 = strArr.length;
+                while (i10 < length2) {
+                    gVar.a((f4.g) map.get(strArr[i10]));
+                    i10++;
+                }
+            }
+        }
+        return gVar;
     }
 }

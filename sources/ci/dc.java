@@ -8,9 +8,9 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.h40;
-import org.telegram.ui.if0;
+import org.telegram.ui.jf0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class dc extends ClickableSpan {
     public final /* synthetic */ int a;
@@ -24,7 +24,7 @@ public final class dc extends ClickableSpan {
     @Override // android.text.style.ClickableSpan
     public final void onClick(View view) {
         GroupCallMessage groupCallMessage;
-        org.telegram.ui.ActionBar.e6 e6Var;
+        org.telegram.ui.ActionBar.f6 f6Var;
         switch (this.a) {
             case 0:
                 ((ec) this.b).S1.T();
@@ -54,21 +54,21 @@ public final class dc extends ClickableSpan {
                 ((ActionBarLayout) ((LaunchActivity) this.b).O()).P(new PremiumPreviewFragment(0, "gift"));
                 break;
             case 7:
-                ((if0) this.b).q(false);
+                ((jf0) this.b).q(false);
                 break;
             case 8:
                 rg.j0 j0Var = ((rg.c0) this.b).c;
                 org.telegram.ui.ActionBar.n2 n2Var = j0Var.n;
                 long j3 = j0Var.a0;
-                e6Var = ((org.telegram.ui.ActionBar.f3) j0Var).resourcesProvider;
-                tg.m.m(n2Var, e6Var, j3, null);
+                f6Var = ((org.telegram.ui.ActionBar.f3) j0Var).resourcesProvider;
+                tg.m.m(n2Var, f6Var, j3, null);
                 break;
         }
     }
 
     @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
     public final void updateDrawState(TextPaint textPaint) {
-        org.telegram.ui.ActionBar.e6 e6Var;
+        org.telegram.ui.ActionBar.f6 f6Var;
         switch (this.a) {
             case 0:
                 textPaint.setUnderlineText(false);
@@ -103,8 +103,8 @@ public final class dc extends ClickableSpan {
                 super.updateDrawState(textPaint);
                 textPaint.setUnderlineText(false);
                 int i10 = org.telegram.ui.ActionBar.j6.gc;
-                e6Var = ((org.telegram.ui.ActionBar.f3) ((rg.c0) this.b).c).resourcesProvider;
-                textPaint.setColor(org.telegram.ui.ActionBar.j6.v0(i10, e6Var));
+                f6Var = ((org.telegram.ui.ActionBar.f3) ((rg.c0) this.b).c).resourcesProvider;
+                textPaint.setColor(org.telegram.ui.ActionBar.j6.v0(i10, f6Var));
                 break;
             default:
                 super.updateDrawState(textPaint);

@@ -29,10 +29,10 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.qr;
 import org.telegram.ui.Components.voip.r0;
 import org.telegram.ui.Components.voip.x;
-import rg.v1;
-import yh.w7;
+import rg.w1;
+import yh.x7;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public class e extends TextureView implements TextureView.SurfaceTextureListener {
     public boolean E;
@@ -44,10 +44,10 @@ public class e extends TextureView implements TextureView.SurfaceTextureListener
     public int K;
     public final ArrayList L;
     public boolean M;
-    public v1 N;
+    public w1 N;
     public final int O;
     public volatile boolean P;
-    public volatile w7 Q;
+    public volatile x7 Q;
     public final GestureDetector R;
     public ValueAnimator S;
     public AnimatorSet T;
@@ -301,12 +301,12 @@ public class e extends TextureView implements TextureView.SurfaceTextureListener
         this.S.setDuration(600L);
         this.S.setInterpolator(new OvershootInterpolator());
         this.S.start();
-        v1 v1Var = this.N;
-        if (v1Var != null) {
+        w1 w1Var = this.N;
+        if (w1Var != null) {
             float abs = Math.abs(f12);
             float f13 = abs < 60.0f ? 5.0f : abs < 180.0f ? 9.0f : 15.0f;
             AnimatorSet animatorSet = new AnimatorSet();
-            r0 r0Var = new r0(v1Var, 17);
+            r0 r0Var = new r0(w1Var, 17);
             ValueAnimator ofFloat2 = ValueAnimator.ofFloat(1.0f, f13);
             ofFloat2.addUpdateListener(r0Var);
             ofFloat2.setDuration(600L);
@@ -533,8 +533,8 @@ public class e extends TextureView implements TextureView.SurfaceTextureListener
         this.E = true;
     }
 
-    public void setStarParticlesView(v1 v1Var) {
-        this.N = v1Var;
+    public void setStarParticlesView(w1 w1Var) {
+        this.N = w1Var;
     }
 
     public void g() {

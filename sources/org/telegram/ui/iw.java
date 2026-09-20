@@ -7,7 +7,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class iw implements Runnable {
     public final /* synthetic */ int a;
@@ -37,9 +37,9 @@ public final /* synthetic */ class iw implements Runnable {
                 long j10 = this.c;
                 boolean z11 = this.d;
                 storiesController.i0(j10, z11, false);
-                o0.a aVar = new o0.a(3, (byte) 0);
-                aVar.b = new iw(uyVar2, j10, z11, 1);
-                aVar.c = new iw(uyVar2, j10, z11, 2);
+                m5.e eVar = new m5.e((char) 0, 7);
+                eVar.b = new iw(uyVar2, j10, z11, 1);
+                eVar.c = new iw(uyVar2, j10, z11, 2);
                 if (j10 >= 0) {
                     TLRPC.User user = uyVar2.getMessagesController().getUser(Long.valueOf(j10));
                     str = ContactsController.formatName(user.first_name, null, 15);
@@ -49,7 +49,7 @@ public final /* synthetic */ class iw implements Runnable {
                     str = chat2.title;
                     chat = chat2;
                 }
-                uyVar2.S = org.telegram.ui.Components.xc.X().V(Collections.singletonList(chat), uyVar2.e4() ? AndroidUtilities.replaceTags(LocaleController.formatString("StoriesMovedToDialogs", R.string.StoriesMovedToDialogs, str)) : AndroidUtilities.replaceTags(LocaleController.formatString("StoriesMovedToContacts", R.string.StoriesMovedToContacts, ContactsController.formatName(str, null, 15))), null, aVar).j();
+                uyVar2.S = org.telegram.ui.Components.xc.X().V(Collections.singletonList(chat), uyVar2.e4() ? AndroidUtilities.replaceTags(LocaleController.formatString("StoriesMovedToDialogs", R.string.StoriesMovedToDialogs, str)) : AndroidUtilities.replaceTags(LocaleController.formatString("StoriesMovedToContacts", R.string.StoriesMovedToContacts, ContactsController.formatName(str, null, 15))), null, eVar).j();
                 break;
             case 1:
                 uyVar.getMessagesController().getStoriesController().i0(j3, !z10, false);

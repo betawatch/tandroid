@@ -13,12 +13,12 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class o1 extends View {
     public boolean a;
     public final int b;
-    public org.telegram.ui.Components.q5 c;
+    public org.telegram.ui.Components.p5 c;
     public final p1 d;
     public ImageReceiver e;
     public long f;
@@ -40,9 +40,9 @@ public final class o1 extends View {
         if (this.f == (document == null ? 0L : document.id)) {
             return;
         }
-        org.telegram.ui.Components.q5 q5Var = this.c;
-        if (q5Var != null) {
-            q5Var.o(this);
+        org.telegram.ui.Components.p5 p5Var = this.c;
+        if (p5Var != null) {
+            p5Var.o(this);
         }
         if (document == null) {
             this.a = false;
@@ -53,7 +53,7 @@ public final class o1 extends View {
         this.a = true;
         this.f = document.id;
         int i10 = t2.G;
-        org.telegram.ui.Components.q5 m10 = org.telegram.ui.Components.q5.m(this.b, LiteMode.isEnabled(z10 ? 1 : LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD) ? 3 : 13, document);
+        org.telegram.ui.Components.p5 m10 = org.telegram.ui.Components.p5.m(this.b, LiteMode.isEnabled(z10 ? 1 : LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD) ? 3 : 13, document);
         this.c = m10;
         if (this.s) {
             m10.a(this);
@@ -73,9 +73,9 @@ public final class o1 extends View {
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         this.s = true;
-        org.telegram.ui.Components.q5 q5Var = this.c;
-        if (q5Var != null) {
-            q5Var.a(this);
+        org.telegram.ui.Components.p5 p5Var = this.c;
+        if (p5Var != null) {
+            p5Var.a(this);
         }
         ImageReceiver imageReceiver = this.e;
         if (imageReceiver != null) {
@@ -87,9 +87,9 @@ public final class o1 extends View {
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         this.s = false;
-        org.telegram.ui.Components.q5 q5Var = this.c;
-        if (q5Var != null) {
-            q5Var.o(this);
+        org.telegram.ui.Components.p5 p5Var = this.c;
+        if (p5Var != null) {
+            p5Var.o(this);
         }
         ImageReceiver imageReceiver = this.e;
         if (imageReceiver != null) {
@@ -105,9 +105,9 @@ public final class o1 extends View {
             this.e.draw(canvas);
             return;
         }
-        org.telegram.ui.Components.q5 q5Var = this.c;
-        if (q5Var != null) {
-            q5Var.setBounds(getPaddingLeft(), getPaddingTop(), getWidth() - getPaddingRight(), getHeight() - getPaddingBottom());
+        org.telegram.ui.Components.p5 p5Var = this.c;
+        if (p5Var != null) {
+            p5Var.setBounds(getPaddingLeft(), getPaddingTop(), getWidth() - getPaddingRight(), getHeight() - getPaddingBottom());
             this.c.draw(canvas);
         }
     }
@@ -119,9 +119,9 @@ public final class o1 extends View {
     }
 
     public void setDrawable(Drawable drawable) {
-        org.telegram.ui.Components.q5 q5Var = this.c;
-        if (q5Var != null) {
-            q5Var.o(this);
+        org.telegram.ui.Components.p5 p5Var = this.c;
+        if (p5Var != null) {
+            p5Var.o(this);
         }
         this.c = null;
         this.f = 0L;

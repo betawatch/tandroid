@@ -8,7 +8,7 @@ import org.telegram.ui.Components.vi;
 import org.telegram.ui.lk;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class g4 extends vi {
     public final /* synthetic */ int P2;
@@ -16,8 +16,8 @@ public final class g4 extends vi {
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     /* JADX WARN: Multi-variable type inference failed */
-    public /* synthetic */ g4(org.telegram.ui.ActionBar.n2 n2Var, Activity activity, org.telegram.ui.ActionBar.n2 n2Var2, org.telegram.ui.ActionBar.e6 e6Var, int i10) {
-        super(activity, n2Var2, false, false, true, e6Var);
+    public /* synthetic */ g4(org.telegram.ui.ActionBar.n2 n2Var, Activity activity, org.telegram.ui.ActionBar.n2 n2Var2, org.telegram.ui.ActionBar.f6 f6Var, int i10) {
+        super(activity, n2Var2, false, false, true, f6Var);
         this.P2 = i10;
         this.Q2 = (NotificationCenter.NotificationCenterDelegate) n2Var;
     }
@@ -107,8 +107,8 @@ public final class g4 extends vi {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public g4(f6 f6Var, Context context, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(context, null, false, false, true, e6Var);
+    public g4(f6 f6Var, Context context, org.telegram.ui.ActionBar.f6 f6Var2) {
+        super(context, null, false, false, true, f6Var2);
         this.P2 = 0;
         this.Q2 = f6Var;
     }

@@ -23,7 +23,7 @@ import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class d30 extends LinearLayout implements VoIPService.StateListener, NotificationCenter.NotificationCenterDelegate {
     public float E;
@@ -32,7 +32,7 @@ public final class d30 extends LinearLayout implements VoIPService.StateListener
     public TextView b;
     public org.telegram.ui.Components.voip.v2 c;
     public org.telegram.ui.Components.voip.v2 d;
-    public w9 e;
+    public v9 e;
     public RectF f;
     public Paint h;
     public LinearGradient n;
@@ -130,12 +130,12 @@ public final class d30 extends LinearLayout implements VoIPService.StateListener
         super.onAttachedToWindow();
         VoIPService sharedInstance = VoIPService.getSharedInstance();
         if (sharedInstance != null && sharedInstance.groupCall != null) {
-            h9 h9Var = new h9((org.telegram.ui.ActionBar.e6) null);
+            g9 g9Var = new g9((org.telegram.ui.ActionBar.f6) null);
             TLRPC.Chat chat = sharedInstance.getChat();
-            h9Var.i(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.p8[h9.e(chat != null ? chat.id : 0L)], false), org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.q8[h9.e(chat != null ? chat.id : 0L)], false));
-            h9Var.k(i10, chat);
+            g9Var.i(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.p8[g9.e(chat != null ? chat.id : 0L)], false), org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.q8[g9.e(chat != null ? chat.id : 0L)], false));
+            g9Var.k(i10, chat);
             if (chat != null) {
-                this.e.h(ImageLocation.getForLocal(chat.photo.photo_small), "50_50", h9Var, null);
+                this.e.h(ImageLocation.getForLocal(chat.photo.photo_small), "50_50", g9Var, null);
             }
             if (!sharedInstance.isConference() || (call = sharedInstance.groupCall) == null) {
                 str = !TextUtils.isEmpty(sharedInstance.groupCall.call.title) ? sharedInstance.groupCall.call.title : chat != null ? chat.title : "";

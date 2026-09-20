@@ -21,11 +21,11 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.Switch;
 import org.telegram.ui.Components.np;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class y extends FrameLayout {
     public final org.telegram.ui.ActionBar.j5 a;
-    public final org.telegram.ui.Components.w9 b;
+    public final org.telegram.ui.Components.v9 b;
     public final Switch c;
     public final np d;
     public TLRPC.TL_availableReaction e;
@@ -45,11 +45,11 @@ public final class y extends FrameLayout {
         j5Var.setMaxLines(1);
         j5Var.setGravity(16 | w7.y5.y());
         addView(j5Var, w7.y5.i(-2.0f, -2.0f, 8388627, 81.0f, 0.0f, 61.0f, 0.0f));
-        org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(context);
-        this.b = w9Var;
-        w9Var.setAspectFit(true);
-        w9Var.setLayerNum(1);
-        addView(w9Var, w7.y5.i(32.0f, 32.0f, 8388627, 23.0f, 0.0f, 0.0f, 0.0f));
+        org.telegram.ui.Components.v9 v9Var = new org.telegram.ui.Components.v9(context);
+        this.b = v9Var;
+        v9Var.setAspectFit(true);
+        v9Var.setLayerNum(1);
+        addView(v9Var, w7.y5.i(32.0f, 32.0f, 8388627, 23.0f, 0.0f, 0.0f, 0.0f));
         if (z10) {
             np npVar = new np(context, 26, null);
             this.d = npVar;

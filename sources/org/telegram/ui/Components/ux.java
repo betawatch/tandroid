@@ -11,7 +11,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class ux extends ht {
     public int M;
@@ -64,13 +64,13 @@ public final class ux extends ht {
                 return;
             }
             ty tyVar = (ty) arrayList.get(i10);
-            q5 q5Var = tyVar.b;
-            if (q5Var != null) {
+            p5 p5Var = tyVar.b;
+            if (p5Var != null) {
                 ImageReceiver.BackgroundThreadDrawHolder backgroundThreadDrawHolder = tyVar.f[this.K];
-                ai.l4 l4Var = q5Var.k;
+                ai.l4 l4Var = p5Var.k;
                 if (l4Var != null) {
-                    l4Var.setAlpha(q5Var.l);
-                    q5Var.k.draw(canvas, backgroundThreadDrawHolder);
+                    l4Var.setAlpha(p5Var.l);
+                    p5Var.k.draw(canvas, backgroundThreadDrawHolder);
                 }
             }
             i10++;
@@ -87,7 +87,7 @@ public final class ux extends ht {
         Canvas canvas2;
         int i10;
         wx wxVar;
-        q5 q5Var;
+        p5 p5Var;
         Canvas canvas3 = canvas;
         wx wxVar2 = this.R;
         kz kzVar = wxVar2.f3;
@@ -99,7 +99,7 @@ public final class ux extends ht {
             int i11 = 0;
             while (i11 < this.O.size()) {
                 ty tyVar = (ty) this.O.get(i11);
-                if (tyVar.getSpan() == null || (q5Var = (q5) kzVar.d2.get(tyVar.d.getDocumentId())) == null) {
+                if (tyVar.getSpan() == null || (p5Var = (p5) kzVar.d2.get(tyVar.d.getDocumentId())) == null) {
                     canvas2 = canvas3;
                     i10 = i11;
                     wxVar = wxVar2;
@@ -129,27 +129,27 @@ public final class ux extends ht {
                             int i15 = i14 / 4;
                             f13 *= (this.Q.getInterpolation(AndroidUtilities.cascade(interpolation, i13 + i15, i14 + i15, f17)) * 0.5f) + 0.5f;
                             f11 = cascade * f14;
-                            q5Var.setAlpha((int) (255.0f * f11));
-                            q5Var.setBounds(rect);
-                            q5Var.setColorFilter(kzVar.e2);
+                            p5Var.setAlpha((int) (255.0f * f11));
+                            p5Var.setBounds(rect);
+                            p5Var.setColorFilter(kzVar.e2);
                             if (f13 == 1.0f) {
                                 canvas.save();
                                 canvas2 = canvas;
                                 canvas2.scale(f13, f13, rect.centerX(), rect.centerY());
-                                q5Var.draw(canvas2);
+                                p5Var.draw(canvas2);
                                 canvas2.restore();
                             } else {
                                 canvas2 = canvas;
-                                q5Var.draw(canvas2);
+                                p5Var.draw(canvas2);
                             }
                         }
                     }
                     i10 = i11;
                     wxVar = wxVar2;
                     f11 = f11;
-                    q5Var.setAlpha((int) (255.0f * f11));
-                    q5Var.setBounds(rect);
-                    q5Var.setColorFilter(kzVar.e2);
+                    p5Var.setAlpha((int) (255.0f * f11));
+                    p5Var.setBounds(rect);
+                    p5Var.setColorFilter(kzVar.e2);
                     if (f13 == 1.0f) {
                     }
                 }
@@ -181,29 +181,29 @@ public final class ux extends ht {
 
     @Override // org.telegram.ui.Components.ht
     public final void i(long j3) {
-        q5 q5Var;
+        p5 p5Var;
         kz kzVar = this.R.f3;
         ArrayList arrayList = this.P;
         arrayList.clear();
         for (int i10 = 0; i10 < this.O.size(); i10++) {
             ty tyVar = (ty) this.O.get(i10);
-            z5 span = tyVar.getSpan();
+            y5 span = tyVar.getSpan();
             ImageReceiver.BackgroundThreadDrawHolder[] backgroundThreadDrawHolderArr = tyVar.f;
-            if (span != null && (q5Var = (q5) kzVar.d2.get(tyVar.d.getDocumentId())) != null && q5Var.k != null) {
-                q5Var.t(j3);
-                ai.l4 l4Var = q5Var.k;
+            if (span != null && (p5Var = (p5) kzVar.d2.get(tyVar.d.getDocumentId())) != null && p5Var.k != null) {
+                p5Var.t(j3);
+                ai.l4 l4Var = p5Var.k;
                 int i11 = this.K;
                 ImageReceiver.BackgroundThreadDrawHolder drawInBackgroundThread = l4Var.setDrawInBackgroundThread(backgroundThreadDrawHolderArr[i11], i11);
                 backgroundThreadDrawHolderArr[i11] = drawInBackgroundThread;
                 drawInBackgroundThread.time = j3;
                 drawInBackgroundThread.overrideAlpha = 1.0f;
-                q5Var.setAlpha(255);
+                p5Var.setAlpha(255);
                 int height = (int) (tyVar.getHeight() * 0.03f);
                 Rect rect = AndroidUtilities.rectTmp2;
                 rect.set((tyVar.getPaddingLeft() + tyVar.getLeft()) - this.N, height, (tyVar.getRight() - tyVar.getPaddingRight()) - this.N, ((tyVar.getMeasuredHeight() + height) - tyVar.getPaddingTop()) - tyVar.getPaddingBottom());
                 backgroundThreadDrawHolderArr[i11].setBounds(rect);
-                tyVar.b = q5Var;
-                backgroundThreadDrawHolderArr[i11].colorFilter = q5Var.c() ? kzVar.e2 : null;
+                tyVar.b = p5Var;
+                backgroundThreadDrawHolderArr[i11].colorFilter = p5Var.c() ? kzVar.e2 : null;
                 arrayList.add(tyVar);
             }
         }

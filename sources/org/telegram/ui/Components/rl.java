@@ -8,18 +8,18 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.camera.CameraController;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class rl implements pv0 {
+public final class rl implements ov0 {
     public File a;
     public boolean b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.e6 c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.f6 c;
     public final /* synthetic */ org.telegram.ui.ActionBar.d3 d;
     public final /* synthetic */ ChatAttachAlertPhotoLayout e;
 
-    public rl(ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout, org.telegram.ui.ActionBar.e6 e6Var, org.telegram.ui.ActionBar.d3 d3Var) {
+    public rl(ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout, org.telegram.ui.ActionBar.f6 f6Var, org.telegram.ui.ActionBar.d3 d3Var) {
         this.e = chatAttachAlertPhotoLayout;
-        this.c = e6Var;
+        this.c = f6Var;
         this.d = d3Var;
     }
 
@@ -36,7 +36,7 @@ public final class rl implements pv0 {
             }
             if (n2Var != null && n2Var.getParentActivity() != null) {
                 if (!chatAttachAlertPhotoLayout.w0) {
-                    org.telegram.messenger.wh.o(R.string.GlobalAttachVideoRestricted, new xc(chatAttachAlertPhotoLayout.P, this.c), null);
+                    org.telegram.messenger.rk.p(R.string.GlobalAttachVideoRestricted, new xc(chatAttachAlertPhotoLayout.P, this.c), null);
                     return false;
                 }
                 if (Build.VERSION.SDK_INT >= 23 && chatAttachAlertPhotoLayout.getContext().checkSelfPermission("android.permission.RECORD_AUDIO") != 0) {
@@ -111,7 +111,7 @@ public final class rl implements pv0 {
                         }
                     }
                 }, chatAttachAlertPhotoLayout.P);
-                chatAttachAlertPhotoLayout.k0.a(qv0.b);
+                chatAttachAlertPhotoLayout.k0.a(pv0.b);
                 chatAttachAlertPhotoLayout.P.runHaptic();
                 return true;
             }
@@ -127,13 +127,13 @@ public final class rl implements pv0 {
         if (chatAttachAlertPhotoLayout.s0 || (dmVar = chatAttachAlertPhotoLayout.P) == null || dmVar.getCameraSession() == null) {
             return;
         }
-        if (shutterButton.getState() == qv0.b) {
+        if (shutterButton.getState() == pv0.b) {
             chatAttachAlertPhotoLayout.l0();
             CameraController.getInstance().stopVideoRecording(chatAttachAlertPhotoLayout.P.getCameraSession(), false);
-            shutterButton.a(qv0.a);
+            shutterButton.a(pv0.a);
         } else {
             if (!chatAttachAlertPhotoLayout.x0) {
-                org.telegram.messenger.wh.o(R.string.GlobalAttachPhotoRestricted, new xc(chatAttachAlertPhotoLayout.P, this.c), null);
+                org.telegram.messenger.rk.p(R.string.GlobalAttachPhotoRestricted, new xc(chatAttachAlertPhotoLayout.P, this.c), null);
                 return;
             }
             org.telegram.ui.ActionBar.n2 n2Var = viVar.f0;

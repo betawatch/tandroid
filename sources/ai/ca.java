@@ -12,11 +12,11 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.wl0;
+import org.telegram.ui.Components.vl0;
 import org.telegram.ui.Components.yc;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public class ca {
     public int A;
@@ -24,7 +24,7 @@ public class ca {
     public final boolean E;
     public float G;
     public yc H;
-    public org.telegram.ui.ActionBar.e6 J;
+    public org.telegram.ui.ActionBar.f6 J;
     public float K;
     public boolean L;
     public float M;
@@ -64,9 +64,9 @@ public class ca {
     public final RectF F = new RectF();
     public boolean I = false;
 
-    public ca(org.telegram.ui.ActionBar.e6 e6Var, boolean z10) {
+    public ca(org.telegram.ui.ActionBar.f6 f6Var, boolean z10) {
         this.E = z10;
-        this.J = e6Var;
+        this.J = f6Var;
     }
 
     public final boolean a(MotionEvent motionEvent, View view) {
@@ -203,7 +203,7 @@ public class ca {
         }
         R.getOrCreateStoryViewer().getClass();
         ViewParent parent = this.R.getParent();
-        R.getOrCreateStoryViewer().D(R.getContext(), j3, parent instanceof RecyclerView ? u9.a((wl0) parent) : null);
+        R.getOrCreateStoryViewer().D(R.getContext(), j3, parent instanceof RecyclerView ? u9.a((vl0) parent) : null);
     }
 
     public final void g() {

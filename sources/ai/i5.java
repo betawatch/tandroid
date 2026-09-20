@@ -53,11 +53,11 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.w70;
+import org.telegram.ui.Components.v70;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class i5 implements Runnable {
     public final /* synthetic */ int a;
@@ -162,7 +162,7 @@ public final /* synthetic */ class i5 implements Runnable {
                 i9.w wVar = (i9.w) arrayList5.get(i10);
                 if (wVar != null) {
                     try {
-                        bitmap = (Bitmap) v7.l8.a(wVar);
+                        bitmap = (Bitmap) v7.m8.a(wVar);
                     } catch (CancellationException | ExecutionException e) {
                         synchronized (e2.a.b) {
                             Log.d("MediaSessionLegacyStub", e2.a.a("Failed to get bitmap", e));
@@ -410,7 +410,7 @@ public final /* synthetic */ class i5 implements Runnable {
             m4.h1 h1Var = a0Var.s;
             b2.x0 x0Var = m10.b;
             m4.h1 H0 = f1Var.H0(h1Var);
-            MediaSession.Token token = ((n4.r) a0Var.h.k.b).c.b;
+            MediaSession.Token token = ((n4.r) a0Var.h.k.a).c.b;
             e9.i0 i0Var = m10.c;
             if (i0Var == null) {
                 i0Var = a0Var.y;
@@ -459,7 +459,7 @@ public final /* synthetic */ class i5 implements Runnable {
     }
 
     private final void h() {
-        ((VideoAds) this.b).lambda$show$14((Context) this.c, (TLRPC.TL_sponsoredMessage) this.d, (w70) this.e);
+        ((VideoAds) this.b).lambda$show$14((Context) this.c, (TLRPC.TL_sponsoredMessage) this.d, (v70) this.e);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:346:0x08d2, code lost:
@@ -738,7 +738,7 @@ public final /* synthetic */ class i5 implements Runnable {
                 Bitmap[] bitmapArr = (Bitmap[]) this.c;
                 ci.o8 o8Var3 = (ci.o8) this.d;
                 boolean[] zArr = (boolean[]) this.e;
-                org.telegram.ui.Components.ja jaVar = d7Var.G;
+                org.telegram.ui.Components.ia iaVar = d7Var.G;
                 Bitmap bitmap = d7Var.a;
                 if (bitmap != null && !bitmap.isRecycled()) {
                     d7Var.a.recycle();
@@ -750,9 +750,9 @@ public final /* synthetic */ class i5 implements Runnable {
                     o8Var3.l0 = d7Var.a.getHeight();
                     o8Var3.A();
                 }
-                if (zArr[0] && o8Var3 != null && jaVar != null && d7Var.a != null) {
-                    jaVar.e();
-                    jaVar.f(o8Var3.b(d7Var.a, 0.2f), false);
+                if (zArr[0] && o8Var3 != null && iaVar != null && d7Var.a != null) {
+                    iaVar.e();
+                    iaVar.f(o8Var3.b(d7Var.a, 0.2f), false);
                     ci.ka kaVar = d7Var.v;
                     if (kaVar != null) {
                         kaVar.run();
@@ -921,7 +921,7 @@ public final /* synthetic */ class i5 implements Runnable {
                     StringBuilder sb3 = new StringBuilder("story bitrate, original = ");
                     sb3.append(videoEditedInfo.originalBitrate);
                     sb3.append(" => ");
-                    org.telegram.messenger.q.o(videoEditedInfo.bitrate, sb3);
+                    org.telegram.messenger.l0.m(videoEditedInfo.bitrate, sb3);
                     int i22 = iArr2[0][4];
                     long j23 = i22;
                     o8Var4.h0 = j23;
@@ -1044,10 +1044,10 @@ public final /* synthetic */ class i5 implements Runnable {
             case 8:
                 TL_payments.connectedBotStarRef connectedbotstarref = (TL_payments.connectedBotStarRef) this.b;
                 org.telegram.ui.ActionBar.f3 f3Var2 = (org.telegram.ui.ActionBar.f3) this.c;
-                org.telegram.ui.ActionBar.e6 e6Var2 = (org.telegram.ui.ActionBar.e6) this.d;
+                org.telegram.ui.ActionBar.f6 f6Var3 = (org.telegram.ui.ActionBar.f6) this.d;
                 TLRPC.User user = (TLRPC.User) this.e;
                 AndroidUtilities.addToClipboard(connectedbotstarref.url);
-                new xc(f3Var2.topBulletinContainer, e6Var2).M(LocaleController.getString(R.string.AffiliateProgramLinkCopiedTitle), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.AffiliateProgramLinkCopiedText, ei.l.G0(connectedbotstarref.commission_permille), UserObject.getUserName(user))), R.raw.copy).j();
+                new xc(f3Var2.topBulletinContainer, f6Var3).M(LocaleController.getString(R.string.AffiliateProgramLinkCopiedTitle), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.AffiliateProgramLinkCopiedText, ei.l.G0(connectedbotstarref.commission_permille), UserObject.getUserName(user))), R.raw.copy).j();
                 return;
             case 9:
                 ei.e4.x0((ei.e4) this.b, (Context) this.c, (TLRPC.User) this.d, (TL_payments.connectedBotStarRef) this.e);
@@ -1225,9 +1225,9 @@ public final /* synthetic */ class i5 implements Runnable {
                 ii.r rVar2 = (ii.r) this.b;
                 ii.a aVar2 = (ii.a) this.c;
                 TL_iv.PageBlock pageBlock = (TL_iv.PageBlock) this.d;
-                w70 w70Var = (w70) this.e;
+                v70 v70Var = (v70) this.e;
                 rVar2.r.W4(aVar2, pageBlock);
-                w70Var.u();
+                v70Var.u();
                 return;
             case 19:
                 a();

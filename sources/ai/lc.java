@@ -6,9 +6,9 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.ij0;
+import org.telegram.ui.Components.hj0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class lc extends kc {
     public final ob a;
@@ -36,10 +36,10 @@ public final class lc extends kc {
     @Override // ai.kc
     public final void a(Canvas canvas, float f7) {
         zg.f0 f0Var = this.c;
-        org.telegram.ui.Components.q5 q5Var = f0Var.b;
-        ImageReceiver imageReceiver = q5Var != null ? q5Var.k : f0Var.a;
+        org.telegram.ui.Components.p5 p5Var = f0Var.b;
+        ImageReceiver imageReceiver = p5Var != null ? p5Var.k : f0Var.a;
         if (imageReceiver != null && imageReceiver.hasImageSet() && imageReceiver.hasImageLoaded()) {
-            ij0 lottieAnimation = imageReceiver.getLottieAnimation();
+            hj0 lottieAnimation = imageReceiver.getLottieAnimation();
             if (lottieAnimation == null || !lottieAnimation.y()) {
                 oc ocVar = this.d;
                 double d = ocVar.b;

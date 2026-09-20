@@ -42,14 +42,14 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.qc;
+import org.telegram.ui.Components.pc;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.s6;
+import org.telegram.ui.Components.r6;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.lb0;
+import org.telegram.ui.mb0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public class f3 extends Dialog implements j2 {
     private static final boolean AVOID_SYSTEM_CUTOUT_FULLSCREEN = false;
@@ -125,7 +125,7 @@ public class f3 extends Dialog implements j2 {
     private int overlayDrawNavBarColor;
     public boolean pauseAllHeavyOperations;
     protected int playingImagesLayerNum;
-    protected e6 resourcesProvider;
+    protected f6 resourcesProvider;
     private int rightInset;
     public boolean scrollNavBar;
     private Integer selectedPos;
@@ -151,10 +151,10 @@ public class f3 extends Dialog implements j2 {
     protected boolean useLightStatusBar;
     protected boolean useSmoothKeyboard;
     protected boolean waitingKeyboard;
-    private yf.m0 windowVisibilityManager;
+    private yf.l0 windowVisibilityManager;
 
-    public f3(Context context, e6 e6Var, boolean z10, boolean z11) {
-        this(z11 ? 2 : 1, context, e6Var, z10);
+    public f3(Context context, f6 f6Var, boolean z10, boolean z11) {
+        this(z11 ? 2 : 1, context, f6Var, z10);
     }
 
     public static /* synthetic */ int access$1012(f3 f3Var, int i10) {
@@ -234,7 +234,7 @@ public class f3 extends Dialog implements j2 {
         ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(f3Var.containerView, (Property<ViewGroup, Float>) View.TRANSLATION_Y, 0.0f);
         ofFloat2.addUpdateListener(new p2(f3Var, 6));
         arrayList.add(ofFloat2);
-        arrayList.add(ObjectAnimator.ofInt(f3Var.backDrawable, s6.d, f3Var.dimBehind ? f3Var.dimBehindAlpha : 0));
+        arrayList.add(ObjectAnimator.ofInt(f3Var.backDrawable, r6.d, f3Var.dimBehind ? f3Var.dimBehindAlpha : 0));
         arrayList.add(f3Var.navigationBarAnimation);
         f3Var.appendOpenAnimator(true, arrayList);
         f3Var.currentSheetAnimation.playTogether(arrayList);
@@ -326,7 +326,7 @@ public class f3 extends Dialog implements j2 {
     */
     public void dismiss() {
         long j3;
-        qc qcVar;
+        pc pcVar;
         z2 z2Var = this.delegate;
         if ((z2Var == null || z2Var.g()) && !this.dismissed) {
             int i10 = 1;
@@ -365,7 +365,7 @@ public class f3 extends Dialog implements j2 {
                         arrayList.add(ofFloat3);
                     }
                 }
-                arrayList.add(ObjectAnimator.ofInt(this.backDrawable, s6.d, 0));
+                arrayList.add(ObjectAnimator.ofInt(this.backDrawable, r6.d, 0));
                 arrayList.add(this.navigationBarAnimation);
                 appendOpenAnimator(false, arrayList);
                 this.currentSheetAnimation.playTogether(arrayList);
@@ -381,19 +381,19 @@ public class f3 extends Dialog implements j2 {
                 this.currentSheetAnimation.addListener(new w2(this, i10));
                 NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.stopAllHeavyOperations, 512);
                 this.currentSheetAnimation.start();
-                qcVar = qc.w;
-                if (qcVar != null && qcVar.l && qcVar.r) {
+                pcVar = pc.w;
+                if (pcVar != null && pcVar.l && pcVar.r) {
                     if (j3 <= 0) {
-                        qcVar.c((long) (j3 * 0.6f), MessagesController.getGlobalMainSettings().getBoolean("view_animations", true));
+                        pcVar.c((long) (j3 * 0.6f), MessagesController.getGlobalMainSettings().getBoolean("view_animations", true));
                     } else {
-                        qcVar.b();
+                        pcVar.b();
                     }
                 }
                 l(false);
             }
             j3 = 0;
-            qcVar = qc.w;
-            if (qcVar != null) {
+            pcVar = pc.w;
+            if (pcVar != null) {
                 if (j3 <= 0) {
                 }
             }
@@ -426,7 +426,7 @@ public class f3 extends Dialog implements j2 {
         int i11 = 0;
         ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this.containerView, (Property<ViewGroup, Float>) View.TRANSLATION_Y, Math.max(0, Math.min(AndroidUtilities.navigationBarHeight, getBottomInset())) + AndroidUtilities.dp(10.0f) + getContainerViewHeight() + this.keyboardHeight);
         ofFloat.addUpdateListener(new p2(this, 2));
-        this.currentSheetAnimation.playTogether(ofFloat, ObjectAnimator.ofInt(this.backDrawable, s6.d, 0));
+        this.currentSheetAnimation.playTogether(ofFloat, ObjectAnimator.ofInt(this.backDrawable, r6.d, 0));
         this.currentSheetAnimation.setDuration(this.cellType == 4 ? 330L : 180L);
         this.currentSheetAnimation.setInterpolator(qr.g);
         this.currentSheetAnimation.addListener(new x2(this, i10, i11));
@@ -541,7 +541,7 @@ public class f3 extends Dialog implements j2 {
         return i0.a.d(f7, i10, this.navBarColor);
     }
 
-    public e6 getResourcesProvider() {
+    public f6 getResourcesProvider() {
         return this.resourcesProvider;
     }
 
@@ -800,13 +800,13 @@ public class f3 extends Dialog implements j2 {
         }
     }
 
-    public yf.l0 obtainWindowVisibilityController() {
+    public yf.k0 obtainWindowVisibilityController() {
         if (this.windowVisibilityManager == null) {
-            this.windowVisibilityManager = new yf.m0(getWindow());
+            this.windowVisibilityManager = new yf.l0(getWindow());
         }
-        yf.m0 m0Var = this.windowVisibilityManager;
-        m0Var.getClass();
-        return new lb0(m0Var);
+        yf.l0 l0Var = this.windowVisibilityManager;
+        l0Var.getClass();
+        return new mb0(l0Var);
     }
 
     @Override // org.telegram.ui.ActionBar.j2
@@ -1130,7 +1130,7 @@ public class f3 extends Dialog implements j2 {
     }
 
     public f3(Context context, boolean z10) {
-        this(1, context, (e6) null, z10);
+        this(1, context, (f6) null, z10);
     }
 
     public void fixNavigationBar(int i10) {
@@ -1152,7 +1152,7 @@ public class f3 extends Dialog implements j2 {
         this.bigTitle = z10;
     }
 
-    public f3(int i10, Context context, e6 e6Var, boolean z10) {
+    public f3(int i10, Context context, f6 f6Var, boolean z10) {
         super(context, R.style.TransparentDialog);
         this.currentAccount = UserConfig.selectedAccount;
         this.useHardwareLayer = true;
@@ -1181,7 +1181,7 @@ public class f3 extends Dialog implements j2 {
         this.useBackgroundTopPadding = true;
         this.customViewGravity = 51;
         this.smoothContainerViewLayoutUntil = -1L;
-        this.resourcesProvider = e6Var;
+        this.resourcesProvider = f6Var;
         if (i10 == 3) {
             AndroidUtilities.enableEdgeToEdge(getWindow());
             this.drawNavigationBar = false;
@@ -1275,8 +1275,8 @@ public class f3 extends Dialog implements j2 {
     public void appendOpenAnimator(boolean z10, ArrayList<Animator> arrayList) {
     }
 
-    public r0.m1 onApplyWindowInsetsToRoot(View view, r0.m1 m1Var) {
-        return m1Var;
+    public r0.l1 onApplyWindowInsetsToRoot(View view, r0.l1 l1Var) {
+        return l1Var;
     }
 
     @Override // org.telegram.ui.ActionBar.j2

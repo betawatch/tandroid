@@ -1,39 +1,25 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.ConnectionsManager;
+import android.view.View;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class d81 extends org.telegram.ui.ActionBar.f3 {
-    public static final /* synthetic */ int e = 0;
-    public TLRPC.TL_authorization b;
-    public SessionsActivity c;
-    public org.telegram.ui.Components.lj0 d;
+public final class d81 implements View.OnClickListener {
+    public final /* synthetic */ f81 a;
+    public final /* synthetic */ TLRPC.TL_authorization b;
+    public final /* synthetic */ g81 c;
 
-    public static void m(d81 d81Var, String str) {
-        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(d81Var.getContext());
-        alertDialog$Builder.f(new CharSequence[]{LocaleController.getString(R.string.Copy)}, new lg.j(11, d81Var, str));
-        alertDialog$Builder.o();
+    public d81(g81 g81Var, f81 f81Var, TLRPC.TL_authorization tL_authorization) {
+        this.c = g81Var;
+        this.a = f81Var;
+        this.b = tL_authorization;
     }
 
-    public static void n(d81 d81Var) {
-        TL_account.changeAuthorizationSettings changeauthorizationsettings = new TL_account.changeAuthorizationSettings();
-        TLRPC.TL_authorization tL_authorization = d81Var.b;
-        changeauthorizationsettings.encrypted_requests_disabled = tL_authorization.encrypted_requests_disabled;
-        changeauthorizationsettings.call_requests_disabled = tL_authorization.call_requests_disabled;
-        changeauthorizationsettings.flags = 3;
-        changeauthorizationsettings.hash = tL_authorization.hash;
-        ConnectionsManager.getInstance(d81Var.currentAccount).sendRequest(changeauthorizationsettings, new ai.t7(21));
-    }
-
-    @Override // org.telegram.ui.ActionBar.f3, android.app.Dialog
-    public final void show() {
-        super.show();
-        this.d.d();
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        this.a.d.c(!r0.h, true);
+        this.b.call_requests_disabled = !r4.d.h;
+        g81.n(this.c);
     }
 }

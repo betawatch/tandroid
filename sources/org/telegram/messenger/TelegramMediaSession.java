@@ -34,7 +34,7 @@ import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public class TelegramMediaSession {
     private static final String CONTENT_STYLE_BROWSABLE_HINT = "android.media.browse.CONTENT_STYLE_BROWSABLE_HINT";
@@ -63,7 +63,7 @@ public class TelegramMediaSession {
     private final a0.i musicObjects = new a0.i();
     private final a0.i musicQueues = new a0.i();
 
-    /* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+    /* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
     public interface BrowseChildrenCallback {
         void onResult(List<MediaBrowser.MediaItem> list);
     }
@@ -111,7 +111,7 @@ public class TelegramMediaSession {
         }
         MessageObject messageObject = (MessageObject) arrayList.get(0);
         a4.m mVar = new a4.m(1);
-        mVar.v0((long) (messageObject.getDuration() * 1000.0d));
+        mVar.u0((long) (messageObject.getDuration() * 1000.0d));
         mVar.w0("android.media.metadata.ARTIST", messageObject.getMusicAuthor());
         mVar.w0("android.media.metadata.TITLE", messageObject.getMusicTitle());
         this.session.e(new MediaMetadataCompat((Bundle) mVar.b));
@@ -386,9 +386,9 @@ public class TelegramMediaSession {
     }
 
     public Bundle buildRootHints() {
-        Bundle d = wh.d(2, CONTENT_STYLE_SUPPORTED, CONTENT_STYLE_BROWSABLE_HINT, true);
-        d.putInt(CONTENT_STYLE_PLAYABLE_HINT, 1);
-        return d;
+        Bundle e = rk.e(2, CONTENT_STYLE_SUPPORTED, CONTENT_STYLE_BROWSABLE_HINT, true);
+        e.putInt(CONTENT_STYLE_PLAYABLE_HINT, 1);
+        return e;
     }
 
     public void ensureLoaded(Runnable runnable) {
@@ -434,7 +434,7 @@ public class TelegramMediaSession {
                 hashMap.put(Long.valueOf(dialog.id), Integer.valueOf(i10));
             }
         }
-        Collections.sort(arrayList, new rk(hashMap, 0));
+        Collections.sort(arrayList, new qk(hashMap, 0));
         return arrayList;
     }
 
@@ -481,7 +481,7 @@ public class TelegramMediaSession {
         }
         this.loadingChats = true;
         MessagesStorage messagesStorage = MessagesStorage.getInstance(this.currentAccount);
-        messagesStorage.getStorageQueue().postRunnable(new bi(this, messagesStorage, browseChildrenCallback, str, 4));
+        messagesStorage.getStorageQueue().postRunnable(new ai(this, messagesStorage, browseChildrenCallback, str, 4));
     }
 
     public void publishMetadata(MessageObject messageObject, jf.a aVar, Bitmap bitmap) {
@@ -491,7 +491,7 @@ public class TelegramMediaSession {
         a4.m mVar = new a4.m(1);
         mVar.w0("android.media.metadata.ALBUM_ARTIST", messageObject.getMusicAuthor());
         mVar.w0("android.media.metadata.ARTIST", messageObject.getMusicAuthor());
-        mVar.v0((long) (messageObject.getDuration() * 1000.0d));
+        mVar.u0((long) (messageObject.getDuration() * 1000.0d));
         mVar.w0("android.media.metadata.TITLE", messageObject.getMusicTitle());
         mVar.w0("android.media.metadata.ALBUM", (aVar == null || !messageObject.isMusic()) ? null : aVar.f);
         if (bitmap != null && !bitmap.isRecycled()) {
@@ -520,7 +520,7 @@ public class TelegramMediaSession {
         this.session.i(SharedConfig.shuffleMusic ? 1 : 0);
     }
 
-    /* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+    /* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
     public final class SessionCallback extends android.support.v4.media.session.s {
         private SessionCallback() {
         }

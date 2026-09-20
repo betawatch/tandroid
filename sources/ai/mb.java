@@ -42,7 +42,7 @@ import org.telegram.ui.fz;
 import org.telegram.ui.gz;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public abstract class mb extends FrameLayout implements View.OnClickListener {
     public final Path E;
@@ -55,15 +55,15 @@ public abstract class mb extends FrameLayout implements View.OnClickListener {
     public final Matrix e;
     public final float[] f;
     public final View h;
-    public final org.telegram.ui.ActionBar.e6 n;
+    public final org.telegram.ui.ActionBar.f6 n;
     public ArrayList r;
     public final Rect s;
     public final RectF v;
     public final Paint w;
-    public final org.telegram.ui.Components.e6 x;
-    public final org.telegram.ui.Components.e6 y;
+    public final org.telegram.ui.Components.d6 x;
+    public final org.telegram.ui.Components.d6 y;
 
-    public mb(Context context, View view, org.telegram.ui.ActionBar.e6 e6Var) {
+    public mb(Context context, View view, org.telegram.ui.ActionBar.f6 f6Var) {
         super(context);
         this.a = null;
         this.b = null;
@@ -79,9 +79,9 @@ public abstract class mb extends FrameLayout implements View.OnClickListener {
         this.E = new Path();
         this.G = false;
         this.h = view;
-        this.n = e6Var;
-        this.x = new org.telegram.ui.Components.e6(view, 0L, 120L, new LinearInterpolator());
-        this.y = new org.telegram.ui.Components.e6(view, 0L, 360L, qr.h);
+        this.n = f6Var;
+        this.x = new org.telegram.ui.Components.d6(view, 0L, 120L, new LinearInterpolator());
+        this.y = new org.telegram.ui.Components.d6(view, 0L, 360L, qr.h);
         setClipChildren(false);
         FrameLayout frameLayout = new FrameLayout(context);
         this.d = frameLayout;
@@ -147,20 +147,20 @@ public abstract class mb extends FrameLayout implements View.OnClickListener {
                     if (storyItem != null) {
                         pbVar.c(storyItem.views, false);
                     }
-                    w7.a6.a(pbVar);
+                    w7.b6.a(pbVar);
                     view = pbVar;
                 } else if (mediaArea instanceof TL_stories.TL_mediaAreaWeather) {
                     TL_stories.TL_mediaAreaWeather tL_mediaAreaWeather = (TL_stories.TL_mediaAreaWeather) mediaArea;
                     nd ndVar = new nd();
                     ndVar.c = tL_mediaAreaWeather.emoji;
                     ndVar.d = (float) tL_mediaAreaWeather.temperature_c;
-                    qg.s0 s0Var = new qg.s0(getContext(), AndroidUtilities.density);
-                    s0Var.setMaxWidth(AndroidUtilities.displaySize.x);
-                    s0Var.setIsVideo(true);
-                    s0Var.d(UserConfig.selectedAccount, ndVar.c);
-                    s0Var.setText(ndVar.a());
-                    s0Var.e(3, tL_mediaAreaWeather.color);
-                    view = new lb(getContext(), s0Var, mediaArea);
+                    qg.t0 t0Var = new qg.t0(getContext(), AndroidUtilities.density);
+                    t0Var.setMaxWidth(AndroidUtilities.displaySize.x);
+                    t0Var.setIsVideo(true);
+                    t0Var.d(UserConfig.selectedAccount, ndVar.c);
+                    t0Var.setText(ndVar.a());
+                    t0Var.e(3, tL_mediaAreaWeather.color);
+                    view = new lb(getContext(), t0Var, mediaArea);
                 } else {
                     view = new kb(getContext(), this.h, mediaArea);
                 }
@@ -200,9 +200,9 @@ public abstract class mb extends FrameLayout implements View.OnClickListener {
                 for (int i10 = 0; i10 < getChildCount(); i10++) {
                     View childAt = getChildAt(i10);
                     if (childAt != frameLayout) {
-                        org.telegram.ui.Components.e6 e6Var = ((kb) childAt).a;
+                        org.telegram.ui.Components.d6 d6Var = ((kb) childAt).a;
                         kb kbVar3 = this.b;
-                        float e10 = e6Var.e(childAt == kbVar3 && kbVar3.s);
+                        float e10 = d6Var.e(childAt == kbVar3 && kbVar3.s);
                         if (e10 > 0.0f) {
                             canvas2.save();
                             rectF.set(childAt.getX(), childAt.getY(), childAt.getX() + childAt.getMeasuredWidth(), childAt.getY() + childAt.getMeasuredHeight());
@@ -352,7 +352,7 @@ public abstract class mb extends FrameLayout implements View.OnClickListener {
                 zg.o0 d10 = zg.o0.d(mediaArea.reaction);
                 String str = d10.f;
                 if (str == null) {
-                    str = MessageObject.findAnimatedEmojiEmoticon(org.telegram.ui.Components.q5.f(gzVar.b, d10.g));
+                    str = MessageObject.findAnimatedEmojiEmoticon(org.telegram.ui.Components.p5.f(gzVar.b, d10.g));
                 }
                 float measuredHeight = pbVar.getMeasuredHeight();
                 float measuredWidth = pbVar.getMeasuredWidth();

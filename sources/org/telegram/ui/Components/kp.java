@@ -18,10 +18,10 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class kp extends vl0 {
-    public final org.telegram.ui.ActionBar.e6 c;
+public final class kp extends ul0 {
+    public final org.telegram.ui.ActionBar.f6 c;
     public ArrayList d;
     public WeakReference e;
     public int f;
@@ -31,17 +31,17 @@ public final class kp extends vl0 {
     public final HashMap s;
     public final HashMap v;
 
-    public kp(int i10, long j3, org.telegram.ui.ActionBar.e6 e6Var, int i11) {
+    public kp(int i10, long j3, org.telegram.ui.ActionBar.f6 f6Var, int i11) {
         this.f = -1;
         this.s = new HashMap();
         this.v = new HashMap();
         this.n = i11;
         this.r = j3;
-        this.c = e6Var;
+        this.c = f6Var;
         this.h = i10;
     }
 
-    @Override // org.telegram.ui.Components.vl0
+    @Override // org.telegram.ui.Components.ul0
     public final boolean D(s4.c1 c1Var) {
         return false;
     }
@@ -54,9 +54,9 @@ public final class kp extends vl0 {
         if (i11 >= 0) {
             m(i11);
             WeakReference weakReference = this.e;
-            j21 j21Var = weakReference == null ? null : (j21) weakReference.get();
-            if (j21Var != null) {
-                j21Var.setSelected(false);
+            i21 i21Var = weakReference == null ? null : (i21) weakReference.get();
+            if (i21Var != null) {
+                i21Var.setSelected(false);
             }
         }
         this.f = i10;
@@ -78,7 +78,7 @@ public final class kp extends vl0 {
         int s10;
         int intValue;
         String[] split;
-        j21 j21Var = (j21) c1Var.a;
+        i21 i21Var = (i21) c1Var.a;
         org.telegram.ui.ActionBar.i6 j3 = ((lp) this.d.get(i10)).a.j(((lp) this.d.get(i10)).c);
         if (j3 != null && j3.b != null && !j3.T && new File(j3.b).exists() && j3.b != null) {
             try {
@@ -87,7 +87,7 @@ public final class kp extends vl0 {
                 boolean z10 = false;
                 while (true) {
                     try {
-                        int read = fileInputStream2.read(org.telegram.ui.Cells.pa.i3);
+                        int read = fileInputStream2.read(org.telegram.ui.Cells.qa.i3);
                         if (read == -1) {
                             fileInputStream = fileInputStream2;
                             break;
@@ -100,7 +100,7 @@ public final class kp extends vl0 {
                                 fileInputStream = fileInputStream2;
                                 break;
                             }
-                            byte[] bArr = org.telegram.ui.Cells.pa.i3;
+                            byte[] bArr = org.telegram.ui.Cells.qa.i3;
                             if (bArr[i13] == 10) {
                                 int i15 = i13 - i14;
                                 int i16 = i15 + 1;
@@ -247,26 +247,26 @@ public final class kp extends vl0 {
             }
         }
         lp lpVar = (lp) this.d.get(i10);
-        lp lpVar2 = j21Var.G;
-        boolean z11 = lpVar2 != null && fg.b.a(lpVar2.a.c, lpVar.a.c) && !org.telegram.ui.uy.w4 && j21Var.V == lpVar.c;
-        j21Var.setFocusable(true);
-        j21Var.setEnabled(true);
-        j21Var.setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.i5, false));
-        j21Var.f(lpVar, this.r, z11);
-        j21Var.g(i10 == this.f, z11);
+        lp lpVar2 = i21Var.G;
+        boolean z11 = lpVar2 != null && fg.b.a(lpVar2.a.c, lpVar.a.c) && !org.telegram.ui.uy.w4 && i21Var.V == lpVar.c;
+        i21Var.setFocusable(true);
+        i21Var.setEnabled(true);
+        i21Var.setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.i5, false));
+        i21Var.f(lpVar, this.r, z11);
+        i21Var.g(i10 == this.f, z11);
         if (i10 == this.f) {
-            this.e = new WeakReference(j21Var);
+            this.e = new WeakReference(i21Var);
         }
     }
 
     @Override // s4.h0
     public final s4.c1 x(ViewGroup viewGroup, int i10) {
         Context context = viewGroup.getContext();
-        org.telegram.ui.ActionBar.e6 e6Var = this.c;
-        return new gl0(new j21(this.h, this.n, context, e6Var));
+        org.telegram.ui.ActionBar.f6 f6Var = this.c;
+        return new fl0(new i21(this.h, this.n, context, f6Var));
     }
 
-    public kp(int i10, int i11, org.telegram.ui.ActionBar.e6 e6Var) {
-        this(i10, 0L, e6Var, i11);
+    public kp(int i10, int i11, org.telegram.ui.ActionBar.f6 f6Var) {
+        this(i10, 0L, f6Var, i11);
     }
 }

@@ -30,15 +30,15 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.ui.Components.f90;
-import org.telegram.ui.Components.i90;
-import org.telegram.ui.Components.ij0;
-import org.telegram.ui.Components.m90;
+import org.telegram.ui.Components.e90;
+import org.telegram.ui.Components.h90;
+import org.telegram.ui.Components.hj0;
+import org.telegram.ui.Components.l90;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.u51;
+import org.telegram.ui.Components.t51;
 import org.telegram.ui.sl0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public class f4 extends View {
     public boolean A0;
@@ -51,32 +51,32 @@ public class f4 extends View {
     public LinearGradient F0;
     public CharSequence G;
     public Matrix G0;
-    public final org.telegram.ui.Components.o6 H;
+    public final org.telegram.ui.Components.n6 H;
     public LinearGradient H0;
     public boolean I;
     public long I0;
     public final TextPaint J;
     public final RectF J0;
     public Layout.Alignment K;
-    public m90 K0;
+    public l90 K0;
     public StaticLayout L;
-    public org.telegram.ui.Components.v5 M;
+    public org.telegram.ui.Components.u5 M;
     public float N;
     public float O;
     public float P;
-    public final i90 Q;
+    public final h90 Q;
     public float R;
     public float S;
     public boolean T;
     public boolean U;
     public boolean V;
-    public final org.telegram.ui.Components.e6 W;
+    public final org.telegram.ui.Components.d6 W;
     public int a;
     public org.telegram.ui.Cells.z a0;
     public float b;
     public Paint b0;
     public float c;
-    public ij0 c0;
+    public hj0 c0;
     public long d;
     public float d0;
     public boolean e;
@@ -131,11 +131,11 @@ public class f4 extends View {
         TextPaint textPaint = new TextPaint(1);
         this.J = textPaint;
         this.K = Layout.Alignment.ALIGN_NORMAL;
-        this.Q = new i90();
+        this.Q = new h90();
         this.T = true;
         this.U = true;
         qr qrVar = qr.h;
-        this.W = new org.telegram.ui.Components.e6(this, 350L, qrVar);
+        this.W = new org.telegram.ui.Components.d6(this, 350L, qrVar);
         this.e0 = AndroidUtilities.dp(2.0f);
         this.m0 = new sl0(this, 26);
         this.o0 = 1.0f;
@@ -149,12 +149,12 @@ public class f4 extends View {
         this.a = i10;
         paint.setColor(-433575896);
         paint.setPathEffect(new CornerPathEffect(this.v));
-        org.telegram.ui.Components.o6 o6Var = new org.telegram.ui.Components.o6(true, true, false, false);
-        this.H = o6Var;
-        o6Var.k(0.4f, 320L, qrVar);
-        o6Var.setCallback(this);
+        org.telegram.ui.Components.n6 n6Var = new org.telegram.ui.Components.n6(true, true, false, false);
+        this.H = n6Var;
+        n6Var.k(0.4f, 320L, qrVar);
+        n6Var.setCallback(this);
         t(14.0f);
-        o6Var.r(-1);
+        n6Var.r(-1);
         textPaint.setColor(-1);
     }
 
@@ -257,7 +257,7 @@ public class f4 extends View {
             return textPaint.measureText(charSequence.toString());
         }
         Spanned spanned = (Spanned) charSequence;
-        u51[] u51VarArr = (u51[]) spanned.getSpans(0, charSequence.length(), u51.class);
+        t51[] t51VarArr = (t51[]) spanned.getSpans(0, charSequence.length(), t51.class);
         ReplacementSpan[] replacementSpanArr = (ReplacementSpan[]) spanned.getSpans(0, charSequence.length(), ReplacementSpan.class);
         int i10 = 0;
         int i11 = 0;
@@ -271,13 +271,13 @@ public class f4 extends View {
         }
         CharSequence charSequence2 = charSequence;
         TextPaint textPaint3 = textPaint;
-        if (u51VarArr == null || u51VarArr.length == 0) {
+        if (t51VarArr == null || t51VarArr.length == 0) {
             return textPaint3.measureText(charSequence2.toString()) + i11;
         }
         int i12 = 0;
-        for (int i13 = 0; i13 < u51VarArr.length; i13++) {
-            int spanStart = spanned.getSpanStart(u51VarArr[i13]);
-            int spanEnd = spanned.getSpanEnd(u51VarArr[i13]);
+        for (int i13 = 0; i13 < t51VarArr.length; i13++) {
+            int spanStart = spanned.getSpanStart(t51VarArr[i13]);
+            int spanEnd = spanned.getSpanEnd(t51VarArr[i13]);
             int max = Math.max(i12, spanStart);
             if (max - i12 > 0) {
                 f7 += textPaint3.measureText(spanned, i12, max);
@@ -285,7 +285,7 @@ public class f4 extends View {
             i12 = Math.max(max, spanEnd);
             if (i12 - max > 0) {
                 Typeface typeface = textPaint3.getTypeface();
-                textPaint3.setTypeface(u51VarArr[i13].a);
+                textPaint3.setTypeface(t51VarArr[i13].a);
                 float measureText = textPaint3.measureText(spanned, max, i12) + f7;
                 textPaint3.setTypeface(typeface);
                 f7 = measureText;
@@ -485,9 +485,9 @@ public class f4 extends View {
             return;
         }
         boolean z10 = this.I;
-        org.telegram.ui.Components.o6 o6Var = this.H;
-        float d = z10 ? this.O : o6Var.d();
-        float f12 = this.I ? this.P : o6Var.e;
+        org.telegram.ui.Components.n6 n6Var = this.H;
+        float d = z10 ? this.O : n6Var.d();
+        float f12 = this.I ? this.P : n6Var.e;
         if (this.r) {
             if (this.n == null) {
                 Drawable mutate = getContext().getResources().getDrawable(R.drawable.msg_mini_close_tooltip).mutate();
@@ -548,21 +548,21 @@ public class f4 extends View {
             this.a0.draw(canvas);
         }
         float f18 = ((rectF.top + rectF2.top) + (rectF.bottom - rectF2.bottom)) / 2.0f;
-        ij0 ij0Var = this.c0;
-        if (ij0Var != null) {
+        hj0 hj0Var = this.c0;
+        if (hj0Var != null) {
             if (this.h0) {
                 float f19 = (rectF2.left / 2.0f) + rectF.left + 0.0f;
                 float f20 = this.d0 + f18;
                 f7 = 255.0f;
                 float f21 = this.g0 / 2.0f;
-                ij0Var.setBounds((int) f19, (int) (f20 - f21), (int) (f19 + this.f0), (int) (f21 + f20));
+                hj0Var.setBounds((int) f19, (int) (f20 - f21), (int) (f19 + this.f0), (int) (f21 + f20));
                 f10 = this.f0 + this.e0 + 0.0f;
             } else {
                 f7 = 255.0f;
                 float f22 = (0.0f + rectF.right) - (rectF2.right / 2.0f);
                 float f23 = this.d0 + f18;
                 float f24 = this.g0 / 2.0f;
-                ij0Var.setBounds((int) (f22 - this.f0), (int) (f23 - f24), (int) f22, (int) (f24 + f23));
+                hj0Var.setBounds((int) (f22 - this.f0), (int) (f23 - f24), (int) f22, (int) (f24 + f23));
                 f10 = 0.0f;
             }
             this.c0.setAlpha((int) (f16 * f7));
@@ -585,7 +585,7 @@ public class f4 extends View {
                 f4Var.invalidate();
             }
             f4Var.L.draw(canvas2);
-            org.telegram.ui.Components.z5.drawAnimatedEmojis(canvas2, f4Var.L, f4Var.M, 0.0f, null, 0.0f, 0.0f, 0.0f, 1.0f);
+            org.telegram.ui.Components.y5.drawAnimatedEmojis(canvas2, f4Var.L, f4Var.M, 0.0f, null, 0.0f, 0.0f, 0.0f, 1.0f);
             canvas2.restore();
         } else {
             f4Var = this;
@@ -593,15 +593,15 @@ public class f4 extends View {
             canvas2 = canvas;
             CharSequence charSequence = f4Var.G;
             if (charSequence != null) {
-                o6Var.q(charSequence, f4Var.V, true);
+                n6Var.q(charSequence, f4Var.V, true);
                 f4Var.G = null;
             }
             float f27 = rectF.left;
             float f28 = rectF2.left;
             float f29 = f4Var.P / 2.0f;
-            o6Var.setBounds((int) (f10 + f27 + f28), (int) (f18 - f29), (int) (f27 + f28 + f13), (int) (f29 + f18));
-            o6Var.w = (int) (f11 * f7);
-            o6Var.draw(canvas2);
+            n6Var.setBounds((int) (f10 + f27 + f28), (int) (f18 - f29), (int) (f27 + f28 + f13), (int) (f29 + f18));
+            n6Var.w = (int) (f11 * f7);
+            n6Var.draw(canvas2);
         }
         if (f4Var.r) {
             if (f4Var.n == null) {
@@ -623,15 +623,15 @@ public class f4 extends View {
             AndroidUtilities.cancelRunOnUIThread(runnable);
         }
         this.V = false;
-        org.telegram.ui.Components.e6 e6Var = this.W;
+        org.telegram.ui.Components.d6 d6Var = this.W;
         if (!z10) {
-            e6Var.getClass();
-            e6Var.d(0.0f, false);
+            d6Var.getClass();
+            d6Var.d(0.0f, false);
         }
         invalidate();
         Runnable runnable2 = this.l0;
         if (runnable2 != null) {
-            AndroidUtilities.runOnUIThread(runnable2, (long) (e6Var.c * e6Var.g));
+            AndroidUtilities.runOnUIThread(runnable2, (long) (d6Var.c * d6Var.g));
         }
         this.Q.d(true);
     }
@@ -647,7 +647,7 @@ public class f4 extends View {
         this.O = Math.max(0.0f, f10 - f7);
         this.P = this.L.getHeight();
         this.N = f7;
-        this.M = org.telegram.ui.Components.z5.update(0, this, this.M, this.L);
+        this.M = org.telegram.ui.Components.y5.update(0, this, this.M, this.L);
     }
 
     public CharSequence getText() {
@@ -685,20 +685,20 @@ public class f4 extends View {
         this.w.set(AndroidUtilities.dp(11.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(this.r ? 15.0f : 11.0f), AndroidUtilities.dp(7.0f));
     }
 
-    public final void j(ij0 ij0Var) {
-        ij0 ij0Var2 = this.c0;
-        if (ij0Var2 != null) {
-            ij0Var2.setCallback(null);
+    public final void j(hj0 hj0Var) {
+        hj0 hj0Var2 = this.c0;
+        if (hj0Var2 != null) {
+            hj0Var2.setCallback(null);
         }
-        this.c0 = ij0Var;
-        ij0Var.setCallback(this);
-        ij0 ij0Var3 = this.c0;
-        if (com.google.android.gms.internal.vision.e2.u(ij0Var3)) {
-            this.d = Math.max(this.d, ij0Var3.r());
+        this.c0 = hj0Var;
+        hj0Var.setCallback(this);
+        hj0 hj0Var3 = this.c0;
+        if (com.google.android.gms.internal.vision.e2.u(hj0Var3)) {
+            this.d = Math.max(this.d, hj0Var3.r());
         }
-        ij0 ij0Var4 = this.c0;
-        this.f0 = ij0Var4.b;
-        this.g0 = ij0Var4.c;
+        hj0 hj0Var4 = this.c0;
+        this.f0 = hj0Var4.b;
+        this.g0 = hj0Var4.c;
         this.h0 = true;
     }
 
@@ -735,7 +735,7 @@ public class f4 extends View {
     @Override // android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        org.telegram.ui.Components.z5.release(this, this.M);
+        org.telegram.ui.Components.y5.release(this, this.M);
     }
 
     @Override // android.view.View
@@ -743,8 +743,8 @@ public class f4 extends View {
         setMeasuredDimension(View.MeasureSpec.getSize(i10), View.MeasureSpec.getSize(i11));
         this.y0 = false;
         int textMaxWidth = getTextMaxWidth();
-        org.telegram.ui.Components.o6 o6Var = this.H;
-        o6Var.G = textMaxWidth;
+        org.telegram.ui.Components.n6 n6Var = this.H;
+        n6Var.G = textMaxWidth;
         if (this.I) {
             CharSequence charSequence = this.G;
             if (charSequence == null) {
@@ -762,7 +762,7 @@ public class f4 extends View {
         } else {
             CharSequence charSequence2 = this.G;
             if (charSequence2 != null) {
-                o6Var.q(charSequence2, false, true);
+                n6Var.q(charSequence2, false, true);
             }
         }
         this.G = null;
@@ -794,32 +794,32 @@ public class f4 extends View {
                         if (clickableSpanArr.length != 0 && !AndroidUtilities.isAccessibilityScreenReaderEnabled()) {
                             clickableSpan = clickableSpanArr[0];
                             sl0 sl0Var = this.m0;
-                            i90 i90Var = this.Q;
+                            h90 h90Var = this.Q;
                             if (clickableSpan == null && motionEvent.getAction() == 0) {
-                                m90 m90Var = new m90(clickableSpan, null, motionEvent.getX(), motionEvent.getY(), 0);
-                                this.K0 = m90Var;
-                                i90Var.a(m90Var, null);
+                                l90 l90Var = new l90(clickableSpan, null, motionEvent.getX(), motionEvent.getY(), 0);
+                                this.K0 = l90Var;
+                                h90Var.a(l90Var, null);
                                 SpannableString spannableString = new SpannableString(this.L.getText());
                                 int spanStart = spannableString.getSpanStart(this.K0.i);
                                 int spanEnd = spannableString.getSpanEnd(this.K0.i);
-                                f90 b10 = this.K0.b();
+                                e90 b10 = this.K0.b();
                                 b10.d(this.L, spanStart, 0.0f);
                                 this.L.getSelectionPath(spanStart, spanEnd, b10);
                                 invalidate();
-                                AndroidUtilities.runOnUIThread(new d4(this, m90Var, clickableSpan), ViewConfiguration.getLongPressTimeout());
+                                AndroidUtilities.runOnUIThread(new d4(this, l90Var, clickableSpan), ViewConfiguration.getLongPressTimeout());
                                 AndroidUtilities.cancelRunOnUIThread(sl0Var);
                                 return true;
                             }
                             if (motionEvent.getAction() == 1) {
-                                i90Var.d(true);
+                                h90Var.d(true);
                                 invalidate();
                                 AndroidUtilities.cancelRunOnUIThread(sl0Var);
                                 long j3 = this.d;
                                 if (j3 > 0) {
                                     AndroidUtilities.runOnUIThread(sl0Var, j3);
                                 }
-                                m90 m90Var2 = this.K0;
-                                if (m90Var2 != null && (characterStyle = m90Var2.i) == clickableSpan) {
+                                l90 l90Var2 = this.K0;
+                                if (l90Var2 != null && (characterStyle = l90Var2.i) == clickableSpan) {
                                     if (characterStyle != null) {
                                         ((ClickableSpan) characterStyle).onClick(this);
                                     }
@@ -829,7 +829,7 @@ public class f4 extends View {
                                 this.K0 = null;
                             }
                             if (motionEvent.getAction() == 3) {
-                                i90Var.d(true);
+                                h90Var.d(true);
                                 invalidate();
                                 AndroidUtilities.cancelRunOnUIThread(sl0Var);
                                 long j10 = this.d;
@@ -843,7 +843,7 @@ public class f4 extends View {
                 }
                 clickableSpan = null;
                 sl0 sl0Var2 = this.m0;
-                i90 i90Var2 = this.Q;
+                h90 h90Var2 = this.Q;
                 if (clickableSpan == null) {
                 }
                 if (motionEvent.getAction() == 1) {

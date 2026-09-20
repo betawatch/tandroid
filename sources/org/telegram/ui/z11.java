@@ -8,21 +8,21 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class z11 extends org.telegram.ui.Components.o81 {
     public boolean a;
-    public final /* synthetic */ org.telegram.ui.Components.fs0 b;
+    public final /* synthetic */ org.telegram.ui.Components.es0 b;
 
-    public z11(org.telegram.ui.Components.fs0 fs0Var) {
-        this.b = fs0Var;
+    public z11(org.telegram.ui.Components.es0 es0Var) {
+        this.b = es0Var;
     }
 
     @Override // org.telegram.ui.Components.o81
     public final void a(ArrayList arrayList) {
-        org.telegram.ui.Components.fs0 fs0Var = this.b;
-        e01 e01Var = fs0Var.G;
-        org.telegram.ui.Components.w81 w81Var = fs0Var.n;
+        org.telegram.ui.Components.es0 es0Var = this.b;
+        e01 e01Var = es0Var.G;
+        org.telegram.ui.Components.w81 w81Var = es0Var.n;
         ArrayList arrayList2 = new ArrayList();
         int size = arrayList.size();
         int i10 = 0;
@@ -37,7 +37,7 @@ public final class z11 extends org.telegram.ui.Components.o81 {
             }
         }
         int f7 = f(w81Var.getCurrentPosition());
-        ai.x8 x8Var = fs0Var.r;
+        ai.x8 x8Var = es0Var.r;
         x8Var.getClass();
         HashMap hashMap = new HashMap();
         ArrayList arrayList3 = x8Var.h;

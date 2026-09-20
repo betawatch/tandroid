@@ -11,25 +11,25 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.Components.dq;
-import org.telegram.ui.Components.h9;
-import org.telegram.ui.Components.p6;
+import org.telegram.ui.Components.g9;
+import org.telegram.ui.Components.o6;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.w9;
+import org.telegram.ui.Components.v9;
 import org.telegram.ui.zn;
 import w7.y5;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class e extends FrameLayout {
     public final int a;
-    public final h9 b;
-    public final w9 c;
+    public final g9 b;
+    public final v9 c;
     public final LinearLayout d;
-    public final p6 e;
-    public final p6 f;
+    public final o6 e;
+    public final o6 f;
     public final dq h;
     public final ImageView n;
     public boolean r;
@@ -39,41 +39,41 @@ public final class e extends FrameLayout {
     public String x;
     public float y;
 
-    public e(Activity activity, e6 e6Var, zn znVar) {
+    public e(Activity activity, f6 f6Var, zn znVar) {
         super(activity);
         this.a = znVar.getCurrentAccount();
         this.r = false;
-        w9 w9Var = new w9(activity);
-        this.c = w9Var;
+        v9 v9Var = new v9(activity);
+        this.c = v9Var;
         TLRPC.User user = znVar.getMessagesController().getUser(Long.valueOf(this.v));
-        h9 h9Var = new h9((e6) null);
-        this.b = h9Var;
-        h9Var.r(user);
-        w9Var.setRoundRadius(AndroidUtilities.dp(16.0f));
-        w9Var.e(user, h9Var);
-        addView(w9Var, y5.d(32, 32.0f, 19, 10.0f, 0.0f, 10.0f, 0.0f));
+        g9 g9Var = new g9((f6) null);
+        this.b = g9Var;
+        g9Var.r(user);
+        v9Var.setRoundRadius(AndroidUtilities.dp(16.0f));
+        v9Var.e(user, g9Var);
+        addView(v9Var, y5.d(32, 32.0f, 19, 10.0f, 0.0f, 10.0f, 0.0f));
         LinearLayout linearLayout = new LinearLayout(activity);
         this.d = linearLayout;
         linearLayout.setOrientation(1);
-        p6 p6Var = new p6(activity, false, false, false);
-        this.e = p6Var;
-        p6Var.n = false;
-        p6Var.getDrawable().o(true, false, false);
-        p6Var.setTypeface(AndroidUtilities.bold());
-        p6Var.setTextSize(AndroidUtilities.dp(14.0f));
-        p6Var.setText(UserObject.getUserName(user));
-        p6Var.setTextColor(j6.v0(j6.G6, e6Var));
-        p6Var.setEllipsizeByGradient(true);
-        linearLayout.addView(p6Var, y5.k(0.0f, 0.0f, 0.0f, 1.0f, -1, 17));
-        p6 p6Var2 = new p6(activity, false, false, false);
-        this.f = p6Var2;
-        p6Var2.n = false;
-        p6Var2.getDrawable().o(true, false, false);
-        p6Var2.setTextSize(AndroidUtilities.dp(13.0f));
-        p6Var2.setText(LocaleController.getString(R.string.BizBotStatusManages));
-        p6Var2.setTextColor(j6.v0(j6.ge, e6Var));
-        p6Var2.setEllipsizeByGradient(true);
-        linearLayout.addView(p6Var2, y5.n(-1, 17));
+        o6 o6Var = new o6(activity, false, false, false);
+        this.e = o6Var;
+        o6Var.n = false;
+        o6Var.getDrawable().o(true, false, false);
+        o6Var.setTypeface(AndroidUtilities.bold());
+        o6Var.setTextSize(AndroidUtilities.dp(14.0f));
+        o6Var.setText(UserObject.getUserName(user));
+        o6Var.setTextColor(j6.v0(j6.G6, f6Var));
+        o6Var.setEllipsizeByGradient(true);
+        linearLayout.addView(o6Var, y5.k(0.0f, 0.0f, 0.0f, 1.0f, -1, 17));
+        o6 o6Var2 = new o6(activity, false, false, false);
+        this.f = o6Var2;
+        o6Var2.n = false;
+        o6Var2.getDrawable().o(true, false, false);
+        o6Var2.setTextSize(AndroidUtilities.dp(13.0f));
+        o6Var2.setText(LocaleController.getString(R.string.BizBotStatusManages));
+        o6Var2.setTextColor(j6.v0(j6.ge, f6Var));
+        o6Var2.setEllipsizeByGradient(true);
+        linearLayout.addView(o6Var2, y5.n(-1, 17));
         addView(linearLayout, y5.d(-2, -2.0f, 16, 52.0f, 0.0f, 49.0f, 0.0f));
         dq dqVar = new dq(activity);
         this.h = dqVar;
@@ -83,12 +83,12 @@ public final class e extends FrameLayout {
         dqVar.setTypeface(AndroidUtilities.bold());
         int dp = AndroidUtilities.dp(14.0f);
         int i10 = j6.Oh;
-        int v02 = j6.v0(i10, e6Var);
-        int v = j6.v(j6.v0(i10, e6Var), j6.l1(0.12f, -1));
+        int v02 = j6.v0(i10, f6Var);
+        int v = j6.v(j6.v0(i10, f6Var), j6.l1(0.12f, -1));
         dqVar.setBackgroundDrawable(j6.i0(dp, dp, dp, dp, v02, v, v));
         dqVar.setTextSize(AndroidUtilities.dp(14.0f));
         dqVar.setGravity(5);
-        dqVar.setTextColor(j6.v0(j6.Sh, e6Var));
+        dqVar.setTextColor(j6.v0(j6.Sh, f6Var));
         dqVar.setPadding(AndroidUtilities.dp(13.0f), 0, AndroidUtilities.dp(13.0f), 0);
         dqVar.setOnClickListener(new ai.v0(this, 24));
         dqVar.setOnWidthUpdatedListener(new d(this, 0));
@@ -98,9 +98,9 @@ public final class e extends FrameLayout {
         this.n = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         imageView.setImageResource(R.drawable.msg_mini_customize);
-        imageView.setBackground(j6.M(j6.v0(j6.i6, e6Var), 0, 0));
-        imageView.setColorFilter(new PorterDuffColorFilter(j6.v0(j6.de, e6Var), PorterDuff.Mode.MULTIPLY));
-        imageView.setOnClickListener(new ai.d0(this, znVar, e6Var, 7));
+        imageView.setBackground(j6.M(j6.v0(j6.i6, f6Var), 0, 0));
+        imageView.setColorFilter(new PorterDuffColorFilter(j6.v0(j6.de, f6Var), PorterDuff.Mode.MULTIPLY));
+        imageView.setOnClickListener(new ai.d0(this, znVar, f6Var, 7));
         addView(imageView, y5.d(32, 32.0f, 21, 8.0f, 0.0f, 6.0f, 0.0f));
     }
 

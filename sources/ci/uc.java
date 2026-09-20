@@ -21,11 +21,11 @@ import org.telegram.messenger.AnimationNotificationsLocker;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.Components.l61;
-import org.telegram.ui.Components.wl0;
+import org.telegram.ui.Components.k61;
+import org.telegram.ui.Components.vl0;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class uc implements Runnable {
     public final /* synthetic */ int a;
@@ -57,11 +57,11 @@ public final /* synthetic */ class uc implements Runnable {
                                     if (context != null && (telephonyManager = (TelephonyManager) context.getSystemService("phone")) != null) {
                                         String networkCountryIso = telephonyManager.getNetworkCountryIso();
                                         if (!TextUtils.isEmpty(networkCountryIso)) {
-                                            c10 = v7.r6.c(networkCountryIso);
+                                            c10 = v7.s6.c(networkCountryIso);
                                             fVar.o = c10;
                                         }
                                     }
-                                    c10 = v7.r6.c(Locale.getDefault().getCountry());
+                                    c10 = v7.s6.c(Locale.getDefault().getCountry());
                                     fVar.o = c10;
                                 }
                                 fVar.l = fVar.a(b10);
@@ -148,7 +148,7 @@ public final /* synthetic */ class uc implements Runnable {
                 di.f fVar = (di.f) this.b;
                 fVar.getClass();
                 try {
-                    wl0 currentListView = ((di.i) fVar.L0).R.getCurrentListView();
+                    vl0 currentListView = ((di.i) fVar.L0).R.getCurrentListView();
                     if (currentListView == null || currentListView.getAdapter() == null) {
                         return;
                     }
@@ -212,9 +212,9 @@ public final /* synthetic */ class uc implements Runnable {
                 return;
             case 20:
                 hg.l0 l0Var = (hg.l0) this.b;
-                l61 l61Var = l0Var.d0;
-                if (l61Var != null) {
-                    l61Var.N(true);
+                k61 k61Var = l0Var.d0;
+                if (k61Var != null) {
+                    k61Var.N(true);
                 }
                 l0Var.T(true);
                 return;

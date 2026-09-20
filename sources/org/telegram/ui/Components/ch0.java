@@ -1,33 +1,6 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ch0 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ fh0 b;
-
-    public /* synthetic */ ch0(fh0 fh0Var, int i10) {
-        this.a = i10;
-        this.b = fh0Var;
-    }
-
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                fh0 fh0Var = this.b;
-                fh0Var.getClass();
-                fh0Var.b = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                fh0Var.c(true);
-                break;
-            default:
-                fh0 fh0Var2 = this.b;
-                fh0Var2.getClass();
-                fh0Var2.E = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                fh0Var2.c(true);
-                break;
-        }
-    }
+public interface ch0 {
 }

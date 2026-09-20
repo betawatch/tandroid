@@ -1,16 +1,19 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
-/* loaded from: classes3.dex */
-public final class hb0 extends org.telegram.ui.Components.r00 {
-    @Override // org.telegram.ui.Components.r00
-    public final void b() {
-        setVisibility(8);
-    }
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 
-    @Override // org.telegram.ui.Components.r00
-    public final void c(boolean z10) {
-        setVisibility(0);
-        super.c(z10);
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* loaded from: classes3.dex */
+public final class hb0 implements View.OnLayoutChangeListener {
+    public boolean a;
+
+    @Override // android.view.View.OnLayoutChangeListener
+    public final void onLayoutChange(View view, int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17) {
+        boolean z10 = i13 - i11 > i12 - i10;
+        if (z10 != this.a) {
+            AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.sh(this, 23));
+            this.a = z10;
+        }
     }
 }

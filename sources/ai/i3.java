@@ -35,9 +35,9 @@ import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.h01;
-import org.telegram.ui.ja0;
+import org.telegram.ui.ka0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class i3 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -65,8 +65,8 @@ public final /* synthetic */ class i3 implements Utilities.Callback {
                 f6 f6Var = (f6) this.c;
                 boolean z10 = this.b;
                 a5 a5Var = f6Var.c1;
-                org.telegram.ui.ActionBar.e6 e6Var = f6Var.B0;
-                new xc(a5Var, e6Var).o(z10 ? wc.h : wc.e, e6Var).j();
+                org.telegram.ui.ActionBar.f6 f6Var2 = f6Var.B0;
+                new xc(a5Var, f6Var2).o(z10 ? wc.h : wc.e, f6Var2).j();
                 break;
             case 1:
                 Utilities.Callback callback = (Utilities.Callback) this.c;
@@ -204,7 +204,7 @@ public final /* synthetic */ class i3 implements Utilities.Callback {
                 }
                 break;
             case 4:
-                AndroidUtilities.runOnUIThread(new ja0((org.telegram.ui.web.k) this.c, (String) obj, this.b, 11));
+                AndroidUtilities.runOnUIThread(new ka0((org.telegram.ui.web.k) this.c, (String) obj, this.b, 11));
                 break;
             case 5:
                 org.telegram.ui.web.a2 a2Var = (org.telegram.ui.web.a2) this.c;
@@ -212,13 +212,13 @@ public final /* synthetic */ class i3 implements Utilities.Callback {
                 a2Var.a.Y2.N(true);
                 break;
             default:
-                yh.t5 t5Var = (yh.t5) this.c;
+                yh.u5 u5Var = (yh.u5) this.c;
                 HashSet hashSet = (HashSet) obj;
                 if (this.b) {
-                    SendMessagesHelper.getInstance(t5Var.a).cancelSendingMessage(new ArrayList<>(hashSet));
+                    SendMessagesHelper.getInstance(u5Var.a).cancelSendingMessage(new ArrayList<>(hashSet));
                     break;
                 } else {
-                    t5Var.getClass();
+                    u5Var.getClass();
                     break;
                 }
         }

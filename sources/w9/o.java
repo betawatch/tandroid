@@ -11,16 +11,16 @@ import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.AtomicReference;
-import n7.z0;
+import org.telegram.ui.Cells.f3;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class o {
     public final Context a;
     public final r b;
-    public final o0.a c;
-    public z0 d;
-    public z0 e;
+    public final m5.e c;
+    public f3 d;
+    public f3 e;
     public m f;
     public final u g;
     public final ba.c h;
@@ -46,7 +46,7 @@ public final class o {
         this.m = jVar;
         this.o = dVar;
         System.currentTimeMillis();
-        this.c = new o0.a();
+        this.c = new m5.e(29, (byte) 0);
     }
 
     public static Task a(o oVar, da.b bVar) {
@@ -56,13 +56,13 @@ public final class o {
         if (!Boolean.TRUE.equals(((ThreadLocal) tVar.e).get())) {
             throw new IllegalStateException("Not running on background worker thread as intended.");
         }
-        oVar.d.o();
+        oVar.d.k();
         if (Log.isLoggable("FirebaseCrashlytics", 2)) {
             Log.v("FirebaseCrashlytics", "Initialization marker file was created.", null);
         }
         try {
             try {
-                oVar.i.a(new s9.b(22));
+                oVar.i.a(new s0.b(28));
                 oVar.f.g();
                 if (bVar.d().b.a) {
                     if (!oVar.f.d(bVar)) {

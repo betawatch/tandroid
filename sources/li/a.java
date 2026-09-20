@@ -8,14 +8,14 @@ import android.graphics.RectF;
 import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.ui.Components.kh;
-import org.telegram.ui.Components.wl0;
+import org.telegram.ui.Components.vl0;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.av;
 import org.telegram.ui.h6;
 import org.telegram.ui.w6;
 import org.telegram.ui.z6;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class a implements bh.a {
     public final /* synthetic */ int a;
@@ -40,8 +40,8 @@ public final /* synthetic */ class a implements bh.a {
     public final void f(Canvas canvas, RectF rectF) {
         switch (this.a) {
             case 0:
-                wl0 wl0Var = (wl0) this.b;
-                gh.d.a(wl0Var, canvas, rectF, wl0Var, (FrameLayout) this.c);
+                vl0 vl0Var = (vl0) this.b;
+                gh.d.a(vl0Var, canvas, rectF, vl0Var, (FrameLayout) this.c);
                 break;
             case 1:
                 z6 z6Var = (z6) this.b;
@@ -53,9 +53,9 @@ public final /* synthetic */ class a implements bh.a {
                     int childCount = w6Var.h.getChildCount();
                     for (int i10 = 0; i10 < childCount; i10++) {
                         View childAt = z6Var.M.h.getChildAt(i10);
-                        if (childAt instanceof wl0) {
-                            wl0 wl0Var2 = (wl0) childAt;
-                            gh.d.a(wl0Var2, canvas, rectF, wl0Var2, h6Var);
+                        if (childAt instanceof vl0) {
+                            vl0 vl0Var2 = (vl0) childAt;
+                            gh.d.a(vl0Var2, canvas, rectF, vl0Var2, h6Var);
                         }
                     }
                     break;
@@ -67,9 +67,9 @@ public final /* synthetic */ class a implements bh.a {
                 int childCount2 = avVar.a.getChildCount();
                 for (int i11 = 0; i11 < childCount2; i11++) {
                     View childAt2 = avVar.a.getChildAt(i11);
-                    if (childAt2 instanceof wl0) {
-                        wl0 wl0Var3 = (wl0) childAt2;
-                        gh.d.a(wl0Var3, canvas, rectF, wl0Var3, x5Var);
+                    if (childAt2 instanceof vl0) {
+                        vl0 vl0Var3 = (vl0) childAt2;
+                        gh.d.a(vl0Var3, canvas, rectF, vl0Var3, x5Var);
                     }
                 }
                 break;

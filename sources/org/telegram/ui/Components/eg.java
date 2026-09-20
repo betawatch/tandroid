@@ -10,7 +10,7 @@ import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class eg implements org.telegram.ui.bv0 {
     public boolean a;
@@ -139,7 +139,7 @@ public final class eg implements org.telegram.ui.bv0 {
     @Override // org.telegram.ui.bv0
     public final void d() {
         ci.g gVar;
-        kd f12 = PhotoViewer.t1().f1();
+        ld f12 = PhotoViewer.t1().f1();
         if (f12 == null || (gVar = f12.f) == null) {
             return;
         }

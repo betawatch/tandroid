@@ -10,9 +10,9 @@ import org.telegram.messenger.DispatchQueue;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class tp extends org.telegram.ui.Components.vl0 {
+public final class tp extends org.telegram.ui.Components.ul0 {
     public final Context c;
     public ArrayList d = new ArrayList();
     public ArrayList e = new ArrayList();
@@ -39,12 +39,12 @@ public final class tp extends org.telegram.ui.Components.vl0 {
     @Override // s4.h0
     public final void A(s4.c1 c1Var) {
         View view = c1Var.a;
-        if (view instanceof org.telegram.ui.Cells.b5) {
-            ((org.telegram.ui.Cells.b5) view).a();
+        if (view instanceof org.telegram.ui.Cells.c5) {
+            ((org.telegram.ui.Cells.c5) view).a();
         }
     }
 
-    @Override // org.telegram.ui.Components.vl0
+    @Override // org.telegram.ui.Components.ul0
     public final boolean D(s4.c1 c1Var) {
         return c1Var.f != 1;
     }
@@ -88,15 +88,15 @@ public final class tp extends org.telegram.ui.Components.vl0 {
                 charSequence = null;
             }
         }
-        org.telegram.ui.Cells.b5 b5Var = (org.telegram.ui.Cells.b5) c1Var.a;
-        b5Var.setTag(Integer.valueOf(i10));
-        b5Var.b(chat, charSequence, charSequence2, false);
+        org.telegram.ui.Cells.c5 c5Var = (org.telegram.ui.Cells.c5) c1Var.a;
+        c5Var.setTag(Integer.valueOf(i10));
+        c5Var.b(chat, charSequence, charSequence2, false);
     }
 
     @Override // s4.h0
     public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        org.telegram.ui.Cells.b5 b5Var = new org.telegram.ui.Cells.b5(6, 2, this.c, null, false);
-        b5Var.setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.d6, false));
-        return new org.telegram.ui.Components.gl0(b5Var);
+        org.telegram.ui.Cells.c5 c5Var = new org.telegram.ui.Cells.c5(6, 2, this.c, null, false);
+        c5Var.setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.d6, false));
+        return new org.telegram.ui.Components.fl0(c5Var);
     }
 }

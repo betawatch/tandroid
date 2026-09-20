@@ -4,7 +4,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class qm extends org.telegram.ui.ActionBar.p1 {
     public final /* synthetic */ rm x;
@@ -80,15 +80,15 @@ public final class qm extends org.telegram.ui.ActionBar.p1 {
                 znVar.P.setTranslationY(f7 / 2.0f);
                 int i10 = (int) f7;
                 znVar.X0.setBackgroundTranslation(i10);
-                org.telegram.ui.Components.f60 f60Var = znVar.b3;
-                if (f60Var != null) {
-                    f60Var.f(f7);
+                org.telegram.ui.Components.e60 e60Var = znVar.b3;
+                if (e60Var != null) {
+                    e60Var.e(f7);
                 }
                 ci.s6 s6Var = znVar.y2;
                 if (s6Var != null) {
-                    org.telegram.ui.Components.fa faVar = (org.telegram.ui.Components.fa) s6Var.b;
-                    faVar.u = f7;
-                    faVar.d.invalidate();
+                    org.telegram.ui.Components.ea eaVar = (org.telegram.ui.Components.ea) s6Var.b;
+                    eaVar.u = f7;
+                    eaVar.d.invalidate();
                 }
                 znVar.setFragmentPanTranslationOffset(i10);
                 znVar.o9();
@@ -97,9 +97,9 @@ public final class qm extends org.telegram.ui.ActionBar.p1 {
                 rmVar.setNonNoveTranslation(f7);
             }
             znVar.x0.invalidate();
-            org.telegram.ui.Components.qc qcVar = org.telegram.ui.Components.qc.w;
-            if (qcVar != null && znVar.Yb != null) {
-                qcVar.l();
+            org.telegram.ui.Components.pc pcVar = org.telegram.ui.Components.pc.w;
+            if (pcVar != null && znVar.Yb != null) {
+                pcVar.l();
             }
             if (AndroidUtilities.isTablet() && (znVar.getParentActivity() instanceof LaunchActivity)) {
                 org.telegram.ui.ActionBar.n2 lastFragment = ((LaunchActivity) znVar.getParentActivity()).O().getLastFragment();
@@ -139,18 +139,18 @@ public final class qm extends org.telegram.ui.ActionBar.p1 {
 
     @Override // org.telegram.ui.ActionBar.p1
     public final void g(int i10, boolean z10) {
-        org.telegram.ui.Components.rd rdVar;
+        org.telegram.ui.Components.sd sdVar;
         zn znVar = this.x.J0;
         znVar.D4 = true;
         lk lkVar = znVar.Y;
         if (lkVar != null) {
-            if (z10 && (rdVar = lkVar.V) != null) {
-                AndroidUtilities.cancelRunOnUIThread(rdVar);
+            if (z10 && (sdVar = lkVar.V) != null) {
+                AndroidUtilities.cancelRunOnUIThread(sdVar);
                 lkVar.V.run();
             }
-            org.telegram.ui.Components.zd zdVar = lkVar.W;
-            if (zdVar != null) {
-                AndroidUtilities.cancelRunOnUIThread(zdVar);
+            org.telegram.ui.Components.tc tcVar = lkVar.W;
+            if (tcVar != null) {
+                AndroidUtilities.cancelRunOnUIThread(tcVar);
                 lkVar.W.run();
             }
         }

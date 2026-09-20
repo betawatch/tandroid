@@ -13,13 +13,13 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Cells.u1;
 import org.telegram.ui.Cells.w0;
-import org.telegram.ui.Components.ij0;
-import org.telegram.ui.Components.ok0;
+import org.telegram.ui.Components.hj0;
+import org.telegram.ui.Components.nk0;
 import org.telegram.ui.Components.qr;
 import org.telegram.ui.tj;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class h0 extends FrameLayout {
     public final /* synthetic */ n2 a;
@@ -64,7 +64,7 @@ public final class h0 extends FrameLayout {
      */
     /* JADX WARN: Code restructure failed: missing block: B:191:0x0559, code lost:
     
-        if (((int) org.telegram.messenger.wh.b(r23.x.b.getImageReceiver().getLottieAnimation().a0, r23.x.b.getImageReceiver().getLottieAnimation().e[0], r8, r8)) < r6.b) goto L262;
+        if (((int) org.telegram.messenger.rk.b(r23.x.b.getImageReceiver().getLottieAnimation().a0, r23.x.b.getImageReceiver().getLottieAnimation().e[0], r8, r8)) < r6.b) goto L262;
      */
     /* JADX WARN: Code restructure failed: missing block: B:234:0x03d5, code lost:
     
@@ -100,7 +100,7 @@ public final class h0 extends FrameLayout {
         float f17;
         float f18;
         float f19;
-        float y3;
+        float x10;
         float f20;
         m0 m0Var;
         int paddingTop;
@@ -148,9 +148,9 @@ public final class h0 extends FrameLayout {
             invalidate();
             return;
         }
-        ok0 ok0Var = k0Var.t;
-        if (ok0Var != null) {
-            ok0Var.a.setAlpha(0.0f);
+        nk0 nk0Var = k0Var.t;
+        if (nk0Var != null) {
+            nk0Var.a.setAlpha(0.0f);
             this.x.t.c.setAlpha(0.0f);
         }
         n2 n2Var = this.a;
@@ -362,7 +362,7 @@ public final class h0 extends FrameLayout {
                     if (!this.x.x.isEmpty()) {
                         i0 i0Var3 = this.x.b;
                         if (i0Var3.G) {
-                            ij0 lottieAnimation = i0Var3.getImageReceiver().getLottieAnimation();
+                            hj0 lottieAnimation = i0Var3.getImageReceiver().getLottieAnimation();
                             int i15 = 0;
                             while (i15 < this.x.x.size()) {
                                 j0 j0Var = (j0) this.x.x.get(i15);
@@ -382,15 +382,15 @@ public final class h0 extends FrameLayout {
                                     }
                                 }
                                 if (f34 < 0.5f) {
-                                    y3 = f34 / 0.5f;
+                                    x10 = f34 / 0.5f;
                                     f19 = 1.0f;
                                 } else {
                                     f19 = 1.0f;
-                                    y3 = org.telegram.messenger.q.y(f34, 0.5f, 0.5f, 1.0f);
+                                    x10 = org.telegram.messenger.l0.x(f34, 0.5f, 0.5f, 1.0f);
                                 }
                                 float f37 = (f19 - f34) * 0.5f;
                                 float f38 = (j0Var.f * f34) + f37;
-                                float f39 = ((j0Var.g * f34) + f37) - (j0Var.e * y3);
+                                float f39 = ((j0Var.g * f34) + f37) - (j0Var.e * x10);
                                 float f40 = (1.0f - j0Var.d) * j0Var.h * f34;
                                 float scaleX = (this.x.b.getScaleX() * this.x.b.getWidth() * f38) + this.x.b.getX();
                                 float scaleY = (this.x.b.getScaleY() * this.x.b.getHeight() * f39) + this.x.b.getY();

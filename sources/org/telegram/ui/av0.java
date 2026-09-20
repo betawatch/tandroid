@@ -14,13 +14,13 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class av0 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public final FrameLayout a;
     public final ai.x5 b;
     public final org.telegram.ui.ActionBar.j5[] c;
-    public final org.telegram.ui.Components.p6 d;
+    public final org.telegram.ui.Components.o6 d;
     public AnimatorSet e;
     public AnimatorSet f;
     public boolean h;
@@ -51,23 +51,23 @@ public final class av0 extends FrameLayout implements NotificationCenter.Notific
             this.c[i10].setScrollNonFitText(true);
             this.b.addView(this.c[i10], w7.y5.e(-1, -2, 19));
         }
-        org.telegram.ui.Components.p6 p6Var = new org.telegram.ui.Components.p6(activity, true, false, false);
-        this.d = p6Var;
-        p6Var.b(0.4f, 320L, org.telegram.ui.Components.qr.h);
-        p6Var.setTextSize(AndroidUtilities.dp(14.0f));
-        p6Var.setGravity(19);
-        p6Var.setTextColor(-1);
-        p6Var.setEllipsizeByGradient(true);
-        p6Var.setImportantForAccessibility(1);
-        p6Var.setAccessibilityLiveRegion(1);
-        this.a.addView(p6Var, w7.y5.d(-1, 20.0f, 51, 16.0f, 0.0f, 0.0f, 0.0f));
+        org.telegram.ui.Components.o6 o6Var = new org.telegram.ui.Components.o6(activity, true, false, false);
+        this.d = o6Var;
+        o6Var.b(0.4f, 320L, org.telegram.ui.Components.qr.h);
+        o6Var.setTextSize(AndroidUtilities.dp(14.0f));
+        o6Var.setGravity(19);
+        o6Var.setTextColor(-1);
+        o6Var.setEllipsizeByGradient(true);
+        o6Var.setImportantForAccessibility(1);
+        o6Var.setAccessibilityLiveRegion(1);
+        this.a.addView(o6Var, w7.y5.d(-1, 20.0f, 51, 16.0f, 0.0f, 0.0f, 0.0f));
     }
 
     public final void a(CharSequence charSequence, boolean z10) {
         boolean isEmpty = TextUtils.isEmpty(charSequence);
         boolean z11 = !isEmpty;
         boolean z12 = this.h;
-        org.telegram.ui.Components.p6 p6Var = this.d;
+        org.telegram.ui.Components.o6 o6Var = this.d;
         if (z11 != z12) {
             this.h = z11;
             AnimatorSet animatorSet = this.f;
@@ -79,10 +79,10 @@ public final class av0 extends FrameLayout implements NotificationCenter.Notific
             ai.x5 x5Var = this.b;
             if (z10) {
                 ArrayList arrayList = new ArrayList();
-                arrayList.add(ObjectAnimator.ofFloat(p6Var, (Property<org.telegram.ui.Components.p6, Float>) View.ALPHA, !isEmpty ? 1.0f : 0.0f));
+                arrayList.add(ObjectAnimator.ofFloat(o6Var, (Property<org.telegram.ui.Components.o6, Float>) View.ALPHA, !isEmpty ? 1.0f : 0.0f));
                 float[] fArr = {dp};
                 Property property = View.TRANSLATION_Y;
-                arrayList.add(ObjectAnimator.ofFloat(p6Var, (Property<org.telegram.ui.Components.p6, Float>) property, fArr));
+                arrayList.add(ObjectAnimator.ofFloat(o6Var, (Property<org.telegram.ui.Components.o6, Float>) property, fArr));
                 arrayList.add(ObjectAnimator.ofFloat(x5Var, (Property<ai.x5, Float>) property, isEmpty ? 0.0f : AndroidUtilities.dp(-12.0f)));
                 arrayList.add(ObjectAnimator.ofFloat(x5Var, (Property<ai.x5, Float>) View.SCALE_X, !isEmpty ? 0.87f : 1.0f));
                 arrayList.add(ObjectAnimator.ofFloat(x5Var, (Property<ai.x5, Float>) View.SCALE_Y, isEmpty ? 1.0f : 0.87f));
@@ -92,18 +92,18 @@ public final class av0 extends FrameLayout implements NotificationCenter.Notific
                 this.f.setInterpolator(org.telegram.ui.Components.qr.h);
                 this.f.start();
             } else {
-                p6Var.setAlpha(!isEmpty ? 1.0f : 0.0f);
-                p6Var.setTranslationY(dp);
+                o6Var.setAlpha(!isEmpty ? 1.0f : 0.0f);
+                o6Var.setTranslationY(dp);
                 x5Var.setTranslationY(isEmpty ? 0.0f : AndroidUtilities.dp(-12.0f));
                 x5Var.setScaleX(!isEmpty ? 0.87f : 1.0f);
                 x5Var.setScaleY(isEmpty ? 1.0f : 0.87f);
             }
         }
-        p6Var.c(charSequence, z10, true);
+        o6Var.c(charSequence, z10, true);
         if (TextUtils.isEmpty(charSequence)) {
             charSequence = null;
         }
-        p6Var.setContentDescription(charSequence);
+        o6Var.setContentDescription(charSequence);
     }
 
     public final void b(boolean z10) {

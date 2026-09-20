@@ -27,37 +27,36 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.rk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j5;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.al0;
-import org.telegram.ui.Components.bb;
-import org.telegram.ui.Components.bw0;
+import org.telegram.ui.Components.ab;
+import org.telegram.ui.Components.aw0;
+import org.telegram.ui.Components.j90;
 import org.telegram.ui.Components.k90;
-import org.telegram.ui.Components.l90;
-import org.telegram.ui.Components.nn0;
-import org.telegram.ui.Components.o5;
-import org.telegram.ui.Components.q90;
+import org.telegram.ui.Components.mn0;
+import org.telegram.ui.Components.n5;
+import org.telegram.ui.Components.p90;
 import org.telegram.ui.Components.qr;
 import org.telegram.ui.Components.r00;
+import org.telegram.ui.Components.ul0;
 import org.telegram.ui.Components.vl0;
-import org.telegram.ui.Components.wl0;
-import org.telegram.ui.Components.z5;
+import org.telegram.ui.Components.zk0;
 import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.bc1;
-import org.telegram.ui.fg0;
+import org.telegram.ui.dc1;
+import org.telegram.ui.gg0;
 import org.telegram.ui.kx0;
 import org.telegram.ui.uw0;
 import w7.y5;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public class k1 extends bb implements NotificationCenter.NotificationCenterDelegate {
+public class k1 extends ab implements NotificationCenter.NotificationCenterDelegate {
     public View A0;
     public View B0;
     public TLRPC.InputStickerSet C0;
@@ -72,8 +71,8 @@ public class k1 extends bb implements NotificationCenter.NotificationCenterDeleg
     public FrameLayout L0;
     public final FrameLayout M0;
     public FrameLayout N0;
-    public l90[] O0;
-    public l90 P0;
+    public k90[] O0;
+    public k90 P0;
     public final ArrayList X;
     public int Y;
     public final TLRPC.User Z;
@@ -94,8 +93,8 @@ public class k1 extends bb implements NotificationCenter.NotificationCenterDeleg
     public final r00 o0;
     public final z0 p0;
     public ei.f q0;
-    public fg0 r0;
-    public bc1 s0;
+    public gg0 r0;
+    public dc1 s0;
     public final n2 t0;
     public Integer u0;
     public float v0;
@@ -104,8 +103,8 @@ public class k1 extends bb implements NotificationCenter.NotificationCenterDeleg
     public float y0;
     public float z0;
 
-    public k1(n2 n2Var, int i10, TLRPC.User user, e6 e6Var) {
-        this(n2Var, i10, user, null, null, e6Var);
+    public k1(n2 n2Var, int i10, TLRPC.User user, f6 f6Var) {
+        this(n2Var, i10, user, null, null, f6Var);
     }
 
     public static /* synthetic */ void P(k1 k1Var) {
@@ -119,7 +118,7 @@ public class k1 extends bb implements NotificationCenter.NotificationCenterDeleg
         new g1(k1Var, y3Var, k1Var.getContext(), k1Var.resourcesProvider, arrayList).show();
     }
 
-    @Override // org.telegram.ui.Components.bb
+    @Override // org.telegram.ui.Components.ab
     public final void E(int i10, int i11) {
         int size = View.MeasureSpec.getSize(i10);
         int size2 = View.MeasureSpec.getSize(i11);
@@ -142,8 +141,8 @@ public class k1 extends bb implements NotificationCenter.NotificationCenterDeleg
         }
     }
 
-    @Override // org.telegram.ui.Components.bb
-    public final void G(bw0 bw0Var) {
+    @Override // org.telegram.ui.Components.ab
+    public final void G(aw0 aw0Var) {
         this.Y = UserConfig.selectedAccount;
         p0 p0Var = new p0(getContext(), this.resourcesProvider, false);
         p0Var.a(PremiumPreviewFragment.o0(this.Y, null), new org.telegram.ui.Components.voip.o(this, 10), false);
@@ -158,11 +157,11 @@ public class k1 extends bb implements NotificationCenter.NotificationCenterDeleg
         }
         this.L0.addView(p0Var, y5.d(-1, 48.0f, 16, 16.0f, 0.0f, 16.0f, 0.0f));
         this.L0.setBackgroundColor(getThemedColor(j6.h5));
-        bw0Var.addView(this.L0, y5.e(-1, 68, 80));
+        aw0Var.addView(this.L0, y5.e(-1, 68, 80));
     }
 
-    public void W(bc1 bc1Var) {
-        bc1Var.addView(this.B0, y5.p(140, 140, 1.0f, 17, 10, 10, 10, 10));
+    public void W(dc1 dc1Var) {
+        dc1Var.addView(this.B0, y5.p(140, 140, 1.0f, 17, 10, 10, 10, 10));
     }
 
     public int X() {
@@ -176,8 +175,8 @@ public class k1 extends bb implements NotificationCenter.NotificationCenterDeleg
     public void a0(boolean z10) {
         TLRPC.Document document;
         SpannableStringBuilder spannableStringBuilder;
-        l90[] l90VarArr = this.O0;
-        if (l90VarArr == null || this.P0 == null) {
+        k90[] k90VarArr = this.O0;
+        if (k90VarArr == null || this.P0 == null) {
             return;
         }
         TLRPC.TL_emojiStatusCollectible tL_emojiStatusCollectible = this.D0;
@@ -192,7 +191,7 @@ public class k1 extends bb implements NotificationCenter.NotificationCenterDeleg
                 str = str.substring(0, lastIndexOf);
             }
             this.O0[0].setText(AndroidUtilities.replaceSingleTag(LocaleController.formatString(R.string.TelegramPremiumUserStatusCollectibleDialogTitle, DialogObject.getShortName(user), str), new d1(this, i12)));
-            org.telegram.ui.Cells.c1.o(R.string.TelegramPremiumUserStatusDialogSubtitle, this.P0);
+            org.telegram.ui.Cells.c1.r(R.string.TelegramPremiumUserStatusDialogSubtitle, this.P0);
         } else if (this.C0 != null) {
             String formatString = LocaleController.formatString(R.string.TelegramPremiumUserStatusDialogTitle, ContactsController.formatName(user.first_name, user.last_name), "<STICKERSET>");
             Integer num = this.u0;
@@ -225,33 +224,33 @@ public class k1 extends bb implements NotificationCenter.NotificationCenterDeleg
                 }
                 if (document != null) {
                     spannableStringBuilder = new SpannableStringBuilder("x");
-                    spannableStringBuilder.setSpan(new z5(document, this.O0[0].getPaint().getFontMetricsInt()), 0, spannableStringBuilder.length(), 33);
+                    spannableStringBuilder.setSpan(new org.telegram.ui.Components.y5(document, this.O0[0].getPaint().getFontMetricsInt()), 0, spannableStringBuilder.length(), 33);
                     if (stickerSet != null && stickerSet.set != null) {
                         spannableStringBuilder.append((CharSequence) " ").append((CharSequence) stickerSet.set.title);
                     }
                 } else {
                     spannableStringBuilder = new SpannableStringBuilder("xxxxxx");
-                    spannableStringBuilder.setSpan(new q90(AndroidUtilities.dp(100.0f), this.O0[0]), 0, spannableStringBuilder.length(), 33);
+                    spannableStringBuilder.setSpan(new p90(AndroidUtilities.dp(100.0f), this.O0[0]), 0, spannableStringBuilder.length(), 33);
                 }
                 spannableStringBuilder2.replace(indexOf, indexOf + 12, (CharSequence) spannableStringBuilder);
                 spannableStringBuilder2.setSpan(new dc(this, 9), indexOf, spannableStringBuilder.length() + indexOf, 33);
-                this.O0[1].setOnLinkPressListener(new k90() { // from class: rg.e1
-                    @Override // org.telegram.ui.Components.k90
+                this.O0[1].setOnLinkPressListener(new j90() { // from class: rg.e1
+                    @Override // org.telegram.ui.Components.j90
                     public final void a(ClickableSpan clickableSpan) {
                         k1.P(k1.this);
                     }
                 });
                 if (document != null) {
-                    l90[] l90VarArr2 = this.O0;
-                    if (l90VarArr2 != null) {
-                        l90VarArr2[1].setText(spannableStringBuilder2);
+                    k90[] k90VarArr2 = this.O0;
+                    if (k90VarArr2 != null) {
+                        k90VarArr2[1].setText(spannableStringBuilder2);
                         if (this.O0[1].getVisibility() != 0) {
                             if (z10) {
                                 this.O0[1].setAlpha(0.0f);
                                 this.O0[1].setVisibility(0);
                                 ViewPropertyAnimator alpha = this.O0[1].animate().alpha(1.0f);
                                 qr qrVar = qr.f;
-                                wh.r(alpha, qrVar, 200L);
+                                rk.s(alpha, qrVar, 200L);
                                 this.O0[0].animate().alpha(0.0f).setInterpolator(qrVar).setDuration(200L).withEndAction(new d1(this, i10)).start();
                                 ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
                                 ofFloat.addUpdateListener(new f1(this, i11));
@@ -270,59 +269,59 @@ public class k1 extends bb implements NotificationCenter.NotificationCenterDeleg
                     this.O0[0].setText(spannableStringBuilder2, (TextView.BufferType) null);
                 }
             }
-            org.telegram.ui.Cells.c1.o(R.string.TelegramPremiumUserStatusDialogSubtitle, this.P0);
+            org.telegram.ui.Cells.c1.r(R.string.TelegramPremiumUserStatusDialogSubtitle, this.P0);
         } else if (this.E0) {
-            l90VarArr[0].setText(AndroidUtilities.replaceTags(LocaleController.formatString(R.string.TelegramPremiumUserStatusDefaultDialogTitle, ContactsController.formatName(user.first_name, user.last_name))));
+            k90VarArr[0].setText(AndroidUtilities.replaceTags(LocaleController.formatString(R.string.TelegramPremiumUserStatusDefaultDialogTitle, ContactsController.formatName(user.first_name, user.last_name))));
             this.P0.setText(AndroidUtilities.replaceTags(LocaleController.formatString(R.string.TelegramPremiumUserStatusDialogSubtitle, ContactsController.formatName(user.first_name, user.last_name))));
         } else {
             k kVar = this.a0;
             if (kVar == null) {
                 TL_stars.StarGift starGift = this.b0;
                 if (starGift != null) {
-                    l90VarArr[0].setText(LocaleController.getString(R.string.Gift2PremiumTitle));
+                    k90VarArr[0].setText(LocaleController.getString(R.string.Gift2PremiumTitle));
                     this.O0[0].setTextSize(1, 20.0f);
                     if (starGift.limited_per_user) {
                         this.P0.setText(AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma("Gift2PremiumSubtitleMany", starGift.per_user_total)));
                     } else {
-                        org.telegram.ui.Cells.c1.o(R.string.Gift2PremiumSubtitle, this.P0);
+                        org.telegram.ui.Cells.c1.r(R.string.Gift2PremiumSubtitle, this.P0);
                     }
                     this.P0.setTextSize(1, 14.0f);
                 } else if (user == null) {
-                    l90VarArr[0].setText(LocaleController.getString(R.string.TelegramPremium));
-                    org.telegram.ui.Cells.c1.o(R.string.TelegramPremiumSubscribedSubtitle, this.P0);
+                    k90VarArr[0].setText(LocaleController.getString(R.string.TelegramPremium));
+                    org.telegram.ui.Cells.c1.r(R.string.TelegramPremiumSubscribedSubtitle, this.P0);
                 } else {
-                    l90 l90Var = l90VarArr[0];
+                    k90 k90Var = k90VarArr[0];
                     String formatString2 = LocaleController.formatString(R.string.TelegramPremiumUserDialogTitle, ContactsController.formatName(user.first_name, user.last_name));
                     Integer num2 = this.u0;
-                    l90Var.setText(AndroidUtilities.replaceSingleLink(formatString2, num2 == null ? getThemedColor(j6.u6) : num2.intValue()));
-                    org.telegram.ui.Cells.c1.o(R.string.TelegramPremiumUserDialogSubtitle, this.P0);
+                    k90Var.setText(AndroidUtilities.replaceSingleLink(formatString2, num2 == null ? getThemedColor(j6.u6) : num2.intValue()));
+                    org.telegram.ui.Cells.c1.r(R.string.TelegramPremiumUserDialogSubtitle, this.P0);
                 }
             } else if (this.c0) {
-                l90 l90Var2 = l90VarArr[0];
+                k90 k90Var2 = k90VarArr[0];
                 String formatString3 = LocaleController.formatString(R.string.TelegramPremiumUserGiftedPremiumOutboundDialogTitleWithPlural, user != null ? user.first_name : "", LocaleController.formatPluralString("GiftMonths", kVar.d(), new Object[0]));
                 Integer num3 = this.u0;
-                l90Var2.setText(AndroidUtilities.replaceSingleLink(formatString3, num3 == null ? getThemedColor(j6.u6) : num3.intValue()));
-                l90 l90Var3 = this.P0;
+                k90Var2.setText(AndroidUtilities.replaceSingleLink(formatString3, num3 == null ? getThemedColor(j6.u6) : num3.intValue()));
+                k90 k90Var3 = this.P0;
                 String formatString4 = LocaleController.formatString(R.string.TelegramPremiumUserGiftedPremiumOutboundDialogSubtitle, user != null ? user.first_name : "");
                 Integer num4 = this.u0;
-                l90Var3.setText(AndroidUtilities.replaceSingleLink(formatString4, num4 == null ? getThemedColor(j6.u6) : num4.intValue()));
+                k90Var3.setText(AndroidUtilities.replaceSingleLink(formatString4, num4 == null ? getThemedColor(j6.u6) : num4.intValue()));
             } else if (user == null || TextUtils.isEmpty(user.first_name) || user.id == 777000) {
-                l90 l90Var4 = this.O0[0];
+                k90 k90Var4 = this.O0[0];
                 String formatString5 = LocaleController.formatString(R.string.TelegramPremiumUserGiftedPremiumDialogTitleWithPluralSomeone, LocaleController.formatPluralString("GiftMonths", kVar.d(), new Object[0]));
                 Integer num5 = this.u0;
-                l90Var4.setText(AndroidUtilities.replaceSingleLink(formatString5, num5 == null ? getThemedColor(j6.u6) : num5.intValue()));
-                org.telegram.ui.Cells.c1.o(R.string.TelegramPremiumUserGiftedPremiumDialogSubtitle, this.P0);
+                k90Var4.setText(AndroidUtilities.replaceSingleLink(formatString5, num5 == null ? getThemedColor(j6.u6) : num5.intValue()));
+                org.telegram.ui.Cells.c1.r(R.string.TelegramPremiumUserGiftedPremiumDialogSubtitle, this.P0);
             } else {
-                l90 l90Var5 = this.O0[0];
+                k90 k90Var5 = this.O0[0];
                 String formatString6 = LocaleController.formatString(R.string.TelegramPremiumUserGiftedPremiumDialogTitleWithPlural, user.first_name, LocaleController.formatPluralString("GiftMonths", kVar.d(), new Object[0]));
                 Integer num6 = this.u0;
-                l90Var5.setText(AndroidUtilities.replaceSingleLink(formatString6, num6 == null ? getThemedColor(j6.u6) : num6.intValue()));
-                org.telegram.ui.Cells.c1.o(R.string.TelegramPremiumUserGiftedPremiumDialogSubtitle, this.P0);
+                k90Var5.setText(AndroidUtilities.replaceSingleLink(formatString6, num6 == null ? getThemedColor(j6.u6) : num6.intValue()));
+                org.telegram.ui.Cells.c1.r(R.string.TelegramPremiumUserGiftedPremiumDialogSubtitle, this.P0);
             }
         }
         try {
-            l90 l90Var6 = this.O0[0];
-            l90Var6.setText(Emoji.replaceEmoji(l90Var6.getText(), this.O0[0].getPaint().getFontMetricsInt(), false));
+            k90 k90Var6 = this.O0[0];
+            k90Var6.setText(Emoji.replaceEmoji(k90Var6.getText(), this.O0[0].getPaint().getFontMetricsInt(), false));
         } catch (Exception unused2) {
         }
     }
@@ -417,7 +416,7 @@ public class k1 extends bb implements NotificationCenter.NotificationCenterDeleg
         canvas.scale(f15, f15, lerp, lerp2);
         int i10 = (int) lerp;
         int i11 = (int) lerp2;
-        rightDrawable.setBounds(org.telegram.ui.Cells.c1.r(2, i10, rightDrawable), org.telegram.ui.Cells.c1.c(2, i11, rightDrawable), org.telegram.ui.Cells.c1.v(2, i10, rightDrawable), org.telegram.ui.Cells.c1.u(2, i11, rightDrawable));
+        rightDrawable.setBounds(rk.y(2, i10, rightDrawable), rk.d(2, i11, rightDrawable), org.telegram.ui.Cells.c1.d(2, i10, rightDrawable), rk.A(2, i11, rightDrawable));
         rightDrawable.setAlpha((int) ((1.0f - Utilities.clamp(this.G0, 1.0f, 0.0f)) * 255.0f));
         rightDrawable.draw(canvas);
         rightDrawable.setAlpha(0);
@@ -451,9 +450,9 @@ public class k1 extends bb implements NotificationCenter.NotificationCenterDeleg
             drawable = ((j5) view).getRightDrawable();
         } else if (view instanceof org.telegram.ui.Cells.u1) {
             org.telegram.ui.Cells.u1 u1Var = (org.telegram.ui.Cells.u1) view;
-            o5 o5Var = u1Var.fc;
+            n5 n5Var = u1Var.fc;
             u1Var.a3();
-            drawable = o5Var;
+            drawable = n5Var;
         } else {
             drawable = null;
         }
@@ -466,12 +465,12 @@ public class k1 extends bb implements NotificationCenter.NotificationCenterDeleg
         } else {
             view2.invalidate();
         }
-        fg0 fg0Var = this.r0;
-        if (fg0Var != null) {
-            fg0Var.j(100L);
+        gg0 gg0Var = this.r0;
+        if (gg0Var != null) {
+            gg0Var.j(100L);
         }
         this.I0.addUpdateListener(new f1(this, i10));
-        this.I0.addListener(new al0(21, this, drawable));
+        this.I0.addListener(new zk0(21, this, drawable));
         this.I0.setDuration(600L);
         this.I0.setInterpolator(qr.h);
         this.I0.start();
@@ -496,9 +495,9 @@ public class k1 extends bb implements NotificationCenter.NotificationCenterDeleg
 
     @Override // org.telegram.ui.ActionBar.f3, org.telegram.ui.ActionBar.j2
     public final boolean showDialog(Dialog dialog) {
-        fg0 fg0Var = this.r0;
-        if (fg0Var != null) {
-            fg0Var.setDialogVisible(true);
+        gg0 gg0Var = this.r0;
+        if (gg0Var != null) {
+            gg0Var.setDialogVisible(true);
         }
         this.q0.setPaused(true);
         dialog.setOnDismissListener(new g5(this, 10));
@@ -506,18 +505,18 @@ public class k1 extends bb implements NotificationCenter.NotificationCenterDeleg
         return true;
     }
 
-    @Override // org.telegram.ui.Components.bb
-    public final vl0 v(wl0 wl0Var) {
+    @Override // org.telegram.ui.Components.ab
+    public final ul0 v(vl0 vl0Var) {
         return new j1(this);
     }
 
-    @Override // org.telegram.ui.Components.bb
+    @Override // org.telegram.ui.Components.ab
     public final CharSequence y() {
         return LocaleController.getString(R.string.TelegramPremium);
     }
 
-    public k1(n2 n2Var, int i10, TLRPC.User user, k kVar, TL_stars.StarGift starGift, e6 e6Var) {
-        super(n2Var, false, false, e6Var);
+    public k1(n2 n2Var, int i10, TLRPC.User user, k kVar, TL_stars.StarGift starGift, f6 f6Var) {
+        super(n2Var, false, false, f6Var);
         ArrayList arrayList = new ArrayList();
         this.X = arrayList;
         this.F0 = new int[2];
@@ -544,7 +543,7 @@ public class k1 extends bb implements NotificationCenter.NotificationCenterDeleg
         z0Var.c = 0.0f;
         b0();
         this.d.setPadding(AndroidUtilities.dp(6.0f), 0, AndroidUtilities.dp(6.0f), 0);
-        this.d.setOnItemClickListener(new nn0(this, i10, n2Var, 1));
+        this.d.setOnItemClickListener(new mn0(this, i10, n2Var, 1));
         MediaDataController.getInstance(i10).preloadPremiumPreviewStickers();
         PremiumPreviewFragment.r0("profile");
         r00 r00Var = new r00(getContext());

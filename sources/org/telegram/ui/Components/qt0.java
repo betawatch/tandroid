@@ -1,24 +1,15 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.os.Bundle;
+import android.graphics.Outline;
+import android.view.View;
+import android.view.ViewOutlineProvider;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class qt0 extends org.telegram.ui.bo {
-    public final /* synthetic */ kv0 f;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public qt0(kv0 kv0Var, Context context, org.telegram.ui.ActionBar.d5 d5Var, Bundle bundle) {
-        super(context, d5Var, bundle);
-        this.f = kv0Var;
-    }
-
-    @Override // org.telegram.ui.bo
-    public final void b(boolean z10) {
-        org.telegram.ui.ActionBar.v0 v0Var = this.f.n0;
-        if (v0Var != null) {
-            v0Var.setShowSearchProgress(z10);
-        }
+public final class qt0 extends ViewOutlineProvider {
+    @Override // android.view.ViewOutlineProvider
+    public final void getOutline(View view, Outline outline) {
+        outline.setRoundRect(0, 0, view.getWidth(), AndroidUtilities.dp(24.0f) + view.getHeight(), AndroidUtilities.dp(24.0f));
     }
 }

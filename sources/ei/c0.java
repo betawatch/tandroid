@@ -18,11 +18,11 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.ij0;
+import org.telegram.ui.Components.hj0;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.vw0;
+import org.telegram.ui.Components.uw0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class c0 extends View {
     public boolean E;
@@ -31,7 +31,7 @@ public final class c0 extends View {
     public final Paint b;
     public final TextPaint c;
     public final z d;
-    public final ij0 e;
+    public final hj0 e;
     public boolean f;
     public float h;
     public String n;
@@ -51,15 +51,15 @@ public final class c0 extends View {
         this.c = textPaint;
         z zVar = new z(this);
         this.d = zVar;
-        ij0 ij0Var = new ij0(R.raw.bot_webview_sheet_to_cross, AndroidUtilities.dp(20.0f), AndroidUtilities.dp(20.0f));
-        this.e = ij0Var;
+        hj0 hj0Var = new hj0(R.raw.bot_webview_sheet_to_cross, AndroidUtilities.dp(20.0f), AndroidUtilities.dp(20.0f));
+        this.e = hj0Var;
         this.n = LocaleController.getString(R.string.BotsMenuTitle);
         this.E = true;
         paint.setColor(j6.w0(null, j6.cf, false));
         int w02 = j6.w0(null, j6.ef, false);
         zVar.k = w02;
         zVar.j = w02;
-        ij0Var.setColorFilter(new PorterDuffColorFilter(w02, PorterDuff.Mode.SRC_IN));
+        hj0Var.setColorFilter(new PorterDuffColorFilter(w02, PorterDuff.Mode.SRC_IN));
         textPaint.setColor(w02);
         zVar.n = true;
         zVar.h = false;
@@ -73,8 +73,8 @@ public final class c0 extends View {
         org.telegram.ui.Cells.z i02 = j6.i0(dp, dp, dp, dp, 0, w03, w03);
         this.y = i02;
         i02.setCallback(this);
-        ij0Var.setCallback(this);
-        ij0Var.R(this);
+        hj0Var.setCallback(this);
+        hj0Var.R(this);
         setContentDescription(LocaleController.getString("AccDescrBotMenu", R.string.AccDescrBotMenu));
     }
 
@@ -118,11 +118,11 @@ public final class c0 extends View {
                     if (this.w) {
                         canvas.save();
                         canvas.translate(AndroidUtilities.dp(9.5f), AndroidUtilities.dp(6.0f));
-                        ij0 ij0Var = this.e;
-                        ij0Var.setBounds(0, 0, ij0Var.b, ij0Var.c);
-                        ij0Var.draw(canvas);
+                        hj0 hj0Var = this.e;
+                        hj0Var.setBounds(0, 0, hj0Var.b, hj0Var.c);
+                        hj0Var.draw(canvas);
                         canvas.restore();
-                        if (ij0Var.k0) {
+                        if (hj0Var.k0) {
                             invalidate();
                         }
                     } else {
@@ -204,14 +204,14 @@ public final class c0 extends View {
             textPaint.setTextSize(dp);
             this.F = size;
             int i12 = (int) (AndroidUtilities.displaySize.x * 0.6f);
-            StaticLayout c10 = vw0.c(Emoji.replaceEmoji(this.n, textPaint.getFontMetricsInt(), false), textPaint, i12, Layout.Alignment.ALIGN_NORMAL, 0.0f, false, TextUtils.TruncateAt.END, i12, 1, true);
+            StaticLayout c10 = uw0.c(Emoji.replaceEmoji(this.n, textPaint.getFontMetricsInt(), false), textPaint, i12, Layout.Alignment.ALIGN_NORMAL, 0.0f, false, TextUtils.TruncateAt.END, i12, 1, true);
             this.r = c10;
             this.s = c10.getLineCount() > 0 ? this.r.getLineWidth(0) : 0.0f;
         }
         AndroidUtilities.dp(4.0f);
         int dp2 = AndroidUtilities.dp(40.0f);
         if (this.f) {
-            dp2 = org.telegram.messenger.q.D(4.0f, (int) this.s, dp2);
+            dp2 = org.telegram.messenger.l0.C(4.0f, (int) this.s, dp2);
         }
         super.onMeasure(View.MeasureSpec.makeMeasureSpec(dp2, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(32.0f), TLObject.FLAG_30));
     }
@@ -230,11 +230,11 @@ public final class c0 extends View {
             return;
         }
         if (this.x != z10) {
-            ij0 ij0Var = this.e;
-            ij0Var.stop();
-            ij0Var.h = true;
-            ij0Var.P(z10 ? ij0Var.e[0] : 1);
-            ij0Var.start();
+            hj0 hj0Var = this.e;
+            hj0Var.stop();
+            hj0Var.h = true;
+            hj0Var.P(z10 ? hj0Var.e[0] : 1);
+            hj0Var.start();
             this.x = z10;
         }
     }

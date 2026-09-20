@@ -21,9 +21,9 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class ny extends org.telegram.ui.Components.bw0 {
+public final class ny extends org.telegram.ui.Components.aw0 {
     public VelocityTracker A0;
     public final Rect B0;
     public boolean C0;
@@ -59,25 +59,25 @@ public final class ny extends org.telegram.ui.Components.bw0 {
     
         if (org.telegram.ui.ActionBar.j6.I.q() == false) goto L18;
      */
-    @Override // org.telegram.ui.Components.bw0
+    @Override // org.telegram.ui.Components.aw0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void J(Canvas canvas, float f7, Rect rect, Paint paint, boolean z10) {
         int i10;
-        org.telegram.ui.ActionBar.e6 e6Var;
-        org.telegram.ui.ActionBar.e6 e6Var2;
+        org.telegram.ui.ActionBar.f6 f6Var;
+        org.telegram.ui.ActionBar.f6 f6Var2;
         int i11;
-        org.telegram.ui.ActionBar.e6 e6Var3;
+        org.telegram.ui.ActionBar.f6 f6Var3;
         if (Build.VERSION.SDK_INT >= 29 && SharedConfig.chatBlurEnabled()) {
             uy uyVar = this.E0;
             if (uyVar.l4 != null) {
                 i10 = ((org.telegram.ui.ActionBar.n2) uyVar).currentAccount;
-                e6Var = ((org.telegram.ui.ActionBar.n2) uyVar).resourceProvider;
-                if (eh.b.c(i10, e6Var)) {
-                    e6Var2 = ((org.telegram.ui.ActionBar.n2) uyVar).resourceProvider;
-                    if (e6Var2 != null) {
-                        e6Var3 = ((org.telegram.ui.ActionBar.n2) uyVar).resourceProvider;
+                f6Var = ((org.telegram.ui.ActionBar.n2) uyVar).resourceProvider;
+                if (eh.b.c(i10, f6Var)) {
+                    f6Var2 = ((org.telegram.ui.ActionBar.n2) uyVar).resourceProvider;
+                    if (f6Var2 != null) {
+                        f6Var3 = ((org.telegram.ui.ActionBar.n2) uyVar).resourceProvider;
                     }
                     canvas.save();
                     canvas.translate(0.0f, -f7);
@@ -94,10 +94,10 @@ public final class ny extends org.telegram.ui.Components.bw0 {
         canvas.drawRect(rect, paint);
     }
 
-    @Override // org.telegram.ui.Components.bw0
+    @Override // org.telegram.ui.Components.aw0
     public final void L(Canvas canvas, ArrayList arrayList) {
         ey eyVar;
-        org.telegram.ui.Components.wl0 p5;
+        org.telegram.ui.Components.vl0 p5;
         uy uyVar = this.E0;
         if (uyVar.p3 && (eyVar = uyVar.C0) != null && eyVar.getVisibility() == 0) {
             ey eyVar2 = uyVar.C0;
@@ -119,13 +119,13 @@ public final class ny extends org.telegram.ui.Components.bw0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.bw0
+    @Override // org.telegram.ui.Components.aw0
     public final void M() {
         super.M();
         this.E0.m3();
     }
 
-    @Override // org.telegram.ui.Components.bw0
+    @Override // org.telegram.ui.Components.aw0
     public final boolean O() {
         return true;
     }
@@ -183,7 +183,7 @@ public final class ny extends org.telegram.ui.Components.bw0 {
         uy uyVar = this.E0;
         float f7 = uyVar.N;
         ox oxVar = uyVar.F3;
-        return (int) com.google.android.gms.internal.vision.e2.z(1.0f, uyVar.x1, org.telegram.messenger.q.A(1.0f, (oxVar == null || !oxVar.c()) ? 0.0f : uyVar.F3.e, 1.0f - uyVar.t3, f7), -getY());
+        return (int) com.google.android.gms.internal.vision.e2.z(1.0f, uyVar.x1, org.telegram.messenger.l0.z(1.0f, (oxVar == null || !oxVar.c()) ? 0.0f : uyVar.F3.e, 1.0f - uyVar.t3, f7), -getY());
     }
 
     public final boolean c0(MotionEvent motionEvent, boolean z10) {
@@ -226,7 +226,7 @@ public final class ny extends org.telegram.ui.Components.bw0 {
     /* JADX WARN: Removed duplicated region for block: B:158:0x01fa  */
     /* JADX WARN: Removed duplicated region for block: B:89:0x01f7  */
     /* JADX WARN: Removed duplicated region for block: B:92:0x0210  */
-    @Override // org.telegram.ui.Components.bw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.aw0, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -452,7 +452,7 @@ public final class ny extends org.telegram.ui.Components.bw0 {
         if (view == uyVar.K0) {
             return true;
         }
-        if (org.telegram.ui.Components.bw0.v0) {
+        if (org.telegram.ui.Components.aw0.v0) {
             return super.drawChild(canvas, view, j3);
         }
         ty[] tyVarArr = uyVar.e0;
@@ -498,21 +498,21 @@ public final class ny extends org.telegram.ui.Components.bw0 {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.bw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.aw0, android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        org.telegram.ui.Components.o5 o5Var = this.E0.D3;
-        if (o5Var != null) {
-            o5Var.a();
+        org.telegram.ui.Components.n5 n5Var = this.E0.D3;
+        if (n5Var != null) {
+            n5Var.a();
         }
     }
 
-    @Override // org.telegram.ui.Components.bw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.aw0, android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        org.telegram.ui.Components.o5 o5Var = this.E0.D3;
-        if (o5Var != null) {
-            o5Var.b();
+        org.telegram.ui.Components.n5 n5Var = this.E0.D3;
+        if (n5Var != null) {
+            n5Var.b();
         }
     }
 
@@ -538,7 +538,7 @@ public final class ny extends org.telegram.ui.Components.bw0 {
     /* JADX WARN: Removed duplicated region for block: B:66:0x010a  */
     /* JADX WARN: Removed duplicated region for block: B:71:0x0134  */
     /* JADX WARN: Removed duplicated region for block: B:75:0x007b  */
-    @Override // org.telegram.ui.Components.bw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.aw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -603,7 +603,7 @@ public final class ny extends org.telegram.ui.Components.bw0 {
                             }
                             lxVar = uyVar.E0;
                             if (childAt == lxVar && lxVar.getPremiumHint() != null) {
-                                uyVar.E0.getPremiumHint().layout(i16, org.telegram.messenger.wh.D(54.0f, i19, measuredHeight2), i16 + measuredWidth2, uyVar.E0.getPremiumHint().getMeasuredHeight() + org.telegram.messenger.wh.D(54.0f, i19, measuredHeight2));
+                                uyVar.E0.getPremiumHint().layout(i16, org.telegram.messenger.rk.D(54.0f, i19, measuredHeight2), i16 + measuredWidth2, uyVar.E0.getPremiumHint().getMeasuredHeight() + org.telegram.messenger.rk.D(54.0f, i19, measuredHeight2));
                             }
                             if (childAt == uyVar.X) {
                                 i19 += AndroidUtilities.dp(2.0f);
@@ -638,7 +638,7 @@ public final class ny extends org.telegram.ui.Components.bw0 {
                     }
                     lxVar = uyVar.E0;
                     if (childAt == lxVar) {
-                        uyVar.E0.getPremiumHint().layout(i16, org.telegram.messenger.wh.D(54.0f, i19, measuredHeight2), i16 + measuredWidth2, uyVar.E0.getPremiumHint().getMeasuredHeight() + org.telegram.messenger.wh.D(54.0f, i19, measuredHeight2));
+                        uyVar.E0.getPremiumHint().layout(i16, org.telegram.messenger.rk.D(54.0f, i19, measuredHeight2), i16 + measuredWidth2, uyVar.E0.getPremiumHint().getMeasuredHeight() + org.telegram.messenger.rk.D(54.0f, i19, measuredHeight2));
                     }
                     if (childAt == uyVar.X) {
                     }

@@ -11,7 +11,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class c5 implements e2.h {
     public final /* synthetic */ int a;
@@ -40,10 +40,10 @@ public final /* synthetic */ class c5 implements e2.h {
                 h5 h5Var = (h5) callback;
                 sa saVar = (sa) obj4;
                 jc jcVar = (jc) obj3;
-                org.telegram.ui.ActionBar.e6 e6Var = (org.telegram.ui.ActionBar.e6) obj2;
+                org.telegram.ui.ActionBar.f6 f6Var = (org.telegram.ui.ActionBar.f6) obj2;
                 TL_stories.StoryItem storyItem = (TL_stories.StoryItem) obj;
                 if (storyItem == null) {
-                    org.telegram.ui.Components.qc Q = new xc(h5Var.z0.c1, e6Var).Q(R.raw.story_bomb2, 36, LocaleController.getString(R.string.StoryNotFound));
+                    org.telegram.ui.Components.pc Q = new xc(h5Var.z0.c1, f6Var).Q(R.raw.story_bomb2, 36, LocaleController.getString(R.string.StoryNotFound));
                     Q.a = 3;
                     Q.k(true);
                     break;

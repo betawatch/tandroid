@@ -7,10 +7,10 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import kotlin.jvm.internal.i;
 import org.telegram.tgnet.TLObject;
-import v7.t7;
+import v7.u7;
 import w9.j;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class c {
     public static final c a = new c();
@@ -50,7 +50,7 @@ public final class c {
                 jd.a aVar = jd.a.a;
                 i10 = bVar.r;
                 if (i10 != 0) {
-                    t7.b(obj);
+                    u7.b(obj);
                     Map dependencies = b;
                     i.d(dependencies, "dependencies");
                     linkedHashMap = new LinkedHashMap(r.a(dependencies.size()));
@@ -67,7 +67,7 @@ public final class c {
                     d subscriberName = bVar.c;
                     it = bVar.b;
                     Map map = bVar.a;
-                    t7.b(obj);
+                    u7.b(obj);
                     try {
                         i.e(subscriberName, "subscriberName");
                         j jVar = a(subscriberName).b;

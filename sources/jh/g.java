@@ -12,11 +12,11 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.ActionBar.d5;
-import org.telegram.ui.ActionBar.e6;
 import org.telegram.ui.ActionBar.f1;
+import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.n1;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
-import org.telegram.ui.Components.ym0;
+import org.telegram.ui.Components.xm0;
 import org.telegram.ui.az0;
 import org.telegram.ui.e0;
 import org.telegram.ui.qe;
@@ -24,7 +24,7 @@ import org.telegram.ui.rf;
 import org.telegram.ui.rm;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g implements View.OnLongClickListener {
     public final /* synthetic */ int a;
@@ -41,7 +41,7 @@ public final /* synthetic */ class g implements View.OnLongClickListener {
     public final boolean onLongClick(View view) {
         rf rfVar;
         char c10;
-        ym0 ym0Var;
+        xm0 xm0Var;
         switch (this.a) {
             case 0:
                 b bVar = ((h) this.c).n;
@@ -61,7 +61,7 @@ public final /* synthetic */ class g implements View.OnLongClickListener {
                     Activity parentActivity = znVar.getParentActivity();
                     d5 parentLayout = znVar.getParentLayout();
                     rm rmVar = znVar.X0;
-                    e6 resourceProvider = znVar.getResourceProvider();
+                    f6 resourceProvider = znVar.getResourceProvider();
                     ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = new ActionBarPopupWindow$ActionBarPopupWindowLayout(parentActivity, null);
                     actionBarPopupWindow$ActionBarPopupWindowLayout.setMinimumWidth(AndroidUtilities.dp(200.0f));
                     f1 f1Var = new f1(0, parentActivity, resourceProvider, true, true);
@@ -103,7 +103,7 @@ public final /* synthetic */ class g implements View.OnLongClickListener {
                 break;
             default:
                 ScrollSlidingTextTabStrip scrollSlidingTextTabStrip = (ScrollSlidingTextTabStrip) this.c;
-                if (!scrollSlidingTextTabStrip.n0 && (ym0Var = scrollSlidingTextTabStrip.b) != null && ym0Var.n1(this.b, view)) {
+                if (!scrollSlidingTextTabStrip.n0 && (xm0Var = scrollSlidingTextTabStrip.b) != null && xm0Var.m1(this.b, view)) {
                 }
                 break;
         }

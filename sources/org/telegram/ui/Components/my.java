@@ -5,17 +5,17 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class my extends w51 {
+public final class my extends v51 {
     public static final /* synthetic */ int a = 0;
 
     static {
-        w51.setup(new my());
+        v51.setup(new my());
     }
 
-    public static x51 a(TLRPC.StickerSetCovered stickerSetCovered, dy dyVar, boolean z10) {
-        x51 J = x51.J(my.class);
+    public static w51 a(TLRPC.StickerSetCovered stickerSetCovered, dy dyVar, boolean z10) {
+        w51 J = w51.J(my.class);
         long j3 = stickerSetCovered.set.id;
         long j10 = 1 + j3;
         J.d = (int) (j10 ^ (j10 >>> 32));
@@ -26,34 +26,34 @@ public final class my extends w51 {
         return J;
     }
 
-    @Override // org.telegram.ui.Components.w51
-    public final void bindView(View view, x51 x51Var, boolean z10, l61 l61Var, t61 t61Var) {
+    @Override // org.telegram.ui.Components.v51
+    public final void bindView(View view, w51 w51Var, boolean z10, k61 k61Var, s61 s61Var) {
         nh.c cVar = (nh.c) view;
-        Object obj = x51Var.G;
+        Object obj = w51Var.G;
         if (obj instanceof TLRPC.TL_messages_stickerSet) {
             cVar.setPack((TLRPC.TL_messages_stickerSet) obj);
         } else if (obj instanceof TLRPC.StickerSetCovered) {
-            TLRPC.Document document = ((dy) x51Var.H).e;
+            TLRPC.Document document = ((dy) w51Var.H).e;
             cVar.d.setText(((TLRPC.StickerSetCovered) obj).set.short_name);
             cVar.c.d(document, null, null, null, false, false);
         }
-        cVar.a(x51Var.e, false);
+        cVar.a(w51Var.e, false);
     }
 
-    @Override // org.telegram.ui.Components.w51
-    public final boolean contentsEquals(x51 x51Var, x51 x51Var2) {
-        return x51Var.B == x51Var2.B && x51Var.e == x51Var2.e;
+    @Override // org.telegram.ui.Components.v51
+    public final boolean contentsEquals(w51 w51Var, w51 w51Var2) {
+        return w51Var.B == w51Var2.B && w51Var.e == w51Var2.e;
     }
 
-    @Override // org.telegram.ui.Components.w51
-    public final View createView(Context context, wl0 wl0Var, int i10, int i11, org.telegram.ui.ActionBar.e6 e6Var) {
-        nh.c cVar = new nh.c(context, e6Var);
+    @Override // org.telegram.ui.Components.v51
+    public final View createView(Context context, vl0 vl0Var, int i10, int i11, org.telegram.ui.ActionBar.f6 f6Var) {
+        nh.c cVar = new nh.c(context, f6Var);
         cVar.setLayoutParams(new s4.p0(AndroidUtilities.dp(64.0f), -1));
         return cVar;
     }
 
-    @Override // org.telegram.ui.Components.w51
-    public final boolean equals(x51 x51Var, x51 x51Var2) {
-        return x51Var.B == x51Var2.B;
+    @Override // org.telegram.ui.Components.v51
+    public final boolean equals(w51 w51Var, w51 w51Var2) {
+        return w51Var.B == w51Var2.B;
     }
 }

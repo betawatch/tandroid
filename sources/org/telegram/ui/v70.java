@@ -6,7 +6,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Bitmaps;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class v70 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ int a;
@@ -42,60 +42,60 @@ public final class v70 extends org.telegram.ui.ActionBar.j {
                 }
                 break;
             case 3:
-                yb0 yb0Var = (yb0) obj;
+                zb0 zb0Var = (zb0) obj;
                 if (i10 == -1) {
-                    yb0Var.finishFragment();
-                    AndroidUtilities.hideKeyboard(yb0Var.F);
+                    zb0Var.finishFragment();
+                    AndroidUtilities.hideKeyboard(zb0Var.F);
                     break;
                 }
                 break;
             case 4:
                 if (i10 == -1) {
-                    ((oc0) obj).finishFragment();
+                    ((pc0) obj).finishFragment();
                     break;
                 }
                 break;
             case 5:
-                xg0 xg0Var = (xg0) obj;
+                yg0 yg0Var = (yg0) obj;
                 if (i10 != 1) {
-                    if (i10 == -1 && xg0Var.onBackPressed(true)) {
-                        xg0Var.finishFragment();
+                    if (i10 == -1 && yg0Var.onBackPressed(true)) {
+                        yg0Var.finishFragment();
                         break;
                     }
                 } else {
-                    xg0Var.p1();
+                    yg0Var.p1();
                     break;
                 }
                 break;
             case 6:
                 if (i10 == -1) {
-                    ((zg0) obj).finishFragment();
+                    ((ah0) obj).finishFragment();
                     break;
                 }
                 break;
             case 7:
                 if (i10 == -1) {
-                    ((zh0) obj).finishFragment();
+                    ((ai0) obj).finishFragment();
                     break;
                 }
                 break;
             case 8:
                 if (i10 == -1) {
-                    ((ai0) obj).finishFragment();
+                    ((bi0) obj).finishFragment();
                     break;
                 }
                 break;
             case 9:
-                kj0 kj0Var = (kj0) obj;
+                mj0 mj0Var = (mj0) obj;
                 if (i10 != -1) {
                     if (i10 == 1) {
                         Bundle bundle = new Bundle();
-                        bundle.putLong("chat_id", kj0Var.b);
-                        kj0Var.presentFragment(new za1(bundle));
+                        bundle.putLong("chat_id", mj0Var.b);
+                        mj0Var.presentFragment(new bb1(bundle));
                         break;
                     }
                 } else {
-                    kj0Var.finishFragment();
+                    mj0Var.finishFragment();
                     break;
                 }
                 break;
@@ -283,37 +283,37 @@ public final class v70 extends org.telegram.ui.ActionBar.j {
                 break;
             case 24:
                 if (i10 == -1) {
-                    ((g31) obj).finishFragment();
+                    ((h31) obj).finishFragment();
                     break;
                 }
                 break;
             case 25:
                 if (i10 == -1) {
-                    ((l31) obj).finishFragment();
+                    ((m31) obj).finishFragment();
                     break;
                 }
                 break;
             case 26:
                 if (i10 == -1) {
-                    ((e41) obj).finishFragment();
+                    ((f41) obj).finishFragment();
                     break;
                 }
                 break;
             case 27:
                 if (i10 == -1) {
-                    ((SaveToGallerySettingsActivity) obj).finishFragment();
+                    ((o41) obj).finishFragment();
                     break;
                 }
                 break;
             case 28:
                 if (i10 == -1) {
-                    ((SecretMediaViewer) obj).e(true, false);
+                    ((SaveToGallerySettingsActivity) obj).finishFragment();
                     break;
                 }
                 break;
             default:
                 if (i10 == -1) {
-                    ((SessionsActivity) obj).finishFragment();
+                    ((SecretMediaViewer) obj).e(true, false);
                     break;
                 }
                 break;

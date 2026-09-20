@@ -4,10 +4,10 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.p80;
+import org.telegram.ui.Components.o80;
 import org.telegram.ui.TwoStepVerificationActivity;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final /* synthetic */ class v9 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -34,7 +34,7 @@ public final /* synthetic */ class v9 implements RequestDelegate {
                 ((MessagesController) this.b).lambda$checkChatInviter$375((TLRPC.Chat) this.e, this.c, this.d, tLObject, tL_error);
                 break;
             case 2:
-                p80.s((p80) this.b, this.d, this.c, (TLRPC.TL_messages_importChatInvite) this.e, tLObject, tL_error);
+                o80.s((o80) this.b, this.d, this.c, (TLRPC.TL_messages_importChatInvite) this.e, tLObject, tL_error);
                 break;
             default:
                 AndroidUtilities.runOnUIThread(new ai.h3((yh.g) this.b, tL_error, tLObject, (TwoStepVerificationActivity) this.e, this.c, this.d));
@@ -50,9 +50,9 @@ public final /* synthetic */ class v9 implements RequestDelegate {
         this.d = j3;
     }
 
-    public /* synthetic */ v9(p80 p80Var, long j3, boolean z10, TLRPC.TL_messages_importChatInvite tL_messages_importChatInvite) {
+    public /* synthetic */ v9(o80 o80Var, long j3, boolean z10, TLRPC.TL_messages_importChatInvite tL_messages_importChatInvite) {
         this.a = 2;
-        this.b = p80Var;
+        this.b = o80Var;
         this.d = j3;
         this.c = z10;
         this.e = tL_messages_importChatInvite;

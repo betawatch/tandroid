@@ -12,7 +12,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import w7.f0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class a extends o6.a {
     public static final Parcelable.Creator<a> CREATOR = new j(26);
@@ -48,9 +48,9 @@ public final class a extends o6.a {
     public final String toString() {
         Locale locale = Locale.US;
         String uri = this.b.toString();
-        StringBuilder k10 = k0.k("Image ", this.c, "x", this.d, " ");
-        k10.append(uri);
-        return k10.toString();
+        StringBuilder l4 = k0.l("Image ", this.c, "x", this.d, " ");
+        l4.append(uri);
+        return l4.toString();
     }
 
     @Override // android.os.Parcelable

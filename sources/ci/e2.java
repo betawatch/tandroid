@@ -6,7 +6,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class e2 extends a2 {
     public final p1 b;
@@ -22,8 +22,8 @@ public final class e2 extends a2 {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public e2(t2 t2Var, Context context) {
         super(context);
-        org.telegram.ui.ActionBar.e6 e6Var;
-        org.telegram.ui.ActionBar.e6 e6Var2;
+        org.telegram.ui.ActionBar.f6 f6Var;
+        org.telegram.ui.ActionBar.f6 f6Var2;
         this.s = t2Var;
         this.h = 8;
         this.n = -1.0f;
@@ -49,13 +49,13 @@ public final class e2 extends a2 {
         jVar.i = qr.g;
         p1Var.setItemAnimator(jVar);
         addView(p1Var, w7.y5.c(-1.0f, -1));
-        e6Var = ((org.telegram.ui.ActionBar.f3) t2Var).resourcesProvider;
-        l2 l2Var = new l2(context, e6Var);
+        f6Var = ((org.telegram.ui.ActionBar.f3) t2Var).resourcesProvider;
+        l2 l2Var = new l2(context, f6Var);
         this.f = l2Var;
         l2Var.v = new bi.v(this, 3);
         addView(l2Var, w7.y5.e(-1, -2, 48));
-        e6Var2 = ((org.telegram.ui.ActionBar.f3) t2Var).resourcesProvider;
-        c2 c2Var = new c2(this, context, e6Var2);
+        f6Var2 = ((org.telegram.ui.ActionBar.f3) t2Var).resourcesProvider;
+        c2 c2Var = new c2(this, context, f6Var2);
         this.e = c2Var;
         addView(c2Var, w7.y5.c(36.0f, -1));
     }
@@ -122,7 +122,7 @@ public final class e2 extends a2 {
             }
             Object tag = p1Var.getChildAt(i10).getTag();
             if ((tag instanceof Integer) && ((Integer) tag).intValue() == 34) {
-                return org.telegram.messenger.q.c(102.0f, r3.getBottom(), 0);
+                return org.telegram.messenger.l0.b(102.0f, r3.getBottom(), 0);
             }
             i10++;
         }

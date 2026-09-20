@@ -27,8 +27,9 @@ import java.util.TreeMap;
 import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import v7.j0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class r implements y2.o {
     public final o a;
@@ -1214,7 +1215,7 @@ public final class r implements y2.o {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static l d(o oVar, l lVar, lf.i iVar, String str) {
+    public static l d(o oVar, l lVar, lf.h hVar, String str) {
         ArrayList arrayList;
         ArrayList arrayList2;
         f fVar;
@@ -1224,7 +1225,7 @@ public final class r implements y2.o {
         TreeMap treeMap;
         String str2;
         long j3;
-        i iVar2;
+        i iVar;
         int i10;
         long j10;
         String str3;
@@ -1239,7 +1240,7 @@ public final class r implements y2.o {
         ArrayList arrayList6;
         ArrayList arrayList7;
         String str4;
-        i iVar3;
+        i iVar2;
         long j13;
         b2.o oVar4;
         long j14;
@@ -1302,7 +1303,7 @@ public final class r implements y2.o {
         boolean z12 = false;
         boolean z13 = false;
         int i18 = 0;
-        i iVar4 = null;
+        i iVar3 = null;
         int i19 = 0;
         String str14 = null;
         char c12 = 0;
@@ -1314,7 +1315,7 @@ public final class r implements y2.o {
         boolean z16 = false;
         while (true) {
             k kVar2 = kVar;
-            if (!iVar.M()) {
+            if (!hVar.M()) {
                 g gVar2 = gVar;
                 ArrayList arrayList16 = arrayList12;
                 ArrayList arrayList17 = arrayList13;
@@ -1325,16 +1326,16 @@ public final class r implements y2.o {
                 int i20 = 0;
                 while (i20 < arrayList18.size()) {
                     ArrayList arrayList20 = arrayList18;
-                    h hVar = (h) arrayList20.get(i20);
-                    long j34 = hVar.b;
+                    h hVar2 = (h) arrayList20.get(i20);
+                    long j34 = hVar2.b;
                     if (j34 == -1) {
                         j34 = (j33 + arrayList16.size()) - (arrayList17.isEmpty() ? 1L : 0L);
                     }
-                    int i21 = hVar.c;
+                    int i21 = hVar2.c;
                     if (i21 == -1 && j32 != -9223372036854775807L) {
                         i21 = (arrayList17.isEmpty() ? ((i) e9.q.l(arrayList16)).x : arrayList17).size() - 1;
                     }
-                    Uri uri = hVar.a;
+                    Uri uri = hVar2.a;
                     hashMap4.put(uri, new h(uri, j34, i21));
                     i20++;
                     arrayList18 = arrayList20;
@@ -1385,7 +1386,7 @@ public final class r implements y2.o {
                 }
                 return new l(i16, str, arrayList19, j22, z16, j26, z13, i18, j33, i17, j31, j32, z11, z12, j26 != 0, oVar6, arrayList16, arrayList17, kVar2, hashMap4, arrayList21);
             }
-            String P2 = iVar.P();
+            String P2 = hVar.P();
             g gVar3 = gVar;
             if (P2.startsWith("#EXT")) {
                 arrayList15.add(P2);
@@ -1438,13 +1439,13 @@ public final class r implements y2.o {
                     if (str14 != null && str13 == null) {
                         throw s0.b("The encryption IV attribute must be present when an initialization segment is encrypted with METHOD=AES-128.", null);
                     }
-                    i iVar5 = new i(j44, j46, j45, str14, str13);
+                    i iVar4 = new i(j44, j46, j45, str14, str13);
                     String str20 = str13;
                     if (j45 != -1) {
                         j46 += j45;
                     }
                     j23 = j46;
-                    iVar4 = iVar5;
+                    iVar3 = iVar4;
                     j30 = -1;
                     kVar = kVar2;
                     gVar = gVar3;
@@ -1488,10 +1489,10 @@ public final class r implements y2.o {
                                 str13 = str21;
                                 long j49 = j24;
                                 while (i24 < i25) {
-                                    i iVar6 = (i) i0Var.get(i24);
+                                    i iVar5 = (i) i0Var.get(i24);
                                     if (j33 != lVar2.k) {
-                                        int i26 = (lVar2.j - i18) + iVar6.d;
-                                        i0 i0Var2 = iVar6.x;
+                                        int i26 = (lVar2.j - i18) + iVar5.d;
+                                        i0 i0Var2 = iVar5.x;
                                         ArrayList arrayList27 = new ArrayList();
                                         long j50 = j49;
                                         int i27 = 0;
@@ -1503,29 +1504,29 @@ public final class r implements y2.o {
                                             i25 = i25;
                                         }
                                         i15 = i25;
-                                        iVar6 = new i(iVar6.a, iVar6.b, iVar6.w, iVar6.c, i26, j49, iVar6.f, iVar6.h, iVar6.n, iVar6.r, iVar6.s, iVar6.v, arrayList27);
+                                        iVar5 = new i(iVar5.a, iVar5.b, iVar5.w, iVar5.c, i26, j49, iVar5.f, iVar5.h, iVar5.n, iVar5.r, iVar5.s, iVar5.v, arrayList27);
                                     } else {
                                         i15 = i25;
                                     }
-                                    arrayList12.add(iVar6);
-                                    long j51 = iVar6.c;
-                                    String str24 = iVar6.n;
+                                    arrayList12.add(iVar5);
+                                    long j51 = iVar5.c;
+                                    String str24 = iVar5.n;
                                     j48 = j49 + j51;
-                                    long j52 = iVar6.s;
+                                    long j52 = iVar5.s;
                                     if (j52 != -1) {
-                                        j23 = iVar6.r + j52;
+                                        j23 = iVar5.r + j52;
                                     }
-                                    int i28 = iVar6.d;
-                                    i iVar7 = iVar6.b;
-                                    b2.o oVar8 = iVar6.f;
-                                    String str25 = iVar6.h;
+                                    int i28 = iVar5.d;
+                                    i iVar6 = iVar5.b;
+                                    b2.o oVar8 = iVar5.f;
+                                    String str25 = iVar5.h;
                                     if (str24 == null || !str24.equals(Long.toHexString(j25))) {
                                         str13 = str24;
                                     }
                                     j25++;
                                     i24++;
                                     i19 = i28;
-                                    iVar4 = iVar7;
+                                    iVar3 = iVar6;
                                     str14 = str25;
                                     oVar7 = oVar8;
                                     j49 = j48;
@@ -1686,8 +1687,8 @@ public final class r implements y2.o {
                                         }
                                         oVar3 = oVar9;
                                     }
-                                    g gVar5 = new g(j55, iVar4, parseDouble2, i19, j27, oVar3, str14, hexString, j56, j12, f11, f10, false);
-                                    i iVar8 = iVar4;
+                                    g gVar5 = new g(j55, iVar3, parseDouble2, i19, j27, oVar3, str14, hexString, j56, j12, f11, f10, false);
+                                    i iVar7 = iVar3;
                                     int i32 = i19;
                                     arrayList13.add(gVar5);
                                     j27 += parseDouble2;
@@ -1697,7 +1698,7 @@ public final class r implements y2.o {
                                     j29 = j56;
                                     lVar2 = lVar;
                                     i19 = i32;
-                                    iVar4 = iVar8;
+                                    iVar3 = iVar7;
                                     oVar7 = oVar3;
                                     kVar = kVar2;
                                     gVar = gVar3;
@@ -1707,7 +1708,7 @@ public final class r implements y2.o {
                                     linkedHashMap2 = linkedHashMap4;
                                     c12 = 0;
                                 } else {
-                                    i iVar9 = iVar4;
+                                    i iVar8 = iVar3;
                                     int i33 = i19;
                                     if (P2.startsWith("#EXT-X-DATERANGE") && i(P2, A0, str10, hashMap2).equals("com.apple.hls.interstitial")) {
                                         String j57 = j(P2, z0, hashMap2);
@@ -1717,10 +1718,10 @@ public final class r implements y2.o {
                                         Uri parse2 = i35 != null ? Uri.parse(i35) : null;
                                         String i36 = i(P2, B0, null, hashMap2);
                                         if (i36 != null) {
-                                            iVar2 = iVar9;
+                                            iVar = iVar8;
                                             j14 = d0.Q(d0.T(i36));
                                         } else {
-                                            iVar2 = iVar9;
+                                            iVar = iVar8;
                                             j14 = -9223372036854775807L;
                                         }
                                         i12 = i33;
@@ -1950,8 +1951,8 @@ public final class r implements y2.o {
                                                         default:
                                                             bool2 = valueOf;
                                                             String i49 = e2.i(1, 0, group2);
-                                                            String v9 = t8.b.v(i49, "=");
-                                                            int length4 = v9.length() + substring.indexOf(v9);
+                                                            String s10 = j0.s(i49, "=");
+                                                            int length4 = s10.length() + substring.indexOf(s10);
                                                             arrayList11 = arrayList30;
                                                             String substring2 = substring.substring(length4, (substring.length() == length4 + 1 ? 1 : 2) + length4);
                                                             if (substring2.startsWith("\"")) {
@@ -2181,15 +2182,15 @@ public final class r implements y2.o {
                                                         d dVar3 = (d) hashMap6.get(str31);
                                                         if (dVar3 != null) {
                                                             boolean equals4 = dVar3.equals(dVar2);
-                                                            StringBuilder v10 = a4.a.v("Can't change ", str31, " from ");
-                                                            v10.append(dVar3.d);
-                                                            v10.append(" ");
-                                                            v10.append(dVar3.c);
-                                                            v10.append(" to ");
-                                                            v10.append(dVar2.d);
-                                                            v10.append(" ");
-                                                            v10.append(dVar2.c);
-                                                            e2.d.a(v10.toString(), equals4);
+                                                            StringBuilder v9 = a4.a.v("Can't change ", str31, " from ");
+                                                            v9.append(dVar3.d);
+                                                            v9.append(" ");
+                                                            v9.append(dVar3.c);
+                                                            v9.append(" to ");
+                                                            v9.append(dVar2.d);
+                                                            v9.append(" ");
+                                                            v9.append(dVar2.c);
+                                                            e2.d.a(v9.toString(), equals4);
                                                         }
                                                         hashMap6.put(str31, dVar2);
                                                     }
@@ -2330,23 +2331,23 @@ public final class r implements y2.o {
                                         arrayList5 = arrayList14;
                                         treeMap = treeMap2;
                                         str4 = str12;
-                                        iVar2 = iVar9;
+                                        iVar = iVar8;
                                         str2 = str10;
                                         linkedHashMap = linkedHashMap4;
                                         if (!P2.startsWith("#")) {
                                             String hexString2 = str14 == null ? null : str21 != null ? str21 : Long.toHexString(j25);
                                             long j69 = j25 + 1;
                                             String k10 = k(P2, hashMap2);
-                                            i iVar10 = (i) hashMap5.get(k10);
+                                            i iVar9 = (i) hashMap5.get(k10);
                                             if (j30 == -1) {
-                                                iVar3 = iVar10;
+                                                iVar2 = iVar9;
                                                 j23 = 0;
-                                            } else if (z14 && iVar2 == null && iVar10 == null) {
-                                                i iVar11 = new i(k10, 0L, j23, null, null);
-                                                hashMap5.put(k10, iVar11);
-                                                iVar3 = iVar11;
+                                            } else if (z14 && iVar == null && iVar9 == null) {
+                                                i iVar10 = new i(k10, 0L, j23, null, null);
+                                                hashMap5.put(k10, iVar10);
+                                                iVar2 = iVar10;
                                             } else {
-                                                iVar3 = iVar10;
+                                                iVar2 = iVar9;
                                                 j23 = j23;
                                             }
                                             if (oVar7 != null || treeMap.isEmpty()) {
@@ -2365,7 +2366,7 @@ public final class r implements y2.o {
                                                     String str34 = str14;
                                                     long j72 = j28;
                                                     str14 = str34;
-                                                    arrayList6.add(new i(k10, iVar2 == null ? iVar2 : iVar3, str11, j72, i12, j70, oVar11, str34, hexString2, j71, j30, z15, arrayList7));
+                                                    arrayList6.add(new i(k10, iVar == null ? iVar : iVar2, str11, j72, i12, j70, oVar11, str34, hexString2, j71, j30, z15, arrayList7));
                                                     j27 = j70 + j72;
                                                     ArrayList arrayList34 = new ArrayList();
                                                     j23 = j30 == -1 ? j71 + j30 : j71;
@@ -2376,7 +2377,7 @@ public final class r implements y2.o {
                                                     i19 = i12;
                                                     oVar7 = oVar11;
                                                     j24 = j27;
-                                                    iVar4 = iVar2;
+                                                    iVar3 = iVar;
                                                     treeMap2 = treeMap;
                                                     str10 = str2;
                                                     str11 = str10;
@@ -2404,7 +2405,7 @@ public final class r implements y2.o {
                                             String str342 = str14;
                                             long j722 = j28;
                                             str14 = str342;
-                                            arrayList6.add(new i(k10, iVar2 == null ? iVar2 : iVar3, str11, j722, i12, j702, oVar112, str342, hexString2, j712, j30, z15, arrayList7));
+                                            arrayList6.add(new i(k10, iVar == null ? iVar : iVar2, str11, j722, i12, j702, oVar112, str342, hexString2, j712, j30, z15, arrayList7));
                                             j27 = j702 + j722;
                                             ArrayList arrayList342 = new ArrayList();
                                             if (j30 == -1) {
@@ -2416,7 +2417,7 @@ public final class r implements y2.o {
                                             i19 = i12;
                                             oVar7 = oVar112;
                                             j24 = j27;
-                                            iVar4 = iVar2;
+                                            iVar3 = iVar;
                                             treeMap2 = treeMap;
                                             str10 = str2;
                                             str11 = str10;
@@ -2450,7 +2451,7 @@ public final class r implements y2.o {
                                     j28 = j10;
                                     j24 = j3;
                                     j23 = j11;
-                                    iVar4 = iVar2;
+                                    iVar3 = iVar;
                                     treeMap2 = treeMap;
                                     str10 = str2;
                                     kVar = kVar2;
@@ -2480,7 +2481,7 @@ public final class r implements y2.o {
                                     }
                                     oVar2 = oVar12;
                                 }
-                                gVar = (h11 == -1 || h12 != -1) ? new g(j73, iVar4, 0L, i19, j27, oVar2, str14, hexString3, h11 != -1 ? h11 : 0L, h12, false, false, true) : gVar3;
+                                gVar = (h11 == -1 || h12 != -1) ? new g(j73, iVar3, 0L, i19, j27, oVar2, str14, hexString3, h11 != -1 ? h11 : 0L, h12, false, false, true) : gVar3;
                                 oVar5 = oVar;
                                 lVar2 = lVar;
                                 oVar7 = oVar2;
@@ -2500,7 +2501,7 @@ public final class r implements y2.o {
                         treeMap = treeMap2;
                         str2 = str10;
                         j3 = j24;
-                        iVar2 = iVar4;
+                        iVar = iVar3;
                         i10 = i19;
                         j10 = j28;
                         str3 = str11;
@@ -2514,7 +2515,7 @@ public final class r implements y2.o {
                         j28 = j10;
                         j24 = j3;
                         j23 = j11;
-                        iVar4 = iVar2;
+                        iVar3 = iVar;
                         treeMap2 = treeMap;
                         str10 = str2;
                         kVar = kVar2;
@@ -2566,7 +2567,7 @@ public final class r implements y2.o {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static o e(lf.i iVar, String str) {
+    public static o e(lf.h hVar, String str) {
         int i10;
         char c10;
         ArrayList arrayList;
@@ -2613,7 +2614,7 @@ public final class r implements y2.o {
         boolean z11 = false;
         boolean z12 = false;
         while (true) {
-            boolean M2 = iVar.M();
+            boolean M2 = hVar.M();
             Pattern pattern = i0;
             ArrayList arrayList17 = arrayList13;
             boolean z13 = z11;
@@ -2868,7 +2869,7 @@ public final class r implements y2.o {
                 }
                 return new o(str, arrayList22, arrayList28, arrayList19, arrayList20, arrayList29, arrayList17, sVar2, list, z14, hashMap4, arrayList23);
             }
-            String P2 = iVar.P();
+            String P2 = hVar.P();
             if (P2.startsWith("#EXT")) {
                 arrayList16.add(P2);
             }
@@ -2991,10 +2992,10 @@ public final class r implements y2.o {
                         if (!z10) {
                             m10 = e2.a.m(str8, j(P2, pattern, hashMap4));
                         } else {
-                            if (!iVar.M()) {
+                            if (!hVar.M()) {
                                 throw s0.b("#EXT-X-STREAM-INF must be followed by another line", null);
                             }
-                            m10 = e2.a.m(str8, k(iVar.P(), hashMap4));
+                            m10 = e2.a.m(str8, k(hVar.P(), hashMap4));
                         }
                         Uri uri2 = m10;
                         b2.r rVar2 = new b2.r();
@@ -3219,7 +3220,7 @@ public final class r implements y2.o {
                             arrayDeque.add(trim);
                         } else {
                             arrayDeque.add(trim);
-                            o e7 = e(new lf.i(arrayDeque, bufferedReader), uri.toString());
+                            o e7 = e(new lf.h(arrayDeque, bufferedReader), uri.toString());
                             try {
                                 bufferedReader.close();
                             } catch (IOException unused2) {
@@ -3229,7 +3230,7 @@ public final class r implements y2.o {
                     }
                 }
                 arrayDeque.add(trim);
-                l d10 = d(this.a, this.b, new lf.i(arrayDeque, bufferedReader), uri.toString());
+                l d10 = d(this.a, this.b, new lf.h(arrayDeque, bufferedReader), uri.toString());
                 try {
                     bufferedReader.close();
                 } catch (IOException unused3) {

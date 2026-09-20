@@ -9,7 +9,7 @@ import android.view.ViewConfiguration;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class c {
     public final ScaleGestureDetector a;
@@ -45,7 +45,7 @@ public final class c {
             this.k = SystemClock.elapsedRealtime();
         } else if (action == 1 || action == 3) {
             if (!this.h && SystemClock.elapsedRealtime() - this.k < 800 && (oVar = this.b.M) != null) {
-                oVar.g0();
+                oVar.i0();
             }
             this.i = -1;
         } else if (action == 6) {

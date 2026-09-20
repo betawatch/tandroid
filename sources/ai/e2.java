@@ -11,7 +11,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.ui.Components.FragmentContextView;
 import org.telegram.ui.Components.mq;
-import org.telegram.ui.Components.pg0;
+import org.telegram.ui.Components.og0;
 import org.telegram.ui.Components.ur;
 import org.telegram.ui.Components.vu;
 import org.telegram.ui.Components.zc;
@@ -20,7 +20,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e2 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -81,18 +81,18 @@ public final /* synthetic */ class e2 implements View.OnClickListener {
                 MediaController.getInstance().updateSilent(false);
                 break;
             case 12:
-                pg0 pg0Var = pg0.p0;
-                vu vuVar = pg0Var.U;
+                og0 og0Var = og0.p0;
+                vu vuVar = og0Var.U;
                 if (vuVar != null) {
                     vuVar.H();
                 } else {
-                    PhotoViewer photoViewer = pg0Var.V;
+                    PhotoViewer photoViewer = og0Var.V;
                     if (photoViewer != null) {
                         photoViewer.P0();
                         MediaController.getInstance().tryResumePausedAudio();
                     }
                 }
-                pg0.j(false);
+                og0.j(false);
                 break;
             case 13:
                 org.telegram.ui.Components.voip.j1.j();

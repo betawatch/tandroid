@@ -27,25 +27,25 @@ import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.d4;
+import org.telegram.ui.Components.a60;
 import org.telegram.ui.Components.b40;
-import org.telegram.ui.Components.b60;
 import org.telegram.ui.Components.c10;
-import org.telegram.ui.Components.cw;
-import org.telegram.ui.Components.jn0;
-import org.telegram.ui.Components.ka0;
+import org.telegram.ui.Components.dw;
+import org.telegram.ui.Components.in0;
+import org.telegram.ui.Components.ja0;
+import org.telegram.ui.Components.jv0;
 import org.telegram.ui.Components.kp;
-import org.telegram.ui.Components.kv0;
 import org.telegram.ui.Components.lp;
 import org.telegram.ui.Components.mp;
 import org.telegram.ui.Components.u50;
+import org.telegram.ui.Components.xr0;
 import org.telegram.ui.Components.yr0;
-import org.telegram.ui.Components.zr0;
-import org.telegram.ui.Components.zy0;
+import org.telegram.ui.Components.yy0;
 import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.pm;
 import org.telegram.ui.uo;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class f implements Runnable {
     public final /* synthetic */ int a;
@@ -67,12 +67,12 @@ public final /* synthetic */ class f implements Runnable {
         switch (i10) {
             case 0:
                 u uVar = (u) obj;
-                yr0 yr0Var = uVar.W;
+                xr0 xr0Var = uVar.W;
                 if (!z10) {
-                    yr0Var.b(uVar.a.E);
+                    xr0Var.b(uVar.a.E);
                     break;
                 } else {
-                    new y(yr0Var.a, LocaleController.getString(R.string.ProfileBotPreviewLanguageChoose), new y1(yr0Var, 4)).show();
+                    new y(xr0Var.a, LocaleController.getString(R.string.ProfileBotPreviewLanguageChoose), new y1(xr0Var, 4)).show();
                     break;
                 }
             case 1:
@@ -118,7 +118,7 @@ public final /* synthetic */ class f implements Runnable {
                 ((t0) obj).f(z10, false);
                 break;
             case 7:
-                k2.j jVar = (k2.j) ((n4.y) obj).c;
+                k2.j jVar = (k2.j) ((n4.y) obj).b;
                 String str = d0.a;
                 e0 e0Var = ((b0) jVar).a;
                 if (e0Var.a0 != z10) {
@@ -161,9 +161,9 @@ public final /* synthetic */ class f implements Runnable {
                 nf.f.s((Context) obj, LocaleController.getString(z10 ? R.string.BotMonetizationInfoTONLink : R.string.MonetizationInfoTONLink));
                 break;
             case 19:
-                zy0 zy0Var = ((pm) obj).c.d1;
-                if (zy0Var != null && z10) {
-                    zy0Var.setVisibility(8);
+                yy0 yy0Var = ((pm) obj).c.d1;
+                if (yy0Var != null && z10) {
+                    yy0Var.setVisibility(8);
                     break;
                 }
                 break;
@@ -198,9 +198,9 @@ public final /* synthetic */ class f implements Runnable {
                 }
                 break;
             case 22:
-                cw cwVar = (cw) obj;
+                dw dwVar = (dw) obj;
                 if (!z10) {
-                    cwVar.E.setVisibility(8);
+                    dwVar.E.setVisibility(8);
                     break;
                 }
                 break;
@@ -218,50 +218,50 @@ public final /* synthetic */ class f implements Runnable {
                     break;
                 }
             case 25:
-                b60 b60Var = ((u50) obj).H0;
-                if (!b60Var.j0) {
+                a60 a60Var = ((u50) obj).H0;
+                if (!a60Var.j0) {
                     try {
-                        b60Var.performHapticFeedback(3, 2);
+                        a60Var.performHapticFeedback(3, 2);
                     } catch (Exception unused) {
                     }
-                    AndroidUtilities.lockOrientation(b60Var.f.getParentActivity());
-                    b60Var.g0 = z10 ? b60Var.i0 : 0L;
-                    b60Var.f0 = System.currentTimeMillis();
-                    b60Var.h0 = true;
-                    b60Var.v();
-                    b60Var.invalidate();
-                    NotificationCenter.getInstance(b60Var.d).lambda$postNotificationNameOnUIThread$1(NotificationCenter.recordStarted, Integer.valueOf(b60Var.T), Boolean.FALSE);
+                    AndroidUtilities.lockOrientation(a60Var.f.getParentActivity());
+                    a60Var.g0 = z10 ? a60Var.i0 : 0L;
+                    a60Var.f0 = System.currentTimeMillis();
+                    a60Var.h0 = true;
+                    a60Var.u();
+                    a60Var.invalidate();
+                    NotificationCenter.getInstance(a60Var.d).lambda$postNotificationNameOnUIThread$1(NotificationCenter.recordStarted, Integer.valueOf(a60Var.T), Boolean.FALSE);
                     break;
                 }
                 break;
             case 26:
-                ka0 ka0Var = (ka0) obj;
+                ja0 ja0Var = (ja0) obj;
                 if (!z10) {
-                    ka0Var.getClass();
+                    ja0Var.getClass();
                     break;
                 } else {
-                    ka0Var.G.setVisibility(8);
+                    ja0Var.G.setVisibility(8);
                     break;
                 }
             case 27:
-                ((jn0) obj).G.presentFragment(new PremiumPreviewFragment(0, z10 ? "upload_speed" : "download_speed"));
+                ((in0) obj).G.presentFragment(new PremiumPreviewFragment(0, z10 ? "upload_speed" : "download_speed"));
                 break;
             case 28:
-                kv0 kv0Var = (kv0) obj;
+                jv0 jv0Var = (jv0) obj;
                 if (!z10) {
-                    kv0Var.m0.setVisibility(8);
+                    jv0Var.m0.setVisibility(8);
                     break;
                 } else {
-                    kv0Var.getClass();
+                    jv0Var.getClass();
                     break;
                 }
             default:
-                zr0 zr0Var = (zr0) obj;
+                yr0 yr0Var = (yr0) obj;
                 if (!z10) {
-                    zr0Var.U.q0.setVisibility(0);
+                    yr0Var.U.q0.setVisibility(0);
                     break;
                 } else {
-                    zr0Var.getClass();
+                    yr0Var.getClass();
                     break;
                 }
         }

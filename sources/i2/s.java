@@ -28,41 +28,41 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.a2;
 import org.telegram.ui.ActionBar.b2;
 import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.a8;
-import org.telegram.ui.Components.d5;
-import org.telegram.ui.Components.e8;
-import org.telegram.ui.Components.hl0;
-import org.telegram.ui.Components.j8;
-import org.telegram.ui.Components.k6;
+import org.telegram.ui.Components.c5;
+import org.telegram.ui.Components.d8;
+import org.telegram.ui.Components.gl0;
+import org.telegram.ui.Components.i8;
+import org.telegram.ui.Components.j6;
+import org.telegram.ui.Components.kl0;
 import org.telegram.ui.Components.ko;
 import org.telegram.ui.Components.ll0;
 import org.telegram.ui.Components.ml0;
-import org.telegram.ui.Components.nl0;
+import org.telegram.ui.Components.nk0;
 import org.telegram.ui.Components.ok0;
 import org.telegram.ui.Components.oo;
 import org.telegram.ui.Components.pk0;
-import org.telegram.ui.Components.qk0;
 import org.telegram.ui.Components.qr;
+import org.telegram.ui.Components.y7;
+import org.telegram.ui.Components.yc0;
 import org.telegram.ui.Components.z7;
-import org.telegram.ui.Components.zc0;
 import org.telegram.ui.ContactsActivity;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PrivacyControlActivity;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.ed0;
+import org.telegram.ui.fd0;
 import org.telegram.ui.mj;
 import org.telegram.ui.o20;
-import org.telegram.ui.oc0;
+import org.telegram.ui.pc0;
 import org.telegram.ui.pn0;
-import org.telegram.ui.sj0;
-import org.telegram.ui.wg0;
+import org.telegram.ui.uj0;
 import org.telegram.ui.xg0;
 import org.telegram.ui.xm0;
+import org.telegram.ui.yg0;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
-public final /* synthetic */ class s implements e2.m, MessagesStorage.BooleanCallback, zc0, ImageReceiver.ImageReceiverDelegate, d5, ml0, ll0, a2, ed0, hl0, nl0 {
+public final /* synthetic */ class s implements e2.m, MessagesStorage.BooleanCallback, yc0, ImageReceiver.ImageReceiverDelegate, c5, ll0, kl0, a2, fd0, gl0, ml0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
     public final /* synthetic */ Object c;
@@ -73,7 +73,7 @@ public final /* synthetic */ class s implements e2.m, MessagesStorage.BooleanCal
         this.c = obj;
     }
 
-    @Override // org.telegram.ui.Components.d5
+    @Override // org.telegram.ui.Components.c5
     public void J(int i10, int i11, boolean z10) {
         switch (this.a) {
             case 6:
@@ -85,7 +85,7 @@ public final /* synthetic */ class s implements e2.m, MessagesStorage.BooleanCal
         }
     }
 
-    @Override // org.telegram.ui.ed0
+    @Override // org.telegram.ui.fd0
     public void b(TLRPC.MessageMedia messageMedia, int i10, boolean z10, int i11, long j3) {
         HashMap hashMap = (HashMap) this.c;
         Pattern pattern = LaunchActivity.B1;
@@ -96,68 +96,68 @@ public final /* synthetic */ class s implements e2.m, MessagesStorage.BooleanCal
         }
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.kl0
     public void c(float f7, float f10, int i10, View view) {
         switch (this.a) {
             case 9:
                 ContactsActivity.U((ContactsActivity) this.c, this.b, view, i10);
                 break;
             default:
-                sj0.P((sj0) this.c, this.b, view);
+                uj0.P((uj0) this.c, this.b, view);
                 break;
         }
     }
 
-    @Override // org.telegram.ui.Components.ml0
-    public boolean d(int i10, View view) {
-        qk0 qk0Var = (qk0) this.c;
-        if (this.b == 5) {
-            qk0Var.getClass();
-            return false;
-        }
-        pk0 pk0Var = qk0Var.g0;
-        if (pk0Var == null || !(view instanceof ok0)) {
-            return false;
-        }
-        pk0Var.h(qk0Var, ((ok0) view).e, true, false);
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.ll0
-    public /* synthetic */ boolean d1(View view) {
+    @Override // org.telegram.ui.Components.kl0
+    public /* synthetic */ boolean c1(View view) {
         switch (this.a) {
         }
         return false;
     }
 
+    @Override // org.telegram.ui.Components.ll0
+    public boolean d(int i10, View view) {
+        pk0 pk0Var = (pk0) this.c;
+        if (this.b == 5) {
+            pk0Var.getClass();
+            return false;
+        }
+        ok0 ok0Var = pk0Var.g0;
+        if (ok0Var == null || !(view instanceof nk0)) {
+            return false;
+        }
+        ok0Var.h(pk0Var, ((nk0) view).e, true, false);
+        return true;
+    }
+
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public void didSetImage(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
-        e8 e8Var = (e8) this.c;
-        if (this.b == e8Var.b) {
-            j8 j8Var = ((z7) e8Var).e;
+        d8 d8Var = (d8) this.c;
+        if (this.b == d8Var.b) {
+            i8 i8Var = ((y7) d8Var).e;
             Bitmap bitmap = imageReceiver.getBitmap();
             int dp = ((bitmap == null || !imageReceiver.hasImageLoaded()) && !imageReceiver.hasBitmapImage()) ? 0 : AndroidUtilities.dp(64.0f);
-            a8 a8Var = j8Var.J;
-            ValueAnimator valueAnimator = j8Var.S0;
+            z7 z7Var = i8Var.J;
+            ValueAnimator valueAnimator = i8Var.S0;
             if (valueAnimator != null) {
                 valueAnimator.cancel();
-                j8Var.S0 = null;
+                i8Var.S0 = null;
             }
-            if (a8Var.getCustomPaddingRight() != dp) {
-                ValueAnimator ofInt = ValueAnimator.ofInt(a8Var.getCustomPaddingRight(), dp);
-                j8Var.S0 = ofInt;
+            if (z7Var.getCustomPaddingRight() != dp) {
+                ValueAnimator ofInt = ValueAnimator.ofInt(z7Var.getCustomPaddingRight(), dp);
+                i8Var.S0 = ofInt;
                 if (dp == 0) {
                     ofInt.setStartDelay(200L);
-                    j8Var.S0.setDuration(100L);
+                    i8Var.S0.setDuration(100L);
                 } else {
                     ofInt.setDuration(200L);
                 }
-                j8Var.S0.setInterpolator(new DecelerateInterpolator());
-                j8Var.S0.addUpdateListener(new k6(j8Var, 2));
-                j8Var.S0.start();
+                i8Var.S0.setInterpolator(new DecelerateInterpolator());
+                i8Var.S0.addUpdateListener(new j6(i8Var, 2));
+                i8Var.S0.start();
             }
-            if (j8Var.i0.getTag() != null) {
-                j8Var.j0.setImageBitmap(bitmap);
+            if (i8Var.i0.getTag() != null) {
+                i8Var.j0.setImageBitmap(bitmap);
             }
         }
     }
@@ -167,8 +167,37 @@ public final /* synthetic */ class s implements e2.m, MessagesStorage.BooleanCal
         h5.a(this, i10, str, drawable);
     }
 
+    @Override // org.telegram.ui.Components.yc0
+    public String e(int i10) {
+        Calendar calendar = (Calendar) this.c;
+        calendar.clear();
+        int i11 = this.b;
+        calendar.set(1, i11);
+        calendar.set(2, 0);
+        calendar.add(2, i10 - 120);
+        return calendar.get(1) == i11 ? LocaleController.getInstance().getFormatterMonthOnly().format(calendar.getTimeInMillis()) : LocaleController.getInstance().getFormatterMonthYear().format(calendar.getTimeInMillis());
+    }
+
+    @Override // e2.m
+    public void invoke(Object obj) {
+        switch (this.a) {
+            case 0:
+                ((b2.z0) obj).onTimelineChanged(((g1) this.c).a, this.b);
+                break;
+            case 1:
+                ((b2.z0) obj).onMediaItemTransition((b2.k0) this.c, this.b);
+                break;
+            default:
+                j2.a aVar = (j2.a) this.c;
+                j2.b bVar = (j2.b) obj;
+                bVar.getClass();
+                bVar.g(aVar, this.b);
+                break;
+        }
+    }
+
     @Override // org.telegram.ui.ActionBar.a2
-    public void f(b2 b2Var, int i10) {
+    public void k(b2 b2Var, int i10) {
         switch (this.a) {
             case 10:
                 ArrayList arrayList = ((LaunchActivity) this.c).d0;
@@ -196,13 +225,13 @@ public final /* synthetic */ class s implements e2.m, MessagesStorage.BooleanCal
                 profileActivity.d.u(this.b);
                 break;
             case 13:
-                xg0 xg0Var = ((wg0) this.c).V;
+                yg0 yg0Var = ((xg0) this.c).V;
                 int i11 = UserConfig.selectedAccount;
                 int i12 = this.b;
                 if (i11 != i12) {
-                    ((LaunchActivity) xg0Var.getParentActivity()).K0(i12);
+                    ((LaunchActivity) yg0Var.getParentActivity()).K0(i12);
                 }
-                xg0Var.finishFragment();
+                yg0Var.finishFragment();
                 break;
             case 15:
                 pn0 pn0Var = ((xm0) this.c).a;
@@ -216,48 +245,19 @@ public final /* synthetic */ class s implements e2.m, MessagesStorage.BooleanCal
         }
     }
 
-    @Override // e2.m
-    public void invoke(Object obj) {
-        switch (this.a) {
-            case 0:
-                ((b2.z0) obj).onTimelineChanged(((g1) this.c).a, this.b);
-                break;
-            case 1:
-                ((b2.z0) obj).onMediaItemTransition((b2.k0) this.c, this.b);
-                break;
-            default:
-                j2.a aVar = (j2.a) this.c;
-                j2.b bVar = (j2.b) obj;
-                bVar.getClass();
-                bVar.g(aVar, this.b);
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.zc0
-    public String j(int i10) {
-        Calendar calendar = (Calendar) this.c;
-        calendar.clear();
-        int i11 = this.b;
-        calendar.set(1, i11);
-        calendar.set(2, 0);
-        calendar.add(2, i10 - 120);
-        return calendar.get(1) == i11 ? LocaleController.getInstance().getFormatterMonthOnly().format(calendar.getTimeInMillis()) : LocaleController.getInstance().getFormatterMonthYear().format(calendar.getTimeInMillis());
-    }
-
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public /* synthetic */ void onAnimationReady(ImageReceiver imageReceiver) {
         h5.b(this, imageReceiver);
     }
 
-    @Override // org.telegram.ui.Components.ll0
-    public /* synthetic */ void r0(View view, float f7, float f10) {
+    @Override // org.telegram.ui.Components.kl0
+    public /* synthetic */ void q0(View view, float f7, float f10) {
         int i10 = this.a;
     }
 
-    @Override // org.telegram.ui.Components.hl0
+    @Override // org.telegram.ui.Components.gl0
     public int run() {
-        s4.c0 c0Var = ((oc0) this.c).c;
+        s4.c0 c0Var = ((pc0) this.c).c;
         int dp = AndroidUtilities.dp(60.0f);
         int i10 = this.b;
         c0Var.h1(i10, dp);
@@ -270,7 +270,7 @@ public final /* synthetic */ class s implements e2.m, MessagesStorage.BooleanCal
         this.b = i10;
     }
 
-    @Override // org.telegram.ui.Components.nl0
+    @Override // org.telegram.ui.Components.ml0
     public boolean c(float f7, float f10, int i10, View view) {
         tg.m1 m1Var = (tg.m1) this.c;
         o20 o20Var = m1Var.d0;
@@ -347,17 +347,17 @@ public final /* synthetic */ class s implements e2.m, MessagesStorage.BooleanCal
         this.b = i10;
     }
 
-    @Override // org.telegram.ui.Components.nl0
+    @Override // org.telegram.ui.Components.ml0
     public /* synthetic */ void g() {
     }
 
-    @Override // org.telegram.ui.Components.nl0
+    @Override // org.telegram.ui.Components.ml0
     public /* synthetic */ void q(float f7) {
     }
 
     private final /* synthetic */ void a(View view, float f7, float f10) {
     }
 
-    private final /* synthetic */ void e(View view, float f7, float f10) {
+    private final /* synthetic */ void f(View view, float f7, float f10) {
     }
 }

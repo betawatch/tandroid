@@ -1,19 +1,165 @@
 package v7;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class x2 implements ia.d {
     public static final x2 a = new x2();
-
-    static {
-        t8.b.t(t8.b.l(h.class, t8.b.p(7, t8.b.l(h.class, t8.b.p(6, t8.b.l(h.class, t8.b.p(5, t8.b.l(h.class, t8.b.p(4, t8.b.l(h.class, t8.b.p(3, t8.b.l(h.class, t8.b.p(2, t8.b.l(h.class, new e(1)))))))))))))));
-    }
+    public static final ia.c b = new ia.c("systemInfo", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(1))));
+    public static final ia.c c = new ia.c("eventName", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(2))));
+    public static final ia.c d = new ia.c("isThickClient", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(37))));
+    public static final ia.c e = new ia.c("clientType", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(61))));
+    public static final ia.c f = new ia.c("modelDownloadLogEvent", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(3))));
+    public static final ia.c g = new ia.c("customModelLoadLogEvent", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(20))));
+    public static final ia.c h = new ia.c("customModelInferenceLogEvent", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(4))));
+    public static final ia.c i = new ia.c("customModelCreateLogEvent", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(29))));
+    public static final ia.c j = new ia.c("onDeviceFaceDetectionLogEvent", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(5))));
+    public static final ia.c k = new ia.c("onDeviceFaceLoadLogEvent", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(59))));
+    public static final ia.c l = new ia.c("onDeviceTextDetectionLogEvent", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(6))));
+    public static final ia.c m = new ia.c("onDeviceTextDetectionLoadLogEvent", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(79))));
+    public static final ia.c n = new ia.c("onDeviceBarcodeDetectionLogEvent", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(7))));
+    public static final ia.c o = new ia.c("onDeviceBarcodeLoadLogEvent", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(58))));
+    public static final ia.c p = new ia.c("onDeviceImageLabelCreateLogEvent", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(48))));
+    public static final ia.c q = new ia.c("onDeviceImageLabelLoadLogEvent", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(49))));
+    public static final ia.c r = new ia.c("onDeviceImageLabelDetectionLogEvent", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(18))));
+    public static final ia.c s = new ia.c("onDeviceObjectCreateLogEvent", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(26))));
+    public static final ia.c t = new ia.c("onDeviceObjectLoadLogEvent", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(27))));
+    public static final ia.c u = new ia.c("onDeviceObjectInferenceLogEvent", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(28))));
+    public static final ia.c v = new ia.c("onDevicePoseDetectionLogEvent", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(44))));
+    public static final ia.c w = new ia.c("onDeviceSegmentationLogEvent", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(45))));
+    public static final ia.c x = new ia.c("onDeviceSmartReplyLogEvent", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(19))));
+    public static final ia.c y = new ia.c("onDeviceLanguageIdentificationLogEvent", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(21))));
+    public static final ia.c z = new ia.c("onDeviceTranslationLogEvent", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(22))));
+    public static final ia.c A = new ia.c("cloudFaceDetectionLogEvent", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(8))));
+    public static final ia.c B = new ia.c("cloudCropHintDetectionLogEvent", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(9))));
+    public static final ia.c C = new ia.c("cloudDocumentTextDetectionLogEvent", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(10))));
+    public static final ia.c D = new ia.c("cloudImagePropertiesDetectionLogEvent", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(11))));
+    public static final ia.c E = new ia.c("cloudImageLabelDetectionLogEvent", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(12))));
+    public static final ia.c F = new ia.c("cloudLandmarkDetectionLogEvent", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(13))));
+    public static final ia.c G = new ia.c("cloudLogoDetectionLogEvent", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(14))));
+    public static final ia.c H = new ia.c("cloudSafeSearchDetectionLogEvent", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(15))));
+    public static final ia.c I = new ia.c("cloudTextDetectionLogEvent", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(16))));
+    public static final ia.c J = new ia.c("cloudWebSearchDetectionLogEvent", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(17))));
+    public static final ia.c K = new ia.c("automlImageLabelingCreateLogEvent", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(23))));
+    public static final ia.c L = new ia.c("automlImageLabelingLoadLogEvent", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(24))));
+    public static final ia.c M = new ia.c("automlImageLabelingInferenceLogEvent", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(25))));
+    public static final ia.c N = new ia.c("isModelDownloadedLogEvent", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(39))));
+    public static final ia.c O = new ia.c("deleteModelLogEvent", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(40))));
+    public static final ia.c P = new ia.c("aggregatedAutomlImageLabelingInferenceLogEvent", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(30))));
+    public static final ia.c Q = new ia.c("aggregatedCustomModelInferenceLogEvent", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(31))));
+    public static final ia.c R = new ia.c("aggregatedOnDeviceFaceDetectionLogEvent", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(32))));
+    public static final ia.c S = new ia.c("aggregatedOnDeviceBarcodeDetectionLogEvent", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(33))));
+    public static final ia.c T = new ia.c("aggregatedOnDeviceImageLabelDetectionLogEvent", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(34))));
+    public static final ia.c U = new ia.c("aggregatedOnDeviceObjectInferenceLogEvent", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(35))));
+    public static final ia.c V = new ia.c("aggregatedOnDeviceTextDetectionLogEvent", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(36))));
+    public static final ia.c W = new ia.c("aggregatedOnDevicePoseDetectionLogEvent", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(46))));
+    public static final ia.c X = new ia.c("aggregatedOnDeviceSegmentationLogEvent", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(47))));
+    public static final ia.c Y = new ia.c("pipelineAccelerationInferenceEvents", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(69))));
+    public static final ia.c Z = new ia.c("remoteConfigLogEvent", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(42))));
+    public static final ia.c a0 = new ia.c("inputImageConstructionLogEvent", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(50))));
+    public static final ia.c b0 = new ia.c("leakedHandleEvent", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(51))));
+    public static final ia.c c0 = new ia.c("cameraSourceLogEvent", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(52))));
+    public static final ia.c d0 = new ia.c("imageLabelOptionalModuleLogEvent", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(53))));
+    public static final ia.c e0 = new ia.c("languageIdentificationOptionalModuleLogEvent", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(54))));
+    public static final ia.c f0 = new ia.c("faceDetectionOptionalModuleLogEvent", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(60))));
+    public static final ia.c g0 = new ia.c("nlClassifierOptionalModuleLogEvent", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(55))));
+    public static final ia.c h0 = new ia.c("nlClassifierClientLibraryLogEvent", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(56))));
+    public static final ia.c i0 = new ia.c("accelerationAllowlistLogEvent", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(57))));
+    public static final ia.c j0 = new ia.c("toxicityDetectionCreateEvent", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(62))));
+    public static final ia.c k0 = new ia.c("toxicityDetectionLoadEvent", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(63))));
+    public static final ia.c l0 = new ia.c("toxicityDetectionInferenceEvent", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(64))));
+    public static final ia.c m0 = new ia.c("barcodeDetectionOptionalModuleLogEvent", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(65))));
+    public static final ia.c n0 = new ia.c("customImageLabelOptionalModuleLogEvent", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(66))));
+    public static final ia.c o0 = new ia.c("codeScannerScanApiEvent", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(67))));
+    public static final ia.c p0 = new ia.c("codeScannerOptionalModuleEvent", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(68))));
+    public static final ia.c q0 = new ia.c("onDeviceExplicitContentCreateLogEvent", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(70))));
+    public static final ia.c r0 = new ia.c("onDeviceExplicitContentLoadLogEvent", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(71))));
+    public static final ia.c s0 = new ia.c("onDeviceExplicitContentInferenceLogEvent", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(72))));
+    public static final ia.c t0 = new ia.c("aggregatedOnDeviceExplicitContentLogEvent", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(73))));
+    public static final ia.c u0 = new ia.c("onDeviceSelfieFaceCreateLogEvent", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(74))));
+    public static final ia.c v0 = new ia.c("onDeviceSelfieFaceLoadLogEvent", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(75))));
+    public static final ia.c w0 = new ia.c("onDeviceSelfieFaceLogEvent", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(76))));
+    public static final ia.c x0 = new ia.c("aggregatedOnDeviceSelfieFaceLogEvent", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(77))));
+    public static final ia.c y0 = new ia.c("smartReplyOptionalModuleLogEvent", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(78))));
 
     @Override // ia.a
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
-        }
-        throw null;
+    public final void a(Object obj, Object obj2) {
+        l6 l6Var = (l6) obj;
+        ia.e eVar = (ia.e) obj2;
+        eVar.a(b, l6Var.a);
+        eVar.a(c, l6Var.b);
+        eVar.a(d, null);
+        eVar.a(e, l6Var.c);
+        eVar.a(f, null);
+        eVar.a(g, null);
+        eVar.a(h, null);
+        eVar.a(i, null);
+        eVar.a(j, null);
+        eVar.a(k, null);
+        eVar.a(l, null);
+        eVar.a(m, null);
+        eVar.a(n, null);
+        eVar.a(o, null);
+        eVar.a(p, null);
+        eVar.a(q, null);
+        eVar.a(r, null);
+        eVar.a(s, null);
+        eVar.a(t, null);
+        eVar.a(u, null);
+        eVar.a(v, null);
+        eVar.a(w, null);
+        eVar.a(x, null);
+        eVar.a(y, l6Var.d);
+        eVar.a(z, null);
+        eVar.a(A, null);
+        eVar.a(B, null);
+        eVar.a(C, null);
+        eVar.a(D, null);
+        eVar.a(E, null);
+        eVar.a(F, null);
+        eVar.a(G, null);
+        eVar.a(H, null);
+        eVar.a(I, null);
+        eVar.a(J, null);
+        eVar.a(K, null);
+        eVar.a(L, null);
+        eVar.a(M, null);
+        eVar.a(N, null);
+        eVar.a(O, null);
+        eVar.a(P, null);
+        eVar.a(Q, null);
+        eVar.a(R, null);
+        eVar.a(S, null);
+        eVar.a(T, null);
+        eVar.a(U, null);
+        eVar.a(V, null);
+        eVar.a(W, null);
+        eVar.a(X, null);
+        eVar.a(Y, null);
+        eVar.a(Z, null);
+        eVar.a(a0, null);
+        eVar.a(b0, null);
+        eVar.a(c0, null);
+        eVar.a(d0, null);
+        eVar.a(e0, null);
+        eVar.a(f0, null);
+        eVar.a(g0, null);
+        eVar.a(h0, null);
+        eVar.a(i0, null);
+        eVar.a(j0, null);
+        eVar.a(k0, null);
+        eVar.a(l0, null);
+        eVar.a(m0, null);
+        eVar.a(n0, null);
+        eVar.a(o0, null);
+        eVar.a(p0, null);
+        eVar.a(q0, null);
+        eVar.a(r0, null);
+        eVar.a(s0, null);
+        eVar.a(t0, null);
+        eVar.a(u0, null);
+        eVar.a(v0, null);
+        eVar.a(w0, null);
+        eVar.a(x0, null);
+        eVar.a(y0, null);
     }
 }

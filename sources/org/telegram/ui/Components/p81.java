@@ -3,16 +3,16 @@ package org.telegram.ui.Components;
 import android.view.View;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class p81 implements ll0, ml0 {
+public final /* synthetic */ class p81 implements kl0, ll0 {
     public final /* synthetic */ w81 a;
 
     public /* synthetic */ p81(w81 w81Var) {
         this.a = w81Var;
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.kl0
     public void c(float f7, float f10, int i10, View view) {
         w81 w81Var = this.a;
         v81 v81Var = w81Var.y;
@@ -31,7 +31,12 @@ public final /* synthetic */ class p81 implements ll0, ml0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.ml0
+    @Override // org.telegram.ui.Components.kl0
+    public /* synthetic */ boolean c1(View view) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.ll0
     public boolean d(int i10, View view) {
         Utilities.Callback2Return callback2Return = this.a.b;
         if (callback2Return == null) {
@@ -40,12 +45,7 @@ public final /* synthetic */ class p81 implements ll0, ml0 {
         return ((Boolean) callback2Return.run(Integer.valueOf(((u81) view).a.a), view)).booleanValue();
     }
 
-    @Override // org.telegram.ui.Components.ll0
-    public /* synthetic */ boolean d1(View view) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.ll0
-    public /* synthetic */ void r0(View view, float f7, float f10) {
+    @Override // org.telegram.ui.Components.kl0
+    public /* synthetic */ void q0(View view, float f7, float f10) {
     }
 }

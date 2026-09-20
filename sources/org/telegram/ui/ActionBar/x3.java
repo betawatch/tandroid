@@ -34,12 +34,12 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.v01;
+import org.telegram.ui.Components.u01;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.l20;
-import v7.z6;
+import v7.a7;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class x3 extends View {
     public float E;
@@ -71,9 +71,9 @@ public final class x3 extends View {
     public final RectF d0;
     public float e;
     public final RectF e0;
-    public final org.telegram.ui.Components.e6 f;
+    public final org.telegram.ui.Components.d6 f;
     public final Path f0;
-    public v01 g0;
+    public u01 g0;
     public final OverScroller h;
     public boolean h0;
     public org.telegram.ui.Cells.z i0;
@@ -88,7 +88,7 @@ public final class x3 extends View {
 
     public x3(LaunchActivity launchActivity) {
         super(launchActivity);
-        this.f = new org.telegram.ui.Components.e6(this, 0L, 350L, qr.h);
+        this.f = new org.telegram.ui.Components.d6(this, 0L, 350L, qr.h);
         this.Q = new RectF();
         this.R = new ArrayList();
         this.a0 = new int[2];
@@ -485,7 +485,7 @@ public final class x3 extends View {
                             paint3.setAlpha(i15);
                             canvas.drawRoundRect(rectF6, lerp5, lerp5, paint3);
                             canvas.save();
-                            canvas.translate(rectF6.left, t8.b.d(AndroidUtilities.dp(50.0f), lerp4, rectF6.top, currentActionBarHeight));
+                            canvas.translate(rectF6.left, org.telegram.ui.Cells.c1.b(AndroidUtilities.dp(50.0f), lerp4, rectF6.top, currentActionBarHeight));
                             canvas.scale(1.0f, AndroidUtilities.lerp(1.0f, 1.25f, f28));
                             if (n3Var != null && n3Var.m != null) {
                                 float width3 = rectF6.width() / n3Var.m.getWidth();
@@ -545,7 +545,7 @@ public final class x3 extends View {
         canvas.restore();
         canvas.restore();
         if (this.g0 == null) {
-            this.g0 = new v01(LocaleController.getString(R.string.BotCloseAllTabs), 14.0f, AndroidUtilities.bold());
+            this.g0 = new u01(LocaleController.getString(R.string.BotCloseAllTabs), 14.0f, AndroidUtilities.bold());
         }
         if (this.i0 == null || this.h0 != j6.I.q()) {
             boolean q6 = j6.I.q();
@@ -668,10 +668,10 @@ public final class x3 extends View {
             w3 w3Var3 = this.w;
             if (w3Var3 != null) {
                 if (w3Var3.k.h) {
-                    if (!this.H && !this.G && z6.a(this.E, motionEvent.getY(), motionEvent.getX(), motionEvent.getY()) > AndroidUtilities.touchSlop) {
+                    if (!this.H && !this.G && a7.a(this.E, motionEvent.getY(), motionEvent.getX(), motionEvent.getY()) > AndroidUtilities.touchSlop) {
                         this.H = true;
                     }
-                    if (!this.G && !this.H && z6.a(motionEvent.getX(), this.y, motionEvent.getX(), motionEvent.getY()) > AndroidUtilities.touchSlop) {
+                    if (!this.G && !this.H && a7.a(motionEvent.getX(), this.y, motionEvent.getX(), motionEvent.getY()) > AndroidUtilities.touchSlop) {
                         if (!overScroller.isFinished()) {
                             overScroller.abortAnimation();
                         }
@@ -690,10 +690,10 @@ public final class x3 extends View {
                         }
                     }
                 } else {
-                    if (!this.x && !this.H && !this.G && z6.a(this.E, motionEvent.getY(), motionEvent.getX(), motionEvent.getY()) > AndroidUtilities.touchSlop) {
+                    if (!this.x && !this.H && !this.G && a7.a(this.E, motionEvent.getY(), motionEvent.getX(), motionEvent.getY()) > AndroidUtilities.touchSlop) {
                         this.H = true;
                     }
-                    if (!this.x && !this.G && !this.H && z6.a(motionEvent.getX(), this.y, motionEvent.getX(), motionEvent.getY()) > AndroidUtilities.touchSlop) {
+                    if (!this.x && !this.G && !this.H && a7.a(motionEvent.getX(), this.y, motionEvent.getX(), motionEvent.getY()) > AndroidUtilities.touchSlop) {
                         if (!overScroller.isFinished()) {
                             overScroller.abortAnimation();
                         }
@@ -936,7 +936,7 @@ public final class x3 extends View {
                 r82 = obj;
             } else {
                 r82 = obj;
-                if (z6.a(this.E, this.y, motionEvent.getX(), motionEvent.getY()) <= AndroidUtilities.touchSlop) {
+                if (a7.a(this.E, this.y, motionEvent.getX(), motionEvent.getY()) <= AndroidUtilities.touchSlop) {
                     r82 = obj;
                     if (!this.G) {
                         r82 = obj;

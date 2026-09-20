@@ -10,7 +10,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class o9 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -33,7 +33,7 @@ public final /* synthetic */ class o9 implements View.OnClickListener {
         int i16;
         int i17;
         int i18;
-        org.telegram.ui.ActionBar.e6 e6Var;
+        org.telegram.ui.ActionBar.f6 f6Var;
         switch (this.a) {
             case 0:
                 ba baVar = this.b;
@@ -176,8 +176,8 @@ public final /* synthetic */ class o9 implements View.OnClickListener {
                     break;
                 } else {
                     Context context = baVar2.getContext();
-                    e6Var = ((org.telegram.ui.ActionBar.f3) iaVar2).resourcesProvider;
-                    ia iaVar3 = new ia(context, e6Var);
+                    f6Var = ((org.telegram.ui.ActionBar.f3) iaVar2).resourcesProvider;
+                    ia iaVar3 = new ia(context, f6Var);
                     iaVar3.V = new q9(baVar2, 1);
                     iaVar3.Q = iaVar2.Q;
                     iaVar3.show();

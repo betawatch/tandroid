@@ -5,12 +5,12 @@ import android.animation.AnimatorListenerAdapter;
 import android.graphics.ColorMatrix;
 import android.graphics.ColorMatrixColorFilter;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Cells.o6;
-import org.telegram.ui.Cells.z7;
-import org.telegram.ui.Components.fh0;
-import org.telegram.ui.Components.y9;
+import org.telegram.ui.Cells.a8;
+import org.telegram.ui.Cells.p6;
+import org.telegram.ui.Components.eh0;
+import org.telegram.ui.Components.x9;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class z0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -42,38 +42,38 @@ public final class z0 extends AnimatorListenerAdapter {
                 }
                 break;
             case 2:
-                o6 o6Var = (o6) this.c;
-                o6Var.E = this.b;
-                o6Var.invalidate();
+                p6 p6Var = (p6) this.c;
+                p6Var.E = this.b;
+                p6Var.invalidate();
                 break;
             case 3:
                 ColorMatrix colorMatrix = new ColorMatrix();
-                z7 z7Var = (z7) this.c;
+                a8 a8Var = (a8) this.c;
                 float f7 = this.b;
-                z7Var.v = f7;
+                a8Var.v = f7;
                 colorMatrix.setSaturation(f7);
                 if (j6.I.q()) {
-                    AndroidUtilities.adjustBrightnessColorMatrix(colorMatrix, (1.0f - z7Var.v) * (-0.3f));
+                    AndroidUtilities.adjustBrightnessColorMatrix(colorMatrix, (1.0f - a8Var.v) * (-0.3f));
                 }
-                z7Var.d.setEmojiColorFilter(new ColorMatrixColorFilter(colorMatrix));
+                a8Var.d.setEmojiColorFilter(new ColorMatrixColorFilter(colorMatrix));
                 break;
             case 4:
-                y9 y9Var = (y9) this.c;
-                y9Var.g = this.b;
-                y9Var.invalidateSelf();
+                x9 x9Var = (x9) this.c;
+                x9Var.g = this.b;
+                x9Var.invalidateSelf();
                 break;
             default:
-                fh0 fh0Var = (fh0) this.c;
-                fh0Var.H.unlock();
+                eh0 eh0Var = (eh0) this.c;
+                eh0Var.H.unlock();
                 float f10 = this.b;
-                fh0Var.b = f10;
+                eh0Var.b = f10;
                 if (f10 <= 0.0f) {
-                    fh0Var.G = -1;
+                    eh0Var.G = -1;
                 }
-                fh0Var.c(true);
-                fh0Var.f = false;
-                if (fh0Var.O != null && Math.abs(f10 - 1.0f) < 0.01f) {
-                    fh0Var.O.run();
+                eh0Var.c(true);
+                eh0Var.f = false;
+                if (eh0Var.O != null && Math.abs(f10 - 1.0f) < 0.01f) {
+                    eh0Var.O.run();
                     break;
                 }
                 break;
@@ -84,9 +84,9 @@ public final class z0 extends AnimatorListenerAdapter {
     public void onAnimationStart(Animator animator) {
         switch (this.a) {
             case 5:
-                fh0 fh0Var = (fh0) this.c;
-                fh0Var.f = true;
-                fh0Var.c = this.b;
+                eh0 eh0Var = (eh0) this.c;
+                eh0Var.f = true;
+                eh0Var.c = this.b;
                 break;
             default:
                 super.onAnimationStart(animator);

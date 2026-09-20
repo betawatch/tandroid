@@ -11,9 +11,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
-import v7.w7;
+import v7.x7;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class m extends p {
     public static final String v;
@@ -126,7 +126,7 @@ public final class m extends p {
             if (i10 != 0) {
                 jSONObject.put("jump", i10);
             }
-            String b11 = w7.b(num);
+            String b11 = x7.b(num);
             if (b11 != null) {
                 jSONObject.put("repeatMode", b11);
             }
@@ -137,7 +137,7 @@ public final class m extends p {
         } catch (JSONException unused) {
         }
         c(b10, jSONObject.toString());
-        this.q.a(b10, new y(this, nVar, false, 16));
+        this.q.a(b10, new y(this, nVar, false));
     }
 
     public final long e(double d, long j3, long j10) {

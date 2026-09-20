@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class ko0 extends o81 {
     public final ArrayList a = new ArrayList();
@@ -39,12 +39,12 @@ public final class ko0 extends o81 {
             return eyVar.s0;
         }
         if (i10 == 2) {
-            jn0 jn0Var = new jn0(eyVar.I0, uyVar);
-            eyVar.H0 = jn0Var;
-            jn0Var.b(eyVar.V0, eyVar.W0, false);
+            in0 in0Var = new in0(eyVar.I0, uyVar);
+            eyVar.H0 = in0Var;
+            in0Var.b(eyVar.V0, eyVar.W0, false);
             eyVar.H0.b.setClipToPadding(false);
             eyVar.H0.b.j(new io0(this, 0));
-            eyVar.H0.b.D0(new kc0(eyVar, 23));
+            eyVar.H0.b.D0(new jc0(eyVar, 23));
             eyVar.H0.setUiCallback(eyVar);
             return eyVar.H0;
         }
@@ -62,7 +62,7 @@ public final class ko0 extends o81 {
         ai.w0 w0Var = x10Var.b;
         w0Var.setClipToPadding(false);
         w0Var.j(new io0(this, 1));
-        w0Var.D0(new kc0(eyVar, 23));
+        w0Var.D0(new jc0(eyVar, 23));
         return x10Var;
     }
 

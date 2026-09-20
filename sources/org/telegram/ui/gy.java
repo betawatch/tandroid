@@ -6,7 +6,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class gy {
     public final /* synthetic */ uy a;
@@ -18,10 +18,10 @@ public final class gy {
     public final long a() {
         uy uyVar = this.a;
         ox oxVar = uyVar.F3;
-        if (oxVar == null || !(oxVar.getFragment() instanceof dg1)) {
+        if (oxVar == null || !(oxVar.getFragment() instanceof fg1)) {
             return 0L;
         }
-        return -((dg1) uyVar.F3.getFragment()).a;
+        return -((fg1) uyVar.F3.getFragment()).a;
     }
 
     public final void b() {
@@ -42,7 +42,7 @@ public final class gy {
                 }
 
                 @Override // org.telegram.ui.ActionBar.a2
-                public final void f(org.telegram.ui.ActionBar.b2 b2Var, int i11) {
+                public final void k(org.telegram.ui.ActionBar.b2 b2Var, int i11) {
                     switch (i10) {
                         case 0:
                             this.b.a.C0.c0.E();
@@ -74,7 +74,7 @@ public final class gy {
                 }
 
                 @Override // org.telegram.ui.ActionBar.a2
-                public final void f(org.telegram.ui.ActionBar.b2 b2Var, int i112) {
+                public final void k(org.telegram.ui.ActionBar.b2 b2Var, int i112) {
                     switch (i11) {
                         case 0:
                             this.b.a.C0.c0.E();
@@ -107,9 +107,9 @@ public final class gy {
     public final void c() {
         ey eyVar = this.a.C0;
         if (eyVar != null) {
-            org.telegram.ui.Components.bl0 bl0Var = eyVar.e0;
+            org.telegram.ui.Components.al0 al0Var = eyVar.e0;
             int i10 = eyVar.T0;
-            bl0Var.b(i10 > 0 ? i10 + 1 : 0);
+            al0Var.b(i10 > 0 ? i10 + 1 : 0);
             eyVar.T0 = eyVar.c0.h();
         }
     }

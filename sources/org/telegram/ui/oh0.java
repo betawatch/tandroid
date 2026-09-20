@@ -1,32 +1,33 @@
 package org.telegram.ui;
 
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class oh0 implements Runnable {
-    public final /* synthetic */ zh0 a;
+public final /* synthetic */ class oh0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ai0 b;
+    public final /* synthetic */ TLRPC.TL_error c;
+    public final /* synthetic */ TLObject d;
 
-    public oh0(zh0 zh0Var) {
-        this.a = zh0Var;
+    public /* synthetic */ oh0(ai0 ai0Var, TLRPC.TL_error tL_error, TLObject tLObject, int i10) {
+        this.a = i10;
+        this.b = ai0Var;
+        this.c = tL_error;
+        this.d = tLObject;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        zh0 zh0Var = this.a;
-        if (zh0Var.b == null) {
-            return;
+        switch (this.a) {
+            case 0:
+                ai0 ai0Var = this.b;
+                ai0Var.getNotificationCenter().doOnIdle(new oh0(ai0Var, this.c, this.d, 1));
+                break;
+            default:
+                ai0.V(this.b, this.c, this.d);
+                break;
         }
-        for (int i10 = 0; i10 < zh0Var.b.getChildCount(); i10++) {
-            View childAt = zh0Var.b.getChildAt(i10);
-            if (childAt instanceof wh0) {
-                wh0 wh0Var = (wh0) childAt;
-                if (wh0Var.I) {
-                    wh0Var.b(wh0Var.n, wh0Var.r);
-                }
-            }
-        }
-        AndroidUtilities.runOnUIThread(this, 500L);
     }
 }

@@ -7,27 +7,27 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
 import w7.y5;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class a extends FrameLayout {
     public final ci.d a;
     public final View b;
-    public final e6 c;
+    public final f6 c;
     public final Paint d;
     public boolean e;
 
-    public a(Context context, e6 e6Var) {
+    public a(Context context, f6 f6Var) {
         super(context);
         this.d = new Paint(1);
-        this.c = e6Var;
+        this.c = f6Var;
         View view = new View(context);
         this.b = view;
         addView(view, y5.n(-1, -1));
-        ci.d dVar = new ci.d(context, e6Var, true);
+        ci.d dVar = new ci.d(context, f6Var, true);
         this.a = dVar;
         addView(dVar, y5.d(-1, 48.0f, 17, 14.0f, 0.0f, 14.0f, 0.0f));
     }

@@ -10,9 +10,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.w70;
+import org.telegram.ui.Components.v70;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class a0 implements Runnable {
     public final /* synthetic */ int a;
@@ -73,7 +73,7 @@ public final /* synthetic */ class a0 implements Runnable {
                         textView.setTextSize(1, 13.0f);
                         textView.setTextColor(-1);
                         frameLayout.addView(textView, w7.y5.d(-1, -2.0f, 23, 47.0f, 8.0f, 24.0f, 8.0f));
-                        w70 F = w70.F(e0Var.a, e0Var.b, e0Var);
+                        v70 F = v70.F(e0Var.a, e0Var.b, e0Var);
                         if (e0Var.j0.n.K) {
                             i8 i8Var = new i8(e0Var.getContext(), 0);
                             i8Var.b = 0.0f;

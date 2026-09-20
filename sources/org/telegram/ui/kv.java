@@ -7,29 +7,29 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class kv extends org.telegram.ui.Components.bb {
+public final class kv extends org.telegram.ui.Components.ab {
     public final jv X;
     public final s6 Y;
-    public final o0.a Z;
+    public final m5.e Z;
     public l6 a0;
-    public final org.telegram.ui.Components.oy0[] b0;
+    public final org.telegram.ui.Components.ny0[] b0;
     public final org.telegram.ui.Cells.a2[] c0;
     public final LinearLayout d0;
     public final w6 e0;
     public final long f0;
     public final zh.b g0;
 
-    public kv(z6 z6Var, s6 s6Var, zh.b bVar, o0.a aVar) {
-        super((org.telegram.ui.ActionBar.n2) z6Var, false, !bVar.h(), (org.telegram.ui.ActionBar.e6) null);
+    public kv(z6 z6Var, s6 s6Var, zh.b bVar, m5.e eVar) {
+        super((org.telegram.ui.ActionBar.n2) z6Var, false, !bVar.h(), (org.telegram.ui.ActionBar.f6) null);
         String string;
         int i10;
         long j3;
         long j10;
-        this.b0 = new org.telegram.ui.Components.oy0[8];
+        this.b0 = new org.telegram.ui.Components.ny0[8];
         this.c0 = new org.telegram.ui.Cells.a2[8];
-        this.Z = aVar;
+        this.Z = eVar;
         this.Y = s6Var;
         this.g0 = bVar;
         this.f0 = s6Var.a;
@@ -43,7 +43,7 @@ public final class kv extends org.telegram.ui.Components.bb {
         LinearLayout linearLayout = new LinearLayout(parentActivity);
         this.d0 = linearLayout;
         linearLayout.setOrientation(1);
-        jv jvVar = new jv(getContext(), s6Var.a, aVar);
+        jv jvVar = new jv(getContext(), s6Var.a, eVar);
         this.X = jvVar;
         linearLayout.addView(jvVar, w7.y5.t(-2, -2, 1, 0, 16, 0, 16));
         org.telegram.ui.Cells.a2 a2Var = null;
@@ -85,20 +85,20 @@ public final class kv extends org.telegram.ui.Components.bb {
                 j10 = 0;
             }
             if (j10 > j3) {
-                org.telegram.ui.Components.oy0[] oy0VarArr = this.b0;
-                org.telegram.ui.Components.oy0 oy0Var = new org.telegram.ui.Components.oy0();
+                org.telegram.ui.Components.ny0[] ny0VarArr = this.b0;
+                org.telegram.ui.Components.ny0 ny0Var = new org.telegram.ui.Components.ny0();
                 Paint paint = new Paint(1);
-                oy0Var.b = paint;
-                oy0Var.c = true;
-                oy0Var.d = false;
+                ny0Var.b = paint;
+                ny0Var.c = true;
+                ny0Var.d = false;
                 paint.setStyle(Paint.Style.STROKE);
                 paint.setStrokeWidth(AndroidUtilities.dp(5.0f));
                 paint.setStrokeCap(Paint.Cap.ROUND);
                 paint.setStrokeJoin(Paint.Join.ROUND);
-                oy0VarArr[i11] = oy0Var;
-                org.telegram.ui.Components.oy0 oy0Var2 = this.b0[i11];
-                oy0Var2.e = j10;
-                oy0Var2.a = i13;
+                ny0VarArr[i11] = ny0Var;
+                org.telegram.ui.Components.ny0 ny0Var2 = this.b0[i11];
+                ny0Var2.e = j10;
+                ny0Var2.a = i13;
                 org.telegram.ui.Cells.a2 a2Var2 = new org.telegram.ui.Cells.a2(4, 21, parentActivity, null, false);
                 a2Var2.setTag(Integer.valueOf(i11));
                 a2Var2.setBackgroundDrawable(org.telegram.ui.ActionBar.j6.K0(false));
@@ -123,13 +123,13 @@ public final class kv extends org.telegram.ui.Components.bb {
             a2Var.setNeedDivider(false);
         }
         jv jvVar2 = this.X;
-        org.telegram.ui.Components.oy0[] oy0VarArr2 = this.b0;
-        jvVar2.b = oy0VarArr2;
+        org.telegram.ui.Components.ny0[] ny0VarArr2 = this.b0;
+        jvVar2.b = ny0VarArr2;
         jvVar2.F = bVar;
         jvVar2.invalidate();
-        jvVar2.c = new float[oy0VarArr2.length];
-        jvVar2.d = new float[oy0VarArr2.length];
-        jvVar2.e = new float[oy0VarArr2.length];
+        jvVar2.c = new float[ny0VarArr2.length];
+        jvVar2.d = new float[ny0VarArr2.length];
+        jvVar2.e = new float[ny0VarArr2.length];
         jvVar2.c(false);
         if (jvVar2.y > 1) {
             jvVar2.f = 0.0f;
@@ -140,10 +140,10 @@ public final class kv extends org.telegram.ui.Components.bb {
         this.e0 = w6Var;
         w6Var.c(0, AndroidUtilities.dp(80.0f));
         w6Var.setCacheModel(bVar);
-        w6Var.setDelegate(new o0.a(this, bVar, false, 5));
-        org.telegram.ui.Components.va vaVar = this.s;
-        if (vaVar != null) {
-            vaVar.setChildLayout(w6Var);
+        w6Var.setDelegate(new m5.e(this, bVar, false, 9));
+        org.telegram.ui.Components.ua uaVar = this.s;
+        if (uaVar != null) {
+            uaVar.setChildLayout(w6Var);
         } else {
             R();
             this.d0.addView(this.a0, w7.y5.q(-1, 72, 80));
@@ -153,12 +153,12 @@ public final class kv extends org.telegram.ui.Components.bb {
         }
     }
 
-    @Override // org.telegram.ui.Components.bb
-    public final void G(org.telegram.ui.Components.bw0 bw0Var) {
+    @Override // org.telegram.ui.Components.ab
+    public final void G(org.telegram.ui.Components.aw0 aw0Var) {
         this.d.j(new h3(this, 9));
         if (this.s != null) {
             R();
-            bw0Var.addView(this.a0, w7.y5.e(-1, 72, 80));
+            aw0Var.addView(this.a0, w7.y5.e(-1, 72, 80));
         }
     }
 
@@ -172,12 +172,12 @@ public final class kv extends org.telegram.ui.Components.bb {
         }
     }
 
-    @Override // org.telegram.ui.Components.bb
-    public final org.telegram.ui.Components.vl0 v(org.telegram.ui.Components.wl0 wl0Var) {
+    @Override // org.telegram.ui.Components.ab
+    public final org.telegram.ui.Components.ul0 v(org.telegram.ui.Components.vl0 vl0Var) {
         return new iv(this);
     }
 
-    @Override // org.telegram.ui.Components.bb
+    @Override // org.telegram.ui.Components.ab
     public final CharSequence y() {
         return this.n.getMessagesController().getFullName(this.f0);
     }

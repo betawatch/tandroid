@@ -11,10 +11,10 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.w70;
+import org.telegram.ui.Components.v70;
 import org.telegram.ui.w11;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final /* synthetic */ class t2 implements Runnable {
     public final /* synthetic */ int a;
@@ -69,11 +69,11 @@ public final /* synthetic */ class t2 implements Runnable {
                 ((TopicsController) obj3).lambda$loadTopic$27(this.b, (ArrayList) obj2, this.c, (Runnable) obj);
                 break;
             case 7:
-                ((w70) obj3).u();
+                ((v70) obj3).u();
                 Bundle bundle = new Bundle();
                 bundle.putLong("dialog_id", this.b);
                 bundle.putLong("topic_id", this.c);
-                ((org.telegram.ui.ActionBar.n2) obj2).presentFragment(new w11(bundle, (org.telegram.ui.ActionBar.e6) obj));
+                ((org.telegram.ui.ActionBar.n2) obj2).presentFragment(new w11(bundle, (org.telegram.ui.ActionBar.f6) obj));
                 break;
             default:
                 tg.a0 a0Var = (tg.a0) obj3;

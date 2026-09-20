@@ -17,7 +17,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class f21 extends FrameLayout {
     public final TextView a;
@@ -37,7 +37,7 @@ public final class f21 extends FrameLayout {
         this.s = proxyListActivity;
         TextView textView = new TextView(context);
         this.a = textView;
-        org.telegram.messenger.wh.s(textView, org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.G6, false), 1, 16.0f, 1);
+        org.telegram.messenger.rk.t(textView, org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.G6, false), 1, 16.0f, 1);
         textView.setMaxLines(1);
         textView.setSingleLine(true);
         TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
@@ -132,7 +132,7 @@ public final class f21 extends FrameLayout {
                     i10 = org.telegram.ui.ActionBar.j6.s6;
                     if (proxyInfo2.ping != 0) {
                         StringBuilder sb2 = new StringBuilder();
-                        org.telegram.ui.Cells.c1.l(R.string.Connected, ", ", sb2);
+                        org.telegram.ui.Cells.c1.o(R.string.Connected, ", ", sb2);
                         sb2.append(LocaleController.formatString("Ping", R.string.Ping, Long.valueOf(this.d.ping)));
                         textView.setText(sb2.toString());
                     } else {
@@ -163,7 +163,7 @@ public final class f21 extends FrameLayout {
         } else if (proxyInfo2.available) {
             if (proxyInfo2.ping != 0) {
                 StringBuilder sb3 = new StringBuilder();
-                org.telegram.ui.Cells.c1.l(R.string.Available, ", ", sb3);
+                org.telegram.ui.Cells.c1.o(R.string.Available, ", ", sb3);
                 sb3.append(LocaleController.formatString("Ping", R.string.Ping, Long.valueOf(this.d.ping)));
                 textView.setText(sb3.toString());
             } else {
@@ -195,7 +195,7 @@ public final class f21 extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), org.telegram.messenger.wh.C(64.0f, 1, TLObject.FLAG_30));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), org.telegram.messenger.rk.C(64.0f, 1, TLObject.FLAG_30));
     }
 
     public void setChecked(boolean z10) {

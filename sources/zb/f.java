@@ -1,8 +1,9 @@
 package zb;
 
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.os.SystemClock;
-import com.google.android.gms.internal.cast.p;
+import com.google.android.gms.common.api.i;
 import com.google.firebase.messaging.n;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -10,69 +11,75 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicLong;
 import n6.j;
 import n6.l;
-import n7.z0;
+import n6.p;
 import org.telegram.tgnet.ConnectionsManager;
-import v7.r1;
-import w7.k8;
+import org.telegram.ui.Cells.f3;
+import v7.s1;
+import w7.l8;
 import x7.d7;
-import x7.da;
 import x7.e7;
-import x7.f8;
-import x7.fa;
-import x7.g7;
+import x7.ea;
+import x7.f7;
 import x7.g8;
+import x7.ga;
+import x7.h7;
 import x7.h8;
+import x7.i8;
 import x7.m;
-import x7.m7;
 import x7.n7;
 import x7.o;
 import x7.o7;
+import x7.p7;
 import x7.r0;
 import x7.s;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class f extends qb.e {
     public boolean d = true;
-    public final h8 e;
+    public final i8 e;
     public final b f;
-    public final fa g;
-    public final o0.a h;
+    public final ga g;
+    public final d7 h;
 
-    public f(yb.a aVar, b bVar, fa faVar) {
+    public f(yb.a aVar, b bVar, ga gaVar) {
         l.i(aVar, "ImageLabelerOptions can not be null");
         this.f = bVar;
-        this.g = faVar;
+        this.g = gaVar;
         ka.c cVar = new ka.c(29, false);
         cVar.b = Float.valueOf(aVar.a);
-        this.e = new h8(cVar);
-        this.h = new o0.a(qb.g.c().b());
+        this.e = new i8(cVar);
+        Context b10 = qb.g.c().b();
+        d7 d7Var = new d7();
+        d7Var.b = new AtomicLong(-1L);
+        d7Var.a = new p6.b(b10, p6.b.k, new p("mlkit:vision"), i.c);
+        this.h = d7Var;
     }
 
     @Override // qb.i
     public final synchronized void b() {
         this.f.zzb();
-        fa faVar = this.g;
+        ga gaVar = this.g;
         n nVar = new n();
-        nVar.c = m7.b;
-        z0 z0Var = new z0(26);
-        z0Var.b = this.e;
+        nVar.c = n7.b;
+        f3 f3Var = new f3(23);
+        f3Var.b = this.e;
         m mVar = o.b;
-        Object[] objArr = {n7.b};
-        k8.a(1, objArr);
-        z0Var.c = new s(1, objArr);
-        nVar.d = new g8(z0Var);
-        qb.m.a.execute(new p(faVar, new a5.a(nVar, 0), o7.e, faVar.b(), 7));
+        Object[] objArr = {o7.b};
+        l8.a(1, objArr);
+        f3Var.c = new s(1, objArr);
+        nVar.d = new h8(f3Var);
+        qb.m.a.execute(new com.google.android.gms.internal.cast.p(gaVar, new a5.a(nVar, 0), p7.e, gaVar.b(), 7));
     }
 
     @Override // qb.i
     public final synchronized void c() {
         this.f.zzc();
         this.d = true;
-        fa faVar = this.g;
+        ga gaVar = this.g;
         n nVar = new n();
-        nVar.c = m7.b;
-        qb.m.a.execute(new p(faVar, new a5.a(nVar, 0), o7.d, faVar.b(), 7));
+        nVar.c = n7.b;
+        qb.m.a.execute(new com.google.android.gms.internal.cast.p(gaVar, new a5.a(nVar, 0), p7.d, gaVar.b(), 7));
     }
 
     @Override // qb.e
@@ -82,37 +89,36 @@ public final class f extends qb.e {
             long elapsedRealtime = SystemClock.elapsedRealtime();
             try {
                 a2 = this.f.a(aVar);
-                f(n7.b, aVar, elapsedRealtime);
+                f(o7.b, aVar, elapsedRealtime);
                 this.d = false;
             } catch (mb.a e) {
-                f(e.a == 14 ? n7.c : n7.d, aVar, elapsedRealtime);
+                f(e.a == 14 ? o7.c : o7.d, aVar, elapsedRealtime);
                 throw e;
             }
         }
         return a2;
     }
 
-    public final void f(n7 n7Var, vb.a aVar, long j3) {
+    public final void f(o7 o7Var, vb.a aVar, long j3) {
         int i10;
         long elapsedRealtime = SystemClock.elapsedRealtime() - j3;
-        fa faVar = this.g;
-        o7 o7Var = o7.b;
-        faVar.getClass();
+        ga gaVar = this.g;
+        p7 p7Var = p7.b;
+        gaVar.getClass();
         long elapsedRealtime2 = SystemClock.elapsedRealtime();
-        byte b10 = 0;
-        if (faVar.c(o7Var, elapsedRealtime2)) {
-            faVar.i.put(o7Var, Long.valueOf(elapsedRealtime2));
+        if (gaVar.c(p7Var, elapsedRealtime2)) {
+            gaVar.i.put(p7Var, Long.valueOf(elapsedRealtime2));
             n nVar = new n();
-            nVar.c = m7.b;
-            r1 r1Var = new r1(9, false);
+            nVar.c = n7.b;
+            s1 s1Var = new s1(9, false);
             cf.c cVar = new cf.c();
             cVar.a = Long.valueOf(Long.MAX_VALUE & elapsedRealtime);
-            cVar.b = n7Var;
+            cVar.b = o7Var;
             cVar.c = Boolean.valueOf(this.d);
             Boolean bool = Boolean.TRUE;
             cVar.d = bool;
             cVar.e = bool;
-            r1Var.b = new g7(cVar);
+            s1Var.b = new h7(cVar);
             int i11 = aVar.e;
             if (i11 == -1) {
                 Bitmap bitmap = aVar.a;
@@ -129,30 +135,30 @@ public final class f extends qb.e {
                 }
                 i10 = 0;
             }
-            o0.a aVar2 = new o0.a(25, b10);
-            aVar2.b = i11 != -1 ? i11 != 35 ? i11 != 842094169 ? i11 != 16 ? i11 != 17 ? d7.b : d7.d : d7.c : d7.e : d7.f : d7.h;
-            aVar2.c = Integer.valueOf(i10 & ConnectionsManager.DEFAULT_DATACENTER_ID);
-            r1Var.c = new e7(aVar2);
-            r1Var.d = this.e;
-            nVar.e = new f8(r1Var);
-            qb.m.a.execute(new p(faVar, new a5.a(nVar, 0), o7Var, faVar.b(), 7));
+            d7 d7Var = new d7();
+            d7Var.a = i11 != -1 ? i11 != 35 ? i11 != 842094169 ? i11 != 16 ? i11 != 17 ? e7.b : e7.d : e7.c : e7.e : e7.f : e7.h;
+            d7Var.b = Integer.valueOf(i10 & ConnectionsManager.DEFAULT_DATACENTER_ID);
+            s1Var.c = new f7(d7Var);
+            s1Var.d = this.e;
+            nVar.e = new g8(s1Var);
+            qb.m.a.execute(new com.google.android.gms.internal.cast.p(gaVar, new a5.a(nVar, 0), p7Var, gaVar.b(), 7));
         }
         int i12 = 8;
-        r1 r1Var2 = new r1(8, false);
-        r1Var2.c = this.e;
-        r1Var2.b = n7Var;
-        r1Var2.d = Boolean.valueOf(this.d);
-        qb.m.a.execute(new da(this.g, new r0(r1Var2), elapsedRealtime));
+        s1 s1Var2 = new s1(8, false);
+        s1Var2.c = this.e;
+        s1Var2.b = o7Var;
+        s1Var2.d = Boolean.valueOf(this.d);
+        qb.m.a.execute(new ea(this.g, new r0(s1Var2), elapsedRealtime));
         long currentTimeMillis = System.currentTimeMillis();
-        o0.a aVar3 = this.h;
-        int i13 = n7Var.a;
+        d7 d7Var2 = this.h;
+        int i13 = o7Var.a;
         long j10 = currentTimeMillis - elapsedRealtime;
-        synchronized (aVar3) {
+        synchronized (d7Var2) {
             long elapsedRealtime3 = SystemClock.elapsedRealtime();
-            if (((AtomicLong) aVar3.c).get() != -1 && elapsedRealtime3 - ((AtomicLong) aVar3.c).get() <= TimeUnit.MINUTES.toMillis(30L)) {
+            if (((AtomicLong) d7Var2.b).get() != -1 && elapsedRealtime3 - ((AtomicLong) d7Var2.b).get() <= TimeUnit.MINUTES.toMillis(30L)) {
                 return;
             }
-            ((p6.b) aVar3.b).f(new n6.o(0, Arrays.asList(new j(24305, i13, 0, j10, currentTimeMillis, null, null, 0, -1)))).addOnFailureListener(new e6.n(aVar3, elapsedRealtime3, i12));
+            ((p6.b) d7Var2.a).f(new n6.o(0, Arrays.asList(new j(24305, i13, 0, j10, currentTimeMillis, null, null, 0, -1)))).addOnFailureListener(new e6.n(d7Var2, elapsedRealtime3, i12));
         }
     }
 }

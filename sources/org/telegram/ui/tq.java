@@ -5,9 +5,9 @@ import org.telegram.messenger.MediaController;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class tq implements org.telegram.ui.ActionBar.a2, org.telegram.ui.Components.d5 {
+public final /* synthetic */ class tq implements org.telegram.ui.ActionBar.a2, org.telegram.ui.Components.c5 {
     public final /* synthetic */ String a;
     public final /* synthetic */ boolean b;
     public final /* synthetic */ Object c;
@@ -26,13 +26,13 @@ public final /* synthetic */ class tq implements org.telegram.ui.ActionBar.a2, o
         this.b = z10;
     }
 
-    @Override // org.telegram.ui.Components.d5
+    @Override // org.telegram.ui.Components.c5
     public void J(int i10, int i11, boolean z10) {
         ((org.telegram.ui.Components.gg) this.c).B((View) this.d, this.e, this.a, this.f, z10, i10, i11, (MediaController.PhotoEntry) this.h, this.b);
     }
 
     @Override // org.telegram.ui.ActionBar.a2
-    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+    public void k(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
         sr srVar = (sr) this.c;
         TLRPC.User user = (TLRPC.User) this.d;
         TLObject tLObject = (TLObject) this.e;

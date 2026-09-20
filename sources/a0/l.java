@@ -1,8 +1,8 @@
 package a0;
 
-import w7.u7;
+import w7.v7;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class l {
     public int[] a;
@@ -16,7 +16,7 @@ public final class l {
             if (i10 == i11) {
                 int[] iArr = this.a;
                 int[] iArr2 = lVar.a;
-                ud.e a2 = u7.a(0, i11);
+                ud.e a2 = v7.a(0, i11);
                 int i12 = a2.a;
                 int i13 = a2.b;
                 if (i12 > i13) {

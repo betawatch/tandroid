@@ -12,7 +12,7 @@ import java.util.Arrays;
 import java.util.Iterator;
 import org.telegram.ui.Components.r50;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class h implements d, t5.c, c {
     public static final i5.c f = new i5.c("proto");
@@ -125,9 +125,9 @@ public final class h implements d, t5.c, c {
             try {
                 a2.beginTransaction();
                 try {
-                    Object h = bVar.h();
+                    Object i10 = bVar.i();
                     a2.setTransactionSuccessful();
-                    return h;
+                    return i10;
                 } finally {
                     a2.endTransaction();
                 }

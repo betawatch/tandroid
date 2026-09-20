@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public abstract class w81 extends FrameLayout {
     public static final /* synthetic */ int s0 = 0;
@@ -55,8 +55,8 @@ public abstract class w81 extends FrameLayout {
     public int g0;
     public final ArrayList h;
     public int h0;
-    public final org.telegram.ui.Cells.t6 i0;
-    public final org.telegram.ui.ActionBar.e6 j0;
+    public final org.telegram.ui.Cells.u6 i0;
+    public final org.telegram.ui.ActionBar.f6 j0;
     public ValueAnimator k0;
     public Utilities.Callback2Return l0;
     public boolean m0;
@@ -73,7 +73,7 @@ public abstract class w81 extends FrameLayout {
     public final mg.g x;
     public v81 y;
 
-    public w81(int i10, Context context, org.telegram.ui.ActionBar.e6 e6Var, boolean z10) {
+    public w81(int i10, Context context, org.telegram.ui.ActionBar.f6 f6Var, boolean z10) {
         super(context);
         this.a = 1.0f;
         TextPaint textPaint = new TextPaint(1);
@@ -99,9 +99,9 @@ public abstract class w81 extends FrameLayout {
         this.c0 = new SparseIntArray(5);
         this.d0 = new SparseIntArray(5);
         this.e0 = new SparseIntArray(5);
-        this.i0 = new org.telegram.ui.Cells.t6(this, 27);
+        this.i0 = new org.telegram.ui.Cells.u6(this, 27);
         this.q0 = new Paint(1);
-        this.j0 = e6Var;
+        this.j0 = f6Var;
         this.E = i10;
         textPaint2.setTextSize(AndroidUtilities.dp(13.0f));
         textPaint2.setTypeface(AndroidUtilities.bold());
@@ -113,7 +113,7 @@ public abstract class w81 extends FrameLayout {
         textPaint3.setStrokeWidth(AndroidUtilities.dp(1.5f));
         GradientDrawable gradientDrawable = new GradientDrawable(GradientDrawable.Orientation.LEFT_RIGHT, null);
         this.O = gradientDrawable;
-        gradientDrawable.setColor(org.telegram.ui.ActionBar.j6.v0(this.P, e6Var));
+        gradientDrawable.setColor(org.telegram.ui.ActionBar.j6.v0(this.P, f6Var));
         int i12 = 7;
         if (i10 == -2) {
             float dpf2 = AndroidUtilities.dpf2(13.0f);
@@ -142,7 +142,7 @@ public abstract class w81 extends FrameLayout {
                 w0Var.setSelectorRadius(6);
             }
         }
-        w0Var.setSelectorDrawableColor(org.telegram.ui.ActionBar.j6.v0(this.S, e6Var));
+        w0Var.setSelectorDrawableColor(org.telegram.ui.ActionBar.j6.v0(this.S, f6Var));
         gg.j0 j0Var = new gg.j0((ViewGroup) this, i12);
         this.w = j0Var;
         w0Var.setLayoutManager(j0Var);
@@ -155,7 +155,7 @@ public abstract class w81 extends FrameLayout {
         w0Var.setAdapter(gVar);
         w0Var.setOnItemClickListener(new p81(this));
         w0Var.setOnItemLongClickListener(new p81(this));
-        w0Var.setOnScrollListener(new tb0(this, i11));
+        w0Var.setOnScrollListener(new sb0(this, i11));
         if (i10 == 9 || i10 == 10) {
             addView(w0Var, w7.y5.e(-2, -1, 1));
         } else {
@@ -178,7 +178,7 @@ public abstract class w81 extends FrameLayout {
         t81 t81Var = new t81();
         t81Var.a = i10;
         t81Var.b = charSequence;
-        this.H = org.telegram.messenger.q.D(this.r * 2, t81Var.a(this.c), this.H);
+        this.H = org.telegram.messenger.l0.C(this.r * 2, t81Var.a(this.c), this.H);
         arrayList.add(t81Var);
     }
 
@@ -212,7 +212,7 @@ public abstract class w81 extends FrameLayout {
         this.N = i10;
         ai.w0 w0Var = this.v;
         if (w0Var.getVisibility() == 8 || w0Var.getMeasuredWidth() == 0) {
-            AndroidUtilities.runOnUIThread(new x2(this, i10, 14), 100L);
+            AndroidUtilities.runOnUIThread(new kd(this, i10, 12), 100L);
         } else {
             w0Var.y0(i10);
         }
@@ -264,7 +264,7 @@ public abstract class w81 extends FrameLayout {
         c(this.F);
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
         this.k0 = ofFloat;
-        ofFloat.addUpdateListener(new u61(2, this));
+        ofFloat.addUpdateListener(new t61(2, this));
         this.k0.setDuration(250L);
         this.k0.setInterpolator(qr.f);
         this.k0.addListener(new r81(this, i13));
@@ -482,7 +482,7 @@ public abstract class w81 extends FrameLayout {
         return this.O;
     }
 
-    public wl0 getTabsContainer() {
+    public vl0 getTabsContainer() {
         return this.v;
     }
 
@@ -499,7 +499,7 @@ public abstract class w81 extends FrameLayout {
                 setEnabled(true);
                 v81 v81Var = this.y;
                 if (v81Var != null) {
-                    ((l.d) v81Var).L(1.0f);
+                    ((l.d) v81Var).M(1.0f);
                 }
             }
         }
@@ -553,7 +553,7 @@ public abstract class w81 extends FrameLayout {
         invalidate();
         v81 v81Var = this.y;
         if (v81Var != null) {
-            ((l.d) v81Var).L(f7);
+            ((l.d) v81Var).M(f7);
         }
     }
 

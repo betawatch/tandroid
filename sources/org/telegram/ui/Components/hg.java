@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class hg extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -37,7 +37,7 @@ public final class hg extends AnimatorListenerAdapter {
                 break;
             default:
                 ChatActivityEnterView chatActivityEnterView2 = this.c;
-                bw0 bw0Var = chatActivityEnterView2.l1;
+                aw0 aw0Var = chatActivityEnterView2.l1;
                 chatActivityEnterView2.z3 = false;
                 chatActivityEnterView2.A3 = null;
                 dg dgVar = chatActivityEnterView2.U0;
@@ -47,10 +47,10 @@ public final class hg extends AnimatorListenerAdapter {
                     }
                     chatActivityEnterView2.U0.setLayerType(0, null);
                 }
-                if (bw0Var != null) {
-                    bw0Var.requestLayout();
-                    bw0Var.setForeground(null);
-                    bw0Var.setWillNotDraw(false);
+                if (aw0Var != null) {
+                    aw0Var.requestLayout();
+                    aw0Var.setForeground(null);
+                    aw0Var.setWillNotDraw(false);
                 }
                 if (chatActivityEnterView2.y2 && chatActivityEnterView2.t0()) {
                     chatActivityEnterView2.s1(0, chatActivityEnterView2.e2, true, true);

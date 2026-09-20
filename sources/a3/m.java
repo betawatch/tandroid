@@ -6,7 +6,7 @@ import android.os.SystemClock;
 import android.view.Surface;
 import b2.x1;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class m implements Handler.Callback {
     public final Handler a;
@@ -35,7 +35,7 @@ public final class m implements Handler.Callback {
             x1 x1Var = nVar.C1;
             if (!x1Var.equals(x1.d) && !x1Var.equals(nVar.D1)) {
                 nVar.D1 = x1Var;
-                bVar.W(x1Var);
+                bVar.Z(x1Var);
             }
             nVar.O0.e++;
             a0 a0Var = nVar.c1;
@@ -44,7 +44,7 @@ public final class m implements Handler.Callback {
             a0Var.l.getClass();
             a0Var.g = e2.d0.Q(SystemClock.elapsedRealtime());
             if (z10 && (surface = nVar.n1) != null) {
-                bVar.S(surface);
+                bVar.V(surface);
                 nVar.q1 = true;
             }
             nVar.d0(j3);

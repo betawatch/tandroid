@@ -10,7 +10,7 @@ import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g3 implements q0.a {
     public final /* synthetic */ int a;
@@ -37,7 +37,7 @@ public final /* synthetic */ class g3 implements q0.a {
                 }
                 break;
             case 1:
-                ((org.telegram.ui.Components.ak0) this.b).h((List) obj);
+                ((org.telegram.ui.Components.zj0) this.b).h((List) obj);
                 break;
             case 2:
                 TLRPC.User user = (TLRPC.User) obj;
@@ -75,12 +75,12 @@ public final /* synthetic */ class g3 implements q0.a {
             case 3:
                 s3 s3Var = (s3) this.b;
                 int i10 = ((c5.h) obj).a;
-                AndroidUtilities.runOnUIThread(new y80(25, s3Var, i10 == 0 ? null : BillingController.getResponseCodeString(i10)));
+                AndroidUtilities.runOnUIThread(new r80(27, s3Var, i10 == 0 ? null : BillingController.getResponseCodeString(i10)));
                 break;
             case 4:
-                ri0 ri0Var = (ri0) this.b;
+                si0 si0Var = (si0) this.b;
                 if (((c5.h) obj).a == 0) {
-                    AndroidUtilities.runOnUIThread(ri0Var);
+                    AndroidUtilities.runOnUIThread(si0Var);
                     break;
                 }
                 break;

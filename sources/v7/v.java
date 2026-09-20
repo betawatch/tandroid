@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public abstract class v {
     /* JADX WARN: Removed duplicated region for block: B:19:0x007f  */
@@ -23,11 +23,11 @@ public abstract class v {
     */
     public static androidx.emoji2.text.q a(Context context) {
         ProviderInfo providerInfo;
-        o0.e eVar;
+        o0.d dVar;
         ApplicationInfo applicationInfo;
         qb.b cVar = Build.VERSION.SDK_INT >= 28 ? new androidx.emoji2.text.c(2) : new qb.b(2);
         PackageManager packageManager = context.getPackageManager();
-        w7.o6.a(packageManager, "Package manager required to locate emoji font provider");
+        w7.p6.a(packageManager, "Package manager required to locate emoji font provider");
         Iterator<ResolveInfo> it = packageManager.queryIntentContentProviders(new Intent("androidx.content.action.LOAD_EMOJI_FONT"), 0).iterator();
         while (true) {
             if (!it.hasNext()) {
@@ -48,17 +48,17 @@ public abstract class v {
                 for (Signature signature : N3) {
                     arrayList.add(signature.toByteArray());
                 }
-                eVar = new o0.e(str, str2, "emojicompat-emoji-font", Collections.singletonList(arrayList));
+                dVar = new o0.d(str, str2, "emojicompat-emoji-font", Collections.singletonList(arrayList));
             } catch (PackageManager.NameNotFoundException e) {
                 Log.wtf("emoji2.text.DefaultEmojiConfig", e);
             }
-            if (eVar != null) {
+            if (dVar != null) {
                 return null;
             }
-            return new androidx.emoji2.text.q(new androidx.emoji2.text.p(context, eVar));
+            return new androidx.emoji2.text.q(new androidx.emoji2.text.p(context, dVar));
         }
-        eVar = null;
-        if (eVar != null) {
+        dVar = null;
+        if (dVar != null) {
         }
     }
 }

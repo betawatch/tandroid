@@ -11,9 +11,9 @@ import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.SystemClock;
-import v7.r8;
+import v7.s8;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public abstract class f extends Drawable implements Drawable.Callback {
     public static final /* synthetic */ int x = 0;
@@ -153,7 +153,7 @@ public abstract class f extends Drawable implements Drawable.Callback {
             drawable.setLevel(getLevel());
             drawable.setBounds(getBounds());
             if (Build.VERSION.SDK_INT >= 23) {
-                r8.b(r8.a(this), drawable);
+                s8.b(s8.a(this), drawable);
             }
             drawable.setAutoMirrored(this.a.A);
             Rect rect = this.b;
@@ -461,7 +461,7 @@ public abstract class f extends Drawable implements Drawable.Callback {
             Drawable drawable = this.c;
             z10 = drawable != null ? drawable.getPadding(rect) : super.getPadding(rect);
         }
-        if (this.a.A && r8.a(this) == 1) {
+        if (this.a.A && s8.a(this) == 1) {
             int i16 = rect.left;
             rect.left = rect.right;
             rect.right = i16;
@@ -555,7 +555,7 @@ public abstract class f extends Drawable implements Drawable.Callback {
         for (int i13 = 0; i13 < i12; i13++) {
             Drawable drawable = drawableArr[i13];
             if (drawable != null) {
-                boolean b10 = Build.VERSION.SDK_INT >= 23 ? r8.b(i10, drawable) : false;
+                boolean b10 = Build.VERSION.SDK_INT >= 23 ? s8.b(i10, drawable) : false;
                 if (i13 == i11) {
                     z10 = b10;
                 }

@@ -24,7 +24,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class rk implements org.telegram.ui.ActionBar.r0, gg.b, IMapsProvider.ITouchInterceptor, IMapsProvider.OnCameraMoveStartedListener, IMapsProvider.OnMarkerClickListener, org.telegram.ui.ActionBar.a2 {
     public final /* synthetic */ int a;
@@ -81,7 +81,7 @@ public final /* synthetic */ class rk implements org.telegram.ui.ActionBar.r0, g
     }
 
     @Override // org.telegram.ui.ActionBar.a2
-    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+    public void k(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
         gl.T(this.b);
     }
 
@@ -157,7 +157,7 @@ public final /* synthetic */ class rk implements org.telegram.ui.ActionBar.r0, g
             fl flVar = (fl) iMarker.getTag();
             gl glVar2 = dlVar.b;
             fl flVar2 = glVar2.h0;
-            org.telegram.ui.ActionBar.e6 e6Var = glVar2.a;
+            org.telegram.ui.ActionBar.f6 f6Var = glVar2.a;
             if (flVar2 != flVar) {
                 glVar2.d0(false);
                 IMapsProvider.IMarker iMarker2 = glVar2.g0;
@@ -177,7 +177,7 @@ public final /* synthetic */ class rk implements org.telegram.ui.ActionBar.r0, g
                 FrameLayout frameLayout2 = new FrameLayout(context);
                 glVar2.i0 = frameLayout2;
                 frameLayout2.setBackgroundResource(R.drawable.venue_tooltip);
-                glVar2.i0.getBackground().setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.h5, e6Var), PorterDuff.Mode.MULTIPLY));
+                glVar2.i0.getBackground().setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.h5, f6Var), PorterDuff.Mode.MULTIPLY));
                 frameLayout.addView(glVar2.i0, w7.y5.c(71.0f, -2));
                 glVar2.i0.setAlpha(0.0f);
                 glVar2.i0.setOnClickListener(new org.telegram.ui.sf(22, dlVar, flVar));
@@ -187,25 +187,25 @@ public final /* synthetic */ class rk implements org.telegram.ui.ActionBar.r0, g
                 TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
                 textView.setEllipsize(truncateAt);
                 textView.setSingleLine(true);
-                textView.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.G6, e6Var));
+                textView.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.G6, f6Var));
                 textView.setTypeface(AndroidUtilities.bold());
                 textView.setGravity(LocaleController.isRTL ? 5 : 3);
-                TextView g10 = org.telegram.ui.Cells.c1.g(glVar2.i0, textView, w7.y5.d(-2, -2.0f, (LocaleController.isRTL ? 5 : 3) | 48, 18.0f, 10.0f, 18.0f, 0.0f), context);
-                g10.setTextSize(1, 14.0f);
-                g10.setMaxLines(1);
-                g10.setEllipsize(truncateAt);
-                g10.setSingleLine(true);
-                g10.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.A6, e6Var));
-                g10.setGravity(LocaleController.isRTL ? 5 : 3);
-                glVar2.i0.addView(g10, w7.y5.d(-2, -2.0f, (LocaleController.isRTL ? 5 : 3) | 48, 18.0f, 32.0f, 18.0f, 0.0f));
+                TextView h = org.telegram.ui.Cells.c1.h(glVar2.i0, textView, w7.y5.d(-2, -2.0f, (LocaleController.isRTL ? 5 : 3) | 48, 18.0f, 10.0f, 18.0f, 0.0f), context);
+                h.setTextSize(1, 14.0f);
+                h.setMaxLines(1);
+                h.setEllipsize(truncateAt);
+                h.setSingleLine(true);
+                h.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.A6, f6Var));
+                h.setGravity(LocaleController.isRTL ? 5 : 3);
+                glVar2.i0.addView(h, w7.y5.d(-2, -2.0f, (LocaleController.isRTL ? 5 : 3) | 48, 18.0f, 32.0f, 18.0f, 0.0f));
                 textView.setText(flVar.c.title);
-                g10.setText(LocaleController.getString(R.string.TapToSendLocation));
+                h.setText(LocaleController.getString(R.string.TapToSendLocation));
                 FrameLayout frameLayout3 = new FrameLayout(context);
-                frameLayout3.setBackground(org.telegram.ui.ActionBar.j6.K(AndroidUtilities.dp(36.0f), org.telegram.ui.Cells.u4.a(flVar.a)));
+                frameLayout3.setBackground(org.telegram.ui.ActionBar.j6.K(AndroidUtilities.dp(36.0f), org.telegram.ui.Cells.v4.a(flVar.a)));
                 frameLayout.addView(frameLayout3, w7.y5.d(36, 36.0f, 81, 0.0f, 0.0f, 0.0f, 4.0f));
-                w9 w9Var = new w9(context);
-                w9Var.f(a4.a.s(new StringBuilder("https://ss3.4sqi.net/img/categories_v2/"), flVar.c.venue_type, "_64.png"), null, null);
-                frameLayout3.addView(w9Var, w7.y5.e(30, 30, 17));
+                v9 v9Var = new v9(context);
+                v9Var.f(a4.a.s(new StringBuilder("https://ss3.4sqi.net/img/categories_v2/"), flVar.c.venue_type, "_64.png"), null, null);
+                frameLayout3.addView(v9Var, w7.y5.e(30, 30, 17));
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
                 ofFloat.addUpdateListener(new cl(dlVar, frameLayout3));
                 ofFloat.setDuration(360L);

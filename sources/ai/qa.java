@@ -3,7 +3,7 @@ package ai;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class qa implements o1.g {
     public final /* synthetic */ int a;
@@ -26,9 +26,9 @@ public final /* synthetic */ class qa implements o1.g {
                 ci.r6 r6Var = (ci.r6) this.b;
                 float f11 = f7 / 1000.0f;
                 r6Var.t1 = f11;
-                qg.t1 t1Var = r6Var.m1;
-                t1Var.setAlpha(f11);
-                t1Var.invalidate();
+                qg.u1 u1Var = r6Var.m1;
+                u1Var.setAlpha(f11);
+                u1Var.invalidate();
                 r6Var.U0.invalidate();
                 r6Var.l1.getTypefaceCell().setAlpha(1.0f - r6Var.t1);
                 break;
@@ -44,14 +44,14 @@ public final /* synthetic */ class qa implements o1.g {
                 iVar.invalidate();
                 break;
             default:
-                qg.m0 m0Var = (qg.m0) this.b;
+                qg.n0 n0Var = (qg.n0) this.b;
                 float f13 = f7 / 1000.0f;
-                m0Var.D1 = f13;
-                qg.t1 t1Var2 = m0Var.v1;
-                t1Var2.setAlpha(f13);
-                t1Var2.invalidate();
-                m0Var.d1.invalidate();
-                m0Var.u1.getTypefaceCell().setAlpha(1.0f - m0Var.D1);
+                n0Var.D1 = f13;
+                qg.u1 u1Var2 = n0Var.v1;
+                u1Var2.setAlpha(f13);
+                u1Var2.invalidate();
+                n0Var.d1.invalidate();
+                n0Var.u1.getTypefaceCell().setAlpha(1.0f - n0Var.D1);
                 break;
         }
     }

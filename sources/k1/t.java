@@ -1,9 +1,9 @@
 package k1;
 
 import org.telegram.tgnet.TLObject;
-import v7.t7;
+import v7.u7;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class t {
     public final /* synthetic */ ie.a a;
@@ -52,7 +52,7 @@ public final class t {
                     jd.a aVar3 = jd.a.a;
                     i10 = sVar.n;
                     if (i10 != 0) {
-                        t7.b(obj2);
+                        u7.b(obj2);
                         sVar.a = eVar;
                         ie.a aVar4 = this.a;
                         sVar.b = aVar4;
@@ -80,7 +80,7 @@ public final class t {
                             pVar3 = (kotlin.jvm.internal.p) sVar.b;
                             aVar = (ie.a) sVar.a;
                             try {
-                                t7.b(obj2);
+                                u7.b(obj2);
                                 pVar3.a = obj;
                                 pVar = pVar3;
                                 Object obj3 = pVar.a;
@@ -96,7 +96,7 @@ public final class t {
                         pVar = (kotlin.jvm.internal.p) sVar.b;
                         aVar2 = (ie.a) sVar.a;
                         try {
-                            t7.b(obj2);
+                            u7.b(obj2);
                             if (!kotlin.jvm.internal.i.a(obj2, pVar.a)) {
                                 aVar = aVar2;
                                 Object obj32 = pVar.a;
@@ -130,7 +130,7 @@ public final class t {
                     nVar = (kotlin.jvm.internal.n) sVar.c;
                     ?? r72 = (ie.a) sVar.b;
                     rd.p pVar5 = (rd.p) sVar.a;
-                    t7.b(obj2);
+                    u7.b(obj2);
                     a0Var = a0Var3;
                     pVar2 = pVar5;
                     dVar = r72;

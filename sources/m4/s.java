@@ -1,9 +1,9 @@
 package m4;
 
 import java.util.List;
-import v7.z7;
+import v7.a8;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class s {
     public final e9.i0 a;
@@ -28,6 +28,6 @@ public final class s {
     }
 
     public final int hashCode() {
-        return z7.b(this.c) + (((this.a.hashCode() * 31) + this.b) * 31);
+        return a8.b(this.c) + (((this.a.hashCode() * 31) + this.b) * 31);
     }
 }

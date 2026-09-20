@@ -15,7 +15,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g10 implements Runnable {
     public final /* synthetic */ int a;
@@ -141,7 +141,7 @@ public final /* synthetic */ class g10 implements Runnable {
                 l70Var.R.M(0);
                 break;
             case 9:
-                org.telegram.messenger.q.q(R.string.GroupsEmojiPackUpdated, org.telegram.ui.Components.xc.a0(((o70) obj).c), R.raw.done, 36);
+                org.telegram.messenger.l0.o(R.string.GroupsEmojiPackUpdated, org.telegram.ui.Components.xc.a0(((o70) obj).c), R.raw.done, 36);
                 break;
             case 10:
                 d80 d80Var = (d80) obj;
@@ -179,7 +179,7 @@ public final /* synthetic */ class g10 implements Runnable {
                 break;
             case 12:
                 d80 d80Var3 = ((a80) obj).b;
-                d80Var3.presentFragment(new xg0(), true);
+                d80Var3.presentFragment(new yg0(), true);
                 d80Var3.M = true;
                 break;
             case 13:
@@ -194,14 +194,14 @@ public final /* synthetic */ class g10 implements Runnable {
                 ((nf.e) obj).b();
                 break;
             case 15:
-                ((ya0) obj).a.C0.setVisibility(8);
+                ((za0) obj).a.C0.setVisibility(8);
                 break;
             case 16:
-                ((ec0) obj).g0();
+                ((fc0) obj).g0();
                 break;
             case 17:
                 try {
-                    org.telegram.ui.Components.wl0 currentListView = ((hd0) obj).y0.K0.getCurrentListView();
+                    org.telegram.ui.Components.vl0 currentListView = ((id0) obj).y0.K0.getCurrentListView();
                     if (currentListView != null && currentListView.getAdapter() != null) {
                         currentListView.getAdapter().l();
                         break;
@@ -211,7 +211,7 @@ public final /* synthetic */ class g10 implements Runnable {
                 }
                 break;
             case 18:
-                EditTextBoldCursor[] editTextBoldCursorArr = ((ne0) obj).b;
+                EditTextBoldCursor[] editTextBoldCursorArr = ((oe0) obj).b;
                 if (editTextBoldCursorArr != null) {
                     editTextBoldCursorArr[0].requestFocus();
                     EditTextBoldCursor editTextBoldCursor = editTextBoldCursorArr[0];
@@ -221,142 +221,142 @@ public final /* synthetic */ class g10 implements Runnable {
                 }
                 break;
             case 19:
-                qe0 qe0Var = (qe0) obj;
-                org.telegram.ui.Components.lj0 lj0Var = qe0Var.e;
-                EditTextBoldCursor editTextBoldCursor2 = qe0Var.a;
+                re0 re0Var = (re0) obj;
+                org.telegram.ui.Components.kj0 kj0Var = re0Var.e;
+                EditTextBoldCursor editTextBoldCursor2 = re0Var.a;
                 if (editTextBoldCursor2 != null) {
                     editTextBoldCursor2.requestFocus();
                     editTextBoldCursor2.setSelection(editTextBoldCursor2.length());
-                    xg0.T0(qe0Var.y, editTextBoldCursor2);
-                    lj0Var.getAnimatedDrawable().N(0, false, false);
-                    lj0Var.d();
+                    yg0.T0(re0Var.y, editTextBoldCursor2);
+                    kj0Var.getAnimatedDrawable().N(0, false, false);
+                    kj0Var.d();
                     break;
                 }
                 break;
             case 20:
-                ((org.telegram.ui.Components.lj0) obj).d();
+                ((org.telegram.ui.Components.kj0) obj).d();
                 break;
             case 21:
-                ((ye0) ((ci.h2) obj).c).getClass();
+                ((ze0) ((ci.h2) obj).c).getClass();
                 break;
             case 22:
                 double currentTimeMillis2 = System.currentTimeMillis();
-                ye0 ye0Var = ((xe0) obj).a;
-                double d = ye0Var.Q;
-                yf0 yf0Var = ye0Var.v;
-                ye0Var.Q = currentTimeMillis2;
-                int i20 = (int) (ye0Var.P - (currentTimeMillis2 - d));
-                ye0Var.P = i20;
+                ze0 ze0Var = ((ye0) obj).a;
+                double d = ze0Var.Q;
+                zf0 zf0Var = ze0Var.v;
+                ze0Var.Q = currentTimeMillis2;
+                int i20 = (int) (ze0Var.P - (currentTimeMillis2 - d));
+                ze0Var.P = i20;
                 if (i20 >= 1000) {
                     int i21 = i20 / MediaDataController.MAX_STYLE_RUNS_COUNT;
                     int i22 = i21 / 60;
                     int i23 = i21 - (i22 * 60);
-                    yf0Var.setTextSize(1, 13.0f);
-                    int i24 = ye0Var.E;
+                    zf0Var.setTextSize(1, 13.0f);
+                    int i24 = ze0Var.E;
                     if (i24 != 4 && i24 != 3 && i24 != 11) {
                         if (i24 == 2) {
-                            yf0Var.setText(LocaleController.formatString(R.string.SmsAvailableIn2, Integer.valueOf(i22), Integer.valueOf(i23)));
+                            zf0Var.setText(LocaleController.formatString(R.string.SmsAvailableIn2, Integer.valueOf(i22), Integer.valueOf(i23)));
                             break;
                         }
                     } else {
-                        yf0Var.setText(LocaleController.formatString(R.string.CallAvailableIn2, Integer.valueOf(i22), Integer.valueOf(i23)));
+                        zf0Var.setText(LocaleController.formatString(R.string.CallAvailableIn2, Integer.valueOf(i22), Integer.valueOf(i23)));
                         break;
                     }
                 } else {
-                    ye0Var.r();
-                    int i25 = ye0Var.E;
+                    ze0Var.r();
+                    int i25 = ze0Var.E;
                     if (i25 == 3 || i25 == 4 || i25 == 2 || i25 == 11) {
-                        yf0Var.setTextSize(1, 15.0f);
-                        int i26 = ye0Var.E;
+                        zf0Var.setTextSize(1, 15.0f);
+                        int i26 = ze0Var.E;
                         if (i26 == 4) {
-                            yf0Var.setText(LocaleController.getString(R.string.RequestCallButton));
+                            zf0Var.setText(LocaleController.getString(R.string.RequestCallButton));
                         } else if (i26 == 15) {
-                            yf0Var.setText(LocaleController.getString(R.string.DidNotGetTheCodeFragment));
+                            zf0Var.setText(LocaleController.getString(R.string.DidNotGetTheCodeFragment));
                         } else if (i26 == 11 || i26 == 3) {
-                            yf0Var.setText(LocaleController.getString(R.string.RequestMissedCall));
+                            zf0Var.setText(LocaleController.getString(R.string.RequestMissedCall));
                         } else {
-                            yf0Var.setText(AndroidUtilities.replaceArrows(LocaleController.getString(R.string.RequestAnotherSMS), true, 0.0f, 0.0f));
+                            zf0Var.setText(AndroidUtilities.replaceArrows(LocaleController.getString(R.string.RequestAnotherSMS), true, 0.0f, 0.0f));
                         }
                         int i27 = org.telegram.ui.ActionBar.j6.P9;
-                        yf0Var.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, i27, false));
-                        yf0Var.setTag(R.id.color_key_tag, Integer.valueOf(i27));
+                        zf0Var.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, i27, false));
+                        zf0Var.setTag(R.id.color_key_tag, Integer.valueOf(i27));
                         break;
                     }
                 }
                 break;
             case 23:
                 double currentTimeMillis3 = System.currentTimeMillis();
-                ag0 ag0Var = (ag0) ((ci.p2) obj).b;
-                double d10 = currentTimeMillis3 - ag0Var.b0;
-                ag0Var.b0 = currentTimeMillis3;
-                int i28 = (int) (ag0Var.W - d10);
-                ag0Var.W = i28;
+                bg0 bg0Var = (bg0) ((ci.p2) obj).b;
+                double d10 = currentTimeMillis3 - bg0Var.b0;
+                bg0Var.b0 = currentTimeMillis3;
+                int i28 = (int) (bg0Var.W - d10);
+                bg0Var.W = i28;
                 if (i28 <= 1000) {
-                    ag0Var.setProblemTextVisible(true);
-                    ag0Var.v.setVisibility(8);
-                    yf0 yf0Var2 = ag0Var.x;
-                    if (yf0Var2 != null) {
-                        yf0Var2.setVisibility(0);
+                    bg0Var.setProblemTextVisible(true);
+                    bg0Var.v.setVisibility(8);
+                    zf0 zf0Var2 = bg0Var.x;
+                    if (zf0Var2 != null) {
+                        zf0Var2.setVisibility(0);
                     }
-                    ag0Var.v();
+                    bg0Var.v();
                     break;
                 }
                 break;
             case 24:
                 double currentTimeMillis4 = System.currentTimeMillis();
-                ag0 ag0Var2 = ((zf0) obj).a;
-                double d11 = ag0Var2.a0;
-                yf0 yf0Var3 = ag0Var2.v;
-                ag0Var2.a0 = currentTimeMillis4;
-                int i29 = (int) (ag0Var2.V - (currentTimeMillis4 - d11));
-                ag0Var2.V = i29;
+                bg0 bg0Var2 = ((ag0) obj).a;
+                double d11 = bg0Var2.a0;
+                zf0 zf0Var3 = bg0Var2.v;
+                bg0Var2.a0 = currentTimeMillis4;
+                int i29 = (int) (bg0Var2.V - (currentTimeMillis4 - d11));
+                bg0Var2.V = i29;
                 if (i29 >= 1000) {
                     int i30 = i29 / MediaDataController.MAX_STYLE_RUNS_COUNT;
                     int i31 = i30 / 60;
                     int i32 = i30 - (i31 * 60);
-                    int i33 = ag0Var2.g0;
+                    int i33 = bg0Var2.g0;
                     if (i33 != 4 && i33 != 3 && i33 != 11) {
-                        if (ag0Var2.f0 != 2 || (i33 != 2 && i33 != 17 && i33 != 16)) {
+                        if (bg0Var2.f0 != 2 || (i33 != 2 && i33 != 17 && i33 != 16)) {
                             if (i33 == 2 || i33 == 17 || i33 == 16) {
-                                yf0Var3.setText(LocaleController.formatString("SmsAvailableIn", R.string.SmsAvailableIn, Integer.valueOf(i31), Integer.valueOf(i32)));
+                                zf0Var3.setText(LocaleController.formatString("SmsAvailableIn", R.string.SmsAvailableIn, Integer.valueOf(i31), Integer.valueOf(i32)));
                                 break;
                             }
                         } else {
-                            yf0Var3.setText(LocaleController.formatString("ResendSmsAvailableIn", R.string.ResendSmsAvailableIn, Integer.valueOf(i31), Integer.valueOf(i32)));
+                            zf0Var3.setText(LocaleController.formatString("ResendSmsAvailableIn", R.string.ResendSmsAvailableIn, Integer.valueOf(i31), Integer.valueOf(i32)));
                             break;
                         }
                     } else {
-                        yf0Var3.setText(LocaleController.formatString("CallAvailableIn", R.string.CallAvailableIn, Integer.valueOf(i31), Integer.valueOf(i32)));
+                        zf0Var3.setText(LocaleController.formatString("CallAvailableIn", R.string.CallAvailableIn, Integer.valueOf(i31), Integer.valueOf(i32)));
                         break;
                     }
                 } else {
-                    ag0Var2.w();
-                    int i34 = ag0Var2.g0;
+                    bg0Var2.w();
+                    int i34 = bg0Var2.g0;
                     if (i34 == 3 || i34 == 4 || i34 == 2 || i34 == 17 || i34 == 16 || i34 == 11) {
                         if (i34 == 4) {
-                            yf0Var3.setText(LocaleController.getString("RequestCallButton", R.string.RequestCallButton));
+                            zf0Var3.setText(LocaleController.getString("RequestCallButton", R.string.RequestCallButton));
                         } else if (i34 == 11 || i34 == 3) {
-                            yf0Var3.setText(LocaleController.getString(R.string.RequestMissedCall));
+                            zf0Var3.setText(LocaleController.getString(R.string.RequestMissedCall));
                         } else {
-                            yf0Var3.setText(LocaleController.getString("RequestSmsButton", R.string.RequestSmsButton));
+                            zf0Var3.setText(LocaleController.getString("RequestSmsButton", R.string.RequestSmsButton));
                         }
                         int i35 = org.telegram.ui.ActionBar.j6.P9;
-                        yf0Var3.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, i35, false));
-                        yf0Var3.setTag(R.id.color_key_tag, Integer.valueOf(i35));
+                        zf0Var3.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, i35, false));
+                        zf0Var3.setTag(R.id.color_key_tag, Integer.valueOf(i35));
                         break;
                     }
                 }
             case 25:
-                ((org.telegram.ui.Components.wn0) obj).run();
+                ((org.telegram.ui.Components.vn0) obj).run();
                 break;
             case 26:
-                ((hh0) obj).setSkipDrawSelector(false);
+                ((ih0) obj).setSkipDrawSelector(false);
                 break;
             case 27:
                 ((org.telegram.ui.Components.ui) obj).setVisibility(8);
                 break;
             case 28:
-                AndroidUtilities.showKeyboard(((ek0) ((g) obj).b).Q);
+                AndroidUtilities.showKeyboard(((fk0) ((g) obj).b).Q);
                 break;
             default:
                 NotificationsSettingsActivity.V((NotificationsSettingsActivity) obj);

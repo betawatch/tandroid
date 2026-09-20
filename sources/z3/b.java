@@ -9,12 +9,11 @@ import e9.x0;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import yf.q;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class b implements d {
-    public static final p c = new p(new q(4), x0.b);
+    public static final p c = new p(new x2.h(10), x0.b);
     public final i0 a;
     public final long[] b;
 

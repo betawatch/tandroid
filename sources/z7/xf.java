@@ -2,7 +2,7 @@ package z7;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class xf implements tf {
     public final q9.n a;
@@ -14,14 +14,14 @@ public final class xf implements tf {
         l5.s.b(context);
         l5.q c10 = l5.s.a().c(aVar);
         if (j5.a.d.contains(new i5.c("json"))) {
-            new q9.n(new v7.a9(c10, 6));
+            new q9.n(new v7.b9(c10, 6));
         }
-        this.a = new q9.n(new v7.a9(c10, 7));
+        this.a = new q9.n(new v7.b9(c10, 7));
     }
 
     @Override // z7.tf
     public final void a(a5.a aVar) {
         this.b.getClass();
-        ((l5.r) this.a.get()).a(aVar.b != 0 ? new i5.a(null, aVar.B(), i5.d.a, null) : new i5.a(null, aVar.B(), i5.d.b, null), new j2.e(20));
+        ((l5.r) this.a.get()).a(aVar.b != 0 ? new i5.a(null, aVar.B(), i5.d.a, null) : new i5.a(null, aVar.B(), i5.d.b, null), new j2.e(22));
     }
 }

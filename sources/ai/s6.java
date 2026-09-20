@@ -11,14 +11,14 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.cb0;
-import org.telegram.ui.Components.ml0;
-import org.telegram.ui.Components.w70;
+import org.telegram.ui.Components.bb0;
+import org.telegram.ui.Components.ll0;
+import org.telegram.ui.Components.v70;
 import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
-public final class s6 implements ml0 {
+public final class s6 implements ll0 {
     public final /* synthetic */ jc a;
     public final /* synthetic */ j7 b;
 
@@ -27,7 +27,7 @@ public final class s6 implements ml0 {
         this.a = jcVar;
     }
 
-    @Override // org.telegram.ui.Components.ml0
+    @Override // org.telegram.ui.Components.ll0
     public final boolean d(int i10, View view) {
         final TL_stories.StoryView storyView;
         final MessagesController messagesController;
@@ -37,8 +37,8 @@ public final class s6 implements ml0 {
         j7 j7Var = this.b;
         d dVar = j7Var.s;
         int i11 = j7Var.v;
-        if (view instanceof org.telegram.ui.Cells.o6) {
-            final org.telegram.ui.Cells.o6 o6Var = (org.telegram.ui.Cells.o6) view;
+        if (view instanceof org.telegram.ui.Cells.p6) {
+            final org.telegram.ui.Cells.p6 p6Var = (org.telegram.ui.Cells.p6) view;
             jc jcVar = this.a;
             if (jcVar.v != null && (storyView = ((z6) j7Var.w.c.get(i10)).b) != null && (user = (messagesController = MessagesController.getInstance(i11)).getUser(Long.valueOf(storyView.user_id))) != null) {
                 boolean z11 = messagesController.blockePeers.indexOfKey(user.id) >= 0;
@@ -54,7 +54,7 @@ public final class s6 implements ml0 {
                 if (isUserSelf) {
                     return false;
                 }
-                w70 F = w70.F(jcVar.v, dVar, view);
+                v70 F = v70.F(jcVar.v, dVar, view);
                 F.i = 3;
                 F.j = true;
                 F.W(new ColorDrawable(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.h5, dVar)));
@@ -75,7 +75,7 @@ public final class s6 implements ml0 {
                     public final void run() {
                         int i14 = i12;
                         TL_stories.StoryView storyView2 = storyView;
-                        org.telegram.ui.Cells.o6 o6Var2 = o6Var;
+                        org.telegram.ui.Cells.p6 p6Var2 = p6Var;
                         String str3 = str2;
                         TLRPC.User user2 = user;
                         MessagesController messagesController2 = messagesController;
@@ -84,14 +84,14 @@ public final class s6 implements ml0 {
                             case 0:
                                 messagesController2.getStoriesController().j0(user2.id, true, true);
                                 j7 j7Var2 = s6Var.b;
-                                hg.k0.p(R.string.StoryHidFromToast, new Object[]{str3}, new xc(j7Var2, j7Var2.s), R.raw.ic_ban, 36);
-                                o6Var2.a(j7Var2.d(storyView2) ? 1.0f : 0.5f, true);
+                                hg.k0.q(R.string.StoryHidFromToast, new Object[]{str3}, new xc(j7Var2, j7Var2.s), R.raw.ic_ban, 36);
+                                p6Var2.a(j7Var2.d(storyView2) ? 1.0f : 0.5f, true);
                                 break;
                             default:
                                 messagesController2.getStoriesController().j0(user2.id, false, true);
                                 j7 j7Var3 = s6Var.b;
-                                hg.k0.p(R.string.StoryShownBackToToast, new Object[]{str3}, new xc(j7Var3, j7Var3.s), R.raw.contact_check, 36);
-                                o6Var2.a(j7Var3.d(storyView2) ? 1.0f : 0.5f, true);
+                                hg.k0.q(R.string.StoryShownBackToToast, new Object[]{str3}, new xc(j7Var3, j7Var3.s), R.raw.contact_check, 36);
+                                p6Var2.a(j7Var3.d(storyView2) ? 1.0f : 0.5f, true);
                                 break;
                         }
                     }
@@ -110,7 +110,7 @@ public final class s6 implements ml0 {
                     public final void run() {
                         int i142 = i14;
                         TL_stories.StoryView storyView2 = storyView;
-                        org.telegram.ui.Cells.o6 o6Var2 = o6Var;
+                        org.telegram.ui.Cells.p6 p6Var2 = p6Var;
                         String str3 = str2;
                         TLRPC.User user2 = user;
                         MessagesController messagesController2 = messagesController;
@@ -119,14 +119,14 @@ public final class s6 implements ml0 {
                             case 0:
                                 messagesController2.getStoriesController().j0(user2.id, true, true);
                                 j7 j7Var2 = s6Var.b;
-                                hg.k0.p(R.string.StoryHidFromToast, new Object[]{str3}, new xc(j7Var2, j7Var2.s), R.raw.ic_ban, 36);
-                                o6Var2.a(j7Var2.d(storyView2) ? 1.0f : 0.5f, true);
+                                hg.k0.q(R.string.StoryHidFromToast, new Object[]{str3}, new xc(j7Var2, j7Var2.s), R.raw.ic_ban, 36);
+                                p6Var2.a(j7Var2.d(storyView2) ? 1.0f : 0.5f, true);
                                 break;
                             default:
                                 messagesController2.getStoriesController().j0(user2.id, false, true);
                                 j7 j7Var3 = s6Var.b;
-                                hg.k0.p(R.string.StoryShownBackToToast, new Object[]{str3}, new xc(j7Var3, j7Var3.s), R.raw.contact_check, 36);
-                                o6Var2.a(j7Var3.d(storyView2) ? 1.0f : 0.5f, true);
+                                hg.k0.q(R.string.StoryShownBackToToast, new Object[]{str3}, new xc(j7Var3, j7Var3.s), R.raw.contact_check, 36);
+                                p6Var2.a(j7Var3.d(storyView2) ? 1.0f : 0.5f, true);
                                 break;
                         }
                     }
@@ -148,7 +148,7 @@ public final class s6 implements ml0 {
                                 messagesController.blockPeer(user.id);
                                 j7 j7Var2 = this.b.b;
                                 new xc(j7Var2, j7Var2.s).e(true).j();
-                                o6Var.a(j7Var2.d(storyView) ? 1.0f : 0.5f, true);
+                                p6Var.a(j7Var2.d(storyView) ? 1.0f : 0.5f, true);
                                 break;
                             default:
                                 MessagesController messagesController2 = messagesController;
@@ -158,7 +158,7 @@ public final class s6 implements ml0 {
                                 messagesController2.unblockPeer(user2.id);
                                 j7 j7Var3 = this.b.b;
                                 new xc(j7Var3, j7Var3.s).e(false).j();
-                                o6Var.a(j7Var3.d(storyView) ? 1.0f : 0.5f, true);
+                                p6Var.a(j7Var3.d(storyView) ? 1.0f : 0.5f, true);
                                 break;
                         }
                     }
@@ -178,7 +178,7 @@ public final class s6 implements ml0 {
                                 messagesController.blockPeer(user.id);
                                 j7 j7Var2 = this.b.b;
                                 new xc(j7Var2, j7Var2.s).e(true).j();
-                                o6Var.a(j7Var2.d(storyView) ? 1.0f : 0.5f, true);
+                                p6Var.a(j7Var2.d(storyView) ? 1.0f : 0.5f, true);
                                 break;
                             default:
                                 MessagesController messagesController2 = messagesController;
@@ -188,22 +188,22 @@ public final class s6 implements ml0 {
                                 messagesController2.unblockPeer(user2.id);
                                 j7 j7Var3 = this.b.b;
                                 new xc(j7Var3, j7Var3.s).e(false).j();
-                                o6Var.a(j7Var3.d(storyView) ? 1.0f : 0.5f, true);
+                                p6Var.a(j7Var3.d(storyView) ? 1.0f : 0.5f, true);
                                 break;
                         }
                     }
                 }, (z12 || !z14 || isUserSelf) ? false : true);
-                F.m(z12 && !isUserSelf, R.drawable.msg_user_remove, LocaleController.getString(R.string.StoryDeleteContact), true, new m3(this, user, str2, o6Var, storyView, 3));
+                F.m(z12 && !isUserSelf, R.drawable.msg_user_remove, LocaleController.getString(R.string.StoryDeleteContact), true, new m3(this, user, str2, p6Var, storyView, 3));
                 TLRPC.Reaction reaction = storyView.reaction;
-                if (!(reaction instanceof TLRPC.TL_reactionCustomEmoji) || (c10 = org.telegram.ui.Components.q5.h(i11).c(((TLRPC.TL_reactionCustomEmoji) reaction).document_id)) == null) {
+                if (!(reaction instanceof TLRPC.TL_reactionCustomEmoji) || (c10 = org.telegram.ui.Components.p5.h(i11).c(((TLRPC.TL_reactionCustomEmoji) reaction).document_id)) == null) {
                     z10 = false;
                 } else {
                     F.k();
                     ArrayList arrayList = new ArrayList();
                     arrayList.add(c10);
-                    cb0 cb0Var = new cb0(j7Var.v, j7Var.getContext(), dVar, arrayList, 3);
-                    cb0Var.setOnClickListener(new d0(this, arrayList, F, i13));
-                    F.q(cb0Var);
+                    bb0 bb0Var = new bb0(j7Var.v, j7Var.getContext(), dVar, arrayList, 3);
+                    bb0Var.setOnClickListener(new d0(this, arrayList, F, i13));
+                    F.q(bb0Var);
                     z10 = true;
                 }
                 if (F.x() <= 0 && !z10) {

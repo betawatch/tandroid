@@ -1,26 +1,39 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+import android.graphics.Rect;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class ls0 extends s4.s {
-    public final /* synthetic */ kv0 Q;
+public final class ls0 extends s4.n0 {
+    public final /* synthetic */ fs0 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ls0(kv0 kv0Var) {
-        super(3);
-        this.Q = kv0Var;
+    public ls0(fs0 fs0Var) {
+        this.a = fs0Var;
     }
 
-    @Override // s4.s, s4.c0, s4.o0
-    public final int o0(int i10, of.e eVar, s4.z0 z0Var) {
-        if (this.Q.o1) {
-            i10 = 0;
+    @Override // s4.n0
+    public final void a(Rect rect, View view, RecyclerView recyclerView, s4.z0 z0Var) {
+        if (!(view instanceof org.telegram.ui.Cells.u7)) {
+            rect.left = 0;
+            rect.top = 0;
+            rect.bottom = 0;
+            rect.right = 0;
+            return;
         }
-        return super.o0(i10, eVar, z0Var);
-    }
-
-    @Override // s4.s, s4.c0, s4.o0
-    public final boolean y0() {
-        return false;
+        org.telegram.ui.Cells.u7 u7Var = (org.telegram.ui.Cells.u7) view;
+        fs0 fs0Var = this.a;
+        fs0Var.r.getClass();
+        int S = RecyclerView.S(u7Var);
+        int i10 = fs0Var.s.J;
+        u7Var.a0 = S < i10;
+        int i11 = S % i10;
+        u7Var.V = i11 == 0;
+        u7Var.W = i11 == i10 - 1;
+        rect.left = 0;
+        rect.top = 0;
+        rect.bottom = 0;
+        rect.right = 0;
     }
 }

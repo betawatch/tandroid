@@ -4,7 +4,7 @@ import android.content.Context;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class ty extends FrameLayout {
     public static final /* synthetic */ int L = 0;
@@ -23,12 +23,12 @@ public final class ty extends FrameLayout {
     public sy f;
     public int h;
     public ax n;
-    public org.telegram.ui.Components.zk0 r;
+    public org.telegram.ui.Components.yk0 r;
     public int s;
     public int v;
     public org.telegram.ui.Components.t00 w;
     public vw x;
-    public org.telegram.ui.Components.bl0 y;
+    public org.telegram.ui.Components.al0 y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public ty(Context context, uy uyVar) {

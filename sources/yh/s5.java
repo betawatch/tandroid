@@ -1,184 +1,130 @@
 package yh;
 
-import android.content.Context;
+import android.text.SpannableStringBuilder;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.UserObject;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.jc;
-import org.telegram.ui.Components.kc;
-import org.telegram.ui.Components.oc;
-import org.telegram.ui.Components.qc;
+import org.telegram.ui.Components.pk0;
 import org.telegram.ui.Components.xc;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.zn;
+import org.telegram.ui.Components.xv0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
-public final class s5 {
-    public final n5 a;
-    public final MessageObject b;
-    public final zn c;
-    public final qc d;
-    public final kc e;
-    public final jc f;
-    public final boolean g;
-    public long h;
-    public long k;
-    public boolean l;
-    public boolean m;
-    public c4 o;
-    public final q5 p;
-    public final /* synthetic */ t5 q;
-    public boolean i = false;
-    public boolean j = false;
-    public Long n = null;
+public final /* synthetic */ class s5 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
 
-    public s5(t5 t5Var, n5 n5Var, MessageObject messageObject, zn znVar, boolean z10) {
-        this.q = t5Var;
-        q5 q5Var = new q5(this, 0);
-        this.p = q5Var;
-        this.a = n5Var;
-        this.b = messageObject;
-        this.c = znVar;
-        Context t10 = t5.t(znVar);
-        kc kcVar = new kc(t10, znVar.ea);
-        this.e = kcVar;
-        kcVar.c(R.raw.stars_topup, new String[0]);
-        kcVar.b.setText(d());
-        oc ocVar = new oc(t10, znVar.ea, true, false);
-        ocVar.e(LocaleController.getString(R.string.StarsSentUndo));
-        ocVar.a = new q5(this, 1);
-        jc jcVar = new jc(t10, znVar.ea);
-        this.f = jcVar;
-        jcVar.b = 5000L;
-        jcVar.setColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Gi, znVar.ea));
-        ocVar.addView(jcVar, w7.y5.d(20, 20.0f, 21, 0.0f, 0.0f, 12.0f, 0.0f));
-        ocVar.d.setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(30.0f), AndroidUtilities.dp(8.0f));
-        kcVar.setButton(ocVar);
-        qc b10 = xc.a0(znVar).b(kcVar, -1);
-        this.d = b10;
-        b10.r = false;
-        if (z10) {
-            b10.k(true);
-            this.m = true;
-        }
-        b10.v = q5Var;
-        this.h = 0L;
-        System.currentTimeMillis();
-        this.g = messageObject.isPaidReactionChosen();
+    public /* synthetic */ s5(int i10, Object obj, Object obj2) {
+        this.a = i10;
+        this.b = obj;
+        this.c = obj2;
     }
 
-    public final void a() {
-        t5 t5Var = this.q;
-        int i10 = t5Var.a;
-        AndroidUtilities.cancelRunOnUIThread(this.p);
-        this.j = true;
-        this.d.b();
-        c4 c4Var = this.o;
-        if (c4Var != null) {
-            c4Var.c();
-        }
-        int i11 = (int) (-this.h);
-        boolean z10 = this.g;
-        long c10 = c();
-        MessageObject messageObject = this.b;
-        messageObject.addPaidReactions(i11, z10, c10);
-        t5Var.g -= this.h;
-        NotificationCenter.getInstance(i10).lambda$postNotificationNameOnUIThread$1(NotificationCenter.starBalanceUpdated, new Object[0]);
-        NotificationCenter.getInstance(i10).lambda$postNotificationNameOnUIThread$1(NotificationCenter.didUpdateReactions, Long.valueOf(messageObject.getDialogId()), Integer.valueOf(messageObject.getId()), messageObject.messageOwner.reactions);
-        if (t5Var.B == this) {
-            t5Var.B = null;
-        }
-    }
-
-    public final void b() {
-        MessageObject messageObject;
-        String str;
-        AndroidUtilities.cancelRunOnUIThread(this.p);
-        int i10 = 0;
-        if (!this.l) {
-            this.j = true;
-            this.b.addPaidReactions((int) (-this.h), this.g, c());
-            t5 t5Var = this.q;
-            t5Var.g -= this.h;
-            NotificationCenter.getInstance(t5Var.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.starBalanceUpdated, new Object[0]);
-        } else if (!this.i && !this.j) {
-            t5 y3 = t5.y(this.q.a, false);
-            MessagesController messagesController = MessagesController.getInstance(this.q.a);
-            ConnectionsManager connectionsManager = ConnectionsManager.getInstance(this.q.a);
-            long j3 = this.h;
-            if (!y3.e || y3.q(false, false, null).amount >= j3) {
-                this.i = true;
-                TLRPC.TL_messages_sendPaidReaction tL_messages_sendPaidReaction = new TLRPC.TL_messages_sendPaidReaction();
-                tL_messages_sendPaidReaction.peer = messagesController.getInputPeer(this.a.a);
-                tL_messages_sendPaidReaction.msg_id = this.a.b;
-                tL_messages_sendPaidReaction.random_id = (connectionsManager.getCurrentTime() << 32) | (Utilities.random.nextLong() & 4294967295L);
-                tL_messages_sendPaidReaction.count = (int) this.h;
-                tL_messages_sendPaidReaction.flags |= 1;
-                long c10 = c();
-                if (c10 == 0 || c10 == UserConfig.getInstance(this.q.a).getClientUserId()) {
-                    tL_messages_sendPaidReaction.privacy = new TL_stars.paidReactionPrivacyDefault();
-                } else if (c10 == UserObject.ANONYMOUS) {
-                    tL_messages_sendPaidReaction.privacy = new TL_stars.paidReactionPrivacyAnonymous();
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                ((MessagesController) this.b).processUpdates((TLRPC.Updates) ((TLObject) this.c), false);
+                break;
+            case 1:
+                new xc(((org.telegram.ui.ActionBar.f3[]) this.b)[0].topBulletinContainer, (org.telegram.ui.ActionBar.f6) this.c).Q(R.raw.copy, 36, LocaleController.getString(R.string.StarsTransactionIDCopied)).k(false);
+                break;
+            case 2:
+                o8 o8Var = (o8) this.b;
+                t5 t5Var = (t5) this.c;
+                o8Var.R = true;
+                o8Var.o(new q5(t5Var, 2));
+                AndroidUtilities.runOnUIThread(new x7(o8Var, 1), 240L);
+                break;
+            case 3:
+                zg.q qVar = (zg.q) this.b;
+                org.telegram.ui.Components.y5 y5Var = (org.telegram.ui.Components.y5) this.c;
+                SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(qVar.n.getText());
+                for (org.telegram.ui.Components.y5 y5Var2 : (org.telegram.ui.Components.y5[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), org.telegram.ui.Components.y5.class)) {
+                    if (y5Var2 == y5Var) {
+                        int editTextSelectionEnd = qVar.n.getEditTextSelectionEnd();
+                        int spanEnd = spannableStringBuilder.getSpanEnd(y5Var2);
+                        int spanStart = spannableStringBuilder.getSpanStart(y5Var2);
+                        qVar.n.getText().delete(spanStart, spanEnd);
+                        int i10 = spanEnd - spanStart;
+                        zg.o oVar = qVar.n;
+                        if (spanEnd <= editTextSelectionEnd) {
+                            editTextSelectionEnd -= i10;
+                        }
+                        oVar.setSelection(editTextSelectionEnd);
+                        break;
+                    }
+                }
+                break;
+            case 4:
+                zg.q qVar2 = (zg.q) this.b;
+                TLRPC.TL_error tL_error = (TLRPC.TL_error) this.c;
+                if (qVar2.Q == null || !tL_error.text.equals("BOOSTS_REQUIRED")) {
+                    String str = tL_error.text;
+                    if (str.equals("REACTIONS_TOO_MANY")) {
+                        str = LocaleController.formatPluralString("ReactionMaxCountError", qVar2.J, new Object[0]);
+                    }
+                    xc.a0(qVar2).t(str, null).j();
+                    break;
                 } else {
-                    TL_stars.paidReactionPrivacyPeer paidreactionprivacypeer = new TL_stars.paidReactionPrivacyPeer();
-                    tL_messages_sendPaidReaction.privacy = paidreactionprivacypeer;
-                    paidreactionprivacypeer.peer = messagesController.getInputPeer(c10);
+                    zg.q0.f(-qVar2.M, qVar2.R, qVar2.Q);
+                    break;
                 }
-                this.q.P();
-                connectionsManager.sendRequest(tL_messages_sendPaidReaction, new ai.u1(this, messagesController, j3, 6));
-            } else {
-                this.j = true;
-                this.b.addPaidReactions((int) (-this.h), this.g, c());
-                t5 t5Var2 = this.q;
-                t5Var2.g = 0L;
-                NotificationCenter.getInstance(t5Var2.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.starBalanceUpdated, new Object[0]);
-                NotificationCenter.getInstance(this.q.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.didUpdateReactions, Long.valueOf(this.b.getDialogId()), Integer.valueOf(this.b.getId()), this.b.messageOwner.reactions);
-                if (this.a.a >= 0) {
-                    str = UserObject.getForcedFirstName(this.c.getMessagesController().getUser(Long.valueOf(this.a.a)));
-                } else {
-                    TLRPC.Chat chat = this.c.getMessagesController().getChat(Long.valueOf(-this.a.a));
-                    str = chat == null ? "" : chat.title;
+            case 5:
+                zg.p pVar = (zg.p) this.b;
+                org.telegram.ui.Components.y5 y5Var3 = (org.telegram.ui.Components.y5) this.c;
+                zg.q qVar3 = pVar.e2;
+                SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(qVar3.n.getText());
+                for (org.telegram.ui.Components.y5 y5Var4 : (org.telegram.ui.Components.y5[]) spannableStringBuilder2.getSpans(0, spannableStringBuilder2.length(), org.telegram.ui.Components.y5.class)) {
+                    if (y5Var4 == y5Var3) {
+                        int editTextSelectionEnd2 = qVar3.n.getEditTextSelectionEnd();
+                        int spanEnd2 = spannableStringBuilder2.getSpanEnd(y5Var4);
+                        int spanStart2 = spannableStringBuilder2.getSpanStart(y5Var4);
+                        qVar3.n.getText().delete(spanStart2, spanEnd2);
+                        int i11 = spanEnd2 - spanStart2;
+                        zg.o oVar2 = qVar3.n;
+                        if (spanEnd2 <= editTextSelectionEnd2) {
+                            editTextSelectionEnd2 -= i11;
+                        }
+                        oVar2.setSelection(editTextSelectionEnd2);
+                        break;
+                    }
                 }
-                String str2 = str;
-                Context parentActivity = this.c.getParentActivity();
-                if (parentActivity == null) {
-                    parentActivity = LaunchActivity.G1;
+                break;
+            case 6:
+                zg.b0 b0Var = (zg.b0) this.b;
+                pk0 pk0Var = (pk0) this.c;
+                b0Var.l = true;
+                b0Var.a.invalidate();
+                pk0Var.b1 = false;
+                pk0Var.invalidate();
+                b0Var.c(true);
+                break;
+            case 7:
+                zg.d0 d0Var = (zg.d0) this.b;
+                zg.b bVar = (zg.b) this.c;
+                d0Var.getText().delete(d0Var.getText().getSpanStart(bVar), d0Var.getText().getSpanEnd(bVar));
+                d0Var.setCursorVisible(true);
+                d0Var.setLongClickable(true);
+                break;
+            default:
+                zg.p0 p0Var = (zg.p0) this.b;
+                zg.m0 m0Var = (zg.m0) this.c;
+                p0Var.getClass();
+                TLRPC.ReactionCount reactionCount = m0Var.a;
+                xv0 xv0Var = p0Var.z;
+                if (com.google.android.gms.internal.vision.e2.u(xv0Var)) {
+                    ((org.telegram.ui.Cells.p4) xv0Var).f(reactionCount, true, 0.0f, 0.0f);
                 }
-                if (parentActivity == null) {
-                    parentActivity = ApplicationLoader.applicationContext;
-                }
-                new k7(parentActivity, this.c.getResourceProvider(), j3, 5, str2, new r5(this, j3, i10), 0L).show();
-            }
+                m0Var.Y.c(false);
+                p0Var.S = null;
+                p0Var.T = false;
+                p0Var.U = null;
+                break;
         }
-        this.d.b();
-        c4 c4Var = this.o;
-        if (c4Var != null && (messageObject = this.b) != null && messageObject.getId() == c4Var.c) {
-            this.o.c();
-        }
-        t5 t5Var3 = this.q;
-        if (t5Var3.B == this) {
-            t5Var3.B = null;
-        }
-    }
-
-    public final long c() {
-        Long l4 = this.n;
-        return l4 != null ? l4.longValue() : this.q.A(this.b);
-    }
-
-    public final String d() {
-        return c() == UserObject.ANONYMOUS ? LocaleController.getString(R.string.StarsSentAnonymouslyTitle) : (c() == 0 || c() == UserConfig.getInstance(this.q.a).getClientUserId()) ? LocaleController.getString(R.string.StarsSentTitle) : LocaleController.formatString(R.string.StarsSentTitleChannel, DialogObject.getShortName(c()));
     }
 }

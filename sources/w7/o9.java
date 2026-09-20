@@ -1,6 +1,61 @@
 package w7;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import org.telegram.messenger.BuildConfig;
+
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public abstract class o9 {
+    public static String a(String str, Object... objArr) {
+        int length;
+        int length2;
+        int indexOf;
+        String k10;
+        int i10 = 0;
+        int i11 = 0;
+        while (true) {
+            length = objArr.length;
+            if (i11 >= length) {
+                break;
+            }
+            Object obj = objArr[i11];
+            if (obj == null) {
+                k10 = BuildConfig.BETA_URL;
+            } else {
+                try {
+                    k10 = obj.toString();
+                } catch (Exception e) {
+                    String C = a4.a.C(obj.getClass().getName(), "@", Integer.toHexString(System.identityHashCode(obj)));
+                    Logger.getLogger("com.google.common.base.Strings").logp(Level.WARNING, "com.google.common.base.Strings", "lenientToString", "Exception during lenientFormat for ".concat(C), (Throwable) e);
+                    k10 = org.telegram.ui.Cells.c1.k("<", C, " threw ", e.getClass().getName(), ">");
+                }
+            }
+            objArr[i11] = k10;
+            i11++;
+        }
+        StringBuilder sb2 = new StringBuilder(str.length() + (length * 16));
+        int i12 = 0;
+        while (true) {
+            length2 = objArr.length;
+            if (i10 >= length2 || (indexOf = str.indexOf("%s", i12)) == -1) {
+                break;
+            }
+            sb2.append((CharSequence) str, i12, indexOf);
+            sb2.append(objArr[i10]);
+            i10++;
+            i12 = indexOf + 2;
+        }
+        sb2.append((CharSequence) str, i12, str.length());
+        if (i10 < length2) {
+            sb2.append(" [");
+            sb2.append(objArr[i10]);
+            for (int i13 = i10 + 1; i13 < objArr.length; i13++) {
+                sb2.append(", ");
+                sb2.append(objArr[i13]);
+            }
+            sb2.append(']');
+        }
+        return sb2.toString();
+    }
 }

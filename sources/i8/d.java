@@ -8,6 +8,7 @@ import java.util.concurrent.Executor;
 import m.p3;
 import n6.l;
 import qb.m;
+import x7.d7;
 import z7.ce;
 import z7.fb;
 import z7.gb;
@@ -15,7 +16,7 @@ import z7.hb;
 import z7.wf;
 import z7.yf;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public abstract class d {
     public static zzd a(ac.e eVar) {
@@ -26,10 +27,10 @@ public abstract class d {
         zzd zzdVar = new zzd(fVar, executor);
         p3 p3Var = new p3();
         p3Var.c = fb.b;
-        o0.a aVar = new o0.a(28, (byte) 0);
-        aVar.c = eVar.a();
-        aVar.b = gb.b;
-        p3Var.d = new ce(aVar);
+        d7 d7Var = new d7();
+        d7Var.b = eVar.a();
+        d7Var.a = gb.b;
+        p3Var.d = new ce(d7Var);
         m.a.execute(new p(b10, new a5.a(p3Var, 1), hb.N4, b10.c(), 8));
         return zzdVar;
     }

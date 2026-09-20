@@ -3,25 +3,25 @@ package org.telegram.ui.Components;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class de implements Utilities.Callback4 {
     public final /* synthetic */ int a;
     public final /* synthetic */ ChatActivityEnterView b;
     public final /* synthetic */ long c;
-    public final /* synthetic */ org.telegram.ui.ActionBar.e6 d;
+    public final /* synthetic */ org.telegram.ui.ActionBar.f6 d;
 
-    public /* synthetic */ de(ChatActivityEnterView chatActivityEnterView, long j3, org.telegram.ui.ActionBar.e6 e6Var, int i10) {
+    public /* synthetic */ de(ChatActivityEnterView chatActivityEnterView, long j3, org.telegram.ui.ActionBar.f6 f6Var, int i10) {
         this.a = i10;
         this.b = chatActivityEnterView;
         this.c = j3;
-        this.d = e6Var;
+        this.d = f6Var;
     }
 
     @Override // org.telegram.messenger.Utilities.Callback4
     public final void run(Object obj, Object obj2, Object obj3, Object obj4) {
         int i10 = this.a;
-        org.telegram.ui.ActionBar.e6 e6Var = this.d;
+        org.telegram.ui.ActionBar.f6 f6Var = this.d;
         long j3 = this.c;
         switch (i10) {
             case 0:
@@ -35,7 +35,7 @@ public final /* synthetic */ class de implements Utilities.Callback4 {
                     chatActivityEnterView.T0(num.intValue(), bool.booleanValue(), num2.intValue(), true, 0L);
                     break;
                 } else {
-                    e5.M(chatActivityEnterView.N2, j3, new qe(chatActivityEnterView, 0), e6Var);
+                    d5.M(chatActivityEnterView.N2, j3, new qe(chatActivityEnterView, 0), f6Var);
                     break;
                 }
             default:
@@ -49,7 +49,7 @@ public final /* synthetic */ class de implements Utilities.Callback4 {
                         chatActivityEnterView2.T0(num3.intValue(), bool2.booleanValue(), num4.intValue(), true, 0L);
                         break;
                     } else {
-                        e5.M(chatActivityEnterView2.N2, j3, new re(chatActivityEnterView2), e6Var);
+                        d5.M(chatActivityEnterView2.N2, j3, new re(chatActivityEnterView2), f6Var);
                         break;
                     }
                 } else {

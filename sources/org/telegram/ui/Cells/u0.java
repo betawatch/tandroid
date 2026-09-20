@@ -13,7 +13,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class u0 {
     public TextPaint a;
@@ -70,7 +70,7 @@ public final class u0 {
             }
             w0Var = w0Var2;
         }
-        this.h = org.telegram.ui.Components.z5.update(0, (View) w0Var, false, (org.telegram.ui.Components.v5) this.h, (StaticLayout) this.f);
+        this.h = org.telegram.ui.Components.y5.update(0, (View) w0Var, false, (org.telegram.ui.Components.u5) this.h, (StaticLayout) this.f);
     }
 
     public u0(w0 w0Var) {

@@ -9,7 +9,7 @@ import android.graphics.PorterDuffColorFilter;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class it0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -28,9 +28,9 @@ public final class it0 extends AnimatorListenerAdapter {
         switch (i10) {
             case 0:
                 photoViewer.p6 = null;
-                org.telegram.ui.Components.df0 df0Var = photoViewer.C1;
-                if (df0Var != null) {
-                    if (df0Var.b.j()) {
+                org.telegram.ui.Components.cf0 cf0Var = photoViewer.C1;
+                if (cf0Var != null) {
+                    if (cf0Var.b.j()) {
                         photoViewer.a1.setColorFilter(new PorterDuffColorFilter(photoViewer.z1(org.telegram.ui.ActionBar.j6.zf), PorterDuff.Mode.MULTIPLY));
                     } else {
                         photoViewer.a1.setColorFilter((ColorFilter) null);
@@ -54,10 +54,10 @@ public final class it0 extends AnimatorListenerAdapter {
                 au0Var.Z0.setVisibility(0);
                 au0Var.W0.setVisibility(0);
                 au0Var.X0.setVisibility(0);
-                org.telegram.ui.Components.pd0 pd0Var = photoViewer.y4;
-                int childCount = pd0Var.getChildCount();
+                org.telegram.ui.Components.od0 od0Var = photoViewer.y4;
+                int childCount = od0Var.getChildCount();
                 for (int i11 = 0; i11 < childCount; i11++) {
-                    pd0Var.getChildAt(i11).setVisibility(4);
+                    od0Var.getChildAt(i11).setVisibility(4);
                 }
                 photoViewer.p6 = null;
                 photoViewer.u4 = 3;

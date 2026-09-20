@@ -1,23 +1,55 @@
 package qg;
 
+import android.view.View;
 import ci.c6;
-import org.telegram.messenger.MediaDataController;
+import java.util.ArrayList;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class c1 extends g.p {
-    public final /* synthetic */ c6 c;
+public final class c1 extends s4.t {
+    public final /* synthetic */ c6 S;
 
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public c1(c6 c6Var) {
-        this.c = c6Var;
+        super(true);
+        this.S = c6Var;
     }
 
-    @Override // g.p
-    public final int i(int i10) {
+    @Override // s4.t
+    public final boolean B1(int i10) {
         MessageObject.GroupedMessagePosition position;
-        int size = (r0.s0.size() - 1) - i10;
-        MessageObject.GroupedMessages groupedMessages = this.c.t0;
-        return (groupedMessages == null || size < 0 || size >= groupedMessages.messages.size() || (position = groupedMessages.getPosition(groupedMessages.messages.get(size))) == null) ? MediaDataController.MAX_STYLE_RUNS_COUNT : position.spanSize;
+        byte b10;
+        c6 c6Var = this.S;
+        ArrayList arrayList = c6Var.s0;
+        int size = (arrayList.size() - 1) - i10;
+        MessageObject.GroupedMessages groupedMessages = c6Var.t0;
+        if (groupedMessages != null && size >= 0 && size < arrayList.size() && (position = groupedMessages.getPosition((MessageObject) arrayList.get(size))) != null && position.minX != position.maxX && (b10 = position.minY) == position.maxY && b10 != 0) {
+            int size2 = groupedMessages.posArray.size();
+            for (int i11 = 0; i11 < size2; i11++) {
+                MessageObject.GroupedMessagePosition groupedMessagePosition = groupedMessages.posArray.get(i11);
+                if (groupedMessagePosition != position) {
+                    byte b11 = groupedMessagePosition.minY;
+                    byte b12 = position.minY;
+                    if (b11 <= b12 && groupedMessagePosition.maxY >= b12) {
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
+    @Override // s4.t
+    public final boolean C1(View view) {
+        if (view instanceof org.telegram.ui.Cells.u1) {
+            return !((org.telegram.ui.Cells.u1) view).getMessageObject().isOutOwner();
+        }
+        return false;
+    }
+
+    @Override // s4.s, s4.c0, s4.o0
+    public final boolean y0() {
+        return false;
     }
 }

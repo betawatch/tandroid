@@ -1,52 +1,85 @@
 package org.telegram.ui;
 
-import android.widget.TextView;
+import android.app.Dialog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.tgnet.tl.TL_account;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class eh1 extends org.telegram.ui.ActionBar.j {
-    public final /* synthetic */ gh1 a;
+public final /* synthetic */ class eh1 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ih1 b;
+    public final /* synthetic */ TLRPC.TL_error c;
 
-    public eh1(gh1 gh1Var) {
-        this.a = gh1Var;
+    public /* synthetic */ eh1(ih1 ih1Var, TLRPC.TL_error tL_error, int i10) {
+        this.a = i10;
+        this.b = ih1Var;
+        this.c = tL_error;
     }
 
-    @Override // org.telegram.ui.ActionBar.j
-    public final void b(int i10) {
-        org.telegram.ui.ActionBar.d5 d5Var;
-        gh1 gh1Var = this.a;
-        if (i10 == -1) {
-            if (gh1Var.G >= 0) {
-                d5Var = ((org.telegram.ui.ActionBar.n2) gh1Var).parentLayout;
-                if (d5Var.getFragmentStack().size() == 1) {
-                    gh1Var.I0();
-                    return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10 = this.a;
+        TLRPC.TL_error tL_error = this.c;
+        ih1 ih1Var = this.b;
+        switch (i10) {
+            case 0:
+                ih1Var.w0();
+                if (tL_error != null) {
+                    if (!tL_error.text.startsWith("FLOOD_WAIT")) {
+                        ih1Var.G0(LocaleController.getString(R.string.TwoStepVerificationTitle), tL_error.text);
+                        break;
+                    } else {
+                        int intValue = Utilities.parseInt((CharSequence) tL_error.text).intValue();
+                        ih1Var.G0(LocaleController.getString(R.string.TwoStepVerificationTitle), LocaleController.formatString("FloodWaitTime", R.string.FloodWaitTime, intValue < 60 ? LocaleController.formatPluralString("Seconds", intValue, new Object[0]) : LocaleController.formatPluralString("Minutes", intValue / 60, new Object[0])));
+                        break;
+                    }
+                } else {
+                    ih1Var.getMessagesController().removeSuggestion(0L, "VALIDATE_PASSWORD");
+                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(ih1Var.getParentActivity());
+                    alertDialog$Builder.k(LocaleController.getString(R.string.OK), new zg1(ih1Var, 3));
+                    String string = LocaleController.getString(R.string.PasswordReset);
+                    org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
+                    b2Var.T = string;
+                    b2Var.R = LocaleController.getString(R.string.TwoStepVerificationTitle);
+                    Dialog showDialog = ih1Var.showDialog(b2Var);
+                    if (showDialog != null) {
+                        showDialog.setCanceledOnTouchOutside(false);
+                        showDialog.setCancelable(false);
+                        break;
+                    }
                 }
-            }
-            gh1Var.finishFragment();
-            return;
-        }
-        if (i10 == 1) {
-            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(gh1Var.getParentActivity());
-            TL_account.Password password = gh1Var.U;
-            String string = (password == null || !password.has_password) ? LocaleController.getString(R.string.CancelPasswordQuestion) : LocaleController.getString(R.string.CancelEmailQuestion);
-            String string2 = LocaleController.getString(R.string.CancelEmailQuestionTitle);
-            String string3 = LocaleController.getString(R.string.Abort);
-            org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
-            b2Var.T = string;
-            b2Var.R = string2;
-            alertDialog$Builder.k(string3, new ol0(this, 25));
-            alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-            org.telegram.ui.ActionBar.b2 b2Var2 = alertDialog$Builder.a;
-            gh1Var.showDialog(b2Var2);
-            TextView textView = (TextView) b2Var2.d(-1);
-            if (textView != null) {
-                textView.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.q7, false));
-            }
+                break;
+            case 1:
+                ih1Var.w0();
+                if (tL_error != null) {
+                    if (!tL_error.text.startsWith("CODE_INVALID")) {
+                        if (!tL_error.text.startsWith("FLOOD_WAIT")) {
+                            ih1Var.G0(LocaleController.getString(R.string.AppName), tL_error.text);
+                            break;
+                        } else {
+                            int intValue2 = Utilities.parseInt((CharSequence) tL_error.text).intValue();
+                            ih1Var.G0(LocaleController.getString(R.string.AppName), LocaleController.formatString("FloodWaitTime", R.string.FloodWaitTime, intValue2 < 60 ? LocaleController.formatPluralString("Seconds", intValue2, new Object[0]) : LocaleController.formatPluralString("Minutes", intValue2 / 60, new Object[0])));
+                            break;
+                        }
+                    } else {
+                        ih1Var.y0();
+                        break;
+                    }
+                } else if (ih1Var.getParentActivity() != null) {
+                    ih1Var.u0(new ah1(ih1Var, 5));
+                    break;
+                }
+                break;
+            case 2:
+                ih1.e0(ih1Var, tL_error);
+                break;
+            default:
+                ih1.Z(ih1Var, tL_error);
+                break;
         }
     }
 }

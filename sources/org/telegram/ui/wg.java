@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import android.content.DialogInterface;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class wg implements Runnable {
     public final /* synthetic */ int a;
@@ -27,7 +27,7 @@ public final /* synthetic */ class wg implements Runnable {
                     final int i10 = 1;
                     final zn znVar = this.b;
                     final int i11 = this.d;
-                    b2Var.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.ui.kh
+                    b2Var.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.ui.lh
                         @Override // android.content.DialogInterface.OnCancelListener
                         public final void onCancel(DialogInterface dialogInterface) {
                             switch (i10) {
@@ -54,7 +54,7 @@ public final /* synthetic */ class wg implements Runnable {
                     final int i12 = 0;
                     final zn znVar2 = this.b;
                     final int i13 = this.d;
-                    b2Var2.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.ui.kh
+                    b2Var2.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.ui.lh
                         @Override // android.content.DialogInterface.OnCancelListener
                         public final void onCancel(DialogInterface dialogInterface) {
                             switch (i12) {
@@ -81,7 +81,7 @@ public final /* synthetic */ class wg implements Runnable {
                     final int i14 = 2;
                     final zn znVar3 = this.b;
                     final int i15 = this.d;
-                    b2Var3.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.ui.kh
+                    b2Var3.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.ui.lh
                         @Override // android.content.DialogInterface.OnCancelListener
                         public final void onCancel(DialogInterface dialogInterface) {
                             switch (i14) {

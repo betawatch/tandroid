@@ -36,7 +36,7 @@ import n6.l;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class i {
     public static final g6.b v = new g6.b("MediaSessionManager", null);
@@ -155,7 +155,9 @@ public final class i {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:43:0x00a6  */
-    /* JADX WARN: Removed duplicated region for block: B:70:0x00a9  */
+    /* JADX WARN: Removed duplicated region for block: B:65:0x0119  */
+    /* JADX WARN: Removed duplicated region for block: B:71:0x011b  */
+    /* JADX WARN: Removed duplicated region for block: B:74:0x00a9  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -220,10 +222,12 @@ public final class i {
                             gVar.k = fVar2;
                             gVar.b();
                         }
-                        y yVar2 = new y((list != null || list.isEmpty()) ? null : (m6.a) list.get(0));
-                        uri = (Uri) yVar2.b;
+                        m6.a aVar = (list != null || list.isEmpty()) ? null : (m6.a) list.get(0);
+                        y yVar2 = new y();
+                        yVar2.a = aVar != null ? null : aVar.b;
+                        uri = (Uri) yVar2.a;
                         yVar = gVar.l;
-                        if (yVar != null || !g6.a.d(uri, (Uri) yVar.b)) {
+                        if (yVar != null || !g6.a.d(uri, (Uri) yVar.a)) {
                             cf.c cVar = gVar.i;
                             cVar.e = new of.b(16, gVar, yVar2);
                             cVar.A(uri);
@@ -246,8 +250,11 @@ public final class i {
                     }
                     gVar.k = fVar22;
                     gVar.b();
-                    y yVar22 = new y((list != null || list.isEmpty()) ? null : (m6.a) list.get(0));
-                    uri = (Uri) yVar22.b;
+                    if (list != null) {
+                    }
+                    y yVar22 = new y();
+                    yVar22.a = aVar != null ? null : aVar.b;
+                    uri = (Uri) yVar22.a;
                     yVar = gVar.l;
                     if (yVar != null) {
                     }
@@ -339,7 +346,7 @@ public final class i {
         }
         b0 b0Var2 = this.p;
         MediaMetadataCompat mediaMetadataCompat = null;
-        if (b0Var2 != null && (metadata = ((android.support.v4.media.session.h) b0Var2.b.b).a.getMetadata()) != null) {
+        if (b0Var2 != null && (metadata = ((android.support.v4.media.session.h) b0Var2.b.a).a.getMetadata()) != null) {
             a0.f fVar = MediaMetadataCompat.d;
             Parcel obtain = Parcel.obtain();
             metadata.writeToParcel(obtain, 0);
@@ -671,7 +678,7 @@ public final class i {
         c6.l.c(1, "com.google.android.gms.cast.metadata.SUBTITLE");
         String string2 = bundle2.getString("com.google.android.gms.cast.metadata.SUBTITLE");
         b0 b0Var3 = this.p;
-        if (b0Var3 == null || (metadata = ((android.support.v4.media.session.h) b0Var3.b.b).a.getMetadata()) == null) {
+        if (b0Var3 == null || (metadata = ((android.support.v4.media.session.h) b0Var3.b.a).a.getMetadata()) == null) {
             createFromParcel = null;
         } else {
             a0.f fVar2 = MediaMetadataCompat.d;
@@ -683,7 +690,7 @@ public final class i {
             createFromParcel.b = metadata;
         }
         a4.m mVar = createFromParcel == null ? new a4.m(1) : new a4.m(createFromParcel);
-        mVar.v0(j10);
+        mVar.u0(j10);
         if (string != null) {
             mVar.w0("android.media.metadata.TITLE", string);
             mVar.w0("android.media.metadata.DISPLAY_TITLE", string);

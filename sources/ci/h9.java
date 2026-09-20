@@ -8,19 +8,19 @@ import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.gl0;
-import org.telegram.ui.Components.vl0;
+import org.telegram.ui.Components.fl0;
+import org.telegram.ui.Components.ul0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
-public final class h9 extends vl0 {
+public final class h9 extends ul0 {
     public final /* synthetic */ i9 c;
 
     public h9(i9 i9Var) {
         this.c = i9Var;
     }
 
-    @Override // org.telegram.ui.Components.vl0
+    @Override // org.telegram.ui.Components.ul0
     public final boolean D(s4.c1 c1Var) {
         return c1Var.f == 2;
     }
@@ -80,7 +80,7 @@ public final class h9 extends vl0 {
     @Override // s4.h0
     public final s4.c1 x(ViewGroup viewGroup, int i10) {
         View view;
-        org.telegram.ui.ActionBar.e6 e6Var;
+        org.telegram.ui.ActionBar.f6 f6Var;
         i9 i9Var = this.c;
         if (i10 == 0 || i10 == 1) {
             View view2 = new View(i9Var.getContext());
@@ -88,9 +88,9 @@ public final class h9 extends vl0 {
             view = view2;
         } else {
             Context context = i9Var.getContext();
-            e6Var = ((org.telegram.ui.ActionBar.f3) i9Var).resourcesProvider;
-            view = new ha(context, e6Var);
+            f6Var = ((org.telegram.ui.ActionBar.f3) i9Var).resourcesProvider;
+            view = new ha(context, f6Var);
         }
-        return new gl0(view);
+        return new fl0(view);
     }
 }

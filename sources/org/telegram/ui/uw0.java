@@ -14,7 +14,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public class uw0 extends FrameLayout {
     public final org.telegram.ui.ActionBar.j5 a;
@@ -23,10 +23,10 @@ public class uw0 extends FrameLayout {
     public final ImageView d;
     public boolean e;
     public kx0 f;
-    public org.telegram.ui.Components.o5 h;
+    public org.telegram.ui.Components.n5 h;
     public Drawable n;
 
-    public uw0(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
+    public uw0(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
         super(context);
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
@@ -36,12 +36,12 @@ public class uw0 extends FrameLayout {
         this.a = j5Var;
         j5Var.setTypeface(AndroidUtilities.bold());
         j5Var.setTextSize(15);
-        j5Var.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.G6, e6Var));
+        j5Var.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.G6, f6Var));
         linearLayout.addView(j5Var, w7.y5.n(-1, -2));
         TextView textView = new TextView(context);
         this.b = textView;
         textView.setTextSize(1, 14.0f);
-        textView.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.y6, e6Var));
+        textView.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.y6, f6Var));
         textView.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
         linearLayout.addView(textView, w7.y5.p(-1, -2, 0.0f, 0, 0, 1, 0, 0));
         addView(linearLayout, w7.y5.d(-1, -2.0f, 0, 62.0f, 8.0f, 48.0f, 9.0f));
@@ -54,7 +54,7 @@ public class uw0 extends FrameLayout {
         this.d = imageView2;
         imageView2.setScaleType(scaleType);
         imageView2.setImageResource(R.drawable.msg_arrowright);
-        imageView2.setColorFilter(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.M6, e6Var));
+        imageView2.setColorFilter(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.M6, f6Var));
         addView(imageView2, w7.y5.d(24, 24.0f, 21, 0.0f, 0.0f, 18.0f, 0.0f));
     }
 
@@ -64,7 +64,7 @@ public class uw0 extends FrameLayout {
         if (isPremium && kx0Var.a == 12 && kx0Var.b == R.drawable.filled_premium_status2) {
             imageView.setVisibility(8);
             if (this.h == null) {
-                this.h = new org.telegram.ui.Components.o5(AndroidUtilities.dp(24.0f), 13, this, false);
+                this.h = new org.telegram.ui.Components.n5(AndroidUtilities.dp(24.0f), 13, this, false);
                 if (isAttachedToWindow()) {
                     this.h.a();
                 }
@@ -73,9 +73,9 @@ public class uw0 extends FrameLayout {
             b(emojiStatusDocumentId == null ? 0L : emojiStatusDocumentId.longValue(), false);
         } else {
             imageView.setVisibility(0);
-            org.telegram.ui.Components.o5 o5Var = this.h;
-            if (o5Var != null) {
-                o5Var.b();
+            org.telegram.ui.Components.n5 n5Var = this.h;
+            if (n5Var != null) {
+                n5Var.b();
                 this.h = null;
             }
         }
@@ -88,7 +88,7 @@ public class uw0 extends FrameLayout {
 
     public final void b(long j3, boolean z10) {
         if (this.h == null) {
-            this.h = new org.telegram.ui.Components.o5(AndroidUtilities.dp(24.0f), 13, this, false);
+            this.h = new org.telegram.ui.Components.n5(AndroidUtilities.dp(24.0f), 13, this, false);
             if (isAttachedToWindow()) {
                 this.h.a();
             }
@@ -124,18 +124,18 @@ public class uw0 extends FrameLayout {
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
-        org.telegram.ui.Components.o5 o5Var = this.h;
-        if (o5Var != null) {
-            o5Var.a();
+        org.telegram.ui.Components.n5 n5Var = this.h;
+        if (n5Var != null) {
+            n5Var.a();
         }
         super.onAttachedToWindow();
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
-        org.telegram.ui.Components.o5 o5Var = this.h;
-        if (o5Var != null) {
-            o5Var.b();
+        org.telegram.ui.Components.n5 n5Var = this.h;
+        if (n5Var != null) {
+            n5Var.b();
         }
         super.onDetachedFromWindow();
     }

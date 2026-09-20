@@ -10,9 +10,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 import org.scilab.forge.jlatexmath.TeXFormulaSettingsParser;
-import v7.e6;
+import v7.f6;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public abstract class m2 {
     public static final char[] a;
@@ -56,13 +56,13 @@ public abstract class m2 {
         if (obj instanceof String) {
             sb2.append(": \"");
             l1 l1Var = l1.c;
-            sb2.append(e6.a(new l1(((String) obj).getBytes(a2.a))));
+            sb2.append(f6.a(new l1(((String) obj).getBytes(a2.a))));
             sb2.append('\"');
             return;
         }
         if (obj instanceof l1) {
             sb2.append(": \"");
-            sb2.append(e6.a((l1) obj));
+            sb2.append(f6.a((l1) obj));
             sb2.append('\"');
             return;
         }

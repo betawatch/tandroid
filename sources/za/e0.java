@@ -5,9 +5,9 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import v7.t7;
+import v7.u7;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class e0 extends kd.j implements rd.p {
     public g0 a;
@@ -76,7 +76,7 @@ public final class e0 extends kd.j implements rd.p {
         jd.a aVar = jd.a.a;
         int i10 = this.r;
         if (i10 == 0) {
-            t7.b(obj);
+            u7.b(obj);
             this.r = 1;
             b10 = g0.b(g0Var2, this);
         } else {
@@ -93,7 +93,7 @@ public final class e0 extends kd.j implements rd.p {
                     k9.h hVar3 = this.c;
                     b0 b0Var2 = this.b;
                     g0 g0Var3 = this.a;
-                    t7.b(obj);
+                    u7.b(obj);
                     g0Var = g0Var3;
                     b0Var = b0Var2;
                     firebaseApp = hVar3;
@@ -141,7 +141,7 @@ public final class e0 extends kd.j implements rd.p {
                 k9.h hVar5 = this.c;
                 b0 b0Var3 = this.b;
                 g0Var = this.a;
-                t7.b(obj);
+                u7.b(obj);
                 a2 = list;
                 hVar2 = hVar5;
                 b0Var = b0Var3;
@@ -196,7 +196,7 @@ public final class e0 extends kd.j implements rd.p {
                 }
                 return aVar;
             }
-            t7.b(obj);
+            u7.b(obj);
             b10 = obj;
         }
         if (((Boolean) b10).booleanValue()) {

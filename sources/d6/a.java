@@ -24,9 +24,9 @@ import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
-import v7.j5;
+import v7.k5;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class a {
     public static final g6.b l = new g6.b("CastContext", null);
@@ -141,14 +141,14 @@ public final class a {
                             LinkedHashSet<String> linkedHashSet = new LinkedHashSet();
                             Iterator it2 = unmodifiableList.iterator();
                             while (it2.hasNext()) {
-                                linkedHashSet.add(j5.a((String) it2.next()));
+                                linkedHashSet.add(k5.a((String) it2.next()));
                             }
                             com.google.android.gms.internal.cast.n.f.b("resetting routes. appIdToRouteInfo has these appId route keys: ".concat(String.valueOf(nVar.c.keySet())), new Object[0]);
                             HashMap hashMap2 = new HashMap();
                             synchronized (nVar.c) {
                                 try {
                                     for (String str2 : linkedHashSet) {
-                                        com.google.android.gms.internal.cast.l lVar4 = (com.google.android.gms.internal.cast.l) nVar.c.get(j5.a(str2));
+                                        com.google.android.gms.internal.cast.l lVar4 = (com.google.android.gms.internal.cast.l) nVar.c.get(k5.a(str2));
                                         if (lVar4 != null) {
                                             hashMap2.put(str2, lVar4);
                                         }

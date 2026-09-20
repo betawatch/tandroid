@@ -25,7 +25,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.n2;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public abstract class s {
     public static HashMap a;
@@ -177,8 +177,8 @@ public abstract class s {
                 tL_inputStorePaymentPremiumGiftCode.message = tL_textWithEntities;
             }
             c5.a aVar = new c5.a();
-            aVar.b = "inapp";
-            aVar.a = tL_premiumGiftCodeOption.store_product;
+            aVar.c = "inapp";
+            aVar.b = tL_premiumGiftCodeOption.store_product;
             BillingController.getInstance().queryProductDetails(Arrays.asList(aVar.a()), new org.telegram.ui.Components.d1(tL_inputStorePaymentPremiumGiftCode, tL_premiumGiftCodeOption, connectionsManager, callback2, callback, n2Var, 2));
             return;
         }

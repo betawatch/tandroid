@@ -2,11 +2,11 @@ package ai;
 
 import android.content.Context;
 import android.view.View;
-import org.telegram.ui.Components.l61;
+import org.telegram.ui.Components.k61;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
-public final class x0 extends l61 {
+public final class x0 extends k61 {
     public final /* synthetic */ r3 N;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -15,7 +15,7 @@ public final class x0 extends l61 {
         this.N = r3Var;
     }
 
-    @Override // org.telegram.ui.Components.l61, s4.h0
+    @Override // org.telegram.ui.Components.k61, s4.h0
     public final void v(s4.c1 c1Var, int i10) {
         h1 h1Var;
         m1 m1Var;
@@ -30,7 +30,7 @@ public final class x0 extends l61 {
         }
     }
 
-    @Override // org.telegram.ui.Components.l61, s4.h0
+    @Override // org.telegram.ui.Components.k61, s4.h0
     public final void y(s4.c1 c1Var) {
         h1 h1Var;
         m1 m1Var;

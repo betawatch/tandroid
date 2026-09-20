@@ -8,10 +8,10 @@ import java.io.IOException;
 import java.util.Arrays;
 import kotlin.jvm.internal.i;
 import pd.a;
-import w7.i6;
 import w7.j6;
+import w7.k6;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class zzdl {
     public zzdl(Context context) {
@@ -45,7 +45,7 @@ public final class zzdl {
                 if (read2 != -1) {
                     a aVar = new a(8193);
                     aVar.write(read2);
-                    i6.a(fileInputStream, aVar);
+                    j6.a(fileInputStream, aVar);
                     int size = aVar.size() + i10;
                     if (size < 0) {
                         throw new OutOfMemoryError("File " + file + " is too big to fit in memory.");
@@ -62,7 +62,7 @@ public final class zzdl {
             try {
                 throw th2;
             } catch (Throwable th3) {
-                j6.a(fileInputStream, th2);
+                k6.a(fileInputStream, th2);
                 throw th3;
             }
         }

@@ -17,7 +17,7 @@ import java.nio.ByteOrder;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class c implements o {
     public q a;
@@ -37,7 +37,7 @@ public final class c implements o {
     public final void g(q qVar) {
         this.a = qVar;
         this.b = qVar.Z1(0, 1);
-        qVar.e1();
+        qVar.f1();
     }
 
     @Override // c3.o
@@ -82,7 +82,7 @@ public final class c implements o {
             if (!e.a(pVar)) {
                 throw s0.a(null, "Unsupported or unrecognized wav file type.");
             }
-            pVar.q((int) (pVar.i() - pVar.getPosition()));
+            pVar.q((int) (pVar.j() - pVar.getPosition()));
             this.c = 1;
             return 0;
         }
@@ -175,7 +175,7 @@ public final class c implements o {
         } else {
             bArr = d0.b;
         }
-        pVar.q((int) (pVar.i() - pVar.getPosition()));
+        pVar.q((int) (pVar.j() - pVar.getPosition()));
         e2.q qVar = new e2.q();
         qVar.a = q10;
         qVar.b = p5;

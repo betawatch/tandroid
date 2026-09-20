@@ -5,6 +5,7 @@ import android.graphics.Canvas;
 import android.os.Bundle;
 import android.transition.TransitionManager;
 import android.view.View;
+import android.view.animation.DecelerateInterpolator;
 import android.widget.TextView;
 import ii.a2;
 import ii.h2;
@@ -16,18 +17,19 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.voip.GroupCallMessage;
 import org.telegram.tgnet.TLParseException;
 import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Cells.h3;
-import org.telegram.ui.Cells.j3;
-import org.telegram.ui.Components.bu;
+import org.telegram.ui.Cells.i3;
+import org.telegram.ui.Cells.k3;
 import org.telegram.ui.Components.voip.g2;
 import org.telegram.ui.Components.voip.p2;
 import org.telegram.ui.Components.voip.t2;
 import org.telegram.ui.Components.voip.x2;
-import org.telegram.ui.dg1;
+import org.telegram.ui.Components.z50;
+import org.telegram.ui.fg1;
+import org.telegram.ui.jl;
 import org.telegram.ui.zn;
 import w7.y5;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final /* synthetic */ class g0 implements Runnable {
     public final /* synthetic */ int a;
@@ -51,9 +53,9 @@ public final /* synthetic */ class g0 implements Runnable {
                     throw new RuntimeException(e);
                 }
             case 1:
-                h3 h3Var = ((j3) this.b).b;
-                h3Var.requestFocus();
-                AndroidUtilities.showKeyboard(h3Var);
+                i3 i3Var = ((k3) this.b).b;
+                i3Var.requestFocus();
+                AndroidUtilities.showKeyboard(i3Var);
                 return;
             case 2:
                 AndroidUtilities.showKeyboard(((ii.x) this.b).e0.b);
@@ -93,6 +95,16 @@ public final /* synthetic */ class g0 implements Runnable {
                 ((kh.b) this.b).invalidate();
                 return;
             case 10:
+                z50 z50Var = (z50) ((l.d) this.b).a;
+                jl jlVar = z50Var.x;
+                if (z50Var.g0) {
+                    z50Var.g0 = false;
+                    jlVar.animate().cancel();
+                    jlVar.animate().alpha(0.0f).setDuration(100L).setInterpolator(new DecelerateInterpolator()).start();
+                    return;
+                }
+                return;
+            case 11:
                 lh.c cVar = (lh.c) this.b;
                 GroupCallMessage groupCallMessage = cVar.H;
                 if (groupCallMessage != null) {
@@ -101,10 +113,10 @@ public final /* synthetic */ class g0 implements Runnable {
                     return;
                 }
                 return;
-            case 11:
+            case 12:
                 NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needSetDayNightTheme, (i6) this.b, Boolean.TRUE, null, -1);
                 return;
-            case 12:
+            case 13:
                 n2.d dVar = (n2.d) this.b;
                 if (dVar.c) {
                     return;
@@ -116,43 +128,43 @@ public final /* synthetic */ class g0 implements Runnable {
                 dVar.d.x.remove(dVar);
                 dVar.c = true;
                 return;
-            case 13:
+            case 14:
                 ((n2.b) this.b).a(null);
                 return;
-            case 14:
-                dg1 dg1Var = (dg1) this.b;
-                if (dg1Var.getParentLayout() != null) {
-                    dg1Var.H = true;
+            case 15:
+                fg1 fg1Var = (fg1) this.b;
+                if (fg1Var.getParentLayout() != null) {
+                    fg1Var.H = true;
                     Bundle bundle = new Bundle();
-                    bundle.putLong("chat_id", dg1Var.a);
+                    bundle.putLong("chat_id", fg1Var.a);
                     zn znVar = new zn(bundle);
                     znVar.ja = true;
-                    dg1Var.presentFragment(znVar);
+                    fg1Var.presentFragment(znVar);
                     return;
                 }
                 return;
-            case 15:
+            case 16:
                 ((ka.c) this.b).Z();
                 return;
-            case 16:
+            case 17:
                 oi.d dVar2 = (oi.d) this.b;
                 AndroidUtilities.runOnUIThread(new oi.c(dVar2.a, dVar2.b, i10), 500L);
                 return;
-            case 17:
+            case 18:
                 TLParseException.lambda$doThrowOrLog$0((TLParseException) this.b);
                 return;
-            case 18:
+            case 19:
                 org.telegram.ui.Components.voip.m0 m0Var = (org.telegram.ui.Components.voip.m0) this.b;
                 m0Var.P0 = null;
                 m0Var.setVisibleParticipant(true);
                 return;
-            case 19:
+            case 20:
                 org.telegram.ui.Components.voip.j1 j1Var = (org.telegram.ui.Components.voip.j1) this.b;
                 j1Var.K = false;
                 j1Var.o(false);
                 j1Var.W = false;
                 return;
-            case 20:
+            case 21:
                 org.telegram.ui.Components.voip.j1 j1Var2 = (org.telegram.ui.Components.voip.j1) ((lg.b) this.b).b;
                 j1Var2.e.invalidate();
                 if (j1Var2.e.isInLayout()) {
@@ -162,10 +174,10 @@ public final /* synthetic */ class g0 implements Runnable {
                 j1Var2.d.requestLayout();
                 j1Var2.f.requestLayout();
                 return;
-            case 21:
+            case 22:
                 ((org.telegram.ui.Components.voip.i1) this.b).a.i(false);
                 return;
-            case 22:
+            case 23:
                 org.telegram.ui.Components.voip.h2 h2Var = (org.telegram.ui.Components.voip.h2) this.b;
                 h2Var.e = false;
                 HashMap hashMap = h2Var.a;
@@ -209,50 +221,47 @@ public final /* synthetic */ class g0 implements Runnable {
                 arrayList2.clear();
                 arrayList.clear();
                 h2Var.e = true;
-                AndroidUtilities.runOnUIThread(new g0(h2Var, 22), 700L);
+                AndroidUtilities.runOnUIThread(new g0(h2Var, 23), 700L);
                 Runnable runnable = h2Var.h;
                 if (runnable != null) {
                     runnable.run();
                     return;
                 }
                 return;
-            case 23:
+            case 24:
                 TextView[] textViewArr = ((p2) this.b).a;
                 TextView textView = textViewArr[0];
                 textViewArr[0] = textViewArr[1];
                 textViewArr[1] = textView;
                 return;
-            case 24:
+            case 25:
                 TextView[] textViewArr2 = ((p2) ((gg.k0) this.b).e).a;
                 TextView textView2 = textViewArr2[0];
                 textViewArr2[0] = textViewArr2[1];
                 textViewArr2[1] = textView2;
                 return;
-            case 25:
+            case 26:
                 t2 t2Var = (t2) this.b;
                 if (t2Var.getVisibility() == 0) {
                     t2Var.a();
                     return;
                 }
                 return;
-            case 26:
+            case 27:
                 x2 x2Var = (x2) this.b;
                 x2Var.e = Bitmap.createBitmap(x2Var.getMeasuredWidth(), x2Var.getMeasuredHeight(), Bitmap.Config.ARGB_8888);
                 new Canvas(x2Var.e).drawText(x2Var.d, x2Var.getMeasuredWidth() / 2, (int) ((x2Var.getMeasuredHeight() / 2) - ((x2Var.a.ascent() + x2Var.a.descent()) / 2.0f)), x2Var.a);
                 x2Var.postInvalidate();
                 return;
-            case 27:
+            case 28:
                 ((org.telegram.ui.web.k) this.b).w.Y2.N(true);
                 return;
-            case 28:
+            default:
                 org.telegram.ui.web.i iVar = ((org.telegram.ui.web.o) this.b).h.f;
                 if (iVar != null) {
                     iVar.d();
                     return;
                 }
-                return;
-            default:
-                ((bu) this.b).requestFocus();
                 return;
         }
     }

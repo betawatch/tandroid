@@ -38,23 +38,23 @@ import org.telegram.tgnet.Vector;
 import org.telegram.ui.ActionBar.a2;
 import org.telegram.ui.ActionBar.b2;
 import org.telegram.ui.Components.Switch;
-import org.telegram.ui.Components.ij0;
-import org.telegram.ui.Components.po0;
+import org.telegram.ui.Components.hj0;
 import org.telegram.ui.Components.r50;
 import org.telegram.ui.Components.voip.m1;
+import org.telegram.ui.Components.wn0;
 import org.telegram.ui.au0;
 import org.telegram.ui.jr0;
 import org.webrtc.GlGenericDrawer;
 import p4.r0;
 import p4.s0;
 import pg.u1;
-import qg.l2;
 import qg.m2;
 import qg.n2;
-import qg.x1;
-import w7.m6;
+import qg.o2;
+import qg.y1;
+import w7.n6;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final /* synthetic */ class v implements le.d, li.f, m4.z, e1, c1, q9.d, Vector.TLDeserializer, GlGenericDrawer.TextureCallback, m1, a2, pg.i0, u1, m8, OnSuccessListener, ImageReceiver.ImageReceiverDelegate, r2.v, t5.b {
     public final /* synthetic */ int a;
@@ -86,7 +86,7 @@ public final /* synthetic */ class v implements le.d, li.f, m4.z, e1, c1, q9.d, 
     public Object G(cf.c cVar) {
         switch (this.a) {
             case 7:
-                return new na.c((Context) cVar.a(Context.class), ((k9.h) cVar.a(k9.h.class)).d(), cVar.x(na.d.class), cVar.c(xa.b.class), (Executor) cVar.i((q9.r) this.b));
+                return new na.c((Context) cVar.a(Context.class), ((k9.h) cVar.a(k9.h.class)).d(), cVar.x(na.d.class), cVar.c(xa.b.class), (Executor) cVar.i((q9.s) this.b));
             default:
                 return this.b;
         }
@@ -133,12 +133,12 @@ public final /* synthetic */ class v implements le.d, li.f, m4.z, e1, c1, q9.d, 
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public void didSetImage(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
-        ij0 lottieAnimation;
-        n2 n2Var = (n2) this.b;
+        hj0 lottieAnimation;
+        o2 o2Var = (o2) this.b;
         if (!z10 || z11 || (lottieAnimation = imageReceiver.getLottieAnimation()) == null) {
             return;
         }
-        n2Var.q(lottieAnimation);
+        o2Var.q(lottieAnimation);
     }
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
@@ -160,28 +160,49 @@ public final /* synthetic */ class v implements le.d, li.f, m4.z, e1, c1, q9.d, 
         textView.setClickable(a2);
     }
 
-    @Override // org.telegram.ui.ActionBar.a2
-    public void f(b2 b2Var, int i10) {
-        switch (this.a) {
-            case 15:
-                ((org.telegram.ui.web.b0) this.b).run();
-                break;
-            case 20:
-                ((jr0) this.b).run();
-                break;
-            default:
-                ((qg.b0) this.b).a.f2.r();
-                break;
-        }
-    }
-
     @Override // ci.m8
-    public Bitmap g(BitmapFactory.Options options) {
+    public Bitmap f(BitmapFactory.Options options) {
         return BitmapFactory.decodeFile((String) this.b, options);
     }
 
+    @Override // li.f
+    public void g(int i10) {
+        li.b bVar = (li.b) this.b;
+        ah.i iVar = bVar.d;
+        if (Build.VERSION.SDK_INT < 31 || iVar == null) {
+            return;
+        }
+        if (w7.d0.a(i10, 4)) {
+            mi.a b10 = bVar.a.b();
+            ViewGroup viewGroup = bVar.f;
+            if (viewGroup != null) {
+                b10.b(viewGroup.getY(), bVar.e.getWidth(), bVar.f.getY() + bVar.f.getHeight());
+            }
+            iVar.h(b10);
+        }
+        iVar.e(bVar.g, bVar.e.getWidth(), bVar.e.getHeight());
+    }
+
+    @Override // m4.e1
+    public Object h(m4.a0 a0Var, m4.r rVar, int i10) {
+        int i11 = this.a;
+        Object obj = this.b;
+        switch (i11) {
+            case 4:
+                return a0Var.l(rVar, (e9.i0) obj);
+            default:
+                c1 c1Var = (c1) obj;
+                i9.u uVar = i9.u.b;
+                if (!a0Var.j()) {
+                    c1Var.d(a0Var.t, rVar);
+                    f1.O0(a0Var, rVar, i10, new p1(0));
+                }
+                return i9.u.b;
+        }
+    }
+
     @Override // t5.b
-    public Object h() {
+    public Object i() {
         s5.h hVar = (s5.h) ((s5.c) this.b);
         hVar.getClass();
         int i10 = o5.a.e;
@@ -202,40 +223,19 @@ public final /* synthetic */ class v implements le.d, li.f, m4.z, e1, c1, q9.d, 
         }
     }
 
-    @Override // m4.e1
-    public Object i(m4.a0 a0Var, m4.r rVar, int i10) {
-        int i11 = this.a;
-        Object obj = this.b;
-        switch (i11) {
-            case 4:
-                return a0Var.l(rVar, (e9.i0) obj);
+    @Override // org.telegram.ui.ActionBar.a2
+    public void k(b2 b2Var, int i10) {
+        switch (this.a) {
+            case 15:
+                ((org.telegram.ui.web.b0) this.b).run();
+                break;
+            case 20:
+                ((jr0) this.b).run();
+                break;
             default:
-                c1 c1Var = (c1) obj;
-                i9.u uVar = i9.u.b;
-                if (!a0Var.j()) {
-                    c1Var.d(a0Var.t, rVar);
-                    f1.O0(a0Var, rVar, i10, new p1(0));
-                }
-                return i9.u.b;
+                ((qg.c0) this.b).a.f2.r();
+                break;
         }
-    }
-
-    @Override // li.f
-    public void j(int i10) {
-        li.b bVar = (li.b) this.b;
-        ah.i iVar = bVar.d;
-        if (Build.VERSION.SDK_INT < 31 || iVar == null) {
-            return;
-        }
-        if (w7.d0.a(i10, 4)) {
-            mi.a b10 = bVar.a.b();
-            ViewGroup viewGroup = bVar.f;
-            if (viewGroup != null) {
-                b10.b(viewGroup.getY(), bVar.e.getWidth(), bVar.f.getY() + bVar.f.getHeight());
-            }
-            iVar.h(b10);
-        }
-        iVar.e(bVar.g, bVar.e.getWidth(), bVar.e.getHeight());
     }
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
@@ -249,9 +249,9 @@ public final /* synthetic */ class v implements le.d, li.f, m4.z, e1, c1, q9.d, 
         Object obj2 = this.b;
         switch (i10) {
             case 23:
-                x1 x1Var = (x1) obj2;
-                x1Var.C0 = true;
-                x1Var.B0 = false;
+                y1 y1Var = (y1) obj2;
+                y1Var.C0 = true;
+                y1Var.B0 = false;
                 break;
             case 24:
                 r4 r4Var = (r4) obj2;
@@ -259,43 +259,43 @@ public final /* synthetic */ class v implements le.d, li.f, m4.z, e1, c1, q9.d, 
                 ArrayList arrayList = new ArrayList();
                 for (int i11 = 0; i11 < bVar.a.size(); i11++) {
                     ac.a aVar = (ac.a) bVar.a.get(i11);
-                    l2 l2Var = new l2();
-                    l2Var.a = aVar.a;
-                    l2Var.b = aVar.d;
-                    l2Var.c = aVar.e;
-                    l2Var.d = aVar.b;
-                    l2Var.e = aVar.c;
-                    arrayList.add(l2Var);
+                    m2 m2Var = new m2();
+                    m2Var.a = aVar.a;
+                    m2Var.b = aVar.d;
+                    m2Var.c = aVar.e;
+                    m2Var.d = aVar.b;
+                    m2Var.e = aVar.c;
+                    arrayList.add(m2Var);
                 }
                 r4Var.run(arrayList);
                 break;
             default:
-                m2 m2Var = (m2) obj2;
+                n2 n2Var = (n2) obj2;
                 List list = (List) obj;
-                m2Var.getClass();
+                n2Var.getClass();
                 if (list.size() <= 0) {
                     FileLog.d("objimg: no objects");
                     break;
                 } else {
                     int i12 = ((xb.a) list.get(0)).c;
                     String str = null;
-                    if (m6.a == null) {
-                        m6.a = new String[]{"👥", "🔥", "📚", "🏔", "🧊", "🍱", null, "🚰", "🧸", "🗿", "🍔", "🚜", "🛷", "🐠", "🎪", null, "🪑", "🧔", "🌉", "🩰", "🐦", "🚣", "🏞", null, "🏭", "🎓", "🍶", "🌿", "🌸", "🛋", "😎", "🏗", "🎡", "🐠", "🤿", "🐶", "⛵", "🎨", "🏆", "🧗", "🏸", "🦁", "🚲", "🏟", null, "⛵", "🙂", "🏄", "🍟", "🌇", "🌭", "🩳", "🚌", "🐂", "🌌", "🐹", "🪨", "👥", "👗", "👣", null, "🐻", "🍽", "🗼", "🧱", "🗑", "👤", "🏄", "👙", "🎢", "🏕", "🎠", "🚽", "😆", "🎈", "🎤", "👗", "🚧", "📦", "🐠", "🧺", "🌼", "🛒", "🥊", "💍", "💎", "🎰", "🚗", "🪜", "💻", "🍳", "📽️", "🪑", "🖼", "🍷", "🚢", "🛳", "👥", "🧗", "🕳", "👔", "🛠", "🌊", "🤡", "🎉", "🚴", "☄️", "🎓", "🏟", "🎄", "⛪", "🕰", "👨", "🐄", "🌴", "🖥", "🥌", "🍲", "🐱", "🧃", "🍚", null, "👥", "🏙", null, "🧸", "🍪", "🟩", "🕎", "🧶", "🛹", "✂️", "💅", "🥤", "🍴", "📜", null, "👘", "🧸", "📱", "🚦", "❄️", "🇵🇷", "⛓", "💃", "🏜", "🎅", "🦃", "🤵", "👄", "🏜", "🦕", "👳\u200d♂️", "🔥", "🛏", "🥽", "🐉", "🛋", "🛷", "🧢", "📋", "🎩", "🍨", "🐎", "🧶", "👕", "🧣", "🏖", "⚽", "🖤", "🎧", "🏛", "🚘", "🛹", "🦢", "🍖", "🥅", "🧁", "🐕", "🚤", "🌳", "☕", "⚽", "🧸", "🍲", "🧍", "📖", "🍉", "🍜", "✨", "💼", "🌳", "🐕", "🌲", "🚩", "⛵", "🦶", "🧥", null, "🛏", null, "🛁", "🗻", "🤸\u200d♀️", "👂", "🌸", "🐚", "👵", "🏛", "👁️", "🛏", "⚖️", "🎒", "🐎", "✨", "🛸", "💇", "🧸", "👥", "🪟", "🌟", "🐱", "🐄", "🐞", "❄️", "💍", "🚪", "💎", "🧶", "🏺", "🧥", "❤️", "💪", "🏍", "💰", "🕌", "🍽", "💃", "🛶", "🏖", "🧾", "🏞", "🚨", "🐴", "🧥", "📯", "⌚", "🧱", "🤿", "👖", "🏊", "🎸", "🎭", "🤘", "🌕", "🧥", "💍", "📱", "🪖", "🍽", "🎉", "🌌", "📰", "🗞", null, "🎹", "🪴", "🛂", "🐧", "🐕", "🏰", "🏵", "🏇", "📝", "🎶", "⛵", "🍕", "🐾", "🧵", "🐦", "🛹", "🏄", "🏉", "💄", "🏞", "🏁", "🚣", "🛣", "🏃", "🛋", "🏠", "⭐", "🏅", "👟", "🚤", "🪐", "😴", "🤲", "🏊", "🏫", "🍣", "🛋", "🦸", "😎", "⛷", "🚢", "🎵", "📚", "🏙", "🌋", "📺", "🐎", "💉", "🚆", "🚪", "🥤", "🚗", "👜", "💡", "🎫", "🍷", "🍗", "🎡", "🏄", "💻", null, null, "🏡", "🎣", "❤️", "🌱", "☕", "🍞", "🏖", null, "🏛", "🚁", "⛰", "🦆", "🌱", "🐢", "🐊", "🎶", "👟", "🧶", "💍", "🎤", "🎡", "🏂", "🚤", "🧱", "🚀", "🏠", "🏖", "🌈", "🌿", "👨", "🌷", "👗", "🏞", "🐶", "🦸", "🌸", "🍽", "🔊", "⛪", "🏢", "✈️", "🐾", "🐂", "🪑", "🛕", "🦋", "👠", "🏃", "🪡", "🍳", "🏰", "🌌", "🐛", "🏎", null, "✈️", "🚣", "🧵", "🤵", "🎢", "🍲", "🥦", "🚲", "👖", "🪴", "🗄", "🎂", "💺", "✈️", null, "🌫", "🎆", "🚜", "🦭", "📚", "💇", "⚡", "🚐", "🐱", "🚗", "👖", "🌾", "🤿", "☔", "🛣", "⛵", "🐶", "🔳", "🍽", "👰", "💧", null, "🍴", "🚙", "👶", "👓", "🚗", "✈️", "✋", "🐎", "🏞", "🍽", "⚾", "🍷", "👰", "🌿", "🥧", "🎒", "🃏", "🦹", "🪖", "🛶", "🤳", "🛺", "🏚", "🏹", "🚀", null, "⛈", "⛑"};
+                    if (n6.a == null) {
+                        n6.a = new String[]{"👥", "🔥", "📚", "🏔", "🧊", "🍱", null, "🚰", "🧸", "🗿", "🍔", "🚜", "🛷", "🐠", "🎪", null, "🪑", "🧔", "🌉", "🩰", "🐦", "🚣", "🏞", null, "🏭", "🎓", "🍶", "🌿", "🌸", "🛋", "😎", "🏗", "🎡", "🐠", "🤿", "🐶", "⛵", "🎨", "🏆", "🧗", "🏸", "🦁", "🚲", "🏟", null, "⛵", "🙂", "🏄", "🍟", "🌇", "🌭", "🩳", "🚌", "🐂", "🌌", "🐹", "🪨", "👥", "👗", "👣", null, "🐻", "🍽", "🗼", "🧱", "🗑", "👤", "🏄", "👙", "🎢", "🏕", "🎠", "🚽", "😆", "🎈", "🎤", "👗", "🚧", "📦", "🐠", "🧺", "🌼", "🛒", "🥊", "💍", "💎", "🎰", "🚗", "🪜", "💻", "🍳", "📽️", "🪑", "🖼", "🍷", "🚢", "🛳", "👥", "🧗", "🕳", "👔", "🛠", "🌊", "🤡", "🎉", "🚴", "☄️", "🎓", "🏟", "🎄", "⛪", "🕰", "👨", "🐄", "🌴", "🖥", "🥌", "🍲", "🐱", "🧃", "🍚", null, "👥", "🏙", null, "🧸", "🍪", "🟩", "🕎", "🧶", "🛹", "✂️", "💅", "🥤", "🍴", "📜", null, "👘", "🧸", "📱", "🚦", "❄️", "🇵🇷", "⛓", "💃", "🏜", "🎅", "🦃", "🤵", "👄", "🏜", "🦕", "👳\u200d♂️", "🔥", "🛏", "🥽", "🐉", "🛋", "🛷", "🧢", "📋", "🎩", "🍨", "🐎", "🧶", "👕", "🧣", "🏖", "⚽", "🖤", "🎧", "🏛", "🚘", "🛹", "🦢", "🍖", "🥅", "🧁", "🐕", "🚤", "🌳", "☕", "⚽", "🧸", "🍲", "🧍", "📖", "🍉", "🍜", "✨", "💼", "🌳", "🐕", "🌲", "🚩", "⛵", "🦶", "🧥", null, "🛏", null, "🛁", "🗻", "🤸\u200d♀️", "👂", "🌸", "🐚", "👵", "🏛", "👁️", "🛏", "⚖️", "🎒", "🐎", "✨", "🛸", "💇", "🧸", "👥", "🪟", "🌟", "🐱", "🐄", "🐞", "❄️", "💍", "🚪", "💎", "🧶", "🏺", "🧥", "❤️", "💪", "🏍", "💰", "🕌", "🍽", "💃", "🛶", "🏖", "🧾", "🏞", "🚨", "🐴", "🧥", "📯", "⌚", "🧱", "🤿", "👖", "🏊", "🎸", "🎭", "🤘", "🌕", "🧥", "💍", "📱", "🪖", "🍽", "🎉", "🌌", "📰", "🗞", null, "🎹", "🪴", "🛂", "🐧", "🐕", "🏰", "🏵", "🏇", "📝", "🎶", "⛵", "🍕", "🐾", "🧵", "🐦", "🛹", "🏄", "🏉", "💄", "🏞", "🏁", "🚣", "🛣", "🏃", "🛋", "🏠", "⭐", "🏅", "👟", "🚤", "🪐", "😴", "🤲", "🏊", "🏫", "🍣", "🛋", "🦸", "😎", "⛷", "🚢", "🎵", "📚", "🏙", "🌋", "📺", "🐎", "💉", "🚆", "🚪", "🥤", "🚗", "👜", "💡", "🎫", "🍷", "🍗", "🎡", "🏄", "💻", null, null, "🏡", "🎣", "❤️", "🌱", "☕", "🍞", "🏖", null, "🏛", "🚁", "⛰", "🦆", "🌱", "🐢", "🐊", "🎶", "👟", "🧶", "💍", "🎤", "🎡", "🏂", "🚤", "🧱", "🚀", "🏠", "🏖", "🌈", "🌿", "👨", "🌷", "👗", "🏞", "🐶", "🦸", "🌸", "🍽", "🔊", "⛪", "🏢", "✈️", "🐾", "🐂", "🪑", "🛕", "🦋", "👠", "🏃", "🪡", "🍳", "🏰", "🌌", "🐛", "🏎", null, "✈️", "🚣", "🧵", "🤵", "🎢", "🍲", "🥦", "🚲", "👖", "🪴", "🗄", "🎂", "💺", "✈️", null, "🌫", "🎆", "🚜", "🦭", "📚", "💇", "⚡", "🚐", "🐱", "🚗", "👖", "🌾", "🤿", "☔", "🛣", "⛵", "🐶", "🔳", "🍽", "👰", "💧", null, "🍴", "🚙", "👶", "👓", "🚗", "✈️", "✋", "🐎", "🏞", "🍽", "⚾", "🍷", "👰", "🌿", "🥧", "🎒", "🃏", "🦹", "🪖", "🛶", "🤳", "🛺", "🏚", "🏹", "🚀", null, "⛈", "⛑"};
                     }
                     if (i12 >= 0) {
-                        String[] strArr = m6.a;
+                        String[] strArr = n6.a;
                         if (i12 < strArr.length) {
                             str = strArr[i12];
                         }
                     }
-                    m2Var.c0 = str;
+                    n2Var.c0 = str;
                     StringBuilder sb2 = new StringBuilder("objimg: detected #");
                     sb2.append(((xb.a) list.get(0)).c);
                     sb2.append(" ");
-                    sb2.append(m2Var.c0);
+                    sb2.append(n2Var.c0);
                     sb2.append(" ");
                     e2.t(((xb.a) list.get(0)).a, sb2);
-                    Emoji.getEmojiDrawable(m2Var.c0);
+                    Emoji.getEmojiDrawable(n2Var.c0);
                     break;
                 }
         }
@@ -308,7 +308,7 @@ public final /* synthetic */ class v implements le.d, li.f, m4.z, e1, c1, q9.d, 
             return;
         }
         Utilities.stackBlurBitmap(bitmap, Math.max(7, Math.max(bitmap.getWidth(), bitmap.getHeight()) / 180));
-        AndroidUtilities.runOnUIThread(new po0(25, uVar, bitmap));
+        AndroidUtilities.runOnUIThread(new wn0(27, uVar, bitmap));
     }
 
     public /* synthetic */ v(s0 s0Var, r0 r0Var) {
@@ -316,7 +316,7 @@ public final /* synthetic */ class v implements le.d, li.f, m4.z, e1, c1, q9.d, 
         this.b = s0Var;
     }
 
-    private final /* synthetic */ void k(float f7, int i10) {
+    private final /* synthetic */ void j(float f7, int i10) {
     }
 
     private final /* synthetic */ void l(float f7, int i10) {

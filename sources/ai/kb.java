@@ -18,14 +18,14 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.nu;
 import org.telegram.ui.Components.yc;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public class kb extends View {
     public boolean E;
     public long F;
     public final Path G;
     public final a3.d H;
-    public final org.telegram.ui.Components.e6 a;
+    public final org.telegram.ui.Components.d6 a;
     public final TL_stories.MediaArea b;
     public final Paint c;
     public final Paint d;
@@ -65,7 +65,7 @@ public class kb extends View {
         this.w = z10;
         this.y = z10;
         this.x = z10;
-        this.a = new org.telegram.ui.Components.e6(view, 0L, 120L, new LinearInterpolator());
+        this.a = new org.telegram.ui.Components.d6(view, 0L, 120L, new LinearInterpolator());
         paint.setStyle(Paint.Style.STROKE);
         f02.setCallback(this);
     }

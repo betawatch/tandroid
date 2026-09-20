@@ -3,7 +3,7 @@ package org.telegram.ui;
 import org.telegram.messenger.MessagesStorage;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class kj implements MessagesStorage.IntCallback {
     public final /* synthetic */ int a;
@@ -36,7 +36,7 @@ public final /* synthetic */ class kj implements MessagesStorage.IntCallback {
                     TLRPC.Chat chat = znVar2.e;
                     TLRPC.User user = znVar2.f;
                     boolean z10 = this.b;
-                    org.telegram.ui.Components.e5.s(znVar2, true, chat, user, false, false, false, z10, new y0(ljVar, z10));
+                    org.telegram.ui.Components.d5.s(znVar2, true, chat, user, false, false, false, z10, new y0(ljVar, z10));
                     break;
                 }
         }

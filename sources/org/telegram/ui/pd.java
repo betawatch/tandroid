@@ -6,7 +6,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class pd implements View.OnFocusChangeListener {
     public final /* synthetic */ int a;
@@ -33,72 +33,72 @@ public final /* synthetic */ class pd implements View.OnFocusChangeListener {
                 }
                 break;
             case 2:
-                xg0 xg0Var = ((he0) this.b).W;
+                yg0 yg0Var = ((ie0) this.b).W;
                 if (z10) {
-                    xg0Var.c.setEditText((EditText) view);
-                    xg0Var.c.setDispatchBackWhenEmpty(true);
+                    yg0Var.c.setEditText((EditText) view);
+                    yg0Var.c.setDispatchBackWhenEmpty(true);
                     break;
                 }
                 break;
             case 3:
-                org.telegram.ui.Components.id0 id0Var = (org.telegram.ui.Components.id0) this.b;
+                org.telegram.ui.Components.hd0 hd0Var = (org.telegram.ui.Components.hd0) this.b;
                 float f10 = z10 ? 1.0f : 0.0f;
-                id0Var.b(f10, f10, true);
+                hd0Var.b(f10, f10, true);
                 break;
             case 4:
-                org.telegram.ui.Components.id0 id0Var2 = ((qe0) this.b).x;
+                org.telegram.ui.Components.hd0 hd0Var2 = ((re0) this.b).x;
                 float f11 = z10 ? 1.0f : 0.0f;
-                id0Var2.b(f11, f11, true);
+                hd0Var2.b(f11, f11, true);
                 break;
             case 5:
-                org.telegram.ui.Components.id0 id0Var3 = ((ye0) this.b).b;
+                org.telegram.ui.Components.hd0 hd0Var3 = ((ze0) this.b).b;
                 float f12 = z10 ? 1.0f : 0.0f;
-                id0Var3.b(f12, f12, true);
+                hd0Var3.b(f12, f12, true);
                 break;
             case 6:
-                xg0 xg0Var2 = ((bf0) this.b).y;
+                yg0 yg0Var2 = ((cf0) this.b).y;
                 if (z10) {
-                    xg0Var2.c.setEditText((EditText) view);
-                    xg0Var2.c.setDispatchBackWhenEmpty(true);
+                    yg0Var2.c.setEditText((EditText) view);
+                    yg0Var2.c.setDispatchBackWhenEmpty(true);
                     break;
                 }
                 break;
             case 7:
-                org.telegram.ui.Components.id0 id0Var4 = ((mf0) this.b).a;
+                org.telegram.ui.Components.hd0 hd0Var4 = ((nf0) this.b).a;
                 float f13 = z10 ? 1.0f : 0.0f;
-                id0Var4.b(f13, f13, true);
+                hd0Var4.b(f13, f13, true);
                 break;
             case 8:
-                xg0 xg0Var3 = ((ag0) this.b).s0;
+                yg0 yg0Var3 = ((bg0) this.b).s0;
                 if (z10) {
-                    xg0Var3.c.setEditText((EditText) view);
-                    xg0Var3.c.setDispatchBackWhenEmpty(true);
+                    yg0Var3.c.setEditText((EditText) view);
+                    yg0Var3.c.setDispatchBackWhenEmpty(true);
                     break;
                 }
                 break;
             case 9:
-                org.telegram.ui.Components.id0 id0Var5 = ((wg0) this.b).e;
+                org.telegram.ui.Components.hd0 hd0Var5 = ((xg0) this.b).e;
                 float f14 = z10 ? 1.0f : 0.0f;
-                id0Var5.b(f14, f14, true);
+                hd0Var5.b(f14, f14, true);
                 break;
             case 10:
-                org.telegram.ui.Components.id0 id0Var6 = ((PasscodeActivity) this.b).f;
+                org.telegram.ui.Components.hd0 hd0Var6 = ((PasscodeActivity) this.b).f;
                 float f15 = z10 ? 1.0f : 0.0f;
-                id0Var6.b(f15, f15, true);
+                hd0Var6.b(f15, f15, true);
                 break;
             case 11:
-                ae1 ae1Var = (ae1) this.b;
+                ce1 ce1Var = (ce1) this.b;
                 if (!z10) {
-                    ae1Var.d.setText(AndroidUtilities.replaceTags(LocaleController.getString(R.string.ThemeCreateHelp)));
+                    ce1Var.d.setText(AndroidUtilities.replaceTags(LocaleController.getString(R.string.ThemeCreateHelp)));
                     break;
                 } else {
-                    ae1Var.d.setText(AndroidUtilities.replaceTags(LocaleController.getString(R.string.ThemeCreateHelp2)));
+                    ce1Var.d.setText(AndroidUtilities.replaceTags(LocaleController.getString(R.string.ThemeCreateHelp2)));
                     break;
                 }
             default:
-                org.telegram.ui.Components.id0 id0Var7 = ((TwoStepVerificationActivity) this.b).v;
+                org.telegram.ui.Components.hd0 hd0Var7 = ((TwoStepVerificationActivity) this.b).v;
                 float f16 = z10 ? 1.0f : 0.0f;
-                id0Var7.b(f16, f16, true);
+                hd0Var7.b(f16, f16, true);
                 break;
         }
     }

@@ -2,16 +2,16 @@ package ci;
 
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
-import org.telegram.ui.Components.hy0;
+import org.telegram.ui.Components.gy0;
 import org.telegram.ui.Components.jj;
 import org.telegram.ui.Components.kz;
 import org.telegram.ui.Components.nz;
 import org.telegram.ui.Components.py;
 import org.telegram.ui.Components.qy;
-import org.telegram.ui.Components.x51;
+import org.telegram.ui.Components.w51;
 import org.telegram.ui.wp0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class x1 extends g.p {
     public final /* synthetic */ int c;
@@ -71,11 +71,11 @@ public final class x1 extends g.p {
                 qyVar.B1();
                 return qyVar.R.get(i10);
             case 5:
-                hy0 hy0Var = (hy0) this.d;
-                if ((hy0Var.W == null || !(hy0Var.d.e.get(i10) instanceof Integer)) && i10 != hy0Var.d.h) {
+                gy0 gy0Var = (gy0) this.d;
+                if ((gy0Var.W == null || !(gy0Var.d.e.get(i10) instanceof Integer)) && i10 != gy0Var.d.h) {
                     return 1;
                 }
-                return hy0Var.d.d;
+                return gy0Var.d.d;
             case 6:
                 wp0 wp0Var = (wp0) this.d;
                 if (i10 < wp0Var.b0 || i10 >= wp0Var.c0) {
@@ -83,7 +83,7 @@ public final class x1 extends g.p {
                 }
                 return 1;
             case 7:
-                x51 G = ((xh.h4) this.d).i0.G(i10 - 1);
+                w51 G = ((xh.h4) this.d).i0.G(i10 - 1);
                 if (G == null || (i11 = G.u) == -1) {
                     return 3;
                 }
@@ -95,7 +95,7 @@ public final class x1 extends g.p {
                 if (n0Var == null || i10 == 0) {
                     return nzVar.J;
                 }
-                x51 G2 = n0Var.G(i10 - 1);
+                w51 G2 = n0Var.G(i10 - 1);
                 return (G2 == null || (i12 = G2.u) == -1) ? nzVar.J : i12;
         }
     }

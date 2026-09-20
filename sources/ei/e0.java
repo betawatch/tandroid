@@ -17,17 +17,17 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.Components.dd0;
-import org.telegram.ui.Components.lb;
-import org.telegram.ui.Components.qc;
+import org.telegram.ui.Components.cd0;
+import org.telegram.ui.Components.kb;
+import org.telegram.ui.Components.pc;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.ExternalActionActivity;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.si1;
-import org.telegram.ui.v51;
+import org.telegram.ui.ti1;
+import org.telegram.ui.y51;
 import org.telegram.ui.zo0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e0 implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
@@ -108,7 +108,7 @@ public final /* synthetic */ class e0 implements DialogInterface.OnDismissListen
                 AndroidUtilities.hideKeyboard((EditText) obj2);
                 break;
             case 7:
-                ((org.telegram.ui.web.b1) obj).run(Integer.valueOf(((dd0) obj2).getValue()));
+                ((org.telegram.ui.web.b1) obj).run(Integer.valueOf(((cd0) obj2).getValue()));
                 break;
             case 8:
                 ExternalActionActivity externalActionActivity = (ExternalActionActivity) obj;
@@ -126,11 +126,11 @@ public final /* synthetic */ class e0 implements DialogInterface.OnDismissListen
                     try {
                         String str = LocaleController.getInstance().getCurrentLocaleInfo().shortName;
                         if (lastFragment != null) {
-                            qc Q = xc.a0(lastFragment).Q(R.raw.msg_translate, 36, LaunchActivity.V(R.string.ChangeLanguageLater, "ChangeLanguageLater", str.equals("en") ? launchActivity.K0 : launchActivity.J0));
+                            pc Q = xc.a0(lastFragment).Q(R.raw.msg_translate, 36, LaunchActivity.V(R.string.ChangeLanguageLater, "ChangeLanguageLater", str.equals("en") ? launchActivity.K0 : launchActivity.J0));
                             Q.j = 5000;
                             Q.j();
                         } else {
-                            qc Q2 = new xc(lb.a(launchActivity), null).Q(R.raw.msg_translate, 36, LaunchActivity.V(R.string.ChangeLanguageLater, "ChangeLanguageLater", str.equals("en") ? launchActivity.K0 : launchActivity.J0));
+                            pc Q2 = new xc(kb.a(launchActivity), null).Q(R.raw.msg_translate, 36, LaunchActivity.V(R.string.ChangeLanguageLater, "ChangeLanguageLater", str.equals("en") ? launchActivity.K0 : launchActivity.J0));
                             Q2.j = 5000;
                             Q2.j();
                         }
@@ -157,16 +157,16 @@ public final /* synthetic */ class e0 implements DialogInterface.OnDismissListen
                 }
                 break;
             case 11:
-                v51 v51Var = (v51) obj2;
+                y51 y51Var = (y51) obj2;
                 if (!((boolean[]) obj)[0]) {
-                    v51Var.c(true);
+                    y51Var.c(true);
                 }
-                v51Var.w = null;
+                y51Var.w = null;
                 break;
             case 12:
-                si1 si1Var = (si1) obj2;
+                ti1 ti1Var = (ti1) obj2;
                 if (!((boolean[]) obj)[0]) {
-                    si1Var.u0.b();
+                    ti1Var.u0.b();
                     break;
                 }
                 break;

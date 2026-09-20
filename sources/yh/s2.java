@@ -1,52 +1,137 @@
 package yh;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.view.View;
+import android.animation.ValueAnimator;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.ui.Components.hj0;
 import org.telegram.ui.Components.qr;
+import org.telegram.ui.Components.v9;
+import org.telegram.ui.Components.vl0;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
-public final class s2 extends View {
-    public final Paint a;
-    public final org.telegram.ui.Components.e6 b;
-    public final org.telegram.ui.Components.e6 c;
-    public float d;
-    public float e;
+public final /* synthetic */ class s2 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public s2(Context context) {
-        super(context);
-        Paint paint = new Paint(1);
-        this.a = paint;
-        int i10 = 29;
-        rg.w1 w1Var = new rg.w1(this, i10);
-        qr qrVar = qr.h;
-        this.b = new org.telegram.ui.Components.e6(w1Var, 420L, qrVar, 0);
-        this.c = new org.telegram.ui.Components.e6(new rg.w1(this, i10), 420L, qrVar, 0);
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeCap(Paint.Cap.ROUND);
-        paint.setStrokeJoin(Paint.Join.ROUND);
+    public /* synthetic */ s2(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        float d = this.b.d(this.d, false);
-        float e = this.c.e(this.d > 0.0f);
-        float width = getWidth() / 2.0f;
-        float height = getHeight() / 2.0f;
-        float f7 = this.e;
-        RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(width - f7, height - f7, width + f7, height + f7);
-        int l1 = org.telegram.ui.ActionBar.j6.l1(0.25f, -1);
-        Paint paint = this.a;
-        paint.setColor(l1);
-        canvas.drawArc(rectF, 135.0f, 270.0f, false, paint);
-        if (e > 0.0f) {
-            paint.setColor(org.telegram.ui.ActionBar.j6.l1(e, -1));
-            canvas.drawArc(rectF, 135.0f, d * 270.0f, false, paint);
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10 = this.a;
+        Object obj = this.b;
+        switch (i10) {
+            case 0:
+                ((t2) obj).invalidate();
+                break;
+            case 1:
+                ((x2) obj).invalidateSelf();
+                break;
+            case 2:
+                v3 v3Var = (v3) obj;
+                s2 s2Var = v3Var.i0;
+                v9[] v9VarArr = v3Var.d;
+                int i11 = 2;
+                if (!v9VarArr[2 - v3Var.r0].getImageReceiver().hasImageLoaded()) {
+                    AndroidUtilities.cancelRunOnUIThread(s2Var);
+                    AndroidUtilities.runOnUIThread(s2Var, 150L);
+                    break;
+                } else {
+                    f4.d dVar = v3Var.U;
+                    if (dVar != null && dVar.b == 1 && v3Var.isAttachedToWindow()) {
+                        AndroidUtilities.cancelRunOnUIThread(s2Var);
+                        ValueAnimator valueAnimator = v3Var.h0;
+                        if (valueAnimator != null) {
+                            valueAnimator.cancel();
+                            v3Var.h0 = null;
+                        }
+                        int i12 = 1 - v3Var.r0;
+                        v3Var.r0 = i12;
+                        hj0 lottieAnimation = v9VarArr[2 - i12].getImageReceiver().getLottieAnimation();
+                        hj0 lottieAnimation2 = v9VarArr[v3Var.r0 + 1].getImageReceiver().getLottieAnimation();
+                        if (lottieAnimation2 != null && lottieAnimation != null) {
+                            lottieAnimation2.T(lottieAnimation.t(), false);
+                        }
+                        v3Var.W.c();
+                        int i13 = v3Var.r0 + 1;
+                        TL_stars.starGiftAttributeBackdrop[] stargiftattributebackdropArr = v3Var.V;
+                        TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = (TL_stars.starGiftAttributeBackdrop) v3Var.b0.c();
+                        stargiftattributebackdropArr[i13] = stargiftattributebackdrop;
+                        v3Var.e(i13, stargiftattributebackdrop);
+                        v3Var.g(1, (TL_stars.starGiftAttributePattern) v3Var.a0.c(), true);
+                        v3Var.a();
+                        float f7 = v3Var.r0;
+                        ValueAnimator ofFloat = ValueAnimator.ofFloat(1.0f - f7, f7);
+                        v3Var.h0 = ofFloat;
+                        ofFloat.addUpdateListener(new r3(v3Var, i11));
+                        v3Var.h0.addListener(new t3(v3Var));
+                        v3Var.h0.setDuration(320L);
+                        v3Var.h0.setInterpolator(qr.h);
+                        v3Var.h0.start();
+                        break;
+                    }
+                }
+                break;
+            case 3:
+                ((sg.e) obj).setPaused(true);
+                break;
+            case 4:
+                AndroidUtilities.showKeyboard((EditTextBoldCursor) obj);
+                break;
+            case 5:
+                ((i0[]) obj)[0].dismiss();
+                break;
+            case 6:
+                di.f fVar = (di.f) obj;
+                fVar.getClass();
+                try {
+                    vl0 currentListView = ((w7) fVar.L0).R.getCurrentListView();
+                    if (currentListView != null && currentListView.getAdapter() != null) {
+                        currentListView.getAdapter().l();
+                        break;
+                    }
+                } catch (Throwable unused) {
+                    return;
+                }
+                break;
+            case 7:
+                nf.f.s(((l7) obj).getContext(), LocaleController.getString(R.string.StarsTOSLink));
+                break;
+            case 8:
+                nf.f.s(((m7) obj).getContext(), LocaleController.getString(R.string.StarsTOSLink));
+                break;
+            case 9:
+                zg.t tVar = (zg.t) ((n2.e) obj).b;
+                zg.s sVar = tVar.b;
+                if (sVar != null) {
+                    sVar.d();
+                }
+                tVar.a.z7(true);
+                break;
+            case 10:
+                ((ValueAnimator) obj).start();
+                break;
+            default:
+                org.telegram.ui.ActionBar.n2 n2Var = ((zg.x) obj).f2.r;
+                if (!(n2Var instanceof zn)) {
+                    org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
+                    if (R != null) {
+                        R.showDialog(new rg.x0(n2Var, 11, false));
+                        break;
+                    }
+                } else {
+                    n2Var.showDialog(new rg.x0(n2Var, 11, false));
+                    break;
+                }
+                break;
         }
     }
 }

@@ -13,7 +13,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class bq0 extends FrameLayout {
     public int E;
@@ -28,7 +28,7 @@ public final class bq0 extends FrameLayout {
     public final s4.c0 b;
     public final x7 c;
     public int d;
-    public final org.telegram.ui.Components.e6 e;
+    public final org.telegram.ui.Components.d6 e;
     public final ArrayList f;
     public op0 h;
     public final RectF n;
@@ -40,7 +40,7 @@ public final class bq0 extends FrameLayout {
     public int y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public bq0(cq0 cq0Var, Context context, org.telegram.ui.ActionBar.e6 e6Var) {
+    public bq0(cq0 cq0Var, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
         super(context);
         this.L = cq0Var;
         this.f = new ArrayList();
@@ -51,7 +51,7 @@ public final class bq0 extends FrameLayout {
         this.w = new Paint(1);
         this.J = new Path();
         this.K = TLObject.FLAG_31;
-        q60 q60Var = new q60(this, context, e6Var, 1);
+        q60 q60Var = new q60(this, context, f6Var, 1);
         this.a = q60Var;
         q60Var.setClipToPadding(false);
         q60Var.setClipChildren(false);
@@ -70,7 +70,7 @@ public final class bq0 extends FrameLayout {
         setHorizontalScrollBarEnabled(false);
         setClipToPadding(false);
         setClipChildren(false);
-        this.e = new org.telegram.ui.Components.e6(q60Var, 0L, 320L, org.telegram.ui.Components.qr.h);
+        this.e = new org.telegram.ui.Components.d6(q60Var, 0L, 320L, org.telegram.ui.Components.qr.h);
     }
 
     public final void a(int i10, boolean z10) {

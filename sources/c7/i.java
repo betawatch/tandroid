@@ -6,7 +6,7 @@ import java.util.Arrays;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class i extends l {
     public static final Parcelable.Creator<i> CREATOR = new r0(15);
@@ -63,22 +63,22 @@ public final class i extends l {
     }
 
     public final String toString() {
-        lf.i iVar = new lf.i(getClass().getSimpleName());
+        lf.h hVar = new lf.h(getClass().getSimpleName());
         n7.k0 k0Var = n7.m0.d;
         byte[] u10 = this.a.u();
-        iVar.Z(k0Var.c(u10.length, u10), "keyHandle");
+        hVar.Z(k0Var.c(u10.length, u10), "keyHandle");
         byte[] u11 = this.b.u();
-        iVar.Z(k0Var.c(u11.length, u11), "clientDataJSON");
+        hVar.Z(k0Var.c(u11.length, u11), "clientDataJSON");
         byte[] u12 = this.c.u();
-        iVar.Z(k0Var.c(u12.length, u12), "authenticatorData");
+        hVar.Z(k0Var.c(u12.length, u12), "authenticatorData");
         byte[] u13 = this.d.u();
-        iVar.Z(k0Var.c(u13.length, u13), "signature");
+        hVar.Z(k0Var.c(u13.length, u13), "signature");
         n7.s0 s0Var = this.e;
         byte[] u14 = s0Var == null ? null : s0Var.u();
         if (u14 != null) {
-            iVar.Z(k0Var.c(u14.length, u14), "userHandle");
+            hVar.Z(k0Var.c(u14.length, u14), "userHandle");
         }
-        return iVar.toString();
+        return hVar.toString();
     }
 
     @Override // android.os.Parcelable

@@ -4,9 +4,9 @@ import android.view.View;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class ki implements org.telegram.ui.Components.nl0 {
+public final class ki implements org.telegram.ui.Components.ml0 {
     public final /* synthetic */ zn a;
 
     public ki(zn znVar) {
@@ -15,7 +15,7 @@ public final class ki implements org.telegram.ui.Components.nl0 {
 
     /* JADX WARN: Removed duplicated region for block: B:34:0x0094  */
     /* JADX WARN: Removed duplicated region for block: B:44:0x0083  */
-    @Override // org.telegram.ui.Components.nl0
+    @Override // org.telegram.ui.Components.ml0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -72,11 +72,11 @@ public final class ki implements org.telegram.ui.Components.nl0 {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.nl0
+    @Override // org.telegram.ui.Components.ml0
     public final /* synthetic */ void g() {
     }
 
-    @Override // org.telegram.ui.Components.nl0
+    @Override // org.telegram.ui.Components.ml0
     public final /* synthetic */ void q(float f7) {
     }
 }

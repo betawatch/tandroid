@@ -5,7 +5,7 @@ import android.view.View;
 import java.util.HashSet;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class jy0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -47,7 +47,7 @@ public final /* synthetic */ class jy0 implements View.OnClickListener {
                 Bundle bundle = new Bundle();
                 bundle.putLong("chat_id", profileActivity.f1);
                 bundle.putLong("user_id", profileActivity.e1);
-                profileActivity.presentFragment(new e31(bundle));
+                profileActivity.presentFragment(new f31(bundle));
                 break;
             case 7:
                 ProfileActivity.h0(profileActivity);
@@ -68,7 +68,7 @@ public final /* synthetic */ class jy0 implements View.OnClickListener {
                             ox oxVar = uyVar.F3;
                             if (oxVar != null) {
                                 org.telegram.ui.ActionBar.n2 fragment = oxVar.getFragment();
-                                if ((fragment instanceof dg1) && (-((dg1) fragment).a) == profileActivity.a()) {
+                                if ((fragment instanceof fg1) && (-((fg1) fragment).a) == profileActivity.a()) {
                                     uyVar.F3.a();
                                 }
                             }
@@ -77,8 +77,8 @@ public final /* synthetic */ class jy0 implements View.OnClickListener {
                                 ((ActionBarLayout) profileActivity.getParentLayout()).a0(n2Var, false);
                                 i11--;
                             }
-                        } else if (n2Var instanceof dg1) {
-                            if ((-((dg1) n2Var).a) == profileActivity.a()) {
+                        } else if (n2Var instanceof fg1) {
+                            if ((-((fg1) n2Var).a) == profileActivity.a()) {
                                 ((ActionBarLayout) profileActivity.getParentLayout()).a0(n2Var, false);
                                 i11--;
                             }
@@ -95,8 +95,8 @@ public final /* synthetic */ class jy0 implements View.OnClickListener {
                 profileActivity.J1 = 0;
                 Bundle bundle2 = new Bundle();
                 bundle2.putLong("chat_id", profileActivity.f1);
-                HashSet hashSet = dg1.n1;
-                profileActivity.presentFragment(dg1.E0(profileActivity.getMessagesController(), profileActivity.getMessagesStorage(), bundle2));
+                HashSet hashSet = fg1.n1;
+                profileActivity.presentFragment(fg1.E0(profileActivity.getMessagesController(), profileActivity.getMessagesStorage(), bundle2));
                 break;
             case 11:
                 profileActivity.t4(view);

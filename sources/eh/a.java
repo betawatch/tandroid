@@ -6,27 +6,22 @@ import android.graphics.drawable.Drawable;
 import dh.d;
 import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.UserConfig;
-import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class a implements d, e6 {
+public final /* synthetic */ class a implements d, f6 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ e6 b;
+    public final /* synthetic */ f6 b;
 
-    public /* synthetic */ a(int i10, e6 e6Var) {
+    public /* synthetic */ a(int i10, f6 f6Var) {
         this.a = i10;
-        this.b = e6Var;
+        this.b = f6Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.e6
-    public Paint G(String str) {
-        return j6.S0(str);
-    }
-
-    @Override // org.telegram.ui.ActionBar.e6
-    public int G0(int i10) {
+    @Override // org.telegram.ui.ActionBar.f6
+    public int F0(int i10) {
         if (i10 == j6.G8) {
             return -14145495;
         }
@@ -91,67 +86,72 @@ public final /* synthetic */ class a implements d, e6 {
         if (i10 == j6.d7) {
             return -16777216;
         }
-        e6 e6Var = this.b;
-        return e6Var != null ? e6Var.G0(i10) : j6.w0(null, i10, false);
+        f6 f6Var = this.b;
+        return f6Var != null ? f6Var.F0(i10) : j6.w0(null, i10, false);
     }
 
-    @Override // org.telegram.ui.ActionBar.e6
+    @Override // org.telegram.ui.ActionBar.f6
+    public Paint G(String str) {
+        return j6.S0(str);
+    }
+
+    @Override // org.telegram.ui.ActionBar.f6
     public boolean a() {
         return j6.I.q();
     }
 
     @Override // dh.d
-    public int g(e6 e6Var, boolean z10) {
+    public int f(f6 f6Var, boolean z10) {
         switch (this.a) {
             case 0:
                 if (b.c(UserConfig.selectedAccount, this.b)) {
-                    return j6.l1(LiteMode.isEnabled(262144) ? 0.85f : 0.76f, j6.v0(j6.Sd, e6Var));
+                    return j6.l1(LiteMode.isEnabled(262144) ? 0.85f : 0.76f, j6.v0(j6.Sd, f6Var));
                 }
-                return i0.a.k(j6.v0(j6.Sd, e6Var), 255);
+                return i0.a.k(j6.v0(j6.Sd, f6Var), 255);
             case 1:
                 if (b.c(UserConfig.selectedAccount, this.b)) {
-                    return j6.l1(LiteMode.isEnabled(262144) ? 0.85f : 0.76f, j6.v0(j6.ce, e6Var));
+                    return j6.l1(LiteMode.isEnabled(262144) ? 0.85f : 0.76f, j6.v0(j6.ce, f6Var));
                 }
-                return i0.a.k(j6.v0(z10 ? j6.s8 : j6.ce, e6Var), 255);
+                return i0.a.k(j6.v0(z10 ? j6.s8 : j6.ce, f6Var), 255);
             default:
                 if (b.c(UserConfig.selectedAccount, this.b)) {
-                    return j6.l1(LiteMode.isEnabled(262144) ? 0.85f : 0.76f, j6.v0(j6.ce, e6Var));
+                    return j6.l1(LiteMode.isEnabled(262144) ? 0.85f : 0.76f, j6.v0(j6.ce, f6Var));
                 }
-                return i0.a.k(j6.v0(z10 ? j6.s8 : j6.ce, e6Var), 255);
+                return i0.a.k(j6.v0(z10 ? j6.s8 : j6.ce, f6Var), 255);
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.e6
-    public int g0(int i10) {
-        return G0(i10);
+    @Override // org.telegram.ui.ActionBar.f6
+    public int f0(int i10) {
+        return F0(i10);
     }
 
-    @Override // org.telegram.ui.ActionBar.e6
+    @Override // org.telegram.ui.ActionBar.f6
     public int g1(int i10) {
-        return G0(i10);
+        return F0(i10);
     }
 
-    @Override // org.telegram.ui.ActionBar.e6
+    @Override // org.telegram.ui.ActionBar.f6
     public /* synthetic */ Drawable getDrawable(String str) {
         return null;
     }
 
-    @Override // org.telegram.ui.ActionBar.e6
+    @Override // org.telegram.ui.ActionBar.f6
     public void m(float f7, float f10, int i10, int i11) {
         j6.q(f7, f10, i10, i11);
     }
 
-    @Override // org.telegram.ui.ActionBar.e6
-    public /* synthetic */ boolean p0() {
+    @Override // org.telegram.ui.ActionBar.f6
+    public /* synthetic */ boolean n0() {
         return false;
     }
 
-    @Override // org.telegram.ui.ActionBar.e6
+    @Override // org.telegram.ui.ActionBar.f6
     public ColorFilter x() {
         return j6.v3;
     }
 
-    @Override // org.telegram.ui.ActionBar.e6
+    @Override // org.telegram.ui.ActionBar.f6
     public /* synthetic */ void L0(int i10, int i11) {
     }
 }

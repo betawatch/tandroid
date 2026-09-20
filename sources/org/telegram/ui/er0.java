@@ -17,9 +17,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class er0 extends org.telegram.ui.Components.bw0 {
+public final class er0 extends org.telegram.ui.Components.aw0 {
     public int A0;
     public VelocityTracker B0;
     public boolean C0;
@@ -99,7 +99,7 @@ public final class er0 extends org.telegram.ui.Components.bw0 {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.bw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.aw0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         org.telegram.ui.ActionBar.k kVar;
         org.telegram.ui.ActionBar.k kVar2;
@@ -135,7 +135,7 @@ public final class er0 extends org.telegram.ui.Components.bw0 {
     /* JADX WARN: Removed duplicated region for block: B:33:0x00af  */
     /* JADX WARN: Removed duplicated region for block: B:35:0x00b9  */
     /* JADX WARN: Removed duplicated region for block: B:42:0x0093  */
-    @Override // org.telegram.ui.Components.bw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.aw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -237,7 +237,7 @@ public final class er0 extends org.telegram.ui.Components.bw0 {
         int childCount;
         int i14;
         org.telegram.ui.ActionBar.k kVar3;
-        org.telegram.ui.Components.wl0 wl0Var;
+        org.telegram.ui.Components.vl0 vl0Var;
         int size = View.MeasureSpec.getSize(i10);
         int size2 = View.MeasureSpec.getSize(i11);
         setMeasuredDimension(size, size2);
@@ -261,8 +261,8 @@ public final class er0 extends org.telegram.ui.Components.bw0 {
                     break;
                 }
                 fr0 fr0Var = fr0VarArr[i13];
-                if (fr0Var != null && (wl0Var = fr0Var.d) != null) {
-                    wl0Var.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f) + measuredHeight, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f));
+                if (fr0Var != null && (vl0Var = fr0Var.d) != null) {
+                    vl0Var.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f) + measuredHeight, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f));
                 }
                 i13++;
             }

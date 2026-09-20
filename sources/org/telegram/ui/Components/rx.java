@@ -9,9 +9,9 @@ import android.view.ViewConfiguration;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public class rx extends vm0 {
+public class rx extends um0 {
     public boolean A0;
     public boolean B0;
     public VelocityTracker C0;
@@ -24,14 +24,14 @@ public class rx extends vm0 {
     public float z0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public rx(kz kzVar, Context context, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(context, e6Var, kzVar.i2);
+    public rx(kz kzVar, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context, f6Var, kzVar.i2);
         this.D0 = kzVar;
         this.x0 = true;
         this.u0 = ViewConfiguration.get(context).getScaledTouchSlop();
     }
 
-    @Override // org.telegram.ui.Components.vm0, android.widget.HorizontalScrollView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.um0, android.widget.HorizontalScrollView, android.view.ViewGroup
     public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
         if (this.s != null) {
             return super.onInterceptTouchEvent(motionEvent);
@@ -60,11 +60,11 @@ public class rx extends vm0 {
         return super.onInterceptTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.ui.Components.vm0, android.widget.HorizontalScrollView, android.view.View
+    @Override // org.telegram.ui.Components.um0, android.widget.HorizontalScrollView, android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         boolean z10;
         kz kzVar = this.D0;
-        org.telegram.ui.Cells.t6 t6Var = kzVar.f2;
+        org.telegram.ui.Cells.u6 u6Var = kzVar.f2;
         zw zwVar = kzVar.h;
         if (this.s != null) {
             return super.onTouchEvent(motionEvent);
@@ -86,7 +86,7 @@ public class rx extends vm0 {
             float f7 = this.u0;
             if (abs >= f7 && canScrollHorizontally((int) (this.y0 - motionEvent.getRawX()))) {
                 this.B0 = true;
-                AndroidUtilities.cancelRunOnUIThread(t6Var);
+                AndroidUtilities.cancelRunOnUIThread(u6Var);
                 kzVar.X1 = true;
                 kzVar.Y();
             } else if (Math.abs(motionEvent.getRawY() - this.z0) >= f7) {
@@ -100,7 +100,7 @@ public class rx extends vm0 {
             }
         }
         if (kzVar.X1 && (motionEvent.getAction() == 1 || motionEvent.getAction() == 3)) {
-            AndroidUtilities.runOnUIThread(t6Var, 1500L);
+            AndroidUtilities.runOnUIThread(u6Var, 1500L);
         }
         if (!this.A0) {
             float translationX = getTranslationX();

@@ -11,10 +11,10 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class qo extends FrameLayout implements org.telegram.ui.ActionBar.z5 {
-    public final org.telegram.ui.ActionBar.e6 a;
+    public final org.telegram.ui.ActionBar.f6 a;
     public final ImageView b;
     public final org.telegram.ui.ActionBar.j5 c;
     public final org.telegram.ui.ActionBar.j5 d;
@@ -23,9 +23,9 @@ public final class qo extends FrameLayout implements org.telegram.ui.ActionBar.z
     public boolean h;
     public boolean n;
 
-    public qo(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
+    public qo(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
         super(context);
-        this.a = e6Var;
+        this.a = f6Var;
         ImageView imageView = new ImageView(context);
         this.b = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
@@ -64,15 +64,15 @@ public final class qo extends FrameLayout implements org.telegram.ui.ActionBar.z
     @Override // org.telegram.ui.ActionBar.z5
     public final void e() {
         int i10 = org.telegram.ui.ActionBar.j6.te;
-        org.telegram.ui.ActionBar.e6 e6Var = this.a;
-        this.b.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.j6.v0(i10, e6Var), PorterDuff.Mode.MULTIPLY));
-        this.c.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.ve, e6Var));
+        org.telegram.ui.ActionBar.f6 f6Var = this.a;
+        this.b.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.j6.v0(i10, f6Var), PorterDuff.Mode.MULTIPLY));
+        this.c.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.ve, f6Var));
         int i11 = org.telegram.ui.ActionBar.j6.Xk;
-        int v02 = org.telegram.ui.ActionBar.j6.v0(i11, e6Var);
+        int v02 = org.telegram.ui.ActionBar.j6.v0(i11, f6Var);
         org.telegram.ui.ActionBar.j5 j5Var = this.d;
         j5Var.setTextColor(v02);
-        j5Var.setLinkTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.gc, e6Var));
-        this.e.setTextColor(org.telegram.ui.ActionBar.j6.v0(i11, e6Var));
+        j5Var.setLinkTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.gc, f6Var));
+        this.e.setTextColor(org.telegram.ui.ActionBar.j6.v0(i11, f6Var));
     }
 
     public /* bridge */ /* synthetic */ int[] getColorKeys() {

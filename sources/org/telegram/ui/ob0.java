@@ -1,66 +1,36 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ob0 implements org.telegram.ui.Components.d5, org.telegram.ui.ActionBar.a2, org.telegram.ui.Components.ew0 {
+public final /* synthetic */ class ob0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ yb0 b;
+    public final /* synthetic */ zb0 b;
 
-    public /* synthetic */ ob0(yb0 yb0Var, int i10) {
+    public /* synthetic */ ob0(zb0 zb0Var, int i10) {
         this.a = i10;
-        this.b = yb0Var;
+        this.b = zb0Var;
     }
 
-    @Override // org.telegram.ui.Components.d5
-    public void J(int i10, int i11, boolean z10) {
-        this.b.V(i10);
-    }
-
-    @Override // org.telegram.ui.ActionBar.a2
-    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
-        yb0 yb0Var = this.b;
-        yb0Var.T.a(yb0Var.e);
-        yb0Var.finishFragment();
-    }
-
-    @Override // org.telegram.ui.Components.ew0
-    public void h(int i10) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
-            case 2:
-                yb0 yb0Var = this.b;
-                if (i10 >= yb0Var.P.size()) {
-                    yb0Var.w.setText("");
-                    break;
-                } else {
-                    yb0Var.w.setText(LocaleController.formatDateAudio(yb0Var.getConnectionsManager().getCurrentTime() + ((Integer) r1.get(i10)).intValue(), false));
-                    break;
-                }
+            case 0:
+                zb0 zb0Var = this.b;
+                zb0Var.r.b.requestFocus();
+                AndroidUtilities.showKeyboard(zb0Var.r.b);
+                break;
+            case 1:
+                zb0 zb0Var2 = this.b;
+                zb0Var2.r.b.clearFocus();
+                AndroidUtilities.hideKeyboard(zb0Var2.r.b);
+                break;
             default:
-                yb0 yb0Var2 = this.b;
-                yb0Var2.F.clearFocus();
-                yb0Var2.O = true;
-                ArrayList arrayList = yb0Var2.R;
-                if (i10 < arrayList.size()) {
-                    yb0Var2.F.setText(((Integer) arrayList.get(i10)).toString());
-                } else {
-                    yb0Var2.F.setText("");
-                }
-                yb0Var2.O = false;
+                nf.f.s(this.b.getParentActivity(), LocaleController.getString(R.string.RequireMonthlyFeeInfoLink));
                 break;
         }
-    }
-
-    @Override // org.telegram.ui.Components.ew0
-    public /* synthetic */ void n() {
-        int i10 = this.a;
-    }
-
-    private final /* synthetic */ void a() {
-    }
-
-    private final /* synthetic */ void b() {
     }
 }

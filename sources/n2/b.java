@@ -20,14 +20,15 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
+import n4.y;
 import w7.b0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class b implements h {
     public final List a;
     public final r b;
-    public final of.b c;
+    public final y c;
     public final e d;
     public final boolean e;
     public final boolean f;
@@ -50,9 +51,9 @@ public final class b implements h {
     public p w;
     public q x;
 
-    public b(UUID uuid, r rVar, of.b bVar, e eVar, List list, boolean z10, boolean z11, byte[] bArr, HashMap hashMap, com.google.firebase.messaging.m mVar, Looper looper, qb.b bVar2, j2.k kVar) {
+    public b(UUID uuid, r rVar, y yVar, e eVar, List list, boolean z10, boolean z11, byte[] bArr, HashMap hashMap, com.google.firebase.messaging.m mVar, Looper looper, qb.b bVar, j2.k kVar) {
         this.l = uuid;
-        this.c = bVar;
+        this.c = yVar;
         this.d = eVar;
         this.b = rVar;
         this.e = z10;
@@ -67,7 +68,7 @@ public final class b implements h {
         this.g = hashMap;
         this.k = mVar;
         this.h = new e2.i();
-        this.i = bVar2;
+        this.i = bVar;
         this.j = kVar;
         this.o = 2;
         this.m = looper;
@@ -120,7 +121,7 @@ public final class b implements h {
             fVar2.y.add(this);
             Handler handler = fVar2.J;
             handler.getClass();
-            handler.postAtTime(new g0(this, 13), this, SystemClock.uptimeMillis() + fVar2.v);
+            handler.postAtTime(new g0(this, 14), this, SystemClock.uptimeMillis() + fVar2.v);
         } else if (i12 == 0) {
             fVar2.w.remove(this);
             if (fVar2.G == this) {
@@ -129,17 +130,17 @@ public final class b implements h {
             if (fVar2.H == this) {
                 fVar2.H = null;
             }
-            of.b bVar = fVar2.n;
-            HashSet hashSet = (HashSet) bVar.b;
+            y yVar = fVar2.n;
+            HashSet hashSet = (HashSet) yVar.a;
             hashSet.remove(this);
-            if (((b) bVar.c) == this) {
-                bVar.c = null;
+            if (((b) yVar.b) == this) {
+                yVar.b = null;
                 if (!hashSet.isEmpty()) {
-                    b bVar2 = (b) hashSet.iterator().next();
-                    bVar.c = bVar2;
-                    q m10 = bVar2.b.m();
-                    bVar2.x = m10;
-                    android.support.v4.media.session.f fVar3 = bVar2.r;
+                    b bVar = (b) hashSet.iterator().next();
+                    yVar.b = bVar;
+                    q m10 = bVar.b.m();
+                    bVar.x = m10;
+                    android.support.v4.media.session.f fVar3 = bVar.r;
                     String str2 = d0.a;
                     m10.getClass();
                     fVar3.getClass();
@@ -227,7 +228,7 @@ public final class b implements h {
         p();
         byte[] bArr = this.u;
         e2.d.h(bArr);
-        return this.b.r0(str, bArr);
+        return this.b.q0(str, bArr);
     }
 
     @Override // n2.h
@@ -400,7 +401,7 @@ public final class b implements h {
 
     public final void m(Throwable th2, boolean z10) {
         if ((th2 instanceof NotProvisionedException) || b0.b(th2)) {
-            this.c.R(this);
+            this.c.V(this);
         } else {
             l(z10 ? 1 : 2, th2);
         }
@@ -433,7 +434,7 @@ public final class b implements h {
             this.u.getClass();
             return true;
         } catch (NotProvisionedException unused) {
-            this.c.R(this);
+            this.c.V(this);
             return false;
         } catch (Exception e) {
             e = e;
@@ -441,7 +442,7 @@ public final class b implements h {
                 l(1, e);
                 return false;
             }
-            this.c.R(this);
+            this.c.V(this);
             return false;
         } catch (NoSuchMethodError e7) {
             e = e7;

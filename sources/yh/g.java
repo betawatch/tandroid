@@ -35,37 +35,36 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stats;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.eo;
-import org.telegram.ui.Components.l61;
+import org.telegram.ui.Components.k61;
 import org.telegram.ui.Components.oq;
-import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.t61;
-import org.telegram.ui.Components.tb0;
-import org.telegram.ui.Components.x51;
+import org.telegram.ui.Components.pc;
+import org.telegram.ui.Components.s61;
+import org.telegram.ui.Components.sb0;
+import org.telegram.ui.Components.w51;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.TwoStepVerificationActivity;
-import org.telegram.ui.ai1;
-import org.telegram.ui.aj1;
+import org.telegram.ui.bb1;
+import org.telegram.ui.bj1;
 import org.telegram.ui.he;
 import org.telegram.ui.ke;
-import org.telegram.ui.la1;
+import org.telegram.ui.na1;
+import org.telegram.ui.o81;
 import org.telegram.ui.uo;
-import org.telegram.ui.v81;
 import org.telegram.ui.vy0;
 import org.telegram.ui.yd;
-import org.telegram.ui.za1;
 import org.telegram.ui.zd;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class g extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public final CharSequence E;
-    public u7 F;
+    public v7 F;
     public int G;
     public yd H;
     public LinearLayout I;
     public RelativeSizeSpan J;
-    public org.telegram.ui.Components.p6 K;
-    public org.telegram.ui.Components.p6 L;
+    public org.telegram.ui.Components.o6 K;
+    public org.telegram.ui.Components.o6 L;
     public zd M;
     public boolean N;
     public boolean O;
@@ -76,23 +75,23 @@ public final class g extends org.telegram.ui.ActionBar.n2 implements Notificatio
     public final oq[] T;
     public yd U;
     public RelativeSizeSpan V;
-    public org.telegram.ui.Components.p6 W;
-    public org.telegram.ui.Components.p6 X;
+    public org.telegram.ui.Components.o6 W;
+    public org.telegram.ui.Components.o6 X;
     public ci.d Y;
     public double Z;
     public final int a;
-    public qc a0;
+    public pc a0;
     public final long b;
     public CharSequence b0;
     public final boolean c;
     public CharSequence c0;
     public eo d;
     public CharSequence d0;
-    public t61 e;
+    public s61 e;
     public boolean e0;
     public TLRPC.TL_payments_starsRevenueStats f;
-    public la1 f0;
-    public la1 g0;
+    public na1 f0;
+    public na1 g0;
     public TLRPC.TL_starsRevenueStatus h;
     public boolean h0;
     public boolean i0;
@@ -100,7 +99,7 @@ public final class g extends org.telegram.ui.ActionBar.n2 implements Notificatio
     public String k0;
     public DecimalFormat l0;
     public SpannableStringBuilder m0;
-    public la1 n;
+    public na1 n;
     public final b n0;
     public final int o0;
     public final he r;
@@ -146,7 +145,7 @@ public final class g extends org.telegram.ui.ActionBar.n2 implements Notificatio
 
     public static void U(g gVar) {
         b bVar = gVar.n0;
-        qc.e();
+        pc.e();
         TLRPC.TL_payments_starsRevenueStats h = o.g(gVar.currentAccount).h(gVar.b, false);
         long j3 = h == null ? 0L : h.status.available_balance.amount;
         if (j3 < gVar.getMessagesController().starsRevenueWithdrawalMin) {
@@ -169,12 +168,12 @@ public final class g extends org.telegram.ui.ActionBar.n2 implements Notificatio
         gVar.showDialog(ke.d0(gVar.getParentActivity(), gVar.resourceProvider, true));
     }
 
-    public static void W(g gVar, x51 x51Var) {
-        if (x51Var.G(o7.class)) {
-            v7.h1(gVar.getParentActivity(), true, gVar.b, gVar.currentAccount, (TL_stars.StarsTransaction) x51Var.G, gVar.getResourceProvider());
-        } else if (x51Var.G instanceof TL_stats.BroadcastRevenueTransaction) {
-            ke.h0(gVar.getParentActivity(), gVar.currentAccount, (TL_stats.BroadcastRevenueTransaction) x51Var.G, gVar.b, gVar.resourceProvider);
-        } else if (x51Var.d == 2) {
+    public static void W(g gVar, w51 w51Var) {
+        if (w51Var.G(p7.class)) {
+            w7.h1(gVar.getParentActivity(), true, gVar.b, gVar.currentAccount, (TL_stars.StarsTransaction) w51Var.G, gVar.getResourceProvider());
+        } else if (w51Var.G instanceof TL_stats.BroadcastRevenueTransaction) {
+            ke.h0(gVar.getParentActivity(), gVar.currentAccount, (TL_stats.BroadcastRevenueTransaction) w51Var.G, gVar.b, gVar.resourceProvider);
+        } else if (w51Var.d == 2) {
             gVar.presentFragment(new ei.e4(gVar.b));
         }
     }
@@ -188,13 +187,15 @@ public final class g extends org.telegram.ui.ActionBar.n2 implements Notificatio
             dVar.setLoading(true);
             TLRPC.TL_payments_getStarsRevenueAdsAccountUrl tL_payments_getStarsRevenueAdsAccountUrl = new TLRPC.TL_payments_getStarsRevenueAdsAccountUrl();
             tL_payments_getStarsRevenueAdsAccountUrl.peer = MessagesController.getInstance(gVar.currentAccount).getInputPeer(gVar.b);
-            ConnectionsManager.getInstance(gVar.currentAccount).sendRequest(tL_payments_getStarsRevenueAdsAccountUrl, new aj1(6, gVar, context));
+            ConnectionsManager.getInstance(gVar.currentAccount).sendRequest(tL_payments_getStarsRevenueAdsAccountUrl, new bj1(6, gVar, context));
         }
     }
 
     public static void Y(g gVar, ArrayList arrayList) {
         int i10;
         TLRPC.TL_starsRevenueStatus tL_starsRevenueStatus;
+        double d;
+        int i11;
         TLRPC.TL_starsRevenueStatus tL_starsRevenueStatus2;
         he heVar = gVar.x;
         ArrayList arrayList2 = gVar.j0;
@@ -205,13 +206,13 @@ public final class g extends org.telegram.ui.ActionBar.n2 implements Notificatio
         long j3 = gVar.b;
         he heVar6 = gVar.w;
         boolean z10 = gVar.c;
-        int i11 = gVar.o0;
+        int i12 = gVar.o0;
         o g10 = o.g(gVar.currentAccount);
-        int i12 = gVar.a;
-        if (i12 == 0) {
-            arrayList.add(x51.h(2, i11, gVar.n));
-            arrayList.add(x51.A(-1, null));
-            arrayList.add(x51.b(LocaleController.getString(R.string.BotStarsOverview)));
+        int i13 = gVar.a;
+        if (i13 == 0) {
+            arrayList.add(w51.h(2, i12, gVar.n));
+            arrayList.add(w51.A(-1, null));
+            arrayList.add(w51.b(LocaleController.getString(R.string.BotStarsOverview)));
             TLRPC.TL_payments_starsRevenueStats h = g10.h(j3, false);
             if (h != null && (tL_starsRevenueStatus2 = h.status) != null) {
                 heVar5.a = false;
@@ -220,60 +221,60 @@ public final class g extends org.telegram.ui.ActionBar.n2 implements Notificatio
                 heVar5.i = starsAmount;
                 heVar5.h = "XTR";
                 heVar5.f = "USD";
-                double d = starsAmount.amount;
-                double d10 = gVar.Z;
-                heVar5.j = (long) (d * d10 * 100.0d);
+                double d10 = starsAmount.amount;
+                double d11 = gVar.Z;
+                heVar5.j = (long) (d10 * d11 * 100.0d);
                 heVar4.a = false;
                 heVar4.g = true;
                 heVar4.i = tL_starsRevenueStatus2.current_balance;
                 heVar4.h = "XTR";
-                heVar4.j = (long) (r9.amount * d10 * 100.0d);
+                heVar4.j = (long) (r9.amount * d11 * 100.0d);
                 heVar4.f = "USD";
                 heVar3.a = false;
                 heVar3.g = true;
                 heVar3.i = tL_starsRevenueStatus2.overall_revenue;
                 heVar3.h = "XTR";
-                heVar3.j = (long) (r9.amount * d10 * 100.0d);
+                heVar3.j = (long) (r9.amount * d11 * 100.0d);
                 heVar3.f = "USD";
                 gVar.i0(starsAmount, tL_starsRevenueStatus2.next_withdrawal_at);
                 gVar.I.setVisibility(h.status.withdrawal_enabled ? 0 : 8);
             }
-            arrayList.add(x51.u(heVar5));
-            arrayList.add(x51.u(heVar4));
-            arrayList.add(x51.u(heVar3));
-            arrayList.add(x51.A(-2, LocaleController.getString(z10 ? R.string.SelfStarsOverviewInfo : R.string.BotStarsOverviewInfo)));
-            arrayList.add(x51.b(LocaleController.getString(R.string.BotStarsAvailableBalance)));
-            arrayList.add(x51.j(1, gVar.H));
-            arrayList.add(x51.A(-3, gVar.E));
+            arrayList.add(w51.u(heVar5));
+            arrayList.add(w51.u(heVar4));
+            arrayList.add(w51.u(heVar3));
+            arrayList.add(w51.A(-2, LocaleController.getString(z10 ? R.string.SelfStarsOverviewInfo : R.string.BotStarsOverviewInfo)));
+            arrayList.add(w51.b(LocaleController.getString(R.string.BotStarsAvailableBalance)));
+            arrayList.add(w51.j(1, gVar.H));
+            arrayList.add(w51.A(-3, gVar.E));
             if (z10) {
                 return;
             }
             if (gVar.getMessagesController().starrefConnectAllowed) {
                 arrayList.add(ei.h.a(2, org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.uj, gVar.resourceProvider), R.drawable.filled_earn_stars, uo.d0(LocaleController.getString(R.string.BotAffiliateProgramRowTitle)), LocaleController.getString(R.string.BotAffiliateProgramRowText)));
-                arrayList.add(x51.A(-4, null));
+                arrayList.add(w51.A(-4, null));
             }
-            arrayList.add(x51.p(gVar.F, 0, false));
+            arrayList.add(w51.p(gVar.F, 0, false));
             return;
         }
-        if (i12 == 1) {
+        if (i13 == 1) {
             TLRPC.TL_payments_starsRevenueStats j10 = g10.j(j3, true);
             if (!z10) {
                 if (gVar.b0 == null) {
                     gVar.b0 = AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.formatString(R.string.BotMonetizationInfo, 50), -1, 3, new b(gVar, 2), gVar.resourceProvider), true);
                 }
-                arrayList.add(x51.g(gVar.b0));
+                arrayList.add(w51.g(gVar.b0));
             }
             if (gVar.f0 == null && j10 != null) {
-                la1 f02 = za1.f0(j10.top_hours_graph, LocaleController.getString(R.string.BotMonetizationGraphImpressions), 0, false);
+                na1 f02 = bb1.f0(j10.top_hours_graph, LocaleController.getString(R.string.BotMonetizationGraphImpressions), 0, false);
                 gVar.f0 = f02;
                 if (f02 != null) {
                     f02.n = true;
                 }
             }
-            la1 la1Var = gVar.f0;
-            if (la1Var != null && !la1Var.l) {
-                arrayList.add(x51.h(5, i11, la1Var));
-                arrayList.add(x51.A(-1, null));
+            na1 na1Var = gVar.f0;
+            if (na1Var != null && !na1Var.l) {
+                arrayList.add(w51.h(5, i12, na1Var));
+                arrayList.add(w51.A(-1, null));
             }
             if (gVar.g0 != null || j10 == null) {
                 i10 = 2;
@@ -283,31 +284,40 @@ public final class g extends org.telegram.ui.ActionBar.n2 implements Notificatio
                     statsGraph.rate = (float) (1.0E7d / j10.usd_rate);
                 }
                 i10 = 2;
-                gVar.g0 = za1.f0(statsGraph, LocaleController.getString(R.string.BotMonetizationGraphRevenue), 2, false);
+                gVar.g0 = bb1.f0(statsGraph, LocaleController.getString(R.string.BotMonetizationGraphRevenue), 2, false);
             }
-            la1 la1Var2 = gVar.g0;
-            if (la1Var2 != null && !la1Var2.l) {
-                arrayList.add(x51.h(i10, i11, la1Var2));
-                arrayList.add(x51.A(-2, null));
+            na1 na1Var2 = gVar.g0;
+            if (na1Var2 != null && !na1Var2.l) {
+                arrayList.add(w51.h(i10, i12, na1Var2));
+                arrayList.add(w51.A(-2, null));
             }
             if (!gVar.e0 && j10 != null && (tL_starsRevenueStatus = j10.status) != null) {
-                double d11 = j10.usd_rate;
+                double d12 = j10.usd_rate;
                 long j11 = tL_starsRevenueStatus.available_balance.amount;
                 heVar6.d = j11;
-                double d12 = j11 / 1.0E9d;
-                long j12 = (long) (d12 * d11 * 100.0d);
+                double d13 = j11 / 1.0E9d;
+                long j12 = (long) (d13 * d12 * 100.0d);
                 heVar6.e = j12;
                 if (gVar.l0 == null) {
                     DecimalFormatSymbols decimalFormatSymbols = new DecimalFormatSymbols(Locale.US);
                     decimalFormatSymbols.setDecimalSeparator('.');
+                    d = d12;
                     DecimalFormat decimalFormat = new DecimalFormat("#.##", decimalFormatSymbols);
                     gVar.l0 = decimalFormat;
                     decimalFormat.setMinimumFractionDigits(2);
+                    i11 = 6;
                     gVar.l0.setMaximumFractionDigits(6);
                     gVar.l0.setGroupingUsed(false);
+                } else {
+                    d = d12;
+                    i11 = 6;
                 }
-                gVar.l0.setMaximumFractionDigits(d12 > 1.5d ? 2 : 6);
-                SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(ke.f0("TON " + gVar.l0.format(d12), gVar.W.getPaint(), 0.9f, 0.0f, true));
+                DecimalFormat decimalFormat2 = gVar.l0;
+                if (d13 > 1.5d) {
+                    i11 = 2;
+                }
+                decimalFormat2.setMaximumFractionDigits(i11);
+                SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(ke.f0("TON " + gVar.l0.format(d13), gVar.W.getPaint(), 0.9f, 0.0f, true));
                 int indexOf = TextUtils.indexOf(spannableStringBuilder, ".");
                 if (indexOf >= 0) {
                     spannableStringBuilder.setSpan(gVar.V, indexOf, spannableStringBuilder.length(), 33);
@@ -318,52 +328,52 @@ public final class g extends org.telegram.ui.ActionBar.n2 implements Notificatio
                 TLRPC.TL_starsRevenueStatus tL_starsRevenueStatus3 = j10.status;
                 long j13 = tL_starsRevenueStatus3.current_balance.amount;
                 heVar.d = j13;
-                heVar.e = (long) ((j13 / 1.0E9d) * d11 * 100.0d);
+                heVar.e = (long) ((j13 / 1.0E9d) * d * 100.0d);
                 heVar.f = "USD";
                 heVar2.a = true;
                 long j14 = tL_starsRevenueStatus3.overall_revenue.amount;
                 heVar2.d = j14;
-                heVar2.e = (long) ((j14 / 1.0E9d) * d11 * 100.0d);
+                heVar2.e = (long) ((j14 / 1.0E9d) * d * 100.0d);
                 heVar2.f = "USD";
                 gVar.e0 = true;
                 gVar.Y.setVisibility((tL_starsRevenueStatus3.available_balance.amount <= 0 || !tL_starsRevenueStatus3.withdrawal_enabled) ? 8 : 0);
             }
             if (gVar.e0) {
-                arrayList.add(x51.b(LocaleController.getString(R.string.BotMonetizationOverview)));
-                arrayList.add(x51.u(heVar6));
-                arrayList.add(x51.u(heVar));
-                arrayList.add(x51.u(heVar2));
+                arrayList.add(w51.b(LocaleController.getString(R.string.BotMonetizationOverview)));
+                arrayList.add(w51.u(heVar6));
+                arrayList.add(w51.u(heVar));
+                arrayList.add(w51.u(heVar2));
                 if (gVar.c0 == null) {
-                    gVar.c0 = AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.BotMonetizationProceedsTONInfo), -1, 3, new ai1(gVar, R.string.BotMonetizationProceedsTONInfoLink, 6), gVar.resourceProvider), true);
+                    gVar.c0 = AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.BotMonetizationProceedsTONInfo), -1, 3, new qg.v(gVar, R.string.BotMonetizationProceedsTONInfoLink, 4), gVar.resourceProvider), true);
                 }
-                arrayList.add(x51.A(-4, gVar.c0));
+                arrayList.add(w51.A(-4, gVar.c0));
             }
-            arrayList.add(x51.b(LocaleController.getString(R.string.BotMonetizationBalance)));
-            arrayList.add(x51.k(gVar.U));
+            arrayList.add(w51.b(LocaleController.getString(R.string.BotMonetizationBalance)));
+            arrayList.add(w51.k(gVar.U));
             if (gVar.d0 == null) {
                 gVar.d0 = AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(MessagesController.getInstance(gVar.currentAccount).channelRevenueWithdrawalEnabled ? R.string.BotMonetizationBalanceInfo : R.string.BotMonetizationBalanceInfoNotAvailable), -1, 3, new b(gVar, 3)), true);
             }
-            arrayList.add(x51.A(-5, gVar.d0));
+            arrayList.add(w51.A(-5, gVar.d0));
             if (!gVar.i0 || !arrayList2.isEmpty()) {
-                arrayList.add(x51.b(LocaleController.getString(R.string.BotMonetizationTransactions)));
+                arrayList.add(w51.b(LocaleController.getString(R.string.BotMonetizationTransactions)));
                 int size = arrayList2.size();
-                int i13 = 0;
-                while (i13 < size) {
-                    Object obj = arrayList2.get(i13);
-                    i13++;
-                    int i14 = o7.a;
-                    x51 J = x51.J(o7.class);
+                int i14 = 0;
+                while (i14 < size) {
+                    Object obj = arrayList2.get(i14);
+                    i14++;
+                    int i15 = p7.a;
+                    w51 J = w51.J(p7.class);
                     J.G = (TL_stars.StarsTransaction) obj;
                     J.q = true;
                     arrayList.add(J);
                 }
                 if (!gVar.i0) {
-                    arrayList.add(x51.o(1, 7));
-                    arrayList.add(x51.o(2, 7));
-                    arrayList.add(x51.o(3, 7));
+                    arrayList.add(w51.o(1, 7));
+                    arrayList.add(w51.o(2, 7));
+                    arrayList.add(w51.o(3, 7));
                 }
             }
-            arrayList.add(x51.A(-6, null));
+            arrayList.add(w51.A(-6, null));
         }
     }
 
@@ -421,7 +431,7 @@ public final class g extends org.telegram.ui.ActionBar.n2 implements Notificatio
         textView2.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, i11, false));
         textView2.setTextSize(1, 16.0f);
         textView2.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
-        org.telegram.messenger.q.n(R.string.EditAdminTransferAlertText1, textView2);
+        org.telegram.messenger.l0.l(R.string.EditAdminTransferAlertText1, textView2);
         if (LocaleController.isRTL) {
             linearLayout2.addView(textView2, w7.y5.n(-1, -2));
             linearLayout2.addView(imageView, w7.y5.q(-2, -2, 5));
@@ -429,8 +439,8 @@ public final class g extends org.telegram.ui.ActionBar.n2 implements Notificatio
             linearLayout2.addView(imageView, w7.y5.n(-2, -2));
             linearLayout2.addView(textView2, w7.y5.n(-1, -2));
         }
-        LinearLayout f7 = org.telegram.messenger.q.f(activity, 0);
-        linearLayout.addView(f7, w7.y5.k(0.0f, 11.0f, 0.0f, 0.0f, -1, -2));
+        LinearLayout e = org.telegram.messenger.l0.e(activity, 0);
+        linearLayout.addView(e, w7.y5.k(0.0f, 11.0f, 0.0f, 0.0f, -1, -2));
         ImageView imageView2 = new ImageView(activity);
         imageView2.setImageResource(R.drawable.list_circle);
         imageView2.setPadding(LocaleController.isRTL ? AndroidUtilities.dp(11.0f) : 0, AndroidUtilities.dp(9.0f), LocaleController.isRTL ? 0 : AndroidUtilities.dp(11.0f), 0);
@@ -439,15 +449,15 @@ public final class g extends org.telegram.ui.ActionBar.n2 implements Notificatio
         textView3.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, i11, false));
         textView3.setTextSize(1, 16.0f);
         textView3.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
-        org.telegram.messenger.q.n(R.string.EditAdminTransferAlertText2, textView3);
+        org.telegram.messenger.l0.l(R.string.EditAdminTransferAlertText2, textView3);
         if (LocaleController.isRTL) {
-            f7.addView(textView3, w7.y5.n(-1, -2));
+            e.addView(textView3, w7.y5.n(-1, -2));
             i10 = 5;
-            f7.addView(imageView2, w7.y5.q(-2, -2, 5));
+            e.addView(imageView2, w7.y5.q(-2, -2, 5));
         } else {
             i10 = 5;
-            f7.addView(imageView2, w7.y5.n(-2, -2));
-            f7.addView(textView3, w7.y5.n(-1, -2));
+            e.addView(imageView2, w7.y5.n(-2, -2));
+            e.addView(textView3, w7.y5.n(-1, -2));
         }
         if ("PASSWORD_MISSING".equals(tL_error.text)) {
             alertDialog$Builder.k(LocaleController.getString(R.string.EditAdminTransferSetPassword), new d(gVar));
@@ -480,9 +490,9 @@ public final class g extends org.telegram.ui.ActionBar.n2 implements Notificatio
             gVar.i0 = true;
         }
         gVar.h0 = false;
-        l61 l61Var = gVar.e.Y2;
-        if (l61Var != null) {
-            l61Var.N(true);
+        k61 k61Var = gVar.e.Y2;
+        if (k61Var != null) {
+            k61Var.N(true);
         }
     }
 
@@ -533,8 +543,8 @@ public final class g extends org.telegram.ui.ActionBar.n2 implements Notificatio
         } else {
             this.d.setSubtitle(LocaleController.getString(R.string.BotStatsTON));
         }
-        hg.k0.t(false, this.actionBar);
-        this.actionBar.setActionBarMenuOnItemClick(new v81(this, 12));
+        hg.k0.v(false, this.actionBar);
+        this.actionBar.setActionBarMenuOnItemClick(new o81(this, 13));
         eo eoVar2 = this.d;
         int i10 = org.telegram.ui.ActionBar.j6.Oi;
         eoVar2.i(org.telegram.ui.ActionBar.j6.w0(null, i10, false), org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Pi, false));
@@ -544,28 +554,28 @@ public final class g extends org.telegram.ui.ActionBar.n2 implements Notificatio
         org.telegram.ui.ActionBar.k kVar = this.actionBar;
         int i11 = org.telegram.ui.ActionBar.j6.d6;
         kVar.setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, i11, false));
-        this.F = new u7(context, this.currentAccount, false, this.b, getClassGuid(), getResourceProvider());
+        this.F = new v7(context, this.currentAccount, false, this.b, getClassGuid(), getResourceProvider());
         yd ydVar = new yd(context, 9);
         this.H = ydVar;
         ydVar.setOrientation(1);
         this.H.setBackgroundColor(org.telegram.ui.ActionBar.j6.v0(i11, getResourceProvider()));
         this.H.setPadding(0, 0, 0, AndroidUtilities.dp(17.0f));
-        org.telegram.ui.Components.p6 p6Var = new org.telegram.ui.Components.p6(context, false, true, true);
-        this.K = p6Var;
-        p6Var.setTypeface(AndroidUtilities.bold());
-        org.telegram.ui.Components.p6 p6Var2 = this.K;
+        org.telegram.ui.Components.o6 o6Var = new org.telegram.ui.Components.o6(context, false, true, true);
+        this.K = o6Var;
+        o6Var.setTypeface(AndroidUtilities.bold());
+        org.telegram.ui.Components.o6 o6Var2 = this.K;
         int i12 = org.telegram.ui.ActionBar.j6.G6;
-        p6Var2.setTextColor(org.telegram.ui.ActionBar.j6.v0(i12, getResourceProvider()));
+        o6Var2.setTextColor(org.telegram.ui.ActionBar.j6.v0(i12, getResourceProvider()));
         this.K.setTextSize(AndroidUtilities.dp(32.0f));
         this.K.setGravity(17);
         this.J = new RelativeSizeSpan(0.6770833f);
         this.H.addView(this.K, w7.y5.t(-1, 38, 49, 22, 15, 22, 0));
-        org.telegram.ui.Components.p6 p6Var3 = new org.telegram.ui.Components.p6(context, true, true, true);
-        this.L = p6Var3;
-        p6Var3.setGravity(17);
-        org.telegram.ui.Components.p6 p6Var4 = this.L;
+        org.telegram.ui.Components.o6 o6Var3 = new org.telegram.ui.Components.o6(context, true, true, true);
+        this.L = o6Var3;
+        o6Var3.setGravity(17);
+        org.telegram.ui.Components.o6 o6Var4 = this.L;
         int i13 = org.telegram.ui.ActionBar.j6.y6;
-        p6Var4.setTextColor(org.telegram.ui.ActionBar.j6.v0(i13, getResourceProvider()));
+        o6Var4.setTextColor(org.telegram.ui.ActionBar.j6.v0(i13, getResourceProvider()));
         this.L.setTextSize(AndroidUtilities.dp(14.0f));
         this.H.addView(this.L, w7.y5.d(-1, 17.0f, 49, 22.0f, 4.0f, 22.0f, 0.0f));
         zd zdVar = new zd(this, context, 1);
@@ -659,17 +669,17 @@ public final class g extends org.telegram.ui.ActionBar.n2 implements Notificatio
         ydVar2.setOrientation(1);
         this.U.setBackgroundColor(org.telegram.ui.ActionBar.j6.v0(i11, this.resourceProvider));
         this.U.setPadding(0, 0, 0, AndroidUtilities.dp(17.0f));
-        org.telegram.ui.Components.p6 p6Var5 = new org.telegram.ui.Components.p6(context, false, true, true);
-        this.W = p6Var5;
-        p6Var5.setTypeface(AndroidUtilities.bold());
+        org.telegram.ui.Components.o6 o6Var5 = new org.telegram.ui.Components.o6(context, false, true, true);
+        this.W = o6Var5;
+        o6Var5.setTypeface(AndroidUtilities.bold());
         this.W.setTextColor(org.telegram.ui.ActionBar.j6.v0(i12, this.resourceProvider));
         this.W.setTextSize(AndroidUtilities.dp(32.0f));
         this.W.setGravity(17);
         this.V = new RelativeSizeSpan(0.6770833f);
         this.U.addView(this.W, w7.y5.t(-1, 38, 49, 22, 15, 22, 0));
-        org.telegram.ui.Components.p6 p6Var6 = new org.telegram.ui.Components.p6(context, true, true, true);
-        this.X = p6Var6;
-        p6Var6.setGravity(17);
+        org.telegram.ui.Components.o6 o6Var6 = new org.telegram.ui.Components.o6(context, true, true, true);
+        this.X = o6Var6;
+        o6Var6.setGravity(17);
         this.X.setTextColor(org.telegram.ui.ActionBar.j6.v0(i13, this.resourceProvider));
         this.X.setTextSize(AndroidUtilities.dp(14.0f));
         this.U.addView(this.X, w7.y5.d(-1, 17.0f, 49, 22.0f, 4.0f, 22.0f, 0.0f));
@@ -710,12 +720,12 @@ public final class g extends org.telegram.ui.ActionBar.n2 implements Notificatio
             }
         });
         this.U.addView(this.Y, w7.y5.d(-1, 48.0f, 55, 18.0f, 13.0f, 18.0f, 0.0f));
-        t61 t61Var = new t61(this, new hi.a(this, 21), new d(this), new d(this));
-        this.e = t61Var;
-        t61Var.setBackgroundColor(getThemedColor(org.telegram.ui.ActionBar.j6.a7));
+        s61 s61Var = new s61(this, new hi.a(this, 21), new d(this), new d(this));
+        this.e = s61Var;
+        s61Var.setBackgroundColor(getThemedColor(org.telegram.ui.ActionBar.j6.a7));
         this.e.q1();
         fVar.addView(this.e, w7.y5.c(-1.0f, -1));
-        this.e.setOnScrollListener(new tb0(this, 19));
+        this.e.setOnScrollListener(new sb0(this, 19));
         this.actionBar.setAdaptiveBackground(this.e);
         this.fragmentView = fVar;
         return fVar;
@@ -741,19 +751,19 @@ public final class g extends org.telegram.ui.ActionBar.n2 implements Notificatio
         this.h = h != null ? h.status : null;
         if (h != null) {
             this.Z = h.usd_rate;
-            la1 f02 = za1.f0(h.revenue_graph, LocaleController.getString(R.string.BotStarsChartRevenue), 2, false);
+            na1 f02 = bb1.f0(h.revenue_graph, LocaleController.getString(R.string.BotStarsChartRevenue), 2, false);
             this.n = f02;
             if (f02 != null && (bVar = f02.d) != null && (arrayList = bVar.d) != null && !arrayList.isEmpty() && this.n.d.d.get(0) != null) {
-                la1 la1Var = this.n;
-                la1Var.h = true;
-                ((jg.a) la1Var.d.d.get(0)).g = org.telegram.ui.ActionBar.j6.yj;
+                na1 na1Var = this.n;
+                na1Var.h = true;
+                ((jg.a) na1Var.d.d.get(0)).g = org.telegram.ui.ActionBar.j6.yj;
                 this.n.d.h = (float) ((1.0d / this.Z) / 100.0d);
             }
             TLRPC.TL_starsRevenueStatus tL_starsRevenueStatus = h.status;
             i0(tL_starsRevenueStatus.available_balance, tL_starsRevenueStatus.next_withdrawal_at);
-            t61 t61Var = this.e;
-            if (t61Var != null) {
-                t61Var.Y2.N(true);
+            s61 s61Var = this.e;
+            if (s61Var != null) {
+                s61Var.Y2.N(true);
             }
         }
     }
@@ -793,7 +803,7 @@ public final class g extends org.telegram.ui.ActionBar.n2 implements Notificatio
             return;
         }
         long j3 = (long) (this.Z * starsAmount.amount * 100.0d);
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(v7.X0(false, TextUtils.concat("XTR ", v7.J0(starsAmount, 0.8f, ' ')), 1.0f, null));
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(w7.X0(false, TextUtils.concat("XTR ", w7.J0(starsAmount, 0.8f, ' ')), 1.0f, null));
         int indexOf = TextUtils.indexOf(spannableStringBuilder, ".");
         if (indexOf >= 0) {
             spannableStringBuilder.setSpan(this.J, indexOf, spannableStringBuilder.length(), 33);

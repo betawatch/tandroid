@@ -19,36 +19,37 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.h9;
-import org.telegram.ui.Components.vl0;
+import org.telegram.ui.Components.g9;
+import org.telegram.ui.Components.ul0;
+import org.telegram.ui.Components.v9;
 import org.telegram.ui.Components.voip.o;
-import org.telegram.ui.Components.w9;
 import org.telegram.ui.vy0;
 import org.telegram.ui.web.b1;
 import s4.c1;
+import u2.j0;
 import vg.c0;
 import vg.d0;
 import vg.r;
 import vg.t;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public abstract class e extends vl0 {
-    public final e6 c;
+public abstract class e extends ul0 {
+    public final f6 c;
     public boolean d;
     public n2 e;
     public TLRPC.TL_payments_checkedGiftCode f;
     public String h;
     public FrameLayout n;
 
-    public e(e6 e6Var) {
-        this.c = e6Var;
+    public e(f6 f6Var) {
+        this.c = f6Var;
     }
 
-    @Override // org.telegram.ui.Components.vl0
+    @Override // org.telegram.ui.Components.ul0
     public final boolean D(c1 c1Var) {
         return false;
     }
@@ -192,16 +193,16 @@ public abstract class e extends vl0 {
         c0 c0Var = (c0) view;
         final TLRPC.TL_payments_checkedGiftCode tL_payments_checkedGiftCode4 = this.f;
         final b1 b1Var2 = new b1(this, i13);
-        w9 w9Var = c0Var.h;
+        v9 v9Var = c0Var.h;
         FrameLayout frameLayout = c0Var.w;
-        w9 w9Var2 = c0Var.f;
+        v9 v9Var2 = c0Var.f;
         TextView textView = c0Var.a;
         TextView textView2 = c0Var.b;
-        e6 e6Var = c0Var.n;
+        f6 f6Var = c0Var.n;
         Date date2 = new Date(tL_payments_checkedGiftCode4.date * 1000);
         c0Var.e.setText(LocaleController.formatString("formatDateAtTime", R.string.formatDateAtTime, LocaleController.getInstance().getFormatterYear().format(date2), LocaleController.getInstance().getFormatterDay().format(date2)));
         TextView textView3 = c0Var.d;
-        textView3.setTextColor(j6.v0(tL_payments_checkedGiftCode4.via_giveaway ? j6.m5 : j6.j5, e6Var));
+        textView3.setTextColor(j6.v0(tL_payments_checkedGiftCode4.via_giveaway ? j6.m5 : j6.j5, f6Var));
         TLRPC.Chat chat = MessagesController.getInstance(UserConfig.selectedAccount).getChat(Long.valueOf(-DialogObject.getPeerDialogId(tL_payments_checkedGiftCode4.from_id)));
         boolean isChannelAndNotMegaGroup = ChatObject.isChannelAndNotMegaGroup(chat);
         if (tL_payments_checkedGiftCode4.via_giveaway) {
@@ -222,7 +223,7 @@ public abstract class e extends vl0 {
                             break;
                     }
                 }
-            }, e6Var));
+            }, f6Var));
             textView3.setOnClickListener(new vy0(22, b1Var2, tL_payments_checkedGiftCode4));
         } else {
             textView3.setText(LocaleController.getString(isChannelAndNotMegaGroup ? R.string.BoostingYouWereSelected : R.string.BoostingYouWereSelectedGroup));
@@ -249,14 +250,14 @@ public abstract class e extends vl0 {
             spannableStringBuilder2.append((CharSequence) "**");
             spannableStringBuilder2.append((CharSequence) chat.title);
             spannableStringBuilder2.append((CharSequence) "**");
-            textView.setText(Emoji.replaceEmoji(AndroidUtilities.replaceSingleTag(spannableStringBuilder2.toString(), j6.gc, 0, new uf.b(5, b1Var2, chat), e6Var), textView.getPaint().getFontMetricsInt(), false));
-            w9Var2.e(chat, new h9(chat));
+            textView.setText(Emoji.replaceEmoji(AndroidUtilities.replaceSingleTag(spannableStringBuilder2.toString(), j6.gc, 0, new j0(7, b1Var2, chat), f6Var), textView.getPaint().getFontMetricsInt(), false));
+            v9Var2.e(chat, new g9(chat));
             frameLayout.setOnClickListener(new vy0(23, b1Var2, chat));
         } else {
             final TLRPC.User user2 = MessagesController.getInstance(UserConfig.selectedAccount).getUser(Long.valueOf(tL_payments_checkedGiftCode4.from_id.user_id));
             final int i19 = 0;
             textView.setText(Emoji.replaceEmoji(UserObject.getFirstName(user2), textView.getPaint().getFontMetricsInt(), false));
-            w9Var2.e(user2, new h9(0, user2));
+            v9Var2.e(user2, new g9(0, user2));
             frameLayout.setOnClickListener(new View.OnClickListener() { // from class: vg.a0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view2) {
@@ -289,12 +290,12 @@ public abstract class e extends vl0 {
                             break;
                     }
                 }
-            }, e6Var));
+            }, f6Var));
             textView2.setText(LocaleController.getString(R.string.BoostingNoRecipient));
-            textView2.setTextColor(j6.v0(j6.j5, e6Var));
+            textView2.setTextColor(j6.v0(j6.j5, f6Var));
             ((ViewGroup.MarginLayoutParams) textView2.getLayoutParams()).leftMargin = 0;
             ((ViewGroup.MarginLayoutParams) textView2.getLayoutParams()).rightMargin = 0;
-            w9Var.setVisibility(8);
+            v9Var.setVisibility(8);
         } else {
             final TLRPC.User user3 = MessagesController.getInstance(UserConfig.selectedAccount).getUser(Long.valueOf(tL_payments_checkedGiftCode4.to_id));
             if (user3 != null) {
@@ -315,8 +316,8 @@ public abstract class e extends vl0 {
                                 break;
                         }
                     }
-                }, e6Var), textView2.getPaint().getFontMetricsInt(), false));
-                w9Var.e(user3, new h9(0, user3));
+                }, f6Var), textView2.getPaint().getFontMetricsInt(), false));
+                v9Var.e(user3, new g9(0, user3));
                 c0Var.x.setOnClickListener(new View.OnClickListener() { // from class: vg.a0
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view2) {
@@ -341,17 +342,17 @@ public abstract class e extends vl0 {
     public final c1 x(ViewGroup viewGroup, int i10) {
         View tVar;
         Context context = viewGroup.getContext();
-        e6 e6Var = this.c;
+        f6 f6Var = this.c;
         if (i10 == 1) {
-            tVar = new t(context, e6Var);
+            tVar = new t(context, f6Var);
         } else if (i10 == 2) {
-            tVar = new c0(context, e6Var);
+            tVar = new c0(context, f6Var);
         } else if (i10 == 3) {
-            tVar = new d0(context, e6Var);
+            tVar = new d0(context, f6Var);
         } else if (i10 != 4) {
-            tVar = i10 != 5 ? new r(context, e6Var) : new View(context);
+            tVar = i10 != 5 ? new r(context, f6Var) : new View(context);
         } else {
-            tVar = new vg.a(context, e6Var);
+            tVar = new vg.a(context, f6Var);
             tVar.setPadding(0, 0, 0, AndroidUtilities.dp(14.0f));
         }
         return e2.k(tVar, tVar, -1, -2);

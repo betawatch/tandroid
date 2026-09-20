@@ -13,10 +13,10 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class gr extends bb {
-    public final d80 X;
+public final class gr extends ab {
+    public final c80 X;
     public final ArrayList Y;
     public final boolean Z;
     public final boolean a0;
@@ -27,7 +27,7 @@ public final class gr extends bb {
     public final org.telegram.ui.ActionBar.n2 f0;
     public final long g0;
 
-    public gr(org.telegram.ui.ActionBar.n2 n2Var, ArrayList arrayList, long j3, d80 d80Var) {
+    public gr(org.telegram.ui.ActionBar.n2 n2Var, ArrayList arrayList, long j3, c80 c80Var) {
         super(n2Var, false);
         TLRPC.Chat chat = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-j3));
         this.f0 = n2Var;
@@ -35,7 +35,7 @@ public final class gr extends bb {
         this.v = 0.26f;
         ArrayList arrayList2 = new ArrayList(arrayList);
         this.Y = arrayList2;
-        this.X = d80Var;
+        this.X = c80Var;
         boolean isChannelOrGiga = ChatObject.isChannelOrGiga(chat);
         this.b0 = isChannelOrGiga;
         this.d0 = (TLRPC.Peer) arrayList2.get(0);
@@ -111,9 +111,9 @@ public final class gr extends bb {
                 }
             }
         });
-        wl0 wl0Var = this.d;
+        vl0 vl0Var = this.d;
         int i13 = this.backgroundPaddingLeft;
-        wl0Var.setPadding(i13, 0, i13, AndroidUtilities.dp(120.0f));
+        vl0Var.setPadding(i13, 0, i13, AndroidUtilities.dp(120.0f));
         this.d.setOnItemClickListener(new j(this, 4));
         fixNavigationBar();
         N();
@@ -139,12 +139,12 @@ public final class gr extends bb {
         }
     }
 
-    @Override // org.telegram.ui.Components.bb
-    public final vl0 v(wl0 wl0Var) {
+    @Override // org.telegram.ui.Components.ab
+    public final ul0 v(vl0 vl0Var) {
         return new er(this);
     }
 
-    @Override // org.telegram.ui.Components.bb
+    @Override // org.telegram.ui.Components.ab
     public final CharSequence y() {
         return this.b0 ? LocaleController.getString(R.string.StartVoipChannelTitle) : LocaleController.getString(R.string.StartVoipChatTitle);
     }

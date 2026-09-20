@@ -5,7 +5,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public class j4 {
     public final View a;
@@ -70,7 +70,7 @@ public class j4 {
             if (view2 != null) {
                 view = view2;
             }
-            r0.m1 f7 = r0.i0.f(view);
+            r0.l1 f7 = r0.i0.f(view);
             this.l = f7 != null ? f7.a.f(8).d : 0;
         } else {
             Rect rect = this.h;

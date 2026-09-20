@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class k80 extends ViewGroup {
     public AnimatorSet a;
@@ -44,7 +44,7 @@ public final class k80 extends ViewGroup {
         this.b = false;
         AnimatorSet animatorSet2 = new AnimatorSet();
         this.a = animatorSet2;
-        animatorSet2.addListener(new org.telegram.ui.Components.al0(7, this, m30Var));
+        animatorSet2.addListener(new org.telegram.ui.Components.zk0(7, this, m30Var));
         this.a.setInterpolator(org.telegram.ui.Components.qr.h);
         this.a.setDuration(320L);
         this.e = m30Var;
@@ -68,7 +68,7 @@ public final class k80 extends ViewGroup {
     @Override // android.view.View
     public final void onMeasure(int i10, int i11) {
         ArrayList arrayList;
-        int A;
+        int z10;
         int max;
         int childCount = getChildCount();
         int size = View.MeasureSpec.getSize(i10);
@@ -118,28 +118,28 @@ public final class k80 extends ViewGroup {
                     }
                 }
                 if (childAt != this.e) {
-                    i14 = org.telegram.messenger.q.D(9.0f, childAt.getMeasuredWidth(), i14);
+                    i14 = org.telegram.messenger.l0.C(9.0f, childAt.getMeasuredWidth(), i14);
                 }
-                i15 = org.telegram.messenger.q.D(9.0f, childAt.getMeasuredWidth(), i15);
+                i15 = org.telegram.messenger.l0.C(9.0f, childAt.getMeasuredWidth(), i15);
             }
             i12++;
         }
         int i16 = 3;
         if (AndroidUtilities.isTablet()) {
-            A = AndroidUtilities.dp(372.0f) / 3;
+            z10 = AndroidUtilities.dp(372.0f) / 3;
         } else {
             Point point = AndroidUtilities.displaySize;
-            A = org.telegram.messenger.wh.A(158.0f, Math.min(point.x, point.y), 3);
+            z10 = org.telegram.messenger.rk.z(158.0f, Math.min(point.x, point.y), 3);
         }
         int dp5 = i13 > 0 ? AndroidUtilities.dp(34.0f) + i13 : 0;
         l80 l80Var = this.h;
-        boolean z10 = dp5 > l80Var.x - AndroidUtilities.dp(12.0f);
-        if (dp - i14 < A && !z10) {
+        boolean z11 = dp5 > l80Var.x - AndroidUtilities.dp(12.0f);
+        if (dp - i14 < z10 && !z11) {
             dp2 += AndroidUtilities.dp(34.0f);
             i13 = Math.max(i13, dp2);
             i14 = 0;
         }
-        boolean z11 = (i13 > 0 ? AndroidUtilities.dp(34.0f) + i13 : 0) > l80Var.x - AndroidUtilities.dp(12.0f);
+        boolean z12 = (i13 > 0 ? AndroidUtilities.dp(34.0f) + i13 : 0) > l80Var.x - AndroidUtilities.dp(12.0f);
         if (!this.b) {
             int dp6 = AndroidUtilities.dp(28.0f) + dp3;
             l80Var.I = dp2;
@@ -152,7 +152,7 @@ public final class k80 extends ViewGroup {
                 this.f = dp6;
             }
         }
-        if (z11) {
+        if (z12) {
             max = l80Var.x - AndroidUtilities.dp(12.0f);
         } else {
             max = Math.max(AndroidUtilities.dp(37.0f), Math.min(i13 > 0 ? AndroidUtilities.dp(31.0f) + i13 : 0, l80Var.x - AndroidUtilities.dp(12.0f)));
@@ -161,21 +161,21 @@ public final class k80 extends ViewGroup {
         j80 j80Var = l80Var.d;
         if (j80Var != null) {
             int max2 = Math.max(0, childCount - (this.e != null ? 1 : 0));
-            float c10 = org.telegram.messenger.q.c(6.0f, i13, 0);
+            float b10 = org.telegram.messenger.l0.b(6.0f, i13, 0);
             float f11 = i14;
-            boolean z12 = max2 <= 0;
+            boolean z13 = max2 <= 0;
             float f12 = 0.0f;
-            ViewPropertyAnimator scaleY = j80Var.c.animate().alpha(z12 ? 1.0f : 0.0f).scaleX(z12 ? 1.0f : 0.5f).scaleY(z12 ? 1.0f : 0.5f);
+            ViewPropertyAnimator scaleY = j80Var.c.animate().alpha(z13 ? 1.0f : 0.0f).scaleX(z13 ? 1.0f : 0.5f).scaleY(z13 ? 1.0f : 0.5f);
             org.telegram.ui.Components.qr qrVar = org.telegram.ui.Components.qr.h;
-            org.telegram.messenger.wh.r(scaleY, qrVar, 320L);
-            ViewPropertyAnimator translationY = j80Var.d.animate().translationY(z11 ? ((j80Var.getHeight() - j80Var.getPaddingTop()) - j80Var.getPaddingBottom()) - AndroidUtilities.dp(44.0f) : c10);
-            if (z11) {
+            org.telegram.messenger.rk.s(scaleY, qrVar, 320L);
+            ViewPropertyAnimator translationY = j80Var.d.animate().translationY(z12 ? ((j80Var.getHeight() - j80Var.getPaddingTop()) - j80Var.getPaddingBottom()) - AndroidUtilities.dp(44.0f) : b10);
+            if (z12) {
                 f12 = AndroidUtilities.dp(-36.0f);
             } else if (max2 > 0) {
                 f12 = Math.max(-AndroidUtilities.dp(36.0f), f11 - AndroidUtilities.dp(46.0f));
             }
             translationY.translationX(f12).setInterpolator(qrVar).setDuration(320L).start();
-            j80Var.f.e.post(new b0(j80Var, c10, i16));
+            j80Var.f.e.post(new b0(j80Var, b10, i16));
         }
         setMeasuredDimension(size, this.f);
     }

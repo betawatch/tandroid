@@ -6,7 +6,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class r0 extends oh.c implements le.d {
     public static final /* synthetic */ int s = 0;
@@ -15,15 +15,15 @@ public final class r0 extends oh.c implements le.d {
     public final oh.b[] n;
     public int r;
 
-    public r0(Context context, org.telegram.ui.ActionBar.e6 e6Var, org.telegram.ui.web.b1 b1Var) {
+    public r0(Context context, org.telegram.ui.ActionBar.f6 f6Var, org.telegram.ui.web.b1 b1Var) {
         super(context);
         this.f = new le.e(0, this, qr.h, 1600L);
         this.h = b1Var;
         int i10 = org.telegram.ui.ActionBar.j6.Wk;
-        int l1 = org.telegram.ui.ActionBar.j6.l1(0.09411765f, org.telegram.ui.ActionBar.j6.v0(i10, e6Var));
-        org.telegram.ui.ActionBar.j6.l1(0.1254902f, org.telegram.ui.ActionBar.j6.v0(i10, e6Var));
+        int l1 = org.telegram.ui.ActionBar.j6.l1(0.09411765f, org.telegram.ui.ActionBar.j6.v0(i10, f6Var));
+        org.telegram.ui.ActionBar.j6.l1(0.1254902f, org.telegram.ui.ActionBar.j6.v0(i10, f6Var));
         this.e.setColor(l1);
-        this.n = new oh.b[]{oh.b.b(context, e6Var, oh.a.G, R.string.GiftPreviewModels), oh.b.b(context, e6Var, oh.a.v, R.string.GiftPreviewBackdrops), oh.b.b(context, e6Var, oh.a.J, R.string.GiftPreviewSymbols)};
+        this.n = new oh.b[]{oh.b.b(context, f6Var, oh.a.G, R.string.GiftPreviewModels), oh.b.b(context, f6Var, oh.a.v, R.string.GiftPreviewBackdrops), oh.b.b(context, f6Var, oh.a.J, R.string.GiftPreviewSymbols)};
         int i11 = 0;
         while (true) {
             oh.b[] bVarArr = this.n;

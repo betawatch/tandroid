@@ -22,9 +22,9 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.zip.GZIPInputStream;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.d11;
+import org.telegram.ui.Components.c11;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public class CodeHighlighting {
     public static final int MATCH_COMMENT = 6;
@@ -39,7 +39,7 @@ public class CodeHighlighting {
     private static HashSet<String> languages;
     private static final ConcurrentHashMap<String, Highlighting> processedHighlighting = new ConcurrentHashMap<>();
 
-    /* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+    /* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
     public static class CachedPattern {
         private Pattern pattern;
         private String patternSource;
@@ -58,7 +58,7 @@ public class CodeHighlighting {
         }
     }
 
-    /* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+    /* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
     public static class CachedToSpan {
         public int end;
         public int group;
@@ -71,7 +71,7 @@ public class CodeHighlighting {
         }
     }
 
-    /* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+    /* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
     public static class ColorSpan extends CharacterStyle {
         public int group;
 
@@ -106,7 +106,7 @@ public class CodeHighlighting {
         }
     }
 
-    /* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+    /* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
     public static class Highlighting {
         String language;
         SpannableString result;
@@ -116,7 +116,7 @@ public class CodeHighlighting {
         }
     }
 
-    /* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+    /* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
     public static class LinkedList {
         public Node head;
         public int length = 0;
@@ -166,7 +166,7 @@ public class CodeHighlighting {
         }
     }
 
-    /* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+    /* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
     public static class LockedSpannableString extends SpannableString {
         public boolean ready;
 
@@ -214,7 +214,7 @@ public class CodeHighlighting {
         }
     }
 
-    /* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+    /* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
     public static class LockedWithFallbackSpannableString extends LockedSpannableString {
         public SpannableStringBuilder fallback;
 
@@ -254,7 +254,7 @@ public class CodeHighlighting {
         }
     }
 
-    /* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+    /* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
     public static class Match {
         int index;
         int length;
@@ -264,7 +264,7 @@ public class CodeHighlighting {
         }
     }
 
-    /* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+    /* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
     public static class Node {
         public Node next;
         public Node prev;
@@ -274,7 +274,7 @@ public class CodeHighlighting {
         }
     }
 
-    /* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+    /* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
     public static class ParsedPattern {
         private CachedPattern cachedPattern;
         boolean caseInsensitive;
@@ -296,7 +296,7 @@ public class CodeHighlighting {
         }
     }
 
-    /* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+    /* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
     public static class RematchOptions {
         TokenPattern cause;
         int reach;
@@ -305,22 +305,22 @@ public class CodeHighlighting {
         }
     }
 
-    /* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+    /* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
     public static class Span extends CharacterStyle {
         public final String code;
         public final int currentType;
         public final float decrementSize;
         public final String lng;
         public final boolean smallerSize;
-        public final d11 style;
+        public final c11 style;
 
-        public Span(boolean z10, int i10, d11 d11Var, String str, String str2) {
+        public Span(boolean z10, int i10, c11 c11Var, String str, String str2) {
             this.smallerSize = z10;
             this.lng = str;
             this.code = str2;
             this.decrementSize = CodeHighlighting.getTextSizeDecrement(str2 == null ? 0 : str2.length());
             this.currentType = i10;
-            this.style = d11Var;
+            this.style = c11Var;
         }
 
         @Override // android.text.style.CharacterStyle
@@ -336,9 +336,9 @@ public class CodeHighlighting {
             } else {
                 textPaint.setColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.ec, false));
             }
-            d11 d11Var = this.style;
-            if (d11Var != null) {
-                d11Var.a(textPaint);
+            c11 c11Var = this.style;
+            if (c11Var != null) {
+                c11Var.a(textPaint);
             } else {
                 textPaint.setTypeface(Typeface.MONOSPACE);
                 textPaint.setUnderlineText(false);
@@ -346,7 +346,7 @@ public class CodeHighlighting {
         }
     }
 
-    /* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+    /* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
     public static class StreamReader {
         private final InputStream is;
 
@@ -482,7 +482,7 @@ public class CodeHighlighting {
         return i10 > 50 ? 3 : 2;
     }
 
-    public static void highlight(Spannable spannable, int i10, int i11, String str, int i12, d11 d11Var, boolean z10) {
+    public static void highlight(Spannable spannable, int i10, int i11, String str, int i12, c11 c11Var, boolean z10) {
         if (spannable == null) {
             return;
         }
@@ -500,7 +500,7 @@ public class CodeHighlighting {
         if (TextUtils.isEmpty(str) || spannableString.length() == 0) {
             callback.run(spannableString);
         } else {
-            Utilities.searchQueue.postRunnable(new qk(spannableString.toString(), str, spannableString, callback, 5));
+            Utilities.searchQueue.postRunnable(new pk(spannableString.toString(), str, spannableString, callback, 5));
         }
     }
 
@@ -585,9 +585,9 @@ public class CodeHighlighting {
         } catch (Exception e7) {
             e = e7;
             FileLog.e(e);
-            AndroidUtilities.runOnUIThread(new g0(13, spannableString2, callback, arrayList));
+            AndroidUtilities.runOnUIThread(new f0(13, spannableString2, callback, arrayList));
         }
-        AndroidUtilities.runOnUIThread(new g0(13, spannableString2, callback, arrayList));
+        AndroidUtilities.runOnUIThread(new f0(13, spannableString2, callback, arrayList));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -998,7 +998,7 @@ public class CodeHighlighting {
         return linkedList;
     }
 
-    /* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+    /* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
     public static class TokenPattern {
         public boolean greedy;
         public int group;
@@ -1031,7 +1031,7 @@ public class CodeHighlighting {
         }
     }
 
-    /* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+    /* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
     public static class StringToken {
         final int group;
         final LinkedList inside;

@@ -1,9 +1,9 @@
 package f9;
 
 import java.io.OutputStream;
-import v7.t6;
+import v7.u6;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class a extends OutputStream {
     public final String toString() {
@@ -22,6 +22,6 @@ public final class a extends OutputStream {
     @Override // java.io.OutputStream
     public final void write(byte[] bArr, int i10, int i11) {
         bArr.getClass();
-        t6.f(i10, i11 + i10, bArr.length);
+        u6.f(i10, i11 + i10, bArr.length);
     }
 }

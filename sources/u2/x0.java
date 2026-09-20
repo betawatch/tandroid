@@ -1,46 +1,133 @@
 package u2;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+import android.net.Uri;
+import android.os.Looper;
+import j$.util.Objects;
+
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
-public final class x0 implements x3.g {
-    public long a;
-    public long b;
-    public Object c;
-    public Object d;
+public final class x0 extends a {
+    public final g2.g h;
+    public final r5.d i;
+    public final n2.n j;
+    public final qb.b k;
+    public final int l;
+    public final b2.s m;
+    public boolean n = true;
+    public long o = -9223372036854775807L;
+    public boolean p;
+    public boolean q;
+    public g2.c0 r;
+    public b2.k0 s;
 
-    public x0(long j3, int i10) {
-        e2.d.g(((y2.a) this.c) == null);
-        this.a = j3;
-        this.b = j3 + i10;
+    public x0(b2.k0 k0Var, g2.g gVar, r5.d dVar, n2.n nVar, qb.b bVar, int i10, b2.s sVar) {
+        this.s = k0Var;
+        this.h = gVar;
+        this.i = dVar;
+        this.j = nVar;
+        this.k = bVar;
+        this.l = i10;
+        this.m = sVar;
     }
 
-    @Override // x3.g
-    public void B(long j3) {
-        long[] jArr = (long[]) ((of.b) this.d).b;
-        this.b = jArr[e2.d0.e(jArr, j3, true)];
+    @Override // u2.a
+    public final boolean a(b2.k0 k0Var) {
+        b2.f0 f0Var = i().b;
+        f0Var.getClass();
+        b2.f0 f0Var2 = k0Var.b;
+        return f0Var2 != null && f0Var2.a.equals(f0Var.a) && f0Var2.h == f0Var.h && Objects.equals(f0Var2.f, f0Var.f);
     }
 
-    @Override // x3.g
-    public long b(c3.p pVar) {
-        long j3 = this.b;
-        if (j3 < 0) {
-            return -1L;
+    @Override // u2.a
+    public final d0 c(f0 f0Var, y2.d dVar, long j3) {
+        g2.h createDataSource = this.h.createDataSource();
+        g2.c0 c0Var = this.r;
+        if (c0Var != null) {
+            createDataSource.addTransferListener(c0Var);
         }
-        long j10 = -(j3 + 2);
-        this.b = -1L;
-        return j10;
+        b2.f0 f0Var2 = i().b;
+        f0Var2.getClass();
+        Uri uri = f0Var2.a;
+        e2.d.h(this.g);
+        return new v0(uri, createDataSource, new lf.h((c3.r) this.i.b), this.j, new n2.k(this.d.c, 0, f0Var), this.k, b(f0Var), this, dVar, f0Var2.f, this.l, this.m, e2.d0.Q(f0Var2.h), null);
     }
 
-    @Override // x3.g
-    public c3.b0 g() {
-        e2.d.g(this.a != -1);
-        return new c3.t((c3.u) this.c, this.a, 0);
+    @Override // u2.a
+    public final synchronized b2.k0 i() {
+        return this.s;
     }
 
-    public x0(String str, byte[] bArr, long j3, long j10) {
-        this.c = str;
-        this.d = bArr;
-        this.a = j3;
-        this.b = j10;
+    @Override // u2.a
+    public final void m(g2.c0 c0Var) {
+        this.r = c0Var;
+        Looper myLooper = Looper.myLooper();
+        myLooper.getClass();
+        j2.k kVar = this.g;
+        e2.d.h(kVar);
+        n2.n nVar = this.j;
+        nVar.C(myLooper, kVar);
+        nVar.b();
+        u();
+    }
+
+    @Override // u2.a
+    public final void o(d0 d0Var) {
+        v0 v0Var = (v0) d0Var;
+        if (v0Var.N) {
+            for (b1 b1Var : v0Var.K) {
+                b1Var.k();
+                n2.h hVar = b1Var.h;
+                if (hVar != null) {
+                    hVar.a(b1Var.e);
+                    b1Var.h = null;
+                    b1Var.g = null;
+                }
+            }
+        }
+        v0Var.x.e(v0Var);
+        v0Var.H.removeCallbacksAndMessages(null);
+        v0Var.I = null;
+        v0Var.f0 = true;
+    }
+
+    @Override // u2.a
+    public final void q() {
+        this.j.release();
+    }
+
+    @Override // u2.a
+    public final synchronized void t(b2.k0 k0Var) {
+        this.s = k0Var;
+    }
+
+    public final void u() {
+        long j3 = this.o;
+        boolean z10 = this.p;
+        boolean z11 = this.q;
+        b2.k0 i10 = i();
+        b2.k1 i1Var = new i1(-9223372036854775807L, -9223372036854775807L, j3, j3, 0L, 0L, z10, false, false, null, i10, z11 ? i10.c : null);
+        if (this.n) {
+            i1Var = new u(i1Var, 1);
+        }
+        n(i1Var);
+    }
+
+    public final void v(long j3, c3.b0 b0Var, boolean z10) {
+        if (j3 == -9223372036854775807L) {
+            j3 = this.o;
+        }
+        boolean f7 = b0Var.f();
+        if (!this.n && this.o == j3 && this.p == f7 && this.q == z10) {
+            return;
+        }
+        this.o = j3;
+        this.p = f7;
+        this.q = z10;
+        this.n = false;
+        u();
+    }
+
+    @Override // u2.a
+    public final void k() {
     }
 }

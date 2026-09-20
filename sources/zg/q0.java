@@ -10,18 +10,18 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.q5;
-import org.telegram.ui.Components.z5;
+import org.telegram.ui.Components.p5;
+import org.telegram.ui.Components.y5;
 import org.telegram.ui.LaunchActivity;
 import yh.l1;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public abstract class q0 {
     public static void a(TLRPC.TL_availableReaction tL_availableReaction, LinkedHashMap linkedHashMap, ArrayList arrayList, SpannableStringBuilder spannableStringBuilder, p pVar, Paint.FontMetricsInt fontMetricsInt) {
         TLRPC.Document document = tL_availableReaction.activate_animation;
         long j3 = document.id;
-        z5 e = e(document, Long.valueOf(j3), fontMetricsInt);
+        y5 e = e(document, Long.valueOf(j3), fontMetricsInt);
         linkedHashMap.put(Long.valueOf(j3), e);
         arrayList.add(Long.valueOf(j3));
         SpannableString spannableString = new SpannableString(tL_availableReaction.reaction);
@@ -82,16 +82,16 @@ public abstract class q0 {
         return j3 != 0 && ((TLRPC.TL_reactionCustomEmoji) reaction).document_id == j3;
     }
 
-    public static z5 e(TLRPC.Document document, Long l4, Paint.FontMetricsInt fontMetricsInt) {
-        z5 z5Var;
+    public static y5 e(TLRPC.Document document, Long l4, Paint.FontMetricsInt fontMetricsInt) {
+        y5 y5Var;
         if (document != null) {
-            z5Var = new z5(document.id, 1.0f, fontMetricsInt);
-            z5Var.document = document;
+            y5Var = new y5(document.id, 1.0f, fontMetricsInt);
+            y5Var.document = document;
         } else {
-            z5Var = new z5(l4.longValue(), 1.0f, fontMetricsInt);
+            y5Var = new y5(l4.longValue(), 1.0f, fontMetricsInt);
         }
-        z5Var.cacheType = q5.g();
-        return z5Var;
+        y5Var.cacheType = p5.g();
+        return y5Var;
     }
 
     public static void f(long j3, int i10, TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus) {

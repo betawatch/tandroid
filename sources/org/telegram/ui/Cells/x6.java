@@ -1,96 +1,37 @@
 package org.telegram.ui.Cells;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
-import android.text.TextPaint;
-import android.text.style.ImageSpan;
-import org.telegram.messenger.LocaleController;
-import org.telegram.ui.Components.s31;
+import android.content.Context;
+import android.view.View;
+import org.telegram.messenger.MessagesController;
+import org.telegram.ui.Components.k61;
+import org.telegram.ui.Components.s61;
+import org.telegram.ui.Components.v51;
+import org.telegram.ui.Components.vl0;
+import org.telegram.ui.Components.w51;
+import org.telegram.ui.i11;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class x6 extends ImageSpan {
-    public static s31 b;
-    public final /* synthetic */ int a = 1;
+public final class x6 extends v51 {
+    public static final /* synthetic */ int a = 0;
 
-    public /* synthetic */ x6(Drawable drawable) {
-        super(drawable);
+    static {
+        v51.setup(new x6());
     }
 
-    @Override // android.text.style.DynamicDrawableSpan, android.text.style.ReplacementSpan
-    public void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
-        switch (this.a) {
-            case 0:
-                Drawable drawable = getDrawable();
-                canvas.save();
-                int i15 = paint.getFontMetricsInt().descent;
-                canvas.translate(f7, ((i13 + i15) - ((i15 - r4.ascent) / 2)) - ((drawable.getBounds().bottom - drawable.getBounds().top) / 2));
-                if (LocaleController.isRTL) {
-                    canvas.scale(-1.0f, 1.0f, drawable.getIntrinsicWidth() / 2, drawable.getIntrinsicHeight() / 2);
-                }
-                drawable.draw(canvas);
-                canvas.restore();
-                break;
-            default:
-                super.draw(canvas, charSequence, i10, i11, f7, i12, i13, i14, paint);
-                break;
+    @Override // org.telegram.ui.Components.v51
+    public final void bindView(View view, w51 w51Var, boolean z10, k61 k61Var, s61 s61Var) {
+        Object obj = w51Var.G;
+        if (obj instanceof i11) {
+            i11 i11Var = (i11) obj;
+            ((z6) view).b(w51Var.l, i11Var.d, i11Var.e, z10);
+        } else if (obj instanceof MessagesController.FaqSearchResult) {
+            ((z6) view).a(w51Var.l, ((MessagesController.FaqSearchResult) obj).path, true, z10);
         }
     }
 
-    @Override // android.text.style.DynamicDrawableSpan, android.text.style.ReplacementSpan
-    public int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
-        switch (this.a) {
-            case 0:
-                Rect bounds = getDrawable().getBounds();
-                if (fontMetricsInt != null) {
-                    Paint.FontMetricsInt fontMetricsInt2 = paint.getFontMetricsInt();
-                    int i12 = fontMetricsInt2.descent;
-                    int i13 = fontMetricsInt2.ascent;
-                    int i14 = ((i12 - i13) / 2) + i13;
-                    int i15 = (bounds.bottom - bounds.top) / 2;
-                    int i16 = i14 - i15;
-                    fontMetricsInt.ascent = i16;
-                    fontMetricsInt.top = i16;
-                    int i17 = i14 + i15;
-                    fontMetricsInt.bottom = i17;
-                    fontMetricsInt.descent = i17;
-                }
-                return bounds.right;
-            default:
-                return super.getSize(paint, charSequence, i10, i11, fontMetricsInt);
-        }
-    }
-
-    @Override // android.text.style.ReplacementSpan, android.text.style.CharacterStyle
-    public void updateDrawState(TextPaint textPaint) {
-        switch (this.a) {
-            case 1:
-                float textSize = textPaint.getTextSize() * 0.89f;
-                int i10 = (int) (0.02f * textSize);
-                getDrawable().setBounds(0, i10, (int) textSize, ((int) (textSize * 1.25f)) + i10);
-                super.updateDrawState(textPaint);
-                break;
-            default:
-                super.updateDrawState(textPaint);
-                break;
-        }
-    }
-
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public x6() {
-        super(r0, 0);
-        s31 s31Var = b;
-        if (s31Var == null) {
-            s31Var = new s31(org.telegram.ui.ActionBar.j6.o2);
-            b = s31Var;
-        }
-        float textSize = org.telegram.ui.ActionBar.j6.o2.getTextSize() * 0.89f;
-        int i10 = (int) (0.02f * textSize);
-        getDrawable().setBounds(0, i10, (int) textSize, ((int) (textSize * 1.25f)) + i10);
+    @Override // org.telegram.ui.Components.v51
+    public final View createView(Context context, vl0 vl0Var, int i10, int i11, org.telegram.ui.ActionBar.f6 f6Var) {
+        return new z6(context);
     }
 }

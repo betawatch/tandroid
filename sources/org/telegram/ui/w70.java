@@ -21,7 +21,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class w70 extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public TextView a;
@@ -80,7 +80,7 @@ public final class w70 extends org.telegram.ui.ActionBar.n2 implements Notificat
         this.a.setLinksClickable(true);
         this.a.setClickable(true);
         this.a.setGravity(17);
-        this.a.setMovementMethod(new org.telegram.ui.Components.qv(1));
+        this.a.setMovementMethod(new org.telegram.ui.Components.rv(1));
         this.e.addView(this.a, w7.y5.e(-2, -2, 1));
         TextView textView3 = new TextView(context);
         this.c = textView3;
@@ -138,7 +138,7 @@ public final class w70 extends org.telegram.ui.ActionBar.n2 implements Notificat
             spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.formatString("EncryptionKeyDescription", i16, str, str)));
             int indexOf = spannableStringBuilder.toString().indexOf("telegram.org");
             if (indexOf != -1) {
-                spannableStringBuilder.setSpan(new org.telegram.ui.Components.d61(LocaleController.getString(R.string.EncryptionKeyLink), null), indexOf, indexOf + 12, 33);
+                spannableStringBuilder.setSpan(new org.telegram.ui.Components.c61(LocaleController.getString(R.string.EncryptionKeyLink), null), indexOf, indexOf + 12, 33);
             }
             this.a.setText(spannableStringBuilder);
         }

@@ -6,9 +6,9 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.o90;
+import org.telegram.ui.Components.n90;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class s7 implements e2.h {
     public final /* synthetic */ int a;
@@ -60,11 +60,11 @@ public final /* synthetic */ class s7 implements e2.h {
                 break;
             case 2:
                 rg.j0 j0Var = (rg.j0) this.b;
-                o90 o90Var = (o90) this.c;
+                n90 n90Var = (n90) this.c;
                 TL_stories.TL_premium_myBoosts tL_premium_myBoosts = (TL_stories.TL_premium_myBoosts) this.d;
                 TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus = (TL_stories.TL_premium_boostsStatus) obj;
                 j0Var.getClass();
-                o90Var.setLoading(false);
+                n90Var.setLoading(false);
                 if (tL_premium_boostsStatus != null) {
                     j0Var.b0.boosts++;
                     if (j0Var.h0 == 32 && (t12 = j0Var.t1()) != null) {
@@ -81,7 +81,7 @@ public final /* synthetic */ class s7 implements e2.h {
                 }
                 break;
             default:
-                ((u2.k0) obj).c(((a5.a) this.b).b, (u2.f0) this.c, (u2.b0) this.d);
+                ((u2.l0) obj).c(((a5.a) this.b).b, (u2.f0) this.c, (u2.b0) this.d);
                 break;
         }
     }

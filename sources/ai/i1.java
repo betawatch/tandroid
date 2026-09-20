@@ -10,14 +10,14 @@ import android.widget.LinearLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class i1 extends LinearLayout {
     public yh.i8 a;
     public final Path b;
     public final Paint c;
     public long d;
-    public final org.telegram.ui.Components.e6 e;
+    public final org.telegram.ui.Components.d6 e;
     public final /* synthetic */ l1 f;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -27,7 +27,7 @@ public final class i1 extends LinearLayout {
         this.b = new Path();
         this.c = new Paint(1);
         this.d = 0L;
-        this.e = new org.telegram.ui.Components.e6(this, 0L, 1000L, new LinearInterpolator());
+        this.e = new org.telegram.ui.Components.d6(this, 0L, 1000L, new LinearInterpolator());
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -50,11 +50,11 @@ public final class i1 extends LinearLayout {
             long j3 = this.d;
             n1 n1Var3 = l1Var.f;
             long j10 = n1Var3.b;
-            org.telegram.ui.Components.e6 e6Var = this.e;
+            org.telegram.ui.Components.d6 d6Var = this.e;
             if (j3 != j10) {
-                e6Var.d(n1Var3.a(), true);
+                d6Var.d(n1Var3.a(), true);
             }
-            float d = e6Var.d(l1Var.f.a(), false);
+            float d = d6Var.d(l1Var.f.a(), false);
             this.d = l1Var.f.b;
             Paint paint = this.c;
             paint.setColor(b11);

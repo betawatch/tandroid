@@ -12,7 +12,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class kg implements Utilities.Callback2 {
     public final /* synthetic */ int a = 0;
@@ -64,9 +64,9 @@ public final /* synthetic */ class kg implements Utilities.Callback2 {
                 }
                 zn znVar = this.b;
                 org.telegram.ui.Cells.u1 u1Var2 = this.c;
-                org.telegram.ui.Components.w70 I = org.telegram.ui.Components.w70.I(znVar, u1Var2);
-                org.telegram.ui.Components.nm0 nm0Var = new org.telegram.ui.Components.nm0(znVar.getParentActivity(), znVar.ea);
-                I.p = new re(nm0Var, 0);
+                org.telegram.ui.Components.v70 I = org.telegram.ui.Components.v70.I(znVar, u1Var2);
+                org.telegram.ui.Components.mm0 mm0Var = new org.telegram.ui.Components.mm0(znVar.getParentActivity(), znVar.ea);
+                I.p = new re(mm0Var, 0);
                 if (j3 != 0) {
                     bool = bool2;
                     z12 = false;
@@ -76,7 +76,7 @@ public final /* synthetic */ class kg implements Utilities.Callback2 {
                     z12 = false;
                 }
                 boolean z13 = z10;
-                I.c(R.drawable.msg_copy, LocaleController.getString(R.string.ProfileCopyUsername), new ye(znVar, nm0Var, str, 2), z12);
+                I.c(R.drawable.msg_copy, LocaleController.getString(R.string.ProfileCopyUsername), new ye(znVar, mm0Var, str, 2), z12);
                 if (bool.booleanValue()) {
                     I.c(R.drawable.outline_gram_24, LocaleController.getString(R.string.BuyUsernameOnFragment), new te(znVar, str, 11), z12);
                 }
@@ -86,9 +86,9 @@ public final /* synthetic */ class kg implements Utilities.Callback2 {
                 } else {
                     I.p(13, AndroidUtilities.dp(200.0f), LocaleController.getString(R.string.NoUsernameFound2));
                 }
-                nm0Var.e(I);
-                nm0Var.f(u1Var2, characterStyle, null, false);
-                znVar.showDialog(nm0Var);
+                mm0Var.e(I);
+                mm0Var.f(u1Var2, characterStyle, null, false);
+                znVar.showDialog(mm0Var);
                 break;
             default:
                 zi ziVar = (zi) this.d;

@@ -15,26 +15,25 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.e6;
 import org.telegram.ui.ActionBar.f3;
+import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Cells.b7;
-import org.telegram.ui.Cells.m4;
-import org.telegram.ui.Components.l90;
-import org.telegram.ui.Components.vl0;
-import org.telegram.ui.ai1;
-import rg.w1;
+import org.telegram.ui.Cells.c7;
+import org.telegram.ui.Cells.n4;
+import org.telegram.ui.Components.k90;
+import org.telegram.ui.Components.ul0;
+import rg.q1;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class m0 extends vl0 {
+public final class m0 extends ul0 {
     public final /* synthetic */ s0 c;
 
     public m0(s0 s0Var) {
         this.c = s0Var;
     }
 
-    @Override // org.telegram.ui.Components.vl0
+    @Override // org.telegram.ui.Components.ul0
     public final boolean D(s4.c1 c1Var) {
         return c1Var.f == 3;
     }
@@ -72,24 +71,24 @@ public final class m0 extends vl0 {
             return;
         }
         if (i11 == 2) {
-            m4 m4Var = (m4) view;
-            m4Var.setTextSize(15.0f);
-            m4Var.setPadding(0, 0, 0, AndroidUtilities.dp(2.0f));
-            m4Var.setText(LocaleController.getString(R.string.BoostingRemoveBoostFrom));
+            n4 n4Var = (n4) view;
+            n4Var.setTextSize(15.0f);
+            n4Var.setPadding(0, 0, 0, AndroidUtilities.dp(2.0f));
+            n4Var.setText(LocaleController.getString(R.string.BoostingRemoveBoostFrom));
             return;
         }
         if (i11 == 0) {
             r0 r0Var = (r0) view;
             s0Var.b0 = r0Var;
             TLRPC.Chat chat = s0Var.Z;
-            l90 l90Var = r0Var.e;
+            k90 k90Var = r0Var.e;
             try {
                 SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(LocaleController.formatPluralString("BoostingReassignBoostTextPluralWithLink", (int) MessagesController.getInstance(UserConfig.selectedAccount).boostsPerSentGift, chat == null ? "" : chat.title, "%3$s"));
-                SpannableStringBuilder replaceSingleTag = AndroidUtilities.replaceSingleTag(LocaleController.getString("BoostingReassignBoostTextLink", R.string.BoostingReassignBoostTextLink), j6.gc, 2, new w1(s0Var, 8));
+                SpannableStringBuilder replaceSingleTag = AndroidUtilities.replaceSingleTag(LocaleController.getString("BoostingReassignBoostTextLink", R.string.BoostingReassignBoostTextLink), j6.gc, 2, new q1(s0Var, 9));
                 int indexOf = TextUtils.indexOf(replaceTags, "%3$s");
                 replaceTags.replace(indexOf, indexOf + 4, (CharSequence) replaceSingleTag);
-                l90Var.setText(replaceTags, TextView.BufferType.EDITABLE);
-                l90Var.post(new ai1(r0Var, indexOf, 4));
+                k90Var.setText(replaceTags, TextView.BufferType.EDITABLE);
+                k90Var.post(new qg.v(r0Var, indexOf, 2));
             } catch (Exception e) {
                 FileLog.e(e);
             }
@@ -99,7 +98,7 @@ public final class m0 extends vl0 {
     @Override // s4.h0
     public final s4.c1 x(ViewGroup viewGroup, int i10) {
         View view;
-        e6 e6Var;
+        f6 f6Var;
         Context context = viewGroup.getContext();
         s0 s0Var = this.c;
         if (i10 == 0) {
@@ -107,14 +106,14 @@ public final class m0 extends vl0 {
             r0Var.a(s0Var.X, s0Var.Z);
             view = r0Var;
         } else if (i10 == 1) {
-            view = new b7(context, j6.w0(null, j6.a7, false), 0);
+            view = new c7(context, j6.w0(null, j6.a7, false), 0);
         } else if (i10 == 2) {
-            view = new m4(context, 22);
+            view = new n4(context, 22);
         } else if (i10 != 3) {
             view = new View(context);
         } else {
-            e6Var = ((f3) s0Var).resourcesProvider;
-            view = new xg.l(context, true, false, e6Var, true);
+            f6Var = ((f3) s0Var).resourcesProvider;
+            view = new xg.l(context, true, false, f6Var, true);
         }
         return e2.k(view, view, -1, -2);
     }

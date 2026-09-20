@@ -28,11 +28,11 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.me0;
+import org.telegram.ui.Components.le0;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.cy0;
+import org.telegram.ui.rx0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class w0 {
     public static final HashMap g = new HashMap();
@@ -203,7 +203,7 @@ public final class w0 {
                 }
 
                 @Override // org.telegram.ui.ActionBar.a2
-                public final void f(org.telegram.ui.ActionBar.b2 b2Var2, int i13) {
+                public final void k(org.telegram.ui.ActionBar.b2 b2Var2, int i13) {
                     switch (i12) {
                         case 0:
                             w0 w0Var = this.b;
@@ -212,7 +212,7 @@ public final class w0 {
                             boolean a2 = w0Var.a();
                             org.telegram.ui.web.r rVar2 = rVar;
                             if (!a2) {
-                                me0.g(new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new ci.m2(8, w0Var, rVar2));
+                                le0.g(new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new ci.m2(8, w0Var, rVar2));
                                 break;
                             } else {
                                 w0Var.d = true;
@@ -257,7 +257,7 @@ public final class w0 {
             }
 
             @Override // org.telegram.ui.ActionBar.a2
-            public final void f(org.telegram.ui.ActionBar.b2 b2Var2, int i13) {
+            public final void k(org.telegram.ui.ActionBar.b2 b2Var2, int i13) {
                 switch (i10) {
                     case 0:
                         w0 w0Var = this.b;
@@ -266,7 +266,7 @@ public final class w0 {
                         boolean a2 = w0Var.a();
                         org.telegram.ui.web.r rVar2 = rVar;
                         if (!a2) {
-                            me0.g(new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new ci.m2(8, w0Var, rVar2));
+                            le0.g(new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new ci.m2(8, w0Var, rVar2));
                             break;
                         } else {
                             w0Var.d = true;
@@ -367,7 +367,7 @@ public final class w0 {
         edit.apply();
     }
 
-    public final void m(boolean z10, final cy0 cy0Var) {
+    public final void m(boolean z10, final rx0 rx0Var) {
         final int i10 = 1;
         this.d = true;
         if (!z10 || a()) {
@@ -376,8 +376,8 @@ public final class w0 {
             while (it.hasNext()) {
                 ((Runnable) it.next()).run();
             }
-            if (cy0Var != null) {
-                cy0Var.run();
+            if (rx0Var != null) {
+                rx0Var.run();
             }
         } else {
             Activity f7 = f();
@@ -406,12 +406,12 @@ public final class w0 {
                     }
 
                     @Override // org.telegram.ui.ActionBar.a2
-                    public final void f(org.telegram.ui.ActionBar.b2 b2Var2, int i13) {
+                    public final void k(org.telegram.ui.ActionBar.b2 b2Var2, int i13) {
                         switch (i12) {
                             case 0:
                                 w0 w0Var = this.b;
                                 if (!w0Var.a()) {
-                                    me0.g(new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new ci.m2(9, w0Var, cy0Var));
+                                    le0.g(new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new ci.m2(9, w0Var, rx0Var));
                                     break;
                                 } else {
                                     w0Var.d = true;
@@ -432,7 +432,7 @@ public final class w0 {
                                 while (it3.hasNext()) {
                                     ((Runnable) it3.next()).run();
                                 }
-                                Runnable runnable = cy0Var;
+                                Runnable runnable = rx0Var;
                                 if (runnable != null) {
                                     runnable.run();
                                     break;
@@ -450,12 +450,12 @@ public final class w0 {
                 }
 
                 @Override // org.telegram.ui.ActionBar.a2
-                public final void f(org.telegram.ui.ActionBar.b2 b2Var2, int i13) {
+                public final void k(org.telegram.ui.ActionBar.b2 b2Var2, int i13) {
                     switch (i10) {
                         case 0:
                             w0 w0Var = this.b;
                             if (!w0Var.a()) {
-                                me0.g(new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new ci.m2(9, w0Var, cy0Var));
+                                le0.g(new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new ci.m2(9, w0Var, rx0Var));
                                 break;
                             } else {
                                 w0Var.d = true;
@@ -476,7 +476,7 @@ public final class w0 {
                             while (it3.hasNext()) {
                                 ((Runnable) it3.next()).run();
                             }
-                            Runnable runnable = cy0Var;
+                            Runnable runnable = rx0Var;
                             if (runnable != null) {
                                 runnable.run();
                                 break;

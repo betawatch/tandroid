@@ -1,20 +1,12 @@
 package o0;
 
-import android.os.Process;
+import java.util.concurrent.ThreadFactory;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
-public final class j extends Thread {
-    public final int a;
-
-    public j(Runnable runnable) {
-        super(runnable, "fonts-androidx");
-        this.a = 10;
-    }
-
-    @Override // java.lang.Thread, java.lang.Runnable
-    public final void run() {
-        Process.setThreadPriority(this.a);
-        super.run();
+public final class j implements ThreadFactory {
+    @Override // java.util.concurrent.ThreadFactory
+    public final Thread newThread(Runnable runnable) {
+        return new i(runnable);
     }
 }

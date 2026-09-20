@@ -9,7 +9,7 @@ import java.util.logging.Level;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.n2;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class g implements Runnable {
     public final /* synthetic */ int a;
@@ -60,7 +60,7 @@ public final class g implements Runnable {
                             accept.setSoTimeout(5000);
                             InputStream inputStream = accept.getInputStream();
                             yc.i iVar2 = (yc.i) this.d;
-                            iVar2.c.C(new yc.a(iVar2, inputStream, accept));
+                            iVar2.c.B(new yc.a(iVar2, inputStream, accept));
                         } catch (IOException e) {
                             yc.i.d.log(Level.FINE, "Communication with the client broken", (Throwable) e);
                         }

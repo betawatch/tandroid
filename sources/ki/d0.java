@@ -1,414 +1,120 @@
 package ki;
 
-import b2.a1;
-import b2.b1;
-import b2.k0;
-import b2.k1;
-import b2.n0;
-import b2.p0;
-import b2.q1;
-import b2.s1;
-import b2.u0;
-import b2.v0;
-import b2.x0;
-import b2.x1;
-import b2.y0;
-import b2.z0;
-import java.util.List;
-import org.telegram.ui.Components.a60;
-import org.telegram.ui.Components.u71;
+import android.text.TextUtils;
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Collections;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.SendMessagesHelper;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.ActionBar.f3;
+import org.telegram.ui.ActionBar.n2;
+import org.telegram.ui.Components.xc;
+import org.telegram.ui.LaunchActivity;
+import yh.u5;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
-public final class d0 implements z0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final /* synthetic */ class d0 implements Runnable {
+    public final /* synthetic */ int a = 2;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object h;
+    public final /* synthetic */ Object n;
 
-    public /* synthetic */ d0(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public /* synthetic */ d0(int i10, ci.d dVar, TLObject tLObject, TL_stars.StarsSubscription starsSubscription, boolean z10, boolean z11, f3[] f3VarArr) {
+        this.e = dVar;
+        this.f = f3VarArr;
+        this.d = i10;
+        this.b = z10;
+        this.h = starsSubscription;
+        this.c = z11;
+        this.n = tLObject;
     }
 
-    @Override // b2.z0
-    public final /* synthetic */ void onAudioAttributesChanged(b2.e eVar) {
-        int i10 = this.a;
-    }
-
-    @Override // b2.z0
-    public final /* synthetic */ void onAudioSessionIdChanged(int i10) {
-        int i11 = this.a;
-    }
-
-    @Override // b2.z0
-    public final /* synthetic */ void onAvailableCommandsChanged(x0 x0Var) {
-        int i10 = this.a;
-    }
-
-    @Override // b2.z0
-    public final /* synthetic */ void onCues(d2.d dVar) {
-        int i10 = this.a;
-    }
-
-    @Override // b2.z0
-    public final /* synthetic */ void onEvents(b1 b1Var, y0 y0Var) {
-        int i10 = this.a;
-    }
-
-    @Override // b2.z0
-    public final /* synthetic */ void onIsLoadingChanged(boolean z10) {
-        int i10 = this.a;
-    }
-
-    @Override // b2.z0
-    public final void onIsPlayingChanged(boolean z10) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        File file;
         switch (this.a) {
             case 0:
-                h0 h0Var = (h0) this.b;
-                if (h0Var.Q == 5) {
-                    h0Var.x(z10);
+                o0 o0Var = (o0) this.e;
+                q qVar = (q) this.f;
+                boolean z10 = this.b;
+                File file2 = (File) this.h;
+                boolean z11 = this.c;
+                int i10 = this.d;
+                k0 k0Var = (k0) this.n;
+                o0Var.getClass();
+                long nanoTime = System.nanoTime();
+                try {
+                    qVar.c();
+                    o0Var.l.b("preview output finalized: size=" + qVar.a.length() + ", replace=" + z10 + ", elapsedMs=" + o0.e(nanoTime));
+                    o0Var.f();
+                    if (z10) {
+                        o0Var.r(file2, o0Var.F, o0Var.G, z11, i10);
+                        file = file2;
+                        w7.k.c(qVar.a);
+                    } else {
+                        file = file2;
+                        o0Var.b(k0Var, qVar.a, o0Var.D, true);
+                    }
+                    w7.k.c(file);
+                    o0Var.P = null;
                     break;
+                } catch (Exception e) {
+                    o0Var.h.post(new z(o0Var, e, 0));
+                    return;
                 }
-                break;
-        }
-    }
-
-    @Override // b2.z0
-    public final /* synthetic */ void onLoadingChanged(boolean z10) {
-        int i10 = this.a;
-    }
-
-    @Override // b2.z0
-    public final /* synthetic */ void onMediaItemTransition(k0 k0Var, int i10) {
-        int i11 = this.a;
-    }
-
-    @Override // b2.z0
-    public final /* synthetic */ void onMediaMetadataChanged(n0 n0Var) {
-        int i10 = this.a;
-    }
-
-    @Override // b2.z0
-    public final /* synthetic */ void onMetadata(p0 p0Var) {
-        int i10 = this.a;
-    }
-
-    @Override // b2.z0
-    public final /* synthetic */ void onPlayWhenReadyChanged(boolean z10, int i10) {
-        int i11 = this.a;
-    }
-
-    @Override // b2.z0
-    public final /* synthetic */ void onPlaybackParametersChanged(v0 v0Var) {
-        int i10 = this.a;
-    }
-
-    @Override // b2.z0
-    public final void onPlaybackStateChanged(int i10) {
-        i2.e0 e0Var;
-        switch (this.a) {
-            case 0:
-                h0 h0Var = (h0) this.b;
-                h0Var.l.b("preview playback state=" + i10);
-                if (h0Var.Q == 5 && i10 == 4 && (e0Var = h0Var.L) != null) {
-                    e0Var.W0(5, h0Var.A);
-                    h0Var.L.i();
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // b2.z0
-    public final /* synthetic */ void onPlaybackSuppressionReasonChanged(int i10) {
-        int i11 = this.a;
-    }
-
-    @Override // b2.z0
-    public final void onPlayerError(u0 u0Var) {
-        switch (this.a) {
-            case 0:
-                h0 h0Var = (h0) this.b;
-                h0Var.l.b("preview player error: code=" + u0Var.a);
-                h0Var.g(u0Var);
-                break;
-        }
-    }
-
-    @Override // b2.z0
-    public final /* synthetic */ void onPlayerErrorChanged(u0 u0Var) {
-        int i10 = this.a;
-    }
-
-    @Override // b2.z0
-    public final void onPlayerStateChanged(boolean z10, int i10) {
-        switch (this.a) {
-            case 0:
+            case 1:
+                ((SendMessagesHelper) this.e).lambda$performSendMessageRequest$95(this.b, (TLRPC.Message) this.f, (ArrayList) this.h, this.c, (ArrayList) this.n, this.d);
                 break;
             default:
-                u71 u71Var = (u71) this.b;
-                if (!u71Var.H && i10 == 3) {
-                    u71Var.H = true;
-                    if (u71Var.G && u71Var.I) {
-                        u71Var.C();
-                        break;
-                    }
+                ci.d dVar = (ci.d) this.e;
+                f3[] f3VarArr = (f3[]) this.f;
+                int i11 = this.d;
+                boolean z12 = this.b;
+                TL_stars.StarsSubscription starsSubscription = (TL_stars.StarsSubscription) this.h;
+                boolean z13 = this.c;
+                TLObject tLObject = (TLObject) this.n;
+                dVar.setLoading(false);
+                f3 f3Var = f3VarArr[0];
+                if (f3Var != null) {
+                    f3Var.dismiss();
                 }
-                break;
-        }
-    }
-
-    @Override // b2.z0
-    public final /* synthetic */ void onPlaylistMetadataChanged(n0 n0Var) {
-        int i10 = this.a;
-    }
-
-    @Override // b2.z0
-    public final /* synthetic */ void onPositionDiscontinuity(int i10) {
-        int i11 = this.a;
-    }
-
-    @Override // b2.z0
-    public final void onRenderedFirstFrame() {
-        switch (this.a) {
-            case 0:
-                h0 h0Var = (h0) this.b;
-                if (h0Var.Q == 5) {
-                    a60.m((a60) h0Var.c.a);
+                u5.y(i11, false).S();
+                n2 U = LaunchActivity.U();
+                if (U != null) {
+                    xc.a0(U).V(Collections.singletonList(tLObject), LocaleController.getString(R.string.StarsSubscriptionCancelledToast), AndroidUtilities.replaceTags((!z12 || TextUtils.isEmpty(starsSubscription.title)) ? (!z13 || TextUtils.isEmpty(starsSubscription.title)) ? LocaleController.formatString(R.string.StarsSubscriptionCancelledToastText, LocaleController.formatDateChat(starsSubscription.until_date)) : LocaleController.formatString(R.string.StarsSubscriptionCancelledBotToastText, LocaleController.formatDateChat(starsSubscription.until_date), starsSubscription.title) : LocaleController.formatString(R.string.StarsSubscriptionCancelledBizToastText, LocaleController.formatDateChat(starsSubscription.until_date), starsSubscription.title)), null).k(false);
                     break;
                 }
                 break;
         }
     }
 
-    @Override // b2.z0
-    public final /* synthetic */ void onRepeatModeChanged(int i10) {
-        int i11 = this.a;
-    }
-
-    @Override // b2.z0
-    public final /* synthetic */ void onShuffleModeEnabledChanged(boolean z10) {
-        int i10 = this.a;
-    }
-
-    @Override // b2.z0
-    public final /* synthetic */ void onSkipSilenceEnabledChanged(boolean z10) {
-        int i10 = this.a;
-    }
-
-    @Override // b2.z0
-    public final /* synthetic */ void onSurfaceSizeChanged(int i10, int i11) {
-        int i12 = this.a;
-    }
-
-    @Override // b2.z0
-    public final /* synthetic */ void onTimelineChanged(k1 k1Var, int i10) {
-        int i11 = this.a;
-    }
-
-    @Override // b2.z0
-    public final /* synthetic */ void onTrackSelectionParametersChanged(q1 q1Var) {
-        int i10 = this.a;
-    }
-
-    @Override // b2.z0
-    public final /* synthetic */ void onTracksChanged(s1 s1Var) {
-        int i10 = this.a;
-    }
-
-    @Override // b2.z0
-    public final /* synthetic */ void onVideoSizeChanged(x1 x1Var) {
-        int i10 = this.a;
-    }
-
-    @Override // b2.z0
-    public final /* synthetic */ void onVolumeChanged(float f7) {
-        int i10 = this.a;
-    }
-
-    @Override // b2.z0
-    public final /* synthetic */ void onCues(List list) {
-        int i10 = this.a;
-    }
-
-    @Override // b2.z0
-    public final /* synthetic */ void onPositionDiscontinuity(a1 a1Var, a1 a1Var2, int i10) {
-        int i11 = this.a;
-    }
-
-    private final /* synthetic */ void A(v0 v0Var) {
-    }
-
-    private final /* synthetic */ void B(int i10) {
-    }
-
-    private final /* synthetic */ void C(int i10) {
-    }
-
-    private final /* synthetic */ void D(int i10) {
-    }
-
-    private final /* synthetic */ void E(u0 u0Var) {
-    }
-
-    private final /* synthetic */ void F(u0 u0Var) {
-    }
-
-    private final /* synthetic */ void G(u0 u0Var) {
-    }
-
-    private final /* synthetic */ void I(n0 n0Var) {
-    }
-
-    private final /* synthetic */ void J(n0 n0Var) {
-    }
-
-    private final /* synthetic */ void K(int i10) {
-    }
-
-    private final /* synthetic */ void M(int i10) {
-    }
-
-    private final /* synthetic */ void P(int i10) {
-    }
-
-    private final /* synthetic */ void Q(int i10) {
-    }
-
-    private final /* synthetic */ void R(boolean z10) {
-    }
-
-    private final /* synthetic */ void S(boolean z10) {
-    }
-
-    private final /* synthetic */ void T(boolean z10) {
-    }
-
-    private final /* synthetic */ void U(boolean z10) {
-    }
-
-    private final /* synthetic */ void Z(q1 q1Var) {
-    }
-
-    private final /* synthetic */ void a(b2.e eVar) {
-    }
-
-    private final /* synthetic */ void a0(q1 q1Var) {
-    }
-
-    private final /* synthetic */ void b(b2.e eVar) {
-    }
-
-    private final /* synthetic */ void b0(s1 s1Var) {
-    }
-
-    private final /* synthetic */ void c(int i10) {
-    }
-
-    private final /* synthetic */ void c0(s1 s1Var) {
-    }
-
-    private final /* synthetic */ void d(int i10) {
-    }
-
-    private final /* synthetic */ void d0(x1 x1Var) {
-    }
-
-    private final /* synthetic */ void e(x0 x0Var) {
-    }
-
-    private final /* synthetic */ void e0(x1 x1Var) {
-    }
-
-    private final /* synthetic */ void f(x0 x0Var) {
-    }
-
-    private final /* synthetic */ void f0(float f7) {
-    }
-
-    private final /* synthetic */ void g(d2.d dVar) {
-    }
-
-    private final /* synthetic */ void g0(float f7) {
-    }
-
-    private final /* synthetic */ void h(List list) {
-    }
-
-    private final /* synthetic */ void i(d2.d dVar) {
-    }
-
-    private final /* synthetic */ void j(List list) {
-    }
-
-    private final /* synthetic */ void m(boolean z10) {
-    }
-
-    private final /* synthetic */ void n(boolean z10) {
-    }
-
-    private final /* synthetic */ void o(boolean z10) {
-    }
-
-    private final /* synthetic */ void p(boolean z10) {
-    }
-
-    private final /* synthetic */ void q(boolean z10) {
-    }
-
-    private final /* synthetic */ void t(n0 n0Var) {
-    }
-
-    private final /* synthetic */ void u(n0 n0Var) {
-    }
-
-    private final /* synthetic */ void v(p0 p0Var) {
-    }
-
-    private final /* synthetic */ void w(p0 p0Var) {
-    }
-
-    private final /* synthetic */ void z(v0 v0Var) {
-    }
-
-    private final /* synthetic */ void O() {
-    }
-
-    private final /* synthetic */ void H(int i10, boolean z10) {
-    }
-
-    private final /* synthetic */ void V(int i10, int i11) {
-    }
-
-    private final /* synthetic */ void W(int i10, int i11) {
-    }
-
-    private final /* synthetic */ void X(k1 k1Var, int i10) {
-    }
-
-    private final /* synthetic */ void Y(k1 k1Var, int i10) {
-    }
-
-    private final /* synthetic */ void k(b1 b1Var, y0 y0Var) {
-    }
-
-    private final /* synthetic */ void l(b1 b1Var, y0 y0Var) {
-    }
-
-    private final /* synthetic */ void r(k0 k0Var, int i10) {
-    }
-
-    private final /* synthetic */ void s(k0 k0Var, int i10) {
-    }
-
-    private final /* synthetic */ void x(int i10, boolean z10) {
-    }
-
-    private final /* synthetic */ void y(int i10, boolean z10) {
-    }
-
-    private final /* synthetic */ void L(a1 a1Var, a1 a1Var2, int i10) {
-    }
-
-    private final /* synthetic */ void N(a1 a1Var, a1 a1Var2, int i10) {
+    public /* synthetic */ d0(o0 o0Var, q qVar, boolean z10, File file, boolean z11, int i10, k0 k0Var) {
+        this.e = o0Var;
+        this.f = qVar;
+        this.b = z10;
+        this.h = file;
+        this.c = z11;
+        this.d = i10;
+        this.n = k0Var;
+    }
+
+    public /* synthetic */ d0(SendMessagesHelper sendMessagesHelper, boolean z10, TLRPC.Message message, ArrayList arrayList, boolean z11, ArrayList arrayList2, int i10) {
+        this.e = sendMessagesHelper;
+        this.b = z10;
+        this.f = message;
+        this.h = arrayList;
+        this.c = z11;
+        this.n = arrayList2;
+        this.d = i10;
     }
 }

@@ -1,32 +1,90 @@
 package r0;
 
+import android.graphics.Rect;
 import android.util.Log;
-import android.view.View;
+import android.view.WindowInsets;
+import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
-public abstract class x0 {
-    public static final Field a;
-    public static final Field b;
-    public static final Field c;
-    public static final boolean d;
+public final class x0 extends b1 {
+    public static Field e = null;
+    public static boolean f = false;
+    public static Constructor g = null;
+    public static boolean h = false;
+    public WindowInsets c;
+    public i0.b d;
 
-    static {
-        try {
-            Field declaredField = View.class.getDeclaredField("mAttachInfo");
-            a = declaredField;
-            declaredField.setAccessible(true);
-            Class<?> cls = Class.forName("android.view.View$AttachInfo");
-            Field declaredField2 = cls.getDeclaredField("mStableInsets");
-            b = declaredField2;
-            declaredField2.setAccessible(true);
-            Field declaredField3 = cls.getDeclaredField("mContentInsets");
-            c = declaredField3;
-            declaredField3.setAccessible(true);
-            d = true;
-        } catch (ReflectiveOperationException e) {
-            Log.w("WindowInsetsCompat", "Failed to get visible insets from AttachInfo " + e.getMessage(), e);
+    public x0() {
+        this.c = i();
+    }
+
+    private static WindowInsets i() {
+        if (!f) {
+            try {
+                e = WindowInsets.class.getDeclaredField("CONSUMED");
+            } catch (ReflectiveOperationException e7) {
+                Log.i("WindowInsetsCompat", "Could not retrieve WindowInsets.CONSUMED field", e7);
+            }
+            f = true;
         }
+        Field field = e;
+        if (field != null) {
+            try {
+                WindowInsets windowInsets = (WindowInsets) field.get(null);
+                if (windowInsets != null) {
+                    return new WindowInsets(windowInsets);
+                }
+            } catch (ReflectiveOperationException e10) {
+                Log.i("WindowInsetsCompat", "Could not get value from WindowInsets.CONSUMED field", e10);
+            }
+        }
+        if (!h) {
+            try {
+                g = WindowInsets.class.getConstructor(Rect.class);
+            } catch (ReflectiveOperationException e11) {
+                Log.i("WindowInsetsCompat", "Could not retrieve WindowInsets(Rect) constructor", e11);
+            }
+            h = true;
+        }
+        Constructor constructor = g;
+        if (constructor != null) {
+            try {
+                return (WindowInsets) constructor.newInstance(new Rect());
+            } catch (ReflectiveOperationException e12) {
+                Log.i("WindowInsetsCompat", "Could not invoke WindowInsets(Rect) constructor", e12);
+            }
+        }
+        return null;
+    }
+
+    @Override // r0.b1
+    public l1 b() {
+        a();
+        l1 h10 = l1.h(null, this.c);
+        i0.b[] bVarArr = this.b;
+        i1 i1Var = h10.a;
+        i1Var.q(bVarArr);
+        i1Var.s(this.d);
+        return h10;
+    }
+
+    @Override // r0.b1
+    public void e(i0.b bVar) {
+        this.d = bVar;
+    }
+
+    @Override // r0.b1
+    public void g(i0.b bVar) {
+        WindowInsets windowInsets = this.c;
+        if (windowInsets != null) {
+            this.c = windowInsets.replaceSystemWindowInsets(bVar.a, bVar.b, bVar.c, bVar.d);
+        }
+    }
+
+    public x0(l1 l1Var) {
+        super(l1Var);
+        this.c = l1Var.g();
     }
 }

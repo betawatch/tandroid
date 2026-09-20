@@ -6,7 +6,7 @@ import android.graphics.drawable.Drawable;
 import android.view.accessibility.AccessibilityEvent;
 import android.widget.ImageView;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class j30 extends ImageView {
     public final /* synthetic */ int a;
@@ -27,11 +27,11 @@ public final class j30 extends ImageView {
             case 1:
                 super.onDraw(canvas);
                 org.telegram.ui.a20 a20Var = (org.telegram.ui.a20) this.c;
-                p90 p90Var = a20Var.s;
+                o90 o90Var = a20Var.s;
                 if (a20Var.r) {
                     int i10 = this.b / 2;
-                    p90Var.setBounds(i10, i10, getWidth() - i10, getHeight() - i10);
-                    p90Var.draw(canvas);
+                    o90Var.setBounds(i10, i10, getWidth() - i10, getHeight() - i10);
+                    o90Var.draw(canvas);
                     break;
                 }
                 break;

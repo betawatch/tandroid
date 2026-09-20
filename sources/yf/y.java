@@ -1,302 +1,153 @@
 package yf;
 
 import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.ColorFilter;
 import android.graphics.Paint;
-import android.os.Build;
-import android.os.Handler;
-import android.os.HandlerThread;
-import android.os.Looper;
-import android.view.Choreographer;
-import android.view.FrameMetrics;
-import android.view.View;
-import android.view.ViewTreeObserver;
-import android.view.Window;
-import android.view.WindowManager;
-import java.util.Locale;
-import java.util.concurrent.atomic.AtomicBoolean;
-import java.util.concurrent.atomic.AtomicInteger;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.LaunchActivity;
+import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.GradientDrawable;
+import android.view.animation.Interpolator;
+import android.view.animation.PathInterpolator;
+import org.telegram.ui.ActionBar.j6;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
-public final class y extends View {
-    public tf.a E;
-    public final AtomicBoolean F;
-    public final AtomicBoolean G;
-    public final Handler H;
-    public final p8.b I;
-    public int a;
-    public long b;
-    public int c;
-    public pf.b d;
-    public final AtomicInteger e;
-    public int f;
-    public final Paint h;
-    public final Paint n;
-    public WindowManager r;
-    public WindowManager.LayoutParams s;
-    public Window v;
-    public HandlerThread w;
-    public w x;
-    public View y;
+public final class y extends Drawable {
+    public static final PathInterpolator i = new PathInterpolator(0.42f, 0.0f, 0.58f, 1.0f);
+    public final Interpolator a;
+    public final GradientDrawable b;
+    public final int e;
+    public final int[] f;
+    public int g;
+    public final Paint c = new Paint(1);
+    public final Rect d = new Rect();
+    public int h = 255;
 
-    public y(LaunchActivity launchActivity) {
-        super(launchActivity.getApplicationContext());
-        this.a = 0;
-        this.b = 0L;
-        this.c = 0;
-        this.e = new AtomicInteger(0);
-        this.f = 0;
-        Paint paint = new Paint(1);
-        this.h = paint;
-        Paint paint2 = new Paint(1);
-        this.n = paint2;
-        this.F = new AtomicBoolean(false);
-        this.G = new AtomicBoolean(false);
-        this.H = new Handler(Looper.getMainLooper());
-        this.I = new p8.b(this, 12);
-        paint.setColor(-1342177280);
-        paint2.setColor(-1);
-        paint2.setTextSize(AndroidUtilities.dp(9.0f));
-        paint2.setFakeBoldText(true);
-        paint2.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MONO));
-        setWillNotDraw(false);
+    public y(int i10) {
+        GradientDrawable gradientDrawable = new GradientDrawable();
+        this.b = gradientDrawable;
+        this.a = i;
+        this.f = new int[8];
+        this.e = i10;
+        if (i10 == 1) {
+            gradientDrawable.setOrientation(GradientDrawable.Orientation.LEFT_RIGHT);
+        } else if (i10 == 2) {
+            gradientDrawable.setOrientation(GradientDrawable.Orientation.TOP_BOTTOM);
+        } else if (i10 == 4) {
+            gradientDrawable.setOrientation(GradientDrawable.Orientation.RIGHT_LEFT);
+        } else if (i10 == 8) {
+            gradientDrawable.setOrientation(GradientDrawable.Orientation.BOTTOM_TOP);
+        }
+        b(0);
     }
 
-    public static void a(FrameMetrics frameMetrics) {
-        for (x xVar : x.values()) {
-            if (Build.VERSION.SDK_INT >= xVar.c) {
-                long metric = frameMetrics.getMetric(xVar.a);
-                xVar.d = metric;
-                if (metric >= 0) {
-                    double d = metric / 1000000.0d;
-                    double d10 = xVar.e;
-                    if (d10 != 0.0d) {
-                        d = ((d - d10) * 0.05d) + d10;
-                    }
-                    xVar.e = d;
-                }
-            } else {
-                xVar.d = Long.MIN_VALUE;
-            }
+    public static void a(Interpolator interpolator, int i10, int[] iArr) {
+        int length = iArr.length - 1;
+        int alpha = Color.alpha(i10);
+        for (int i11 = length; i11 >= 0; i11--) {
+            iArr[i11] = i0.a.k(i10, (int) (interpolator.getInterpolation((length - i11) / length) * alpha));
         }
     }
 
-    public static y b(LaunchActivity launchActivity, org.telegram.ui.j0 j0Var) {
-        y yVar = new y(launchActivity);
-        yVar.setObservedView(j0Var);
-        yVar.r = (WindowManager) launchActivity.getSystemService("window");
-        yVar.v = launchActivity.getWindow();
-        WindowManager.LayoutParams layoutParams = new WindowManager.LayoutParams(-2, -2, 2, 792, -3);
-        yVar.s = layoutParams;
-        layoutParams.gravity = 8388627;
-        int dp = AndroidUtilities.dp(12);
-        WindowManager.LayoutParams layoutParams2 = yVar.s;
-        layoutParams2.x = dp;
-        layoutParams2.y = dp;
-        layoutParams2.width = AndroidUtilities.dp(260.0f);
-        yVar.r.addView(yVar, yVar.s);
-        yVar.G.set(true);
-        if (yVar.F.getAndSet(true)) {
-            return yVar;
-        }
-        HandlerThread handlerThread = new HandlerThread("FrameMetrics");
-        yVar.w = handlerThread;
-        handlerThread.start();
-        Handler handler = new Handler(yVar.w.getLooper());
-        w wVar = new w();
-        yVar.x = wVar;
-        yVar.v.addOnFrameMetricsAvailableListener(wVar, handler);
-        yVar.d = new pf.b(yVar, 3);
-        Choreographer.getInstance().postFrameCallback(yVar.d);
-        View view = yVar.y;
-        if (view != null) {
-            yVar.E = new tf.a(1, yVar);
-            ViewTreeObserver viewTreeObserver = view.getViewTreeObserver();
-            if (viewTreeObserver.isAlive()) {
-                viewTreeObserver.addOnDrawListener(yVar.E);
-            }
-        }
-        yVar.H.post(yVar.I);
-        return yVar;
-    }
-
-    public final void c() {
-        w wVar;
-        this.F.set(false);
-        this.H.removeCallbacks(this.I);
-        Window window = this.v;
-        if (window != null && (wVar = this.x) != null) {
-            window.removeOnFrameMetricsAvailableListener(wVar);
-        }
-        if (this.d != null) {
-            Choreographer.getInstance().removeFrameCallback(this.d);
-            this.d = null;
-        }
-        View view = this.y;
-        if (view != null && this.E != null) {
-            ViewTreeObserver viewTreeObserver = view.getViewTreeObserver();
-            if (viewTreeObserver.isAlive()) {
-                viewTreeObserver.removeOnDrawListener(this.E);
-            }
-            this.E = null;
-        }
-        HandlerThread handlerThread = this.w;
-        if (handlerThread != null) {
-            handlerThread.quitSafely();
-        }
-        if (this.r != null && this.G.getAndSet(false)) {
-            try {
-                this.r.removeViewImmediate(this);
-            } catch (Throwable unused) {
-            }
-        }
-        this.r = null;
-        this.s = null;
-        this.v = null;
-    }
-
-    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        String format;
-        double d;
-        y yVar = this;
-        float dp = AndroidUtilities.dp(8.0f);
-        float dp2 = AndroidUtilities.dp(11.0f);
-        canvas.drawRoundRect(0.0f, 0.0f, yVar.getWidth() > 0 ? yVar.getWidth() : AndroidUtilities.dp(260.0f), ((x.values().length + 9) * dp2) + (2.0f * dp), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), yVar.h);
-        float f7 = dp + dp2;
-        x[] values = x.values();
-        int length = values.length;
-        double d10 = 0.0d;
-        double d11 = 0.0d;
-        double d12 = 0.0d;
-        double d13 = 0.0d;
-        float f10 = dp2;
-        long j3 = 0;
-        int i10 = 0;
-        long j10 = 0;
-        long j11 = 0;
-        long j12 = 0;
-        while (true) {
-            float f11 = f10;
-            Paint paint = yVar.n;
-            if (i10 >= length) {
-                long j13 = j12;
-                long max = Math.max(j3, Math.max(j10, j11));
-                double d14 = d12;
-                long j14 = j11;
-                double d15 = d13;
-                long j15 = j10;
-                double d16 = d11;
-                double max2 = Math.max(d16, Math.max(d15, d14));
-                float f12 = f7 + f11;
-                Locale locale = Locale.US;
-                canvas.drawText(String.format(locale, "%-16s : %5.2f / %5.2f ms", "ui", Double.valueOf(j3 / 1000000.0d), Double.valueOf(d16)), dp, f12, paint);
-                float f13 = f12 + f11;
-                canvas.drawText(String.format(locale, "%-16s : %5.2f / %5.2f ms", "rt", Double.valueOf(j15 / 1000000.0d), Double.valueOf(d15)), dp, f13, paint);
-                float f14 = f13 + f11;
-                canvas.drawText(String.format(locale, "%-16s : %5.2f / %5.2f ms", "gpu", Double.valueOf(j14 / 1000000.0d), Double.valueOf(d14)), dp, f14, paint);
-                float f15 = f14 + f11;
-                canvas.drawText(String.format(locale, "%-16s : %5.2f / %5.2f ms", "other", Double.valueOf(j13 / 1000000.0d), Double.valueOf(d10)), dp, f15, paint);
-                float f16 = f15 + f11;
-                canvas.drawText(String.format(locale, "%-16s : %5.2f / %5.2f ms", "frame", Double.valueOf(max / 1000000.0d), Double.valueOf(max2)), dp, f16, paint);
-                float f17 = f16 + f11 + f11;
-                canvas.drawText(String.format(locale, "%-16s : %d /s", "vsync", Integer.valueOf(this.c)), dp, f17, paint);
-                canvas.drawText(String.format(locale, "%-16s : %d /s", this.y != null ? "onDraw" : "onDraw (none)", Integer.valueOf(this.f)), dp, f17 + f11, paint);
-                return;
-            }
-            int i11 = length;
-            x xVar = values[i10];
-            int i12 = i10;
-            boolean z10 = Build.VERSION.SDK_INT >= xVar.c;
-            String str = xVar.b;
-            long j16 = j12;
-            if (z10) {
-                long j17 = xVar.d;
-                if (j17 >= 0) {
-                    format = String.format(Locale.US, "%-16s : %5.2f / %5.2f ms", str, Double.valueOf(j17 / 1000000.0d), Double.valueOf(xVar.e));
-                    switch (xVar) {
-                        case EF8:
-                        case EF84:
-                            j12 = j16 + xVar.d;
-                            d10 += xVar.e;
-                            break;
-                        case EF18:
-                        case EF28:
-                        case EF38:
-                        case EF48:
-                            j3 += xVar.d;
-                            d11 += xVar.e;
-                            j12 = j16;
-                            break;
-                        case EF59:
-                            long j18 = xVar.d;
-                            j3 += j18;
-                            d = xVar.e;
-                            d11 += d;
-                            j10 += j18;
-                            d13 += d;
-                            j12 = j16;
-                            break;
-                        case EF69:
-                            j10 += xVar.d;
-                            d = xVar.e;
-                            d13 += d;
-                            j12 = j16;
-                            break;
-                        case EF99:
-                            j11 += xVar.d;
-                            d12 += xVar.e;
-                            j12 = j16;
-                            break;
-                        default:
-                            j12 = j16;
-                            break;
-                    }
-                    canvas.drawText(format, dp, f7, paint);
-                    f7 += f11;
-                    i10 = i12 + 1;
-                    yVar = this;
-                    f10 = f11;
-                    length = i11;
-                }
-            }
-            format = String.format(Locale.US, "%-16s : n/a", str);
-            j12 = j16;
-            canvas.drawText(format, dp, f7, paint);
-            f7 += f11;
-            i10 = i12 + 1;
-            yVar = this;
-            f10 = f11;
-            length = i11;
-        }
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        setMeasuredDimension(AndroidUtilities.dp(210.0f), ((x.values().length + 9) * AndroidUtilities.dp(11.0f)) + (AndroidUtilities.dp(8.0f) * 2));
-    }
-
-    public void setObservedView(View view) {
-        View view2;
-        View view3 = this.y;
-        if (view3 != null && this.E != null) {
-            ViewTreeObserver viewTreeObserver = view3.getViewTreeObserver();
-            if (viewTreeObserver.isAlive()) {
-                viewTreeObserver.removeOnDrawListener(this.E);
-            }
-            this.E = null;
-        }
-        this.y = view;
-        if (!this.F.get() || (view2 = this.y) == null) {
+    public final void b(int i10) {
+        if (this.g == i10) {
             return;
         }
-        this.E = new tf.a(1, this);
-        ViewTreeObserver viewTreeObserver2 = view2.getViewTreeObserver();
-        if (viewTreeObserver2.isAlive()) {
-            viewTreeObserver2.addOnDrawListener(this.E);
+        this.g = i10;
+        Interpolator interpolator = this.a;
+        int[] iArr = this.f;
+        a(interpolator, i10, iArr);
+        this.b.setColors(iArr);
+        this.c.setColor(j6.l1(this.h / 255.0f, this.g));
+    }
+
+    public final void c(int i10, int i11) {
+        Rect rect = this.d;
+        if (rect.left == 0 && rect.top == i10 && rect.right == 0 && rect.bottom == i11) {
+            return;
         }
+        rect.set(0, i10, 0, i11);
+        onBoundsChange(getBounds());
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:10:0x0096  */
+    /* JADX WARN: Removed duplicated region for block: B:13:? A[RETURN, SYNTHETIC] */
+    @Override // android.graphics.drawable.Drawable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void draw(Canvas canvas) {
+        Canvas canvas2;
+        GradientDrawable gradientDrawable;
+        int i10;
+        int i11;
+        int i12;
+        int i13;
+        Rect bounds = getBounds();
+        if (!bounds.isEmpty()) {
+            Paint paint = this.c;
+            Rect rect = this.d;
+            int i14 = this.e;
+            if (i14 == 1 && (i13 = rect.left) > 0) {
+                canvas2 = canvas;
+                canvas2.drawRect(bounds.left, bounds.top, Math.min(bounds.right, r2 + i13), bounds.bottom, paint);
+            } else if (i14 == 2 && (i12 = rect.top) > 0) {
+                float f7 = bounds.left;
+                int i15 = bounds.top;
+                float f10 = i15;
+                float f11 = bounds.right;
+                float min = Math.min(bounds.bottom, i15 + i12);
+                canvas2 = canvas;
+                canvas2.drawRect(f7, f10, f11, min, paint);
+            } else if (i14 == 4 && (i11 = rect.right) > 0) {
+                canvas2 = canvas;
+                canvas2.drawRect(Math.max(bounds.left, bounds.right - i11), bounds.top, bounds.right, bounds.bottom, paint);
+            } else if (i14 == 8 && (i10 = rect.bottom) > 0) {
+                canvas2 = canvas;
+                canvas2.drawRect(bounds.left, Math.max(bounds.top, bounds.bottom - i10), bounds.right, bounds.bottom, paint);
+            }
+            gradientDrawable = this.b;
+            if (gradientDrawable.getBounds().isEmpty()) {
+                gradientDrawable.draw(canvas2);
+                return;
+            }
+            return;
+        }
+        canvas2 = canvas;
+        gradientDrawable = this.b;
+        if (gradientDrawable.getBounds().isEmpty()) {
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getAlpha() {
+        return this.h;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -3;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void onBoundsChange(Rect rect) {
+        super.onBoundsChange(rect);
+        int i10 = rect.left;
+        Rect rect2 = this.d;
+        this.b.setBounds(i10 + rect2.left, rect.top + rect2.top, rect.right - rect2.right, rect.bottom - rect2.bottom);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        this.h = i10;
+        this.b.setAlpha(i10);
+        this.c.setColor(j6.l1(this.h / 255.0f, this.g));
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        this.b.setColorFilter(colorFilter);
+        this.c.setColorFilter(colorFilter);
     }
 }

@@ -5,14 +5,14 @@ import android.graphics.Canvas;
 import android.view.MotionEvent;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class ck extends org.telegram.ui.Cells.w0 {
     public final /* synthetic */ zn l2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ck(Context context, org.telegram.ui.ActionBar.e6 e6Var, zn znVar) {
-        super(context, e6Var, false);
+    public ck(Context context, org.telegram.ui.ActionBar.f6 f6Var, zn znVar) {
+        super(context, f6Var, false);
         this.l2 = znVar;
     }
 

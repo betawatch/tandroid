@@ -9,10 +9,10 @@ import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import ci.uc;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.e6;
+import org.telegram.ui.Components.d6;
 import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class h0 extends Drawable {
     public final Paint a = new Paint(1);
@@ -21,16 +21,16 @@ public final class h0 extends Drawable {
     public final Path d;
     public boolean e;
     public int f;
-    public final e6 g;
-    public final e6 h;
+    public final d6 g;
+    public final d6 h;
 
     public h0(int i10) {
         Path path = new Path();
         this.d = path;
         uc ucVar = new uc(this, 6);
         qr qrVar = qr.h;
-        this.g = new e6(ucVar, 320L, qrVar, 0);
-        this.h = new e6(new uc(this, 6), 320L, qrVar, 0);
+        this.g = new d6(ucVar, 320L, qrVar, 0);
+        this.h = new d6(new uc(this, 6), 320L, qrVar, 0);
         this.c = i10;
         path.moveTo(-AndroidUtilities.dp(6.5f), 0.0f);
         path.lineTo(AndroidUtilities.dp(6.5f), 0.0f);

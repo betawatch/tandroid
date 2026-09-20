@@ -23,7 +23,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.WebFile;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public class pv0 {
     public float A;
@@ -303,7 +303,7 @@ public class pv0 {
                         this.d.b.setScaleY(1.0f);
                         lv0 lv0Var = this.E;
                         if (lv0Var != null) {
-                            this.d.d.setImageBitmap(lv0Var.j0().getBitmap((int) this.z, (int) this.y));
+                            this.d.d.setImageBitmap(lv0Var.h0().getBitmap((int) this.z, (int) this.y));
                             this.d.d.s((int) this.z, (int) this.y);
                             this.d.d.getImageReceiver().setRoundRadius(imageReceiver.getRoundRadius(true));
                         }
@@ -315,10 +315,10 @@ public class pv0 {
                         imageReceiver5.onAttachedToWindow();
                         Drawable drawable = imageReceiver.getDrawable();
                         this.f.setImageBitmap(drawable);
-                        if (drawable instanceof org.telegram.ui.Components.d6) {
-                            org.telegram.ui.Components.d6 d6Var = (org.telegram.ui.Components.d6) drawable;
-                            d6Var.f(this.d);
-                            d6Var.R = true;
+                        if (drawable instanceof org.telegram.ui.Components.c6) {
+                            org.telegram.ui.Components.c6 c6Var = (org.telegram.ui.Components.c6) drawable;
+                            c6Var.f(this.d);
+                            c6Var.R = true;
                         }
                         this.f.setImageCoords(this.u, this.v, this.x, this.w);
                         this.f.setAspectFit(imageReceiver.isAspectFit());
@@ -330,7 +330,7 @@ public class pv0 {
                 }
                 lv0 lv0Var2 = this.E;
                 if (lv0Var2 != null) {
-                    lv0Var2.E0(messageObject);
+                    lv0Var2.D0(messageObject);
                 }
                 this.P = 0.0f;
                 i12 = i14;
@@ -375,8 +375,8 @@ public class pv0 {
             ImageReceiver imageReceiver = this.f;
             if (imageReceiver != null) {
                 Drawable drawable = imageReceiver.getDrawable();
-                if (drawable instanceof org.telegram.ui.Components.d6) {
-                    ((org.telegram.ui.Components.d6) drawable).w(this.d);
+                if (drawable instanceof org.telegram.ui.Components.c6) {
+                    ((org.telegram.ui.Components.c6) drawable).w(this.d);
                 }
             }
         }
@@ -481,10 +481,10 @@ public class pv0 {
         if (this.c) {
             return true;
         }
-        if (!(imageReceiver.getDrawable() instanceof org.telegram.ui.Components.d6)) {
+        if (!(imageReceiver.getDrawable() instanceof org.telegram.ui.Components.c6)) {
             return imageReceiver.hasNotThumbOrOnlyStaticThumb();
         }
-        AnimatedFileDrawableStream animatedFileDrawableStream = ((org.telegram.ui.Components.d6) imageReceiver.getDrawable()).u0;
+        AnimatedFileDrawableStream animatedFileDrawableStream = ((org.telegram.ui.Components.c6) imageReceiver.getDrawable()).u0;
         return animatedFileDrawableStream == null || !animatedFileDrawableStream.isWaitingForLoad();
     }
 

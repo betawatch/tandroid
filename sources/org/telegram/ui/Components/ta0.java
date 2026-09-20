@@ -1,18 +1,44 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Paint;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.Rect;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public interface ta0 {
-    void A(TLRPC.TL_document tL_document, String str, Object obj);
+public final class ta0 extends s4.n0 {
+    public final /* synthetic */ ua0 a;
 
-    void O(int i10, int i11, CharSequence charSequence, boolean z10);
+    public ta0(ua0 ua0Var) {
+        this.a = ua0Var;
+    }
 
-    void P(String str);
-
-    void f(TLRPC.BotInlineResult botInlineResult, boolean z10, int i10);
-
-    Paint.FontMetricsInt w();
+    @Override // s4.n0
+    public final void a(Rect rect, View view, RecyclerView recyclerView, s4.z0 z0Var) {
+        int S;
+        rect.left = 0;
+        rect.right = 0;
+        rect.top = 0;
+        rect.bottom = 0;
+        s4.o0 layoutManager = recyclerView.getLayoutManager();
+        va0 va0Var = this.a.b3;
+        if (layoutManager != va0Var.d || (S = RecyclerView.S(view)) == 0 || va0Var.f.N()) {
+            return;
+        }
+        if (va0Var.f.I() == null && va0Var.f.U == null) {
+            rect.top = AndroidUtilities.dp(2.0f);
+        } else {
+            if (S == 0) {
+                return;
+            }
+            S--;
+            oa0 oa0Var = va0Var.d;
+            oa0Var.B1();
+            if (S > oa0Var.U) {
+                rect.top = AndroidUtilities.dp(2.0f);
+            }
+        }
+        rect.right = va0Var.d.E1(S) ? 0 : AndroidUtilities.dp(2.0f);
+    }
 }

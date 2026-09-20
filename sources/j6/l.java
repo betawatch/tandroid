@@ -40,13 +40,13 @@ import m.l1;
 import m.q;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Cells.q2;
-import org.telegram.ui.Components.o6;
+import org.telegram.ui.Components.n6;
 import org.telegram.ui.ug;
 import r0.i0;
-import v7.v7;
+import v7.w7;
 import w7.d0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class l implements OnSuccessListener, le.k {
     public static l e;
@@ -149,19 +149,10 @@ public final class l implements OnSuccessListener, le.k {
         if (TextUtils.isEmpty((String) this.d) && !a2) {
             throw new IllegalArgumentException("Negative text must be set and non-empty.");
         }
-        if (!TextUtils.isEmpty((String) this.d) && a2) {
-            throw new IllegalArgumentException("Negative text must not be set if device credential authentication is allowed.");
+        if (TextUtils.isEmpty((String) this.d) || !a2) {
+            return new l((String) this.b, (String) this.c, (String) this.d, this.a);
         }
-        String str = (String) this.b;
-        String str2 = (String) this.c;
-        String str3 = (String) this.d;
-        int i12 = this.a;
-        l lVar = new l();
-        lVar.b = str;
-        lVar.c = str2;
-        lVar.d = str3;
-        lVar.a = i12;
-        return lVar;
+        throw new IllegalArgumentException("Negative text must not be set if device credential authentication is allowed.");
     }
 
     public int e() {
@@ -179,12 +170,12 @@ public final class l implements OnSuccessListener, le.k {
         ImageView imageView = (ImageView) this.b;
         Context context = imageView.getContext();
         int[] iArr = f.a.f;
-        lf.i Q = lf.i.Q(context, attributeSet, iArr, i10);
+        lf.h Q = lf.h.Q(context, attributeSet, iArr, i10);
         TypedArray typedArray = (TypedArray) Q.c;
         i0.j(imageView, imageView.getContext(), iArr, attributeSet, (TypedArray) Q.c, i10);
         try {
             Drawable drawable3 = imageView.getDrawable();
-            if (drawable3 == null && (resourceId = typedArray.getResourceId(1, -1)) != -1 && (drawable3 = v7.b(imageView.getContext(), resourceId)) != null) {
+            if (drawable3 == null && (resourceId = typedArray.getResourceId(1, -1)) != -1 && (drawable3 = w7.b(imageView.getContext(), resourceId)) != null) {
                 imageView.setImageDrawable(drawable3);
             }
             if (drawable3 != null) {
@@ -360,6 +351,13 @@ public final class l implements OnSuccessListener, le.k {
         }
     }
 
+    public /* synthetic */ l(Object obj, Object obj2, Object obj3, int i10) {
+        this.b = obj;
+        this.c = obj2;
+        this.d = obj3;
+        this.a = i10;
+    }
+
     public l(int i10) {
         switch (i10) {
             case 2:
@@ -375,12 +373,12 @@ public final class l implements OnSuccessListener, le.k {
                 this.a = 0;
                 break;
             default:
-                o6 o6Var = new o6(true, true, true, false);
-                this.d = o6Var;
+                n6 n6Var = new n6(true, true, true, false);
+                this.d = n6Var;
                 Paint paint = new Paint(1);
-                o6Var.t(AndroidUtilities.dp(13.0f));
-                o6Var.r(-1);
-                o6Var.u(AndroidUtilities.bold());
+                n6Var.t(AndroidUtilities.dp(13.0f));
+                n6Var.r(-1);
+                n6Var.u(AndroidUtilities.bold());
                 paint.setColor(i0.a.k(-16777216, 58));
                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
                 this.b = spannableStringBuilder;

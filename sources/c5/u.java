@@ -16,7 +16,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final /* synthetic */ class u implements Callable {
     public final /* synthetic */ int a;
@@ -45,7 +45,7 @@ public final /* synthetic */ class u implements Callable {
         int i11;
         int i12;
         c cVar2 = (c) this.b;
-        org.telegram.messenger.d0 d0Var = (org.telegram.messenger.d0) this.c;
+        org.telegram.messenger.c0 c0Var = (org.telegram.messenger.c0) this.c;
         a4.m mVar = (a4.m) this.d;
         Exception exc = null;
         if (!cVar2.n()) {
@@ -53,7 +53,7 @@ public final /* synthetic */ class u implements Callable {
             cVar2.y(2, 7, hVar);
             com.google.android.gms.internal.play_billing.p pVar = com.google.android.gms.internal.play_billing.r.b;
             com.google.android.gms.internal.play_billing.v vVar = com.google.android.gms.internal.play_billing.v.e;
-            d0Var.a(hVar, new s(vVar, vVar));
+            c0Var.a(hVar, new s(vVar, vVar));
             return null;
         }
         if (!cVar2.r) {
@@ -62,7 +62,7 @@ public final /* synthetic */ class u implements Callable {
             cVar2.y(20, 7, hVar2);
             com.google.android.gms.internal.play_billing.p pVar2 = com.google.android.gms.internal.play_billing.r.b;
             com.google.android.gms.internal.play_billing.v vVar2 = com.google.android.gms.internal.play_billing.v.e;
-            d0Var.a(hVar2, new s(vVar2, vVar2));
+            c0Var.a(hVar2, new s(vVar2, vVar2));
             return null;
         }
         ArrayList arrayList = new ArrayList();
@@ -202,12 +202,12 @@ public final /* synthetic */ class u implements Callable {
                 } catch (DeadObjectException e10) {
                     e = e10;
                     lVar = cVar2.s(g0.h, i10, "queryProductDetailsAsync got a remote exception (try to reconnect).", e);
-                    d0Var.a(g0.a(lVar.a, (String) lVar.d), new s((ArrayList) lVar.b, (ArrayList) lVar.c));
+                    c0Var.a(g0.a(lVar.a, (String) lVar.d), new s((ArrayList) lVar.b, (ArrayList) lVar.c));
                     return null;
                 } catch (Exception e11) {
                     e = e11;
                     lVar = cVar2.s(g0.f, i10, "queryProductDetailsAsync got a remote exception (try to reconnect).", e);
-                    d0Var.a(g0.a(lVar.a, (String) lVar.d), new s((ArrayList) lVar.b, (ArrayList) lVar.c));
+                    c0Var.a(g0.a(lVar.a, (String) lVar.d), new s((ArrayList) lVar.b, (ArrayList) lVar.c));
                     return null;
                 }
             } catch (DeadObjectException e12) {
@@ -218,7 +218,7 @@ public final /* synthetic */ class u implements Callable {
                 i10 = 43;
             }
         }
-        d0Var.a(g0.a(lVar.a, (String) lVar.d), new s((ArrayList) lVar.b, (ArrayList) lVar.c));
+        c0Var.a(g0.a(lVar.a, (String) lVar.d), new s((ArrayList) lVar.b, (ArrayList) lVar.c));
         return null;
     }
 
@@ -227,8 +227,8 @@ public final /* synthetic */ class u implements Callable {
         r0 = r2.x(c5.g0.h, 107, "Service has been reset to null", r3);
      */
     /* JADX WARN: Removed duplicated region for block: B:31:0x0179  */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x023f  */
-    /* JADX WARN: Removed duplicated region for block: B:50:0x024b  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x023e  */
+    /* JADX WARN: Removed duplicated region for block: B:50:0x024a  */
     /* JADX WARN: Removed duplicated region for block: B:60:0x0171 A[SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -287,14 +287,14 @@ public final /* synthetic */ class u implements Callable {
                                 } catch (DeadObjectException e) {
                                     e = e;
                                     x10 = cVar2.x(g0.h, 52, "Got exception trying to get purchases try to reconnect", e);
-                                    list = (List) x10.b;
+                                    list = (List) x10.a;
                                     if (list != null) {
                                     }
                                     return exc;
                                 } catch (Exception e7) {
                                     e = e7;
                                     x10 = cVar2.x(g0.f, 52, "Got exception trying to get purchases try to reconnect", e);
-                                    list = (List) x10.b;
+                                    list = (List) x10.a;
                                     if (list != null) {
                                     }
                                     return exc;
@@ -374,7 +374,7 @@ public final /* synthetic */ class u implements Callable {
                     str2 = b12.getString("INAPP_CONTINUATION_TOKEN");
                     com.google.android.gms.internal.play_billing.u.g("BillingClient", "Continuation token: ".concat(String.valueOf(str2)));
                     if (TextUtils.isEmpty(str2)) {
-                        x10 = new n4.y(g0.g, arrayList, false, 7);
+                        x10 = new n4.y(g0.g, arrayList, false);
                         break;
                     }
                     exc2 = exc;
@@ -391,12 +391,12 @@ public final /* synthetic */ class u implements Callable {
             }
         }
         exc = exc2;
-        list = (List) x10.b;
+        list = (List) x10.a;
         if (list != null) {
-            ((p) this.c).a((h) x10.c, list);
+            ((p) this.c).a((h) x10.b, list);
         } else {
             p pVar5 = (p) this.c;
-            h hVar4 = (h) x10.c;
+            h hVar4 = (h) x10.b;
             com.google.android.gms.internal.play_billing.p pVar6 = com.google.android.gms.internal.play_billing.r.b;
             pVar5.a(hVar4, com.google.android.gms.internal.play_billing.v.e);
         }

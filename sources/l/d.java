@@ -27,41 +27,40 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.concurrent.CopyOnWriteArrayList;
 import m.e2;
-import n7.z0;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Cells.e9;
+import org.telegram.ui.Cells.f3;
+import org.telegram.ui.Cells.f9;
 import org.telegram.ui.Cells.k0;
-import org.telegram.ui.Components.a60;
-import org.telegram.ui.Components.gl0;
-import org.telegram.ui.Components.m9;
+import org.telegram.ui.Components.fl0;
+import org.telegram.ui.Components.l9;
 import org.telegram.ui.Components.o81;
-import org.telegram.ui.Components.so0;
+import org.telegram.ui.Components.ro0;
+import org.telegram.ui.Components.uq0;
 import org.telegram.ui.Components.v81;
-import org.telegram.ui.Components.vq0;
 import org.telegram.ui.Components.x81;
 import org.telegram.ui.ThemeActivity;
-import org.telegram.ui.ac1;
-import qg.m2;
-import qg.v1;
-import w7.y8;
+import org.telegram.ui.cc1;
+import qg.n2;
+import qg.w1;
+import w7.z8;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
-public final class d implements e2, y2.h, le.d, j, l2.h, so0, le.f, ah.k, v81, com.google.android.gms.common.api.internal.s, v1, r4.c, com.google.android.gms.common.api.internal.o, n5.b, OnCompleteListener {
+public final class d implements e2, y2.h, le.d, j, l2.h, ro0, le.f, ah.k, v81, com.google.android.gms.common.api.internal.s, w1, r4.c, com.google.android.gms.common.api.internal.o, n5.b, OnCompleteListener {
     public Object a;
 
     public /* synthetic */ d(Object obj) {
         this.a = obj;
     }
 
-    @Override // l2.h
-    public long A(long j3, long j10) {
-        return 1L;
+    @Override // le.f
+    public void A() {
+        ((l9) this.a).a.invalidate();
     }
 
     @Override // le.d
@@ -74,12 +73,17 @@ public final class d implements e2, y2.h, le.d, j, l2.h, so0, le.f, ah.k, v81, c
         ((le.j) this.a).i(f7);
     }
 
+    @Override // l2.h
+    public long E(long j3, long j10) {
+        return 1L;
+    }
+
     @Override // y2.h
-    public void E(y2.j jVar, long j3, long j10, boolean z10) {
+    public void F(y2.j jVar, long j3, long j10, boolean z10) {
         ((l2.g) this.a).w((y2.p) jVar, j10);
     }
 
-    public void F(HashMap hashMap) {
+    public void G(HashMap hashMap) {
         if (((SparseArray) this.a) == null) {
             this.a = new SparseArray(hashMap.size());
         }
@@ -88,7 +92,7 @@ public final class d implements e2, y2.h, le.d, j, l2.h, so0, le.f, ah.k, v81, c
         }
     }
 
-    public boolean G(int i10) {
+    public boolean H(int i10) {
         o81 o81Var = ((x81) this.a).L;
         if (o81Var == null) {
             return false;
@@ -96,14 +100,14 @@ public final class d implements e2, y2.h, le.d, j, l2.h, so0, le.f, ah.k, v81, c
         return o81Var.c(i10);
     }
 
-    public void H(Runnable runnable) {
+    public void I(Runnable runnable) {
         Runnable runnable2 = (Runnable) ((HashMap) this.a).remove(runnable);
         if (runnable2 != null) {
             AndroidUtilities.cancelRunOnUIThread(runnable2);
         }
     }
 
-    public void I() {
+    public void J() {
         HashMap hashMap = (HashMap) this.a;
         Iterator it = hashMap.entrySet().iterator();
         while (it.hasNext()) {
@@ -112,7 +116,13 @@ public final class d implements e2, y2.h, le.d, j, l2.h, so0, le.f, ah.k, v81, c
         hashMap.clear();
     }
 
-    public StringBuilder J() {
+    @Override // ah.k
+    public void K(ah.a aVar) {
+        aVar.a(((uq0) this.a).getThemedColor(j6.d6));
+        aVar.b(SharedConfig.chatBlurEnabled());
+    }
+
+    public StringBuilder L() {
         df.a aVar = (df.a) this.a;
         if (!(aVar instanceof ye.m)) {
             return null;
@@ -124,12 +134,7 @@ public final class d implements e2, y2.h, le.d, j, l2.h, so0, le.f, ah.k, v81, c
         return sb2;
     }
 
-    @Override // qg.v1
-    public void K(float f7) {
-        ((m2) this.a).setOutlineWidth(f7);
-    }
-
-    public void L(float f7) {
+    public void M(float f7) {
         x81 x81Var = (x81) this.a;
         if (f7 == 1.0f) {
             View[] viewArr = x81Var.e;
@@ -160,27 +165,17 @@ public final class d implements e2, y2.h, le.d, j, l2.h, so0, le.f, ah.k, v81, c
         x81Var.x(false);
     }
 
-    public void M(long j3) {
-        ((a60) this.a).s.setPlaybackProgress(j3 / 60000.0f);
-    }
-
-    @Override // ah.k
-    public void U(ah.a aVar) {
-        aVar.a(((vq0) this.a).getThemedColor(j6.d6));
-        aVar.b(SharedConfig.chatBlurEnabled());
-    }
-
-    @Override // org.telegram.ui.Components.so0
+    @Override // org.telegram.ui.Components.ro0
     public void X(float f7, boolean z10) {
-        ac1 ac1Var = (ac1) ((k0) this.a);
+        cc1 cc1Var = (cc1) ((k0) this.a);
         int i10 = (int) (j6.q * 100.0f);
         int i11 = (int) (f7 * 100.0f);
         j6.q = f7;
         if (i10 != i11) {
-            ThemeActivity themeActivity = ac1Var.e.e;
-            gl0 gl0Var = (gl0) themeActivity.b.L(themeActivity.f0);
-            if (gl0Var != null) {
-                ((e9) gl0Var.a).setText(LocaleController.formatString("AutoNightBrightnessInfo", R.string.AutoNightBrightnessInfo, Integer.valueOf((int) (j6.q * 100.0f))));
+            ThemeActivity themeActivity = cc1Var.e.e;
+            fl0 fl0Var = (fl0) themeActivity.b.L(themeActivity.f0);
+            if (fl0Var != null) {
+                ((f9) fl0Var.a).setText(LocaleController.formatString("AutoNightBrightnessInfo", R.string.AutoNightBrightnessInfo, Integer.valueOf((int) (j6.q * 100.0f))));
             }
             j6.E(true);
         }
@@ -210,21 +205,21 @@ public final class d implements e2, y2.h, le.d, j, l2.h, so0, le.f, ah.k, v81, c
 
     @Override // ah.k
     public void d(Canvas canvas) {
-        vq0 vq0Var = (vq0) this.a;
-        canvas.drawColor(vq0Var.getThemedColor(j6.d6));
+        uq0 uq0Var = (uq0) this.a;
+        canvas.drawColor(uq0Var.getThemedColor(j6.d6));
         if (SharedConfig.chatBlurEnabled()) {
-            vq0Var.O0.b(canvas, -3);
+            uq0Var.O0.b(canvas, -3);
         }
     }
 
     @Override // l2.h
-    public long f(long j3, long j10) {
+    public long e(long j3, long j10) {
         return 0L;
     }
 
-    @Override // le.f
-    public /* synthetic */ boolean g() {
-        return false;
+    @Override // l2.h
+    public long g(long j3, long j10) {
+        return -9223372036854775807L;
     }
 
     @Override // fd.a
@@ -232,19 +227,19 @@ public final class d implements e2, y2.h, le.d, j, l2.h, so0, le.f, ah.k, v81, c
         return new s5.j((Context) ((fd.a) this.a).get(), "com.google.android.datatransport.events", Integer.valueOf(s5.j.d).intValue());
     }
 
-    @Override // org.telegram.ui.Components.so0
+    @Override // org.telegram.ui.Components.ro0
     public CharSequence getContentDescription() {
         return " ";
     }
 
     @Override // le.f
-    public /* synthetic */ boolean h(float f7) {
+    public /* synthetic */ boolean h() {
         return false;
     }
 
-    @Override // l2.h
-    public long j(long j3, long j10) {
-        return -9223372036854775807L;
+    @Override // le.f
+    public /* synthetic */ boolean i(float f7) {
+        return false;
     }
 
     @Override // l2.h
@@ -263,6 +258,11 @@ public final class d implements e2, y2.h, le.d, j, l2.h, so0, le.f, ah.k, v81, c
         if (nVar != null) {
             ((r7.c) nVar2.d).c(nVar, 2441);
         }
+    }
+
+    @Override // org.telegram.ui.Components.ro0
+    public /* synthetic */ int l0() {
+        return 0;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:23:0x0056  */
@@ -296,11 +296,6 @@ public final class d implements e2, y2.h, le.d, j, l2.h, so0, le.f, ah.k, v81, c
         }
         gVar.q.r(tVar, i11, iOException, !dVar.a());
         return dVar;
-    }
-
-    @Override // org.telegram.ui.Components.so0
-    public /* synthetic */ int m0() {
-        return 0;
     }
 
     @Override // y2.h
@@ -376,7 +371,7 @@ public final class d implements e2, y2.h, le.d, j, l2.h, so0, le.f, ah.k, v81, c
                 if (pVar.b.a.equals(gVar.F)) {
                     Uri uri2 = gVar.H.k;
                     if (uri2 == null) {
-                        uri2 = y8.a(pVar.d.c);
+                        uri2 = z8.a(pVar.d.c);
                     }
                     gVar.F = uri2;
                 }
@@ -389,15 +384,15 @@ public final class d implements e2, y2.h, le.d, j, l2.h, so0, le.f, ah.k, v81, c
             gVar.y(true);
             return;
         }
-        lf.g gVar2 = cVar3.i;
-        if (gVar2 == null) {
+        c5.a aVar = cVar3.i;
+        if (aVar == null) {
             gVar.v();
             return;
         }
-        String str = gVar2.b;
+        String str = aVar.b;
         if (Objects.equals(str, "urn:mpeg:dash:utc:direct:2014") || Objects.equals(str, "urn:mpeg:dash:utc:direct:2012")) {
             try {
-                gVar.L = e2.d0.T(gVar2.c) - gVar.K;
+                gVar.L = e2.d0.T(aVar.c) - gVar.K;
                 gVar.y(true);
                 return;
             } catch (s0 e) {
@@ -406,11 +401,11 @@ public final class d implements e2, y2.h, le.d, j, l2.h, so0, le.f, ah.k, v81, c
             }
         }
         if (Objects.equals(str, "urn:mpeg:dash:utc:http-iso:2014") || Objects.equals(str, "urn:mpeg:dash:utc:http-iso:2012")) {
-            gVar.z(gVar2, new l2.f());
+            gVar.z(aVar, new l2.f());
             return;
         }
         if (Objects.equals(str, "urn:mpeg:dash:utc:http-xsdate:2014") || Objects.equals(str, "urn:mpeg:dash:utc:http-xsdate:2012")) {
-            gVar.z(gVar2, new ob.a(12));
+            gVar.z(aVar, new ob.a(12));
         } else if (Objects.equals(str, "urn:mpeg:dash:utc:ntp:2014") || Objects.equals(str, "urn:mpeg:dash:utc:ntp:2012")) {
             gVar.v();
         } else {
@@ -467,13 +462,8 @@ public final class d implements e2, y2.h, le.d, j, l2.h, so0, le.f, ah.k, v81, c
         return false;
     }
 
-    @Override // le.f
-    public void u() {
-        ((m9) this.a).a.invalidate();
-    }
-
     @Override // m.e2
-    public void v(l lVar, n nVar) {
+    public void u(l lVar, n nVar) {
         f fVar = (f) this.a;
         Handler handler = fVar.f;
         handler.removeCallbacksAndMessages(null);
@@ -498,8 +488,13 @@ public final class d implements e2, y2.h, le.d, j, l2.h, so0, le.f, ah.k, v81, c
     }
 
     @Override // l2.h
-    public boolean w() {
+    public boolean v() {
         return true;
+    }
+
+    @Override // l2.h
+    public long w() {
+        return 0L;
     }
 
     @Override // r4.c
@@ -549,9 +544,9 @@ public final class d implements e2, y2.h, le.d, j, l2.h, so0, le.f, ah.k, v81, c
         ((ProfileInstallReceiver) this.a).setResultCode(i10);
     }
 
-    @Override // l2.h
-    public long y() {
-        return 0L;
+    @Override // qg.w1
+    public void y(float f7) {
+        ((n2) this.a).setOutlineWidth(f7);
     }
 
     @Override // l2.h
@@ -562,7 +557,7 @@ public final class d implements e2, y2.h, le.d, j, l2.h, so0, le.f, ah.k, v81, c
     public d(int i10) {
         switch (i10) {
             case 27:
-                this.a = new z0[zf.b.values().length];
+                this.a = new f3[zf.b.values().length];
                 break;
             default:
                 this.a = new HashMap();
@@ -570,12 +565,12 @@ public final class d implements e2, y2.h, le.d, j, l2.h, so0, le.f, ah.k, v81, c
         }
     }
 
-    @Override // qg.v1
+    @Override // qg.w1
     public float get() {
-        return ((m2) this.a).F;
+        return ((n2) this.a).F;
     }
 
-    @Override // org.telegram.ui.Components.so0
+    @Override // org.telegram.ui.Components.ro0
     public void B() {
     }
 
@@ -584,11 +579,11 @@ public final class d implements e2, y2.h, le.d, j, l2.h, so0, le.f, ah.k, v81, c
     }
 
     @Override // le.f
-    public /* synthetic */ void i() {
+    public /* synthetic */ void j() {
     }
 
     @Override // le.f
-    public /* synthetic */ void e(boolean z10) {
+    public /* synthetic */ void f(boolean z10) {
     }
 
     @Override // l2.h

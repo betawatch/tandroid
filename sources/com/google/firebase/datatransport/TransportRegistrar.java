@@ -10,9 +10,9 @@ import java.util.List;
 import l5.s;
 import q9.b;
 import q9.j;
-import w7.p8;
+import w7.q8;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public class TransportRegistrar implements ComponentRegistrar {
     private static final String LIBRARY_NAME = "fire-transport";
@@ -29,6 +29,6 @@ public class TransportRegistrar implements ComponentRegistrar {
         a2.d = LIBRARY_NAME;
         a2.a(j.a(Context.class));
         a2.f = new ga.a(0);
-        return Arrays.asList(a2.b(), p8.a(LIBRARY_NAME, "18.1.8"));
+        return Arrays.asList(a2.b(), q8.a(LIBRARY_NAME, "18.1.8"));
     }
 }

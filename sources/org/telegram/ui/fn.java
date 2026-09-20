@@ -8,21 +8,21 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class fn extends org.telegram.ui.Components.vq0 {
+public final class fn extends org.telegram.ui.Components.uq0 {
     public final /* synthetic */ MessageObject b1;
     public final /* synthetic */ ln c1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public fn(ln lnVar, Activity activity, zn znVar, ArrayList arrayList, boolean z10, boolean z11, org.telegram.ui.ActionBar.e6 e6Var, boolean z12, MessageObject messageObject) {
-        super(activity, znVar, arrayList, null, null, z10, null, null, false, false, z11, null, e6Var);
+    public fn(ln lnVar, Activity activity, zn znVar, ArrayList arrayList, boolean z10, boolean z11, org.telegram.ui.ActionBar.f6 f6Var, boolean z12, MessageObject messageObject) {
+        super(activity, znVar, arrayList, null, null, z10, null, null, false, false, z11, null, f6Var);
         this.c1 = lnVar;
         this.b1 = messageObject;
         this.a0 = z12;
     }
 
-    @Override // org.telegram.ui.Components.vq0
+    @Override // org.telegram.ui.Components.uq0
     public final void R0(a0.i iVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
         ln lnVar = this.c1;
         zn znVar = lnVar.a;
@@ -41,10 +41,10 @@ public final class fn extends org.telegram.ui.Components.vq0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.vq0
+    @Override // org.telegram.ui.Components.uq0
     public final void S0(final View view) {
         zn znVar = this.c1.a;
-        ci.hc b10 = view instanceof org.telegram.ui.Cells.g7 ? ci.jc.b((org.telegram.ui.Cells.g7) view) : null;
+        ci.hc b10 = view instanceof org.telegram.ui.Cells.h7 ? ci.jc.b((org.telegram.ui.Cells.h7) view) : null;
         ArrayList arrayList = new ArrayList();
         MessageObject messageObject = this.b1;
         MessageObject.GroupedMessages groupedMessages = messageObject.getGroupId() != 0 ? (MessageObject.GroupedMessages) znVar.x6.f(messageObject.getGroupId()) : null;
@@ -64,13 +64,13 @@ public final class fn extends org.telegram.ui.Components.vq0 {
                 ci.hc hcVar = null;
                 if (booleanValue) {
                     fn fnVar = fn.this;
-                    AndroidUtilities.runOnUIThread(new qh(11, fnVar, l4));
+                    AndroidUtilities.runOnUIThread(new gh(13, fnVar, l4));
                     fnVar.dismiss();
                     ocVar.Y(null);
                 } else {
                     View view2 = view;
-                    if ((view2 instanceof org.telegram.ui.Cells.g7) && view2.isAttachedToWindow()) {
-                        hcVar = ci.jc.b((org.telegram.ui.Cells.g7) view2);
+                    if ((view2 instanceof org.telegram.ui.Cells.h7) && view2.isAttachedToWindow()) {
+                        hcVar = ci.jc.b((org.telegram.ui.Cells.h7) view2);
                     }
                     ocVar.Y(hcVar);
                 }
@@ -80,7 +80,7 @@ public final class fn extends org.telegram.ui.Components.vq0 {
         E.U(b10, ci.o8.y(arrayList));
     }
 
-    @Override // org.telegram.ui.Components.vq0, org.telegram.ui.ActionBar.f3
+    @Override // org.telegram.ui.Components.uq0, org.telegram.ui.ActionBar.f3
     public final void dismissInternal() {
         int i10;
         zn znVar = this.c1.a;

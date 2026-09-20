@@ -1,23 +1,17 @@
 package v7;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
+
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public abstract class n8 {
-    public static id.f a(id.f fVar, id.g key) {
-        kotlin.jvm.internal.i.e(key, "key");
-        if (kotlin.jvm.internal.i.a(fVar.getKey(), key)) {
-            return fVar;
-        }
-        return null;
-    }
+    public abstract Method a(Class cls, Field field);
 
-    public static id.h b(id.f fVar, id.g key) {
-        kotlin.jvm.internal.i.e(key, "key");
-        return kotlin.jvm.internal.i.a(fVar.getKey(), key) ? id.i.a : fVar;
-    }
+    public abstract Constructor b(Class cls);
 
-    public static id.h c(id.f fVar, id.h context) {
-        kotlin.jvm.internal.i.e(context, "context");
-        return context == id.i.a ? fVar : (id.h) context.fold(fVar, new b1.e(5));
-    }
+    public abstract String[] c(Class cls);
+
+    public abstract boolean d(Class cls);
 }

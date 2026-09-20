@@ -1,17 +1,36 @@
 package v7;
 
-import java.lang.reflect.Constructor;
-import java.lang.reflect.Field;
-import java.lang.reflect.Method;
+import java.util.concurrent.Future;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public abstract class m8 {
-    public abstract Method a(Class cls, Field field);
+    public static Object a(Future future) {
+        Object obj;
+        boolean z10 = false;
+        if (!future.isDone()) {
+            throw new IllegalStateException(v6.a("Future was expected to be done: %s", future));
+        }
+        while (true) {
+            try {
+                obj = future.get();
+                break;
+            } catch (InterruptedException unused) {
+                z10 = true;
+            } catch (Throwable th2) {
+                if (z10) {
+                    Thread.currentThread().interrupt();
+                }
+                throw th2;
+            }
+        }
+        if (z10) {
+            Thread.currentThread().interrupt();
+        }
+        return obj;
+    }
 
-    public abstract Constructor b(Class cls);
-
-    public abstract String[] c(Class cls);
-
-    public abstract boolean d(Class cls);
+    public static i9.u b(Object obj) {
+        return obj == null ? i9.u.b : new i9.u(obj);
+    }
 }

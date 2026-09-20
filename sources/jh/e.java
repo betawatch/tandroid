@@ -16,17 +16,17 @@ import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.Components.j40;
 import org.telegram.ui.Components.qr;
 import org.telegram.ui.qe;
 import org.telegram.ui.zn;
-import w7.a6;
+import w7.b6;
 import w7.y5;
-import yf.i0;
-import yf.k0;
+import yf.h0;
+import yf.j0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public class e extends FrameLayout implements le.d {
     public static final int[] H;
@@ -42,7 +42,7 @@ public class e extends FrameLayout implements le.d {
     public d d;
     public final FrameLayout e;
     public final HashSet f;
-    public final e6 h;
+    public final f6 h;
     public final ah.c n;
     public final dh.a r;
     public ch.d s;
@@ -62,7 +62,7 @@ public class e extends FrameLayout implements le.d {
         K = new RectF();
     }
 
-    public e(ah.c cVar, Context context, dh.a aVar, e6 e6Var) {
+    public e(ah.c cVar, Context context, dh.a aVar, f6 f6Var) {
         super(context);
         this.a = new n[5];
         this.b = new View.OnClickListener[5];
@@ -75,13 +75,13 @@ public class e extends FrameLayout implements le.d {
         this.G = 0;
         this.n = cVar;
         this.r = aVar;
-        this.h = e6Var;
+        this.h = f6Var;
         FrameLayout frameLayout = new FrameLayout(context);
         this.e = frameLayout;
         frameLayout.setClipToOutline(true);
         float dp = AndroidUtilities.dp(22.0f);
-        k2 k2Var = k0.a;
-        frameLayout.setOutlineProvider(new i0(0, dp));
+        k2 k2Var = j0.a;
+        frameLayout.setOutlineProvider(new h0(0, dp));
         addView(frameLayout, y5.e(-1, 44, 16));
     }
 
@@ -376,7 +376,7 @@ public class e extends FrameLayout implements le.d {
                     } else if (i10 == 3) {
                         d.setContentDescription(LocaleController.getString(R.string.BroadcastGroupInfo));
                     }
-                    a6.b(d, 0.13f, 2.0f);
+                    b6.b(d, 0.13f, 2.0f);
                     d.setVisibility(8);
                     d.setOnClickListener(new o4(this, i10, 3));
                     addView(d, y5.c(56.0f, 56));

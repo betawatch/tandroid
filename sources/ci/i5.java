@@ -4,7 +4,7 @@ import android.view.KeyEvent;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class i5 implements org.telegram.ui.ActionBar.l1, Utilities.Callback3Return {
     public final /* synthetic */ r6 a;
@@ -14,7 +14,7 @@ public final /* synthetic */ class i5 implements org.telegram.ui.ActionBar.l1, U
     }
 
     @Override // org.telegram.ui.ActionBar.l1
-    public void p(KeyEvent keyEvent) {
+    public void o(KeyEvent keyEvent) {
         org.telegram.ui.ActionBar.n1 n1Var;
         r6 r6Var = this.a;
         r6Var.getClass();

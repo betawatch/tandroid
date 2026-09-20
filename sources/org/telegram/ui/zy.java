@@ -7,9 +7,9 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class zy implements org.telegram.ui.Components.nl0 {
+public final class zy implements org.telegram.ui.Components.ml0 {
     public final Rect a = new Rect();
     public final /* synthetic */ dz b;
 
@@ -17,10 +17,10 @@ public final class zy implements org.telegram.ui.Components.nl0 {
         this.b = dzVar;
     }
 
-    @Override // org.telegram.ui.Components.nl0
+    @Override // org.telegram.ui.Components.ml0
     public final boolean c(float f7, float f10, int i10, View view) {
         dz dzVar = this.b;
-        if (dzVar.getParentActivity() != null && (view instanceof org.telegram.ui.Cells.g4)) {
+        if (dzVar.getParentActivity() != null && (view instanceof org.telegram.ui.Cells.h4)) {
             ImageView imageView = (ImageView) view.getTag(R.id.object_tag);
             Rect rect = this.a;
             imageView.getHitRect(rect);
@@ -34,11 +34,11 @@ public final class zy implements org.telegram.ui.Components.nl0 {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.nl0
+    @Override // org.telegram.ui.Components.ml0
     public final void g() {
     }
 
-    @Override // org.telegram.ui.Components.nl0
+    @Override // org.telegram.ui.Components.ml0
     public final void q(float f7) {
     }
 }

@@ -27,11 +27,10 @@ import n4.y;
 import org.telegram.messenger.MediaController;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Cells.c1;
-import u2.b1;
 import u2.f0;
-import v7.a8;
+import v7.b8;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public abstract class r extends i2.f {
     public static final byte[] W0 = {0, 0, 1, 103, 66, -64, 11, -38, 37, -112, 0, 0, 1, 104, -50, 15, 19, 32, 0, 0, 1, 101, -120, -124, 13, -50, 113, 24, -96, 0, 47, -65, 28, 49, -61, 39, 93, 120};
@@ -213,7 +212,7 @@ public abstract class r extends i2.f {
         }
         e2.d.g(!this.J0);
         y yVar = this.c;
-        yVar.n();
+        yVar.e();
         hVar.clear();
         while (true) {
             hVar.clear();
@@ -292,7 +291,7 @@ public abstract class r extends i2.f {
                                 if (bArr != null) {
                                     j0.a(byteBuffer3, 0L, 0, 1, true);
                                     i12 = limit;
-                                    byteBuffer3.put(a8.a(bArr.length));
+                                    byteBuffer3.put(b8.a(bArr.length));
                                     byteBuffer3.put(bArr);
                                     i11 = position;
                                     byteBuffer3.putInt(22, d0.n(byteBuffer3.arrayOffset(), bArr.length + 28, 0, byteBuffer3.array()));
@@ -575,7 +574,7 @@ public abstract class r extends i2.f {
         byteBuffer3.getClass();
         int position = byteBuffer3.position();
         y yVar = this.c;
-        yVar.n();
+        yVar.e();
         try {
             int w10 = w(yVar, hVar, 0);
             if (w10 == -3) {
@@ -801,7 +800,7 @@ public abstract class r extends i2.f {
             if (!oVar.e(sVar)) {
                 String c10 = b2.s.c(sVar);
                 Locale locale = Locale.US;
-                e2.a.n("MediaCodecRenderer", c1.i("Format exceeds selected codec's capabilities [", c10, ", ", str, "]"));
+                e2.a.n("MediaCodecRenderer", c1.k("Format exceeds selected codec's capabilities [", c10, ", ", str, "]"));
             }
             this.f0 = f11;
             this.c0 = sVar;
@@ -1046,7 +1045,7 @@ public abstract class r extends i2.f {
         h2.b h10;
         boolean z10 = true;
         this.L0 = true;
-        b2.s sVar2 = (b2.s) yVar.c;
+        b2.s sVar2 = (b2.s) yVar.b;
         sVar2.getClass();
         String str = sVar2.r;
         if (str == null) {
@@ -1059,8 +1058,8 @@ public abstract class r extends i2.f {
         } else {
             sVar = sVar2;
         }
-        n2.h hVar = (n2.h) yVar.b;
-        k0.y(this.V, hVar);
+        n2.h hVar = (n2.h) yVar.a;
+        k0.A(this.V, hVar);
         this.V = hVar;
         this.S = sVar;
         if (this.x0) {
@@ -1211,7 +1210,7 @@ public abstract class r extends i2.f {
 
     public final boolean i0(int i10) {
         y yVar = this.c;
-        yVar.n();
+        yVar.e();
         h2.h hVar = this.L;
         hVar.clear();
         int w10 = w(yVar, hVar, i10 | 4);
@@ -1348,7 +1347,7 @@ public abstract class r extends i2.f {
     }
 
     public final void o0(n2.h hVar) {
-        k0.y(this.U, hVar);
+        k0.A(this.U, hVar);
         this.U = hVar;
     }
 
@@ -1554,9 +1553,9 @@ public abstract class r extends i2.f {
                 } else {
                     i2.g gVar = this.O0;
                     int i10 = gVar.d;
-                    b1 b1Var = this.r;
-                    b1Var.getClass();
-                    gVar.d = i10 + b1Var.j(j3 - this.v);
+                    u2.c1 c1Var = this.r;
+                    c1Var.getClass();
+                    gVar.d = i10 + c1Var.j(j3 - this.v);
                     i0(1);
                 }
                 synchronized (this.O0) {

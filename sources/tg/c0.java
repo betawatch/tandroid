@@ -14,16 +14,16 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.d3;
 import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.bb;
-import org.telegram.ui.Components.bw0;
-import org.telegram.ui.Components.qc;
+import org.telegram.ui.Components.ab;
+import org.telegram.ui.Components.aw0;
+import org.telegram.ui.Components.pc;
+import org.telegram.ui.Components.ul0;
 import org.telegram.ui.Components.vl0;
-import org.telegram.ui.Components.wl0;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class c0 extends bb {
+public final class c0 extends ab {
     public final TLRPC.TL_payments_checkedGiftCode X;
     public final boolean Y;
     public b0 Z;
@@ -97,19 +97,19 @@ public final class c0 extends bb {
         connectionsManager.sendRequest(tL_payments_checkGiftCode, new t5(messagesController, e4Var, fVar, 19));
     }
 
-    @Override // org.telegram.ui.Components.bb
-    public final void G(bw0 bw0Var) {
-        qc.a(this.container, new d9(14));
+    @Override // org.telegram.ui.Components.ab
+    public final void G(aw0 aw0Var) {
+        pc.a(this.container, new d9(14));
     }
 
-    @Override // org.telegram.ui.Components.bb
-    public final vl0 v(wl0 wl0Var) {
+    @Override // org.telegram.ui.Components.ab
+    public final ul0 v(vl0 vl0Var) {
         b0 b0Var = new b0(this, this.resourcesProvider);
         this.Z = b0Var;
         return b0Var;
     }
 
-    @Override // org.telegram.ui.Components.bb
+    @Override // org.telegram.ui.Components.ab
     public final CharSequence y() {
         return this.Y ? LocaleController.getString(R.string.BoostingGiftLink) : LocaleController.getString(R.string.BoostingUsedGiftLink);
     }

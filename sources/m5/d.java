@@ -3,32 +3,33 @@ package m5;
 import android.content.Context;
 import com.google.android.datatransport.cct.CctBackendFactory;
 import java.util.HashMap;
-import lf.i;
+import lf.h;
+import n4.y;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class d {
-    public final of.b a;
-    public final i b;
+    public final y a;
+    public final h b;
     public final HashMap c;
 
-    public d(Context context, i iVar) {
-        of.b bVar = new of.b((Object) context, 27);
+    public d(Context context, h hVar) {
+        y yVar = new y(context);
         this.c = new HashMap();
-        this.a = bVar;
-        this.b = iVar;
+        this.a = yVar;
+        this.b = hVar;
     }
 
-    public final synchronized e a(String str) {
+    public final synchronized f a(String str) {
         if (this.c.containsKey(str)) {
-            return (e) this.c.get(str);
+            return (f) this.c.get(str);
         }
-        CctBackendFactory I = this.a.I(str);
-        if (I == null) {
+        CctBackendFactory L = this.a.L(str);
+        if (L == null) {
             return null;
         }
-        i iVar = this.b;
-        e create = I.create(new b((Context) iVar.b, (u5.a) iVar.c, (u5.a) iVar.d, str));
+        h hVar = this.b;
+        f create = L.create(new b((Context) hVar.b, (u5.a) hVar.c, (u5.a) hVar.d, str));
         this.c.put(str, create);
         return create;
     }

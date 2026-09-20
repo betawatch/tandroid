@@ -15,23 +15,23 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class h8 extends FrameLayout {
     public final int a;
-    public final org.telegram.ui.Components.h9 b;
-    public final org.telegram.ui.Components.w9 c;
+    public final org.telegram.ui.Components.g9 b;
+    public final org.telegram.ui.Components.v9 c;
     public final TextView d;
     public ViewPropertyAnimator e;
 
     public h8(Activity activity, int i10) {
         super(activity);
         this.a = i10;
-        this.b = new org.telegram.ui.Components.h9((org.telegram.ui.ActionBar.e6) null);
-        org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(activity);
-        this.c = w9Var;
-        w9Var.setRoundRadius(AndroidUtilities.dp(15.0f));
-        addView(w9Var, w7.y5.d(30, 30.0f, 19, 14.0f, 0.0f, 0.0f, 0.0f));
+        this.b = new org.telegram.ui.Components.g9((org.telegram.ui.ActionBar.f6) null);
+        org.telegram.ui.Components.v9 v9Var = new org.telegram.ui.Components.v9(activity);
+        this.c = v9Var;
+        v9Var.setRoundRadius(AndroidUtilities.dp(15.0f));
+        addView(v9Var, w7.y5.d(30, 30.0f, 19, 14.0f, 0.0f, 0.0f, 0.0f));
         TextView textView = new TextView(activity);
         this.d = textView;
         textView.setTextSize(1, 14.0f);
@@ -70,18 +70,18 @@ public final class h8 extends FrameLayout {
         int i10 = this.a;
         long clientUserId = inputPeer == null ? UserConfig.getInstance(i10).getClientUserId() : DialogObject.getPeerDialogId(inputPeer);
         TextView textView = this.d;
-        org.telegram.ui.Components.w9 w9Var = this.c;
-        org.telegram.ui.Components.h9 h9Var = this.b;
+        org.telegram.ui.Components.v9 v9Var = this.c;
+        org.telegram.ui.Components.g9 g9Var = this.b;
         if (clientUserId >= 0) {
             TLRPC.User user = MessagesController.getInstance(i10).getUser(Long.valueOf(clientUserId));
-            h9Var.r(user);
-            w9Var.e(user, h9Var);
+            g9Var.r(user);
+            v9Var.e(user, g9Var);
             textView.setText(UserObject.getUserName(user));
             return;
         }
         TLRPC.Chat chat = MessagesController.getInstance(i10).getChat(Long.valueOf(-clientUserId));
-        h9Var.q(chat);
-        w9Var.e(chat, h9Var);
+        g9Var.q(chat);
+        v9Var.e(chat, g9Var);
         textView.setText(chat == null ? "" : chat.title);
     }
 }

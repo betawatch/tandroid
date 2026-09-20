@@ -11,32 +11,32 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class fw0 implements View.OnClickListener {
-    public final /* synthetic */ gi0 a;
+    public final /* synthetic */ hi0 a;
     public final /* synthetic */ zn b;
-    public final /* synthetic */ org.telegram.ui.Components.wl0 c;
+    public final /* synthetic */ org.telegram.ui.Components.vl0 c;
     public final /* synthetic */ LinearLayout d;
-    public final /* synthetic */ org.telegram.ui.Components.w70 e;
-    public final /* synthetic */ org.telegram.ui.Components.w70 f;
+    public final /* synthetic */ org.telegram.ui.Components.v70 e;
+    public final /* synthetic */ org.telegram.ui.Components.v70 f;
     public final /* synthetic */ mw0 h;
 
-    public fw0(mw0 mw0Var, gi0 gi0Var, zn znVar, org.telegram.ui.Components.wl0 wl0Var, LinearLayout linearLayout, org.telegram.ui.Components.w70 w70Var, org.telegram.ui.Components.w70 w70Var2) {
+    public fw0(mw0 mw0Var, hi0 hi0Var, zn znVar, org.telegram.ui.Components.vl0 vl0Var, LinearLayout linearLayout, org.telegram.ui.Components.v70 v70Var, org.telegram.ui.Components.v70 v70Var2) {
         this.h = mw0Var;
-        this.a = gi0Var;
+        this.a = hi0Var;
         this.b = znVar;
-        this.c = wl0Var;
+        this.c = vl0Var;
         this.d = linearLayout;
-        this.e = w70Var;
-        this.f = w70Var2;
+        this.e = v70Var;
+        this.f = v70Var2;
     }
 
     @Override // android.view.View.OnClickListener
     public final void onClick(View view) {
-        gi0 gi0Var = this.a;
-        ArrayList arrayList = gi0Var.b;
-        ArrayList arrayList2 = gi0Var.c;
+        hi0 hi0Var = this.a;
+        ArrayList arrayList = hi0Var.b;
+        ArrayList arrayList2 = hi0Var.c;
         if (arrayList2.isEmpty()) {
             return;
         }
@@ -59,16 +59,16 @@ public final class fw0 implements View.OnClickListener {
             return;
         }
         if (SharedConfig.messageSeenHintCount > 0 && znVar.X0.getKeyboardHeight() < AndroidUtilities.dp(20.0f)) {
-            org.telegram.ui.Components.qc t10 = new org.telegram.ui.Components.xc(org.telegram.ui.Components.lb.a(mw0Var.getContext()), mw0Var.b).t(AndroidUtilities.replaceTags(LocaleController.getString(R.string.MessageSeenTooltipMessage)), null);
+            org.telegram.ui.Components.pc t10 = new org.telegram.ui.Components.xc(org.telegram.ui.Components.kb.a(mw0Var.getContext()), mw0Var.b).t(AndroidUtilities.replaceTags(LocaleController.getString(R.string.MessageSeenTooltipMessage)), null);
             znVar.n1 = t10;
             t10.j = 4000;
             t10.j();
             SharedConfig.updateMessageSeenHintCount(SharedConfig.messageSeenHintCount - 1);
         }
-        org.telegram.ui.Components.wl0 wl0Var = this.c;
-        wl0Var.requestLayout();
+        org.telegram.ui.Components.vl0 vl0Var = this.c;
+        vl0Var.requestLayout();
         this.d.requestLayout();
-        wl0Var.getAdapter().l();
+        vl0Var.getAdapter().l();
         this.e.K(this.f);
     }
 }

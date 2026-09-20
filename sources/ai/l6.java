@@ -4,12 +4,12 @@ import android.animation.ValueAnimator;
 import android.view.View;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.j70;
+import org.telegram.ui.Components.i70;
 import org.telegram.ui.Components.m81;
 import org.telegram.ui.Components.x81;
-import org.telegram.ui.zh1;
+import org.telegram.ui.bi1;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class l6 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -73,15 +73,15 @@ public final class l6 implements ValueAnimator.AnimatorUpdateListener {
                 pVar.invalidate();
                 break;
             case 6:
-                org.telegram.ui.Cells.t7 t7Var = (org.telegram.ui.Cells.t7) this.b;
-                t7Var.B0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                t7Var.invalidate();
+                org.telegram.ui.Cells.u7 u7Var = (org.telegram.ui.Cells.u7) this.b;
+                u7Var.B0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                u7Var.invalidate();
                 break;
             case 7:
-                ((org.telegram.ui.Components.w9) this.b).setRoundRadius(((Integer) valueAnimator.getAnimatedValue()).intValue());
+                ((org.telegram.ui.Components.v9) this.b).setRoundRadius(((Integer) valueAnimator.getAnimatedValue()).intValue());
                 break;
             case 8:
-                w0 w0Var = ((j70) this.b).e.d;
+                w0 w0Var = ((i70) this.b).e.d;
                 int i11 = w0Var.E1;
                 if (i11 != -1 && (view = w0Var.F1) != null) {
                     w0Var.j1(i11, view);
@@ -108,7 +108,7 @@ public final class l6 implements ValueAnimator.AnimatorUpdateListener {
                 u1Var.J = floatValue;
                 org.telegram.ui.Components.voip.t1 t1Var = u1Var.i0;
                 if (t1Var != null) {
-                    ((zh1) t1Var).b.d0.d(floatValue, u1Var.P);
+                    ((bi1) t1Var).b.d0.d(floatValue, u1Var.P);
                 }
                 u1Var.invalidate();
                 break;

@@ -26,7 +26,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class i8 extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public boolean E;
@@ -296,7 +296,7 @@ public final class i8 extends org.telegram.ui.ActionBar.n2 implements Notificati
                             i8 i8Var2 = this.b;
                             int i14 = i8Var2.l0;
                             if (i14 != 0) {
-                                org.telegram.ui.Components.e5.r(i8Var2, i14, i8Var2.getMessagesController().getUser(Long.valueOf(i8Var2.x)), null, false, new w7(i8Var2), null);
+                                org.telegram.ui.Components.d5.r(i8Var2, i14, i8Var2.getMessagesController().getUser(Long.valueOf(i8Var2.x)), null, false, new w7(i8Var2), null);
                                 break;
                             } else {
                                 if (i8Var2.O == null) {
@@ -340,7 +340,7 @@ public final class i8 extends org.telegram.ui.ActionBar.n2 implements Notificati
                             i8 i8Var2 = this.b;
                             int i142 = i8Var2.l0;
                             if (i142 != 0) {
-                                org.telegram.ui.Components.e5.r(i8Var2, i142, i8Var2.getMessagesController().getUser(Long.valueOf(i8Var2.x)), null, false, new w7(i8Var2), null);
+                                org.telegram.ui.Components.d5.r(i8Var2, i142, i8Var2.getMessagesController().getUser(Long.valueOf(i8Var2.x)), null, false, new w7(i8Var2), null);
                                 break;
                             } else {
                                 if (i8Var2.O == null) {
@@ -734,7 +734,7 @@ public final class i8 extends org.telegram.ui.ActionBar.n2 implements Notificati
             this.n.setVisibility(0);
             this.h.animate().setListener(null).cancel();
             this.n.animate().setListener(null).cancel();
-            this.h.animate().alpha(0.0f).translationY(AndroidUtilities.dp(20.0f)).setDuration(150L).setListener(new org.telegram.ui.Components.ca(this.h)).start();
+            this.h.animate().alpha(0.0f).translationY(AndroidUtilities.dp(20.0f)).setDuration(150L).setListener(new org.telegram.ui.Components.ba(this.h)).start();
             this.n.animate().alpha(abs == 0 ? 0.5f : 1.0f).translationY(0.0f).start();
             this.h.setEnabled(false);
             this.n.setEnabled(true);
@@ -748,7 +748,7 @@ public final class i8 extends org.telegram.ui.ActionBar.n2 implements Notificati
         this.h.animate().setListener(null).cancel();
         this.n.animate().setListener(null).cancel();
         this.h.animate().alpha(1.0f).translationY(0.0f).start();
-        this.n.animate().alpha(0.0f).translationY(-AndroidUtilities.dp(20.0f)).setDuration(150L).setListener(new org.telegram.ui.Components.ca(this.n)).start();
+        this.n.animate().alpha(0.0f).translationY(-AndroidUtilities.dp(20.0f)).setDuration(150L).setListener(new org.telegram.ui.Components.ba(this.n)).start();
         this.h.setEnabled(true);
         this.n.setEnabled(false);
     }

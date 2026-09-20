@@ -34,9 +34,9 @@ import v0.r;
 import w0.a;
 import w0.c;
 import w0.h;
-import w7.h8;
+import w7.i8;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class CredentialProviderPlayServicesImpl implements j {
     public static final g Companion = new g();
@@ -161,7 +161,7 @@ public final class CredentialProviderPlayServicesImpl implements j {
     }
 
     private final void runFallbackClearCredFlow(v0.a aVar, final CancellationSignal cancellationSignal, final Executor executor, final v0.i iVar) {
-        i7.b a2 = h8.a(this.context);
+        i7.b a2 = i8.a(this.context);
         int i10 = 0;
         a2.a.getSharedPreferences("com.google.android.gms.signin", 0).edit().clear().apply();
         Set set = m.a;

@@ -9,31 +9,31 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.rk;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.wl0;
+import org.telegram.ui.Components.pc;
+import org.telegram.ui.Components.vl0;
 import org.telegram.ui.uy;
 import w7.y5;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class g0 extends rg.k1 {
     public static g0 S0;
     public final vg.a Q0;
     public final String R0;
 
-    public g0(n2 n2Var, int i10, TLRPC.User user, rg.k kVar, String str, boolean z10, e6 e6Var) {
-        super(n2Var, i10, user, kVar, null, e6Var);
+    public g0(n2 n2Var, int i10, TLRPC.User user, rg.k kVar, String str, boolean z10, f6 f6Var) {
+        super(n2Var, i10, user, kVar, null, f6Var);
         this.R0 = str;
-        qc.a((FrameLayout) this.containerView, new d9(15));
+        pc.a((FrameLayout) this.containerView, new d9(15));
         if (!z10) {
-            wl0 wl0Var = this.d;
+            vl0 vl0Var = this.d;
             int i11 = this.backgroundPaddingLeft;
-            wl0Var.setPadding(i11, 0, i11, AndroidUtilities.dp(68.0f));
+            vl0Var.setPadding(i11, 0, i11, AndroidUtilities.dp(68.0f));
             vg.a aVar = new vg.a(getContext(), this.resourcesProvider);
             this.Q0 = aVar;
             aVar.setOnClickListener(new org.telegram.ui.Components.voip.o(this, 11));
@@ -63,7 +63,7 @@ public final class g0 extends rg.k1 {
 
     public static void e0(g0 g0Var) {
         String str = "https://t.me/giftcode/" + g0Var.R0;
-        uy uyVar = new uy(wh.d(3, "onlySelect", "dialogsType", true));
+        uy uyVar = new uy(rk.e(3, "onlySelect", "dialogsType", true));
         uyVar.C2 = new s5.e(5, g0Var, str);
         g0Var.n.presentFragment(uyVar);
         g0Var.dismiss();

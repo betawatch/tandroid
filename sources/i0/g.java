@@ -17,12 +17,12 @@ import java.nio.ByteBuffer;
 import java.nio.MappedByteBuffer;
 import java.nio.channels.FileChannel;
 import java.util.List;
-import v7.h8;
 import v7.i8;
+import v7.j8;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
-public final class g extends h8 {
+public final class g extends i8 {
     public static final Class a;
     public static final Constructor b;
     public static final Method c;
@@ -70,7 +70,7 @@ public final class g extends h8 {
         }
     }
 
-    @Override // v7.h8
+    @Override // v7.i8
     public final Typeface a(Context context, h0.e eVar, Resources resources, int i10) {
         Object obj;
         int i11;
@@ -87,10 +87,10 @@ public final class g extends h8 {
             while (i11 < length) {
                 h0.f fVar = fVarArr[i11];
                 int i12 = fVar.f;
-                File d10 = i8.d(context);
+                File d10 = j8.d(context);
                 if (d10 != null) {
                     try {
-                        if (i8.b(d10, resources, i12)) {
+                        if (j8.b(d10, resources, i12)) {
                             try {
                                 fileInputStream = new FileInputStream(d10);
                             } catch (IOException unused2) {
@@ -117,8 +117,8 @@ public final class g extends h8 {
         return null;
     }
 
-    @Override // v7.h8
-    public final Typeface b(Context context, o0.i[] iVarArr, int i10) {
+    @Override // v7.i8
+    public final Typeface b(Context context, o0.h[] hVarArr, int i10) {
         Object obj;
         try {
             obj = b.newInstance(null);
@@ -128,17 +128,17 @@ public final class g extends h8 {
         if (obj != null) {
             int i11 = 0;
             m mVar = new m(0);
-            int length = iVarArr.length;
+            int length = hVarArr.length;
             while (true) {
                 if (i11 < length) {
-                    o0.i iVar = iVarArr[i11];
-                    Uri uri = iVar.a;
+                    o0.h hVar = hVarArr[i11];
+                    Uri uri = hVar.a;
                     ByteBuffer byteBuffer = (ByteBuffer) mVar.get(uri);
                     if (byteBuffer == null) {
-                        byteBuffer = i8.e(context, uri);
+                        byteBuffer = j8.e(context, uri);
                         mVar.put(uri, byteBuffer);
                     }
-                    if (byteBuffer == null || !g(obj, byteBuffer, iVar.b, iVar.c, iVar.d)) {
+                    if (byteBuffer == null || !g(obj, byteBuffer, hVar.b, hVar.c, hVar.d)) {
                         break;
                     }
                     i11++;

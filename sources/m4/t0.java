@@ -10,7 +10,7 @@ import org.telegram.ui.rc;
 import org.telegram.ui.sc;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final /* synthetic */ class t0 implements e2.h {
     public final /* synthetic */ int a;
@@ -69,7 +69,7 @@ public final /* synthetic */ class t0 implements e2.h {
                 w81Var.v.getClass();
                 int S = RecyclerView.S(view3);
                 if (view3 instanceof u81) {
-                    ((u81) view3).setReordering(this.b && (v81Var = w81Var.y) != null && ((l.d) v81Var).G(S));
+                    ((u81) view3).setReordering(this.b && (v81Var = w81Var.y) != null && ((l.d) v81Var).H(S));
                     break;
                 }
                 break;

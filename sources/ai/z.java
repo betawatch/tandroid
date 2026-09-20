@@ -20,22 +20,23 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.Crop.CropAreaView;
+import org.telegram.ui.Components.al0;
 import org.telegram.ui.Components.bf;
-import org.telegram.ui.Components.bl0;
-import org.telegram.ui.Components.d60;
+import org.telegram.ui.Components.c60;
 import org.telegram.ui.Components.e20;
-import org.telegram.ui.Components.j70;
+import org.telegram.ui.Components.i70;
+import org.telegram.ui.Components.kd;
 import org.telegram.ui.Components.kz;
 import org.telegram.ui.Components.m30;
 import org.telegram.ui.Components.og;
-import org.telegram.ui.Components.rd;
 import org.telegram.ui.Components.ru;
+import org.telegram.ui.Components.sd;
 import org.telegram.ui.Components.t00;
 import org.telegram.ui.Components.vi;
+import org.telegram.ui.Components.vk0;
+import org.telegram.ui.Components.vl0;
 import org.telegram.ui.Components.wk0;
-import org.telegram.ui.Components.wl0;
-import org.telegram.ui.Components.xk0;
-import org.telegram.ui.Components.zk0;
+import org.telegram.ui.Components.yk0;
 import org.telegram.ui.Stories.ProfileStoriesView;
 import org.telegram.ui.cj;
 import org.telegram.ui.fm;
@@ -43,7 +44,7 @@ import org.telegram.ui.sn;
 import org.telegram.ui.xp;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class z extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -169,7 +170,7 @@ public final class z extends AnimatorListenerAdapter {
                 return;
             case 4:
                 ci.p pVar = (ci.p) obj2;
-                ((qg.b2) obj).setDraw(true);
+                ((qg.c2) obj).setDraw(true);
                 if (pVar.getParent() instanceof ViewGroup) {
                     ((ViewGroup) pVar.getParent()).removeView(pVar);
                     return;
@@ -298,7 +299,7 @@ public final class z extends AnimatorListenerAdapter {
                 u1Var.getTransitionParams().x0 = false;
                 org.telegram.ui.s0 s0Var = new org.telegram.ui.s0("alpha", 2);
                 AnimatorSet animatorSet4 = new AnimatorSet();
-                animatorSet4.playTogether(ObjectAnimator.ofFloat((d60) obj, (Property<d60, Float>) View.ALPHA, 0.0f), ObjectAnimator.ofFloat(u1Var, s0Var, 1.0f));
+                animatorSet4.playTogether(ObjectAnimator.ofFloat((c60) obj, (Property<c60, Float>) View.ALPHA, 0.0f), ObjectAnimator.ofFloat(u1Var, s0Var, 1.0f));
                 animatorSet4.setDuration(100L);
                 animatorSet4.setInterpolator(new DecelerateInterpolator());
                 animatorSet4.addListener(new org.telegram.ui.t4(this, 21));
@@ -321,7 +322,7 @@ public final class z extends AnimatorListenerAdapter {
                 ((og) obj2).run();
                 return;
             case 17:
-                ((org.telegram.ui.Components.db) obj2).run();
+                ((org.telegram.ui.Components.cb) obj2).run();
                 return;
             case 18:
                 ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) obj2;
@@ -349,15 +350,15 @@ public final class z extends AnimatorListenerAdapter {
                 ChatActivityEnterView chatActivityEnterView2 = (ChatActivityEnterView) obj2;
                 chatActivityEnterView2.V0 = null;
                 chatActivityEnterView2.K3.unlock();
-                ((rd) obj).run();
+                ((sd) obj).run();
                 return;
             case 20:
-                ((org.telegram.ui.Components.x2) obj).run();
+                ((kd) obj).run();
                 ((ChatActivityEnterView) obj2).K3.unlock();
                 return;
             case 21:
                 ((ChatActivityEnterView) obj2).A3 = null;
-                ((rd) obj).run();
+                ((sd) obj).run();
                 return;
             case 22:
                 vi viVar = (vi) obj2;
@@ -380,16 +381,16 @@ public final class z extends AnimatorListenerAdapter {
                 ((Runnable) obj).run();
                 return;
             case 24:
-                wl0 wl0Var = (wl0) obj;
+                vl0 vl0Var = (vl0) obj;
                 kz kzVar = (kz) obj2;
                 if (animator.equals(kzVar.M0)) {
-                    wl0Var.setTranslationY(0.0f);
-                    if (wl0Var == kzVar.D0) {
-                        wl0Var.setPadding(0, 0, 0, kzVar.p2);
-                    } else if (wl0Var == kzVar.P) {
-                        wl0Var.setPadding(AndroidUtilities.dp(5.0f), 0, AndroidUtilities.dp(5.0f), kzVar.p2);
-                    } else if (wl0Var == kzVar.h0) {
-                        wl0Var.setPadding(0, kzVar.b1, 0, kzVar.p2);
+                    vl0Var.setTranslationY(0.0f);
+                    if (vl0Var == kzVar.D0) {
+                        vl0Var.setPadding(0, 0, 0, kzVar.p2);
+                    } else if (vl0Var == kzVar.P) {
+                        vl0Var.setPadding(AndroidUtilities.dp(5.0f), 0, AndroidUtilities.dp(5.0f), kzVar.p2);
+                    } else if (vl0Var == kzVar.h0) {
+                        vl0Var.setPadding(0, kzVar.b1, 0, kzVar.p2);
                     }
                     kzVar.M0 = null;
                     return;
@@ -413,53 +414,53 @@ public final class z extends AnimatorListenerAdapter {
                 e20Var2.b = false;
                 return;
             case 27:
-                j70 j70Var = (j70) obj2;
-                j70Var.removeView((m30) obj);
-                j70Var.c = null;
-                j70Var.e.d0 = null;
-                j70Var.a = false;
+                i70 i70Var = (i70) obj2;
+                i70Var.removeView((m30) obj);
+                i70Var.c = null;
+                i70Var.e.d0 = null;
+                i70Var.a = false;
                 return;
             case 28:
-                wk0 wk0Var = (wk0) obj2;
-                zk0 zk0Var = wk0Var.e;
-                if (((ValueAnimator) zk0Var.g) == null) {
+                vk0 vk0Var = (vk0) obj2;
+                yk0 yk0Var = vk0Var.e;
+                if (((ValueAnimator) yk0Var.g) == null) {
                     return;
                 }
-                ((wl0) zk0Var.e).X1 = false;
-                ArrayList arrayList2 = wk0Var.b;
+                ((vl0) yk0Var.e).X1 = false;
+                ArrayList arrayList2 = vk0Var.b;
                 int size = arrayList2.size();
                 int i14 = 0;
                 while (i14 < size) {
                     Object obj3 = arrayList2.get(i14);
                     i14++;
                     View view4 = (View) obj3;
-                    if (view4 instanceof org.telegram.ui.Cells.o4) {
-                        ((org.telegram.ui.Cells.o4) view4).c(false, true);
+                    if (view4 instanceof org.telegram.ui.Cells.p4) {
+                        ((org.telegram.ui.Cells.p4) view4).c(false, true);
                     }
                     view4.setTranslationY(0.0f);
-                    ((s4.c0) zk0Var.f).getClass();
+                    ((s4.c0) yk0Var.f).getClass();
                     s4.o0.x0(view4);
-                    ((wl0) zk0Var.e).removeView(view4);
-                    w7.z5 z5Var = (w7.z5) zk0Var.i;
+                    ((vl0) yk0Var.e).removeView(view4);
+                    w7.z5 z5Var = (w7.z5) yk0Var.i;
                     if (z5Var != null) {
                         z5Var.d(view4);
                     }
                 }
-                ((wl0) zk0Var.e).setScrollEnabled(true);
-                ((wl0) zk0Var.e).setVerticalScrollBarEnabled(true);
+                ((vl0) yk0Var.e).setScrollEnabled(true);
+                ((vl0) yk0Var.e).setVerticalScrollBarEnabled(true);
                 if (BuildVars.DEBUG_PRIVATE_VERSION) {
-                    if (((wl0) zk0Var.e).e.C() != ((wl0) zk0Var.e).getChildCount()) {
+                    if (((vl0) yk0Var.e).e.C() != ((vl0) yk0Var.e).getChildCount()) {
                         throw new RuntimeException("views count in child helper must be quals views count in recycler view");
                     }
-                    if (((ArrayList) ((wl0) zk0Var.e).e.d).size() != 0) {
+                    if (((ArrayList) ((vl0) yk0Var.e).e.d).size() != 0) {
                         throw new RuntimeException("hidden child count must be 0");
                     }
                 }
-                int childCount = ((wl0) zk0Var.e).getChildCount();
+                int childCount = ((vl0) yk0Var.e).getChildCount();
                 for (int i15 = 0; i15 < childCount; i15++) {
-                    View childAt = ((wl0) zk0Var.e).getChildAt(i15);
-                    if (childAt instanceof org.telegram.ui.Cells.o4) {
-                        ((org.telegram.ui.Cells.o4) childAt).c(false, false);
+                    View childAt = ((vl0) yk0Var.e).getChildAt(i15);
+                    if (childAt instanceof org.telegram.ui.Cells.p4) {
+                        ((org.telegram.ui.Cells.p4) childAt).c(false, false);
                     }
                     childAt.setTranslationY(0.0f);
                 }
@@ -470,29 +471,29 @@ public final class z extends AnimatorListenerAdapter {
                     Object obj4 = arrayList3.get(i16);
                     i16++;
                     View view5 = (View) obj4;
-                    if (view5 instanceof org.telegram.ui.Cells.o4) {
-                        ((org.telegram.ui.Cells.o4) view5).c(false, false);
+                    if (view5 instanceof org.telegram.ui.Cells.p4) {
+                        ((org.telegram.ui.Cells.p4) view5).c(false, false);
                     }
                     view5.setTranslationY(0.0f);
                 }
-                xk0 xk0Var = wk0Var.d;
-                if (xk0Var != null) {
-                    xk0Var.E();
+                wk0 wk0Var = vk0Var.d;
+                if (wk0Var != null) {
+                    wk0Var.E();
                 }
-                w7.z5 z5Var2 = (w7.z5) zk0Var.i;
+                w7.z5 z5Var2 = (w7.z5) yk0Var.i;
                 if (z5Var2 != null) {
                     z5Var2.a();
                 }
-                ((SparseArray) zk0Var.j).clear();
-                zk0Var.g = null;
+                ((SparseArray) yk0Var.j).clear();
+                yk0Var.g = null;
                 return;
             default:
                 t00 t00Var = (t00) obj;
                 t00Var.setAlpha(1.0f);
                 s4.o0.x0(t00Var);
-                bl0 bl0Var = (bl0) obj2;
-                bl0Var.c.remove(t00Var);
-                bl0Var.a.removeView(t00Var);
+                al0 al0Var = (al0) obj2;
+                al0Var.c.remove(t00Var);
+                al0Var.a.removeView(t00Var);
                 return;
         }
     }
@@ -504,10 +505,10 @@ public final class z extends AnimatorListenerAdapter {
                 ((org.telegram.ui.ActionBar.k) this.c).F.setVisibility(0);
                 break;
             case 16:
-                ((org.telegram.ui.Components.fb) this.b).run();
+                ((org.telegram.ui.Components.eb) this.b).run();
                 break;
             case 17:
-                ((org.telegram.ui.Components.fb) this.b).run();
+                ((org.telegram.ui.Components.eb) this.b).run();
                 break;
             default:
                 super.onAnimationStart(animator);
@@ -521,9 +522,9 @@ public final class z extends AnimatorListenerAdapter {
         this.c = runnable2;
     }
 
-    public z(bl0 bl0Var, t00 t00Var, s4.o0 o0Var) {
+    public z(al0 al0Var, t00 t00Var, s4.o0 o0Var) {
         this.a = 29;
-        this.c = bl0Var;
+        this.c = al0Var;
         this.b = t00Var;
     }
 }

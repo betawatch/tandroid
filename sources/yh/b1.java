@@ -5,18 +5,18 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.rk;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.ij0;
-import org.telegram.ui.Components.qc;
+import org.telegram.ui.Components.hj0;
+import org.telegram.ui.Components.pc;
 import org.telegram.ui.Components.r00;
 import org.telegram.ui.Components.r50;
-import org.telegram.ui.Components.w9;
+import org.telegram.ui.Components.v9;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.uy;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b1 implements Runnable {
     public final /* synthetic */ int a;
@@ -87,7 +87,7 @@ public final /* synthetic */ class b1 implements Runnable {
                 org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
                 TL_stars.TL_starGiftUnique K1 = y3Var.K1();
                 if (U != null && K1 != null) {
-                    uy uyVar = new uy(wh.d(4, "onlySelect", "dialogsType", true));
+                    uy uyVar = new uy(rk.e(4, "onlySelect", "dialogsType", true));
                     uyVar.C2 = new r50(y3Var, K1, uyVar, 11);
                     U.presentFragment(uyVar);
                     break;
@@ -114,11 +114,11 @@ public final /* synthetic */ class b1 implements Runnable {
                     StringBuilder sb2 = new StringBuilder();
                     sb2.append(y3Var.B1().title);
                     sb2.append(" #");
-                    str = org.telegram.messenger.q.i(y3Var.B1().num, ',', sb2);
+                    str = hg.k0.j(y3Var.B1().num, ',', sb2);
                 } else {
                     str = "";
                 }
-                qc M = y3Var.getBulletinFactory().M(LocaleController.getString(R.string.Gift2UpgradedTitle), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2UpgradedText, str)), R.raw.gift_upgrade);
+                pc M = y3Var.getBulletinFactory().M(LocaleController.getString(R.string.Gift2UpgradedTitle), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2UpgradedText, str)), R.raw.gift_upgrade);
                 M.j = 5000;
                 M.t = true;
                 M.j();
@@ -139,15 +139,15 @@ public final /* synthetic */ class b1 implements Runnable {
                 ci.d dVar = y3Var.j0;
                 g3 g3Var = y3Var.M0.h;
                 ImageReceiver imageReceiver = (g3Var == null || (f3Var = g3Var.c) == null) ? null : ((i3) f3Var).d;
-                w9 w9Var = v3Var.d[0];
-                if (imageReceiver != null && w9Var != null && w9Var.getImageReceiver() != null) {
-                    ij0 lottieAnimation = imageReceiver.getLottieAnimation();
-                    ij0 lottieAnimation2 = w9Var.getImageReceiver().getLottieAnimation();
+                v9 v9Var = v3Var.d[0];
+                if (imageReceiver != null && v9Var != null && v9Var.getImageReceiver() != null) {
+                    hj0 lottieAnimation = imageReceiver.getLottieAnimation();
+                    hj0 lottieAnimation2 = v9Var.getImageReceiver().getLottieAnimation();
                     if (lottieAnimation2 != null && lottieAnimation != null) {
                         lottieAnimation2.T(lottieAnimation.t(), false);
                     } else if (lottieAnimation2 == null && lottieAnimation != null) {
                         imageReceiver.clearImage();
-                        w9Var.setImageDrawable(lottieAnimation);
+                        v9Var.setImageDrawable(lottieAnimation);
                     }
                 }
                 v3Var.b.setAlpha(1.0f);
@@ -160,7 +160,7 @@ public final /* synthetic */ class b1 implements Runnable {
                     Object obj = y3Var.D0.get(b10);
                     if ((obj instanceof TL_stars.SavedStarGift) && (starGift = ((TL_stars.SavedStarGift) obj).gift) != null && (document = starGift.getDocument()) != null) {
                         spannableStringBuilder.append((CharSequence) " e");
-                        spannableStringBuilder.setSpan(new org.telegram.ui.Components.z5(document, dVar.getTextPaint().getFontMetricsInt()), spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
+                        spannableStringBuilder.setSpan(new org.telegram.ui.Components.y5(document, dVar.getTextPaint().getFontMetricsInt()), spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
                     }
                     dVar.g(spannableStringBuilder, true, true);
                     dVar.f(null, true);

@@ -17,7 +17,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class b40 extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public float E;
@@ -37,9 +37,9 @@ public final class b40 extends org.telegram.ui.ActionBar.n2 implements Notificat
     public ValueAnimator x;
     public boolean y;
 
-    public b40(String str, org.telegram.ui.ActionBar.e6 e6Var) {
+    public b40(String str, org.telegram.ui.ActionBar.f6 f6Var) {
         super(null);
-        setResourceProvider(e6Var);
+        setResourceProvider(f6Var);
         String str2 = "";
         String trim = (str == null ? "" : str).trim();
         if (!trim.startsWith("#") && !trim.startsWith("$")) {
@@ -159,7 +159,7 @@ public final class b40 extends org.telegram.ui.ActionBar.n2 implements Notificat
         hkVar.h = false;
         this.f = hkVar;
         this.e.addView(hkVar, w7.y5.e(-1, -1, 119));
-        y30 y30Var = new y30(this, context, new cv0(null), this, new x30(), this.resourceProvider);
+        y30 y30Var = new y30(this, context, new bv0(null), this, new x30(), this.resourceProvider);
         this.n = y30Var;
         if (y30Var.getSearchOptionsItem() != null) {
             this.n.getSearchOptionsItem().setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.j6.v0(i11, this.resourceProvider), PorterDuff.Mode.SRC_IN));
@@ -173,12 +173,12 @@ public final class b40 extends org.telegram.ui.ActionBar.n2 implements Notificat
         y30 y30Var2 = this.n;
         ai.v8 v8Var = this.d;
         y30Var2.T1 = v8Var;
-        st0 st0Var = y30Var2.c0;
-        st0Var.s = v8Var;
-        st0Var.l();
-        hv0 hv0Var = y30Var2.d0;
-        hv0Var.s = v8Var;
-        hv0Var.l();
+        rt0 rt0Var = y30Var2.c0;
+        rt0Var.s = v8Var;
+        rt0Var.l();
+        gv0 gv0Var = y30Var2.d0;
+        gv0Var.s = v8Var;
+        gv0Var.l();
         FrameLayout frameLayout2 = new FrameLayout(context);
         this.h = frameLayout2;
         frameLayout2.setBackgroundColor(getThemedColor(i10));

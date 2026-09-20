@@ -1,109 +1,77 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
+import android.graphics.Canvas;
+import android.view.MotionEvent;
 import android.view.View;
-import android.widget.LinearLayout;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class o21 extends LinearLayout implements org.telegram.ui.ActionBar.z5 {
-    public final org.telegram.ui.ActionBar.e6 a;
-    public final w9 b;
-    public final l90 c;
-    public final l90 d;
-    public int e;
-    public int f;
+public abstract class o21 extends View {
+    public final p21 a;
+    public Utilities.Callback b;
+    public final org.telegram.ui.ActionBar.f6 c;
+    public int d;
 
-    public o21(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
+    public o21(Context context, int i10, org.telegram.ui.ActionBar.f6 f6Var) {
         super(context);
-        this.e = 90;
-        this.a = e6Var;
-        setOrientation(1);
-        w9 w9Var = new w9(context);
-        this.b = w9Var;
-        w9Var.getImageReceiver().setAutoRepeatCount(1);
-        w9Var.getImageReceiver().setAutoRepeat(1);
-        w9Var.setOnClickListener(new g80(this, 22));
-        addView(w9Var, w7.y5.t(90, 90, 17, 0, 9, 0, 9));
-        l90 l90Var = new l90(context, null);
-        this.c = l90Var;
-        l90Var.setTextSize(1, 20.0f);
-        l90Var.setGravity(17);
-        l90Var.setTypeface(AndroidUtilities.bold());
-        l90Var.setTextAlignment(4);
-        addView(l90Var, w7.y5.t(-1, -2, 17, 48, 0, 48, 10));
-        l90 l90Var2 = new l90(context, null);
-        this.d = l90Var2;
-        l90Var2.setTextSize(1, 14.0f);
-        l90Var2.setGravity(17);
-        l90Var2.setTextAlignment(4);
-        addView(l90Var2, w7.y5.t(-1, -2, 17, 48, 0, 48, 17));
-        e();
+        this.c = f6Var;
+        p21 p21Var = new p21(i10, this, f6Var, false);
+        this.a = p21Var;
+        p21Var.r = new wq0(this, 18);
     }
 
-    @Override // org.telegram.ui.ActionBar.z5
-    public final void e() {
-        int i10 = org.telegram.ui.ActionBar.j6.G6;
-        org.telegram.ui.ActionBar.e6 e6Var = this.a;
-        int v02 = org.telegram.ui.ActionBar.j6.v0(i10, e6Var);
-        l90 l90Var = this.c;
-        l90Var.setTextColor(v02);
-        int i11 = org.telegram.ui.ActionBar.j6.gc;
-        l90Var.setLinkTextColor(org.telegram.ui.ActionBar.j6.v0(i11, e6Var));
-        if (l90Var.getVisibility() != 0) {
-            i10 = org.telegram.ui.ActionBar.j6.B6;
+    @Override // android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        org.telegram.ui.ActionBar.f6 f6Var = this.c;
+        if (f6Var != null) {
+            f6Var.m(0.0f, 0.0f, getMeasuredWidth(), this.d);
+        } else {
+            org.telegram.ui.ActionBar.j6.q(0.0f, 0.0f, getMeasuredWidth(), this.d);
         }
-        int v03 = org.telegram.ui.ActionBar.j6.v0(i10, e6Var);
-        l90 l90Var2 = this.d;
-        l90Var2.setTextColor(v03);
-        l90Var2.setLinkTextColor(org.telegram.ui.ActionBar.j6.v0(i11, e6Var));
-        int i12 = this.e;
-        this.b.setLayoutParams(w7.y5.t(i12, i12, 17, 0, l90Var.getVisibility() == 0 ? 0 : 9, 0, 9));
+        this.a.c(canvas, getWidth(), 0.0f, 0.0f, 0.75f, 1.0f, true);
     }
 
-    public /* bridge */ /* synthetic */ int[] getColorKeys() {
-        return null;
+    @Override // android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.a.a();
     }
 
-    @Override // android.widget.LinearLayout, android.view.View
+    @Override // android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.a.b();
+    }
+
+    @Override // android.view.View
     public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(33.0f), TLObject.FLAG_30));
     }
 
-    public void setEmoji(int i10) {
-        if (this.f != i10) {
-            this.f = i10;
-            ij0 ij0Var = new ij0(i10, AndroidUtilities.dp(90.0f), AndroidUtilities.dp(90.0f));
-            w9 w9Var = this.b;
-            w9Var.setImageDrawable(ij0Var);
-            w9Var.getImageReceiver().setAutoRepeat(2);
+    @Override // android.view.View
+    public boolean onTouchEvent(MotionEvent motionEvent) {
+        return this.a.d(motionEvent, false) || super.onTouchEvent(motionEvent);
+    }
+
+    public void set(MessageObject messageObject) {
+        p21 p21Var = this.a;
+        p21Var.f(messageObject);
+        if (isAttachedToWindow()) {
+            p21Var.a();
         }
     }
 
-    public void setEmojiSize(int i10) {
-        if (this.e != i10) {
-            this.e = i10;
-            e();
-        }
+    public void setBackgroundHeight(int i10) {
+        this.d = i10;
     }
 
-    public void setEmojiStatic(int i10) {
-        if (this.f != i10) {
-            w9 w9Var = this.b;
-            w9Var.b();
-            this.f = i10;
-            w9Var.setImageResource(i10);
-        }
-    }
-
-    public void setText(CharSequence charSequence) {
-        this.c.setVisibility(8);
-        l90 l90Var = this.d;
-        l90Var.setText(charSequence);
-        l90Var.setMaxWidth(ci.f4.a(charSequence, l90Var.getPaint()));
-        l90Var.requestLayout();
-        e();
+    public void setOnTopicClickListener(Utilities.Callback<Long> callback) {
+        this.b = callback;
     }
 }

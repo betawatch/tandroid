@@ -3,13 +3,13 @@ package org.telegram.ui;
 import android.content.Context;
 import android.view.View;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public abstract class hz extends org.telegram.ui.ActionBar.n2 {
     @Override // org.telegram.ui.ActionBar.n2
     public final View createView(Context context) {
-        org.telegram.ui.Components.bw0 bw0Var = new org.telegram.ui.Components.bw0(context, null);
-        this.fragmentView = bw0Var;
-        return bw0Var;
+        org.telegram.ui.Components.aw0 aw0Var = new org.telegram.ui.Components.aw0(context, null);
+        this.fragmentView = aw0Var;
+        return aw0Var;
     }
 }

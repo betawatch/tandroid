@@ -12,13 +12,13 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.lb;
+import org.telegram.ui.Components.kb;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.b41;
+import org.telegram.ui.c41;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e2 implements Runnable {
     public final /* synthetic */ int a;
@@ -147,10 +147,10 @@ public final /* synthetic */ class e2 implements Runnable {
             case 14:
                 int i13 = k3Var.G;
                 Context context = k3Var.getContext();
-                xc xcVar = new xc(lb.a(k3Var.getContext()), k3Var.E);
+                xc xcVar = new xc(kb.a(k3Var.getContext()), k3Var.E);
                 long j3 = k3Var.H;
-                int i14 = b41.v;
-                b41.K(i13, context, j3, false, false, new ArrayList(), xcVar, null, new byte[0], null, null);
+                int i14 = c41.v;
+                c41.K(i13, context, j3, false, false, new ArrayList(), xcVar, null, new byte[0], null, null);
                 break;
             case 15:
                 k3.j(k3Var.G, k3Var.H, new e2(k3Var, 16));

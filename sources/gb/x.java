@@ -10,9 +10,9 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
-import v7.m8;
+import v7.n8;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class x implements db.v {
     public final of.b a;
@@ -214,11 +214,11 @@ public final class x implements db.v {
         if (!Object.class.isAssignableFrom(cls)) {
             return null;
         }
-        m8 m8Var = ib.c.a;
+        n8 n8Var = ib.c.a;
         if (!Modifier.isStatic(cls.getModifiers()) && (cls.isAnonymousClass() || cls.isLocalClass())) {
             return new db.d(2);
         }
         fb.d.f(this.d);
-        return ib.c.a.d(cls) ? new w(cls, b(gVar, aVar, cls, true)) : new u(this.a.K(aVar), b(gVar, aVar, cls, false));
+        return ib.c.a.d(cls) ? new w(cls, b(gVar, aVar, cls, true)) : new u(this.a.Q(aVar), b(gVar, aVar, cls, false));
     }
 }

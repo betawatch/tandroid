@@ -11,22 +11,22 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class pk extends ni {
     public final kz n;
-    public final wl0 r;
+    public final vl0 r;
     public final s4.c0 s;
     public final HorizontalScrollView v;
     public final boolean w;
 
-    public pk(vi viVar, Context context, org.telegram.ui.ActionBar.e6 e6Var, boolean z10) {
-        super(context, e6Var, viVar);
+    public pk(vi viVar, Context context, org.telegram.ui.ActionBar.f6 f6Var, boolean z10) {
+        super(context, f6Var, viVar);
         this.w = z10;
         this.f = true;
         org.telegram.ui.ActionBar.n2 n2Var = viVar.f0;
         boolean z11 = !z10;
-        kz kzVar = new kz(n2Var, z11, z10, false, getContext(), true, null, null, false, e6Var, false, true);
+        kz kzVar = new kz(n2Var, z11, z10, false, getContext(), true, null, null, false, f6Var, false, true);
         this.n = kzVar;
         kzVar.w0 = false;
         kzVar.I(z11, z10, false, false);
@@ -44,7 +44,7 @@ public final class pk extends ni {
         addView(kzVar, w7.y5.c(-1.0f, -1));
         HorizontalScrollView y3 = kzVar.y(z11 ? 1 : 0);
         this.v = y3;
-        wl0 x10 = kzVar.x(z11 ? 1 : 0);
+        vl0 x10 = kzVar.x(z11 ? 1 : 0);
         this.r = x10;
         x10.j(new ai.r(this, 21));
         this.s = (s4.c0) x10.getLayoutManager();
@@ -69,19 +69,19 @@ public final class pk extends ni {
 
     @Override // org.telegram.ui.Components.ni
     public int getCurrentItemTop() {
-        wl0 wl0Var = this.r;
-        if (wl0Var.getChildCount() <= 0) {
-            wl0Var.setTopGlowOffset(wl0Var.getPaddingTop());
+        vl0 vl0Var = this.r;
+        if (vl0Var.getChildCount() <= 0) {
+            vl0Var.setTopGlowOffset(vl0Var.getPaddingTop());
             return ConnectionsManager.DEFAULT_DATACENTER_ID;
         }
-        View childAt = wl0Var.getChildAt(0);
-        gl0 gl0Var = (gl0) wl0Var.H(childAt);
+        View childAt = vl0Var.getChildAt(0);
+        fl0 fl0Var = (fl0) vl0Var.H(childAt);
         int top = childAt.getTop() - AndroidUtilities.dp(36.0f);
         int dp = AndroidUtilities.dp(7.0f);
-        if (top < AndroidUtilities.dp(7.0f) || gl0Var == null || gl0Var.b() != 0) {
+        if (top < AndroidUtilities.dp(7.0f) || fl0Var == null || fl0Var.b() != 0) {
             top = dp;
         }
-        wl0Var.setTopGlowOffset(top);
+        vl0Var.setTopGlowOffset(top);
         return top;
     }
 
@@ -128,7 +128,7 @@ public final class pk extends ni {
         int i12;
         int dp;
         int dp2;
-        wl0 wl0Var;
+        vl0 vl0Var;
         ((FrameLayout.LayoutParams) getLayoutParams()).topMargin = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
         if (!AndroidUtilities.isTablet()) {
             Point point = AndroidUtilities.displaySize;
@@ -139,9 +139,9 @@ public final class pk extends ni {
                     dp = 0;
                 }
                 dp2 = AndroidUtilities.dp(36.0f) + dp;
-                wl0Var = this.r;
-                if (wl0Var.getPaddingTop() == dp2) {
-                    wl0Var.setPadding(AndroidUtilities.dp(6.0f), dp2, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(48.0f));
+                vl0Var = this.r;
+                if (vl0Var.getPaddingTop() == dp2) {
+                    vl0Var.setPadding(AndroidUtilities.dp(6.0f), dp2, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(48.0f));
                     return;
                 }
                 return;
@@ -152,8 +152,8 @@ public final class pk extends ni {
         if (dp < 0) {
         }
         dp2 = AndroidUtilities.dp(36.0f) + dp;
-        wl0Var = this.r;
-        if (wl0Var.getPaddingTop() == dp2) {
+        vl0Var = this.r;
+        if (vl0Var.getPaddingTop() == dp2) {
         }
     }
 }

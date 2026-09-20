@@ -27,7 +27,7 @@ import org.telegram.ui.m6;
 import org.telegram.ui.mu0;
 import org.telegram.ui.r5;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class h1 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -93,7 +93,7 @@ public final /* synthetic */ class h1 implements Utilities.Callback2 {
                     break;
                 } else if (arrayList != null) {
                     if (arrayList.isEmpty()) {
-                        org.telegram.messenger.q.q(R.string.CommunityNoChatsToAdd, xc.a0(n2Var), R.raw.info, 36);
+                        org.telegram.messenger.l0.o(R.string.CommunityNoChatsToAdd, xc.a0(n2Var), R.raw.info, 36);
                         break;
                     } else if (arrayList.isEmpty()) {
                         xc.a0(n2Var).Q(R.raw.info, 36, "").j();
@@ -141,7 +141,7 @@ public final /* synthetic */ class h1 implements Utilities.Callback2 {
                         MessagesController.getInstance(i11).generateJoinMessage(chat2.id, true);
                     }
                     AndroidUtilities.runOnUIThread(new mu0(c1Var, 5));
-                    AndroidUtilities.runOnUIThread(new n8(i11, chat2, 17), 1000L);
+                    AndroidUtilities.runOnUIThread(new n8(i11, chat2, 15), 1000L);
                     MessagesStorage messagesStorage = MessagesStorage.getInstance(i11);
                     long j10 = chat2.id;
                     messagesStorage.updateDialogsWithDeletedMessages(-j10, j10, new ArrayList<>(), null);

@@ -12,9 +12,9 @@ import com.google.android.gms.tasks.TaskCompletionSource;
 import hg.k0;
 import j7.c;
 import n7.j;
-import v7.g5;
+import v7.h5;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class b extends Binder implements IInterface {
     public final /* synthetic */ int a;
@@ -75,7 +75,7 @@ public final class b extends Binder implements IInterface {
                 if (dataAvail > 0) {
                     throw new BadParcelableException(k0.h(dataAvail, "Parcel data not fully consumed, unread size: "));
                 }
-                g5.a(createFromParcel, pendingIntent, (TaskCompletionSource) this.b);
+                h5.a(createFromParcel, pendingIntent, (TaskCompletionSource) this.b);
                 return true;
             case 1:
                 if (i10 > 16777215) {
@@ -93,7 +93,7 @@ public final class b extends Binder implements IInterface {
                 if (dataAvail2 > 0) {
                     throw new BadParcelableException(k0.h(dataAvail2, "Parcel data not fully consumed, unread size: "));
                 }
-                g5.a(createFromParcel2, null, (TaskCompletionSource) this.b);
+                h5.a(createFromParcel2, null, (TaskCompletionSource) this.b);
                 return true;
             default:
                 if (i10 > 16777215) {

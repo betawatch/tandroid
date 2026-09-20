@@ -11,10 +11,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.messenger.FileLog;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Cells.q9;
-import org.telegram.ui.Components.l61;
+import org.telegram.ui.Cells.r9;
+import org.telegram.ui.Components.k61;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class x5 implements h1 {
     public final /* synthetic */ d6 a;
@@ -24,9 +24,9 @@ public final class x5 implements h1 {
     }
 
     @Override // ii.h1
-    public final void B(i1 i1Var, int i10, int i11) {
+    public final void D(i1 i1Var, int i10, int i11) {
         a6 a6Var;
-        q9 textSelectionHelper;
+        r9 textSelectionHelper;
         d6 d6Var = this.a;
         if (d6Var.F || i10 == i11 || (a6Var = d6Var.y) == null || (textSelectionHelper = ((e3) a6Var).a.getTextSelectionHelper()) == null) {
             return;
@@ -74,7 +74,7 @@ public final class x5 implements h1 {
         }
         a6 a6Var2 = d6Var.y;
         if (a6Var2 != null) {
-            ((e3) a6Var2).a.h3.g(d6Var, d6.b(editable.toString()));
+            ((e3) a6Var2).a.h3.l(d6Var, d6.b(editable.toString()));
         }
         String obj = editable.toString();
         a aVar2 = d6Var.x;
@@ -95,7 +95,7 @@ public final class x5 implements h1 {
     }
 
     @Override // ii.h1
-    public final boolean X(boolean z10) {
+    public final boolean Y(boolean z10) {
         a aVar;
         d6 d6Var = this.a;
         a6 a6Var = d6Var.y;
@@ -111,7 +111,7 @@ public final class x5 implements h1 {
         if (a6Var != null) {
             w3 w3Var = ((e3) a6Var).a;
             w3.N1(w3Var, i1Var);
-            w3Var.h3.t(i1Var, true);
+            w3Var.h3.x(i1Var, true);
         }
     }
 
@@ -137,7 +137,7 @@ public final class x5 implements h1 {
     }
 
     @Override // ii.h1
-    public final void m(i1 i1Var) {
+    public final void n(i1 i1Var) {
         int length;
         Spanned spanned;
         boolean z10;
@@ -149,7 +149,7 @@ public final class x5 implements h1 {
             return;
         }
         String obj = i1Var.getText().toString();
-        ((e3) d6Var.y).a.h3.g(d6Var, null);
+        ((e3) d6Var.y).a.h3.l(d6Var, null);
         String b10 = d6.b(obj);
         if (b10 != null) {
             ArrayList a2 = o0.a(b10);
@@ -176,7 +176,7 @@ public final class x5 implements h1 {
         a aVar = d6Var.x;
         w3 w3Var = ((e3) a6Var).a;
         ArrayList arrayList = w3Var.p4;
-        l61 l61Var = w3Var.Y2;
+        k61 k61Var = w3Var.Y2;
         ArrayList arrayList2 = w3Var.l3;
         int indexOf = arrayList2.indexOf(aVar);
         if (indexOf < 0) {
@@ -206,7 +206,7 @@ public final class x5 implements h1 {
                 ArrayList arrayList3 = aVar.k;
                 arrayList3.remove(arrayList3.size() - 1);
                 w3Var.t4();
-                l61Var.N(false);
+                k61Var.N(false);
                 h2 h2Var2 = w3Var.J3;
                 if (h2Var2 != null) {
                     h2Var2.h();
@@ -217,7 +217,7 @@ public final class x5 implements h1 {
             if (aVar.c > 0) {
                 w3Var.u2(indexOf);
                 w3Var.t4();
-                l61Var.N(false);
+                k61Var.N(false);
                 h2 h2Var3 = w3Var.J3;
                 if (h2Var3 != null) {
                     h2Var3.h();
@@ -256,7 +256,7 @@ public final class x5 implements h1 {
         arrayList2.add(i12, aVar2);
         w3Var.t4();
         if (z10) {
-            l61Var.N(false);
+            k61Var.N(false);
             h2 h2Var4 = w3Var.J3;
             if (h2Var4 != null) {
                 h2Var4.h();
@@ -269,17 +269,17 @@ public final class x5 implements h1 {
             text.delete(length, text.length());
             editText.h = false;
         }
-        l61Var.S();
+        k61Var.S();
         w3Var.q4(i12);
         int indexOf2 = arrayList.indexOf(aVar2);
         if (indexOf2 < 0) {
-            l61Var.l();
+            k61Var.l();
         } else {
             s4.m0 itemAnimator = w3Var.getItemAnimator();
             w3Var.setItemAnimator(null);
-            l61Var.o(indexOf2);
+            k61Var.o(indexOf2);
             if (aVar.d > 0 && (i10 = indexOf2 + 1) < arrayList.size()) {
-                l61Var.q(i10, (arrayList.size() - indexOf2) - 1);
+                k61Var.q(i10, (arrayList.size() - indexOf2) - 1);
             }
             w3Var.post(new y2(w3Var, itemAnimator, 0));
         }
@@ -338,7 +338,7 @@ public final class x5 implements h1 {
     }
 
     @Override // ii.h1
-    public final void x() {
+    public final void y() {
         a aVar;
         d6 d6Var = this.a;
         a6 a6Var = d6Var.y;

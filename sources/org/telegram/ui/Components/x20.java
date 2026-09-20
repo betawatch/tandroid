@@ -16,7 +16,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.voip.VoIPService;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class x20 extends FrameLayout {
     public float a;
@@ -158,8 +158,8 @@ public final class x20 extends FrameLayout {
                     }
                     ValueAnimator ofFloat = ValueAnimator.ofFloat(z20Var5.b0, z10 ? 1.0f : 0.0f);
                     z20Var5.c0 = ofFloat;
-                    ofFloat.addUpdateListener(new k6(z20Var5, 25));
-                    z20Var5.c0.addListener(new ca(10, z20Var5, z10));
+                    ofFloat.addUpdateListener(new j6(z20Var5, 25));
+                    z20Var5.c0.addListener(new ba(10, z20Var5, z10));
                     z20Var5.c0.setDuration(250L);
                     z20Var5.c0.setInterpolator(qr.f);
                     z20Var5.c0.start();
@@ -286,8 +286,8 @@ public final class x20 extends FrameLayout {
         }
         this.c = false;
         z20 z20Var12 = this.n;
-        lj0 lj0Var = z20Var12.V;
-        ij0 ij0Var = z20Var12.v;
+        kj0 kj0Var = z20Var12.V;
+        hj0 hj0Var = z20Var12.v;
         ai.f0 f0Var = z20Var12.b;
         x20 x20Var2 = z20Var12.a;
         ci.s6 s6Var = z20Var12.c;
@@ -311,10 +311,10 @@ public final class x20 extends FrameLayout {
         z20Var12.d();
         z20.d0 = null;
         AnimatorSet animatorSet = new AnimatorSet();
-        int i13 = ij0Var.a0;
+        int i13 = hj0Var.a0;
         if (i13 < 33) {
             x20Var = x20Var3;
-            j3 = (long) (((1.0f - (i13 / 33.0f)) * ij0Var.r()) / 2.0f);
+            j3 = (long) (((1.0f - (i13 / 33.0f)) * hj0Var.r()) / 2.0f);
         } else {
             x20Var = x20Var3;
             j3 = 0;
@@ -378,9 +378,9 @@ public final class x20 extends FrameLayout {
         animatorSet.playTogether(ofFloat14);
         animatorSet.addListener(new y20(z20Var12, x20Var4, f0Var2, windowManager, frameLayout, v7Var));
         animatorSet.start();
-        ij0Var.P(66);
-        lj0Var.i();
-        lj0Var.d();
+        hj0Var.P(66);
+        kj0Var.i();
+        kj0Var.d();
         return false;
     }
 }

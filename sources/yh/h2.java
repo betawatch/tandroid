@@ -6,10 +6,10 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.es0;
+import org.telegram.ui.Components.ds0;
 import org.telegram.ui.Components.x81;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class h2 extends x81 {
     public final /* synthetic */ y3 U;
@@ -80,7 +80,7 @@ public final class h2 extends x81 {
         int i10 = this.b;
         y3 y3Var = this.U;
         if (i10 != y3Var.L1(false)) {
-            AndroidUtilities.runOnUIThread(new es0(15, this, this.b > y3Var.L1(false)));
+            AndroidUtilities.runOnUIThread(new ds0(15, this, this.b > y3Var.L1(false)));
         }
     }
 

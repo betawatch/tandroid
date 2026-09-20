@@ -17,34 +17,33 @@ import org.telegram.tgnet.tl.TL_communities;
 import org.telegram.ui.ActionBar.b2;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Cells.i6;
-import org.telegram.ui.Components.e5;
-import org.telegram.ui.Components.h9;
-import org.telegram.ui.Components.t61;
-import org.telegram.ui.Components.x51;
+import org.telegram.ui.Components.d5;
+import org.telegram.ui.Components.g9;
+import org.telegram.ui.Components.s61;
+import org.telegram.ui.Components.w51;
 import w7.y5;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class f extends n2 implements NotificationCenter.NotificationCenterDelegate {
     public long a;
     public TLRPC.Chat b;
     public TLRPC.User c;
     public FrameLayout d;
-    public t61 e;
+    public s61 e;
     public e f;
     public ArrayList h;
     public NotificationCenter.ObserversGroup n;
 
-    public static void U(f fVar, x51 x51Var) {
+    public static void U(f fVar, w51 w51Var) {
         f fVar2;
-        if (x51Var.d == 1) {
+        if (w51Var.d == 1) {
             fVar2 = fVar;
-            e5.R(fVar.getParentActivity(), fVar2, LocaleController.getString(R.string.CommunityNewCommunityTitle), null, LocaleController.getString(R.string.CommunityNewCommunityNameHint), null, ConnectionsManager.DEFAULT_DATACENTER_ID, LocaleController.getString(R.string.Create), fVar.resourceProvider, new c(fVar));
+            d5.R(fVar.getParentActivity(), fVar2, LocaleController.getString(R.string.CommunityNewCommunityTitle), null, LocaleController.getString(R.string.CommunityNewCommunityNameHint), null, ConnectionsManager.DEFAULT_DATACENTER_ID, LocaleController.getString(R.string.Create), fVar.resourceProvider, new c(fVar));
         } else {
             fVar2 = fVar;
         }
-        Object obj = x51Var.G;
+        Object obj = w51Var.G;
         if (obj instanceof TLRPC.Chat) {
             TLRPC.Chat chat = (TLRPC.Chat) obj;
             fVar2.getMessagesController().getChat(Long.valueOf(-fVar2.a));
@@ -79,7 +78,7 @@ public final class f extends n2 implements NotificationCenter.NotificationCenter
         setHasOwnBackground(true);
         this.actionBar.setAddToContainer(false);
         this.actionBar.setAllowOverlayTitle(false);
-        hg.k0.t(false, this.actionBar);
+        hg.k0.v(false, this.actionBar);
         this.actionBar.setAllowOverlayTitle(true);
         this.actionBar.setActionBarMenuOnItemClick(new ei.t(this, 3));
         fh.c cVar = new fh.c();
@@ -98,19 +97,19 @@ public final class f extends n2 implements NotificationCenter.NotificationCenter
         this.f.setTag(-33024);
         TLRPC.User user = this.c;
         if (user != null) {
-            this.f.a.e(user, new h9(0, this.c));
+            this.f.a.e(user, new g9(0, this.c));
         } else {
             TLRPC.Chat chat = this.b;
             if (chat != null) {
-                this.f.a.e(chat, new h9(this.b));
+                this.f.a.e(chat, new g9(this.b));
             }
         }
-        t61 t61Var = new t61(this, new b(this, 0), new c(this), new c(this));
-        this.e = t61Var;
-        t61Var.setClipToPadding(false);
-        t61 t61Var2 = this.e;
-        t61Var2.Y2.r = false;
-        t61Var2.q1();
+        s61 s61Var = new s61(this, new b(this, 0), new c(this), new c(this));
+        this.e = s61Var;
+        s61Var.setClipToPadding(false);
+        s61 s61Var2 = this.e;
+        s61Var2.Y2.r = false;
+        s61Var2.q1();
         this.d.addView(this.e, y5.c(-1.0f, -1));
         this.d.addView(this.actionBar, y5.e(-1, -2, 48));
         FrameLayout frameLayout2 = this.d;
@@ -124,13 +123,13 @@ public final class f extends n2 implements NotificationCenter.NotificationCenter
             TLRPC.ChatFull chatFull = (TLRPC.ChatFull) objArr[0];
             long j3 = chatFull.id;
             View z12 = this.e.z1((int) (j3 ^ (j3 >>> 32)));
-            if (!(z12 instanceof i6)) {
+            if (!(z12 instanceof org.telegram.ui.Cells.j6)) {
                 this.e.Y2.N(false);
                 return;
             }
-            i6 i6Var = (i6) z12;
+            org.telegram.ui.Cells.j6 j6Var = (org.telegram.ui.Cells.j6) z12;
             ArrayList<TL_communities.CommunityPeer> arrayList = chatFull.linked_peers;
-            i6Var.setSubLabel(LocaleController.formatPluralString("Chats", arrayList != null ? arrayList.size() : 0, new Object[0]));
+            j6Var.setSubLabel(LocaleController.formatPluralString("Chats", arrayList != null ? arrayList.size() : 0, new Object[0]));
         }
     }
 

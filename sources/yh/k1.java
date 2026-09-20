@@ -12,11 +12,11 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.lj0;
-import org.telegram.ui.Components.w9;
-import org.telegram.ui.o91;
+import org.telegram.ui.Components.kj0;
+import org.telegram.ui.Components.v9;
+import org.telegram.ui.u21;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class k1 implements Runnable {
     public final /* synthetic */ int a;
@@ -51,7 +51,7 @@ public final /* synthetic */ class k1 implements Runnable {
                     y3Var.q0 = true;
                     y3Var.l1 = null;
                     y3Var.r1(inputSavedStarGift, (TLRPC.Updates) tLObject, new b1(y3Var, 5));
-                    Utilities.stageQueue.postRunnable(new uf.b(17, y3Var, tLObject));
+                    Utilities.stageQueue.postRunnable(new u2.j0(19, y3Var, tLObject));
                     break;
                 }
             default:
@@ -59,16 +59,16 @@ public final /* synthetic */ class k1 implements Runnable {
                 TL_stars.StarGift starGift = (TL_stars.StarGift) this.e;
                 ArrayList arrayList = (ArrayList) this.d;
                 Runnable runnable = (Runnable) this.c;
-                org.telegram.ui.Components.p6 p6Var = y2Var.H;
+                org.telegram.ui.Components.o6 o6Var = y2Var.H;
                 y2Var.h0 = false;
                 if (starGift != null) {
                     AndroidUtilities.runOnUIThread(runnable);
                     break;
                 } else {
-                    lj0 lj0Var = y2Var.l0;
-                    if (lj0Var != null) {
-                        lj0Var.d();
-                        AndroidUtilities.runOnUIThread(new o91(17), 750L);
+                    kj0 kj0Var = y2Var.l0;
+                    if (kj0Var != null) {
+                        kj0Var.d();
+                        AndroidUtilities.runOnUIThread(new u21(19), 750L);
                     }
                     y2Var.Q.animate().alpha(0.0f).start();
                     y2Var.S.animate().alpha(1.0f).start();
@@ -76,8 +76,8 @@ public final /* synthetic */ class k1 implements Runnable {
                     y2Var.R.animate().alpha(0.0f).start();
                     y2Var.P.animate().alpha(1.0f).start();
                     y2Var.M.setText(AndroidUtilities.replaceTags(LocaleController.formatPluralString("GiftCraftFailedText", arrayList.size(), new Object[0])));
-                    p6Var.setText(LocaleController.getString(R.string.GiftCraftButtonFailed));
-                    p6Var.setTranslationY(AndroidUtilities.dp(6.0f));
+                    o6Var.setText(LocaleController.getString(R.string.GiftCraftButtonFailed));
+                    o6Var.setTranslationY(AndroidUtilities.dp(6.0f));
                     y2Var.I.setAlpha(0.0f);
                     if (y2Var.O != null) {
                         int i10 = 0;
@@ -99,10 +99,10 @@ public final /* synthetic */ class k1 implements Runnable {
                         j1Var.g(starGift2, false, false, false, false, true);
                         j1Var.x.setVisibility(8);
                         j1Var.setRibbonColor(-3065286);
-                        w9 w9Var = j1Var.y;
+                        v9 v9Var = j1Var.y;
                         FrameLayout.LayoutParams e = w7.y5.e(42, 42, 17);
                         j1Var.E = e;
-                        w9Var.setLayoutParams(e);
+                        v9Var.setLayoutParams(e);
                         int i12 = i11 + 1;
                         boolean z10 = i12 >= arrayList.size();
                         LinearLayout linearLayout = y2Var.N;

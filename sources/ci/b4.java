@@ -6,10 +6,10 @@ import android.view.MotionEvent;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.bw0;
+import org.telegram.ui.Components.aw0;
 import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class b4 extends org.telegram.ui.ActionBar.f3 {
     public final a4 b;
@@ -18,8 +18,8 @@ public final class b4 extends org.telegram.ui.ActionBar.f3 {
     public Boolean e;
     public Utilities.Callback f;
 
-    public b4(Context context, org.telegram.ui.ActionBar.e6 e6Var, String str, float f7) {
-        super(1, context, e6Var, false);
+    public b4(Context context, org.telegram.ui.ActionBar.f6 f6Var, String str, float f7) {
+        super(1, context, f6Var, false);
         fixNavigationBar(-14737633);
         a4 a4Var = new a4(UserConfig.selectedAccount, context, new ai.d(), f7, str);
         this.b = a4Var;
@@ -27,10 +27,10 @@ public final class b4 extends org.telegram.ui.ActionBar.f3 {
         a4Var.setMultipleOnClick(false);
         a4Var.setOnBackClickListener(new y3(this, 0));
         a4Var.setOnSelectListener(new bi.v(this, 4));
-        bw0 bw0Var = new bw0(context, null);
-        this.containerView = bw0Var;
+        aw0 aw0Var = new aw0(context, null);
+        this.containerView = aw0Var;
         int i10 = this.backgroundPaddingLeft;
-        bw0Var.setPadding(i10, 0, i10, 0);
+        aw0Var.setPadding(i10, 0, i10, 0);
         this.containerView.addView(a4Var);
     }
 

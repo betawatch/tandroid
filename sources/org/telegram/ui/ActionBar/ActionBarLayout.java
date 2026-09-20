@@ -57,21 +57,21 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.td;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.ThemeEditorView;
-import org.telegram.ui.Components.n9;
-import org.telegram.ui.Components.qc;
+import org.telegram.ui.Components.m9;
+import org.telegram.ui.Components.pc;
 import org.telegram.ui.Components.qr;
 import org.telegram.ui.Components.vi;
 import org.telegram.ui.Components.z20;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.fh0;
 import org.telegram.ui.g90;
+import org.telegram.ui.gh0;
 import org.telegram.ui.hz;
 import org.telegram.ui.un;
-import org.telegram.ui.xg0;
 import org.telegram.ui.xn;
+import org.telegram.ui.yg0;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public class ActionBarLayout extends FrameLayout implements d5, mg.b {
     public static Drawable p1;
@@ -127,12 +127,12 @@ public class ActionBarLayout extends FrameLayout implements d5, mg.b {
     public int a1;
     public boolean b;
     public final ArrayList b0;
-    public final org.telegram.ui.Components.e6 b1;
+    public final org.telegram.ui.Components.d6 b1;
     public Window c;
     public final ArrayList c0;
     public boolean c1;
     public Runnable d;
-    public final n7.z0 d0;
+    public final n4.y d0;
     public boolean d1;
     public Runnable e;
     public f5 e0;
@@ -154,7 +154,7 @@ public class ActionBarLayout extends FrameLayout implements d5, mg.b {
     public final AnimationNotificationsLocker l0;
     public int l1;
     public float m0;
-    public r0.m1 m1;
+    public r0.l1 m1;
     public boolean n;
     public boolean n0;
     public i0.b n1;
@@ -185,10 +185,10 @@ public class ActionBarLayout extends FrameLayout implements d5, mg.b {
         this.N = new AccelerateDecelerateInterpolator();
         this.b0 = new ArrayList();
         this.c0 = new ArrayList();
-        n7.z0 z0Var = new n7.z0(1);
-        z0Var.b = new SparseIntArray();
-        z0Var.c = new int[]{j6.Aa, j6.Da, j6.Ea, j6.Fa, j6.ac, j6.Ca};
-        this.d0 = z0Var;
+        n4.y yVar = new n4.y();
+        yVar.a = new SparseIntArray();
+        yVar.b = new int[]{j6.Aa, j6.Da, j6.Ea, j6.Fa, j6.ac, j6.Ca};
+        this.d0 = yVar;
         this.h0 = new ArrayList();
         this.j0 = new ArrayList();
         this.l0 = new AnimationNotificationsLocker();
@@ -197,7 +197,7 @@ public class ActionBarLayout extends FrameLayout implements d5, mg.b {
         this.V0 = new Path();
         this.W0 = new float[8];
         this.Y0 = new int[2];
-        this.b1 = new org.telegram.ui.Components.e6(this, 280L, qr.h);
+        this.b1 = new org.telegram.ui.Components.d6(this, 280L, qr.h);
         this.i1 = new ArrayList();
         this.j1 = new o(this, 2);
         i0.b bVar = i0.b.e;
@@ -233,8 +233,8 @@ public class ActionBarLayout extends FrameLayout implements d5, mg.b {
         ViewGroup viewGroup2;
         if (z10) {
             if (actionBarLayout.O0.size() >= 2) {
-                ((n2) t8.b.h(1, actionBarLayout.O0)).prepareFragmentToSlide(true, false);
-                n2 n2Var = (n2) t8.b.h(2, actionBarLayout.O0);
+                ((n2) org.telegram.ui.Cells.c1.i(1, actionBarLayout.O0)).prepareFragmentToSlide(true, false);
+                n2 n2Var = (n2) org.telegram.ui.Cells.c1.i(2, actionBarLayout.O0);
                 n2Var.prepareFragmentToSlide(false, false);
                 n2Var.onPause();
                 View view = n2Var.fragmentView;
@@ -253,7 +253,7 @@ public class ActionBarLayout extends FrameLayout implements d5, mg.b {
                 actionBarLayout.h("onSlideAnimationEnd exit");
                 return;
             }
-            n2 n2Var2 = (n2) t8.b.h(1, actionBarLayout.O0);
+            n2 n2Var2 = (n2) org.telegram.ui.Cells.c1.i(1, actionBarLayout.O0);
             n2Var2.prepareFragmentToSlide(true, false);
             n2Var2.onPause();
             n2Var2.onFragmentDestroy();
@@ -272,7 +272,7 @@ public class ActionBarLayout extends FrameLayout implements d5, mg.b {
                 actionBarLayout.bringChildToFront(view2);
             }
             if (actionBarLayout.O0.size() > 0) {
-                n2 n2Var3 = (n2) t8.b.h(1, actionBarLayout.O0);
+                n2 n2Var3 = (n2) org.telegram.ui.Cells.c1.i(1, actionBarLayout.O0);
                 actionBarLayout.y = n2Var3.actionBar;
                 n2Var3.onResume();
                 n2Var3.onBecomeFullyVisible();
@@ -392,7 +392,7 @@ public class ActionBarLayout extends FrameLayout implements d5, mg.b {
             }
         }
         s sVar = this.G;
-        if ((sVar == null || sVar.onBackPressed(true)) && ((n2) t8.b.h(1, this.O0)).onBackPressed(true) && !this.O0.isEmpty()) {
+        if ((sVar == null || sVar.onBackPressed(true)) && ((n2) org.telegram.ui.Cells.c1.i(1, this.O0)).onBackPressed(true) && !this.O0.isEmpty()) {
             l(true, false);
         }
     }
@@ -453,7 +453,7 @@ public class ActionBarLayout extends FrameLayout implements d5, mg.b {
 
     public final void L() {
         if (!this.O0.isEmpty()) {
-            ((n2) t8.b.h(1, this.O0)).onPause();
+            ((n2) org.telegram.ui.Cells.c1.i(1, this.O0)).onPause();
         }
         s sVar = this.G;
         if (sVar != null) {
@@ -463,7 +463,7 @@ public class ActionBarLayout extends FrameLayout implements d5, mg.b {
 
     public final void M() {
         if (!this.O0.isEmpty()) {
-            ((n2) t8.b.h(1, this.O0)).onResume();
+            ((n2) org.telegram.ui.Cells.c1.i(1, this.O0)).onResume();
         }
         s sVar = this.G;
         if (sVar != null) {
@@ -486,7 +486,7 @@ public class ActionBarLayout extends FrameLayout implements d5, mg.b {
         this.Q = true;
         this.v.setVisibility(0);
         this.V = false;
-        n2 n2Var = (n2) t8.b.h(2, this.O0);
+        n2 n2Var = (n2) org.telegram.ui.Cells.c1.i(2, this.O0);
         View view = n2Var.fragmentView;
         if (view == null && (view = n2Var.performCreateView(this.K0)) != null && n2Var.isSupportEdgeToEdge() && n2Var.drawEdgeNavigationBar()) {
             n nVar = new n(n2Var);
@@ -528,7 +528,7 @@ public class ActionBarLayout extends FrameLayout implements d5, mg.b {
             this.i0 = n2Var.getThemeDescriptions();
         }
         this.s.setLayerType(2, null);
-        ((n2) t8.b.h(1, this.O0)).prepareFragmentToSlide(true, true);
+        ((n2) org.telegram.ui.Cells.c1.i(1, this.O0)).prepareFragmentToSlide(true, true);
         n2Var.prepareFragmentToSlide(false, true);
     }
 
@@ -656,7 +656,7 @@ public class ActionBarLayout extends FrameLayout implements d5, mg.b {
             n2Var = null;
         } else {
             a4Var = a4Var2;
-            n2Var = (n2) t8.b.h(1, this.O0);
+            n2Var = (n2) org.telegram.ui.Cells.c1.i(1, this.O0);
         }
         n2Var2.setParentLayout(this);
         View view = n2Var2.fragmentView;
@@ -704,7 +704,7 @@ public class ActionBarLayout extends FrameLayout implements d5, mg.b {
                 layoutParams2.height = previewHeight;
                 layoutParams2.topMargin = (((getMeasuredHeight() - i13) - previewHeight) / 2) + i13;
                 if (actionBarPopupWindow$ActionBarPopupWindowLayout != null) {
-                    layoutParams2.bottomMargin = org.telegram.messenger.q.D(8.0f, i10, layoutParams2.bottomMargin);
+                    layoutParams2.bottomMargin = org.telegram.messenger.l0.C(8.0f, i10, layoutParams2.bottomMargin);
                 }
                 int dp = AndroidUtilities.dp(8.0f);
                 layoutParams2.leftMargin = dp;
@@ -759,14 +759,14 @@ public class ActionBarLayout extends FrameLayout implements d5, mg.b {
         if (z13) {
             if (!(n2Var2 instanceof zn)) {
                 float dp4 = AndroidUtilities.dp(actionBarPopupWindow$ActionBarPopupWindowLayout == null ? 24.0f : 12.0f);
-                ai.k2 k2Var = yf.k0.a;
-                view.setOutlineProvider(new yf.i0(0, dp4));
+                ai.k2 k2Var = yf.j0.a;
+                view.setOutlineProvider(new yf.h0(0, dp4));
             } else if (actionBarPopupWindow$ActionBarPopupWindowLayout != null) {
                 view.setOutlineProvider(new u());
             } else {
                 float dp5 = AndroidUtilities.dp(29.0f);
-                ai.k2 k2Var2 = yf.k0.a;
-                view.setOutlineProvider(new yf.i0(0, dp5));
+                ai.k2 k2Var2 = yf.j0.a;
+                view.setOutlineProvider(new yf.h0(0, dp5));
             }
             view.setClipToOutline(true);
             view.setElevation(AndroidUtilities.dp(4.0f));
@@ -814,7 +814,7 @@ public class ActionBarLayout extends FrameLayout implements d5, mg.b {
             T(n2Var, z10);
             this.v0 = System.currentTimeMillis();
             this.W = true;
-            this.z0 = new ki.c0(27, n2Var, n2Var2);
+            this.z0 = new ki.l(29, n2Var, n2Var2);
             ArrayList arrayList4 = new ArrayList();
             Property property = View.ALPHA;
             arrayList4.add(ObjectAnimator.ofFloat(this, (Property<ActionBarLayout, Float>) property, 0.0f, 1.0f));
@@ -1001,7 +1001,7 @@ public class ActionBarLayout extends FrameLayout implements d5, mg.b {
     }
 
     public final void a0(n2 n2Var, boolean z10) {
-        if ((this.O0.size() > 0 && t8.b.h(1, this.O0) == n2Var) || (this.O0.size() > 1 && t8.b.h(2, this.O0) == n2Var)) {
+        if ((this.O0.size() > 0 && org.telegram.ui.Cells.c1.i(1, this.O0) == n2Var) || (this.O0.size() > 1 && org.telegram.ui.Cells.c1.i(2, this.O0) == n2Var)) {
             K();
             H();
         }
@@ -1019,9 +1019,9 @@ public class ActionBarLayout extends FrameLayout implements d5, mg.b {
     @Override // android.view.ViewGroup
     public final void addView(View view, int i10, ViewGroup.LayoutParams layoutParams) {
         super.addView(view, i10, layoutParams);
-        r0.m1 m1Var = this.m1;
-        if (m1Var != null) {
-            o(view, m1Var);
+        r0.l1 l1Var = this.m1;
+        if (l1Var != null) {
+            o(view, l1Var);
         }
     }
 
@@ -1039,11 +1039,11 @@ public class ActionBarLayout extends FrameLayout implements d5, mg.b {
 
     public final void b0(n2 n2Var, boolean z10) {
         if (this.O0.contains(n2Var)) {
-            if (z10 && t8.b.h(1, this.O0) == n2Var) {
+            if (z10 && org.telegram.ui.Cells.c1.i(1, this.O0) == n2Var) {
                 n2Var.finishFragment();
                 return;
             }
-            if (t8.b.h(1, this.O0) == n2Var && this.O0.size() > 1) {
+            if (org.telegram.ui.Cells.c1.i(1, this.O0) == n2Var && this.O0.size() > 1) {
                 n2Var.finishFragment(false);
                 return;
             }
@@ -1066,7 +1066,7 @@ public class ActionBarLayout extends FrameLayout implements d5, mg.b {
         Activity activity = this.K0;
         if (i10 == -1 || i10 == -2) {
             if (!this.O0.isEmpty()) {
-                n2 n2Var2 = (n2) t8.b.h(1, this.O0);
+                n2 n2Var2 = (n2) org.telegram.ui.Cells.c1.i(1, this.O0);
                 n2Var2.onPause();
                 k kVar = n2Var2.actionBar;
                 if (kVar != null && kVar.K && (viewGroup2 = (ViewGroup) kVar.getParent()) != null) {
@@ -1407,7 +1407,7 @@ public class ActionBarLayout extends FrameLayout implements d5, mg.b {
                 int width2 = getWidth();
                 getY();
                 getHeight();
-                cVar.o(canvas, z10, z11, width2, 1.0f);
+                cVar.p(canvas, z10, z11, width2, 1.0f);
                 canvas2 = canvas;
                 this.U0 = false;
             }
@@ -1558,7 +1558,7 @@ public class ActionBarLayout extends FrameLayout implements d5, mg.b {
 
     public final void e(boolean z10) {
         Animator customSlideTransition;
-        n2 n2Var = !this.O0.isEmpty() ? (n2) t8.b.h(1, this.O0) : null;
+        n2 n2Var = !this.O0.isEmpty() ? (n2) org.telegram.ui.Cells.c1.i(1, this.O0) : null;
         if (n2Var == null) {
             return;
         }
@@ -1592,7 +1592,7 @@ public class ActionBarLayout extends FrameLayout implements d5, mg.b {
         if (customSlideTransition2 != null) {
             animatorSet.playTogether(customSlideTransition2);
         }
-        n2 n2Var2 = (n2) t8.b.h(2, this.O0);
+        n2 n2Var2 = (n2) org.telegram.ui.Cells.c1.i(2, this.O0);
         if (n2Var2 != null && (customSlideTransition = n2Var2.getCustomSlideTransition(false, z10, x10)) != null) {
             animatorSet.playTogether(customSlideTransition);
         }
@@ -1603,7 +1603,7 @@ public class ActionBarLayout extends FrameLayout implements d5, mg.b {
     }
 
     public final boolean e0() {
-        n2 n2Var = !this.O0.isEmpty() ? (n2) t8.b.h(1, this.O0) : null;
+        n2 n2Var = !this.O0.isEmpty() ? (n2) org.telegram.ui.Cells.c1.i(1, this.O0) : null;
         return (n2Var == null || n2Var.getLastStoryViewer() == null || !n2Var.getLastStoryViewer().attachedToParent()) ? false : true;
     }
 
@@ -1790,12 +1790,12 @@ public class ActionBarLayout extends FrameLayout implements d5, mg.b {
         if (this.O0.isEmpty()) {
             return null;
         }
-        return (n2) t8.b.h(1, this.O0);
+        return (n2) org.telegram.ui.Cells.c1.i(1, this.O0);
     }
 
     public n2 getLastFragmentIncludeMainTabs() {
         n2 lastFragment = getLastFragment();
-        return lastFragment instanceof fh0 ? ((fh0) lastFragment).X() : lastFragment;
+        return lastFragment instanceof gh0 ? ((gh0) lastFragment).X() : lastFragment;
     }
 
     @Override // org.telegram.ui.ActionBar.d5
@@ -1818,7 +1818,7 @@ public class ActionBarLayout extends FrameLayout implements d5, mg.b {
     }
 
     @Override // org.telegram.ui.ActionBar.d5
-    public List<n9> getPulledDialogs() {
+    public List<m9> getPulledDialogs() {
         return this.P0;
     }
 
@@ -1860,9 +1860,9 @@ public class ActionBarLayout extends FrameLayout implements d5, mg.b {
     public final void h(String str) {
         if (BuildVars.DEBUG_VERSION) {
             ArrayList arrayList = this.i1;
-            StringBuilder j3 = t8.b.j(str, " ");
-            j3.append(this.O0.size());
-            arrayList.add(0, j3.toString());
+            StringBuilder h = v7.j0.h(str, " ");
+            h.append(this.O0.size());
+            arrayList.add(0, h.toString());
             if (this.i1.size() > 20) {
                 ArrayList arrayList2 = new ArrayList();
                 for (int i10 = 0; i10 < 10; i10++) {
@@ -1925,9 +1925,9 @@ public class ActionBarLayout extends FrameLayout implements d5, mg.b {
             }
             setInnerTranslationX(0.0f);
             boolean z12 = !z11 && (this.h || this.a0 || (z10 && MessagesController.getGlobalMainSettings().getBoolean("view_animations", true)));
-            n2 n2Var = (n2) t8.b.h(1, this.O0);
+            n2 n2Var = (n2) org.telegram.ui.Cells.c1.i(1, this.O0);
             AnimatorSet animatorSet = null;
-            n2 n2Var2 = this.O0.size() > 1 ? (n2) t8.b.h(2, this.O0) : null;
+            n2 n2Var2 = this.O0.size() > 1 ? (n2) org.telegram.ui.Cells.c1.i(2, this.O0) : null;
             if (n2Var2 != null) {
                 AndroidUtilities.setLightStatusBar(activity, j6.w0(null, j6.s8, false) == -1 || (n2Var2.hasForceLightStatusBar() && !j6.A0().q()));
                 w wVar = this.s;
@@ -2006,9 +2006,9 @@ public class ActionBarLayout extends FrameLayout implements d5, mg.b {
                         }
                     } else {
                         this.K = animatorSet;
-                        qc qcVar = qc.w;
-                        if (qcVar != null && qcVar.l) {
-                            qcVar.b();
+                        pc pcVar = pc.w;
+                        if (pcVar != null && pcVar.l) {
+                            pcVar.b();
                         }
                     }
                     I("closeLastFragment");
@@ -2028,7 +2028,7 @@ public class ActionBarLayout extends FrameLayout implements d5, mg.b {
             } else {
                 this.v0 = System.currentTimeMillis();
                 this.W = true;
-                this.y0 = new ki.c0(26, this, n2Var);
+                this.y0 = new ki.l(28, this, n2Var);
                 ArrayList arrayList = new ArrayList();
                 Property property = View.ALPHA;
                 arrayList.add(ObjectAnimator.ofFloat(this, (Property<ActionBarLayout, Float>) property, 1.0f, 0.0f));
@@ -2071,24 +2071,24 @@ public class ActionBarLayout extends FrameLayout implements d5, mg.b {
         if (fragmentStack.isEmpty()) {
             return;
         }
-        ((n2) t8.b.h(1, fragmentStack)).dismissCurrentDialog();
+        ((n2) org.telegram.ui.Cells.c1.i(1, fragmentStack)).dismissCurrentDialog();
     }
 
-    public final void o(View view, r0.m1 m1Var) {
+    public final void o(View view, r0.l1 l1Var) {
         boolean z10 = this.M0;
         if (z10) {
             if (!(view instanceof w) || !((w) view).x) {
-                r0.i0.b(view, r0.m1.b);
+                r0.i0.b(view, r0.l1.b);
                 return;
             }
-            int i10 = m1Var.a.f(8).d;
+            int i10 = l1Var.a.f(8).d;
             View view2 = getParent() instanceof View ? (View) getParent() : null;
             int max = Math.max(0, i10 - (view2 != null ? Math.max(0, view2.getHeight() - getBottom()) : 0));
-            r0.m1 m1Var2 = r0.m1.b;
+            r0.l1 l1Var2 = r0.l1.b;
             int i11 = Build.VERSION.SDK_INT;
-            r0.c1 b1Var = i11 >= 34 ? new r0.b1(m1Var2) : i11 >= 30 ? new r0.a1(m1Var2) : i11 >= 29 ? new r0.z0(m1Var2) : new r0.y0(m1Var2);
-            b1Var.c(8, i0.b.b(0, 0, 0, max));
-            r0.i0.b(view, b1Var.b());
+            r0.b1 a1Var = i11 >= 34 ? new r0.a1(l1Var2) : i11 >= 30 ? new r0.z0(l1Var2) : i11 >= 29 ? new r0.y0(l1Var2) : new r0.x0(l1Var2);
+            a1Var.c(8, i0.b.b(0, 0, 0, max));
+            r0.i0.b(view, a1Var.b());
             return;
         }
         boolean z11 = this.N0;
@@ -2111,9 +2111,9 @@ public class ActionBarLayout extends FrameLayout implements d5, mg.b {
             int i16 = (!z13 || z12) ? bVar2.c : 0;
             if (a4Var == a4.a) {
                 i12 = Math.max(i12, bVar2.d);
-                r0.i0.b(view, r0.m1.b);
+                r0.i0.b(view, r0.l1.b);
             } else {
-                r0.i0.b(view, m1Var.a.m(i15, 0, i16, i12));
+                r0.i0.b(view, l1Var.a.m(i15, 0, i16, i12));
             }
             view.setPadding(i13, 0, i14, i12);
         }
@@ -2279,7 +2279,7 @@ public class ActionBarLayout extends FrameLayout implements d5, mg.b {
 
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
-        n2 n2Var = !this.O0.isEmpty() ? (n2) t8.b.h(1, this.O0) : null;
+        n2 n2Var = !this.O0.isEmpty() ? (n2) org.telegram.ui.Cells.c1.i(1, this.O0) : null;
         if (n2Var != null && !n2Var.isSupportEdgeToEdge() && e0()) {
             int C = C();
             n2Var.setKeyboardHeightFromParent(C);
@@ -2320,7 +2320,7 @@ public class ActionBarLayout extends FrameLayout implements d5, mg.b {
                                     if (activity.getCurrentFocus() != null) {
                                         AndroidUtilities.hideKeyboard(activity.getCurrentFocus());
                                     }
-                                    ((n2) t8.b.h(1, this.O0)).onBeginSlide();
+                                    ((n2) org.telegram.ui.Cells.c1.i(1, this.O0)).onBeginSlide();
                                     this.V = true;
                                 }
                                 if (D()) {
@@ -2333,7 +2333,7 @@ public class ActionBarLayout extends FrameLayout implements d5, mg.b {
                                     setInnerTranslationX(f10);
                                 }
                             }
-                        } else if (((n2) t8.b.h(1, this.O0)).canBeginSlide() && u(this, motionEvent.getX(), motionEvent.getY()) == null) {
+                        } else if (((n2) org.telegram.ui.Cells.c1.i(1, this.O0)).canBeginSlide() && u(this, motionEvent.getX(), motionEvent.getY()) == null) {
                             this.R = (int) motionEvent.getX();
                             O();
                         } else {
@@ -2345,7 +2345,7 @@ public class ActionBarLayout extends FrameLayout implements d5, mg.b {
                         }
                         this.U.addMovement(motionEvent);
                         this.U.computeCurrentVelocity(MediaDataController.MAX_STYLE_RUNS_COUNT);
-                        n2 n2Var = (n2) t8.b.h(1, this.O0);
+                        n2 n2Var = (n2) org.telegram.ui.Cells.c1.i(1, this.O0);
                         if (!this.h && !this.a0 && !this.Q && n2Var.isSwipeBackEnabled(motionEvent)) {
                             float xVelocity = this.U.getXVelocity();
                             float yVelocity = this.U.getYVelocity();
@@ -2396,7 +2396,7 @@ public class ActionBarLayout extends FrameLayout implements d5, mg.b {
                             this.U = null;
                         }
                     }
-                } else if (((n2) t8.b.h(1, this.O0)).isSwipeBackEnabled(motionEvent)) {
+                } else if (((n2) org.telegram.ui.Cells.c1.i(1, this.O0)).isSwipeBackEnabled(motionEvent)) {
                     this.x0 = motionEvent.getPointerId(0);
                     this.P = true;
                     this.R = (int) motionEvent.getX();
@@ -2440,8 +2440,8 @@ public class ActionBarLayout extends FrameLayout implements d5, mg.b {
         boolean z10 = true;
         this.n = true;
         this.h = false;
-        n2 n2Var = (n2) t8.b.h(2, this.O0);
-        n2 n2Var2 = (n2) t8.b.h(1, this.O0);
+        n2 n2Var = (n2) org.telegram.ui.Cells.c1.i(2, this.O0);
+        n2 n2Var2 = (n2) org.telegram.ui.Cells.c1.i(1, this.O0);
         n2Var2.fragmentView.setOutlineProvider(null);
         n2Var2.fragmentView.setClipToOutline(false);
         FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) n2Var2.fragmentView.getLayoutParams();
@@ -2483,7 +2483,7 @@ public class ActionBarLayout extends FrameLayout implements d5, mg.b {
     }
 
     public final boolean s(Menu menu) {
-        return !this.O0.isEmpty() && ((n2) t8.b.h(1, this.O0)).extendActionMode(menu);
+        return !this.O0.isEmpty() && ((n2) org.telegram.ui.Cells.c1.i(1, this.O0)).extendActionMode(menu);
     }
 
     @Override // org.telegram.ui.ActionBar.d5
@@ -2617,9 +2617,9 @@ public class ActionBarLayout extends FrameLayout implements d5, mg.b {
             return;
         }
         float clamp01 = D() ? Utilities.clamp01(f7 / (AndroidUtilities.dp(56.0f) * 6)) : f7 / this.s.getMeasuredWidth();
-        n2 n2Var = (n2) t8.b.h(2, this.O0);
+        n2 n2Var = (n2) org.telegram.ui.Cells.c1.i(2, this.O0);
         n2Var.onSlideProgress(false, clamp01);
-        n2 n2Var2 = (n2) t8.b.h(1, this.O0);
+        n2 n2Var2 = (n2) org.telegram.ui.Cells.c1.i(1, this.O0);
         float a2 = w7.q.a(clamp01 * 2.0f, 0.0f, 1.0f);
         if (!n2Var2.isBeginToShow() || (navigationBarColor = n2Var2.getNavigationBarColor()) == (navigationBarColor2 = n2Var.getNavigationBarColor())) {
             return;
@@ -2654,7 +2654,7 @@ public class ActionBarLayout extends FrameLayout implements d5, mg.b {
     }
 
     @Override // org.telegram.ui.ActionBar.d5
-    public void setPulledDialogs(List<n9> list) {
+    public void setPulledDialogs(List<m9> list) {
         this.P0 = list;
     }
 
@@ -2688,9 +2688,9 @@ public class ActionBarLayout extends FrameLayout implements d5, mg.b {
                 int argb = Color.argb(Math.min(255, (int) (((alpha - r3) * f7) + Color.alpha(iArr[i11]))), Math.min(255, (int) (((red - red2) * f7) + red2)), Math.min(255, (int) (((green - green2) * f7) + green2)), Math.min(255, (int) (((blue - blue2) * f7) + blue2)));
                 l6 l6Var = (l6) arrayList2.get(i11);
                 int i14 = l6Var.f;
-                e6 e6Var = l6Var.o;
-                if (e6Var != null) {
-                    e6Var.L0(i14, argb);
+                f6 f6Var = l6Var.o;
+                if (f6Var != null) {
+                    f6Var.L0(i14, argb);
                 } else {
                     SparseIntArray sparseIntArray = j6.sl;
                     if (sparseIntArray != null) {
@@ -2753,7 +2753,7 @@ public class ActionBarLayout extends FrameLayout implements d5, mg.b {
         }
         for (int size = getFragmentStack().size() - 1; size >= 0; size--) {
             n2 n2Var = (n2) getFragmentStack().get(size);
-            if (n2Var != null && !n2Var.isFinishing() && !n2Var.isRemovingFromStack() && xg0.class.isInstance(n2Var)) {
+            if (n2Var != null && !n2Var.isFinishing() && !n2Var.isRemovingFromStack() && yg0.class.isInstance(n2Var)) {
                 return n2Var;
             }
         }

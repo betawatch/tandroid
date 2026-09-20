@@ -15,13 +15,13 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
+import org.telegram.ui.Components.c11;
+import org.telegram.ui.Components.c61;
 import org.telegram.ui.Components.d11;
-import org.telegram.ui.Components.d61;
-import org.telegram.ui.Components.e11;
 import org.webrtc.MediaStreamTrack;
-import v7.q8;
+import v7.r8;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public abstract class d4 {
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
@@ -1493,19 +1493,19 @@ public abstract class d4 {
             } else {
                 int nextSpanTransition = spanned.nextSpanTransition(i22, length, CharacterStyle.class);
                 int i24 = 0;
-                for (e11 e11Var : (e11[]) spanned.getSpans(i22, nextSpanTransition, e11.class)) {
-                    d11 d11Var = e11Var.b;
-                    if (d11Var != null) {
-                        i24 |= d11Var.a;
+                for (d11 d11Var : (d11[]) spanned.getSpans(i22, nextSpanTransition, d11.class)) {
+                    c11 c11Var = d11Var.b;
+                    if (c11Var != null) {
+                        i24 |= c11Var.a;
                     }
                 }
-                d61[] d61VarArr = (d61[]) spanned.getSpans(i22, nextSpanTransition, d61.class);
-                String url = d61VarArr.length > 0 ? d61VarArr[c10].getURL() : null;
-                org.telegram.ui.Components.z5[] z5VarArr = (org.telegram.ui.Components.z5[]) spanned.getSpans(i22, nextSpanTransition, org.telegram.ui.Components.z5.class);
-                if (z5VarArr.length > 0) {
-                    org.telegram.ui.Components.z5 z5Var = z5VarArr[c10];
-                    if (!z5Var.standard) {
-                        j3 = z5Var.getDocumentId();
+                c61[] c61VarArr = (c61[]) spanned.getSpans(i22, nextSpanTransition, c61.class);
+                String url = c61VarArr.length > 0 ? c61VarArr[c10].getURL() : null;
+                org.telegram.ui.Components.y5[] y5VarArr = (org.telegram.ui.Components.y5[]) spanned.getSpans(i22, nextSpanTransition, org.telegram.ui.Components.y5.class);
+                if (y5VarArr.length > 0) {
+                    org.telegram.ui.Components.y5 y5Var = y5VarArr[c10];
+                    if (!y5Var.standard) {
+                        j3 = y5Var.getDocumentId();
                         i11 = i24 & 256;
                         if (i11 != 0) {
                             sb2.append("<spoiler>");
@@ -1857,12 +1857,12 @@ public abstract class d4 {
         spannableStringBuilder.append((CharSequence) str);
         int length2 = spannableStringBuilder.length();
         if (j3 != 0) {
-            spannableStringBuilder.setSpan(new org.telegram.ui.Components.z5(j3, (Paint.FontMetricsInt) null), length, length2, 33);
+            spannableStringBuilder.setSpan(new org.telegram.ui.Components.y5(j3, (Paint.FontMetricsInt) null), length, length2, 33);
         }
         if (i10 != 0) {
-            d11 d11Var = new d11();
-            d11Var.a = i10 & 114975;
-            spannableStringBuilder.setSpan(new e11(d11Var, AndroidUtilities.dp(SharedConfig.fontSize)), length, length2, 33);
+            c11 c11Var = new c11();
+            c11Var.a = i10 & 114975;
+            spannableStringBuilder.setSpan(new d11(c11Var, AndroidUtilities.dp(SharedConfig.fontSize)), length, length2, 33);
         }
         if (str2 != null) {
             spannableStringBuilder.setSpan(f6.k(str2), length, length2, 33);
@@ -2364,7 +2364,7 @@ public abstract class d4 {
                             c4 c4Var2 = null;
                             if (!trim.isEmpty()) {
                                 int i14 = 0;
-                                while (i14 < trim.length() && !q8.a(trim.charAt(i14))) {
+                                while (i14 < trim.length() && !r8.a(trim.charAt(i14))) {
                                     i14++;
                                 }
                                 String lowerCase = trim.substring(0, i14).toLowerCase();
@@ -2372,16 +2372,16 @@ public abstract class d4 {
                                     c4Var2 = new c4();
                                     c4Var2.a = lowerCase;
                                     while (i14 < trim.length()) {
-                                        while (i14 < trim.length() && q8.a(trim.charAt(i14))) {
+                                        while (i14 < trim.length() && r8.a(trim.charAt(i14))) {
                                             i14++;
                                         }
                                         if (i14 < trim.length()) {
                                             int i15 = i14;
-                                            while (i15 < trim.length() && trim.charAt(i15) != '=' && !q8.a(trim.charAt(i15))) {
+                                            while (i15 < trim.length() && trim.charAt(i15) != '=' && !r8.a(trim.charAt(i15))) {
                                                 i15++;
                                             }
                                             String lowerCase2 = trim.substring(i14, i15).toLowerCase();
-                                            while (i15 < trim.length() && q8.a(trim.charAt(i15))) {
+                                            while (i15 < trim.length() && r8.a(trim.charAt(i15))) {
                                                 i15++;
                                             }
                                             if (i15 >= trim.length() || trim.charAt(i15) != '=') {
@@ -2394,7 +2394,7 @@ public abstract class d4 {
                                                     }
                                                     if (i15 < trim.length() || !(trim.charAt(i15) == '\"' || trim.charAt(i15) == c10)) {
                                                         i11 = i15;
-                                                        while (i11 < trim.length() && !q8.a(trim.charAt(i11))) {
+                                                        while (i11 < trim.length() && !r8.a(trim.charAt(i11))) {
                                                             i11++;
                                                         }
                                                         str2 = trim.substring(i15, i11);
@@ -2411,7 +2411,7 @@ public abstract class d4 {
                                                             i10++;
                                                         }
                                                     }
-                                                } while (q8.a(trim.charAt(i15)));
+                                                } while (r8.a(trim.charAt(i15)));
                                                 if (i15 < trim.length()) {
                                                 }
                                                 i11 = i15;

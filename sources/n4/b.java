@@ -2,11 +2,11 @@ package n4;
 
 import android.media.AudioAttributes;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class b extends ka.c {
     @Override // ka.c
-    public final a G() {
+    public final a J() {
         return new c(((AudioAttributes.Builder) this.b).build());
     }
 
@@ -17,7 +17,7 @@ public final class b extends ka.c {
     }
 
     @Override // ka.c
-    public final void p0(int i10) {
+    public final void n0(int i10) {
         ((AudioAttributes.Builder) this.b).setUsage(i10);
     }
 }

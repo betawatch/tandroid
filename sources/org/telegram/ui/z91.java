@@ -1,62 +1,10 @@
 package org.telegram.ui;
 
-import android.view.View;
-import android.widget.FrameLayout;
-
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class z91 extends org.telegram.ui.Components.o81 {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ FrameLayout d;
-    public final /* synthetic */ za1 e;
-
-    public z91(za1 za1Var, boolean z10, boolean z11, boolean z12, FrameLayout frameLayout) {
-        this.e = za1Var;
-        this.a = z10;
-        this.b = z11;
-        this.c = z12;
-        this.d = frameLayout;
-    }
-
-    @Override // org.telegram.ui.Components.o81
-    public final View d(int i10) {
-        za1 za1Var = this.e;
-        if (za1Var.l0) {
-            return za1Var.j0;
-        }
-        boolean z10 = this.a;
-        FrameLayout frameLayout = this.d;
-        if (z10) {
-            if (i10 == 0) {
-                return frameLayout;
-            }
-            i10--;
-        }
-        if (this.b) {
-            if (i10 == 0) {
-                return za1Var.j0;
-            }
-            i10--;
-        }
-        return (this.c && i10 == 0) ? za1Var.k0 : frameLayout;
-    }
-
-    @Override // org.telegram.ui.Components.o81
-    public final int e() {
-        if (this.e.l0) {
-            return 1;
-        }
-        return (this.a ? 1 : 0) + (this.b ? 1 : 0) + (this.c ? 1 : 0);
-    }
-
-    @Override // org.telegram.ui.Components.o81
-    public final int h(int i10) {
-        return i10;
-    }
-
-    @Override // org.telegram.ui.Components.o81
-    public final void b(View view, int i10, int i11) {
+public final class z91 extends s4.j {
+    @Override // s4.j
+    public final long K(long j3, long j10, long j11) {
+        return j3;
     }
 }

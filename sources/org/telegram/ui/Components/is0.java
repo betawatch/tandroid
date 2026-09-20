@@ -1,53 +1,278 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
-/* loaded from: classes3.dex */
-public final class is0 extends g.p {
-    public final /* synthetic */ gs0 c;
-    public final /* synthetic */ kv0 d;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.os.Bundle;
+import android.text.Layout;
+import android.text.StaticLayout;
+import android.text.TextPaint;
+import android.util.SparseArray;
+import android.view.MotionEvent;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
+import org.telegram.ui.PhotoViewer;
 
-    public is0(kv0 kv0Var, gs0 gs0Var) {
-        this.d = kv0Var;
-        this.c = gs0Var;
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* loaded from: classes3.dex */
+public final class is0 extends zu0 {
+    public float q3;
+    public float r3;
+    public final /* synthetic */ fs0 s3;
+    public final /* synthetic */ gs0 t3;
+    public final /* synthetic */ jv0 u3;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public is0(jv0 jv0Var, Context context, fs0 fs0Var, gs0 gs0Var) {
+        super(context);
+        this.u3 = jv0Var;
+        this.s3 = fs0Var;
+        this.t3 = gs0Var;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:12:0x003c, code lost:
-    
-        if (r3.h.getAdapter().j(r9) == 2) goto L22;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:4:0x0020, code lost:
-    
-        if (r5.j(r9) == 2) goto L22;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:5:0x0023, code lost:
-    
-        r1 = 1;
-     */
-    @Override // g.p
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final int i(int i10) {
-        kv0 kv0Var = this.d;
-        int[] iArr = kv0Var.m1;
-        yt0 yt0Var = kv0Var.O;
-        gs0 gs0Var = this.c;
-        int i11 = iArr[kv0.p0(gs0Var.F) ? 1 : 0];
-        s4.h0 adapter = gs0Var.h.getAdapter();
-        pt0 pt0Var = kv0Var.H;
-        if (adapter != pt0Var) {
-            if (kv0.u(kv0Var, gs0Var.h.getAdapter()) == -1) {
-                if (gs0Var.h.getAdapter() != yt0Var) {
-                    i11 = gs0Var.x.J;
-                } else if (gs0Var.h.getAdapter() == yt0Var && kv0Var.t1[5].a.isEmpty()) {
-                    i11 = gs0Var.x.J;
-                } else {
-                    hs0 hs0Var = gs0Var.x;
-                    hs0Var.B1();
-                    i11 = hs0Var.R.get(i10);
+    @Override // org.telegram.ui.Components.zu0
+    public final boolean A1() {
+        return this.u3.o1;
+    }
+
+    @Override // org.telegram.ui.Components.zu0
+    public final boolean B1() {
+        return jv0.p0(this.u3.p1);
+    }
+
+    @Override // org.telegram.ui.Components.zu0
+    public final boolean C1() {
+        return this == this.s3.h;
+    }
+
+    public final View D1() {
+        try {
+            for (Object parent = getParent(); parent instanceof View; parent = ((View) parent).getParent()) {
+                if (parent != this && (parent instanceof RecyclerView)) {
+                    return (View) parent;
                 }
             }
+            return null;
+        } catch (Exception e) {
+            FileLog.e(e);
+            return null;
         }
-        return Math.min(i11, gs0Var.x.J);
+    }
+
+    @Override // org.telegram.ui.Components.vl0
+    public final Integer X0(int i10) {
+        s4.h0 adapter = getAdapter();
+        st0 st0Var = this.u3.Q;
+        if (adapter == st0Var && st0Var.e > 0 && i10 == st0Var.d.size() - 1) {
+            return 0;
+        }
+        return super.X0(i10);
+    }
+
+    @Override // org.telegram.ui.Components.zu0, org.telegram.ui.Components.ha, org.telegram.ui.Components.vl0, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        View childAt;
+        View childAt2;
+        s4.h0 adapter = getAdapter();
+        jv0 jv0Var = this.u3;
+        org.telegram.ui.ActionBar.n2 n2Var = jv0Var.v1;
+        rt0 rt0Var = jv0Var.c0;
+        wr0 wr0Var = jv0Var.e0;
+        fs0 fs0Var = this.s3;
+        if ((adapter == wr0Var || getAdapter() == rt0Var) && getChildCount() > 0 && (childAt = getChildAt(0)) != null && RecyclerView.S(childAt) == 0) {
+            int top = childAt.getTop();
+            if (jv0Var.o1) {
+                if (jv0Var.p1 == (getAdapter() == rt0Var ? 8 : 9) && fs0Var.r.getChildCount() > 0 && (childAt2 = fs0Var.r.getChildAt(0)) != null) {
+                    fs0Var.r.getClass();
+                    if (RecyclerView.S(childAt2) == 0) {
+                        top = AndroidUtilities.lerp(top, childAt2.getTop(), jv0Var.n1);
+                    }
+                }
+            }
+            if (getAdapter() != rt0Var) {
+                if (this.j3 == null) {
+                    TextPaint textPaint = new TextPaint(1);
+                    this.j3 = textPaint;
+                    textPaint.setTextSize(AndroidUtilities.dp(14.0f));
+                    this.j3.setColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.z6, this.p2));
+                }
+                int measuredWidth = getMeasuredWidth() - AndroidUtilities.dp(60.0f);
+                StaticLayout staticLayout = this.k3;
+                if (staticLayout == null || staticLayout.getWidth() != measuredWidth) {
+                    this.k3 = new StaticLayout(LocaleController.getString(jv0Var.q0() ? n2Var != null && ChatObject.isChannelAndNotMegaGroup(n2Var.getMessagesController().getChat(Long.valueOf(-jv0Var.j1))) ? R.string.ProfileStoriesArchiveChannelHint : R.string.ProfileStoriesArchiveGroupHint : R.string.ProfileStoriesArchiveHint), this.j3, measuredWidth, Layout.Alignment.ALIGN_CENTER, 1.0f, 0.0f, false);
+                    this.l3 = 0.0f;
+                    this.m3 = measuredWidth;
+                    for (int i10 = 0; i10 < this.k3.getLineCount(); i10++) {
+                        this.l3 = Math.max(this.l3, this.k3.getLineWidth(i10));
+                        this.m3 = Math.min(this.m3, this.k3.getLineLeft(i10));
+                    }
+                }
+                canvas.save();
+                canvas.translate(((getWidth() - this.l3) / 2.0f) - this.m3, top - ((this.k3.getHeight() + AndroidUtilities.dp(64.0f)) / 2.0f));
+                this.k3.draw(canvas);
+                canvas.restore();
+            }
+        }
+        super.dispatchDraw(canvas);
+        if (fs0Var.K) {
+            float f7 = fs0Var.L + 0.010666667f;
+            fs0Var.L = f7;
+            if (f7 >= 1.0f) {
+                fs0Var.L = 0.0f;
+                fs0Var.K = false;
+                fs0Var.J = 0;
+            }
+            invalidate();
+        }
+        if (this.n3 == null) {
+            int currentAccount = n2Var.getCurrentAccount();
+            ai.rc[] rcVarArr = ai.rc.f;
+            if (rcVarArr[currentAccount] == null) {
+                rcVarArr[currentAccount] = new ai.rc(currentAccount);
+            }
+            this.n3 = rcVarArr[currentAccount];
+        }
+        this.n3.a(this);
+        if (jv0Var.o1) {
+            return;
+        }
+        jv0Var.p1 = -1;
+    }
+
+    @Override // org.telegram.ui.Components.vl0, android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        jv0 jv0Var = this.u3;
+        org.telegram.ui.ActionBar.n2 n2Var = jv0Var.v1;
+        if (n2Var == null || !n2Var.isInPreviewMode()) {
+            return super.dispatchTouchEvent(motionEvent);
+        }
+        this.q3 = motionEvent.getY();
+        if (motionEvent.getAction() == 1) {
+            jv0Var.v1.finishPreviewFragment();
+        } else if (motionEvent.getAction() == 2) {
+            float f7 = this.r3 - this.q3;
+            jv0Var.v1.movePreviewFragment(f7);
+            if (f7 < 0.0f) {
+                this.r3 = this.q3;
+            }
+        }
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.zu0
+    public final int getAnimateToColumnsCount() {
+        return this.u3.q1;
+    }
+
+    @Override // org.telegram.ui.Components.zu0
+    public final float getChangeColumnsProgress() {
+        return this.u3.n1;
+    }
+
+    @Override // org.telegram.ui.Components.zu0
+    public final int getColumnsCount() {
+        jv0 jv0Var = this.u3;
+        return jv0.p0(jv0Var.p1) ? jv0Var.m1[1] : jv0Var.m1[0];
+    }
+
+    @Override // org.telegram.ui.Components.zu0
+    public final SparseArray getMessageAlphaEnter() {
+        return this.u3.O1;
+    }
+
+    @Override // org.telegram.ui.Components.zu0
+    public final dl0 getMovingAdapter() {
+        jv0 jv0Var = this.u3;
+        return jv0.p0(jv0Var.p1) ? jv0Var.k1(jv0Var.p1) : jv0Var.H;
+    }
+
+    @Override // org.telegram.ui.Components.zu0
+    public final dl0 getSupportingAdapter() {
+        jv0 jv0Var = this.u3;
+        return jv0.p0(jv0Var.p1) ? jv0Var.l1(jv0Var.p1) : jv0Var.I;
+    }
+
+    @Override // org.telegram.ui.Components.zu0
+    public final bu0 getSupportingListView() {
+        return this.s3.r;
+    }
+
+    @Override // androidx.recyclerview.widget.RecyclerView
+    public final void l0(int i10, int i11) {
+        org.telegram.ui.ActionBar.n2 n2Var;
+        boolean z10 = this.K1;
+        jv0 jv0Var = this.u3;
+        if (z10 && jv0Var.getSelectedTab() == 11 && (n2Var = jv0Var.v1) != null) {
+            AndroidUtilities.hideKeyboard(n2Var.getParentActivity().getCurrentFocus());
+        }
+        jv0Var.I();
+        s4.h0 adapter = getAdapter();
+        qu0 qu0Var = jv0Var.N;
+        if (adapter == qu0Var) {
+            ArrayList<MessageObject> arrayList = qu0Var.h;
+            arrayList.clear();
+            for (int i12 = 0; i12 < getChildCount(); i12++) {
+                View childAt = getChildAt(i12);
+                if (childAt instanceof org.telegram.ui.Cells.u1) {
+                    arrayList.add(((org.telegram.ui.Cells.u1) childAt).getMessageObject());
+                }
+            }
+            MessagesController.getInstance(qu0Var.d).addToPollsQueue(qu0Var.s.j1, arrayList);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.vl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        fs0 fs0Var = this.s3;
+        this.u3.G(fs0Var, fs0Var.h, this.t3);
+        if (fs0Var.F == 0) {
+            PhotoViewer.t1().y0();
+        }
+    }
+
+    @Override // android.view.View
+    public final boolean performAccessibilityAction(int i10, Bundle bundle) {
+        View D1;
+        try {
+        } catch (Exception e) {
+            FileLog.e(e);
+        }
+        if (i10 != 4096) {
+            if (i10 == 8192) {
+                if (!canScrollVertically(-1) && (D1 = D1()) != null && D1.canScrollVertically(-1) && D1.performAccessibilityAction(i10, bundle)) {
+                    return true;
+                }
+            }
+            return super.performAccessibilityAction(i10, bundle);
+        }
+        View D12 = D1();
+        if (D12 != null && D12.canScrollVertically(1) && D12.performAccessibilityAction(i10, bundle)) {
+            return true;
+        }
+        return super.performAccessibilityAction(i10, bundle);
+    }
+
+    @Override // org.telegram.ui.Components.zu0
+    public final void z1(org.telegram.ui.Cells.u7 u7Var) {
+        int messageId = u7Var.getMessageId();
+        fs0 fs0Var = this.s3;
+        if (messageId != fs0Var.J || !u7Var.c.hasBitmapImage()) {
+            u7Var.setHighlightProgress(0.0f);
+            return;
+        }
+        if (!fs0Var.K) {
+            fs0Var.L = 0.0f;
+            fs0Var.K = true;
+        }
+        float f7 = fs0Var.L;
+        u7Var.setHighlightProgress(f7 < 0.3f ? f7 / 0.3f : f7 > 0.7f ? (1.0f - f7) / 0.3f : 1.0f);
     }
 }

@@ -3,7 +3,7 @@ package org.telegram.ui;
 import org.telegram.messenger.MessageSuggestionParams;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class bf implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -41,9 +41,9 @@ public final /* synthetic */ class bf implements Utilities.Callback {
                 break;
             case 4:
                 Long l4 = (Long) obj;
-                org.telegram.ui.Components.m31 m31Var = znVar.R1;
-                if (m31Var != null) {
-                    m31Var.m(l4.longValue(), true);
+                org.telegram.ui.Components.l31 l31Var = znVar.R1;
+                if (l31Var != null) {
+                    l31Var.m(l4.longValue(), true);
                     break;
                 }
                 break;

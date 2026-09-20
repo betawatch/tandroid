@@ -2,25 +2,25 @@ package org.telegram.ui;
 
 import android.text.SpannableStringBuilder;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class ax extends org.telegram.ui.Components.ti0 {
+public final class ax extends org.telegram.ui.Components.si0 {
     public final /* synthetic */ int f0 = 0;
     public final /* synthetic */ Object g0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ax(dg1 dg1Var, SpannableStringBuilder spannableStringBuilder, SpannableStringBuilder spannableStringBuilder2) {
+    public ax(fg1 fg1Var, SpannableStringBuilder spannableStringBuilder, SpannableStringBuilder spannableStringBuilder2) {
         super(spannableStringBuilder, spannableStringBuilder2);
-        this.g0 = dg1Var;
+        this.g0 = fg1Var;
     }
 
-    @Override // org.telegram.ui.Components.ti0
+    @Override // org.telegram.ui.Components.si0
     public final float d() {
         switch (this.f0) {
             case 0:
                 return ((ty) this.g0).a.getViewOffset();
             default:
-                return ((dg1) this.g0).N.f3;
+                return ((fg1) this.g0).N.f3;
         }
     }
 

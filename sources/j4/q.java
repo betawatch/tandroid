@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class q implements i {
     public final c0 a;
@@ -32,41 +32,6 @@ public final class q implements i {
         this.a = c0Var;
         this.b = z10;
         this.c = z11;
-    }
-
-    @Override // j4.i
-    public final void a(e2.v vVar) {
-        int i10;
-        e2.d.h(this.j);
-        String str = e2.d0.a;
-        int i11 = vVar.b;
-        int i12 = vVar.c;
-        byte[] bArr = vVar.a;
-        this.g += vVar.a();
-        this.j.d(vVar.a(), vVar);
-        while (true) {
-            int b10 = f2.o.b(bArr, i11, i12, this.h);
-            if (b10 == i12) {
-                g(i11, i12, bArr);
-                return;
-            }
-            int i13 = bArr[b10 + 3] & 31;
-            if (b10 <= 0 || bArr[b10 - 1] != 0) {
-                i10 = 3;
-            } else {
-                b10--;
-                i10 = 4;
-            }
-            int i14 = b10 - i11;
-            if (i14 > 0) {
-                g(i11, b10, bArr);
-            }
-            int i15 = i12 - b10;
-            long j3 = this.g - i15;
-            b(j3, i15, i14 < 0 ? -i14 : 0, this.m);
-            h(i13, j3, this.m);
-            i11 = b10 + i10;
-        }
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:28:0x01cd, code lost:
@@ -101,7 +66,7 @@ public final class q implements i {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void b(long j3, int i10, int i11, long j10) {
+    public final void a(long j3, int i10, int i11, long j10) {
         l0 l0Var;
         p pVar;
         boolean z10;
@@ -159,7 +124,7 @@ public final class q implements i {
                 rVar.D = j13.g;
                 rVar.t = arrayList;
                 rVar.s = i14;
-                k0.r(rVar, h0Var);
+                k0.s(rVar, h0Var);
                 this.l = true;
                 cVar.k(i14);
                 this.k.d.append(j13.d, j13);
@@ -319,53 +284,38 @@ public final class q implements i {
     }
 
     @Override // j4.i
-    public final void c() {
-        this.g = 0L;
-        this.n = false;
-        this.m = -9223372036854775807L;
-        f2.o.a(this.h);
-        this.d.g();
-        this.e.g();
-        this.f.g();
-        this.a.d.c(0);
-        p pVar = this.k;
-        if (pVar != null) {
-            pVar.k = false;
-            pVar.o = false;
-            o oVar = pVar.n;
-            oVar.b = false;
-            oVar.a = false;
-        }
-    }
-
-    @Override // j4.i
-    public final void d(c3.q qVar, f0 f0Var) {
-        f0Var.a();
-        f0Var.b();
-        this.i = f0Var.e;
-        f0Var.b();
-        h0 Z1 = qVar.Z1(f0Var.d, 2);
-        this.j = Z1;
-        this.k = new p(Z1, this.b, this.c);
-        this.a.b(qVar, f0Var);
-    }
-
-    @Override // j4.i
-    public final void e(boolean z10) {
+    public final void b(e2.v vVar) {
+        int i10;
         e2.d.h(this.j);
         String str = e2.d0.a;
-        if (z10) {
-            this.a.d.c(0);
-            b(this.g, 0, 0, this.m);
-            h(9, this.g, this.m);
-            b(this.g, 0, 0, this.m);
+        int i11 = vVar.b;
+        int i12 = vVar.c;
+        byte[] bArr = vVar.a;
+        this.g += vVar.a();
+        this.j.d(vVar.a(), vVar);
+        while (true) {
+            int b10 = f2.o.b(bArr, i11, i12, this.h);
+            if (b10 == i12) {
+                c(i11, i12, bArr);
+                return;
+            }
+            int i13 = bArr[b10 + 3] & 31;
+            if (b10 <= 0 || bArr[b10 - 1] != 0) {
+                i10 = 3;
+            } else {
+                b10--;
+                i10 = 4;
+            }
+            int i14 = b10 - i11;
+            if (i14 > 0) {
+                c(i11, b10, bArr);
+            }
+            int i15 = i12 - b10;
+            long j3 = this.g - i15;
+            a(j3, i15, i14 < 0 ? -i14 : 0, this.m);
+            h(i13, j3, this.m);
+            i11 = b10 + i10;
         }
-    }
-
-    @Override // j4.i
-    public final void f(int i10, long j3) {
-        this.m = j3;
-        this.n = ((i10 & 2) != 0) | this.n;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:46:0x0102  */
@@ -377,7 +327,7 @@ public final class q implements i {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void g(int i10, int i11, byte[] bArr) {
+    public final void c(int i10, int i11, byte[] bArr) {
         boolean z10;
         boolean z11;
         boolean z12;
@@ -582,6 +532,56 @@ public final class q implements i {
                 }
             }
         }
+    }
+
+    @Override // j4.i
+    public final void d() {
+        this.g = 0L;
+        this.n = false;
+        this.m = -9223372036854775807L;
+        f2.o.a(this.h);
+        this.d.g();
+        this.e.g();
+        this.f.g();
+        this.a.d.c(0);
+        p pVar = this.k;
+        if (pVar != null) {
+            pVar.k = false;
+            pVar.o = false;
+            o oVar = pVar.n;
+            oVar.b = false;
+            oVar.a = false;
+        }
+    }
+
+    @Override // j4.i
+    public final void e(c3.q qVar, f0 f0Var) {
+        f0Var.a();
+        f0Var.b();
+        this.i = f0Var.e;
+        f0Var.b();
+        h0 Z1 = qVar.Z1(f0Var.d, 2);
+        this.j = Z1;
+        this.k = new p(Z1, this.b, this.c);
+        this.a.b(qVar, f0Var);
+    }
+
+    @Override // j4.i
+    public final void f(boolean z10) {
+        e2.d.h(this.j);
+        String str = e2.d0.a;
+        if (z10) {
+            this.a.d.c(0);
+            a(this.g, 0, 0, this.m);
+            h(9, this.g, this.m);
+            a(this.g, 0, 0, this.m);
+        }
+    }
+
+    @Override // j4.i
+    public final void g(int i10, long j3) {
+        this.m = j3;
+        this.n = ((i10 & 2) != 0) | this.n;
     }
 
     public final void h(int i10, long j3, long j10) {

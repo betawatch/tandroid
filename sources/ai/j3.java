@@ -24,29 +24,29 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.mf;
 import org.telegram.ui.Components.nu;
-import org.telegram.ui.Components.pg0;
-import org.telegram.ui.Components.rd;
-import org.telegram.ui.Components.sk0;
+import org.telegram.ui.Components.og0;
+import org.telegram.ui.Components.rk0;
+import org.telegram.ui.Components.sd;
 import org.telegram.ui.Components.uh;
 import org.telegram.ui.Components.vi;
 import org.telegram.ui.Components.vu;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.bc1;
 import org.telegram.ui.cr0;
+import org.telegram.ui.dc1;
 import org.telegram.ui.dv0;
 import org.telegram.ui.gr0;
 import org.telegram.ui.hr0;
 import org.telegram.ui.ht0;
 import org.telegram.ui.iu0;
 import org.telegram.ui.uu0;
-import org.telegram.ui.wg0;
 import org.telegram.ui.xg0;
-import org.telegram.ui.yb0;
+import org.telegram.ui.yg0;
+import org.telegram.ui.zb0;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class j3 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -117,10 +117,10 @@ public final /* synthetic */ class j3 implements View.OnClickListener {
                 }
                 break;
             case 3:
-                bc1 bc1Var = (bc1) this.c;
+                dc1 dc1Var = (dc1) this.c;
                 boolean z14 = this.b;
                 for (int i10 = 0; i10 < 2; i10++) {
-                    org.telegram.ui.Cells.y0 y0Var = ((org.telegram.ui.Cells.y0[]) bc1Var.b)[i10];
+                    org.telegram.ui.Cells.y0 y0Var = ((org.telegram.ui.Cells.y0[]) dc1Var.b)[i10];
                     y0Var.a.a(y0Var == view, true);
                 }
                 SharedConfig.setUseThreeLinesLayout(z14);
@@ -128,7 +128,7 @@ public final /* synthetic */ class j3 implements View.OnClickListener {
             case 4:
                 ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.c;
                 boolean z15 = this.b;
-                rd rdVar = chatActivityEnterView.E4;
+                sd sdVar = chatActivityEnterView.E4;
                 chatActivityEnterView.M0 = System.currentTimeMillis();
                 boolean S0 = chatActivityEnterView.S0();
                 if (!z15 && (mfVar = chatActivityEnterView.L0) != null) {
@@ -137,8 +137,8 @@ public final /* synthetic */ class j3 implements View.OnClickListener {
                     break;
                 } else {
                     chatActivityEnterView.D4 = !S0;
-                    AndroidUtilities.cancelRunOnUIThread(rdVar);
-                    AndroidUtilities.runOnUIThread(rdVar, 500L);
+                    AndroidUtilities.cancelRunOnUIThread(sdVar);
+                    AndroidUtilities.runOnUIThread(sdVar, 500L);
                     break;
                 }
             case 5:
@@ -146,7 +146,7 @@ public final /* synthetic */ class j3 implements View.OnClickListener {
                 boolean z16 = this.b;
                 org.telegram.ui.ActionBar.n2 n2Var = viVar.f0;
                 if (viVar.Q0 != 0) {
-                    viVar.Z1.u0();
+                    viVar.Z1.v0();
                     viVar.dismiss();
                     break;
                 } else {
@@ -173,9 +173,9 @@ public final /* synthetic */ class j3 implements View.OnClickListener {
                     break;
                 }
             case 6:
-                pg0 pg0Var = (pg0) this.c;
+                og0 og0Var = (og0) this.c;
                 boolean z18 = this.b;
-                pg0Var.getClass();
+                og0Var.getClass();
                 List<ActivityManager.RunningAppProcessInfo> runningAppProcesses = ((ActivityManager) view.getContext().getSystemService("activity")).getRunningAppProcesses();
                 boolean z19 = runningAppProcesses == null || runningAppProcesses.isEmpty() || runningAppProcesses.get(0).importance == 100;
                 if (!z18 && (!z19 || !LaunchActivity.E1)) {
@@ -186,12 +186,12 @@ public final /* synthetic */ class j3 implements View.OnClickListener {
                     context.startActivity(intent);
                     break;
                 } else {
-                    vu vuVar = pg0Var.U;
+                    vu vuVar = og0Var.U;
                     if (vuVar != null) {
                         vuVar.I();
                         break;
                     } else {
-                        PhotoViewer photoViewer = pg0Var.V;
+                        PhotoViewer photoViewer = og0Var.V;
                         if (photoViewer != null && photoViewer.J3) {
                             if (PhotoViewer.a9 != null) {
                                 PhotoViewer.a9.G0(false, true);
@@ -211,7 +211,7 @@ public final /* synthetic */ class j3 implements View.OnClickListener {
                                     viewGroup.removeView(iu0Var.f);
                                 }
                                 iu0Var.addView(iu0Var.f, 0, w7.y5.e(-1, -1, 51));
-                                pg0.j(false);
+                                og0.j(false);
                             }
                             PhotoViewer.a9 = PhotoViewer.b9;
                             PhotoViewer.b9 = null;
@@ -242,7 +242,7 @@ public final /* synthetic */ class j3 implements View.OnClickListener {
                                 photoViewer.m6 = 0.0f;
                             } else if (view2 != null) {
                                 photoViewer.B3 = true;
-                                sk0 o9 = pg0.o(photoViewer.y2.getAspectRatio(), false);
+                                rk0 o9 = og0.o(photoViewer.y2.getAspectRatio(), false);
                                 float f7 = o9.c / photoViewer.x3.getLayoutParams().width;
                                 photoViewer.x3.setScaleX(f7);
                                 photoViewer.x3.setScaleY(f7);
@@ -271,7 +271,7 @@ public final /* synthetic */ class j3 implements View.OnClickListener {
                                     photoViewer.E2.setClipToOutline(true);
                                 }
                             } else {
-                                pg0.j(true);
+                                og0.j(true);
                             }
                             try {
                                 photoViewer.e = true;
@@ -309,46 +309,46 @@ public final /* synthetic */ class j3 implements View.OnClickListener {
                 }
                 break;
             case 7:
-                yb0 yb0Var = (yb0) this.c;
+                zb0 zb0Var = (zb0) this.c;
                 if (!this.b) {
-                    org.telegram.ui.Cells.w8 w8Var = yb0Var.n;
-                    if (w8Var == null || !w8Var.e.h) {
-                        org.telegram.ui.Cells.w8 w8Var2 = (org.telegram.ui.Cells.w8) view;
-                        boolean z20 = w8Var2.e.h;
-                        w8Var2.setChecked(!z20);
-                        yb0Var.Z(z20);
-                        org.telegram.ui.Cells.w8 w8Var3 = yb0Var.n;
-                        if (w8Var3 != null) {
-                            if (w8Var2.e.h) {
-                                w8Var3.setChecked(false);
-                                yb0Var.n.setCheckBoxIcon(R.drawable.permission_locked);
-                                yb0Var.r.setVisibility(8);
+                    org.telegram.ui.Cells.x8 x8Var = zb0Var.n;
+                    if (x8Var == null || !x8Var.e.h) {
+                        org.telegram.ui.Cells.x8 x8Var2 = (org.telegram.ui.Cells.x8) view;
+                        boolean z20 = x8Var2.e.h;
+                        x8Var2.setChecked(!z20);
+                        zb0Var.Z(z20);
+                        org.telegram.ui.Cells.x8 x8Var3 = zb0Var.n;
+                        if (x8Var3 != null) {
+                            if (x8Var2.e.h) {
+                                x8Var3.setChecked(false);
+                                zb0Var.n.setCheckBoxIcon(R.drawable.permission_locked);
+                                zb0Var.r.setVisibility(8);
                                 break;
-                            } else if (yb0Var.e == null) {
-                                w8Var3.setCheckBoxIcon(0);
+                            } else if (zb0Var.e == null) {
+                                x8Var3.setCheckBoxIcon(0);
                                 break;
                             }
                         }
                     } else {
-                        int i12 = -yb0Var.N;
-                        yb0Var.N = i12;
-                        AndroidUtilities.shakeViewSpring(w8Var, i12);
+                        int i12 = -zb0Var.N;
+                        zb0Var.N = i12;
+                        AndroidUtilities.shakeViewSpring(x8Var, i12);
                         break;
                     }
                 }
                 break;
             default:
-                wg0 wg0Var = (wg0) this.c;
+                xg0 xg0Var = (xg0) this.c;
                 boolean z21 = this.b;
-                xg0 xg0Var = wg0Var.V;
-                if (xg0Var.getParentActivity() != null) {
-                    boolean z22 = !xg0Var.E;
-                    xg0Var.E = z22;
+                yg0 yg0Var = xg0Var.V;
+                if (yg0Var.getParentActivity() != null) {
+                    boolean z22 = !yg0Var.E;
+                    yg0Var.E = z22;
                     ((org.telegram.ui.Cells.a2) view).c(z22, true);
-                    if ((z21 && xg0Var.getConnectionsManager().isTestBackend()) != xg0Var.E) {
-                        xg0Var.getConnectionsManager().switchBackend(false);
+                    if ((z21 && yg0Var.getConnectionsManager().isTestBackend()) != yg0Var.E) {
+                        yg0Var.getConnectionsManager().switchBackend(false);
                     }
-                    wg0Var.s();
+                    xg0Var.s();
                     break;
                 }
                 break;

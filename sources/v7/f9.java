@@ -1,78 +1,80 @@
 package v7;
 
-import java.util.ListIterator;
-import java.util.NoSuchElementException;
+import java.io.Serializable;
+import java.lang.reflect.Array;
+import java.util.AbstractCollection;
+import java.util.Arrays;
+import java.util.Collection;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
-public final class f9 extends a9.o implements ListIterator {
-    public final int b;
-    public int c;
-    public final h9 d;
+public abstract class f9 extends AbstractCollection implements Serializable {
+    public static final Object[] a = new Object[0];
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f9(h9 h9Var, int i10) {
-        super(6);
-        int size = h9Var.size();
-        if (i10 < 0 || i10 > size) {
-            throw new IndexOutOfBoundsException(w7.x7.c(i10, size, "index"));
-        }
-        this.b = size;
-        this.c = i10;
-        this.d = h9Var;
-    }
-
-    public final Object a(int i10) {
-        return this.d.get(i10);
-    }
-
-    @Override // java.util.ListIterator
-    public final void add(Object obj) {
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final boolean add(Object obj) {
         throw new UnsupportedOperationException();
     }
 
-    @Override // java.util.Iterator, java.util.ListIterator
-    public final boolean hasNext() {
-        return this.c < this.b;
-    }
-
-    @Override // java.util.ListIterator
-    public final boolean hasPrevious() {
-        return this.c > 0;
-    }
-
-    @Override // java.util.Iterator, java.util.ListIterator
-    public final Object next() {
-        if (!hasNext()) {
-            throw new NoSuchElementException();
-        }
-        int i10 = this.c;
-        this.c = i10 + 1;
-        return a(i10);
-    }
-
-    @Override // java.util.ListIterator
-    public final int nextIndex() {
-        return this.c;
-    }
-
-    @Override // java.util.ListIterator
-    public final Object previous() {
-        if (!hasPrevious()) {
-            throw new NoSuchElementException();
-        }
-        int i10 = this.c - 1;
-        this.c = i10;
-        return a(i10);
-    }
-
-    @Override // java.util.ListIterator
-    public final int previousIndex() {
-        return this.c - 1;
-    }
-
-    @Override // java.util.ListIterator
-    public final void set(Object obj) {
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final boolean addAll(Collection collection) {
         throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final void clear() {
+        throw new UnsupportedOperationException();
+    }
+
+    public abstract int i(Object[] objArr);
+
+    public int n() {
+        throw new UnsupportedOperationException();
+    }
+
+    public int o() {
+        throw new UnsupportedOperationException();
+    }
+
+    public Object[] p() {
+        return null;
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final boolean remove(Object obj) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final boolean removeAll(Collection collection) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final boolean retainAll(Collection collection) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final Object[] toArray() {
+        return toArray(a);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final Object[] toArray(Object[] objArr) {
+        objArr.getClass();
+        int size = size();
+        int length = objArr.length;
+        if (length < size) {
+            Object[] p5 = p();
+            if (p5 != null) {
+                return Arrays.copyOfRange(p5, o(), n(), objArr.getClass());
+            }
+            objArr = (Object[]) Array.newInstance(objArr.getClass().getComponentType(), size);
+        } else if (length > size) {
+            objArr[size] = null;
+        }
+        i(objArr);
+        return objArr;
     }
 }

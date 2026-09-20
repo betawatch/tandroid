@@ -4,7 +4,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import androidx.appcompat.widget.SearchView;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class r2 implements View.OnFocusChangeListener {
     public final /* synthetic */ int a;
@@ -27,20 +27,20 @@ public final class r2 implements View.OnFocusChangeListener {
                 }
                 break;
             case 1:
-                org.telegram.ui.Cells.g3 g3Var = (org.telegram.ui.Cells.g3) this.b;
-                g3Var.h = z10;
-                if (g3Var.f) {
-                    g3Var.c();
+                org.telegram.ui.Cells.h3 h3Var = (org.telegram.ui.Cells.h3) this.b;
+                h3Var.h = z10;
+                if (h3Var.f) {
+                    h3Var.c();
                     break;
                 }
                 break;
             default:
-                org.telegram.ui.Cells.j3 j3Var = (org.telegram.ui.Cells.j3) this.b;
-                j3Var.n = z10;
-                if (j3Var.f) {
-                    j3Var.c();
+                org.telegram.ui.Cells.k3 k3Var = (org.telegram.ui.Cells.k3) this.b;
+                k3Var.n = z10;
+                if (k3Var.f) {
+                    k3Var.c();
                 }
-                j3Var.a(z10);
+                k3Var.a(z10);
                 break;
         }
     }

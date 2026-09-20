@@ -24,9 +24,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.a2;
 import org.telegram.ui.ActionBar.b2;
-import org.telegram.ui.Components.kv0;
+import org.telegram.ui.Components.jv0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d implements m, c1, e1, RequestDelegateTimestamp, a2, MessagesStorage.StringCallback {
     public final /* synthetic */ int a;
@@ -47,8 +47,20 @@ public final /* synthetic */ class d implements m, c1, e1, RequestDelegateTimest
         j1Var.s(f1Var.K0(rVar, j1Var, this.b), this.c);
     }
 
+    @Override // m4.e1
+    public Object h(a0 a0Var, r rVar, int i10) {
+        List list = (List) this.d;
+        int i11 = this.b;
+        return a0Var.q(rVar, list, i11 == -1 ? a0Var.t.l0() : i11, i11 == -1 ? a0Var.t.J0() : this.c);
+    }
+
+    @Override // e2.m
+    public void invoke(Object obj) {
+        ((b) obj).f((a) this.d, this.b, this.c);
+    }
+
     @Override // org.telegram.ui.ActionBar.a2
-    public void f(b2 b2Var, int i10) {
+    public void k(b2 b2Var, int i10) {
         int i11 = this.a;
         Object obj = this.d;
         int i12 = this.b;
@@ -123,21 +135,9 @@ public final /* synthetic */ class d implements m, c1, e1, RequestDelegateTimest
         }
     }
 
-    @Override // m4.e1
-    public Object i(a0 a0Var, r rVar, int i10) {
-        List list = (List) this.d;
-        int i11 = this.b;
-        return a0Var.q(rVar, list, i11 == -1 ? a0Var.t.l0() : i11, i11 == -1 ? a0Var.t.J0() : this.c);
-    }
-
-    @Override // e2.m
-    public void invoke(Object obj) {
-        ((b) obj).f((a) this.d, this.b, this.c);
-    }
-
     @Override // org.telegram.messenger.MessagesStorage.StringCallback
     public void run(String str) {
-        kv0.i((kv0) this.d, this.c, this.b, str);
+        jv0.i((jv0) this.d, this.c, this.b, str);
     }
 
     public /* synthetic */ d(a aVar, int i10, long j3, long j10) {
@@ -159,9 +159,9 @@ public final /* synthetic */ class d implements m, c1, e1, RequestDelegateTimest
         this.c = j3;
     }
 
-    public /* synthetic */ d(kv0 kv0Var, long j3, int i10) {
+    public /* synthetic */ d(jv0 jv0Var, long j3, int i10) {
         this.a = 6;
-        this.d = kv0Var;
+        this.d = jv0Var;
         this.c = j3;
         this.b = i10;
     }

@@ -18,7 +18,7 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class l00 extends FrameLayout {
     public final /* synthetic */ int a = 1;
@@ -41,14 +41,14 @@ public final class l00 extends FrameLayout {
             return;
         }
         textViewArr[1].setText(str);
-        ((f80) this.e).E = true;
+        ((e80) this.e).E = true;
         AnimatorSet animatorSet = new AnimatorSet();
         animatorSet.setDuration(180L);
         animatorSet.setInterpolator(qr.g);
         Property property = View.ALPHA;
         Property property2 = View.TRANSLATION_Y;
         animatorSet.playTogether(ObjectAnimator.ofFloat(textViewArr[0], (Property<TextView, Float>) property, 1.0f, 0.0f), ObjectAnimator.ofFloat(textViewArr[0], (Property<TextView, Float>) property2, 0.0f, -AndroidUtilities.dp(10.0f)), ObjectAnimator.ofFloat(textViewArr[1], (Property<TextView, Float>) property, 0.0f, 1.0f), ObjectAnimator.ofFloat(textViewArr[1], (Property<TextView, Float>) property2, AndroidUtilities.dp(10.0f), 0.0f));
-        animatorSet.addListener(new r8(this, 26));
+        animatorSet.addListener(new q8(this, 26));
         animatorSet.start();
     }
 
@@ -309,9 +309,9 @@ public final class l00 extends FrameLayout {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l00(f80 f80Var, Context context, boolean z10) {
+    public l00(e80 e80Var, Context context, boolean z10) {
         super(context);
-        this.e = f80Var;
+        this.e = e80Var;
         this.d = new TextView[2];
         this.b = !z10;
         setBackground(null);
@@ -356,12 +356,12 @@ public final class l00 extends FrameLayout {
         j5Var.setRightPadding(AndroidUtilities.dp(68.0f));
         j5Var.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.j5, false));
         addView(j5Var, w7.y5.d(0, -2.0f, 19, 19.0f, 0.0f, 19.0f, 0.0f));
-        k9 k9Var = new k9(context, false);
-        this.d = k9Var;
-        k9Var.a.a = true;
-        k9Var.setStyle(11);
-        k9Var.setAvatarsTextSize(AndroidUtilities.dp(22.0f));
-        addView(k9Var, w7.y5.d(56, -1.0f, 21, 0.0f, 0.0f, 4.0f, 0.0f));
+        j9 j9Var = new j9(context, false);
+        this.d = j9Var;
+        j9Var.a.a = true;
+        j9Var.setStyle(11);
+        j9Var.setAvatarsTextSize(AndroidUtilities.dp(22.0f));
+        addView(j9Var, w7.y5.d(56, -1.0f, 21, 0.0f, 0.0f, 4.0f, 0.0f));
         setBackground(org.telegram.ui.ActionBar.j6.Y(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.i6, false), 0, 4));
     }
 }

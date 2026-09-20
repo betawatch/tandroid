@@ -21,7 +21,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.m30;
 import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public abstract class fa extends ScrollView {
     public final Paint E;
@@ -39,25 +39,25 @@ public abstract class fa extends ScrollView {
     public final p9 f;
     public boolean h;
     public Utilities.Callback n;
-    public final org.telegram.ui.Components.e6 r;
+    public final org.telegram.ui.Components.d6 r;
     public final LinearGradient s;
     public final Paint v;
     public final Matrix w;
-    public final org.telegram.ui.Components.e6 x;
+    public final org.telegram.ui.Components.d6 x;
     public final LinearGradient y;
 
-    public fa(Context context, org.telegram.ui.ActionBar.e6 e6Var, p9 p9Var) {
+    public fa(Context context, org.telegram.ui.ActionBar.f6 f6Var, p9 p9Var) {
         super(context);
         this.d = new ArrayList();
         qr qrVar = qr.h;
-        this.r = new org.telegram.ui.Components.e6(this, 0L, 300L, qrVar);
+        this.r = new org.telegram.ui.Components.d6(this, 0L, 300L, qrVar);
         Shader.TileMode tileMode = Shader.TileMode.CLAMP;
         LinearGradient linearGradient = new LinearGradient(0.0f, 0.0f, 0.0f, AndroidUtilities.dp(8.0f), new int[]{-16777216, 0}, new float[]{0.0f, 1.0f}, tileMode);
         this.s = linearGradient;
         Paint paint = new Paint(1);
         this.v = paint;
         this.w = new Matrix();
-        this.x = new org.telegram.ui.Components.e6(this, 0L, 300L, qrVar);
+        this.x = new org.telegram.ui.Components.d6(this, 0L, 300L, qrVar);
         LinearGradient linearGradient2 = new LinearGradient(0.0f, 0.0f, 0.0f, AndroidUtilities.dp(8.0f), new int[]{0, -16777216}, new float[]{0.0f, 1.0f}, tileMode);
         this.y = linearGradient2;
         Paint paint2 = new Paint(1);
@@ -80,11 +80,11 @@ public abstract class fa extends ScrollView {
             h2Var.setRevealOnFocusHint(false);
         }
         h2Var.setTextSize(1, 16.0f);
-        h2Var.setHintColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Xh, e6Var));
-        h2Var.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.G6, e6Var));
+        h2Var.setHintColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Xh, f6Var));
+        h2Var.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.G6, f6Var));
         int i10 = org.telegram.ui.ActionBar.j6.Yh;
-        h2Var.setCursorColor(org.telegram.ui.ActionBar.j6.v0(i10, e6Var));
-        h2Var.setHandlesColor(org.telegram.ui.ActionBar.j6.v0(i10, e6Var));
+        h2Var.setCursorColor(org.telegram.ui.ActionBar.j6.v0(i10, f6Var));
+        h2Var.setHandlesColor(org.telegram.ui.ActionBar.j6.v0(i10, f6Var));
         h2Var.setCursorWidth(1.5f);
         h2Var.setInputType(h2Var.getInputType() | 176);
         h2Var.setSingleLine(true);
@@ -139,8 +139,8 @@ public abstract class fa extends ScrollView {
             return false;
         }
         rect.offset(view.getLeft() - view.getScrollX(), view.getTop() - view.getScrollY());
-        rect.top = org.telegram.messenger.q.D(20.0f, this.H, rect.top);
-        rect.bottom = org.telegram.messenger.q.D(50.0f, this.H, rect.bottom);
+        rect.top = org.telegram.messenger.l0.C(20.0f, this.H, rect.top);
+        rect.bottom = org.telegram.messenger.l0.C(50.0f, this.H, rect.bottom);
         return super.requestChildRectangleOnScreen(view, rect, z10);
     }
 

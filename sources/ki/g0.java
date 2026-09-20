@@ -1,21 +1,15 @@
 package ki;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class g0 {
-    public final int a;
-    public final long b;
-    public final long c;
-    public final long d;
-    public final boolean e;
-    public final boolean f;
+    public final h0 a;
+    public final int b;
+    public final float c;
 
-    public g0(int i10, long j3, long j10, long j11, boolean z10, boolean z11) {
-        this.a = i10;
-        this.b = j3;
-        this.c = j10;
-        this.d = j11;
-        this.e = z10;
-        this.f = z11;
+    public g0(h0 h0Var, h0 h0Var2, int i10, float f7) {
+        this.a = h0Var;
+        this.b = i10;
+        this.c = f7;
     }
 }

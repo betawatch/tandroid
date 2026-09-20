@@ -1,15 +1,15 @@
 package z7;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class j1 {
     public final i1 a;
     public final Integer b;
     public final ma c;
 
-    public /* synthetic */ j1(v7.r1 r1Var) {
-        this.a = (i1) r1Var.b;
-        this.b = (Integer) r1Var.d;
-        this.c = (ma) r1Var.c;
+    public /* synthetic */ j1(v7.s1 s1Var) {
+        this.a = (i1) s1Var.b;
+        this.b = (Integer) s1Var.d;
+        this.c = (ma) s1Var.c;
     }
 }

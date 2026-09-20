@@ -4,14 +4,14 @@ import android.graphics.Canvas;
 import android.view.View;
 import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class i40 extends org.telegram.ui.Components.ju {
     public final /* synthetic */ i60 V;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public i40(i60 i60Var, LaunchActivity launchActivity, m50 m50Var, org.telegram.ui.ActionBar.n2 n2Var, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(launchActivity, m50Var, n2Var, 5, true, e6Var);
+    public i40(i60 i60Var, LaunchActivity launchActivity, m50 m50Var, org.telegram.ui.ActionBar.n2 n2Var, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(launchActivity, m50Var, n2Var, 5, true, f6Var);
         this.V = i60Var;
     }
 

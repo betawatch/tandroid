@@ -17,26 +17,26 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.kx0;
+import org.telegram.ui.Components.jx0;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.t61;
-import org.telegram.ui.Components.x51;
+import org.telegram.ui.Components.s61;
+import org.telegram.ui.Components.w51;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.zn;
 import w7.y5;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class s extends n2 implements le.d {
     public final le.b a;
     public long b;
     public FrameLayout c;
-    public t61 d;
+    public s61 d;
     public jh.f e;
     public LinearLayout f;
     public ci.d h;
     public ci.d n;
-    public kx0 r;
+    public jx0 r;
     public TLRPC.ChatFull s;
     public t0 v;
 
@@ -45,8 +45,8 @@ public final class s extends n2 implements le.d {
         this.a = new le.b(0, this, qr.h, 320L, false);
     }
 
-    public static void U(s sVar, x51 x51Var) {
-        Object obj = x51Var.G;
+    public static void U(s sVar, w51 w51Var) {
+        Object obj = w51Var.G;
         if (obj instanceof gi.f) {
             gi.f fVar = (gi.f) obj;
             long j3 = fVar.a;
@@ -89,7 +89,7 @@ public final class s extends n2 implements le.d {
         t0Var.d();
         this.v.e();
         final int i10 = 0;
-        hg.k0.t(false, this.actionBar);
+        hg.k0.v(false, this.actionBar);
         this.actionBar.setAllowOverlayTitle(true);
         this.actionBar.setActionBarMenuOnItemClick(new ei.t(this, 5));
         this.actionBar.setTitle(LocaleController.getString(R.string.CommunityPendingRequests));
@@ -97,12 +97,12 @@ public final class s extends n2 implements le.d {
         this.c = frameLayout;
         int i11 = j6.a7;
         frameLayout.setBackgroundColor(j6.w0(null, i11, false));
-        t61 t61Var = new t61(this, new bi.v(this, 19), new q(this), new q(this));
-        this.d = t61Var;
-        t61Var.setClipToPadding(false);
-        t61 t61Var2 = this.d;
-        t61Var2.Y2.r = false;
-        t61Var2.q1();
+        s61 s61Var = new s61(this, new bi.v(this, 19), new q(this), new q(this));
+        this.d = s61Var;
+        s61Var.setClipToPadding(false);
+        s61 s61Var2 = this.d;
+        s61Var2.Y2.r = false;
+        s61Var2.q1();
         this.d.j(new ai.r(this, 6));
         this.actionBar.setAdaptiveBackground(this.d);
         this.c.addView(this.d, y5.c(-1.0f, -1));
@@ -170,9 +170,9 @@ public final class s extends n2 implements le.d {
         });
         this.f.addView(this.h, y5.p(0, 48, 1.0f, 0, 4, 0, 4, 0));
         this.c.addView(this.f, y5.e(-1, -2, 80));
-        kx0 kx0Var = new kx0(getParentActivity(), null, 16, this.resourceProvider);
-        this.r = kx0Var;
-        kx0Var.d.setText(LocaleController.getString(R.string.NoCommunityJoinRequests));
+        jx0 jx0Var = new jx0(getParentActivity(), null, 16, this.resourceProvider);
+        this.r = jx0Var;
+        jx0Var.d.setText(LocaleController.getString(R.string.NoCommunityJoinRequests));
         this.r.e.setText(LocaleController.getString(R.string.NoCommunityJoinRequestsDescription));
         this.r.setAnimateLayoutChange(true);
         this.r.setVisibility(8);

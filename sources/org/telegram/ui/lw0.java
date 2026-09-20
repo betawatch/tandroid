@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.content.Context;
 import android.graphics.Canvas;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class lw0 extends org.telegram.ui.Cells.u1 {
     public final /* synthetic */ int Ge;
@@ -11,8 +11,8 @@ public final class lw0 extends org.telegram.ui.Cells.u1 {
     public final /* synthetic */ int Ie;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ lw0(Context context, int i10, org.telegram.ui.ActionBar.e6 e6Var, int i11, int i12, int i13) {
-        super(context, i10, false, null, e6Var);
+    public /* synthetic */ lw0(Context context, int i10, org.telegram.ui.ActionBar.f6 f6Var, int i11, int i12, int i13) {
+        super(context, i10, false, null, f6Var);
         this.Ge = i13;
         this.He = i11;
         this.Ie = i12;

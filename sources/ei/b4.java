@@ -14,17 +14,17 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.w9;
+import org.telegram.ui.Components.v9;
 import w7.y5;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class b4 extends FrameLayout {
     public final int a;
-    public final e6 b;
-    public final w9 c;
+    public final f6 b;
+    public final v9 c;
     public final View d;
     public final View e;
     public final ImageView f;
@@ -33,21 +33,21 @@ public final class b4 extends FrameLayout {
     public final ImageView r;
     public boolean s;
 
-    public b4(Context context, int i10, e6 e6Var) {
+    public b4(Context context, int i10, f6 f6Var) {
         super(context);
         this.a = i10;
-        this.b = e6Var;
-        w9 w9Var = new w9(context);
-        this.c = w9Var;
-        w9Var.setRoundRadius(AndroidUtilities.dp(46.0f));
-        addView(w9Var, y5.d(46, 46.0f, 19, 13.0f, 0.0f, 13.0f, 0.0f));
+        this.b = f6Var;
+        v9 v9Var = new v9(context);
+        this.c = v9Var;
+        v9Var.setRoundRadius(AndroidUtilities.dp(46.0f));
+        addView(v9Var, y5.d(46, 46.0f, 19, 13.0f, 0.0f, 13.0f, 0.0f));
         View view = new View(context);
         this.d = view;
-        view.setBackground(j6.K(AndroidUtilities.dp(11.0f), j6.v0(j6.d6, e6Var)));
+        view.setBackground(j6.K(AndroidUtilities.dp(11.0f), j6.v0(j6.d6, f6Var)));
         addView(view, y5.d(22, 22.0f, 19, 40.0f, 15.0f, 0.0f, 0.0f));
         View view2 = new View(context);
         this.e = view2;
-        view2.setBackground(j6.K(AndroidUtilities.dp(9.665f), j6.v0(j6.uj, e6Var)));
+        view2.setBackground(j6.K(AndroidUtilities.dp(9.665f), j6.v0(j6.uj, f6Var)));
         addView(view2, y5.b(19.33f, 19.33f, 19, 41.33f, 15.0f, 0.0f, 0.0f));
         ImageView imageView = new ImageView(context);
         this.f = imageView;
@@ -65,7 +65,7 @@ public final class b4 extends FrameLayout {
         textView.setEllipsize(truncateAt);
         textView.setTypeface(AndroidUtilities.bold());
         textView.setTextSize(1, 16.0f);
-        textView.setTextColor(j6.v0(j6.G6, e6Var));
+        textView.setTextColor(j6.v0(j6.G6, f6Var));
         NotificationCenter.listenEmojiLoading(textView);
         TextView h = com.google.android.gms.internal.vision.e2.h(linearLayout, textView, y5.t(-1, -2, 55, 6, 0, 24, 0), context);
         this.n = h;
@@ -73,11 +73,11 @@ public final class b4 extends FrameLayout {
         h.setSingleLine(true);
         h.setEllipsize(truncateAt);
         h.setTextSize(1, 14.0f);
-        h.setTextColor(j6.v0(j6.z6, e6Var));
+        h.setTextColor(j6.v0(j6.z6, f6Var));
         linearLayout.addView(h, y5.t(-1, -2, 55, 6, 1, 24, 0));
         ImageView imageView2 = new ImageView(context);
         this.r = imageView2;
-        imageView2.setColorFilter(new PorterDuffColorFilter(j6.v0(j6.M6, e6Var), PorterDuff.Mode.SRC_IN));
+        imageView2.setColorFilter(new PorterDuffColorFilter(j6.v0(j6.M6, f6Var), PorterDuff.Mode.SRC_IN));
         imageView2.setImageResource(R.drawable.msg_arrowright);
         imageView2.setScaleType(ImageView.ScaleType.CENTER);
         addView(imageView2, y5.d(24, 24.0f, 21, 0.0f, 0.0f, 10.0f, 0.0f));

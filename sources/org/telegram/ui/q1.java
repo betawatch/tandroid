@@ -19,7 +19,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q1 implements Runnable {
     public final /* synthetic */ int a;
@@ -100,7 +100,7 @@ public final /* synthetic */ class q1 implements Runnable {
                 for (int i10 = 0; i10 < arrayList2.size(); i10++) {
                     ((zh.a) arrayList2.get(i10)).a.delete();
                 }
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.h6(7, z6Var, b2Var));
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.c6(9, z6Var, b2Var));
                 return;
             case 4:
                 t7 t7Var = (t7) this.d;
@@ -179,9 +179,9 @@ public final /* synthetic */ class q1 implements Runnable {
             case 7:
                 String[] strArr = (String[]) this.d;
                 org.telegram.ui.ActionBar.f3 f3Var = (org.telegram.ui.ActionBar.f3) this.b;
-                org.telegram.ui.ActionBar.e6 e6Var = (org.telegram.ui.ActionBar.e6) this.c;
+                org.telegram.ui.ActionBar.f6 f6Var = (org.telegram.ui.ActionBar.f6) this.c;
                 AndroidUtilities.addToClipboard(strArr[0]);
-                org.telegram.messenger.wh.n(R.string.LinkCopied, new org.telegram.ui.Components.xc(f3Var.topBulletinContainer, e6Var));
+                org.telegram.messenger.rk.o(R.string.LinkCopied, new org.telegram.ui.Components.xc(f3Var.topBulletinContainer, f6Var));
                 return;
             case 8:
                 ra.X((ra) this.d, (org.telegram.ui.ActionBar.b2) this.b, (TLRPC.User) this.c);
@@ -215,9 +215,9 @@ public final /* synthetic */ class q1 implements Runnable {
                     mdVar.c0 = (TLRPC.TL_chatInviteExported) ((TLRPC.TL_messages_exportedChatInvites) tLObject3).invites.get(0);
                 }
                 mdVar.b0 = false;
-                org.telegram.ui.Components.e90 e90Var = mdVar.P;
+                org.telegram.ui.Components.d90 d90Var = mdVar.P;
                 TLRPC.TL_chatInviteExported tL_chatInviteExported = mdVar.c0;
-                e90Var.setLink(tL_chatInviteExported != null ? tL_chatInviteExported.link : null);
+                d90Var.setLink(tL_chatInviteExported != null ? tL_chatInviteExported.link : null);
                 return;
             case 12:
                 ke keVar = (ke) this.d;
@@ -229,35 +229,35 @@ public final /* synthetic */ class q1 implements Runnable {
                 AndroidUtilities.runOnUIThread(new od(keVar, 5), 1000L);
                 return;
             case 13:
-                ((za1) this.d).showDialog(ke.d0((Context) this.b, (org.telegram.ui.ActionBar.e6) this.c, false));
+                ((bb1) this.d).showDialog(ke.d0((Context) this.b, (org.telegram.ui.ActionBar.f6) this.c, false));
                 return;
             case 14:
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.h6(27, (ta) this.c, ((zn) this.d).getMessagesStorage().getUser(((TLRPC.TL_contact) this.b).user_id)));
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.c6(29, (ta) this.c, ((zn) this.d).getMessagesStorage().getUser(((TLRPC.TL_contact) this.b).user_id)));
                 return;
             case 15:
                 zn.U((zn) this.d, (TLRPC.User) this.b, (TLRPC.EmojiStatus) this.c);
                 return;
             case 16:
                 zn znVar2 = (zn) this.d;
-                org.telegram.ui.Components.nm0 nm0Var = (org.telegram.ui.Components.nm0) this.b;
+                org.telegram.ui.Components.mm0 mm0Var = (org.telegram.ui.Components.mm0) this.b;
                 TLRPC.User user = (TLRPC.User) this.c;
                 znVar2.getClass();
-                nm0Var.dismiss();
+                mm0Var.dismiss();
                 znVar2.presentFragment(ProfileActivity.m4(user.id));
                 return;
             case 17:
                 zn znVar3 = (zn) this.d;
-                org.telegram.ui.Components.w70 w70Var = (org.telegram.ui.Components.w70) this.c;
+                org.telegram.ui.Components.v70 v70Var = (org.telegram.ui.Components.v70) this.c;
                 String str8 = (String) this.b;
-                w70Var.u();
-                ek0 ek0Var = new ek0(znVar3.getParentActivity(), znVar3);
-                ek0Var.v(str8, false);
-                ek0Var.show();
+                v70Var.u();
+                fk0 fk0Var = new fk0(znVar3.getParentActivity(), znVar3);
+                fk0Var.v(str8, false);
+                fk0Var.show();
                 return;
             case 18:
                 zn znVar4 = (zn) this.d;
                 TLRPC.SuggestedPost suggestedPost = (TLRPC.SuggestedPost) this.b;
-                org.telegram.ui.Components.e5.T(znVar4.getParentActivity(), suggestedPost != null ? suggestedPost.schedule_date : 0L, new b7(znVar4, suggestedPost, (MessageObject) this.c, 5), znVar4.getResourceProvider(), 0).a.show();
+                org.telegram.ui.Components.d5.T(znVar4.getParentActivity(), suggestedPost != null ? suggestedPost.schedule_date : 0L, new b7(znVar4, suggestedPost, (MessageObject) this.c, 5), znVar4.getResourceProvider(), 0).a.show();
                 return;
             case 19:
                 zn.m0((zn) this.d, (zf.a) this.b, (Runnable) this.c);
@@ -266,7 +266,7 @@ public final /* synthetic */ class q1 implements Runnable {
                 zn.i1((zn) this.d, (TLObject) this.b, (TLRPC.User) this.c);
                 return;
             case 21:
-                org.telegram.ui.Components.e5.f0(r0.currentAccount, (TLRPC.TL_error) this.b, (zn) this.d, (TLRPC.TL_messages_editMessage) this.c, new Object[0]);
+                org.telegram.ui.Components.d5.f0(r0.currentAccount, (TLRPC.TL_error) this.b, (zn) this.d, (TLRPC.TL_messages_editMessage) this.c, new Object[0]);
                 return;
             case 22:
                 zn znVar5 = (zn) this.d;
@@ -286,7 +286,7 @@ public final /* synthetic */ class q1 implements Runnable {
                     znVar6.getMessagesController().putUsers(tL_photos_photo.users, false);
                     TLRPC.User user2 = znVar6.getMessagesController().getUser(Long.valueOf(znVar6.getUserConfig().clientUserId));
                     if ((tL_photos_photo.photo instanceof TLRPC.TL_photo) && user2 != null) {
-                        yf.e0.a(messageObject.messageOwner.action.photo, user2, false);
+                        yf.d0.a(messageObject.messageOwner.action.photo, user2, false);
                         znVar6.getUserConfig().setCurrentUser(user2);
                         znVar6.getUserConfig().saveConfig(true);
                         org.telegram.ui.Components.xc.a0(znVar6).V(Collections.singletonList(user2), AndroidUtilities.replaceTags(LocaleController.getString(R.string.ApplyAvatarHintTitle)), AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.ApplyAvatarHint), new cj(bmVar, 5)), null).j();
@@ -351,7 +351,7 @@ public final /* synthetic */ class q1 implements Runnable {
                     while (true) {
                         if (i13 < i11) {
                             String str11 = strArr2[i13];
-                            if (lowerCase2.startsWith(str11) || org.telegram.messenger.wh.u(" ", str11, lowerCase2) || (translitString2 != null && (translitString2.startsWith(str11) || org.telegram.messenger.wh.u(" ", str11, translitString2)))) {
+                            if (lowerCase2.startsWith(str11) || org.telegram.messenger.l0.v(" ", str11, lowerCase2) || (translitString2 != null && (translitString2.startsWith(str11) || org.telegram.messenger.l0.v(" ", str11, translitString2)))) {
                                 arrayList = arrayList3;
                                 r32 = 1;
                             } else {
@@ -383,7 +383,7 @@ public final /* synthetic */ class q1 implements Runnable {
                                 if (r32 == 1) {
                                     arrayList5.add(AndroidUtilities.generateSearchName(chat.title, null, str11));
                                 } else {
-                                    arrayList5.add(AndroidUtilities.generateSearchName(t8.b.i("@", str10), null, "@" + str11));
+                                    arrayList5.add(AndroidUtilities.generateSearchName(v7.j0.g("@", str10), null, "@" + str11));
                                 }
                                 arrayList4.add(chat);
                             } else {
@@ -406,10 +406,10 @@ public final /* synthetic */ class q1 implements Runnable {
         }
     }
 
-    public /* synthetic */ q1(zn znVar, org.telegram.ui.Components.w70 w70Var, String str) {
+    public /* synthetic */ q1(zn znVar, org.telegram.ui.Components.v70 v70Var, String str) {
         this.a = 17;
         this.d = znVar;
-        this.c = w70Var;
+        this.c = v70Var;
         this.b = str;
     }
 }

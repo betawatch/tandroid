@@ -1,6 +1,6 @@
 package k2;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final /* synthetic */ class i implements Runnable {
     public final /* synthetic */ int a;
@@ -23,7 +23,7 @@ public final /* synthetic */ class i implements Runnable {
         Object obj = this.e;
         switch (i10) {
             case 0:
-                j jVar = (j) ((n4.y) obj).c;
+                j jVar = (j) ((n4.y) obj).b;
                 String str = e2.d0.a;
                 j2.f fVar = ((i2.b0) jVar).a.s;
                 j2.a p5 = fVar.p();

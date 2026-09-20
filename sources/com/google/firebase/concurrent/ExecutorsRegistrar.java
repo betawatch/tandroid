@@ -17,12 +17,12 @@ import m9.c;
 import m9.d;
 import q9.f;
 import q9.n;
-import q9.r;
-import r0.s0;
+import q9.p;
+import q9.s;
 import r9.a;
-import w7.s6;
+import w7.t6;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public class ExecutorsRegistrar implements ComponentRegistrar {
     public static final n a = new n(new f(2));
@@ -44,42 +44,41 @@ public class ExecutorsRegistrar implements ComponentRegistrar {
 
     @Override // com.google.firebase.components.ComponentRegistrar
     public final List getComponents() {
-        r rVar = new r(m9.a.class, ScheduledExecutorService.class);
-        int i10 = 2;
-        r[] rVarArr = {new r(m9.a.class, ExecutorService.class), new r(m9.a.class, Executor.class)};
+        s sVar = new s(m9.a.class, ScheduledExecutorService.class);
+        s[] sVarArr = {new s(m9.a.class, ExecutorService.class), new s(m9.a.class, Executor.class)};
         HashSet hashSet = new HashSet();
         HashSet hashSet2 = new HashSet();
         HashSet hashSet3 = new HashSet();
-        hashSet.add(rVar);
-        for (r rVar2 : rVarArr) {
-            s6.a(rVar2, "Null interface");
+        hashSet.add(sVar);
+        for (s sVar2 : sVarArr) {
+            t6.a(sVar2, "Null interface");
         }
-        Collections.addAll(hashSet, rVarArr);
-        q9.a aVar = new q9.a(null, new HashSet(hashSet), new HashSet(hashSet2), 0, 0, new s0(i10), hashSet3);
-        r rVar3 = new r(b.class, ScheduledExecutorService.class);
-        r[] rVarArr2 = {new r(b.class, ExecutorService.class), new r(b.class, Executor.class)};
+        Collections.addAll(hashSet, sVarArr);
+        q9.a aVar = new q9.a(null, new HashSet(hashSet), new HashSet(hashSet2), 0, 0, new p(8), hashSet3);
+        s sVar3 = new s(b.class, ScheduledExecutorService.class);
+        s[] sVarArr2 = {new s(b.class, ExecutorService.class), new s(b.class, Executor.class)};
         HashSet hashSet4 = new HashSet();
         HashSet hashSet5 = new HashSet();
         HashSet hashSet6 = new HashSet();
-        hashSet4.add(rVar3);
-        for (r rVar4 : rVarArr2) {
-            s6.a(rVar4, "Null interface");
+        hashSet4.add(sVar3);
+        for (s sVar4 : sVarArr2) {
+            t6.a(sVar4, "Null interface");
         }
-        Collections.addAll(hashSet4, rVarArr2);
-        q9.a aVar2 = new q9.a(null, new HashSet(hashSet4), new HashSet(hashSet5), 0, 0, new s0(3), hashSet6);
-        r rVar5 = new r(c.class, ScheduledExecutorService.class);
-        r[] rVarArr3 = {new r(c.class, ExecutorService.class), new r(c.class, Executor.class)};
+        Collections.addAll(hashSet4, sVarArr2);
+        q9.a aVar2 = new q9.a(null, new HashSet(hashSet4), new HashSet(hashSet5), 0, 0, new p(9), hashSet6);
+        s sVar5 = new s(c.class, ScheduledExecutorService.class);
+        s[] sVarArr3 = {new s(c.class, ExecutorService.class), new s(c.class, Executor.class)};
         HashSet hashSet7 = new HashSet();
         HashSet hashSet8 = new HashSet();
         HashSet hashSet9 = new HashSet();
-        hashSet7.add(rVar5);
-        for (r rVar6 : rVarArr3) {
-            s6.a(rVar6, "Null interface");
+        hashSet7.add(sVar5);
+        for (s sVar6 : sVarArr3) {
+            t6.a(sVar6, "Null interface");
         }
-        Collections.addAll(hashSet7, rVarArr3);
-        q9.a aVar3 = new q9.a(null, new HashSet(hashSet7), new HashSet(hashSet8), 0, 0, new s0(4), hashSet9);
-        i0 b10 = q9.a.b(new r(d.class, Executor.class));
-        b10.f = new s0(5);
+        Collections.addAll(hashSet7, sVarArr3);
+        q9.a aVar3 = new q9.a(null, new HashSet(hashSet7), new HashSet(hashSet8), 0, 0, new p(10), hashSet9);
+        i0 b10 = q9.a.b(new s(d.class, Executor.class));
+        b10.f = new p(11);
         return Arrays.asList(aVar, aVar2, aVar3, b10.b());
     }
 }

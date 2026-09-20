@@ -27,8 +27,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.telegram.ui.Cells.c1;
 import qa.e;
+import v7.j0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class c {
     public static final Pattern d = Pattern.compile("[0-9]+s");
@@ -83,7 +84,7 @@ public final class c {
             return;
         }
         Log.w("Firebase-Installations", str4);
-        Log.w("Firebase-Installations", c1.i("Firebase options used while communicating with Firebase server APIs: ", str2, ", ", str3, TextUtils.isEmpty(str) ? "" : t8.b.i(", ", str)));
+        Log.w("Firebase-Installations", c1.k("Firebase options used while communicating with Firebase server APIs: ", str2, ", ", str3, TextUtils.isEmpty(str) ? "" : j0.g(", ", str)));
     }
 
     public static long d(String str) {

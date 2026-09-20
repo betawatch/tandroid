@@ -1,80 +1,49 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.tl.TL_stats;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.graphics.Typeface;
+import android.text.TextPaint;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public abstract class ka1 extends ja1 {
-    public final int v;
-    public final /* synthetic */ za1 w;
+public final class ka1 {
+    public final org.telegram.ui.Components.s00 a;
+    public kg.f b;
+    public final int c;
+    public final /* synthetic */ la1 d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ka1(za1 za1Var, Context context, int i10, int i11, ig.f fVar) {
-        super(context, i11, fVar, null);
-        this.w = za1Var;
-        this.v = i10;
-    }
-
-    @Override // org.telegram.ui.ja1
-    public final void b(la1 la1Var) {
-        int i10;
-        za1 za1Var = this.w;
-        i10 = ((org.telegram.ui.ActionBar.n2) za1Var).classGuid;
-        la1Var.a(this.v, i10, za1Var.a.stats_dc, new org.telegram.ui.Components.h61(1, za1Var, this.r));
-    }
-
-    @Override // org.telegram.ui.ja1
-    public final void c() {
-        int i10;
-        if (this.r.c > 0) {
-            return;
-        }
-        performClick();
-        ig.g gVar = this.b;
-        if (gVar.t0.G) {
-            long selectedDate = gVar.getSelectedDate();
-            if (this.s == 4) {
-                la1 la1Var = this.r;
-                la1Var.e = new jg.e(la1Var.d, selectedDate);
-                g(false);
-                return;
-            }
-            if (this.r.g == null) {
-                return;
-            }
-            za1 za1Var = this.w;
-            za1.Z(za1Var);
-            String str = this.r.g + "_" + selectedDate;
-            jg.b bVar = (jg.b) za1Var.V.get(str);
-            if (bVar != null) {
-                this.r.e = bVar;
-                g(false);
-                return;
-            }
-            TL_stats.TL_loadAsyncGraph tL_loadAsyncGraph = new TL_stats.TL_loadAsyncGraph();
-            tL_loadAsyncGraph.token = this.r.g;
-            if (selectedDate != 0) {
-                tL_loadAsyncGraph.x = selectedDate;
-                tL_loadAsyncGraph.flags |= 1;
-            }
-            ya1 ya1Var = new ya1();
-            za1Var.Z = ya1Var;
-            za1Var.S.getClass();
-            ya1Var.a = RecyclerView.S(this);
-            gVar.t0.d(true, false);
-            int i11 = this.v;
-            int sendRequest = ConnectionsManager.getInstance(i11).sendRequest(tL_loadAsyncGraph, new ns0(this, str, ya1Var, 10), null, null, 0, za1Var.a.stats_dc, 1, true);
-            ConnectionsManager connectionsManager = ConnectionsManager.getInstance(i11);
-            i10 = ((org.telegram.ui.ActionBar.n2) za1Var).classGuid;
-            connectionsManager.bindRequestToGuid(sendRequest, i10);
-        }
-    }
-
-    @Override // org.telegram.ui.ja1
-    public final void f() {
-        za1.Z(this.w);
+    public ka1(la1 la1Var, int i10) {
+        this.d = la1Var;
+        this.c = i10;
+        org.telegram.ui.Components.s00 s00Var = new org.telegram.ui.Components.s00(la1Var.getContext());
+        s00Var.c = true;
+        TextPaint textPaint = new TextPaint(1);
+        s00Var.e = textPaint;
+        s00Var.f = new Paint(1);
+        Paint paint = new Paint(1);
+        s00Var.h = paint;
+        Paint paint2 = new Paint(1);
+        s00Var.n = paint2;
+        s00Var.w = AndroidUtilities.dp(35.0f);
+        s00Var.x = AndroidUtilities.dp(22.0f);
+        s00Var.y = AndroidUtilities.dp(8.0f);
+        s00Var.E = AndroidUtilities.dp(3.5f);
+        s00Var.F = new RectF();
+        s00Var.G = 0.0f;
+        textPaint.setTextSize(AndroidUtilities.dp(14.0f));
+        textPaint.setTextAlign(Paint.Align.CENTER);
+        textPaint.setTypeface(Typeface.create("sans-serif-medium", 0));
+        paint.setStrokeWidth(AndroidUtilities.dpf2(1.5f));
+        Paint.Style style = Paint.Style.STROKE;
+        paint.setStyle(style);
+        paint2.setStyle(style);
+        paint2.setStrokeCap(Paint.Cap.ROUND);
+        paint2.setStrokeWidth(AndroidUtilities.dp(2.0f));
+        this.a = s00Var;
+        s00Var.setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f), 0);
+        la1Var.h.addView(s00Var);
+        la1Var.n.add(this);
     }
 }

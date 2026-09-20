@@ -11,27 +11,27 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.v01;
+import org.telegram.ui.Components.u01;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class d8 extends View {
     public final LinearGradient a;
     public final Matrix b;
     public final Paint c;
     public final Paint d;
-    public final v01 e;
-    public final /* synthetic */ org.telegram.ui.ActionBar.e6 f;
+    public final u01 e;
+    public final /* synthetic */ org.telegram.ui.ActionBar.f6 f;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d8(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
+    public d8(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
         super(context);
-        this.f = e6Var;
+        this.f = f6Var;
         this.a = new LinearGradient(0.0f, 0.0f, 255.0f, 0.0f, new int[]{-1135603, -404714}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
         this.b = new Matrix();
         this.c = new Paint(1);
         this.d = new Paint(1);
-        this.e = new v01(LocaleController.getString(R.string.StarsReactionTopSenders), 14.16f, AndroidUtilities.bold());
+        this.e = new u01(LocaleController.getString(R.string.StarsReactionTopSenders), 14.16f, AndroidUtilities.bold());
     }
 
     @Override // android.view.View
@@ -44,8 +44,8 @@ public final class d8 extends View {
         linearGradient.setLocalMatrix(matrix);
         Paint paint = this.c;
         paint.setShader(linearGradient);
-        v01 v01Var = this.e;
-        float dp = v01Var.c + AndroidUtilities.dp(30.0f);
+        u01 u01Var = this.e;
+        float dp = u01Var.c + AndroidUtilities.dp(30.0f);
         int v02 = org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.d7, this.f);
         Paint paint2 = this.d;
         paint2.setColor(v02);
@@ -54,6 +54,6 @@ public final class d8 extends View {
         RectF rectF = AndroidUtilities.rectTmp;
         rectF.set((getWidth() - dp) / 2.0f, 0.0f, (getWidth() + dp) / 2.0f, getHeight());
         canvas.drawRoundRect(rectF, getHeight() / 2.0f, getHeight() / 2.0f, paint);
-        this.e.c((getWidth() - v01Var.c) / 2.0f, getHeight() / 2.0f, 1.0f, -1, canvas);
+        this.e.c((getWidth() - u01Var.c) / 2.0f, getHeight() / 2.0f, 1.0f, -1, canvas);
     }
 }

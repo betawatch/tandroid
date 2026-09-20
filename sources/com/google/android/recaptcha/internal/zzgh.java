@@ -6,9 +6,9 @@ import gd.g;
 import java.util.Locale;
 import java.util.MissingResourceException;
 import kotlin.jvm.internal.i;
-import v7.s7;
+import v7.t7;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class zzgh {
     private zzvu zza;
@@ -16,7 +16,7 @@ public final class zzgh {
 
     public zzgh() {
         int i10 = zzby.zza;
-        this.zzb = s7.a(zzgg.zza);
+        this.zzb = t7.a(zzgg.zza);
     }
 
     private final Application zzb() {
@@ -55,7 +55,7 @@ public final class zzgh {
             r10 = this;
             int r0 = com.google.android.recaptcha.internal.zzby.zza
             com.google.android.recaptcha.internal.zzgf r0 = com.google.android.recaptcha.internal.zzgf.zza
-            gd.g r0 = v7.s7.a(r0)
+            gd.g r0 = v7.t7.a(r0)
             java.lang.Object r0 = r0.a()
             com.google.android.recaptcha.internal.zzch r0 = (com.google.android.recaptcha.internal.zzch) r0
             android.app.Application r0 = r10.zzb()

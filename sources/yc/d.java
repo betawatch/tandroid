@@ -19,8 +19,9 @@ import java.util.Map;
 import java.util.StringTokenizer;
 import java.util.logging.Level;
 import javax.net.ssl.SSLException;
+import v7.j0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class d {
     public final m a;
@@ -189,7 +190,7 @@ public final class d {
                                 this.i.put("remote-addr", str);
                                 this.i.put("http-client-ip", str);
                             }
-                            int b10 = t8.b.b((String) hashMap2.get("method"));
+                            int b10 = j0.b((String) hashMap2.get("method"));
                             this.g = b10;
                             if (b10 == 0) {
                                 throw new h("BAD REQUEST: Syntax error. HTTP verb " + ((String) hashMap2.get("method")) + " unhandled.");

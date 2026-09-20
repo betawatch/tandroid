@@ -18,10 +18,10 @@ import android.view.inputmethod.InputConnection;
 import android.widget.TextView;
 import java.lang.ref.WeakReference;
 import java.util.Arrays;
-import v7.v7;
-import w7.r7;
+import v7.w7;
+import w7.s7;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class w0 {
     public final TextView a;
@@ -220,7 +220,7 @@ public final class w0 {
         Context context = textView.getContext();
         q a2 = q.a();
         int[] iArr2 = f.a.h;
-        lf.i Q = lf.i.Q(context, attributeSet, iArr2, i10);
+        lf.h Q = lf.h.Q(context, attributeSet, iArr2, i10);
         r0.i0.j(textView, textView.getContext(), iArr2, attributeSet, (TypedArray) Q.c, i10);
         TypedArray typedArray = (TypedArray) Q.c;
         int resourceId3 = typedArray.getResourceId(0, -1);
@@ -248,7 +248,7 @@ public final class w0 {
         int[] iArr3 = f.a.w;
         if (resourceId3 != -1) {
             TypedArray obtainStyledAttributes3 = context.obtainStyledAttributes(resourceId3, iArr3);
-            lf.i iVar = new lf.i(context, obtainStyledAttributes3);
+            lf.h hVar = new lf.h(context, obtainStyledAttributes3);
             if (z12 || !obtainStyledAttributes3.hasValue(14)) {
                 z10 = false;
                 z11 = false;
@@ -256,16 +256,16 @@ public final class w0 {
                 z11 = obtainStyledAttributes3.getBoolean(14, false);
                 z10 = true;
             }
-            n(context, iVar);
+            n(context, hVar);
             if (i14 < 23) {
-                colorStateList = obtainStyledAttributes3.hasValue(3) ? iVar.D(3) : null;
-                colorStateList2 = obtainStyledAttributes3.hasValue(4) ? iVar.D(4) : null;
+                colorStateList = obtainStyledAttributes3.hasValue(3) ? hVar.D(3) : null;
+                colorStateList2 = obtainStyledAttributes3.hasValue(4) ? hVar.D(4) : null;
                 if (obtainStyledAttributes3.hasValue(5)) {
-                    colorStateList3 = iVar.D(5);
+                    colorStateList3 = hVar.D(5);
                     i13 = 15;
                     str2 = !obtainStyledAttributes3.hasValue(i13) ? obtainStyledAttributes3.getString(i13) : null;
                     str = (i14 >= 26 || !obtainStyledAttributes3.hasValue(13)) ? null : obtainStyledAttributes3.getString(13);
-                    iVar.R();
+                    hVar.R();
                 } else {
                     i13 = 15;
                 }
@@ -279,7 +279,7 @@ public final class w0 {
             }
             if (i14 >= 26) {
             }
-            iVar.R();
+            hVar.R();
         } else {
             str = null;
             z10 = false;
@@ -290,7 +290,7 @@ public final class w0 {
             str2 = null;
         }
         TypedArray obtainStyledAttributes4 = context.obtainStyledAttributes(attributeSet, iArr3, i10, 0);
-        lf.i iVar2 = new lf.i(context, obtainStyledAttributes4);
+        lf.h hVar2 = new lf.h(context, obtainStyledAttributes4);
         if (!z12 && obtainStyledAttributes4.hasValue(14)) {
             z11 = obtainStyledAttributes4.getBoolean(14, false);
             z10 = true;
@@ -298,13 +298,13 @@ public final class w0 {
         boolean z13 = z11;
         if (i14 < 23) {
             if (obtainStyledAttributes4.hasValue(3)) {
-                colorStateList = iVar2.D(3);
+                colorStateList = hVar2.D(3);
             }
             if (obtainStyledAttributes4.hasValue(4)) {
-                colorStateList2 = iVar2.D(4);
+                colorStateList2 = hVar2.D(4);
             }
             if (obtainStyledAttributes4.hasValue(5)) {
-                colorStateList3 = iVar2.D(5);
+                colorStateList3 = hVar2.D(5);
             }
         }
         ColorStateList colorStateList5 = colorStateList;
@@ -325,8 +325,8 @@ public final class w0 {
                 textView.setTextSize(0, 0.0f);
             }
         }
-        n(context, iVar2);
-        iVar2.R();
+        n(context, hVar2);
+        hVar2.R();
         if (colorStateList5 != null) {
             textView.setTextColor(colorStateList5);
         }
@@ -470,7 +470,7 @@ public final class w0 {
                     }
                 }
                 if (obtainStyledAttributes2.hasValue(11)) {
-                    if (!obtainStyledAttributes2.hasValue(11) || (resourceId = obtainStyledAttributes2.getResourceId(11, 0)) == 0 || (colorStateList4 = v7.a(context, resourceId)) == null) {
+                    if (!obtainStyledAttributes2.hasValue(11) || (resourceId = obtainStyledAttributes2.getResourceId(11, 0)) == 0 || (colorStateList4 = w7.a(context, resourceId)) == null) {
                         colorStateList4 = obtainStyledAttributes2.getColorStateList(11);
                     }
                     if (Build.VERSION.SDK_INT >= 24) {
@@ -492,10 +492,10 @@ public final class w0 {
                 dimensionPixelSize3 = obtainStyledAttributes2.getDimensionPixelSize(19, -1);
                 obtainStyledAttributes2.recycle();
                 if (dimensionPixelSize != -1) {
-                    r7.b(dimensionPixelSize, textView);
+                    s7.b(dimensionPixelSize, textView);
                 }
                 if (dimensionPixelSize2 != -1) {
-                    r7.c(dimensionPixelSize2, textView);
+                    s7.c(dimensionPixelSize2, textView);
                 }
                 if (dimensionPixelSize3 == -1) {
                     if (dimensionPixelSize3 < 0) {
@@ -596,7 +596,7 @@ public final class w0 {
         ColorStateList D2;
         ColorStateList D3;
         TypedArray obtainStyledAttributes = context.obtainStyledAttributes(i10, f.a.w);
-        lf.i iVar = new lf.i(context, obtainStyledAttributes);
+        lf.h hVar = new lf.h(context, obtainStyledAttributes);
         boolean hasValue = obtainStyledAttributes.hasValue(14);
         TextView textView = this.a;
         if (hasValue) {
@@ -604,24 +604,24 @@ public final class w0 {
         }
         int i11 = Build.VERSION.SDK_INT;
         if (i11 < 23) {
-            if (obtainStyledAttributes.hasValue(3) && (D3 = iVar.D(3)) != null) {
+            if (obtainStyledAttributes.hasValue(3) && (D3 = hVar.D(3)) != null) {
                 textView.setTextColor(D3);
             }
-            if (obtainStyledAttributes.hasValue(5) && (D2 = iVar.D(5)) != null) {
+            if (obtainStyledAttributes.hasValue(5) && (D2 = hVar.D(5)) != null) {
                 textView.setLinkTextColor(D2);
             }
-            if (obtainStyledAttributes.hasValue(4) && (D = iVar.D(4)) != null) {
+            if (obtainStyledAttributes.hasValue(4) && (D = hVar.D(4)) != null) {
                 textView.setHintTextColor(D);
             }
         }
         if (obtainStyledAttributes.hasValue(0) && obtainStyledAttributes.getDimensionPixelSize(0, -1) == 0) {
             textView.setTextSize(0, 0.0f);
         }
-        n(context, iVar);
+        n(context, hVar);
         if (i11 >= 26 && obtainStyledAttributes.hasValue(13) && (string = obtainStyledAttributes.getString(13)) != null) {
             u0.d(textView, string);
         }
-        iVar.R();
+        hVar.R();
         Typeface typeface = this.l;
         if (typeface != null) {
             textView.setTypeface(typeface, this.j);
@@ -719,10 +719,10 @@ public final class w0 {
         this.g = c3Var;
     }
 
-    public final void n(Context context, lf.i iVar) {
+    public final void n(Context context, lf.h hVar) {
         String string;
         int i10 = this.j;
-        TypedArray typedArray = (TypedArray) iVar.c;
+        TypedArray typedArray = (TypedArray) hVar.c;
         this.j = typedArray.getInt(2, i10);
         int i11 = Build.VERSION.SDK_INT;
         if (i11 >= 28) {
@@ -764,7 +764,7 @@ public final class w0 {
             a0Var.b = i16;
             a0Var.c = weakReference;
             try {
-                Typeface H = iVar.H(i14, this.j, a0Var);
+                Typeface H = hVar.H(i14, this.j, a0Var);
                 if (H != null) {
                     if (i11 < 28 || this.k == -1) {
                         this.l = H;

@@ -13,7 +13,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class xw extends rx {
     public static final /* synthetic */ int H0 = 0;
@@ -22,14 +22,14 @@ public final class xw extends rx {
     public final /* synthetic */ kz G0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public xw(kz kzVar, Context context, org.telegram.ui.ActionBar.e6 e6Var, org.telegram.ui.ActionBar.n2 n2Var, boolean z10) {
-        super(kzVar, context, e6Var);
+    public xw(kz kzVar, Context context, org.telegram.ui.ActionBar.f6 f6Var, org.telegram.ui.ActionBar.n2 n2Var, boolean z10) {
+        super(kzVar, context, f6Var);
         this.G0 = kzVar;
         this.E0 = n2Var;
         this.F0 = z10;
     }
 
-    @Override // org.telegram.ui.Components.vm0
+    @Override // org.telegram.ui.Components.um0
     public final void j() {
         yw ywVar = this.G0.C0;
         if (ywVar != null) {
@@ -38,10 +38,10 @@ public final class xw extends rx {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    @Override // org.telegram.ui.Components.vm0
+    @Override // org.telegram.ui.Components.um0
     public final void o(int i10, int i11) {
         kz kzVar = this.G0;
-        org.telegram.ui.Cells.t6 t6Var = kzVar.f2;
+        org.telegram.ui.Cells.u6 u6Var = kzVar.f2;
         int i12 = kzVar.E1;
         int i13 = i10 - i12;
         int i14 = i11 - i12;
@@ -57,8 +57,8 @@ public final class xw extends rx {
             kzVar.G2.addAll(arrayList);
         }
         kzVar.E();
-        AndroidUtilities.cancelRunOnUIThread(t6Var);
-        AndroidUtilities.runOnUIThread(t6Var, 1500L);
+        AndroidUtilities.cancelRunOnUIThread(u6Var);
+        AndroidUtilities.runOnUIThread(u6Var, 1500L);
         MediaDataController.getInstance(i15).calcNewHash(0);
         TLRPC.TL_messages_reorderStickerSets tL_messages_reorderStickerSets = new TLRPC.TL_messages_reorderStickerSets();
         tL_messages_reorderStickerSets.masks = false;
@@ -72,7 +72,7 @@ public final class xw extends rx {
             SharedConfig.toggleUpdateStickersOrderOnSend();
             org.telegram.ui.ActionBar.n2 n2Var = this.E0;
             if (n2Var != null) {
-                xc.a0(n2Var).K(R.raw.filter_reorder, LocaleController.getString(R.string.DynamicPackOrderOff), LocaleController.getString(R.string.DynamicPackOrderOffInfo), LocaleController.getString("Settings"), new sd(i16, n2Var)).j();
+                xc.a0(n2Var).K(R.raw.filter_reorder, LocaleController.getString(R.string.DynamicPackOrderOff), LocaleController.getString(R.string.DynamicPackOrderOffInfo), LocaleController.getString("Settings"), new td(i16, n2Var)).j();
                 return;
             }
             FrameLayout frameLayout = kzVar.r;
@@ -82,7 +82,7 @@ public final class xw extends rx {
         }
     }
 
-    @Override // org.telegram.ui.Components.vm0
+    @Override // org.telegram.ui.Components.um0
     public final void p() {
         kz kzVar = this.G0;
         kzVar.Y();

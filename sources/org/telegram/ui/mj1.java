@@ -1,19 +1,31 @@
 package org.telegram.ui;
 
-import android.webkit.JavascriptInterface;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class mj1 {
-    public final /* synthetic */ nj1 a;
+public final class mj1 extends org.telegram.ui.ActionBar.j {
+    public final /* synthetic */ oj1 a;
 
-    public mj1(nj1 nj1Var) {
-        this.a = nj1Var;
+    public mj1(oj1 oj1Var) {
+        this.a = oj1Var;
     }
 
-    @JavascriptInterface
-    public void postEvent(String str, String str2) {
-        AndroidUtilities.runOnUIThread(new x81(24, this, str));
+    @Override // org.telegram.ui.ActionBar.j
+    public final void b(int i10) {
+        oj1 oj1Var = this.a;
+        MessageObject messageObject = oj1Var.n;
+        if (i10 == -1) {
+            oj1Var.finishFragment();
+            return;
+        }
+        if (i10 != 1) {
+            if (i10 == 2) {
+                oj1.V(oj1Var.d, messageObject, oj1Var.getParentActivity(), oj1Var.r, oj1Var.e);
+            }
+        } else if (messageObject != null) {
+            messageObject.messageOwner.with_my_score = false;
+            oj1Var.showDialog(org.telegram.ui.Components.uq0.N0(oj1Var.getParentActivity(), messageObject, null, false, oj1Var.h));
+        }
     }
 }

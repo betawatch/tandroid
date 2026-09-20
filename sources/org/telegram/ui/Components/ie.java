@@ -1,6 +1,6 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ie implements Runnable {
     public final /* synthetic */ int a;
@@ -19,7 +19,7 @@ public final /* synthetic */ class ie implements Runnable {
             case 0:
                 ng ngVar = chatActivityEnterView.Y2;
                 if (ngVar != null) {
-                    ngVar.q1();
+                    ngVar.r1();
                     break;
                 }
                 break;

@@ -17,26 +17,26 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_aicompose;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class d0 extends FrameLayout {
     public final int a;
-    public final org.telegram.ui.ActionBar.e6 b;
+    public final org.telegram.ui.ActionBar.f6 b;
     public final b0 c;
     public int d;
     public boolean e;
     public int f;
-    public final e6 h;
+    public final d6 h;
     public ci.p5 n;
 
-    public d0(int i10, Context context, org.telegram.ui.ActionBar.e6 e6Var, boolean z10) {
+    public d0(int i10, Context context, org.telegram.ui.ActionBar.f6 f6Var, boolean z10) {
         super(context);
         this.a = i10;
-        this.b = e6Var;
-        b0 b0Var = new b0(this, context, e6Var);
+        this.b = f6Var;
+        b0 b0Var = new b0(this, context, f6Var);
         this.c = b0Var;
         b0Var.setOrientation(0);
-        this.h = new e6(b0Var, 0L, 320L, qr.h);
+        this.h = new d6(b0Var, 0L, 320L, qr.h);
         if (!z10) {
             addView(b0Var, w7.y5.e(-1, -1, 119));
             return;
@@ -66,14 +66,14 @@ public final class d0 extends FrameLayout {
         c0Var.c = this.d;
         c0Var.e();
         TextView textView = c0Var.n;
-        w9 w9Var = c0Var.h;
+        v9 v9Var = c0Var.h;
         if (aiComposeTone == null) {
             c0Var.d = false;
             c0Var.e();
             int i10 = R.drawable.tone_create;
             String string = LocaleController.getString(R.string.AIEditorStyleNewCreate);
             c0Var.f = false;
-            w9Var.setImageResource(i10);
+            v9Var.setImageResource(i10);
             textView.setText(string);
         } else if (aiComposeTone instanceof z) {
             c0Var.d = false;
@@ -81,21 +81,21 @@ public final class d0 extends FrameLayout {
             int i11 = R.drawable.iv_prompt;
             String string2 = LocaleController.getString(R.string.AIEditorStylePrompt);
             c0Var.f = false;
-            w9Var.setImageResource(i11);
+            v9Var.setImageResource(i11);
             textView.setText(string2);
         } else {
             String str = aiComposeTone.title;
             long j3 = aiComposeTone.emoji_id;
             c0Var.f = true;
-            w9Var.setColorFilter(null);
-            w9Var.setImageDrawable(Emoji.getEmojiDrawable(null));
+            v9Var.setColorFilter(null);
+            v9Var.setImageDrawable(Emoji.getEmojiDrawable(null));
             textView.setText(str);
             int i12 = c0Var.a;
             if (ConnectionsManager.getInstance(i12).isTestBackend()) {
                 for (int i13 = 0; i13 < 4 && (!UserConfig.getInstance(i13).isClientActivated() || ConnectionsManager.getInstance(i13).isTestBackend()); i13++) {
                 }
             }
-            w9Var.setAnimatedEmojiDrawable(new q5(9, i12, j3));
+            v9Var.setAnimatedEmojiDrawable(new p5(9, i12, j3));
         }
         c0Var.setOnClickListener(new org.telegram.ui.sf(10, callback, aiComposeTone));
         c0Var.setOnLongClickListener(new ai.q3(1, this, c0Var));
@@ -112,14 +112,14 @@ public final class d0 extends FrameLayout {
         if (i10 >= 0 && i10 < b0Var.getChildCount()) {
             View childAt = b0Var.getChildAt(i10);
             if (childAt instanceof c0) {
-                w9 w9Var = ((c0) childAt).h;
-                if (w9Var.getAnimatedEmojiDrawable() != null) {
-                    ai.l4 l4Var = w9Var.getAnimatedEmojiDrawable().k;
+                v9 v9Var = ((c0) childAt).h;
+                if (v9Var.getAnimatedEmojiDrawable() != null) {
+                    ai.l4 l4Var = v9Var.getAnimatedEmojiDrawable().k;
                     if (l4Var != null) {
                         l4Var.startAnimation();
                     }
                 } else {
-                    w9Var.getImageReceiver().startAnimation();
+                    v9Var.getImageReceiver().startAnimation();
                 }
             }
         }

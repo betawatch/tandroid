@@ -4,10 +4,10 @@ import android.content.Context;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.HorizontalScrollView;
-import org.telegram.ui.Cells.q9;
+import org.telegram.ui.Cells.r9;
 import org.telegram.ui.u70;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class a4 extends HorizontalScrollView {
     public final /* synthetic */ int a;
@@ -46,7 +46,7 @@ public final class a4 extends HorizontalScrollView {
 
     @Override // android.view.View
     public void onScrollChanged(int i10, int i11, int i12, int i13) {
-        q9 textSelectionHelper;
+        r9 textSelectionHelper;
         switch (this.a) {
             case 1:
                 super.onScrollChanged(i10, i11, i12, i13);

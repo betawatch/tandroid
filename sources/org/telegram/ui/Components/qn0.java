@@ -1,53 +1,33 @@
 package org.telegram.ui.Components;
 
-import android.view.KeyEvent;
-import android.view.View;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessagesController;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class qn0 implements TextView.OnEditorActionListener {
-    public final /* synthetic */ pn0 a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ TLRPC.Reaction c;
-    public final /* synthetic */ org.telegram.ui.ActionBar.b2[] d;
-    public final /* synthetic */ View e;
+public final class qn0 extends s4.o {
+    public final /* synthetic */ un0 b;
 
-    public qn0(pn0 pn0Var, int i10, TLRPC.Reaction reaction, org.telegram.ui.ActionBar.b2[] b2VarArr, View view) {
-        this.a = pn0Var;
-        this.b = i10;
-        this.c = reaction;
-        this.d = b2VarArr;
-        this.e = view;
+    public qn0(un0 un0Var) {
+        this.b = un0Var;
     }
 
-    @Override // android.widget.TextView.OnEditorActionListener
-    public final boolean onEditorAction(TextView textView, int i10, KeyEvent keyEvent) {
-        if (i10 != 6) {
-            return false;
-        }
-        pn0 pn0Var = this.a;
-        String obj = pn0Var.getText().toString();
-        if (obj.length() > 12) {
-            AndroidUtilities.shakeView(pn0Var);
-            return true;
-        }
-        MessagesController.getInstance(this.b).renameSavedReactionTag(zg.o0.d(this.c), obj);
-        org.telegram.ui.ActionBar.b2[] b2VarArr = this.d;
-        org.telegram.ui.ActionBar.b2 b2Var = b2VarArr[0];
-        if (b2Var != null) {
-            b2Var.dismiss();
-        }
-        if (b2VarArr[0] == vn0.H) {
-            vn0.H = null;
-        }
-        View view = this.e;
-        if (view != null) {
-            view.requestFocus();
-        }
-        return true;
+    @Override // s4.o
+    public final boolean a(int i10, int i11) {
+        un0 un0Var = this.b;
+        return ((rn0) un0Var.n.get(i10)).equals(un0Var.r.get(i11));
+    }
+
+    @Override // s4.o
+    public final boolean b(int i10, int i11) {
+        un0 un0Var = this.b;
+        return ((rn0) un0Var.n.get(i10)).a.h == ((rn0) un0Var.r.get(i11)).a.h;
+    }
+
+    @Override // s4.o
+    public final int d() {
+        return this.b.r.size();
+    }
+
+    @Override // s4.o
+    public final int e() {
+        return this.b.n.size();
     }
 }

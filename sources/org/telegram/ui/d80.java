@@ -26,7 +26,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class d80 extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public Drawable E;
@@ -43,13 +43,13 @@ public final class d80 extends org.telegram.ui.ActionBar.n2 implements Notificat
     public final Object b;
     public final int c;
     public z4.g d;
-    public org.telegram.ui.Components.sa e;
+    public org.telegram.ui.Components.ra e;
     public TextView f;
     public GradientDrawable h;
     public bi.o n;
     public FrameLayout r;
     public ci.n6 s;
-    public org.telegram.ui.Components.ij0 v;
+    public org.telegram.ui.Components.hj0 v;
     public int w;
     public boolean x;
     public boolean y;
@@ -146,22 +146,22 @@ public final class d80 extends org.telegram.ui.ActionBar.n2 implements Notificat
         this.actionBar.setAddToContainer(false);
         ScrollView scrollView = new ScrollView(context);
         scrollView.setFillViewport(true);
-        org.telegram.ui.Components.lj0 lj0Var = new org.telegram.ui.Components.lj0(context);
+        org.telegram.ui.Components.kj0 kj0Var = new org.telegram.ui.Components.kj0(context);
         FrameLayout frameLayout = new FrameLayout(context);
-        frameLayout.addView(lj0Var, w7.y5.e(28, 28, 17));
+        frameLayout.addView(kj0Var, w7.y5.e(28, 28, 17));
         ci.n6 n6Var = new ci.n6(this, context, frameLayout, 17);
         this.s = n6Var;
         scrollView.addView(n6Var, w7.y5.x(-1, -2, 51));
-        org.telegram.ui.Components.ij0 ij0Var = new org.telegram.ui.Components.ij0(R.raw.sun, AndroidUtilities.dp(28.0f), AndroidUtilities.dp(28.0f), true, null);
-        this.v = ij0Var;
-        ij0Var.h = true;
-        ij0Var.Z = true;
-        ij0Var.o();
+        org.telegram.ui.Components.hj0 hj0Var = new org.telegram.ui.Components.hj0(R.raw.sun, AndroidUtilities.dp(28.0f), AndroidUtilities.dp(28.0f), true, null);
+        this.v = hj0Var;
+        hj0Var.h = true;
+        hj0Var.Z = true;
+        hj0Var.o();
         this.v.P(org.telegram.ui.ActionBar.j6.A0().q() ? this.v.e[0] - 1 : 0);
         this.v.N(org.telegram.ui.ActionBar.j6.A0().q() ? this.v.e[0] - 1 : 0, false, false);
-        lj0Var.setContentDescription(LocaleController.getString(org.telegram.ui.ActionBar.j6.A0().q() ? R.string.AccDescrSwitchToDayTheme : R.string.AccDescrSwitchToNightTheme));
-        lj0Var.setAnimation(this.v);
-        frameLayout.setOnClickListener(new tv(11, this, lj0Var));
+        kj0Var.setContentDescription(LocaleController.getString(org.telegram.ui.ActionBar.j6.A0().q() ? R.string.AccDescrSwitchToDayTheme : R.string.AccDescrSwitchToNightTheme));
+        kj0Var.setAnimation(this.v);
+        frameLayout.setOnClickListener(new tv(11, this, kj0Var));
         FrameLayout frameLayout2 = new FrameLayout(context);
         this.r = frameLayout2;
         this.s.addView(frameLayout2, w7.y5.d(-1, -2.0f, 51, 0.0f, 78.0f, 0.0f, 0.0f));
@@ -179,7 +179,7 @@ public final class d80 extends org.telegram.ui.ActionBar.n2 implements Notificat
         this.h = new GradientDrawable(GradientDrawable.Orientation.LEFT_RIGHT, null);
         bi.o oVar = new bi.o(this, context);
         this.n = oVar;
-        w7.a6.b(oVar, 0.02f, 1.2f);
+        w7.b6.b(oVar, 0.02f, 1.2f);
         this.n.setText(LocaleController.getString(R.string.StartMessaging));
         this.n.setGravity(17);
         this.n.setTypeface(AndroidUtilities.bold());
@@ -201,7 +201,7 @@ public final class d80 extends org.telegram.ui.ActionBar.n2 implements Notificat
                         d80 d80Var = this.b;
                         if (!d80Var.y) {
                             d80Var.y = true;
-                            d80Var.presentFragment(new xg0(), true);
+                            d80Var.presentFragment(new yg0(), true);
                             d80Var.M = true;
                             break;
                         }
@@ -221,9 +221,9 @@ public final class d80 extends org.telegram.ui.ActionBar.n2 implements Notificat
                 }
             }
         });
-        org.telegram.ui.Components.sa saVar = new org.telegram.ui.Components.sa(context, this.d, 6);
-        this.e = saVar;
-        this.s.addView(saVar, w7.y5.d(66, 5.0f, 49, 0.0f, 350.0f, 0.0f, 0.0f));
+        org.telegram.ui.Components.ra raVar = new org.telegram.ui.Components.ra(context, this.d, 6);
+        this.e = raVar;
+        this.s.addView(raVar, w7.y5.d(66, 5.0f, 49, 0.0f, 350.0f, 0.0f, 0.0f));
         TextView textView = new TextView(context);
         this.f = textView;
         textView.setGravity(17);
@@ -244,7 +244,7 @@ public final class d80 extends org.telegram.ui.ActionBar.n2 implements Notificat
                         d80 d80Var = this.b;
                         if (!d80Var.y) {
                             d80Var.y = true;
-                            d80Var.presentFragment(new xg0(), true);
+                            d80Var.presentFragment(new yg0(), true);
                             d80Var.M = true;
                             break;
                         }
@@ -287,7 +287,7 @@ public final class d80 extends org.telegram.ui.ActionBar.n2 implements Notificat
 
     @Override // org.telegram.ui.ActionBar.n2
     public final ArrayList getThemeDescriptions() {
-        return w7.b6.a(new e(this, 18), org.telegram.ui.ActionBar.j6.d6, org.telegram.ui.ActionBar.j6.q6, org.telegram.ui.ActionBar.j6.P9, org.telegram.ui.ActionBar.j6.Q9, org.telegram.ui.ActionBar.j6.Sh, org.telegram.ui.ActionBar.j6.G6);
+        return w7.c6.a(new e(this, 18), org.telegram.ui.ActionBar.j6.d6, org.telegram.ui.ActionBar.j6.q6, org.telegram.ui.ActionBar.j6.P9, org.telegram.ui.ActionBar.j6.Q9, org.telegram.ui.ActionBar.j6.Sh, org.telegram.ui.ActionBar.j6.G6);
     }
 
     @Override // org.telegram.ui.ActionBar.n2

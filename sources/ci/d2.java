@@ -22,12 +22,12 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.gl0;
+import org.telegram.ui.Components.fl0;
 import org.telegram.ui.Components.pq;
 import org.telegram.ui.Components.xx;
-import org.telegram.ui.g71;
+import org.telegram.ui.j71;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class d2 extends s4.h0 {
     public final TLRPC.TL_inputStickerSetShortName E;
@@ -415,17 +415,17 @@ public final class d2 extends s4.h0 {
                 }
                 TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) arrayList.get(i12);
                 String str = (tL_messages_stickerSet == null || (stickerSet = tL_messages_stickerSet.set) == null) ? "" : stickerSet.title;
-                org.telegram.ui.Cells.o8 o8Var = (org.telegram.ui.Cells.o8) view;
+                org.telegram.ui.Cells.p8 p8Var = (org.telegram.ui.Cells.p8) view;
                 if (this.I == null) {
-                    o8Var.b(0, str);
+                    p8Var.b(0, str);
                     return;
                 }
                 int indexOf = str.toLowerCase().indexOf(this.I.toLowerCase());
                 if (indexOf < 0) {
-                    o8Var.b(0, str);
+                    p8Var.b(0, str);
                     return;
                 } else {
-                    o8Var.c(str, 0, null, indexOf, this.I.length());
+                    p8Var.c(str, 0, null, indexOf, this.I.length());
                     return;
                 }
             }
@@ -437,7 +437,7 @@ public final class d2 extends s4.h0 {
                 int i13 = this.K;
                 if (b2Var.b != i13) {
                     b2Var.b = i13;
-                    g71.D(UserConfig.selectedAccount, b2Var.a);
+                    j71.D(UserConfig.selectedAccount, b2Var.a);
                     return;
                 }
                 return;
@@ -488,9 +488,9 @@ public final class d2 extends s4.h0 {
         if (o1Var.f == longValue) {
             return;
         }
-        org.telegram.ui.Components.q5 q5Var = o1Var.c;
-        if (q5Var != null) {
-            q5Var.o(o1Var);
+        org.telegram.ui.Components.p5 p5Var = o1Var.c;
+        if (p5Var != null) {
+            p5Var.o(o1Var);
         }
         if (longValue == 0) {
             o1Var.a = false;
@@ -500,7 +500,7 @@ public final class d2 extends s4.h0 {
         }
         o1Var.a = true;
         o1Var.f = longValue;
-        org.telegram.ui.Components.q5 n10 = org.telegram.ui.Components.q5.n(o1Var.b, longValue, null, LiteMode.isEnabled(z10 ? 1 : LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD) ? 3 : 13);
+        org.telegram.ui.Components.p5 n10 = org.telegram.ui.Components.p5.n(o1Var.b, longValue, null, LiteMode.isEnabled(z10 ? 1 : LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD) ? 3 : 13);
         o1Var.c = n10;
         if (o1Var.s) {
             n10.a(o1Var);
@@ -509,37 +509,37 @@ public final class d2 extends s4.h0 {
 
     @Override // s4.h0
     public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        org.telegram.ui.ActionBar.e6 e6Var;
-        View o8Var;
+        org.telegram.ui.ActionBar.f6 f6Var;
+        View p8Var;
         e2 e2Var = this.N;
         t2 t2Var = e2Var.s;
         if (i10 == 0) {
-            o8Var = new View(e2Var.getContext());
+            p8Var = new View(e2Var.getContext());
         } else if (i10 == 1) {
             Context context = e2Var.getContext();
-            e6Var = ((org.telegram.ui.ActionBar.f3) t2Var).resourcesProvider;
-            o8Var = new org.telegram.ui.Cells.o8(context, true, false, e6Var, false);
+            f6Var = ((org.telegram.ui.ActionBar.f3) t2Var).resourcesProvider;
+            p8Var = new org.telegram.ui.Cells.p8(context, true, false, f6Var, false);
         } else if (i10 == 3) {
             Context context2 = e2Var.getContext();
             boolean z10 = e2Var.a == 0;
             b2 b2Var = new b2(context2);
             b2Var.b = -1;
-            org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(context2);
-            b2Var.a = w9Var;
-            b2Var.addView(w9Var, w7.y5.e(36, 36, 17));
+            org.telegram.ui.Components.v9 v9Var = new org.telegram.ui.Components.v9(context2);
+            b2Var.a = v9Var;
+            b2Var.addView(v9Var, w7.y5.e(36, 36, 17));
             TextView textView = new TextView(context2);
             textView.setTextSize(1, 14.0f);
             textView.setTextColor(-8553090);
             textView.setText(LocaleController.getString(z10 ? R.string.NoEmojiFound : R.string.NoStickersFound));
             b2Var.addView(textView, w7.y5.d(-2, -2.0f, 17, 0.0f, 34.0f, 0.0f, 0.0f));
-            o8Var = b2Var;
+            p8Var = b2Var;
         } else if (i10 == 4) {
             r2 r2Var = new r2(t2Var, e2Var.getContext());
             r2Var.e = new e1(t2Var, 2);
-            o8Var = r2Var;
+            p8Var = r2Var;
         } else {
-            o8Var = new o1(e2Var.getContext(), e2Var.b);
+            p8Var = new o1(e2Var.getContext(), e2Var.b);
         }
-        return new gl0(o8Var);
+        return new fl0(p8Var);
     }
 }

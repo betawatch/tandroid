@@ -13,22 +13,22 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class fo extends LinearLayout {
-    public final org.telegram.ui.ActionBar.e6 a;
+    public final org.telegram.ui.ActionBar.f6 a;
     public final TextView b;
     public final ArrayList c;
     public final ArrayList d;
 
-    public fo(Activity activity, View view, int i10, org.telegram.ui.ActionBar.e6 e6Var) {
+    public fo(Activity activity, View view, int i10, org.telegram.ui.ActionBar.f6 f6Var) {
         super(activity);
         ArrayList arrayList = new ArrayList();
         this.c = arrayList;
         this.d = new ArrayList();
-        this.a = e6Var;
+        this.a = f6Var;
         int dp = AndroidUtilities.dp(18.0f);
-        Paint G = e6Var != null ? e6Var.G("paintChatActionBackground") : null;
+        Paint G = f6Var != null ? f6Var.G("paintChatActionBackground") : null;
         G = G == null ? org.telegram.ui.ActionBar.j6.S0("paintChatActionBackground") : G;
         int i11 = org.telegram.ui.ActionBar.j6.a;
         setBackground(new org.telegram.ui.ActionBar.v5(this, view, dp, G));
@@ -38,7 +38,7 @@ public final class fo extends LinearLayout {
             TextView textView = new TextView(activity);
             this.b = textView;
             textView.setTextSize(1, 15.0f);
-            textView.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.ic, e6Var));
+            textView.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.ic, f6Var));
             textView.setGravity(1);
             textView.setMaxWidth(AndroidUtilities.dp(210.0f));
             arrayList.add(textView);
@@ -47,17 +47,17 @@ public final class fo extends LinearLayout {
             TextView textView2 = new TextView(activity);
             this.b = textView2;
             textView2.setTextSize(1, 15.0f);
-            textView2.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.ic, e6Var));
+            textView2.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.ic, f6Var));
             textView2.setGravity(1);
             textView2.setMaxWidth(AndroidUtilities.dp(210.0f));
             arrayList.add(textView2);
             addView(textView2, w7.y5.q(-2, -2, 49));
         } else {
-            lj0 lj0Var = new lj0(activity);
-            lj0Var.setAutoRepeat(true);
-            lj0Var.f(R.raw.utyan_saved_messages, 120, 120, null);
-            lj0Var.d();
-            addView(lj0Var, w7.y5.t(-2, -2, 49, 0, 2, 0, 0));
+            kj0 kj0Var = new kj0(activity);
+            kj0Var.setAutoRepeat(true);
+            kj0Var.f(R.raw.utyan_saved_messages, 120, 120, null);
+            kj0Var.d();
+            addView(kj0Var, w7.y5.t(-2, -2, 49, 0, 2, 0, 0));
         }
         TextView textView3 = new TextView(activity);
         if (i10 == 0) {
@@ -72,13 +72,13 @@ public final class fo extends LinearLayout {
             textView3.setTypeface(AndroidUtilities.bold());
             textView3.setGravity(1);
         }
-        textView3.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.ic, e6Var));
+        textView3.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.ic, f6Var));
         arrayList.add(textView3);
         textView3.setMaxWidth(AndroidUtilities.dp(260.0f));
         addView(textView3, w7.y5.t(-2, -2, (i10 != 2 ? LocaleController.isRTL ? 5 : 3 : 1) | 48, 0, 8, 0, i10 != 2 ? 0 : 8));
         for (int i12 = 0; i12 < 4; i12++) {
-            LinearLayout f7 = org.telegram.messenger.q.f(activity, 0);
-            addView(f7, w7.y5.t(-2, -2, LocaleController.isRTL ? 5 : 3, 0, 8, 0, 0));
+            LinearLayout e = org.telegram.messenger.l0.e(activity, 0);
+            addView(e, w7.y5.t(-2, -2, LocaleController.isRTL ? 5 : 3, 0, 8, 0, 0));
             ImageView imageView = new ImageView(activity);
             int i13 = org.telegram.ui.ActionBar.j6.ic;
             imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.j6.v0(i13, this.a), PorterDuff.Mode.MULTIPLY));
@@ -130,23 +130,23 @@ public final class fo extends LinearLayout {
                 textView4.setText(LocaleController.getString(R.string.GroupDescription1));
             }
             if (LocaleController.isRTL) {
-                f7.addView(textView4, w7.y5.n(-2, -2));
+                e.addView(textView4, w7.y5.n(-2, -2));
                 if (i10 == 0) {
-                    f7.addView(imageView, w7.y5.k(8.0f, 3.0f, 0.0f, 0.0f, -2, -2));
+                    e.addView(imageView, w7.y5.k(8.0f, 3.0f, 0.0f, 0.0f, -2, -2));
                 } else if (i10 == 2) {
-                    f7.addView(imageView, w7.y5.k(8.0f, 7.0f, 0.0f, 0.0f, -2, -2));
+                    e.addView(imageView, w7.y5.k(8.0f, 7.0f, 0.0f, 0.0f, -2, -2));
                 } else {
-                    f7.addView(imageView, w7.y5.k(8.0f, 3.0f, 0.0f, 0.0f, -2, -2));
+                    e.addView(imageView, w7.y5.k(8.0f, 3.0f, 0.0f, 0.0f, -2, -2));
                 }
             } else {
                 if (i10 == 0) {
-                    f7.addView(imageView, w7.y5.k(0.0f, 4.0f, 8.0f, 0.0f, -2, -2));
+                    e.addView(imageView, w7.y5.k(0.0f, 4.0f, 8.0f, 0.0f, -2, -2));
                 } else if (i10 == 2) {
-                    f7.addView(imageView, w7.y5.k(0.0f, 8.0f, 8.0f, 0.0f, -2, -2));
+                    e.addView(imageView, w7.y5.k(0.0f, 8.0f, 8.0f, 0.0f, -2, -2));
                 } else {
-                    f7.addView(imageView, w7.y5.k(0.0f, 4.0f, 8.0f, 0.0f, -2, -2));
+                    e.addView(imageView, w7.y5.k(0.0f, 4.0f, 8.0f, 0.0f, -2, -2));
                 }
-                f7.addView(textView4, w7.y5.n(-2, -2));
+                e.addView(textView4, w7.y5.n(-2, -2));
             }
         }
     }

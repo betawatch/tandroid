@@ -13,12 +13,12 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.gg0;
+import org.telegram.ui.hg0;
 import org.telegram.ui.pn0;
-import org.telegram.ui.xg0;
-import org.telegram.ui.y80;
+import org.telegram.ui.r80;
+import org.telegram.ui.yg0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final /* synthetic */ class jb implements Runnable {
     public final /* synthetic */ int a;
@@ -66,17 +66,17 @@ public final /* synthetic */ class jb implements Runnable {
                 final String[] strArr = (String[]) obj6;
                 final String[] strArr2 = (String[]) obj5;
                 final ci.d dVar = (ci.d) obj4;
-                final org.telegram.ui.Cells.e9 e9Var = (org.telegram.ui.Cells.e9) obj3;
-                final org.telegram.ui.ActionBar.e6 e6Var = (org.telegram.ui.ActionBar.e6) obj2;
+                final org.telegram.ui.Cells.f9 f9Var = (org.telegram.ui.Cells.f9) obj3;
+                final org.telegram.ui.ActionBar.f6 f6Var = (org.telegram.ui.ActionBar.f6) obj2;
                 final int[] iArr2 = (int[]) obj;
-                final String str = ((Object) ((org.telegram.ui.Cells.j3) obj8).getText()) + "bot";
+                final String str = ((Object) ((org.telegram.ui.Cells.k3) obj8).getText()) + "bot";
                 if (str.length() >= 4) {
                     if (str.length() <= 32) {
                         if (!TextUtils.equals(strArr2[0], str)) {
                             strArr2[0] = str;
                             strArr[0] = null;
-                            e9Var.setText(LocaleController.getString(R.string.UsernameChecking));
-                            e9Var.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.B6, e6Var));
+                            f9Var.setText(LocaleController.getString(R.string.UsernameChecking));
+                            f9Var.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.B6, f6Var));
                             TL_bots.checkUsername checkusername = new TL_bots.checkUsername();
                             checkusername.username = str;
                             dVar.setLoading(true);
@@ -88,24 +88,24 @@ public final /* synthetic */ class jb implements Runnable {
                                     strArr2[0] = null;
                                     boolean z10 = ((TLRPC.Bool) obj9) instanceof TLRPC.TL_boolTrue;
                                     String[] strArr3 = strArr;
-                                    org.telegram.ui.Cells.e9 e9Var2 = e9Var;
-                                    org.telegram.ui.ActionBar.e6 e6Var2 = e6Var;
+                                    org.telegram.ui.Cells.f9 f9Var2 = f9Var;
+                                    org.telegram.ui.ActionBar.f6 f6Var2 = f6Var;
                                     if (z10) {
                                         String str2 = str;
                                         strArr3[0] = str2;
                                         dVar2.setEnabled(true);
-                                        e9Var2.setText(LocaleController.formatString(R.string.UsernameAvailable, t8.b.i("@", str2)));
-                                        e9Var2.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.w6, e6Var2));
+                                        f9Var2.setText(LocaleController.formatString(R.string.UsernameAvailable, v7.j0.g("@", str2)));
+                                        f9Var2.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.w6, f6Var2));
                                         return;
                                     }
                                     strArr3[0] = null;
                                     dVar2.setEnabled(false);
-                                    e9Var2.setText(LocaleController.getString(R.string.UsernameInUse));
-                                    e9Var2.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.q7, e6Var2));
+                                    f9Var2.setText(LocaleController.getString(R.string.UsernameInUse));
+                                    f9Var2.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.q7, f6Var2));
                                     int[] iArr3 = iArr2;
                                     int i12 = -iArr3[0];
                                     iArr3[0] = i12;
-                                    AndroidUtilities.shakeViewSpring(e9Var2, i12);
+                                    AndroidUtilities.shakeViewSpring(f9Var2, i12);
                                 }
                             });
                             break;
@@ -119,11 +119,11 @@ public final /* synthetic */ class jb implements Runnable {
                         strArr[0] = null;
                         dVar.setLoading(false);
                         dVar.setEnabled(false);
-                        e9Var.setText(LocaleController.getString(R.string.UsernameInvalidLong));
-                        e9Var.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.q7, e6Var));
+                        f9Var.setText(LocaleController.getString(R.string.UsernameInvalidLong));
+                        f9Var.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.q7, f6Var));
                         int i12 = -iArr2[0];
                         iArr2[0] = i12;
-                        AndroidUtilities.shakeViewSpring(e9Var, i12);
+                        AndroidUtilities.shakeViewSpring(f9Var, i12);
                         break;
                     }
                 } else {
@@ -135,17 +135,17 @@ public final /* synthetic */ class jb implements Runnable {
                     strArr[0] = null;
                     dVar.setLoading(false);
                     dVar.setEnabled(false);
-                    e9Var.setText(LocaleController.getString(R.string.UsernameInvalidShort));
-                    e9Var.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.q7, e6Var));
+                    f9Var.setText(LocaleController.getString(R.string.UsernameInvalidShort));
+                    f9Var.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.q7, f6Var));
                     int i13 = -iArr2[0];
                     iArr2[0] = i13;
-                    AndroidUtilities.shakeViewSpring(e9Var, i13);
+                    AndroidUtilities.shakeViewSpring(f9Var, i13);
                     break;
                 }
                 break;
             case 2:
                 LaunchActivity launchActivity = (LaunchActivity) obj8;
-                y80 y80Var = (y80) obj7;
+                r80 r80Var = (r80) obj7;
                 TLObject tLObject = (TLObject) obj6;
                 TL_account.authorizationForm authorizationform = (TL_account.authorizationForm) obj5;
                 TL_account.getAuthorizationForm getauthorizationform = (TL_account.getAuthorizationForm) obj4;
@@ -154,7 +154,7 @@ public final /* synthetic */ class jb implements Runnable {
                 String str4 = (String) obj;
                 Pattern pattern = LaunchActivity.B1;
                 try {
-                    y80Var.run();
+                    r80Var.run();
                 } catch (Exception e) {
                     FileLog.e(e);
                 }
@@ -168,7 +168,7 @@ public final /* synthetic */ class jb implements Runnable {
                 LaunchActivity launchActivity2 = (LaunchActivity) obj8;
                 TLObject tLObject2 = (TLObject) obj7;
                 int[] iArr3 = (int[]) obj6;
-                y80 y80Var2 = (y80) obj5;
+                r80 r80Var2 = (r80) obj5;
                 Integer num = (Integer) obj4;
                 Integer num2 = (Integer) obj3;
                 Long l4 = (Long) obj2;
@@ -178,19 +178,19 @@ public final /* synthetic */ class jb implements Runnable {
                     TLRPC.TL_messages_chats tL_messages_chats = (TLRPC.TL_messages_chats) tLObject2;
                     if (!tL_messages_chats.chats.isEmpty()) {
                         MessagesController.getInstance(launchActivity2.O).putChats(tL_messages_chats.chats, false);
-                        iArr3[0] = launchActivity2.v0(this.b, y80Var2, num, num2, l4, num3, null, tL_messages_chats.chats.get(0), null, null, 0, -1);
+                        iArr3[0] = launchActivity2.v0(this.b, r80Var2, num, num2, l4, num3, null, tL_messages_chats.chats.get(0), null, null, 0, -1);
                         break;
                     }
                 }
                 try {
-                    y80Var2.run();
+                    r80Var2.run();
                 } catch (Exception e7) {
                     FileLog.e(e7);
                 }
-                launchActivity2.B0(org.telegram.ui.Components.e5.H(launchActivity2, LocaleController.getString(R.string.DialogNotAvailable), LocaleController.getString(R.string.LinkNotFound)));
+                launchActivity2.B0(org.telegram.ui.Components.d5.H(launchActivity2, LocaleController.getString(R.string.DialogNotAvailable), LocaleController.getString(R.string.LinkNotFound)));
                 break;
             case 4:
-                gg0 gg0Var = (gg0) obj8;
+                hg0 hg0Var = (hg0) obj8;
                 TLObject tLObject3 = (TLObject) obj7;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj6;
                 c5.k kVar = (c5.k) obj5;
@@ -198,47 +198,47 @@ public final /* synthetic */ class jb implements Runnable {
                 TLRPC.TL_inputStorePaymentAuthCode tL_inputStorePaymentAuthCode = (TLRPC.TL_inputStorePaymentAuthCode) obj3;
                 String str5 = (String) obj2;
                 TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore = (TLRPC.TL_payments_canPurchaseStore) obj;
-                xg0 xg0Var = gg0Var.v;
-                ci.d dVar2 = gg0Var.b;
+                yg0 yg0Var = hg0Var.v;
+                ci.d dVar2 = hg0Var.b;
                 FileLog.d("LoginBilling canPurchaseStore returned " + tLObject3 + " " + tL_error);
                 if (!(tLObject3 instanceof TLRPC.TL_boolTrue)) {
                     if (!(tLObject3 instanceof TLRPC.TL_boolFalse)) {
                         if (tL_error != null) {
-                            gg0Var.e = tL_error.text;
-                            new org.telegram.ui.Components.xc(xg0Var.Z, null).d0(tL_error, false);
+                            hg0Var.e = tL_error.text;
+                            new org.telegram.ui.Components.xc(yg0Var.Z, null).d0(tL_error, false);
                             break;
                         }
                     } else {
-                        gg0Var.e = "RESPONSE_FALSE";
-                        new org.telegram.ui.Components.xc(xg0Var.Z, null).H(R.raw.error, LocaleController.formatString(R.string.UnknownErrorCode, "RESPONSE_FALSE"));
+                        hg0Var.e = "RESPONSE_FALSE";
+                        new org.telegram.ui.Components.xc(yg0Var.Z, null).H(R.raw.error, LocaleController.formatString(R.string.UnknownErrorCode, "RESPONSE_FALSE"));
                         break;
                     }
                 } else {
                     dVar2.g(LocaleController.formatString(R.string.SMSFeePurchaseTitle, kVar.a), false, true);
                     dVar2.f(i11 == 7 ? LocaleController.getString(R.string.SMSFeePurchaseText) : LocaleController.formatPluralStringComma("SMSFeePurchaseTextDays", i11), false);
                     dVar2.setLoading(false);
-                    dVar2.setOnClickListener(new ai.s0(gg0Var, oVar, tL_inputStorePaymentAuthCode, str5, tL_payments_canPurchaseStore, 14));
+                    dVar2.setOnClickListener(new ai.s0(hg0Var, oVar, tL_inputStorePaymentAuthCode, str5, tL_payments_canPurchaseStore, 14));
                     break;
                 }
                 break;
             default:
-                yh.t5 t5Var = (yh.t5) obj8;
+                yh.u5 u5Var = (yh.u5) obj8;
                 ((boolean[]) obj7)[0] = true;
-                t5Var.a0((MessageObject) obj6, (TLRPC.InputInvoice) obj5, (TLRPC.TL_payments_paymentFormStars) obj4, new yh.b5(t5Var, (boolean[]) obj3, this.b, (Utilities.Callback) obj2, (Utilities.Callback) obj));
+                u5Var.a0((MessageObject) obj6, (TLRPC.InputInvoice) obj5, (TLRPC.TL_payments_paymentFormStars) obj4, new yh.b5(u5Var, (boolean[]) obj3, this.b, (Utilities.Callback) obj2, (Utilities.Callback) obj));
                 break;
         }
     }
 
-    public /* synthetic */ jb(org.telegram.ui.Cells.j3 j3Var, int[] iArr, int i10, String[] strArr, String[] strArr2, ci.d dVar, org.telegram.ui.Cells.e9 e9Var, org.telegram.ui.ActionBar.e6 e6Var, int[] iArr2) {
+    public /* synthetic */ jb(org.telegram.ui.Cells.k3 k3Var, int[] iArr, int i10, String[] strArr, String[] strArr2, ci.d dVar, org.telegram.ui.Cells.f9 f9Var, org.telegram.ui.ActionBar.f6 f6Var, int[] iArr2) {
         this.a = 1;
-        this.c = j3Var;
+        this.c = k3Var;
         this.d = iArr;
         this.b = i10;
         this.e = strArr;
         this.f = strArr2;
         this.h = dVar;
-        this.n = e9Var;
-        this.r = e6Var;
+        this.n = f9Var;
+        this.r = f6Var;
         this.s = iArr2;
     }
 
@@ -255,9 +255,9 @@ public final /* synthetic */ class jb implements Runnable {
         this.s = obj7;
     }
 
-    public /* synthetic */ jb(gg0 gg0Var, TLObject tLObject, TLRPC.TL_error tL_error, c5.k kVar, int i10, c5.o oVar, TLRPC.TL_inputStorePaymentAuthCode tL_inputStorePaymentAuthCode, String str, TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore) {
+    public /* synthetic */ jb(hg0 hg0Var, TLObject tLObject, TLRPC.TL_error tL_error, c5.k kVar, int i10, c5.o oVar, TLRPC.TL_inputStorePaymentAuthCode tL_inputStorePaymentAuthCode, String str, TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore) {
         this.a = 4;
-        this.c = gg0Var;
+        this.c = hg0Var;
         this.d = tLObject;
         this.e = tL_error;
         this.f = kVar;
@@ -268,9 +268,9 @@ public final /* synthetic */ class jb implements Runnable {
         this.s = tL_payments_canPurchaseStore;
     }
 
-    public /* synthetic */ jb(yh.t5 t5Var, boolean[] zArr, MessageObject messageObject, TLRPC.InputInvoice inputInvoice, TLRPC.TL_payments_paymentFormStars tL_payments_paymentFormStars, boolean[] zArr2, int i10, Utilities.Callback callback, Utilities.Callback callback2) {
+    public /* synthetic */ jb(yh.u5 u5Var, boolean[] zArr, MessageObject messageObject, TLRPC.InputInvoice inputInvoice, TLRPC.TL_payments_paymentFormStars tL_payments_paymentFormStars, boolean[] zArr2, int i10, Utilities.Callback callback, Utilities.Callback callback2) {
         this.a = 5;
-        this.c = t5Var;
+        this.c = u5Var;
         this.d = zArr;
         this.e = messageObject;
         this.f = inputInvoice;

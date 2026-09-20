@@ -12,7 +12,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class xt0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -36,9 +36,9 @@ public final class xt0 extends AnimatorListenerAdapter {
         photoViewer.e1.setVisibility(8);
         photoViewer.f1.setVisibility(8);
         photoViewer.g1.setVisibility(8);
-        org.telegram.ui.Components.df0 df0Var = photoViewer.C1;
-        if (df0Var != null) {
-            df0Var.setVisibility(4);
+        org.telegram.ui.Components.cf0 cf0Var = photoViewer.C1;
+        if (cf0Var != null) {
+            cf0Var.setVisibility(4);
         }
         photoViewer.o1.setVisibility(8);
         photoViewer.o1.setAlpha(0.0f);
@@ -83,7 +83,7 @@ public final class xt0 extends AnimatorListenerAdapter {
         }
         AnimatorSet animatorSet = new AnimatorSet();
         photoViewer.p6 = animatorSet;
-        animatorSet.playTogether(ObjectAnimator.ofFloat(photoViewer, org.telegram.ui.Components.s6.g, 0.0f, 1.0f), ObjectAnimator.ofFloat(photoViewer.I1.getToolsView(), (Property<FrameLayout, Float>) View.TRANSLATION_Y, AndroidUtilities.dp(186.0f), 0.0f));
+        animatorSet.playTogether(ObjectAnimator.ofFloat(photoViewer, org.telegram.ui.Components.r6.g, 0.0f, 1.0f), ObjectAnimator.ofFloat(photoViewer.I1.getToolsView(), (Property<FrameLayout, Float>) View.TRANSLATION_Y, AndroidUtilities.dp(186.0f), 0.0f));
         photoViewer.p6.setDuration(200L);
         photoViewer.p6.addListener(new gp0(this, 4));
         photoViewer.p6.start();

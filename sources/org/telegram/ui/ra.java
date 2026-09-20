@@ -24,7 +24,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class ra extends org.telegram.ui.ActionBar.n2 {
     public static final Paint H = new Paint(1);
@@ -34,12 +34,12 @@ public final class ra extends org.telegram.ui.ActionBar.n2 {
     public qa F;
     public org.telegram.ui.Cells.y1 G;
     public org.telegram.ui.ActionBar.v0 a;
-    public org.telegram.ui.Components.wl0 b;
+    public org.telegram.ui.Components.vl0 b;
     public ia c;
     public boolean d;
     public int e;
     public String f;
-    public org.telegram.ui.ActionBar.h6 h;
+    public org.telegram.ui.ActionBar.c6 h;
     public boolean n;
     public String r;
     public final ArrayList s;
@@ -65,7 +65,7 @@ public final class ra extends org.telegram.ui.ActionBar.n2 {
         } catch (Exception e) {
             FileLog.e(e);
         }
-        org.telegram.ui.Components.e5.f0(raVar.currentAccount, tL_error, raVar, updateusername, new Object[0]);
+        org.telegram.ui.Components.d5.f0(raVar.currentAccount, tL_error, raVar, updateusername, new Object[0]);
         raVar.h0();
     }
 
@@ -212,15 +212,15 @@ public final class ra extends org.telegram.ui.ActionBar.n2 {
             }
         }
         this.fragmentView = new FrameLayout(context);
-        org.telegram.ui.Components.wl0 wl0Var = new org.telegram.ui.Components.wl0(context, null);
-        this.b = wl0Var;
-        wl0Var.q1();
+        org.telegram.ui.Components.vl0 vl0Var = new org.telegram.ui.Components.vl0(context, null);
+        this.b = vl0Var;
+        vl0Var.q1();
         this.fragmentView.setBackgroundColor(getThemedColor(org.telegram.ui.ActionBar.j6.a7));
         this.b.setLayoutManager(new s4.c0());
-        org.telegram.ui.Components.wl0 wl0Var2 = this.b;
+        org.telegram.ui.Components.vl0 vl0Var2 = this.b;
         ia iaVar = new ia(this);
         this.c = iaVar;
-        wl0Var2.setAdapter(iaVar);
+        vl0Var2.setAdapter(iaVar);
         this.b.setSelectorDrawableColor(getThemedColor(org.telegram.ui.ActionBar.j6.i6));
         new s4.y(new ma(this)).e(this.b);
         ((FrameLayout) this.fragmentView).addView(this.b, w7.y5.c(-1.0f, -1));
@@ -242,9 +242,9 @@ public final class ra extends org.telegram.ui.ActionBar.n2 {
                 qa.a(qaVar);
             }
         }
-        org.telegram.ui.ActionBar.h6 h6Var = this.h;
-        if (h6Var != null) {
-            AndroidUtilities.cancelRunOnUIThread(h6Var);
+        org.telegram.ui.ActionBar.c6 c6Var = this.h;
+        if (c6Var != null) {
+            AndroidUtilities.cancelRunOnUIThread(c6Var);
             this.h = null;
             this.f = null;
             if (this.e != 0) {
@@ -349,9 +349,9 @@ public final class ra extends org.telegram.ui.ActionBar.n2 {
                     }
                 }
                 this.f = str;
-                org.telegram.ui.ActionBar.h6 h6Var2 = new org.telegram.ui.ActionBar.h6(13, this, str);
-                this.h = h6Var2;
-                AndroidUtilities.runOnUIThread(h6Var2, 300L);
+                org.telegram.ui.ActionBar.c6 c6Var2 = new org.telegram.ui.ActionBar.c6(15, this, str);
+                this.h = c6Var2;
+                AndroidUtilities.runOnUIThread(c6Var2, 300L);
                 return true;
             }
             org.telegram.ui.Cells.y1 y1Var14 = this.G;
@@ -397,7 +397,7 @@ public final class ra extends org.telegram.ui.ActionBar.n2 {
     }
 
     @Override // org.telegram.ui.ActionBar.n2
-    public final org.telegram.ui.Components.wl0 getListViewForSimpleGlass() {
+    public final org.telegram.ui.Components.vl0 getListViewForSimpleGlass() {
         return this.b;
     }
 
@@ -417,8 +417,8 @@ public final class ra extends org.telegram.ui.ActionBar.n2 {
         }
         for (int i10 = 0; i10 < this.b.getChildCount(); i10++) {
             View childAt = this.b.getChildAt(i10);
-            if ((childAt instanceof org.telegram.ui.Cells.m4) && i10 == 0) {
-                AndroidUtilities.shakeViewSpring(((org.telegram.ui.Cells.m4) childAt).getTextView());
+            if ((childAt instanceof org.telegram.ui.Cells.n4) && i10 == 0) {
+                AndroidUtilities.shakeViewSpring(((org.telegram.ui.Cells.n4) childAt).getTextView());
             } else if (childAt instanceof qa) {
                 AndroidUtilities.shakeViewSpring(childAt);
             } else if (childAt instanceof la) {

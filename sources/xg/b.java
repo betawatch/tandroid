@@ -8,29 +8,29 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.Components.np;
-import rg.w1;
+import rg.q1;
 import w7.y5;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class b extends vg.c {
     public final np r;
     public TLRPC.TL_help_country s;
     public final TextPaint v;
-    public final w1 w;
+    public final q1 w;
 
-    public b(Context context, e6 e6Var) {
-        super(context, e6Var);
+    public b(Context context, f6 f6Var) {
+        super(context, f6Var);
         TextPaint textPaint = new TextPaint();
         this.v = textPaint;
-        this.w = new w1(this, 11);
+        this.w = new q1(this, 12);
         textPaint.setTextSize(AndroidUtilities.dp(20.0f));
         this.f.setVisibility(8);
         this.c.setVisibility(8);
-        np npVar = new np(context, 21, e6Var);
+        np npVar = new np(context, 21, f6Var);
         this.r = npVar;
         npVar.b(j6.B5, j6.j7, j6.C5);
         npVar.setDrawUnchecked(true);

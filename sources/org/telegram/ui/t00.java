@@ -8,13 +8,13 @@ import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class t00 extends org.telegram.ui.Cells.m4 {
+public final class t00 extends org.telegram.ui.Cells.n4 {
     public final TextView r;
     public final s00 s;
     public int v;
-    public final org.telegram.ui.Components.h5 w;
+    public final org.telegram.ui.Components.g5 w;
     public boolean x;
     public final /* synthetic */ f10 y;
 
@@ -24,22 +24,22 @@ public final class t00 extends org.telegram.ui.Cells.m4 {
     */
     public t00(f10 f10Var, Context context) {
         super(context, r2, 22, 15, false, r6);
-        org.telegram.ui.ActionBar.e6 e6Var;
+        org.telegram.ui.ActionBar.f6 f6Var;
         this.y = f10Var;
         int i10 = org.telegram.ui.ActionBar.j6.L6;
-        e6Var = ((org.telegram.ui.ActionBar.n2) f10Var).resourceProvider;
+        f6Var = ((org.telegram.ui.ActionBar.n2) f10Var).resourceProvider;
         TextView textView = new TextView(getContext());
         this.r = textView;
         textView.setTextSize(1, 14.0f);
         textView.setTextColor(f10Var.getThemedColor(org.telegram.ui.ActionBar.j6.z6));
-        org.telegram.messenger.wh.k(f10Var.getUserConfig().isPremium() ? R.string.FolderTagNoColor : R.string.FolderTagNoColorPremium, textView, 5);
+        org.telegram.messenger.rk.l(f10Var.getUserConfig().isPremium() ? R.string.FolderTagNoColor : R.string.FolderTagNoColorPremium, textView, 5);
         int i11 = (LocaleController.isRTL ? 3 : 5) | 48;
         float f7 = this.b;
         addView(textView, w7.y5.d(-1, -1.0f, i11, f7, 16.66f, f7, this.c));
         textView.setAlpha(0.0f);
         s00 s00Var = new s00(this, getContext());
         this.s = s00Var;
-        this.w = new org.telegram.ui.Components.h5(s00Var, 320L, org.telegram.ui.Components.qr.h, 0);
+        this.w = new org.telegram.ui.Components.g5(s00Var, 320L, org.telegram.ui.Components.qr.h, 0);
         s00Var.setTextSize(AndroidUtilities.dp(10.0f));
         s00Var.setTypeface(AndroidUtilities.bold());
         s00Var.setGravity(5);

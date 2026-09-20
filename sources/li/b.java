@@ -7,14 +7,14 @@ import k2.v;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.SharedConfig;
-import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.ActionBar.k;
 import org.telegram.ui.ActionBar.n;
-import org.telegram.ui.Components.wl0;
+import org.telegram.ui.Components.vl0;
 import w7.y5;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class b {
     public final i a;
@@ -65,14 +65,14 @@ public final class b {
         viewGroup.setPadding(0, i13, 0, i11 - min2);
     }
 
-    public final void b(FrameLayout frameLayout, wl0 wl0Var, k kVar, e6 e6Var) {
+    public final void b(FrameLayout frameLayout, vl0 vl0Var, k kVar, f6 f6Var) {
         this.e = frameLayout;
-        this.f = wl0Var;
-        wl0Var.setCaptureSectionsDecoratorAllowed(true);
-        this.g = new a(0, wl0Var, frameLayout);
-        this.a.a(wl0Var);
+        this.f = vl0Var;
+        vl0Var.setCaptureSectionsDecoratorAllowed(true);
+        this.g = new a(0, vl0Var, frameLayout);
+        this.a.a(vl0Var);
         kVar.setCenterTitleAndGlass(true);
-        kVar.M(this.b, eh.b.m(e6Var), false);
+        kVar.M(this.b, eh.b.m(f6Var), false);
         kVar.setAddToContainer(false);
         AndroidUtilities.removeFromParent(kVar);
         frameLayout.addView(kVar, y5.e(-1, -2, 48));
@@ -81,6 +81,6 @@ public final class b {
         eVar.q = 224;
         kVar.setBackground(eVar);
         kVar.setExtraHeight(AndroidUtilities.dp(12.0f));
-        wl0Var.setClipToPadding(false);
+        vl0Var.setClipToPadding(false);
     }
 }

@@ -1,83 +1,49 @@
 package org.telegram.ui.Components;
 
+import java.io.Serializable;
 import java.util.ArrayList;
-import org.telegram.messenger.MessageObject;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class zt0 implements gg.b2, org.telegram.ui.Cells.a5 {
-    public final /* synthetic */ bu0 a;
+public final /* synthetic */ class zt0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ au0 b;
+    public final /* synthetic */ String c;
 
-    public /* synthetic */ zt0(bu0 bu0Var) {
-        this.a = bu0Var;
+    public /* synthetic */ zt0(au0 au0Var, String str, int i10) {
+        this.a = i10;
+        this.b = au0Var;
+        this.c = str;
     }
 
-    @Override // gg.b2
-    public void a(int i10) {
-        bu0 bu0Var = this.a;
-        bu0Var.l();
-        if (i10 != 1) {
-            return;
-        }
-        int i11 = bu0Var.r - 1;
-        bu0Var.r = i11;
-        if (i11 != 0) {
-            return;
-        }
-        int i12 = 0;
-        while (true) {
-            kv0 kv0Var = bu0Var.s;
-            du0[] du0VarArr = kv0Var.k0;
-            if (i12 >= du0VarArr.length) {
-                return;
-            }
-            du0 du0Var = du0VarArr[i12];
-            if (du0Var.F == 7) {
-                if (bu0Var.h == 0) {
-                    du0Var.w.e(false, true);
-                } else {
-                    kv0Var.z(du0Var.h, 0, null);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                au0 au0Var = this.b;
+                String str = this.c;
+                au0Var.getClass();
+                AndroidUtilities.runOnUIThread(new zt0(au0Var, str, 1));
+                break;
+            default:
+                au0 au0Var2 = this.b;
+                String str2 = this.c;
+                ArrayList arrayList = null;
+                au0Var2.f = null;
+                if (!ChatObject.isChannel(au0Var2.n) && au0Var2.s.d1 != null) {
+                    arrayList = new ArrayList(au0Var2.s.d1.participants.participants);
                 }
-            }
-            i12++;
+                au0Var2.r = 2;
+                if (arrayList != null) {
+                    Utilities.searchQueue.postRunnable(new cn0((Object) au0Var2, (Serializable) str2, arrayList, 6));
+                } else {
+                    au0Var2.r = 1;
+                }
+                au0Var2.e.g(str2, false, false, true, false, ChatObject.isChannel(au0Var2.n) ? au0Var2.n.id : 0L, false, 2, 1);
+                break;
         }
-    }
-
-    @Override // org.telegram.ui.Cells.a5
-    public boolean e(org.telegram.ui.Cells.b5 b5Var, boolean z10) {
-        int intValue = ((Integer) b5Var.getTag()).intValue();
-        bu0 bu0Var = this.a;
-        TLObject E = bu0Var.E(intValue);
-        if (!(E instanceof TLRPC.ChannelParticipant)) {
-            return false;
-        }
-        TLRPC.ChannelParticipant channelParticipant = (TLRPC.ChannelParticipant) E;
-        TLRPC.TL_chatChannelParticipant tL_chatChannelParticipant = new TLRPC.TL_chatChannelParticipant();
-        tL_chatChannelParticipant.channelParticipant = channelParticipant;
-        tL_chatChannelParticipant.user_id = MessageObject.getPeerId(channelParticipant.peer);
-        tL_chatChannelParticipant.inviter_id = channelParticipant.inviter_id;
-        tL_chatChannelParticipant.date = channelParticipant.date;
-        return bu0Var.s.D1.h(tL_chatChannelParticipant, true, !z10, b5Var);
-    }
-
-    @Override // gg.b2
-    public /* synthetic */ a0.i i() {
-        return null;
-    }
-
-    @Override // gg.b2
-    public /* synthetic */ a0.i o() {
-        return null;
-    }
-
-    @Override // gg.b2
-    public /* synthetic */ boolean s(int i10) {
-        return true;
-    }
-
-    @Override // gg.b2
-    public /* synthetic */ void F(ArrayList arrayList) {
     }
 }

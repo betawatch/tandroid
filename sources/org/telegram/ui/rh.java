@@ -5,7 +5,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class rh implements e2.h {
     public final /* synthetic */ int a;
@@ -55,18 +55,18 @@ public final /* synthetic */ class rh implements e2.h {
                 }
                 break;
             default:
-                gc0 gc0Var = (gc0) obj4;
+                hc0 hc0Var = (hc0) obj4;
                 TLRPC.User[] userArr = (TLRPC.User[]) obj3;
-                org.telegram.ui.Components.wn0 wn0Var = (org.telegram.ui.Components.wn0) obj2;
+                org.telegram.ui.Components.vn0 vn0Var = (org.telegram.ui.Components.vn0) obj2;
                 Long l10 = (Long) obj;
-                TLRPC.User user = l10 == null ? null : MessagesController.getInstance(gc0Var.b).getUser(l10);
+                TLRPC.User user = l10 == null ? null : MessagesController.getInstance(hc0Var.b).getUser(l10);
                 userArr[0] = user;
                 if (user != null) {
-                    wn0Var.run();
+                    vn0Var.run();
                     break;
                 } else {
-                    gc0Var.a();
-                    org.telegram.messenger.wh.o(R.string.NoUsernameFound, gc0.b(), null);
+                    hc0Var.a();
+                    org.telegram.messenger.rk.p(R.string.NoUsernameFound, hc0.b(), null);
                     break;
                 }
         }

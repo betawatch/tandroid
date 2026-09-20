@@ -14,9 +14,9 @@ import java.util.regex.Pattern;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import v7.w7;
+import v7.x7;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class q extends o6.a {
     public static final Parcelable.Creator<q> CREATOR;
@@ -678,7 +678,7 @@ public final class q extends o6.a {
                                     i19 = i18;
                                     mVar = null;
                                 }
-                                Integer a15 = w7.a(jSONObject5.optString("repeatMode"));
+                                Integer a15 = x7.a(jSONObject5.optString("repeatMode"));
                                 int intValue = a15 != null ? a15.intValue() : 0;
                                 JSONArray optJSONArray3 = jSONObject5.optJSONArray("items");
                                 if (optJSONArray3 != null) {
@@ -811,7 +811,7 @@ public final class q extends o6.a {
                 }
             }
             if (jSONObject2.has("repeatMode")) {
-                Integer a16 = w7.a(jSONObject2.getString("repeatMode"));
+                Integer a16 = x7.a(jSONObject2.getString("repeatMode"));
                 int intValue2 = a16 == null ? this.F : a16.intValue();
                 if (this.F != intValue2) {
                     this.F = intValue2;

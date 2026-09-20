@@ -6,12 +6,12 @@ import hg.k0;
 import java.util.ArrayList;
 import java.util.Iterator;
 import n4.y;
-import u2.b1;
-import v7.y7;
+import u2.c1;
+import v7.z7;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
-public final class m implements b1 {
+public final class m implements c1 {
     public final int a;
     public final q b;
     public int c = -1;
@@ -21,7 +21,7 @@ public final class m implements b1 {
         this.a = i10;
     }
 
-    @Override // u2.b1
+    @Override // u2.c1
     public final void a() {
         int i10 = this.c;
         q qVar = this.b;
@@ -65,7 +65,7 @@ public final class m implements b1 {
         return (i10 == -1 || i10 == -3 || i10 == -2) ? false : true;
     }
 
-    @Override // u2.b1
+    @Override // u2.c1
     public final boolean e() {
         if (this.c == -3) {
             return true;
@@ -78,7 +78,7 @@ public final class m implements b1 {
         return !qVar.A() && qVar.L[i10].x(qVar.j0);
     }
 
-    @Override // u2.b1
+    @Override // u2.c1
     public final int f(y yVar, h2.h hVar, int i10) {
         b2.s sVar;
         if (this.c == -3) {
@@ -114,10 +114,10 @@ public final class m implements b1 {
                 if (arrayList.isEmpty() || ((j) arrayList.get(0)).g()) {
                     int C = qVar.L[i11].C(yVar, hVar, i10, qVar.j0);
                     if (C == -5) {
-                        b2.s sVar3 = (b2.s) yVar.c;
+                        b2.s sVar3 = (b2.s) yVar.b;
                         sVar3.getClass();
                         if (i11 == qVar.R) {
-                            int b10 = y7.b(qVar.L[i11].B());
+                            int b10 = z7.b(qVar.L[i11].B());
                             while (i12 < arrayList.size() && ((j) arrayList.get(i12)).v != b10) {
                                 i12++;
                             }
@@ -129,7 +129,7 @@ public final class m implements b1 {
                             }
                             sVar3 = sVar3.d(sVar);
                         }
-                        yVar.c = sVar3;
+                        yVar.b = sVar3;
                     }
                     return C;
                 }
@@ -138,7 +138,7 @@ public final class m implements b1 {
         return -3;
     }
 
-    @Override // u2.b1
+    @Override // u2.c1
     public final int j(long j3) {
         Object next;
         Object obj;

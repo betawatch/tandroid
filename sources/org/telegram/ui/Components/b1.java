@@ -4,7 +4,7 @@ import android.content.DialogInterface;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b1 implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
@@ -27,7 +27,7 @@ public final /* synthetic */ class b1 implements DialogInterface.OnDismissListen
                 AndroidUtilities.hideKeyboard((EditTextBoldCursor) obj);
                 break;
             case 2:
-                AndroidUtilities.hideKeyboard((f4) obj);
+                AndroidUtilities.hideKeyboard((e4) obj);
                 break;
             case 3:
                 ((ChatActivityEnterView) obj).L0 = null;
@@ -43,14 +43,14 @@ public final /* synthetic */ class b1 implements DialogInterface.OnDismissListen
                 ((FragmentContextView) obj).c(false);
                 break;
             case 7:
-                vn0.H = null;
+                un0.H = null;
                 ((View) obj).requestFocus();
                 break;
             case 8:
-                AndroidUtilities.hideKeyboard((pn0) obj);
+                AndroidUtilities.hideKeyboard((on0) obj);
                 break;
             default:
-                ThemeEditorView themeEditorView = ((n11) obj).d;
+                ThemeEditorView themeEditorView = ((m11) obj).d;
                 themeEditorView.l = null;
                 if (themeEditorView.b != null) {
                     AndroidUtilities.setPreferredMaxRefreshRate(themeEditorView.h, themeEditorView.a, themeEditorView.g);

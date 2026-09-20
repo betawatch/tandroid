@@ -55,10 +55,10 @@ import m.s3;
 import org.webrtc.MediaStreamTrack;
 import r0.i0;
 import r0.l0;
-import v7.k7;
-import w7.w6;
+import v7.l7;
+import w7.x6;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class s extends h implements l.j, LayoutInflater.Factory2 {
     public static final a0.m q0 = new a0.m(0);
@@ -262,17 +262,17 @@ public final class s extends h implements l.j, LayoutInflater.Factory2 {
             resources.updateConfiguration(configuration3, null);
             if (i16 < 26 && i16 < 28) {
                 if (i16 >= 24) {
-                    if (!k7.h) {
+                    if (!l7.h) {
                         try {
                             Field declaredField = Resources.class.getDeclaredField("mResourcesImpl");
-                            k7.g = declaredField;
+                            l7.g = declaredField;
                             declaredField.setAccessible(true);
                         } catch (NoSuchFieldException e) {
                             Log.e("ResourcesFlusher", "Could not retrieve Resources#mResourcesImpl field", e);
                         }
-                        k7.h = true;
+                        l7.h = true;
                     }
-                    Field field = k7.g;
+                    Field field = l7.g;
                     if (field != null) {
                         try {
                             obj = field.get(resources);
@@ -281,17 +281,17 @@ public final class s extends h implements l.j, LayoutInflater.Factory2 {
                             obj = null;
                         }
                         if (obj != null) {
-                            if (!k7.b) {
+                            if (!l7.b) {
                                 try {
                                     Field declaredField2 = obj.getClass().getDeclaredField("mDrawableCache");
-                                    k7.a = declaredField2;
+                                    l7.a = declaredField2;
                                     declaredField2.setAccessible(true);
                                 } catch (NoSuchFieldException e10) {
                                     Log.e("ResourcesFlusher", "Could not retrieve ResourcesImpl#mDrawableCache field", e10);
                                 }
-                                k7.b = true;
+                                l7.b = true;
                             }
-                            Field field2 = k7.a;
+                            Field field2 = l7.a;
                             if (field2 != null) {
                                 try {
                                     obj2 = field2.get(obj);
@@ -300,22 +300,22 @@ public final class s extends h implements l.j, LayoutInflater.Factory2 {
                                 }
                             }
                             if (obj2 != null) {
-                                k7.a(obj2);
+                                l7.a(obj2);
                             }
                         }
                     }
                 } else if (i16 >= 23) {
-                    if (!k7.b) {
+                    if (!l7.b) {
                         try {
                             Field declaredField3 = Resources.class.getDeclaredField("mDrawableCache");
-                            k7.a = declaredField3;
+                            l7.a = declaredField3;
                             declaredField3.setAccessible(true);
                         } catch (NoSuchFieldException e12) {
                             Log.e("ResourcesFlusher", "Could not retrieve Resources#mDrawableCache field", e12);
                         }
-                        k7.b = true;
+                        l7.b = true;
                     }
-                    Field field3 = k7.a;
+                    Field field3 = l7.a;
                     if (field3 != null) {
                         try {
                             obj3 = field3.get(resources);
@@ -324,20 +324,20 @@ public final class s extends h implements l.j, LayoutInflater.Factory2 {
                         }
                     }
                     if (obj3 != null) {
-                        k7.a(obj3);
+                        l7.a(obj3);
                     }
                 } else {
-                    if (!k7.b) {
+                    if (!l7.b) {
                         try {
                             Field declaredField4 = Resources.class.getDeclaredField("mDrawableCache");
-                            k7.a = declaredField4;
+                            l7.a = declaredField4;
                             declaredField4.setAccessible(true);
                         } catch (NoSuchFieldException e14) {
                             Log.e("ResourcesFlusher", "Could not retrieve Resources#mDrawableCache field", e14);
                         }
-                        k7.b = true;
+                        l7.b = true;
                     }
-                    Field field4 = k7.a;
+                    Field field4 = l7.a;
                     if (field4 != null) {
                         try {
                             map = (Map) field4.get(resources);
@@ -526,7 +526,7 @@ public final class s extends h implements l.j, LayoutInflater.Factory2 {
         ActionMenuView actionMenuView;
         m.h hVar;
         u uVar = this.d;
-        if ((!(uVar instanceof r0.j) && !e2.u(uVar)) || (decorView = this.f.getDecorView()) == null || !w6.a(decorView, keyEvent)) {
+        if ((!(uVar instanceof r0.j) && !e2.u(uVar)) || (decorView = this.f.getDecorView()) == null || !x6.a(decorView, keyEvent)) {
             if (keyEvent.getKeyCode() == 82) {
                 n nVar = this.h;
                 Window.Callback callback = this.f.getCallback();

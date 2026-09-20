@@ -3,7 +3,7 @@ package j4;
 import b2.r0;
 import c3.h0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class u implements i {
     public final e2.v a;
@@ -33,7 +33,7 @@ public final class u implements i {
     }
 
     @Override // j4.i
-    public final void a(e2.v vVar) {
+    public final void b(e2.v vVar) {
         e2.d.h(this.f);
         while (vVar.a() > 0) {
             int i10 = this.h;
@@ -114,7 +114,7 @@ public final class u implements i {
     }
 
     @Override // j4.i
-    public final void c() {
+    public final void d() {
         this.h = 0;
         this.i = 0;
         this.k = false;
@@ -122,7 +122,7 @@ public final class u implements i {
     }
 
     @Override // j4.i
-    public final void d(c3.q qVar, f0 f0Var) {
+    public final void e(c3.q qVar, f0 f0Var) {
         f0Var.a();
         f0Var.b();
         this.g = f0Var.e;
@@ -131,11 +131,11 @@ public final class u implements i {
     }
 
     @Override // j4.i
-    public final void f(int i10, long j3) {
+    public final void g(int i10, long j3) {
         this.n = j3;
     }
 
     @Override // j4.i
-    public final void e(boolean z10) {
+    public final void f(boolean z10) {
     }
 }

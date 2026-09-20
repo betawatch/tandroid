@@ -11,14 +11,14 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.bi;
 import org.telegram.ui.i60;
-import org.telegram.ui.n31;
+import org.telegram.ui.o31;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b1 implements RequestDelegate {
     public final /* synthetic */ int a = 0;
@@ -30,12 +30,12 @@ public final /* synthetic */ class b1 implements RequestDelegate {
     public final /* synthetic */ Object g;
     public final /* synthetic */ Object h;
 
-    public /* synthetic */ b1(int i10, org.telegram.ui.ActionBar.b2 b2Var, Context context, long j3, e6 e6Var, org.telegram.ui.web.t tVar, org.telegram.tgnet.e eVar) {
+    public /* synthetic */ b1(int i10, org.telegram.ui.ActionBar.b2 b2Var, Context context, long j3, f6 f6Var, org.telegram.ui.web.t tVar, org.telegram.tgnet.e eVar) {
         this.c = i10;
         this.d = b2Var;
         this.e = context;
         this.b = j3;
-        this.f = e6Var;
+        this.f = f6Var;
         this.g = tVar;
         this.h = eVar;
     }
@@ -51,7 +51,7 @@ public final /* synthetic */ class b1 implements RequestDelegate {
         switch (i10) {
             case 0:
                 org.telegram.tgnet.e eVar = (org.telegram.tgnet.e) obj;
-                AndroidUtilities.runOnUIThread(new e1(tLObject, this.c, (org.telegram.ui.ActionBar.b2) obj5, (Context) obj3, this.b, (e6) obj4, (org.telegram.ui.web.t) obj2, eVar));
+                AndroidUtilities.runOnUIThread(new e1(tLObject, this.c, (org.telegram.ui.ActionBar.b2) obj5, (Context) obj3, this.b, (f6) obj4, (org.telegram.ui.web.t) obj2, eVar));
                 break;
             case 1:
                 i60.v((i60) obj5, this.b, (HashSet) obj3, (AtomicInteger) obj4, this.c, (ChatObject.Call) obj2, (String) obj, tLObject, tL_error);
@@ -62,13 +62,13 @@ public final /* synthetic */ class b1 implements RequestDelegate {
                 break;
             default:
                 Activity activity = (Activity) obj5;
-                e6 e6Var = (e6) obj4;
+                f6 f6Var = (f6) obj4;
                 byte[] bArr = (byte[]) obj3;
                 zn znVar = (zn) obj2;
                 MessageObject messageObject = (MessageObject) obj;
                 if (tLObject == null) {
                     if (tL_error != null && "AD_EXPIRED".equalsIgnoreCase(tL_error.text)) {
-                        AndroidUtilities.runOnUIThread(new n31(znVar, activity, e6Var, messageObject, 1), 200L);
+                        AndroidUtilities.runOnUIThread(new o31(znVar, activity, f6Var, messageObject, 1), 200L);
                         break;
                     }
                 } else if (!(tLObject instanceof TLRPC.TL_channels_sponsoredMessageReportResultChooseOption)) {
@@ -78,20 +78,20 @@ public final /* synthetic */ class b1 implements RequestDelegate {
                             break;
                         }
                     } else {
-                        AndroidUtilities.runOnUIThread(new n31(znVar, activity, e6Var, messageObject, 0), 200L);
+                        AndroidUtilities.runOnUIThread(new o31(znVar, activity, f6Var, messageObject, 0), 200L);
                         break;
                     }
                 } else {
-                    AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.e(tLObject, activity, e6Var, this.b, bArr, znVar, messageObject));
+                    AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.e(tLObject, activity, f6Var, this.b, bArr, znVar, messageObject));
                     break;
                 }
                 break;
         }
     }
 
-    public /* synthetic */ b1(Activity activity, e6 e6Var, long j3, byte[] bArr, zn znVar, MessageObject messageObject, int i10) {
+    public /* synthetic */ b1(Activity activity, f6 f6Var, long j3, byte[] bArr, zn znVar, MessageObject messageObject, int i10) {
         this.d = activity;
-        this.f = e6Var;
+        this.f = f6Var;
         this.b = j3;
         this.e = bArr;
         this.g = znVar;

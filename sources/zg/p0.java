@@ -33,26 +33,26 @@ import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Cells.o4;
+import org.telegram.ui.Cells.p4;
 import org.telegram.ui.Cells.u1;
 import org.telegram.ui.Cells.w0;
-import org.telegram.ui.Components.j9;
-import org.telegram.ui.Components.o6;
-import org.telegram.ui.Components.q5;
+import org.telegram.ui.Components.i9;
+import org.telegram.ui.Components.n6;
+import org.telegram.ui.Components.p5;
 import org.telegram.ui.Components.qr;
 import org.telegram.ui.Components.vq;
-import org.telegram.ui.kb1;
+import org.telegram.ui.mb1;
 import org.telegram.ui.rm;
-import yh.x7;
+import yh.s5;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class p0 {
     public static int Z;
     public MessageObject A;
-    public e6 B;
+    public f6 B;
     public Integer C;
     public float D;
     public boolean E;
@@ -67,7 +67,7 @@ public final class p0 {
     public float R;
     public m0 S;
     public boolean T;
-    public x7 U;
+    public s5 U;
     public float a;
     public boolean b;
     public int c;
@@ -95,7 +95,7 @@ public final class p0 {
     public static final TextPaint Y = new TextPaint(1);
     public static final l0 a0 = new l0();
     public static int b0 = 1;
-    public static final kb1 c0 = new kb1(25);
+    public static final mb1 c0 = new mb1(25);
     public final ArrayList v = new ArrayList();
     public final ArrayList w = new ArrayList();
     public final HashMap x = new HashMap();
@@ -161,9 +161,9 @@ public final class p0 {
         return 0L;
     }
 
-    public static void o(e6 e6Var) {
-        V.setColor(j6.v0(j6.ie, e6Var));
-        int v02 = j6.v0(j6.Sh, e6Var);
+    public static void o(f6 f6Var) {
+        V.setColor(j6.v0(j6.ie, f6Var));
+        int v02 = j6.v0(j6.Sh, f6Var);
         TextPaint textPaint = Y;
         textPaint.setColor(v02);
         textPaint.setTextSize(AndroidUtilities.dp(12.0f));
@@ -173,7 +173,7 @@ public final class p0 {
 
     public final boolean a() {
         ArrayList arrayList;
-        j9 j9Var;
+        i9 i9Var;
         int i10;
         int i11;
         if (this.A == null) {
@@ -227,9 +227,9 @@ public final class p0 {
                         vqVar.c(i17, false);
                         vqVar.c(m0Var.w, true);
                     }
-                    j9 j9Var2 = m0Var.T;
-                    if (j9Var2 != null || m0Var2.T != null) {
-                        if (j9Var2 == null) {
+                    i9 i9Var2 = m0Var.T;
+                    if (i9Var2 != null || m0Var2.T != null) {
+                        if (i9Var2 == null) {
                             m0Var.p(new ArrayList());
                         }
                         if (m0Var2.T == null) {
@@ -244,14 +244,14 @@ public final class p0 {
                                 i11 = (tLObject == null || tLObject2 == null || k(tLObject) != k(tLObject2)) ? 0 : i11 + 1;
                             }
                         }
-                        j9 j9Var3 = m0Var.T;
-                        if (j9Var3 != null && (j9Var = m0Var2.T) != null) {
-                            ValueAnimator valueAnimator = j9Var.f;
+                        i9 i9Var3 = m0Var.T;
+                        if (i9Var3 != null && (i9Var = m0Var2.T) != null) {
+                            ValueAnimator valueAnimator = i9Var.f;
                             if (valueAnimator != null) {
                                 valueAnimator.cancel();
-                                if (j9Var3.w) {
-                                    j9Var3.w = false;
-                                    j9Var3.n();
+                                if (i9Var3.w) {
+                                    i9Var3.w = false;
+                                    i9Var3.n();
                                 }
                             }
                             TLObject[] tLObjectArr = new TLObject[3];
@@ -261,16 +261,16 @@ public final class p0 {
                                 if (i18 >= 3) {
                                     break;
                                 }
-                                tLObjectArr[i18] = j9Var3.b[i18].h;
-                                j9Var3.l(i18, j9Var.b[i18].h, i10);
+                                tLObjectArr[i18] = i9Var3.b[i18].h;
+                                i9Var3.l(i18, i9Var.b[i18].h, i10);
                                 i18++;
                             }
-                            j9Var3.b(false, true);
+                            i9Var3.b(false, true);
                             for (int i19 = 0; i19 < 3; i19++) {
-                                j9Var3.l(i19, tLObjectArr[i19], i10);
+                                i9Var3.l(i19, tLObjectArr[i19], i10);
                             }
-                            j9Var3.d = true;
-                            j9Var3.b(true, false);
+                            i9Var3.d = true;
+                            i9Var3.b(true, false);
                         }
                     }
                 }
@@ -380,15 +380,15 @@ public final class p0 {
                     this.Q = motionEvent.getX();
                     this.R = y3;
                     this.S = (m0) arrayList.get(i10);
-                    x7 x7Var = this.U;
-                    if (x7Var != null) {
-                        AndroidUtilities.cancelRunOnUIThread(x7Var);
+                    s5 s5Var = this.U;
+                    if (s5Var != null) {
+                        AndroidUtilities.cancelRunOnUIThread(s5Var);
                         this.U = null;
                     }
                     this.S.Y.c(true);
-                    x7 x7Var2 = new x7(6, this, this.S);
-                    this.U = x7Var2;
-                    AndroidUtilities.runOnUIThread(x7Var2, ViewConfiguration.getLongPressTimeout());
+                    s5 s5Var2 = new s5(8, this, this.S);
+                    this.U = s5Var2;
+                    AndroidUtilities.runOnUIThread(s5Var2, ViewConfiguration.getLongPressTimeout());
                     this.T = true;
                 }
             }
@@ -402,23 +402,23 @@ public final class p0 {
                     m0Var.Y.c(false);
                 }
                 this.S = null;
-                x7 x7Var3 = this.U;
-                if (x7Var3 != null) {
-                    AndroidUtilities.cancelRunOnUIThread(x7Var3);
+                s5 s5Var3 = this.U;
+                if (s5Var3 != null) {
+                    AndroidUtilities.cancelRunOnUIThread(s5Var3);
                     this.U = null;
                 }
             }
         } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-            x7 x7Var4 = this.U;
-            if (x7Var4 != null) {
-                AndroidUtilities.cancelRunOnUIThread(x7Var4);
+            s5 s5Var4 = this.U;
+            if (s5Var4 != null) {
+                AndroidUtilities.cancelRunOnUIThread(s5Var4);
                 this.U = null;
             }
             if (this.T && this.S != null && motionEvent.getAction() == 1) {
                 TLRPC.ReactionCount reactionCount = this.S.a;
                 float x11 = motionEvent.getX();
                 if (e2.u(a0Var)) {
-                    ((o4) a0Var).f(reactionCount, false, x11, y3);
+                    ((p4) a0Var).f(reactionCount, false, x11, y3);
                 }
             }
             this.T = false;
@@ -609,9 +609,9 @@ public final class p0 {
                                 m0Var.f0.setImage(ImageLocation.getForDocument(tL_availableReaction.activate_animation), "140_140", svgThumb, null, tL_availableReaction, 1);
                             }
                         } else if (o0Var.g != 0) {
-                            q5 q5Var = new q5(24, i12, o0Var.g);
-                            m0Var.g0 = q5Var;
-                            q5Var.a(view);
+                            p5 p5Var = new p5(24, i12, o0Var.g);
+                            m0Var.g0 = p5Var;
+                            p5Var.a(view);
                         }
                     }
                 }
@@ -623,9 +623,9 @@ public final class p0 {
                         m0Var.f0.setAlpha(interpolation);
                         m0Var.f0.draw(canvas);
                     } else {
-                        q5 q5Var2 = m0Var.g0;
-                        if (q5Var2 != null) {
-                            q5Var2.setBounds((int) rectF2.left, (int) rectF2.top, (int) rectF2.right, (int) rectF2.bottom);
+                        p5 p5Var2 = m0Var.g0;
+                        if (p5Var2 != null) {
+                            p5Var2.setBounds((int) rectF2.left, (int) rectF2.top, (int) rectF2.right, (int) rectF2.bottom);
                             m0Var.g0.setAlpha((int) (interpolation * 255.0f));
                             m0Var.g0.draw(canvas);
                         }
@@ -704,7 +704,7 @@ public final class p0 {
             }
             m0 m0Var = (m0) arrayList.get(i12);
             boolean z10 = m0Var.b;
-            o6 o6Var = m0Var.G;
+            n6 n6Var = m0Var.G;
             vq vqVar = m0Var.F;
             if (z10) {
                 m0Var.A = AndroidUtilities.dp(14.0f);
@@ -713,9 +713,9 @@ public final class p0 {
                 m0Var.A = AndroidUtilities.dp(42.0f);
                 m0Var.B = AndroidUtilities.dp(26.0f);
                 if (m0Var.u) {
-                    m0Var.A = (int) (o6Var.d + AndroidUtilities.dp(8.0f) + m0Var.A);
+                    m0Var.A = (int) (n6Var.d + AndroidUtilities.dp(8.0f) + m0Var.A);
                 } else if (vqVar != null && m0Var.w > 1) {
-                    m0Var.A = org.telegram.messenger.q.D(8.0f, (int) Math.ceil(vqVar.m), m0Var.A);
+                    m0Var.A = org.telegram.messenger.l0.C(8.0f, (int) Math.ceil(vqVar.m), m0Var.A);
                 }
             } else {
                 m0Var.A = AndroidUtilities.dp(m0Var.D != null ? 6.0f : 4.0f) + AndroidUtilities.dp(20.0f) + AndroidUtilities.dp(8.0f);
@@ -724,9 +724,9 @@ public final class p0 {
                     m0Var.A = (int) ((AndroidUtilities.dp(20.0f) * (m0Var.U.size() > 1 ? m0Var.U.size() - 1 : 0) * 0.8f) + AndroidUtilities.dp(20.0f) + AndroidUtilities.dp(2.0f) + AndroidUtilities.dp(1.0f) + m0Var.A);
                     m0Var.T.o = AndroidUtilities.dp(26.0f);
                 } else if (m0Var.u) {
-                    m0Var.A = (int) (o6Var.d + AndroidUtilities.dp(8.0f) + m0Var.A);
+                    m0Var.A = (int) (n6Var.d + AndroidUtilities.dp(8.0f) + m0Var.A);
                 } else if (((int) Math.ceil(vqVar.m)) > 0) {
-                    m0Var.A = org.telegram.messenger.q.D(8.0f, (int) Math.ceil(vqVar.m), m0Var.A);
+                    m0Var.A = org.telegram.messenger.l0.C(8.0f, (int) Math.ceil(vqVar.m), m0Var.A);
                 } else {
                     m0Var.A -= AndroidUtilities.dp(1.0f);
                 }
@@ -734,14 +734,14 @@ public final class p0 {
             }
             if (m0Var.A + i13 > i10) {
                 arrayList2.add(Integer.valueOf(i13));
-                i15 = org.telegram.messenger.q.D(4.0f, m0Var.B, i15);
+                i15 = org.telegram.messenger.l0.C(4.0f, m0Var.B, i15);
                 i16++;
                 i13 = 0;
             }
             m0Var.x = i13;
             m0Var.y = i15;
             m0Var.z = i16;
-            i13 = org.telegram.messenger.q.D(4.0f, m0Var.A, i13);
+            i13 = org.telegram.messenger.l0.C(4.0f, m0Var.A, i13);
             if (i13 > i14) {
                 i14 = i13;
             }
@@ -837,7 +837,7 @@ public final class p0 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void s(MessageObject messageObject, boolean z10, boolean z11, e6 e6Var) {
+    public final void s(MessageObject messageObject, boolean z10, boolean z11, f6 f6Var) {
         boolean z12;
         int i10;
         TLRPC.ReactionCount reactionCount;
@@ -847,7 +847,7 @@ public final class p0 {
         p0 p0Var = this;
         boolean z13 = z10;
         boolean z14 = z11;
-        p0Var.B = e6Var;
+        p0Var.B = f6Var;
         p0Var.b = z13;
         p0Var.M = z14;
         p0Var.A = messageObject;

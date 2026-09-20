@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class qg extends j1.b {
     public final /* synthetic */ rg o;
@@ -45,23 +45,23 @@ public final class qg extends j1.b {
     }
 
     @Override // j1.b
-    public final void l(int i10, s0.c cVar) {
+    public final void l(int i10, s0.d dVar) {
         rg rgVar = this.o;
         ChatActivityEnterView chatActivityEnterView = rgVar.V;
         if (i10 == 2) {
             Rect rect = chatActivityEnterView.T3;
             RectF rectF = chatActivityEnterView.R3;
             rect.set((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
-            cVar.h(chatActivityEnterView.T3);
-            cVar.o(LocaleController.getString(chatActivityEnterView.o4 > 0.5f ? R.string.AccActionResume : R.string.AccActionPause));
+            dVar.h(chatActivityEnterView.T3);
+            dVar.o(LocaleController.getString(chatActivityEnterView.o4 > 0.5f ? R.string.AccActionResume : R.string.AccActionPause));
             return;
         }
         if (i10 == 4) {
             Rect rect2 = chatActivityEnterView.T3;
             RectF rectF2 = rgVar.J;
             rect2.set((int) rectF2.left, (int) rectF2.top, (int) rectF2.right, (int) rectF2.bottom);
-            cVar.h(chatActivityEnterView.T3);
-            cVar.o(LocaleController.getString(chatActivityEnterView.O ? R.string.AccActionOnceDeactivate : R.string.AccActionOnceActivate));
+            dVar.h(chatActivityEnterView.T3);
+            dVar.o(LocaleController.getString(chatActivityEnterView.O ? R.string.AccActionOnceDeactivate : R.string.AccActionOnceActivate));
         }
     }
 }

@@ -18,11 +18,11 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.ActionBar.l6;
 import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.j9;
+import org.telegram.ui.Components.i9;
 import org.telegram.ui.qe;
 import w7.y5;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class d {
     public final n2 a;
@@ -67,7 +67,7 @@ public final class d {
         }
         c cVar = this.m;
         if (cVar != null) {
-            cVar.h(z10, z11);
+            cVar.f(z10, z11);
         }
     }
 
@@ -118,9 +118,9 @@ public final class d {
             h0 h0Var = new h0(i11, n2Var.getParentActivity(), false);
             this.e = h0Var;
             h0Var.setAvatarsTextSize(AndroidUtilities.dp(18.0f));
-            j9 j9Var = this.e.a;
-            for (int i12 = 0; i12 < j9Var.c.length; i12++) {
-                j9Var.l(0, null, 0);
+            i9 i9Var = this.e.a;
+            for (int i12 = 0; i12 < i9Var.c.length; i12++) {
+                i9Var.l(0, null, 0);
             }
             this.f.addView(this.e, y5.d(-2, -1.0f, 48, 8.0f, 0.0f, 10.0f, 0.0f));
             TextView textView = new TextView(n2Var.getParentActivity());

@@ -11,9 +11,9 @@ import android.os.Trace;
 import android.view.Surface;
 import e2.d0;
 import java.nio.ByteBuffer;
-import org.telegram.ui.web.u0;
+import org.telegram.ui.web.r0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class c implements l {
     public final MediaCodec a;
@@ -101,7 +101,7 @@ public final class c implements l {
             fVar.l++;
             Handler handler = fVar.c;
             String str = d0.a;
-            handler.post(new u0(fVar, 22));
+            handler.post(new r0(fVar, 23));
         }
         this.a.start();
     }

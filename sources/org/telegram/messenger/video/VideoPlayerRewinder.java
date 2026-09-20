@@ -5,13 +5,13 @@ import java.io.File;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.q71;
-import org.telegram.ui.Components.s71;
-import org.telegram.ui.Components.u71;
-import org.telegram.ui.Components.yo0;
-import org.telegram.ui.Components.zf0;
+import org.telegram.ui.Components.p71;
+import org.telegram.ui.Components.r71;
+import org.telegram.ui.Components.t71;
+import org.telegram.ui.Components.xo0;
+import org.telegram.ui.Components.yf0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public class VideoPlayerRewinder {
     private boolean fastSeeking;
@@ -23,14 +23,14 @@ public class VideoPlayerRewinder {
     private long rewindLastTime;
     private long rewindLastUpdatePlayerTime;
     public boolean rewinding;
-    private yo0 seekSpeedDrawable;
+    private xo0 seekSpeedDrawable;
     private long startRewindFrom;
     private Runnable updateRewindRunnable;
     private float value;
-    private u71 videoPlayer;
+    private t71 videoPlayer;
     private boolean wasMuted;
     private boolean wasPaused;
-    private zf0 webView;
+    private yf0 webView;
     private float x;
     private long rewindBackSeekPlayerPosition = -1;
     private float playSpeed = 1.0f;
@@ -97,11 +97,11 @@ public class VideoPlayerRewinder {
         if (this.webView != null) {
             return r0.getCurrentPosition();
         }
-        u71 u71Var = this.videoPlayer;
-        if (u71Var == null) {
+        t71 t71Var = this.videoPlayer;
+        if (t71Var == null) {
             return 0L;
         }
-        return u71Var.n();
+        return t71Var.n();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -109,23 +109,23 @@ public class VideoPlayerRewinder {
         if (this.webView != null) {
             return r0.getVideoDuration();
         }
-        u71 u71Var = this.videoPlayer;
-        if (u71Var == null) {
+        t71 t71Var = this.videoPlayer;
+        if (t71Var == null) {
             return 0L;
         }
-        return u71Var.p();
+        return t71Var.p();
     }
 
     private boolean isPlaying() {
-        zf0 zf0Var = this.webView;
-        if (zf0Var != null) {
-            return zf0Var.G;
+        yf0 yf0Var = this.webView;
+        if (yf0Var != null) {
+            return yf0Var.G;
         }
-        u71 u71Var = this.videoPlayer;
-        if (u71Var == null) {
+        t71 t71Var = this.videoPlayer;
+        if (t71Var == null) {
             return false;
         }
-        return u71Var.y();
+        return t71Var.y();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -146,57 +146,57 @@ public class VideoPlayerRewinder {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void seekTo(long j3, boolean z10) {
-        zf0 zf0Var = this.webView;
-        if (zf0Var != null) {
-            zf0Var.i(j3);
+        yf0 yf0Var = this.webView;
+        if (yf0Var != null) {
+            yf0Var.i(j3);
         } else {
-            u71 u71Var = this.videoPlayer;
-            if (u71Var != null) {
-                u71Var.L(j3, z10);
+            t71 t71Var = this.videoPlayer;
+            if (t71Var != null) {
+                t71Var.L(j3, z10);
             }
         }
         this.rewindBackSeekLastPlayerPosition = j3;
     }
 
     private void setMuted(boolean z10) {
-        u71 u71Var = this.videoPlayer;
-        if (u71Var != null) {
-            u71Var.O(z10);
+        t71 t71Var = this.videoPlayer;
+        if (t71Var != null) {
+            t71Var.O(z10);
         }
     }
 
     private void setPaused(boolean z10) {
-        zf0 zf0Var = this.webView;
-        if (zf0Var != null) {
+        yf0 yf0Var = this.webView;
+        if (yf0Var != null) {
             if (z10) {
-                zf0Var.f();
+                yf0Var.f();
                 return;
             } else {
-                zf0Var.g();
+                yf0Var.g();
                 return;
             }
         }
-        u71 u71Var = this.videoPlayer;
-        if (u71Var != null) {
+        t71 t71Var = this.videoPlayer;
+        if (t71Var != null) {
             if (z10) {
-                u71Var.B();
+                t71Var.B();
             } else {
-                u71Var.C();
+                t71Var.C();
             }
         }
     }
 
     private void setPlaybackSpeed(float f7) {
-        zf0 zf0Var = this.webView;
-        if (zf0Var != null) {
-            zf0Var.setPlaybackSpeed(f7);
+        yf0 yf0Var = this.webView;
+        if (yf0Var != null) {
+            yf0Var.setPlaybackSpeed(f7);
             return;
         }
-        u71 u71Var = this.videoPlayer;
-        if (u71Var == null) {
+        t71 t71Var = this.videoPlayer;
+        if (t71Var == null) {
             return;
         }
-        u71Var.Q(f7);
+        t71Var.Q(f7);
     }
 
     public void cancelRewind() {
@@ -204,16 +204,16 @@ public class VideoPlayerRewinder {
         if (this.rewinding) {
             this.rewinding = false;
             this.fastSeeking = false;
-            u71 u71Var = this.videoPlayer;
-            if (u71Var == null && this.webView == null) {
+            t71 t71Var = this.videoPlayer;
+            if (t71Var == null && this.webView == null) {
                 z10 = false;
             } else {
                 if (!this.rewindByBackSeek) {
                     seekTo(getCurrentPosition(), false);
-                } else if (u71Var == null || this.framesRewinder == null) {
+                } else if (t71Var == null || this.framesRewinder == null) {
                     seekTo(this.rewindBackSeekPlayerPosition, false);
                 } else {
-                    u71Var.M(this.rewindBackSeekPlayerPosition, false, new r(this, 1));
+                    t71Var.M(this.rewindBackSeekPlayerPosition, false, new r(this, 1));
                     z10 = true;
                     setPlaybackSpeed(this.playSpeed);
                 }
@@ -233,9 +233,9 @@ public class VideoPlayerRewinder {
                 this.updateRewindRunnable = null;
             }
             onRewindCanceled();
-            yo0 yo0Var = this.seekSpeedDrawable;
-            if (yo0Var != null) {
-                yo0Var.b(false);
+            xo0 xo0Var = this.seekSpeedDrawable;
+            if (xo0Var != null) {
+                xo0Var.b(false);
             }
         }
     }
@@ -259,14 +259,14 @@ public class VideoPlayerRewinder {
     public void setX(float f7) {
         this.value -= (this.x - f7) / AndroidUtilities.dp(40.0f);
         this.x = f7;
-        yo0 yo0Var = this.seekSpeedDrawable;
-        if (yo0Var != null) {
-            yo0Var.c(getRewindSpeed(), true);
+        xo0 xo0Var = this.seekSpeedDrawable;
+        if (xo0Var != null) {
+            xo0Var.c(getRewindSpeed(), true);
         }
         updateRewindSpeed();
     }
 
-    public void startRewind(zf0 zf0Var, boolean z10, float f7, float f10, yo0 yo0Var) {
+    public void startRewind(yf0 yf0Var, boolean z10, float f7, float f10, xo0 xo0Var) {
         cancelRewind();
         this.videoPlayer = null;
         this.webView = null;
@@ -277,24 +277,24 @@ public class VideoPlayerRewinder {
         this.rewindByBackSeek = z10;
         this.rewinding = true;
         this.rewindBackSeekPlayerPosition = -1L;
-        this.webView = zf0Var;
-        this.seekSpeedDrawable = yo0Var;
+        this.webView = yf0Var;
+        this.seekSpeedDrawable = xo0Var;
         this.playSpeed = f10;
         this.wasMuted = false;
-        this.wasPaused = (zf0Var == null || zf0Var.G) ? false : true;
+        this.wasPaused = (yf0Var == null || yf0Var.G) ? false : true;
         this.fastSeeking = false;
         this.rewindLastUpdatePlayerTime = 0L;
         this.x = f7;
         this.value = getValueBySpeed(z10 ? 2.0f : -2.0f);
         this.rewindBackSeekLastPlayerPosition = -100L;
-        if (yo0Var != null) {
-            yo0Var.c(getRewindSpeed(), false);
-            yo0Var.b(true);
+        if (xo0Var != null) {
+            xo0Var.c(getRewindSpeed(), false);
+            xo0Var.b(true);
         }
     }
 
     public void updateRewindSpeed() {
-        u71 u71Var;
+        t71 t71Var;
         File file;
         float rewindSpeed = getRewindSpeed();
         boolean z10 = true;
@@ -307,11 +307,11 @@ public class VideoPlayerRewinder {
                 }
                 setMuted(z10);
                 setPaused(false);
-                u71 u71Var2 = this.videoPlayer;
-                if (u71Var2 != null && this.framesRewinder != null) {
+                t71 t71Var2 = this.videoPlayer;
+                if (t71Var2 != null && this.framesRewinder != null) {
                     long j3 = this.rewindBackSeekPlayerPosition;
                     if (j3 >= 0) {
-                        u71Var2.M(j3, false, new r(this, 0));
+                        t71Var2.M(j3, false, new r(this, 0));
                     }
                 }
             }
@@ -329,36 +329,36 @@ public class VideoPlayerRewinder {
         setPaused(true);
         setPlaybackSpeed(this.playSpeed);
         VideoFramesRewinder videoFramesRewinder = this.framesRewinder;
-        if (videoFramesRewinder == null || videoFramesRewinder.isReady() || (u71Var = this.videoPlayer) == null) {
+        if (videoFramesRewinder == null || videoFramesRewinder.isReady() || (t71Var = this.videoPlayer) == null) {
             return;
         }
         VideoFramesRewinder videoFramesRewinder2 = this.framesRewinder;
-        ArrayList arrayList = u71Var.N;
+        ArrayList arrayList = t71Var.N;
         if (arrayList != null) {
             loop0: for (int size = arrayList.size() - 1; size >= 0; size--) {
-                ArrayList arrayList2 = ((q71) u71Var.N.get(size)).d;
+                ArrayList arrayList2 = ((p71) t71Var.N.get(size)).d;
                 int size2 = arrayList2.size();
                 int i10 = 0;
                 while (i10 < size2) {
                     Object obj = arrayList2.get(i10);
                     i10++;
-                    s71 s71Var = (s71) obj;
-                    if (!s71Var.b()) {
-                        s71Var.e(true);
+                    r71 r71Var = (r71) obj;
+                    if (!r71Var.b()) {
+                        r71Var.e(true);
                     }
-                    if (s71Var.b()) {
-                        file = new File(s71Var.d.getPath());
+                    if (r71Var.b()) {
+                        file = new File(r71Var.d.getPath());
                         break loop0;
                     }
                 }
             }
         }
-        Uri uri = u71Var.Q;
-        file = (uri == null || !"file".equalsIgnoreCase(uri.getScheme())) ? null : new File(u71Var.Q.getPath());
+        Uri uri = t71Var.Q;
+        file = (uri == null || !"file".equalsIgnoreCase(uri.getScheme())) ? null : new File(t71Var.Q.getPath());
         videoFramesRewinder2.setup(file);
     }
 
-    public void startRewind(u71 u71Var, boolean z10, float f7, float f10, yo0 yo0Var) {
+    public void startRewind(t71 t71Var, boolean z10, float f7, float f10, xo0 xo0Var) {
         cancelRewind();
         this.videoPlayer = null;
         this.webView = null;
@@ -369,19 +369,19 @@ public class VideoPlayerRewinder {
         this.rewindByBackSeek = z10;
         this.rewinding = true;
         this.rewindBackSeekPlayerPosition = -1L;
-        this.videoPlayer = u71Var;
-        this.seekSpeedDrawable = yo0Var;
+        this.videoPlayer = t71Var;
+        this.seekSpeedDrawable = xo0Var;
         this.playSpeed = f10;
-        this.wasMuted = u71Var != null && u71Var.x();
-        this.wasPaused = (u71Var == null || u71Var.y()) ? false : true;
+        this.wasMuted = t71Var != null && t71Var.x();
+        this.wasPaused = (t71Var == null || t71Var.y()) ? false : true;
         this.fastSeeking = false;
         this.rewindLastUpdatePlayerTime = 0L;
         this.x = f7;
         this.value = getValueBySpeed(z10 ? 2.0f : -2.0f);
         this.rewindBackSeekLastPlayerPosition = -100L;
-        if (yo0Var != null) {
-            yo0Var.c(getRewindSpeed(), false);
-            yo0Var.b(true);
+        if (xo0Var != null) {
+            xo0Var.c(getRewindSpeed(), false);
+            xo0Var.b(true);
         }
         updateRewindSpeed();
     }

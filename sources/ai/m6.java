@@ -11,9 +11,9 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.o20;
-import org.telegram.ui.Components.vw0;
+import org.telegram.ui.Components.uw0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class m6 {
     public final ImageReceiver a;
@@ -77,12 +77,12 @@ public final class m6 {
         int i10 = (int) (n6Var.J + 1.0f);
         Layout.Alignment alignment = Layout.Alignment.ALIGN_CENTER;
         TextPaint textPaint = this.d;
-        StaticLayout c10 = vw0.c(spannableStringBuilder, textPaint, i10, alignment, 0.0f, false, null, ConnectionsManager.DEFAULT_DATACENTER_ID, 1, true);
+        StaticLayout c10 = uw0.c(spannableStringBuilder, textPaint, i10, alignment, 0.0f, false, null, ConnectionsManager.DEFAULT_DATACENTER_ID, 1, true);
         this.c = c10;
         if (c10.getLineCount() > 1) {
             SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder("");
             n6.a(n6Var, spannableStringBuilder2, this.e.a.views, true);
-            this.c = vw0.c(spannableStringBuilder2, textPaint, (int) (n6Var.J + 1.0f), alignment, 0.0f, false, null, ConnectionsManager.DEFAULT_DATACENTER_ID, 2, true);
+            this.c = uw0.c(spannableStringBuilder2, textPaint, (int) (n6Var.J + 1.0f), alignment, 0.0f, false, null, ConnectionsManager.DEFAULT_DATACENTER_ID, 2, true);
         }
     }
 }

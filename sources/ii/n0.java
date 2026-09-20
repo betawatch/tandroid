@@ -12,17 +12,17 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.j6;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class n0 extends LinearLayout implements org.telegram.ui.ActionBar.z5 {
-    public final org.telegram.ui.ActionBar.e6 a;
+    public final org.telegram.ui.ActionBar.f6 a;
     public final ImageView b;
     public final TextView c;
     public final TextView d;
 
-    public n0(Context context, o0 o0Var, org.telegram.ui.ActionBar.e6 e6Var) {
+    public n0(Context context, o0 o0Var, org.telegram.ui.ActionBar.f6 f6Var) {
         super(context);
-        this.a = e6Var;
+        this.a = f6Var;
         setOrientation(0);
         ImageView imageView = new ImageView(context);
         this.b = imageView;
@@ -47,10 +47,10 @@ public final class n0 extends LinearLayout implements org.telegram.ui.ActionBar.
     @Override // org.telegram.ui.ActionBar.z5
     public final void e() {
         int i10 = j6.G6;
-        org.telegram.ui.ActionBar.e6 e6Var = this.a;
-        this.b.setColorFilter(new PorterDuffColorFilter(j6.v0(i10, e6Var), PorterDuff.Mode.SRC_IN));
-        this.c.setTextColor(j6.v0(i10, e6Var));
-        this.d.setTextColor(j6.l1(0.75f, j6.v0(i10, e6Var)));
+        org.telegram.ui.ActionBar.f6 f6Var = this.a;
+        this.b.setColorFilter(new PorterDuffColorFilter(j6.v0(i10, f6Var), PorterDuff.Mode.SRC_IN));
+        this.c.setTextColor(j6.v0(i10, f6Var));
+        this.d.setTextColor(j6.l1(0.75f, j6.v0(i10, f6Var)));
     }
 
     public /* bridge */ /* synthetic */ int[] getColorKeys() {

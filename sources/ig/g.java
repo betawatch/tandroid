@@ -22,14 +22,15 @@ import android.view.ViewConfiguration;
 import com.google.android.gms.internal.vision.e2;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.l0;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.ja1;
+import org.telegram.ui.la1;
 import org.telegram.ui.ol0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public abstract class g extends View implements i {
     public static final boolean A1;
@@ -92,7 +93,7 @@ public abstract class g extends View implements i {
     public final Rect V;
     public float V0;
     public final Path W;
-    public final e6 W0;
+    public final f6 W0;
     public int X0;
     public int Y0;
     public final Rect Z0;
@@ -156,7 +157,7 @@ public abstract class g extends View implements i {
 
     /* JADX WARN: Type inference failed for: r1v10, types: [ig.b] */
     /* JADX WARN: Type inference failed for: r1v9, types: [ig.b] */
-    public g(Context context, e6 e6Var) {
+    public g(Context context, f6 f6Var) {
         super(context);
         this.b = new ArrayList(10);
         this.c = new ArrayList(25);
@@ -269,7 +270,7 @@ public abstract class g extends View implements i {
         arrayList.add(rect);
         this.b1 = 0L;
         this.i1 = false;
-        this.W0 = e6Var;
+        this.W0 = f6Var;
         t();
         this.A0 = ViewConfiguration.get(context).getScaledTouchSlop();
     }
@@ -404,9 +405,9 @@ public abstract class g extends View implements i {
             e eVar = this.Q0;
             if (eVar != null) {
                 getSelectedDate();
-                ja1 ja1Var = (ja1) ((ol0) eVar).b;
-                ja1Var.f();
-                ja1Var.b.t0.d(false, false);
+                la1 la1Var = (la1) ((ol0) eVar).b;
+                la1Var.f();
+                la1Var.b.t0.d(false, false);
             }
             B();
             invalidate();
@@ -609,22 +610,22 @@ public abstract class g extends View implements i {
 
     public final void G() {
         int i10 = this.x0 ? j6.Zi : j6.Yi;
-        e6 e6Var = this.W0;
-        int v02 = j6.v0(i10, e6Var);
+        f6 f6Var = this.W0;
+        int v02 = j6.v0(i10, f6Var);
         this.N.setColor(v02);
-        this.O.setColor(j6.v0(this.x0 ? j6.Zi : j6.Yi, e6Var));
-        int v03 = j6.v0(j6.Yi, e6Var);
+        this.O.setColor(j6.v0(this.x0 ? j6.Zi : j6.Yi, f6Var));
+        int v03 = j6.v0(j6.Yi, f6Var);
         this.P.setColor(v03);
-        int v04 = j6.v0(j6.aj, e6Var);
+        int v04 = j6.v0(j6.aj, f6Var);
         Paint paint = this.L;
         paint.setColor(v04);
-        int v05 = j6.v0(j6.bj, e6Var);
+        int v05 = j6.v0(j6.bj, f6Var);
         Paint paint2 = this.M;
         paint2.setColor(v05);
-        this.Q.setColor(j6.v0(j6.dj, e6Var));
-        this.R.setColor(j6.v0(j6.cj, e6Var));
-        this.S.setColor(j6.v0(j6.d6, e6Var));
-        this.T.setColor(j6.v0(j6.ej, e6Var));
+        this.Q.setColor(j6.v0(j6.dj, f6Var));
+        this.R.setColor(j6.v0(j6.cj, f6Var));
+        this.S.setColor(j6.v0(j6.d6, f6Var));
+        this.T.setColor(j6.v0(j6.ej, f6Var));
         this.t0.b();
         this.n = paint.getAlpha();
         this.r = paint2.getAlpha();
@@ -954,9 +955,9 @@ public abstract class g extends View implements i {
                                 float f17 = p1;
                                 TextPaint textPaint = this.P;
                                 if (f15 < f17) {
-                                    textPaint.setAlpha((int) (i10 * org.telegram.messenger.q.y(f17, f15, f17, f7) * this.h * f10));
+                                    textPaint.setAlpha((int) (i10 * l0.x(f17, f15, f17, f7) * this.h * f10));
                                 } else if (f15 > f16) {
-                                    textPaint.setAlpha((int) (i10 * org.telegram.messenger.q.y(f15, f16, f12, f7) * this.h * f10));
+                                    textPaint.setAlpha((int) (i10 * l0.x(f15, f16, f12, f7) * this.h * f10));
                                 } else {
                                     textPaint.setAlpha((int) (i10 * this.h * f10));
                                 }

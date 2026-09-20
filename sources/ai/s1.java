@@ -31,11 +31,11 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Stories.recorder.FfmpegAudioWaveformLoader;
 import org.telegram.ui.cm;
 import org.telegram.ui.lm;
-import org.telegram.ui.oh;
-import org.telegram.ui.va0;
+import org.telegram.ui.ph;
+import org.telegram.ui.wa0;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class s1 implements Runnable {
     public final /* synthetic */ int a;
@@ -60,7 +60,7 @@ public final /* synthetic */ class s1 implements Runnable {
             case 1:
                 TLObject tLObject = (TLObject) this.c;
                 int i10 = this.b;
-                va0 va0Var = (va0) this.d;
+                wa0 wa0Var = (wa0) this.d;
                 if (tLObject instanceof TL_stories.TL_albums) {
                     ArrayList<TL_stories.TL_storyAlbum> arrayList = ((TL_stories.TL_albums) tLObject).albums;
                     int size = arrayList.size();
@@ -70,12 +70,12 @@ public final /* synthetic */ class s1 implements Runnable {
                         i11++;
                         TL_stories.TL_storyAlbum tL_storyAlbum2 = tL_storyAlbum;
                         if (tL_storyAlbum2.album_id == i10) {
-                            va0Var.accept(tL_storyAlbum2);
+                            wa0Var.accept(tL_storyAlbum2);
                             break;
                         }
                     }
                 }
-                va0Var.accept(null);
+                wa0Var.accept(null);
                 break;
             case 2:
                 ac acVar = (ac) this.c;
@@ -105,11 +105,11 @@ public final /* synthetic */ class s1 implements Runnable {
                     r6Var.c1 = true;
                 }
                 r6Var.b(lVar);
-                qg.r1 r1Var = r6Var.k1;
-                int i15 = r1Var.d + 1;
-                r1Var.a(i15);
-                AndroidUtilities.updateImageViewImageAnimated(r1Var.a[i15], i14);
-                r1Var.e = true;
+                qg.s1 s1Var = r6Var.k1;
+                int i15 = s1Var.d + 1;
+                s1Var.a(i15);
+                AndroidUtilities.updateImageViewImageAnimated(s1Var.a[i15], i14);
+                s1Var.e = true;
                 break;
             case 6:
                 AndroidUtilities.runOnUIThread(new n8(this.b, ((MessagesStorage) this.c).getUsers(new ArrayList<>((HashSet) this.d)), 5));
@@ -216,7 +216,7 @@ public final /* synthetic */ class s1 implements Runnable {
                 this.d.a(kVar.a, kVar.b, this.b);
                 break;
             case 17:
-                ((View) this.d).postOnAnimation(new n8((nh.a) this.c, this.b, 15));
+                ((View) this.d).postOnAnimation(new n8((nh.a) this.c, this.b, 13));
                 break;
             case 18:
                 ((CameraView) this.c).lambda$createCamera$13(this.b, (SurfaceTexture) this.d);
@@ -296,7 +296,7 @@ public final /* synthetic */ class s1 implements Runnable {
                     editTextBoldCursor.clearFocus();
                     editTextBoldCursor.requestFocus();
                 }
-                AndroidUtilities.runOnUIThread(new oh(0, editTextBoldCursor), 100L);
+                AndroidUtilities.runOnUIThread(new ph(0, editTextBoldCursor), 100L);
                 break;
             default:
                 cm cmVar = (cm) this.c;

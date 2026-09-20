@@ -3,13 +3,13 @@ package bi;
 import android.content.Context;
 import android.graphics.Canvas;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.av0;
-import org.telegram.ui.Components.cu0;
-import org.telegram.ui.Components.el0;
+import org.telegram.ui.Components.bu0;
+import org.telegram.ui.Components.dl0;
+import org.telegram.ui.Components.zu0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
-public final class j extends av0 {
+public final class j extends zu0 {
     public final /* synthetic */ u q3;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -18,17 +18,17 @@ public final class j extends av0 {
         this.q3 = uVar;
     }
 
-    @Override // org.telegram.ui.Components.av0
+    @Override // org.telegram.ui.Components.zu0
     public final boolean A1() {
         return this.q3.b;
     }
 
-    @Override // org.telegram.ui.Components.av0
+    @Override // org.telegram.ui.Components.zu0
     public final boolean B1() {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.av0, org.telegram.ui.Components.ia, org.telegram.ui.Components.wl0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.zu0, org.telegram.ui.Components.ha, org.telegram.ui.Components.vl0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
         int i10 = 0;
@@ -42,10 +42,10 @@ public final class j extends av0 {
         u uVar = this.q3;
         r rVar = uVar.J;
         if (uVar.b) {
-            cu0 cu0Var = uVar.r;
+            bu0 bu0Var = uVar.r;
             int i12 = 0;
-            for (int i13 = 0; i13 < cu0Var.getChildCount(); i13++) {
-                int bottom2 = cu0Var.getChildAt(i13).getBottom() - cu0Var.getPaddingTop();
+            for (int i13 = 0; i13 < bu0Var.getChildCount(); i13++) {
+                int bottom2 = bu0Var.getChildAt(i13).getBottom() - bu0Var.getPaddingTop();
                 if (bottom2 > i12) {
                     i12 = bottom2;
                 }
@@ -56,23 +56,23 @@ public final class j extends av0 {
         rVar.setTranslationY(f7);
     }
 
-    @Override // org.telegram.ui.Components.av0
+    @Override // org.telegram.ui.Components.zu0
     public final int getAnimateToColumnsCount() {
         return this.q3.e;
     }
 
-    @Override // org.telegram.ui.Components.av0
+    @Override // org.telegram.ui.Components.zu0
     public final float getChangeColumnsProgress() {
         return this.q3.c;
     }
 
-    @Override // org.telegram.ui.Components.av0
+    @Override // org.telegram.ui.Components.zu0
     public final int getColumnsCount() {
         return this.q3.d;
     }
 
-    @Override // org.telegram.ui.Components.av0
-    public final el0 getMovingAdapter() {
+    @Override // org.telegram.ui.Components.zu0
+    public final dl0 getMovingAdapter() {
         u uVar = this.q3;
         if (uVar.G.y != 0 || uVar.W.G.C1) {
             return null;
@@ -80,13 +80,13 @@ public final class j extends av0 {
         return uVar.v;
     }
 
-    @Override // org.telegram.ui.Components.av0
-    public final el0 getSupportingAdapter() {
+    @Override // org.telegram.ui.Components.zu0
+    public final dl0 getSupportingAdapter() {
         return this.q3.w;
     }
 
-    @Override // org.telegram.ui.Components.av0
-    public final cu0 getSupportingListView() {
+    @Override // org.telegram.ui.Components.zu0
+    public final bu0 getSupportingListView() {
         return this.q3.r;
     }
 }

@@ -31,17 +31,17 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.v01;
+import org.telegram.ui.Components.u01;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.Components.yc;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class a4 {
     public float A;
     public float B;
-    public v01 C;
+    public u01 C;
     public final RectF D;
     public final Path E;
     public final Paint F;
@@ -59,9 +59,9 @@ public final class a4 {
     public xh.d0 R;
     public final int a;
     public final View b;
-    public final org.telegram.ui.ActionBar.e6 c;
+    public final org.telegram.ui.ActionBar.f6 c;
     public final ImageReceiver d;
-    public final org.telegram.ui.Components.o5 e;
+    public final org.telegram.ui.Components.n5 e;
     public int g;
     public RadialGradient h;
     public final xh.m1 j;
@@ -70,9 +70,9 @@ public final class a4 {
     public TL_stars.starGiftAttributeModel m;
     public boolean p;
     public float q;
-    public v01 r;
+    public u01 r;
     public float s;
-    public v01 t;
+    public u01 t;
     public float u;
     public float v;
     public float x;
@@ -84,7 +84,7 @@ public final class a4 {
     public final Path o = new Path();
     public final ArrayList w = new ArrayList();
 
-    public a4(int i10, View view, org.telegram.ui.ActionBar.e6 e6Var) {
+    public a4(int i10, View view, org.telegram.ui.ActionBar.f6 f6Var) {
         xh.k0 k0Var = new xh.k0();
         this.y = k0Var;
         this.D = new RectF();
@@ -94,12 +94,12 @@ public final class a4 {
         this.Q = new le.e(0, new r5.d(this, 22), qr.h, 320L);
         this.a = i10;
         this.b = view;
-        this.c = e6Var;
+        this.c = f6Var;
         this.j = new xh.m1(view);
         this.H = new yc(view);
         this.I = new yc(view);
         this.d = new ImageReceiver(view);
-        this.e = new org.telegram.ui.Components.o5(AndroidUtilities.dp(28.0f), view);
+        this.e = new org.telegram.ui.Components.n5(AndroidUtilities.dp(28.0f), view);
         k0Var.r = view;
         k0Var.d.setParentView(view);
     }
@@ -138,11 +138,11 @@ public final class a4 {
         canvas.save();
         canvas.translate(f10, AndroidUtilities.dp(65.0f));
         TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop2 = this.k;
-        org.telegram.ui.Components.o5 o5Var = this.e;
+        org.telegram.ui.Components.n5 n5Var = this.e;
         if (stargiftattributebackdrop2 != null) {
-            o5Var.k(Integer.valueOf(stargiftattributebackdrop2.pattern_color | (-16777216)));
+            n5Var.k(Integer.valueOf(stargiftattributebackdrop2.pattern_color | (-16777216)));
         }
-        j0.a(canvas, 1, o5Var, rectF.width(), rectF.height(), 1.0f, 1.1f);
+        j0.a(canvas, 1, n5Var, rectF.width(), rectF.height(), 1.0f, 1.1f);
         canvas.restore();
         float dp = AndroidUtilities.dp(10.0f);
         float dp2 = AndroidUtilities.dp(110.0f);
@@ -157,13 +157,13 @@ public final class a4 {
         }
         int i10 = l1;
         this.r.p = eVar.e - AndroidUtilities.dp(12.0f);
-        v01 v01Var = this.r;
-        v01Var.c(f10 - (v01Var.c / 2.0f), this.q, 1.0f, -1, canvas);
+        u01 u01Var = this.r;
+        u01Var.c(f10 - (u01Var.c / 2.0f), this.q, 1.0f, -1, canvas);
         this.t.p = eVar.e - AndroidUtilities.dp(12.0f);
-        v01 v01Var2 = this.t;
+        u01 u01Var2 = this.t;
         Canvas canvas2 = canvas;
         int i11 = i10;
-        v01Var2.c(f10 - (v01Var2.c / 2.0f), this.s, 1.0f, i11, canvas2);
+        u01Var2.c(f10 - (u01Var2.c / 2.0f), this.s, 1.0f, i11, canvas2);
         if (this.z) {
             xh.k0 k0Var = this.y;
             int i12 = k0Var.t;
@@ -180,9 +180,9 @@ public final class a4 {
             while (i16 < size) {
                 int i17 = i16 + 1;
                 z3 z3Var = (z3) arrayList.get(i16);
-                v01 v01Var3 = z3Var.b;
+                u01 u01Var3 = z3Var.b;
                 float f12 = f10 - (dp4 / 2.0f);
-                v01Var3.c((f12 + this.u) - v01Var3.c, z3Var.a, 1.0f, i11, canvas2);
+                u01Var3.c((f12 + this.u) - u01Var3.c, z3Var.a, 1.0f, i11, canvas2);
                 canvas2 = canvas;
                 z3Var.c.c(f12 + this.u + AndroidUtilities.dp(9.0f), z3Var.a, 1.0f, -1, canvas2);
                 i11 = i11;
@@ -193,10 +193,10 @@ public final class a4 {
         if (!this.p) {
             float dp5 = f10 - ((this.C.c + AndroidUtilities.dp(30.0f)) / 2.0f);
             float f13 = this.A;
-            float b10 = org.telegram.messenger.q.b(this.C.c, AndroidUtilities.dp(30.0f), 2.0f, f10);
+            float a10 = org.telegram.messenger.l0.a(this.C.c, AndroidUtilities.dp(30.0f), 2.0f, f10);
             float f14 = this.A + this.B;
             RectF rectF2 = this.D;
-            rectF2.set(dp5, f13, b10, f14);
+            rectF2.set(dp5, f13, a10, f14);
             Path path2 = this.E;
             path2.rewind();
             float f15 = this.B / 2.0f;
@@ -204,8 +204,8 @@ public final class a4 {
             int l12 = org.telegram.ui.ActionBar.j6.l1(0.13f, -16777216);
             Paint paint2 = this.F;
             paint2.setColor(l12);
-            float a10 = this.H.a(0.075f);
-            canvas2.scale(a10, a10, rectF2.centerX(), rectF2.centerY());
+            float a11 = this.H.a(0.075f);
+            canvas2.scale(a11, a11, rectF2.centerX(), rectF2.centerY());
             canvas2.drawPath(path2, paint2);
             canvas2.restore();
             int dp6 = ((int) rectF.right) - AndroidUtilities.dp(46.67f);
@@ -280,7 +280,7 @@ public final class a4 {
                 } else if (this.J) {
                     org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
                     if (U != null) {
-                        org.telegram.messenger.q.q(R.string.UniqueGiftNotFoundBurned, xc.a0(U), R.raw.fire_on, 36);
+                        org.telegram.messenger.l0.o(R.string.UniqueGiftNotFoundBurned, xc.a0(U), R.raw.fire_on, 36);
                     }
                 } else {
                     y3 y3Var = new y3(this.b.getContext(), this.a, this.O.getDialogId(), this.c, null);
@@ -308,7 +308,7 @@ public final class a4 {
     public final void f(MessageObject messageObject, boolean z10) {
         TLRPC.TL_messageActionStarGiftUnique tL_messageActionStarGiftUnique;
         boolean z11;
-        org.telegram.ui.Components.o5 o5Var;
+        org.telegram.ui.Components.n5 n5Var;
         ImageReceiver imageReceiver;
         TLRPC.Message message;
         this.K = false;
@@ -321,11 +321,11 @@ public final class a4 {
                     tL_messageActionStarGiftUnique = null;
                 }
                 z11 = this.P;
-                o5Var = this.e;
+                n5Var = this.e;
                 imageReceiver = this.d;
                 if (z11 && tL_messageActionStarGiftUnique != null && this.N == null) {
                     imageReceiver.onAttachedToWindow();
-                    o5Var.a();
+                    n5Var.a();
                     this.y.d.onAttachedToWindow();
                 }
                 this.N = tL_messageActionStarGiftUnique;
@@ -334,17 +334,17 @@ public final class a4 {
                     return;
                 }
                 TL_stars.TL_starGiftUnique tL_starGiftUnique = (TL_stars.TL_starGiftUnique) tL_messageActionStarGiftUnique.gift;
-                this.k = (TL_stars.starGiftAttributeBackdrop) t5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeBackdrop.class);
-                this.l = (TL_stars.starGiftAttributePattern) t5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributePattern.class);
+                this.k = (TL_stars.starGiftAttributeBackdrop) u5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeBackdrop.class);
+                this.l = (TL_stars.starGiftAttributePattern) u5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributePattern.class);
                 TL_stars.starGiftAttributeModel stargiftattributemodel = this.m;
-                this.m = (TL_stars.starGiftAttributeModel) t5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeModel.class);
+                this.m = (TL_stars.starGiftAttributeModel) u5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeModel.class);
                 this.h = null;
                 this.f.setShader(null);
                 TL_stars.starGiftAttributePattern stargiftattributepattern = this.l;
                 if (stargiftattributepattern != null) {
-                    o5Var.i(stargiftattributepattern.document, z10);
+                    n5Var.i(stargiftattributepattern.document, z10);
                 } else {
-                    o5Var.g(null, z10);
+                    n5Var.g(null, z10);
                 }
                 TL_stars.starGiftAttributeModel stargiftattributemodel2 = this.m;
                 if (stargiftattributemodel2 != null && (stargiftattributemodel == null || stargiftattributemodel.document.id != stargiftattributemodel2.document.id)) {
@@ -357,7 +357,7 @@ public final class a4 {
                         imageReceiver.clearDecorators();
                         imageReceiver.setAutoRepeat(0);
                     }
-                    v7.Z0(imageReceiver, this.m.document, 110);
+                    w7.Z0(imageReceiver, this.m.document, 110);
                 }
                 boolean z12 = tL_starGiftUnique.burned;
                 this.J = z12;
@@ -401,11 +401,11 @@ public final class a4 {
         }
         tL_messageActionStarGiftUnique = null;
         z11 = this.P;
-        o5Var = this.e;
+        n5Var = this.e;
         imageReceiver = this.d;
         if (z11) {
             imageReceiver.onAttachedToWindow();
-            o5Var.a();
+            n5Var.a();
             this.y.d.onAttachedToWindow();
         }
         this.N = tL_messageActionStarGiftUnique;
@@ -431,24 +431,24 @@ public final class a4 {
         String shortName = DialogObject.getShortName(clientUserId);
         float dp2 = AndroidUtilities.dp(10.0f) + 0.0f + AndroidUtilities.dp(110.0f) + AndroidUtilities.dp(9.33f);
         if (this.p) {
-            this.r = new v01(tL_starGiftUnique.title, 14.0f, AndroidUtilities.bold());
+            this.r = new u01(tL_starGiftUnique.title, 14.0f, AndroidUtilities.bold());
         } else if (tL_messageActionStarGiftUnique.peer != null || UserObject.isService(messageObject.getDialogId())) {
-            this.r = new v01(LocaleController.getString(R.string.Gift2UniqueTitle2), 14.0f, AndroidUtilities.bold());
+            this.r = new u01(LocaleController.getString(R.string.Gift2UniqueTitle2), 14.0f, AndroidUtilities.bold());
         } else if (messageObject.getDialogId() != UserConfig.getInstance(i10).getClientUserId()) {
-            this.r = new v01(LocaleController.formatString(R.string.Gift2UniqueTitle, shortName), 14.0f, AndroidUtilities.bold());
+            this.r = new u01(LocaleController.formatString(R.string.Gift2UniqueTitle, shortName), 14.0f, AndroidUtilities.bold());
         } else if (tL_starGiftUnique.crafted) {
-            this.r = new v01(LocaleController.getString(R.string.Gift2ActionCraftedTitle), 14.0f, AndroidUtilities.bold());
+            this.r = new u01(LocaleController.getString(R.string.Gift2ActionCraftedTitle), 14.0f, AndroidUtilities.bold());
         } else if (tL_messageActionStarGiftUnique.resale_amount != null) {
-            this.r = new v01(LocaleController.getString(R.string.Gift2ActionPurchasedTitle), 14.0f, AndroidUtilities.bold());
+            this.r = new u01(LocaleController.getString(R.string.Gift2ActionPurchasedTitle), 14.0f, AndroidUtilities.bold());
         } else {
-            this.r = new v01(LocaleController.getString(R.string.Gift2ActionUpgradedTitle), 14.0f, AndroidUtilities.bold());
+            this.r = new u01(LocaleController.getString(R.string.Gift2ActionUpgradedTitle), 14.0f, AndroidUtilities.bold());
         }
         this.q = (this.r.j() / 2.0f) + dp2;
         float j3 = this.r.j() + dp2 + AndroidUtilities.dp(3.0f);
         if (this.p) {
             f7 = 10.0f;
             f10 = 3.0f;
-            this.t = new v01(LocaleController.formatPluralStringComma("Gift2CollectionNumber", tL_starGiftUnique.num), 12.0f, AndroidUtilities.bold());
+            this.t = new u01(LocaleController.formatPluralStringComma("Gift2CollectionNumber", tL_starGiftUnique.num), 12.0f, AndroidUtilities.bold());
             f11 = 2.0f;
         } else {
             f7 = 10.0f;
@@ -457,7 +457,7 @@ public final class a4 {
             sb2.append(tL_starGiftUnique.title);
             sb2.append(" #");
             f11 = 2.0f;
-            this.t = new v01(org.telegram.messenger.q.i(tL_starGiftUnique.num, ',', sb2), 12.0f, null);
+            this.t = new u01(hg.k0.j(tL_starGiftUnique.num, ',', sb2), 12.0f, null);
         }
         this.s = (this.t.j() / f11) + j3;
         float j10 = this.t.j() + j3 + AndroidUtilities.dp(this.p ? 14.0f : 11.0f);
@@ -502,12 +502,12 @@ public final class a4 {
                 z3 z3Var = new z3(j10, LocaleController.getString(R.string.Gift2AttributeModel), this.m.name);
                 arrayList.add(z3Var);
                 float f13 = f12 * 0.5f;
-                v01 v01Var = z3Var.b;
-                v01Var.p = f13;
-                this.u = Math.max(this.u, v01Var.c);
-                v01 v01Var2 = z3Var.c;
-                v01Var2.p = f13;
-                this.v = Math.max(this.v, v01Var2.c);
+                u01 u01Var = z3Var.b;
+                u01Var.p = f13;
+                this.u = Math.max(this.u, u01Var.c);
+                u01 u01Var2 = z3Var.c;
+                u01Var2.p = f13;
+                this.v = Math.max(this.v, u01Var2.c);
                 j10 += z3Var.a();
             }
             if (this.k != null) {
@@ -517,12 +517,12 @@ public final class a4 {
                 z3 z3Var2 = new z3(j10, LocaleController.getString(R.string.Gift2AttributeBackdrop), this.k.name);
                 arrayList.add(z3Var2);
                 float f14 = f12 * 0.5f;
-                v01 v01Var3 = z3Var2.b;
-                v01Var3.p = f14;
-                this.u = Math.max(this.u, v01Var3.c);
-                v01 v01Var4 = z3Var2.c;
-                v01Var4.p = f14;
-                this.v = Math.max(this.v, v01Var4.c);
+                u01 u01Var3 = z3Var2.b;
+                u01Var3.p = f14;
+                this.u = Math.max(this.u, u01Var3.c);
+                u01 u01Var4 = z3Var2.c;
+                u01Var4.p = f14;
+                this.v = Math.max(this.v, u01Var4.c);
                 j10 = z3Var2.a() + j10;
             }
             if (this.l != null) {
@@ -532,12 +532,12 @@ public final class a4 {
                 z3 z3Var3 = new z3(j10, LocaleController.getString(R.string.Gift2AttributeSymbol), this.l.name);
                 arrayList.add(z3Var3);
                 float f15 = f12 * 0.5f;
-                v01 v01Var5 = z3Var3.b;
-                v01Var5.p = f15;
-                this.u = Math.max(this.u, v01Var5.c);
-                v01 v01Var6 = z3Var3.c;
-                v01Var6.p = f15;
-                this.v = Math.max(this.v, v01Var6.c);
+                u01 u01Var5 = z3Var3.b;
+                u01Var5.p = f15;
+                this.u = Math.max(this.u, u01Var5.c);
+                u01 u01Var6 = z3Var3.c;
+                u01Var6.p = f15;
+                this.v = Math.max(this.v, u01Var6.c);
                 j10 += z3Var3.a();
             }
         }
@@ -546,7 +546,7 @@ public final class a4 {
             dp = AndroidUtilities.dp(f7);
         } else {
             this.A = dp4;
-            this.C = new v01(LocaleController.getString(R.string.Gift2UniqueView), 14.0f, AndroidUtilities.bold());
+            this.C = new u01(LocaleController.getString(R.string.Gift2UniqueView), 14.0f, AndroidUtilities.bold());
             float dp5 = AndroidUtilities.dp(30.0f);
             this.B = dp5;
             dp4 += dp5;
@@ -559,16 +559,16 @@ public final class a4 {
         Spanned spanned;
         float f7 = this.L;
         float dp = AndroidUtilities.dp(10.0f) + 0.0f + AndroidUtilities.dp(110.0f) + AndroidUtilities.dp(9.33f);
-        v01 v01Var = new v01(LocaleController.formatString(R.string.Gift2UniqueTitle, DialogObject.getShortName(j3)), 14.0f, AndroidUtilities.bold());
-        this.r = v01Var;
-        this.q = (v01Var.j() / 2.0f) + dp;
+        u01 u01Var = new u01(LocaleController.formatString(R.string.Gift2UniqueTitle, DialogObject.getShortName(j3)), 14.0f, AndroidUtilities.bold());
+        this.r = u01Var;
+        this.q = (u01Var.j() / 2.0f) + dp;
         float j10 = this.r.j() + dp + AndroidUtilities.dp(3.0f);
         StringBuilder sb2 = new StringBuilder();
         sb2.append(tL_starGiftUnique.title);
         sb2.append(" #");
-        v01 v01Var2 = new v01(org.telegram.messenger.q.i(tL_starGiftUnique.num, ',', sb2), 12.0f, null);
-        this.t = v01Var2;
-        this.s = (v01Var2.j() / 2.0f) + j10;
+        u01 u01Var2 = new u01(hg.k0.j(tL_starGiftUnique.num, ',', sb2), 12.0f, null);
+        this.t = u01Var2;
+        this.s = (u01Var2.j() / 2.0f) + j10;
         float j11 = this.t.j() + j10 + AndroidUtilities.dp(11.0f);
         this.w.clear();
         this.u = 0.0f;
@@ -603,7 +603,7 @@ public final class a4 {
         this.x = dp2;
         float dp3 = dp2 + k0Var.u + AndroidUtilities.dp(3.0f) + AndroidUtilities.dp(11.66f);
         this.A = dp3;
-        this.C = new v01(str, 14.0f, AndroidUtilities.bold());
+        this.C = new u01(str, 14.0f, AndroidUtilities.bold());
         float dp4 = AndroidUtilities.dp(30.0f);
         this.B = dp4;
         this.M = (int) (dp3 + dp4 + AndroidUtilities.dp(11.0f));

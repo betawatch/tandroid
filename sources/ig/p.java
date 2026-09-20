@@ -8,17 +8,17 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import java.util.ArrayList;
 import org.telegram.messenger.SegmentTree;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ja1;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.la1;
 import org.telegram.ui.ol0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class p extends g {
     public long[] D1;
 
-    public p(Context context, e6 e6Var) {
-        super(context, e6Var);
+    public p(Context context, f6 f6Var) {
+        super(context, f6Var);
         this.w0 = true;
         this.x0 = true;
     }
@@ -59,9 +59,9 @@ public final class p extends g {
             e eVar = this.Q0;
             if (eVar != null) {
                 getSelectedDate();
-                ja1 ja1Var = (ja1) ((ol0) eVar).b;
-                ja1Var.f();
-                ja1Var.b.t0.d(false, false);
+                la1 la1Var = (la1) ((ol0) eVar).b;
+                la1Var.f();
+                la1Var.b.t0.d(false, false);
             }
             invalidate();
             B();

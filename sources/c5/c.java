@@ -44,7 +44,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import org.telegram.messenger.BillingController;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public class c extends b {
     public final Long A;
@@ -196,7 +196,7 @@ public class c extends b {
         try {
             int i11 = e0.a;
             try {
-                this.h.a0(e0.b(i10, 2, hVar, null, m3.b), this.l, j3, z10);
+                this.h.e0(e0.b(i10, 2, hVar, null, m3.b), this.l, j3, z10);
             } catch (Throwable th2) {
                 com.google.android.gms.internal.play_billing.u.i("BillingClient", "Unable to log.", th2);
             }
@@ -209,7 +209,7 @@ public class c extends b {
         try {
             int i11 = e0.a;
             try {
-                this.h.a0(e0.b(i10, 2, hVar, str, m3.b), this.l, j3, z10);
+                this.h.e0(e0.b(i10, 2, hVar, str, m3.b), this.l, j3, z10);
             } catch (Throwable th2) {
                 com.google.android.gms.internal.play_billing.u.i("BillingClient", "Unable to log.", th2);
             }
@@ -863,13 +863,13 @@ public class c extends b {
     }
 
     @Override // c5.b
-    public void c(a4.m mVar, org.telegram.messenger.d0 d0Var) {
-        if (f(new u(this, d0Var, mVar, 1), 30000L, new i9.s(5, this, d0Var), r(), e()) == null) {
+    public void c(a4.m mVar, org.telegram.messenger.c0 c0Var) {
+        if (f(new u(this, c0Var, mVar, 1), 30000L, new i9.s(5, this, c0Var), r(), e()) == null) {
             h u10 = u();
             y(25, 7, u10);
             com.google.android.gms.internal.play_billing.p pVar = com.google.android.gms.internal.play_billing.r.b;
             com.google.android.gms.internal.play_billing.v vVar = com.google.android.gms.internal.play_billing.v.e;
-            d0Var.a(u10, new s(vVar, vVar));
+            c0Var.a(u10, new s(vVar, vVar));
         }
     }
 
@@ -905,7 +905,7 @@ public class c extends b {
                 o3Var.c();
                 p3.p((p3) o3Var.b, i10);
                 bVar.b = (p3) o3Var.a();
-                bVar.X(g3Var);
+                bVar.a0(g3Var);
             } catch (Throwable th2) {
                 com.google.android.gms.internal.play_billing.u.i("BillingLogger", "Unable to log.", th2);
             }
@@ -926,7 +926,7 @@ public class c extends b {
                 p3 p3Var = (p3) o3Var.a();
                 bVar.b = p3Var;
                 try {
-                    bVar.f0(i3Var, p3Var);
+                    bVar.j0(i3Var, p3Var);
                 } catch (Throwable th2) {
                     com.google.android.gms.internal.play_billing.u.i("BillingLogger", "Unable to log.", th2);
                 }
@@ -1185,7 +1185,7 @@ public class c extends b {
     public final n4.y x(h hVar, int i10, String str, Exception exc) {
         A(i10, 9, hVar, e0.a(exc));
         com.google.android.gms.internal.play_billing.u.i("BillingClient", str, exc);
-        return new n4.y(hVar, null, false, 7);
+        return new n4.y(hVar, null, false);
     }
 
     public final void y(int i10, int i11, h hVar) {
@@ -1201,7 +1201,7 @@ public class c extends b {
         try {
             int i11 = e0.a;
             try {
-                this.h.Y(e0.b(i10, 2, hVar, null, m3.b), this.l, j3);
+                this.h.b0(e0.b(i10, 2, hVar, null, m3.b), this.l, j3);
             } catch (Throwable th2) {
                 com.google.android.gms.internal.play_billing.u.i("BillingClient", "Unable to log.", th2);
             }

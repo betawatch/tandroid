@@ -7,13 +7,13 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.Components.lj0;
-import org.telegram.ui.Components.vu0;
+import org.telegram.ui.Components.kj0;
+import org.telegram.ui.Components.uu0;
 import org.telegram.ui.Components.wm;
 import org.telegram.ui.lx;
 import org.telegram.ui.uy;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class k3 implements Utilities.Callback4 {
     public final /* synthetic */ int a;
@@ -53,9 +53,9 @@ public final /* synthetic */ class k3 implements Utilities.Callback4 {
                         e6Var.a = false;
                         icVar.setOnReadyListener(new o3(0, currentTimeMillis, runnable));
                         ((ac) f6Var.Q1).g(false);
-                        lj0 lj0Var = f6Var.z0;
-                        if (lj0Var != null) {
-                            lj0Var.setAnimation(f6Var.x1.u);
+                        kj0 kj0Var = f6Var.z0;
+                        if (kj0Var != null) {
+                            kj0Var.setAnimation(f6Var.x1.u);
                         }
                         if (f6Var.R2 > 0 && l4.longValue() > f6Var.R2 - 1400) {
                             l4 = 0L;
@@ -125,22 +125,22 @@ public final /* synthetic */ class k3 implements Utilities.Callback4 {
                 }
                 break;
             default:
-                vu0 vu0Var = (vu0) this.b;
+                uu0 uu0Var = (uu0) this.b;
                 wm wmVar = (wm) this.c;
                 ArrayList arrayList2 = (ArrayList) obj;
-                int i11 = vu0Var.d;
+                int i11 = uu0Var.d;
                 MessagesController.getInstance(i11).putUsers((ArrayList) obj2, true);
                 MessagesController.getInstance(i11).putChats((ArrayList) obj3, true);
-                org.telegram.ui.Components.q5.h(i11).d((ArrayList) obj4);
+                org.telegram.ui.Components.p5.h(i11).d((ArrayList) obj4);
                 for (int i12 = 0; i12 < arrayList2.size(); i12++) {
                     MessageObject messageObject = (MessageObject) arrayList2.get(i12);
                     if (messageObject.hasValidGroupId() && messageObject.messageOwner.reactions != null) {
                         messageObject.isPrimaryGroupMessage = true;
                     }
-                    messageObject.setQuery(vu0Var.w);
-                    vu0Var.n.add(messageObject);
+                    messageObject.setQuery(uu0Var.w);
+                    uu0Var.n.add(messageObject);
                 }
-                vu0Var.G(true);
+                uu0Var.G(true);
                 AndroidUtilities.runOnUIThread(wmVar, 540L);
                 break;
         }

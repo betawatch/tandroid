@@ -14,7 +14,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class t2 extends View {
     public StaticLayout a;
@@ -39,7 +39,7 @@ public final class t2 extends View {
         this.f = textPaint;
         this.h = 4;
         this.n = false;
-        this.s = new i2.g0(this, 25);
+        this.s = new i2.g0(this, 26);
         textPaint.setTextSize(AndroidUtilities.dp(15.0f));
         textPaint.setColor(-1);
         paint.setColor(i0.a.k(-1, TLRPC.LAYER));

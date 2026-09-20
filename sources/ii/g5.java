@@ -10,25 +10,25 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Cells.ba;
-import org.telegram.ui.Cells.p9;
+import org.telegram.ui.Cells.ca;
 import org.telegram.ui.Cells.q9;
+import org.telegram.ui.Cells.r9;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
-public final class g5 extends a0 implements org.telegram.ui.ActionBar.z5, p9 {
-    public final org.telegram.ui.ActionBar.e6 n;
+public final class g5 extends a0 implements org.telegram.ui.ActionBar.z5, q9 {
+    public final org.telegram.ui.ActionBar.f6 n;
     public final i1 r;
     public e5 s;
     public final ArrayList v;
     public boolean w;
 
-    public g5(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
+    public g5(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
         super(context);
         this.v = new ArrayList();
-        this.n = e6Var;
+        this.n = f6Var;
         g(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(1.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(8.0f));
-        i1 i1Var = new i1(context, e6Var);
+        i1 i1Var = new i1(context, f6Var);
         this.r = i1Var;
         i1Var.setPadding(AndroidUtilities.dp(2.0f), AndroidUtilities.dp(1.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(1.0f));
         i1Var.setAllowNewlines(false);
@@ -48,15 +48,15 @@ public final class g5 extends a0 implements org.telegram.ui.ActionBar.z5, p9 {
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         e5 e5Var = this.s;
-        q9 textSelectionHelper = e5Var != null ? ((b3) e5Var).a.getTextSelectionHelper() : null;
+        r9 textSelectionHelper = e5Var != null ? ((b3) e5Var).a.getTextSelectionHelper() : null;
         if (textSelectionHelper != null) {
             ArrayList arrayList = this.v;
             arrayList.clear();
             fillTextLayoutBlocks(arrayList);
             for (int i10 = 0; i10 < arrayList.size(); i10++) {
-                ba baVar = (ba) arrayList.get(i10);
+                ca caVar = (ca) arrayList.get(i10);
                 canvas.save();
-                canvas.translate(baVar.getX(), baVar.getY());
+                canvas.translate(caVar.getX(), caVar.getY());
                 textSelectionHelper.a0(canvas, this, i10);
                 canvas.restore();
             }
@@ -69,12 +69,12 @@ public final class g5 extends a0 implements org.telegram.ui.ActionBar.z5, p9 {
         i1 i1Var = this.r;
         i1Var.t();
         int i10 = j6.Oh;
-        org.telegram.ui.ActionBar.e6 e6Var = this.n;
-        i1Var.setTextColor(j6.v0(i10, e6Var));
-        i1Var.setHintTextColor(j6.l1(0.5f, j6.v0(i10, e6Var)));
+        org.telegram.ui.ActionBar.f6 f6Var = this.n;
+        i1Var.setTextColor(j6.v0(i10, f6Var));
+        i1Var.setHintTextColor(j6.l1(0.5f, j6.v0(i10, f6Var)));
     }
 
-    @Override // org.telegram.ui.Cells.p9
+    @Override // org.telegram.ui.Cells.q9
     public final void fillTextLayoutBlocks(ArrayList arrayList) {
         i1 i1Var = this.r;
         Layout layout = i1Var.getLayout();

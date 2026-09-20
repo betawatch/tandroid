@@ -5,7 +5,7 @@ import android.view.View;
 import android.view.accessibility.AccessibilityEvent;
 import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class e1 extends r0.b {
     public final RecyclerView d;
@@ -45,15 +45,15 @@ public final class e1 extends r0.b {
     }
 
     @Override // r0.b
-    public final void c(View view, s0.c cVar) {
-        this.a.onInitializeAccessibilityNodeInfo(view, cVar.a);
+    public final void c(View view, s0.d dVar) {
+        this.a.onInitializeAccessibilityNodeInfo(view, dVar.a);
         RecyclerView recyclerView = this.d;
         if (recyclerView.a0() || recyclerView.getLayoutManager() == null) {
             return;
         }
         o0 layoutManager = recyclerView.getLayoutManager();
         RecyclerView recyclerView2 = layoutManager.b;
-        layoutManager.S(recyclerView2.b, recyclerView2.t0, cVar);
+        layoutManager.S(recyclerView2.b, recyclerView2.t0, dVar);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:15:0x0083 A[ADDED_TO_REGION] */

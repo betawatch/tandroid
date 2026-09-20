@@ -27,8 +27,7 @@ import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 import k1.m;
 import k1.n;
 import rd.p;
-import v7.t7;
-import yf.q;
+import v7.u7;
 import za.k0;
 import za.m0;
 import za.n0;
@@ -37,7 +36,7 @@ import za.y;
 import zd.c0;
 import zd.e0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class i extends kd.j implements p {
     public final /* synthetic */ int a;
@@ -142,7 +141,7 @@ public final class i extends kd.j implements p {
                 jd.a aVar2 = jd.a.a;
                 int i11 = this.b;
                 if (i11 == 0) {
-                    t7.b(obj);
+                    u7.b(obj);
                     l lVar2 = (l) obj4;
                     ce.b data = lVar2.a.getData();
                     this.c = lVar2;
@@ -157,7 +156,7 @@ public final class i extends kd.j implements p {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
                     lVar = (l) this.c;
-                    t7.b(obj);
+                    u7.b(obj);
                     b10 = obj;
                 }
                 Map unmodifiableMap = DesugarCollections.unmodifiableMap(((n1.b) b10).a);
@@ -168,7 +167,7 @@ public final class i extends kd.j implements p {
                 jd.a aVar3 = jd.a.a;
                 int i12 = this.b;
                 if (i12 == 0) {
-                    t7.b(obj);
+                    u7.b(obj);
                     k1.t tVar = (k1.t) this.c;
                     this.b = 1;
                     if (w7.i.a((List) obj4, tVar, this) == aVar3) {
@@ -178,7 +177,7 @@ public final class i extends kd.j implements p {
                     if (i12 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    t7.b(obj);
+                    u7.b(obj);
                 }
                 return iVar2;
             case 2:
@@ -187,7 +186,7 @@ public final class i extends kd.j implements p {
                 jd.a aVar4 = jd.a.a;
                 int i13 = this.b;
                 if (i13 == 0) {
-                    t7.b(obj);
+                    u7.b(obj);
                     if (atomicInteger2.get() <= 0) {
                         throw new IllegalStateException("Check failed.");
                     }
@@ -212,7 +211,7 @@ public final class i extends kd.j implements p {
                     if (i13 != 2) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    t7.b(obj);
+                    u7.b(obj);
                     obj2 = null;
                     aVar = aVar4;
                     atomicInteger = atomicInteger2;
@@ -321,7 +320,7 @@ public final class i extends kd.j implements p {
                                             if (th3 == null) {
                                                 th3 = new be.i(str);
                                             }
-                                            l4.resumeWith(t7.a(th3));
+                                            l4.resumeWith(u7.a(th3));
                                         }
                                         obj3 = l4.r();
                                         jd.a aVar6 = jd.a.a;
@@ -367,7 +366,7 @@ public final class i extends kd.j implements p {
                     throw th2;
                 }
                 mVar = (m) this.c;
-                t7.b(obj);
+                u7.b(obj);
                 obj2 = null;
                 aVar = aVar4;
                 atomicInteger = atomicInteger2;
@@ -382,10 +381,10 @@ public final class i extends kd.j implements p {
                     if (i17 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    t7.b(obj);
+                    u7.b(obj);
                     return obj;
                 }
-                t7.b(obj);
+                u7.b(obj);
                 p pVar = (p) this.c;
                 this.b = 1;
                 Object invoke = pVar.invoke(obj4, this);
@@ -396,7 +395,7 @@ public final class i extends kd.j implements p {
                 jd.a aVar8 = jd.a.a;
                 int i18 = this.b;
                 if (i18 == 0) {
-                    t7.b(obj);
+                    u7.b(obj);
                     ab.c cVar2 = ab.c.a;
                     this.b = 1;
                     b11 = cVar2.b(this);
@@ -406,7 +405,7 @@ public final class i extends kd.j implements p {
                         if (i18 != 2) {
                             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                         }
-                        t7.b(obj);
+                        u7.b(obj);
                         Boolean h = hVar6.a.h();
                         if (h != null) {
                             booleanValue = h.booleanValue();
@@ -442,12 +441,12 @@ public final class i extends kd.j implements p {
                             fVar.N(1);
                         }
                         k9.h hVar9 = lVar3.a;
-                        q qVar = new q(11);
+                        x2.h hVar10 = new x2.h(17);
                         hVar9.a();
-                        hVar9.j.add(qVar);
+                        hVar9.j.add(hVar10);
                         return iVar2;
                     }
-                    t7.b(obj);
+                    u7.b(obj);
                     b11 = obj;
                 }
                 Collection values = ((Map) b11).values();
@@ -469,10 +468,10 @@ public final class i extends kd.j implements p {
                     if (i19 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    t7.b(obj);
+                    u7.b(obj);
                     return iVar2;
                 }
-                t7.b(obj);
+                u7.b(obj);
                 za.u uVar = y.e;
                 Context context = ((y) this.c).a;
                 uVar.getClass();
@@ -486,7 +485,7 @@ public final class i extends kd.j implements p {
                 jd.a aVar10 = jd.a.a;
                 int i20 = this.b;
                 if (i20 == 0) {
-                    t7.b(obj);
+                    u7.b(obj);
                     ab.c cVar3 = ab.c.a;
                     this.b = 1;
                     b12 = cVar3.b(this);
@@ -497,7 +496,7 @@ public final class i extends kd.j implements p {
                     if (i20 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    t7.b(obj);
+                    u7.b(obj);
                     b12 = obj;
                 }
                 Map map = (Map) b12;

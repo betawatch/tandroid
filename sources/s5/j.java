@@ -7,7 +7,7 @@ import hg.k0;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class j extends SQLiteOpenHelper {
     public static final String c = "INSERT INTO global_log_event_state VALUES (" + System.currentTimeMillis() + ")";
@@ -25,10 +25,10 @@ public final class j extends SQLiteOpenHelper {
     public static void a(SQLiteDatabase sQLiteDatabase, int i10, int i11) {
         List list = e;
         if (i11 > list.size()) {
-            StringBuilder k10 = k0.k("Migration from ", i10, " to ", i11, " was requested, but cannot be performed. Only ");
-            k10.append(list.size());
-            k10.append(" migrations are provided");
-            throw new IllegalArgumentException(k10.toString());
+            StringBuilder l4 = k0.l("Migration from ", i10, " to ", i11, " was requested, but cannot be performed. Only ");
+            l4.append(list.size());
+            l4.append(" migrations are provided");
+            throw new IllegalArgumentException(l4.toString());
         }
         while (i10 < i11) {
             switch (((i) list.get(i10)).a) {

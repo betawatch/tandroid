@@ -13,26 +13,26 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.rk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.Components.ah;
-import org.telegram.ui.Components.ij0;
-import org.telegram.ui.Components.lj0;
+import org.telegram.ui.Components.hj0;
+import org.telegram.ui.Components.kj0;
 import org.telegram.ui.Components.qr;
 import org.telegram.ui.Components.ug;
 import org.telegram.ui.Components.yg;
-import org.telegram.ui.bc1;
+import org.telegram.ui.dc1;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class b4 extends FrameLayout {
     public final ImageView E;
     public final y1 F;
-    public final bc1 G;
+    public final dc1 G;
     public final FrameLayout H;
-    public final lj0 I;
+    public final kj0 I;
     public final LinearLayout J;
     public int K;
     public final LinearLayout L;
@@ -49,7 +49,7 @@ public final class b4 extends FrameLayout {
     public boolean W;
     public final m a;
     public int a0;
-    public final org.telegram.ui.ActionBar.e6 b;
+    public final org.telegram.ui.ActionBar.f6 b;
     public int b0;
     public final View c;
     public boolean c0;
@@ -75,19 +75,19 @@ public final class b4 extends FrameLayout {
         this.a0 = -1;
         this.b0 = 0;
         this.a = mVar;
-        org.telegram.ui.ActionBar.e6 e6Var = mVar.a.a;
-        this.b = e6Var;
+        org.telegram.ui.ActionBar.f6 f6Var = mVar.a.a;
+        this.b = f6Var;
         setClipChildren(false);
         setClipToPadding(false);
         View view = new View(context);
         this.c = view;
         GradientDrawable.Orientation orientation = GradientDrawable.Orientation.TOP_BOTTOM;
         int i10 = j6.d6;
-        view.setBackground(new GradientDrawable(orientation, new int[]{j6.v0(i10, e6Var), j6.l1(0.0f, j6.v0(i10, e6Var))}));
+        view.setBackground(new GradientDrawable(orientation, new int[]{j6.v0(i10, f6Var), j6.l1(0.0f, j6.v0(i10, f6Var))}));
         addView(view, w7.y5.e(-1, 68, 55));
         View view2 = new View(context);
         this.d = view2;
-        view2.setBackground(new GradientDrawable(orientation, new int[]{j6.l1(0.0f, j6.v0(i10, e6Var)), j6.v0(i10, e6Var)}));
+        view2.setBackground(new GradientDrawable(orientation, new int[]{j6.l1(0.0f, j6.v0(i10, f6Var)), j6.v0(i10, f6Var)}));
         addView(view2, w7.y5.e(-1, 68, 87));
         FrameLayout frameLayout = new FrameLayout(context);
         this.e = frameLayout;
@@ -100,30 +100,30 @@ public final class b4 extends FrameLayout {
         ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
         imageView.setScaleType(scaleType);
         int i11 = j6.Yk;
-        int v02 = j6.v0(i11, e6Var);
-        int v03 = j6.v0(i11, e6Var);
+        int v02 = j6.v0(i11, f6Var);
+        int v03 = j6.v0(i11, f6Var);
         int i12 = j6.i6;
-        imageView.setBackground(new c2(j6.Z(v02, j6.v(v03, j6.v0(i12, e6Var)), AndroidUtilities.dp(22.0f), AndroidUtilities.dp(22.0f))));
+        imageView.setBackground(new c2(j6.Z(v02, j6.v(v03, j6.v0(i12, f6Var)), AndroidUtilities.dp(22.0f), AndroidUtilities.dp(22.0f))));
         int i13 = j6.G6;
-        int v04 = j6.v0(i13, e6Var);
+        int v04 = j6.v0(i13, f6Var);
         PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
         imageView.setColorFilter(new PorterDuffColorFilter(v04, mode));
-        w7.a6.a(imageView);
+        w7.b6.a(imageView);
         imageView.setContentDescription(LocaleController.getString(R.string.AccDescrGoBack));
         imageView.setOnClickListener(new ai.e2(mVar, 4));
         frameLayout.addView(imageView, w7.y5.d(44, 44.0f, 51, 8.0f, 8.0f, 8.0f, 8.0f));
         LinearLayout linearLayout = new LinearLayout(context);
         this.h = linearLayout;
         linearLayout.setOrientation(0);
-        linearLayout.setBackground(new c2(j6.b0(AndroidUtilities.dp(22.0f), j6.v0(i11, e6Var))));
+        linearLayout.setBackground(new c2(j6.b0(AndroidUtilities.dp(22.0f), j6.v0(i11, f6Var))));
         frameLayout.addView(linearLayout, w7.y5.d(82, 44.0f, 53, 8.0f, 8.0f, 8.0f, 8.0f));
         ImageView imageView2 = new ImageView(context);
         this.n = imageView2;
         imageView2.setImageResource(R.drawable.iv_undo);
         imageView2.setScaleType(scaleType);
-        imageView2.setBackground(j6.f0(j6.v0(i12, e6Var), 1, -1));
-        imageView2.setColorFilter(new PorterDuffColorFilter(j6.v0(i13, e6Var), mode));
-        w7.a6.a(imageView2);
+        imageView2.setBackground(j6.f0(j6.v0(i12, f6Var), 1, -1));
+        imageView2.setColorFilter(new PorterDuffColorFilter(j6.v0(i13, f6Var), mode));
+        w7.b6.a(imageView2);
         imageView2.setContentDescription("Undo");
         final int i14 = 7;
         imageView2.setOnClickListener(new View.OnClickListener() { // from class: ii.x3
@@ -200,9 +200,9 @@ public final class b4 extends FrameLayout {
         this.r = imageView3;
         imageView3.setImageResource(R.drawable.iv_redo);
         imageView3.setScaleType(scaleType);
-        imageView3.setBackground(j6.f0(j6.v0(i12, e6Var), 1, -1));
-        imageView3.setColorFilter(new PorterDuffColorFilter(j6.v0(i13, e6Var), mode));
-        w7.a6.a(imageView3);
+        imageView3.setBackground(j6.f0(j6.v0(i12, f6Var), 1, -1));
+        imageView3.setColorFilter(new PorterDuffColorFilter(j6.v0(i13, f6Var), mode));
+        w7.b6.a(imageView3);
         imageView3.setContentDescription("Redo");
         final int i15 = 8;
         imageView3.setOnClickListener(new View.OnClickListener() { // from class: ii.x3
@@ -294,10 +294,10 @@ public final class b4 extends FrameLayout {
         ImageView imageView4 = new ImageView(context);
         imageView4.setImageDrawable(new org.telegram.ui.Components.i0(context));
         imageView4.setScaleType(scaleType);
-        imageView4.setColorFilter(new PorterDuffColorFilter(j6.v0(i13, e6Var), mode));
-        imageView4.setBackground(new c2(j6.Z(j6.v0(i11, e6Var), j6.v(j6.v0(i11, e6Var), j6.v0(i12, e6Var)), AndroidUtilities.dp(22.0f), AndroidUtilities.dp(22.0f))));
+        imageView4.setColorFilter(new PorterDuffColorFilter(j6.v0(i13, f6Var), mode));
+        imageView4.setBackground(new c2(j6.Z(j6.v0(i11, f6Var), j6.v(j6.v0(i11, f6Var), j6.v0(i12, f6Var)), AndroidUtilities.dp(22.0f), AndroidUtilities.dp(22.0f))));
         linearLayout2.addView(imageView4, w7.y5.p(44, 44, 0.0f, 19, 0, 0, 8, 0));
-        w7.a6.a(imageView4);
+        w7.b6.a(imageView4);
         imageView4.setContentDescription("AI");
         final int i16 = 9;
         imageView4.setOnClickListener(new View.OnClickListener() { // from class: ii.x3
@@ -373,7 +373,7 @@ public final class b4 extends FrameLayout {
         frameLayout4.setClipToPadding(false);
         frameLayout4.setClipChildren(false);
         FrameLayout frameLayout5 = new FrameLayout(context);
-        frameLayout5.setBackground(new c2(j6.b0(AndroidUtilities.dp(22.0f), j6.v0(i10, e6Var))));
+        frameLayout5.setBackground(new c2(j6.b0(AndroidUtilities.dp(22.0f), j6.v0(i10, f6Var))));
         frameLayout4.addView(frameLayout5, w7.y5.e(-2, 44, 81));
         w1 w1Var = new w1(context, 1);
         w1Var.setClipToOutline(true);
@@ -387,11 +387,11 @@ public final class b4 extends FrameLayout {
         ah ahVar = new ah(context, 24);
         this.x = ahVar;
         ahVar.setPadding(AndroidUtilities.dp(7.0f), AndroidUtilities.dp(7.0f), AndroidUtilities.dp(7.0f), AndroidUtilities.dp(7.0f));
-        ahVar.setColorFilter(new PorterDuffColorFilter(j6.v0(i13, e6Var), mode));
-        ahVar.setBackground(j6.Z(j6.v0(i10, e6Var), j6.v0(i12, e6Var), AndroidUtilities.dp(20.0f), AndroidUtilities.dp(20.0f)));
+        ahVar.setColorFilter(new PorterDuffColorFilter(j6.v0(i13, f6Var), mode));
+        ahVar.setBackground(j6.Z(j6.v0(i10, f6Var), j6.v0(i12, f6Var), AndroidUtilities.dp(20.0f), AndroidUtilities.dp(20.0f)));
         ahVar.j(yg.e, false);
         linearLayout3.addView(ahVar, w7.y5.q(38, 38, 16));
-        w7.a6.a(ahVar);
+        w7.b6.a(ahVar);
         ahVar.setContentDescription("Emoji");
         final int i17 = 10;
         ahVar.setOnClickListener(new View.OnClickListener() { // from class: ii.x3
@@ -471,10 +471,10 @@ public final class b4 extends FrameLayout {
         this.E = imageView5;
         imageView5.setImageResource(R.drawable.outline_poll_attach_24);
         imageView5.setScaleType(scaleType);
-        imageView5.setColorFilter(new PorterDuffColorFilter(j6.v0(i13, e6Var), mode));
-        imageView5.setBackground(j6.Z(j6.v0(i10, e6Var), j6.v0(i12, e6Var), AndroidUtilities.dp(20.0f), AndroidUtilities.dp(20.0f)));
+        imageView5.setColorFilter(new PorterDuffColorFilter(j6.v0(i13, f6Var), mode));
+        imageView5.setBackground(j6.Z(j6.v0(i10, f6Var), j6.v0(i12, f6Var), AndroidUtilities.dp(20.0f), AndroidUtilities.dp(20.0f)));
         linearLayout3.addView(imageView5, w7.y5.t(38, 38, 16, 2, 0, 0, 0));
-        w7.a6.a(imageView5);
+        w7.b6.a(imageView5);
         imageView5.setContentDescription("Attach");
         final int i18 = 11;
         imageView5.setOnClickListener(new View.OnClickListener() { // from class: ii.x3
@@ -547,35 +547,35 @@ public final class b4 extends FrameLayout {
             }
         });
         linearLayout2.addView(frameLayout4, w7.y5.l(1.0f, 0, 44));
-        bc1 bc1Var = new bc1(this, context, 3);
-        this.G = bc1Var;
-        bc1Var.setOrientation(0);
-        bc1Var.setClipToPadding(false);
-        bc1Var.setClipChildren(false);
-        bc1Var.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
-        frameLayout2.addView(bc1Var, w7.y5.e(-2, 60, 81));
+        dc1 dc1Var = new dc1(this, context, 3);
+        this.G = dc1Var;
+        dc1Var.setOrientation(0);
+        dc1Var.setClipToPadding(false);
+        dc1Var.setClipChildren(false);
+        dc1Var.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
+        frameLayout2.addView(dc1Var, w7.y5.e(-2, 60, 81));
         FrameLayout frameLayout6 = new FrameLayout(context);
         this.H = frameLayout6;
         frameLayout6.setClipChildren(false);
         frameLayout6.setClipToPadding(false);
         frameLayout6.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
         frameLayout2.addView(frameLayout6, w7.y5.e(80, 60, 81));
-        lj0 lj0Var = new lj0(context);
-        this.I = lj0Var;
-        lj0Var.f(R.raw.group_pip_delete_icon, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), null);
-        ij0 animatedDrawable = lj0Var.getAnimatedDrawable();
+        kj0 kj0Var = new kj0(context);
+        this.I = kj0Var;
+        kj0Var.f(R.raw.group_pip_delete_icon, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), null);
+        hj0 animatedDrawable = kj0Var.getAnimatedDrawable();
         if (animatedDrawable != null) {
             animatedDrawable.h = true;
             animatedDrawable.K(0);
             animatedDrawable.P(0);
         }
-        lj0Var.setScaleType(scaleType);
-        lj0Var.setColorFilter(new PorterDuffColorFilter(j6.v0(i13, e6Var), mode));
-        lj0Var.setBackground(new c2(j6.b0(AndroidUtilities.dp(22.0f), j6.v0(i11, e6Var))));
-        frameLayout6.addView(lj0Var, w7.y5.e(-1, -1, 119));
+        kj0Var.setScaleType(scaleType);
+        kj0Var.setColorFilter(new PorterDuffColorFilter(j6.v0(i13, f6Var), mode));
+        kj0Var.setBackground(new c2(j6.b0(AndroidUtilities.dp(22.0f), j6.v0(i11, f6Var))));
+        frameLayout6.addView(kj0Var, w7.y5.e(-1, -1, 119));
         FrameLayout frameLayout7 = new FrameLayout(context);
-        frameLayout7.setBackground(new c2(j6.b0(AndroidUtilities.dp(22.0f), j6.v0(i11, e6Var))));
-        bc1Var.addView(frameLayout7, w7.y5.c(44.0f, -2));
+        frameLayout7.setBackground(new c2(j6.b0(AndroidUtilities.dp(22.0f), j6.v0(i11, f6Var))));
+        dc1Var.addView(frameLayout7, w7.y5.c(44.0f, -2));
         a4 a4Var = new a4(this, context, 0);
         a4Var.setHorizontalScrollBarEnabled(false);
         a4Var.setClipToOutline(true);
@@ -594,7 +594,7 @@ public final class b4 extends FrameLayout {
         b(R.drawable.iv_code, 4, false);
         b(R.drawable.iv_sub, 16384, true);
         b(R.drawable.iv_super, 32768, true);
-        z1 z1Var = new z1(context, R.drawable.iv_quote, e6Var);
+        z1 z1Var = new z1(context, R.drawable.iv_quote, f6Var);
         this.S = z1Var;
         z1Var.c(i11);
         z1Var.setContentDescription(LocaleController.getString(R.string.Quote));
@@ -669,7 +669,7 @@ public final class b4 extends FrameLayout {
             }
         });
         linearLayout4.addView(z1Var, w7.y5.t(38, 38, 16, linearLayout4.getChildCount() == 0 ? 0 : 2, 0, 0, 0));
-        z1 z1Var2 = new z1(context, R.drawable.iv_button, e6Var);
+        z1 z1Var2 = new z1(context, R.drawable.iv_button, f6Var);
         this.P = z1Var2;
         z1Var2.c(i11);
         z1Var2.setContentDescription(LocaleController.getString(R.string.RichEditorButton));
@@ -748,9 +748,9 @@ public final class b4 extends FrameLayout {
         this.M = linearLayout5;
         linearLayout5.setOrientation(0);
         linearLayout5.setPadding(AndroidUtilities.dp(2.0f), 0, AndroidUtilities.dp(2.0f), 0);
-        linearLayout5.setBackground(new c2(j6.b0(AndroidUtilities.dp(22.0f), j6.v0(i11, e6Var))));
-        bc1Var.addView(linearLayout5, w7.y5.d(-2, 44.0f, 80, 8.0f, 0.0f, 0.0f, 0.0f));
-        z1 z1Var3 = new z1(context, R.drawable.media_link_24, e6Var);
+        linearLayout5.setBackground(new c2(j6.b0(AndroidUtilities.dp(22.0f), j6.v0(i11, f6Var))));
+        dc1Var.addView(linearLayout5, w7.y5.d(-2, 44.0f, 80, 8.0f, 0.0f, 0.0f, 0.0f));
+        z1 z1Var3 = new z1(context, R.drawable.media_link_24, f6Var);
         this.O = z1Var3;
         z1Var3.c(i11);
         z1Var3.setContentDescription(LocaleController.getString(R.string.CreateLink));
@@ -825,7 +825,7 @@ public final class b4 extends FrameLayout {
             }
         });
         linearLayout5.addView(z1Var3, w7.y5.q(38, 38, 16));
-        z1 z1Var4 = new z1(context, R.drawable.msg_calendar2, e6Var);
+        z1 z1Var4 = new z1(context, R.drawable.msg_calendar2, f6Var);
         this.Q = z1Var4;
         z1Var4.c(i11);
         z1Var4.setContentDescription(LocaleController.getString(R.string.AccDescrIVInsertDate));
@@ -904,9 +904,9 @@ public final class b4 extends FrameLayout {
         this.N = linearLayout6;
         linearLayout6.setOrientation(0);
         linearLayout6.setPadding(AndroidUtilities.dp(2.0f), 0, AndroidUtilities.dp(2.0f), 0);
-        linearLayout6.setBackground(new c2(j6.b0(AndroidUtilities.dp(22.0f), j6.v0(i11, e6Var))));
-        bc1Var.addView(linearLayout6, w7.y5.d(-2, 44.0f, 80, 8.0f, 0.0f, 0.0f, 0.0f));
-        z1 z1Var5 = new z1(context, R.drawable.iv_math, e6Var);
+        linearLayout6.setBackground(new c2(j6.b0(AndroidUtilities.dp(22.0f), j6.v0(i11, f6Var))));
+        dc1Var.addView(linearLayout6, w7.y5.d(-2, 44.0f, 80, 8.0f, 0.0f, 0.0f, 0.0f));
+        z1 z1Var5 = new z1(context, R.drawable.iv_math, f6Var);
         this.R = z1Var5;
         z1Var5.c(i11);
         z1Var5.d();
@@ -987,9 +987,9 @@ public final class b4 extends FrameLayout {
         this.L = linearLayout7;
         linearLayout7.setOrientation(0);
         linearLayout7.setPadding(AndroidUtilities.dp(2.0f), 0, AndroidUtilities.dp(2.0f), 0);
-        linearLayout7.setBackground(new c2(j6.b0(AndroidUtilities.dp(22.0f), j6.v0(i11, e6Var))));
-        bc1Var.addView(linearLayout7, 0, w7.y5.d(-2, 44.0f, 80, 0.0f, 0.0f, 8.0f, 0.0f));
-        z1 z1Var6 = new z1(context, R.drawable.input_ai, e6Var);
+        linearLayout7.setBackground(new c2(j6.b0(AndroidUtilities.dp(22.0f), j6.v0(i11, f6Var))));
+        dc1Var.addView(linearLayout7, 0, w7.y5.d(-2, 44.0f, 80, 0.0f, 0.0f, 8.0f, 0.0f));
+        z1 z1Var6 = new z1(context, R.drawable.input_ai, f6Var);
         z1Var6.setImageDrawable(new org.telegram.ui.Components.i0(context));
         z1Var6.c(i11);
         z1Var6.setContentDescription(LocaleController.getString(R.string.AIEditor));
@@ -1064,10 +1064,10 @@ public final class b4 extends FrameLayout {
             }
         });
         linearLayout7.addView(z1Var6, w7.y5.q(38, 38, 16));
-        y1 y1Var = new y1(this, context, R.drawable.send_plane_24, e6Var, 1);
+        y1 y1Var = new y1(this, context, R.drawable.send_plane_24, f6Var, 1);
         this.F = y1Var;
-        y1Var.setBackground(new c2(j6.b0(AndroidUtilities.dp(22.0f), j6.v0(j6.Yd, e6Var))));
-        w7.a6.a(y1Var);
+        y1Var.setBackground(new c2(j6.b0(AndroidUtilities.dp(22.0f), j6.v0(j6.Yd, f6Var))));
+        w7.b6.a(y1Var);
         linearLayout2.addView(y1Var, w7.y5.p(44, 44, 0.0f, 5, 8, 0, 0, 0));
         y1Var.setContentDescription("Send");
         final int i25 = 6;
@@ -1222,16 +1222,16 @@ public final class b4 extends FrameLayout {
         }
         this.c0 = z10;
         float f7 = z10 ? 1.15f : 1.0f;
-        lj0 lj0Var = this.I;
+        kj0 kj0Var = this.I;
         if (z11) {
-            lj0Var.animate().scaleX(f7).scaleY(f7).setDuration(180L).setInterpolator(qr.h).start();
+            kj0Var.animate().scaleX(f7).scaleY(f7).setDuration(180L).setInterpolator(qr.h).start();
         } else {
-            lj0Var.animate().cancel();
-            lj0Var.setScaleX(f7);
-            lj0Var.setScaleY(f7);
+            kj0Var.animate().cancel();
+            kj0Var.setScaleX(f7);
+            kj0Var.setScaleY(f7);
         }
-        lj0Var.setColorFilter(new PorterDuffColorFilter(j6.v0(z10 ? j6.q7 : j6.G6, this.b), PorterDuff.Mode.SRC_IN));
-        ij0 animatedDrawable = lj0Var.getAnimatedDrawable();
+        kj0Var.setColorFilter(new PorterDuffColorFilter(j6.v0(z10 ? j6.q7 : j6.G6, this.b), PorterDuff.Mode.SRC_IN));
+        hj0 animatedDrawable = kj0Var.getAnimatedDrawable();
         if (animatedDrawable != null) {
             if (z10) {
                 if (animatedDrawable.a0 > 34) {
@@ -1251,7 +1251,7 @@ public final class b4 extends FrameLayout {
         }
         this.a0 = i10;
         FrameLayout frameLayout = this.H;
-        bc1 bc1Var = this.G;
+        dc1 dc1Var = this.G;
         LinearLayout linearLayout = this.w;
         if (z10) {
             linearLayout.setVisibility(0);
@@ -1292,9 +1292,9 @@ public final class b4 extends FrameLayout {
                     }
                 }
             }).start();
-            bc1Var.setVisibility(0);
+            dc1Var.setVisibility(0);
             final int i12 = 1;
-            bc1Var.animate().alpha(i10 == 1 ? 1.0f : 0.0f).scaleX(i10 == 1 ? 1.0f : 0.8f).scaleY(i10 == 1 ? 1.0f : 0.8f).translationY(i10 == 1 ? 0.0f : AndroidUtilities.dp(30.0f)).setDuration(420L).setInterpolator(qrVar).withEndAction(new Runnable(this) { // from class: ii.y3
+            dc1Var.animate().alpha(i10 == 1 ? 1.0f : 0.0f).scaleX(i10 == 1 ? 1.0f : 0.8f).scaleY(i10 == 1 ? 1.0f : 0.8f).translationY(i10 == 1 ? 0.0f : AndroidUtilities.dp(30.0f)).setDuration(420L).setInterpolator(qrVar).withEndAction(new Runnable(this) { // from class: ii.y3
                 public final /* synthetic */ b4 b;
 
                 {
@@ -1372,11 +1372,11 @@ public final class b4 extends FrameLayout {
         linearLayout.setScaleX(i10 == 0 ? 1.0f : 0.8f);
         linearLayout.setScaleY(i10 == 0 ? 1.0f : 0.8f);
         linearLayout.setTranslationY(i10 == 0 ? 0.0f : AndroidUtilities.dp(30.0f));
-        bc1Var.setVisibility(i10 == 1 ? 0 : 8);
-        bc1Var.setAlpha(i10 == 1 ? 1.0f : 0.0f);
-        bc1Var.setScaleX(i10 == 1 ? 1.0f : 0.8f);
-        bc1Var.setScaleY(i10 == 1 ? 1.0f : 0.8f);
-        bc1Var.setTranslationY(i10 == 1 ? 0.0f : AndroidUtilities.dp(30.0f));
+        dc1Var.setVisibility(i10 == 1 ? 0 : 8);
+        dc1Var.setAlpha(i10 == 1 ? 1.0f : 0.0f);
+        dc1Var.setScaleX(i10 == 1 ? 1.0f : 0.8f);
+        dc1Var.setScaleY(i10 == 1 ? 1.0f : 0.8f);
+        dc1Var.setTranslationY(i10 == 1 ? 0.0f : AndroidUtilities.dp(30.0f));
         frameLayout.setVisibility(i10 != 2 ? 8 : 0);
         frameLayout.setAlpha(i10 == 2 ? 1.0f : 0.0f);
         frameLayout.setScaleX(i10 == 2 ? 1.0f : 0.8f);
@@ -1451,7 +1451,7 @@ public final class b4 extends FrameLayout {
             return;
         }
         y1Var.setEnabled(z10);
-        wh.q(y1Var.animate(), z10 ? 1.0f : 0.5f, 150L);
+        rk.r(y1Var.animate(), z10 ? 1.0f : 0.5f, 150L);
     }
 
     public void setSendLoading(boolean z10) {

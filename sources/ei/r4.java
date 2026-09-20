@@ -10,13 +10,13 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.c10;
-import org.telegram.ui.Components.qc;
+import org.telegram.ui.Components.pc;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.m6;
 import org.telegram.ui.pr0;
 import yh.k5;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class r4 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -61,7 +61,7 @@ public final /* synthetic */ class r4 implements Utilities.Callback {
                 callback.run(Integer.valueOf(i11));
                 break;
             case 4:
-                Utilities.themeQueue.postRunnable(new l3((qg.m2) this.c, this.b, (List) obj, new ArrayList(), (pr0) this.d, 29));
+                Utilities.themeQueue.postRunnable(new l3((qg.n2) this.c, this.b, (List) obj, new ArrayList(), (pr0) this.d, 29));
                 break;
             default:
                 xh.s2 s2Var = (xh.s2) this.c;
@@ -79,13 +79,13 @@ public final /* synthetic */ class r4 implements Utilities.Callback {
                     if (arrayList.size() <= 1) {
                         if (arrayList.size() == 1) {
                             TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) arrayList.get(0);
-                            qc R = xc.a0(n2Var2).R(savedStarGift.gift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2AddedToCollection, yh.y3.D1(savedStarGift.gift), c10.title)));
+                            pc R = xc.a0(n2Var2).R(savedStarGift.gift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2AddedToCollection, yh.y3.D1(savedStarGift.gift), c10.title)));
                             R.r = false;
                             R.j();
                             break;
                         }
                     } else {
-                        qc R2 = xc.a0(n2Var2).R(((TL_stars.SavedStarGift) arrayList.get(0)).gift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma("Gift2AddedToCollectionMany", arrayList.size(), c10.title)));
+                        pc R2 = xc.a0(n2Var2).R(((TL_stars.SavedStarGift) arrayList.get(0)).gift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma("Gift2AddedToCollectionMany", arrayList.size(), c10.title)));
                         R2.r = false;
                         R2.j();
                         break;

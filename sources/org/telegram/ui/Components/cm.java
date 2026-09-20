@@ -6,7 +6,7 @@ import java.util.HashMap;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.VideoEditedInfo;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public abstract class cm extends org.telegram.ui.tu0 {
     public final /* synthetic */ ChatAttachAlertPhotoLayout a;
@@ -69,12 +69,12 @@ public abstract class cm extends org.telegram.ui.tu0 {
                             break;
                         }
                         View childAt = tlVar2.getChildAt(i11);
-                        if (!(childAt instanceof org.telegram.ui.Cells.t5) || ((Integer) childAt.getTag()).intValue() != i10) {
+                        if (!(childAt instanceof org.telegram.ui.Cells.u5) || ((Integer) childAt.getTag()).intValue() != i10) {
                             i11++;
                         } else if ((viVar.f0 instanceof org.telegram.ui.zn) && viVar.T1) {
-                            ((org.telegram.ui.Cells.t5) childAt).b(Q, z10, false);
+                            ((org.telegram.ui.Cells.u5) childAt).b(Q, z10, false);
                         } else {
-                            ((org.telegram.ui.Cells.t5) childAt).b(-1, z10, false);
+                            ((org.telegram.ui.Cells.u5) childAt).b(-1, z10, false);
                         }
                     }
                     int childCount2 = tlVar.getChildCount();
@@ -84,12 +84,12 @@ public abstract class cm extends org.telegram.ui.tu0 {
                             break;
                         }
                         View childAt2 = tlVar.getChildAt(i12);
-                        if (!(childAt2 instanceof org.telegram.ui.Cells.t5) || ((Integer) childAt2.getTag()).intValue() != i10) {
+                        if (!(childAt2 instanceof org.telegram.ui.Cells.u5) || ((Integer) childAt2.getTag()).intValue() != i10) {
                             i12++;
                         } else if ((viVar.f0 instanceof org.telegram.ui.zn) && viVar.T1) {
-                            ((org.telegram.ui.Cells.t5) childAt2).b(Q, z10, false);
+                            ((org.telegram.ui.Cells.u5) childAt2).b(Q, z10, false);
                         } else {
-                            ((org.telegram.ui.Cells.t5) childAt2).b(-1, z10, false);
+                            ((org.telegram.ui.Cells.u5) childAt2).b(-1, z10, false);
                         }
                     }
                     viVar.V1(z10 ? 1 : 2);

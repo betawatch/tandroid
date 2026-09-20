@@ -5,7 +5,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class fw implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -43,10 +43,10 @@ public final /* synthetic */ class fw implements Runnable {
                 org.telegram.ui.Components.xc xcVar = (org.telegram.ui.Components.xc) this.n;
                 org.telegram.messenger.video.d dVar = (org.telegram.messenger.video.d) this.r;
                 TLRPC.TL_channels_sponsoredMessageReportResultChooseOption tL_channels_sponsoredMessageReportResultChooseOption = (TLRPC.TL_channels_sponsoredMessageReportResultChooseOption) this.b;
-                b41 b41Var = new b41(context, a1Var, this.c, bArr);
-                b41Var.O(tL_channels_sponsoredMessageReportResultChooseOption);
-                b41Var.s = new u31(aVar, xcVar, context, a1Var, dVar);
-                b41Var.show();
+                c41 c41Var = new c41(context, a1Var, this.c, bArr);
+                c41Var.O(tL_channels_sponsoredMessageReportResultChooseOption);
+                c41Var.s = new v31(aVar, xcVar, context, a1Var, dVar);
+                c41Var.show();
                 break;
             default:
                 yh.y3.C0((yh.y3) this.d, (nf.e) this.f, (org.telegram.ui.ActionBar.b2) this.e, this.b, (TL_stars.TL_starGiftUnique) this.h, (TLRPC.TL_error) this.n, this.c, (CharSequence) this.r);

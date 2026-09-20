@@ -1,55 +1,16 @@
 package v7;
 
-import java.util.ArrayDeque;
-import java.util.Arrays;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
+import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public abstract class m6 {
-    public static byte[] a(ArrayDeque arrayDeque, int i10) {
-        if (arrayDeque.isEmpty()) {
-            return new byte[0];
-        }
-        byte[] bArr = (byte[]) arrayDeque.remove();
-        if (bArr.length == i10) {
-            return bArr;
-        }
-        int length = i10 - bArr.length;
-        byte[] copyOf = Arrays.copyOf(bArr, i10);
-        while (length > 0) {
-            byte[] bArr2 = (byte[]) arrayDeque.remove();
-            int min = Math.min(length, bArr2.length);
-            System.arraycopy(bArr2, 0, copyOf, i10 - length, min);
-            length -= min;
-        }
-        return copyOf;
-    }
-
-    public static byte[] b(com.google.firebase.messaging.d dVar) {
-        ArrayDeque arrayDeque = new ArrayDeque(20);
-        int min = Math.min(8192, Math.max(128, Integer.highestOneBit(0) * 2));
-        int i10 = 0;
-        while (i10 < 2147483639) {
-            int min2 = Math.min(min, 2147483639 - i10);
-            byte[] bArr = new byte[min2];
-            arrayDeque.add(bArr);
-            int i11 = 0;
-            while (i11 < min2) {
-                int read = dVar.read(bArr, i11, min2 - i11);
-                if (read == -1) {
-                    return a(arrayDeque, i10);
-                }
-                i11 += read;
-                i10 += read;
+    public static /* synthetic */ boolean a(AtomicReferenceFieldUpdater atomicReferenceFieldUpdater, com.google.android.gms.internal.play_billing.g4 g4Var, Object obj, Object obj2) {
+        while (!atomicReferenceFieldUpdater.compareAndSet(g4Var, obj, obj2)) {
+            if (atomicReferenceFieldUpdater.get(g4Var) != obj && atomicReferenceFieldUpdater.get(g4Var) != obj) {
+                return false;
             }
-            long j3 = min * (min < 4096 ? 4 : 2);
-            min = j3 > 2147483647L ? ConnectionsManager.DEFAULT_DATACENTER_ID : j3 < -2147483648L ? TLObject.FLAG_31 : (int) j3;
         }
-        if (dVar.read() == -1) {
-            return a(arrayDeque, 2147483639);
-        }
-        throw new OutOfMemoryError("input is too large to fit in a byte array");
+        return true;
     }
 }

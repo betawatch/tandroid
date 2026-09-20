@@ -20,7 +20,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public class oo0 {
     public static Paint D;
@@ -125,7 +125,7 @@ public class oo0 {
                     this.r = dp;
                 }
             } else {
-                float b10 = org.telegram.messenger.wh.b(elapsedRealtime, 60.0f, AndroidUtilities.dp(1.0f), f12);
+                float b10 = org.telegram.messenger.rk.b(elapsedRealtime, 60.0f, AndroidUtilities.dp(1.0f), f12);
                 this.r = b10;
                 if (b10 < dp) {
                     this.r = dp;
@@ -168,7 +168,7 @@ public class oo0 {
             }
             this.y = size;
             if (size >= 0 && size < this.u.size()) {
-                e((b61) ((Pair) this.u.get(this.y)).second);
+                e((a61) ((Pair) this.u.get(this.y)).second);
             }
         }
         if (this.B < 1.0f) {
@@ -482,7 +482,7 @@ public class oo0 {
         }
         Spanned spanned = (Spanned) charSequence;
         try {
-            b61[] b61VarArr = (b61[]) spanned.getSpans(0, spanned.length(), b61.class);
+            a61[] a61VarArr = (a61[]) spanned.getSpans(0, spanned.length(), a61.class);
             this.u = new ArrayList();
             this.x = 0.0f;
             if (this.A == null) {
@@ -491,11 +491,11 @@ public class oo0 {
                 textPaint.setTextSize(AndroidUtilities.dp(12.0f));
                 this.A.setColor(-1);
             }
-            for (b61 b61Var : b61VarArr) {
+            for (a61 a61Var : a61VarArr) {
                 try {
-                    if (b61Var != null && b61Var.getURL() != null && b61Var.d != null && b61Var.getURL().startsWith("audio?") && (parseInt = Utilities.parseInt((CharSequence) b61Var.getURL().substring(6))) != null && parseInt.intValue() >= 0) {
-                        Emoji.replaceEmoji(new SpannableStringBuilder(b61Var.d), this.A.getFontMetricsInt(), false);
-                        this.u.add(new Pair(Float.valueOf((parseInt.intValue() * 1000) / valueOf.longValue()), b61Var));
+                    if (a61Var != null && a61Var.getURL() != null && a61Var.d != null && a61Var.getURL().startsWith("audio?") && (parseInt = Utilities.parseInt((CharSequence) a61Var.getURL().substring(6))) != null && parseInt.intValue() >= 0) {
+                        Emoji.replaceEmoji(new SpannableStringBuilder(a61Var.d), this.A.getFontMetricsInt(), false);
+                        this.u.add(new Pair(Float.valueOf((parseInt.intValue() * 1000) / valueOf.longValue()), a61Var));
                     }
                 } catch (Exception e) {
                     FileLog.e(e);
@@ -515,6 +515,6 @@ public class oo0 {
         }
     }
 
-    public void e(b61 b61Var) {
+    public void e(a61 a61Var) {
     }
 }

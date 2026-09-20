@@ -14,7 +14,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class uv0 implements org.telegram.ui.Components.ly {
     public final /* synthetic */ aw0 a;
@@ -98,15 +98,15 @@ public final class uv0 implements org.telegram.ui.Components.ly {
 
     @Override // org.telegram.ui.Components.ly
     public final void n() {
-        org.telegram.ui.ActionBar.e6 e6Var;
+        org.telegram.ui.ActionBar.f6 f6Var;
         aw0 aw0Var = this.a;
         Activity parentActivity = aw0Var.getParentActivity();
-        e6Var = ((org.telegram.ui.ActionBar.n2) aw0Var).resourceProvider;
-        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(parentActivity, 0, e6Var);
+        f6Var = ((org.telegram.ui.ActionBar.n2) aw0Var).resourceProvider;
+        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(parentActivity, 0, f6Var);
         alertDialog$Builder.a.R = LocaleController.getString(R.string.ClearRecentEmojiTitle);
         alertDialog$Builder.a.T = LocaleController.getString(R.string.ClearRecentEmojiText);
         alertDialog$Builder.k(LocaleController.getString(R.string.ClearButton), new ol0(this, 6));
-        hg.k0.o(R.string.Cancel, alertDialog$Builder, null);
+        hg.k0.p(R.string.Cancel, alertDialog$Builder, null);
     }
 
     @Override // org.telegram.ui.Components.ly
@@ -127,9 +127,9 @@ public final class uv0 implements org.telegram.ui.Components.ly {
         }
         try {
             SpannableString spannableString = new SpannableString(str);
-            org.telegram.ui.Components.z5 z5Var = document != null ? new org.telegram.ui.Components.z5(document, editField.getPaint().getFontMetricsInt()) : new org.telegram.ui.Components.z5(j3, editField.getPaint().getFontMetricsInt());
-            z5Var.cacheType = aw0Var.R.c;
-            spannableString.setSpan(z5Var, 0, spannableString.length(), 33);
+            org.telegram.ui.Components.y5 y5Var = document != null ? new org.telegram.ui.Components.y5(document, editField.getPaint().getFontMetricsInt()) : new org.telegram.ui.Components.y5(j3, editField.getPaint().getFontMetricsInt());
+            y5Var.cacheType = aw0Var.R.c;
+            spannableString.setSpan(y5Var, 0, spannableString.length(), 33);
             editField.setText(editField.getText().insert(selectionEnd, spannableString));
             int length = selectionEnd + spannableString.length();
             editField.setSelection(length, length);
@@ -148,7 +148,7 @@ public final class uv0 implements org.telegram.ui.Components.ly {
     }
 
     @Override // org.telegram.ui.Components.ly
-    public final /* synthetic */ void o(org.telegram.ui.Components.t51 t51Var) {
+    public final /* synthetic */ void o(org.telegram.ui.Components.s51 s51Var) {
     }
 
     @Override // org.telegram.ui.Components.ly

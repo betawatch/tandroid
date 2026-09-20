@@ -34,22 +34,22 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.b60;
-import org.telegram.ui.Components.d5;
-import org.telegram.ui.Components.r71;
+import org.telegram.ui.Components.a60;
+import org.telegram.ui.Components.c5;
+import org.telegram.ui.Components.q71;
+import org.telegram.ui.Components.t71;
 import org.telegram.ui.Components.u50;
-import org.telegram.ui.Components.u71;
+import org.telegram.ui.Components.uq0;
+import org.telegram.ui.Components.v61;
 import org.telegram.ui.Components.vi;
-import org.telegram.ui.Components.vq0;
-import org.telegram.ui.Components.w61;
 import pg.u0;
-import qg.v1;
-import qg.w0;
-import v7.t7;
+import qg.w1;
+import qg.x0;
+import v7.u7;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
-public final class u implements n, l.x, l.j, k1.f, d5, ah.k, r71, me.a, v1, com.google.android.gms.common.api.internal.o, s4.e0, n5.b, v0.i, com.google.android.gms.common.api.internal.s {
+public final class u implements n, l.x, l.j, k1.f, c5, ah.k, q71, me.a, w1, com.google.android.gms.common.api.internal.o, s4.e0, n5.b, v0.i, com.google.android.gms.common.api.internal.s {
     public final /* synthetic */ int a;
     public Object b;
 
@@ -64,32 +64,39 @@ public final class u implements n, l.x, l.j, k1.f, d5, ah.k, r71, me.a, v1, com.
 
     @Override // k2.n
     public void G() {
-        x2.p pVar;
+        x2.q qVar;
         FfmpegAudioRenderer ffmpegAudioRenderer = (FfmpegAudioRenderer) this.b;
         synchronized (ffmpegAudioRenderer.a) {
-            pVar = ffmpegAudioRenderer.H;
+            qVar = ffmpegAudioRenderer.H;
         }
-        if (pVar != null) {
-            pVar.h();
+        if (qVar != null) {
+            qVar.h();
         }
     }
 
-    @Override // org.telegram.ui.Components.d5
+    @Override // org.telegram.ui.Components.c5
     public void J(int i10, int i11, boolean z10) {
         org.telegram.ui.Components.e0 e0Var = (org.telegram.ui.Components.e0) this.b;
         e0Var.l0(i10, i11, z10);
         e0Var.dismiss();
     }
 
-    @Override // qg.v1
-    public void K(float f7) {
-        w0 w0Var = (w0) this.b;
-        u0.e(w0Var.a).k("-1", f7);
-        w0Var.e.setBrushSize(f7);
+    @Override // ah.k
+    public void K(ah.a aVar) {
+        switch (this.a) {
+            case 12:
+                aVar.a(((vi) this.b).getThemedColor(j6.d6));
+                aVar.b(SharedConfig.chatBlurEnabled());
+                break;
+            default:
+                aVar.a(((uq0) this.b).getThemedColor(j6.d6));
+                aVar.b(SharedConfig.chatBlurEnabled());
+                break;
+        }
     }
 
     @Override // s4.e0
-    public void O0(int i10, int i11) {
+    public void M0(int i10, int i11) {
         ((s4.h0) this.b).t(i10, i11);
     }
 
@@ -97,7 +104,7 @@ public final class u implements n, l.x, l.j, k1.f, d5, ah.k, r71, me.a, v1, com.
     public void P(Exception exc) {
         e2.a.f("DecoderAudioRenderer", "Audio sink error", exc);
         n4.y yVar = ((FfmpegAudioRenderer) this.b).I;
-        Handler handler = (Handler) yVar.b;
+        Handler handler = (Handler) yVar.a;
         if (handler != null) {
             handler.post(new f(yVar, exc, 1));
         }
@@ -108,24 +115,10 @@ public final class u implements n, l.x, l.j, k1.f, d5, ah.k, r71, me.a, v1, com.
         ((FfmpegAudioRenderer) this.b).Z = true;
     }
 
-    @Override // ah.k
-    public void U(ah.a aVar) {
-        switch (this.a) {
-            case 12:
-                aVar.a(((vi) this.b).getThemedColor(j6.d6));
-                aVar.b(SharedConfig.chatBlurEnabled());
-                break;
-            default:
-                aVar.a(((vq0) this.b).getThemedColor(j6.d6));
-                aVar.b(SharedConfig.chatBlurEnabled());
-                break;
-        }
-    }
-
     @Override // k2.n
     public void V(k kVar) {
         n4.y yVar = ((FfmpegAudioRenderer) this.b).I;
-        Handler handler = (Handler) yVar.b;
+        Handler handler = (Handler) yVar.a;
         if (handler != null) {
             handler.post(new h(yVar, kVar, 0));
         }
@@ -168,7 +161,7 @@ public final class u implements n, l.x, l.j, k1.f, d5, ah.k, r71, me.a, v1, com.
     @Override // k2.n
     public void b(long j3) {
         n4.y yVar = ((FfmpegAudioRenderer) this.b).I;
-        Handler handler = (Handler) yVar.b;
+        Handler handler = (Handler) yVar.a;
         if (handler != null) {
             handler.post(new ai.j(yVar, j3, 12));
         }
@@ -183,34 +176,29 @@ public final class u implements n, l.x, l.j, k1.f, d5, ah.k, r71, me.a, v1, com.
         jVar.a = n5.a.a(l5.m.a);
         a9.r rVar = new a9.r(context);
         jVar.b = rVar;
-        jVar.c = n5.a.a(new n4.y(26, rVar, new a4.m(rVar, 29)));
+        jVar.c = n5.a.a(new m5.e(0, rVar, new a4.m(rVar, 29)));
         a9.r rVar2 = jVar.b;
         jVar.d = new l.d(rVar2);
-        fd.a a2 = n5.a.a(new o0.a(16, jVar.d, n5.a.a(new u(rVar2, 25))));
+        fd.a a2 = n5.a.a(new m5.e(20, jVar.d, n5.a.a(new u(rVar2, 25))));
         jVar.e = a2;
         qb.b bVar = new qb.b(19);
         a9.r rVar3 = jVar.b;
-        lf.i iVar = new lf.i(rVar3, a2, bVar, 21);
+        lf.h hVar = new lf.h(rVar3, a2, bVar, 21);
         fd.a aVar = jVar.a;
         fd.a aVar2 = jVar.c;
-        cf.c cVar = new cf.c();
-        cVar.a = aVar;
-        cVar.b = aVar2;
-        cVar.c = iVar;
-        cVar.d = a2;
-        cVar.e = a2;
+        cf.c cVar = new cf.c(aVar, aVar2, hVar, a2, a2);
         p3 p3Var = new p3();
         p3Var.a = rVar3;
         p3Var.b = aVar2;
         p3Var.c = a2;
-        p3Var.d = iVar;
+        p3Var.d = hVar;
         p3Var.e = aVar;
         p3Var.f = a2;
         p3Var.h = a2;
         oi.f fVar = new oi.f();
         fVar.a = aVar;
         fVar.b = a2;
-        fVar.c = iVar;
+        fVar.c = hVar;
         fVar.d = a2;
         jVar.f = n5.a.a(new aa.a(cVar, p3Var, fVar, false, 28));
         return jVar;
@@ -228,10 +216,10 @@ public final class u implements n, l.x, l.j, k1.f, d5, ah.k, r71, me.a, v1, com.
                 }
                 break;
             default:
-                vq0 vq0Var = (vq0) this.b;
-                canvas.drawColor(vq0Var.getThemedColor(j6.d6));
+                uq0 uq0Var = (uq0) this.b;
+                canvas.drawColor(uq0Var.getThemedColor(j6.d6));
                 if (SharedConfig.chatBlurEnabled()) {
-                    vq0Var.O0.b(canvas, -2);
+                    uq0Var.O0.b(canvas, -2);
                     break;
                 }
                 break;
@@ -313,7 +301,7 @@ public final class u implements n, l.x, l.j, k1.f, d5, ah.k, r71, me.a, v1, com.
     @Override // k2.n
     public void j0(k kVar) {
         n4.y yVar = ((FfmpegAudioRenderer) this.b).I;
-        Handler handler = (Handler) yVar.b;
+        Handler handler = (Handler) yVar.a;
         if (handler != null) {
             handler.post(new h(yVar, kVar, 1));
         }
@@ -324,14 +312,14 @@ public final class u implements n, l.x, l.j, k1.f, d5, ah.k, r71, me.a, v1, com.
         ((s4.h0) this.b).s(i10, i11);
     }
 
+    @Override // s4.e0
+    public void k1(int i10, int i11) {
+        ((s4.h0) this.b).r(i10, i11, null);
+    }
+
     @Override // com.google.android.gms.common.api.internal.o
     public /* synthetic */ void l(Object obj) {
         ((g8.c) obj).onLocationAvailability((LocationAvailability) this.b);
-    }
-
-    @Override // s4.e0
-    public void l1(int i10, int i11) {
-        ((s4.h0) this.b).r(i10, i11, null);
     }
 
     @Override // me.a
@@ -342,12 +330,12 @@ public final class u implements n, l.x, l.j, k1.f, d5, ah.k, r71, me.a, v1, com.
     @Override // me.a
     public boolean needClickAt(View view, float f7, float f10) {
         int dp = AndroidUtilities.dp(9.0f);
-        w61 w61Var = (w61) this.b;
+        v61 v61Var = (v61) this.b;
         float f11 = -dp;
-        w61Var.g.inset(f11, f11);
-        boolean contains = w61Var.g.contains(f7, f10);
+        v61Var.g.inset(f11, f11);
+        boolean contains = v61Var.g.contains(f7, f10);
         float f12 = dp;
-        w61Var.g.inset(f12, f12);
+        v61Var.g.inset(f12, f12);
         return contains;
     }
 
@@ -364,7 +352,7 @@ public final class u implements n, l.x, l.j, k1.f, d5, ah.k, r71, me.a, v1, com.
     @Override // k2.n
     public void onAudioSessionIdChanged(int i10) {
         n4.y yVar = ((FfmpegAudioRenderer) this.b).I;
-        Handler handler = (Handler) yVar.b;
+        Handler handler = (Handler) yVar.a;
         if (handler != null) {
             handler.post(new n8(yVar, i10, 11));
         }
@@ -372,7 +360,7 @@ public final class u implements n, l.x, l.j, k1.f, d5, ah.k, r71, me.a, v1, com.
 
     @Override // me.a
     public void onClickAt(View view, float f7, float f10) {
-        Runnable runnable = ((w61) this.b).j;
+        Runnable runnable = ((v61) this.b).j;
         if (runnable != null) {
             runnable.run();
         }
@@ -380,12 +368,12 @@ public final class u implements n, l.x, l.j, k1.f, d5, ah.k, r71, me.a, v1, com.
 
     @Override // me.a
     public void onClickTouchDown(View view, float f7, float f10) {
-        ((w61) this.b).h.c(true);
+        ((v61) this.b).h.c(true);
     }
 
     @Override // me.a
     public void onClickTouchUp(View view, float f7, float f10) {
-        ((w61) this.b).h.c(false);
+        ((v61) this.b).h.c(false);
     }
 
     @Override // v0.i
@@ -394,7 +382,7 @@ public final class u implements n, l.x, l.j, k1.f, d5, ah.k, r71, me.a, v1, com.
         kotlin.jvm.internal.i.e(e, "e");
         zd.m mVar = (zd.m) this.b;
         if (mVar.w()) {
-            mVar.resumeWith(t7.a(e));
+            mVar.resumeWith(u7.a(e));
         }
     }
 
@@ -403,7 +391,7 @@ public final class u implements n, l.x, l.j, k1.f, d5, ah.k, r71, me.a, v1, com.
         return false;
     }
 
-    @Override // org.telegram.ui.Components.r71
+    @Override // org.telegram.ui.Components.q71
     public /* synthetic */ void onRenderedFirstFrame(j2.a aVar) {
     }
 
@@ -420,29 +408,29 @@ public final class u implements n, l.x, l.j, k1.f, d5, ah.k, r71, me.a, v1, com.
     @Override // k2.n
     public void onSkipSilenceEnabledChanged(boolean z10) {
         n4.y yVar = ((FfmpegAudioRenderer) this.b).I;
-        Handler handler = (Handler) yVar.b;
+        Handler handler = (Handler) yVar.a;
         if (handler != null) {
             handler.post(new bi.f(7, yVar, z10));
         }
     }
 
-    @Override // org.telegram.ui.Components.r71
+    @Override // org.telegram.ui.Components.q71
     public void onStateChanged(boolean z10, int i10) {
-        b60 b60Var;
+        a60 a60Var;
         VideoEditedInfo videoEditedInfo;
         u50 u50Var = (u50) this.b;
-        u71 u71Var = u50Var.H0.R;
-        if (u71Var != null && u71Var.y() && i10 == 4 && (videoEditedInfo = (b60Var = u50Var.H0).Q) != null) {
-            u71 u71Var2 = b60Var.R;
+        t71 t71Var = u50Var.H0.R;
+        if (t71Var != null && t71Var.y() && i10 == 4 && (videoEditedInfo = (a60Var = u50Var.H0).Q) != null) {
+            t71 t71Var2 = a60Var.R;
             long j3 = videoEditedInfo.startTime;
             if (j3 <= 0) {
                 j3 = 0;
             }
-            u71Var2.K(j3);
+            t71Var2.K(j3);
         }
     }
 
-    @Override // org.telegram.ui.Components.r71
+    @Override // org.telegram.ui.Components.q71
     public /* synthetic */ boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture) {
         return false;
     }
@@ -481,12 +469,19 @@ public final class u implements n, l.x, l.j, k1.f, d5, ah.k, r71, me.a, v1, com.
     }
 
     @Override // k2.n
-    public void y(int i10, long j3, long j10) {
+    public void x(int i10, long j3, long j10) {
         n4.y yVar = ((FfmpegAudioRenderer) this.b).I;
-        Handler handler = (Handler) yVar.b;
+        Handler handler = (Handler) yVar.a;
         if (handler != null) {
             handler.post(new i(yVar, i10, j3, j10, 0));
         }
+    }
+
+    @Override // qg.w1
+    public void y(float f7) {
+        x0 x0Var = (x0) this.b;
+        u0.e(x0Var.a).k("-1", f7);
+        x0Var.e.setBrushSize(f7);
     }
 
     public /* synthetic */ u(Object obj, int i10) {
@@ -494,7 +489,7 @@ public final class u implements n, l.x, l.j, k1.f, d5, ah.k, r71, me.a, v1, com.
         this.b = obj;
     }
 
-    @Override // org.telegram.ui.Components.r71
+    @Override // org.telegram.ui.Components.q71
     public void onRenderedFirstFrame() {
     }
 
@@ -510,19 +505,19 @@ public final class u implements n, l.x, l.j, k1.f, d5, ah.k, r71, me.a, v1, com.
         }
     }
 
-    @Override // qg.v1
+    @Override // qg.w1
     public float get() {
-        w0 w0Var = (w0) this.b;
-        int i10 = w0Var.a;
-        pg.m currentBrush = w0Var.e.getCurrentBrush();
+        x0 x0Var = (x0) this.b;
+        int i10 = x0Var.a;
+        pg.m currentBrush = x0Var.e.getCurrentBrush();
         if (currentBrush == null) {
             return u0.e(i10).i;
         }
         return u0.e(i10).f("-1", currentBrush.d());
     }
 
-    @Override // org.telegram.ui.Components.r71
-    public void onError(u71 u71Var, Exception exc) {
+    @Override // org.telegram.ui.Components.q71
+    public void onError(t71 t71Var, Exception exc) {
         FileLog.e(exc);
     }
 
@@ -533,7 +528,7 @@ public final class u implements n, l.x, l.j, k1.f, d5, ah.k, r71, me.a, v1, com.
 
     public u(Context context, n4.y yVar) {
         this.a = 7;
-        n4.x xVar = ((n4.r) yVar.b).c;
+        n4.x xVar = ((n4.r) yVar.a).c;
         DesugarCollections.synchronizedSet(new HashSet());
         if (Build.VERSION.SDK_INT >= 29) {
             this.b = new n4.k(context, xVar);
@@ -548,22 +543,22 @@ public final class u implements n, l.x, l.j, k1.f, d5, ah.k, r71, me.a, v1, com.
     }
 
     @Override // k2.n
-    public /* synthetic */ void f0() {
+    public /* synthetic */ void e0() {
     }
 
     @Override // k2.n
     public /* synthetic */ void q() {
     }
 
-    @Override // org.telegram.ui.Components.r71
+    @Override // org.telegram.ui.Components.q71
     public /* synthetic */ void onSeekFinished(j2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.r71
+    @Override // org.telegram.ui.Components.q71
     public /* synthetic */ void onSeekStarted(j2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.r71
+    @Override // org.telegram.ui.Components.q71
     public /* synthetic */ void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
     }
 
@@ -579,7 +574,7 @@ public final class u implements n, l.x, l.j, k1.f, d5, ah.k, r71, me.a, v1, com.
     public /* synthetic */ void onLongPressFinish(View view, float f7, float f10) {
     }
 
-    @Override // org.telegram.ui.Components.r71
+    @Override // org.telegram.ui.Components.q71
     public void onVideoSizeChanged(int i10, int i11, int i12, float f7) {
     }
 

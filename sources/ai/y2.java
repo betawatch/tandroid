@@ -9,7 +9,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class y2 implements org.telegram.ui.ActionBar.a2, jh.a {
     public final /* synthetic */ int a;
@@ -18,6 +18,13 @@ public final /* synthetic */ class y2 implements org.telegram.ui.ActionBar.a2, j
     public /* synthetic */ y2(f6 f6Var, int i10) {
         this.a = i10;
         this.b = f6Var;
+    }
+
+    @Override // jh.a
+    public void h(int i10) {
+        if (i10 == 0) {
+            this.b.P0();
+        }
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -37,7 +44,7 @@ public final /* synthetic */ class y2 implements org.telegram.ui.ActionBar.a2, j
     /* JADX WARN: Type inference failed for: r9v6 */
     /* JADX WARN: Type inference failed for: r9v9 */
     @Override // org.telegram.ui.ActionBar.a2
-    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+    public void k(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
         long j3;
         TLRPC.ChatFull chatFull;
         ?? r92;
@@ -205,13 +212,6 @@ public final /* synthetic */ class y2 implements org.telegram.ui.ActionBar.a2, j
                     break;
                 }
                 break;
-        }
-    }
-
-    @Override // jh.a
-    public void i(int i10) {
-        if (i10 == 0) {
-            this.b.P0();
         }
     }
 }

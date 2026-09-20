@@ -1,9 +1,9 @@
 package b4;
 
 import android.text.TextUtils;
-import v7.r6;
+import v7.s6;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class b {
     public final int a;
@@ -33,7 +33,7 @@ public final class b {
         int i13 = -1;
         int i14 = -1;
         for (int i15 = 0; i15 < split.length; i15++) {
-            String b10 = r6.b(split[i15].trim());
+            String b10 = s6.b(split[i15].trim());
             b10.getClass();
             switch (b10.hashCode()) {
                 case 100571:

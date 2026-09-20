@@ -9,21 +9,21 @@ import c3.h0;
 import e2.d0;
 import e2.v;
 import n4.y;
-import org.telegram.ui.Components.vo0;
-import u2.a1;
+import org.telegram.ui.Components.uo0;
+import u2.b1;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class n implements h0 {
-    public final a1 a;
-    public final y b = new y(17);
+    public final b1 a;
+    public final y b = new y();
     public final l3.a c = new l3.a();
     public long d = -9223372036854775807L;
     public final /* synthetic */ o e;
 
     public n(o oVar, y2.d dVar) {
         this.e = oVar;
-        this.a = new a1(dVar, null, null);
+        this.a = new b1(dVar, null, null);
     }
 
     @Override // c3.h0
@@ -71,13 +71,13 @@ public final class n implements h0 {
                 }
             }
         }
-        a1 a1Var = this.a;
-        vo0 vo0Var = a1Var.a;
-        synchronized (a1Var) {
-            int i14 = a1Var.s;
-            i13 = i14 == 0 ? -1L : a1Var.i(i14);
+        b1 b1Var = this.a;
+        uo0 uo0Var = b1Var.a;
+        synchronized (b1Var) {
+            int i14 = b1Var.s;
+            i13 = i14 == 0 ? -1L : b1Var.i(i14);
         }
-        vo0Var.b(i13);
+        uo0Var.b(i13);
     }
 
     @Override // c3.h0
@@ -87,15 +87,15 @@ public final class n implements h0 {
 
     @Override // c3.h0
     public final int e(b2.k kVar, int i10, boolean z10) {
-        a1 a1Var = this.a;
-        a1Var.getClass();
-        return a1Var.e(kVar, i10, z10);
+        b1 b1Var = this.a;
+        b1Var.getClass();
+        return b1Var.e(kVar, i10, z10);
     }
 
     @Override // c3.h0
     public final void f(v vVar, int i10, int i11) {
-        a1 a1Var = this.a;
-        a1Var.getClass();
-        a1Var.f(vVar, i10, 0);
+        b1 b1Var = this.a;
+        b1Var.getClass();
+        b1Var.f(vVar, i10, 0);
     }
 }

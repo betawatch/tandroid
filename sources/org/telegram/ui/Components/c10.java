@@ -21,9 +21,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_chatlists;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class c10 extends bb {
+public final class c10 extends ab {
     public boolean A0;
     public Utilities.Callback B0;
     public int C0;
@@ -135,7 +135,7 @@ public final class c10 extends bb {
         alertDialog$Builder.a.R = LocaleController.getString(R.string.FilterDelete);
         alertDialog$Builder.a.T = LocaleController.getString(R.string.FilterDeleteAlertLinks);
         alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new tm(callback));
-        alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new lv(wmVar, 4));
+        alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new mv(wmVar, 4));
         org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
         n2Var.showDialog(b2Var);
         TextView textView = (TextView) b2Var.d(-1);
@@ -144,12 +144,12 @@ public final class c10 extends bb {
         }
     }
 
-    @Override // org.telegram.ui.Components.bb
-    public final void G(bw0 bw0Var) {
-        wl0 wl0Var = this.d;
-        wl0Var.setOverScrollMode(2);
-        wl0Var.setPadding(AndroidUtilities.dp(6.0f), 0, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(this.l0 != null ? 68.0f : 0.0f));
-        wl0Var.setOnItemClickListener(new j(this, 8));
+    @Override // org.telegram.ui.Components.ab
+    public final void G(aw0 aw0Var) {
+        vl0 vl0Var = this.d;
+        vl0Var.setOverScrollMode(2);
+        vl0Var.setPadding(AndroidUtilities.dp(6.0f), 0, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(this.l0 != null ? 68.0f : 0.0f));
+        vl0Var.setOnItemClickListener(new j(this, 8));
     }
 
     public final void Q(boolean z10) {
@@ -183,15 +183,15 @@ public final class c10 extends bb {
         z00Var.a(LocaleController.getString(z10 ? R.string.SelectAll : R.string.DeselectAll), new ci.y0(this, z00Var, z10, 19));
         Q(true);
         while (true) {
-            wl0 wl0Var = this.d;
-            if (i10 >= wl0Var.getChildCount()) {
+            vl0 vl0Var = this.d;
+            if (i10 >= vl0Var.getChildCount()) {
                 return;
             }
-            View childAt = wl0Var.getChildAt(i10);
-            if (childAt instanceof org.telegram.ui.Cells.g4) {
+            View childAt = vl0Var.getChildAt(i10);
+            if (childAt instanceof org.telegram.ui.Cells.h4) {
                 Object tag = childAt.getTag();
                 if (tag instanceof Long) {
-                    ((org.telegram.ui.Cells.g4) childAt).c(arrayList2.contains((Long) tag), true);
+                    ((org.telegram.ui.Cells.h4) childAt).c(arrayList2.contains((Long) tag), true);
                 }
             }
             i10++;
@@ -284,7 +284,7 @@ public final class c10 extends bb {
         Context context = getContext();
         y00 y00Var = new y00(context);
         qr qrVar = qr.h;
-        y00Var.e = new e6(350L, qrVar);
+        y00Var.e = new d6(350L, qrVar);
         y00Var.h = 0.0f;
         y00Var.s = 1.0f;
         y00Var.x = 1.0f;
@@ -299,24 +299,24 @@ public final class c10 extends bb {
         y00Var.a = paint;
         int i18 = org.telegram.ui.ActionBar.j6.Sh;
         paint.setColor(org.telegram.ui.ActionBar.j6.w0(null, i18, false));
-        o6 o6Var = new o6(true, true, false, false);
-        y00Var.b = o6Var;
-        o6Var.k(0.3f, 250L, qrVar);
-        o6Var.setCallback(y00Var);
-        o6Var.t(AndroidUtilities.dp(14.0f));
-        o6Var.u(AndroidUtilities.bold());
-        o6Var.r(org.telegram.ui.ActionBar.j6.w0(null, i18, false));
-        o6Var.q("", true, true);
-        o6Var.b = 1;
-        o6 o6Var2 = new o6(false, false, true, false);
-        y00Var.c = o6Var2;
-        o6Var2.k(0.3f, 250L, qrVar);
-        o6Var2.setCallback(y00Var);
-        o6Var2.t(AndroidUtilities.dp(12.0f));
-        o6Var2.u(AndroidUtilities.bold());
-        o6Var2.r(org.telegram.ui.ActionBar.j6.w0(null, i17, false));
-        o6Var2.q("", true, true);
-        o6Var2.b = 1;
+        n6 n6Var = new n6(true, true, false, false);
+        y00Var.b = n6Var;
+        n6Var.k(0.3f, 250L, qrVar);
+        n6Var.setCallback(y00Var);
+        n6Var.t(AndroidUtilities.dp(14.0f));
+        n6Var.u(AndroidUtilities.bold());
+        n6Var.r(org.telegram.ui.ActionBar.j6.w0(null, i18, false));
+        n6Var.q("", true, true);
+        n6Var.b = 1;
+        n6 n6Var2 = new n6(false, false, true, false);
+        y00Var.c = n6Var2;
+        n6Var2.k(0.3f, 250L, qrVar);
+        n6Var2.setCallback(y00Var);
+        n6Var2.t(AndroidUtilities.dp(12.0f));
+        n6Var2.u(AndroidUtilities.bold());
+        n6Var2.r(org.telegram.ui.ActionBar.j6.w0(null, i17, false));
+        n6Var2.q("", true, true);
+        n6Var2.b = 1;
         y00Var.setWillNotDraw(false);
         this.l0 = y00Var;
         y00Var.setOnClickListener(new f0(this, 16));
@@ -356,9 +356,9 @@ public final class c10 extends bb {
                 }
             }
             y00 y00Var2 = this.l0;
-            o6 o6Var = y00Var2.c;
+            n6 n6Var = y00Var2.c;
             if (z10) {
-                o6Var.b();
+                n6Var.b();
             }
             if (z10 && size != (i10 = y00Var2.w) && size > 0 && i10 > 0) {
                 ValueAnimator valueAnimator = y00Var2.v;
@@ -369,14 +369,14 @@ public final class c10 extends bb {
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
                 y00Var2.v = ofFloat;
                 ofFloat.addUpdateListener(new x00(y00Var2, 1));
-                y00Var2.v.addListener(new r8(y00Var2, 23));
+                y00Var2.v.addListener(new q8(y00Var2, 23));
                 y00Var2.v.setInterpolator(new OvershootInterpolator(2.0f));
                 y00Var2.v.setDuration(200L);
                 y00Var2.v.start();
             }
             y00Var2.w = size;
             y00Var2.d = size != 0 ? 1.0f : 0.0f;
-            o6Var.q("" + size, z10, true);
+            n6Var.q("" + size, z10, true);
             y00Var2.invalidate();
             if (chatlist_chatlistinvite instanceof TL_chatlists.TL_chatlists_chatlistInvite) {
                 this.l0.setEnabled(!r1.isEmpty());
@@ -421,12 +421,12 @@ public final class c10 extends bb {
         }
     }
 
-    @Override // org.telegram.ui.Components.bb
-    public final vl0 v(wl0 wl0Var) {
+    @Override // org.telegram.ui.Components.ab
+    public final ul0 v(vl0 vl0Var) {
         return new w00(this);
     }
 
-    @Override // org.telegram.ui.Components.bb
+    @Override // org.telegram.ui.Components.ab
     public final CharSequence y() {
         if (this.b0) {
             return LocaleController.getString(R.string.FolderLinkTitleRemove);

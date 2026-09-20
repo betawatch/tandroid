@@ -12,7 +12,7 @@ import android.text.TextUtils;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class ed extends Drawable {
     public final /* synthetic */ int a;
@@ -92,17 +92,17 @@ public final class ed extends Drawable {
                 }
                 break;
             case 3:
-                o6 o6Var = (o6) this.c;
+                n6 n6Var = (n6) this.c;
                 Paint paint3 = (Paint) this.b;
                 if (paint3 != null) {
                     paint3.setStrokeWidth(AndroidUtilities.dpf2(1.6f));
                     RectF rectF = AndroidUtilities.rectTmp;
-                    rectF.set(((AndroidUtilities.dp(24.0f) - o6Var.d()) / 2.0f) - AndroidUtilities.dpf2(3.0f), AndroidUtilities.dpf2(0.2f) + ((AndroidUtilities.dp(24.0f) - o6Var.e) / 2.0f), AndroidUtilities.dpf2(3.0f) + ((o6Var.d() + AndroidUtilities.dp(24.0f)) / 2.0f), (AndroidUtilities.dp(24.0f) + o6Var.e) / 2.0f);
+                    rectF.set(((AndroidUtilities.dp(24.0f) - n6Var.d()) / 2.0f) - AndroidUtilities.dpf2(3.0f), AndroidUtilities.dpf2(0.2f) + ((AndroidUtilities.dp(24.0f) - n6Var.e) / 2.0f), AndroidUtilities.dpf2(3.0f) + ((n6Var.d() + AndroidUtilities.dp(24.0f)) / 2.0f), (AndroidUtilities.dp(24.0f) + n6Var.e) / 2.0f);
                     canvas.drawRoundRect(rectF, AndroidUtilities.dpf2(3.0f), AndroidUtilities.dpf2(3.0f), paint3);
                 }
-                o6Var.a.setStrokeWidth(AndroidUtilities.dpf2(0.3f));
-                o6Var.setBounds(0, (int) ((AndroidUtilities.dp(24.0f) - o6Var.e) / 2.0f), AndroidUtilities.dp(24.0f), (int) ((AndroidUtilities.dp(24.0f) + o6Var.e) / 2.0f));
-                o6Var.draw(canvas);
+                n6Var.a.setStrokeWidth(AndroidUtilities.dpf2(0.3f));
+                n6Var.setBounds(0, (int) ((AndroidUtilities.dp(24.0f) - n6Var.e) / 2.0f), AndroidUtilities.dp(24.0f), (int) ((AndroidUtilities.dp(24.0f) + n6Var.e) / 2.0f));
+                n6Var.draw(canvas);
                 break;
             case 4:
                 Bitmap bitmap = (Bitmap) this.b;
@@ -179,13 +179,13 @@ public final class ed extends Drawable {
     }
 
     public void l(float f7, boolean z10) {
-        o6 o6Var = (o6) this.c;
+        n6 n6Var = (n6) this.c;
         String str = a(f7) + "X";
-        if (z10 && TextUtils.equals(o6Var.g, str)) {
+        if (z10 && TextUtils.equals(n6Var.g, str)) {
             return;
         }
-        o6Var.b();
-        o6Var.q(str, z10, true);
+        n6Var.b();
+        n6Var.q(str, z10, true);
         invalidateSelf();
     }
 
@@ -193,7 +193,7 @@ public final class ed extends Drawable {
     public void onBoundsChange(Rect rect) {
         switch (this.a) {
             case 5:
-                ((ImageReceiver) this.b).setImageCoords(AndroidUtilities.dp(2.0f) + rect.left, AndroidUtilities.dp(2.0f) + rect.top, org.telegram.messenger.wh.z(2.0f, rect.left, rect.right - AndroidUtilities.dp(2.0f)), org.telegram.messenger.wh.z(2.0f, rect.top, rect.bottom - AndroidUtilities.dp(2.0f)));
+                ((ImageReceiver) this.b).setImageCoords(AndroidUtilities.dp(2.0f) + rect.left, AndroidUtilities.dp(2.0f) + rect.top, org.telegram.messenger.rk.x(2.0f, rect.left, rect.right - AndroidUtilities.dp(2.0f)), org.telegram.messenger.rk.x(2.0f, rect.top, rect.bottom - AndroidUtilities.dp(2.0f)));
                 break;
             default:
                 super.onBoundsChange(rect);
@@ -209,7 +209,7 @@ public final class ed extends Drawable {
             case 2:
                 break;
             case 3:
-                ((o6) this.c).w = i10;
+                ((n6) this.c).w = i10;
                 Paint paint = (Paint) this.b;
                 if (paint != null) {
                     paint.setAlpha(i10);
@@ -258,15 +258,15 @@ public final class ed extends Drawable {
     public ed() {
         this.a = 3;
         ah.d dVar = new ah.d(this, 5);
-        o6 o6Var = new o6(false, true, true, false);
-        this.c = o6Var;
-        o6Var.setCallback(dVar);
-        o6Var.k(0.3f, 165L, qr.h);
-        o6Var.b = 1;
-        o6Var.u(AndroidUtilities.bold());
-        o6Var.t(AndroidUtilities.dp(10.0f));
+        n6 n6Var = new n6(false, true, true, false);
+        this.c = n6Var;
+        n6Var.setCallback(dVar);
+        n6Var.k(0.3f, 165L, qr.h);
+        n6Var.b = 1;
+        n6Var.u(AndroidUtilities.bold());
+        n6Var.t(AndroidUtilities.dp(10.0f));
         Paint.Style style = Paint.Style.FILL_AND_STROKE;
-        TextPaint textPaint = o6Var.a;
+        TextPaint textPaint = n6Var.a;
         textPaint.setStyle(style);
         textPaint.setStrokeWidth(AndroidUtilities.dpf2(0.6f));
         Paint paint = new Paint(1);

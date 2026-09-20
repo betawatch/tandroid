@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Set;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class r extends h {
     public static final g6.b j = new g6.b("MediaRouterProxy", null);
@@ -46,13 +46,13 @@ public final class r extends h {
         p4.x.b();
         p4.e c10 = p4.x.c();
         c10.D = b0Var;
-        lf.i iVar = b0Var != null ? new lf.i(c10, b0Var) : null;
-        lf.i iVar2 = c10.C;
-        if (iVar2 != null) {
-            iVar2.v();
+        lf.h hVar = b0Var != null ? new lf.h(c10, b0Var) : null;
+        lf.h hVar2 = c10.C;
+        if (hVar2 != null) {
+            hVar2.v();
         }
-        c10.C = iVar;
-        if (iVar != null) {
+        c10.C = hVar;
+        if (hVar != null) {
             c10.l();
         }
     }

@@ -12,7 +12,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stats;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ns0 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -61,37 +61,37 @@ public final /* synthetic */ class ns0 implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new fs0((SessionsActivity) this.b, (org.telegram.ui.ActionBar.b2) this.c, tL_error, (TLRPC.TL_webAuthorization) this.d, 12));
                 break;
             case 10:
-                ka1 ka1Var = (ka1) this.b;
+                ma1 ma1Var = (ma1) this.b;
                 String str = (String) this.c;
-                ya1 ya1Var = (ya1) this.d;
+                ab1 ab1Var = (ab1) this.d;
                 boolean z10 = true;
                 jg.b bVar = null;
                 if (tLObject instanceof TL_stats.TL_statsGraph) {
                     try {
                         JSONObject jSONObject = new JSONObject(((TL_stats.TL_statsGraph) tLObject).json.data);
-                        la1 la1Var = ka1Var.r;
-                        int i10 = la1Var.i;
-                        if (la1Var != ka1Var.w.w) {
+                        na1 na1Var = ma1Var.r;
+                        int i10 = na1Var.i;
+                        if (na1Var != ma1Var.w.w) {
                             z10 = false;
                         }
-                        bVar = za1.e0(jSONObject, i10, z10);
+                        bVar = bb1.e0(jSONObject, i10, z10);
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
                 } else if (tLObject instanceof TL_stats.TL_statsGraphError) {
-                    Toast.makeText(ka1Var.getContext(), ((TL_stats.TL_statsGraphError) tLObject).error, 1).show();
+                    Toast.makeText(ma1Var.getContext(), ((TL_stats.TL_statsGraphError) tLObject).error, 1).show();
                 }
-                AndroidUtilities.runOnUIThread(new fs0(ka1Var, bVar, str, ya1Var, 16));
+                AndroidUtilities.runOnUIThread(new fs0(ma1Var, bVar, str, ab1Var, 16));
                 break;
             case 11:
-                AndroidUtilities.runOnUIThread(new fs0((ve1) this.b, tLObject, (String) this.c, (org.telegram.ui.ActionBar.b2) this.d, 18));
+                AndroidUtilities.runOnUIThread(new fs0((xe1) this.b, tLObject, (String) this.c, (org.telegram.ui.ActionBar.b2) this.d, 18));
                 break;
             default:
                 TwoStepVerificationActivity twoStepVerificationActivity = (TwoStepVerificationActivity) this.b;
                 byte[] bArr = (byte[]) this.c;
                 byte[] bArr2 = (byte[]) this.d;
                 if (tL_error != null) {
-                    AndroidUtilities.runOnUIThread(new x81(15, twoStepVerificationActivity, tL_error));
+                    AndroidUtilities.runOnUIThread(new w81(17, twoStepVerificationActivity, tL_error));
                     break;
                 } else {
                     Utilities.globalQueue.postRunnable(new fs0(twoStepVerificationActivity, bArr, tLObject, bArr2, 19));

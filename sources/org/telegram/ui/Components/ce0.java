@@ -1,39 +1,90 @@
 package org.telegram.ui.Components;
 
+import android.app.Dialog;
+import android.os.Bundle;
+import android.view.KeyEvent;
+import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.FrameLayout;
+import java.util.WeakHashMap;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.BuildVars;
+import org.telegram.messenger.R;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class ce0 extends be0 {
-    public final /* synthetic */ de0 b0;
+public final class ce0 extends Dialog {
+    public final FrameLayout a;
+    public final be0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ce0(de0 de0Var, LaunchActivity launchActivity) {
-        super(launchActivity);
-        this.b0 = de0Var;
+    public ce0(LaunchActivity launchActivity) {
+        super(launchActivity, R.style.TransparentDialog);
+        AndroidUtilities.enableEdgeToEdge(getWindow());
+        FrameLayout frameLayout = new FrameLayout(launchActivity);
+        this.a = frameLayout;
+        i2 i2Var = new i2(28);
+        WeakHashMap weakHashMap = r0.i0.a;
+        r0.a0.j(frameLayout, i2Var);
+        be0 be0Var = new be0(this, launchActivity);
+        this.b = be0Var;
+        frameLayout.addView(be0Var, w7.y5.e(-1, -1, 119));
     }
 
-    @Override // org.telegram.ui.Components.be0
-    public final void f(float f7) {
-        LaunchActivity launchActivity = LaunchActivity.G1;
-        if (launchActivity == null) {
+    @Override // android.app.Dialog, android.content.DialogInterface
+    public final void dismiss() {
+        LaunchActivity launchActivity;
+        if (!this.b.g() || (launchActivity = LaunchActivity.G1) == null) {
             return;
         }
-        org.telegram.ui.ActionBar.z3 z3Var = launchActivity.z0;
-        z3Var.setScaleX(AndroidUtilities.lerp(1.0f, 1.25f, f7));
-        z3Var.setScaleY(AndroidUtilities.lerp(1.0f, 1.25f, f7));
+        launchActivity.moveTaskToBack(true);
     }
 
-    @Override // org.telegram.ui.Components.be0
-    public final void h() {
-        super/*android.app.Dialog*/.dismiss();
-        LaunchActivity launchActivity = LaunchActivity.G1;
-        if (launchActivity == null) {
+    @Override // android.app.Dialog, android.view.Window.Callback
+    public final boolean dispatchKeyEvent(KeyEvent keyEvent) {
+        LaunchActivity launchActivity;
+        if (keyEvent.getKeyCode() != 4 || keyEvent.getRepeatCount() != 0) {
+            return super.dispatchKeyEvent(keyEvent);
+        }
+        if (this.b.g() && (launchActivity = LaunchActivity.G1) != null) {
+            launchActivity.moveTaskToBack(true);
+        }
+        return true;
+    }
+
+    @Override // android.app.Dialog
+    public final void onBackPressed() {
+        LaunchActivity launchActivity;
+        if (!this.b.g() || (launchActivity = LaunchActivity.G1) == null) {
             return;
         }
-        org.telegram.ui.ActionBar.z3 z3Var = launchActivity.z0;
-        z3Var.setScaleX(1.0f);
-        z3Var.setScaleY(1.0f);
+        launchActivity.moveTaskToBack(true);
+    }
+
+    @Override // android.app.Dialog
+    public final void onCreate(Bundle bundle) {
+        super.onCreate(bundle);
+        Window window = getWindow();
+        window.setWindowAnimations(R.style.DialogNoAnimation);
+        ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(-1, -1);
+        FrameLayout frameLayout = this.a;
+        setContentView(frameLayout, layoutParams);
+        WindowManager.LayoutParams attributes = window.getAttributes();
+        attributes.width = -1;
+        attributes.height = -1;
+        attributes.gravity = 119;
+        attributes.dimAmount = 0.0f;
+        int i10 = attributes.flags & (-3);
+        attributes.flags = i10;
+        attributes.softInputMode = 16;
+        if (!BuildVars.DEBUG_PRIVATE_VERSION) {
+            attributes.flags = i10 | 8192;
+            AndroidUtilities.logFlagSecure();
+        }
+        attributes.flags |= -2013198976;
+        window.setAttributes(attributes);
+        frameLayout.setSystemUiVisibility(256);
+        AndroidUtilities.setLightNavigationBar((Dialog) this, false);
     }
 }

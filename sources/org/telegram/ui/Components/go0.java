@@ -6,20 +6,20 @@ import java.util.ArrayList;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class go0 extends ts {
     public final /* synthetic */ org.telegram.ui.uy d0;
     public final /* synthetic */ org.telegram.ui.ey e0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public go0(org.telegram.ui.ey eyVar, wl0 wl0Var, Context context, int i10, int i11, org.telegram.ui.uy uyVar) {
-        super(wl0Var, context, i10, i11);
+    public go0(org.telegram.ui.ey eyVar, vl0 vl0Var, Context context, int i10, int i11, org.telegram.ui.uy uyVar) {
+        super(vl0Var, context, i10, i11);
         this.e0 = eyVar;
         this.d0 = uyVar;
     }
 
-    @Override // org.telegram.ui.Components.l61
+    @Override // org.telegram.ui.Components.k61
     public final void N(boolean z10) {
         ArrayList arrayList;
         ArrayList arrayList2;

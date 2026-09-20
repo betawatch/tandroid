@@ -3,16 +3,16 @@ package org.telegram.ui;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class ev0 extends org.telegram.ui.Components.g60 {
+public final class ev0 extends org.telegram.ui.Components.f60 {
     public final /* synthetic */ fv0 d;
 
     public ev0(fv0 fv0Var) {
         this.d = fv0Var;
     }
 
-    @Override // org.telegram.ui.Components.qo0
+    @Override // org.telegram.ui.Components.po0
     public final CharSequence d() {
         StringBuilder sb2 = new StringBuilder();
         sb2.append(LocaleController.getString("AccDescrVideoQuality", R.string.AccDescrVideoQuality));
@@ -29,17 +29,17 @@ public final class ev0 extends org.telegram.ui.Components.g60 {
         return sb2.toString();
     }
 
-    @Override // org.telegram.ui.Components.g60
+    @Override // org.telegram.ui.Components.f60
     public final int i() {
         return Math.max(0, this.d.s.Z7 - 1);
     }
 
-    @Override // org.telegram.ui.Components.g60
+    @Override // org.telegram.ui.Components.f60
     public final int j() {
         return this.d.s.Y7;
     }
 
-    @Override // org.telegram.ui.Components.g60
+    @Override // org.telegram.ui.Components.f60
     public final void k(int i10) {
         int max;
         if (this.d.s.Z7 > 0 && (max = Math.max(0, Math.min(this.d.s.Z7 - 1, i10))) != this.d.s.Y7) {

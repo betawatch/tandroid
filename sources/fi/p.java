@@ -30,27 +30,28 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.b2;
-import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Cells.j6;
+import org.telegram.ui.Cells.k6;
 import org.telegram.ui.Components.RadialProgressView;
-import org.telegram.ui.Components.e5;
-import org.telegram.ui.Components.h9;
+import org.telegram.ui.Components.d5;
+import org.telegram.ui.Components.g9;
 import org.telegram.ui.Components.qr;
+import org.telegram.ui.Components.s61;
 import org.telegram.ui.Components.t40;
-import org.telegram.ui.Components.t61;
 import org.telegram.ui.Components.u40;
-import org.telegram.ui.Components.w70;
-import org.telegram.ui.Components.w9;
-import org.telegram.ui.Components.x51;
+import org.telegram.ui.Components.v70;
+import org.telegram.ui.Components.v9;
+import org.telegram.ui.Components.w51;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.dv0;
 import org.telegram.ui.sr;
 import org.telegram.ui.zn;
-import w7.a6;
+import w7.b6;
 import w7.y5;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class p extends n2 implements t40, NotificationCenter.NotificationCenterDelegate, le.d {
     public u40 E;
@@ -63,17 +64,17 @@ public final class p extends n2 implements t40, NotificationCenter.NotificationC
     public final le.b a;
     public long b;
     public v7 c;
-    public t61 d;
+    public s61 d;
     public String e;
     public boolean f;
     public boolean h;
     public ai.f0 n;
     public n r;
     public s6 s;
-    public w9 v;
+    public v9 v;
     public AnimatorSet w;
     public RadialProgressView x;
-    public h9 y;
+    public g9 y;
 
     public p(Bundle bundle) {
         super(bundle);
@@ -82,12 +83,12 @@ public final class p extends n2 implements t40, NotificationCenter.NotificationC
         this.K = new m(this);
     }
 
-    public static boolean U(p pVar, x51 x51Var, View view) {
+    public static boolean U(p pVar, w51 w51Var, View view) {
         long j3;
         boolean canRemoveBotFromCommunity;
         boolean z10;
         boolean z11;
-        Object obj = x51Var.G;
+        Object obj = w51Var.G;
         if (!(obj instanceof TLRPC.Chat)) {
             if (obj instanceof TLRPC.User) {
                 TLRPC.User user = (TLRPC.User) obj;
@@ -110,7 +111,7 @@ public final class p extends n2 implements t40, NotificationCenter.NotificationC
         int b10 = u0.b(pVar.currentAccount, j10);
         boolean z13 = b10 == 1 || b10 == 2;
         if (z12 || z13) {
-            w70 F = w70.F(pVar.c, null, view);
+            v70 F = v70.F(pVar.c, null, view);
             F.l(R.drawable.msg_viewintopic, LocaleController.getString(z10 ? R.string.CommunityMenuViewBot : z11 ? R.string.CommunityMenuViewChannel : R.string.CommunityMenuViewGroup), new g(pVar, j10, 1), z13);
             F.m(z12, R.drawable.msg_cancel, LocaleController.getString(R.string.CommunityMenuRemoveFromCommunity), true, new l(pVar, z10, z11, j10, 0));
             F.W(pVar.d.W0(view, true));
@@ -120,10 +121,10 @@ public final class p extends n2 implements t40, NotificationCenter.NotificationC
         return false;
     }
 
-    public static void V(p pVar, x51 x51Var) {
+    public static void V(p pVar, w51 w51Var) {
         TLRPC.Chat chat;
         TLRPC.ChatPhoto chatPhoto;
-        int i10 = x51Var.d;
+        int i10 = w51Var.d;
         if (i10 == 140) {
             if (pVar.E.h() || (chatPhoto = (chat = pVar.getMessagesController().getChat(Long.valueOf(pVar.b))).photo) == null || chatPhoto.photo_big == null) {
                 return;
@@ -182,14 +183,14 @@ public final class p extends n2 implements t40, NotificationCenter.NotificationC
             return;
         }
         if (i10 == 145) {
-            e5.s(pVar, false, pVar.H, null, false, true, true, false, new j(pVar));
+            d5.s(pVar, false, pVar.H, null, false, true, true, false, new j(pVar));
             return;
         }
         if (i10 == 146) {
             u0.e(pVar.J, pVar, pVar.currentAccount, pVar.H);
             return;
         }
-        Object obj = x51Var.G;
+        Object obj = w51Var.G;
         if (obj instanceof TLRPC.Chat) {
             pVar.presentFragment(zn.R9(-((TLRPC.Chat) obj).id));
         } else if (obj instanceof TLRPC.User) {
@@ -243,13 +244,13 @@ public final class p extends n2 implements t40, NotificationCenter.NotificationC
         if (this.h == z10) {
             return;
         }
-        j6 j6Var = (j6) this.d.z1(151);
-        if (j6Var != null) {
-            j6Var.a(!z10);
+        k6 k6Var = (k6) this.d.z1(151);
+        if (k6Var != null) {
+            k6Var.a(!z10);
         }
-        j6 j6Var2 = (j6) this.d.z1(ImageReceiver.DEFAULT_CROSSFADE_DURATION);
-        if (j6Var2 != null) {
-            j6Var2.a(z10);
+        k6 k6Var2 = (k6) this.d.z1(ImageReceiver.DEFAULT_CROSSFADE_DURATION);
+        if (k6Var2 != null) {
+            k6Var2.a(z10);
         }
         this.h = z10;
         Y();
@@ -301,33 +302,33 @@ public final class p extends n2 implements t40, NotificationCenter.NotificationC
     public final View createView(Context context) {
         int i10 = 1;
         setHasOwnBackground(true);
-        hg.k0.t(false, this.actionBar);
+        hg.k0.v(false, this.actionBar);
         this.actionBar.setAllowOverlayTitle(false);
         this.actionBar.setAddToContainer(false);
         this.actionBar.setAllowOverlayTitle(true);
         int i11 = 4;
         this.actionBar.setActionBarMenuOnItemClick(new ei.t(this, i11));
         fh.c cVar = new fh.c();
-        cVar.a(getThemedColor(org.telegram.ui.ActionBar.j6.d6));
+        cVar.a(getThemedColor(j6.d6));
         this.actionBar.M(new ah.c(cVar), eh.b.p(this.resourceProvider), false);
         this.actionBar.Q0 = true;
         v7 v7Var = new v7(this, context);
         this.c = v7Var;
-        v7Var.setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.a7, false));
-        this.y = new h9(this.H);
+        v7Var.setBackgroundColor(j6.w0(null, j6.a7, false));
+        this.y = new g9(this.H);
         n nVar = new n(context);
         this.r = nVar;
         nVar.a.e(this.H, this.y);
         this.v = this.r.a;
         String name = DialogObject.getName(this.H);
         this.e = name;
-        e6 e6Var = this.resourceProvider;
+        f6 f6Var = this.resourceProvider;
         ai.f0 f0Var = new ai.f0(context, i11);
         o oVar = new o(context, 0);
         f0Var.b = oVar;
-        oVar.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.G6, e6Var));
-        oVar.setLinkTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.gc, e6Var));
-        oVar.setHintTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.H6, e6Var));
+        oVar.setTextColor(j6.v0(j6.G6, f6Var));
+        oVar.setLinkTextColor(j6.v0(j6.gc, f6Var));
+        oVar.setHintTextColor(j6.v0(j6.H6, f6Var));
         oVar.setTextSize(1, 16.0f);
         oVar.setMaxLines(ConnectionsManager.DEFAULT_DATACENTER_ID);
         oVar.setBackground(null);
@@ -342,7 +343,7 @@ public final class p extends n2 implements t40, NotificationCenter.NotificationC
         ((o) this.n.b).addTextChangedListener(new i2(this, i10));
         bi.o oVar2 = new bi.o(this, context);
         this.G = oVar2;
-        oVar2.setTextColor(getThemedColor(org.telegram.ui.ActionBar.j6.Sh));
+        oVar2.setTextColor(getThemedColor(j6.Sh));
         this.G.setText(LocaleController.getString(R.string.Save));
         this.G.setTypeface(AndroidUtilities.bold());
         this.G.setTextSize(1, 14.0f);
@@ -350,7 +351,7 @@ public final class p extends n2 implements t40, NotificationCenter.NotificationC
         this.G.setVisibility(8);
         this.G.setPadding(AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f), 0);
         this.G.setOnClickListener(new v0(this, 17));
-        a6.a(this.G);
+        b6.a(this.G);
         this.actionBar.addView(this.G, y5.d(-2, 56.0f, 85, 0.0f, 0.0f, 12.0f, 0.0f));
         s6 s6Var = new s6(this, context);
         this.s = s6Var;
@@ -362,12 +363,12 @@ public final class p extends n2 implements t40, NotificationCenter.NotificationC
         this.x.setNoProgress(false);
         this.r.addView(this.x, y5.d(64, 64.0f, 81, 0.0f, 0.0f, 0.0f, 32.0f));
         a0(false, false);
-        t61 t61Var = new t61(this, new i(this, i10), new j(this), new j(this));
-        this.d = t61Var;
-        t61Var.setClipToPadding(false);
-        t61 t61Var2 = this.d;
-        t61Var2.Y2.r = false;
-        t61Var2.q1();
+        s61 s61Var = new s61(this, new i(this, i10), new j(this), new j(this));
+        this.d = s61Var;
+        s61Var.setClipToPadding(false);
+        s61 s61Var2 = this.d;
+        s61Var2.Y2.r = false;
+        s61Var2.q1();
         this.actionBar.setBackground(null);
         this.c.addView(this.d, y5.c(-1.0f, -1));
         this.c.addView(this.actionBar, y5.e(-1, -2, 48));

@@ -12,9 +12,9 @@ import android.view.View;
 import java.util.Arrays;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class a11 extends View implements org.telegram.ui.Components.uh0 {
+public final class a11 extends View implements org.telegram.ui.Components.th0 {
     public boolean E;
     public float F;
     public float G;
@@ -143,24 +143,24 @@ public final class a11 extends View implements org.telegram.ui.Components.uh0 {
         ofFloat2.addListener(new gp0(this, 15));
     }
 
-    @Override // org.telegram.ui.Components.uh0
+    @Override // org.telegram.ui.Components.th0
     public final void a() {
         Arrays.fill(this.x, false);
         postInvalidateOnAnimation();
     }
 
-    @Override // org.telegram.ui.Components.uh0
+    @Override // org.telegram.ui.Components.th0
     public final void b(boolean z10) {
         this.x[!z10 ? 1 : 0] = true;
         postInvalidateOnAnimation();
     }
 
-    @Override // org.telegram.ui.Components.uh0
+    @Override // org.telegram.ui.Components.th0
     public final void c() {
         this.P.i5(false);
     }
 
-    @Override // org.telegram.ui.Components.uh0
+    @Override // org.telegram.ui.Components.th0
     public final void d() {
         invalidate();
     }
@@ -275,14 +275,14 @@ public final class a11 extends View implements org.telegram.ui.Components.uh0 {
                 paint3.setAlpha((int) (this.G * 255.0f));
             }
             f7 = 180.0f;
-            int A = org.telegram.messenger.wh.A((realCount - 1) * 2, getMeasuredWidth() - AndroidUtilities.dp(10.0f), realCount);
+            int z12 = org.telegram.messenger.rk.z((realCount - 1) * 2, getMeasuredWidth() - AndroidUtilities.dp(10.0f), realCount);
             int dp = AndroidUtilities.dp(4.0f);
             z11 = ((org.telegram.ui.ActionBar.n2) profileActivity).inBubbleMode;
             int i15 = dp + (!z11 ? AndroidUtilities.statusBarHeight : 0);
             int i16 = 0;
             z10 = false;
             while (i16 < realCount) {
-                int dp2 = (A * i16) + AndroidUtilities.dp((i16 * 2) + 5);
+                int dp2 = (z12 * i16) + AndroidUtilities.dp((i16 * 2) + 5);
                 int i17 = this.K;
                 RectF rectF = this.d;
                 if (i16 != i17 || Math.abs(this.J - f12) <= 1.0E-4f) {
@@ -311,7 +311,7 @@ public final class a11 extends View implements org.telegram.ui.Components.uh0 {
                                 this.O = i18 * (-1);
                             }
                         }
-                        rectF.set(dp2, i15, dp2 + A, AndroidUtilities.dp(2.0f) + i15);
+                        rectF.set(dp2, i15, dp2 + z12, AndroidUtilities.dp(2.0f) + i15);
                         paint4.setAlpha((int) (((this.N * 48.0f) + 85.0f) * this.G));
                         canvas.drawRoundRect(rectF, AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f), paint4);
                     } else {
@@ -320,7 +320,7 @@ public final class a11 extends View implements org.telegram.ui.Components.uh0 {
                     }
                     f10 = 1.0f;
                     float f15 = dp2;
-                    rectF.set(f15, i15, (A * f10) + f15, AndroidUtilities.dp(2.0f) + i15);
+                    rectF.set(f15, i15, (z12 * f10) + f15, AndroidUtilities.dp(2.0f) + i15);
                     if (i16 != this.M) {
                         this.H[i16] = 0.75f;
                     } else if (profileActivity.A0 == 3) {
@@ -341,8 +341,8 @@ public final class a11 extends View implements org.telegram.ui.Components.uh0 {
                     fArr3 = fArr;
                     float f18 = i15;
                     i10 = realCount;
-                    float f19 = dp2 + A;
-                    canvas.clipRect((A * f16) + f17, f18, f19, AndroidUtilities.dp(2.0f) + i15);
+                    float f19 = dp2 + z12;
+                    canvas.clipRect((z12 * f16) + f17, f18, f19, AndroidUtilities.dp(2.0f) + i15);
                     rectF.set(f17, f18, f19, AndroidUtilities.dp(2.0f) + i15);
                     paint4.setAlpha((int) (this.G * 85.0f));
                     canvas.drawRoundRect(rectF, AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f), paint4);
@@ -353,7 +353,7 @@ public final class a11 extends View implements org.telegram.ui.Components.uh0 {
                 i11 = 80;
                 z10 = true;
                 float f152 = dp2;
-                rectF.set(f152, i15, (A * f10) + f152, AndroidUtilities.dp(2.0f) + i15);
+                rectF.set(f152, i15, (z12 * f10) + f152, AndroidUtilities.dp(2.0f) + i15);
                 if (i16 != this.M) {
                 }
                 canvas.drawRoundRect(rectF, AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f), i16 != this.M ? paint : paint4);

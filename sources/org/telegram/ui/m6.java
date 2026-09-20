@@ -8,7 +8,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class m6 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -26,9 +26,8 @@ public final /* synthetic */ class m6 implements Utilities.Callback2 {
     @Override // org.telegram.messenger.Utilities.Callback2
     public final void run(Object obj, Object obj2) {
         int i10 = this.a;
-        int i11 = 5;
-        final int i12 = 1;
-        final int i13 = 0;
+        final int i11 = 1;
+        final int i12 = 0;
         Object obj3 = this.d;
         Object obj4 = this.c;
         Object obj5 = this.b;
@@ -65,7 +64,7 @@ public final /* synthetic */ class m6 implements Utilities.Callback2 {
                 Utilities.doCallbacks(new ai.e4(uyVar, l4, mdVar, n2Var, 10), new y(uyVar, b2Var, l4, 6), new Utilities.Callback() { // from class: org.telegram.ui.cw
                     @Override // org.telegram.messenger.Utilities.Callback
                     public final void run(Object obj6) {
-                        switch (i13) {
+                        switch (i12) {
                             case 0:
                                 Runnable runnable = (Runnable) obj6;
                                 uy uyVar2 = uyVar;
@@ -100,7 +99,7 @@ public final /* synthetic */ class m6 implements Utilities.Callback2 {
                 }, new Utilities.Callback() { // from class: org.telegram.ui.cw
                     @Override // org.telegram.messenger.Utilities.Callback
                     public final void run(Object obj6) {
-                        switch (i12) {
+                        switch (i11) {
                             case 0:
                                 Runnable runnable = (Runnable) obj6;
                                 uy uyVar2 = uyVar;
@@ -147,18 +146,18 @@ public final /* synthetic */ class m6 implements Utilities.Callback2 {
                     }
                 } else {
                     f3Var.dismiss();
-                    while (i13 < passkeys.passkeys.size()) {
-                        if (TextUtils.equals(passkeys.passkeys.get(i13).id, passkey.id)) {
-                            passkeys.passkeys.remove(i13);
-                            i13--;
+                    while (i12 < passkeys.passkeys.size()) {
+                        if (TextUtils.equals(passkeys.passkeys.get(i12).id, passkey.id)) {
+                            passkeys.passkeys.remove(i12);
+                            i12--;
                         }
-                        i13++;
+                        i12++;
                     }
                     org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
                     if (U != null) {
                         PasskeysActivity passkeysActivity = new PasskeysActivity(passkeys.passkeys);
                         U.presentFragment(passkeysActivity);
-                        AndroidUtilities.runOnUIThread(new ak0(i11, passkeysActivity, passkey), 150L);
+                        AndroidUtilities.runOnUIThread(new fj0(7, passkeysActivity, passkey), 150L);
                         break;
                     }
                 }

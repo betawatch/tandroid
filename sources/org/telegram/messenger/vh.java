@@ -4,7 +4,7 @@ import android.text.Spanned;
 import java.util.Comparator;
 import org.telegram.messenger.RichMessageLayout;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final /* synthetic */ class vh implements Comparator {
     public final /* synthetic */ int a;
@@ -21,7 +21,7 @@ public final /* synthetic */ class vh implements Comparator {
         int lambda$new$0;
         switch (this.a) {
             case 0:
-                lambda$withReplacements$0 = RichMessageLayout.RichBlock.lambda$withReplacements$0(this.b, (org.telegram.ui.Cells.w9) obj, (org.telegram.ui.Cells.w9) obj2);
+                lambda$withReplacements$0 = RichMessageLayout.RichBlock.lambda$withReplacements$0(this.b, (org.telegram.ui.Cells.x9) obj, (org.telegram.ui.Cells.x9) obj2);
                 return lambda$withReplacements$0;
             default:
                 lambda$new$0 = RichMessageLayout.Text.lambda$new$0(this.b, (RichMessageLayout.RichButtonSpan) obj, (RichMessageLayout.RichButtonSpan) obj2);

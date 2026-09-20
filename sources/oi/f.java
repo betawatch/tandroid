@@ -39,6 +39,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.concurrent.Executor;
@@ -46,24 +47,26 @@ import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import ki.c0;
 import l.b0;
 import l.l;
 import m4.a0;
 import m4.h1;
+import m4.l1;
 import m4.r;
-import n7.z0;
 import org.json.JSONObject;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
+import org.telegram.ui.Cells.f3;
 import org.telegram.ui.Components.g10;
-import org.telegram.ui.Components.q91;
-import org.telegram.ui.web.l1;
+import org.telegram.ui.Components.p91;
 import org.telegram.ui.web.m1;
+import org.telegram.ui.web.n1;
+import v7.j0;
 import y9.t0;
+import y9.z0;
 import zd.e0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class f implements n5.b {
     public static volatile f e;
@@ -83,11 +86,11 @@ public final class f implements n5.b {
         this.a = file;
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream(file)));
         hashMap.putAll(J(bufferedReader));
-        m1 m1Var = (m1) hashMap.get("content-type");
-        String str = m1Var == null ? null : (String) m1Var.b.get("boundary");
+        n1 n1Var = (n1) hashMap.get("content-type");
+        String str = n1Var == null ? null : (String) n1Var.b.get("boundary");
         if (str != null) {
             int length = str.length() + 2;
-            l1 l1Var = null;
+            m1 m1Var = null;
             while (true) {
                 String readLine = bufferedReader.readLine();
                 if (readLine == null) {
@@ -95,22 +98,22 @@ public final class f implements n5.b {
                 }
                 jArr[0] = jArr[0] + readLine.getBytes().length + 2;
                 if (readLine.length() == length && readLine.substring(2).equals(str)) {
-                    if (l1Var != null) {
-                        l1Var.d = (jArr[0] - length) - 2;
-                        arrayList.add(l1Var);
-                        m1 m1Var2 = (m1) l1Var.a.get("content-location");
-                        hashMap2.put(m1Var2 == null ? null : m1Var2.a, l1Var);
+                    if (m1Var != null) {
+                        m1Var.d = (jArr[0] - length) - 2;
+                        arrayList.add(m1Var);
+                        n1 n1Var2 = (n1) m1Var.a.get("content-location");
+                        hashMap2.put(n1Var2 == null ? null : n1Var2.a, m1Var);
                     }
-                    l1Var = new l1();
-                    l1Var.b = (File) this.a;
-                    l1Var.a.putAll(J(bufferedReader));
-                    l1Var.c = jArr[0];
+                    m1Var = new m1();
+                    m1Var.b = (File) this.a;
+                    m1Var.a.putAll(J(bufferedReader));
+                    m1Var.c = jArr[0];
                 }
             }
-            if (l1Var != null && l1Var.c != 0 && l1Var.d != 0) {
-                arrayList.add(l1Var);
-                m1 m1Var3 = (m1) l1Var.a.get("content-location");
-                hashMap2.put(m1Var3 != null ? m1Var3.a : null, l1Var);
+            if (m1Var != null && m1Var.c != 0 && m1Var.d != 0) {
+                arrayList.add(m1Var);
+                n1 n1Var3 = (n1) m1Var.a.get("content-location");
+                hashMap2.put(n1Var3 != null ? n1Var3.a : null, m1Var);
             }
         }
         bufferedReader.close();
@@ -150,25 +153,25 @@ public final class f implements n5.b {
     }
 
     public static void e(String str, String str2, HashMap hashMap) {
-        m1 m1Var = new m1();
+        n1 n1Var = new n1();
         String[] split = str2.split(";(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)");
         for (int i10 = 0; i10 < split.length; i10++) {
             String trim = split[i10].trim();
             if (!trim.isEmpty()) {
                 int indexOf = trim.indexOf(61);
                 if (i10 == 0 || indexOf < 0) {
-                    m1Var.a = trim;
+                    n1Var.a = trim;
                 } else {
                     String trim2 = trim.substring(0, indexOf).trim();
                     String trim3 = trim.substring(indexOf + 1).trim();
                     if (trim3.length() >= 2 && trim3.charAt(0) == '\"' && trim3.charAt(trim3.length() - 1) == '\"') {
                         trim3 = e2.i(1, 1, trim3);
                     }
-                    m1Var.b.put(trim2, trim3);
+                    n1Var.b.put(trim2, trim3);
                 }
             }
         }
-        hashMap.put(str.trim().toLowerCase(), m1Var);
+        hashMap.put(str.trim().toLowerCase(), n1Var);
     }
 
     public boolean A(r rVar) {
@@ -199,7 +202,7 @@ public final class f implements n5.b {
             e2.d.a("Use contains(Command) for custom command", i10 != 0);
             Iterator<E> it = m1Var.a.iterator();
             while (it.hasNext()) {
-                if (((m4.l1) it.next()).a == i10) {
+                if (((l1) it.next()).a == i10) {
                     return true;
                 }
             }
@@ -207,7 +210,7 @@ public final class f implements n5.b {
         return false;
     }
 
-    public boolean D(r rVar, m4.l1 l1Var) {
+    public boolean D(r rVar, l1 l1Var) {
         m4.e eVar;
         synchronized (this.a) {
             eVar = (m4.e) ((a0.f) this.c).get(rVar);
@@ -293,10 +296,12 @@ public final class f implements n5.b {
             dVar.i(str.substring(i10));
         }
         dVar.f(dVar.n);
-        cf.a F1 = dVar.j.F1(new z0(27, dVar.k, dVar.m));
+        List list = dVar.k;
+        LinkedHashMap linkedHashMap = dVar.m;
+        cf.a c02 = dVar.j.c0(new f3(list, linkedHashMap, false, 24));
         Iterator it = dVar.o.iterator();
         while (it.hasNext()) {
-            ((df.a) it.next()).g(F1);
+            ((df.a) it.next()).g(c02);
         }
         bf.f fVar = (bf.f) dVar.l.b;
         Iterator it2 = ((ArrayList) this.d).iterator();
@@ -368,7 +373,7 @@ public final class f implements n5.b {
         String str = bVar.b;
         String str2 = bVar.f;
         d dVar = new d(this, eVar);
-        lf.i i10 = k.i(str);
+        lf.h i10 = k.i(str);
         byte[] d = k.d(str2);
         int i11 = 0;
         if (i10 != null && d != null && k.h()) {
@@ -540,10 +545,10 @@ public final class f implements n5.b {
             str = str.concat(" pid");
         }
         if (((Integer) this.c) == null) {
-            str = t8.b.v(str, " importance");
+            str = j0.s(str, " importance");
         }
         if (((Boolean) this.d) == null) {
-            str = t8.b.v(str, " defaultProcess");
+            str = j0.s(str, " defaultProcess");
         }
         if (str.isEmpty()) {
             return new t0((String) this.a, ((Integer) this.b).intValue(), ((Integer) this.c).intValue(), ((Boolean) this.d).booleanValue());
@@ -551,26 +556,26 @@ public final class f implements n5.b {
         throw new IllegalStateException("Missing required properties:".concat(str));
     }
 
-    public y9.z0 g() {
+    public z0 g() {
         String str = ((Integer) this.a) == null ? " platform" : "";
         if (((String) this.b) == null) {
             str = str.concat(" version");
         }
         if (((String) this.c) == null) {
-            str = t8.b.v(str, " buildVersion");
+            str = j0.s(str, " buildVersion");
         }
         if (((Boolean) this.d) == null) {
-            str = t8.b.v(str, " jailbroken");
+            str = j0.s(str, " jailbroken");
         }
         if (str.isEmpty()) {
-            return new y9.z0(((Integer) this.a).intValue(), (String) this.b, (String) this.c, ((Boolean) this.d).booleanValue());
+            return new z0(((Integer) this.a).intValue(), (String) this.b, (String) this.c, ((Boolean) this.d).booleanValue());
         }
         throw new IllegalStateException("Missing required properties:".concat(str));
     }
 
     @Override // fd.a
     public Object get() {
-        return new t((Executor) ((fd.a) this.a).get(), (s5.d) ((fd.a) this.b).get(), (lf.i) ((lf.i) this.c).get(), (t5.c) ((fd.a) this.d).get(), 9);
+        return new t((Executor) ((fd.a) this.a).get(), (s5.d) ((fd.a) this.b).get(), (lf.h) ((lf.h) this.c).get(), (t5.c) ((fd.a) this.d).get(), 9);
     }
 
     public void h(String str, String[] strArr) {
@@ -675,7 +680,7 @@ public final class f implements n5.b {
             }
             AtomicBoolean atomicBoolean2 = new AtomicBoolean(true);
             m4.e eVar2 = eVar;
-            d0.U(a0Var.l, new c0(a0Var, t(eVar.a), new m3(this, dVar, atomicBoolean2, eVar2, atomicBoolean, 10)));
+            d0.U(a0Var.l, new ki.l(a0Var, t(eVar.a), new m3(this, dVar, atomicBoolean2, eVar2, atomicBoolean, 10)));
             atomicBoolean2.set(false);
             eVar = eVar2;
         }
@@ -827,7 +832,7 @@ public final class f implements n5.b {
      */
     /* JADX WARN: Code restructure failed: missing block: B:18:0x0063, code lost:
     
-        throw new java.lang.Exception(t8.b.i("Premature end of parens in ", r13));
+        throw new java.lang.Exception(v7.j0.g("Premature end of parens in ", r13));
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -838,7 +843,7 @@ public final class f implements n5.b {
             return;
         }
         if (trim.charAt(0) == '(') {
-            Matcher matcher = q91.z0.matcher(trim);
+            Matcher matcher = p91.z0.matcher(trim);
             int i11 = 0;
             while (true) {
                 if (!matcher.find()) {
@@ -995,11 +1000,11 @@ public final class f implements n5.b {
         }
         zArr[0] = false;
         String trim = str.trim();
-        Matcher matcher = q91.x0.matcher(trim);
+        Matcher matcher = p91.x0.matcher(trim);
         if (matcher.find()) {
             trim = trim.substring(matcher.group(0).length());
         } else {
-            Matcher matcher2 = q91.y0.matcher(trim);
+            Matcher matcher2 = p91.y0.matcher(trim);
             if (matcher2.find()) {
                 trim = trim.substring(matcher2.group(0).length());
                 zArr[0] = true;

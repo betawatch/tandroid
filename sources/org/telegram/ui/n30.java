@@ -12,7 +12,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LiteMode;
 import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class n30 extends kh.b {
     public final OvershootInterpolator d;
@@ -66,17 +66,17 @@ public final class n30 extends kh.b {
         int i10;
         float f13;
         RadialProgressView radialProgressView3;
-        org.telegram.ui.Components.ba baVar;
-        org.telegram.ui.Components.ba baVar2;
+        org.telegram.ui.Components.aa aaVar;
+        org.telegram.ui.Components.aa aaVar2;
         RectF rectF;
         float f14;
         int dp;
         float f15;
         float f16;
         RadialProgressView radialProgressView4;
-        org.telegram.ui.Components.ba baVar3;
-        org.telegram.ui.Components.ba baVar4;
-        org.telegram.ui.Components.ba baVar5;
+        org.telegram.ui.Components.aa aaVar3;
+        org.telegram.ui.Components.aa aaVar4;
+        org.telegram.ui.Components.aa aaVar5;
         float f17;
         Paint paint3;
         float f18;
@@ -95,8 +95,8 @@ public final class n30 extends kh.b {
         org.telegram.ui.Components.voip.v2 v2Var = i60Var.r;
         org.telegram.ui.Components.voip.v2 v2Var2 = i60Var.v;
         Matrix matrix3 = i60Var.S0;
-        org.telegram.ui.Components.ba baVar6 = i60Var.N0;
-        org.telegram.ui.Components.ba baVar7 = i60Var.M0;
+        org.telegram.ui.Components.aa aaVar6 = i60Var.N0;
+        org.telegram.ui.Components.aa aaVar7 = i60Var.M0;
         RectF rectF2 = i60Var.v0;
         Paint paint5 = i60Var.T0;
         RadialProgressView radialProgressView5 = i60Var.e0;
@@ -119,11 +119,11 @@ public final class n30 extends kh.b {
         if (h60Var4 != null) {
             h60Var4.b(0, measuredWidth, getMeasuredHeight(), j10, i60Var.O0);
         }
-        baVar7.a = AndroidUtilities.dp(62.0f) * 0.46296296f;
+        aaVar7.a = AndroidUtilities.dp(62.0f) * 0.46296296f;
         RectF rectF3 = rectF2;
-        baVar7.b = com.google.android.gms.internal.vision.e2.B(AndroidUtilities.dp(20.0f), 0.6f, AndroidUtilities.dp(62.0f), 0.48076922f);
-        baVar6.a = AndroidUtilities.dp(65.0f) * 0.46296296f;
-        baVar6.b = com.google.android.gms.internal.vision.e2.B(AndroidUtilities.dp(20.0f), 0.6f, AndroidUtilities.dp(65.0f), 0.48076922f);
+        aaVar7.b = com.google.android.gms.internal.vision.e2.B(AndroidUtilities.dp(20.0f), 0.6f, AndroidUtilities.dp(62.0f), 0.48076922f);
+        aaVar6.a = AndroidUtilities.dp(65.0f) * 0.46296296f;
+        aaVar6.b = com.google.android.gms.internal.vision.e2.B(AndroidUtilities.dp(20.0f), 0.6f, AndroidUtilities.dp(65.0f), 0.48076922f);
         float f20 = i60Var.P0;
         float f21 = i60Var.O0;
         if (f20 != f21) {
@@ -151,8 +151,8 @@ public final class n30 extends kh.b {
                 if (z10) {
                 }
                 float interpolation = (this.d.getInterpolation(i60Var.P1) * f7) + 0.4f;
-                baVar6.e(i60Var.O0, 1.0f);
-                baVar7.e(i60Var.O0, 1.0f);
+                aaVar6.e(i60Var.O0, 1.0f);
+                aaVar7.e(i60Var.O0, 1.0f);
                 if (i60Var.M1 != null) {
                 }
                 canvas2 = canvas;
@@ -318,8 +318,8 @@ public final class n30 extends kh.b {
                 z11 = z10;
             }
             float interpolation2 = (this.d.getInterpolation(i60Var.P1) * f7) + 0.4f;
-            baVar6.e(i60Var.O0, 1.0f);
-            baVar7.e(i60Var.O0, 1.0f);
+            aaVar6.e(i60Var.O0, 1.0f);
+            aaVar7.e(i60Var.O0, 1.0f);
             if (i60Var.M1 != null || i60Var.N1 == null || i60Var.r1()) {
                 canvas2 = canvas;
                 paint2 = paint6;
@@ -368,12 +368,12 @@ public final class n30 extends kh.b {
                         canvas.save();
                         float B = com.google.android.gms.internal.vision.e2.B(0.807f, i60Var.O0, 0.878f, interpolation2);
                         canvas.scale(B, B, measuredWidth2, y3);
-                        baVar6.a(measuredWidth2, y3, canvas, paint3);
+                        aaVar6.a(measuredWidth2, y3, canvas, paint3);
                         canvas.restore();
                         canvas.save();
                         float B2 = com.google.android.gms.internal.vision.e2.B(0.704f, i60Var.O0, 0.926f, interpolation2);
                         canvas.scale(B2, B2, measuredWidth2, y3);
-                        baVar7.a(measuredWidth2, y3, canvas, paint3);
+                        aaVar7.a(measuredWidth2, y3, canvas, paint3);
                         canvas.restore();
                     }
                     paint3.setAlpha(255);
@@ -447,7 +447,7 @@ public final class n30 extends kh.b {
                     float f39 = ((f16 - dp3) + dp3) * f37;
                     float f40 = measuredWidth3 + f38;
                     f13 = interpolation2;
-                    baVar = baVar5;
+                    aaVar = aaVar5;
                     rectF = rectF3;
                     rectF.set(measuredWidth3 - f38, y10 - f39, f40, y10 + f39);
                     float dp4 = (f16 - AndroidUtilities.dp(4.0f)) + AndroidUtilities.dp(4.0f);
@@ -469,8 +469,8 @@ public final class n30 extends kh.b {
                 } else if (i10 != 1 || i60Var.N1 == null) {
                     f13 = interpolation2;
                     radialProgressView3 = radialProgressView2;
-                    baVar = baVar6;
-                    baVar2 = baVar7;
+                    aaVar = aaVar6;
+                    aaVar2 = aaVar7;
                     rectF = rectF3;
                 } else {
                     if (!i60Var.r1()) {
@@ -491,8 +491,8 @@ public final class n30 extends kh.b {
                     }
                     if (i60Var.r1()) {
                         radialProgressView4 = radialProgressView2;
-                        baVar3 = baVar6;
-                        baVar4 = baVar7;
+                        aaVar3 = aaVar6;
+                        aaVar4 = aaVar7;
                     } else {
                         int w02 = org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Lg, false);
                         int i23 = org.telegram.ui.ActionBar.j6.Kg;
@@ -501,8 +501,8 @@ public final class n30 extends kh.b {
                         paint2.setColor(offsetColor2);
                         paint2.setShader(null);
                         int i24 = org.telegram.ui.ActionBar.j6.kg;
-                        baVar4 = baVar7;
-                        baVar3 = baVar6;
+                        aaVar4 = aaVar7;
+                        aaVar3 = aaVar6;
                         v2Var.a(AndroidUtilities.getOffsetColor(org.telegram.ui.ActionBar.j6.w0(null, i24, false), org.telegram.ui.ActionBar.j6.w0(null, i23, false), i60Var.U1, 1.0f), offsetColor2);
                         v2Var2.a(AndroidUtilities.getOffsetColor(org.telegram.ui.ActionBar.j6.w0(null, i24, false), org.telegram.ui.ActionBar.j6.w0(null, i23, false), i60Var.U1, 1.0f), offsetColor2);
                     }
@@ -528,24 +528,24 @@ public final class n30 extends kh.b {
                     }
                     canvas2.restore();
                     if (!i60Var.r1()) {
-                        baVar2 = baVar4;
-                        baVar5 = baVar3;
+                        aaVar2 = aaVar4;
+                        aaVar5 = aaVar3;
                     } else if (i60Var.V0 > 0.0f) {
                         canvas2.save();
                         float x13 = com.google.android.gms.internal.vision.e2.x(i60Var.O0, 0.807f, interpolation2, 0.878f);
                         canvas2.scale(x13, x13, measuredWidth32, y102);
-                        baVar5 = baVar3;
-                        baVar5.a(measuredWidth32, y102, canvas2, paint2);
+                        aaVar5 = aaVar3;
+                        aaVar5.a(measuredWidth32, y102, canvas2, paint2);
                         canvas2.restore();
                         canvas2.save();
                         float x14 = com.google.android.gms.internal.vision.e2.x(i60Var.O0, 0.704f, interpolation2, 0.926f);
                         canvas2.scale(x14, x14, measuredWidth32, y102);
-                        baVar2 = baVar4;
-                        baVar2.a(measuredWidth32, y102, canvas2, paint2);
+                        aaVar2 = aaVar4;
+                        aaVar2.a(measuredWidth32, y102, canvas2, paint2);
                         canvas2.restore();
                     } else {
-                        baVar2 = baVar4;
-                        baVar5 = baVar3;
+                        aaVar2 = aaVar4;
+                        aaVar5 = aaVar3;
                     }
                     if (i60.F3) {
                         if (i10 == 0) {
@@ -566,7 +566,7 @@ public final class n30 extends kh.b {
                     float f392 = ((f16 - dp32) + dp32) * f372;
                     float f402 = measuredWidth32 + f382;
                     f13 = interpolation2;
-                    baVar = baVar5;
+                    aaVar = aaVar5;
                     rectF = rectF3;
                     rectF.set(measuredWidth32 - f382, y102 - f392, f402, y102 + f392);
                     float dp42 = (f16 - AndroidUtilities.dp(4.0f)) + AndroidUtilities.dp(4.0f);
@@ -603,10 +603,10 @@ public final class n30 extends kh.b {
                 }
                 i10++;
                 rectF3 = rectF;
-                baVar7 = baVar2;
+                aaVar7 = aaVar2;
                 radialProgressView2 = radialProgressView3;
                 interpolation2 = f13;
-                baVar6 = baVar;
+                aaVar6 = aaVar;
             }
             super.dispatchDraw(canvas);
             if (i60Var.a2.r == null) {
@@ -616,8 +616,8 @@ public final class n30 extends kh.b {
         if (z10) {
         }
         float interpolation22 = (this.d.getInterpolation(i60Var.P1) * f7) + 0.4f;
-        baVar6.e(i60Var.O0, 1.0f);
-        baVar7.e(i60Var.O0, 1.0f);
+        aaVar6.e(i60Var.O0, 1.0f);
+        aaVar7.e(i60Var.O0, 1.0f);
         if (i60Var.M1 != null) {
         }
         canvas2 = canvas;

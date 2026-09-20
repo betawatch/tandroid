@@ -12,9 +12,9 @@ import e0.i0;
 import e2.v;
 import java.util.ArrayList;
 import java.util.Arrays;
-import n7.z0;
+import org.telegram.ui.Cells.f3;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class j extends i {
     public i0 n;
@@ -65,10 +65,10 @@ public final class j extends i {
 
     /* JADX WARN: Type inference failed for: r1v59, types: [byte[], java.io.Serializable] */
     @Override // x3.i
-    public final boolean c(v vVar, long j3, z0 z0Var) {
+    public final boolean c(v vVar, long j3, f3 f3Var) {
         i0 i0Var;
         if (this.n != null) {
-            ((s) z0Var.b).getClass();
+            ((s) f3Var.b).getClass();
             return false;
         }
         z zVar = this.q;
@@ -353,7 +353,7 @@ public final class j extends i {
         rVar.J = zVar3.b;
         rVar.t = arrayList;
         rVar.k = r10;
-        z0Var.b = new s(rVar);
+        f3Var.b = new s(rVar);
         return true;
     }
 

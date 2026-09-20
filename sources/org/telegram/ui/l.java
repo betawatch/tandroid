@@ -11,10 +11,10 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class l extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
-    public org.telegram.ui.Components.wl0 a;
+    public org.telegram.ui.Components.vl0 a;
     public k b;
     public boolean c;
     public TLRPC.GlobalPrivacySettings d;
@@ -67,16 +67,16 @@ public final class l extends org.telegram.ui.ActionBar.n2 implements Notificatio
         FrameLayout frameLayout = new FrameLayout(context);
         this.fragmentView = frameLayout;
         frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.a7, false));
-        org.telegram.ui.Components.wl0 wl0Var = new org.telegram.ui.Components.wl0(context, null);
-        this.a = wl0Var;
-        wl0Var.q1();
+        org.telegram.ui.Components.vl0 vl0Var = new org.telegram.ui.Components.vl0(context, null);
+        this.a = vl0Var;
+        vl0Var.q1();
         this.a.setLayoutManager(new gg.b0(1, false, 2));
         this.a.setVerticalScrollBarEnabled(false);
         this.a.setLayoutAnimation(null);
-        org.telegram.ui.Components.wl0 wl0Var2 = this.a;
+        org.telegram.ui.Components.vl0 vl0Var2 = this.a;
         k kVar = new k(this);
         this.b = kVar;
-        wl0Var2.setAdapter(kVar);
+        vl0Var2.setAdapter(kVar);
         s4.j jVar = new s4.j();
         jVar.n(350L);
         jVar.o(org.telegram.ui.Components.qr.h);
@@ -119,11 +119,11 @@ public final class l extends org.telegram.ui.ActionBar.n2 implements Notificatio
                     if (S < arrayList.size()) {
                         int i13 = ((j) arrayList.get(S)).d;
                         if (i13 == 1) {
-                            ((org.telegram.ui.Cells.w8) childAt).setChecked(this.d.keep_archived_unmuted);
+                            ((org.telegram.ui.Cells.x8) childAt).setChecked(this.d.keep_archived_unmuted);
                         } else if (i13 == 4) {
-                            ((org.telegram.ui.Cells.w8) childAt).setChecked(this.d.keep_archived_folders);
+                            ((org.telegram.ui.Cells.x8) childAt).setChecked(this.d.keep_archived_folders);
                         } else if (i13 == 7) {
-                            ((org.telegram.ui.Cells.w8) childAt).setChecked(this.d.archive_and_mute_new_noncontact_peers);
+                            ((org.telegram.ui.Cells.x8) childAt).setChecked(this.d.archive_and_mute_new_noncontact_peers);
                         }
                     }
                 }
@@ -133,7 +133,7 @@ public final class l extends org.telegram.ui.ActionBar.n2 implements Notificatio
     }
 
     @Override // org.telegram.ui.ActionBar.n2
-    public final org.telegram.ui.Components.wl0 getListViewForSimpleGlass() {
+    public final org.telegram.ui.Components.vl0 getListViewForSimpleGlass() {
         return this.a;
     }
 

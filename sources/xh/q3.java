@@ -4,21 +4,21 @@ import android.content.Context;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class q3 extends org.telegram.ui.ActionBar.f1 {
     public final int L;
     public long M;
     public o3 N;
 
-    public q3(Context context, int i10, e6 e6Var) {
-        super(0, context, e6Var, false, false);
+    public q3(Context context, int i10, f6 f6Var) {
+        super(0, context, f6Var, false, false);
         this.L = i10;
         setPadding(AndroidUtilities.dp(18.0f), 0, AndroidUtilities.dp(18.0f), 0);
-        c(j6.v0(j6.E8, e6Var), j6.v0(j6.F8, e6Var));
+        c(j6.v0(j6.E8, f6Var), j6.v0(j6.F8, f6Var));
         setIconColor(-1);
         this.c.setTranslationX(AndroidUtilities.dp(2.0f));
         this.c.setScaleX(1.2f);

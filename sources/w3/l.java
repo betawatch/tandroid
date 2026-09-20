@@ -26,7 +26,7 @@ import java.util.List;
 import java.util.Locale;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class l implements c3.o, b0 {
     public k[] A;
@@ -344,8 +344,8 @@ public final class l implements c3.o, b0 {
                             p0 p0Var = aVar == null ? null : new p0(aVar);
                             b2.r rVar = new b2.r();
                             rVar.k = p0Var;
-                            k0.r(rVar, Z1);
-                            this.z.e1();
+                            k0.s(rVar, Z1);
+                            this.z.f1();
                             this.z.X1(new t(-9223372036854775807L));
                         }
                         z11 = false;
@@ -909,7 +909,7 @@ public final class l implements c3.o, b0 {
                     z10 = false;
                 }
                 p0 p0Var6 = p0Var3;
-                ArrayList j10 = d.j(cVar, wVar, -9223372036854775807L, null, z10, z11, new s9.b(21));
+                ArrayList j10 = d.j(cVar, wVar, -9223372036854775807L, null, z10, z11, new s0.b(27));
                 if (this.x) {
                     boolean z12 = arrayList5.size() == j10.size();
                     Locale locale = Locale.US;
@@ -970,7 +970,7 @@ public final class l implements c3.o, b0 {
                         ArrayList arrayList6 = this.i;
                         o.m(i20, p0Var4, a2, p0Var7, arrayList6.isEmpty() ? null : new p0(arrayList6), p0Var2, p0Var6);
                         a2.p = r0.n(str);
-                        k0.r(a2, Z1);
+                        k0.s(a2, Z1);
                         if (i20 == 2 && i15 == -1) {
                             i15 = arrayList4.size();
                         }
@@ -1025,7 +1025,7 @@ public final class l implements c3.o, b0 {
                     }
                 }
                 this.B = jArr;
-                this.z.e1();
+                this.z.f1();
                 this.z.X1(this);
                 arrayDeque.clear();
                 if (this.v) {

@@ -1,26 +1,19 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import org.telegram.messenger.Utilities;
-
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class m61 implements Utilities.Callback5, Utilities.Callback5Return {
-    public final /* synthetic */ o61 a;
+public final class m61 extends s61 {
+    public final /* synthetic */ n61 f3;
 
-    @Override // org.telegram.messenger.Utilities.Callback5Return
-    public Object run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        ((Integer) obj3).getClass();
-        ((Float) obj4).getClass();
-        ((Float) obj5).getClass();
-        return Boolean.valueOf(this.a.X((x51) obj, (View) obj2));
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public m61(n61 n61Var, n61 n61Var2, d dVar, l61 l61Var, l61 l61Var2) {
+        super(n61Var2, dVar, l61Var, l61Var2);
+        this.f3 = n61Var;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback5
-    public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        ((Integer) obj3).getClass();
-        ((Float) obj4).getClass();
-        ((Float) obj5).getClass();
-        this.a.W((x51) obj, (View) obj2);
+    @Override // org.telegram.ui.Components.vl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        this.f3.c = -1;
     }
 }

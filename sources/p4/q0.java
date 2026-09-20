@@ -3,7 +3,7 @@ package p4;
 import android.os.Bundle;
 import org.telegram.ui.Cells.c1;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class q0 extends q implements n0 {
     public final String a;
@@ -105,10 +105,10 @@ public final class q0 extends q implements n0 {
         m0 m0Var = this.f;
         if (m0Var != null) {
             int i11 = this.g;
-            Bundle f7 = c1.f(i10, "unselectReason");
+            Bundle g10 = c1.g(i10, "unselectReason");
             int i12 = m0Var.d;
             m0Var.d = i12 + 1;
-            m0Var.b(6, i12, i11, null, f7);
+            m0Var.b(6, i12, i11, null, g10);
         }
     }
 

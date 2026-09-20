@@ -6,7 +6,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ly0 implements MessagesStorage.BooleanCallback, rs {
     public final /* synthetic */ ProfileActivity a;
@@ -27,7 +27,7 @@ public final /* synthetic */ class ly0 implements MessagesStorage.BooleanCallbac
         ProfileActivity profileActivity = this.a;
         if (profileActivity.getParentLayout() != null) {
             List fragmentStack = profileActivity.getParentLayout().getFragmentStack();
-            if (((fragmentStack == null || fragmentStack.size() < 2) ? null : (org.telegram.ui.ActionBar.n2) t8.b.h(2, fragmentStack)) instanceof zn) {
+            if (((fragmentStack == null || fragmentStack.size() < 2) ? null : (org.telegram.ui.ActionBar.n2) org.telegram.ui.Cells.c1.i(2, fragmentStack)) instanceof zn) {
                 ((ActionBarLayout) profileActivity.getParentLayout()).Y(fragmentStack.size() - 2);
             }
         }

@@ -15,7 +15,7 @@ import org.telegram.ui.Components.o20;
 import org.telegram.ui.Components.qr;
 import org.telegram.ui.Stories.ProfileStoriesView;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class i6 {
     public final int a;
@@ -23,9 +23,9 @@ public final class i6 {
     public int c;
     public boolean d;
     public float e;
-    public final org.telegram.ui.Components.e6 f;
-    public final org.telegram.ui.Components.e6 g;
-    public final org.telegram.ui.Components.e6 h;
+    public final org.telegram.ui.Components.d6 f;
+    public final org.telegram.ui.Components.d6 g;
+    public final org.telegram.ui.Components.d6 h;
     public float i;
     public float j;
     public float k;
@@ -36,16 +36,16 @@ public final class i6 {
     public i6(ProfileStoriesView profileStoriesView, TL_stories.StoryItem storyItem) {
         ArrayList<TLRPC.PhotoSize> arrayList;
         TLRPC.Document document;
-        org.telegram.ui.Components.h9 h9Var = new org.telegram.ui.Components.h9((org.telegram.ui.ActionBar.e6) null);
+        org.telegram.ui.Components.g9 g9Var = new org.telegram.ui.Components.g9((org.telegram.ui.ActionBar.f6) null);
         ImageReceiver imageReceiver = new ImageReceiver();
         this.b = imageReceiver;
         this.c = 0;
         this.d = false;
         this.e = 1.0f;
         qr qrVar = qr.h;
-        this.f = new org.telegram.ui.Components.e6(profileStoriesView, 420L, qrVar);
-        this.g = new org.telegram.ui.Components.e6(profileStoriesView, 420L, qrVar);
-        this.h = new org.telegram.ui.Components.e6(profileStoriesView, 420L, qrVar);
+        this.f = new org.telegram.ui.Components.d6(profileStoriesView, 420L, qrVar);
+        this.g = new org.telegram.ui.Components.d6(profileStoriesView, 420L, qrVar);
+        this.h = new org.telegram.ui.Components.d6(profileStoriesView, 420L, qrVar);
         this.m = new RectF();
         this.n = new RectF();
         this.a = storyItem.id;
@@ -59,8 +59,8 @@ public final class i6 {
         TLRPC.MessageMedia messageMedia = storyItem.media;
         if (messageMedia instanceof TLRPC.TL_messageMediaVideoStream) {
             TLObject userOrChat = MessagesController.getInstance(imageReceiver.getCurrentAccount()).getUserOrChat(storyItem.dialogId);
-            h9Var.p(userOrChat);
-            imageReceiver.setForUserOrChat(userOrChat, h9Var);
+            g9Var.p(userOrChat);
+            imageReceiver.setForUserOrChat(userOrChat, g9Var);
         } else {
             if (messageMedia != null && (document = messageMedia.document) != null) {
                 imageReceiver.setImage(ImageLocation.getForDocument(FileLoader.getClosestPhotoSizeWithSize(document.thumbs, AndroidUtilities.dp(Math.max(25, 25)), false, null, true), storyItem.media.document), "25_25", null, null, ImageLoader.createStripedBitmap(storyItem.media.document.thumbs), 0L, null, storyItem, 0);

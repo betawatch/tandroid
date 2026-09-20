@@ -3,7 +3,7 @@ package org.telegram.ui;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class js implements Runnable {
     public final /* synthetic */ int a;
@@ -28,8 +28,8 @@ public final /* synthetic */ class js implements Runnable {
                         user.phone = gf.b.d(str, false);
                     }
                     ssVar.b.setText(user.first_name);
-                    org.telegram.ui.Cells.h3 h3Var = ssVar.b.b;
-                    h3Var.setSelection(h3Var.length());
+                    org.telegram.ui.Cells.i3 i3Var = ssVar.b.b;
+                    i3Var.setSelection(i3Var.length());
                     ssVar.c.setText(user.last_name);
                 }
                 TLRPC.UserFull userFull = ssVar.getMessagesController().getUserFull(ssVar.H);

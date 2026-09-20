@@ -18,7 +18,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class d implements ServiceConnection {
     public final /* synthetic */ int a;
@@ -35,14 +35,14 @@ public final class d implements ServiceConnection {
     /* JADX WARN: Type inference failed for: r1v4 */
     @Override // android.content.ServiceConnection
     public final void onServiceConnected(ComponentName componentName, IBinder iBinder) {
-        o0.a aVar;
+        m5.e eVar;
         ?? r12 = 0;
-        vf.e eVar = null;
+        vf.e eVar2 = null;
         switch (this.a) {
             case 0:
-                e eVar2 = (e) this.b;
-                eVar2.b.b("ServiceConnectionImpl.onServiceConnected(%s)", componentName);
-                eVar2.a().post(new b(this, iBinder));
+                e eVar3 = (e) this.b;
+                eVar3.b.b("ServiceConnectionImpl.onServiceConnected(%s)", componentName);
+                eVar3.a().post(new b(this, iBinder));
                 break;
             case 1:
                 com.google.android.gms.internal.play_billing.u.g("BillingClientTesting", "Billing Override Service connected.");
@@ -60,7 +60,7 @@ public final class d implements ServiceConnection {
                 of.b bVar = d0Var.h;
                 bVar.getClass();
                 try {
-                    bVar.f0(c10, (p3) bVar.b);
+                    bVar.j0(c10, (p3) bVar.b);
                     break;
                 } catch (Throwable th2) {
                     com.google.android.gms.internal.play_billing.u.i("BillingLogger", "Unable to log.", th2);
@@ -73,17 +73,17 @@ public final class d implements ServiceConnection {
                     if (queryLocalInterface2 == null || !(queryLocalInterface2 instanceof vf.e)) {
                         vf.c cVar = new vf.c();
                         cVar.a = iBinder;
-                        eVar = cVar;
+                        eVar2 = cVar;
                     } else {
-                        eVar = (vf.e) queryLocalInterface2;
+                        eVar2 = (vf.e) queryLocalInterface2;
                     }
                 }
-                o0.a aVar2 = new o0.a(19, eVar, componentName);
+                m5.e eVar4 = new m5.e(24, eVar2, componentName);
                 if (((nf.d) ((WeakReference) this.b).get()) != null) {
-                    nf.f.b = aVar2;
-                    if (MessagesController.getInstance(UserConfig.selectedAccount).isWebBrowserUseCustomTabs() && (aVar = nf.f.b) != null) {
+                    nf.f.b = eVar4;
+                    if (MessagesController.getInstance(UserConfig.selectedAccount).isWebBrowserUseCustomTabs() && (eVar = nf.f.b) != null) {
                         try {
-                            ((vf.c) ((vf.e) aVar.b)).H0();
+                            ((vf.c) ((vf.e) eVar.b)).H0();
                             break;
                         } catch (RemoteException unused) {
                             return;

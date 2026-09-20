@@ -13,9 +13,9 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class f2 extends FrameLayout implements org.telegram.ui.Cells.p9, d3 {
+public final class f2 extends FrameLayout implements org.telegram.ui.Cells.q9, d3 {
     public final u70 a;
     public final f4 b;
     public a3 c;
@@ -47,18 +47,18 @@ public final class f2 extends FrameLayout implements org.telegram.ui.Cells.p9, d
             a4Var.setOnScrollChangeListener(new View.OnScrollChangeListener() { // from class: org.telegram.ui.d2
                 @Override // android.view.View.OnScrollChangeListener
                 public final void onScrollChange(View view, int i10, int i11, int i12, int i13) {
-                    org.telegram.ui.Cells.q9 q9Var = ((h4) u70.this).O0;
-                    if (q9Var == null || !q9Var.y()) {
+                    org.telegram.ui.Cells.r9 r9Var = ((h4) u70.this).O0;
+                    if (r9Var == null || !r9Var.y()) {
                         return;
                     }
-                    q9Var.x();
+                    r9Var.x();
                 }
             });
         }
         setWillNotDraw(false);
     }
 
-    @Override // org.telegram.ui.Cells.p9
+    @Override // org.telegram.ui.Cells.q9
     public final void fillTextLayoutBlocks(ArrayList arrayList) {
         a3 a3Var = this.c;
         if (a3Var != null) {
@@ -97,10 +97,10 @@ public final class f2 extends FrameLayout implements org.telegram.ui.Cells.p9, d
     }
 
     public /* bridge */ /* synthetic */ int getMinWidth() {
-        return org.telegram.messenger.wh.a(this);
+        return org.telegram.messenger.rk.a(this);
     }
 
-    @Override // android.view.View, org.telegram.ui.Cells.y9
+    @Override // android.view.View, org.telegram.ui.Cells.z9
     public final void invalidate() {
         this.e.invalidate();
         super.invalidate();

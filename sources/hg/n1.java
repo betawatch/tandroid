@@ -18,11 +18,11 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.dg1;
+import org.telegram.ui.fg1;
 import org.telegram.ui.oy;
 import org.telegram.ui.uy;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n1 implements org.telegram.ui.ActionBar.a2, oy {
     public final /* synthetic */ int a;
@@ -52,7 +52,7 @@ public final /* synthetic */ class n1 implements org.telegram.ui.ActionBar.a2, o
     }
 
     @Override // org.telegram.ui.ActionBar.a2
-    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+    public void k(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
         r1 r1Var = (r1) this.b;
         e4 e4Var = (e4) this.c;
         a2 a2Var = (a2) this.d;
@@ -78,7 +78,7 @@ public final /* synthetic */ class n1 implements org.telegram.ui.ActionBar.a2, o
     }
 
     @Override // org.telegram.ui.oy
-    public boolean u(uy uyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, dg1 dg1Var) {
+    public boolean u(uy uyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, fg1 fg1Var) {
         TLRPC.TL_chatAdminRights tL_chatAdminRights;
         final LaunchActivity launchActivity = (LaunchActivity) this.b;
         final TLRPC.User user = (TLRPC.User) this.c;
@@ -98,7 +98,7 @@ public final /* synthetic */ class n1 implements org.telegram.ui.ActionBar.a2, o
             alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
             alertDialog$Builder.k(LocaleController.getString(R.string.AddBot), new org.telegram.ui.ActionBar.a2() { // from class: org.telegram.ui.s90
                 @Override // org.telegram.ui.ActionBar.a2
-                public final void f(org.telegram.ui.ActionBar.b2 b2Var2, int i13) {
+                public final void k(org.telegram.ui.ActionBar.b2 b2Var2, int i13) {
                     Pattern pattern2 = LaunchActivity.B1;
                     Bundle i14 = a4.a.i("scrollToTopOnResume", true);
                     long j10 = -j3;

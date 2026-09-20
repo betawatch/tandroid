@@ -2,12 +2,12 @@ package org.telegram.ui.Cells;
 
 import android.view.MotionEvent;
 import org.telegram.messenger.video.OldVideoPlayerRewinder;
-import org.telegram.ui.Components.l71;
+import org.telegram.ui.Components.k71;
+import org.telegram.ui.Components.ng0;
 import org.telegram.ui.Components.og0;
-import org.telegram.ui.Components.pg0;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class h1 extends OldVideoPlayerRewinder {
     public final /* synthetic */ int a;
@@ -30,7 +30,7 @@ public final class h1 extends OldVideoPlayerRewinder {
                 PhotoViewer photoViewer = (PhotoViewer) this.b;
                 PhotoViewer.k(photoViewer, MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0));
                 photoViewer.z1.f(false);
-                pg0.p0.Q.f(false);
+                og0.p0.Q.f(false);
                 break;
         }
     }
@@ -40,9 +40,9 @@ public final class h1 extends OldVideoPlayerRewinder {
         switch (this.a) {
             case 0:
                 u1 u1Var = (u1) this.b;
-                l71 l71Var = u1Var.Gd;
-                l71Var.n = new n2.e(this, 3);
-                l71Var.e(false);
+                k71 k71Var = u1Var.Gd;
+                k71Var.n = new n2.e(this, 3);
+                k71Var.e(false);
                 u1Var.Gd.d(!z10);
                 u1Var.Gd.f(true);
                 u1Var.invalidate();
@@ -53,7 +53,7 @@ public final class h1 extends OldVideoPlayerRewinder {
                 photoViewer.z1.d(!z10);
                 photoViewer.z1.f(true);
                 photoViewer.e0.invalidate();
-                pg0.v(z10);
+                og0.v(z10);
                 break;
         }
     }
@@ -77,17 +77,17 @@ public final class h1 extends OldVideoPlayerRewinder {
                     photoViewer.q3.h(f7, false);
                     photoViewer.r3.invalidate();
                 }
-                pg0 pg0Var = pg0.p0;
-                pg0Var.Q.g(0L);
+                og0 og0Var = og0.p0;
+                og0Var.Q.g(0L);
                 if (z10) {
-                    pg0Var.Z = f7;
-                    ai.n4 n4Var = pg0Var.b0;
+                    og0Var.Z = f7;
+                    ai.n4 n4Var = og0Var.b0;
                     if (n4Var != null) {
                         n4Var.invalidate();
                     }
-                    og0 og0Var = pg0Var.h;
-                    if (og0Var != null) {
-                        og0Var.invalidate();
+                    ng0 ng0Var = og0Var.h;
+                    if (ng0Var != null) {
+                        ng0Var.invalidate();
                         break;
                     }
                 }

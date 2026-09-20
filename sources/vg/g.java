@@ -13,14 +13,14 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.h9;
-import org.telegram.ui.Components.w9;
+import org.telegram.ui.Components.g9;
+import org.telegram.ui.Components.v9;
 import org.telegram.ui.vy0;
 import w7.y5;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class g extends c {
     public final ImageView r;
@@ -28,8 +28,8 @@ public final class g extends c {
     public TLRPC.Chat v;
     public boolean w;
 
-    public g(Context context, e6 e6Var) {
-        super(context, e6Var);
+    public g(Context context, f6 f6Var) {
+        super(context, f6Var);
         this.d.setTypeface(AndroidUtilities.bold());
         ImageView imageView = new ImageView(context);
         this.r = imageView;
@@ -53,12 +53,12 @@ public final class g extends c {
         String string;
         this.w = z10;
         this.v = chat;
-        h9 h9Var = this.b;
-        h9Var.q(chat);
+        g9 g9Var = this.b;
+        g9Var.q(chat);
         int dp = AndroidUtilities.dp(20.0f);
-        w9 w9Var = this.c;
-        w9Var.setRoundRadius(dp);
-        w9Var.e(chat, h9Var);
+        v9 v9Var = this.c;
+        v9Var.setRoundRadius(dp);
+        v9Var.e(chat, g9Var);
         String str = chat.title;
         a6 a6Var = this.d;
         a6Var.k(Emoji.replaceEmoji(str, a6Var.getPaint().getFontMetricsInt(), false));

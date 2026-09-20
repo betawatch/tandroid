@@ -2,7 +2,7 @@ package lf;
 
 import java.io.EOFException;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class f {
     public final String a;
@@ -13,15 +13,15 @@ public final class f {
     public final boolean f;
     public final int g;
 
-    public f(i iVar) {
+    public f(h hVar) {
         byte b10;
         byte b11;
-        mf.a aVar = (mf.a) iVar.b;
+        mf.a aVar = (mf.a) hVar.b;
         long j3 = aVar.b;
-        a4.m mVar = (a4.m) iVar.d;
-        j jVar = (j) iVar.c;
-        int i10 = jVar.a;
-        int i11 = jVar.a;
+        a4.m mVar = (a4.m) hVar.d;
+        i iVar = (i) hVar.c;
+        int i10 = iVar.a;
+        int i11 = iVar.a;
         byte b12 = 2;
         if (i10 == 2) {
             mVar.getClass();
@@ -50,15 +50,15 @@ public final class f {
         }
         byte b13 = 8;
         if (i11 == 2) {
-            this.c = ((mVar.y0() & 255) << 16) | ((mVar.y0() & 255) << 8) | (mVar.y0() & 255);
+            this.c = ((mVar.x0() & 255) << 16) | ((mVar.x0() & 255) << 8) | (mVar.x0() & 255);
         } else if (i11 == 3) {
             this.c = mVar.A0();
         } else {
             this.c = mVar.B0();
         }
         if (i11 > 2) {
-            mVar.y0();
-            byte y02 = mVar.y0();
+            mVar.x0();
+            byte x02 = mVar.x0();
             byte b14 = 64;
             if (i11 == 3) {
                 b13 = 128;
@@ -70,10 +70,10 @@ public final class f {
                 b10 = 64;
                 b11 = 1;
             }
-            boolean z10 = (b13 & y02) != 0;
+            boolean z10 = (b13 & x02) != 0;
             this.e = z10;
-            this.d = (b12 & y02) != 0;
-            boolean z11 = (y02 & b14) != 0;
+            this.d = (b12 & x02) != 0;
+            boolean z11 = (x02 & b14) != 0;
             this.f = z11;
             if (i11 == 3) {
                 if (z10) {
@@ -81,23 +81,23 @@ public final class f {
                     this.c -= 4;
                 }
                 if (z11) {
-                    mVar.y0();
+                    mVar.x0();
                     this.c--;
                 }
-                if ((y02 & b10) != 0) {
-                    mVar.y0();
+                if ((x02 & b10) != 0) {
+                    mVar.x0();
                     this.c--;
                 }
             } else {
-                if ((y02 & b10) != 0) {
-                    mVar.y0();
+                if ((x02 & b10) != 0) {
+                    mVar.x0();
                     this.c--;
                 }
                 if (z11) {
-                    mVar.y0();
+                    mVar.x0();
                     this.c--;
                 }
-                if ((y02 & b11) != 0) {
+                if ((x02 & b11) != 0) {
                     this.g = mVar.B0();
                     this.c -= 4;
                 }

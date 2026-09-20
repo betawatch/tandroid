@@ -6,7 +6,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.voip.VoIPService;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e01 implements Runnable {
     public final /* synthetic */ int a;
@@ -56,7 +56,7 @@ public final /* synthetic */ class e01 implements Runnable {
                         xcVar = org.telegram.ui.Components.xc.a0(LaunchActivity.U());
                     }
                     if (xcVar != null) {
-                        org.telegram.ui.Components.qc M = xcVar.M(LocaleController.getString(R.string.ReportChatSent), LocaleController.getString(R.string.Reported2), R.raw.msg_antispam);
+                        org.telegram.ui.Components.pc M = xcVar.M(LocaleController.getString(R.string.ReportChatSent), LocaleController.getString(R.string.Reported2), R.raw.msg_antispam);
                         M.j = 5000;
                         M.j();
                         break;
@@ -64,7 +64,7 @@ public final /* synthetic */ class e01 implements Runnable {
                 }
                 break;
             case 8:
-                ((l41) obj).invalidate();
+                ((m41) obj).invalidate();
                 break;
             case 9:
                 SaveToGallerySettingsActivity saveToGallerySettingsActivity = (SaveToGallerySettingsActivity) obj;
@@ -73,12 +73,12 @@ public final /* synthetic */ class e01 implements Runnable {
                 saveToGallerySettingsActivity.Z();
                 break;
             case 10:
-                s41 s41Var = (s41) obj;
-                s41Var.dismiss();
-                nf.f.s(s41Var.getContext(), LocaleController.getString(R.string.PromoteUrl));
+                v41 v41Var = (v41) obj;
+                v41Var.dismiss();
+                nf.f.s(v41Var.getContext(), LocaleController.getString(R.string.PromoteUrl));
                 break;
             case 11:
-                SecretMediaViewer secretMediaViewer = (SecretMediaViewer) ((org.telegram.ui.Components.al0) obj).c;
+                SecretMediaViewer secretMediaViewer = (SecretMediaViewer) ((org.telegram.ui.Components.zk0) obj).c;
                 Runnable runnable = secretMediaViewer.o0;
                 if (runnable != null) {
                     runnable.run();
@@ -87,67 +87,67 @@ public final /* synthetic */ class e01 implements Runnable {
                 }
                 break;
             case 12:
-                i51 i51Var = ((h51) obj).a;
-                i51Var.Q = true;
-                i51Var.N.invalidate();
+                l51 l51Var = ((k51) obj).a;
+                l51Var.Q = true;
+                l51Var.N.invalidate();
                 break;
             case 13:
                 ((NotificationCenter) obj).runDelayedNotifications();
                 break;
             case 14:
-                AndroidUtilities.updateViewShow(((v61) obj).c, true);
+                AndroidUtilities.updateViewShow(((y61) obj).c, true);
                 break;
             case 15:
-                org.telegram.ui.Components.l61 l61Var = ((q71) obj).i0;
-                if (l61Var != null) {
-                    l61Var.N(true);
+                org.telegram.ui.Components.k61 k61Var = ((t71) obj).i0;
+                if (k61Var != null) {
+                    k61Var.N(true);
                     break;
                 }
                 break;
             case 16:
-                ((j71) obj).a();
+                ((m71) obj).a();
                 break;
             case 17:
                 hg.f.a(((SessionsActivity) obj).currentAccount).b();
                 break;
             case 18:
-                ((ff1) obj).J.r.l();
+                ((hf1) obj).J.r.l();
                 break;
             case 19:
-                ((nf1) obj).b.C0();
+                ((pf1) obj).b.C0();
                 break;
             case 20:
                 ((VoIPFeedbackActivity) obj).finish();
                 break;
             case 21:
-                ((hi1) obj).a.H();
-                break;
-            case 22:
                 ((ii1) obj).a.H();
                 break;
+            case 22:
+                ((ji1) obj).a.H();
+                break;
             case 23:
-                si1 si1Var = ((gi1) obj).b;
-                si1Var.L0.unlock();
+                ti1 ti1Var = ((hi1) obj).b;
+                ti1Var.L0.unlock();
                 org.telegram.ui.Components.voip.m2.k().getClass();
                 if (VoIPService.getSharedInstance() != null) {
                     VoIPService.getSharedInstance().swapSinks();
                 }
-                si1Var.Y.setCornerRadius(-1.0f);
-                si1Var.c0.d.release();
-                si1Var.d0.d.release();
-                si1Var.b0.release();
-                si1Var.l();
-                si1Var.u0.d();
+                ti1Var.Y.setCornerRadius(-1.0f);
+                ti1Var.c0.d.release();
+                ti1Var.d0.d.release();
+                ti1Var.b0.release();
+                ti1Var.l();
+                ti1Var.u0.d();
                 org.telegram.ui.Components.voip.m2.T = false;
-                si1Var.E0 = false;
-                si1.n1 = null;
+                ti1Var.E0 = false;
+                ti1.n1 = null;
                 break;
             case 24:
-                qi1 qi1Var = (qi1) obj;
-                qi1Var.getClass();
+                ri1 ri1Var = (ri1) obj;
+                ri1Var.getClass();
                 if (VoIPService.getSharedState() != null) {
                     VoIPService.getSharedState().acceptIncomingCall();
-                    if (qi1Var.a.n0 && VoIPService.getSharedInstance() != null) {
+                    if (ri1Var.a.n0 && VoIPService.getSharedInstance() != null) {
                         VoIPService.getSharedInstance().requestVideoCall(false);
                         break;
                     }

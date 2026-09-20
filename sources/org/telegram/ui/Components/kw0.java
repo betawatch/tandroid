@@ -1,62 +1,21 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.PointF;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageReceiver;
-
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public class kw0 extends s4.d0 {
-    public final qr r;
-    public int s;
-    public float t;
+public final class kw0 {
+    public float a;
+    public float b;
+    public float c;
+    public float d;
+    public float e;
+    public float f;
+    public float g;
+    public float h;
+    public float i;
+    public int j;
+    public final /* synthetic */ lw0 k;
 
-    public kw0(Context context) {
-        super(context);
-        this.r = qr.f;
-        this.t = 1.0f;
-    }
-
-    @Override // s4.d0, s4.y0
-    public final void g(View view, s4.x0 x0Var) {
-        int j3 = j(o(), view);
-        int k10 = k(p(), view);
-        int m10 = m((int) Math.sqrt((k10 * k10) + (j3 * j3)));
-        if (m10 > 0) {
-            x0Var.b(-j3, -k10, m10, this.r);
-        }
-        AndroidUtilities.runOnUIThread(new xq0(this, 8), Math.max(0, m10));
-    }
-
-    @Override // s4.d0
-    public final int k(int i10, View view) {
-        return super.k(i10, view) - this.s;
-    }
-
-    @Override // s4.d0
-    public final int m(int i10) {
-        return Math.round(Math.min(super.m(i10), 500) * this.t);
-    }
-
-    @Override // s4.d0
-    public final int n(int i10) {
-        return Math.round(Math.min(super.n(i10), ImageReceiver.DEFAULT_CROSSFADE_DURATION) * this.t);
-    }
-
-    @Override // s4.d0
-    public final void q(s4.x0 x0Var) {
-        PointF a2 = a(this.a);
-        if (a2 == null || (a2.x == 0.0f && a2.y == 0.0f)) {
-            x0Var.d = this.a;
-            h();
-            return;
-        }
-        s4.y0.b(a2);
-        this.k = a2;
-        this.o = (int) (a2.x * 10000.0f);
-        this.p = (int) (a2.y * 10000.0f);
-        x0Var.b((int) (this.o * 1.2f), (int) (this.p * 1.2f), (int) (n(10000) * 1.2f), this.r);
+    public kw0(lw0 lw0Var) {
+        this.k = lw0Var;
     }
 }

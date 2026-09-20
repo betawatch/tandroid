@@ -9,7 +9,7 @@ import android.text.TextPaint;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class s00 extends View {
     public int E;
@@ -44,7 +44,7 @@ public final class s00 extends View {
         }
         ValueAnimator ofFloat = ValueAnimator.ofFloat(this.G, z10 ? 1.0f : 0.0f);
         this.H = ofFloat;
-        ofFloat.addUpdateListener(new k6(this, 24));
+        ofFloat.addUpdateListener(new j6(this, 24));
         this.H.setDuration(300L);
         this.H.start();
     }

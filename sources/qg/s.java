@@ -4,41 +4,41 @@ import android.content.DialogInterface;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.au0;
-import yh.s6;
+import yh.t6;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class s implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a = 1;
     public final /* synthetic */ int b;
     public final /* synthetic */ NotificationCenter.NotificationCenterDelegate c;
 
-    public /* synthetic */ s(int i10, s6 s6Var) {
+    public /* synthetic */ s(int i10, t6 t6Var) {
         this.b = i10;
-        this.c = s6Var;
+        this.c = t6Var;
     }
 
     @Override // android.content.DialogInterface.OnDismissListener
     public final void onDismiss(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                m0 m0Var = (m0) this.c;
-                PhotoViewer photoViewer = ((au0) m0Var).o2;
+                n0 n0Var = (n0) this.c;
+                PhotoViewer photoViewer = ((au0) n0Var).o2;
                 if (photoViewer.F2 != null) {
                     photoViewer.H2 = false;
                     photoViewer.u0();
                     photoViewer.F2.C();
                 }
-                m0Var.B0(this.b);
+                n0Var.B0(this.b);
                 break;
             default:
-                NotificationCenter.getInstance(this.b).removeObserver((s6) this.c, NotificationCenter.starSubscriptionsLoaded);
+                NotificationCenter.getInstance(this.b).removeObserver((t6) this.c, NotificationCenter.starSubscriptionsLoaded);
                 break;
         }
     }
 
-    public /* synthetic */ s(m0 m0Var, int i10) {
-        this.c = m0Var;
+    public /* synthetic */ s(n0 n0Var, int i10) {
+        this.c = n0Var;
         this.b = i10;
     }
 }

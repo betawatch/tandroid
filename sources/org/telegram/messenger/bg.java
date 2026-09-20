@@ -4,7 +4,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final /* synthetic */ class bg implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -37,7 +37,7 @@ public final /* synthetic */ class bg implements Runnable {
                 ((MessagesStorage) this.f).lambda$updateUnreadReactionsCountInternal$261(this.c, this.b, (String) this.h, this.e, this.d, (String) this.n, (String) this.r, (String) this.s);
                 break;
             default:
-                yh.t5 t5Var = (yh.t5) this.f;
+                yh.u5 u5Var = (yh.u5) this.f;
                 TLObject tLObject = (TLObject) this.h;
                 Runnable runnable = (Runnable) this.n;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) this.r;
@@ -49,16 +49,16 @@ public final /* synthetic */ class bg implements Runnable {
                 if (!(tLObject instanceof TLRPC.Updates)) {
                     if (tL_error != null && FileRefController.isFileRefError(tL_error.text) && !z10) {
                         TLRPC.TL_messages_getScheduledMessages tL_messages_getScheduledMessages = new TLRPC.TL_messages_getScheduledMessages();
-                        tL_messages_getScheduledMessages.peer = MessagesController.getInstance(t5Var.a).getInputPeer(j3);
+                        tL_messages_getScheduledMessages.peer = MessagesController.getInstance(u5Var.a).getInputPeer(j3);
                         tL_messages_getScheduledMessages.id.add(Integer.valueOf(i10));
-                        ConnectionsManager.getInstance(t5Var.a).sendRequest(tL_messages_getScheduledMessages, new ja(t5Var, messageObject, j10, runnable, 8));
+                        ConnectionsManager.getInstance(u5Var.a).sendRequest(tL_messages_getScheduledMessages, new ja(u5Var, messageObject, j10, runnable, 8));
                         break;
                     } else {
                         runnable.run();
                         break;
                     }
                 } else {
-                    Utilities.stageQueue.postRunnable(new yh.a5(t5Var, tLObject, 5));
+                    Utilities.stageQueue.postRunnable(new yh.a5(u5Var, tLObject, 5));
                     runnable.run();
                     break;
                 }
@@ -66,8 +66,8 @@ public final /* synthetic */ class bg implements Runnable {
         }
     }
 
-    public /* synthetic */ bg(yh.t5 t5Var, TLObject tLObject, Runnable runnable, TLRPC.TL_error tL_error, boolean z10, long j3, int i10, MessageObject messageObject, long j10) {
-        this.f = t5Var;
+    public /* synthetic */ bg(yh.u5 u5Var, TLObject tLObject, Runnable runnable, TLRPC.TL_error tL_error, boolean z10, long j3, int i10, MessageObject messageObject, long j10) {
+        this.f = u5Var;
         this.h = tLObject;
         this.n = runnable;
         this.r = tL_error;

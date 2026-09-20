@@ -47,7 +47,7 @@ import org.telegram.messenger.video.Mp4Movie;
 import org.webrtc.EglBase;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class u50 implements Runnable {
     public DispatchQueue B0;
@@ -59,7 +59,7 @@ public final class u50 implements Runnable {
     public int G;
     public boolean G0;
     public boolean H;
-    public final /* synthetic */ b60 H0;
+    public final /* synthetic */ a60 H0;
     public MediaCodec.BufferInfo I;
     public MediaCodec.BufferInfo J;
     public MP4Builder K;
@@ -121,8 +121,8 @@ public final class u50 implements Runnable {
     public final ArrayList A0 = new ArrayList();
     public final t50 E0 = new t50(this);
 
-    public u50(b60 b60Var) {
-        this.H0 = b60Var;
+    public u50(a60 a60Var) {
+        this.H0 = a60Var;
     }
 
     public static void a(u50 u50Var, boolean z10) {
@@ -215,9 +215,9 @@ public final class u50 implements Runnable {
                 mp4Movie.setSize(u50Var.d, u50Var.e);
                 MP4Builder createMovie = new MP4Builder().createMovie(mp4Movie, u50Var.H0.P, false);
                 u50Var.K = createMovie;
-                b60 b60Var = u50Var.H0;
+                a60 a60Var = u50Var.H0;
                 boolean deviceIsHigh = SharedConfig.deviceIsHigh();
-                b60Var.T0 = deviceIsHigh;
+                a60Var.T0 = deviceIsHigh;
                 createMovie.setAllowSyncFiles(deviceIsHigh);
             }
             AndroidUtilities.runOnUIThread(new bi.f(25, u50Var, z10));
@@ -267,18 +267,18 @@ public final class u50 implements Runnable {
                 u50Var.x0 = null;
             }
             u50Var.x0 = new b50(u50Var.d, u50Var.e);
-            b60 b60Var2 = u50Var.H0;
-            Size size = b60Var2.l0[0];
-            String str = (SharedConfig.deviceIsLow() || !b60.l() || (size != null && ((float) Math.max(size.getHeight(), size.getWidth())) * 0.7f < ((float) MessagesController.getInstance(b60Var2.d).roundVideoSize))) ? "#extension GL_OES_EGL_image_external : require\nprecision highp float;\nvarying vec2 vTextureCoord;\nuniform float alpha;\nuniform vec2 preview;\nuniform vec2 resolution;\nuniform samplerExternalOES sTexture;\nvoid main() {\n   vec4 textColor = texture2D(sTexture, vTextureCoord);\n   gl_FragColor = vec4(textColor.rgb * alpha, alpha);\n}\n" : "#extension GL_OES_EGL_image_external : require\nprecision highp float;\nvarying vec2 vTextureCoord;\nuniform vec2 resolution;\nuniform vec2 preview;\nuniform float alpha;\nuniform samplerExternalOES sTexture;\nvoid main() {\n   vec2 c_textureSize = preview;\n   vec2 c_onePixel = (1.0 / c_textureSize);\n   vec2 uv = vTextureCoord;\n   vec2 pixel = uv * c_textureSize + 0.5;\n   vec2 frac = fract(pixel);\n   pixel = (floor(pixel) / c_textureSize) - vec2(c_onePixel);\n   vec4 tl = texture2D(sTexture, pixel + vec2(0.0         , 0.0));\n   vec4 tr = texture2D(sTexture, pixel + vec2(c_onePixel.x, 0.0));\n   vec4 bl = texture2D(sTexture, pixel + vec2(0.0         , c_onePixel.y));\n   vec4 br = texture2D(sTexture, pixel + vec2(c_onePixel.x, c_onePixel.y));\n   vec4 x1 = mix(tl, tr, frac.x);\n   vec4 x2 = mix(bl, br, frac.x);\n   gl_FragColor = mix(x1, x2, frac.y) * alpha;\n}\n";
-            int k10 = b60.k(u50Var.H0, 35633, "uniform mat4 uMVPMatrix;\nuniform mat4 uSTMatrix;\nattribute vec4 aPosition;\nattribute vec4 aTextureCoord;\nvarying vec2 vTextureCoord;\nvoid main() {\n   gl_Position = uMVPMatrix * aPosition;\n   vTextureCoord = (uSTMatrix * aTextureCoord).xy;\n}\n");
-            int k11 = b60.k(u50Var.H0, 35632, str);
-            if (k10 == 0 || k11 == 0) {
+            a60 a60Var2 = u50Var.H0;
+            Size size = a60Var2.l0[0];
+            String str = (SharedConfig.deviceIsLow() || !a60.k() || (size != null && ((float) Math.max(size.getHeight(), size.getWidth())) * 0.7f < ((float) MessagesController.getInstance(a60Var2.d).roundVideoSize))) ? "#extension GL_OES_EGL_image_external : require\nprecision highp float;\nvarying vec2 vTextureCoord;\nuniform float alpha;\nuniform vec2 preview;\nuniform vec2 resolution;\nuniform samplerExternalOES sTexture;\nvoid main() {\n   vec4 textColor = texture2D(sTexture, vTextureCoord);\n   gl_FragColor = vec4(textColor.rgb * alpha, alpha);\n}\n" : "#extension GL_OES_EGL_image_external : require\nprecision highp float;\nvarying vec2 vTextureCoord;\nuniform vec2 resolution;\nuniform vec2 preview;\nuniform float alpha;\nuniform samplerExternalOES sTexture;\nvoid main() {\n   vec2 c_textureSize = preview;\n   vec2 c_onePixel = (1.0 / c_textureSize);\n   vec2 uv = vTextureCoord;\n   vec2 pixel = uv * c_textureSize + 0.5;\n   vec2 frac = fract(pixel);\n   pixel = (floor(pixel) / c_textureSize) - vec2(c_onePixel);\n   vec4 tl = texture2D(sTexture, pixel + vec2(0.0         , 0.0));\n   vec4 tr = texture2D(sTexture, pixel + vec2(c_onePixel.x, 0.0));\n   vec4 bl = texture2D(sTexture, pixel + vec2(0.0         , c_onePixel.y));\n   vec4 br = texture2D(sTexture, pixel + vec2(c_onePixel.x, c_onePixel.y));\n   vec4 x1 = mix(tl, tr, frac.x);\n   vec4 x2 = mix(bl, br, frac.x);\n   gl_FragColor = mix(x1, x2, frac.y) * alpha;\n}\n";
+            int j10 = a60.j(u50Var.H0, 35633, "uniform mat4 uMVPMatrix;\nuniform mat4 uSTMatrix;\nattribute vec4 aPosition;\nattribute vec4 aTextureCoord;\nvarying vec2 vTextureCoord;\nvoid main() {\n   gl_Position = uMVPMatrix * aPosition;\n   vTextureCoord = (uSTMatrix * aTextureCoord).xy;\n}\n");
+            int j11 = a60.j(u50Var.H0, 35632, str);
+            if (j10 == 0 || j11 == 0) {
                 return;
             }
             int glCreateProgram = GLES20.glCreateProgram();
             u50Var.m0 = glCreateProgram;
-            GLES20.glAttachShader(glCreateProgram, k10);
-            GLES20.glAttachShader(u50Var.m0, k11);
+            GLES20.glAttachShader(glCreateProgram, j10);
+            GLES20.glAttachShader(u50Var.m0, j11);
             GLES20.glLinkProgram(u50Var.m0);
             int[] iArr2 = new int[1];
             GLES20.glGetProgramiv(u50Var.m0, 35714, iArr2, 0);
@@ -309,7 +309,7 @@ public final class u50 implements Runnable {
         } else {
             if (!u50Var.G0) {
                 u50Var.G0 = true;
-                AndroidUtilities.runOnUIThread(new uw(11, u50Var, p50Var));
+                AndroidUtilities.runOnUIThread(new bv(13, u50Var, p50Var));
             }
             z10 = false;
         }
@@ -402,7 +402,7 @@ public final class u50 implements Runnable {
                 u50Var.G0 = true;
                 AndroidUtilities.runOnUIThread(new wm(u50Var, i10, p50Var, 7));
             }
-            AndroidUtilities.runOnUIThread(new q50(u50Var, 3));
+            AndroidUtilities.runOnUIThread(new q50(u50Var, 2));
         }
         EGL14.eglDestroySurface(u50Var.s, u50Var.y);
         u50Var.y = EGL14.EGL_NO_SURFACE;
@@ -429,12 +429,12 @@ public final class u50 implements Runnable {
             b50Var.b();
             u50Var.x0 = null;
         }
-        AndroidUtilities.runOnUIThread(new q50(u50Var, 4));
+        AndroidUtilities.runOnUIThread(new q50(u50Var, 3));
     }
 
     public static void g(boolean z10) {
         AudioManager audioManager = (AudioManager) ApplicationLoader.applicationContext.getSystemService(MediaStreamTrack.AUDIO_TRACK_KIND);
-        if (SharedConfig.recordViaSco && !me0.f("android.permission.BLUETOOTH_CONNECT")) {
+        if (SharedConfig.recordViaSco && !le0.f("android.permission.BLUETOOTH_CONNECT")) {
             SharedConfig.recordViaSco = false;
             SharedConfig.saveConfig();
         }
@@ -482,16 +482,16 @@ public final class u50 implements Runnable {
     }
 
     public final void c(i50 i50Var, long j3, boolean z10) {
-        b60 b60Var = this.H0;
-        int i10 = b60Var.d;
+        a60 a60Var = this.H0;
+        int i10 = a60Var.d;
         if (!this.h) {
-            FileLoader.getInstance(i10).checkUploadNewDataAvailable(i50Var.toString(), b60Var.P, j3, z10 ? i50Var.length() : 0L);
+            FileLoader.getInstance(i10).checkUploadNewDataAvailable(i50Var.toString(), a60Var.P, j3, z10 ? i50Var.length() : 0L);
             return;
         }
-        FileLoader.getInstance(i10).uploadFile(i50Var.toString(), b60Var.P, false, 1L, 33554432, false);
+        FileLoader.getInstance(i10).uploadFile(i50Var.toString(), a60Var.P, false, 1L, 33554432, false);
         this.h = false;
         if (z10) {
-            FileLoader.getInstance(i10).checkUploadNewDataAvailable(i50Var.toString(), b60Var.P, j3, z10 ? i50Var.length() : 0L);
+            FileLoader.getInstance(i10).checkUploadNewDataAvailable(i50Var.toString(), a60Var.P, j3, z10 ? i50Var.length() : 0L);
         }
     }
 
@@ -697,19 +697,19 @@ public final class u50 implements Runnable {
     }
 
     public final void h(File file) {
-        u71 u71Var = new u71();
-        b60 b60Var = this.H0;
-        b60Var.R = u71Var;
-        u71Var.J = new k2.u(this, 13);
-        u71Var.V(b60Var.o0);
-        b60Var.R.D(Uri.fromFile(file), "other");
-        b60Var.R.C();
-        b60Var.R.O(true);
-        b60Var.s();
+        t71 t71Var = new t71();
+        a60 a60Var = this.H0;
+        a60Var.R = t71Var;
+        t71Var.J = new k2.u(this, 13);
+        t71Var.V(a60Var.o0);
+        a60Var.R.D(Uri.fromFile(file), "other");
+        a60Var.R.C();
+        a60Var.R.O(true);
+        a60Var.r();
         AnimatorSet animatorSet = new AnimatorSet();
-        LinearLayout linearLayout = b60Var.U0;
+        LinearLayout linearLayout = a60Var.U0;
         Property property = View.ALPHA;
-        animatorSet.playTogether(ObjectAnimator.ofFloat(linearLayout, (Property<LinearLayout, Float>) property, 0.0f), ObjectAnimator.ofInt(b60Var.h, s6.b, 0), ObjectAnimator.ofFloat(b60Var.E, (Property<ImageView, Float>) property, 1.0f));
+        animatorSet.playTogether(ObjectAnimator.ofFloat(linearLayout, (Property<LinearLayout, Float>) property, 0.0f), ObjectAnimator.ofInt(a60Var.h, r6.b, 0), ObjectAnimator.ofFloat(a60Var.E, (Property<ImageView, Float>) property, 1.0f));
         animatorSet.setDuration(180L);
         animatorSet.setInterpolator(new DecelerateInterpolator());
         animatorSet.start();
@@ -735,7 +735,7 @@ public final class u50 implements Runnable {
 
     public final void i(int i10, p50 p50Var) {
         this.T.sendMessage(this.T.obtainMessage(1, i10, 0, p50Var));
-        AndroidUtilities.runOnUIThread(new q50(this, 5));
+        AndroidUtilities.runOnUIThread(new sh(8));
     }
 
     @Override // java.lang.Runnable

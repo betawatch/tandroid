@@ -22,12 +22,12 @@ import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
-import org.telegram.ui.wk0;
+import org.telegram.ui.ja0;
 import org.webrtc.Logging;
 import org.webrtc.ThreadUtils;
 import org.webrtc.audio.JavaAudioDeviceModule;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public class WebRtcAudioRecord {
     private static final int AUDIO_RECORD_START = 0;
@@ -62,7 +62,7 @@ public class WebRtcAudioRecord {
     private AudioDeviceInfo preferredDevice;
     private final JavaAudioDeviceModule.AudioRecordStateCallback stateCallback;
 
-    /* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+    /* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
     public class AudioRecordThread extends Thread {
         private volatile boolean keepAlive;
 
@@ -272,7 +272,7 @@ public class WebRtcAudioRecord {
         Iterator<AudioRecordingConfiguration> it = list.iterator();
         Logging.d(TAG, "AudioRecordingConfigurations: ");
         while (it.hasNext()) {
-            AudioRecordingConfiguration d = wk0.d(it.next());
+            AudioRecordingConfiguration d = ja0.d(it.next());
             StringBuilder sb2 = new StringBuilder("  client audio source=");
             sb2.append(WebRtcAudioUtils.audioSourceToString(d.getClientAudioSource()));
             sb2.append(", client session id=");
@@ -461,7 +461,7 @@ public class WebRtcAudioRecord {
         assertTrue(!list.isEmpty());
         Iterator<AudioRecordingConfiguration> it = list.iterator();
         while (it.hasNext()) {
-            AudioRecordingConfiguration d = wk0.d(it.next());
+            AudioRecordingConfiguration d = ja0.d(it.next());
             AudioDeviceInfo audioDevice = d.getAudioDevice();
             if (audioDevice != null && d.getClientAudioSource() == i10 && d.getClientAudioSessionId() == i11 && d.getClientFormat().getEncoding() == audioFormat.getEncoding() && d.getClientFormat().getSampleRate() == audioFormat.getSampleRate() && d.getClientFormat().getChannelMask() == audioFormat.getChannelMask() && d.getClientFormat().getChannelIndexMask() == audioFormat.getChannelIndexMask() && d.getFormat().getEncoding() != 0 && d.getFormat().getSampleRate() > 0 && (d.getFormat().getChannelMask() != 0 || d.getFormat().getChannelIndexMask() != 0)) {
                 if (checkDeviceMatch(audioDevice, audioDeviceInfo)) {

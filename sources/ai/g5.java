@@ -3,10 +3,10 @@ package ai;
 import android.content.DialogInterface;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.fg0;
-import org.telegram.ui.m31;
+import org.telegram.ui.gg0;
+import org.telegram.ui.n31;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class g5 implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
@@ -76,9 +76,9 @@ public final /* synthetic */ class g5 implements DialogInterface.OnDismissListen
                 break;
             case 10:
                 rg.k1 k1Var = (rg.k1) this.b;
-                fg0 fg0Var = k1Var.r0;
-                if (fg0Var != null) {
-                    fg0Var.setDialogVisible(false);
+                gg0 gg0Var = k1Var.r0;
+                if (gg0Var != null) {
+                    gg0Var.setDialogVisible(false);
                 }
                 k1Var.q0.setPaused(false);
                 break;
@@ -86,13 +86,13 @@ public final /* synthetic */ class g5 implements DialogInterface.OnDismissListen
                 ((wh.n) this.b).s = null;
                 break;
             case 12:
-                ((m31) this.b).run();
+                ((n31) this.b).run();
                 break;
             case 13:
                 AndroidUtilities.hideKeyboard((EditTextBoldCursor) this.b);
                 break;
             default:
-                ((uf.b) this.b).run();
+                ((u2.j0) this.b).run();
                 break;
         }
     }

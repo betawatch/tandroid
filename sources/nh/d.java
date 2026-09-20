@@ -11,21 +11,21 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.ActionBar.z5;
 import w7.y5;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class d extends FrameLayout implements z5 {
-    public final e6 a;
+    public final f6 a;
     public final ImageView b;
     public final TextView c;
 
-    public d(Context context, e6 e6Var) {
+    public d(Context context, f6 f6Var) {
         super(context);
-        this.a = e6Var;
+        this.a = f6Var;
         ImageView imageView = new ImageView(context);
         this.b = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
@@ -45,13 +45,13 @@ public final class d extends FrameLayout implements z5 {
     @Override // org.telegram.ui.ActionBar.z5
     public final void e() {
         int i10 = j6.Wk;
-        e6 e6Var = this.a;
+        f6 f6Var = this.a;
         int i11 = (int) 153.0f;
-        this.c.setTextColor(i0.a.k(j6.v0(i10, e6Var), i11));
-        PorterDuffColorFilter porterDuffColorFilter = new PorterDuffColorFilter(i0.a.k(j6.v0(i10, e6Var), i11), PorterDuff.Mode.MULTIPLY);
+        this.c.setTextColor(i0.a.k(j6.v0(i10, f6Var), i11));
+        PorterDuffColorFilter porterDuffColorFilter = new PorterDuffColorFilter(i0.a.k(j6.v0(i10, f6Var), i11), PorterDuff.Mode.MULTIPLY);
         ImageView imageView = this.b;
         imageView.setColorFilter(porterDuffColorFilter);
-        imageView.setBackground(j6.f0(i0.a.k(j6.v0(i10, e6Var), (int) 25.5f), 1, -1));
+        imageView.setBackground(j6.f0(i0.a.k(j6.v0(i10, f6Var), (int) 25.5f), 1, -1));
     }
 
     public /* bridge */ /* synthetic */ int[] getColorKeys() {

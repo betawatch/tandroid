@@ -16,10 +16,10 @@ import java.lang.reflect.Method;
 import java.util.WeakHashMap;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
-import v7.v7;
-import w7.q7;
+import v7.w7;
+import w7.r7;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public abstract class d2 implements l.c0 {
     public static final Method P;
@@ -93,9 +93,9 @@ public abstract class d2 implements l.c0 {
         x xVar = new x(context, attributeSet, i10, 0);
         TypedArray obtainStyledAttributes2 = context.obtainStyledAttributes(attributeSet, f.a.s, i10, 0);
         if (obtainStyledAttributes2.hasValue(2)) {
-            q7.a(xVar, obtainStyledAttributes2.getBoolean(2, false));
+            r7.a(xVar, obtainStyledAttributes2.getBoolean(2, false));
         }
-        xVar.setBackgroundDrawable((!obtainStyledAttributes2.hasValue(0) || (resourceId = obtainStyledAttributes2.getResourceId(0, 0)) == 0) ? obtainStyledAttributes2.getDrawable(0) : v7.b(context, resourceId));
+        xVar.setBackgroundDrawable((!obtainStyledAttributes2.hasValue(0) || (resourceId = obtainStyledAttributes2.getResourceId(0, 0)) == 0) ? obtainStyledAttributes2.getDrawable(0) : w7.b(context, resourceId));
         obtainStyledAttributes2.recycle();
         this.O = xVar;
         xVar.setInputMethodMode(1);
@@ -190,7 +190,7 @@ public abstract class d2 implements l.c0 {
             paddingBottom = a10 + (a10 > 0 ? this.c.getPaddingBottom() + this.c.getPaddingTop() + i10 : 0);
         }
         boolean z11 = xVar.getInputMethodMode() == 2;
-        q7.b(xVar, this.n);
+        r7.b(xVar, this.n);
         if (xVar.isShowing()) {
             View view2 = this.E;
             WeakHashMap weakHashMap = r0.i0.a;
@@ -255,7 +255,7 @@ public abstract class d2 implements l.c0 {
         xVar.setOutsideTouchable(true);
         xVar.setTouchInterceptor(this.H);
         if (this.v) {
-            q7.a(xVar, this.s);
+            r7.a(xVar, this.s);
         }
         if (Build.VERSION.SDK_INT <= 28) {
             Method method3 = R;

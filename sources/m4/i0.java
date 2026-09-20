@@ -15,9 +15,9 @@ import java.util.ArrayList;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.atomic.AtomicInteger;
-import v7.l8;
+import v7.m8;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class i0 implements i9.r, q {
     public b2.n0 a;
@@ -40,7 +40,7 @@ public final class i0 implements i9.r, q {
         int i11 = j1Var.m0(20) ? 4 : 0;
         if (k0Var.q != i11) {
             k0Var.q = i11;
-            ((n4.r) k0Var.k.b).a.setFlags(i11 | 3);
+            ((n4.r) k0Var.k.a).a.setFlags(i11 | 3);
         }
         k0Var.N(j1Var);
     }
@@ -54,7 +54,7 @@ public final class i0 implements i9.r, q {
         if (TextUtils.isEmpty(str)) {
             throw new IllegalArgumentException("event cannot be null or empty");
         }
-        n4.r rVar = (n4.r) yVar.b;
+        n4.r rVar = (n4.r) yVar.a;
         if (Build.VERSION.SDK_INT < 23) {
             synchronized (rVar.d) {
                 for (int beginBroadcast = rVar.f.beginBroadcast() - 1; beginBroadcast >= 0; beginBroadcast--) {
@@ -88,7 +88,7 @@ public final class i0 implements i9.r, q {
         k0 k0Var = (k0) this.e;
         k0Var.g.t.K().getClass();
         int e = k.e(eVar);
-        n4.r rVar = (n4.r) k0Var.k.b;
+        n4.r rVar = (n4.r) k0Var.k.a;
         rVar.getClass();
         AudioAttributes.Builder builder = new AudioAttributes.Builder();
         builder.setLegacyStreamType(e);
@@ -100,7 +100,7 @@ public final class i0 implements i9.r, q {
         j1 j1Var = k0Var.g.t;
         j1Var.K().getClass();
         int e = k.e(j1Var.m0(21) ? j1Var.I() : b2.e.h);
-        n4.r rVar = (n4.r) k0Var.k.b;
+        n4.r rVar = (n4.r) k0Var.k.a;
         rVar.getClass();
         AudioAttributes.Builder builder = new AudioAttributes.Builder();
         builder.setLegacyStreamType(e);
@@ -112,9 +112,9 @@ public final class i0 implements i9.r, q {
         n4.y yVar = k0Var2.k;
         r();
         if (k0Var == null) {
-            ((n4.r) yVar.b).e(0);
+            ((n4.r) yVar.a).e(0);
         } else {
-            ((n4.r) yVar.b).e(k.f(k0Var.d.i));
+            ((n4.r) yVar.a).e(k.f(k0Var.d.i));
         }
         k0Var2.N(k0Var2.g.t);
     }
@@ -151,7 +151,7 @@ public final class i0 implements i9.r, q {
         int i11 = j1Var2.m0(20) ? 4 : 0;
         if (k0Var.q != i11) {
             k0Var.q = i11;
-            ((n4.r) k0Var.k.b).a.setFlags(i11 | 3);
+            ((n4.r) k0Var.k.a).a.setFlags(i11 | 3);
         }
         b2.k0 P0 = j1Var2.P0();
         if (j1Var == null || !Objects.equals(j1Var.P0(), P0)) {
@@ -164,7 +164,7 @@ public final class i0 implements i9.r, q {
     public void n(b2.n0 n0Var) {
         k0 k0Var = (k0) this.e;
         n4.y yVar = k0Var.k;
-        CharSequence queueTitle = ((n4.j) ((k2.u) yVar.c).b).a.getQueueTitle();
+        CharSequence queueTitle = ((n4.j) ((k2.u) yVar.b).b).a.getQueueTitle();
         CharSequence charSequence = n0Var.a;
         if (TextUtils.equals(queueTitle, charSequence)) {
             return;
@@ -173,7 +173,7 @@ public final class i0 implements i9.r, q {
         if (!k0Var.v.a(17) || !j1Var.t().a(17)) {
             charSequence = null;
         }
-        ((n4.r) yVar.b).a.setQueueTitle(charSequence);
+        ((n4.r) yVar.a).a.setQueueTitle(charSequence);
     }
 
     public void o(int i10) {
@@ -189,7 +189,7 @@ public final class i0 implements i9.r, q {
                 i12 = 2;
             }
         }
-        n4.r rVar = (n4.r) yVar.b;
+        n4.r rVar = (n4.r) yVar.a;
         if (rVar.k != i12) {
             rVar.k = i12;
             synchronized (rVar.d) {
@@ -220,7 +220,7 @@ public final class i0 implements i9.r, q {
     public void p(boolean z10) {
         n4.y yVar = ((k0) this.e).k;
         int i10 = k.a;
-        n4.r rVar = (n4.r) yVar.b;
+        n4.r rVar = (n4.r) yVar.a;
         if (rVar.l != z10) {
             rVar.l = z10 ? 1 : 0;
             synchronized (rVar.d) {
@@ -267,22 +267,22 @@ public final class i0 implements i9.r, q {
         this.c = uri4;
         this.a = R0;
         this.d = j10;
-        n4.y yVar = a0Var.m;
-        yVar.getClass();
+        of.b bVar = a0Var.m;
+        bVar.getClass();
         byte[] bArr = R0.k;
         if (bArr != null) {
-            wVar = yVar.o(bArr);
+            wVar = bVar.O(bArr);
         } else {
             Uri uri5 = R0.m;
             if (uri5 != null) {
-                lf.i iVar = (lf.i) yVar.c;
-                if (iVar == null || (uri = (Uri) iVar.c) == null || !uri.equals(uri5)) {
-                    g2.i iVar2 = (g2.i) yVar.b;
-                    i9.w a2 = ((i9.y) iVar2.a).a(new com.google.firebase.messaging.h(2, iVar2, uri5));
-                    yVar.c = new lf.i(uri5, a2);
+                lf.h hVar = (lf.h) bVar.c;
+                if (hVar == null || (uri = (Uri) hVar.c) == null || !uri.equals(uri5)) {
+                    g2.i iVar = (g2.i) bVar.b;
+                    i9.w a2 = ((i9.y) iVar.a).a(new com.google.firebase.messaging.h(2, iVar, uri5));
+                    bVar.c = new lf.h(uri5, a2);
                     wVar = a2;
                 } else {
-                    wVar = (i9.w) ((lf.i) yVar.c).d;
+                    wVar = (i9.w) ((lf.h) bVar.c).d;
                     e2.d.h(wVar);
                 }
             } else {
@@ -304,7 +304,7 @@ public final class i0 implements i9.r, q {
                 k0.E(k0Var.k, k.b(n0Var, str, uri2, j3, bitmap));
             }
             try {
-                bitmap = (Bitmap) l8.a(wVar);
+                bitmap = (Bitmap) m8.a(wVar);
             } catch (CancellationException | ExecutionException e) {
                 e2.a.n("MediaSessionLegacyStub", "Failed to load bitmap: " + e.getMessage());
             }
@@ -337,11 +337,11 @@ public final class i0 implements i9.r, q {
                 arrayList2.add(null);
                 i5Var.run();
             } else {
-                i9.w o9 = a0Var.m.o(bArr);
-                arrayList2.add(o9);
+                i9.w O = a0Var.m.O(bArr);
+                arrayList2.add(O);
                 Handler handler = a0Var.l;
                 Objects.requireNonNull(handler);
-                o9.a(i5Var, new k2.c0(handler, 0));
+                O.a(i5Var, new k2.c0(handler, 0));
             }
         }
     }

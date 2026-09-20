@@ -24,7 +24,7 @@ import java.util.Map;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class b implements o {
     public final v a = new v(4);
@@ -57,18 +57,18 @@ public final class b implements o {
     public final boolean a(p pVar) {
         v vVar = this.a;
         l lVar = (l) pVar;
-        lVar.h(vVar.a, 0, 3, false);
+        lVar.i(vVar.a, 0, 3, false);
         vVar.J(0);
         if (vVar.A() == 4607062) {
-            lVar.h(vVar.a, 0, 2, false);
+            lVar.i(vVar.a, 0, 2, false);
             vVar.J(0);
             if ((vVar.D() & MediaDataController.MAX_LINKS_COUNT) == 0) {
-                lVar.h(vVar.a, 0, 4, false);
+                lVar.i(vVar.a, 0, 4, false);
                 vVar.J(0);
                 int j3 = vVar.j();
                 lVar.f = 0;
                 lVar.t(j3, false);
-                lVar.h(vVar.a, 0, 4, false);
+                lVar.i(vVar.a, 0, 4, false);
                 vVar.J(0);
                 if (vVar.j() == 0) {
                     return true;
@@ -151,7 +151,7 @@ public final class b implements o {
                 if (z14 && this.p == null) {
                     this.p = new e(this.f.Z1(9, 2));
                 }
-                this.f.e1();
+                this.f.f1();
                 this.j = vVar.j() - 5;
                 this.g = 2;
             } else if (i12 == 2) {
@@ -292,7 +292,7 @@ public final class b implements o {
                                     rVar.y = a2.d;
                                     rVar.D = a2.k;
                                     rVar.t = a2.a;
-                                    k0.r(rVar, h0Var);
+                                    k0.s(rVar, h0Var);
                                     eVar.e = true;
                                 } else if (x12 == 1 && eVar.e) {
                                     int i20 = eVar.g == 1 ? 1 : 0;
@@ -348,7 +348,7 @@ public final class b implements o {
                                 rVar2.q = r0.n("audio/mpeg");
                                 rVar2.I = 1;
                                 rVar2.J = i24;
-                                k0.r(rVar2, h0Var2);
+                                k0.s(rVar2, h0Var2);
                                 aVar.c = true;
                             } else if (i23 == 7 || i23 == 8) {
                                 String str = i23 == 7 ? "audio/g711-alaw" : "audio/g711-mlaw";
@@ -357,7 +357,7 @@ public final class b implements o {
                                 rVar3.q = r0.n(str);
                                 rVar3.I = 1;
                                 rVar3.J = 8000;
-                                k0.r(rVar3, h0Var2);
+                                k0.s(rVar3, h0Var2);
                                 aVar.c = true;
                             } else if (i23 != 10) {
                                 throw new d("Audio format not supported: " + aVar.d);
@@ -384,7 +384,7 @@ public final class b implements o {
                                 rVar4.I = n10.c;
                                 rVar4.J = n10.b;
                                 rVar4.t = Collections.singletonList(bArr4);
-                                k0.r(rVar4, h0Var3);
+                                k0.s(rVar4, h0Var3);
                                 aVar.c = true;
                             } else if (aVar.d != 10 || x14 == 1) {
                                 int a13 = b12.a();

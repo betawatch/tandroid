@@ -3,7 +3,7 @@ package org.telegram.ui;
 import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class va implements MessagesStorage.IntCallback {
     public final /* synthetic */ int a;
@@ -55,12 +55,12 @@ public final /* synthetic */ class va implements MessagesStorage.IntCallback {
                     break;
                 }
             default:
-                dg1 dg1Var = ((if1) obj).a;
+                fg1 fg1Var = ((kf1) obj).a;
                 if (i10 != 0) {
-                    dg1Var.finishFragment();
+                    fg1Var.finishFragment();
                     break;
                 } else {
-                    dg1Var.O0(false);
+                    fg1Var.O0(false);
                     break;
                 }
         }

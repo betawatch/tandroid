@@ -7,20 +7,20 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.jd0;
+import org.telegram.ui.kd0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class x0 implements Runnable {
     public final /* synthetic */ int a = 0;
     public final /* synthetic */ e1 b;
-    public final /* synthetic */ jd0 c;
+    public final /* synthetic */ kd0 c;
     public final /* synthetic */ org.telegram.ui.ActionBar.b2 d;
 
-    public /* synthetic */ x0(e1 e1Var, org.telegram.ui.ActionBar.b2 b2Var, jd0 jd0Var) {
+    public /* synthetic */ x0(e1 e1Var, org.telegram.ui.ActionBar.b2 b2Var, kd0 kd0Var) {
         this.b = e1Var;
         this.d = b2Var;
-        this.c = jd0Var;
+        this.c = kd0Var;
     }
 
     @Override // java.lang.Runnable
@@ -34,7 +34,7 @@ public final /* synthetic */ class x0 implements Runnable {
                 break;
             default:
                 e1 e1Var2 = this.b;
-                jd0 jd0Var = this.c;
+                kd0 kd0Var = this.c;
                 try {
                     List<Address> fromLocationName = new Geocoder(e1Var2.getParentActivity(), LocaleController.getInstance().getCurrentLocale()).getFromLocationName(e1Var2.y, 1);
                     if (!fromLocationName.isEmpty()) {
@@ -45,19 +45,19 @@ public final /* synthetic */ class x0 implements Runnable {
                         tL_channelLocation.geo_point = tL_geoPoint;
                         tL_geoPoint.lat = address.getLatitude();
                         tL_channelLocation.geo_point._long = address.getLongitude();
-                        jd0Var.A0 = tL_channelLocation;
+                        kd0Var.A0 = tL_channelLocation;
                     }
                 } catch (Exception e) {
                     FileLog.e(e);
                 }
-                AndroidUtilities.runOnUIThread(new x0(e1Var2, this.d, jd0Var));
+                AndroidUtilities.runOnUIThread(new x0(e1Var2, this.d, kd0Var));
                 break;
         }
     }
 
-    public /* synthetic */ x0(e1 e1Var, jd0 jd0Var, org.telegram.ui.ActionBar.b2 b2Var) {
+    public /* synthetic */ x0(e1 e1Var, kd0 kd0Var, org.telegram.ui.ActionBar.b2 b2Var) {
         this.b = e1Var;
-        this.c = jd0Var;
+        this.c = kd0Var;
         this.d = b2Var;
     }
 }

@@ -9,9 +9,9 @@ import android.util.SparseIntArray;
 import j$.util.Objects;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
-public class d implements org.telegram.ui.ActionBar.e6 {
+public class d implements org.telegram.ui.ActionBar.f6 {
     public final HashSet a = new HashSet();
     public final SparseIntArray b;
     public final Paint c;
@@ -173,10 +173,25 @@ public class d implements org.telegram.ui.ActionBar.e6 {
         sparseIntArray.put(org.telegram.ui.ActionBar.j6.Ui, -11184811);
         sparseIntArray.put(org.telegram.ui.ActionBar.j6.Zk, -15198183);
         b();
-        paint.setColor(G0(i13));
+        paint.setColor(F0(i13));
     }
 
-    @Override // org.telegram.ui.ActionBar.e6
+    @Override // org.telegram.ui.ActionBar.f6
+    public final int F0(int i10) {
+        SparseIntArray sparseIntArray = this.b;
+        int indexOfKey = sparseIntArray.indexOfKey(i10);
+        if (indexOfKey >= 0) {
+            return sparseIntArray.valueAt(indexOfKey);
+        }
+        Integer valueOf = Integer.valueOf(i10);
+        HashSet hashSet = this.a;
+        if (!hashSet.contains(valueOf)) {
+            hashSet.add(Integer.valueOf(i10));
+        }
+        return org.telegram.ui.ActionBar.j6.w0(null, i10, false);
+    }
+
+    @Override // org.telegram.ui.ActionBar.f6
     public final Paint G(String str) {
         if (str.equals("paintDivider")) {
             return this.c;
@@ -192,37 +207,22 @@ public class d implements org.telegram.ui.ActionBar.e6 {
         return this.d;
     }
 
-    @Override // org.telegram.ui.ActionBar.e6
-    public final int G0(int i10) {
-        SparseIntArray sparseIntArray = this.b;
-        int indexOfKey = sparseIntArray.indexOfKey(i10);
-        if (indexOfKey >= 0) {
-            return sparseIntArray.valueAt(indexOfKey);
-        }
-        Integer valueOf = Integer.valueOf(i10);
-        HashSet hashSet = this.a;
-        if (!hashSet.contains(valueOf)) {
-            hashSet.add(Integer.valueOf(i10));
-        }
-        return org.telegram.ui.ActionBar.j6.w0(null, i10, false);
-    }
-
-    @Override // org.telegram.ui.ActionBar.e6
+    @Override // org.telegram.ui.ActionBar.f6
     public final boolean a() {
         return org.telegram.ui.ActionBar.j6.I.q();
     }
 
-    @Override // org.telegram.ui.ActionBar.e6
-    public final int g0(int i10) {
-        return G0(i10);
+    @Override // org.telegram.ui.ActionBar.f6
+    public final int f0(int i10) {
+        return F0(i10);
     }
 
-    @Override // org.telegram.ui.ActionBar.e6
+    @Override // org.telegram.ui.ActionBar.f6
     public final int g1(int i10) {
-        return G0(i10);
+        return F0(i10);
     }
 
-    @Override // org.telegram.ui.ActionBar.e6
+    @Override // org.telegram.ui.ActionBar.f6
     public final Drawable getDrawable(String str) {
         if (!Objects.equals(str, "drawableMsgOutMedia")) {
             return null;
@@ -233,20 +233,20 @@ public class d implements org.telegram.ui.ActionBar.e6 {
         return this.f;
     }
 
-    @Override // org.telegram.ui.ActionBar.e6
+    @Override // org.telegram.ui.ActionBar.f6
     public final void m(float f7, float f10, int i10, int i11) {
         org.telegram.ui.ActionBar.j6.q(f7, f10, i10, i11);
     }
 
-    @Override // org.telegram.ui.ActionBar.e6
-    public final /* synthetic */ boolean p0() {
+    @Override // org.telegram.ui.ActionBar.f6
+    public final /* synthetic */ boolean n0() {
         return false;
     }
 
-    @Override // org.telegram.ui.ActionBar.e6
+    @Override // org.telegram.ui.ActionBar.f6
     public final ColorFilter x() {
         if (this.e == null) {
-            this.e = new PorterDuffColorFilter(G0(org.telegram.ui.ActionBar.j6.G6), PorterDuff.Mode.SRC_IN);
+            this.e = new PorterDuffColorFilter(F0(org.telegram.ui.ActionBar.j6.G6), PorterDuff.Mode.SRC_IN);
         }
         return this.e;
     }
@@ -254,7 +254,7 @@ public class d implements org.telegram.ui.ActionBar.e6 {
     public void b() {
     }
 
-    @Override // org.telegram.ui.ActionBar.e6
+    @Override // org.telegram.ui.ActionBar.f6
     public final /* synthetic */ void L0(int i10, int i11) {
     }
 }

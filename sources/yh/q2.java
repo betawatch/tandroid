@@ -12,14 +12,14 @@ import java.util.HashMap;
 import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class q2 extends FrameLayout {
     public float E;
     public int F;
     public ValueAnimator G;
     public p2 H;
-    public final rg.w1 I;
+    public final rg.q1 I;
     public final View[] a;
     public final Matrix b;
     public final float[] c;
@@ -52,7 +52,7 @@ public final class q2 extends FrameLayout {
         this.x = new HashMap();
         this.y = new float[6];
         this.F = -1;
-        this.I = new rg.w1(this, 28);
+        this.I = new rg.q1(this, 29);
         setClipToOutline(false);
         setClipToPadding(false);
         android.opengl.Matrix.setIdentityM(fArr, 0);
@@ -155,11 +155,11 @@ public final class q2 extends FrameLayout {
             if (num != null) {
                 indexOfChild = num.intValue();
             }
-            if (view instanceof v2) {
-                v2 v2Var = (v2) view;
+            if (view instanceof w2) {
+                w2 w2Var = (w2) view;
                 float f11 = 1.0f - (z10 ? this.E : 1.0f);
-                v2Var.d.setAlpha(f11);
-                v2Var.e.setAlpha(f11);
+                w2Var.d.setAlpha(f11);
+                w2Var.e.setAlpha(f11);
                 if (!z10 || this.E >= 1.0f) {
                     this.a[indexOfChild].setVisibility(8);
                 }
@@ -178,7 +178,7 @@ public final class q2 extends FrameLayout {
         }
         view.setAlpha(Math.min(1.0f, f12 / 0.3f));
         float width = view.getWidth() / 2.0f;
-        if (z11 && (view instanceof v2)) {
+        if (z11 && (view instanceof w2)) {
             f7 = 1.0f;
             c10 = 6;
             f10 = ((z10 ? this.E : 1.0f) * AndroidUtilities.dp(2.0f)) + AndroidUtilities.dp(-6.0f);

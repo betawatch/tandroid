@@ -32,7 +32,7 @@ import org.telegram.ui.Components.RadialProgressView;
 import org.telegram.ui.Components.Switch;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class sr extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public int A0;
@@ -90,7 +90,7 @@ public final class sr extends org.telegram.ui.ActionBar.n2 implements Notificati
     public or a;
     public int a0;
     public int a1;
-    public org.telegram.ui.Components.kx0 b;
+    public org.telegram.ui.Components.jx0 b;
     public int b0;
     public int b1;
     public ai.w0 c;
@@ -286,7 +286,7 @@ public final class sr extends org.telegram.ui.ActionBar.n2 implements Notificati
         if (i10 == srVar.h1) {
             boolean z16 = !srVar.v1;
             srVar.v1 = z16;
-            ((org.telegram.ui.Cells.w8) view).setChecked(z16);
+            ((org.telegram.ui.Cells.x8) view).setChecked(z16);
             AndroidUtilities.updateVisibleRows(srVar.c);
             mr w02 = srVar.w0();
             srVar.B0();
@@ -295,7 +295,7 @@ public final class sr extends org.telegram.ui.ActionBar.n2 implements Notificati
         } else if (i10 == srVar.i1) {
             boolean z17 = !srVar.w1;
             srVar.w1 = z17;
-            ((org.telegram.ui.Cells.w8) view).setChecked(z17);
+            ((org.telegram.ui.Cells.x8) view).setChecked(z17);
             AndroidUtilities.updateVisibleRows(srVar.c);
             mr w03 = srVar.w0();
             srVar.B0();
@@ -304,7 +304,7 @@ public final class sr extends org.telegram.ui.ActionBar.n2 implements Notificati
         } else if (i10 == srVar.n0) {
             boolean z18 = !srVar.y1;
             srVar.y1 = z18;
-            ((org.telegram.ui.Cells.w8) view).setChecked(z18);
+            ((org.telegram.ui.Cells.x8) view).setChecked(z18);
             AndroidUtilities.updateVisibleRows(srVar.c);
             mr w04 = srVar.w0();
             srVar.B0();
@@ -351,10 +351,10 @@ public final class sr extends org.telegram.ui.ActionBar.n2 implements Notificati
                 srVar.B0();
                 srVar.A0(w05);
             } else if (i10 == srVar.Q0) {
-                org.telegram.ui.Cells.v8 v8Var = (org.telegram.ui.Cells.v8) view;
-                boolean z20 = !v8Var.d.h;
+                org.telegram.ui.Cells.w8 w8Var = (org.telegram.ui.Cells.w8) view;
+                boolean z20 = !w8Var.d.h;
                 srVar.r1 = z20;
-                v8Var.setChecked(z20);
+                w8Var.setChecked(z20);
                 AndroidUtilities.updateVisibleRows(srVar.c);
                 mr w06 = srVar.w0();
                 srVar.B0();
@@ -407,7 +407,7 @@ public final class sr extends org.telegram.ui.ActionBar.n2 implements Notificati
                     return;
                 }
                 if (i10 == srVar.x0) {
-                    final org.telegram.ui.Cells.r8 r8Var = (org.telegram.ui.Cells.r8) view;
+                    final org.telegram.ui.Cells.s8 s8Var = (org.telegram.ui.Cells.s8) view;
                     TLRPC.ChatFull chatFull3 = srVar.s;
                     if (chatFull3 != null && !chatFull3.antispam && srVar.l0() < srVar.getMessagesController().telegramAntispamGroupSizeMin) {
                         org.telegram.ui.Components.xc.a0(srVar).Q(R.raw.msg_antispam, 36, AndroidUtilities.replaceTags(LocaleController.formatPluralString("ChannelAntiSpamForbidden", srVar.getMessagesController().telegramAntispamGroupSizeMin, new Object[0]))).j();
@@ -424,8 +424,8 @@ public final class sr extends org.telegram.ui.ActionBar.n2 implements Notificati
                     boolean z22 = !chatFull4.antispam;
                     chatFull4.antispam = z22;
                     tL_channels_toggleAntiSpam.enabled = z22;
-                    r8Var.setChecked(z22);
-                    r8Var.getCheckBox().setIcon((ChatObject.canUserDoAdminAction(srVar.r, 13) && ((chatFull2 = srVar.s) == null || chatFull2.antispam || srVar.l0() >= srVar.getMessagesController().telegramAntispamGroupSizeMin)) ? 0 : R.drawable.permission_locked);
+                    s8Var.setChecked(z22);
+                    s8Var.getCheckBox().setIcon((ChatObject.canUserDoAdminAction(srVar.r, 13) && ((chatFull2 = srVar.s) == null || chatFull2.antispam || srVar.l0() >= srVar.getMessagesController().telegramAntispamGroupSizeMin)) ? 0 : R.drawable.permission_locked);
                     srVar.getConnectionsManager().sendRequest(tL_channels_toggleAntiSpam, new RequestDelegate(srVar) { // from class: org.telegram.ui.rq
                         public final /* synthetic */ sr b;
 
@@ -444,7 +444,7 @@ public final class sr extends org.telegram.ui.ActionBar.n2 implements Notificati
                                     }
                                     if (tL_error != null && !"CHAT_NOT_MODIFIED".equals(tL_error.text)) {
                                         final int i17 = 0;
-                                        final org.telegram.ui.Cells.r8 r8Var2 = r8Var;
+                                        final org.telegram.ui.Cells.s8 s8Var2 = s8Var;
                                         final boolean z23 = z21;
                                         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.uq
                                             @Override // java.lang.Runnable
@@ -458,9 +458,9 @@ public final class sr extends org.telegram.ui.ActionBar.n2 implements Notificati
                                                             TLRPC.ChatFull chatFull7 = srVar5.s;
                                                             boolean z24 = z23;
                                                             chatFull7.antispam = z24;
-                                                            org.telegram.ui.Cells.r8 r8Var3 = r8Var2;
-                                                            r8Var3.setChecked(z24);
-                                                            r8Var3.getCheckBox().setIcon((!ChatObject.canUserDoAdminAction(srVar5.r, 13) || ((chatFull5 = srVar5.s) != null && chatFull5.antispam && srVar5.l0() < srVar5.getMessagesController().telegramAntispamGroupSizeMin)) ? R.drawable.permission_locked : 0);
+                                                            org.telegram.ui.Cells.s8 s8Var3 = s8Var2;
+                                                            s8Var3.setChecked(z24);
+                                                            s8Var3.getCheckBox().setIcon((!ChatObject.canUserDoAdminAction(srVar5.r, 13) || ((chatFull5 = srVar5.s) != null && chatFull5.antispam && srVar5.l0() < srVar5.getMessagesController().telegramAntispamGroupSizeMin)) ? R.drawable.permission_locked : 0);
                                                             org.telegram.ui.Components.xc.a0(srVar5).Q(R.raw.error, 36, LocaleController.getString("UnknownError", R.string.UnknownError)).j();
                                                             break;
                                                         }
@@ -471,9 +471,9 @@ public final class sr extends org.telegram.ui.ActionBar.n2 implements Notificati
                                                             TLRPC.ChatFull chatFull8 = srVar6.s;
                                                             boolean z25 = z23;
                                                             chatFull8.participants_hidden = z25;
-                                                            org.telegram.ui.Cells.r8 r8Var4 = r8Var2;
-                                                            r8Var4.setChecked(z25);
-                                                            r8Var4.getCheckBox().setIcon((!ChatObject.canUserDoAdminAction(srVar6.r, 2) || ((chatFull6 = srVar6.s) != null && chatFull6.participants_hidden && srVar6.l0() < srVar6.getMessagesController().hiddenMembersGroupSizeMin)) ? R.drawable.permission_locked : 0);
+                                                            org.telegram.ui.Cells.s8 s8Var4 = s8Var2;
+                                                            s8Var4.setChecked(z25);
+                                                            s8Var4.getCheckBox().setIcon((!ChatObject.canUserDoAdminAction(srVar6.r, 2) || ((chatFull6 = srVar6.s) != null && chatFull6.participants_hidden && srVar6.l0() < srVar6.getMessagesController().hiddenMembersGroupSizeMin)) ? R.drawable.permission_locked : 0);
                                                             org.telegram.ui.Components.xc.a0(srVar6).Q(R.raw.error, 36, LocaleController.getString("UnknownError", R.string.UnknownError)).j();
                                                             break;
                                                         }
@@ -492,7 +492,7 @@ public final class sr extends org.telegram.ui.ActionBar.n2 implements Notificati
                                     }
                                     if (tL_error != null && !"CHAT_NOT_MODIFIED".equals(tL_error.text)) {
                                         final int i18 = 1;
-                                        final org.telegram.ui.Cells.r8 r8Var3 = r8Var;
+                                        final org.telegram.ui.Cells.s8 s8Var3 = s8Var;
                                         final boolean z24 = z21;
                                         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.uq
                                             @Override // java.lang.Runnable
@@ -506,9 +506,9 @@ public final class sr extends org.telegram.ui.ActionBar.n2 implements Notificati
                                                             TLRPC.ChatFull chatFull7 = srVar52.s;
                                                             boolean z242 = z24;
                                                             chatFull7.antispam = z242;
-                                                            org.telegram.ui.Cells.r8 r8Var32 = r8Var3;
-                                                            r8Var32.setChecked(z242);
-                                                            r8Var32.getCheckBox().setIcon((!ChatObject.canUserDoAdminAction(srVar52.r, 13) || ((chatFull5 = srVar52.s) != null && chatFull5.antispam && srVar52.l0() < srVar52.getMessagesController().telegramAntispamGroupSizeMin)) ? R.drawable.permission_locked : 0);
+                                                            org.telegram.ui.Cells.s8 s8Var32 = s8Var3;
+                                                            s8Var32.setChecked(z242);
+                                                            s8Var32.getCheckBox().setIcon((!ChatObject.canUserDoAdminAction(srVar52.r, 13) || ((chatFull5 = srVar52.s) != null && chatFull5.antispam && srVar52.l0() < srVar52.getMessagesController().telegramAntispamGroupSizeMin)) ? R.drawable.permission_locked : 0);
                                                             org.telegram.ui.Components.xc.a0(srVar52).Q(R.raw.error, 36, LocaleController.getString("UnknownError", R.string.UnknownError)).j();
                                                             break;
                                                         }
@@ -519,9 +519,9 @@ public final class sr extends org.telegram.ui.ActionBar.n2 implements Notificati
                                                             TLRPC.ChatFull chatFull8 = srVar6.s;
                                                             boolean z25 = z24;
                                                             chatFull8.participants_hidden = z25;
-                                                            org.telegram.ui.Cells.r8 r8Var4 = r8Var3;
-                                                            r8Var4.setChecked(z25);
-                                                            r8Var4.getCheckBox().setIcon((!ChatObject.canUserDoAdminAction(srVar6.r, 2) || ((chatFull6 = srVar6.s) != null && chatFull6.participants_hidden && srVar6.l0() < srVar6.getMessagesController().hiddenMembersGroupSizeMin)) ? R.drawable.permission_locked : 0);
+                                                            org.telegram.ui.Cells.s8 s8Var4 = s8Var3;
+                                                            s8Var4.setChecked(z25);
+                                                            s8Var4.getCheckBox().setIcon((!ChatObject.canUserDoAdminAction(srVar6.r, 2) || ((chatFull6 = srVar6.s) != null && chatFull6.participants_hidden && srVar6.l0() < srVar6.getMessagesController().hiddenMembersGroupSizeMin)) ? R.drawable.permission_locked : 0);
                                                             org.telegram.ui.Components.xc.a0(srVar6).Q(R.raw.error, 36, LocaleController.getString("UnknownError", R.string.UnknownError)).j();
                                                             break;
                                                         }
@@ -538,7 +538,7 @@ public final class sr extends org.telegram.ui.ActionBar.n2 implements Notificati
                     return;
                 }
                 if (i10 == srVar.J0) {
-                    final org.telegram.ui.Cells.r8 r8Var2 = (org.telegram.ui.Cells.r8) view;
+                    final org.telegram.ui.Cells.s8 s8Var2 = (org.telegram.ui.Cells.s8) view;
                     if (srVar.l0() < srVar.getMessagesController().hiddenMembersGroupSizeMin) {
                         org.telegram.ui.Components.xc.a0(srVar).Q(R.raw.contacts_sync_off, 36, AndroidUtilities.replaceTags(LocaleController.formatPluralString("ChannelHiddenMembersForbidden", srVar.getMessagesController().hiddenMembersGroupSizeMin, new Object[0]))).j();
                         return;
@@ -554,8 +554,8 @@ public final class sr extends org.telegram.ui.ActionBar.n2 implements Notificati
                     boolean z24 = !chatFull5.participants_hidden;
                     chatFull5.participants_hidden = z24;
                     tL_channels_toggleParticipantsHidden.enabled = z24;
-                    r8Var2.setChecked(z24);
-                    Switch checkBox = r8Var2.getCheckBox();
+                    s8Var2.setChecked(z24);
+                    Switch checkBox = s8Var2.getCheckBox();
                     if (!ChatObject.canUserDoAdminAction(srVar.r, 2) || ((chatFull = srVar.s) != null && !chatFull.participants_hidden && srVar.l0() < srVar.getMessagesController().hiddenMembersGroupSizeMin)) {
                         i14 = R.drawable.permission_locked;
                     }
@@ -578,7 +578,7 @@ public final class sr extends org.telegram.ui.ActionBar.n2 implements Notificati
                                     }
                                     if (tL_error != null && !"CHAT_NOT_MODIFIED".equals(tL_error.text)) {
                                         final int i17 = 0;
-                                        final org.telegram.ui.Cells.r8 r8Var22 = r8Var2;
+                                        final org.telegram.ui.Cells.s8 s8Var22 = s8Var2;
                                         final boolean z232 = z23;
                                         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.uq
                                             @Override // java.lang.Runnable
@@ -592,9 +592,9 @@ public final class sr extends org.telegram.ui.ActionBar.n2 implements Notificati
                                                             TLRPC.ChatFull chatFull7 = srVar52.s;
                                                             boolean z242 = z232;
                                                             chatFull7.antispam = z242;
-                                                            org.telegram.ui.Cells.r8 r8Var32 = r8Var22;
-                                                            r8Var32.setChecked(z242);
-                                                            r8Var32.getCheckBox().setIcon((!ChatObject.canUserDoAdminAction(srVar52.r, 13) || ((chatFull52 = srVar52.s) != null && chatFull52.antispam && srVar52.l0() < srVar52.getMessagesController().telegramAntispamGroupSizeMin)) ? R.drawable.permission_locked : 0);
+                                                            org.telegram.ui.Cells.s8 s8Var32 = s8Var22;
+                                                            s8Var32.setChecked(z242);
+                                                            s8Var32.getCheckBox().setIcon((!ChatObject.canUserDoAdminAction(srVar52.r, 13) || ((chatFull52 = srVar52.s) != null && chatFull52.antispam && srVar52.l0() < srVar52.getMessagesController().telegramAntispamGroupSizeMin)) ? R.drawable.permission_locked : 0);
                                                             org.telegram.ui.Components.xc.a0(srVar52).Q(R.raw.error, 36, LocaleController.getString("UnknownError", R.string.UnknownError)).j();
                                                             break;
                                                         }
@@ -605,9 +605,9 @@ public final class sr extends org.telegram.ui.ActionBar.n2 implements Notificati
                                                             TLRPC.ChatFull chatFull8 = srVar6.s;
                                                             boolean z25 = z232;
                                                             chatFull8.participants_hidden = z25;
-                                                            org.telegram.ui.Cells.r8 r8Var4 = r8Var22;
-                                                            r8Var4.setChecked(z25);
-                                                            r8Var4.getCheckBox().setIcon((!ChatObject.canUserDoAdminAction(srVar6.r, 2) || ((chatFull6 = srVar6.s) != null && chatFull6.participants_hidden && srVar6.l0() < srVar6.getMessagesController().hiddenMembersGroupSizeMin)) ? R.drawable.permission_locked : 0);
+                                                            org.telegram.ui.Cells.s8 s8Var4 = s8Var22;
+                                                            s8Var4.setChecked(z25);
+                                                            s8Var4.getCheckBox().setIcon((!ChatObject.canUserDoAdminAction(srVar6.r, 2) || ((chatFull6 = srVar6.s) != null && chatFull6.participants_hidden && srVar6.l0() < srVar6.getMessagesController().hiddenMembersGroupSizeMin)) ? R.drawable.permission_locked : 0);
                                                             org.telegram.ui.Components.xc.a0(srVar6).Q(R.raw.error, 36, LocaleController.getString("UnknownError", R.string.UnknownError)).j();
                                                             break;
                                                         }
@@ -626,7 +626,7 @@ public final class sr extends org.telegram.ui.ActionBar.n2 implements Notificati
                                     }
                                     if (tL_error != null && !"CHAT_NOT_MODIFIED".equals(tL_error.text)) {
                                         final int i18 = 1;
-                                        final org.telegram.ui.Cells.r8 r8Var3 = r8Var2;
+                                        final org.telegram.ui.Cells.s8 s8Var3 = s8Var2;
                                         final boolean z242 = z23;
                                         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.uq
                                             @Override // java.lang.Runnable
@@ -640,9 +640,9 @@ public final class sr extends org.telegram.ui.ActionBar.n2 implements Notificati
                                                             TLRPC.ChatFull chatFull7 = srVar52.s;
                                                             boolean z2422 = z242;
                                                             chatFull7.antispam = z2422;
-                                                            org.telegram.ui.Cells.r8 r8Var32 = r8Var3;
-                                                            r8Var32.setChecked(z2422);
-                                                            r8Var32.getCheckBox().setIcon((!ChatObject.canUserDoAdminAction(srVar52.r, 13) || ((chatFull52 = srVar52.s) != null && chatFull52.antispam && srVar52.l0() < srVar52.getMessagesController().telegramAntispamGroupSizeMin)) ? R.drawable.permission_locked : 0);
+                                                            org.telegram.ui.Cells.s8 s8Var32 = s8Var3;
+                                                            s8Var32.setChecked(z2422);
+                                                            s8Var32.getCheckBox().setIcon((!ChatObject.canUserDoAdminAction(srVar52.r, 13) || ((chatFull52 = srVar52.s) != null && chatFull52.antispam && srVar52.l0() < srVar52.getMessagesController().telegramAntispamGroupSizeMin)) ? R.drawable.permission_locked : 0);
                                                             org.telegram.ui.Components.xc.a0(srVar52).Q(R.raw.error, 36, LocaleController.getString("UnknownError", R.string.UnknownError)).j();
                                                             break;
                                                         }
@@ -653,9 +653,9 @@ public final class sr extends org.telegram.ui.ActionBar.n2 implements Notificati
                                                             TLRPC.ChatFull chatFull8 = srVar6.s;
                                                             boolean z25 = z242;
                                                             chatFull8.participants_hidden = z25;
-                                                            org.telegram.ui.Cells.r8 r8Var4 = r8Var3;
-                                                            r8Var4.setChecked(z25);
-                                                            r8Var4.getCheckBox().setIcon((!ChatObject.canUserDoAdminAction(srVar6.r, 2) || ((chatFull6 = srVar6.s) != null && chatFull6.participants_hidden && srVar6.l0() < srVar6.getMessagesController().hiddenMembersGroupSizeMin)) ? R.drawable.permission_locked : 0);
+                                                            org.telegram.ui.Cells.s8 s8Var4 = s8Var3;
+                                                            s8Var4.setChecked(z25);
+                                                            s8Var4.getCheckBox().setIcon((!ChatObject.canUserDoAdminAction(srVar6.r, 2) || ((chatFull6 = srVar6.s) != null && chatFull6.participants_hidden && srVar6.l0() < srVar6.getMessagesController().hiddenMembersGroupSizeMin)) ? R.drawable.permission_locked : 0);
                                                             org.telegram.ui.Components.xc.a0(srVar6).Q(R.raw.error, 36, LocaleController.getString("UnknownError", R.string.UnknownError)).j();
                                                             break;
                                                         }
@@ -675,9 +675,9 @@ public final class sr extends org.telegram.ui.ActionBar.n2 implements Notificati
                     if (srVar.r == null) {
                         return;
                     }
-                    final org.telegram.ui.Cells.r8 r8Var3 = (org.telegram.ui.Cells.r8) view;
-                    final boolean b10 = r8Var3.b();
-                    r8Var3.setChecked(!r8Var3.b());
+                    final org.telegram.ui.Cells.s8 s8Var3 = (org.telegram.ui.Cells.s8) view;
+                    final boolean b10 = s8Var3.b();
+                    s8Var3.setChecked(!s8Var3.b());
                     TLRPC.TL_messages_editChatDefaultBannedRights tL_messages_editChatDefaultBannedRights = new TLRPC.TL_messages_editChatDefaultBannedRights();
                     tL_messages_editChatDefaultBannedRights.peer = MessagesController.getInputPeer(srVar.r);
                     TLRPC.Chat chat = srVar.r;
@@ -686,7 +686,7 @@ public final class sr extends org.telegram.ui.ActionBar.n2 implements Notificati
                     }
                     TLRPC.TL_chatBannedRights tL_chatBannedRights4 = srVar.r.default_banned_rights;
                     tL_messages_editChatDefaultBannedRights.banned_rights = tL_chatBannedRights4;
-                    tL_chatBannedRights4.edit_rank = !r8Var3.b();
+                    tL_chatBannedRights4.edit_rank = !s8Var3.b();
                     srVar.getConnectionsManager().sendRequestTyped(tL_messages_editChatDefaultBannedRights, new org.telegram.messenger.a(), new Utilities.Callback2() { // from class: org.telegram.ui.sq
                         @Override // org.telegram.messenger.Utilities.Callback2
                         public final void run(Object obj, Object obj2) {
@@ -699,7 +699,7 @@ public final class sr extends org.telegram.ui.ActionBar.n2 implements Notificati
                             }
                             srVar4.getClass();
                             if (tL_error != null) {
-                                r8Var3.setChecked(b10);
+                                s8Var3.setChecked(b10);
                                 org.telegram.ui.Components.xc.a0(srVar4).d0(tL_error, false);
                             }
                         }
@@ -719,25 +719,25 @@ public final class sr extends org.telegram.ui.ActionBar.n2 implements Notificati
                     } else {
                         if (i10 == srVar.A0) {
                             if (srVar.s != null) {
-                                zh0 zh0Var = new zh0(srVar.N, 0L, 0);
+                                ai0 ai0Var = new ai0(srVar.N, 0L, 0);
                                 TLRPC.ChatFull chatFull6 = srVar.s;
-                                zh0Var.g0(chatFull6, chatFull6.exported_invite);
-                                srVar.presentFragment(zh0Var);
+                                ai0Var.g0(chatFull6, chatFull6.exported_invite);
+                                srVar.presentFragment(ai0Var);
                                 return;
                             }
                             return;
                         }
                         if ((i10 > srVar.S && i10 <= Math.max(srVar.l0, srVar.g0)) || i10 == srVar.m0) {
-                            org.telegram.ui.Cells.v8 v8Var2 = (org.telegram.ui.Cells.v8) view;
-                            boolean isEnabled = v8Var2.isEnabled();
-                            Switch r42 = v8Var2.d;
+                            org.telegram.ui.Cells.w8 w8Var2 = (org.telegram.ui.Cells.w8) view;
+                            boolean isEnabled = w8Var2.isEnabled();
+                            Switch r42 = w8Var2.d;
                             if (isEnabled) {
                                 if (r42.F != null) {
                                     if (ChatObject.isPublic(srVar.r) && (i10 == srVar.i0 || i10 == srVar.g0)) {
-                                        org.telegram.messenger.wh.o(R.string.EditCantEditPermissionsPublic, org.telegram.ui.Components.xc.a0(srVar), null);
+                                        org.telegram.messenger.rk.p(R.string.EditCantEditPermissionsPublic, org.telegram.ui.Components.xc.a0(srVar), null);
                                         return;
                                     } else if (ChatObject.isDiscussionGroup(srVar.currentAccount, srVar.N) && (i10 == srVar.i0 || i10 == srVar.g0)) {
-                                        org.telegram.messenger.wh.o(R.string.EditCantEditPermissionsDiscussion, org.telegram.ui.Components.xc.a0(srVar), null);
+                                        org.telegram.messenger.rk.p(R.string.EditCantEditPermissionsDiscussion, org.telegram.ui.Components.xc.a0(srVar), null);
                                         return;
                                     } else {
                                         org.telegram.ui.Components.xc.a0(srVar).t(LocaleController.getString("EditCantEditPermissions", R.string.EditCantEditPermissions), null).j();
@@ -751,7 +751,7 @@ public final class sr extends org.telegram.ui.ActionBar.n2 implements Notificati
                                     srVar.A0(w07);
                                     return;
                                 }
-                                v8Var2.setChecked(!r42.h);
+                                w8Var2.setChecked(!r42.h);
                                 if (i10 == srVar.g0) {
                                     srVar.E.change_info = !r0.change_info;
                                     return;
@@ -1795,9 +1795,9 @@ public final class sr extends org.telegram.ui.ActionBar.n2 implements Notificati
         frameLayout3.addView(radialProgressView, w7.y5.e(-2, -2, 17));
         this.C1.setVisibility(8);
         this.D1.setVisibility(8);
-        org.telegram.ui.Components.kx0 kx0Var = new org.telegram.ui.Components.kx0(context, frameLayout3, 1, null);
-        this.b = kx0Var;
-        kx0Var.d.setText(LocaleController.getString(R.string.NoResult));
+        org.telegram.ui.Components.jx0 jx0Var = new org.telegram.ui.Components.jx0(context, frameLayout3, 1, null);
+        this.b = jx0Var;
+        jx0Var.d.setText(LocaleController.getString(R.string.NoResult));
         this.b.e.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitle2));
         this.b.setVisibility(8);
         this.b.setAnimateLayoutChange(true);
@@ -1923,7 +1923,7 @@ public final class sr extends org.telegram.ui.ActionBar.n2 implements Notificati
     public final ArrayList getThemeDescriptions() {
         ArrayList arrayList = new ArrayList();
         e eVar = new e(this, 10);
-        arrayList.add(new org.telegram.ui.ActionBar.l6(this.c, 16, new Class[]{org.telegram.ui.Cells.m4.class, org.telegram.ui.Cells.b5.class, org.telegram.ui.Cells.y4.class, org.telegram.ui.Cells.v8.class, org.telegram.ui.Cells.ea.class, org.telegram.ui.Components.fw0.class}, null, null, null, org.telegram.ui.ActionBar.j6.d6));
+        arrayList.add(new org.telegram.ui.ActionBar.l6(this.c, 16, new Class[]{org.telegram.ui.Cells.n4.class, org.telegram.ui.Cells.c5.class, org.telegram.ui.Cells.z4.class, org.telegram.ui.Cells.w8.class, org.telegram.ui.Cells.fa.class, org.telegram.ui.Components.ew0.class}, null, null, null, org.telegram.ui.ActionBar.j6.d6));
         arrayList.add(new org.telegram.ui.ActionBar.l6(this.fragmentView, 1, null, null, null, null, org.telegram.ui.ActionBar.j6.a7));
         arrayList.add(new org.telegram.ui.ActionBar.l6(this.c, 32768, null, null, null, null, org.telegram.ui.ActionBar.j6.s8));
         arrayList.add(new org.telegram.ui.ActionBar.l6(this.actionBar, 64, null, null, null, null, org.telegram.ui.ActionBar.j6.v8));
@@ -1932,22 +1932,22 @@ public final class sr extends org.telegram.ui.ActionBar.n2 implements Notificati
         arrayList.add(new org.telegram.ui.ActionBar.l6(this.c, 4096, null, null, null, null, org.telegram.ui.ActionBar.j6.i6));
         arrayList.add(new org.telegram.ui.ActionBar.l6(this.c, 0, new Class[]{View.class}, org.telegram.ui.ActionBar.j6.k0, null, null, org.telegram.ui.ActionBar.j6.d7));
         int i10 = org.telegram.ui.ActionBar.j6.b7;
-        arrayList.add(new org.telegram.ui.ActionBar.l6(this.c, 32, new Class[]{org.telegram.ui.Cells.e9.class}, null, null, null, i10));
-        arrayList.add(new org.telegram.ui.ActionBar.l6(this.c, 0, new Class[]{org.telegram.ui.Cells.e9.class}, new String[]{"textView"}, null, null, -1, null, org.telegram.ui.ActionBar.j6.B6));
-        arrayList.add(new org.telegram.ui.ActionBar.l6(this.c, 32, new Class[]{org.telegram.ui.Cells.b7.class}, null, null, null, i10));
-        arrayList.add(new org.telegram.ui.ActionBar.l6(this.c, 0, new Class[]{org.telegram.ui.Cells.m4.class}, new String[]{"textView"}, null, null, -1, null, org.telegram.ui.ActionBar.j6.L6));
-        arrayList.add(new org.telegram.ui.ActionBar.l6(this.c, 0, new Class[]{org.telegram.ui.Cells.v3.class}, new String[]{"textView"}, null, null, -1, null, org.telegram.ui.ActionBar.j6.f7));
+        arrayList.add(new org.telegram.ui.ActionBar.l6(this.c, 32, new Class[]{org.telegram.ui.Cells.f9.class}, null, null, null, i10));
+        arrayList.add(new org.telegram.ui.ActionBar.l6(this.c, 0, new Class[]{org.telegram.ui.Cells.f9.class}, new String[]{"textView"}, null, null, -1, null, org.telegram.ui.ActionBar.j6.B6));
+        arrayList.add(new org.telegram.ui.ActionBar.l6(this.c, 32, new Class[]{org.telegram.ui.Cells.c7.class}, null, null, null, i10));
+        arrayList.add(new org.telegram.ui.ActionBar.l6(this.c, 0, new Class[]{org.telegram.ui.Cells.n4.class}, new String[]{"textView"}, null, null, -1, null, org.telegram.ui.ActionBar.j6.L6));
+        arrayList.add(new org.telegram.ui.ActionBar.l6(this.c, 0, new Class[]{org.telegram.ui.Cells.w3.class}, new String[]{"textView"}, null, null, -1, null, org.telegram.ui.ActionBar.j6.f7));
         int i11 = org.telegram.ui.ActionBar.j6.G6;
-        arrayList.add(new org.telegram.ui.ActionBar.l6(this.c, 0, new Class[]{org.telegram.ui.Cells.ea.class}, new String[]{"textView"}, null, null, -1, null, i11));
-        arrayList.add(new org.telegram.ui.ActionBar.l6(this.c, 0, new Class[]{org.telegram.ui.Cells.ea.class}, new String[]{"valueTextView"}, null, null, -1, null, org.telegram.ui.ActionBar.j6.I6));
-        arrayList.add(new org.telegram.ui.ActionBar.l6(this.c, 0, new Class[]{org.telegram.ui.Cells.v8.class}, new String[]{"textView"}, null, null, -1, null, i11));
-        arrayList.add(new org.telegram.ui.ActionBar.l6(this.c, 0, new Class[]{org.telegram.ui.Cells.v8.class}, new String[]{"valueTextView"}, null, null, -1, null, org.telegram.ui.ActionBar.j6.z6));
-        arrayList.add(new org.telegram.ui.ActionBar.l6(this.c, 0, new Class[]{org.telegram.ui.Cells.v8.class}, new String[]{"checkBox"}, null, null, -1, null, org.telegram.ui.ActionBar.j6.U6));
-        arrayList.add(new org.telegram.ui.ActionBar.l6(this.c, 0, new Class[]{org.telegram.ui.Cells.v8.class}, new String[]{"checkBox"}, null, null, -1, null, org.telegram.ui.ActionBar.j6.V6));
-        arrayList.add(new org.telegram.ui.ActionBar.l6(this.c, 0, new Class[]{org.telegram.ui.Cells.b5.class}, new String[]{"nameTextView"}, null, null, -1, null, i11));
+        arrayList.add(new org.telegram.ui.ActionBar.l6(this.c, 0, new Class[]{org.telegram.ui.Cells.fa.class}, new String[]{"textView"}, null, null, -1, null, i11));
+        arrayList.add(new org.telegram.ui.ActionBar.l6(this.c, 0, new Class[]{org.telegram.ui.Cells.fa.class}, new String[]{"valueTextView"}, null, null, -1, null, org.telegram.ui.ActionBar.j6.I6));
+        arrayList.add(new org.telegram.ui.ActionBar.l6(this.c, 0, new Class[]{org.telegram.ui.Cells.w8.class}, new String[]{"textView"}, null, null, -1, null, i11));
+        arrayList.add(new org.telegram.ui.ActionBar.l6(this.c, 0, new Class[]{org.telegram.ui.Cells.w8.class}, new String[]{"valueTextView"}, null, null, -1, null, org.telegram.ui.ActionBar.j6.z6));
+        arrayList.add(new org.telegram.ui.ActionBar.l6(this.c, 0, new Class[]{org.telegram.ui.Cells.w8.class}, new String[]{"checkBox"}, null, null, -1, null, org.telegram.ui.ActionBar.j6.U6));
+        arrayList.add(new org.telegram.ui.ActionBar.l6(this.c, 0, new Class[]{org.telegram.ui.Cells.w8.class}, new String[]{"checkBox"}, null, null, -1, null, org.telegram.ui.ActionBar.j6.V6));
+        arrayList.add(new org.telegram.ui.ActionBar.l6(this.c, 0, new Class[]{org.telegram.ui.Cells.c5.class}, new String[]{"nameTextView"}, null, null, -1, null, i11));
         int i12 = org.telegram.ui.ActionBar.j6.y6;
-        arrayList.add(new org.telegram.ui.ActionBar.l6(this.c, 0, new Class[]{org.telegram.ui.Cells.b5.class}, new String[]{"statusColor"}, null, null, -1, eVar, i12));
-        arrayList.add(new org.telegram.ui.ActionBar.l6(this.c, 0, new Class[]{org.telegram.ui.Cells.b5.class}, new String[]{"statusOnlineColor"}, null, null, -1, eVar, org.telegram.ui.ActionBar.j6.n6));
+        arrayList.add(new org.telegram.ui.ActionBar.l6(this.c, 0, new Class[]{org.telegram.ui.Cells.c5.class}, new String[]{"statusColor"}, null, null, -1, eVar, i12));
+        arrayList.add(new org.telegram.ui.ActionBar.l6(this.c, 0, new Class[]{org.telegram.ui.Cells.c5.class}, new String[]{"statusOnlineColor"}, null, null, -1, eVar, org.telegram.ui.ActionBar.j6.n6));
         arrayList.add(new org.telegram.ui.ActionBar.l6(this.n, 32, null, null, null, null, org.telegram.ui.ActionBar.j6.Fi));
         int i13 = org.telegram.ui.ActionBar.j6.Gi;
         arrayList.add(new org.telegram.ui.ActionBar.l6(this.n, 0, new Class[]{UndoView.class}, new String[]{"undoImageView"}, null, null, -1, null, i13));
@@ -1957,15 +1957,15 @@ public final class sr extends org.telegram.ui.ActionBar.n2 implements Notificati
         arrayList.add(new org.telegram.ui.ActionBar.l6(this.n, 0, new Class[]{UndoView.class}, new String[]{"textPaint"}, null, null, -1, null, i14));
         arrayList.add(new org.telegram.ui.ActionBar.l6(this.n, 0, new Class[]{UndoView.class}, new String[]{"progressPaint"}, null, null, -1, null, i14));
         arrayList.add(new org.telegram.ui.ActionBar.l6(this.n, 8, new Class[]{UndoView.class}, new String[]{"leftImageView"}, null, null, -1, null, i14));
-        arrayList.add(new org.telegram.ui.ActionBar.l6(this.c, 262144, new Class[]{org.telegram.ui.Cells.y4.class}, new String[]{"textView"}, null, null, -1, null, i11));
-        arrayList.add(new org.telegram.ui.ActionBar.l6(this.c, 262144, new Class[]{org.telegram.ui.Cells.y4.class}, new String[]{"imageView"}, null, null, -1, null, org.telegram.ui.ActionBar.j6.m6));
-        arrayList.add(new org.telegram.ui.ActionBar.l6(this.c, 262144, new Class[]{org.telegram.ui.Cells.y4.class}, new String[]{"imageView"}, null, null, -1, null, org.telegram.ui.ActionBar.j6.u6));
-        arrayList.add(new org.telegram.ui.ActionBar.l6(this.c, 262144, new Class[]{org.telegram.ui.Cells.y4.class}, new String[]{"textView"}, null, null, -1, null, org.telegram.ui.ActionBar.j6.v6));
-        arrayList.add(new org.telegram.ui.ActionBar.l6(this.c, 0, new Class[]{org.telegram.ui.Components.kx0.class}, new String[]{"title"}, null, null, -1, null, i11));
-        arrayList.add(new org.telegram.ui.ActionBar.l6(this.c, 0, new Class[]{org.telegram.ui.Components.kx0.class}, new String[]{"subtitle"}, null, null, -1, null, i11));
+        arrayList.add(new org.telegram.ui.ActionBar.l6(this.c, 262144, new Class[]{org.telegram.ui.Cells.z4.class}, new String[]{"textView"}, null, null, -1, null, i11));
+        arrayList.add(new org.telegram.ui.ActionBar.l6(this.c, 262144, new Class[]{org.telegram.ui.Cells.z4.class}, new String[]{"imageView"}, null, null, -1, null, org.telegram.ui.ActionBar.j6.m6));
+        arrayList.add(new org.telegram.ui.ActionBar.l6(this.c, 262144, new Class[]{org.telegram.ui.Cells.z4.class}, new String[]{"imageView"}, null, null, -1, null, org.telegram.ui.ActionBar.j6.u6));
+        arrayList.add(new org.telegram.ui.ActionBar.l6(this.c, 262144, new Class[]{org.telegram.ui.Cells.z4.class}, new String[]{"textView"}, null, null, -1, null, org.telegram.ui.ActionBar.j6.v6));
+        arrayList.add(new org.telegram.ui.ActionBar.l6(this.c, 0, new Class[]{org.telegram.ui.Components.jx0.class}, new String[]{"title"}, null, null, -1, null, i11));
+        arrayList.add(new org.telegram.ui.ActionBar.l6(this.c, 0, new Class[]{org.telegram.ui.Components.jx0.class}, new String[]{"subtitle"}, null, null, -1, null, i11));
         arrayList.add(new org.telegram.ui.ActionBar.l6(this.b.d, 4, null, null, null, null, i11));
         arrayList.add(new org.telegram.ui.ActionBar.l6(this.b.e, 4, null, null, null, null, i12));
-        arrayList.add(new org.telegram.ui.ActionBar.l6(this.c, 0, new Class[]{org.telegram.ui.Cells.b5.class}, null, org.telegram.ui.ActionBar.j6.r0, null, org.telegram.ui.ActionBar.j6.J7));
+        arrayList.add(new org.telegram.ui.ActionBar.l6(this.c, 0, new Class[]{org.telegram.ui.Cells.c5.class}, null, org.telegram.ui.ActionBar.j6.r0, null, org.telegram.ui.ActionBar.j6.J7));
         arrayList.add(new org.telegram.ui.ActionBar.l6(null, 0, null, null, null, eVar, org.telegram.ui.ActionBar.j6.O7));
         arrayList.add(new org.telegram.ui.ActionBar.l6(null, 0, null, null, null, eVar, org.telegram.ui.ActionBar.j6.P7));
         arrayList.add(new org.telegram.ui.ActionBar.l6(null, 0, null, null, null, eVar, org.telegram.ui.ActionBar.j6.Q7));
@@ -2029,7 +2029,7 @@ public final class sr extends org.telegram.ui.ActionBar.n2 implements Notificati
         if (i13 != 2) {
             final long j12 = j3;
             TLRPC.TL_chatAdminRights tL_chatAdminRights2 = tL_chatAdminRights;
-            org.telegram.ui.Components.w70 H = org.telegram.ui.Components.w70.H(this, view);
+            org.telegram.ui.Components.v70 H = org.telegram.ui.Components.v70.H(this, view);
             if (i13 == 3 && ChatObject.canBlockUsers(this.r)) {
                 srVar = this;
                 H.c(R.drawable.msg_permissions, LocaleController.getString(R.string.ChannelEditPermissions), new org.telegram.messenger.voip.f(srVar, j12, (TLObject) tL_chatBannedRights, str, tLObject, 1), false);
@@ -2223,7 +2223,7 @@ public final class sr extends org.telegram.ui.ActionBar.n2 implements Notificati
         boolean z22 = z20;
         xq xqVar = new xq(this, j11, i11, tLObject, tL_chatAdminRights, tL_chatBannedRights2, str, z13);
         long j13 = j11;
-        org.telegram.ui.Components.w70 H2 = org.telegram.ui.Components.w70.H(this, view);
+        org.telegram.ui.Components.v70 H2 = org.telegram.ui.Components.v70.H(this, view);
         H2.W(this.c.W0(view, false));
         H2.l(R.drawable.msg_admins, LocaleController.getString(z19 ? R.string.EditAdminRights : R.string.SetAsAdmin), new cj(xqVar, 11), z12);
         H2.l(R.drawable.msg_permissions, LocaleController.getString("ChangePermissions", R.string.ChangePermissions), new org.telegram.ui.ActionBar.n5((org.telegram.ui.ActionBar.n2) this, tLObject, (TLObject) user, (Object) xqVar, 13), z22);
@@ -2372,9 +2372,9 @@ public final class sr extends org.telegram.ui.ActionBar.n2 implements Notificati
         if (orVar != null) {
             orVar.l();
         }
-        org.telegram.ui.Components.kx0 kx0Var = this.b;
-        if (kx0Var != null) {
-            kx0Var.requestLayout();
+        org.telegram.ui.Components.jx0 jx0Var = this.b;
+        if (jx0Var != null) {
+            jx0Var.requestLayout();
         }
     }
 
@@ -2457,9 +2457,9 @@ public final class sr extends org.telegram.ui.ActionBar.n2 implements Notificati
         }
         if (ChatObject.isChannel(this.r)) {
             this.Q = true;
-            org.telegram.ui.Components.kx0 kx0Var = this.b;
-            if (kx0Var != null) {
-                kx0Var.e(true, false);
+            org.telegram.ui.Components.jx0 jx0Var = this.b;
+            if (jx0Var != null) {
+                jx0Var.e(true, false);
             }
             or orVar2 = this.a;
             if (orVar2 != null) {

@@ -1,42 +1,108 @@
 package org.telegram.ui;
 
-import android.location.Location;
-import android.location.LocationListener;
-import android.location.LocationManager;
-import android.os.Bundle;
+import android.content.SharedPreferences;
+import android.widget.TextView;
 import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.R;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class wb1 implements LocationListener {
+public final class wb1 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ ThemeActivity a;
 
     public wb1(ThemeActivity themeActivity) {
         this.a = themeActivity;
     }
 
-    @Override // android.location.LocationListener
-    public final void onLocationChanged(Location location) {
-        ThemeActivity themeActivity = this.a;
-        if (location == null) {
+    /* JADX WARN: Removed duplicated region for block: B:53:0x0151  */
+    /* JADX WARN: Removed duplicated region for block: B:56:0x0156  */
+    @Override // org.telegram.ui.ActionBar.j
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void b(int i10) {
+        if (i10 == -1) {
+            this.a.finishFragment();
             return;
         }
-        themeActivity.K0 = false;
-        LocationManager locationManager = (LocationManager) ApplicationLoader.applicationContext.getSystemService("location");
-        locationManager.removeUpdates(themeActivity.Q0);
-        locationManager.removeUpdates(themeActivity.R0);
-        themeActivity.B0(location, false);
-    }
-
-    @Override // android.location.LocationListener
-    public final void onProviderDisabled(String str) {
-    }
-
-    @Override // android.location.LocationListener
-    public final void onProviderEnabled(String str) {
-    }
-
-    @Override // android.location.LocationListener
-    public final void onStatusChanged(String str, int i10, Bundle bundle) {
+        if (i10 == 1) {
+            this.a.w0();
+            return;
+        }
+        if (i10 == 2) {
+            org.telegram.ui.ActionBar.h6 k10 = org.telegram.ui.ActionBar.j6.A0().k(false);
+            if (k10.r == null) {
+                this.a.getMessagesController().saveThemeToServer(k10.b, k10);
+                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needShareTheme, k10.b, k10);
+                return;
+            }
+            String str = "https://" + this.a.getMessagesController().linkPrefix + "/addtheme/" + k10.r.slug;
+            this.a.showDialog(new org.telegram.ui.Components.uq0(this.a.getParentActivity(), null, str, false, str, false, null));
+            return;
+        }
+        if (i10 == 3) {
+            this.a.x0();
+            return;
+        }
+        if (i10 == 4) {
+            if (this.a.getParentActivity() == null) {
+                return;
+            }
+            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(this.a.getParentActivity());
+            alertDialog$Builder.a.R = LocaleController.getString("ThemeResetToDefaultsTitle", R.string.ThemeResetToDefaultsTitle);
+            alertDialog$Builder.a.T = LocaleController.getString("ThemeResetToDefaultsText", R.string.ThemeResetToDefaultsText);
+            alertDialog$Builder.k(LocaleController.getString("Reset", R.string.Reset), new ol0(this, 21));
+            alertDialog$Builder.h(LocaleController.getString("Cancel", R.string.Cancel), null);
+            org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
+            this.a.showDialog(b2Var);
+            TextView textView = (TextView) b2Var.d(-1);
+            if (textView != null) {
+                textView.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.q7, false));
+                return;
+            }
+            return;
+        }
+        if (i10 == 5) {
+            SharedPreferences sharedPreferences = ApplicationLoader.applicationContext.getSharedPreferences("themeconfig", 0);
+            String str2 = "Blue";
+            String string = sharedPreferences.getString("lastDayTheme", "Blue");
+            if (org.telegram.ui.ActionBar.j6.N0(string) == null || org.telegram.ui.ActionBar.j6.N0(string).q()) {
+                string = "Blue";
+            }
+            String str3 = "Dark Blue";
+            String string2 = sharedPreferences.getString("lastDarkTheme", "Dark Blue");
+            if (org.telegram.ui.ActionBar.j6.N0(string2) == null || !org.telegram.ui.ActionBar.j6.N0(string2).q()) {
+                string2 = "Dark Blue";
+            }
+            org.telegram.ui.ActionBar.i6 i6Var = org.telegram.ui.ActionBar.j6.I;
+            if (!string.equals(string2)) {
+                str3 = string2;
+            } else if (i6Var.q() || string.equals("Dark Blue") || string.equals("Night")) {
+                str3 = string2;
+                boolean equals = str2.equals(i6Var.m());
+                org.telegram.ui.ActionBar.i6 N0 = !equals ? org.telegram.ui.ActionBar.j6.N0(str3) : org.telegram.ui.ActionBar.j6.N0(str2);
+                int[] iArr = {(this.a.s.getIconView().getMeasuredWidth() / 2) + r9, (this.a.s.getIconView().getMeasuredHeight() / 2) + r9};
+                this.a.s.getIconView().getLocationInWindow(iArr);
+                int i11 = iArr[0];
+                int i12 = iArr[1];
+                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needSetDayNightTheme, N0, Boolean.FALSE, iArr, -1, Boolean.valueOf(equals), this.a.s.getIconView());
+                this.a.A0(true);
+                org.telegram.ui.ActionBar.j6.F1(this.a);
+            }
+            str2 = string;
+            boolean equals2 = str2.equals(i6Var.m());
+            if (!equals2) {
+            }
+            int[] iArr2 = {(this.a.s.getIconView().getMeasuredWidth() / 2) + i11, (this.a.s.getIconView().getMeasuredHeight() / 2) + i12};
+            this.a.s.getIconView().getLocationInWindow(iArr2);
+            int i112 = iArr2[0];
+            int i122 = iArr2[1];
+            NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needSetDayNightTheme, N0, Boolean.FALSE, iArr2, -1, Boolean.valueOf(equals2), this.a.s.getIconView());
+            this.a.A0(true);
+            org.telegram.ui.ActionBar.j6.F1(this.a);
+        }
     }
 }

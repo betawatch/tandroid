@@ -3,24 +3,18 @@ package org.telegram.ui;
 import org.telegram.messenger.AndroidUtilities;
 import org.webrtc.RendererCommon;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class ii1 implements RendererCommon.RendererEvents {
-    public final /* synthetic */ si1 a;
+    public final /* synthetic */ ti1 a;
 
-    public ii1(si1 si1Var) {
-        this.a = si1Var;
+    public ii1(ti1 ti1Var) {
+        this.a = ti1Var;
     }
 
     @Override // org.webrtc.RendererCommon.RendererEvents
     public final void onFirstFrameRendered() {
-        si1 si1Var = this.a;
-        com.google.android.gms.internal.cast.p pVar = si1Var.l1;
-        if (pVar != null) {
-            pVar.run();
-            si1Var.l1 = null;
-        }
-        AndroidUtilities.runOnUIThread(new e01(this, 22));
+        AndroidUtilities.runOnUIThread(new e01(this, 21));
     }
 
     @Override // org.webrtc.RendererCommon.RendererEvents

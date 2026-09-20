@@ -16,9 +16,9 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class si extends vl0 {
+public final class si extends ul0 {
     public int E;
     public int F;
     public int G;
@@ -43,7 +43,7 @@ public final class si extends vl0 {
         this.c = context;
     }
 
-    @Override // org.telegram.ui.Components.vl0
+    @Override // org.telegram.ui.Components.ul0
     public final boolean D(s4.c1 c1Var) {
         return false;
     }
@@ -306,7 +306,7 @@ public final class si extends vl0 {
             bVar3.P = 0L;
             bVar3.a.setText(ContactsController.formatName(user2.first_name, user2.last_name));
             if (bVar3.U == null) {
-                bVar3.U = new h9((org.telegram.ui.ActionBar.e6) null);
+                bVar3.U = new g9((org.telegram.ui.ActionBar.f6) null);
             }
             bVar3.U.m(i16, user2);
             bVar3.c.e(user2, bVar3.U);
@@ -419,7 +419,7 @@ public final class si extends vl0 {
         oiVar.setImportantForAccessibility(1);
         oiVar.setFocusable(true);
         oiVar.setLayoutParams(new s4.p0(-2, -1));
-        return new gl0(oiVar);
+        return new fl0(oiVar);
     }
 
     @Override // s4.h0

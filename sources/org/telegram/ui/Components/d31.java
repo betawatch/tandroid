@@ -1,41 +1,53 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class d31 extends AnimatorListenerAdapter {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ m31 b;
+public final class d31 extends Drawable {
+    public final Drawable a;
+    public final Paint b = new Paint(1);
+    public final RectF c = new RectF();
 
-    public d31(m31 m31Var, boolean z10) {
-        this.b = m31Var;
-        this.a = z10;
+    public d31(Context context) {
+        this.a = context.getResources().getDrawable(R.drawable.menu_topic_add).mutate();
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        m31 m31Var = this.b;
-        long j3 = m31Var.c;
-        if (m31Var.U == animator) {
-            boolean z10 = this.a;
-            m31Var.R = z10 ? 1.0f : 0.0f;
-            m31Var.n();
-            m31Var.S = false;
-            m31Var.E.setImageResource(m31Var.P ? R.drawable.menu_sidebar_top : R.drawable.menu_sidebar_bottom);
-            m31Var.U = null;
-            MessagesController.getInstance(m31Var.b).getMainSettings().edit().putBoolean(a4.a.o(j3, "topicssidetabs"), m31Var.Q).putBoolean(a4.a.o(j3, "topicssidetabsb"), m31Var.P).apply();
-            Boolean bool = m31Var.T;
-            if (bool != null && z10 != bool.booleanValue()) {
-                boolean booleanValue = m31Var.T.booleanValue();
-                m31Var.T = null;
-                m31Var.d(booleanValue);
-            }
-            AndroidUtilities.runOnUIThread(new xq0(this, 19));
-        }
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        canvas.drawRoundRect(this.c, AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), this.b);
+        this.a.draw(canvas);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return 0;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void onBoundsChange(Rect rect) {
+        super.onBoundsChange(rect);
+        this.c.set(rect);
+        int centerX = rect.centerX() - AndroidUtilities.dp(12.0f);
+        int centerY = rect.centerY() - AndroidUtilities.dp(12.0f);
+        this.a.setBounds(centerX, centerY, AndroidUtilities.dp(24.0f) + centerX, AndroidUtilities.dp(24.0f) + centerY);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        this.b.setAlpha(i10);
+        this.a.setAlpha(i10);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

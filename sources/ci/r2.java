@@ -20,11 +20,10 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.wh;
-import org.telegram.ui.Components.me0;
-import org.telegram.ui.Components.q90;
+import org.telegram.ui.Components.le0;
+import org.telegram.ui.Components.p90;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class r2 extends View {
     public final Paint a;
@@ -80,9 +79,9 @@ public final class r2 extends View {
             if (MessagesController.getInstance(i10).storyWeatherPreload) {
                 charSequence = replaceEmoji;
                 charSequence = replaceEmoji;
-                if (me0.f("android.permission.ACCESS_COARSE_LOCATION") && ndVar == null) {
+                if (le0.f("android.permission.ACCESS_COARSE_LOCATION") && ndVar == null) {
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("___");
-                    spannableStringBuilder.setSpan(new q90(AndroidUtilities.dp(68.0f), this), 0, spannableStringBuilder.length(), 33);
+                    spannableStringBuilder.setSpan(new p90(AndroidUtilities.dp(68.0f), this), 0, spannableStringBuilder.length(), 33);
                     o2VarArr[0] = new o2(this, spannableStringBuilder);
                     od.a(false, new m2(0, this, o2VarArr));
                     charSequence = spannableStringBuilder;
@@ -139,7 +138,7 @@ public final class r2 extends View {
             Object obj2 = arrayList.get(i10);
             i10++;
             n2 n2Var2 = (n2) obj2;
-            n2Var2.a(canvas, com.google.android.gms.internal.vision.e2.A((getMeasuredWidth() - getPaddingLeft()) - getPaddingRight(), this.d[n2Var2.e - 1], 2.0f, getPaddingLeft()) + n2Var2.d, wh.c(48.0f, n2Var2.e - 1, AndroidUtilities.dp(12.0f)));
+            n2Var2.a(canvas, com.google.android.gms.internal.vision.e2.A((getMeasuredWidth() - getPaddingLeft()) - getPaddingRight(), this.d[n2Var2.e - 1], 2.0f, getPaddingLeft()) + n2Var2.d, org.telegram.messenger.l0.D(48.0f, n2Var2.e - 1, AndroidUtilities.dp(12.0f)));
         }
     }
 
@@ -214,7 +213,7 @@ public final class r2 extends View {
             float[] fArr3 = this.d;
             fArr3[i15] = fArr3[i15] + n2Var2.b;
         }
-        setMeasuredDimension(size, wh.c(12.0f, i13 - 1, wh.c(36.0f, i13, AndroidUtilities.dp(24.0f))));
+        setMeasuredDimension(size, org.telegram.messenger.l0.D(12.0f, i13 - 1, org.telegram.messenger.l0.D(36.0f, i13, AndroidUtilities.dp(24.0f))));
     }
 
     @Override // android.view.View

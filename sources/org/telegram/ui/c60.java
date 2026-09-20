@@ -19,9 +19,9 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class c60 extends org.telegram.ui.Components.vl0 {
+public final class c60 extends org.telegram.ui.Components.ul0 {
     public int E;
     public int F;
     public int G;
@@ -49,7 +49,7 @@ public final class c60 extends org.telegram.ui.Components.vl0 {
         this.c = launchActivity;
     }
 
-    @Override // org.telegram.ui.Components.vl0
+    @Override // org.telegram.ui.Components.ul0
     public final boolean D(s4.c1 c1Var) {
         int i10 = c1Var.f;
         return (i10 == 3 || i10 == 4 || i10 == 5 || i10 == 6) ? false : true;
@@ -220,8 +220,8 @@ public final class c60 extends org.telegram.ui.Components.vl0 {
     */
     public final void v(s4.c1 c1Var, int i10) {
         TLRPC.Chat chat;
-        org.telegram.ui.ActionBar.e6 e6Var;
-        org.telegram.ui.ActionBar.e6 e6Var2;
+        org.telegram.ui.ActionBar.f6 f6Var;
+        org.telegram.ui.ActionBar.f6 f6Var2;
         TLRPC.GroupCallParticipant groupCallParticipant;
         p50 p50Var;
         boolean z10;
@@ -246,35 +246,35 @@ public final class c60 extends org.telegram.ui.Components.vl0 {
         Long l4 = null;
         fileLocation = null;
         if (i12 == 0) {
-            org.telegram.ui.Cells.x3 x3Var = (org.telegram.ui.Cells.x3) view;
+            org.telegram.ui.Cells.y3 y3Var = (org.telegram.ui.Cells.y3) view;
             if (i10 == this.x) {
                 int i13 = org.telegram.ui.ActionBar.j6.v6;
-                e6Var2 = ((org.telegram.ui.ActionBar.f3) i60Var).resourcesProvider;
-                int v02 = org.telegram.ui.ActionBar.j6.v0(i13, e6Var2);
-                x3Var.a(v02, v02);
-                x3Var.b(R.drawable.msg_contact_add, LocaleController.getString(R.string.VoipConferenceAddPeople), true);
+                f6Var2 = ((org.telegram.ui.ActionBar.f3) i60Var).resourcesProvider;
+                int v02 = org.telegram.ui.ActionBar.j6.v0(i13, f6Var2);
+                y3Var.a(v02, v02);
+                y3Var.b(R.drawable.msg_contact_add, LocaleController.getString(R.string.VoipConferenceAddPeople), true);
                 return;
             }
             if (i10 == this.y) {
                 int i14 = org.telegram.ui.ActionBar.j6.v6;
-                e6Var = ((org.telegram.ui.ActionBar.f3) i60Var).resourcesProvider;
-                int v03 = org.telegram.ui.ActionBar.j6.v0(i14, e6Var);
-                x3Var.a(v03, v03);
-                x3Var.b(R.drawable.msg_link2, LocaleController.getString(R.string.VoipConferenceShareLink), false);
+                f6Var = ((org.telegram.ui.ActionBar.f3) i60Var).resourcesProvider;
+                int v03 = org.telegram.ui.ActionBar.j6.v0(i14, f6Var);
+                y3Var.a(v03, v03);
+                y3Var.b(R.drawable.msg_link2, LocaleController.getString(R.string.VoipConferenceShareLink), false);
                 return;
             }
             int offsetColor = AndroidUtilities.getOffsetColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.lg, false), org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.og, false), i60Var.O.getTag() != null ? 1.0f : 0.0f, 1.0f);
-            x3Var.a(offsetColor, offsetColor);
+            y3Var.a(offsetColor, offsetColor);
             if (!ChatObject.isChannel(i60Var.Z0) || (chat = i60Var.Z0) == null || chat.megagroup || !ChatObject.isPublic(chat)) {
-                x3Var.b(R.drawable.msg_contact_add, LocaleController.getString(R.string.VoipGroupInviteMember), false);
+                y3Var.b(R.drawable.msg_contact_add, LocaleController.getString(R.string.VoipGroupInviteMember), false);
                 return;
             } else {
-                x3Var.b(R.drawable.msg_link, LocaleController.getString(R.string.VoipGroupShareLink), false);
+                y3Var.b(R.drawable.msg_link, LocaleController.getString(R.string.VoipGroupShareLink), false);
                 return;
             }
         }
         if (i12 == 1) {
-            org.telegram.ui.Cells.e4 e4Var = (org.telegram.ui.Cells.e4) view;
+            org.telegram.ui.Cells.f4 f4Var = (org.telegram.ui.Cells.f4) view;
             int i15 = i10 - this.d;
             if (i60Var.s0) {
                 if (i15 >= 0 && i15 < arrayList.size()) {
@@ -295,16 +295,16 @@ public final class c60 extends org.telegram.ui.Components.vl0 {
                 }
                 TLRPC.FileLocation fileLocation3 = fileLocation;
                 float f7 = fileLocation3 != null ? i60Var.i2.a : 1.0f;
-                boolean z13 = e4Var.getParticipant() != null && MessageObject.getPeerId(e4Var.getParticipant().peer) == peerId;
-                e4Var.e(i60Var.d, groupCallParticipant, i60Var.a1, peerId2, fileLocation3, z13);
+                boolean z13 = f4Var.getParticipant() != null && MessageObject.getPeerId(f4Var.getParticipant().peer) == peerId;
+                f4Var.e(i60Var.d, groupCallParticipant, i60Var.a1, peerId2, fileLocation3, z13);
                 boolean z14 = z13;
-                org.telegram.ui.Cells.z3 z3Var = e4Var.x;
-                z3Var.setProgress(f7);
+                org.telegram.ui.Cells.a4 a4Var = f4Var.x;
+                a4Var.setProgress(f7);
                 if (f7 < 1.0f) {
-                    AndroidUtilities.updateViewVisibilityAnimated(z3Var, true, 1.0f, z14);
+                    AndroidUtilities.updateViewVisibilityAnimated(a4Var, true, 1.0f, z14);
                     return;
                 } else {
-                    AndroidUtilities.updateViewVisibilityAnimated(z3Var, false, 1.0f, z14);
+                    AndroidUtilities.updateViewVisibilityAnimated(a4Var, false, 1.0f, z14);
                     return;
                 }
             }
@@ -348,7 +348,7 @@ public final class c60 extends org.telegram.ui.Components.vl0 {
             i60.N(i60Var, lVar, true);
             return;
         }
-        org.telegram.ui.Cells.w3 w3Var = (org.telegram.ui.Cells.w3) view;
+        org.telegram.ui.Cells.x3 x3Var = (org.telegram.ui.Cells.x3) view;
         int i17 = i10 - this.f;
         int i18 = i10 - this.n;
         if (i18 < 0 || i18 >= i60Var.a1.shadyJoinParticipants.size()) {
@@ -366,29 +366,29 @@ public final class c60 extends org.telegram.ui.Components.vl0 {
                     z12 = false;
                     if (l4 != null) {
                         i11 = ((org.telegram.ui.ActionBar.f3) i60Var).currentAccount;
-                        org.telegram.ui.ActionBar.j5 j5Var = w3Var.c;
-                        org.telegram.ui.ActionBar.j5 j5Var2 = w3Var.b;
-                        org.telegram.ui.Components.w9 w9Var = w3Var.a;
-                        org.telegram.ui.Components.h9 h9Var = w3Var.e;
+                        org.telegram.ui.ActionBar.j5 j5Var = x3Var.c;
+                        org.telegram.ui.ActionBar.j5 j5Var2 = x3Var.b;
+                        org.telegram.ui.Components.v9 v9Var = x3Var.a;
+                        org.telegram.ui.Components.g9 g9Var = x3Var.e;
                         TLRPC.User user = MessagesController.getInstance(i11).getUser(l4);
-                        w3Var.f = user;
+                        x3Var.f = user;
                         if (user == null) {
-                            h9Var.g(21);
+                            g9Var.g(21);
                         } else {
-                            h9Var.r(user);
+                            g9Var.r(user);
                         }
-                        j5Var2.l(UserObject.getUserName(w3Var.f), false);
-                        w9Var.getImageReceiver().setCurrentAccount(i11);
-                        w9Var.e(w3Var.f, h9Var);
+                        j5Var2.l(UserObject.getUserName(x3Var.f), false);
+                        v9Var.getImageReceiver().setCurrentAccount(i11);
+                        v9Var.e(x3Var.f, g9Var);
                         j5Var.l(LocaleController.getString(z12 ? R.string.ShadyLeaving : z11 ? R.string.ShadyJoining : z10 ? R.string.ConferenceCalling : R.string.Invited), false);
                         float f11 = 0.5f;
-                        w9Var.setAlpha((z11 || z12) ? 0.5f : 1.0f);
+                        v9Var.setAlpha((z11 || z12) ? 0.5f : 1.0f);
                         j5Var2.setAlpha((z11 || z12) ? 0.5f : 1.0f);
                         if (!z11 && !z12) {
                             f11 = 1.0f;
                         }
                         j5Var.setAlpha(f11);
-                        ImageView imageView = w3Var.d;
+                        ImageView imageView = x3Var.d;
                         if (!z11 && !z12) {
                             r9 = 1.0f;
                         }
@@ -464,12 +464,12 @@ public final class c60 extends org.telegram.ui.Components.vl0 {
             Paint paint2 = new Paint();
             a60Var.h = paint2;
             paint2.setColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.gg, false));
-            a60Var.e = new org.telegram.ui.Components.h9((org.telegram.ui.ActionBar.e6) null);
-            org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(context);
-            a60Var.a = w9Var;
-            w9Var.setRoundRadius(AndroidUtilities.dp(24.0f));
+            a60Var.e = new org.telegram.ui.Components.g9((org.telegram.ui.ActionBar.f6) null);
+            org.telegram.ui.Components.v9 v9Var = new org.telegram.ui.Components.v9(context);
+            a60Var.a = v9Var;
+            v9Var.setRoundRadius(AndroidUtilities.dp(24.0f));
             boolean z10 = LocaleController.isRTL;
-            a60Var.addView(w9Var, w7.y5.d(46, 46.0f, (z10 ? 5 : 3) | 48, z10 ? 0.0f : 11.0f, 6.0f, z10 ? 11.0f : 0.0f, 0.0f));
+            a60Var.addView(v9Var, w7.y5.d(46, 46.0f, (z10 ? 5 : 3) | 48, z10 ? 0.0f : 11.0f, 6.0f, z10 ? 11.0f : 0.0f, 0.0f));
             org.telegram.ui.ActionBar.j5 j5Var3 = new org.telegram.ui.ActionBar.j5(context);
             a60Var.b = j5Var3;
             j5Var3.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.ng, false));
@@ -531,17 +531,17 @@ public final class c60 extends org.telegram.ui.Components.vl0 {
         int i10 = c1Var.f;
         View view = c1Var.a;
         if (i10 == 1) {
-            org.telegram.ui.Cells.e4 e4Var = (org.telegram.ui.Cells.e4) view;
+            org.telegram.ui.Cells.f4 f4Var = (org.telegram.ui.Cells.f4) view;
             int i11 = e50Var.getTag() != null ? org.telegram.ui.ActionBar.j6.rg : org.telegram.ui.ActionBar.j6.mg;
-            e4Var.f(i11, org.telegram.ui.ActionBar.j6.w0(null, i11, false));
-            e4Var.setDrawDivider(c1Var.b() != this.F - 2);
+            f4Var.f(i11, org.telegram.ui.ActionBar.j6.w0(null, i11, false));
+            f4Var.setDrawDivider(c1Var.b() != this.F - 2);
             return;
         }
         if (i10 == 2) {
-            org.telegram.ui.Cells.w3 w3Var = (org.telegram.ui.Cells.w3) view;
+            org.telegram.ui.Cells.x3 x3Var = (org.telegram.ui.Cells.x3) view;
             int i12 = e50Var.getTag() != null ? org.telegram.ui.ActionBar.j6.rg : org.telegram.ui.ActionBar.j6.mg;
-            w3Var.a(i12, org.telegram.ui.ActionBar.j6.w0(null, i12, false));
-            w3Var.setDrawDivider(c1Var.b() != this.F - 2);
+            x3Var.a(i12, org.telegram.ui.ActionBar.j6.w0(null, i12, false));
+            x3Var.setDrawDivider(c1Var.b() != this.F - 2);
         }
     }
 }

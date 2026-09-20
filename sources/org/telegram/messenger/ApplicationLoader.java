@@ -27,11 +27,11 @@ import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.g10;
-import org.telegram.ui.Components.w70;
+import org.telegram.ui.Components.v70;
 import org.telegram.ui.IUpdateLayout;
-import org.telegram.ui.mb0;
+import org.telegram.ui.nb0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public class ApplicationLoader extends Application {
     public static volatile Context applicationContext = null;
@@ -493,7 +493,7 @@ public class ApplicationLoader extends Application {
             StringBuilder sb2 = new StringBuilder("app start time = ");
             long elapsedRealtime = SystemClock.elapsedRealtime();
             startTime = elapsedRealtime;
-            q.s(sb2, elapsedRealtime);
+            hg.k0.u(sb2, elapsedRealtime);
             try {
                 PackageInfo packageInfo = applicationContext.getPackageManager().getPackageInfo(applicationContext.getPackageName(), 0);
                 int i11 = packageInfo.versionCode % 10;
@@ -540,13 +540,13 @@ public class ApplicationLoader extends Application {
             }
             applicationHandler = new Handler(applicationContext.getMainLooper());
             AndroidUtilities.runOnUIThread(new v1(6));
-            mb0[] values = mb0.values();
+            nb0[] values = nb0.values();
             int length = values.length;
             while (true) {
                 if (i10 >= length) {
-                    w7.f6.b(mb0.h);
+                    w7.g6.b(nb0.h);
                     break;
-                } else if (w7.f6.a(values[i10])) {
+                } else if (w7.g6.a(values[i10])) {
                     break;
                 } else {
                     i10++;
@@ -661,7 +661,7 @@ public class ApplicationLoader extends Application {
     public void onResume() {
     }
 
-    public void addItemOptions(w70 w70Var) {
+    public void addItemOptions(v70 v70Var) {
     }
 
     public void appCenterLogInternal(Throwable th2) {

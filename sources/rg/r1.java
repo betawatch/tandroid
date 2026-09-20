@@ -1,37 +1,59 @@
 package rg;
 
+import android.content.Context;
+import android.graphics.Canvas;
 import android.graphics.RectF;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LiteMode;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.Cells.s8;
+import org.telegram.ui.Components.kj0;
+import yh.i8;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class r1 {
-    public float a;
-    public float b;
-    public float c;
-    public float d;
-    public long e;
-    public float f;
-    public final /* synthetic */ s1 g;
+public final class r1 extends s8 {
+    public final i8 Q;
+    public final int R;
+    public final q1 S;
 
-    public r1(s1 s1Var) {
-        this.g = s1Var;
+    public r1(Context context, int i10, f6 f6Var) {
+        super(context, f6Var);
+        this.Q = new i8(1, 15);
+        this.S = new q1(this, 0);
+        this.R = i10 == 1 ? j6.fk : j6.Mj;
     }
 
-    public final void a(long j3, boolean z10) {
-        s1 s1Var = this.g;
-        RectF rectF = s1Var.a;
-        this.e = j3 + s1Var.h + Utilities.fastRandom.nextInt(MediaDataController.MAX_STYLE_RUNS_COUNT);
-        RectF rectF2 = z10 ? s1Var.b : rectF;
-        float abs = Math.abs(Utilities.fastRandom.nextInt() % rectF2.width()) + rectF2.left;
-        float abs2 = Math.abs(Utilities.fastRandom.nextInt() % rectF2.height()) + rectF2.top;
-        this.a = abs;
-        this.b = abs2;
-        double atan2 = Math.atan2(abs - rectF.centerX(), this.b - rectF.centerY());
-        this.c = (float) Math.sin(atan2);
-        this.d = (float) Math.cos(atan2);
-        Utilities.fastRandom.nextInt(50);
-        this.f = 0.0f;
+    @Override // org.telegram.ui.Cells.s8, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        boolean isEnabled = LiteMode.isEnabled(131072);
+        q1 q1Var = this.S;
+        if (isEnabled) {
+            i8 i8Var = this.Q;
+            i8Var.d();
+            i8Var.a(canvas, j6.w0(null, this.R, false));
+            yf.h.d().a(15, q1Var);
+        } else {
+            yf.h.d().f(q1Var);
+        }
+        super.dispatchDraw(canvas);
+    }
+
+    @Override // org.telegram.ui.Cells.s8, android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        yf.h.d().f(this.S);
+    }
+
+    @Override // org.telegram.ui.Cells.s8, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        kj0 kj0Var = this.e;
+        float width = (kj0Var.getWidth() / 2.0f) + kj0Var.getX();
+        float height = ((kj0Var.getHeight() / 2.0f) + (kj0Var.getY() + kj0Var.getPaddingTop())) - AndroidUtilities.dp(3.0f);
+        RectF rectF = AndroidUtilities.rectTmp;
+        rectF.set(width - AndroidUtilities.dp(16.0f), height - AndroidUtilities.dp(16.0f), width + AndroidUtilities.dp(16.0f), height + AndroidUtilities.dp(16.0f));
+        this.Q.g(rectF);
     }
 }

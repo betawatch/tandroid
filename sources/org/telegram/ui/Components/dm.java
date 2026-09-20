@@ -6,7 +6,7 @@ import android.graphics.RectF;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.camera.CameraView;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class dm extends CameraView {
     public final ai.w4 a;
@@ -60,14 +60,14 @@ public final class dm extends CameraView {
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.c;
-        qc.a(chatAttachAlertPhotoLayout.P, this.a);
+        pc.a(chatAttachAlertPhotoLayout.P, this.a);
         chatAttachAlertPhotoLayout.E.invalidate();
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        qc.h(this.c.P);
+        pc.h(this.c.P);
     }
 
     @Override // android.view.View

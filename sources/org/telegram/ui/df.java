@@ -13,7 +13,7 @@ import org.telegram.messenger.camera.Size;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class df implements Comparator {
     public final /* synthetic */ int a;
@@ -62,12 +62,12 @@ public final /* synthetic */ class df implements Comparator {
                 }
                 return j04 < j05 ? -1 : 0;
             case 6:
-                id2 = ((org.telegram.ui.Components.n9) obj2).b;
-                id3 = ((org.telegram.ui.Components.n9) obj).b;
+                id2 = ((org.telegram.ui.Components.m9) obj2).b;
+                id3 = ((org.telegram.ui.Components.m9) obj).b;
                 break;
             case 7:
-                id2 = ((org.telegram.ui.Components.n9) obj2).b;
-                id3 = ((org.telegram.ui.Components.n9) obj).b;
+                id2 = ((org.telegram.ui.Components.m9) obj2).b;
+                id3 = ((org.telegram.ui.Components.m9) obj).b;
                 break;
             case 8:
                 return Long.compare(((org.telegram.ui.Components.cd) obj).c, ((org.telegram.ui.Components.cd) obj2).c);
@@ -90,14 +90,14 @@ public final /* synthetic */ class df implements Comparator {
                 id3 = ((Integer) obj).intValue();
                 break;
             case 12:
-                float f7 = ((org.telegram.ui.Components.xg0) obj).a;
-                float f10 = ((org.telegram.ui.Components.xg0) obj2).a;
+                float f7 = ((org.telegram.ui.Components.wg0) obj).a;
+                float f10 = ((org.telegram.ui.Components.wg0) obj2).a;
                 if (f7 > f10) {
                     return -1;
                 }
                 return f7 < f10 ? 1 : 0;
             case 13:
-                return Float.compare(((org.telegram.ui.Components.tl0) obj).a, ((org.telegram.ui.Components.tl0) obj2).a);
+                return Float.compare(((org.telegram.ui.Components.sl0) obj).a, ((org.telegram.ui.Components.sl0) obj2).a);
             case 14:
                 Pair pair = (Pair) obj;
                 Pair pair2 = (Pair) obj2;
@@ -113,15 +113,15 @@ public final /* synthetic */ class df implements Comparator {
                 }
                 return ((Float) pair4.first).floatValue() > ((Float) pair3.first).floatValue() ? -1 : 0;
             case 16:
-                int i10 = ((org.telegram.ui.Components.jq0) obj).c;
-                int i11 = ((org.telegram.ui.Components.jq0) obj2).c;
+                int i10 = ((org.telegram.ui.Components.iq0) obj).c;
+                int i11 = ((org.telegram.ui.Components.iq0) obj2).c;
                 if (i10 < i11) {
                     return 1;
                 }
                 return i10 > i11 ? -1 : 0;
             case 17:
-                id2 = ((org.telegram.ui.Components.iu0) obj2).c;
-                id3 = ((org.telegram.ui.Components.iu0) obj).c;
+                id2 = ((org.telegram.ui.Components.hu0) obj2).c;
+                id3 = ((org.telegram.ui.Components.hu0) obj).c;
                 break;
             case 18:
                 Pair pair5 = (Pair) obj;

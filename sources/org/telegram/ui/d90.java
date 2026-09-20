@@ -8,23 +8,23 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d90 implements RequestDelegate {
     public final /* synthetic */ int a;
     public final /* synthetic */ LaunchActivity b;
     public final /* synthetic */ int c;
-    public final /* synthetic */ y80 d;
+    public final /* synthetic */ r80 d;
     public final /* synthetic */ Object e;
     public final /* synthetic */ Object f;
     public final /* synthetic */ Object g;
     public final /* synthetic */ Object h;
     public final /* synthetic */ Object i;
 
-    public /* synthetic */ d90(LaunchActivity launchActivity, y80 y80Var, int i10, TL_account.authorizationForm authorizationform, TL_account.getAuthorizationForm getauthorizationform, String str, String str2, String str3) {
+    public /* synthetic */ d90(LaunchActivity launchActivity, r80 r80Var, int i10, TL_account.authorizationForm authorizationform, TL_account.getAuthorizationForm getauthorizationform, String str, String str2, String str3) {
         this.a = 0;
         this.b = launchActivity;
-        this.d = y80Var;
+        this.d = r80Var;
         this.c = i10;
         this.i = authorizationform;
         this.e = getauthorizationform;
@@ -55,14 +55,14 @@ public final /* synthetic */ class d90 implements RequestDelegate {
                 Pattern pattern2 = LaunchActivity.B1;
                 TL_account.authorizationForm authorizationform = (TL_account.authorizationForm) tLObject;
                 LaunchActivity launchActivity = this.b;
-                y80 y80Var = this.d;
+                r80 r80Var = this.d;
                 if (authorizationform == null) {
-                    AndroidUtilities.runOnUIThread(new vq(launchActivity, y80Var, tL_error, 14));
+                    AndroidUtilities.runOnUIThread(new vq(launchActivity, r80Var, tL_error, 14));
                     break;
                 } else {
                     TL_account.getPassword getpassword = new TL_account.getPassword();
                     int i11 = this.c;
-                    iArr[0] = ConnectionsManager.getInstance(i11).sendRequest(getpassword, new d90(launchActivity, y80Var, i11, authorizationform, getauthorizationform, str, str2, str3));
+                    iArr[0] = ConnectionsManager.getInstance(i11).sendRequest(getpassword, new d90(launchActivity, r80Var, i11, authorizationform, getauthorizationform, str, str2, str3));
                     break;
                 }
             default:
@@ -72,12 +72,12 @@ public final /* synthetic */ class d90 implements RequestDelegate {
         }
     }
 
-    public /* synthetic */ d90(LaunchActivity launchActivity, int[] iArr, int i10, y80 y80Var, Object obj, Object obj2, Object obj3, Object obj4, int i11) {
+    public /* synthetic */ d90(LaunchActivity launchActivity, int[] iArr, int i10, r80 r80Var, Object obj, Object obj2, Object obj3, Object obj4, int i11) {
         this.a = i11;
         this.b = launchActivity;
         this.i = iArr;
         this.c = i10;
-        this.d = y80Var;
+        this.d = r80Var;
         this.e = obj;
         this.f = obj2;
         this.g = obj3;

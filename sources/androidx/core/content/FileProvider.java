@@ -21,9 +21,9 @@ import java.util.HashMap;
 import java.util.Map;
 import org.telegram.tgnet.TLObject;
 import org.xmlpull.v1.XmlPullParserException;
-import t8.b;
+import v7.j0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public class FileProvider extends ContentProvider {
     public static final String[] e = {"_display_name", "_size"};
@@ -79,7 +79,7 @@ public class FileProvider extends ContentProvider {
                 }
             }
             if (entry == null) {
-                throw new IllegalArgumentException(b.i("Failed to find configured root that contains ", canonicalPath));
+                throw new IllegalArgumentException(j0.g("Failed to find configured root that contains ", canonicalPath));
             }
             String path2 = ((File) entry.getValue()).getPath();
             return new Uri.Builder().scheme("content").authority(c10.a).encodedPath(Uri.encode((String) entry.getKey()) + '/' + Uri.encode(path2.endsWith("/") ? canonicalPath.substring(path2.length()) : canonicalPath.substring(path2.length() + 1), "/")).build();
@@ -92,7 +92,7 @@ public class FileProvider extends ContentProvider {
         f fVar = new f(str);
         ProviderInfo resolveContentProvider = context.getPackageManager().resolveContentProvider(str, 128);
         if (resolveContentProvider == null) {
-            throw new IllegalArgumentException(b.i("Couldn't find meta-data for provider with authority ", str));
+            throw new IllegalArgumentException(j0.g("Couldn't find meta-data for provider with authority ", str));
         }
         if (resolveContentProvider.metaData == null && i10 != 0) {
             Bundle bundle = new Bundle(1);
@@ -243,7 +243,7 @@ public class FileProvider extends ContentProvider {
             i10 = 939524096;
         } else {
             if (!"rwt".equals(str)) {
-                throw new IllegalArgumentException(b.i("Invalid mode: ", str));
+                throw new IllegalArgumentException(j0.g("Invalid mode: ", str));
             }
             i10 = 1006632960;
         }

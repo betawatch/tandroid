@@ -6,9 +6,9 @@ import org.telegram.messenger.BillingController;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.ja0;
+import org.telegram.ui.ka0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e5 implements q0.a {
     public final /* synthetic */ int a;
@@ -73,7 +73,7 @@ public final /* synthetic */ class e5 implements q0.a {
                 boolean z10 = i11 == 0;
                 String responseCodeString = z10 ? null : BillingController.getResponseCodeString(i11);
                 FileLog.d("StarsController.buy onResult " + z10 + " " + responseCodeString);
-                AndroidUtilities.runOnUIThread(new ja0(callback2, z10, responseCodeString, 13));
+                AndroidUtilities.runOnUIThread(new ka0(callback2, z10, responseCodeString, 13));
                 break;
         }
     }

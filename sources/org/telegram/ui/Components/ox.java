@@ -10,23 +10,23 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class ox extends cw {
+public final class ox extends dw {
     public final /* synthetic */ kz g0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ox(kz kzVar, Context context, org.telegram.ui.ActionBar.e6 e6Var, boolean z10, dw dwVar, boolean z11) {
-        super(context, e6Var, true, false, true, z10, 0, dwVar, org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.v6, e6Var), z11);
+    public ox(kz kzVar, Context context, org.telegram.ui.ActionBar.f6 f6Var, boolean z10, ew ewVar, boolean z11) {
+        super(context, f6Var, true, false, true, z10, 0, ewVar, org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.v6, f6Var), z11);
         this.g0 = kzVar;
     }
 
-    @Override // org.telegram.ui.Components.cw
+    @Override // org.telegram.ui.Components.dw
     public final boolean d() {
         return this.g0.U0;
     }
 
-    @Override // org.telegram.ui.Components.cw
+    @Override // org.telegram.ui.Components.dw
     public final void e() {
         kz kzVar = this.g0;
         ArrayList arrayList = kzVar.n1;
@@ -36,18 +36,18 @@ public final class ox extends cw {
         UserConfig.getInstance(UserConfig.selectedAccount).isPremium();
     }
 
-    @Override // org.telegram.ui.Components.cw
+    @Override // org.telegram.ui.Components.dw
     public final boolean g(xx xxVar) {
         return xxVar.f || this.g0.p1.contains(Long.valueOf(xxVar.b.id));
     }
 
-    @Override // org.telegram.ui.Components.cw
+    @Override // org.telegram.ui.Components.dw
     public final ColorFilter getEmojiColorFilter() {
         return this.g0.e2;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:36:0x0095  */
-    @Override // org.telegram.ui.Components.cw
+    @Override // org.telegram.ui.Components.dw
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -65,8 +65,8 @@ public final class ox extends cw {
         if (kyVar != null) {
             kyVar.F(null, true);
         }
-        jw jwVar = kzVar.V;
-        if (jwVar != null && (wyVar = jwVar.r) != null) {
+        kw kwVar = kzVar.V;
+        if (kwVar != null && (wyVar = kwVar.r) != null) {
             wyVar.G1(null);
         }
         if (i10 == 0) {

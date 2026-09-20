@@ -5,7 +5,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.support.LongSparseIntArray;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class le implements Runnable {
     public final /* synthetic */ int a;
@@ -32,9 +32,9 @@ public final /* synthetic */ class le implements Runnable {
                 LongSparseIntArray longSparseIntArray = znVar.M5;
                 long j3 = this.c;
                 longSparseIntArray.put(j3, 0);
-                org.telegram.ui.Components.m31 m31Var = znVar.R1;
-                if (m31Var != null) {
-                    m31Var.setAllTopicsHidden(false);
+                org.telegram.ui.Components.l31 l31Var = znVar.R1;
+                if (l31Var != null) {
+                    l31Var.setAllTopicsHidden(false);
                 }
                 if (j3 == znVar.d4) {
                     znVar.A0.O(false);
@@ -53,7 +53,7 @@ public final /* synthetic */ class le implements Runnable {
                 break;
             case 5:
                 zn znVar4 = this.b;
-                org.telegram.ui.Components.qc v = org.telegram.ui.Components.xc.v(znVar4.getParentActivity(), znVar4, null, 1, this.c, 1, znVar4.getThemedColor(org.telegram.ui.ActionBar.j6.Fi), znVar4.getThemedColor(org.telegram.ui.ActionBar.j6.Hi), 5000, true, null);
+                org.telegram.ui.Components.pc v = org.telegram.ui.Components.xc.v(znVar4.getParentActivity(), znVar4, null, 1, this.c, 1, znVar4.getThemedColor(org.telegram.ui.ActionBar.j6.Fi), znVar4.getThemedColor(org.telegram.ui.ActionBar.j6.Hi), 5000, true, null);
                 v.k = true;
                 v.k(true);
                 break;
@@ -61,7 +61,7 @@ public final /* synthetic */ class le implements Runnable {
                 org.telegram.ui.Components.xc.a0(this.b).M(LocaleController.getString(R.string.StarsGiveawaySentPopup), AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma("StarsGiveawaySentPopupInfo", (int) this.c)), R.raw.stars_topup).k(true);
                 break;
             default:
-                this.b.presentFragment(new ProfileActivity(t8.b.f(this.c, "user_id"), null));
+                this.b.presentFragment(new ProfileActivity(v7.j0.e(this.c, "user_id"), null));
                 break;
         }
     }

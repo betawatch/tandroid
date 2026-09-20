@@ -5,7 +5,7 @@ import java.util.regex.Pattern;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class yb implements e2.h {
     public final /* synthetic */ int a;
@@ -22,10 +22,10 @@ public final /* synthetic */ class yb implements e2.h {
         Object obj2 = this.b;
         switch (i10) {
             case 0:
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.h6(16, (dc) obj2, (TL_stories.TL_premium_boostsStatus) obj));
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.c6(18, (dc) obj2, (TL_stories.TL_premium_boostsStatus) obj));
                 break;
             case 1:
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.h6(22, (ke) obj2, (TL_stories.TL_premium_boostsStatus) obj));
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.c6(24, (ke) obj2, (TL_stories.TL_premium_boostsStatus) obj));
                 break;
             case 2:
                 Pattern pattern = LaunchActivity.B1;
@@ -36,9 +36,9 @@ public final /* synthetic */ class yb implements e2.h {
                 View view = (View) obj;
                 cq0 cq0Var = wp0Var.p0;
                 if (!(view instanceof zp0)) {
-                    if (!(view instanceof org.telegram.ui.Cells.r8)) {
+                    if (!(view instanceof org.telegram.ui.Cells.s8)) {
                         if (!(view instanceof vp0)) {
-                            if (!(view instanceof org.telegram.ui.Cells.m4)) {
+                            if (!(view instanceof org.telegram.ui.Cells.n4)) {
                                 if (!(view instanceof kp0)) {
                                     if (!(view instanceof bq0)) {
                                         if (view instanceof up0) {
@@ -68,7 +68,7 @@ public final /* synthetic */ class yb implements e2.h {
                         }
                     } else {
                         view.setBackgroundColor(cq0Var.getThemedColor(org.telegram.ui.ActionBar.j6.d6));
-                        ((org.telegram.ui.Cells.r8) view).v();
+                        ((org.telegram.ui.Cells.s8) view).v();
                         break;
                     }
                 } else {
@@ -85,13 +85,13 @@ public final /* synthetic */ class yb implements e2.h {
                         n2Var.presentFragment(ProfileActivity.m4(l4.longValue()), true);
                         break;
                     } else {
-                        AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.sh(28));
+                        AndroidUtilities.runOnUIThread(new u21(0));
                         break;
                     }
                 }
                 break;
             default:
-                ((dg1) obj2).X = (TL_stories.TL_premium_boostsStatus) obj;
+                ((fg1) obj2).X = (TL_stories.TL_premium_boostsStatus) obj;
                 break;
         }
     }

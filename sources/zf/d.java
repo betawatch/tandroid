@@ -7,9 +7,9 @@ import java.util.ArrayList;
 import java.util.zip.CRC32;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.kb1;
+import org.telegram.ui.mb1;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public abstract class d {
     public static void a(TLRPC.GroupCall groupCall, TLRPC.GroupCall groupCall2) {
@@ -52,7 +52,7 @@ public abstract class d {
         }
         ArrayList<TLRPC.PollAnswer> arrayList = new ArrayList<>(poll.answers);
         poll.shuffled_answers = arrayList;
-        List.-EL.sort(arrayList, new kb1(24));
+        List.-EL.sort(arrayList, new mb1(24));
     }
 
     public static ArrayList c(java.util.List list, Class cls) {

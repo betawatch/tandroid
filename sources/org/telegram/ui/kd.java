@@ -4,7 +4,7 @@ import android.content.Context;
 import android.view.ContextThemeWrapper;
 import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class kd extends RadialProgressView {
     public final /* synthetic */ int K;
@@ -47,7 +47,7 @@ public final class kd extends RadialProgressView {
                 break;
             case 2:
                 super.setAlpha(f7);
-                ((if0) this.L).h.invalidate();
+                ((jf0) this.L).h.invalidate();
                 break;
             default:
                 super.setAlpha(f7);
@@ -61,8 +61,8 @@ public final class kd extends RadialProgressView {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public kd(PhotoViewer photoViewer, ContextThemeWrapper contextThemeWrapper, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(contextThemeWrapper, e6Var);
+    public kd(PhotoViewer photoViewer, ContextThemeWrapper contextThemeWrapper, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(contextThemeWrapper, f6Var);
         this.K = 3;
         this.L = photoViewer;
     }

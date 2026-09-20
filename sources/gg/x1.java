@@ -9,9 +9,7 @@ import android.media.metrics.PlaybackMetrics;
 import android.media.metrics.PlaybackStateEvent;
 import android.media.metrics.TrackChangeEvent;
 import android.net.Uri;
-import android.os.Handler;
 import android.os.HandlerThread;
-import android.os.SystemClock;
 import android.text.TextUtils;
 import android.view.View;
 import ii.a5;
@@ -45,12 +43,12 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.l61;
-import org.telegram.ui.Components.u71;
-import org.telegram.ui.Components.x2;
-import org.telegram.ui.Components.x51;
+import org.telegram.ui.Components.k61;
+import org.telegram.ui.Components.kd;
+import org.telegram.ui.Components.t71;
+import org.telegram.ui.Components.w51;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class x1 implements Runnable {
     public final /* synthetic */ int a;
@@ -63,20 +61,20 @@ public final /* synthetic */ class x1 implements Runnable {
         this.c = obj2;
     }
 
-    /* JADX WARN: Can't wrap try/catch for region: R(13:154|155|156|(3:203|204|(10:206|207|(2:198|199)|160|(1:162)|163|164|165|(1:(1:168))(7:170|171|172|173|174|175|176)|169))|158|(0)|160|(0)|163|164|165|(0)(0)|169) */
-    /* JADX WARN: Code restructure failed: missing block: B:196:0x035e, code lost:
+    /* JADX WARN: Can't wrap try/catch for region: R(13:145|146|147|(3:194|195|(10:197|198|(2:189|190)|151|(1:153)|154|155|156|(1:(1:159))(7:161|162|163|164|165|166|167)|160))|149|(0)|151|(0)|154|155|156|(0)(0)|160) */
+    /* JADX WARN: Code restructure failed: missing block: B:187:0x0328, code lost:
     
         r0 = move-exception;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:197:0x03b0, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:188:0x037a, code lost:
     
         org.telegram.messenger.FileLog.e(r0);
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:162:0x032a  */
-    /* JADX WARN: Removed duplicated region for block: B:167:0x0358  */
-    /* JADX WARN: Removed duplicated region for block: B:170:0x0360 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:198:0x031c A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:153:0x02f4  */
+    /* JADX WARN: Removed duplicated region for block: B:158:0x0322  */
+    /* JADX WARN: Removed duplicated region for block: B:161:0x032a A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:189:0x02e6 A[EXC_TOP_SPLITTER, SYNTHETIC] */
     @Override // java.lang.Runnable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -159,16 +157,16 @@ public final /* synthetic */ class x1 implements Runnable {
                 fVar.d();
                 return;
             case 3:
-                hg.l0.R((hg.l0) this.b, (x2) this.c);
+                hg.l0.R((hg.l0) this.b, (kd) this.c);
                 return;
             case 4:
                 MessagesController.getInstance(((hg.u0) this.b).currentAccount).processUpdates((TLRPC.Updates) ((TLObject) this.c), false);
                 return;
             case 5:
                 hg.g1 g1Var = (hg.g1) this.b;
-                x51 x51Var = (x51) this.c;
+                w51 w51Var = (w51) this.c;
                 g1Var.getClass();
-                g1Var.X(x51Var.d);
+                g1Var.X(w51Var.d);
                 return;
             case 6:
                 MessagesStorage messagesStorage = (MessagesStorage) this.b;
@@ -182,20 +180,20 @@ public final /* synthetic */ class x1 implements Runnable {
                         sQLitePreparedStatement2.bindInteger(3, a2Var2.c);
                         sQLitePreparedStatement2.bindInteger(4, a2Var2.f);
                         sQLitePreparedStatement2.step();
-                    } catch (Throwable th2) {
-                        if (sQLitePreparedStatement2 != null) {
-                            sQLitePreparedStatement2.dispose();
+                    } catch (Exception e7) {
+                        FileLog.e(e7);
+                        if (sQLitePreparedStatement2 == null) {
+                            return;
                         }
-                        throw th2;
                     }
-                } catch (Exception e7) {
-                    FileLog.e(e7);
-                    if (sQLitePreparedStatement2 == null) {
-                        return;
+                    sQLitePreparedStatement2.dispose();
+                    return;
+                } catch (Throwable th2) {
+                    if (sQLitePreparedStatement2 != null) {
+                        sQLitePreparedStatement2.dispose();
                     }
+                    throw th2;
                 }
-                sQLitePreparedStatement2.dispose();
-                return;
             case 7:
                 hg.b2 b2Var = (hg.b2) this.b;
                 MessagesStorage messagesStorage2 = (MessagesStorage) this.c;
@@ -339,7 +337,7 @@ public final /* synthetic */ class x1 implements Runnable {
                 while (i14 < size) {
                     Object obj2 = arrayList6.get(i14);
                     i14++;
-                    ((u71) ((b2.w1) obj2)).J.onSurfaceTextureUpdated(surfaceTexture);
+                    ((t71) ((b2.w1) obj2)).J.onSurfaceTextureUpdated(surfaceTexture);
                 }
                 return;
             case 11:
@@ -372,9 +370,9 @@ public final /* synthetic */ class x1 implements Runnable {
                 xVar.c0.set(richMessage);
                 dVar.g(LocaleController.getString(R.string.ArticleAIAddToPage), true, true);
                 xVar.P();
-                l61 l61Var = xVar.Z;
-                if (l61Var != null) {
-                    l61Var.N(true);
+                k61 k61Var = xVar.Z;
+                if (k61Var != null) {
+                    k61Var.N(true);
                     return;
                 }
                 return;
@@ -387,7 +385,7 @@ public final /* synthetic */ class x1 implements Runnable {
                     FileLog.e(e11);
                     str = null;
                 }
-                if (TextUtils.isEmpty(str) || !t8.b.u(str)) {
+                if (TextUtils.isEmpty(str) || !v7.j0.r(str)) {
                     try {
                         query = w3Var.getContext().getContentResolver().query(uri, new String[]{"_display_name"}, null, null, null);
                     } catch (Exception e12) {
@@ -456,7 +454,7 @@ public final /* synthetic */ class x1 implements Runnable {
                     }
                     str = str3;
                 }
-                if (TextUtils.isEmpty(str) || !t8.b.u(str)) {
+                if (TextUtils.isEmpty(str) || !v7.j0.r(str)) {
                     return;
                 }
                 AndroidUtilities.runOnUIThread(new x1(14, w3Var, str));
@@ -617,7 +615,7 @@ public final /* synthetic */ class x1 implements Runnable {
             case 25:
                 n4.y yVar = (n4.y) this.b;
                 String str5 = (String) this.c;
-                k2.j jVar = (k2.j) yVar.c;
+                k2.j jVar = (k2.j) yVar.b;
                 String str6 = e2.d0.a;
                 j2.f fVar2 = ((i2.b0) jVar).a.s;
                 j2.a p5 = fVar2.p();
@@ -627,48 +625,33 @@ public final /* synthetic */ class x1 implements Runnable {
                 ((k2.n) this.b).V((k2.k) this.c);
                 return;
             case 27:
-                ki.g gVar = (ki.g) this.b;
+                ((ki.h) this.b).B((ki.h0) this.c);
+                return;
+            case 28:
+                ki.h hVar = (ki.h) this.b;
                 HandlerThread handlerThread = (HandlerThread) this.c;
-                gVar.f();
-                ki.i iVar = gVar.s;
-                if (iVar != null) {
-                    iVar.o();
-                    gVar.s = null;
+                hVar.h();
+                ki.j jVar2 = hVar.w;
+                if (jVar2 != null) {
+                    jVar2.o();
+                    hVar.w = null;
                 }
                 handlerThread.quitSafely();
                 return;
-            case 28:
-                ki.m mVar = (ki.m) this.b;
+            default:
+                ki.o oVar = (ki.o) this.b;
                 CountDownLatch countDownLatch = (CountDownLatch) this.c;
-                mVar.getClass();
+                oVar.getClass();
                 try {
                     try {
-                        mVar.c();
-                        mVar.T = true;
+                        oVar.c();
+                        oVar.U = true;
                     } finally {
                         countDownLatch.countDown();
                     }
                 } catch (RuntimeException e14) {
-                    mVar.X = e14;
-                    mVar.d();
-                }
-                return;
-            default:
-                ki.m mVar2 = (ki.m) this.b;
-                Handler handler = (Handler) this.c;
-                if (mVar2.T && mVar2.E == 0 && mVar2.B) {
-                    mVar2.u.f(mVar2.t, mVar2.p, false);
-                    mVar2.C = false;
-                    mVar2.D = false;
-                    mVar2.E = 1;
-                    long elapsedRealtimeNanos = SystemClock.elapsedRealtimeNanos();
-                    mVar2.F = elapsedRealtimeNanos;
-                    mVar2.G = elapsedRealtimeNanos;
-                    mVar2.d.b("synthetic camera switch started");
-                    mVar2.y = -1L;
-                    handler.removeCallbacks(mVar2.Y);
-                    handler.post(mVar2.Y);
-                    return;
+                    oVar.Y = e14;
+                    oVar.d();
                 }
                 return;
         }

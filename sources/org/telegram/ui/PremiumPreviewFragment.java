@@ -45,7 +45,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public class PremiumPreviewFragment extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public int E;
@@ -65,12 +65,12 @@ public class PremiumPreviewFragment extends org.telegram.ui.ActionBar.n2 impleme
     public final Matrix S;
     public final Paint T;
     public jx0 U;
-    public rg.v1 V;
+    public rg.w1 V;
     public boolean W;
     public int X;
     public int Y;
     public boolean Z;
-    public org.telegram.ui.Components.wl0 a;
+    public org.telegram.ui.Components.vl0 a;
     public boolean a0;
     public final ArrayList b;
     public float b0;
@@ -146,20 +146,20 @@ public class PremiumPreviewFragment extends org.telegram.ui.ActionBar.n2 impleme
         }
         this.h0 = z10;
         this.i0 = str;
-        n7.z0 z0Var2 = new n7.z0(this);
+        org.telegram.ui.Cells.f3 f3Var = new org.telegram.ui.Cells.f3(this);
         if (Build.VERSION.SDK_INT >= 31) {
             ah.i iVar = new ah.i(true);
             this.u0 = iVar;
             fh.d dVar = new fh.d(null);
             dVar.d = iVar;
             dVar.e = -3;
-            dVar.f = z0Var2;
+            dVar.f = f3Var;
             this.v0 = new ah.c(dVar);
         } else {
             this.u0 = null;
-            this.v0 = new ah.c(z0Var2);
+            this.v0 = new ah.c(f3Var);
         }
-        this.w0 = new ah.c(z0Var2);
+        this.w0 = new ah.c(f3Var);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:67:0x01b6  */
@@ -170,7 +170,7 @@ public class PremiumPreviewFragment extends org.telegram.ui.ActionBar.n2 impleme
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public static void U(PremiumPreviewFragment premiumPreviewFragment, View view, int i10) {
-        org.telegram.ui.Components.o5 o5Var;
+        org.telegram.ui.Components.n5 n5Var;
         uw0 uw0Var;
         int i11;
         int i12;
@@ -182,9 +182,9 @@ public class PremiumPreviewFragment extends org.telegram.ui.ActionBar.n2 impleme
                 if (userFull == null) {
                     return;
                 }
-                org.telegram.ui.Cells.r8 r8Var = (org.telegram.ui.Cells.r8) view;
-                r8Var.setChecked(!r8Var.b());
-                userFull.sponsored_enabled = r8Var.b();
+                org.telegram.ui.Cells.s8 s8Var = (org.telegram.ui.Cells.s8) view;
+                s8Var.setChecked(!s8Var.b());
+                userFull.sponsored_enabled = s8Var.b();
                 TL_account.toggleSponsoredMessages togglesponsoredmessages = new TL_account.toggleSponsoredMessages();
                 togglesponsoredmessages.enabled = userFull.sponsored_enabled;
                 premiumPreviewFragment.getConnectionsManager().sendRequest(togglesponsoredmessages, new m(premiumPreviewFragment, 17));
@@ -234,7 +234,7 @@ public class PremiumPreviewFragment extends org.telegram.ui.ActionBar.n2 impleme
                     Bundle bundle = new Bundle();
                     bundle.putLong("dialog_id", UserConfig.getInstance(premiumPreviewFragment.currentAccount).getClientUserId());
                     bundle.putInt(TeXSymbolParser.TYPE_ATTR, 1);
-                    premiumPreviewFragment.presentFragment(new org.telegram.ui.Components.ka0(bundle, null));
+                    premiumPreviewFragment.presentFragment(new org.telegram.ui.Components.ja0(bundle, null));
                     return;
                 }
                 if (i15 != 12) {
@@ -257,48 +257,48 @@ public class PremiumPreviewFragment extends org.telegram.ui.ActionBar.n2 impleme
                 Long emojiStatusDocumentId = UserObject.getEmojiStatusDocumentId(premiumPreviewFragment.getUserConfig().getCurrentUser());
                 ai.m0 m0Var = new ai.m0(19, premiumPreviewFragment, uw0Var2);
                 if (premiumPreviewFragment.s0 == null) {
-                    x61[] x61VarArr = new x61[1];
+                    a71[] a71VarArr = new a71[1];
                     boolean z10 = ((float) (uw0Var2.getHeight() + uw0Var2.getTop())) > ((float) premiumPreviewFragment.a.getMeasuredHeight()) / 2.0f;
                     int min = (int) Math.min(AndroidUtilities.dp(330.0f), AndroidUtilities.displaySize.y * 0.75f);
                     int min2 = (int) Math.min(AndroidUtilities.dp(324.0f), AndroidUtilities.displaySize.x * 0.95f);
-                    org.telegram.ui.Components.o5 o5Var2 = uw0Var2.h;
-                    if (o5Var2 != null) {
-                        Drawable[] drawableArr = o5Var2.f;
+                    org.telegram.ui.Components.n5 n5Var2 = uw0Var2.h;
+                    if (n5Var2 != null) {
+                        Drawable[] drawableArr = n5Var2.f;
                         Drawable drawable = drawableArr[1];
                         if (drawable != null) {
-                            if (drawable instanceof org.telegram.ui.Components.q5) {
-                                ((org.telegram.ui.Components.q5) drawable).p(o5Var2);
+                            if (drawable instanceof org.telegram.ui.Components.p5) {
+                                ((org.telegram.ui.Components.p5) drawable).p(n5Var2);
                             }
                             drawableArr[1] = null;
                         }
-                        org.telegram.ui.Components.o5 o5Var3 = uw0Var2.h;
-                        if (o5Var3 != null) {
-                            o5Var3.f();
+                        org.telegram.ui.Components.n5 n5Var3 = uw0Var2.h;
+                        if (n5Var3 != null) {
+                            n5Var3.f();
                             uw0Var2.c();
                             Rect rect = AndroidUtilities.rectTmp2;
                             rect.set(uw0Var2.h.getBounds());
                             int dp = z10 ? (AndroidUtilities.dp(12.0f) + (-rect.centerY())) - min : (-(uw0Var2.getHeight() - rect.centerY())) - AndroidUtilities.dp(16.0f);
                             i12 = rect.centerX() - (AndroidUtilities.displaySize.x - min2);
                             int i16 = dp;
-                            o5Var = o5Var3;
+                            n5Var = n5Var3;
                             i11 = i16;
                             uw0Var = uw0Var2;
                             int i17 = i11;
-                            zw0 zw0Var = new zw0(premiumPreviewFragment, premiumPreviewFragment, premiumPreviewFragment.getParentActivity(), Integer.valueOf(i12), !z10 ? 12 : 0, premiumPreviewFragment.getResourceProvider(), !z10 ? 24 : 16, m0Var, x61VarArr);
+                            zw0 zw0Var = new zw0(premiumPreviewFragment, premiumPreviewFragment, premiumPreviewFragment.getParentActivity(), Integer.valueOf(i12), !z10 ? 12 : 0, premiumPreviewFragment.getResourceProvider(), !z10 ? 24 : 16, m0Var, a71VarArr);
                             zw0Var.g1 = true;
                             zw0Var.setSelected(emojiStatusDocumentId);
                             zw0Var.setSaveState(3);
-                            zw0Var.y(o5Var, uw0Var);
+                            zw0Var.y(n5Var, uw0Var);
                             ax0 ax0Var = new ax0(premiumPreviewFragment, zw0Var);
                             premiumPreviewFragment.s0 = ax0Var;
-                            x61VarArr[0] = ax0Var;
+                            a71VarArr[0] = ax0Var;
                             ax0Var.showAsDropDown(uw0Var2, 0, i17, 53);
-                            x61VarArr[0].b();
+                            a71VarArr[0].b();
                         }
-                        o5Var = o5Var3;
+                        n5Var = n5Var3;
                         uw0Var = uw0Var2;
                     } else {
-                        o5Var = null;
+                        n5Var = null;
                         uw0Var = null;
                     }
                     i11 = 0;
@@ -306,16 +306,16 @@ public class PremiumPreviewFragment extends org.telegram.ui.ActionBar.n2 impleme
                     if (!z10) {
                     }
                     int i172 = i11;
-                    zw0 zw0Var2 = new zw0(premiumPreviewFragment, premiumPreviewFragment, premiumPreviewFragment.getParentActivity(), Integer.valueOf(i12), !z10 ? 12 : 0, premiumPreviewFragment.getResourceProvider(), !z10 ? 24 : 16, m0Var, x61VarArr);
+                    zw0 zw0Var2 = new zw0(premiumPreviewFragment, premiumPreviewFragment, premiumPreviewFragment.getParentActivity(), Integer.valueOf(i12), !z10 ? 12 : 0, premiumPreviewFragment.getResourceProvider(), !z10 ? 24 : 16, m0Var, a71VarArr);
                     zw0Var2.g1 = true;
                     zw0Var2.setSelected(emojiStatusDocumentId);
                     zw0Var2.setSaveState(3);
-                    zw0Var2.y(o5Var, uw0Var);
+                    zw0Var2.y(n5Var, uw0Var);
                     ax0 ax0Var2 = new ax0(premiumPreviewFragment, zw0Var2);
                     premiumPreviewFragment.s0 = ax0Var2;
-                    x61VarArr[0] = ax0Var2;
+                    a71VarArr[0] = ax0Var2;
                     ax0Var2.showAsDropDown(uw0Var2, 0, i172, 53);
-                    x61VarArr[0].b();
+                    a71VarArr[0].b();
                 }
             }
         }
@@ -809,54 +809,54 @@ public class PremiumPreviewFragment extends org.telegram.ui.ActionBar.n2 impleme
         ah.c cVar2 = this.w0;
         cVar2.f = kVar2;
         cVar2.g = yw0Var2;
-        org.telegram.ui.Components.wl0 wl0Var = new org.telegram.ui.Components.wl0(context, null);
-        this.a = wl0Var;
-        wl0Var.setClipToOutline(true);
+        org.telegram.ui.Components.vl0 vl0Var = new org.telegram.ui.Components.vl0(context, null);
+        this.a = vl0Var;
+        vl0Var.setClipToOutline(true);
         this.a.setOutlineProvider(new ch.b(this, 6));
         this.a.D0(new ww0(this, i11));
         this.a.setCaptureSectionsDecoratorAllowed(true);
         this.a.setSections(true);
         this.a.setClipToPadding(false);
-        org.telegram.ui.Components.wl0 wl0Var2 = this.a;
+        org.telegram.ui.Components.vl0 vl0Var2 = this.a;
         org.telegram.ui.Components.pz pzVar = new org.telegram.ui.Components.pz(this.a, (AndroidUtilities.dp(68.0f) + this.X) - AndroidUtilities.dp(16.0f));
         this.P = pzVar;
-        wl0Var2.setLayoutManager(pzVar);
+        vl0Var2.setLayoutManager(pzVar);
         this.P.R = true;
         this.a.setAdapter(new cx0(this));
         int i14 = 24;
         this.a.j(new h3(this, i14));
         this.U = new jx0(this, context);
-        rg.v1 v1Var = new rg.v1(context);
-        this.V = v1Var;
-        v1Var.b();
+        rg.w1 w1Var = new rg.w1(context);
+        this.V = w1Var;
+        w1Var.b();
         if (i13 != 1) {
             f7 = 28.0f;
         } else if (this.h0) {
-            rg.u1 u1Var = this.V.a;
-            u1Var.q = true;
-            u1Var.K = false;
-            u1Var.H = true;
-            u1Var.J = true;
+            rg.v1 v1Var = this.V.a;
+            v1Var.q = true;
+            v1Var.K = false;
+            v1Var.H = true;
+            v1Var.J = true;
             f7 = 28.0f;
-            u1Var.k = AndroidUtilities.dp(-14.0f);
-            rg.u1 u1Var2 = this.V.a;
-            u1Var2.x = 2000L;
-            u1Var2.y = 3000;
-            u1Var2.r = 16;
-            u1Var2.G = false;
-            u1Var2.N = 28;
-            u1Var2.P = i12;
+            v1Var.k = AndroidUtilities.dp(-14.0f);
+            rg.v1 v1Var2 = this.V.a;
+            v1Var2.x = 2000L;
+            v1Var2.y = 3000;
+            v1Var2.r = 16;
+            v1Var2.G = false;
+            v1Var2.N = 28;
+            v1Var2.P = i12;
         } else {
             f7 = 28.0f;
-            rg.u1 u1Var3 = this.V.a;
-            u1Var3.J = true;
-            u1Var3.k = AndroidUtilities.dp(28.0f);
-            rg.u1 u1Var4 = this.V.a;
-            u1Var4.x = 2000L;
-            u1Var4.y = 3000;
-            u1Var4.r = 16;
-            u1Var4.G = false;
-            u1Var4.N = 28;
+            rg.v1 v1Var3 = this.V.a;
+            v1Var3.J = true;
+            v1Var3.k = AndroidUtilities.dp(28.0f);
+            rg.v1 v1Var4 = this.V.a;
+            v1Var4.x = 2000L;
+            v1Var4.y = 3000;
+            v1Var4.r = 16;
+            v1Var4.G = false;
+            v1Var4.N = 28;
         }
         this.U.d.setStarParticlesView(this.V);
         this.d0.addView(this.V, w7.y5.c(-2.0f, -1));
@@ -880,7 +880,7 @@ public class PremiumPreviewFragment extends org.telegram.ui.ActionBar.n2 impleme
         c10.q(AndroidUtilities.dp(f7));
         c10.p(AndroidUtilities.dp(5.0f));
         frameLayout.setBackground(c10);
-        w7.a6.b(this.K, 0.02f, 1.5f);
+        w7.b6.b(this.K, 0.02f, 1.5f);
         this.J.addView(this.K, w7.y5.d(-1, 64.0f, 80, 4.0f, 0.0f, 4.0f, 0.0f));
         ah.e eVar = new ah.e(cVar.c(this.J, null, false));
         eVar.b(AndroidUtilities.dp(40.0f), false);
@@ -943,7 +943,7 @@ public class PremiumPreviewFragment extends org.telegram.ui.ActionBar.n2 impleme
 
     @Override // org.telegram.ui.ActionBar.n2
     public final ArrayList getThemeDescriptions() {
-        return w7.b6.a(new e(this, 28), org.telegram.ui.ActionBar.j6.Lj, org.telegram.ui.ActionBar.j6.Mj, org.telegram.ui.ActionBar.j6.Nj, org.telegram.ui.ActionBar.j6.Oj, org.telegram.ui.ActionBar.j6.Pj, org.telegram.ui.ActionBar.j6.Qj, org.telegram.ui.ActionBar.j6.Rj, org.telegram.ui.ActionBar.j6.Sj, org.telegram.ui.ActionBar.j6.Tj, org.telegram.ui.ActionBar.j6.Vj, org.telegram.ui.ActionBar.j6.Wj, org.telegram.ui.ActionBar.j6.Uj, org.telegram.ui.ActionBar.j6.Zj);
+        return w7.c6.a(new e(this, 28), org.telegram.ui.ActionBar.j6.Lj, org.telegram.ui.ActionBar.j6.Mj, org.telegram.ui.ActionBar.j6.Nj, org.telegram.ui.ActionBar.j6.Oj, org.telegram.ui.ActionBar.j6.Pj, org.telegram.ui.ActionBar.j6.Qj, org.telegram.ui.ActionBar.j6.Rj, org.telegram.ui.ActionBar.j6.Sj, org.telegram.ui.ActionBar.j6.Tj, org.telegram.ui.ActionBar.j6.Vj, org.telegram.ui.ActionBar.j6.Wj, org.telegram.ui.ActionBar.j6.Uj, org.telegram.ui.ActionBar.j6.Zj);
     }
 
     @Override // org.telegram.ui.ActionBar.n2
@@ -1035,9 +1035,9 @@ public class PremiumPreviewFragment extends org.telegram.ui.ActionBar.n2 impleme
         if (jx0Var != null && (fx0Var = jx0Var.d) != null) {
             fx0Var.setDialogVisible(true);
         }
-        rg.v1 v1Var = this.V;
-        if (v1Var != null) {
-            v1Var.setPaused(true);
+        rg.w1 w1Var = this.V;
+        if (w1Var != null) {
+            w1Var.setPaused(true);
         }
         setBulletinDelegate(null);
     }

@@ -37,8 +37,9 @@ import org.telegram.ui.Cells.m2;
 import r0.a0;
 import r0.i0;
 import s4.d1;
+import x7.d7;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public class g extends ViewGroup {
     public static final int[] s0 = {R.attr.layout_gravity};
@@ -130,7 +131,10 @@ public class g extends ViewGroup {
         if (getImportantForAccessibility() == 0) {
             setImportantForAccessibility(1);
         }
-        a0.j(this, new o0.a(this));
+        d7 d7Var = new d7();
+        d7Var.b = this;
+        d7Var.a = new Rect();
+        a0.j(this, d7Var);
     }
 
     public static boolean d(int i10, int i11, int i12, View view, boolean z10) {
@@ -1659,7 +1663,7 @@ public class g extends ViewGroup {
                 hexString = Integer.toHexString(getId());
             }
             StringBuilder sb2 = new StringBuilder("The application's PagerAdapter changed the adapter's contents without calling PagerAdapter#notifyDataSetChanged! Expected adapter item count: ");
-            k0.s(sb2, this.a, ", found: ", b10, " Pager id: ");
+            k0.t(sb2, this.a, ", found: ", b10, " Pager id: ");
             sb2.append(hexString);
             sb2.append(" Pager class: ");
             sb2.append(getClass());

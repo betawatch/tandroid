@@ -28,12 +28,13 @@ import v0.m;
 import v0.n;
 import v0.o;
 import v0.p;
-import v7.o6;
+import v7.j0;
+import v7.p6;
 import w0.h;
-import w7.h8;
+import w7.i8;
 import x5.g;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class e extends b1.d {
     public final Context e;
@@ -133,7 +134,7 @@ public final class e extends b1.d {
                     String str6 = kVar3.b;
                     x0.a aVar = (x0.a) f.a.get(rVar);
                     if (aVar == null) {
-                        throw new y0.b(new x0.a(26), t8.b.i("unknown fido gms exception - ", str6));
+                        throw new y0.b(new x0.a(26), j0.g("unknown fido gms exception - ", str6));
                     }
                     if (rVar == r.w && str6 != null && xd.j.b(str6, "Unable to get sync account")) {
                         throw new w0.g("Passkey retrieval was cancelled by the user.");
@@ -269,7 +270,7 @@ public final class e extends b1.d {
             int i10 = 1;
             if (!it.hasNext()) {
                 boolean z11 = j3 > 241217000 ? request.b : false;
-                i7.b a2 = h8.a(context);
+                i7.b a2 = i8.a(context);
                 new x5.a(false, null, null, true, null, null, false);
                 x5.e eVar = new x5.e(dVar, aVar, a2.k, false, 0, cVar, bVar2, z11);
                 v e = w.e();
@@ -293,7 +294,7 @@ public final class e extends b1.d {
                     if (optString.length() == 0) {
                         throw new JSONException("GetPublicKeyCredentialOption - rpId not specified in the request or is unexpectedly empty");
                     }
-                    cVar = new x5.c(true, o6.a(jSONObject), optString);
+                    cVar = new x5.c(true, p6.a(jSONObject), optString);
                 }
                 z10 = true;
             }

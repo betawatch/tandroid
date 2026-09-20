@@ -1,6 +1,6 @@
 package x7;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class s extends o {
     public static final s e = new s(0, new Object[0]);
@@ -14,7 +14,7 @@ public final class s extends o {
 
     @Override // java.util.List
     public final Object get(int i10) {
-        w7.n8.a(i10, this.d);
+        w7.o8.a(i10, this.d);
         Object obj = this.c[i10];
         obj.getClass();
         return obj;

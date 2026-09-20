@@ -1,29 +1,34 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+import org.telegram.messenger.AndroidUtilities;
+
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class h11 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ k11 b;
-    public final /* synthetic */ j11 c;
+    public final /* synthetic */ Runnable b;
+    public final /* synthetic */ Runnable c;
 
-    public /* synthetic */ h11(k11 k11Var, j11 j11Var, int i10) {
+    public /* synthetic */ h11(Runnable runnable, Runnable runnable2, int i10) {
         this.a = i10;
-        this.b = k11Var;
-        this.c = j11Var;
+        this.b = runnable;
+        this.c = runnable2;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.b(this.c);
-                break;
-            case 1:
-                this.b.b(this.c);
+                l11.b(this.b);
+                Runnable runnable = this.c;
+                if (runnable != null) {
+                    AndroidUtilities.runOnUIThread(runnable);
+                    break;
+                }
                 break;
             default:
-                this.b.b(this.c);
+                this.b.run();
+                this.c.run();
                 break;
         }
     }

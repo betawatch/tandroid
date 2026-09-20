@@ -22,7 +22,7 @@ import org.telegram.ui.Components.k20;
 import org.telegram.ui.Components.l20;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class c extends Handler {
     public final /* synthetic */ int a;
@@ -194,30 +194,30 @@ public final class c extends Handler {
                     return;
                 }
                 n2.b bVar2 = (n2.b) this.b;
-                of.b bVar3 = bVar2.c;
+                n4.y yVar = bVar2.c;
                 if (obj == bVar2.x) {
                     if (bVar2.o == 2 || bVar2.k()) {
                         bVar2.x = null;
                         if (obj2 instanceof Exception) {
-                            bVar3.P((Exception) obj2, false);
+                            yVar.T((Exception) obj2, false);
                             return;
                         }
                         try {
-                            bVar2.b.j0((byte[]) obj2);
-                            bVar3.c = null;
-                            HashSet hashSet = (HashSet) bVar3.b;
+                            bVar2.b.h0((byte[]) obj2);
+                            yVar.b = null;
+                            HashSet hashSet = (HashSet) yVar.a;
                             e9.i0 v = e9.i0.v(hashSet);
                             hashSet.clear();
                             e9.g0 listIterator = v.listIterator(0);
                             while (listIterator.hasNext()) {
-                                n2.b bVar4 = (n2.b) listIterator.next();
-                                if (bVar4.n()) {
-                                    bVar4.j(true);
+                                n2.b bVar3 = (n2.b) listIterator.next();
+                                if (bVar3.n()) {
+                                    bVar3.j(true);
                                 }
                             }
                             return;
                         } catch (Exception e10) {
-                            bVar3.P(e10, true);
+                            yVar.T(e10, true);
                             return;
                         }
                     }
@@ -235,12 +235,12 @@ public final class c extends Handler {
                 while (i14 < size) {
                     Object obj3 = arrayList.get(i14);
                     i14++;
-                    n2.b bVar5 = (n2.b) obj3;
-                    bVar5.p();
-                    if (Arrays.equals(bVar5.u, bArr)) {
-                        if (msg.what == 2 && bVar5.o == 4) {
+                    n2.b bVar4 = (n2.b) obj3;
+                    bVar4.p();
+                    if (Arrays.equals(bVar4.u, bArr)) {
+                        if (msg.what == 2 && bVar4.o == 4) {
                             String str2 = e2.d0.a;
-                            bVar5.j(false);
+                            bVar4.j(false);
                             return;
                         }
                         return;

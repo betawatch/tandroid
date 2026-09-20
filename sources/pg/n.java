@@ -7,11 +7,11 @@ import android.graphics.Path;
 import android.graphics.Rect;
 import android.graphics.RectF;
 import org.telegram.messenger.AndroidUtilities;
-import qg.y1;
+import qg.z1;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class n extends y1 {
+public final class n extends z1 {
     public final /* synthetic */ x y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */

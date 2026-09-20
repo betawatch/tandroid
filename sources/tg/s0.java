@@ -14,18 +14,18 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.bb;
-import org.telegram.ui.Components.qc;
+import org.telegram.ui.Components.ab;
+import org.telegram.ui.Components.pc;
+import org.telegram.ui.Components.ul0;
 import org.telegram.ui.Components.vl0;
-import org.telegram.ui.Components.wl0;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.o20;
 import org.telegram.ui.vy0;
 import w7.y5;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class s0 extends bb {
+public final class s0 extends ab {
     public final ArrayList X;
     public final ArrayList Y;
     public final TLRPC.Chat Z;
@@ -65,14 +65,14 @@ public final class s0 extends bb {
         ViewGroup viewGroup = this.containerView;
         int i11 = this.backgroundPaddingLeft;
         viewGroup.addView(o20Var, y5.f(-2.0f, 87, i11, 0, i11, 0));
-        wl0 wl0Var = this.d;
+        vl0 vl0Var = this.d;
         int i12 = this.backgroundPaddingLeft;
-        wl0Var.setPadding(i12, 0, i12, AndroidUtilities.dp(64.0f));
+        vl0Var.setPadding(i12, 0, i12, AndroidUtilities.dp(64.0f));
         this.d.setOnItemClickListener(new o6(24, this, chat));
         fixNavigationBar();
         N();
         S(false);
-        qc.a(this.container, new k0());
+        pc.a(this.container, new k0());
     }
 
     public static void P(s0 s0Var, TLRPC.Chat chat, View view) {
@@ -124,12 +124,12 @@ public final class s0 extends bb {
         this.c0.start();
     }
 
-    @Override // org.telegram.ui.Components.bb
-    public final vl0 v(wl0 wl0Var) {
+    @Override // org.telegram.ui.Components.ab
+    public final ul0 v(vl0 vl0Var) {
         return new m0(this);
     }
 
-    @Override // org.telegram.ui.Components.bb
+    @Override // org.telegram.ui.Components.ab
     public final CharSequence y() {
         return LocaleController.getString(R.string.BoostingReassignBoost);
     }

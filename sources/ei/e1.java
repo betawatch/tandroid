@@ -16,23 +16,23 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.rk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.w6;
+import org.telegram.ui.Components.v6;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ea0;
-import org.telegram.ui.kj1;
+import org.telegram.ui.lj1;
 import org.telegram.ui.uy;
 import org.telegram.ui.web.HttpGetFileTask;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e1 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -45,13 +45,13 @@ public final /* synthetic */ class e1 implements Runnable {
     public final /* synthetic */ Object n;
     public final /* synthetic */ Object r;
 
-    public /* synthetic */ e1(TLObject tLObject, int i10, org.telegram.ui.ActionBar.b2 b2Var, Context context, long j3, e6 e6Var, org.telegram.ui.web.t tVar, org.telegram.tgnet.e eVar) {
+    public /* synthetic */ e1(TLObject tLObject, int i10, org.telegram.ui.ActionBar.b2 b2Var, Context context, long j3, f6 f6Var, org.telegram.ui.web.t tVar, org.telegram.tgnet.e eVar) {
         this.b = tLObject;
         this.c = i10;
         this.e = b2Var;
         this.f = context;
         this.d = j3;
-        this.h = e6Var;
+        this.h = f6Var;
         this.n = tVar;
         this.r = eVar;
     }
@@ -65,7 +65,7 @@ public final /* synthetic */ class e1 implements Runnable {
             case 0:
                 org.telegram.ui.ActionBar.b2 b2Var = (org.telegram.ui.ActionBar.b2) this.e;
                 Context context = (Context) this.f;
-                e6 e6Var = (e6) this.h;
+                f6 f6Var = (f6) this.h;
                 org.telegram.ui.web.t tVar = (org.telegram.ui.web.t) this.n;
                 org.telegram.tgnet.e eVar = (org.telegram.tgnet.e) this.r;
                 TLObject tLObject = this.b;
@@ -79,7 +79,7 @@ public final /* synthetic */ class e1 implements Runnable {
                         TLRPC.TL_botInlineMessageMediaWebPage tL_botInlineMessageMediaWebPage = (TLRPC.TL_botInlineMessageMediaWebPage) botInlineMessage;
                         if (!TextUtils.isEmpty(tL_botInlineMessageMediaWebPage.url)) {
                             String str = tL_botInlineMessageMediaWebPage.url;
-                            f1 f1Var = new f1(b2Var, context, i11, j3, tL_messages_preparedInlineMessage, e6Var, tVar, eVar);
+                            f1 f1Var = new f1(b2Var, context, i11, j3, tL_messages_preparedInlineMessage, f6Var, tVar, eVar);
                             int[] iArr = new int[1];
                             NotificationCenter.NotificationCenterDelegate[] notificationCenterDelegateArr = new NotificationCenter.NotificationCenterDelegate[1];
                             TL_account.getWebPagePreview getwebpagepreview = new TL_account.getWebPagePreview();
@@ -90,7 +90,7 @@ public final /* synthetic */ class e1 implements Runnable {
                         }
                     }
                     File[] fileArr = new File[1];
-                    g1 g1Var = new g1(b2Var, context, i11, j3, tL_messages_preparedInlineMessage, fileArr, e6Var, tVar, eVar);
+                    g1 g1Var = new g1(b2Var, context, i11, j3, tL_messages_preparedInlineMessage, fileArr, f6Var, tVar, eVar);
                     TLRPC.WebDocument webDocument = tL_messages_preparedInlineMessage.result.content;
                     if (webDocument != null && !TextUtils.isEmpty(webDocument.url)) {
                         TLRPC.BotInlineResult botInlineResult = tL_messages_preparedInlineMessage.result;
@@ -98,7 +98,7 @@ public final /* synthetic */ class e1 implements Runnable {
                         if ((botInlineMessage2 instanceof TLRPC.TL_botInlineMessageMediaAuto) || (botInlineMessage2 instanceof TLRPC.TL_botInlineMessageMediaWebPage)) {
                             String str2 = botInlineResult.content.url;
                             String httpUrlExtension = ImageLoader.getHttpUrlExtension(str2, null);
-                            File file = new File(FileLoader.getDirectory(4), Utilities.MD5(str2) + (TextUtils.isEmpty(httpUrlExtension) ? FileLoader.getExtensionByMimeType(tL_messages_preparedInlineMessage.result.content.mime_type) : t8.b.i(".", httpUrlExtension)));
+                            File file = new File(FileLoader.getDirectory(4), Utilities.MD5(str2) + (TextUtils.isEmpty(httpUrlExtension) ? FileLoader.getExtensionByMimeType(tL_messages_preparedInlineMessage.result.content.mime_type) : v7.j0.g(".", httpUrlExtension)));
                             if (file.exists()) {
                                 g1Var.run();
                                 break;
@@ -166,14 +166,14 @@ public final /* synthetic */ class e1 implements Runnable {
                             uyVar.C2 = new ea0(launchActivity, user, str5, i12);
                         }
                         if (tL_attachMenuBot.inactive) {
-                            w6 w6Var = new w6(launchActivity);
-                            w6Var.setColor(j6.w0(null, j6.ia, false));
-                            w6Var.setBackgroundColor(j6.w0(null, j6.L5, false));
-                            w6Var.setAttachBot(tL_attachMenuBot);
+                            v6 v6Var = new v6(launchActivity);
+                            v6Var.setColor(j6.w0(null, j6.ia, false));
+                            v6Var.setBackgroundColor(j6.w0(null, j6.L5, false));
+                            v6Var.setAttachBot(tL_attachMenuBot);
                             final long j10 = this.d;
                             final uy uyVar2 = uyVar;
                             final org.telegram.ui.ActionBar.n2 n2Var2 = n2Var;
-                            kj1.a(launchActivity, new e2.h() { // from class: org.telegram.ui.fa0
+                            lj1.a(launchActivity, new e2.h() { // from class: org.telegram.ui.fa0
                                 @Override // e2.h
                                 public final void accept(Object obj) {
                                     Pattern pattern = LaunchActivity.B1;
@@ -182,7 +182,7 @@ public final /* synthetic */ class e1 implements Runnable {
                                     tL_messages_toggleBotInAttachMenu.bot = MessagesController.getInstance(i13).getInputUser(j10);
                                     tL_messages_toggleBotInAttachMenu.enabled = true;
                                     tL_messages_toggleBotInAttachMenu.write_allowed = true;
-                                    ConnectionsManager.getInstance(i13).sendRequest(tL_messages_toggleBotInAttachMenu, new org.telegram.messenger.ji(LaunchActivity.this, i13, uyVar2, n2Var2, user, str5), 66);
+                                    ConnectionsManager.getInstance(i13).sendRequest(tL_messages_toggleBotInAttachMenu, new org.telegram.messenger.ii(LaunchActivity.this, i13, uyVar2, n2Var2, user, str5), 66);
                                 }
                             }, null);
                             break;
@@ -216,7 +216,7 @@ public final /* synthetic */ class e1 implements Runnable {
                     a02 = xc.a0((org.telegram.ui.ActionBar.n2) hg.k0.g(1, arrayList2));
                     i10 = R.string.BotCantAddToAttachMenu;
                 }
-                wh.o(i10, a02, null);
+                rk.p(i10, a02, null);
                 break;
         }
     }

@@ -11,7 +11,7 @@ import com.google.android.gms.vision.face.internal.client.FaceParcel;
 import com.google.android.gms.vision.face.internal.client.LandmarkParcel;
 import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class u2 extends h3 {
     public final /* synthetic */ int r = 0;
@@ -128,7 +128,7 @@ public final class u2 extends h3 {
     }
 
     public t8.a[] n(ByteBuffer byteBuffer, g3 g3Var) {
-        t8.e[] eVarArr;
+        t8.d[] dVarArr;
         rb.a[] aVarArr;
         if (!k()) {
             return new t8.a[0];
@@ -151,14 +151,14 @@ public final class u2 extends h3 {
                 new PointF(faceParcel.c, faceParcel.d);
                 LandmarkParcel[] landmarkParcelArr = faceParcel.s;
                 if (landmarkParcelArr == null) {
-                    eVarArr = new t8.e[0];
+                    dVarArr = new t8.d[0];
                 } else {
-                    t8.e[] eVarArr2 = new t8.e[landmarkParcelArr.length];
+                    t8.d[] dVarArr2 = new t8.d[landmarkParcelArr.length];
                     for (int i13 = 0; i13 < landmarkParcelArr.length; i13++) {
                         LandmarkParcel landmarkParcel = landmarkParcelArr[i13];
-                        eVarArr2[i13] = new t8.e(new PointF(landmarkParcel.b, landmarkParcel.c), landmarkParcel.d);
+                        dVarArr2[i13] = new t8.d(new PointF(landmarkParcel.b, landmarkParcel.c), landmarkParcel.d);
                     }
-                    eVarArr = eVarArr2;
+                    dVarArr = dVarArr2;
                 }
                 u8.a[] aVarArr3 = faceParcel.y;
                 if (aVarArr3 == null) {
@@ -171,7 +171,7 @@ public final class u2 extends h3 {
                     }
                     aVarArr = aVarArr4;
                 }
-                aVarArr2[i11] = new t8.a(i12, eVarArr, aVarArr);
+                aVarArr2[i11] = new t8.a(i12, dVarArr, aVarArr);
             }
             return aVarArr2;
         } catch (RemoteException e) {

@@ -7,7 +7,7 @@ import android.widget.FrameLayout;
 import java.util.WeakHashMap;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class iw0 extends org.telegram.ui.Components.o81 {
     public final /* synthetic */ int a;
@@ -30,31 +30,31 @@ public final class iw0 extends org.telegram.ui.Components.o81 {
             case 0:
                 break;
             case 1:
-                ((a41) view).a(i11);
+                ((b41) view).a(i11);
                 break;
             case 2:
                 break;
             case 3:
-                yh1 yh1Var = (yh1) obj;
-                SparseArray sparseArray = yh1Var.a;
-                wh1 wh1Var = (wh1) sparseArray.get(i10);
-                if (wh1Var != null) {
-                    n2Var = wh1Var.a;
+                ai1 ai1Var = (ai1) obj;
+                SparseArray sparseArray = ai1Var.a;
+                yh1 yh1Var = (yh1) sparseArray.get(i10);
+                if (yh1Var != null) {
+                    n2Var = yh1Var.a;
                 } else {
-                    org.telegram.ui.ActionBar.n2 V = yh1Var.V(i10);
-                    wh1 wh1Var2 = new wh1(V);
-                    sparseArray.put(i10, wh1Var2);
+                    org.telegram.ui.ActionBar.n2 V = ai1Var.V(i10);
+                    yh1 yh1Var2 = new yh1(V);
+                    sparseArray.put(i10, yh1Var2);
                     n2Var = V;
-                    wh1Var = wh1Var2;
+                    yh1Var = yh1Var2;
                 }
-                if (!wh1Var.b) {
+                if (!yh1Var.b) {
                     n2Var.onFragmentCreate();
-                    wh1Var.b = true;
+                    yh1Var.b = true;
                 }
-                n2Var.setParentLayout(yh1Var.getParentLayout());
+                n2Var.setParentLayout(ai1Var.getParentLayout());
                 if (n2Var.getFragmentView() == null) {
                     n2Var.performCreateView((Context) this.b);
-                    n2Var.setTitleOverlayText(yh1Var.n, yh1Var.r, yh1Var.s);
+                    n2Var.setTitleOverlayText(ai1Var.n, ai1Var.r, ai1Var.s);
                 }
                 FrameLayout frameLayout = (FrameLayout) view;
                 frameLayout.removeAllViews();
@@ -70,8 +70,8 @@ public final class iw0 extends org.telegram.ui.Components.o81 {
                 }
                 WeakHashMap weakHashMap = r0.i0.a;
                 r0.y.c(frameLayout);
-                yh1Var.checkSystemBarColors();
-                yh1Var.U();
+                ai1Var.checkSystemBarColors();
+                ai1Var.U();
                 break;
             case 4:
                 break;
@@ -107,13 +107,13 @@ public final class iw0 extends org.telegram.ui.Components.o81 {
                 frameLayout.setOnClickListener(new k60(this, 23));
                 return frameLayout;
             case 1:
-                return new a41((b41) this.c, (Context) this.b);
+                return new b41((c41) this.c, (Context) this.b);
             case 2:
                 FrameLayout frameLayout2 = new FrameLayout((Context) this.b);
-                frameLayout2.setOnClickListener(new g41(this, 7));
+                frameLayout2.setOnClickListener(new h41(this, 7));
                 return frameLayout2;
             case 3:
-                return new r41((Context) this.b, 8);
+                return new u41((Context) this.b, 8);
             case 4:
                 return i10 == 0 ? ((tg.a0) this.b).getContainerView() : ((tg.z0) this.c).getContainerView();
             default:
@@ -158,7 +158,7 @@ public final class iw0 extends org.telegram.ui.Components.o81 {
             case 2:
                 return 2;
             case 3:
-                ((yh1) this.c).getClass();
+                ((ai1) this.c).getClass();
                 return 4;
             case 4:
                 return 2;

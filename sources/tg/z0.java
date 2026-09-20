@@ -32,33 +32,33 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.wh;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Cells.r8;
-import org.telegram.ui.Cells.u3;
+import org.telegram.ui.Cells.s8;
 import org.telegram.ui.Cells.v3;
-import org.telegram.ui.Components.bb;
-import org.telegram.ui.Components.e6;
+import org.telegram.ui.Cells.w3;
+import org.telegram.ui.Components.ab;
+import org.telegram.ui.Components.d6;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.tb0;
+import org.telegram.ui.Components.sb0;
+import org.telegram.ui.Components.ul0;
 import org.telegram.ui.Components.vl0;
-import org.telegram.ui.Components.wl0;
 import org.telegram.ui.Components.xc;
-import org.telegram.ui.aj1;
+import org.telegram.ui.bj1;
 import org.telegram.ui.o20;
 import w7.y5;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class z0 extends bb {
+public final class z0 extends ab {
     public final ci.d X;
     public final y0 Y;
-    public final v3 Z;
+    public final w3 Z;
     public final xg.c a0;
     public final Paint b0;
     public final ArrayList c0;
@@ -71,7 +71,7 @@ public final class z0 extends bb {
     public final ArrayList j0;
     public final ArrayList k0;
     public final LinkedHashMap l0;
-    public final e6 m0;
+    public final d6 m0;
     public String n0;
     public ug.g o0;
     public int p0;
@@ -103,7 +103,7 @@ public final class z0 extends bb {
         ((ViewGroup) this.e.getParent()).removeView(this.e);
         ViewGroup viewGroup = this.containerView;
         qr qrVar = qr.h;
-        this.m0 = new e6(viewGroup, 0L, 350L, qrVar);
+        this.m0 = new d6(viewGroup, 0L, 350L, qrVar);
         xg.c cVar = new xg.c(getContext(), this.resourcesProvider);
         this.a0 = cVar;
         cVar.setOnCloseClickListener(new t0(this, 7));
@@ -115,7 +115,7 @@ public final class z0 extends bb {
         int i10 = j6.h5;
         y0Var.setBackgroundColor(getThemedColor(i10));
         y0Var.setOnSearchTextChange(new w0(this, 0));
-        this.Z = new v3(getContext(), this.resourcesProvider);
+        this.Z = new w3(getContext(), this.resourcesProvider);
         c0();
         ViewGroup viewGroup2 = this.containerView;
         int i11 = this.backgroundPaddingLeft;
@@ -123,7 +123,7 @@ public final class z0 extends bb {
         ViewGroup viewGroup3 = this.containerView;
         int i12 = this.backgroundPaddingLeft;
         viewGroup3.addView(y0Var, y5.f(-2.0f, 55, i12, 0, i12, 0));
-        o20 o20Var = new o20(getContext(), this.resourcesProvider, (wl0) null);
+        o20 o20Var = new o20(getContext(), this.resourcesProvider, (vl0) null);
         o20Var.setClickable(true);
         o20Var.setOrientation(1);
         o20Var.setPadding(AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f));
@@ -136,12 +136,12 @@ public final class z0 extends bb {
         int i13 = this.backgroundPaddingLeft;
         viewGroup4.addView(o20Var, y5.f(-2.0f, 87, i13, 0, i13, 0));
         ug.g gVar = this.o0;
-        wl0 wl0Var = this.d;
+        vl0 vl0Var = this.d;
         gVar.n = arrayList;
-        gVar.f = wl0Var;
+        gVar.f = vl0Var;
         int i14 = this.backgroundPaddingLeft;
-        wl0Var.setPadding(i14, 0, i14, AndroidUtilities.dp(60.0f));
-        this.d.j(new tb0(this, 14));
+        vl0Var.setPadding(i14, 0, i14, AndroidUtilities.dp(60.0f));
+        this.d.j(new sb0(this, 14));
         this.d.setOnItemClickListener(new r5.d(this, 9));
         s4.j jVar = new s4.j();
         jVar.n(350L);
@@ -172,7 +172,7 @@ public final class z0 extends bb {
         LinkedHashMap linkedHashMap = z0Var.l0;
         y0 y0Var = z0Var.Y;
         HashSet hashSet = z0Var.e0;
-        if (view instanceof r8) {
+        if (view instanceof s8) {
             linkedHashMap.clear();
             z0Var.W(true);
         } else if (view instanceof xg.l) {
@@ -199,16 +199,16 @@ public final class z0 extends bb {
             z0Var.b0(true, false);
             if (chat != null && !ChatObject.isPublic(chat) && hashSet.contains(Long.valueOf(j3))) {
                 Context context = z0Var.n.getContext();
-                org.telegram.ui.ActionBar.e6 e6Var = z0Var.resourcesProvider;
+                f6 f6Var = z0Var.resourcesProvider;
                 ai.j jVar = new ai.j(z0Var, j3, 29);
                 t0 t0Var = new t0(z0Var, 2);
                 AtomicBoolean atomicBoolean = new AtomicBoolean(false);
-                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context, 0, e6Var);
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context, 0, f6Var);
                 boolean isChannelAndNotMegaGroup = ChatObject.isChannelAndNotMegaGroup(chat);
                 alertDialog$Builder.a.R = LocaleController.getString(isChannelAndNotMegaGroup ? R.string.BoostingGiveawayPrivateChannel : R.string.BoostingGiveawayPrivateGroup);
                 alertDialog$Builder.a.T = LocaleController.getString(isChannelAndNotMegaGroup ? R.string.BoostingGiveawayPrivateChannelWarning : R.string.BoostingGiveawayPrivateGroupWarning);
                 alertDialog$Builder.k(LocaleController.getString("Add", R.string.Add), new s5.e(1, atomicBoolean, t0Var));
-                alertDialog$Builder.h(LocaleController.getString("Cancel", R.string.Cancel), new s9.b(5));
+                alertDialog$Builder.h(LocaleController.getString("Cancel", R.string.Cancel), new s0.b(11));
                 alertDialog$Builder.j(new ei.e0(15, atomicBoolean, jVar));
                 alertDialog$Builder.o();
             } else if (chat != null) {
@@ -247,14 +247,14 @@ public final class z0 extends bb {
             return false;
         }
         String lowerCase = AndroidUtilities.translitSafe(tL_help_country.default_name).toLowerCase();
-        if (lowerCase.startsWith(str) || wh.u(" ", str, lowerCase)) {
+        if (lowerCase.startsWith(str) || org.telegram.messenger.l0.v(" ", str, lowerCase)) {
             return true;
         }
         String lowerCase2 = AndroidUtilities.translitSafe(tL_help_country.iso2).toLowerCase();
-        return lowerCase2.startsWith(str) || wh.u(" ", str, lowerCase2);
+        return lowerCase2.startsWith(str) || org.telegram.messenger.l0.v(" ", str, lowerCase2);
     }
 
-    @Override // org.telegram.ui.Components.bb
+    @Override // org.telegram.ui.Components.ab
     public final void B(Canvas canvas, int i10) {
         this.t0 = i10;
         float f7 = AndroidUtilities.statusBarHeight;
@@ -268,11 +268,11 @@ public final class z0 extends bb {
         paint.setColor(v02);
         int max = Math.max(0, i10);
         boolean z10 = max < AndroidUtilities.statusBarHeight;
-        e6 e6Var = this.m0;
-        int lerp = AndroidUtilities.lerp(max, 0, e6Var.e(z10));
+        d6 d6Var = this.m0;
+        int lerp = AndroidUtilities.lerp(max, 0, d6Var.e(z10));
         RectF rectF = AndroidUtilities.rectTmp;
         rectF.set(this.backgroundPaddingLeft, lerp, this.containerView.getWidth() - this.backgroundPaddingLeft, AndroidUtilities.dp(14.0f) + this.containerView.getHeight());
-        float dp = (1.0f - e6Var.c) * AndroidUtilities.dp(14.0f);
+        float dp = (1.0f - d6Var.c) * AndroidUtilities.dp(14.0f);
         canvas.drawRoundRect(rectF, dp, dp, paint);
     }
 
@@ -299,10 +299,10 @@ public final class z0 extends bb {
         }
         int i10 = this.r0;
         Context context = getContext();
-        org.telegram.ui.ActionBar.e6 e6Var = this.resourcesProvider;
+        f6 f6Var = this.resourcesProvider;
         t0 t0Var = new t0(this, 0);
         t0 t0Var2 = new t0(this, 6);
-        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context, 0, e6Var);
+        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context, 0, f6Var);
         alertDialog$Builder.a.R = LocaleController.getString("UnsavedChanges", R.string.UnsavedChanges);
         alertDialog$Builder.a.T = i10 != 1 ? i10 != 2 ? i10 != 3 ? "" : LocaleController.getString("BoostingApplyChangesCountries", R.string.BoostingApplyChangesCountries) : LocaleController.getString("BoostingApplyChangesChannels", R.string.BoostingApplyChangesChannels) : LocaleController.getString("BoostingApplyChangesUsers", R.string.BoostingApplyChangesUsers);
         alertDialog$Builder.k(LocaleController.getString("ApplyTheme", R.string.ApplyTheme), new r5.d(t0Var, 8));
@@ -328,7 +328,7 @@ public final class z0 extends bb {
             tL_channelParticipantsRecent.q = str;
             tL_channels_getParticipants.offset = 0;
             tL_channels_getParticipants.limit = 50;
-            connectionsManager.sendRequest(tL_channels_getParticipants, new aj1(2, messagesController, x0Var));
+            connectionsManager.sendRequest(tL_channels_getParticipants, new bj1(2, messagesController, x0Var));
             return;
         }
         if (i10 != 2) {
@@ -490,15 +490,15 @@ public final class z0 extends bb {
     }
 
     public final void X(boolean z10) {
-        wl0 wl0Var = this.d;
+        vl0 vl0Var = this.d;
         if (!z10) {
-            wl0Var.v0(0);
+            vl0Var.v0(0);
             return;
         }
         ji.o oVar = new ji.o(getContext(), 2, 0.6f);
         oVar.a = 1;
         oVar.p = AndroidUtilities.dp(38.0f);
-        wl0Var.getLayoutManager().w0(oVar);
+        vl0Var.getLayoutManager().w0(oVar);
     }
 
     public final void Y() {
@@ -538,8 +538,8 @@ public final class z0 extends bb {
             arrayList2.add(fVar);
         }
         ug.f fVar2 = new ug.f(10, false);
-        v3 v3Var = this.Z;
-        fVar2.q = v3Var;
+        w3 w3Var = this.Z;
+        fVar2.q = w3Var;
         arrayList2.add(fVar2);
         int i12 = this.r0;
         HashSet hashSet = this.e0;
@@ -604,14 +604,14 @@ public final class z0 extends bb {
         fVar6.l = max;
         arrayList2.add(fVar6);
         if (hashSet.size() > 0 && this.r0 != 3) {
-            v3Var.b(LocaleController.getString(R.string.UsersDeselectAll), new v0(this, 0));
+            w3Var.b(LocaleController.getString(R.string.UsersDeselectAll), new v0(this, 0));
         } else if (z10) {
-            v3Var.setRightText(null);
+            w3Var.setRightText(null);
         } else {
-            u3 u3Var = v3Var.b;
-            u3Var.c(null, false, true);
-            u3Var.setOnClickListener(null);
-            u3Var.setVisibility(0);
+            v3 v3Var = w3Var.b;
+            v3Var.c(null, false, true);
+            v3Var.setOnClickListener(null);
+            v3Var.setVisibility(0);
         }
         if (!z11 || (gVar = this.o0) == null) {
             return;
@@ -627,12 +627,12 @@ public final class z0 extends bb {
         a0(z10, z11);
         int i10 = 0;
         while (true) {
-            wl0 wl0Var = this.d;
-            if (i10 >= wl0Var.getChildCount()) {
+            vl0 vl0Var = this.d;
+            if (i10 >= vl0Var.getChildCount()) {
                 Z(z10);
                 return;
             }
-            View childAt = wl0Var.getChildAt(i10);
+            View childAt = vl0Var.getChildAt(i10);
             if (childAt instanceof xg.l) {
                 int S = RecyclerView.S(childAt) - 1;
                 if (S >= 0) {
@@ -661,21 +661,21 @@ public final class z0 extends bb {
     public final void c0() {
         String formatPluralStringComma;
         int i10 = this.r0;
-        v3 v3Var = this.Z;
+        w3 w3Var = this.Z;
         if (i10 == 1) {
             TLRPC.Chat chat = this.q0;
             formatPluralStringComma = LocaleController.formatPluralStringComma(ChatObject.isChannelAndNotMegaGroup(chat) ? "Subscribers" : "Members", Math.max(0, this.o0.F(chat) - 1));
-            v3Var.setLayerHeight(32);
+            w3Var.setLayerHeight(32);
         } else if (i10 == 2) {
             formatPluralStringComma = LocaleController.formatPluralString("BoostingSelectUpToGroupChannelPlural", (int) s.f(), new Object[0]);
-            v3Var.setLayerHeight(32);
+            w3Var.setLayerHeight(32);
         } else if (i10 != 3) {
             formatPluralStringComma = "";
         } else {
             formatPluralStringComma = LocaleController.formatPluralString("BoostingSelectUpToCountriesPlural", (int) MessagesController.getInstance(UserConfig.selectedAccount).giveawayCountriesMax, new Object[0]);
-            v3Var.setLayerHeight(1);
+            w3Var.setLayerHeight(1);
         }
-        v3Var.setText(formatPluralStringComma);
+        w3Var.setText(formatPluralStringComma);
     }
 
     @Override // org.telegram.ui.ActionBar.f3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.j2
@@ -698,14 +698,14 @@ public final class z0 extends bb {
         a0(false, true);
     }
 
-    @Override // org.telegram.ui.Components.bb
-    public final vl0 v(wl0 wl0Var) {
+    @Override // org.telegram.ui.Components.ab
+    public final ul0 v(vl0 vl0Var) {
         ug.g gVar = new ug.g(getContext(), this.resourcesProvider, true);
         this.o0 = gVar;
         return gVar;
     }
 
-    @Override // org.telegram.ui.Components.bb
+    @Override // org.telegram.ui.Components.ab
     public final CharSequence y() {
         int i10 = this.r0;
         return i10 != 1 ? i10 != 2 ? i10 != 3 ? "" : LocaleController.getString(R.string.BoostingSelectCountry) : LocaleController.getString(R.string.BoostingAddChannelOrGroup) : LocaleController.getString(R.string.GiftPremium);

@@ -21,7 +21,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b0 implements r2.u {
     public final /* synthetic */ int a;
@@ -69,6 +69,14 @@ public final /* synthetic */ class b0 implements r2.u {
         int i11 = this.b;
         this.b = i11 + 1;
         jArr2[i11] = j3;
+    }
+
+    @Override // r2.u
+    public int c0() {
+        if (((MediaCodecInfo[]) this.c) == null) {
+            this.c = new MediaCodecList(this.b).getCodecInfos();
+        }
+        return ((MediaCodecInfo[]) this.c).length;
     }
 
     public void d(long[] jArr) {
@@ -157,27 +165,19 @@ public final /* synthetic */ class b0 implements r2.u {
         if (i10 >= 0 && i10 < this.b) {
             return ((long[]) this.c)[i10];
         }
-        StringBuilder j3 = k0.j(i10, "Invalid index ", ", size is ");
-        j3.append(this.b);
-        throw new IndexOutOfBoundsException(j3.toString());
+        StringBuilder k10 = k0.k(i10, "Invalid index ", ", size is ");
+        k10.append(this.b);
+        throw new IndexOutOfBoundsException(k10.toString());
     }
 
     public synchronized List g() {
         return DesugarCollections.unmodifiableList(new ArrayList((ArrayList) this.c));
     }
 
-    @Override // r2.u
-    public int g0() {
-        if (((MediaCodecInfo[]) this.c) == null) {
-            this.c = new MediaCodecList(this.b).getCodecInfos();
-        }
-        return ((MediaCodecInfo[]) this.c).length;
-    }
-
     public long h(c3.l lVar) {
         e2.v vVar = (e2.v) this.c;
         int i10 = 0;
-        lVar.h(vVar.a, 0, 1, false);
+        lVar.i(vVar.a, 0, 1, false);
         int i11 = vVar.a[0] & 255;
         if (i11 == 0) {
             return Long.MIN_VALUE;
@@ -189,7 +189,7 @@ public final /* synthetic */ class b0 implements r2.u {
             i13++;
         }
         int i14 = i11 & (~i12);
-        lVar.h(vVar.a, 1, i13, false);
+        lVar.i(vVar.a, 1, i13, false);
         while (i10 < i13) {
             i10++;
             i14 = (vVar.a[i10] & 255) + (i14 << 8);
@@ -248,7 +248,7 @@ public final /* synthetic */ class b0 implements r2.u {
     }
 
     @Override // r2.u
-    public boolean p0() {
+    public boolean n0() {
         return true;
     }
 

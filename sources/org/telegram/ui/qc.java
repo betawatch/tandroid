@@ -4,22 +4,22 @@ import android.content.Context;
 import android.view.ViewGroup;
 import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class qc extends org.telegram.ui.Components.vl0 {
+public final class qc extends org.telegram.ui.Components.ul0 {
     public final /* synthetic */ Context c;
-    public final /* synthetic */ org.telegram.ui.ActionBar.e6 d;
+    public final /* synthetic */ org.telegram.ui.ActionBar.f6 d;
     public final /* synthetic */ int e;
     public final /* synthetic */ sc f;
 
-    public qc(sc scVar, Context context, org.telegram.ui.ActionBar.e6 e6Var, int i10) {
+    public qc(sc scVar, Context context, org.telegram.ui.ActionBar.f6 f6Var, int i10) {
         this.f = scVar;
         this.c = context;
-        this.d = e6Var;
+        this.d = f6Var;
         this.e = i10;
     }
 
-    @Override // org.telegram.ui.Components.vl0
+    @Override // org.telegram.ui.Components.ul0
     public final boolean D(s4.c1 c1Var) {
         return true;
     }
@@ -50,6 +50,6 @@ public final class qc extends org.telegram.ui.Components.vl0 {
 
     @Override // s4.h0
     public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        return new org.telegram.ui.Components.gl0(new rc(this.f, this.c));
+        return new org.telegram.ui.Components.fl0(new rc(this.f, this.c));
     }
 }

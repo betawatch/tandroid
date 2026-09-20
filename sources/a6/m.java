@@ -23,7 +23,6 @@ import android.util.Log;
 import android.view.TextureView;
 import android.view.Window;
 import android.webkit.WebView;
-import androidx.biometric.p;
 import androidx.biometric.t;
 import androidx.fragment.app.g0;
 import androidx.fragment.app.k0;
@@ -31,7 +30,6 @@ import androidx.fragment.app.l0;
 import androidx.lifecycle.a0;
 import androidx.lifecycle.z;
 import b2.q0;
-import c3.j0;
 import c5.b0;
 import c6.e0;
 import c6.y;
@@ -53,6 +51,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import e2.d0;
 import e2.v;
+import e6.p;
 import ei.x4;
 import g6.n;
 import g6.q;
@@ -85,7 +84,6 @@ import java.util.Iterator;
 import java.util.Locale;
 import java.util.concurrent.Executor;
 import java.util.regex.Pattern;
-import ki.c0;
 import l.x;
 import lg.o;
 import org.chromium.support_lib_boundary.JsReplyProxyBoundaryInterface;
@@ -99,21 +97,23 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.Cells.q9;
-import org.telegram.ui.Components.d5;
+import org.telegram.ui.Cells.r9;
+import org.telegram.ui.Components.c5;
 import org.telegram.ui.Components.eo0;
-import org.telegram.ui.Components.r71;
-import org.telegram.ui.Components.u71;
+import org.telegram.ui.Components.q71;
+import org.telegram.ui.Components.t71;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.cj0;
+import org.telegram.ui.dj0;
 import org.telegram.ui.gy;
 import org.telegram.ui.lv0;
 import org.telegram.ui.web.d1;
 import org.telegram.ui.web.z0;
+import qg.c2;
+import v7.j0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
-public final class m implements lv0, a0, androidx.activity.result.b, WebMessageListenerBoundaryInterface, s, o, r71, OnSuccessListener, n, f6.a, fb.n, x, b2, z3.m, d5, h1 {
+public final class m implements lv0, a0, androidx.activity.result.b, WebMessageListenerBoundaryInterface, s, o, q71, OnSuccessListener, n, f6.a, fb.n, x, b2, z3.m, c5, h1 {
     public final /* synthetic */ int a;
     public final Object b;
 
@@ -122,10 +122,10 @@ public final class m implements lv0, a0, androidx.activity.result.b, WebMessageL
         this.b = strArr;
     }
 
-    public static int I(int i10, String str) {
+    public static int B(int i10, String str) {
         int Q = Q(i10);
-        int u10 = u(str);
-        return R(u10) + u10 + Q;
+        int m10 = m(str);
+        return R(m10) + m10 + Q;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -301,7 +301,7 @@ public final class m implements lv0, a0, androidx.activity.result.b, WebMessageL
         return (i10 & (-268435456)) == 0 ? 4 : 5;
     }
 
-    public static int u(CharSequence charSequence) {
+    public static int m(CharSequence charSequence) {
         int length = charSequence.length();
         int i10 = 0;
         int i11 = 0;
@@ -349,15 +349,22 @@ public final class m implements lv0, a0, androidx.activity.result.b, WebMessageL
         throw new IllegalArgumentException(sb3.toString());
     }
 
-    @Override // z3.m
-    public int A() {
-        return 2;
+    public void A(int i10) {
+        while ((i10 & (-128)) != 0) {
+            x((i10 & 127) | 128);
+            i10 >>>= 7;
+        }
+        x(i10);
+    }
+
+    public void C(int i10, int i11) {
+        A((i10 << 3) | i11);
     }
 
     @Override // ii.h1
-    public void B(i1 i1Var, int i10, int i11) {
+    public void D(i1 i1Var, int i10, int i11) {
         c3 c3Var;
-        q9 textSelectionHelper;
+        r9 textSelectionHelper;
         o5 o5Var = (o5) this.b;
         if (o5Var.G || i10 == i11 || (c3Var = o5Var.E) == null || (textSelectionHelper = c3Var.a.getTextSelectionHelper()) == null) {
             return;
@@ -368,8 +375,116 @@ public final class m implements lv0, a0, androidx.activity.result.b, WebMessageL
         o5Var.post(new x4(this, i1Var, i11, textSelectionHelper, i10, 4));
     }
 
+    @Override // org.telegram.ui.lv0
+    public void D0(MessageObject messageObject) {
+        ((ac) ((f6) this.b).Q1).f(true);
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:18:0x004d A[LOOP:0: B:16:0x0047->B:18:0x004d, LOOP_END] */
+    @Override // g6.n
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public void E(String str, long j3, int i10, Object obj, long j10, long j11) {
+        int i11;
+        Iterator it;
+        p pVar = (p) this.b;
+        try {
+            i11 = i10;
+            try {
+                Status status = new Status(i11, null, null, null);
+                Object obj2 = true == (obj instanceof g6.l) ? obj : null;
+                if (obj2 != null) {
+                }
+                if (obj2 != null) {
+                }
+                pVar.a(new e6.o(status, 2));
+            } catch (IllegalStateException e) {
+                e = e;
+                g6.b bVar = e6.h.k;
+                Log.e(bVar.a, bVar.d("Result already set when calling onRequestCompleted", new Object[0]), e);
+                it = pVar.q.i.iterator();
+                while (it.hasNext()) {
+                }
+            }
+        } catch (IllegalStateException e7) {
+            e = e7;
+            i11 = i10;
+        }
+        it = pVar.q.i.iterator();
+        while (it.hasNext()) {
+            ((e6.g) it.next()).h(str, j3, i11, j10, j11);
+            i11 = i10;
+        }
+    }
+
+    @Override // gg.b2
+    public boolean F(int i10) {
+        switch (this.a) {
+            case 22:
+                return i10 == ((eo0) this.b).d0;
+            default:
+                return true;
+        }
+    }
+
+    @Override // gg.b2
+    public void G(ArrayList arrayList) {
+        switch (this.a) {
+            case 22:
+                eo0 eo0Var = (eo0) this.b;
+                for (int i10 = 0; i10 < arrayList.size(); i10++) {
+                    eo0Var.J.add(((a2) arrayList.get(i10)).a);
+                }
+                gy gyVar = eo0Var.U;
+                if (gyVar != null) {
+                    gyVar.d(eo0Var.D0 > 0, false);
+                }
+                eo0Var.l();
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.lv0
+    public void H(MessageObject messageObject) {
+        ((ac) ((f6) this.b).Q1).f(false);
+    }
+
     @Override // z3.m
-    public void C(byte[] bArr, int i10, int i11, z3.l lVar, e2.h hVar) {
+    public int I() {
+        return 2;
+    }
+
+    @Override // org.telegram.ui.Components.c5
+    public void J(int i10, int i11, boolean z10) {
+        switch (this.a) {
+            case 26:
+                ((ii.r) this.b).I(i10, z10, i11, false, 0L);
+                ii.r rVar = (ii.r) this.b;
+                dj0 dj0Var = rVar.O;
+                if (dj0Var != null) {
+                    dj0Var.i();
+                    rVar.O = null;
+                    break;
+                }
+                break;
+            default:
+                ((d2) this.b).s0(i10, i11, z10);
+                break;
+        }
+    }
+
+    @Override // ii.h1
+    public void K(CharSequence charSequence) {
+        c3 c3Var = ((o5) this.b).E;
+        if (c3Var == null || charSequence == null || charSequence.length() <= 0) {
+            return;
+        }
+        c3Var.a.u4(charSequence.toString());
+    }
+
+    @Override // z3.m
+    public void M(byte[] bArr, int i10, int i11, z3.l lVar, e2.h hVar) {
         d2.b a2;
         v vVar = (v) this.b;
         vVar.H(i10 + i11, bArr);
@@ -422,99 +537,12 @@ public final class m implements lv0, a0, androidx.activity.result.b, WebMessageL
         hVar.accept(new z3.a(-9223372036854775807L, -9223372036854775807L, arrayList));
     }
 
-    public void D(int i10, byte[] bArr) {
-        M(i10, 2);
-        G(bArr.length);
-        int length = bArr.length;
-        ByteBuffer byteBuffer = (ByteBuffer) this.b;
-        if (byteBuffer.remaining() < length) {
-            throw new b5(byteBuffer.position(), byteBuffer.limit());
-        }
-        byteBuffer.put(bArr, 0, length);
-    }
-
-    public void E(int i10) {
-        byte b10 = (byte) i10;
-        ByteBuffer byteBuffer = (ByteBuffer) this.b;
-        if (!byteBuffer.hasRemaining()) {
-            throw new b5(byteBuffer.position(), byteBuffer.limit());
-        }
-        byteBuffer.put(b10);
-    }
-
-    @Override // org.telegram.ui.lv0
-    public void E0(MessageObject messageObject) {
-        ((ac) ((f6) this.b).Q1).f(true);
-    }
-
-    @Override // gg.b2
-    public void F(ArrayList arrayList) {
-        switch (this.a) {
-            case 22:
-                eo0 eo0Var = (eo0) this.b;
-                for (int i10 = 0; i10 < arrayList.size(); i10++) {
-                    eo0Var.J.add(((a2) arrayList.get(i10)).a);
-                }
-                gy gyVar = eo0Var.U;
-                if (gyVar != null) {
-                    gyVar.d(eo0Var.D0 > 0, false);
-                }
-                eo0Var.l();
-                break;
-        }
-    }
-
-    public void G(int i10) {
-        while ((i10 & (-128)) != 0) {
-            E((i10 & 127) | 128);
-            i10 >>>= 7;
-        }
-        E(i10);
-    }
-
-    @Override // org.telegram.ui.lv0
-    public void H(MessageObject messageObject) {
-        ((ac) ((f6) this.b).Q1).f(false);
-    }
-
-    @Override // org.telegram.ui.Components.d5
-    public void J(int i10, int i11, boolean z10) {
-        switch (this.a) {
-            case 26:
-                ((ii.r) this.b).I(i10, z10, i11, false, 0L);
-                ii.r rVar = (ii.r) this.b;
-                cj0 cj0Var = rVar.O;
-                if (cj0Var != null) {
-                    cj0Var.i();
-                    rVar.O = null;
-                    break;
-                }
-                break;
-            default:
-                ((d2) this.b).s0(i10, i11, z10);
-                break;
-        }
-    }
-
-    @Override // ii.h1
-    public void K(CharSequence charSequence) {
-        c3 c3Var = ((o5) this.b).E;
-        if (c3Var == null || charSequence == null || charSequence.length() <= 0) {
-            return;
-        }
-        c3Var.a.u4(charSequence.toString());
-    }
-
-    public void M(int i10, int i11) {
-        G((i10 << 3) | i11);
-    }
-
     public void O(long j3) {
         while (((-128) & j3) != 0) {
-            E((((int) j3) & 127) | 128);
+            x((((int) j3) & 127) | 128);
             j3 >>>= 7;
         }
-        E((int) j3);
+        x((int) j3);
     }
 
     @Override // ii.h1
@@ -534,7 +562,7 @@ public final class m implements lv0, a0, androidx.activity.result.b, WebMessageL
     }
 
     @Override // ii.h1
-    public /* synthetic */ boolean X(boolean z10) {
+    public /* synthetic */ boolean Y(boolean z10) {
         return false;
     }
 
@@ -607,9 +635,9 @@ public final class m implements lv0, a0, androidx.activity.result.b, WebMessageL
             return;
         }
         l0 l0Var2 = (l0) obj;
-        p pVar = (p) l0Var2.D("androidx.biometric.BiometricFragment");
+        androidx.biometric.p pVar = (androidx.biometric.p) l0Var2.D("androidx.biometric.BiometricFragment");
         if (pVar == null) {
-            pVar = new p();
+            pVar = new androidx.biometric.p();
             androidx.fragment.app.a aVar = new androidx.fragment.app.a(l0Var2);
             aVar.f(0, pVar, "androidx.biometric.BiometricFragment");
             aVar.e(true, true);
@@ -654,7 +682,7 @@ public final class m implements lv0, a0, androidx.activity.result.b, WebMessageL
         if (c3Var != null) {
             w3 w3Var = c3Var.a;
             w3.N1(w3Var, i1Var);
-            w3Var.h3.t(i1Var, true);
+            w3Var.h3.x(i1Var, true);
         }
     }
 
@@ -1173,10 +1201,8 @@ public final class m implements lv0, a0, androidx.activity.result.b, WebMessageL
         return null;
     }
 
-    @Override // gg.b2
-    public /* synthetic */ a0.i i() {
-        switch (this.a) {
-        }
+    @Override // org.telegram.ui.lv0
+    public /* synthetic */ TextureView h0() {
         return null;
     }
 
@@ -1189,11 +1215,6 @@ public final class m implements lv0, a0, androidx.activity.result.b, WebMessageL
             return;
         }
         h2Var.f(i10, i11);
-    }
-
-    @Override // org.telegram.ui.lv0
-    public /* synthetic */ TextureView j0() {
-        return null;
     }
 
     @Override // androidx.activity.result.b
@@ -1237,13 +1258,20 @@ public final class m implements lv0, a0, androidx.activity.result.b, WebMessageL
         }
     }
 
+    @Override // gg.b2
+    public /* synthetic */ a0.i l() {
+        switch (this.a) {
+        }
+        return null;
+    }
+
     @Override // androidx.lifecycle.a0
     public void m0(Object obj) {
         int i10 = this.a;
         Object obj2 = this.b;
         switch (i10) {
             case 3:
-                p pVar = (p) obj2;
+                androidx.biometric.p pVar = (androidx.biometric.p) obj2;
                 if (((Boolean) obj).booleanValue()) {
                     if (pVar.R()) {
                         pVar.W(pVar.q(R.string.fingerprint_not_recognized));
@@ -1276,33 +1304,31 @@ public final class m implements lv0, a0, androidx.activity.result.b, WebMessageL
         }
     }
 
-    @Override // f6.a
-    public void n(Bitmap bitmap) {
-        g6.b bVar = f6.i.v;
-        Bitmap bitmap2 = null;
-        if (bitmap != null) {
-            int width = bitmap.getWidth();
-            float f7 = width;
-            int height = bitmap.getHeight();
-            int A = (int) a4.a.A(f7, 9.0f, 16.0f, 0.5f);
-            float f10 = (A - height) / 2.0f;
-            RectF rectF = new RectF(0.0f, f10, f7, height + f10);
-            Bitmap.Config config = bitmap.getConfig();
-            if (config == null) {
-                config = Bitmap.Config.ARGB_8888;
+    public void o(int i10, String str) {
+        ByteBuffer byteBuffer = (ByteBuffer) this.b;
+        C(i10, 2);
+        try {
+            int R = R(str.length());
+            if (R != R(str.length() * 3)) {
+                A(m(str));
+                N(str, byteBuffer);
+                return;
             }
-            Bitmap createBitmap = Bitmap.createBitmap(width, A, config);
-            new Canvas(createBitmap).drawBitmap(bitmap, (Rect) null, rectF, (Paint) null);
-            bitmap2 = createBitmap;
+            int position = byteBuffer.position();
+            if (byteBuffer.remaining() < R) {
+                throw new b5(position + R, byteBuffer.limit());
+            }
+            byteBuffer.position(position + R);
+            N(str, byteBuffer);
+            int position2 = byteBuffer.position();
+            byteBuffer.position(position);
+            A((position2 - position) - R);
+            byteBuffer.position(position2);
+        } catch (BufferOverflowException e) {
+            b5 b5Var = new b5(byteBuffer.position(), byteBuffer.limit());
+            b5Var.initCause(e);
+            throw b5Var;
         }
-        ((f6.i) this.b).e(bitmap2, 0);
-    }
-
-    @Override // gg.b2
-    public /* synthetic */ a0.i o() {
-        switch (this.a) {
-        }
-        return null;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:119:? A[RETURN, SYNTHETIC] */
@@ -1355,7 +1381,7 @@ public final class m implements lv0, a0, androidx.activity.result.b, WebMessageL
                                                         aVar2.f(1);
                                                         byte[] bArr = (byte[]) aVar2.d;
                                                         Objects.requireNonNull(bArr);
-                                                        kVar.k.execute(new c0(11, kVar, bArr));
+                                                        kVar.k.execute(new ki.l(13, kVar, bArr));
                                                     }
                                                 }
                                                 return;
@@ -1415,19 +1441,19 @@ public final class m implements lv0, a0, androidx.activity.result.b, WebMessageL
         }
     }
 
-    @Override // org.telegram.ui.Components.r71
+    @Override // org.telegram.ui.Components.q71
     public /* synthetic */ void onRenderedFirstFrame(j2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.r71
+    @Override // org.telegram.ui.Components.q71
     public void onStateChanged(boolean z10, int i10) {
         d7 d7Var = (d7) this.b;
         a7 a7Var = d7Var.M;
-        u71 u71Var = d7Var.x;
-        if (u71Var == null) {
+        t71 t71Var = d7Var.x;
+        if (t71Var == null) {
             return;
         }
-        if (u71Var.y()) {
+        if (t71Var.y()) {
             AndroidUtilities.runOnUIThread(a7Var);
         } else {
             AndroidUtilities.cancelRunOnUIThread(a7Var);
@@ -1455,17 +1481,17 @@ public final class m implements lv0, a0, androidx.activity.result.b, WebMessageL
             }
             String packageName = context.getPackageName();
             Locale locale = Locale.ROOT;
-            String v = t8.b.v(packageName, ".client_cast_analytics_data");
+            String s10 = j0.s(packageName, ".client_cast_analytics_data");
             r0Var.h = bundle.getLong("com.google.android.gms.cast.FLAG_FIRELOG_UPLOAD_MODE") == 0 ? 1 : 2;
             l5.s.b(context);
             r0Var.g = l5.s.a().c(j5.a.e).a("CAST_SENDER_SDK", new i5.c("proto"), com.google.android.gms.internal.cast.b0.a);
             if (bundle.containsKey("com.google.android.gms.cast.FLAG_ANALYTICS_LOGGING_BUCKET_SIZE")) {
                 r0Var.e = Long.valueOf(bundle.getLong("com.google.android.gms.cast.FLAG_ANALYTICS_LOGGING_BUCKET_SIZE"));
             }
-            SharedPreferences sharedPreferences = context.getApplicationContext().getSharedPreferences(v, 0);
+            SharedPreferences sharedPreferences = context.getApplicationContext().getSharedPreferences(s10, 0);
             if (i10 != 0) {
                 com.google.android.gms.common.api.internal.v e = com.google.android.gms.common.api.internal.w.e();
-                e.c = new j0(rVar, new String[]{"com.google.android.gms.cast.DICTIONARY_CAST_STATUS_CODES_TO_APP_SESSION_ERROR", "com.google.android.gms.cast.DICTIONARY_CAST_STATUS_CODES_TO_APP_SESSION_CHANGE_REASON"});
+                e.c = new c3.j0(rVar, new String[]{"com.google.android.gms.cast.DICTIONARY_CAST_STATUS_CODES_TO_APP_SESSION_ERROR", "com.google.android.gms.cast.DICTIONARY_CAST_STATUS_CODES_TO_APP_SESSION_CHANGE_REASON"});
                 e.d = new k6.c[]{y.c};
                 e.b = false;
                 e.a = 8426;
@@ -1540,19 +1566,19 @@ public final class m implements lv0, a0, androidx.activity.result.b, WebMessageL
         }
     }
 
-    @Override // org.telegram.ui.Components.r71
+    @Override // org.telegram.ui.Components.q71
     public /* synthetic */ boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture) {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.r71
+    @Override // org.telegram.ui.Components.q71
     public void onVideoSizeChanged(int i10, int i11, int i12, float f7) {
-        qg.b2 b2Var = ((d7) this.b).w;
-        if (b2Var != null) {
+        c2 c2Var = ((d7) this.b).w;
+        if (c2Var != null) {
             float f10 = i10 / i11;
-            if (Math.abs(b2Var.y0 - f10) >= 1.0E-4f) {
-                b2Var.y0 = f10;
-                b2Var.requestLayout();
+            if (Math.abs(c2Var.y0 - f10) >= 1.0E-4f) {
+                c2Var.y0 = f10;
+                c2Var.requestLayout();
             }
         }
     }
@@ -1575,9 +1601,31 @@ public final class m implements lv0, a0, androidx.activity.result.b, WebMessageL
         throw new db.j("Invalid EnumSet type: " + type.toString());
     }
 
+    @Override // f6.a
+    public void q(Bitmap bitmap) {
+        g6.b bVar = f6.i.v;
+        Bitmap bitmap2 = null;
+        if (bitmap != null) {
+            int width = bitmap.getWidth();
+            float f7 = width;
+            int height = bitmap.getHeight();
+            int A = (int) a4.a.A(f7, 9.0f, 16.0f, 0.5f);
+            float f10 = (A - height) / 2.0f;
+            RectF rectF = new RectF(0.0f, f10, f7, height + f10);
+            Bitmap.Config config = bitmap.getConfig();
+            if (config == null) {
+                config = Bitmap.Config.ARGB_8888;
+            }
+            Bitmap createBitmap = Bitmap.createBitmap(width, A, config);
+            new Canvas(createBitmap).drawBitmap(bitmap, (Rect) null, rectF, (Paint) null);
+            bitmap2 = createBitmap;
+        }
+        ((f6.i) this.b).e(bitmap2, 0);
+    }
+
     @Override // g6.n
-    public void q(String str, long j3, long j10, long j11) {
-        e6.p pVar = (e6.p) this.b;
+    public void r(String str, long j3, long j10, long j11) {
+        p pVar = (p) this.b;
         try {
             pVar.a(new e6.o(new Status(2103, null, null, null), 1));
         } catch (IllegalStateException e) {
@@ -1591,23 +1639,24 @@ public final class m implements lv0, a0, androidx.activity.result.b, WebMessageL
     }
 
     @Override // z3.m
-    public /* synthetic */ z3.d r(int i10, int i11, byte[] bArr) {
-        return t8.b.a(this, bArr, i11);
-    }
-
-    @Override // gg.b2
-    public boolean s(int i10) {
-        switch (this.a) {
-            case 22:
-                return i10 == ((eo0) this.b).d0;
-            default:
-                return true;
-        }
+    public /* synthetic */ z3.d s(int i10, int i11, byte[] bArr) {
+        return j0.a(this, bArr, i11);
     }
 
     @Override // ii.h1
     public /* synthetic */ boolean t(i1 i1Var) {
         return false;
+    }
+
+    public void u(int i10, byte[] bArr) {
+        C(i10, 2);
+        A(bArr.length);
+        int length = bArr.length;
+        ByteBuffer byteBuffer = (ByteBuffer) this.b;
+        if (byteBuffer.remaining() < length) {
+            throw new b5(byteBuffer.position(), byteBuffer.limit());
+        }
+        byteBuffer.put(bArr, 0, length);
     }
 
     @Override // l.x
@@ -1620,69 +1669,20 @@ public final class m implements lv0, a0, androidx.activity.result.b, WebMessageL
         return true;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:18:0x004d A[LOOP:0: B:16:0x0047->B:18:0x004d, LOOP_END] */
-    @Override // g6.n
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public void w(String str, long j3, int i10, Object obj, long j10, long j11) {
-        int i11;
-        Iterator it;
-        e6.p pVar = (e6.p) this.b;
-        try {
-            i11 = i10;
-            try {
-                Status status = new Status(i11, null, null, null);
-                Object obj2 = true == (obj instanceof g6.l) ? obj : null;
-                if (obj2 != null) {
-                }
-                if (obj2 != null) {
-                }
-                pVar.a(new e6.o(status, 2));
-            } catch (IllegalStateException e) {
-                e = e;
-                g6.b bVar = e6.h.k;
-                Log.e(bVar.a, bVar.d("Result already set when calling onRequestCompleted", new Object[0]), e);
-                it = pVar.q.i.iterator();
-                while (it.hasNext()) {
-                }
-            }
-        } catch (IllegalStateException e7) {
-            e = e7;
-            i11 = i10;
+    @Override // gg.b2
+    public /* synthetic */ a0.i w() {
+        switch (this.a) {
         }
-        it = pVar.q.i.iterator();
-        while (it.hasNext()) {
-            ((e6.g) it.next()).h(str, j3, i11, j10, j11);
-            i11 = i10;
-        }
+        return null;
     }
 
-    public void y(int i10, String str) {
+    public void x(int i10) {
+        byte b10 = (byte) i10;
         ByteBuffer byteBuffer = (ByteBuffer) this.b;
-        M(i10, 2);
-        try {
-            int R = R(str.length());
-            if (R != R(str.length() * 3)) {
-                G(u(str));
-                N(str, byteBuffer);
-                return;
-            }
-            int position = byteBuffer.position();
-            if (byteBuffer.remaining() < R) {
-                throw new b5(position + R, byteBuffer.limit());
-            }
-            byteBuffer.position(position + R);
-            N(str, byteBuffer);
-            int position2 = byteBuffer.position();
-            byteBuffer.position(position);
-            G((position2 - position) - R);
-            byteBuffer.position(position2);
-        } catch (BufferOverflowException e) {
-            b5 b5Var = new b5(byteBuffer.position(), byteBuffer.limit());
-            b5Var.initCause(e);
-            throw b5Var;
+        if (!byteBuffer.hasRemaining()) {
+            throw new b5(byteBuffer.position(), byteBuffer.limit());
         }
+        byteBuffer.put(b10);
     }
 
     @Override // lg.o
@@ -1695,7 +1695,7 @@ public final class m implements lv0, a0, androidx.activity.result.b, WebMessageL
         this.b = obj;
     }
 
-    @Override // org.telegram.ui.Components.r71
+    @Override // org.telegram.ui.Components.q71
     public void onRenderedFirstFrame() {
     }
 
@@ -1742,7 +1742,7 @@ public final class m implements lv0, a0, androidx.activity.result.b, WebMessageL
     }
 
     @Override // lg.o
-    public void g0() {
+    public void i0() {
     }
 
     @Override // z3.m
@@ -1750,10 +1750,10 @@ public final class m implements lv0, a0, androidx.activity.result.b, WebMessageL
     }
 
     @Override // ii.h1
-    public /* synthetic */ void x() {
+    public /* synthetic */ void y() {
     }
 
-    private final /* synthetic */ void l(ArrayList arrayList) {
+    private final /* synthetic */ void i(ArrayList arrayList) {
     }
 
     @Override // lg.o
@@ -1761,26 +1761,26 @@ public final class m implements lv0, a0, androidx.activity.result.b, WebMessageL
     }
 
     @Override // lg.o
-    public void e0(boolean z10) {
+    public void d0(boolean z10) {
     }
 
     @Override // ii.h1
-    public /* synthetic */ void m(i1 i1Var) {
+    public /* synthetic */ void n(i1 i1Var) {
     }
 
-    @Override // org.telegram.ui.Components.r71
+    @Override // org.telegram.ui.Components.q71
     public /* synthetic */ void onSeekFinished(j2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.r71
+    @Override // org.telegram.ui.Components.q71
     public /* synthetic */ void onSeekStarted(j2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.r71
+    @Override // org.telegram.ui.Components.q71
     public /* synthetic */ void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
     }
 
-    @Override // org.telegram.ui.Components.r71
-    public void onError(u71 u71Var, Exception exc) {
+    @Override // org.telegram.ui.Components.q71
+    public void onError(t71 t71Var, Exception exc) {
     }
 }

@@ -1,45 +1,27 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
 import android.view.ViewGroup;
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class y31 extends s4.s0 {
-    public final /* synthetic */ k41 a;
+public final class y31 extends s4.j {
+    public final /* synthetic */ j41 F;
 
-    public y31(k41 k41Var) {
-        this.a = k41Var;
+    public y31(j41 j41Var) {
+        this.F = j41Var;
     }
 
-    @Override // s4.s0
-    public final void a(RecyclerView recyclerView, int i10) {
-        k41 k41Var = this.a;
-        x31 x31Var = k41Var.H;
-        if (i10 == 0) {
-            k41Var.G = false;
-        }
-        if ((i10 == 0 || i10 == 2) && k41Var.z(false) > 0.0f && k41Var.z(false) < AndroidUtilities.dp(96.0f) && x31Var.canScrollVertically(1) && k41.u(k41Var)) {
-            k41Var.G = true;
-            x31Var.w0(0, (int) k41Var.z(false), null);
-        }
-    }
-
-    @Override // s4.s0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
+    @Override // s4.j
+    public final void O() {
         ViewGroup viewGroup;
-        k41 k41Var = this.a;
-        viewGroup = ((org.telegram.ui.ActionBar.f3) k41Var).containerView;
+        viewGroup = ((org.telegram.ui.ActionBar.f3) this.F).containerView;
         viewGroup.invalidate();
-        boolean canScrollVertically = k41Var.H.canScrollVertically(1);
-        View view = k41Var.L;
-        Boolean bool = k41Var.Q;
-        if (bool == null || bool.booleanValue() != canScrollVertically) {
-            k41Var.Q = Boolean.valueOf(canScrollVertically);
-            view.animate().cancel();
-            org.telegram.messenger.wh.r(view.animate().alpha(canScrollVertically ? 1.0f : 0.0f), qr.h, 320L);
-        }
+    }
+
+    @Override // s4.j
+    public final void P(s4.c1 c1Var) {
+        ViewGroup viewGroup;
+        viewGroup = ((org.telegram.ui.ActionBar.f3) this.F).containerView;
+        viewGroup.invalidate();
     }
 }

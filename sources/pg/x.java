@@ -12,15 +12,15 @@ import android.widget.LinearLayout;
 import com.google.android.gms.internal.vision.e2;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.e6;
 import org.telegram.ui.ActionBar.f3;
+import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.q6;
 import org.telegram.ui.vy0;
 import w7.y5;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class x extends f3 {
     public static final /* synthetic */ int s = 0;
@@ -33,8 +33,8 @@ public final class x extends f3 {
     public u n;
     public boolean r;
 
-    public x(Context context, e6 e6Var) {
-        super(1, context, e6Var, true);
+    public x(Context context, f6 f6Var) {
+        super(1, context, f6Var, true);
         this.e = new Path();
         fixNavigationBar(-14342875);
         Drawable mutate = context.getResources().getDrawable(R.drawable.sheet_shadow_round).mutate();

@@ -3,7 +3,7 @@ package x7;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class n5 implements Parcelable.Creator {
     public final /* synthetic */ int a;
@@ -79,7 +79,7 @@ public final class n5 implements Parcelable.Creator {
                     }
                 }
                 w7.e0.m(parcel, z12);
-                return new na(f11, i14, str3, str4);
+                return new oa(f11, i14, str3, str4);
             default:
                 int z13 = w7.e0.z(parcel);
                 float f12 = 0.0f;
@@ -96,7 +96,7 @@ public final class n5 implements Parcelable.Creator {
                     }
                 }
                 w7.e0.m(parcel, z13);
-                return new oa(f12, i15);
+                return new pa(f12, i15);
         }
     }
 
@@ -108,9 +108,9 @@ public final class n5 implements Parcelable.Creator {
             case 1:
                 return new n6[i10];
             case 2:
-                return new na[i10];
-            default:
                 return new oa[i10];
+            default:
+                return new pa[i10];
         }
     }
 }

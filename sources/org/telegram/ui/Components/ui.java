@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class ui extends View {
     public final /* synthetic */ int a = 0;
@@ -46,20 +46,20 @@ public final class ui extends View {
     public final void onDraw(Canvas canvas) {
         switch (this.a) {
             case 0:
-                yf.z zVar = (yf.z) this.d;
-                org.telegram.ui.ActionBar.e6 e6Var = (org.telegram.ui.ActionBar.e6) this.c;
+                yf.y yVar = (yf.y) this.d;
+                org.telegram.ui.ActionBar.f6 f6Var = (org.telegram.ui.ActionBar.f6) this.c;
                 int i10 = this.b;
-                zVar.b(org.telegram.ui.ActionBar.j6.l1(0.5f, org.telegram.ui.ActionBar.j6.v0(i10, e6Var)));
-                zVar.draw(canvas);
-                yf.z zVar2 = (yf.z) this.e;
-                zVar2.b(org.telegram.ui.ActionBar.j6.l1(0.95f, org.telegram.ui.ActionBar.j6.v0(i10, e6Var)));
-                zVar2.draw(canvas);
+                yVar.b(org.telegram.ui.ActionBar.j6.l1(0.5f, org.telegram.ui.ActionBar.j6.v0(i10, f6Var)));
+                yVar.draw(canvas);
+                yf.y yVar2 = (yf.y) this.e;
+                yVar2.b(org.telegram.ui.ActionBar.j6.l1(0.95f, org.telegram.ui.ActionBar.j6.v0(i10, f6Var)));
+                yVar2.draw(canvas);
                 break;
             default:
                 ArrayList arrayList = (ArrayList) this.c;
                 if (!arrayList.isEmpty()) {
                     for (int i11 = 0; i11 < arrayList.size(); i11++) {
-                        ((org.telegram.ui.ci0) arrayList.get(i11)).a(canvas);
+                        ((org.telegram.ui.di0) arrayList.get(i11)).a(canvas);
                     }
                     break;
                 }
@@ -73,12 +73,12 @@ public final class ui extends View {
             case 0:
                 super.onSizeChanged(i10, i11, i12, i13);
                 int i14 = AndroidUtilities.statusBarHeight;
-                yf.z zVar = (yf.z) this.d;
-                zVar.c(AndroidUtilities.dp(12.0f) + i14, 0);
-                zVar.setBounds(0, 0, i10, AndroidUtilities.dp(52.0f) + i14);
-                yf.z zVar2 = (yf.z) this.e;
-                zVar2.c(i14 / 3, 0);
-                zVar2.setBounds(0, 0, i10, i14);
+                yf.y yVar = (yf.y) this.d;
+                yVar.c(AndroidUtilities.dp(12.0f) + i14, 0);
+                yVar.setBounds(0, 0, i10, AndroidUtilities.dp(52.0f) + i14);
+                yf.y yVar2 = (yf.y) this.e;
+                yVar2.c(i14 / 3, 0);
+                yVar2.setBounds(0, 0, i10, i14);
                 break;
             default:
                 super.onSizeChanged(i10, i11, i12, i13);
@@ -86,11 +86,11 @@ public final class ui extends View {
         }
     }
 
-    public ui(Context context, int i10, org.telegram.ui.ActionBar.e6 e6Var) {
+    public ui(Context context, int i10, org.telegram.ui.ActionBar.f6 f6Var) {
         super(context);
-        this.d = new yf.z(2);
-        this.e = new yf.z(2);
-        this.c = e6Var;
+        this.d = new yf.y(2);
+        this.e = new yf.y(2);
+        this.c = f6Var;
         this.b = i10;
     }
 }

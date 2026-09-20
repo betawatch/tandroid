@@ -3,7 +3,7 @@ package b2;
 import android.os.Bundle;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class a1 {
     public static final String j;
@@ -113,12 +113,12 @@ public final class a1 {
         if (i10 == -1) {
             return str;
         }
-        StringBuilder j3 = t8.b.j(str, ", contentPos=");
-        j3.append(this.g);
-        j3.append(", adGroup=");
-        j3.append(i10);
-        j3.append(", ad=");
-        j3.append(this.i);
-        return j3.toString();
+        StringBuilder h = v7.j0.h(str, ", contentPos=");
+        h.append(this.g);
+        h.append(", adGroup=");
+        h.append(i10);
+        h.append(", ad=");
+        h.append(this.i);
+        return h.toString();
     }
 }

@@ -1,34 +1,63 @@
 package yh;
 
-import android.app.Activity;
-import android.view.ViewGroup;
-import org.telegram.ui.Components.gl0;
-import org.telegram.ui.Components.l61;
-import org.telegram.ui.Components.wl0;
+import android.content.Context;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
-public final class y6 extends l61 {
-    public final /* synthetic */ v7 N;
+public final class y6 extends rg.w1 {
+    public Paint[] n;
+    public final /* synthetic */ int r;
+    public final /* synthetic */ int s;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public y6(v7 v7Var, wl0 wl0Var, Activity activity, int i10, int i11, hi.a aVar, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(wl0Var, activity, i10, i11, true, aVar, e6Var);
-        this.N = v7Var;
+    public y6(Context context, int i10, int i11) {
+        super(context);
+        this.r = i10;
+        this.s = i11;
+        b();
     }
 
-    @Override // org.telegram.ui.Components.l61, s4.h0
-    public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        org.telegram.ui.ActionBar.e6 e6Var;
-        if (i10 != 42) {
-            return super.x(viewGroup, i10);
+    @Override // rg.w1
+    public final void a() {
+        rg.v1 v1Var = new rg.v1(this.r);
+        this.a = v1Var;
+        v1Var.N = 105;
+        int i10 = 0;
+        v1Var.M = false;
+        v1Var.G = false;
+        v1Var.K = true;
+        v1Var.H = true;
+        v1Var.J = false;
+        v1Var.m = true;
+        v1Var.h = true;
+        if (this.s == 1) {
+            v1Var.k = AndroidUtilities.dp(24.0f);
         }
-        v7 v7Var = this.N;
-        Activity parentActivity = v7Var.getParentActivity();
-        int i11 = org.telegram.ui.ActionBar.j6.L6;
-        e6Var = ((org.telegram.ui.ActionBar.n2) v7Var).resourceProvider;
-        org.telegram.ui.Cells.m4 m4Var = new org.telegram.ui.Cells.m4(parentActivity, i11, 21, 0, false, e6Var);
-        m4Var.setHeight(25);
-        return new gl0(m4Var);
+        this.n = new Paint[20];
+        while (true) {
+            Paint[] paintArr = this.n;
+            if (i10 >= paintArr.length) {
+                rg.v1 v1Var2 = this.a;
+                v1Var2.l = new ci.a8(this, 5);
+                v1Var2.r = 17;
+                v1Var2.s = 18;
+                v1Var2.t = 19;
+                v1Var2.P = org.telegram.ui.ActionBar.j6.G6;
+                v1Var2.c();
+                return;
+            }
+            paintArr[i10] = new Paint(1);
+            this.n[i10].setColorFilter(new PorterDuffColorFilter(i0.a.d(i10 / (this.n.length - 1), -371690, -14281), PorterDuff.Mode.SRC_IN));
+            i10++;
+        }
+    }
+
+    @Override // rg.w1
+    public final int getStarsRectWidth() {
+        return getMeasuredWidth();
     }
 }

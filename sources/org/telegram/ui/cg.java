@@ -7,9 +7,9 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class cg implements org.telegram.ui.Components.zj0 {
+public final /* synthetic */ class cg implements org.telegram.ui.Components.yj0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ zn b;
     public final /* synthetic */ boolean c;
@@ -22,7 +22,7 @@ public final /* synthetic */ class cg implements org.telegram.ui.Components.zj0 
         this.d = messageObject;
     }
 
-    @Override // org.telegram.ui.Components.zj0
+    @Override // org.telegram.ui.Components.yj0
     public final void a(long j3, TLRPC.MessagePeerReaction messagePeerReaction) {
         switch (this.a) {
             case 0:
@@ -39,7 +39,7 @@ public final /* synthetic */ class cg implements org.telegram.ui.Components.zj0 
                         tL_channels_getParticipant.channel = MessagesController.getInputChannel(znVar.e);
                         tL_channels_getParticipant.participant = MessagesController.getInputPeer(userOrChat);
                         final int i10 = 1;
-                        znVar.getConnectionsManager().sendRequestTyped(tL_channels_getParticipant, new org.telegram.messenger.a(), new Utilities.Callback2() { // from class: org.telegram.ui.jh
+                        znVar.getConnectionsManager().sendRequestTyped(tL_channels_getParticipant, new org.telegram.messenger.a(), new Utilities.Callback2() { // from class: org.telegram.ui.kh
                             @Override // org.telegram.messenger.Utilities.Callback2
                             public final void run(Object obj, Object obj2) {
                                 TLRPC.TL_channels_channelParticipant tL_channels_channelParticipant = (TLRPC.TL_channels_channelParticipant) obj;
@@ -90,7 +90,7 @@ public final /* synthetic */ class cg implements org.telegram.ui.Components.zj0 
                     tL_channels_getParticipant2.channel = MessagesController.getInputChannel(znVar2.e);
                     tL_channels_getParticipant2.participant = MessagesController.getInputPeer(userOrChat2);
                     final int i11 = 0;
-                    znVar2.getConnectionsManager().sendRequestTyped(tL_channels_getParticipant2, new org.telegram.messenger.a(), new Utilities.Callback2() { // from class: org.telegram.ui.jh
+                    znVar2.getConnectionsManager().sendRequestTyped(tL_channels_getParticipant2, new org.telegram.messenger.a(), new Utilities.Callback2() { // from class: org.telegram.ui.kh
                         @Override // org.telegram.messenger.Utilities.Callback2
                         public final void run(Object obj, Object obj2) {
                             TLRPC.TL_channels_channelParticipant tL_channels_channelParticipant = (TLRPC.TL_channels_channelParticipant) obj;

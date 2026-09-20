@@ -12,10 +12,10 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.ui.Components.qr;
 import org.telegram.ui.Components.r81;
-import org.telegram.ui.si1;
+import org.telegram.ui.ti1;
 import org.webrtc.OrientationHelper;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public abstract class w2 extends FrameLayout {
     public Activity a;
@@ -50,25 +50,25 @@ public abstract class w2 extends FrameLayout {
             return;
         }
         this.f = true;
-        if (si1.n1 != null) {
+        if (ti1.n1 != null) {
             if (VoIPService.getSharedInstance() != null) {
-                int measuredHeight = si1.n1.u0.getMeasuredHeight();
-                if (si1.n1.D0 && !VoIPService.getSharedInstance().isConverting()) {
-                    si1 si1Var = si1.n1;
-                    m2.l(si1Var.b, si1Var.a, si1Var.u0.getMeasuredWidth(), measuredHeight, 0);
-                    WindowInsets windowInsets = si1.n1.r0;
+                int measuredHeight = ti1.n1.u0.getMeasuredHeight();
+                if (ti1.n1.D0 && !VoIPService.getSharedInstance().isConverting()) {
+                    ti1 ti1Var = ti1.n1;
+                    m2.l(ti1Var.b, ti1Var.a, ti1Var.u0.getMeasuredWidth(), measuredHeight, 0);
+                    WindowInsets windowInsets = ti1.n1.r0;
                     if (windowInsets != null) {
                         m2.W = windowInsets.getSystemWindowInsetTop();
-                        si1.n1.r0.getSystemWindowInsetBottom();
+                        ti1.n1.r0.getSystemWindowInsetBottom();
                     }
                 }
             }
-            si1.n1.c0.d.release();
-            si1.n1.d0.d.release();
-            si1.n1.b0.release();
-            si1.n1.l();
+            ti1.n1.c0.d.release();
+            ti1.n1.d0.d.release();
+            ti1.n1.b0.release();
+            ti1.n1.l();
         }
-        si1.n1 = null;
+        ti1.n1 = null;
         if (this.b) {
             try {
                 ((WindowManager) this.a.getSystemService("window")).removeView(this);

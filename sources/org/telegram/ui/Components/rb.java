@@ -1,13 +1,27 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public interface rb {
-    void a(qc qcVar);
+public final /* synthetic */ class rb implements o1.g {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ tb b;
+    public final /* synthetic */ q0.a c;
 
-    void b();
+    public /* synthetic */ rb(q0.a aVar, tb tbVar, int i10) {
+        this.a = i10;
+        this.c = aVar;
+        this.b = tbVar;
+    }
 
-    void c();
-
-    void d();
+    @Override // o1.g
+    public final void a(o1.h hVar, float f7, float f10) {
+        switch (this.a) {
+            case 0:
+                ((fb) this.c).accept(Float.valueOf(this.b.getTranslationY()));
+                break;
+            default:
+                ((ml) this.c).accept(Float.valueOf(this.b.getTranslationY()));
+                break;
+        }
+    }
 }

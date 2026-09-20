@@ -16,7 +16,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.camera.CameraController;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class ka implements Runnable {
     public final /* synthetic */ int a;
@@ -194,8 +194,8 @@ public final /* synthetic */ class ka implements Runnable {
                     if (qbVar != null && qbVar.R0 != null) {
                         while (r10 < ocVar.v1.R0.getChildCount()) {
                             View childAt = ocVar.v1.R0.getChildAt(r10);
-                            if (childAt instanceof qg.e1) {
-                                ((qg.e1) childAt).setupTheme(ocVar.K1);
+                            if (childAt instanceof qg.f1) {
+                                ((qg.f1) childAt).setupTheme(ocVar.K1);
                             }
                             r10++;
                         }
@@ -398,11 +398,11 @@ public final /* synthetic */ class ka implements Runnable {
                 oc.F2 = null;
                 nc ncVar3 = ocVar.n;
                 if (ncVar3 != null) {
-                    org.telegram.ui.Components.qc.h(ncVar3);
+                    org.telegram.ui.Components.pc.h(ncVar3);
                 }
                 ai.f0 f0Var = ocVar.l0;
                 if (f0Var != null) {
-                    org.telegram.ui.Components.qc.h(f0Var);
+                    org.telegram.ui.Components.pc.h(f0Var);
                 }
                 bc bcVar3 = ocVar.A0;
                 if (bcVar3 != null) {

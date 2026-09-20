@@ -9,10 +9,10 @@ import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.ia;
+import org.telegram.ui.Components.ha;
 import org.telegram.ui.qy;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class l extends FrameLayout {
     public boolean a;
@@ -48,7 +48,7 @@ public final class l extends FrameLayout {
         int i14 = mVar.r;
         boolean z10 = i14 == 0 && mVar.h == 0 && MessagesController.getInstance(mVar.F).dialogs_dict.f(DialogObject.makeFolderDialogId(1)) != null;
         View view = (View) getParent();
-        int i15 = view instanceof ia ? ((ia) view).X2 : 0;
+        int i15 = view instanceof ha ? ((ha) view).X2 : 0;
         boolean z11 = mVar.J;
         int paddingTop = view.getPaddingTop();
         int paddingBottom = view.getPaddingBottom();
@@ -91,7 +91,7 @@ public final class l extends FrameLayout {
                 int i20 = (size - 1) + i18;
                 ArrayList arrayList = mVar.d;
                 if (arrayList != null) {
-                    i20 = org.telegram.messenger.q.D(52.0f, (mVar.d.size() - 1) + (AndroidUtilities.dp(58.0f) * arrayList.size()), i20);
+                    i20 = org.telegram.messenger.l0.C(52.0f, (mVar.d.size() - 1) + (AndroidUtilities.dp(58.0f) * arrayList.size()), i20);
                 }
                 int i21 = z10 ? dp + 1 : 0;
                 if (i20 < i17) {

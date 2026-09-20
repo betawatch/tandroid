@@ -5,7 +5,7 @@ import java.io.File;
 import java.io.RandomAccessFile;
 import java.lang.reflect.Array;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public class StatsController extends BaseController {
     private static final int OLD_TYPES_COUNT = 7;
@@ -22,7 +22,7 @@ public class StatsController extends BaseController {
     public static final int TYPE_VIDEOS = 2;
     public static final int TYPE_WIFI = 1;
     private byte[] buffer;
-    yf.a0 byteArrayOutputStream;
+    yf.z byteArrayOutputStream;
     private int[] callsTotalTime;
     private long lastInternalStatsSaveTime;
     private long[][] receivedBytes;
@@ -52,7 +52,7 @@ public class StatsController extends BaseController {
         this.receivedItems = (int[][]) Array.newInstance((Class<?>) cls2, 3, 8);
         this.resetStatsDate = new long[3];
         this.callsTotalTime = new int[3];
-        this.byteArrayOutputStream = new yf.a0(32);
+        this.byteArrayOutputStream = new yf.z(32);
         this.saveRunnable = new Runnable() { // from class: org.telegram.messenger.StatsController.2
             @Override // java.lang.Runnable
             public void run() {
@@ -91,8 +91,8 @@ public class StatsController extends BaseController {
                     }
                     StatsController.this.statsFile.seek(0L);
                     RandomAccessFile randomAccessFile = StatsController.this.statsFile;
-                    yf.a0 a0Var = StatsController.this.byteArrayOutputStream;
-                    randomAccessFile.write(a0Var.a, 0, a0Var.b);
+                    yf.z zVar = StatsController.this.byteArrayOutputStream;
+                    randomAccessFile.write(zVar.a, 0, zVar.b);
                     StatsController.this.statsFile.getFD().sync();
                 } catch (Exception unused) {
                 }

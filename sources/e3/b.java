@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class b implements o {
     public final v a;
@@ -209,7 +209,7 @@ public final class b implements o {
                                     int h = r0.h(sVar2.r);
                                     if (h == 1 || h == 2) {
                                         h0 Z1 = this.f.Z1(i17, h);
-                                        k0.r(a2, Z1);
+                                        k0.s(a2, Z1);
                                         this.h = Math.max(this.h, Y);
                                         eVar = new e(i17, dVar, Z1);
                                         if (eVar != null) {
@@ -225,7 +225,7 @@ public final class b implements o {
                             }
                         }
                         this.i = (e[]) arrayList.toArray(new e[0]);
-                        this.f.e1();
+                        this.f.f1();
                         this.e = 3;
                         return 0;
                     case 3:

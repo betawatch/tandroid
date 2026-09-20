@@ -15,15 +15,15 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.gz;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class pb extends kb {
     public final zg.o0 I;
     public final ob J;
     public final zg.f0 K;
     public final ImageReceiver L;
-    public final org.telegram.ui.Components.e6 M;
-    public final org.telegram.ui.Components.o6 N;
+    public final org.telegram.ui.Components.d6 M;
+    public final org.telegram.ui.Components.n6 N;
     public boolean O;
 
     public pb(Context context, mb mbVar, TL_stories.TL_mediaAreaSuggestedReaction tL_mediaAreaSuggestedReaction, gz gzVar) {
@@ -35,8 +35,8 @@ public final class pb extends kb {
         zg.f0 f0Var = new zg.f0(this);
         this.K = f0Var;
         this.L = new ImageReceiver(this);
-        this.M = new org.telegram.ui.Components.e6(this);
-        this.N = new org.telegram.ui.Components.o6(false, false, false, false);
+        this.M = new org.telegram.ui.Components.d6(this);
+        this.N = new org.telegram.ui.Components.n6(false, false, false, false);
         zg.o0 d = zg.o0.d(tL_mediaAreaSuggestedReaction.reaction);
         this.I = d;
         if (tL_mediaAreaSuggestedReaction.flipped) {
@@ -46,7 +46,7 @@ public final class pb extends kb {
         f0Var.e(d);
         gzVar.getClass();
         String str = d.f;
-        str = str == null ? MessageObject.findAnimatedEmojiEmoticon(org.telegram.ui.Components.q5.f(gzVar.b, d.g)) : str;
+        str = str == null ? MessageObject.findAnimatedEmojiEmoticon(org.telegram.ui.Components.p5.f(gzVar.b, d.g)) : str;
         if (str != null && (arrayList = (ArrayList) gzVar.e.get(str)) != null && !arrayList.isEmpty()) {
             int min = Math.min(1, arrayList.size());
             for (int i10 = 0; i10 < min; i10++) {
@@ -56,9 +56,9 @@ public final class pb extends kb {
         if (this.I.f != null && (tL_availableReaction = MediaDataController.getInstance(UserConfig.selectedAccount).getReactionsMap().get(this.I.f)) != null) {
             this.L.setImage(ImageLocation.getForDocument(tL_availableReaction.center_icon), "40_40_lastreactframe", null, "webp", tL_availableReaction, 1);
         }
-        org.telegram.ui.Components.o6 o6Var = this.N;
-        o6Var.b = 17;
-        o6Var.u(AndroidUtilities.getTypeface("fonts/rcondensedbold.ttf"));
+        org.telegram.ui.Components.n6 n6Var = this.N;
+        n6Var.b = 17;
+        n6Var.u(AndroidUtilities.getTypeface("fonts/rcondensedbold.ttf"));
         this.N.t(AndroidUtilities.dp(18.0f));
         this.N.G = AndroidUtilities.displaySize.x;
         if (tL_mediaAreaSuggestedReaction.dark) {
@@ -91,16 +91,16 @@ public final class pb extends kb {
         f0Var.c(rect);
         f0Var.a(canvas);
         float height2 = (obVar.getBounds().height() * 0.839f) + obVar.getBounds().top;
-        org.telegram.ui.Components.o6 o6Var = this.N;
-        o6Var.setBounds(obVar.getBounds().left, (int) (height2 - AndroidUtilities.dp(10.0f)), obVar.getBounds().right, (int) (AndroidUtilities.dp(10.0f) + height2));
+        org.telegram.ui.Components.n6 n6Var = this.N;
+        n6Var.setBounds(obVar.getBounds().left, (int) (height2 - AndroidUtilities.dp(10.0f)), obVar.getBounds().right, (int) (AndroidUtilities.dp(10.0f) + height2));
         canvas.save();
         canvas.scale(d, d, obVar.getBounds().centerX(), height2);
-        o6Var.draw(canvas);
+        n6Var.draw(canvas);
         canvas.restore();
     }
 
     public final void c(TL_stories.StoryViews storyViews, boolean z10) {
-        org.telegram.ui.Components.e6 e6Var = this.M;
+        org.telegram.ui.Components.d6 d6Var = this.M;
         if (storyViews != null) {
             for (int i10 = 0; i10 < storyViews.reactions.size(); i10++) {
                 if (zg.q0.d(storyViews.reactions.get(i10).reaction, this.I)) {
@@ -110,7 +110,7 @@ public final class pb extends kb {
                     if (z10) {
                         return;
                     }
-                    e6Var.d(this.O ? 1.0f : 0.0f, true);
+                    d6Var.d(this.O ? 1.0f : 0.0f, true);
                     return;
                 }
             }
@@ -120,10 +120,10 @@ public final class pb extends kb {
         if (z10) {
             return;
         }
-        e6Var.d(this.O ? 1.0f : 0.0f, true);
+        d6Var.d(this.O ? 1.0f : 0.0f, true);
     }
 
-    public org.telegram.ui.Components.q5 getAnimatedEmojiDrawable() {
+    public org.telegram.ui.Components.p5 getAnimatedEmojiDrawable() {
         return this.K.b;
     }
 

@@ -1,9 +1,9 @@
 package ci;
 
 import android.widget.FrameLayout;
-import org.telegram.ui.Components.wa0;
+import org.telegram.ui.Components.va0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class z4 implements o1.f {
     public final /* synthetic */ int a;
@@ -34,27 +34,27 @@ public final /* synthetic */ class z4 implements o1.f {
                 break;
             case 1:
                 r6 r6Var2 = (r6) this.b;
-                qg.t1 t1Var = r6Var2.m1;
+                qg.u1 u1Var = r6Var2.m1;
                 if (hVar == r6Var2.v1) {
                     r6Var2.v1 = null;
                     if (!this.c) {
-                        t1Var.setVisibility(8);
+                        u1Var.setVisibility(8);
                     }
-                    t1Var.setMaskProvider(null);
+                    u1Var.setMaskProvider(null);
                     break;
                 }
                 break;
             default:
-                wa0 wa0Var = (wa0) this.b;
+                va0 va0Var = (va0) this.b;
                 if (!z10) {
-                    wa0Var.K = null;
+                    va0Var.K = null;
                     boolean z11 = this.c;
-                    wa0Var.setVisibility(z11 ? 8 : 0);
-                    if (wa0Var.N && z11) {
-                        wa0Var.N = false;
-                        wa0Var.b.setLayoutManager(wa0Var.getNeededLayoutManager());
-                        wa0Var.I = true;
-                        wa0Var.o(true);
+                    va0Var.setVisibility(z11 ? 8 : 0);
+                    if (va0Var.N && z11) {
+                        va0Var.N = false;
+                        va0Var.b.setLayoutManager(va0Var.getNeededLayoutManager());
+                        va0Var.I = true;
+                        va0Var.o(true);
                         break;
                     }
                 }

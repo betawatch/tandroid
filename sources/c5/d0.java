@@ -29,9 +29,9 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import org.telegram.messenger.BillingController;
-import v7.a6;
+import v7.b6;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class d0 extends c {
     public final Context C;
@@ -64,9 +64,9 @@ public final class d0 extends c {
             return j4Var;
         } catch (Exception e) {
             g2 g2Var = new g2(e);
-            a6 a6Var = g4.f;
+            b6 b6Var = g4.f;
             i4 i4Var = j4Var.b;
-            if (a6Var.d(i4Var, null, g2Var)) {
+            if (b6Var.d(i4Var, null, g2Var)) {
                 g4.d(i4Var);
             }
             return j4Var;
@@ -77,7 +77,7 @@ public final class d0 extends c {
         int i12 = e0.a;
         g3 b10 = e0.b(i10, i11, hVar, null, m3.b);
         Objects.requireNonNull(b10, "ApiFailure should not be null");
-        this.h.X(b10);
+        this.h.a0(b10);
     }
 
     public final void G(int i10, q0.a aVar, Runnable runnable) {
@@ -163,8 +163,8 @@ public final class d0 extends c {
     }
 
     @Override // c5.c, c5.b
-    public final void c(a4.m mVar, org.telegram.messenger.d0 d0Var) {
-        G(7, new z(d0Var, 0), new v(this, mVar, d0Var, 1));
+    public final void c(a4.m mVar, org.telegram.messenger.c0 c0Var) {
+        G(7, new z(c0Var, 0), new v(this, mVar, c0Var, 1));
     }
 
     @Override // c5.c, c5.b
@@ -178,7 +178,7 @@ public final class d0 extends c {
                 of.b bVar = this.h;
                 bVar.getClass();
                 try {
-                    bVar.f0(c10, (p3) bVar.b);
+                    bVar.j0(c10, (p3) bVar.b);
                 } catch (Throwable th2) {
                     com.google.android.gms.internal.play_billing.u.i("BillingLogger", "Unable to log.", th2);
                 }

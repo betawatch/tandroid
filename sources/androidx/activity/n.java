@@ -11,13 +11,12 @@ import com.google.android.gms.tasks.TaskCompletionSource;
 import e2.d0;
 import java.util.ArrayList;
 import java.util.Map;
-import ki.c0;
 import kotlin.jvm.internal.i;
 import m.p;
 import m4.a0;
 import m4.k0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class n implements i9.r, com.google.android.gms.common.api.internal.s {
     public final /* synthetic */ int a;
@@ -160,7 +159,7 @@ public final class n implements i9.r, com.google.android.gms.common.api.internal
                 a0 a0Var2 = ((k0) this.d).g;
                 Handler handler = a0Var2.l;
                 m4.r rVar2 = (m4.r) this.c;
-                d0.U(handler, new c0(a0Var2, rVar2, new s4(this, sVar, this.b, rVar2, 8)));
+                d0.U(handler, new ki.l(a0Var2, rVar2, new s4(this, sVar, this.b, rVar2, 8)));
                 break;
         }
     }

@@ -14,7 +14,6 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.TimeZone;
 import k5.d;
-import k5.f;
 import k5.g;
 import k5.h;
 import k5.i;
@@ -30,13 +29,15 @@ import k5.t;
 import k5.u;
 import k5.v;
 import ka.c;
-import m5.e;
+import ka.e;
+import m5.f;
 import org.telegram.messenger.MediaDataController;
-import w7.g6;
+import v7.j0;
+import w7.h6;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
-public final class b implements e {
+public final class b implements f {
     public final c a;
     public final ConnectivityManager b;
     public final Context c;
@@ -46,11 +47,11 @@ public final class b implements e {
     public final int g;
 
     public b(Context context, u5.a aVar, u5.a aVar2) {
-        ka.e eVar = new ka.e();
+        e eVar = new e();
         k5.c cVar = k5.c.a;
         eVar.m(o.class, cVar);
         eVar.m(i.class, cVar);
-        f fVar = f.a;
+        k5.f fVar = k5.f.a;
         eVar.m(s.class, fVar);
         eVar.m(l.class, fVar);
         d dVar = d.a;
@@ -79,7 +80,7 @@ public final class b implements e {
         try {
             return new URL(str);
         } catch (MalformedURLException e) {
-            throw new IllegalArgumentException(t8.b.i("Invalid url: ", str), e);
+            throw new IllegalArgumentException(j0.g("Invalid url: ", str), e);
         }
     }
 
@@ -148,7 +149,7 @@ public final class b implements e {
             try {
                 i11 = context.getPackageManager().getPackageInfo(context.getPackageName(), 0).versionCode;
             } catch (PackageManager.NameNotFoundException e) {
-                g6.b("CctTransportBackend", "Unable to find version code for package", e);
+                h6.b("CctTransportBackend", "Unable to find version code for package", e);
             }
             c10.c("application_build", Integer.toString(i11));
             return c10.g();

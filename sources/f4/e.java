@@ -23,12 +23,13 @@ import org.telegram.tgnet.TLObject;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
-import v7.r6;
-import w7.d9;
+import v7.j0;
+import v7.s6;
+import w7.e9;
 import z3.l;
 import z3.m;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class e implements m {
     public static final Pattern b = Pattern.compile("^([0-9][0-9]+):([0-9][0-9]):([0-9][0-9])(?:(\\.[0-9]+)|:([0-9][0-9])(?:\\.([0-9]+))?)?$");
@@ -289,7 +290,7 @@ public final class e implements m {
                     }
                     String k18 = e2.d.k(xmlPullParser, "displayAlign");
                     if (k18 != null) {
-                        String b10 = r6.b(k18);
+                        String b10 = s6.b(k18);
                         b10.getClass();
                         if (b10.equals("center")) {
                             f14 = f10 + (f13 / 2.0f);
@@ -301,7 +302,7 @@ public final class e implements m {
                         float f17 = 1.0f / i10;
                         k11 = e2.d.k(xmlPullParser, "writingMode");
                         if (k11 != null) {
-                            String b11 = r6.b(k11);
+                            String b11 = s6.b(k11);
                             b11.getClass();
                             switch (b11.hashCode()) {
                                 case 3694:
@@ -668,7 +669,7 @@ public final class e implements m {
                     break;
                 case 3:
                     gVar2 = a(gVar2);
-                    String b10 = r6.b(attributeValue);
+                    String b10 = s6.b(attributeValue);
                     b10.getClass();
                     switch (b10.hashCode()) {
                         case -1364013995:
@@ -730,7 +731,7 @@ public final class e implements m {
                     gVar2.t = attributeValue;
                     break;
                 case 5:
-                    String b11 = r6.b(attributeValue);
+                    String b11 = s6.b(attributeValue);
                     b11.getClass();
                     switch (b11.hashCode()) {
                         case -1461280213:
@@ -796,7 +797,7 @@ public final class e implements m {
                         break;
                     }
                 case '\b':
-                    String b12 = r6.b(attributeValue);
+                    String b12 = s6.b(attributeValue);
                     b12.getClass();
                     switch (b12.hashCode()) {
                         case -618561360:
@@ -894,7 +895,7 @@ public final class e implements m {
                     gVar2 = a2;
                     break;
                 case 11:
-                    String b13 = r6.b(attributeValue);
+                    String b13 = s6.b(attributeValue);
                     b13.getClass();
                     if (b13.equals("all")) {
                         gVar2 = a(gVar2);
@@ -920,7 +921,7 @@ public final class e implements m {
                     gVar2 = a(gVar2);
                     Pattern pattern = b.d;
                     if (attributeValue != null) {
-                        String b14 = r6.b(attributeValue.trim());
+                        String b14 = s6.b(attributeValue.trim());
                         if (!b14.isEmpty()) {
                             String[] split = TextUtils.split(b14, b.d);
                             int length = split.length;
@@ -1003,7 +1004,7 @@ public final class e implements m {
                     gVar2.r = bVar;
                     break;
                 case 14:
-                    String b15 = r6.b(attributeValue);
+                    String b15 = s6.b(attributeValue);
                     b15.getClass();
                     if (b15.equals("before")) {
                         gVar2 = a(gVar2);
@@ -1028,7 +1029,7 @@ public final class e implements m {
                     }
                 case 16:
                     gVar2 = a(gVar2);
-                    String b16 = r6.b(attributeValue);
+                    String b16 = s6.b(attributeValue);
                     b16.getClass();
                     switch (b16.hashCode()) {
                         case -1364013995:
@@ -1116,7 +1117,7 @@ public final class e implements m {
         }
         Matcher matcher2 = c.matcher(str);
         if (!matcher2.matches()) {
-            throw new z3.f(t8.b.i("Malformed time expression: ", str));
+            throw new z3.f(j0.g("Malformed time expression: ", str));
         }
         String group3 = matcher2.group(1);
         group3.getClass();
@@ -1206,17 +1207,17 @@ public final class e implements m {
     }
 
     @Override // z3.m
-    public final int A() {
+    public final int I() {
         return 1;
     }
 
     @Override // z3.m
-    public final void C(byte[] bArr, int i10, int i11, l lVar, h hVar) {
-        d9.b(r(i10, i11, bArr), lVar, hVar);
+    public final void M(byte[] bArr, int i10, int i11, l lVar, h hVar) {
+        e9.b(s(i10, i11, bArr), lVar, hVar);
     }
 
     @Override // z3.m
-    public final z3.d r(int i10, int i11, byte[] bArr) {
+    public final z3.d s(int i10, int i11, byte[] bArr) {
         try {
             XmlPullParser newPullParser = this.a.newPullParser();
             HashMap hashMap = new HashMap();

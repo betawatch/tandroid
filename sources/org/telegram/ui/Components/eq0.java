@@ -1,77 +1,138 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
-import android.widget.FrameLayout;
+import android.view.View;
+import android.view.ViewGroup;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class eq0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ vq0 c;
+public final class eq0 extends org.telegram.ui.ActionBar.p1 {
+    public final /* synthetic */ fq0 x;
 
-    public /* synthetic */ eq0(vq0 vq0Var, boolean z10, int i10) {
-        this.a = i10;
-        this.c = vq0Var;
-        this.b = z10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public eq0(fq0 fq0Var, fq0 fq0Var2) {
+        super(fq0Var2);
+        this.x = fq0Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationCancel(Animator animator) {
-        switch (this.a) {
-            case 0:
-                AnimatorSet[] animatorSetArr = this.c.T;
-                AnimatorSet animatorSet = animatorSetArr[0];
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    animatorSetArr[0] = null;
-                    break;
-                }
-                break;
-            default:
-                vq0 vq0Var = this.c;
-                if (animator.equals(vq0Var.y)) {
-                    vq0Var.y = null;
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.ActionBar.p1
+    public final boolean b() {
+        uq0 uq0Var = this.x.H0;
+        if (uq0Var.isDismissed() || !uq0Var.Y) {
+            return false;
         }
+        return !uq0Var.d.m();
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                vq0 vq0Var = this.c;
-                AnimatorSet[] animatorSetArr = vq0Var.T;
-                AnimatorSet animatorSet = animatorSetArr[0];
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    if (!this.b) {
-                        vq0Var.S[0].setVisibility(4);
-                    }
-                    animatorSetArr[0] = null;
-                    break;
-                }
-                break;
-            default:
-                vq0 vq0Var2 = this.c;
-                FrameLayout frameLayout = vq0Var2.h;
-                if (animator.equals(vq0Var2.y)) {
-                    if (!this.b) {
-                        vq0Var2.c.setVisibility(4);
-                        FrameLayout frameLayout2 = vq0Var2.c0;
-                        if (frameLayout2 != null && frameLayout == null) {
-                            frameLayout2.setVisibility(4);
-                        }
-                        vq0Var2.f.setVisibility(4);
-                    } else if (frameLayout != null) {
-                        frameLayout.setVisibility(4);
-                    }
-                    vq0Var2.y = null;
-                    break;
-                }
-                break;
+    /* JADX WARN: Incorrect condition in loop: B:3:0x000f */
+    @Override // org.telegram.ui.ActionBar.p1
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void e(float f7, float f10, boolean z10) {
+        ViewGroup viewGroup;
+        ViewGroup viewGroup2;
+        fq0 fq0Var = this.x;
+        uq0 uq0Var = fq0Var.H0;
+        int i10 = uq0.a1;
+        for (int i11 = 0; i11 < viewGroup.getChildCount(); i11++) {
+            viewGroup2 = ((org.telegram.ui.ActionBar.f3) uq0Var).containerView;
+            View childAt = viewGroup2.getChildAt(i11);
+            if (childAt != uq0Var.h && childAt != uq0Var.v && childAt != uq0Var.S[1] && childAt != uq0Var.x && childAt != uq0Var.c && childAt != uq0Var.c0 && childAt != uq0Var.f) {
+                childAt.setTranslationY(f7);
+            }
         }
+        wp0 wp0Var = uq0Var.F;
+        uq0Var.t0 = f7;
+        int i12 = fq0Var.B0;
+        if (i12 != -1) {
+            if (!z10) {
+                f10 = 1.0f - f10;
+            }
+            float f11 = 1.0f - f10;
+            uq0Var.p0 = (int) ((fq0Var.C0 * f10) + (i12 * f11));
+            float f12 = ((i12 - r6) * f11) + f7;
+            wp0Var.setTranslationY(f12);
+            if (z10) {
+                uq0Var.G.setTranslationY(f12);
+            } else {
+                uq0Var.G.setTranslationY(f12 + uq0Var.F.getPaddingTop());
+            }
+        } else {
+            int i13 = fq0Var.D0;
+            if (i13 != -1) {
+                float f13 = 1.0f - f10;
+                uq0Var.p0 = (int) ((fq0Var.E0 * f10) + (i13 * f13));
+                if (!z10) {
+                    f13 = f10;
+                }
+                if (z10) {
+                    wp0Var.setTranslationY(f7 - ((i13 - r6) * f10));
+                } else {
+                    wp0Var.setTranslationY(((r6 - i13) * f13) + f7);
+                }
+            }
+        }
+        uq0Var.F.setTopGlowOffset((int) (uq0Var.p0 + uq0Var.t0));
+        uq0Var.b.setTranslationY(uq0Var.p0 + uq0Var.t0);
+        uq0Var.Q.setTranslationY(uq0Var.p0 + uq0Var.t0);
+        uq0Var.c.invalidate();
+        uq0Var.setCurrentPanTranslationY(uq0Var.t0);
+        uq0Var.Y0();
+        fq0Var.invalidate();
+    }
+
+    @Override // org.telegram.ui.ActionBar.p1
+    public final void f() {
+        uq0 uq0Var = this.x.H0;
+        zp0 zp0Var = uq0Var.d;
+        if (zp0Var == null || !zp0Var.m()) {
+            int i10 = uq0Var.N0;
+            AndroidUtilities.dp(20.0f);
+        }
+        uq0Var.r0 = false;
+        int i11 = uq0Var.p0;
+        uq0Var.q0 = i11;
+        uq0Var.F.setTopGlowOffset(i11);
+        uq0Var.b.setTranslationY(uq0Var.p0);
+        uq0Var.Q.setTranslationY(uq0Var.p0);
+        uq0Var.F.setTranslationY(0.0f);
+        uq0Var.G.setTranslationY(0.0f);
+        uq0Var.Y0();
+    }
+
+    @Override // org.telegram.ui.ActionBar.p1
+    public final void g(int i10, boolean z10) {
+        fq0 fq0Var = this.x;
+        uq0 uq0Var = fq0Var.H0;
+        int i11 = uq0Var.q0;
+        int i12 = uq0Var.p0;
+        if (i11 != i12) {
+            fq0Var.B0 = i11;
+            fq0Var.C0 = i12;
+            uq0Var.r0 = true;
+            uq0Var.p0 = i11;
+        } else {
+            fq0Var.B0 = -1;
+        }
+        int i13 = fq0Var.z0;
+        int i14 = fq0Var.A0;
+        if (i13 != i14) {
+            fq0Var.D0 = 0;
+            fq0Var.E0 = 0;
+            uq0Var.r0 = true;
+            if (z10) {
+                fq0Var.E0 = i13 - i14;
+            } else {
+                fq0Var.E0 = 0 - (i13 - i14);
+            }
+            uq0Var.p0 = z10 ? fq0Var.B0 : fq0Var.C0;
+        } else {
+            fq0Var.D0 = -1;
+        }
+        uq0Var.F.setTopGlowOffset((int) (uq0Var.t0 + uq0Var.p0));
+        uq0Var.b.setTranslationY(uq0Var.t0 + uq0Var.p0);
+        uq0Var.Q.setTranslationY(uq0Var.t0 + uq0Var.p0);
+        fq0Var.invalidate();
     }
 }

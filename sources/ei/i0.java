@@ -11,13 +11,14 @@ import android.widget.ImageView;
 import ci.uc;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
+import org.telegram.messenger.rk;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.e6;
-import org.telegram.ui.Components.ij0;
+import org.telegram.ui.Components.d6;
+import org.telegram.ui.Components.hj0;
 import org.telegram.ui.Components.qr;
 import org.telegram.ui.Components.tp;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class i0 extends Drawable {
     public final ImageView a;
@@ -28,10 +29,10 @@ public final class i0 extends Drawable {
     public boolean f;
     public float g;
     public boolean h;
-    public final e6 i;
-    public final e6 j;
-    public final e6 k;
-    public ij0 l;
+    public final d6 i;
+    public final d6 j;
+    public final d6 k;
+    public hj0 l;
 
     public i0(Context context, ImageView imageView) {
         Paint paint = new Paint(1);
@@ -40,9 +41,9 @@ public final class i0 extends Drawable {
         this.h = false;
         uc ucVar = new uc(this, 7);
         qr qrVar = qr.h;
-        this.i = new e6(ucVar, 320L, qrVar, 0);
-        this.j = new e6(new uc(this, 7), 320L, qrVar, 0);
-        this.k = new e6(new uc(this, 7), 320L, qrVar, 0);
+        this.i = new d6(ucVar, 320L, qrVar, 0);
+        this.j = new d6(new uc(this, 7), 320L, qrVar, 0);
+        this.k = new d6(new uc(this, 7), 320L, qrVar, 0);
         this.a = imageView;
         this.d = System.currentTimeMillis();
         this.e = context.getResources().getDrawable(R.drawable.search_files_filled).mutate();
@@ -56,7 +57,7 @@ public final class i0 extends Drawable {
     public final void draw(Canvas canvas) {
         float f7;
         float f10;
-        ij0 ij0Var;
+        hj0 hj0Var;
         Canvas canvas2 = canvas;
         Rect bounds = getBounds();
         int centerX = bounds.centerX();
@@ -70,7 +71,7 @@ public final class i0 extends Drawable {
             float f14 = centerY;
             canvas2.scale(f12, f12, f13, f14);
             Drawable drawable = this.e;
-            drawable.setBounds(org.telegram.ui.Cells.c1.r(2, centerX, drawable), org.telegram.ui.Cells.c1.c(2, centerY, drawable), org.telegram.ui.Cells.c1.v(2, centerX, drawable), org.telegram.ui.Cells.c1.u(2, centerY, drawable));
+            drawable.setBounds(rk.y(2, centerX, drawable), rk.d(2, centerY, drawable), org.telegram.ui.Cells.c1.d(2, centerX, drawable), rk.A(2, centerY, drawable));
             drawable.setAlpha((int) (f11 * 255.0f));
             drawable.draw(canvas2);
             float dp = AndroidUtilities.dp(14.0f);
@@ -109,12 +110,12 @@ public final class i0 extends Drawable {
             f7 = 255.0f;
             f10 = 0.0f;
         }
-        if (e <= f10 || (ij0Var = this.l) == null) {
+        if (e <= f10 || (hj0Var = this.l) == null) {
             return;
         }
-        int i11 = ij0Var.b / 2;
-        int i12 = ij0Var.c / 2;
-        ij0Var.setBounds(centerX - i11, centerY - i12, i11 + centerX, i12 + centerY);
+        int i11 = hj0Var.b / 2;
+        int i12 = hj0Var.c / 2;
+        hj0Var.setBounds(centerX - i11, centerY - i12, i11 + centerX, i12 + centerY);
         this.l.setAlpha((int) (e * f7));
         this.l.draw(canvas2);
     }

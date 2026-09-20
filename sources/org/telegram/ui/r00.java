@@ -14,9 +14,9 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_chatlists;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class r00 extends org.telegram.ui.Components.bb {
+public final class r00 extends org.telegram.ui.Components.ab {
     public final MessagesController.DialogFilter X;
     public final ArrayList Y;
     public final FrameLayout Z;
@@ -68,17 +68,17 @@ public final class r00 extends org.telegram.ui.Components.bb {
         n2Var.getConnectionsManager().sendRequest(tL_chatlists_getExportedInvites, new org.telegram.messenger.ja(n2Var, dialogFilter, g10Var, currentTimeMillis, 5));
     }
 
-    @Override // org.telegram.ui.Components.bb
-    public final void G(org.telegram.ui.Components.bw0 bw0Var) {
-        org.telegram.ui.Components.wl0 wl0Var = this.d;
-        wl0Var.setOverScrollMode(2);
-        wl0Var.setOnItemClickListener(new i(this, 10));
+    @Override // org.telegram.ui.Components.ab
+    public final void G(org.telegram.ui.Components.aw0 aw0Var) {
+        org.telegram.ui.Components.vl0 vl0Var = this.d;
+        vl0Var.setOverScrollMode(2);
+        vl0Var.setOnItemClickListener(new i(this, 10));
         s4.j jVar = new s4.j();
         jVar.m = false;
         jVar.C = false;
         jVar.o(org.telegram.ui.Components.qr.h);
         jVar.n(350L);
-        wl0Var.setItemAnimator(jVar);
+        vl0Var.setItemAnimator(jVar);
     }
 
     public final void Q() {
@@ -161,14 +161,14 @@ public final class r00 extends org.telegram.ui.Components.bb {
         }
     }
 
-    @Override // org.telegram.ui.Components.bb
-    public final org.telegram.ui.Components.vl0 v(org.telegram.ui.Components.wl0 wl0Var) {
+    @Override // org.telegram.ui.Components.ab
+    public final org.telegram.ui.Components.ul0 v(org.telegram.ui.Components.vl0 vl0Var) {
         p00 p00Var = new p00(this);
         this.a0 = p00Var;
         return p00Var;
     }
 
-    @Override // org.telegram.ui.Components.bb
+    @Override // org.telegram.ui.Components.ab
     public final CharSequence y() {
         return R(null);
     }

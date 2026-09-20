@@ -23,7 +23,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class z implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -84,10 +84,10 @@ public final /* synthetic */ class z implements View.OnClickListener {
                 }
                 break;
             case 2:
-                org.telegram.ui.Components.ak0 ak0Var = (org.telegram.ui.Components.ak0) obj3;
+                org.telegram.ui.Components.zj0 zj0Var = (org.telegram.ui.Components.zj0) obj3;
                 ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = (ActionBarPopupWindow$ActionBarPopupWindowLayout) obj2;
                 int[] iArr = (int[]) obj;
-                if (ak0Var == null || ak0Var.w) {
+                if (zj0Var == null || zj0Var.w) {
                     actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack().e(iArr[0]);
                     break;
                 }
@@ -126,11 +126,11 @@ public final /* synthetic */ class z implements View.OnClickListener {
                 break;
             case 8:
                 uo uoVar = (uo) obj3;
-                org.telegram.ui.Cells.j6[] j6VarArr = (org.telegram.ui.Cells.j6[]) obj2;
+                org.telegram.ui.Cells.k6[] k6VarArr = (org.telegram.ui.Cells.k6[]) obj2;
                 org.telegram.ui.ActionBar.a3 a3Var = (org.telegram.ui.ActionBar.a3) obj;
                 Integer num = (Integer) view.getTag();
-                j6VarArr[0].a(num.intValue() == 0);
-                j6VarArr[1].a(num.intValue() == 1);
+                k6VarArr[0].a(num.intValue() == 0);
+                k6VarArr[1].a(num.intValue() == 1);
                 uoVar.J0 = num.intValue() == 1;
                 runnable = a3Var.a.dismissRunnable;
                 runnable.run();
@@ -140,7 +140,7 @@ public final /* synthetic */ class z implements View.OnClickListener {
                 MessageObject messageObject2 = (MessageObject) obj2;
                 PhotoViewer photoViewer = ((wr) obj3).c.a;
                 Drawable[] drawableArr = PhotoViewer.U8;
-                ArrayList arrayList = ((org.telegram.ui.Components.q71) obj).d;
+                ArrayList arrayList = ((org.telegram.ui.Components.p71) obj).d;
                 if (arrayList.isEmpty()) {
                     document = null;
                 } else {
@@ -150,21 +150,21 @@ public final /* synthetic */ class z implements View.OnClickListener {
                         if (i13 < size) {
                             Object obj4 = arrayList.get(i13);
                             i13++;
-                            org.telegram.ui.Components.s71 s71Var = (org.telegram.ui.Components.s71) obj4;
-                            if (s71Var.b()) {
-                                document = s71Var.g;
+                            org.telegram.ui.Components.r71 r71Var = (org.telegram.ui.Components.r71) obj4;
+                            if (r71Var.b()) {
+                                document = r71Var.g;
                             }
                         } else {
                             long j10 = Long.MAX_VALUE;
-                            org.telegram.ui.Components.s71 s71Var2 = null;
+                            org.telegram.ui.Components.r71 r71Var2 = null;
                             for (int i14 = 0; i14 < arrayList.size(); i14++) {
-                                org.telegram.ui.Components.s71 s71Var3 = (org.telegram.ui.Components.s71) arrayList.get(i14);
-                                if (s71Var3.k < j10 && org.telegram.ui.Components.u71.Y(s71Var3.m)) {
-                                    j10 = s71Var3.k;
-                                    s71Var2 = s71Var3;
+                                org.telegram.ui.Components.r71 r71Var3 = (org.telegram.ui.Components.r71) arrayList.get(i14);
+                                if (r71Var3.k < j10 && org.telegram.ui.Components.t71.Y(r71Var3.m)) {
+                                    j10 = r71Var3.k;
+                                    r71Var2 = r71Var3;
                                 }
                             }
-                            document = s71Var2 != null ? s71Var2.g : ((org.telegram.ui.Components.s71) arrayList.get(0)).g;
+                            document = r71Var2 != null ? r71Var2.g : ((org.telegram.ui.Components.r71) arrayList.get(0)).g;
                         }
                     }
                 }
@@ -188,19 +188,19 @@ public final /* synthetic */ class z implements View.OnClickListener {
             case 10:
                 ss ssVar = (ss) obj3;
                 TLRPC.User user = (TLRPC.User) obj;
-                org.telegram.ui.Components.e5.O((Context) obj2, LocaleController.getString(R.string.ResetToOriginalPhotoTitle), LocaleController.formatString(R.string.ResetToOriginalPhotoMessage, user.first_name), LocaleController.getString(R.string.Reset), new js(ssVar, user, i12), ssVar.r).o();
+                org.telegram.ui.Components.d5.O((Context) obj2, LocaleController.getString(R.string.ResetToOriginalPhotoTitle), LocaleController.formatString(R.string.ResetToOriginalPhotoMessage, user.first_name), LocaleController.getString(R.string.Reset), new js(ssVar, user, i12), ssVar.r).o();
                 break;
             case 11:
-                fh0 fh0Var = (fh0) obj3;
-                ((org.telegram.ui.Components.w70) obj2).u();
+                gh0 gh0Var = (gh0) obj3;
+                ((org.telegram.ui.Components.v70) obj2).u();
                 int i15 = ((MessagesController.DialogFilter) obj).id;
-                if (fh0Var.c.getCurrentPosition() != 0 || (uyVar = fh0Var.J) == null) {
-                    if (fh0Var.J == null) {
-                        fh0Var.l0(null);
+                if (gh0Var.c.getCurrentPosition() != 0 || (uyVar = gh0Var.J) == null) {
+                    if (gh0Var.J == null) {
+                        gh0Var.l0(null);
                     }
-                    fh0Var.I = Integer.valueOf(i15);
-                    fh0Var.m0(0, true);
-                    fh0Var.c.E(0);
+                    gh0Var.I = Integer.valueOf(i15);
+                    gh0Var.m0(0, true);
+                    gh0Var.c.E(0);
                     break;
                 } else {
                     uyVar.w4(i15);

@@ -6,9 +6,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class hz extends w9 {
+public final class hz extends v9 {
     public final /* synthetic */ iz G;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -17,7 +17,7 @@ public final class hz extends w9 {
         this.G = izVar;
     }
 
-    @Override // org.telegram.ui.Components.w9, android.view.View
+    @Override // org.telegram.ui.Components.v9, android.view.View
     public final void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         iz izVar = this.G;

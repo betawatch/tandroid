@@ -9,9 +9,9 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
 import org.telegram.tgnet.TLObject;
-import v7.s6;
+import v7.t6;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class v extends AbstractMap implements Serializable {
     public static final Object s = new Object();
@@ -88,7 +88,7 @@ public final class v extends AbstractMap implements Serializable {
             return b10.containsValue(obj);
         }
         for (int i10 = 0; i10 < this.f; i10++) {
-            if (s6.a(obj, j()[i10])) {
+            if (t6.a(obj, j()[i10])) {
                 return true;
             }
         }
@@ -112,7 +112,7 @@ public final class v extends AbstractMap implements Serializable {
         do {
             int i12 = u10 - 1;
             int i13 = h()[i12];
-            if ((i13 & i10) == i11 && s6.a(obj, i()[i12])) {
+            if ((i13 & i10) == i11 && t6.a(obj, i()[i12])) {
                 return i12;
             }
             u10 = i13 & c10;
@@ -314,7 +314,7 @@ public final class v extends AbstractMap implements Serializable {
             while (true) {
                 int i20 = u10 - i11;
                 int i21 = h[i20];
-                if ((i21 & i17) == i18 && s6.a(obj, i13[i20])) {
+                if ((i21 & i17) == i18 && t6.a(obj, i13[i20])) {
                     Object obj4 = j3[i20];
                     j3[i20] = obj2;
                     return obj4;

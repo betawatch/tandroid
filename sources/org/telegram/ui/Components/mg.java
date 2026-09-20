@@ -25,15 +25,15 @@ import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public abstract class mg extends bu {
     public fd c;
     public final /* synthetic */ ChatActivityEnterView d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public mg(ChatActivityEnterView chatActivityEnterView, Context context, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(context, e6Var);
+    public mg(ChatActivityEnterView chatActivityEnterView, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context, f6Var);
         this.d = chatActivityEnterView;
     }
 
@@ -117,7 +117,7 @@ public abstract class mg extends bu {
     }
 
     @Override // org.telegram.ui.Components.EditTextBoldCursor
-    public final org.telegram.ui.ActionBar.e6 getResourcesProvider() {
+    public final org.telegram.ui.ActionBar.f6 getResourcesProvider() {
         return this.d.V3;
     }
 
@@ -235,7 +235,7 @@ public abstract class mg extends bu {
         super.onScrollChanged(i10, i11, i12, i13);
         ng ngVar = this.d.Y2;
         if (ngVar != null) {
-            ngVar.m0();
+            ngVar.n0();
         }
     }
 
@@ -244,7 +244,7 @@ public abstract class mg extends bu {
         super.onSelectionChanged(i10, i11);
         ng ngVar = this.d.Y2;
         if (ngVar != null) {
-            ngVar.E0(i10, i11);
+            ngVar.F0(i10, i11);
         }
     }
 
@@ -379,8 +379,8 @@ public abstract class mg extends bu {
         super.setOffsetY(f7);
         ChatActivityEnterView chatActivityEnterView = this.d;
         if (chatActivityEnterView.l1.getForeground() != null) {
-            bw0 bw0Var = chatActivityEnterView.l1;
-            bw0Var.invalidateDrawable(bw0Var.getForeground());
+            aw0 aw0Var = chatActivityEnterView.l1;
+            aw0Var.invalidateDrawable(aw0Var.getForeground());
         }
     }
 }

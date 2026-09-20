@@ -10,7 +10,7 @@ import org.telegram.ui.Components.nu;
 import org.telegram.ui.Components.o20;
 import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class ea {
     public final int a;
@@ -18,16 +18,16 @@ public final class ea {
     public final o20 c;
     public int d;
     public int e;
-    public final org.telegram.ui.Components.h5 f;
-    public final org.telegram.ui.Components.h5 g;
+    public final org.telegram.ui.Components.g5 f;
+    public final org.telegram.ui.Components.g5 g;
 
     public ea(View view) {
         nu nuVar = new nu(1, view);
         this.a = UserConfig.selectedAccount;
         this.b = nuVar;
         qr qrVar = qr.h;
-        this.f = new org.telegram.ui.Components.h5(nuVar, 350L, qrVar);
-        this.g = new org.telegram.ui.Components.h5(nuVar, 350L, qrVar);
+        this.f = new org.telegram.ui.Components.g5(nuVar, 350L, qrVar);
+        this.g = new org.telegram.ui.Components.g5(nuVar, 350L, qrVar);
         o20 o20Var = new o20();
         this.c = o20Var;
         o20Var.a = true;

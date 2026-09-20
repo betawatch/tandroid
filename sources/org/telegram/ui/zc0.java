@@ -1,36 +1,60 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import org.telegram.tgnet.tl.TL_stories;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class zc0 extends org.telegram.ui.Components.kv0 {
-    public final /* synthetic */ jd0 f2;
+public final class zc0 implements org.telegram.ui.Components.vt0 {
+    public final /* synthetic */ kd0 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zc0(jd0 jd0Var, Context context, org.telegram.ui.Components.cv0 cv0Var, jd0 jd0Var2, yc0 yc0Var, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(context, 0L, cv0Var, 0, null, null, null, 8, 0, jd0Var2, yc0Var, 0, e6Var, null);
-        this.f2 = jd0Var;
+    public zc0(kd0 kd0Var) {
+        this.a = kd0Var;
     }
 
-    @Override // org.telegram.ui.Components.kv0
-    public final int B0() {
-        return 32;
+    @Override // org.telegram.ui.Components.vt0
+    public final void R() {
+        kd0 kd0Var = this.a;
+        ad0 ad0Var = kd0Var.K0;
+        int c02 = ad0Var == null ? 0 : ad0Var.c0(8);
+        kd0Var.L0.setText(LocaleController.formatPluralString("LocationStories", c02, new Object[0]));
+        yc0 yc0Var = kd0Var.T;
+        boolean z10 = c02 > 0;
+        if (yc0Var.i0 != z10) {
+            yc0Var.i0 = z10;
+            yc0Var.l();
+            kd0Var.U.w0(0, AndroidUtilities.dp(200.0f), null);
+        }
     }
 
-    @Override // org.telegram.ui.Components.kv0
-    public final boolean N() {
+    @Override // org.telegram.ui.Components.vt0
+    public final boolean T() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.vt0
+    public final org.telegram.ui.Components.vl0 f() {
+        return this.a.U;
+    }
+
+    @Override // org.telegram.ui.Components.vt0
+    public final TLRPC.Chat g() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.Components.vt0
+    public final boolean h(TLRPC.ChatParticipant chatParticipant, boolean z10, boolean z11, View view) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.vt0
+    public final boolean p() {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.kv0
-    public final int S0() {
-        return 3;
-    }
-
-    @Override // org.telegram.ui.Components.kv0
-    public final TL_stories.MediaArea getStoriesArea() {
-        return this.f2.M0;
+    @Override // org.telegram.ui.Components.vt0
+    public final void E() {
     }
 }

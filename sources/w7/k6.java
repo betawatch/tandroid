@@ -1,17 +1,20 @@
 package w7;
 
-import java.lang.ref.Reference;
-import java.util.ArrayList;
+import java.io.Closeable;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public abstract class k6 {
-    public static void a(ArrayList arrayList, Object obj) {
-        for (int size = arrayList.size() - 1; size >= 0; size--) {
-            Object obj2 = ((Reference) arrayList.get(size)).get();
-            if (obj2 == null || obj2 == obj) {
-                arrayList.remove(size);
+    public static final void a(Closeable closeable, Throwable th2) {
+        if (closeable != null) {
+            if (th2 == null) {
+                closeable.close();
                 return;
+            }
+            try {
+                closeable.close();
+            } catch (Throwable th3) {
+                v7.s7.a(th2, th3);
             }
         }
     }

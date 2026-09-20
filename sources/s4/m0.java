@@ -5,9 +5,9 @@ import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
-import org.telegram.ui.Components.uk0;
+import org.telegram.ui.Components.tk0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public abstract class m0 {
     public l.d a;
@@ -59,16 +59,16 @@ public abstract class m0 {
             }
             of.e eVar = recyclerView.b;
             recyclerView.z0();
-            lf.i iVar = recyclerView.e;
-            e6.n nVar = (e6.n) iVar.c;
-            ka.c cVar = (ka.c) iVar.b;
+            lf.h hVar = recyclerView.e;
+            e6.n nVar = (e6.n) hVar.c;
+            ka.c cVar = (ka.c) hVar.b;
             int indexOfChild = ((RecyclerView) cVar.b).indexOfChild(view);
             if (indexOfChild == -1) {
-                iVar.Y(view);
-            } else if (nVar.D(indexOfChild)) {
+                hVar.Y(view);
+            } else if (nVar.C(indexOfChild)) {
                 nVar.F(indexOfChild);
-                iVar.Y(view);
-                cVar.j0(indexOfChild);
+                hVar.Y(view);
+                cVar.h0(indexOfChild);
             } else {
                 z10 = false;
             }
@@ -89,8 +89,8 @@ public abstract class m0 {
         ArrayList arrayList = this.b;
         int size = arrayList.size();
         for (int i10 = 0; i10 < size; i10++) {
-            uk0 uk0Var = (uk0) arrayList.get(i10);
-            uk0Var.a.d(uk0Var.b, uk0Var.c, uk0Var.d, false);
+            tk0 tk0Var = (tk0) arrayList.get(i10);
+            tk0Var.a.d(tk0Var.b, tk0Var.c, tk0Var.d, false);
         }
         arrayList.clear();
     }

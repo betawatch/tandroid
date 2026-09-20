@@ -9,7 +9,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.web.HttpGetFileTask;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public class BetaUpdaterController {
     private static final long CHECK_INTERVAL = 1200000;
@@ -27,7 +27,7 @@ public class BetaUpdaterController {
     private String version;
     private int versionCode;
     private boolean firstCheck = true;
-    private final Runnable scheduledUpdateCheck = new u(this, 1);
+    private final Runnable scheduledUpdateCheck = new t(this, 1);
 
     public BetaUpdaterController() {
         load();
@@ -185,7 +185,7 @@ public class BetaUpdaterController {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$checkForUpdate$2(Runnable runnable, String str) {
-        AndroidUtilities.runOnUIThread(new g0(this, str, runnable, 7));
+        AndroidUtilities.runOnUIThread(new f0(this, str, runnable, 7));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -308,7 +308,7 @@ public class BetaUpdaterController {
         }
         this.checkingForUpdate = true;
         this.firstCheck = false;
-        new org.telegram.ui.web.j1(new w(0, this, runnable)).execute(BuildConfig.BETA_URL);
+        new org.telegram.ui.web.k1(new v(0, this, runnable)).execute(BuildConfig.BETA_URL);
     }
 
     public void downloadUpdate() {
@@ -357,13 +357,13 @@ public class BetaUpdaterController {
                 this.downloading = false;
                 return;
             } else {
-                checkForUpdate(true, new u(this, 0));
+                checkForUpdate(true, new t(this, 0));
                 return;
             }
         }
         final int i10 = 0;
         final int i11 = 1;
-        HttpGetFileTask overrideExtension = new HttpGetFileTask(new Utilities.Callback(this) { // from class: org.telegram.messenger.v
+        HttpGetFileTask overrideExtension = new HttpGetFileTask(new Utilities.Callback(this) { // from class: org.telegram.messenger.u
             public final /* synthetic */ BetaUpdaterController b;
 
             {
@@ -381,7 +381,7 @@ public class BetaUpdaterController {
                         break;
                 }
             }
-        }, new Utilities.Callback(this) { // from class: org.telegram.messenger.v
+        }, new Utilities.Callback(this) { // from class: org.telegram.messenger.u
             public final /* synthetic */ BetaUpdaterController b;
 
             {

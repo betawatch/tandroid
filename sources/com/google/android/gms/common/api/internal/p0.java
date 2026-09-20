@@ -20,7 +20,7 @@ import java.util.LinkedList;
 import java.util.Set;
 import m.p3;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class p0 implements com.google.android.gms.common.api.k, com.google.android.gms.common.api.l {
     public final com.google.android.gms.common.api.c b;
@@ -40,7 +40,7 @@ public final class p0 implements com.google.android.gms.common.api.k, com.google
     public p0(h hVar, com.google.android.gms.common.api.j jVar) {
         this.o = hVar;
         Looper looper = hVar.x.getLooper();
-        lf.i a2 = jVar.a();
+        lf.h a2 = jVar.a();
         a0.g gVar = (a0.g) a2.b;
         String str = (String) a2.c;
         String str2 = (String) a2.d;
@@ -67,7 +67,7 @@ public final class p0 implements com.google.android.gms.common.api.k, com.google
         }
         Context context = hVar.e;
         com.google.android.gms.internal.cast.c0 c0Var = hVar.x;
-        lf.i a11 = jVar.a();
+        lf.h a11 = jVar.a();
         this.j = new d1(context, c0Var, new p3((a0.g) a11.b, null, (String) a11.c, (String) a11.d, aVar));
     }
 
@@ -289,9 +289,9 @@ public final class p0 implements com.google.android.gms.common.api.k, com.google
             return;
         }
         try {
-            int b02 = hVar.h.b0(hVar.e, cVar);
-            if (b02 != 0) {
-                k6.a aVar = new k6.a(b02, null);
+            int Z = hVar.h.Z(hVar.e, cVar);
+            if (Z != 0) {
+                k6.a aVar = new k6.a(Z, null);
                 Log.w("GoogleApiManager", "The service for " + cVar.getClass().getName() + " is not available: " + aVar.toString());
                 m(aVar, null);
                 return;

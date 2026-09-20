@@ -8,21 +8,21 @@ import android.view.View;
 import android.widget.LinearLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class b0 extends LinearLayout {
     public final RectF a;
     public final RectF b;
     public final RectF c;
     public final Paint d;
-    public final /* synthetic */ org.telegram.ui.ActionBar.e6 e;
+    public final /* synthetic */ org.telegram.ui.ActionBar.f6 e;
     public final /* synthetic */ d0 f;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b0(d0 d0Var, Context context, org.telegram.ui.ActionBar.e6 e6Var) {
+    public b0(d0 d0Var, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
         super(context);
         this.f = d0Var;
-        this.e = e6Var;
+        this.e = f6Var;
         this.a = new RectF();
         this.b = new RectF();
         this.c = new RectF();
@@ -31,8 +31,8 @@ public final class b0 extends LinearLayout {
 
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
-        e6 e6Var = this.f.h;
-        float d = e6Var == null ? 0.0f : e6Var.d(r0.f, false);
+        d6 d6Var = this.f.h;
+        float d = d6Var == null ? 0.0f : d6Var.d(r0.f, false);
         double d10 = d;
         int floor = (int) Math.floor(d10);
         int ceil = (int) Math.ceil(d10);

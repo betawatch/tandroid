@@ -11,7 +11,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class pb implements org.telegram.ui.Cells.t0 {
     public final /* synthetic */ rb a;
@@ -21,12 +21,12 @@ public final class pb implements org.telegram.ui.Cells.t0 {
     }
 
     @Override // org.telegram.ui.Cells.t0
-    public final org.telegram.ui.ActionBar.n2 O0() {
+    public final org.telegram.ui.ActionBar.n2 P0() {
         return this.a.n;
     }
 
     @Override // org.telegram.ui.Cells.t0
-    public final void Q0(TLRPC.TL_chatInviteExported tL_chatInviteExported) {
+    public final void R0(TLRPC.TL_chatInviteExported tL_chatInviteExported) {
         int i10;
         vb vbVar = this.a.n;
         if (vbVar.A0) {
@@ -38,7 +38,7 @@ public final class pb implements org.telegram.ui.Cells.t0 {
                 vb.A0(vbVar, (TLRPC.TL_messages_exportedChatInvite) obj, vbVar.z0);
                 return;
             } else {
-                org.telegram.messenger.q.q(R.string.LinkHashExpired, org.telegram.ui.Components.xc.a0(vbVar), R.raw.linkbroken, 36);
+                org.telegram.messenger.l0.o(R.string.LinkHashExpired, org.telegram.ui.Components.xc.a0(vbVar), R.raw.linkbroken, 36);
                 return;
             }
         }
@@ -78,7 +78,7 @@ public final class pb implements org.telegram.ui.Cells.t0 {
     }
 
     @Override // org.telegram.ui.Cells.t0
-    public final void k0(org.telegram.ui.Cells.w0 w0Var) {
+    public final void l0(org.telegram.ui.Cells.w0 w0Var) {
         vb vbVar = this.a.n;
         MessageObject messageObject = w0Var.getMessageObject();
         if (messageObject.type == 22) {
@@ -104,7 +104,7 @@ public final class pb implements org.telegram.ui.Cells.t0 {
     }
 
     @Override // org.telegram.ui.Cells.t0
-    public final void x1(long j3) {
+    public final void y1(long j3) {
         int i10;
         int i11;
         vb vbVar = this.a.n;
@@ -120,9 +120,9 @@ public final class pb implements org.telegram.ui.Cells.t0 {
         }
         i10 = ((org.telegram.ui.ActionBar.n2) vbVar).currentAccount;
         if (j3 != UserConfig.getInstance(i10).getClientUserId()) {
-            Bundle f7 = t8.b.f(j3, "user_id");
-            vb.p0(vbVar, f7, j3);
-            ProfileActivity profileActivity = new ProfileActivity(f7, null);
+            Bundle e = v7.j0.e(j3, "user_id");
+            vb.p0(vbVar, e, j3);
+            ProfileActivity profileActivity = new ProfileActivity(e, null);
             profileActivity.N4(0);
             vbVar.presentFragment(profileActivity);
         }
@@ -133,11 +133,11 @@ public final class pb implements org.telegram.ui.Cells.t0 {
     }
 
     @Override // org.telegram.ui.Cells.t0
-    public final /* synthetic */ void r0(org.telegram.ui.Cells.w0 w0Var) {
+    public final /* synthetic */ void s0(org.telegram.ui.Cells.w0 w0Var) {
     }
 
     @Override // org.telegram.ui.Cells.t0
-    public final /* synthetic */ void y1(org.telegram.ui.Cells.w0 w0Var) {
+    public final /* synthetic */ void z1(org.telegram.ui.Cells.w0 w0Var) {
     }
 
     @Override // org.telegram.ui.Cells.t0
@@ -153,11 +153,11 @@ public final class pb implements org.telegram.ui.Cells.t0 {
     }
 
     @Override // org.telegram.ui.Cells.t0
-    public final /* synthetic */ void g0(org.telegram.ui.Cells.w0 w0Var, int i10, int i11) {
+    public final /* synthetic */ void h0(org.telegram.ui.Cells.w0 w0Var, int i10, int i11) {
     }
 
     @Override // org.telegram.ui.Cells.t0
-    public final /* synthetic */ void g1(org.telegram.ui.Cells.w0 w0Var, TLRPC.Document document, TLRPC.VideoSize videoSize) {
+    public final /* synthetic */ void h1(org.telegram.ui.Cells.w0 w0Var, TLRPC.Document document, TLRPC.VideoSize videoSize) {
     }
 
     @Override // org.telegram.ui.Cells.t0

@@ -1,247 +1,309 @@
 package qg;
 
 import android.content.Context;
-import android.graphics.Bitmap;
+import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.graphics.Point;
-import android.graphics.PointF;
-import android.graphics.Rect;
+import android.graphics.Path;
 import android.graphics.RectF;
-import android.os.Build;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
-import ci.o8;
-import com.google.mlkit.vision.segmentation.subject.internal.zzd;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.wh;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.e6;
+import org.telegram.ui.Components.d6;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.sk0;
-import org.telegram.ui.Components.vv0;
-import org.telegram.ui.rv0;
-import w7.y5;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class x1 extends j {
-    public final Bitmap A0;
-    public boolean B0;
-    public boolean C0;
-    public final Rect D0;
-    public final Rect E0;
-    public final Paint F0;
-    public MediaController.CropState G0;
-    public final TLObject q0;
-    public final String r0;
-    public final int s0;
-    public boolean t0;
-    public final e6 u0;
-    public final vv0 v0;
-    public final int w0;
-    public boolean x0;
-    public final e6 y0;
-    public final ai.f0 z0;
+public final class x1 extends View {
+    public pg.e1 E;
+    public float F;
+    public float G;
+    public pg.s1 H;
+    public Runnable I;
+    public boolean J;
+    public w1 K;
+    public final Paint a;
+    public final Paint b;
+    public final Path c;
+    public final n2.e d;
+    public final RectF e;
+    public boolean f;
+    public boolean h;
+    public float n;
+    public float r;
+    public long s;
+    public boolean v;
+    public final d6 w;
+    public final d6 x;
+    public final d6 y;
 
-    public x1(Context context, PointF pointF, vv0 vv0Var, String str, int i10) {
-        super(context, pointF);
-        this.s0 = -1;
-        this.t0 = false;
-        this.x0 = false;
-        new Rect();
-        new RectF();
-        new Paint(3);
-        this.D0 = new Rect();
-        this.E0 = new Rect();
-        this.F0 = new Paint(3);
-        setRotation(0.0f);
-        setScale(1.0f);
-        this.r0 = str;
-        this.v0 = vv0Var;
-        ai.f0 f0Var = new ai.f0(this, context);
-        this.z0 = f0Var;
-        addView(f0Var, y5.c(-1.0f, -1));
-        qr qrVar = qr.h;
-        this.u0 = new e6(f0Var, 0L, 500L, qrVar);
-        this.y0 = new e6(f0Var, 0L, 350L, qrVar);
-        this.w0 = i10;
-        Bitmap q6 = o8.q(new k2.v(str, 22), 1920, 1920, 0, false);
-        this.A0 = q6;
-        if (q6 != null) {
-            s(q6);
+    public x1(Context context) {
+        super(context);
+        Paint paint = new Paint(1);
+        this.a = paint;
+        Paint paint2 = new Paint(1);
+        this.b = paint2;
+        this.c = new Path();
+        this.e = new RectF();
+        this.v = true;
+        this.w = new d6(this);
+        this.x = new d6(this);
+        this.y = new d6(this);
+        this.H = new pg.s1(1.0f, 0.016773745f, -1);
+        this.J = true;
+        this.d = new n2.e(context, new v1(this));
+        paint2.setColor(-1);
+        paint2.setShadowLayer(AndroidUtilities.dp(4.0f), 0.0f, AndroidUtilities.dp(2.0f), 1342177280);
+        paint.setColor(1090519039);
+        paint.setShadowLayer(AndroidUtilities.dp(3.0f), 0.0f, AndroidUtilities.dp(1.0f), 637534208);
+    }
+
+    public final void a(float f7, float f10, float f11, Canvas canvas, boolean z10) {
+        if (z10) {
+            RectF rectF = AndroidUtilities.rectTmp;
+            rectF.set((f7 - f11) - AndroidUtilities.dp(6.0f), (f10 - f11) - AndroidUtilities.dp(6.0f), f7 + f11 + AndroidUtilities.dp(6.0f), f10 + f11 + AndroidUtilities.dp(6.0f));
+            canvas.saveLayerAlpha(rectF, (int) (this.r * 255.0f), 31);
         }
-        k();
-    }
-
-    private String getImageFilter() {
-        Point point = AndroidUtilities.displaySize;
-        int round = Math.round((Math.min(point.x, point.y) * 0.8f) / AndroidUtilities.density);
-        return a4.a.k(round, round, "_");
-    }
-
-    @Override // qg.j
-    public final i a() {
-        return new p0(this, getContext());
-    }
-
-    public int getAnchor() {
-        return this.s0;
-    }
-
-    public vv0 getBaseSize() {
-        return this.v0;
-    }
-
-    public int getContentHeight() {
-        Bitmap bitmap = this.A0;
-        if (bitmap == null) {
-            return 1;
+        canvas.drawCircle(f7, f10, f11, this.b);
+        if (z10) {
+            canvas.restore();
         }
-        return bitmap.getHeight();
     }
 
-    public int getContentWidth() {
-        Bitmap bitmap = this.A0;
-        if (bitmap == null) {
-            return 1;
-        }
-        return bitmap.getWidth();
+    public final void b(float f7, float f10) {
+        this.F = f7;
+        this.G = f10;
+        invalidate();
     }
 
-    public int getOrientation() {
-        return this.w0;
-    }
-
-    public Bitmap getSegmentedOutBitmap() {
-        return null;
-    }
-
-    @Override // qg.j
-    public sk0 getSelectionBounds() {
-        ViewGroup viewGroup = (ViewGroup) getParent();
-        if (viewGroup == null) {
-            return new sk0();
-        }
-        float scaleX = viewGroup.getScaleX();
-        float dp = (AndroidUtilities.dp(64.0f) / scaleX) + (getScale() * getMeasuredWidth());
-        float dp2 = (AndroidUtilities.dp(64.0f) / scaleX) + (getScale() * getMeasuredHeight());
-        float dp3 = (AndroidUtilities.dp(64.0f) / scaleX) + (getScale() * getMeasuredWidth());
-        getMeasuredHeight();
-        getScale();
-        AndroidUtilities.dp(64.0f);
-        float x10 = wh.x(dp, 2.0f, getPositionX(), scaleX);
-        return new sk0(x10, wh.x(dp2, 2.0f, getPositionY(), scaleX), ((dp3 * scaleX) + x10) - x10, dp2 * scaleX);
-    }
-
-    @Override // qg.j
-    public final void k() {
-        vv0 vv0Var = this.v0;
-        float f7 = vv0Var.a / 2.0f;
-        float f10 = vv0Var.b / 2.0f;
-        MediaController.CropState cropState = this.G0;
-        if (cropState != null) {
-            f7 *= cropState.cropPw;
-            f10 *= cropState.cropPh;
-        }
-        setX(getPositionX() - f7);
-        setY(getPositionY() - f10);
-        m();
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        vv0 vv0Var = this.v0;
-        float f7 = vv0Var.a;
-        float f10 = vv0Var.b;
-        MediaController.CropState cropState = this.G0;
-        if (cropState != null) {
-            f7 *= cropState.cropPw;
-            f10 *= cropState.cropPh;
-        }
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) f7, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) f10, TLObject.FLAG_30));
-    }
-
-    public final String q(int i10) {
-        TLObject tLObject = this.q0;
-        if (tLObject instanceof TLRPC.Photo) {
-            try {
-                return FileLoader.getInstance(i10).getPathToAttach(FileLoader.getClosestPhotoSizeWithSize(((TLRPC.Photo) tLObject).sizes, MediaDataController.MAX_STYLE_RUNS_COUNT), true).getAbsolutePath();
-            } catch (Exception unused) {
+    /* JADX WARN: Removed duplicated region for block: B:11:0x0072  */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x0138  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x01c3  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x0218  */
+    /* JADX WARN: Removed duplicated region for block: B:31:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x0087  */
+    @Override // android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void onDraw(Canvas canvas) {
+        boolean z10;
+        super.onDraw(canvas);
+        long min = Math.min(16L, System.currentTimeMillis() - this.s);
+        this.s = System.currentTimeMillis();
+        w1 w1Var = this.K;
+        float d = this.w.d(w1Var != null ? w1Var.get() : this.H.c, false);
+        float d10 = this.x.d(this.F, false);
+        float d11 = this.y.d(this.G, false);
+        boolean z11 = this.h;
+        if (z11) {
+            float f7 = this.n;
+            if (f7 != 1.0f) {
+                this.n = Math.min(1.0f, (min / 200.0f) + f7);
+                invalidate();
+                z10 = this.f;
+                if (z10) {
+                    float f10 = this.r;
+                    if (f10 != 1.0f) {
+                        this.r = Math.min(1.0f, (min / 200.0f) + f10);
+                        invalidate();
+                        RectF rectF = this.e;
+                        float height = rectF.height();
+                        int dp = AndroidUtilities.dp(16.0f);
+                        int dp2 = AndroidUtilities.dp(3.0f);
+                        int dp3 = AndroidUtilities.dp(3.0f);
+                        Path path = this.c;
+                        path.rewind();
+                        path.moveTo(0.0f, 0.0f);
+                        RectF rectF2 = AndroidUtilities.rectTmp;
+                        int i10 = -dp3;
+                        int i11 = -dp;
+                        rectF2.set(AndroidUtilities.lerp(i10, i11, this.r), 0.0f, AndroidUtilities.lerp(dp3, dp, this.r), AndroidUtilities.lerp(dp3, dp, this.r) * 2);
+                        path.arcTo(rectF2, -90.0f, 90.0f);
+                        path.lineTo(AndroidUtilities.lerp(dp3, dp2, this.r), height);
+                        rectF2.set(AndroidUtilities.lerp(i10, -dp2, this.r), height - (dp2 * 2), AndroidUtilities.lerp(dp3, dp2, this.r), height);
+                        path.arcTo(rectF2, 0.0f, 180.0f);
+                        float f11 = dp;
+                        path.lineTo(AndroidUtilities.lerp(i10, i11, this.r), f11);
+                        rectF2.set(AndroidUtilities.lerp(i10, i11, this.r), 0.0f, AndroidUtilities.lerp(dp3, dp, this.r), dp * 2);
+                        path.arcTo(rectF2, -180.0f, 90.0f);
+                        path.close();
+                        if (this.n != 0.0f) {
+                            rectF2.set(0.0f, 0.0f, getWidth(), getHeight());
+                            canvas.saveLayerAlpha(rectF2, (int) ((1.0f - this.n) * 255.0f), 31);
+                        }
+                        canvas.save();
+                        float dp4 = AndroidUtilities.dp(32.0f);
+                        qr qrVar = qr.f;
+                        canvas.translate(qrVar.getInterpolation(this.r) * dp4, rectF.top);
+                        canvas.drawPath(path, this.a);
+                        canvas.restore();
+                        float f12 = (d - d10) / (d11 - d10);
+                        float f13 = dp2 * 1.5f;
+                        a(qrVar.getInterpolation(this.r) * AndroidUtilities.dp(32.0f), w7.q.a(com.google.android.gms.internal.vision.e2.z(1.0f, f12, rectF.height(), rectF.top), rectF.top + f11, rectF.bottom - Math.min(f13, f11)), AndroidUtilities.lerp(AndroidUtilities.dp(12.0f), AndroidUtilities.lerp(Math.min(f13, f11), f11, f12), this.r), canvas, false);
+                        if (this.J && this.r != 0.0f && this.v && this.E != null) {
+                            pg.e1 e1Var = this.E;
+                            float f14 = e1Var.c.g.a;
+                            a(getWidth() / 2.0f, getHeight() / 2.0f, e1Var.getCurrentBrush().h() * com.google.android.gms.internal.vision.e2.x(f14, 0.043945312f, d, 0.00390625f * f14) * this.E.getCurrentBrush().g(), canvas, true);
+                        }
+                        if (this.n != 0.0f) {
+                            canvas.restore();
+                            return;
+                        }
+                        return;
+                    }
+                }
+                if (!z10) {
+                    float f15 = this.r;
+                    if (f15 != 0.0f) {
+                        this.r = Math.max(0.0f, f15 - (min / 200.0f));
+                        invalidate();
+                    }
+                }
+                RectF rectF3 = this.e;
+                float height2 = rectF3.height();
+                int dp5 = AndroidUtilities.dp(16.0f);
+                int dp22 = AndroidUtilities.dp(3.0f);
+                int dp32 = AndroidUtilities.dp(3.0f);
+                Path path2 = this.c;
+                path2.rewind();
+                path2.moveTo(0.0f, 0.0f);
+                RectF rectF22 = AndroidUtilities.rectTmp;
+                int i102 = -dp32;
+                int i112 = -dp5;
+                rectF22.set(AndroidUtilities.lerp(i102, i112, this.r), 0.0f, AndroidUtilities.lerp(dp32, dp5, this.r), AndroidUtilities.lerp(dp32, dp5, this.r) * 2);
+                path2.arcTo(rectF22, -90.0f, 90.0f);
+                path2.lineTo(AndroidUtilities.lerp(dp32, dp22, this.r), height2);
+                rectF22.set(AndroidUtilities.lerp(i102, -dp22, this.r), height2 - (dp22 * 2), AndroidUtilities.lerp(dp32, dp22, this.r), height2);
+                path2.arcTo(rectF22, 0.0f, 180.0f);
+                float f112 = dp5;
+                path2.lineTo(AndroidUtilities.lerp(i102, i112, this.r), f112);
+                rectF22.set(AndroidUtilities.lerp(i102, i112, this.r), 0.0f, AndroidUtilities.lerp(dp32, dp5, this.r), dp5 * 2);
+                path2.arcTo(rectF22, -180.0f, 90.0f);
+                path2.close();
+                if (this.n != 0.0f) {
+                }
+                canvas.save();
+                float dp42 = AndroidUtilities.dp(32.0f);
+                qr qrVar2 = qr.f;
+                canvas.translate(qrVar2.getInterpolation(this.r) * dp42, rectF3.top);
+                canvas.drawPath(path2, this.a);
+                canvas.restore();
+                float f122 = (d - d10) / (d11 - d10);
+                float f132 = dp22 * 1.5f;
+                a(qrVar2.getInterpolation(this.r) * AndroidUtilities.dp(32.0f), w7.q.a(com.google.android.gms.internal.vision.e2.z(1.0f, f122, rectF3.height(), rectF3.top), rectF3.top + f112, rectF3.bottom - Math.min(f132, f112)), AndroidUtilities.lerp(AndroidUtilities.dp(12.0f), AndroidUtilities.lerp(Math.min(f132, f112), f112, f122), this.r), canvas, false);
+                if (this.J) {
+                    pg.e1 e1Var2 = this.E;
+                    float f142 = e1Var2.c.g.a;
+                    a(getWidth() / 2.0f, getHeight() / 2.0f, e1Var2.getCurrentBrush().h() * com.google.android.gms.internal.vision.e2.x(f142, 0.043945312f, d, 0.00390625f * f142) * this.E.getCurrentBrush().g(), canvas, true);
+                }
+                if (this.n != 0.0f) {
+                }
             }
         }
-        return this.r0;
-    }
-
-    public final void r(boolean z10) {
-        boolean z11 = !this.t0;
-        this.t0 = z11;
+        if (!z11) {
+            float f16 = this.n;
+            if (f16 != 0.0f) {
+                this.n = Math.max(0.0f, f16 - (min / 200.0f));
+                invalidate();
+            }
+        }
+        z10 = this.f;
+        if (z10) {
+        }
         if (!z10) {
-            this.u0.f(z11, true);
         }
-        ai.f0 f0Var = this.z0;
-        if (f0Var != null) {
-            f0Var.invalidate();
+        RectF rectF32 = this.e;
+        float height22 = rectF32.height();
+        int dp52 = AndroidUtilities.dp(16.0f);
+        int dp222 = AndroidUtilities.dp(3.0f);
+        int dp322 = AndroidUtilities.dp(3.0f);
+        Path path22 = this.c;
+        path22.rewind();
+        path22.moveTo(0.0f, 0.0f);
+        RectF rectF222 = AndroidUtilities.rectTmp;
+        int i1022 = -dp322;
+        int i1122 = -dp52;
+        rectF222.set(AndroidUtilities.lerp(i1022, i1122, this.r), 0.0f, AndroidUtilities.lerp(dp322, dp52, this.r), AndroidUtilities.lerp(dp322, dp52, this.r) * 2);
+        path22.arcTo(rectF222, -90.0f, 90.0f);
+        path22.lineTo(AndroidUtilities.lerp(dp322, dp222, this.r), height22);
+        rectF222.set(AndroidUtilities.lerp(i1022, -dp222, this.r), height22 - (dp222 * 2), AndroidUtilities.lerp(dp322, dp222, this.r), height22);
+        path22.arcTo(rectF222, 0.0f, 180.0f);
+        float f1122 = dp52;
+        path22.lineTo(AndroidUtilities.lerp(i1022, i1122, this.r), f1122);
+        rectF222.set(AndroidUtilities.lerp(i1022, i1122, this.r), 0.0f, AndroidUtilities.lerp(dp322, dp52, this.r), dp52 * 2);
+        path22.arcTo(rectF222, -180.0f, 90.0f);
+        path22.close();
+        if (this.n != 0.0f) {
+        }
+        canvas.save();
+        float dp422 = AndroidUtilities.dp(32.0f);
+        qr qrVar22 = qr.f;
+        canvas.translate(qrVar22.getInterpolation(this.r) * dp422, rectF32.top);
+        canvas.drawPath(path22, this.a);
+        canvas.restore();
+        float f1222 = (d - d10) / (d11 - d10);
+        float f1322 = dp222 * 1.5f;
+        a(qrVar22.getInterpolation(this.r) * AndroidUtilities.dp(32.0f), w7.q.a(com.google.android.gms.internal.vision.e2.z(1.0f, f1222, rectF32.height(), rectF32.top), rectF32.top + f1122, rectF32.bottom - Math.min(f1322, f1122)), AndroidUtilities.lerp(AndroidUtilities.dp(12.0f), AndroidUtilities.lerp(Math.min(f1322, f1122), f1122, f1222), this.r), canvas, false);
+        if (this.J) {
+        }
+        if (this.n != 0.0f) {
         }
     }
 
-    public final void s(Bitmap bitmap) {
-        if (this.C0 || this.B0 || bitmap == null || Build.VERSION.SDK_INT < 24) {
-            return;
-        }
-        ac.d dVar = new ac.d();
-        dVar.a = true;
-        zzd a2 = i8.d.a(new ac.e(dVar));
-        this.B0 = true;
-        a2.g(vb.a.a(bitmap, this.w0)).addOnSuccessListener(new k2.v(this, 23)).addOnFailureListener(new rv0(26, this, bitmap));
+    @Override // android.view.View
+    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
+        super.onSizeChanged(i10, i11, i12, i13);
+        int height = (int) (getHeight() * 0.3f);
+        this.e.set(0.0f, (getHeight() - height) / 2.0f, AndroidUtilities.dp(32.0f), (getHeight() + height) / 2.0f);
     }
 
-    public final void t(boolean z10) {
-        boolean z11 = !this.x0;
-        this.x0 = z11;
-        if (!z10) {
-            this.y0.f(z11, true);
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        boolean onTouchEvent = ((GestureDetector) this.d.b).onTouchEvent(motionEvent);
+        if (motionEvent.getActionMasked() != 1 && motionEvent.getActionMasked() != 3) {
+            return onTouchEvent;
         }
-        ai.f0 f0Var = this.z0;
-        if (f0Var != null) {
-            f0Var.invalidate();
-        }
+        this.f = false;
+        invalidate();
+        return onTouchEvent;
     }
 
-    public x1(Context context, PointF pointF, vv0 vv0Var, TLObject tLObject) {
-        super(context, pointF);
-        this.s0 = -1;
-        this.t0 = false;
-        this.x0 = false;
-        new Rect();
-        new RectF();
-        new Paint(3);
-        this.D0 = new Rect();
-        this.E0 = new Rect();
-        this.F0 = new Paint(3);
-        setRotation(0.0f);
-        setScale(1.0f);
-        this.q0 = tLObject;
-        this.v0 = vv0Var;
-        ai.f0 f0Var = new ai.f0(this, context);
-        this.z0 = f0Var;
-        addView(f0Var, y5.c(-1.0f, -1));
-        qr qrVar = qr.h;
-        this.u0 = new e6(f0Var, 0L, 500L, qrVar);
-        this.y0 = new e6(f0Var, 0L, 350L, qrVar);
-        k();
+    public void setBrushWeight(float f7) {
+        this.H.c = f7;
+        invalidate();
+    }
+
+    public void setColorSwatch(pg.s1 s1Var) {
+        this.H = s1Var;
+        invalidate();
+    }
+
+    public void setDrawCenter(boolean z10) {
+        this.J = z10;
+        invalidate();
+    }
+
+    public void setOnUpdate(Runnable runnable) {
+        this.I = runnable;
+    }
+
+    public void setRenderView(pg.e1 e1Var) {
+        this.E = e1Var;
+    }
+
+    public void setShowPreview(boolean z10) {
+        this.v = z10;
+        invalidate();
+    }
+
+    public void setValueOverride(w1 w1Var) {
+        this.K = w1Var;
+        invalidate();
+    }
+
+    public void setViewHidden(boolean z10) {
+        this.h = z10;
+        invalidate();
     }
 }

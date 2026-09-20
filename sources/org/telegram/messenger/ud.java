@@ -1,6 +1,6 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ud implements Runnable {
     public final /* synthetic */ int a;
@@ -18,10 +18,10 @@ public final /* synthetic */ class ud implements Runnable {
                 MessagesController.lambda$checkSensitive$447(this.b);
                 break;
             case 1:
-                org.telegram.ui.Components.e5.t0(7, this.b, null);
+                org.telegram.ui.Components.d5.t0(7, this.b, null);
                 break;
             case 2:
-                org.telegram.ui.Components.e5.t0(8, this.b, null);
+                org.telegram.ui.Components.d5.t0(8, this.b, null);
                 break;
             default:
                 TranslateController.lambda$pushToSummarize$18(this.b);

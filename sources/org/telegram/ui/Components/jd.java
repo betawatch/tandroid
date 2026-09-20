@@ -1,15 +1,15 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class jd implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ kd b;
+    public final /* synthetic */ ld b;
     public final /* synthetic */ boolean c;
 
-    public /* synthetic */ jd(kd kdVar, boolean z10, int i10) {
+    public /* synthetic */ jd(ld ldVar, boolean z10, int i10) {
         this.a = i10;
-        this.b = kdVar;
+        this.b = ldVar;
         this.c = z10;
     }
 
@@ -18,22 +18,22 @@ public final /* synthetic */ class jd implements Runnable {
         switch (this.a) {
             case 0:
                 boolean z10 = this.c;
-                kd kdVar = this.b;
+                ld ldVar = this.b;
                 if (!z10) {
-                    kdVar.Z0.setVisibility(8);
+                    ldVar.Z0.setVisibility(8);
                     break;
                 } else {
-                    kdVar.getClass();
+                    ldVar.getClass();
                     break;
                 }
             default:
                 boolean z11 = this.c;
-                kd kdVar2 = this.b;
+                ld ldVar2 = this.b;
                 if (!z11) {
-                    kdVar2.V0.setVisibility(8);
+                    ldVar2.V0.setVisibility(8);
                     break;
                 } else {
-                    kdVar2.getClass();
+                    ldVar2.getClass();
                     break;
                 }
         }

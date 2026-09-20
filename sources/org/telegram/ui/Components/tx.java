@@ -21,9 +21,9 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class tx extends vl0 {
+public final class tx extends ul0 {
     public int E;
     public final /* synthetic */ kz F;
     public ArrayList h;
@@ -43,7 +43,7 @@ public final class tx extends vl0 {
         this.F = kzVar;
     }
 
-    @Override // org.telegram.ui.Components.vl0
+    @Override // org.telegram.ui.Components.ul0
     public final boolean D(s4.c1 c1Var) {
         int i10 = c1Var.f;
         return i10 == 0 || i10 == 4 || i10 == 3 || i10 == 6;
@@ -328,13 +328,13 @@ public final class tx extends vl0 {
         if (oxVar != null) {
             boolean isEmpty = recentEmoji.isEmpty();
             boolean z13 = !isEmpty;
-            yv yvVar = oxVar.y;
+            zv zvVar = oxVar.y;
             if (oxVar.W != z13) {
                 oxVar.W = z13;
                 if (oxVar.V) {
-                    yvVar.setAlpha(isEmpty ? 0.0f : 1.0f);
+                    zvVar.setAlpha(isEmpty ? 0.0f : 1.0f);
                 } else {
-                    yvVar.animate().alpha(isEmpty ? 0.0f : 1.0f).setDuration(200L).setInterpolator(qr.h).start();
+                    zvVar.animate().alpha(isEmpty ? 0.0f : 1.0f).setDuration(200L).setInterpolator(qr.h).start();
                 }
                 if (!isEmpty || oxVar.M != 0) {
                     z10 = isEmpty ? true : true;
@@ -473,26 +473,26 @@ public final class tx extends vl0 {
         if (i14 != 0) {
             SparseIntArray sparseIntArray = this.r;
             if (i14 == 1) {
-                org.telegram.ui.Cells.o8 o8Var = (org.telegram.ui.Cells.o8) view;
-                o8Var.getClass();
+                org.telegram.ui.Cells.p8 p8Var = (org.telegram.ui.Cells.p8) view;
+                p8Var.getClass();
                 int i15 = sparseIntArray.get(i12);
                 if (i12 == this.c) {
-                    o8Var.c(LocaleController.getString(R.string.FeaturedEmojiPacks), R.drawable.msg_close, LocaleController.getString(R.string.AccDescrCloseTrendingEmoji), 0, 0);
+                    p8Var.c(LocaleController.getString(R.string.FeaturedEmojiPacks), R.drawable.msg_close, LocaleController.getString(R.string.AccDescrCloseTrendingEmoji), 0, 0);
                     return;
                 }
                 if (i12 == this.f) {
-                    o8Var.b(0, LocaleController.getString(R.string.RecentlyUsed));
+                    p8Var.b(0, LocaleController.getString(R.string.RecentlyUsed));
                     return;
                 } else {
                     if (i15 < strArr.length) {
-                        o8Var.b(0, strArr[i15]);
+                        p8Var.b(0, strArr[i15]);
                         return;
                     }
                     try {
-                        o8Var.b(0, ((xx) arrayList.get(i15 - strArr.length)).b.title);
+                        p8Var.b(0, ((xx) arrayList.get(i15 - strArr.length)).b.title);
                         return;
                     } catch (Exception unused) {
-                        o8Var.b(0, "");
+                        p8Var.b(0, "");
                         return;
                     }
                 }
@@ -631,9 +631,9 @@ public final class tx extends vl0 {
             tyVar.a(null, z10);
             if (tyVar.getSpan() == null || tyVar.getSpan().getDocumentId() != l4.longValue()) {
                 if (document != null) {
-                    tyVar.setSpan(new z5(document, (Paint.FontMetricsInt) null));
+                    tyVar.setSpan(new y5(document, (Paint.FontMetricsInt) null));
                 } else {
-                    tyVar.setSpan(new z5(l4.longValue(), (Paint.FontMetricsInt) null));
+                    tyVar.setSpan(new y5(l4.longValue(), (Paint.FontMetricsInt) null));
                 }
             }
         } else {
@@ -648,7 +648,7 @@ public final class tx extends vl0 {
     public final s4.c1 x(ViewGroup viewGroup, int i10) {
         View view;
         kz kzVar = this.F;
-        org.telegram.ui.ActionBar.e6 e6Var = kzVar.Z1;
+        org.telegram.ui.ActionBar.f6 f6Var = kzVar.Z1;
         if (i10 == 0) {
             view = new ty(kzVar.getContext());
         } else if (i10 != 1) {
@@ -677,8 +677,8 @@ public final class tx extends vl0 {
                     TextView textView = new TextView(context2);
                     zxVar.a = textView;
                     textView.setTextSize(1, 13.0f);
-                    textView.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.d6, e6Var));
-                    textView.setBackground(org.telegram.ui.ActionBar.j6.b0(AndroidUtilities.dp(11.0f), i0.a.k(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Te, e6Var), 99)));
+                    textView.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.d6, f6Var));
+                    textView.setBackground(org.telegram.ui.ActionBar.j6.b0(AndroidUtilities.dp(11.0f), i0.a.k(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Te, f6Var), 99)));
                     textView.setTypeface(AndroidUtilities.bold());
                     textView.setPadding(AndroidUtilities.dp(6.0f), AndroidUtilities.dp(1.66f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(2.0f));
                     zxVar.addView(textView, w7.y5.e(-2, -2, 17));
@@ -686,26 +686,26 @@ public final class tx extends vl0 {
                 }
             } else {
                 yx yxVar = new yx(kzVar.getContext());
-                p6 p6Var = new p6(yxVar.getContext(), false, false, false);
-                p6Var.b(0.3f, 250L, qr.h);
-                p6Var.setTextSize(AndroidUtilities.dp(14.0f));
-                p6Var.setTypeface(AndroidUtilities.bold());
-                p6Var.setTextColor(kzVar.z(org.telegram.ui.ActionBar.j6.Sh));
-                p6Var.setGravity(17);
+                o6 o6Var = new o6(yxVar.getContext(), false, false, false);
+                o6Var.b(0.3f, 250L, qr.h);
+                o6Var.setTextSize(AndroidUtilities.dp(14.0f));
+                o6Var.setTypeface(AndroidUtilities.bold());
+                o6Var.setTextColor(kzVar.z(org.telegram.ui.ActionBar.j6.Sh));
+                o6Var.setGravity(17);
                 FrameLayout frameLayout = new FrameLayout(yxVar.getContext());
                 frameLayout.setBackground(org.telegram.ui.ActionBar.y5.e(new float[]{8.0f}, kzVar.z(org.telegram.ui.ActionBar.j6.Oh)));
-                frameLayout.addView(p6Var, w7.y5.e(-1, -2, 17));
+                frameLayout.addView(o6Var, w7.y5.e(-1, -2, 17));
                 yxVar.addView(frameLayout, w7.y5.c(-1.0f, -1));
-                rg.p0 p0Var = new rg.p0(yxVar.getContext(), e6Var, false);
+                rg.p0 p0Var = new rg.p0(yxVar.getContext(), f6Var, false);
                 p0Var.setIcon(R.raw.unlock_icon);
                 yxVar.addView(p0Var, w7.y5.c(-1.0f, -1));
                 view = yxVar;
             }
         } else {
-            org.telegram.ui.Cells.o8 o8Var = new org.telegram.ui.Cells.o8(kzVar.getContext(), true, false, kzVar.Z1, kzVar.i2);
-            o8Var.setOnIconClickListener(new f0(this, 14));
-            view = o8Var;
+            org.telegram.ui.Cells.p8 p8Var = new org.telegram.ui.Cells.p8(kzVar.getContext(), true, false, kzVar.Z1, kzVar.i2);
+            p8Var.setOnIconClickListener(new f0(this, 14));
+            view = p8Var;
         }
-        return new gl0(view);
+        return new fl0(view);
     }
 }

@@ -4,12 +4,12 @@ import android.graphics.Canvas;
 import android.graphics.Path;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class nu0 extends qg.c2 {
+public final class nu0 extends qg.d2 {
     public final Path o0;
     public boolean p0;
-    public final org.telegram.ui.Components.e6 q0;
+    public final org.telegram.ui.Components.d6 q0;
     public final /* synthetic */ PhotoViewer r0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -17,7 +17,7 @@ public final class nu0 extends qg.c2 {
         super(photoViewer.p5, photoViewer.E, photoViewer.v2, photoViewer.b0);
         this.r0 = photoViewer;
         this.o0 = new Path();
-        this.q0 = new org.telegram.ui.Components.e6(this, 0L, 420L, org.telegram.ui.Components.qr.h);
+        this.q0 = new org.telegram.ui.Components.d6(this, 0L, 420L, org.telegram.ui.Components.qr.h);
     }
 
     public final void m(boolean z10, boolean z11) {
@@ -28,7 +28,7 @@ public final class nu0 extends qg.c2 {
         invalidate();
     }
 
-    @Override // qg.c2, ci.d, android.view.View
+    @Override // qg.d2, ci.d, android.view.View
     public final void onDraw(Canvas canvas) {
         canvas.save();
         Path path = this.o0;

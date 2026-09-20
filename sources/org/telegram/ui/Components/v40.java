@@ -7,12 +7,12 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class v40 extends FrameLayout {
     public View a;
     public TextView b;
-    public lj0 c;
+    public kj0 c;
     public LinearLayout d;
 
     @Override // android.widget.FrameLayout, android.view.View

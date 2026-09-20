@@ -19,9 +19,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.CompoundEmoji;
 import org.telegram.messenger.Emoji;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class wx extends wl0 {
+public final class wx extends vl0 {
     public boolean X2;
     public final SparseArray Y2;
     public final ArrayList Z2;
@@ -46,7 +46,7 @@ public final class wx extends wl0 {
         qr qrVar = qr.f;
     }
 
-    @Override // org.telegram.ui.Components.wl0
+    @Override // org.telegram.ui.Components.vl0
     public final void K0(Canvas canvas, RectF rectF, long j3) {
         SparseArray sparseArray;
         ArrayList arrayList;
@@ -89,7 +89,7 @@ public final class wx extends wl0 {
                     int top = childAt.getTop() + ((int) childAt.getTranslationY());
                     ArrayList arrayList4 = (ArrayList) sparseArray.get(top);
                     if (arrayList4 == null) {
-                        arrayList4 = !arrayList.isEmpty() ? (ArrayList) hg.k0.v(i13, arrayList) : new ArrayList();
+                        arrayList4 = !arrayList.isEmpty() ? (ArrayList) hg.k0.x(i13, arrayList) : new ArrayList();
                         sparseArray.put(top, arrayList4);
                     }
                     arrayList4.add((ty) childAt);
@@ -149,7 +149,7 @@ public final class wx extends wl0 {
                 i17++;
             }
             if (uxVar == null) {
-                uxVar = !arrayList2.isEmpty() ? (ux) hg.k0.v(1, arrayList2) : new ux(this);
+                uxVar = !arrayList2.isEmpty() ? (ux) hg.k0.x(1, arrayList2) : new ux(this);
                 uxVar.M = i16;
                 uxVar.e();
             }
@@ -184,7 +184,7 @@ public final class wx extends wl0 {
         canvas.restore();
     }
 
-    @Override // org.telegram.ui.Components.wl0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.vl0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         SparseArray sparseArray;
         ArrayList arrayList;
@@ -220,7 +220,7 @@ public final class wx extends wl0 {
                     int top = childAt.getTop() + ((int) childAt.getTranslationY());
                     ArrayList arrayList4 = (ArrayList) sparseArray.get(top);
                     if (arrayList4 == null) {
-                        arrayList4 = !arrayList.isEmpty() ? (ArrayList) hg.k0.v(1, arrayList) : new ArrayList();
+                        arrayList4 = !arrayList.isEmpty() ? (ArrayList) hg.k0.x(1, arrayList) : new ArrayList();
                         sparseArray.put(top, arrayList4);
                     }
                     arrayList4.add((ty) childAt);
@@ -270,7 +270,7 @@ public final class wx extends wl0 {
                 i15++;
             }
             if (uxVar == null) {
-                uxVar = !arrayList2.isEmpty() ? (ux) hg.k0.v(1, arrayList2) : new ux(this);
+                uxVar = !arrayList2.isEmpty() ? (ux) hg.k0.x(1, arrayList2) : new ux(this);
                 uxVar.M = i14;
                 uxVar.e();
             }
@@ -302,7 +302,7 @@ public final class wx extends wl0 {
         arrayList5.clear();
     }
 
-    @Override // org.telegram.ui.Components.wl0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.vl0, android.view.ViewGroup, android.view.View
     public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
         boolean z10 = motionEvent.getActionMasked() == 5 || motionEvent.getActionMasked() == 0;
         boolean z11 = motionEvent.getActionMasked() == 6 || motionEvent.getActionMasked() == 1;
@@ -378,17 +378,17 @@ public final class wx extends wl0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.wl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.vl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         z1();
     }
 
-    @Override // org.telegram.ui.Components.wl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.vl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         ArrayList arrayList;
         super.onDetachedFromWindow();
-        z5.release(this, (LongSparseArray<q5>) this.f3.d2);
+        y5.release(this, (LongSparseArray<p5>) this.f3.d2);
         int i10 = 0;
         int i11 = 0;
         while (true) {
@@ -412,7 +412,7 @@ public final class wx extends wl0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.wl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.vl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
         kz kzVar = this.f3;
         if (kzVar.f) {
@@ -421,7 +421,7 @@ public final class wx extends wl0 {
         return super.onInterceptTouchEvent(motionEvent) || org.telegram.ui.st.q().r(motionEvent, this, kzVar.g2, this.p2);
     }
 
-    @Override // org.telegram.ui.Components.wl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.vl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         kz kzVar = this.f3;
         if (kzVar.d0 && kzVar.c0) {
@@ -435,7 +435,7 @@ public final class wx extends wl0 {
         z1();
     }
 
-    @Override // org.telegram.ui.Components.wl0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    @Override // org.telegram.ui.Components.vl0, androidx.recyclerview.widget.RecyclerView, android.view.View
     public final void onMeasure(int i10, int i11) {
         this.X2 = true;
         int size = View.MeasureSpec.getSize(i10);
@@ -450,7 +450,7 @@ public final class wx extends wl0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.wl0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    @Override // org.telegram.ui.Components.vl0, androidx.recyclerview.widget.RecyclerView, android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         kz kzVar = this.f3;
         int[] iArr = kzVar.D1;
@@ -525,7 +525,7 @@ public final class wx extends wl0 {
         return super.onTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.ui.Components.wl0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
+    @Override // org.telegram.ui.Components.vl0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
     public final void requestLayout() {
         if (this.X2) {
             return;
@@ -565,13 +565,13 @@ public final class wx extends wl0 {
         int i10 = kzVar.c;
         wx wxVar = kzVar.P;
         wx wxVar2 = kzVar.P;
-        z5[] z5VarArr = new z5[wxVar.getChildCount()];
+        y5[] y5VarArr = new y5[wxVar.getChildCount()];
         for (int i11 = 0; i11 < wxVar2.getChildCount(); i11++) {
             View childAt = wxVar2.getChildAt(i11);
             if (childAt instanceof ty) {
-                z5VarArr[i11] = ((ty) childAt).getSpan();
+                y5VarArr[i11] = ((ty) childAt).getSpan();
             }
         }
-        kzVar.d2 = z5.update(i10, this, z5VarArr, (LongSparseArray<q5>) kzVar.d2);
+        kzVar.d2 = y5.update(i10, this, y5VarArr, (LongSparseArray<p5>) kzVar.d2);
     }
 }

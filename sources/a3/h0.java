@@ -42,17 +42,17 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_update;
-import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.bg;
+import org.telegram.ui.Components.d5;
 import org.telegram.ui.Components.dh;
-import org.telegram.ui.Components.e5;
-import org.telegram.ui.Components.ix0;
+import org.telegram.ui.Components.hx0;
+import org.telegram.ui.Components.jv0;
 import org.telegram.ui.Components.km;
-import org.telegram.ui.Components.kv0;
+import org.telegram.ui.Components.n80;
 import org.telegram.ui.Components.nm;
-import org.telegram.ui.Components.o80;
 import org.telegram.ui.Components.pm;
 import org.telegram.ui.Components.qm;
 import org.telegram.ui.Components.vi;
@@ -63,16 +63,16 @@ import org.telegram.ui.aa0;
 import org.telegram.ui.fu;
 import org.telegram.ui.ga0;
 import org.telegram.ui.i60;
-import org.telegram.ui.jd0;
+import org.telegram.ui.kd0;
 import org.telegram.ui.ln;
 import org.telegram.ui.mw0;
 import org.telegram.ui.sr;
-import org.telegram.ui.tc0;
+import org.telegram.ui.uc0;
 import org.telegram.ui.uy;
 import org.telegram.ui.vq;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final /* synthetic */ class h0 implements Runnable {
     public final /* synthetic */ int a;
@@ -382,7 +382,7 @@ public final /* synthetic */ class h0 implements Runnable {
                 long j23 = this.b;
                 zn znVar2 = lnVar.a;
                 i11 = ((n2) znVar2).currentAccount;
-                e5.t0(SendMessagesHelper.getInstance(i11).sendMessage(arrayList6, j23, false, false, true, 0, 0, null, -1, 0L, znVar2.N8(), znVar2.g5), znVar2, null);
+                d5.t0(SendMessagesHelper.getInstance(i11).sendMessage(arrayList6, j23, false, false, true, 0, 0, null, -1, 0L, znVar2.N8(), znVar2.g5), znVar2, null);
                 return;
             case 16:
                 sr srVar = (sr) this.c;
@@ -417,7 +417,7 @@ public final /* synthetic */ class h0 implements Runnable {
                 return;
             case 19:
                 vi viVar = (vi) this.c;
-                e5.M(viVar.getContext(), this.b, new dh(viVar, 14), (e6) this.d);
+                d5.M(viVar.getContext(), this.b, new dh(viVar, 14), (f6) this.d);
                 return;
             case 20:
                 pm pmVar = (pm) this.c;
@@ -455,13 +455,13 @@ public final /* synthetic */ class h0 implements Runnable {
                 }
                 return;
             case 21:
-                o80.Xc((o80) this.c, this.b, (TLRPC.Chat) this.d);
+                n80.Xc((n80) this.c, this.b, (TLRPC.Chat) this.d);
                 return;
             case 22:
-                ((kv0) this.c).v1.presentFragment(zn.Q9(((MessageObject) this.d).getId(), this.b));
+                ((jv0) this.c).v1.presentFragment(zn.Q9(((MessageObject) this.d).getId(), this.b));
                 return;
             case 23:
-                ix0.y1((ix0) this.c, (TLRPC.TL_messages_emojiGroups) this.d, this.b);
+                hx0.y1((hx0) this.c, (TLRPC.TL_messages_emojiGroups) this.d, this.b);
                 return;
             case 24:
                 uy uyVar2 = (uy) this.c;
@@ -537,10 +537,10 @@ public final /* synthetic */ class h0 implements Runnable {
                 AndroidUtilities.runOnUIThread(new vq(launchActivity2, MessagesStorage.getInstance(launchActivity2.O).getUser(j31), ga0Var, 13));
                 return;
             case 28:
-                jd0 jd0Var = (jd0) this.c;
+                kd0 kd0Var = (kd0) this.c;
                 TLObject tLObject2 = (TLObject) this.d;
                 long j32 = this.b;
-                if (jd0Var.I == null) {
+                if (kd0Var.I == null) {
                     return;
                 }
                 TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject2;
@@ -552,17 +552,17 @@ public final /* synthetic */ class h0 implements Runnable {
                     }
                     i23++;
                 }
-                jd0Var.getMessagesStorage().putUsersAndChats(messages_messages.users, messages_messages.chats, true, true);
-                jd0Var.getMessagesController().putUsers(messages_messages.users, false);
-                jd0Var.getMessagesController().putChats(messages_messages.chats, false);
-                jd0Var.getLocationController().locationsCache.k(messages_messages.messages, j32);
-                jd0Var.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.liveLocationsCacheChanged, Long.valueOf(j32));
-                jd0Var.i0(messages_messages.messages);
-                jd0Var.getLocationController().markLiveLoactionsAsRead(jd0Var.e0);
-                if (jd0Var.J0 == null) {
-                    tc0 tc0Var = new tc0(jd0Var, 4);
-                    jd0Var.J0 = tc0Var;
-                    AndroidUtilities.runOnUIThread(tc0Var, 5000L);
+                kd0Var.getMessagesStorage().putUsersAndChats(messages_messages.users, messages_messages.chats, true, true);
+                kd0Var.getMessagesController().putUsers(messages_messages.users, false);
+                kd0Var.getMessagesController().putChats(messages_messages.chats, false);
+                kd0Var.getLocationController().locationsCache.k(messages_messages.messages, j32);
+                kd0Var.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.liveLocationsCacheChanged, Long.valueOf(j32));
+                kd0Var.i0(messages_messages.messages);
+                kd0Var.getLocationController().markLiveLoactionsAsRead(kd0Var.e0);
+                if (kd0Var.J0 == null) {
+                    uc0 uc0Var = new uc0(kd0Var, 4);
+                    kd0Var.J0 = uc0Var;
+                    AndroidUtilities.runOnUIThread(uc0Var, 5000L);
                     return;
                 }
                 return;

@@ -7,11 +7,11 @@ import android.graphics.Path;
 import android.graphics.RectF;
 import android.view.MotionEvent;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.Components.x81;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class k extends x81 {
     public final Path U;
@@ -20,16 +20,16 @@ public final class k extends x81 {
     public boolean a0;
     public final boolean b0;
     public final /* synthetic */ z0 c0;
-    public final /* synthetic */ e6 d0;
+    public final /* synthetic */ f6 d0;
     public final /* synthetic */ a0 e0;
     public final /* synthetic */ m f0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public k(m mVar, Context context, z0 z0Var, e6 e6Var, a0 a0Var) {
+    public k(m mVar, Context context, z0 z0Var, f6 f6Var, a0 a0Var) {
         super(context, null);
         this.f0 = mVar;
         this.c0 = z0Var;
-        this.d0 = e6Var;
+        this.d0 = f6Var;
         this.e0 = a0Var;
         this.U = new Path();
         this.V = new Paint(1);

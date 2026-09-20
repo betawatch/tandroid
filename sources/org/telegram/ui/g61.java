@@ -1,6 +1,75 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+import android.content.Context;
+import android.util.SparseIntArray;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public interface g61 {
+public final class g61 extends l61 {
+    public final /* synthetic */ int f3;
+    public final /* synthetic */ j71 g3;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public g61(j71 j71Var, Context context, int i10) {
+        super(j71Var, context);
+        this.g3 = j71Var;
+        this.f3 = i10;
+    }
+
+    @Override // androidx.recyclerview.widget.RecyclerView
+    public final void k0(int i10) {
+        j71 j71Var = this.g3;
+        a61 a61Var = j71Var.f0;
+        if (i10 == 0) {
+            j71Var.w1 = false;
+            if (j71Var.a == -1 || a61Var.getVisibility() != 0 || a61Var.getTranslationY() <= (-AndroidUtilities.dp(51.0f))) {
+                return;
+            }
+            j71.a(j71Var, a61Var.getTranslationY() > ((float) (-AndroidUtilities.dp(16.0f))) ? 0 : 1, 0);
+        }
+    }
+
+    @Override // androidx.recyclerview.widget.RecyclerView
+    public final void l0(int i10, int i11) {
+        int i12;
+        j71 j71Var = this.g3;
+        j71Var.h();
+        if (!j71Var.w1) {
+            int I0 = j71Var.r0.I0();
+            ArrayList arrayList = j71Var.D0;
+            SparseIntArray sparseIntArray = j71Var.w0;
+            if (I0 != -1) {
+                if (I0 > ((arrayList.size() <= 40 || j71Var.C0) ? arrayList.size() + (j71Var.N0 ? 1 : 0) : 40) && I0 > j71Var.I0.size()) {
+                    int i13 = 0;
+                    while (true) {
+                        if (i13 >= sparseIntArray.size()) {
+                            break;
+                        }
+                        int keyAt = sparseIntArray.keyAt(i13);
+                        int valueAt = sparseIntArray.valueAt(i13);
+                        org.telegram.ui.Components.xx xxVar = valueAt >= 0 ? (org.telegram.ui.Components.xx) j71Var.M0.get(valueAt) : null;
+                        if (xxVar != null) {
+                            boolean z10 = xxVar.h;
+                            int size = xxVar.c.size();
+                            if (!z10) {
+                                size = Math.min(24, size);
+                            }
+                            if (I0 > keyAt && I0 <= keyAt + 1 + size) {
+                                org.telegram.ui.Components.dw dwVar = j71Var.d0;
+                                dwVar.j(((dwVar.E == null || !dwVar.b0) ? 0 : 1) + (dwVar.y != null ? 1 : 0) + valueAt, true);
+                            }
+                        }
+                        i13++;
+                    }
+                } else {
+                    j71Var.d0.j(0, true);
+                }
+            }
+        }
+        j71Var.C();
+        AndroidUtilities.updateViewVisibilityAnimated(j71Var.e0, j71Var.h0.computeVerticalScrollOffset() != 0 || (i12 = this.f3) == 0 || i12 == 12 || i12 == 10 || i12 == 1 || i12 == 11 || i12 == 6, 1.0f, true);
+        j71Var.m();
+    }
 }

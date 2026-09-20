@@ -17,19 +17,19 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.regex.Pattern;
 import n6.l;
-import n7.z0;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.telegram.ui.Cells.f3;
 import q9.n;
 import t7.u;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class c implements d {
     public static final Object m = new Object();
     public final k9.h a;
     public final sa.c b;
-    public final z0 c;
+    public final f3 c;
     public final j d;
     public final n e;
     public final h f;
@@ -47,7 +47,7 @@ public final class c implements d {
     public c(k9.h hVar, pa.b bVar, ExecutorService executorService, r9.i iVar) {
         hVar.a();
         sa.c cVar = new sa.c(hVar.a, bVar);
-        z0 z0Var = new z0(hVar);
+        f3 f3Var = new f3(hVar);
         if (u.b == null) {
             u.b = new u();
         }
@@ -63,7 +63,7 @@ public final class c implements d {
         this.l = new ArrayList();
         this.a = hVar;
         this.b = cVar;
-        this.c = z0Var;
+        this.c = f3Var;
         this.d = jVar;
         this.e = nVar;
         this.f = hVar2;
@@ -85,32 +85,32 @@ public final class c implements d {
         r2.c = r3;
         r2.b = 3;
         r2 = r2.a();
-        r4.z(r2);
+        r4.s(r2);
      */
     /* JADX WARN: Finally extract failed */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void b() {
-        ra.b E;
+        ra.b x10;
         synchronized (m) {
             try {
                 k9.h hVar = this.a;
                 hVar.a();
-                z0 f7 = z0.f(hVar.a);
+                f3 a2 = f3.a(hVar.a);
                 try {
-                    E = this.c.E();
-                    int i10 = E.b;
+                    x10 = this.c.x();
+                    int i10 = x10.b;
                     boolean z10 = true;
                     if (i10 != 2 && i10 != 1) {
                         z10 = false;
                     }
-                    if (f7 != null) {
-                        f7.I();
+                    if (a2 != null) {
+                        a2.z();
                     }
                 } catch (Throwable th2) {
-                    if (f7 != null) {
-                        f7.I();
+                    if (a2 != null) {
+                        a2.z();
                     }
                     throw th2;
                 }
@@ -118,7 +118,7 @@ public final class c implements d {
                 throw th3;
             }
         }
-        k(E);
+        k(x10);
         this.i.execute(new b(this, 1));
     }
 
@@ -238,15 +238,15 @@ public final class c implements d {
             try {
                 k9.h hVar = this.a;
                 hVar.a();
-                z0 f7 = z0.f(hVar.a);
+                f3 a2 = f3.a(hVar.a);
                 try {
-                    this.c.z(bVar);
-                    if (f7 != null) {
-                        f7.I();
+                    this.c.s(bVar);
+                    if (a2 != null) {
+                        a2.z();
                     }
                 } catch (Throwable th2) {
-                    if (f7 != null) {
-                        f7.I();
+                    if (a2 != null) {
+                        a2.z();
                     }
                     throw th2;
                 }

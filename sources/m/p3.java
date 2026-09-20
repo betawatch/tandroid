@@ -12,12 +12,12 @@ import java.util.Set;
 import java.util.concurrent.Executor;
 import java.util.concurrent.atomic.AtomicMarkableReference;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.w70;
+import org.telegram.ui.Components.v70;
 import w7.y5;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class p3 implements n5.b {
     public Object a;
@@ -49,9 +49,9 @@ public final class p3 implements n5.b {
 
     public void a() {
         c(null);
-        w70 w70Var = (w70) this.c;
-        if (w70Var != null) {
-            w70Var.u();
+        v70 v70Var = (v70) this.c;
+        if (v70Var != null) {
+            v70Var.u();
             this.c = null;
         }
         this.d = null;
@@ -60,7 +60,7 @@ public final class p3 implements n5.b {
     }
 
     public void b(d6 d6Var, ArrayList arrayList) {
-        e6 e6Var = (e6) this.b;
+        f6 f6Var = (f6) this.b;
         LinearLayout linearLayout = (LinearLayout) this.d;
         if (linearLayout == null) {
             return;
@@ -72,9 +72,9 @@ public final class p3 implements n5.b {
             Object obj = arrayList.get(i10);
             i10++;
             ii.o0 o0Var = (ii.o0) obj;
-            ii.n0 n0Var = new ii.n0(d6Var.getContext(), o0Var, e6Var);
+            ii.n0 n0Var = new ii.n0(d6Var.getContext(), o0Var, f6Var);
             n0Var.setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(12.0f), 0);
-            n0Var.setBackground(j6.Y(j6.v0(j6.i6, e6Var), 0, 0));
+            n0Var.setBackground(j6.Y(j6.v0(j6.i6, f6Var), 0, 0));
             n0Var.setOnClickListener(new ai.d0(this, d6Var, o0Var, 10));
             ((LinearLayout) this.d).addView(n0Var, y5.n(-1, 48));
         }
@@ -95,8 +95,8 @@ public final class p3 implements n5.b {
     }
 
     public void d(d6 d6Var, String str) {
-        w70 w70Var;
-        w70 w70Var2;
+        v70 v70Var;
+        v70 v70Var2;
         if (str == null) {
             a();
             return;
@@ -107,13 +107,13 @@ public final class p3 implements n5.b {
             return;
         }
         c(d6Var);
-        if (((d6) this.f) == d6Var && a2.equals((ArrayList) this.e) && (w70Var2 = (w70) this.c) != null && w70Var2.D()) {
+        if (((d6) this.f) == d6Var && a2.equals((ArrayList) this.e) && (v70Var2 = (v70) this.c) != null && v70Var2.D()) {
             return;
         }
-        if (((d6) this.f) == d6Var && (w70Var = (w70) this.c) != null && w70Var.D() && ((LinearLayout) this.d) != null) {
+        if (((d6) this.f) == d6Var && (v70Var = (v70) this.c) != null && v70Var.D() && ((LinearLayout) this.d) != null) {
             this.e = a2;
             b(d6Var, a2);
-            ((w70) this.c).O();
+            ((v70) this.c).O();
             return;
         }
         a();
@@ -124,7 +124,7 @@ public final class p3 implements n5.b {
         this.d = linearLayout;
         linearLayout.setOrientation(1);
         b(d6Var, a2);
-        w70 a10 = ((ii.p0) this.a).a(d6Var.getEditText());
+        v70 a10 = ((ii.p0) this.a).a(d6Var.getEditText());
         a10.Q = true;
         a10.s = 0;
         a10.t = false;
@@ -146,7 +146,7 @@ public final class p3 implements n5.b {
         Context context = (Context) ((fd.a) this.a).get();
         m5.d dVar = (m5.d) ((fd.a) this.b).get();
         s5.d dVar2 = (s5.d) ((fd.a) this.c).get();
-        lf.i iVar = (lf.i) ((lf.i) this.d).get();
+        lf.h hVar = (lf.h) ((lf.h) this.d).get();
         Executor executor = (Executor) ((fd.a) this.e).get();
         t5.c cVar = (t5.c) ((fd.a) this.f).get();
         rb.a aVar = new rb.a(23);
@@ -156,7 +156,7 @@ public final class p3 implements n5.b {
         bVar2.a = context;
         bVar2.b = dVar;
         bVar2.c = dVar2;
-        bVar2.d = iVar;
+        bVar2.d = hVar;
         bVar2.e = executor;
         bVar2.f = cVar;
         bVar2.g = aVar;
@@ -165,9 +165,9 @@ public final class p3 implements n5.b {
         return bVar2;
     }
 
-    public p3(ii.p0 p0Var, e6 e6Var) {
+    public p3(ii.p0 p0Var, f6 f6Var) {
         this.a = p0Var;
-        this.b = e6Var;
+        this.b = f6Var;
     }
 
     public p3(String str, ba.c cVar, com.google.firebase.messaging.t tVar) {

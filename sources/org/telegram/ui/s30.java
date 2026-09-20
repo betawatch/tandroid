@@ -5,9 +5,9 @@ import android.text.TextUtils;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class s30 extends org.telegram.ui.Components.d8 {
+public final class s30 extends org.telegram.ui.Components.c8 {
     public final /* synthetic */ i60 E;
     public final /* synthetic */ Activity y;
 
@@ -18,7 +18,7 @@ public final class s30 extends org.telegram.ui.Components.d8 {
         this.y = activity;
     }
 
-    @Override // org.telegram.ui.Components.d8
+    @Override // org.telegram.ui.Components.c8
     public final TextView a() {
         TextView textView = new TextView(this.y);
         textView.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.hg, false));

@@ -14,12 +14,12 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.rk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class la implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -147,17 +147,17 @@ public final /* synthetic */ class la implements Utilities.Callback {
                 oc ocVar4 = this.b;
                 ai.d dVar = ocVar4.a;
                 int intValue = ((Integer) obj).intValue() / 3600;
-                org.telegram.ui.Components.kb kbVar = new org.telegram.ui.Components.lb(ocVar4.b, new d9(1)).a;
-                WindowManager.LayoutParams layout = kbVar.getLayout();
+                org.telegram.ui.Components.jb jbVar = new org.telegram.ui.Components.kb(ocVar4.b, new d9(1)).a;
+                WindowManager.LayoutParams layout = jbVar.getLayout();
                 if (layout != null) {
                     layout.height = -2;
                     layout.width = ocVar4.r.getWidth();
                     layout.y = (int) (ocVar4.r.getY() + AndroidUtilities.dp(56.0f));
-                    org.telegram.ui.Components.lb lbVar = kbVar.a;
-                    lbVar.getWindow().setAttributes(lbVar.b);
+                    org.telegram.ui.Components.kb kbVar = jbVar.a;
+                    kbVar.getWindow().setAttributes(kbVar.b);
                 }
-                kbVar.setTouchable(true);
-                new org.telegram.ui.Components.xc(kbVar, dVar).G(R.raw.fire_on, 3, AndroidUtilities.replaceSingleTag(LocaleController.formatPluralString("StoryPeriodPremium", intValue, new Object[0]), org.telegram.ui.ActionBar.j6.gc, 0, new ka(ocVar4, 27), dVar)).k(true);
+                jbVar.setTouchable(true);
+                new org.telegram.ui.Components.xc(jbVar, dVar).G(R.raw.fire_on, 3, AndroidUtilities.replaceSingleTag(LocaleController.formatPluralString("StoryPeriodPremium", intValue, new Object[0]), org.telegram.ui.ActionBar.j6.gc, 0, new ka(ocVar4, 27), dVar)).k(true);
                 break;
             case 6:
                 Boolean bool = (Boolean) obj;
@@ -175,10 +175,10 @@ public final /* synthetic */ class la implements Utilities.Callback {
                 }
                 ocVar5.X0.x(2, bool.booleanValue());
                 ocVar5.Y0.clearAnimation();
-                wh.q(ocVar5.Y0.animate(), bool.booleanValue() ? 0.0f : 1.0f, 120L);
-                org.telegram.ui.Components.qc qcVar = org.telegram.ui.Components.qc.w;
-                if (qcVar != null && qcVar.a == 2) {
-                    qcVar.l();
+                rk.r(ocVar5.Y0.animate(), bool.booleanValue() ? 0.0f : 1.0f, 120L);
+                org.telegram.ui.Components.pc pcVar = org.telegram.ui.Components.pc.w;
+                if (pcVar != null && pcVar.a == 2) {
+                    pcVar.l();
                     break;
                 }
                 break;
@@ -346,9 +346,9 @@ public final /* synthetic */ class la implements Utilities.Callback {
                     int i14 = -(AndroidUtilities.dp(24.0f) + ocVar12.c1.getEditTextHeight());
                     fbVar2.setTranslationY(i14 - (ocVar12.Z0 == null ? 0 : r6.getContentHeight() - AndroidUtilities.dp(5.0f)));
                 }
-                org.telegram.ui.Components.qc qcVar2 = org.telegram.ui.Components.qc.w;
-                if (qcVar2 != null && qcVar2.a == 2) {
-                    qcVar2.l();
+                org.telegram.ui.Components.pc pcVar2 = org.telegram.ui.Components.pc.w;
+                if (pcVar2 != null && pcVar2.a == 2) {
+                    pcVar2.l();
                 }
                 if (ocVar12.c1.p0 && (fbVar = ocVar12.d1) != null) {
                     fbVar.c(false, true);

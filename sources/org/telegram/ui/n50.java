@@ -8,7 +8,7 @@ import android.os.SystemClock;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class n50 extends org.telegram.ui.ActionBar.j5 {
     public LinearGradient M0;
@@ -59,7 +59,7 @@ public final class n50 extends org.telegram.ui.ActionBar.j5 {
         float f7;
         long j3;
         float f10;
-        float d;
+        float b10;
         float f11;
         if (this.M0 != null) {
             i60 i60Var = this.V0;
@@ -91,10 +91,10 @@ public final class n50 extends org.telegram.ui.ActionBar.j5 {
                     this.P0 = ((Utilities.random.nextInt(100) - 50) * 0.2f) / 50.0f;
                 }
                 float f12 = j3;
-                d = t8.b.d(f12 * 0.02f, i60Var.O0, 1.0f * f12, this.S0);
-                this.S0 = d;
+                b10 = org.telegram.ui.Cells.c1.b(f12 * 0.02f, i60Var.O0, 1.0f * f12, this.S0);
+                this.S0 = b10;
                 f11 = this.R0;
-                if (d > f11) {
+                if (b10 > f11) {
                     this.S0 = f11;
                 }
                 float interpolation = org.telegram.ui.Components.qr.g.getInterpolation(this.S0 / f11);
@@ -123,10 +123,10 @@ public final class n50 extends org.telegram.ui.ActionBar.j5 {
             this.Q0 = this.P0;
             this.P0 = ((Utilities.random.nextInt(100) - 50) * 0.2f) / 50.0f;
             float f122 = j3;
-            d = t8.b.d(f122 * 0.02f, i60Var.O0, 1.0f * f122, this.S0);
-            this.S0 = d;
+            b10 = org.telegram.ui.Cells.c1.b(f122 * 0.02f, i60Var.O0, 1.0f * f122, this.S0);
+            this.S0 = b10;
             f11 = this.R0;
-            if (d > f11) {
+            if (b10 > f11) {
             }
             float interpolation2 = org.telegram.ui.Components.qr.g.getInterpolation(this.S0 / f11);
             float f132 = this.T0;

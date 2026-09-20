@@ -10,7 +10,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.l20;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class p3 extends FrameLayout {
     public final x0 a;
@@ -21,16 +21,16 @@ public final class p3 extends FrameLayout {
     public final l20 f;
     public final RectF h;
 
-    public p3(Context context, org.telegram.ui.ActionBar.e6 e6Var, x0 x0Var) {
+    public p3(Context context, org.telegram.ui.ActionBar.f6 f6Var, x0 x0Var) {
         super(context);
         this.f = new l20();
         this.h = new RectF();
         this.a = x0Var;
-        o3 o3Var = new o3(context, e6Var);
+        o3 o3Var = new o3(context, f6Var);
         this.b = o3Var;
-        o3 o3Var2 = new o3(context, e6Var);
+        o3 o3Var2 = new o3(context, f6Var);
         this.c = o3Var2;
-        o3 o3Var3 = new o3(context, e6Var);
+        o3 o3Var3 = new o3(context, f6Var);
         this.d = o3Var3;
         addView(o3Var, w7.y5.d(-2, -2.0f, 51, 12.66f, 5.33f, 12.66f, 5.33f));
         addView(o3Var2, w7.y5.d(-2, -2.0f, 51, 12.66f, 5.33f, 12.66f, 5.33f));

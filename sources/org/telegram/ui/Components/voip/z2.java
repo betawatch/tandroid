@@ -11,10 +11,10 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LiteMode;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.o5;
+import org.telegram.ui.Components.n5;
 import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class z2 extends View {
     public boolean E;
@@ -75,9 +75,9 @@ public final class z2 extends View {
         super.onAttachedToWindow();
         if (this.K) {
             for (o3 o3Var : this.a) {
-                o5 o5Var = o3Var.a;
-                if (o5Var != null) {
-                    o5Var.a();
+                n5 n5Var = o3Var.a;
+                if (n5Var != null) {
+                    n5Var.a();
                     ValueAnimator valueAnimator = o3Var.b;
                     if (valueAnimator != null) {
                         valueAnimator.start();
@@ -85,9 +85,9 @@ public final class z2 extends View {
                 }
             }
             for (o3 o3Var2 : this.b) {
-                o5 o5Var2 = o3Var2.a;
-                if (o5Var2 != null) {
-                    o5Var2.a();
+                n5 n5Var2 = o3Var2.a;
+                if (n5Var2 != null) {
+                    n5Var2.a();
                     ValueAnimator valueAnimator2 = o3Var2.b;
                     if (valueAnimator2 != null) {
                         valueAnimator2.start();
@@ -102,25 +102,25 @@ public final class z2 extends View {
         super.onDetachedFromWindow();
         if (this.K) {
             for (o3 o3Var : this.a) {
-                o5 o5Var = o3Var.a;
-                if (o5Var != null) {
+                n5 n5Var = o3Var.a;
+                if (n5Var != null) {
                     ValueAnimator valueAnimator = o3Var.b;
                     if (valueAnimator != null) {
                         valueAnimator.cancel();
                         o3Var.b = null;
                     }
-                    o5Var.b();
+                    n5Var.b();
                 }
             }
             for (o3 o3Var2 : this.b) {
-                o5 o5Var2 = o3Var2.a;
-                if (o5Var2 != null) {
+                n5 n5Var2 = o3Var2.a;
+                if (n5Var2 != null) {
                     ValueAnimator valueAnimator2 = o3Var2.b;
                     if (valueAnimator2 != null) {
                         valueAnimator2.cancel();
                         o3Var2.b = null;
                     }
-                    o5Var2.b();
+                    n5Var2.b();
                 }
             }
             ValueAnimator valueAnimator3 = this.c;

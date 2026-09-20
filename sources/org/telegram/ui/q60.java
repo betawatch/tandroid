@@ -8,20 +8,20 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class q60 extends org.telegram.ui.Components.wl0 {
+public final class q60 extends org.telegram.ui.Components.vl0 {
     public final /* synthetic */ int X2;
     public final /* synthetic */ Object Y2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ q60(Object obj, Context context, org.telegram.ui.ActionBar.e6 e6Var, int i10) {
-        super(context, e6Var);
+    public /* synthetic */ q60(Object obj, Context context, org.telegram.ui.ActionBar.f6 f6Var, int i10) {
+        super(context, f6Var);
         this.X2 = i10;
         this.Y2 = obj;
     }
 
-    @Override // org.telegram.ui.Components.wl0
+    @Override // org.telegram.ui.Components.vl0
     public boolean I0(View view, float f7, float f10) {
         switch (this.X2) {
             case 3:
@@ -32,20 +32,20 @@ public final class q60 extends org.telegram.ui.Components.wl0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.wl0
+    @Override // org.telegram.ui.Components.vl0
     public Integer X0(int i10) {
         int i11;
         switch (this.X2) {
             case 2:
                 i11 = ((SessionsActivity) this.Y2).terminateAllSessionsRow;
-                org.telegram.ui.ActionBar.e6 e6Var = this.p2;
-                return i10 == i11 ? Integer.valueOf(org.telegram.ui.ActionBar.j6.l1(0.1f, org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.p7, e6Var))) : Integer.valueOf(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.i6, e6Var));
+                org.telegram.ui.ActionBar.f6 f6Var = this.p2;
+                return i10 == i11 ? Integer.valueOf(org.telegram.ui.ActionBar.j6.l1(0.1f, org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.p7, f6Var))) : Integer.valueOf(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.i6, f6Var));
             default:
                 return super.X0(i10);
         }
     }
 
-    @Override // org.telegram.ui.Components.wl0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.vl0, android.view.ViewGroup, android.view.View
     public void dispatchDraw(Canvas canvas) {
         org.telegram.ui.ActionBar.k kVar;
         switch (this.X2) {
@@ -116,7 +116,7 @@ public final class q60 extends org.telegram.ui.Components.wl0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.wl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.vl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         switch (this.X2) {
             case 3:

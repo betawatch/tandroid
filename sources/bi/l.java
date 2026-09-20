@@ -3,13 +3,13 @@ package bi;
 import android.view.KeyEvent;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.LocaleController;
+import org.telegram.ui.Components.gy0;
 import org.telegram.ui.Components.hj;
-import org.telegram.ui.Components.hy0;
 import org.telegram.ui.Components.ni;
 import org.telegram.ui.Components.zl;
 import s4.z0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class l extends s4.s {
     public final /* synthetic */ int Q;
@@ -26,7 +26,7 @@ public final class l extends s4.s {
     public boolean Y0() {
         switch (this.Q) {
             case 3:
-                return ((hy0) this.R).W != null && LocaleController.isRTL;
+                return ((gy0) this.R).W != null && LocaleController.isRTL;
             default:
                 return super.Y0();
         }
@@ -79,10 +79,10 @@ public final class l extends s4.s {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l(hy0 hy0Var) {
+    public l(gy0 gy0Var) {
         super(5);
         this.Q = 3;
-        this.R = hy0Var;
+        this.R = gy0Var;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */

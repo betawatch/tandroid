@@ -16,7 +16,7 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class mv extends FrameLayout {
     public int a;
@@ -150,9 +150,9 @@ public final class mv extends FrameLayout {
         for (int i12 = 0; i12 < nvVarArr.length; i12++) {
             nv nvVar = nvVarArr[i12];
             if (nvVar != null) {
-                org.telegram.ui.Components.wl0 wl0Var = nvVar.d;
-                if (wl0Var != null) {
-                    wl0Var.setPadding(0, measuredHeight, 0, 0);
+                org.telegram.ui.Components.vl0 vl0Var = nvVar.d;
+                if (vl0Var != null) {
+                    vl0Var.setPadding(0, measuredHeight, 0, 0);
                 }
                 ai.w0 w0Var = nvVarArr[i12].e;
                 if (w0Var != null) {

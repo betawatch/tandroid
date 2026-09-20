@@ -1,79 +1,116 @@
 package t8;
 
-import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.util.Log;
+import android.util.SparseArray;
+import b2.g;
+import com.google.android.gms.internal.vision.g3;
 import com.google.android.gms.internal.vision.u2;
+import java.nio.ByteBuffer;
+import java.util.HashSet;
+import lf.h;
+import n6.l;
+import org.telegram.ui.Cells.c1;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
-public final class c {
-    public int a;
-    public int b;
-    public boolean c;
+public final class c extends g {
+    public final q8.a b;
+    public final u2 c;
     public final Object d;
+    public boolean e;
 
-    public c(Context context) {
-        this.a = 0;
-        this.c = true;
-        this.b = 0;
-        this.d = context;
+    public c(u2 u2Var) {
+        super(3);
+        this.b = new q8.a();
+        this.d = new Object();
+        this.e = true;
+        this.c = u2Var;
     }
 
-    public d a() {
-        boolean z10;
-        u8.b bVar = new u8.b();
-        int i10 = this.b;
-        bVar.a = i10;
-        int i11 = this.a;
-        bVar.b = i11;
-        boolean z11 = false;
-        bVar.c = 0;
-        bVar.d = false;
-        bVar.e = this.c;
-        bVar.f = -1.0f;
-        if (i10 == 2 || i11 != 2) {
-            z10 = true;
+    @Override // b2.g
+    public final void U0() {
+        super.U0();
+        synchronized (this.d) {
+            try {
+                if (this.e) {
+                    this.c.l();
+                    this.e = false;
+                }
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
+    }
+
+    public final SparseArray Z0(h hVar) {
+        ByteBuffer I;
+        a[] n10;
+        Bitmap bitmap = (Bitmap) hVar.d;
+        if (bitmap != null) {
+            int width = bitmap.getWidth();
+            int height = bitmap.getHeight();
+            int i10 = width * height;
+            I = ByteBuffer.allocateDirect(((((height + 1) / 2) * ((width + 1) / 2)) << 1) + i10);
+            int i11 = i10;
+            for (int i12 = 0; i12 < i10; i12++) {
+                int i13 = i12 % width;
+                int i14 = i12 / width;
+                int pixel = bitmap.getPixel(i13, i14);
+                float red = Color.red(pixel);
+                float green = Color.green(pixel);
+                float blue = Color.blue(pixel);
+                I.put(i12, (byte) ((0.114f * blue) + (0.587f * green) + (0.299f * red)));
+                if (i14 % 2 == 0 && i13 % 2 == 0) {
+                    float b10 = c1.b(blue, 0.5f, ((-0.331f) * green) + ((-0.169f) * red), 128.0f);
+                    float b11 = c1.b(blue, -0.081f, (green * (-0.419f)) + (red * 0.5f), 128.0f);
+                    int i15 = i11 + 1;
+                    I.put(i11, (byte) b10);
+                    i11 += 2;
+                    I.put(i15, (byte) b11);
+                }
+            }
         } else {
-            Log.e("FaceDetector", "Contour is not supported for non-SELFIE mode.");
-            z10 = false;
+            I = hVar.I();
         }
-        if (bVar.b == 2 && bVar.c == 1) {
-            Log.e("FaceDetector", "Classification is not supported with contour.");
-        } else {
-            z11 = z10;
+        synchronized (this.d) {
+            if (!this.e) {
+                throw new IllegalStateException("Cannot use detector after release()");
+            }
+            u2 u2Var = this.c;
+            l.h(I);
+            n10 = u2Var.n(I, g3.b(hVar));
         }
-        if (z11) {
-            return new d(new u2((Context) this.d, bVar));
+        HashSet hashSet = new HashSet();
+        SparseArray sparseArray = new SparseArray(n10.length);
+        int i16 = 0;
+        for (a aVar : n10) {
+            int i17 = aVar.a;
+            i16 = Math.max(i16, i17);
+            if (hashSet.contains(Integer.valueOf(i17))) {
+                i17 = i16 + 1;
+                i16 = i17;
+            }
+            hashSet.add(Integer.valueOf(i17));
+            sparseArray.append(this.b.a(i17), aVar);
         }
-        throw new IllegalArgumentException("Invalid build options");
+        return sparseArray;
     }
 
-    public void b(int i10) {
-        if (i10 == 0 || i10 == 1 || i10 == 2) {
-            this.a = i10;
-            return;
+    public final void finalize() {
+        try {
+            synchronized (this.d) {
+                try {
+                    if (this.e) {
+                        Log.w("FaceDetector", "FaceDetector was not released with FaceDetector.release()");
+                        U0();
+                    }
+                } finally {
+                }
+            }
+        } finally {
+            super.finalize();
         }
-        StringBuilder sb2 = new StringBuilder(34);
-        sb2.append("Invalid landmark type: ");
-        sb2.append(i10);
-        throw new IllegalArgumentException(sb2.toString());
-    }
-
-    public void c(int i10) {
-        if (i10 == 0 || i10 == 1 || i10 == 2) {
-            this.b = i10;
-            return;
-        }
-        StringBuilder sb2 = new StringBuilder(25);
-        sb2.append("Invalid mode: ");
-        sb2.append(i10);
-        throw new IllegalArgumentException(sb2.toString());
-    }
-
-    public c(df.a... aVarArr) {
-        this.a = -1;
-        this.b = -1;
-        this.c = false;
-        this.d = aVarArr;
     }
 }

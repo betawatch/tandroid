@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.content.Context;
 import org.telegram.messenger.ContactsController;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class at extends gg.e {
     public final /* synthetic */ ContactsActivity L;
@@ -18,7 +18,7 @@ public final class at extends gg.e {
     /* JADX WARN: Removed duplicated region for block: B:24:0x005c  */
     /* JADX WARN: Removed duplicated region for block: B:6:0x0031  */
     /* JADX WARN: Removed duplicated region for block: B:9:0x0037  */
-    @Override // org.telegram.ui.Components.sl0
+    @Override // org.telegram.ui.Components.rl0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -82,12 +82,12 @@ public final class at extends gg.e {
         return i13;
     }
 
-    @Override // org.telegram.ui.Components.sl0, s4.h0
+    @Override // org.telegram.ui.Components.rl0, s4.h0
     public final void l() {
         X(false);
         ContactsActivity contactsActivity = this.L;
-        org.telegram.ui.Components.wl0 wl0Var = contactsActivity.f;
-        if (wl0Var == null || wl0Var.getAdapter() != this) {
+        org.telegram.ui.Components.vl0 vl0Var = contactsActivity.f;
+        if (vl0Var == null || vl0Var.getAdapter() != this) {
             return;
         }
         int h = h();

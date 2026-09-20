@@ -2,14 +2,14 @@ package org.telegram.ui;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class r4 extends c5 {
     public final /* synthetic */ com.google.firebase.messaging.m G;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public r4(com.google.firebase.messaging.m mVar, Context context, org.telegram.ui.ActionBar.e6 e6Var, v4 v4Var) {
-        super(context, e6Var, v4Var);
+    public r4(com.google.firebase.messaging.m mVar, Context context, org.telegram.ui.ActionBar.f6 f6Var, v4 v4Var) {
+        super(context, f6Var, v4Var);
         this.G = mVar;
     }
 }

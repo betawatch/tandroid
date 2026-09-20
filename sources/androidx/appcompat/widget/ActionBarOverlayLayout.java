@@ -32,26 +32,27 @@ import org.telegram.tgnet.TLObject;
 import r0.a0;
 import r0.a1;
 import r0.b1;
-import r0.c1;
 import r0.i0;
+import r0.i1;
 import r0.l;
+import r0.l1;
 import r0.m;
-import r0.m1;
+import r0.x0;
 import r0.y;
 import r0.y0;
 import r0.z0;
-import v7.v7;
+import v7.w7;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public class ActionBarOverlayLayout extends ViewGroup implements j1, l, m {
     public static final int[] R = {R.attr.actionBarSize, android.R.attr.windowContentOverlay};
     public final Rect E;
     public final Rect F;
-    public m1 G;
-    public m1 H;
-    public m1 I;
-    public m1 J;
+    public l1 G;
+    public l1 H;
+    public l1 I;
+    public l1 J;
     public m.b K;
     public OverScroller L;
     public ViewPropertyAnimator M;
@@ -284,7 +285,7 @@ public class ActionBarOverlayLayout extends ViewGroup implements j1, l, m {
     @Override // android.view.View
     public final WindowInsets onApplyWindowInsets(WindowInsets windowInsets) {
         f();
-        m1 h = m1.h(this, windowInsets);
+        l1 h = l1.h(this, windowInsets);
         boolean a2 = a(this.d, new Rect(h.b(), h.d(), h.c(), h.a()), false);
         WeakHashMap weakHashMap = i0.a;
         Rect rect = this.y;
@@ -293,8 +294,8 @@ public class ActionBarOverlayLayout extends ViewGroup implements j1, l, m {
         int i11 = rect.top;
         int i12 = rect.right;
         int i13 = rect.bottom;
-        r0.j1 j1Var = h.a;
-        m1 m10 = j1Var.m(i10, i11, i12, i13);
+        i1 i1Var = h.a;
+        l1 m10 = i1Var.m(i10, i11, i12, i13);
         this.G = m10;
         boolean z10 = true;
         if (!this.H.equals(m10)) {
@@ -310,7 +311,7 @@ public class ActionBarOverlayLayout extends ViewGroup implements j1, l, m {
         if (z10) {
             requestLayout();
         }
-        return j1Var.a().a.c().a.b().g();
+        return i1Var.a().a.c().a.b().g();
     }
 
     @Override // android.view.View
@@ -367,25 +368,25 @@ public class ActionBarOverlayLayout extends ViewGroup implements j1, l, m {
         Rect rect = this.y;
         Rect rect2 = this.F;
         rect2.set(rect);
-        m1 m1Var = this.G;
-        this.I = m1Var;
+        l1 l1Var = this.G;
+        this.I = l1Var;
         if (this.n || z10) {
-            i0.b b10 = i0.b.b(m1Var.b(), this.I.d() + measuredHeight, this.I.c(), this.I.a());
-            m1 m1Var2 = this.I;
+            i0.b b10 = i0.b.b(l1Var.b(), this.I.d() + measuredHeight, this.I.c(), this.I.a());
+            l1 l1Var2 = this.I;
             int i12 = Build.VERSION.SDK_INT;
-            c1 b1Var = i12 >= 34 ? new b1(m1Var2) : i12 >= 30 ? new a1(m1Var2) : i12 >= 29 ? new z0(m1Var2) : new y0(m1Var2);
-            b1Var.g(b10);
-            this.I = b1Var.b();
+            b1 a1Var = i12 >= 34 ? new a1(l1Var2) : i12 >= 30 ? new z0(l1Var2) : i12 >= 29 ? new y0(l1Var2) : new x0(l1Var2);
+            a1Var.g(b10);
+            this.I = a1Var.b();
         } else {
             rect2.top += measuredHeight;
             rect2.bottom = rect2.bottom;
-            this.I = m1Var.a.m(0, measuredHeight, 0, 0);
+            this.I = l1Var.a.m(0, measuredHeight, 0, 0);
         }
         a(this.c, rect2, true);
         if (!this.J.equals(this.I)) {
-            m1 m1Var3 = this.I;
-            this.J = m1Var3;
-            i0.b(this.c, m1Var3);
+            l1 l1Var3 = this.I;
+            this.J = l1Var3;
+            i0.b(this.c, l1Var3);
         }
         measureChildWithMargins(this.c, i10, 0, i11, 0);
         m.c cVar2 = (m.c) this.c.getLayoutParams();
@@ -548,14 +549,14 @@ public class ActionBarOverlayLayout extends ViewGroup implements j1, l, m {
     public void setIcon(int i10) {
         f();
         l3 l3Var = (l3) this.e;
-        l3Var.d = i10 != 0 ? v7.b(l3Var.a.getContext(), i10) : null;
+        l3Var.d = i10 != 0 ? w7.b(l3Var.a.getContext(), i10) : null;
         l3Var.c();
     }
 
     public void setLogo(int i10) {
         f();
         l3 l3Var = (l3) this.e;
-        l3Var.e = i10 != 0 ? v7.b(l3Var.a.getContext(), i10) : null;
+        l3Var.e = i10 != 0 ? w7.b(l3Var.a.getContext(), i10) : null;
         l3Var.c();
     }
 
@@ -602,11 +603,11 @@ public class ActionBarOverlayLayout extends ViewGroup implements j1, l, m {
         new Rect();
         new Rect();
         new Rect();
-        m1 m1Var = m1.b;
-        this.G = m1Var;
-        this.H = m1Var;
-        this.I = m1Var;
-        this.J = m1Var;
+        l1 l1Var = l1.b;
+        this.G = l1Var;
+        this.H = l1Var;
+        this.I = l1Var;
+        this.J = l1Var;
         this.N = new ai.b(this, 26);
         this.O = new m.a(this, 0);
         this.P = new m.a(this, 1);

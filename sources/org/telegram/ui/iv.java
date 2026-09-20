@@ -5,16 +5,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class iv extends org.telegram.ui.Components.vl0 {
+public final class iv extends org.telegram.ui.Components.ul0 {
     public final /* synthetic */ kv c;
 
     public iv(kv kvVar) {
         this.c = kvVar;
     }
 
-    @Override // org.telegram.ui.Components.vl0
+    @Override // org.telegram.ui.Components.ul0
     public final boolean D(s4.c1 c1Var) {
         return false;
     }
@@ -41,14 +41,14 @@ public final class iv extends org.telegram.ui.Components.vl0 {
             ((ViewGroup.MarginLayoutParams) p0Var).rightMargin = i12;
             view.setLayoutParams(p0Var);
         } else {
-            org.telegram.ui.Cells.e9 e9Var = new org.telegram.ui.Cells.e9(viewGroup.getContext());
-            e9Var.setFixedSize(12);
+            org.telegram.ui.Cells.f9 f9Var = new org.telegram.ui.Cells.f9(viewGroup.getContext());
+            f9Var.setFixedSize(12);
             org.telegram.ui.Components.pq pqVar = new org.telegram.ui.Components.pq(new ColorDrawable(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.a7, false)), org.telegram.ui.ActionBar.j6.V0(viewGroup.getContext(), R.drawable.greydivider_bottom, org.telegram.ui.ActionBar.j6.b7));
             pqVar.w = true;
-            e9Var.setBackgroundDrawable(pqVar);
-            view = e9Var;
+            f9Var.setBackgroundDrawable(pqVar);
+            view = f9Var;
         }
-        return new org.telegram.ui.Components.gl0(view);
+        return new org.telegram.ui.Components.fl0(view);
     }
 
     @Override // s4.h0

@@ -16,7 +16,7 @@ import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class uz implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -35,7 +35,7 @@ public final /* synthetic */ class uz implements View.OnClickListener {
                 String str = a00Var.s;
                 if (str != null) {
                     AndroidUtilities.addToClipboard(str);
-                    org.telegram.messenger.wh.n(R.string.LinkCopied, org.telegram.ui.Components.xc.a0(a00Var.r));
+                    org.telegram.messenger.rk.o(R.string.LinkCopied, org.telegram.ui.Components.xc.a0(a00Var.r));
                     break;
                 }
                 break;
@@ -78,7 +78,7 @@ public final /* synthetic */ class uz implements View.OnClickListener {
                         actionBarPopupWindow$ActionBarPopupWindowLayout.measure(View.MeasureSpec.makeMeasureSpec(overlayContainerView.getMeasuredWidth(), 0), View.MeasureSpec.makeMeasureSpec(overlayContainerView.getMeasuredHeight(), 0));
                         org.telegram.ui.ActionBar.n1 n1Var = new org.telegram.ui.ActionBar.n1(actionBarPopupWindow$ActionBarPopupWindowLayout, -2, -2);
                         a00Var2.x = n1Var;
-                        n1Var.setOnDismissListener(new org.telegram.ui.Components.a90(a00Var2, s6Var, overlayContainerView, f7Var, 1));
+                        n1Var.setOnDismissListener(new org.telegram.ui.Components.z80(a00Var2, s6Var, overlayContainerView, f7Var, 1));
                         a00Var2.x.setOutsideTouchable(true);
                         a00Var2.x.setFocusable(true);
                         a00Var2.x.setBackgroundDrawable(new ColorDrawable(0));
@@ -100,7 +100,7 @@ public final /* synthetic */ class uz implements View.OnClickListener {
                 String str2 = a00Var3.s;
                 if (str2 != null) {
                     AndroidUtilities.addToClipboard(str2);
-                    org.telegram.messenger.wh.n(R.string.LinkCopied, org.telegram.ui.Components.xc.a0(a00Var3.r));
+                    org.telegram.messenger.rk.o(R.string.LinkCopied, org.telegram.ui.Components.xc.a0(a00Var3.r));
                     break;
                 }
                 break;
@@ -177,9 +177,9 @@ public final /* synthetic */ class uz implements View.OnClickListener {
                     n1Var3.d(true);
                 }
                 if (a00Var6.s != null) {
-                    org.telegram.ui.Components.ui0 ui0Var = new org.telegram.ui.Components.ui0(a00Var6.getContext(), LocaleController.getString(R.string.InviteByQRCode), a00Var6.s, LocaleController.getString(R.string.QRCodeLinkHelpFolder), false);
-                    ui0Var.m(R.raw.qr_code_logo);
-                    ui0Var.show();
+                    org.telegram.ui.Components.ti0 ti0Var = new org.telegram.ui.Components.ti0(a00Var6.getContext(), LocaleController.getString(R.string.InviteByQRCode), a00Var6.s, LocaleController.getString(R.string.QRCodeLinkHelpFolder), false);
+                    ti0Var.m(R.raw.qr_code_logo);
+                    ti0Var.show();
                     break;
                 }
                 break;

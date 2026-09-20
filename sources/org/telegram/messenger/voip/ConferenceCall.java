@@ -26,7 +26,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public class ConferenceCall {
     public static final int PERMISSION_ADD = 1;
@@ -53,7 +53,7 @@ public class ConferenceCall {
     private final Runnable pollRunnable = new b(this, 2);
     private final int[] pollRequestId = new int[2];
 
-    /* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+    /* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
     public static final class CallParticipant {
         int permissions;
         long public_key_id;
@@ -67,7 +67,7 @@ public class ConferenceCall {
         }
     }
 
-    /* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+    /* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
     public static final class CallState {
         int height;
         CallParticipant[] participants;
@@ -105,7 +105,7 @@ public class ConferenceCall {
         }
     }
 
-    /* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+    /* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
     public static final class CallVerificationState {
         byte[] emoji_hash;
         int height;
@@ -124,7 +124,7 @@ public class ConferenceCall {
         }
     }
 
-    /* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+    /* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
     public static final class CallVerificationWords {
         int height;
         String[] words;
@@ -477,7 +477,7 @@ public class ConferenceCall {
                 z10 = true;
             }
         }
-        Utilities.stageQueue.postRunnable(new ki.c0(16, this, updates));
+        Utilities.stageQueue.postRunnable(new ki.l(18, this, updates));
         return z10;
     }
 
@@ -564,9 +564,9 @@ public class ConferenceCall {
             long j3 = max;
             byte[] bArr = this.blocksQueue[i10].get(j3);
             if (bArr == null) {
-                StringBuilder k10 = hg.k0.k("[tde2e] {subchain: ", i10, "} got into hole (might be the end) in ", i10, " subchain at #");
-                hg.k0.s(k10, max, ", when our last_offset[", i10, "] = ");
-                org.telegram.messenger.q.o(this.last_offset[i10], k10);
+                StringBuilder l4 = hg.k0.l("[tde2e] {subchain: ", i10, "} got into hole (might be the end) in ", i10, " subchain at #");
+                hg.k0.t(l4, max, ", when our last_offset[", i10, "] = ");
+                org.telegram.messenger.l0.m(this.last_offset[i10], l4);
                 this.last_offset[i10] = max;
                 return;
             }
@@ -619,7 +619,7 @@ public class ConferenceCall {
             StringBuilder sb2 = new StringBuilder("[tde2e] received updateGroupCallChainBlocks for ");
             sb2.append(tL_updateGroupCallChainBlocks.call.id);
             sb2.append(" but we have ");
-            org.telegram.messenger.q.s(sb2, this.groupCall.id);
+            hg.k0.u(sb2, this.groupCall.id);
             return false;
         }
         StringBuilder sb3 = new StringBuilder("[tde2e] received update with ");

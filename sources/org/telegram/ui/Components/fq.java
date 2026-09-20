@@ -9,7 +9,7 @@ import android.graphics.drawable.Drawable;
 import android.view.animation.DecelerateInterpolator;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public abstract class fq extends Drawable {
     public final Paint a;
@@ -42,7 +42,7 @@ public abstract class fq extends Drawable {
         float f7;
         float f10;
         float f11;
-        float y3;
+        float x10;
         float f12;
         Paint paint;
         float f13;
@@ -80,7 +80,7 @@ public abstract class fq extends Drawable {
         float f15 = this.d;
         if (f15 < 0.0f || f15 >= 90.0f) {
             if (f15 >= 90.0f && f15 < 180.0f) {
-                f11 = org.telegram.messenger.q.y(f15, 90.0f, 90.0f, 1.0f);
+                f11 = org.telegram.messenger.l0.x(f15, 90.0f, 90.0f, 1.0f);
                 f7 = 0.0f;
                 f10 = 1.0f;
                 f12 = 0.0f;
@@ -111,7 +111,7 @@ public abstract class fq extends Drawable {
             }
             if (f15 < 180.0f || f15 >= 270.0f) {
                 if (f15 >= 270.0f && f15 < 360.0f) {
-                    y3 = (f15 - 270.0f) / 90.0f;
+                    x10 = (f15 - 270.0f) / 90.0f;
                 } else if (f15 < 360.0f || f15 >= 450.0f) {
                     if (f15 >= 450.0f && f15 < 540.0f) {
                         f7 = (f15 - 450.0f) / 90.0f;
@@ -128,9 +128,9 @@ public abstract class fq extends Drawable {
                     }
                     f10 = 0.0f;
                 } else {
-                    y3 = org.telegram.messenger.q.y(f15, 360.0f, 90.0f, 1.0f);
+                    x10 = org.telegram.messenger.l0.x(f15, 360.0f, 90.0f, 1.0f);
                 }
-                f12 = y3;
+                f12 = x10;
                 f7 = 0.0f;
                 f11 = 0.0f;
                 f10 = 0.0f;
@@ -168,7 +168,7 @@ public abstract class fq extends Drawable {
                 canvas.drawArc(rectF2, f202, f13, false, paint);
                 this.b = currentTimeMillis;
             }
-            f10 = org.telegram.messenger.q.y(f15, 180.0f, 90.0f, 1.0f);
+            f10 = org.telegram.messenger.l0.x(f15, 180.0f, 90.0f, 1.0f);
             f7 = 0.0f;
             f11 = 0.0f;
             f12 = 0.0f;

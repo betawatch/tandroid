@@ -7,20 +7,20 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
-import org.telegram.ui.Components.je0;
+import org.telegram.ui.Components.ie0;
 import org.telegram.ui.WallpapersListActivity;
 import org.telegram.ui.bn0;
 import org.telegram.ui.cr0;
-import org.telegram.ui.gh1;
+import org.telegram.ui.ih1;
 import org.telegram.ui.ip;
-import org.telegram.ui.ja0;
+import org.telegram.ui.ka0;
 import org.telegram.ui.ln;
 import org.telegram.ui.mo;
 import org.telegram.ui.n70;
 import org.telegram.ui.uo;
 import org.telegram.ui.xo0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class u3 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -85,7 +85,7 @@ public final /* synthetic */ class u3 implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new ai.s4((ip) obj, tL_error, tLObject, this.b, 14));
                 break;
             case 7:
-                AndroidUtilities.runOnUIThread(new org.telegram.messenger.video.o((je0) obj, tL_error, tLObject, z10));
+                AndroidUtilities.runOnUIThread(new org.telegram.messenger.video.o((ie0) obj, tL_error, tLObject, z10));
                 break;
             case 8:
                 AndroidUtilities.runOnUIThread(new ai.s4((n70) obj, tL_error, tLObject, this.b, 23));
@@ -99,16 +99,16 @@ public final /* synthetic */ class u3 implements RequestDelegate {
             case 11:
                 cr0 cr0Var = (cr0) obj;
                 if (tLObject != null) {
-                    AndroidUtilities.runOnUIThread(new ja0(cr0Var, tLObject, z10, i11));
+                    AndroidUtilities.runOnUIThread(new ka0(cr0Var, tLObject, z10, i11));
                     break;
                 }
                 break;
             case 12:
-                AndroidUtilities.runOnUIThread(new ai.s4((gh1) obj, tL_error, tLObject, this.b, 29));
+                AndroidUtilities.runOnUIThread(new ai.s4((ih1) obj, tL_error, tLObject, this.b, 29));
                 break;
             default:
                 int[][] iArr = WallpapersListActivity.i0;
-                AndroidUtilities.runOnUIThread(new ja0((WallpapersListActivity) obj, tLObject, z10, 10));
+                AndroidUtilities.runOnUIThread(new ka0((WallpapersListActivity) obj, tLObject, z10, 10));
                 break;
         }
     }

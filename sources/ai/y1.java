@@ -21,15 +21,15 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.bu;
 import org.telegram.ui.Components.eo0;
-import org.telegram.ui.Components.j71;
-import org.telegram.ui.Components.l61;
-import org.telegram.ui.Components.qg0;
-import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.i71;
+import org.telegram.ui.Components.k61;
+import org.telegram.ui.Components.pg0;
+import org.telegram.ui.Components.s61;
 import org.telegram.ui.ey;
 import org.telegram.ui.uy;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class y1 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -43,9 +43,9 @@ public final /* synthetic */ class y1 implements Utilities.Callback {
     @Override // org.telegram.messenger.Utilities.Callback
     public final void run(Object obj) {
         int i10;
-        l61 l61Var;
+        k61 k61Var;
         boolean z10;
-        l61 l61Var2;
+        k61 k61Var2;
         int i11 = 3;
         int i12 = 5;
         int i13 = 0;
@@ -160,7 +160,7 @@ public final /* synthetic */ class y1 implements Utilities.Callback {
                 if (o8Var != null && ocVar.O1 != 1) {
                     boolean isEmpty = TextUtils.isEmpty(o8Var.y);
                     boolean z11 = !isEmpty;
-                    ((qg0) ocVar.j1.c).a(!ocVar.X0.k(), false);
+                    ((pg0) ocVar.j1.c).a(!ocVar.X0.k(), false);
                     ocVar.j1.setVisibility(0);
                     ocVar.j1.animate().alpha(!isEmpty ? 1.0f : 0.0f).withEndAction(new bi.f(i12, qbVar, z11)).start();
                 }
@@ -182,21 +182,21 @@ public final /* synthetic */ class y1 implements Utilities.Callback {
                 break;
             case 11:
                 ci.n8 n8Var = (ci.n8) obj;
-                j71 j71Var = ((ci.d7) this.b).n;
-                if (j71Var != null) {
-                    j71Var.setHDRInfo(n8Var);
+                i71 i71Var = ((ci.d7) this.b).n;
+                if (i71Var != null) {
+                    i71Var.setHDRInfo(n8Var);
                     break;
                 }
                 break;
             case 12:
                 ci.x8 x8Var = (ci.x8) this.b;
-                qg.n0 n0Var = (qg.n0) obj;
-                if (n0Var == null) {
+                qg.o0 o0Var = (qg.o0) obj;
+                if (o0Var == null) {
                     x8Var.U();
                     break;
                 } else {
-                    x8Var.o0 = n0Var.e;
-                    x8Var.n0 = n0Var.f;
+                    x8Var.o0 = o0Var.e;
+                    x8Var.n0 = o0Var.f;
                     break;
                 }
             case 13:
@@ -210,9 +210,9 @@ public final /* synthetic */ class y1 implements Utilities.Callback {
                 ArrayList arrayList3 = uVar.b;
                 arrayList3.clear();
                 arrayList3.addAll((ArrayList) obj);
-                t61 t61Var = uVar.a;
-                if (t61Var != null && (l61Var = t61Var.Y2) != null) {
-                    l61Var.N(true);
+                s61 s61Var = uVar.a;
+                if (s61Var != null && (k61Var = s61Var.Y2) != null) {
+                    k61Var.N(true);
                     break;
                 }
                 break;
@@ -222,9 +222,9 @@ public final /* synthetic */ class y1 implements Utilities.Callback {
                 ArrayList arrayList5 = fVar.h;
                 boolean z12 = arrayList5 == null || arrayList5.isEmpty();
                 fVar.h = arrayList4;
-                t61 t61Var2 = fVar.e;
-                if (t61Var2 != null) {
-                    t61Var2.Y2.N(z12);
+                s61 s61Var2 = fVar.e;
+                if (s61Var2 != null) {
+                    s61Var2.Y2.N(z12);
                     break;
                 }
                 break;
@@ -274,12 +274,12 @@ public final /* synthetic */ class y1 implements Utilities.Callback {
                 if (a0Var != null) {
                     a0Var.i(tL_connectedBot3 != null ? tL_connectedBot3.recipients : null);
                 }
-                t61 t61Var3 = u0Var.c;
-                if (t61Var3 == null || (l61Var2 = t61Var3.Y2) == null) {
+                s61 s61Var3 = u0Var.c;
+                if (s61Var3 == null || (k61Var2 = s61Var3.Y2) == null) {
                     z10 = true;
                 } else {
                     z10 = true;
-                    l61Var2.N(true);
+                    k61Var2.N(true);
                 }
                 u0Var.Y(z10);
                 u0Var.T = z10;

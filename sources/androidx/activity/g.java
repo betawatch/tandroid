@@ -18,11 +18,11 @@ import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.bw0;
+import org.telegram.ui.Components.aw0;
+import org.telegram.ui.Components.vv0;
 import org.telegram.ui.Components.wv0;
-import org.telegram.ui.Components.xv0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class g implements Runnable {
     public final /* synthetic */ int a;
@@ -113,7 +113,7 @@ public final class g implements Runnable {
                     n6.l.h(aVar2);
                     rVar = r0Var.g;
                     if (rVar == null) {
-                        rVar.a(aVar2, new j2.e(20));
+                        rVar.a(aVar2, new j2.e(22));
                         return;
                     }
                     return;
@@ -157,18 +157,18 @@ public final class g implements Runnable {
                 return;
             case 7:
                 long currentTimeMillis = System.currentTimeMillis();
-                Utilities.stackBlurBitmap(((xv0) this.d).c, this.b);
-                ((xv0) this.d).getClass();
-                bw0 bw0Var = (bw0) this.c;
-                bw0Var.j0 = (int) ((System.currentTimeMillis() - currentTimeMillis) + bw0Var.j0);
-                int i16 = bw0Var.i0 + 1;
-                bw0Var.i0 = i16;
+                Utilities.stackBlurBitmap(((wv0) this.d).c, this.b);
+                ((wv0) this.d).getClass();
+                aw0 aw0Var = (aw0) this.c;
+                aw0Var.j0 = (int) ((System.currentTimeMillis() - currentTimeMillis) + aw0Var.j0);
+                int i16 = aw0Var.i0 + 1;
+                aw0Var.i0 = i16;
                 if (i16 > 1000) {
-                    FileLog.d("chat blur generating average time" + (bw0Var.j0 / bw0Var.i0));
-                    bw0Var.i0 = 0;
-                    bw0Var.j0 = 0;
+                    FileLog.d("chat blur generating average time" + (aw0Var.j0 / aw0Var.i0));
+                    aw0Var.i0 = 0;
+                    aw0Var.j0 = 0;
                 }
-                AndroidUtilities.runOnUIThread(new wv0(this, i10));
+                AndroidUtilities.runOnUIThread(new vv0(this, i10));
                 return;
             default:
                 visionClearcutLogger = ((DynamiteClearcutLogger) this.c).zzc;
@@ -184,8 +184,8 @@ public final class g implements Runnable {
         this.b = i10;
     }
 
-    public g(bw0 bw0Var) {
+    public g(aw0 aw0Var) {
         this.a = 7;
-        this.c = bw0Var;
+        this.c = aw0Var;
     }
 }

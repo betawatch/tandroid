@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.text.Editable;
 import android.text.TextWatcher;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class cs implements TextWatcher {
     public final /* synthetic */ int a;
@@ -69,11 +69,11 @@ public final class cs implements TextWatcher {
                 }
                 break;
             case 1:
-                wg0 wg0Var = (wg0) this.d;
-                tg0 tg0Var = wg0Var.b;
-                if (!wg0Var.J) {
-                    int selectionStart = tg0Var.getSelectionStart();
-                    String obj2 = tg0Var.getText().toString();
+                xg0 xg0Var = (xg0) this.d;
+                ug0 ug0Var = xg0Var.b;
+                if (!xg0Var.J) {
+                    int selectionStart = ug0Var.getSelectionStart();
+                    String obj2 = ug0Var.getText().toString();
                     if (this.b == 3) {
                         obj2 = obj2.substring(0, this.c) + obj2.substring(this.c + 1);
                         selectionStart--;
@@ -88,8 +88,8 @@ public final class cs implements TextWatcher {
                         }
                         i24 = i25;
                     }
-                    wg0Var.J = true;
-                    String hintText = tg0Var.getHintText();
+                    xg0Var.J = true;
+                    String hintText = ug0Var.getHintText();
                     if (hintText != null) {
                         int i26 = 0;
                         while (true) {
@@ -114,19 +114,19 @@ public final class cs implements TextWatcher {
                     }
                     editable.replace(0, editable.length(), sb2);
                     if (selectionStart >= 0) {
-                        tg0Var.setSelection(Math.min(selectionStart, tg0Var.length()));
+                        ug0Var.setSelection(Math.min(selectionStart, ug0Var.length()));
                     }
-                    tg0Var.invalidate();
-                    wg0Var.r();
-                    wg0Var.J = false;
+                    ug0Var.invalidate();
+                    xg0Var.r();
+                    xg0Var.J = false;
                     break;
                 }
                 break;
             case 2:
-                ek0 ek0Var = (ek0) this.d;
-                if (!ek0Var.F) {
-                    int selectionStart2 = ek0Var.Q.getSelectionStart();
-                    String obj3 = ek0Var.Q.getText().toString();
+                fk0 fk0Var = (fk0) this.d;
+                if (!fk0Var.F) {
+                    int selectionStart2 = fk0Var.Q.getSelectionStart();
+                    String obj3 = fk0Var.Q.getText().toString();
                     if (this.b == 3) {
                         obj3 = obj3.substring(0, this.c) + obj3.substring(this.c + 1);
                         selectionStart2--;
@@ -141,8 +141,8 @@ public final class cs implements TextWatcher {
                         }
                         i27 = i28;
                     }
-                    ek0Var.F = true;
-                    String hintText2 = ek0Var.Q.getHintText();
+                    fk0Var.F = true;
+                    String hintText2 = fk0Var.Q.getHintText();
                     if (hintText2 != null) {
                         int i29 = 0;
                         while (true) {
@@ -167,12 +167,12 @@ public final class cs implements TextWatcher {
                     }
                     editable.replace(0, editable.length(), sb3);
                     if (selectionStart2 >= 0) {
-                        ck0 ck0Var = ek0Var.Q;
-                        ck0Var.setSelection(Math.min(selectionStart2, ck0Var.length()));
+                        dk0 dk0Var = fk0Var.Q;
+                        dk0Var.setSelection(Math.min(selectionStart2, dk0Var.length()));
                     }
-                    ek0Var.Q.invalidate();
-                    ek0Var.F = false;
-                    ek0.q(ek0Var);
+                    fk0Var.Q.invalidate();
+                    fk0Var.F = false;
+                    fk0.q(fk0Var);
                     break;
                 }
                 break;

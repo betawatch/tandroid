@@ -28,9 +28,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class w2 extends FrameLayout implements DownloadController.FileDownloadProgressListener, org.telegram.ui.Cells.p9 {
+public final class w2 extends FrameLayout implements DownloadController.FileDownloadProgressListener, org.telegram.ui.Cells.q9 {
     public static final /* synthetic */ int V = 0;
     public int E;
     public int F;
@@ -276,7 +276,7 @@ public final class w2 extends FrameLayout implements DownloadController.FileDown
         invalidate();
     }
 
-    @Override // org.telegram.ui.Cells.p9
+    @Override // org.telegram.ui.Cells.q9
     public final void fillTextLayoutBlocks(ArrayList arrayList) {
         a3 a3Var = this.c;
         if (a3Var != null) {
@@ -434,7 +434,7 @@ public final class w2 extends FrameLayout implements DownloadController.FileDown
                     } else {
                         i16 = AndroidUtilities.dp(18.0f) + AndroidUtilities.dp(i21 * 14);
                         this.x = i16;
-                        i15 = org.telegram.messenger.wh.z(18.0f, i16, i12);
+                        i15 = org.telegram.messenger.rk.x(18.0f, i16, i12);
                         dp = i15;
                     }
                     TLRPC.Document document = this.O;
@@ -552,7 +552,7 @@ public final class w2 extends FrameLayout implements DownloadController.FileDown
                         if (q6 != null) {
                             int height = this.c.d.getHeight() + AndroidUtilities.dp(4.0f);
                             this.E = height;
-                            i17 = org.telegram.messenger.q.D(4.0f, height, i17);
+                            i17 = org.telegram.messenger.l0.C(4.0f, height, i17);
                             a3 a3Var = this.c;
                             a3Var.s = this.x;
                             a3Var.v = this.y;
@@ -560,7 +560,7 @@ public final class w2 extends FrameLayout implements DownloadController.FileDown
                         int i27 = i17;
                         TL_iv.pageBlockVideo pageblockvideo3 = this.L;
                         f4Var = f4Var2;
-                        a3 p5 = h4.p(this.a, this, null, pageblockvideo3.caption.credit, dp, 0, pageblockvideo3, (f4Var2 == null || !f4Var2.G) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.vw0.a(), 0, this.b);
+                        a3 p5 = h4.p(this.a, this, null, pageblockvideo3.caption.credit, dp, 0, pageblockvideo3, (f4Var2 == null || !f4Var2.G) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.uw0.a(), 0, this.b);
                         this.d = p5;
                         if (p5 != null) {
                             i17 = this.d.d.getHeight() + AndroidUtilities.dp(4.0f) + i27;

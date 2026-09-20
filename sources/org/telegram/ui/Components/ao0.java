@@ -4,7 +4,7 @@ import android.text.TextUtils;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class ao0 extends s4.s0 {
     public final /* synthetic */ int a;
@@ -51,7 +51,7 @@ public final class ao0 extends s4.s0 {
     public final void b(RecyclerView recyclerView, int i10, int i11) {
         org.telegram.ui.gy gyVar;
         int i12;
-        wl0 wl0Var;
+        vl0 vl0Var;
         switch (this.a) {
             case 0:
                 org.telegram.ui.ey eyVar = this.c;
@@ -79,11 +79,11 @@ public final class ao0 extends s4.s0 {
             default:
                 org.telegram.ui.ey eyVar4 = this.c;
                 go0 go0Var = eyVar4.k0;
-                if (go0Var.Y && !go0Var.W && !TextUtils.isEmpty(go0Var.b0) && (wl0Var = go0Var.d) != null) {
+                if (go0Var.Y && !go0Var.W && !TextUtils.isEmpty(go0Var.b0) && (vl0Var = go0Var.d) != null) {
                     int i13 = 0;
                     while (true) {
-                        if (i13 < wl0Var.getChildCount()) {
-                            if (!(wl0Var.getChildAt(i13) instanceof t00)) {
+                        if (i13 < vl0Var.getChildCount()) {
+                            if (!(vl0Var.getChildAt(i13) instanceof t00)) {
                                 i13++;
                             } else if (go0Var.Y && !go0Var.W && !TextUtils.isEmpty(go0Var.b0)) {
                                 go0Var.V(true);

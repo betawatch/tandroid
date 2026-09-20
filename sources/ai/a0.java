@@ -26,13 +26,13 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.mj0;
+import org.telegram.ui.Components.lj0;
 import org.telegram.ui.Components.o20;
 import org.telegram.ui.Components.qr;
 import org.telegram.ui.Components.yc;
 import org.telegram.ui.lx;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class a0 extends FrameLayout {
     public long E;
@@ -48,14 +48,14 @@ public final class a0 extends FrameLayout {
     public final ca O;
     public float P;
     public float Q;
-    public mj0 R;
+    public lj0 R;
     public o S;
     public final float T;
     public boolean U;
     public boolean V;
     public boolean W;
     public boolean a;
-    public final org.telegram.ui.Components.e6 a0;
+    public final org.telegram.ui.Components.d6 a0;
     public int b;
     public final /* synthetic */ lx b0;
     public boolean c;
@@ -63,10 +63,10 @@ public final class a0 extends FrameLayout {
     public da e;
     public TLRPC.User f;
     public TLRPC.Chat h;
-    public final org.telegram.ui.Components.h9 n;
+    public final org.telegram.ui.Components.g9 n;
     public final ImageReceiver r;
     public final ImageReceiver s;
-    public final org.telegram.ui.Components.h9 v;
+    public final org.telegram.ui.Components.g9 v;
     public boolean w;
     public final FrameLayout x;
     public org.telegram.ui.ActionBar.j5 y;
@@ -75,19 +75,19 @@ public final class a0 extends FrameLayout {
     public a0(lx lxVar, Context context) {
         super(context);
         this.b0 = lxVar;
-        this.n = new org.telegram.ui.Components.h9((org.telegram.ui.ActionBar.e6) null);
+        this.n = new org.telegram.ui.Components.g9((org.telegram.ui.ActionBar.f6) null);
         ImageReceiver imageReceiver = new ImageReceiver(this);
         this.r = imageReceiver;
         ImageReceiver imageReceiver2 = new ImageReceiver(this);
         this.s = imageReceiver2;
-        this.v = new org.telegram.ui.Components.h9((org.telegram.ui.ActionBar.e6) null);
+        this.v = new org.telegram.ui.Components.g9((org.telegram.ui.ActionBar.f6) null);
         this.w = true;
         ca caVar = new ca(null, true);
         this.O = caVar;
         this.P = 1.0f;
         this.Q = 1.0f;
         this.T = 1.0f;
-        this.a0 = new org.telegram.ui.Components.e6(this, 0L, 350L, qr.h);
+        this.a0 = new org.telegram.ui.Components.d6(this, 0L, 350L, qr.h);
         caVar.o = lxVar.b == 1;
         caVar.D = true;
         imageReceiver.setInvalidateAll(true);
@@ -204,7 +204,7 @@ public final class a0 extends FrameLayout {
         boolean z12;
         ImageReceiver imageReceiver2;
         boolean[] zArr;
-        mj0 mj0Var;
+        lj0 lj0Var;
         float dp = AndroidUtilities.dp(48.0f);
         float dp2 = AndroidUtilities.dp(26.33f);
         float dp3 = AndroidUtilities.dp(8.0f);
@@ -263,7 +263,7 @@ public final class a0 extends FrameLayout {
         }
         ArrayList arrayList = (ArrayList) l9Var.c.f(this.E);
         boolean z13 = (arrayList == null || arrayList.isEmpty()) ? false : true;
-        if (z13 || (this.W && (mj0Var = this.R) != null && mj0Var.f < 0.98f)) {
+        if (z13 || (this.W && (lj0Var = this.R) != null && lj0Var.f < 0.98f)) {
             canvas2 = canvas;
             f11 = f17;
             f12 = f10;
@@ -283,14 +283,14 @@ public final class a0 extends FrameLayout {
             }
             invalidate();
             if (this.R == null) {
-                mj0 mj0Var2 = lxVar.n;
-                if (mj0Var2 != null) {
-                    this.R = mj0Var2;
+                lj0 lj0Var2 = lxVar.n;
+                if (lj0Var2 != null) {
+                    this.R = lj0Var2;
                 } else {
-                    mj0 mj0Var3 = new mj0(this);
-                    this.R = mj0Var3;
-                    lxVar.n = mj0Var3;
-                    mj0Var3.d(null, true, false);
+                    lj0 lj0Var3 = new lj0(this);
+                    this.R = lj0Var3;
+                    lxVar.n = lj0Var3;
+                    lj0Var3.d(null, true, false);
                 }
             }
             if (this.w) {
@@ -303,9 +303,9 @@ public final class a0 extends FrameLayout {
             this.R.q = 0;
             Paint o9 = z10 ? ia.o(imageReceiver4) : ia.t(imageReceiver4, true);
             o9.setAlpha(255);
-            mj0 mj0Var4 = this.R;
-            mj0Var4.t = o9;
-            mj0Var4.f((int) (imageReceiver4.getImageX() - AndroidUtilities.dp(3.0f)), (int) (imageReceiver4.getImageY() - AndroidUtilities.dp(3.0f)), (int) (imageReceiver4.getImageX2() + AndroidUtilities.dp(3.0f)), (int) (imageReceiver4.getImageY2() + AndroidUtilities.dp(3.0f)));
+            lj0 lj0Var4 = this.R;
+            lj0Var4.t = o9;
+            lj0Var4.f((int) (imageReceiver4.getImageX() - AndroidUtilities.dp(3.0f)), (int) (imageReceiver4.getImageY() - AndroidUtilities.dp(3.0f)), (int) (imageReceiver4.getImageX2() + AndroidUtilities.dp(3.0f)), (int) (imageReceiver4.getImageY2() + AndroidUtilities.dp(3.0f)));
             this.R.e(Utilities.clamp(size, 1.0f, 0.0f), this.W);
             if (imageReceiver4.getVisible()) {
                 this.R.a(canvas2);
@@ -538,9 +538,9 @@ public final class a0 extends FrameLayout {
                 chat = chat2;
             }
             if (chat != null) {
-                org.telegram.ui.Components.h9 h9Var = this.v;
-                h9Var.j(i10, chat);
-                imageReceiver.setForUserOrChat(chat, h9Var);
+                org.telegram.ui.Components.g9 g9Var = this.v;
+                g9Var.j(i10, chat);
+                imageReceiver.setForUserOrChat(chat, g9Var);
             }
         }
     }
@@ -585,9 +585,9 @@ public final class a0 extends FrameLayout {
             imageReceiver.clearImage();
             return;
         }
-        org.telegram.ui.Components.h9 h9Var = this.n;
-        h9Var.j(i10, chat);
-        imageReceiver.setForUserOrChat(chat, h9Var);
+        org.telegram.ui.Components.g9 g9Var = this.n;
+        g9Var.j(i10, chat);
+        imageReceiver.setForUserOrChat(chat, g9Var);
         if (this.N) {
             return;
         }

@@ -7,12 +7,12 @@ import java.util.Map;
 import jd.a;
 import kd.j;
 import rd.p;
-import v7.t7;
+import v7.u7;
 import zd.e0;
 import zd.s;
 import zd.t;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 final class zzlk extends j implements p {
     int zza;
@@ -85,10 +85,10 @@ final class zzlk extends j implements p {
             if (sVar != null) {
                 ((t) sVar).L(zza3);
             }
-            a2 = t7.a(zza3);
+            a2 = u7.a(zza3);
         }
         if (i10 == 0) {
-            t7.b(obj);
+            u7.b(obj);
             zzhkVar = (zzhk) this.zzd;
             zzdj zzn = this.zzb.zzn();
             zzmc zzmcVar = zzmc.zzd;
@@ -97,11 +97,11 @@ final class zzlk extends j implements p {
             zza = zzn.zza(zzmcVar, this);
         } else if (i10 == 1) {
             zzhkVar = (zzhk) this.zzd;
-            t7.b(obj);
+            u7.b(obj);
             zza = obj;
         } else if (i10 == 2) {
             zzhkVar = (zzhk) this.zzd;
-            t7.b(obj);
+            u7.b(obj);
             zza2 = obj;
             if (!((Boolean) zza2).booleanValue()) {
                 zzly zzlyVar2 = this.zzb;
@@ -114,14 +114,14 @@ final class zzlk extends j implements p {
             this.zza = 5;
         } else if (i10 == 3) {
             zzhkVar = (zzhk) this.zzd;
-            t7.b(obj);
+            u7.b(obj);
             zzu = obj;
             this.zzd = null;
             this.zza = 4;
         } else {
             if (i10 != 4) {
                 if (i10 != 5) {
-                    t7.b(obj);
+                    u7.b(obj);
                     h = obj;
                     zzxx zzxxVar = (zzxx) h;
                     zzxw zzf = zzxx.zzf();
@@ -136,7 +136,7 @@ final class zzlk extends j implements p {
                     a2 = zzf.zzk();
                     return new f(a2);
                 }
-                t7.b(obj);
+                u7.b(obj);
                 t a10 = e0.a();
                 zzly zzlyVar3 = this.zzb;
                 map2 = zzlyVar3.zzd;
@@ -166,13 +166,13 @@ final class zzlk extends j implements p {
                 a2 = zzf5.zzk();
                 return new f(a2);
             }
-            t7.b(obj);
+            u7.b(obj);
             s zzz2 = this.zzb.zzz();
             this.zzd = null;
             this.zza = 5;
         }
         if (((Boolean) zza).booleanValue()) {
-            return new f(t7.a(new zzcg(zzce.zzb, zzcd.zzay, null, null, 12, null)));
+            return new f(u7.a(new zzcg(zzce.zzb, zzcd.zzay, null, null, 12, null)));
         }
         zzdj zzn2 = this.zzb.zzn();
         zzmc zzmcVar2 = zzmc.zzc;

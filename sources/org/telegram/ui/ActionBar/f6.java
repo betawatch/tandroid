@@ -1,54 +1,29 @@
 package org.telegram.ui.ActionBar;
 
-import android.graphics.Canvas;
 import android.graphics.ColorFilter;
-import android.graphics.Path;
-import android.graphics.Rect;
-import android.graphics.RectF;
+import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
-import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class f6 extends Drawable {
-    public float[] b;
-    public Path a = new Path();
-    public boolean c = true;
+public interface f6 {
+    int F0(int i10);
 
-    public f6(float f7, float f10) {
-        this.b = new float[]{r4, r4, r4, r4, r4, r4, r4, r4};
-        float dp = AndroidUtilities.dp(f7);
-        float dp2 = AndroidUtilities.dp(f10);
-    }
+    Paint G(String str);
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        Path path = this.a;
-        if (this.c) {
-            this.c = false;
-            path.reset();
-            RectF rectF = AndroidUtilities.rectTmp;
-            rectF.set(getBounds());
-            path.addRoundRect(rectF, this.b, Path.Direction.CW);
-        }
-        canvas.drawPath(path, j6.z);
-    }
+    void L0(int i10, int i11);
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return 0;
-    }
+    boolean a();
 
-    @Override // android.graphics.drawable.Drawable
-    public final void onBoundsChange(Rect rect) {
-        this.c = true;
-    }
+    int f0(int i10);
 
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-    }
+    int g1(int i10);
 
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-    }
+    Drawable getDrawable(String str);
+
+    void m(float f7, float f10, int i10, int i11);
+
+    boolean n0();
+
+    ColorFilter x();
 }

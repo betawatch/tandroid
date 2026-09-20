@@ -8,13 +8,14 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.Components.c11;
 import org.telegram.ui.Components.d11;
-import org.telegram.ui.Components.e11;
+import v7.j0;
 import w7.y5;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class t extends FrameLayout {
     public final vh.o a;
@@ -23,7 +24,7 @@ public final class t extends FrameLayout {
     public String d;
     public final ImageView e;
 
-    public t(Context context, e6 e6Var) {
+    public t(Context context, f6 f6Var) {
         super(context);
         FrameLayout frameLayout = new FrameLayout(context);
         this.b = frameLayout;
@@ -33,13 +34,13 @@ public final class t extends FrameLayout {
         oVar.setTextSize(1, 16.0f);
         oVar.setEllipsize(TextUtils.TruncateAt.MIDDLE);
         oVar.setSingleLine(true);
-        oVar.setTextColor(j6.v0(j6.G6, e6Var));
+        oVar.setTextColor(j6.v0(j6.G6, f6Var));
         oVar.f = false;
         frameLayout.addView(oVar, y5.e(-2, -2, 17));
         int dp = AndroidUtilities.dp(8.0f);
-        int v02 = j6.v0(j6.e7, e6Var);
+        int v02 = j6.v0(j6.e7, f6Var);
         int i10 = j6.i6;
-        int k10 = i0.a.k(j6.v0(i10, e6Var), 76);
+        int k10 = i0.a.k(j6.v0(i10, f6Var), 76);
         frameLayout.setBackground(j6.i0(dp, dp, dp, dp, v02, k10, k10));
         addView(frameLayout, y5.d(-1, -2.0f, 0, 14.0f, 0.0f, 14.0f, 0.0f));
         final int i11 = 0;
@@ -65,10 +66,10 @@ public final class t extends FrameLayout {
         ImageView imageView = new ImageView(getContext());
         this.e = imageView;
         imageView.setImageResource(R.drawable.menu_copy_s);
-        imageView.setColorFilter(j6.v0(j6.j5, e6Var));
+        imageView.setColorFilter(j6.v0(j6.j5, f6Var));
         imageView.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
         int dp2 = AndroidUtilities.dp(20.0f);
-        int k11 = i0.a.k(j6.v0(i10, e6Var), 76);
+        int k11 = i0.a.k(j6.v0(i10, f6Var), 76);
         imageView.setBackground(j6.i0(dp2, dp2, dp2, dp2, 0, k11, k11));
         addView(imageView, y5.d(40, 40.0f, 21, 15.0f, 0.0f, 17.0f, 0.0f));
         final int i12 = 1;
@@ -101,20 +102,20 @@ public final class t extends FrameLayout {
         int dp4 = AndroidUtilities.dp(18.0f);
         vh.o oVar = this.a;
         oVar.setPadding(dp, dp2, dp3, dp4);
-        d11 d11Var = new d11();
-        d11Var.a |= 256;
+        c11 c11Var = new c11();
+        c11Var.a |= 256;
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("t.me/giftcode/" + this.c);
         if (this.c == null) {
             spannableStringBuilder.append((CharSequence) "1234567891011123654897566536223");
         }
-        spannableStringBuilder.setSpan(new e11(d11Var, 0), 0, spannableStringBuilder.length(), 33);
+        spannableStringBuilder.setSpan(new d11(c11Var, 0), 0, spannableStringBuilder.length(), 33);
         oVar.setText(spannableStringBuilder);
         this.b.setOnClickListener(new bi.p(4, runnable));
     }
 
     public void setSlug(String str) {
         this.c = str;
-        this.d = t8.b.i("https://t.me/giftcode/", str);
+        this.d = j0.g("https://t.me/giftcode/", str);
         this.a.setText("t.me/giftcode/" + str);
     }
 }

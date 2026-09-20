@@ -1,114 +1,44 @@
 package org.telegram.ui.Cells;
 
-import android.content.Context;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ContactsController;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.Components.ii0;
-import org.telegram.ui.Components.np;
+import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class p4 extends FrameLayout {
-    public final org.telegram.ui.Components.w9 a;
-    public final org.telegram.ui.ActionBar.j5 b;
-    public final org.telegram.ui.ActionBar.j5 c;
-    public final org.telegram.ui.Components.h9 d;
-    public final np e;
-    public ContactsController.Contact f;
-    public CharSequence h;
+public interface p4 {
+    boolean a();
 
-    public p4(Context context, boolean z10) {
-        super(context);
-        this.d = new org.telegram.ui.Components.h9((org.telegram.ui.ActionBar.e6) null);
-        org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(context);
-        this.a = w9Var;
-        w9Var.setRoundRadius(AndroidUtilities.dp(23.0f));
-        addView(w9Var, w7.y5.d(46, 46.0f, (LocaleController.isRTL ? 5 : 3) | 48, 13.0f, 6.0f, 13.0f, 6.0f));
-        LinearLayout linearLayout = new LinearLayout(context);
-        linearLayout.setOrientation(0);
-        boolean z11 = LocaleController.isRTL;
-        addView(linearLayout, w7.y5.d(-1, -1.0f, 119, z11 ? 0 : 72, 0.0f, z11 ? 72 : 0, 0.0f));
-        FrameLayout frameLayout = new FrameLayout(context);
-        linearLayout.addView(frameLayout, w7.y5.l(1.0f, 0, 58));
-        org.telegram.ui.ActionBar.j5 j5Var = new org.telegram.ui.ActionBar.j5(context);
-        this.b = j5Var;
-        j5Var.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.G6, false));
-        j5Var.setTypeface(AndroidUtilities.bold());
-        j5Var.setTextSize(15);
-        j5Var.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
-        frameLayout.addView(j5Var, w7.y5.d(-1, 20.0f, (LocaleController.isRTL ? 5 : 3) | 48, 0.0f, 9.0f, 0.0f, 0.0f));
-        org.telegram.ui.ActionBar.j5 j5Var2 = new org.telegram.ui.ActionBar.j5(context);
-        this.c = j5Var2;
-        j5Var2.setTextSize(13);
-        j5Var2.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
-        frameLayout.addView(j5Var2, w7.y5.d(-1, 20.0f, (LocaleController.isRTL ? 5 : 3) | 48, 0.0f, 33.0f, 0.0f, 0.0f));
-        if (z10) {
-            np npVar = new np(context, 21, null);
-            this.e = npVar;
-            npVar.b(-1, org.telegram.ui.ActionBar.j6.d6, org.telegram.ui.ActionBar.j6.k7);
-            npVar.setDrawUnchecked(false);
-            npVar.setDrawBackgroundAsArc(3);
-            boolean z12 = LocaleController.isRTL;
-            addView(npVar, w7.y5.d(24, 24.0f, (z12 ? 5 : 3) | 48, z12 ? 0.0f : 40.0f, 32.0f, z12 ? 39.0f : 0.0f, 0.0f));
-            return;
-        }
-        this.e = null;
-        ii0 ii0Var = new ii0(context);
-        ii0Var.setText(LocaleController.getString(R.string.Invite));
-        ii0Var.setTextSize(1, 14.0f);
-        ii0Var.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Sh, false));
-        ii0Var.setProgressColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Nh, false));
-        int w02 = org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.hl, false);
-        org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Qh, false);
-        ii0Var.setBackground(org.telegram.ui.ActionBar.y5.e(new float[]{16.0f}, w02));
-        ii0Var.setPadding(AndroidUtilities.dp(14.0f), 0, AndroidUtilities.dp(14.0f), 0);
-        linearLayout.addView(ii0Var, w7.y5.p(-2, 28, 0.0f, 16, 18, 0, 18, 0));
-        ii0Var.setOnClickListener(new a(this, 6));
-    }
+    void c(boolean z10, boolean z11);
 
-    public final void a() {
-        ContactsController.Contact contact = this.f;
-        if (contact == null) {
-            return;
-        }
-        long j3 = contact.contact_id;
-        String str = contact.first_name;
-        String str2 = contact.last_name;
-        org.telegram.ui.Components.h9 h9Var = this.d;
-        h9Var.o(j3, str, str2, null, null);
-        CharSequence charSequence = this.h;
-        org.telegram.ui.ActionBar.j5 j5Var = this.b;
-        if (charSequence != null) {
-            j5Var.l(charSequence, true);
-        } else {
-            ContactsController.Contact contact2 = this.f;
-            j5Var.l(ContactsController.formatName(contact2.first_name, contact2.last_name), false);
-        }
-        int i10 = org.telegram.ui.ActionBar.j6.y6;
-        Integer valueOf = Integer.valueOf(i10);
-        org.telegram.ui.ActionBar.j5 j5Var2 = this.c;
-        j5Var2.setTag(valueOf);
-        j5Var2.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, i10, false));
-        ContactsController.Contact contact3 = this.f;
-        int i11 = contact3.imported;
-        if (i11 > 0) {
-            j5Var2.l(LocaleController.formatPluralString("TelegramContacts", i11, new Object[0]), false);
-        } else {
-            j5Var2.l(contact3.phones.get(0), false);
-        }
-        this.a.setImageDrawable(h9Var);
-    }
+    void f(TLRPC.ReactionCount reactionCount, boolean z10, float f7, float f10);
 
-    public ContactsController.Contact getContact() {
-        return this.f;
-    }
+    float getAlpha();
 
-    @Override // android.view.View
-    public final boolean hasOverlappingRendering() {
-        return false;
-    }
+    float getCheckBoxTranslation();
+
+    float getDeltaBottom();
+
+    int getHeight();
+
+    int getMeasuredHeight();
+
+    MessageObject getMessageObject();
+
+    float getPivotX();
+
+    float getScaleX();
+
+    float getScaleY();
+
+    float getSlidingOffsetX();
+
+    float getX();
+
+    float getY();
+
+    boolean h();
+
+    boolean i();
+
+    boolean j();
 }

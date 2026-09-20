@@ -9,7 +9,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class sg implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -28,7 +28,6 @@ public final /* synthetic */ class sg implements Utilities.Callback2 {
     public final void run(Object obj, Object obj2) {
         TLRPC.Updates updates;
         int i10 = this.a;
-        int i11 = 1;
         Object obj3 = this.d;
         Object obj4 = this.c;
         switch (i10) {
@@ -37,7 +36,7 @@ public final /* synthetic */ class sg implements Utilities.Callback2 {
                 break;
             case 1:
                 LaunchActivity launchActivity = (LaunchActivity) obj4;
-                y80 y80Var = (y80) obj3;
+                r80 r80Var = (r80) obj3;
                 TLRPC.ChatInviteJoinResult chatInviteJoinResult = (TLRPC.ChatInviteJoinResult) obj;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
                 Pattern pattern = LaunchActivity.B1;
@@ -47,11 +46,11 @@ public final /* synthetic */ class sg implements Utilities.Callback2 {
                     updates = updates2;
                 } else {
                     if (chatInviteJoinResult instanceof TLRPC.TL_chatInviteJoinResultWebView) {
-                        AndroidUtilities.runOnUIThread(new y80(i11, launchActivity, (TLRPC.TL_chatInviteJoinResultWebView) chatInviteJoinResult));
+                        AndroidUtilities.runOnUIThread(new r80(3, launchActivity, (TLRPC.TL_chatInviteJoinResultWebView) chatInviteJoinResult));
                     }
                     updates = null;
                 }
-                AndroidUtilities.runOnUIThread(new ei.l3(launchActivity, y80Var, tL_error, updates, this.b, 26));
+                AndroidUtilities.runOnUIThread(new ei.l3(launchActivity, r80Var, tL_error, updates, this.b, 26));
                 break;
             default:
                 PasskeysActivity passkeysActivity = (PasskeysActivity) obj4;
@@ -59,17 +58,17 @@ public final /* synthetic */ class sg implements Utilities.Callback2 {
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
                 ArrayList arrayList = passkeysActivity.b;
                 boolean z10 = ((TLRPC.Bool) obj) instanceof TLRPC.TL_boolFalse;
-                int i12 = this.b;
+                int i11 = this.b;
                 if (!z10) {
                     if (tL_error2 != null) {
                         org.telegram.ui.Components.xc.a0(passkeysActivity).d0(tL_error2, false);
-                        arrayList.add(Utilities.clamp(i12, arrayList.size(), 0), passkey);
+                        arrayList.add(Utilities.clamp(i11, arrayList.size(), 0), passkey);
                         passkeysActivity.a.Y2.N(true);
                         break;
                     }
                 } else {
                     org.telegram.ui.Components.xc.a0(passkeysActivity).c0("FALSE", false);
-                    arrayList.add(Utilities.clamp(i12, arrayList.size(), 0), passkey);
+                    arrayList.add(Utilities.clamp(i11, arrayList.size(), 0), passkey);
                     passkeysActivity.a.Y2.N(true);
                     break;
                 }
@@ -77,10 +76,10 @@ public final /* synthetic */ class sg implements Utilities.Callback2 {
         }
     }
 
-    public /* synthetic */ sg(LaunchActivity launchActivity, y80 y80Var, int i10) {
+    public /* synthetic */ sg(LaunchActivity launchActivity, r80 r80Var, int i10) {
         this.a = 1;
         this.c = launchActivity;
-        this.d = y80Var;
+        this.d = r80Var;
         this.b = i10;
     }
 }

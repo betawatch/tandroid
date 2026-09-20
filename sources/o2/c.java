@@ -2,9 +2,9 @@ package o2;
 
 import b2.r0;
 import java.util.ArrayList;
-import v7.y7;
+import v7.z7;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class c {
     public static final int[] c = {8, 13, 11, 2, 0, 1, 7};
@@ -12,7 +12,7 @@ public final class c {
     public boolean b;
 
     public static void a(int i10, ArrayList arrayList) {
-        if (y7.d(i10, 0, 7, c) == -1 || arrayList.contains(Integer.valueOf(i10))) {
+        if (z7.d(i10, 0, 7, c) == -1 || arrayList.contains(Integer.valueOf(i10))) {
             return;
         }
         arrayList.add(Integer.valueOf(i10));

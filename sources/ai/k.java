@@ -12,18 +12,18 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.support.LongSparseIntArray;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.k80;
-import org.telegram.ui.Components.p80;
+import org.telegram.ui.Components.j80;
+import org.telegram.ui.Components.o80;
 import org.telegram.ui.f10;
 import org.telegram.ui.i60;
 import org.telegram.ui.l50;
 import org.telegram.ui.lk;
-import org.telegram.ui.sh1;
+import org.telegram.ui.uh1;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class k implements t9, sh1, m4.e1, org.telegram.ui.ActionBar.a2, yf.m, MessagesController.ErrorDelegate, vh.l {
+public final /* synthetic */ class k implements t9, uh1, m4.e1, org.telegram.ui.ActionBar.a2, yf.m, MessagesController.ErrorDelegate, vh.l {
     public final /* synthetic */ int a;
     public final /* synthetic */ boolean b;
     public final /* synthetic */ Object c;
@@ -34,7 +34,7 @@ public final /* synthetic */ class k implements t9, sh1, m4.e1, org.telegram.ui.
         this.b = z10;
     }
 
-    @Override // org.telegram.ui.sh1
+    @Override // org.telegram.ui.uh1
     public void a(int i10, ArrayList arrayList) {
         switch (this.a) {
             case 1:
@@ -119,14 +119,28 @@ public final /* synthetic */ class k implements t9, sh1, m4.e1, org.telegram.ui.
 
     @Override // yf.m
     public void e(long j3) {
-        org.telegram.ui.Components.o6 o6Var = ((org.telegram.ui.Cells.u1) this.c).w4;
-        if (o6Var != null) {
-            o6Var.q(LocaleController.formatPollEndTime((int) j3, this.b), true, true);
+        org.telegram.ui.Components.n6 n6Var = ((org.telegram.ui.Cells.u1) this.c).w4;
+        if (n6Var != null) {
+            n6Var.q(LocaleController.formatPollEndTime((int) j3, this.b), true, true);
+        }
+    }
+
+    @Override // m4.e1
+    public Object h(m4.a0 a0Var, m4.r rVar, int i10) {
+        switch (this.a) {
+            case 2:
+                e9.a1 z10 = e9.i0.z((b2.k0) this.c);
+                boolean z11 = this.b;
+                return a0Var.q(rVar, z10, z11 ? -1 : a0Var.t.l0(), z11 ? -9223372036854775807L : a0Var.t.J0());
+            default:
+                List list = (List) this.c;
+                boolean z12 = this.b;
+                return a0Var.q(rVar, list, z12 ? -1 : a0Var.t.l0(), z12 ? -9223372036854775807L : a0Var.t.J0());
         }
     }
 
     @Override // org.telegram.ui.ActionBar.a2
-    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+    public void k(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
         switch (this.a) {
             case 4:
                 org.telegram.ui.z6.Y((org.telegram.ui.z6) this.c, this.b);
@@ -173,20 +187,6 @@ public final /* synthetic */ class k implements t9, sh1, m4.e1, org.telegram.ui.
         }
     }
 
-    @Override // m4.e1
-    public Object i(m4.a0 a0Var, m4.r rVar, int i10) {
-        switch (this.a) {
-            case 2:
-                e9.a1 z10 = e9.i0.z((b2.k0) this.c);
-                boolean z11 = this.b;
-                return a0Var.q(rVar, z10, z11 ? -1 : a0Var.t.l0(), z11 ? -9223372036854775807L : a0Var.t.J0());
-            default:
-                List list = (List) this.c;
-                boolean z12 = this.b;
-                return a0Var.q(rVar, list, z12 ? -1 : a0Var.t.l0(), z12 ? -9223372036854775807L : a0Var.t.J0());
-        }
-    }
-
     @Override // vh.l
     public void l(vh.h hVar, float f7, float f10) {
         vh.o oVar = (vh.o) this.c;
@@ -207,11 +207,11 @@ public final /* synthetic */ class k implements t9, sh1, m4.e1, org.telegram.ui.
 
     @Override // org.telegram.messenger.MessagesController.ErrorDelegate
     public boolean run(TLRPC.TL_error tL_error) {
-        p80 p80Var = (p80) this.c;
+        o80 o80Var = (o80) this.c;
         if (tL_error != null && "INVITE_REQUEST_SENT".equals(tL_error.text)) {
-            p80Var.setOnDismissListener(new k80(0, p80Var, this.b));
+            o80Var.setOnDismissListener(new j80(0, o80Var, this.b));
         }
-        p80Var.dismiss();
+        o80Var.dismiss();
         return false;
     }
 }

@@ -3,9 +3,9 @@ package yh;
 import android.view.View;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.w9;
+import org.telegram.ui.Components.v9;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class i3 extends f3 {
     public final boolean c;
@@ -17,7 +17,7 @@ public final class i3 extends f3 {
         this.c = true;
         ImageReceiver imageReceiver = new ImageReceiver(view);
         this.d = imageReceiver;
-        v7.Z0(imageReceiver, stargiftattributemodel.document, 160);
+        w7.Z0(imageReceiver, stargiftattributemodel.document, 160);
     }
 
     @Override // yh.f3
@@ -32,10 +32,10 @@ public final class i3 extends f3 {
         return this.d.getLottieAnimation() != null;
     }
 
-    public i3(w9 w9Var, TL_stars.starGiftAttributeModel stargiftattributemodel) {
+    public i3(v9 v9Var, TL_stars.starGiftAttributeModel stargiftattributemodel) {
         this.a = stargiftattributemodel.name;
         this.b = stargiftattributemodel.getRarityPermille();
         this.c = false;
-        this.d = w9Var.getImageReceiver();
+        this.d = v9Var.getImageReceiver();
     }
 }

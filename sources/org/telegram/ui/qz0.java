@@ -3,9 +3,9 @@ package org.telegram.ui;
 import android.content.Context;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class qz0 extends org.telegram.ui.Components.g90 {
+public final class qz0 extends org.telegram.ui.Components.f90 {
     public final /* synthetic */ ProfileActivity P0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -47,9 +47,9 @@ public final class qz0 extends org.telegram.ui.Components.g90 {
         profileActivity.getClass();
         profileActivity.r[2].setTranslationX(f7);
         profileActivity.r[3].setTranslationX(f7);
-        org.telegram.ui.Components.uw0 uw0Var = profileActivity.T;
-        if (uw0Var != null) {
-            uw0Var.setTranslationX(f7 - profileActivity.Z3());
+        org.telegram.ui.Components.tw0 tw0Var = profileActivity.T;
+        if (tw0Var != null) {
+            tw0Var.setTranslationX(f7 - profileActivity.Z3());
         }
     }
 
@@ -64,9 +64,9 @@ public final class qz0 extends org.telegram.ui.Components.g90 {
         }
         j5VarArr[2].setTranslationY(f7);
         j5VarArr[3].setTranslationY(f7);
-        org.telegram.ui.Components.uw0 uw0Var = profileActivity.T;
-        if (uw0Var != null) {
-            uw0Var.setTranslationY(f7 - AndroidUtilities.dp(5.0f));
+        org.telegram.ui.Components.tw0 tw0Var = profileActivity.T;
+        if (tw0Var != null) {
+            tw0Var.setTranslationY(f7 - AndroidUtilities.dp(5.0f));
         }
     }
 }

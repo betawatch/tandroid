@@ -1,37 +1,34 @@
 package org.telegram.ui.Components;
 
-import android.text.TextPaint;
+import android.view.View;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class e61 extends b61 {
-    public final int e;
-    public final d11 f;
+public final /* synthetic */ class e61 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ UndoView b;
 
-    public e61(String str, int i10, d11 d11Var) {
-        super(str, (d11) null);
-        this.e = i10;
-        this.f = d11Var;
+    public /* synthetic */ e61(UndoView undoView, int i10) {
+        this.a = i10;
+        this.b = undoView;
     }
 
-    @Override // org.telegram.ui.Components.b61, android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        super.updateDrawState(textPaint);
-        int i10 = this.e;
-        if (i10 == 3) {
-            textPaint.setColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.J6, false));
-        } else if (i10 == 2) {
-            textPaint.setColor(-1);
-        } else if (i10 == 1) {
-            textPaint.setColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.hc, false));
-        } else {
-            textPaint.setColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.gc, false));
-        }
-        d11 d11Var = this.f;
-        if (d11Var != null) {
-            d11Var.a(textPaint);
-        } else {
-            textPaint.setUnderlineText(false);
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        int i10 = this.a;
+        UndoView undoView = this.b;
+        switch (i10) {
+            case 0:
+                int i11 = UndoView.e0;
+                if (undoView.a()) {
+                    undoView.e(1, false);
+                    break;
+                }
+                break;
+            default:
+                int i12 = UndoView.e0;
+                undoView.e(1, false);
+                break;
         }
     }
 }

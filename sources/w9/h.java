@@ -19,8 +19,9 @@ import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicLong;
+import v7.j0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public abstract class h {
     public static final char[] a = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
@@ -107,7 +108,7 @@ public abstract class h {
     public static boolean h() {
         boolean g10 = g();
         String str = Build.TAGS;
-        if ((g10 || str == null || !str.contains("test-keys")) && !t8.b.u("/system/app/Superuser.apk")) {
+        if ((g10 || str == null || !str.contains("test-keys")) && !j0.r("/system/app/Superuser.apk")) {
             return !g10 && new File("/system/xbin/su").exists();
         }
         return true;

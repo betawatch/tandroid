@@ -8,17 +8,17 @@ import android.graphics.drawable.Drawable;
 import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class s00 extends org.telegram.ui.Components.p6 {
+public final class s00 extends org.telegram.ui.Components.o6 {
     public final /* synthetic */ int s = 0;
     public final Object v;
     public final /* synthetic */ ViewGroup w;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public s00(yh.j7 j7Var, Context context, Drawable drawable) {
+    public s00(yh.k7 k7Var, Context context, Drawable drawable) {
         super(context, false, false, false);
-        this.w = j7Var;
+        this.w = k7Var;
         this.v = drawable;
     }
 
@@ -38,9 +38,9 @@ public final class s00 extends org.telegram.ui.Components.p6 {
                 break;
             default:
                 Drawable drawable = (Drawable) this.v;
-                if (!((yh.j7) this.w).d) {
+                if (!((yh.k7) this.w).d) {
                     int measuredWidth = (int) ((getMeasuredWidth() - getDrawable().d()) - AndroidUtilities.dp(20.0f));
-                    drawable.setBounds(measuredWidth, org.telegram.messenger.wh.A(17.0f, getMeasuredHeight(), 2), AndroidUtilities.dp(17.0f) + measuredWidth, (AndroidUtilities.dp(17.0f) + getMeasuredHeight()) / 2);
+                    drawable.setBounds(measuredWidth, org.telegram.messenger.rk.z(17.0f, getMeasuredHeight(), 2), AndroidUtilities.dp(17.0f) + measuredWidth, (AndroidUtilities.dp(17.0f) + getMeasuredHeight()) / 2);
                     drawable.draw(canvas);
                 }
                 super.dispatchDraw(canvas);

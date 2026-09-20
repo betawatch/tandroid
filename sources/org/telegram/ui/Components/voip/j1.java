@@ -31,20 +31,20 @@ import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.h9;
-import org.telegram.ui.Components.jg0;
+import org.telegram.ui.Components.g9;
+import org.telegram.ui.Components.ig0;
 import org.telegram.ui.Components.qr;
 import org.telegram.ui.Components.sh;
-import org.telegram.ui.Components.uv0;
-import org.telegram.ui.Components.w9;
+import org.telegram.ui.Components.tv0;
+import org.telegram.ui.Components.v9;
 import org.webrtc.RendererCommon;
 import w7.y5;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class j1 implements NotificationCenter.NotificationCenterDelegate, rf.a {
-    public static final uv0 b0 = new uv0(new jg0(15), new jg0(16));
-    public static final uv0 c0 = new uv0(new jg0(17), new jg0(18));
+    public static final tv0 b0 = new tv0(new ig0(17), new ig0(18));
+    public static final tv0 c0 = new tv0(new ig0(19), new ig0(20));
     public static final j1 d0;
     public AccountInstance E;
     public ScaleGestureDetector F;
@@ -77,7 +77,7 @@ public final class j1 implements NotificationCenter.NotificationCenterDelegate, 
     public s2 f;
     public FrameLayout h;
     public h n;
-    public w9 r;
+    public v9 r;
     public eb s;
     public TLRPC.GroupCallParticipant v;
     public boolean w;
@@ -90,7 +90,7 @@ public final class j1 implements NotificationCenter.NotificationCenterDelegate, 
         j1Var.n = new h();
         j1Var.w = true;
         j1Var.P = 1.0f;
-        j1Var.X = new i2.g0(j1Var, 19);
+        j1Var.X = new i2.g0(j1Var, 20);
         d0 = j1Var;
     }
 
@@ -98,7 +98,7 @@ public final class j1 implements NotificationCenter.NotificationCenterDelegate, 
         j1 j1Var = d0;
         if (j1Var.V) {
             j1Var.V = false;
-            AndroidUtilities.runOnUIThread(new sh(13), 100L);
+            AndroidUtilities.runOnUIThread(new sh(15), 100L);
             j1Var.E.getNotificationCenter().removeObserver(j1Var, NotificationCenter.groupCallUpdated);
             j1Var.E.getNotificationCenter().removeObserver(j1Var, NotificationCenter.applyGroupCallVisibleParticipants);
             NotificationCenter.getGlobalInstance().removeObserver(j1Var, NotificationCenter.didEndCall);
@@ -172,9 +172,9 @@ public final class j1 implements NotificationCenter.NotificationCenterDelegate, 
         j1Var.e.setOutlineProvider(new ai.k2(17));
         j1Var.e.setClipToOutline(true);
         j1Var.e.setBackgroundColor(j6.w0(null, j6.gg, false));
-        w9 w9Var = new w9(activity2);
-        j1Var.r = w9Var;
-        j1Var.e.addView(w9Var, y5.c(-1.0f, -1));
+        v9 v9Var = new v9(activity2);
+        j1Var.r = v9Var;
+        j1Var.e.addView(v9Var, y5.c(-1.0f, -1));
         s2 s2Var = new s2(activity2, false, false, false, false);
         j1Var.f = s2Var;
         s2Var.setAlpha(0.0f);
@@ -377,12 +377,12 @@ public final class j1 implements NotificationCenter.NotificationCenterDelegate, 
                 if (peerId > 0) {
                     TLRPC.User user = messagesController.getUser(Long.valueOf(peerId));
                     ImageLocation forUser = ImageLocation.getForUser(accountInstance.getCurrentAccount(), user, 1);
-                    int d = user != null ? h9.d(user.id) : i0.a.d(0.2f, -16777216, -1);
+                    int d = user != null ? g9.d(user.id) : i0.a.d(0.2f, -16777216, -1);
                     this.r.getImageReceiver().setImage(forUser, "50_50_b", new GradientDrawable(GradientDrawable.Orientation.BOTTOM_TOP, new int[]{i0.a.d(0.2f, d, -16777216), i0.a.d(0.4f, d, -16777216)}), null, user, 0);
                 } else {
                     TLRPC.Chat chat = messagesController.getChat(Long.valueOf(-peerId));
                     ImageLocation forChat = ImageLocation.getForChat(accountInstance.getCurrentAccount(), chat, 1);
-                    int d10 = chat != null ? h9.d(chat.id) : i0.a.d(0.2f, -16777216, -1);
+                    int d10 = chat != null ? g9.d(chat.id) : i0.a.d(0.2f, -16777216, -1);
                     this.r.getImageReceiver().setImage(forChat, "50_50_b", new GradientDrawable(GradientDrawable.Orientation.BOTTOM_TOP, new int[]{i0.a.d(0.2f, d10, -16777216), i0.a.d(0.4f, d10, -16777216)}), null, chat, 0);
                 }
                 this.v = groupCallParticipant3;

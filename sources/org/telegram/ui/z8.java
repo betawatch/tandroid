@@ -5,15 +5,15 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.ui.Components.FragmentContextView;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class z8 extends FragmentContextView {
     public final /* synthetic */ int P0;
     public final /* synthetic */ NotificationCenter.NotificationCenterDelegate Q0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ z8(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, Context context, org.telegram.ui.ActionBar.n2 n2Var, FrameLayout frameLayout, org.telegram.ui.ActionBar.e6 e6Var, int i10) {
-        super(context, n2Var, frameLayout, false, e6Var);
+    public /* synthetic */ z8(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, Context context, org.telegram.ui.ActionBar.n2 n2Var, FrameLayout frameLayout, org.telegram.ui.ActionBar.f6 f6Var, int i10) {
+        super(context, n2Var, frameLayout, false, f6Var);
         this.P0 = i10;
         this.Q0 = notificationCenterDelegate;
     }
@@ -30,16 +30,16 @@ public final class z8 extends FragmentContextView {
                 gjVar.x.i(gjVar.y, i10 == 0, true);
                 break;
             default:
-                dg1 dg1Var = (dg1) this.Q0;
-                dg1Var.U0.i(dg1Var.F0, i10 == 0, true);
+                fg1 fg1Var = (fg1) this.Q0;
+                fg1Var.U0.i(fg1Var.F0, i10 == 0, true);
                 break;
         }
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z8(dg1 dg1Var, Context context, dg1 dg1Var2) {
-        super(context, dg1Var2, null, false, null);
+    public z8(fg1 fg1Var, Context context, fg1 fg1Var2) {
+        super(context, fg1Var2, null, false, null);
         this.P0 = 2;
-        this.Q0 = dg1Var;
+        this.Q0 = fg1Var;
     }
 }

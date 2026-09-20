@@ -16,14 +16,14 @@ import java.util.List;
 import java.util.UUID;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.rk;
+import org.telegram.ui.Components.kd;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.sk0;
+import org.telegram.ui.Components.rk0;
 import org.telegram.ui.Components.yc;
-import org.telegram.ui.ai1;
-import v7.z6;
+import v7.a7;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public abstract class j extends FrameLayout {
     public static final List p0 = Arrays.asList(-90, 0, 90, 180);
@@ -36,7 +36,7 @@ public abstract class j extends FrameLayout {
     public boolean K;
     public int L;
     public int M;
-    public ai1 N;
+    public kd N;
     public float O;
     public ValueAnimator P;
     public ValueAnimator Q;
@@ -222,8 +222,8 @@ public abstract class j extends FrameLayout {
                 AndroidUtilities.cancelRunOnUIThread(this.I);
                 e(f15, f16);
                 if (z10) {
-                    float a2 = z6.a(f7, f10, f11, f12);
-                    float a10 = z6.a(this.b, this.c, this.d, this.e);
+                    float a2 = a7.a(f7, f10, f11, f12);
+                    float a10 = a7.a(this.b, this.c, this.d, this.e);
                     if (a10 > 0.0f) {
                         j(a2 / a10);
                     }
@@ -260,11 +260,11 @@ public abstract class j extends FrameLayout {
                 }
                 h hVar5 = this.F;
                 if (hVar5 != null) {
-                    hVar5.A(wh.b((float) getHeight(), 2.0f, scaleX, this.G.y) < ((float) AndroidUtilities.dp(66.0f)));
+                    hVar5.A(rk.b((float) getHeight(), 2.0f, scaleX, this.G.y) < ((float) AndroidUtilities.dp(66.0f)));
                     this.F.h(a4.a.e((float) getHeight(), 2.0f, scaleX, this.G.y) > ((float) (((View) getParent()).getHeight() - AndroidUtilities.dp(114.0f))));
                 }
                 h hVar6 = this.F;
-                boolean z11 = (hVar6 == null || hVar6.q()) && !z10 && z6.a(f13, f14, ((float) ((View) getParent()).getWidth()) / 2.0f, (float) (((View) getParent()).getHeight() - AndroidUtilities.dp(76.0f))) < ((float) AndroidUtilities.dp(32.0f));
+                boolean z11 = (hVar6 == null || hVar6.q()) && !z10 && a7.a(f13, f14, ((float) ((View) getParent()).getWidth()) / 2.0f, (float) (((View) getParent()).getHeight() - AndroidUtilities.dp(76.0f))) < ((float) AndroidUtilities.dp(32.0f));
                 if (this.y != z11) {
                     ValueAnimator valueAnimator = this.o0;
                     if (valueAnimator != null) {
@@ -312,9 +312,9 @@ public abstract class j extends FrameLayout {
         this.r = true;
         this.x = false;
         this.M = this.L;
-        ai1 ai1Var = this.N;
-        if (ai1Var != null) {
-            AndroidUtilities.cancelRunOnUIThread(ai1Var);
+        kd kdVar = this.N;
+        if (kdVar != null) {
+            AndroidUtilities.cancelRunOnUIThread(kdVar);
             this.N = null;
         }
         this.V = this.R;
@@ -333,7 +333,7 @@ public abstract class j extends FrameLayout {
         canvas.scale(a2, a2, getWidth() / 2.0f, getHeight() / 2.0f);
         if (getParent() instanceof View) {
             View view = (View) getParent();
-            if (this instanceof b2) {
+            if (this instanceof c2) {
                 float f7 = this.n0;
                 canvas.scale(f7, f7, getWidth() / 2.0f, getHeight() / 2.0f);
             } else {
@@ -439,22 +439,22 @@ public abstract class j extends FrameLayout {
                 if (Math.abs(intValue - f7) < 4.0f) {
                     if (this.M != intValue) {
                         this.M = intValue;
-                        ai1 ai1Var = this.N;
-                        if (ai1Var != null) {
-                            AndroidUtilities.cancelRunOnUIThread(ai1Var);
+                        kd kdVar = this.N;
+                        if (kdVar != null) {
+                            AndroidUtilities.cancelRunOnUIThread(kdVar);
                         }
-                        ai1 ai1Var2 = new ai1(this, intValue, 1);
-                        this.N = ai1Var2;
-                        AndroidUtilities.runOnUIThread(ai1Var2, 250L);
+                        kd kdVar2 = new kd(this, intValue, 29);
+                        this.N = kdVar2;
+                        AndroidUtilities.runOnUIThread(kdVar2, 250L);
                     }
                 }
             }
         } else if (z10) {
             if (Math.abs(this.L - f7) >= 12.0f || this.c0) {
                 this.M = -1;
-                ai1 ai1Var3 = this.N;
-                if (ai1Var3 != null) {
-                    AndroidUtilities.cancelRunOnUIThread(ai1Var3);
+                kd kdVar3 = this.N;
+                if (kdVar3 != null) {
+                    AndroidUtilities.cancelRunOnUIThread(kdVar3);
                     this.N = null;
                 }
                 ValueAnimator valueAnimator = this.P;
@@ -563,8 +563,8 @@ public abstract class j extends FrameLayout {
         return getScaleX();
     }
 
-    public sk0 getSelectionBounds() {
-        return new sk0(0.0f, 0.0f, 0.0f, 0.0f);
+    public rk0 getSelectionBounds() {
+        return new rk0(0.0f, 0.0f, 0.0f, 0.0f);
     }
 
     public float getStickyPaddingBottom() {
@@ -631,7 +631,7 @@ public abstract class j extends FrameLayout {
         float f11 = f7 * f10;
         this.h0 = f11;
         float clamp = Utilities.clamp(Math.max(f11, 0.1f), getMaxScale(), getMinScale());
-        if (!(this instanceof a2)) {
+        if (!(this instanceof b2)) {
             if ((clamp >= getMaxScale() || clamp <= getMinScale()) != (f10 >= getMaxScale() || f10 <= getMinScale())) {
                 try {
                     performHapticFeedback(3, 1);

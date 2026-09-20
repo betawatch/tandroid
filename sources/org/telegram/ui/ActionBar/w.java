@@ -21,7 +21,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class w extends FrameLayout {
     public final /* synthetic */ ActionBarLayout E;
@@ -132,12 +132,12 @@ public final class w extends FrameLayout {
         boolean z10 = false;
         int color = z3Var != null ? z3Var.getInternalNavbarPaint().getColor() : j6.w0(null, j6.a7, false);
         if (this == actionBarLayout.w) {
-            org.telegram.ui.Components.e6 e6Var = actionBarLayout.b1;
+            org.telegram.ui.Components.d6 d6Var = actionBarLayout.b1;
             s sVar = actionBarLayout.G;
             if (sVar != null && sVar.hasSheet()) {
                 z10 = true;
             }
-            float e = e6Var.e(z10);
+            float e = d6Var.e(z10);
             if (e > 0.0f) {
                 a(canvas, this.y, j6.l1(e, color));
             }
@@ -194,7 +194,7 @@ public final class w extends FrameLayout {
         Drawable drawable;
         ArrayList<j2> arrayList;
         ActionBarLayout actionBarLayout = this.E;
-        n2 n2Var = !actionBarLayout.O0.isEmpty() ? (n2) t8.b.h(1, actionBarLayout.O0) : null;
+        n2 n2Var = !actionBarLayout.O0.isEmpty() ? (n2) org.telegram.ui.Cells.c1.i(1, actionBarLayout.O0) : null;
         s sVar = actionBarLayout.G;
         if (sVar != null && (arrayList = sVar.sheetsStack) != null && !arrayList.isEmpty()) {
             n2Var = actionBarLayout.G;

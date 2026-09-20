@@ -16,9 +16,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.ui.Components.qr;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.si1;
+import org.telegram.ui.ti1;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class l2 extends FrameLayout {
     public static final /* synthetic */ int h = 0;
@@ -120,7 +120,7 @@ public final class l2 extends FrameLayout {
                 Context context = getContext();
                 boolean z10 = context instanceof LaunchActivity;
                 if (z10 && !ApplicationLoader.mainInterfacePaused) {
-                    si1.w((Activity) context, this.f.L);
+                    ti1.w((Activity) context, this.f.L);
                 } else if (z10) {
                     Intent intent = new Intent(context, (Class<?>) LaunchActivity.class);
                     intent.setAction("voip");

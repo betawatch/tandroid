@@ -4,7 +4,7 @@ import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class yy implements DialogInterface.OnClickListener {
     public final /* synthetic */ int a;
@@ -41,9 +41,9 @@ public final /* synthetic */ class yy implements DialogInterface.OnClickListener
                 SharedPreferences.Editor edit = MessagesController.getGlobalMainSettings().edit();
                 edit.putInt("sortContactsBy", i10);
                 edit.commit();
-                fc1 fc1Var = themeActivity.a;
-                if (fc1Var != null) {
-                    fc1Var.m(this.b);
+                hc1 hc1Var = themeActivity.a;
+                if (hc1Var != null) {
+                    hc1Var.m(this.b);
                     break;
                 }
                 break;

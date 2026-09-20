@@ -27,6 +27,7 @@ import e9.a1;
 import e9.f1;
 import e9.g0;
 import e9.i0;
+import e9.k0;
 import ei.d5;
 import i2.a0;
 import i2.e0;
@@ -38,12 +39,12 @@ import n2.l;
 import org.telegram.messenger.MediaDataController;
 import u2.b0;
 import u2.f0;
-import u2.k0;
+import u2.l0;
 import u2.t;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
-public final class f implements z0, k0, l {
+public final class f implements z0, l0, l {
     public final x a;
     public final h1 b;
     public final j1 c;
@@ -84,25 +85,25 @@ public final class f implements z0, k0, l {
         q(o9, 1024, new c(o9, exc, 15));
     }
 
-    @Override // u2.k0
+    @Override // u2.l0
     public final void c(int i10, f0 f0Var, b0 b0Var) {
         a o9 = o(i10, f0Var);
         q(o9, 1005, new c(o9, b0Var, 23));
     }
 
-    @Override // u2.k0
+    @Override // u2.l0
     public final void d(int i10, f0 f0Var, b0 b0Var) {
         a o9 = o(i10, f0Var);
         q(o9, 1004, new ah.b(21, o9, b0Var));
     }
 
-    @Override // u2.k0
+    @Override // u2.l0
     public final void e(int i10, f0 f0Var, t tVar, b0 b0Var) {
         a o9 = o(i10, f0Var);
         q(o9, 1001, new c(o9, (Object) tVar, (Object) b0Var, 16));
     }
 
-    @Override // u2.k0
+    @Override // u2.l0
     public final void f(int i10, f0 f0Var, t tVar, b0 b0Var, IOException iOException, boolean z10) {
         a o9 = o(i10, f0Var);
         q(o9, 1003, new d5(o9, tVar, b0Var, iOException, z10));
@@ -114,7 +115,7 @@ public final class f implements z0, k0, l {
         q(o9, 1027, new c(o9, 24));
     }
 
-    @Override // u2.k0
+    @Override // u2.l0
     public final void h(int i10, f0 f0Var, t tVar, b0 b0Var, int i11) {
         a o9 = o(i10, f0Var);
         q(o9, MediaDataController.MAX_STYLE_RUNS_COUNT, new c(o9, tVar, b0Var, i11));
@@ -126,7 +127,7 @@ public final class f implements z0, k0, l {
         q(o9, 1025, new c(o9, 29));
     }
 
-    @Override // u2.k0
+    @Override // u2.l0
     public final void j(int i10, f0 f0Var, t tVar, b0 b0Var) {
         a o9 = o(i10, f0Var);
         q(o9, 1002, new c(o9, (Object) tVar, (Object) b0Var, 12));
@@ -162,7 +163,7 @@ public final class f implements z0, k0, l {
 
     public final a n(f0 f0Var) {
         this.h.getClass();
-        k1 k1Var = f0Var == null ? null : (k1) ((e9.k0) this.d.c).get(f0Var);
+        k1 k1Var = f0Var == null ? null : (k1) ((k0) this.d.c).get(f0Var);
         if (f0Var != null && k1Var != null) {
             return m(k1Var, k1Var.g(f0Var.a, this.b).c, f0Var);
         }
@@ -177,7 +178,7 @@ public final class f implements z0, k0, l {
     public final a o(int i10, f0 f0Var) {
         this.h.getClass();
         if (f0Var != null) {
-            return ((k1) ((e9.k0) this.d.c).get(f0Var)) != null ? n(f0Var) : m(k1.a, i10, f0Var);
+            return ((k1) ((k0) this.d.c).get(f0Var)) != null ? n(f0Var) : m(k1.a, i10, f0Var);
         }
         k1 w02 = this.h.w0();
         if (i10 >= w02.o()) {
@@ -201,7 +202,7 @@ public final class f implements z0, k0, l {
     @Override // b2.z0
     public final void onAvailableCommandsChanged(x0 x0Var) {
         a l4 = l();
-        q(l4, 13, new e(4, l4, x0Var));
+        q(l4, 13, new e(l4, x0Var, 4));
     }
 
     @Override // b2.z0
@@ -287,7 +288,7 @@ public final class f implements z0, k0, l {
     @Override // b2.z0
     public final void onPlaylistMetadataChanged(n0 n0Var) {
         a l4 = l();
-        q(l4, 15, new e(0, l4, n0Var));
+        q(l4, 15, new e(l4, n0Var, 0));
     }
 
     @Override // b2.z0

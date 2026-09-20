@@ -11,8 +11,8 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.a20;
 import org.telegram.ui.Components.b20;
-import org.telegram.ui.Components.hd0;
-import org.telegram.ui.Components.kn0;
+import org.telegram.ui.Components.gd0;
+import org.telegram.ui.Components.jn0;
 import org.telegram.ui.Components.m30;
 import org.telegram.ui.UsersSelectActivity;
 import org.telegram.ui.cp;
@@ -20,10 +20,10 @@ import org.telegram.ui.g10;
 import org.telegram.ui.ip;
 import org.telegram.ui.j80;
 import org.telegram.ui.l80;
-import org.telegram.ui.ye0;
+import org.telegram.ui.ze0;
 import org.telegram.ui.zx;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class h2 extends EditTextBoldCursor {
     public final /* synthetic */ int b;
@@ -40,7 +40,7 @@ public final class h2 extends EditTextBoldCursor {
     public boolean dispatchTouchEvent(MotionEvent motionEvent) {
         switch (this.b) {
             case 6:
-                ((kn0) this.c).getClass();
+                ((jn0) this.c).getClass();
                 break;
         }
         return super.dispatchTouchEvent(motionEvent);
@@ -58,9 +58,9 @@ public final class h2 extends EditTextBoldCursor {
                 break;
             case 5:
                 super.onFocusChanged(z10, i10, rect);
-                hd0 hd0Var = (hd0) this.c;
+                gd0 gd0Var = (gd0) this.c;
                 float f7 = (z10 || isFocused()) ? 1.0f : 0.0f;
-                hd0Var.b(f7, f7, true);
+                gd0Var.b(f7, f7, true);
                 break;
             default:
                 super.onFocusChanged(z10, i10, rect);
@@ -162,7 +162,7 @@ public final class h2 extends EditTextBoldCursor {
         switch (this.b) {
             case 8:
                 if (i10 == 16908322 || i10 == 16908337) {
-                    ((ye0) this.c).y = true;
+                    ((ze0) this.c).y = true;
                     postDelayed(new g10(this, 21), 1000L);
                 }
                 break;
@@ -208,7 +208,7 @@ public final class h2 extends EditTextBoldCursor {
             case 6:
                 if (isEnabled()) {
                     if (motionEvent.getAction() == 1) {
-                        ((kn0) this.c).getClass();
+                        ((jn0) this.c).getClass();
                     }
                     break;
                 }

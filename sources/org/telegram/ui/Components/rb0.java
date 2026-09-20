@@ -1,40 +1,63 @@
 package org.telegram.ui.Components;
 
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class rb0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ sb0 b;
+public final class rb0 extends ji.n {
+    public int W;
+    public Runnable X;
+    public final /* synthetic */ xb0 Y;
 
-    public /* synthetic */ rb0(sb0 sb0Var, int i10) {
-        this.a = i10;
-        this.b = sb0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public rb0(xb0 xb0Var, pb0 pb0Var, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(null, pb0Var, f6Var);
+        this.Y = xb0Var;
+        this.W = -1;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                sb0 sb0Var = this.b;
-                if (sb0Var.W != -1) {
-                    NotificationCenter.getInstance(sb0Var.Y.c0.w).onAnimationFinish(sb0Var.W);
-                    sb0Var.W = -1;
-                    break;
-                }
-                break;
-            case 1:
-                this.b.Y.h();
-                break;
-            default:
-                sb0 sb0Var2 = this.b;
-                if (sb0Var2.W != -1) {
-                    NotificationCenter.getInstance(sb0Var2.Y.c0.w).onAnimationFinish(sb0Var2.W);
-                    sb0Var2.W = -1;
-                    break;
-                }
-                break;
+    @Override // ji.n, s4.j
+    public final void N() {
+        super.N();
+        Runnable runnable = this.X;
+        if (runnable != null) {
+            AndroidUtilities.cancelRunOnUIThread(runnable);
         }
+        qb0 qb0Var = new qb0(this, 0);
+        this.X = qb0Var;
+        AndroidUtilities.runOnUIThread(qb0Var);
+        xb0 xb0Var = this.Y;
+        if (xb0Var.V) {
+            xb0Var.V = false;
+            AndroidUtilities.runOnUIThread(new qb0(this, 1));
+        }
+    }
+
+    @Override // ji.n
+    public final void W() {
+        dc0 dc0Var = this.Y.c0;
+        AndroidUtilities.cancelRunOnUIThread(dc0Var.y);
+        dc0Var.y.run();
+        if (this.W == -1) {
+            this.W = NotificationCenter.getInstance(dc0Var.w).setAnimationInProgress(this.W, null, false);
+        }
+        Runnable runnable = this.X;
+        if (runnable != null) {
+            AndroidUtilities.cancelRunOnUIThread(runnable);
+            this.X = null;
+        }
+    }
+
+    @Override // ji.n, s4.j, s4.m0
+    public final void g() {
+        super.g();
+        Runnable runnable = this.X;
+        if (runnable != null) {
+            AndroidUtilities.cancelRunOnUIThread(runnable);
+        }
+        qb0 qb0Var = new qb0(this, 2);
+        this.X = qb0Var;
+        AndroidUtilities.runOnUIThread(qb0Var);
     }
 }

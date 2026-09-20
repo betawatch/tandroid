@@ -3,20 +3,20 @@ package org.telegram.ui;
 import android.content.Context;
 import android.graphics.Canvas;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class np0 extends org.telegram.ui.Components.wl0 {
+public final class np0 extends org.telegram.ui.Components.vl0 {
     public final /* synthetic */ int X2;
     public final /* synthetic */ wp0 Y2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public np0(wp0 wp0Var, Context context, org.telegram.ui.ActionBar.e6 e6Var, int i10) {
-        super(context, e6Var);
+    public np0(wp0 wp0Var, Context context, org.telegram.ui.ActionBar.f6 f6Var, int i10) {
+        super(context, f6Var);
         this.Y2 = wp0Var;
         this.X2 = i10;
     }
 
-    @Override // org.telegram.ui.Components.wl0
+    @Override // org.telegram.ui.Components.vl0
     public final Integer X0(int i10) {
         wp0 wp0Var = this.Y2;
         if ((i10 < wp0Var.b0 || i10 >= wp0Var.c0) && (i10 < wp0Var.d0 || i10 >= wp0Var.e0)) {
@@ -25,7 +25,7 @@ public final class np0 extends org.telegram.ui.Components.wl0 {
         return 0;
     }
 
-    @Override // org.telegram.ui.Components.wl0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.vl0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
         wp0 wp0Var = this.Y2;
@@ -38,7 +38,7 @@ public final class np0 extends org.telegram.ui.Components.wl0 {
         canvas.restoreToCount(save);
     }
 
-    @Override // org.telegram.ui.Components.wl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.vl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         super.onLayout(z10, i10, i11, i12, i13);
         wp0 wp0Var = this.Y2;

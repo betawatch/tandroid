@@ -21,7 +21,7 @@ import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class co extends Drawable {
     public final boolean a;
@@ -29,7 +29,7 @@ public final class co extends Drawable {
     public int c = 255;
     public final float d;
     public final ai.l4 e;
-    public final org.telegram.ui.Components.lc0 f;
+    public final org.telegram.ui.Components.kc0 f;
     public final TLRPC.WallPaper g;
     public boolean h;
     public boolean i;
@@ -50,10 +50,10 @@ public final class co extends Drawable {
             this.d = wallPaperSettings2.intensity / 100.0f;
         }
         if ((z12 || wallPaper.document == null) && (wallPaperSettings = wallPaper.settings) != null && wallPaperSettings.second_background_color != 0 && wallPaperSettings.third_background_color != 0) {
-            org.telegram.ui.Components.lc0 lc0Var = new org.telegram.ui.Components.lc0();
-            this.f = lc0Var;
+            org.telegram.ui.Components.kc0 kc0Var = new org.telegram.ui.Components.kc0();
+            this.f = kc0Var;
             TLRPC.WallPaperSettings wallPaperSettings3 = wallPaper.settings;
-            lc0Var.n(wallPaperSettings3.background_color, wallPaperSettings3.second_background_color, wallPaperSettings3.third_background_color, wallPaperSettings3.fourth_background_color);
+            kc0Var.n(wallPaperSettings3.background_color, wallPaperSettings3.second_background_color, wallPaperSettings3.third_background_color, wallPaperSettings3.fourth_background_color);
             int i10 = UserConfig.selectedAccount;
             long j3 = wallPaper.id;
             of ofVar = new of(9, this, wallPaper);
@@ -128,16 +128,16 @@ public final class co extends Drawable {
             } else if (wallPaperSettings.second_background_color == 0) {
                 a2 = a(new ColorDrawable(i0.a.k(wallPaper.settings.background_color, 255)));
             } else if (wallPaperSettings.third_background_color == 0) {
-                a2 = a(new GradientDrawable(org.telegram.ui.Components.v9.d(wallPaper.settings.rotation), new int[]{i0.a.k(wallPaperSettings.background_color, 255), i0.a.k(wallPaper.settings.second_background_color, 255)}));
+                a2 = a(new GradientDrawable(org.telegram.ui.Components.u9.d(wallPaper.settings.rotation), new int[]{i0.a.k(wallPaperSettings.background_color, 255), i0.a.k(wallPaper.settings.second_background_color, 255)}));
             } else {
                 int k10 = i0.a.k(wallPaperSettings.background_color, 255);
                 int k11 = i0.a.k(wallPaper.settings.second_background_color, 255);
                 int k12 = i0.a.k(wallPaper.settings.third_background_color, 255);
                 int i10 = wallPaper.settings.fourth_background_color;
                 r2 = i10 != 0 ? i0.a.k(i10, 255) : 0;
-                org.telegram.ui.Components.lc0 lc0Var = new org.telegram.ui.Components.lc0();
-                lc0Var.n(k10, k11, k12, r2);
-                a2 = new BitmapDrawable(lc0Var.k);
+                org.telegram.ui.Components.kc0 kc0Var = new org.telegram.ui.Components.kc0();
+                kc0Var.n(k10, k11, k12, r2);
+                a2 = new BitmapDrawable(kc0Var.k);
             }
         }
         wallPaper.thumbDrawable = a2;
@@ -164,9 +164,9 @@ public final class co extends Drawable {
     }
 
     public final Drawable c(boolean z10) {
-        org.telegram.ui.Components.lc0 lc0Var = this.f;
-        if (lc0Var != null) {
-            return lc0Var;
+        org.telegram.ui.Components.kc0 kc0Var = this.f;
+        if (kc0Var != null) {
+            return kc0Var;
         }
         ai.l4 l4Var = this.e;
         return (!z10 || l4Var.getStaticThumb() == null) ? l4Var.getThumb() != null ? l4Var.getThumb() : l4Var.getDrawable() != null ? l4Var.getDrawable() : l4Var.getStaticThumb() : l4Var.getStaticThumb();
@@ -174,11 +174,11 @@ public final class co extends Drawable {
 
     @Override // android.graphics.drawable.Drawable
     public final void draw(Canvas canvas) {
-        org.telegram.ui.Components.lc0 lc0Var = this.f;
-        if (lc0Var != null) {
-            lc0Var.setBounds(getBounds());
-            lc0Var.setAlpha(this.c);
-            lc0Var.draw(canvas);
+        org.telegram.ui.Components.kc0 kc0Var = this.f;
+        if (kc0Var != null) {
+            kc0Var.setBounds(getBounds());
+            kc0Var.setAlpha(this.c);
+            kc0Var.draw(canvas);
             return;
         }
         ai.l4 l4Var = this.e;
@@ -215,9 +215,9 @@ public final class co extends Drawable {
             this.i = false;
             l4Var.onDetachedFromWindow();
         }
-        org.telegram.ui.Components.lc0 lc0Var = this.f;
-        if (lc0Var != null) {
-            lc0Var.k();
+        org.telegram.ui.Components.kc0 kc0Var = this.f;
+        if (kc0Var != null) {
+            kc0Var.k();
         }
     }
 
@@ -235,9 +235,9 @@ public final class co extends Drawable {
             this.i = false;
             l4Var.onDetachedFromWindow();
         }
-        org.telegram.ui.Components.lc0 lc0Var = this.f;
-        if (lc0Var != null) {
-            lc0Var.l();
+        org.telegram.ui.Components.kc0 kc0Var = this.f;
+        if (kc0Var != null) {
+            kc0Var.l();
         }
     }
 

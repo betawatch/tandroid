@@ -11,43 +11,43 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.rk;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.h9;
+import org.telegram.ui.Components.g9;
 import org.telegram.ui.Components.np;
 import w7.y5;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class v1 extends FrameLayout {
-    public final h9 a;
+    public final g9 a;
     public final ImageReceiver b;
     public final TextView c;
     public final TextView d;
     public final np e;
     public final Path f;
     public final Paint h;
-    public final e6 n;
+    public final f6 n;
     public final int[] r;
     public boolean s;
 
-    public v1(Context context, e6 e6Var) {
+    public v1(Context context, f6 f6Var) {
         super(context);
-        this.a = new h9((e6) null);
+        this.a = new g9((f6) null);
         this.b = new ImageReceiver(this);
         this.f = new Path();
         this.h = new Paint(1);
         this.r = new int[1];
-        this.n = e6Var;
+        this.n = f6Var;
         setWillNotDraw(false);
         TextView textView = new TextView(context);
         this.c = textView;
         textView.setSingleLine();
         TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
         textView.setEllipsize(truncateAt);
-        textView.setTextColor(j6.v0(j6.G6, e6Var));
+        textView.setTextColor(j6.v0(j6.G6, f6Var));
         textView.setTypeface(AndroidUtilities.bold());
         textView.setTextSize(1, 16.0f);
         boolean z10 = LocaleController.isRTL;
@@ -56,10 +56,10 @@ public final class v1 extends FrameLayout {
         this.d = textView2;
         textView2.setLines(2);
         textView2.setEllipsize(truncateAt);
-        wh.m(j6.z6, e6Var, textView2, 1, 15.0f);
+        rk.n(j6.z6, f6Var, textView2, 1, 15.0f);
         boolean z11 = LocaleController.isRTL;
         addView(textView2, y5.d(-1, -2.0f, 7, z11 ? 40.0f : 78.0f, 32.0f, z11 ? 78.0f : 40.0f, 0.0f));
-        np npVar = new np(getContext(), 21, e6Var);
+        np npVar = new np(getContext(), 21, f6Var);
         this.e = npVar;
         npVar.b(-1, j6.d6, j6.k7);
         npVar.setDrawUnchecked(false);

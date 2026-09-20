@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class t60 implements org.telegram.ui.Components.c20, org.telegram.ui.ActionBar.a2, r0.n {
     public final /* synthetic */ int a;
@@ -15,8 +15,8 @@ public final /* synthetic */ class t60 implements org.telegram.ui.Components.c20
     }
 
     @Override // r0.n
-    public r0.m1 Q0(View view, r0.m1 m1Var) {
-        int i10 = AndroidUtilities.getDefaultWindowInsets(m1Var, false).d;
+    public r0.l1 P0(View view, r0.l1 l1Var) {
+        int i10 = AndroidUtilities.getDefaultWindowInsets(l1Var, false).d;
         e70 e70Var = this.b;
         e70Var.m0 = i10;
         ai.v7 v7Var = e70Var.F;
@@ -25,7 +25,7 @@ public final /* synthetic */ class t60 implements org.telegram.ui.Components.c20
         }
         e70Var.j0();
         e70Var.h0();
-        return r0.m1.b;
+        return r0.l1.b;
     }
 
     @Override // org.telegram.ui.Components.c20
@@ -34,7 +34,7 @@ public final /* synthetic */ class t60 implements org.telegram.ui.Components.c20
     }
 
     @Override // org.telegram.ui.ActionBar.a2
-    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+    public void k(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
         switch (this.a) {
             case 1:
                 this.b.o0();

@@ -1,9 +1,9 @@
 package ce;
 
 import org.telegram.tgnet.TLObject;
-import v7.t7;
+import v7.u7;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class i implements c {
     public final /* synthetic */ kotlin.jvm.internal.n a;
@@ -38,7 +38,7 @@ public final class i implements c {
                 i10 = hVar.e;
                 gd.i iVar2 = gd.i.a;
                 if (i10 != 0) {
-                    t7.b(obj2);
+                    u7.b(obj2);
                     if (this.a.a) {
                         hVar.e = 1;
                         if (this.b.a(obj, hVar) != aVar) {
@@ -56,19 +56,19 @@ public final class i implements c {
                     return aVar;
                 }
                 if (i10 == 1) {
-                    t7.b(obj2);
+                    u7.b(obj2);
                     return iVar2;
                 }
                 if (i10 != 2) {
                     if (i10 != 3) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    t7.b(obj2);
+                    u7.b(obj2);
                     return iVar2;
                 }
                 obj = hVar.b;
                 iVar = hVar.a;
-                t7.b(obj2);
+                u7.b(obj2);
                 if (!((Boolean) obj2).booleanValue()) {
                     iVar.a.a = true;
                     c cVar2 = iVar.b;

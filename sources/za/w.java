@@ -1,9 +1,9 @@
 package za;
 
 import android.util.Log;
-import v7.t7;
+import v7.u7;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class w extends kd.j implements rd.q {
     public int a;
@@ -23,7 +23,7 @@ public final class w extends kd.j implements rd.q {
         jd.a aVar = jd.a.a;
         int i10 = this.a;
         if (i10 == 0) {
-            t7.b(obj);
+            u7.b(obj);
             ce.c cVar = this.b;
             Log.e("FirebaseSessionsRepo", "Error reading stored session data.", this.c);
             n1.b bVar = new n1.b(true);
@@ -36,7 +36,7 @@ public final class w extends kd.j implements rd.q {
             if (i10 != 1) {
                 throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
             }
-            t7.b(obj);
+            u7.b(obj);
         }
         return gd.i.a;
     }

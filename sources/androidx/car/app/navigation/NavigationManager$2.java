@@ -3,7 +3,7 @@ package androidx.car.app.navigation;
 import androidx.lifecycle.e;
 import androidx.lifecycle.t;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 class NavigationManager$2 implements e {
     @Override // androidx.lifecycle.e

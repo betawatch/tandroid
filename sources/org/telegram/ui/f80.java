@@ -6,7 +6,7 @@ import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f80 implements Runnable {
     public final /* synthetic */ int a;
@@ -61,7 +61,7 @@ public final /* synthetic */ class f80 implements Runnable {
                         while (true) {
                             if (i12 < i10) {
                                 String str2 = strArr[i12];
-                                if (lowerCase2.startsWith(str2) || org.telegram.messenger.wh.u(" ", str2, lowerCase2) || (translitString2 != null && (translitString2.startsWith(str2) || org.telegram.messenger.wh.u(" ", str2, translitString2)))) {
+                                if (lowerCase2.startsWith(str2) || org.telegram.messenger.l0.v(" ", str2, lowerCase2) || (translitString2 != null && (translitString2.startsWith(str2) || org.telegram.messenger.l0.v(" ", str2, translitString2)))) {
                                     z10 = true;
                                 }
                                 if (z10) {

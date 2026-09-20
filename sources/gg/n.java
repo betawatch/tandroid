@@ -22,14 +22,14 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.ko;
 import org.telegram.ui.Components.oo;
-import org.telegram.ui.Components.qb0;
-import org.telegram.ui.Components.yb0;
+import org.telegram.ui.Components.pb0;
+import org.telegram.ui.Components.xb0;
 import org.telegram.ui.zn;
 import org.webrtc.SurfaceTextureHelper;
 import org.webrtc.SurfaceViewRenderer;
 import org.webrtc.TextureViewRenderer;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n implements Runnable {
     public final /* synthetic */ int a;
@@ -195,22 +195,22 @@ public final /* synthetic */ class n implements Runnable {
                 koVar.run(Integer.valueOf(i19));
                 break;
             case 10:
-                yb0 yb0Var = ((qb0) this.d).X2;
-                View d = yb0Var.d();
-                qb0 qb0Var = yb0Var.f;
+                xb0 xb0Var = ((pb0) this.d).X2;
+                View d = xb0Var.d();
+                pb0 pb0Var = xb0Var.f;
                 if (d != null) {
                     int top = d.getTop() + this.b;
                     int top2 = d.getTop() + this.c;
                     int i20 = top2 - top;
-                    int paddingTop = qb0Var.getPaddingTop();
-                    int height = qb0Var.getHeight() - qb0Var.getPaddingBottom();
+                    int paddingTop = pb0Var.getPaddingTop();
+                    int height = pb0Var.getHeight() - pb0Var.getPaddingBottom();
                     if (i20 <= height - paddingTop) {
                         top = (top + top2) / 2;
                         paddingTop = (paddingTop + height) / 2;
                     }
                     int i21 = top - paddingTop;
                     if (i21 < 0) {
-                        qb0Var.scrollBy(0, i21);
+                        pb0Var.scrollBy(0, i21);
                         break;
                     }
                 }

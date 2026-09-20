@@ -5,7 +5,7 @@ import android.os.Parcelable;
 import java.util.Arrays;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class a1 extends o6.a {
     public static final Parcelable.Creator<a1> CREATOR = new c(26);
@@ -40,7 +40,7 @@ public final class a1 extends o6.a {
 
     public final String toString() {
         Locale locale = Locale.US;
-        return a4.a.s(hg.k0.k("WebIconParcelable{", this.b, "x", this.c, " - "), this.a, "}");
+        return a4.a.s(hg.k0.l("WebIconParcelable{", this.b, "x", this.c, " - "), this.a, "}");
     }
 
     @Override // android.os.Parcelable

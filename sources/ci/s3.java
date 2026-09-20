@@ -27,12 +27,12 @@ import org.telegram.messenger.DispatchQueue;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.rk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.CheckBoxBase;
 import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class s3 extends FrameLayout {
     public static int d0;
@@ -75,7 +75,7 @@ public final class s3 extends FrameLayout {
     public static final HashMap e0 = new HashMap();
     public static final r3 f0 = new r3(45);
 
-    public s3(Context context, org.telegram.ui.ActionBar.e6 e6Var, float f7, boolean z10) {
+    public s3(Context context, org.telegram.ui.ActionBar.f6 f6Var, float f7, boolean z10) {
         super(context);
         this.b = new Paint(3);
         Paint paint = new Paint(1);
@@ -103,7 +103,7 @@ public final class s3 extends FrameLayout {
         textPaint2.setTextSize(AndroidUtilities.dp(11.33f));
         textPaint2.setColor(-1);
         this.v = context.getResources().getDrawable(R.drawable.play_mini_video).mutate();
-        q3 q3Var = new q3(this, context, e6Var);
+        q3 q3Var = new q3(this, context, f6Var);
         this.J = q3Var;
         if (z10) {
             q3Var.setDrawBackgroundAsArc(7);
@@ -368,7 +368,7 @@ public final class s3 extends FrameLayout {
         q3 q3Var = this.J;
         if (z11) {
             frameLayout.setVisibility(0);
-            wh.r(q3Var.animate().alpha(z10 ? 1.0f : 0.0f).scaleX(z10 ? 1.0f : 0.7f).scaleY(z10 ? 1.0f : 0.7f).withEndAction(new bi.f(1, this, z10)), qr.h, 320L);
+            rk.s(q3Var.animate().alpha(z10 ? 1.0f : 0.0f).scaleX(z10 ? 1.0f : 0.7f).scaleY(z10 ? 1.0f : 0.7f).withEndAction(new bi.f(1, this, z10)), qr.h, 320L);
         } else {
             frameLayout.setVisibility(z10 ? 0 : 8);
         }

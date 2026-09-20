@@ -6,7 +6,7 @@ import ei.d5;
 import hg.k0;
 import java.util.List;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class c0 {
     public final /* synthetic */ int a;
@@ -72,7 +72,7 @@ public final class c0 {
                         rVar.d = sVar.d;
                         rVar.N = sVar.O;
                         rVar.t = sVar.u;
-                        k0.r(rVar, Z1);
+                        k0.s(rVar, Z1);
                         h0VarArr[i10] = Z1;
                         i10++;
                     }
@@ -100,7 +100,7 @@ public final class c0 {
                         rVar2.d = sVar2.d;
                         rVar2.N = sVar2.O;
                         rVar2.t = sVar2.u;
-                        k0.r(rVar2, Z12);
+                        k0.s(rVar2, Z12);
                         h0VarArr2[i11] = Z12;
                         i11++;
                     }

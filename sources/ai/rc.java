@@ -8,7 +8,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.support.LongSparseLongArray;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class rc {
     public static final rc[] f = new rc[4];
@@ -24,14 +24,14 @@ public final class rc {
         this.a = i10;
     }
 
-    public final void a(org.telegram.ui.Components.ia iaVar) {
+    public final void a(org.telegram.ui.Components.ha haVar) {
         TLRPC.UserStatus userStatus;
         long currentTimeMillis = System.currentTimeMillis();
         ArrayList arrayList = this.c;
         arrayList.clear();
-        for (int i10 = 0; i10 < iaVar.getChildCount(); i10++) {
-            View childAt = iaVar.getChildAt(i10);
-            long dialogId = childAt instanceof org.telegram.ui.Cells.s2 ? ((org.telegram.ui.Cells.s2) childAt).getDialogId() : childAt instanceof org.telegram.ui.Cells.za ? ((org.telegram.ui.Cells.za) childAt).getDialogId() : 0L;
+        for (int i10 = 0; i10 < haVar.getChildCount(); i10++) {
+            View childAt = haVar.getChildAt(i10);
+            long dialogId = childAt instanceof org.telegram.ui.Cells.s2 ? ((org.telegram.ui.Cells.s2) childAt).getDialogId() : childAt instanceof org.telegram.ui.Cells.ab ? ((org.telegram.ui.Cells.ab) childAt).getDialogId() : 0L;
             int i11 = this.a;
             LongSparseLongArray longSparseLongArray = this.b;
             if (dialogId > 0) {

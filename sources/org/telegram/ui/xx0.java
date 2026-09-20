@@ -1,41 +1,56 @@
 package org.telegram.ui;
 
-import android.content.ClipData;
-import android.content.ClipboardManager;
-import android.text.style.ClickableSpan;
-import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class xx0 extends ClickableSpan {
-    public final /* synthetic */ String a;
-    public final /* synthetic */ yx0 b;
+public final /* synthetic */ class xx0 implements Utilities.Callback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ zx0 b;
 
-    public xx0(yx0 yx0Var, String str) {
-        this.b = yx0Var;
-        this.a = str;
+    public /* synthetic */ xx0(zx0 zx0Var, int i10) {
+        this.a = i10;
+        this.b = zx0Var;
     }
 
-    @Override // android.text.style.ClickableSpan
-    public final void onClick(View view) {
-        org.telegram.ui.Components.qc b10;
-        ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", this.a));
-        org.telegram.ui.Components.xc a02 = org.telegram.ui.Components.xc.a0(this.b.d);
-        String string = LocaleController.getString(R.string.LinkCopied);
-        org.telegram.ui.ActionBar.e6 resourceProvider = this.b.d.getResourceProvider();
-        a02.getClass();
-        if (AndroidUtilities.shouldShowClipboardToast()) {
-            org.telegram.ui.Components.yb ybVar = new org.telegram.ui.Components.yb(a02.W(), resourceProvider);
-            ybVar.c(R.raw.voip_invite, 36, 36, "Wibe", "Circle");
-            ybVar.b.setText(string);
-            b10 = a02.b(ybVar, 1500);
-        } else {
-            b10 = new org.telegram.ui.Components.pb();
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        int i10;
+        int i11;
+        switch (this.a) {
+            case 0:
+                PrivacyControlActivity privacyControlActivity = this.b.d;
+                privacyControlActivity.L = ((Integer) obj).intValue();
+                AndroidUtilities.updateVisibleRow(privacyControlActivity.d, privacyControlActivity.j0);
+                privacyControlActivity.E0();
+                break;
+            default:
+                TL_account.TL_birthday tL_birthday = (TL_account.TL_birthday) obj;
+                TL_account.updateBirthday updatebirthday = new TL_account.updateBirthday();
+                updatebirthday.flags |= 1;
+                updatebirthday.birthday = tL_birthday;
+                zx0 zx0Var = this.b;
+                PrivacyControlActivity privacyControlActivity2 = zx0Var.d;
+                TLRPC.UserFull userFull = privacyControlActivity2.getMessagesController().getUserFull(privacyControlActivity2.getUserConfig().getClientUserId());
+                TL_account.TL_birthday tL_birthday2 = userFull != null ? userFull.birthday : null;
+                if (userFull != null) {
+                    userFull.flags2 |= 32;
+                    userFull.birthday = tL_birthday;
+                    privacyControlActivity2.getMessagesStorage().updateUserInfo(userFull, false);
+                }
+                privacyControlActivity2.getMessagesController().invalidateContentSettings();
+                privacyControlActivity2.getConnectionsManager().sendRequest(updatebirthday, new ns0(zx0Var, userFull, tL_birthday2, 1), 1024);
+                i10 = ((org.telegram.ui.ActionBar.n2) privacyControlActivity2).currentAccount;
+                MessagesController.getInstance(i10).removeSuggestion(0L, "BIRTHDAY_SETUP");
+                i11 = ((org.telegram.ui.ActionBar.n2) privacyControlActivity2).currentAccount;
+                NotificationCenter.getInstance(i11).lambda$postNotificationNameOnUIThread$1(NotificationCenter.premiumPromoUpdated, new Object[0]);
+                privacyControlActivity2.F0(true);
+                break;
         }
-        b10.j();
     }
 }

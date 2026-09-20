@@ -10,7 +10,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class uc extends FrameLayout implements org.telegram.ui.ActionBar.z5 {
     public final ip0 a;
@@ -24,13 +24,13 @@ public final class uc extends FrameLayout implements org.telegram.ui.ActionBar.z
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public uc(bd bdVar, Activity activity) {
         super(activity);
-        org.telegram.ui.ActionBar.e6 e6Var;
+        org.telegram.ui.ActionBar.f6 f6Var;
         int i10;
-        org.telegram.ui.ActionBar.e6 e6Var2;
+        org.telegram.ui.ActionBar.f6 f6Var2;
         this.h = bdVar;
         Context context = getContext();
-        e6Var = ((org.telegram.ui.ActionBar.n2) bdVar).resourceProvider;
-        ip0 ip0Var = new ip0(context, e6Var);
+        f6Var = ((org.telegram.ui.ActionBar.n2) bdVar).resourceProvider;
+        ip0 ip0Var = new ip0(context, f6Var);
         this.a = ip0Var;
         ip0Var.setProgressToGradient(1.0f);
         ip0Var.F = true;
@@ -38,8 +38,8 @@ public final class uc extends FrameLayout implements org.telegram.ui.ActionBar.z
         Context context2 = getContext();
         i10 = ((org.telegram.ui.ActionBar.n2) bdVar).currentAccount;
         long j3 = bdVar.a;
-        e6Var2 = ((org.telegram.ui.ActionBar.n2) bdVar).resourceProvider;
-        tc tcVar = new tc(this, context2, i10, j3, e6Var2);
+        f6Var2 = ((org.telegram.ui.ActionBar.n2) bdVar).resourceProvider;
+        tc tcVar = new tc(this, context2, i10, j3, f6Var2);
         this.b = tcVar;
         boolean z10 = bdVar.d;
         addView(tcVar, w7.y5.d(-1, z10 ? 230.0f : 190.0f, 80, 0.0f, 0.0f, 0.0f, z10 ? 24.0f : 0.0f));

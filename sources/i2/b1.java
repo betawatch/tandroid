@@ -43,7 +43,7 @@ import org.telegram.ui.xd;
 import org.telegram.ui.zn;
 import w7.y5;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b1 implements Runnable {
     public final /* synthetic */ int a;
@@ -147,7 +147,7 @@ public final /* synthetic */ class b1 implements Runnable {
                     textView2.setTextColor(j6.w0(null, i10, false));
                     textView2.setTextSize(1, 16.0f);
                     textView2.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
-                    org.telegram.messenger.q.n(R.string.EditAdminTransferAlertText1, textView2);
+                    org.telegram.messenger.l0.l(R.string.EditAdminTransferAlertText1, textView2);
                     if (LocaleController.isRTL) {
                         linearLayout2.addView(textView2, y5.n(-1, -2));
                         linearLayout2.addView(imageView, y5.q(-2, -2, 5));
@@ -155,8 +155,8 @@ public final /* synthetic */ class b1 implements Runnable {
                         linearLayout2.addView(imageView, y5.n(-2, -2));
                         linearLayout2.addView(textView2, y5.n(-1, -2));
                     }
-                    LinearLayout f7 = org.telegram.messenger.q.f(activity, 0);
-                    linearLayout.addView(f7, y5.k(0.0f, 11.0f, 0.0f, 0.0f, -1, -2));
+                    LinearLayout e = org.telegram.messenger.l0.e(activity, 0);
+                    linearLayout.addView(e, y5.k(0.0f, 11.0f, 0.0f, 0.0f, -1, -2));
                     ImageView imageView2 = new ImageView(activity);
                     imageView2.setImageResource(R.drawable.list_circle);
                     imageView2.setPadding(LocaleController.isRTL ? AndroidUtilities.dp(11.0f) : 0, AndroidUtilities.dp(9.0f), LocaleController.isRTL ? 0 : AndroidUtilities.dp(11.0f), 0);
@@ -165,13 +165,13 @@ public final /* synthetic */ class b1 implements Runnable {
                     textView3.setTextColor(j6.w0(null, i10, false));
                     textView3.setTextSize(1, 16.0f);
                     textView3.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
-                    org.telegram.messenger.q.n(R.string.EditAdminTransferAlertText2, textView3);
+                    org.telegram.messenger.l0.l(R.string.EditAdminTransferAlertText2, textView3);
                     if (LocaleController.isRTL) {
-                        f7.addView(textView3, y5.n(-1, -2));
-                        f7.addView(imageView2, y5.q(-2, -2, 5));
+                        e.addView(textView3, y5.n(-1, -2));
+                        e.addView(imageView2, y5.q(-2, -2, 5));
                     } else {
-                        f7.addView(imageView2, y5.n(-2, -2));
-                        f7.addView(textView3, y5.n(-1, -2));
+                        e.addView(imageView2, y5.n(-2, -2));
+                        e.addView(textView3, y5.n(-1, -2));
                     }
                     if ("PASSWORD_MISSING".equals(tL_error.text)) {
                         alertDialog$Builder.k(LocaleController.getString(R.string.EditAdminTransferSetPassword), new xd(keVar));
@@ -211,8 +211,8 @@ public final /* synthetic */ class b1 implements Runnable {
                         try {
                             AndroidUtilities.openForView(messageObject, znVar.getParentActivity(), znVar.ea, false);
                             break;
-                        } catch (Exception e) {
-                            FileLog.e(e);
+                        } catch (Exception e7) {
+                            FileLog.e(e7);
                             znVar.z6(messageObject);
                             return;
                         }

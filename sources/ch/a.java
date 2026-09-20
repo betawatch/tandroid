@@ -9,9 +9,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import org.telegram.ui.PrivacyControlActivity;
 import org.telegram.ui.a70;
-import yf.f0;
+import yf.e0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a implements gh.f, a70 {
     public final /* synthetic */ int a;
@@ -49,7 +49,7 @@ public final /* synthetic */ class a implements gh.f, a70 {
         }
         if (this.b) {
             float[] copyOf = Arrays.copyOf(cVar.b, 8);
-            boolean c10 = f0.c(copyOf);
+            boolean c10 = e0.c(copyOf);
             float min = Math.min(rectF.width(), rectF.height()) / 2.0f;
             Paint paint3 = new Paint(1);
             if (Color.alpha(dVar.f) <= 0 || copyOf[0] <= 0.0f) {

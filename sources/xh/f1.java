@@ -22,20 +22,21 @@ import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.q5;
+import org.telegram.ui.Components.d6;
+import org.telegram.ui.Components.p5;
 import org.telegram.ui.Components.qr;
-import v7.u7;
+import v7.v7;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class f1 extends Drawable {
     public static n1 C = new n1();
     public Paint A;
     public int B;
     public final ViewGroup a;
-    public final e6 b;
+    public final f6 b;
     public final Paint c;
     public final Paint d;
     public final RectF e;
@@ -51,7 +52,7 @@ public final class f1 extends Drawable {
     public final Matrix o;
     public boolean p;
     public final Paint q;
-    public final org.telegram.ui.Components.e6 r;
+    public final d6 r;
     public float s;
     public boolean t;
     public boolean u;
@@ -61,7 +62,7 @@ public final class f1 extends Drawable {
     public long y;
     public Bitmap z;
 
-    public f1(ViewGroup viewGroup, e6 e6Var, boolean z10) {
+    public f1(ViewGroup viewGroup, f6 f6Var, boolean z10) {
         Paint paint = new Paint(1);
         this.c = paint;
         Paint paint2 = new Paint(1);
@@ -73,14 +74,14 @@ public final class f1 extends Drawable {
         this.o = new Matrix();
         Paint paint3 = new Paint(1);
         this.q = paint3;
-        this.r = new org.telegram.ui.Components.e6(new rg.w1(this, 15), 320L, qr.h);
+        this.r = new d6(new rg.q1(this, 16), 320L, qr.h);
         this.s = AndroidUtilities.dp(11.0f);
         this.u = true;
         this.v = 0;
         int i10 = j6.d6;
         this.w = i10;
         this.a = viewGroup;
-        this.b = e6Var;
+        this.b = f6Var;
         e1 e1Var = new e1(this, viewGroup, AndroidUtilities.dp(28.0f));
         this.l = e1Var;
         viewGroup.addOnAttachStateChangeListener(new ai.u2(this, 12));
@@ -88,7 +89,7 @@ public final class f1 extends Drawable {
             e1Var.a();
         }
         this.g = z10;
-        paint.setColor(j6.v0(i10, e6Var));
+        paint.setColor(j6.v0(i10, f6Var));
         a(z10);
         Paint.Style style = Paint.Style.STROKE;
         paint3.setStyle(style);
@@ -116,7 +117,7 @@ public final class f1 extends Drawable {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void b(Canvas canvas, float f7) {
-        e6 e6Var;
+        f6 f6Var;
         float f10;
         Bitmap bitmap;
         boolean z10;
@@ -151,10 +152,10 @@ public final class f1 extends Drawable {
             paint.setShader(null);
         }
         int i11 = j6.a6;
-        e6 e6Var2 = this.b;
-        final int v02 = j6.v0(i11, e6Var2);
+        f6 f6Var2 = this.b;
+        final int v02 = j6.v0(i11, f6Var2);
         int i12 = j6.d6;
-        final int v03 = j6.v0(i12, e6Var2);
+        final int v03 = j6.v0(i12, f6Var2);
         final int i13 = 0;
         boolean z11 = this.s == ((float) AndroidUtilities.dp(11.0f)) && v02 == j6.w0(null, i11, false) && v03 == j6.w0(null, i12, false);
         boolean z12 = this.g;
@@ -174,7 +175,7 @@ public final class f1 extends Drawable {
                         float[] fArr = n1Var.g;
                         final float dp = AndroidUtilities.dp(1.66f);
                         final float dp2 = AndroidUtilities.dp(0.33f);
-                        n1Var.b = u7.b(bitmapArr, fArr, dp, dp2, 0, new gh.f() { // from class: gh.e
+                        n1Var.b = v7.b(bitmapArr, fArr, dp, dp2, 0, new gh.f() { // from class: gh.e
                             @Override // gh.f
                             public final void a(Canvas canvas3, RectF rectF2, float[] fArr2) {
                                 Path path = new Path();
@@ -210,7 +211,7 @@ public final class f1 extends Drawable {
                         float[] fArr2 = n1Var2.g;
                         final float dp3 = AndroidUtilities.dp(1.66f);
                         final float dp4 = AndroidUtilities.dp(0.33f);
-                        n1Var2.f = u7.b(bitmapArr2, fArr2, dp3, dp4, v03, new gh.f() { // from class: gh.e
+                        n1Var2.f = v7.b(bitmapArr2, fArr2, dp3, dp4, v03, new gh.f() { // from class: gh.e
                             @Override // gh.f
                             public final void a(Canvas canvas3, RectF rectF2, float[] fArr22) {
                                 Path path = new Path();
@@ -237,7 +238,7 @@ public final class f1 extends Drawable {
                         n1Var3.i = v03;
                         final float f13 = 0.0f;
                         final float f14 = 0.0f;
-                        n1Var3.d = u7.b(n1Var3.c, n1Var3.g, 0.0f, 0.0f, v03, new gh.f() { // from class: gh.e
+                        n1Var3.d = v7.b(n1Var3.c, n1Var3.g, 0.0f, 0.0f, v03, new gh.f() { // from class: gh.e
                             @Override // gh.f
                             public final void a(Canvas canvas3, RectF rectF2, float[] fArr22) {
                                 Path path = new Path();
@@ -296,7 +297,7 @@ public final class f1 extends Drawable {
             canvas2.drawRoundRect(rectF, f17, f17, paint2);
         }
         if (this.h == null || e1Var.d()) {
-            e6Var = e6Var2;
+            f6Var = f6Var2;
         } else {
             int i14 = this.h.pattern_color | (-16777216);
             canvas2.save();
@@ -305,12 +306,12 @@ public final class f1 extends Drawable {
             if (i15 >= 29) {
                 Drawable drawable = e1Var.f[0];
                 f10 = 1.0f;
-                if (drawable != null && e1Var.d.c == 1.0f && (drawable instanceof q5)) {
-                    q5 q5Var = (q5) drawable;
-                    ai.l4 l4Var = q5Var.k;
-                    long i16 = q5Var.i();
+                if (drawable != null && e1Var.d.c == 1.0f && (drawable instanceof p5)) {
+                    p5 p5Var = (p5) drawable;
+                    ai.l4 l4Var = p5Var.k;
+                    long i16 = p5Var.i();
                     if (l4Var != null) {
-                        e6Var = e6Var2;
+                        f6Var = f6Var2;
                         if (i16 == this.y) {
                             bitmap = l4Var.getBitmap();
                         }
@@ -348,12 +349,12 @@ public final class f1 extends Drawable {
                         }
                     }
                 }
-                e6Var = e6Var2;
+                f6Var = f6Var2;
                 bitmap = null;
                 if (bitmap != null) {
                 }
             } else {
-                e6Var = e6Var2;
+                f6Var = f6Var2;
                 f10 = 1.0f;
             }
             e1Var.k(Integer.valueOf(i14));
@@ -377,7 +378,7 @@ public final class f1 extends Drawable {
             Paint paint4 = this.q;
             if (i17 == 0) {
                 Integer num = this.x;
-                paint4.setColor(num != null ? num.intValue() : j6.v0(this.w, e6Var));
+                paint4.setColor(num != null ? num.intValue() : j6.v0(this.w, f6Var));
                 paint4.setStrokeWidth(AndroidUtilities.lerp(0.0f, AndroidUtilities.dpf2(1.667f), e));
                 RectF rectF2 = AndroidUtilities.rectTmp;
                 rectF2.set(rectF);
@@ -387,10 +388,10 @@ public final class f1 extends Drawable {
                 canvas2.drawRoundRect(rectF2, lerp3, lerp3, paint4);
                 return;
             }
-            e6 e6Var3 = e6Var;
+            f6 f6Var3 = f6Var;
             if (i17 == 1) {
                 Integer num2 = this.x;
-                paint4.setColor(num2 != null ? num2.intValue() : j6.v0(this.w, e6Var3));
+                paint4.setColor(num2 != null ? num2.intValue() : j6.v0(this.w, f6Var3));
                 paint4.setStrokeWidth(AndroidUtilities.lerp(0.0f, AndroidUtilities.dpf2(3.0f), e));
                 RectF rectF3 = AndroidUtilities.rectTmp;
                 rectF3.set(rectF);

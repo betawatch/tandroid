@@ -24,21 +24,21 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.Components.h9;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.Components.g9;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.v5;
-import org.telegram.ui.Components.z5;
-import v7.u7;
+import org.telegram.ui.Components.u5;
+import org.telegram.ui.Components.y5;
+import v7.v7;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class k0 extends Drawable {
     public NinePatchDrawable a;
     public NinePatchDrawable b;
     public final TextPaint c;
     public final ImageReceiver d;
-    public final h9 e;
+    public final g9 e;
     public final int f;
     public final int g;
     public final float h;
@@ -50,7 +50,7 @@ public final class k0 extends Drawable {
     public StaticLayout n;
     public float o;
     public float p;
-    public v5 q;
+    public u5 q;
     public View r;
     public int s;
     public int t;
@@ -61,7 +61,7 @@ public final class k0 extends Drawable {
         this.c = textPaint;
         ImageReceiver imageReceiver = new ImageReceiver();
         this.d = imageReceiver;
-        this.e = new h9((e6) null);
+        this.e = new g9((f6) null);
         int dp = AndroidUtilities.dp(10.66f);
         this.f = dp * 2;
         this.g = AndroidUtilities.dp(4.0f);
@@ -85,7 +85,7 @@ public final class k0 extends Drawable {
             drawable.setBounds(0, 0, intrinsicWidth, intrinsicHeight);
             drawable.draw(canvas);
             int i10 = (intrinsicHeight * 4) / 144;
-            this.a = u7.a(createBitmap, new Rect((intrinsicWidth * 27) / 168, i10, (intrinsicWidth * 5) / 168, i10), (intrinsicWidth * 94) / 168, (intrinsicHeight * 71) / 144);
+            this.a = v7.a(createBitmap, new Rect((intrinsicWidth * 27) / 168, i10, (intrinsicWidth * 5) / 168, i10), (intrinsicWidth * 94) / 168, (intrinsicHeight * 71) / 144);
         }
         if (this.b == null) {
             Drawable drawable2 = ApplicationLoader.applicationContext.getResources().getDrawable(R.drawable.gift_message_bubble_border_24);
@@ -102,7 +102,7 @@ public final class k0 extends Drawable {
             paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.MULTIPLY));
             canvas2.drawRect(0.0f, 0.0f, f7, f10, paint);
             int i11 = (intrinsicHeight2 * 4) / 144;
-            this.b = u7.a(createBitmap2, new Rect((intrinsicWidth2 * 27) / 168, i11, (intrinsicWidth2 * 5) / 168, i11), (intrinsicWidth2 * 94) / 168, (intrinsicHeight2 * 71) / 144);
+            this.b = v7.a(createBitmap2, new Rect((intrinsicWidth2 * 27) / 168, i11, (intrinsicWidth2 * 5) / 168, i11), (intrinsicWidth2 * 94) / 168, (intrinsicHeight2 * 71) / 144);
         }
     }
 
@@ -158,16 +158,16 @@ public final class k0 extends Drawable {
         boolean z10 = tLObject != null;
         this.l = z10;
         if (z10) {
-            h9 h9Var = this.e;
-            h9Var.p(tLObject);
+            g9 g9Var = this.e;
+            g9Var.p(tLObject);
             boolean z11 = tLObject instanceof TLRPC.User;
             ImageReceiver imageReceiver = this.d;
             if (z11) {
-                imageReceiver.setImage(ImageLocation.getForUser((TLRPC.User) tLObject, 1), "48_48", h9Var, null, null, 0);
+                imageReceiver.setImage(ImageLocation.getForUser((TLRPC.User) tLObject, 1), "48_48", g9Var, null, null, 0);
             } else if (tLObject instanceof TLRPC.Chat) {
-                imageReceiver.setImage(ImageLocation.getForChat((TLRPC.Chat) tLObject, 1), "48_48", h9Var, null, null, 0);
+                imageReceiver.setImage(ImageLocation.getForChat((TLRPC.Chat) tLObject, 1), "48_48", g9Var, null, null, 0);
             } else {
-                imageReceiver.setImageBitmap(h9Var);
+                imageReceiver.setImageBitmap(g9Var);
             }
         }
         this.s = -1;
@@ -194,9 +194,9 @@ public final class k0 extends Drawable {
             this.n.draw(canvas);
             View view = this.r;
             if (view != null && (this.m instanceof Spanned)) {
-                v5 update = z5.update(0, view, false, this.q, this.n);
+                u5 update = y5.update(0, view, false, this.q, this.n);
                 this.q = update;
-                z5.drawAnimatedEmojis(canvas, this.n, update, 0.0f, null, 0.0f, 0.0f, 0.0f, 1.0f, null);
+                y5.drawAnimatedEmojis(canvas, this.n, update, 0.0f, null, 0.0f, 0.0f, 0.0f, 1.0f, null);
             }
             canvas.restore();
         }

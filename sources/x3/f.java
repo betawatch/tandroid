@@ -5,7 +5,7 @@ import c3.p;
 import e2.v;
 import java.io.EOFException;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class f {
     public int a;
@@ -27,7 +27,7 @@ public final class f {
         v vVar = this.g;
         vVar.G(27);
         try {
-            z11 = pVar.h(vVar.a, 0, 27, z10);
+            z11 = pVar.i(vVar.a, 0, 27, z10);
         } catch (EOFException e) {
             if (!z10) {
                 throw e;
@@ -46,7 +46,7 @@ public final class f {
                 this.d = x10 + 27;
                 vVar.G(x10);
                 try {
-                    z12 = pVar.h(vVar.a, 0, this.c, z10);
+                    z12 = pVar.i(vVar.a, 0, this.c, z10);
                 } catch (EOFException e7) {
                     if (!z10) {
                         throw e7;
@@ -70,7 +70,7 @@ public final class f {
 
     public final boolean b(p pVar, long j3) {
         boolean z10;
-        e2.d.b(pVar.getPosition() == pVar.i());
+        e2.d.b(pVar.getPosition() == pVar.j());
         v vVar = this.g;
         vVar.G(4);
         while (true) {
@@ -78,7 +78,7 @@ public final class f {
                 break;
             }
             try {
-                z10 = pVar.h(vVar.a, 0, 4, true);
+                z10 = pVar.i(vVar.a, 0, 4, true);
             } catch (EOFException unused) {
                 z10 = false;
             }

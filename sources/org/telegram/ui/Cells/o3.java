@@ -1,33 +1,31 @@
 package org.telegram.ui.Cells;
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.l61;
-import org.telegram.ui.Components.t61;
-import org.telegram.ui.Components.w51;
-import org.telegram.ui.Components.wl0;
-import org.telegram.ui.Components.x51;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class o3 extends w51 {
-    public static final /* synthetic */ int a = 0;
+public final class o3 extends AnimatorListenerAdapter {
+    public final /* synthetic */ q3 a;
 
-    static {
-        w51.setup(new o3());
+    public o3(q3 q3Var) {
+        this.a = q3Var;
     }
 
-    @Override // org.telegram.ui.Components.w51
-    public final void bindView(View view, x51 x51Var, boolean z10, l61 l61Var, t61 t61Var) {
-        p3 p3Var = (p3) view;
-        p3Var.a((TLRPC.StickerSetCovered) x51Var.G, z10, x51Var.t, false);
-        p3Var.e.a(x51Var.t, false);
-        p3Var.setAddOnClickListener(x51Var.D);
-    }
-
-    @Override // org.telegram.ui.Components.w51
-    public final View createView(Context context, wl0 wl0Var, int i10, int i11, org.telegram.ui.ActionBar.e6 e6Var) {
-        return new p3(context, e6Var);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        q3 q3Var = this.a;
+        if (q3Var.v) {
+            q3Var.e.setVisibility(4);
+            q3Var.f.setVisibility(4);
+            q3Var.h.setVisibility(0);
+        } else {
+            if (q3Var.s) {
+                q3Var.e.setVisibility(4);
+            } else {
+                q3Var.f.setVisibility(4);
+            }
+            q3Var.h.setVisibility(8);
+        }
     }
 }

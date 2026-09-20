@@ -16,9 +16,9 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.messenger.RichMessageLayout;
 import org.telegram.ui.Components.lz;
-import org.telegram.ui.vj0;
+import org.telegram.ui.xj0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class t1 {
     public boolean A;
@@ -74,7 +74,7 @@ public final class t1 {
     public boolean N1;
     public boolean N2;
     public int O;
-    public org.telegram.ui.Components.v5 O0;
+    public org.telegram.ui.Components.u5 O0;
     public int O1;
     public boolean O2;
     public int P;
@@ -88,7 +88,7 @@ public final class t1 {
     public StaticLayout R0;
     public boolean R2;
     public boolean S;
-    public org.telegram.ui.Components.v5 S0;
+    public org.telegram.ui.Components.u5 S0;
     public float S1;
     public int S2;
     public StaticLayout T;
@@ -177,7 +177,7 @@ public final class t1 {
     public float l0;
     public boolean l1;
     public boolean l2;
-    public org.telegram.ui.Components.v5 l3;
+    public org.telegram.ui.Components.u5 l3;
     public StaticLayout m;
     public float m0;
     public boolean m1;
@@ -297,7 +297,7 @@ public final class t1 {
         StaticLayout staticLayout;
         o0 o0Var;
         RichMessageLayout richMessageLayout;
-        org.telegram.ui.Components.x5 x5Var;
+        org.telegram.ui.Components.w5 w5Var;
         u1 u1Var = this.m3;
         zg.p0 p0Var = u1Var.N;
         ArrayList arrayList = u1Var.o7;
@@ -326,18 +326,18 @@ public final class t1 {
                     String charSequence = u1Var.y7.textLayoutBlocks.get(i14).textLayout == null ? null : u1Var.y7.textLayoutBlocks.get(i14).textLayout.getText().toString();
                     String charSequence2 = ((MessageObject.TextLayoutBlock) this.I0.get(i14)).textLayout == null ? null : ((MessageObject.TextLayoutBlock) this.I0.get(i14)).textLayout.getText().toString();
                     if ((charSequence != null || charSequence2 == null) && ((charSequence == null || charSequence2 != null) && charSequence.equals(charSequence2))) {
-                        org.telegram.ui.Components.v5 v5Var = u1Var.pc;
-                        if (v5Var != null) {
+                        org.telegram.ui.Components.u5 u5Var = u1Var.pc;
+                        if (u5Var != null) {
                             StaticLayout staticLayout2 = u1Var.y7.textLayoutBlocks.get(i14).textLayout;
                             StaticLayout staticLayout3 = ((MessageObject.TextLayoutBlock) this.I0.get(i14)).textLayout;
-                            HashMap hashMap = v5Var.b;
-                            if (staticLayout3 != null && (x5Var = (org.telegram.ui.Components.x5) hashMap.remove(staticLayout3)) != null) {
-                                ArrayList arrayList4 = x5Var.b;
-                                x5Var.a = staticLayout2;
+                            HashMap hashMap = u5Var.b;
+                            if (staticLayout3 != null && (w5Var = (org.telegram.ui.Components.w5) hashMap.remove(staticLayout3)) != null) {
+                                ArrayList arrayList4 = w5Var.b;
+                                w5Var.a = staticLayout2;
                                 for (int i15 = 0; i15 < arrayList4.size(); i15++) {
-                                    ((org.telegram.ui.Components.u5) arrayList4.get(i15)).c = staticLayout2;
+                                    ((org.telegram.ui.Components.t5) arrayList4.get(i15)).c = staticLayout2;
                                 }
-                                hashMap.put(staticLayout2, x5Var);
+                                hashMap.put(staticLayout2, w5Var);
                             }
                         }
                     }
@@ -347,11 +347,11 @@ public final class t1 {
                     ArrayList arrayList5 = this.I0;
                     this.H0 = arrayList5;
                     this.N0 = this.o2;
-                    this.O0 = org.telegram.ui.Components.z5.update(0, (View) u1Var, this.O0, (ArrayList<MessageObject.TextLayoutBlock>) arrayList5, true);
-                    u1Var.pc = org.telegram.ui.Components.z5.update(0, u1Var, u1Var.pc, u1Var.y7.textLayoutBlocks);
+                    this.O0 = org.telegram.ui.Components.y5.update(0, (View) u1Var, this.O0, (ArrayList<MessageObject.TextLayoutBlock>) arrayList5, true);
+                    u1Var.pc = org.telegram.ui.Components.y5.update(0, u1Var, u1Var.pc, u1Var.y7.textLayoutBlocks);
                     z10 = true;
                 } else {
-                    u1Var.pc = org.telegram.ui.Components.z5.update(0, u1Var, u1Var.pc, u1Var.y7.textLayoutBlocks);
+                    u1Var.pc = org.telegram.ui.Components.y5.update(0, u1Var, u1Var.pc, u1Var.y7.textLayoutBlocks);
                 }
             }
             z16 = false;
@@ -365,8 +365,8 @@ public final class t1 {
         }
         this.K0 = false;
         if (richMessageLayout2 != this.M0) {
-            vj0 vj0Var = u1Var.ie;
-            boolean z17 = vj0Var != null && vj0Var.h;
+            xj0 xj0Var = u1Var.ie;
+            boolean z17 = xj0Var != null && xj0Var.h;
             RichMessageLayout richMessageLayout3 = this.L0;
             if (richMessageLayout3 != null) {
                 richMessageLayout3.detach(u1Var);
@@ -405,7 +405,7 @@ public final class t1 {
                 StaticLayout staticLayout6 = this.E2;
                 this.R0 = staticLayout6;
                 this.J2 = this.I2;
-                this.S0 = org.telegram.ui.Components.z5.update(0, (View) u1Var, false, this.S0, true, staticLayout6);
+                this.S0 = org.telegram.ui.Components.y5.update(0, (View) u1Var, false, this.S0, true, staticLayout6);
                 z10 = true;
             }
         }
@@ -556,10 +556,10 @@ public final class t1 {
             this.a1 = true;
             MessageObject.TextLayoutBlocks textLayoutBlocks6 = this.c1;
             this.b1 = textLayoutBlocks6;
-            this.O0 = org.telegram.ui.Components.z5.update(0, u1Var, (org.telegram.ui.Components.v5) null, textLayoutBlocks6 == null ? null : textLayoutBlocks6.textLayoutBlocks);
-            org.telegram.ui.Components.v5 v5Var2 = u1Var.pc;
+            this.O0 = org.telegram.ui.Components.y5.update(0, u1Var, (org.telegram.ui.Components.u5) null, textLayoutBlocks6 == null ? null : textLayoutBlocks6.textLayoutBlocks);
+            org.telegram.ui.Components.u5 u5Var2 = u1Var.pc;
             MessageObject.TextLayoutBlocks textLayoutBlocks7 = u1Var.c4;
-            u1Var.pc = org.telegram.ui.Components.z5.update(0, u1Var, v5Var2, textLayoutBlocks7 == null ? null : textLayoutBlocks7.textLayoutBlocks);
+            u1Var.pc = org.telegram.ui.Components.y5.update(0, u1Var, u5Var2, textLayoutBlocks7 == null ? null : textLayoutBlocks7.textLayoutBlocks);
             if (this.E0 != u1Var.G8 || this.d1 != z19) {
                 this.s0 = true;
                 this.q0 = this.e;
@@ -768,7 +768,7 @@ public final class t1 {
                         return z10;
                     }
                     this.k3 = staticLayout;
-                    this.l3 = org.telegram.ui.Components.z5.update(0, (View) u1Var, false, this.l3, staticLayout);
+                    this.l3 = org.telegram.ui.Components.y5.update(0, (View) u1Var, false, this.l3, staticLayout);
                     return true;
                 }
                 this.t2 = true;
@@ -1090,7 +1090,7 @@ public final class t1 {
         this.a1 = false;
         this.C0 = false;
         this.b1 = null;
-        org.telegram.ui.Components.z5.release(u1Var, this.O0);
+        org.telegram.ui.Components.y5.release(u1Var, this.O0);
         this.O0 = null;
         this.s0 = false;
         this.J1 = false;
@@ -1151,6 +1151,6 @@ public final class t1 {
             ((zg.m0) arrayList.get(i11)).c = 0;
         }
         this.k3 = null;
-        org.telegram.ui.Components.z5.release(u1Var, this.l3);
+        org.telegram.ui.Components.y5.release(u1Var, this.l3);
     }
 }

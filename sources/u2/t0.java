@@ -1,28 +1,76 @@
 package u2;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+import java.io.IOException;
+
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
-public final class t0 {
+public final class t0 implements c1 {
     public final int a;
-    public final boolean b;
+    public final /* synthetic */ v0 b;
 
-    public t0(int i10, boolean z10) {
+    public t0(v0 v0Var, int i10) {
+        this.b = v0Var;
         this.a = i10;
-        this.b = z10;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    @Override // u2.c1
+    public final void a() {
+        int i10 = this.a;
+        v0 v0Var = this.b;
+        v0Var.K[i10].z();
+        y2.m mVar = v0Var.x;
+        int L3 = v0Var.d.L3(v0Var.U);
+        IOException iOException = mVar.c;
+        if (iOException != null) {
+            throw iOException;
         }
-        if (obj == null || t0.class != obj.getClass()) {
-            return false;
+        y2.i iVar = mVar.b;
+        if (iVar != null) {
+            if (L3 == Integer.MIN_VALUE) {
+                L3 = iVar.a;
+            }
+            IOException iOException2 = iVar.e;
+            if (iOException2 != null && iVar.f > L3) {
+                throw iOException2;
+            }
         }
-        t0 t0Var = (t0) obj;
-        return this.a == t0Var.a && this.b == t0Var.b;
     }
 
-    public final int hashCode() {
-        return (this.a * 31) + (this.b ? 1 : 0);
+    @Override // u2.c1
+    public final boolean e() {
+        v0 v0Var = this.b;
+        return !v0Var.C() && v0Var.K[this.a].x(v0Var.e0);
+    }
+
+    @Override // u2.c1
+    public final int f(n4.y yVar, h2.h hVar, int i10) {
+        v0 v0Var = this.b;
+        if (v0Var.C()) {
+            return -3;
+        }
+        int i11 = this.a;
+        v0Var.x(i11);
+        int C = v0Var.K[i11].C(yVar, hVar, i10, v0Var.e0);
+        if (C == -3) {
+            v0Var.y(i11);
+        }
+        return C;
+    }
+
+    @Override // u2.c1
+    public final int j(long j3) {
+        v0 v0Var = this.b;
+        if (v0Var.C()) {
+            return 0;
+        }
+        int i10 = this.a;
+        v0Var.x(i10);
+        b1 b1Var = v0Var.K[i10];
+        int v = b1Var.v(j3, v0Var.e0);
+        b1Var.H(v);
+        if (v == 0) {
+            v0Var.y(i10);
+        }
+        return v;
     }
 }

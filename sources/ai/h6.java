@@ -20,17 +20,17 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.bd0;
-import org.telegram.ui.Components.dd0;
-import org.telegram.ui.Components.m80;
+import org.telegram.ui.Components.ad0;
+import org.telegram.ui.Components.cd0;
+import org.telegram.ui.Components.l80;
 import org.telegram.ui.Stories.ProfileStoriesView;
-import org.telegram.ui.g71;
+import org.telegram.ui.j71;
 import org.telegram.ui.rz0;
 import org.telegram.ui.ze;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class h6 implements dc, OnFailureListener, org.telegram.ui.ActionBar.a2, bd0, c5.p, MediaDataController.KeywordResultCallback, BillingController.ProductDetailsResponseListenerLegacy {
+public final /* synthetic */ class h6 implements dc, OnFailureListener, org.telegram.ui.ActionBar.a2, ad0, c5.p, MediaDataController.KeywordResultCallback, BillingController.ProductDetailsResponseListenerLegacy {
     public final /* synthetic */ Object a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -50,21 +50,8 @@ public final /* synthetic */ class h6 implements dc, OnFailureListener, org.tele
         AndroidUtilities.runOnUIThread(new ze((KeyEvent.Callback) this.a, (Object) hVar, (Object) list, (String) this.b, this.c, (TLObject) this.d, this.e, 4));
     }
 
-    @Override // org.telegram.ui.ActionBar.a2
-    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
-        org.telegram.ui.ActionBar.o3 o3Var = (org.telegram.ui.ActionBar.o3) this.a;
-        boolean[] zArr = (boolean[]) this.b;
-        org.telegram.ui.ActionBar.n3 n3Var = (org.telegram.ui.ActionBar.n3) this.c;
-        Utilities.Callback callback = (Utilities.Callback) this.d;
-        org.telegram.ui.ActionBar.b2[] b2VarArr = (org.telegram.ui.ActionBar.b2[]) this.e;
-        zArr[0] = true;
-        o3Var.h(o3Var.w, n3Var, true);
-        callback.run(Boolean.TRUE);
-        b2VarArr[0].dismiss();
-    }
-
     @Override // ai.dc
-    public void g(float f7, Canvas canvas, RectF rectF, boolean z10) {
+    public void f(float f7, Canvas canvas, RectF rectF, boolean z10) {
         a6.i iVar = (a6.i) this.a;
         RectF rectF2 = (RectF) this.b;
         i6 i6Var = (i6) this.d;
@@ -91,6 +78,19 @@ public final /* synthetic */ class h6 implements dc, OnFailureListener, org.tele
         rectF5.set(rectF3);
     }
 
+    @Override // org.telegram.ui.ActionBar.a2
+    public void k(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+        org.telegram.ui.ActionBar.o3 o3Var = (org.telegram.ui.ActionBar.o3) this.a;
+        boolean[] zArr = (boolean[]) this.b;
+        org.telegram.ui.ActionBar.n3 n3Var = (org.telegram.ui.ActionBar.n3) this.c;
+        Utilities.Callback callback = (Utilities.Callback) this.d;
+        org.telegram.ui.ActionBar.b2[] b2VarArr = (org.telegram.ui.ActionBar.b2[]) this.e;
+        zArr[0] = true;
+        o3Var.h(o3Var.w, n3Var, true);
+        callback.run(Boolean.TRUE);
+        b2VarArr[0].dismiss();
+    }
+
     @Override // com.google.android.gms.tasks.OnFailureListener
     public void onFailure(Exception e) {
         v0.n request = (v0.n) this.a;
@@ -109,29 +109,29 @@ public final /* synthetic */ class h6 implements dc, OnFailureListener, org.tele
 
     @Override // org.telegram.messenger.BillingController.ProductDetailsResponseListenerLegacy
     public void onProductDetailsResponse(c5.h hVar, List list) {
-        AndroidUtilities.runOnUIThread(new ze((yh.t5) this.a, list, (m80) this.b, (TLRPC.TL_inputStorePaymentStarsGift) this.c, (TL_stars.TL_starsGiftOption) this.d, hVar, (Activity) this.e, 12));
+        AndroidUtilities.runOnUIThread(new ze((yh.u5) this.a, list, (l80) this.b, (TLRPC.TL_inputStorePaymentStarsGift) this.c, (TL_stars.TL_starsGiftOption) this.d, hVar, (Activity) this.e, 12));
     }
 
-    @Override // org.telegram.ui.Components.bd0
-    public void q(dd0 dd0Var, int i10) {
-        org.telegram.ui.Components.e5.c((ci.d) this.a, (dd0) this.b, (dd0) this.c, (dd0) this.d, (dd0) this.e);
+    @Override // org.telegram.ui.Components.ad0
+    public void q(cd0 cd0Var, int i10) {
+        org.telegram.ui.Components.d5.c((ci.d) this.a, (cd0) this.b, (cd0) this.c, (cd0) this.d, (cd0) this.e);
     }
 
     @Override // org.telegram.messenger.MediaDataController.KeywordResultCallback
     public void run(ArrayList arrayList, String str) {
         TLRPC.TL_availableReaction tL_availableReaction;
-        g71 g71Var = (g71) this.a;
+        j71 j71Var = (j71) this.a;
         LinkedHashSet linkedHashSet = (LinkedHashSet) this.b;
         HashMap hashMap = (HashMap) this.c;
         ArrayList arrayList2 = (ArrayList) this.d;
         Runnable runnable = (Runnable) this.e;
-        g71Var.getClass();
+        j71Var.getClass();
         for (int i10 = 0; i10 < arrayList.size(); i10++) {
             try {
                 if (((MediaDataController.KeywordResult) arrayList.get(i10)).emoji.startsWith("animated_")) {
                     linkedHashSet.add(Long.valueOf(Long.parseLong(((MediaDataController.KeywordResult) arrayList.get(i10)).emoji.substring(9))));
                 } else {
-                    int i11 = g71Var.W;
+                    int i11 = j71Var.W;
                     if ((i11 == 1 || i11 == 11 || i11 == 2) && (tL_availableReaction = (TLRPC.TL_availableReaction) hashMap.get(((MediaDataController.KeywordResult) arrayList.get(i10)).emoji)) != null) {
                         arrayList2.add(zg.o0.c(tL_availableReaction));
                     }

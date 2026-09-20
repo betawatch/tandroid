@@ -3,9 +3,9 @@ package org.telegram.ui;
 import android.view.View;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class im extends org.telegram.ui.Components.r6 {
+public final class im extends org.telegram.ui.Components.q6 {
     public final /* synthetic */ km b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -14,7 +14,7 @@ public final class im extends org.telegram.ui.Components.r6 {
         this.b = kmVar;
     }
 
-    @Override // org.telegram.ui.Components.r6
+    @Override // org.telegram.ui.Components.q6
     public final void c(Object obj, float f7) {
         ((MessageObject.SendAnimationData) obj).progress = f7;
         View view = this.b.b.Q.fragmentView;

@@ -10,7 +10,7 @@ import android.graphics.RectF;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public class CheckBoxSquare extends View {
     public final RectF a;
@@ -25,11 +25,11 @@ public class CheckBoxSquare extends View {
     public int s;
     public int v;
     public int w;
-    public final org.telegram.ui.ActionBar.e6 x;
+    public final org.telegram.ui.ActionBar.f6 x;
 
-    public CheckBoxSquare(Context context, org.telegram.ui.ActionBar.e6 e6Var, boolean z10) {
+    public CheckBoxSquare(Context context, org.telegram.ui.ActionBar.f6 f6Var, boolean z10) {
         super(context);
-        this.x = e6Var;
+        this.x = f6Var;
         if (org.telegram.ui.ActionBar.j6.p0 == null) {
             org.telegram.ui.ActionBar.j6.P(context);
         }
@@ -87,9 +87,9 @@ public class CheckBoxSquare extends View {
             return;
         }
         int i10 = this.s;
-        org.telegram.ui.ActionBar.e6 e6Var = this.x;
-        int v02 = org.telegram.ui.ActionBar.j6.v0(i10, e6Var);
-        int v03 = org.telegram.ui.ActionBar.j6.v0(this.v, e6Var);
+        org.telegram.ui.ActionBar.f6 f6Var = this.x;
+        int v02 = org.telegram.ui.ActionBar.j6.v0(i10, f6Var);
+        int v03 = org.telegram.ui.ActionBar.j6.v0(this.v, f6Var);
         float f11 = this.d;
         if (f11 <= 0.5f) {
             f10 = f11 / 0.5f;
@@ -101,7 +101,7 @@ public class CheckBoxSquare extends View {
             f10 = 1.0f;
         }
         if (this.n) {
-            org.telegram.ui.ActionBar.j6.p0.setColor(org.telegram.ui.ActionBar.j6.v0(this.r ? org.telegram.ui.ActionBar.j6.z5 : org.telegram.ui.ActionBar.j6.Z6, e6Var));
+            org.telegram.ui.ActionBar.j6.p0.setColor(org.telegram.ui.ActionBar.j6.v0(this.r ? org.telegram.ui.ActionBar.j6.z5 : org.telegram.ui.ActionBar.j6.Z6, f6Var));
         }
         float dp = AndroidUtilities.dp(1.0f) * f7;
         RectF rectF = this.a;
@@ -119,7 +119,7 @@ public class CheckBoxSquare extends View {
             canvas2.drawRoundRect(rectF, AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f), org.telegram.ui.ActionBar.j6.n0);
         }
         if (this.d > 0.5f) {
-            org.telegram.ui.ActionBar.j6.o0.setColor(org.telegram.ui.ActionBar.j6.v0(this.w, e6Var));
+            org.telegram.ui.ActionBar.j6.o0.setColor(org.telegram.ui.ActionBar.j6.v0(this.w, f6Var));
             float f12 = 1.0f - f7;
             canvas2.drawLine(AndroidUtilities.dp(7.0f), (int) AndroidUtilities.dpf2(13.0f), (int) (AndroidUtilities.dp(7.0f) - (AndroidUtilities.dp(3.0f) * f12)), (int) (AndroidUtilities.dpf2(13.0f) - (AndroidUtilities.dp(3.0f) * f12)), org.telegram.ui.ActionBar.j6.o0);
             canvas2.drawLine((int) AndroidUtilities.dpf2(7.0f), (int) AndroidUtilities.dpf2(13.0f), (int) ((AndroidUtilities.dp(7.0f) * f12) + AndroidUtilities.dpf2(7.0f)), (int) (AndroidUtilities.dpf2(13.0f) - (AndroidUtilities.dp(7.0f) * f12)), org.telegram.ui.ActionBar.j6.o0);

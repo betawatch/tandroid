@@ -10,7 +10,7 @@ import android.view.animation.AccelerateInterpolator;
 import android.view.animation.DecelerateInterpolator;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public class RadialProgressView extends View {
     public float E;
@@ -211,12 +211,12 @@ public class RadialProgressView extends View {
         this.h = z10;
     }
 
-    public RadialProgressView(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
+    public RadialProgressView(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
         super(context);
         this.f = new RectF();
         this.J = true;
         this.x = AndroidUtilities.dp(40.0f);
-        this.r = org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.h6, e6Var);
+        this.r = org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.h6, f6Var);
         this.s = new DecelerateInterpolator();
         this.v = new AccelerateInterpolator();
         Paint paint = new Paint(1);

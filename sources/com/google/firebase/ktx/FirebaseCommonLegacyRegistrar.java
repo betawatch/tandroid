@@ -4,13 +4,13 @@ import com.google.firebase.components.ComponentRegistrar;
 import hd.h;
 import java.util.List;
 import q9.a;
-import w7.p8;
+import w7.q8;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class FirebaseCommonLegacyRegistrar implements ComponentRegistrar {
     @Override // com.google.firebase.components.ComponentRegistrar
     public List<a> getComponents() {
-        return h.b(p8.a("fire-core-ktx", "20.4.2"));
+        return h.b(q8.a("fire-core-ktx", "20.4.2"));
     }
 }

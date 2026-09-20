@@ -15,7 +15,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class o extends View {
     public final int a;
@@ -41,7 +41,7 @@ public final class o extends View {
         String findAnimatedEmojiEmoticon;
         TLRPC.TL_availableReaction tL_availableReaction2 = o0Var.f != null ? MediaDataController.getInstance(UserConfig.selectedAccount).getReactionsMap().get(o0Var.f) : null;
         if (tL_availableReaction2 == null) {
-            document = org.telegram.ui.Components.q5.f(UserConfig.selectedAccount, o0Var.g);
+            document = org.telegram.ui.Components.p5.f(UserConfig.selectedAccount, o0Var.g);
             if (document != null && (findAnimatedEmojiEmoticon = MessageObject.findAnimatedEmojiEmoticon(document, null)) != null) {
                 tL_availableReaction2 = MediaDataController.getInstance(UserConfig.selectedAccount).getReactionsMap().get(findAnimatedEmojiEmoticon);
             }
@@ -52,7 +52,7 @@ public final class o extends View {
         }
         ArrayList arrayList = this.e;
         if (document != null || tL_availableReaction == null) {
-            org.telegram.ui.Components.q5 n10 = document == null ? org.telegram.ui.Components.q5.n(2, o0Var.g, null, UserConfig.selectedAccount) : org.telegram.ui.Components.q5.m(2, UserConfig.selectedAccount, document);
+            org.telegram.ui.Components.p5 n10 = document == null ? org.telegram.ui.Components.p5.n(2, o0Var.g, null, UserConfig.selectedAccount) : org.telegram.ui.Components.p5.m(2, UserConfig.selectedAccount, document);
             if (this.n != null) {
                 n10.setColorFilter(new PorterDuffColorFilter(this.n.intValue(), PorterDuff.Mode.MULTIPLY));
             }

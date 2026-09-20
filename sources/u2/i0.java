@@ -2,7 +2,7 @@ package u2;
 
 import java.io.IOException;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final /* synthetic */ class i0 implements e2.h {
     public final /* synthetic */ a5.a a;
@@ -21,8 +21,8 @@ public final /* synthetic */ class i0 implements e2.h {
 
     @Override // e2.h
     public final void accept(Object obj) {
-        k0 k0Var = (k0) obj;
+        l0 l0Var = (l0) obj;
         a5.a aVar = this.a;
-        k0Var.f(aVar.b, (f0) aVar.c, this.b, this.c, this.d, this.e);
+        l0Var.f(aVar.b, (f0) aVar.c, this.b, this.c, this.d, this.e);
     }
 }

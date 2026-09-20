@@ -19,7 +19,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class xm0 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ pn0 a;
@@ -28,9 +28,9 @@ public final class xm0 extends org.telegram.ui.ActionBar.j {
         this.a = pn0Var;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:74:0x0215  */
-    /* JADX WARN: Removed duplicated region for block: B:77:0x021c  */
-    /* JADX WARN: Removed duplicated region for block: B:80:0x0225  */
+    /* JADX WARN: Removed duplicated region for block: B:74:0x0216  */
+    /* JADX WARN: Removed duplicated region for block: B:77:0x021d  */
+    /* JADX WARN: Removed duplicated region for block: B:80:0x0226  */
     @Override // org.telegram.ui.ActionBar.j
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -61,7 +61,7 @@ public final class xm0 extends org.telegram.ui.ActionBar.j {
             if (pn0Var.getParentActivity() == null) {
                 return;
             }
-            org.telegram.ui.Components.l90 l90Var = new org.telegram.ui.Components.l90(pn0Var.getParentActivity(), null);
+            org.telegram.ui.Components.k90 k90Var = new org.telegram.ui.Components.k90(pn0Var.getParentActivity(), null);
             String string = LocaleController.getString(R.string.PassportInfo2);
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(string);
             int indexOf = string.indexOf(42);
@@ -69,17 +69,17 @@ public final class xm0 extends org.telegram.ui.ActionBar.j {
             if (indexOf != -1 && lastIndexOf != -1) {
                 spannableStringBuilder.replace(lastIndexOf, lastIndexOf + 1, (CharSequence) "");
                 spannableStringBuilder.replace(indexOf, indexOf + 1, (CharSequence) "");
-                spannableStringBuilder.setSpan(new org.telegram.ui.Components.m4(LocaleController.getString(R.string.PassportInfoUrl), 4, this), indexOf, lastIndexOf - 1, 33);
+                spannableStringBuilder.setSpan(new org.telegram.ui.Components.l4(LocaleController.getString(R.string.PassportInfoUrl), 4, this), indexOf, lastIndexOf - 1, 33);
             }
-            l90Var.setText(spannableStringBuilder);
-            l90Var.setTextSize(1, 16.0f);
-            l90Var.setLinkTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.k5, false));
-            l90Var.setHighlightColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.l5, false));
-            l90Var.setPadding(AndroidUtilities.dp(23.0f), 0, AndroidUtilities.dp(23.0f), 0);
-            l90Var.setMovementMethod(new AndroidUtilities.LinkMovementMethodMy());
-            l90Var.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.j5, false));
+            k90Var.setText(spannableStringBuilder);
+            k90Var.setTextSize(1, 16.0f);
+            k90Var.setLinkTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.k5, false));
+            k90Var.setHighlightColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.l5, false));
+            k90Var.setPadding(AndroidUtilities.dp(23.0f), 0, AndroidUtilities.dp(23.0f), 0);
+            k90Var.setMovementMethod(new AndroidUtilities.LinkMovementMethodMy());
+            k90Var.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.j5, false));
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(pn0Var.getParentActivity());
-            alertDialog$Builder.n(l90Var);
+            alertDialog$Builder.n(k90Var);
             alertDialog$Builder.a.R = LocaleController.getString(R.string.PassportInfoTitle);
             alertDialog$Builder.h(LocaleController.getString(R.string.Close), null);
             pn0Var.showDialog(alertDialog$Builder.a);
@@ -95,7 +95,7 @@ public final class xm0 extends org.telegram.ui.ActionBar.j {
                 return;
             }
             sl0 sl0Var = new sl0(this, 3);
-            o0.a aVar = new o0.a(this, sl0Var, false, 6);
+            m5.e eVar = new m5.e(this, sl0Var, false, 10);
             if (i15 == 4) {
                 if (pn0Var.f) {
                     obj = pn0Var.d1;
@@ -104,7 +104,7 @@ public final class xm0 extends org.telegram.ui.ActionBar.j {
                 } else {
                     obj = pn0Var.Y[0].getText().toString();
                 }
-                ((sm0) pn0Var.B1).c(pn0Var.E, obj, null, null, null, null, null, null, null, null, sl0Var, aVar);
+                ((sm0) pn0Var.B1).c(pn0Var.E, obj, null, null, null, null, null, null, null, null, sl0Var, eVar);
             } else if (i15 == 3) {
                 if (pn0Var.f) {
                     i14 = ((org.telegram.ui.ActionBar.n2) pn0Var).currentAccount;
@@ -115,7 +115,7 @@ public final class xm0 extends org.telegram.ui.ActionBar.j {
                     }
                     str = pn0Var.Y[1].getText().toString() + pn0Var.Y[2].getText().toString();
                 }
-                ((sm0) pn0Var.B1).c(pn0Var.E, str, null, null, null, null, null, null, null, null, sl0Var, aVar);
+                ((sm0) pn0Var.B1).c(pn0Var.E, str, null, null, null, null, null, null, null, null, sl0Var, eVar);
             } else if (i15 == 2) {
                 if (!pn0Var.o1.isEmpty() || pn0.D0(pn0Var)) {
                     return;
@@ -143,7 +143,7 @@ public final class xm0 extends org.telegram.ui.ActionBar.j {
                     if (hashMap2 != null) {
                         hashMap2.clear();
                     }
-                    ((sm0) pn0Var.B1).c(pn0Var.E, null, jSONObject != null ? jSONObject.toString() : null, pn0Var.F, null, pn0Var.i1, pn0Var.j1, pn0Var.k1, null, null, sl0Var, aVar);
+                    ((sm0) pn0Var.B1).c(pn0Var.E, null, jSONObject != null ? jSONObject.toString() : null, pn0Var.F, null, pn0Var.i1, pn0Var.j1, pn0Var.k1, null, null, sl0Var, eVar);
                 }
                 jSONObject = null;
                 hashMap = pn0Var.w1;
@@ -152,9 +152,9 @@ public final class xm0 extends org.telegram.ui.ActionBar.j {
                 hashMap2 = pn0Var.x1;
                 if (hashMap2 != null) {
                 }
-                ((sm0) pn0Var.B1).c(pn0Var.E, null, jSONObject != null ? jSONObject.toString() : null, pn0Var.F, null, pn0Var.i1, pn0Var.j1, pn0Var.k1, null, null, sl0Var, aVar);
+                ((sm0) pn0Var.B1).c(pn0Var.E, null, jSONObject != null ? jSONObject.toString() : null, pn0Var.F, null, pn0Var.i1, pn0Var.j1, pn0Var.k1, null, null, sl0Var, eVar);
             } else if (i15 == 1) {
-                if (!c(sl0Var, aVar)) {
+                if (!c(sl0Var, eVar)) {
                     return;
                 }
             } else if (i15 == 6) {
@@ -164,7 +164,7 @@ public final class xm0 extends org.telegram.ui.ActionBar.j {
                 tL_emailVerificationCode.code = pn0Var.Y[0].getText().toString();
                 verifyemail.verification = tL_emailVerificationCode;
                 i11 = ((org.telegram.ui.ActionBar.n2) pn0Var).currentAccount;
-                int sendRequest = ConnectionsManager.getInstance(i11).sendRequest(verifyemail, new ai.p3(this, sl0Var, aVar, verifyemail, 10));
+                int sendRequest = ConnectionsManager.getInstance(i11).sendRequest(verifyemail, new ai.p3(this, sl0Var, eVar, verifyemail, 10));
                 i12 = ((org.telegram.ui.ActionBar.n2) pn0Var).currentAccount;
                 ConnectionsManager connectionsManager = ConnectionsManager.getInstance(i12);
                 i13 = ((org.telegram.ui.ActionBar.n2) pn0Var).classGuid;
@@ -191,7 +191,7 @@ public final class xm0 extends org.telegram.ui.ActionBar.j {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final boolean c(sl0 sl0Var, o0.a aVar) {
+    public final boolean c(sl0 sl0Var, m5.e eVar) {
         char c10;
         char c11;
         char c12;
@@ -232,7 +232,7 @@ public final class xm0 extends org.telegram.ui.ActionBar.j {
                                 org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
                                 b2Var.T = formatString;
                                 b2Var.R = LocaleController.getString(R.string.AppName);
-                                alertDialog$Builder.k(LocaleController.getString(R.string.Done), new org.telegram.ui.Components.d1(this, translitString, translitString2, translitString3, sl0Var, aVar, 1));
+                                alertDialog$Builder.k(LocaleController.getString(R.string.Done), new org.telegram.ui.Components.d1(this, translitString, translitString2, translitString3, sl0Var, eVar, 1));
                                 alertDialog$Builder.h(LocaleController.getString(R.string.Edit), new i2.s(this, i12, 15));
                                 pn0Var.showDialog(b2Var);
                             }
@@ -415,7 +415,7 @@ public final class xm0 extends org.telegram.ui.ActionBar.j {
                 if (linearLayout != null && linearLayout.getVisibility() == 0) {
                     secureDocument = pn0Var.m1;
                 }
-                ((sm0) fn0Var).c(tL_secureRequiredType, null, jSONObject3, tL_secureRequiredType2, jSONObject4, null, secureDocument2, arrayList3, secureDocument3, secureDocument, sl0Var, aVar);
+                ((sm0) fn0Var).c(tL_secureRequiredType, null, jSONObject3, tL_secureRequiredType2, jSONObject4, null, secureDocument2, arrayList3, secureDocument3, secureDocument, sl0Var, eVar);
                 return true;
             }
             jSONObject2 = null;
@@ -439,7 +439,7 @@ public final class xm0 extends org.telegram.ui.ActionBar.j {
             if (linearLayout != null) {
                 secureDocument = pn0Var.m1;
             }
-            ((sm0) fn0Var2).c(tL_secureRequiredType3, null, jSONObject3, tL_secureRequiredType22, jSONObject4, null, secureDocument22, arrayList32, secureDocument32, secureDocument, sl0Var, aVar);
+            ((sm0) fn0Var2).c(tL_secureRequiredType3, null, jSONObject3, tL_secureRequiredType22, jSONObject4, null, secureDocument22, arrayList32, secureDocument32, secureDocument, sl0Var, eVar);
             return true;
         }
         return false;

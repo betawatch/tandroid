@@ -6,12 +6,12 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.ui.Components.e81;
 import org.telegram.ui.Components.f81;
-import org.telegram.ui.Components.u71;
+import org.telegram.ui.Components.t71;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.iu0;
 import org.telegram.ui.sl0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class v implements e81 {
     public int a;
@@ -59,8 +59,8 @@ public final class v implements e81 {
             }
             iu0 iu0Var = photoViewer.f0;
             if (iu0Var == null || !iu0Var.x) {
-                u71 u71Var = photoViewer.F2;
-                if (u71Var == null || !u71Var.y()) {
+                t71 t71Var = photoViewer.F2;
+                if (t71Var == null || !t71Var.y()) {
                     z10 = false;
                 }
             } else {
@@ -114,11 +114,11 @@ public final class v implements e81 {
 
     public void f(float f7) {
         PhotoViewer photoViewer = (PhotoViewer) this.d;
-        u71 u71Var = photoViewer.F2;
-        if (u71Var == null) {
+        t71 t71Var = photoViewer.F2;
+        if (t71Var == null) {
             return;
         }
-        if (u71Var.y()) {
+        if (t71Var.y()) {
             photoViewer.H2 = false;
             photoViewer.F2.B();
             photoViewer.e0.invalidate();

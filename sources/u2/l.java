@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public abstract class l extends a {
     public final HashMap h = new HashMap();
@@ -70,10 +70,10 @@ public abstract class l extends a {
         a5.a aVar2 = aVar.c;
         aVar2.getClass();
         CopyOnWriteArrayList copyOnWriteArrayList = (CopyOnWriteArrayList) aVar2.d;
-        j0 j0Var = new j0();
-        j0Var.a = handler;
-        j0Var.b = jVar;
-        copyOnWriteArrayList.add(j0Var);
+        k0 k0Var = new k0();
+        k0Var.a = handler;
+        k0Var.b = jVar;
+        copyOnWriteArrayList.add(k0Var);
         Handler handler2 = this.i;
         handler2.getClass();
         n2.k kVar = aVar.d;

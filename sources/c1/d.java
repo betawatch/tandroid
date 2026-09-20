@@ -26,16 +26,17 @@ import n4.x;
 import org.json.JSONException;
 import v0.o;
 import v7.f0;
+import v7.j0;
 import w0.g;
 import w0.i;
 import w0.j;
-import w7.c9;
+import w7.d9;
 import w7.g0;
-import w7.h8;
-import w7.v7;
+import w7.i8;
 import w7.w7;
+import w7.x7;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class d extends ResultReceiver {
     public final /* synthetic */ int a;
@@ -84,7 +85,7 @@ public final class d extends ResultReceiver {
                     return;
                 }
                 try {
-                    final o d = eVar.d(h8.a(eVar.e).f(intent));
+                    final o d = eVar.d(i8.a(eVar.e).f(intent));
                     f0.a(eVar.h, new rd.a() { // from class: b1.g
                         @Override // rd.a
                         public final Object invoke() {
@@ -200,7 +201,7 @@ public final class d extends ResultReceiver {
                     kotlin.jvm.internal.i.d(rVar, "getErrorCode(...)");
                     x0.a aVar = (x0.a) d1.f.a.get(rVar);
                     String str = kVar2.b;
-                    dVar = aVar == null ? new y0.a(new x0.a(26), t8.b.i("unknown fido gms exception - ", str)) : (rVar == r.w && str != null && xd.j.b(str, "Unable to get sync account")) ? new w0.b("Passkey registration was cancelled by the user.") : new y0.a(aVar, str);
+                    dVar = aVar == null ? new y0.a(new x0.a(26), j0.g("unknown fido gms exception - ", str)) : (rVar == r.w && str != null && xd.j.b(str, "Unable to get sync account")) ? new w0.b("Passkey registration was cancelled by the user.") : new y0.a(aVar, str);
                 } else {
                     dVar = null;
                 }
@@ -320,7 +321,7 @@ public final class d extends ResultReceiver {
                     a2 = g1.a.b("androidx.credentials.TYPE_PUBLIC_KEY_CREDENTIAL", intent3);
                 } else {
                     Bundle bundleExtra = intent3.getBundleExtra("android.service.credentials.extra.CREATE_CREDENTIAL_RESPONSE");
-                    a2 = (bundleExtra == null || (string = bundleExtra.getString("androidx.credentials.provider.extra.CREATE_CREDENTIAL_RESPONSE_TYPE")) == null || (bundle = bundleExtra.getBundle("androidx.credentials.provider.extra.CREATE_CREDENTIAL_REQUEST_DATA")) == null) ? null : v7.a(string, bundle);
+                    a2 = (bundleExtra == null || (string = bundleExtra.getString("androidx.credentials.provider.extra.CREATE_CREDENTIAL_RESPONSE_TYPE")) == null || (bundle = bundleExtra.getBundle("androidx.credentials.provider.extra.CREATE_CREDENTIAL_REQUEST_DATA")) == null) ? null : w7.a(string, bundle);
                 }
                 if (a2 != null) {
                     CancellationSignal cancellationSignal10 = dVar2.h;
@@ -349,7 +350,7 @@ public final class d extends ResultReceiver {
                         if (string3 == null) {
                             throw new IllegalArgumentException("Bundle was missing exception type.");
                         }
-                        a10 = c9.a(bundleExtra2.getCharSequence("androidx.credentials.provider.extra.CREATE_CREDENTIAL_EXCEPTION_MESSAGE"), string3);
+                        a10 = d9.a(bundleExtra2.getCharSequence("androidx.credentials.provider.extra.CREATE_CREDENTIAL_EXCEPTION_MESSAGE"), string3);
                     }
                 }
                 CancellationSignal cancellationSignal11 = dVar2.h;
@@ -436,7 +437,7 @@ public final class d extends ResultReceiver {
                     oVar = g1.a.d(intent4);
                 } else {
                     Bundle bundleExtra3 = intent4.getBundleExtra("android.service.credentials.extra.GET_CREDENTIAL_RESPONSE");
-                    oVar = (bundleExtra3 == null || (string2 = bundleExtra3.getString("androidx.credentials.provider.extra.EXTRA_CREDENTIAL_TYPE")) == null || (bundle2 = bundleExtra3.getBundle("androidx.credentials.provider.extra.EXTRA_CREDENTIAL_DATA")) == null) ? null : new o(w7.a(string2, bundle2));
+                    oVar = (bundleExtra3 == null || (string2 = bundleExtra3.getString("androidx.credentials.provider.extra.EXTRA_CREDENTIAL_TYPE")) == null || (bundle2 = bundleExtra3.getBundle("androidx.credentials.provider.extra.EXTRA_CREDENTIAL_DATA")) == null) ? null : new o(x7.a(string2, bundle2));
                 }
                 if (oVar != null) {
                     f0.a(cancellationSignal12, new b1.b(executor12, iVar6, oVar, i13));
@@ -452,7 +453,7 @@ public final class d extends ResultReceiver {
                         if (string4 == null) {
                             throw new IllegalArgumentException("Bundle was missing exception type.");
                         }
-                        iVar = c9.b(bundleExtra4.getCharSequence("androidx.credentials.provider.extra.CREATE_CREDENTIAL_EXCEPTION_MESSAGE"), string4);
+                        iVar = d9.b(bundleExtra4.getCharSequence("androidx.credentials.provider.extra.CREATE_CREDENTIAL_EXCEPTION_MESSAGE"), string4);
                     }
                 }
                 f0.a(cancellationSignal12, new b1.b(executor12, iVar6, iVar, i11));

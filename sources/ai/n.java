@@ -15,7 +15,7 @@ import org.telegram.ui.md;
 import org.telegram.ui.uo;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class n extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -43,18 +43,18 @@ public final class n extends AnimatorListenerAdapter {
                 }
                 break;
             case 23:
-                org.telegram.ui.Cells.t5 t5Var = (org.telegram.ui.Cells.t5) this.c;
-                AnimatorSet animatorSet2 = t5Var.J;
+                org.telegram.ui.Cells.u5 u5Var = (org.telegram.ui.Cells.u5) this.c;
+                AnimatorSet animatorSet2 = u5Var.J;
                 if (animatorSet2 != null && animatorSet2.equals(animator)) {
-                    t5Var.J = null;
+                    u5Var.J = null;
                     break;
                 }
                 break;
             case 25:
-                org.telegram.ui.Cells.db dbVar = (org.telegram.ui.Cells.db) this.c;
-                AnimatorSet animatorSet3 = dbVar.f;
+                org.telegram.ui.Cells.eb ebVar = (org.telegram.ui.Cells.eb) this.c;
+                AnimatorSet animatorSet3 = ebVar.f;
                 if (animatorSet3 != null && animatorSet3.equals(animator)) {
-                    dbVar.f = null;
+                    ebVar.f = null;
                     break;
                 }
                 break;
@@ -332,32 +332,32 @@ public final class n extends AnimatorListenerAdapter {
                 }
                 break;
             case 23:
-                org.telegram.ui.Cells.t5 t5Var = (org.telegram.ui.Cells.t5) this.c;
-                AnimatorSet animatorSet2 = t5Var.J;
+                org.telegram.ui.Cells.u5 u5Var = (org.telegram.ui.Cells.u5) this.c;
+                AnimatorSet animatorSet2 = u5Var.J;
                 if (animatorSet2 != null && animatorSet2.equals(animator)) {
-                    t5Var.J = null;
+                    u5Var.J = null;
                     if (!this.b) {
-                        t5Var.setBackgroundColor(0);
+                        u5Var.setBackgroundColor(0);
                         break;
                     }
                 }
                 break;
             case 24:
-                org.telegram.ui.Cells.t7 t7Var = (org.telegram.ui.Cells.t7) this.c;
-                ValueAnimator valueAnimator = t7Var.A0;
+                org.telegram.ui.Cells.u7 u7Var = (org.telegram.ui.Cells.u7) this.c;
+                ValueAnimator valueAnimator = u7Var.A0;
                 if (valueAnimator != null && valueAnimator.equals(animator)) {
-                    t7Var.B0 = this.b ? 1.0f : 0.0f;
-                    t7Var.A0 = null;
+                    u7Var.B0 = this.b ? 1.0f : 0.0f;
+                    u7Var.A0 = null;
                     break;
                 }
                 break;
             case 25:
-                org.telegram.ui.Cells.db dbVar = (org.telegram.ui.Cells.db) this.c;
-                AnimatorSet animatorSet3 = dbVar.f;
+                org.telegram.ui.Cells.eb ebVar = (org.telegram.ui.Cells.eb) this.c;
+                AnimatorSet animatorSet3 = ebVar.f;
                 if (animatorSet3 != null && animatorSet3.equals(animator)) {
-                    dbVar.f = null;
+                    ebVar.f = null;
                     if (!this.b) {
-                        dbVar.setBackgroundColor(0);
+                        ebVar.setBackgroundColor(0);
                         break;
                     }
                 }

@@ -7,7 +7,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class jr implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -35,7 +35,7 @@ public final /* synthetic */ class jr implements View.OnClickListener {
                 MessagesController.DialogFilter dialogFilter = (MessagesController.DialogFilter) this.d;
                 TLRPC.Dialog dialog = (TLRPC.Dialog) this.e;
                 uyVar.finishPreviewFragment();
-                AndroidUtilities.runOnUIThread(new y21(uyVar, dialogFilter, dialog, this.b, 1), 100L);
+                AndroidUtilities.runOnUIThread(new x21(uyVar, dialogFilter, dialog, this.b, 1), 100L);
                 break;
             default:
                 tg.a0.P((tg.a0) this.c, (TL_stories.PrepaidGiveaway) this.d, this.b, (org.telegram.ui.ActionBar.n2) this.e);

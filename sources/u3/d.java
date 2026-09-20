@@ -45,7 +45,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLObject;
 import z3.k;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class d implements o {
     public static final byte[] f0 = {49, 10, 48, 48, 58, 48, 48, 58, 48, 48, 44, 48, 48, 48, 32, 45, 45, 62, 32, 48, 48, 58, 48, 48, 58, 48, 48, 44, 48, 48, 48, 10};
@@ -176,7 +176,7 @@ public final class d implements o {
             j10 = j3;
         }
         int i10 = (int) j10;
-        lVar.h(vVar.a, 0, 4, false);
+        lVar.i(vVar.a, 0, 4, false);
         long z10 = vVar.z();
         b0Var.b = 4;
         while (true) {
@@ -186,7 +186,7 @@ public final class d implements o {
                 if (i11 == i10) {
                     break;
                 }
-                lVar.h(vVar.a, 0, 1, false);
+                lVar.i(vVar.a, 0, 1, false);
                 z10 = ((z10 << 8) & (-256)) | (vVar.a[0] & 255);
             } else {
                 long h = b0Var.h(lVar);
@@ -806,7 +806,7 @@ public final class d implements o {
                             z11 = false;
                             bVar.e = 0;
                         } else if (i10 == 4) {
-                            cVar.D(i24, (int) bVar.g, pVar2);
+                            cVar.G(i24, (int) bVar.g, pVar2);
                             z11 = false;
                             bVar.e = 0;
                         } else {
@@ -2732,7 +2732,7 @@ public final class d implements o {
                                 if (sparseArray.size() == 0) {
                                     throw s0.a(null, "No valid tracks were found");
                                 }
-                                dVar7.e0.e1();
+                                dVar7.e0.f1();
                             } else if (i28 == 475249515) {
                                 if (!dVar7.y) {
                                     q qVar2 = dVar7.e0;

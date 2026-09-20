@@ -3,9 +3,9 @@ package org.telegram.ui;
 import android.content.Context;
 import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class ix0 extends org.telegram.ui.Components.vl0 {
+public final class ix0 extends org.telegram.ui.Components.ul0 {
     public final /* synthetic */ Context c;
     public final /* synthetic */ jx0 d;
 
@@ -14,7 +14,7 @@ public final class ix0 extends org.telegram.ui.Components.vl0 {
         this.c = context;
     }
 
-    @Override // org.telegram.ui.Components.vl0
+    @Override // org.telegram.ui.Components.ul0
     public final boolean D(s4.c1 c1Var) {
         return !((lx0) this.d.n.d.get(c1Var.b())).a.current;
     }
@@ -36,6 +36,6 @@ public final class ix0 extends org.telegram.ui.Components.vl0 {
     public final s4.c1 x(ViewGroup viewGroup, int i10) {
         hx0 hx0Var = new hx0(this, this.c);
         hx0Var.setCirclePaintProvider(new rv0(2, this, hx0Var));
-        return new org.telegram.ui.Components.gl0(hx0Var);
+        return new org.telegram.ui.Components.fl0(hx0Var);
     }
 }

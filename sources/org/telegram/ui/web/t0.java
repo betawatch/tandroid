@@ -1,36 +1,40 @@
 package org.telegram.ui.web;
 
-import android.view.KeyEvent;
-import android.webkit.JsPromptResult;
-import android.widget.TextView;
-import org.telegram.ui.Components.bu;
+import android.content.DialogInterface;
+import android.webkit.JsResult;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
-public final class t0 implements TextView.OnEditorActionListener {
-    public final /* synthetic */ boolean[] a;
-    public final /* synthetic */ JsPromptResult b;
-    public final /* synthetic */ bu c;
-    public final /* synthetic */ org.telegram.ui.ActionBar.b2 d;
+public final /* synthetic */ class t0 implements DialogInterface.OnDismissListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean[] b;
+    public final /* synthetic */ JsResult c;
 
-    public t0(boolean[] zArr, JsPromptResult jsPromptResult, bu buVar, org.telegram.ui.ActionBar.b2 b2Var) {
-        this.a = zArr;
-        this.b = jsPromptResult;
-        this.c = buVar;
-        this.d = b2Var;
+    public /* synthetic */ t0(boolean[] zArr, JsResult jsResult, int i10) {
+        this.a = i10;
+        this.b = zArr;
+        this.c = jsResult;
     }
 
-    @Override // android.widget.TextView.OnEditorActionListener
-    public final boolean onEditorAction(TextView textView, int i10, KeyEvent keyEvent) {
-        if (i10 != 6) {
-            return false;
+    @Override // android.content.DialogInterface.OnDismissListener
+    public final void onDismiss(DialogInterface dialogInterface) {
+        switch (this.a) {
+            case 0:
+                boolean[] zArr = this.b;
+                if (!zArr[0]) {
+                    zArr[0] = true;
+                    this.c.cancel();
+                    break;
+                }
+                break;
+            default:
+                boolean[] zArr2 = this.b;
+                if (!zArr2[0]) {
+                    zArr2[0] = true;
+                    this.c.cancel();
+                    break;
+                }
+                break;
         }
-        boolean[] zArr = this.a;
-        if (!zArr[0]) {
-            zArr[0] = true;
-            this.b.confirm(this.c.getText().toString());
-            this.d.dismiss();
-        }
-        return true;
     }
 }

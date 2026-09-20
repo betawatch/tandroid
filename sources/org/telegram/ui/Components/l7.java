@@ -1,25 +1,44 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class l7 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ j8 b;
+import android.view.View;
 
-    public /* synthetic */ l7(j8 j8Var, int i10) {
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class l7 implements jl0 {
+    public final /* synthetic */ int a;
+
+    public /* synthetic */ l7(int i10) {
         this.a = i10;
-        this.b = j8Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.ui.Components.jl0
+    public final void d(int i10, View view) {
         switch (this.a) {
             case 0:
-                j8.n(this.b);
+                if (view instanceof org.telegram.ui.Cells.x) {
+                    ((org.telegram.ui.Cells.x) view).a();
+                    break;
+                }
+                break;
+            case 1:
+                boolean z10 = ChatAttachAlertPhotoLayout.q1;
+                if (view instanceof org.telegram.ui.Cells.u5) {
+                    org.telegram.ui.Cells.u5 u5Var = (org.telegram.ui.Cells.u5) view;
+                    u5Var.w.a(u5Var);
+                    break;
+                }
+                break;
+            case 2:
+                break;
+            case 3:
+                int i11 = xh.c.a0;
                 break;
             default:
-                j8.G(this.b);
+                int i12 = xh.m.A0;
                 break;
         }
+    }
+
+    private final void a(int i10, View view) {
     }
 }

@@ -16,10 +16,10 @@ import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.ae;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.cj0;
+import org.telegram.ui.dj0;
 import org.telegram.ui.rf;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class v0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -145,28 +145,28 @@ public final /* synthetic */ class v0 implements View.OnClickListener {
             case 23:
                 gg.g2 g2Var = (gg.g2) this.b;
                 LongSparseArray longSparseArray = g2Var.n;
-                org.telegram.ui.Cells.s3 s3Var = (org.telegram.ui.Cells.s3) view.getParent();
-                TLRPC.StickerSetCovered stickerSet = s3Var.getStickerSet();
+                org.telegram.ui.Cells.t3 t3Var = (org.telegram.ui.Cells.t3) view.getParent();
+                TLRPC.StickerSetCovered stickerSet = t3Var.getStickerSet();
                 if (stickerSet != null && g2Var.h.indexOfKey(stickerSet.set.id) < 0 && longSparseArray.indexOfKey(stickerSet.set.id) < 0) {
-                    if (!s3Var.r) {
-                        g2Var.F(stickerSet, s3Var);
+                    if (!t3Var.r) {
+                        g2Var.F(stickerSet, t3Var);
                         break;
                     } else {
                         longSparseArray.put(stickerSet.set.id, stickerSet);
-                        g2Var.e.a.h(s3Var.getStickerSet());
+                        g2Var.e.a.h(t3Var.getStickerSet());
                         break;
                     }
                 }
                 break;
             case 24:
                 hg.e eVar2 = (hg.e) this.b;
-                org.telegram.ui.Components.p6 p6Var = eVar2.f;
+                org.telegram.ui.Components.o6 o6Var = eVar2.f;
                 int i10 = eVar2.a;
                 boolean z10 = eVar2.r;
                 eVar2.r = !z10;
                 eVar2.h.c(LocaleController.getString(!z10 ? R.string.BizBotStart : R.string.BizBotStop), true, true);
-                p6Var.a();
-                p6Var.c(LocaleController.getString(eVar2.r ? R.string.BizBotStatusStopped : R.string.BizBotStatusManages), true, true);
+                o6Var.a();
+                o6Var.c(LocaleController.getString(eVar2.r ? R.string.BizBotStatusStopped : R.string.BizBotStatusManages), true, true);
                 if (eVar2.r) {
                     eVar2.w |= 1;
                 } else {
@@ -192,9 +192,9 @@ public final /* synthetic */ class v0 implements View.OnClickListener {
             case 27:
                 ii.r rVar = (ii.r) this.b;
                 rVar.I(0, true, 0, false, 0L);
-                cj0 cj0Var = rVar.O;
-                if (cj0Var != null) {
-                    cj0Var.h(true);
+                dj0 dj0Var = rVar.O;
+                if (dj0Var != null) {
+                    dj0Var.h(true);
                     rVar.O = null;
                     break;
                 }
@@ -225,7 +225,7 @@ public final /* synthetic */ class v0 implements View.OnClickListener {
                 ii.o4 o4Var = (ii.o4) this.b;
                 ii.a aVar2 = o4Var.a;
                 if (aVar2 != null && (m4Var = o4Var.G) != null) {
-                    ((ii.s3) m4Var).a.h3.p(aVar2);
+                    ((ii.s3) m4Var).a.h3.t(aVar2);
                     break;
                 }
                 break;

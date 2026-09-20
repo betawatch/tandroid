@@ -24,7 +24,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class i0 extends r2.r implements s0 {
     public final Context X0;
@@ -52,7 +52,7 @@ public final class i0 extends r2.r implements s0 {
         this.Z0 = pVar;
         this.a1 = jVar;
         this.k1 = -1000;
-        this.Y0 = new n4.y(handler, b0Var);
+        this.Y0 = new n4.y(handler, (j) b0Var);
         this.m1 = -9223372036854775807L;
         ((f0) pVar).t = new a4.m(this, 24);
     }
@@ -274,7 +274,7 @@ public final class i0 extends r2.r implements s0 {
     public final void X(Exception exc) {
         e2.a.f("MediaCodecAudioRenderer", "Audio codec error", exc);
         n4.y yVar = this.Y0;
-        Handler handler = (Handler) yVar.b;
+        Handler handler = (Handler) yVar.a;
         if (handler != null) {
             handler.post(new f(yVar, exc, 0));
         }
@@ -283,7 +283,7 @@ public final class i0 extends r2.r implements s0 {
     @Override // r2.r
     public final void Y(long j3, long j10, String str) {
         n4.y yVar = this.Y0;
-        Handler handler = (Handler) yVar.b;
+        Handler handler = (Handler) yVar.a;
         if (handler != null) {
             handler.post(new a3.g0(yVar, str, j3, j10, 2));
         }
@@ -292,7 +292,7 @@ public final class i0 extends r2.r implements s0 {
     @Override // r2.r
     public final void Z(String str) {
         n4.y yVar = this.Y0;
-        Handler handler = (Handler) yVar.b;
+        Handler handler = (Handler) yVar.a;
         if (handler != null) {
             handler.post(new x1(25, yVar, str));
         }
@@ -308,12 +308,12 @@ public final class i0 extends r2.r implements s0 {
 
     @Override // r2.r
     public final i2.h a0(n4.y yVar) {
-        b2.s sVar = (b2.s) yVar.c;
+        b2.s sVar = (b2.s) yVar.b;
         sVar.getClass();
         this.e1 = sVar;
         i2.h a02 = super.a0(yVar);
         n4.y yVar2 = this.Y0;
-        Handler handler = (Handler) yVar2.b;
+        Handler handler = (Handler) yVar2.a;
         if (handler != null) {
             handler.post(new gg.t(yVar2, sVar, a02, 21));
         }
@@ -626,7 +626,7 @@ public final class i0 extends r2.r implements s0 {
         i2.g gVar = new i2.g();
         this.O0 = gVar;
         n4.y yVar = this.Y0;
-        Handler handler = (Handler) yVar.b;
+        Handler handler = (Handler) yVar.a;
         if (handler != null) {
             handler.post(new g(yVar, gVar, 1));
         }
@@ -704,7 +704,7 @@ public final class i0 extends r2.r implements s0 {
                 l0();
                 j0();
             } finally {
-                hg.k0.y(this.V, null);
+                hg.k0.A(this.V, null);
                 this.V = null;
             }
         } finally {

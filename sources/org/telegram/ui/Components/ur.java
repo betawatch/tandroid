@@ -9,7 +9,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class ur extends ViewGroup {
     public static final /* synthetic */ int s = 0;
@@ -89,7 +89,7 @@ public final class ur extends ViewGroup {
             }
             View view = viewArr[i10];
             if (view != null) {
-                w7.a6.b(view, 0.02f, 1.2f);
+                w7.b6.b(view, 0.02f, 1.2f);
                 view.setBackground(a(i10));
             }
             i10++;
@@ -122,21 +122,21 @@ public final class ur extends ViewGroup {
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        int A = org.telegram.messenger.wh.A(32.0f, getWidth(), 3);
-        int A2 = org.telegram.messenger.wh.A(42.0f, getHeight(), 4);
+        int z11 = org.telegram.messenger.rk.z(32.0f, getWidth(), 3);
+        int z12 = org.telegram.messenger.rk.z(42.0f, getHeight(), 4);
         int i14 = 0;
         while (true) {
             View[] viewArr = this.c;
             if (i14 >= viewArr.length) {
                 return;
             }
-            int dp = AndroidUtilities.dp(6.0f) + A;
+            int dp = AndroidUtilities.dp(6.0f) + z11;
             int dp2 = AndroidUtilities.dp(10.0f) + (dp * (i14 % 3));
-            int dp3 = AndroidUtilities.dp(6.0f) + A2;
+            int dp3 = AndroidUtilities.dp(6.0f) + z12;
             int dp4 = AndroidUtilities.dp(10.0f) + (dp3 * (i14 / 3));
             View view = viewArr[i14];
             if (view != null) {
-                view.layout(dp2, dp4, dp2 + A, dp4 + A2);
+                view.layout(dp2, dp4, dp2 + z11, dp4 + z12);
             }
             i14++;
         }
@@ -145,11 +145,11 @@ public final class ur extends ViewGroup {
     @Override // android.view.View
     public final void onMeasure(int i10, int i11) {
         setMeasuredDimension(View.MeasureSpec.getSize(i10), View.MeasureSpec.getSize(i11));
-        int A = org.telegram.messenger.wh.A(32.0f, getWidth(), 3);
-        int A2 = org.telegram.messenger.wh.A(42.0f, getHeight(), 4);
+        int z10 = org.telegram.messenger.rk.z(32.0f, getWidth(), 3);
+        int z11 = org.telegram.messenger.rk.z(42.0f, getHeight(), 4);
         for (View view : this.c) {
             if (view != null) {
-                view.measure(View.MeasureSpec.makeMeasureSpec(A, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(A2, TLObject.FLAG_30));
+                view.measure(View.MeasureSpec.makeMeasureSpec(z10, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(z11, TLObject.FLAG_30));
             }
         }
     }

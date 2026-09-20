@@ -2,9 +2,9 @@ package org.telegram.ui;
 
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class s0 extends org.telegram.ui.Components.r6 {
+public final class s0 extends org.telegram.ui.Components.q6 {
     public final /* synthetic */ int b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -13,7 +13,7 @@ public final class s0 extends org.telegram.ui.Components.r6 {
         this.b = i10;
     }
 
-    @Override // org.telegram.ui.Components.r6
+    @Override // org.telegram.ui.Components.q6
     public final void c(Object obj, float f7) {
         switch (this.b) {
             case 0:
@@ -35,14 +35,14 @@ public final class s0 extends org.telegram.ui.Components.r6 {
                 ((SecretMediaViewer) obj).setAnimationValue(f7);
                 break;
             default:
-                c51 c51Var = (c51) obj;
-                if (c51Var.a != f7) {
-                    c51Var.a = f7;
-                    SecretMediaViewer secretMediaViewer = c51Var.r;
+                f51 f51Var = (f51) obj;
+                if (f51Var.a != f7) {
+                    f51Var.a = f7;
+                    SecretMediaViewer secretMediaViewer = f51Var.r;
                     secretMediaViewer.S.setAlpha(f7);
-                    if (!c51Var.b) {
-                        if (c51Var.c) {
-                            c51Var.setTranslationY((1.0f - f7) * AndroidUtilities.dpf2(24.0f));
+                    if (!f51Var.b) {
+                        if (f51Var.c) {
+                            f51Var.setTranslationY((1.0f - f7) * AndroidUtilities.dpf2(24.0f));
                         }
                         secretMediaViewer.R.setAlpha(f7);
                         break;
@@ -53,10 +53,10 @@ public final class s0 extends org.telegram.ui.Components.r6 {
                         float f11 = 1.0f - (0.1f * f10);
                         secretMediaViewer.S.setScaleX(f11);
                         secretMediaViewer.S.setScaleY(f11);
-                        org.telegram.ui.Components.w71 w71Var = secretMediaViewer.Q;
-                        if (w71Var.y != f10) {
-                            w71Var.y = f10;
-                            w71Var.v.invalidate();
+                        org.telegram.ui.Components.v71 v71Var = secretMediaViewer.Q;
+                        if (v71Var.y != f10) {
+                            v71Var.y = f10;
+                            v71Var.v.invalidate();
                             break;
                         }
                     }
@@ -81,7 +81,7 @@ public final class s0 extends org.telegram.ui.Components.r6 {
             case 5:
                 return Float.valueOf(((SecretMediaViewer) obj).getAnimationValue());
             default:
-                return Float.valueOf(((c51) obj).a);
+                return Float.valueOf(((f51) obj).a);
         }
     }
 }

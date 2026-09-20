@@ -36,7 +36,7 @@ import javax.crypto.Mac;
 import m.z0;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public abstract class b {
     public static void A(TextView textView, PorterDuff.Mode mode) {
@@ -243,11 +243,11 @@ public abstract class b {
 
     public static boolean l(Context context) {
         try {
-            FingerprintManager b10 = s9.b.b(context.getSystemService("fingerprint"));
-            if (b10 == null) {
+            FingerprintManager a2 = x2.h.a(context.getSystemService("fingerprint"));
+            if (a2 == null) {
                 return false;
             }
-            return b10.hasEnrolledFingerprints();
+            return a2.hasEnrolledFingerprints();
         } catch (Exception e) {
             FileLog.e(e);
             return false;
@@ -298,11 +298,11 @@ public abstract class b {
 
     public static boolean p(Context context) {
         try {
-            FingerprintManager b10 = s9.b.b(context.getSystemService("fingerprint"));
-            if (b10 == null) {
+            FingerprintManager a2 = x2.h.a(context.getSystemService("fingerprint"));
+            if (a2 == null) {
                 return false;
             }
-            return b10.isHardwareDetected();
+            return a2.isHardwareDetected();
         } catch (Exception e) {
             FileLog.e(e);
             return false;
@@ -314,7 +314,7 @@ public abstract class b {
     }
 
     public static boolean r(Throwable th2) {
-        return j2.e.e(th2);
+        return j2.e.f(th2);
     }
 
     public static int s(AppOpsManager appOpsManager, String str, String str2) {
@@ -335,18 +335,18 @@ public abstract class b {
 
     public static void w(k2.p pVar, Object obj) {
         a6.m mVar;
-        AudioDeviceInfo b10 = j2.e.b(obj);
+        AudioDeviceInfo d = j2.e.d(obj);
         k2.f0 f0Var = (k2.f0) pVar;
-        if (b10 == null) {
+        if (d == null) {
             mVar = null;
         } else {
             f0Var.getClass();
-            mVar = new a6.m(b10, 29);
+            mVar = new a6.m(d, 29);
         }
         f0Var.c0 = mVar;
         g7 g7Var = f0Var.z;
         if (g7Var != null) {
-            g7Var.c(b10);
+            g7Var.c(d);
         }
         AudioTrack audioTrack = f0Var.x;
         if (audioTrack != null) {
@@ -356,18 +356,18 @@ public abstract class b {
 
     public static void x(k2.p pVar, Object obj) {
         a6.m mVar;
-        AudioDeviceInfo b10 = j2.e.b(obj);
+        AudioDeviceInfo d = j2.e.d(obj);
         k2.f0 f0Var = (k2.f0) pVar;
-        if (b10 == null) {
+        if (d == null) {
             mVar = null;
         } else {
             f0Var.getClass();
-            mVar = new a6.m(b10, 29);
+            mVar = new a6.m(d, 29);
         }
         f0Var.c0 = mVar;
         g7 g7Var = f0Var.z;
         if (g7Var != null) {
-            g7Var.c(b10);
+            g7Var.c(d);
         }
         AudioTrack audioTrack = f0Var.x;
         if (audioTrack != null) {

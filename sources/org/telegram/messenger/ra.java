@@ -2,21 +2,21 @@ package org.telegram.messenger;
 
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ra implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ MessagesController b;
     public final /* synthetic */ TLObject c;
     public final /* synthetic */ org.telegram.ui.ActionBar.i6 d;
-    public final /* synthetic */ org.telegram.ui.ActionBar.g6 e;
+    public final /* synthetic */ org.telegram.ui.ActionBar.h6 e;
 
-    public /* synthetic */ ra(MessagesController messagesController, TLObject tLObject, org.telegram.ui.ActionBar.i6 i6Var, org.telegram.ui.ActionBar.g6 g6Var, int i10) {
+    public /* synthetic */ ra(MessagesController messagesController, TLObject tLObject, org.telegram.ui.ActionBar.i6 i6Var, org.telegram.ui.ActionBar.h6 h6Var, int i10) {
         this.a = i10;
         this.b = messagesController;
         this.c = tLObject;
         this.d = i6Var;
-        this.e = g6Var;
+        this.e = h6Var;
     }
 
     @Override // java.lang.Runnable

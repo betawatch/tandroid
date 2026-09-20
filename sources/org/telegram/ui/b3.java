@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b3 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -97,18 +97,18 @@ public final /* synthetic */ class b3 implements ValueAnimator.AnimatorUpdateLis
                 lz lzVar = (lz) this.b;
                 lzVar.getClass();
                 lzVar.r = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                org.telegram.ui.Components.w9 w9Var = lzVar.c;
+                org.telegram.ui.Components.v9 v9Var = lzVar.c;
                 int i12 = org.telegram.ui.ActionBar.j6.C6;
-                org.telegram.ui.ActionBar.e6 e6Var = lzVar.a;
-                int v02 = org.telegram.ui.ActionBar.j6.v0(i12, e6Var);
+                org.telegram.ui.ActionBar.f6 f6Var = lzVar.a;
+                int v02 = org.telegram.ui.ActionBar.j6.v0(i12, f6Var);
                 int i13 = org.telegram.ui.ActionBar.j6.Oh;
-                int d = i0.a.d(lzVar.r, v02, org.telegram.ui.ActionBar.j6.v0(i13, e6Var));
+                int d = i0.a.d(lzVar.r, v02, org.telegram.ui.ActionBar.j6.v0(i13, f6Var));
                 PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
-                w9Var.setColorFilter(new PorterDuffColorFilter(d, mode));
-                w9Var.invalidate();
-                org.telegram.ui.Components.w9 w9Var2 = lzVar.f;
-                w9Var2.setColorFilter(new PorterDuffColorFilter(i0.a.d(1.0f - lzVar.r, org.telegram.ui.ActionBar.j6.v0(i12, e6Var), org.telegram.ui.ActionBar.j6.v0(i13, e6Var)), mode));
-                w9Var2.invalidate();
+                v9Var.setColorFilter(new PorterDuffColorFilter(d, mode));
+                v9Var.invalidate();
+                org.telegram.ui.Components.v9 v9Var2 = lzVar.f;
+                v9Var2.setColorFilter(new PorterDuffColorFilter(i0.a.d(1.0f - lzVar.r, org.telegram.ui.ActionBar.j6.v0(i12, f6Var), org.telegram.ui.ActionBar.j6.v0(i13, f6Var)), mode));
+                v9Var2.invalidate();
                 break;
             case 11:
                 c00 c00Var = (c00) this.b;
@@ -160,10 +160,10 @@ public final /* synthetic */ class b3 implements ValueAnimator.AnimatorUpdateLis
                 i60.J0(i60Var2);
                 break;
             case 17:
-                gk0 gk0Var = (gk0) this.b;
-                gk0Var.getClass();
-                gk0Var.f = Math.max(1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue());
-                gk0Var.invalidate();
+                hk0 hk0Var = (hk0) this.b;
+                hk0Var.getClass();
+                hk0Var.f = Math.max(1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue());
+                hk0Var.invalidate();
                 break;
             case 18:
                 PasscodeActivity passcodeActivity = (PasscodeActivity) this.b;
@@ -184,7 +184,7 @@ public final /* synthetic */ class b3 implements ValueAnimator.AnimatorUpdateLis
                 photoViewer2.T1.invalidate();
                 break;
             case 21:
-                ((PhotoViewer) ((org.telegram.ui.Components.rm0) this.b).b).T1.scrollTo(0, ((Integer) valueAnimator.getAnimatedValue()).intValue());
+                ((PhotoViewer) ((org.telegram.ui.Components.qm0) this.b).b).T1.scrollTo(0, ((Integer) valueAnimator.getAnimatedValue()).intValue());
                 break;
             case 22:
                 PhotoViewer photoViewer3 = ((fu0) this.b).r;

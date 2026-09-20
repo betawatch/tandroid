@@ -13,7 +13,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public abstract class h extends b8.b {
     public final /* synthetic */ int b;
@@ -264,10 +264,10 @@ public abstract class h extends b8.b {
                     nVar.c.clear();
                     if (Looper.myLooper() == Looper.getMainLooper()) {
                         n4.y yVar = nVar.e;
-                        if (((p4.x) yVar.c) == null) {
-                            yVar.c = p4.x.d((Context) yVar.b);
+                        if (((p4.x) yVar.b) == null) {
+                            yVar.b = p4.x.d((Context) yVar.a);
                         }
-                        p4.x xVar = (p4.x) yVar.c;
+                        p4.x xVar = (p4.x) yVar.b;
                         if (xVar != null) {
                             xVar.h(nVar);
                         }

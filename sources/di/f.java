@@ -9,15 +9,15 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.ui.ActionBar.k;
 import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.wl0;
+import org.telegram.ui.Components.vl0;
 import org.telegram.ui.q20;
 import org.telegram.ui.r20;
 import s4.c0;
 import s4.c1;
-import yh.v7;
-import yh.w2;
+import yh.s2;
+import yh.w7;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class f extends q20 {
     public final /* synthetic */ int J0 = 0;
@@ -31,7 +31,7 @@ public final class f extends q20 {
         this.K0 = new q0();
     }
 
-    @Override // org.telegram.ui.Components.vc0, r0.l
+    @Override // org.telegram.ui.Components.uc0, r0.l
     public final void E(ViewGroup viewGroup, int i10, int i11, int[] iArr, int i12) {
         k kVar;
         int i13;
@@ -49,7 +49,7 @@ public final class f extends q20 {
                     if (i11 >= 0) {
                         if (!z10) {
                             if (i11 > 0) {
-                                wl0 currentListView = iVar.R.getCurrentListView();
+                                vl0 currentListView = iVar.R.getCurrentListView();
                                 if (iVar.c.getHeight() - bottom >= 0 && currentListView != null && !currentListView.canScrollVertically(1)) {
                                     iArr[1] = i11;
                                     iVar.c.C0();
@@ -57,7 +57,7 @@ public final class f extends q20 {
                                 }
                             }
                         } else {
-                            wl0 currentListView2 = iVar.R.getCurrentListView();
+                            vl0 currentListView2 = iVar.R.getCurrentListView();
                             iArr[1] = i11;
                             if (top > 0) {
                                 iArr[1] = 0;
@@ -69,7 +69,7 @@ public final class f extends q20 {
                         }
                     } else {
                         if (iVar.c.getHeight() - bottom >= 0) {
-                            wl0 currentListView3 = iVar.R.getCurrentListView();
+                            vl0 currentListView3 = iVar.R.getCurrentListView();
                             int L0 = ((c0) currentListView3.getLayoutManager()).L0();
                             if (L0 != -1) {
                                 c1 L = currentListView3.L(L0);
@@ -95,25 +95,25 @@ public final class f extends q20 {
                 }
                 break;
             default:
-                v7 v7Var = (v7) this.L0;
-                if (viewGroup == v7Var.c && v7Var.R.isAttachedToWindow()) {
-                    kVar2 = ((n2) v7Var).actionBar;
+                w7 w7Var = (w7) this.L0;
+                if (viewGroup == w7Var.c && w7Var.R.isAttachedToWindow()) {
+                    kVar2 = ((n2) w7Var).actionBar;
                     boolean z12 = kVar2.n0;
-                    int top3 = (((View) v7Var.R.getParent()).getTop() - AndroidUtilities.statusBarHeight) - k.getCurrentActionBarHeight();
-                    int bottom2 = ((View) v7Var.R.getParent()).getBottom();
+                    int top3 = (((View) w7Var.R.getParent()).getTop() - AndroidUtilities.statusBarHeight) - k.getCurrentActionBarHeight();
+                    int bottom2 = ((View) w7Var.R.getParent()).getBottom();
                     boolean z13 = false;
                     if (i11 >= 0) {
                         if (!z12) {
                             if (i11 > 0) {
-                                wl0 currentListView4 = v7Var.R.getCurrentListView();
-                                if ((v7Var.c.getHeight() - v7Var.c.getPaddingBottom()) - bottom2 >= 0 && currentListView4 != null && !currentListView4.canScrollVertically(1)) {
+                                vl0 currentListView4 = w7Var.R.getCurrentListView();
+                                if ((w7Var.c.getHeight() - w7Var.c.getPaddingBottom()) - bottom2 >= 0 && currentListView4 != null && !currentListView4.canScrollVertically(1)) {
                                     iArr[1] = i11;
-                                    v7Var.c.C0();
+                                    w7Var.c.C0();
                                     break;
                                 }
                             }
                         } else {
-                            wl0 currentListView5 = v7Var.R.getCurrentListView();
+                            vl0 currentListView5 = w7Var.R.getCurrentListView();
                             iArr[1] = i11;
                             if (top3 > 0) {
                                 iArr[1] = 0;
@@ -124,8 +124,8 @@ public final class f extends q20 {
                             }
                         }
                     } else {
-                        if ((v7Var.c.getHeight() - v7Var.c.getPaddingBottom()) - bottom2 >= 0) {
-                            wl0 currentListView6 = v7Var.R.getCurrentListView();
+                        if ((w7Var.c.getHeight() - w7Var.c.getPaddingBottom()) - bottom2 >= 0) {
+                            vl0 currentListView6 = w7Var.R.getCurrentListView();
                             int L02 = ((c0) currentListView6.getLayoutManager()).L0();
                             if (L02 != -1) {
                                 c1 L2 = currentListView6.L(L02);
@@ -153,19 +153,19 @@ public final class f extends q20 {
         }
     }
 
-    @Override // org.telegram.ui.Components.vc0, r0.l
+    @Override // org.telegram.ui.Components.uc0, r0.l
     public final void c(ViewGroup viewGroup, int i10, int i11, int i12, int i13, int i14) {
         int i15 = this.J0;
     }
 
-    @Override // org.telegram.ui.Components.vc0, r0.m
+    @Override // org.telegram.ui.Components.uc0, r0.m
     public final void j(ViewGroup viewGroup, int i10, int i11, int i12, int i13, int i14, int[] iArr) {
         switch (this.J0) {
             case 0:
                 i iVar = (i) this.L0;
                 try {
                     if (viewGroup == iVar.c && iVar.R.isAttachedToWindow()) {
-                        wl0 currentListView = iVar.R.getCurrentListView();
+                        vl0 currentListView = iVar.R.getCurrentListView();
                         if (iVar.c.getHeight() - ((View) iVar.R.getParent()).getBottom() >= 0) {
                             iArr[1] = i13;
                             currentListView.scrollBy(0, i13);
@@ -179,11 +179,11 @@ public final class f extends q20 {
                 }
                 break;
             default:
-                v7 v7Var = (v7) this.L0;
+                w7 w7Var = (w7) this.L0;
                 try {
-                    if (viewGroup == v7Var.c && v7Var.R.isAttachedToWindow()) {
-                        wl0 currentListView2 = v7Var.R.getCurrentListView();
-                        if ((v7Var.c.getHeight() - v7Var.c.getPaddingBottom()) - ((View) v7Var.R.getParent()).getBottom() >= 0) {
+                    if (viewGroup == w7Var.c && w7Var.R.isAttachedToWindow()) {
+                        vl0 currentListView2 = w7Var.R.getCurrentListView();
+                        if ((w7Var.c.getHeight() - w7Var.c.getPaddingBottom()) - ((View) w7Var.R.getParent()).getBottom() >= 0) {
                             iArr[1] = i13;
                             currentListView2.scrollBy(0, i13);
                             break;
@@ -191,13 +191,13 @@ public final class f extends q20 {
                     }
                 } catch (Throwable th3) {
                     FileLog.e(th3);
-                    AndroidUtilities.runOnUIThread(new w2(this, 5));
+                    AndroidUtilities.runOnUIThread(new s2(this, 6));
                 }
                 break;
         }
     }
 
-    @Override // org.telegram.ui.Components.vc0, r0.l
+    @Override // org.telegram.ui.Components.uc0, r0.l
     public final void o(int i10, View view) {
         switch (this.J0) {
             case 0:
@@ -209,12 +209,12 @@ public final class f extends q20 {
         }
     }
 
-    @Override // org.telegram.ui.Components.vc0, android.view.ViewGroup, android.view.ViewParent
+    @Override // org.telegram.ui.Components.uc0, android.view.ViewGroup, android.view.ViewParent
     public final void onStopNestedScroll(View view) {
         int i10 = this.J0;
     }
 
-    @Override // org.telegram.ui.Components.vc0, r0.l
+    @Override // org.telegram.ui.Components.uc0, r0.l
     public final boolean p(View view, View view2, int i10, int i11) {
         switch (this.J0) {
             case 0:
@@ -229,7 +229,7 @@ public final class f extends q20 {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.vc0, r0.l
+    @Override // org.telegram.ui.Components.uc0, r0.l
     public final void s(View view, View view2, int i10, int i11) {
         switch (this.J0) {
             case 0:
@@ -242,9 +242,9 @@ public final class f extends q20 {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f(v7 v7Var, Activity activity) {
-        super(v7Var, activity);
-        this.L0 = v7Var;
+    public f(w7 w7Var, Activity activity) {
+        super(w7Var, activity);
+        this.L0 = w7Var;
         this.K0 = new q0();
     }
 

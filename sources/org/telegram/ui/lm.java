@@ -21,9 +21,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class lm extends org.telegram.ui.Components.xk0 {
+public final class lm extends org.telegram.ui.Components.wk0 {
     public int E;
     public int F;
     public int G;
@@ -68,7 +68,7 @@ public final class lm extends org.telegram.ui.Components.xk0 {
         C(true);
     }
 
-    @Override // org.telegram.ui.Components.vl0
+    @Override // org.telegram.ui.Components.ul0
     public final boolean D(s4.c1 c1Var) {
         return false;
     }
@@ -316,7 +316,7 @@ public final class lm extends org.telegram.ui.Components.xk0 {
             TLRPC.User user4 = znVar.f;
             if (user4 != null && !UserObject.isBot(user4) && !UserObject.isReplyUser(znVar.f)) {
                 TLRPC.PeerSettings peerSettings3 = znVar.getMessagesController().getPeerSettings(znVar.f.id);
-                int i14 = org.telegram.ui.Cells.bb.O;
+                int i14 = org.telegram.ui.Cells.cb.O;
                 if (peerSettings3 != null && ((peerSettings3.phone_country != null || peerSettings3.registration_month != null) && !MessagesController.isSupportUser(znVar.f) && znVar.R3 == 0)) {
                     int i15 = this.r;
                     this.r = i15 + 1;
@@ -346,7 +346,7 @@ public final class lm extends org.telegram.ui.Components.xk0 {
                 user2 = znVar.f;
                 if (user2 != null && !UserObject.isBot(user2) && !UserObject.isReplyUser(znVar.f)) {
                     peerSettings = znVar.getMessagesController().getPeerSettings(znVar.f.id);
-                    int i19 = org.telegram.ui.Cells.bb.O;
+                    int i19 = org.telegram.ui.Cells.cb.O;
                     if (peerSettings != null && ((peerSettings.phone_country != null || peerSettings.registration_month != null) && !MessagesController.isSupportUser(znVar.f) && znVar.R3 == 0 && zArr[0])) {
                         peerSettings2 = znVar.getMessagesController().getPeerSettings(znVar.f.id);
                         i11 = peerSettings2.name_change_date;
@@ -432,7 +432,7 @@ public final class lm extends org.telegram.ui.Components.xk0 {
         user2 = znVar.f;
         if (user2 != null) {
             peerSettings = znVar.getMessagesController().getPeerSettings(znVar.f.id);
-            int i192 = org.telegram.ui.Cells.bb.O;
+            int i192 = org.telegram.ui.Cells.cb.O;
             if (peerSettings != null) {
                 peerSettings2 = znVar.getMessagesController().getPeerSettings(znVar.f.id);
                 i11 = peerSettings2.name_change_date;
@@ -566,12 +566,12 @@ public final class lm extends org.telegram.ui.Components.xk0 {
         return i10 == this.I ? 8 : 4;
     }
 
-    @Override // org.telegram.ui.Components.xk0, s4.h0
+    @Override // org.telegram.ui.Components.wk0, s4.h0
     public final void l() {
         O(false);
     }
 
-    @Override // org.telegram.ui.Components.xk0, s4.h0
+    @Override // org.telegram.ui.Components.wk0, s4.h0
     public final void m(int i10) {
         if (BuildVars.LOGS_ENABLED) {
             FileLog.d("notify item changed " + i10);
@@ -594,7 +594,7 @@ public final class lm extends org.telegram.ui.Components.xk0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.xk0, s4.h0
+    @Override // org.telegram.ui.Components.wk0, s4.h0
     public final void o(int i10) {
         if (BuildVars.LOGS_ENABLED) {
             FileLog.d("notify item inserted " + i10);
@@ -640,7 +640,7 @@ public final class lm extends org.telegram.ui.Components.xk0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.xk0, s4.h0
+    @Override // org.telegram.ui.Components.wk0, s4.h0
     public final void q(int i10, int i11) {
         if (BuildVars.LOGS_ENABLED) {
             FileLog.d("notify item range changed " + i10 + ":" + i11);
@@ -663,7 +663,7 @@ public final class lm extends org.telegram.ui.Components.xk0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.xk0, s4.h0
+    @Override // org.telegram.ui.Components.wk0, s4.h0
     public final void s(int i10, int i11) {
         int i12;
         int i13;
@@ -696,7 +696,7 @@ public final class lm extends org.telegram.ui.Components.xk0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.xk0, s4.h0
+    @Override // org.telegram.ui.Components.wk0, s4.h0
     public final void t(int i10, int i11) {
         if (BuildVars.LOGS_ENABLED) {
             FileLog.d("notify item range removed" + i10 + ":" + i11);
@@ -719,7 +719,7 @@ public final class lm extends org.telegram.ui.Components.xk0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.xk0, s4.h0
+    @Override // org.telegram.ui.Components.wk0, s4.h0
     public final void u(int i10) {
         if (BuildVars.LOGS_ENABLED) {
             FileLog.d("notify item removed " + i10);
@@ -874,7 +874,7 @@ public final class lm extends org.telegram.ui.Components.xk0 {
         int i19;
         int i20;
         boolean z27;
-        org.telegram.ui.Components.f60 f60Var;
+        org.telegram.ui.Components.e60 e60Var;
         TLRPC.Message message;
         TLRPC.MessageFwdHeader messageFwdHeader;
         String str2;
@@ -930,10 +930,10 @@ public final class lm extends org.telegram.ui.Components.xk0 {
             return;
         }
         if (i10 == this.y) {
-            org.telegram.ui.Cells.bb bbVar = (org.telegram.ui.Cells.bb) view;
+            org.telegram.ui.Cells.cb cbVar = (org.telegram.ui.Cells.cb) view;
             TLRPC.EncryptedChat encryptedChat = znVar.h;
             long a2 = encryptedChat != null ? encryptedChat.user_id : znVar.a();
-            bbVar.b(a2, znVar.getMessagesController().getPeerSettings(a2));
+            cbVar.b(a2, znVar.getMessagesController().getPeerSettings(a2));
             return;
         }
         if (i10 == this.F || i10 == this.E) {
@@ -1352,7 +1352,7 @@ public final class lm extends org.telegram.ui.Components.xk0 {
                                         }
                                         indexOf = arrayList3.indexOf(messageObject2);
                                         if (indexOf != -1) {
-                                            if (messageObject2.type == 5 && (f60Var = znVar.b3) != null && f60Var.getTextureView() != null) {
+                                            if (messageObject2.type == 5 && (e60Var = znVar.b3) != null && e60Var.getTextureView() != null) {
                                                 rf rfVar = znVar.q7;
                                                 if (rfVar != null) {
                                                     AndroidUtilities.cancelRunOnUIThread(rfVar);
@@ -1379,9 +1379,9 @@ public final class lm extends org.telegram.ui.Components.xk0 {
                                                     if (!mfVar.q0) {
                                                         mfVar.s = true;
                                                         mfVar.q0 = true;
-                                                        pi0 pi0Var = mfVar.X;
-                                                        if (pi0Var != null) {
-                                                            pi0Var.invalidate();
+                                                        qi0 qi0Var = mfVar.X;
+                                                        if (qi0Var != null) {
+                                                            qi0Var.invalidate();
                                                         }
                                                         org.telegram.ui.Components.ug ugVar = mfVar.W;
                                                         if (ugVar != null) {
@@ -1424,7 +1424,7 @@ public final class lm extends org.telegram.ui.Components.xk0 {
                                                         } else {
                                                             i20 = 1;
                                                         }
-                                                        mfVar.e(new hi0(mfVar, i20), false);
+                                                        mfVar.e(new ii0(mfVar, i20), false);
                                                         mfVar.F.invalidate();
                                                         mfVar.c();
                                                     }
@@ -1754,7 +1754,7 @@ public final class lm extends org.telegram.ui.Components.xk0 {
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r8v10, types: [org.telegram.ui.em] */
     /* JADX WARN: Type inference failed for: r8v11, types: [org.telegram.ui.Cells.w0] */
-    /* JADX WARN: Type inference failed for: r8v12, types: [org.telegram.ui.Cells.bb] */
+    /* JADX WARN: Type inference failed for: r8v12, types: [org.telegram.ui.Cells.cb] */
     /* JADX WARN: Type inference failed for: r8v13, types: [org.telegram.ui.Cells.z0] */
     /* JADX WARN: Type inference failed for: r8v14, types: [org.telegram.ui.Cells.h0, org.telegram.ui.dm] */
     /* JADX WARN: Type inference failed for: r8v16, types: [org.telegram.ui.Cells.w1] */
@@ -1793,7 +1793,7 @@ public final class lm extends org.telegram.ui.Components.xk0 {
                 } else if (i10 == 4) {
                     u1Var2 = new org.telegram.ui.Cells.z0(context, znVar.ea);
                 } else if (i10 == 6) {
-                    u1Var2 = new org.telegram.ui.Cells.bb(context, ((org.telegram.ui.ActionBar.n2) znVar).currentAccount, znVar.ea);
+                    u1Var2 = new org.telegram.ui.Cells.cb(context, ((org.telegram.ui.ActionBar.n2) znVar).currentAccount, znVar.ea);
                 } else if (i10 == 7) {
                     u1Var2 = new org.telegram.ui.Cells.w0(context, znVar.ea, false);
                 } else if (i10 == 8) {

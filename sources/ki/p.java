@@ -1,14 +1,18 @@
 package ki;
 
-import android.opengl.GLES20;
+import android.media.MediaCodec;
+import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
-public class p extends r {
-    public final int e;
+public final class p {
+    public final boolean a;
+    public final ByteBuffer b;
+    public final MediaCodec.BufferInfo c;
 
-    public p(String str) {
-        super("uniform mat4 uTextureMatrix;\nattribute vec4 aPosition;\nattribute vec4 aTextureCoord;\nvarying vec2 vTextureCoord;\nvarying vec2 vScreenTextureCoord;\nvoid main() {\n    gl_Position = aPosition;\n    vTextureCoord = (uTextureMatrix * vec4(aTextureCoord.xy, 0.0, 1.0)).xy;\n    vScreenTextureCoord = aPosition.xy * 0.5 + 0.5;\n}\n", str);
-        this.e = GLES20.glGetUniformLocation(this.a, "uTextureMatrix");
+    public p(boolean z10, ByteBuffer byteBuffer, MediaCodec.BufferInfo bufferInfo) {
+        this.a = z10;
+        this.b = byteBuffer;
+        this.c = bufferInfo;
     }
 }

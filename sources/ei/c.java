@@ -6,12 +6,12 @@ import java.util.Locale;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Cells.b7;
-import org.telegram.ui.Cells.e9;
-import org.telegram.ui.Components.l61;
+import org.telegram.ui.Cells.c7;
+import org.telegram.ui.Cells.f9;
+import org.telegram.ui.Components.k61;
 import org.telegram.ui.b20;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class c implements Utilities.CallbackReturn {
     public final /* synthetic */ int a;
@@ -37,9 +37,9 @@ public final /* synthetic */ class c implements Utilities.CallbackReturn {
                 return LocaleController.formatPluralString("Minutes", ((Integer) obj).intValue(), new Object[0]);
             case 5:
                 View view = (View) obj;
-                return Boolean.valueOf(((view instanceof e9) || (view instanceof b7) || (view instanceof b20) || (view instanceof org.telegram.ui.Cells.v3) || (view instanceof org.telegram.ui.Cells.b2) || Objects.equals(view.getTag(), -33024)) ? false : true);
+                return Boolean.valueOf(((view instanceof f9) || (view instanceof c7) || (view instanceof b20) || (view instanceof org.telegram.ui.Cells.w3) || (view instanceof org.telegram.ui.Cells.b2) || Objects.equals(view.getTag(), -33024)) ? false : true);
             default:
-                return Boolean.valueOf(l61.K(((Integer) obj).intValue()));
+                return Boolean.valueOf(k61.K(((Integer) obj).intValue()));
         }
     }
 }

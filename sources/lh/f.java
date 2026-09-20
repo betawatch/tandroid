@@ -6,7 +6,7 @@ import java.util.List;
 import org.telegram.messenger.R;
 import org.telegram.messenger.voip.GroupCallMessage;
 import org.telegram.ui.ActionBar.f3;
-import org.telegram.ui.Components.qk0;
+import org.telegram.ui.Components.pk0;
 import org.telegram.ui.g40;
 import org.telegram.ui.i60;
 import s4.c1;
@@ -14,7 +14,7 @@ import s4.j;
 import zg.k0;
 import zg.o0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class f extends j {
     public final /* synthetic */ h F;
@@ -50,9 +50,9 @@ public final class f extends j {
         }
         i60 i60Var = ((g40) gVar).a;
         Context context = i60Var.getContext();
-        qk0 qk0Var = i60Var.K;
+        pk0 pk0Var = i60Var.K;
         i10 = ((f3) i60Var).currentAccount;
-        k0 k0Var = new k0(context, null, qk0Var, (c) view, null, 0.0f, 0.0f, o0Var, i10, 1, false);
+        k0 k0Var = new k0(context, null, pk0Var, (c) view, null, 0.0f, 0.0f, o0Var, i10, 1, false);
         k0.B = k0Var;
         k0Var.i.setTag(R.id.parent_tag, 1);
         i60Var.container.addView(k0Var.i);

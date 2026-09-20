@@ -5,10 +5,10 @@ import android.graphics.Canvas;
 import android.graphics.Path;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class t extends yh.v3 {
     public final Path A0;
@@ -16,8 +16,8 @@ public final class t extends yh.v3 {
     public final /* synthetic */ v C0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public t(v vVar, Context context, e6 e6Var, o oVar, ai.e2 e2Var, ai.e2 e2Var2, ai.e2 e2Var3, ai.e2 e2Var4, ai.e2 e2Var5, ai.e2 e2Var6) {
-        super(context, e6Var, oVar, e2Var, null, e2Var2, e2Var3, e2Var4, e2Var5, e2Var6);
+    public t(v vVar, Context context, f6 f6Var, o oVar, ai.e2 e2Var, ai.e2 e2Var2, ai.e2 e2Var3, ai.e2 e2Var4, ai.e2 e2Var5, ai.e2 e2Var6) {
+        super(context, f6Var, oVar, e2Var, null, e2Var2, e2Var3, e2Var4, e2Var5, e2Var6);
         this.C0 = vVar;
         this.A0 = new Path();
         this.B0 = new float[8];

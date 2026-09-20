@@ -3,12 +3,12 @@ package xh;
 import android.os.Bundle;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.bb;
+import org.telegram.ui.Components.ab;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final /* synthetic */ class p0 implements Runnable {
     public final /* synthetic */ int a;
@@ -75,9 +75,9 @@ public final /* synthetic */ class p0 implements Runnable {
         }
     }
 
-    public /* synthetic */ p0(bb bbVar, Object obj, long j3, int i10) {
+    public /* synthetic */ p0(ab abVar, Object obj, long j3, int i10) {
         this.a = i10;
-        this.c = bbVar;
+        this.c = abVar;
         this.d = obj;
         this.b = j3;
     }

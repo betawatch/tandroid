@@ -52,13 +52,13 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.f3;
 import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.qc;
+import org.telegram.ui.Components.pc;
+import org.telegram.ui.Components.v9;
 import org.telegram.ui.Components.vi;
-import org.telegram.ui.Components.w9;
-import org.telegram.ui.Components.yr0;
+import org.telegram.ui.Components.xr0;
 import org.telegram.ui.Stories.recorder.FfmpegAudioWaveformLoader;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final /* synthetic */ class a0 implements Runnable {
     public final /* synthetic */ int a;
@@ -108,9 +108,9 @@ public final /* synthetic */ class a0 implements Runnable {
                 return;
             case 3:
                 bi.u uVar = (bi.u) this.b;
-                yr0 yr0Var = uVar.W;
+                xr0 xr0Var = uVar.W;
                 t8 t8Var = uVar.a;
-                yr0Var.a(t8Var == null ? "" : t8Var.E);
+                xr0Var.a(t8Var == null ? "" : t8Var.E);
                 return;
             case 4:
                 ((c1.e) this.b).e().onError(new w0.h("Failed to launch the selector UI. Hint: ensure the `context` parameter is an Activity-based context.", 2));
@@ -137,7 +137,7 @@ public final /* synthetic */ class a0 implements Runnable {
                 return;
             case 10:
                 z5 z5Var = (z5) this.b;
-                qc.e();
+                pc.e();
                 rg.x0 x0Var = new rg.x0((n2) new y3(z5Var), 14, false);
                 x0Var.setOnDismissListener(new f1(0));
                 x0Var.show();
@@ -260,7 +260,7 @@ public final /* synthetic */ class a0 implements Runnable {
             case 23:
                 nc ncVar = (nc) this.b;
                 ncVar.x0.onTouchEvent(AndroidUtilities.emptyMotionEvent());
-                ncVar.w0.g0(AndroidUtilities.emptyMotionEvent());
+                ncVar.w0.f0(AndroidUtilities.emptyMotionEvent());
                 return;
             case 24:
                 oc ocVar = ((nb) this.b).k0;
@@ -284,7 +284,7 @@ public final /* synthetic */ class a0 implements Runnable {
                 MessagesController.getGlobalMainSettings().edit().putInt("storysvddualhint", MessagesController.getGlobalMainSettings().getInt("storysvddualhint", 0) + 1).apply();
                 return;
             case 27:
-                ((w9) this.b).setVisibility(8);
+                ((v9) this.b).setVisibility(8);
                 return;
             case 28:
                 rc rcVar = (rc) this.b;

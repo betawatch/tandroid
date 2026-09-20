@@ -15,14 +15,14 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class xj extends FrameLayout {
-    public final w9 a;
+    public final v9 a;
     public final ai.a6 b;
     public final org.telegram.ui.ActionBar.j5 c;
     public final np d;
-    public final h9 e;
+    public final g9 e;
     public TLRPC.User f;
     public int h;
     public CharSequence n;
@@ -33,19 +33,19 @@ public final class xj extends FrameLayout {
     public final int x;
     public boolean y;
 
-    public xj(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
+    public xj(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
         super(context);
         this.x = UserConfig.selectedAccount;
-        this.e = new h9(e6Var);
-        w9 w9Var = new w9(context);
-        this.a = w9Var;
-        w9Var.setRoundRadius(AndroidUtilities.dp(23.0f));
+        this.e = new g9(f6Var);
+        v9 v9Var = new v9(context);
+        this.a = v9Var;
+        v9Var.setRoundRadius(AndroidUtilities.dp(23.0f));
         boolean z10 = LocaleController.isRTL;
-        addView(w9Var, w7.y5.d(46, 46.0f, (z10 ? 5 : 3) | 48, z10 ? 0.0f : 14.0f, 9.0f, z10 ? 14.0f : 0.0f, 0.0f));
+        addView(v9Var, w7.y5.d(46, 46.0f, (z10 ? 5 : 3) | 48, z10 ? 0.0f : 14.0f, 9.0f, z10 ? 14.0f : 0.0f, 0.0f));
         ai.a6 a6Var = new ai.a6(context, 4);
         this.b = a6Var;
         NotificationCenter.listenEmojiLoading(a6Var);
-        a6Var.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.j5, e6Var));
+        a6Var.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.j5, f6Var));
         a6Var.setTypeface(AndroidUtilities.bold());
         a6Var.setTextSize(16);
         a6Var.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
@@ -54,11 +54,11 @@ public final class xj extends FrameLayout {
         org.telegram.ui.ActionBar.j5 j5Var = new org.telegram.ui.ActionBar.j5(context);
         this.c = j5Var;
         j5Var.setTextSize(13);
-        j5Var.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.q5, e6Var));
+        j5Var.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.q5, f6Var));
         j5Var.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
         boolean z12 = LocaleController.isRTL;
         addView(j5Var, w7.y5.d(-1, 20.0f, (z12 ? 5 : 3) | 48, z12 ? 28.0f : 72.0f, 36.0f, z12 ? 72.0f : 28.0f, 0.0f));
-        np npVar = new np(context, 21, e6Var);
+        np npVar = new np(context, 21, f6Var);
         this.d = npVar;
         npVar.b(-1, org.telegram.ui.ActionBar.j6.d6, org.telegram.ui.ActionBar.j6.k7);
         npVar.setDrawUnchecked(false);
@@ -82,7 +82,7 @@ public final class xj extends FrameLayout {
             setWillNotDraw(!z10);
             b();
         }
-        Utilities.globalQueue.postRunnable(new zd(10, this, wjVar));
+        Utilities.globalQueue.postRunnable(new tc(12, this, wjVar));
     }
 
     public final void b() {
@@ -90,16 +90,16 @@ public final class xj extends FrameLayout {
         if (user != null) {
             TLRPC.UserProfilePhoto userProfilePhoto = user.photo;
         }
-        h9 h9Var = this.e;
+        g9 g9Var = this.e;
         if (user != null) {
-            h9Var.m(this.x, user);
+            g9Var.m(this.x, user);
             TLRPC.UserStatus userStatus = this.f.status;
         } else {
             CharSequence charSequence = this.n;
             if (charSequence != null) {
-                h9Var.n(this.h, charSequence.toString(), null);
+                g9Var.n(this.h, charSequence.toString(), null);
             } else {
-                h9Var.n(this.h, "#", null);
+                g9Var.n(this.h, "#", null);
             }
         }
         CharSequence charSequence2 = this.n;
@@ -118,11 +118,11 @@ public final class xj extends FrameLayout {
         }
         setStatus(this.r);
         TLRPC.User user3 = this.f;
-        w9 w9Var = this.a;
+        v9 v9Var = this.a;
         if (user3 != null) {
-            w9Var.e(user3, h9Var);
+            v9Var.e(user3, g9Var);
         } else {
-            w9Var.setImageDrawable(h9Var);
+            v9Var.setImageDrawable(g9Var);
         }
     }
 

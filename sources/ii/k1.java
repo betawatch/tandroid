@@ -9,11 +9,11 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.kz;
-import org.telegram.ui.Components.w70;
+import org.telegram.ui.Components.v70;
 import org.telegram.ui.Components.yg;
-import org.telegram.ui.cj0;
+import org.telegram.ui.dj0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class k1 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -105,12 +105,12 @@ public final /* synthetic */ class k1 implements View.OnClickListener {
                 break;
             case 6:
                 final d2 d2Var3 = this.b;
-                w70 w70Var = d2Var3.x0;
-                if (w70Var != null) {
-                    w70Var.u();
+                v70 v70Var = d2Var3.x0;
+                if (v70Var != null) {
+                    v70Var.u();
                     d2Var3.x0 = null;
                 }
-                final w70 H = w70.H(d2Var3, view);
+                final v70 H = v70.H(d2Var3, view);
                 H.Q = true;
                 a R2 = d2Var3.P.R2();
                 H.j(R2 == null || !R2.b(), R.drawable.field_carret_empty, null, LocaleController.getString(R.string.ArticleNone), new n1(d2Var3, R2, 5));
@@ -170,10 +170,10 @@ public final /* synthetic */ class k1 implements View.OnClickListener {
                 break;
             case 7:
                 d2 d2Var4 = this.b;
-                w70 w70Var2 = d2Var4.x0;
+                v70 v70Var2 = d2Var4.x0;
                 TL_iv.pageTableCell pagetablecell = null;
-                if (w70Var2 != null) {
-                    w70Var2.u();
+                if (v70Var2 != null) {
+                    v70Var2.u();
                     d2Var4.x0 = null;
                 }
                 w3 w3Var2 = d2Var4.P;
@@ -202,10 +202,10 @@ public final /* synthetic */ class k1 implements View.OnClickListener {
                 break;
             case 8:
                 d2 d2Var5 = this.b;
-                w70 w70Var3 = d2Var5.x0;
+                v70 v70Var3 = d2Var5.x0;
                 TL_iv.pageBlockMath pageblockmath = null;
-                if (w70Var3 != null) {
-                    w70Var3.u();
+                if (v70Var3 != null) {
+                    v70Var3.u();
                     d2Var5.x0 = null;
                 }
                 a R22 = d2Var5.P.R2();
@@ -225,9 +225,9 @@ public final /* synthetic */ class k1 implements View.OnClickListener {
             case 10:
                 d2 d2Var7 = this.b;
                 d2Var7.r0();
-                cj0 cj0Var = d2Var7.O0;
-                if (cj0Var != null) {
-                    cj0Var.h(true);
+                dj0 dj0Var = d2Var7.O0;
+                if (dj0Var != null) {
+                    dj0Var.h(true);
                     d2Var7.O0 = null;
                     break;
                 }

@@ -10,7 +10,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class z2 implements Runnable {
     public final /* synthetic */ int a;
@@ -24,7 +24,7 @@ public final class z2 implements Runnable {
     @Override // java.lang.Runnable
     public final void run() {
         ArticleViewer$WindowView articleViewer$WindowView;
-        org.telegram.ui.Cells.q9 q9Var;
+        org.telegram.ui.Cells.r9 r9Var;
         switch (this.a) {
             case 0:
                 h4 h4Var = this.b;
@@ -35,7 +35,7 @@ public final class z2 implements Runnable {
                             articleViewer$WindowView.performHapticFeedback(0, 2);
                         } catch (Exception unused) {
                         }
-                        h4Var.Z(((org.telegram.ui.Components.z01) h4Var.b.i).b);
+                        h4Var.Z(((org.telegram.ui.Components.y01) h4Var.b.i).b);
                         h4Var.b = null;
                         h4Var.d = null;
                         View view = h4Var.f;
@@ -46,10 +46,10 @@ public final class z2 implements Runnable {
                     } else {
                         View view2 = h4Var.f;
                         if (view2 != null && h4Var.O0.g0(view2)) {
-                            if (h4Var.f.getTag() == null || h4Var.f.getTag() != "bottomSheet" || (q9Var = h4Var.P0) == null) {
+                            if (h4Var.f.getTag() == null || h4Var.f.getTag() != "bottomSheet" || (r9Var = h4Var.P0) == null) {
                                 h4Var.O0.m0();
                             } else {
-                                q9Var.m0();
+                                r9Var.m0();
                             }
                             if (h4Var.O0.y()) {
                                 try {

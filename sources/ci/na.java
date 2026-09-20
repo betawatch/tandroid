@@ -18,7 +18,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class na implements Runnable {
     public final /* synthetic */ int a;
@@ -78,7 +78,7 @@ public final /* synthetic */ class na implements Runnable {
         int size;
         int i10;
         r6 r6Var2;
-        qg.e1 s02;
+        qg.f1 s02;
         ImageReceiver imageReceiver;
         int i11;
         r6 r6Var3;
@@ -140,10 +140,10 @@ public final /* synthetic */ class na implements Runnable {
                                 int i15 = o8Var5.l0;
                                 s02 = r6Var.s0();
                                 if (s02 != null) {
-                                    qg.x0 x0Var = s02.r0;
-                                    if (x0Var.getChildCount() == 1 && i14 > 0 && i15 > 0) {
-                                        if (x0Var.getChildAt(0) instanceof org.telegram.ui.Cells.u1) {
-                                            imageReceiver = ((org.telegram.ui.Cells.u1) x0Var.getChildAt(0)).getPhotoImage();
+                                    qg.y0 y0Var = s02.r0;
+                                    if (y0Var.getChildCount() == 1 && i14 > 0 && i15 > 0) {
+                                        if (y0Var.getChildAt(0) instanceof org.telegram.ui.Cells.u1) {
+                                            imageReceiver = ((org.telegram.ui.Cells.u1) y0Var.getChildAt(0)).getPhotoImage();
                                             if (imageReceiver != null && ((int) imageReceiver.getImageWidth()) > 0 && ((int) imageReceiver.getImageHeight()) > 0) {
                                                 float f7 = i14;
                                                 float f10 = i15;
@@ -975,12 +975,12 @@ public final /* synthetic */ class na implements Runnable {
                 if (o8Var8.u && o8Var8.K) {
                     int i23 = o8Var8.k0;
                     int i24 = o8Var8.l0;
-                    qg.e1 s03 = r6Var3.s0();
+                    qg.f1 s03 = r6Var3.s0();
                     if (s03 != null) {
-                        qg.x0 x0Var2 = s03.r0;
-                        if (x0Var2.getChildCount() == 1 && i23 > 0 && i24 > 0) {
-                            if (x0Var2.getChildAt(0) instanceof org.telegram.ui.Cells.u1) {
-                                imageReceiver2 = ((org.telegram.ui.Cells.u1) x0Var2.getChildAt(0)).getPhotoImage();
+                        qg.y0 y0Var2 = s03.r0;
+                        if (y0Var2.getChildCount() == 1 && i23 > 0 && i24 > 0) {
+                            if (y0Var2.getChildAt(0) instanceof org.telegram.ui.Cells.u1) {
+                                imageReceiver2 = ((org.telegram.ui.Cells.u1) y0Var2.getChildAt(0)).getPhotoImage();
                                 if (imageReceiver2 != null && ((int) imageReceiver2.getImageWidth()) > 0 && ((int) imageReceiver2.getImageHeight()) > 0) {
                                     float f13 = i23;
                                     float f14 = i24;

@@ -18,16 +18,16 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.oq;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.v01;
+import org.telegram.ui.Components.u01;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class n8 extends View {
     public final boolean a;
     public final ArrayList b;
     public final ArrayList c;
     public final Paint d;
-    public final org.telegram.ui.Components.e6 e;
+    public final org.telegram.ui.Components.d6 e;
     public float f;
     public m8 h;
     public Utilities.Callback n;
@@ -41,7 +41,7 @@ public final class n8 extends View {
         this.c = new ArrayList();
         Paint paint = new Paint(1);
         this.d = paint;
-        this.e = new org.telegram.ui.Components.e6(this, 0L, 320L, qr.h);
+        this.e = new org.telegram.ui.Components.d6(this, 0L, 320L, qr.h);
         this.a = z10;
         paint.setStyle(Paint.Style.FILL_AND_STROKE);
         paint.setStrokeWidth(AndroidUtilities.dp(3.0f));
@@ -154,8 +154,8 @@ public final class n8 extends View {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r10v3, types: [org.telegram.ui.Components.e6] */
-    /* JADX WARN: Type inference failed for: r11v4, types: [org.telegram.ui.Components.e6] */
+    /* JADX WARN: Type inference failed for: r10v3, types: [org.telegram.ui.Components.d6] */
+    /* JADX WARN: Type inference failed for: r11v4, types: [org.telegram.ui.Components.d6] */
     /* JADX WARN: Type inference failed for: r7v0, types: [java.util.ArrayList] */
     /* JADX WARN: Type inference failed for: r8v0 */
     /* JADX WARN: Type inference failed for: r8v1, types: [boolean, int] */
@@ -242,7 +242,7 @@ public final class n8 extends View {
             r92.a = (arrayList3.size() - r82) - i12;
             long j3 = j8Var3.d;
             Paint paint = r92.h;
-            r92.o = new v01(v7.R0(org.telegram.messenger.q.i(j3, ',', new StringBuilder("⭐️")), 0.85f, oqVarArr), 12.0f, AndroidUtilities.getTypeface("fonts/num.otf"));
+            r92.o = new u01(w7.R0(hg.k0.j(j3, ',', new StringBuilder("⭐️")), 0.85f, oqVarArr), 12.0f, AndroidUtilities.getTypeface("fonts/num.otf"));
             boolean z13 = n8Var.a;
             int i15 = o8Var.c;
             if (z13) {
@@ -262,7 +262,7 @@ public final class n8 extends View {
             if (this.a) {
                 int i17 = i12 + 1;
                 r92.v = i17;
-                r92.u = new v01(hg.k0.h(i17, ""), 10.0f, AndroidUtilities.getTypeface("fonts/num.otf"));
+                r92.u = new u01(hg.k0.h(i17, ""), 10.0f, AndroidUtilities.getTypeface("fonts/num.otf"));
                 if (i17 > 0 && r92.s == null) {
                     Drawable mutate = n8Var.getContext().getResources().getDrawable(R.drawable.filled_stream_crown).mutate();
                     r92.s = mutate;
@@ -281,7 +281,7 @@ public final class n8 extends View {
                 if (!r92.i && r92.p != z14) {
                     r92.p = z14;
                     oqVarArr = null;
-                    r92.n = new v01(z14 ? LocaleController.getString(R.string.StarsReactionAnonymous) : DialogObject.getShortName(r92.j), 12.0f, null);
+                    r92.n = new u01(z14 ? LocaleController.getString(R.string.StarsReactionAnonymous) : DialogObject.getShortName(r92.j), 12.0f, null);
                     n8Var.invalidate();
                     i12++;
                     arrayList3 = arrayList;

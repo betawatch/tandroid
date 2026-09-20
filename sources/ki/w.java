@@ -1,95 +1,35 @@
 package ki;
 
-import ai.s4;
-import android.os.SystemClock;
-import hg.k0;
-import java.io.File;
-import java.io.IOException;
+import android.opengl.GLES20;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class w implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ h0 b;
+public final class w extends u {
+    public final int e;
+    public final int f;
+    public final int g;
+    public final int h;
 
-    public /* synthetic */ w(h0 h0Var, int i10) {
-        this.a = i10;
-        this.b = h0Var;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                h0 h0Var = this.b;
-                o oVar = h0Var.J;
-                File file = h0Var.K;
-                if (oVar != null) {
-                    try {
-                        synchronized (oVar) {
-                            oVar.c();
-                        }
-                    } catch (IOException unused) {
-                    }
-                    w7.k.c(oVar.a);
-                }
-                if (file != null) {
-                    w7.k.c(file);
-                    return;
-                }
-                return;
-            case 1:
-                h0 h0Var2 = this.b;
-                if (h0Var2.Q == 3) {
-                    h0Var2.n();
-                    return;
-                }
-                return;
-            case 2:
-                h0 h0Var3 = this.b;
-                h0Var3.v = false;
-                h0Var3.l.b("recording segment stopped: state=" + k0.C(h0Var3.Q) + ", retainedDurationMs=" + h0Var3.y);
-                if (h0Var3.u) {
-                    h0Var3.u = false;
-                    h0Var3.h();
-                    return;
-                }
-                if (h0Var3.s) {
-                    h0Var3.s = false;
-                    h0Var3.i.execute(new s4(h0Var3, h0Var3.J, h0Var3.t, h0Var3.I, 6));
-                    return;
-                }
-                if (h0Var3.Q != 4) {
-                    return;
-                }
-                try {
-                    File createTempFile = File.createTempFile("round_video_preview_", ".mp4", h0Var3.a.getCacheDir());
-                    h0Var3.K = createTempFile;
-                    h0Var3.D = System.nanoTime();
-                    h0Var3.l.b("preview snapshot started: file=" + createTempFile.getName());
-                    h0Var3.i.execute(new gg.t(h0Var3, h0Var3.J, createTempFile, 23));
-                    return;
-                } catch (IOException e) {
-                    h0Var3.g(e);
-                    return;
-                }
-            default:
-                h0 h0Var4 = this.b;
-                int i10 = h0Var4.Q;
-                if (i10 == 2 || i10 == 6) {
-                    h0Var4.z = SystemClock.elapsedRealtime();
-                    h0Var4.l.b("recording started: retainedDurationMs=" + h0Var4.y);
-                    h0Var4.u(3);
-                    long j3 = h0Var4.m - h0Var4.y;
-                    if (j3 <= 0) {
-                        h0Var4.n();
-                        return;
-                    } else {
-                        h0Var4.h.postDelayed(h0Var4.M, j3);
-                        return;
-                    }
-                }
-                return;
-        }
+    public w() {
+        super(AndroidUtilities.readRes(R.raw.round_blur_vert), "precision mediump float;\nvarying vec2 vTextureCoord;\nuniform sampler2D sTexture;\nuniform sampler2D nTexture;\nuniform sampler2D obTexture;\nuniform sampler2D nbTexture;\nuniform sampler2D oldBackground;\nuniform sampler2D newBackground;\nuniform sampler2D maskTexture;\nuniform float oldBlur;\nuniform float newBlur;\nuniform float mixValue;\nuniform float outsideEffect;\nvoid main() {\n    vec4 oldFrame = mix(texture2D(sTexture, vTextureCoord),\n            texture2D(obTexture, vTextureCoord), oldBlur);\n    vec4 newFrame = mix(texture2D(nTexture, vTextureCoord),\n            texture2D(nbTexture, vTextureCoord), newBlur);\n    vec3 camera = mix(oldFrame.rgb, newFrame.rgb, mixValue);\n    vec3 background = mix(texture2D(oldBackground, vTextureCoord).rgb,\n            texture2D(newBackground, vTextureCoord).rgb, mixValue) * 0.25;\n    float mask = texture2D(maskTexture, vTextureCoord).a;\n    vec3 composited = mix(background, camera, mask);\n    gl_FragColor = vec4(mix(camera, composited, outsideEffect), 1.0);\n}\n");
+        int glGetUniformLocation = GLES20.glGetUniformLocation(this.a, "nTexture");
+        int glGetUniformLocation2 = GLES20.glGetUniformLocation(this.a, "obTexture");
+        int glGetUniformLocation3 = GLES20.glGetUniformLocation(this.a, "nbTexture");
+        int glGetUniformLocation4 = GLES20.glGetUniformLocation(this.a, "oldBackground");
+        int glGetUniformLocation5 = GLES20.glGetUniformLocation(this.a, "newBackground");
+        int glGetUniformLocation6 = GLES20.glGetUniformLocation(this.a, "maskTexture");
+        this.e = GLES20.glGetUniformLocation(this.a, "oldBlur");
+        this.f = GLES20.glGetUniformLocation(this.a, "newBlur");
+        this.g = GLES20.glGetUniformLocation(this.a, "mixValue");
+        this.h = GLES20.glGetUniformLocation(this.a, "outsideEffect");
+        GLES20.glUseProgram(this.a);
+        GLES20.glUniform1i(glGetUniformLocation, 1);
+        GLES20.glUniform1i(glGetUniformLocation2, 2);
+        GLES20.glUniform1i(glGetUniformLocation3, 3);
+        GLES20.glUniform1i(glGetUniformLocation4, 4);
+        GLES20.glUniform1i(glGetUniformLocation5, 5);
+        GLES20.glUniform1i(glGetUniformLocation6, 6);
     }
 }

@@ -9,9 +9,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.w70;
+import org.telegram.ui.Components.v70;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class r4 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -37,7 +37,7 @@ public final /* synthetic */ class r4 implements View.OnClickListener {
                     List m10 = u4Var.m();
                     if (indexOf >= 0 && indexOf < m10.size() && indexOf < arrayList.size()) {
                         final u uVar = (u) m10.get(indexOf);
-                        w70 F = u4Var.N.a.h3.F((View) arrayList.get(indexOf));
+                        v70 F = u4Var.N.a.h3.F((View) arrayList.get(indexOf));
                         boolean z10 = uVar.n;
                         final int i10 = 0;
                         F.c(z10 ? R.drawable.msg_spoiler_off : R.drawable.msg_spoiler, LocaleController.getString(z10 ? R.string.DisablePhotoSpoiler : R.string.EnablePhotoSpoiler), new Runnable() { // from class: ii.s4
@@ -150,7 +150,7 @@ public final /* synthetic */ class r4 implements View.OnClickListener {
                 if (p3Var != null && (aVar = u4Var2.a) != null) {
                     w3 w3Var = p3Var.a;
                     w3Var.b4 = aVar;
-                    w3Var.h3.i(0);
+                    w3Var.h3.m(0);
                     break;
                 }
                 break;

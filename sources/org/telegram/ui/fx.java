@@ -7,7 +7,7 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class fx implements org.telegram.ui.Components.ng {
     public final /* synthetic */ uy a;
@@ -17,7 +17,7 @@ public final class fx implements org.telegram.ui.Components.ng {
     }
 
     @Override // org.telegram.ui.Components.ng
-    public final /* synthetic */ boolean C0() {
+    public final /* synthetic */ boolean D0() {
         return true;
     }
 
@@ -41,45 +41,23 @@ public final class fx implements org.telegram.ui.Components.ng {
     }
 
     @Override // org.telegram.ui.Components.ng
-    public final /* synthetic */ int b1() {
+    public final /* synthetic */ int c1() {
         return 0;
     }
 
     @Override // org.telegram.ui.Components.ng
-    public final /* synthetic */ TL_stories.StoryItem d1() {
+    public final /* synthetic */ TL_stories.StoryItem e1() {
         return null;
     }
 
     @Override // org.telegram.ui.Components.ng
-    public final /* synthetic */ boolean f1(long j3) {
+    public final /* synthetic */ boolean g1(long j3) {
         return false;
     }
 
     @Override // org.telegram.ui.Components.ng
-    public final boolean i1() {
+    public final boolean j1() {
         return false;
-    }
-
-    @Override // org.telegram.ui.Components.ng
-    public final void l1(CharSequence charSequence, boolean z10, boolean z11) {
-        uy uyVar = this.a;
-        AndroidUtilities.runOnUIThread(new jw(uyVar, 12), 100L);
-        org.telegram.ui.Components.ar0 ar0Var = uyVar.G2;
-        if (ar0Var != null) {
-            if (z10) {
-                if (ar0Var.h) {
-                    ar0Var.e(charSequence, true);
-                }
-            } else {
-                cu cuVar = uyVar.H2;
-                if (cuVar != null) {
-                    AndroidUtilities.cancelRunOnUIThread(cuVar);
-                }
-                cu cuVar2 = new cu(8, this, charSequence);
-                uyVar.H2 = cuVar2;
-                AndroidUtilities.runOnUIThread(cuVar2, 1000L);
-            }
-        }
     }
 
     @Override // org.telegram.ui.Components.ng
@@ -88,13 +66,30 @@ public final class fx implements org.telegram.ui.Components.ng {
     }
 
     @Override // org.telegram.ui.Components.ng
-    public final /* synthetic */ boolean o1() {
-        return false;
+    public final void m1(CharSequence charSequence, boolean z10, boolean z11) {
+        uy uyVar = this.a;
+        AndroidUtilities.runOnUIThread(new jw(uyVar, 12), 100L);
+        org.telegram.ui.Components.zq0 zq0Var = uyVar.G2;
+        if (zq0Var != null) {
+            if (z10) {
+                if (zq0Var.h) {
+                    zq0Var.e(charSequence, true);
+                }
+            } else {
+                yt ytVar = uyVar.H2;
+                if (ytVar != null) {
+                    AndroidUtilities.cancelRunOnUIThread(ytVar);
+                }
+                yt ytVar2 = new yt(10, this, charSequence);
+                uyVar.H2 = ytVar2;
+                AndroidUtilities.runOnUIThread(ytVar2, 1000L);
+            }
+        }
     }
 
     @Override // org.telegram.ui.Components.ng
-    public final /* synthetic */ pn p0() {
-        return null;
+    public final /* synthetic */ boolean p1() {
+        return false;
     }
 
     @Override // org.telegram.ui.Components.ng
@@ -103,13 +98,22 @@ public final class fx implements org.telegram.ui.Components.ng {
     }
 
     @Override // org.telegram.ui.Components.ng
+    public final /* synthetic */ pn q0() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.Components.ng
     public final /* synthetic */ TLRPC.Peer v() {
         return null;
     }
 
     @Override // org.telegram.ui.Components.ng
-    public final /* synthetic */ boolean w1() {
+    public final /* synthetic */ boolean x1() {
         return false;
+    }
+
+    @Override // org.telegram.ui.Components.ng
+    public final /* synthetic */ void A1() {
     }
 
     @Override // org.telegram.ui.Components.ng
@@ -125,19 +129,19 @@ public final class fx implements org.telegram.ui.Components.ng {
     }
 
     @Override // org.telegram.ui.Components.ng
-    public final void E1() {
+    public final void F1() {
     }
 
     @Override // org.telegram.ui.Components.ng
-    public final /* synthetic */ void G0() {
+    public final /* synthetic */ void H0() {
     }
 
     @Override // org.telegram.ui.Components.ng
-    public final /* synthetic */ void J0() {
+    public final /* synthetic */ void K0() {
     }
 
     @Override // org.telegram.ui.Components.ng
-    public final /* synthetic */ void T0() {
+    public final /* synthetic */ void U0() {
     }
 
     @Override // org.telegram.ui.Components.ng
@@ -149,7 +153,7 @@ public final class fx implements org.telegram.ui.Components.ng {
     }
 
     @Override // org.telegram.ui.Components.ng
-    public final void a1(int i10) {
+    public final void b1(int i10) {
     }
 
     @Override // org.telegram.ui.Components.ng
@@ -177,11 +181,11 @@ public final class fx implements org.telegram.ui.Components.ng {
     }
 
     @Override // org.telegram.ui.Components.ng
-    public final /* synthetic */ void m0() {
+    public final /* synthetic */ void n0() {
     }
 
     @Override // org.telegram.ui.Components.ng
-    public final void n1() {
+    public final void o1() {
     }
 
     @Override // org.telegram.ui.Components.ng
@@ -189,23 +193,23 @@ public final class fx implements org.telegram.ui.Components.ng {
     }
 
     @Override // org.telegram.ui.Components.ng
-    public final /* synthetic */ void q1() {
-    }
-
-    @Override // org.telegram.ui.Components.ng
     public final /* synthetic */ void r1() {
     }
 
     @Override // org.telegram.ui.Components.ng
-    public final void s0() {
+    public final /* synthetic */ void s1() {
     }
 
     @Override // org.telegram.ui.Components.ng
-    public final void s1() {
+    public final void t0() {
     }
 
     @Override // org.telegram.ui.Components.ng
-    public final void v1(CharSequence charSequence) {
+    public final void t1() {
+    }
+
+    @Override // org.telegram.ui.Components.ng
+    public final void w1(CharSequence charSequence) {
     }
 
     @Override // org.telegram.ui.Components.ng
@@ -221,11 +225,7 @@ public final class fx implements org.telegram.ui.Components.ng {
     }
 
     @Override // org.telegram.ui.Components.ng
-    public final /* synthetic */ void z1() {
-    }
-
-    @Override // org.telegram.ui.Components.ng
-    public final void E0(int i10, int i11) {
+    public final void F0(int i10, int i11) {
     }
 
     @Override // org.telegram.ui.Components.ng
@@ -233,7 +233,7 @@ public final class fx implements org.telegram.ui.Components.ng {
     }
 
     @Override // org.telegram.ui.Components.ng
-    public final void t1(View view, CharSequence charSequence, boolean z10) {
+    public final void u1(View view, CharSequence charSequence, boolean z10) {
     }
 
     @Override // org.telegram.ui.Components.ng

@@ -8,9 +8,9 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.w70;
+import org.telegram.ui.Components.v70;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class z3 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -33,19 +33,19 @@ public final /* synthetic */ class z3 implements View.OnClickListener {
                 break;
             default:
                 final r rVar = this.b.a.a;
-                org.telegram.ui.ActionBar.e6 e6Var = rVar.a;
+                org.telegram.ui.ActionBar.f6 f6Var = rVar.a;
                 w3 w3Var = rVar.r;
                 a R2 = w3Var.R2();
                 int i10 = this.c;
                 if (i10 == 1) {
                     int i11 = rVar.n;
-                    w70 w70Var = rVar.H;
-                    if (w70Var != null) {
-                        w70Var.u();
+                    v70 v70Var = rVar.H;
+                    if (v70Var != null) {
+                        v70Var.u();
                     }
-                    w70 G = w70.G(rVar, e6Var, view, true);
+                    v70 G = v70.G(rVar, f6Var, view, true);
                     G.Q = true;
-                    w70 J = G.J();
+                    v70 J = G.J();
                     boolean z10 = (MessagesController.getInstance(i11).richEditorAllowed() || UserConfig.getInstance(i11).isPremium()) ? false : true;
                     J.c(R.drawable.ic_ab_back, LocaleController.getString(R.string.Back), new h(G, 0), false);
                     J.k();
@@ -74,11 +74,11 @@ public final /* synthetic */ class z3 implements View.OnClickListener {
                     rVar.H = G;
                     break;
                 } else if (i10 == 2) {
-                    w70 w70Var2 = rVar.H;
-                    if (w70Var2 != null) {
-                        w70Var2.u();
+                    v70 v70Var2 = rVar.H;
+                    if (v70Var2 != null) {
+                        v70Var2.u();
                     }
-                    final w70 F = w70.F(rVar, e6Var, view);
+                    final v70 F = v70.F(rVar, f6Var, view);
                     F.Q = true;
                     F.j(R2 == null || !R2.b(), R.drawable.field_carret_empty, null, LocaleController.getString(R.string.ArticleNone), new f(rVar, R2, 1));
                     F.j((R2 == null || !R2.b() || R2.a() || R2.c()) ? false : true, R.drawable.iv_list, null, LocaleController.getString(R.string.ArticleListBulleted), new f(rVar, R2, 2));
@@ -165,7 +165,7 @@ public final /* synthetic */ class z3 implements View.OnClickListener {
                                 pageblockmath = (TL_iv.pageBlockMath) pageBlock;
                             }
                         }
-                        r.U(rVar.getContext(), (pageblockmath == null || TextUtils.isEmpty(pageblockmath.source)) ? "" : pageblockmath.source, new ci.m2(18, rVar, pageblockmath), e6Var);
+                        r.U(rVar.getContext(), (pageblockmath == null || TextUtils.isEmpty(pageblockmath.source)) ? "" : pageblockmath.source, new ci.m2(18, rVar, pageblockmath), f6Var);
                         break;
                     } else if (i10 == 9) {
                         w3Var.u3();

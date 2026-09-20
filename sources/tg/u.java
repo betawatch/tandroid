@@ -4,28 +4,28 @@ import android.view.View;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.d5;
-import org.telegram.ui.Components.ew0;
-import org.telegram.ui.Components.p6;
+import org.telegram.ui.Components.c5;
+import org.telegram.ui.Components.dw0;
+import org.telegram.ui.Components.o6;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class u implements d5, ew0, vg.f, vg.k {
+public final /* synthetic */ class u implements c5, dw0, vg.f, vg.k {
     public final /* synthetic */ a0 a;
 
     public /* synthetic */ u(a0 a0Var) {
         this.a = a0Var;
     }
 
-    @Override // org.telegram.ui.Components.d5
+    @Override // org.telegram.ui.Components.c5
     public void J(int i10, int i11, boolean z10) {
         a0 a0Var = this.a;
         a0Var.m0 = i10 * 1000;
         a0Var.a0(false, true);
     }
 
-    @Override // org.telegram.ui.Components.ew0
-    public void h(int i10) {
+    @Override // org.telegram.ui.Components.dw0
+    public void g(int i10) {
         a0 a0Var = this.a;
         int i11 = a0Var.h0;
         int i12 = vg.d.s;
@@ -45,10 +45,10 @@ public final /* synthetic */ class u implements d5, ew0, vg.f, vg.k {
         for (int i13 = 0; i13 < bVar.f.getChildCount(); i13++) {
             View childAt = bVar.f.getChildAt(i13);
             if (childAt instanceof vg.x) {
-                p6 p6Var = ((vg.x) childAt).r;
+                o6 o6Var = ((vg.x) childAt).r;
                 String formatPluralString = V <= 0 ? "" : LocaleController.formatPluralString("BoostingBoostsCountTitle", V, Integer.valueOf(V));
-                p6Var.a();
-                p6Var.c(formatPluralString, true, true);
+                o6Var.a();
+                o6Var.c(formatPluralString, true, true);
             }
             if (childAt instanceof vg.g) {
                 vg.g gVar = (vg.g) childAt;
@@ -65,7 +65,7 @@ public final /* synthetic */ class u implements d5, ew0, vg.f, vg.k {
         bVar.q(bVar.e.size() - 12, 12);
     }
 
-    @Override // org.telegram.ui.Components.ew0
+    @Override // org.telegram.ui.Components.dw0
     public /* synthetic */ void n() {
     }
 }

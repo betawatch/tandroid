@@ -7,9 +7,9 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.kh1;
+import org.telegram.ui.mh1;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d1 implements org.telegram.ui.ActionBar.a2, BillingController.ProductDetailsResponseListenerLegacy {
     public final /* synthetic */ int a;
@@ -31,7 +31,7 @@ public final /* synthetic */ class d1 implements org.telegram.ui.ActionBar.a2, B
     }
 
     @Override // org.telegram.ui.ActionBar.a2
-    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+    public void k(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
         switch (this.a) {
             case 0:
                 TLRPC.User user = (TLRPC.User) this.b;
@@ -67,13 +67,13 @@ public final /* synthetic */ class d1 implements org.telegram.ui.ActionBar.a2, B
                 String str2 = (String) this.d;
                 String str3 = (String) this.e;
                 org.telegram.ui.sl0 sl0Var = (org.telegram.ui.sl0) this.f;
-                o0.a aVar = (o0.a) this.h;
+                m5.e eVar = (m5.e) this.h;
                 org.telegram.ui.pn0 pn0Var = xm0Var.a;
                 pn0Var.Y[0].setText(str);
                 pn0Var.Y[1].setText(str2);
                 pn0Var.Y[2].setText(str3);
                 pn0Var.N1(true, true);
-                xm0Var.c(sl0Var, aVar);
+                xm0Var.c(sl0Var, eVar);
                 break;
         }
     }
@@ -92,7 +92,7 @@ public final /* synthetic */ class d1 implements org.telegram.ui.ActionBar.a2, B
                 tL_inputStorePaymentPremiumGiftCode.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_premiumGiftCodeOption.currency)) * (r4.b / Math.pow(10.0d, 6.0d)));
                 TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore = new TLRPC.TL_payments_canPurchaseStore();
                 tL_payments_canPurchaseStore.purpose = tL_inputStorePaymentPremiumGiftCode;
-                connectionsManager.sendRequest(tL_payments_canPurchaseStore, new kh1(callback, list, hVar, callback2, n2Var, tL_inputStorePaymentPremiumGiftCode, 2));
+                connectionsManager.sendRequest(tL_payments_canPurchaseStore, new mh1(callback, list, hVar, callback2, n2Var, tL_inputStorePaymentPremiumGiftCode, 2));
                 break;
             default:
                 TLRPC.TL_inputStorePaymentPremiumGiveaway tL_inputStorePaymentPremiumGiveaway = (TLRPC.TL_inputStorePaymentPremiumGiveaway) this.b;
@@ -105,12 +105,12 @@ public final /* synthetic */ class d1 implements org.telegram.ui.ActionBar.a2, B
                 tL_inputStorePaymentPremiumGiveaway.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_premiumGiftCodeOption2.currency)) * (r4.b / Math.pow(10.0d, 6.0d)));
                 TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore2 = new TLRPC.TL_payments_canPurchaseStore();
                 tL_payments_canPurchaseStore2.purpose = tL_inputStorePaymentPremiumGiveaway;
-                connectionsManager2.sendRequest(tL_payments_canPurchaseStore2, new kh1(vVar, list, hVar, vVar2, n2Var2, tL_inputStorePaymentPremiumGiveaway, 1));
+                connectionsManager2.sendRequest(tL_payments_canPurchaseStore2, new mh1(vVar, list, hVar, vVar2, n2Var2, tL_inputStorePaymentPremiumGiveaway, 1));
                 break;
         }
     }
 
-    public /* synthetic */ d1(TLRPC.User user, AccountInstance accountInstance, org.telegram.ui.zn znVar, TLRPC.Chat chat, MessageObject messageObject, org.telegram.ui.Cells.a2[] a2VarArr, org.telegram.ui.ActionBar.e6 e6Var) {
+    public /* synthetic */ d1(TLRPC.User user, AccountInstance accountInstance, org.telegram.ui.zn znVar, TLRPC.Chat chat, MessageObject messageObject, org.telegram.ui.Cells.a2[] a2VarArr, org.telegram.ui.ActionBar.f6 f6Var) {
         this.a = 0;
         this.b = user;
         this.c = accountInstance;

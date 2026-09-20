@@ -7,6 +7,8 @@ import ai.c3;
 import ai.d2;
 import ai.d9;
 import ai.da;
+import ai.e6;
+import ai.e9;
 import ai.f6;
 import ai.fb;
 import ai.h1;
@@ -70,9 +72,8 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.q;
+import org.telegram.messenger.rk;
 import org.telegram.messenger.support.LongSparseIntArray;
-import org.telegram.messenger.wh;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLObject;
@@ -80,19 +81,18 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_update;
-import org.telegram.ui.ActionBar.e6;
 import org.telegram.ui.ActionBar.f3;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.Cells.a2;
-import org.telegram.ui.Cells.e9;
-import org.telegram.ui.Cells.m4;
+import org.telegram.ui.Cells.f9;
+import org.telegram.ui.Cells.n4;
 import org.telegram.ui.Components.np;
 import org.telegram.ui.ProfileActivity;
 import rg.x0;
 import v0.i;
 import w7.y5;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final /* synthetic */ class e implements Runnable {
     public final /* synthetic */ int a;
@@ -179,17 +179,17 @@ public final /* synthetic */ class e implements Runnable {
                     long j10 = m1Var.c;
                     q0 q0Var = new q0(r7, r3Var2, m1Var);
                     b1 b1Var = new b1();
-                    f3 f3Var = new f3(1, context, (e6) b1Var, false);
+                    f3 f3Var = new f3(1, context, (org.telegram.ui.ActionBar.f6) b1Var, false);
                     f3Var.fixNavigationBar();
-                    LinearLayout e = wh.e(context, 1);
-                    TextView g10 = q.g(context, 1, 20.0f);
-                    g10.setTextColor(b1Var.G0(j6.j5));
-                    g10.setTypeface(AndroidUtilities.bold());
-                    g10.setText(LocaleController.getString(R.string.DeleteSingleMessagesTitle));
-                    e.addView(g10, y5.k(22.0f, 12.0f, 22.0f, 0.0f, -1, -2));
-                    m4 m4Var = new m4(context, b1Var);
-                    m4Var.setText(LocaleController.getString(R.string.DeleteAdditionalActions));
-                    e.addView(m4Var, y5.k(0.0f, 0.0f, 0.0f, 4.0f, -1, -2));
+                    LinearLayout f7 = rk.f(context, 1);
+                    TextView f10 = org.telegram.messenger.l0.f(context, 1, 20.0f);
+                    f10.setTextColor(b1Var.F0(j6.j5));
+                    f10.setTypeface(AndroidUtilities.bold());
+                    f10.setText(LocaleController.getString(R.string.DeleteSingleMessagesTitle));
+                    f7.addView(f10, y5.k(22.0f, 12.0f, 22.0f, 0.0f, -1, -2));
+                    n4 n4Var = new n4(context, b1Var);
+                    n4Var.setText(LocaleController.getString(R.string.DeleteAdditionalActions));
+                    f7.addView(n4Var, y5.k(0.0f, 0.0f, 0.0f, 4.0f, -1, -2));
                     final a2 a2Var = new a2(4, 21, context, b1Var, true);
                     np checkBoxRound = a2Var.getCheckBoxRound();
                     int i13 = j6.V6;
@@ -214,8 +214,8 @@ public final /* synthetic */ class e implements Runnable {
                         }
                     });
                     int i16 = j6.i6;
-                    a2Var.setBackground(j6.f0(b1Var.G0(i16), 2, -1));
-                    e.addView(a2Var, y5.n(-1, -2));
+                    a2Var.setBackground(j6.f0(b1Var.F0(i16), 2, -1));
+                    f7.addView(a2Var, y5.n(-1, -2));
                     final a2 a2Var2 = new a2(4, 21, context, b1Var, true);
                     a2Var2.getCheckBoxRound().b(i13, i14, i15);
                     final int i17 = 1;
@@ -236,8 +236,8 @@ public final /* synthetic */ class e implements Runnable {
                             }
                         }
                     });
-                    a2Var2.setBackground(j6.f0(b1Var.G0(i16), 2, -1));
-                    e.addView(a2Var2, y5.n(-1, -2));
+                    a2Var2.setBackground(j6.f0(b1Var.F0(i16), 2, -1));
+                    f7.addView(a2Var2, y5.n(-1, -2));
                     final a2 a2Var3 = new a2(4, 21, context, b1Var, true);
                     a2Var3.getCheckBoxRound().b(i13, i14, i15);
                     a2Var3.e(LocaleController.formatString(R.string.DeleteBan, DialogObject.getName(j10)), null, false, false, false);
@@ -258,19 +258,19 @@ public final /* synthetic */ class e implements Runnable {
                             }
                         }
                     });
-                    a2Var3.setBackground(j6.f0(b1Var.G0(i16), 2, -1));
-                    e.addView(a2Var3, y5.n(-1, -2));
-                    e9 e9Var = new e9(context, b1Var);
-                    e9Var.setBackgroundColor(-16777216);
-                    e9Var.setFixedSize(12);
-                    e.addView(e9Var, y5.n(-1, -2));
+                    a2Var3.setBackground(j6.f0(b1Var.F0(i16), 2, -1));
+                    f7.addView(a2Var3, y5.n(-1, -2));
+                    f9 f9Var = new f9(context, b1Var);
+                    f9Var.setBackgroundColor(-16777216);
+                    f9Var.setFixedSize(12);
+                    f7.addView(f9Var, y5.n(-1, -2));
                     FrameLayout frameLayout = new FrameLayout(context);
                     ci.d dVar = new ci.d(context, b1Var, true);
                     dVar.g(LocaleController.getString(R.string.DeleteProceedBtn), false, true);
                     dVar.setOnClickListener(new s0(a2Var, a2Var2, a2Var3, q0Var, f3Var, 0));
                     frameLayout.addView(dVar, y5.d(-1, 48.0f, 119, 16.0f, 16.0f, 16.0f, 16.0f));
-                    e.addView(frameLayout, y5.n(-1, -2));
-                    f3Var.setCustomView(e);
+                    f7.addView(frameLayout, y5.n(-1, -2));
+                    f3Var.setCustomView(f7);
                     f3Var.show();
                     break;
                 }
@@ -308,7 +308,7 @@ public final /* synthetic */ class e implements Runnable {
             case 11:
                 f6 f6Var3 = (f6) this.b;
                 oc E = oc.E((Activity) this.c, f6Var3.C2);
-                ai.e6 e6Var = f6Var3.M2;
+                e6 e6Var = f6Var3.M2;
                 long j11 = (e6Var == null || (icVar = (ic) e6Var.c) == null) ? 0L : icVar.currentPosition;
                 File h = f6Var3.O1.h();
                 TL_stories.StoryItem storyItem = f6Var3.O1.a;
@@ -518,7 +518,7 @@ public final /* synthetic */ class e implements Runnable {
                     while (i27 < size3) {
                         TL_stories.TL_storyAlbum tL_storyAlbum = arrayList9.get(i27);
                         i27++;
-                        arrayList8.add(ai.e9.a(tL_storyAlbum));
+                        arrayList8.add(e9.a(tL_storyAlbum));
                     }
                     arrayList7.clear();
                     arrayList7.addAll(arrayList8);
@@ -657,8 +657,8 @@ public final /* synthetic */ class e implements Runnable {
                     while (queryFinalized4.next()) {
                         longSparseIntArray.put(queryFinalized4.longValue(0), queryFinalized4.intValue(1));
                     }
-                } catch (Exception e7) {
-                    messagesStorage2.checkSQLException(e7);
+                } catch (Exception e) {
+                    messagesStorage2.checkSQLException(e);
                 }
                 AndroidUtilities.runOnUIThread(new e(27, h8Var, longSparseIntArray));
                 break;

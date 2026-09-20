@@ -14,7 +14,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class q10 extends FrameLayout {
     public final RectF a;
@@ -33,9 +33,9 @@ public final class q10 extends FrameLayout {
         super.dispatchDraw(canvas);
         FragmentContextView fragmentContextView = this.b;
         org.telegram.ui.ActionBar.n2 n2Var = fragmentContextView.h;
-        o6 o6Var = fragmentContextView.i0;
+        n6 n6Var = fragmentContextView.i0;
         if (fragmentContextView.T == 4 && fragmentContextView.g0) {
-            int dp = AndroidUtilities.dp(24.0f) + ((int) Math.ceil(o6Var.d()));
+            int dp = AndroidUtilities.dp(24.0f) + ((int) Math.ceil(n6Var.d()));
             if (dp != fragmentContextView.e0) {
                 LinearGradient linearGradient = new LinearGradient(0.0f, 0.0f, dp, 0.0f, new int[]{-10121218, -6983683}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
                 fragmentContextView.c0 = linearGradient;
@@ -70,8 +70,8 @@ public final class q10 extends FrameLayout {
             rectF2.set(0.0f, 0.0f, dp, AndroidUtilities.dp(28.0f));
             canvas.drawRoundRect(rectF2, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), fragmentContextView.b0);
             canvas.translate(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(6.0f));
-            o6Var.setBounds(0, 0, AndroidUtilities.displaySize.x, AndroidUtilities.dp(16.0f));
-            o6Var.draw(canvas);
+            n6Var.setBounds(0, 0, AndroidUtilities.displaySize.x, AndroidUtilities.dp(16.0f));
+            n6Var.draw(canvas);
             canvas.restore();
         }
     }
@@ -113,7 +113,7 @@ public final class q10 extends FrameLayout {
                         p10Var.run();
                         xc a02 = xc.a0(n2Var);
                         boolean z11 = fragmentContextView.h0;
-                        org.telegram.messenger.q.q(z11 ? R.string.LiveStreamWillNotify : R.string.LiveStreamWillNotNotify, a02, z11 ? R.raw.silent_unmute : R.raw.silent_mute, 36);
+                        org.telegram.messenger.l0.o(z11 ? R.string.LiveStreamWillNotify : R.string.LiveStreamWillNotNotify, a02, z11 ? R.raw.silent_unmute : R.raw.silent_mute, 36);
                     }
                 }
                 fragmentContextView.j0.c(false);
@@ -134,8 +134,8 @@ public final class q10 extends FrameLayout {
     public final void invalidate() {
         super.invalidate();
         FragmentContextView fragmentContextView = this.b;
-        k9 k9Var = fragmentContextView.a0;
-        if (k9Var == null || k9Var.getVisibility() != 0) {
+        j9 j9Var = fragmentContextView.a0;
+        if (j9Var == null || j9Var.getVisibility() != 0) {
             return;
         }
         fragmentContextView.a0.invalidate();

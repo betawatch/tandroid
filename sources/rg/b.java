@@ -4,30 +4,30 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.widget.FrameLayout;
-import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.wl0;
+import org.telegram.ui.Components.vl0;
 import w7.y5;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public abstract class b extends FrameLayout implements l0 {
-    public final e6 a;
-    public final wl0 b;
+    public final f6 a;
+    public final vl0 b;
     public final s4.c0 c;
 
-    public b(Context context, e6 e6Var) {
+    public b(Context context, f6 f6Var) {
         super(context);
-        this.a = e6Var;
-        wl0 wl0Var = new wl0(context, e6Var);
-        this.b = wl0Var;
-        wl0Var.setNestedScrollingEnabled(true);
-        wl0Var.setAdapter(a());
+        this.a = f6Var;
+        vl0 vl0Var = new vl0(context, f6Var);
+        this.b = vl0Var;
+        vl0Var.setNestedScrollingEnabled(true);
+        vl0Var.setAdapter(a());
         s4.c0 c0Var = new s4.c0(1, false);
         this.c = c0Var;
-        wl0Var.setLayoutManager(c0Var);
-        wl0Var.setClipToPadding(false);
-        addView(wl0Var, y5.c(-1.0f, -1));
+        vl0Var.setLayoutManager(c0Var);
+        vl0Var.setClipToPadding(false);
+        addView(vl0Var, y5.c(-1.0f, -1));
     }
 
     public abstract s4.h0 a();
@@ -45,9 +45,9 @@ public abstract class b extends FrameLayout implements l0 {
     @Override // rg.l0
     public void setOffset(float f7) {
         if (Math.abs(f7 / getMeasuredWidth()) == 1.0f) {
-            wl0 wl0Var = this.b;
-            if (wl0Var.L(0) == null || wl0Var.L(0).a.getTop() != wl0Var.getPaddingTop()) {
-                wl0Var.v0(0);
+            vl0 vl0Var = this.b;
+            if (vl0Var.L(0) == null || vl0Var.L(0).a.getTop() != vl0Var.getPaddingTop()) {
+                vl0Var.v0(0);
             }
         }
     }

@@ -3,9 +3,9 @@ package g;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import androidx.appcompat.widget.ContentFrameLayout;
-import v7.v7;
+import v7.w7;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class q extends ContentFrameLayout {
     public final /* synthetic */ s r;
@@ -37,6 +37,6 @@ public final class q extends ContentFrameLayout {
 
     @Override // android.view.View
     public final void setBackgroundResource(int i10) {
-        setBackgroundDrawable(v7.b(getContext(), i10));
+        setBackgroundDrawable(w7.b(getContext(), i10));
     }
 }

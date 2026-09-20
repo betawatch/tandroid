@@ -4,7 +4,7 @@ import android.content.Context;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class c8 extends l8 {
     public final /* synthetic */ boolean m0;
@@ -12,8 +12,8 @@ public final class c8 extends l8 {
     public final /* synthetic */ o8 o0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c8(o8 o8Var, Context context, org.telegram.ui.ActionBar.e6 e6Var, boolean z10, int i10) {
-        super(context, e6Var);
+    public c8(o8 o8Var, Context context, org.telegram.ui.ActionBar.f6 f6Var, boolean z10, int i10) {
+        super(context, f6Var);
         this.o0 = o8Var;
         this.m0 = z10;
         this.n0 = i10;
@@ -26,7 +26,7 @@ public final class c8 extends l8 {
         o8Var.s(j3);
         ci.d dVar = o8Var.x;
         if (dVar != null) {
-            dVar.g(v7.V0(false, LocaleController.formatString(R.string.StarsReactionSend, LocaleController.formatNumber(j3, ',')), o8Var.Q), true, true);
+            dVar.g(w7.V0(false, LocaleController.formatString(R.string.StarsReactionSend, LocaleController.formatNumber(j3, ',')), o8Var.Q), true, true);
         }
         if (this.m0) {
             ai.m1 m1Var = o8Var.G;

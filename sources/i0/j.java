@@ -12,11 +12,11 @@ import android.util.Log;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
-import v7.h8;
+import v7.i8;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
-public final class j extends h8 {
+public final class j extends i8 {
     public static Font g(FontFamily fontFamily, int i10) {
         FontStyle fontStyle = new FontStyle((i10 & 1) != 0 ? 700 : 400, (i10 & 2) != 0 ? 1 : 0);
         Font font = fontFamily.getFont(0);
@@ -32,15 +32,15 @@ public final class j extends h8 {
         return font;
     }
 
-    public static FontFamily h(o0.i[] iVarArr, ContentResolver contentResolver) {
+    public static FontFamily h(o0.h[] hVarArr, ContentResolver contentResolver) {
         int i10;
         ParcelFileDescriptor openFileDescriptor;
-        int length = iVarArr.length;
+        int length = hVarArr.length;
         FontFamily.Builder builder = null;
         while (i10 < length) {
-            o0.i iVar = iVarArr[i10];
+            o0.h hVar = hVarArr[i10];
             try {
-                openFileDescriptor = contentResolver.openFileDescriptor(iVar.a, "r", null);
+                openFileDescriptor = contentResolver.openFileDescriptor(hVar.a, "r", null);
             } catch (IOException e) {
                 Log.w("TypefaceCompatApi29Impl", "Font load failed", e);
             }
@@ -48,7 +48,7 @@ public final class j extends h8 {
                 i10 = openFileDescriptor == null ? i10 + 1 : 0;
             } else {
                 try {
-                    Font build = new Font.Builder(openFileDescriptor).setWeight(iVar.c).setSlant(iVar.d ? 1 : 0).setTtcIndex(iVar.b).build();
+                    Font build = new Font.Builder(openFileDescriptor).setWeight(hVar.c).setSlant(hVar.d ? 1 : 0).setTtcIndex(hVar.b).build();
                     if (builder == null) {
                         builder = new FontFamily.Builder(build);
                     } else {
@@ -75,7 +75,7 @@ public final class j extends h8 {
         return (Math.abs(fontStyle.getWeight() - fontStyle2.getWeight()) / 100) + (fontStyle.getSlant() == fontStyle2.getSlant() ? 0 : 2);
     }
 
-    @Override // v7.h8
+    @Override // v7.i8
     public final Typeface a(Context context, h0.e eVar, Resources resources, int i10) {
         try {
             FontFamily.Builder builder = null;
@@ -101,10 +101,10 @@ public final class j extends h8 {
         }
     }
 
-    @Override // v7.h8
-    public final Typeface b(Context context, o0.i[] iVarArr, int i10) {
+    @Override // v7.i8
+    public final Typeface b(Context context, o0.h[] hVarArr, int i10) {
         try {
-            FontFamily h = h(iVarArr, context.getContentResolver());
+            FontFamily h = h(hVarArr, context.getContentResolver());
             if (h == null) {
                 return null;
             }
@@ -115,17 +115,17 @@ public final class j extends h8 {
         }
     }
 
-    @Override // v7.h8
+    @Override // v7.i8
     public final Typeface c(Context context, List list, int i10) {
         ContentResolver contentResolver = context.getContentResolver();
         try {
-            FontFamily h = h((o0.i[]) list.get(0), contentResolver);
+            FontFamily h = h((o0.h[]) list.get(0), contentResolver);
             if (h == null) {
                 return null;
             }
             Typeface.CustomFallbackBuilder customFallbackBuilder = new Typeface.CustomFallbackBuilder(h);
             for (int i11 = 1; i11 < list.size(); i11++) {
-                FontFamily h10 = h((o0.i[]) list.get(i11), contentResolver);
+                FontFamily h10 = h((o0.h[]) list.get(i11), contentResolver);
                 if (h10 != null) {
                     customFallbackBuilder.addCustomFallback(h10);
                 }
@@ -137,12 +137,12 @@ public final class j extends h8 {
         }
     }
 
-    @Override // v7.h8
+    @Override // v7.i8
     public final Typeface d(Context context, InputStream inputStream) {
         throw new RuntimeException("Do not use this function in API 29 or later.");
     }
 
-    @Override // v7.h8
+    @Override // v7.i8
     public final Typeface e(Context context, Resources resources, int i10, String str, int i11) {
         try {
             Font build = new Font.Builder(resources, i10).build();
@@ -153,8 +153,8 @@ public final class j extends h8 {
         }
     }
 
-    @Override // v7.h8
-    public final o0.i f(o0.i[] iVarArr, int i10) {
+    @Override // v7.i8
+    public final o0.h f(o0.h[] hVarArr, int i10) {
         throw new RuntimeException("Do not use this function in API 29 or later.");
     }
 }

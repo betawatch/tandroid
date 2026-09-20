@@ -18,16 +18,16 @@ import org.telegram.messenger.voip.GroupCallMessagesController;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.Components.o01;
+import org.telegram.ui.Components.n01;
+import org.telegram.ui.Components.p01;
 import org.telegram.ui.Components.po;
-import org.telegram.ui.Components.q01;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.dg1;
+import org.telegram.ui.fg1;
 import org.telegram.ui.uy;
 import org.telegram.ui.zn;
 import yh.y3;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final /* synthetic */ class g0 implements Runnable {
     public final /* synthetic */ int a;
@@ -66,27 +66,27 @@ public final /* synthetic */ class g0 implements Runnable {
                 String str3 = (String) this.e;
                 long j11 = this.b;
                 long j12 = this.c;
-                k2.j jVar = (k2.j) yVar.c;
+                k2.j jVar = (k2.j) yVar.b;
                 String str4 = e2.d0.a;
                 j2.f fVar2 = ((i2.b0) jVar).a.s;
                 j2.a p10 = fVar2.p();
                 fVar2.q(p10, 1008, new ga.a(p10, str3, j12, j11));
                 return;
             case 3:
-                ki.h0 h0Var = (ki.h0) this.d;
-                ki.e0 e0Var = (ki.e0) this.e;
+                ki.o0 o0Var = (ki.o0) this.d;
+                ki.k0 k0Var = (ki.k0) this.e;
                 long j13 = this.b;
                 long j14 = this.c;
-                ki.f0 f0Var = h0Var.d;
-                long j15 = e0Var.a;
-                File file = e0Var.b;
-                q01 q01Var = (q01) f0Var;
-                synchronized (q01Var) {
-                    o01 o01Var = (o01) q01Var.c.get(Long.valueOf(j15));
-                    if (!q01Var.d && o01Var != null && !o01Var.e) {
-                        q01Var.c(o01Var);
-                        o01Var.b = Math.max(o01Var.b, j13 + j14);
-                        FileLoader.getInstance(q01Var.a).checkUploadNewDataAvailable(file.getAbsolutePath(), q01Var.b, o01Var.b, 0L);
+                ki.l0 l0Var2 = o0Var.d;
+                long j15 = k0Var.a;
+                File file = k0Var.b;
+                p01 p01Var = (p01) l0Var2;
+                synchronized (p01Var) {
+                    n01 n01Var = (n01) p01Var.c.get(Long.valueOf(j15));
+                    if (!p01Var.d && n01Var != null && !n01Var.e) {
+                        p01Var.c(n01Var);
+                        n01Var.b = Math.max(n01Var.b, j13 + j14);
+                        FileLoader.getInstance(p01Var.a).checkUploadNewDataAvailable(file.getAbsolutePath(), p01Var.b, n01Var.b, 0L);
                         return;
                     }
                     return;
@@ -125,14 +125,14 @@ public final /* synthetic */ class g0 implements Runnable {
                 uy uyVar = (uy) this.d;
                 long j16 = this.b;
                 long j17 = this.c;
-                dg1 dg1Var = (dg1) this.e;
+                fg1 fg1Var = (fg1) this.e;
                 if (uyVar.C2 == null) {
                     uyVar.finishFragment();
                     return;
                 }
                 ArrayList arrayList = new ArrayList();
                 arrayList.add(MessagesStorage.TopicKey.of(j16, j17));
-                uyVar.C2.u(uyVar, arrayList, null, false, uyVar.J2, uyVar.K2, uyVar.L2, dg1Var);
+                uyVar.C2.u(uyVar, arrayList, null, false, uyVar.J2, uyVar.K2, uyVar.L2, fg1Var);
                 if (uyVar.i2) {
                     uyVar.C2 = null;
                     return;

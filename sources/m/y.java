@@ -22,9 +22,9 @@ import android.view.inputmethod.InputConnection;
 import android.widget.AbsSeekBar;
 import android.widget.EditText;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
-import w7.o6;
+import w7.p6;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public class y {
     public static final int[] d = {R.attr.indeterminateDrawable, R.attr.progressDrawable};
@@ -39,7 +39,7 @@ public class y {
         if (keyListener instanceof NumberKeyListener) {
             return keyListener;
         }
-        ((n7.z0) ((ka.c) this.c).b).getClass();
+        ((org.telegram.ui.Cells.f3) ((ka.c) this.c).b).getClass();
         if (keyListener instanceof q1.e) {
             return keyListener;
         }
@@ -53,7 +53,7 @@ public class y {
         switch (this.a) {
             case 0:
                 AbsSeekBar absSeekBar = (AbsSeekBar) this.b;
-                lf.i Q = lf.i.Q(absSeekBar.getContext(), attributeSet, d, i10);
+                lf.h Q = lf.h.Q(absSeekBar.getContext(), attributeSet, d, i10);
                 Drawable G = Q.G(0);
                 if (G != null) {
                     if (G instanceof AnimationDrawable) {
@@ -97,23 +97,23 @@ public class y {
             cVar.getClass();
             inputConnection = null;
         } else {
-            n7.z0 z0Var = (n7.z0) cVar.b;
-            z0Var.getClass();
+            org.telegram.ui.Cells.f3 f3Var = (org.telegram.ui.Cells.f3) cVar.b;
+            f3Var.getClass();
             if (!(inputConnection instanceof q1.b)) {
-                inputConnection = new q1.b((EditText) z0Var.b, inputConnection, editorInfo);
+                inputConnection = new q1.b((EditText) f3Var.b, inputConnection, editorInfo);
             }
         }
         return (q1.b) inputConnection;
     }
 
     public void d(boolean z10) {
-        q1.i iVar = (q1.i) ((n7.z0) ((ka.c) this.c).b).c;
+        q1.i iVar = (q1.i) ((org.telegram.ui.Cells.f3) ((ka.c) this.c).b).c;
         if (iVar.c != z10) {
             if (iVar.b != null) {
                 androidx.emoji2.text.l a2 = androidx.emoji2.text.l.a();
                 q1.h hVar = iVar.b;
                 a2.getClass();
-                o6.a(hVar, "initCallback cannot be null");
+                p6.a(hVar, "initCallback cannot be null");
                 ReentrantReadWriteLock reentrantReadWriteLock = a2.a;
                 reentrantReadWriteLock.writeLock().lock();
                 try {

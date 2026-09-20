@@ -5,7 +5,7 @@ import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ChatObject;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class k01 implements ci.fc {
     public final /* synthetic */ ProfileActivity a;
@@ -47,7 +47,7 @@ public final class k01 implements ci.fc {
         profileActivity.e0.setHasStories(profileActivity.j4());
         if (j3 == profileActivity.a() && profileActivity.o2 && profileActivity.k2 > 0.0f) {
             profileActivity.c.h1(0, profileActivity.T3() - profileActivity.a.getPaddingTop());
-            profileActivity.a.post(new zb0(profileActivity, 14));
+            profileActivity.a.post(new ac0(profileActivity, 14));
         }
         AndroidUtilities.runOnUIThread(jVar, 30L);
     }

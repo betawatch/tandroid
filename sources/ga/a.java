@@ -17,7 +17,7 @@ import org.telegram.ui.ActionBar.a2;
 import org.telegram.ui.ActionBar.b2;
 import q9.d;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final /* synthetic */ class a implements d, a2, b, e, m, n {
     public final /* synthetic */ int a;
@@ -66,18 +66,6 @@ public final /* synthetic */ class a implements d, a2, b, e, m, n {
 
     @Override // e2.n
     public void e(Object obj, q qVar) {
-    }
-
-    @Override // org.telegram.ui.ActionBar.a2
-    public void f(b2 b2Var, int i10) {
-        switch (this.a) {
-            case 1:
-                b2Var.dismiss();
-                break;
-            default:
-                b2Var.dismiss();
-                break;
-        }
     }
 
     @Override // e2.m
@@ -135,6 +123,18 @@ public final /* synthetic */ class a implements d, a2, b, e, m, n {
                 break;
             case 28:
                 ((j2.b) obj).getClass();
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.a2
+    public void k(b2 b2Var, int i10) {
+        switch (this.a) {
+            case 1:
+                b2Var.dismiss();
+                break;
+            default:
+                b2Var.dismiss();
                 break;
         }
     }

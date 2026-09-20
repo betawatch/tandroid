@@ -7,12 +7,12 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.a2;
 import org.telegram.ui.ActionBar.b2;
-import org.telegram.ui.Components.hl0;
-import org.telegram.ui.Components.zc0;
+import org.telegram.ui.Components.gl0;
+import org.telegram.ui.Components.yc0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
-public final /* synthetic */ class v implements e2.m, d9.e, hl0, zc0, a2 {
+public final /* synthetic */ class v implements e2.m, d9.e, gl0, yc0, a2 {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
 
@@ -26,25 +26,8 @@ public final /* synthetic */ class v implements e2.m, d9.e, hl0, zc0, a2 {
         return Integer.valueOf(this.b);
     }
 
-    @Override // org.telegram.ui.ActionBar.a2
-    public void f(b2 b2Var, int i10) {
-        MessagesController.getInstance(this.b).performLogout(1);
-    }
-
-    @Override // e2.m
-    public void invoke(Object obj) {
-        switch (this.a) {
-            case 0:
-                ((b2.z0) obj).onRepeatModeChanged(this.b);
-                break;
-            default:
-                ((b2.z0) obj).onAudioSessionIdChanged(this.b);
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.zc0
-    public String j(int i10) {
+    @Override // org.telegram.ui.Components.yc0
+    public String e(int i10) {
         int i11 = this.a;
         int i12 = this.b;
         switch (i11) {
@@ -64,7 +47,24 @@ public final /* synthetic */ class v implements e2.m, d9.e, hl0, zc0, a2 {
         }
     }
 
-    @Override // org.telegram.ui.Components.hl0
+    @Override // e2.m
+    public void invoke(Object obj) {
+        switch (this.a) {
+            case 0:
+                ((b2.z0) obj).onRepeatModeChanged(this.b);
+                break;
+            default:
+                ((b2.z0) obj).onAudioSessionIdChanged(this.b);
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.a2
+    public void k(b2 b2Var, int i10) {
+        MessagesController.getInstance(this.b).performLogout(1);
+    }
+
+    @Override // org.telegram.ui.Components.gl0
     public int run() {
         return this.b;
     }

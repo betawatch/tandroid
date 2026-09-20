@@ -21,13 +21,13 @@ import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.m80;
-import org.telegram.ui.Components.qc;
+import org.telegram.ui.Components.l80;
+import org.telegram.ui.Components.pc;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.xo0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class u implements Runnable {
     public final /* synthetic */ int a;
@@ -100,14 +100,14 @@ public final /* synthetic */ class u implements Runnable {
                         xc.a0(U).d0(tL_error, false);
                         return;
                     }
-                    qc M = xc.a0(U).M(LocaleController.getString(R.string.GiftOfferSentTitle), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.GiftOfferSentText, a0Var.Z, DialogObject.getShortName(a0Var.a0))), R.raw.forward);
+                    pc M = xc.a0(U).M(LocaleController.getString(R.string.GiftOfferSentTitle), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.GiftOfferSentText, a0Var.Z, DialogObject.getShortName(a0Var.a0))), R.raw.forward);
                     M.t = true;
                     M.j();
                     return;
                 }
                 return;
             case 1:
-                t5 t5Var = (t5) obj5;
+                u5 u5Var = (u5) obj5;
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj;
                 ai.m0 m0Var = (ai.m0) obj4;
                 TLObject tLObject = (TLObject) obj3;
@@ -119,7 +119,7 @@ public final /* synthetic */ class u implements Runnable {
                 if (tLObject instanceof TLRPC.PaymentForm) {
                     TLRPC.PaymentForm paymentForm = (TLRPC.PaymentForm) tLObject;
                     paymentForm.invoice.recurring = true;
-                    MessagesController.getInstance(t5Var.a).putUsers(paymentForm.users, false);
+                    MessagesController.getInstance(u5Var.a).putUsers(paymentForm.users, false);
                     r52 = new xo0(paymentForm, tL_inputInvoiceStars, null);
                 } else if (tLObject instanceof TLRPC.PaymentReceipt) {
                     r52 = new xo0((TLRPC.PaymentReceipt) tLObject);
@@ -142,28 +142,28 @@ public final /* synthetic */ class u implements Runnable {
                 R.showAsSheet(r52, l2Var);
                 return;
             case 2:
-                t5 t5Var2 = (t5) obj5;
+                u5 u5Var2 = (u5) obj5;
                 TLRPC.TL_error tL_error3 = (TLRPC.TL_error) obj;
-                m80 m80Var = (m80) obj4;
+                l80 l80Var = (l80) obj4;
                 TLObject tLObject2 = (TLObject) obj3;
                 TLRPC.TL_inputInvoiceStars tL_inputInvoiceStars2 = (TLRPC.TL_inputInvoiceStars) obj2;
                 if (tL_error3 != null) {
-                    m80Var.run(Boolean.FALSE, tL_error3.text);
+                    l80Var.run(Boolean.FALSE, tL_error3.text);
                     return;
                 }
                 if (tLObject2 instanceof TLRPC.PaymentForm) {
                     TLRPC.PaymentForm paymentForm2 = (TLRPC.PaymentForm) tLObject2;
                     paymentForm2.invoice.recurring = true;
-                    MessagesController.getInstance(t5Var2.a).putUsers(paymentForm2.users, false);
+                    MessagesController.getInstance(u5Var2.a).putUsers(paymentForm2.users, false);
                     xo0Var2 = new xo0(paymentForm2, tL_inputInvoiceStars2, null);
                 } else if (tLObject2 instanceof TLRPC.PaymentReceipt) {
                     xo0Var2 = new xo0((TLRPC.PaymentReceipt) tLObject2);
                 }
                 if (xo0Var2 == null) {
-                    m80Var.run(Boolean.FALSE, "UNKNOWN_RESPONSE");
+                    l80Var.run(Boolean.FALSE, "UNKNOWN_RESPONSE");
                     return;
                 }
-                xo0Var2.Z0 = new r5.d(m80Var, 26);
+                xo0Var2.Z0 = new r5.d(l80Var, 26);
                 org.telegram.ui.ActionBar.n2 R2 = LaunchActivity.R();
                 if (R2 == null) {
                     return;
@@ -178,7 +178,7 @@ public final /* synthetic */ class u implements Runnable {
                 return;
             case 3:
                 ((boolean[]) obj4)[0] = true;
-                ((t5) obj5).Z((String) obj3, (TLRPC.ChatInvite) obj2, new hi.a((Utilities.Callback2) obj, 25));
+                ((u5) obj5).Z((String) obj3, (TLRPC.ChatInvite) obj2, new hi.a((Utilities.Callback2) obj, 25));
                 return;
             case 4:
                 MessagesStorage messagesStorage = (MessagesStorage) obj5;
@@ -262,7 +262,7 @@ public final /* synthetic */ class u implements Runnable {
                 TLObject tLObject3 = (TLObject) obj4;
                 TL_stars.InputSavedStarGift inputSavedStarGift = (TL_stars.InputSavedStarGift) obj2;
                 Utilities.Callback callback = (Utilities.Callback) obj;
-                int i14 = ((t5) obj5).a;
+                int i14 = ((u5) obj5).a;
                 ((org.telegram.ui.ActionBar.b2) obj3).dismiss();
                 if (tLObject3 instanceof TL_stars.TL_payments_savedStarGifts) {
                     TL_stars.TL_payments_savedStarGifts tL_payments_savedStarGifts = (TL_stars.TL_payments_savedStarGifts) tLObject3;
@@ -278,7 +278,7 @@ public final /* synthetic */ class u implements Runnable {
                 callback.run(savedStarGift);
                 return;
             case 6:
-                t5 t5Var3 = (t5) obj5;
+                u5 u5Var3 = (u5) obj5;
                 TLRPC.TL_error tL_error4 = (TLRPC.TL_error) obj;
                 Utilities.Callback2 callback2 = (Utilities.Callback2) obj4;
                 TLObject tLObject4 = (TLObject) obj3;
@@ -290,7 +290,7 @@ public final /* synthetic */ class u implements Runnable {
                 if (tLObject4 instanceof TLRPC.PaymentForm) {
                     TLRPC.PaymentForm paymentForm3 = (TLRPC.PaymentForm) tLObject4;
                     paymentForm3.invoice.recurring = true;
-                    MessagesController.getInstance(t5Var3.a).putUsers(paymentForm3.users, false);
+                    MessagesController.getInstance(u5Var3.a).putUsers(paymentForm3.users, false);
                     xo0Var = new xo0(paymentForm3, tL_inputInvoiceStars3, null);
                 } else if (tLObject4 instanceof TLRPC.PaymentReceipt) {
                     xo0Var = new xo0((TLRPC.PaymentReceipt) tLObject4);
@@ -338,24 +338,24 @@ public final /* synthetic */ class u implements Runnable {
                 BillingController billingController = BillingController.getInstance();
                 AccountInstance accountInstance = AccountInstance.getInstance(UserConfig.selectedAccount);
                 of.b bVar = new of.b(7, z10);
-                bVar.U((c5.o) list.get(0));
-                billingController.launchBillingFlow(activity, accountInstance, tL_inputStorePaymentStarsTopup, Collections.singletonList(bVar.B()));
+                bVar.X((c5.o) list.get(0));
+                billingController.launchBillingFlow(activity, accountInstance, tL_inputStorePaymentStarsTopup, Collections.singletonList(bVar.K()));
                 return;
         }
     }
 
-    public /* synthetic */ u(t5 t5Var, TLRPC.TL_error tL_error, Utilities.Callback2 callback2, TLObject tLObject, TLRPC.TL_inputInvoiceStars tL_inputInvoiceStars, int i10) {
+    public /* synthetic */ u(u5 u5Var, TLRPC.TL_error tL_error, Utilities.Callback2 callback2, TLObject tLObject, TLRPC.TL_inputInvoiceStars tL_inputInvoiceStars, int i10) {
         this.a = i10;
-        this.c = t5Var;
+        this.c = u5Var;
         this.b = tL_error;
         this.d = callback2;
         this.e = tLObject;
         this.f = tL_inputInvoiceStars;
     }
 
-    public /* synthetic */ u(t5 t5Var, org.telegram.ui.ActionBar.b2 b2Var, TLObject tLObject, TL_stars.InputSavedStarGift inputSavedStarGift, Utilities.Callback callback) {
+    public /* synthetic */ u(u5 u5Var, org.telegram.ui.ActionBar.b2 b2Var, TLObject tLObject, TL_stars.InputSavedStarGift inputSavedStarGift, Utilities.Callback callback) {
         this.a = 5;
-        this.c = t5Var;
+        this.c = u5Var;
         this.e = b2Var;
         this.d = tLObject;
         this.f = inputSavedStarGift;

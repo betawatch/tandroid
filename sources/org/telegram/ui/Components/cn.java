@@ -2,14 +2,14 @@ package org.telegram.ui.Components;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class cn extends vi {
     public final /* synthetic */ Runnable P2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public cn(Context context, org.telegram.ui.ActionBar.n2 n2Var, org.telegram.ui.ActionBar.e6 e6Var, Runnable runnable) {
-        super(context, n2Var, false, false, true, e6Var);
+    public cn(Context context, org.telegram.ui.ActionBar.n2 n2Var, org.telegram.ui.ActionBar.f6 f6Var, Runnable runnable) {
+        super(context, n2Var, false, false, true, f6Var);
         this.P2 = runnable;
     }
 

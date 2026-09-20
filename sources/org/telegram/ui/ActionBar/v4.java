@@ -32,9 +32,9 @@ import org.telegram.messenger.BotWebViewVibrationEffect;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
-import org.telegram.ui.bc1;
+import org.telegram.ui.dc1;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class v4 {
     public final Rect A = new Rect();
@@ -60,7 +60,7 @@ public final class v4 {
     public final int d;
     public final int e;
     public final RelativeLayout f;
-    public final bc1 g;
+    public final dc1 g;
     public final u4 h;
     public final FrameLayout i;
     public final View j;
@@ -93,7 +93,7 @@ public final class v4 {
         this.P = -4;
         this.b = view;
         this.a = context;
-        e6 e6Var = x4Var.n;
+        f6 f6Var = x4Var.n;
         int i11 = x4Var.i;
         RelativeLayout relativeLayout2 = new RelativeLayout(context);
         ViewGroup.MarginLayoutParams marginLayoutParams = new ViewGroup.MarginLayoutParams(-2, -2);
@@ -110,7 +110,7 @@ public final class v4 {
         int i12 = 7;
         if (cVar != null) {
             ch.d c10 = cVar.c(relativeLayout2, null, true);
-            dh.e eVar = new dh.e(e6Var);
+            dh.e eVar = new dh.e(f6Var);
             f7 = 1.0f;
             eVar.e = new d2.c(i12);
             eVar.f(687865855, 687865855);
@@ -129,11 +129,11 @@ public final class v4 {
             float dp2 = AndroidUtilities.dp(12.0f);
             gradientDrawable.setCornerRadii(new float[]{dp2, dp2, dp2, dp2, dp2, dp2, dp2, dp2});
             if (i11 == 0) {
-                gradientDrawable.setColor(j6.v0(j6.h5, e6Var));
+                gradientDrawable.setColor(j6.v0(j6.h5, f6Var));
             } else if (i11 == 2) {
                 gradientDrawable.setColor(-115203550);
             } else if (i11 == 1) {
-                gradientDrawable.setColor(j6.v0(j6.d6, e6Var));
+                gradientDrawable.setColor(j6.v0(j6.d6, f6Var));
             }
             relativeLayout2.setBackground(gradientDrawable);
         }
@@ -186,13 +186,13 @@ public final class v4 {
         this.j = view2;
         if (i11 == 0) {
             int i13 = j6.j5;
-            int v03 = j6.v0(i13, e6Var);
+            int v03 = j6.v0(i13, f6Var);
             int i14 = j6.i6;
             relativeLayout = relativeLayout2;
             i10 = dp3;
-            r4Var.setBackground(j6.f0(j6.v0(i14, e6Var), 1, -1));
-            frameLayout.setBackground(j6.f0(j6.v0(i14, e6Var), 2, -1));
-            view2.setBackgroundColor(j6.l1(0.4f, j6.v0(i13, e6Var)));
+            r4Var.setBackground(j6.f0(j6.v0(i14, f6Var), 1, -1));
+            frameLayout.setBackground(j6.f0(j6.v0(i14, f6Var), 2, -1));
+            view2.setBackgroundColor(j6.l1(0.4f, j6.v0(i13, f6Var)));
             v02 = v03;
         } else {
             i10 = dp3;
@@ -203,11 +203,11 @@ public final class v4 {
                 view2.setBackgroundColor(553648127);
                 v02 = -328966;
             } else {
-                v02 = j6.v0(j6.G6, e6Var);
+                v02 = j6.v0(j6.G6, f6Var);
                 int i15 = j6.i6;
-                r4Var.setBackground(j6.f0(j6.v0(i15, e6Var), 1, -1));
-                frameLayout.setBackground(j6.f0(j6.v0(i15, e6Var), 2, -1));
-                view2.setBackgroundColor(j6.v0(j6.d7, e6Var));
+                r4Var.setBackground(j6.f0(j6.v0(i15, f6Var), 1, -1));
+                frameLayout.setBackground(j6.f0(j6.v0(i15, f6Var), 2, -1));
+                view2.setBackgroundColor(j6.v0(j6.d7, f6Var));
             }
         }
         mutate2.setTint(v02);
@@ -221,7 +221,7 @@ public final class v4 {
         frameLayout.addView(view2, w7.y5.a(-1.0f, f7 / AndroidUtilities.density, 55));
         r4Var.measure(0, 0);
         this.H = new Size(r4Var.getMeasuredWidth(), r4Var.getMeasuredHeight());
-        this.g = new bc1(this, context, 4);
+        this.g = new dc1(this, context, 4);
         com.google.firebase.messaging.p pVar = new com.google.firebase.messaging.p();
         pVar.e = this;
         pVar.c = context;
@@ -347,7 +347,7 @@ public final class v4 {
         boolean z10 = this.N;
         Interpolator interpolator = this.t;
         u4 u4Var = this.h;
-        bc1 bc1Var = this.g;
+        dc1 dc1Var = this.g;
         t4 t4Var = this.r;
         Interpolator interpolator2 = this.s;
         FrameLayout frameLayout = this.i;
@@ -379,7 +379,7 @@ public final class v4 {
             relativeLayout.startAnimation(animationSet);
             this.N = false;
             n();
-            bc1Var.animate().alpha(1.0f).withLayer().setInterpolator(this.u).setDuration(100L).start();
+            dc1Var.animate().alpha(1.0f).withLayer().setInterpolator(this.u).setDuration(100L).start();
             u4Var.animate().alpha(0.0f).withLayer().setInterpolator(interpolator).setDuration(150L).start();
             return;
         }
@@ -410,7 +410,7 @@ public final class v4 {
         relativeLayout.startAnimation(animationSet2);
         this.N = true;
         n();
-        bc1Var.animate().alpha(0.0f).withLayer().setInterpolator(interpolator).setDuration(250L).start();
+        dc1Var.animate().alpha(0.0f).withLayer().setInterpolator(interpolator).setDuration(250L).start();
         RelativeLayout.LayoutParams layoutParams = (RelativeLayout.LayoutParams) frameLayout.getLayoutParams();
         layoutParams.width = u4Var.getWidth();
         frameLayout.setLayoutParams(layoutParams);
@@ -512,36 +512,36 @@ public final class v4 {
         int i10 = this.d;
         Size size = this.H;
         int i11 = this.e;
-        bc1 bc1Var = this.g;
+        dc1 dc1Var = this.g;
         RelativeLayout relativeLayout = this.f;
         if (z10) {
             m(relativeLayout, this.I);
-            bc1Var.setAlpha(0.0f);
-            bc1Var.setVisibility(4);
+            dc1Var.setAlpha(0.0f);
+            dc1Var.setVisibility(4);
             u4Var.setAlpha(1.0f);
             u4Var.setVisibility(0);
             r4Var.setImageDrawable(this.m);
             frameLayout.setContentDescription(LocaleController.getString(org.telegram.messenger.R.string.AccDescrMoreOptions));
             relativeLayout.setX((popupWindow.getWidth() - r2.getWidth()) - i10);
-            bc1Var.setX(-relativeLayout.getX());
+            dc1Var.setX(-relativeLayout.getX());
             frameLayout.setX(0.0f);
             u4Var.setX(0.0f);
             if (this.M) {
                 relativeLayout.setY(i11);
-                bc1Var.setY(r2.getHeight() - relativeLayout.getHeight());
+                dc1Var.setY(r2.getHeight() - relativeLayout.getHeight());
                 frameLayout.setY(r2.getHeight() - size.getHeight());
                 u4Var.setY(0.0f);
                 return;
             }
             relativeLayout.setY(i11);
-            bc1Var.setY(0.0f);
+            dc1Var.setY(0.0f);
             frameLayout.setY(0.0f);
             u4Var.setY(size.getHeight());
             return;
         }
         m(relativeLayout, this.J);
-        bc1Var.setAlpha(1.0f);
-        bc1Var.setVisibility(0);
+        dc1Var.setAlpha(1.0f);
+        dc1Var.setVisibility(0);
         u4Var.setAlpha(0.0f);
         u4Var.setVisibility(4);
         r4Var.setImageDrawable(this.n);
@@ -549,23 +549,23 @@ public final class v4 {
         if (this.I == null) {
             relativeLayout.setX(i10);
             relativeLayout.setY(i11);
-            bc1Var.setX(0.0f);
-            bc1Var.setY(0.0f);
+            dc1Var.setX(0.0f);
+            dc1Var.setY(0.0f);
             return;
         }
         relativeLayout.setX((popupWindow.getWidth() - r2.getWidth()) - i10);
-        bc1Var.setX(0.0f);
+        dc1Var.setX(0.0f);
         frameLayout.setX(r2.getWidth() - size.getWidth());
         u4Var.setX(r2.getWidth() - this.I.getWidth());
         if (this.M) {
             relativeLayout.setY((this.I.getHeight() + i11) - r2.getHeight());
-            bc1Var.setY(0.0f);
+            dc1Var.setY(0.0f);
             frameLayout.setY(0.0f);
             u4Var.setY(r2.getHeight() - this.I.getHeight());
             return;
         }
         relativeLayout.setY(i11);
-        bc1Var.setY(0.0f);
+        dc1Var.setY(0.0f);
         frameLayout.setY(0.0f);
         u4Var.setY(size.getHeight());
     }

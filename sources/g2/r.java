@@ -18,8 +18,9 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.zip.GZIPInputStream;
+import v7.j0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class r extends c {
     public final boolean a;
@@ -65,7 +66,7 @@ public final class r extends c {
             URL url2 = new URL(url, str);
             String protocol = url2.getProtocol();
             if (!"https".equals(protocol) && !"http".equals(protocol)) {
-                throw new v(t8.b.i("Unsupported protocol redirect: ", protocol), 2001);
+                throw new v(j0.g("Unsupported protocol redirect: ", protocol), 2001);
             }
             if (this.a || protocol.equals(url.getProtocol())) {
                 return url2;
@@ -101,35 +102,35 @@ public final class r extends c {
         }
     }
 
-    public final HttpURLConnection f(m mVar) {
-        HttpURLConnection j3;
+    public final HttpURLConnection e(m mVar) {
+        HttpURLConnection g10;
         URL url = new URL(mVar.a.toString());
         int i10 = mVar.b;
         byte[] bArr = mVar.c;
-        long j10 = mVar.e;
-        long j11 = mVar.f;
+        long j3 = mVar.e;
+        long j10 = mVar.f;
         int i11 = 1;
         int i12 = 0;
         boolean z10 = (mVar.h & 1) == 1;
         if (!this.a) {
-            return j(url, i10, bArr, j10, j11, z10, true, mVar.d);
+            return g(url, i10, bArr, j3, j10, z10, true, mVar.d);
         }
         while (true) {
             int i13 = i12 + 1;
             if (i12 > 20) {
                 throw new v(new NoRouteToHostException(k0.h(i13, "Too many redirects: ")), 2001, 1);
             }
-            j3 = j(url, i10, bArr, j10, j11, z10, false, mVar.d);
-            int responseCode = j3.getResponseCode();
-            String headerField = j3.getHeaderField("Location");
+            g10 = g(url, i10, bArr, j3, j10, z10, false, mVar.d);
+            int responseCode = g10.getResponseCode();
+            String headerField = g10.getHeaderField("Location");
             if ((i10 == i11 || i10 == 3) && (responseCode == 300 || responseCode == 301 || responseCode == 302 || responseCode == 303 || responseCode == 307 || responseCode == 308)) {
-                j3.disconnect();
+                g10.disconnect();
                 url = c(url, headerField);
             } else {
                 if (i10 != 2 || (responseCode != 300 && responseCode != 301 && responseCode != 302 && responseCode != 303)) {
                     break;
                 }
-                j3.disconnect();
+                g10.disconnect();
                 url = c(url, headerField);
                 bArr = null;
                 i10 = 1;
@@ -137,29 +138,10 @@ public final class r extends c {
             i12 = i13;
             i11 = 1;
         }
-        return j3;
+        return g10;
     }
 
-    @Override // g2.c, g2.h
-    public final Map getResponseHeaders() {
-        HttpURLConnection httpURLConnection = this.n;
-        return httpURLConnection == null ? f1.h : new q(httpURLConnection.getHeaderFields());
-    }
-
-    @Override // g2.h
-    public final Uri getUri() {
-        HttpURLConnection httpURLConnection = this.n;
-        if (httpURLConnection != null) {
-            return Uri.parse(httpURLConnection.getURL().toString());
-        }
-        m mVar = this.h;
-        if (mVar != null) {
-            return mVar.a;
-        }
-        return null;
-    }
-
-    public final HttpURLConnection j(URL url, int i10, byte[] bArr, long j3, long j10, boolean z10, boolean z11, Map map) {
+    public final HttpURLConnection g(URL url, int i10, byte[] bArr, long j3, long j10, boolean z10, boolean z11, Map map) {
         String sb2;
         String str;
         HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
@@ -168,9 +150,9 @@ public final class r extends c {
         HashMap hashMap = new HashMap();
         n4.y yVar = this.e;
         if (yVar != null) {
-            hashMap.putAll(yVar.Q());
+            hashMap.putAll(yVar.N());
         }
-        hashMap.putAll(this.f.Q());
+        hashMap.putAll(this.f.N());
         hashMap.putAll(map);
         for (Map.Entry entry : hashMap.entrySet()) {
             httpURLConnection.setRequestProperty((String) entry.getKey(), (String) entry.getValue());
@@ -219,6 +201,25 @@ public final class r extends c {
         return httpURLConnection;
     }
 
+    @Override // g2.c, g2.h
+    public final Map getResponseHeaders() {
+        HttpURLConnection httpURLConnection = this.n;
+        return httpURLConnection == null ? f1.h : new q(httpURLConnection.getHeaderFields());
+    }
+
+    @Override // g2.h
+    public final Uri getUri() {
+        HttpURLConnection httpURLConnection = this.n;
+        if (httpURLConnection != null) {
+            return Uri.parse(httpURLConnection.getURL().toString());
+        }
+        m mVar = this.h;
+        if (mVar != null) {
+            return mVar.a;
+        }
+        return null;
+    }
+
     public final void k(long j3) {
         if (j3 == 0) {
             return;
@@ -258,18 +259,18 @@ public final class r extends c {
         this.w = 0L;
         transferInitializing(mVar);
         try {
-            HttpURLConnection f7 = f(mVar);
+            HttpURLConnection e = e(mVar);
             long j11 = mVar.e;
             long j12 = mVar.f;
-            this.n = f7;
-            this.v = f7.getResponseCode();
-            f7.getResponseMessage();
+            this.n = e;
+            this.v = e.getResponseCode();
+            e.getResponseMessage();
             int i10 = this.v;
             long j13 = -1;
             if (i10 < 200 || i10 > 299) {
-                Map<String, List<String>> headerFields = f7.getHeaderFields();
+                Map<String, List<String>> headerFields = e.getHeaderFields();
                 if (this.v == 416) {
-                    String headerField = f7.getHeaderField("Content-Range");
+                    String headerField = e.getHeaderField("Content-Range");
                     Pattern pattern = y.a;
                     if (TextUtils.isEmpty(headerField)) {
                         j3 = -1;
@@ -294,7 +295,7 @@ public final class r extends c {
                         return 0L;
                     }
                 }
-                InputStream errorStream = f7.getErrorStream();
+                InputStream errorStream = e.getErrorStream();
                 try {
                     if (errorStream != null) {
                         f9.b.b(errorStream);
@@ -307,20 +308,20 @@ public final class r extends c {
                 b();
                 throw new x(this.v, this.v == 416 ? new j(2008) : null, headerFields);
             }
-            f7.getContentType();
+            e.getContentType();
             if (this.v != 200 || j11 == 0) {
                 j11 = 0;
             }
-            boolean equalsIgnoreCase = "gzip".equalsIgnoreCase(f7.getHeaderField("Content-Encoding"));
+            boolean equalsIgnoreCase = "gzip".equalsIgnoreCase(e.getHeaderField("Content-Encoding"));
             if (equalsIgnoreCase) {
-                httpURLConnection = f7;
+                httpURLConnection = e;
                 this.w = j12;
             } else if (j12 != -1) {
                 this.w = j12;
-                httpURLConnection = f7;
+                httpURLConnection = e;
             } else {
-                String headerField2 = f7.getHeaderField("Content-Length");
-                String headerField3 = f7.getHeaderField("Content-Range");
+                String headerField2 = e.getHeaderField("Content-Length");
+                String headerField3 = e.getHeaderField("Content-Range");
                 Pattern pattern2 = y.a;
                 if (!TextUtils.isEmpty(headerField2)) {
                     try {
@@ -338,7 +339,7 @@ public final class r extends c {
                                 long parseLong = Long.parseLong(group2);
                                 String group3 = matcher2.group(1);
                                 group3.getClass();
-                                httpURLConnection = f7;
+                                httpURLConnection = e;
                                 long parseLong2 = (parseLong - Long.parseLong(group3)) + 1;
                                 if (j13 < 0) {
                                     j13 = parseLong2;
@@ -359,18 +360,18 @@ public final class r extends c {
                                     }
                                 }
                             } catch (NumberFormatException unused4) {
-                                httpURLConnection = f7;
+                                httpURLConnection = e;
                             }
                             this.w = j13 == j10 ? j13 - j11 : j10;
                         }
                     }
-                    httpURLConnection = f7;
+                    httpURLConnection = e;
                     this.w = j13 == j10 ? j13 - j11 : j10;
                 }
                 j10 = -1;
                 if (!TextUtils.isEmpty(headerField3)) {
                 }
-                httpURLConnection = f7;
+                httpURLConnection = e;
                 this.w = j13 == j10 ? j13 - j11 : j10;
             }
             try {
@@ -383,20 +384,20 @@ public final class r extends c {
                 try {
                     k(j11);
                     return this.w;
-                } catch (IOException e) {
+                } catch (IOException e7) {
                     b();
-                    if (e instanceof v) {
-                        throw ((v) e);
+                    if (e7 instanceof v) {
+                        throw ((v) e7);
                     }
-                    throw new v(e, 2000, 1);
+                    throw new v(e7, 2000, 1);
                 }
-            } catch (IOException e7) {
+            } catch (IOException e10) {
                 b();
-                throw new v(e7, 2000, 1);
+                throw new v(e10, 2000, 1);
             }
-        } catch (IOException e10) {
+        } catch (IOException e11) {
             b();
-            throw v.a(e10, 1);
+            throw v.a(e11, 1);
         }
     }
 

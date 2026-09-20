@@ -5,20 +5,20 @@ import java.util.TimerTask;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.po0;
-import org.telegram.ui.Components.vl0;
+import org.telegram.ui.Components.ul0;
 import org.telegram.ui.yt;
+import org.telegram.ui.zt;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class s1 extends TimerTask {
     public final /* synthetic */ int a;
     public final /* synthetic */ String b;
-    public final /* synthetic */ vl0 c;
+    public final /* synthetic */ ul0 c;
 
-    public /* synthetic */ s1(vl0 vl0Var, String str, int i10) {
+    public /* synthetic */ s1(ul0 ul0Var, String str, int i10) {
         this.a = i10;
-        this.c = vl0Var;
+        this.c = ul0Var;
         this.b = str;
     }
 
@@ -39,12 +39,12 @@ public final class s1 extends TimerTask {
                 break;
             default:
                 try {
-                    ((yt) this.c).d.cancel();
-                    ((yt) this.c).d = null;
+                    ((zt) this.c).d.cancel();
+                    ((zt) this.c).d = null;
                 } catch (Exception e7) {
                     FileLog.e(e7);
                 }
-                Utilities.searchQueue.postRunnable(new po0(28, (yt) this.c, this.b));
+                Utilities.searchQueue.postRunnable(new yt(0, (zt) this.c, this.b));
                 break;
         }
     }

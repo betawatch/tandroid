@@ -13,12 +13,12 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.b60;
+import org.telegram.ui.Components.a60;
 import org.telegram.ui.Components.i40;
 import org.telegram.ui.Components.ng;
 import org.telegram.ui.pn;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class b4 implements ng {
     public final /* synthetic */ f6 a;
@@ -33,7 +33,7 @@ public final class b4 implements ng {
     }
 
     @Override // org.telegram.ui.Components.ng
-    public final /* synthetic */ boolean C0() {
+    public final /* synthetic */ boolean D0() {
         return true;
     }
 
@@ -65,24 +65,24 @@ public final class b4 implements ng {
 
     @Override // org.telegram.ui.Components.ng
     public final void K(float f7, int i10) {
-        b60 b60Var = this.a.J2;
-        if (b60Var != null) {
-            b60Var.b(f7, i10);
+        a60 a60Var = this.a.J2;
+        if (a60Var != null) {
+            a60Var.b(f7, i10);
         }
     }
 
     @Override // org.telegram.ui.Components.ng
-    public final int b1() {
+    public final int c1() {
         return this.a.getHeight();
     }
 
     @Override // org.telegram.ui.Components.ng
-    public final TL_stories.StoryItem d1() {
+    public final TL_stories.StoryItem e1() {
         return this.a.O1.a;
     }
 
     @Override // org.telegram.ui.Components.ng
-    public final boolean f1(long j3) {
+    public final boolean g1(long j3) {
         f6 f6Var = this.a;
         d6 d6Var = f6Var.O1;
         TL_stories.StoryItem storyItem = d6Var.a;
@@ -106,12 +106,6 @@ public final class b4 implements ng {
             f6Var.f1(false);
         }
         return true;
-    }
-
-    @Override // org.telegram.ui.Components.ng
-    public final boolean i1() {
-        b60 b60Var = this.a.J2;
-        return (b60Var == null || b60Var.h0) ? false : true;
     }
 
     @Override // org.telegram.ui.Components.ng
@@ -139,28 +133,39 @@ public final class b4 implements ng {
     }
 
     @Override // org.telegram.ui.Components.ng
+    public final boolean j1() {
+        a60 a60Var = this.a.J2;
+        return (a60Var == null || a60Var.h0) ? false : true;
+    }
+
+    @Override // org.telegram.ui.Components.ng
     public final void k2(int i10, int i11, int i12, long j3, long j10, boolean z10) {
         f6 f6Var = this.a;
         if (f6Var.J2 == null && CameraView.isCameraAllowed()) {
-            f6Var.J2 = new b60(f6Var.getContext(), new r4(f6Var), f6Var.B0, false);
+            f6Var.J2 = new a60(f6Var.getContext(), new r4(f6Var), f6Var.B0, false);
             f6Var.addView(f6Var.J2, Math.min(f6Var.indexOfChild(f6Var.b2.getRecordCircle()), f6Var.indexOfChild(f6Var.b2.N1)), w7.y5.e(-1, -1, 51));
         }
-        b60 b60Var = f6Var.J2;
-        if (b60Var != null) {
+        a60 a60Var = f6Var.J2;
+        if (a60Var != null) {
             if (i10 == 0) {
-                b60Var.i(false);
+                a60Var.h(false);
                 return;
             }
             if (i10 == 1 || i10 == 3 || i10 == 4) {
-                b60Var.g(i10, i11, i12, j3, j10, z10);
+                a60Var.f(i10, i11, i12, j3, j10, z10);
             } else if (i10 == 2 || i10 == 5) {
-                b60Var.a(i10 == 2);
+                a60Var.a(i10 == 2);
             }
         }
     }
 
     @Override // org.telegram.ui.Components.ng
-    public final void l1(CharSequence charSequence, boolean z10, boolean z11) {
+    public final /* synthetic */ boolean m() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.ng
+    public final void m1(CharSequence charSequence, boolean z10, boolean z11) {
         f6 f6Var = this.a;
         if (f6Var.d3 == null) {
             c4 c4Var = new c4(f6Var, f6Var.getContext(), f6Var.B1, f6Var.J0.f, f6Var.B0);
@@ -220,28 +225,18 @@ public final class b4 implements ng {
     }
 
     @Override // org.telegram.ui.Components.ng
-    public final /* synthetic */ boolean m() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.ng
-    public final void n1() {
-        b60 b60Var = this.a.J2;
-        if (b60Var != null) {
-            b60Var.j();
+    public final void o1() {
+        a60 a60Var = this.a.J2;
+        if (a60Var != null) {
+            a60Var.i();
         }
     }
 
     @Override // org.telegram.ui.Components.ng
-    public final boolean o1() {
+    public final boolean p1() {
         TLRPC.User user;
         f6 f6Var = this.a;
         return (f6Var.B1 < 0 || (user = MessagesController.getInstance(f6Var.C2).getUser(Long.valueOf(f6Var.B1))) == null || UserObject.isUserSelf(user) || user.bot) ? false : true;
-    }
-
-    @Override // org.telegram.ui.Components.ng
-    public final /* synthetic */ pn p0() {
-        return null;
     }
 
     @Override // org.telegram.ui.Components.ng
@@ -250,12 +245,17 @@ public final class b4 implements ng {
     }
 
     @Override // org.telegram.ui.Components.ng
-    public final void q1() {
+    public final /* synthetic */ pn q0() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.Components.ng
+    public final void r1() {
         this.a.O0();
     }
 
     @Override // org.telegram.ui.Components.ng
-    public final void s1() {
+    public final void t1() {
         this.a.requestLayout();
     }
 
@@ -273,7 +273,7 @@ public final class b4 implements ng {
     }
 
     @Override // org.telegram.ui.Components.ng
-    public final /* synthetic */ boolean w1() {
+    public final /* synthetic */ boolean x1() {
         return false;
     }
 
@@ -286,7 +286,7 @@ public final class b4 implements ng {
     }
 
     @Override // org.telegram.ui.Components.ng
-    public final void a1(int i10) {
+    public final void b1(int i10) {
     }
 
     @Override // org.telegram.ui.Components.ng
@@ -298,7 +298,7 @@ public final class b4 implements ng {
     }
 
     @Override // org.telegram.ui.Components.ng
-    public final void v1(CharSequence charSequence) {
+    public final void w1(CharSequence charSequence) {
     }
 
     @Override // org.telegram.ui.Components.ng
@@ -306,23 +306,27 @@ public final class b4 implements ng {
     }
 
     @Override // org.telegram.ui.Components.ng
+    public final /* synthetic */ void A1() {
+    }
+
+    @Override // org.telegram.ui.Components.ng
     public final void D() {
     }
 
     @Override // org.telegram.ui.Components.ng
-    public final void E1() {
+    public final void F1() {
     }
 
     @Override // org.telegram.ui.Components.ng
-    public final /* synthetic */ void G0() {
+    public final /* synthetic */ void H0() {
     }
 
     @Override // org.telegram.ui.Components.ng
-    public final /* synthetic */ void J0() {
+    public final /* synthetic */ void K0() {
     }
 
     @Override // org.telegram.ui.Components.ng
-    public final /* synthetic */ void T0() {
+    public final /* synthetic */ void U0() {
     }
 
     @Override // org.telegram.ui.Components.ng
@@ -342,7 +346,7 @@ public final class b4 implements ng {
     }
 
     @Override // org.telegram.ui.Components.ng
-    public final /* synthetic */ void m0() {
+    public final /* synthetic */ void n0() {
     }
 
     @Override // org.telegram.ui.Components.ng
@@ -350,11 +354,11 @@ public final class b4 implements ng {
     }
 
     @Override // org.telegram.ui.Components.ng
-    public final /* synthetic */ void r1() {
+    public final /* synthetic */ void s1() {
     }
 
     @Override // org.telegram.ui.Components.ng
-    public final void s0() {
+    public final void t0() {
     }
 
     @Override // org.telegram.ui.Components.ng
@@ -366,14 +370,10 @@ public final class b4 implements ng {
     }
 
     @Override // org.telegram.ui.Components.ng
-    public final /* synthetic */ void z1() {
+    public final void F0(int i10, int i11) {
     }
 
     @Override // org.telegram.ui.Components.ng
-    public final void E0(int i10, int i11) {
-    }
-
-    @Override // org.telegram.ui.Components.ng
-    public final void t1(View view, CharSequence charSequence, boolean z10) {
+    public final void u1(View view, CharSequence charSequence, boolean z10) {
     }
 }

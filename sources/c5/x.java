@@ -26,12 +26,12 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.concurrent.Callable;
-import v7.y8;
+import v7.z8;
 import w7.la;
-import x7.fa;
+import x7.ga;
 import z7.wf;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final /* synthetic */ class x implements Callable {
     public final /* synthetic */ int a;
@@ -205,7 +205,7 @@ public final /* synthetic */ class x implements Callable {
                                                 p5.c();
                                                 a4.o((a4) p5.b, longValue2);
                                             }
-                                            yVar.d.h.c0((a4) p5.a());
+                                            yVar.d.h.g0((a4) p5.a());
                                         }
                                     } catch (Throwable th2) {
                                         com.google.android.gms.internal.play_billing.u.i("BillingClient", "Unable to log.", th2);
@@ -269,9 +269,9 @@ public final /* synthetic */ class x implements Callable {
             case 4:
                 return BitmapFactory.decodeFile(((u4.h) this.b).b);
             case 5:
-                y8 y8Var = (y8) this.b;
-                y8Var.getClass();
-                return n6.i.c.a(y8Var.g);
+                z8 z8Var = (z8) this.b;
+                z8Var.getClass();
+                return n6.i.c.a(z8Var.g);
             case 6:
                 la laVar = (la) this.b;
                 laVar.getClass();
@@ -290,9 +290,9 @@ public final /* synthetic */ class x implements Callable {
                 } finally {
                 }
             case 9:
-                fa faVar = (fa) this.b;
-                faVar.getClass();
-                return n6.i.c.a(faVar.g);
+                ga gaVar = (ga) this.b;
+                gaVar.getClass();
+                return n6.i.c.a(gaVar.g);
             default:
                 wf wfVar = (wf) this.b;
                 wfVar.getClass();

@@ -1,33 +1,18 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class rn0 extends s4.o {
-    public final /* synthetic */ vn0 b;
+public final class rn0 {
+    public zg.o0 a;
+    public int b;
+    public String c;
+    public int d;
 
-    public rn0(vn0 vn0Var) {
-        this.b = vn0Var;
-    }
-
-    @Override // s4.o
-    public final boolean a(int i10, int i11) {
-        vn0 vn0Var = this.b;
-        return ((sn0) vn0Var.n.get(i10)).equals(vn0Var.r.get(i11));
-    }
-
-    @Override // s4.o
-    public final boolean b(int i10, int i11) {
-        vn0 vn0Var = this.b;
-        return ((sn0) vn0Var.n.get(i10)).a.h == ((sn0) vn0Var.r.get(i11)).a.h;
-    }
-
-    @Override // s4.o
-    public final int d() {
-        return this.b.r.size();
-    }
-
-    @Override // s4.o
-    public final int e() {
-        return this.b.n.size();
+    public final boolean equals(Object obj) {
+        if (!(obj instanceof rn0)) {
+            return false;
+        }
+        rn0 rn0Var = (rn0) obj;
+        return this.b == rn0Var.b && this.a.h == rn0Var.a.h && this.d == rn0Var.d;
     }
 }

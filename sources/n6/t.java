@@ -4,17 +4,17 @@ import com.google.android.gms.common.api.Status;
 import com.google.android.gms.common.api.internal.BasePendingResult;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import java.util.concurrent.TimeUnit;
-import v7.f5;
+import v7.g5;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class t implements com.google.android.gms.common.api.o {
-    public final /* synthetic */ f5 a;
+    public final /* synthetic */ g5 a;
     public final /* synthetic */ TaskCompletionSource b;
     public final /* synthetic */ k c;
 
-    public t(f5 f5Var, TaskCompletionSource taskCompletionSource, k kVar) {
-        this.a = f5Var;
+    public t(g5 g5Var, TaskCompletionSource taskCompletionSource, k kVar) {
+        this.a = g5Var;
         this.b = taskCompletionSource;
         this.c = kVar;
     }
@@ -25,9 +25,9 @@ public final class t implements com.google.android.gms.common.api.o {
             this.b.setException(l.m(status));
             return;
         }
-        f5 f5Var = this.a;
+        g5 g5Var = this.a;
         TimeUnit timeUnit = TimeUnit.MILLISECONDS;
-        BasePendingResult basePendingResult = (BasePendingResult) f5Var;
+        BasePendingResult basePendingResult = (BasePendingResult) g5Var;
         l.j("Result has already been consumed.", !basePendingResult.j);
         try {
             if (!basePendingResult.d.await(0L, timeUnit)) {

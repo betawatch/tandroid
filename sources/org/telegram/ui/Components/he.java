@@ -9,11 +9,11 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.ui.dg1;
+import org.telegram.ui.fg1;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class he implements org.telegram.ui.rj0, org.telegram.ui.oy {
+public final /* synthetic */ class he implements org.telegram.ui.tj0, org.telegram.ui.oy {
     public final /* synthetic */ ChatActivityEnterView a;
     public final /* synthetic */ MessageObject b;
     public final /* synthetic */ TL_keyboard.TL_buttonTypeRequestPeer c;
@@ -34,7 +34,7 @@ public final /* synthetic */ class he implements org.telegram.ui.rj0, org.telegr
         return false;
     }
 
-    @Override // org.telegram.ui.rj0
+    @Override // org.telegram.ui.tj0
     public void a(ArrayList arrayList) {
         int i10 = ChatActivityEnterView.m5;
         if (arrayList.isEmpty()) {
@@ -59,7 +59,7 @@ public final /* synthetic */ class he implements org.telegram.ui.rj0, org.telegr
     }
 
     @Override // org.telegram.ui.oy
-    public boolean u(org.telegram.ui.uy uyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, dg1 dg1Var) {
+    public boolean u(org.telegram.ui.uy uyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, fg1 fg1Var) {
         int i12 = ChatActivityEnterView.m5;
         if (!arrayList.isEmpty()) {
             TLRPC.TL_messages_sendBotRequestedPeer tL_messages_sendBotRequestedPeer = new TLRPC.TL_messages_sendBotRequestedPeer();

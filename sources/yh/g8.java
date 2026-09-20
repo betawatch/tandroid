@@ -5,10 +5,10 @@ import android.animation.AnimatorListenerAdapter;
 import android.graphics.RectF;
 import android.view.View;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.fg0;
-import org.telegram.ui.hb0;
+import org.telegram.ui.gg0;
+import org.telegram.ui.ib0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class g8 extends AnimatorListenerAdapter {
     public final /* synthetic */ zg.m0 a;
@@ -31,11 +31,11 @@ public final class g8 extends AnimatorListenerAdapter {
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
-        hb0 hb0Var;
+        ib0 ib0Var;
         o8 o8Var = this.h;
-        fg0 fg0Var = o8Var.J;
-        fg0Var.setVisibility(4);
-        fg0Var.setPaused(true);
+        gg0 gg0Var = o8Var.J;
+        gg0Var.setVisibility(4);
+        gg0Var.setPaused(true);
         zg.m0 m0Var = this.a;
         if (m0Var != null) {
             m0Var.l = true;
@@ -64,9 +64,9 @@ public final class g8 extends AnimatorListenerAdapter {
             }
         }
         LaunchActivity launchActivity = LaunchActivity.G1;
-        if (launchActivity == null || (hb0Var = launchActivity.x0) == null) {
+        if (launchActivity == null || (ib0Var = launchActivity.x0) == null) {
             return;
         }
-        hb0Var.c(true);
+        ib0Var.c(true);
     }
 }

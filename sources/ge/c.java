@@ -15,7 +15,7 @@ import java.util.concurrent.locks.LockSupport;
 import org.telegram.ui.Cells.c1;
 import zd.e0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class c implements Executor, Closeable {
     public static final /* synthetic */ AtomicLongFieldUpdater n = AtomicLongFieldUpdater.newUpdater(c.class, "parkedWorkersStack$volatile");
@@ -48,7 +48,7 @@ public final class c implements Executor, Closeable {
             throw new IllegalArgumentException(k0.i(i11, "Max pool size ", " should not exceed maximal supported number of threads 2097150").toString());
         }
         if (j3 <= 0) {
-            throw new IllegalArgumentException(c1.h(j3, "Idle worker keep alive time ", " must be positive").toString());
+            throw new IllegalArgumentException(c1.j(j3, "Idle worker keep alive time ", " must be positive").toString());
         }
         this.e = new f();
         this.f = new f();
@@ -395,9 +395,9 @@ public final class c implements Executor, Closeable {
         int i17 = this.a;
         sb5.append(i17);
         sb5.append(", max = ");
-        k0.s(sb5, this.b, "}, Worker States {CPU = ", i10, ", blocking = ");
-        k0.s(sb5, i11, ", parked = ", i12, ", dormant = ");
-        k0.s(sb5, i13, ", terminated = ", i14, "}, running workers queues = ");
+        k0.t(sb5, this.b, "}, Worker States {CPU = ", i10, ", blocking = ");
+        k0.t(sb5, i11, ", parked = ", i12, ", dormant = ");
+        k0.t(sb5, i13, ", terminated = ", i14, "}, running workers queues = ");
         sb5.append(arrayList);
         sb5.append(", global CPU queue size = ");
         sb5.append(this.e.c());

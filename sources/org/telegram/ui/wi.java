@@ -4,7 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class wi extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -21,10 +21,10 @@ public final class wi extends AnimatorListenerAdapter {
         switch (this.a) {
             case 0:
                 zn znVar = this.b;
-                org.telegram.ui.Components.f60 f60Var = znVar.b3;
-                if (f60Var != null) {
-                    f60Var.setIsMessageTransition(false);
-                    znVar.b3.d(true);
+                org.telegram.ui.Components.e60 e60Var = znVar.b3;
+                if (e60Var != null) {
+                    e60Var.setIsMessageTransition(false);
+                    znVar.b3.c(true);
                     znVar.b3.setVisibility(4);
                     break;
                 }

@@ -6,7 +6,7 @@ import android.view.inputmethod.InputConnection;
 import android.view.inputmethod.InputConnectionWrapper;
 import android.view.inputmethod.InputContentInfo;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class c extends InputConnectionWrapper {
     public final /* synthetic */ e a;
@@ -23,7 +23,7 @@ public final class c extends InputConnectionWrapper {
         if (inputContentInfo != null && Build.VERSION.SDK_INT >= 25) {
             iVar = new i(new g(inputContentInfo));
         }
-        if (this.a.k(iVar, i10, bundle)) {
+        if (this.a.g(iVar, i10, bundle)) {
             return true;
         }
         return super.commitContent(inputContentInfo, i10, bundle);

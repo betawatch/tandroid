@@ -12,17 +12,17 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SvgHelper;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public abstract class c3 extends LinearLayout implements NotificationCenter.NotificationCenterDelegate {
     public int a;
-    public org.telegram.ui.Components.w9 b;
+    public org.telegram.ui.Components.v9 b;
     public TextView c;
     public TextView d;
     public TextView e;
 
     public final void a() {
-        org.telegram.ui.Components.w9 w9Var = this.b;
+        org.telegram.ui.Components.v9 v9Var = this.b;
         int i10 = this.a;
         TLRPC.TL_messages_stickerSet stickerSetByName = MediaDataController.getInstance(i10).getStickerSetByName(AndroidUtilities.STICKERS_PLACEHOLDER_PACK_NAME);
         if (stickerSetByName == null) {
@@ -32,7 +32,7 @@ public abstract class c3 extends LinearLayout implements NotificationCenter.Noti
         TLRPC.Document document = (tL_messages_stickerSet == null || 1 >= tL_messages_stickerSet.documents.size()) ? null : tL_messages_stickerSet.documents.get(1);
         if (document == null) {
             MediaDataController.getInstance(i10).loadStickersByEmojiOrName(AndroidUtilities.STICKERS_PLACEHOLDER_PACK_NAME, false, tL_messages_stickerSet == null);
-            w9Var.getImageReceiver().clearImage();
+            v9Var.getImageReceiver().clearImage();
             return;
         }
         SvgHelper.SvgDrawable svgThumb = DocumentObject.getSvgThumb(document.thumbs, org.telegram.ui.ActionBar.j6.a7, 0.2f);
@@ -40,7 +40,7 @@ public abstract class c3 extends LinearLayout implements NotificationCenter.Noti
             svgThumb.overrideWidthAndHeight(512, 512);
         }
         this.b.i(ImageLocation.getForDocument(document), "130_130", "tgs", svgThumb, tL_messages_stickerSet);
-        w9Var.getImageReceiver().setAutoRepeat(2);
+        v9Var.getImageReceiver().setAutoRepeat(2);
     }
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate

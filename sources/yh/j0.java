@@ -9,7 +9,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public abstract class j0 {
     public static final float[][] a;
@@ -67,7 +67,7 @@ public abstract class j0 {
             if (i12 >= i0Var.a) {
                 break;
             }
-            e0.i0.c((float[]) i0Var.c, i12, 0.0f, 0.0f, width, height);
+            e0.i0.a((float[]) i0Var.c, i12, 0.0f, 0.0f, width, height);
             i12++;
         }
         while (true) {
@@ -88,13 +88,13 @@ public abstract class j0 {
             float f17 = f13 * 1.0f;
             float f18 = f14 * 1.0f;
             int i13 = i11 / 4;
-            e0.i0.c((float[]) i0Var.b, i13, AndroidUtilities.dp(f16) - (AndroidUtilities.dp(f18) / 2.0f), AndroidUtilities.dp(f17) - (AndroidUtilities.dp(f18) / 2.0f), (AndroidUtilities.dp(f18) / 2.0f) + AndroidUtilities.dp(f16), (AndroidUtilities.dp(f18) / 2.0f) + AndroidUtilities.dp(f17));
+            e0.i0.a((float[]) i0Var.b, i13, AndroidUtilities.dp(f16) - (AndroidUtilities.dp(f18) / 2.0f), AndroidUtilities.dp(f17) - (AndroidUtilities.dp(f18) / 2.0f), (AndroidUtilities.dp(f18) / 2.0f) + AndroidUtilities.dp(f16), (AndroidUtilities.dp(f18) / 2.0f) + AndroidUtilities.dp(f17));
             i0Var.e(i13, i0.a.k(-1, (int) (255.0f * f11 * f15)));
             i11 += 4;
         }
     }
 
-    public static void c(Canvas canvas, org.telegram.ui.Components.o5 o5Var, int i10, float f7, float f10, RectF rectF, float f11) {
+    public static void c(Canvas canvas, org.telegram.ui.Components.n5 n5Var, int i10, float f7, float f10, RectF rectF, float f11) {
         float f12;
         float f13;
         float f14;
@@ -184,13 +184,13 @@ public abstract class j0 {
                 f45 = 1.0f;
                 f14 = 1.0f;
             }
-            float clamp013 = (f45 - Utilities.clamp01(v7.z6.a(f21, f23, f46, b10) / (max2 * 2.0f))) * f11 * 0.5f * f14;
+            float clamp013 = (f45 - Utilities.clamp01(v7.a7.a(f21, f23, f46, b10) / (max2 * 2.0f))) * f11 * 0.5f * f14;
             if (f13 < 1.0f) {
                 clamp013 = AndroidUtilities.lerp(0.0f, clamp013, f13);
             }
-            o5Var.setBounds((int) (f46 - dpf27), (int) (b10 - dpf27), (int) (f46 + dpf27), (int) (b10 + dpf27));
-            o5Var.v = (int) (clamp013 * 255.0f);
-            o5Var.draw(canvas);
+            n5Var.setBounds((int) (f46 - dpf27), (int) (b10 - dpf27), (int) (f46 + dpf27), (int) (b10 + dpf27));
+            n5Var.v = (int) (clamp013 * 255.0f);
+            n5Var.draw(canvas);
             i12 += 3;
             i11 += 2;
             f15 = f10;

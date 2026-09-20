@@ -31,13 +31,14 @@ import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 import java.util.zip.Inflater;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
-import u2.o1;
+import u2.p1;
+import v7.j0;
 import y9.w0;
 import y9.x0;
 import zd.f1;
 import zd.i2;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class t implements z3.m {
     public static t f;
@@ -79,7 +80,7 @@ public final class t implements z3.m {
     }
 
     @Override // z3.m
-    public int A() {
+    public int I() {
         switch (this.a) {
         }
         return 2;
@@ -91,7 +92,7 @@ public final class t implements z3.m {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public void C(byte[] bArr, int i10, int i11, z3.l lVar, e2.h hVar) {
+    public void M(byte[] bArr, int i10, int i11, z3.l lVar, e2.h hVar) {
         int[] iArr;
         d2.b bVar;
         int i12;
@@ -377,10 +378,10 @@ public final class t implements z3.m {
             str = str.concat(" parameterKey");
         }
         if (((String) this.d) == null) {
-            str = t8.b.v(str, " parameterValue");
+            str = j0.s(str, " parameterValue");
         }
         if (((Long) this.e) == null) {
-            str = t8.b.v(str, " templateVersion");
+            str = j0.s(str, " templateVersion");
         }
         if (str.isEmpty()) {
             return new w0((x0) this.c, (String) this.b, (String) this.d, ((Long) this.e).longValue());
@@ -794,15 +795,15 @@ public final class t implements z3.m {
     }
 
     @Override // z3.m
-    public /* synthetic */ z3.d r(int i10, int i11, byte[] bArr) {
-        switch (this.a) {
-        }
-        return t8.b.a(this, bArr, i11);
+    public /* synthetic */ void reset() {
+        int i10 = this.a;
     }
 
     @Override // z3.m
-    public /* synthetic */ void reset() {
-        int i10 = this.a;
+    public /* synthetic */ z3.d s(int i10, int i11, byte[] bArr) {
+        switch (this.a) {
+        }
+        return j0.a(this, bArr, i11);
     }
 
     public String toString() {
@@ -974,11 +975,11 @@ public final class t implements z3.m {
         }
     }
 
-    public t(o1 o1Var, boolean[] zArr) {
+    public t(p1 p1Var, boolean[] zArr) {
         this.a = 11;
-        this.b = o1Var;
+        this.b = p1Var;
         this.c = zArr;
-        int i10 = o1Var.a;
+        int i10 = p1Var.a;
         this.d = new boolean[i10];
         this.e = new boolean[i10];
     }

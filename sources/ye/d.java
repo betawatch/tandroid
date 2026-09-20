@@ -18,7 +18,7 @@ import java.util.Map;
 import java.util.regex.Pattern;
 import t7.s;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class d {
     public static final LinkedHashSet p = new LinkedHashSet(Arrays.asList(bf.b.class, bf.i.class, bf.h.class, bf.j.class, t.class, bf.n.class, bf.l.class));
@@ -302,15 +302,15 @@ public final class d {
     */
     public final void i(String str) {
         df.a aVar;
-        t8.c cVar;
-        we.c cVar2;
+        t8.b bVar;
+        we.c cVar;
         char charAt;
         int i10;
         e eVar;
-        t8.c cVar3;
+        t8.b bVar2;
         f fVar;
         int i11;
-        StringBuilder J;
+        StringBuilder L;
         boolean z10;
         j jVar;
         char charAt2;
@@ -382,8 +382,8 @@ public final class d {
                                     case 0:
                                         aVar = aVar3;
                                         CharSequence charSequence = this.a;
-                                        StringBuilder J2 = dVar.J();
-                                        if (J2 != null && J2.toString().contains("|") && !J2.toString().contains("\n")) {
+                                        StringBuilder L2 = dVar.L();
+                                        if (L2 != null && L2.toString().contains("|") && !L2.toString().contains("\n")) {
                                             CharSequence subSequence = charSequence.subSequence(this.b, charSequence.length());
                                             ArrayList arrayList3 = new ArrayList();
                                             boolean z13 = false;
@@ -408,21 +408,21 @@ public final class d {
                                                         }
                                                     }
                                                 }
-                                                arrayList3.add(cVar2);
+                                                arrayList3.add(cVar);
                                             }
                                             arrayList3 = null;
                                             if (arrayList3 != null && !arrayList3.isEmpty()) {
-                                                ArrayList i20 = xe.b.i(J2);
+                                                ArrayList i20 = xe.b.i(L2);
                                                 if (arrayList3.size() >= i20.size()) {
-                                                    t8.c cVar4 = new t8.c(new xe.b(arrayList3, i20));
-                                                    cVar4.a = this.b;
-                                                    cVar4.c = true;
-                                                    cVar = cVar4;
+                                                    t8.b bVar3 = new t8.b(new xe.b(arrayList3, i20));
+                                                    bVar3.a = this.b;
+                                                    bVar3.c = true;
+                                                    bVar = bVar3;
                                                     break;
                                                 }
                                             }
                                         }
-                                        cVar = null;
+                                        bVar = null;
                                         break;
                                     case 1:
                                         aVar = aVar3;
@@ -435,11 +435,11 @@ public final class d {
                                             if (i24 < charSequence2.length() && ((charAt = charSequence2.charAt(i24)) == '\t' || charAt == ' ')) {
                                                 i23 = i22 + 2;
                                             }
-                                            cVar = new t8.c(new a());
-                                            cVar.b = i23;
+                                            bVar = new t8.b(new a());
+                                            bVar.b = i23;
                                             break;
                                         }
-                                        cVar = null;
+                                        bVar = null;
                                         break;
                                     case 2:
                                         aVar = aVar3;
@@ -479,9 +479,9 @@ public final class d {
                                                     if (i31 == -1) {
                                                         eVar = new e('`', i28, i25);
                                                         if (eVar != null) {
-                                                            cVar3 = new t8.c(eVar);
-                                                            cVar3.a = i10 + eVar.a.h;
-                                                            cVar = cVar3;
+                                                            bVar2 = new t8.b(eVar);
+                                                            bVar2.a = i10 + eVar.a.h;
+                                                            bVar = bVar2;
                                                             break;
                                                         }
                                                     }
@@ -501,7 +501,7 @@ public final class d {
                                             if (eVar != null) {
                                             }
                                         }
-                                        cVar = null;
+                                        bVar = null;
                                         break;
                                     case 3:
                                         aVar = aVar3;
@@ -554,26 +554,26 @@ public final class d {
                                                     }
                                                 }
                                                 if (fVar == null) {
-                                                    cVar3 = new t8.c(fVar);
-                                                    cVar3.a = charSequence4.length();
+                                                    bVar2 = new t8.b(fVar);
+                                                    bVar2.a = charSequence4.length();
                                                 } else {
                                                     char charAt10 = charSequence4.charAt(i32);
                                                     if (charAt10 != '-') {
                                                         if (charAt10 == '=') {
                                                             if (s.c(s.b('=', charSequence4, i32 + 1, charSequence4.length()), charSequence4.length(), charSequence4) >= charSequence4.length()) {
                                                                 i11 = 1;
-                                                                if (i11 > 0 && (J = dVar.J()) != null) {
-                                                                    cVar3 = new t8.c(new f(i11, J.toString()));
-                                                                    cVar3.a = charSequence4.length();
-                                                                    cVar3.c = true;
+                                                                if (i11 > 0 && (L = dVar.L()) != null) {
+                                                                    bVar2 = new t8.b(new f(i11, L.toString()));
+                                                                    bVar2.a = charSequence4.length();
+                                                                    bVar2.c = true;
                                                                 }
                                                             }
                                                         }
                                                         i11 = 0;
                                                         if (i11 > 0) {
-                                                            cVar3 = new t8.c(new f(i11, J.toString()));
-                                                            cVar3.a = charSequence4.length();
-                                                            cVar3.c = true;
+                                                            bVar2 = new t8.b(new f(i11, L.toString()));
+                                                            bVar2.a = charSequence4.length();
+                                                            bVar2.c = true;
                                                         }
                                                     }
                                                     if (s.c(s.b('-', charSequence4, i32 + 1, charSequence4.length()), charSequence4.length(), charSequence4) >= charSequence4.length()) {
@@ -585,15 +585,15 @@ public final class d {
                                                     if (i11 > 0) {
                                                     }
                                                 }
-                                                cVar = cVar3;
+                                                bVar = bVar2;
                                                 break;
                                             }
                                             fVar = null;
                                             if (fVar == null) {
                                             }
-                                            cVar = cVar3;
+                                            bVar = bVar2;
                                         }
-                                        cVar = null;
+                                        bVar = null;
                                         break;
                                     case 4:
                                         aVar = aVar3;
@@ -606,25 +606,25 @@ public final class d {
                                                     Pattern pattern = patternArr[0];
                                                     Pattern pattern2 = patternArr[1];
                                                     if (pattern.matcher(charSequence5.subSequence(i36, charSequence5.length())).find()) {
-                                                        cVar = new t8.c(new g(pattern2));
-                                                        cVar.a = this.b;
+                                                        bVar = new t8.b(new g(pattern2));
+                                                        bVar.a = this.b;
                                                         break;
                                                     }
                                                 }
                                             }
                                         }
-                                        cVar = null;
+                                        bVar = null;
                                         break;
                                     case 5:
                                         aVar = aVar3;
                                         if (this.g >= 4) {
                                             if (!this.h && !(h().e() instanceof r)) {
-                                                cVar = new t8.c(new f());
-                                                cVar.b = this.c + 4;
+                                                bVar = new t8.b(new f());
+                                                bVar.b = this.c + 4;
                                                 break;
                                             }
                                         }
-                                        cVar = null;
+                                        bVar = null;
                                         break;
                                     case 6:
                                         df.a aVar4 = (df.a) dVar.a;
@@ -634,7 +634,7 @@ public final class d {
                                         } else {
                                             int i39 = this.e;
                                             int i40 = this.c + i38;
-                                            boolean z14 = dVar.J() != null;
+                                            boolean z14 = dVar.L() != null;
                                             CharSequence charSequence6 = this.a;
                                             char charAt11 = charSequence6.charAt(i39);
                                             if (charAt11 == '*' || charAt11 == '+' || charAt11 == '-') {
@@ -642,9 +642,9 @@ public final class d {
                                                 aVar = aVar3;
                                                 int i41 = i39 + 1;
                                                 if (i41 >= charSequence6.length() || (charAt2 = charSequence6.charAt(i41)) == '\t' || charAt2 == ' ') {
-                                                    bf.c cVar5 = new bf.c();
-                                                    cVar5.g = charAt11;
-                                                    jVar = new j(cVar5, i41);
+                                                    bf.c cVar2 = new bf.c();
+                                                    cVar2.g = charAt11;
+                                                    jVar = new j(cVar2, i41);
                                                     if (jVar != null) {
                                                         bf.n nVar = jVar.a;
                                                         int i42 = jVar.b;
@@ -678,14 +678,14 @@ public final class d {
                                                                 if (aVar4 instanceof k) {
                                                                     bf.n nVar3 = ((k) aVar4).a;
                                                                     if (((nVar3 instanceof bf.c) && (nVar2 instanceof bf.c)) ? Character.valueOf(((bf.c) nVar3).g).equals(Character.valueOf(((bf.c) nVar2).g)) : ((nVar3 instanceof q) && (nVar2 instanceof q)) ? Character.valueOf(((q) nVar3).h).equals(Character.valueOf(((q) nVar2).h)) : false) {
-                                                                        cVar3 = new t8.c(lVar);
-                                                                        cVar3.b = i45;
-                                                                        cVar = cVar3;
+                                                                        bVar2 = new t8.b(lVar);
+                                                                        bVar2.b = i45;
+                                                                        bVar = bVar2;
                                                                         break;
                                                                     }
                                                                 }
-                                                                cVar = new t8.c(new k(nVar2), lVar);
-                                                                cVar.b = i45;
+                                                                bVar = new t8.b(new k(nVar2), lVar);
+                                                                bVar.b = i45;
                                                                 break;
                                                             }
                                                         }
@@ -771,7 +771,7 @@ public final class d {
                                                 }
                                             }
                                         }
-                                        cVar = null;
+                                        bVar = null;
                                         break;
                                     case 7:
                                         if (this.g < 4) {
@@ -786,8 +786,8 @@ public final class d {
                                                     int i54 = i52;
                                                     int i55 = i53;
                                                     if ((i51 >= 3 && i54 == 0 && i55 == 0) || ((i54 >= 3 && i51 == 0 && i55 == 0) || (i55 >= 3 && i51 == 0 && i54 == 0))) {
-                                                        cVar = new t8.c(new c(1));
-                                                        cVar.a = charSequence8.length();
+                                                        bVar = new t8.b(new c(1));
+                                                        bVar.a = charSequence8.length();
                                                     }
                                                 } else {
                                                     char charAt14 = charSequence8.charAt(i50);
@@ -806,7 +806,7 @@ public final class d {
                                                 }
                                             }
                                         }
-                                        cVar = null;
+                                        bVar = null;
                                         aVar = aVar3;
                                         break;
                                     default:
@@ -825,42 +825,42 @@ public final class d {
                                                 }
                                             }
                                             if (i12 >= 2 && s.b(' ', charSequence9, i56 + i12, length8) == length8) {
-                                                cVar = new t8.c(new zc.b(i12));
-                                                cVar.a = length8 + 1;
+                                                bVar = new t8.b(new zc.b(i12));
+                                                bVar.a = length8 + 1;
                                                 aVar = aVar3;
                                                 break;
                                             }
                                         }
-                                        cVar = null;
+                                        bVar = null;
                                         aVar = aVar3;
                                         break;
                                 }
-                                if (cVar == null) {
+                                if (bVar == null) {
                                     aVar3 = aVar;
                                     i17 = 4;
                                 }
                             } else {
                                 aVar = aVar3;
-                                cVar = null;
+                                bVar = null;
                             }
                         }
-                        if (cVar == null) {
+                        if (bVar == null) {
                             k(this.e);
                         } else {
                             if (!isEmpty) {
                                 f(arrayList2);
                                 isEmpty = true;
                             }
-                            int i58 = cVar.a;
+                            int i58 = bVar.a;
                             if (i58 != -1) {
                                 k(i58);
                             } else {
-                                int i59 = cVar.b;
+                                int i59 = bVar.b;
                                 if (i59 != -1) {
                                     j(i59);
                                 }
                             }
-                            if (cVar.c) {
+                            if (bVar.c) {
                                 df.a h10 = h();
                                 a4.a.x(1, arrayList);
                                 this.o.remove(h10);
@@ -869,7 +869,7 @@ public final class d {
                                 }
                                 h10.e().g();
                             }
-                            df.a[] aVarArr = (df.a[]) cVar.d;
+                            df.a[] aVarArr = (df.a[]) bVar.d;
                             int length9 = aVarArr.length;
                             int i60 = 0;
                             while (i60 < length9) {

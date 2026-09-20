@@ -1,22 +1,45 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
-/* loaded from: classes3.dex */
-public final class ed1 extends vd1 {
-    public final /* synthetic */ zn k2;
-    public final /* synthetic */ boolean l2;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.widget.FrameLayout;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ed1(Object obj, zn znVar, boolean z10) {
-        super(obj, null, true);
-        this.k2 = znVar;
-        this.l2 = z10;
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* loaded from: classes3.dex */
+public final class ed1 extends AnimatorListenerAdapter {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ boolean d;
+    public final /* synthetic */ xd1 e;
+
+    public ed1(xd1 xd1Var, boolean z10, int i10, int i11, boolean z11) {
+        this.e = xd1Var;
+        this.a = z10;
+        this.b = i10;
+        this.c = i11;
+        this.d = z11;
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
-    public final void onFragmentClosed() {
-        super.onFragmentClosed();
-        xn xnVar = this.k2.ea;
-        xnVar.i(xnVar.f, xnVar.h, false, Boolean.valueOf(this.l2), false);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        xd1 xd1Var = this.e;
+        FrameLayout[] frameLayoutArr = xd1Var.L0;
+        xd1Var.r1 = null;
+        int i10 = this.c;
+        int i11 = this.b;
+        boolean z10 = this.a;
+        if (z10 && frameLayoutArr[i11].getVisibility() == 0) {
+            frameLayoutArr[i11].setAlpha(1.0f);
+            frameLayoutArr[i11].setVisibility(4);
+        } else if (!z10) {
+            frameLayoutArr[i10].setVisibility(4);
+        }
+        int i12 = xd1Var.b;
+        if (i12 == 1 || i12 == 2) {
+            xd1Var.J0[this.d ? (char) 0 : (char) 2].setVisibility(4);
+        } else if (i10 == 1) {
+            frameLayoutArr[i11].setAlpha(0.0f);
+        }
     }
 }

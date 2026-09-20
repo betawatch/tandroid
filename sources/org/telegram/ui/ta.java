@@ -15,7 +15,7 @@ import org.telegram.messenger.support.LongSparseIntArray;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ta implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -48,11 +48,11 @@ public final /* synthetic */ class ta implements Utilities.Callback {
                 CharacterStyle characterStyle = (CharacterStyle) this.f;
                 final TLRPC.User user = (TLRPC.User) obj;
                 final TLRPC.UserFull userFull = user != null ? znVar.getMessagesController().getUserFull(user.id) : null;
-                org.telegram.ui.Components.w70 I = org.telegram.ui.Components.w70.I(znVar, u1Var);
-                org.telegram.ui.Components.nm0 nm0Var = new org.telegram.ui.Components.nm0(znVar.getParentActivity(), znVar.ea);
-                I.p = new re(nm0Var, 1);
+                org.telegram.ui.Components.v70 I = org.telegram.ui.Components.v70.I(znVar, u1Var);
+                org.telegram.ui.Components.mm0 mm0Var = new org.telegram.ui.Components.mm0(znVar.getParentActivity(), znVar.ea);
+                I.p = new re(mm0Var, 1);
                 y yVar = new y(znVar, user, str, 2);
-                org.telegram.ui.Components.w70 J = I.J();
+                org.telegram.ui.Components.v70 J = I.J();
                 J.c(R.drawable.ic_ab_back, LocaleController.getString(R.string.Back), new mu0(I, 25), false);
                 J.k();
                 J.c(R.drawable.msg_addbot, LocaleController.getString(R.string.CreateNewContact), new q1(znVar, I, str), false);
@@ -146,11 +146,11 @@ public final /* synthetic */ class ta implements Utilities.Callback {
                     I.c(R.drawable.msg_calls_regular, LocaleController.getString(R.string.VoiceCallViaCarrier), new te(znVar, str, 6), false);
                     I.c(R.drawable.msg_copy, LocaleController.getString(R.string.CopyNumber), new te(znVar, str, 7), false);
                     I.k();
-                    I.n(user, LocaleController.getString(R.string.ViewProfile), new q1(znVar, nm0Var, user, 16));
+                    I.n(user, LocaleController.getString(R.string.ViewProfile), new q1(znVar, mm0Var, user, 16));
                 }
-                nm0Var.e(I);
-                if (characterStyle instanceof org.telegram.ui.Components.d61) {
-                    String url = ((org.telegram.ui.Components.d61) characterStyle).getURL();
+                mm0Var.e(I);
+                if (characterStyle instanceof org.telegram.ui.Components.c61) {
+                    String url = ((org.telegram.ui.Components.c61) characterStyle).getURL();
                     if (url == null) {
                         url = "";
                     }
@@ -163,11 +163,11 @@ public final /* synthetic */ class ta implements Utilities.Callback {
                     }
                     SpannableString spannableString = new SpannableString(trim);
                     spannableString.setSpan(characterStyle, 0, spannableString.length(), 33);
-                    nm0Var.f(u1Var, characterStyle, spannableString, false);
+                    mm0Var.f(u1Var, characterStyle, spannableString, false);
                 } else {
-                    nm0Var.f(u1Var, characterStyle, null, false);
+                    mm0Var.f(u1Var, characterStyle, null, false);
                 }
-                znVar.showDialog(nm0Var);
+                znVar.showDialog(mm0Var);
                 break;
             case 2:
                 zn znVar2 = (zn) this.b;
@@ -178,7 +178,7 @@ public final /* synthetic */ class ta implements Utilities.Callback {
                 int i12 = znVar2.R3;
                 Object obj2 = this.e;
                 if (i12 == 1) {
-                    org.telegram.ui.Components.e5.M(znVar2.getParentActivity(), znVar2.T5, new a1.d(znVar2, tL_document, str2, obj2, 4), znVar2.ea);
+                    org.telegram.ui.Components.d5.M(znVar2.getParentActivity(), znVar2.T5, new a1.d(znVar2, tL_document, str2, obj2, 4), znVar2.ea);
                 } else {
                     znVar2.getSendMessagesHelper().sendSticker(tL_document, str2, znVar2.T5, znVar2.n5, znVar2.X3, null, znVar2.l5, sendAnimationData, true, 0, 0, false, obj2, znVar2.C8(), l4.longValue(), znVar2.N8(), znVar2.g5);
                     tL_document = tL_document;
@@ -200,10 +200,10 @@ public final /* synthetic */ class ta implements Utilities.Callback {
                 ArrayList arrayList6 = kyVar.s;
                 org.telegram.ui.Components.kz kzVar = kyVar.F;
                 if (str3.equals(str4)) {
-                    org.telegram.ui.Components.jw jwVar = kzVar.V;
+                    org.telegram.ui.Components.kw kwVar = kzVar.V;
                     org.telegram.ui.Components.wx wxVar = kzVar.P;
                     int i13 = 0;
-                    jwVar.e(false);
+                    kwVar.e(false);
                     kyVar.y = true;
                     s4.h0 adapter = wxVar.getAdapter();
                     org.telegram.ui.Components.ky kyVar2 = kzVar.S;

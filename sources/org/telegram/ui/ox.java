@@ -6,9 +6,9 @@ import android.view.View;
 import java.util.ArrayList;
 import org.telegram.messenger.AnimationNotificationsLocker;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class ox extends l41 {
+public final class ox extends m41 {
     public boolean S;
     public ty T;
     public final /* synthetic */ ny U;
@@ -26,7 +26,7 @@ public final class ox extends l41 {
         this.M = true;
     }
 
-    @Override // org.telegram.ui.l41
+    @Override // org.telegram.ui.m41
     public final void d(boolean z10) {
         ty tyVar = this.T;
         tyVar.c.G = true;
@@ -60,7 +60,7 @@ public final class ox extends l41 {
         uyVar.U4();
     }
 
-    @Override // org.telegram.ui.l41
+    @Override // org.telegram.ui.m41
     public final void e(boolean z10) {
         int i10;
         uy uyVar = this.W;
@@ -114,7 +114,7 @@ public final class ox extends l41 {
         uyVar.U4();
     }
 
-    @Override // org.telegram.ui.l41
+    @Override // org.telegram.ui.m41
     public final boolean getOccupyStatusbar() {
         org.telegram.ui.ActionBar.k kVar;
         org.telegram.ui.ActionBar.k kVar2;
@@ -127,7 +127,7 @@ public final class ox extends l41 {
         return kVar2.getOccupyStatusBar();
     }
 
-    @Override // org.telegram.ui.l41
+    @Override // org.telegram.ui.m41
     public final void setOpenProgress(float f7) {
         org.telegram.ui.ActionBar.k kVar;
         org.telegram.ui.ActionBar.k kVar2;

@@ -7,9 +7,9 @@ import java.util.ArrayList;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class j70 extends org.telegram.ui.Components.vl0 {
+public final class j70 extends org.telegram.ui.Components.ul0 {
     public final Context c;
     public int d;
     public final ArrayList e = new ArrayList();
@@ -23,11 +23,11 @@ public final class j70 extends org.telegram.ui.Components.vl0 {
     @Override // s4.h0
     public final void A(s4.c1 c1Var) {
         if (c1Var.f == 2) {
-            ((org.telegram.ui.Cells.g4) c1Var.a).a.getImageReceiver().cancelLoadImage();
+            ((org.telegram.ui.Cells.h4) c1Var.a).a.getImageReceiver().cancelLoadImage();
         }
     }
 
-    @Override // org.telegram.ui.Components.vl0
+    @Override // org.telegram.ui.Components.ul0
     public final boolean D(s4.c1 c1Var) {
         int i10 = c1Var.f;
         if (i10 == 3 || i10 == 4) {
@@ -84,37 +84,37 @@ public final class j70 extends org.telegram.ui.Components.vl0 {
         l70 l70Var = this.f;
         switch (i11) {
             case 1:
-                org.telegram.ui.Cells.m4 m4Var = (org.telegram.ui.Cells.m4) view;
+                org.telegram.ui.Cells.n4 n4Var = (org.telegram.ui.Cells.n4) view;
                 if (l70Var.T != null && i10 == 1) {
-                    m4Var.setText(LocaleController.getString(R.string.AttachLocation));
+                    n4Var.setText(LocaleController.getString(R.string.AttachLocation));
                     break;
                 } else {
-                    m4Var.setText(LocaleController.formatPluralString("Members", l70Var.K.size(), new Object[0]));
+                    n4Var.setText(LocaleController.formatPluralString("Members", l70Var.K.size(), new Object[0]));
                     break;
                 }
             case 2:
-                org.telegram.ui.Cells.g4 g4Var = (org.telegram.ui.Cells.g4) view;
-                g4Var.d(l70Var.getMessagesController().getUser((Long) l70Var.K.get(i10 - this.d)), null, null);
-                g4Var.setDrawDivider(i10 != arrayList.size() - 1);
+                org.telegram.ui.Cells.h4 h4Var = (org.telegram.ui.Cells.h4) view;
+                h4Var.d(l70Var.getMessagesController().getUser((Long) l70Var.K.get(i10 - this.d)), null, null);
+                h4Var.setDrawDivider(i10 != arrayList.size() - 1);
                 break;
             case 3:
-                ((org.telegram.ui.Cells.ea) view).b(l70Var.T, false);
+                ((org.telegram.ui.Cells.fa) view).b(l70Var.T, false);
                 break;
             case 4:
-                org.telegram.ui.Cells.r8 r8Var = (org.telegram.ui.Cells.r8) view;
+                org.telegram.ui.Cells.s8 s8Var = (org.telegram.ui.Cells.s8) view;
                 int i12 = l70Var.W;
                 String string = i12 == 0 ? LocaleController.getString(R.string.PasswordOff) : LocaleController.formatTTLString(i12);
                 String string2 = LocaleController.getString(R.string.AutoDeleteMessages);
                 z10 = ((org.telegram.ui.ActionBar.n2) l70Var).fragmentBeginToShow;
-                r8Var.s(string2, string, z10, R.drawable.msg_autodelete, false);
+                s8Var.s(string2, string, z10, R.drawable.msg_autodelete, false);
                 break;
             case 5:
-                ((org.telegram.ui.Cells.e9) view).setText(((i70) arrayList.get(i10)).c);
+                ((org.telegram.ui.Cells.f9) view).setText(((i70) arrayList.get(i10)).c);
                 break;
             case 6:
-                org.telegram.ui.Cells.r8 r8Var2 = (org.telegram.ui.Cells.r8) view;
-                r8Var2.l(R.drawable.msg_topics, LocaleController.getString(R.string.ChannelTopics), true);
-                r8Var2.getCheckBox().setAlpha(0.75f);
+                org.telegram.ui.Cells.s8 s8Var2 = (org.telegram.ui.Cells.s8) view;
+                s8Var2.l(R.drawable.msg_topics, LocaleController.getString(R.string.ChannelTopics), true);
+                s8Var2.getCheckBox().setAlpha(0.75f);
                 break;
         }
     }
@@ -124,26 +124,26 @@ public final class j70 extends org.telegram.ui.Components.vl0 {
         View view;
         Context context = this.c;
         if (i10 == 0) {
-            view = new org.telegram.ui.Cells.b7(context, (org.telegram.ui.Cells.c1) null);
+            view = new org.telegram.ui.Cells.c7(context, (org.telegram.ui.Cells.c1) null);
         } else if (i10 == 1) {
-            org.telegram.ui.Cells.m4 m4Var = new org.telegram.ui.Cells.m4(context);
-            m4Var.setHeight(46);
-            view = m4Var;
+            org.telegram.ui.Cells.n4 n4Var = new org.telegram.ui.Cells.n4(context);
+            n4Var.setHeight(46);
+            view = n4Var;
         } else if (i10 == 2) {
-            view = new org.telegram.ui.Cells.g4(context, 0, 3, false);
+            view = new org.telegram.ui.Cells.h4(context, 0, 3, false);
         } else if (i10 == 4) {
-            view = new org.telegram.ui.Cells.r8(context);
+            view = new org.telegram.ui.Cells.s8(context);
         } else if (i10 == 5) {
-            view = new org.telegram.ui.Cells.e9(context);
+            view = new org.telegram.ui.Cells.f9(context);
         } else if (i10 == 6) {
-            view = new org.telegram.ui.Cells.r8(23, this.c, this.f.getResourceProvider(), false, true);
+            view = new org.telegram.ui.Cells.s8(23, this.c, this.f.getResourceProvider(), false, true);
         } else if (i10 != 7) {
-            view = new org.telegram.ui.Cells.ea(context);
+            view = new org.telegram.ui.Cells.fa(context);
         } else {
             View view2 = new View(context);
             view2.setTag(-33024);
             view = view2;
         }
-        return new org.telegram.ui.Components.gl0(view);
+        return new org.telegram.ui.Components.fl0(view);
     }
 }

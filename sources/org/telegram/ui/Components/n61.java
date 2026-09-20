@@ -1,19 +1,44 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
-/* loaded from: classes3.dex */
-public final class n61 extends t61 {
-    public final /* synthetic */ o61 f3;
+import android.content.Context;
+import android.view.View;
+import java.util.ArrayList;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public n61(o61 o61Var, o61 o61Var2, d dVar, m61 m61Var, m61 m61Var2) {
-        super(o61Var2, dVar, m61Var, m61Var2);
-        this.f3 = o61Var;
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* loaded from: classes3.dex */
+public abstract class n61 extends org.telegram.ui.ActionBar.n2 {
+    public m61 a;
+    public hg.q1 b;
+    public int c;
+    public int d;
+
+    public n61() {
+        super(null);
+        this.c = -1;
     }
 
-    @Override // org.telegram.ui.Components.wl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        this.f3.c = -1;
+    public abstract void U(ArrayList arrayList, k61 k61Var);
+
+    public abstract CharSequence V();
+
+    public abstract void W(w51 w51Var, View view);
+
+    public abstract boolean X(w51 w51Var, View view);
+
+    @Override // org.telegram.ui.ActionBar.n2
+    public View createView(Context context) {
+        hg.k0.v(false, this.actionBar);
+        this.actionBar.setAllowOverlayTitle(true);
+        this.actionBar.setTitle(V());
+        this.actionBar.setActionBarMenuOnItemClick(new org.telegram.ui.ro(this, 13));
+        hg.q1 q1Var = new hg.q1(context, null, 1);
+        this.b = q1Var;
+        q1Var.setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.a7, false));
+        m61 m61Var = new m61(this, this, new d(this, 22), new l61(this), new l61(this));
+        this.a = m61Var;
+        this.b.addView(m61Var, w7.y5.c(-1.0f, -1));
+        hg.q1 q1Var2 = this.b;
+        this.fragmentView = q1Var2;
+        return q1Var2;
     }
 }

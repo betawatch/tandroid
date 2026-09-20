@@ -1,36 +1,45 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class qa0 extends g.p {
-    public final /* synthetic */ wa0 c;
+public final class qa0 {
+    public final /* synthetic */ org.telegram.ui.ActionBar.n2 a;
+    public final /* synthetic */ va0 b;
 
-    public qa0(wa0 wa0Var) {
-        this.c = wa0Var;
+    public qa0(va0 va0Var, org.telegram.ui.ActionBar.n2 n2Var) {
+        this.b = va0Var;
+        this.a = n2Var;
     }
 
-    @Override // g.p
-    public final int i(int i10) {
-        wa0 wa0Var = this.c;
-        gg.k1 k1Var = wa0Var.f;
-        if (i10 == 0) {
-            return 100;
+    public final void a(boolean z10) {
+        va0 va0Var = this.b;
+        if (va0Var.getNeededLayoutManager() != va0Var.getCurrentLayoutManager() && va0Var.a()) {
+            if (va0Var.f.M0 > 0) {
+                va0Var.N = true;
+                va0Var.o(false);
+                return;
+            }
+            va0Var.b.setLayoutManager(va0Var.getNeededLayoutManager());
         }
-        int i11 = i10 - 1;
-        Object J = k1Var.J(i11);
-        if (J instanceof TLRPC.TL_inlineBotSwitchPM) {
-            return 100;
+        if (z10 && !va0Var.a()) {
+            z10 = false;
         }
-        if (J instanceof TLRPC.Document) {
-            return 20;
+        va0Var.o((!z10 || va0Var.f.K() > 0) ? z10 : false);
+    }
+
+    public final void b(boolean z10) {
+        this.b.l(z10);
+    }
+
+    public final void c() {
+        va0 va0Var = this.b;
+        xp xpVar = va0Var.J;
+        if (va0Var.b.getLayoutManager() == va0Var.d || !va0Var.I) {
+            return;
         }
-        if (k1Var.I() != null || k1Var.U != null) {
-            i10 = i11;
-        }
-        pa0 pa0Var = wa0Var.d;
-        pa0Var.B1();
-        return pa0Var.R.get(i10);
+        AndroidUtilities.cancelRunOnUIThread(xpVar);
+        AndroidUtilities.runOnUIThread(xpVar, this.a.getFragmentBeginToShow() ? 0L : 100L);
     }
 }

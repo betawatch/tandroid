@@ -1,16 +1,70 @@
 package org.telegram.ui.Components;
 
+import android.animation.ObjectAnimator;
+import android.graphics.Canvas;
+import android.view.View;
+import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public class cu0 extends ia implements ai.s9 {
-    public int d3;
-    public int e3;
+public abstract class cu0 extends FrameLayout {
+    public yk0 E;
+    public int F;
+    public br0 G;
+    public wn0 H;
+    public boolean I;
+    public int J;
+    public boolean K;
+    public float L;
+    public long a;
+    public boolean b;
+    public ObjectAnimator c;
+    public s4.j d;
+    public s4.u0 e;
+    public s4.u0 f;
+    public is0 h;
+    public ah.o n;
+    public bu0 r;
+    public ks0 s;
+    public rs0 v;
+    public ts0 w;
+    public gs0 x;
+    public qs0 y;
 
-    @Override // ai.s9
-    public final void a(int[] iArr) {
-        iArr[0] = (getPaddingTop() - AndroidUtilities.dp(2.0f)) - this.d3;
-        iArr[1] = (getMeasuredHeight() - getPaddingBottom()) - this.e3;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        br0 br0Var = this.G;
+        if (br0Var == null || br0Var.getVisibility() != 0) {
+            return;
+        }
+        cl0 fastScroll = this.h.getFastScroll();
+        if (fastScroll != null) {
+            float dp = AndroidUtilities.dp(36.0f) + fastScroll.getScrollBarY();
+            if (this.F == 9) {
+                dp += AndroidUtilities.dp(64.0f);
+            }
+            int i10 = this.F;
+            if (i10 == 8 || jv0.w0(i10)) {
+                dp += AndroidUtilities.dp(42.0f);
+            }
+            float measuredWidth = (getMeasuredWidth() - this.G.getMeasuredWidth()) - AndroidUtilities.dp(16.0f);
+            this.G.setPivotX(r2.getMeasuredWidth());
+            this.G.setPivotY(0.0f);
+            this.G.setTranslationX(measuredWidth);
+            this.G.setTranslationY(dp);
+        }
+        if (fastScroll.getProgress() > 0.85f) {
+            jv0.q(this, null, false);
+        }
+    }
+
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j3) {
+        if (view == this.r) {
+            return true;
+        }
+        return super.drawChild(canvas, view, j3);
     }
 }

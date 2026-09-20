@@ -4,7 +4,7 @@ import java.util.concurrent.locks.LockSupport;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.tgnet.TLObject;
 import rd.p;
-import v7.t7;
+import v7.u7;
 import zd.a1;
 import zd.c2;
 import zd.d0;
@@ -14,7 +14,7 @@ import zd.v;
 import zd.w0;
 import zd.x;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class l {
     public static final n1.d c = new n1.d("firebase_sessions_enabled");
@@ -126,7 +126,7 @@ public final class l {
                 jd.a aVar = jd.a.a;
                 i10 = jVar.c;
                 if (i10 != 0) {
-                    t7.b(obj2);
+                    u7.b(obj2);
                     k1.f fVar = this.a;
                     k kVar = new k(obj, dVar, this, null);
                     jVar.c = 1;
@@ -137,7 +137,7 @@ public final class l {
                     if (i10 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    t7.b(obj2);
+                    u7.b(obj2);
                 }
                 return gd.i.a;
             }

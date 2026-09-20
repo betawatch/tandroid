@@ -17,7 +17,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public abstract class xy extends FrameLayout implements le.d {
     public xp E;
@@ -25,7 +25,7 @@ public abstract class xy extends FrameLayout implements le.d {
     public final /* synthetic */ kz G;
     public final le.b a;
     public final int b;
-    public final ln0 c;
+    public final kn0 c;
     public final iq d;
     public final View e;
     public final View f;
@@ -64,8 +64,8 @@ public abstract class xy extends FrameLayout implements le.d {
         frameLayout.setBackground(org.telegram.ui.ActionBar.j6.b0(AndroidUtilities.dp(18.0f), z11 ? kzVar.v(0.06f) : kzVar.z(org.telegram.ui.ActionBar.j6.Ie)));
         frameLayout.setClipToOutline(true);
         float dp = AndroidUtilities.dp(18.0f);
-        ai.k2 k2Var = yf.k0.a;
-        frameLayout.setOutlineProvider(new yf.i0(0, dp));
+        ai.k2 k2Var = yf.j0.a;
+        frameLayout.setOutlineProvider(new yf.h0(0, dp));
         int i12 = 2;
         if (i10 == 2) {
             addView(frameLayout, w7.y5.d(-1, 36.0f, 119, 10.0f, 8.0f, 10.0f, 8.0f));
@@ -76,13 +76,13 @@ public abstract class xy extends FrameLayout implements le.d {
         this.s = n6Var;
         frameLayout.addView(n6Var, w7.y5.d(-1, 40.0f, 51, 38.0f, 0.0f, 0.0f, 0.0f));
         ImageView imageView = new ImageView(context);
-        ln0 ln0Var = new ln0();
-        this.c = ln0Var;
-        ln0Var.c(0, false, false);
-        ln0Var.a(z11 ? kzVar.v(0.4f) : kzVar.z(org.telegram.ui.ActionBar.j6.Je));
+        kn0 kn0Var = new kn0();
+        this.c = kn0Var;
+        kn0Var.c(0, false, false);
+        kn0Var.a(z11 ? kzVar.v(0.4f) : kzVar.z(org.telegram.ui.ActionBar.j6.Je));
         ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
         imageView.setScaleType(scaleType);
-        imageView.setImageDrawable(ln0Var);
+        imageView.setImageDrawable(kn0Var);
         imageView.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.uy
             public final /* synthetic */ xy b;
 
@@ -242,14 +242,14 @@ public abstract class xy extends FrameLayout implements le.d {
                             xyVar.g(false);
                             break;
                         default:
-                            ex0 ex0Var = (ex0) obj;
+                            dx0 dx0Var = (dx0) obj;
                             xy xyVar2 = this.b;
                             kz kzVar2 = xyVar2.G;
                             wy wyVar2 = xyVar2.r;
-                            if (ex0Var != null) {
-                                if (wyVar2.getSelectedCategory() != ex0Var) {
-                                    xyVar2.c(ex0Var.a, false);
-                                    wyVar2.G1(ex0Var);
+                            if (dx0Var != null) {
+                                if (wyVar2.getSelectedCategory() != dx0Var) {
+                                    xyVar2.c(dx0Var.a, false);
+                                    wyVar2.G1(dx0Var);
                                     break;
                                 } else {
                                     xyVar2.c(null, false);
@@ -286,14 +286,14 @@ public abstract class xy extends FrameLayout implements le.d {
                             xyVar.g(false);
                             break;
                         default:
-                            ex0 ex0Var = (ex0) obj;
+                            dx0 dx0Var = (dx0) obj;
                             xy xyVar2 = this.b;
                             kz kzVar2 = xyVar2.G;
                             wy wyVar2 = xyVar2.r;
-                            if (ex0Var != null) {
-                                if (wyVar2.getSelectedCategory() != ex0Var) {
-                                    xyVar2.c(ex0Var.a, false);
-                                    wyVar2.G1(ex0Var);
+                            if (dx0Var != null) {
+                                if (wyVar2.getSelectedCategory() != dx0Var) {
+                                    xyVar2.c(dx0Var.a, false);
+                                    wyVar2.G1(dx0Var);
                                     break;
                                 } else {
                                     xyVar2.c(null, false);
@@ -350,7 +350,7 @@ public abstract class xy extends FrameLayout implements le.d {
         dz dzVar = fzVar.O;
         kz kzVar2 = fzVar.Q;
         ww wwVar = kzVar2.G0;
-        sw swVar = kzVar2.D0;
+        tw twVar = kzVar2.D0;
         if (fzVar.L != 0) {
             ConnectionsManager.getInstance(kzVar2.c1).cancelRequest(fzVar.L, true);
             fzVar.L = 0;
@@ -360,10 +360,10 @@ public abstract class xy extends FrameLayout implements le.d {
             fzVar.E.clear();
             fzVar.H.clear();
             fzVar.K = new ArrayList();
-            s4.h0 adapter = swVar.getAdapter();
+            s4.h0 adapter = twVar.getAdapter();
             bz bzVar = kzVar2.y0;
             if (adapter != bzVar) {
-                swVar.setAdapter(bzVar);
+                twVar.setAdapter(bzVar);
             }
             fzVar.d = 0L;
             kzVar2.a.a(false, true);
@@ -388,7 +388,7 @@ public abstract class xy extends FrameLayout implements le.d {
         }
         ValueAnimator ofFloat = ValueAnimator.ofFloat(this.w, z10 ? 1.0f : 0.0f);
         this.y = ofFloat;
-        ofFloat.addUpdateListener(new k6(this, 22));
+        ofFloat.addUpdateListener(new j6(this, 22));
         this.y.setDuration(120L);
         this.y.setInterpolator(qr.h);
         this.y.start();

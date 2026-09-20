@@ -27,9 +27,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_communities;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class fs extends bb {
+public final class fs extends ab {
     public static final /* synthetic */ int G0 = 0;
     public final boolean A0;
     public boolean B0;
@@ -37,7 +37,7 @@ public final class fs extends bb {
     public boolean D0;
     public boolean E0;
     public float F0;
-    public l61 X;
+    public k61 X;
     public final TLRPC.Chat Y;
     public final TLRPC.Chat Z;
     public final boolean a0;
@@ -155,9 +155,9 @@ public final class fs extends bb {
         fixNavigationBar();
         this.O = true;
         this.A0 = z10;
-        wl0 wl0Var = this.d;
+        vl0 vl0Var = this.d;
         int i12 = this.backgroundPaddingLeft;
-        wl0Var.setPadding(i12, this.G, i12, AndroidUtilities.dp(63.0f));
+        vl0Var.setPadding(i12, this.G, i12, AndroidUtilities.dp(63.0f));
         this.d.setClipToPadding(false);
         this.d.setOnItemClickListener(new bs(this, 1));
         this.O = true;
@@ -372,23 +372,23 @@ public final class fs extends bb {
         boolean z10;
         CharSequence charSequence;
         Context context2 = fsVar.getContext();
-        org.telegram.ui.ActionBar.e6 e6Var = fsVar.resourcesProvider;
+        org.telegram.ui.ActionBar.f6 f6Var = fsVar.resourcesProvider;
         int i10 = fsVar.currentAccount;
         long j3 = fsVar.q0;
         ArrayList<Long> arrayList = fsVar.r0.joined_chat_ids;
         boolean z11 = false;
         bs bsVar = new bs(fsVar, 0 == true ? 1 : 0);
-        Pattern pattern = e5.a;
-        LinearLayout e = org.telegram.messenger.wh.e(context2, 1);
+        Pattern pattern = d5.a;
+        LinearLayout f7 = org.telegram.messenger.rk.f(context2, 1);
         org.telegram.ui.ActionBar.b2[] b2VarArr = new org.telegram.ui.ActionBar.b2[1];
-        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context2, 0, e6Var);
+        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context2, 0, f6Var);
         String string = LocaleController.getString(R.string.CommunityBanUserTitle);
         org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
         b2Var.R = string;
         b2Var.T = AndroidUtilities.replaceTags(LocaleController.formatPluralString("CommunityBanWillRemoveFromChats", arrayList.size(), DialogObject.getShortName(i10, j3)));
         alertDialog$Builder.k(LocaleController.getString(R.string.OK), null);
         alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-        alertDialog$Builder.n(e);
+        alertDialog$Builder.n(f7);
         int size = arrayList.size();
         int i11 = 0;
         while (i11 < size) {
@@ -399,7 +399,7 @@ public final class fs extends bb {
             TLRPC.Chat chat = MessagesController.getInstance(i10).getChat(l10);
             TLRPC.ChatFull chatFull = MessagesController.getInstance(i10).getChatFull(longValue);
             if (chat != null) {
-                ai.v7 v7Var = new ai.v7(context2, e6Var, z11);
+                ai.v7 v7Var = new ai.v7(context2, f6Var, z11);
                 int i12 = size;
                 ((TextView) v7Var.b).setText(DialogObject.getName(chat));
                 TextView textView = (TextView) v7Var.c;
@@ -413,10 +413,10 @@ public final class fs extends bb {
                     charSequence = null;
                 }
                 textView.setText(charSequence);
-                ((w9) v7Var.d).e(chat, new h9(chat));
+                ((v9) v7Var.d).e(chat, new g9(chat));
                 v7Var.setBackground(org.telegram.ui.ActionBar.j6.K0(z10));
                 v7Var.setOnClickListener(new org.telegram.ui.fo(b2VarArr, bsVar, longValue, 2));
-                e.addView(v7Var, w7.y5.n(-1, -2));
+                f7.addView(v7Var, w7.y5.n(-1, -2));
                 context2 = context;
                 size = i12;
                 z11 = false;
@@ -437,7 +437,7 @@ public final class fs extends bb {
         int i11 = esVar.a;
         if (c10) {
             if (!esVar.b()) {
-                x51 y3 = x51.y(i11, esVar.b);
+                w51 y3 = w51.y(i11, esVar.b);
                 y3.K(esVar.i > 0);
                 arrayList.add(y3);
                 return;
@@ -448,14 +448,14 @@ public final class fs extends bb {
                 i12 = esVar.e != null ? esVar.h : i10;
             }
             String valueOf = String.valueOf(i12);
-            x51 x51Var = new x51(36);
-            x51Var.d = i11;
-            x51Var.l = str;
-            x51Var.o = valueOf;
-            x51Var.K(esVar.i > 0);
-            x51Var.f = esVar.f;
-            x51Var.D = new org.telegram.ui.sf(28, this, esVar);
-            arrayList.add(x51Var);
+            w51 w51Var = new w51(36);
+            w51Var.d = i11;
+            w51Var.l = str;
+            w51Var.o = valueOf;
+            w51Var.K(esVar.i > 0);
+            w51Var.f = esVar.f;
+            w51Var.D = new org.telegram.ui.sf(28, this, esVar);
+            arrayList.add(w51Var);
             if (esVar.f) {
                 return;
             }
@@ -463,12 +463,12 @@ public final class fs extends bb {
                 boolean[] zArr = esVar.e;
                 if (zArr == null || zArr[i13]) {
                     TLObject tLObject = (TLObject) esVar.c.get(i13);
-                    x51 x51Var2 = new x51(37);
-                    x51Var2.d = (i11 << 24) | i13;
-                    x51Var2.G = tLObject;
-                    x51Var2.K(esVar.d[i13]);
-                    x51Var2.i = 1;
-                    arrayList.add(x51Var2);
+                    w51 w51Var2 = new w51(37);
+                    w51Var2.d = (i11 << 24) | i13;
+                    w51Var2.G = tLObject;
+                    w51Var2.K(esVar.d[i13]);
+                    w51Var2.i = 1;
+                    arrayList.add(w51Var2);
                 }
             }
         }
@@ -553,22 +553,22 @@ public final class fs extends bb {
         boolean z12 = true;
         if (z10 && this.p0 && (participantJoinedChats = this.r0) != null && !participantJoinedChats.creator_chat_ids.isEmpty()) {
             Context context = getContext();
-            org.telegram.ui.ActionBar.e6 e6Var = this.resourcesProvider;
+            org.telegram.ui.ActionBar.f6 f6Var = this.resourcesProvider;
             int i11 = this.currentAccount;
             ArrayList<Long> arrayList = this.r0.creator_chat_ids;
             bs bsVar = new bs(this, i10);
             zr zrVar = new zr(this, 0);
-            Pattern pattern = e5.a;
-            LinearLayout e = org.telegram.messenger.wh.e(context, 1);
+            Pattern pattern = d5.a;
+            LinearLayout f7 = org.telegram.messenger.rk.f(context, 1);
             org.telegram.ui.ActionBar.b2[] b2VarArr = new org.telegram.ui.ActionBar.b2[1];
-            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context, 0, e6Var);
+            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context, 0, f6Var);
             String string = LocaleController.getString(R.string.CommunityBanWarningTitle);
             org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
             b2Var.R = string;
             b2Var.T = AndroidUtilities.replaceTags(LocaleController.formatPluralString("CommunityBanWarningMessage", arrayList.size(), DialogObject.getShortName(i11, j13)));
             alertDialog$Builder.k(LocaleController.getString(R.string.Ban), new s(zrVar, 6));
             alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-            alertDialog$Builder.n(e);
+            alertDialog$Builder.n(f7);
             int size = arrayList.size();
             int i12 = 0;
             while (i12 < size) {
@@ -581,7 +581,7 @@ public final class fs extends bb {
                 if (chat == null) {
                     i12 = i13;
                 } else {
-                    ai.v7 v7Var = new ai.v7(context, e6Var, z12);
+                    ai.v7 v7Var = new ai.v7(context, f6Var, z12);
                     int i14 = size;
                     ((TextView) v7Var.b).setText(DialogObject.getName(chat));
                     ?? r12 = (TextView) v7Var.c;
@@ -596,13 +596,13 @@ public final class fs extends bb {
                         str = null;
                     }
                     r12.setText(str);
-                    ((w9) v7Var.d).e(chat, new h9(chat));
+                    ((v9) v7Var.d).e(chat, new g9(chat));
                     v7Var.setBackground(org.telegram.ui.ActionBar.j6.K0(z11));
-                    ?? r13 = e;
+                    ?? r13 = f7;
                     v7Var.setOnClickListener(new org.telegram.ui.fo(b2VarArr, bsVar, j12, 1));
                     r13.addView(v7Var, w7.y5.n(-1, -2));
                     i12 = i13;
-                    e = r13;
+                    f7 = r13;
                     size = i14;
                     z12 = true;
                 }
@@ -626,7 +626,7 @@ public final class fs extends bb {
         es esVar2 = this.l0;
         if (esVar2.i > 0) {
             if (!TextUtils.isEmpty(str2)) {
-                str2 = t8.b.v(str2, "\n");
+                str2 = v7.j0.s(str2, "\n");
             }
             if (this.g0) {
                 StringBuilder u10 = a4.a.u(str2);
@@ -644,7 +644,7 @@ public final class fs extends bb {
         boolean isEmpty = TextUtils.isEmpty(str2);
         org.telegram.ui.ActionBar.n2 n2Var = this.n;
         if (isEmpty) {
-            org.telegram.messenger.q.q(z14 ? R.string.ReactionsDeleted : R.string.MessagesDeleted, xc.a0(n2Var), i16, 36);
+            org.telegram.messenger.l0.o(z14 ? R.string.ReactionsDeleted : R.string.MessagesDeleted, xc.a0(n2Var), i16, 36);
         } else {
             xc.a0(n2Var).M(LocaleController.getString(z14 ? R.string.ReactionsDeleted : R.string.MessagesDeleted), str2, i16).j();
         }
@@ -1012,31 +1012,31 @@ public final class fs extends bb {
     public final void onContainerLayout(int i10, int i11, int i12, int i13) {
         super.onContainerLayout(i10, i11, i12, i13);
         Rect rect = AndroidUtilities.rectTmp2;
-        wl0 wl0Var = this.d;
-        rect.set(0, 0, wl0Var.getMeasuredWidth(), wl0Var.getMeasuredHeight() - AndroidUtilities.dp(34.0f));
-        wl0Var.setClipBounds(rect);
+        vl0 vl0Var = this.d;
+        rect.set(0, 0, vl0Var.getMeasuredWidth(), vl0Var.getMeasuredHeight() - AndroidUtilities.dp(34.0f));
+        vl0Var.setClipBounds(rect);
     }
 
     @Override // org.telegram.ui.ActionBar.f3, android.app.Dialog
     public final void show() {
         super.show();
-        qc.e();
+        pc.e();
     }
 
-    @Override // org.telegram.ui.Components.bb
+    @Override // org.telegram.ui.Components.ab
     public final boolean t(View view, float f7, float f10) {
         return !(view instanceof org.telegram.ui.Cells.b2);
     }
 
-    @Override // org.telegram.ui.Components.bb
-    public final vl0 v(wl0 wl0Var) {
-        l61 l61Var = new l61(wl0Var, getContext(), this.currentAccount, this.n.getClassGuid(), true, new yr(this, 0), this.resourcesProvider);
-        this.X = l61Var;
-        l61Var.r = false;
-        return l61Var;
+    @Override // org.telegram.ui.Components.ab
+    public final ul0 v(vl0 vl0Var) {
+        k61 k61Var = new k61(vl0Var, getContext(), this.currentAccount, this.n.getClassGuid(), true, new yr(this, 0), this.resourcesProvider);
+        this.X = k61Var;
+        k61Var.r = false;
+        return k61Var;
     }
 
-    @Override // org.telegram.ui.Components.bb
+    @Override // org.telegram.ui.Components.ab
     public final CharSequence y() {
         boolean[] zArr;
         if (this.A0) {

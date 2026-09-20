@@ -11,7 +11,7 @@ import java.util.Locale;
 import java.util.UUID;
 import org.telegram.messenger.BuildConfig;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class s {
     public static final String A0;
@@ -302,7 +302,7 @@ public final class s {
                 oVar2 = oVar;
             }
             u10.append(", drm=[");
-            cVar.p(u10, linkedHashSet.iterator());
+            cVar.n(u10, linkedHashSet.iterator());
             u10.append(']');
         } else {
             c10 = 0;
@@ -368,7 +368,7 @@ public final class s {
         }
         if (!i0Var.isEmpty()) {
             u10.append(", labels=[");
-            cVar.p(u10, e9.q.w(i0Var, new ai.w1(10)).iterator());
+            cVar.n(u10, e9.q.w(i0Var, new ai.w1(10)).iterator());
             u10.append("]");
         }
         if (i11 != 0) {
@@ -384,7 +384,7 @@ public final class s {
             if ((i11 & 2) != 0) {
                 arrayList.add("forced");
             }
-            cVar.p(u10, arrayList.iterator());
+            cVar.n(u10, arrayList.iterator());
             u10.append("]");
         }
         if (i20 != 0) {
@@ -440,7 +440,7 @@ public final class s {
             if ((i10 & 32768) != 0) {
                 arrayList2.add("auxiliary");
             }
-            cVar.p(u10, arrayList2.iterator());
+            cVar.n(u10, arrayList2.iterator());
             u10.append("]");
         } else {
             i10 = i20;

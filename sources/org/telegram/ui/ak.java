@@ -9,7 +9,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class ak extends s4.s0 {
     public boolean b;
@@ -52,8 +52,8 @@ public final class ak extends s4.s0 {
         if (f4Var != null && f4Var.V) {
             f4Var.e(true);
         }
-        org.telegram.ui.Components.p6 p6Var = znVar.W2;
-        if (p6Var != null && p6Var.getVisibility() == 0 && znVar.x9()) {
+        org.telegram.ui.Components.o6 o6Var = znVar.W2;
+        if (o6Var != null && o6Var.getVisibility() == 0 && znVar.x9()) {
             AndroidUtilities.hideKeyboard(znVar.getParentActivity().getCurrentFocus());
         }
         if (i10 == 2) {

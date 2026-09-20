@@ -4,9 +4,9 @@ import android.view.KeyEvent;
 import android.view.View;
 import org.telegram.messenger.voip.NativeInstance;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class s20 implements org.telegram.ui.ActionBar.r0, org.telegram.ui.Components.ml0, r0.n, NativeInstance.AudioLevelsCallback, org.telegram.ui.ActionBar.l1 {
+public final /* synthetic */ class s20 implements org.telegram.ui.ActionBar.r0, org.telegram.ui.Components.ll0, r0.n, NativeInstance.AudioLevelsCallback, org.telegram.ui.ActionBar.l1 {
     public final /* synthetic */ int a;
     public final /* synthetic */ i60 b;
 
@@ -16,11 +16,11 @@ public final /* synthetic */ class s20 implements org.telegram.ui.ActionBar.r0, 
     }
 
     @Override // r0.n
-    public r0.m1 Q0(View view, r0.m1 m1Var) {
-        return i60.z(this.b, m1Var);
+    public r0.l1 P0(View view, r0.l1 l1Var) {
+        return i60.z(this.b, l1Var);
     }
 
-    @Override // org.telegram.ui.Components.ml0
+    @Override // org.telegram.ui.Components.ll0
     public boolean d(int i10, View view) {
         switch (this.a) {
             case 1:
@@ -38,11 +38,11 @@ public final /* synthetic */ class s20 implements org.telegram.ui.ActionBar.r0, 
                     if (view instanceof org.telegram.ui.Components.voip.l) {
                         return i60Var2.F1(view);
                     }
-                    if (view instanceof org.telegram.ui.Cells.e4) {
+                    if (view instanceof org.telegram.ui.Cells.f4) {
                         i60Var2.I1();
-                        org.telegram.ui.Components.lj0 lj0Var = ((org.telegram.ui.Cells.e4) view).f;
-                        if (lj0Var.isEnabled()) {
-                            lj0Var.callOnClick();
+                        org.telegram.ui.Components.kj0 kj0Var = ((org.telegram.ui.Cells.f4) view).f;
+                        if (kj0Var.isEnabled()) {
+                            kj0Var.callOnClick();
                             return true;
                         }
                     }
@@ -57,7 +57,7 @@ public final /* synthetic */ class s20 implements org.telegram.ui.ActionBar.r0, 
     }
 
     @Override // org.telegram.ui.ActionBar.l1
-    public void p(KeyEvent keyEvent) {
+    public void o(KeyEvent keyEvent) {
         i60 i60Var;
         i50 i50Var;
         if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (i50Var = (i60Var = this.b).f3) != null && i50Var.isShowing()) {

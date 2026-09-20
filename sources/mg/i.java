@@ -32,11 +32,11 @@ import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.Cells.c1;
 import org.telegram.ui.Cells.z;
 import org.telegram.ui.Components.pq;
-import org.telegram.ui.Components.wl0;
+import org.telegram.ui.Components.vl0;
 import org.telegram.ui.LaunchActivity;
 import w7.q;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class i extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public ArrayList E;
@@ -54,7 +54,7 @@ public final class i extends FrameLayout implements NotificationCenter.Notificat
     public int v;
     public LinearLayout w;
     public TextView x;
-    public wl0 y;
+    public vl0 y;
 
     public static float a(DisplayMetrics displayMetrics, float f7) {
         return q.a(f7, AndroidUtilities.dp(16.0f), displayMetrics.widthPixels - AndroidUtilities.dp(72.0f));
@@ -110,9 +110,9 @@ public final class i extends FrameLayout implements NotificationCenter.Notificat
         final float translationX = n6Var.getTranslationX();
         final float translationY = n6Var.getTranslationY();
         k kVar = new k(new j(z10 ? 0.0f : 1000.0f));
-        l j3 = c1.j(1000.0f, 900.0f, 1.0f);
-        j3.i = z10 ? 1000.0f : 0.0f;
-        kVar.u = j3;
+        l m10 = c1.m(1000.0f, 900.0f, 1.0f);
+        m10.i = z10 ? 1000.0f : 0.0f;
+        kVar.u = m10;
         kVar.b(new o1.g() { // from class: mg.d
             @Override // o1.g
             public final void a(o1.h hVar, float f7, float f10) {

@@ -7,9 +7,9 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 import k2.v;
-import w7.s6;
+import w7.t6;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class a {
     public final String a;
@@ -34,8 +34,8 @@ public final class a {
         return new i0(cls, new Class[0]);
     }
 
-    public static i0 b(r rVar) {
-        r[] rVarArr = new r[0];
+    public static i0 b(s sVar) {
+        s[] sVarArr = new s[0];
         i0 i0Var = new i0();
         i0Var.d = null;
         HashSet hashSet = new HashSet();
@@ -44,11 +44,11 @@ public final class a {
         i0Var.a = 0;
         i0Var.b = 0;
         i0Var.g = new HashSet();
-        hashSet.add(rVar);
-        for (r rVar2 : rVarArr) {
-            s6.a(rVar2, "Null interface");
+        hashSet.add(sVar);
+        for (s sVar2 : sVarArr) {
+            t6.a(sVar2, "Null interface");
         }
-        Collections.addAll((HashSet) i0Var.c, rVarArr);
+        Collections.addAll((HashSet) i0Var.c, sVarArr);
         return i0Var;
     }
 
@@ -56,10 +56,10 @@ public final class a {
         HashSet hashSet = new HashSet();
         HashSet hashSet2 = new HashSet();
         HashSet hashSet3 = new HashSet();
-        hashSet.add(r.a(cls));
+        hashSet.add(s.a(cls));
         for (Class cls2 : clsArr) {
-            s6.a(cls2, "Null interface");
-            hashSet.add(r.a(cls2));
+            t6.a(cls2, "Null interface");
+            hashSet.add(s.a(cls2));
         }
         return new a(null, new HashSet(hashSet), new HashSet(hashSet2), 0, 0, new v(obj, 18), hashSet3);
     }

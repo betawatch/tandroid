@@ -11,7 +11,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class bn0 implements RequestDelegate {
     public final /* synthetic */ boolean a;
@@ -93,7 +93,7 @@ public final class bn0 implements RequestDelegate {
                 Utilities.globalQueue.postRunnable(new ai.s4(this, tLObject, this.d, this.a, 25));
                 return;
             } else {
-                AndroidUtilities.runOnUIThread(new ja0(this, this.a, tL_error, 2));
+                AndroidUtilities.runOnUIThread(new ka0(this, this.a, tL_error, 2));
                 return;
             }
         }

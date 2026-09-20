@@ -11,7 +11,7 @@ import java.util.ArrayDeque;
 import n4.y;
 import u2.f0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class g extends i2.f {
     public final b I;
@@ -192,7 +192,7 @@ public final class g extends i2.f {
         h hVar2;
         if (!this.X || this.Y == null) {
             y yVar = this.c;
-            yVar.n();
+            yVar.e();
             c cVar = this.T;
             if (cVar != null && this.Q != 3 && !this.L) {
                 if (this.U == null) {
@@ -211,7 +211,7 @@ public final class g extends i2.f {
                 }
                 int w10 = w(yVar, this.U, 0);
                 if (w10 == -5) {
-                    s sVar2 = (s) yVar.c;
+                    s sVar2 = (s) yVar.b;
                     e2.d.h(sVar2);
                     this.S = sVar2;
                     this.b0 = true;
@@ -437,7 +437,7 @@ public final class g extends i2.f {
         }
         if (this.S == null) {
             y yVar = this.c;
-            yVar.n();
+            yVar.e();
             h hVar = this.J;
             hVar.clear();
             int w10 = w(yVar, hVar, 2);
@@ -450,7 +450,7 @@ public final class g extends i2.f {
                 }
                 return;
             }
-            s sVar = (s) yVar.c;
+            s sVar = (s) yVar.b;
             e2.d.h(sVar);
             this.S = sVar;
             this.b0 = true;

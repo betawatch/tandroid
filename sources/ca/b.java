@@ -33,19 +33,19 @@ import org.telegram.ui.ActionBar.a2;
 import org.telegram.ui.ActionBar.b2;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.ly0;
+import org.telegram.ui.Components.ky0;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.zn;
 import w9.w;
 import x2.d;
 import x2.e;
-import x2.i;
-import x2.m;
-import x2.p;
+import x2.j;
+import x2.n;
+import x2.q;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
-public final /* synthetic */ class b implements g, MessagesStorage.LongCallback, a2, MessagesController.ErrorDelegate, m {
+public final /* synthetic */ class b implements g, MessagesStorage.LongCallback, a2, MessagesController.ErrorDelegate, n {
     public final /* synthetic */ int a;
     public final /* synthetic */ boolean b;
     public final /* synthetic */ Object c;
@@ -117,23 +117,23 @@ public final /* synthetic */ class b implements g, MessagesStorage.LongCallback,
         taskCompletionSource.trySetResult(bVar);
     }
 
-    @Override // x2.m
+    @Override // x2.n
     public a1 b(int i10, l1 l1Var, int[] iArr) {
-        p pVar = (p) this.c;
-        i iVar = (i) this.d;
+        q qVar = (q) this.c;
+        j jVar = (j) this.d;
         int[] iArr2 = (int[]) this.e;
-        pVar.getClass();
-        d dVar = new d(pVar, iVar);
+        qVar.getClass();
+        d dVar = new d(qVar, jVar);
         int i11 = iArr2[i10];
         f0 u10 = i0.u();
         for (int i12 = 0; i12 < l1Var.a; i12++) {
-            u10.b(new e(i10, l1Var, i12, iVar, iArr[i12], this.b, dVar, i11));
+            u10.b(new e(i10, l1Var, i12, jVar, iArr[i12], this.b, dVar, i11));
         }
         return u10.i();
     }
 
     @Override // org.telegram.ui.ActionBar.a2
-    public void f(b2 b2Var, int i10) {
+    public void k(b2 b2Var, int i10) {
         switch (this.a) {
             case 2:
                 boolean z10 = this.b;
@@ -193,22 +193,22 @@ public final /* synthetic */ class b implements g, MessagesStorage.LongCallback,
                     }
                 }
             default:
-                ly0 ly0Var = (ly0) this.c;
+                ky0 ky0Var = (ky0) this.c;
                 Utilities.Callback2 callback2 = (Utilities.Callback2) this.d;
                 Context context2 = (Context) this.e;
                 boolean z13 = this.b;
-                String trim2 = ly0Var.getText().toString().trim();
+                String trim2 = ky0Var.getText().toString().trim();
                 if (!TextUtils.isEmpty(trim2) && !TextUtils.isEmpty(AndroidUtilities.translitSafe(trim2.toString()))) {
-                    AndroidUtilities.hideKeyboard(ly0Var);
+                    AndroidUtilities.hideKeyboard(ky0Var);
                     b2 b2Var2 = new b2(context2, 3, z13 ? null : new ai.d());
                     b2Var2.q(250L);
-                    callback2.run(trim2, new d5(b2Var2, b2Var, ly0Var, 6));
+                    callback2.run(trim2, new d5(b2Var2, b2Var, ky0Var, 6));
                     break;
                 } else {
-                    ly0Var.setErrorText(".");
-                    AndroidUtilities.shakeViewSpring(ly0Var, -6.0f);
+                    ky0Var.setErrorText(".");
+                    AndroidUtilities.shakeViewSpring(ky0Var, -6.0f);
                     BotWebViewVibrationEffect.APP_ERROR.vibrate();
-                    AndroidUtilities.showKeyboard(ly0Var);
+                    AndroidUtilities.showKeyboard(ky0Var);
                     break;
                 }
                 break;

@@ -9,7 +9,7 @@ import org.telegram.messenger.camera.CameraController;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class ig implements Runnable {
     public final /* synthetic */ ChatActivityEnterView a;
@@ -43,10 +43,10 @@ public final class ig implements Runnable {
                 activity.requestPermissions(new String[]{"android.permission.RECORD_AUDIO"}, 3);
                 return;
             }
-            chatActivityEnterView.Y2.a1(1);
+            chatActivityEnterView.Y2.b1(1);
             chatActivityEnterView.C2 = -1.0f;
             ng ngVar2 = chatActivityEnterView.Y2;
-            TL_stories.StoryItem d12 = ngVar2 != null ? ngVar2.d1() : null;
+            TL_stories.StoryItem e12 = ngVar2 != null ? ngVar2.e1() : null;
             MediaController mediaController = MediaController.getInstance();
             int i10 = chatActivityEnterView.Q;
             long j3 = chatActivityEnterView.P2;
@@ -54,7 +54,7 @@ public final class ig implements Runnable {
             threadMessage = chatActivityEnterView.getThreadMessage();
             int i11 = chatActivityEnterView.F2;
             org.telegram.ui.zn znVar = chatActivityEnterView.O2;
-            mediaController.startRecording(i10, j3, messageObject, threadMessage, d12, i11, true, znVar != null ? znVar.C8() : null, chatActivityEnterView.getSendMonoForumPeerId(), chatActivityEnterView.getSendMessageSuggestionParams());
+            mediaController.startRecording(i10, j3, messageObject, threadMessage, e12, i11, true, znVar != null ? znVar.C8() : null, chatActivityEnterView.getSendMonoForumPeerId(), chatActivityEnterView.getSendMessageSuggestionParams());
             chatActivityEnterView.E2 = true;
             chatActivityEnterView.K1(0, true);
             wg wgVar = chatActivityEnterView.Y0;

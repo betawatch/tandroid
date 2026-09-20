@@ -14,7 +14,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class il0 implements Utilities.Callback {
     public final /* synthetic */ int a = 1;
@@ -30,8 +30,8 @@ public final /* synthetic */ class il0 implements Utilities.Callback {
     public final /* synthetic */ Object k;
     public final /* synthetic */ Object l;
 
-    public /* synthetic */ il0(g71 g71Var, String str, boolean z10, ArrayList arrayList, HashMap hashMap, ArrayList arrayList2, LinkedHashSet linkedHashSet, LinkedHashSet linkedHashSet2, ArrayList arrayList3, ArrayList arrayList4, boolean z11) {
-        this.e = g71Var;
+    public /* synthetic */ il0(j71 j71Var, String str, boolean z10, ArrayList arrayList, HashMap hashMap, ArrayList arrayList2, LinkedHashSet linkedHashSet, LinkedHashSet linkedHashSet2, ArrayList arrayList3, ArrayList arrayList4, boolean z11) {
+        this.e = j71Var;
         this.b = str;
         this.c = z10;
         this.f = arrayList;
@@ -58,7 +58,7 @@ public final /* synthetic */ class il0 implements Utilities.Callback {
                 final boolean z11 = this.d;
                 final org.telegram.ui.web.d1 d1Var = (org.telegram.ui.web.d1) this.k;
                 final String str2 = (String) this.h;
-                final org.telegram.ui.ActionBar.e6 e6Var = (org.telegram.ui.ActionBar.e6) this.l;
+                final org.telegram.ui.ActionBar.f6 f6Var = (org.telegram.ui.ActionBar.f6) this.l;
                 final Integer num = (Integer) obj;
                 if (iArr[0] != num.intValue()) {
                     final org.telegram.ui.ActionBar.b2 b2Var = new org.telegram.ui.ActionBar.b2(ApplicationLoader.applicationContext, 3, null);
@@ -77,7 +77,7 @@ public final /* synthetic */ class il0 implements Utilities.Callback {
                             }
                             if (tL_error != null) {
                                 if (!"URL_EXPIRED".equalsIgnoreCase(tL_error.text)) {
-                                    org.telegram.ui.Cells.c1.p(f3Var2.topBulletinContainer, f3Var2.getResourcesProvider(), tL_error, false);
+                                    org.telegram.ui.Cells.c1.s(f3Var2.topBulletinContainer, f3Var2.getResourcesProvider(), tL_error, false);
                                     return;
                                 }
                                 f3Var2.dismiss();
@@ -85,7 +85,7 @@ public final /* synthetic */ class il0 implements Utilities.Callback {
                                 int i10 = R.raw.error;
                                 String string = LocaleController.getString(R.string.BotAuthLoggedInFailTitle);
                                 String str3 = str2;
-                                a2.M(string, TextUtils.isEmpty(str3) ? LocaleController.getString(R.string.BotAuthLoggedInFailNoDomain) : AndroidUtilities.replaceSingleLinkBold(LocaleController.formatString(R.string.BotAuthLoggedInFail, str3), org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Gi, e6Var)), i10).j();
+                                a2.M(string, TextUtils.isEmpty(str3) ? LocaleController.getString(R.string.BotAuthLoggedInFailNoDomain) : AndroidUtilities.replaceSingleLinkBold(LocaleController.formatString(R.string.BotAuthLoggedInFail, str3), org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Gi, f6Var)), i10).j();
                             }
                         }
                     });
@@ -93,7 +93,7 @@ public final /* synthetic */ class il0 implements Utilities.Callback {
                 }
                 break;
             default:
-                final g71 g71Var = (g71) this.e;
+                final j71 j71Var = (j71) this.e;
                 final String str3 = this.b;
                 final boolean z12 = this.c;
                 final ArrayList arrayList = (ArrayList) this.f;
@@ -104,73 +104,73 @@ public final /* synthetic */ class il0 implements Utilities.Callback {
                 final ArrayList arrayList3 = (ArrayList) this.k;
                 final ArrayList arrayList4 = (ArrayList) this.l;
                 final boolean z13 = this.d;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.r51
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.u51
                     @Override // java.lang.Runnable
                     public final void run() {
-                        g71 g71Var2 = g71.this;
-                        k51 k51Var = g71Var2.I1;
-                        if (k51Var != null) {
-                            AndroidUtilities.cancelRunOnUIThread(k51Var);
-                            g71Var2.I1 = null;
+                        j71 j71Var2 = j71.this;
+                        n51 n51Var = j71Var2.I1;
+                        if (n51Var != null) {
+                            AndroidUtilities.cancelRunOnUIThread(n51Var);
+                            j71Var2.I1 = null;
                         }
-                        String str4 = g71Var2.z1;
+                        String str4 = j71Var2.z1;
                         String str5 = str3;
                         if (str5 != str4) {
                             return;
                         }
-                        g71Var2.y1 = true;
-                        g71Var2.z(true, z12);
-                        x51 x51Var = g71Var2.f0;
-                        if (x51Var != null) {
-                            x51Var.d(true);
+                        j71Var2.y1 = true;
+                        j71Var2.z(true, z12);
+                        a61 a61Var = j71Var2.f0;
+                        if (a61Var != null) {
+                            a61Var.d(true);
                         }
-                        ArrayList arrayList5 = g71Var2.A1;
+                        ArrayList arrayList5 = j71Var2.A1;
                         if (arrayList5 == null) {
-                            g71Var2.A1 = new ArrayList();
+                            j71Var2.A1 = new ArrayList();
                         } else {
                             arrayList5.clear();
                         }
-                        ArrayList arrayList6 = g71Var2.D1;
+                        ArrayList arrayList6 = j71Var2.D1;
                         if (arrayList6 == null) {
-                            g71Var2.D1 = new ArrayList();
+                            j71Var2.D1 = new ArrayList();
                         } else {
                             arrayList6.clear();
                         }
-                        ArrayList arrayList7 = g71Var2.C1;
+                        ArrayList arrayList7 = j71Var2.C1;
                         if (arrayList7 == null) {
-                            g71Var2.C1 = new ArrayList();
+                            j71Var2.C1 = new ArrayList();
                         } else {
                             arrayList7.clear();
                         }
-                        ArrayList arrayList8 = g71Var2.B1;
+                        ArrayList arrayList8 = j71Var2.B1;
                         if (arrayList8 == null) {
-                            g71Var2.B1 = new ArrayList();
+                            j71Var2.B1 = new ArrayList();
                         } else {
                             arrayList8.clear();
                         }
                         int i10 = 0;
-                        g71Var2.i0.v0(0);
-                        int i11 = g71Var2.W;
+                        j71Var2.i0.v0(0);
+                        int i11 = j71Var2.W;
                         if (i11 == 1 || i11 == 14 || i11 == 11 || i11 == 2) {
                             ArrayList arrayList9 = arrayList;
                             if (arrayList9.isEmpty()) {
                                 TLRPC.TL_availableReaction tL_availableReaction = (TLRPC.TL_availableReaction) hashMap.get(str5);
                                 if (tL_availableReaction != null) {
-                                    g71Var2.A1.add(zg.o0.c(tL_availableReaction));
+                                    j71Var2.A1.add(zg.o0.c(tL_availableReaction));
                                 }
                             } else {
-                                g71Var2.A1.addAll(arrayList9);
+                                j71Var2.A1.addAll(arrayList9);
                             }
                             ArrayList arrayList10 = arrayList2;
                             if (!arrayList10.isEmpty()) {
-                                g71Var2.B1.addAll(arrayList10);
+                                j71Var2.B1.addAll(arrayList10);
                             }
                         }
                         Iterator it = linkedHashSet.iterator();
                         while (it.hasNext()) {
                             Long l4 = (Long) it.next();
                             l4.getClass();
-                            ArrayList arrayList11 = g71Var2.A1;
+                            ArrayList arrayList11 = j71Var2.A1;
                             zg.o0 o0Var = new zg.o0();
                             long longValue = l4.longValue();
                             o0Var.g = longValue;
@@ -179,24 +179,24 @@ public final /* synthetic */ class il0 implements Utilities.Callback {
                         }
                         Iterator it2 = linkedHashSet2.iterator();
                         while (it2.hasNext()) {
-                            g71Var2.A1.add(zg.o0.b((String) it2.next()));
+                            j71Var2.A1.add(zg.o0.b((String) it2.next()));
                         }
-                        g71Var2.D1.addAll(arrayList3);
+                        j71Var2.D1.addAll(arrayList3);
                         ArrayList arrayList12 = arrayList4;
                         int size = arrayList12.size();
                         while (i10 < size) {
                             Object obj2 = arrayList12.get(i10);
                             i10++;
-                            g71Var2.C1.addAll((ArrayList) obj2);
+                            j71Var2.C1.addAll((ArrayList) obj2);
                         }
-                        g71Var2.q0.E(true ^ z13);
+                        j71Var2.q0.E(true ^ z13);
                     }
                 });
                 break;
         }
     }
 
-    public /* synthetic */ il0(int[] iArr, TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth, org.telegram.ui.ActionBar.f3 f3Var, boolean z10, String str, TLRPC.UrlAuthResult urlAuthResult, String[] strArr, boolean z11, org.telegram.ui.web.d1 d1Var, String str2, org.telegram.ui.ActionBar.e6 e6Var) {
+    public /* synthetic */ il0(int[] iArr, TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth, org.telegram.ui.ActionBar.f3 f3Var, boolean z10, String str, TLRPC.UrlAuthResult urlAuthResult, String[] strArr, boolean z11, org.telegram.ui.web.d1 d1Var, String str2, org.telegram.ui.ActionBar.f6 f6Var) {
         this.e = iArr;
         this.f = tL_messages_requestUrlAuth;
         this.g = f3Var;
@@ -207,6 +207,6 @@ public final /* synthetic */ class il0 implements Utilities.Callback {
         this.d = z11;
         this.k = d1Var;
         this.h = str2;
-        this.l = e6Var;
+        this.l = f6Var;
     }
 }

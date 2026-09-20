@@ -13,15 +13,15 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.h9;
-import org.telegram.ui.Components.lj0;
-import org.telegram.ui.Components.x6;
+import org.telegram.ui.Components.g9;
+import org.telegram.ui.Components.kj0;
+import org.telegram.ui.Components.w6;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
-public final class v0 extends Drawable implements x6 {
+public final class v0 extends Drawable implements w6 {
     public final Paint a;
     public final Paint b;
     public final Paint c;
@@ -49,29 +49,29 @@ public final class v0 extends Drawable implements x6 {
         Drawable mutate = context.getResources().getDrawable(R.drawable.filled_location).mutate();
         this.f = mutate;
         mutate.setColorFilter(new PorterDuffColorFilter(j6.w0(null, j6.L5, false), PorterDuff.Mode.SRC_IN));
-        h9 h9Var = new h9((e6) null);
-        h9Var.r(user);
-        imageReceiver.setForUserOrChat(user, h9Var);
+        g9 g9Var = new g9((f6) null);
+        g9Var.r(user);
+        imageReceiver.setForUserOrChat(user, g9Var);
         imageReceiver.setRoundRadius(AndroidUtilities.dp(25.0f));
-        h9 h9Var2 = new h9((e6) null);
-        h9Var2.r(user2);
-        imageReceiver2.setForUserOrChat(user2, h9Var2);
+        g9 g9Var2 = new g9((f6) null);
+        g9Var2.r(user2);
+        imageReceiver2.setForUserOrChat(user2, g9Var2);
         imageReceiver2.setRoundRadius(AndroidUtilities.dp(25.0f));
     }
 
-    @Override // org.telegram.ui.Components.x6
-    public final void a(lj0 lj0Var) {
-        this.e.setParentView(lj0Var);
-        this.d.setParentView(lj0Var);
+    @Override // org.telegram.ui.Components.w6
+    public final void a(kj0 kj0Var) {
+        this.e.setParentView(kj0Var);
+        this.d.setParentView(kj0Var);
     }
 
-    @Override // org.telegram.ui.Components.x6
+    @Override // org.telegram.ui.Components.w6
     public final void b(ImageReceiver imageReceiver) {
         this.d.onDetachedFromWindow();
         this.e.onDetachedFromWindow();
     }
 
-    @Override // org.telegram.ui.Components.x6
+    @Override // org.telegram.ui.Components.w6
     public final void c(ImageReceiver imageReceiver) {
         this.d.onAttachedToWindow();
         this.e.onAttachedToWindow();

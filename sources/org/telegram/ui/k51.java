@@ -1,68 +1,69 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.concurrent.CountDownLatch;
+import android.graphics.SurfaceTexture;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageLoader;
-import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class k51 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ g71 b;
+public final class k51 implements org.telegram.ui.Components.q71, org.telegram.ui.Components.m71 {
+    public final /* synthetic */ l51 a;
 
-    public /* synthetic */ k51(g71 g71Var, int i10) {
-        this.a = i10;
-        this.b = g71Var;
+    public /* synthetic */ k51(l51 l51Var) {
+        this.a = l51Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                g71 g71Var = this.b;
-                g71Var.getClass();
-                HashSet hashSet = zg.e0.a;
-                ff.c cacheOutQueue = ImageLoader.getInstance().getCacheOutQueue();
-                if (cacheOutQueue.b == null) {
-                    cacheOutQueue.b = new CountDownLatch(1);
-                }
-                zg.e0.b = true;
-                zg.e0.e = false;
-                zg.e0.g = false;
-                AndroidUtilities.runOnUIThread(new k51(g71Var, 2), 0L);
-                break;
-            case 1:
-                g71 g71Var2 = this.b;
-                ArrayList arrayList = g71Var2.A1;
-                if (arrayList != null) {
-                    arrayList.clear();
-                }
-                ArrayList arrayList2 = g71Var2.B1;
-                if (arrayList2 != null) {
-                    arrayList2.clear();
-                }
-                ArrayList arrayList3 = g71Var2.D1;
-                if (arrayList3 != null) {
-                    arrayList3.clear();
-                }
-                g71Var2.q0.E(true);
-                break;
-            case 2:
-                this.b.U1.start();
-                break;
-            case 3:
-                this.b.B(true, true, true);
-                break;
-            default:
-                g71 g71Var3 = this.b;
-                NotificationCenter globalInstance = NotificationCenter.getGlobalInstance();
-                k51 k51Var = g71Var3.R1;
-                globalInstance.removeDelayed(k51Var);
-                NotificationCenter.getGlobalInstance().doOnIdle(k51Var);
-                break;
+    @Override // org.telegram.ui.Components.m71
+    public boolean needUpdate() {
+        return this.a.V.i != null;
+    }
+
+    @Override // org.telegram.ui.Components.q71
+    public /* synthetic */ void onRenderedFirstFrame(j2.a aVar) {
+    }
+
+    @Override // org.telegram.ui.Components.q71
+    public void onStateChanged(boolean z10, int i10) {
+        l51 l51Var = this.a;
+        if (i10 == 4) {
+            l51Var.dismiss();
+        } else {
+            AndroidUtilities.cancelRunOnUIThread(l51Var.Z);
+            AndroidUtilities.runOnUIThread(l51Var.Z, 16L);
         }
+    }
+
+    @Override // org.telegram.ui.Components.q71
+    public /* synthetic */ boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.m71
+    public void onVisualizerUpdate(boolean z10, boolean z11, float[] fArr) {
+        this.a.V.e(z10, true, fArr);
+    }
+
+    @Override // org.telegram.ui.Components.q71
+    public void onRenderedFirstFrame() {
+        AndroidUtilities.runOnUIThread(new e01(this, 12));
+    }
+
+    @Override // org.telegram.ui.Components.q71
+    public /* synthetic */ void onSeekFinished(j2.a aVar) {
+    }
+
+    @Override // org.telegram.ui.Components.q71
+    public /* synthetic */ void onSeekStarted(j2.a aVar) {
+    }
+
+    @Override // org.telegram.ui.Components.q71
+    public /* synthetic */ void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
+    }
+
+    @Override // org.telegram.ui.Components.q71
+    public void onError(org.telegram.ui.Components.t71 t71Var, Exception exc) {
+    }
+
+    @Override // org.telegram.ui.Components.q71
+    public void onVideoSizeChanged(int i10, int i11, int i12, float f7) {
     }
 }

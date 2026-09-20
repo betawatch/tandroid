@@ -3,7 +3,7 @@ package y8;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class b1 extends o6.a implements x8.n {
     public static final Parcelable.Creator<b1> CREATOR = new n0(9);
@@ -84,7 +84,7 @@ public final class b1 extends o6.a implements x8.n {
         sb2.append("', eventId=");
         sb2.append((int) this.n);
         sb2.append(", eventFlags=");
-        hg.k0.s(sb2, this.r, ", categoryId=", this.s, ", categoryCount=");
+        hg.k0.t(sb2, this.r, ", categoryId=", this.s, ", categoryCount=");
         sb2.append((int) this.v);
         sb2.append(", packageName='");
         sb2.append(this.w);

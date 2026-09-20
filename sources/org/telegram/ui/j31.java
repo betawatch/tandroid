@@ -1,19 +1,60 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+import android.app.Activity;
+import android.view.View;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
+
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class j31 extends x61 {
-    public final /* synthetic */ l31 e;
+public final class j31 extends j71 {
+    public final /* synthetic */ l31 d2;
+    public final /* synthetic */ a71[] e2;
+    public final /* synthetic */ m31 f2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j31(l31 l31Var, i31 i31Var) {
-        super(i31Var);
-        this.e = l31Var;
+    public j31(m31 m31Var, m31 m31Var2, Activity activity, Integer num, l31 l31Var, a71[] a71VarArr) {
+        super(m31Var2, activity, false, num, 2, null);
+        this.f2 = m31Var;
+        this.d2 = l31Var;
+        this.e2 = a71VarArr;
     }
 
-    @Override // org.telegram.ui.x61, android.widget.PopupWindow
-    public final void dismiss() {
-        super.dismiss();
-        this.e.n = null;
+    @Override // org.telegram.ui.j71
+    public final void p(View view, Long l4, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
+        int i10;
+        if (l4 == null) {
+            return;
+        }
+        m31 m31Var = this.f2;
+        i10 = ((org.telegram.ui.ActionBar.n2) m31Var).currentAccount;
+        MediaDataController.getInstance(i10).setDoubleTapReaction("animated_" + l4);
+        l31 l31Var = this.d2;
+        if (l31Var != null) {
+            l31Var.a(true);
+        }
+        a71 a71Var = this.e2[0];
+        if (a71Var != null) {
+            m31Var.n = null;
+            a71Var.dismiss();
+        }
+    }
+
+    @Override // org.telegram.ui.j71
+    public final void r(s61 s61Var, zg.o0 o0Var) {
+        int i10;
+        m31 m31Var = this.f2;
+        i10 = ((org.telegram.ui.ActionBar.n2) m31Var).currentAccount;
+        MediaDataController.getInstance(i10).setDoubleTapReaction(o0Var.f);
+        l31 l31Var = this.d2;
+        if (l31Var != null) {
+            l31Var.a(true);
+        }
+        a71 a71Var = this.e2[0];
+        if (a71Var != null) {
+            m31Var.n = null;
+            a71Var.dismiss();
+        }
     }
 }

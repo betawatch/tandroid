@@ -12,13 +12,13 @@ import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class n2 extends Drawable {
     public final Paint a;
     public final LinearGradient[] b;
     public final Matrix c;
-    public final org.telegram.ui.Components.e6 d;
+    public final org.telegram.ui.Components.d6 d;
     public final Path e;
     public final i8 f;
     public int g;
@@ -30,7 +30,7 @@ public final class n2 extends Drawable {
         this.a = new Paint(1);
         this.b = new LinearGradient[2];
         this.c = new Matrix();
-        this.d = new org.telegram.ui.Components.e6(1.0f, new rg.w1(this, 27), 0L, 420L, qr.h);
+        this.d = new org.telegram.ui.Components.d6(1.0f, new rg.q1(this, 28), 0L, 420L, qr.h);
         this.e = new Path();
         this.f = new i8(1, 45);
         Paint.Style style = Paint.Style.STROKE;

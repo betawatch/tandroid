@@ -8,13 +8,13 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class q70 extends LinearLayout {
     public final org.telegram.ui.Components.bu a;
     public boolean b;
     public int c;
-    public cu d;
+    public yt d;
     public String e;
     public final p70 f;
     public final /* synthetic */ t70 h;
@@ -24,9 +24,9 @@ public final class q70 extends LinearLayout {
         super(context);
         this.h = t70Var;
         this.f = new p70(this);
-        TextView g10 = org.telegram.messenger.q.g(context, 1, 16.0f);
-        g10.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.j5, false));
-        g10.setText("t.me/addemoji/");
+        TextView f7 = org.telegram.messenger.l0.f(context, 1, 16.0f);
+        f7.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.j5, false));
+        f7.setText("t.me/addemoji/");
         org.telegram.ui.Components.bu buVar = new org.telegram.ui.Components.bu(context, null);
         this.a = buVar;
         buVar.setLines(1);
@@ -43,7 +43,7 @@ public final class q70 extends LinearLayout {
         buVar.setHandlesColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.vf, false));
         buVar.setBackground(null);
         buVar.setHint(LocaleController.getString(R.string.AddEmojiPackLinkHint));
-        addView(g10, w7.y5.t(-2, -2, 16, 20, 0, 0, 0));
+        addView(f7, w7.y5.t(-2, -2, 16, 20, 0, 0, 0));
         addView(buVar, w7.y5.t(-1, -2, 16, -4, 0, 0, 0));
         setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.d6, false));
         setPadding(0, AndroidUtilities.dp(5.0f), 0, AndroidUtilities.dp(5.0f));

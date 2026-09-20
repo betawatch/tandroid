@@ -5,9 +5,9 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class vn0 implements OnCompleteListener, org.telegram.ui.ActionBar.a2, zt {
+public final /* synthetic */ class vn0 implements OnCompleteListener, org.telegram.ui.ActionBar.a2, au {
     public final /* synthetic */ int a;
     public final /* synthetic */ xo0 b;
 
@@ -16,8 +16,8 @@ public final /* synthetic */ class vn0 implements OnCompleteListener, org.telegr
         this.b = xo0Var;
     }
 
-    @Override // org.telegram.ui.zt
-    public void a1(vt vtVar) {
+    @Override // org.telegram.ui.au
+    public void Z0(vt vtVar) {
         switch (this.a) {
             case 2:
                 xo0 xo0Var = this.b;
@@ -34,7 +34,7 @@ public final /* synthetic */ class vn0 implements OnCompleteListener, org.telegr
     }
 
     @Override // org.telegram.ui.ActionBar.a2
-    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+    public void k(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
         switch (this.a) {
             case 1:
                 xo0 xo0Var = this.b;

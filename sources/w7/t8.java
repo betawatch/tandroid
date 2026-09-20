@@ -1,41 +1,35 @@
 package w7;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public abstract class t8 {
-    public static String a(String str) {
-        if (d(str)) {
-            return null;
-        }
-        return "American Express".equalsIgnoreCase(str) ? "American Express" : "MasterCard".equalsIgnoreCase(str) ? "MasterCard" : "Diners Club".equalsIgnoreCase(str) ? "Diners Club" : "Discover".equalsIgnoreCase(str) ? "Discover" : "JCB".equalsIgnoreCase(str) ? "JCB" : "Visa".equalsIgnoreCase(str) ? "Visa" : "Unknown";
-    }
-
-    public static String b(String str) {
-        if (d(str)) {
-            return null;
-        }
-        return "credit".equalsIgnoreCase(str) ? "credit" : "debit".equalsIgnoreCase(str) ? "debit" : "prepaid".equalsIgnoreCase(str) ? "prepaid" : "unknown";
-    }
-
-    public static boolean c(String str, String... strArr) {
-        if (str != null) {
-            for (String str2 : strArr) {
-                if (str.startsWith(str2)) {
-                    return true;
-                }
+    public static HashMap a(uc.a aVar) {
+        HashMap hashMap = new HashMap();
+        HashMap hashMap2 = new HashMap();
+        hashMap2.put("number", u8.e(aVar.a));
+        hashMap2.put("cvc", u8.e(aVar.b));
+        hashMap2.put("exp_month", aVar.c);
+        hashMap2.put("exp_year", aVar.d);
+        hashMap2.put("name", u8.e(aVar.e));
+        hashMap2.put("currency", u8.e(aVar.n));
+        hashMap2.put("address_line1", u8.e(aVar.f));
+        hashMap2.put("address_line2", u8.e(aVar.g));
+        hashMap2.put("address_city", u8.e(aVar.h));
+        hashMap2.put("address_zip", u8.e(aVar.j));
+        hashMap2.put("address_state", u8.e(aVar.i));
+        hashMap2.put("address_country", u8.e(aVar.k));
+        Iterator it = new HashSet(hashMap2.keySet()).iterator();
+        while (it.hasNext()) {
+            String str = (String) it.next();
+            if (hashMap2.get(str) == null) {
+                hashMap2.remove(str);
             }
         }
-        return false;
-    }
-
-    public static boolean d(String str) {
-        return str == null || str.trim().length() == 0;
-    }
-
-    public static String e(String str) {
-        if (d(str)) {
-            return null;
-        }
-        return str;
+        hashMap.put("card", hashMap2);
+        return hashMap;
     }
 }

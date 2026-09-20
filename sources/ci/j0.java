@@ -11,12 +11,12 @@ import org.telegram.messenger.R;
 import org.telegram.ui.Components.Crop.CropAreaView;
 import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public abstract class j0 extends FrameLayout {
     public final d7 a;
-    public final org.telegram.ui.Components.e6 b;
-    public final org.telegram.ui.Components.e6 c;
+    public final org.telegram.ui.Components.d6 b;
+    public final org.telegram.ui.Components.d6 c;
     public final i0 d;
     public final FrameLayout e;
     public final g0 f;
@@ -39,8 +39,8 @@ public abstract class j0 extends FrameLayout {
         i0 i0Var = new i0(this, context);
         this.d = i0Var;
         qr qrVar = qr.h;
-        this.b = new org.telegram.ui.Components.e6(i0Var, 0L, 320L, qrVar);
-        this.c = new org.telegram.ui.Components.e6(this, 0L, 360L, qrVar);
+        this.b = new org.telegram.ui.Components.d6(i0Var, 0L, 320L, qrVar);
+        this.c = new org.telegram.ui.Components.d6(this, 0L, 360L, qrVar);
         g0 g0Var = new g0(this, context, 0);
         this.f = g0Var;
         g0Var.setListener(new a4.m(this, 8));
@@ -59,7 +59,7 @@ public abstract class j0 extends FrameLayout {
         com.google.android.gms.internal.vision.e2.l(14.0f, 1, textView);
         textView.setBackground(org.telegram.ui.ActionBar.j6.f0(-12763843, 0, -1));
         textView.setTextColor(-1);
-        textView.setPadding(org.telegram.ui.Cells.c1.b(12.0f, R.string.Cancel, textView), 0, AndroidUtilities.dp(12.0f), 0);
+        textView.setPadding(org.telegram.ui.Cells.c1.c(12.0f, R.string.Cancel, textView), 0, AndroidUtilities.dp(12.0f), 0);
         frameLayout2.addView(textView, w7.y5.e(-2, -1, 115));
         final int i10 = 0;
         textView.setOnClickListener(new View.OnClickListener(this) { // from class: ci.f0
@@ -103,7 +103,7 @@ public abstract class j0 extends FrameLayout {
         textView2.setTypeface(AndroidUtilities.bold());
         textView2.setBackground(org.telegram.ui.ActionBar.j6.f0(-12763843, 0, -1));
         textView2.setTextColor(-1);
-        textView2.setPadding(org.telegram.ui.Cells.c1.b(12.0f, R.string.CropReset, textView2), 0, AndroidUtilities.dp(12.0f), 0);
+        textView2.setPadding(org.telegram.ui.Cells.c1.c(12.0f, R.string.CropReset, textView2), 0, AndroidUtilities.dp(12.0f), 0);
         frameLayout2.addView(textView2, w7.y5.e(-2, -1, 113));
         final int i11 = 1;
         textView2.setOnClickListener(new View.OnClickListener(this) { // from class: ci.f0
@@ -147,7 +147,7 @@ public abstract class j0 extends FrameLayout {
         textView3.setTypeface(AndroidUtilities.bold());
         textView3.setBackground(org.telegram.ui.ActionBar.j6.f0(-12763843, 0, -1));
         textView3.setTextColor(-15098625);
-        textView3.setPadding(org.telegram.ui.Cells.c1.b(12.0f, R.string.StoryCrop, textView3), 0, AndroidUtilities.dp(12.0f), 0);
+        textView3.setPadding(org.telegram.ui.Cells.c1.c(12.0f, R.string.StoryCrop, textView3), 0, AndroidUtilities.dp(12.0f), 0);
         frameLayout2.addView(textView3, w7.y5.e(-2, -1, 117));
         final int i12 = 2;
         textView3.setOnClickListener(new View.OnClickListener(this) { // from class: ci.f0
@@ -262,18 +262,18 @@ public abstract class j0 extends FrameLayout {
         float rotation = g0Var.getRotation();
         lg.f fVar = this.h;
         fVar.setRotation(rotation);
-        org.telegram.ui.Components.e6 e6Var = this.b;
+        org.telegram.ui.Components.d6 d6Var = this.b;
         if (cropState != null) {
             fVar.b(cropState.cropRotate);
             fVar.setRotated(cropState.transformRotation != 0);
             fVar.setMirrored(cropState.mirrored);
-            e6Var.f(cropState.mirrored, false);
+            d6Var.f(cropState.mirrored, false);
         } else {
             fVar.b(0.0f);
             fVar.setRotated(false);
             fVar.setMirrored(false);
-            e6Var.getClass();
-            e6Var.d(0.0f, false);
+            d6Var.getClass();
+            d6Var.d(0.0f, false);
         }
         g0Var.r(false);
         this.c.d(r5.i, true);

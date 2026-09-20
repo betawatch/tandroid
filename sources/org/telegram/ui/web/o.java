@@ -4,12 +4,12 @@ import android.text.TextUtils;
 import android.widget.EditText;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.g5;
-import org.telegram.ui.Components.n61;
+import org.telegram.ui.Components.m61;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class o extends g5 {
-    public final i2.g0 f = new i2.g0(this, 28);
+    public final i2.g0 f = new i2.g0(this, 29);
     public final /* synthetic */ p h;
 
     public o(p pVar) {
@@ -26,9 +26,9 @@ public final class o extends g5 {
             iVar.c();
             pVar.f = null;
         }
-        n61 n61Var = pVar.a;
-        if (n61Var != null) {
-            n61Var.Y2.N(true);
+        m61 m61Var = pVar.a;
+        if (m61Var != null) {
+            m61Var.Y2.N(true);
             pVar.a.X2.h1(0, 0);
         }
     }
@@ -53,9 +53,9 @@ public final class o extends g5 {
             AndroidUtilities.cancelRunOnUIThread(g0Var);
             AndroidUtilities.runOnUIThread(g0Var, 500L);
         }
-        n61 n61Var = pVar.a;
-        if (n61Var != null) {
-            n61Var.Y2.N(true);
+        m61 m61Var = pVar.a;
+        if (m61Var != null) {
+            m61Var.Y2.N(true);
             if (z10 != (!TextUtils.isEmpty(obj))) {
                 pVar.a.X2.h1(0, 0);
             }

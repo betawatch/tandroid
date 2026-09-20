@@ -23,10 +23,10 @@ import java.util.Map;
 import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.telegram.messenger.MediaController;
-import v7.m7;
-import v7.r6;
+import v7.n7;
+import v7.s6;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class j extends v2.k {
     public static final AtomicInteger c0 = new AtomicInteger();
@@ -87,7 +87,7 @@ public final class j extends v2.k {
     }
 
     public static byte[] e(String str) {
-        if (r6.b(str).startsWith("0x")) {
+        if (s6.b(str).startsWith("0x")) {
             str = str.substring(2);
         }
         byte[] byteArray = new BigInteger(str, 16).toByteArray();
@@ -98,7 +98,7 @@ public final class j extends v2.k {
     }
 
     @Override // y2.j
-    public final void D() {
+    public final void H() {
         this.W = true;
     }
 
@@ -150,7 +150,7 @@ public final class j extends v2.k {
         try {
             c3.l h = h(hVar, b10);
             if (z11) {
-                h.g(this.U, false);
+                h.h(this.U, false);
             }
             do {
                 try {
@@ -174,10 +174,10 @@ public final class j extends v2.k {
             this.U = (int) (j3 - mVar.e);
         } catch (Exception unused) {
         } catch (Throwable th3) {
-            m7.a(hVar);
+            n7.a(hVar);
             throw th3;
         }
-        m7.a(hVar);
+        n7.a(hVar);
     }
 
     public final int f(int i10) {
@@ -219,7 +219,7 @@ public final class j extends v2.k {
                 lVar.f = 0;
                 try {
                     vVar.G(10);
-                    lVar.h(vVar.a, 0, 10, false);
+                    lVar.i(vVar.a, 0, 10, false);
                 } catch (EOFException unused) {
                     j3 = -9223372036854775807L;
                 }
@@ -236,7 +236,7 @@ public final class j extends v2.k {
                         vVar.G(i12);
                         System.arraycopy(bArr, 0, vVar.a, 0, 10);
                     }
-                    lVar.h(vVar.a, 10, w10, false);
+                    lVar.i(vVar.a, 10, w10, false);
                     p0 c10 = this.O.c(w10, vVar.a);
                     if (c10 != null) {
                         for (o0 o0Var : c10.a) {

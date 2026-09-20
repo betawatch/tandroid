@@ -22,9 +22,9 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
-import w7.u6;
+import w7.v6;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public class MP4Builder {
     private boolean splitMdat;
@@ -124,13 +124,13 @@ public class MP4Builder {
         e2.q(re.a.c(f5.m.Q, mVar, mVar, date));
         mVar.e = date;
         long j3 = 4294967296L;
-        if (u6.a(date) >= 4294967296L) {
+        if (v6.a(date) >= 4294967296L) {
             mVar.h();
         }
         Date date2 = new Date();
         e2.q(re.a.c(f5.m.R, mVar, mVar, date2));
         mVar.f = date2;
-        if (u6.a(date2) >= 4294967296L) {
+        if (v6.a(date2) >= 4294967296L) {
             mVar.h();
         }
         e2.q(re.a.c(f5.m.U, mVar, mVar, dVar));
@@ -316,7 +316,7 @@ public class MP4Builder {
         Date creationTime = track.getCreationTime();
         e2.q(re.a.c(y.P, yVar, yVar, creationTime));
         yVar.e = creationTime;
-        if (u6.a(creationTime) >= 4294967296L) {
+        if (v6.a(creationTime) >= 4294967296L) {
             yVar.h();
         }
         long timescale = (getTimescale(mp4Movie) * track.getDuration()) / track.getTimeScale();
@@ -336,7 +336,7 @@ public class MP4Builder {
         Date date = new Date();
         e2.q(re.a.c(y.Q, yVar, yVar, date));
         yVar.f = date;
-        if (u6.a(date) >= 4294967296L) {
+        if (v6.a(date) >= 4294967296L) {
             yVar.h();
         }
         long trackId = track.getTrackId() + 1;
@@ -539,7 +539,7 @@ public class MP4Builder {
     public void createSidx(Track track, f5.p pVar) {
     }
 
-    /* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+    /* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
     public static class InterleaveChunkMdat implements f5.b {
         private long contentSize;
         private long dataOffset;

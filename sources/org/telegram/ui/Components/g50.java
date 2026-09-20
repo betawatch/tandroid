@@ -2,15 +2,15 @@ package org.telegram.ui.Components;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class g50 extends o50 {
-    public final /* synthetic */ b60 d;
+    public final /* synthetic */ a60 d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public g50(b60 b60Var, Context context) {
-        super(b60Var, context);
-        this.d = b60Var;
+    public g50(a60 a60Var, Context context) {
+        super(a60Var, context);
+        this.d = a60Var;
     }
 
     @Override // android.view.View

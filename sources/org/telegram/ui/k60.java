@@ -42,7 +42,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class k60 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -61,7 +61,7 @@ public final /* synthetic */ class k60 implements View.OnClickListener {
     */
     public final void onClick(View view) {
         int b10;
-        org.telegram.ui.Components.zy0 zy0Var;
+        org.telegram.ui.Components.yy0 yy0Var;
         final int i10 = 4;
         final int i11 = 3;
         final int i12 = 2;
@@ -103,42 +103,42 @@ public final /* synthetic */ class k60 implements View.OnClickListener {
                 arrayList.clear();
                 break;
             case 6:
-                final bf0 bf0Var = (bf0) this.b;
-                xg0 xg0Var = bf0Var.y;
-                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(xg0Var.getParentActivity());
+                final cf0 cf0Var = (cf0) this.b;
+                yg0 yg0Var = cf0Var.y;
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(yg0Var.getParentActivity());
                 alertDialog$Builder.a.R = LocaleController.getString("RestorePasswordNoEmailTitle", R.string.RestorePasswordNoEmailTitle);
                 alertDialog$Builder.a.T = LocaleController.getString("RestoreEmailTroubleText", R.string.RestoreEmailTroubleText);
-                alertDialog$Builder.k(LocaleController.getString(R.string.OK), new org.telegram.ui.ActionBar.a2() { // from class: org.telegram.ui.af0
+                alertDialog$Builder.k(LocaleController.getString(R.string.OK), new org.telegram.ui.ActionBar.a2() { // from class: org.telegram.ui.bf0
                     @Override // org.telegram.ui.ActionBar.a2
-                    public final void f(org.telegram.ui.ActionBar.b2 b2Var, int i14) {
+                    public final void k(org.telegram.ui.ActionBar.b2 b2Var, int i14) {
                         switch (i13) {
                             case 0:
-                                bf0Var.y.u1(6, true, new Bundle(), true);
+                                cf0Var.y.u1(6, true, new Bundle(), true);
                                 break;
                             default:
-                                bf0 bf0Var2 = bf0Var;
-                                xg0.n0(bf0Var2.y, bf0Var2.r, bf0Var2.s, bf0Var2.v);
+                                cf0 cf0Var2 = cf0Var;
+                                yg0.n0(cf0Var2.y, cf0Var2.r, cf0Var2.s, cf0Var2.v);
                                 break;
                         }
                     }
                 });
                 String string = LocaleController.getString(R.string.ResetAccount);
                 final char c10 = 1 == true ? 1 : 0;
-                alertDialog$Builder.h(string, new org.telegram.ui.ActionBar.a2() { // from class: org.telegram.ui.af0
+                alertDialog$Builder.h(string, new org.telegram.ui.ActionBar.a2() { // from class: org.telegram.ui.bf0
                     @Override // org.telegram.ui.ActionBar.a2
-                    public final void f(org.telegram.ui.ActionBar.b2 b2Var, int i14) {
+                    public final void k(org.telegram.ui.ActionBar.b2 b2Var, int i14) {
                         switch (c10) {
                             case 0:
-                                bf0Var.y.u1(6, true, new Bundle(), true);
+                                cf0Var.y.u1(6, true, new Bundle(), true);
                                 break;
                             default:
-                                bf0 bf0Var2 = bf0Var;
-                                xg0.n0(bf0Var2.y, bf0Var2.r, bf0Var2.s, bf0Var2.v);
+                                cf0 cf0Var2 = cf0Var;
+                                yg0.n0(cf0Var2.y, cf0Var2.r, cf0Var2.s, cf0Var2.v);
                                 break;
                         }
                     }
                 });
-                Dialog showDialog = xg0Var.showDialog(alertDialog$Builder.a);
+                Dialog showDialog = yg0Var.showDialog(alertDialog$Builder.a);
                 if (showDialog != null) {
                     showDialog.setCanceledOnTouchOutside(false);
                     showDialog.setCancelable(false);
@@ -146,22 +146,22 @@ public final /* synthetic */ class k60 implements View.OnClickListener {
                 }
                 break;
             case 7:
-                jf0 jf0Var = (jf0) this.b;
-                xg0 xg0Var2 = jf0Var.E;
-                if (xg0Var2.V.getTag() == null) {
-                    AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(xg0Var2.getParentActivity());
+                kf0 kf0Var = (kf0) this.b;
+                yg0 yg0Var2 = kf0Var.E;
+                if (yg0Var2.V.getTag() == null) {
+                    AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(yg0Var2.getParentActivity());
                     alertDialog$Builder2.a.R = LocaleController.getString("ResetMyAccountWarning", R.string.ResetMyAccountWarning);
                     alertDialog$Builder2.a.T = LocaleController.getString("ResetMyAccountWarningText", R.string.ResetMyAccountWarningText);
-                    alertDialog$Builder2.k(LocaleController.getString("ResetMyAccountWarningReset", R.string.ResetMyAccountWarningReset), new fu(jf0Var, 20));
+                    alertDialog$Builder2.k(LocaleController.getString("ResetMyAccountWarningReset", R.string.ResetMyAccountWarningReset), new fu(kf0Var, 20));
                     alertDialog$Builder2.h(LocaleController.getString("Cancel", R.string.Cancel), null);
-                    xg0Var2.showDialog(alertDialog$Builder2.a);
+                    yg0Var2.showDialog(alertDialog$Builder2.a);
                     break;
                 }
                 break;
             case 8:
-                mf0 mf0Var = (mf0) this.b;
-                NotificationCenter.getGlobalInstance().addObserver(new lf0(mf0Var), NotificationCenter.onActivityResultReceived);
-                Context context = mf0Var.getContext();
+                nf0 nf0Var = (nf0) this.b;
+                NotificationCenter.getGlobalInstance().addObserver(new mf0(nf0Var), NotificationCenter.onActivityResultReceived);
+                Context context = nf0Var.getContext();
                 HashSet hashSet = new HashSet();
                 HashMap hashMap = new HashMap();
                 String str = BuildVars.GOOGLE_AUTH_CLIENT_ID;
@@ -174,49 +174,49 @@ public final /* synthetic */ class k60 implements View.OnClickListener {
                     }
                 }
                 hashSet.add(GoogleSignInOptions.x);
-                com.google.android.gms.internal.clearcut.v0 a2 = w7.e9.a(context, new GoogleSignInOptions(3, new ArrayList(hashSet), null, true, false, false, str, null, hashMap, null));
-                a2.g().addOnCompleteListener(new z10(18, mf0Var, a2));
+                com.google.android.gms.internal.clearcut.v0 a2 = w7.f9.a(context, new GoogleSignInOptions(3, new ArrayList(hashSet), null, true, false, false, str, null, hashMap, null));
+                a2.g().addOnCompleteListener(new z10(18, nf0Var, a2));
                 break;
             case 9:
-                final wh0 wh0Var = (wh0) this.b;
-                zh0 zh0Var = wh0Var.K;
-                if (wh0Var.n != null) {
-                    View view2 = zh0Var.fragmentView;
+                final xh0 xh0Var = (xh0) this.b;
+                ai0 ai0Var = xh0Var.K;
+                if (xh0Var.n != null) {
+                    View view2 = ai0Var.fragmentView;
                     if (view2 instanceof ViewGroup) {
-                        org.telegram.ui.Components.w70 F = org.telegram.ui.Components.w70.F((ViewGroup) view2, null, wh0Var);
-                        if (wh0Var.n.revoked) {
-                            F.c(R.drawable.msg_delete, LocaleController.getString(R.string.Delete), new Runnable() { // from class: org.telegram.ui.th0
+                        org.telegram.ui.Components.v70 F = org.telegram.ui.Components.v70.F((ViewGroup) view2, null, xh0Var);
+                        if (xh0Var.n.revoked) {
+                            F.c(R.drawable.msg_delete, LocaleController.getString(R.string.Delete), new Runnable() { // from class: org.telegram.ui.uh0
                                 @Override // java.lang.Runnable
                                 public final void run() {
                                     switch (i13) {
                                         case 0:
-                                            final wh0 wh0Var2 = wh0Var;
-                                            final TLRPC.TL_chatInviteExported tL_chatInviteExported = wh0Var2.n;
-                                            AlertDialog$Builder alertDialog$Builder3 = new AlertDialog$Builder(wh0Var2.K.getParentActivity());
+                                            final xh0 xh0Var2 = xh0Var;
+                                            final TLRPC.TL_chatInviteExported tL_chatInviteExported = xh0Var2.n;
+                                            AlertDialog$Builder alertDialog$Builder3 = new AlertDialog$Builder(xh0Var2.K.getParentActivity());
                                             alertDialog$Builder3.a.R = LocaleController.getString(R.string.DeleteLink);
                                             alertDialog$Builder3.a.T = LocaleController.getString(R.string.DeleteLinkHelp);
                                             final int i14 = 1;
-                                            alertDialog$Builder3.k(LocaleController.getString(R.string.Delete), new org.telegram.ui.ActionBar.a2() { // from class: org.telegram.ui.uh0
+                                            alertDialog$Builder3.k(LocaleController.getString(R.string.Delete), new org.telegram.ui.ActionBar.a2() { // from class: org.telegram.ui.vh0
                                                 @Override // org.telegram.ui.ActionBar.a2
-                                                public final void f(org.telegram.ui.ActionBar.b2 b2Var, int i15) {
+                                                public final void k(org.telegram.ui.ActionBar.b2 b2Var, int i15) {
                                                     switch (i14) {
                                                         case 0:
-                                                            wh0Var2.K.e0(tL_chatInviteExported);
+                                                            xh0Var2.K.e0(tL_chatInviteExported);
                                                             break;
                                                         default:
-                                                            wh0Var2.K.b0(tL_chatInviteExported);
+                                                            xh0Var2.K.b0(tL_chatInviteExported);
                                                             break;
                                                     }
                                                 }
                                             });
-                                            hg.k0.o(R.string.Cancel, alertDialog$Builder3, null);
+                                            hg.k0.p(R.string.Cancel, alertDialog$Builder3, null);
                                             break;
                                         case 1:
-                                            wh0 wh0Var3 = wh0Var;
+                                            xh0 xh0Var3 = xh0Var;
                                             try {
-                                                if (wh0Var3.n.link != null) {
-                                                    ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", wh0Var3.n.link));
-                                                    org.telegram.ui.Components.xc.j(wh0Var3.K).j();
+                                                if (xh0Var3.n.link != null) {
+                                                    ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", xh0Var3.n.link));
+                                                    org.telegram.ui.Components.xc.j(xh0Var3.K).j();
                                                     break;
                                                 } else {
                                                     break;
@@ -226,13 +226,13 @@ public final /* synthetic */ class k60 implements View.OnClickListener {
                                                 return;
                                             }
                                         case 2:
-                                            wh0 wh0Var4 = wh0Var;
-                                            zh0 zh0Var2 = wh0Var4.K;
+                                            xh0 xh0Var4 = xh0Var;
+                                            ai0 ai0Var2 = xh0Var4.K;
                                             try {
-                                                if (wh0Var4.n.link != null) {
-                                                    Context context2 = wh0Var4.getContext();
-                                                    String str2 = wh0Var4.n.link;
-                                                    zh0Var2.showDialog(new vh0(wh0Var4, context2, str2, str2, zh0Var2.getResourceProvider()));
+                                                if (xh0Var4.n.link != null) {
+                                                    Context context2 = xh0Var4.getContext();
+                                                    String str2 = xh0Var4.n.link;
+                                                    ai0Var2.showDialog(new wh0(xh0Var4, context2, str2, str2, ai0Var2.getResourceProvider()));
                                                     break;
                                                 } else {
                                                     break;
@@ -242,35 +242,35 @@ public final /* synthetic */ class k60 implements View.OnClickListener {
                                                 return;
                                             }
                                         case 3:
-                                            wh0 wh0Var5 = wh0Var;
-                                            zh0 zh0Var3 = wh0Var5.K;
-                                            TLRPC.TL_chatInviteExported tL_chatInviteExported2 = wh0Var5.n;
-                                            yb0 yb0Var = new yb0(1, zh0Var3.n);
-                                            yb0Var.T = zh0Var3.s0;
-                                            yb0Var.Y(tL_chatInviteExported2);
-                                            zh0Var3.presentFragment(yb0Var);
+                                            xh0 xh0Var5 = xh0Var;
+                                            ai0 ai0Var3 = xh0Var5.K;
+                                            TLRPC.TL_chatInviteExported tL_chatInviteExported2 = xh0Var5.n;
+                                            zb0 zb0Var = new zb0(1, ai0Var3.n);
+                                            zb0Var.T = ai0Var3.s0;
+                                            zb0Var.Y(tL_chatInviteExported2);
+                                            ai0Var3.presentFragment(zb0Var);
                                             break;
                                         default:
-                                            final wh0 wh0Var6 = wh0Var;
-                                            final TLRPC.TL_chatInviteExported tL_chatInviteExported3 = wh0Var6.n;
-                                            AlertDialog$Builder alertDialog$Builder4 = new AlertDialog$Builder(wh0Var6.K.getParentActivity());
+                                            final xh0 xh0Var6 = xh0Var;
+                                            final TLRPC.TL_chatInviteExported tL_chatInviteExported3 = xh0Var6.n;
+                                            AlertDialog$Builder alertDialog$Builder4 = new AlertDialog$Builder(xh0Var6.K.getParentActivity());
                                             alertDialog$Builder4.a.T = LocaleController.getString(R.string.RevokeAlert);
                                             alertDialog$Builder4.a.R = LocaleController.getString(R.string.RevokeLink);
                                             final int i15 = 0;
-                                            alertDialog$Builder4.k(LocaleController.getString(R.string.RevokeButton), new org.telegram.ui.ActionBar.a2() { // from class: org.telegram.ui.uh0
+                                            alertDialog$Builder4.k(LocaleController.getString(R.string.RevokeButton), new org.telegram.ui.ActionBar.a2() { // from class: org.telegram.ui.vh0
                                                 @Override // org.telegram.ui.ActionBar.a2
-                                                public final void f(org.telegram.ui.ActionBar.b2 b2Var, int i152) {
+                                                public final void k(org.telegram.ui.ActionBar.b2 b2Var, int i152) {
                                                     switch (i15) {
                                                         case 0:
-                                                            wh0Var6.K.e0(tL_chatInviteExported3);
+                                                            xh0Var6.K.e0(tL_chatInviteExported3);
                                                             break;
                                                         default:
-                                                            wh0Var6.K.b0(tL_chatInviteExported3);
+                                                            xh0Var6.K.b0(tL_chatInviteExported3);
                                                             break;
                                                     }
                                                 }
                                             });
-                                            hg.k0.o(R.string.Cancel, alertDialog$Builder4, null);
+                                            hg.k0.p(R.string.Cancel, alertDialog$Builder4, null);
                                             break;
                                     }
                                 }
@@ -279,38 +279,38 @@ public final /* synthetic */ class k60 implements View.OnClickListener {
                             int i14 = R.drawable.msg_copy;
                             String string2 = LocaleController.getString(R.string.CopyLink);
                             final char c11 = 1 == true ? 1 : 0;
-                            F.c(i14, string2, new Runnable() { // from class: org.telegram.ui.th0
+                            F.c(i14, string2, new Runnable() { // from class: org.telegram.ui.uh0
                                 @Override // java.lang.Runnable
                                 public final void run() {
                                     switch (c11) {
                                         case 0:
-                                            final wh0 wh0Var2 = wh0Var;
-                                            final TLRPC.TL_chatInviteExported tL_chatInviteExported = wh0Var2.n;
-                                            AlertDialog$Builder alertDialog$Builder3 = new AlertDialog$Builder(wh0Var2.K.getParentActivity());
+                                            final xh0 xh0Var2 = xh0Var;
+                                            final TLRPC.TL_chatInviteExported tL_chatInviteExported = xh0Var2.n;
+                                            AlertDialog$Builder alertDialog$Builder3 = new AlertDialog$Builder(xh0Var2.K.getParentActivity());
                                             alertDialog$Builder3.a.R = LocaleController.getString(R.string.DeleteLink);
                                             alertDialog$Builder3.a.T = LocaleController.getString(R.string.DeleteLinkHelp);
                                             final int i142 = 1;
-                                            alertDialog$Builder3.k(LocaleController.getString(R.string.Delete), new org.telegram.ui.ActionBar.a2() { // from class: org.telegram.ui.uh0
+                                            alertDialog$Builder3.k(LocaleController.getString(R.string.Delete), new org.telegram.ui.ActionBar.a2() { // from class: org.telegram.ui.vh0
                                                 @Override // org.telegram.ui.ActionBar.a2
-                                                public final void f(org.telegram.ui.ActionBar.b2 b2Var, int i152) {
+                                                public final void k(org.telegram.ui.ActionBar.b2 b2Var, int i152) {
                                                     switch (i142) {
                                                         case 0:
-                                                            wh0Var2.K.e0(tL_chatInviteExported);
+                                                            xh0Var2.K.e0(tL_chatInviteExported);
                                                             break;
                                                         default:
-                                                            wh0Var2.K.b0(tL_chatInviteExported);
+                                                            xh0Var2.K.b0(tL_chatInviteExported);
                                                             break;
                                                     }
                                                 }
                                             });
-                                            hg.k0.o(R.string.Cancel, alertDialog$Builder3, null);
+                                            hg.k0.p(R.string.Cancel, alertDialog$Builder3, null);
                                             break;
                                         case 1:
-                                            wh0 wh0Var3 = wh0Var;
+                                            xh0 xh0Var3 = xh0Var;
                                             try {
-                                                if (wh0Var3.n.link != null) {
-                                                    ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", wh0Var3.n.link));
-                                                    org.telegram.ui.Components.xc.j(wh0Var3.K).j();
+                                                if (xh0Var3.n.link != null) {
+                                                    ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", xh0Var3.n.link));
+                                                    org.telegram.ui.Components.xc.j(xh0Var3.K).j();
                                                     break;
                                                 } else {
                                                     break;
@@ -320,13 +320,13 @@ public final /* synthetic */ class k60 implements View.OnClickListener {
                                                 return;
                                             }
                                         case 2:
-                                            wh0 wh0Var4 = wh0Var;
-                                            zh0 zh0Var2 = wh0Var4.K;
+                                            xh0 xh0Var4 = xh0Var;
+                                            ai0 ai0Var2 = xh0Var4.K;
                                             try {
-                                                if (wh0Var4.n.link != null) {
-                                                    Context context2 = wh0Var4.getContext();
-                                                    String str2 = wh0Var4.n.link;
-                                                    zh0Var2.showDialog(new vh0(wh0Var4, context2, str2, str2, zh0Var2.getResourceProvider()));
+                                                if (xh0Var4.n.link != null) {
+                                                    Context context2 = xh0Var4.getContext();
+                                                    String str2 = xh0Var4.n.link;
+                                                    ai0Var2.showDialog(new wh0(xh0Var4, context2, str2, str2, ai0Var2.getResourceProvider()));
                                                     break;
                                                 } else {
                                                     break;
@@ -336,71 +336,71 @@ public final /* synthetic */ class k60 implements View.OnClickListener {
                                                 return;
                                             }
                                         case 3:
-                                            wh0 wh0Var5 = wh0Var;
-                                            zh0 zh0Var3 = wh0Var5.K;
-                                            TLRPC.TL_chatInviteExported tL_chatInviteExported2 = wh0Var5.n;
-                                            yb0 yb0Var = new yb0(1, zh0Var3.n);
-                                            yb0Var.T = zh0Var3.s0;
-                                            yb0Var.Y(tL_chatInviteExported2);
-                                            zh0Var3.presentFragment(yb0Var);
+                                            xh0 xh0Var5 = xh0Var;
+                                            ai0 ai0Var3 = xh0Var5.K;
+                                            TLRPC.TL_chatInviteExported tL_chatInviteExported2 = xh0Var5.n;
+                                            zb0 zb0Var = new zb0(1, ai0Var3.n);
+                                            zb0Var.T = ai0Var3.s0;
+                                            zb0Var.Y(tL_chatInviteExported2);
+                                            ai0Var3.presentFragment(zb0Var);
                                             break;
                                         default:
-                                            final wh0 wh0Var6 = wh0Var;
-                                            final TLRPC.TL_chatInviteExported tL_chatInviteExported3 = wh0Var6.n;
-                                            AlertDialog$Builder alertDialog$Builder4 = new AlertDialog$Builder(wh0Var6.K.getParentActivity());
+                                            final xh0 xh0Var6 = xh0Var;
+                                            final TLRPC.TL_chatInviteExported tL_chatInviteExported3 = xh0Var6.n;
+                                            AlertDialog$Builder alertDialog$Builder4 = new AlertDialog$Builder(xh0Var6.K.getParentActivity());
                                             alertDialog$Builder4.a.T = LocaleController.getString(R.string.RevokeAlert);
                                             alertDialog$Builder4.a.R = LocaleController.getString(R.string.RevokeLink);
                                             final int i15 = 0;
-                                            alertDialog$Builder4.k(LocaleController.getString(R.string.RevokeButton), new org.telegram.ui.ActionBar.a2() { // from class: org.telegram.ui.uh0
+                                            alertDialog$Builder4.k(LocaleController.getString(R.string.RevokeButton), new org.telegram.ui.ActionBar.a2() { // from class: org.telegram.ui.vh0
                                                 @Override // org.telegram.ui.ActionBar.a2
-                                                public final void f(org.telegram.ui.ActionBar.b2 b2Var, int i152) {
+                                                public final void k(org.telegram.ui.ActionBar.b2 b2Var, int i152) {
                                                     switch (i15) {
                                                         case 0:
-                                                            wh0Var6.K.e0(tL_chatInviteExported3);
+                                                            xh0Var6.K.e0(tL_chatInviteExported3);
                                                             break;
                                                         default:
-                                                            wh0Var6.K.b0(tL_chatInviteExported3);
+                                                            xh0Var6.K.b0(tL_chatInviteExported3);
                                                             break;
                                                     }
                                                 }
                                             });
-                                            hg.k0.o(R.string.Cancel, alertDialog$Builder4, null);
+                                            hg.k0.p(R.string.Cancel, alertDialog$Builder4, null);
                                             break;
                                     }
                                 }
                             }, false);
-                            F.c(R.drawable.msg_share, LocaleController.getString(R.string.ShareLink), new Runnable() { // from class: org.telegram.ui.th0
+                            F.c(R.drawable.msg_share, LocaleController.getString(R.string.ShareLink), new Runnable() { // from class: org.telegram.ui.uh0
                                 @Override // java.lang.Runnable
                                 public final void run() {
                                     switch (i12) {
                                         case 0:
-                                            final wh0 wh0Var2 = wh0Var;
-                                            final TLRPC.TL_chatInviteExported tL_chatInviteExported = wh0Var2.n;
-                                            AlertDialog$Builder alertDialog$Builder3 = new AlertDialog$Builder(wh0Var2.K.getParentActivity());
+                                            final xh0 xh0Var2 = xh0Var;
+                                            final TLRPC.TL_chatInviteExported tL_chatInviteExported = xh0Var2.n;
+                                            AlertDialog$Builder alertDialog$Builder3 = new AlertDialog$Builder(xh0Var2.K.getParentActivity());
                                             alertDialog$Builder3.a.R = LocaleController.getString(R.string.DeleteLink);
                                             alertDialog$Builder3.a.T = LocaleController.getString(R.string.DeleteLinkHelp);
                                             final int i142 = 1;
-                                            alertDialog$Builder3.k(LocaleController.getString(R.string.Delete), new org.telegram.ui.ActionBar.a2() { // from class: org.telegram.ui.uh0
+                                            alertDialog$Builder3.k(LocaleController.getString(R.string.Delete), new org.telegram.ui.ActionBar.a2() { // from class: org.telegram.ui.vh0
                                                 @Override // org.telegram.ui.ActionBar.a2
-                                                public final void f(org.telegram.ui.ActionBar.b2 b2Var, int i152) {
+                                                public final void k(org.telegram.ui.ActionBar.b2 b2Var, int i152) {
                                                     switch (i142) {
                                                         case 0:
-                                                            wh0Var2.K.e0(tL_chatInviteExported);
+                                                            xh0Var2.K.e0(tL_chatInviteExported);
                                                             break;
                                                         default:
-                                                            wh0Var2.K.b0(tL_chatInviteExported);
+                                                            xh0Var2.K.b0(tL_chatInviteExported);
                                                             break;
                                                     }
                                                 }
                                             });
-                                            hg.k0.o(R.string.Cancel, alertDialog$Builder3, null);
+                                            hg.k0.p(R.string.Cancel, alertDialog$Builder3, null);
                                             break;
                                         case 1:
-                                            wh0 wh0Var3 = wh0Var;
+                                            xh0 xh0Var3 = xh0Var;
                                             try {
-                                                if (wh0Var3.n.link != null) {
-                                                    ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", wh0Var3.n.link));
-                                                    org.telegram.ui.Components.xc.j(wh0Var3.K).j();
+                                                if (xh0Var3.n.link != null) {
+                                                    ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", xh0Var3.n.link));
+                                                    org.telegram.ui.Components.xc.j(xh0Var3.K).j();
                                                     break;
                                                 } else {
                                                     break;
@@ -410,13 +410,13 @@ public final /* synthetic */ class k60 implements View.OnClickListener {
                                                 return;
                                             }
                                         case 2:
-                                            wh0 wh0Var4 = wh0Var;
-                                            zh0 zh0Var2 = wh0Var4.K;
+                                            xh0 xh0Var4 = xh0Var;
+                                            ai0 ai0Var2 = xh0Var4.K;
                                             try {
-                                                if (wh0Var4.n.link != null) {
-                                                    Context context2 = wh0Var4.getContext();
-                                                    String str2 = wh0Var4.n.link;
-                                                    zh0Var2.showDialog(new vh0(wh0Var4, context2, str2, str2, zh0Var2.getResourceProvider()));
+                                                if (xh0Var4.n.link != null) {
+                                                    Context context2 = xh0Var4.getContext();
+                                                    String str2 = xh0Var4.n.link;
+                                                    ai0Var2.showDialog(new wh0(xh0Var4, context2, str2, str2, ai0Var2.getResourceProvider()));
                                                     break;
                                                 } else {
                                                     break;
@@ -426,71 +426,71 @@ public final /* synthetic */ class k60 implements View.OnClickListener {
                                                 return;
                                             }
                                         case 3:
-                                            wh0 wh0Var5 = wh0Var;
-                                            zh0 zh0Var3 = wh0Var5.K;
-                                            TLRPC.TL_chatInviteExported tL_chatInviteExported2 = wh0Var5.n;
-                                            yb0 yb0Var = new yb0(1, zh0Var3.n);
-                                            yb0Var.T = zh0Var3.s0;
-                                            yb0Var.Y(tL_chatInviteExported2);
-                                            zh0Var3.presentFragment(yb0Var);
+                                            xh0 xh0Var5 = xh0Var;
+                                            ai0 ai0Var3 = xh0Var5.K;
+                                            TLRPC.TL_chatInviteExported tL_chatInviteExported2 = xh0Var5.n;
+                                            zb0 zb0Var = new zb0(1, ai0Var3.n);
+                                            zb0Var.T = ai0Var3.s0;
+                                            zb0Var.Y(tL_chatInviteExported2);
+                                            ai0Var3.presentFragment(zb0Var);
                                             break;
                                         default:
-                                            final wh0 wh0Var6 = wh0Var;
-                                            final TLRPC.TL_chatInviteExported tL_chatInviteExported3 = wh0Var6.n;
-                                            AlertDialog$Builder alertDialog$Builder4 = new AlertDialog$Builder(wh0Var6.K.getParentActivity());
+                                            final xh0 xh0Var6 = xh0Var;
+                                            final TLRPC.TL_chatInviteExported tL_chatInviteExported3 = xh0Var6.n;
+                                            AlertDialog$Builder alertDialog$Builder4 = new AlertDialog$Builder(xh0Var6.K.getParentActivity());
                                             alertDialog$Builder4.a.T = LocaleController.getString(R.string.RevokeAlert);
                                             alertDialog$Builder4.a.R = LocaleController.getString(R.string.RevokeLink);
                                             final int i15 = 0;
-                                            alertDialog$Builder4.k(LocaleController.getString(R.string.RevokeButton), new org.telegram.ui.ActionBar.a2() { // from class: org.telegram.ui.uh0
+                                            alertDialog$Builder4.k(LocaleController.getString(R.string.RevokeButton), new org.telegram.ui.ActionBar.a2() { // from class: org.telegram.ui.vh0
                                                 @Override // org.telegram.ui.ActionBar.a2
-                                                public final void f(org.telegram.ui.ActionBar.b2 b2Var, int i152) {
+                                                public final void k(org.telegram.ui.ActionBar.b2 b2Var, int i152) {
                                                     switch (i15) {
                                                         case 0:
-                                                            wh0Var6.K.e0(tL_chatInviteExported3);
+                                                            xh0Var6.K.e0(tL_chatInviteExported3);
                                                             break;
                                                         default:
-                                                            wh0Var6.K.b0(tL_chatInviteExported3);
+                                                            xh0Var6.K.b0(tL_chatInviteExported3);
                                                             break;
                                                     }
                                                 }
                                             });
-                                            hg.k0.o(R.string.Cancel, alertDialog$Builder4, null);
+                                            hg.k0.p(R.string.Cancel, alertDialog$Builder4, null);
                                             break;
                                     }
                                 }
                             }, false);
-                            F.l(R.drawable.msg_edit, LocaleController.getString(R.string.EditLink), new Runnable() { // from class: org.telegram.ui.th0
+                            F.l(R.drawable.msg_edit, LocaleController.getString(R.string.EditLink), new Runnable() { // from class: org.telegram.ui.uh0
                                 @Override // java.lang.Runnable
                                 public final void run() {
                                     switch (i11) {
                                         case 0:
-                                            final wh0 wh0Var2 = wh0Var;
-                                            final TLRPC.TL_chatInviteExported tL_chatInviteExported = wh0Var2.n;
-                                            AlertDialog$Builder alertDialog$Builder3 = new AlertDialog$Builder(wh0Var2.K.getParentActivity());
+                                            final xh0 xh0Var2 = xh0Var;
+                                            final TLRPC.TL_chatInviteExported tL_chatInviteExported = xh0Var2.n;
+                                            AlertDialog$Builder alertDialog$Builder3 = new AlertDialog$Builder(xh0Var2.K.getParentActivity());
                                             alertDialog$Builder3.a.R = LocaleController.getString(R.string.DeleteLink);
                                             alertDialog$Builder3.a.T = LocaleController.getString(R.string.DeleteLinkHelp);
                                             final int i142 = 1;
-                                            alertDialog$Builder3.k(LocaleController.getString(R.string.Delete), new org.telegram.ui.ActionBar.a2() { // from class: org.telegram.ui.uh0
+                                            alertDialog$Builder3.k(LocaleController.getString(R.string.Delete), new org.telegram.ui.ActionBar.a2() { // from class: org.telegram.ui.vh0
                                                 @Override // org.telegram.ui.ActionBar.a2
-                                                public final void f(org.telegram.ui.ActionBar.b2 b2Var, int i152) {
+                                                public final void k(org.telegram.ui.ActionBar.b2 b2Var, int i152) {
                                                     switch (i142) {
                                                         case 0:
-                                                            wh0Var2.K.e0(tL_chatInviteExported);
+                                                            xh0Var2.K.e0(tL_chatInviteExported);
                                                             break;
                                                         default:
-                                                            wh0Var2.K.b0(tL_chatInviteExported);
+                                                            xh0Var2.K.b0(tL_chatInviteExported);
                                                             break;
                                                     }
                                                 }
                                             });
-                                            hg.k0.o(R.string.Cancel, alertDialog$Builder3, null);
+                                            hg.k0.p(R.string.Cancel, alertDialog$Builder3, null);
                                             break;
                                         case 1:
-                                            wh0 wh0Var3 = wh0Var;
+                                            xh0 xh0Var3 = xh0Var;
                                             try {
-                                                if (wh0Var3.n.link != null) {
-                                                    ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", wh0Var3.n.link));
-                                                    org.telegram.ui.Components.xc.j(wh0Var3.K).j();
+                                                if (xh0Var3.n.link != null) {
+                                                    ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", xh0Var3.n.link));
+                                                    org.telegram.ui.Components.xc.j(xh0Var3.K).j();
                                                     break;
                                                 } else {
                                                     break;
@@ -500,13 +500,13 @@ public final /* synthetic */ class k60 implements View.OnClickListener {
                                                 return;
                                             }
                                         case 2:
-                                            wh0 wh0Var4 = wh0Var;
-                                            zh0 zh0Var2 = wh0Var4.K;
+                                            xh0 xh0Var4 = xh0Var;
+                                            ai0 ai0Var2 = xh0Var4.K;
                                             try {
-                                                if (wh0Var4.n.link != null) {
-                                                    Context context2 = wh0Var4.getContext();
-                                                    String str2 = wh0Var4.n.link;
-                                                    zh0Var2.showDialog(new vh0(wh0Var4, context2, str2, str2, zh0Var2.getResourceProvider()));
+                                                if (xh0Var4.n.link != null) {
+                                                    Context context2 = xh0Var4.getContext();
+                                                    String str2 = xh0Var4.n.link;
+                                                    ai0Var2.showDialog(new wh0(xh0Var4, context2, str2, str2, ai0Var2.getResourceProvider()));
                                                     break;
                                                 } else {
                                                     break;
@@ -516,71 +516,71 @@ public final /* synthetic */ class k60 implements View.OnClickListener {
                                                 return;
                                             }
                                         case 3:
-                                            wh0 wh0Var5 = wh0Var;
-                                            zh0 zh0Var3 = wh0Var5.K;
-                                            TLRPC.TL_chatInviteExported tL_chatInviteExported2 = wh0Var5.n;
-                                            yb0 yb0Var = new yb0(1, zh0Var3.n);
-                                            yb0Var.T = zh0Var3.s0;
-                                            yb0Var.Y(tL_chatInviteExported2);
-                                            zh0Var3.presentFragment(yb0Var);
+                                            xh0 xh0Var5 = xh0Var;
+                                            ai0 ai0Var3 = xh0Var5.K;
+                                            TLRPC.TL_chatInviteExported tL_chatInviteExported2 = xh0Var5.n;
+                                            zb0 zb0Var = new zb0(1, ai0Var3.n);
+                                            zb0Var.T = ai0Var3.s0;
+                                            zb0Var.Y(tL_chatInviteExported2);
+                                            ai0Var3.presentFragment(zb0Var);
                                             break;
                                         default:
-                                            final wh0 wh0Var6 = wh0Var;
-                                            final TLRPC.TL_chatInviteExported tL_chatInviteExported3 = wh0Var6.n;
-                                            AlertDialog$Builder alertDialog$Builder4 = new AlertDialog$Builder(wh0Var6.K.getParentActivity());
+                                            final xh0 xh0Var6 = xh0Var;
+                                            final TLRPC.TL_chatInviteExported tL_chatInviteExported3 = xh0Var6.n;
+                                            AlertDialog$Builder alertDialog$Builder4 = new AlertDialog$Builder(xh0Var6.K.getParentActivity());
                                             alertDialog$Builder4.a.T = LocaleController.getString(R.string.RevokeAlert);
                                             alertDialog$Builder4.a.R = LocaleController.getString(R.string.RevokeLink);
                                             final int i15 = 0;
-                                            alertDialog$Builder4.k(LocaleController.getString(R.string.RevokeButton), new org.telegram.ui.ActionBar.a2() { // from class: org.telegram.ui.uh0
+                                            alertDialog$Builder4.k(LocaleController.getString(R.string.RevokeButton), new org.telegram.ui.ActionBar.a2() { // from class: org.telegram.ui.vh0
                                                 @Override // org.telegram.ui.ActionBar.a2
-                                                public final void f(org.telegram.ui.ActionBar.b2 b2Var, int i152) {
+                                                public final void k(org.telegram.ui.ActionBar.b2 b2Var, int i152) {
                                                     switch (i15) {
                                                         case 0:
-                                                            wh0Var6.K.e0(tL_chatInviteExported3);
+                                                            xh0Var6.K.e0(tL_chatInviteExported3);
                                                             break;
                                                         default:
-                                                            wh0Var6.K.b0(tL_chatInviteExported3);
+                                                            xh0Var6.K.b0(tL_chatInviteExported3);
                                                             break;
                                                     }
                                                 }
                                             });
-                                            hg.k0.o(R.string.Cancel, alertDialog$Builder4, null);
+                                            hg.k0.p(R.string.Cancel, alertDialog$Builder4, null);
                                             break;
                                     }
                                 }
-                            }, !wh0Var.n.permanent && zh0Var.p0);
-                            F.m(zh0Var.p0, R.drawable.msg_delete, LocaleController.getString(R.string.RevokeLink), true, new Runnable() { // from class: org.telegram.ui.th0
+                            }, !xh0Var.n.permanent && ai0Var.p0);
+                            F.m(ai0Var.p0, R.drawable.msg_delete, LocaleController.getString(R.string.RevokeLink), true, new Runnable() { // from class: org.telegram.ui.uh0
                                 @Override // java.lang.Runnable
                                 public final void run() {
                                     switch (i10) {
                                         case 0:
-                                            final wh0 wh0Var2 = wh0Var;
-                                            final TLRPC.TL_chatInviteExported tL_chatInviteExported = wh0Var2.n;
-                                            AlertDialog$Builder alertDialog$Builder3 = new AlertDialog$Builder(wh0Var2.K.getParentActivity());
+                                            final xh0 xh0Var2 = xh0Var;
+                                            final TLRPC.TL_chatInviteExported tL_chatInviteExported = xh0Var2.n;
+                                            AlertDialog$Builder alertDialog$Builder3 = new AlertDialog$Builder(xh0Var2.K.getParentActivity());
                                             alertDialog$Builder3.a.R = LocaleController.getString(R.string.DeleteLink);
                                             alertDialog$Builder3.a.T = LocaleController.getString(R.string.DeleteLinkHelp);
                                             final int i142 = 1;
-                                            alertDialog$Builder3.k(LocaleController.getString(R.string.Delete), new org.telegram.ui.ActionBar.a2() { // from class: org.telegram.ui.uh0
+                                            alertDialog$Builder3.k(LocaleController.getString(R.string.Delete), new org.telegram.ui.ActionBar.a2() { // from class: org.telegram.ui.vh0
                                                 @Override // org.telegram.ui.ActionBar.a2
-                                                public final void f(org.telegram.ui.ActionBar.b2 b2Var, int i152) {
+                                                public final void k(org.telegram.ui.ActionBar.b2 b2Var, int i152) {
                                                     switch (i142) {
                                                         case 0:
-                                                            wh0Var2.K.e0(tL_chatInviteExported);
+                                                            xh0Var2.K.e0(tL_chatInviteExported);
                                                             break;
                                                         default:
-                                                            wh0Var2.K.b0(tL_chatInviteExported);
+                                                            xh0Var2.K.b0(tL_chatInviteExported);
                                                             break;
                                                     }
                                                 }
                                             });
-                                            hg.k0.o(R.string.Cancel, alertDialog$Builder3, null);
+                                            hg.k0.p(R.string.Cancel, alertDialog$Builder3, null);
                                             break;
                                         case 1:
-                                            wh0 wh0Var3 = wh0Var;
+                                            xh0 xh0Var3 = xh0Var;
                                             try {
-                                                if (wh0Var3.n.link != null) {
-                                                    ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", wh0Var3.n.link));
-                                                    org.telegram.ui.Components.xc.j(wh0Var3.K).j();
+                                                if (xh0Var3.n.link != null) {
+                                                    ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", xh0Var3.n.link));
+                                                    org.telegram.ui.Components.xc.j(xh0Var3.K).j();
                                                     break;
                                                 } else {
                                                     break;
@@ -590,13 +590,13 @@ public final /* synthetic */ class k60 implements View.OnClickListener {
                                                 return;
                                             }
                                         case 2:
-                                            wh0 wh0Var4 = wh0Var;
-                                            zh0 zh0Var2 = wh0Var4.K;
+                                            xh0 xh0Var4 = xh0Var;
+                                            ai0 ai0Var2 = xh0Var4.K;
                                             try {
-                                                if (wh0Var4.n.link != null) {
-                                                    Context context2 = wh0Var4.getContext();
-                                                    String str2 = wh0Var4.n.link;
-                                                    zh0Var2.showDialog(new vh0(wh0Var4, context2, str2, str2, zh0Var2.getResourceProvider()));
+                                                if (xh0Var4.n.link != null) {
+                                                    Context context2 = xh0Var4.getContext();
+                                                    String str2 = xh0Var4.n.link;
+                                                    ai0Var2.showDialog(new wh0(xh0Var4, context2, str2, str2, ai0Var2.getResourceProvider()));
                                                     break;
                                                 } else {
                                                     break;
@@ -606,70 +606,70 @@ public final /* synthetic */ class k60 implements View.OnClickListener {
                                                 return;
                                             }
                                         case 3:
-                                            wh0 wh0Var5 = wh0Var;
-                                            zh0 zh0Var3 = wh0Var5.K;
-                                            TLRPC.TL_chatInviteExported tL_chatInviteExported2 = wh0Var5.n;
-                                            yb0 yb0Var = new yb0(1, zh0Var3.n);
-                                            yb0Var.T = zh0Var3.s0;
-                                            yb0Var.Y(tL_chatInviteExported2);
-                                            zh0Var3.presentFragment(yb0Var);
+                                            xh0 xh0Var5 = xh0Var;
+                                            ai0 ai0Var3 = xh0Var5.K;
+                                            TLRPC.TL_chatInviteExported tL_chatInviteExported2 = xh0Var5.n;
+                                            zb0 zb0Var = new zb0(1, ai0Var3.n);
+                                            zb0Var.T = ai0Var3.s0;
+                                            zb0Var.Y(tL_chatInviteExported2);
+                                            ai0Var3.presentFragment(zb0Var);
                                             break;
                                         default:
-                                            final wh0 wh0Var6 = wh0Var;
-                                            final TLRPC.TL_chatInviteExported tL_chatInviteExported3 = wh0Var6.n;
-                                            AlertDialog$Builder alertDialog$Builder4 = new AlertDialog$Builder(wh0Var6.K.getParentActivity());
+                                            final xh0 xh0Var6 = xh0Var;
+                                            final TLRPC.TL_chatInviteExported tL_chatInviteExported3 = xh0Var6.n;
+                                            AlertDialog$Builder alertDialog$Builder4 = new AlertDialog$Builder(xh0Var6.K.getParentActivity());
                                             alertDialog$Builder4.a.T = LocaleController.getString(R.string.RevokeAlert);
                                             alertDialog$Builder4.a.R = LocaleController.getString(R.string.RevokeLink);
                                             final int i15 = 0;
-                                            alertDialog$Builder4.k(LocaleController.getString(R.string.RevokeButton), new org.telegram.ui.ActionBar.a2() { // from class: org.telegram.ui.uh0
+                                            alertDialog$Builder4.k(LocaleController.getString(R.string.RevokeButton), new org.telegram.ui.ActionBar.a2() { // from class: org.telegram.ui.vh0
                                                 @Override // org.telegram.ui.ActionBar.a2
-                                                public final void f(org.telegram.ui.ActionBar.b2 b2Var, int i152) {
+                                                public final void k(org.telegram.ui.ActionBar.b2 b2Var, int i152) {
                                                     switch (i15) {
                                                         case 0:
-                                                            wh0Var6.K.e0(tL_chatInviteExported3);
+                                                            xh0Var6.K.e0(tL_chatInviteExported3);
                                                             break;
                                                         default:
-                                                            wh0Var6.K.b0(tL_chatInviteExported3);
+                                                            xh0Var6.K.b0(tL_chatInviteExported3);
                                                             break;
                                                     }
                                                 }
                                             });
-                                            hg.k0.o(R.string.Cancel, alertDialog$Builder4, null);
+                                            hg.k0.p(R.string.Cancel, alertDialog$Builder4, null);
                                             break;
                                     }
                                 }
                             });
                         }
-                        F.W(zh0Var.b.W0(wh0Var, false));
+                        F.W(ai0Var.b.W0(xh0Var, false));
                         F.Z();
                         break;
                     }
                 }
                 break;
             case 10:
-                kj0 kj0Var = (kj0) this.b;
-                long j3 = kj0Var.b;
-                if (!kj0Var.n.isStory()) {
-                    if (kj0Var.getParentLayout().getFragmentStack().size() > 1) {
-                        org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) kj0Var.getParentLayout().getFragmentStack().get(kj0Var.getParentLayout().getFragmentStack().size() - 2);
+                mj0 mj0Var = (mj0) this.b;
+                long j3 = mj0Var.b;
+                if (!mj0Var.n.isStory()) {
+                    if (mj0Var.getParentLayout().getFragmentStack().size() > 1) {
+                        org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) mj0Var.getParentLayout().getFragmentStack().get(mj0Var.getParentLayout().getFragmentStack().size() - 2);
                         if ((n2Var instanceof zn) && ((zn) n2Var).e.id == j3) {
-                            kj0Var.finishFragment();
+                            mj0Var.finishFragment();
                             break;
                         }
                     }
-                    Bundle f7 = t8.b.f(j3, "chat_id");
-                    f7.putInt("message_id", kj0Var.c);
-                    f7.putBoolean("need_remove_previous_same_chat_activity", false);
-                    kj0Var.presentFragment(new zn(f7));
+                    Bundle e = v7.j0.e(j3, "chat_id");
+                    e.putInt("message_id", mj0Var.c);
+                    e.putBoolean("need_remove_previous_same_chat_activity", false);
+                    mj0Var.presentFragment(new zn(e));
                     break;
                 }
                 break;
             case 11:
-                ((org.telegram.ui.Cells.w8) this.b).setChecked(!r1.e.h);
+                ((org.telegram.ui.Cells.x8) this.b).setChecked(!r1.e.h);
                 break;
             case 12:
                 Context context2 = (Context) this.b;
-                Pattern pattern = org.telegram.ui.Components.e5.a;
+                Pattern pattern = org.telegram.ui.Components.d5.a;
                 AlertDialog$Builder alertDialog$Builder3 = new AlertDialog$Builder(context2);
                 alertDialog$Builder3.a.R = LocaleController.getString(R.string.ForgotPasscode);
                 alertDialog$Builder3.a.T = LocaleController.getString(R.string.ForgotPasscodeInfo);
@@ -723,7 +723,7 @@ public final /* synthetic */ class k60 implements View.OnClickListener {
                             ln0Var.getContext().startActivity(Intent.createChooser(intent, "Send email..."));
                             break;
                         } catch (Exception unused) {
-                            org.telegram.ui.Components.e5.u0(ln0Var.Q, null, LocaleController.getString(R.string.NoMailInstalled), null);
+                            org.telegram.ui.Components.d5.u0(ln0Var.Q, null, LocaleController.getString(R.string.NoMailInstalled), null);
                             return;
                         }
                     }
@@ -733,7 +733,7 @@ public final /* synthetic */ class k60 implements View.OnClickListener {
                 lq0 lq0Var = (lq0) this.b;
                 zn znVar = lq0Var.F;
                 if (znVar != null && znVar.c()) {
-                    org.telegram.ui.Components.e5.L(lq0Var.getParentActivity(), znVar.a(), new dq0(lq0Var, i13));
+                    org.telegram.ui.Components.d5.L(lq0Var.getParentActivity(), znVar.a(), new dq0(lq0Var, i13));
                     break;
                 } else {
                     lq0Var.V(lq0Var.b, lq0Var.c, true, 0);
@@ -744,7 +744,7 @@ public final /* synthetic */ class k60 implements View.OnClickListener {
                 cr0 cr0Var = (cr0) this.b;
                 zn znVar2 = cr0Var.U;
                 if (znVar2 != null && znVar2.c()) {
-                    org.telegram.ui.Components.e5.L(cr0Var.getParentActivity(), znVar2.a(), new pq0(cr0Var, i13));
+                    org.telegram.ui.Components.d5.L(cr0Var.getParentActivity(), znVar2.a(), new pq0(cr0Var, i13));
                     break;
                 } else {
                     cr0Var.e0(0, true);
@@ -794,14 +794,14 @@ public final /* synthetic */ class k60 implements View.OnClickListener {
                 CharSequence[] charSequenceArr = aw0Var.v;
                 if (view.getTag() == null) {
                     view.setTag(1);
-                    org.telegram.ui.Cells.d6 d6Var = (org.telegram.ui.Cells.d6) view.getParent();
-                    s4.c1 H = aw0Var.c.H(d6Var);
+                    org.telegram.ui.Cells.e6 e6Var = (org.telegram.ui.Cells.e6) view.getParent();
+                    s4.c1 H = aw0Var.c.H(e6Var);
                     if (H != null && (b10 = H.b()) != -1) {
                         int i17 = b10 - aw0Var.n0;
                         if (aw0Var.I && i17 < aw0Var.x) {
                             int i18 = -aw0Var.O;
                             aw0Var.O = i18;
-                            AndroidUtilities.shakeViewSpring(d6Var, i18);
+                            AndroidUtilities.shakeViewSpring(e6Var, i18);
                             BotWebViewVibrationEffect.APP_ERROR.vibrate();
                             break;
                         } else {
@@ -825,17 +825,17 @@ public final /* synthetic */ class k60 implements View.OnClickListener {
                                 aw0Var.b.o((aw0Var.n0 + charSequenceArr.length) - 1);
                             }
                             s4.c1 L = aw0Var.c.L(b10 - 1);
-                            EditTextBoldCursor textView = d6Var.getTextView();
+                            EditTextBoldCursor textView = e6Var.getTextView();
                             if (L != null) {
                                 View view3 = L.a;
-                                if (view3 instanceof org.telegram.ui.Cells.d6) {
-                                    ((org.telegram.ui.Cells.d6) view3).getTextView().requestFocus();
+                                if (view3 instanceof org.telegram.ui.Cells.e6) {
+                                    ((org.telegram.ui.Cells.e6) view3).getTextView().requestFocus();
                                     textView.clearFocus();
                                     aw0Var.i0();
                                     aw0Var.r0();
-                                    zy0Var = aw0Var.Q;
-                                    if (zy0Var != null) {
-                                        zy0Var.f();
+                                    yy0Var = aw0Var.Q;
+                                    if (yy0Var != null) {
+                                        yy0Var.f();
                                         aw0Var.Q.setDelegate(null);
                                     }
                                     aw0Var.b.m(aw0Var.p0);
@@ -851,8 +851,8 @@ public final /* synthetic */ class k60 implements View.OnClickListener {
                             textView.clearFocus();
                             aw0Var.i0();
                             aw0Var.r0();
-                            zy0Var = aw0Var.Q;
-                            if (zy0Var != null) {
+                            yy0Var = aw0Var.Q;
+                            if (yy0Var != null) {
                             }
                             aw0Var.b.m(aw0Var.p0);
                         }
@@ -866,7 +866,7 @@ public final /* synthetic */ class k60 implements View.OnClickListener {
                 ((mw0) ((iw0) this.b).c).c(true);
                 break;
             case 24:
-                PrivacyControlActivity privacyControlActivity = ((yx0) this.b).d;
+                PrivacyControlActivity privacyControlActivity = ((zx0) this.b).d;
                 privacyControlActivity.showDialog(new rg.x0((org.telegram.ui.ActionBar.n2) privacyControlActivity, 27, false));
                 break;
             case 25:
@@ -884,9 +884,9 @@ public final /* synthetic */ class k60 implements View.OnClickListener {
                 ProxyListActivity proxyListActivity = f21Var.s;
                 SharedConfig.ProxyInfo proxyInfo = f21Var.d;
                 o21 o21Var = new o21(null);
-                o21Var.e = new org.telegram.ui.Cells.b7[3];
-                o21Var.f = new org.telegram.ui.Cells.e9[2];
-                o21Var.s = new org.telegram.ui.Cells.k6[3];
+                o21Var.e = new org.telegram.ui.Cells.c7[3];
+                o21Var.f = new org.telegram.ui.Cells.f9[2];
+                o21Var.s = new org.telegram.ui.Cells.l6[3];
                 o21Var.y = 1.0f;
                 o21Var.E = new float[2];
                 o21Var.F = true;
@@ -895,61 +895,61 @@ public final /* synthetic */ class k60 implements View.OnClickListener {
                 proxyListActivity.presentFragment(o21Var);
                 break;
             case 27:
-                d31 d31Var = (d31) this.b;
-                ValueAnimator valueAnimator = d31Var.N;
+                e31 e31Var = (e31) this.b;
+                ValueAnimator valueAnimator = e31Var.N;
                 if (valueAnimator == null) {
-                    boolean z11 = !d31Var.M;
-                    e31 e31Var = d31Var.d;
-                    b31 b31Var = d31Var.F;
+                    boolean z11 = !e31Var.M;
+                    f31 f31Var = e31Var.d;
+                    c31 c31Var = e31Var.F;
                     if (valueAnimator != null) {
                         valueAnimator.cancel();
                     }
-                    FrameLayout frameLayout = (FrameLayout) e31Var.getParentActivity().getWindow().getDecorView();
-                    FrameLayout frameLayout2 = (FrameLayout) d31Var.e.getDecorView();
+                    FrameLayout frameLayout = (FrameLayout) f31Var.getParentActivity().getWindow().getDecorView();
+                    FrameLayout frameLayout2 = (FrameLayout) e31Var.e.getDecorView();
                     Bitmap createBitmap = Bitmap.createBitmap(frameLayout2.getWidth(), frameLayout2.getHeight(), Bitmap.Config.ARGB_8888);
                     Canvas canvas = new Canvas(createBitmap);
-                    b31Var.setAlpha(0.0f);
+                    c31Var.setAlpha(0.0f);
                     frameLayout.draw(canvas);
                     frameLayout2.draw(canvas);
-                    b31Var.setAlpha(1.0f);
+                    c31Var.setAlpha(1.0f);
                     Paint paint = new Paint(1);
                     paint.setColor(-16777216);
                     paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
                     Paint paint2 = new Paint(1);
                     paint2.setFilterBitmap(true);
                     int[] iArr2 = new int[2];
-                    b31Var.getLocationInWindow(iArr2);
-                    float f10 = iArr2[0];
-                    float f11 = iArr2[1];
+                    c31Var.getLocationInWindow(iArr2);
+                    float f7 = iArr2[0];
+                    float f10 = iArr2[1];
                     Shader.TileMode tileMode = Shader.TileMode.CLAMP;
                     paint2.setShader(new BitmapShader(createBitmap, tileMode, tileMode));
-                    d31Var.O = new ci.wb(d31Var, e31Var.getParentActivity(), z11, canvas, (b31Var.getMeasuredWidth() / 2.0f) + f10, (b31Var.getMeasuredHeight() / 2.0f) + f11, Math.max(createBitmap.getHeight(), createBitmap.getWidth()) * 0.9f, paint, createBitmap, paint2, f10, f11, 2);
-                    d31Var.P = 0.0f;
+                    e31Var.O = new ci.wb(e31Var, f31Var.getParentActivity(), z11, canvas, (c31Var.getMeasuredWidth() / 2.0f) + f7, (c31Var.getMeasuredHeight() / 2.0f) + f10, Math.max(createBitmap.getHeight(), createBitmap.getWidth()) * 0.9f, paint, createBitmap, paint2, f7, f10, 2);
+                    e31Var.P = 0.0f;
                     ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-                    d31Var.N = ofFloat;
-                    ofFloat.addUpdateListener(new i21(d31Var, i12));
-                    d31Var.N.addListener(new gp0(d31Var, 17));
-                    d31Var.N.setDuration(400L);
-                    d31Var.N.setInterpolator(org.telegram.ui.Components.kt.e);
-                    d31Var.N.start();
-                    frameLayout2.addView(d31Var.O, new ViewGroup.LayoutParams(-1, -1));
-                    AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.es0(10, d31Var, z11));
+                    e31Var.N = ofFloat;
+                    ofFloat.addUpdateListener(new i21(e31Var, i12));
+                    e31Var.N.addListener(new gp0(e31Var, 17));
+                    e31Var.N.setDuration(400L);
+                    e31Var.N.setInterpolator(org.telegram.ui.Components.kt.e);
+                    e31Var.N.start();
+                    frameLayout2.addView(e31Var.O, new ViewGroup.LayoutParams(-1, -1));
+                    AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.ds0(10, e31Var, z11));
                     break;
                 }
                 break;
             case 28:
-                a41 a41Var = (a41) this.b;
-                ci.d dVar = a41Var.s;
+                b41 b41Var = (b41) this.b;
+                ci.d dVar = b41Var.s;
                 if (dVar.W && !dVar.N) {
                     dVar.setLoading(true);
-                    b41.H(a41Var.v, ((TextView) a41Var.h.d).getText(), a41Var.d.option, a41Var.n.getText().toString());
+                    c41.H(b41Var.v, ((TextView) b41Var.h.d).getText(), b41Var.d.option, b41Var.n.getText().toString());
                     break;
                 }
                 break;
             default:
-                y31 y31Var = (y31) ((t5) this.b).e;
-                if (y31Var != null) {
-                    y31Var.run();
+                z31 z31Var = (z31) ((t5) this.b).e;
+                if (z31Var != null) {
+                    z31Var.run();
                     break;
                 }
                 break;

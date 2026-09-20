@@ -11,9 +11,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 import org.scilab.forge.jlatexmath.TeXFormulaSettingsParser;
-import t8.b;
+import v7.j0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 final class zztu {
     private static final char[] zza;
@@ -25,9 +25,9 @@ final class zztu {
     }
 
     public static String zza(zzts zztsVar, String str) {
-        StringBuilder j3 = b.j("# ", str);
-        zzd(zztsVar, j3, 0);
-        return j3.toString();
+        StringBuilder h = j0.h("# ", str);
+        zzd(zztsVar, h, 0);
+        return h.toString();
     }
 
     public static void zzb(StringBuilder sb2, int i10, String str, Object obj) {

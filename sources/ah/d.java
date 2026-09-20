@@ -5,12 +5,12 @@ import android.view.View;
 import ii.u0;
 import org.telegram.ui.Components.ed;
 import org.telegram.ui.Components.eq;
-import org.telegram.ui.Components.s31;
-import org.telegram.ui.Components.yo0;
+import org.telegram.ui.Components.r31;
+import org.telegram.ui.Components.xo0;
 import yh.m3;
 import zg.m0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class d implements Drawable.Callback {
     public final /* synthetic */ int a;
@@ -31,13 +31,13 @@ public final class d implements Drawable.Callback {
                 ((eq) this.b).invalidateSelf();
                 break;
             case 4:
-                ((yo0) this.b).b.run();
+                ((xo0) this.b).b.run();
                 break;
             case 5:
                 ((ed) this.b).invalidateSelf();
                 break;
             case 6:
-                ((s31) this.b).invalidateSelf();
+                ((r31) this.b).invalidateSelf();
                 break;
             case 7:
                 ((wg.a) this.b).c.invalidate();

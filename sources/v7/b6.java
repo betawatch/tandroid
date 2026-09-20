@@ -1,15 +1,15 @@
 package v7;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
-public final class b6 {
-    public final Long a;
-    public final i6 b;
-    public final Boolean c;
+public abstract class b6 {
+    public abstract void a(com.google.android.gms.internal.play_billing.f4 f4Var, com.google.android.gms.internal.play_billing.f4 f4Var2);
 
-    public /* synthetic */ b6(r1 r1Var) {
-        this.a = (Long) r1Var.b;
-        this.b = (i6) r1Var.d;
-        this.c = (Boolean) r1Var.c;
-    }
+    public abstract void b(com.google.android.gms.internal.play_billing.f4 f4Var, Thread thread);
+
+    public abstract boolean c(com.google.android.gms.internal.play_billing.g4 g4Var, com.google.android.gms.internal.play_billing.v2 v2Var, com.google.android.gms.internal.play_billing.v2 v2Var2);
+
+    public abstract boolean d(com.google.android.gms.internal.play_billing.g4 g4Var, Object obj, Object obj2);
+
+    public abstract boolean e(com.google.android.gms.internal.play_billing.g4 g4Var, com.google.android.gms.internal.play_billing.f4 f4Var, com.google.android.gms.internal.play_billing.f4 f4Var2);
 }

@@ -12,14 +12,14 @@ import android.graphics.Rect;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.ij0;
-import org.telegram.ui.Components.p51;
+import org.telegram.ui.Components.hj0;
+import org.telegram.ui.Components.o51;
 import org.telegram.ui.dv;
 import org.telegram.ui.ev;
 import org.telegram.ui.gv;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final /* synthetic */ class y7 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -41,11 +41,11 @@ public final /* synthetic */ class y7 implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        org.telegram.ui.Components.qc qcVar;
+        org.telegram.ui.Components.pc pcVar;
         int i10;
         int i11;
         int i12;
-        ij0 ij0Var;
+        hj0 hj0Var;
         int i13 = this.a;
         boolean z10 = this.b;
         int i14 = this.d;
@@ -70,22 +70,22 @@ public final /* synthetic */ class y7 implements Runnable {
                     i10 = ((org.telegram.ui.ActionBar.n2) znVar).currentAccount;
                     MessagesController.getNotificationsSettings(i10).edit().remove("pin_" + znVar.T5).commit();
                     znVar.yc(0, true);
-                    qcVar = null;
+                    pcVar = null;
                 } else {
-                    qcVar = null;
+                    pcVar = null;
                     znVar.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.didLoadPinnedMessages, Long.valueOf(znVar.T5), arrayList, Boolean.TRUE, arrayList2, null, 0, Integer.valueOf(i15), Boolean.valueOf(znVar.S4));
                 }
                 if (i14 == znVar.C3) {
-                    znVar.A3 = qcVar;
+                    znVar.A3 = pcVar;
                     break;
                 }
                 break;
             case 3:
-                org.telegram.ui.Components.oa oaVar = (org.telegram.ui.Components.oa) obj3;
+                org.telegram.ui.Components.na naVar = (org.telegram.ui.Components.na) obj3;
                 Bitmap bitmap = (Bitmap) obj2;
                 String str = (String) obj;
-                Paint paint = oaVar.c;
-                int i18 = oaVar.d;
+                Paint paint = naVar.c;
+                int i18 = naVar.d;
                 if (bitmap != null && !bitmap.isRecycled()) {
                     float width = bitmap.getWidth() / bitmap.getHeight();
                     int round = (int) Math.round(Math.sqrt(width * 324.0f));
@@ -128,7 +128,7 @@ public final /* synthetic */ class y7 implements Runnable {
                         canvas.drawRect(f11, f7, f13, f12, paint);
                         canvas.drawRect(0.0f, f12, f13, i21 + i18, paint);
                     }
-                    AndroidUtilities.runOnUIThread(new ci.u1(oaVar, str, createBitmap, this.b, bitmap));
+                    AndroidUtilities.runOnUIThread(new ci.u1(naVar, str, createBitmap, this.b, bitmap));
                     break;
                 }
                 break;
@@ -138,13 +138,13 @@ public final /* synthetic */ class y7 implements Runnable {
                 org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) obj;
                 gv gvVar = evVar.c;
                 gvVar.b();
-                org.telegram.ui.Cells.r8 r8Var = gvVar.e;
+                org.telegram.ui.Cells.s8 s8Var = gvVar.e;
                 gvVar.d();
                 int w02 = org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.q6, false);
-                ij0 ij0Var2 = gvVar.d;
-                ij0Var2.setColorFilter(new PorterDuffColorFilter(w02, PorterDuff.Mode.SRC_IN));
+                hj0 hj0Var2 = gvVar.d;
+                hj0Var2.setColorFilter(new PorterDuffColorFilter(w02, PorterDuff.Mode.SRC_IN));
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-                ofFloat.addUpdateListener(new p51(evVar, i15, w02));
+                ofFloat.addUpdateListener(new o51(evVar, i15, w02));
                 ofFloat.addListener(new org.telegram.ui.t0(evVar, w02, i17));
                 ofFloat.setDuration(350L);
                 ofFloat.start();
@@ -163,18 +163,18 @@ public final /* synthetic */ class y7 implements Runnable {
                     ValueAnimator ofFloat2 = ValueAnimator.ofFloat(0.0f, 1.0f);
                     gvVar.h = ofFloat2;
                     float f14 = z10 ? 50.0f : 200.0f;
-                    ij0Var = ij0Var2;
+                    hj0Var = hj0Var2;
                     ofFloat2.addUpdateListener(new dv(evVar, f14, i22, w03, activity));
                     gvVar.h.addListener(new org.telegram.ui.t0(activity, w03, i16));
                     gvVar.h.setDuration(350L);
                     gvVar.h.start();
                 } else {
-                    ij0Var = ij0Var2;
+                    hj0Var = hj0Var2;
                 }
                 if (org.telegram.ui.ActionBar.j6.f1()) {
-                    r8Var.n(LocaleController.getString(R.string.SettingsSwitchToNightMode), ij0Var, true);
+                    s8Var.n(LocaleController.getString(R.string.SettingsSwitchToNightMode), hj0Var, true);
                 } else {
-                    r8Var.n(LocaleController.getString(R.string.SettingsSwitchToDayMode), ij0Var, true);
+                    s8Var.n(LocaleController.getString(R.string.SettingsSwitchToDayMode), hj0Var, true);
                 }
                 org.telegram.ui.ActionBar.j6.F1(n2Var);
                 break;
@@ -199,8 +199,8 @@ public final /* synthetic */ class y7 implements Runnable {
         this.d = i11;
     }
 
-    public /* synthetic */ y7(org.telegram.ui.Components.oa oaVar, Bitmap bitmap, int i10, int i11, String str, boolean z10) {
-        this.e = oaVar;
+    public /* synthetic */ y7(org.telegram.ui.Components.na naVar, Bitmap bitmap, int i10, int i11, String str, boolean z10) {
+        this.e = naVar;
         this.f = bitmap;
         this.c = i10;
         this.d = i11;

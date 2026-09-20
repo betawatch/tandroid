@@ -1,38 +1,10 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.widget.FrameLayout;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class n61 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ p61 b;
-
-    public /* synthetic */ n61(p61 p61Var, int i10) {
-        this.a = i10;
-        this.b = p61Var;
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                super.onAnimationEnd(animator);
-                this.b.I = null;
-                break;
-            case 1:
-                super.onAnimationEnd(animator);
-                this.b.I = null;
-                break;
-            default:
-                super.onAnimationEnd(animator);
-                p61 p61Var = this.b;
-                p61Var.N = 0.0f;
-                p61Var.I = null;
-                p61Var.M = false;
-                p61Var.d(true, false);
-                break;
-        }
-    }
+public final class n61 extends FrameLayout {
+    public TextView a;
 }

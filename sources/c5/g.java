@@ -7,7 +7,7 @@ import hg.k0;
 import java.lang.reflect.GenericDeclaration;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class g {
     public boolean a;
@@ -56,7 +56,7 @@ public final class g {
                                     case 2:
                                         return p.e((Class) this, bVar);
                                     default:
-                                        return new v0(bVar, (c3.m) ((c5.g) this).b);
+                                        return new w0(bVar, (c3.m) ((c5.g) this).b);
                                 }
                             }
                         };
@@ -74,7 +74,7 @@ public final class g {
                                 case 2:
                                     return p.e((Class) asSubclass, bVar);
                                 default:
-                                    return new v0(bVar, (c3.m) ((c5.g) asSubclass).b);
+                                    return new w0(bVar, (c3.m) ((c5.g) asSubclass).b);
                             }
                         }
                     };
@@ -92,7 +92,7 @@ public final class g {
                             case 2:
                                 return p.e((Class) asSubclass2, bVar);
                             default:
-                                return new v0(bVar, (c3.m) ((c5.g) asSubclass2).b);
+                                return new w0(bVar, (c3.m) ((c5.g) asSubclass2).b);
                         }
                     }
                 };
@@ -112,7 +112,7 @@ public final class g {
                         case 2:
                             return p.e((Class) asSubclass3, bVar);
                         default:
-                            return new v0(bVar, (c3.m) ((c5.g) asSubclass3).b);
+                            return new w0(bVar, (c3.m) ((c5.g) asSubclass3).b);
                     }
                 }
             };

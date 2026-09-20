@@ -1,39 +1,69 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.graphics.Canvas;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.SaveToGallerySettingsHelper;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class q41 extends org.telegram.ui.Components.p6 {
-    public boolean s;
-    public final org.telegram.ui.Components.e6 v;
-    public final /* synthetic */ SaveToGallerySettingsActivity w;
+public final class q41 implements org.telegram.ui.Components.ro0 {
+    public final /* synthetic */ org.telegram.ui.Components.so0 a;
+    public final /* synthetic */ t41 b;
+    public final /* synthetic */ t41 c;
+    public final /* synthetic */ t41 d;
+    public final /* synthetic */ r41 e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public q41(SaveToGallerySettingsActivity saveToGallerySettingsActivity, Activity activity) {
-        super(activity, true, true, false);
-        this.w = saveToGallerySettingsActivity;
-        this.v = new org.telegram.ui.Components.e6(this);
-        getDrawable().D = true;
+    public q41(r41 r41Var, org.telegram.ui.Components.so0 so0Var, t41 t41Var, t41 t41Var2, t41 t41Var3) {
+        this.e = r41Var;
+        this.a = so0Var;
+        this.b = t41Var;
+        this.c = t41Var2;
+        this.d = t41Var3;
     }
 
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        float f7 = this.s ? 1.0f : 0.0f;
-        org.telegram.ui.Components.e6 e6Var = this.v;
-        e6Var.d(f7, false);
-        int i10 = org.telegram.ui.ActionBar.j6.y6;
-        SaveToGallerySettingsActivity saveToGallerySettingsActivity = this.w;
-        setTextColor(i0.a.d(e6Var.c, saveToGallerySettingsActivity.getThemedColor(i10), saveToGallerySettingsActivity.getThemedColor(org.telegram.ui.ActionBar.j6.n6)));
-        super.dispatchDraw(canvas);
-    }
-
-    public final void e(boolean z10, boolean z11) {
-        if (this.s != z10) {
-            this.s = z10;
-            this.v.d(z10 ? 1.0f : 0.0f, z11);
-            invalidate();
+    @Override // org.telegram.ui.Components.ro0
+    public final void X(float f7, boolean z10) {
+        SaveToGallerySettingsActivity saveToGallerySettingsActivity = this.e.d;
+        boolean isAttachedToWindow = this.a.isAttachedToWindow();
+        long j3 = f7 > 0.7f ? (long) ((4089446400L * ((f7 - 0.7f) / 0.3f)) + SaveToGallerySettingsHelper.DEFAULT_VIDEO_LIMIT) : (long) ((104333312 * (f7 / 0.7f)) + 524288.0f);
+        t41 t41Var = this.d;
+        t41 t41Var2 = this.b;
+        t41 t41Var3 = this.c;
+        if (f7 >= 1.0f) {
+            t41Var2.e(false, isAttachedToWindow);
+            t41Var3.e(false, isAttachedToWindow);
+            t41Var.e(true, isAttachedToWindow);
+            AndroidUtilities.updateViewVisibilityAnimated(t41Var3, false, 0.8f, isAttachedToWindow);
+        } else if (f7 == 0.0f) {
+            t41Var2.e(true, isAttachedToWindow);
+            t41Var3.e(false, isAttachedToWindow);
+            t41Var.e(false, isAttachedToWindow);
+            AndroidUtilities.updateViewVisibilityAnimated(t41Var3, false, 0.8f, isAttachedToWindow);
+        } else {
+            t41Var3.c(LocaleController.formatString("UpToFileSize", R.string.UpToFileSize, AndroidUtilities.formatFileSize(j3, true, false)), false, true);
+            t41Var2.e(false, isAttachedToWindow);
+            t41Var3.e(true, isAttachedToWindow);
+            t41Var.e(false, isAttachedToWindow);
+            AndroidUtilities.updateViewVisibilityAnimated(t41Var3, true, 0.8f, isAttachedToWindow);
         }
+        if (z10) {
+            saveToGallerySettingsActivity.X().limitVideo = j3;
+            saveToGallerySettingsActivity.Y();
+        }
+    }
+
+    @Override // org.telegram.ui.Components.ro0
+    public final /* synthetic */ CharSequence getContentDescription() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.Components.ro0
+    public final /* synthetic */ int l0() {
+        return 0;
+    }
+
+    @Override // org.telegram.ui.Components.ro0
+    public final void B() {
     }
 }

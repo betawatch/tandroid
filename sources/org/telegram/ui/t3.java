@@ -10,10 +10,10 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class t3 extends org.telegram.ui.Components.bw0 implements org.telegram.ui.ActionBar.k2, org.telegram.ui.ActionBar.v3 {
-    public final org.telegram.ui.Components.e6 A0;
+public final class t3 extends org.telegram.ui.Components.aw0 implements org.telegram.ui.ActionBar.k2, org.telegram.ui.ActionBar.v3 {
+    public final org.telegram.ui.Components.d6 A0;
     public boolean B0;
     public final Path C0;
     public final RectF D0;
@@ -35,7 +35,7 @@ public final class t3 extends org.telegram.ui.Components.bw0 implements org.tele
         this.y0 = new Paint(1);
         this.z0 = new Paint(1);
         new Paint(1);
-        this.A0 = new org.telegram.ui.Components.e6(this, 0L, 420L, org.telegram.ui.Components.qr.h);
+        this.A0 = new org.telegram.ui.Components.d6(this, 0L, 420L, org.telegram.ui.Components.qr.h);
         this.C0 = new Path();
         this.D0 = new RectF();
         new RectF();
@@ -43,7 +43,7 @@ public final class t3 extends org.telegram.ui.Components.bw0 implements org.tele
         this.F0 = new Path();
     }
 
-    @Override // org.telegram.ui.Components.bw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.aw0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         boolean z10;
         float f7;
@@ -115,7 +115,7 @@ public final class t3 extends org.telegram.ui.Components.bw0 implements org.tele
             canvas.save();
             float lerp2 = AndroidUtilities.lerp(AndroidUtilities.dp(20.0f) + l4 + 1, 0, e);
             canvas.translate(0.0f, lerp2);
-            h4Var.h0.a(canvas, org.telegram.messenger.q.D(20.0f, l4, 1) - lerp2, e, true);
+            h4Var.h0.a(canvas, org.telegram.messenger.l0.C(20.0f, l4, 1) - lerp2, e, true);
             canvas.restore();
         }
         canvas.translate(0.0f, -max);
@@ -150,7 +150,7 @@ public final class t3 extends org.telegram.ui.Components.bw0 implements org.tele
         return super.dispatchTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.ui.Components.bw0
+    @Override // org.telegram.ui.Components.aw0
     public /* bridge */ /* synthetic */ int[] getColorKeys() {
         return null;
     }
@@ -185,9 +185,9 @@ public final class t3 extends org.telegram.ui.Components.bw0 implements org.tele
             }
         }
         if (f7 != 0.0f || f10 != 0.0f) {
-            org.telegram.ui.Cells.q9 q9Var = h4Var.O0;
-            AndroidUtilities.cancelRunOnUIThread(q9Var.g0);
-            q9Var.z = false;
+            org.telegram.ui.Cells.r9 r9Var = h4Var.O0;
+            AndroidUtilities.cancelRunOnUIThread(r9Var.g0);
+            r9Var.z = false;
         }
         this.G0 = true;
         return onNestedPreFling;
@@ -209,9 +209,9 @@ public final class t3 extends org.telegram.ui.Components.bw0 implements org.tele
         if (i10 == 0 && i11 == 0) {
             return;
         }
-        org.telegram.ui.Cells.q9 q9Var = h4Var.O0;
-        AndroidUtilities.cancelRunOnUIThread(q9Var.g0);
-        q9Var.z = false;
+        org.telegram.ui.Cells.r9 r9Var = h4Var.O0;
+        AndroidUtilities.cancelRunOnUIThread(r9Var.g0);
+        r9Var.z = false;
     }
 
     @Override // android.view.ViewGroup, android.view.ViewParent

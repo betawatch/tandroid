@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class p implements e0 {
     public final c5.g a;
@@ -208,7 +208,7 @@ public final class p implements e0 {
                         s5.e eVar = new s5.e(6, this, sVar);
                         of.b bVar = this.b;
                         r5.d dVar = new r5.d(eVar, 10);
-                        lf.i iVar = new lf.i(5);
+                        lf.h hVar = new lf.h(5);
                         qb.b bVar2 = new qb.b(26);
                         if (this.c.W(sVar)) {
                             b2.r a12 = sVar.a();
@@ -231,14 +231,14 @@ public final class p implements e0 {
                         b2.f0 f0Var4 = parse != null ? new b2.f0(parse, null, b0Var4.a != null ? new b2.c0(b0Var4) : uri, null, list3, null, a1Var, -9223372036854775807L) : uri;
                         b2.k0 k0Var3 = new b2.k0("", new b2.a0(yVar2), f0Var4, new b2.e0(d0Var), b2.n0.K, g0Var3);
                         f0Var4.getClass();
-                        aVarArr[i11] = new w0(k0Var3, bVar, dVar, iVar.A(k0Var3), bVar2, 1048576, sVar2);
+                        aVarArr[i11] = new x0(k0Var3, bVar, dVar, hVar.A(k0Var3), bVar2, 1048576, sVar2);
                     } else {
                         of.b bVar3 = this.b;
                         bVar3.getClass();
-                        aVarArr[i10 + 1] = new l1((b2.j0) i0Var3.get(i10), bVar3, new qb.b(26));
+                        aVarArr[i10 + 1] = new m1((b2.j0) i0Var3.get(i10), bVar3, new qb.b(26));
                     }
                 }
-                a11 = new o0(aVarArr);
+                a11 = new p0(aVarArr);
             }
             b2.a0 a0Var3 = k0Var2.e;
             if (a0Var3.b != 0 || a0Var3.d != Long.MIN_VALUE || a0Var3.f) {

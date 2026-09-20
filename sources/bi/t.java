@@ -15,21 +15,21 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Cells.s7;
 import org.telegram.ui.Cells.t7;
-import org.telegram.ui.Components.el0;
-import org.telegram.ui.Components.gl0;
-import org.telegram.ui.Components.wl0;
-import org.telegram.ui.Components.yr0;
+import org.telegram.ui.Cells.u7;
+import org.telegram.ui.Components.dl0;
+import org.telegram.ui.Components.fl0;
+import org.telegram.ui.Components.vl0;
+import org.telegram.ui.Components.xr0;
 import s4.c1;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
-public class t extends el0 {
+public class t extends dl0 {
     public final Context c;
     public d9 e;
     public t f;
-    public s7 h;
+    public t7 h;
     public boolean r;
     public final /* synthetic */ u s;
     public final ArrayList d = new ArrayList();
@@ -41,12 +41,12 @@ public class t extends el0 {
         M();
     }
 
-    @Override // org.telegram.ui.Components.vl0
+    @Override // org.telegram.ui.Components.ul0
     public final boolean D(c1 c1Var) {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.el0
+    @Override // org.telegram.ui.Components.dl0
     public final String F(int i10) {
         MessageObject messageObject;
         TL_stories.StoryItem storyItem;
@@ -57,14 +57,14 @@ public class t extends el0 {
         return LocaleController.formatYearMont(storyItem.date, true);
     }
 
-    @Override // org.telegram.ui.Components.el0
-    public final void G(wl0 wl0Var, float f7, int[] iArr) {
-        int measuredHeight = wl0Var.getChildAt(0).getMeasuredHeight();
+    @Override // org.telegram.ui.Components.dl0
+    public final void G(vl0 vl0Var, float f7, int[] iArr) {
+        int measuredHeight = vl0Var.getChildAt(0).getMeasuredHeight();
         t tVar = this.f;
         u uVar = this.s;
         int i10 = this == tVar ? uVar.e : uVar.d;
         int ceil = (int) (Math.ceil(h() / i10) * measuredHeight);
-        int measuredHeight2 = wl0Var.getMeasuredHeight() - wl0Var.getPaddingTop();
+        int measuredHeight2 = vl0Var.getMeasuredHeight() - vl0Var.getPaddingTop();
         if (measuredHeight == 0) {
             iArr[1] = 0;
             iArr[0] = 0;
@@ -76,13 +76,13 @@ public class t extends el0 {
     }
 
     public final boolean L(int i10) {
-        yr0 yr0Var = this.s.W;
+        xr0 xr0Var = this.s.W;
         d9 d9Var = this.e;
         if (d9Var == null) {
             return false;
         }
         if (d9Var instanceof t8) {
-            TLRPC.User user = MessagesController.getInstance(yr0Var.b).getUser(Long.valueOf(yr0Var.d));
+            TLRPC.User user = MessagesController.getInstance(xr0Var.b).getUser(Long.valueOf(xr0Var.d));
             return user != null && user.bot && user.bot_has_main_app && user.bot_can_edit;
         }
         if (i10 < 0 || i10 >= d9Var.i.size()) {
@@ -165,14 +165,14 @@ public class t extends el0 {
             return;
         }
         View view = c1Var.a;
-        if (view instanceof t7) {
-            t7 t7Var = (t7) view;
-            t7Var.d0 = true;
+        if (view instanceof u7) {
+            u7 u7Var = (u7) view;
+            u7Var.d0 = true;
             u uVar = this.s;
             ArrayList arrayList = this.d;
             if (i10 >= 0 && i10 < arrayList.size()) {
                 k9 k9Var = (k9) arrayList.get(i10);
-                t7Var.f0 = false;
+                u7Var.f0 = false;
                 if (k9Var.K == null) {
                     TL_stories.TL_storyItem tL_storyItem = new TL_stories.TL_storyItem();
                     long j3 = k9Var.a;
@@ -184,46 +184,46 @@ public class t extends el0 {
                     k9Var.K = sVar;
                     sVar.uploadingStory = k9Var;
                 }
-                t7Var.k(k9Var.K, this == this.f ? uVar.e : uVar.d, false);
-                t7Var.d0 = true;
-                t7Var.setReorder(false);
-                t7Var.i(false, false);
+                u7Var.k(k9Var.K, this == this.f ? uVar.e : uVar.d, false);
+                u7Var.d0 = true;
+                u7Var.setReorder(false);
+                u7Var.i(false, false);
                 return;
             }
             int size = i10 - arrayList.size();
             if (size < 0 || size >= this.e.i.size()) {
-                t7Var.f0 = false;
-                t7Var.k(null, this == this.f ? uVar.e : uVar.d, false);
-                t7Var.d0 = true;
+                u7Var.f0 = false;
+                u7Var.k(null, this == this.f ? uVar.e : uVar.d, false);
+                u7Var.d0 = true;
                 return;
             }
             MessageObject messageObject = (MessageObject) this.e.i.get(size);
-            t7Var.f0 = messageObject != null && this.e.m(messageObject.getId());
-            t7Var.setReorder(true);
-            t7Var.k(messageObject, this == this.f ? uVar.e : uVar.d, false);
-            yr0 yr0Var = uVar.W;
-            if (!yr0Var.G.C1 || messageObject == null) {
-                t7Var.i(false, false);
+            u7Var.f0 = messageObject != null && this.e.m(messageObject.getId());
+            u7Var.setReorder(true);
+            u7Var.k(messageObject, this == this.f ? uVar.e : uVar.d, false);
+            xr0 xr0Var = uVar.W;
+            if (!xr0Var.G.C1 || messageObject == null) {
+                u7Var.i(false, false);
             } else {
-                t7Var.i(yr0Var.c(messageObject), true);
+                u7Var.i(xr0Var.c(messageObject), true);
             }
         }
     }
 
     @Override // s4.h0
     public final c1 x(ViewGroup viewGroup, int i10) {
-        yr0 yr0Var = this.s.W;
+        xr0 xr0Var = this.s.W;
         if (this.h == null) {
-            this.h = new s7(viewGroup.getContext(), yr0Var.c);
+            this.h = new t7(viewGroup.getContext(), xr0Var.c);
         }
-        t7 t7Var = new t7(this.c, this.h, yr0Var.b);
-        t7Var.w0 = true;
-        t7Var.setGradientView(null);
-        t7Var.d0 = true;
-        return new gl0(t7Var);
+        u7 u7Var = new u7(this.c, this.h, xr0Var.b);
+        u7Var.w0 = true;
+        u7Var.setGradientView(null);
+        u7Var.d0 = true;
+        return new fl0(u7Var);
     }
 
-    @Override // org.telegram.ui.Components.el0
+    @Override // org.telegram.ui.Components.dl0
     public final void I() {
     }
 }

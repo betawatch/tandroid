@@ -11,7 +11,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class r2 extends FrameLayout {
     public final FrameLayout a;
@@ -26,7 +26,7 @@ public final class r2 extends FrameLayout {
 
     public r2(Context context, dh.b bVar) {
         super(context);
-        w7.a6.a(this);
+        w7.b6.a(this);
         FrameLayout frameLayout = new FrameLayout(context);
         this.a = frameLayout;
         ah.m mVar = new ah.m();

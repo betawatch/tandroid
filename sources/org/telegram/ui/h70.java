@@ -9,7 +9,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.Components.Premium.LimitPreviewView;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class h70 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -36,13 +36,13 @@ public final class h70 extends AnimatorListenerAdapter {
                 }
                 break;
             case 9:
-                ((f91) this.c).r = null;
+                ((i91) this.c).r = null;
                 break;
             case 11:
-                gh1 gh1Var = (gh1) this.c;
-                AnimatorSet animatorSet = gh1Var.I;
+                ih1 ih1Var = (ih1) this.c;
+                AnimatorSet animatorSet = ih1Var.I;
                 if (animatorSet != null && animatorSet.equals(animator)) {
-                    gh1Var.I = null;
+                    ih1Var.I = null;
                     break;
                 }
                 break;
@@ -55,7 +55,7 @@ public final class h70 extends AnimatorListenerAdapter {
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
         jd jdVar;
-        org.telegram.ui.Cells.z3 z3Var;
+        org.telegram.ui.Cells.a4 a4Var;
         switch (this.a) {
             case 0:
                 l70 l70Var = (l70) this.c;
@@ -70,13 +70,13 @@ public final class h70 extends AnimatorListenerAdapter {
                 }
                 break;
             case 1:
-                xg0 xg0Var = (xg0) this.c;
+                yg0 yg0Var = (yg0) this.c;
                 if (!this.b) {
-                    xg0Var.V.setVisibility(4);
+                    yg0Var.V.setVisibility(4);
                 }
-                AnimatorSet animatorSet = xg0Var.L;
+                AnimatorSet animatorSet = yg0Var.L;
                 if (animatorSet != null && animatorSet.equals(animator)) {
-                    xg0Var.L = null;
+                    yg0Var.L = null;
                     break;
                 }
                 break;
@@ -134,50 +134,50 @@ public final class h70 extends AnimatorListenerAdapter {
                     break;
                 }
             case 7:
-                i51 i51Var = (i51) this.c;
-                i51Var.v = this.b ? 1.0f : 0.0f;
-                if (i51Var.S) {
-                    i51Var.N.invalidate();
+                l51 l51Var = (l51) this.c;
+                l51Var.v = this.b ? 1.0f : 0.0f;
+                if (l51Var.S) {
+                    l51Var.N.invalidate();
                     break;
                 }
                 break;
             case 8:
-                c71 c71Var = (c71) this.c;
-                ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = c71Var.v;
+                f71 f71Var = (f71) this.c;
+                ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = f71Var.v;
                 float f7 = this.b ? 1.0f : 0.0f;
-                c71Var.L = f7;
+                f71Var.L = f7;
                 actionBarPopupWindow$ActionBarPopupWindowLayout.setBackScaleY(f7);
-                actionBarPopupWindow$ActionBarPopupWindowLayout.setAlpha(org.telegram.ui.Components.qr.g.getInterpolation(c71Var.L));
+                actionBarPopupWindow$ActionBarPopupWindowLayout.setAlpha(org.telegram.ui.Components.qr.g.getInterpolation(f71Var.L));
                 int itemsCount = actionBarPopupWindow$ActionBarPopupWindowLayout.getItemsCount();
                 for (int i10 = 0; i10 < itemsCount; i10++) {
-                    float cascade = AndroidUtilities.cascade(c71Var.L, i10, itemsCount, 4.0f);
+                    float cascade = AndroidUtilities.cascade(f71Var.L, i10, itemsCount, 4.0f);
                     actionBarPopupWindow$ActionBarPopupWindowLayout.L.getChildAt(i10).setTranslationY((1.0f - cascade) * AndroidUtilities.dp(-12.0f));
                     actionBarPopupWindow$ActionBarPopupWindowLayout.L.getChildAt(i10).setAlpha(cascade);
                 }
-                c71Var.N = null;
+                f71Var.N = null;
                 break;
             case 9:
-                f91 f91Var = (f91) this.c;
-                if (f91Var.r != null && (z3Var = f91Var.s) != null) {
+                i91 i91Var = (i91) this.c;
+                if (i91Var.r != null && (a4Var = i91Var.s) != null) {
                     if (!this.b) {
-                        z3Var.setVisibility(4);
+                        a4Var.setVisibility(4);
                     }
-                    f91Var.r = null;
+                    i91Var.r = null;
                     break;
                 }
                 break;
             case 10:
-                ((ke1) this.c).y = this.b ? 1.0f : 0.0f;
+                ((me1) this.c).y = this.b ? 1.0f : 0.0f;
                 break;
             case 11:
-                gh1 gh1Var = (gh1) this.c;
-                AnimatorSet animatorSet2 = gh1Var.I;
+                ih1 ih1Var = (ih1) this.c;
+                AnimatorSet animatorSet2 = ih1Var.I;
                 if (animatorSet2 != null && animatorSet2.equals(animator)) {
                     if (this.b) {
-                        gh1Var.e.setVisibility(4);
+                        ih1Var.e.setVisibility(4);
                         break;
                     } else {
-                        gh1Var.b.setVisibility(4);
+                        ih1Var.b.setVisibility(4);
                         break;
                     }
                 }
@@ -217,13 +217,13 @@ public final class h70 extends AnimatorListenerAdapter {
                 k0Var.invalidate();
                 break;
             case 14:
-                qg.y1 y1Var = (qg.y1) this.c;
-                ((pg.n) y1Var).y.n.d();
+                qg.z1 z1Var = (qg.z1) this.c;
+                ((pg.n) z1Var).y.n.d();
                 if (this.b) {
-                    y1Var.w.accept(Integer.valueOf(y1Var.s));
+                    z1Var.w.accept(Integer.valueOf(z1Var.s));
                 }
-                if (y1Var.getParent() != null) {
-                    ((ViewGroup) y1Var.getParent()).removeView(y1Var);
+                if (z1Var.getParent() != null) {
+                    ((ViewGroup) z1Var.getParent()).removeView(z1Var);
                     break;
                 }
                 break;
@@ -251,7 +251,7 @@ public final class h70 extends AnimatorListenerAdapter {
                 break;
             default:
                 zg.b0 b0Var = (zg.b0) this.c;
-                org.telegram.ui.Components.qk0 qk0Var = b0Var.n;
+                org.telegram.ui.Components.pk0 pk0Var = b0Var.n;
                 b0Var.k();
                 b0Var.l();
                 boolean z10 = this.b;
@@ -262,14 +262,14 @@ public final class h70 extends AnimatorListenerAdapter {
                     b0Var.k = true;
                     b0Var.a.invalidate();
                 }
-                qk0Var.setCustomEmojiEnterProgress(Utilities.clamp(b0Var.j, 1.0f, 0.0f));
+                pk0Var.setCustomEmojiEnterProgress(Utilities.clamp(b0Var.j, 1.0f, 0.0f));
                 if (!z10) {
-                    qk0Var.setImportantForAccessibility(0);
-                    qk0Var.setSkipDraw(false);
+                    pk0Var.setImportantForAccessibility(0);
+                    pk0Var.setSkipDraw(false);
                     b0Var.f();
                     Runtime.getRuntime().gc();
                     int i11 = b0Var.y;
-                    qk0Var.setCustomEmojiReactionsBackground((i11 == 4 || i11 == 5) ? false : true);
+                    pk0Var.setCustomEmojiReactionsBackground((i11 == 4 || i11 == 5) ? false : true);
                 }
                 b0Var.C = false;
                 break;
@@ -281,7 +281,7 @@ public final class h70 extends AnimatorListenerAdapter {
         switch (this.a) {
             case 1:
                 if (this.b) {
-                    ((xg0) this.c).V.setVisibility(0);
+                    ((yg0) this.c).V.setVisibility(0);
                     break;
                 }
                 break;

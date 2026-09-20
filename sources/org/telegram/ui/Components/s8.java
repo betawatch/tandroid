@@ -1,34 +1,31 @@
 package org.telegram.ui.Components;
 
-import android.app.Activity;
-import org.telegram.messenger.AndroidUtilities;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class s8 extends org.telegram.ui.ActionBar.f3 {
-    public final /* synthetic */ e9 b;
+public final class s8 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ d9 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public s8(e9 e9Var, Activity activity) {
-        super(activity, true);
-        this.b = e9Var;
+    public /* synthetic */ s8(d9 d9Var, int i10) {
+        this.a = i10;
+        this.b = d9Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.f3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.j2
-    public final void dismiss() {
-        super.dismiss();
-        e9 e9Var = this.b;
-        e9Var.J.x1(e9Var.Y);
-        e9Var.f = true;
-        e9Var.fragmentView.invalidate();
-        e9Var.e.animate().setListener(new r8(this, 0)).alpha(0.0f).setDuration(200L).start();
-    }
-
-    @Override // org.telegram.ui.ActionBar.f3
-    public final void dismissInternal() {
-        super.dismissInternal();
-        e9 e9Var = this.b;
-        AndroidUtilities.requestAdjustResize(e9Var.getParentActivity(), e9Var.getClassGuid());
-        e9Var.S = null;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                super.onAnimationEnd(animator);
+                this.b.f = false;
+                break;
+            default:
+                d9 d9Var = this.b;
+                d9Var.i0(d9Var.F ? 1.0f : 0.0f, false);
+                d9Var.F = false;
+                break;
+        }
     }
 }

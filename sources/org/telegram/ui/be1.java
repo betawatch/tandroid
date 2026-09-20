@@ -1,28 +1,51 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class be1 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ke1 b;
+import android.text.Editable;
+import android.text.SpannableStringBuilder;
+import android.text.TextUtils;
+import android.text.TextWatcher;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-    public /* synthetic */ be1(ke1 ke1Var, int i10) {
-        this.a = i10;
-        this.b = ke1Var;
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* loaded from: classes3.dex */
+public final class be1 implements TextWatcher {
+    public final /* synthetic */ ce1 a;
+
+    public be1(ce1 ce1Var) {
+        this.a = ce1Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.c(false);
-                break;
-            case 1:
-                super/*android.app.Dialog*/.dismiss();
-                break;
-            default:
-                this.b.c(false);
-                break;
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        ce1 ce1Var = this.a;
+        if (ce1Var.I) {
+            return;
         }
+        if (ce1Var.a.length() <= 0) {
+            ce1Var.d.setText(ce1Var.H);
+            return;
+        }
+        String str = "https://" + ce1Var.getMessagesController().linkPrefix + "/addtheme/" + ((Object) ce1Var.a.getText());
+        String formatString = LocaleController.formatString("ThemeHelpLink", R.string.ThemeHelpLink, str);
+        int indexOf = formatString.indexOf(str);
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(formatString);
+        if (indexOf >= 0) {
+            spannableStringBuilder.setSpan(new org.telegram.ui.Cells.i(str, ce1Var, 8), indexOf, str.length() + indexOf, 33);
+        }
+        ce1Var.d.setText(TextUtils.concat(ce1Var.H, "\n\n", spannableStringBuilder));
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        ce1 ce1Var = this.a;
+        if (ce1Var.G) {
+            return;
+        }
+        ce1Var.Z(ce1Var.a.getText().toString(), false);
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

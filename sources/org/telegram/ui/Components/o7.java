@@ -1,47 +1,67 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.R;
+import android.content.Context;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class o7 implements so0 {
-    public final /* synthetic */ j8 a;
+public final class o7 extends FrameLayout {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ i8 b;
 
-    public o7(j8 j8Var) {
-        this.a = j8Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ o7(i8 i8Var, Context context, int i10) {
+        super(context);
+        this.a = i10;
+        this.b = i8Var;
     }
 
-    @Override // org.telegram.ui.Components.so0
-    public final void X(float f7, boolean z10) {
-        if (z10) {
-            MediaController.getInstance().seekToProgress(MediaController.getInstance().getPlayingMessageObject(), f7);
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        TextView textView;
+        switch (this.a) {
+            case 0:
+                int z11 = org.telegram.messenger.rk.z(248.0f, i12 - i10, 4);
+                for (int i14 = 0; i14 < 5; i14++) {
+                    int dp = (z11 * i14) + AndroidUtilities.dp((i14 * 48) + 4);
+                    int dp2 = AndroidUtilities.dp(9.0f);
+                    i8 i8Var = this.b;
+                    View view = i8Var.n0[i14];
+                    view.layout(dp, dp2, view.getMeasuredWidth() + dp, i8Var.n0[i14].getMeasuredHeight() + dp2);
+                }
+                break;
+            case 1:
+            default:
+                super.onLayout(z10, i10, i11, i12, i13);
+                break;
+            case 2:
+                super.onLayout(z10, i10, i11, i12, i13);
+                i8 i8Var2 = this.b;
+                if (i8Var2.V != null && (textView = i8Var2.a0) != null) {
+                    int left = (textView.getLeft() - AndroidUtilities.dp(4.0f)) - i8Var2.V.getMeasuredWidth();
+                    org.telegram.ui.ActionBar.v0 v0Var = i8Var2.V;
+                    v0Var.layout(left, v0Var.getTop(), i8Var2.V.getMeasuredWidth() + left, i8Var2.V.getBottom());
+                    break;
+                }
+                break;
         }
-        MessageObject playingMessageObject = MediaController.getInstance().getPlayingMessageObject();
-        if (playingMessageObject == null || !playingMessageObject.isMusic()) {
-            return;
+    }
+
+    @Override // android.view.View
+    public boolean onTouchEvent(MotionEvent motionEvent) {
+        switch (this.a) {
+            case 1:
+                i8 i8Var = this.b;
+                if (i8Var.i0.getTag() != null) {
+                    i8Var.A0(false, true);
+                }
+                return true;
+            default:
+                return super.onTouchEvent(motionEvent);
         }
-        this.a.G0(playingMessageObject, false);
-    }
-
-    @Override // org.telegram.ui.Components.so0
-    public final CharSequence getContentDescription() {
-        StringBuilder sb2 = new StringBuilder();
-        j8 j8Var = this.a;
-        sb2.append(LocaleController.formatPluralString("Minutes", j8Var.D0 / 60, new Object[0]));
-        sb2.append(' ');
-        sb2.append(LocaleController.formatPluralString("Seconds", j8Var.D0 % 60, new Object[0]));
-        return LocaleController.formatString("AccDescrPlayerDuration", R.string.AccDescrPlayerDuration, sb2.toString(), LocaleController.formatPluralString("Minutes", j8Var.E0 / 60, new Object[0]) + ' ' + LocaleController.formatPluralString("Seconds", j8Var.E0 % 60, new Object[0]));
-    }
-
-    @Override // org.telegram.ui.Components.so0
-    public final /* synthetic */ int m0() {
-        return 0;
-    }
-
-    @Override // org.telegram.ui.Components.so0
-    public final void B() {
     }
 }

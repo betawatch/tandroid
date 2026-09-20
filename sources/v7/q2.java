@@ -1,19 +1,33 @@
 package v7;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class q2 implements ia.d {
     public static final q2 a = new q2();
-
-    static {
-        t8.b.t(t8.b.l(h.class, t8.b.p(2, t8.b.l(h.class, new e(1)))));
-    }
+    public static final ia.c b = new ia.c("durationMs", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(1))));
+    public static final ia.c c = new ia.c("errorCode", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(2))));
+    public static final ia.c d = new ia.c("isColdCall", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(3))));
+    public static final ia.c e = new ia.c("autoManageModelOnBackground", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(4))));
+    public static final ia.c f = new ia.c("autoManageModelOnLowMemory", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(5))));
+    public static final ia.c g = new ia.c("isNnApiEnabled", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(6))));
+    public static final ia.c h = new ia.c("eventsCount", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(7))));
+    public static final ia.c i = new ia.c("otherErrors", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(8))));
+    public static final ia.c j = new ia.c("remoteConfigValueForAcceleration", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(9))));
+    public static final ia.c k = new ia.c("isAccelerated", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(10))));
 
     @Override // ia.a
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
-        }
-        throw null;
+    public final void a(Object obj, Object obj2) {
+        c6 c6Var = (c6) obj;
+        ia.e eVar = (ia.e) obj2;
+        eVar.a(b, c6Var.a);
+        eVar.a(c, c6Var.b);
+        eVar.a(d, c6Var.c);
+        eVar.a(e, null);
+        eVar.a(f, null);
+        eVar.a(g, null);
+        eVar.a(h, null);
+        eVar.a(i, null);
+        eVar.a(j, null);
+        eVar.a(k, null);
     }
 }

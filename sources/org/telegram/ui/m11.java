@@ -13,15 +13,15 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class m11 extends FrameLayout {
     public final Matrix E;
     public final Paint F;
     public int G;
     public int H;
-    public final org.telegram.ui.Components.o5 I;
-    public final org.telegram.ui.Components.e6 J;
+    public final org.telegram.ui.Components.n5 I;
+    public final org.telegram.ui.Components.d6 J;
     public boolean K;
     public boolean L;
     public final Rect M;
@@ -29,11 +29,11 @@ public final class m11 extends FrameLayout {
     public int a;
     public final Paint b;
     public boolean c;
-    public final org.telegram.ui.Components.e6 d;
+    public final org.telegram.ui.Components.d6 d;
     public int e;
     public int f;
-    public final org.telegram.ui.Components.h5 h;
-    public final org.telegram.ui.Components.h5 n;
+    public final org.telegram.ui.Components.g5 h;
+    public final org.telegram.ui.Components.g5 n;
     public int r;
     public int s;
     public int v;
@@ -47,14 +47,14 @@ public final class m11 extends FrameLayout {
         this.N = profileActivity;
         this.b = new Paint();
         org.telegram.ui.Components.qr qrVar = org.telegram.ui.Components.qr.h;
-        this.d = new org.telegram.ui.Components.e6(this, 350L, qrVar);
-        this.h = new org.telegram.ui.Components.h5(this, 350L, qrVar);
-        this.n = new org.telegram.ui.Components.h5(this, 350L, qrVar);
+        this.d = new org.telegram.ui.Components.d6(this, 350L, qrVar);
+        this.h = new org.telegram.ui.Components.g5(this, 350L, qrVar);
+        this.n = new org.telegram.ui.Components.g5(this, 350L, qrVar);
         this.E = new Matrix();
         this.F = new Paint(1);
-        this.I = new org.telegram.ui.Components.o5(AndroidUtilities.dp(20.0f), 13, this, false);
-        this.J = new org.telegram.ui.Components.e6(this, 0L, 440L, qrVar);
-        new org.telegram.ui.Components.e6(this, 0L, 440L, qrVar);
+        this.I = new org.telegram.ui.Components.n5(AndroidUtilities.dp(20.0f), 13, this, false);
+        this.J = new org.telegram.ui.Components.d6(this, 0L, 440L, qrVar);
+        new org.telegram.ui.Components.d6(this, 0L, 440L, qrVar);
         this.M = new Rect();
         setWillNotDraw(false);
     }
@@ -98,10 +98,10 @@ public final class m11 extends FrameLayout {
     }
 
     public final void b(long j3, boolean z10) {
-        org.telegram.ui.Components.o5 o5Var = this.I;
+        org.telegram.ui.Components.n5 n5Var = this.I;
         boolean z11 = true;
-        o5Var.j(j3, true);
-        o5Var.k(Integer.valueOf(this.G));
+        n5Var.j(j3, true);
+        n5Var.k(Integer.valueOf(this.G));
         if (!this.K && (j3 == 0 || j3 == -1)) {
             z11 = false;
         }
@@ -146,14 +146,14 @@ public final class m11 extends FrameLayout {
             paint3.setColor(this.a);
             int a2 = this.h.a(this.e, false);
             int a10 = this.n.a(this.f, false);
-            org.telegram.ui.Components.oh0 oh0Var = profileActivity.a0;
-            if (oh0Var != null) {
+            org.telegram.ui.Components.nh0 nh0Var = profileActivity.a0;
+            if (nh0Var != null) {
                 int i11 = this.H;
                 boolean z10 = this.c;
-                if (oh0Var.S == null || oh0Var.Q != i11 || oh0Var.R != z10) {
-                    oh0Var.Q = i11;
-                    oh0Var.R = z10;
-                    oh0Var.g();
+                if (nh0Var.S == null || nh0Var.Q != i11 || nh0Var.R != z10) {
+                    nh0Var.Q = i11;
+                    nh0Var.R = z10;
+                    nh0Var.g();
                 }
             }
             int width = getWidth() / 2;
@@ -193,12 +193,12 @@ public final class m11 extends FrameLayout {
             }
             if (this.K) {
                 boolean z11 = this.L;
-                org.telegram.ui.Components.o5 o5Var = this.I;
+                org.telegram.ui.Components.n5 n5Var = this.I;
                 boolean z12 = true;
                 if (!z11) {
-                    if (o5Var != null) {
-                        Drawable drawable = o5Var.f[0];
-                        if ((drawable instanceof org.telegram.ui.Components.q5) && (l4Var = ((org.telegram.ui.Components.q5) drawable).k) != null && l4Var.hasImageLoaded()) {
+                    if (n5Var != null) {
+                        Drawable drawable = n5Var.f[0];
+                        if ((drawable instanceof org.telegram.ui.Components.p5) && (l4Var = ((org.telegram.ui.Components.p5) drawable).k) != null && l4Var.hasImageLoaded()) {
                             this.L = true;
                         }
                     }
@@ -219,7 +219,7 @@ public final class m11 extends FrameLayout {
                     RectF rectF = AndroidUtilities.rectTmp;
                     f7 = 1.0f;
                     rectF.set(j0Var.getX(), j0Var.getY(), (j0Var.getScaleX() * j0Var.getWidth()) + j0Var.getX(), (j0Var.getScaleY() * j0Var.getHeight()) + j0Var.getY());
-                    yh.j0.c(canvas2, o5Var, measuredWidth, A, y3, rectF, 1.0f);
+                    yh.j0.c(canvas2, n5Var, measuredWidth, A, y3, rectF, 1.0f);
                     canvas2.restore();
                     obj = profileActivity.g5;
                     if (obj != null && (zVar = (actionBar = ((org.telegram.ui.ActionBar.n2) obj).getActionBar()).E) != null) {

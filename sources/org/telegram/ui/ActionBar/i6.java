@@ -26,10 +26,10 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.Components.lc0;
-import org.telegram.ui.Components.v9;
+import org.telegram.ui.Components.kc0;
+import org.telegram.ui.Components.u9;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class i6 implements NotificationCenter.NotificationCenterDelegate {
     public int E;
@@ -90,7 +90,7 @@ public final class i6 implements NotificationCenter.NotificationCenterDelegate {
         this.j0 = -1;
     }
 
-    public static boolean a(g6 g6Var, TLRPC.ThemeSettings themeSettings) {
+    public static boolean a(h6 h6Var, TLRPC.ThemeSettings themeSettings) {
         boolean z10;
         boolean z11;
         long j3;
@@ -130,12 +130,12 @@ public final class i6 implements NotificationCenter.NotificationCenterDelegate {
             if (!(wallPaper2 instanceof TLRPC.TL_wallPaperNoFile) && wallPaper2.pattern) {
                 str = wallPaper2.slug;
                 f7 = wallPaper2.settings.intensity / 100.0f;
-                return (themeSettings.accent_color != g6Var.c && themeSettings.outbox_accent_color == g6Var.d && intValue == g6Var.e && intValue2 == g6Var.f && intValue3 == g6Var.g && intValue4 == g6Var.h && themeSettings.message_colors_animated == g6Var.i && ((long) i10) == g6Var.j && j3 == g6Var.k && j10 == g6Var.l && j11 == g6Var.m && i11 == g6Var.n && TextUtils.equals(str, g6Var.o) && ((double) Math.abs(f7 - g6Var.p)) < 0.001d) ? z11 : z10;
+                return (themeSettings.accent_color != h6Var.c && themeSettings.outbox_accent_color == h6Var.d && intValue == h6Var.e && intValue2 == h6Var.f && intValue3 == h6Var.g && intValue4 == h6Var.h && themeSettings.message_colors_animated == h6Var.i && ((long) i10) == h6Var.j && j3 == h6Var.k && j10 == h6Var.l && j11 == h6Var.m && i11 == h6Var.n && TextUtils.equals(str, h6Var.o) && ((double) Math.abs(f7 - h6Var.p)) < 0.001d) ? z11 : z10;
             }
             str = null;
         }
         f7 = 0.0f;
-        if (themeSettings.accent_color != g6Var.c) {
+        if (themeSettings.accent_color != h6Var.c) {
         }
     }
 
@@ -145,62 +145,62 @@ public final class i6 implements NotificationCenter.NotificationCenterDelegate {
         i6Var.a0 = new SparseArray();
         i6Var.c0 = new LongSparseArray();
         for (int i10 = 0; i10 < iArr.length; i10++) {
-            g6 g6Var = new g6();
-            g6Var.a = iArr8[i10];
-            if (j6.g1(g6Var)) {
-                g6Var.z = true;
+            h6 h6Var = new h6();
+            h6Var.a = iArr8[i10];
+            if (j6.g1(h6Var)) {
+                h6Var.z = true;
             }
-            g6Var.c = iArr[i10];
-            g6Var.b = i6Var;
-            g6Var.e = iArr2[i10];
-            g6Var.f = iArr3[i10];
+            h6Var.c = iArr[i10];
+            h6Var.b = i6Var;
+            h6Var.e = iArr2[i10];
+            h6Var.f = iArr3[i10];
             long j3 = iArr4[i10];
-            g6Var.j = j3;
+            h6Var.j = j3;
             boolean z10 = i6Var.S;
-            if (z10 && g6Var.a == j6.n) {
-                g6Var.j = 4294967296L;
+            if (z10 && h6Var.a == j6.n) {
+                h6Var.j = 4294967296L;
             } else {
-                g6Var.j = j3;
+                h6Var.j = j3;
             }
-            if (z10 && g6Var.a == j6.n) {
-                g6Var.k = 4294967296L;
+            if (z10 && h6Var.a == j6.n) {
+                h6Var.k = 4294967296L;
             } else {
-                g6Var.k = iArr5[i10];
+                h6Var.k = iArr5[i10];
             }
             if (iArr6 != null) {
-                if (z10 && g6Var.a == j6.n) {
-                    g6Var.l = 4294967296L;
+                if (z10 && h6Var.a == j6.n) {
+                    h6Var.l = 4294967296L;
                 } else {
-                    g6Var.l = iArr6[i10];
+                    h6Var.l = iArr6[i10];
                 }
             }
             if (iArr7 != null) {
-                if (z10 && g6Var.a == j6.n) {
-                    g6Var.m = 4294967296L;
+                if (z10 && h6Var.a == j6.n) {
+                    h6Var.m = 4294967296L;
                 } else {
-                    g6Var.m = iArr7[i10];
+                    h6Var.m = iArr7[i10];
                 }
             }
-            g6Var.p = iArr10[i10] / 100.0f;
-            g6Var.n = iArr9[i10];
-            g6Var.o = strArr[i10];
-            if ((j6.g1(g6Var) && i6Var.a.equals("Dark Blue")) || i6Var.a.equals("Night")) {
-                g6Var.e = -14316059;
-                g6Var.f = -12422433;
-                g6Var.g = -8304937;
-                g6Var.h = -6340950;
+            h6Var.p = iArr10[i10] / 100.0f;
+            h6Var.n = iArr9[i10];
+            h6Var.o = strArr[i10];
+            if ((j6.g1(h6Var) && i6Var.a.equals("Dark Blue")) || i6Var.a.equals("Night")) {
+                h6Var.e = -14316059;
+                h6Var.f = -12422433;
+                h6Var.g = -8304937;
+                h6Var.h = -6340950;
                 if (i6Var.a.equals("Night")) {
-                    g6Var.p = -0.57f;
-                    g6Var.j = -9666650L;
-                    g6Var.k = -13749173L;
-                    g6Var.l = -8883033L;
-                    g6Var.m = -13421992L;
+                    h6Var.p = -0.57f;
+                    h6Var.j = -9666650L;
+                    h6Var.k = -13749173L;
+                    h6Var.l = -8883033L;
+                    h6Var.m = -13421992L;
                 }
             }
-            i6Var.a0.put(g6Var.a, g6Var);
-            i6Var.b0.add(g6Var);
+            i6Var.a0.put(h6Var.a, h6Var);
+            i6Var.b0.add(h6Var);
         }
-        i6Var.X = ((g6) i6Var.a0.get(0)).c;
+        i6Var.X = ((h6) i6Var.a0.get(0)).c;
     }
 
     public static void c(i6 i6Var, SharedPreferences sharedPreferences) {
@@ -211,11 +211,11 @@ public final class i6 implements NotificationCenter.NotificationCenterDelegate {
         }
         int size = i6Var.b0.size();
         for (int i10 = 0; i10 < size; i10++) {
-            g6 g6Var = (g6) i6Var.b0.get(i10);
+            h6 h6Var = (h6) i6Var.b0.get(i10);
             StringBuilder sb2 = new StringBuilder();
             sb2.append(i6Var.a);
             sb2.append("_");
-            i6Var.r(sharedPreferences, g6Var, a4.a.n(g6Var.a, "_owp", sb2));
+            i6Var.r(sharedPreferences, h6Var, a4.a.n(h6Var.a, "_owp", sb2));
         }
     }
 
@@ -262,55 +262,55 @@ public final class i6 implements NotificationCenter.NotificationCenterDelegate {
         return i6Var;
     }
 
-    public static void i(g6 g6Var, TLRPC.ThemeSettings themeSettings) {
+    public static void i(h6 h6Var, TLRPC.ThemeSettings themeSettings) {
         TLRPC.WallPaperSettings wallPaperSettings;
-        g6Var.c = themeSettings.accent_color;
-        g6Var.d = themeSettings.outbox_accent_color;
-        g6Var.e = themeSettings.message_colors.size() > 0 ? themeSettings.message_colors.get(0).intValue() | (-16777216) : 0;
+        h6Var.c = themeSettings.accent_color;
+        h6Var.d = themeSettings.outbox_accent_color;
+        h6Var.e = themeSettings.message_colors.size() > 0 ? themeSettings.message_colors.get(0).intValue() | (-16777216) : 0;
         int intValue = themeSettings.message_colors.size() > 1 ? themeSettings.message_colors.get(1).intValue() | (-16777216) : 0;
-        g6Var.f = intValue;
-        if (g6Var.e == intValue) {
-            g6Var.f = 0;
+        h6Var.f = intValue;
+        if (h6Var.e == intValue) {
+            h6Var.f = 0;
         }
-        g6Var.g = themeSettings.message_colors.size() > 2 ? themeSettings.message_colors.get(2).intValue() | (-16777216) : 0;
-        g6Var.h = themeSettings.message_colors.size() > 3 ? themeSettings.message_colors.get(3).intValue() | (-16777216) : 0;
-        g6Var.i = themeSettings.message_colors_animated;
+        h6Var.g = themeSettings.message_colors.size() > 2 ? themeSettings.message_colors.get(2).intValue() | (-16777216) : 0;
+        h6Var.h = themeSettings.message_colors.size() > 3 ? themeSettings.message_colors.get(3).intValue() | (-16777216) : 0;
+        h6Var.i = themeSettings.message_colors_animated;
         TLRPC.WallPaper wallPaper = themeSettings.wallpaper;
         if (wallPaper == null || (wallPaperSettings = wallPaper.settings) == null) {
             return;
         }
         if (wallPaperSettings.background_color == 0) {
-            g6Var.j = 4294967296L;
+            h6Var.j = 4294967296L;
         } else {
-            g6Var.j = j6.X0(r0);
+            h6Var.j = j6.X0(r0);
         }
         TLRPC.WallPaperSettings wallPaperSettings2 = themeSettings.wallpaper.settings;
         if ((wallPaperSettings2.flags & 16) == 0 || wallPaperSettings2.second_background_color != 0) {
-            g6Var.k = j6.X0(wallPaperSettings2.second_background_color);
+            h6Var.k = j6.X0(wallPaperSettings2.second_background_color);
         } else {
-            g6Var.k = 4294967296L;
+            h6Var.k = 4294967296L;
         }
         TLRPC.WallPaperSettings wallPaperSettings3 = themeSettings.wallpaper.settings;
         if ((wallPaperSettings3.flags & 32) == 0 || wallPaperSettings3.third_background_color != 0) {
-            g6Var.l = j6.X0(wallPaperSettings3.third_background_color);
+            h6Var.l = j6.X0(wallPaperSettings3.third_background_color);
         } else {
-            g6Var.l = 4294967296L;
+            h6Var.l = 4294967296L;
         }
         TLRPC.WallPaperSettings wallPaperSettings4 = themeSettings.wallpaper.settings;
         if ((wallPaperSettings4.flags & 64) == 0 || wallPaperSettings4.fourth_background_color != 0) {
-            g6Var.m = j6.X0(wallPaperSettings4.fourth_background_color);
+            h6Var.m = j6.X0(wallPaperSettings4.fourth_background_color);
         } else {
-            g6Var.m = 4294967296L;
+            h6Var.m = 4294967296L;
         }
-        g6Var.n = AndroidUtilities.getWallpaperRotation(themeSettings.wallpaper.settings.rotation, false);
+        h6Var.n = AndroidUtilities.getWallpaperRotation(themeSettings.wallpaper.settings.rotation, false);
         TLRPC.WallPaper wallPaper2 = themeSettings.wallpaper;
         if ((wallPaper2 instanceof TLRPC.TL_wallPaperNoFile) || !wallPaper2.pattern) {
             return;
         }
-        g6Var.o = wallPaper2.slug;
+        h6Var.o = wallPaper2.slug;
         TLRPC.WallPaperSettings wallPaperSettings5 = wallPaper2.settings;
-        g6Var.p = wallPaperSettings5.intensity / 100.0f;
-        g6Var.q = wallPaperSettings5.motion;
+        h6Var.p = wallPaperSettings5.intensity / 100.0f;
+        h6Var.q = wallPaperSettings5.motion;
     }
 
     public final boolean d(File file, String str) {
@@ -322,12 +322,12 @@ public final class i6 implements NotificationCenter.NotificationCenterDelegate {
                 Canvas canvas = new Canvas(createBitmap);
                 int i10 = this.v;
                 if (i10 != 0) {
-                    patternColor = lc0.g(this.r, this.s, i10, this.w);
+                    patternColor = kc0.g(this.r, this.s, i10, this.w);
                 } else {
                     int i11 = this.s;
                     if (i11 != 0) {
                         patternColor = AndroidUtilities.getAverageColor(this.r, i11);
-                        GradientDrawable gradientDrawable = new GradientDrawable(v9.d(this.x), new int[]{this.r, this.s});
+                        GradientDrawable gradientDrawable = new GradientDrawable(u9.d(this.x), new int[]{this.r, this.s});
                         gradientDrawable.setBounds(0, 0, createBitmap.getWidth(), createBitmap.getHeight());
                         gradientDrawable.draw(canvas);
                     } else {
@@ -366,7 +366,7 @@ public final class i6 implements NotificationCenter.NotificationCenterDelegate {
             }
             if (str.equals(this.g0)) {
                 this.g0 = null;
-                Utilities.globalQueue.postRunnable(new h6(0, this, (File) objArr[1]));
+                Utilities.globalQueue.postRunnable(new c6(2, this, (File) objArr[1]));
                 return;
             }
             if (str.equals(FileLoader.getAttachFileName(this.F.document))) {
@@ -397,56 +397,56 @@ public final class i6 implements NotificationCenter.NotificationCenterDelegate {
         }
     }
 
-    public final g6 e(long j3, TLRPC.ThemeSettings themeSettings, TLRPC.TL_theme tL_theme, int i10, boolean z10) {
+    public final h6 e(long j3, TLRPC.ThemeSettings themeSettings, TLRPC.TL_theme tL_theme, int i10, boolean z10) {
         if (z10) {
             LongSparseArray longSparseArray = this.d0;
-            g6 g6Var = (g6) longSparseArray.get(j3);
-            if (g6Var != null) {
-                return g6Var;
+            h6 h6Var = (h6) longSparseArray.get(j3);
+            if (h6Var != null) {
+                return h6Var;
             }
             int i11 = this.e0 + 1;
             this.e0 = i11;
-            g6 g6Var2 = new g6();
-            i(g6Var2, themeSettings);
-            g6Var2.b = this;
-            g6Var2.a = i11;
-            g6Var2.r = tL_theme;
-            g6Var2.t = i10;
-            longSparseArray.put(i11, g6Var2);
-            return g6Var2;
+            h6 h6Var2 = new h6();
+            i(h6Var2, themeSettings);
+            h6Var2.b = this;
+            h6Var2.a = i11;
+            h6Var2.r = tL_theme;
+            h6Var2.t = i10;
+            longSparseArray.put(i11, h6Var2);
+            return h6Var2;
         }
-        g6 g6Var3 = (g6) this.c0.get(j3);
-        if (g6Var3 != null) {
-            return g6Var3;
+        h6 h6Var3 = (h6) this.c0.get(j3);
+        if (h6Var3 != null) {
+            return h6Var3;
         }
         int i12 = this.f0 + 1;
         this.f0 = i12;
-        g6 g6Var4 = new g6();
-        i(g6Var4, themeSettings);
-        g6Var4.b = this;
-        g6Var4.a = i12;
-        g6Var4.r = tL_theme;
-        g6Var4.t = i10;
-        this.a0.put(i12, g6Var4);
-        this.b0.add(0, g6Var4);
+        h6 h6Var4 = new h6();
+        i(h6Var4, themeSettings);
+        h6Var4.b = this;
+        h6Var4.a = i12;
+        h6Var4.r = tL_theme;
+        h6Var4.t = i10;
+        this.a0.put(i12, h6Var4);
+        this.b0.add(0, h6Var4);
         j6.D1(this);
-        this.c0.put(j3, g6Var4);
-        return g6Var4;
+        this.c0.put(j3, h6Var4);
+        return h6Var4;
     }
 
-    public final g6 f(TLRPC.TL_theme tL_theme, int i10, int i11) {
+    public final h6 f(TLRPC.TL_theme tL_theme, int i10, int i11) {
         if (tL_theme == null) {
             return null;
         }
         return e(tL_theme.id, i11 < tL_theme.settings.size() ? tL_theme.settings.get(i11) : null, tL_theme, i10, false);
     }
 
-    public final String j(g6 g6Var, boolean z10) {
+    public final String j(h6 h6Var, boolean z10) {
         String n10;
-        if (g6Var == null) {
-            g6Var = k(false);
+        if (h6Var == null) {
+            h6Var = k(false);
         }
-        if (g6Var == null) {
+        if (h6Var == null) {
             StringBuilder sb2 = new StringBuilder();
             sb2.append(z10 ? a4.a.s(new StringBuilder(), this.a, "_wp_o") : a4.a.s(new StringBuilder(), this.a, "_wp"));
             sb2.append(Utilities.random.nextInt());
@@ -458,12 +458,12 @@ public final class i6 implements NotificationCenter.NotificationCenterDelegate {
             StringBuilder sb4 = new StringBuilder();
             sb4.append(this.a);
             sb4.append("_");
-            n10 = a4.a.n(g6Var.a, "_wp_o", sb4);
+            n10 = a4.a.n(h6Var.a, "_wp_o", sb4);
         } else {
             StringBuilder sb5 = new StringBuilder();
             sb5.append(this.a);
             sb5.append("_");
-            n10 = a4.a.n(g6Var.a, "_wp", sb5);
+            n10 = a4.a.n(h6Var.a, "_wp", sb5);
         }
         sb3.append(n10);
         sb3.append(Utilities.random.nextInt());
@@ -471,33 +471,33 @@ public final class i6 implements NotificationCenter.NotificationCenterDelegate {
         return sb3.toString();
     }
 
-    public final g6 k(boolean z10) {
-        g6 g6Var;
-        if (this.b0 == null || (g6Var = (g6) this.a0.get(this.Y)) == null) {
+    public final h6 k(boolean z10) {
+        h6 h6Var;
+        if (this.b0 == null || (h6Var = (h6) this.a0.get(this.Y)) == null) {
             return null;
         }
         if (!z10) {
-            return g6Var;
+            return h6Var;
         }
         int i10 = this.f0 + 1;
         this.f0 = i10;
-        g6 g6Var2 = new g6();
-        g6Var2.c = g6Var.c;
-        g6Var2.d = g6Var.d;
-        g6Var2.e = g6Var.e;
-        g6Var2.f = g6Var.f;
-        g6Var2.g = g6Var.g;
-        g6Var2.h = g6Var.h;
-        g6Var2.i = g6Var.i;
-        g6Var2.j = g6Var.j;
-        g6Var2.k = g6Var.k;
-        g6Var2.l = g6Var.l;
-        g6Var2.m = g6Var.m;
-        g6Var2.n = g6Var.n;
-        g6Var2.o = g6Var.o;
-        g6Var2.p = g6Var.p;
-        g6Var2.q = g6Var.q;
-        g6Var2.b = this;
+        h6 h6Var2 = new h6();
+        h6Var2.c = h6Var.c;
+        h6Var2.d = h6Var.d;
+        h6Var2.e = h6Var.e;
+        h6Var2.f = h6Var.f;
+        h6Var2.g = h6Var.g;
+        h6Var2.h = h6Var.h;
+        h6Var2.i = h6Var.i;
+        h6Var2.j = h6Var.j;
+        h6Var2.k = h6Var.k;
+        h6Var2.l = h6Var.l;
+        h6Var2.m = h6Var.m;
+        h6Var2.n = h6Var.n;
+        h6Var2.o = h6Var.o;
+        h6Var2.p = h6Var.p;
+        h6Var2.q = h6Var.q;
+        h6Var2.b = this;
         b6 b6Var = this.i0;
         if (b6Var != null) {
             b6 b6Var2 = new b6();
@@ -514,7 +514,7 @@ public final class i6 implements NotificationCenter.NotificationCenterDelegate {
             b6Var2.j = b6Var.j;
             b6Var2.k = b6Var.k;
             b6Var2.p = this;
-            b6Var2.q = g6Var2;
+            b6Var2.q = h6Var2;
             if (TextUtils.isEmpty(b6Var.a)) {
                 b6Var2.a = "";
             } else {
@@ -545,22 +545,22 @@ public final class i6 implements NotificationCenter.NotificationCenterDelegate {
                     FileLog.e(e7);
                 }
             }
-            g6Var2.y = b6Var2;
+            h6Var2.y = b6Var2;
         }
         this.Z = this.Y;
-        g6Var2.a = i10;
+        h6Var2.a = i10;
         this.Y = i10;
-        this.i0 = g6Var2.y;
-        this.a0.put(i10, g6Var2);
-        this.b0.add(0, g6Var2);
+        this.i0 = h6Var2.y;
+        this.a0.put(i10, h6Var2);
+        this.b0.add(0, h6Var2);
         j6.D1(this);
-        return g6Var2;
+        return h6Var2;
     }
 
     public final int l(int i10) {
-        g6 g6Var = (g6) this.a0.get(i10);
-        if (g6Var != null) {
-            return g6Var.c;
+        h6 h6Var = (h6) this.a0.get(i10);
+        if (h6Var != null) {
+            return h6Var.c;
         }
         return 0;
     }
@@ -622,7 +622,7 @@ public final class i6 implements NotificationCenter.NotificationCenterDelegate {
         return this.j0 == 1;
     }
 
-    public final void r(SharedPreferences sharedPreferences, g6 g6Var, String str) {
+    public final void r(SharedPreferences sharedPreferences, h6 h6Var, String str) {
         try {
             String string = sharedPreferences.getString(str, null);
             if (TextUtils.isEmpty(string)) {
@@ -642,9 +642,9 @@ public final class i6 implements NotificationCenter.NotificationCenterDelegate {
             b6Var.j = jSONObject.getBoolean("wMotion");
             b6Var.k = (float) jSONObject.getDouble("pIntensity");
             b6Var.p = this;
-            b6Var.q = g6Var;
-            if (g6Var != null) {
-                g6Var.y = b6Var;
+            b6Var.q = h6Var;
+            if (h6Var != null) {
+                h6Var.y = b6Var;
             } else {
                 this.i0 = b6Var;
             }
@@ -672,7 +672,7 @@ public final class i6 implements NotificationCenter.NotificationCenterDelegate {
 
     public final void u(int i10) {
         this.Y = i10;
-        g6 k10 = k(false);
+        h6 k10 = k(false);
         if (k10 != null) {
             this.i0 = k10.y;
         }
@@ -682,7 +682,7 @@ public final class i6 implements NotificationCenter.NotificationCenterDelegate {
         if (this.i0 == b6Var) {
             return;
         }
-        g6 k10 = k(false);
+        h6 k10 = k(false);
         b6 b6Var2 = this.i0;
         if (b6Var2 != null) {
             b6.a(b6Var2);

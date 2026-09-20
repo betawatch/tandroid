@@ -43,7 +43,7 @@ import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class jc implements NotificationCenter.NotificationCenterDelegate, org.telegram.ui.ActionBar.j2, rf.a {
     public static boolean A1;
@@ -378,8 +378,8 @@ public final class jc implements NotificationCenter.NotificationCenterDelegate, 
             Paint paint = new Paint(1);
             oaVar.a = paint;
             oaVar.c = new q4(oaVar, i12);
-            oaVar.d = new org.telegram.ui.Components.e6(oaVar);
-            oaVar.e = new org.telegram.ui.Components.e6(oaVar);
+            oaVar.d = new org.telegram.ui.Components.d6(oaVar);
+            oaVar.e = new org.telegram.ui.Components.d6(oaVar);
             paint.setColor(-1);
             this.d1 = oaVar;
             this.v.addView(oaVar, w7.y5.d(-1, -1.0f, 0, 4.0f, 0.0f, 4.0f, 0.0f));

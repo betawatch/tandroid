@@ -1,9 +1,9 @@
 package org.telegram.ui.Cells;
 
-import org.telegram.ui.Components.b61;
+import org.telegram.ui.Components.a61;
 import org.telegram.ui.Components.oo0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class f1 extends oo0 {
     public final /* synthetic */ u1 H;
@@ -15,7 +15,7 @@ public final class f1 extends oo0 {
     }
 
     @Override // org.telegram.ui.Components.oo0
-    public final void e(b61 b61Var) {
-        this.H.Q3(b61Var);
+    public final void e(a61 a61Var) {
+        this.H.Q3(a61Var);
     }
 }

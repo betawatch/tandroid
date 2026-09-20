@@ -24,10 +24,10 @@ import java.util.regex.Pattern;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SvgHelper;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.rk;
 import org.telegram.ui.ActionBar.j6;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class f {
     public static final String[] a0 = {"models/star.binobj"};
@@ -161,11 +161,11 @@ public final class f {
                                     fArr2 = null;
                                     fArr3 = null;
                                     e.printStackTrace();
-                                    this.d[i11] = wh.h(ByteBuffer.allocateDirect(fArr.length * 4));
+                                    this.d[i11] = rk.i(ByteBuffer.allocateDirect(fArr.length * 4));
                                     this.d[i11].put(fArr).position(0);
-                                    this.e[i11] = wh.h(ByteBuffer.allocateDirect(fArr2.length * 4));
+                                    this.e[i11] = rk.i(ByteBuffer.allocateDirect(fArr2.length * 4));
                                     this.e[i11].put(fArr2).position(0);
-                                    this.f[i11] = wh.h(ByteBuffer.allocateDirect(fArr3.length * 4));
+                                    this.f[i11] = rk.i(ByteBuffer.allocateDirect(fArr3.length * 4));
                                     this.f[i11].put(fArr3).position(0);
                                     this.t[i11] = fArr.length;
                                     i11++;
@@ -193,11 +193,11 @@ public final class f {
                             fArr2 = null;
                             fArr3 = null;
                             e.printStackTrace();
-                            this.d[i11] = wh.h(ByteBuffer.allocateDirect(fArr.length * 4));
+                            this.d[i11] = rk.i(ByteBuffer.allocateDirect(fArr.length * 4));
                             this.d[i11].put(fArr).position(0);
-                            this.e[i11] = wh.h(ByteBuffer.allocateDirect(fArr2.length * 4));
+                            this.e[i11] = rk.i(ByteBuffer.allocateDirect(fArr2.length * 4));
                             this.e[i11].put(fArr2).position(0);
-                            this.f[i11] = wh.h(ByteBuffer.allocateDirect(fArr3.length * 4));
+                            this.f[i11] = rk.i(ByteBuffer.allocateDirect(fArr3.length * 4));
                             this.f[i11].put(fArr3).position(0);
                             this.t[i11] = fArr.length;
                             i11++;
@@ -285,11 +285,11 @@ public final class f {
                         } catch (IOException e11) {
                             e = e11;
                             e.printStackTrace();
-                            this.d[i11] = wh.h(ByteBuffer.allocateDirect(fArr.length * 4));
+                            this.d[i11] = rk.i(ByteBuffer.allocateDirect(fArr.length * 4));
                             this.d[i11].put(fArr).position(0);
-                            this.e[i11] = wh.h(ByteBuffer.allocateDirect(fArr2.length * 4));
+                            this.e[i11] = rk.i(ByteBuffer.allocateDirect(fArr2.length * 4));
                             this.e[i11].put(fArr2).position(0);
-                            this.f[i11] = wh.h(ByteBuffer.allocateDirect(fArr3.length * 4));
+                            this.f[i11] = rk.i(ByteBuffer.allocateDirect(fArr3.length * 4));
                             this.f[i11].put(fArr3).position(0);
                             this.t[i11] = fArr.length;
                             i11++;
@@ -297,11 +297,11 @@ public final class f {
                     } catch (IOException e12) {
                         e = e12;
                     }
-                    this.d[i11] = wh.h(ByteBuffer.allocateDirect(fArr.length * 4));
+                    this.d[i11] = rk.i(ByteBuffer.allocateDirect(fArr.length * 4));
                     this.d[i11].put(fArr).position(0);
-                    this.e[i11] = wh.h(ByteBuffer.allocateDirect(fArr2.length * 4));
+                    this.e[i11] = rk.i(ByteBuffer.allocateDirect(fArr2.length * 4));
                     this.e[i11].put(fArr2).position(0);
-                    this.f[i11] = wh.h(ByteBuffer.allocateDirect(fArr3.length * 4));
+                    this.f[i11] = rk.i(ByteBuffer.allocateDirect(fArr3.length * 4));
                     this.f[i11].put(fArr3).position(0);
                     this.t[i11] = fArr.length;
                     i11++;
@@ -465,11 +465,11 @@ public final class f {
             fArr = null;
             if (i11 < this.W) {
             }
-            this.d[i11] = wh.h(ByteBuffer.allocateDirect(fArr.length * 4));
+            this.d[i11] = rk.i(ByteBuffer.allocateDirect(fArr.length * 4));
             this.d[i11].put(fArr).position(0);
-            this.e[i11] = wh.h(ByteBuffer.allocateDirect(fArr2.length * 4));
+            this.e[i11] = rk.i(ByteBuffer.allocateDirect(fArr2.length * 4));
             this.e[i11].put(fArr2).position(0);
-            this.f[i11] = wh.h(ByteBuffer.allocateDirect(fArr3.length * 4));
+            this.f[i11] = rk.i(ByteBuffer.allocateDirect(fArr3.length * 4));
             this.f[i11].put(fArr3).position(0);
             this.t[i11] = fArr.length;
             i11++;

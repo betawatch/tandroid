@@ -11,7 +11,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class gl0 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -39,7 +39,7 @@ public final /* synthetic */ class gl0 implements Utilities.Callback2 {
             case 0:
                 org.telegram.ui.ActionBar.f3 f3Var = (org.telegram.ui.ActionBar.f3) obj4;
                 String str = (String) serializable;
-                org.telegram.ui.ActionBar.e6 e6Var = (org.telegram.ui.ActionBar.e6) obj3;
+                org.telegram.ui.ActionBar.f6 f6Var = (org.telegram.ui.ActionBar.f6) obj3;
                 ((org.telegram.ui.ActionBar.b2) obj5).dismiss();
                 if (!(((TLRPC.Bool) obj) instanceof TLRPC.TL_boolTrue)) {
                     org.telegram.ui.ActionBar.f3 f3Var2 = ll0.a;
@@ -47,7 +47,7 @@ public final /* synthetic */ class gl0 implements Utilities.Callback2 {
                         f3Var2.dismiss();
                         ll0.a = null;
                     }
-                    ll0.a().M(LocaleController.getString(R.string.BotAuthLoggedInFailTitle), TextUtils.isEmpty(str) ? LocaleController.getString(R.string.BotAuthLoggedInFailNoDomain) : AndroidUtilities.replaceSingleLinkBold(LocaleController.formatString(R.string.BotAuthLoggedInFail, str), org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Gi, e6Var)), R.raw.error).j();
+                    ll0.a().M(LocaleController.getString(R.string.BotAuthLoggedInFailTitle), TextUtils.isEmpty(str) ? LocaleController.getString(R.string.BotAuthLoggedInFailNoDomain) : AndroidUtilities.replaceSingleLinkBold(LocaleController.formatString(R.string.BotAuthLoggedInFail, str), org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Gi, f6Var)), R.raw.error).j();
                     break;
                 } else {
                     ll0.a = f3Var;
@@ -61,14 +61,14 @@ public final /* synthetic */ class gl0 implements Utilities.Callback2 {
                 TLRPC.User user = (TLRPC.User) obj3;
                 TLRPC.Updates updates = (TLRPC.Updates) obj;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
-                org.telegram.ui.ActionBar.e6 e6Var2 = d1Var.e;
+                org.telegram.ui.ActionBar.f6 f6Var2 = d1Var.e;
                 if (updates == null) {
                     if (tL_error == null) {
-                        new org.telegram.ui.Components.xc(d1Var, e6Var2).c0("UNKNOWN_BUTTON", false);
+                        new org.telegram.ui.Components.xc(d1Var, f6Var2).c0("UNKNOWN_BUTTON", false);
                         d1Var.y(daVar, "requested_chat_failed", org.telegram.ui.web.d1.B(str2, "req_id"));
                         break;
                     } else {
-                        new org.telegram.ui.Components.xc(d1Var, e6Var2).d0(tL_error, false);
+                        new org.telegram.ui.Components.xc(d1Var, f6Var2).d0(tL_error, false);
                         d1Var.y(daVar, "requested_chat_failed", org.telegram.ui.web.d1.B(str2, "req_id"));
                         break;
                     }

@@ -1,33 +1,61 @@
 package org.telegram.ui.Cells;
 
 import android.content.Context;
+import android.graphics.Canvas;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class l3 extends FrameLayout {
-    public int a;
+    public final EditTextBoldCursor a;
+    public boolean b;
 
     public l3(Context context) {
-        this(context, 8);
+        super(context);
+        EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(context);
+        this.a = editTextBoldCursor;
+        editTextBoldCursor.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.G6, false));
+        editTextBoldCursor.setHintTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.H6, false));
+        editTextBoldCursor.setTextSize(1, 16.0f);
+        editTextBoldCursor.setLines(1);
+        editTextBoldCursor.setMaxLines(1);
+        editTextBoldCursor.setSingleLine(true);
+        editTextBoldCursor.setEllipsize(TextUtils.TruncateAt.END);
+        editTextBoldCursor.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
+        editTextBoldCursor.setBackgroundDrawable(null);
+        editTextBoldCursor.setPadding(0, 0, 0, 0);
+        editTextBoldCursor.setInputType(editTextBoldCursor.getInputType() | 16384);
+        addView(editTextBoldCursor, w7.y5.d(-1, -1.0f, (LocaleController.isRTL ? 5 : 3) | 48, 21.0f, 0.0f, 21.0f, 0.0f));
+    }
+
+    public String getText() {
+        return this.a.getText().toString();
+    }
+
+    public EditTextBoldCursor getTextView() {
+        return this.a;
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        if (this.b) {
+            canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(20.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.j6.k0);
+        }
     }
 
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(this.a, TLObject.FLAG_30));
+        setMeasuredDimension(View.MeasureSpec.getSize(i10), AndroidUtilities.dp(50.0f) + (this.b ? 1 : 0));
+        this.a.measure(View.MeasureSpec.makeMeasureSpec(((getMeasuredWidth() - getPaddingLeft()) - getPaddingRight()) - AndroidUtilities.dp(42.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLObject.FLAG_30));
     }
 
-    public void setHeight(int i10) {
-        if (this.a != i10) {
-            this.a = i10;
-            requestLayout();
-        }
-    }
-
-    public l3(Context context, int i10) {
-        super(context);
-        this.a = i10;
+    public void setTextColor(int i10) {
+        this.a.setTextColor(i10);
     }
 }

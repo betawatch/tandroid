@@ -5,9 +5,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.WeakHashMap;
 import org.telegram.messenger.BuildVars;
-import org.telegram.ui.Components.wl0;
+import org.telegram.ui.Components.vl0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class p1 extends s4.j0 {
     public final /* synthetic */ int a;
@@ -25,15 +25,15 @@ public final class p1 extends s4.j0 {
                 ((q1) this.b).l();
                 break;
             case 1:
-                wl0 wl0Var = (wl0) this.b;
-                wl0Var.L0(true);
-                if (wl0Var.s2) {
-                    wl0Var.s1 = -1;
-                    if (wl0Var.V1 == null) {
-                        wl0Var.G1.setEmpty();
+                vl0 vl0Var = (vl0) this.b;
+                vl0Var.L0(true);
+                if (vl0Var.s2) {
+                    vl0Var.s1 = -1;
+                    if (vl0Var.V1 == null) {
+                        vl0Var.G1.setEmpty();
                     }
                 }
-                wl0Var.invalidate();
+                vl0Var.invalidate();
                 break;
             default:
                 RecyclerView recyclerView = (RecyclerView) this.b;
@@ -70,10 +70,10 @@ public final class p1 extends s4.j0 {
                 ArrayList arrayList = (ArrayList) aVar.d;
                 if (i11 >= 1) {
                     if (BuildVars.DEBUG_VERSION) {
-                        StringBuilder k10 = hg.k0.k("onItemRangeChanged(", i10, ", ", i11, ", ");
-                        k10.append(obj);
-                        k10.append(")");
-                        aVar.i(k10.toString());
+                        StringBuilder l4 = hg.k0.l("onItemRangeChanged(", i10, ", ", i11, ", ");
+                        l4.append(obj);
+                        l4.append(")");
+                        aVar.i(l4.toString());
                     }
                     arrayList.add(aVar.j(4, i10, obj, i11));
                     aVar.b |= 4;
@@ -96,12 +96,12 @@ public final class p1 extends s4.j0 {
                 ((q1) this.b).s(i10 + 1, i11);
                 break;
             case 1:
-                wl0 wl0Var = (wl0) this.b;
-                wl0Var.L0(true);
-                View view = wl0Var.r1;
+                vl0 vl0Var = (vl0) this.b;
+                vl0Var.L0(true);
+                View view = vl0Var.r1;
                 if (view != null && view.getAlpha() == 0.0f) {
-                    wl0Var.s1 = -1;
-                    wl0Var.g1();
+                    vl0Var.s1 = -1;
+                    vl0Var.g1();
                     break;
                 }
                 break;
@@ -158,7 +158,7 @@ public final class p1 extends s4.j0 {
                 ((q1) this.b).t(i10 + 1, i11);
                 break;
             case 1:
-                ((wl0) this.b).L0(true);
+                ((vl0) this.b).L0(true);
                 break;
             default:
                 RecyclerView recyclerView = (RecyclerView) this.b;

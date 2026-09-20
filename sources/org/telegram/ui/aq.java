@@ -10,7 +10,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class aq extends s4.h0 {
     public final /* synthetic */ Context c;
@@ -56,9 +56,9 @@ public final class aq extends s4.h0 {
         bq bqVar = this.d;
         if (j3 != 0) {
             if (j3 == 1) {
-                org.telegram.ui.Cells.m4 m4Var = (org.telegram.ui.Cells.m4) view;
-                m4Var.setText(LocaleController.getString(R.string.OnlyAllowThisReactions));
-                m4Var.setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.d6, false));
+                org.telegram.ui.Cells.n4 n4Var = (org.telegram.ui.Cells.n4) view;
+                n4Var.setText(LocaleController.getString(R.string.OnlyAllowThisReactions));
+                n4Var.setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.d6, false));
                 return;
             } else {
                 if (j3 != 2) {
@@ -72,19 +72,19 @@ public final class aq extends s4.h0 {
                 return;
             }
         }
-        org.telegram.ui.Cells.e9 e9Var = (org.telegram.ui.Cells.e9) view;
-        e9Var.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.B6, false));
+        org.telegram.ui.Cells.f9 f9Var = (org.telegram.ui.Cells.f9) view;
+        f9Var.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.B6, false));
         if (bqVar.G) {
-            e9Var.setText(ChatObject.isChannelAndNotMegaGroup(bqVar.a) ? LocaleController.getString(R.string.EnableReactionsChannelInfo) : LocaleController.getString(R.string.EnableReactionsGroupInfo));
+            f9Var.setText(ChatObject.isChannelAndNotMegaGroup(bqVar.a) ? LocaleController.getString(R.string.EnableReactionsChannelInfo) : LocaleController.getString(R.string.EnableReactionsGroupInfo));
             return;
         }
         int i12 = bqVar.v;
         if (i12 == 1) {
-            e9Var.setText(LocaleController.getString(R.string.EnableSomeReactionsInfo));
+            f9Var.setText(LocaleController.getString(R.string.EnableSomeReactionsInfo));
         } else if (i12 == 0) {
-            e9Var.setText(LocaleController.getString(R.string.EnableAllReactionsInfo));
+            f9Var.setText(LocaleController.getString(R.string.EnableAllReactionsInfo));
         } else if (i12 == 2) {
-            e9Var.setText(LocaleController.getString(R.string.DisableReactionsInfo));
+            f9Var.setText(LocaleController.getString(R.string.DisableReactionsInfo));
         }
     }
 
@@ -92,13 +92,13 @@ public final class aq extends s4.h0 {
     public final s4.c1 x(ViewGroup viewGroup, int i10) {
         Context context = this.c;
         if (i10 == 0) {
-            return new org.telegram.ui.Components.gl0(new org.telegram.ui.Cells.e9(context));
+            return new org.telegram.ui.Components.fl0(new org.telegram.ui.Cells.f9(context));
         }
         if (i10 == 1) {
-            return new org.telegram.ui.Components.gl0(new org.telegram.ui.Cells.m4(context, 23));
+            return new org.telegram.ui.Components.fl0(new org.telegram.ui.Cells.n4(context, 23));
         }
         if (i10 != 3) {
-            return new org.telegram.ui.Components.gl0(new org.telegram.ui.Cells.y(context, false, false));
+            return new org.telegram.ui.Components.fl0(new org.telegram.ui.Cells.y(context, false, false));
         }
         FrameLayout frameLayout = new FrameLayout(context);
         bq bqVar = this.d;
@@ -107,6 +107,6 @@ public final class aq extends s4.h0 {
         }
         frameLayout.addView(bqVar.s);
         frameLayout.setLayoutParams(new s4.p0(-1, -2));
-        return new org.telegram.ui.Components.gl0(frameLayout);
+        return new org.telegram.ui.Components.fl0(frameLayout);
     }
 }

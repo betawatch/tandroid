@@ -6,7 +6,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class bm0 implements View.OnTouchListener {
     public final /* synthetic */ int a;
@@ -26,9 +26,9 @@ public final /* synthetic */ class bm0 implements View.OnTouchListener {
             case 0:
                 if (pn0Var.getParentActivity() != null) {
                     if (motionEvent.getAction() == 1) {
-                        au auVar = new au(null, false);
-                        auVar.r = new z10(23, pn0Var, view);
-                        pn0Var.presentFragment(auVar);
+                        bu buVar = new bu(null, false);
+                        buVar.r = new z10(23, pn0Var, view);
+                        pn0Var.presentFragment(buVar);
                         break;
                     }
                 }
@@ -50,9 +50,9 @@ public final /* synthetic */ class bm0 implements View.OnTouchListener {
             case 2:
                 if (pn0Var.getParentActivity() != null) {
                     if (motionEvent.getAction() == 1) {
-                        au auVar2 = new au(null, false);
-                        auVar2.r = new cm0(pn0Var, i11);
-                        pn0Var.presentFragment(auVar2);
+                        bu buVar2 = new bu(null, false);
+                        buVar2.r = new cm0(pn0Var, i11);
+                        pn0Var.presentFragment(buVar2);
                         break;
                     }
                 }
@@ -60,9 +60,9 @@ public final /* synthetic */ class bm0 implements View.OnTouchListener {
             default:
                 if (pn0Var.getParentActivity() != null) {
                     if (motionEvent.getAction() == 1) {
-                        au auVar3 = new au(null, false);
-                        auVar3.r = new cm0(pn0Var, 3);
-                        pn0Var.presentFragment(auVar3);
+                        bu buVar3 = new bu(null, false);
+                        buVar3.r = new cm0(pn0Var, 3);
+                        pn0Var.presentFragment(buVar3);
                         break;
                     }
                 }

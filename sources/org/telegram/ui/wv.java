@@ -12,7 +12,7 @@ import org.telegram.messenger.R;
 import org.telegram.ui.Components.CheckBox;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class wv implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -143,7 +143,7 @@ public final /* synthetic */ class wv implements View.OnClickListener {
                 break;
             case 15:
                 uy uyVar10 = this.b;
-                uyVar10.showDialog(org.telegram.ui.Components.e5.m(uyVar10.getParentActivity(), LocaleController.getString(R.string.EditProfileBirthdayTitle), LocaleController.getString(R.string.EditProfileBirthdayButton), null, new zv(uyVar10, 1), new qv(uyVar10, 17), false, false, uyVar10.getResourceProvider()).a);
+                uyVar10.showDialog(org.telegram.ui.Components.d5.m(uyVar10.getParentActivity(), LocaleController.getString(R.string.EditProfileBirthdayTitle), LocaleController.getString(R.string.EditProfileBirthdayButton), null, new zv(uyVar10, 1), new qv(uyVar10, 17), false, false, uyVar10.getResourceProvider()).a);
                 break;
             case 16:
                 uy.C0(this.b);

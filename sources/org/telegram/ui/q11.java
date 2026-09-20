@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class q11 extends View {
     public static final String[] s = {"🎉", "🎆", "🎈"};
@@ -131,8 +131,8 @@ public final class q11 extends View {
                             break;
                         }
                         View childAt = fz0Var.getChildAt(i12);
-                        if (i11 == RecyclerView.S(childAt) && (childAt instanceof org.telegram.ui.Cells.c9)) {
-                            vh.o oVar = ((org.telegram.ui.Cells.c9) childAt).a;
+                        if (i11 == RecyclerView.S(childAt) && (childAt instanceof org.telegram.ui.Cells.d9)) {
+                            vh.o oVar = ((org.telegram.ui.Cells.d9) childAt).a;
                             pointF.set(oVar.getX() + childAt.getX() + fz0Var.getX() + AndroidUtilities.dp(12.0f), (oVar.getMeasuredHeight() / 2.0f) + oVar.getY() + childAt.getY() + fz0Var.getY());
                             break;
                         }

@@ -17,9 +17,9 @@ import android.widget.TextView;
 import java.io.IOException;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
-import v7.v7;
+import v7.w7;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class e extends ArrayAdapter implements AdapterView.OnItemClickListener {
     public final LayoutInflater a;
@@ -32,10 +32,10 @@ public final class e extends ArrayAdapter implements AdapterView.OnItemClickList
         super(context, 0, arrayList);
         this.a = LayoutInflater.from(context);
         TypedArray obtainStyledAttributes = getContext().obtainStyledAttributes(new int[]{R.attr.mediaRouteDefaultIconDrawable, R.attr.mediaRouteTvIconDrawable, R.attr.mediaRouteSpeakerIconDrawable, R.attr.mediaRouteSpeakerGroupIconDrawable});
-        this.b = v7.b(context, obtainStyledAttributes.getResourceId(0, 0));
-        this.c = v7.b(context, obtainStyledAttributes.getResourceId(1, 0));
-        this.d = v7.b(context, obtainStyledAttributes.getResourceId(2, 0));
-        this.e = v7.b(context, obtainStyledAttributes.getResourceId(3, 0));
+        this.b = w7.b(context, obtainStyledAttributes.getResourceId(0, 0));
+        this.c = w7.b(context, obtainStyledAttributes.getResourceId(1, 0));
+        this.d = w7.b(context, obtainStyledAttributes.getResourceId(2, 0));
+        this.e = w7.b(context, obtainStyledAttributes.getResourceId(3, 0));
         obtainStyledAttributes.recycle();
     }
 

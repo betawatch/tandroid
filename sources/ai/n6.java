@@ -16,7 +16,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.oq;
 import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public abstract class n6 extends View {
     public ArrayList E;
@@ -212,20 +212,20 @@ public abstract class n6 extends View {
                 float f20 = this.r;
                 float f21 = f10 * f20;
                 f11 = measuredWidth;
-                float y3 = org.telegram.messenger.q.y(f19, f18, 2.0f, b10);
-                float y10 = org.telegram.messenger.q.y(f21, f20, 2.0f, this.x);
+                float x10 = org.telegram.messenger.l0.x(f19, f18, 2.0f, b10);
+                float x11 = org.telegram.messenger.l0.x(f21, f20, 2.0f, this.x);
                 if (this.y == 0.0f || i14 == (i12 = this.K)) {
                     arrayList2 = arrayList3;
                     arrayList = arrayList4;
                     f12 = f14;
                     i11 = i15;
-                    m6Var.a.setImageCoords(y3, y10, f19, f21);
+                    m6Var.a.setImageCoords(x10, x11, f19, f21);
                 } else {
                     f12 = f14;
                     i11 = i15;
                     arrayList = arrayList4;
                     arrayList2 = arrayList3;
-                    m6Var.a.setImageCoords(AndroidUtilities.lerp(getMeasuredWidth() * (i14 - i12), y3, this.y), AndroidUtilities.lerp(this.a, y10, this.y), AndroidUtilities.lerp(this.b, f19, this.y), AndroidUtilities.lerp(this.c, f21, this.y));
+                    m6Var.a.setImageCoords(AndroidUtilities.lerp(getMeasuredWidth() * (i14 - i12), x10, this.y), AndroidUtilities.lerp(this.a, x11, this.y), AndroidUtilities.lerp(this.b, f19, this.y), AndroidUtilities.lerp(this.c, f21, this.y));
                 }
                 if (this.y == 1.0f || i14 != this.K) {
                     ImageReceiver imageReceiver = m6Var.a;

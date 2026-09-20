@@ -8,7 +8,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class rb extends s4.h0 {
     public final Context c;
@@ -252,7 +252,7 @@ public final class rb extends s4.h0 {
     /* JADX WARN: Type inference failed for: r5v4, types: [org.telegram.ui.Cells.w0] */
     @Override // s4.h0
     public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        org.telegram.ui.ActionBar.e6 e6Var;
+        org.telegram.ui.ActionBar.f6 f6Var;
         ViewGroup viewGroup2;
         int i11;
         ViewGroup viewGroup3;
@@ -279,8 +279,8 @@ public final class rb extends s4.h0 {
         } else if (i10 == 2) {
             viewGroup2 = new org.telegram.ui.Cells.w1(context, null);
         } else if (i10 == 10) {
-            e6Var = ((org.telegram.ui.ActionBar.n2) vbVar).resourceProvider;
-            ?? v1Var = new org.telegram.ui.Cells.v1(context, e6Var);
+            f6Var = ((org.telegram.ui.ActionBar.n2) vbVar).resourceProvider;
+            ?? v1Var = new org.telegram.ui.Cells.v1(context, f6Var);
             v1Var.setDelegate(new g(this, 10));
             viewGroup2 = v1Var;
         } else {

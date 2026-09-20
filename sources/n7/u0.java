@@ -6,9 +6,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
-public final class u0 extends d1 {
+public final class u0 extends c1 {
     public final m a;
     public final int b;
 
@@ -22,7 +22,7 @@ public final class u0 extends d1 {
             if (i10 >= mVar.size()) {
                 break;
             }
-            int a2 = ((d1) mVar.get(i10)).a();
+            int a2 = ((c1) mVar.get(i10)).a();
             if (i11 < a2) {
                 i11 = a2;
             }
@@ -35,26 +35,26 @@ public final class u0 extends d1 {
         }
     }
 
-    @Override // n7.d1
+    @Override // n7.c1
     public final int a() {
         return this.b;
     }
 
     @Override // java.lang.Comparable
     public final /* bridge */ /* synthetic */ int compareTo(Object obj) {
-        d1 d1Var = (d1) obj;
-        int zza = d1Var.zza();
-        int c10 = d1.c(Byte.MIN_VALUE);
+        c1 c1Var = (c1) obj;
+        int zza = c1Var.zza();
+        int c10 = c1.c(Byte.MIN_VALUE);
         if (c10 != zza) {
-            return c10 - d1Var.zza();
+            return c10 - c1Var.zza();
         }
-        m mVar = ((u0) d1Var).a;
+        m mVar = ((u0) c1Var).a;
         m mVar2 = this.a;
         if (mVar2.size() != mVar.size()) {
             return mVar2.size() - mVar.size();
         }
         for (int i10 = 0; i10 < mVar2.size(); i10++) {
-            int compareTo = ((d1) mVar2.get(i10)).compareTo((d1) mVar.get(i10));
+            int compareTo = ((c1) mVar2.get(i10)).compareTo((c1) mVar.get(i10));
             if (compareTo != 0) {
                 return compareTo;
             }
@@ -73,7 +73,7 @@ public final class u0 extends d1 {
     }
 
     public final int hashCode() {
-        return Arrays.hashCode(new Object[]{Integer.valueOf(d1.c(Byte.MIN_VALUE)), this.a});
+        return Arrays.hashCode(new Object[]{Integer.valueOf(c1.c(Byte.MIN_VALUE)), this.a});
     }
 
     public final String toString() {
@@ -84,7 +84,7 @@ public final class u0 extends d1 {
         ArrayList arrayList = new ArrayList();
         int size = mVar.size();
         for (int i10 = 0; i10 < size; i10++) {
-            arrayList.add(((d1) mVar.get(i10)).toString().replace("\n", "\n  "));
+            arrayList.add(((c1) mVar.get(i10)).toString().replace("\n", "\n  "));
         }
         StringBuilder sb2 = new StringBuilder("[\n  ");
         Iterator it = arrayList.iterator();
@@ -103,8 +103,8 @@ public final class u0 extends d1 {
         }
     }
 
-    @Override // n7.d1
+    @Override // n7.c1
     public final int zza() {
-        return d1.c(Byte.MIN_VALUE);
+        return c1.c(Byte.MIN_VALUE);
     }
 }

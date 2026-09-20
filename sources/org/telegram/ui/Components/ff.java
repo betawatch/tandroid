@@ -2,20 +2,20 @@ package org.telegram.ui.Components;
 
 import android.view.ViewTreeObserver;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class ff implements ViewTreeObserver.OnDrawListener {
-    public final /* synthetic */ rv0 a;
-    public final /* synthetic */ ip0 b;
+    public final /* synthetic */ qv0 a;
+    public final /* synthetic */ hp0 b;
 
-    public ff(rv0 rv0Var, ip0 ip0Var) {
-        this.a = rv0Var;
-        this.b = ip0Var;
+    public ff(qv0 qv0Var, hp0 hp0Var) {
+        this.a = qv0Var;
+        this.b = hp0Var;
     }
 
     @Override // android.view.ViewTreeObserver.OnDrawListener
     public final void onDraw() {
-        rv0 rv0Var = this.a;
-        rv0Var.post(new org.telegram.messenger.video.o(this, rv0Var, this.b, 11));
+        qv0 qv0Var = this.a;
+        qv0Var.post(new org.telegram.messenger.video.o(this, qv0Var, this.b, 11));
     }
 }

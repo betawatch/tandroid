@@ -3,9 +3,9 @@ package f5;
 import com.google.android.gms.internal.vision.e2;
 import java.nio.ByteBuffer;
 import java.util.Date;
-import w7.u6;
+import w7.v6;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class k extends com.googlecode.mp4parser.c {
     public static final /* synthetic */ ka.c E;
@@ -43,13 +43,13 @@ public final class k extends com.googlecode.mp4parser.c {
     public final void _parseDetails(ByteBuffer byteBuffer) {
         f(byteBuffer);
         if (e() == 1) {
-            this.e = u6.b(e5.b.j(byteBuffer));
-            this.f = u6.b(e5.b.j(byteBuffer));
+            this.e = v6.b(e5.b.j(byteBuffer));
+            this.f = v6.b(e5.b.j(byteBuffer));
             this.h = e5.b.i(byteBuffer);
             this.n = e5.b.j(byteBuffer);
         } else {
-            this.e = u6.b(e5.b.i(byteBuffer));
-            this.f = u6.b(e5.b.i(byteBuffer));
+            this.e = v6.b(e5.b.i(byteBuffer));
+            this.f = v6.b(e5.b.i(byteBuffer));
             this.h = e5.b.i(byteBuffer);
             this.n = e5.b.i(byteBuffer);
         }
@@ -66,13 +66,13 @@ public final class k extends com.googlecode.mp4parser.c {
     public final void getContent(ByteBuffer byteBuffer) {
         i(byteBuffer);
         if (e() == 1) {
-            byteBuffer.putLong(u6.a(this.e));
-            byteBuffer.putLong(u6.a(this.f));
+            byteBuffer.putLong(v6.a(this.e));
+            byteBuffer.putLong(v6.a(this.f));
             byteBuffer.putInt((int) this.h);
             byteBuffer.putLong(this.n);
         } else {
-            byteBuffer.putInt((int) u6.a(this.e));
-            byteBuffer.putInt((int) u6.a(this.f));
+            byteBuffer.putInt((int) v6.a(this.e));
+            byteBuffer.putInt((int) v6.a(this.f));
             byteBuffer.putInt((int) this.h);
             byteBuffer.putInt((int) this.n);
         }

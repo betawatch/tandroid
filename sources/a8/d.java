@@ -13,12 +13,12 @@ import g6.w;
 import kotlin.jvm.internal.i;
 import m.p3;
 import n6.p;
-import n7.m1;
+import n7.l1;
 import s6.h;
 import v8.o;
 import y8.y0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class d {
     public final /* synthetic */ int a;
@@ -81,7 +81,7 @@ public final class d {
             case 7:
                 return new b8.a(context, looper, kVar, lVar, commonSettings);
             case 8:
-                return new m1(context, looper, 148, commonSettings, kVar, lVar, 0);
+                return new l1(context, looper, 148, commonSettings, kVar, lVar, 0);
             case 9:
                 commonSettings.getClass();
                 Integer num = (Integer) commonSettings.h;

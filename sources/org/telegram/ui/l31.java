@@ -1,176 +1,82 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.graphics.Rect;
+import android.graphics.Canvas;
 import android.view.View;
-import android.widget.LinearLayout;
-import java.util.ArrayList;
-import java.util.List;
+import android.widget.FrameLayout;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class l31 extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
-    public LinearLayout a;
-    public org.telegram.ui.Components.wl0 b;
-    public h31 c;
-    public int d;
-    public int e;
-    public int f;
-    public int h;
-    public j31 n;
+public final class l31 extends FrameLayout {
+    public final org.telegram.ui.Components.n5 a;
+    public final /* synthetic */ m31 b;
 
-    public l31() {
-        super(null);
-        this.e = -1;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public l31(m31 m31Var, Context context) {
+        super(context);
+        this.b = m31Var;
+        TextView f7 = org.telegram.messenger.l0.f(context, 1, 16.0f);
+        f7.setTextColor(m31Var.getThemedColor(org.telegram.ui.ActionBar.j6.G6));
+        f7.setText(LocaleController.getString(R.string.DoubleTapSetting));
+        addView(f7, w7.y5.d(-1, -2.0f, 23, 20.0f, 0.0f, 48.0f, 0.0f));
+        this.a = new org.telegram.ui.Components.n5(AndroidUtilities.dp(24.0f), this);
     }
 
-    public static void U(l31 l31Var, View view) {
+    public final void a(boolean z10) {
         int i10;
         int i11;
-        if (view instanceof org.telegram.ui.Cells.y) {
-            org.telegram.ui.Cells.y yVar = (org.telegram.ui.Cells.y) view;
-            if (yVar.h && !l31Var.getUserConfig().isPremium()) {
-                l31Var.showDialog(new rg.x0((org.telegram.ui.ActionBar.n2) l31Var, 4, true));
+        m31 m31Var = this.b;
+        i10 = ((org.telegram.ui.ActionBar.n2) m31Var).currentAccount;
+        String doubleTapReaction = MediaDataController.getInstance(i10).getDoubleTapReaction();
+        org.telegram.ui.Components.n5 n5Var = this.a;
+        if (doubleTapReaction != null && doubleTapReaction.startsWith("animated_")) {
+            try {
+                n5Var.j(Long.parseLong(doubleTapReaction.substring(9)), z10);
                 return;
-            } else {
-                MediaDataController.getInstance(l31Var.currentAccount).setDoubleTapReaction(yVar.e.reaction);
-                l31Var.b.getAdapter().q(0, l31Var.b.getAdapter().h());
-                return;
+            } catch (Exception unused) {
             }
         }
-        if (view instanceof k31) {
-            k31 k31Var = (k31) view;
-            if (l31Var.n != null) {
-                return;
-            }
-            x61[] x61VarArr = new x61[1];
-            org.telegram.ui.Components.o5 o5Var = k31Var.a;
-            if (o5Var != null) {
-                o5Var.f();
-                k31Var.b();
-                Rect rect = AndroidUtilities.rectTmp2;
-                rect.set(o5Var.getBounds());
-                i11 = (-(k31Var.getHeight() - rect.centerY())) - AndroidUtilities.dp(16.0f);
-                i10 = rect.centerX() - ((AndroidUtilities.displaySize.x - AndroidUtilities.dp(12.0f)) - ((int) Math.min(AndroidUtilities.dp(324.0f), AndroidUtilities.displaySize.x * 0.95f)));
-            } else {
-                i10 = 0;
-                i11 = 0;
-            }
-            i31 i31Var = new i31(l31Var, l31Var, l31Var.getParentActivity(), Integer.valueOf(i10), k31Var, x61VarArr);
-            String doubleTapReaction = l31Var.getMediaDataController().getDoubleTapReaction();
-            if (doubleTapReaction != null && doubleTapReaction.startsWith("animated_")) {
-                try {
-                    i31Var.setSelected(Long.valueOf(Long.parseLong(doubleTapReaction.substring(9))));
-                } catch (Exception unused) {
-                }
-            }
-            List<TLRPC.TL_availableReaction> reactionsList = l31Var.getMediaDataController().getReactionsList();
-            ArrayList arrayList = new ArrayList(20);
-            for (int i12 = 0; i12 < reactionsList.size(); i12++) {
-                zg.o0 o0Var = new zg.o0();
-                o0Var.f = reactionsList.get(i12).reaction;
-                arrayList.add(o0Var);
-            }
-            i31Var.setRecentReactions(arrayList);
-            i31Var.setSaveState(3);
-            i31Var.y(o5Var, k31Var);
-            j31 j31Var = new j31(l31Var, i31Var);
-            l31Var.n = j31Var;
-            x61VarArr[0] = j31Var;
-            j31Var.showAsDropDown(k31Var, 0, i11, 53);
-            x61VarArr[0].b();
+        i11 = ((org.telegram.ui.ActionBar.n2) m31Var).currentAccount;
+        TLRPC.TL_availableReaction tL_availableReaction = MediaDataController.getInstance(i11).getReactionsMap().get(doubleTapReaction);
+        if (tL_availableReaction != null) {
+            n5Var.i(tL_availableReaction.static_icon, z10);
         }
     }
 
-    public final void c0() {
-        this.h = 2;
-        this.d = 1;
-        if (!UserConfig.getInstance(this.currentAccount).isPremium()) {
-            this.f = -1;
-            this.e = this.h;
-        } else {
-            this.e = -1;
-            int i10 = this.h;
-            this.h = i10 + 1;
-            this.f = i10;
-        }
+    public final void b() {
+        int width = getWidth();
+        org.telegram.ui.Components.n5 n5Var = this.a;
+        n5Var.setBounds((width - n5Var.s) - AndroidUtilities.dp(21.0f), (getHeight() - n5Var.s) / 2, getWidth() - AndroidUtilities.dp(21.0f), (getHeight() + n5Var.s) / 2);
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
-    public final View createView(Context context) {
-        this.actionBar.setTitle(LocaleController.getString(R.string.Reactions));
-        this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
-        this.actionBar.setAllowOverlayTitle(true);
-        this.actionBar.setActionBarMenuOnItemClick(new v70(this, 25));
-        LinearLayout linearLayout = new LinearLayout(context);
-        linearLayout.setOrientation(1);
-        org.telegram.ui.Components.wl0 wl0Var = new org.telegram.ui.Components.wl0(context, null);
-        this.b = wl0Var;
-        wl0Var.q1();
-        this.actionBar.setAdaptiveBackground(this.b);
-        ((s4.j) this.b.getItemAnimator()).m = false;
-        this.b.setLayoutManager(new s4.c0());
-        org.telegram.ui.Components.wl0 wl0Var2 = this.b;
-        h31 h31Var = new h31(this, context);
-        this.c = h31Var;
-        wl0Var2.setAdapter(h31Var);
-        this.b.setOnItemClickListener(new z21(this, 1));
-        linearLayout.addView(this.b, w7.y5.n(-1, -1));
-        this.a = linearLayout;
-        this.fragmentView = linearLayout;
-        linearLayout.setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.a7, false));
-        this.c.l();
-        c0();
-        return this.a;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        b();
+        this.a.draw(canvas);
     }
 
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        if (i11 != this.currentAccount) {
-            return;
-        }
-        if (i10 == NotificationCenter.reactionsDidLoad) {
-            this.c.l();
-        } else if (i10 == NotificationCenter.currentUserPremiumStatusChanged) {
-            c0();
-            this.c.l();
-        }
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.a.a();
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
-    public final ArrayList getThemeDescriptions() {
-        return w7.b6.a(new wy0(4, this), org.telegram.ui.ActionBar.j6.d6, org.telegram.ui.ActionBar.j6.G6, org.telegram.ui.ActionBar.j6.z6, org.telegram.ui.ActionBar.j6.i6, org.telegram.ui.ActionBar.j6.a7, org.telegram.ui.ActionBar.j6.B6, org.telegram.ui.ActionBar.j6.p7, org.telegram.ui.ActionBar.j6.f6, org.telegram.ui.ActionBar.j6.g6, org.telegram.ui.ActionBar.j6.O6, org.telegram.ui.ActionBar.j6.P6, org.telegram.ui.ActionBar.j6.Q6, org.telegram.ui.ActionBar.j6.R6);
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.a.b();
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
-    public final boolean isSupportEdgeToEdge() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.ActionBar.n2
-    public final boolean onFragmentCreate() {
-        getNotificationCenter().addObserver(this, NotificationCenter.reactionsDidLoad);
-        getNotificationCenter().addObserver(this, NotificationCenter.currentUserPremiumStatusChanged);
-        return super.onFragmentCreate();
-    }
-
-    @Override // org.telegram.ui.ActionBar.n2
-    public final void onFragmentDestroy() {
-        super.onFragmentDestroy();
-        getNotificationCenter().removeObserver(this, NotificationCenter.reactionsDidLoad);
-        getNotificationCenter().removeObserver(this, NotificationCenter.currentUserPremiumStatusChanged);
-    }
-
-    @Override // org.telegram.ui.ActionBar.n2
-    public final void onInsets(int i10, int i11, int i12, int i13) {
-        this.b.setPadding(0, 0, 0, i13);
-        this.b.setClipToPadding(false);
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f), TLObject.FLAG_30));
     }
 }

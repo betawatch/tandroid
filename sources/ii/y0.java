@@ -9,24 +9,24 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Cells.p9;
 import org.telegram.ui.Cells.q9;
-import v7.p8;
+import org.telegram.ui.Cells.r9;
+import v7.q8;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
-public final class y0 extends a0 implements org.telegram.ui.ActionBar.z5, p9 {
-    public final org.telegram.ui.ActionBar.e6 n;
+public final class y0 extends a0 implements org.telegram.ui.ActionBar.z5, q9 {
+    public final org.telegram.ui.ActionBar.f6 n;
     public final Paint r;
     public final Paint s;
     public s2 v;
     public boolean w;
 
-    public y0(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
+    public y0(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
         super(context);
         this.r = new Paint(1);
         this.s = new Paint(1);
-        this.n = e6Var;
+        this.n = f6Var;
         setWillNotDraw(false);
         e();
     }
@@ -34,9 +34,9 @@ public final class y0 extends a0 implements org.telegram.ui.ActionBar.z5, p9 {
     @Override // org.telegram.ui.ActionBar.z5
     public final void e() {
         int i10 = j6.vk;
-        org.telegram.ui.ActionBar.e6 e6Var = this.n;
-        this.r.setColor(j6.v0(i10, e6Var));
-        this.s.setColor(j6.v0(j6.uf, e6Var));
+        org.telegram.ui.ActionBar.f6 f6Var = this.n;
+        this.r.setColor(j6.v0(i10, f6Var));
+        this.s.setColor(j6.v0(j6.uf, f6Var));
     }
 
     @Override // ii.a0
@@ -44,11 +44,11 @@ public final class y0 extends a0 implements org.telegram.ui.ActionBar.z5, p9 {
         invalidate();
     }
 
-    @Override // org.telegram.ui.Cells.p9
+    @Override // org.telegram.ui.Cells.q9
     public final void fillTextLayoutBlocks(ArrayList arrayList) {
         int i10 = this.w ? 0 : this.c;
         int h = (h() - i10) / 4;
-        arrayList.add(p8.a((i10 + h) - AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f) + (h() - h), AndroidUtilities.dp(12.0f)));
+        arrayList.add(q8.a((i10 + h) - AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f) + (h() - h), AndroidUtilities.dp(12.0f)));
     }
 
     public /* bridge */ /* synthetic */ int[] getColorKeys() {
@@ -66,7 +66,7 @@ public final class y0 extends a0 implements org.telegram.ui.ActionBar.z5, p9 {
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         Canvas canvas2;
-        q9 textSelectionHelper;
+        r9 textSelectionHelper;
         int i10 = this.w ? 0 : this.c;
         int h = (h() - i10) / 4;
         int i11 = i10 + h;

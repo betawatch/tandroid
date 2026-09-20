@@ -23,7 +23,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class ex implements org.telegram.ui.qt {
     public final /* synthetic */ kz a;
@@ -89,11 +89,11 @@ public final class ex implements org.telegram.ui.qt {
     @Override // org.telegram.ui.qt
     public final void H(TLRPC.Document document) {
         SpannableStringBuilder valueOf = SpannableStringBuilder.valueOf(MessageObject.findAnimatedEmojiEmoticon(document));
-        valueOf.setSpan(new z5(document, (Paint.FontMetricsInt) null), 0, valueOf.length(), 33);
+        valueOf.setSpan(new y5(document, (Paint.FontMetricsInt) null), 0, valueOf.length(), 33);
         if (AndroidUtilities.addToClipboard(valueOf)) {
             kz kzVar = this.a;
             org.telegram.ui.ActionBar.n2 n2Var = kzVar.Y1;
-            org.telegram.messenger.wh.n(R.string.EmojiCopied, n2Var != null ? xc.a0(n2Var) : new xc(kzVar.r, kzVar.Z1));
+            org.telegram.messenger.rk.o(R.string.EmojiCopied, n2Var != null ? xc.a0(n2Var) : new xc(kzVar.r, kzVar.Z1));
         }
     }
 
@@ -188,7 +188,7 @@ public final class ex implements org.telegram.ui.qt {
     }
 
     @Override // org.telegram.ui.qt
-    public final /* synthetic */ w70 i(ci.n6 n6Var) {
+    public final /* synthetic */ v70 i(ci.n6 n6Var) {
         return null;
     }
 
@@ -232,7 +232,7 @@ public final class ex implements org.telegram.ui.qt {
             }
         }
         kz kzVar = this.a;
-        hy0.o0(kzVar.Y1, MediaDataController.getInstance(kzVar.c1).getStickerSet(inputStickerSet, true), document);
+        gy0.o0(kzVar.Y1, MediaDataController.getInstance(kzVar.c1).getStickerSet(inputStickerSet, true), document);
     }
 
     @Override // org.telegram.ui.qt
@@ -254,10 +254,10 @@ public final class ex implements org.telegram.ui.qt {
     @Override // org.telegram.ui.qt
     public final void s(int i10, int i11, Object obj, TLObject tLObject, boolean z10) {
         kz kzVar = this.a;
-        mw mwVar = kzVar.h0;
-        if (mwVar.getAdapter() == kzVar.n0) {
+        nw nwVar = kzVar.h0;
+        if (nwVar.getAdapter() == kzVar.n0) {
             kzVar.t1.v(null, tLObject, null, obj, z10, i10, i11);
-        } else if (mwVar.getAdapter() == kzVar.j0) {
+        } else if (nwVar.getAdapter() == kzVar.j0) {
             kzVar.t1.v(null, tLObject, null, obj, z10, i10, i11);
         }
     }
@@ -290,7 +290,7 @@ public final class ex implements org.telegram.ui.qt {
         kz kzVar = this.a;
         FrameLayout frameLayout = kzVar.r;
         org.telegram.ui.ActionBar.n2 n2Var = kzVar.Y1;
-        org.telegram.ui.ActionBar.e6 e6Var = kzVar.Z1;
+        org.telegram.ui.ActionBar.f6 f6Var = kzVar.Z1;
         if (document == null) {
             emojiStatus = new TLRPC.TL_emojiStatusEmpty();
         } else {
@@ -301,34 +301,34 @@ public final class ex implements org.telegram.ui.qt {
         TLRPC.User currentUser = UserConfig.getInstance(UserConfig.selectedAccount).getCurrentUser();
         Object tL_emojiStatusEmpty = currentUser == null ? new TLRPC.TL_emojiStatusEmpty() : currentUser.emoji_status;
         MessagesController.getInstance(kzVar.c1).updateEmojiStatus(emojiStatus);
-        zd zdVar = new zd(29, this, tL_emojiStatusEmpty);
+        bv bvVar = new bv(1, this, tL_emojiStatusEmpty);
         if (document != null) {
-            (n2Var != null ? xc.a0(n2Var) : new xc(frameLayout, e6Var)).q(document, LocaleController.getString(R.string.SetAsEmojiStatusInfo), LocaleController.getString(R.string.UndoNoCaps), zdVar).j();
+            (n2Var != null ? xc.a0(n2Var) : new xc(frameLayout, f6Var)).q(document, LocaleController.getString(R.string.SetAsEmojiStatusInfo), LocaleController.getString(R.string.UndoNoCaps), bvVar).j();
             return;
         }
-        ic icVar = new ic(kzVar.getContext(), e6Var);
-        icVar.b.setText(LocaleController.getString(R.string.RemoveStatusInfo));
+        hc hcVar = new hc(kzVar.getContext(), f6Var);
+        hcVar.b.setText(LocaleController.getString(R.string.RemoveStatusInfo));
         int i10 = R.drawable.msg_settings_premium;
-        ImageView imageView = icVar.a;
+        ImageView imageView = hcVar.a;
         imageView.setImageResource(i10);
         imageView.setScaleX(0.8f);
         imageView.setScaleY(0.8f);
-        imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.z9, e6Var), PorterDuff.Mode.MULTIPLY));
-        oc ocVar = new oc(kzVar.getContext(), e6Var, true);
-        ocVar.a = zdVar;
-        icVar.setButton(ocVar);
+        imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.z9, f6Var), PorterDuff.Mode.MULTIPLY));
+        nc ncVar = new nc(kzVar.getContext(), f6Var, true);
+        ncVar.a = bvVar;
+        hcVar.setButton(ncVar);
         if (n2Var != null) {
-            qc.g(n2Var, icVar, 1500).j();
+            pc.g(n2Var, hcVar, 1500).j();
         } else {
-            qc.f(frameLayout, icVar, 1500).j();
+            pc.f(frameLayout, hcVar, 1500).j();
         }
     }
 
     @Override // org.telegram.ui.qt
     public final void x(TLObject tLObject, Object obj) {
         kz kzVar = this.a;
-        mw mwVar = kzVar.h0;
-        if (mwVar.getAdapter() == kzVar.n0 || mwVar.getAdapter() == kzVar.j0) {
+        nw nwVar = kzVar.h0;
+        if (nwVar.getAdapter() == kzVar.n0 || nwVar.getAdapter() == kzVar.j0) {
             kzVar.t1.e(tLObject, obj);
         }
     }

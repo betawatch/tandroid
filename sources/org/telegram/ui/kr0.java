@@ -27,7 +27,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.CheckBox;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class kr0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -41,7 +41,7 @@ public final /* synthetic */ class kr0 implements View.OnClickListener {
     @Override // android.view.View.OnClickListener
     public final void onClick(View view) {
         int i10;
-        org.telegram.ui.Components.u71 u71Var;
+        org.telegram.ui.Components.t71 t71Var;
         int i11;
         Bitmap bitmap;
         Bitmap bitmap2;
@@ -128,7 +128,7 @@ public final /* synthetic */ class kr0 implements View.OnClickListener {
                     long time = photoViewer10.q5.getTime();
                     String y12 = PhotoViewer.y1();
                     photoViewer10.q5.b.setLoading(true);
-                    Utilities.globalQueue.postRunnable(new org.telegram.ui.Components.y21(photoViewer10, y12, photoEntry, time, 5));
+                    Utilities.globalQueue.postRunnable(new org.telegram.ui.Components.x21(photoViewer10, y12, photoEntry, time, 5));
                     break;
                 }
                 break;
@@ -225,8 +225,8 @@ public final /* synthetic */ class kr0 implements View.OnClickListener {
                 }
                 photoViewer12.f1.a(!photoViewer12.P1(), true);
                 photoViewer12.S7.animate().alpha(photoViewer12.P1() ? 0.45f : 1.0f).start();
-                if (photoViewer12.P1() && (u71Var = photoViewer12.F2) != null) {
-                    u71Var.B();
+                if (photoViewer12.P1() && (t71Var = photoViewer12.F2) != null) {
+                    t71Var.B();
                 }
                 photoViewer12.e0.invalidate();
                 if (photoViewer12.h1 == null) {
@@ -311,12 +311,12 @@ public final /* synthetic */ class kr0 implements View.OnClickListener {
                             if (i17 != 2) {
                                 photoViewer15.p5.l();
                                 photoViewer15.p5.getThanosEffect();
-                                qg.m2 m2Var = photoViewer15.p5;
-                                m2Var.L = false;
-                                m2Var.E = null;
+                                qg.n2 n2Var = photoViewer15.p5;
+                                n2Var.L = false;
+                                n2Var.E = null;
                                 ImageReceiver imageReceiver = photoViewer15.C4;
-                                if (isEmpty || (bitmap = m2Var.K) == null) {
-                                    bitmap = m2Var.I;
+                                if (isEmpty || (bitmap = n2Var.K) == null) {
+                                    bitmap = n2Var.I;
                                 }
                                 imageReceiver.setImageBitmap(bitmap);
                                 photoViewer15.t5.setCutOutState(true);
@@ -332,27 +332,27 @@ public final /* synthetic */ class kr0 implements View.OnClickListener {
                             }
                         } else {
                             nu0Var2.setCancelState(true);
-                            qg.m2 m2Var2 = photoViewer15.p5;
+                            qg.n2 n2Var2 = photoViewer15.p5;
                             ci.hd hdVar = new ci.hd(photoViewer15, z11, mediaEditState, i12);
-                            m2Var2.getClass();
-                            m2Var2.setOnClickListener(new vy0(14, m2Var2, hdVar));
-                            TextView textView = m2Var2.M;
+                            n2Var2.getClass();
+                            n2Var2.setOnClickListener(new vy0(14, n2Var2, hdVar));
+                            TextView textView = n2Var2.M;
                             textView.setText(LocaleController.getString(R.string.SegmentationTabToCrop));
                             textView.animate().cancel();
                             textView.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(240L).setInterpolator(org.telegram.ui.Components.qr.h).start();
-                            ValueAnimator valueAnimator = m2Var2.N;
+                            ValueAnimator valueAnimator = n2Var2.N;
                             if (valueAnimator != null) {
                                 valueAnimator.cancel();
                             }
-                            m2Var2.Q = m2Var2.R;
+                            n2Var2.Q = n2Var2.R;
                             ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-                            m2Var2.N = ofFloat;
-                            ofFloat.addUpdateListener(new org.telegram.ui.Components.voip.r0(m2Var2, 12));
-                            m2Var2.N.setRepeatCount(-1);
-                            m2Var2.N.setRepeatMode(1);
-                            m2Var2.N.setDuration(2400L);
-                            m2Var2.N.setInterpolator(new LinearInterpolator());
-                            m2Var2.N.start();
+                            n2Var2.N = ofFloat;
+                            ofFloat.addUpdateListener(new org.telegram.ui.Components.voip.r0(n2Var2, 12));
+                            n2Var2.N.setRepeatCount(-1);
+                            n2Var2.N.setRepeatMode(1);
+                            n2Var2.N.setDuration(2400L);
+                            n2Var2.N.setInterpolator(new LinearInterpolator());
+                            n2Var2.N.start();
                             photoViewer15.e0.invalidate();
                             break;
                         }
@@ -363,9 +363,9 @@ public final /* synthetic */ class kr0 implements View.OnClickListener {
                 PhotoViewer photoViewer16 = this.b;
                 photoViewer16.v5.m(true, true);
                 photoViewer16.w5.m(false, true);
-                qg.m2 m2Var3 = photoViewer16.p5;
-                if (m2Var3 != null) {
-                    m2Var3.setOutlineVisible(false);
+                qg.n2 n2Var3 = photoViewer16.p5;
+                if (n2Var3 != null) {
+                    n2Var3.setOutlineVisible(false);
                 }
                 photoViewer16.M1 = true;
                 zt0 zt0Var = photoViewer16.N1;
@@ -378,9 +378,9 @@ public final /* synthetic */ class kr0 implements View.OnClickListener {
                 PhotoViewer photoViewer17 = this.b;
                 photoViewer17.v5.m(false, true);
                 photoViewer17.w5.m(true, true);
-                qg.m2 m2Var4 = photoViewer17.p5;
-                if (m2Var4 != null) {
-                    m2Var4.setOutlineVisible(false);
+                qg.n2 n2Var4 = photoViewer17.p5;
+                if (n2Var4 != null) {
+                    n2Var4.setOutlineVisible(false);
                 }
                 photoViewer17.M1 = false;
                 zt0 zt0Var2 = photoViewer17.N1;
@@ -402,18 +402,18 @@ public final /* synthetic */ class kr0 implements View.OnClickListener {
                 photoViewer18.d3(0);
                 photoViewer18.p5.l();
                 boolean isEmpty2 = TextUtils.isEmpty(((MediaController.MediaEditState) photoViewer18.g7.get(photoViewer18.P4)).filterPath);
-                qg.m2 m2Var5 = photoViewer18.p5;
-                if (m2Var5 != null && !m2Var5.G) {
-                    m2Var5.L = false;
-                    m2Var5.E = null;
+                qg.n2 n2Var5 = photoViewer18.p5;
+                if (n2Var5 != null && !n2Var5.G) {
+                    n2Var5.L = false;
+                    n2Var5.E = null;
                 }
                 ImageReceiver imageReceiver2 = photoViewer18.C4;
-                if (isEmpty2 || (bitmap2 = m2Var5.K) == null) {
-                    bitmap2 = m2Var5.I;
+                if (isEmpty2 || (bitmap2 = n2Var5.K) == null) {
+                    bitmap2 = n2Var5.I;
                 }
                 imageReceiver2.setImageBitmap(bitmap2);
-                qg.m2 m2Var6 = photoViewer18.p5;
-                if (m2Var6 == null || !m2Var6.G) {
+                qg.n2 n2Var6 = photoViewer18.p5;
+                if (n2Var6 == null || !n2Var6.G) {
                     photoViewer18.t5.setCutOutState(true);
                 }
                 photoViewer18.Z2(true, true);
@@ -433,7 +433,7 @@ public final /* synthetic */ class kr0 implements View.OnClickListener {
                     if (photoViewer20.m4 == null || (of2 = photoViewer20.l4.g5) == null) {
                         of2 = MessageSuggestionParams.of(photoViewer20.l4.p5.messageOwner.suggested_post);
                     }
-                    if (!yh.t5.U(photoViewer20.T, of2.amount)) {
+                    if (!yh.u5.U(photoViewer20.T, of2.amount)) {
                         zn znVar2 = photoViewer20.l4;
                         if (znVar2 != null) {
                             znVar2.Tb(of2);
@@ -451,10 +451,10 @@ public final /* synthetic */ class kr0 implements View.OnClickListener {
                         break;
                     }
                 } else {
-                    org.telegram.ui.Components.p6 p6Var = photoViewer20.U1.v;
+                    org.telegram.ui.Components.o6 o6Var = photoViewer20.U1.v;
                     float f7 = -photoViewer20.W1;
                     photoViewer20.W1 = f7;
-                    AndroidUtilities.shakeViewSpring(p6Var, f7);
+                    AndroidUtilities.shakeViewSpring(o6Var, f7);
                     BotWebViewVibrationEffect.APP_ERROR.vibrate();
                     if (!MessagesController.getInstance(photoViewer20.T).premiumFeaturesBlocked() && MessagesController.getInstance(photoViewer20.T).captionLengthLimitPremium > photoViewer20.U1.getCodePointCount()) {
                         photoViewer20.S2(photoViewer20.e0);
@@ -481,9 +481,9 @@ public final /* synthetic */ class kr0 implements View.OnClickListener {
                     if (photoViewer22.r1) {
                         if (photoViewer22.k8) {
                             TextureView textureView = photoViewer22.B2;
-                            if (textureView instanceof org.telegram.ui.Components.j71) {
-                                org.telegram.ui.Components.j71 j71Var = (org.telegram.ui.Components.j71) textureView;
-                                if (j71Var.getVideoWidth() <= 0 || j71Var.getVideoHeight() <= 0) {
+                            if (textureView instanceof org.telegram.ui.Components.i71) {
+                                org.telegram.ui.Components.i71 i71Var = (org.telegram.ui.Components.i71) textureView;
+                                if (i71Var.getVideoWidth() <= 0 || i71Var.getVideoHeight() <= 0) {
                                 }
                             }
                         }
@@ -510,9 +510,9 @@ public final /* synthetic */ class kr0 implements View.OnClickListener {
                     if (photoViewer25.r1) {
                         if (photoViewer25.k8) {
                             TextureView textureView2 = photoViewer25.B2;
-                            if (textureView2 instanceof org.telegram.ui.Components.j71) {
-                                org.telegram.ui.Components.j71 j71Var2 = (org.telegram.ui.Components.j71) textureView2;
-                                if (j71Var2.getVideoWidth() <= 0 || j71Var2.getVideoHeight() <= 0) {
+                            if (textureView2 instanceof org.telegram.ui.Components.i71) {
+                                org.telegram.ui.Components.i71 i71Var2 = (org.telegram.ui.Components.i71) textureView2;
+                                if (i71Var2.getVideoWidth() <= 0 || i71Var2.getVideoHeight() <= 0) {
                                 }
                             }
                         }
@@ -530,9 +530,9 @@ public final /* synthetic */ class kr0 implements View.OnClickListener {
                         if (photoViewer26.r1) {
                             if (photoViewer26.k8) {
                                 TextureView textureView3 = photoViewer26.B2;
-                                if (textureView3 instanceof org.telegram.ui.Components.j71) {
-                                    org.telegram.ui.Components.j71 j71Var3 = (org.telegram.ui.Components.j71) textureView3;
-                                    if (j71Var3.getVideoWidth() <= 0 || j71Var3.getVideoHeight() <= 0) {
+                                if (textureView3 instanceof org.telegram.ui.Components.i71) {
+                                    org.telegram.ui.Components.i71 i71Var3 = (org.telegram.ui.Components.i71) textureView3;
+                                    if (i71Var3.getVideoWidth() <= 0 || i71Var3.getVideoHeight() <= 0) {
                                     }
                                 }
                             }

@@ -1,11 +1,11 @@
 package bc;
 
 import b2.g;
-import v7.z8;
+import v7.a9;
 import z7.wf;
 import z7.yf;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class c extends g {
     public final qb.g b;
@@ -19,6 +19,6 @@ public final class c extends g {
     public final Object N0(Object obj) {
         wf b10 = yf.b();
         qb.g gVar = this.b;
-        return new f(gVar, (ac.e) obj, b10, new z8(gVar.b(), 1));
+        return new f(gVar, (ac.e) obj, b10, new a9(gVar.b(), 1));
     }
 }

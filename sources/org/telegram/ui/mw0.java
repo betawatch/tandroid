@@ -21,7 +21,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class mw0 extends Dialog {
     public float E;
@@ -36,7 +36,7 @@ public final class mw0 extends Dialog {
     public float N;
     public boolean O;
     public byte[] P;
-    public org.telegram.ui.Components.qk0 Q;
+    public org.telegram.ui.Components.pk0 Q;
     public ViewGroup R;
     public float S;
     public ViewGroup T;
@@ -48,7 +48,7 @@ public final class mw0 extends Dialog {
     public float Z;
     public final Context a;
     public float a0;
-    public final org.telegram.ui.ActionBar.e6 b;
+    public final org.telegram.ui.ActionBar.f6 b;
     public boolean b0;
     public final hw0 c;
     public boolean c0;
@@ -60,7 +60,7 @@ public final class mw0 extends Dialog {
     public ValueAnimator f0;
     public ValueAnimator g0;
     public final TextView h;
-    public final org.telegram.ui.Components.cc0 n;
+    public final org.telegram.ui.Components.bc0 n;
     public i0.b r;
     public Bitmap s;
     public BitmapShader v;
@@ -68,7 +68,7 @@ public final class mw0 extends Dialog {
     public Matrix x;
     public float y;
 
-    public mw0(Activity activity, org.telegram.ui.ActionBar.e6 e6Var) {
+    public mw0(Activity activity, org.telegram.ui.ActionBar.f6 f6Var) {
         super(activity, R.style.TransparentDialog);
         this.r = i0.b.e;
         this.M = 0.0f;
@@ -78,7 +78,7 @@ public final class mw0 extends Dialog {
         int i10 = 0;
         this.c0 = false;
         this.a = activity;
-        this.b = e6Var;
+        this.b = f6Var;
         hw0 hw0Var = new hw0(this, activity, i10);
         this.c = hw0Var;
         hw0Var.setOnClickListener(new k60(this, 22));
@@ -99,23 +99,23 @@ public final class mw0 extends Dialog {
         hw0 hw0Var3 = new hw0(this, activity, 2);
         this.e = hw0Var3;
         hw0Var2.addView(hw0Var3, w7.y5.e(-1, -1, 119));
-        org.telegram.ui.Components.cc0 cc0Var = new org.telegram.ui.Components.cc0(activity, e6Var);
-        this.n = cc0Var;
-        cc0Var.a(0, LocaleController.getString(R.string.PollMenuTabOption));
-        cc0Var.a(1, LocaleController.getString(R.string.PollMenuTabPoll));
-        hw0Var2.addView(cc0Var, w7.y5.e(-1, 66, 80));
-        cc0Var.setOnTabClick(new s3(i1Var, 14));
-        ch.d c10 = cVar.c(cc0Var, null, false);
-        c10.o(eh.b.k(e6Var));
+        org.telegram.ui.Components.bc0 bc0Var = new org.telegram.ui.Components.bc0(activity, f6Var);
+        this.n = bc0Var;
+        bc0Var.a(0, LocaleController.getString(R.string.PollMenuTabOption));
+        bc0Var.a(1, LocaleController.getString(R.string.PollMenuTabPoll));
+        hw0Var2.addView(bc0Var, w7.y5.e(-1, 66, 80));
+        bc0Var.setOnTabClick(new s3(i1Var, 14));
+        ch.d c10 = cVar.c(bc0Var, null, false);
+        c10.o(eh.b.k(f6Var));
         c10.j.e = true;
         c10.p(AndroidUtilities.dp(8.0f));
         c10.q(AndroidUtilities.dp(16.0f));
-        cc0Var.setBackground(c10);
+        bc0Var.setBackground(c10);
         TextView textView = new TextView(activity);
         this.h = textView;
         textView.setTextSize(1, 13.0f);
-        textView.setTextColor(cc0Var.getColor());
-        org.telegram.messenger.wh.k(R.string.PollMenuHint, textView, 17);
+        textView.setTextColor(bc0Var.getColor());
+        org.telegram.messenger.rk.l(R.string.PollMenuHint, textView, 17);
         hw0Var2.addView(textView, w7.y5.d(-1, -2.0f, 80, 0.0f, 0.0f, 0.0f, 66.0f));
         jw0 jw0Var = new jw0(this, i10);
         WeakHashMap weakHashMap = r0.i0.a;
@@ -213,8 +213,8 @@ public final class mw0 extends Dialog {
 
     public final void c(boolean z10) {
         org.telegram.ui.Cells.u1 u1Var;
-        org.telegram.ui.Components.qk0 qk0Var;
-        if (z10 && (qk0Var = this.Q) != null && qk0Var.getReactionsWindow() != null && !this.Q.getReactionsWindow().q) {
+        org.telegram.ui.Components.pk0 pk0Var;
+        if (z10 && (pk0Var = this.Q) != null && pk0Var.getReactionsWindow() != null && !this.Q.getReactionsWindow().q) {
             this.Q.e();
             return;
         }
@@ -389,9 +389,9 @@ public final class mw0 extends Dialog {
         TextView textView = this.h;
         textView.setTranslationX(lerp);
         textView.setAlpha(this.y);
-        org.telegram.ui.Components.cc0 cc0Var = this.n;
-        cc0Var.setSelectedTab(positionAnimated);
-        cc0Var.setAlpha(this.y);
+        org.telegram.ui.Components.bc0 bc0Var = this.n;
+        bc0Var.setSelectedTab(positionAnimated);
+        bc0Var.setAlpha(this.y);
     }
 
     @Override // android.app.Dialog
@@ -420,7 +420,7 @@ public final class mw0 extends Dialog {
     public final void show() {
         if (AndroidUtilities.isSafeToShow(getContext())) {
             super.show();
-            org.telegram.ui.Components.nm0.d(new b5(this, 15));
+            org.telegram.ui.Components.mm0.d(new b5(this, 15));
             this.O = true;
             b(true, null);
         }

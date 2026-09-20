@@ -10,13 +10,13 @@ import java.util.ArrayList;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
-import w7.o6;
+import w7.p6;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class p implements k {
     public final Context a;
-    public final o0.e b;
+    public final o0.d b;
     public final t7.u c;
     public final Object d = new Object();
     public Handler e;
@@ -24,10 +24,10 @@ public final class p implements k {
     public ThreadPoolExecutor g;
     public v7.w h;
 
-    public p(Context context, o0.e eVar) {
-        o6.a(context, "Context cannot be null");
+    public p(Context context, o0.d dVar) {
+        p6.a(context, "Context cannot be null");
         this.a = context.getApplicationContext();
-        this.b = eVar;
+        this.b = dVar;
         this.c = q.d;
     }
 
@@ -79,27 +79,27 @@ public final class p implements k {
         }
     }
 
-    public final o0.i d() {
+    public final o0.h d() {
         try {
             t7.u uVar = this.c;
             Context context = this.a;
-            o0.e eVar = this.b;
+            o0.d dVar = this.b;
             uVar.getClass();
-            Object[] objArr = {eVar};
+            Object[] objArr = {dVar};
             ArrayList arrayList = new ArrayList(1);
             Object obj = objArr[0];
             Objects.requireNonNull(obj);
             arrayList.add(obj);
-            j4.f a2 = o0.d.a(context, DesugarCollections.unmodifiableList(arrayList));
+            j4.f a2 = o0.c.a(context, DesugarCollections.unmodifiableList(arrayList));
             int i10 = a2.a;
             if (i10 != 0) {
                 throw new RuntimeException(k0.i(i10, "fetchFonts failed (", ")"));
             }
-            o0.i[] iVarArr = (o0.i[]) a2.b.get(0);
-            if (iVarArr == null || iVarArr.length == 0) {
+            o0.h[] hVarArr = (o0.h[]) a2.b.get(0);
+            if (hVarArr == null || hVarArr.length == 0) {
                 throw new RuntimeException("fetchFonts failed (empty result)");
             }
-            return iVarArr[0];
+            return hVarArr[0];
         } catch (PackageManager.NameNotFoundException e) {
             throw new RuntimeException("provider not found", e);
         }

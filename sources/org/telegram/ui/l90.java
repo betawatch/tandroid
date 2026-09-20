@@ -14,7 +14,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class l90 implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -76,7 +76,7 @@ public final /* synthetic */ class l90 implements Runnable {
                             } else {
                                 Bundle bundle = new Bundle();
                                 bundle.putLong("chat_id", -j3);
-                                launchActivity.p0(dg1.F0(launchActivity, bundle));
+                                launchActivity.p0(fg1.F0(launchActivity, bundle));
                                 if (runnable != null) {
                                     runnable.run();
                                     break;
@@ -120,7 +120,7 @@ public final /* synthetic */ class l90 implements Runnable {
                         TLRPC.TL_inputChannel tL_inputChannel = new TLRPC.TL_inputChannel();
                         tL_inputChannel.channel_id = -j10;
                         tL_channels_getChannels.id.add(tL_inputChannel);
-                        i0Var.b = new u80(launchActivity3, ConnectionsManager.getInstance(launchActivity3.O).sendRequest(tL_channels_getChannels, new RequestDelegate() { // from class: org.telegram.ui.z90
+                        i0Var.b = new v80(launchActivity3, ConnectionsManager.getInstance(launchActivity3.O).sendRequest(tL_channels_getChannels, new RequestDelegate() { // from class: org.telegram.ui.z90
                             @Override // org.telegram.tgnet.RequestDelegate
                             public final void run(final TLObject tLObject2, TLRPC.TL_error tL_error) {
                                 Pattern pattern3 = LaunchActivity.B1;
@@ -164,7 +164,7 @@ public final /* synthetic */ class l90 implements Runnable {
                                                 return;
                                             }
                                         }
-                                        launchActivity5.B0(org.telegram.ui.Components.e5.H(launchActivity5, LocaleController.getString(R.string.DialogNotAvailable), LocaleController.getString(R.string.LinkNotFound)));
+                                        launchActivity5.B0(org.telegram.ui.Components.d5.H(launchActivity5, LocaleController.getString(R.string.DialogNotAvailable), LocaleController.getString(R.string.LinkNotFound)));
                                     }
                                 });
                             }

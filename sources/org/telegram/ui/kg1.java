@@ -1,38 +1,30 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.tl.TL_account;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class kg1 implements org.telegram.ui.ActionBar.a2 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ TwoStepVerificationActivity b;
+public final class kg1 extends og.a {
+    public final TLRPC.TL_forumTopic c;
 
-    public /* synthetic */ kg1(TwoStepVerificationActivity twoStepVerificationActivity, int i10) {
-        this.a = i10;
-        this.b = twoStepVerificationActivity;
+    public kg1(int i10, TLRPC.TL_forumTopic tL_forumTopic) {
+        super(i10, false);
+        this.c = tL_forumTopic;
     }
 
-    @Override // org.telegram.ui.ActionBar.a2
-    public final void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
-        switch (this.a) {
-            case 0:
-                this.b.finishFragment();
-                break;
-            case 1:
-                TL_account.declinePasswordReset declinepasswordreset = new TL_account.declinePasswordReset();
-                TwoStepVerificationActivity twoStepVerificationActivity = this.b;
-                twoStepVerificationActivity.getConnectionsManager().sendRequest(declinepasswordreset, new lg1(twoStepVerificationActivity, 2));
-                break;
-            case 2:
-                this.b.k0();
-                break;
-            case 3:
-                this.b.u0();
-                break;
-            default:
-                this.b.u0();
-                break;
+    public final boolean equals(Object obj) {
+        TLRPC.TL_forumTopic tL_forumTopic;
+        if (this == obj) {
+            return true;
         }
+        if (obj == null || kg1.class != obj.getClass()) {
+            return false;
+        }
+        kg1 kg1Var = (kg1) obj;
+        if (this.a != kg1Var.a) {
+            return false;
+        }
+        TLRPC.TL_forumTopic tL_forumTopic2 = this.c;
+        return tL_forumTopic2 == null || (tL_forumTopic = kg1Var.c) == null || tL_forumTopic2.id == tL_forumTopic.id;
     }
 }

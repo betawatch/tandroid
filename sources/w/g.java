@@ -24,8 +24,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import org.telegram.ui.Cells.c1;
+import v7.j0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public abstract class g {
     public static final ArrayMap a;
@@ -86,7 +87,7 @@ public abstract class g {
         } catch (ClassNotFoundException e) {
             throw new f(a4.a.p("Enum class [", string2, "] not found"), eVar, e);
         } catch (IllegalArgumentException e7) {
-            throw new f(c1.i("Enum value [", string, "] does not exist in enum class [", string2, "]"), eVar, e7);
+            throw new f(c1.k("Enum value [", string, "] does not exist in enum class [", string2, "]"), eVar, e7);
         } catch (ReflectiveOperationException e10) {
             throw new f(a4.a.p("Enum of class [", string2, "] missing valueOf method"), eVar, e10);
         }
@@ -379,14 +380,14 @@ public abstract class g {
                 i10++;
                 Field field = (Field) obj2;
                 field.setAccessible(true);
-                String v = t8.b.v(field.getDeclaringClass().getName(), field.getName());
+                String s10 = j0.s(field.getDeclaringClass().getName(), field.getName());
                 try {
                     Object obj3 = field.get(obj);
                     if (obj3 != null) {
-                        bundle.putParcelable(v, o(obj3, field.getName(), eVar));
+                        bundle.putParcelable(s10, o(obj3, field.getName(), eVar));
                     }
                 } catch (IllegalAccessException e) {
-                    throw new f(t8.b.i("Field is not accessible: ", v), eVar, e);
+                    throw new f(j0.g("Field is not accessible: ", s10), eVar, e);
                 }
             }
             return bundle;

@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.UUID;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class v1 {
     public u1 a;
@@ -19,7 +19,7 @@ public final class v1 {
     public final void b(UUID uuid, Runnable runnable) {
         this.b.put(uuid, runnable);
         this.c.add(uuid);
-        AndroidUtilities.runOnUIThread(new org.telegram.ui.web.u0(this, 12));
+        AndroidUtilities.runOnUIThread(new org.telegram.ui.web.r0(this, 13));
     }
 
     public final void c() {
@@ -34,6 +34,6 @@ public final class v1 {
         hashMap.remove(uuid);
         arrayList.remove(size);
         runnable.run();
-        AndroidUtilities.runOnUIThread(new org.telegram.ui.web.u0(this, 12));
+        AndroidUtilities.runOnUIThread(new org.telegram.ui.web.r0(this, 13));
     }
 }

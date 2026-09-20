@@ -30,9 +30,9 @@ import java.util.List;
 import java.util.PriorityQueue;
 import org.telegram.messenger.MediaController;
 import org.telegram.tgnet.TLObject;
-import u2.b1;
+import u2.c1;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class n extends r2.r {
     public static final int[] N1 = {1920, 1600, 1440, 1280, 960, 854, 640, 540, 480};
@@ -234,16 +234,16 @@ public final class n extends r2.r {
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Code restructure failed: missing block: B:396:0x0742, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:396:0x0740, code lost:
     
         if (r0.equals("ELUGA_Ray_X") == false) goto L101;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:61:0x08cc, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:61:0x08ca, code lost:
     
         if (r13.equals("JSN-L21") == false) goto L664;
      */
     /* JADX WARN: Failed to restore switch over string. Please report as a decompilation issue */
-    /* JADX WARN: Removed duplicated region for block: B:17:0x008d A[FALL_THROUGH] */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x008b A[FALL_THROUGH] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1593,7 +1593,7 @@ public final class n extends r2.r {
             of.b bVar = this.Z0;
             if (!equals && !x1Var.equals(this.D1)) {
                 this.D1 = x1Var;
-                bVar.W(x1Var);
+                bVar.Z(x1Var);
             }
             a0 a0Var = this.c1;
             boolean z10 = a0Var.e != 3;
@@ -1603,7 +1603,7 @@ public final class n extends r2.r {
             if (!z10 || (surface = this.n1) == null) {
                 return;
             }
-            bVar.S(surface);
+            bVar.V(surface);
             this.q1 = true;
         }
     }
@@ -1616,13 +1616,13 @@ public final class n extends r2.r {
             if (surface != null) {
                 x1 x1Var = this.D1;
                 if (x1Var != null) {
-                    bVar.W(x1Var);
+                    bVar.Z(x1Var);
                 }
                 Surface surface3 = this.n1;
                 if (surface3 == null || !this.q1) {
                     return;
                 }
-                bVar.S(surface3);
+                bVar.V(surface3);
                 return;
             }
             return;
@@ -1664,7 +1664,7 @@ public final class n extends r2.r {
         if (surface != null) {
             x1 x1Var2 = this.D1;
             if (x1Var2 != null) {
-                bVar.W(x1Var2);
+                bVar.Z(x1Var2);
             }
         } else {
             this.D1 = null;
@@ -1689,9 +1689,9 @@ public final class n extends r2.r {
             j10 -= -this.J1;
         }
         if (j3 < -500000 && !z10) {
-            b1 b1Var = this.r;
-            b1Var.getClass();
-            int j11 = b1Var.j(j10 - this.v);
+            c1 c1Var = this.r;
+            c1Var.getClass();
+            int j11 = c1Var.j(j10 - this.v);
             if (j11 != 0) {
                 PriorityQueue priorityQueue = this.f1;
                 if (z11) {
@@ -2109,7 +2109,7 @@ public final class n extends r2.r {
     @Override // r2.r
     public final i2.h a0(n4.y yVar) {
         i2.h a02 = super.a0(yVar);
-        b2.s sVar = (b2.s) yVar.c;
+        b2.s sVar = (b2.s) yVar.b;
         sVar.getClass();
         of.b bVar = this.Z0;
         Handler handler = (Handler) bVar.b;
@@ -2361,7 +2361,7 @@ public final class n extends r2.r {
         of.b bVar = this.Z0;
         if (!equals && !x1Var.equals(this.D1)) {
             this.D1 = x1Var;
-            bVar.W(x1Var);
+            bVar.Z(x1Var);
         }
         this.O0.e++;
         a0 a0Var = this.c1;
@@ -2370,7 +2370,7 @@ public final class n extends r2.r {
         a0Var.l.getClass();
         a0Var.g = e2.d0.Q(SystemClock.elapsedRealtime());
         if (z10 && (surface = this.n1) != null) {
-            bVar.S(surface);
+            bVar.V(surface);
             this.q1 = true;
         }
         d0(j3);
@@ -2507,8 +2507,8 @@ public final class n extends r2.r {
         try {
             super.o();
         } finally {
-            bVar.H(this.O0);
-            bVar.W(x1.d);
+            bVar.P(this.O0);
+            bVar.Z(x1.d);
         }
     }
 
@@ -2667,7 +2667,7 @@ public final class n extends r2.r {
                 l0();
                 j0();
             } finally {
-                hg.k0.y(this.V, null);
+                hg.k0.A(this.V, null);
                 this.V = null;
             }
         } finally {

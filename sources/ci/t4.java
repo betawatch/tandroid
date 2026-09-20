@@ -21,14 +21,14 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class t4 extends View {
-    public final org.telegram.ui.Components.e6 E;
+    public final org.telegram.ui.Components.d6 E;
     public final ImageReceiver a;
     public final Paint b;
     public final Paint c;
-    public final org.telegram.ui.Components.o6 d;
+    public final org.telegram.ui.Components.n6 d;
     public boolean e;
     public boolean f;
     public View.OnClickListener h;
@@ -38,9 +38,9 @@ public final class t4 extends View {
     public float v;
     public float w;
     public float x;
-    public final org.telegram.ui.Components.e6 y;
+    public final org.telegram.ui.Components.d6 y;
 
-    public t4(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
+    public t4(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
         super(context);
         ImageReceiver imageReceiver = new ImageReceiver(this);
         this.a = imageReceiver;
@@ -48,26 +48,26 @@ public final class t4 extends View {
         this.b = paint;
         Paint paint2 = new Paint(1);
         this.c = paint2;
-        org.telegram.ui.Components.o6 o6Var = new org.telegram.ui.Components.o6(false, false, false, false);
-        this.d = o6Var;
+        org.telegram.ui.Components.n6 n6Var = new org.telegram.ui.Components.n6(false, false, false, false);
+        this.d = n6Var;
         this.n = new org.telegram.ui.Components.yc(this);
         this.r = -1;
         qr qrVar = qr.h;
-        this.y = new org.telegram.ui.Components.e6(this, 0L, 320L, qrVar);
-        this.E = new org.telegram.ui.Components.e6(this, 0L, 320L, qrVar);
-        o6Var.setCallback(this);
-        o6Var.r(-1);
-        o6Var.b = 17;
-        o6Var.t(AndroidUtilities.dp(16.0f));
-        o6Var.u(AndroidUtilities.getTypeface("fonts/num.otf"));
-        o6Var.G = AndroidUtilities.displaySize.x;
-        o6Var.k(0.65f, 480L, qrVar);
-        o6Var.v = 0.35f;
+        this.y = new org.telegram.ui.Components.d6(this, 0L, 320L, qrVar);
+        this.E = new org.telegram.ui.Components.d6(this, 0L, 320L, qrVar);
+        n6Var.setCallback(this);
+        n6Var.r(-1);
+        n6Var.b = 17;
+        n6Var.t(AndroidUtilities.dp(16.0f));
+        n6Var.u(AndroidUtilities.getTypeface("fonts/num.otf"));
+        n6Var.G = AndroidUtilities.displaySize.x;
+        n6Var.k(0.65f, 480L, qrVar);
+        n6Var.v = 0.35f;
         paint.setStyle(Paint.Style.STROKE);
         paint.setColor(-1);
-        paint2.setColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Oh, e6Var));
+        paint2.setColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Oh, f6Var));
         imageReceiver.setRoundRadius(AndroidUtilities.dp(6.0f));
-        w7.a6.a(this);
+        w7.b6.a(this);
     }
 
     public final void a(int i10, int i11, final o8 o8Var) {
@@ -306,10 +306,10 @@ public final class t4 extends View {
             float f11 = f7 - f10;
             float f12 = this.w;
             float f13 = f7 + f10;
-            org.telegram.ui.Components.o6 o6Var = this.d;
-            o6Var.l(f11, f12, f13, f12);
-            o6Var.w = (int) (e7 * 255.0f);
-            o6Var.draw(canvas);
+            org.telegram.ui.Components.n6 n6Var = this.d;
+            n6Var.l(f11, f12, f13, f12);
+            n6Var.w = (int) (e7 * 255.0f);
+            n6Var.draw(canvas);
         }
         canvas.restore();
     }

@@ -3,11 +3,11 @@ package tg;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.l2;
 import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.bb1;
 import org.telegram.ui.v5;
-import org.telegram.ui.za1;
 import yh.y3;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -30,7 +30,7 @@ public final /* synthetic */ class c implements Runnable {
                 }
                 break;
             default:
-                y3.d2(za1.d0(this.b, true));
+                y3.d2(bb1.d0(this.b, true));
                 break;
         }
     }

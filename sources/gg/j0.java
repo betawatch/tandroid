@@ -8,20 +8,20 @@ import ci.n6;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.a31;
 import org.telegram.ui.Components.d00;
 import org.telegram.ui.Components.k00;
+import org.telegram.ui.Components.pk0;
 import org.telegram.ui.Components.q81;
-import org.telegram.ui.Components.qk0;
-import org.telegram.ui.Components.w70;
+import org.telegram.ui.Components.v70;
+import org.telegram.ui.Components.va0;
 import org.telegram.ui.Components.w81;
-import org.telegram.ui.Components.wa0;
+import org.telegram.ui.Components.z21;
 import org.telegram.ui.StickersActivity;
 import org.telegram.ui.sr;
 import org.telegram.ui.tw;
 import org.telegram.ui.z6;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class j0 extends s4.c0 {
     public final /* synthetic */ int I;
@@ -53,24 +53,24 @@ public final class j0 extends s4.c0 {
     }
 
     @Override // s4.o0
-    public void S(of.e eVar, s4.z0 z0Var, s0.c cVar) {
+    public void S(of.e eVar, s4.z0 z0Var, s0.d dVar) {
         switch (this.I) {
             case 0:
-                super.S(eVar, z0Var, cVar);
+                super.S(eVar, z0Var, dVar);
                 if (!((s0) this.J).isEnabled()) {
-                    cVar.p(false);
+                    dVar.p(false);
                     break;
                 }
                 break;
             case 7:
-                super.S(eVar, z0Var, cVar);
+                super.S(eVar, z0Var, dVar);
                 if (((w81) this.J).V) {
-                    cVar.p(false);
+                    dVar.p(false);
                     break;
                 }
                 break;
             default:
-                super.S(eVar, z0Var, cVar);
+                super.S(eVar, z0Var, dVar);
                 break;
         }
     }
@@ -79,7 +79,7 @@ public final class j0 extends s4.c0 {
     public int W0(s4.z0 z0Var) {
         switch (this.I) {
             case 6:
-                if (!((a31) this.J).a3) {
+                if (!((z21) this.J).a3) {
                     break;
                 } else {
                     break;
@@ -93,7 +93,7 @@ public final class j0 extends s4.c0 {
         switch (this.I) {
             case 4:
                 super.k1(z10);
-                ((wa0) this.J).b.setTranslationY(AndroidUtilities.dp(6.0f) * (z10 ? -1 : 1));
+                ((va0) this.J).b.setTranslationY(AndroidUtilities.dp(6.0f) * (z10 ? -1 : 1));
                 break;
             default:
                 super.k1(z10);
@@ -105,8 +105,8 @@ public final class j0 extends s4.c0 {
     public int m0(int i10, of.e eVar, s4.z0 z0Var) {
         switch (this.I) {
             case 3:
-                w70 w70Var = ((tw) ((k00) this.J).J).b.L0;
-                if (w70Var != null && w70Var.D()) {
+                v70 v70Var = ((tw) ((k00) this.J).J).b.L0;
+                if (v70Var != null && v70Var.D()) {
                     i10 = 0;
                 }
                 return super.m0(i10, eVar, z0Var);
@@ -114,46 +114,46 @@ public final class j0 extends s4.c0 {
             default:
                 return super.m0(i10, eVar, z0Var);
             case 5:
-                qk0 qk0Var = (qk0) this.J;
-                ai.w0 w0Var = qk0Var.b;
-                if (i10 < 0 && qk0Var.B0 != 0.0f) {
-                    float pullingLeftProgress = qk0Var.getPullingLeftProgress();
-                    qk0Var.B0 += i10;
-                    if ((pullingLeftProgress > 1.0f) != (qk0Var.getPullingLeftProgress() > 1.0f)) {
+                pk0 pk0Var = (pk0) this.J;
+                ai.w0 w0Var = pk0Var.b;
+                if (i10 < 0 && pk0Var.B0 != 0.0f) {
+                    float pullingLeftProgress = pk0Var.getPullingLeftProgress();
+                    pk0Var.B0 += i10;
+                    if ((pullingLeftProgress > 1.0f) != (pk0Var.getPullingLeftProgress() > 1.0f)) {
                         try {
                             w0Var.performHapticFeedback(3);
                         } catch (Exception unused) {
                         }
                     }
-                    float f7 = qk0Var.B0;
+                    float f7 = pk0Var.B0;
                     if (f7 < 0.0f) {
                         i10 = (int) f7;
-                        qk0Var.B0 = 0.0f;
+                        pk0Var.B0 = 0.0f;
                     } else {
                         i10 = 0;
                     }
-                    n6 n6Var = qk0Var.S;
+                    n6 n6Var = pk0Var.S;
                     if (n6Var != null) {
                         n6Var.invalidate();
                     }
                     w0Var.invalidate();
                 }
                 int m0 = super.m0(i10, eVar, z0Var);
-                if (i10 > 0 && m0 == 0 && w0Var.getScrollState() == 1 && qk0Var.q()) {
-                    ValueAnimator valueAnimator = qk0Var.y0;
+                if (i10 > 0 && m0 == 0 && w0Var.getScrollState() == 1 && pk0Var.q()) {
+                    ValueAnimator valueAnimator = pk0Var.y0;
                     if (valueAnimator != null) {
                         valueAnimator.removeAllListeners();
-                        qk0Var.y0.cancel();
+                        pk0Var.y0.cancel();
                     }
-                    float pullingLeftProgress2 = qk0Var.getPullingLeftProgress();
-                    qk0Var.B0 = (i10 * (pullingLeftProgress2 > 1.0f ? 0.05f : 0.6f)) + qk0Var.B0;
-                    if ((pullingLeftProgress2 > 1.0f) != (qk0Var.getPullingLeftProgress() > 1.0f)) {
+                    float pullingLeftProgress2 = pk0Var.getPullingLeftProgress();
+                    pk0Var.B0 = (i10 * (pullingLeftProgress2 > 1.0f ? 0.05f : 0.6f)) + pk0Var.B0;
+                    if ((pullingLeftProgress2 > 1.0f) != (pk0Var.getPullingLeftProgress() > 1.0f)) {
                         try {
                             w0Var.performHapticFeedback(3);
                         } catch (Exception unused2) {
                         }
                     }
-                    n6 n6Var2 = qk0Var.S;
+                    n6 n6Var2 = pk0Var.S;
                     if (n6Var2 != null) {
                         n6Var2.invalidate();
                     }

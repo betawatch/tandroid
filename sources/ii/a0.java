@@ -4,9 +4,9 @@ import android.content.Context;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import v7.o8;
+import v7.p8;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public abstract class a0 extends FrameLayout implements l4 {
     public a a;
@@ -35,7 +35,7 @@ public abstract class a0 extends FrameLayout implements l4 {
 
     public void f(int i10) {
         int i11;
-        int d = o8.d(this.a);
+        int d = p8.d(this.a);
         int i12 = 0;
         int d10 = (i10 > 0 || d > 0) ? d() : 0;
         a aVar = this.a;

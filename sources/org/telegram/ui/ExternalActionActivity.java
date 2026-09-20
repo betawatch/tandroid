@@ -23,16 +23,16 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public class ExternalActionActivity extends Activity implements org.telegram.ui.ActionBar.a5 {
     public static final ArrayList x = new ArrayList();
     public static final ArrayList y = new ArrayList();
     public boolean a;
-    public org.telegram.ui.Components.be0 b;
+    public org.telegram.ui.Components.ae0 b;
     public ActionBarLayout c;
     public ActionBarLayout d;
-    public org.telegram.ui.Components.bw0 e;
+    public org.telegram.ui.Components.aw0 e;
     public org.telegram.ui.ActionBar.z3 f;
     public Intent h;
     public boolean n;
@@ -90,11 +90,11 @@ public class ExternalActionActivity extends Activity implements org.telegram.ui.
                     this.v = z11;
                     this.r = i10;
                     this.s = i11;
-                    xg0 xg0Var = new xg0();
+                    yg0 yg0Var = new yg0();
                     if (AndroidUtilities.isTablet()) {
-                        this.d.c(-1, xg0Var);
+                        this.d.c(-1, yg0Var);
                     } else {
-                        this.c.c(-1, xg0Var);
+                        this.c.c(-1, yg0Var);
                     }
                     if (!AndroidUtilities.isTablet()) {
                         this.e.setVisibility(8);
@@ -106,12 +106,12 @@ public class ExternalActionActivity extends Activity implements org.telegram.ui.
                     AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(this);
                     alertDialog$Builder.a.R = LocaleController.getString(R.string.AppName);
                     alertDialog$Builder.a.T = LocaleController.getString(R.string.PleaseLoginPassport);
-                    org.telegram.messenger.q.p(R.string.OK, alertDialog$Builder, null);
+                    org.telegram.messenger.l0.n(R.string.OK, alertDialog$Builder, null);
                     return;
                 }
                 if (activatedAccountsCount >= 2) {
-                    org.telegram.ui.ActionBar.b2 i12 = org.telegram.ui.Components.e5.i(this, new org.telegram.ui.Components.b5() { // from class: org.telegram.ui.nz
-                        @Override // org.telegram.ui.Components.b5
+                    org.telegram.ui.ActionBar.b2 i12 = org.telegram.ui.Components.d5.i(this, new org.telegram.ui.Components.a5() { // from class: org.telegram.ui.nz
+                        @Override // org.telegram.ui.Components.a5
                         public final void a(int i13) {
                             int i14;
                             ExternalActionActivity externalActionActivity = ExternalActionActivity.this;
@@ -353,9 +353,9 @@ public class ExternalActionActivity extends Activity implements org.telegram.ui.
         this.c.setDrawerLayoutContainer(this.f);
         this.c.setFragmentStack(x);
         this.c.setDelegate(this);
-        org.telegram.ui.Components.be0 be0Var = new org.telegram.ui.Components.be0(this);
-        this.b = be0Var;
-        this.f.addView(be0Var, w7.y5.c(-1.0f, -1));
+        org.telegram.ui.Components.ae0 ae0Var = new org.telegram.ui.Components.ae0(this);
+        this.b = ae0Var;
+        this.f.addView(ae0Var, w7.y5.c(-1.0f, -1));
         NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.closeOtherAppActivities, this);
         this.c.X();
         ActionBarLayout actionBarLayout2 = this.d;
@@ -416,9 +416,9 @@ public class ExternalActionActivity extends Activity implements org.telegram.ui.
             }
         }
         SharedConfig.saveConfig();
-        org.telegram.ui.Components.be0 be0Var = this.b;
-        if (be0Var != null) {
-            AndroidUtilities.cancelRunOnUIThread(be0Var.R);
+        org.telegram.ui.Components.ae0 ae0Var = this.b;
+        if (ae0Var != null) {
+            AndroidUtilities.cancelRunOnUIThread(ae0Var.R);
         }
     }
 

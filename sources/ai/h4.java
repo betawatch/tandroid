@@ -11,7 +11,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.gh;
 import org.telegram.ui.Components.ti;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class h4 implements ti {
     public final /* synthetic */ f6 a;
@@ -21,7 +21,7 @@ public final class h4 implements ti {
     }
 
     @Override // org.telegram.ui.Components.ti
-    public final void B1(int i10, boolean z10, boolean z11, int i11, int i12, long j3, boolean z12, boolean z13, long j10) {
+    public final void C1(int i10, boolean z10, boolean z11, int i11, int i12, long j3, boolean z12, boolean z13, long j10) {
         TL_stories.StoryItem storyItem;
         AccountInstance accountInstance;
         String str;
@@ -96,7 +96,7 @@ public final class h4 implements ti {
     }
 
     @Override // org.telegram.ui.Components.ti
-    public final void K0() {
+    public final void L0() {
         this.a.b2.P();
     }
 
@@ -119,24 +119,24 @@ public final class h4 implements ti {
     }
 
     @Override // org.telegram.ui.Components.ti
-    public final boolean c0() {
+    public final boolean f0() {
         return this.a.N0();
     }
 
     @Override // org.telegram.ui.Components.ti
-    public final void x0(gh ghVar) {
+    public final void y0(gh ghVar) {
         NotificationCenter.getInstance(this.a.C2).doOnIdle(ghVar);
     }
 
     @Override // org.telegram.ui.Components.ti
-    public final /* synthetic */ void U0(Object obj) {
+    public final /* synthetic */ void V0(Object obj) {
     }
 
     @Override // org.telegram.ui.Components.ti
-    public final /* synthetic */ void j1(TLRPC.User user) {
+    public final /* synthetic */ void k1(TLRPC.User user) {
     }
 
     @Override // org.telegram.ui.Components.ti
-    public final /* synthetic */ void u0() {
+    public final /* synthetic */ void v0() {
     }
 }

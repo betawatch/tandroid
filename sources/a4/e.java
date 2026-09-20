@@ -16,7 +16,7 @@ import org.telegram.messenger.camera.Size;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_phone;
-import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.ActionBar.x4;
 import org.telegram.ui.Cells.s1;
@@ -26,7 +26,7 @@ import org.telegram.ui.u6;
 import s4.c1;
 import zg.o0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final /* synthetic */ class e implements Comparator {
     public final /* synthetic */ int a;
@@ -149,24 +149,24 @@ public final /* synthetic */ class e implements Comparator {
                 }
                 return i6Var.a.compareTo(i6Var2.a);
             case 26:
-                g6 g6Var = (g6) obj;
-                g6 g6Var2 = (g6) obj2;
-                if (j6.g1(g6Var)) {
+                h6 h6Var = (h6) obj;
+                h6 h6Var2 = (h6) obj2;
+                if (j6.g1(h6Var)) {
                     return -1;
                 }
-                if (!j6.g1(g6Var2)) {
-                    ?? r02 = g6Var.z;
-                    ?? r42 = g6Var2.z;
+                if (!j6.g1(h6Var2)) {
+                    ?? r02 = h6Var.z;
+                    ?? r42 = h6Var2.z;
                     if (r02 == r42) {
                         if (r02 != 0) {
-                            int i22 = g6Var.a;
-                            int i23 = g6Var2.a;
+                            int i22 = h6Var.a;
+                            int i23 = h6Var2.a;
                             if (i22 <= i23) {
                                 return i22 < i23 ? -1 : 0;
                             }
                         } else {
-                            int i24 = g6Var.a;
-                            int i25 = g6Var2.a;
+                            int i24 = h6Var.a;
+                            int i25 = h6Var2.a;
                             if (i24 > i25) {
                                 return -1;
                             }

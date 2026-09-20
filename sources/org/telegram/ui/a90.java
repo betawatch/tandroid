@@ -9,7 +9,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a90 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -18,15 +18,15 @@ public final /* synthetic */ class a90 implements Runnable {
     public final /* synthetic */ TLObject d;
     public final /* synthetic */ int e;
     public final /* synthetic */ String f;
-    public final /* synthetic */ y80 h;
+    public final /* synthetic */ r80 h;
 
-    public /* synthetic */ a90(LaunchActivity launchActivity, TLObject tLObject, int i10, String str, TLRPC.TL_error tL_error, y80 y80Var) {
+    public /* synthetic */ a90(LaunchActivity launchActivity, TLObject tLObject, int i10, String str, TLRPC.TL_error tL_error, r80 r80Var) {
         this.b = launchActivity;
         this.d = tLObject;
         this.e = i10;
         this.f = str;
         this.c = tL_error;
-        this.h = y80Var;
+        this.h = r80Var;
     }
 
     @Override // java.lang.Runnable
@@ -35,7 +35,7 @@ public final /* synthetic */ class a90 implements Runnable {
         int i10;
         int i11;
         int i12 = this.a;
-        y80 y80Var = this.h;
+        r80 r80Var = this.h;
         String str = this.f;
         TLObject tLObject = this.d;
         TLRPC.TL_error tL_error = this.c;
@@ -54,10 +54,10 @@ public final /* synthetic */ class a90 implements Runnable {
                     StringBuilder v = a4.a.v("cant import contact token. token=", str, " err=");
                     v.append(tL_error == null ? null : tL_error.text);
                     FileLog.e(v.toString());
-                    org.telegram.messenger.wh.o(R.string.NoUsernameFound, org.telegram.ui.Components.xc.a0((org.telegram.ui.ActionBar.n2) hg.k0.g(1, launchActivity.d0)), null);
+                    org.telegram.messenger.rk.p(R.string.NoUsernameFound, org.telegram.ui.Components.xc.a0((org.telegram.ui.ActionBar.n2) hg.k0.g(1, launchActivity.d0)), null);
                 }
                 try {
-                    y80Var.run();
+                    r80Var.run();
                     break;
                 } catch (Exception e) {
                     FileLog.e(e);
@@ -77,7 +77,7 @@ public final /* synthetic */ class a90 implements Runnable {
                             i10 = R.raw.error;
                             i11 = R.string.UniqueGiftNotFound;
                         }
-                        org.telegram.messenger.q.q(i11, a02, i10, 36);
+                        org.telegram.messenger.l0.o(i11, a02, i10, 36);
                     }
                 } else if (tLObject instanceof TL_stars.TL_payments_uniqueStarGift) {
                     TL_stars.TL_payments_uniqueStarGift tL_payments_uniqueStarGift = (TL_stars.TL_payments_uniqueStarGift) tLObject;
@@ -99,7 +99,7 @@ public final /* synthetic */ class a90 implements Runnable {
                     }
                 }
                 try {
-                    y80Var.run();
+                    r80Var.run();
                     break;
                 } catch (Exception e7) {
                     FileLog.e(e7);
@@ -107,12 +107,12 @@ public final /* synthetic */ class a90 implements Runnable {
         }
     }
 
-    public /* synthetic */ a90(LaunchActivity launchActivity, TLRPC.TL_error tL_error, TLObject tLObject, int i10, String str, y80 y80Var) {
+    public /* synthetic */ a90(LaunchActivity launchActivity, TLRPC.TL_error tL_error, TLObject tLObject, int i10, String str, r80 r80Var) {
         this.b = launchActivity;
         this.c = tL_error;
         this.d = tLObject;
         this.e = i10;
         this.f = str;
-        this.h = y80Var;
+        this.h = r80Var;
     }
 }

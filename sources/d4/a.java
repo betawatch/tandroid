@@ -24,12 +24,13 @@ import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.telegram.tgnet.TLObject;
-import v7.r6;
-import v7.y7;
+import v7.j0;
+import v7.s6;
+import v7.z7;
 import z3.l;
 import z3.m;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class a implements m {
     public static final Pattern h = Pattern.compile("(?:(\\d+):)?(\\d+):(\\d+)[:.](\\d+)");
@@ -88,7 +89,7 @@ public final class a implements m {
     }
 
     @Override // z3.m
-    public final int A() {
+    public final int I() {
         return 1;
     }
 
@@ -98,7 +99,7 @@ public final class a implements m {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void C(byte[] bArr, int i10, int i11, l lVar, h hVar) {
+    public final void M(byte[] bArr, int i10, int i11, l lVar, h hVar) {
         Charset charset;
         long j3;
         b4.b bVar;
@@ -475,13 +476,13 @@ public final class a implements m {
                         break;
                     }
                     if (vVar.a() != 0) {
-                        if ((vVar.g(charset) != 0 ? y7.b(r2 >>> 8) : 1114112) == 91) {
+                        if ((vVar.g(charset) != 0 ? z7.b(r2 >>> 8) : 1114112) == 91) {
                             break;
                         }
                     }
                     String[] split = k11.split(":");
                     if (split.length == 2) {
-                        String b10 = r6.b(split[0].trim());
+                        String b10 = s6.b(split[0].trim());
                         b10.getClass();
                         if (b10.equals("playresx")) {
                             this.e = Float.parseFloat(split[1].trim());
@@ -500,7 +501,7 @@ public final class a implements m {
                     String k12 = vVar.k(charset);
                     if (k12 != null) {
                         if (vVar.a() != 0) {
-                            if ((vVar.g(charset) != 0 ? y7.b(r0 >>> 8) : 1114112) == i11) {
+                            if ((vVar.g(charset) != 0 ? z7.b(r0 >>> 8) : 1114112) == i11) {
                             }
                         }
                         int i12 = -1;
@@ -517,7 +518,7 @@ public final class a implements m {
                             int i21 = -1;
                             int i22 = -1;
                             for (int i23 = 0; i23 < split2.length; i23++) {
-                                String b11 = r6.b(split2[i23].trim());
+                                String b11 = s6.b(split2[i23].trim());
                                 b11.getClass();
                                 switch (b11.hashCode()) {
                                     case -1178781136:
@@ -641,10 +642,10 @@ public final class a implements m {
                                         int length2 = split3.length;
                                         String str = d0.a;
                                         Locale locale = Locale.US;
-                                        StringBuilder k13 = k0.k("Skipping malformed 'Style:' line (expected ", i24, " values, found ", length2, "): '");
-                                        k13.append(k12);
-                                        k13.append("'");
-                                        e2.a.n("SsaStyle", k13.toString());
+                                        StringBuilder l4 = k0.l("Skipping malformed 'Style:' line (expected ", i24, " values, found ", length2, "): '");
+                                        l4.append(k12);
+                                        l4.append("'");
+                                        e2.a.n("SsaStyle", l4.toString());
                                     } else {
                                         try {
                                             String trim = split3[bVar.a].trim();
@@ -718,8 +719,8 @@ public final class a implements m {
     }
 
     @Override // z3.m
-    public final /* synthetic */ z3.d r(int i10, int i11, byte[] bArr) {
-        return t8.b.a(this, bArr, i11);
+    public final /* synthetic */ z3.d s(int i10, int i11, byte[] bArr) {
+        return j0.a(this, bArr, i11);
     }
 
     @Override // z3.m

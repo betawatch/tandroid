@@ -7,28 +7,28 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.RectF;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class f {
     public Bitmap a;
     public Canvas b;
     public final RectF c = new RectF();
     public final Paint d;
-    public final e6 e;
+    public final f6 e;
     public int f;
     public boolean g;
 
-    public f(e6 e6Var) {
+    public f(f6 f6Var) {
         Paint paint = new Paint(1);
         this.d = paint;
         this.f = 0;
         this.g = true;
         paint.setColor(0);
         paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
-        this.e = e6Var;
+        this.e = f6Var;
     }
 
     public final Bitmap a(int i10, int i11) {

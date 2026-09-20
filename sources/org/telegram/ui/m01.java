@@ -11,9 +11,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public class m01 extends org.telegram.ui.Components.w9 implements org.telegram.ui.Components.yv0 {
+public class m01 extends org.telegram.ui.Components.v9 implements org.telegram.ui.Components.xv0 {
     public static final s0 g0 = new s0("crossfadeProgress", 3);
     public boolean G;
     public float H;
@@ -34,7 +34,7 @@ public class m01 extends org.telegram.ui.Components.w9 implements org.telegram.u
     public ImageReceiver.BitmapHolder W;
     public boolean a0;
     public float b0;
-    public org.telegram.ui.Components.zh0 c0;
+    public org.telegram.ui.Components.yh0 c0;
     public boolean d0;
     public float e0;
     public Runnable f0;
@@ -58,7 +58,7 @@ public class m01 extends org.telegram.ui.Components.w9 implements org.telegram.u
         paint.setColor(-16777216);
     }
 
-    @Override // org.telegram.ui.Components.yv0
+    @Override // org.telegram.ui.Components.xv0
     public final void g(Runnable runnable) {
         this.f0 = runnable;
     }
@@ -78,9 +78,9 @@ public class m01 extends org.telegram.ui.Components.w9 implements org.telegram.u
     @Override // android.view.View
     public final void invalidate() {
         super.invalidate();
-        org.telegram.ui.Components.zh0 zh0Var = this.c0;
-        if (zh0Var != null) {
-            zh0Var.invalidate();
+        org.telegram.ui.Components.yh0 yh0Var = this.c0;
+        if (yh0Var != null) {
+            yh0Var.invalidate();
         }
         Runnable runnable = this.f0;
         if (runnable != null) {
@@ -88,13 +88,13 @@ public class m01 extends org.telegram.ui.Components.w9 implements org.telegram.u
         }
     }
 
-    @Override // org.telegram.ui.Components.w9, android.view.View
+    @Override // org.telegram.ui.Components.v9, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         this.U.onAttachedToWindow();
     }
 
-    @Override // org.telegram.ui.Components.w9, android.view.View
+    @Override // org.telegram.ui.Components.v9, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         this.U.onDetachedFromWindow();
@@ -105,9 +105,9 @@ public class m01 extends org.telegram.ui.Components.w9 implements org.telegram.u
         }
     }
 
-    @Override // org.telegram.ui.Components.w9, android.view.View
+    @Override // org.telegram.ui.Components.v9, android.view.View
     public final void onDraw(Canvas canvas) {
-        org.telegram.ui.Components.qh0 qh0Var;
+        org.telegram.ui.Components.ph0 ph0Var;
         boolean z10;
         float f7;
         float f10;
@@ -116,24 +116,24 @@ public class m01 extends org.telegram.ui.Components.w9 implements org.telegram.u
         float f12;
         int measuredWidth = getMeasuredWidth();
         int measuredHeight = getMeasuredHeight();
-        org.telegram.ui.Components.zh0 zh0Var = this.c0;
-        boolean z11 = zh0Var != null && zh0Var.getVisibility() == 0 && this.M && this.H > 0.0f;
+        org.telegram.ui.Components.yh0 yh0Var = this.c0;
+        boolean z11 = yh0Var != null && yh0Var.getVisibility() == 0 && this.M && this.H > 0.0f;
         if (z11) {
-            org.telegram.ui.Components.qh0 blurDrawer = this.c0.getBlurDrawer();
-            qh0Var = blurDrawer;
+            org.telegram.ui.Components.ph0 blurDrawer = this.c0.getBlurDrawer();
+            ph0Var = blurDrawer;
             z11 = blurDrawer != null;
         } else {
-            qh0Var = null;
+            ph0Var = null;
         }
-        float A = org.telegram.messenger.q.A(1.0f, this.V, this.e0, (1.0f - this.b0) * (this.d0 ? (int) AndroidUtilities.dpf2(3.5f) : 0.0f));
-        org.telegram.ui.Components.q5 q5Var = this.e;
-        ImageReceiver imageReceiver = q5Var != null ? q5Var.k : this.a;
+        float z12 = org.telegram.messenger.l0.z(1.0f, this.V, this.e0, (1.0f - this.b0) * (this.d0 ? (int) AndroidUtilities.dpf2(3.5f) : 0.0f));
+        org.telegram.ui.Components.p5 p5Var = this.e;
+        ImageReceiver imageReceiver = p5Var != null ? p5Var.k : this.a;
         int i10 = this.K;
         if (i10 > 0) {
             Path path = this.N;
             path.rewind();
             RectF rectF = AndroidUtilities.rectTmp;
-            rectF.set(A, A, measuredWidth - A, measuredHeight - A);
+            rectF.set(z12, z12, measuredWidth - z12, measuredHeight - z12);
             float f13 = i10;
             path.addRoundRect(rectF, f13, f13, Path.Direction.CW);
             canvas.clipPath(path);
@@ -159,10 +159,10 @@ public class m01 extends org.telegram.ui.Components.w9 implements org.telegram.u
                 f10 = 0.0f;
                 float alpha = this.T.getAlpha();
                 c10 = 0;
-                float f19 = A * 2.0f;
+                float f19 = z12 * 2.0f;
                 z10 = z11;
                 f12 = f18;
-                this.T.setImageCoords(A, A, f15 - f19, measuredHeight - f19);
+                this.T.setImageCoords(z12, z12, f15 - f19, measuredHeight - f19);
                 this.T.setAlpha(f17);
                 this.T.draw(canvas);
                 this.T.setImageCoords(imageX, imageY, imageWidth, imageHeight);
@@ -183,8 +183,8 @@ public class m01 extends org.telegram.ui.Components.w9 implements org.telegram.u
             f11 = 1.0f;
         }
         if (imageReceiver != null && f11 > f10 && (this.V < 1.0f || !this.a0)) {
-            float f20 = A * f7;
-            imageReceiver.setImageCoords(A, A, f15 - f20, measuredHeight - f20);
+            float f20 = z12 * f7;
+            imageReceiver.setImageCoords(z12, z12, f15 - f20, measuredHeight - f20);
             float alpha2 = imageReceiver.getAlpha();
             imageReceiver.setAlpha(alpha2 * f11);
             if (this.Q) {
@@ -202,8 +202,8 @@ public class m01 extends org.telegram.ui.Components.w9 implements org.telegram.u
         if (this.V > f10 && this.a0 && f11 > f10) {
             ImageReceiver imageReceiver3 = this.U;
             if (imageReceiver3.getDrawable() != null) {
-                float f21 = A * f7;
-                imageReceiver3.setImageCoords(A, A, f15 - f21, measuredHeight - f21);
+                float f21 = z12 * f7;
+                imageReceiver3.setImageCoords(z12, z12, f15 - f21, measuredHeight - f21);
                 imageReceiver3.setAlpha(this.V * f11);
                 imageReceiver3.draw(canvas);
             } else {
@@ -218,9 +218,9 @@ public class m01 extends org.telegram.ui.Components.w9 implements org.telegram.u
         }
         if (z10) {
             float f23 = measuredHeight;
-            canvas.translate(A, A + f23);
-            float f24 = A * f7;
-            qh0Var.f(canvas, this, f15 - f24, f23 - f24, true, (this.G || qh0Var.a || this.c0.getRealPosition() == 0) ? 1.0f - this.H : 1.0f, f11);
+            canvas.translate(z12, z12 + f23);
+            float f24 = z12 * f7;
+            ph0Var.f(canvas, this, f15 - f24, f23 - f24, true, (this.G || ph0Var.a || this.c0.getRealPosition() == 0) ? 1.0f - this.H : 1.0f, f11);
         }
         canvas.restore();
     }
@@ -229,8 +229,8 @@ public class m01 extends org.telegram.ui.Components.w9 implements org.telegram.u
         this.T = imageReceiver;
     }
 
-    public void setAvatarsViewPager(org.telegram.ui.Components.zh0 zh0Var) {
-        this.c0 = zh0Var;
+    public void setAvatarsViewPager(org.telegram.ui.Components.yh0 yh0Var) {
+        this.c0 = yh0Var;
     }
 
     public void setCrossfadeProgress(float f7) {
@@ -279,7 +279,7 @@ public class m01 extends org.telegram.ui.Components.w9 implements org.telegram.u
         invalidate();
     }
 
-    @Override // org.telegram.ui.Components.w9
+    @Override // org.telegram.ui.Components.v9
     public void setRoundRadius(int i10) {
         super.setRoundRadius(i10);
         this.U.setRoundRadius(i10);

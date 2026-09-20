@@ -9,9 +9,9 @@ import android.view.MotionEvent;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class ks extends g6 {
+public final class ks extends f6 {
     public boolean E;
     public boolean F;
     public ch.d s;
@@ -53,7 +53,7 @@ public final class ks extends g6 {
             for (int i10 = 0; i10 < entriesCount; i10++) {
                 le.g n10 = jVar.n(i10);
                 float paddingTop = getPaddingTop() + n10.b().top;
-                View view2 = ((f6) n10.a).a;
+                View view2 = ((e6) n10.a).a;
                 float c10 = n10.c();
                 if (c10 > 0.0f && (fragmentContextView = this.y) != null && (fragmentContextView == view2 || fragmentContextView.getParent() == view2)) {
                     id capsuleBlobDrawable = this.y.getCapsuleBlobDrawable();
@@ -77,7 +77,7 @@ public final class ks extends g6 {
         while (i12 < entriesCount2) {
             le.g n11 = jVar.n(i12);
             float paddingTop2 = getPaddingTop() + n11.b().top;
-            View view4 = ((f6) n11.a).a;
+            View view4 = ((e6) n11.a).a;
             float min = Math.min(1.0f, n11.c.a) * n11.c();
             if (min > 0.0f && view3 != view4) {
                 int alpha = org.telegram.ui.ActionBar.j6.k0.getAlpha();
@@ -119,7 +119,7 @@ public final class ks extends g6 {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.g6
+    @Override // org.telegram.ui.Components.f6
     public final void e() {
         j();
         invalidate();
@@ -142,7 +142,7 @@ public final class ks extends g6 {
         }
     }
 
-    @Override // org.telegram.ui.Components.g6, android.widget.LinearLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.f6, android.widget.LinearLayout, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         super.onLayout(z10, i10, i11, i12, i13);
         j();

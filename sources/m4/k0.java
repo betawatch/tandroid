@@ -18,6 +18,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.os.ResultReceiver;
 import android.os.SystemClock;
 import android.text.TextUtils;
@@ -32,7 +33,7 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class k0 extends n4.p {
     public static final int w;
@@ -58,21 +59,22 @@ public final class k0 extends n4.p {
         w = Build.VERSION.SDK_INT >= 31 ? 33554432 : 0;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:47:0x00c3, code lost:
-    
-        if (r7.equals(r2) == false) goto L25;
-     */
+    /* JADX WARN: Removed duplicated region for block: B:15:0x00c7  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x0138  */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x013c  */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x0146  */
+    /* JADX WARN: Removed duplicated region for block: B:63:0x0207  */
+    /* JADX WARN: Removed duplicated region for block: B:66:0x0102  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public k0(a0 a0Var, Uri uri, Handler handler, Bundle bundle, e9.i0 i0Var, e9.i0 i0Var2, m1 m1Var, b2.x0 x0Var, Bundle bundle2) {
         ComponentName componentName;
         ComponentName J;
+        boolean z10;
         PendingIntent foregroundService;
-        PendingIntent pendingIntent;
-        ComponentName componentName2;
+        String join;
         this.g = a0Var;
-        boolean z10 = true;
         this.s = i0Var;
         this.t = i0Var2;
         this.u = m1Var;
@@ -92,6 +94,7 @@ public final class k0 extends n4.p {
         Intent intent = new Intent("android.intent.action.MEDIA_BUTTON");
         intent.setPackage(context.getPackageName());
         List<ResolveInfo> queryBroadcastReceivers = packageManager.queryBroadcastReceivers(intent, 0);
+        ComponentName componentName2 = null;
         if (queryBroadcastReceivers.size() == 1) {
             ActivityInfo activityInfo = queryBroadcastReceivers.get(0).activityInfo;
             componentName = new ComponentName(activityInfo.packageName, activityInfo.name);
@@ -105,50 +108,95 @@ public final class k0 extends n4.p {
         if (componentName == null || Build.VERSION.SDK_INT < 31) {
             J = J(context, "androidx.media3.session.MediaLibraryService");
             J = J == null ? J(context, "androidx.media3.session.MediaSessionService") : J;
-            if (J != null) {
+            if (J != null && !J.equals(componentName)) {
+                z10 = true;
+                Intent intent2 = new Intent("android.intent.action.MEDIA_BUTTON", uri);
+                if (J != null) {
+                    androidx.mediarouter.app.g gVar = new androidx.mediarouter.app.g(this, 6);
+                    this.l = gVar;
+                    IntentFilter intentFilter = new IntentFilter("android.intent.action.MEDIA_BUTTON");
+                    String scheme = uri.getScheme();
+                    String str = e2.d0.a;
+                    intentFilter.addDataScheme(scheme);
+                    if (Build.VERSION.SDK_INT < 33) {
+                        context.registerReceiver(gVar, intentFilter);
+                    } else {
+                        context.registerReceiver(gVar, intentFilter, 4);
+                    }
+                    intent2.setPackage(context.getPackageName());
+                    foregroundService = PendingIntent.getBroadcast(context, 0, intent2, w);
+                    J = new ComponentName(context, context.getClass());
+                } else {
+                    intent2.setComponent(J);
+                    foregroundService = z10 ? Build.VERSION.SDK_INT >= 26 ? PendingIntent.getForegroundService(context, 0, intent2, w) : PendingIntent.getService(context, 0, intent2, w) : PendingIntent.getBroadcast(context, 0, intent2, w);
+                    this.l = null;
+                }
+                join = TextUtils.join(".", new String[]{"androidx.media3.session.id", a0Var.i});
+                int i10 = Build.VERSION.SDK_INT;
+                J = i10 >= 31 ? null : J;
+                foregroundService = i10 >= 31 ? null : foregroundService;
+                n4.y yVar = new n4.y();
+                if (!TextUtils.isEmpty(join)) {
+                    throw new IllegalArgumentException("tag must not be null or empty");
+                }
+                if (J == null) {
+                    int i11 = p4.t0.b;
+                    Intent intent3 = new Intent("android.intent.action.MEDIA_BUTTON");
+                    intent3.setPackage(context.getPackageName());
+                    List<ResolveInfo> queryBroadcastReceivers2 = context.getPackageManager().queryBroadcastReceivers(intent3, 0);
+                    if (queryBroadcastReceivers2.size() == 1) {
+                        ActivityInfo activityInfo2 = queryBroadcastReceivers2.get(0).activityInfo;
+                        componentName2 = new ComponentName(activityInfo2.packageName, activityInfo2.name);
+                    } else if (queryBroadcastReceivers2.size() > 1) {
+                        Log.w("MediaButtonReceiver", "More than one BroadcastReceiver that handles android.intent.action.MEDIA_BUTTON was found, returning null.");
+                    }
+                    if (componentName2 == null) {
+                        Log.i("MediaSessionCompat", "Couldn't find a unique registered media button receiver in the given context.");
+                    }
+                    J = componentName2;
+                }
+                if (J != null && foregroundService == null) {
+                    Intent intent4 = new Intent("android.intent.action.MEDIA_BUTTON");
+                    intent4.setComponent(J);
+                    foregroundService = PendingIntent.getBroadcast(context, 0, intent4, Build.VERSION.SDK_INT >= 31 ? 33554432 : 0);
+                }
+                int i12 = Build.VERSION.SDK_INT;
+                if (i12 >= 29) {
+                    yVar.a = new n4.u(context, join, bundle);
+                } else if (i12 >= 28) {
+                    yVar.a = new n4.t(context, join, bundle);
+                } else if (i12 >= 22) {
+                    yVar.a = new n4.s(context, join, bundle);
+                } else {
+                    yVar.a = new n4.r(context, join, bundle);
+                }
+                Looper myLooper = Looper.myLooper();
+                yVar.Z(new n4.n(), new Handler(myLooper == null ? Looper.getMainLooper() : myLooper));
+                ((n4.r) yVar.a).a.setMediaButtonReceiver(foregroundService);
+                yVar.b = new k2.u(context, yVar);
+                this.k = yVar;
+                if (i10 >= 31 && componentName != null) {
+                    e0.h0.g(yVar, componentName);
+                }
+                yVar.Z(this, handler);
+                return;
             }
         } else {
             J = componentName;
         }
         z10 = false;
-        Intent intent2 = new Intent("android.intent.action.MEDIA_BUTTON", uri);
-        if (J == null) {
-            androidx.mediarouter.app.g gVar = new androidx.mediarouter.app.g(this, 6);
-            this.l = gVar;
-            IntentFilter intentFilter = new IntentFilter("android.intent.action.MEDIA_BUTTON");
-            String scheme = uri.getScheme();
-            String str = e2.d0.a;
-            intentFilter.addDataScheme(scheme);
-            if (Build.VERSION.SDK_INT < 33) {
-                context.registerReceiver(gVar, intentFilter);
-            } else {
-                context.registerReceiver(gVar, intentFilter, 4);
-            }
-            intent2.setPackage(context.getPackageName());
-            foregroundService = PendingIntent.getBroadcast(context, 0, intent2, w);
-            J = new ComponentName(context, context.getClass());
-        } else {
-            intent2.setComponent(J);
-            foregroundService = z10 ? Build.VERSION.SDK_INT >= 26 ? PendingIntent.getForegroundService(context, 0, intent2, w) : PendingIntent.getService(context, 0, intent2, w) : PendingIntent.getBroadcast(context, 0, intent2, w);
-            this.l = null;
+        Intent intent22 = new Intent("android.intent.action.MEDIA_BUTTON", uri);
+        if (J != null) {
         }
-        String join = TextUtils.join(".", new String[]{"androidx.media3.session.id", a0Var.i});
-        int i10 = Build.VERSION.SDK_INT;
-        J = i10 >= 31 ? null : J;
-        if (i10 < 31) {
-            componentName2 = J;
-            pendingIntent = foregroundService;
-        } else {
-            ComponentName componentName3 = J;
-            pendingIntent = null;
-            componentName2 = componentName3;
+        join = TextUtils.join(".", new String[]{"androidx.media3.session.id", a0Var.i});
+        int i102 = Build.VERSION.SDK_INT;
+        if (i102 >= 31) {
         }
-        n4.y yVar = new n4.y(context, join, componentName2, pendingIntent, bundle);
-        this.k = yVar;
-        if (i10 >= 31 && componentName != null) {
-            e0.h0.g(yVar, componentName);
+        if (i102 >= 31) {
         }
-        yVar.Y(this, handler);
+        n4.y yVar2 = new n4.y();
+        if (!TextUtils.isEmpty(join)) {
+        }
     }
 
     public static void D(n4.y yVar, ArrayList arrayList) {
@@ -168,7 +216,7 @@ public final class k0 extends n4.p {
                 hashSet.add(Long.valueOf(j3));
             }
         }
-        n4.r rVar = (n4.r) yVar.b;
+        n4.r rVar = (n4.r) yVar.a;
         MediaSession mediaSession = rVar.a;
         rVar.h = arrayList;
         if (arrayList == null) {
@@ -193,7 +241,7 @@ public final class k0 extends n4.p {
     }
 
     public static void E(n4.y yVar, n4.m mVar) {
-        n4.r rVar = (n4.r) yVar.b;
+        n4.r rVar = (n4.r) yVar.a;
         rVar.i = mVar;
         MediaSession mediaSession = rVar.a;
         Bundle bundle = mVar.a;
@@ -263,12 +311,12 @@ public final class k0 extends n4.p {
         if (j3 < 0) {
             return;
         }
-        H(10, new c0(this, j3, 0), ((n4.r) this.k.b).c(), true);
+        H(10, new c0(this, j3, 0), ((n4.r) this.k.a).c(), true);
     }
 
     @Override // n4.p
     public final void B() {
-        H(3, new b0(this, 6), ((n4.r) this.k.b).c(), true);
+        H(3, new b0(this, 6), ((n4.r) this.k.a).c(), true);
     }
 
     public final n4.h0 G(j1 j1Var) {
@@ -474,7 +522,7 @@ public final class k0 extends n4.p {
     }
 
     public final void K(b2.k0 k0Var, boolean z10) {
-        H(31, new com.google.firebase.messaging.i(this, k0Var, z10, 2), ((n4.r) this.k.b).c(), false);
+        H(31, new com.google.firebase.messaging.i(this, k0Var, z10, 2), ((n4.r) this.k.a).c(), false);
     }
 
     public final r L(n4.a0 a0Var) {
@@ -529,7 +577,7 @@ public final class k0 extends n4.p {
     @Override // n4.p
     public final void b(n4.l lVar) {
         if (lVar != null) {
-            H(20, new d2(this, lVar, -1, 3), ((n4.r) this.k.b).c(), false);
+            H(20, new d2(this, lVar, -1, 3), ((n4.r) this.k.a).c(), false);
         }
     }
 
@@ -537,7 +585,7 @@ public final class k0 extends n4.p {
     public final void c(n4.l lVar, int i10) {
         if (lVar != null) {
             if (i10 == -1 || i10 >= 0) {
-                H(20, new d2(this, lVar, i10, 3), ((n4.r) this.k.b).c(), false);
+                H(20, new d2(this, lVar, i10, 3), ((n4.r) this.k.a).c(), false);
             }
         }
     }
@@ -549,7 +597,7 @@ public final class k0 extends n4.p {
         }
         if (!str.equals("androidx.media3.session.SESSION_COMMAND_REQUEST_SESSION3_TOKEN") || resultReceiver == null) {
             l1 l1Var = new l1(str, Bundle.EMPTY);
-            I(l1Var, 0, new r5(this, l1Var, bundle, resultReceiver), ((n4.r) this.k.b).c());
+            I(l1Var, 0, new r5(this, l1Var, bundle, resultReceiver), ((n4.r) this.k.a).c());
             return;
         }
         q1 q1Var = this.g.j;
@@ -588,12 +636,12 @@ public final class k0 extends n4.p {
             return;
         }
         l1 l1Var = new l1(str, Bundle.EMPTY);
-        I(l1Var, 0, new ah.b(this, l1Var, bundle), ((n4.r) this.k.b).c());
+        I(l1Var, 0, new ah.b(this, l1Var, bundle), ((n4.r) this.k.a).c());
     }
 
     @Override // n4.p
     public final void f() {
-        H(12, new b0(this, 0), ((n4.r) this.k.b).c(), true);
+        H(12, new b0(this, 0), ((n4.r) this.k.a).c(), true);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:25:0x00d1  */
@@ -604,7 +652,7 @@ public final class k0 extends n4.p {
     */
     public final boolean g(Intent intent) {
         boolean z10;
-        n4.a0 c10 = ((n4.r) this.k.b).c();
+        n4.a0 c10 = ((n4.r) this.k.a).c();
         c10.getClass();
         r rVar = new r(c10, 0, 0, false, null, Bundle.EMPTY);
         a0 a0Var = this.g;
@@ -672,12 +720,12 @@ public final class k0 extends n4.p {
 
     @Override // n4.p
     public final void h() {
-        H(1, new b0(this, 11), ((n4.r) this.k.b).c(), true);
+        H(1, new b0(this, 11), ((n4.r) this.k.a).c(), true);
     }
 
     @Override // n4.p
     public final void i() {
-        H(1, new b0(this, 10), ((n4.r) this.k.b).c(), false);
+        H(1, new b0(this, 10), ((n4.r) this.k.a).c(), false);
     }
 
     @Override // n4.p
@@ -697,7 +745,7 @@ public final class k0 extends n4.p {
 
     @Override // n4.p
     public final void m() {
-        H(2, new b0(this, 5), ((n4.r) this.k.b).c(), true);
+        H(2, new b0(this, 5), ((n4.r) this.k.a).c(), true);
     }
 
     @Override // n4.p
@@ -720,17 +768,17 @@ public final class k0 extends n4.p {
         if (lVar == null) {
             return;
         }
-        H(20, new ah.b(25, this, lVar), ((n4.r) this.k.b).c(), true);
+        H(20, new ah.b(25, this, lVar), ((n4.r) this.k.a).c(), true);
     }
 
     @Override // n4.p
     public final void r() {
-        H(11, new b0(this, 4), ((n4.r) this.k.b).c(), true);
+        H(11, new b0(this, 4), ((n4.r) this.k.a).c(), true);
     }
 
     @Override // n4.p
     public final void s(long j3) {
-        H(5, new c0(this, j3, 1), ((n4.r) this.k.b).c(), true);
+        H(5, new c0(this, j3, 1), ((n4.r) this.k.a).c(), true);
     }
 
     @Override // n4.p
@@ -738,7 +786,7 @@ public final class k0 extends n4.p {
         if (f7 <= 0.0f) {
             return;
         }
-        H(13, new g0(this, f7), ((n4.r) this.k.b).c(), true);
+        H(13, new g0(this, f7), ((n4.r) this.k.a).c(), true);
     }
 
     @Override // n4.p
@@ -750,7 +798,7 @@ public final class k0 extends n4.p {
     public final void v(n4.i0 i0Var) {
         b2.c1 c10 = k.c(i0Var);
         if (c10 != null) {
-            I(null, 40010, new b0(this, c10), ((n4.r) this.k.b).c());
+            I(null, 40010, new b0(this, c10), ((n4.r) this.k.a).c());
             return;
         }
         e2.a.n("MediaSessionLegacyStub", "Ignoring invalid RatingCompat " + i0Var);
@@ -758,12 +806,12 @@ public final class k0 extends n4.p {
 
     @Override // n4.p
     public final void w(int i10) {
-        H(15, new d0(this, i10, 0), ((n4.r) this.k.b).c(), true);
+        H(15, new d0(this, i10, 0), ((n4.r) this.k.a).c(), true);
     }
 
     @Override // n4.p
     public final void x(int i10) {
-        H(14, new d0(this, i10, 1), ((n4.r) this.k.b).c(), true);
+        H(14, new d0(this, i10, 1), ((n4.r) this.k.a).c(), true);
     }
 
     @Override // n4.p
@@ -771,9 +819,9 @@ public final class k0 extends n4.p {
         boolean m0 = this.g.t.m0(9);
         n4.y yVar = this.k;
         if (m0) {
-            H(9, new b0(this, 8), ((n4.r) yVar.b).c(), true);
+            H(9, new b0(this, 8), ((n4.r) yVar.a).c(), true);
         } else {
-            H(8, new b0(this, 9), ((n4.r) yVar.b).c(), true);
+            H(8, new b0(this, 9), ((n4.r) yVar.a).c(), true);
         }
     }
 
@@ -782,9 +830,9 @@ public final class k0 extends n4.p {
         boolean m0 = this.g.t.m0(7);
         n4.y yVar = this.k;
         if (m0) {
-            H(7, new b0(this, 2), ((n4.r) yVar.b).c(), true);
+            H(7, new b0(this, 2), ((n4.r) yVar.a).c(), true);
         } else {
-            H(6, new b0(this, 3), ((n4.r) yVar.b).c(), true);
+            H(6, new b0(this, 3), ((n4.r) yVar.a).c(), true);
         }
     }
 }

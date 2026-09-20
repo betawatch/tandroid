@@ -1,12 +1,12 @@
 package v7;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class i2 implements ia.d {
     public static final i2 a = new i2();
 
     static {
-        t8.b.t(t8.b.l(h.class, t8.b.p(6, t8.b.l(h.class, t8.b.p(5, t8.b.l(h.class, t8.b.p(4, t8.b.l(h.class, t8.b.p(3, t8.b.l(h.class, t8.b.p(2, t8.b.l(h.class, new e(1)))))))))))));
+        j0.q(org.telegram.ui.Cells.c1.l(h.class, j0.m(10, org.telegram.ui.Cells.c1.l(h.class, j0.m(9, org.telegram.ui.Cells.c1.l(h.class, j0.m(8, org.telegram.ui.Cells.c1.l(h.class, j0.m(7, org.telegram.ui.Cells.c1.l(h.class, j0.m(6, org.telegram.ui.Cells.c1.l(h.class, j0.m(5, org.telegram.ui.Cells.c1.l(h.class, j0.m(4, org.telegram.ui.Cells.c1.l(h.class, j0.m(3, org.telegram.ui.Cells.c1.l(h.class, j0.m(2, org.telegram.ui.Cells.c1.l(h.class, new e(1)))))))))))))))))))));
     }
 
     @Override // ia.a

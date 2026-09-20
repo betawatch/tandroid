@@ -21,30 +21,31 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.l0;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Cells.t7;
+import org.telegram.ui.Cells.u7;
 import org.telegram.ui.Components.oq;
 import org.telegram.ui.Components.qr;
 import org.telegram.ui.Components.vi;
+import org.telegram.ui.Components.vl0;
 import org.telegram.ui.Components.w81;
-import org.telegram.ui.Components.wl0;
-import org.telegram.ui.Components.yr0;
+import org.telegram.ui.Components.xr0;
 import w7.y5;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public abstract class z extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public static LongSparseArray E;
     public static LongSparseArray F;
     public final n2 a;
     public final int b;
-    public final e6 c;
+    public final f6 c;
     public final long d;
     public final t8 e;
     public final ArrayList f;
@@ -67,7 +68,7 @@ public abstract class z extends FrameLayout implements NotificationCenter.Notifi
         this.a = n2Var;
         int currentAccount = n2Var.getCurrentAccount();
         this.b = currentAccount;
-        e6 resourceProvider = n2Var.getResourceProvider();
+        f6 resourceProvider = n2Var.getResourceProvider();
         this.c = resourceProvider;
         this.d = j3;
         setBackgroundColor(j6.v(j6.v0(j6.d6, resourceProvider), j6.l1(0.04f, j6.v0(j6.G6, resourceProvider))));
@@ -89,16 +90,16 @@ public abstract class z extends FrameLayout implements NotificationCenter.Notifi
             t8Var = t8Var2;
         }
         this.e = t8Var;
-        yr0 yr0Var = (yr0) this;
-        a aVar = new a(yr0Var, context);
+        xr0 xr0Var = (xr0) this;
+        a aVar = new a(xr0Var, context);
         this.n = aVar;
         aVar.setAllowDisallowInterceptTouch(true);
-        aVar.setAdapter(new b(yr0Var, context));
+        aVar.setAdapter(new b(xr0Var, context));
         addView(aVar, y5.e(-1, -1, 119));
         w81 n10 = aVar.n(9, true);
         this.r = n10;
         n10.r = 12;
-        n10.setPreTabClick(new a1.c(yr0Var, 11));
+        n10.setPreTabClick(new a1.c(xr0Var, 11));
         addView(n10, y5.e(-1, 42, 48));
         i(false);
     }
@@ -316,7 +317,7 @@ public abstract class z extends FrameLayout implements NotificationCenter.Notifi
         return t8Var;
     }
 
-    public wl0 getCurrentListView() {
+    public vl0 getCurrentListView() {
         View currentView = this.n.getCurrentView();
         if (currentView instanceof u) {
             return ((u) currentView).f;
@@ -412,7 +413,7 @@ public abstract class z extends FrameLayout implements NotificationCenter.Notifi
         }
         a aVar = this.n;
         aVar.o(true);
-        SpannableString spannableString = new SpannableString(org.telegram.messenger.q.h(R.string.ProfileBotLanguageAdd, new StringBuilder("+ ")));
+        SpannableString spannableString = new SpannableString(l0.g(R.string.ProfileBotLanguageAdd, new StringBuilder("+ ")));
         oq oqVar = new oq(R.drawable.msg_filled_plus, 0);
         oqVar.setScale(0.9f, 0.9f);
         oqVar.spaceScaleX = 0.85f;
@@ -451,9 +452,9 @@ public abstract class z extends FrameLayout implements NotificationCenter.Notifi
             j jVar = uVar.f;
             for (int i10 = 0; i10 < jVar.getChildCount(); i10++) {
                 View childAt = jVar.getChildAt(i10);
-                if (childAt instanceof t7) {
-                    t7 t7Var = (t7) childAt;
-                    t7Var.i(uVar.W.c(t7Var.getMessageObject()), true);
+                if (childAt instanceof u7) {
+                    u7 u7Var = (u7) childAt;
+                    u7Var.i(uVar.W.c(u7Var.getMessageObject()), true);
                 }
             }
         }

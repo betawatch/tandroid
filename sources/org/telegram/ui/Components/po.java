@@ -14,7 +14,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class po {
     public final org.telegram.ui.ActionBar.f1 a;
@@ -33,26 +33,26 @@ public final class po {
     public final TextView n;
     public int o;
 
-    public po(Context context, int i10, fh0 fh0Var, boolean z10, final oo ooVar, org.telegram.ui.ActionBar.e6 e6Var) {
+    public po(Context context, int i10, eh0 eh0Var, boolean z10, final oo ooVar, org.telegram.ui.ActionBar.f6 f6Var) {
         ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout;
         Integer num;
         this.g = i10;
         this.i = ooVar;
-        no noVar = new no(context, z10 ? R.drawable.popup_fixed_alert : 0, 0, e6Var, 0);
+        no noVar = new no(context, z10 ? R.drawable.popup_fixed_alert : 0, 0, f6Var, 0);
         noVar.U = new Path();
         this.f = noVar;
         noVar.setFitItems(true);
-        if (fh0Var != null) {
+        if (eh0Var != null) {
             num = 1;
             actionBarPopupWindow$ActionBarPopupWindowLayout = noVar;
-            org.telegram.ui.ActionBar.f1 c10 = org.telegram.ui.ActionBar.v0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_arrow_back, LocaleController.getString(R.string.Back), false, e6Var);
+            org.telegram.ui.ActionBar.f1 c10 = org.telegram.ui.ActionBar.v0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_arrow_back, LocaleController.getString(R.string.Back), false, f6Var);
             this.a = c10;
-            c10.setOnClickListener(new l8(fh0Var, 1));
+            c10.setOnClickListener(new k8(eh0Var, 1));
         } else {
             actionBarPopupWindow$ActionBarPopupWindowLayout = noVar;
             num = 1;
         }
-        org.telegram.ui.ActionBar.f1 c11 = org.telegram.ui.ActionBar.v0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_tone_on, LocaleController.getString(R.string.SoundOn), false, e6Var);
+        org.telegram.ui.ActionBar.f1 c11 = org.telegram.ui.ActionBar.v0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_tone_on, LocaleController.getString(R.string.SoundOn), false, f6Var);
         this.b = c11;
         final int i11 = 0;
         c11.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.lo
@@ -94,7 +94,7 @@ public final class po {
                 }
             }
         });
-        org.telegram.ui.ActionBar.f1 c12 = org.telegram.ui.ActionBar.v0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_mute_1h, LocaleController.getString(R.string.MuteFor1h), false, e6Var);
+        org.telegram.ui.ActionBar.f1 c12 = org.telegram.ui.ActionBar.v0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_mute_1h, LocaleController.getString(R.string.MuteFor1h), false, f6Var);
         this.d = c12;
         final int i12 = 1;
         c12.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.lo
@@ -136,7 +136,7 @@ public final class po {
                 }
             }
         });
-        org.telegram.ui.ActionBar.f1 c13 = org.telegram.ui.ActionBar.v0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_mute_1h, LocaleController.getString(R.string.MuteFor1h), false, e6Var);
+        org.telegram.ui.ActionBar.f1 c13 = org.telegram.ui.ActionBar.v0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_mute_1h, LocaleController.getString(R.string.MuteFor1h), false, f6Var);
         this.e = c13;
         final int i13 = 2;
         c13.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.lo
@@ -179,9 +179,9 @@ public final class po {
             }
         });
         Integer num2 = num;
-        org.telegram.ui.ActionBar.v0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_mute_period, LocaleController.getString(R.string.MuteForPopup), false, e6Var).setOnClickListener(new mo(this, context, e6Var, i10, ooVar, 0));
+        org.telegram.ui.ActionBar.v0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_mute_period, LocaleController.getString(R.string.MuteForPopup), false, f6Var).setOnClickListener(new mo(this, context, f6Var, i10, ooVar, 0));
         final int i14 = 3;
-        org.telegram.ui.ActionBar.v0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_customize, LocaleController.getString(R.string.NotificationsCustomize), false, e6Var).setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.lo
+        org.telegram.ui.ActionBar.v0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_customize, LocaleController.getString(R.string.NotificationsCustomize), false, f6Var).setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.lo
             public final /* synthetic */ po b;
 
             {
@@ -220,7 +220,7 @@ public final class po {
                 }
             }
         });
-        org.telegram.ui.ActionBar.f1 c14 = org.telegram.ui.ActionBar.v0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, 0, "", false, e6Var);
+        org.telegram.ui.ActionBar.f1 c14 = org.telegram.ui.ActionBar.v0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, 0, "", false, f6Var);
         this.c = c14;
         final int i15 = 4;
         c14.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.lo
@@ -264,17 +264,17 @@ public final class po {
         });
         FrameLayout frameLayout = new FrameLayout(context);
         this.m = frameLayout;
-        frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.H8, e6Var));
+        frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.H8, f6Var));
         actionBarPopupWindow$ActionBarPopupWindowLayout.a(frameLayout, w7.y5.n(-1, 8));
         TextView textView = new TextView(context);
         this.n = textView;
         textView.setPadding(AndroidUtilities.dp(13.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(13.0f), AndroidUtilities.dp(8.0f));
         textView.setTextSize(1, 13.0f);
-        textView.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.E8, e6Var));
+        textView.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.E8, f6Var));
         frameLayout.setTag(R.id.fit_width_tag, num2);
         textView.setTag(R.id.fit_width_tag, num2);
         actionBarPopupWindow$ActionBarPopupWindowLayout.a(textView, w7.y5.n(-2, -2));
-        textView.setBackground(org.telegram.ui.ActionBar.j6.Y(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.I5, e6Var), 0, 6));
+        textView.setBackground(org.telegram.ui.ActionBar.j6.Y(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.I5, f6Var), 0, 6));
         final int i16 = 5;
         textView.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.lo
             public final /* synthetic */ po b;
@@ -433,7 +433,7 @@ public final class po {
         if (i12 != 0) {
             this.l = i12;
             f1Var3.setVisibility(0);
-            f1Var3.getImageView().setImageDrawable(k21.a(i12));
+            f1Var3.getImageView().setImageDrawable(j21.a(i12));
             f1Var3.setText(b(i12));
         } else {
             f1Var3.setVisibility(8);
@@ -442,7 +442,7 @@ public final class po {
         if (i11 != 0) {
             this.k = i11;
             f1Var4.setVisibility(0);
-            f1Var4.getImageView().setImageDrawable(k21.a(i11));
+            f1Var4.getImageView().setImageDrawable(j21.a(i11));
             f1Var4.setText(b(i11));
         } else {
             f1Var4.setVisibility(8);

@@ -10,9 +10,9 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class cl implements org.telegram.ui.Components.pk0 {
+public final class cl implements org.telegram.ui.Components.ok0 {
     public final /* synthetic */ zn a;
 
     public cl(zn znVar) {
@@ -23,7 +23,7 @@ public final class cl implements org.telegram.ui.Components.pk0 {
     
         if (r5 == null) goto L26;
      */
-    @Override // org.telegram.ui.Components.pk0
+    @Override // org.telegram.ui.Components.ok0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -141,7 +141,7 @@ public final class cl implements org.telegram.ui.Components.pk0 {
                     f7 = tL_availableReaction.activate_animation;
                 }
             } else {
-                f7 = org.telegram.ui.Components.q5.f(UserConfig.selectedAccount, j3);
+                f7 = org.telegram.ui.Components.p5.f(UserConfig.selectedAccount, j3);
             }
             if (f7 == null) {
                 return;
@@ -150,26 +150,26 @@ public final class cl implements org.telegram.ui.Components.pk0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.pk0
+    @Override // org.telegram.ui.Components.ok0
     public final /* synthetic */ boolean j() {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.pk0
+    @Override // org.telegram.ui.Components.ok0
     public final /* synthetic */ boolean k() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.pk0
+    @Override // org.telegram.ui.Components.ok0
     public final /* synthetic */ boolean r() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.pk0
-    public final /* synthetic */ void p() {
+    @Override // org.telegram.ui.Components.ok0
+    public final /* synthetic */ void o() {
     }
 
-    @Override // org.telegram.ui.Components.pk0
+    @Override // org.telegram.ui.Components.ok0
     public final /* synthetic */ void n(Canvas canvas, RectF rectF, float f7, float f10, float f11, int i10, boolean z10) {
     }
 }

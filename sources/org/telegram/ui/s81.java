@@ -1,48 +1,64 @@
 package org.telegram.ui;
 
-import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MrzRecognizer;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class s81 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ f91 b;
+public final class s81 implements u9 {
+    public TLObject a = null;
+    public TLRPC.TL_error b = null;
+    public final /* synthetic */ SessionsActivity c;
 
-    public /* synthetic */ s81(f91 f91Var, int i10) {
-        this.a = i10;
-        this.b = f91Var;
+    public s81(SessionsActivity sessionsActivity) {
+        this.c = sessionsActivity;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                f91 f91Var = this.b;
-                nf.f.s(f91Var.getParentActivity(), f91Var.getMessagesController().premiumManageSubscriptionUrl);
-                f91Var.getMessagesController().removeSuggestion(0L, "PREMIUM_GRACE");
-                break;
-            case 1:
-                f91 f91Var2 = this.b;
-                f91Var2.getClass();
-                f91Var2.presentFragment(new h(3));
-                break;
-            case 2:
-                this.b.getMessagesController().removeSuggestion(0L, "VALIDATE_PHONE_NUMBER");
-                break;
-            case 3:
-                f91 f91Var3 = this.b;
-                f91Var3.getClass();
-                f91Var3.presentFragment(new gh1(8, null));
-                break;
-            case 4:
-                this.b.getMessagesController().removeSuggestion(0L, "VALIDATE_PASSWORD");
-                break;
-            case 5:
-                f91.W(this.b);
-                break;
-            default:
-                f91.Z(this.b);
-                break;
+    @Override // org.telegram.ui.u9
+    public final /* synthetic */ String I0() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.u9
+    public final void K(String str) {
+        TLObject tLObject = this.a;
+        if (!(tLObject instanceof TLRPC.TL_authorization)) {
+            if (this.b != null) {
+                AndroidUtilities.runOnUIThread(new r81(this, 0));
+                return;
+            }
+            return;
         }
+        TLRPC.TL_authorization tL_authorization = (TLRPC.TL_authorization) tLObject;
+        boolean z10 = tL_authorization.password_pending;
+        SessionsActivity sessionsActivity = this.c;
+        if (z10) {
+            sessionsActivity.f.add(0, tL_authorization);
+            sessionsActivity.V = 4;
+            sessionsActivity.k0(false);
+        } else {
+            sessionsActivity.e.add(0, tL_authorization);
+        }
+        sessionsActivity.m0();
+        sessionsActivity.a.l();
+        sessionsActivity.s.m(0L, this.a, 11);
+    }
+
+    @Override // org.telegram.ui.u9
+    public final boolean e1(String str, m9 m9Var) {
+        this.a = null;
+        this.b = null;
+        AndroidUtilities.runOnUIThread(new rf0(this, str, m9Var, 29), 750L);
+        return true;
+    }
+
+    @Override // org.telegram.ui.u9
+    public final /* synthetic */ void T0(MrzRecognizer.Result result) {
+    }
+
+    @Override // org.telegram.ui.u9
+    public final /* synthetic */ void onDismiss() {
     }
 }

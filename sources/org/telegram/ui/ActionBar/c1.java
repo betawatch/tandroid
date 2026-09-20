@@ -31,10 +31,10 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.ed;
-import org.telegram.ui.Components.lc0;
+import org.telegram.ui.Components.kc0;
 import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public abstract class c1 extends FrameLayout {
     public final Paint E;
@@ -64,7 +64,7 @@ public abstract class c1 extends FrameLayout {
     public long c0;
     public final y0 d;
     public boolean d0;
-    public final org.telegram.ui.Components.e6 e;
+    public final org.telegram.ui.Components.d6 e;
     public Bitmap f;
     public BitmapShader h;
     public Matrix n;
@@ -72,14 +72,14 @@ public abstract class c1 extends FrameLayout {
     public float s;
     public boolean v;
     public boolean w;
-    public final e6 x;
+    public final f6 x;
     public final Paint y;
 
-    public c1(Context context, e6 e6Var) {
+    public c1(Context context, f6 f6Var) {
         super(context);
         this.a = 0.5f;
         qr qrVar = qr.h;
-        this.e = new org.telegram.ui.Components.e6(1.0f, this, 0L, 320L, qrVar);
+        this.e = new org.telegram.ui.Components.d6(1.0f, this, 0L, 320L, qrVar);
         this.r = new int[2];
         this.s = 0.0f;
         Paint paint = new Paint(1);
@@ -99,7 +99,7 @@ public abstract class c1 extends FrameLayout {
         this.N = true;
         this.U = false;
         this.V = new q(this, 3);
-        this.x = e6Var;
+        this.x = f6Var;
         setWillNotDraw(false);
         y0 y0Var = new y0(this, 0);
         this.c = y0Var;
@@ -128,7 +128,7 @@ public abstract class c1 extends FrameLayout {
         AndroidUtilities.adjustSaturationColorMatrix(colorMatrix, -0.4f);
         AndroidUtilities.adjustBrightnessColorMatrix(colorMatrix, 0.1f);
         paint5.setColorFilter(new ColorMatrixColorFilter(colorMatrix));
-        paint2.setColor(j6.v0(j6.G8, e6Var));
+        paint2.setColor(j6.v0(j6.G8, f6Var));
         boolean z10 = AndroidUtilities.computePerceivedBrightness(paint2.getColor()) <= 0.721f;
         this.L = z10;
         y0Var.r(z10 ? -1 : -16777216);
@@ -225,8 +225,8 @@ public abstract class c1 extends FrameLayout {
             }
         }
         int i11 = j6.sj;
-        e6 e6Var = b1Var.x;
-        this.J.setColor(i0.a.d(w7.q.a((((a2 * 2.8f) + 0.2f) - 1.0f) / 1.0f, 0.0f, 1.0f), j6.v0(i11, e6Var), j6.v0(j6.tj, e6Var)));
+        f6 f6Var = b1Var.x;
+        this.J.setColor(i0.a.d(w7.q.a((((a2 * 2.8f) + 0.2f) - 1.0f) / 1.0f, 0.0f, 1.0f), j6.v0(i11, f6Var), j6.v0(j6.tj, f6Var)));
     }
 
     public float getValue() {
@@ -319,14 +319,14 @@ public abstract class c1 extends FrameLayout {
             }
         }
         boolean z11 = this.N;
-        e6 e6Var = this.x;
+        f6 f6Var = this.x;
         if (z11) {
             Drawable r02 = j6.r0();
             if (r02 instanceof ColorDrawable) {
                 v02 = ((ColorDrawable) r02).getColor();
             } else {
                 Pair pair = null;
-                Bitmap bitmap = r02 instanceof lc0 ? ((lc0) r02).k : r02 instanceof BitmapDrawable ? ((BitmapDrawable) r02).getBitmap() : null;
+                Bitmap bitmap = r02 instanceof kc0 ? ((kc0) r02).k : r02 instanceof BitmapDrawable ? ((BitmapDrawable) r02).getBitmap() : null;
                 if (bitmap != null) {
                     float f7 = iArr[0] / AndroidUtilities.displaySize.x;
                     int width = (int) (f7 * bitmap.getWidth());
@@ -348,10 +348,10 @@ public abstract class c1 extends FrameLayout {
                     this.O = linearGradient;
                     this.I.setShader(linearGradient);
                 }
-                v02 = j6.l1(0.25f, j6.v0(j6.d6, e6Var));
+                v02 = j6.l1(0.25f, j6.v0(j6.d6, f6Var));
             }
         } else {
-            v02 = j6.v0(j6.d6, e6Var);
+            v02 = j6.v0(j6.d6, f6Var);
             if (!j6.I.q()) {
                 v02 = j6.v(v02, j6.l1(0.18f, -16777216));
             }

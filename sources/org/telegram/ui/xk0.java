@@ -12,7 +12,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class xk0 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ Context a;
@@ -29,7 +29,7 @@ public final class xk0 extends org.telegram.ui.ActionBar.j {
         int i12;
         org.telegram.ui.ActionBar.k kVar;
         bl0 bl0Var = this.b;
-        org.telegram.ui.ActionBar.e6 e6Var = bl0Var.h;
+        org.telegram.ui.ActionBar.f6 f6Var = bl0Var.h;
         SparseArray sparseArray = bl0Var.J;
         if (i10 == -1) {
             kVar = ((org.telegram.ui.ActionBar.n2) bl0Var).actionBar;
@@ -42,14 +42,14 @@ public final class xk0 extends org.telegram.ui.ActionBar.j {
             }
         }
         if (i10 == 1) {
-            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(bl0Var.getParentActivity(), 0, e6Var);
+            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(bl0Var.getParentActivity(), 0, f6Var);
             alertDialog$Builder.a.R = LocaleController.formatPluralString("DeleteTones", sparseArray.size(), new Object[0]);
             alertDialog$Builder.a.T = AndroidUtilities.replaceTags(LocaleController.formatPluralString("DeleteTonesMessage", sparseArray.size(), new Object[0]));
-            alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new wk0(0));
+            alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new ja0(2));
             alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new fu(this, 29));
             TextView textView = (TextView) alertDialog$Builder.o().d(-1);
             if (textView != null) {
-                textView.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.q7, e6Var));
+                textView.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.q7, f6Var));
                 return;
             }
             return;

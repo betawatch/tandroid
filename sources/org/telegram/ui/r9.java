@@ -5,7 +5,7 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class r9 extends org.telegram.ui.ActionBar.f3 {
     public final q9 b;
@@ -27,8 +27,8 @@ public final class r9 extends org.telegram.ui.ActionBar.f3 {
         int i11 = this.backgroundPaddingLeft;
         view.setPadding(i11, 0, i11, 0);
         q9Var.L = u9Var;
-        if (u9Var.J0() != null) {
-            q9Var.b.setText(u9Var.J0());
+        if (u9Var.I0() != null) {
+            q9Var.b.setText(u9Var.I0());
         }
         this.containerView = d5VarArr[0].getView();
         setApplyBottomPadding(false);

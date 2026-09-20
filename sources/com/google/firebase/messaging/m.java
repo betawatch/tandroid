@@ -12,6 +12,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.text.SpannableString;
 import android.text.TextUtils;
+import android.util.Range;
 import android.util.SparseArray;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,12 +35,13 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.RejectedExecutionException;
 import java.util.concurrent.atomic.AtomicMarkableReference;
 import java.util.concurrent.atomic.AtomicReference;
+import ki.j0;
 import m.p3;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.Components.lu;
 import org.telegram.ui.Components.qr;
 import org.telegram.ui.c5;
@@ -49,7 +51,7 @@ import org.telegram.ui.x4;
 import org.telegram.ui.y0;
 import r0.i0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class m implements c3.q {
     public static m e;
@@ -241,20 +243,20 @@ public final class m implements c3.q {
         arrayList.add(view);
     }
 
+    public int f(int i10, int i11, int i12) {
+        dc.b bVar = (dc.b) this.b;
+        return this.a ? bVar.b(i11, i10) : bVar.b(i10, i11) ? (i12 << 1) | 1 : i12 << 1;
+    }
+
     @Override // c3.q
-    public void e1() {
+    public void f1() {
         SparseArray sparseArray = (SparseArray) this.d;
-        ((c3.q) this.b).e1();
+        ((c3.q) this.b).f1();
         if (this.a) {
             for (int i10 = 0; i10 < sparseArray.size(); i10++) {
                 ((z3.o) sparseArray.valueAt(i10)).i = true;
             }
         }
-    }
-
-    public int f(int i10, int i11, int i12) {
-        dc.b bVar = (dc.b) this.b;
-        return this.a ? bVar.b(i11, i10) : bVar.b(i10, i11) ? (i12 << 1) | 1 : i12 << 1;
     }
 
     public ValueAnimator g(lu luVar, int i10, int i11, int i12, int i13) {
@@ -503,7 +505,7 @@ public final class m implements c3.q {
         }
     }
 
-    public void v(ViewGroup viewGroup, e6 e6Var, x4 x4Var, v4 v4Var) {
+    public void v(ViewGroup viewGroup, f6 f6Var, x4 x4Var, v4 v4Var) {
         Objects.requireNonNull(viewGroup);
         Context context = viewGroup.getContext();
         if (((ViewGroup) this.b) != viewGroup) {
@@ -514,7 +516,7 @@ public final class m implements c3.q {
             }
             this.b = viewGroup;
             this.c = (WindowManager) f0.e.f(context, WindowManager.class);
-            r4 r4Var2 = new r4(this, context, e6Var, v4Var);
+            r4 r4Var2 = new r4(this, context, f6Var, v4Var);
             this.d = r4Var2;
             y0 y0Var = new y0(this, 3);
             WeakHashMap weakHashMap = i0.a;
@@ -595,5 +597,12 @@ public final class m implements c3.q {
         this.c = new AtomicReference(null);
         this.a = z10;
         this.b = new AtomicMarkableReference(new x9.d(z10 ? 8192 : 1024), false);
+    }
+
+    public m(j0 j0Var, Range range, j6.l lVar, boolean z10) {
+        this.b = j0Var;
+        this.c = range;
+        this.d = lVar;
+        this.a = z10;
     }
 }

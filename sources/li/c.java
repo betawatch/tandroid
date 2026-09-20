@@ -9,7 +9,7 @@ import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.ActionBar.n;
 import w7.d0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class c {
     public final /* synthetic */ i a;
@@ -229,7 +229,7 @@ public final /* synthetic */ class c {
         if (i20 != 0) {
             f fVar = iVar.a;
             if (fVar != null) {
-                fVar.j(i20);
+                fVar.g(i20);
             }
             boolean a2 = d0.a(i20, 16);
             boolean a10 = d0.a(i20, 4);

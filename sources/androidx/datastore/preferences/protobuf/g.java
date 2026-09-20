@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.Arrays;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public class g implements Iterable, Serializable {
     public static final g c = new g(z.b);
@@ -70,9 +70,9 @@ public class g implements Iterable, Serializable {
             throw new IllegalArgumentException("Length too large: " + size + size());
         }
         if (size > gVar.size()) {
-            StringBuilder j3 = hg.k0.j(size, "Ran off end of other: 0, ", ", ");
-            j3.append(gVar.size());
-            throw new IllegalArgumentException(j3.toString());
+            StringBuilder k10 = hg.k0.k(size, "Ran off end of other: 0, ", ", ");
+            k10.append(gVar.size());
+            throw new IllegalArgumentException(k10.toString());
         }
         byte[] bArr = gVar.b;
         int n10 = n() + size;

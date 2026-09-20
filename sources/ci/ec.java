@@ -14,27 +14,27 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.bw0;
-import org.telegram.ui.Components.sk0;
+import org.telegram.ui.Components.aw0;
+import org.telegram.ui.Components.rk0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class ec extends r {
     public final Path R1;
     public final /* synthetic */ oc S1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ec(oc ocVar, Activity activity, FrameLayout frameLayout, bw0 bw0Var, FrameLayout frameLayout2, ai.d dVar, org.telegram.ui.Components.ja jaVar) {
-        super(activity, frameLayout, bw0Var, frameLayout2, dVar, jaVar);
+    public ec(oc ocVar, Activity activity, FrameLayout frameLayout, aw0 aw0Var, FrameLayout frameLayout2, ai.d dVar, org.telegram.ui.Components.ia iaVar) {
+        super(activity, frameLayout, aw0Var, frameLayout2, dVar, iaVar);
         this.S1 = ocVar;
         this.R1 = new Path();
     }
 
     @Override // ci.m
     public final boolean e() {
-        org.telegram.ui.Components.qc qcVar;
+        org.telegram.ui.Components.pc pcVar;
         int i10 = 0;
-        if (MessagesController.getInstance(this.U).premiumFeaturesBlocked() || ((qcVar = org.telegram.ui.Components.qc.w) != null && qcVar.a == 2)) {
+        if (MessagesController.getInstance(this.U).premiumFeaturesBlocked() || ((pcVar = org.telegram.ui.Components.pc.w) != null && pcVar.a == 2)) {
             return false;
         }
         int i11 = MessagesController.getInstance(this.U).storyCaptionLengthLimitPremium;
@@ -49,7 +49,7 @@ public final class ec extends r {
                 replaceTags.setSpan(new dc(this, i10), indexOf, indexOf2, 33);
             }
         }
-        org.telegram.ui.Components.qc M = new org.telegram.ui.Components.xc(this.S1.l0, this.a).M(LocaleController.getString(R.string.CaptionPremiumTitle), replaceTags, R.raw.caption_limit);
+        org.telegram.ui.Components.pc M = new org.telegram.ui.Components.xc(this.S1.l0, this.a).M(LocaleController.getString(R.string.CaptionPremiumTitle), replaceTags, R.raw.caption_limit);
         M.a = 2;
         M.j = 5000;
         M.k(false);
@@ -72,7 +72,7 @@ public final class ec extends r {
     }
 
     @Override // ci.m
-    public final void h(org.telegram.ui.Components.na naVar, Canvas canvas, RectF rectF, float f7, boolean z10, float f10, float f11, boolean z11) {
+    public final void h(org.telegram.ui.Components.ma maVar, Canvas canvas, RectF rectF, float f7, boolean z10, float f10, float f11, boolean z11) {
         if (canvas.isHardwareAccelerated()) {
             canvas.save();
             Path path = this.R1;
@@ -80,7 +80,7 @@ public final class ec extends r {
             path.addRoundRect(rectF, f7, f7, Path.Direction.CW);
             canvas.clipPath(path);
             canvas.translate(f10, f11);
-            naVar.b(canvas, true);
+            maVar.b(canvas, true);
             canvas.restore();
         }
     }
@@ -107,7 +107,7 @@ public final class ec extends r {
                 for (int i10 = 0; i10 < ocVar.v1.R0.getChildCount(); i10++) {
                     View childAt = ocVar.v1.R0.getChildAt(i10);
                     if (childAt instanceof qg.j) {
-                        sk0 selectionBounds = ((qg.j) childAt).getSelectionBounds();
+                        rk0 selectionBounds = ((qg.j) childAt).getSelectionBounds();
                         RectF rectF = AndroidUtilities.rectTmp;
                         float f11 = selectionBounds.a;
                         float f12 = selectionBounds.b;

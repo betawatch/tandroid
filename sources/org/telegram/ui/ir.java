@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.view.View;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ir implements q0.a {
     public final /* synthetic */ int a;
@@ -20,25 +20,25 @@ public final /* synthetic */ class ir implements q0.a {
             case 1:
                 View view = (View) obj;
                 boolean z10 = ChatAttachAlertPhotoLayout.q1;
-                if (view instanceof org.telegram.ui.Cells.t5) {
-                    org.telegram.ui.Cells.t5 t5Var = (org.telegram.ui.Cells.t5) view;
-                    t5Var.c(t5Var.getPhotoEntry() != null && t5Var.getPhotoEntry().hasSpoiler, Float.valueOf(250.0f));
-                    t5Var.setHighQuality(t5Var.getPhotoEntry() != null && t5Var.getPhotoEntry().isHighQuality());
-                    t5Var.f(t5Var.getPhotoEntry() != null ? t5Var.getPhotoEntry().starsAmount : 0L, ChatAttachAlertPhotoLayout.s1.size() > 1);
+                if (view instanceof org.telegram.ui.Cells.u5) {
+                    org.telegram.ui.Cells.u5 u5Var = (org.telegram.ui.Cells.u5) view;
+                    u5Var.c(u5Var.getPhotoEntry() != null && u5Var.getPhotoEntry().hasSpoiler, Float.valueOf(250.0f));
+                    u5Var.setHighQuality(u5Var.getPhotoEntry() != null && u5Var.getPhotoEntry().isHighQuality());
+                    u5Var.f(u5Var.getPhotoEntry() != null ? u5Var.getPhotoEntry().starsAmount : 0L, ChatAttachAlertPhotoLayout.s1.size() > 1);
                     break;
                 }
                 break;
             case 2:
                 View view2 = (View) obj;
-                if (view2 instanceof org.telegram.ui.Components.un0) {
-                    ((org.telegram.ui.Components.un0) view2).a(false, true);
+                if (view2 instanceof org.telegram.ui.Components.tn0) {
+                    ((org.telegram.ui.Components.tn0) view2).a(false, true);
                     break;
                 }
                 break;
             default:
                 View view3 = (View) obj;
-                if (view3 instanceof org.telegram.ui.Components.un0) {
-                    ((org.telegram.ui.Components.un0) view3).a(false, true);
+                if (view3 instanceof org.telegram.ui.Components.tn0) {
+                    ((org.telegram.ui.Components.tn0) view3).a(false, true);
                     break;
                 }
                 break;

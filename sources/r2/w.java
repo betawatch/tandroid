@@ -14,9 +14,9 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import org.telegram.messenger.MediaController;
-import v7.r6;
+import v7.s6;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public abstract class w {
     public static final HashMap a = new HashMap();
@@ -138,15 +138,15 @@ public abstract class w {
         try {
             ArrayList arrayList = new ArrayList();
             String str2 = sVar2.a;
-            int g02 = uVar.g0();
-            boolean p02 = uVar.p0();
+            int c02 = uVar.c0();
+            boolean n02 = uVar.n0();
             int i12 = 0;
-            while (i12 < g02) {
+            while (i12 < c02) {
                 MediaCodecInfo b10 = uVar.b(i12);
                 int i13 = Build.VERSION.SDK_INT;
                 if (i13 < 29 || !b10.isAlias()) {
                     String name = b10.getName();
-                    if (g(b10, name, p02, str2)) {
+                    if (g(b10, name, n02, str2)) {
                         int i14 = i12;
                         String c10 = c(b10, name, str2);
                         if (c10 != null) {
@@ -157,7 +157,7 @@ public abstract class w {
                                 z11 = sVar2.c;
                             } catch (Exception e) {
                                 e = e;
-                                z10 = p02;
+                                z10 = n02;
                                 str = name;
                             }
                             if (z11 || !Z) {
@@ -167,13 +167,13 @@ public abstract class w {
                                     if (z13 || !Z2) {
                                         if (!z13 || v9) {
                                             boolean h = h(b10, str2);
-                                            z10 = p02;
+                                            z10 = n02;
                                             try {
                                                 i11 = i(b10, str2);
                                                 if (i13 >= 29) {
                                                     z12 = b10.isVendor();
                                                 } else {
-                                                    String b11 = r6.b(b10.getName());
+                                                    String b11 = s6.b(b10.getName());
                                                     z12 = (b11.startsWith("omx.google.") || b11.startsWith("c2.android.") || b11.startsWith("c2.google.")) ? false : true;
                                                 }
                                             } catch (Exception e7) {
@@ -203,7 +203,7 @@ public abstract class w {
                                                 }
                                                 i12 = i10 + 1;
                                                 sVar2 = sVar;
-                                                p02 = z10;
+                                                n02 = z10;
                                             } else {
                                                 i10 = i14;
                                                 try {
@@ -218,29 +218,29 @@ public abstract class w {
                                                     e2.a.e("MediaCodecUtil", "Skipping codec " + str + " (failed to query capabilities)");
                                                     i12 = i10 + 1;
                                                     sVar2 = sVar;
-                                                    p02 = z10;
+                                                    n02 = z10;
                                                 }
                                                 i12 = i10 + 1;
                                                 sVar2 = sVar;
-                                                p02 = z10;
+                                                n02 = z10;
                                             }
                                         }
                                     }
                                 }
                             }
                         }
-                        z10 = p02;
+                        z10 = n02;
                         i10 = i14;
                         i12 = i10 + 1;
                         sVar2 = sVar;
-                        p02 = z10;
+                        n02 = z10;
                     }
                 }
-                z10 = p02;
+                z10 = n02;
                 i10 = i12;
                 i12 = i10 + 1;
                 sVar2 = sVar;
-                p02 = z10;
+                n02 = z10;
             }
             return arrayList;
         } catch (Exception e12) {
@@ -286,7 +286,7 @@ public abstract class w {
         if (r0.i(str)) {
             return true;
         }
-        String b10 = r6.b(mediaCodecInfo.getName());
+        String b10 = s6.b(mediaCodecInfo.getName());
         if (b10.startsWith("arc.")) {
             return false;
         }

@@ -13,21 +13,21 @@ import java.util.concurrent.atomic.AtomicReference;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.dm0;
-import org.telegram.ui.Components.i90;
-import org.telegram.ui.Components.m90;
-import org.telegram.ui.Components.p90;
+import org.telegram.ui.Components.cm0;
+import org.telegram.ui.Components.h90;
+import org.telegram.ui.Components.l90;
+import org.telegram.ui.Components.o90;
 import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class va {
-    public m90 a;
-    public org.telegram.ui.Components.z5 b;
-    public final i90 c;
-    public org.telegram.ui.Components.v5 d;
+    public l90 a;
+    public org.telegram.ui.Components.y5 b;
+    public final h90 c;
+    public org.telegram.ui.Components.u5 d;
     public StaticLayout e;
-    public org.telegram.ui.Components.v5 f;
+    public org.telegram.ui.Components.u5 f;
     public StaticLayout g;
     public ta[] h;
     public final ArrayList i;
@@ -39,30 +39,30 @@ public final class va {
     public sa o;
     public sa p;
     public boolean q;
-    public final org.telegram.ui.Components.e6 r;
-    public final p90 s;
+    public final org.telegram.ui.Components.d6 r;
+    public final o90 s;
     public final Path t;
     public final AtomicReference u;
     public final /* synthetic */ wa v;
 
     public va(wa waVar) {
         this.v = waVar;
-        this.c = new i90(waVar);
+        this.c = new h90(waVar);
         ArrayList arrayList = new ArrayList();
         this.i = arrayList;
         this.j = new Stack();
         this.n = "";
-        this.r = new org.telegram.ui.Components.e6(waVar.J, 0L, 400L, qr.h);
+        this.r = new org.telegram.ui.Components.d6(waVar.J, 0L, 400L, qr.h);
         Path path = new Path();
         this.t = path;
         this.u = new AtomicReference();
         this.k = new vh.m(waVar, arrayList, new a1.c(this, 9));
-        p90 p90Var = new p90();
-        this.s = p90Var;
-        p90Var.x = path;
-        p90Var.j(4.0f);
-        p90Var.f(org.telegram.ui.ActionBar.j6.l1(0.3f, -1), org.telegram.ui.ActionBar.j6.l1(0.1f, -1), org.telegram.ui.ActionBar.j6.l1(0.2f, -1), org.telegram.ui.ActionBar.j6.l1(0.7f, -1));
-        p90Var.setCallback(waVar);
+        o90 o90Var = new o90();
+        this.s = o90Var;
+        o90Var.x = path;
+        o90Var.j(4.0f);
+        o90Var.f(org.telegram.ui.ActionBar.j6.l1(0.3f, -1), org.telegram.ui.ActionBar.j6.l1(0.1f, -1), org.telegram.ui.ActionBar.j6.l1(0.2f, -1), org.telegram.ui.ActionBar.j6.l1(0.7f, -1));
+        o90Var.setCallback(waVar);
     }
 
     public final int a(int i10) {
@@ -111,9 +111,9 @@ public final class va {
         }
         if (e > 0.0f || this.q) {
             int i10 = (int) (e * 255.0f * lerp);
-            p90 p90Var = this.s;
-            p90Var.setAlpha(i10);
-            p90Var.draw(canvas2);
+            o90 o90Var = this.s;
+            o90Var.setAlpha(i10);
+            o90Var.draw(canvas2);
             waVar.invalidate();
         }
     }
@@ -160,9 +160,9 @@ public final class va {
                 canvas.save();
                 canvas.translate(waVar.E, waVar.F + i10);
                 d(this.g, canvas, arrayList3);
-                org.telegram.ui.Components.v5 update = org.telegram.ui.Components.z5.update(0, waVar, this.f, this.g);
+                org.telegram.ui.Components.u5 update = org.telegram.ui.Components.y5.update(0, waVar, this.f, this.g);
                 this.f = update;
-                org.telegram.ui.Components.z5.drawAnimatedEmojis(canvas, this.g, update, 0.0f, arrayList3, 0.0f, 0.0f, 0.0f, 1.0f, porterDuffColorFilter);
+                org.telegram.ui.Components.y5.drawAnimatedEmojis(canvas, this.g, update, 0.0f, arrayList3, 0.0f, 0.0f, 0.0f, 1.0f, porterDuffColorFilter);
                 arrayList = arrayList3;
                 canvas.restore();
                 if (z10) {
@@ -193,9 +193,9 @@ public final class va {
                                 f(taVar.b, waVar.E + lerp, waVar.F + i10 + lerp2);
                             }
                             taVar.b.draw(canvas);
-                            org.telegram.ui.Components.v5 update2 = org.telegram.ui.Components.z5.update(0, waVar, taVar.a, taVar.b);
+                            org.telegram.ui.Components.u5 update2 = org.telegram.ui.Components.y5.update(0, waVar, taVar.a, taVar.b);
                             taVar.a = update2;
-                            org.telegram.ui.Components.z5.drawAnimatedEmojis(canvas, taVar.b, update2, 0.0f, arrayList2, 0.0f, 0.0f, 0.0f, 1.0f, porterDuffColorFilter);
+                            org.telegram.ui.Components.y5.drawAnimatedEmojis(canvas, taVar.b, update2, 0.0f, arrayList2, 0.0f, 0.0f, 0.0f, 1.0f, porterDuffColorFilter);
                         } else if (waVar.w != f10) {
                             canvas.translate(waVar.E + f12, waVar.F + i10 + taVar.f);
                             canvas.saveLayerAlpha(0.0f, 0.0f, taVar.b.getWidth(), taVar.b.getHeight(), (int) (waVar.w * 255.0f), 31);
@@ -204,11 +204,11 @@ public final class va {
                                 f(taVar.b, waVar.E + taVar.e, waVar.F + i10 + taVar.f);
                             }
                             taVar.b.draw(canvas);
-                            org.telegram.ui.Components.v5 update3 = org.telegram.ui.Components.z5.update(0, waVar, taVar.a, taVar.b);
+                            org.telegram.ui.Components.u5 update3 = org.telegram.ui.Components.y5.update(0, waVar, taVar.a, taVar.b);
                             taVar.a = update3;
                             arrayList2 = arrayList;
                             i11 = i13;
-                            org.telegram.ui.Components.z5.drawAnimatedEmojis(canvas, taVar.b, update3, 0.0f, arrayList2, 0.0f, 0.0f, 0.0f, waVar.w, porterDuffColorFilter);
+                            org.telegram.ui.Components.y5.drawAnimatedEmojis(canvas, taVar.b, update3, 0.0f, arrayList2, 0.0f, 0.0f, 0.0f, waVar.w, porterDuffColorFilter);
                             canvas.restore();
                         }
                         canvas.restore();
@@ -230,9 +230,9 @@ public final class va {
                 xaVar.W.X(canvas);
             }
             d(this.e, canvas, arrayList3);
-            org.telegram.ui.Components.v5 update4 = org.telegram.ui.Components.z5.update(0, waVar, this.d, this.e);
+            org.telegram.ui.Components.u5 update4 = org.telegram.ui.Components.y5.update(0, waVar, this.d, this.e);
             this.d = update4;
-            org.telegram.ui.Components.z5.drawAnimatedEmojis(canvas, this.e, update4, 0.0f, arrayList3, 0.0f, 0.0f, 0.0f, 1.0f, porterDuffColorFilter);
+            org.telegram.ui.Components.y5.drawAnimatedEmojis(canvas, this.e, update4, 0.0f, arrayList3, 0.0f, 0.0f, 0.0f, 1.0f, porterDuffColorFilter);
             canvas.restore();
             if (z10) {
                 f(this.e, waVar.E, waVar.F + i10);
@@ -278,7 +278,7 @@ public final class va {
             }
             sa saVar2 = this.p;
             if (saVar2 != null) {
-                this.l = org.telegram.messenger.q.D(4.0f, saVar2.b(), this.l);
+                this.l = org.telegram.messenger.l0.C(4.0f, saVar2.b(), this.l);
             }
             this.m = this.l;
             if (this == vaVarArr[0]) {
@@ -296,7 +296,7 @@ public final class va {
         int dp = saVar3 != null ? AndroidUtilities.dp(8.0f) + saVar3.b() : 0;
         sa saVar4 = this.p;
         if (saVar4 != null) {
-            this.l = org.telegram.messenger.q.D(8.0f, saVar4.b(), this.l);
+            this.l = org.telegram.messenger.l0.C(8.0f, saVar4.b(), this.l);
         }
         this.l += dp;
         float measureText = textPaint2.measureText(" ");
@@ -339,7 +339,7 @@ public final class va {
                     }
                     ta taVar = taVarArr[i11];
                     if (taVar != null) {
-                        org.telegram.ui.Components.z5.release(xaVar, taVar.a);
+                        org.telegram.ui.Components.y5.release(xaVar, taVar.a);
                     }
                     i11++;
                 }
@@ -418,7 +418,7 @@ public final class va {
             ua uaVar = new ua(this, 0);
             saVar.r = waVar;
             saVar.s = uaVar;
-            new dm0(waVar);
+            new cm0(waVar);
             saVar.j.setCallback(waVar);
             saVar.h.a = waVar;
             saVar.i.a = waVar;
@@ -429,7 +429,7 @@ public final class va {
             ua uaVar2 = new ua(this, 1);
             saVar3.r = waVar;
             saVar3.s = uaVar2;
-            new dm0(waVar);
+            new cm0(waVar);
             saVar3.j.setCallback(waVar);
             saVar3.h.a = waVar;
             saVar3.i.a = waVar;

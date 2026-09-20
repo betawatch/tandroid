@@ -1,50 +1,100 @@
 package org.telegram.ui.Components;
 
-import android.text.Selection;
-import android.text.Spannable;
-import android.text.method.LinkMovementMethod;
-import android.view.MotionEvent;
-import android.widget.TextView;
-import org.telegram.messenger.FileLog;
+import android.content.Context;
+import java.util.ArrayList;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class qv extends LinkMovementMethod {
-    public final /* synthetic */ int a;
+public abstract class qv implements NotificationCenter.NotificationCenterDelegate {
+    public final ArrayList a;
+    public ArrayList b;
+    public ArrayList[] c;
+    public final int d;
+    public boolean e = false;
+    public final /* synthetic */ tv f;
 
-    @Override // android.text.method.LinkMovementMethod, android.text.method.ScrollingMovementMethod, android.text.method.BaseMovementMethod, android.text.method.MovementMethod
-    public final boolean onTouchEvent(TextView textView, Spannable spannable, MotionEvent motionEvent) {
-        switch (this.a) {
-            case 0:
-                try {
-                    boolean onTouchEvent = super.onTouchEvent(textView, spannable, motionEvent);
-                    if (motionEvent.getAction() != 1 && motionEvent.getAction() != 3) {
+    public qv(int i10, ArrayList arrayList, tv tvVar) {
+        this.f = tvVar;
+        this.d = i10;
+        this.a = arrayList == null ? new ArrayList() : arrayList;
+    }
+
+    public final void a(int i10, TLRPC.TL_messages_stickerSet tL_messages_stickerSet) {
+        ArrayList<Long> arrayList;
+        if (i10 >= 0) {
+            ArrayList[] arrayListArr = this.c;
+            if (i10 >= arrayListArr.length) {
+                return;
+            }
+            if (tL_messages_stickerSet == null || tL_messages_stickerSet.documents == null) {
+                arrayListArr[i10] = new ArrayList(12);
+                for (int i11 = 0; i11 < 12; i11++) {
+                    this.c[i10].add(null);
+                }
+                return;
+            }
+            arrayListArr[i10] = new ArrayList();
+            for (int i12 = 0; i12 < tL_messages_stickerSet.documents.size(); i12++) {
+                TLRPC.Document document = tL_messages_stickerSet.documents.get(i12);
+                if (document == null) {
+                    this.c[i10].add(null);
+                } else {
+                    px pxVar = new px();
+                    long j3 = document.id;
+                    for (int i13 = 0; i13 < tL_messages_stickerSet.packs.size() && ((arrayList = tL_messages_stickerSet.packs.get(i13).documents) == null || !arrayList.contains(Long.valueOf(j3))); i13++) {
                     }
-                    Selection.removeSelection(spannable);
-                } catch (Exception e) {
-                    FileLog.e(e);
-                    return false;
-                }
-                break;
-            case 1:
-                try {
-                    break;
-                } catch (Exception e7) {
-                    FileLog.e(e7);
-                    return false;
-                }
-            default:
-                try {
-                    boolean onTouchEvent2 = super.onTouchEvent(textView, spannable, motionEvent);
-                    if (motionEvent.getAction() != 1 && motionEvent.getAction() != 3) {
+                    pxVar.a = tL_messages_stickerSet;
+                    pxVar.b = document.id;
+                    this.c[i10].add(pxVar);
+                    if (this.f.H) {
+                        TLRPC.StickerSet stickerSet = tL_messages_stickerSet.set;
+                        if (this.c[i10].size() >= ((stickerSet == null || stickerSet.emojis) ? 16 : 10)) {
+                            return;
+                        }
+                    } else {
+                        continue;
                     }
-                    Selection.removeSelection(spannable);
-                } catch (Exception e10) {
-                    FileLog.e(e10);
-                    return false;
                 }
-                break;
+            }
         }
-        return false;
+    }
+
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        TLRPC.StickerSet stickerSet;
+        org.telegram.ui.ActionBar.f6 f6Var;
+        if (i10 == NotificationCenter.groupStickersDidLoad) {
+            for (int i12 = 0; i12 < this.b.size(); i12++) {
+                if (this.b.get(i12) == null) {
+                    TLRPC.TL_messages_stickerSet stickerSet2 = MediaDataController.getInstance(this.d).getStickerSet((TLRPC.InputStickerSet) this.a.get(i12), true);
+                    if (this.b.size() == 1 && stickerSet2 != null && (stickerSet = stickerSet2.set) != null && !stickerSet.emojis) {
+                        tv tvVar = this.f;
+                        tvVar.dismiss();
+                        Context context = tvVar.getContext();
+                        org.telegram.ui.ActionBar.n2 n2Var = tvVar.c;
+                        TLRPC.InputStickerSet inputStickerSet = (TLRPC.InputStickerSet) this.a.get(i12);
+                        org.telegram.ui.ActionBar.n2 n2Var2 = tvVar.c;
+                        org.telegram.ui.lk lkVar = n2Var2 instanceof org.telegram.ui.zn ? ((org.telegram.ui.zn) n2Var2).Y : null;
+                        f6Var = ((org.telegram.ui.ActionBar.f3) tvVar).resourcesProvider;
+                        new gy0(context, n2Var, inputStickerSet, null, lkVar, f6Var).show();
+                        return;
+                    }
+                    this.b.set(i12, stickerSet2);
+                    if (stickerSet2 != null) {
+                        a(i12, stickerSet2);
+                    }
+                }
+            }
+            tv tvVar2 = ((dv) this).h;
+            tvVar2.a0();
+            ci.v vVar = tvVar2.h;
+            if (vVar == null || vVar.getAdapter() == null) {
+                return;
+            }
+            vVar.getAdapter().l();
+        }
     }
 }

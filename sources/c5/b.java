@@ -3,14 +3,14 @@ package c5;
 import android.app.Activity;
 import org.telegram.messenger.BillingController;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public abstract class b {
     public abstract void a(i iVar, j jVar);
 
     public abstract h b(Activity activity, g gVar);
 
-    public abstract void c(a4.m mVar, org.telegram.messenger.d0 d0Var);
+    public abstract void c(a4.m mVar, org.telegram.messenger.c0 c0Var);
 
     public abstract void d(BillingController billingController);
 }

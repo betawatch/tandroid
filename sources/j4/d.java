@@ -7,7 +7,7 @@ import java.io.EOFException;
 import java.util.List;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class d implements c3.o {
     public final int a;
@@ -40,14 +40,14 @@ public final class d implements c3.o {
         do {
             e2.v vVar = this.d;
             c3.l lVar = (c3.l) pVar;
-            lVar.h(vVar.a, 0, 2, false);
+            lVar.i(vVar.a, 0, 2, false);
             vVar.J(0);
             if ((vVar.D() & 65526) == 65520) {
                 i11++;
                 if (i11 >= 4 && i12 > 188) {
                     return true;
                 }
-                lVar.h(vVar.a, 0, 4, false);
+                lVar.i(vVar.a, 0, 4, false);
                 a4.h hVar = this.e;
                 hVar.q(14);
                 int i13 = hVar.i(13);
@@ -95,14 +95,14 @@ public final class d implements c3.o {
     @Override // c3.o
     public final void g(c3.q qVar) {
         this.f = qVar;
-        this.b.d(qVar, new f0(0, 1));
-        qVar.e1();
+        this.b.e(qVar, new f0(0, 1));
+        qVar.f1();
     }
 
     @Override // c3.o
     public final void h(long j3, long j10) {
         this.k = false;
-        this.b.c();
+        this.b.d();
         this.g = j10;
     }
 
@@ -137,7 +137,7 @@ public final class d implements c3.o {
                 int i12 = 0;
                 while (true) {
                     try {
-                        if (!pVar.h(vVar.a, 0, 2, true)) {
+                        if (!pVar.i(vVar.a, 0, 2, true)) {
                             break;
                         }
                         vVar.J(0);
@@ -145,7 +145,7 @@ public final class d implements c3.o {
                             i12 = 0;
                             break;
                         }
-                        if (!pVar.h(vVar.a, 0, 4, true)) {
+                        if (!pVar.i(vVar.a, 0, 4, true)) {
                             break;
                         }
                         hVar.q(14);
@@ -196,7 +196,7 @@ public final class d implements c3.o {
                             eVar.u = this.g;
                             this.k = true;
                         }
-                        eVar.a(vVar2);
+                        eVar.b(vVar2);
                         return 0;
                     }
                 }

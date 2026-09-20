@@ -11,9 +11,9 @@ import java.util.regex.Pattern;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import v7.w7;
+import v7.x7;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class n extends o6.a {
     public static final Parcelable.Creator<n> CREATOR = new v(13);
@@ -73,7 +73,7 @@ public final class n extends o6.a {
             if (mVar != null) {
                 jSONObject.put("containerMetadata", mVar.b());
             }
-            String b10 = w7.b(Integer.valueOf(this.f));
+            String b10 = x7.b(Integer.valueOf(this.f));
             if (b10 != null) {
                 jSONObject.put("repeatMode", b10);
             }

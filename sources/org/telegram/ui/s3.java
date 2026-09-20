@@ -10,7 +10,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class s3 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -55,38 +55,38 @@ public final /* synthetic */ class s3 implements Utilities.Callback {
                 ((v50) this.b).c();
                 break;
             case 7:
-                ((oc0) this.b).Y();
+                ((pc0) this.b).Y();
                 break;
             case 8:
-                gg0 gg0Var = (gg0) this.b;
+                hg0 hg0Var = (hg0) this.b;
                 String str = (String) obj;
-                gg0Var.getClass();
+                hg0Var.getClass();
                 FileLog.d("LoginBilling purchased done " + str);
                 if ("CANCELLED".equalsIgnoreCase(str)) {
-                    gg0Var.b.setLoading(false);
+                    hg0Var.b.setLoading(false);
                     break;
                 }
                 break;
             case 9:
-                cj0 cj0Var = (cj0) this.b;
+                dj0 dj0Var = (dj0) this.b;
                 Integer num = (Integer) obj;
-                cj0Var.getClass();
-                boolean z10 = num.intValue() - cj0Var.e.d > AndroidUtilities.dp(20.0f);
-                cj0Var.b0 = z10;
-                cj0Var.d0.animate().translationY((z10 ? Math.min(cj0Var.c0, (cj0Var.F.getHeight() - num.intValue()) - cj0Var.d0.getMeasuredHeight()) : cj0Var.c0) - cj0Var.d0.getTop()).setDuration(250L).setInterpolator(org.telegram.ui.ActionBar.p1.w).start();
+                dj0Var.getClass();
+                boolean z10 = num.intValue() - dj0Var.e.d > AndroidUtilities.dp(20.0f);
+                dj0Var.b0 = z10;
+                dj0Var.d0.animate().translationY((z10 ? Math.min(dj0Var.c0, (dj0Var.F.getHeight() - num.intValue()) - dj0Var.d0.getMeasuredHeight()) : dj0Var.c0) - dj0Var.d0.getTop()).setDuration(250L).setInterpolator(org.telegram.ui.ActionBar.p1.w).start();
                 break;
             case 10:
-                sj0 sj0Var = (sj0) this.b;
-                sj0Var.j0 = (String) obj;
-                w5 w5Var = sj0Var.t0;
+                uj0 uj0Var = (uj0) this.b;
+                uj0Var.j0 = (String) obj;
+                w5 w5Var = uj0Var.t0;
                 AndroidUtilities.cancelRunOnUIThread(w5Var);
                 AndroidUtilities.runOnUIThread(w5Var, 100L);
                 break;
             case 11:
-                ek0 ek0Var = (ek0) this.b;
-                ek0Var.getClass();
+                fk0 fk0Var = (fk0) this.b;
+                fk0Var.getClass();
                 if (((Boolean) obj).booleanValue()) {
-                    ek0Var.r();
+                    fk0Var.r();
                     break;
                 }
                 break;
@@ -103,10 +103,10 @@ public final /* synthetic */ class s3 implements Utilities.Callback {
                 tw0 tw0Var = (tw0) this.b;
                 tw0Var.s = ((Integer) obj).intValue();
                 View z12 = tw0Var.d.z1(4);
-                if (z12 instanceof org.telegram.ui.Cells.e9) {
-                    org.telegram.ui.Cells.e9 e9Var = (org.telegram.ui.Cells.e9) z12;
-                    if (e9Var.getFixedSize() <= 0 && tw0Var.s > 0) {
-                        e9Var.setText(tw0Var.W());
+                if (z12 instanceof org.telegram.ui.Cells.f9) {
+                    org.telegram.ui.Cells.f9 f9Var = (org.telegram.ui.Cells.f9) z12;
+                    if (f9Var.getFixedSize() <= 0 && tw0Var.s > 0) {
+                        f9Var.setText(tw0Var.W());
                         tw0Var.V(true);
                         break;
                     }
@@ -122,15 +122,15 @@ public final /* synthetic */ class s3 implements Utilities.Callback {
                 privacySettingsActivity.A0(true);
                 break;
             case 17:
-                org.telegram.ui.Components.l90[] l90VarArr = (org.telegram.ui.Components.l90[]) this.b;
+                org.telegram.ui.Components.k90[] k90VarArr = (org.telegram.ui.Components.k90[]) this.b;
                 Boolean bool = (Boolean) obj;
-                ViewPropertyAnimator scaleY = l90VarArr[0].animate().alpha(bool.booleanValue() ? 0.0f : 1.0f).scaleX(bool.booleanValue() ? 0.8f : 1.0f).scaleY(bool.booleanValue() ? 0.8f : 1.0f);
+                ViewPropertyAnimator scaleY = k90VarArr[0].animate().alpha(bool.booleanValue() ? 0.0f : 1.0f).scaleX(bool.booleanValue() ? 0.8f : 1.0f).scaleY(bool.booleanValue() ? 0.8f : 1.0f);
                 org.telegram.ui.Components.qr qrVar = org.telegram.ui.Components.qr.h;
-                org.telegram.messenger.wh.r(scaleY, qrVar, 600L);
-                l90VarArr[1].animate().alpha(bool.booleanValue() ? 1.0f : 0.0f).scaleX(!bool.booleanValue() ? 0.8f : 1.0f).scaleY(bool.booleanValue() ? 1.0f : 0.8f).setInterpolator(qrVar).setDuration(600L).start();
+                org.telegram.messenger.rk.s(scaleY, qrVar, 600L);
+                k90VarArr[1].animate().alpha(bool.booleanValue() ? 1.0f : 0.0f).scaleX(!bool.booleanValue() ? 0.8f : 1.0f).scaleY(bool.booleanValue() ? 1.0f : 0.8f).setInterpolator(qrVar).setDuration(600L).start();
                 break;
             case 18:
-                AndroidUtilities.runOnUIThread(new cy0(19, (y21) this.b, (TLRPC.TL_exportedContactToken) obj));
+                AndroidUtilities.runOnUIThread(new rx0(21, (z21) this.b, (TLRPC.TL_exportedContactToken) obj));
                 break;
             case 19:
                 StickersActivity.b0((StickersActivity) this.b, (View) obj);
@@ -139,17 +139,17 @@ public final /* synthetic */ class s3 implements Utilities.Callback {
                 ThemeActivity.U((ThemeActivity) this.b, (TL_account.contentSettings) obj);
                 break;
             case 21:
-                vd1 vd1Var = (vd1) this.b;
-                vd1Var.getClass();
-                vd1Var.n1 = ((Float) obj).floatValue();
-                vd1Var.x0.invalidate();
-                vd1Var.V0();
+                xd1 xd1Var = (xd1) this.b;
+                xd1Var.getClass();
+                xd1Var.n1 = ((Float) obj).floatValue();
+                xd1Var.x0.invalidate();
+                xd1Var.V0();
                 break;
             case 22:
                 ((ci.i1) this.b).E(((Integer) obj).intValue());
                 break;
             default:
-                ((si1) this.b).E(true);
+                ((ti1) this.b).E(true);
                 break;
         }
     }

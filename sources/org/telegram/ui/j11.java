@@ -26,9 +26,9 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public class j11 extends org.telegram.ui.Components.vl0 {
+public class j11 extends org.telegram.ui.Components.ul0 {
     public TLRPC.WebPage E;
     public boolean F;
     public i11[] c;
@@ -36,7 +36,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
     public final int f;
     public final Context h;
     public boolean w;
-    public cy0 x;
+    public rx0 x;
     public String y;
     public final ArrayList d = new ArrayList();
     public ArrayList n = new ArrayList();
@@ -83,67 +83,67 @@ public class j11 extends org.telegram.ui.Components.vl0 {
         i11 i11Var21;
         i11 i11Var22;
         final int currentAccount = n2Var.getCurrentAccount();
-        i11 i11Var23 = new i11(LocaleController.getString(R.string.EditName), 500, 0, new cy0(14, n2Var, n2Var.getResourceProvider()));
+        i11 i11Var23 = new i11(LocaleController.getString(R.string.EditName), 500, 0, new rx0(16, n2Var, n2Var.getResourceProvider()));
         final int i10 = 24;
         i11 i11Var24 = new i11(LocaleController.getString(R.string.ChangePhoneNumber), 501, 0, new Runnable() { // from class: org.telegram.ui.e11
             @Override // java.lang.Runnable
             public final void run() {
                 switch (i10) {
                     case 0:
-                        oc0 oc0Var = new oc0();
-                        n2Var.presentFragment(oc0Var);
-                        oc0Var.W(LiteMode.FLAGS_CHAT);
-                        oc0Var.V(64);
+                        pc0 pc0Var = new pc0();
+                        n2Var.presentFragment(pc0Var);
+                        pc0Var.W(LiteMode.FLAGS_CHAT);
+                        pc0Var.V(64);
                         break;
                     case 1:
-                        oc0 oc0Var2 = new oc0();
-                        n2Var.presentFragment(oc0Var2);
-                        oc0Var2.W(LiteMode.FLAGS_CHAT);
-                        oc0Var2.V(128);
+                        pc0 pc0Var2 = new pc0();
+                        n2Var.presentFragment(pc0Var2);
+                        pc0Var2.W(LiteMode.FLAGS_CHAT);
+                        pc0Var2.V(128);
                         break;
                     case 2:
                         n2Var.presentFragment(new PremiumPreviewFragment(0, "settings"));
                         break;
                     case 3:
-                        oc0 oc0Var3 = new oc0();
-                        n2Var.presentFragment(oc0Var3);
-                        oc0Var3.W(LiteMode.FLAGS_CHAT);
-                        oc0Var3.V(256);
+                        pc0 pc0Var3 = new pc0();
+                        n2Var.presentFragment(pc0Var3);
+                        pc0Var3.W(LiteMode.FLAGS_CHAT);
+                        pc0Var3.V(256);
                         break;
                     case 4:
-                        oc0 oc0Var4 = new oc0();
-                        n2Var.presentFragment(oc0Var4);
-                        oc0Var4.W(LiteMode.FLAGS_CHAT);
-                        oc0Var4.V(32768);
+                        pc0 pc0Var4 = new pc0();
+                        n2Var.presentFragment(pc0Var4);
+                        pc0Var4.W(LiteMode.FLAGS_CHAT);
+                        pc0Var4.V(32768);
                         break;
                     case 5:
-                        oc0 oc0Var5 = new oc0();
-                        n2Var.presentFragment(oc0Var5);
-                        oc0Var5.V(512);
+                        pc0 pc0Var5 = new pc0();
+                        n2Var.presentFragment(pc0Var5);
+                        pc0Var5.V(512);
                         break;
                     case 6:
                         n2Var.presentFragment(new NotificationsSettingsActivity());
                         break;
                     case 7:
-                        oc0 oc0Var6 = new oc0();
-                        n2Var.presentFragment(oc0Var6);
-                        oc0Var6.V(1024);
+                        pc0 pc0Var6 = new pc0();
+                        n2Var.presentFragment(pc0Var6);
+                        pc0Var6.V(1024);
                         break;
                     case 8:
-                        oc0 oc0Var7 = new oc0();
-                        n2Var.presentFragment(oc0Var7);
-                        oc0Var7.V(2048);
+                        pc0 pc0Var7 = new pc0();
+                        n2Var.presentFragment(pc0Var7);
+                        pc0Var7.V(2048);
                         break;
                     case 9:
-                        oc0 oc0Var8 = new oc0();
-                        n2Var.presentFragment(oc0Var8);
+                        pc0 pc0Var8 = new pc0();
+                        n2Var.presentFragment(pc0Var8);
                         int i11 = 0;
                         while (true) {
-                            ArrayList arrayList = oc0Var8.s;
+                            ArrayList arrayList = pc0Var8.s;
                             if (i11 >= arrayList.size()) {
                                 break;
-                            } else if (((ic0) arrayList.get(i11)).f == 1) {
-                                oc0Var8.b.f1(new i2.s(oc0Var8, i11, 12), 700, true);
+                            } else if (((jc0) arrayList.get(i11)).f == 1) {
+                                pc0Var8.b.f1(new i2.s(pc0Var8, i11, 12), 700, true);
                                 break;
                             } else {
                                 i11++;
@@ -166,7 +166,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                         break;
                     case 14:
                         org.telegram.ui.ActionBar.n2 n2Var3 = n2Var;
-                        n2Var3.showDialog(org.telegram.ui.Components.e5.U(n2Var3, null));
+                        n2Var3.showDialog(org.telegram.ui.Components.d5.U(n2Var3, null));
                         break;
                     case 15:
                         nf.f.s(n2Var.getParentActivity(), LocaleController.getString(R.string.TelegramFaqUrl));
@@ -258,7 +258,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                             }
                         }
                         if (i12 >= 0) {
-                            n2Var.presentFragment(new xg0(i12));
+                            n2Var.presentFragment(new yg0(i12));
                             break;
                         }
                         break;
@@ -380,7 +380,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                             }
                         }
                         if (i122 >= 0) {
-                            n2Var.presentFragment(new xg0(i122));
+                            n2Var.presentFragment(new yg0(i122));
                             break;
                         }
                         break;
@@ -501,7 +501,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                             }
                         }
                         if (i122 >= 0) {
-                            n2Var.presentFragment(new xg0(i122));
+                            n2Var.presentFragment(new yg0(i122));
                             break;
                         }
                         break;
@@ -655,10 +655,10 @@ public class j11 extends org.telegram.ui.Components.vl0 {
             }
         });
         i11Var28.a("tg://settings/notifications/groups");
-        i11 i11Var29 = new i11(4, LocaleController.getString(R.string.NotificationsChannels), LocaleController.getString(R.string.NotificationsAndSounds), R.drawable.msg_notifications, new ri0(7, n2Var));
+        i11 i11Var29 = new i11(4, LocaleController.getString(R.string.NotificationsChannels), LocaleController.getString(R.string.NotificationsAndSounds), R.drawable.msg_notifications, new si0(7, n2Var));
         i11Var29.a("tg://settings/notifications/channels");
         final int i16 = 19;
-        i11 i11Var30 = new i11(5, LocaleController.getString(R.string.VoipNotificationSettings), "callsSectionRow", LocaleController.getString(R.string.NotificationsAndSounds), R.drawable.msg_notifications, new ri0(i16, n2Var));
+        i11 i11Var30 = new i11(5, LocaleController.getString(R.string.VoipNotificationSettings), "callsSectionRow", LocaleController.getString(R.string.NotificationsAndSounds), R.drawable.msg_notifications, new si0(i16, n2Var));
         i11 i11Var31 = new i11(6, LocaleController.getString(R.string.BadgeNumber), "badgeNumberSection", LocaleController.getString(R.string.NotificationsAndSounds), R.drawable.msg_notifications, new Runnable() { // from class: org.telegram.ui.d11
             @Override // java.lang.Runnable
             public final void run() {
@@ -700,7 +700,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                         n2Var.presentFragment(new StickersActivity(5, null));
                         break;
                     case 11:
-                        n2Var.presentFragment(new l31());
+                        n2Var.presentFragment(new m31());
                         break;
                     case 12:
                         n2Var.presentFragment(new FiltersSetupActivity());
@@ -733,64 +733,64 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                         n2Var6.showDialog(x0Var5);
                         break;
                     case 18:
-                        n2Var.presentFragment(new oc0());
+                        n2Var.presentFragment(new pc0());
                         break;
                     case 19:
-                        oc0 oc0Var = new oc0();
-                        n2Var.presentFragment(oc0Var);
-                        oc0Var.V(3);
+                        pc0 pc0Var = new pc0();
+                        n2Var.presentFragment(pc0Var);
+                        pc0Var.V(3);
                         break;
                     case 20:
-                        oc0 oc0Var2 = new oc0();
-                        n2Var.presentFragment(oc0Var2);
-                        oc0Var2.W(3);
-                        oc0Var2.V(1);
+                        pc0 pc0Var2 = new pc0();
+                        n2Var.presentFragment(pc0Var2);
+                        pc0Var2.W(3);
+                        pc0Var2.V(1);
                         break;
                     case 21:
                         n2Var.presentFragment(new FiltersSetupActivity());
                         break;
                     case 22:
-                        oc0 oc0Var3 = new oc0();
-                        n2Var.presentFragment(oc0Var3);
-                        oc0Var3.W(3);
-                        oc0Var3.V(2);
+                        pc0 pc0Var3 = new pc0();
+                        n2Var.presentFragment(pc0Var3);
+                        pc0Var3.W(3);
+                        pc0Var3.V(2);
                         break;
                     case 23:
-                        oc0 oc0Var4 = new oc0();
-                        n2Var.presentFragment(oc0Var4);
-                        oc0Var4.V(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0 pc0Var4 = new pc0();
+                        n2Var.presentFragment(pc0Var4);
+                        pc0Var4.V(LiteMode.FLAGS_ANIMATED_EMOJI);
                         break;
                     case 24:
                         n2Var.presentFragment(new NotificationsSettingsActivity());
                         break;
                     case 25:
-                        oc0 oc0Var5 = new oc0();
-                        n2Var.presentFragment(oc0Var5);
-                        oc0Var5.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                        oc0Var5.V(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD);
+                        pc0 pc0Var5 = new pc0();
+                        n2Var.presentFragment(pc0Var5);
+                        pc0Var5.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0Var5.V(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD);
                         break;
                     case 26:
-                        oc0 oc0Var6 = new oc0();
-                        n2Var.presentFragment(oc0Var6);
-                        oc0Var6.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                        oc0Var6.V(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS);
+                        pc0 pc0Var6 = new pc0();
+                        n2Var.presentFragment(pc0Var6);
+                        pc0Var6.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0Var6.V(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS);
                         break;
                     case 27:
-                        oc0 oc0Var7 = new oc0();
-                        n2Var.presentFragment(oc0Var7);
-                        oc0Var7.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                        oc0Var7.V(LiteMode.FLAG_ANIMATED_EMOJI_CHAT);
+                        pc0 pc0Var7 = new pc0();
+                        n2Var.presentFragment(pc0Var7);
+                        pc0Var7.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0Var7.V(LiteMode.FLAG_ANIMATED_EMOJI_CHAT);
                         break;
                     case 28:
-                        oc0 oc0Var8 = new oc0();
-                        n2Var.presentFragment(oc0Var8);
-                        oc0Var8.V(LiteMode.FLAGS_CHAT);
+                        pc0 pc0Var8 = new pc0();
+                        n2Var.presentFragment(pc0Var8);
+                        pc0Var8.V(LiteMode.FLAGS_CHAT);
                         break;
                     default:
-                        oc0 oc0Var9 = new oc0();
-                        n2Var.presentFragment(oc0Var9);
-                        oc0Var9.W(LiteMode.FLAGS_CHAT);
-                        oc0Var9.V(32);
+                        pc0 pc0Var9 = new pc0();
+                        n2Var.presentFragment(pc0Var9);
+                        pc0Var9.W(LiteMode.FLAGS_CHAT);
+                        pc0Var9.V(32);
                         break;
                 }
             }
@@ -837,7 +837,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                         n2Var.presentFragment(new StickersActivity(5, null));
                         break;
                     case 11:
-                        n2Var.presentFragment(new l31());
+                        n2Var.presentFragment(new m31());
                         break;
                     case 12:
                         n2Var.presentFragment(new FiltersSetupActivity());
@@ -870,69 +870,69 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                         n2Var6.showDialog(x0Var5);
                         break;
                     case 18:
-                        n2Var.presentFragment(new oc0());
+                        n2Var.presentFragment(new pc0());
                         break;
                     case 19:
-                        oc0 oc0Var = new oc0();
-                        n2Var.presentFragment(oc0Var);
-                        oc0Var.V(3);
+                        pc0 pc0Var = new pc0();
+                        n2Var.presentFragment(pc0Var);
+                        pc0Var.V(3);
                         break;
                     case 20:
-                        oc0 oc0Var2 = new oc0();
-                        n2Var.presentFragment(oc0Var2);
-                        oc0Var2.W(3);
-                        oc0Var2.V(1);
+                        pc0 pc0Var2 = new pc0();
+                        n2Var.presentFragment(pc0Var2);
+                        pc0Var2.W(3);
+                        pc0Var2.V(1);
                         break;
                     case 21:
                         n2Var.presentFragment(new FiltersSetupActivity());
                         break;
                     case 22:
-                        oc0 oc0Var3 = new oc0();
-                        n2Var.presentFragment(oc0Var3);
-                        oc0Var3.W(3);
-                        oc0Var3.V(2);
+                        pc0 pc0Var3 = new pc0();
+                        n2Var.presentFragment(pc0Var3);
+                        pc0Var3.W(3);
+                        pc0Var3.V(2);
                         break;
                     case 23:
-                        oc0 oc0Var4 = new oc0();
-                        n2Var.presentFragment(oc0Var4);
-                        oc0Var4.V(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0 pc0Var4 = new pc0();
+                        n2Var.presentFragment(pc0Var4);
+                        pc0Var4.V(LiteMode.FLAGS_ANIMATED_EMOJI);
                         break;
                     case 24:
                         n2Var.presentFragment(new NotificationsSettingsActivity());
                         break;
                     case 25:
-                        oc0 oc0Var5 = new oc0();
-                        n2Var.presentFragment(oc0Var5);
-                        oc0Var5.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                        oc0Var5.V(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD);
+                        pc0 pc0Var5 = new pc0();
+                        n2Var.presentFragment(pc0Var5);
+                        pc0Var5.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0Var5.V(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD);
                         break;
                     case 26:
-                        oc0 oc0Var6 = new oc0();
-                        n2Var.presentFragment(oc0Var6);
-                        oc0Var6.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                        oc0Var6.V(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS);
+                        pc0 pc0Var6 = new pc0();
+                        n2Var.presentFragment(pc0Var6);
+                        pc0Var6.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0Var6.V(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS);
                         break;
                     case 27:
-                        oc0 oc0Var7 = new oc0();
-                        n2Var.presentFragment(oc0Var7);
-                        oc0Var7.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                        oc0Var7.V(LiteMode.FLAG_ANIMATED_EMOJI_CHAT);
+                        pc0 pc0Var7 = new pc0();
+                        n2Var.presentFragment(pc0Var7);
+                        pc0Var7.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0Var7.V(LiteMode.FLAG_ANIMATED_EMOJI_CHAT);
                         break;
                     case 28:
-                        oc0 oc0Var8 = new oc0();
-                        n2Var.presentFragment(oc0Var8);
-                        oc0Var8.V(LiteMode.FLAGS_CHAT);
+                        pc0 pc0Var8 = new pc0();
+                        n2Var.presentFragment(pc0Var8);
+                        pc0Var8.V(LiteMode.FLAGS_CHAT);
                         break;
                     default:
-                        oc0 oc0Var9 = new oc0();
-                        n2Var.presentFragment(oc0Var9);
-                        oc0Var9.W(LiteMode.FLAGS_CHAT);
-                        oc0Var9.V(32);
+                        pc0 pc0Var9 = new pc0();
+                        n2Var.presentFragment(pc0Var9);
+                        pc0Var9.W(LiteMode.FLAGS_CHAT);
+                        pc0Var9.V(32);
                         break;
                 }
             }
         });
-        i11 i11Var33 = new i11(8, LocaleController.getString(R.string.ContactJoined), "contactJoinedRow", LocaleController.getString(R.string.NotificationsAndSounds), R.drawable.msg_notifications, new ri0(23, n2Var));
+        i11 i11Var33 = new i11(8, LocaleController.getString(R.string.ContactJoined), "contactJoinedRow", LocaleController.getString(R.string.NotificationsAndSounds), R.drawable.msg_notifications, new si0(23, n2Var));
         i11Var33.a("tg://settings/notifications/new-contacts");
         i11 i11Var34 = new i11(9, LocaleController.getString(R.string.PinnedMessages), "pinnedMessageRow", LocaleController.getString(R.string.NotificationsAndSounds), R.drawable.msg_notifications, new Runnable() { // from class: org.telegram.ui.d11
             @Override // java.lang.Runnable
@@ -975,7 +975,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                         n2Var.presentFragment(new StickersActivity(5, null));
                         break;
                     case 11:
-                        n2Var.presentFragment(new l31());
+                        n2Var.presentFragment(new m31());
                         break;
                     case 12:
                         n2Var.presentFragment(new FiltersSetupActivity());
@@ -1008,64 +1008,64 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                         n2Var6.showDialog(x0Var5);
                         break;
                     case 18:
-                        n2Var.presentFragment(new oc0());
+                        n2Var.presentFragment(new pc0());
                         break;
                     case 19:
-                        oc0 oc0Var = new oc0();
-                        n2Var.presentFragment(oc0Var);
-                        oc0Var.V(3);
+                        pc0 pc0Var = new pc0();
+                        n2Var.presentFragment(pc0Var);
+                        pc0Var.V(3);
                         break;
                     case 20:
-                        oc0 oc0Var2 = new oc0();
-                        n2Var.presentFragment(oc0Var2);
-                        oc0Var2.W(3);
-                        oc0Var2.V(1);
+                        pc0 pc0Var2 = new pc0();
+                        n2Var.presentFragment(pc0Var2);
+                        pc0Var2.W(3);
+                        pc0Var2.V(1);
                         break;
                     case 21:
                         n2Var.presentFragment(new FiltersSetupActivity());
                         break;
                     case 22:
-                        oc0 oc0Var3 = new oc0();
-                        n2Var.presentFragment(oc0Var3);
-                        oc0Var3.W(3);
-                        oc0Var3.V(2);
+                        pc0 pc0Var3 = new pc0();
+                        n2Var.presentFragment(pc0Var3);
+                        pc0Var3.W(3);
+                        pc0Var3.V(2);
                         break;
                     case 23:
-                        oc0 oc0Var4 = new oc0();
-                        n2Var.presentFragment(oc0Var4);
-                        oc0Var4.V(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0 pc0Var4 = new pc0();
+                        n2Var.presentFragment(pc0Var4);
+                        pc0Var4.V(LiteMode.FLAGS_ANIMATED_EMOJI);
                         break;
                     case 24:
                         n2Var.presentFragment(new NotificationsSettingsActivity());
                         break;
                     case 25:
-                        oc0 oc0Var5 = new oc0();
-                        n2Var.presentFragment(oc0Var5);
-                        oc0Var5.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                        oc0Var5.V(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD);
+                        pc0 pc0Var5 = new pc0();
+                        n2Var.presentFragment(pc0Var5);
+                        pc0Var5.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0Var5.V(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD);
                         break;
                     case 26:
-                        oc0 oc0Var6 = new oc0();
-                        n2Var.presentFragment(oc0Var6);
-                        oc0Var6.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                        oc0Var6.V(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS);
+                        pc0 pc0Var6 = new pc0();
+                        n2Var.presentFragment(pc0Var6);
+                        pc0Var6.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0Var6.V(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS);
                         break;
                     case 27:
-                        oc0 oc0Var7 = new oc0();
-                        n2Var.presentFragment(oc0Var7);
-                        oc0Var7.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                        oc0Var7.V(LiteMode.FLAG_ANIMATED_EMOJI_CHAT);
+                        pc0 pc0Var7 = new pc0();
+                        n2Var.presentFragment(pc0Var7);
+                        pc0Var7.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0Var7.V(LiteMode.FLAG_ANIMATED_EMOJI_CHAT);
                         break;
                     case 28:
-                        oc0 oc0Var8 = new oc0();
-                        n2Var.presentFragment(oc0Var8);
-                        oc0Var8.V(LiteMode.FLAGS_CHAT);
+                        pc0 pc0Var8 = new pc0();
+                        n2Var.presentFragment(pc0Var8);
+                        pc0Var8.V(LiteMode.FLAGS_CHAT);
                         break;
                     default:
-                        oc0 oc0Var9 = new oc0();
-                        n2Var.presentFragment(oc0Var9);
-                        oc0Var9.W(LiteMode.FLAGS_CHAT);
-                        oc0Var9.V(32);
+                        pc0 pc0Var9 = new pc0();
+                        n2Var.presentFragment(pc0Var9);
+                        pc0Var9.W(LiteMode.FLAGS_CHAT);
+                        pc0Var9.V(32);
                         break;
                 }
             }
@@ -1076,60 +1076,60 @@ public class j11 extends org.telegram.ui.Components.vl0 {
             public final void run() {
                 switch (i11) {
                     case 0:
-                        oc0 oc0Var = new oc0();
-                        n2Var.presentFragment(oc0Var);
-                        oc0Var.W(LiteMode.FLAGS_CHAT);
-                        oc0Var.V(64);
+                        pc0 pc0Var = new pc0();
+                        n2Var.presentFragment(pc0Var);
+                        pc0Var.W(LiteMode.FLAGS_CHAT);
+                        pc0Var.V(64);
                         break;
                     case 1:
-                        oc0 oc0Var2 = new oc0();
-                        n2Var.presentFragment(oc0Var2);
-                        oc0Var2.W(LiteMode.FLAGS_CHAT);
-                        oc0Var2.V(128);
+                        pc0 pc0Var2 = new pc0();
+                        n2Var.presentFragment(pc0Var2);
+                        pc0Var2.W(LiteMode.FLAGS_CHAT);
+                        pc0Var2.V(128);
                         break;
                     case 2:
                         n2Var.presentFragment(new PremiumPreviewFragment(0, "settings"));
                         break;
                     case 3:
-                        oc0 oc0Var3 = new oc0();
-                        n2Var.presentFragment(oc0Var3);
-                        oc0Var3.W(LiteMode.FLAGS_CHAT);
-                        oc0Var3.V(256);
+                        pc0 pc0Var3 = new pc0();
+                        n2Var.presentFragment(pc0Var3);
+                        pc0Var3.W(LiteMode.FLAGS_CHAT);
+                        pc0Var3.V(256);
                         break;
                     case 4:
-                        oc0 oc0Var4 = new oc0();
-                        n2Var.presentFragment(oc0Var4);
-                        oc0Var4.W(LiteMode.FLAGS_CHAT);
-                        oc0Var4.V(32768);
+                        pc0 pc0Var4 = new pc0();
+                        n2Var.presentFragment(pc0Var4);
+                        pc0Var4.W(LiteMode.FLAGS_CHAT);
+                        pc0Var4.V(32768);
                         break;
                     case 5:
-                        oc0 oc0Var5 = new oc0();
-                        n2Var.presentFragment(oc0Var5);
-                        oc0Var5.V(512);
+                        pc0 pc0Var5 = new pc0();
+                        n2Var.presentFragment(pc0Var5);
+                        pc0Var5.V(512);
                         break;
                     case 6:
                         n2Var.presentFragment(new NotificationsSettingsActivity());
                         break;
                     case 7:
-                        oc0 oc0Var6 = new oc0();
-                        n2Var.presentFragment(oc0Var6);
-                        oc0Var6.V(1024);
+                        pc0 pc0Var6 = new pc0();
+                        n2Var.presentFragment(pc0Var6);
+                        pc0Var6.V(1024);
                         break;
                     case 8:
-                        oc0 oc0Var7 = new oc0();
-                        n2Var.presentFragment(oc0Var7);
-                        oc0Var7.V(2048);
+                        pc0 pc0Var7 = new pc0();
+                        n2Var.presentFragment(pc0Var7);
+                        pc0Var7.V(2048);
                         break;
                     case 9:
-                        oc0 oc0Var8 = new oc0();
-                        n2Var.presentFragment(oc0Var8);
+                        pc0 pc0Var8 = new pc0();
+                        n2Var.presentFragment(pc0Var8);
                         int i112 = 0;
                         while (true) {
-                            ArrayList arrayList = oc0Var8.s;
+                            ArrayList arrayList = pc0Var8.s;
                             if (i112 >= arrayList.size()) {
                                 break;
-                            } else if (((ic0) arrayList.get(i112)).f == 1) {
-                                oc0Var8.b.f1(new i2.s(oc0Var8, i112, 12), 700, true);
+                            } else if (((jc0) arrayList.get(i112)).f == 1) {
+                                pc0Var8.b.f1(new i2.s(pc0Var8, i112, 12), 700, true);
                                 break;
                             } else {
                                 i112++;
@@ -1152,7 +1152,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                         break;
                     case 14:
                         org.telegram.ui.ActionBar.n2 n2Var3 = n2Var;
-                        n2Var3.showDialog(org.telegram.ui.Components.e5.U(n2Var3, null));
+                        n2Var3.showDialog(org.telegram.ui.Components.d5.U(n2Var3, null));
                         break;
                     case 15:
                         nf.f.s(n2Var.getParentActivity(), LocaleController.getString(R.string.TelegramFaqUrl));
@@ -1213,60 +1213,60 @@ public class j11 extends org.telegram.ui.Components.vl0 {
             public final void run() {
                 switch (i12) {
                     case 0:
-                        oc0 oc0Var = new oc0();
-                        n2Var.presentFragment(oc0Var);
-                        oc0Var.W(LiteMode.FLAGS_CHAT);
-                        oc0Var.V(64);
+                        pc0 pc0Var = new pc0();
+                        n2Var.presentFragment(pc0Var);
+                        pc0Var.W(LiteMode.FLAGS_CHAT);
+                        pc0Var.V(64);
                         break;
                     case 1:
-                        oc0 oc0Var2 = new oc0();
-                        n2Var.presentFragment(oc0Var2);
-                        oc0Var2.W(LiteMode.FLAGS_CHAT);
-                        oc0Var2.V(128);
+                        pc0 pc0Var2 = new pc0();
+                        n2Var.presentFragment(pc0Var2);
+                        pc0Var2.W(LiteMode.FLAGS_CHAT);
+                        pc0Var2.V(128);
                         break;
                     case 2:
                         n2Var.presentFragment(new PremiumPreviewFragment(0, "settings"));
                         break;
                     case 3:
-                        oc0 oc0Var3 = new oc0();
-                        n2Var.presentFragment(oc0Var3);
-                        oc0Var3.W(LiteMode.FLAGS_CHAT);
-                        oc0Var3.V(256);
+                        pc0 pc0Var3 = new pc0();
+                        n2Var.presentFragment(pc0Var3);
+                        pc0Var3.W(LiteMode.FLAGS_CHAT);
+                        pc0Var3.V(256);
                         break;
                     case 4:
-                        oc0 oc0Var4 = new oc0();
-                        n2Var.presentFragment(oc0Var4);
-                        oc0Var4.W(LiteMode.FLAGS_CHAT);
-                        oc0Var4.V(32768);
+                        pc0 pc0Var4 = new pc0();
+                        n2Var.presentFragment(pc0Var4);
+                        pc0Var4.W(LiteMode.FLAGS_CHAT);
+                        pc0Var4.V(32768);
                         break;
                     case 5:
-                        oc0 oc0Var5 = new oc0();
-                        n2Var.presentFragment(oc0Var5);
-                        oc0Var5.V(512);
+                        pc0 pc0Var5 = new pc0();
+                        n2Var.presentFragment(pc0Var5);
+                        pc0Var5.V(512);
                         break;
                     case 6:
                         n2Var.presentFragment(new NotificationsSettingsActivity());
                         break;
                     case 7:
-                        oc0 oc0Var6 = new oc0();
-                        n2Var.presentFragment(oc0Var6);
-                        oc0Var6.V(1024);
+                        pc0 pc0Var6 = new pc0();
+                        n2Var.presentFragment(pc0Var6);
+                        pc0Var6.V(1024);
                         break;
                     case 8:
-                        oc0 oc0Var7 = new oc0();
-                        n2Var.presentFragment(oc0Var7);
-                        oc0Var7.V(2048);
+                        pc0 pc0Var7 = new pc0();
+                        n2Var.presentFragment(pc0Var7);
+                        pc0Var7.V(2048);
                         break;
                     case 9:
-                        oc0 oc0Var8 = new oc0();
-                        n2Var.presentFragment(oc0Var8);
+                        pc0 pc0Var8 = new pc0();
+                        n2Var.presentFragment(pc0Var8);
                         int i112 = 0;
                         while (true) {
-                            ArrayList arrayList = oc0Var8.s;
+                            ArrayList arrayList = pc0Var8.s;
                             if (i112 >= arrayList.size()) {
                                 break;
-                            } else if (((ic0) arrayList.get(i112)).f == 1) {
-                                oc0Var8.b.f1(new i2.s(oc0Var8, i112, 12), 700, true);
+                            } else if (((jc0) arrayList.get(i112)).f == 1) {
+                                pc0Var8.b.f1(new i2.s(pc0Var8, i112, 12), 700, true);
                                 break;
                             } else {
                                 i112++;
@@ -1289,7 +1289,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                         break;
                     case 14:
                         org.telegram.ui.ActionBar.n2 n2Var3 = n2Var;
-                        n2Var3.showDialog(org.telegram.ui.Components.e5.U(n2Var3, null));
+                        n2Var3.showDialog(org.telegram.ui.Components.d5.U(n2Var3, null));
                         break;
                     case 15:
                         nf.f.s(n2Var.getParentActivity(), LocaleController.getString(R.string.TelegramFaqUrl));
@@ -1350,60 +1350,60 @@ public class j11 extends org.telegram.ui.Components.vl0 {
             public final void run() {
                 switch (i18) {
                     case 0:
-                        oc0 oc0Var = new oc0();
-                        n2Var.presentFragment(oc0Var);
-                        oc0Var.W(LiteMode.FLAGS_CHAT);
-                        oc0Var.V(64);
+                        pc0 pc0Var = new pc0();
+                        n2Var.presentFragment(pc0Var);
+                        pc0Var.W(LiteMode.FLAGS_CHAT);
+                        pc0Var.V(64);
                         break;
                     case 1:
-                        oc0 oc0Var2 = new oc0();
-                        n2Var.presentFragment(oc0Var2);
-                        oc0Var2.W(LiteMode.FLAGS_CHAT);
-                        oc0Var2.V(128);
+                        pc0 pc0Var2 = new pc0();
+                        n2Var.presentFragment(pc0Var2);
+                        pc0Var2.W(LiteMode.FLAGS_CHAT);
+                        pc0Var2.V(128);
                         break;
                     case 2:
                         n2Var.presentFragment(new PremiumPreviewFragment(0, "settings"));
                         break;
                     case 3:
-                        oc0 oc0Var3 = new oc0();
-                        n2Var.presentFragment(oc0Var3);
-                        oc0Var3.W(LiteMode.FLAGS_CHAT);
-                        oc0Var3.V(256);
+                        pc0 pc0Var3 = new pc0();
+                        n2Var.presentFragment(pc0Var3);
+                        pc0Var3.W(LiteMode.FLAGS_CHAT);
+                        pc0Var3.V(256);
                         break;
                     case 4:
-                        oc0 oc0Var4 = new oc0();
-                        n2Var.presentFragment(oc0Var4);
-                        oc0Var4.W(LiteMode.FLAGS_CHAT);
-                        oc0Var4.V(32768);
+                        pc0 pc0Var4 = new pc0();
+                        n2Var.presentFragment(pc0Var4);
+                        pc0Var4.W(LiteMode.FLAGS_CHAT);
+                        pc0Var4.V(32768);
                         break;
                     case 5:
-                        oc0 oc0Var5 = new oc0();
-                        n2Var.presentFragment(oc0Var5);
-                        oc0Var5.V(512);
+                        pc0 pc0Var5 = new pc0();
+                        n2Var.presentFragment(pc0Var5);
+                        pc0Var5.V(512);
                         break;
                     case 6:
                         n2Var.presentFragment(new NotificationsSettingsActivity());
                         break;
                     case 7:
-                        oc0 oc0Var6 = new oc0();
-                        n2Var.presentFragment(oc0Var6);
-                        oc0Var6.V(1024);
+                        pc0 pc0Var6 = new pc0();
+                        n2Var.presentFragment(pc0Var6);
+                        pc0Var6.V(1024);
                         break;
                     case 8:
-                        oc0 oc0Var7 = new oc0();
-                        n2Var.presentFragment(oc0Var7);
-                        oc0Var7.V(2048);
+                        pc0 pc0Var7 = new pc0();
+                        n2Var.presentFragment(pc0Var7);
+                        pc0Var7.V(2048);
                         break;
                     case 9:
-                        oc0 oc0Var8 = new oc0();
-                        n2Var.presentFragment(oc0Var8);
+                        pc0 pc0Var8 = new pc0();
+                        n2Var.presentFragment(pc0Var8);
                         int i112 = 0;
                         while (true) {
-                            ArrayList arrayList = oc0Var8.s;
+                            ArrayList arrayList = pc0Var8.s;
                             if (i112 >= arrayList.size()) {
                                 break;
-                            } else if (((ic0) arrayList.get(i112)).f == 1) {
-                                oc0Var8.b.f1(new i2.s(oc0Var8, i112, 12), 700, true);
+                            } else if (((jc0) arrayList.get(i112)).f == 1) {
+                                pc0Var8.b.f1(new i2.s(pc0Var8, i112, 12), 700, true);
                                 break;
                             } else {
                                 i112++;
@@ -1426,7 +1426,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                         break;
                     case 14:
                         org.telegram.ui.ActionBar.n2 n2Var3 = n2Var;
-                        n2Var3.showDialog(org.telegram.ui.Components.e5.U(n2Var3, null));
+                        n2Var3.showDialog(org.telegram.ui.Components.d5.U(n2Var3, null));
                         break;
                     case 15:
                         nf.f.s(n2Var.getParentActivity(), LocaleController.getString(R.string.TelegramFaqUrl));
@@ -1486,60 +1486,60 @@ public class j11 extends org.telegram.ui.Components.vl0 {
             public final void run() {
                 switch (i16) {
                     case 0:
-                        oc0 oc0Var = new oc0();
-                        n2Var.presentFragment(oc0Var);
-                        oc0Var.W(LiteMode.FLAGS_CHAT);
-                        oc0Var.V(64);
+                        pc0 pc0Var = new pc0();
+                        n2Var.presentFragment(pc0Var);
+                        pc0Var.W(LiteMode.FLAGS_CHAT);
+                        pc0Var.V(64);
                         break;
                     case 1:
-                        oc0 oc0Var2 = new oc0();
-                        n2Var.presentFragment(oc0Var2);
-                        oc0Var2.W(LiteMode.FLAGS_CHAT);
-                        oc0Var2.V(128);
+                        pc0 pc0Var2 = new pc0();
+                        n2Var.presentFragment(pc0Var2);
+                        pc0Var2.W(LiteMode.FLAGS_CHAT);
+                        pc0Var2.V(128);
                         break;
                     case 2:
                         n2Var.presentFragment(new PremiumPreviewFragment(0, "settings"));
                         break;
                     case 3:
-                        oc0 oc0Var3 = new oc0();
-                        n2Var.presentFragment(oc0Var3);
-                        oc0Var3.W(LiteMode.FLAGS_CHAT);
-                        oc0Var3.V(256);
+                        pc0 pc0Var3 = new pc0();
+                        n2Var.presentFragment(pc0Var3);
+                        pc0Var3.W(LiteMode.FLAGS_CHAT);
+                        pc0Var3.V(256);
                         break;
                     case 4:
-                        oc0 oc0Var4 = new oc0();
-                        n2Var.presentFragment(oc0Var4);
-                        oc0Var4.W(LiteMode.FLAGS_CHAT);
-                        oc0Var4.V(32768);
+                        pc0 pc0Var4 = new pc0();
+                        n2Var.presentFragment(pc0Var4);
+                        pc0Var4.W(LiteMode.FLAGS_CHAT);
+                        pc0Var4.V(32768);
                         break;
                     case 5:
-                        oc0 oc0Var5 = new oc0();
-                        n2Var.presentFragment(oc0Var5);
-                        oc0Var5.V(512);
+                        pc0 pc0Var5 = new pc0();
+                        n2Var.presentFragment(pc0Var5);
+                        pc0Var5.V(512);
                         break;
                     case 6:
                         n2Var.presentFragment(new NotificationsSettingsActivity());
                         break;
                     case 7:
-                        oc0 oc0Var6 = new oc0();
-                        n2Var.presentFragment(oc0Var6);
-                        oc0Var6.V(1024);
+                        pc0 pc0Var6 = new pc0();
+                        n2Var.presentFragment(pc0Var6);
+                        pc0Var6.V(1024);
                         break;
                     case 8:
-                        oc0 oc0Var7 = new oc0();
-                        n2Var.presentFragment(oc0Var7);
-                        oc0Var7.V(2048);
+                        pc0 pc0Var7 = new pc0();
+                        n2Var.presentFragment(pc0Var7);
+                        pc0Var7.V(2048);
                         break;
                     case 9:
-                        oc0 oc0Var8 = new oc0();
-                        n2Var.presentFragment(oc0Var8);
+                        pc0 pc0Var8 = new pc0();
+                        n2Var.presentFragment(pc0Var8);
                         int i112 = 0;
                         while (true) {
-                            ArrayList arrayList = oc0Var8.s;
+                            ArrayList arrayList = pc0Var8.s;
                             if (i112 >= arrayList.size()) {
                                 break;
-                            } else if (((ic0) arrayList.get(i112)).f == 1) {
-                                oc0Var8.b.f1(new i2.s(oc0Var8, i112, 12), 700, true);
+                            } else if (((jc0) arrayList.get(i112)).f == 1) {
+                                pc0Var8.b.f1(new i2.s(pc0Var8, i112, 12), 700, true);
                                 break;
                             } else {
                                 i112++;
@@ -1562,7 +1562,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                         break;
                     case 14:
                         org.telegram.ui.ActionBar.n2 n2Var3 = n2Var;
-                        n2Var3.showDialog(org.telegram.ui.Components.e5.U(n2Var3, null));
+                        n2Var3.showDialog(org.telegram.ui.Components.d5.U(n2Var3, null));
                         break;
                     case 15:
                         nf.f.s(n2Var.getParentActivity(), LocaleController.getString(R.string.TelegramFaqUrl));
@@ -1623,60 +1623,60 @@ public class j11 extends org.telegram.ui.Components.vl0 {
             public final void run() {
                 switch (i19) {
                     case 0:
-                        oc0 oc0Var = new oc0();
-                        n2Var.presentFragment(oc0Var);
-                        oc0Var.W(LiteMode.FLAGS_CHAT);
-                        oc0Var.V(64);
+                        pc0 pc0Var = new pc0();
+                        n2Var.presentFragment(pc0Var);
+                        pc0Var.W(LiteMode.FLAGS_CHAT);
+                        pc0Var.V(64);
                         break;
                     case 1:
-                        oc0 oc0Var2 = new oc0();
-                        n2Var.presentFragment(oc0Var2);
-                        oc0Var2.W(LiteMode.FLAGS_CHAT);
-                        oc0Var2.V(128);
+                        pc0 pc0Var2 = new pc0();
+                        n2Var.presentFragment(pc0Var2);
+                        pc0Var2.W(LiteMode.FLAGS_CHAT);
+                        pc0Var2.V(128);
                         break;
                     case 2:
                         n2Var.presentFragment(new PremiumPreviewFragment(0, "settings"));
                         break;
                     case 3:
-                        oc0 oc0Var3 = new oc0();
-                        n2Var.presentFragment(oc0Var3);
-                        oc0Var3.W(LiteMode.FLAGS_CHAT);
-                        oc0Var3.V(256);
+                        pc0 pc0Var3 = new pc0();
+                        n2Var.presentFragment(pc0Var3);
+                        pc0Var3.W(LiteMode.FLAGS_CHAT);
+                        pc0Var3.V(256);
                         break;
                     case 4:
-                        oc0 oc0Var4 = new oc0();
-                        n2Var.presentFragment(oc0Var4);
-                        oc0Var4.W(LiteMode.FLAGS_CHAT);
-                        oc0Var4.V(32768);
+                        pc0 pc0Var4 = new pc0();
+                        n2Var.presentFragment(pc0Var4);
+                        pc0Var4.W(LiteMode.FLAGS_CHAT);
+                        pc0Var4.V(32768);
                         break;
                     case 5:
-                        oc0 oc0Var5 = new oc0();
-                        n2Var.presentFragment(oc0Var5);
-                        oc0Var5.V(512);
+                        pc0 pc0Var5 = new pc0();
+                        n2Var.presentFragment(pc0Var5);
+                        pc0Var5.V(512);
                         break;
                     case 6:
                         n2Var.presentFragment(new NotificationsSettingsActivity());
                         break;
                     case 7:
-                        oc0 oc0Var6 = new oc0();
-                        n2Var.presentFragment(oc0Var6);
-                        oc0Var6.V(1024);
+                        pc0 pc0Var6 = new pc0();
+                        n2Var.presentFragment(pc0Var6);
+                        pc0Var6.V(1024);
                         break;
                     case 8:
-                        oc0 oc0Var7 = new oc0();
-                        n2Var.presentFragment(oc0Var7);
-                        oc0Var7.V(2048);
+                        pc0 pc0Var7 = new pc0();
+                        n2Var.presentFragment(pc0Var7);
+                        pc0Var7.V(2048);
                         break;
                     case 9:
-                        oc0 oc0Var8 = new oc0();
-                        n2Var.presentFragment(oc0Var8);
+                        pc0 pc0Var8 = new pc0();
+                        n2Var.presentFragment(pc0Var8);
                         int i112 = 0;
                         while (true) {
-                            ArrayList arrayList = oc0Var8.s;
+                            ArrayList arrayList = pc0Var8.s;
                             if (i112 >= arrayList.size()) {
                                 break;
-                            } else if (((ic0) arrayList.get(i112)).f == 1) {
-                                oc0Var8.b.f1(new i2.s(oc0Var8, i112, 12), 700, true);
+                            } else if (((jc0) arrayList.get(i112)).f == 1) {
+                                pc0Var8.b.f1(new i2.s(pc0Var8, i112, 12), 700, true);
                                 break;
                             } else {
                                 i112++;
@@ -1699,7 +1699,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                         break;
                     case 14:
                         org.telegram.ui.ActionBar.n2 n2Var3 = n2Var;
-                        n2Var3.showDialog(org.telegram.ui.Components.e5.U(n2Var3, null));
+                        n2Var3.showDialog(org.telegram.ui.Components.d5.U(n2Var3, null));
                         break;
                     case 15:
                         nf.f.s(n2Var.getParentActivity(), LocaleController.getString(R.string.TelegramFaqUrl));
@@ -1761,60 +1761,60 @@ public class j11 extends org.telegram.ui.Components.vl0 {
             public final void run() {
                 switch (i20) {
                     case 0:
-                        oc0 oc0Var = new oc0();
-                        n2Var.presentFragment(oc0Var);
-                        oc0Var.W(LiteMode.FLAGS_CHAT);
-                        oc0Var.V(64);
+                        pc0 pc0Var = new pc0();
+                        n2Var.presentFragment(pc0Var);
+                        pc0Var.W(LiteMode.FLAGS_CHAT);
+                        pc0Var.V(64);
                         break;
                     case 1:
-                        oc0 oc0Var2 = new oc0();
-                        n2Var.presentFragment(oc0Var2);
-                        oc0Var2.W(LiteMode.FLAGS_CHAT);
-                        oc0Var2.V(128);
+                        pc0 pc0Var2 = new pc0();
+                        n2Var.presentFragment(pc0Var2);
+                        pc0Var2.W(LiteMode.FLAGS_CHAT);
+                        pc0Var2.V(128);
                         break;
                     case 2:
                         n2Var.presentFragment(new PremiumPreviewFragment(0, "settings"));
                         break;
                     case 3:
-                        oc0 oc0Var3 = new oc0();
-                        n2Var.presentFragment(oc0Var3);
-                        oc0Var3.W(LiteMode.FLAGS_CHAT);
-                        oc0Var3.V(256);
+                        pc0 pc0Var3 = new pc0();
+                        n2Var.presentFragment(pc0Var3);
+                        pc0Var3.W(LiteMode.FLAGS_CHAT);
+                        pc0Var3.V(256);
                         break;
                     case 4:
-                        oc0 oc0Var4 = new oc0();
-                        n2Var.presentFragment(oc0Var4);
-                        oc0Var4.W(LiteMode.FLAGS_CHAT);
-                        oc0Var4.V(32768);
+                        pc0 pc0Var4 = new pc0();
+                        n2Var.presentFragment(pc0Var4);
+                        pc0Var4.W(LiteMode.FLAGS_CHAT);
+                        pc0Var4.V(32768);
                         break;
                     case 5:
-                        oc0 oc0Var5 = new oc0();
-                        n2Var.presentFragment(oc0Var5);
-                        oc0Var5.V(512);
+                        pc0 pc0Var5 = new pc0();
+                        n2Var.presentFragment(pc0Var5);
+                        pc0Var5.V(512);
                         break;
                     case 6:
                         n2Var.presentFragment(new NotificationsSettingsActivity());
                         break;
                     case 7:
-                        oc0 oc0Var6 = new oc0();
-                        n2Var.presentFragment(oc0Var6);
-                        oc0Var6.V(1024);
+                        pc0 pc0Var6 = new pc0();
+                        n2Var.presentFragment(pc0Var6);
+                        pc0Var6.V(1024);
                         break;
                     case 8:
-                        oc0 oc0Var7 = new oc0();
-                        n2Var.presentFragment(oc0Var7);
-                        oc0Var7.V(2048);
+                        pc0 pc0Var7 = new pc0();
+                        n2Var.presentFragment(pc0Var7);
+                        pc0Var7.V(2048);
                         break;
                     case 9:
-                        oc0 oc0Var8 = new oc0();
-                        n2Var.presentFragment(oc0Var8);
+                        pc0 pc0Var8 = new pc0();
+                        n2Var.presentFragment(pc0Var8);
                         int i112 = 0;
                         while (true) {
-                            ArrayList arrayList = oc0Var8.s;
+                            ArrayList arrayList = pc0Var8.s;
                             if (i112 >= arrayList.size()) {
                                 break;
-                            } else if (((ic0) arrayList.get(i112)).f == 1) {
-                                oc0Var8.b.f1(new i2.s(oc0Var8, i112, 12), 700, true);
+                            } else if (((jc0) arrayList.get(i112)).f == 1) {
+                                pc0Var8.b.f1(new i2.s(pc0Var8, i112, 12), 700, true);
                                 break;
                             } else {
                                 i112++;
@@ -1837,7 +1837,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                         break;
                     case 14:
                         org.telegram.ui.ActionBar.n2 n2Var3 = n2Var;
-                        n2Var3.showDialog(org.telegram.ui.Components.e5.U(n2Var3, null));
+                        n2Var3.showDialog(org.telegram.ui.Components.d5.U(n2Var3, null));
                         break;
                     case 15:
                         nf.f.s(n2Var.getParentActivity(), LocaleController.getString(R.string.TelegramFaqUrl));
@@ -1910,8 +1910,8 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                         if (!isPremium) {
                             org.telegram.ui.Components.xc a02 = org.telegram.ui.Components.xc.a0(n2Var2);
                             a02.getClass();
-                            org.telegram.ui.Components.yb ybVar = new org.telegram.ui.Components.yb(a02.W(), null);
-                            ybVar.d(R.raw.voip_muted, new String[0]);
+                            org.telegram.ui.Components.xb xbVar = new org.telegram.ui.Components.xb(a02.W(), null);
+                            xbVar.d(R.raw.voip_muted, new String[0]);
                             String string = LocaleController.getString(R.string.PrivacyVoiceMessagesPremiumOnly);
                             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(string);
                             int indexOf = string.indexOf(42);
@@ -1920,10 +1920,10 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                                 spannableStringBuilder.replace(indexOf, lastIndexOf + 1, (CharSequence) string.substring(indexOf + 1, lastIndexOf));
                                 spannableStringBuilder.setSpan(new ci.dc(a02, 5), indexOf, lastIndexOf - 1, 33);
                             }
-                            ybVar.b.setText(spannableStringBuilder);
-                            ybVar.b.setSingleLine(false);
-                            ybVar.b.setMaxLines(2);
-                            a02.b(ybVar, 2750).j();
+                            xbVar.b.setText(spannableStringBuilder);
+                            xbVar.b.setSingleLine(false);
+                            xbVar.b.setMaxLines(2);
+                            a02.b(xbVar, 2750).j();
                             break;
                         } else {
                             n2Var2.presentFragment(new PrivacyControlActivity(8, true));
@@ -1939,60 +1939,60 @@ public class j11 extends org.telegram.ui.Components.vl0 {
             public final void run() {
                 switch (i22) {
                     case 0:
-                        oc0 oc0Var = new oc0();
-                        n2Var.presentFragment(oc0Var);
-                        oc0Var.W(LiteMode.FLAGS_CHAT);
-                        oc0Var.V(64);
+                        pc0 pc0Var = new pc0();
+                        n2Var.presentFragment(pc0Var);
+                        pc0Var.W(LiteMode.FLAGS_CHAT);
+                        pc0Var.V(64);
                         break;
                     case 1:
-                        oc0 oc0Var2 = new oc0();
-                        n2Var.presentFragment(oc0Var2);
-                        oc0Var2.W(LiteMode.FLAGS_CHAT);
-                        oc0Var2.V(128);
+                        pc0 pc0Var2 = new pc0();
+                        n2Var.presentFragment(pc0Var2);
+                        pc0Var2.W(LiteMode.FLAGS_CHAT);
+                        pc0Var2.V(128);
                         break;
                     case 2:
                         n2Var.presentFragment(new PremiumPreviewFragment(0, "settings"));
                         break;
                     case 3:
-                        oc0 oc0Var3 = new oc0();
-                        n2Var.presentFragment(oc0Var3);
-                        oc0Var3.W(LiteMode.FLAGS_CHAT);
-                        oc0Var3.V(256);
+                        pc0 pc0Var3 = new pc0();
+                        n2Var.presentFragment(pc0Var3);
+                        pc0Var3.W(LiteMode.FLAGS_CHAT);
+                        pc0Var3.V(256);
                         break;
                     case 4:
-                        oc0 oc0Var4 = new oc0();
-                        n2Var.presentFragment(oc0Var4);
-                        oc0Var4.W(LiteMode.FLAGS_CHAT);
-                        oc0Var4.V(32768);
+                        pc0 pc0Var4 = new pc0();
+                        n2Var.presentFragment(pc0Var4);
+                        pc0Var4.W(LiteMode.FLAGS_CHAT);
+                        pc0Var4.V(32768);
                         break;
                     case 5:
-                        oc0 oc0Var5 = new oc0();
-                        n2Var.presentFragment(oc0Var5);
-                        oc0Var5.V(512);
+                        pc0 pc0Var5 = new pc0();
+                        n2Var.presentFragment(pc0Var5);
+                        pc0Var5.V(512);
                         break;
                     case 6:
                         n2Var.presentFragment(new NotificationsSettingsActivity());
                         break;
                     case 7:
-                        oc0 oc0Var6 = new oc0();
-                        n2Var.presentFragment(oc0Var6);
-                        oc0Var6.V(1024);
+                        pc0 pc0Var6 = new pc0();
+                        n2Var.presentFragment(pc0Var6);
+                        pc0Var6.V(1024);
                         break;
                     case 8:
-                        oc0 oc0Var7 = new oc0();
-                        n2Var.presentFragment(oc0Var7);
-                        oc0Var7.V(2048);
+                        pc0 pc0Var7 = new pc0();
+                        n2Var.presentFragment(pc0Var7);
+                        pc0Var7.V(2048);
                         break;
                     case 9:
-                        oc0 oc0Var8 = new oc0();
-                        n2Var.presentFragment(oc0Var8);
+                        pc0 pc0Var8 = new pc0();
+                        n2Var.presentFragment(pc0Var8);
                         int i112 = 0;
                         while (true) {
-                            ArrayList arrayList = oc0Var8.s;
+                            ArrayList arrayList = pc0Var8.s;
                             if (i112 >= arrayList.size()) {
                                 break;
-                            } else if (((ic0) arrayList.get(i112)).f == 1) {
-                                oc0Var8.b.f1(new i2.s(oc0Var8, i112, 12), 700, true);
+                            } else if (((jc0) arrayList.get(i112)).f == 1) {
+                                pc0Var8.b.f1(new i2.s(pc0Var8, i112, 12), 700, true);
                                 break;
                             } else {
                                 i112++;
@@ -2015,7 +2015,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                         break;
                     case 14:
                         org.telegram.ui.ActionBar.n2 n2Var3 = n2Var;
-                        n2Var3.showDialog(org.telegram.ui.Components.e5.U(n2Var3, null));
+                        n2Var3.showDialog(org.telegram.ui.Components.d5.U(n2Var3, null));
                         break;
                     case 15:
                         nf.f.s(n2Var.getParentActivity(), LocaleController.getString(R.string.TelegramFaqUrl));
@@ -2080,60 +2080,60 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                 public final void run() {
                     switch (i23) {
                         case 0:
-                            oc0 oc0Var = new oc0();
-                            n2Var.presentFragment(oc0Var);
-                            oc0Var.W(LiteMode.FLAGS_CHAT);
-                            oc0Var.V(64);
+                            pc0 pc0Var = new pc0();
+                            n2Var.presentFragment(pc0Var);
+                            pc0Var.W(LiteMode.FLAGS_CHAT);
+                            pc0Var.V(64);
                             break;
                         case 1:
-                            oc0 oc0Var2 = new oc0();
-                            n2Var.presentFragment(oc0Var2);
-                            oc0Var2.W(LiteMode.FLAGS_CHAT);
-                            oc0Var2.V(128);
+                            pc0 pc0Var2 = new pc0();
+                            n2Var.presentFragment(pc0Var2);
+                            pc0Var2.W(LiteMode.FLAGS_CHAT);
+                            pc0Var2.V(128);
                             break;
                         case 2:
                             n2Var.presentFragment(new PremiumPreviewFragment(0, "settings"));
                             break;
                         case 3:
-                            oc0 oc0Var3 = new oc0();
-                            n2Var.presentFragment(oc0Var3);
-                            oc0Var3.W(LiteMode.FLAGS_CHAT);
-                            oc0Var3.V(256);
+                            pc0 pc0Var3 = new pc0();
+                            n2Var.presentFragment(pc0Var3);
+                            pc0Var3.W(LiteMode.FLAGS_CHAT);
+                            pc0Var3.V(256);
                             break;
                         case 4:
-                            oc0 oc0Var4 = new oc0();
-                            n2Var.presentFragment(oc0Var4);
-                            oc0Var4.W(LiteMode.FLAGS_CHAT);
-                            oc0Var4.V(32768);
+                            pc0 pc0Var4 = new pc0();
+                            n2Var.presentFragment(pc0Var4);
+                            pc0Var4.W(LiteMode.FLAGS_CHAT);
+                            pc0Var4.V(32768);
                             break;
                         case 5:
-                            oc0 oc0Var5 = new oc0();
-                            n2Var.presentFragment(oc0Var5);
-                            oc0Var5.V(512);
+                            pc0 pc0Var5 = new pc0();
+                            n2Var.presentFragment(pc0Var5);
+                            pc0Var5.V(512);
                             break;
                         case 6:
                             n2Var.presentFragment(new NotificationsSettingsActivity());
                             break;
                         case 7:
-                            oc0 oc0Var6 = new oc0();
-                            n2Var.presentFragment(oc0Var6);
-                            oc0Var6.V(1024);
+                            pc0 pc0Var6 = new pc0();
+                            n2Var.presentFragment(pc0Var6);
+                            pc0Var6.V(1024);
                             break;
                         case 8:
-                            oc0 oc0Var7 = new oc0();
-                            n2Var.presentFragment(oc0Var7);
-                            oc0Var7.V(2048);
+                            pc0 pc0Var7 = new pc0();
+                            n2Var.presentFragment(pc0Var7);
+                            pc0Var7.V(2048);
                             break;
                         case 9:
-                            oc0 oc0Var8 = new oc0();
-                            n2Var.presentFragment(oc0Var8);
+                            pc0 pc0Var8 = new pc0();
+                            n2Var.presentFragment(pc0Var8);
                             int i112 = 0;
                             while (true) {
-                                ArrayList arrayList = oc0Var8.s;
+                                ArrayList arrayList = pc0Var8.s;
                                 if (i112 >= arrayList.size()) {
                                     break;
-                                } else if (((ic0) arrayList.get(i112)).f == 1) {
-                                    oc0Var8.b.f1(new i2.s(oc0Var8, i112, 12), 700, true);
+                                } else if (((jc0) arrayList.get(i112)).f == 1) {
+                                    pc0Var8.b.f1(new i2.s(pc0Var8, i112, 12), 700, true);
                                     break;
                                 } else {
                                     i112++;
@@ -2156,7 +2156,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                             break;
                         case 14:
                             org.telegram.ui.ActionBar.n2 n2Var3 = n2Var;
-                            n2Var3.showDialog(org.telegram.ui.Components.e5.U(n2Var3, null));
+                            n2Var3.showDialog(org.telegram.ui.Components.d5.U(n2Var3, null));
                             break;
                         case 15:
                             nf.f.s(n2Var.getParentActivity(), LocaleController.getString(R.string.TelegramFaqUrl));
@@ -2222,60 +2222,60 @@ public class j11 extends org.telegram.ui.Components.vl0 {
             public final void run() {
                 switch (i24) {
                     case 0:
-                        oc0 oc0Var = new oc0();
-                        n2Var.presentFragment(oc0Var);
-                        oc0Var.W(LiteMode.FLAGS_CHAT);
-                        oc0Var.V(64);
+                        pc0 pc0Var = new pc0();
+                        n2Var.presentFragment(pc0Var);
+                        pc0Var.W(LiteMode.FLAGS_CHAT);
+                        pc0Var.V(64);
                         break;
                     case 1:
-                        oc0 oc0Var2 = new oc0();
-                        n2Var.presentFragment(oc0Var2);
-                        oc0Var2.W(LiteMode.FLAGS_CHAT);
-                        oc0Var2.V(128);
+                        pc0 pc0Var2 = new pc0();
+                        n2Var.presentFragment(pc0Var2);
+                        pc0Var2.W(LiteMode.FLAGS_CHAT);
+                        pc0Var2.V(128);
                         break;
                     case 2:
                         n2Var.presentFragment(new PremiumPreviewFragment(0, "settings"));
                         break;
                     case 3:
-                        oc0 oc0Var3 = new oc0();
-                        n2Var.presentFragment(oc0Var3);
-                        oc0Var3.W(LiteMode.FLAGS_CHAT);
-                        oc0Var3.V(256);
+                        pc0 pc0Var3 = new pc0();
+                        n2Var.presentFragment(pc0Var3);
+                        pc0Var3.W(LiteMode.FLAGS_CHAT);
+                        pc0Var3.V(256);
                         break;
                     case 4:
-                        oc0 oc0Var4 = new oc0();
-                        n2Var.presentFragment(oc0Var4);
-                        oc0Var4.W(LiteMode.FLAGS_CHAT);
-                        oc0Var4.V(32768);
+                        pc0 pc0Var4 = new pc0();
+                        n2Var.presentFragment(pc0Var4);
+                        pc0Var4.W(LiteMode.FLAGS_CHAT);
+                        pc0Var4.V(32768);
                         break;
                     case 5:
-                        oc0 oc0Var5 = new oc0();
-                        n2Var.presentFragment(oc0Var5);
-                        oc0Var5.V(512);
+                        pc0 pc0Var5 = new pc0();
+                        n2Var.presentFragment(pc0Var5);
+                        pc0Var5.V(512);
                         break;
                     case 6:
                         n2Var.presentFragment(new NotificationsSettingsActivity());
                         break;
                     case 7:
-                        oc0 oc0Var6 = new oc0();
-                        n2Var.presentFragment(oc0Var6);
-                        oc0Var6.V(1024);
+                        pc0 pc0Var6 = new pc0();
+                        n2Var.presentFragment(pc0Var6);
+                        pc0Var6.V(1024);
                         break;
                     case 8:
-                        oc0 oc0Var7 = new oc0();
-                        n2Var.presentFragment(oc0Var7);
-                        oc0Var7.V(2048);
+                        pc0 pc0Var7 = new pc0();
+                        n2Var.presentFragment(pc0Var7);
+                        pc0Var7.V(2048);
                         break;
                     case 9:
-                        oc0 oc0Var8 = new oc0();
-                        n2Var.presentFragment(oc0Var8);
+                        pc0 pc0Var8 = new pc0();
+                        n2Var.presentFragment(pc0Var8);
                         int i112 = 0;
                         while (true) {
-                            ArrayList arrayList = oc0Var8.s;
+                            ArrayList arrayList = pc0Var8.s;
                             if (i112 >= arrayList.size()) {
                                 break;
-                            } else if (((ic0) arrayList.get(i112)).f == 1) {
-                                oc0Var8.b.f1(new i2.s(oc0Var8, i112, 12), 700, true);
+                            } else if (((jc0) arrayList.get(i112)).f == 1) {
+                                pc0Var8.b.f1(new i2.s(pc0Var8, i112, 12), 700, true);
                                 break;
                             } else {
                                 i112++;
@@ -2298,7 +2298,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                         break;
                     case 14:
                         org.telegram.ui.ActionBar.n2 n2Var3 = n2Var;
-                        n2Var3.showDialog(org.telegram.ui.Components.e5.U(n2Var3, null));
+                        n2Var3.showDialog(org.telegram.ui.Components.d5.U(n2Var3, null));
                         break;
                     case 15:
                         nf.f.s(n2Var.getParentActivity(), LocaleController.getString(R.string.TelegramFaqUrl));
@@ -2360,60 +2360,60 @@ public class j11 extends org.telegram.ui.Components.vl0 {
             public final void run() {
                 switch (i25) {
                     case 0:
-                        oc0 oc0Var = new oc0();
-                        n2Var.presentFragment(oc0Var);
-                        oc0Var.W(LiteMode.FLAGS_CHAT);
-                        oc0Var.V(64);
+                        pc0 pc0Var = new pc0();
+                        n2Var.presentFragment(pc0Var);
+                        pc0Var.W(LiteMode.FLAGS_CHAT);
+                        pc0Var.V(64);
                         break;
                     case 1:
-                        oc0 oc0Var2 = new oc0();
-                        n2Var.presentFragment(oc0Var2);
-                        oc0Var2.W(LiteMode.FLAGS_CHAT);
-                        oc0Var2.V(128);
+                        pc0 pc0Var2 = new pc0();
+                        n2Var.presentFragment(pc0Var2);
+                        pc0Var2.W(LiteMode.FLAGS_CHAT);
+                        pc0Var2.V(128);
                         break;
                     case 2:
                         n2Var.presentFragment(new PremiumPreviewFragment(0, "settings"));
                         break;
                     case 3:
-                        oc0 oc0Var3 = new oc0();
-                        n2Var.presentFragment(oc0Var3);
-                        oc0Var3.W(LiteMode.FLAGS_CHAT);
-                        oc0Var3.V(256);
+                        pc0 pc0Var3 = new pc0();
+                        n2Var.presentFragment(pc0Var3);
+                        pc0Var3.W(LiteMode.FLAGS_CHAT);
+                        pc0Var3.V(256);
                         break;
                     case 4:
-                        oc0 oc0Var4 = new oc0();
-                        n2Var.presentFragment(oc0Var4);
-                        oc0Var4.W(LiteMode.FLAGS_CHAT);
-                        oc0Var4.V(32768);
+                        pc0 pc0Var4 = new pc0();
+                        n2Var.presentFragment(pc0Var4);
+                        pc0Var4.W(LiteMode.FLAGS_CHAT);
+                        pc0Var4.V(32768);
                         break;
                     case 5:
-                        oc0 oc0Var5 = new oc0();
-                        n2Var.presentFragment(oc0Var5);
-                        oc0Var5.V(512);
+                        pc0 pc0Var5 = new pc0();
+                        n2Var.presentFragment(pc0Var5);
+                        pc0Var5.V(512);
                         break;
                     case 6:
                         n2Var.presentFragment(new NotificationsSettingsActivity());
                         break;
                     case 7:
-                        oc0 oc0Var6 = new oc0();
-                        n2Var.presentFragment(oc0Var6);
-                        oc0Var6.V(1024);
+                        pc0 pc0Var6 = new pc0();
+                        n2Var.presentFragment(pc0Var6);
+                        pc0Var6.V(1024);
                         break;
                     case 8:
-                        oc0 oc0Var7 = new oc0();
-                        n2Var.presentFragment(oc0Var7);
-                        oc0Var7.V(2048);
+                        pc0 pc0Var7 = new pc0();
+                        n2Var.presentFragment(pc0Var7);
+                        pc0Var7.V(2048);
                         break;
                     case 9:
-                        oc0 oc0Var8 = new oc0();
-                        n2Var.presentFragment(oc0Var8);
+                        pc0 pc0Var8 = new pc0();
+                        n2Var.presentFragment(pc0Var8);
                         int i112 = 0;
                         while (true) {
-                            ArrayList arrayList = oc0Var8.s;
+                            ArrayList arrayList = pc0Var8.s;
                             if (i112 >= arrayList.size()) {
                                 break;
-                            } else if (((ic0) arrayList.get(i112)).f == 1) {
-                                oc0Var8.b.f1(new i2.s(oc0Var8, i112, 12), 700, true);
+                            } else if (((jc0) arrayList.get(i112)).f == 1) {
+                                pc0Var8.b.f1(new i2.s(pc0Var8, i112, 12), 700, true);
                                 break;
                             } else {
                                 i112++;
@@ -2436,7 +2436,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                         break;
                     case 14:
                         org.telegram.ui.ActionBar.n2 n2Var3 = n2Var;
-                        n2Var3.showDialog(org.telegram.ui.Components.e5.U(n2Var3, null));
+                        n2Var3.showDialog(org.telegram.ui.Components.d5.U(n2Var3, null));
                         break;
                     case 15:
                         nf.f.s(n2Var.getParentActivity(), LocaleController.getString(R.string.TelegramFaqUrl));
@@ -2498,60 +2498,60 @@ public class j11 extends org.telegram.ui.Components.vl0 {
             public final void run() {
                 switch (i26) {
                     case 0:
-                        oc0 oc0Var = new oc0();
-                        n2Var.presentFragment(oc0Var);
-                        oc0Var.W(LiteMode.FLAGS_CHAT);
-                        oc0Var.V(64);
+                        pc0 pc0Var = new pc0();
+                        n2Var.presentFragment(pc0Var);
+                        pc0Var.W(LiteMode.FLAGS_CHAT);
+                        pc0Var.V(64);
                         break;
                     case 1:
-                        oc0 oc0Var2 = new oc0();
-                        n2Var.presentFragment(oc0Var2);
-                        oc0Var2.W(LiteMode.FLAGS_CHAT);
-                        oc0Var2.V(128);
+                        pc0 pc0Var2 = new pc0();
+                        n2Var.presentFragment(pc0Var2);
+                        pc0Var2.W(LiteMode.FLAGS_CHAT);
+                        pc0Var2.V(128);
                         break;
                     case 2:
                         n2Var.presentFragment(new PremiumPreviewFragment(0, "settings"));
                         break;
                     case 3:
-                        oc0 oc0Var3 = new oc0();
-                        n2Var.presentFragment(oc0Var3);
-                        oc0Var3.W(LiteMode.FLAGS_CHAT);
-                        oc0Var3.V(256);
+                        pc0 pc0Var3 = new pc0();
+                        n2Var.presentFragment(pc0Var3);
+                        pc0Var3.W(LiteMode.FLAGS_CHAT);
+                        pc0Var3.V(256);
                         break;
                     case 4:
-                        oc0 oc0Var4 = new oc0();
-                        n2Var.presentFragment(oc0Var4);
-                        oc0Var4.W(LiteMode.FLAGS_CHAT);
-                        oc0Var4.V(32768);
+                        pc0 pc0Var4 = new pc0();
+                        n2Var.presentFragment(pc0Var4);
+                        pc0Var4.W(LiteMode.FLAGS_CHAT);
+                        pc0Var4.V(32768);
                         break;
                     case 5:
-                        oc0 oc0Var5 = new oc0();
-                        n2Var.presentFragment(oc0Var5);
-                        oc0Var5.V(512);
+                        pc0 pc0Var5 = new pc0();
+                        n2Var.presentFragment(pc0Var5);
+                        pc0Var5.V(512);
                         break;
                     case 6:
                         n2Var.presentFragment(new NotificationsSettingsActivity());
                         break;
                     case 7:
-                        oc0 oc0Var6 = new oc0();
-                        n2Var.presentFragment(oc0Var6);
-                        oc0Var6.V(1024);
+                        pc0 pc0Var6 = new pc0();
+                        n2Var.presentFragment(pc0Var6);
+                        pc0Var6.V(1024);
                         break;
                     case 8:
-                        oc0 oc0Var7 = new oc0();
-                        n2Var.presentFragment(oc0Var7);
-                        oc0Var7.V(2048);
+                        pc0 pc0Var7 = new pc0();
+                        n2Var.presentFragment(pc0Var7);
+                        pc0Var7.V(2048);
                         break;
                     case 9:
-                        oc0 oc0Var8 = new oc0();
-                        n2Var.presentFragment(oc0Var8);
+                        pc0 pc0Var8 = new pc0();
+                        n2Var.presentFragment(pc0Var8);
                         int i112 = 0;
                         while (true) {
-                            ArrayList arrayList = oc0Var8.s;
+                            ArrayList arrayList = pc0Var8.s;
                             if (i112 >= arrayList.size()) {
                                 break;
-                            } else if (((ic0) arrayList.get(i112)).f == 1) {
-                                oc0Var8.b.f1(new i2.s(oc0Var8, i112, 12), 700, true);
+                            } else if (((jc0) arrayList.get(i112)).f == 1) {
+                                pc0Var8.b.f1(new i2.s(pc0Var8, i112, 12), 700, true);
                                 break;
                             } else {
                                 i112++;
@@ -2574,7 +2574,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                         break;
                     case 14:
                         org.telegram.ui.ActionBar.n2 n2Var3 = n2Var;
-                        n2Var3.showDialog(org.telegram.ui.Components.e5.U(n2Var3, null));
+                        n2Var3.showDialog(org.telegram.ui.Components.d5.U(n2Var3, null));
                         break;
                     case 15:
                         nf.f.s(n2Var.getParentActivity(), LocaleController.getString(R.string.TelegramFaqUrl));
@@ -2636,60 +2636,60 @@ public class j11 extends org.telegram.ui.Components.vl0 {
             public final void run() {
                 switch (i27) {
                     case 0:
-                        oc0 oc0Var = new oc0();
-                        n2Var.presentFragment(oc0Var);
-                        oc0Var.W(LiteMode.FLAGS_CHAT);
-                        oc0Var.V(64);
+                        pc0 pc0Var = new pc0();
+                        n2Var.presentFragment(pc0Var);
+                        pc0Var.W(LiteMode.FLAGS_CHAT);
+                        pc0Var.V(64);
                         break;
                     case 1:
-                        oc0 oc0Var2 = new oc0();
-                        n2Var.presentFragment(oc0Var2);
-                        oc0Var2.W(LiteMode.FLAGS_CHAT);
-                        oc0Var2.V(128);
+                        pc0 pc0Var2 = new pc0();
+                        n2Var.presentFragment(pc0Var2);
+                        pc0Var2.W(LiteMode.FLAGS_CHAT);
+                        pc0Var2.V(128);
                         break;
                     case 2:
                         n2Var.presentFragment(new PremiumPreviewFragment(0, "settings"));
                         break;
                     case 3:
-                        oc0 oc0Var3 = new oc0();
-                        n2Var.presentFragment(oc0Var3);
-                        oc0Var3.W(LiteMode.FLAGS_CHAT);
-                        oc0Var3.V(256);
+                        pc0 pc0Var3 = new pc0();
+                        n2Var.presentFragment(pc0Var3);
+                        pc0Var3.W(LiteMode.FLAGS_CHAT);
+                        pc0Var3.V(256);
                         break;
                     case 4:
-                        oc0 oc0Var4 = new oc0();
-                        n2Var.presentFragment(oc0Var4);
-                        oc0Var4.W(LiteMode.FLAGS_CHAT);
-                        oc0Var4.V(32768);
+                        pc0 pc0Var4 = new pc0();
+                        n2Var.presentFragment(pc0Var4);
+                        pc0Var4.W(LiteMode.FLAGS_CHAT);
+                        pc0Var4.V(32768);
                         break;
                     case 5:
-                        oc0 oc0Var5 = new oc0();
-                        n2Var.presentFragment(oc0Var5);
-                        oc0Var5.V(512);
+                        pc0 pc0Var5 = new pc0();
+                        n2Var.presentFragment(pc0Var5);
+                        pc0Var5.V(512);
                         break;
                     case 6:
                         n2Var.presentFragment(new NotificationsSettingsActivity());
                         break;
                     case 7:
-                        oc0 oc0Var6 = new oc0();
-                        n2Var.presentFragment(oc0Var6);
-                        oc0Var6.V(1024);
+                        pc0 pc0Var6 = new pc0();
+                        n2Var.presentFragment(pc0Var6);
+                        pc0Var6.V(1024);
                         break;
                     case 8:
-                        oc0 oc0Var7 = new oc0();
-                        n2Var.presentFragment(oc0Var7);
-                        oc0Var7.V(2048);
+                        pc0 pc0Var7 = new pc0();
+                        n2Var.presentFragment(pc0Var7);
+                        pc0Var7.V(2048);
                         break;
                     case 9:
-                        oc0 oc0Var8 = new oc0();
-                        n2Var.presentFragment(oc0Var8);
+                        pc0 pc0Var8 = new pc0();
+                        n2Var.presentFragment(pc0Var8);
                         int i112 = 0;
                         while (true) {
-                            ArrayList arrayList = oc0Var8.s;
+                            ArrayList arrayList = pc0Var8.s;
                             if (i112 >= arrayList.size()) {
                                 break;
-                            } else if (((ic0) arrayList.get(i112)).f == 1) {
-                                oc0Var8.b.f1(new i2.s(oc0Var8, i112, 12), 700, true);
+                            } else if (((jc0) arrayList.get(i112)).f == 1) {
+                                pc0Var8.b.f1(new i2.s(pc0Var8, i112, 12), 700, true);
                                 break;
                             } else {
                                 i112++;
@@ -2712,7 +2712,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                         break;
                     case 14:
                         org.telegram.ui.ActionBar.n2 n2Var3 = n2Var;
-                        n2Var3.showDialog(org.telegram.ui.Components.e5.U(n2Var3, null));
+                        n2Var3.showDialog(org.telegram.ui.Components.d5.U(n2Var3, null));
                         break;
                     case 15:
                         nf.f.s(n2Var.getParentActivity(), LocaleController.getString(R.string.TelegramFaqUrl));
@@ -2804,7 +2804,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                             }
                         }
                         if (i122 >= 0) {
-                            n2Var.presentFragment(new xg0(i122));
+                            n2Var.presentFragment(new yg0(i122));
                             break;
                         }
                         break;
@@ -2925,7 +2925,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                             }
                         }
                         if (i122 >= 0) {
-                            n2Var.presentFragment(new xg0(i122));
+                            n2Var.presentFragment(new yg0(i122));
                             break;
                         }
                         break;
@@ -3046,7 +3046,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                             }
                         }
                         if (i122 >= 0) {
-                            n2Var.presentFragment(new xg0(i122));
+                            n2Var.presentFragment(new yg0(i122));
                             break;
                         }
                         break;
@@ -3167,7 +3167,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                             }
                         }
                         if (i122 >= 0) {
-                            n2Var.presentFragment(new xg0(i122));
+                            n2Var.presentFragment(new yg0(i122));
                             break;
                         }
                         break;
@@ -3288,7 +3288,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                             }
                         }
                         if (i122 >= 0) {
-                            n2Var.presentFragment(new xg0(i122));
+                            n2Var.presentFragment(new yg0(i122));
                             break;
                         }
                         break;
@@ -3390,8 +3390,8 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                         if (!isPremium) {
                             org.telegram.ui.Components.xc a02 = org.telegram.ui.Components.xc.a0(n2Var2);
                             a02.getClass();
-                            org.telegram.ui.Components.yb ybVar = new org.telegram.ui.Components.yb(a02.W(), null);
-                            ybVar.d(R.raw.voip_muted, new String[0]);
+                            org.telegram.ui.Components.xb xbVar = new org.telegram.ui.Components.xb(a02.W(), null);
+                            xbVar.d(R.raw.voip_muted, new String[0]);
                             String string = LocaleController.getString(R.string.PrivacyVoiceMessagesPremiumOnly);
                             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(string);
                             int indexOf = string.indexOf(42);
@@ -3400,10 +3400,10 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                                 spannableStringBuilder.replace(indexOf, lastIndexOf + 1, (CharSequence) string.substring(indexOf + 1, lastIndexOf));
                                 spannableStringBuilder.setSpan(new ci.dc(a02, 5), indexOf, lastIndexOf - 1, 33);
                             }
-                            ybVar.b.setText(spannableStringBuilder);
-                            ybVar.b.setSingleLine(false);
-                            ybVar.b.setMaxLines(2);
-                            a02.b(ybVar, 2750).j();
+                            xbVar.b.setText(spannableStringBuilder);
+                            xbVar.b.setSingleLine(false);
+                            xbVar.b.setMaxLines(2);
+                            a02.b(xbVar, 2750).j();
                             break;
                         } else {
                             n2Var2.presentFragment(new PrivacyControlActivity(8, true));
@@ -3451,7 +3451,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                                 }
                             }
                             if (i122 >= 0) {
-                                n2Var.presentFragment(new xg0(i122));
+                                n2Var.presentFragment(new yg0(i122));
                                 break;
                             }
                             break;
@@ -3576,7 +3576,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                             }
                         }
                         if (i122 >= 0) {
-                            n2Var.presentFragment(new xg0(i122));
+                            n2Var.presentFragment(new yg0(i122));
                             break;
                         }
                         break;
@@ -3697,7 +3697,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                             }
                         }
                         if (i122 >= 0) {
-                            n2Var.presentFragment(new xg0(i122));
+                            n2Var.presentFragment(new yg0(i122));
                             break;
                         }
                         break;
@@ -3818,7 +3818,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                             }
                         }
                         if (i122 >= 0) {
-                            n2Var.presentFragment(new xg0(i122));
+                            n2Var.presentFragment(new yg0(i122));
                             break;
                         }
                         break;
@@ -3939,7 +3939,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                             }
                         }
                         if (i122 >= 0) {
-                            n2Var.presentFragment(new xg0(i122));
+                            n2Var.presentFragment(new yg0(i122));
                             break;
                         }
                         break;
@@ -4060,7 +4060,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                             }
                         }
                         if (i122 >= 0) {
-                            n2Var.presentFragment(new xg0(i122));
+                            n2Var.presentFragment(new yg0(i122));
                             break;
                         }
                         break;
@@ -4181,7 +4181,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                             }
                         }
                         if (i122 >= 0) {
-                            n2Var.presentFragment(new xg0(i122));
+                            n2Var.presentFragment(new yg0(i122));
                             break;
                         }
                         break;
@@ -4302,7 +4302,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                             }
                         }
                         if (i122 >= 0) {
-                            n2Var.presentFragment(new xg0(i122));
+                            n2Var.presentFragment(new yg0(i122));
                             break;
                         }
                         break;
@@ -4423,7 +4423,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                             }
                         }
                         if (i122 >= 0) {
-                            n2Var.presentFragment(new xg0(i122));
+                            n2Var.presentFragment(new yg0(i122));
                             break;
                         }
                         break;
@@ -4544,7 +4544,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                             }
                         }
                         if (i122 >= 0) {
-                            n2Var.presentFragment(new xg0(i122));
+                            n2Var.presentFragment(new yg0(i122));
                             break;
                         }
                         break;
@@ -4665,7 +4665,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                             }
                         }
                         if (i122 >= 0) {
-                            n2Var.presentFragment(new xg0(i122));
+                            n2Var.presentFragment(new yg0(i122));
                             break;
                         }
                         break;
@@ -4786,7 +4786,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                             }
                         }
                         if (i122 >= 0) {
-                            n2Var.presentFragment(new xg0(i122));
+                            n2Var.presentFragment(new yg0(i122));
                             break;
                         }
                         break;
@@ -4907,7 +4907,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                             }
                         }
                         if (i122 >= 0) {
-                            n2Var.presentFragment(new xg0(i122));
+                            n2Var.presentFragment(new yg0(i122));
                             break;
                         }
                         break;
@@ -5028,7 +5028,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                             }
                         }
                         if (i122 >= 0) {
-                            n2Var.presentFragment(new xg0(i122));
+                            n2Var.presentFragment(new yg0(i122));
                             break;
                         }
                         break;
@@ -5148,7 +5148,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                             }
                         }
                         if (i122 >= 0) {
-                            n2Var.presentFragment(new xg0(i122));
+                            n2Var.presentFragment(new yg0(i122));
                             break;
                         }
                         break;
@@ -5269,7 +5269,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                             }
                         }
                         if (i122 >= 0) {
-                            n2Var.presentFragment(new xg0(i122));
+                            n2Var.presentFragment(new yg0(i122));
                             break;
                         }
                         break;
@@ -5389,7 +5389,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                             }
                         }
                         if (i122 >= 0) {
-                            n2Var.presentFragment(new xg0(i122));
+                            n2Var.presentFragment(new yg0(i122));
                             break;
                         }
                         break;
@@ -5509,7 +5509,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                             }
                         }
                         if (i122 >= 0) {
-                            n2Var.presentFragment(new xg0(i122));
+                            n2Var.presentFragment(new yg0(i122));
                             break;
                         }
                         break;
@@ -5629,7 +5629,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                             }
                         }
                         if (i122 >= 0) {
-                            n2Var.presentFragment(new xg0(i122));
+                            n2Var.presentFragment(new yg0(i122));
                             break;
                         }
                         break;
@@ -6740,42 +6740,42 @@ public class j11 extends org.telegram.ui.Components.vl0 {
             }
         });
         i11Var86.a("tg://settings/data/save-to-photos/groups");
-        i11 i11Var87 = new i11(225, LocaleController.getString(R.string.SaveToGalleryChannels), "saveToGalleryChannelsRow", LocaleController.getString(R.string.DataSettings), LocaleController.getString(R.string.SaveToGallery), R.drawable.msg2_data, new ri0(2, n2Var));
+        i11 i11Var87 = new i11(225, LocaleController.getString(R.string.SaveToGalleryChannels), "saveToGalleryChannelsRow", LocaleController.getString(R.string.DataSettings), LocaleController.getString(R.string.SaveToGallery), R.drawable.msg2_data, new si0(2, n2Var));
         i11Var87.a("tg://settings/data/save-to-photos/channels");
-        i11 i11Var88 = new i11(LocaleController.getString(R.string.ChatSettings), 300, R.drawable.msg2_discussion, new ri0(3, n2Var));
+        i11 i11Var88 = new i11(LocaleController.getString(R.string.ChatSettings), 300, R.drawable.msg2_discussion, new si0(3, n2Var));
         i11Var88.a("tg://settings/appearance/themes");
-        i11 i11Var89 = new i11(301, LocaleController.getString(R.string.TextSizeHeader), "textSizeHeaderRow", LocaleController.getString(R.string.ChatSettings), R.drawable.msg2_discussion, new ri0(4, n2Var));
+        i11 i11Var89 = new i11(301, LocaleController.getString(R.string.TextSizeHeader), "textSizeHeaderRow", LocaleController.getString(R.string.ChatSettings), R.drawable.msg2_discussion, new si0(4, n2Var));
         i11Var89.a("tg://settings/appearance/text-size");
-        i11 i11Var90 = new i11(302, LocaleController.getString(R.string.ChangeChatBackground), LocaleController.getString(R.string.ChatSettings), R.drawable.msg2_discussion, new ri0(5, n2Var));
+        i11 i11Var90 = new i11(302, LocaleController.getString(R.string.ChangeChatBackground), LocaleController.getString(R.string.ChatSettings), R.drawable.msg2_discussion, new si0(5, n2Var));
         i11Var90.a("tg://settings/appearance/wallpapers");
-        i11 i11Var91 = new i11(303, LocaleController.getString(R.string.SetColor), null, LocaleController.getString(R.string.ChatSettings), LocaleController.getString(R.string.ChatBackground), R.drawable.msg2_discussion, new ri0(6, n2Var));
-        i11 i11Var92 = new i11(304, LocaleController.getString(R.string.ResetChatBackgrounds), "resetRow", LocaleController.getString(R.string.ChatSettings), LocaleController.getString(R.string.ChatBackground), R.drawable.msg2_discussion, new ri0(8, n2Var));
-        i11 i11Var93 = new i11(306, LocaleController.getString(R.string.ColorTheme), "themeHeaderRow", LocaleController.getString(R.string.ChatSettings), R.drawable.msg2_discussion, new ri0(9, n2Var));
-        i11 i11Var94 = new i11(319, LocaleController.getString(R.string.BrowseThemes), null, LocaleController.getString(R.string.ChatSettings), R.drawable.msg2_discussion, new ri0(10, n2Var));
-        i11 i11Var95 = new i11(320, LocaleController.getString(R.string.CreateNewTheme), "createNewThemeRow", LocaleController.getString(R.string.ChatSettings), LocaleController.getString(R.string.BrowseThemes), R.drawable.msg2_discussion, new ri0(11, n2Var));
+        i11 i11Var91 = new i11(303, LocaleController.getString(R.string.SetColor), null, LocaleController.getString(R.string.ChatSettings), LocaleController.getString(R.string.ChatBackground), R.drawable.msg2_discussion, new si0(6, n2Var));
+        i11 i11Var92 = new i11(304, LocaleController.getString(R.string.ResetChatBackgrounds), "resetRow", LocaleController.getString(R.string.ChatSettings), LocaleController.getString(R.string.ChatBackground), R.drawable.msg2_discussion, new si0(8, n2Var));
+        i11 i11Var93 = new i11(306, LocaleController.getString(R.string.ColorTheme), "themeHeaderRow", LocaleController.getString(R.string.ChatSettings), R.drawable.msg2_discussion, new si0(9, n2Var));
+        i11 i11Var94 = new i11(319, LocaleController.getString(R.string.BrowseThemes), null, LocaleController.getString(R.string.ChatSettings), R.drawable.msg2_discussion, new si0(10, n2Var));
+        i11 i11Var95 = new i11(320, LocaleController.getString(R.string.CreateNewTheme), "createNewThemeRow", LocaleController.getString(R.string.ChatSettings), LocaleController.getString(R.string.BrowseThemes), R.drawable.msg2_discussion, new si0(11, n2Var));
         i11Var95.a("tg://settings/appearance/themes/create");
-        i11 i11Var96 = new i11(321, LocaleController.getString(R.string.BubbleRadius), "bubbleRadiusHeaderRow", LocaleController.getString(R.string.ChatSettings), R.drawable.msg2_discussion, new ri0(13, n2Var));
+        i11 i11Var96 = new i11(321, LocaleController.getString(R.string.BubbleRadius), "bubbleRadiusHeaderRow", LocaleController.getString(R.string.ChatSettings), R.drawable.msg2_discussion, new si0(13, n2Var));
         i11Var96.a("tg://settings/appearance/message-corners");
-        i11 i11Var97 = new i11(322, LocaleController.getString(R.string.ChatList), "chatListHeaderRow", LocaleController.getString(R.string.ChatSettings), R.drawable.msg2_discussion, new ri0(14, n2Var));
-        i11 i11Var98 = new i11(323, LocaleController.getString(R.string.ChatListSwipeGesture), "swipeGestureHeaderRow", LocaleController.getString(R.string.ChatSettings), R.drawable.msg2_discussion, new ri0(15, n2Var));
-        i11 i11Var99 = new i11(324, LocaleController.getString(R.string.AppIcon), "appIconHeaderRow", LocaleController.getString(R.string.ChatSettings), R.drawable.msg2_discussion, new ri0(16, n2Var));
+        i11 i11Var97 = new i11(322, LocaleController.getString(R.string.ChatList), "chatListHeaderRow", LocaleController.getString(R.string.ChatSettings), R.drawable.msg2_discussion, new si0(14, n2Var));
+        i11 i11Var98 = new i11(323, LocaleController.getString(R.string.ChatListSwipeGesture), "swipeGestureHeaderRow", LocaleController.getString(R.string.ChatSettings), R.drawable.msg2_discussion, new si0(15, n2Var));
+        i11 i11Var99 = new i11(324, LocaleController.getString(R.string.AppIcon), "appIconHeaderRow", LocaleController.getString(R.string.ChatSettings), R.drawable.msg2_discussion, new si0(16, n2Var));
         i11Var99.a("tg://settings/appearance/app-icon");
-        i11 i11Var100 = new i11(305, LocaleController.getString(R.string.AutoNightTheme), LocaleController.getString(R.string.ChatSettings), R.drawable.msg2_discussion, new ri0(17, n2Var));
-        i11 i11Var101 = new i11(328, LocaleController.getString(R.string.NextMediaTap), "nextMediaTapRow", LocaleController.getString(R.string.ChatSettings), R.drawable.msg2_discussion, new ri0(18, n2Var));
+        i11 i11Var100 = new i11(305, LocaleController.getString(R.string.AutoNightTheme), LocaleController.getString(R.string.ChatSettings), R.drawable.msg2_discussion, new si0(17, n2Var));
+        i11 i11Var101 = new i11(328, LocaleController.getString(R.string.NextMediaTap), "nextMediaTapRow", LocaleController.getString(R.string.ChatSettings), R.drawable.msg2_discussion, new si0(18, n2Var));
         i11Var101.a("tg://settings/appearance/tap-for-next-media");
-        i11 i11Var102 = new i11(327, LocaleController.getString(R.string.RaiseToListen), "raiseToListenRow", LocaleController.getString(R.string.ChatSettings), R.drawable.msg2_discussion, new ri0(20, n2Var));
+        i11 i11Var102 = new i11(327, LocaleController.getString(R.string.RaiseToListen), "raiseToListenRow", LocaleController.getString(R.string.ChatSettings), R.drawable.msg2_discussion, new si0(20, n2Var));
         i11Var102.a("tg://settings/data/raise-to-listen");
-        i11 i11Var103 = new i11(310, LocaleController.getString(R.string.RaiseToSpeak), "raiseToSpeakRow", LocaleController.getString(R.string.ChatSettings), R.drawable.msg2_discussion, new ri0(21, n2Var));
+        i11 i11Var103 = new i11(310, LocaleController.getString(R.string.RaiseToSpeak), "raiseToSpeakRow", LocaleController.getString(R.string.ChatSettings), R.drawable.msg2_discussion, new si0(21, n2Var));
         i11Var103.a("tg://settings/data/raise-to-speak");
-        i11 i11Var104 = new i11(326, LocaleController.getString(R.string.PauseMusicOnMedia), "pauseOnMediaRow", LocaleController.getString(R.string.ChatSettings), R.drawable.msg2_discussion, new ri0(22, n2Var));
+        i11 i11Var104 = new i11(326, LocaleController.getString(R.string.PauseMusicOnMedia), "pauseOnMediaRow", LocaleController.getString(R.string.ChatSettings), R.drawable.msg2_discussion, new si0(22, n2Var));
         i11Var104.a("tg://settings/data/pause-music");
-        i11 i11Var105 = new i11(325, LocaleController.getString(R.string.MicrophoneForVoiceMessages), "bluetoothScoRow", LocaleController.getString(R.string.ChatSettings), R.drawable.msg2_discussion, new ri0(24, n2Var));
-        i11 i11Var106 = new i11(308, LocaleController.getString(R.string.DirectShare), "directShareRow", LocaleController.getString(R.string.ChatSettings), R.drawable.msg2_discussion, new ri0(25, n2Var));
-        i11 i11Var107 = new i11(311, LocaleController.getString(R.string.SendByEnter), "sendByEnterRow", LocaleController.getString(R.string.ChatSettings), R.drawable.msg2_discussion, new ri0(26, n2Var));
-        i11 i11Var108 = new i11(318, LocaleController.getString(R.string.DistanceUnits), "distanceRow", LocaleController.getString(R.string.ChatSettings), R.drawable.msg2_discussion, new ri0(27, n2Var));
-        i11 i11Var109 = new i11(LocaleController.getString(R.string.StickersName), 600, R.drawable.msg2_sticker, new ri0(28, n2Var));
+        i11 i11Var105 = new i11(325, LocaleController.getString(R.string.MicrophoneForVoiceMessages), "bluetoothScoRow", LocaleController.getString(R.string.ChatSettings), R.drawable.msg2_discussion, new si0(24, n2Var));
+        i11 i11Var106 = new i11(308, LocaleController.getString(R.string.DirectShare), "directShareRow", LocaleController.getString(R.string.ChatSettings), R.drawable.msg2_discussion, new si0(25, n2Var));
+        i11 i11Var107 = new i11(311, LocaleController.getString(R.string.SendByEnter), "sendByEnterRow", LocaleController.getString(R.string.ChatSettings), R.drawable.msg2_discussion, new si0(26, n2Var));
+        i11 i11Var108 = new i11(318, LocaleController.getString(R.string.DistanceUnits), "distanceRow", LocaleController.getString(R.string.ChatSettings), R.drawable.msg2_discussion, new si0(27, n2Var));
+        i11 i11Var109 = new i11(LocaleController.getString(R.string.StickersName), 600, R.drawable.msg2_sticker, new si0(28, n2Var));
         i11Var109.a("tg://settings/appearance/stickers-and-emoji");
-        i11 i11Var110 = new i11(601, LocaleController.getString(R.string.SuggestStickers), "suggestRow", LocaleController.getString(R.string.StickersName), R.drawable.msg2_sticker, new ri0(29, n2Var));
+        i11 i11Var110 = new i11(601, LocaleController.getString(R.string.SuggestStickers), "suggestRow", LocaleController.getString(R.string.StickersName), R.drawable.msg2_sticker, new si0(29, n2Var));
         final int i68 = 0;
         i11 i11Var111 = new i11(602, LocaleController.getString(R.string.FeaturedStickers), "featuredStickersHeaderRow", LocaleController.getString(R.string.StickersName), R.drawable.msg2_sticker, new Runnable() { // from class: org.telegram.ui.d11
             @Override // java.lang.Runnable
@@ -6818,7 +6818,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                         n2Var.presentFragment(new StickersActivity(5, null));
                         break;
                     case 11:
-                        n2Var.presentFragment(new l31());
+                        n2Var.presentFragment(new m31());
                         break;
                     case 12:
                         n2Var.presentFragment(new FiltersSetupActivity());
@@ -6851,64 +6851,64 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                         n2Var6.showDialog(x0Var5);
                         break;
                     case 18:
-                        n2Var.presentFragment(new oc0());
+                        n2Var.presentFragment(new pc0());
                         break;
                     case 19:
-                        oc0 oc0Var = new oc0();
-                        n2Var.presentFragment(oc0Var);
-                        oc0Var.V(3);
+                        pc0 pc0Var = new pc0();
+                        n2Var.presentFragment(pc0Var);
+                        pc0Var.V(3);
                         break;
                     case 20:
-                        oc0 oc0Var2 = new oc0();
-                        n2Var.presentFragment(oc0Var2);
-                        oc0Var2.W(3);
-                        oc0Var2.V(1);
+                        pc0 pc0Var2 = new pc0();
+                        n2Var.presentFragment(pc0Var2);
+                        pc0Var2.W(3);
+                        pc0Var2.V(1);
                         break;
                     case 21:
                         n2Var.presentFragment(new FiltersSetupActivity());
                         break;
                     case 22:
-                        oc0 oc0Var3 = new oc0();
-                        n2Var.presentFragment(oc0Var3);
-                        oc0Var3.W(3);
-                        oc0Var3.V(2);
+                        pc0 pc0Var3 = new pc0();
+                        n2Var.presentFragment(pc0Var3);
+                        pc0Var3.W(3);
+                        pc0Var3.V(2);
                         break;
                     case 23:
-                        oc0 oc0Var4 = new oc0();
-                        n2Var.presentFragment(oc0Var4);
-                        oc0Var4.V(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0 pc0Var4 = new pc0();
+                        n2Var.presentFragment(pc0Var4);
+                        pc0Var4.V(LiteMode.FLAGS_ANIMATED_EMOJI);
                         break;
                     case 24:
                         n2Var.presentFragment(new NotificationsSettingsActivity());
                         break;
                     case 25:
-                        oc0 oc0Var5 = new oc0();
-                        n2Var.presentFragment(oc0Var5);
-                        oc0Var5.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                        oc0Var5.V(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD);
+                        pc0 pc0Var5 = new pc0();
+                        n2Var.presentFragment(pc0Var5);
+                        pc0Var5.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0Var5.V(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD);
                         break;
                     case 26:
-                        oc0 oc0Var6 = new oc0();
-                        n2Var.presentFragment(oc0Var6);
-                        oc0Var6.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                        oc0Var6.V(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS);
+                        pc0 pc0Var6 = new pc0();
+                        n2Var.presentFragment(pc0Var6);
+                        pc0Var6.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0Var6.V(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS);
                         break;
                     case 27:
-                        oc0 oc0Var7 = new oc0();
-                        n2Var.presentFragment(oc0Var7);
-                        oc0Var7.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                        oc0Var7.V(LiteMode.FLAG_ANIMATED_EMOJI_CHAT);
+                        pc0 pc0Var7 = new pc0();
+                        n2Var.presentFragment(pc0Var7);
+                        pc0Var7.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0Var7.V(LiteMode.FLAG_ANIMATED_EMOJI_CHAT);
                         break;
                     case 28:
-                        oc0 oc0Var8 = new oc0();
-                        n2Var.presentFragment(oc0Var8);
-                        oc0Var8.V(LiteMode.FLAGS_CHAT);
+                        pc0 pc0Var8 = new pc0();
+                        n2Var.presentFragment(pc0Var8);
+                        pc0Var8.V(LiteMode.FLAGS_CHAT);
                         break;
                     default:
-                        oc0 oc0Var9 = new oc0();
-                        n2Var.presentFragment(oc0Var9);
-                        oc0Var9.W(LiteMode.FLAGS_CHAT);
-                        oc0Var9.V(32);
+                        pc0 pc0Var9 = new pc0();
+                        n2Var.presentFragment(pc0Var9);
+                        pc0Var9.W(LiteMode.FLAGS_CHAT);
+                        pc0Var9.V(32);
                         break;
                 }
             }
@@ -6955,7 +6955,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                         n2Var.presentFragment(new StickersActivity(5, null));
                         break;
                     case 11:
-                        n2Var.presentFragment(new l31());
+                        n2Var.presentFragment(new m31());
                         break;
                     case 12:
                         n2Var.presentFragment(new FiltersSetupActivity());
@@ -6988,64 +6988,64 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                         n2Var6.showDialog(x0Var5);
                         break;
                     case 18:
-                        n2Var.presentFragment(new oc0());
+                        n2Var.presentFragment(new pc0());
                         break;
                     case 19:
-                        oc0 oc0Var = new oc0();
-                        n2Var.presentFragment(oc0Var);
-                        oc0Var.V(3);
+                        pc0 pc0Var = new pc0();
+                        n2Var.presentFragment(pc0Var);
+                        pc0Var.V(3);
                         break;
                     case 20:
-                        oc0 oc0Var2 = new oc0();
-                        n2Var.presentFragment(oc0Var2);
-                        oc0Var2.W(3);
-                        oc0Var2.V(1);
+                        pc0 pc0Var2 = new pc0();
+                        n2Var.presentFragment(pc0Var2);
+                        pc0Var2.W(3);
+                        pc0Var2.V(1);
                         break;
                     case 21:
                         n2Var.presentFragment(new FiltersSetupActivity());
                         break;
                     case 22:
-                        oc0 oc0Var3 = new oc0();
-                        n2Var.presentFragment(oc0Var3);
-                        oc0Var3.W(3);
-                        oc0Var3.V(2);
+                        pc0 pc0Var3 = new pc0();
+                        n2Var.presentFragment(pc0Var3);
+                        pc0Var3.W(3);
+                        pc0Var3.V(2);
                         break;
                     case 23:
-                        oc0 oc0Var4 = new oc0();
-                        n2Var.presentFragment(oc0Var4);
-                        oc0Var4.V(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0 pc0Var4 = new pc0();
+                        n2Var.presentFragment(pc0Var4);
+                        pc0Var4.V(LiteMode.FLAGS_ANIMATED_EMOJI);
                         break;
                     case 24:
                         n2Var.presentFragment(new NotificationsSettingsActivity());
                         break;
                     case 25:
-                        oc0 oc0Var5 = new oc0();
-                        n2Var.presentFragment(oc0Var5);
-                        oc0Var5.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                        oc0Var5.V(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD);
+                        pc0 pc0Var5 = new pc0();
+                        n2Var.presentFragment(pc0Var5);
+                        pc0Var5.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0Var5.V(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD);
                         break;
                     case 26:
-                        oc0 oc0Var6 = new oc0();
-                        n2Var.presentFragment(oc0Var6);
-                        oc0Var6.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                        oc0Var6.V(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS);
+                        pc0 pc0Var6 = new pc0();
+                        n2Var.presentFragment(pc0Var6);
+                        pc0Var6.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0Var6.V(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS);
                         break;
                     case 27:
-                        oc0 oc0Var7 = new oc0();
-                        n2Var.presentFragment(oc0Var7);
-                        oc0Var7.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                        oc0Var7.V(LiteMode.FLAG_ANIMATED_EMOJI_CHAT);
+                        pc0 pc0Var7 = new pc0();
+                        n2Var.presentFragment(pc0Var7);
+                        pc0Var7.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0Var7.V(LiteMode.FLAG_ANIMATED_EMOJI_CHAT);
                         break;
                     case 28:
-                        oc0 oc0Var8 = new oc0();
-                        n2Var.presentFragment(oc0Var8);
-                        oc0Var8.V(LiteMode.FLAGS_CHAT);
+                        pc0 pc0Var8 = new pc0();
+                        n2Var.presentFragment(pc0Var8);
+                        pc0Var8.V(LiteMode.FLAGS_CHAT);
                         break;
                     default:
-                        oc0 oc0Var9 = new oc0();
-                        n2Var.presentFragment(oc0Var9);
-                        oc0Var9.W(LiteMode.FLAGS_CHAT);
-                        oc0Var9.V(32);
+                        pc0 pc0Var9 = new pc0();
+                        n2Var.presentFragment(pc0Var9);
+                        pc0Var9.W(LiteMode.FLAGS_CHAT);
+                        pc0Var9.V(32);
                         break;
                 }
             }
@@ -7092,7 +7092,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                         n2Var.presentFragment(new StickersActivity(5, null));
                         break;
                     case 11:
-                        n2Var.presentFragment(new l31());
+                        n2Var.presentFragment(new m31());
                         break;
                     case 12:
                         n2Var.presentFragment(new FiltersSetupActivity());
@@ -7125,64 +7125,64 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                         n2Var6.showDialog(x0Var5);
                         break;
                     case 18:
-                        n2Var.presentFragment(new oc0());
+                        n2Var.presentFragment(new pc0());
                         break;
                     case 19:
-                        oc0 oc0Var = new oc0();
-                        n2Var.presentFragment(oc0Var);
-                        oc0Var.V(3);
+                        pc0 pc0Var = new pc0();
+                        n2Var.presentFragment(pc0Var);
+                        pc0Var.V(3);
                         break;
                     case 20:
-                        oc0 oc0Var2 = new oc0();
-                        n2Var.presentFragment(oc0Var2);
-                        oc0Var2.W(3);
-                        oc0Var2.V(1);
+                        pc0 pc0Var2 = new pc0();
+                        n2Var.presentFragment(pc0Var2);
+                        pc0Var2.W(3);
+                        pc0Var2.V(1);
                         break;
                     case 21:
                         n2Var.presentFragment(new FiltersSetupActivity());
                         break;
                     case 22:
-                        oc0 oc0Var3 = new oc0();
-                        n2Var.presentFragment(oc0Var3);
-                        oc0Var3.W(3);
-                        oc0Var3.V(2);
+                        pc0 pc0Var3 = new pc0();
+                        n2Var.presentFragment(pc0Var3);
+                        pc0Var3.W(3);
+                        pc0Var3.V(2);
                         break;
                     case 23:
-                        oc0 oc0Var4 = new oc0();
-                        n2Var.presentFragment(oc0Var4);
-                        oc0Var4.V(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0 pc0Var4 = new pc0();
+                        n2Var.presentFragment(pc0Var4);
+                        pc0Var4.V(LiteMode.FLAGS_ANIMATED_EMOJI);
                         break;
                     case 24:
                         n2Var.presentFragment(new NotificationsSettingsActivity());
                         break;
                     case 25:
-                        oc0 oc0Var5 = new oc0();
-                        n2Var.presentFragment(oc0Var5);
-                        oc0Var5.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                        oc0Var5.V(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD);
+                        pc0 pc0Var5 = new pc0();
+                        n2Var.presentFragment(pc0Var5);
+                        pc0Var5.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0Var5.V(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD);
                         break;
                     case 26:
-                        oc0 oc0Var6 = new oc0();
-                        n2Var.presentFragment(oc0Var6);
-                        oc0Var6.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                        oc0Var6.V(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS);
+                        pc0 pc0Var6 = new pc0();
+                        n2Var.presentFragment(pc0Var6);
+                        pc0Var6.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0Var6.V(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS);
                         break;
                     case 27:
-                        oc0 oc0Var7 = new oc0();
-                        n2Var.presentFragment(oc0Var7);
-                        oc0Var7.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                        oc0Var7.V(LiteMode.FLAG_ANIMATED_EMOJI_CHAT);
+                        pc0 pc0Var7 = new pc0();
+                        n2Var.presentFragment(pc0Var7);
+                        pc0Var7.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0Var7.V(LiteMode.FLAG_ANIMATED_EMOJI_CHAT);
                         break;
                     case 28:
-                        oc0 oc0Var8 = new oc0();
-                        n2Var.presentFragment(oc0Var8);
-                        oc0Var8.V(LiteMode.FLAGS_CHAT);
+                        pc0 pc0Var8 = new pc0();
+                        n2Var.presentFragment(pc0Var8);
+                        pc0Var8.V(LiteMode.FLAGS_CHAT);
                         break;
                     default:
-                        oc0 oc0Var9 = new oc0();
-                        n2Var.presentFragment(oc0Var9);
-                        oc0Var9.W(LiteMode.FLAGS_CHAT);
-                        oc0Var9.V(32);
+                        pc0 pc0Var9 = new pc0();
+                        n2Var.presentFragment(pc0Var9);
+                        pc0Var9.W(LiteMode.FLAGS_CHAT);
+                        pc0Var9.V(32);
                         break;
                 }
             }
@@ -7230,7 +7230,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                         n2Var.presentFragment(new StickersActivity(5, null));
                         break;
                     case 11:
-                        n2Var.presentFragment(new l31());
+                        n2Var.presentFragment(new m31());
                         break;
                     case 12:
                         n2Var.presentFragment(new FiltersSetupActivity());
@@ -7263,64 +7263,64 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                         n2Var6.showDialog(x0Var5);
                         break;
                     case 18:
-                        n2Var.presentFragment(new oc0());
+                        n2Var.presentFragment(new pc0());
                         break;
                     case 19:
-                        oc0 oc0Var = new oc0();
-                        n2Var.presentFragment(oc0Var);
-                        oc0Var.V(3);
+                        pc0 pc0Var = new pc0();
+                        n2Var.presentFragment(pc0Var);
+                        pc0Var.V(3);
                         break;
                     case 20:
-                        oc0 oc0Var2 = new oc0();
-                        n2Var.presentFragment(oc0Var2);
-                        oc0Var2.W(3);
-                        oc0Var2.V(1);
+                        pc0 pc0Var2 = new pc0();
+                        n2Var.presentFragment(pc0Var2);
+                        pc0Var2.W(3);
+                        pc0Var2.V(1);
                         break;
                     case 21:
                         n2Var.presentFragment(new FiltersSetupActivity());
                         break;
                     case 22:
-                        oc0 oc0Var3 = new oc0();
-                        n2Var.presentFragment(oc0Var3);
-                        oc0Var3.W(3);
-                        oc0Var3.V(2);
+                        pc0 pc0Var3 = new pc0();
+                        n2Var.presentFragment(pc0Var3);
+                        pc0Var3.W(3);
+                        pc0Var3.V(2);
                         break;
                     case 23:
-                        oc0 oc0Var4 = new oc0();
-                        n2Var.presentFragment(oc0Var4);
-                        oc0Var4.V(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0 pc0Var4 = new pc0();
+                        n2Var.presentFragment(pc0Var4);
+                        pc0Var4.V(LiteMode.FLAGS_ANIMATED_EMOJI);
                         break;
                     case 24:
                         n2Var.presentFragment(new NotificationsSettingsActivity());
                         break;
                     case 25:
-                        oc0 oc0Var5 = new oc0();
-                        n2Var.presentFragment(oc0Var5);
-                        oc0Var5.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                        oc0Var5.V(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD);
+                        pc0 pc0Var5 = new pc0();
+                        n2Var.presentFragment(pc0Var5);
+                        pc0Var5.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0Var5.V(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD);
                         break;
                     case 26:
-                        oc0 oc0Var6 = new oc0();
-                        n2Var.presentFragment(oc0Var6);
-                        oc0Var6.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                        oc0Var6.V(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS);
+                        pc0 pc0Var6 = new pc0();
+                        n2Var.presentFragment(pc0Var6);
+                        pc0Var6.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0Var6.V(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS);
                         break;
                     case 27:
-                        oc0 oc0Var7 = new oc0();
-                        n2Var.presentFragment(oc0Var7);
-                        oc0Var7.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                        oc0Var7.V(LiteMode.FLAG_ANIMATED_EMOJI_CHAT);
+                        pc0 pc0Var7 = new pc0();
+                        n2Var.presentFragment(pc0Var7);
+                        pc0Var7.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0Var7.V(LiteMode.FLAG_ANIMATED_EMOJI_CHAT);
                         break;
                     case 28:
-                        oc0 oc0Var8 = new oc0();
-                        n2Var.presentFragment(oc0Var8);
-                        oc0Var8.V(LiteMode.FLAGS_CHAT);
+                        pc0 pc0Var8 = new pc0();
+                        n2Var.presentFragment(pc0Var8);
+                        pc0Var8.V(LiteMode.FLAGS_CHAT);
                         break;
                     default:
-                        oc0 oc0Var9 = new oc0();
-                        n2Var.presentFragment(oc0Var9);
-                        oc0Var9.W(LiteMode.FLAGS_CHAT);
-                        oc0Var9.V(32);
+                        pc0 pc0Var9 = new pc0();
+                        n2Var.presentFragment(pc0Var9);
+                        pc0Var9.W(LiteMode.FLAGS_CHAT);
+                        pc0Var9.V(32);
                         break;
                 }
             }
@@ -7367,7 +7367,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                         n2Var.presentFragment(new StickersActivity(5, null));
                         break;
                     case 11:
-                        n2Var.presentFragment(new l31());
+                        n2Var.presentFragment(new m31());
                         break;
                     case 12:
                         n2Var.presentFragment(new FiltersSetupActivity());
@@ -7400,64 +7400,64 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                         n2Var6.showDialog(x0Var5);
                         break;
                     case 18:
-                        n2Var.presentFragment(new oc0());
+                        n2Var.presentFragment(new pc0());
                         break;
                     case 19:
-                        oc0 oc0Var = new oc0();
-                        n2Var.presentFragment(oc0Var);
-                        oc0Var.V(3);
+                        pc0 pc0Var = new pc0();
+                        n2Var.presentFragment(pc0Var);
+                        pc0Var.V(3);
                         break;
                     case 20:
-                        oc0 oc0Var2 = new oc0();
-                        n2Var.presentFragment(oc0Var2);
-                        oc0Var2.W(3);
-                        oc0Var2.V(1);
+                        pc0 pc0Var2 = new pc0();
+                        n2Var.presentFragment(pc0Var2);
+                        pc0Var2.W(3);
+                        pc0Var2.V(1);
                         break;
                     case 21:
                         n2Var.presentFragment(new FiltersSetupActivity());
                         break;
                     case 22:
-                        oc0 oc0Var3 = new oc0();
-                        n2Var.presentFragment(oc0Var3);
-                        oc0Var3.W(3);
-                        oc0Var3.V(2);
+                        pc0 pc0Var3 = new pc0();
+                        n2Var.presentFragment(pc0Var3);
+                        pc0Var3.W(3);
+                        pc0Var3.V(2);
                         break;
                     case 23:
-                        oc0 oc0Var4 = new oc0();
-                        n2Var.presentFragment(oc0Var4);
-                        oc0Var4.V(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0 pc0Var4 = new pc0();
+                        n2Var.presentFragment(pc0Var4);
+                        pc0Var4.V(LiteMode.FLAGS_ANIMATED_EMOJI);
                         break;
                     case 24:
                         n2Var.presentFragment(new NotificationsSettingsActivity());
                         break;
                     case 25:
-                        oc0 oc0Var5 = new oc0();
-                        n2Var.presentFragment(oc0Var5);
-                        oc0Var5.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                        oc0Var5.V(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD);
+                        pc0 pc0Var5 = new pc0();
+                        n2Var.presentFragment(pc0Var5);
+                        pc0Var5.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0Var5.V(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD);
                         break;
                     case 26:
-                        oc0 oc0Var6 = new oc0();
-                        n2Var.presentFragment(oc0Var6);
-                        oc0Var6.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                        oc0Var6.V(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS);
+                        pc0 pc0Var6 = new pc0();
+                        n2Var.presentFragment(pc0Var6);
+                        pc0Var6.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0Var6.V(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS);
                         break;
                     case 27:
-                        oc0 oc0Var7 = new oc0();
-                        n2Var.presentFragment(oc0Var7);
-                        oc0Var7.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                        oc0Var7.V(LiteMode.FLAG_ANIMATED_EMOJI_CHAT);
+                        pc0 pc0Var7 = new pc0();
+                        n2Var.presentFragment(pc0Var7);
+                        pc0Var7.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0Var7.V(LiteMode.FLAG_ANIMATED_EMOJI_CHAT);
                         break;
                     case 28:
-                        oc0 oc0Var8 = new oc0();
-                        n2Var.presentFragment(oc0Var8);
-                        oc0Var8.V(LiteMode.FLAGS_CHAT);
+                        pc0 pc0Var8 = new pc0();
+                        n2Var.presentFragment(pc0Var8);
+                        pc0Var8.V(LiteMode.FLAGS_CHAT);
                         break;
                     default:
-                        oc0 oc0Var9 = new oc0();
-                        n2Var.presentFragment(oc0Var9);
-                        oc0Var9.W(LiteMode.FLAGS_CHAT);
-                        oc0Var9.V(32);
+                        pc0 pc0Var9 = new pc0();
+                        n2Var.presentFragment(pc0Var9);
+                        pc0Var9.W(LiteMode.FLAGS_CHAT);
+                        pc0Var9.V(32);
                         break;
                 }
             }
@@ -7505,7 +7505,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                         n2Var.presentFragment(new StickersActivity(5, null));
                         break;
                     case 11:
-                        n2Var.presentFragment(new l31());
+                        n2Var.presentFragment(new m31());
                         break;
                     case 12:
                         n2Var.presentFragment(new FiltersSetupActivity());
@@ -7538,64 +7538,64 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                         n2Var6.showDialog(x0Var5);
                         break;
                     case 18:
-                        n2Var.presentFragment(new oc0());
+                        n2Var.presentFragment(new pc0());
                         break;
                     case 19:
-                        oc0 oc0Var = new oc0();
-                        n2Var.presentFragment(oc0Var);
-                        oc0Var.V(3);
+                        pc0 pc0Var = new pc0();
+                        n2Var.presentFragment(pc0Var);
+                        pc0Var.V(3);
                         break;
                     case 20:
-                        oc0 oc0Var2 = new oc0();
-                        n2Var.presentFragment(oc0Var2);
-                        oc0Var2.W(3);
-                        oc0Var2.V(1);
+                        pc0 pc0Var2 = new pc0();
+                        n2Var.presentFragment(pc0Var2);
+                        pc0Var2.W(3);
+                        pc0Var2.V(1);
                         break;
                     case 21:
                         n2Var.presentFragment(new FiltersSetupActivity());
                         break;
                     case 22:
-                        oc0 oc0Var3 = new oc0();
-                        n2Var.presentFragment(oc0Var3);
-                        oc0Var3.W(3);
-                        oc0Var3.V(2);
+                        pc0 pc0Var3 = new pc0();
+                        n2Var.presentFragment(pc0Var3);
+                        pc0Var3.W(3);
+                        pc0Var3.V(2);
                         break;
                     case 23:
-                        oc0 oc0Var4 = new oc0();
-                        n2Var.presentFragment(oc0Var4);
-                        oc0Var4.V(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0 pc0Var4 = new pc0();
+                        n2Var.presentFragment(pc0Var4);
+                        pc0Var4.V(LiteMode.FLAGS_ANIMATED_EMOJI);
                         break;
                     case 24:
                         n2Var.presentFragment(new NotificationsSettingsActivity());
                         break;
                     case 25:
-                        oc0 oc0Var5 = new oc0();
-                        n2Var.presentFragment(oc0Var5);
-                        oc0Var5.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                        oc0Var5.V(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD);
+                        pc0 pc0Var5 = new pc0();
+                        n2Var.presentFragment(pc0Var5);
+                        pc0Var5.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0Var5.V(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD);
                         break;
                     case 26:
-                        oc0 oc0Var6 = new oc0();
-                        n2Var.presentFragment(oc0Var6);
-                        oc0Var6.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                        oc0Var6.V(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS);
+                        pc0 pc0Var6 = new pc0();
+                        n2Var.presentFragment(pc0Var6);
+                        pc0Var6.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0Var6.V(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS);
                         break;
                     case 27:
-                        oc0 oc0Var7 = new oc0();
-                        n2Var.presentFragment(oc0Var7);
-                        oc0Var7.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                        oc0Var7.V(LiteMode.FLAG_ANIMATED_EMOJI_CHAT);
+                        pc0 pc0Var7 = new pc0();
+                        n2Var.presentFragment(pc0Var7);
+                        pc0Var7.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0Var7.V(LiteMode.FLAG_ANIMATED_EMOJI_CHAT);
                         break;
                     case 28:
-                        oc0 oc0Var8 = new oc0();
-                        n2Var.presentFragment(oc0Var8);
-                        oc0Var8.V(LiteMode.FLAGS_CHAT);
+                        pc0 pc0Var8 = new pc0();
+                        n2Var.presentFragment(pc0Var8);
+                        pc0Var8.V(LiteMode.FLAGS_CHAT);
                         break;
                     default:
-                        oc0 oc0Var9 = new oc0();
-                        n2Var.presentFragment(oc0Var9);
-                        oc0Var9.W(LiteMode.FLAGS_CHAT);
-                        oc0Var9.V(32);
+                        pc0 pc0Var9 = new pc0();
+                        n2Var.presentFragment(pc0Var9);
+                        pc0Var9.W(LiteMode.FLAGS_CHAT);
+                        pc0Var9.V(32);
                         break;
                 }
             }
@@ -7642,7 +7642,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                         n2Var.presentFragment(new StickersActivity(5, null));
                         break;
                     case 11:
-                        n2Var.presentFragment(new l31());
+                        n2Var.presentFragment(new m31());
                         break;
                     case 12:
                         n2Var.presentFragment(new FiltersSetupActivity());
@@ -7675,64 +7675,64 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                         n2Var6.showDialog(x0Var5);
                         break;
                     case 18:
-                        n2Var.presentFragment(new oc0());
+                        n2Var.presentFragment(new pc0());
                         break;
                     case 19:
-                        oc0 oc0Var = new oc0();
-                        n2Var.presentFragment(oc0Var);
-                        oc0Var.V(3);
+                        pc0 pc0Var = new pc0();
+                        n2Var.presentFragment(pc0Var);
+                        pc0Var.V(3);
                         break;
                     case 20:
-                        oc0 oc0Var2 = new oc0();
-                        n2Var.presentFragment(oc0Var2);
-                        oc0Var2.W(3);
-                        oc0Var2.V(1);
+                        pc0 pc0Var2 = new pc0();
+                        n2Var.presentFragment(pc0Var2);
+                        pc0Var2.W(3);
+                        pc0Var2.V(1);
                         break;
                     case 21:
                         n2Var.presentFragment(new FiltersSetupActivity());
                         break;
                     case 22:
-                        oc0 oc0Var3 = new oc0();
-                        n2Var.presentFragment(oc0Var3);
-                        oc0Var3.W(3);
-                        oc0Var3.V(2);
+                        pc0 pc0Var3 = new pc0();
+                        n2Var.presentFragment(pc0Var3);
+                        pc0Var3.W(3);
+                        pc0Var3.V(2);
                         break;
                     case 23:
-                        oc0 oc0Var4 = new oc0();
-                        n2Var.presentFragment(oc0Var4);
-                        oc0Var4.V(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0 pc0Var4 = new pc0();
+                        n2Var.presentFragment(pc0Var4);
+                        pc0Var4.V(LiteMode.FLAGS_ANIMATED_EMOJI);
                         break;
                     case 24:
                         n2Var.presentFragment(new NotificationsSettingsActivity());
                         break;
                     case 25:
-                        oc0 oc0Var5 = new oc0();
-                        n2Var.presentFragment(oc0Var5);
-                        oc0Var5.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                        oc0Var5.V(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD);
+                        pc0 pc0Var5 = new pc0();
+                        n2Var.presentFragment(pc0Var5);
+                        pc0Var5.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0Var5.V(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD);
                         break;
                     case 26:
-                        oc0 oc0Var6 = new oc0();
-                        n2Var.presentFragment(oc0Var6);
-                        oc0Var6.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                        oc0Var6.V(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS);
+                        pc0 pc0Var6 = new pc0();
+                        n2Var.presentFragment(pc0Var6);
+                        pc0Var6.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0Var6.V(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS);
                         break;
                     case 27:
-                        oc0 oc0Var7 = new oc0();
-                        n2Var.presentFragment(oc0Var7);
-                        oc0Var7.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                        oc0Var7.V(LiteMode.FLAG_ANIMATED_EMOJI_CHAT);
+                        pc0 pc0Var7 = new pc0();
+                        n2Var.presentFragment(pc0Var7);
+                        pc0Var7.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0Var7.V(LiteMode.FLAG_ANIMATED_EMOJI_CHAT);
                         break;
                     case 28:
-                        oc0 oc0Var8 = new oc0();
-                        n2Var.presentFragment(oc0Var8);
-                        oc0Var8.V(LiteMode.FLAGS_CHAT);
+                        pc0 pc0Var8 = new pc0();
+                        n2Var.presentFragment(pc0Var8);
+                        pc0Var8.V(LiteMode.FLAGS_CHAT);
                         break;
                     default:
-                        oc0 oc0Var9 = new oc0();
-                        n2Var.presentFragment(oc0Var9);
-                        oc0Var9.W(LiteMode.FLAGS_CHAT);
-                        oc0Var9.V(32);
+                        pc0 pc0Var9 = new pc0();
+                        n2Var.presentFragment(pc0Var9);
+                        pc0Var9.W(LiteMode.FLAGS_CHAT);
+                        pc0Var9.V(32);
                         break;
                 }
             }
@@ -7780,7 +7780,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                         n2Var.presentFragment(new StickersActivity(5, null));
                         break;
                     case 11:
-                        n2Var.presentFragment(new l31());
+                        n2Var.presentFragment(new m31());
                         break;
                     case 12:
                         n2Var.presentFragment(new FiltersSetupActivity());
@@ -7813,64 +7813,64 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                         n2Var6.showDialog(x0Var5);
                         break;
                     case 18:
-                        n2Var.presentFragment(new oc0());
+                        n2Var.presentFragment(new pc0());
                         break;
                     case 19:
-                        oc0 oc0Var = new oc0();
-                        n2Var.presentFragment(oc0Var);
-                        oc0Var.V(3);
+                        pc0 pc0Var = new pc0();
+                        n2Var.presentFragment(pc0Var);
+                        pc0Var.V(3);
                         break;
                     case 20:
-                        oc0 oc0Var2 = new oc0();
-                        n2Var.presentFragment(oc0Var2);
-                        oc0Var2.W(3);
-                        oc0Var2.V(1);
+                        pc0 pc0Var2 = new pc0();
+                        n2Var.presentFragment(pc0Var2);
+                        pc0Var2.W(3);
+                        pc0Var2.V(1);
                         break;
                     case 21:
                         n2Var.presentFragment(new FiltersSetupActivity());
                         break;
                     case 22:
-                        oc0 oc0Var3 = new oc0();
-                        n2Var.presentFragment(oc0Var3);
-                        oc0Var3.W(3);
-                        oc0Var3.V(2);
+                        pc0 pc0Var3 = new pc0();
+                        n2Var.presentFragment(pc0Var3);
+                        pc0Var3.W(3);
+                        pc0Var3.V(2);
                         break;
                     case 23:
-                        oc0 oc0Var4 = new oc0();
-                        n2Var.presentFragment(oc0Var4);
-                        oc0Var4.V(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0 pc0Var4 = new pc0();
+                        n2Var.presentFragment(pc0Var4);
+                        pc0Var4.V(LiteMode.FLAGS_ANIMATED_EMOJI);
                         break;
                     case 24:
                         n2Var.presentFragment(new NotificationsSettingsActivity());
                         break;
                     case 25:
-                        oc0 oc0Var5 = new oc0();
-                        n2Var.presentFragment(oc0Var5);
-                        oc0Var5.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                        oc0Var5.V(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD);
+                        pc0 pc0Var5 = new pc0();
+                        n2Var.presentFragment(pc0Var5);
+                        pc0Var5.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0Var5.V(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD);
                         break;
                     case 26:
-                        oc0 oc0Var6 = new oc0();
-                        n2Var.presentFragment(oc0Var6);
-                        oc0Var6.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                        oc0Var6.V(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS);
+                        pc0 pc0Var6 = new pc0();
+                        n2Var.presentFragment(pc0Var6);
+                        pc0Var6.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0Var6.V(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS);
                         break;
                     case 27:
-                        oc0 oc0Var7 = new oc0();
-                        n2Var.presentFragment(oc0Var7);
-                        oc0Var7.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                        oc0Var7.V(LiteMode.FLAG_ANIMATED_EMOJI_CHAT);
+                        pc0 pc0Var7 = new pc0();
+                        n2Var.presentFragment(pc0Var7);
+                        pc0Var7.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0Var7.V(LiteMode.FLAG_ANIMATED_EMOJI_CHAT);
                         break;
                     case 28:
-                        oc0 oc0Var8 = new oc0();
-                        n2Var.presentFragment(oc0Var8);
-                        oc0Var8.V(LiteMode.FLAGS_CHAT);
+                        pc0 pc0Var8 = new pc0();
+                        n2Var.presentFragment(pc0Var8);
+                        pc0Var8.V(LiteMode.FLAGS_CHAT);
                         break;
                     default:
-                        oc0 oc0Var9 = new oc0();
-                        n2Var.presentFragment(oc0Var9);
-                        oc0Var9.W(LiteMode.FLAGS_CHAT);
-                        oc0Var9.V(32);
+                        pc0 pc0Var9 = new pc0();
+                        n2Var.presentFragment(pc0Var9);
+                        pc0Var9.W(LiteMode.FLAGS_CHAT);
+                        pc0Var9.V(32);
                         break;
                 }
             }
@@ -7918,7 +7918,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                         n2Var.presentFragment(new StickersActivity(5, null));
                         break;
                     case 11:
-                        n2Var.presentFragment(new l31());
+                        n2Var.presentFragment(new m31());
                         break;
                     case 12:
                         n2Var.presentFragment(new FiltersSetupActivity());
@@ -7951,64 +7951,64 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                         n2Var6.showDialog(x0Var5);
                         break;
                     case 18:
-                        n2Var.presentFragment(new oc0());
+                        n2Var.presentFragment(new pc0());
                         break;
                     case 19:
-                        oc0 oc0Var = new oc0();
-                        n2Var.presentFragment(oc0Var);
-                        oc0Var.V(3);
+                        pc0 pc0Var = new pc0();
+                        n2Var.presentFragment(pc0Var);
+                        pc0Var.V(3);
                         break;
                     case 20:
-                        oc0 oc0Var2 = new oc0();
-                        n2Var.presentFragment(oc0Var2);
-                        oc0Var2.W(3);
-                        oc0Var2.V(1);
+                        pc0 pc0Var2 = new pc0();
+                        n2Var.presentFragment(pc0Var2);
+                        pc0Var2.W(3);
+                        pc0Var2.V(1);
                         break;
                     case 21:
                         n2Var.presentFragment(new FiltersSetupActivity());
                         break;
                     case 22:
-                        oc0 oc0Var3 = new oc0();
-                        n2Var.presentFragment(oc0Var3);
-                        oc0Var3.W(3);
-                        oc0Var3.V(2);
+                        pc0 pc0Var3 = new pc0();
+                        n2Var.presentFragment(pc0Var3);
+                        pc0Var3.W(3);
+                        pc0Var3.V(2);
                         break;
                     case 23:
-                        oc0 oc0Var4 = new oc0();
-                        n2Var.presentFragment(oc0Var4);
-                        oc0Var4.V(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0 pc0Var4 = new pc0();
+                        n2Var.presentFragment(pc0Var4);
+                        pc0Var4.V(LiteMode.FLAGS_ANIMATED_EMOJI);
                         break;
                     case 24:
                         n2Var.presentFragment(new NotificationsSettingsActivity());
                         break;
                     case 25:
-                        oc0 oc0Var5 = new oc0();
-                        n2Var.presentFragment(oc0Var5);
-                        oc0Var5.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                        oc0Var5.V(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD);
+                        pc0 pc0Var5 = new pc0();
+                        n2Var.presentFragment(pc0Var5);
+                        pc0Var5.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0Var5.V(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD);
                         break;
                     case 26:
-                        oc0 oc0Var6 = new oc0();
-                        n2Var.presentFragment(oc0Var6);
-                        oc0Var6.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                        oc0Var6.V(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS);
+                        pc0 pc0Var6 = new pc0();
+                        n2Var.presentFragment(pc0Var6);
+                        pc0Var6.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0Var6.V(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS);
                         break;
                     case 27:
-                        oc0 oc0Var7 = new oc0();
-                        n2Var.presentFragment(oc0Var7);
-                        oc0Var7.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                        oc0Var7.V(LiteMode.FLAG_ANIMATED_EMOJI_CHAT);
+                        pc0 pc0Var7 = new pc0();
+                        n2Var.presentFragment(pc0Var7);
+                        pc0Var7.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0Var7.V(LiteMode.FLAG_ANIMATED_EMOJI_CHAT);
                         break;
                     case 28:
-                        oc0 oc0Var8 = new oc0();
-                        n2Var.presentFragment(oc0Var8);
-                        oc0Var8.V(LiteMode.FLAGS_CHAT);
+                        pc0 pc0Var8 = new pc0();
+                        n2Var.presentFragment(pc0Var8);
+                        pc0Var8.V(LiteMode.FLAGS_CHAT);
                         break;
                     default:
-                        oc0 oc0Var9 = new oc0();
-                        n2Var.presentFragment(oc0Var9);
-                        oc0Var9.W(LiteMode.FLAGS_CHAT);
-                        oc0Var9.V(32);
+                        pc0 pc0Var9 = new pc0();
+                        n2Var.presentFragment(pc0Var9);
+                        pc0Var9.W(LiteMode.FLAGS_CHAT);
+                        pc0Var9.V(32);
                         break;
                 }
             }
@@ -8055,7 +8055,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                         n2Var.presentFragment(new StickersActivity(5, null));
                         break;
                     case 11:
-                        n2Var.presentFragment(new l31());
+                        n2Var.presentFragment(new m31());
                         break;
                     case 12:
                         n2Var.presentFragment(new FiltersSetupActivity());
@@ -8088,64 +8088,64 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                         n2Var6.showDialog(x0Var5);
                         break;
                     case 18:
-                        n2Var.presentFragment(new oc0());
+                        n2Var.presentFragment(new pc0());
                         break;
                     case 19:
-                        oc0 oc0Var = new oc0();
-                        n2Var.presentFragment(oc0Var);
-                        oc0Var.V(3);
+                        pc0 pc0Var = new pc0();
+                        n2Var.presentFragment(pc0Var);
+                        pc0Var.V(3);
                         break;
                     case 20:
-                        oc0 oc0Var2 = new oc0();
-                        n2Var.presentFragment(oc0Var2);
-                        oc0Var2.W(3);
-                        oc0Var2.V(1);
+                        pc0 pc0Var2 = new pc0();
+                        n2Var.presentFragment(pc0Var2);
+                        pc0Var2.W(3);
+                        pc0Var2.V(1);
                         break;
                     case 21:
                         n2Var.presentFragment(new FiltersSetupActivity());
                         break;
                     case 22:
-                        oc0 oc0Var3 = new oc0();
-                        n2Var.presentFragment(oc0Var3);
-                        oc0Var3.W(3);
-                        oc0Var3.V(2);
+                        pc0 pc0Var3 = new pc0();
+                        n2Var.presentFragment(pc0Var3);
+                        pc0Var3.W(3);
+                        pc0Var3.V(2);
                         break;
                     case 23:
-                        oc0 oc0Var4 = new oc0();
-                        n2Var.presentFragment(oc0Var4);
-                        oc0Var4.V(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0 pc0Var4 = new pc0();
+                        n2Var.presentFragment(pc0Var4);
+                        pc0Var4.V(LiteMode.FLAGS_ANIMATED_EMOJI);
                         break;
                     case 24:
                         n2Var.presentFragment(new NotificationsSettingsActivity());
                         break;
                     case 25:
-                        oc0 oc0Var5 = new oc0();
-                        n2Var.presentFragment(oc0Var5);
-                        oc0Var5.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                        oc0Var5.V(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD);
+                        pc0 pc0Var5 = new pc0();
+                        n2Var.presentFragment(pc0Var5);
+                        pc0Var5.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0Var5.V(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD);
                         break;
                     case 26:
-                        oc0 oc0Var6 = new oc0();
-                        n2Var.presentFragment(oc0Var6);
-                        oc0Var6.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                        oc0Var6.V(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS);
+                        pc0 pc0Var6 = new pc0();
+                        n2Var.presentFragment(pc0Var6);
+                        pc0Var6.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0Var6.V(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS);
                         break;
                     case 27:
-                        oc0 oc0Var7 = new oc0();
-                        n2Var.presentFragment(oc0Var7);
-                        oc0Var7.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                        oc0Var7.V(LiteMode.FLAG_ANIMATED_EMOJI_CHAT);
+                        pc0 pc0Var7 = new pc0();
+                        n2Var.presentFragment(pc0Var7);
+                        pc0Var7.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0Var7.V(LiteMode.FLAG_ANIMATED_EMOJI_CHAT);
                         break;
                     case 28:
-                        oc0 oc0Var8 = new oc0();
-                        n2Var.presentFragment(oc0Var8);
-                        oc0Var8.V(LiteMode.FLAGS_CHAT);
+                        pc0 pc0Var8 = new pc0();
+                        n2Var.presentFragment(pc0Var8);
+                        pc0Var8.V(LiteMode.FLAGS_CHAT);
                         break;
                     default:
-                        oc0 oc0Var9 = new oc0();
-                        n2Var.presentFragment(oc0Var9);
-                        oc0Var9.W(LiteMode.FLAGS_CHAT);
-                        oc0Var9.V(32);
+                        pc0 pc0Var9 = new pc0();
+                        n2Var.presentFragment(pc0Var9);
+                        pc0Var9.W(LiteMode.FLAGS_CHAT);
+                        pc0Var9.V(32);
                         break;
                 }
             }
@@ -8193,7 +8193,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                         n2Var.presentFragment(new StickersActivity(5, null));
                         break;
                     case 11:
-                        n2Var.presentFragment(new l31());
+                        n2Var.presentFragment(new m31());
                         break;
                     case 12:
                         n2Var.presentFragment(new FiltersSetupActivity());
@@ -8226,64 +8226,64 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                         n2Var6.showDialog(x0Var5);
                         break;
                     case 18:
-                        n2Var.presentFragment(new oc0());
+                        n2Var.presentFragment(new pc0());
                         break;
                     case 19:
-                        oc0 oc0Var = new oc0();
-                        n2Var.presentFragment(oc0Var);
-                        oc0Var.V(3);
+                        pc0 pc0Var = new pc0();
+                        n2Var.presentFragment(pc0Var);
+                        pc0Var.V(3);
                         break;
                     case 20:
-                        oc0 oc0Var2 = new oc0();
-                        n2Var.presentFragment(oc0Var2);
-                        oc0Var2.W(3);
-                        oc0Var2.V(1);
+                        pc0 pc0Var2 = new pc0();
+                        n2Var.presentFragment(pc0Var2);
+                        pc0Var2.W(3);
+                        pc0Var2.V(1);
                         break;
                     case 21:
                         n2Var.presentFragment(new FiltersSetupActivity());
                         break;
                     case 22:
-                        oc0 oc0Var3 = new oc0();
-                        n2Var.presentFragment(oc0Var3);
-                        oc0Var3.W(3);
-                        oc0Var3.V(2);
+                        pc0 pc0Var3 = new pc0();
+                        n2Var.presentFragment(pc0Var3);
+                        pc0Var3.W(3);
+                        pc0Var3.V(2);
                         break;
                     case 23:
-                        oc0 oc0Var4 = new oc0();
-                        n2Var.presentFragment(oc0Var4);
-                        oc0Var4.V(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0 pc0Var4 = new pc0();
+                        n2Var.presentFragment(pc0Var4);
+                        pc0Var4.V(LiteMode.FLAGS_ANIMATED_EMOJI);
                         break;
                     case 24:
                         n2Var.presentFragment(new NotificationsSettingsActivity());
                         break;
                     case 25:
-                        oc0 oc0Var5 = new oc0();
-                        n2Var.presentFragment(oc0Var5);
-                        oc0Var5.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                        oc0Var5.V(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD);
+                        pc0 pc0Var5 = new pc0();
+                        n2Var.presentFragment(pc0Var5);
+                        pc0Var5.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0Var5.V(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD);
                         break;
                     case 26:
-                        oc0 oc0Var6 = new oc0();
-                        n2Var.presentFragment(oc0Var6);
-                        oc0Var6.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                        oc0Var6.V(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS);
+                        pc0 pc0Var6 = new pc0();
+                        n2Var.presentFragment(pc0Var6);
+                        pc0Var6.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0Var6.V(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS);
                         break;
                     case 27:
-                        oc0 oc0Var7 = new oc0();
-                        n2Var.presentFragment(oc0Var7);
-                        oc0Var7.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                        oc0Var7.V(LiteMode.FLAG_ANIMATED_EMOJI_CHAT);
+                        pc0 pc0Var7 = new pc0();
+                        n2Var.presentFragment(pc0Var7);
+                        pc0Var7.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0Var7.V(LiteMode.FLAG_ANIMATED_EMOJI_CHAT);
                         break;
                     case 28:
-                        oc0 oc0Var8 = new oc0();
-                        n2Var.presentFragment(oc0Var8);
-                        oc0Var8.V(LiteMode.FLAGS_CHAT);
+                        pc0 pc0Var8 = new pc0();
+                        n2Var.presentFragment(pc0Var8);
+                        pc0Var8.V(LiteMode.FLAGS_CHAT);
                         break;
                     default:
-                        oc0 oc0Var9 = new oc0();
-                        n2Var.presentFragment(oc0Var9);
-                        oc0Var9.W(LiteMode.FLAGS_CHAT);
-                        oc0Var9.V(32);
+                        pc0 pc0Var9 = new pc0();
+                        n2Var.presentFragment(pc0Var9);
+                        pc0Var9.W(LiteMode.FLAGS_CHAT);
+                        pc0Var9.V(32);
                         break;
                 }
             }
@@ -8331,7 +8331,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                         n2Var.presentFragment(new StickersActivity(5, null));
                         break;
                     case 11:
-                        n2Var.presentFragment(new l31());
+                        n2Var.presentFragment(new m31());
                         break;
                     case 12:
                         n2Var.presentFragment(new FiltersSetupActivity());
@@ -8364,64 +8364,64 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                         n2Var6.showDialog(x0Var5);
                         break;
                     case 18:
-                        n2Var.presentFragment(new oc0());
+                        n2Var.presentFragment(new pc0());
                         break;
                     case 19:
-                        oc0 oc0Var = new oc0();
-                        n2Var.presentFragment(oc0Var);
-                        oc0Var.V(3);
+                        pc0 pc0Var = new pc0();
+                        n2Var.presentFragment(pc0Var);
+                        pc0Var.V(3);
                         break;
                     case 20:
-                        oc0 oc0Var2 = new oc0();
-                        n2Var.presentFragment(oc0Var2);
-                        oc0Var2.W(3);
-                        oc0Var2.V(1);
+                        pc0 pc0Var2 = new pc0();
+                        n2Var.presentFragment(pc0Var2);
+                        pc0Var2.W(3);
+                        pc0Var2.V(1);
                         break;
                     case 21:
                         n2Var.presentFragment(new FiltersSetupActivity());
                         break;
                     case 22:
-                        oc0 oc0Var3 = new oc0();
-                        n2Var.presentFragment(oc0Var3);
-                        oc0Var3.W(3);
-                        oc0Var3.V(2);
+                        pc0 pc0Var3 = new pc0();
+                        n2Var.presentFragment(pc0Var3);
+                        pc0Var3.W(3);
+                        pc0Var3.V(2);
                         break;
                     case 23:
-                        oc0 oc0Var4 = new oc0();
-                        n2Var.presentFragment(oc0Var4);
-                        oc0Var4.V(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0 pc0Var4 = new pc0();
+                        n2Var.presentFragment(pc0Var4);
+                        pc0Var4.V(LiteMode.FLAGS_ANIMATED_EMOJI);
                         break;
                     case 24:
                         n2Var.presentFragment(new NotificationsSettingsActivity());
                         break;
                     case 25:
-                        oc0 oc0Var5 = new oc0();
-                        n2Var.presentFragment(oc0Var5);
-                        oc0Var5.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                        oc0Var5.V(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD);
+                        pc0 pc0Var5 = new pc0();
+                        n2Var.presentFragment(pc0Var5);
+                        pc0Var5.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0Var5.V(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD);
                         break;
                     case 26:
-                        oc0 oc0Var6 = new oc0();
-                        n2Var.presentFragment(oc0Var6);
-                        oc0Var6.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                        oc0Var6.V(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS);
+                        pc0 pc0Var6 = new pc0();
+                        n2Var.presentFragment(pc0Var6);
+                        pc0Var6.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0Var6.V(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS);
                         break;
                     case 27:
-                        oc0 oc0Var7 = new oc0();
-                        n2Var.presentFragment(oc0Var7);
-                        oc0Var7.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                        oc0Var7.V(LiteMode.FLAG_ANIMATED_EMOJI_CHAT);
+                        pc0 pc0Var7 = new pc0();
+                        n2Var.presentFragment(pc0Var7);
+                        pc0Var7.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0Var7.V(LiteMode.FLAG_ANIMATED_EMOJI_CHAT);
                         break;
                     case 28:
-                        oc0 oc0Var8 = new oc0();
-                        n2Var.presentFragment(oc0Var8);
-                        oc0Var8.V(LiteMode.FLAGS_CHAT);
+                        pc0 pc0Var8 = new pc0();
+                        n2Var.presentFragment(pc0Var8);
+                        pc0Var8.V(LiteMode.FLAGS_CHAT);
                         break;
                     default:
-                        oc0 oc0Var9 = new oc0();
-                        n2Var.presentFragment(oc0Var9);
-                        oc0Var9.W(LiteMode.FLAGS_CHAT);
-                        oc0Var9.V(32);
+                        pc0 pc0Var9 = new pc0();
+                        n2Var.presentFragment(pc0Var9);
+                        pc0Var9.W(LiteMode.FLAGS_CHAT);
+                        pc0Var9.V(32);
                         break;
                 }
             }
@@ -8438,60 +8438,60 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                 public final void run() {
                     switch (i80) {
                         case 0:
-                            oc0 oc0Var = new oc0();
-                            n2Var.presentFragment(oc0Var);
-                            oc0Var.W(LiteMode.FLAGS_CHAT);
-                            oc0Var.V(64);
+                            pc0 pc0Var = new pc0();
+                            n2Var.presentFragment(pc0Var);
+                            pc0Var.W(LiteMode.FLAGS_CHAT);
+                            pc0Var.V(64);
                             break;
                         case 1:
-                            oc0 oc0Var2 = new oc0();
-                            n2Var.presentFragment(oc0Var2);
-                            oc0Var2.W(LiteMode.FLAGS_CHAT);
-                            oc0Var2.V(128);
+                            pc0 pc0Var2 = new pc0();
+                            n2Var.presentFragment(pc0Var2);
+                            pc0Var2.W(LiteMode.FLAGS_CHAT);
+                            pc0Var2.V(128);
                             break;
                         case 2:
                             n2Var.presentFragment(new PremiumPreviewFragment(0, "settings"));
                             break;
                         case 3:
-                            oc0 oc0Var3 = new oc0();
-                            n2Var.presentFragment(oc0Var3);
-                            oc0Var3.W(LiteMode.FLAGS_CHAT);
-                            oc0Var3.V(256);
+                            pc0 pc0Var3 = new pc0();
+                            n2Var.presentFragment(pc0Var3);
+                            pc0Var3.W(LiteMode.FLAGS_CHAT);
+                            pc0Var3.V(256);
                             break;
                         case 4:
-                            oc0 oc0Var4 = new oc0();
-                            n2Var.presentFragment(oc0Var4);
-                            oc0Var4.W(LiteMode.FLAGS_CHAT);
-                            oc0Var4.V(32768);
+                            pc0 pc0Var4 = new pc0();
+                            n2Var.presentFragment(pc0Var4);
+                            pc0Var4.W(LiteMode.FLAGS_CHAT);
+                            pc0Var4.V(32768);
                             break;
                         case 5:
-                            oc0 oc0Var5 = new oc0();
-                            n2Var.presentFragment(oc0Var5);
-                            oc0Var5.V(512);
+                            pc0 pc0Var5 = new pc0();
+                            n2Var.presentFragment(pc0Var5);
+                            pc0Var5.V(512);
                             break;
                         case 6:
                             n2Var.presentFragment(new NotificationsSettingsActivity());
                             break;
                         case 7:
-                            oc0 oc0Var6 = new oc0();
-                            n2Var.presentFragment(oc0Var6);
-                            oc0Var6.V(1024);
+                            pc0 pc0Var6 = new pc0();
+                            n2Var.presentFragment(pc0Var6);
+                            pc0Var6.V(1024);
                             break;
                         case 8:
-                            oc0 oc0Var7 = new oc0();
-                            n2Var.presentFragment(oc0Var7);
-                            oc0Var7.V(2048);
+                            pc0 pc0Var7 = new pc0();
+                            n2Var.presentFragment(pc0Var7);
+                            pc0Var7.V(2048);
                             break;
                         case 9:
-                            oc0 oc0Var8 = new oc0();
-                            n2Var.presentFragment(oc0Var8);
+                            pc0 pc0Var8 = new pc0();
+                            n2Var.presentFragment(pc0Var8);
                             int i112 = 0;
                             while (true) {
-                                ArrayList arrayList = oc0Var8.s;
+                                ArrayList arrayList = pc0Var8.s;
                                 if (i112 >= arrayList.size()) {
                                     break;
-                                } else if (((ic0) arrayList.get(i112)).f == 1) {
-                                    oc0Var8.b.f1(new i2.s(oc0Var8, i112, 12), 700, true);
+                                } else if (((jc0) arrayList.get(i112)).f == 1) {
+                                    pc0Var8.b.f1(new i2.s(pc0Var8, i112, 12), 700, true);
                                     break;
                                 } else {
                                     i112++;
@@ -8514,7 +8514,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                             break;
                         case 14:
                             org.telegram.ui.ActionBar.n2 n2Var3 = n2Var;
-                            n2Var3.showDialog(org.telegram.ui.Components.e5.U(n2Var3, null));
+                            n2Var3.showDialog(org.telegram.ui.Components.d5.U(n2Var3, null));
                             break;
                         case 15:
                             nf.f.s(n2Var.getParentActivity(), LocaleController.getString(R.string.TelegramFaqUrl));
@@ -8583,60 +8583,60 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                 public final void run() {
                     switch (i81) {
                         case 0:
-                            oc0 oc0Var = new oc0();
-                            n2Var.presentFragment(oc0Var);
-                            oc0Var.W(LiteMode.FLAGS_CHAT);
-                            oc0Var.V(64);
+                            pc0 pc0Var = new pc0();
+                            n2Var.presentFragment(pc0Var);
+                            pc0Var.W(LiteMode.FLAGS_CHAT);
+                            pc0Var.V(64);
                             break;
                         case 1:
-                            oc0 oc0Var2 = new oc0();
-                            n2Var.presentFragment(oc0Var2);
-                            oc0Var2.W(LiteMode.FLAGS_CHAT);
-                            oc0Var2.V(128);
+                            pc0 pc0Var2 = new pc0();
+                            n2Var.presentFragment(pc0Var2);
+                            pc0Var2.W(LiteMode.FLAGS_CHAT);
+                            pc0Var2.V(128);
                             break;
                         case 2:
                             n2Var.presentFragment(new PremiumPreviewFragment(0, "settings"));
                             break;
                         case 3:
-                            oc0 oc0Var3 = new oc0();
-                            n2Var.presentFragment(oc0Var3);
-                            oc0Var3.W(LiteMode.FLAGS_CHAT);
-                            oc0Var3.V(256);
+                            pc0 pc0Var3 = new pc0();
+                            n2Var.presentFragment(pc0Var3);
+                            pc0Var3.W(LiteMode.FLAGS_CHAT);
+                            pc0Var3.V(256);
                             break;
                         case 4:
-                            oc0 oc0Var4 = new oc0();
-                            n2Var.presentFragment(oc0Var4);
-                            oc0Var4.W(LiteMode.FLAGS_CHAT);
-                            oc0Var4.V(32768);
+                            pc0 pc0Var4 = new pc0();
+                            n2Var.presentFragment(pc0Var4);
+                            pc0Var4.W(LiteMode.FLAGS_CHAT);
+                            pc0Var4.V(32768);
                             break;
                         case 5:
-                            oc0 oc0Var5 = new oc0();
-                            n2Var.presentFragment(oc0Var5);
-                            oc0Var5.V(512);
+                            pc0 pc0Var5 = new pc0();
+                            n2Var.presentFragment(pc0Var5);
+                            pc0Var5.V(512);
                             break;
                         case 6:
                             n2Var.presentFragment(new NotificationsSettingsActivity());
                             break;
                         case 7:
-                            oc0 oc0Var6 = new oc0();
-                            n2Var.presentFragment(oc0Var6);
-                            oc0Var6.V(1024);
+                            pc0 pc0Var6 = new pc0();
+                            n2Var.presentFragment(pc0Var6);
+                            pc0Var6.V(1024);
                             break;
                         case 8:
-                            oc0 oc0Var7 = new oc0();
-                            n2Var.presentFragment(oc0Var7);
-                            oc0Var7.V(2048);
+                            pc0 pc0Var7 = new pc0();
+                            n2Var.presentFragment(pc0Var7);
+                            pc0Var7.V(2048);
                             break;
                         case 9:
-                            oc0 oc0Var8 = new oc0();
-                            n2Var.presentFragment(oc0Var8);
+                            pc0 pc0Var8 = new pc0();
+                            n2Var.presentFragment(pc0Var8);
                             int i112 = 0;
                             while (true) {
-                                ArrayList arrayList = oc0Var8.s;
+                                ArrayList arrayList = pc0Var8.s;
                                 if (i112 >= arrayList.size()) {
                                     break;
-                                } else if (((ic0) arrayList.get(i112)).f == 1) {
-                                    oc0Var8.b.f1(new i2.s(oc0Var8, i112, 12), 700, true);
+                                } else if (((jc0) arrayList.get(i112)).f == 1) {
+                                    pc0Var8.b.f1(new i2.s(pc0Var8, i112, 12), 700, true);
                                     break;
                                 } else {
                                     i112++;
@@ -8659,7 +8659,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                             break;
                         case 14:
                             org.telegram.ui.ActionBar.n2 n2Var3 = n2Var;
-                            n2Var3.showDialog(org.telegram.ui.Components.e5.U(n2Var3, null));
+                            n2Var3.showDialog(org.telegram.ui.Components.d5.U(n2Var3, null));
                             break;
                         case 15:
                             nf.f.s(n2Var.getParentActivity(), LocaleController.getString(R.string.TelegramFaqUrl));
@@ -8724,60 +8724,60 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                 public final void run() {
                     switch (i82) {
                         case 0:
-                            oc0 oc0Var = new oc0();
-                            n2Var.presentFragment(oc0Var);
-                            oc0Var.W(LiteMode.FLAGS_CHAT);
-                            oc0Var.V(64);
+                            pc0 pc0Var = new pc0();
+                            n2Var.presentFragment(pc0Var);
+                            pc0Var.W(LiteMode.FLAGS_CHAT);
+                            pc0Var.V(64);
                             break;
                         case 1:
-                            oc0 oc0Var2 = new oc0();
-                            n2Var.presentFragment(oc0Var2);
-                            oc0Var2.W(LiteMode.FLAGS_CHAT);
-                            oc0Var2.V(128);
+                            pc0 pc0Var2 = new pc0();
+                            n2Var.presentFragment(pc0Var2);
+                            pc0Var2.W(LiteMode.FLAGS_CHAT);
+                            pc0Var2.V(128);
                             break;
                         case 2:
                             n2Var.presentFragment(new PremiumPreviewFragment(0, "settings"));
                             break;
                         case 3:
-                            oc0 oc0Var3 = new oc0();
-                            n2Var.presentFragment(oc0Var3);
-                            oc0Var3.W(LiteMode.FLAGS_CHAT);
-                            oc0Var3.V(256);
+                            pc0 pc0Var3 = new pc0();
+                            n2Var.presentFragment(pc0Var3);
+                            pc0Var3.W(LiteMode.FLAGS_CHAT);
+                            pc0Var3.V(256);
                             break;
                         case 4:
-                            oc0 oc0Var4 = new oc0();
-                            n2Var.presentFragment(oc0Var4);
-                            oc0Var4.W(LiteMode.FLAGS_CHAT);
-                            oc0Var4.V(32768);
+                            pc0 pc0Var4 = new pc0();
+                            n2Var.presentFragment(pc0Var4);
+                            pc0Var4.W(LiteMode.FLAGS_CHAT);
+                            pc0Var4.V(32768);
                             break;
                         case 5:
-                            oc0 oc0Var5 = new oc0();
-                            n2Var.presentFragment(oc0Var5);
-                            oc0Var5.V(512);
+                            pc0 pc0Var5 = new pc0();
+                            n2Var.presentFragment(pc0Var5);
+                            pc0Var5.V(512);
                             break;
                         case 6:
                             n2Var.presentFragment(new NotificationsSettingsActivity());
                             break;
                         case 7:
-                            oc0 oc0Var6 = new oc0();
-                            n2Var.presentFragment(oc0Var6);
-                            oc0Var6.V(1024);
+                            pc0 pc0Var6 = new pc0();
+                            n2Var.presentFragment(pc0Var6);
+                            pc0Var6.V(1024);
                             break;
                         case 8:
-                            oc0 oc0Var7 = new oc0();
-                            n2Var.presentFragment(oc0Var7);
-                            oc0Var7.V(2048);
+                            pc0 pc0Var7 = new pc0();
+                            n2Var.presentFragment(pc0Var7);
+                            pc0Var7.V(2048);
                             break;
                         case 9:
-                            oc0 oc0Var8 = new oc0();
-                            n2Var.presentFragment(oc0Var8);
+                            pc0 pc0Var8 = new pc0();
+                            n2Var.presentFragment(pc0Var8);
                             int i112 = 0;
                             while (true) {
-                                ArrayList arrayList = oc0Var8.s;
+                                ArrayList arrayList = pc0Var8.s;
                                 if (i112 >= arrayList.size()) {
                                     break;
-                                } else if (((ic0) arrayList.get(i112)).f == 1) {
-                                    oc0Var8.b.f1(new i2.s(oc0Var8, i112, 12), 700, true);
+                                } else if (((jc0) arrayList.get(i112)).f == 1) {
+                                    pc0Var8.b.f1(new i2.s(pc0Var8, i112, 12), 700, true);
                                     break;
                                 } else {
                                     i112++;
@@ -8800,7 +8800,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                             break;
                         case 14:
                             org.telegram.ui.ActionBar.n2 n2Var3 = n2Var;
-                            n2Var3.showDialog(org.telegram.ui.Components.e5.U(n2Var3, null));
+                            n2Var3.showDialog(org.telegram.ui.Components.d5.U(n2Var3, null));
                             break;
                         case 15:
                             nf.f.s(n2Var.getParentActivity(), LocaleController.getString(R.string.TelegramFaqUrl));
@@ -8895,7 +8895,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                                 }
                             }
                             if (i122 >= 0) {
-                                n2Var.presentFragment(new xg0(i122));
+                                n2Var.presentFragment(new yg0(i122));
                                 break;
                             }
                             break;
@@ -9019,7 +9019,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                                 }
                             }
                             if (i122 >= 0) {
-                                n2Var.presentFragment(new xg0(i122));
+                                n2Var.presentFragment(new yg0(i122));
                                 break;
                             }
                             break;
@@ -9143,7 +9143,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                                 }
                             }
                             if (i122 >= 0) {
-                                n2Var.presentFragment(new xg0(i122));
+                                n2Var.presentFragment(new yg0(i122));
                                 break;
                             }
                             break;
@@ -9374,7 +9374,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
         } else {
             i11Var16 = null;
         }
-        i11 i11Var123 = F(currentAccount, 5) ? new i11(808, LocaleController.getString(R.string.PremiumPreviewStickers), LocaleController.getString(R.string.TelegramPremium), R.drawable.msg_settings_premium, new ri0(12, n2Var)) : null;
+        i11 i11Var123 = F(currentAccount, 5) ? new i11(808, LocaleController.getString(R.string.PremiumPreviewStickers), LocaleController.getString(R.string.TelegramPremium), R.drawable.msg_settings_premium, new si0(12, n2Var)) : null;
         if (F(currentAccount, 9)) {
             final int i88 = 4;
             i11Var17 = new i11(809, LocaleController.getString(R.string.PremiumPreviewAdvancedChatManagement), LocaleController.getString(R.string.TelegramPremium), R.drawable.msg_settings_premium, new Runnable() { // from class: org.telegram.ui.d11
@@ -9418,7 +9418,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                             n2Var.presentFragment(new StickersActivity(5, null));
                             break;
                         case 11:
-                            n2Var.presentFragment(new l31());
+                            n2Var.presentFragment(new m31());
                             break;
                         case 12:
                             n2Var.presentFragment(new FiltersSetupActivity());
@@ -9451,64 +9451,64 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                             n2Var6.showDialog(x0Var5);
                             break;
                         case 18:
-                            n2Var.presentFragment(new oc0());
+                            n2Var.presentFragment(new pc0());
                             break;
                         case 19:
-                            oc0 oc0Var = new oc0();
-                            n2Var.presentFragment(oc0Var);
-                            oc0Var.V(3);
+                            pc0 pc0Var = new pc0();
+                            n2Var.presentFragment(pc0Var);
+                            pc0Var.V(3);
                             break;
                         case 20:
-                            oc0 oc0Var2 = new oc0();
-                            n2Var.presentFragment(oc0Var2);
-                            oc0Var2.W(3);
-                            oc0Var2.V(1);
+                            pc0 pc0Var2 = new pc0();
+                            n2Var.presentFragment(pc0Var2);
+                            pc0Var2.W(3);
+                            pc0Var2.V(1);
                             break;
                         case 21:
                             n2Var.presentFragment(new FiltersSetupActivity());
                             break;
                         case 22:
-                            oc0 oc0Var3 = new oc0();
-                            n2Var.presentFragment(oc0Var3);
-                            oc0Var3.W(3);
-                            oc0Var3.V(2);
+                            pc0 pc0Var3 = new pc0();
+                            n2Var.presentFragment(pc0Var3);
+                            pc0Var3.W(3);
+                            pc0Var3.V(2);
                             break;
                         case 23:
-                            oc0 oc0Var4 = new oc0();
-                            n2Var.presentFragment(oc0Var4);
-                            oc0Var4.V(LiteMode.FLAGS_ANIMATED_EMOJI);
+                            pc0 pc0Var4 = new pc0();
+                            n2Var.presentFragment(pc0Var4);
+                            pc0Var4.V(LiteMode.FLAGS_ANIMATED_EMOJI);
                             break;
                         case 24:
                             n2Var.presentFragment(new NotificationsSettingsActivity());
                             break;
                         case 25:
-                            oc0 oc0Var5 = new oc0();
-                            n2Var.presentFragment(oc0Var5);
-                            oc0Var5.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                            oc0Var5.V(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD);
+                            pc0 pc0Var5 = new pc0();
+                            n2Var.presentFragment(pc0Var5);
+                            pc0Var5.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                            pc0Var5.V(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD);
                             break;
                         case 26:
-                            oc0 oc0Var6 = new oc0();
-                            n2Var.presentFragment(oc0Var6);
-                            oc0Var6.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                            oc0Var6.V(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS);
+                            pc0 pc0Var6 = new pc0();
+                            n2Var.presentFragment(pc0Var6);
+                            pc0Var6.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                            pc0Var6.V(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS);
                             break;
                         case 27:
-                            oc0 oc0Var7 = new oc0();
-                            n2Var.presentFragment(oc0Var7);
-                            oc0Var7.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                            oc0Var7.V(LiteMode.FLAG_ANIMATED_EMOJI_CHAT);
+                            pc0 pc0Var7 = new pc0();
+                            n2Var.presentFragment(pc0Var7);
+                            pc0Var7.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                            pc0Var7.V(LiteMode.FLAG_ANIMATED_EMOJI_CHAT);
                             break;
                         case 28:
-                            oc0 oc0Var8 = new oc0();
-                            n2Var.presentFragment(oc0Var8);
-                            oc0Var8.V(LiteMode.FLAGS_CHAT);
+                            pc0 pc0Var8 = new pc0();
+                            n2Var.presentFragment(pc0Var8);
+                            pc0Var8.V(LiteMode.FLAGS_CHAT);
                             break;
                         default:
-                            oc0 oc0Var9 = new oc0();
-                            n2Var.presentFragment(oc0Var9);
-                            oc0Var9.W(LiteMode.FLAGS_CHAT);
-                            oc0Var9.V(32);
+                            pc0 pc0Var9 = new pc0();
+                            n2Var.presentFragment(pc0Var9);
+                            pc0Var9.W(LiteMode.FLAGS_CHAT);
+                            pc0Var9.V(32);
                             break;
                     }
                 }
@@ -9559,7 +9559,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                             n2Var.presentFragment(new StickersActivity(5, null));
                             break;
                         case 11:
-                            n2Var.presentFragment(new l31());
+                            n2Var.presentFragment(new m31());
                             break;
                         case 12:
                             n2Var.presentFragment(new FiltersSetupActivity());
@@ -9592,64 +9592,64 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                             n2Var6.showDialog(x0Var5);
                             break;
                         case 18:
-                            n2Var.presentFragment(new oc0());
+                            n2Var.presentFragment(new pc0());
                             break;
                         case 19:
-                            oc0 oc0Var = new oc0();
-                            n2Var.presentFragment(oc0Var);
-                            oc0Var.V(3);
+                            pc0 pc0Var = new pc0();
+                            n2Var.presentFragment(pc0Var);
+                            pc0Var.V(3);
                             break;
                         case 20:
-                            oc0 oc0Var2 = new oc0();
-                            n2Var.presentFragment(oc0Var2);
-                            oc0Var2.W(3);
-                            oc0Var2.V(1);
+                            pc0 pc0Var2 = new pc0();
+                            n2Var.presentFragment(pc0Var2);
+                            pc0Var2.W(3);
+                            pc0Var2.V(1);
                             break;
                         case 21:
                             n2Var.presentFragment(new FiltersSetupActivity());
                             break;
                         case 22:
-                            oc0 oc0Var3 = new oc0();
-                            n2Var.presentFragment(oc0Var3);
-                            oc0Var3.W(3);
-                            oc0Var3.V(2);
+                            pc0 pc0Var3 = new pc0();
+                            n2Var.presentFragment(pc0Var3);
+                            pc0Var3.W(3);
+                            pc0Var3.V(2);
                             break;
                         case 23:
-                            oc0 oc0Var4 = new oc0();
-                            n2Var.presentFragment(oc0Var4);
-                            oc0Var4.V(LiteMode.FLAGS_ANIMATED_EMOJI);
+                            pc0 pc0Var4 = new pc0();
+                            n2Var.presentFragment(pc0Var4);
+                            pc0Var4.V(LiteMode.FLAGS_ANIMATED_EMOJI);
                             break;
                         case 24:
                             n2Var.presentFragment(new NotificationsSettingsActivity());
                             break;
                         case 25:
-                            oc0 oc0Var5 = new oc0();
-                            n2Var.presentFragment(oc0Var5);
-                            oc0Var5.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                            oc0Var5.V(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD);
+                            pc0 pc0Var5 = new pc0();
+                            n2Var.presentFragment(pc0Var5);
+                            pc0Var5.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                            pc0Var5.V(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD);
                             break;
                         case 26:
-                            oc0 oc0Var6 = new oc0();
-                            n2Var.presentFragment(oc0Var6);
-                            oc0Var6.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                            oc0Var6.V(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS);
+                            pc0 pc0Var6 = new pc0();
+                            n2Var.presentFragment(pc0Var6);
+                            pc0Var6.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                            pc0Var6.V(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS);
                             break;
                         case 27:
-                            oc0 oc0Var7 = new oc0();
-                            n2Var.presentFragment(oc0Var7);
-                            oc0Var7.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                            oc0Var7.V(LiteMode.FLAG_ANIMATED_EMOJI_CHAT);
+                            pc0 pc0Var7 = new pc0();
+                            n2Var.presentFragment(pc0Var7);
+                            pc0Var7.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                            pc0Var7.V(LiteMode.FLAG_ANIMATED_EMOJI_CHAT);
                             break;
                         case 28:
-                            oc0 oc0Var8 = new oc0();
-                            n2Var.presentFragment(oc0Var8);
-                            oc0Var8.V(LiteMode.FLAGS_CHAT);
+                            pc0 pc0Var8 = new pc0();
+                            n2Var.presentFragment(pc0Var8);
+                            pc0Var8.V(LiteMode.FLAGS_CHAT);
                             break;
                         default:
-                            oc0 oc0Var9 = new oc0();
-                            n2Var.presentFragment(oc0Var9);
-                            oc0Var9.W(LiteMode.FLAGS_CHAT);
-                            oc0Var9.V(32);
+                            pc0 pc0Var9 = new pc0();
+                            n2Var.presentFragment(pc0Var9);
+                            pc0Var9.W(LiteMode.FLAGS_CHAT);
+                            pc0Var9.V(32);
                             break;
                     }
                 }
@@ -9700,7 +9700,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                             n2Var.presentFragment(new StickersActivity(5, null));
                             break;
                         case 11:
-                            n2Var.presentFragment(new l31());
+                            n2Var.presentFragment(new m31());
                             break;
                         case 12:
                             n2Var.presentFragment(new FiltersSetupActivity());
@@ -9733,64 +9733,64 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                             n2Var6.showDialog(x0Var5);
                             break;
                         case 18:
-                            n2Var.presentFragment(new oc0());
+                            n2Var.presentFragment(new pc0());
                             break;
                         case 19:
-                            oc0 oc0Var = new oc0();
-                            n2Var.presentFragment(oc0Var);
-                            oc0Var.V(3);
+                            pc0 pc0Var = new pc0();
+                            n2Var.presentFragment(pc0Var);
+                            pc0Var.V(3);
                             break;
                         case 20:
-                            oc0 oc0Var2 = new oc0();
-                            n2Var.presentFragment(oc0Var2);
-                            oc0Var2.W(3);
-                            oc0Var2.V(1);
+                            pc0 pc0Var2 = new pc0();
+                            n2Var.presentFragment(pc0Var2);
+                            pc0Var2.W(3);
+                            pc0Var2.V(1);
                             break;
                         case 21:
                             n2Var.presentFragment(new FiltersSetupActivity());
                             break;
                         case 22:
-                            oc0 oc0Var3 = new oc0();
-                            n2Var.presentFragment(oc0Var3);
-                            oc0Var3.W(3);
-                            oc0Var3.V(2);
+                            pc0 pc0Var3 = new pc0();
+                            n2Var.presentFragment(pc0Var3);
+                            pc0Var3.W(3);
+                            pc0Var3.V(2);
                             break;
                         case 23:
-                            oc0 oc0Var4 = new oc0();
-                            n2Var.presentFragment(oc0Var4);
-                            oc0Var4.V(LiteMode.FLAGS_ANIMATED_EMOJI);
+                            pc0 pc0Var4 = new pc0();
+                            n2Var.presentFragment(pc0Var4);
+                            pc0Var4.V(LiteMode.FLAGS_ANIMATED_EMOJI);
                             break;
                         case 24:
                             n2Var.presentFragment(new NotificationsSettingsActivity());
                             break;
                         case 25:
-                            oc0 oc0Var5 = new oc0();
-                            n2Var.presentFragment(oc0Var5);
-                            oc0Var5.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                            oc0Var5.V(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD);
+                            pc0 pc0Var5 = new pc0();
+                            n2Var.presentFragment(pc0Var5);
+                            pc0Var5.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                            pc0Var5.V(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD);
                             break;
                         case 26:
-                            oc0 oc0Var6 = new oc0();
-                            n2Var.presentFragment(oc0Var6);
-                            oc0Var6.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                            oc0Var6.V(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS);
+                            pc0 pc0Var6 = new pc0();
+                            n2Var.presentFragment(pc0Var6);
+                            pc0Var6.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                            pc0Var6.V(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS);
                             break;
                         case 27:
-                            oc0 oc0Var7 = new oc0();
-                            n2Var.presentFragment(oc0Var7);
-                            oc0Var7.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                            oc0Var7.V(LiteMode.FLAG_ANIMATED_EMOJI_CHAT);
+                            pc0 pc0Var7 = new pc0();
+                            n2Var.presentFragment(pc0Var7);
+                            pc0Var7.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                            pc0Var7.V(LiteMode.FLAG_ANIMATED_EMOJI_CHAT);
                             break;
                         case 28:
-                            oc0 oc0Var8 = new oc0();
-                            n2Var.presentFragment(oc0Var8);
-                            oc0Var8.V(LiteMode.FLAGS_CHAT);
+                            pc0 pc0Var8 = new pc0();
+                            n2Var.presentFragment(pc0Var8);
+                            pc0Var8.V(LiteMode.FLAGS_CHAT);
                             break;
                         default:
-                            oc0 oc0Var9 = new oc0();
-                            n2Var.presentFragment(oc0Var9);
-                            oc0Var9.W(LiteMode.FLAGS_CHAT);
-                            oc0Var9.V(32);
+                            pc0 pc0Var9 = new pc0();
+                            n2Var.presentFragment(pc0Var9);
+                            pc0Var9.W(LiteMode.FLAGS_CHAT);
+                            pc0Var9.V(32);
                             break;
                     }
                 }
@@ -9841,7 +9841,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                             n2Var.presentFragment(new StickersActivity(5, null));
                             break;
                         case 11:
-                            n2Var.presentFragment(new l31());
+                            n2Var.presentFragment(new m31());
                             break;
                         case 12:
                             n2Var.presentFragment(new FiltersSetupActivity());
@@ -9874,64 +9874,64 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                             n2Var6.showDialog(x0Var5);
                             break;
                         case 18:
-                            n2Var.presentFragment(new oc0());
+                            n2Var.presentFragment(new pc0());
                             break;
                         case 19:
-                            oc0 oc0Var = new oc0();
-                            n2Var.presentFragment(oc0Var);
-                            oc0Var.V(3);
+                            pc0 pc0Var = new pc0();
+                            n2Var.presentFragment(pc0Var);
+                            pc0Var.V(3);
                             break;
                         case 20:
-                            oc0 oc0Var2 = new oc0();
-                            n2Var.presentFragment(oc0Var2);
-                            oc0Var2.W(3);
-                            oc0Var2.V(1);
+                            pc0 pc0Var2 = new pc0();
+                            n2Var.presentFragment(pc0Var2);
+                            pc0Var2.W(3);
+                            pc0Var2.V(1);
                             break;
                         case 21:
                             n2Var.presentFragment(new FiltersSetupActivity());
                             break;
                         case 22:
-                            oc0 oc0Var3 = new oc0();
-                            n2Var.presentFragment(oc0Var3);
-                            oc0Var3.W(3);
-                            oc0Var3.V(2);
+                            pc0 pc0Var3 = new pc0();
+                            n2Var.presentFragment(pc0Var3);
+                            pc0Var3.W(3);
+                            pc0Var3.V(2);
                             break;
                         case 23:
-                            oc0 oc0Var4 = new oc0();
-                            n2Var.presentFragment(oc0Var4);
-                            oc0Var4.V(LiteMode.FLAGS_ANIMATED_EMOJI);
+                            pc0 pc0Var4 = new pc0();
+                            n2Var.presentFragment(pc0Var4);
+                            pc0Var4.V(LiteMode.FLAGS_ANIMATED_EMOJI);
                             break;
                         case 24:
                             n2Var.presentFragment(new NotificationsSettingsActivity());
                             break;
                         case 25:
-                            oc0 oc0Var5 = new oc0();
-                            n2Var.presentFragment(oc0Var5);
-                            oc0Var5.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                            oc0Var5.V(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD);
+                            pc0 pc0Var5 = new pc0();
+                            n2Var.presentFragment(pc0Var5);
+                            pc0Var5.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                            pc0Var5.V(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD);
                             break;
                         case 26:
-                            oc0 oc0Var6 = new oc0();
-                            n2Var.presentFragment(oc0Var6);
-                            oc0Var6.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                            oc0Var6.V(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS);
+                            pc0 pc0Var6 = new pc0();
+                            n2Var.presentFragment(pc0Var6);
+                            pc0Var6.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                            pc0Var6.V(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS);
                             break;
                         case 27:
-                            oc0 oc0Var7 = new oc0();
-                            n2Var.presentFragment(oc0Var7);
-                            oc0Var7.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                            oc0Var7.V(LiteMode.FLAG_ANIMATED_EMOJI_CHAT);
+                            pc0 pc0Var7 = new pc0();
+                            n2Var.presentFragment(pc0Var7);
+                            pc0Var7.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                            pc0Var7.V(LiteMode.FLAG_ANIMATED_EMOJI_CHAT);
                             break;
                         case 28:
-                            oc0 oc0Var8 = new oc0();
-                            n2Var.presentFragment(oc0Var8);
-                            oc0Var8.V(LiteMode.FLAGS_CHAT);
+                            pc0 pc0Var8 = new pc0();
+                            n2Var.presentFragment(pc0Var8);
+                            pc0Var8.V(LiteMode.FLAGS_CHAT);
                             break;
                         default:
-                            oc0 oc0Var9 = new oc0();
-                            n2Var.presentFragment(oc0Var9);
-                            oc0Var9.W(LiteMode.FLAGS_CHAT);
-                            oc0Var9.V(32);
+                            pc0 pc0Var9 = new pc0();
+                            n2Var.presentFragment(pc0Var9);
+                            pc0Var9.W(LiteMode.FLAGS_CHAT);
+                            pc0Var9.V(32);
                             break;
                     }
                 }
@@ -9982,7 +9982,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                             n2Var.presentFragment(new StickersActivity(5, null));
                             break;
                         case 11:
-                            n2Var.presentFragment(new l31());
+                            n2Var.presentFragment(new m31());
                             break;
                         case 12:
                             n2Var.presentFragment(new FiltersSetupActivity());
@@ -10015,64 +10015,64 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                             n2Var6.showDialog(x0Var5);
                             break;
                         case 18:
-                            n2Var.presentFragment(new oc0());
+                            n2Var.presentFragment(new pc0());
                             break;
                         case 19:
-                            oc0 oc0Var = new oc0();
-                            n2Var.presentFragment(oc0Var);
-                            oc0Var.V(3);
+                            pc0 pc0Var = new pc0();
+                            n2Var.presentFragment(pc0Var);
+                            pc0Var.V(3);
                             break;
                         case 20:
-                            oc0 oc0Var2 = new oc0();
-                            n2Var.presentFragment(oc0Var2);
-                            oc0Var2.W(3);
-                            oc0Var2.V(1);
+                            pc0 pc0Var2 = new pc0();
+                            n2Var.presentFragment(pc0Var2);
+                            pc0Var2.W(3);
+                            pc0Var2.V(1);
                             break;
                         case 21:
                             n2Var.presentFragment(new FiltersSetupActivity());
                             break;
                         case 22:
-                            oc0 oc0Var3 = new oc0();
-                            n2Var.presentFragment(oc0Var3);
-                            oc0Var3.W(3);
-                            oc0Var3.V(2);
+                            pc0 pc0Var3 = new pc0();
+                            n2Var.presentFragment(pc0Var3);
+                            pc0Var3.W(3);
+                            pc0Var3.V(2);
                             break;
                         case 23:
-                            oc0 oc0Var4 = new oc0();
-                            n2Var.presentFragment(oc0Var4);
-                            oc0Var4.V(LiteMode.FLAGS_ANIMATED_EMOJI);
+                            pc0 pc0Var4 = new pc0();
+                            n2Var.presentFragment(pc0Var4);
+                            pc0Var4.V(LiteMode.FLAGS_ANIMATED_EMOJI);
                             break;
                         case 24:
                             n2Var.presentFragment(new NotificationsSettingsActivity());
                             break;
                         case 25:
-                            oc0 oc0Var5 = new oc0();
-                            n2Var.presentFragment(oc0Var5);
-                            oc0Var5.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                            oc0Var5.V(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD);
+                            pc0 pc0Var5 = new pc0();
+                            n2Var.presentFragment(pc0Var5);
+                            pc0Var5.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                            pc0Var5.V(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD);
                             break;
                         case 26:
-                            oc0 oc0Var6 = new oc0();
-                            n2Var.presentFragment(oc0Var6);
-                            oc0Var6.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                            oc0Var6.V(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS);
+                            pc0 pc0Var6 = new pc0();
+                            n2Var.presentFragment(pc0Var6);
+                            pc0Var6.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                            pc0Var6.V(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS);
                             break;
                         case 27:
-                            oc0 oc0Var7 = new oc0();
-                            n2Var.presentFragment(oc0Var7);
-                            oc0Var7.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                            oc0Var7.V(LiteMode.FLAG_ANIMATED_EMOJI_CHAT);
+                            pc0 pc0Var7 = new pc0();
+                            n2Var.presentFragment(pc0Var7);
+                            pc0Var7.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                            pc0Var7.V(LiteMode.FLAG_ANIMATED_EMOJI_CHAT);
                             break;
                         case 28:
-                            oc0 oc0Var8 = new oc0();
-                            n2Var.presentFragment(oc0Var8);
-                            oc0Var8.V(LiteMode.FLAGS_CHAT);
+                            pc0 pc0Var8 = new pc0();
+                            n2Var.presentFragment(pc0Var8);
+                            pc0Var8.V(LiteMode.FLAGS_CHAT);
                             break;
                         default:
-                            oc0 oc0Var9 = new oc0();
-                            n2Var.presentFragment(oc0Var9);
-                            oc0Var9.W(LiteMode.FLAGS_CHAT);
-                            oc0Var9.V(32);
+                            pc0 pc0Var9 = new pc0();
+                            n2Var.presentFragment(pc0Var9);
+                            pc0Var9.W(LiteMode.FLAGS_CHAT);
+                            pc0Var9.V(32);
                             break;
                     }
                 }
@@ -10122,7 +10122,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                         n2Var.presentFragment(new StickersActivity(5, null));
                         break;
                     case 11:
-                        n2Var.presentFragment(new l31());
+                        n2Var.presentFragment(new m31());
                         break;
                     case 12:
                         n2Var.presentFragment(new FiltersSetupActivity());
@@ -10155,64 +10155,64 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                         n2Var6.showDialog(x0Var5);
                         break;
                     case 18:
-                        n2Var.presentFragment(new oc0());
+                        n2Var.presentFragment(new pc0());
                         break;
                     case 19:
-                        oc0 oc0Var = new oc0();
-                        n2Var.presentFragment(oc0Var);
-                        oc0Var.V(3);
+                        pc0 pc0Var = new pc0();
+                        n2Var.presentFragment(pc0Var);
+                        pc0Var.V(3);
                         break;
                     case 20:
-                        oc0 oc0Var2 = new oc0();
-                        n2Var.presentFragment(oc0Var2);
-                        oc0Var2.W(3);
-                        oc0Var2.V(1);
+                        pc0 pc0Var2 = new pc0();
+                        n2Var.presentFragment(pc0Var2);
+                        pc0Var2.W(3);
+                        pc0Var2.V(1);
                         break;
                     case 21:
                         n2Var.presentFragment(new FiltersSetupActivity());
                         break;
                     case 22:
-                        oc0 oc0Var3 = new oc0();
-                        n2Var.presentFragment(oc0Var3);
-                        oc0Var3.W(3);
-                        oc0Var3.V(2);
+                        pc0 pc0Var3 = new pc0();
+                        n2Var.presentFragment(pc0Var3);
+                        pc0Var3.W(3);
+                        pc0Var3.V(2);
                         break;
                     case 23:
-                        oc0 oc0Var4 = new oc0();
-                        n2Var.presentFragment(oc0Var4);
-                        oc0Var4.V(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0 pc0Var4 = new pc0();
+                        n2Var.presentFragment(pc0Var4);
+                        pc0Var4.V(LiteMode.FLAGS_ANIMATED_EMOJI);
                         break;
                     case 24:
                         n2Var.presentFragment(new NotificationsSettingsActivity());
                         break;
                     case 25:
-                        oc0 oc0Var5 = new oc0();
-                        n2Var.presentFragment(oc0Var5);
-                        oc0Var5.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                        oc0Var5.V(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD);
+                        pc0 pc0Var5 = new pc0();
+                        n2Var.presentFragment(pc0Var5);
+                        pc0Var5.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0Var5.V(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD);
                         break;
                     case 26:
-                        oc0 oc0Var6 = new oc0();
-                        n2Var.presentFragment(oc0Var6);
-                        oc0Var6.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                        oc0Var6.V(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS);
+                        pc0 pc0Var6 = new pc0();
+                        n2Var.presentFragment(pc0Var6);
+                        pc0Var6.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0Var6.V(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS);
                         break;
                     case 27:
-                        oc0 oc0Var7 = new oc0();
-                        n2Var.presentFragment(oc0Var7);
-                        oc0Var7.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                        oc0Var7.V(LiteMode.FLAG_ANIMATED_EMOJI_CHAT);
+                        pc0 pc0Var7 = new pc0();
+                        n2Var.presentFragment(pc0Var7);
+                        pc0Var7.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0Var7.V(LiteMode.FLAG_ANIMATED_EMOJI_CHAT);
                         break;
                     case 28:
-                        oc0 oc0Var8 = new oc0();
-                        n2Var.presentFragment(oc0Var8);
-                        oc0Var8.V(LiteMode.FLAGS_CHAT);
+                        pc0 pc0Var8 = new pc0();
+                        n2Var.presentFragment(pc0Var8);
+                        pc0Var8.V(LiteMode.FLAGS_CHAT);
                         break;
                     default:
-                        oc0 oc0Var9 = new oc0();
-                        n2Var.presentFragment(oc0Var9);
-                        oc0Var9.W(LiteMode.FLAGS_CHAT);
-                        oc0Var9.V(32);
+                        pc0 pc0Var9 = new pc0();
+                        n2Var.presentFragment(pc0Var9);
+                        pc0Var9.W(LiteMode.FLAGS_CHAT);
+                        pc0Var9.V(32);
                         break;
                 }
             }
@@ -10260,7 +10260,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                         n2Var.presentFragment(new StickersActivity(5, null));
                         break;
                     case 11:
-                        n2Var.presentFragment(new l31());
+                        n2Var.presentFragment(new m31());
                         break;
                     case 12:
                         n2Var.presentFragment(new FiltersSetupActivity());
@@ -10293,64 +10293,64 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                         n2Var6.showDialog(x0Var5);
                         break;
                     case 18:
-                        n2Var.presentFragment(new oc0());
+                        n2Var.presentFragment(new pc0());
                         break;
                     case 19:
-                        oc0 oc0Var = new oc0();
-                        n2Var.presentFragment(oc0Var);
-                        oc0Var.V(3);
+                        pc0 pc0Var = new pc0();
+                        n2Var.presentFragment(pc0Var);
+                        pc0Var.V(3);
                         break;
                     case 20:
-                        oc0 oc0Var2 = new oc0();
-                        n2Var.presentFragment(oc0Var2);
-                        oc0Var2.W(3);
-                        oc0Var2.V(1);
+                        pc0 pc0Var2 = new pc0();
+                        n2Var.presentFragment(pc0Var2);
+                        pc0Var2.W(3);
+                        pc0Var2.V(1);
                         break;
                     case 21:
                         n2Var.presentFragment(new FiltersSetupActivity());
                         break;
                     case 22:
-                        oc0 oc0Var3 = new oc0();
-                        n2Var.presentFragment(oc0Var3);
-                        oc0Var3.W(3);
-                        oc0Var3.V(2);
+                        pc0 pc0Var3 = new pc0();
+                        n2Var.presentFragment(pc0Var3);
+                        pc0Var3.W(3);
+                        pc0Var3.V(2);
                         break;
                     case 23:
-                        oc0 oc0Var4 = new oc0();
-                        n2Var.presentFragment(oc0Var4);
-                        oc0Var4.V(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0 pc0Var4 = new pc0();
+                        n2Var.presentFragment(pc0Var4);
+                        pc0Var4.V(LiteMode.FLAGS_ANIMATED_EMOJI);
                         break;
                     case 24:
                         n2Var.presentFragment(new NotificationsSettingsActivity());
                         break;
                     case 25:
-                        oc0 oc0Var5 = new oc0();
-                        n2Var.presentFragment(oc0Var5);
-                        oc0Var5.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                        oc0Var5.V(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD);
+                        pc0 pc0Var5 = new pc0();
+                        n2Var.presentFragment(pc0Var5);
+                        pc0Var5.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0Var5.V(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD);
                         break;
                     case 26:
-                        oc0 oc0Var6 = new oc0();
-                        n2Var.presentFragment(oc0Var6);
-                        oc0Var6.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                        oc0Var6.V(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS);
+                        pc0 pc0Var6 = new pc0();
+                        n2Var.presentFragment(pc0Var6);
+                        pc0Var6.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0Var6.V(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS);
                         break;
                     case 27:
-                        oc0 oc0Var7 = new oc0();
-                        n2Var.presentFragment(oc0Var7);
-                        oc0Var7.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                        oc0Var7.V(LiteMode.FLAG_ANIMATED_EMOJI_CHAT);
+                        pc0 pc0Var7 = new pc0();
+                        n2Var.presentFragment(pc0Var7);
+                        pc0Var7.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0Var7.V(LiteMode.FLAG_ANIMATED_EMOJI_CHAT);
                         break;
                     case 28:
-                        oc0 oc0Var8 = new oc0();
-                        n2Var.presentFragment(oc0Var8);
-                        oc0Var8.V(LiteMode.FLAGS_CHAT);
+                        pc0 pc0Var8 = new pc0();
+                        n2Var.presentFragment(pc0Var8);
+                        pc0Var8.V(LiteMode.FLAGS_CHAT);
                         break;
                     default:
-                        oc0 oc0Var9 = new oc0();
-                        n2Var.presentFragment(oc0Var9);
-                        oc0Var9.W(LiteMode.FLAGS_CHAT);
-                        oc0Var9.V(32);
+                        pc0 pc0Var9 = new pc0();
+                        n2Var.presentFragment(pc0Var9);
+                        pc0Var9.W(LiteMode.FLAGS_CHAT);
+                        pc0Var9.V(32);
                         break;
                 }
             }
@@ -10398,7 +10398,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                         n2Var.presentFragment(new StickersActivity(5, null));
                         break;
                     case 11:
-                        n2Var.presentFragment(new l31());
+                        n2Var.presentFragment(new m31());
                         break;
                     case 12:
                         n2Var.presentFragment(new FiltersSetupActivity());
@@ -10431,64 +10431,64 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                         n2Var6.showDialog(x0Var5);
                         break;
                     case 18:
-                        n2Var.presentFragment(new oc0());
+                        n2Var.presentFragment(new pc0());
                         break;
                     case 19:
-                        oc0 oc0Var = new oc0();
-                        n2Var.presentFragment(oc0Var);
-                        oc0Var.V(3);
+                        pc0 pc0Var = new pc0();
+                        n2Var.presentFragment(pc0Var);
+                        pc0Var.V(3);
                         break;
                     case 20:
-                        oc0 oc0Var2 = new oc0();
-                        n2Var.presentFragment(oc0Var2);
-                        oc0Var2.W(3);
-                        oc0Var2.V(1);
+                        pc0 pc0Var2 = new pc0();
+                        n2Var.presentFragment(pc0Var2);
+                        pc0Var2.W(3);
+                        pc0Var2.V(1);
                         break;
                     case 21:
                         n2Var.presentFragment(new FiltersSetupActivity());
                         break;
                     case 22:
-                        oc0 oc0Var3 = new oc0();
-                        n2Var.presentFragment(oc0Var3);
-                        oc0Var3.W(3);
-                        oc0Var3.V(2);
+                        pc0 pc0Var3 = new pc0();
+                        n2Var.presentFragment(pc0Var3);
+                        pc0Var3.W(3);
+                        pc0Var3.V(2);
                         break;
                     case 23:
-                        oc0 oc0Var4 = new oc0();
-                        n2Var.presentFragment(oc0Var4);
-                        oc0Var4.V(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0 pc0Var4 = new pc0();
+                        n2Var.presentFragment(pc0Var4);
+                        pc0Var4.V(LiteMode.FLAGS_ANIMATED_EMOJI);
                         break;
                     case 24:
                         n2Var.presentFragment(new NotificationsSettingsActivity());
                         break;
                     case 25:
-                        oc0 oc0Var5 = new oc0();
-                        n2Var.presentFragment(oc0Var5);
-                        oc0Var5.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                        oc0Var5.V(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD);
+                        pc0 pc0Var5 = new pc0();
+                        n2Var.presentFragment(pc0Var5);
+                        pc0Var5.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0Var5.V(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD);
                         break;
                     case 26:
-                        oc0 oc0Var6 = new oc0();
-                        n2Var.presentFragment(oc0Var6);
-                        oc0Var6.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                        oc0Var6.V(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS);
+                        pc0 pc0Var6 = new pc0();
+                        n2Var.presentFragment(pc0Var6);
+                        pc0Var6.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0Var6.V(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS);
                         break;
                     case 27:
-                        oc0 oc0Var7 = new oc0();
-                        n2Var.presentFragment(oc0Var7);
-                        oc0Var7.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                        oc0Var7.V(LiteMode.FLAG_ANIMATED_EMOJI_CHAT);
+                        pc0 pc0Var7 = new pc0();
+                        n2Var.presentFragment(pc0Var7);
+                        pc0Var7.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0Var7.V(LiteMode.FLAG_ANIMATED_EMOJI_CHAT);
                         break;
                     case 28:
-                        oc0 oc0Var8 = new oc0();
-                        n2Var.presentFragment(oc0Var8);
-                        oc0Var8.V(LiteMode.FLAGS_CHAT);
+                        pc0 pc0Var8 = new pc0();
+                        n2Var.presentFragment(pc0Var8);
+                        pc0Var8.V(LiteMode.FLAGS_CHAT);
                         break;
                     default:
-                        oc0 oc0Var9 = new oc0();
-                        n2Var.presentFragment(oc0Var9);
-                        oc0Var9.W(LiteMode.FLAGS_CHAT);
-                        oc0Var9.V(32);
+                        pc0 pc0Var9 = new pc0();
+                        n2Var.presentFragment(pc0Var9);
+                        pc0Var9.W(LiteMode.FLAGS_CHAT);
+                        pc0Var9.V(32);
                         break;
                 }
             }
@@ -10535,7 +10535,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                         n2Var.presentFragment(new StickersActivity(5, null));
                         break;
                     case 11:
-                        n2Var.presentFragment(new l31());
+                        n2Var.presentFragment(new m31());
                         break;
                     case 12:
                         n2Var.presentFragment(new FiltersSetupActivity());
@@ -10568,64 +10568,64 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                         n2Var6.showDialog(x0Var5);
                         break;
                     case 18:
-                        n2Var.presentFragment(new oc0());
+                        n2Var.presentFragment(new pc0());
                         break;
                     case 19:
-                        oc0 oc0Var = new oc0();
-                        n2Var.presentFragment(oc0Var);
-                        oc0Var.V(3);
+                        pc0 pc0Var = new pc0();
+                        n2Var.presentFragment(pc0Var);
+                        pc0Var.V(3);
                         break;
                     case 20:
-                        oc0 oc0Var2 = new oc0();
-                        n2Var.presentFragment(oc0Var2);
-                        oc0Var2.W(3);
-                        oc0Var2.V(1);
+                        pc0 pc0Var2 = new pc0();
+                        n2Var.presentFragment(pc0Var2);
+                        pc0Var2.W(3);
+                        pc0Var2.V(1);
                         break;
                     case 21:
                         n2Var.presentFragment(new FiltersSetupActivity());
                         break;
                     case 22:
-                        oc0 oc0Var3 = new oc0();
-                        n2Var.presentFragment(oc0Var3);
-                        oc0Var3.W(3);
-                        oc0Var3.V(2);
+                        pc0 pc0Var3 = new pc0();
+                        n2Var.presentFragment(pc0Var3);
+                        pc0Var3.W(3);
+                        pc0Var3.V(2);
                         break;
                     case 23:
-                        oc0 oc0Var4 = new oc0();
-                        n2Var.presentFragment(oc0Var4);
-                        oc0Var4.V(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0 pc0Var4 = new pc0();
+                        n2Var.presentFragment(pc0Var4);
+                        pc0Var4.V(LiteMode.FLAGS_ANIMATED_EMOJI);
                         break;
                     case 24:
                         n2Var.presentFragment(new NotificationsSettingsActivity());
                         break;
                     case 25:
-                        oc0 oc0Var5 = new oc0();
-                        n2Var.presentFragment(oc0Var5);
-                        oc0Var5.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                        oc0Var5.V(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD);
+                        pc0 pc0Var5 = new pc0();
+                        n2Var.presentFragment(pc0Var5);
+                        pc0Var5.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0Var5.V(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD);
                         break;
                     case 26:
-                        oc0 oc0Var6 = new oc0();
-                        n2Var.presentFragment(oc0Var6);
-                        oc0Var6.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                        oc0Var6.V(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS);
+                        pc0 pc0Var6 = new pc0();
+                        n2Var.presentFragment(pc0Var6);
+                        pc0Var6.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0Var6.V(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS);
                         break;
                     case 27:
-                        oc0 oc0Var7 = new oc0();
-                        n2Var.presentFragment(oc0Var7);
-                        oc0Var7.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                        oc0Var7.V(LiteMode.FLAG_ANIMATED_EMOJI_CHAT);
+                        pc0 pc0Var7 = new pc0();
+                        n2Var.presentFragment(pc0Var7);
+                        pc0Var7.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0Var7.V(LiteMode.FLAG_ANIMATED_EMOJI_CHAT);
                         break;
                     case 28:
-                        oc0 oc0Var8 = new oc0();
-                        n2Var.presentFragment(oc0Var8);
-                        oc0Var8.V(LiteMode.FLAGS_CHAT);
+                        pc0 pc0Var8 = new pc0();
+                        n2Var.presentFragment(pc0Var8);
+                        pc0Var8.V(LiteMode.FLAGS_CHAT);
                         break;
                     default:
-                        oc0 oc0Var9 = new oc0();
-                        n2Var.presentFragment(oc0Var9);
-                        oc0Var9.W(LiteMode.FLAGS_CHAT);
-                        oc0Var9.V(32);
+                        pc0 pc0Var9 = new pc0();
+                        n2Var.presentFragment(pc0Var9);
+                        pc0Var9.W(LiteMode.FLAGS_CHAT);
+                        pc0Var9.V(32);
                         break;
                 }
             }
@@ -10672,7 +10672,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                         n2Var.presentFragment(new StickersActivity(5, null));
                         break;
                     case 11:
-                        n2Var.presentFragment(new l31());
+                        n2Var.presentFragment(new m31());
                         break;
                     case 12:
                         n2Var.presentFragment(new FiltersSetupActivity());
@@ -10705,64 +10705,64 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                         n2Var6.showDialog(x0Var5);
                         break;
                     case 18:
-                        n2Var.presentFragment(new oc0());
+                        n2Var.presentFragment(new pc0());
                         break;
                     case 19:
-                        oc0 oc0Var = new oc0();
-                        n2Var.presentFragment(oc0Var);
-                        oc0Var.V(3);
+                        pc0 pc0Var = new pc0();
+                        n2Var.presentFragment(pc0Var);
+                        pc0Var.V(3);
                         break;
                     case 20:
-                        oc0 oc0Var2 = new oc0();
-                        n2Var.presentFragment(oc0Var2);
-                        oc0Var2.W(3);
-                        oc0Var2.V(1);
+                        pc0 pc0Var2 = new pc0();
+                        n2Var.presentFragment(pc0Var2);
+                        pc0Var2.W(3);
+                        pc0Var2.V(1);
                         break;
                     case 21:
                         n2Var.presentFragment(new FiltersSetupActivity());
                         break;
                     case 22:
-                        oc0 oc0Var3 = new oc0();
-                        n2Var.presentFragment(oc0Var3);
-                        oc0Var3.W(3);
-                        oc0Var3.V(2);
+                        pc0 pc0Var3 = new pc0();
+                        n2Var.presentFragment(pc0Var3);
+                        pc0Var3.W(3);
+                        pc0Var3.V(2);
                         break;
                     case 23:
-                        oc0 oc0Var4 = new oc0();
-                        n2Var.presentFragment(oc0Var4);
-                        oc0Var4.V(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0 pc0Var4 = new pc0();
+                        n2Var.presentFragment(pc0Var4);
+                        pc0Var4.V(LiteMode.FLAGS_ANIMATED_EMOJI);
                         break;
                     case 24:
                         n2Var.presentFragment(new NotificationsSettingsActivity());
                         break;
                     case 25:
-                        oc0 oc0Var5 = new oc0();
-                        n2Var.presentFragment(oc0Var5);
-                        oc0Var5.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                        oc0Var5.V(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD);
+                        pc0 pc0Var5 = new pc0();
+                        n2Var.presentFragment(pc0Var5);
+                        pc0Var5.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0Var5.V(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD);
                         break;
                     case 26:
-                        oc0 oc0Var6 = new oc0();
-                        n2Var.presentFragment(oc0Var6);
-                        oc0Var6.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                        oc0Var6.V(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS);
+                        pc0 pc0Var6 = new pc0();
+                        n2Var.presentFragment(pc0Var6);
+                        pc0Var6.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0Var6.V(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS);
                         break;
                     case 27:
-                        oc0 oc0Var7 = new oc0();
-                        n2Var.presentFragment(oc0Var7);
-                        oc0Var7.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                        oc0Var7.V(LiteMode.FLAG_ANIMATED_EMOJI_CHAT);
+                        pc0 pc0Var7 = new pc0();
+                        n2Var.presentFragment(pc0Var7);
+                        pc0Var7.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0Var7.V(LiteMode.FLAG_ANIMATED_EMOJI_CHAT);
                         break;
                     case 28:
-                        oc0 oc0Var8 = new oc0();
-                        n2Var.presentFragment(oc0Var8);
-                        oc0Var8.V(LiteMode.FLAGS_CHAT);
+                        pc0 pc0Var8 = new pc0();
+                        n2Var.presentFragment(pc0Var8);
+                        pc0Var8.V(LiteMode.FLAGS_CHAT);
                         break;
                     default:
-                        oc0 oc0Var9 = new oc0();
-                        n2Var.presentFragment(oc0Var9);
-                        oc0Var9.W(LiteMode.FLAGS_CHAT);
-                        oc0Var9.V(32);
+                        pc0 pc0Var9 = new pc0();
+                        n2Var.presentFragment(pc0Var9);
+                        pc0Var9.W(LiteMode.FLAGS_CHAT);
+                        pc0Var9.V(32);
                         break;
                 }
             }
@@ -10810,7 +10810,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                         n2Var.presentFragment(new StickersActivity(5, null));
                         break;
                     case 11:
-                        n2Var.presentFragment(new l31());
+                        n2Var.presentFragment(new m31());
                         break;
                     case 12:
                         n2Var.presentFragment(new FiltersSetupActivity());
@@ -10843,64 +10843,64 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                         n2Var6.showDialog(x0Var5);
                         break;
                     case 18:
-                        n2Var.presentFragment(new oc0());
+                        n2Var.presentFragment(new pc0());
                         break;
                     case 19:
-                        oc0 oc0Var = new oc0();
-                        n2Var.presentFragment(oc0Var);
-                        oc0Var.V(3);
+                        pc0 pc0Var = new pc0();
+                        n2Var.presentFragment(pc0Var);
+                        pc0Var.V(3);
                         break;
                     case 20:
-                        oc0 oc0Var2 = new oc0();
-                        n2Var.presentFragment(oc0Var2);
-                        oc0Var2.W(3);
-                        oc0Var2.V(1);
+                        pc0 pc0Var2 = new pc0();
+                        n2Var.presentFragment(pc0Var2);
+                        pc0Var2.W(3);
+                        pc0Var2.V(1);
                         break;
                     case 21:
                         n2Var.presentFragment(new FiltersSetupActivity());
                         break;
                     case 22:
-                        oc0 oc0Var3 = new oc0();
-                        n2Var.presentFragment(oc0Var3);
-                        oc0Var3.W(3);
-                        oc0Var3.V(2);
+                        pc0 pc0Var3 = new pc0();
+                        n2Var.presentFragment(pc0Var3);
+                        pc0Var3.W(3);
+                        pc0Var3.V(2);
                         break;
                     case 23:
-                        oc0 oc0Var4 = new oc0();
-                        n2Var.presentFragment(oc0Var4);
-                        oc0Var4.V(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0 pc0Var4 = new pc0();
+                        n2Var.presentFragment(pc0Var4);
+                        pc0Var4.V(LiteMode.FLAGS_ANIMATED_EMOJI);
                         break;
                     case 24:
                         n2Var.presentFragment(new NotificationsSettingsActivity());
                         break;
                     case 25:
-                        oc0 oc0Var5 = new oc0();
-                        n2Var.presentFragment(oc0Var5);
-                        oc0Var5.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                        oc0Var5.V(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD);
+                        pc0 pc0Var5 = new pc0();
+                        n2Var.presentFragment(pc0Var5);
+                        pc0Var5.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0Var5.V(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD);
                         break;
                     case 26:
-                        oc0 oc0Var6 = new oc0();
-                        n2Var.presentFragment(oc0Var6);
-                        oc0Var6.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                        oc0Var6.V(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS);
+                        pc0 pc0Var6 = new pc0();
+                        n2Var.presentFragment(pc0Var6);
+                        pc0Var6.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0Var6.V(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS);
                         break;
                     case 27:
-                        oc0 oc0Var7 = new oc0();
-                        n2Var.presentFragment(oc0Var7);
-                        oc0Var7.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                        oc0Var7.V(LiteMode.FLAG_ANIMATED_EMOJI_CHAT);
+                        pc0 pc0Var7 = new pc0();
+                        n2Var.presentFragment(pc0Var7);
+                        pc0Var7.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0Var7.V(LiteMode.FLAG_ANIMATED_EMOJI_CHAT);
                         break;
                     case 28:
-                        oc0 oc0Var8 = new oc0();
-                        n2Var.presentFragment(oc0Var8);
-                        oc0Var8.V(LiteMode.FLAGS_CHAT);
+                        pc0 pc0Var8 = new pc0();
+                        n2Var.presentFragment(pc0Var8);
+                        pc0Var8.V(LiteMode.FLAGS_CHAT);
                         break;
                     default:
-                        oc0 oc0Var9 = new oc0();
-                        n2Var.presentFragment(oc0Var9);
-                        oc0Var9.W(LiteMode.FLAGS_CHAT);
-                        oc0Var9.V(32);
+                        pc0 pc0Var9 = new pc0();
+                        n2Var.presentFragment(pc0Var9);
+                        pc0Var9.W(LiteMode.FLAGS_CHAT);
+                        pc0Var9.V(32);
                         break;
                 }
             }
@@ -10947,7 +10947,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                         n2Var.presentFragment(new StickersActivity(5, null));
                         break;
                     case 11:
-                        n2Var.presentFragment(new l31());
+                        n2Var.presentFragment(new m31());
                         break;
                     case 12:
                         n2Var.presentFragment(new FiltersSetupActivity());
@@ -10980,64 +10980,64 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                         n2Var6.showDialog(x0Var5);
                         break;
                     case 18:
-                        n2Var.presentFragment(new oc0());
+                        n2Var.presentFragment(new pc0());
                         break;
                     case 19:
-                        oc0 oc0Var = new oc0();
-                        n2Var.presentFragment(oc0Var);
-                        oc0Var.V(3);
+                        pc0 pc0Var = new pc0();
+                        n2Var.presentFragment(pc0Var);
+                        pc0Var.V(3);
                         break;
                     case 20:
-                        oc0 oc0Var2 = new oc0();
-                        n2Var.presentFragment(oc0Var2);
-                        oc0Var2.W(3);
-                        oc0Var2.V(1);
+                        pc0 pc0Var2 = new pc0();
+                        n2Var.presentFragment(pc0Var2);
+                        pc0Var2.W(3);
+                        pc0Var2.V(1);
                         break;
                     case 21:
                         n2Var.presentFragment(new FiltersSetupActivity());
                         break;
                     case 22:
-                        oc0 oc0Var3 = new oc0();
-                        n2Var.presentFragment(oc0Var3);
-                        oc0Var3.W(3);
-                        oc0Var3.V(2);
+                        pc0 pc0Var3 = new pc0();
+                        n2Var.presentFragment(pc0Var3);
+                        pc0Var3.W(3);
+                        pc0Var3.V(2);
                         break;
                     case 23:
-                        oc0 oc0Var4 = new oc0();
-                        n2Var.presentFragment(oc0Var4);
-                        oc0Var4.V(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0 pc0Var4 = new pc0();
+                        n2Var.presentFragment(pc0Var4);
+                        pc0Var4.V(LiteMode.FLAGS_ANIMATED_EMOJI);
                         break;
                     case 24:
                         n2Var.presentFragment(new NotificationsSettingsActivity());
                         break;
                     case 25:
-                        oc0 oc0Var5 = new oc0();
-                        n2Var.presentFragment(oc0Var5);
-                        oc0Var5.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                        oc0Var5.V(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD);
+                        pc0 pc0Var5 = new pc0();
+                        n2Var.presentFragment(pc0Var5);
+                        pc0Var5.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0Var5.V(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD);
                         break;
                     case 26:
-                        oc0 oc0Var6 = new oc0();
-                        n2Var.presentFragment(oc0Var6);
-                        oc0Var6.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                        oc0Var6.V(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS);
+                        pc0 pc0Var6 = new pc0();
+                        n2Var.presentFragment(pc0Var6);
+                        pc0Var6.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0Var6.V(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS);
                         break;
                     case 27:
-                        oc0 oc0Var7 = new oc0();
-                        n2Var.presentFragment(oc0Var7);
-                        oc0Var7.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                        oc0Var7.V(LiteMode.FLAG_ANIMATED_EMOJI_CHAT);
+                        pc0 pc0Var7 = new pc0();
+                        n2Var.presentFragment(pc0Var7);
+                        pc0Var7.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0Var7.V(LiteMode.FLAG_ANIMATED_EMOJI_CHAT);
                         break;
                     case 28:
-                        oc0 oc0Var8 = new oc0();
-                        n2Var.presentFragment(oc0Var8);
-                        oc0Var8.V(LiteMode.FLAGS_CHAT);
+                        pc0 pc0Var8 = new pc0();
+                        n2Var.presentFragment(pc0Var8);
+                        pc0Var8.V(LiteMode.FLAGS_CHAT);
                         break;
                     default:
-                        oc0 oc0Var9 = new oc0();
-                        n2Var.presentFragment(oc0Var9);
-                        oc0Var9.W(LiteMode.FLAGS_CHAT);
-                        oc0Var9.V(32);
+                        pc0 pc0Var9 = new pc0();
+                        n2Var.presentFragment(pc0Var9);
+                        pc0Var9.W(LiteMode.FLAGS_CHAT);
+                        pc0Var9.V(32);
                         break;
                 }
             }
@@ -11084,7 +11084,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                         n2Var.presentFragment(new StickersActivity(5, null));
                         break;
                     case 11:
-                        n2Var.presentFragment(new l31());
+                        n2Var.presentFragment(new m31());
                         break;
                     case 12:
                         n2Var.presentFragment(new FiltersSetupActivity());
@@ -11117,64 +11117,64 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                         n2Var6.showDialog(x0Var5);
                         break;
                     case 18:
-                        n2Var.presentFragment(new oc0());
+                        n2Var.presentFragment(new pc0());
                         break;
                     case 19:
-                        oc0 oc0Var = new oc0();
-                        n2Var.presentFragment(oc0Var);
-                        oc0Var.V(3);
+                        pc0 pc0Var = new pc0();
+                        n2Var.presentFragment(pc0Var);
+                        pc0Var.V(3);
                         break;
                     case 20:
-                        oc0 oc0Var2 = new oc0();
-                        n2Var.presentFragment(oc0Var2);
-                        oc0Var2.W(3);
-                        oc0Var2.V(1);
+                        pc0 pc0Var2 = new pc0();
+                        n2Var.presentFragment(pc0Var2);
+                        pc0Var2.W(3);
+                        pc0Var2.V(1);
                         break;
                     case 21:
                         n2Var.presentFragment(new FiltersSetupActivity());
                         break;
                     case 22:
-                        oc0 oc0Var3 = new oc0();
-                        n2Var.presentFragment(oc0Var3);
-                        oc0Var3.W(3);
-                        oc0Var3.V(2);
+                        pc0 pc0Var3 = new pc0();
+                        n2Var.presentFragment(pc0Var3);
+                        pc0Var3.W(3);
+                        pc0Var3.V(2);
                         break;
                     case 23:
-                        oc0 oc0Var4 = new oc0();
-                        n2Var.presentFragment(oc0Var4);
-                        oc0Var4.V(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0 pc0Var4 = new pc0();
+                        n2Var.presentFragment(pc0Var4);
+                        pc0Var4.V(LiteMode.FLAGS_ANIMATED_EMOJI);
                         break;
                     case 24:
                         n2Var.presentFragment(new NotificationsSettingsActivity());
                         break;
                     case 25:
-                        oc0 oc0Var5 = new oc0();
-                        n2Var.presentFragment(oc0Var5);
-                        oc0Var5.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                        oc0Var5.V(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD);
+                        pc0 pc0Var5 = new pc0();
+                        n2Var.presentFragment(pc0Var5);
+                        pc0Var5.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0Var5.V(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD);
                         break;
                     case 26:
-                        oc0 oc0Var6 = new oc0();
-                        n2Var.presentFragment(oc0Var6);
-                        oc0Var6.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                        oc0Var6.V(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS);
+                        pc0 pc0Var6 = new pc0();
+                        n2Var.presentFragment(pc0Var6);
+                        pc0Var6.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0Var6.V(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS);
                         break;
                     case 27:
-                        oc0 oc0Var7 = new oc0();
-                        n2Var.presentFragment(oc0Var7);
-                        oc0Var7.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                        oc0Var7.V(LiteMode.FLAG_ANIMATED_EMOJI_CHAT);
+                        pc0 pc0Var7 = new pc0();
+                        n2Var.presentFragment(pc0Var7);
+                        pc0Var7.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0Var7.V(LiteMode.FLAG_ANIMATED_EMOJI_CHAT);
                         break;
                     case 28:
-                        oc0 oc0Var8 = new oc0();
-                        n2Var.presentFragment(oc0Var8);
-                        oc0Var8.V(LiteMode.FLAGS_CHAT);
+                        pc0 pc0Var8 = new pc0();
+                        n2Var.presentFragment(pc0Var8);
+                        pc0Var8.V(LiteMode.FLAGS_CHAT);
                         break;
                     default:
-                        oc0 oc0Var9 = new oc0();
-                        n2Var.presentFragment(oc0Var9);
-                        oc0Var9.W(LiteMode.FLAGS_CHAT);
-                        oc0Var9.V(32);
+                        pc0 pc0Var9 = new pc0();
+                        n2Var.presentFragment(pc0Var9);
+                        pc0Var9.W(LiteMode.FLAGS_CHAT);
+                        pc0Var9.V(32);
                         break;
                 }
             }
@@ -11221,7 +11221,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                         n2Var.presentFragment(new StickersActivity(5, null));
                         break;
                     case 11:
-                        n2Var.presentFragment(new l31());
+                        n2Var.presentFragment(new m31());
                         break;
                     case 12:
                         n2Var.presentFragment(new FiltersSetupActivity());
@@ -11254,64 +11254,64 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                         n2Var6.showDialog(x0Var5);
                         break;
                     case 18:
-                        n2Var.presentFragment(new oc0());
+                        n2Var.presentFragment(new pc0());
                         break;
                     case 19:
-                        oc0 oc0Var = new oc0();
-                        n2Var.presentFragment(oc0Var);
-                        oc0Var.V(3);
+                        pc0 pc0Var = new pc0();
+                        n2Var.presentFragment(pc0Var);
+                        pc0Var.V(3);
                         break;
                     case 20:
-                        oc0 oc0Var2 = new oc0();
-                        n2Var.presentFragment(oc0Var2);
-                        oc0Var2.W(3);
-                        oc0Var2.V(1);
+                        pc0 pc0Var2 = new pc0();
+                        n2Var.presentFragment(pc0Var2);
+                        pc0Var2.W(3);
+                        pc0Var2.V(1);
                         break;
                     case 21:
                         n2Var.presentFragment(new FiltersSetupActivity());
                         break;
                     case 22:
-                        oc0 oc0Var3 = new oc0();
-                        n2Var.presentFragment(oc0Var3);
-                        oc0Var3.W(3);
-                        oc0Var3.V(2);
+                        pc0 pc0Var3 = new pc0();
+                        n2Var.presentFragment(pc0Var3);
+                        pc0Var3.W(3);
+                        pc0Var3.V(2);
                         break;
                     case 23:
-                        oc0 oc0Var4 = new oc0();
-                        n2Var.presentFragment(oc0Var4);
-                        oc0Var4.V(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0 pc0Var4 = new pc0();
+                        n2Var.presentFragment(pc0Var4);
+                        pc0Var4.V(LiteMode.FLAGS_ANIMATED_EMOJI);
                         break;
                     case 24:
                         n2Var.presentFragment(new NotificationsSettingsActivity());
                         break;
                     case 25:
-                        oc0 oc0Var5 = new oc0();
-                        n2Var.presentFragment(oc0Var5);
-                        oc0Var5.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                        oc0Var5.V(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD);
+                        pc0 pc0Var5 = new pc0();
+                        n2Var.presentFragment(pc0Var5);
+                        pc0Var5.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0Var5.V(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD);
                         break;
                     case 26:
-                        oc0 oc0Var6 = new oc0();
-                        n2Var.presentFragment(oc0Var6);
-                        oc0Var6.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                        oc0Var6.V(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS);
+                        pc0 pc0Var6 = new pc0();
+                        n2Var.presentFragment(pc0Var6);
+                        pc0Var6.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0Var6.V(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS);
                         break;
                     case 27:
-                        oc0 oc0Var7 = new oc0();
-                        n2Var.presentFragment(oc0Var7);
-                        oc0Var7.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                        oc0Var7.V(LiteMode.FLAG_ANIMATED_EMOJI_CHAT);
+                        pc0 pc0Var7 = new pc0();
+                        n2Var.presentFragment(pc0Var7);
+                        pc0Var7.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0Var7.V(LiteMode.FLAG_ANIMATED_EMOJI_CHAT);
                         break;
                     case 28:
-                        oc0 oc0Var8 = new oc0();
-                        n2Var.presentFragment(oc0Var8);
-                        oc0Var8.V(LiteMode.FLAGS_CHAT);
+                        pc0 pc0Var8 = new pc0();
+                        n2Var.presentFragment(pc0Var8);
+                        pc0Var8.V(LiteMode.FLAGS_CHAT);
                         break;
                     default:
-                        oc0 oc0Var9 = new oc0();
-                        n2Var.presentFragment(oc0Var9);
-                        oc0Var9.W(LiteMode.FLAGS_CHAT);
-                        oc0Var9.V(32);
+                        pc0 pc0Var9 = new pc0();
+                        n2Var.presentFragment(pc0Var9);
+                        pc0Var9.W(LiteMode.FLAGS_CHAT);
+                        pc0Var9.V(32);
                         break;
                 }
             }
@@ -11359,7 +11359,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                         n2Var.presentFragment(new StickersActivity(5, null));
                         break;
                     case 11:
-                        n2Var.presentFragment(new l31());
+                        n2Var.presentFragment(new m31());
                         break;
                     case 12:
                         n2Var.presentFragment(new FiltersSetupActivity());
@@ -11392,64 +11392,64 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                         n2Var6.showDialog(x0Var5);
                         break;
                     case 18:
-                        n2Var.presentFragment(new oc0());
+                        n2Var.presentFragment(new pc0());
                         break;
                     case 19:
-                        oc0 oc0Var = new oc0();
-                        n2Var.presentFragment(oc0Var);
-                        oc0Var.V(3);
+                        pc0 pc0Var = new pc0();
+                        n2Var.presentFragment(pc0Var);
+                        pc0Var.V(3);
                         break;
                     case 20:
-                        oc0 oc0Var2 = new oc0();
-                        n2Var.presentFragment(oc0Var2);
-                        oc0Var2.W(3);
-                        oc0Var2.V(1);
+                        pc0 pc0Var2 = new pc0();
+                        n2Var.presentFragment(pc0Var2);
+                        pc0Var2.W(3);
+                        pc0Var2.V(1);
                         break;
                     case 21:
                         n2Var.presentFragment(new FiltersSetupActivity());
                         break;
                     case 22:
-                        oc0 oc0Var3 = new oc0();
-                        n2Var.presentFragment(oc0Var3);
-                        oc0Var3.W(3);
-                        oc0Var3.V(2);
+                        pc0 pc0Var3 = new pc0();
+                        n2Var.presentFragment(pc0Var3);
+                        pc0Var3.W(3);
+                        pc0Var3.V(2);
                         break;
                     case 23:
-                        oc0 oc0Var4 = new oc0();
-                        n2Var.presentFragment(oc0Var4);
-                        oc0Var4.V(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0 pc0Var4 = new pc0();
+                        n2Var.presentFragment(pc0Var4);
+                        pc0Var4.V(LiteMode.FLAGS_ANIMATED_EMOJI);
                         break;
                     case 24:
                         n2Var.presentFragment(new NotificationsSettingsActivity());
                         break;
                     case 25:
-                        oc0 oc0Var5 = new oc0();
-                        n2Var.presentFragment(oc0Var5);
-                        oc0Var5.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                        oc0Var5.V(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD);
+                        pc0 pc0Var5 = new pc0();
+                        n2Var.presentFragment(pc0Var5);
+                        pc0Var5.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0Var5.V(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD);
                         break;
                     case 26:
-                        oc0 oc0Var6 = new oc0();
-                        n2Var.presentFragment(oc0Var6);
-                        oc0Var6.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                        oc0Var6.V(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS);
+                        pc0 pc0Var6 = new pc0();
+                        n2Var.presentFragment(pc0Var6);
+                        pc0Var6.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0Var6.V(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS);
                         break;
                     case 27:
-                        oc0 oc0Var7 = new oc0();
-                        n2Var.presentFragment(oc0Var7);
-                        oc0Var7.W(LiteMode.FLAGS_ANIMATED_EMOJI);
-                        oc0Var7.V(LiteMode.FLAG_ANIMATED_EMOJI_CHAT);
+                        pc0 pc0Var7 = new pc0();
+                        n2Var.presentFragment(pc0Var7);
+                        pc0Var7.W(LiteMode.FLAGS_ANIMATED_EMOJI);
+                        pc0Var7.V(LiteMode.FLAG_ANIMATED_EMOJI_CHAT);
                         break;
                     case 28:
-                        oc0 oc0Var8 = new oc0();
-                        n2Var.presentFragment(oc0Var8);
-                        oc0Var8.V(LiteMode.FLAGS_CHAT);
+                        pc0 pc0Var8 = new pc0();
+                        n2Var.presentFragment(pc0Var8);
+                        pc0Var8.V(LiteMode.FLAGS_CHAT);
                         break;
                     default:
-                        oc0 oc0Var9 = new oc0();
-                        n2Var.presentFragment(oc0Var9);
-                        oc0Var9.W(LiteMode.FLAGS_CHAT);
-                        oc0Var9.V(32);
+                        pc0 pc0Var9 = new pc0();
+                        n2Var.presentFragment(pc0Var9);
+                        pc0Var9.W(LiteMode.FLAGS_CHAT);
+                        pc0Var9.V(32);
                         break;
                 }
             }
@@ -11461,60 +11461,60 @@ public class j11 extends org.telegram.ui.Components.vl0 {
             public final void run() {
                 switch (i103) {
                     case 0:
-                        oc0 oc0Var = new oc0();
-                        n2Var.presentFragment(oc0Var);
-                        oc0Var.W(LiteMode.FLAGS_CHAT);
-                        oc0Var.V(64);
+                        pc0 pc0Var = new pc0();
+                        n2Var.presentFragment(pc0Var);
+                        pc0Var.W(LiteMode.FLAGS_CHAT);
+                        pc0Var.V(64);
                         break;
                     case 1:
-                        oc0 oc0Var2 = new oc0();
-                        n2Var.presentFragment(oc0Var2);
-                        oc0Var2.W(LiteMode.FLAGS_CHAT);
-                        oc0Var2.V(128);
+                        pc0 pc0Var2 = new pc0();
+                        n2Var.presentFragment(pc0Var2);
+                        pc0Var2.W(LiteMode.FLAGS_CHAT);
+                        pc0Var2.V(128);
                         break;
                     case 2:
                         n2Var.presentFragment(new PremiumPreviewFragment(0, "settings"));
                         break;
                     case 3:
-                        oc0 oc0Var3 = new oc0();
-                        n2Var.presentFragment(oc0Var3);
-                        oc0Var3.W(LiteMode.FLAGS_CHAT);
-                        oc0Var3.V(256);
+                        pc0 pc0Var3 = new pc0();
+                        n2Var.presentFragment(pc0Var3);
+                        pc0Var3.W(LiteMode.FLAGS_CHAT);
+                        pc0Var3.V(256);
                         break;
                     case 4:
-                        oc0 oc0Var4 = new oc0();
-                        n2Var.presentFragment(oc0Var4);
-                        oc0Var4.W(LiteMode.FLAGS_CHAT);
-                        oc0Var4.V(32768);
+                        pc0 pc0Var4 = new pc0();
+                        n2Var.presentFragment(pc0Var4);
+                        pc0Var4.W(LiteMode.FLAGS_CHAT);
+                        pc0Var4.V(32768);
                         break;
                     case 5:
-                        oc0 oc0Var5 = new oc0();
-                        n2Var.presentFragment(oc0Var5);
-                        oc0Var5.V(512);
+                        pc0 pc0Var5 = new pc0();
+                        n2Var.presentFragment(pc0Var5);
+                        pc0Var5.V(512);
                         break;
                     case 6:
                         n2Var.presentFragment(new NotificationsSettingsActivity());
                         break;
                     case 7:
-                        oc0 oc0Var6 = new oc0();
-                        n2Var.presentFragment(oc0Var6);
-                        oc0Var6.V(1024);
+                        pc0 pc0Var6 = new pc0();
+                        n2Var.presentFragment(pc0Var6);
+                        pc0Var6.V(1024);
                         break;
                     case 8:
-                        oc0 oc0Var7 = new oc0();
-                        n2Var.presentFragment(oc0Var7);
-                        oc0Var7.V(2048);
+                        pc0 pc0Var7 = new pc0();
+                        n2Var.presentFragment(pc0Var7);
+                        pc0Var7.V(2048);
                         break;
                     case 9:
-                        oc0 oc0Var8 = new oc0();
-                        n2Var.presentFragment(oc0Var8);
+                        pc0 pc0Var8 = new pc0();
+                        n2Var.presentFragment(pc0Var8);
                         int i112 = 0;
                         while (true) {
-                            ArrayList arrayList = oc0Var8.s;
+                            ArrayList arrayList = pc0Var8.s;
                             if (i112 >= arrayList.size()) {
                                 break;
-                            } else if (((ic0) arrayList.get(i112)).f == 1) {
-                                oc0Var8.b.f1(new i2.s(oc0Var8, i112, 12), 700, true);
+                            } else if (((jc0) arrayList.get(i112)).f == 1) {
+                                pc0Var8.b.f1(new i2.s(pc0Var8, i112, 12), 700, true);
                                 break;
                             } else {
                                 i112++;
@@ -11537,7 +11537,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                         break;
                     case 14:
                         org.telegram.ui.ActionBar.n2 n2Var3 = n2Var;
-                        n2Var3.showDialog(org.telegram.ui.Components.e5.U(n2Var3, null));
+                        n2Var3.showDialog(org.telegram.ui.Components.d5.U(n2Var3, null));
                         break;
                     case 15:
                         nf.f.s(n2Var.getParentActivity(), LocaleController.getString(R.string.TelegramFaqUrl));
@@ -11598,60 +11598,60 @@ public class j11 extends org.telegram.ui.Components.vl0 {
             public final void run() {
                 switch (i104) {
                     case 0:
-                        oc0 oc0Var = new oc0();
-                        n2Var.presentFragment(oc0Var);
-                        oc0Var.W(LiteMode.FLAGS_CHAT);
-                        oc0Var.V(64);
+                        pc0 pc0Var = new pc0();
+                        n2Var.presentFragment(pc0Var);
+                        pc0Var.W(LiteMode.FLAGS_CHAT);
+                        pc0Var.V(64);
                         break;
                     case 1:
-                        oc0 oc0Var2 = new oc0();
-                        n2Var.presentFragment(oc0Var2);
-                        oc0Var2.W(LiteMode.FLAGS_CHAT);
-                        oc0Var2.V(128);
+                        pc0 pc0Var2 = new pc0();
+                        n2Var.presentFragment(pc0Var2);
+                        pc0Var2.W(LiteMode.FLAGS_CHAT);
+                        pc0Var2.V(128);
                         break;
                     case 2:
                         n2Var.presentFragment(new PremiumPreviewFragment(0, "settings"));
                         break;
                     case 3:
-                        oc0 oc0Var3 = new oc0();
-                        n2Var.presentFragment(oc0Var3);
-                        oc0Var3.W(LiteMode.FLAGS_CHAT);
-                        oc0Var3.V(256);
+                        pc0 pc0Var3 = new pc0();
+                        n2Var.presentFragment(pc0Var3);
+                        pc0Var3.W(LiteMode.FLAGS_CHAT);
+                        pc0Var3.V(256);
                         break;
                     case 4:
-                        oc0 oc0Var4 = new oc0();
-                        n2Var.presentFragment(oc0Var4);
-                        oc0Var4.W(LiteMode.FLAGS_CHAT);
-                        oc0Var4.V(32768);
+                        pc0 pc0Var4 = new pc0();
+                        n2Var.presentFragment(pc0Var4);
+                        pc0Var4.W(LiteMode.FLAGS_CHAT);
+                        pc0Var4.V(32768);
                         break;
                     case 5:
-                        oc0 oc0Var5 = new oc0();
-                        n2Var.presentFragment(oc0Var5);
-                        oc0Var5.V(512);
+                        pc0 pc0Var5 = new pc0();
+                        n2Var.presentFragment(pc0Var5);
+                        pc0Var5.V(512);
                         break;
                     case 6:
                         n2Var.presentFragment(new NotificationsSettingsActivity());
                         break;
                     case 7:
-                        oc0 oc0Var6 = new oc0();
-                        n2Var.presentFragment(oc0Var6);
-                        oc0Var6.V(1024);
+                        pc0 pc0Var6 = new pc0();
+                        n2Var.presentFragment(pc0Var6);
+                        pc0Var6.V(1024);
                         break;
                     case 8:
-                        oc0 oc0Var7 = new oc0();
-                        n2Var.presentFragment(oc0Var7);
-                        oc0Var7.V(2048);
+                        pc0 pc0Var7 = new pc0();
+                        n2Var.presentFragment(pc0Var7);
+                        pc0Var7.V(2048);
                         break;
                     case 9:
-                        oc0 oc0Var8 = new oc0();
-                        n2Var.presentFragment(oc0Var8);
+                        pc0 pc0Var8 = new pc0();
+                        n2Var.presentFragment(pc0Var8);
                         int i112 = 0;
                         while (true) {
-                            ArrayList arrayList = oc0Var8.s;
+                            ArrayList arrayList = pc0Var8.s;
                             if (i112 >= arrayList.size()) {
                                 break;
-                            } else if (((ic0) arrayList.get(i112)).f == 1) {
-                                oc0Var8.b.f1(new i2.s(oc0Var8, i112, 12), 700, true);
+                            } else if (((jc0) arrayList.get(i112)).f == 1) {
+                                pc0Var8.b.f1(new i2.s(pc0Var8, i112, 12), 700, true);
                                 break;
                             } else {
                                 i112++;
@@ -11674,7 +11674,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                         break;
                     case 14:
                         org.telegram.ui.ActionBar.n2 n2Var3 = n2Var;
-                        n2Var3.showDialog(org.telegram.ui.Components.e5.U(n2Var3, null));
+                        n2Var3.showDialog(org.telegram.ui.Components.d5.U(n2Var3, null));
                         break;
                     case 15:
                         nf.f.s(n2Var.getParentActivity(), LocaleController.getString(R.string.TelegramFaqUrl));
@@ -11736,60 +11736,60 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                 public final void run() {
                     switch (i105) {
                         case 0:
-                            oc0 oc0Var = new oc0();
-                            n2Var.presentFragment(oc0Var);
-                            oc0Var.W(LiteMode.FLAGS_CHAT);
-                            oc0Var.V(64);
+                            pc0 pc0Var = new pc0();
+                            n2Var.presentFragment(pc0Var);
+                            pc0Var.W(LiteMode.FLAGS_CHAT);
+                            pc0Var.V(64);
                             break;
                         case 1:
-                            oc0 oc0Var2 = new oc0();
-                            n2Var.presentFragment(oc0Var2);
-                            oc0Var2.W(LiteMode.FLAGS_CHAT);
-                            oc0Var2.V(128);
+                            pc0 pc0Var2 = new pc0();
+                            n2Var.presentFragment(pc0Var2);
+                            pc0Var2.W(LiteMode.FLAGS_CHAT);
+                            pc0Var2.V(128);
                             break;
                         case 2:
                             n2Var.presentFragment(new PremiumPreviewFragment(0, "settings"));
                             break;
                         case 3:
-                            oc0 oc0Var3 = new oc0();
-                            n2Var.presentFragment(oc0Var3);
-                            oc0Var3.W(LiteMode.FLAGS_CHAT);
-                            oc0Var3.V(256);
+                            pc0 pc0Var3 = new pc0();
+                            n2Var.presentFragment(pc0Var3);
+                            pc0Var3.W(LiteMode.FLAGS_CHAT);
+                            pc0Var3.V(256);
                             break;
                         case 4:
-                            oc0 oc0Var4 = new oc0();
-                            n2Var.presentFragment(oc0Var4);
-                            oc0Var4.W(LiteMode.FLAGS_CHAT);
-                            oc0Var4.V(32768);
+                            pc0 pc0Var4 = new pc0();
+                            n2Var.presentFragment(pc0Var4);
+                            pc0Var4.W(LiteMode.FLAGS_CHAT);
+                            pc0Var4.V(32768);
                             break;
                         case 5:
-                            oc0 oc0Var5 = new oc0();
-                            n2Var.presentFragment(oc0Var5);
-                            oc0Var5.V(512);
+                            pc0 pc0Var5 = new pc0();
+                            n2Var.presentFragment(pc0Var5);
+                            pc0Var5.V(512);
                             break;
                         case 6:
                             n2Var.presentFragment(new NotificationsSettingsActivity());
                             break;
                         case 7:
-                            oc0 oc0Var6 = new oc0();
-                            n2Var.presentFragment(oc0Var6);
-                            oc0Var6.V(1024);
+                            pc0 pc0Var6 = new pc0();
+                            n2Var.presentFragment(pc0Var6);
+                            pc0Var6.V(1024);
                             break;
                         case 8:
-                            oc0 oc0Var7 = new oc0();
-                            n2Var.presentFragment(oc0Var7);
-                            oc0Var7.V(2048);
+                            pc0 pc0Var7 = new pc0();
+                            n2Var.presentFragment(pc0Var7);
+                            pc0Var7.V(2048);
                             break;
                         case 9:
-                            oc0 oc0Var8 = new oc0();
-                            n2Var.presentFragment(oc0Var8);
+                            pc0 pc0Var8 = new pc0();
+                            n2Var.presentFragment(pc0Var8);
                             int i112 = 0;
                             while (true) {
-                                ArrayList arrayList = oc0Var8.s;
+                                ArrayList arrayList = pc0Var8.s;
                                 if (i112 >= arrayList.size()) {
                                     break;
-                                } else if (((ic0) arrayList.get(i112)).f == 1) {
-                                    oc0Var8.b.f1(new i2.s(oc0Var8, i112, 12), 700, true);
+                                } else if (((jc0) arrayList.get(i112)).f == 1) {
+                                    pc0Var8.b.f1(new i2.s(pc0Var8, i112, 12), 700, true);
                                     break;
                                 } else {
                                     i112++;
@@ -11812,7 +11812,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                             break;
                         case 14:
                             org.telegram.ui.ActionBar.n2 n2Var3 = n2Var;
-                            n2Var3.showDialog(org.telegram.ui.Components.e5.U(n2Var3, null));
+                            n2Var3.showDialog(org.telegram.ui.Components.d5.U(n2Var3, null));
                             break;
                         case 15:
                             nf.f.s(n2Var.getParentActivity(), LocaleController.getString(R.string.TelegramFaqUrl));
@@ -11876,60 +11876,60 @@ public class j11 extends org.telegram.ui.Components.vl0 {
             public final void run() {
                 switch (i106) {
                     case 0:
-                        oc0 oc0Var = new oc0();
-                        n2Var.presentFragment(oc0Var);
-                        oc0Var.W(LiteMode.FLAGS_CHAT);
-                        oc0Var.V(64);
+                        pc0 pc0Var = new pc0();
+                        n2Var.presentFragment(pc0Var);
+                        pc0Var.W(LiteMode.FLAGS_CHAT);
+                        pc0Var.V(64);
                         break;
                     case 1:
-                        oc0 oc0Var2 = new oc0();
-                        n2Var.presentFragment(oc0Var2);
-                        oc0Var2.W(LiteMode.FLAGS_CHAT);
-                        oc0Var2.V(128);
+                        pc0 pc0Var2 = new pc0();
+                        n2Var.presentFragment(pc0Var2);
+                        pc0Var2.W(LiteMode.FLAGS_CHAT);
+                        pc0Var2.V(128);
                         break;
                     case 2:
                         n2Var.presentFragment(new PremiumPreviewFragment(0, "settings"));
                         break;
                     case 3:
-                        oc0 oc0Var3 = new oc0();
-                        n2Var.presentFragment(oc0Var3);
-                        oc0Var3.W(LiteMode.FLAGS_CHAT);
-                        oc0Var3.V(256);
+                        pc0 pc0Var3 = new pc0();
+                        n2Var.presentFragment(pc0Var3);
+                        pc0Var3.W(LiteMode.FLAGS_CHAT);
+                        pc0Var3.V(256);
                         break;
                     case 4:
-                        oc0 oc0Var4 = new oc0();
-                        n2Var.presentFragment(oc0Var4);
-                        oc0Var4.W(LiteMode.FLAGS_CHAT);
-                        oc0Var4.V(32768);
+                        pc0 pc0Var4 = new pc0();
+                        n2Var.presentFragment(pc0Var4);
+                        pc0Var4.W(LiteMode.FLAGS_CHAT);
+                        pc0Var4.V(32768);
                         break;
                     case 5:
-                        oc0 oc0Var5 = new oc0();
-                        n2Var.presentFragment(oc0Var5);
-                        oc0Var5.V(512);
+                        pc0 pc0Var5 = new pc0();
+                        n2Var.presentFragment(pc0Var5);
+                        pc0Var5.V(512);
                         break;
                     case 6:
                         n2Var.presentFragment(new NotificationsSettingsActivity());
                         break;
                     case 7:
-                        oc0 oc0Var6 = new oc0();
-                        n2Var.presentFragment(oc0Var6);
-                        oc0Var6.V(1024);
+                        pc0 pc0Var6 = new pc0();
+                        n2Var.presentFragment(pc0Var6);
+                        pc0Var6.V(1024);
                         break;
                     case 8:
-                        oc0 oc0Var7 = new oc0();
-                        n2Var.presentFragment(oc0Var7);
-                        oc0Var7.V(2048);
+                        pc0 pc0Var7 = new pc0();
+                        n2Var.presentFragment(pc0Var7);
+                        pc0Var7.V(2048);
                         break;
                     case 9:
-                        oc0 oc0Var8 = new oc0();
-                        n2Var.presentFragment(oc0Var8);
+                        pc0 pc0Var8 = new pc0();
+                        n2Var.presentFragment(pc0Var8);
                         int i112 = 0;
                         while (true) {
-                            ArrayList arrayList = oc0Var8.s;
+                            ArrayList arrayList = pc0Var8.s;
                             if (i112 >= arrayList.size()) {
                                 break;
-                            } else if (((ic0) arrayList.get(i112)).f == 1) {
-                                oc0Var8.b.f1(new i2.s(oc0Var8, i112, 12), 700, true);
+                            } else if (((jc0) arrayList.get(i112)).f == 1) {
+                                pc0Var8.b.f1(new i2.s(pc0Var8, i112, 12), 700, true);
                                 break;
                             } else {
                                 i112++;
@@ -11952,7 +11952,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                         break;
                     case 14:
                         org.telegram.ui.ActionBar.n2 n2Var3 = n2Var;
-                        n2Var3.showDialog(org.telegram.ui.Components.e5.U(n2Var3, null));
+                        n2Var3.showDialog(org.telegram.ui.Components.d5.U(n2Var3, null));
                         break;
                     case 15:
                         nf.f.s(n2Var.getParentActivity(), LocaleController.getString(R.string.TelegramFaqUrl));
@@ -12013,60 +12013,60 @@ public class j11 extends org.telegram.ui.Components.vl0 {
             public final void run() {
                 switch (i107) {
                     case 0:
-                        oc0 oc0Var = new oc0();
-                        n2Var.presentFragment(oc0Var);
-                        oc0Var.W(LiteMode.FLAGS_CHAT);
-                        oc0Var.V(64);
+                        pc0 pc0Var = new pc0();
+                        n2Var.presentFragment(pc0Var);
+                        pc0Var.W(LiteMode.FLAGS_CHAT);
+                        pc0Var.V(64);
                         break;
                     case 1:
-                        oc0 oc0Var2 = new oc0();
-                        n2Var.presentFragment(oc0Var2);
-                        oc0Var2.W(LiteMode.FLAGS_CHAT);
-                        oc0Var2.V(128);
+                        pc0 pc0Var2 = new pc0();
+                        n2Var.presentFragment(pc0Var2);
+                        pc0Var2.W(LiteMode.FLAGS_CHAT);
+                        pc0Var2.V(128);
                         break;
                     case 2:
                         n2Var.presentFragment(new PremiumPreviewFragment(0, "settings"));
                         break;
                     case 3:
-                        oc0 oc0Var3 = new oc0();
-                        n2Var.presentFragment(oc0Var3);
-                        oc0Var3.W(LiteMode.FLAGS_CHAT);
-                        oc0Var3.V(256);
+                        pc0 pc0Var3 = new pc0();
+                        n2Var.presentFragment(pc0Var3);
+                        pc0Var3.W(LiteMode.FLAGS_CHAT);
+                        pc0Var3.V(256);
                         break;
                     case 4:
-                        oc0 oc0Var4 = new oc0();
-                        n2Var.presentFragment(oc0Var4);
-                        oc0Var4.W(LiteMode.FLAGS_CHAT);
-                        oc0Var4.V(32768);
+                        pc0 pc0Var4 = new pc0();
+                        n2Var.presentFragment(pc0Var4);
+                        pc0Var4.W(LiteMode.FLAGS_CHAT);
+                        pc0Var4.V(32768);
                         break;
                     case 5:
-                        oc0 oc0Var5 = new oc0();
-                        n2Var.presentFragment(oc0Var5);
-                        oc0Var5.V(512);
+                        pc0 pc0Var5 = new pc0();
+                        n2Var.presentFragment(pc0Var5);
+                        pc0Var5.V(512);
                         break;
                     case 6:
                         n2Var.presentFragment(new NotificationsSettingsActivity());
                         break;
                     case 7:
-                        oc0 oc0Var6 = new oc0();
-                        n2Var.presentFragment(oc0Var6);
-                        oc0Var6.V(1024);
+                        pc0 pc0Var6 = new pc0();
+                        n2Var.presentFragment(pc0Var6);
+                        pc0Var6.V(1024);
                         break;
                     case 8:
-                        oc0 oc0Var7 = new oc0();
-                        n2Var.presentFragment(oc0Var7);
-                        oc0Var7.V(2048);
+                        pc0 pc0Var7 = new pc0();
+                        n2Var.presentFragment(pc0Var7);
+                        pc0Var7.V(2048);
                         break;
                     case 9:
-                        oc0 oc0Var8 = new oc0();
-                        n2Var.presentFragment(oc0Var8);
+                        pc0 pc0Var8 = new pc0();
+                        n2Var.presentFragment(pc0Var8);
                         int i112 = 0;
                         while (true) {
-                            ArrayList arrayList = oc0Var8.s;
+                            ArrayList arrayList = pc0Var8.s;
                             if (i112 >= arrayList.size()) {
                                 break;
-                            } else if (((ic0) arrayList.get(i112)).f == 1) {
-                                oc0Var8.b.f1(new i2.s(oc0Var8, i112, 12), 700, true);
+                            } else if (((jc0) arrayList.get(i112)).f == 1) {
+                                pc0Var8.b.f1(new i2.s(pc0Var8, i112, 12), 700, true);
                                 break;
                             } else {
                                 i112++;
@@ -12089,7 +12089,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                         break;
                     case 14:
                         org.telegram.ui.ActionBar.n2 n2Var3 = n2Var;
-                        n2Var3.showDialog(org.telegram.ui.Components.e5.U(n2Var3, null));
+                        n2Var3.showDialog(org.telegram.ui.Components.d5.U(n2Var3, null));
                         break;
                     case 15:
                         nf.f.s(n2Var.getParentActivity(), LocaleController.getString(R.string.TelegramFaqUrl));
@@ -12151,60 +12151,60 @@ public class j11 extends org.telegram.ui.Components.vl0 {
             public final void run() {
                 switch (i108) {
                     case 0:
-                        oc0 oc0Var = new oc0();
-                        n2Var.presentFragment(oc0Var);
-                        oc0Var.W(LiteMode.FLAGS_CHAT);
-                        oc0Var.V(64);
+                        pc0 pc0Var = new pc0();
+                        n2Var.presentFragment(pc0Var);
+                        pc0Var.W(LiteMode.FLAGS_CHAT);
+                        pc0Var.V(64);
                         break;
                     case 1:
-                        oc0 oc0Var2 = new oc0();
-                        n2Var.presentFragment(oc0Var2);
-                        oc0Var2.W(LiteMode.FLAGS_CHAT);
-                        oc0Var2.V(128);
+                        pc0 pc0Var2 = new pc0();
+                        n2Var.presentFragment(pc0Var2);
+                        pc0Var2.W(LiteMode.FLAGS_CHAT);
+                        pc0Var2.V(128);
                         break;
                     case 2:
                         n2Var.presentFragment(new PremiumPreviewFragment(0, "settings"));
                         break;
                     case 3:
-                        oc0 oc0Var3 = new oc0();
-                        n2Var.presentFragment(oc0Var3);
-                        oc0Var3.W(LiteMode.FLAGS_CHAT);
-                        oc0Var3.V(256);
+                        pc0 pc0Var3 = new pc0();
+                        n2Var.presentFragment(pc0Var3);
+                        pc0Var3.W(LiteMode.FLAGS_CHAT);
+                        pc0Var3.V(256);
                         break;
                     case 4:
-                        oc0 oc0Var4 = new oc0();
-                        n2Var.presentFragment(oc0Var4);
-                        oc0Var4.W(LiteMode.FLAGS_CHAT);
-                        oc0Var4.V(32768);
+                        pc0 pc0Var4 = new pc0();
+                        n2Var.presentFragment(pc0Var4);
+                        pc0Var4.W(LiteMode.FLAGS_CHAT);
+                        pc0Var4.V(32768);
                         break;
                     case 5:
-                        oc0 oc0Var5 = new oc0();
-                        n2Var.presentFragment(oc0Var5);
-                        oc0Var5.V(512);
+                        pc0 pc0Var5 = new pc0();
+                        n2Var.presentFragment(pc0Var5);
+                        pc0Var5.V(512);
                         break;
                     case 6:
                         n2Var.presentFragment(new NotificationsSettingsActivity());
                         break;
                     case 7:
-                        oc0 oc0Var6 = new oc0();
-                        n2Var.presentFragment(oc0Var6);
-                        oc0Var6.V(1024);
+                        pc0 pc0Var6 = new pc0();
+                        n2Var.presentFragment(pc0Var6);
+                        pc0Var6.V(1024);
                         break;
                     case 8:
-                        oc0 oc0Var7 = new oc0();
-                        n2Var.presentFragment(oc0Var7);
-                        oc0Var7.V(2048);
+                        pc0 pc0Var7 = new pc0();
+                        n2Var.presentFragment(pc0Var7);
+                        pc0Var7.V(2048);
                         break;
                     case 9:
-                        oc0 oc0Var8 = new oc0();
-                        n2Var.presentFragment(oc0Var8);
+                        pc0 pc0Var8 = new pc0();
+                        n2Var.presentFragment(pc0Var8);
                         int i112 = 0;
                         while (true) {
-                            ArrayList arrayList = oc0Var8.s;
+                            ArrayList arrayList = pc0Var8.s;
                             if (i112 >= arrayList.size()) {
                                 break;
-                            } else if (((ic0) arrayList.get(i112)).f == 1) {
-                                oc0Var8.b.f1(new i2.s(oc0Var8, i112, 12), 700, true);
+                            } else if (((jc0) arrayList.get(i112)).f == 1) {
+                                pc0Var8.b.f1(new i2.s(pc0Var8, i112, 12), 700, true);
                                 break;
                             } else {
                                 i112++;
@@ -12227,7 +12227,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                         break;
                     case 14:
                         org.telegram.ui.ActionBar.n2 n2Var3 = n2Var;
-                        n2Var3.showDialog(org.telegram.ui.Components.e5.U(n2Var3, null));
+                        n2Var3.showDialog(org.telegram.ui.Components.d5.U(n2Var3, null));
                         break;
                     case 15:
                         nf.f.s(n2Var.getParentActivity(), LocaleController.getString(R.string.TelegramFaqUrl));
@@ -12289,60 +12289,60 @@ public class j11 extends org.telegram.ui.Components.vl0 {
             public final void run() {
                 switch (i109) {
                     case 0:
-                        oc0 oc0Var = new oc0();
-                        n2Var.presentFragment(oc0Var);
-                        oc0Var.W(LiteMode.FLAGS_CHAT);
-                        oc0Var.V(64);
+                        pc0 pc0Var = new pc0();
+                        n2Var.presentFragment(pc0Var);
+                        pc0Var.W(LiteMode.FLAGS_CHAT);
+                        pc0Var.V(64);
                         break;
                     case 1:
-                        oc0 oc0Var2 = new oc0();
-                        n2Var.presentFragment(oc0Var2);
-                        oc0Var2.W(LiteMode.FLAGS_CHAT);
-                        oc0Var2.V(128);
+                        pc0 pc0Var2 = new pc0();
+                        n2Var.presentFragment(pc0Var2);
+                        pc0Var2.W(LiteMode.FLAGS_CHAT);
+                        pc0Var2.V(128);
                         break;
                     case 2:
                         n2Var.presentFragment(new PremiumPreviewFragment(0, "settings"));
                         break;
                     case 3:
-                        oc0 oc0Var3 = new oc0();
-                        n2Var.presentFragment(oc0Var3);
-                        oc0Var3.W(LiteMode.FLAGS_CHAT);
-                        oc0Var3.V(256);
+                        pc0 pc0Var3 = new pc0();
+                        n2Var.presentFragment(pc0Var3);
+                        pc0Var3.W(LiteMode.FLAGS_CHAT);
+                        pc0Var3.V(256);
                         break;
                     case 4:
-                        oc0 oc0Var4 = new oc0();
-                        n2Var.presentFragment(oc0Var4);
-                        oc0Var4.W(LiteMode.FLAGS_CHAT);
-                        oc0Var4.V(32768);
+                        pc0 pc0Var4 = new pc0();
+                        n2Var.presentFragment(pc0Var4);
+                        pc0Var4.W(LiteMode.FLAGS_CHAT);
+                        pc0Var4.V(32768);
                         break;
                     case 5:
-                        oc0 oc0Var5 = new oc0();
-                        n2Var.presentFragment(oc0Var5);
-                        oc0Var5.V(512);
+                        pc0 pc0Var5 = new pc0();
+                        n2Var.presentFragment(pc0Var5);
+                        pc0Var5.V(512);
                         break;
                     case 6:
                         n2Var.presentFragment(new NotificationsSettingsActivity());
                         break;
                     case 7:
-                        oc0 oc0Var6 = new oc0();
-                        n2Var.presentFragment(oc0Var6);
-                        oc0Var6.V(1024);
+                        pc0 pc0Var6 = new pc0();
+                        n2Var.presentFragment(pc0Var6);
+                        pc0Var6.V(1024);
                         break;
                     case 8:
-                        oc0 oc0Var7 = new oc0();
-                        n2Var.presentFragment(oc0Var7);
-                        oc0Var7.V(2048);
+                        pc0 pc0Var7 = new pc0();
+                        n2Var.presentFragment(pc0Var7);
+                        pc0Var7.V(2048);
                         break;
                     case 9:
-                        oc0 oc0Var8 = new oc0();
-                        n2Var.presentFragment(oc0Var8);
+                        pc0 pc0Var8 = new pc0();
+                        n2Var.presentFragment(pc0Var8);
                         int i112 = 0;
                         while (true) {
-                            ArrayList arrayList = oc0Var8.s;
+                            ArrayList arrayList = pc0Var8.s;
                             if (i112 >= arrayList.size()) {
                                 break;
-                            } else if (((ic0) arrayList.get(i112)).f == 1) {
-                                oc0Var8.b.f1(new i2.s(oc0Var8, i112, 12), 700, true);
+                            } else if (((jc0) arrayList.get(i112)).f == 1) {
+                                pc0Var8.b.f1(new i2.s(pc0Var8, i112, 12), 700, true);
                                 break;
                             } else {
                                 i112++;
@@ -12365,7 +12365,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                         break;
                     case 14:
                         org.telegram.ui.ActionBar.n2 n2Var3 = n2Var;
-                        n2Var3.showDialog(org.telegram.ui.Components.e5.U(n2Var3, null));
+                        n2Var3.showDialog(org.telegram.ui.Components.d5.U(n2Var3, null));
                         break;
                     case 15:
                         nf.f.s(n2Var.getParentActivity(), LocaleController.getString(R.string.TelegramFaqUrl));
@@ -12427,60 +12427,60 @@ public class j11 extends org.telegram.ui.Components.vl0 {
             public final void run() {
                 switch (i110) {
                     case 0:
-                        oc0 oc0Var = new oc0();
-                        n2Var.presentFragment(oc0Var);
-                        oc0Var.W(LiteMode.FLAGS_CHAT);
-                        oc0Var.V(64);
+                        pc0 pc0Var = new pc0();
+                        n2Var.presentFragment(pc0Var);
+                        pc0Var.W(LiteMode.FLAGS_CHAT);
+                        pc0Var.V(64);
                         break;
                     case 1:
-                        oc0 oc0Var2 = new oc0();
-                        n2Var.presentFragment(oc0Var2);
-                        oc0Var2.W(LiteMode.FLAGS_CHAT);
-                        oc0Var2.V(128);
+                        pc0 pc0Var2 = new pc0();
+                        n2Var.presentFragment(pc0Var2);
+                        pc0Var2.W(LiteMode.FLAGS_CHAT);
+                        pc0Var2.V(128);
                         break;
                     case 2:
                         n2Var.presentFragment(new PremiumPreviewFragment(0, "settings"));
                         break;
                     case 3:
-                        oc0 oc0Var3 = new oc0();
-                        n2Var.presentFragment(oc0Var3);
-                        oc0Var3.W(LiteMode.FLAGS_CHAT);
-                        oc0Var3.V(256);
+                        pc0 pc0Var3 = new pc0();
+                        n2Var.presentFragment(pc0Var3);
+                        pc0Var3.W(LiteMode.FLAGS_CHAT);
+                        pc0Var3.V(256);
                         break;
                     case 4:
-                        oc0 oc0Var4 = new oc0();
-                        n2Var.presentFragment(oc0Var4);
-                        oc0Var4.W(LiteMode.FLAGS_CHAT);
-                        oc0Var4.V(32768);
+                        pc0 pc0Var4 = new pc0();
+                        n2Var.presentFragment(pc0Var4);
+                        pc0Var4.W(LiteMode.FLAGS_CHAT);
+                        pc0Var4.V(32768);
                         break;
                     case 5:
-                        oc0 oc0Var5 = new oc0();
-                        n2Var.presentFragment(oc0Var5);
-                        oc0Var5.V(512);
+                        pc0 pc0Var5 = new pc0();
+                        n2Var.presentFragment(pc0Var5);
+                        pc0Var5.V(512);
                         break;
                     case 6:
                         n2Var.presentFragment(new NotificationsSettingsActivity());
                         break;
                     case 7:
-                        oc0 oc0Var6 = new oc0();
-                        n2Var.presentFragment(oc0Var6);
-                        oc0Var6.V(1024);
+                        pc0 pc0Var6 = new pc0();
+                        n2Var.presentFragment(pc0Var6);
+                        pc0Var6.V(1024);
                         break;
                     case 8:
-                        oc0 oc0Var7 = new oc0();
-                        n2Var.presentFragment(oc0Var7);
-                        oc0Var7.V(2048);
+                        pc0 pc0Var7 = new pc0();
+                        n2Var.presentFragment(pc0Var7);
+                        pc0Var7.V(2048);
                         break;
                     case 9:
-                        oc0 oc0Var8 = new oc0();
-                        n2Var.presentFragment(oc0Var8);
+                        pc0 pc0Var8 = new pc0();
+                        n2Var.presentFragment(pc0Var8);
                         int i112 = 0;
                         while (true) {
-                            ArrayList arrayList = oc0Var8.s;
+                            ArrayList arrayList = pc0Var8.s;
                             if (i112 >= arrayList.size()) {
                                 break;
-                            } else if (((ic0) arrayList.get(i112)).f == 1) {
-                                oc0Var8.b.f1(new i2.s(oc0Var8, i112, 12), 700, true);
+                            } else if (((jc0) arrayList.get(i112)).f == 1) {
+                                pc0Var8.b.f1(new i2.s(pc0Var8, i112, 12), 700, true);
                                 break;
                             } else {
                                 i112++;
@@ -12503,7 +12503,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                         break;
                     case 14:
                         org.telegram.ui.ActionBar.n2 n2Var3 = n2Var;
-                        n2Var3.showDialog(org.telegram.ui.Components.e5.U(n2Var3, null));
+                        n2Var3.showDialog(org.telegram.ui.Components.d5.U(n2Var3, null));
                         break;
                     case 15:
                         nf.f.s(n2Var.getParentActivity(), LocaleController.getString(R.string.TelegramFaqUrl));
@@ -12565,60 +12565,60 @@ public class j11 extends org.telegram.ui.Components.vl0 {
             public final void run() {
                 switch (i111) {
                     case 0:
-                        oc0 oc0Var = new oc0();
-                        n2Var.presentFragment(oc0Var);
-                        oc0Var.W(LiteMode.FLAGS_CHAT);
-                        oc0Var.V(64);
+                        pc0 pc0Var = new pc0();
+                        n2Var.presentFragment(pc0Var);
+                        pc0Var.W(LiteMode.FLAGS_CHAT);
+                        pc0Var.V(64);
                         break;
                     case 1:
-                        oc0 oc0Var2 = new oc0();
-                        n2Var.presentFragment(oc0Var2);
-                        oc0Var2.W(LiteMode.FLAGS_CHAT);
-                        oc0Var2.V(128);
+                        pc0 pc0Var2 = new pc0();
+                        n2Var.presentFragment(pc0Var2);
+                        pc0Var2.W(LiteMode.FLAGS_CHAT);
+                        pc0Var2.V(128);
                         break;
                     case 2:
                         n2Var.presentFragment(new PremiumPreviewFragment(0, "settings"));
                         break;
                     case 3:
-                        oc0 oc0Var3 = new oc0();
-                        n2Var.presentFragment(oc0Var3);
-                        oc0Var3.W(LiteMode.FLAGS_CHAT);
-                        oc0Var3.V(256);
+                        pc0 pc0Var3 = new pc0();
+                        n2Var.presentFragment(pc0Var3);
+                        pc0Var3.W(LiteMode.FLAGS_CHAT);
+                        pc0Var3.V(256);
                         break;
                     case 4:
-                        oc0 oc0Var4 = new oc0();
-                        n2Var.presentFragment(oc0Var4);
-                        oc0Var4.W(LiteMode.FLAGS_CHAT);
-                        oc0Var4.V(32768);
+                        pc0 pc0Var4 = new pc0();
+                        n2Var.presentFragment(pc0Var4);
+                        pc0Var4.W(LiteMode.FLAGS_CHAT);
+                        pc0Var4.V(32768);
                         break;
                     case 5:
-                        oc0 oc0Var5 = new oc0();
-                        n2Var.presentFragment(oc0Var5);
-                        oc0Var5.V(512);
+                        pc0 pc0Var5 = new pc0();
+                        n2Var.presentFragment(pc0Var5);
+                        pc0Var5.V(512);
                         break;
                     case 6:
                         n2Var.presentFragment(new NotificationsSettingsActivity());
                         break;
                     case 7:
-                        oc0 oc0Var6 = new oc0();
-                        n2Var.presentFragment(oc0Var6);
-                        oc0Var6.V(1024);
+                        pc0 pc0Var6 = new pc0();
+                        n2Var.presentFragment(pc0Var6);
+                        pc0Var6.V(1024);
                         break;
                     case 8:
-                        oc0 oc0Var7 = new oc0();
-                        n2Var.presentFragment(oc0Var7);
-                        oc0Var7.V(2048);
+                        pc0 pc0Var7 = new pc0();
+                        n2Var.presentFragment(pc0Var7);
+                        pc0Var7.V(2048);
                         break;
                     case 9:
-                        oc0 oc0Var8 = new oc0();
-                        n2Var.presentFragment(oc0Var8);
+                        pc0 pc0Var8 = new pc0();
+                        n2Var.presentFragment(pc0Var8);
                         int i112 = 0;
                         while (true) {
-                            ArrayList arrayList = oc0Var8.s;
+                            ArrayList arrayList = pc0Var8.s;
                             if (i112 >= arrayList.size()) {
                                 break;
-                            } else if (((ic0) arrayList.get(i112)).f == 1) {
-                                oc0Var8.b.f1(new i2.s(oc0Var8, i112, 12), 700, true);
+                            } else if (((jc0) arrayList.get(i112)).f == 1) {
+                                pc0Var8.b.f1(new i2.s(pc0Var8, i112, 12), 700, true);
                                 break;
                             } else {
                                 i112++;
@@ -12641,7 +12641,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                         break;
                     case 14:
                         org.telegram.ui.ActionBar.n2 n2Var3 = n2Var;
-                        n2Var3.showDialog(org.telegram.ui.Components.e5.U(n2Var3, null));
+                        n2Var3.showDialog(org.telegram.ui.Components.d5.U(n2Var3, null));
                         break;
                     case 15:
                         nf.f.s(n2Var.getParentActivity(), LocaleController.getString(R.string.TelegramFaqUrl));
@@ -12703,60 +12703,60 @@ public class j11 extends org.telegram.ui.Components.vl0 {
             public final void run() {
                 switch (i112) {
                     case 0:
-                        oc0 oc0Var = new oc0();
-                        n2Var.presentFragment(oc0Var);
-                        oc0Var.W(LiteMode.FLAGS_CHAT);
-                        oc0Var.V(64);
+                        pc0 pc0Var = new pc0();
+                        n2Var.presentFragment(pc0Var);
+                        pc0Var.W(LiteMode.FLAGS_CHAT);
+                        pc0Var.V(64);
                         break;
                     case 1:
-                        oc0 oc0Var2 = new oc0();
-                        n2Var.presentFragment(oc0Var2);
-                        oc0Var2.W(LiteMode.FLAGS_CHAT);
-                        oc0Var2.V(128);
+                        pc0 pc0Var2 = new pc0();
+                        n2Var.presentFragment(pc0Var2);
+                        pc0Var2.W(LiteMode.FLAGS_CHAT);
+                        pc0Var2.V(128);
                         break;
                     case 2:
                         n2Var.presentFragment(new PremiumPreviewFragment(0, "settings"));
                         break;
                     case 3:
-                        oc0 oc0Var3 = new oc0();
-                        n2Var.presentFragment(oc0Var3);
-                        oc0Var3.W(LiteMode.FLAGS_CHAT);
-                        oc0Var3.V(256);
+                        pc0 pc0Var3 = new pc0();
+                        n2Var.presentFragment(pc0Var3);
+                        pc0Var3.W(LiteMode.FLAGS_CHAT);
+                        pc0Var3.V(256);
                         break;
                     case 4:
-                        oc0 oc0Var4 = new oc0();
-                        n2Var.presentFragment(oc0Var4);
-                        oc0Var4.W(LiteMode.FLAGS_CHAT);
-                        oc0Var4.V(32768);
+                        pc0 pc0Var4 = new pc0();
+                        n2Var.presentFragment(pc0Var4);
+                        pc0Var4.W(LiteMode.FLAGS_CHAT);
+                        pc0Var4.V(32768);
                         break;
                     case 5:
-                        oc0 oc0Var5 = new oc0();
-                        n2Var.presentFragment(oc0Var5);
-                        oc0Var5.V(512);
+                        pc0 pc0Var5 = new pc0();
+                        n2Var.presentFragment(pc0Var5);
+                        pc0Var5.V(512);
                         break;
                     case 6:
                         n2Var.presentFragment(new NotificationsSettingsActivity());
                         break;
                     case 7:
-                        oc0 oc0Var6 = new oc0();
-                        n2Var.presentFragment(oc0Var6);
-                        oc0Var6.V(1024);
+                        pc0 pc0Var6 = new pc0();
+                        n2Var.presentFragment(pc0Var6);
+                        pc0Var6.V(1024);
                         break;
                     case 8:
-                        oc0 oc0Var7 = new oc0();
-                        n2Var.presentFragment(oc0Var7);
-                        oc0Var7.V(2048);
+                        pc0 pc0Var7 = new pc0();
+                        n2Var.presentFragment(pc0Var7);
+                        pc0Var7.V(2048);
                         break;
                     case 9:
-                        oc0 oc0Var8 = new oc0();
-                        n2Var.presentFragment(oc0Var8);
+                        pc0 pc0Var8 = new pc0();
+                        n2Var.presentFragment(pc0Var8);
                         int i1122 = 0;
                         while (true) {
-                            ArrayList arrayList = oc0Var8.s;
+                            ArrayList arrayList = pc0Var8.s;
                             if (i1122 >= arrayList.size()) {
                                 break;
-                            } else if (((ic0) arrayList.get(i1122)).f == 1) {
-                                oc0Var8.b.f1(new i2.s(oc0Var8, i1122, 12), 700, true);
+                            } else if (((jc0) arrayList.get(i1122)).f == 1) {
+                                pc0Var8.b.f1(new i2.s(pc0Var8, i1122, 12), 700, true);
                                 break;
                             } else {
                                 i1122++;
@@ -12779,7 +12779,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                         break;
                     case 14:
                         org.telegram.ui.ActionBar.n2 n2Var3 = n2Var;
-                        n2Var3.showDialog(org.telegram.ui.Components.e5.U(n2Var3, null));
+                        n2Var3.showDialog(org.telegram.ui.Components.d5.U(n2Var3, null));
                         break;
                     case 15:
                         nf.f.s(n2Var.getParentActivity(), LocaleController.getString(R.string.TelegramFaqUrl));
@@ -12842,60 +12842,60 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                 public final void run() {
                     switch (i113) {
                         case 0:
-                            oc0 oc0Var = new oc0();
-                            n2Var.presentFragment(oc0Var);
-                            oc0Var.W(LiteMode.FLAGS_CHAT);
-                            oc0Var.V(64);
+                            pc0 pc0Var = new pc0();
+                            n2Var.presentFragment(pc0Var);
+                            pc0Var.W(LiteMode.FLAGS_CHAT);
+                            pc0Var.V(64);
                             break;
                         case 1:
-                            oc0 oc0Var2 = new oc0();
-                            n2Var.presentFragment(oc0Var2);
-                            oc0Var2.W(LiteMode.FLAGS_CHAT);
-                            oc0Var2.V(128);
+                            pc0 pc0Var2 = new pc0();
+                            n2Var.presentFragment(pc0Var2);
+                            pc0Var2.W(LiteMode.FLAGS_CHAT);
+                            pc0Var2.V(128);
                             break;
                         case 2:
                             n2Var.presentFragment(new PremiumPreviewFragment(0, "settings"));
                             break;
                         case 3:
-                            oc0 oc0Var3 = new oc0();
-                            n2Var.presentFragment(oc0Var3);
-                            oc0Var3.W(LiteMode.FLAGS_CHAT);
-                            oc0Var3.V(256);
+                            pc0 pc0Var3 = new pc0();
+                            n2Var.presentFragment(pc0Var3);
+                            pc0Var3.W(LiteMode.FLAGS_CHAT);
+                            pc0Var3.V(256);
                             break;
                         case 4:
-                            oc0 oc0Var4 = new oc0();
-                            n2Var.presentFragment(oc0Var4);
-                            oc0Var4.W(LiteMode.FLAGS_CHAT);
-                            oc0Var4.V(32768);
+                            pc0 pc0Var4 = new pc0();
+                            n2Var.presentFragment(pc0Var4);
+                            pc0Var4.W(LiteMode.FLAGS_CHAT);
+                            pc0Var4.V(32768);
                             break;
                         case 5:
-                            oc0 oc0Var5 = new oc0();
-                            n2Var.presentFragment(oc0Var5);
-                            oc0Var5.V(512);
+                            pc0 pc0Var5 = new pc0();
+                            n2Var.presentFragment(pc0Var5);
+                            pc0Var5.V(512);
                             break;
                         case 6:
                             n2Var.presentFragment(new NotificationsSettingsActivity());
                             break;
                         case 7:
-                            oc0 oc0Var6 = new oc0();
-                            n2Var.presentFragment(oc0Var6);
-                            oc0Var6.V(1024);
+                            pc0 pc0Var6 = new pc0();
+                            n2Var.presentFragment(pc0Var6);
+                            pc0Var6.V(1024);
                             break;
                         case 8:
-                            oc0 oc0Var7 = new oc0();
-                            n2Var.presentFragment(oc0Var7);
-                            oc0Var7.V(2048);
+                            pc0 pc0Var7 = new pc0();
+                            n2Var.presentFragment(pc0Var7);
+                            pc0Var7.V(2048);
                             break;
                         case 9:
-                            oc0 oc0Var8 = new oc0();
-                            n2Var.presentFragment(oc0Var8);
+                            pc0 pc0Var8 = new pc0();
+                            n2Var.presentFragment(pc0Var8);
                             int i1122 = 0;
                             while (true) {
-                                ArrayList arrayList = oc0Var8.s;
+                                ArrayList arrayList = pc0Var8.s;
                                 if (i1122 >= arrayList.size()) {
                                     break;
-                                } else if (((ic0) arrayList.get(i1122)).f == 1) {
-                                    oc0Var8.b.f1(new i2.s(oc0Var8, i1122, 12), 700, true);
+                                } else if (((jc0) arrayList.get(i1122)).f == 1) {
+                                    pc0Var8.b.f1(new i2.s(pc0Var8, i1122, 12), 700, true);
                                     break;
                                 } else {
                                     i1122++;
@@ -12918,7 +12918,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                             break;
                         case 14:
                             org.telegram.ui.ActionBar.n2 n2Var3 = n2Var;
-                            n2Var3.showDialog(org.telegram.ui.Components.e5.U(n2Var3, null));
+                            n2Var3.showDialog(org.telegram.ui.Components.d5.U(n2Var3, null));
                             break;
                         case 15:
                             nf.f.s(n2Var.getParentActivity(), LocaleController.getString(R.string.TelegramFaqUrl));
@@ -12982,60 +12982,60 @@ public class j11 extends org.telegram.ui.Components.vl0 {
             public final void run() {
                 switch (i114) {
                     case 0:
-                        oc0 oc0Var = new oc0();
-                        n2Var.presentFragment(oc0Var);
-                        oc0Var.W(LiteMode.FLAGS_CHAT);
-                        oc0Var.V(64);
+                        pc0 pc0Var = new pc0();
+                        n2Var.presentFragment(pc0Var);
+                        pc0Var.W(LiteMode.FLAGS_CHAT);
+                        pc0Var.V(64);
                         break;
                     case 1:
-                        oc0 oc0Var2 = new oc0();
-                        n2Var.presentFragment(oc0Var2);
-                        oc0Var2.W(LiteMode.FLAGS_CHAT);
-                        oc0Var2.V(128);
+                        pc0 pc0Var2 = new pc0();
+                        n2Var.presentFragment(pc0Var2);
+                        pc0Var2.W(LiteMode.FLAGS_CHAT);
+                        pc0Var2.V(128);
                         break;
                     case 2:
                         n2Var.presentFragment(new PremiumPreviewFragment(0, "settings"));
                         break;
                     case 3:
-                        oc0 oc0Var3 = new oc0();
-                        n2Var.presentFragment(oc0Var3);
-                        oc0Var3.W(LiteMode.FLAGS_CHAT);
-                        oc0Var3.V(256);
+                        pc0 pc0Var3 = new pc0();
+                        n2Var.presentFragment(pc0Var3);
+                        pc0Var3.W(LiteMode.FLAGS_CHAT);
+                        pc0Var3.V(256);
                         break;
                     case 4:
-                        oc0 oc0Var4 = new oc0();
-                        n2Var.presentFragment(oc0Var4);
-                        oc0Var4.W(LiteMode.FLAGS_CHAT);
-                        oc0Var4.V(32768);
+                        pc0 pc0Var4 = new pc0();
+                        n2Var.presentFragment(pc0Var4);
+                        pc0Var4.W(LiteMode.FLAGS_CHAT);
+                        pc0Var4.V(32768);
                         break;
                     case 5:
-                        oc0 oc0Var5 = new oc0();
-                        n2Var.presentFragment(oc0Var5);
-                        oc0Var5.V(512);
+                        pc0 pc0Var5 = new pc0();
+                        n2Var.presentFragment(pc0Var5);
+                        pc0Var5.V(512);
                         break;
                     case 6:
                         n2Var.presentFragment(new NotificationsSettingsActivity());
                         break;
                     case 7:
-                        oc0 oc0Var6 = new oc0();
-                        n2Var.presentFragment(oc0Var6);
-                        oc0Var6.V(1024);
+                        pc0 pc0Var6 = new pc0();
+                        n2Var.presentFragment(pc0Var6);
+                        pc0Var6.V(1024);
                         break;
                     case 8:
-                        oc0 oc0Var7 = new oc0();
-                        n2Var.presentFragment(oc0Var7);
-                        oc0Var7.V(2048);
+                        pc0 pc0Var7 = new pc0();
+                        n2Var.presentFragment(pc0Var7);
+                        pc0Var7.V(2048);
                         break;
                     case 9:
-                        oc0 oc0Var8 = new oc0();
-                        n2Var.presentFragment(oc0Var8);
+                        pc0 pc0Var8 = new pc0();
+                        n2Var.presentFragment(pc0Var8);
                         int i1122 = 0;
                         while (true) {
-                            ArrayList arrayList = oc0Var8.s;
+                            ArrayList arrayList = pc0Var8.s;
                             if (i1122 >= arrayList.size()) {
                                 break;
-                            } else if (((ic0) arrayList.get(i1122)).f == 1) {
-                                oc0Var8.b.f1(new i2.s(oc0Var8, i1122, 12), 700, true);
+                            } else if (((jc0) arrayList.get(i1122)).f == 1) {
+                                pc0Var8.b.f1(new i2.s(pc0Var8, i1122, 12), 700, true);
                                 break;
                             } else {
                                 i1122++;
@@ -13058,7 +13058,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                         break;
                     case 14:
                         org.telegram.ui.ActionBar.n2 n2Var3 = n2Var;
-                        n2Var3.showDialog(org.telegram.ui.Components.e5.U(n2Var3, null));
+                        n2Var3.showDialog(org.telegram.ui.Components.d5.U(n2Var3, null));
                         break;
                     case 15:
                         nf.f.s(n2Var.getParentActivity(), LocaleController.getString(R.string.TelegramFaqUrl));
@@ -13120,60 +13120,60 @@ public class j11 extends org.telegram.ui.Components.vl0 {
             public final void run() {
                 switch (i115) {
                     case 0:
-                        oc0 oc0Var = new oc0();
-                        n2Var.presentFragment(oc0Var);
-                        oc0Var.W(LiteMode.FLAGS_CHAT);
-                        oc0Var.V(64);
+                        pc0 pc0Var = new pc0();
+                        n2Var.presentFragment(pc0Var);
+                        pc0Var.W(LiteMode.FLAGS_CHAT);
+                        pc0Var.V(64);
                         break;
                     case 1:
-                        oc0 oc0Var2 = new oc0();
-                        n2Var.presentFragment(oc0Var2);
-                        oc0Var2.W(LiteMode.FLAGS_CHAT);
-                        oc0Var2.V(128);
+                        pc0 pc0Var2 = new pc0();
+                        n2Var.presentFragment(pc0Var2);
+                        pc0Var2.W(LiteMode.FLAGS_CHAT);
+                        pc0Var2.V(128);
                         break;
                     case 2:
                         n2Var.presentFragment(new PremiumPreviewFragment(0, "settings"));
                         break;
                     case 3:
-                        oc0 oc0Var3 = new oc0();
-                        n2Var.presentFragment(oc0Var3);
-                        oc0Var3.W(LiteMode.FLAGS_CHAT);
-                        oc0Var3.V(256);
+                        pc0 pc0Var3 = new pc0();
+                        n2Var.presentFragment(pc0Var3);
+                        pc0Var3.W(LiteMode.FLAGS_CHAT);
+                        pc0Var3.V(256);
                         break;
                     case 4:
-                        oc0 oc0Var4 = new oc0();
-                        n2Var.presentFragment(oc0Var4);
-                        oc0Var4.W(LiteMode.FLAGS_CHAT);
-                        oc0Var4.V(32768);
+                        pc0 pc0Var4 = new pc0();
+                        n2Var.presentFragment(pc0Var4);
+                        pc0Var4.W(LiteMode.FLAGS_CHAT);
+                        pc0Var4.V(32768);
                         break;
                     case 5:
-                        oc0 oc0Var5 = new oc0();
-                        n2Var.presentFragment(oc0Var5);
-                        oc0Var5.V(512);
+                        pc0 pc0Var5 = new pc0();
+                        n2Var.presentFragment(pc0Var5);
+                        pc0Var5.V(512);
                         break;
                     case 6:
                         n2Var.presentFragment(new NotificationsSettingsActivity());
                         break;
                     case 7:
-                        oc0 oc0Var6 = new oc0();
-                        n2Var.presentFragment(oc0Var6);
-                        oc0Var6.V(1024);
+                        pc0 pc0Var6 = new pc0();
+                        n2Var.presentFragment(pc0Var6);
+                        pc0Var6.V(1024);
                         break;
                     case 8:
-                        oc0 oc0Var7 = new oc0();
-                        n2Var.presentFragment(oc0Var7);
-                        oc0Var7.V(2048);
+                        pc0 pc0Var7 = new pc0();
+                        n2Var.presentFragment(pc0Var7);
+                        pc0Var7.V(2048);
                         break;
                     case 9:
-                        oc0 oc0Var8 = new oc0();
-                        n2Var.presentFragment(oc0Var8);
+                        pc0 pc0Var8 = new pc0();
+                        n2Var.presentFragment(pc0Var8);
                         int i1122 = 0;
                         while (true) {
-                            ArrayList arrayList = oc0Var8.s;
+                            ArrayList arrayList = pc0Var8.s;
                             if (i1122 >= arrayList.size()) {
                                 break;
-                            } else if (((ic0) arrayList.get(i1122)).f == 1) {
-                                oc0Var8.b.f1(new i2.s(oc0Var8, i1122, 12), 700, true);
+                            } else if (((jc0) arrayList.get(i1122)).f == 1) {
+                                pc0Var8.b.f1(new i2.s(pc0Var8, i1122, 12), 700, true);
                                 break;
                             } else {
                                 i1122++;
@@ -13196,7 +13196,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                         break;
                     case 14:
                         org.telegram.ui.ActionBar.n2 n2Var3 = n2Var;
-                        n2Var3.showDialog(org.telegram.ui.Components.e5.U(n2Var3, null));
+                        n2Var3.showDialog(org.telegram.ui.Components.d5.U(n2Var3, null));
                         break;
                     case 15:
                         nf.f.s(n2Var.getParentActivity(), LocaleController.getString(R.string.TelegramFaqUrl));
@@ -13258,60 +13258,60 @@ public class j11 extends org.telegram.ui.Components.vl0 {
             public final void run() {
                 switch (i116) {
                     case 0:
-                        oc0 oc0Var = new oc0();
-                        n2Var.presentFragment(oc0Var);
-                        oc0Var.W(LiteMode.FLAGS_CHAT);
-                        oc0Var.V(64);
+                        pc0 pc0Var = new pc0();
+                        n2Var.presentFragment(pc0Var);
+                        pc0Var.W(LiteMode.FLAGS_CHAT);
+                        pc0Var.V(64);
                         break;
                     case 1:
-                        oc0 oc0Var2 = new oc0();
-                        n2Var.presentFragment(oc0Var2);
-                        oc0Var2.W(LiteMode.FLAGS_CHAT);
-                        oc0Var2.V(128);
+                        pc0 pc0Var2 = new pc0();
+                        n2Var.presentFragment(pc0Var2);
+                        pc0Var2.W(LiteMode.FLAGS_CHAT);
+                        pc0Var2.V(128);
                         break;
                     case 2:
                         n2Var.presentFragment(new PremiumPreviewFragment(0, "settings"));
                         break;
                     case 3:
-                        oc0 oc0Var3 = new oc0();
-                        n2Var.presentFragment(oc0Var3);
-                        oc0Var3.W(LiteMode.FLAGS_CHAT);
-                        oc0Var3.V(256);
+                        pc0 pc0Var3 = new pc0();
+                        n2Var.presentFragment(pc0Var3);
+                        pc0Var3.W(LiteMode.FLAGS_CHAT);
+                        pc0Var3.V(256);
                         break;
                     case 4:
-                        oc0 oc0Var4 = new oc0();
-                        n2Var.presentFragment(oc0Var4);
-                        oc0Var4.W(LiteMode.FLAGS_CHAT);
-                        oc0Var4.V(32768);
+                        pc0 pc0Var4 = new pc0();
+                        n2Var.presentFragment(pc0Var4);
+                        pc0Var4.W(LiteMode.FLAGS_CHAT);
+                        pc0Var4.V(32768);
                         break;
                     case 5:
-                        oc0 oc0Var5 = new oc0();
-                        n2Var.presentFragment(oc0Var5);
-                        oc0Var5.V(512);
+                        pc0 pc0Var5 = new pc0();
+                        n2Var.presentFragment(pc0Var5);
+                        pc0Var5.V(512);
                         break;
                     case 6:
                         n2Var.presentFragment(new NotificationsSettingsActivity());
                         break;
                     case 7:
-                        oc0 oc0Var6 = new oc0();
-                        n2Var.presentFragment(oc0Var6);
-                        oc0Var6.V(1024);
+                        pc0 pc0Var6 = new pc0();
+                        n2Var.presentFragment(pc0Var6);
+                        pc0Var6.V(1024);
                         break;
                     case 8:
-                        oc0 oc0Var7 = new oc0();
-                        n2Var.presentFragment(oc0Var7);
-                        oc0Var7.V(2048);
+                        pc0 pc0Var7 = new pc0();
+                        n2Var.presentFragment(pc0Var7);
+                        pc0Var7.V(2048);
                         break;
                     case 9:
-                        oc0 oc0Var8 = new oc0();
-                        n2Var.presentFragment(oc0Var8);
+                        pc0 pc0Var8 = new pc0();
+                        n2Var.presentFragment(pc0Var8);
                         int i1122 = 0;
                         while (true) {
-                            ArrayList arrayList = oc0Var8.s;
+                            ArrayList arrayList = pc0Var8.s;
                             if (i1122 >= arrayList.size()) {
                                 break;
-                            } else if (((ic0) arrayList.get(i1122)).f == 1) {
-                                oc0Var8.b.f1(new i2.s(oc0Var8, i1122, 12), 700, true);
+                            } else if (((jc0) arrayList.get(i1122)).f == 1) {
+                                pc0Var8.b.f1(new i2.s(pc0Var8, i1122, 12), 700, true);
                                 break;
                             } else {
                                 i1122++;
@@ -13334,7 +13334,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
                         break;
                     case 14:
                         org.telegram.ui.ActionBar.n2 n2Var3 = n2Var;
-                        n2Var3.showDialog(org.telegram.ui.Components.e5.U(n2Var3, null));
+                        n2Var3.showDialog(org.telegram.ui.Components.d5.U(n2Var3, null));
                         break;
                     case 15:
                         nf.f.s(n2Var.getParentActivity(), LocaleController.getString(R.string.TelegramFaqUrl));
@@ -13393,7 +13393,7 @@ public class j11 extends org.telegram.ui.Components.vl0 {
         return new i11[]{i11Var23, i11Var24, i11Var25, i11Var26, i11Var27, i11Var28, i11Var29, i11Var30, i11Var31, i11Var32, i11Var33, i11Var34, i11Var35, i11Var36, i11Var37, i11Var38, i11Var39, i11Var, i11Var41, i11Var42, i11Var2, i11Var44, i11Var45, i11Var46, i11Var47, i11Var48, i11Var49, i11Var50, i11Var51, i11Var52, i11Var3, i11Var4, i11Var54, i11Var55, i11Var56, i11Var57, i11Var58, i11Var59, i11Var60, i11Var61, i11Var62, i11Var63, i11Var64, i11Var65, i11Var66, i11Var67, i11Var68, i11Var69, i11Var70, i11Var71, i11Var72, i11Var73, i11Var74, i11Var75, i11Var76, i11Var77, i11Var78, i11Var79, i11Var80, i11Var81, i11Var82, i11Var83, i11Var84, i11Var85, i11Var86, i11Var87, i11Var88, i11Var89, i11Var90, i11Var91, i11Var92, i11Var93, i11Var94, i11Var95, i11Var96, i11Var97, i11Var98, i11Var99, i11Var100, i11Var101, i11Var102, i11Var103, i11Var104, i11Var105, i11Var106, i11Var107, i11Var108, i11Var109, i11Var110, i11Var111, i11Var112, i11Var6, i11Var114, i11Var7, i11Var116, i11Var8, i11Var118, i11Var119, i11Var120, i11Var121, i11Var5, i11Var9, i11Var10, i11Var11, i11Var12, i11Var13, i11Var14, i11Var15, i11Var16, i11Var123, i11Var17, i11Var18, i11Var19, i11Var20, i11Var21, i11Var124, i11Var125, i11Var126, i11Var127, i11Var128, i11Var129, i11Var130, i11Var131, i11Var132, i11Var133, i11Var134, i11Var135, i11Var22, i11Var136, i11Var137, i11Var138, i11Var139, i11Var140, i11Var141, i11Var142, i11Var43, i11Var144, i11Var145, i11Var146};
     }
 
-    @Override // org.telegram.ui.Components.vl0
+    @Override // org.telegram.ui.Components.ul0
     public final boolean D(s4.c1 c1Var) {
         return c1Var.f == 0;
     }
@@ -13450,9 +13450,9 @@ public class j11 extends org.telegram.ui.Components.vl0 {
         }
         if (!TextUtils.isEmpty(str)) {
             DispatchQueue dispatchQueue = Utilities.searchQueue;
-            cy0 cy0Var = new cy0(15, this, str);
-            this.x = cy0Var;
-            dispatchQueue.postRunnable(cy0Var, 300L);
+            rx0 rx0Var = new rx0(17, this, str);
+            this.x = rx0Var;
+            dispatchQueue.postRunnable(rx0Var, 300L);
             return;
         }
         this.w = false;
@@ -13555,26 +13555,26 @@ public class j11 extends org.telegram.ui.Components.vl0 {
         View view = c1Var.a;
         if (i11 != 0) {
             if (i11 == 1) {
-                ((org.telegram.ui.Cells.v3) view).setText(LocaleController.getString(R.string.SettingsFaqSearchTitle));
+                ((org.telegram.ui.Cells.w3) view).setText(LocaleController.getString(R.string.SettingsFaqSearchTitle));
                 return;
             } else {
                 if (i11 != 2) {
                     return;
                 }
-                ((org.telegram.ui.Cells.m4) view).setText(LocaleController.getString(R.string.SettingsRecent));
+                ((org.telegram.ui.Cells.n4) view).setText(LocaleController.getString(R.string.SettingsRecent));
                 return;
             }
         }
-        org.telegram.ui.Cells.y6 y6Var = (org.telegram.ui.Cells.y6) view;
+        org.telegram.ui.Cells.z6 z6Var = (org.telegram.ui.Cells.z6) view;
         if (this.w) {
             if (i10 >= this.r.size()) {
                 int f7 = com.google.android.gms.internal.vision.e2.f(1, i10, this.r);
-                y6Var.a((CharSequence) this.n.get(this.r.size() + f7), ((MessagesController.FaqSearchResult) this.s.get(f7)).path, true, f7 < this.r.size() - 1);
+                z6Var.a((CharSequence) this.n.get(this.r.size() + f7), ((MessagesController.FaqSearchResult) this.s.get(f7)).path, true, f7 < this.r.size() - 1);
                 return;
             } else {
                 i11 i11Var = (i11) this.r.get(i10);
                 i11 i11Var2 = i10 > 0 ? (i11) this.r.get(i10 - 1) : null;
-                y6Var.b((CharSequence) this.n.get(i10), i11Var.d, (i11Var2 == null || i11Var2.e != i11Var.e) ? i11Var.e : 0, i10 < this.r.size() - 1);
+                z6Var.b((CharSequence) this.n.get(i10), i11Var.d, (i11Var2 == null || i11Var2.e != i11Var.e) ? i11Var.e : 0, i10 < this.r.size() - 1);
                 return;
             }
         }
@@ -13585,24 +13585,24 @@ public class j11 extends org.telegram.ui.Components.vl0 {
         if (i10 >= arrayList.size()) {
             int f10 = com.google.android.gms.internal.vision.e2.f(1, i10, arrayList);
             MessagesController.FaqSearchResult faqSearchResult = (MessagesController.FaqSearchResult) this.d.get(f10);
-            y6Var.a(faqSearchResult.title, faqSearchResult.path, true, f10 < arrayList.size() - 1);
+            z6Var.a(faqSearchResult.title, faqSearchResult.path, true, f10 < arrayList.size() - 1);
             return;
         }
         Object obj = arrayList.get(i10);
         if (obj instanceof i11) {
             i11 i11Var3 = (i11) obj;
-            y6Var.a(i11Var3.a, i11Var3.d, false, i10 < arrayList.size() - 1);
+            z6Var.a(i11Var3.a, i11Var3.d, false, i10 < arrayList.size() - 1);
         } else if (obj instanceof MessagesController.FaqSearchResult) {
             MessagesController.FaqSearchResult faqSearchResult2 = (MessagesController.FaqSearchResult) obj;
-            y6Var.a(faqSearchResult2.title, faqSearchResult2.path, true, i10 < arrayList.size() - 1);
+            z6Var.a(faqSearchResult2.title, faqSearchResult2.path, true, i10 < arrayList.size() - 1);
         }
     }
 
     @Override // s4.h0
     public final s4.c1 x(ViewGroup viewGroup, int i10) {
         Context context = this.h;
-        View m4Var = i10 != 0 ? i10 != 1 ? new org.telegram.ui.Cells.m4(context, 16) : new org.telegram.ui.Cells.v3(context, null) : new org.telegram.ui.Cells.y6(context);
-        m4Var.setLayoutParams(new s4.p0(-1, -2));
-        return new org.telegram.ui.Components.gl0(m4Var);
+        View n4Var = i10 != 0 ? i10 != 1 ? new org.telegram.ui.Cells.n4(context, 16) : new org.telegram.ui.Cells.w3(context, null) : new org.telegram.ui.Cells.z6(context);
+        n4Var.setLayoutParams(new s4.p0(-1, -2));
+        return new org.telegram.ui.Components.fl0(n4Var);
     }
 }

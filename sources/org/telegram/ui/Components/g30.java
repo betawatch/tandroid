@@ -7,7 +7,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class g30 extends FrameLayout {
     public final /* synthetic */ l30 a;
@@ -38,8 +38,8 @@ public final class g30 extends FrameLayout {
             marginLayoutParams.leftMargin = dp2;
             marginLayoutParams.rightMargin = dp2;
         }
-        int A = org.telegram.messenger.wh.A(200.0f, View.MeasureSpec.getSize(i10), 2);
-        l30Var.b.setPadding(A, 0, A, 0);
+        int z11 = org.telegram.messenger.rk.z(200.0f, View.MeasureSpec.getSize(i10), 2);
+        l30Var.b.setPadding(z11, 0, z11, 0);
         super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(370.0f), TLObject.FLAG_30));
         measureChildWithMargins(l30Var.d, View.MeasureSpec.makeMeasureSpec(0, 0), 0, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(64.0f), TLObject.FLAG_30), 0);
     }

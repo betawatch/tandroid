@@ -10,7 +10,7 @@ import android.util.Log;
 import android.util.SparseArray;
 import org.telegram.ui.Cells.c1;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class m0 implements IBinder.DeathRecipient {
     public final Messenger a;
@@ -65,16 +65,16 @@ public final class m0 implements IBinder.DeathRecipient {
     }
 
     public final void c(int i10, int i11) {
-        Bundle f7 = c1.f(i11, "volume");
+        Bundle g10 = c1.g(i11, "volume");
         int i12 = this.d;
         this.d = i12 + 1;
-        b(7, i12, i10, null, f7);
+        b(7, i12, i10, null, g10);
     }
 
     public final void d(int i10, int i11) {
-        Bundle f7 = c1.f(i11, "volume");
+        Bundle g10 = c1.g(i11, "volume");
         int i12 = this.d;
         this.d = i12 + 1;
-        b(8, i12, i10, null, f7);
+        b(8, i12, i10, null, g10);
     }
 }

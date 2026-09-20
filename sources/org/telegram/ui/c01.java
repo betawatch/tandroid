@@ -5,7 +5,7 @@ import android.animation.AnimatorListenerAdapter;
 import android.app.Activity;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class c01 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -33,7 +33,7 @@ public final class c01 extends AnimatorListenerAdapter {
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
         int i10;
-        org.telegram.ui.Cells.z3 z3Var;
+        org.telegram.ui.Cells.a4 a4Var;
         switch (this.a) {
             case 0:
                 ProfileActivity profileActivity = this.c;
@@ -62,9 +62,9 @@ public final class c01 extends AnimatorListenerAdapter {
                 break;
             default:
                 ProfileActivity profileActivity2 = this.c;
-                if (profileActivity2.f0 != null && (z3Var = profileActivity2.g0) != null) {
+                if (profileActivity2.f0 != null && (a4Var = profileActivity2.g0) != null) {
                     if (!this.b) {
-                        z3Var.setVisibility(4);
+                        a4Var.setVisibility(4);
                     }
                     profileActivity2.f0 = null;
                     break;

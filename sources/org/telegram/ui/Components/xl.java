@@ -16,7 +16,7 @@ import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class xl extends cm {
     public final /* synthetic */ ChatAttachAlertPhotoLayout b;
@@ -51,7 +51,7 @@ public final class xl extends cm {
         if (z11 && (qtVar = viVar.R0) != null && (closeIntoObject = ((t40) qtVar.b).getCloseIntoObject()) != null) {
             return closeIntoObject;
         }
-        org.telegram.ui.Cells.t5 L = ChatAttachAlertPhotoLayout.L(chatAttachAlertPhotoLayout, i10);
+        org.telegram.ui.Cells.u5 L = ChatAttachAlertPhotoLayout.L(chatAttachAlertPhotoLayout, i10);
         if (L == null) {
             return null;
         }
@@ -90,8 +90,8 @@ public final class xl extends cm {
         int childCount = tlVar.getChildCount();
         for (int i10 = 0; i10 < childCount; i10++) {
             View childAt = tlVar.getChildAt(i10);
-            if (childAt instanceof org.telegram.ui.Cells.t5) {
-                ((org.telegram.ui.Cells.t5) childAt).g(true);
+            if (childAt instanceof org.telegram.ui.Cells.u5) {
+                ((org.telegram.ui.Cells.u5) childAt).g(true);
             }
         }
     }
@@ -99,7 +99,7 @@ public final class xl extends cm {
     @Override // org.telegram.ui.tu0, org.telegram.ui.bv0
     public final void W(int i10) {
         ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.b;
-        org.telegram.ui.Cells.t5 L = ChatAttachAlertPhotoLayout.L(chatAttachAlertPhotoLayout, i10);
+        org.telegram.ui.Cells.u5 L = ChatAttachAlertPhotoLayout.L(chatAttachAlertPhotoLayout, i10);
         if (L != null) {
             L.getImageView().q(0, true);
             MediaController.PhotoEntry b02 = chatAttachAlertPhotoLayout.b0(i10);
@@ -129,7 +129,7 @@ public final class xl extends cm {
 
     @Override // org.telegram.ui.tu0, org.telegram.ui.bv0
     public final void Z(int i10) {
-        org.telegram.ui.Cells.t5 L = ChatAttachAlertPhotoLayout.L(this.b, i10);
+        org.telegram.ui.Cells.u5 L = ChatAttachAlertPhotoLayout.L(this.b, i10);
         if (L != null) {
             L.g(true);
         }
@@ -180,7 +180,7 @@ public final class xl extends cm {
                     MessageObject.addEntitiesToText(spannableStringBuilder, arrayList3, false, false, false, false);
                     charSequence2 = spannableStringBuilder;
                 }
-                this.b.b.m1().setText(z5.cloneSpans(charSequence2, 3));
+                this.b.b.m1().setText(y5.cloneSpans(charSequence2, 3));
             }
         }
     }
@@ -192,7 +192,7 @@ public final class xl extends cm {
 
     @Override // org.telegram.ui.tu0, org.telegram.ui.bv0
     public final ImageReceiver.BitmapHolder j(int i10) {
-        org.telegram.ui.Cells.t5 L = ChatAttachAlertPhotoLayout.L(this.b, i10);
+        org.telegram.ui.Cells.u5 L = ChatAttachAlertPhotoLayout.L(this.b, i10);
         if (L != null) {
             return L.getImageView().getImageReceiver().getBitmapSafe();
         }
@@ -251,7 +251,7 @@ public final class xl extends cm {
         PhotoViewer.t1();
         PhotoViewer.t1().O = false;
         PhotoViewer.t1().u2 = false;
-        e5.a0(viVar.J1, viVar.j1() + ChatAttachAlertPhotoLayout.s1.size(), viVar.n1(), new pl(this, z10, i11, z11));
+        d5.a0(viVar.J1, viVar.j1() + ChatAttachAlertPhotoLayout.s1.size(), viVar.n1(), new pl(this, z10, i11, z11));
     }
 
     @Override // org.telegram.ui.tu0, org.telegram.ui.bv0

@@ -20,7 +20,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class f implements Runnable {
     public final /* synthetic */ int a;
@@ -108,14 +108,14 @@ public final /* synthetic */ class f implements Runnable {
                 if (string.equals(string2)) {
                     if (i6Var.q() || string.equals("Dark Blue") || string.equals("Night")) {
                         str2 = string2;
-                        AndroidUtilities.runOnUIThread(new i2.g0(org.telegram.ui.ActionBar.j6.I.q() ? org.telegram.ui.ActionBar.j6.N0(str2) : org.telegram.ui.ActionBar.j6.N0(str), 11), 200L);
+                        AndroidUtilities.runOnUIThread(new i2.g0(org.telegram.ui.ActionBar.j6.I.q() ? org.telegram.ui.ActionBar.j6.N0(str2) : org.telegram.ui.ActionBar.j6.N0(str), 12), 200L);
                         break;
                     }
                 } else {
                     str2 = string2;
                 }
                 str = string;
-                AndroidUtilities.runOnUIThread(new i2.g0(org.telegram.ui.ActionBar.j6.I.q() ? org.telegram.ui.ActionBar.j6.N0(str2) : org.telegram.ui.ActionBar.j6.N0(str), 11), 200L);
+                AndroidUtilities.runOnUIThread(new i2.g0(org.telegram.ui.ActionBar.j6.I.q() ? org.telegram.ui.ActionBar.j6.N0(str2) : org.telegram.ui.ActionBar.j6.N0(str), 12), 200L);
                 break;
             case 16:
                 org.telegram.ui.ActionBar.j6.E(false);
@@ -135,7 +135,7 @@ public final /* synthetic */ class f implements Runnable {
                 globalInstance.lambda$postNotificationNameOnUIThread$1(i14, Boolean.FALSE, bool, bool);
                 break;
             case 21:
-                Pattern pattern = org.telegram.ui.Components.e5.a;
+                Pattern pattern = org.telegram.ui.Components.d5.a;
                 break;
             case 22:
                 org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
@@ -147,14 +147,14 @@ public final /* synthetic */ class f implements Runnable {
                 }
                 break;
             case 23:
-                AndroidUtilities.cancelRunOnUIThread(org.telegram.ui.Components.q5.v);
+                AndroidUtilities.cancelRunOnUIThread(org.telegram.ui.Components.p5.v);
                 try {
-                    if (org.telegram.ui.Components.q5.q != null) {
-                        for (int i15 = 0; i15 < org.telegram.ui.Components.q5.q.size(); i15++) {
-                            LongSparseArray longSparseArray = (LongSparseArray) org.telegram.ui.Components.q5.q.valueAt(i15);
+                    if (org.telegram.ui.Components.p5.q != null) {
+                        for (int i15 = 0; i15 < org.telegram.ui.Components.p5.q.size(); i15++) {
+                            LongSparseArray longSparseArray = (LongSparseArray) org.telegram.ui.Components.p5.q.valueAt(i15);
                             int i16 = 0;
                             while (i16 < longSparseArray.size()) {
-                                if (!((org.telegram.ui.Components.q5) longSparseArray.valueAt(i16)).a) {
+                                if (!((org.telegram.ui.Components.p5) longSparseArray.valueAt(i16)).a) {
                                     longSparseArray.removeAt(i16);
                                     i16--;
                                 }
@@ -172,7 +172,7 @@ public final /* synthetic */ class f implements Runnable {
                 }
                 break;
             case 24:
-                org.telegram.ui.Components.j8 j8Var = org.telegram.ui.Components.j8.T0;
+                org.telegram.ui.Components.i8 i8Var = org.telegram.ui.Components.i8.T0;
                 break;
             case 25:
                 SavedMessagesController.openSavedMessages();

@@ -4,9 +4,9 @@ import android.content.Context;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class r10 extends org.telegram.ui.Cells.j7 {
+public final class r10 extends org.telegram.ui.Cells.k7 {
     public final /* synthetic */ s10 l0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -15,7 +15,7 @@ public final class r10 extends org.telegram.ui.Cells.j7 {
         this.l0 = s10Var;
     }
 
-    @Override // org.telegram.ui.Cells.j7
+    @Override // org.telegram.ui.Cells.k7
     public final boolean d(MessageObject messageObject) {
         boolean isVoice = messageObject.isVoice();
         s10 s10Var = this.l0;

@@ -20,10 +20,10 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class ov extends org.telegram.ui.ActionBar.n2 {
-    public static final org.telegram.ui.Components.vr0 x = new org.telegram.ui.Components.vr0(2);
+    public static final org.telegram.ui.Components.ur0 x = new org.telegram.ui.Components.ur0(2);
     public uy a;
     public ContactsActivity b;
     public org.telegram.ui.ActionBar.v0 c;
@@ -39,10 +39,10 @@ public final class ov extends org.telegram.ui.ActionBar.n2 {
 
     public static /* synthetic */ void U(ov ovVar, TLRPC.User user) {
         if (MessagesController.isSupportUser(user)) {
-            org.telegram.ui.Components.e5.w0(ovVar, LocaleController.getString(R.string.ErrorOccurred));
+            org.telegram.ui.Components.d5.w0(ovVar, LocaleController.getString(R.string.ErrorOccurred));
         } else {
             MessagesController.getInstance(ovVar.currentAccount).blockPeer(user.id);
-            org.telegram.ui.Components.e5.w0(ovVar, LocaleController.getString(R.string.UserBlocked));
+            org.telegram.ui.Components.d5.w0(ovVar, LocaleController.getString(R.string.UserBlocked));
         }
         ovVar.finishFragment();
     }
@@ -124,10 +124,10 @@ public final class ov extends org.telegram.ui.ActionBar.n2 {
             nvVarArr[i10].c.setVisibility(8);
             int i11 = 0;
             while (i11 < 2) {
-                org.telegram.ui.Components.wl0 wl0Var = i11 == 0 ? nvVarArr[i10].d : nvVarArr[i10].e;
-                if (wl0Var != null) {
-                    wl0Var.setClipToPadding(false);
-                    wl0Var.setOnScrollListener(new ii.m3(5, this, wl0Var.getOnScrollListener()));
+                org.telegram.ui.Components.vl0 vl0Var = i11 == 0 ? nvVarArr[i10].d : nvVarArr[i10].e;
+                if (vl0Var != null) {
+                    vl0Var.setClipToPadding(false);
+                    vl0Var.setOnScrollListener(new ii.m3(5, this, vl0Var.getOnScrollListener()));
                 }
                 i11++;
             }
@@ -181,7 +181,7 @@ public final class ov extends org.telegram.ui.ActionBar.n2 {
         org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
         b2Var.R = string;
         b2Var.T = AndroidUtilities.replaceTags(LocaleController.formatString("AreYouSureBlockContact2", R.string.AreYouSureBlockContact2, ContactsController.formatName(user.first_name, user.last_name)));
-        alertDialog$Builder.k(LocaleController.getString(R.string.BlockContact), new org.telegram.ui.Components.b3(25, this, user));
+        alertDialog$Builder.k(LocaleController.getString(R.string.BlockContact), new org.telegram.ui.Components.a3(25, this, user));
         alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
         showDialog(b2Var);
         TextView textView = (TextView) b2Var.d(-1);
@@ -201,12 +201,12 @@ public final class ov extends org.telegram.ui.ActionBar.n2 {
         }
         int i11 = 0;
         while (i11 < 2) {
-            org.telegram.ui.Components.wl0 wl0Var = i11 == 0 ? nvVarArr[z10 ? 1 : 0].d : nvVarArr[z10 ? 1 : 0].e;
-            if (wl0Var != null) {
-                wl0Var.getAdapter();
-                wl0Var.setPinnedHeaderShadowDrawable(null);
+            org.telegram.ui.Components.vl0 vl0Var = i11 == 0 ? nvVarArr[z10 ? 1 : 0].d : nvVarArr[z10 ? 1 : 0].e;
+            if (vl0Var != null) {
+                vl0Var.getAdapter();
+                vl0Var.setPinnedHeaderShadowDrawable(null);
                 if (this.actionBar.getTranslationY() != 0.0f) {
-                    ((s4.c0) wl0Var.getLayoutManager()).h1(0, (int) this.actionBar.getTranslationY());
+                    ((s4.c0) vl0Var.getLayoutManager()).h1(0, (int) this.actionBar.getTranslationY());
                 }
             }
             i11++;

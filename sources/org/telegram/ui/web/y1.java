@@ -7,32 +7,32 @@ import android.widget.ImageView;
 import ci.e4;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.UserConfig;
-import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.l61;
+import org.telegram.ui.Components.k61;
+import org.telegram.ui.Components.p5;
 import org.telegram.ui.Components.pq;
-import org.telegram.ui.Components.q5;
-import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.s61;
+import org.telegram.ui.Components.v51;
+import org.telegram.ui.Components.vl0;
 import org.telegram.ui.Components.w51;
-import org.telegram.ui.Components.wl0;
-import org.telegram.ui.Components.x51;
 import org.telegram.ui.rk;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
-public final class y1 extends w51 {
+public final class y1 extends v51 {
     public static final /* synthetic */ int a = 0;
 
     static {
-        w51.setup(new y1());
+        v51.setup(new y1());
     }
 
-    @Override // org.telegram.ui.Components.w51
-    public final void bindView(View view, x51 x51Var, boolean z10, l61 l61Var, t61 t61Var) {
+    @Override // org.telegram.ui.Components.v51
+    public final void bindView(View view, w51 w51Var, boolean z10, k61 k61Var, s61 s61Var) {
         z1 z1Var = (z1) view;
-        String str = x51Var.n;
-        String str2 = (String) x51Var.l;
-        long j3 = x51Var.B;
+        String str = w51Var.n;
+        String str2 = (String) w51Var.l;
+        long j3 = w51Var.B;
         ImageView imageView = z1Var.a;
         z1Var.b.setText(str);
         rk rkVar = z1Var.c;
@@ -51,13 +51,13 @@ public final class y1 extends w51 {
             str = (str2.isEmpty() || TextUtils.isEmpty(str2)) ? "" : str2;
         }
         String charSequence = str.toString();
-        q5 q5Var = z1Var.d;
-        if (q5Var != null) {
-            q5Var.o(imageView);
+        p5 p5Var = z1Var.d;
+        if (p5Var != null) {
+            p5Var.o(imageView);
             z1Var.d = null;
         }
         if (j3 != 0) {
-            q5 n10 = q5.n(UserConfig.selectedAccount, j3, null, 1);
+            p5 n10 = p5.n(UserConfig.selectedAccount, j3, null, 1);
             z1Var.d = n10;
             n10.a(imageView);
             imageView.setImageDrawable(z1Var.d);
@@ -73,8 +73,8 @@ public final class y1 extends w51 {
         z1Var.invalidate();
     }
 
-    @Override // org.telegram.ui.Components.w51
-    public final View createView(Context context, wl0 wl0Var, int i10, int i11, e6 e6Var) {
+    @Override // org.telegram.ui.Components.v51
+    public final View createView(Context context, vl0 vl0Var, int i10, int i11, f6 f6Var) {
         return new z1(context);
     }
 }

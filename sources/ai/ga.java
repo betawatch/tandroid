@@ -10,7 +10,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.rk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.RequestDelegateTimestamp;
@@ -19,14 +19,14 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_chatlists;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.nm0;
-import org.telegram.ui.Components.w70;
+import org.telegram.ui.Components.mm0;
+import org.telegram.ui.Components.v70;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.r00;
 import org.telegram.ui.re;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class ga implements Runnable {
     public final /* synthetic */ int a;
@@ -116,15 +116,15 @@ public final /* synthetic */ class ga implements Runnable {
                 break;
             case 2:
                 zn znVar = (zn) obj5;
-                nm0 nm0Var = (nm0) obj;
-                ((w70) obj4).n0 = true;
+                mm0 mm0Var = (mm0) obj;
+                ((v70) obj4).n0 = true;
                 Activity parentActivity = znVar.getParentActivity();
                 long j10 = ((TLRPC.TL_messageEntityFormattedDate) obj3).date;
                 long j11 = this.c;
-                ci.z6 z6Var = new ci.z6(znVar, (ArrayList) obj2, j11, nm0Var, 1);
-                re reVar = new re(nm0Var, i11);
-                Pattern pattern = org.telegram.ui.Components.e5.a;
-                org.telegram.ui.Components.e5.K(parentActivity, j11, j10, 0, true, z6Var, reVar, new org.telegram.ui.Components.c5(null), null);
+                ci.z6 z6Var = new ci.z6(znVar, (ArrayList) obj2, j11, mm0Var, 1);
+                re reVar = new re(mm0Var, i11);
+                Pattern pattern = org.telegram.ui.Components.d5.a;
+                org.telegram.ui.Components.d5.K(parentActivity, j11, j10, 0, true, z6Var, reVar, new org.telegram.ui.Components.b5(null), null);
                 break;
             case 3:
                 org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) obj5;
@@ -139,7 +139,7 @@ public final /* synthetic */ class ga implements Runnable {
                         n2Var.getMessagesController().putUsers(tL_chatlists_exportedInvites.users, false);
                         new r00(n2Var, dialogFilter, tL_chatlists_exportedInvites.invites).show();
                     } else if (tL_error == null || !"FILTER_ID_INVALID".equals(tL_error.text) || dialogFilter.isDefault()) {
-                        wh.o(R.string.UnknownError, xc.a0(n2Var), null);
+                        rk.p(R.string.UnknownError, xc.a0(n2Var), null);
                     } else {
                         new r00(n2Var, dialogFilter, null).show();
                     }
@@ -154,11 +154,11 @@ public final /* synthetic */ class ga implements Runnable {
                 break;
             case 5:
                 ((boolean[]) obj3)[0] = true;
-                ((yh.t5) obj5).g(this.c, (TLObject) obj4, (TLRPC.TL_textWithEntities) obj2, (Utilities.Callback2) obj);
+                ((yh.u5) obj5).g(this.c, (TLObject) obj4, (TLRPC.TL_textWithEntities) obj2, (Utilities.Callback2) obj);
                 break;
             default:
                 ((boolean[]) obj4)[0] = true;
-                ((yh.t5) obj5).h((TLRPC.TL_payments_paymentFormStarGift) obj3, (TL_stars.StarGift) obj2, this.c, null, true, (Utilities.Callback2) obj);
+                ((yh.u5) obj5).h((TLRPC.TL_payments_paymentFormStarGift) obj3, (TL_stars.StarGift) obj2, this.c, null, true, (Utilities.Callback2) obj);
                 break;
         }
     }
@@ -183,9 +183,9 @@ public final /* synthetic */ class ga implements Runnable {
         this.c = j3;
     }
 
-    public /* synthetic */ ga(yh.t5 t5Var, boolean[] zArr, long j3, TLObject tLObject, TLRPC.TL_textWithEntities tL_textWithEntities, Utilities.Callback2 callback2) {
+    public /* synthetic */ ga(yh.u5 u5Var, boolean[] zArr, long j3, TLObject tLObject, TLRPC.TL_textWithEntities tL_textWithEntities, Utilities.Callback2 callback2) {
         this.a = 5;
-        this.d = t5Var;
+        this.d = u5Var;
         this.e = zArr;
         this.c = j3;
         this.b = tLObject;
@@ -193,9 +193,9 @@ public final /* synthetic */ class ga implements Runnable {
         this.h = callback2;
     }
 
-    public /* synthetic */ ga(yh.t5 t5Var, boolean[] zArr, TLRPC.TL_payments_paymentFormStarGift tL_payments_paymentFormStarGift, TL_stars.StarGift starGift, long j3, Utilities.Callback2 callback2) {
+    public /* synthetic */ ga(yh.u5 u5Var, boolean[] zArr, TLRPC.TL_payments_paymentFormStarGift tL_payments_paymentFormStarGift, TL_stars.StarGift starGift, long j3, Utilities.Callback2 callback2) {
         this.a = 6;
-        this.d = t5Var;
+        this.d = u5Var;
         this.b = zArr;
         this.e = tL_payments_paymentFormStarGift;
         this.f = starGift;

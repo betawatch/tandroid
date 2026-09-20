@@ -1,10 +1,10 @@
 package ci;
 
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.ng0;
-import org.telegram.ui.Components.pg0;
+import org.telegram.ui.Components.mg0;
+import org.telegram.ui.Components.og0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class va implements o1.f {
     public final /* synthetic */ int a;
@@ -43,10 +43,10 @@ public final /* synthetic */ class va implements o1.f {
                     break;
                 }
             default:
-                ng0 ng0Var = (ng0) this.c;
+                mg0 mg0Var = (mg0) this.c;
                 if (!z10) {
-                    pg0 pg0Var = ng0Var.d;
-                    pg0Var.M.u.i = (pg0Var.H / 2.0f) + this.b >= ((float) AndroidUtilities.displaySize.x) / 2.0f ? (r0 - r3) - AndroidUtilities.dp(16.0f) : AndroidUtilities.dp(16.0f);
+                    og0 og0Var = mg0Var.d;
+                    og0Var.M.u.i = (og0Var.H / 2.0f) + this.b >= ((float) AndroidUtilities.displaySize.x) / 2.0f ? (r0 - r3) - AndroidUtilities.dp(16.0f) : AndroidUtilities.dp(16.0f);
                     break;
                 }
                 break;

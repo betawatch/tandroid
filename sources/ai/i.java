@@ -8,7 +8,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.bd;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class i implements e2.h {
     public final /* synthetic */ int a;
@@ -122,7 +122,7 @@ public final /* synthetic */ class i implements e2.h {
                 }
             case 24:
                 View view7 = (View) obj;
-                if (!(view7 instanceof org.telegram.ui.Cells.h5)) {
+                if (!(view7 instanceof org.telegram.ui.Cells.i5)) {
                     if (!(view7 instanceof hg.x1)) {
                         view7.invalidate();
                         break;
@@ -131,22 +131,22 @@ public final /* synthetic */ class i implements e2.h {
                         break;
                     }
                 } else {
-                    org.telegram.ui.Cells.h5 h5Var = (org.telegram.ui.Cells.h5) view7;
-                    h5Var.b.invalidate();
-                    h5Var.c.invalidate();
+                    org.telegram.ui.Cells.i5 i5Var = (org.telegram.ui.Cells.i5) view7;
+                    i5Var.b.invalidate();
+                    i5Var.c.invalidate();
                     break;
                 }
             case 25:
                 View view8 = (View) obj;
-                if (view8 instanceof org.telegram.ui.Cells.f8) {
-                    ((org.telegram.ui.Cells.f8) view8).a(true);
+                if (view8 instanceof org.telegram.ui.Cells.g8) {
+                    ((org.telegram.ui.Cells.g8) view8).a(true);
                     break;
                 }
                 break;
             case 26:
                 View view9 = (View) obj;
-                if (view9 instanceof org.telegram.ui.Cells.f8) {
-                    ((org.telegram.ui.Cells.f8) view9).c(true);
+                if (view9 instanceof org.telegram.ui.Cells.g8) {
+                    ((org.telegram.ui.Cells.g8) view9).c(true);
                     break;
                 }
                 break;
@@ -159,7 +159,7 @@ public final /* synthetic */ class i implements e2.h {
                         break;
                     }
                 } else {
-                    AndroidUtilities.runOnUIThread(new sh(25));
+                    AndroidUtilities.runOnUIThread(new sh(27));
                     break;
                 }
                 break;

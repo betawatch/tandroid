@@ -3,9 +3,9 @@ package org.telegram.ui;
 import android.view.KeyEvent;
 import android.view.View;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class pq0 implements org.telegram.ui.Components.d5, org.telegram.ui.Components.ml0, org.telegram.ui.ActionBar.l1, org.telegram.ui.ActionBar.a2 {
+public final /* synthetic */ class pq0 implements org.telegram.ui.Components.c5, org.telegram.ui.Components.ll0, org.telegram.ui.ActionBar.l1, org.telegram.ui.ActionBar.a2 {
     public final /* synthetic */ int a;
     public final /* synthetic */ cr0 b;
 
@@ -14,7 +14,7 @@ public final /* synthetic */ class pq0 implements org.telegram.ui.Components.d5,
         this.b = cr0Var;
     }
 
-    @Override // org.telegram.ui.Components.d5
+    @Override // org.telegram.ui.Components.c5
     public void J(int i10, int i11, boolean z10) {
         switch (this.a) {
             case 0:
@@ -26,25 +26,25 @@ public final /* synthetic */ class pq0 implements org.telegram.ui.Components.d5,
         }
     }
 
-    @Override // org.telegram.ui.Components.ml0
+    @Override // org.telegram.ui.Components.ll0
     public boolean d(int i10, View view) {
         cr0 cr0Var = this.b;
         if (cr0Var.Y) {
             cr0Var.a0(view, cr0Var.J.photos.get(i10));
             return true;
         }
-        if (!(view instanceof org.telegram.ui.Cells.t5)) {
+        if (!(view instanceof org.telegram.ui.Cells.u5)) {
             return false;
         }
-        org.telegram.ui.Components.yl0 yl0Var = cr0Var.V;
-        boolean z10 = !((org.telegram.ui.Cells.t5) view).a();
+        org.telegram.ui.Components.xl0 xl0Var = cr0Var.V;
+        boolean z10 = !((org.telegram.ui.Cells.u5) view).a();
         cr0Var.X = z10;
-        yl0Var.d(view, i10, z10);
+        xl0Var.d(view, i10, z10);
         return false;
     }
 
     @Override // org.telegram.ui.ActionBar.a2
-    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+    public void k(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
         cr0 cr0Var = this.b;
         gr0 gr0Var = cr0Var.t0;
         if (gr0Var == null) {
@@ -66,7 +66,7 @@ public final /* synthetic */ class pq0 implements org.telegram.ui.Components.d5,
     }
 
     @Override // org.telegram.ui.ActionBar.l1
-    public void p(KeyEvent keyEvent) {
+    public void o(KeyEvent keyEvent) {
         org.telegram.ui.ActionBar.n1 n1Var;
         cr0 cr0Var = this.b;
         cr0Var.getClass();

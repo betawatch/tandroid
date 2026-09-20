@@ -1,45 +1,41 @@
 package org.telegram.ui;
 
-import android.content.Context;
 import android.view.View;
-import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class gb1 extends org.telegram.ui.Components.w51 {
-    public static final /* synthetic */ int b = 0;
-    public org.telegram.ui.Cells.s7 a;
+public final /* synthetic */ class gb1 implements Utilities.Callback5, Utilities.Callback5Return {
+    public final /* synthetic */ StickersActivity a;
 
-    static {
-        org.telegram.ui.Components.w51.setup(new gb1());
+    public /* synthetic */ gb1(StickersActivity stickersActivity) {
+        this.a = stickersActivity;
     }
 
-    @Override // org.telegram.ui.Components.w51
-    public final void attachedView(org.telegram.ui.Components.wl0 wl0Var, View view, org.telegram.ui.Components.x51 x51Var) {
-        ((org.telegram.ui.Cells.t7) view).l(x51Var.h, false);
+    @Override // org.telegram.messenger.Utilities.Callback5
+    public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
+        ((Integer) obj3).getClass();
+        ((Float) obj4).getClass();
+        ((Float) obj5).getClass();
+        StickersActivity.U(this.a, (org.telegram.ui.Components.w51) obj, (View) obj2);
     }
 
-    @Override // org.telegram.ui.Components.w51
-    public final void bindView(View view, org.telegram.ui.Components.x51 x51Var, boolean z10, org.telegram.ui.Components.l61 l61Var, org.telegram.ui.Components.t61 t61Var) {
-        org.telegram.ui.Cells.t7 t7Var = (org.telegram.ui.Cells.t7) view;
-        t7Var.k((MessageObject) x51Var.G, x51Var.v, false);
-        t7Var.i(x51Var.e, false);
-        t7Var.l(x51Var.h, false);
-    }
-
-    @Override // org.telegram.ui.Components.w51
-    public final View createView(Context context, org.telegram.ui.Components.wl0 wl0Var, int i10, int i11, org.telegram.ui.ActionBar.e6 e6Var) {
-        if (this.a == null) {
-            this.a = new org.telegram.ui.Cells.s7(context, e6Var);
+    @Override // org.telegram.messenger.Utilities.Callback5Return
+    public Object run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
+        boolean z10;
+        org.telegram.ui.Components.w51 w51Var = (org.telegram.ui.Components.w51) obj;
+        View view = (View) obj2;
+        ((Integer) obj3).intValue();
+        ((Float) obj4).floatValue();
+        ((Float) obj5).floatValue();
+        StickersActivity stickersActivity = this.a;
+        if (stickersActivity.x.isEmpty() && (w51Var.G instanceof TLRPC.TL_messages_stickerSet)) {
+            stickersActivity.n0((org.telegram.ui.Cells.n8) view);
+            z10 = true;
+        } else {
+            z10 = false;
         }
-        org.telegram.ui.Cells.t7 t7Var = new org.telegram.ui.Cells.t7(context, this.a, i10);
-        t7Var.w0 = true;
-        t7Var.d0 = true;
-        return t7Var;
-    }
-
-    @Override // org.telegram.ui.Components.w51
-    public final boolean equals(org.telegram.ui.Components.x51 x51Var, org.telegram.ui.Components.x51 x51Var2) {
-        return x51Var.q == x51Var2.q && x51Var.e == x51Var2.e && x51Var.B == x51Var2.B;
+        return Boolean.valueOf(z10);
     }
 }

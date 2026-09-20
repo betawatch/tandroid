@@ -29,7 +29,7 @@ import org.telegram.ui.Components.sh;
 import org.webrtc.RendererCommon;
 import w7.y5;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class m2 implements VoIPService.StateListener, rf.a, NotificationCenter.NotificationCenterDelegate {
     public static boolean T = false;
@@ -433,7 +433,7 @@ public final class m2 implements VoIPService.StateListener, rf.a, NotificationCe
     @Override // org.telegram.messenger.voip.VoIPService.StateListener
     public final void onStateChanged(int i10) {
         if (i10 == 11 || i10 == 17 || i10 == 4 || i10 == 10) {
-            AndroidUtilities.runOnUIThread(new sh(14), 200L);
+            AndroidUtilities.runOnUIThread(new sh(16), 200L);
         }
         VoIPService sharedInstance = VoIPService.getSharedInstance();
         if (sharedInstance == null) {

@@ -13,7 +13,7 @@ import org.telegram.ui.ExternalActionActivity;
 import org.telegram.ui.lx0;
 import org.telegram.ui.pn0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final /* synthetic */ class y5 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -95,21 +95,21 @@ public final /* synthetic */ class y5 implements Runnable {
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
                 TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore = (TLRPC.TL_payments_canPurchaseStore) obj;
                 if (!(((TLObject) obj7) instanceof TLRPC.TL_boolTrue)) {
-                    org.telegram.ui.Components.e5.f0(i11, tL_error, n2Var, tL_payments_canPurchaseStore, new Object[0]);
+                    org.telegram.ui.Components.d5.f0(i11, tL_error, n2Var, tL_payments_canPurchaseStore, new Object[0]);
                     return;
                 }
                 Activity parentActivity = n2Var != null ? n2Var.getParentActivity() : AndroidUtilities.getActivity();
                 BillingController billingController = BillingController.getInstance();
                 AccountInstance accountInstance = n2Var.getAccountInstance();
                 of.b bVar = new of.b(7, z10);
-                bVar.U(BillingController.PREMIUM_PRODUCT_DETAILS);
+                bVar.X(BillingController.PREMIUM_PRODUCT_DETAILS);
                 lx0Var.a();
                 String str3 = lx0Var.g.a;
                 if (TextUtils.isEmpty(str3)) {
                     throw new IllegalArgumentException("offerToken can not be empty");
                 }
                 bVar.c = str3;
-                billingController.launchBillingFlow(parentActivity, accountInstance, tL_inputStorePaymentPremiumSubscription, Collections.singletonList(bVar.B()), fVar, false);
+                billingController.launchBillingFlow(parentActivity, accountInstance, tL_inputStorePaymentPremiumSubscription, Collections.singletonList(bVar.K()), fVar, false);
                 return;
         }
     }

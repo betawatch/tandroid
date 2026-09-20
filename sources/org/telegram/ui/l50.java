@@ -18,7 +18,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class l50 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ Activity a;
@@ -137,7 +137,7 @@ public final class l50 extends org.telegram.ui.ActionBar.j {
             if (n1Var == null || !n1Var.isShowing()) {
                 return;
             }
-            v0Var.b.measure(org.telegram.messenger.wh.y(40.0f, AndroidUtilities.displaySize.x, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.y, TLObject.FLAG_31));
+            v0Var.b.measure(org.telegram.messenger.rk.c(40.0f, AndroidUtilities.displaySize.x, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.y, TLObject.FLAG_31));
             v0Var.O(true, true);
             return;
         }
@@ -192,7 +192,7 @@ public final class l50 extends org.telegram.ui.ActionBar.j {
             return;
         }
         if (i10 == 8) {
-            org.telegram.ui.Components.f80.u(i60Var.getContext(), -i60Var.i1(), i60Var.d, null, 2, i60Var.A0, new f50(this));
+            org.telegram.ui.Components.e80.u(i60Var.getContext(), -i60Var.i1(), i60Var.d, null, 2, i60Var.A0, new f50(this));
             return;
         }
         if (i10 == 11) {
@@ -215,7 +215,7 @@ public final class l50 extends org.telegram.ui.ActionBar.j {
         arrayList3.add(0);
         if (sharedInstance.hasEarpiece()) {
             arrayList.add(LocaleController.getString(sharedInstance.isHeadsetPlugged() ? R.string.VoipAudioRoutingHeadset : R.string.VoipAudioRoutingPhone));
-            org.telegram.ui.Cells.c1.k(sharedInstance.isHeadsetPlugged() ? R.drawable.msg_voice_headphones : R.drawable.msg_voice_phone, 1, arrayList2, arrayList3);
+            org.telegram.ui.Cells.c1.n(sharedInstance.isHeadsetPlugged() ? R.drawable.msg_voice_headphones : R.drawable.msg_voice_phone, 1, arrayList2, arrayList3);
         }
         if (sharedInstance.isBluetoothHeadsetConnected()) {
             String str = sharedInstance.currentBluetoothDeviceName;
@@ -223,7 +223,7 @@ public final class l50 extends org.telegram.ui.ActionBar.j {
                 str = LocaleController.getString(R.string.VoipAudioRoutingBluetooth);
             }
             arrayList.add(str);
-            org.telegram.ui.Cells.c1.k(R.drawable.msg_voice_bluetooth, 2, arrayList2, arrayList3);
+            org.telegram.ui.Cells.c1.n(R.drawable.msg_voice_bluetooth, 2, arrayList2, arrayList3);
         }
         int size = arrayList.size();
         CharSequence[] charSequenceArr = new CharSequence[size];
@@ -232,7 +232,7 @@ public final class l50 extends org.telegram.ui.ActionBar.j {
             charSequenceArr[i12] = (CharSequence) arrayList.get(i12);
             iArr[i12] = ((Integer) arrayList2.get(i12)).intValue();
         }
-        org.telegram.ui.ActionBar.f3 f3Var = new org.telegram.ui.ActionBar.f3(1, (Context) this.a, (org.telegram.ui.ActionBar.e6) null, false);
+        org.telegram.ui.ActionBar.f3 f3Var = new org.telegram.ui.ActionBar.f3(1, (Context) this.a, (org.telegram.ui.ActionBar.f6) null, false);
         f3Var.fixNavigationBar();
         f3Var.title = LocaleController.getString(R.string.VoipSelectAudioOutput);
         f3Var.bigTitle = true;

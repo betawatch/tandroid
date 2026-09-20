@@ -18,11 +18,11 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.n5;
-import org.telegram.ui.Components.q5;
+import org.telegram.ui.Components.m5;
+import org.telegram.ui.Components.p5;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public abstract class c5 {
     public static void a(int i10, long j3, org.telegram.ui.web.r rVar) {
@@ -57,7 +57,7 @@ public abstract class c5 {
         alertDialog$Builder.a.T = AndroidUtilities.replaceTags(LocaleController.formatString(R.string.BotEmojiStatusPermissionRequest, UserObject.getUserName(user), UserObject.getUserName(user)));
         alertDialog$Builder.k(LocaleController.getString(R.string.BotEmojiStatusPermissionAllow), new org.telegram.ui.ActionBar.a2() { // from class: ei.v4
             @Override // org.telegram.ui.ActionBar.a2
-            public final void f(org.telegram.ui.ActionBar.b2 b2Var2, int i11) {
+            public final void k(org.telegram.ui.ActionBar.b2 b2Var2, int i11) {
                 int i12 = i10;
                 boolean isPremium = UserConfig.getInstance(i12).isPremium();
                 boolean[] zArr3 = zArr2;
@@ -115,7 +115,7 @@ public abstract class c5 {
         if (activity == null) {
             return false;
         }
-        return org.telegram.messenger.q.x("requested_", j3, activity.getSharedPreferences("botemojistatus_" + i10, 0), false);
+        return org.telegram.messenger.l0.u("requested_", j3, activity.getSharedPreferences("botemojistatus_" + i10, 0), false);
     }
 
     public static void e(Context context, int i10, long j3) {
@@ -126,12 +126,12 @@ public abstract class c5 {
     }
 
     public static void f(final int i10, final TLRPC.User user, long j3, final int i11, final org.telegram.ui.web.r rVar) {
-        TLRPC.Document f7 = q5.f(i10, j3);
+        TLRPC.Document f7 = p5.f(i10, j3);
         if (f7 != null) {
             g(i10, user, f7, i11, new s4(rVar, f7, 1));
         } else {
-            q5.h(i10).b(j3, new n5() { // from class: ei.t4
-                @Override // org.telegram.ui.Components.n5
+            p5.h(i10).b(j3, new m5() { // from class: ei.t4
+                @Override // org.telegram.ui.Components.m5
                 public final void a(TLRPC.Document document) {
                     AndroidUtilities.runOnUIThread(new x4(i10, user, document, i11, rVar));
                 }

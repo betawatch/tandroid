@@ -16,7 +16,7 @@ import hg.k0;
 import java.util.List;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class a implements o {
     public final /* synthetic */ int a = 0;
@@ -55,12 +55,12 @@ public final class a implements o {
             default:
                 h0 Z1 = qVar.Z1(0, 3);
                 qVar.X1(new t(-9223372036854775807L));
-                qVar.e1();
+                qVar.f1();
                 s sVar = (s) this.b;
                 r a2 = sVar.a();
                 a2.q = r0.n("text/x-unknown");
                 a2.j = sVar.r;
-                k0.r(a2, Z1);
+                k0.s(a2, Z1);
                 break;
         }
     }

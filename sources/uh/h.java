@@ -25,21 +25,22 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.l0;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Cells.t8;
 import org.telegram.ui.Cells.u1;
-import org.telegram.ui.Components.yb;
+import org.telegram.ui.Cells.u8;
+import org.telegram.ui.Components.xb;
 import org.telegram.ui.web.b1;
+import u2.j0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class h extends Drawable implements Animator.AnimatorListener {
     public static final RectF b0 = new RectF();
     public static final Rect c0 = new Rect();
     public static final int[] d0 = new int[2];
-    public static final t8 e0 = new t8("openFactor", 11);
-    public static final t8 f0 = new t8("openFactor", 12);
+    public static final u8 e0 = new u8("openFactor", 11);
+    public static final u8 f0 = new u8("openFactor", 12);
     public final MessageObject E;
     public float F;
     public Bitmap I;
@@ -50,11 +51,11 @@ public final class h extends Drawable implements Animator.AnimatorListener {
     public boolean T;
     public int U;
     public int V;
-    public yb W;
+    public xb W;
     public float X;
     public float Y;
     public final i a;
-    public final uf.b b;
+    public final j0 b;
     public final LinearGradient f;
     public final d[] w;
     public final Drawable x;
@@ -78,8 +79,8 @@ public final class h extends Drawable implements Animator.AnimatorListener {
     public final ObjectAnimator Z = ObjectAnimator.ofFloat(this, e0, 1.0f).setDuration(560L);
     public final ObjectAnimator a0 = ObjectAnimator.ofFloat(this, f0, 1.0f).setDuration(240L);
 
-    public h(i iVar, u1 u1Var, ArrayList arrayList, uf.b bVar) {
-        this.b = bVar;
+    public h(i iVar, u1 u1Var, ArrayList arrayList, j0 j0Var) {
+        this.b = j0Var;
         this.a = iVar;
         this.y = u1Var;
         this.E = u1Var.getMessageObject();
@@ -277,8 +278,8 @@ public final class h extends Drawable implements Animator.AnimatorListener {
                 float f14 = hVar.X;
                 float f15 = hVar.Y;
                 float f16 = (dp3 + f14) / 2.0f;
-                yb ybVar = hVar.W;
-                float min = (ybVar == null || !ybVar.top) ? Math.min(centerY, f15) - AndroidUtilities.dp(15) : Math.max(centerY, f15) + AndroidUtilities.dp(15);
+                xb xbVar = hVar.W;
+                float min = (xbVar == null || !xbVar.top) ? Math.min(centerY, f15) - AndroidUtilities.dp(15) : Math.max(centerY, f15) + AndroidUtilities.dp(15);
                 float g10 = g(dp3, f14, interpolation2);
                 double d = dp3;
                 double d10 = centerY;
@@ -299,7 +300,7 @@ public final class h extends Drawable implements Animator.AnimatorListener {
                     final int i22 = 1;
                     b bVar2 = new b(new a() { // from class: uh.c
                         @Override // uh.a
-                        public final void o(Canvas canvas3, int i23) {
+                        public final void p(Canvas canvas3, int i23) {
                             float f19;
                             switch (i22) {
                                 case 0:
@@ -456,8 +457,8 @@ public final class h extends Drawable implements Animator.AnimatorListener {
                         canvas2.scale(f27, f27, f7, centerY2);
                         float f28 = dVar2.o * f20;
                         i13 = i12;
-                        float c10 = wh.c(8, 2, dVar2.h.getWidth());
-                        dVar2.i = d.b(d.b(f7, c10, f24, f25), c10, dp5, measuredWidth) - (c10 / 2.0f);
+                        float D = l0.D(8, 2, dVar2.h.getWidth());
+                        dVar2.i = d.b(d.b(f7, D, f24, f25), D, dp5, measuredWidth) - (D / 2.0f);
                         dVar2.j = centerY2 - AndroidUtilities.dp(58.0f);
                         if (dVar2.f == null) {
                             h hVar2 = dVar2.a;
@@ -466,7 +467,7 @@ public final class h extends Drawable implements Animator.AnimatorListener {
                                 final int i25 = 0;
                                 b bVar4 = new b(new a() { // from class: uh.c
                                     @Override // uh.a
-                                    public final void o(Canvas canvas3, int i232) {
+                                    public final void p(Canvas canvas3, int i232) {
                                         float f192;
                                         switch (i25) {
                                             case 0:
@@ -527,14 +528,14 @@ public final class h extends Drawable implements Animator.AnimatorListener {
                                     }
                                 });
                                 dVar2.f = bVar4;
-                                bVar4.a((int) c10, AndroidUtilities.dp(21.0f), 3.0f, AndroidUtilities.dp(4));
+                                bVar4.a((int) D, AndroidUtilities.dp(21.0f), 3.0f, AndroidUtilities.dp(4));
                             }
                         }
                         b bVar5 = dVar2.f;
                         if (bVar5 != null) {
                             float f29 = dVar2.i;
                             float f30 = dVar2.j;
-                            bVar5.setBounds((int) f29, (int) f30, (int) (f29 + c10), (int) (f30 + AndroidUtilities.dp(21.0f)));
+                            bVar5.setBounds((int) f29, (int) f30, (int) (f29 + D), (int) (f30 + AndroidUtilities.dp(21.0f)));
                             b bVar6 = dVar2.f;
                             bVar6.i = (int) (f28 * 255.0f);
                             bVar6.draw(canvas2);
@@ -572,13 +573,13 @@ public final class h extends Drawable implements Animator.AnimatorListener {
     @Override // android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
         ObjectAnimator objectAnimator = this.Z;
-        uf.b bVar = this.b;
+        j0 j0Var = this.b;
         if (animator == objectAnimator) {
             this.y.setHideSideButtonByQuickShare(false);
             this.M = true;
             invalidateSelf();
             if (this.N) {
-                bVar.run();
+                j0Var.run();
                 return;
             }
             return;
@@ -586,12 +587,12 @@ public final class h extends Drawable implements Animator.AnimatorListener {
         if (animator == this.a0) {
             this.N = true;
             invalidateSelf();
-            yb ybVar = this.W;
-            if (ybVar != null) {
-                ybVar.a.setVisibility(0);
+            xb xbVar = this.W;
+            if (xbVar != null) {
+                xbVar.a.setVisibility(0);
             }
             if (this.M) {
-                bVar.run();
+                j0Var.run();
             }
         }
     }

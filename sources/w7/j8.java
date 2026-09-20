@@ -1,9 +1,59 @@
 package w7;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public abstract class j8 {
-    public static int a(Object obj) {
-        return (int) (Integer.rotateLeft((int) ((obj == null ? 0 : obj.hashCode()) * (-862048943)), 15) * 461845907);
+    public static int a(Object obj, Object obj2, int i10, Object obj3, int[] iArr, Object[] objArr, Object[] objArr2) {
+        int i11;
+        int i12;
+        int a2 = k8.a(obj);
+        int i13 = a2 & i10;
+        int b10 = b(i13, obj3);
+        if (b10 != 0) {
+            int i14 = ~i10;
+            int i15 = a2 & i14;
+            int i16 = -1;
+            while (true) {
+                i11 = b10 - 1;
+                i12 = iArr[i11];
+                if ((i12 & i14) != i15 || !n8.a(obj, objArr[i11]) || (objArr2 != null && !n8.a(obj2, objArr2[i11]))) {
+                    int i17 = i12 & i10;
+                    if (i17 == 0) {
+                        break;
+                    }
+                    i16 = i11;
+                    b10 = i17;
+                }
+            }
+            int i18 = i12 & i10;
+            if (i16 == -1) {
+                d(i13, i18, obj3);
+                return i11;
+            }
+            iArr[i16] = (i18 & i10) | (iArr[i16] & i14);
+            return i11;
+        }
+        return -1;
+    }
+
+    public static int b(int i10, Object obj) {
+        return obj instanceof byte[] ? ((byte[]) obj)[i10] & 255 : obj instanceof short[] ? (char) ((short[]) obj)[i10] : ((int[]) obj)[i10];
+    }
+
+    public static Object c(int i10) {
+        if (i10 < 2 || i10 > 1073741824 || Integer.highestOneBit(i10) != i10) {
+            throw new IllegalArgumentException(hg.k0.h(i10, "must be power of 2 between 2^1 and 2^30: "));
+        }
+        return i10 <= 256 ? new byte[i10] : i10 <= 65536 ? new short[i10] : new int[i10];
+    }
+
+    public static void d(int i10, int i11, Object obj) {
+        if (obj instanceof byte[]) {
+            ((byte[]) obj)[i10] = (byte) i11;
+        } else if (obj instanceof short[]) {
+            ((short[]) obj)[i10] = (short) i11;
+        } else {
+            ((int[]) obj)[i10] = i11;
+        }
     }
 }

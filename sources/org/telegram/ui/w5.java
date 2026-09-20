@@ -16,7 +16,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.camera.CameraView;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class w5 implements Runnable {
     public final /* synthetic */ int a;
@@ -90,9 +90,9 @@ public final class w5 implements Runnable {
                     x10Var.f.clear();
                     x10Var.n.clear();
                     x10Var.r.clear();
-                    org.telegram.ui.Components.vl0 vl0Var = x10Var.d;
-                    if (vl0Var != null) {
-                        vl0Var.l();
+                    org.telegram.ui.Components.ul0 ul0Var = x10Var.d;
+                    if (ul0Var != null) {
+                        ul0Var.l();
                         break;
                     }
                 }
@@ -107,7 +107,7 @@ public final class w5 implements Runnable {
                     i60 i60Var2 = (i60) this.b;
                     a40 a40Var = i60Var2.a2;
                     if (a40Var != null && !a40Var.b && (I0 = i60.I0(i60Var2)) != null && I0.isAttachedToWindow() && (renderer = I0.getRenderer()) != null && (pVar = renderer.a) != null) {
-                        i60.H3.postRunnable(new cu(21, this, pVar));
+                        i60.H3.postRunnable(new yt(23, this, pVar));
                         break;
                     }
                 } catch (Exception e) {
@@ -129,7 +129,7 @@ public final class w5 implements Runnable {
                     EGLSurface eGLSurface = b80Var3.f;
                     if (!egl10.eglMakeCurrent(eGLDisplay, eGLSurface, eGLSurface, b80Var3.e)) {
                         if (BuildVars.LOGS_ENABLED) {
-                            org.telegram.messenger.wh.t(((b80) this.b).b, new StringBuilder("eglMakeCurrent failed "));
+                            org.telegram.messenger.rk.u(((b80) this.b).b, new StringBuilder("eglMakeCurrent failed "));
                             break;
                         }
                     }
@@ -177,30 +177,30 @@ public final class w5 implements Runnable {
                 }
                 break;
             case 9:
-                jf0 jf0Var = (jf0) this.b;
-                if (jf0Var.h == this) {
-                    jf0Var.o();
-                    AndroidUtilities.runOnUIThread(jf0Var.h, 1000L);
+                kf0 kf0Var = (kf0) this.b;
+                if (kf0Var.h == this) {
+                    kf0Var.o();
+                    AndroidUtilities.runOnUIThread(kf0Var.h, 1000L);
                     break;
                 }
                 break;
             case 10:
-                ((kj0) this.b).T.animate().alpha(1.0f).setDuration(230L);
+                ((mj0) this.b).T.animate().alpha(1.0f).setDuration(230L);
                 break;
             case 11:
-                sj0 sj0Var = (sj0) this.b;
-                String str = sj0Var.j0;
+                uj0 uj0Var = (uj0) this.b;
+                String str = uj0Var.j0;
                 if (str != null) {
-                    sj0.Q(sj0Var, str);
+                    uj0.Q(uj0Var, str);
                     break;
                 }
                 break;
             case 12:
                 aw0 aw0Var = (aw0) this.b;
                 w5 w5Var = aw0Var.y0;
-                org.telegram.ui.Cells.d6 d6Var = aw0Var.b0;
-                if (d6Var != null) {
-                    EditTextBoldCursor editField = d6Var.getEditField();
+                org.telegram.ui.Cells.e6 e6Var = aw0Var.b0;
+                if (e6Var != null) {
+                    EditTextBoldCursor editField = e6Var.getEditField();
                     if (!aw0Var.U && editField != null && aw0Var.T && !aw0Var.Y && !AndroidUtilities.usingHardwareInput && !AndroidUtilities.isInMultiwindow && AndroidUtilities.isTablet()) {
                         editField.requestFocus();
                         AndroidUtilities.showKeyboard(editField);
@@ -211,21 +211,21 @@ public final class w5 implements Runnable {
                 }
                 break;
             case 13:
-                ((za1) this.b).b0.animate().alpha(1.0f).setDuration(230L);
+                ((bb1) this.b).b0.animate().alpha(1.0f).setDuration(230L);
                 break;
             case 14:
-                se1 se1Var = (se1) this.b;
-                se1Var.F.setVisibility(0);
-                se1Var.F.setAlpha(0.0f);
-                se1Var.F.animate().alpha(1.0f).start();
+                ue1 ue1Var = (ue1) this.b;
+                ue1Var.F.setVisibility(0);
+                ue1Var.F.setAlpha(0.0f);
+                ue1Var.F.animate().alpha(1.0f).start();
                 break;
             default:
-                nj1 nj1Var = (nj1) this.b;
-                MessageObject messageObject = nj1Var.n;
-                if (messageObject != null && nj1Var.getParentActivity() != null && nj1Var.s != null) {
-                    i10 = ((org.telegram.ui.ActionBar.n2) nj1Var).currentAccount;
+                oj1 oj1Var = (oj1) this.b;
+                MessageObject messageObject = oj1Var.n;
+                if (messageObject != null && oj1Var.getParentActivity() != null && oj1Var.s != null) {
+                    i10 = ((org.telegram.ui.ActionBar.n2) oj1Var).currentAccount;
                     MessagesController.getInstance(i10).sendTyping(messageObject.getDialogId(), 0L, 6, 0);
-                    AndroidUtilities.runOnUIThread(nj1Var.s, 25000L);
+                    AndroidUtilities.runOnUIThread(oj1Var.s, 25000L);
                     break;
                 }
                 break;

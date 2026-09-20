@@ -13,9 +13,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.UserConfig;
 import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class iu0 extends org.telegram.ui.Components.zf0 {
+public final class iu0 extends org.telegram.ui.Components.yf0 {
     public final Rect M;
     public final /* synthetic */ PhotoViewer N;
 
@@ -25,7 +25,7 @@ public final class iu0 extends org.telegram.ui.Components.zf0 {
         this.N = photoViewer;
         this.a = UserConfig.selectedAccount;
         this.v = new ArrayList();
-        this.L = new org.telegram.ui.Components.kc0(this, 10);
+        this.L = new org.telegram.ui.Components.jc0(this, 10);
         this.b = photoViewer2;
         this.r = f1Var;
         int i10 = 1;

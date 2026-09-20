@@ -14,7 +14,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public class FileUploadOperation {
     private static final int initialRequestsCount = 8;
@@ -68,7 +68,7 @@ public class FileUploadOperation {
     private SparseArray<UploadCachedResult> cachedResults = new SparseArray<>();
     private boolean[] recalculatedEstimatedSize = {false, false};
 
-    /* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+    /* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
     public interface FileUploadOperationDelegate {
         void didChangedUploadProgress(FileUploadOperation fileUploadOperation, long j3, long j10);
 
@@ -77,7 +77,7 @@ public class FileUploadOperation {
         void didFinishUploadingFile(FileUploadOperation fileUploadOperation, TLRPC.InputFile inputFile, TLRPC.InputEncryptedFile inputEncryptedFile, byte[] bArr, byte[] bArr2);
     }
 
-    /* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+    /* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
     public static class UploadCachedResult {
         private long bytesOffset;
         private byte[] iv;
@@ -760,7 +760,7 @@ public class FileUploadOperation {
                     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                         FileUploadOperation.this.lambda$startUploadRequest$6(i27, iArr, objectSize, bArr7, i26, i29, i25, j14, tLObject, tL_error);
                     }
-                }, null, new d0(this, 3), this.forceSmallFile ? 4 : 0, ConnectionsManager.DEFAULT_DATACENTER_ID, i28, true);
+                }, null, new c0(this, 3), this.forceSmallFile ? 4 : 0, ConnectionsManager.DEFAULT_DATACENTER_ID, i28, true);
                 if (BuildVars.LOGS_ENABLED) {
                     StringBuilder sb3 = new StringBuilder("debug_uploading:  send reqId ");
                     sb3.append(iArr[0]);
@@ -771,7 +771,7 @@ public class FileUploadOperation {
                     sb3.append(" isBig=");
                     sb3.append(this.isBigFile);
                     sb3.append(" file_id=");
-                    q.s(sb3, this.currentFileId);
+                    hg.k0.u(sb3, this.currentFileId);
                 }
                 this.requestTokens.put(i26, iArr[0]);
                 AndroidUtilities.runOnUIThread(new s3(this, iArr, 1));

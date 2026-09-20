@@ -13,10 +13,10 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.oq;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.v01;
+import org.telegram.ui.Components.u01;
 import org.telegram.ui.Components.yc;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class sa {
     public static CharSequence[] y;
@@ -29,15 +29,15 @@ public final class sa {
     public SpannableStringBuilder k;
     public String l;
     public boolean m;
-    public v01 n;
-    public v01 o;
+    public u01 n;
+    public u01 o;
     public boolean p;
     public boolean q;
     public View r;
     public Runnable s;
     public int x;
     public boolean f = true;
-    public final org.telegram.ui.Components.e6 h = new org.telegram.ui.Components.e6(0, 350, qr.h);
+    public final org.telegram.ui.Components.d6 h = new org.telegram.ui.Components.d6(0, 350, qr.h);
     public final yc i = new yc((View) null);
     public final org.telegram.ui.Cells.z j = org.telegram.ui.ActionBar.j6.Y(553648127, 0, 0);
     public final Paint t = new Paint(1);
@@ -68,11 +68,11 @@ public final class sa {
                 charSequence = "";
             }
             TLRPC.Document document = this.g;
-            this.n = new v01(charSequence, document != null ? 12.0f : 14.0f, document != null ? null : AndroidUtilities.bold());
+            this.n = new u01(charSequence, document != null ? 12.0f : 14.0f, document != null ? null : AndroidUtilities.bold());
         }
         if (this.o == null || this.m) {
             String str = this.l;
-            this.o = new v01(str != null ? str : "", 14.0f, null);
+            this.o = new u01(str != null ? str : "", 14.0f, null);
         }
         float e = this.h.e(this.f);
         Paint paint = this.t;
@@ -111,13 +111,13 @@ public final class sa {
         if (f10 < f7) {
             dp = (int) Math.min(AndroidUtilities.dp(12.0f) + dp, f7 - AndroidUtilities.dp(20.0f));
         }
-        v01 v01Var = this.n;
+        u01 u01Var = this.n;
         float f12 = dp;
-        v01Var.p = f12;
-        v01Var.c(AndroidUtilities.lerp(AndroidUtilities.dp(10.0f), AndroidUtilities.dp(7.0f), e), AndroidUtilities.lerp(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(11.0f), e), 1.0f, -1, canvas);
-        v01 v01Var2 = this.o;
-        v01Var2.p = f12;
-        v01Var2.c(AndroidUtilities.dp(10.0f), AndroidUtilities.dp(30.0f), f11, -1, canvas);
+        u01Var.p = f12;
+        u01Var.c(AndroidUtilities.lerp(AndroidUtilities.dp(10.0f), AndroidUtilities.dp(7.0f), e), AndroidUtilities.lerp(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(11.0f), e), 1.0f, -1, canvas);
+        u01 u01Var2 = this.o;
+        u01Var2.p = f12;
+        u01Var2.c(AndroidUtilities.dp(10.0f), AndroidUtilities.dp(30.0f), f11, -1, canvas);
         canvas.restore();
     }
 

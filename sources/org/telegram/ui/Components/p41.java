@@ -1,79 +1,132 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.text.TextUtils;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
 import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class p41 extends w51 {
-    static {
-        w51.setup(new p41());
+public final class p41 extends FrameLayout implements org.telegram.ui.ActionBar.z5 {
+    public final org.telegram.ui.ActionBar.f6 a;
+    public final LinearLayout b;
+    public final TextView c;
+    public final TextView d;
+    public final TextView e;
+    public final ImageView f;
+    public final LinearLayout h;
+    public final np n;
+    public final LinearLayout r;
+    public final ImageView s;
+    public final TextView v;
+
+    public p41(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context);
+        this.a = f6Var;
+        setClipToPadding(false);
+        setPadding(AndroidUtilities.dp(20.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(20.0f), AndroidUtilities.dp(6.0f));
+        LinearLayout f7 = org.telegram.messenger.rk.f(context, 0);
+        addView(f7, w7.y5.e(-2, -2, 19));
+        TextView textView = new TextView(context);
+        this.c = textView;
+        textView.setTextSize(1, 14.0f);
+        textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_EXTRA_BOLD));
+        f7.addView(textView, w7.y5.t(-2, -2, 19, 0, 0, 0, 0));
+        LinearLayout linearLayout = new LinearLayout(context);
+        this.b = linearLayout;
+        linearLayout.setOrientation(0);
+        linearLayout.setPadding(AndroidUtilities.dp(6.0f), AndroidUtilities.dp(1.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(1.0f));
+        w7.b6.a(linearLayout);
+        f7.addView(linearLayout, w7.y5.d(-2, -2.0f, 19, -6.0f, 0.0f, 0.0f, 0.0f));
+        TextView textView2 = new TextView(context);
+        this.d = textView2;
+        textView2.setTextSize(1, 14.0f);
+        textView2.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_EXTRA_BOLD));
+        linearLayout.addView(textView2, w7.y5.t(-2, -2, 19, 0, 0, 0, 0));
+        ImageView imageView = new ImageView(context);
+        this.f = imageView;
+        imageView.setImageResource(R.drawable.arrows_select);
+        linearLayout.addView(imageView, w7.y5.t(16, 16, 19, 1, 0, 0, 0));
+        imageView.setTranslationY(AndroidUtilities.dp(1.0f));
+        TextView textView3 = new TextView(context);
+        this.e = textView3;
+        textView3.setTextSize(1, 14.0f);
+        textView3.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_EXTRA_BOLD));
+        f7.addView(textView3, w7.y5.t(-2, -2, 19, -6, 0, 0, 0));
+        LinearLayout linearLayout2 = new LinearLayout(context);
+        this.h = linearLayout2;
+        linearLayout2.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(3.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(3.0f));
+        linearLayout2.setClipToPadding(false);
+        linearLayout2.setOrientation(0);
+        np npVar = new np(context, 20, f6Var);
+        this.n = npVar;
+        npVar.b(org.telegram.ui.ActionBar.j6.h7, org.telegram.ui.ActionBar.j6.j7, org.telegram.ui.ActionBar.j6.k7);
+        npVar.setDrawUnchecked(true);
+        npVar.a(false, false);
+        npVar.setDrawBackgroundAsArc(10);
+        linearLayout2.addView(npVar, w7.y5.t(22, 22, 16, 0, 0, 0, 0));
+        TextView textView4 = new TextView(context);
+        org.telegram.ui.Cells.c1.q(org.telegram.ui.ActionBar.j6.j5, f6Var, textView4, 1, 14.0f);
+        textView4.setText(LocaleController.getString(R.string.AIEditorEmojify));
+        linearLayout2.addView(textView4, w7.y5.t(-2, -2, 16, 3, -1, 2, 0));
+        addView(linearLayout2, w7.y5.d(-2, -2.0f, 21, 0.0f, -3.0f, -6.0f, -3.0f));
+        w7.b6.b(linearLayout2, 0.025f, 1.5f);
+        LinearLayout linearLayout3 = new LinearLayout(context);
+        this.r = linearLayout3;
+        linearLayout3.setPadding(AndroidUtilities.dp(6.0f), AndroidUtilities.dp(3.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(3.0f));
+        linearLayout3.setOrientation(0);
+        linearLayout3.setVisibility(8);
+        addView(linearLayout3, w7.y5.d(-2, -2.0f, 53, 0.0f, 0.0f, -6.0f, 0.0f));
+        w7.b6.b(linearLayout3, 0.025f, 1.5f);
+        ImageView imageView2 = new ImageView(context);
+        this.s = imageView2;
+        imageView2.setImageResource(R.drawable.mini_replace2);
+        linearLayout3.addView(imageView2, w7.y5.t(-2, -2, 16, 0, 0, 4, 0));
+        TextView textView5 = new TextView(context);
+        this.v = textView5;
+        com.google.android.gms.internal.vision.e2.l(14.0f, 1, textView5);
+        textView5.setText(LocaleController.getString(R.string.AIEditorAnotherExample));
+        linearLayout3.addView(textView5, w7.y5.q(-2, -2, 16));
+        e();
     }
 
-    public static x51 a(int i10, CharSequence charSequence, CharSequence charSequence2, CharSequence charSequence3, View.OnClickListener onClickListener, boolean z10, View.OnClickListener onClickListener2, n nVar) {
-        x51 J = x51.J(p41.class);
-        J.d = i10;
-        J.l = charSequence;
-        J.m = charSequence2;
-        J.n = charSequence3;
-        J.D = onClickListener;
-        J.e = z10;
-        J.E = onClickListener2;
-        J.G = nVar;
-        return J;
+    @Override // org.telegram.ui.ActionBar.z5
+    public final void e() {
+        int i10 = org.telegram.ui.ActionBar.j6.G6;
+        org.telegram.ui.ActionBar.f6 f6Var = this.a;
+        this.c.setTextColor(org.telegram.ui.ActionBar.j6.v0(i10, f6Var));
+        int i11 = org.telegram.ui.ActionBar.j6.L6;
+        this.d.setTextColor(org.telegram.ui.ActionBar.j6.v0(i11, f6Var));
+        this.e.setTextColor(org.telegram.ui.ActionBar.j6.v0(i10, f6Var));
+        this.f.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.j6.v0(i11, f6Var), PorterDuff.Mode.MULTIPLY));
+        LinearLayout linearLayout = this.b;
+        linearLayout.setBackground(linearLayout.isClickable() ? org.telegram.ui.ActionBar.j6.Y(org.telegram.ui.ActionBar.j6.l1(0.1f, org.telegram.ui.ActionBar.j6.w0(null, i11, false)), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f)) : null);
+        if (linearLayout.isClickable()) {
+            w7.b6.a(linearLayout);
+        } else {
+            linearLayout.setStateListAnimator(null);
+        }
+        this.h.setBackground(org.telegram.ui.ActionBar.j6.Y(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.i6, f6Var), 24, 24));
+        int i12 = org.telegram.ui.ActionBar.j6.Oh;
+        this.s.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.j6.v0(i12, f6Var), PorterDuff.Mode.SRC_IN));
+        this.v.setTextColor(org.telegram.ui.ActionBar.j6.v0(i12, f6Var));
+        this.r.setBackground(org.telegram.ui.ActionBar.j6.Y(org.telegram.ui.ActionBar.j6.l1(0.1f, org.telegram.ui.ActionBar.j6.v0(i12, f6Var)), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f)));
     }
 
-    public static x51 b(int i10, String str, String str2, String str3, m41 m41Var) {
-        return a(i10, str, str2, str3, m41Var, false, null, null);
+    public /* bridge */ /* synthetic */ int[] getColorKeys() {
+        return null;
     }
 
-    @Override // org.telegram.ui.Components.w51
-    public final void bindView(View view, x51 x51Var, boolean z10, l61 l61Var, t61 t61Var) {
-        q41 q41Var = (q41) view;
-        CharSequence charSequence = x51Var.l;
-        CharSequence charSequence2 = x51Var.m;
-        CharSequence charSequence3 = x51Var.n;
-        View.OnClickListener onClickListener = x51Var.D;
-        boolean z11 = x51Var.e;
-        View.OnClickListener onClickListener2 = x51Var.E;
-        Object obj = x51Var.G;
-        View.OnClickListener onClickListener3 = obj instanceof View.OnClickListener ? (View.OnClickListener) obj : null;
-        LinearLayout linearLayout = q41Var.r;
-        LinearLayout linearLayout2 = q41Var.h;
-        LinearLayout linearLayout3 = q41Var.b;
-        q41Var.c.setText(charSequence);
-        q41Var.d.setText(charSequence2);
-        q41Var.e.setText(charSequence3);
-        q41Var.f.setVisibility(onClickListener != null ? 0 : 8);
-        linearLayout3.setOnClickListener(onClickListener);
-        linearLayout3.setClickable(onClickListener != null);
-        q41Var.n.a(z11, false);
-        linearLayout2.setVisibility(onClickListener2 != null ? 0 : 8);
-        linearLayout2.setOnClickListener(onClickListener2);
-        linearLayout.setVisibility(onClickListener3 != null ? 0 : 8);
-        linearLayout.setOnClickListener(new dt(19, q41Var, onClickListener3));
-        q41Var.e();
-    }
-
-    @Override // org.telegram.ui.Components.w51
-    public final boolean contentsEquals(x51 x51Var, x51 x51Var2) {
-        return TextUtils.equals(x51Var.l, x51Var2.l) && TextUtils.equals(x51Var.m, x51Var2.m) && TextUtils.equals(x51Var.n, x51Var2.n) && x51Var.E == x51Var2.E;
-    }
-
-    @Override // org.telegram.ui.Components.w51
-    public final View createView(Context context, wl0 wl0Var, int i10, int i11, org.telegram.ui.ActionBar.e6 e6Var) {
-        return new q41(context, e6Var);
-    }
-
-    @Override // org.telegram.ui.Components.w51
-    public final boolean equals(x51 x51Var, x51 x51Var2) {
-        return x51Var.d == x51Var2.d;
-    }
-
-    @Override // org.telegram.ui.Components.w51
-    public final boolean isClickable() {
-        return false;
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
     }
 }

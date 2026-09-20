@@ -2,30 +2,30 @@ package org.telegram.ui.Cells;
 
 import android.view.ViewGroup;
 import org.telegram.ui.Components.oo0;
+import org.telegram.ui.Components.ro0;
 import org.telegram.ui.Components.so0;
-import org.telegram.ui.Components.to0;
 import org.telegram.ui.Components.u00;
-import org.telegram.ui.Components.wo0;
+import org.telegram.ui.Components.vo0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class g1 extends u00 {
     public final /* synthetic */ int e = 0;
     public final /* synthetic */ ViewGroup f;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public g1(to0 to0Var, boolean z10) {
+    public g1(so0 so0Var, boolean z10) {
         super(z10);
-        this.f = to0Var;
+        this.f = so0Var;
     }
 
-    @Override // org.telegram.ui.Components.qo0
+    @Override // org.telegram.ui.Components.po0
     public CharSequence d() {
         switch (this.e) {
             case 1:
-                so0 so0Var = ((to0) this.f).w;
-                if (so0Var != null) {
-                    return so0Var.getContentDescription();
+                ro0 ro0Var = ((so0) this.f).w;
+                if (ro0Var != null) {
+                    return ro0Var.getContentDescription();
                 }
                 return null;
             default:
@@ -37,9 +37,9 @@ public final class g1 extends u00 {
     public float h() {
         switch (this.e) {
             case 1:
-                int m0 = ((to0) this.f).w.m0();
-                if (m0 > 0) {
-                    return 1.0f / m0;
+                int l02 = ((so0) this.f).w.l0();
+                if (l02 > 0) {
+                    return 1.0f / l02;
                 }
                 return 0.05f;
             default:
@@ -68,8 +68,8 @@ public final class g1 extends u00 {
                         return 0.0f;
                     }
                     if (u1Var.F5) {
-                        wo0 wo0Var = u1Var.H5;
-                        return wo0Var.a / wo0Var.g;
+                        vo0 vo0Var = u1Var.H5;
+                        return vo0Var.a / vo0Var.g;
                     }
                     f7 = f1Var.b;
                     i10 = f1Var.f;
@@ -77,7 +77,7 @@ public final class g1 extends u00 {
                 }
                 return f7 / (i10 - i11);
             default:
-                return ((to0) this.f).getProgress();
+                return ((so0) this.f).getProgress();
         }
     }
 
@@ -86,20 +86,20 @@ public final class g1 extends u00 {
         switch (this.e) {
             case 0:
                 u1 u1Var = (u1) this.f;
-                wo0 wo0Var = u1Var.H5;
+                vo0 vo0Var = u1Var.H5;
                 f1 f1Var = u1Var.G5;
                 if (u1Var.y7.isMusic()) {
                     f1Var.i(f7);
                 } else if (u1Var.y7.isVoice()) {
                     if (u1Var.F5) {
-                        wo0Var.g(f7, false);
+                        vo0Var.g(f7, false);
                     } else {
                         f1Var.i(f7);
                     }
                 } else if (u1Var.y7.isRoundVideo()) {
                     if (u1Var.F5) {
-                        if (wo0Var != null) {
-                            wo0Var.g(f7, false);
+                        if (vo0Var != null) {
+                            vo0Var.g(f7, false);
                         }
                     } else if (f1Var != null) {
                         f1Var.i(f7);
@@ -110,11 +110,11 @@ public final class g1 extends u00 {
                 u1Var.invalidate();
                 break;
             default:
-                to0 to0Var = (to0) this.f;
-                to0Var.v = true;
-                to0Var.setProgress(f7);
-                to0Var.f(f7, true);
-                to0Var.v = false;
+                so0 so0Var = (so0) this.f;
+                so0Var.v = true;
+                so0Var.setProgress(f7);
+                so0Var.f(f7, true);
+                so0Var.v = false;
                 break;
         }
     }

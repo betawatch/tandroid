@@ -18,10 +18,11 @@ import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
 import org.telegram.tgnet.TLObject;
+import v7.j0;
 import z3.l;
 import z3.m;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class a implements m {
     public final v a = new v();
@@ -89,12 +90,12 @@ public final class a implements m {
     }
 
     @Override // z3.m
-    public final int A() {
+    public final int I() {
         return 2;
     }
 
     @Override // z3.m
-    public final void C(byte[] bArr, int i10, int i11, l lVar, h hVar) {
+    public final void M(byte[] bArr, int i10, int i11, l lVar, h hVar) {
         String v;
         int i12;
         v vVar = this.a;
@@ -147,10 +148,10 @@ public final class a implements m {
                     vVar.K(i13);
                     int j11 = vVar.j();
                     if (D4 > spannableStringBuilder.length()) {
-                        StringBuilder j12 = k0.j(D4, "Truncating styl end (", ") to cueText.length() (");
-                        j12.append(spannableStringBuilder.length());
-                        j12.append(").");
-                        e2.a.n("Tx3gParser", j12.toString());
+                        StringBuilder k10 = k0.k(D4, "Truncating styl end (", ") to cueText.length() (");
+                        k10.append(spannableStringBuilder.length());
+                        k10.append(").");
+                        e2.a.n("Tx3gParser", k10.toString());
                         D4 = spannableStringBuilder.length();
                     }
                     if (D3 >= D4) {
@@ -181,8 +182,8 @@ public final class a implements m {
     }
 
     @Override // z3.m
-    public final /* synthetic */ z3.d r(int i10, int i11, byte[] bArr) {
-        return t8.b.a(this, bArr, i11);
+    public final /* synthetic */ z3.d s(int i10, int i11, byte[] bArr) {
+        return j0.a(this, bArr, i11);
     }
 
     @Override // z3.m

@@ -23,11 +23,11 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.dg1;
+import org.telegram.ui.fg1;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class r50 implements d5, org.telegram.ui.ActionBar.a2, ImageReceiver.ImageReceiverDelegate, MessagesStorage.BooleanCallback, t5.b, s5.f, x2.m, org.telegram.ui.oy {
+public final /* synthetic */ class r50 implements c5, org.telegram.ui.ActionBar.a2, ImageReceiver.ImageReceiverDelegate, MessagesStorage.BooleanCallback, t5.b, s5.f, x2.n, org.telegram.ui.oy {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -45,19 +45,19 @@ public final /* synthetic */ class r50 implements d5, org.telegram.ui.ActionBar.
         return false;
     }
 
-    @Override // org.telegram.ui.Components.d5
+    @Override // org.telegram.ui.Components.c5
     public void J(int i10, int i11, boolean z10) {
         u50 u50Var = (u50) this.b;
         p50 p50Var = (p50) this.c;
         VideoEditedInfo videoEditedInfo = (VideoEditedInfo) this.d;
-        b60 b60Var = u50Var.H0;
+        a60 a60Var = u50Var.H0;
         MediaController.PhotoEntry photoEntry = new MediaController.PhotoEntry(0, 0, 0L, u50Var.a.getAbsolutePath(), 0, true, 0, 0, 0L);
         if (p50Var != null) {
             photoEntry.ttl = p50Var.c;
             photoEntry.effectId = p50Var.d;
         }
-        b60Var.f.q(photoEntry, videoEditedInfo, z10 || p50Var == null || p50Var.a, i10 != 0 ? i10 : p50Var != null ? p50Var.b : 0, i11 != 0 ? i11 : 0, false, p50Var != null ? p50Var.e : 0L);
-        b60Var.r(false, false);
+        a60Var.f.q(photoEntry, videoEditedInfo, z10 || p50Var == null || p50Var.a, i10 != 0 ? i10 : p50Var != null ? p50Var.b : 0, i11 != 0 ? i11 : 0, false, p50Var != null ? p50Var.e : 0L);
+        a60Var.q(false, false);
     }
 
     @Override // org.telegram.ui.oy
@@ -244,7 +244,7 @@ public final /* synthetic */ class r50 implements d5, org.telegram.ui.ActionBar.
                         } else if (i22 == 6) {
                             cVar4 = o5.c.n;
                         } else {
-                            w7.g6.a(Integer.valueOf(i22), "SQLiteEventStore", "%n is not valid. No matched LogEventDropped-Reason found. Treated it as REASON_UNKNOWN");
+                            w7.h6.a(Integer.valueOf(i22), "SQLiteEventStore", "%n is not valid. No matched LogEventDropped-Reason found. Treated it as REASON_UNKNOWN");
                         }
                     }
                     cVar = cVar4;
@@ -288,14 +288,14 @@ public final /* synthetic */ class r50 implements d5, org.telegram.ui.ActionBar.
         }
     }
 
-    @Override // x2.m
+    @Override // x2.n
     public e9.a1 b(int i10, b2.l1 l1Var, int[] iArr) {
-        x2.i iVar = (x2.i) this.b;
+        x2.j jVar = (x2.j) this.b;
         String str = (String) this.c;
         String str2 = (String) this.d;
         e9.f0 u10 = e9.i0.u();
         for (int i11 = 0; i11 < l1Var.a; i11++) {
-            u10.b(new x2.l(i10, l1Var, i11, iVar, iArr[i11], str, str2));
+            u10.b(new x2.m(i10, l1Var, i11, jVar, iArr[i11], str, str2));
         }
         return u10.i();
     }
@@ -303,7 +303,7 @@ public final /* synthetic */ class r50 implements d5, org.telegram.ui.ActionBar.
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public void didSetImage(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
         Bitmap bitmap;
-        j21 j21Var = (j21) this.b;
+        i21 i21Var = (i21) this.b;
         lp lpVar = (lp) this.c;
         TLRPC.WallPaper wallPaper = (TLRPC.WallPaper) this.d;
         ImageReceiver.BitmapHolder bitmapSafe = imageReceiver.getBitmapSafe();
@@ -311,12 +311,12 @@ public final /* synthetic */ class r50 implements d5, org.telegram.ui.ActionBar.
             return;
         }
         Drawable drawable = lpVar.b;
-        if (drawable instanceof lc0) {
-            lc0 lc0Var = (lc0) drawable;
+        if (drawable instanceof kc0) {
+            kc0 kc0Var = (kc0) drawable;
             TLRPC.WallPaperSettings wallPaperSettings = wallPaper.settings;
-            lc0Var.t(j21.e(bitmap), (wallPaperSettings == null || wallPaperSettings.intensity >= 0) ? 100 : -100);
-            lc0Var.u(j21Var.L);
-            j21Var.invalidate();
+            kc0Var.t(i21.e(bitmap), (wallPaperSettings == null || wallPaperSettings.intensity >= 0) ? 100 : -100);
+            kc0Var.u(i21Var.L);
+            i21Var.invalidate();
         }
     }
 
@@ -325,16 +325,35 @@ public final /* synthetic */ class r50 implements d5, org.telegram.ui.ActionBar.
         org.telegram.messenger.h5.a(this, i10, str, drawable);
     }
 
+    @Override // t5.b
+    public Object i() {
+        q5.a aVar = (q5.a) this.b;
+        l5.i iVar = (l5.i) this.c;
+        l5.h hVar = (l5.h) this.d;
+        s5.h hVar2 = (s5.h) aVar.d;
+        hVar2.getClass();
+        i5.d dVar = iVar.c;
+        String str = hVar.a;
+        String str2 = iVar.a;
+        String c10 = w7.h6.c("SQLiteEventStore");
+        if (Log.isLoggable(c10, 3)) {
+            Log.d(c10, "Storing event with priority=" + dVar + ", name=" + str + " for destination " + str2);
+        }
+        ((Long) hVar2.c(new r50(hVar2, hVar, iVar, 7))).getClass();
+        aVar.a.V(iVar, 1, false);
+        return null;
+    }
+
     @Override // org.telegram.ui.ActionBar.a2
-    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+    public void k(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
         switch (this.a) {
             case 1:
-                kv0 kv0Var = (kv0) this.b;
+                jv0 jv0Var = (jv0) this.b;
                 ai.t8 t8Var = (ai.t8) this.c;
                 ArrayList arrayList = (ArrayList) this.d;
                 t8Var.F(arrayList);
-                xc.a0(kv0Var.v1).Q(R.raw.ic_delete, 36, LocaleController.formatPluralString("BotPreviewsDeleted", arrayList.size(), new Object[0])).j();
-                kv0Var.L(false);
+                xc.a0(jv0Var.v1).Q(R.raw.ic_delete, 36, LocaleController.formatPluralString("BotPreviewsDeleted", arrayList.size(), new Object[0])).j();
+                jv0Var.L(false);
                 break;
             case 4:
                 boolean[] zArr = (boolean[]) this.b;
@@ -352,25 +371,6 @@ public final /* synthetic */ class r50 implements d5, org.telegram.ui.ActionBar.
         }
     }
 
-    @Override // t5.b
-    public Object h() {
-        q5.a aVar = (q5.a) this.b;
-        l5.i iVar = (l5.i) this.c;
-        l5.h hVar = (l5.h) this.d;
-        s5.h hVar2 = (s5.h) aVar.d;
-        hVar2.getClass();
-        i5.d dVar = iVar.c;
-        String str = hVar.a;
-        String str2 = iVar.a;
-        String c10 = w7.g6.c("SQLiteEventStore");
-        if (Log.isLoggable(c10, 3)) {
-            Log.d(c10, "Storing event with priority=" + dVar + ", name=" + str + " for destination " + str2);
-        }
-        ((Long) hVar2.c(new r50(hVar2, hVar, iVar, 7))).getClass();
-        aVar.a.V(iVar, 1, false);
-        return null;
-    }
-
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public /* synthetic */ void onAnimationReady(ImageReceiver imageReceiver) {
         org.telegram.messenger.h5.b(this, imageReceiver);
@@ -384,7 +384,7 @@ public final /* synthetic */ class r50 implements d5, org.telegram.ui.ActionBar.
     }
 
     @Override // org.telegram.ui.oy
-    public boolean u(org.telegram.ui.uy uyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, dg1 dg1Var) {
+    public boolean u(org.telegram.ui.uy uyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, fg1 fg1Var) {
         return yh.y3.X((yh.y3) this.b, (TL_stars.TL_starGiftUnique) this.c, (org.telegram.ui.uy) this.d, arrayList);
     }
 }

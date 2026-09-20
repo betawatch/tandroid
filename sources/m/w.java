@@ -12,9 +12,9 @@ import android.util.AttributeSet;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputConnection;
 import android.widget.MultiAutoCompleteTextView;
-import v7.v7;
+import v7.w7;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class w extends MultiAutoCompleteTextView implements u0.k {
     public static final int[] d = {R.attr.popupBackground};
@@ -27,7 +27,7 @@ public final class w extends MultiAutoCompleteTextView implements u0.k {
         super(context, attributeSet, org.telegram.messenger.beta.R.attr.autoCompleteTextViewStyle);
         b3.a(context);
         a3.a(this, getContext());
-        lf.i Q = lf.i.Q(getContext(), attributeSet, d, org.telegram.messenger.beta.R.attr.autoCompleteTextViewStyle);
+        lf.h Q = lf.h.Q(getContext(), attributeSet, d, org.telegram.messenger.beta.R.attr.autoCompleteTextViewStyle);
         if (((TypedArray) Q.c).hasValue(0)) {
             setDropDownBackgroundDrawable(Q.F(0));
         }
@@ -143,7 +143,7 @@ public final class w extends MultiAutoCompleteTextView implements u0.k {
 
     @Override // android.widget.AutoCompleteTextView
     public void setDropDownBackgroundResource(int i10) {
-        setDropDownBackgroundDrawable(v7.b(getContext(), i10));
+        setDropDownBackgroundDrawable(w7.b(getContext(), i10));
     }
 
     public void setEmojiCompatEnabled(boolean z10) {

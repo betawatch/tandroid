@@ -5,7 +5,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageLocation;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class p50 implements org.telegram.ui.Components.t40 {
     public float a;
@@ -39,15 +39,15 @@ public final class p50 implements org.telegram.ui.Components.t40 {
         }
         for (int i10 = 0; i10 < o50Var.getChildCount(); i10++) {
             View childAt = o50Var.getChildAt(i10);
-            if (childAt instanceof org.telegram.ui.Cells.e4) {
-                org.telegram.ui.Cells.e4 e4Var = (org.telegram.ui.Cells.e4) childAt;
-                if (e4Var.c()) {
-                    org.telegram.ui.Cells.z3 z3Var = e4Var.x;
-                    z3Var.setProgress(f7);
+            if (childAt instanceof org.telegram.ui.Cells.f4) {
+                org.telegram.ui.Cells.f4 f4Var = (org.telegram.ui.Cells.f4) childAt;
+                if (f4Var.c()) {
+                    org.telegram.ui.Cells.a4 a4Var = f4Var.x;
+                    a4Var.setProgress(f7);
                     if (f7 < 1.0f) {
-                        AndroidUtilities.updateViewVisibilityAnimated(z3Var, true, 1.0f, true);
+                        AndroidUtilities.updateViewVisibilityAnimated(a4Var, true, 1.0f, true);
                     } else {
-                        AndroidUtilities.updateViewVisibilityAnimated(z3Var, false, 1.0f, true);
+                        AndroidUtilities.updateViewVisibilityAnimated(a4Var, false, 1.0f, true);
                     }
                 }
             }

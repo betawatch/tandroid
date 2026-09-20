@@ -27,9 +27,9 @@ import m.p3;
 import m.r1;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.ui.Components.pa;
+import org.telegram.ui.Components.oa;
 import org.telegram.ui.au0;
-import org.telegram.ui.web.u0;
+import org.telegram.ui.web.r0;
 import pg.c1;
 import pg.d;
 import pg.e1;
@@ -37,7 +37,7 @@ import pg.f1;
 import pg.s0;
 import qb.m;
 import qg.j;
-import qg.u2;
+import qg.v2;
 import r0.i0;
 import rg.n1;
 import s4.o0;
@@ -45,16 +45,17 @@ import s4.v;
 import s4.y;
 import tg.m1;
 import tg.z0;
-import w7.n6;
+import v7.s1;
+import w7.o6;
 import x7.a7;
 import x7.f;
-import x7.fa;
-import x7.m7;
-import x7.o7;
-import x7.r0;
+import x7.ga;
+import x7.n7;
+import x7.p7;
 import x7.z6;
 import y2.k;
 import yf.e;
+import yf.x;
 import z4.g;
 import z7.de;
 import z7.ed;
@@ -66,7 +67,7 @@ import z7.lg;
 import z7.ma;
 import z7.wf;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b implements Runnable {
     public final /* synthetic */ int a;
@@ -110,8 +111,8 @@ public final /* synthetic */ class b implements Runnable {
                     GLES20.glTexParameteri(3553, 10241, 9729);
                     GLES20.glUniform1i(f1Var.d("blured"), 1);
                     GLES20.glActiveTexture(33985);
-                    pa paVar = s0Var.F.m;
-                    GLES20.glBindTexture(3553, paVar != null ? paVar.s[2] : -1);
+                    oa oaVar = s0Var.F.m;
+                    GLES20.glBindTexture(3553, oaVar != null ? oaVar.s[2] : -1);
                     if (s0Var.b == null || !(s0Var.i instanceof d)) {
                         GLES20.glUniform1f(f1Var.d("eraser"), 0.0f);
                     } else {
@@ -162,7 +163,7 @@ public final /* synthetic */ class b implements Runnable {
                     GLES20.glVertexAttribPointer(1, 2, 5126, false, 8, (Buffer) s0Var.n);
                     GLES20.glEnableVertexAttribArray(1);
                     GLES20.glDrawArrays(5, 0, 4);
-                    n6.a();
+                    o6.a();
                     i10 = s0Var.q;
                     if (i10 != 0 && s0Var.d != null && s0Var.I > f7) {
                         s0Var.o(i10, s0Var.g(), s0Var.d, (s0Var.J * f10) + (s0Var.I * f10));
@@ -186,7 +187,7 @@ public final /* synthetic */ class b implements Runnable {
         e1 e1Var = ((c1) this.b).y;
         if (!e1Var.s) {
             e1Var.s = true;
-            AndroidUtilities.runOnUIThread(new u0(this, 11));
+            AndroidUtilities.runOnUIThread(new r0(this, 12));
         }
         if (((c1) this.b).h) {
             return;
@@ -241,8 +242,8 @@ public final /* synthetic */ class b implements Runnable {
                 return;
             case 2:
                 j jVar = ((au0) this.b).S0;
-                if (jVar instanceof u2) {
-                    ((u2) jVar).getEditText();
+                if (jVar instanceof v2) {
+                    ((v2) jVar).getEditText();
                     return;
                 }
                 return;
@@ -398,10 +399,10 @@ public final /* synthetic */ class b implements Runnable {
                 ((ThreadLocal) ((t) this.b).e).set(Boolean.TRUE);
                 return;
             case 9:
-                fa faVar = (fa) this.b;
-                o7 o7Var = o7.f;
-                HashMap hashMap = faVar.j;
-                f fVar = (f) hashMap.get(o7Var);
+                ga gaVar = (ga) this.b;
+                p7 p7Var = p7.f;
+                HashMap hashMap = gaVar.j;
+                f fVar = (f) hashMap.get(p7Var);
                 if (fVar != null) {
                     f fVar2 = fVar;
                     x7.a aVar3 = fVar2.a;
@@ -431,23 +432,23 @@ public final /* synthetic */ class b implements Runnable {
                             j12 = ((Long) obj2).longValue() + j12;
                         }
                         z6Var.c = Long.valueOf((j12 / arrayList2.size()) & Long.MAX_VALUE);
-                        z6Var.a = Long.valueOf(fa.a(arrayList2, 100.0d) & Long.MAX_VALUE);
-                        z6Var.f = Long.valueOf(fa.a(arrayList2, 75.0d) & Long.MAX_VALUE);
-                        z6Var.e = Long.valueOf(fa.a(arrayList2, 50.0d) & Long.MAX_VALUE);
-                        z6Var.d = Long.valueOf(fa.a(arrayList2, 25.0d) & Long.MAX_VALUE);
-                        z6Var.b = Long.valueOf(fa.a(arrayList2, 0.0d) & Long.MAX_VALUE);
+                        z6Var.a = Long.valueOf(ga.a(arrayList2, 100.0d) & Long.MAX_VALUE);
+                        z6Var.f = Long.valueOf(ga.a(arrayList2, 75.0d) & Long.MAX_VALUE);
+                        z6Var.e = Long.valueOf(ga.a(arrayList2, 50.0d) & Long.MAX_VALUE);
+                        z6Var.d = Long.valueOf(ga.a(arrayList2, 25.0d) & Long.MAX_VALUE);
+                        z6Var.b = Long.valueOf(ga.a(arrayList2, 0.0d) & Long.MAX_VALUE);
                         a7 a7Var = new a7(z6Var);
                         int size2 = arrayList2.size();
                         n nVar = new n();
-                        nVar.c = m7.b;
-                        v7.r1 r1Var2 = new v7.r1(7, false);
-                        r1Var2.d = Integer.valueOf(size2 & ConnectionsManager.DEFAULT_DATACENTER_ID);
-                        r1Var2.b = (r0) next;
-                        r1Var2.c = a7Var;
-                        nVar.f = new x7.s0(r1Var2);
-                        m.a.execute(new p(faVar, new a5.a(nVar, 0), o7Var, faVar.b(), 7));
+                        nVar.c = n7.b;
+                        s1 s1Var = new s1(7, false);
+                        s1Var.d = Integer.valueOf(size2 & ConnectionsManager.DEFAULT_DATACENTER_ID);
+                        s1Var.b = (x7.r0) next;
+                        s1Var.c = a7Var;
+                        nVar.f = new x7.s0(s1Var);
+                        m.a.execute(new p(gaVar, new a5.a(nVar, 0), p7Var, gaVar.b(), 7));
                     }
-                    hashMap.remove(o7Var);
+                    hashMap.remove(p7Var);
                     return;
                 }
                 return;
@@ -468,10 +469,10 @@ public final /* synthetic */ class b implements Runnable {
                     return;
                 }
             case 12:
-                yf.y yVar2 = (yf.y) this.b;
-                if (yVar2.F.get()) {
-                    yVar2.invalidate();
-                    yVar2.H.postDelayed(this, 300L);
+                x xVar = (x) this.b;
+                if (xVar.F.get()) {
+                    xVar.invalidate();
+                    xVar.H.postDelayed(this, 300L);
                     return;
                 }
                 return;
@@ -523,11 +524,11 @@ public final /* synthetic */ class b implements Runnable {
                         int size4 = arrayList3.size();
                         p3 p3Var = new p3();
                         p3Var.c = fb.b;
-                        v7.r1 r1Var3 = new v7.r1(13, false);
-                        r1Var3.d = Integer.valueOf(size4 & ConnectionsManager.DEFAULT_DATACENTER_ID);
-                        r1Var3.b = (i1) next2;
-                        r1Var3.c = maVar;
-                        p3Var.h = new j1(r1Var3);
+                        s1 s1Var2 = new s1(13, false);
+                        s1Var2.d = Integer.valueOf(size4 & ConnectionsManager.DEFAULT_DATACENTER_ID);
+                        s1Var2.b = (i1) next2;
+                        s1Var2.c = maVar;
+                        p3Var.h = new j1(s1Var2);
                         wf wfVar2 = wfVar;
                         hb hbVar2 = hbVar;
                         m.a.execute(new p(wfVar2, new a5.a(p3Var, 0), hbVar2, wfVar.c(), 8));

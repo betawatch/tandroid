@@ -26,12 +26,12 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.a2;
 import org.telegram.ui.ActionBar.b2;
-import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
-import org.telegram.ui.Components.ll0;
+import org.telegram.ui.Components.kl0;
 import org.telegram.ui.Components.voip.f2;
-import org.telegram.ui.Components.x51;
+import org.telegram.ui.Components.w51;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.cm0;
 import org.telegram.ui.dt;
@@ -44,9 +44,9 @@ import org.telegram.ui.pn0;
 import org.telegram.ui.w00;
 import org.telegram.ui.zl0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
-public final /* synthetic */ class i implements Continuation, a2, j0, ll0, dt, androidx.car.app.utils.a {
+public final /* synthetic */ class i implements Continuation, a2, j0, kl0, dt, androidx.car.app.utils.a {
     public final /* synthetic */ int a;
     public final /* synthetic */ boolean b;
     public final /* synthetic */ Object c;
@@ -75,22 +75,29 @@ public final /* synthetic */ class i implements Continuation, a2, j0, ll0, dt, a
         f2.m(user, this.b, userFull != null && userFull.video_calls_available, launchActivity, userFull, AccountInstance.getInstance(iArr[0]));
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.kl0
     public void c(float f7, float f10, int i10, View view) {
-        ChatAttachAlertPhotoLayout.K((ChatAttachAlertPhotoLayout) this.c, this.b, (e6) this.d, view, i10);
+        ChatAttachAlertPhotoLayout.K((ChatAttachAlertPhotoLayout) this.c, this.b, (f6) this.d, view, i10);
     }
 
-    @Override // org.telegram.ui.Components.ll0
-    public /* synthetic */ boolean d1(View view) {
+    @Override // org.telegram.ui.Components.kl0
+    public /* synthetic */ boolean c1(View view) {
         return false;
     }
 
+    @Override // m4.j0
+    public void f(m4.r rVar) {
+        k0 k0Var = (k0) this.c;
+        i9.c0 q6 = k0Var.g.q(rVar, i0.z((b2.k0) this.d), -1, -9223372036854775807L);
+        q6.a(new i9.s(0, q6, new androidx.activity.n(k0Var, rVar, this.b, 3)), i9.q.a);
+    }
+
     @Override // org.telegram.ui.ActionBar.a2
-    public void f(b2 b2Var, int i10) {
+    public void k(b2 b2Var, int i10) {
         switch (this.a) {
             case 1:
                 hg.a0 a0Var = (hg.a0) this.c;
-                (!this.b ? a0Var.k : a0Var.j).remove(Long.valueOf(((x51) this.d).x));
+                (!this.b ? a0Var.k : a0Var.j).remove(Long.valueOf(((w51) this.d).x));
                 a0Var.e.run();
                 break;
             case 2:
@@ -189,13 +196,6 @@ public final /* synthetic */ class i implements Continuation, a2, j0, ll0, dt, a
         }
     }
 
-    @Override // m4.j0
-    public void g(m4.r rVar) {
-        k0 k0Var = (k0) this.c;
-        i9.c0 q6 = k0Var.g.q(rVar, i0.z((b2.k0) this.d), -1, -9223372036854775807L);
-        q6.a(new i9.s(0, q6, new androidx.activity.n(k0Var, rVar, this.b, 3)), i9.q.a);
-    }
-
     @Override // com.google.android.gms.tasks.Continuation
     public Object then(Task task) {
         return (u6.b.d() && ((Integer) task.getResult()).intValue() == 402) ? j.a((Context) this.c, (Intent) this.d, this.b).continueWith(new a3.b(2), new w1(25)) : task;
@@ -215,7 +215,7 @@ public final /* synthetic */ class i implements Continuation, a2, j0, ll0, dt, a
         this.d = n2Var;
     }
 
-    @Override // org.telegram.ui.Components.ll0
-    public /* synthetic */ void r0(View view, float f7, float f10) {
+    @Override // org.telegram.ui.Components.kl0
+    public /* synthetic */ void q0(View view, float f7, float f10) {
     }
 }

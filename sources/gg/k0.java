@@ -11,13 +11,13 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.at;
-import org.telegram.ui.Components.du0;
-import org.telegram.ui.Components.kv0;
+import org.telegram.ui.Components.cu0;
+import org.telegram.ui.Components.jv0;
 import org.telegram.ui.Components.voip.p2;
 import org.telegram.ui.Components.ys;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class k0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -96,10 +96,10 @@ public final class k0 extends AnimatorListenerAdapter {
                 atVar.A();
                 break;
             case 3:
-                ((kv0) this.e).H1 = false;
+                ((jv0) this.e).H1 = false;
                 View view3 = (View) this.c;
                 if (view3.getParent() != null) {
-                    ((du0) this.b).removeView(view3);
+                    ((cu0) this.b).removeView(view3);
                     ((Bitmap) this.d).recycle();
                     break;
                 }
@@ -130,7 +130,7 @@ public final class k0 extends AnimatorListenerAdapter {
                         p2Var.e(true);
                     } else {
                         textViewArr[1].setText(p2Var.e);
-                        p2Var.a(textViewArr[0], textViewArr[1], new i2.g0(this, 24));
+                        p2Var.a(textViewArr[0], textViewArr[1], new i2.g0(this, 25));
                     }
                     p2Var.e = null;
                     break;

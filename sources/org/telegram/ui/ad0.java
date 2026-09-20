@@ -1,33 +1,36 @@
 package org.telegram.ui;
 
-import androidx.recyclerview.widget.RecyclerView;
+import android.content.Context;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class ad0 extends s4.s0 {
-    public final /* synthetic */ jd0 a;
+public final class ad0 extends org.telegram.ui.Components.jv0 {
+    public final /* synthetic */ kd0 f2;
 
-    public ad0(jd0 jd0Var) {
-        this.a = jd0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ad0(kd0 kd0Var, Context context, org.telegram.ui.Components.bv0 bv0Var, kd0 kd0Var2, zc0 zc0Var, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context, 0L, bv0Var, 0, null, null, null, 8, 0, kd0Var2, zc0Var, 0, f6Var, null);
+        this.f2 = kd0Var;
     }
 
-    @Override // s4.s0
-    public final void a(RecyclerView recyclerView, int i10) {
-        boolean z10 = i10 != 0;
-        jd0 jd0Var = this.a;
-        jd0Var.Q = z10;
-        if (z10 || jd0Var.L == null) {
-            return;
-        }
-        jd0Var.L = null;
+    @Override // org.telegram.ui.Components.jv0
+    public final int B0() {
+        return 32;
     }
 
-    @Override // s4.s0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        jd0 jd0Var = this.a;
-        jd0Var.A0(false);
-        if (jd0Var.L != null) {
-            jd0Var.N += i11;
-        }
+    @Override // org.telegram.ui.Components.jv0
+    public final boolean N() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.jv0
+    public final int S0() {
+        return 3;
+    }
+
+    @Override // org.telegram.ui.Components.jv0
+    public final TL_stories.MediaArea getStoriesArea() {
+        return this.f2.M0;
     }
 }

@@ -9,7 +9,7 @@ import android.graphics.Shader;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class h {
     public final Paint a;
@@ -27,7 +27,7 @@ public final class h {
     public float m;
     public float n;
     public rg.z1 o;
-    public org.telegram.ui.web.u0 p;
+    public org.telegram.ui.web.r0 p;
 
     public h() {
         this(64, 204, 160);
@@ -70,9 +70,9 @@ public final class h {
                     this.g = f7;
                     if (f7 > this.m) {
                         this.g = 0.0f;
-                        org.telegram.ui.web.u0 u0Var = this.p;
-                        if (u0Var != null) {
-                            u0Var.run();
+                        org.telegram.ui.web.r0 r0Var = this.p;
+                        if (r0Var != null) {
+                            r0Var.run();
                         }
                     }
                     this.h = currentTimeMillis;

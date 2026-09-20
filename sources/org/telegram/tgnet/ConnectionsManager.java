@@ -70,13 +70,14 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.StatsController;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.l0;
 import org.telegram.messenger.lh;
-import org.telegram.messenger.voip.l0;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.u71;
-import org.telegram.ui.xg0;
+import org.telegram.ui.Components.t71;
+import org.telegram.ui.yg0;
+import v7.j0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public class ConnectionsManager extends BaseController {
     private static final int CORE_POOL_SIZE;
@@ -131,7 +132,7 @@ public class ConnectionsManager extends BaseController {
     private AtomicInteger lastRequestToken;
     private final ConcurrentHashMap<Integer, RequestCallbacks> requestCallbacks;
 
-    /* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+    /* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
     public static class GoogleDnsLoadTask extends AsyncTask<Void, Void, NativeByteBuffer> {
         private int currentAccount;
         private int responseDate;
@@ -286,12 +287,12 @@ public class ConnectionsManager extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+    /* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
     public interface INativeTlTest {
         boolean test(long j3);
     }
 
-    /* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+    /* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
     public static class MozillaDnsLoadTask extends AsyncTask<Void, Void, NativeByteBuffer> {
         private int currentAccount;
         private int responseDate;
@@ -420,7 +421,7 @@ public class ConnectionsManager extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+    /* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
     public static class RequestCallbacks {
         public Runnable onCancelled;
         public RequestDelegateInternal onComplete;
@@ -434,7 +435,7 @@ public class ConnectionsManager extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+    /* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
     public static class ResolveHostByNameTask extends AsyncTask<Void, Void, ResolvedDomain> {
         private ArrayList<Long> addresses = new ArrayList<>();
         private String currentHostName;
@@ -563,7 +564,7 @@ public class ConnectionsManager extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+    /* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
     public static class ResolvedDomain {
         public ArrayList<String> addresses;
         long ttl;
@@ -713,7 +714,7 @@ public class ConnectionsManager extends BaseController {
     private String getRegId() {
         String str = SharedConfig.pushString;
         if (!TextUtils.isEmpty(str) && SharedConfig.pushType == 13) {
-            str = t8.b.i("huawei://", str);
+            str = j0.g("huawei://", str);
         }
         if (TextUtils.isEmpty(str) && !TextUtils.isEmpty(SharedConfig.pushStringStatus)) {
             str = SharedConfig.pushStringStatus;
@@ -789,10 +790,10 @@ public class ConnectionsManager extends BaseController {
     public static /* synthetic */ void lambda$onIntegrityCheckClassic$25(int i10, long j3, int i11, String str, IntegrityTokenResponse integrityTokenResponse) {
         String str2 = integrityTokenResponse.token();
         if (str2 == null) {
-            StringBuilder j10 = k0.j(i10, "account", ": integrity check gave null token in ");
-            j10.append(System.currentTimeMillis() - j3);
-            j10.append("ms");
-            FileLog.e(j10.toString());
+            StringBuilder k10 = k0.k(i10, "account", ": integrity check gave null token in ");
+            k10.append(System.currentTimeMillis() - j3);
+            k10.append("ms");
+            FileLog.e(k10.toString());
             native_receivedIntegrityCheckClassic(i10, i11, str, "PLAYINTEGRITY_FAILED_EXCEPTION_NULL");
             return;
         }
@@ -806,11 +807,11 @@ public class ConnectionsManager extends BaseController {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$onIntegrityCheckClassic$26(int i10, long j3, int i11, String str, Exception exc) {
-        StringBuilder j10 = k0.j(i10, "account", ": integrity check failed to give a token in ");
-        j10.append(System.currentTimeMillis() - j3);
-        j10.append("ms");
-        FileLog.e(j10.toString(), exc);
-        native_receivedIntegrityCheckClassic(i10, i11, str, "PLAYINTEGRITY_FAILED_EXCEPTION_" + xg0.f1(exc));
+        StringBuilder k10 = k0.k(i10, "account", ": integrity check failed to give a token in ");
+        k10.append(System.currentTimeMillis() - j3);
+        k10.append("ms");
+        FileLog.e(k10.toString(), exc);
+        native_receivedIntegrityCheckClassic(i10, i11, str, "PLAYINTEGRITY_FAILED_EXCEPTION_" + yg0.f1(exc));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -982,7 +983,7 @@ public class ConnectionsManager extends BaseController {
                 }
                 i17 = 0;
             }
-            if ((i10 & 2) != 0 && u71.k0.isEmpty()) {
+            if ((i10 & 2) != 0 && t71.k0.isEmpty()) {
                 y2.f.b(ApplicationLoader.applicationContext).d(i17, Math.max(0L, (System.currentTimeMillis() - j3) - native_getCurrentPingTime(this.currentAccount)));
             }
             if (BuildVars.DEBUG_PRIVATE_VERSION) {
@@ -1292,7 +1293,7 @@ public class ConnectionsManager extends BaseController {
             wrap.reused = true;
             TLRPC.TL_config TLdeserialize = TLRPC.TL_config.TLdeserialize(wrap, wrap.readInt32(true), true);
             if (TLdeserialize != null) {
-                Utilities.stageQueue.postRunnable(new n8(i10, TLdeserialize, 16));
+                Utilities.stageQueue.postRunnable(new n8(i10, TLdeserialize, 14));
             }
         } catch (Exception e) {
             FileLog.e(e);
@@ -1424,7 +1425,7 @@ public class ConnectionsManager extends BaseController {
 
     public static void setRegId(String str, int i10, String str2) {
         if (!TextUtils.isEmpty(str) && i10 == 13) {
-            str = t8.b.i("huawei://", str);
+            str = j0.g("huawei://", str);
         }
         if (!TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
             str2 = str;
@@ -1710,7 +1711,7 @@ public class ConnectionsManager extends BaseController {
                 this.appResumeCount++;
             }
             if (BuildVars.LOGS_ENABLED) {
-                org.telegram.messenger.q.o(this.appResumeCount, new StringBuilder("app resume count "));
+                l0.m(this.appResumeCount, new StringBuilder("app resume count "));
             }
             if (this.appResumeCount < 0) {
                 this.appResumeCount = 0;
@@ -1769,7 +1770,7 @@ public class ConnectionsManager extends BaseController {
     }
 
     public void cancelRequest(int i10, boolean z10, Runnable runnable) {
-        Utilities.stageQueue.postRunnable(new l0(i10, 1, this, runnable, z10));
+        Utilities.stageQueue.postRunnable(new org.telegram.messenger.voip.l0(i10, 1, this, runnable, z10));
     }
 
     public int sendRequest(TLObject tLObject, RequestDelegate requestDelegate, int i10) {

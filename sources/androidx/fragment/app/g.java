@@ -12,23 +12,23 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.f3;
 import org.telegram.ui.Cells.u1;
-import org.telegram.ui.Components.gw0;
-import org.telegram.ui.Components.nm0;
-import org.telegram.ui.Components.wo0;
+import org.telegram.ui.Components.fw0;
+import org.telegram.ui.Components.mm0;
+import org.telegram.ui.Components.vo0;
 import org.telegram.ui.d40;
-import org.telegram.ui.g51;
-import org.telegram.ui.i51;
 import org.telegram.ui.i60;
-import org.telegram.ui.ke1;
+import org.telegram.ui.j51;
+import org.telegram.ui.l51;
+import org.telegram.ui.me1;
 import org.telegram.ui.mw0;
 import org.telegram.ui.u3;
 import org.telegram.ui.uo;
-import org.telegram.ui.xg0;
 import org.telegram.ui.yd;
+import org.telegram.ui.yg0;
 import org.telegram.ui.zn;
-import qg.s2;
+import qg.t2;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class g extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -47,7 +47,7 @@ public final class g extends AnimatorListenerAdapter {
     public final void onAnimationEnd(Animator anim) {
         ViewGroup viewGroup;
         ViewGroup viewGroup2;
-        g51 g51Var;
+        j51 j51Var;
         switch (this.a) {
             case 0:
                 kotlin.jvm.internal.i.e(anim, "anim");
@@ -105,14 +105,14 @@ public final class g extends AnimatorListenerAdapter {
                 }
                 return;
             case 5:
-                nm0 nm0Var = (nm0) this.d;
+                mm0 mm0Var = (mm0) this.d;
                 float f7 = this.b ? 1.0f : 0.0f;
-                nm0Var.r = f7;
-                nm0Var.y.setScaleX(AndroidUtilities.lerp(0.8f, 1.0f, f7));
-                nm0Var.y.setScaleY(AndroidUtilities.lerp(0.8f, 1.0f, nm0Var.r));
-                nm0Var.y.setAlpha(nm0Var.r);
-                nm0Var.s.invalidate();
-                nm0Var.v.invalidate();
+                mm0Var.r = f7;
+                mm0Var.y.setScaleX(AndroidUtilities.lerp(0.8f, 1.0f, f7));
+                mm0Var.y.setScaleY(AndroidUtilities.lerp(0.8f, 1.0f, mm0Var.r));
+                mm0Var.y.setAlpha(mm0Var.r);
+                mm0Var.s.invalidate();
+                mm0Var.v.invalidate();
                 Runnable runnable2 = (Runnable) this.c;
                 if (runnable2 != null) {
                     AndroidUtilities.runOnUIThread(runnable2);
@@ -178,14 +178,14 @@ public final class g extends AnimatorListenerAdapter {
                 i60Var.Q.invalidate();
                 return;
             case 8:
-                gw0 gw0Var = (gw0) this.c;
-                xg0 xg0Var = (xg0) this.d;
-                if (xg0Var.J == 0 && this.b) {
-                    xg0Var.v1(true, true);
+                fw0 fw0Var = (fw0) this.c;
+                yg0 yg0Var = (yg0) this.d;
+                if (yg0Var.J == 0 && this.b) {
+                    yg0Var.v1(true, true);
                 }
-                gw0Var.setVisibility(8);
-                gw0Var.g();
-                gw0Var.setX(0.0f);
+                fw0Var.setVisibility(8);
+                fw0Var.g();
+                fw0Var.setX(0.0f);
                 return;
             case 9:
                 mw0 mw0Var = (mw0) this.d;
@@ -200,21 +200,21 @@ public final class g extends AnimatorListenerAdapter {
                 }
                 return;
             case 10:
-                i51 i51Var = (i51) this.d;
-                i51Var.s = this.b ? 1.0f : 0.0f;
-                i51Var.b.invalidate();
-                i51Var.c.invalidate();
-                i51Var.e();
-                TextView textView = i51Var.y;
+                l51 l51Var = (l51) this.d;
+                l51Var.s = this.b ? 1.0f : 0.0f;
+                l51Var.b.invalidate();
+                l51Var.c.invalidate();
+                l51Var.e();
+                TextView textView = l51Var.y;
                 if (textView != null) {
-                    textView.setAlpha(i51Var.s);
+                    textView.setAlpha(l51Var.s);
                 }
-                if (i51Var.S) {
-                    i51Var.N.invalidate();
+                if (l51Var.S) {
+                    l51Var.N.invalidate();
                 }
-                if (!i51Var.S && (g51Var = i51Var.N) != null && g51Var.getSeekBarWaveform() != null) {
-                    wo0 seekBarWaveform = i51Var.N.getSeekBarWaveform();
-                    seekBarWaveform.L = i51Var.s;
+                if (!l51Var.S && (j51Var = l51Var.N) != null && j51Var.getSeekBarWaveform() != null) {
+                    vo0 seekBarWaveform = l51Var.N.getSeekBarWaveform();
+                    seekBarWaveform.L = l51Var.s;
                     u1 u1Var2 = seekBarWaveform.n;
                     if (u1Var2 != null) {
                         u1Var2.invalidate();
@@ -227,11 +227,11 @@ public final class g extends AnimatorListenerAdapter {
                 }
                 return;
             case 11:
-                ke1 ke1Var = (ke1) this.d;
-                ke1Var.x = this.b ? 1.0f : 0.0f;
-                ke1Var.b.invalidate();
-                ke1Var.c.invalidate();
-                ke1Var.e();
+                me1 me1Var = (me1) this.d;
+                me1Var.x = this.b ? 1.0f : 0.0f;
+                me1Var.b.invalidate();
+                me1Var.c.invalidate();
+                me1Var.e();
                 Runnable runnable5 = (Runnable) this.c;
                 if (runnable5 != null) {
                     runnable5.run();
@@ -239,14 +239,14 @@ public final class g extends AnimatorListenerAdapter {
                 }
                 return;
             case 12:
-                s2 s2Var = (s2) this.d;
-                yd ydVar = s2Var.c;
+                t2 t2Var = (t2) this.d;
+                yd ydVar = t2Var.c;
                 float f11 = this.b ? 1.0f : 0.0f;
-                s2Var.y = f11;
+                t2Var.y = f11;
                 ydVar.setAlpha(f11);
-                ydVar.setScaleX(AndroidUtilities.lerp(0.9f, 1.0f, s2Var.y));
-                ydVar.setScaleY(AndroidUtilities.lerp(0.9f, 1.0f, s2Var.y));
-                s2Var.b.invalidate();
+                ydVar.setScaleX(AndroidUtilities.lerp(0.9f, 1.0f, t2Var.y));
+                ydVar.setScaleY(AndroidUtilities.lerp(0.9f, 1.0f, t2Var.y));
+                t2Var.b.invalidate();
                 Runnable runnable6 = (Runnable) this.c;
                 if (runnable6 != null) {
                     AndroidUtilities.runOnUIThread(runnable6);

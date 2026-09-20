@@ -2,9 +2,9 @@ package com.google.android.gms.internal.cast;
 
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
-public final class c4 extends v7.p5 {
+public final class c4 extends v7.q5 {
     public final AtomicReferenceFieldUpdater a;
     public final AtomicReferenceFieldUpdater b;
     public final AtomicReferenceFieldUpdater c;
@@ -19,38 +19,38 @@ public final class c4 extends v7.p5 {
         this.e = atomicReferenceFieldUpdater5;
     }
 
-    @Override // v7.p5
+    @Override // v7.q5
     public final b4 a(h4 h4Var) {
         return (b4) this.d.getAndSet(h4Var, b4.d);
     }
 
-    @Override // v7.p5
+    @Override // v7.q5
     public final g4 b(h4 h4Var) {
         return (g4) this.c.getAndSet(h4Var, g4.c);
     }
 
-    @Override // v7.p5
+    @Override // v7.q5
     public final void c(g4 g4Var, g4 g4Var2) {
         this.b.lazySet(g4Var, g4Var2);
     }
 
-    @Override // v7.p5
+    @Override // v7.q5
     public final void d(g4 g4Var, Thread thread) {
         this.a.lazySet(g4Var, thread);
     }
 
-    @Override // v7.p5
+    @Override // v7.q5
     public final boolean e(h4 h4Var, b4 b4Var, b4 b4Var2) {
-        return v7.q5.a(this.d, h4Var, b4Var, b4Var2);
+        return v7.r5.a(this.d, h4Var, b4Var, b4Var2);
     }
 
-    @Override // v7.p5
+    @Override // v7.q5
     public final boolean f(h4 h4Var, Object obj, Object obj2) {
-        return v7.q5.a(this.e, h4Var, obj, obj2);
+        return v7.r5.a(this.e, h4Var, obj, obj2);
     }
 
-    @Override // v7.p5
+    @Override // v7.q5
     public final boolean g(h4 h4Var, g4 g4Var, g4 g4Var2) {
-        return v7.q5.a(this.c, h4Var, g4Var, g4Var2);
+        return v7.r5.a(this.c, h4Var, g4Var, g4Var2);
     }
 }

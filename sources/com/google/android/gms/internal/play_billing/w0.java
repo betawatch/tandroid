@@ -11,9 +11,9 @@ import java.util.concurrent.TimeoutException;
 import java.util.concurrent.locks.LockSupport;
 import java.util.logging.Level;
 import org.telegram.messenger.BuildConfig;
-import v7.y5;
+import v7.z5;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class w0 extends l0 implements g0 {
     public t0 n;
@@ -282,9 +282,9 @@ public final class w0 extends l0 implements g0 {
         if (k0Var2 != k0Var) {
             k0 k0Var3 = new k0();
             do {
-                y5 y5Var = l0.h;
-                y5Var.c(k0Var3, k0Var2);
-                if (y5Var.g(this, k0Var2, k0Var3)) {
+                z5 z5Var = l0.h;
+                z5Var.c(k0Var3, k0Var2);
+                if (z5Var.g(this, k0Var2, k0Var3)) {
                     do {
                         LockSupport.park(this);
                         if (Thread.interrupted()) {
@@ -455,9 +455,9 @@ public final class w0 extends l0 implements g0 {
                 if (k0Var2 != k0Var) {
                     k0 k0Var3 = new k0();
                     while (true) {
-                        y5 y5Var = l0.h;
-                        y5Var.c(k0Var3, k0Var2);
-                        if (y5Var.g(this, k0Var2, k0Var3)) {
+                        z5 z5Var = l0.h;
+                        z5Var.c(k0Var3, k0Var2);
+                        if (z5Var.g(this, k0Var2, k0Var3)) {
                             j10 = j11;
                             while (true) {
                                 LockSupport.parkNanos(this, Math.min(nanos, 2147483647999999999L));

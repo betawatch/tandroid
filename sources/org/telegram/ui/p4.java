@@ -16,7 +16,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class p4 extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public o4 a;
@@ -151,9 +151,9 @@ public final class p4 extends org.telegram.ui.ActionBar.n2 implements Notificati
         frameLayout.addView(mo0Var);
         this.actionBar.setAdaptiveBackground(mo0Var);
         FrameLayout frameLayout2 = new FrameLayout(context);
-        org.telegram.ui.Components.lx0 lx0Var = new org.telegram.ui.Components.lx0(context, this.currentAccount);
-        lx0Var.setStickerNum(10);
-        frameLayout2.addView(lx0Var, w7.y5.e(130, 130, 17));
+        org.telegram.ui.Components.kx0 kx0Var = new org.telegram.ui.Components.kx0(context, this.currentAccount);
+        kx0Var.setStickerNum(10);
+        frameLayout2.addView(kx0Var, w7.y5.e(130, 130, 17));
         frameLayout2.setTag(-33024);
         ydVar.addView(frameLayout2, w7.y5.n(-1, 170));
         LinearLayout linearLayout = new LinearLayout(getParentActivity());
@@ -161,9 +161,9 @@ public final class p4 extends org.telegram.ui.ActionBar.n2 implements Notificati
         linearLayout.setOrientation(1);
         this.f.setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.d6, false));
         ydVar.addView(this.f, w7.y5.n(-1, -2));
-        org.telegram.ui.Cells.m4 m4Var = new org.telegram.ui.Cells.m4(getParentActivity());
-        m4Var.setText(LocaleController.getString(R.string.MessageLifetime));
-        this.f.addView(m4Var);
+        org.telegram.ui.Cells.n4 n4Var = new org.telegram.ui.Cells.n4(getParentActivity());
+        n4Var.setText(LocaleController.getString(R.string.MessageLifetime));
+        this.f.addView(n4Var);
         o4 o4Var = new o4(getParentActivity(), null);
         this.a = o4Var;
         o4Var.c(LocaleController.getString(R.string.ShortMessageLifetimeForever), false, true);
@@ -201,9 +201,9 @@ public final class p4 extends org.telegram.ui.ActionBar.n2 implements Notificati
         arrayList.add(this.d);
         arrayList.add(this.e);
         X();
-        org.telegram.ui.Cells.e9 e9Var = new org.telegram.ui.Cells.e9(context, 12, this.resourceProvider);
-        e9Var.setText(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.GlobalAutoDeleteInfo), new m4(this)));
-        ydVar.addView(e9Var, w7.y5.n(-1, -2));
+        org.telegram.ui.Cells.f9 f9Var = new org.telegram.ui.Cells.f9(context, 12, this.resourceProvider);
+        f9Var.setText(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.GlobalAutoDeleteInfo), new m4(this)));
+        ydVar.addView(f9Var, w7.y5.n(-1, -2));
         V(this.n, false);
         return this.fragmentView;
     }

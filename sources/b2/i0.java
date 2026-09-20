@@ -1,9 +1,9 @@
 package b2;
 
 import java.util.HashSet;
-import w7.s6;
+import w7.t6;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class i0 {
     public int a;
@@ -21,10 +21,10 @@ public final class i0 {
         this.a = 0;
         this.b = 0;
         this.g = new HashSet();
-        hashSet.add(q9.r.a(cls));
+        hashSet.add(q9.s.a(cls));
         for (Class cls2 : clsArr) {
-            s6.a(cls2, "Null interface");
-            ((HashSet) this.c).add(q9.r.a(cls2));
+            t6.a(cls2, "Null interface");
+            ((HashSet) this.c).add(q9.s.a(cls2));
         }
     }
 

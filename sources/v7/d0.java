@@ -9,7 +9,7 @@ import android.view.ContextThemeWrapper;
 import android.widget.ProgressBar;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public abstract class d0 {
     public static ContextThemeWrapper a(Context context, boolean z10) {
@@ -31,7 +31,7 @@ public abstract class d0 {
 
     public static Drawable d(Context context, int i10) {
         TypedArray obtainStyledAttributes = context.obtainStyledAttributes(new int[]{i10});
-        Drawable d = r8.d(v7.b(context, obtainStyledAttributes.getResourceId(0, 0)));
+        Drawable d = s8.d(w7.b(context, obtainStyledAttributes.getResourceId(0, 0)));
         if (h(context)) {
             d.setTint(f0.e.c(context, R.color.mr_dynamic_dialog_icon_light));
         }

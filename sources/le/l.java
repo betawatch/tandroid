@@ -3,15 +3,14 @@ package le;
 import android.view.animation.Interpolator;
 import java.util.Collections;
 import java.util.Iterator;
-import n4.y;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class l implements Iterable {
     public final j a;
 
     public l(k kVar, Interpolator interpolator, long j3) {
-        this.a = new j(new y(this, kVar, false, 23), interpolator, j3);
+        this.a = new j(new of.b(27, this, kVar), interpolator, j3);
     }
 
     public final void i(Object obj, boolean z10) {

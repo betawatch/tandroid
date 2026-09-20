@@ -1,28 +1,75 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.webkit.JavascriptInterface;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class xf0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ yf0 b;
+public final class xf0 {
+    public final /* synthetic */ org.telegram.ui.iu0 a;
 
-    public /* synthetic */ xf0(yf0 yf0Var, int i10) {
-        this.a = i10;
-        this.b = yf0Var;
+    public xf0(org.telegram.ui.iu0 iu0Var) {
+        this.a = iu0Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                this.b.a.n.setVisibility(8);
-                break;
-            default:
-                this.b.a.h.setVisibility(8);
-                break;
+    @JavascriptInterface
+    public void onPlayerError(String str) {
+        AndroidUtilities.runOnUIThread(new kd(this, Integer.parseInt(str), 5));
+    }
+
+    @JavascriptInterface
+    public void onPlayerLoaded() {
+        AndroidUtilities.runOnUIThread(new vf0(this, 0));
+    }
+
+    @JavascriptInterface
+    public void onPlayerNotifyBufferedPosition(float f7) {
+        this.a.J = f7;
+    }
+
+    @JavascriptInterface
+    public void onPlayerNotifyCurrentPosition(int i10) {
+        this.a.I = i10 * MediaDataController.MAX_STYLE_RUNS_COUNT;
+    }
+
+    @JavascriptInterface
+    public void onPlayerNotifyDuration(int i10) {
+        int i11 = i10 * MediaDataController.MAX_STYLE_RUNS_COUNT;
+        org.telegram.ui.iu0 iu0Var = this.a;
+        iu0Var.H = i11;
+        String str = iu0Var.s;
+        if (str != null) {
+            yf0.a(iu0Var, str);
+            iu0Var.s = null;
         }
+    }
+
+    @JavascriptInterface
+    public void onPlayerStateChange(String str) {
+        int parseInt = Integer.parseInt(str);
+        org.telegram.ui.iu0 iu0Var = this.a;
+        boolean z10 = iu0Var.G;
+        boolean z11 = false;
+        int i10 = 1;
+        iu0Var.G = parseInt == 1 || parseInt == 3;
+        iu0Var.b(z10);
+        if (parseInt != 0) {
+            if (parseInt == 1) {
+                z11 = true;
+            } else if (parseInt != 2) {
+                if (parseInt == 3) {
+                    z11 = true;
+                    i10 = 2;
+                }
+            }
+            i10 = 3;
+        } else {
+            i10 = 4;
+        }
+        if (i10 == 3 && iu0Var.h.getVisibility() != 4) {
+            AndroidUtilities.runOnUIThread(new vf0(this, 1), 300L);
+        }
+        AndroidUtilities.runOnUIThread(new i2.f0(this, z11, i10, 1));
     }
 }

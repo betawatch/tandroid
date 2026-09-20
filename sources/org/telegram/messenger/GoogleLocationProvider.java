@@ -21,13 +21,13 @@ import org.telegram.messenger.ILocationServiceProvider;
 import org.telegram.messenger.PushListenerController;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public class GoogleLocationProvider implements ILocationServiceProvider {
     private g8.a locationProviderClient;
     private g8.i settingsClient;
 
-    /* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+    /* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
     public static final class GoogleApiClientImpl implements ILocationServiceProvider.IMapApiClient {
         private com.google.android.gms.common.api.m apiClient;
 
@@ -46,7 +46,7 @@ public class GoogleLocationProvider implements ILocationServiceProvider {
         }
     }
 
-    /* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+    /* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
     public static final class GoogleLocationRequest implements ILocationServiceProvider.ILocationRequest {
         private LocationRequest request;
 
@@ -330,14 +330,14 @@ public class GoogleLocationProvider implements ILocationServiceProvider {
             mainLooper = Looper.myLooper();
             n6.l.i(mainLooper, "invalid null looper");
         }
-        com.google.android.gms.common.api.internal.p t10 = xa.c.t(mainLooper, cVar, g8.c.class.getSimpleName());
-        androidx.activity.n nVar = new androidx.activity.n(cVar2, t10);
-        o0.a aVar2 = new o0.a(14, nVar, locationRequest);
+        com.google.android.gms.common.api.internal.p p5 = xa.c.p(mainLooper, cVar, g8.c.class.getSimpleName());
+        androidx.activity.n nVar = new androidx.activity.n(cVar2, p5);
+        m5.e eVar = new m5.e(18, nVar, locationRequest);
         r rVar = new r();
         rVar.b = true;
-        rVar.c = aVar2;
+        rVar.c = eVar;
         rVar.d = nVar;
-        rVar.e = t10;
+        rVar.e = p5;
         rVar.a = 2436;
         cVar2.b(rVar.a());
     }

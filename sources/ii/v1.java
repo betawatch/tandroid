@@ -11,13 +11,13 @@ import android.view.MotionEvent;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.bw0;
+import org.telegram.ui.Components.aw0;
 import org.telegram.ui.Components.kz;
 import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
-public final class v1 extends bw0 {
+public final class v1 extends aw0 {
     public boolean w0;
     public final Paint x0;
     public final RectF y0;
@@ -32,7 +32,7 @@ public final class v1 extends bw0 {
         this.y0 = new RectF();
     }
 
-    @Override // org.telegram.ui.Components.bw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.aw0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         d2 d2Var = this.z0;
         Rect rect = d2Var.w;
@@ -84,7 +84,7 @@ public final class v1 extends bw0 {
         d2 d2Var = this.z0;
         if (action == 0 && keyEvent.getKeyCode() == 47 && keyEvent.isCtrlPressed()) {
             if (d2Var.q0()) {
-                org.telegram.messenger.q.q(R.string.RichEditorDraftSaved, new xc(d2Var.X, d2Var.getResourceProvider()), R.raw.contact_check, 36);
+                org.telegram.messenger.l0.o(R.string.RichEditorDraftSaved, new xc(d2Var.X, d2Var.getResourceProvider()), R.raw.contact_check, 36);
                 return true;
             }
         } else if (!d2Var.P.i3(keyEvent)) {

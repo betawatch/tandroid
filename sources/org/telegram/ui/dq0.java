@@ -2,9 +2,9 @@ package org.telegram.ui;
 
 import android.view.KeyEvent;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class dq0 implements org.telegram.ui.Components.d5, org.telegram.ui.ActionBar.l1 {
+public final /* synthetic */ class dq0 implements org.telegram.ui.Components.c5, org.telegram.ui.ActionBar.l1 {
     public final /* synthetic */ int a;
     public final /* synthetic */ lq0 b;
 
@@ -13,7 +13,7 @@ public final /* synthetic */ class dq0 implements org.telegram.ui.Components.d5,
         this.b = lq0Var;
     }
 
-    @Override // org.telegram.ui.Components.d5
+    @Override // org.telegram.ui.Components.c5
     public void J(int i10, int i11, boolean z10) {
         switch (this.a) {
             case 0:
@@ -30,7 +30,7 @@ public final /* synthetic */ class dq0 implements org.telegram.ui.Components.d5,
     }
 
     @Override // org.telegram.ui.ActionBar.l1
-    public void p(KeyEvent keyEvent) {
+    public void o(KeyEvent keyEvent) {
         org.telegram.ui.ActionBar.n1 n1Var;
         lq0 lq0Var = this.b;
         lq0Var.getClass();

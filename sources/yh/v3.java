@@ -34,24 +34,24 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.h9;
-import org.telegram.ui.Components.ij0;
-import org.telegram.ui.Components.l90;
+import org.telegram.ui.Components.g9;
+import org.telegram.ui.Components.hj0;
+import org.telegram.ui.Components.k90;
 import org.telegram.ui.Components.oq;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.w9;
-import org.telegram.ui.bc1;
+import org.telegram.ui.Components.v9;
+import org.telegram.ui.dc1;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public class v3 extends FrameLayout {
     public final LinearLayout.LayoutParams[] E;
     public final xh.l0[] F;
     public final TextPaint G;
-    public final bc1 H;
+    public final dc1 H;
     public final u3[] I;
     public final FrameLayout J;
-    public final w9 K;
+    public final v9 K;
     public final y2 L;
     public boolean M;
     public final TextView N;
@@ -64,13 +64,13 @@ public class v3 extends FrameLayout {
     public f4.d U;
     public final TL_stars.starGiftAttributeBackdrop[] V;
     public com.google.android.gms.common.api.internal.r W;
-    public final org.telegram.ui.ActionBar.e6 a;
+    public final org.telegram.ui.ActionBar.f6 a;
     public com.google.android.gms.common.api.internal.r a0;
     public final FrameLayout b;
     public com.google.android.gms.common.api.internal.r b0;
     public final n3 c;
     public boolean c0;
-    public final w9[] d;
+    public final v9[] d;
     public boolean d0;
     public final TL_stars.starGiftAttributeModel[] e;
     public float e0;
@@ -79,7 +79,7 @@ public class v3 extends FrameLayout {
     public float g0;
     public final FrameLayout.LayoutParams[] h;
     public ValueAnimator h0;
-    public final w2 i0;
+    public final s2 i0;
     public final Paint[] j0;
     public final RadialGradient[] k0;
     public final Matrix[] l0;
@@ -88,10 +88,10 @@ public class v3 extends FrameLayout {
     public final Matrix n0;
     public final Paint o0;
     public final TL_stars.starGiftAttributePattern[] p0;
-    public final org.telegram.ui.Components.o5[] q0;
-    public final l90[] r;
+    public final org.telegram.ui.Components.n5[] q0;
+    public final k90[] r;
     public int r0;
-    public final l90 s;
+    public final k90 s;
     public float s0;
     public float t0;
     public ValueAnimator u0;
@@ -101,31 +101,31 @@ public class v3 extends FrameLayout {
     public i8 w0;
     public final FrameLayout x;
     public final int[] x0;
-    public final l90[] y;
+    public final k90[] y;
     public final int[] y0;
     public final int[] z0;
 
-    public v3(Context context, org.telegram.ui.ActionBar.e6 e6Var, Runnable runnable, View.OnClickListener onClickListener, u0 u0Var, View.OnClickListener onClickListener2, View.OnClickListener onClickListener3, View.OnClickListener onClickListener4, View.OnClickListener onClickListener5, View.OnClickListener onClickListener6) {
+    public v3(Context context, org.telegram.ui.ActionBar.f6 f6Var, Runnable runnable, View.OnClickListener onClickListener, u0 u0Var, View.OnClickListener onClickListener2, View.OnClickListener onClickListener3, View.OnClickListener onClickListener4, View.OnClickListener onClickListener5, View.OnClickListener onClickListener6) {
         super(context);
         float f7;
-        this.d = new w9[5];
+        this.d = new v9[5];
         this.e = new TL_stars.starGiftAttributeModel[3];
         this.f = new LinearLayout[5];
         this.h = new FrameLayout.LayoutParams[5];
-        this.r = new l90[5];
-        this.y = new l90[5];
+        this.r = new k90[5];
+        this.y = new k90[5];
         this.E = new LinearLayout.LayoutParams[5];
         this.F = new xh.l0[5];
         this.U = new f4.d(0, 0);
         this.V = new TL_stars.starGiftAttributeBackdrop[3];
-        this.i0 = new w2(this, 1);
+        this.i0 = new s2(this, 2);
         this.j0 = new Paint[3];
         this.k0 = new RadialGradient[3];
         this.l0 = new Matrix[3];
         this.n0 = new Matrix();
         this.o0 = new Paint(1);
         this.p0 = new TL_stars.starGiftAttributePattern[2];
-        this.q0 = new org.telegram.ui.Components.o5[2];
+        this.q0 = new org.telegram.ui.Components.n5[2];
         int i10 = 0;
         while (true) {
             Paint[] paintArr = this.j0;
@@ -137,11 +137,11 @@ public class v3 extends FrameLayout {
         }
         int i11 = 0;
         while (true) {
-            org.telegram.ui.Components.o5[] o5VarArr = this.q0;
-            if (i11 >= o5VarArr.length) {
+            org.telegram.ui.Components.n5[] n5VarArr = this.q0;
+            if (i11 >= n5VarArr.length) {
                 break;
             }
-            o5VarArr[i11] = new org.telegram.ui.Components.o5(AndroidUtilities.dp(28.0f), this);
+            n5VarArr[i11] = new org.telegram.ui.Components.n5(AndroidUtilities.dp(28.0f), this);
             i11++;
         }
         this.t0 = 1.0f;
@@ -149,7 +149,7 @@ public class v3 extends FrameLayout {
         this.x0 = new int[12];
         this.y0 = new int[12];
         this.z0 = new int[12];
-        this.a = e6Var;
+        this.a = f6Var;
         this.R = onClickListener4;
         this.S = onClickListener5;
         this.T = onClickListener6;
@@ -157,35 +157,35 @@ public class v3 extends FrameLayout {
         this.b = new FrameLayout(context);
         int i12 = 0;
         while (true) {
-            w9[] w9VarArr = this.d;
+            v9[] v9VarArr = this.d;
             float f10 = 0.0f;
-            if (i12 >= w9VarArr.length) {
+            if (i12 >= v9VarArr.length) {
                 break;
             }
-            w9VarArr[i12] = new ci.v3(context, 1);
+            v9VarArr[i12] = new ci.v3(context, 1);
             this.d[i12].setLayerNum(6660);
             if (i12 > 0) {
                 this.d[i12].getImageReceiver().setCrossfadeDuration(1);
             }
             this.b.addView(this.d[i12], w7.y5.e(-1, -1, 119));
-            w9 w9Var = this.d[i12];
+            v9 v9Var = this.d[i12];
             if (i12 == 0) {
                 f10 = 1.0f;
             }
-            w9Var.setAlpha(f10);
+            v9Var.setAlpha(f10);
             i12++;
         }
-        l90 l90Var = new l90(context, null);
-        this.s = l90Var;
-        l90Var.setTextSize(1, 12.0f);
-        l90Var.setGravity(17);
-        l90Var.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.G6, e6Var));
-        l90Var.setLinkTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.gc, e6Var));
-        l90Var.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
+        k90 k90Var = new k90(context, null);
+        this.s = k90Var;
+        k90Var.setTextSize(1, 12.0f);
+        k90Var.setGravity(17);
+        k90Var.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.G6, f6Var));
+        k90Var.setLinkTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.gc, f6Var));
+        k90Var.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
         TextView textView = new TextView(context);
         this.v = textView;
         textView.setOnClickListener(new q3(this, 0));
-        w7.a6.b(textView, 0.05f, 1.25f);
+        w7.b6.b(textView, 0.05f, 1.25f);
         textView.setTextSize(1, 13.0f);
         textView.setGravity(17);
         textView.setLinkTextColor(-1);
@@ -201,10 +201,10 @@ public class v3 extends FrameLayout {
         textView2.setScaleY(0.4f);
         textView2.setVisibility(8);
         textView2.setGravity(17);
-        w7.a6.a(textView2);
-        bc1 bc1Var = new bc1(this, context, 19);
-        this.H = bc1Var;
-        bc1Var.setOrientation(0);
+        w7.b6.a(textView2);
+        dc1 dc1Var = new dc1(this, context, 19);
+        this.H = dc1Var;
+        dc1Var.setOrientation(0);
         this.I = new u3[3];
         int i13 = 0;
         while (true) {
@@ -237,10 +237,10 @@ public class v3 extends FrameLayout {
                 this.I[i13].setOnClickListener(onClickListener4);
             }
             this.I[i13].setBackground(org.telegram.ui.ActionBar.j6.Z(0, 285212671, 16, 16));
-            w7.a6.b(this.I[i13], 0.075f, 1.5f);
-            bc1 bc1Var2 = this.H;
+            w7.b6.b(this.I[i13], 0.075f, 1.5f);
+            dc1 dc1Var2 = this.H;
             u3[] u3VarArr2 = this.I;
-            bc1Var2.addView(u3VarArr2[i13], w7.y5.p(0, 56, 1.0f, 119, 0, 0, i13 != u3VarArr2.length - 1 ? 11 : 0, 0));
+            dc1Var2.addView(u3VarArr2[i13], w7.y5.p(0, 56, 1.0f, 119, 0, 0, i13 != u3VarArr2.length - 1 ? 11 : 0, 0));
             i13++;
         }
         this.x = new FrameLayout(context);
@@ -256,24 +256,24 @@ public class v3 extends FrameLayout {
                 FrameLayout frameLayout = new FrameLayout(context);
                 this.J = frameLayout;
                 this.f[i14].addView(frameLayout, w7.y5.q(-1, 144, 119));
-                w9 w9Var2 = new w9(context);
-                this.K = w9Var2;
-                w9Var2.setRoundRadius(AndroidUtilities.dp(41.0f));
-                frameLayout.addView(w9Var2, w7.y5.d(82, 82.0f, 49, 0.0f, 2.0f, 0.0f, 0.0f));
-                this.r[i14] = new l90(context, null);
+                v9 v9Var2 = new v9(context);
+                this.K = v9Var2;
+                v9Var2.setRoundRadius(AndroidUtilities.dp(41.0f));
+                frameLayout.addView(v9Var2, w7.y5.d(82, 82.0f, 49, 0.0f, 2.0f, 0.0f, 0.0f));
+                this.r[i14] = new k90(context, null);
                 this.r[i14].setTextColor(-1);
                 this.r[i14].setTextSize(1, 20.0f);
                 this.r[i14].setTypeface(AndroidUtilities.bold());
                 this.r[i14].setSingleLine();
-                l90 l90Var2 = this.r[i14];
+                k90 k90Var2 = this.r[i14];
                 TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
-                l90Var2.setEllipsize(truncateAt);
+                k90Var2.setEllipsize(truncateAt);
                 this.r[i14].setGravity(17);
                 frameLayout.addView(this.r[i14], w7.y5.d(-1, -2.0f, 49, 16.0f, 95.33f, 16.0f, 0.0f));
-                this.y[i14] = new l90(context, null);
-                this.y[i14].setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.j5, e6Var));
+                this.y[i14] = new k90(context, null);
+                this.y[i14].setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.j5, f6Var));
                 this.y[i14].setTextSize(1, 14.0f);
-                this.y[i14].setLinkTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.gc, e6Var));
+                this.y[i14].setLinkTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.gc, f6Var));
                 this.y[i14].setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
                 this.y[i14].setDisablePaddingsOffsetY(true);
                 this.y[i14].setSingleLine();
@@ -281,7 +281,7 @@ public class v3 extends FrameLayout {
                 this.y[i14].setEllipsize(truncateAt);
                 frameLayout.addView(this.y[i14], w7.y5.d(-1, -2.0f, 49, 16.0f, 122.0f, 16.0f, 0.0f));
             } else if (i14 == 4) {
-                y2 y2Var = new y2(context, e6Var);
+                y2 y2Var = new y2(context, f6Var);
                 this.L = y2Var;
                 this.f[i14].addView(y2Var, w7.y5.n(-1, -2));
                 View view = this.f[i14];
@@ -291,8 +291,8 @@ public class v3 extends FrameLayout {
                 addView(view, d);
                 i14++;
             } else {
-                this.r[i14] = new l90(context, null);
-                this.r[i14].setTextColor(i14 == 3 ? -1 : org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.j5, e6Var));
+                this.r[i14] = new k90(context, null);
+                this.r[i14].setTextColor(i14 == 3 ? -1 : org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.j5, f6Var));
                 this.r[i14].setTextSize(1, 20.0f);
                 this.r[i14].setTypeface(AndroidUtilities.bold());
                 this.r[i14].setGravity(17);
@@ -302,11 +302,11 @@ public class v3 extends FrameLayout {
                     this.f[i14].addView(this.v, w7.y5.s(-2, 17, 0, 6, 0, 19.33f, 2));
                 }
                 if (i14 == 0) {
-                    this.y[i14] = new l90(context, null);
-                    this.y[i14].setTextColor(i14 == 3 ? org.telegram.ui.ActionBar.j6.l1(0.75f, -1) : org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.j5, e6Var));
+                    this.y[i14] = new k90(context, null);
+                    this.y[i14].setTextColor(i14 == 3 ? org.telegram.ui.ActionBar.j6.l1(0.75f, -1) : org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.j5, f6Var));
                     this.y[i14].setTextSize(1, 14.0f);
                     this.y[i14].setGravity(17);
-                    this.y[i14].setLinkTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.gc, e6Var));
+                    this.y[i14].setLinkTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.gc, f6Var));
                     this.y[i14].setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
                     this.y[i14].setDisablePaddingsOffsetY(true);
                     this.x.addView(this.y[i14], w7.y5.e(-2, -2, 17));
@@ -318,19 +318,19 @@ public class v3 extends FrameLayout {
                     layoutParamsArr2[i14] = t10;
                     linearLayout.addView(frameLayout2, t10);
                 } else {
-                    this.y[i14] = new l90(context, null);
-                    this.y[i14].setTextColor(i14 == 3 ? org.telegram.ui.ActionBar.j6.l1(0.75f, -1) : org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.j5, e6Var));
+                    this.y[i14] = new k90(context, null);
+                    this.y[i14].setTextColor(i14 == 3 ? org.telegram.ui.ActionBar.j6.l1(0.75f, -1) : org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.j5, f6Var));
                     this.y[i14].setTextSize(1, 14.0f);
                     this.y[i14].setGravity(17);
-                    this.y[i14].setLinkTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.gc, e6Var));
+                    this.y[i14].setLinkTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.gc, f6Var));
                     this.y[i14].setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
                     this.y[i14].setDisablePaddingsOffsetY(true);
                     LinearLayout linearLayout2 = this.f[i14];
-                    l90 l90Var3 = this.y[i14];
+                    k90 k90Var3 = this.y[i14];
                     LinearLayout.LayoutParams[] layoutParamsArr3 = this.E;
                     LinearLayout.LayoutParams t11 = w7.y5.t(-1, -2, 17, 24, 0, 24, i14 == 3 ? 6 : 0);
                     layoutParamsArr3[i14] = t11;
-                    linearLayout2.addView(l90Var3, t11);
+                    linearLayout2.addView(k90Var3, t11);
                 }
                 LinearLayout.LayoutParams layoutParams = this.E[i14];
                 if (i14 == 3) {
@@ -365,7 +365,7 @@ public class v3 extends FrameLayout {
         this.O = imageView2;
         imageView2.setBackground(org.telegram.ui.ActionBar.j6.K(AndroidUtilities.dp(28.0f), 620756991));
         imageView2.setImageResource(R.drawable.msg_close);
-        w7.a6.a(imageView2);
+        w7.b6.a(imageView2);
         addView(imageView2, w7.y5.d(28, 28.0f, 53, 0.0f, 12.0f, 12.0f, 0.0f));
         imageView2.setOnClickListener(new bi.p(6, runnable));
         imageView2.setVisibility(8);
@@ -375,7 +375,7 @@ public class v3 extends FrameLayout {
         ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
         imageView3.setScaleType(scaleType);
         imageView3.setBackground(org.telegram.ui.ActionBar.j6.f0(553648127, 1, -1));
-        w7.a6.a(imageView3);
+        w7.b6.a(imageView3);
         if (u0Var != null) {
             addView(imageView3, w7.y5.d(42, 42.0f, 53, 0.0f, 5.0f, 47.0f, 0.0f));
             imageView3.setOnClickListener(u0Var);
@@ -387,7 +387,7 @@ public class v3 extends FrameLayout {
         imageView4.setImageResource(R.drawable.media_more);
         imageView4.setScaleType(scaleType);
         imageView4.setBackground(org.telegram.ui.ActionBar.j6.f0(553648127, 1, -1));
-        w7.a6.a(imageView4);
+        w7.b6.a(imageView4);
         addView(imageView4, w7.y5.d(42, 42.0f, 53, 0.0f, 5.0f, 5.0f, 0.0f));
         imageView4.setOnClickListener(onClickListener);
         imageView4.setVisibility(8);
@@ -482,15 +482,15 @@ public class v3 extends FrameLayout {
         int i10 = stargiftattributebackdrop == null ? 0 : stargiftattributebackdrop.pattern_color | (-16777216);
         TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop2 = stargiftattributebackdropArr[2];
         int d = i0.a.d(this.s0, i10, stargiftattributebackdrop2 != null ? stargiftattributebackdrop2.pattern_color | (-16777216) : 0);
-        org.telegram.ui.Components.o5[] o5VarArr = this.q0;
-        o5VarArr[1].k(Integer.valueOf(d));
-        j0.a(canvas, 0, o5VarArr[1], f11, f12, this.U.a(1), this.t0);
+        org.telegram.ui.Components.n5[] n5VarArr = this.q0;
+        n5VarArr[1].k(Integer.valueOf(d));
+        j0.a(canvas, 0, n5VarArr[1], f11, f12, this.U.a(1), this.t0);
         canvas.restore();
     }
 
     public void d(f4.d dVar) {
         View[] viewArr;
-        l90[] l90VarArr;
+        k90[] k90VarArr;
         float a2;
         int i10;
         boolean z10;
@@ -529,12 +529,12 @@ public class v3 extends FrameLayout {
         int v02 = org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.j5, this.a);
         int i13 = 0;
         while (true) {
-            l90VarArr = this.y;
+            k90VarArr = this.y;
             if (i13 >= 2) {
                 break;
             }
             this.r[i13].setTextColor(stargiftattributebackdropArr[Math.min(1, i13)] == null ? v02 : -1);
-            l90 l90Var = l90VarArr[i13];
+            k90 k90Var = k90VarArr[i13];
             if (i13 == 0 || i13 == 2) {
                 TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = stargiftattributebackdropArr[i13];
                 i10 = stargiftattributebackdrop == null ? v02 : stargiftattributebackdrop.text_color | (-16777216);
@@ -544,7 +544,7 @@ public class v3 extends FrameLayout {
                 TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop3 = stargiftattributebackdropArr[2];
                 i10 = i0.a.d(this.s0, i14, stargiftattributebackdrop3 == null ? v02 : stargiftattributebackdrop3.text_color | (-16777216));
             }
-            l90Var.setTextColor(i10);
+            k90Var.setTextColor(i10);
             TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop4 = stargiftattributebackdropArr[i13];
             FrameLayout.LayoutParams[] layoutParamsArr = this.h;
             if (stargiftattributebackdrop4 != null) {
@@ -567,7 +567,7 @@ public class v3 extends FrameLayout {
                 if (i13 == 0) {
                     this.x.setLayoutParams(layoutParamsArr2[i13]);
                 } else {
-                    l90VarArr[i13].setLayoutParams(layoutParamsArr2[i13]);
+                    k90VarArr[i13].setLayoutParams(layoutParamsArr2[i13]);
                 }
             }
             i13++;
@@ -575,18 +575,18 @@ public class v3 extends FrameLayout {
         int dp = AndroidUtilities.dp(24.0f);
         TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop5 = stargiftattributebackdropArr[0];
         this.v.setBackground(org.telegram.ui.ActionBar.j6.b0(dp, stargiftattributebackdrop5 == null ? 553648127 : i0.a.d(0.25f, stargiftattributebackdrop5.edge_color | (-16777216), stargiftattributebackdrop5.pattern_color | (-16777216))));
-        l90 l90Var2 = l90VarArr[2];
+        k90 k90Var2 = k90VarArr[2];
         TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop6 = stargiftattributebackdropArr[0];
         if (stargiftattributebackdrop6 != null) {
             v02 = stargiftattributebackdrop6.text_color | (-16777216);
         }
-        l90Var2.setTextColor(v02);
-        w9[] w9VarArr = this.d;
-        w9 w9Var = w9VarArr[0];
+        k90Var2.setTextColor(v02);
+        v9[] v9VarArr = this.d;
+        v9 v9Var = v9VarArr[0];
         f4.d dVar2 = this.U;
-        w9Var.setAlpha(Math.max((dVar2.b(0) && dVar2.b(2)) ? 1.0f : Math.max(dVar2.a(0), dVar2.a(2)), this.U.a(3)));
-        w9VarArr[1].setAlpha((1.0f - this.s0) * dVar.a(1));
-        w9VarArr[2].setAlpha(dVar.a(1) * this.s0);
+        v9Var.setAlpha(Math.max((dVar2.b(0) && dVar2.b(2)) ? 1.0f : Math.max(dVar2.a(0), dVar2.a(2)), this.U.a(3)));
+        v9VarArr[1].setAlpha((1.0f - this.s0) * dVar.a(1));
+        v9VarArr[2].setAlpha(dVar.a(1) * this.s0);
         float lerp3 = AndroidUtilities.lerp(1.0f, this.g0, dVar.a(2));
         FrameLayout frameLayout = this.b;
         frameLayout.setScaleX(lerp3);
@@ -718,27 +718,27 @@ public class v3 extends FrameLayout {
             int i11 = iArr3[iArr3.length / 2];
             f4.d dVar2 = v3Var.U;
             float max2 = (dVar2.b(0) && dVar2.b(3)) ? 1.0f : Math.max(dVar2.a(0), dVar2.a(3));
-            org.telegram.ui.Components.o5[] o5VarArr = v3Var.q0;
+            org.telegram.ui.Components.n5[] n5VarArr = v3Var.q0;
             if (max2 > 0.0f) {
                 canvas2.save();
                 canvas2.translate(f12, f11);
-                o5VarArr[0].k(Integer.valueOf(i11));
-                j0.a(canvas, 0, o5VarArr[0], v3Var.getWidth(), realHeight, max2, 1.0f);
+                n5VarArr[0].k(Integer.valueOf(i11));
+                j0.a(canvas, 0, n5VarArr[0], v3Var.getWidth(), realHeight, max2, 1.0f);
                 realHeight = realHeight;
                 canvas.restore();
             }
             if (v3Var.U.a(2) > 0.0f) {
                 canvas.save();
-                o5VarArr[0].k(Integer.valueOf(i11));
+                n5VarArr[0].k(Integer.valueOf(i11));
                 float f16 = realHeight;
                 RectF rectF = AndroidUtilities.rectTmp;
                 LinearLayout[] linearLayoutArr = v3Var.f;
                 float x10 = linearLayoutArr[2].getX();
                 FrameLayout frameLayout = v3Var.J;
                 float x11 = frameLayout.getX() + x10;
-                w9 w9Var = v3Var.K;
-                rectF.set(w9Var.getX() + x11, w9Var.getY() + frameLayout.getY() + linearLayoutArr[2].getY(), w9Var.getX() + frameLayout.getX() + linearLayoutArr[2].getX() + w9Var.getWidth(), w9Var.getY() + frameLayout.getY() + linearLayoutArr[2].getY() + w9Var.getHeight());
-                j0.c(canvas, o5VarArr[0], v3Var.getWidth(), f16 * 0.7f, 1.0f, rectF, v3Var.U.a(2));
+                v9 v9Var = v3Var.K;
+                rectF.set(v9Var.getX() + x11, v9Var.getY() + frameLayout.getY() + linearLayoutArr[2].getY(), v9Var.getX() + frameLayout.getX() + linearLayoutArr[2].getX() + v9Var.getWidth(), v9Var.getY() + frameLayout.getY() + linearLayoutArr[2].getY() + v9Var.getHeight());
+                j0.c(canvas, n5VarArr[0], v3Var.getWidth(), f16 * 0.7f, 1.0f, rectF, v3Var.U.a(2));
                 canvas2 = canvas;
                 canvas2.restore();
             } else {
@@ -818,14 +818,14 @@ public class v3 extends FrameLayout {
         this.M = false;
         boolean z13 = z10 || z11;
         boolean z14 = starGift instanceof TL_stars.TL_starGiftUnique;
-        bc1 bc1Var = this.H;
-        l90[] l90VarArr = this.y;
+        dc1 dc1Var = this.H;
+        k90[] k90VarArr = this.y;
         TL_stars.starGiftAttributeBackdrop[] stargiftattributebackdropArr = this.V;
         if (z14) {
-            stargiftattributebackdropArr[0] = (TL_stars.starGiftAttributeBackdrop) t5.l(starGift.attributes, TL_stars.starGiftAttributeBackdrop.class);
-            g(0, (TL_stars.starGiftAttributePattern) t5.l(starGift.attributes, TL_stars.starGiftAttributePattern.class), false);
-            l90VarArr[0].setTextSize(1, 13.0f);
-            bc1Var.setVisibility(z13 ? 0 : 8);
+            stargiftattributebackdropArr[0] = (TL_stars.starGiftAttributeBackdrop) u5.l(starGift.attributes, TL_stars.starGiftAttributeBackdrop.class);
+            g(0, (TL_stars.starGiftAttributePattern) u5.l(starGift.attributes, TL_stars.starGiftAttributePattern.class), false);
+            k90VarArr[0].setTextSize(1, 13.0f);
+            dc1Var.setVisibility(z13 ? 0 : 8);
             u3[] u3VarArr = this.I;
             if (z13) {
                 u3VarArr[1].b(z12 ? R.drawable.filled_crown_off : R.drawable.filled_crown_on, LocaleController.getString(z12 ? R.string.Gift2ActionWearOff : R.string.Gift2ActionWear), false);
@@ -836,14 +836,14 @@ public class v3 extends FrameLayout {
                 boolean z15 = starGift.resale_ton_only;
                 zf.b bVar = zf.b.b;
                 zf.a resellAmount = starGift.getResellAmount(z15 ? bVar : zf.b.a);
-                CharSequence formatSpannable = LocaleController.formatSpannable(R.string.GiftOnSale, v7.S0("⭐️ " + ((Object) v7.J0(resellAmount.o(), 1.0f, ',')), resellAmount.a == bVar), Float.valueOf(0.9f));
+                CharSequence formatSpannable = LocaleController.formatSpannable(R.string.GiftOnSale, w7.S0("⭐️ " + ((Object) w7.J0(resellAmount.o(), 1.0f, ',')), resellAmount.a == bVar), Float.valueOf(0.9f));
                 TextView textView = this.N;
                 textView.setText(formatSpannable);
                 TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = stargiftattributebackdropArr[0];
                 textView.setBackground(org.telegram.ui.ActionBar.j6.b0(AndroidUtilities.dp(12.0f), i0.a.d(0.25f, stargiftattributebackdrop.edge_color | (-16777216), stargiftattributebackdrop.pattern_color | (-16777216))));
                 if (y3.N1(UserConfig.selectedAccount, DialogObject.getPeerDialogId(starGift.owner_id))) {
                     textView.setOnClickListener(new q3(this, 1));
-                    w7.a6.a(textView);
+                    w7.b6.a(textView);
                 } else {
                     textView.setOnClickListener(null);
                     textView.setStateListAnimator(null);
@@ -882,13 +882,13 @@ public class v3 extends FrameLayout {
             this.n.a.d(stargiftattributebackdropArr[0], false, true);
         } else {
             stargiftattributebackdropArr[0] = null;
-            l90VarArr[0].setTextSize(1, 14.0f);
+            k90VarArr[0].setTextSize(1, 14.0f);
             this.c0 = false;
-            bc1Var.setVisibility(8);
+            dc1Var.setVisibility(8);
         }
         e(0, stargiftattributebackdropArr[0]);
-        v7.a1(this.d[0].getImageReceiver(), starGift, 160);
-        this.e[0] = (TL_stars.starGiftAttributeModel) t5.l(starGift.attributes, TL_stars.starGiftAttributeModel.class);
+        w7.a1(this.d[0].getImageReceiver(), starGift, 160);
+        this.e[0] = (TL_stars.starGiftAttributeModel) u5.l(starGift.attributes, TL_stars.starGiftAttributeModel.class);
         d(this.U);
     }
 
@@ -945,10 +945,10 @@ public class v3 extends FrameLayout {
         return f7 > 0.5f ? stargiftattributebackdropArr[2] : stargiftattributebackdropArr[1];
     }
 
-    public w9 getUpgradeImageView() {
+    public v9 getUpgradeImageView() {
         float f7 = this.s0;
-        w9[] w9VarArr = this.d;
-        return f7 > 0.5f ? w9VarArr[2] : w9VarArr[1];
+        v9[] v9VarArr = this.d;
+        return f7 > 0.5f ? v9VarArr[2] : v9VarArr[1];
     }
 
     public TL_stars.starGiftAttributeModel getUpgradeImageViewAttribute() {
@@ -964,35 +964,35 @@ public class v3 extends FrameLayout {
     public final void h(int i10, CharSequence charSequence, CharSequence charSequence2, SpannableStringBuilder spannableStringBuilder, CharSequence charSequence3, TLObject tLObject, Spannable spannable) {
         this.r[i10].setText(charSequence);
         FrameLayout frameLayout = this.x;
-        l90[] l90VarArr = this.y;
-        l90 l90Var = this.s;
+        k90[] k90VarArr = this.y;
+        k90 k90Var = this.s;
         TextView textView = this.v;
         if (i10 == 0 && !TextUtils.isEmpty(spannableStringBuilder)) {
             textView.setText(spannableStringBuilder);
             textView.setVisibility(0);
-            l90Var.setVisibility(8);
+            k90Var.setVisibility(8);
             if (i10 == 0) {
                 frameLayout.setVisibility(8);
             } else {
-                l90VarArr[i10].setVisibility(8);
+                k90VarArr[i10].setVisibility(8);
             }
         } else if (i10 != 0 || TextUtils.isEmpty(charSequence3)) {
-            l90VarArr[i10].setText(charSequence2);
+            k90VarArr[i10].setText(charSequence2);
             if (i10 == 0) {
                 frameLayout.setVisibility(TextUtils.isEmpty(charSequence2) ? 8 : 0);
             } else {
-                l90VarArr[i10].setVisibility(TextUtils.isEmpty(charSequence2) ? 8 : 0);
+                k90VarArr[i10].setVisibility(TextUtils.isEmpty(charSequence2) ? 8 : 0);
             }
-            l90Var.setVisibility(8);
+            k90Var.setVisibility(8);
             textView.setVisibility(8);
         } else {
-            l90Var.setText(charSequence3);
-            l90Var.setVisibility(0);
+            k90Var.setText(charSequence3);
+            k90Var.setVisibility(0);
             textView.setVisibility(8);
             if (i10 == 0) {
                 frameLayout.setVisibility(8);
             } else {
-                l90VarArr[i10].setVisibility(8);
+                k90VarArr[i10].setVisibility(8);
             }
         }
         xh.l0[] l0VarArr = this.F;
@@ -1011,25 +1011,25 @@ public class v3 extends FrameLayout {
     public final void k() {
         this.g0 = AndroidUtilities.dpf2(33.33f) / AndroidUtilities.dpf2(160.0f);
         float f7 = -this.b.getLeft();
-        l90[] l90VarArr = this.r;
-        this.e0 = ((((Math.min(l90VarArr[2].getPaint().measureText(l90VarArr[2].getText().toString()), l90VarArr[2].getWidth()) + l90VarArr[2].getWidth()) / 2.0f) + (l90VarArr[2].getX() + f7)) + AndroidUtilities.dp(24.0f)) - (AndroidUtilities.dp(126.67f) / 2.0f);
+        k90[] k90VarArr = this.r;
+        this.e0 = ((((Math.min(k90VarArr[2].getPaint().measureText(k90VarArr[2].getText().toString()), k90VarArr[2].getWidth()) + k90VarArr[2].getWidth()) / 2.0f) + (k90VarArr[2].getX() + f7)) + AndroidUtilities.dp(24.0f)) - (AndroidUtilities.dp(126.67f) / 2.0f);
         this.f0 = (AndroidUtilities.dp(124.0f) + (-r0.getTop())) - (AndroidUtilities.dp(126.67f) / 2.0f);
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        org.telegram.ui.Components.o5[] o5VarArr = this.q0;
-        o5VarArr[0].a();
-        o5VarArr[1].a();
+        org.telegram.ui.Components.n5[] n5VarArr = this.q0;
+        n5VarArr[0].a();
+        n5VarArr[1].a();
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        org.telegram.ui.Components.o5[] o5VarArr = this.q0;
-        o5VarArr[0].b();
-        o5VarArr[1].b();
+        org.telegram.ui.Components.n5[] n5VarArr = this.q0;
+        n5VarArr[0].b();
+        n5VarArr[1].b();
         AndroidUtilities.cancelRunOnUIThread(this.i0);
     }
 
@@ -1053,9 +1053,9 @@ public class v3 extends FrameLayout {
             }
             int i10 = 1 - this.r0;
             this.r0 = i10;
-            w9[] w9VarArr = this.d;
-            ij0 lottieAnimation = w9VarArr[2 - i10].getImageReceiver().getLottieAnimation();
-            ij0 lottieAnimation2 = w9VarArr[this.r0 + 1].getImageReceiver().getLottieAnimation();
+            v9[] v9VarArr = this.d;
+            hj0 lottieAnimation = v9VarArr[2 - i10].getImageReceiver().getLottieAnimation();
+            hj0 lottieAnimation2 = v9VarArr[this.r0 + 1].getImageReceiver().getLottieAnimation();
             if (lottieAnimation2 != null && lottieAnimation != null) {
                 lottieAnimation2.T(lottieAnimation.t(), false);
             }
@@ -1068,7 +1068,7 @@ public class v3 extends FrameLayout {
             TL_stars.starGiftAttributeModel stargiftattributemodel = o0Var.c;
             TL_stars.starGiftAttributeModel[] stargiftattributemodelArr = this.e;
             stargiftattributemodelArr[i12] = stargiftattributemodel;
-            v7.Z0(w9VarArr[i12].getImageReceiver(), stargiftattributemodelArr[this.r0 + 1].document, 160);
+            w7.Z0(v9VarArr[i12].getImageReceiver(), stargiftattributemodelArr[this.r0 + 1].document, 160);
             a();
             float f7 = this.r0;
             ValueAnimator ofFloat = ValueAnimator.ofFloat(1.0f - f7, f7);
@@ -1082,9 +1082,9 @@ public class v3 extends FrameLayout {
     }
 
     public void setPreviewingAttributes(ArrayList<TL_stars.StarGiftAttribute> arrayList) {
-        this.W = new com.google.android.gms.common.api.internal.r(t5.m(arrayList, TL_stars.starGiftAttributeModel.class));
-        this.a0 = new com.google.android.gms.common.api.internal.r(t5.m(arrayList, TL_stars.starGiftAttributePattern.class));
-        this.b0 = new com.google.android.gms.common.api.internal.r(t5.m(arrayList, TL_stars.starGiftAttributeBackdrop.class));
+        this.W = new com.google.android.gms.common.api.internal.r(u5.m(arrayList, TL_stars.starGiftAttributeModel.class));
+        this.a0 = new com.google.android.gms.common.api.internal.r(u5.m(arrayList, TL_stars.starGiftAttributePattern.class));
+        this.b0 = new com.google.android.gms.common.api.internal.r(u5.m(arrayList, TL_stars.starGiftAttributeBackdrop.class));
         this.y[1].setTextSize(1, 14.0f);
         this.H.setVisibility(8);
         this.s0 = 0.0f;
@@ -1093,31 +1093,31 @@ public class v3 extends FrameLayout {
         TL_stars.starGiftAttributeModel stargiftattributemodel = (TL_stars.starGiftAttributeModel) this.W.c();
         TL_stars.starGiftAttributeModel[] stargiftattributemodelArr = this.e;
         stargiftattributemodelArr[1] = stargiftattributemodel;
-        w9[] w9VarArr = this.d;
-        v7.Z0(w9VarArr[1].getImageReceiver(), stargiftattributemodelArr[1].document, 160);
+        v9[] v9VarArr = this.d;
+        w7.Z0(v9VarArr[1].getImageReceiver(), stargiftattributemodelArr[1].document, 160);
         TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = (TL_stars.starGiftAttributeBackdrop) this.b0.c();
         this.V[1] = stargiftattributebackdrop;
         e(1, stargiftattributebackdrop);
         stargiftattributemodelArr[2] = (TL_stars.starGiftAttributeModel) this.W.f;
-        v7.Z0(w9VarArr[2].getImageReceiver(), stargiftattributemodelArr[2].document, 160);
-        w2 w2Var = this.i0;
-        AndroidUtilities.cancelRunOnUIThread(w2Var);
-        AndroidUtilities.runOnUIThread(w2Var, 2500L);
+        w7.Z0(v9VarArr[2].getImageReceiver(), stargiftattributemodelArr[2].document, 160);
+        s2 s2Var = this.i0;
+        AndroidUtilities.cancelRunOnUIThread(s2Var);
+        AndroidUtilities.runOnUIThread(s2Var, 2500L);
         invalidate();
     }
 
     public void setResellPrice(zf.a aVar) {
         boolean k10 = aVar.k();
         this.M = !k10;
-        l90[] l90VarArr = this.y;
+        k90[] k90VarArr = this.y;
         TextView textView = this.N;
         if (k10) {
             ViewPropertyAnimator duration = textView.animate().scaleX(0.4f).scaleY(0.4f).alpha(0.0f).setDuration(420L);
             qr qrVar = qr.h;
             duration.setInterpolator(qrVar).setListener(new s3(this, 2)).setListener(new s3(this, 1)).start();
-            l90VarArr[0].animate().alpha(1.0f).setDuration(420L).setInterpolator(qrVar).start();
+            k90VarArr[0].animate().alpha(1.0f).setDuration(420L).setInterpolator(qrVar).start();
         } else {
-            textView.setText(LocaleController.formatSpannable(R.string.GiftOnSale, v7.U0(aVar.a == zf.b.b, "⭐️ " + ((Object) v7.J0(aVar.o(), 1.0f, ',')), 0.9f, null, 0.0f, 1.0f)));
+            textView.setText(LocaleController.formatSpannable(R.string.GiftOnSale, w7.U0(aVar.a == zf.b.b, "⭐️ " + ((Object) w7.J0(aVar.o(), 1.0f, ',')), 0.9f, null, 0.0f, 1.0f)));
             TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = this.V[0];
             textView.setBackground(org.telegram.ui.ActionBar.j6.b0(AndroidUtilities.dp(12.0f), i0.a.d(0.25f, stargiftattributebackdrop.edge_color | (-16777216), stargiftattributebackdrop.pattern_color | (-16777216))));
             textView.setVisibility(0);
@@ -1125,7 +1125,7 @@ public class v3 extends FrameLayout {
             ViewPropertyAnimator duration2 = textView.animate().scaleX(1.0f).scaleY(1.0f).alpha(1.0f).setDuration(420L);
             qr qrVar2 = qr.h;
             duration2.setInterpolator(qrVar2).setListener(new s3(this, 0)).start();
-            l90VarArr[0].animate().alpha(0.0f).setDuration(420L).setInterpolator(qrVar2).start();
+            k90VarArr[0].animate().alpha(0.0f).setDuration(420L).setInterpolator(qrVar2).start();
         }
         boolean z10 = this.M;
         u3[] u3VarArr = this.I;
@@ -1160,9 +1160,9 @@ public class v3 extends FrameLayout {
             str = formatPluralStringComma;
             str2 = str3;
         }
-        h9 h9Var = new h9((org.telegram.ui.ActionBar.e6) null);
-        h9Var.p(tLObject);
-        this.K.e(tLObject, h9Var);
+        g9 g9Var = new g9((org.telegram.ui.ActionBar.f6) null);
+        g9Var.p(tLObject);
+        this.K.e(tLObject, g9Var);
         this.r[2].setText(str2);
         this.y[2].setText(str);
         k();

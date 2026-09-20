@@ -11,7 +11,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class p implements s4.e0, androidx.lifecycle.a0, x9.i {
     public final /* synthetic */ int a;
@@ -44,7 +44,7 @@ public final class p implements s4.e0, androidx.lifecycle.a0, x9.i {
     }
 
     @Override // s4.e0
-    public void O0(int i10, int i11) {
+    public void M0(int i10, int i11) {
         this.b = true;
         ((s4.h0) this.c).t(i10, i11);
     }
@@ -154,7 +154,7 @@ public final class p implements s4.e0, androidx.lifecycle.a0, x9.i {
             return;
         }
         try {
-            ((l5.r) this.c).a(new i5.a(null, x3Var, i5.d.a, null), new j2.e(20));
+            ((l5.r) this.c).a(new i5.a(null, x3Var, i5.d.a, null), new j2.e(22));
         } catch (Throwable unused) {
             com.google.android.gms.internal.play_billing.u.h("BillingLogger", "logging failed.");
         }
@@ -167,7 +167,7 @@ public final class p implements s4.e0, androidx.lifecycle.a0, x9.i {
     }
 
     @Override // s4.e0
-    public void l1(int i10, int i11) {
+    public void k1(int i10, int i11) {
         ((s4.h0) this.c).r(i10, i11, null);
     }
 

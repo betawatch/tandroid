@@ -1,58 +1,77 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Rect;
-import android.view.MotionEvent;
-import android.view.View;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class dq0 implements View.OnTouchListener {
+public final class dq0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final Rect b;
-    public final /* synthetic */ vq0 c;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ uq0 c;
 
-    public dq0(vq0 vq0Var, int i10) {
+    public /* synthetic */ dq0(uq0 uq0Var, boolean z10, int i10) {
         this.a = i10;
-        switch (i10) {
-            case 1:
-                this.c = vq0Var;
-                this.b = new Rect();
+        this.c = uq0Var;
+        this.b = z10;
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationCancel(Animator animator) {
+        switch (this.a) {
+            case 0:
+                AnimatorSet[] animatorSetArr = this.c.T;
+                AnimatorSet animatorSet = animatorSetArr[0];
+                if (animatorSet != null && animatorSet.equals(animator)) {
+                    animatorSetArr[0] = null;
+                    break;
+                }
                 break;
             default:
-                this.c = vq0Var;
-                this.b = new Rect();
+                uq0 uq0Var = this.c;
+                if (animator.equals(uq0Var.y)) {
+                    uq0Var.y = null;
+                    break;
+                }
                 break;
         }
     }
 
-    @Override // android.view.View.OnTouchListener
-    public final boolean onTouch(View view, MotionEvent motionEvent) {
-        vq0 vq0Var;
-        org.telegram.ui.ActionBar.n1 n1Var;
-        vq0 vq0Var2;
-        org.telegram.ui.ActionBar.n1 n1Var2;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                if (motionEvent.getActionMasked() == 0 && (n1Var = (vq0Var = this.c).J0) != null && n1Var.isShowing()) {
-                    Rect rect = this.b;
-                    view.getHitRect(rect);
-                    if (!rect.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
-                        vq0Var.J0.d(true);
-                        break;
+                uq0 uq0Var = this.c;
+                AnimatorSet[] animatorSetArr = uq0Var.T;
+                AnimatorSet animatorSet = animatorSetArr[0];
+                if (animatorSet != null && animatorSet.equals(animator)) {
+                    if (!this.b) {
+                        uq0Var.S[0].setVisibility(4);
                     }
+                    animatorSetArr[0] = null;
+                    break;
                 }
                 break;
             default:
-                if (motionEvent.getActionMasked() == 0 && (n1Var2 = (vq0Var2 = this.c).J0) != null && n1Var2.isShowing()) {
-                    Rect rect2 = this.b;
-                    view.getHitRect(rect2);
-                    if (!rect2.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
-                        vq0Var2.J0.d(true);
-                        break;
+                uq0 uq0Var2 = this.c;
+                FrameLayout frameLayout = uq0Var2.h;
+                if (animator.equals(uq0Var2.y)) {
+                    if (!this.b) {
+                        uq0Var2.c.setVisibility(4);
+                        FrameLayout frameLayout2 = uq0Var2.c0;
+                        if (frameLayout2 != null && frameLayout == null) {
+                            frameLayout2.setVisibility(4);
+                        }
+                        uq0Var2.f.setVisibility(4);
+                    } else if (frameLayout != null) {
+                        frameLayout.setVisibility(4);
                     }
+                    uq0Var2.y = null;
+                    break;
                 }
                 break;
         }
-        return false;
     }
 }

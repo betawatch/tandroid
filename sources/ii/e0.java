@@ -11,7 +11,7 @@ import org.telegram.messenger.RichMessageLayout;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class e0 extends View {
     public final RichMessageLayout.RichButton a;
@@ -26,7 +26,7 @@ public final class e0 extends View {
         super(context);
         this.f = h0Var;
         this.b = i10;
-        RichMessageLayout.RichButton createEditorPageButton = RichMessageLayout.createEditorPageButton(h0Var.n, org.telegram.messenger.q.c(32.0f, AndroidUtilities.displaySize.x, AndroidUtilities.dp(240.0f)), h0Var.r, pageButton, new i2.g0(this, 3));
+        RichMessageLayout.RichButton createEditorPageButton = RichMessageLayout.createEditorPageButton(h0Var.n, org.telegram.messenger.l0.b(32.0f, AndroidUtilities.displaySize.x, AndroidUtilities.dp(240.0f)), h0Var.r, pageButton, new i2.g0(this, 3));
         this.a = createEditorPageButton;
         this.e = new n8(this, i10, 10);
         createEditorPageButton.width = createEditorPageButton.getPreferredWidth();

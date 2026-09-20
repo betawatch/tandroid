@@ -8,9 +8,9 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class yo0 implements yf.b0, r0.n, org.telegram.ui.ActionBar.a2 {
+public final /* synthetic */ class yo0 implements yf.a0, r0.n, org.telegram.ui.ActionBar.a2 {
     public final /* synthetic */ int a;
     public final /* synthetic */ cq0 b;
 
@@ -20,8 +20,8 @@ public final /* synthetic */ class yo0 implements yf.b0, r0.n, org.telegram.ui.A
     }
 
     @Override // r0.n
-    public r0.m1 Q0(View view, r0.m1 m1Var) {
-        i0.b defaultWindowInsets = AndroidUtilities.getDefaultWindowInsets(m1Var, false);
+    public r0.l1 P0(View view, r0.l1 l1Var) {
+        i0.b defaultWindowInsets = AndroidUtilities.getDefaultWindowInsets(l1Var, false);
         cq0 cq0Var = this.b;
         cq0Var.b0 = defaultWindowInsets;
         np0 np0Var = cq0Var.h.b;
@@ -37,10 +37,10 @@ public final /* synthetic */ class yo0 implements yf.b0, r0.n, org.telegram.ui.A
         FrameLayout frameLayout = cq0Var.P;
         i0.b bVar3 = cq0Var.b0;
         frameLayout.setPadding(bVar3.a, 0, bVar3.c, bVar3.d);
-        return r0.m1.b;
+        return r0.l1.b;
     }
 
-    @Override // yf.b0
+    @Override // yf.a0
     public void a(int i10) {
         cq0 cq0Var = this.b;
         fh.d dVar = cq0Var.g0;
@@ -51,7 +51,7 @@ public final /* synthetic */ class yo0 implements yf.b0, r0.n, org.telegram.ui.A
             return;
         }
         ArrayList arrayList2 = cq0Var.j0;
-        int a2 = yf.f0.a(arrayList2, (i11 < 29 || dVar == null) ? 0 : dVar.e(0, AndroidUtilities.dp(8.0f), arrayList2), arrayList);
+        int a2 = yf.e0.a(arrayList2, (i11 < 29 || dVar == null) ? 0 : dVar.e(0, AndroidUtilities.dp(8.0f), arrayList2), arrayList);
         int measuredWidth = cq0Var.d.getMeasuredWidth();
         for (int i12 = 0; i12 < a2; i12++) {
             RectF rectF = (RectF) arrayList.get(i12);
@@ -74,7 +74,7 @@ public final /* synthetic */ class yo0 implements yf.b0, r0.n, org.telegram.ui.A
     }
 
     @Override // org.telegram.ui.ActionBar.a2
-    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+    public void k(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
         switch (this.a) {
             case 2:
                 this.b.finishFragment();

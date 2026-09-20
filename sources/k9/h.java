@@ -16,11 +16,10 @@ import java.util.ArrayList;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicReference;
-import n4.y;
 import n6.l;
 import q9.n;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class h {
     public static final Object k = new Object();
@@ -50,7 +49,7 @@ public final class h {
         a aVar = FirebaseInitProvider.a;
         Trace.beginSection("Firebase");
         Trace.beginSection("ComponentDiscovery");
-        ArrayList q6 = new o0.a(12, context, new n2.e(ComponentDiscoveryService.class, 14)).q();
+        ArrayList q6 = new m5.e(16, context, new n2.e(ComponentDiscoveryService.class, 14)).q();
         Trace.endSection();
         Trace.beginSection("Runtime");
         r9.j jVar2 = r9.j.a;
@@ -223,9 +222,9 @@ public final class h {
     }
 
     public final String toString() {
-        y yVar = new y(this);
-        yVar.k(this.b, "name");
-        yVar.k(this.c, "options");
-        return yVar.toString();
+        m5.e eVar = new m5.e(this);
+        eVar.g(this.b, "name");
+        eVar.g(this.c, "options");
+        return eVar.toString();
     }
 }

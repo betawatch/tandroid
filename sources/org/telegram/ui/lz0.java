@@ -30,9 +30,9 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class lz0 implements org.telegram.ui.Components.ml0 {
+public final class lz0 implements org.telegram.ui.Components.ll0 {
     public int a = 0;
     public final /* synthetic */ Context b;
     public final /* synthetic */ ProfileActivity c;
@@ -78,7 +78,7 @@ public final class lz0 implements org.telegram.ui.Components.ml0 {
             lz0Var.c.j5();
             lz0Var.c.d.l();
             if (BuildVars.LOGS_ENABLED) {
-                org.telegram.messenger.q.s(new StringBuilder("app start time = "), ApplicationLoader.startTime);
+                hg.k0.u(new StringBuilder("app start time = "), ApplicationLoader.startTime);
                 try {
                     FileLog.d("buildVersion = " + ApplicationLoader.applicationContext.getPackageManager().getPackageInfo(ApplicationLoader.applicationContext.getPackageName(), 0).versionCode);
                     return;
@@ -96,7 +96,7 @@ public final class lz0 implements org.telegram.ui.Components.ml0 {
         if (i10 == 6) {
             lz0Var.c.getMessagesStorage().clearSentMedia();
             SharedConfig.setNoSoundHintShowed(false);
-            org.telegram.messenger.q.e(org.telegram.messenger.q.e(org.telegram.messenger.q.e(org.telegram.messenger.q.e(org.telegram.messenger.q.e(org.telegram.messenger.q.e(org.telegram.messenger.q.e(org.telegram.messenger.q.e(org.telegram.messenger.q.e(MessagesController.getGlobalMainSettings().edit().remove("archivehint").remove("proximityhint").remove("archivehint_l"), "searchpostsnew", "speedhint", "gifhint", "reminderhint"), "soundHint", "themehint", "bganimationhint", "filterhint"), "n_0", "storyprvhint", "storyhint", "storyhint2"), "storydualhint", "storysvddualhint", "stories_camera", "dualcam"), "dualmatrix", "dual_available", "archivehint", "askNotificationsAfter"), "askNotificationsDuration", "viewoncehint", "voicepausehint", "taptostorysoundhint"), "nothanos", "voiceoncehint", "savedhint", "savedsearchhint"), "savedsearchtaghint", "newppsms", "monetizationadshint", "seekSpeedHintShowed"), "unsupport_video/av01", "statusgiftpage", "multistorieshint", "trimvoicehint").remove("taptostoryhighlighthint").apply();
+            org.telegram.messenger.l0.d(org.telegram.messenger.l0.d(org.telegram.messenger.l0.d(org.telegram.messenger.l0.d(org.telegram.messenger.l0.d(org.telegram.messenger.l0.d(org.telegram.messenger.l0.d(org.telegram.messenger.l0.d(org.telegram.messenger.l0.d(MessagesController.getGlobalMainSettings().edit().remove("archivehint").remove("proximityhint").remove("archivehint_l"), "searchpostsnew", "speedhint", "gifhint", "reminderhint"), "soundHint", "themehint", "bganimationhint", "filterhint"), "n_0", "storyprvhint", "storyhint", "storyhint2"), "storydualhint", "storysvddualhint", "stories_camera", "dualcam"), "dualmatrix", "dual_available", "archivehint", "askNotificationsAfter"), "askNotificationsDuration", "viewoncehint", "voicepausehint", "taptostorysoundhint"), "nothanos", "voiceoncehint", "savedhint", "savedsearchhint"), "savedsearchtaghint", "newppsms", "monetizationadshint", "seekSpeedHintShowed"), "unsupport_video/av01", "statusgiftpage", "multistorieshint", "trimvoicehint").remove("taptostoryhighlighthint").apply();
             w7.x5.a();
             i13 = ((org.telegram.ui.ActionBar.n2) lz0Var.c).currentAccount;
             MessagesController.getEmojiSettings(i13).edit().remove("featured_hidden").remove("emoji_featured_hidden").commit();
@@ -117,12 +117,12 @@ public final class lz0 implements org.telegram.ui.Components.ml0 {
             i14 = ((org.telegram.ui.ActionBar.n2) lz0Var.c).currentAccount;
             ChatThemeController.getInstance(i14).clearCache();
             lz0Var.c.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.newSuggestionsAvailable, new Object[0]);
-            e41.W();
+            f41.W();
             i15 = ((org.telegram.ui.ActionBar.n2) lz0Var.c).currentAccount;
             pg.u0.e(i15).a();
             SharedPreferences mainSettings = lz0Var.c.getMessagesController().getMainSettings();
             SharedPreferences.Editor edit = mainSettings.edit();
-            org.telegram.messenger.q.e(edit, "peerColors", "profilePeerColors", "boostingappearance", "bizbothint").remove("movecaptionhint");
+            org.telegram.messenger.l0.d(edit, "peerColors", "profilePeerColors", "boostingappearance", "bizbothint").remove("movecaptionhint");
             for (String str : mainSettings.getAll().keySet()) {
                 if (str.contains("show_gift_for_") || str.contains("bdayhint_") || str.contains("bdayanim_") || str.startsWith("ask_paid_message_") || str.startsWith("topicssidetabs")) {
                     edit.remove(str);
@@ -471,7 +471,7 @@ public final class lz0 implements org.telegram.ui.Components.ml0 {
     /* JADX WARN: Removed duplicated region for block: B:133:0x0209  */
     /* JADX WARN: Removed duplicated region for block: B:134:0x01f0  */
     /* JADX WARN: Removed duplicated region for block: B:135:0x01e5  */
-    @Override // org.telegram.ui.Components.ml0
+    @Override // org.telegram.ui.Components.ll0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -589,7 +589,7 @@ public final class lz0 implements org.telegram.ui.Components.ml0 {
         String str11 = z11 ? "Force remove premium suggestions" : null;
         String str12 = z11 ? "Share device info" : null;
         String str13 = z11 ? "Force performance class" : null;
-        String str14 = (!z11 || org.telegram.ui.Components.b60.m()) ? null : !SharedConfig.bigCameraForRound ? "Force big camera for round" : "Disable big camera for round";
+        String str14 = (!z11 || org.telegram.ui.Components.a60.l()) ? null : !SharedConfig.bigCameraForRound ? "Force big camera for round" : "Disable big camera for round";
         String string15 = LocaleController.getString(ci.d1.q(profileActivity.getParentActivity()) ? "DebugMenuDualOff" : "DebugMenuDualOn");
         String str15 = BuildVars.DEBUG_VERSION ? SharedConfig.useSurfaceInStories ? "back to TextureView in stories" : "use SurfaceView in stories" : null;
         String str16 = BuildVars.DEBUG_PRIVATE_VERSION ? SharedConfig.photoViewerBlur ? "do not blur in photoviewer" : "blur in photoviewer" : null;

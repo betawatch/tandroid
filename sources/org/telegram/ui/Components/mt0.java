@@ -1,72 +1,22 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
+import android.content.Context;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class mt0 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.f1 b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.f1 c;
-    public final /* synthetic */ ot0 d;
+public final class mt0 extends uq0 {
+    public final /* synthetic */ org.telegram.ui.ActionBar.n2 b1;
 
-    public /* synthetic */ mt0(ot0 ot0Var, org.telegram.ui.ActionBar.f1 f1Var, org.telegram.ui.ActionBar.f1 f1Var2, int i10) {
-        this.a = i10;
-        this.d = ot0Var;
-        this.b = f1Var;
-        this.c = f1Var2;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public mt0(Context context, String str, String str2, org.telegram.ui.ActionBar.f6 f6Var, org.telegram.ui.ActionBar.n2 n2Var) {
+        super(context, null, str, false, str2, false, f6Var);
+        this.b1 = n2Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                kv0 kv0Var = this.d.d;
-                if (!kv0Var.H1) {
-                    org.telegram.ui.ActionBar.f1 f1Var = this.b;
-                    boolean z10 = f1Var.getCheckView().a.q;
-                    org.telegram.ui.ActionBar.f1 f1Var2 = this.c;
-                    if (!z10 && f1Var2.getCheckView().a.q) {
-                        float f7 = -kv0Var.s1;
-                        kv0Var.s1 = f7;
-                        AndroidUtilities.shakeViewSpring(f1Var2, f7);
-                        break;
-                    } else {
-                        f1Var2.setChecked(!f1Var2.getCheckView().a.q);
-                        if (f1Var2.getCheckView().a.q && f1Var.getCheckView().a.q) {
-                            kv0Var.t1[0].q = 0;
-                        } else {
-                            kv0Var.t1[0].q = 2;
-                        }
-                        kv0.s(kv0Var);
-                        break;
-                    }
-                }
-                break;
-            default:
-                kv0 kv0Var2 = this.d.d;
-                if (!kv0Var2.H1) {
-                    org.telegram.ui.ActionBar.f1 f1Var3 = this.b;
-                    boolean z11 = f1Var3.getCheckView().a.q;
-                    org.telegram.ui.ActionBar.f1 f1Var4 = this.c;
-                    if (!z11 && f1Var4.getCheckView().a.q) {
-                        float f10 = -kv0Var2.s1;
-                        kv0Var2.s1 = f10;
-                        AndroidUtilities.shakeViewSpring(f1Var4, f10);
-                        break;
-                    } else {
-                        f1Var4.setChecked(!f1Var4.getCheckView().a.q);
-                        if (f1Var3.getCheckView().a.q && f1Var4.getCheckView().a.q) {
-                            kv0Var2.t1[0].q = 0;
-                        } else {
-                            kv0Var2.t1[0].q = 1;
-                        }
-                        kv0.s(kv0Var2);
-                        break;
-                    }
-                }
-                break;
-        }
+    @Override // org.telegram.ui.Components.uq0
+    public final void R0(a0.i iVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
+        AndroidUtilities.runOnUIThread(new wm(this.b1, iVar, i10, 14), 100L);
     }
 }

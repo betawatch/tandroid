@@ -1,9 +1,9 @@
 package l5;
 
 import android.os.Process;
-import w7.g6;
+import w7.h6;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class o implements Runnable {
     public final /* synthetic */ int a;
@@ -22,7 +22,7 @@ public final class o implements Runnable {
                     this.b.run();
                     break;
                 } catch (Exception e) {
-                    g6.b("Executor", "Background execution failure.", e);
+                    h6.b("Executor", "Background execution failure.", e);
                     return;
                 }
             case 1:

@@ -11,7 +11,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class q6 extends View {
     public final /* synthetic */ int a = 0;
@@ -45,7 +45,7 @@ public final class q6 extends View {
                 RectF rectF = AndroidUtilities.rectTmp;
                 rectF.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
                 canvas.drawRoundRect(rectF, AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f), this.c);
-                rectF.set(0.0f, 0.0f, ((org.telegram.ui.Components.e6) this.e).d(this.d, false) * getMeasuredWidth(), getMeasuredHeight());
+                rectF.set(0.0f, 0.0f, ((org.telegram.ui.Components.d6) this.e).d(this.d, false) * getMeasuredWidth(), getMeasuredHeight());
                 canvas.drawRoundRect(rectF, AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f), this.b);
                 break;
             default:
@@ -61,7 +61,7 @@ public final class q6 extends View {
                 xVar.e.rewind();
                 xVar.e.addRoundRect(rectF2, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), Path.Direction.CW);
                 canvas.clipPath(xVar.e);
-                qg.i1.x1(canvas, rectF2, AndroidUtilities.dp(6.0f));
+                qg.j1.x1(canvas, rectF2, AndroidUtilities.dp(6.0f));
                 canvas.restore();
                 rectF2.set(dp, f7, getWidth() - dp, f10);
                 canvas.drawRoundRect(rectF2, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), this.b);
@@ -70,7 +70,7 @@ public final class q6 extends View {
                 float strokeWidth = dp2 - (paint.getStrokeWidth() / 2.0f);
                 float max = Math.max(dp + strokeWidth, (((getWidth() - (2.0f * dp)) * this.d) + dp) - strokeWidth);
                 canvas.drawCircle(max, height, dp2, paint);
-                qg.i1.y1(max, height, strokeWidth, i0.a.k(xVar.f, (int) (this.d * 255.0f)), canvas);
+                qg.j1.y1(max, height, strokeWidth, i0.a.k(xVar.f, (int) (this.d * 255.0f)), canvas);
                 break;
         }
     }

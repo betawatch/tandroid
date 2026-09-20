@@ -1,9 +1,9 @@
 package o2;
 
 import java.util.Arrays;
-import v7.m7;
+import v7.n7;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class e extends v2.e {
     public byte[] s;
@@ -11,7 +11,7 @@ public final class e extends v2.e {
     public byte[] w;
 
     @Override // y2.j
-    public final void D() {
+    public final void H() {
         this.v = true;
     }
 
@@ -34,9 +34,9 @@ public final class e extends v2.e {
             if (!this.v) {
                 this.w = Arrays.copyOf(this.s, i11);
             }
-            m7.a(this.r);
+            n7.a(this.r);
         } catch (Throwable th2) {
-            m7.a(this.r);
+            n7.a(this.r);
             throw th2;
         }
     }

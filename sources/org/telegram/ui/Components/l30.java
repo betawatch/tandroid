@@ -15,7 +15,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public abstract class l30 extends org.telegram.ui.ActionBar.f3 {
     public final z4.g b;
@@ -43,7 +43,7 @@ public abstract class l30 extends org.telegram.ui.ActionBar.f3 {
         } else {
             textView.setText(LocaleController.getString(R.string.VoipRecordVoiceChat));
         }
-        org.telegram.messenger.q.r(textView, -1, 1, 20.0f);
+        org.telegram.messenger.l0.p(textView, -1, 1, 20.0f);
         textView.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
         this.containerView.addView(textView, w7.y5.d(-2, -2.0f, (LocaleController.isRTL ? 5 : 3) | 48, 24.0f, 29.0f, 24.0f, 0.0f));
         TextView textView2 = new TextView(getContext());

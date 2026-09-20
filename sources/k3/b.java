@@ -21,7 +21,7 @@ import org.xmlpull.v1.XmlPullParserException;
 import w3.l;
 import z3.k;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class b implements o {
     public q b;
@@ -40,18 +40,18 @@ public final class b implements o {
         c3.l lVar = (c3.l) pVar;
         v vVar = this.a;
         vVar.G(2);
-        lVar.h(vVar.a, 0, 2, false);
+        lVar.i(vVar.a, 0, 2, false);
         if (vVar.D() == 65496) {
             vVar.G(2);
-            lVar.h(vVar.a, 0, 2, false);
+            lVar.i(vVar.a, 0, 2, false);
             int D = vVar.D();
             this.d = D;
             if (D == 65504) {
                 vVar.G(2);
-                lVar.h(vVar.a, 0, 2, false);
+                lVar.i(vVar.a, 0, 2, false);
                 lVar.t(vVar.D() - 2, false);
                 vVar.G(2);
-                lVar.h(vVar.a, 0, 2, false);
+                lVar.i(vVar.a, 0, 2, false);
                 this.d = vVar.D();
             }
             if (this.d == 65505) {
@@ -64,7 +64,7 @@ public final class b implements o {
     public final void b() {
         q qVar = this.b;
         qVar.getClass();
-        qVar.e1();
+        qVar.f1();
         this.b.X1(new t(-9223372036854775807L));
         this.c = 6;
     }
@@ -157,7 +157,7 @@ public final class b implements o {
                 sVar.a = j10;
                 return 1;
             }
-            if (!pVar.h(vVar.a, 0, 1, true)) {
+            if (!pVar.i(vVar.a, 0, 1, true)) {
                 b();
                 return 0;
             }
@@ -184,7 +184,7 @@ public final class b implements o {
             r rVar = new r();
             rVar.p = r0.n("image/jpeg");
             rVar.k = new p0(aVar2);
-            k0.r(rVar, Z1);
+            k0.s(rVar, Z1);
             this.c = 5;
             return 0;
         }

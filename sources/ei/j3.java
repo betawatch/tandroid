@@ -12,14 +12,14 @@ import android.view.View;
 import ci.d9;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.be0;
-import org.telegram.ui.Components.bw0;
-import org.telegram.ui.Components.qc;
+import org.telegram.ui.Components.ae0;
+import org.telegram.ui.Components.aw0;
+import org.telegram.ui.Components.pc;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
-public final class j3 extends bw0 implements org.telegram.ui.ActionBar.v3 {
+public final class j3 extends aw0 implements org.telegram.ui.ActionBar.v3 {
     public final /* synthetic */ k3 A0;
     public final Paint w0;
     public boolean x0;
@@ -38,18 +38,18 @@ public final class j3 extends bw0 implements org.telegram.ui.ActionBar.v3 {
         this.z0 = new Path();
     }
 
-    @Override // org.telegram.ui.Components.bw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.aw0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         boolean z10;
         Paint paint;
         k3 k3Var = this.A0;
-        be0 be0Var = k3Var.s0;
+        ae0 ae0Var = k3Var.s0;
         Rect rect = k3Var.h;
         Rect rect2 = k3Var.f;
         if (this.x0) {
             return;
         }
-        int visibility = be0Var.getVisibility();
+        int visibility = ae0Var.getVisibility();
         Paint paint2 = this.w0;
         if (visibility != 0) {
             float f7 = k3Var.f0;
@@ -78,7 +78,7 @@ public final class j3 extends bw0 implements org.telegram.ui.ActionBar.v3 {
             cf.c cVar = k3Var.s;
             int lerp = AndroidUtilities.lerp((getWidth() - rect.left) - rect.right, getWidth(), k3Var.f0);
             getHeight();
-            cVar.o(canvas, true, false, lerp, 1.0f - k3Var.f0);
+            cVar.p(canvas, true, false, lerp, 1.0f - k3Var.f0);
             canvas.translate((1.0f - k3Var.f0) * (-rect.left), 0.0f);
             z10 = true;
         }
@@ -86,7 +86,7 @@ public final class j3 extends bw0 implements org.telegram.ui.ActionBar.v3 {
         if (z10) {
             canvas.restore();
         }
-        if (be0Var.getVisibility() != 0) {
+        if (ae0Var.getVisibility() != 0) {
             paint2.setColor(j6.l1(k3Var.N0, k3Var.R));
             int i11 = rect2.left;
             if (i11 > 0) {
@@ -170,7 +170,7 @@ public final class j3 extends bw0 implements org.telegram.ui.ActionBar.v3 {
         return drawChild;
     }
 
-    @Override // org.telegram.ui.Components.bw0
+    @Override // org.telegram.ui.Components.aw0
     public /* bridge */ /* synthetic */ int[] getColorKeys() {
         return null;
     }
@@ -187,16 +187,16 @@ public final class j3 extends bw0 implements org.telegram.ui.ActionBar.v3 {
         return rectF;
     }
 
-    @Override // org.telegram.ui.Components.bw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.aw0, android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        qc.a(this, new d9(3));
+        pc.a(this, new d9(3));
     }
 
-    @Override // org.telegram.ui.Components.bw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.aw0, android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        qc.h(this);
+        pc.h(this);
     }
 
     @Override // android.view.View
@@ -217,7 +217,7 @@ public final class j3 extends bw0 implements org.telegram.ui.ActionBar.v3 {
                 int width = getWidth();
                 getHeight();
                 canvas2 = canvas;
-                cVar.o(canvas2, false, false, width, 1.0f - k3Var.f0);
+                cVar.p(canvas2, false, false, width, 1.0f - k3Var.f0);
             } else {
                 canvas2 = canvas;
             }

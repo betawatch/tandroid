@@ -9,7 +9,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class rq0 extends tu0 {
     public final /* synthetic */ cr0 a;
@@ -21,11 +21,11 @@ public final class rq0 extends tu0 {
     @Override // org.telegram.ui.tu0, org.telegram.ui.bv0
     public final dv0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
         cr0 cr0Var = this.a;
-        org.telegram.ui.Cells.t5 V = cr0.V(cr0Var, i10);
+        org.telegram.ui.Cells.u5 V = cr0.V(cr0Var, i10);
         if (V == null) {
             return null;
         }
-        org.telegram.ui.Components.w9 imageView = V.getImageView();
+        org.telegram.ui.Components.v9 imageView = V.getImageView();
         int[] iArr = new int[2];
         imageView.getLocationInWindow(iArr);
         dv0 dv0Var = new dv0();
@@ -46,8 +46,8 @@ public final class rq0 extends tu0 {
         int childCount = cr0Var.K.getChildCount();
         for (int i10 = 0; i10 < childCount; i10++) {
             View childAt = cr0Var.K.getChildAt(i10);
-            if (childAt instanceof org.telegram.ui.Cells.t5) {
-                ((org.telegram.ui.Cells.t5) childAt).g(true);
+            if (childAt instanceof org.telegram.ui.Cells.u5) {
+                ((org.telegram.ui.Cells.u5) childAt).g(true);
             }
         }
     }
@@ -82,13 +82,13 @@ public final class rq0 extends tu0 {
     public final void W(int i10) {
         cr0 cr0Var = this.a;
         MediaController.AlbumEntry albumEntry = cr0Var.J;
-        org.telegram.ui.Cells.t5 V = cr0.V(cr0Var, i10);
+        org.telegram.ui.Cells.u5 V = cr0.V(cr0Var, i10);
         if (V != null) {
             if (albumEntry == null) {
                 V.e((MediaController.SearchImage) cr0Var.f.get(i10));
                 return;
             }
-            org.telegram.ui.Components.w9 imageView = V.getImageView();
+            org.telegram.ui.Components.v9 imageView = V.getImageView();
             imageView.q(0, true);
             MediaController.PhotoEntry photoEntry = albumEntry.photos.get(i10);
             String str = photoEntry.thumbPath;
@@ -116,12 +116,12 @@ public final class rq0 extends tu0 {
         for (int i11 = 0; i11 < childCount; i11++) {
             View childAt = cr0Var.K.getChildAt(i11);
             if (childAt.getTag() != null) {
-                org.telegram.ui.Cells.t5 t5Var = (org.telegram.ui.Cells.t5) childAt;
+                org.telegram.ui.Cells.u5 u5Var = (org.telegram.ui.Cells.u5) childAt;
                 int intValue = ((Integer) childAt.getTag()).intValue();
                 MediaController.AlbumEntry albumEntry = cr0Var.J;
                 if (albumEntry == null ? !(intValue < 0 || intValue >= cr0Var.f.size()) : !(intValue < 0 || intValue >= albumEntry.photos.size())) {
                     if (intValue == i10) {
-                        t5Var.g(true);
+                        u5Var.g(true);
                         return;
                     }
                 }
@@ -136,7 +136,7 @@ public final class rq0 extends tu0 {
 
     @Override // org.telegram.ui.tu0, org.telegram.ui.bv0
     public final ImageReceiver.BitmapHolder j(int i10) {
-        org.telegram.ui.Cells.t5 V = cr0.V(this.a, i10);
+        org.telegram.ui.Cells.u5 V = cr0.V(this.a, i10);
         if (V != null) {
             return V.getImageView().getImageReceiver().getBitmapSafe();
         }
@@ -186,7 +186,7 @@ public final class rq0 extends tu0 {
             }
             View childAt = cr0Var.K.getChildAt(i11);
             if (((Integer) childAt.getTag()).intValue() == i10) {
-                ((org.telegram.ui.Cells.t5) childAt).b(cr0Var.e ? Y : -1, z10, false);
+                ((org.telegram.ui.Cells.u5) childAt).b(cr0Var.e ? Y : -1, z10, false);
             } else {
                 i11++;
             }

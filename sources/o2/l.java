@@ -16,9 +16,9 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import u2.d0;
-import u2.h1;
+import u2.i1;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class l extends u2.a {
     public final c h;
@@ -131,7 +131,7 @@ public final class l extends u2.a {
         cVar.r = this;
         Map map = Collections.EMPTY_MAP;
         e2.d.i(uri, "The uri must be set.");
-        y2.p pVar = new y2.p(((g2.g) cVar.a.a).createDataSource(), new g2.m(uri, 1, null, map, 0L, -1L, null, 1), 4, cVar.b.H());
+        y2.p pVar = new y2.p(((g2.g) cVar.a.a).createDataSource(), new g2.m(uri, 1, null, map, 0L, -1L, null, 1), 4, cVar.b.D());
         e2.d.g(cVar.h == null);
         y2.m mVar = new y2.m("DefaultHlsPlaylistTracker:MultivariantPlaylist");
         cVar.h = mVar;
@@ -195,7 +195,7 @@ public final class l extends u2.a {
 
     public final void v(p2.l lVar) {
         long j3;
-        h1 h1Var;
+        i1 i1Var;
         long j10;
         long j11;
         long j12;
@@ -261,7 +261,7 @@ public final class l extends u2.a {
                 }
                 j17 = j12;
             }
-            h1Var = new h1(j16, e02, j19, lVar.u, j18, j17, true, !z12, i10 == 2 && lVar.f, dVar, i(), this.q);
+            i1Var = new i1(j16, e02, j19, lVar.u, j18, j17, true, !z12, i10 == 2 && lVar.f, dVar, i(), this.q);
         } else {
             if (j14 == -9223372036854775807L || i0Var.isEmpty()) {
                 j3 = 0;
@@ -272,8 +272,8 @@ public final class l extends u2.a {
                 j3 = j14;
             }
             long j22 = lVar.u;
-            h1Var = new h1(j16, e02, j22, j22, 0L, j3, true, false, true, dVar, i(), null);
+            i1Var = new i1(j16, e02, j22, j22, 0L, j3, true, false, true, dVar, i(), null);
         }
-        n(h1Var);
+        n(i1Var);
     }
 }

@@ -1,7 +1,27 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public interface tm0 {
-    void a(int i10);
+public final class tm0 {
+    public static final tm0 a;
+    public static final tm0 b;
+    public static final /* synthetic */ tm0[] c;
+
+    static {
+        tm0 tm0Var = new tm0("LINE", 0);
+        a = tm0Var;
+        tm0 tm0Var2 = new tm0("TAB", 1);
+        b = tm0Var2;
+        c = new tm0[]{tm0Var, tm0Var2};
+    }
+
+    public static tm0 valueOf(String str) {
+        return (tm0) Enum.valueOf(tm0.class, str);
+    }
+
+    public static tm0[] values() {
+        return (tm0[]) c.clone();
+    }
 }

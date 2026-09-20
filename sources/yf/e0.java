@@ -1,61 +1,103 @@
 package yf;
 
+import android.graphics.RectF;
 import java.util.ArrayList;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.ImageLoader;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.tgnet.TLRPC;
+import java.util.Collections;
+import org.telegram.ui.mb1;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public abstract class e0 {
-    public static void a(TLRPC.Photo photo, TLRPC.User user, boolean z10) {
-        ArrayList<TLRPC.PhotoSize> arrayList = photo.sizes;
-        TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(arrayList, 100);
-        TLRPC.PhotoSize closestPhotoSizeWithSize2 = FileLoader.getClosestPhotoSizeWithSize(arrayList, MediaDataController.MAX_STYLE_RUNS_COUNT);
-        user.flags |= 32;
-        TLRPC.TL_userProfilePhoto tL_userProfilePhoto = new TLRPC.TL_userProfilePhoto();
-        user.photo = tL_userProfilePhoto;
-        tL_userProfilePhoto.personal = z10;
-        tL_userProfilePhoto.photo_id = photo.id;
-        ArrayList<TLRPC.VideoSize> arrayList2 = photo.video_sizes;
-        tL_userProfilePhoto.has_video = arrayList2 != null && arrayList2.size() > 0;
-        if (closestPhotoSizeWithSize != null) {
-            user.photo.photo_small = closestPhotoSizeWithSize.location;
+    public static final mb1 a = new mb1(20);
+
+    public static int a(ArrayList arrayList, int i10, ArrayList arrayList2) {
+        boolean z10;
+        if (arrayList == null || i10 <= 0) {
+            return 0;
         }
-        if (closestPhotoSizeWithSize2 != null) {
-            user.photo.photo_big = closestPhotoSizeWithSize2.location;
+        if (i10 > arrayList.size()) {
+            i10 = arrayList.size();
         }
+        for (int size = arrayList2.size(); size < i10; size++) {
+            arrayList2.add(new RectF());
+        }
+        for (int i11 = 0; i11 < i10; i11++) {
+            RectF rectF = (RectF) arrayList.get(i11);
+            RectF rectF2 = (RectF) arrayList2.get(i11);
+            if (rectF != null) {
+                rectF2.set(rectF);
+            } else {
+                rectF2.set(0.0f, 0.0f, 0.0f, 0.0f);
+            }
+        }
+        do {
+            int i12 = 0;
+            while (true) {
+                if (i12 >= i10) {
+                    z10 = false;
+                    break;
+                }
+                RectF rectF3 = (RectF) arrayList2.get(i12);
+                i12++;
+                for (int i13 = i12; i13 < i10; i13++) {
+                    RectF rectF4 = (RectF) arrayList2.get(i13);
+                    float f7 = rectF3.left;
+                    float f10 = rectF4.right;
+                    if (f7 <= f10 + 1.0E-4f) {
+                        float f11 = rectF3.right;
+                        float f12 = rectF4.left;
+                        if (f11 >= f12 - 1.0E-4f) {
+                            float f13 = rectF3.top;
+                            float f14 = rectF4.bottom;
+                            if (f13 <= f14 + 1.0E-4f) {
+                                float f15 = rectF3.bottom;
+                                float f16 = rectF4.top;
+                                if (f15 >= f16 - 1.0E-4f) {
+                                    if (f12 < f7) {
+                                        rectF3.left = f12;
+                                    }
+                                    if (f16 < f13) {
+                                        rectF3.top = f16;
+                                    }
+                                    if (f10 > f11) {
+                                        rectF3.right = f10;
+                                    }
+                                    if (f14 > f15) {
+                                        rectF3.bottom = f14;
+                                    }
+                                    int i14 = i10 - 1;
+                                    if (i13 != i14) {
+                                        ((RectF) arrayList2.get(i13)).set((RectF) arrayList2.get(i14));
+                                    }
+                                    i10--;
+                                    z10 = true;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        } while (z10);
+        for (int i15 = i10; i15 < arrayList2.size(); i15++) {
+            RectF rectF5 = (RectF) arrayList2.get(i15);
+            rectF5.top = Float.MAX_VALUE;
+            rectF5.left = Float.MAX_VALUE;
+        }
+        Collections.sort(arrayList2, a);
+        return i10;
     }
 
-    public static void b(int i10, TLRPC.Photo photo, TLRPC.Photo photo2) {
-        TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(photo.sizes, 100);
-        TLRPC.PhotoSize closestPhotoSizeWithSize2 = FileLoader.getClosestPhotoSizeWithSize(photo.sizes, MediaDataController.MAX_STYLE_RUNS_COUNT);
-        TLRPC.PhotoSize closestPhotoSizeWithSize3 = FileLoader.getClosestPhotoSizeWithSize(photo2.sizes, 100);
-        TLRPC.PhotoSize closestPhotoSizeWithSize4 = FileLoader.getClosestPhotoSizeWithSize(photo2.sizes, MediaDataController.MAX_STYLE_RUNS_COUNT);
-        if (closestPhotoSizeWithSize3 != null && closestPhotoSizeWithSize != null) {
-            FileLoader.getInstance(i10).getPathToAttach(closestPhotoSizeWithSize, true).renameTo(FileLoader.getInstance(i10).getPathToAttach(closestPhotoSizeWithSize3, true));
-            StringBuilder sb2 = new StringBuilder();
-            sb2.append(closestPhotoSizeWithSize.location.volume_id);
-            sb2.append("_");
-            String n10 = a4.a.n(closestPhotoSizeWithSize.location.local_id, "@50_50", sb2);
-            StringBuilder sb3 = new StringBuilder();
-            sb3.append(closestPhotoSizeWithSize3.location.volume_id);
-            sb3.append("_");
-            ImageLoader.getInstance().replaceImageInCache(n10, a4.a.n(closestPhotoSizeWithSize3.location.local_id, "@50_50", sb3), ImageLocation.getForPhoto(closestPhotoSizeWithSize, photo), false);
+    public static float b(float f7) {
+        return 1.0f - w7.q.a(f7, 0.0f, 1.0f);
+    }
+
+    public static boolean c(float[] fArr) {
+        if (fArr != null && fArr.length == 8) {
+            float f7 = fArr[0];
+            if (f7 == fArr[1] && f7 == fArr[2] && f7 == fArr[3] && f7 == fArr[4] && f7 == fArr[5] && f7 == fArr[6] && f7 == fArr[7]) {
+                return true;
+            }
         }
-        if (closestPhotoSizeWithSize4 == null || closestPhotoSizeWithSize2 == null) {
-            return;
-        }
-        FileLoader.getInstance(i10).getPathToAttach(closestPhotoSizeWithSize2, true).renameTo(FileLoader.getInstance(i10).getPathToAttach(closestPhotoSizeWithSize4, true));
-        StringBuilder sb4 = new StringBuilder();
-        sb4.append(closestPhotoSizeWithSize2.location.volume_id);
-        sb4.append("_");
-        String n11 = a4.a.n(closestPhotoSizeWithSize2.location.local_id, "@150_150", sb4);
-        StringBuilder sb5 = new StringBuilder();
-        sb5.append(closestPhotoSizeWithSize4.location.volume_id);
-        sb5.append("_");
-        ImageLoader.getInstance().replaceImageInCache(n11, a4.a.n(closestPhotoSizeWithSize4.location.local_id, "@150_150", sb5), ImageLocation.getForPhoto(closestPhotoSizeWithSize2, photo), false);
+        return false;
     }
 }

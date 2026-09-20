@@ -17,13 +17,13 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class tw0 extends org.telegram.ui.ActionBar.n2 {
     public final long a;
-    public org.telegram.ui.Cells.z7 b;
-    public org.telegram.ui.Components.e90 c;
-    public org.telegram.ui.Components.t61 d;
+    public org.telegram.ui.Cells.a8 b;
+    public org.telegram.ui.Components.d90 c;
+    public org.telegram.ui.Components.s61 d;
     public org.telegram.ui.Components.pr e;
     public org.telegram.ui.ActionBar.v0 f;
     public final boolean h;
@@ -111,7 +111,7 @@ public final class tw0 extends org.telegram.ui.ActionBar.n2 {
         boolean z10 = this.r;
         updatepaidmessagesprice.send_paid_messages_stars = z10 ? this.s : 0L;
         updatepaidmessagesprice.suggestions_allowed = z10;
-        getConnectionsManager().sendRequest(updatepaidmessagesprice, new cc0(12, this, updatepaidmessagesprice));
+        getConnectionsManager().sendRequest(updatepaidmessagesprice, new dc0(12, this, updatepaidmessagesprice));
         TLRPC.Chat chat = getMessagesController().getChat(Long.valueOf(j3));
         if (chat != null) {
             if (this.r) {
@@ -156,25 +156,25 @@ public final class tw0 extends org.telegram.ui.ActionBar.n2 {
         this.fragmentView = frameLayout;
         frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.a7, false));
         FrameLayout frameLayout2 = (FrameLayout) this.fragmentView;
-        org.telegram.ui.Cells.z7 z7Var = new org.telegram.ui.Cells.z7(context, this.resourceProvider);
-        this.b = z7Var;
+        org.telegram.ui.Cells.a8 a8Var = new org.telegram.ui.Cells.a8(context, this.resourceProvider);
+        this.b = a8Var;
         int i11 = org.telegram.ui.ActionBar.j6.d6;
-        z7Var.setBackgroundColor(getThemedColor(i11));
-        org.telegram.ui.Components.e90 e90Var = new org.telegram.ui.Components.e90(context, this, null, true, true);
-        this.c = e90Var;
-        e90Var.setPadding(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(16.0f), 0);
+        a8Var.setBackgroundColor(getThemedColor(i11));
+        org.telegram.ui.Components.d90 d90Var = new org.telegram.ui.Components.d90(context, this, null, true, true);
+        this.c = d90Var;
+        d90Var.setPadding(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(16.0f), 0);
         this.c.setBackgroundColor(getThemedColor(i11));
         this.c.b(true);
         this.c.d(0, null, false);
-        org.telegram.ui.Components.t61 t61Var = new org.telegram.ui.Components.t61(context, this.currentAccount, this.classGuid, false, new b5(this, 16), new sw0(this, 2), null, this.resourceProvider);
-        this.d = t61Var;
-        t61Var.q1();
+        org.telegram.ui.Components.s61 s61Var = new org.telegram.ui.Components.s61(context, this.currentAccount, this.classGuid, false, new b5(this, 16), new sw0(this, 2), null, this.resourceProvider);
+        this.d = s61Var;
+        s61Var.q1();
         frameLayout2.addView(this.d, w7.y5.e(-1, -1, 51));
         return this.fragmentView;
     }
 
     @Override // org.telegram.ui.ActionBar.n2
-    public final org.telegram.ui.Components.wl0 getListViewForSimpleGlass() {
+    public final org.telegram.ui.Components.vl0 getListViewForSimpleGlass() {
         return this.d;
     }
 
@@ -207,13 +207,13 @@ public final class tw0 extends org.telegram.ui.ActionBar.n2 {
 
     @Override // org.telegram.ui.ActionBar.n2
     public final boolean onFragmentCreate() {
-        org.telegram.ui.Components.l61 l61Var;
+        org.telegram.ui.Components.k61 k61Var;
         super.onFragmentCreate();
-        org.telegram.ui.Components.t61 t61Var = this.d;
-        if (t61Var == null || (l61Var = t61Var.Y2) == null) {
+        org.telegram.ui.Components.s61 s61Var = this.d;
+        if (s61Var == null || (k61Var = s61Var.Y2) == null) {
             return true;
         }
-        l61Var.N(false);
+        k61Var.N(false);
         return true;
     }
 }

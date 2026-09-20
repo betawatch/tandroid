@@ -7,18 +7,18 @@ import ci.o4;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.Components.qr;
 import org.telegram.ui.Components.wq;
-import w7.a6;
+import w7.b6;
 import w7.y5;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class h extends FrameLayout implements le.d {
     public static final int[] s;
     public final String[] a;
-    public final e6 b;
+    public final f6 b;
     public final dh.a c;
     public final ah.c d;
     public final aa.a[] e;
@@ -33,7 +33,7 @@ public final class h extends FrameLayout implements le.d {
         s = new int[]{i10, i11, R.drawable.mentionbutton, R.drawable.reactionbutton, R.drawable.menu_poll_notify, i11, i11};
     }
 
-    public h(Context context, e6 e6Var, dh.b bVar, ah.c cVar) {
+    public h(Context context, f6 f6Var, dh.b bVar, ah.c cVar) {
         super(context);
         this.a = new String[]{LocaleController.getString(R.string.AttachMenu), LocaleController.getString(R.string.AccDescrPageDown), LocaleController.getString(R.string.AccDescrMentionDown), LocaleController.getString(R.string.AccDescrReactionMentionDown), LocaleController.getString(R.string.AccDescrPollVotesMentionDown), LocaleController.getString(R.string.AccDescrSearchPrev), LocaleController.getString(R.string.AccDescrSearchNext)};
         this.e = new aa.a[7];
@@ -41,7 +41,7 @@ public final class h extends FrameLayout implements le.d {
         this.r = 83;
         this.d = cVar;
         this.c = bVar;
-        this.b = e6Var;
+        this.b = f6Var;
     }
 
     @Override // le.d
@@ -133,13 +133,13 @@ public final class h extends FrameLayout implements le.d {
                 }
                 Context context = getContext();
                 int i14 = s[i10];
-                e6 e6Var = this.b;
-                ih.b bVar3 = new ih.b(context, e6Var);
-                ih.a d = ih.a.d(context, this.d, this.c, e6Var, i14, i12);
+                f6 f6Var = this.b;
+                ih.b bVar3 = new ih.b(context, f6Var);
+                ih.a d = ih.a.d(context, this.d, this.c, f6Var, i14, i12);
                 bVar3.b = d;
                 bVar3.addView(d, y5.e(i11, i11, 80));
                 d.setIconPadding(AndroidUtilities.dp(2.0f));
-                a6.b(bVar3, 0.13f, 2.0f);
+                b6.b(bVar3, 0.13f, 2.0f);
                 float f7 = i11 / 2.0f;
                 bVar3.setPivotX(AndroidUtilities.dp(f7));
                 bVar3.setPivotY(AndroidUtilities.dp(f7 + 8.0f));

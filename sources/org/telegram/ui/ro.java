@@ -4,7 +4,7 @@ import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class ro extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ int a;
@@ -81,17 +81,17 @@ public final class ro extends org.telegram.ui.ActionBar.j {
                 }
                 break;
             case 6:
-                org.telegram.ui.Components.j8 j8Var = (org.telegram.ui.Components.j8) this.b;
+                org.telegram.ui.Components.i8 i8Var = (org.telegram.ui.Components.i8) this.b;
                 if (i10 == -1) {
-                    j8Var.dismiss();
+                    i8Var.dismiss();
                     break;
                 } else {
-                    j8Var.t0(i10);
+                    i8Var.t0(i10);
                     break;
                 }
             case 7:
                 if (i10 == -1) {
-                    ((org.telegram.ui.Components.bb) this.b).dismiss();
+                    ((org.telegram.ui.Components.ab) this.b).dismiss();
                     break;
                 }
                 break;
@@ -112,23 +112,23 @@ public final class ro extends org.telegram.ui.ActionBar.j {
                 }
                 break;
             case 10:
-                if (i10 == -1 && (runnable = ((org.telegram.ui.Components.tf0) this.b).r) != null) {
+                if (i10 == -1 && (runnable = ((org.telegram.ui.Components.sf0) this.b).r) != null) {
                     AndroidUtilities.runOnUIThread(runnable);
                     break;
                 }
                 break;
             case 11:
                 if (i10 == -1) {
-                    ((org.telegram.ui.Components.ah0) this.b).dismiss();
+                    ((org.telegram.ui.Components.zg0) this.b).dismiss();
                     break;
                 }
                 break;
             case 12:
-                ((org.telegram.ui.Components.vq0) this.b).onBackPressed();
+                ((org.telegram.ui.Components.uq0) this.b).onBackPressed();
                 break;
             case 13:
                 if (i10 == -1) {
-                    ((org.telegram.ui.Components.o61) this.b).finishFragment();
+                    ((org.telegram.ui.Components.n61) this.b).finishFragment();
                     break;
                 }
                 break;
@@ -140,13 +140,13 @@ public final class ro extends org.telegram.ui.ActionBar.j {
                 break;
             case 15:
                 if (i10 == -1) {
-                    ((li1) this.b).a(false, false);
+                    ((mi1) this.b).a(false, false);
                     break;
                 }
                 break;
             case 16:
                 if (i10 == -1) {
-                    ((au) this.b).finishFragment();
+                    ((bu) this.b).finishFragment();
                     break;
                 }
                 break;

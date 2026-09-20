@@ -9,13 +9,13 @@ import android.widget.ScrollView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.k70;
+import org.telegram.ui.Components.j70;
 import org.telegram.ui.UsersSelectActivity;
 import org.telegram.ui.l80;
 import org.telegram.ui.pn0;
-import org.telegram.ui.xg0;
+import org.telegram.ui.yg0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class v1 extends ScrollView {
     public final /* synthetic */ int a;
@@ -68,15 +68,15 @@ public final class v1 extends ScrollView {
     public void onMeasure(int i10, int i11) {
         switch (this.a) {
             case 1:
-                k70 k70Var = (k70) this.b;
+                j70 j70Var = (j70) this.b;
                 int size = View.MeasureSpec.getSize(i10);
                 int size2 = View.MeasureSpec.getSize(i11);
                 if (AndroidUtilities.isTablet() || size2 > size) {
-                    k70Var.s0 = AndroidUtilities.dp(144.0f);
+                    j70Var.s0 = AndroidUtilities.dp(144.0f);
                 } else {
-                    k70Var.s0 = AndroidUtilities.dp(56.0f);
+                    j70Var.s0 = AndroidUtilities.dp(56.0f);
                 }
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(k70Var.s0, TLObject.FLAG_31));
+                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(j70Var.s0, TLObject.FLAG_31));
                 break;
             case 2:
                 super.onMeasure(i10, i11);
@@ -111,15 +111,15 @@ public final class v1 extends ScrollView {
                 l80 l80Var = (l80) this.b;
                 if (!l80Var.v) {
                     rect.offset(view.getLeft() - view.getScrollX(), view.getTop() - view.getScrollY());
-                    rect.top = org.telegram.messenger.q.D(20.0f, l80Var.I, rect.top);
-                    rect.bottom = org.telegram.messenger.q.D(50.0f, l80Var.I, rect.bottom);
+                    rect.top = org.telegram.messenger.l0.C(20.0f, l80Var.I, rect.top);
+                    rect.bottom = org.telegram.messenger.l0.C(50.0f, l80Var.I, rect.bottom);
                     break;
                 } else {
                     l80Var.v = false;
                     break;
                 }
             case 4:
-                int i10 = ((xg0) this.b).a;
+                int i10 = ((yg0) this.b).a;
                 if (i10 == 1 || i10 == 2 || i10 == 4) {
                     rect.bottom = AndroidUtilities.dp(40.0f) + rect.bottom;
                 }
@@ -134,8 +134,8 @@ public final class v1 extends ScrollView {
                 UsersSelectActivity usersSelectActivity = (UsersSelectActivity) this.b;
                 if (!usersSelectActivity.v) {
                     rect.offset(view.getLeft() - view.getScrollX(), view.getTop() - view.getScrollY());
-                    rect.top = org.telegram.messenger.q.D(20.0f, usersSelectActivity.Q, rect.top);
-                    rect.bottom = org.telegram.messenger.q.D(50.0f, usersSelectActivity.Q, rect.bottom);
+                    rect.top = org.telegram.messenger.l0.C(20.0f, usersSelectActivity.Q, rect.top);
+                    rect.bottom = org.telegram.messenger.l0.C(50.0f, usersSelectActivity.Q, rect.bottom);
                     break;
                 } else {
                     usersSelectActivity.v = false;

@@ -17,7 +17,7 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class og implements Runnable {
     public final /* synthetic */ int a;
@@ -44,7 +44,7 @@ public final /* synthetic */ class og implements Runnable {
                     chatActivityEnterView.I3 = true;
                 }
                 MediaController.getInstance().toggleRecordingPause(chatActivityEnterView.O);
-                chatActivityEnterView.Y2.a1(0);
+                chatActivityEnterView.Y2.b1(0);
                 ChatActivityEnterView.SlideTextView slideTextView = chatActivityEnterView.j1;
                 if (slideTextView != null) {
                     slideTextView.setEnabled(false);
@@ -62,55 +62,55 @@ public final /* synthetic */ class og implements Runnable {
                 AndroidUtilities.showKeyboard((EditText) obj);
                 break;
             case 4:
-                SparseArray sparseArray = q5.q;
-                ((q5) obj).v();
+                SparseArray sparseArray = p5.q;
+                ((p5) obj).v();
                 break;
             case 5:
-                m5 m5Var = (m5) obj;
-                ArrayList arrayList = new ArrayList(m5Var.c);
-                m5Var.c.clear();
-                MessagesStorage.getInstance(m5Var.e).getStorageQueue().postRunnable(new j5(m5Var, arrayList, i11));
-                m5Var.d = null;
+                l5 l5Var = (l5) obj;
+                ArrayList arrayList = new ArrayList(l5Var.c);
+                l5Var.c.clear();
+                MessagesStorage.getInstance(l5Var.e).getStorageQueue().postRunnable(new i5(l5Var, arrayList, i11));
+                l5Var.d = null;
                 break;
             case 6:
-                ((o5) obj).invalidate();
+                ((n5) obj).invalidate();
                 break;
             case 7:
                 ((o1.k) obj).f();
                 break;
             case 8:
-                p6 p6Var = (p6) obj;
-                CharSequence charSequence = p6Var.f;
+                o6 o6Var = (o6) obj;
+                CharSequence charSequence = o6Var.f;
                 if (charSequence != null) {
-                    p6Var.c(charSequence, p6Var.h, true);
-                    p6Var.f = null;
-                    p6Var.h = false;
+                    o6Var.c(charSequence, o6Var.h, true);
+                    o6Var.f = null;
+                    o6Var.h = false;
                     break;
                 }
                 break;
             case 9:
-                ((i8) obj).n.n.setVisibility(8);
+                ((h8) obj).n.n.setVisibility(8);
                 break;
             case 10:
-                ((o8) obj).c.j1();
+                ((n8) obj).c.j1();
                 break;
             case 11:
-                fa faVar = (fa) obj;
-                faVar.o = true;
-                faVar.d.invalidate();
+                ea eaVar = (ea) obj;
+                eaVar.o = true;
+                eaVar.d.invalidate();
                 break;
             case 12:
-                ea eaVar = (ea) obj;
-                if (!eaVar.a) {
-                    fa faVar2 = eaVar.d;
-                    Bitmap[] bitmapArr = faVar2.g;
-                    Canvas[] canvasArr = faVar2.h;
-                    faVar2.g = faVar2.f;
-                    faVar2.h = faVar2.i;
-                    faVar2.f = bitmapArr;
-                    faVar2.i = canvasArr;
-                    faVar2.k = false;
-                    ci.s6 s6Var = faVar2.d;
+                da daVar = (da) obj;
+                if (!daVar.a) {
+                    ea eaVar2 = daVar.d;
+                    Bitmap[] bitmapArr = eaVar2.g;
+                    Canvas[] canvasArr = eaVar2.h;
+                    eaVar2.g = eaVar2.f;
+                    eaVar2.h = eaVar2.i;
+                    eaVar2.f = bitmapArr;
+                    eaVar2.i = canvasArr;
+                    eaVar2.k = false;
+                    ci.s6 s6Var = eaVar2.d;
                     if (s6Var != null) {
                         s6Var.invalidate();
                         break;
@@ -118,24 +118,24 @@ public final /* synthetic */ class og implements Runnable {
                 }
                 break;
             case 13:
-                ja jaVar = ((pa) obj).t;
-                if (jaVar != null) {
-                    jaVar.d();
+                ia iaVar = ((oa) obj).t;
+                if (iaVar != null) {
+                    iaVar.d();
                     break;
                 }
                 break;
             case 14:
-                ja jaVar2 = (ja) obj;
-                jaVar2.o = jaVar2.n.b;
-                jaVar2.d();
+                ia iaVar2 = (ia) obj;
+                iaVar2.o = iaVar2.n.b;
+                iaVar2.d();
                 break;
             case 15:
-                qc qcVar = ((jb) obj).b;
-                ub ubVar = qcVar.e;
-                ubVar.transitionRunningEnter = false;
-                ubVar.onEnterTransitionEnd();
-                if (qcVar.u) {
-                    qcVar.i(true);
+                pc pcVar = ((ib) obj).b;
+                tb tbVar = pcVar.e;
+                tbVar.transitionRunningEnter = false;
+                tbVar.onEnterTransitionEnd();
+                if (pcVar.u) {
+                    pcVar.i(true);
                     break;
                 }
                 break;
@@ -148,10 +148,10 @@ public final /* synthetic */ class og implements Runnable {
                 }
                 break;
             case 17:
-                kd kdVar = (kd) obj;
-                if (kdVar.o1) {
-                    kdVar.o1 = false;
-                    kdVar.invalidate();
+                ld ldVar = (ld) obj;
+                if (ldVar.o1) {
+                    ldVar.o1 = false;
+                    ldVar.invalidate();
                     break;
                 }
                 break;

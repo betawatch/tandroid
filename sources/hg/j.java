@@ -10,12 +10,12 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.e6;
+import org.telegram.ui.Components.d6;
 import org.telegram.ui.Components.qr;
 import org.telegram.ui.Components.vi;
 import org.telegram.ui.l20;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class j extends FrameLayout {
     public final /* synthetic */ int a = 0;
@@ -30,7 +30,7 @@ public final class j extends FrameLayout {
         this.e = mVar;
         this.b = -1;
         this.c = new Rect();
-        this.d = new e6(this, 220L, qr.h);
+        this.d = new d6(this, 220L, qr.h);
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -75,9 +75,9 @@ public final class j extends FrameLayout {
         switch (this.a) {
             case 0:
                 float width = getWidth() / 2.0f;
-                e6 e6Var = (e6) this.d;
+                d6 d6Var = (d6) this.d;
                 m mVar = (m) this.e;
-                float d = e6Var.d(mVar.r.getWidth(), false);
+                float d = d6Var.d(mVar.r.getWidth(), false);
                 Rect rect = (Rect) this.c;
                 float f7 = d / 2.0f;
                 rect.set((int) (width - (mVar.r.getScaleX() * f7)), (int) (((1.0f - mVar.r.getScaleY()) * mVar.r.getHeight()) + mVar.r.getY()), (int) ((mVar.r.getScaleX() * f7) + width), (int) (mVar.r.getY() + mVar.r.getHeight()));

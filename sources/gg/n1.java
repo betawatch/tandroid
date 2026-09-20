@@ -18,45 +18,45 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.j9;
+import org.telegram.ui.Components.i9;
 import w7.y5;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class n1 extends FrameLayout {
-    public final e6 a;
-    public final j9 b;
+    public final f6 a;
+    public final i9 b;
     public final TextView[] c;
     public final TextView[] d;
     public float e;
     public ValueAnimator f;
 
-    public n1(Context context, e6 e6Var) {
+    public n1(Context context, f6 f6Var) {
         super(context);
         this.c = new TextView[2];
         this.d = new TextView[2];
-        this.a = e6Var;
+        this.a = f6Var;
         setWillNotDraw(false);
-        j9 j9Var = new j9(this, false);
-        this.b = j9Var;
-        j9Var.l = true;
-        j9Var.p = AndroidUtilities.dp(75.0f);
-        j9Var.o = AndroidUtilities.dp(48.0f);
-        j9Var.x = true;
-        j9Var.s = AndroidUtilities.dp(22.0f);
+        i9 i9Var = new i9(this, false);
+        this.b = i9Var;
+        i9Var.l = true;
+        i9Var.p = AndroidUtilities.dp(75.0f);
+        i9Var.o = AndroidUtilities.dp(48.0f);
+        i9Var.x = true;
+        i9Var.s = AndroidUtilities.dp(22.0f);
         int i10 = 0;
         while (i10 < 2) {
             this.c[i10] = new TextView(context);
-            this.c[i10].setTextColor(j6.v0(j6.G6, e6Var));
+            this.c[i10].setTextColor(j6.v0(j6.G6, f6Var));
             this.c[i10].setTypeface(AndroidUtilities.bold());
             this.c[i10].setTextSize(1, 14.0f);
             int i11 = 8;
             this.c[i10].setVisibility(i10 == 0 ? 0 : 8);
             addView(this.c[i10], y5.d(-1, -2.0f, 48, 76.0f, 7.0f, 40.0f, 0.0f));
             this.d[i10] = new TextView(context);
-            this.d[i10].setTextColor(j6.v0(j6.z6, e6Var));
+            this.d[i10].setTextColor(j6.v0(j6.z6, f6Var));
             this.d[i10].setTextSize(1, 12.0f);
             TextView textView = this.d[i10];
             if (i10 == 0) {
@@ -68,32 +68,32 @@ public final class n1 extends FrameLayout {
         }
         ImageView imageView = new ImageView(context);
         imageView.setImageResource(R.drawable.msg_arrowright);
-        imageView.setColorFilter(new PorterDuffColorFilter(j6.v0(j6.P5, e6Var), PorterDuff.Mode.SRC_IN));
+        imageView.setColorFilter(new PorterDuffColorFilter(j6.v0(j6.P5, f6Var), PorterDuff.Mode.SRC_IN));
         addView(imageView, y5.d(24, 24.0f, 21, 0.0f, 0.0f, 8.66f, 0.0f));
     }
 
     public final boolean a(v8 v8Var) {
         String str;
-        j9 j9Var;
+        i9 i9Var;
         int i10 = 0;
         int i11 = 0;
         while (true) {
             ArrayList arrayList = v8Var.i;
             str = v8Var.D;
             int size = arrayList.size();
-            j9Var = this.b;
+            i9Var = this.b;
             if (i10 >= size || i11 >= 3) {
                 break;
             }
             MessageObject messageObject = (MessageObject) v8Var.i.get(i10);
             long j3 = messageObject.storyItem.dialogId;
             TextUtils.isEmpty(str);
-            j9Var.l(i11, messageObject.storyItem, v8Var.c);
+            i9Var.l(i11, messageObject.storyItem, v8Var.c);
             i11++;
             i10++;
         }
-        j9Var.k(i11);
-        j9Var.b(false, true);
+        i9Var.k(i11);
+        i9Var.b(false, true);
         boolean isEmpty = TextUtils.isEmpty(str);
         TextView[] textViewArr = this.c;
         if (isEmpty) {
@@ -111,7 +111,7 @@ public final class n1 extends FrameLayout {
         if (isEmpty) {
             textViewArr[1].setText(LocaleController.formatPluralStringSpaced("HashtagMessagesFound", i10));
         } else {
-            textViewArr[1].setText(AndroidUtilities.replaceSingleLink(LocaleController.formatPluralStringSpaced("HashtagMessagesFoundChannel", i10, t8.b.i("@", str2)), j6.v0(j6.Oh, this.a), null));
+            textViewArr[1].setText(AndroidUtilities.replaceSingleLink(LocaleController.formatPluralStringSpaced("HashtagMessagesFoundChannel", i10, v7.j0.g("@", str2)), j6.v0(j6.Oh, this.a), null));
         }
         this.d[1].setText(LocaleController.formatString(R.string.HashtagMessagesFoundSubtitle, str));
     }

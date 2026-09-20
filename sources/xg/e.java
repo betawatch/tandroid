@@ -8,10 +8,10 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.GiftAuctionController;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ActionBar.e6;
 import org.telegram.ui.ActionBar.f3;
-import org.telegram.ui.Components.w70;
-import org.telegram.ui.Components.zr0;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.Components.v70;
+import org.telegram.ui.Components.yr0;
 import xh.g2;
 import xh.m;
 import xh.o2;
@@ -19,10 +19,10 @@ import xh.s2;
 import xh.v;
 import yh.a0;
 import yh.g5;
-import yh.l7;
+import yh.m7;
 import yh.x4;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -54,27 +54,27 @@ public final /* synthetic */ class e implements View.OnClickListener {
                 ((xh.e) obj3).dismiss();
                 break;
             case 2:
-                m.R((m) obj3, (boolean[]) obj2, (e6) obj);
+                m.R((m) obj3, (boolean[]) obj2, (f6) obj);
                 break;
             case 3:
-                v.R((v) obj3, (Context) obj2, (e6) obj);
+                v.R((v) obj3, (Context) obj2, (f6) obj);
                 break;
             case 4:
-                v.P((v) obj3, (boolean[]) obj2, (e6) obj);
+                v.P((v) obj3, (boolean[]) obj2, (f6) obj);
                 break;
             case 5:
                 o2 o2Var = (o2) obj3;
-                ((w70) obj2).u();
-                zr0 zr0Var = o2Var.a;
+                ((v70) obj2).u();
+                yr0 yr0Var = o2Var.a;
                 g2 g2Var = new g2(o2Var, (TL_stars.SavedStarGift) obj, i12);
                 HashMap hashMap = s2.T;
-                zr0Var.h(null, g2Var);
+                yr0Var.h(null, g2Var);
                 break;
             case 6:
                 Context context = (Context) obj2;
-                e6 e6Var = (e6) obj;
+                f6 f6Var = (f6) obj;
                 if (((a0) obj3).m0.a == zf.b.a) {
-                    new l7(context, e6Var).show();
+                    new m7(context, f6Var).show();
                     break;
                 }
                 break;
@@ -83,7 +83,7 @@ public final /* synthetic */ class e implements View.OnClickListener {
                 final ci.d dVar = (ci.d) obj;
                 f3Var.setCanDismissWithSwipe(false);
                 dVar.setLoading(true);
-                ((x4) obj3).run(new Utilities.Callback() { // from class: yh.h6
+                ((x4) obj3).run(new Utilities.Callback() { // from class: yh.i6
                     @Override // org.telegram.messenger.Utilities.Callback
                     public final void run(Object obj4) {
                         Boolean bool = (Boolean) obj4;
@@ -94,7 +94,7 @@ public final /* synthetic */ class e implements View.OnClickListener {
                                 if (!booleanValue) {
                                     final int i13 = 0;
                                     final ci.d dVar2 = dVar;
-                                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: yh.n6
+                                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: yh.o6
                                         @Override // java.lang.Runnable
                                         public final void run() {
                                             switch (i13) {
@@ -120,7 +120,7 @@ public final /* synthetic */ class e implements View.OnClickListener {
                                 if (!booleanValue2) {
                                     final int i14 = 1;
                                     final ci.d dVar3 = dVar;
-                                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: yh.n6
+                                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: yh.o6
                                         @Override // java.lang.Runnable
                                         public final void run() {
                                             switch (i14) {
@@ -149,7 +149,7 @@ public final /* synthetic */ class e implements View.OnClickListener {
                 final ci.d dVar2 = (ci.d) obj;
                 f3Var2.setCanDismissWithSwipe(false);
                 dVar2.setLoading(true);
-                ((g5) obj3).run(new Utilities.Callback() { // from class: yh.h6
+                ((g5) obj3).run(new Utilities.Callback() { // from class: yh.i6
                     @Override // org.telegram.messenger.Utilities.Callback
                     public final void run(Object obj4) {
                         Boolean bool = (Boolean) obj4;
@@ -160,7 +160,7 @@ public final /* synthetic */ class e implements View.OnClickListener {
                                 if (!booleanValue) {
                                     final int i13 = 0;
                                     final ci.d dVar22 = dVar2;
-                                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: yh.n6
+                                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: yh.o6
                                         @Override // java.lang.Runnable
                                         public final void run() {
                                             switch (i13) {
@@ -186,7 +186,7 @@ public final /* synthetic */ class e implements View.OnClickListener {
                                 if (!booleanValue2) {
                                     final int i14 = 1;
                                     final ci.d dVar3 = dVar2;
-                                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: yh.n6
+                                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: yh.o6
                                         @Override // java.lang.Runnable
                                         public final void run() {
                                             switch (i14) {

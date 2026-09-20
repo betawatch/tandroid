@@ -2,45 +2,45 @@ package ci;
 
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
-public final class d9 implements org.telegram.ui.Components.ob {
+public final class d9 implements org.telegram.ui.Components.nb {
     public final /* synthetic */ int a;
 
     public /* synthetic */ d9(int i10) {
         this.a = i10;
     }
 
-    @Override // org.telegram.ui.Components.ob
+    @Override // org.telegram.ui.Components.nb
     public final /* synthetic */ boolean a() {
         switch (this.a) {
         }
         return true;
     }
 
-    @Override // org.telegram.ui.Components.ob
-    public final /* synthetic */ void b(org.telegram.ui.Components.qc qcVar) {
+    @Override // org.telegram.ui.Components.nb
+    public final /* synthetic */ void b(org.telegram.ui.Components.pc pcVar) {
         int i10 = this.a;
     }
 
-    @Override // org.telegram.ui.Components.ob
+    @Override // org.telegram.ui.Components.nb
     public final /* synthetic */ void c(float f7) {
         int i10 = this.a;
     }
 
-    @Override // org.telegram.ui.Components.ob
-    public final /* synthetic */ void d(org.telegram.ui.Components.qc qcVar) {
+    @Override // org.telegram.ui.Components.nb
+    public final /* synthetic */ void d(org.telegram.ui.Components.pc pcVar) {
         int i10 = this.a;
     }
 
-    @Override // org.telegram.ui.Components.ob
+    @Override // org.telegram.ui.Components.nb
     public final /* synthetic */ boolean e() {
         switch (this.a) {
         }
         return true;
     }
 
-    @Override // org.telegram.ui.Components.ob
+    @Override // org.telegram.ui.Components.nb
     public final int f(int i10) {
         int i11;
         int dp;
@@ -87,117 +87,117 @@ public final class d9 implements org.telegram.ui.Components.ob {
         return dp + i11;
     }
 
-    @Override // org.telegram.ui.Components.ob
+    @Override // org.telegram.ui.Components.nb
     public final boolean g(int i10) {
         switch (this.a) {
         }
         return false;
     }
 
-    @Override // org.telegram.ui.Components.ob
+    @Override // org.telegram.ui.Components.nb
     public final int h(int i10) {
         switch (this.a) {
         }
         return AndroidUtilities.statusBarHeight;
     }
 
-    private final /* synthetic */ void A(org.telegram.ui.Components.qc qcVar) {
+    private final /* synthetic */ void A(org.telegram.ui.Components.pc pcVar) {
     }
 
-    private final /* synthetic */ void B(org.telegram.ui.Components.qc qcVar) {
+    private final /* synthetic */ void B(org.telegram.ui.Components.pc pcVar) {
     }
 
-    private final /* synthetic */ void C(org.telegram.ui.Components.qc qcVar) {
+    private final /* synthetic */ void C(org.telegram.ui.Components.pc pcVar) {
     }
 
-    private final /* synthetic */ void D(org.telegram.ui.Components.qc qcVar) {
+    private final /* synthetic */ void D(org.telegram.ui.Components.pc pcVar) {
     }
 
-    private final /* synthetic */ void E(org.telegram.ui.Components.qc qcVar) {
+    private final /* synthetic */ void E(org.telegram.ui.Components.pc pcVar) {
     }
 
-    private final /* synthetic */ void F(org.telegram.ui.Components.qc qcVar) {
+    private final /* synthetic */ void F(org.telegram.ui.Components.pc pcVar) {
     }
 
-    private final /* synthetic */ void G(org.telegram.ui.Components.qc qcVar) {
+    private final /* synthetic */ void G(org.telegram.ui.Components.pc pcVar) {
     }
 
-    private final /* synthetic */ void H(org.telegram.ui.Components.qc qcVar) {
+    private final /* synthetic */ void H(org.telegram.ui.Components.pc pcVar) {
     }
 
-    private final /* synthetic */ void I(org.telegram.ui.Components.qc qcVar) {
+    private final /* synthetic */ void I(org.telegram.ui.Components.pc pcVar) {
     }
 
-    private final /* synthetic */ void J(org.telegram.ui.Components.qc qcVar) {
+    private final /* synthetic */ void J(org.telegram.ui.Components.pc pcVar) {
     }
 
-    private final /* synthetic */ void K(org.telegram.ui.Components.qc qcVar) {
+    private final /* synthetic */ void K(org.telegram.ui.Components.pc pcVar) {
     }
 
-    private final /* synthetic */ void L(org.telegram.ui.Components.qc qcVar) {
+    private final /* synthetic */ void L(org.telegram.ui.Components.pc pcVar) {
     }
 
-    private final /* synthetic */ void M(org.telegram.ui.Components.qc qcVar) {
+    private final /* synthetic */ void M(org.telegram.ui.Components.pc pcVar) {
     }
 
-    private final /* synthetic */ void N(org.telegram.ui.Components.qc qcVar) {
+    private final /* synthetic */ void N(org.telegram.ui.Components.pc pcVar) {
     }
 
-    private final /* synthetic */ void O(org.telegram.ui.Components.qc qcVar) {
+    private final /* synthetic */ void O(org.telegram.ui.Components.pc pcVar) {
     }
 
-    private final /* synthetic */ void P(org.telegram.ui.Components.qc qcVar) {
+    private final /* synthetic */ void P(org.telegram.ui.Components.pc pcVar) {
     }
 
-    private final /* synthetic */ void Q(org.telegram.ui.Components.qc qcVar) {
+    private final /* synthetic */ void Q(org.telegram.ui.Components.pc pcVar) {
     }
 
-    private final /* synthetic */ void R(org.telegram.ui.Components.qc qcVar) {
+    private final /* synthetic */ void R(org.telegram.ui.Components.pc pcVar) {
     }
 
-    private final /* synthetic */ void S(org.telegram.ui.Components.qc qcVar) {
+    private final /* synthetic */ void S(org.telegram.ui.Components.pc pcVar) {
     }
 
-    private final /* synthetic */ void T(org.telegram.ui.Components.qc qcVar) {
+    private final /* synthetic */ void T(org.telegram.ui.Components.pc pcVar) {
     }
 
-    private final /* synthetic */ void U(org.telegram.ui.Components.qc qcVar) {
+    private final /* synthetic */ void U(org.telegram.ui.Components.pc pcVar) {
     }
 
-    private final /* synthetic */ void V(org.telegram.ui.Components.qc qcVar) {
+    private final /* synthetic */ void V(org.telegram.ui.Components.pc pcVar) {
     }
 
-    private final /* synthetic */ void W(org.telegram.ui.Components.qc qcVar) {
+    private final /* synthetic */ void W(org.telegram.ui.Components.pc pcVar) {
     }
 
-    private final /* synthetic */ void X(org.telegram.ui.Components.qc qcVar) {
+    private final /* synthetic */ void X(org.telegram.ui.Components.pc pcVar) {
     }
 
-    private final /* synthetic */ void Y(org.telegram.ui.Components.qc qcVar) {
+    private final /* synthetic */ void Y(org.telegram.ui.Components.pc pcVar) {
     }
 
-    private final /* synthetic */ void Z(org.telegram.ui.Components.qc qcVar) {
+    private final /* synthetic */ void Z(org.telegram.ui.Components.pc pcVar) {
     }
 
-    private final /* synthetic */ void a0(org.telegram.ui.Components.qc qcVar) {
+    private final /* synthetic */ void a0(org.telegram.ui.Components.pc pcVar) {
     }
 
-    private final /* synthetic */ void b0(org.telegram.ui.Components.qc qcVar) {
+    private final /* synthetic */ void b0(org.telegram.ui.Components.pc pcVar) {
     }
 
-    private final /* synthetic */ void c0(org.telegram.ui.Components.qc qcVar) {
+    private final /* synthetic */ void c0(org.telegram.ui.Components.pc pcVar) {
     }
 
-    private final /* synthetic */ void d0(org.telegram.ui.Components.qc qcVar) {
+    private final /* synthetic */ void d0(org.telegram.ui.Components.pc pcVar) {
     }
 
-    private final /* synthetic */ void e0(org.telegram.ui.Components.qc qcVar) {
+    private final /* synthetic */ void e0(org.telegram.ui.Components.pc pcVar) {
     }
 
-    private final /* synthetic */ void f0(org.telegram.ui.Components.qc qcVar) {
+    private final /* synthetic */ void f0(org.telegram.ui.Components.pc pcVar) {
     }
 
-    private final /* synthetic */ void g0(org.telegram.ui.Components.qc qcVar) {
+    private final /* synthetic */ void g0(org.telegram.ui.Components.pc pcVar) {
     }
 
     private final /* synthetic */ void i(float f7) {
@@ -251,6 +251,6 @@ public final class d9 implements org.telegram.ui.Components.ob {
     private final /* synthetic */ void y(float f7) {
     }
 
-    private final /* synthetic */ void z(org.telegram.ui.Components.qc qcVar) {
+    private final /* synthetic */ void z(org.telegram.ui.Components.pc pcVar) {
     }
 }

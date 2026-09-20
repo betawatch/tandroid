@@ -19,10 +19,10 @@ import org.telegram.tgnet.tl.TL_forum;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.Components.oq;
-import org.telegram.ui.Components.v51;
-import org.telegram.ui.vj0;
+import org.telegram.ui.Components.u51;
+import org.telegram.ui.xj0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public class BotForumHelper extends BaseController {
     private static volatile BotForumHelper[] Instance = new BotForumHelper[4];
@@ -31,16 +31,16 @@ public class BotForumHelper extends BaseController {
     private final LongSparseArray<List<MessagesStorage.IntCallback>> pendingBotTopics;
     private final SharedPreferences preferences;
 
-    /* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+    /* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
     public static class BotDraftAnimationsPool {
-        private final DialogTopicIdKeyMap<vj0> animators = new DialogTopicIdKeyMap<>();
+        private final DialogTopicIdKeyMap<xj0> animators = new DialogTopicIdKeyMap<>();
         private final SparseIntArray ids = new SparseIntArray();
 
         public void bind(int i10, int i11) {
             this.ids.put(i11, i10);
         }
 
-        public vj0 getAnimator(long j3, int i10, boolean z10) {
+        public xj0 getAnimator(long j3, int i10, boolean z10) {
             if (i10 > 0) {
                 i10 = this.ids.get(i10, 0);
             }
@@ -48,13 +48,13 @@ public class BotForumHelper extends BaseController {
                 return null;
             }
             long j10 = i10;
-            vj0 vj0Var = this.animators.get(j3, 0L, j10);
-            if (vj0Var != null || !z10) {
-                return vj0Var;
+            xj0 xj0Var = this.animators.get(j3, 0L, j10);
+            if (xj0Var != null || !z10) {
+                return xj0Var;
             }
-            vj0 vj0Var2 = new vj0();
-            this.animators.put(j3, 0L, j10, vj0Var2);
-            return vj0Var2;
+            xj0 xj0Var2 = new xj0();
+            this.animators.put(j3, 0L, j10, xj0Var2);
+            return xj0Var2;
         }
 
         public void removeAnimator(long j3, int i10) {
@@ -68,7 +68,7 @@ public class BotForumHelper extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+    /* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
     public static class BotDraftMessage {
         private boolean canStop;
         private boolean keepOnStop;
@@ -90,7 +90,7 @@ public class BotForumHelper extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+    /* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
     public static class BotForumTextDraftDeleteNotification {
         public final long botTopicId;
         public final long botUserId;
@@ -103,7 +103,7 @@ public class BotForumHelper extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+    /* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
     public static class BotForumTextDraftUpdateNotification {
         public final long botTopicId;
         public final long botUserId;
@@ -118,7 +118,7 @@ public class BotForumHelper extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+    /* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
     public static class BotForumTopicCreateNotification {
         public final long dialogId;
         public final int topicId;
@@ -129,17 +129,17 @@ public class BotForumHelper extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+    /* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
     public enum SteamingSendButtonState {
         NO_STREAMING,
         BLOCKING,
         STOP
     }
 
-    /* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+    /* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
     public static class TypingBotSpan extends oq {
-        public TypingBotSpan(v51 v51Var, int i10) {
-            super(i10, v51Var);
+        public TypingBotSpan(u51 u51Var, int i10) {
+            super(i10, u51Var);
         }
     }
 
@@ -157,10 +157,10 @@ public class BotForumHelper extends BaseController {
             return charSequence;
         }
         SpannableStringBuilder spannableStringBuilder = charSequence instanceof SpannableStringBuilder ? (SpannableStringBuilder) charSequence : new SpannableStringBuilder(charSequence);
-        v51 v51Var = new v51(true);
-        v51Var.b(-1);
-        v51Var.d();
-        TypingBotSpan typingBotSpan = new TypingBotSpan(v51Var, 1);
+        u51 u51Var = new u51(true);
+        u51Var.b(-1);
+        u51Var.d();
+        TypingBotSpan typingBotSpan = new TypingBotSpan(u51Var, 1);
         typingBotSpan.setColorKey(org.telegram.ui.ActionBar.j6.ec);
         typingBotSpan.setTopOffset(-AndroidUtilities.dp(10.0f));
         spannableStringBuilder.append((CharSequence) " _");
@@ -517,10 +517,10 @@ public class BotForumHelper extends BaseController {
             tL_messages_setTyping.flags |= 1;
             tL_messages_setTyping.top_msg_id = (int) j12;
         }
-        getConnectionsManager().sendRequestTyped(tL_messages_setTyping, new l0(i10));
+        getConnectionsManager().sendRequestTyped(tL_messages_setTyping, new k0(i10));
     }
 
-    /* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+    /* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
     public static class DialogTopicIdKeyMap<T> {
         private final LongSparseArray<LongSparseArray<LongSparseArray<T>>> map = new LongSparseArray<>();
 
@@ -677,7 +677,7 @@ public class BotForumHelper extends BaseController {
                         str = str.substring(0, 16) + "...";
                     }
                     final long j11 = j3;
-                    performSendBotTopicCreate(inputPeer, str, nextRandomId, new MessagesStorage.IntCallback() { // from class: org.telegram.messenger.j0
+                    performSendBotTopicCreate(inputPeer, str, nextRandomId, new MessagesStorage.IntCallback() { // from class: org.telegram.messenger.i0
                         @Override // org.telegram.messenger.MessagesStorage.IntCallback
                         public final void run(int i13) {
                             BotForumHelper.this.lambda$beforeSendingFinalRequest$4(tLObject, jArr, j11, runnable, i13);
@@ -754,7 +754,7 @@ public class BotForumHelper extends BaseController {
         if (botDraftMessage.selfDestruct != null) {
             AndroidUtilities.cancelRunOnUIThread(botDraftMessage.selfDestruct);
         }
-        botDraftMessage.selfDestruct = new k0(this, j3, i10, j10, 1);
+        botDraftMessage.selfDestruct = new j0(this, j3, i10, j10, 1);
         botDraftMessage.text = tL_textWithEntities;
         botDraftMessage.messageObject = createDraftMessage(j3, i10, j10, botDraftMessage.localMessageId, tL_textWithEntities);
         AndroidUtilities.runOnUIThread(botDraftMessage.selfDestruct, getAppGlobalConfig().messageTypingDraftTtl.get(TimeUnit.MILLISECONDS));
@@ -832,7 +832,7 @@ public class BotForumHelper extends BaseController {
         if (botDraftMessage.selfDestruct != null) {
             AndroidUtilities.cancelRunOnUIThread(botDraftMessage.selfDestruct);
         }
-        botDraftMessage.selfDestruct = new k0(this, j3, i10, j10, 0);
+        botDraftMessage.selfDestruct = new j0(this, j3, i10, j10, 0);
         botDraftMessage.richMessage = richMessage;
         botDraftMessage.messageObject = createDraftMessage(j3, i10, j10, botDraftMessage.localMessageId, richMessage);
         AndroidUtilities.runOnUIThread(botDraftMessage.selfDestruct, getAppGlobalConfig().messageTypingDraftTtl.get(TimeUnit.MILLISECONDS));

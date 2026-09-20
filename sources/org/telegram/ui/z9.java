@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.content.Context;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class z9 extends EditTextBoldCursor {
     public final /* synthetic */ int b;
@@ -17,7 +17,7 @@ public final class z9 extends EditTextBoldCursor {
     }
 
     @Override // org.telegram.ui.Components.EditTextBoldCursor
-    public final org.telegram.ui.ActionBar.e6 getResourcesProvider() {
+    public final org.telegram.ui.ActionBar.f6 getResourcesProvider() {
         switch (this.b) {
         }
         return this.c.d;

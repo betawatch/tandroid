@@ -7,9 +7,9 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.view.WindowManager;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.kc1;
+import org.telegram.ui.mc1;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class a91 implements SensorEventListener {
     public final float[] a = new float[3];
@@ -36,8 +36,8 @@ public final class a91 implements SensorEventListener {
         return Math.max(f10, (dp + f11) / f11);
     }
 
-    public final void b(kc1 kc1Var) {
-        this.n = kc1Var;
+    public final void b(mc1 mc1Var) {
+        this.n = mc1Var;
     }
 
     public final void c(boolean z10) {
@@ -111,7 +111,7 @@ public final class a91 implements SensorEventListener {
             Math.atan2((f17 * (-1.0f)) - (f18 * 0.0f), (f18 * (-1.0f)) + (f17 * 0.0f));
             z81Var = this.n;
             if (z81Var == null) {
-                z81Var.g(round, round2);
+                z81Var.f(round, round2);
                 return;
             }
             return;

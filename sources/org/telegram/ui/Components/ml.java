@@ -4,7 +4,7 @@ import android.view.View;
 import java.util.ArrayList;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ml implements q0.a {
     public final /* synthetic */ int a;
@@ -28,13 +28,13 @@ public final /* synthetic */ class ml implements q0.a {
                 ArrayList arrayList = (ArrayList) obj2;
                 View view = (View) obj;
                 boolean z12 = ChatAttachAlertPhotoLayout.q1;
-                if (view instanceof org.telegram.ui.Cells.t5) {
-                    org.telegram.ui.Cells.t5 t5Var = (org.telegram.ui.Cells.t5) view;
-                    MediaController.PhotoEntry photoEntry = t5Var.getPhotoEntry();
+                if (view instanceof org.telegram.ui.Cells.u5) {
+                    org.telegram.ui.Cells.u5 u5Var = (org.telegram.ui.Cells.u5) view;
+                    MediaController.PhotoEntry photoEntry = u5Var.getPhotoEntry();
                     if (photoEntry != null && arrayList.contains(Integer.valueOf(photoEntry.imageId)) && z11) {
                         z10 = true;
                     }
-                    t5Var.setHasSpoiler(z10);
+                    u5Var.setHasSpoiler(z10);
                     break;
                 }
                 break;
@@ -42,21 +42,21 @@ public final /* synthetic */ class ml implements q0.a {
                 ArrayList arrayList2 = (ArrayList) obj2;
                 View view2 = (View) obj;
                 boolean z13 = ChatAttachAlertPhotoLayout.q1;
-                if (view2 instanceof org.telegram.ui.Cells.t5) {
-                    org.telegram.ui.Cells.t5 t5Var2 = (org.telegram.ui.Cells.t5) view2;
-                    MediaController.PhotoEntry photoEntry2 = t5Var2.getPhotoEntry();
+                if (view2 instanceof org.telegram.ui.Cells.u5) {
+                    org.telegram.ui.Cells.u5 u5Var2 = (org.telegram.ui.Cells.u5) view2;
+                    MediaController.PhotoEntry photoEntry2 = u5Var2.getPhotoEntry();
                     if (photoEntry2 != null && arrayList2.contains(Integer.valueOf(photoEntry2.imageId)) && z11) {
                         z10 = true;
                     }
-                    t5Var2.setHighQuality(z10);
+                    u5Var2.setHighQuality(z10);
                     break;
                 }
                 break;
             default:
                 Float f7 = (Float) obj;
-                ob obVar = ((jb) obj2).b.p;
-                if (obVar != null && !z11) {
-                    obVar.c(r0.e.getHeight() - f7.floatValue());
+                nb nbVar = ((ib) obj2).b.p;
+                if (nbVar != null && !z11) {
+                    nbVar.c(r0.e.getHeight() - f7.floatValue());
                     break;
                 }
                 break;

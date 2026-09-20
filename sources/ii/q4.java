@@ -18,15 +18,15 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Cells.p9;
 import org.telegram.ui.Cells.q9;
-import v7.p8;
+import org.telegram.ui.Cells.r9;
+import v7.q8;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
-public final class q4 extends a0 implements org.telegram.ui.ActionBar.z5, p9 {
+public final class q4 extends a0 implements org.telegram.ui.ActionBar.z5, q9 {
     public final int[] E;
-    public final org.telegram.ui.ActionBar.e6 n;
+    public final org.telegram.ui.ActionBar.f6 n;
     public final Paint r;
     public final HorizontalScrollView s;
     public final ImageView v;
@@ -34,12 +34,12 @@ public final class q4 extends a0 implements org.telegram.ui.ActionBar.z5, p9 {
     public int x;
     public a3 y;
 
-    public q4(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
+    public q4(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
         super(context);
         this.r = new Paint(1);
         this.x = 0;
         this.E = new int[4];
-        this.n = e6Var;
+        this.n = f6Var;
         setWillNotDraw(false);
         g(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(6.0f));
         ImageView imageView = new ImageView(context);
@@ -72,18 +72,18 @@ public final class q4 extends a0 implements org.telegram.ui.ActionBar.z5, p9 {
     @Override // org.telegram.ui.ActionBar.z5
     public final void e() {
         int i10 = j6.uf;
-        org.telegram.ui.ActionBar.e6 e6Var = this.n;
-        this.r.setColor(j6.v0(i10, e6Var));
-        this.x = j6.v0(j6.G6, e6Var);
+        org.telegram.ui.ActionBar.f6 f6Var = this.n;
+        this.r.setColor(j6.v0(i10, f6Var));
+        this.x = j6.v0(j6.G6, f6Var);
         this.v.setColorFilter(new PorterDuffColorFilter(this.x, PorterDuff.Mode.SRC_IN));
         invalidate();
     }
 
-    @Override // org.telegram.ui.Cells.p9
+    @Override // org.telegram.ui.Cells.q9
     public final void fillTextLayoutBlocks(ArrayList arrayList) {
         int[] iArr = this.E;
         i(iArr);
-        arrayList.add(p8.a(iArr[0], iArr[1], iArr[2], iArr[3]));
+        arrayList.add(q8.a(iArr[0], iArr[1], iArr[2], iArr[3]));
     }
 
     public /* bridge */ /* synthetic */ int[] getColorKeys() {
@@ -131,7 +131,7 @@ public final class q4 extends a0 implements org.telegram.ui.ActionBar.z5, p9 {
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         a3 a3Var;
-        q9 textSelectionHelper;
+        r9 textSelectionHelper;
         if (this.x != j6.v0(j6.G6, this.n)) {
             e();
         }

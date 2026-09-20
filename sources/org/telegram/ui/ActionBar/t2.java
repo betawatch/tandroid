@@ -7,10 +7,10 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.rk;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class t2 extends FrameLayout {
     public final /* synthetic */ int a;
@@ -72,13 +72,13 @@ public final class t2 extends FrameLayout {
                             if (LocaleController.isRTL) {
                                 int paddingLeft = getPaddingLeft();
                                 if (view != null) {
-                                    paddingLeft = org.telegram.messenger.q.D(8.0f, view.getMeasuredWidth(), paddingLeft);
+                                    paddingLeft = org.telegram.messenger.l0.C(8.0f, view.getMeasuredWidth(), paddingLeft);
                                 }
                                 childAt.layout(paddingLeft, getPaddingTop(), childAt.getMeasuredWidth() + paddingLeft, childAt.getMeasuredHeight() + getPaddingTop());
                             } else {
                                 int paddingRight = (i16 - getPaddingRight()) - childAt.getMeasuredWidth();
                                 if (view != null) {
-                                    paddingRight = wh.z(8.0f, view.getMeasuredWidth(), paddingRight);
+                                    paddingRight = rk.x(8.0f, view.getMeasuredWidth(), paddingRight);
                                 }
                                 childAt.layout(paddingRight, getPaddingTop(), childAt.getMeasuredWidth() + paddingRight, childAt.getMeasuredHeight() + getPaddingTop());
                             }

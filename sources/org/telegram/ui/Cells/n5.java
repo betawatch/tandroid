@@ -1,47 +1,20 @@
 package org.telegram.ui.Cells;
 
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.TextView;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.rk;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class n5 extends FrameLayout {
-    public ImageView a;
-    public ImageView b;
-    public TextView c;
-    public int d;
+public final class n5 extends View {
+    public int a;
 
-    @Override // android.widget.FrameLayout, android.view.View
+    @Override // android.view.View
     public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(this.d, TLObject.FLAG_30), wh.C(2.0f, this.d, TLObject.FLAG_30));
+        super.onMeasure(rk.C(2.0f, this.a, TLObject.FLAG_30), rk.C(2.0f, this.a, TLObject.FLAG_30));
     }
 
     public void setItemSize(int i10) {
-        this.d = i10;
-    }
-
-    public void setType(int i10) {
-        TextView textView = this.c;
-        ImageView imageView = this.b;
-        ImageView imageView2 = this.a;
-        if (i10 == 0) {
-            imageView2.setImageResource(R.drawable.permissions_camera1);
-            imageView.setImageResource(R.drawable.permissions_camera2);
-            textView.setText(LocaleController.getString(R.string.CameraPermissionText));
-            imageView2.setLayoutParams(w7.y5.d(44, 44.0f, 17, 5.0f, 0.0f, 0.0f, 27.0f));
-            imageView.setLayoutParams(w7.y5.d(44, 44.0f, 17, 5.0f, 0.0f, 0.0f, 27.0f));
-            return;
-        }
-        imageView2.setImageResource(R.drawable.permissions_gallery1);
-        imageView.setImageResource(R.drawable.permissions_gallery2);
-        textView.setText(LocaleController.getString(R.string.GalleryPermissionText));
-        imageView2.setLayoutParams(w7.y5.d(44, 44.0f, 17, 0.0f, 0.0f, 2.0f, 27.0f));
-        imageView.setLayoutParams(w7.y5.d(44, 44.0f, 17, 0.0f, 0.0f, 2.0f, 27.0f));
+        this.a = i10;
     }
 }

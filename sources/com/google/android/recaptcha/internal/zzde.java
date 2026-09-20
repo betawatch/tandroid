@@ -8,7 +8,7 @@ import java.util.concurrent.CancellationException;
 import jd.a;
 import kotlin.jvm.internal.i;
 import rd.l;
-import v7.n8;
+import v7.o8;
 import wd.b;
 import zd.a1;
 import zd.b0;
@@ -25,7 +25,7 @@ import zd.t;
 import zd.t1;
 import zd.u1;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class zzde implements h0 {
     private final /* synthetic */ s zza;
@@ -63,7 +63,7 @@ public final class zzde implements h0 {
     public final f get(g gVar) {
         u1 u1Var = (u1) this.zza;
         u1Var.getClass();
-        return n8.a(u1Var, gVar);
+        return o8.a(u1Var, gVar);
     }
 
     @Override // zd.f1
@@ -140,7 +140,7 @@ public final class zzde implements h0 {
     public final h minusKey(g gVar) {
         u1 u1Var = (u1) this.zza;
         u1Var.getClass();
-        return n8.b(u1Var, gVar);
+        return o8.b(u1Var, gVar);
     }
 
     public final f1 plus(f1 f1Var) {
@@ -166,7 +166,7 @@ public final class zzde implements h0 {
     public final h plus(h hVar) {
         u1 u1Var = (u1) this.zza;
         u1Var.getClass();
-        return n8.c(u1Var, hVar);
+        return o8.c(u1Var, hVar);
     }
 
     public final boolean cancel(Throwable th2) {

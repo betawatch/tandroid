@@ -2,51 +2,30 @@ package org.telegram.ui.Components;
 
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class iz0 {
-    public final /* synthetic */ int a;
+public final class iz0 extends mz0 {
+    public int d;
 
-    public /* synthetic */ iz0(int i10) {
-        this.a = i10;
+    @Override // org.telegram.ui.Components.mz0
+    public final int a(vz0 vz0Var, oz0 oz0Var, hz0 hz0Var, int i10, boolean z10) {
+        return Math.max(0, this.a - hz0Var.a(oz0Var, i10));
     }
 
-    public final int a(pz0 pz0Var, int i10) {
-        switch (this.a) {
-            case 0:
-                return TLObject.FLAG_31;
-            case 1:
-                return 0;
-            case 2:
-                return i10;
-            case 3:
-                return TLObject.FLAG_31;
-            default:
-                return TLObject.FLAG_31;
-        }
+    @Override // org.telegram.ui.Components.mz0
+    public final void b(int i10, int i11) {
+        super.b(i10, i11);
+        this.d = Math.max(this.d, i10 + i11);
     }
 
-    public final int b(pz0 pz0Var, int i10) {
-        switch (this.a) {
-            case 0:
-                return TLObject.FLAG_31;
-            case 1:
-                return 0;
-            case 2:
-                return i10;
-            case 3:
-                return 0;
-            default:
-                return 0;
-        }
+    @Override // org.telegram.ui.Components.mz0
+    public final void c() {
+        super.c();
+        this.d = TLObject.FLAG_31;
     }
 
-    public int c(int i10, int i11) {
-        switch (this.a) {
-            case 4:
-                return i11;
-            default:
-                return i10;
-        }
+    @Override // org.telegram.ui.Components.mz0
+    public final int d(boolean z10) {
+        return Math.max(super.d(z10), this.d);
     }
 }

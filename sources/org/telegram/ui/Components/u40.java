@@ -40,7 +40,7 @@ import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class u40 implements NotificationCenter.NotificationCenterDelegate, org.telegram.ui.nq0 {
     public String E;
@@ -473,7 +473,7 @@ public final class u40 implements NotificationCenter.NotificationCenterDelegate,
                 if (intent == null || intent.getData() == null) {
                     return;
                 }
-                AndroidUtilities.runOnUIThread(new uw(10, this, intent.getData()));
+                AndroidUtilities.runOnUIThread(new bv(12, this, intent.getData()));
                 return;
             }
             if (i10 == 15) {
@@ -593,7 +593,7 @@ public final class u40 implements NotificationCenter.NotificationCenterDelegate,
             this.a.showDialog(viVar2);
             return;
         }
-        org.telegram.ui.ActionBar.f3 f3Var = new org.telegram.ui.ActionBar.f3(1, (Context) this.a.getParentActivity(), (org.telegram.ui.ActionBar.e6) null, false);
+        org.telegram.ui.ActionBar.f3 f3Var = new org.telegram.ui.ActionBar.f3(1, (Context) this.a.getParentActivity(), (org.telegram.ui.ActionBar.f6) null, false);
         f3Var.fixNavigationBar();
         if (i10 == 1) {
             f3Var.title = LocaleController.formatString("SetPhotoFor", R.string.SetPhotoFor, this.L.first_name);
@@ -609,20 +609,20 @@ public final class u40 implements NotificationCenter.NotificationCenterDelegate,
         ArrayList arrayList2 = new ArrayList();
         final ArrayList arrayList3 = new ArrayList();
         arrayList.add(LocaleController.getString(R.string.ChooseTakePhoto));
-        org.telegram.ui.Cells.c1.k(R.drawable.msg_camera, 0, arrayList2, arrayList3);
+        org.telegram.ui.Cells.c1.n(R.drawable.msg_camera, 0, arrayList2, arrayList3);
         if (this.Q) {
             arrayList.add(LocaleController.getString(R.string.ChooseRecordVideo));
-            org.telegram.ui.Cells.c1.k(R.drawable.msg_video, 4, arrayList2, arrayList3);
+            org.telegram.ui.Cells.c1.n(R.drawable.msg_video, 4, arrayList2, arrayList3);
         }
         arrayList.add(LocaleController.getString(R.string.ChooseFromGallery));
-        org.telegram.ui.Cells.c1.k(R.drawable.msg_photos, 1, arrayList2, arrayList3);
+        org.telegram.ui.Cells.c1.n(R.drawable.msg_photos, 1, arrayList2, arrayList3);
         if (this.J) {
             arrayList.add(LocaleController.getString(R.string.ChooseFromSearch));
-            org.telegram.ui.Cells.c1.k(R.drawable.msg_search, 2, arrayList2, arrayList3);
+            org.telegram.ui.Cells.c1.n(R.drawable.msg_search, 2, arrayList2, arrayList3);
         }
         if (z10) {
             arrayList.add(LocaleController.getString(R.string.DeletePhoto));
-            org.telegram.ui.Cells.c1.k(R.drawable.msg_delete, 3, arrayList2, arrayList3);
+            org.telegram.ui.Cells.c1.n(R.drawable.msg_delete, 3, arrayList2, arrayList3);
         }
         int[] iArr = new int[arrayList2.size()];
         int size = arrayList2.size();

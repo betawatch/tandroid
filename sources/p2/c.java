@@ -14,12 +14,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 import org.telegram.messenger.MediaDataController;
-import org.telegram.ui.wk0;
+import org.telegram.ui.ja0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class c implements y2.h {
-    public static final wk0 E = new wk0(14);
+    public static final ja0 E = new ja0(20);
     public final l.d a;
     public final s b;
     public final qb.b c;
@@ -42,7 +42,7 @@ public final class c implements y2.h {
     }
 
     @Override // y2.h
-    public final void E(y2.j jVar, long j3, long j10, boolean z10) {
+    public final void F(y2.j jVar, long j3, long j10, boolean z10) {
         y2.p pVar = (y2.p) jVar;
         long j11 = pVar.a;
         Uri uri = pVar.d.c;

@@ -3,9 +3,9 @@ package com.google.android.gms.internal.play_billing;
 import java.io.Serializable;
 import java.util.Iterator;
 import java.util.Locale;
-import v7.e6;
+import v7.f6;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public class l1 implements Iterable, Serializable {
     public static final l1 c = new l1(a2.b);
@@ -119,10 +119,10 @@ public class l1 implements Iterable, Serializable {
         String hexString = Integer.toHexString(System.identityHashCode(this));
         int o9 = o();
         if (o() <= 50) {
-            concat = e6.a(this);
+            concat = f6.a(this);
         } else {
             int p5 = p(0, 47, o());
-            concat = e6.a(p5 == 0 ? c : new k1(this.b, p5)).concat("...");
+            concat = f6.a(p5 == 0 ? c : new k1(this.b, p5)).concat("...");
         }
         StringBuilder sb2 = new StringBuilder("<ByteString@");
         sb2.append(hexString);

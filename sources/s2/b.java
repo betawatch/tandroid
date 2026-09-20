@@ -21,7 +21,7 @@ import n4.y;
 import u2.f0;
 import w7.m;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class b extends f implements Handler.Callback {
     public final a I;
@@ -182,7 +182,7 @@ public final class b extends f implements Handler.Callback {
                 l3.a aVar = this.L;
                 aVar.clear();
                 y yVar = this.c;
-                yVar.n();
+                yVar.e();
                 int w10 = w(yVar, aVar, 0);
                 if (w10 == -4) {
                     if (aVar.isEndOfStream()) {
@@ -202,7 +202,7 @@ public final class b extends f implements Handler.Callback {
                         }
                     }
                 } else if (w10 == -5) {
-                    s sVar = (s) yVar.c;
+                    s sVar = (s) yVar.b;
                     sVar.getClass();
                     this.P = sVar.w;
                 }

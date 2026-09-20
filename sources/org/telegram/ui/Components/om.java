@@ -11,7 +11,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class om {
     public long i;
@@ -22,7 +22,7 @@ public final class om {
     public float q;
     public float r;
     public float s;
-    public v01 u;
+    public u01 u;
     public long v;
     public final org.telegram.ui.ActionBar.f5 x;
     public final m.c3 y;
@@ -43,8 +43,8 @@ public final class om {
 
     public om(pm pmVar) {
         this.z = pmVar;
-        org.telegram.ui.ActionBar.e6 e6Var = pmVar.P.n;
-        Drawable drawable = e6Var != null ? e6Var.getDrawable("drawableMsgOutMedia") : null;
+        org.telegram.ui.ActionBar.f6 f6Var = pmVar.P.n;
+        Drawable drawable = f6Var != null ? f6Var.getDrawable("drawableMsgOutMedia") : null;
         this.x = (org.telegram.ui.ActionBar.f5) (drawable == null ? org.telegram.ui.ActionBar.j6.O0("drawableMsgOutMedia") : drawable);
         this.y = new m.c3();
     }

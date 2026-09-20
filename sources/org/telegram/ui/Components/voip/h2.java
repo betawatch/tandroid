@@ -10,11 +10,10 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.wh;
-import org.telegram.ui.Components.vw0;
+import org.telegram.ui.Components.uw0;
 import w7.y5;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class h2 extends LinearLayout {
     public HashMap a;
@@ -36,7 +35,7 @@ public final class h2 extends LinearLayout {
         g2Var.a = str2;
         int dp = AndroidUtilities.displaySize.x - AndroidUtilities.dp(120.0f);
         TextView textView = g2Var.c;
-        StaticLayout c10 = vw0.c(str, textView.getPaint(), dp, Layout.Alignment.ALIGN_NORMAL, 0.0f, false, TextUtils.TruncateAt.END, dp, 10, true);
+        StaticLayout c10 = uw0.c(str, textView.getPaint(), dp, Layout.Alignment.ALIGN_NORMAL, 0.0f, false, TextUtils.TruncateAt.END, dp, 10, true);
         if (c10 != null) {
             dp = 0;
             for (int i11 = 0; i11 < c10.getLineCount(); i11++) {
@@ -77,7 +76,7 @@ public final class h2 extends LinearLayout {
 
     public int getChildsHight() {
         int childCount = getChildCount();
-        return wh.c(32.0f, childCount, childCount > 0 ? AndroidUtilities.dp(16.0f) : 0);
+        return org.telegram.messenger.l0.D(32.0f, childCount, childCount > 0 ? AndroidUtilities.dp(16.0f) : 0);
     }
 
     public void setOnViewsUpdated(Runnable runnable) {

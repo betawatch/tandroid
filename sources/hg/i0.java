@@ -13,11 +13,11 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.ActionBar.l6;
-import org.telegram.ui.Components.gl0;
+import org.telegram.ui.Components.fl0;
 import org.telegram.ui.Components.mz;
 import org.telegram.ui.Components.ni;
 import org.telegram.ui.Components.qr;
@@ -26,7 +26,7 @@ import org.telegram.ui.Components.ui;
 import org.telegram.ui.Components.vi;
 import w7.y5;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class i0 extends ni implements NotificationCenter.NotificationCenterDelegate, le.d {
     public final mz E;
@@ -39,16 +39,16 @@ public final class i0 extends ni implements NotificationCenter.NotificationCente
     public final f0 x;
     public final g0 y;
 
-    public i0(Context context, e6 e6Var, vi viVar) {
-        super(context, e6Var, viVar);
+    public i0(Context context, f6 f6Var, vi viVar) {
+        super(context, f6Var, viVar);
         this.n = new le.b(0, this, qr.h, 380L, false);
         this.w = new HashSet();
         this.y = new g0(this, context);
-        ui uiVar = new ui(context, j6.d6, e6Var);
+        ui uiVar = new ui(context, j6.d6, f6Var);
         uiVar.setVisibility(4);
         FrameLayout frameLayout = new FrameLayout(context);
         this.r = frameLayout;
-        ri riVar = new ri(context, e6Var, this.b);
+        ri riVar = new ri(context, f6Var, this.b);
         this.F = riVar;
         riVar.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f));
         c0 c0Var = new c0(this);
@@ -59,11 +59,11 @@ public final class i0 extends ni implements NotificationCenter.NotificationCente
         FrameLayout.LayoutParams d = y5.d(-1, 48.0f, 51, 7.0f, 8.0f, 7.0f, 4.0f);
         ((ViewGroup.MarginLayoutParams) d).topMargin += AndroidUtilities.statusBarHeight;
         frameLayout.addView(riVar, d);
-        mz mzVar = new mz(context, e6Var);
+        mz mzVar = new mz(context, f6Var);
         this.E = mzVar;
         mzVar.c();
         addView(mzVar, y5.d(-1, -1.0f, 51, 0.0f, 52.0f, 0.0f, 0.0f));
-        ai.w0 w0Var = new ai.w0(this, context, e6Var, 3);
+        ai.w0 w0Var = new ai.w0(this, context, f6Var, 3);
         this.s = w0Var;
         w0Var.q1();
         this.c = w0Var;
@@ -102,12 +102,12 @@ public final class i0 extends ni implements NotificationCenter.NotificationCente
         }
         int i10 = 0;
         View childAt = w0Var.getChildAt(0);
-        gl0 gl0Var = (gl0) w0Var.H(childAt);
-        if (gl0Var == null) {
+        fl0 fl0Var = (fl0) w0Var.H(childAt);
+        if (fl0Var == null) {
             return -1000;
         }
         int paddingTop = w0Var.getPaddingTop();
-        if (gl0Var.b() == 0 && childAt.getTop() >= 0) {
+        if (fl0Var.b() == 0 && childAt.getTop() >= 0) {
             i10 = childAt.getTop();
         }
         return paddingTop - i10;
@@ -143,11 +143,11 @@ public final class i0 extends ni implements NotificationCenter.NotificationCente
             return ConnectionsManager.DEFAULT_DATACENTER_ID;
         }
         View childAt = w0Var.getChildAt(0);
-        gl0 gl0Var = (gl0) w0Var.H(childAt);
+        fl0 fl0Var = (fl0) w0Var.H(childAt);
         int top = (childAt.getTop() - AndroidUtilities.statusBarHeight) - AndroidUtilities.dp(8.0f);
-        int i10 = (top <= 0 || gl0Var == null || gl0Var.b() != 0) ? 0 : top;
+        int i10 = (top <= 0 || fl0Var == null || fl0Var.b() != 0) ? 0 : top;
         le.b bVar = this.n;
-        if (top < 0 || gl0Var == null || gl0Var.b() != 0) {
+        if (top < 0 || fl0Var == null || fl0Var.b() != 0) {
             bVar.a(true, true);
             top = i10;
         } else {

@@ -7,7 +7,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class f7 implements ToIntFunction {
     public final /* synthetic */ int a;
@@ -36,9 +36,9 @@ public final /* synthetic */ class f7 implements ToIntFunction {
             case 7:
                 return ((TLRPC.Message) obj).id;
             case 8:
-                return ((org.telegram.ui.Components.f6) obj).d;
+                return ((org.telegram.ui.Components.e6) obj).d;
             case 9:
-                return ((org.telegram.ui.Components.f6) obj).e;
+                return ((org.telegram.ui.Components.e6) obj).e;
             case 10:
                 ad.c cVar = (ad.c) obj;
                 return cVar.d - cVar.b;

@@ -9,7 +9,7 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ay implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -106,7 +106,7 @@ public final /* synthetic */ class ay implements View.OnClickListener {
                             if (n2Var == null) {
                                 n2Var = new ai.y3(cyVar, 6);
                             }
-                            sv.W(n2Var, stickerSet5, true, null, new xp(cyVar, 14));
+                            tv.W(n2Var, stickerSet5, true, null, new xp(cyVar, 14));
                             break;
                         } else {
                             NotificationCenter.getInstance(i12).addObserver(cyVar, NotificationCenter.groupStickersDidLoad);
@@ -144,10 +144,10 @@ public final /* synthetic */ class ay implements View.OnClickListener {
                                 n2Var2 = new ai.y3(cyVar, 6);
                             }
                             org.telegram.ui.ActionBar.n2 n2Var3 = n2Var2;
-                            uw uwVar = new uw(1, cyVar, stickerSet7);
-                            Pattern pattern = sv.V;
+                            bv bvVar = new bv(3, cyVar, stickerSet7);
+                            Pattern pattern = tv.V;
                             if (n2Var3.getFragmentView() != null) {
-                                MediaDataController.getInstance(n2Var3.getCurrentAccount()).toggleStickerSet(n2Var3.getFragmentView().getContext(), stickerSet7, 0, n2Var3, true, true, uwVar, false);
+                                MediaDataController.getInstance(n2Var3.getCurrentAccount()).toggleStickerSet(n2Var3.getFragmentView().getContext(), stickerSet7, 0, n2Var3, true, true, bvVar, false);
                                 break;
                             }
                         } else {

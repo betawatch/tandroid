@@ -7,7 +7,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class m10 extends s4.s0 {
     public final /* synthetic */ x10 a;
@@ -42,14 +42,14 @@ public final class m10 extends s4.s0 {
         }
         if (x10Var.d != x10Var.U) {
             View pinnedHeader = x10Var.b.getPinnedHeader();
-            if (pinnedHeader instanceof org.telegram.ui.Cells.v3) {
-                org.telegram.ui.Cells.v3 v3Var = (org.telegram.ui.Cells.v3) pinnedHeader;
-                CharSequence text = v3Var.getText();
-                if (!TextUtils.isEmpty(text) && v3Var.getAlpha() > 0.0f) {
+            if (pinnedHeader instanceof org.telegram.ui.Cells.w3) {
+                org.telegram.ui.Cells.w3 w3Var = (org.telegram.ui.Cells.w3) pinnedHeader;
+                CharSequence text = w3Var.getText();
+                if (!TextUtils.isEmpty(text) && w3Var.getAlpha() > 0.0f) {
                     String charSequence = text.toString();
                     if (!TextUtils.equals((String) n4Var.d, charSequence)) {
                         n4Var.d = charSequence;
-                        ((org.telegram.ui.Components.o6) n4Var.b).q(charSequence, true, true);
+                        ((org.telegram.ui.Components.n6) n4Var.b).q(charSequence, true, true);
                     }
                     if (i11 != 0) {
                         AndroidUtilities.cancelRunOnUIThread(g10Var);
@@ -74,9 +74,9 @@ public final class m10 extends s4.s0 {
             return;
         }
         View view = L.a;
-        if (view instanceof org.telegram.ui.Cells.u7) {
-            org.telegram.ui.Cells.u7 u7Var = (org.telegram.ui.Cells.u7) view;
-            MessageObject messageObject = u7Var.e <= 0 ? null : u7Var.b[0];
+        if (view instanceof org.telegram.ui.Cells.v7) {
+            org.telegram.ui.Cells.v7 v7Var = (org.telegram.ui.Cells.v7) view;
+            MessageObject messageObject = v7Var.e <= 0 ? null : v7Var.b[0];
             if (messageObject != null) {
                 int i12 = messageObject.messageOwner.date;
                 n4Var.getClass();
@@ -85,7 +85,7 @@ public final class m10 extends s4.s0 {
                     return;
                 }
                 n4Var.d = formatDateChat;
-                ((org.telegram.ui.Components.o6) n4Var.b).q(formatDateChat, true, true);
+                ((org.telegram.ui.Components.n6) n4Var.b).q(formatDateChat, true, true);
             }
         }
     }

@@ -1,30 +1,48 @@
 package org.telegram.ui;
 
-import android.view.View;
+import android.animation.ValueAnimator;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ig0 implements View.OnClickListener {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ lg0 b;
+public final /* synthetic */ class ig0 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ mg0 b;
 
-    public /* synthetic */ ig0(lg0 lg0Var) {
-        this.b = lg0Var;
+    public /* synthetic */ ig0(mg0 mg0Var, int i10) {
+        this.a = i10;
+        this.b = mg0Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                this.b.a();
+                mg0 mg0Var = this.b;
+                mg0Var.getClass();
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                mg0Var.d.setAlpha(floatValue);
+                mg0Var.e.setAlpha(floatValue);
+                mg0Var.f.setProgress(floatValue);
+                FrameLayout frameLayout = mg0Var.w;
+                frameLayout.setAlpha(floatValue);
+                float f7 = (floatValue * 0.5f) + 0.5f;
+                frameLayout.setScaleX(f7);
+                frameLayout.setScaleY(f7);
                 break;
             default:
-                this.b.a();
+                mg0 mg0Var2 = this.b;
+                mg0Var2.getClass();
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                mg0Var2.f.setProgress(floatValue2);
+                mg0Var2.d.setAlpha(floatValue2);
+                mg0Var2.e.setAlpha(floatValue2);
+                FrameLayout frameLayout2 = mg0Var2.w;
+                frameLayout2.setAlpha(floatValue2);
+                float f10 = (floatValue2 * 0.5f) + 0.5f;
+                frameLayout2.setScaleX(f10);
+                frameLayout2.setScaleY(f10);
                 break;
         }
-    }
-
-    public /* synthetic */ ig0(lg0 lg0Var, vg0 vg0Var) {
-        this.b = lg0Var;
     }
 }

@@ -9,11 +9,11 @@ import java.util.ArrayList;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.t61;
-import org.telegram.ui.Components.wl0;
+import org.telegram.ui.Components.s61;
+import org.telegram.ui.Components.vl0;
 import w7.y5;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class i1 extends n2 {
     public final CharSequence a;
@@ -23,7 +23,7 @@ public final class i1 extends n2 {
     public final int e;
     public uc f;
     public gg.x1 h;
-    public t61 n;
+    public s61 n;
     public boolean r;
 
     public i1(CharSequence charSequence, ArrayList arrayList, int i10, int i11, int i12) {
@@ -57,16 +57,16 @@ public final class i1 extends n2 {
         this.actionBar.setActionBarMenuOnItemClick(new ei.t(this, 15));
         FrameLayout frameLayout = new FrameLayout(context);
         frameLayout.setBackgroundColor(j6.w0(null, j6.a7, false));
-        t61 t61Var = new t61(this, new bi.v(this, 28), new d5(this, 4), null);
-        this.n = t61Var;
-        t61Var.q1();
+        s61 s61Var = new s61(this, new bi.v(this, 28), new d5(this, 4), null);
+        this.n = s61Var;
+        s61Var.q1();
         frameLayout.addView(this.n, y5.c(-1.0f, -1));
         this.fragmentView = frameLayout;
         return frameLayout;
     }
 
     @Override // org.telegram.ui.ActionBar.n2
-    public final wl0 getListViewForSimpleGlass() {
+    public final vl0 getListViewForSimpleGlass() {
         return this.n;
     }
 

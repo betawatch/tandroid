@@ -26,7 +26,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_forum;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public class TopicsController extends BaseController {
     public static final int LOAD_TYPE_HASH_CHECK = 3;
@@ -50,7 +50,7 @@ public class TopicsController extends BaseController {
     LongSparseIntArray topicsIsLoading;
     a0.i topicsMapByChatId;
 
-    /* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+    /* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
     public static class TopicUpdate {
         boolean checkForDelete;
         long dialogId;
@@ -65,7 +65,7 @@ public class TopicsController extends BaseController {
         int unreadMentions;
     }
 
-    /* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+    /* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
     public class TopicsLoadOffset {
         int lastMessageDate;
         int lastMessageId;
@@ -179,7 +179,7 @@ public class TopicsController extends BaseController {
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$loadTopic$27(long j3, ArrayList arrayList, long j10, Runnable runnable) {
         if (BuildVars.LOGS_ENABLED) {
-            q.o(arrayList == null ? 0 : arrayList.size(), a4.a.t(j3, "loaded from cache ", " topics_count="));
+            l0.m(arrayList == null ? 0 : arrayList.size(), a4.a.t(j3, "loaded from cache ", " topics_count="));
         }
         processTopics(j3, arrayList, null, true, 0, -1);
         sortTopics(j3);
@@ -200,7 +200,7 @@ public class TopicsController extends BaseController {
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$loadTopics$0(long j3, ArrayList arrayList, boolean z10, int i10) {
         if (BuildVars.LOGS_ENABLED) {
-            q.o(arrayList == null ? 0 : arrayList.size(), a4.a.t(j3, "loaded from cache ", " topics_count="));
+            l0.m(arrayList == null ? 0 : arrayList.size(), a4.a.t(j3, "loaded from cache ", " topics_count="));
         }
         this.topicsIsLoading.put(j3, 0);
         processTopics(j3, arrayList, null, z10, i10, -1);
@@ -1286,7 +1286,7 @@ public class TopicsController extends BaseController {
         TLRPC.TL_channels_toggleViewForumAsMessages tL_channels_toggleViewForumAsMessages = new TLRPC.TL_channels_toggleViewForumAsMessages();
         tL_channels_toggleViewForumAsMessages.channel_id = getMessagesController().getInputChannel(j3);
         tL_channels_toggleViewForumAsMessages.enabled = z10;
-        getConnectionsManager().sendRequest(tL_channels_toggleViewForumAsMessages, new h0(this, 9));
+        getConnectionsManager().sendRequest(tL_channels_toggleViewForumAsMessages, new g0(this, 9));
     }
 
     public void updateMaxReadId(long j3, long j10, int i10, int i11, int i12) {
@@ -1479,7 +1479,7 @@ public class TopicsController extends BaseController {
                         sb2.append(" offset_id=");
                         sb2.append(loadOffset.lastMessageId);
                         sb2.append(" offset_topic=");
-                        q.s(sb2, loadOffset.lastTopicId);
+                        hg.k0.u(sb2, loadOffset.lastTopicId);
                     }
                 }
             }
@@ -1506,7 +1506,7 @@ public class TopicsController extends BaseController {
                     sb3.append(" offset_id=");
                     sb3.append(loadOffset2.lastMessageId);
                     sb3.append(" offset_topic=");
-                    q.s(sb3, loadOffset2.lastTopicId);
+                    hg.k0.u(sb3, loadOffset2.lastTopicId);
                 }
             }
         }
@@ -1517,7 +1517,7 @@ public class TopicsController extends BaseController {
         ArrayList arrayList = (ArrayList) this.topicsByChatId.f(j3);
         if (arrayList != null) {
             if (this.openedTopicsByChatId.get(j3, 0) > 0) {
-                Collections.sort(arrayList, new ci(4));
+                Collections.sort(arrayList, new bi(4));
             }
             if (z10) {
                 getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.topicsDidLoaded, Long.valueOf(j3), Boolean.TRUE);

@@ -1,28 +1,50 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import java.util.ArrayList;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.app.Activity;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class of1 extends bg1 {
-    public final /* synthetic */ dg1 i3;
+public final class of1 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ fg1 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public of1(dg1 dg1Var, Context context) {
-        super(dg1Var, context);
-        this.i3 = dg1Var;
+    public /* synthetic */ of1(fg1 fg1Var, boolean z10, int i10) {
+        this.a = i10;
+        this.c = fg1Var;
+        this.b = z10;
     }
 
-    @Override // org.telegram.ui.Components.wl0
-    public final boolean T0() {
-        ArrayList arrayList = this.i3.b;
-        return (getAdapter() == null || this.X1 || (arrayList == null || arrayList.size() != 1 || arrayList.get(0) == null || ((uf1) arrayList.get(0)).c == null || ((uf1) arrayList.get(0)).c.id != 1 ? getAdapter().h() > 1 : getAdapter().h() > 2)) ? false : true;
-    }
-
-    @Override // org.telegram.ui.bg1, org.telegram.ui.Components.wl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        this.i3.y0();
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        int i10;
+        switch (this.a) {
+            case 0:
+                super.onAnimationEnd(animator);
+                boolean z10 = this.b;
+                float f7 = z10 ? 1.0f : 0.0f;
+                fg1 fg1Var = this.c;
+                fg1Var.S0(f7);
+                if (!z10) {
+                    Activity parentActivity = fg1Var.getParentActivity();
+                    i10 = ((org.telegram.ui.ActionBar.n2) fg1Var).classGuid;
+                    AndroidUtilities.setAdjustResizeToNothing(parentActivity, i10);
+                    fg1Var.r0.setVisibility(8);
+                    fg1Var.Q0(true);
+                    break;
+                } else {
+                    fg1Var.q0.setVisibility(8);
+                    break;
+                }
+            default:
+                if (!this.b) {
+                    this.c.o0.setVisibility(8);
+                    break;
+                }
+                break;
+        }
     }
 }

@@ -5,7 +5,7 @@ import c3.h0;
 import i2.l0;
 import java.util.Collections;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class s implements i {
     public final c0 a;
@@ -27,45 +27,7 @@ public final class s implements i {
         this.a = c0Var;
     }
 
-    @Override // j4.i
-    public final void a(e2.v vVar) {
-        int i10;
-        e2.d.h(this.c);
-        String str = e2.d0.a;
-        while (vVar.a() > 0) {
-            int i11 = vVar.b;
-            int i12 = vVar.c;
-            byte[] bArr = vVar.a;
-            this.l += vVar.a();
-            this.c.d(vVar.a(), vVar);
-            while (i11 < i12) {
-                int b10 = f2.o.b(bArr, i11, i12, this.f);
-                if (b10 == i12) {
-                    g(i11, i12, bArr);
-                    return;
-                }
-                int i13 = (bArr[b10 + 3] & 126) >> 1;
-                if (b10 <= 0 || bArr[b10 - 1] != 0) {
-                    i10 = 3;
-                } else {
-                    b10--;
-                    i10 = 4;
-                }
-                int i14 = b10;
-                int i15 = i14 - i11;
-                if (i15 > 0) {
-                    g(i11, i14, bArr);
-                }
-                int i16 = i12 - i14;
-                long j3 = this.l - i16;
-                b(j3, i16, i15 < 0 ? -i15 : 0, this.m);
-                h(j3, i16, i13, this.m);
-                i11 = i14 + i10;
-            }
-        }
-    }
-
-    public final void b(long j3, int i10, int i11, long j10) {
+    public final void a(long j3, int i10, int i11, long j10) {
         e2.c cVar = this.a.d;
         r rVar = this.d;
         boolean z10 = this.e;
@@ -144,7 +106,66 @@ public final class s implements i {
     }
 
     @Override // j4.i
-    public final void c() {
+    public final void b(e2.v vVar) {
+        int i10;
+        e2.d.h(this.c);
+        String str = e2.d0.a;
+        while (vVar.a() > 0) {
+            int i11 = vVar.b;
+            int i12 = vVar.c;
+            byte[] bArr = vVar.a;
+            this.l += vVar.a();
+            this.c.d(vVar.a(), vVar);
+            while (i11 < i12) {
+                int b10 = f2.o.b(bArr, i11, i12, this.f);
+                if (b10 == i12) {
+                    c(i11, i12, bArr);
+                    return;
+                }
+                int i13 = (bArr[b10 + 3] & 126) >> 1;
+                if (b10 <= 0 || bArr[b10 - 1] != 0) {
+                    i10 = 3;
+                } else {
+                    b10--;
+                    i10 = 4;
+                }
+                int i14 = b10;
+                int i15 = i14 - i11;
+                if (i15 > 0) {
+                    c(i11, i14, bArr);
+                }
+                int i16 = i12 - i14;
+                long j3 = this.l - i16;
+                a(j3, i16, i15 < 0 ? -i15 : 0, this.m);
+                h(j3, i16, i13, this.m);
+                i11 = i14 + i10;
+            }
+        }
+    }
+
+    public final void c(int i10, int i11, byte[] bArr) {
+        r rVar = this.d;
+        if (rVar.f) {
+            int i12 = rVar.d;
+            int i13 = (i10 + 2) - i12;
+            if (i13 < i11) {
+                rVar.g = (bArr[i13] & 128) != 0;
+                rVar.f = false;
+            } else {
+                rVar.d = (i11 - i10) + i12;
+            }
+        }
+        if (!this.e) {
+            this.g.a(i10, i11, bArr);
+            this.h.a(i10, i11, bArr);
+            this.i.a(i10, i11, bArr);
+        }
+        this.j.a(i10, i11, bArr);
+        this.k.a(i10, i11, bArr);
+    }
+
+    @Override // j4.i
+    public final void d() {
         this.l = 0L;
         this.m = -9223372036854775807L;
         f2.o.a(this.f);
@@ -165,7 +186,7 @@ public final class s implements i {
     }
 
     @Override // j4.i
-    public final void d(c3.q qVar, f0 f0Var) {
+    public final void e(c3.q qVar, f0 f0Var) {
         f0Var.a();
         f0Var.b();
         this.b = f0Var.e;
@@ -177,40 +198,19 @@ public final class s implements i {
     }
 
     @Override // j4.i
-    public final void e(boolean z10) {
+    public final void f(boolean z10) {
         e2.d.h(this.c);
         String str = e2.d0.a;
         if (z10) {
             this.a.d.c(0);
-            b(this.l, 0, 0, this.m);
+            a(this.l, 0, 0, this.m);
             h(this.l, 0, 48, this.m);
         }
     }
 
     @Override // j4.i
-    public final void f(int i10, long j3) {
+    public final void g(int i10, long j3) {
         this.m = j3;
-    }
-
-    public final void g(int i10, int i11, byte[] bArr) {
-        r rVar = this.d;
-        if (rVar.f) {
-            int i12 = rVar.d;
-            int i13 = (i10 + 2) - i12;
-            if (i13 < i11) {
-                rVar.g = (bArr[i13] & 128) != 0;
-                rVar.f = false;
-            } else {
-                rVar.d = (i11 - i10) + i12;
-            }
-        }
-        if (!this.e) {
-            this.g.a(i10, i11, bArr);
-            this.h.a(i10, i11, bArr);
-            this.i.a(i10, i11, bArr);
-        }
-        this.j.a(i10, i11, bArr);
-        this.k.a(i10, i11, bArr);
     }
 
     public final void h(long j3, int i10, int i11, long j10) {

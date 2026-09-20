@@ -22,7 +22,7 @@ import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.atomic.AtomicLongArray;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class g {
     public static final c h = c.d;
@@ -186,7 +186,7 @@ public final class g {
                 if (aVar2 != null) {
                     Class value = aVar2.value();
                     if (v.class.isAssignableFrom(value)) {
-                        v vVar3 = (v) jVar.a.K(new kb.a(value)).p2();
+                        v vVar3 = (v) jVar.a.Q(new kb.a(value)).p2();
                         v vVar4 = (v) concurrentHashMap.putIfAbsent(cls, vVar3);
                         if (vVar4 != null) {
                             vVar3 = vVar4;

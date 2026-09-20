@@ -4,7 +4,7 @@ import android.os.Bundle;
 import java.util.concurrent.Callable;
 import org.telegram.ui.Cells.c1;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class l implements Callable {
     public final /* synthetic */ long a;
@@ -17,9 +17,9 @@ public final class l implements Callable {
 
     @Override // java.util.concurrent.Callable
     public final Object call() {
-        Bundle f7 = c1.f(1, "fatal");
-        f7.putLong("timestamp", this.a);
-        this.b.k.J(f7);
+        Bundle g10 = c1.g(1, "fatal");
+        g10.putLong("timestamp", this.a);
+        this.b.k.J(g10);
         return null;
     }
 }

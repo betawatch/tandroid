@@ -20,14 +20,14 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.lb;
+import org.telegram.ui.Components.kb;
 import org.telegram.ui.Components.ni;
 import org.telegram.ui.Components.vi;
 import org.telegram.ui.Components.xc;
-import org.telegram.ui.b41;
+import org.telegram.ui.c41;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class q4 extends ni implements NotificationCenter.NotificationCenterDelegate {
     public long E;
@@ -370,10 +370,10 @@ public final class q4 extends ni implements NotificationCenter.NotificationCente
             if (i10 == R.id.menu_report_bot) {
                 int i13 = this.F;
                 Context context = getContext();
-                xc xcVar = new xc(lb.a(getContext()), this.a);
+                xc xcVar = new xc(kb.a(getContext()), this.a);
                 long j3 = this.v;
-                int i14 = b41.v;
-                b41.K(i13, context, j3, false, false, new ArrayList(), xcVar, null, new byte[0], null, null);
+                int i14 = c41.v;
+                c41.K(i13, context, j3, false, false, new ArrayList(), xcVar, null, new byte[0], null, null);
             }
         }
     }

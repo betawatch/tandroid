@@ -9,7 +9,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.rk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.j6;
@@ -26,7 +26,7 @@ import org.telegram.ui.ty;
 import org.telegram.ui.uy;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final /* synthetic */ class z implements Runnable {
     public final /* synthetic */ int a;
@@ -76,7 +76,7 @@ public final /* synthetic */ class z implements Runnable {
                 zn znVar = lnVar.a;
                 if (znVar.A1 != null) {
                     u1Var.getLocationInWindow(new int[2]);
-                    znVar.A1.setTranslationY(wh.D(520.0f, r3[1] - r2.getTop(), this.b));
+                    znVar.A1.setTranslationY(rk.D(520.0f, r3[1] - r2.getTop(), this.b));
                     znVar.A1.m(0.0f, (-AndroidUtilities.dp(16.0f)) + r3[0] + this.c);
                     znVar.A1.u();
                     break;

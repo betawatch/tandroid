@@ -14,7 +14,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class t4 implements Utilities.Callback {
     public final /* synthetic */ int a = 0;
@@ -73,7 +73,7 @@ public final /* synthetic */ class t4 implements Utilities.Callback {
                     of2.payStars = l4.longValue();
                     SendMessagesHelper.getInstance(f6Var.C2).sendMessage(of2);
                 } else {
-                    f7 = org.telegram.ui.Components.q5.f(f6Var.C2, o0Var.g);
+                    f7 = org.telegram.ui.Components.p5.f(f6Var.C2, o0Var.g);
                     String findAnimatedEmojiEmoticon = MessageObject.findAnimatedEmojiEmoticon(f7, null);
                     if (findAnimatedEmojiEmoticon == null) {
                         if (f6Var.f2.getReactionsWindow() != null) {
@@ -95,7 +95,7 @@ public final /* synthetic */ class t4 implements Utilities.Callback {
                     }
                 }
                 if (l4.longValue() <= 0) {
-                    org.telegram.ui.Components.qc q6 = new xc(f6Var.c1, f6Var.B0).q(f7, LocaleController.getString(R.string.ReactionSent), LocaleController.getString(R.string.ViewInChat), new a3.d(u4Var, 6));
+                    org.telegram.ui.Components.pc q6 = new xc(f6Var.c1, f6Var.B0).q(f7, LocaleController.getString(R.string.ReactionSent), LocaleController.getString(R.string.ViewInChat), new a3.d(u4Var, 6));
                     q6.j = 5000;
                     q6.j();
                 }
@@ -106,28 +106,28 @@ public final /* synthetic */ class t4 implements Utilities.Callback {
                 break;
             case 1:
                 TL_stories.StoryItem storyItem = (TL_stories.StoryItem) obj3;
-                org.telegram.ui.ActionBar.e6 e6Var = (org.telegram.ui.ActionBar.e6) obj2;
-                f6 f6Var2 = ((w5) obj4).l;
-                a5 a5Var = f6Var2.c1;
+                org.telegram.ui.ActionBar.f6 f6Var2 = (org.telegram.ui.ActionBar.f6) obj2;
+                f6 f6Var3 = ((w5) obj4).l;
+                a5 a5Var = f6Var3.c1;
                 if (((Boolean) obj).booleanValue()) {
                     storyItem.pinned = z10;
-                    if (f6Var2.C1) {
-                        new xc(a5Var, e6Var).Q(z10 ? R.raw.contact_check : R.raw.chats_archived, 36, LocaleController.getString(z10 ? R.string.StoryPinnedToProfile : R.string.StoryArchivedFromProfile)).j();
+                    if (f6Var3.C1) {
+                        new xc(a5Var, f6Var2).Q(z10 ? R.raw.contact_check : R.raw.chats_archived, 36, LocaleController.getString(z10 ? R.string.StoryPinnedToProfile : R.string.StoryArchivedFromProfile)).j();
                         break;
                     } else if (z10) {
-                        new xc(a5Var, e6Var).M(LocaleController.getString(R.string.StoryPinnedToPosts), LocaleController.getString(R.string.StoryPinnedToPostsDescription), R.raw.contact_check).j();
+                        new xc(a5Var, f6Var2).M(LocaleController.getString(R.string.StoryPinnedToPosts), LocaleController.getString(R.string.StoryPinnedToPostsDescription), R.raw.contact_check).j();
                         break;
                     } else {
-                        xcVar = new xc(a5Var, e6Var);
+                        xcVar = new xc(a5Var, f6Var2);
                         i10 = R.raw.chats_archived;
                         i11 = R.string.StoryUnpinnedFromPosts;
                     }
                 } else {
-                    xcVar = new xc(a5Var, e6Var);
+                    xcVar = new xc(a5Var, f6Var2);
                     i10 = R.raw.error;
                     i11 = R.string.UnknownError;
                 }
-                org.telegram.messenger.q.q(i11, xcVar, i10, 36);
+                org.telegram.messenger.l0.o(i11, xcVar, i10, 36);
                 break;
             default:
                 ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) obj4;
@@ -140,11 +140,11 @@ public final /* synthetic */ class t4 implements Utilities.Callback {
         }
     }
 
-    public /* synthetic */ t4(w5 w5Var, TL_stories.StoryItem storyItem, boolean z10, org.telegram.ui.ActionBar.e6 e6Var) {
+    public /* synthetic */ t4(w5 w5Var, TL_stories.StoryItem storyItem, boolean z10, org.telegram.ui.ActionBar.f6 f6Var) {
         this.c = w5Var;
         this.d = storyItem;
         this.b = z10;
-        this.e = e6Var;
+        this.e = f6Var;
     }
 
     public /* synthetic */ t4(ChatActivityEnterView chatActivityEnterView, org.telegram.ui.ActionBar.b2 b2Var, TLRPC.User user, boolean z10) {

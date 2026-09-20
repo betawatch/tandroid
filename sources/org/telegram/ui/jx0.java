@@ -20,7 +20,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class jx0 extends LinearLayout {
     public final TextView a;
@@ -232,10 +232,10 @@ public final class jx0 extends LinearLayout {
         TextView textView2 = this.b;
         if (i10 == 0) {
             textView.setText(LocaleController.getString(premiumPreviewFragment.p0 ? R.string.TelegramPremiumSubscribedTitle : R.string.TelegramPremium));
-            org.telegram.messenger.q.n((premiumPreviewFragment.getUserConfig().isPremium() || premiumPreviewFragment.p0) ? R.string.TelegramPremiumSubscribedSubtitle : R.string.TelegramPremiumSubtitle, textView2);
+            org.telegram.messenger.l0.l((premiumPreviewFragment.getUserConfig().isPremium() || premiumPreviewFragment.p0) ? R.string.TelegramPremiumSubscribedSubtitle : R.string.TelegramPremiumSubtitle, textView2);
         } else if (i10 == 1) {
             textView.setText(LocaleController.getString(premiumPreviewFragment.p0 ? R.string.TelegramPremiumSubscribedTitle : R.string.TelegramBusiness));
-            org.telegram.messenger.q.n((premiumPreviewFragment.getUserConfig().isPremium() || premiumPreviewFragment.p0) ? R.string.TelegramBusinessSubscribedSubtitleTemp : R.string.TelegramBusinessSubtitleTemp, textView2);
+            org.telegram.messenger.l0.l((premiumPreviewFragment.getUserConfig().isPremium() || premiumPreviewFragment.p0) ? R.string.TelegramBusinessSubscribedSubtitleTemp : R.string.TelegramBusinessSubtitleTemp, textView2);
         }
         textView2.getLayoutParams().width = Math.min(AndroidUtilities.displaySize.x - AndroidUtilities.dp(42.0f), ci.f4.a(textView2.getText(), textView2.getPaint()));
         boolean z10 = premiumPreviewFragment.p0 || BuildVars.IS_BILLING_UNAVAILABLE || premiumPreviewFragment.d.size() <= 1;
@@ -247,7 +247,7 @@ public final class jx0 extends LinearLayout {
         } else if (gx0Var.getVisibility() == 0 && z10 && this.h == z10) {
             ValueAnimator duration = ValueAnimator.ofFloat(1.0f, 0.0f).setDuration(250L);
             duration.addUpdateListener(new ex0(this, gx0Var, duration, r2));
-            duration.addListener(new org.telegram.ui.Components.al0(10, this, gx0Var));
+            duration.addListener(new org.telegram.ui.Components.zk0(10, this, gx0Var));
             duration.setInterpolator(org.telegram.ui.Components.qr.f);
             duration.start();
         }

@@ -16,11 +16,11 @@ import android.widget.TextView;
 import java.lang.reflect.Field;
 import java.util.Iterator;
 import java.util.Map;
-import v7.r8;
-import v7.v7;
-import w7.o7;
+import v7.s8;
+import v7.w7;
+import w7.p7;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class p {
     public Parcelable a;
@@ -44,30 +44,30 @@ public final class p {
         if (Build.VERSION.SDK_INT >= 23) {
             drawable = e0.b.e(compoundButton);
         } else {
-            if (!o7.b) {
+            if (!p7.b) {
                 try {
                     Field declaredField = CompoundButton.class.getDeclaredField("mButtonDrawable");
-                    o7.a = declaredField;
+                    p7.a = declaredField;
                     declaredField.setAccessible(true);
                 } catch (NoSuchFieldException e) {
                     Log.i("CompoundButtonCompat", "Failed to retrieve mButtonDrawable field", e);
                 }
-                o7.b = true;
+                p7.b = true;
             }
-            Field field = o7.a;
+            Field field = p7.a;
             if (field != null) {
                 try {
                     drawable = (Drawable) field.get(compoundButton);
                 } catch (IllegalAccessException e7) {
                     Log.i("CompoundButtonCompat", "Failed to get button drawable via reflection", e7);
-                    o7.a = null;
+                    p7.a = null;
                 }
             }
             drawable = null;
         }
         if (drawable != null) {
             if (this.c || this.d) {
-                Drawable mutate = r8.d(drawable).mutate();
+                Drawable mutate = s8.d(drawable).mutate();
                 if (this.c) {
                     mutate.setTintList((ColorStateList) this.a);
                 }
@@ -87,7 +87,7 @@ public final class p {
         Drawable checkMarkDrawable = oVar.getCheckMarkDrawable();
         if (checkMarkDrawable != null) {
             if (this.c || this.d) {
-                Drawable mutate = r8.d(checkMarkDrawable).mutate();
+                Drawable mutate = s8.d(checkMarkDrawable).mutate();
                 if (this.c) {
                     mutate.setTintList((ColorStateList) this.a);
                 }
@@ -151,13 +151,13 @@ public final class p {
         CompoundButton compoundButton = (CompoundButton) this.f;
         Context context = compoundButton.getContext();
         int[] iArr = f.a.m;
-        lf.i Q = lf.i.Q(context, attributeSet, iArr, i10);
+        lf.h Q = lf.h.Q(context, attributeSet, iArr, i10);
         TypedArray typedArray = (TypedArray) Q.c;
         r0.i0.j(compoundButton, compoundButton.getContext(), iArr, attributeSet, (TypedArray) Q.c, i10);
         try {
             if (typedArray.hasValue(1) && (resourceId2 = typedArray.getResourceId(1, 0)) != 0) {
                 try {
-                    compoundButton.setButtonDrawable(v7.b(compoundButton.getContext(), resourceId2));
+                    compoundButton.setButtonDrawable(w7.b(compoundButton.getContext(), resourceId2));
                 } catch (Resources.NotFoundException unused) {
                 }
                 if (typedArray.hasValue(2)) {
@@ -169,7 +169,7 @@ public final class p {
                 Q.R();
             }
             if (typedArray.hasValue(0) && (resourceId = typedArray.getResourceId(0, 0)) != 0) {
-                compoundButton.setButtonDrawable(v7.b(compoundButton.getContext(), resourceId));
+                compoundButton.setButtonDrawable(w7.b(compoundButton.getContext(), resourceId));
             }
             if (typedArray.hasValue(2)) {
             }

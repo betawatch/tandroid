@@ -56,7 +56,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public class FragmentContextView extends FrameLayout implements NotificationCenter.NotificationCenterDelegate, VoIPService.StateListener, GroupCallMessagesController.CallMessageListener {
     public static final float[] O0 = {0.5f, 1.0f, 1.2f, 1.5f, 1.7f, 2.0f};
@@ -94,10 +94,10 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
     public boolean V;
     public boolean W;
     public final id a;
-    public k9 a0;
+    public j9 a0;
     public ImageView b;
     public Paint b0;
-    public qg0 c;
+    public pg0 c;
     public LinearGradient c0;
     public r10 d;
     public Matrix d0;
@@ -108,7 +108,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
     public boolean g0;
     public final org.telegram.ui.ActionBar.n2 h;
     public boolean h0;
-    public final o6 i0;
+    public final n6 i0;
     public yc j0;
     public boolean k0;
     public final p10 l0;
@@ -116,21 +116,21 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
     public final bh n;
     public final boolean n0;
     public v10 o0;
-    public final org.telegram.ui.ActionBar.e6 p0;
+    public final org.telegram.ui.ActionBar.f6 p0;
     public boolean q0;
     public q10 r;
     public int r0;
     public ai.x5 s;
-    public final org.telegram.ui.Cells.t6 s0;
+    public final org.telegram.ui.Cells.u6 s0;
     public final AnimationNotificationsLocker t0;
     public final AnimationNotificationsLocker u0;
     public View v;
     public boolean v0;
-    public lj0 w;
+    public kj0 w;
     public boolean w0;
     public t10 x;
     public boolean x0;
-    public ij0 y;
+    public hj0 y;
     public boolean y0;
     public boolean z0;
 
@@ -140,8 +140,8 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
 
     private int getTitleTextColor() {
         int i10 = this.T;
-        org.telegram.ui.ActionBar.e6 e6Var = this.p0;
-        return i10 == 4 ? org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.t7, e6Var) : (i10 == 1 || i10 == 3) ? org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.A7, e6Var) : org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.u7, e6Var);
+        org.telegram.ui.ActionBar.f6 f6Var = this.p0;
+        return i10 == 4 ? org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.t7, f6Var) : (i10 == 1 || i10 == 3) ? org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.A7, f6Var) : org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.u7, f6Var);
     }
 
     public static boolean i(float f7, float f10) {
@@ -216,7 +216,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
                     if (!z13 || bhVar == null || !bhVar.G() || z20.c()) {
                         return;
                     }
-                    org.telegram.messenger.q.q(R.string.InviteExpired, xc.a0(n2Var), R.raw.linkbroken, 36);
+                    org.telegram.messenger.l0.o(R.string.InviteExpired, xc.a0(n2Var), R.raw.linkbroken, 36);
                     return;
                 }
                 b();
@@ -346,13 +346,13 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
         this.r = q10Var;
         this.j0 = new yc(q10Var);
         int i10 = AndroidUtilities.displaySize.x;
-        o6 o6Var = this.i0;
-        o6Var.G = i10;
-        o6Var.v = 0.4f;
-        o6Var.setCallback(q10Var);
-        o6Var.r(-1);
-        o6Var.t(AndroidUtilities.dp(14.0f));
-        o6Var.u(AndroidUtilities.bold());
+        n6 n6Var = this.i0;
+        n6Var.G = i10;
+        n6Var.v = 0.4f;
+        n6Var.setCallback(q10Var);
+        n6Var.r(-1);
+        n6Var.t(AndroidUtilities.dp(14.0f));
+        n6Var.u(AndroidUtilities.bold());
         addView(this.r, w7.y5.d(-1, 36.0f, 51, 0.0f, 0.0f, 0.0f, 0.0f));
         View view = new View(context);
         this.v = view;
@@ -363,15 +363,15 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
         imageView.setScaleType(scaleType);
         ImageView imageView2 = this.b;
         int i11 = org.telegram.ui.ActionBar.j6.w7;
-        org.telegram.ui.ActionBar.e6 e6Var = this.p0;
-        int v02 = org.telegram.ui.ActionBar.j6.v0(i11, e6Var);
+        org.telegram.ui.ActionBar.f6 f6Var = this.p0;
+        int v02 = org.telegram.ui.ActionBar.j6.v0(i11, f6Var);
         PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
         imageView2.setColorFilter(new PorterDuffColorFilter(v02, mode));
         ImageView imageView3 = this.b;
-        qg0 qg0Var = new qg0(16);
-        this.c = qg0Var;
-        imageView3.setImageDrawable(qg0Var);
-        this.b.setBackground(org.telegram.ui.ActionBar.j6.f0(org.telegram.ui.ActionBar.j6.v0(i11, e6Var) & 436207615, 1, AndroidUtilities.dp(14.0f)));
+        pg0 pg0Var = new pg0(16);
+        this.c = pg0Var;
+        imageView3.setImageDrawable(pg0Var);
+        this.b.setBackground(org.telegram.ui.ActionBar.j6.f0(org.telegram.ui.ActionBar.j6.v0(i11, f6Var) & 436207615, 1, AndroidUtilities.dp(14.0f)));
         addView(this.b, w7.y5.e(36, 36, 51));
         final int i12 = 2;
         this.b.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.k10
@@ -392,10 +392,10 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
                 switch (i14) {
                     case 0:
                         bh bhVar = fragmentContextView.n;
-                        org.telegram.ui.ActionBar.e6 e6Var2 = fragmentContextView.p0;
+                        org.telegram.ui.ActionBar.f6 f6Var2 = fragmentContextView.p0;
                         org.telegram.ui.ActionBar.n2 n2Var = fragmentContextView.h;
                         if (fragmentContextView.T == 2) {
-                            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(n2Var.getParentActivity(), 0, e6Var2);
+                            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(n2Var.getParentActivity(), 0, f6Var2);
                             String string = LocaleController.getString(R.string.StopLiveLocationAlertToTitle);
                             org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
                             b2Var.R = string;
@@ -417,7 +417,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
                             alertDialog$Builder.o();
                             TextView textView = (TextView) b2Var.d(-1);
                             if (textView != null) {
-                                textView.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.q7, e6Var2));
+                                textView.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.q7, f6Var2));
                                 break;
                             }
                         } else {
@@ -427,7 +427,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
                         break;
                     case 1:
                         bh bhVar2 = fragmentContextView.n;
-                        org.telegram.ui.ActionBar.e6 e6Var3 = fragmentContextView.p0;
+                        org.telegram.ui.ActionBar.f6 f6Var3 = fragmentContextView.p0;
                         org.telegram.ui.ActionBar.n2 n2Var2 = fragmentContextView.h;
                         int i16 = fragmentContextView.T;
                         int i17 = 6;
@@ -455,10 +455,10 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
                                 if (playingMessageObject.isMusic()) {
                                     Activity findActivity = AndroidUtilities.findActivity(fragmentContextView.getContext());
                                     if (findActivity instanceof LaunchActivity) {
-                                        new j8(findActivity, e6Var3).show();
+                                        new i8(findActivity, f6Var3).show();
                                         break;
                                     } else if (AndroidUtilities.isContextSafe(LaunchActivity.G1)) {
-                                        new j8(LaunchActivity.G1, e6Var3).show();
+                                        new i8(LaunchActivity.G1, f6Var3).show();
                                         break;
                                     }
                                 } else if (playingMessageObject.getDialogId() == (bhVar2 != null ? bhVar2.a() : 0L)) {
@@ -505,7 +505,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
                                 fragmentContextView.k(LocationController.getInstance(i13).getSharingLocationInfo(j3));
                                 break;
                             } else {
-                                n2Var2.showDialog(new ov0(fragmentContextView.getContext(), new j10(fragmentContextView), e6Var3));
+                                n2Var2.showDialog(new nv0(fragmentContextView.getContext(), new j10(fragmentContextView), f6Var3));
                                 break;
                             }
                         } else if (i16 != 3) {
@@ -519,7 +519,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
                             } else if (i16 == 5) {
                                 org.telegram.ui.zn znVar = (org.telegram.ui.zn) n2Var2;
                                 if (n2Var2.getSendMessagesHelper().getImportingHistory(znVar.a()) != null) {
-                                    w40 w40Var = new w40(fragmentContextView.getContext(), null, znVar, e6Var3);
+                                    w40 w40Var = new w40(fragmentContextView.getContext(), null, znVar, f6Var3);
                                     w40Var.setOnHideListener(new b1(fragmentContextView, i17));
                                     n2Var2.showDialog(w40Var);
                                     fragmentContextView.c(false);
@@ -582,12 +582,12 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
                 }
             }
         });
-        lj0 lj0Var = new lj0(context);
-        this.w = lj0Var;
-        lj0Var.setScaleType(scaleType);
+        kj0 kj0Var = new kj0(context);
+        this.w = kj0Var;
+        kj0Var.setScaleType(scaleType);
         this.w.setAutoRepeat(true);
         this.w.f(R.raw.import_progress, 30, 30, null);
-        this.w.setBackground(org.telegram.ui.ActionBar.j6.K(AndroidUtilities.dp(22.0f), org.telegram.ui.ActionBar.j6.v0(i11, e6Var)));
+        this.w.setBackground(org.telegram.ui.ActionBar.j6.K(AndroidUtilities.dp(22.0f), org.telegram.ui.ActionBar.j6.v0(i11, f6Var)));
         addView(this.w, w7.y5.d(22, 22.0f, 51, 7.0f, 7.0f, 0.0f, 0.0f));
         r10 r10Var = new r10(this, context, context, 0);
         this.d = r10Var;
@@ -602,11 +602,11 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
         org.telegram.ui.rk rkVar = new org.telegram.ui.rk(this, context, 1);
         this.L = rkVar;
         rkVar.setText(LocaleController.getString(R.string.VoipChatJoin));
-        this.L.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Sh, e6Var));
+        this.L.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Sh, f6Var));
         org.telegram.ui.rk rkVar2 = this.L;
         int dp = AndroidUtilities.dp(16.0f);
-        int v03 = org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Oh, e6Var);
-        int v04 = org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Qh, e6Var);
+        int v03 = org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Oh, f6Var);
+        int v04 = org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Qh, f6Var);
         rkVar2.setBackground(org.telegram.ui.ActionBar.j6.i0(dp, dp, dp, dp, v03, v04, v04));
         this.L.setTextSize(1, 14.0f);
         this.L.setTypeface(AndroidUtilities.bold());
@@ -632,10 +632,10 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
                 switch (i14) {
                     case 0:
                         bh bhVar = fragmentContextView.n;
-                        org.telegram.ui.ActionBar.e6 e6Var2 = fragmentContextView.p0;
+                        org.telegram.ui.ActionBar.f6 f6Var2 = fragmentContextView.p0;
                         org.telegram.ui.ActionBar.n2 n2Var = fragmentContextView.h;
                         if (fragmentContextView.T == 2) {
-                            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(n2Var.getParentActivity(), 0, e6Var2);
+                            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(n2Var.getParentActivity(), 0, f6Var2);
                             String string = LocaleController.getString(R.string.StopLiveLocationAlertToTitle);
                             org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
                             b2Var.R = string;
@@ -657,7 +657,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
                             alertDialog$Builder.o();
                             TextView textView = (TextView) b2Var.d(-1);
                             if (textView != null) {
-                                textView.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.q7, e6Var2));
+                                textView.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.q7, f6Var2));
                                 break;
                             }
                         } else {
@@ -667,7 +667,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
                         break;
                     case 1:
                         bh bhVar2 = fragmentContextView.n;
-                        org.telegram.ui.ActionBar.e6 e6Var3 = fragmentContextView.p0;
+                        org.telegram.ui.ActionBar.f6 f6Var3 = fragmentContextView.p0;
                         org.telegram.ui.ActionBar.n2 n2Var2 = fragmentContextView.h;
                         int i16 = fragmentContextView.T;
                         int i17 = 6;
@@ -695,10 +695,10 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
                                 if (playingMessageObject.isMusic()) {
                                     Activity findActivity = AndroidUtilities.findActivity(fragmentContextView.getContext());
                                     if (findActivity instanceof LaunchActivity) {
-                                        new j8(findActivity, e6Var3).show();
+                                        new i8(findActivity, f6Var3).show();
                                         break;
                                     } else if (AndroidUtilities.isContextSafe(LaunchActivity.G1)) {
-                                        new j8(LaunchActivity.G1, e6Var3).show();
+                                        new i8(LaunchActivity.G1, f6Var3).show();
                                         break;
                                     }
                                 } else if (playingMessageObject.getDialogId() == (bhVar2 != null ? bhVar2.a() : 0L)) {
@@ -745,7 +745,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
                                 fragmentContextView.k(LocationController.getInstance(i132).getSharingLocationInfo(j3));
                                 break;
                             } else {
-                                n2Var2.showDialog(new ov0(fragmentContextView.getContext(), new j10(fragmentContextView), e6Var3));
+                                n2Var2.showDialog(new nv0(fragmentContextView.getContext(), new j10(fragmentContextView), f6Var3));
                                 break;
                             }
                         } else if (i16 != 3) {
@@ -759,7 +759,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
                             } else if (i16 == 5) {
                                 org.telegram.ui.zn znVar = (org.telegram.ui.zn) n2Var2;
                                 if (n2Var2.getSendMessagesHelper().getImportingHistory(znVar.a()) != null) {
-                                    w40 w40Var = new w40(fragmentContextView.getContext(), null, znVar, e6Var3);
+                                    w40 w40Var = new w40(fragmentContextView.getContext(), null, znVar, f6Var3);
                                     w40Var.setOnHideListener(new b1(fragmentContextView, i17));
                                     n2Var2.showDialog(w40Var);
                                     fragmentContextView.c(false);
@@ -831,9 +831,9 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
         imageView4.setImageResource(R.drawable.msg_mute);
         ImageView imageView5 = this.K;
         int i14 = org.telegram.ui.ActionBar.j6.x7;
-        imageView5.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.j6.v0(i14, e6Var), mode));
+        imageView5.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.j6.v0(i14, f6Var), mode));
         this.J.addView(this.K, w7.y5.e(20, 20, 17));
-        this.J.setBackground(org.telegram.ui.ActionBar.j6.f0(org.telegram.ui.ActionBar.j6.v0(i14, e6Var) & 436207615, 1, AndroidUtilities.dp(14.0f)));
+        this.J.setBackground(org.telegram.ui.ActionBar.j6.f0(org.telegram.ui.ActionBar.j6.v0(i14, f6Var) & 436207615, 1, AndroidUtilities.dp(14.0f)));
         this.J.setContentDescription(LocaleController.getString(R.string.Unmute));
         this.J.setOnClickListener(new ai.e2(11));
         this.J.setVisibility(8);
@@ -841,17 +841,17 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
         if (!this.n0) {
             h();
         }
-        k9 k9Var = new k9(context, false);
-        this.a0 = k9Var;
-        k9Var.setAvatarsTextSize(AndroidUtilities.dp(21.0f));
+        j9 j9Var = new j9(context, false);
+        this.a0 = j9Var;
+        j9Var.setAvatarsTextSize(AndroidUtilities.dp(21.0f));
         this.a0.setDelegate(new n10(this, 1));
         this.a0.setVisibility(8);
         addView(this.a0, w7.y5.e(108, 36, 51));
-        this.y = new ij0(R.raw.voice_muted, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(20.0f), true, null);
+        this.y = new hj0(R.raw.voice_muted, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(20.0f), true, null);
         t10 t10Var = new t10(this, context);
         this.x = t10Var;
-        t10Var.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.A7, e6Var), PorterDuff.Mode.SRC_IN));
-        this.x.setBackground(org.telegram.ui.ActionBar.j6.f0(org.telegram.ui.ActionBar.j6.v0(i14, e6Var) & 436207615, 1, AndroidUtilities.dp(14.0f)));
+        t10Var.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.A7, f6Var), PorterDuff.Mode.SRC_IN));
+        this.x.setBackground(org.telegram.ui.ActionBar.j6.f0(org.telegram.ui.ActionBar.j6.v0(i14, f6Var) & 436207615, 1, AndroidUtilities.dp(14.0f)));
         this.x.setAnimation(this.y);
         this.x.setScaleType(scaleType);
         this.x.setVisibility(8);
@@ -875,10 +875,10 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
                 switch (i142) {
                     case 0:
                         bh bhVar = fragmentContextView.n;
-                        org.telegram.ui.ActionBar.e6 e6Var2 = fragmentContextView.p0;
+                        org.telegram.ui.ActionBar.f6 f6Var2 = fragmentContextView.p0;
                         org.telegram.ui.ActionBar.n2 n2Var = fragmentContextView.h;
                         if (fragmentContextView.T == 2) {
-                            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(n2Var.getParentActivity(), 0, e6Var2);
+                            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(n2Var.getParentActivity(), 0, f6Var2);
                             String string = LocaleController.getString(R.string.StopLiveLocationAlertToTitle);
                             org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
                             b2Var.R = string;
@@ -900,7 +900,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
                             alertDialog$Builder.o();
                             TextView textView = (TextView) b2Var.d(-1);
                             if (textView != null) {
-                                textView.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.q7, e6Var2));
+                                textView.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.q7, f6Var2));
                                 break;
                             }
                         } else {
@@ -910,7 +910,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
                         break;
                     case 1:
                         bh bhVar2 = fragmentContextView.n;
-                        org.telegram.ui.ActionBar.e6 e6Var3 = fragmentContextView.p0;
+                        org.telegram.ui.ActionBar.f6 f6Var3 = fragmentContextView.p0;
                         org.telegram.ui.ActionBar.n2 n2Var2 = fragmentContextView.h;
                         int i16 = fragmentContextView.T;
                         int i17 = 6;
@@ -938,10 +938,10 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
                                 if (playingMessageObject.isMusic()) {
                                     Activity findActivity = AndroidUtilities.findActivity(fragmentContextView.getContext());
                                     if (findActivity instanceof LaunchActivity) {
-                                        new j8(findActivity, e6Var3).show();
+                                        new i8(findActivity, f6Var3).show();
                                         break;
                                     } else if (AndroidUtilities.isContextSafe(LaunchActivity.G1)) {
-                                        new j8(LaunchActivity.G1, e6Var3).show();
+                                        new i8(LaunchActivity.G1, f6Var3).show();
                                         break;
                                     }
                                 } else if (playingMessageObject.getDialogId() == (bhVar2 != null ? bhVar2.a() : 0L)) {
@@ -988,7 +988,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
                                 fragmentContextView.k(LocationController.getInstance(i132).getSharingLocationInfo(j3));
                                 break;
                             } else {
-                                n2Var2.showDialog(new ov0(fragmentContextView.getContext(), new j10(fragmentContextView), e6Var3));
+                                n2Var2.showDialog(new nv0(fragmentContextView.getContext(), new j10(fragmentContextView), f6Var3));
                                 break;
                             }
                         } else if (i16 != 3) {
@@ -1002,7 +1002,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
                             } else if (i16 == 5) {
                                 org.telegram.ui.zn znVar = (org.telegram.ui.zn) n2Var2;
                                 if (n2Var2.getSendMessagesHelper().getImportingHistory(znVar.a()) != null) {
-                                    w40 w40Var = new w40(fragmentContextView.getContext(), null, znVar, e6Var3);
+                                    w40 w40Var = new w40(fragmentContextView.getContext(), null, znVar, f6Var3);
                                     w40Var.setOnHideListener(new b1(fragmentContextView, i17));
                                     n2Var2.showDialog(w40Var);
                                     fragmentContextView.c(false);
@@ -1068,8 +1068,8 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
         ImageView imageView6 = new ImageView(context);
         this.E = imageView6;
         imageView6.setImageResource(R.drawable.miniplayer_close);
-        this.E.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.j6.v0(i14, e6Var), mode));
-        this.E.setBackground(org.telegram.ui.ActionBar.j6.f0(org.telegram.ui.ActionBar.j6.v0(i14, e6Var) & 436207615, 1, AndroidUtilities.dp(14.0f)));
+        this.E.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.j6.v0(i14, f6Var), mode));
+        this.E.setBackground(org.telegram.ui.ActionBar.j6.f0(org.telegram.ui.ActionBar.j6.v0(i14, f6Var) & 436207615, 1, AndroidUtilities.dp(14.0f)));
         this.E.setScaleType(scaleType);
         addView(this.E, w7.y5.d(36, 36.0f, 53, 0.0f, 0.0f, 4.0f, 0.0f));
         final int i16 = 0;
@@ -1091,10 +1091,10 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
                 switch (i142) {
                     case 0:
                         bh bhVar = fragmentContextView.n;
-                        org.telegram.ui.ActionBar.e6 e6Var2 = fragmentContextView.p0;
+                        org.telegram.ui.ActionBar.f6 f6Var2 = fragmentContextView.p0;
                         org.telegram.ui.ActionBar.n2 n2Var = fragmentContextView.h;
                         if (fragmentContextView.T == 2) {
-                            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(n2Var.getParentActivity(), 0, e6Var2);
+                            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(n2Var.getParentActivity(), 0, f6Var2);
                             String string = LocaleController.getString(R.string.StopLiveLocationAlertToTitle);
                             org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
                             b2Var.R = string;
@@ -1116,7 +1116,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
                             alertDialog$Builder.o();
                             TextView textView = (TextView) b2Var.d(-1);
                             if (textView != null) {
-                                textView.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.q7, e6Var2));
+                                textView.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.q7, f6Var2));
                                 break;
                             }
                         } else {
@@ -1126,7 +1126,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
                         break;
                     case 1:
                         bh bhVar2 = fragmentContextView.n;
-                        org.telegram.ui.ActionBar.e6 e6Var3 = fragmentContextView.p0;
+                        org.telegram.ui.ActionBar.f6 f6Var3 = fragmentContextView.p0;
                         org.telegram.ui.ActionBar.n2 n2Var2 = fragmentContextView.h;
                         int i162 = fragmentContextView.T;
                         int i17 = 6;
@@ -1154,10 +1154,10 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
                                 if (playingMessageObject.isMusic()) {
                                     Activity findActivity = AndroidUtilities.findActivity(fragmentContextView.getContext());
                                     if (findActivity instanceof LaunchActivity) {
-                                        new j8(findActivity, e6Var3).show();
+                                        new i8(findActivity, f6Var3).show();
                                         break;
                                     } else if (AndroidUtilities.isContextSafe(LaunchActivity.G1)) {
-                                        new j8(LaunchActivity.G1, e6Var3).show();
+                                        new i8(LaunchActivity.G1, f6Var3).show();
                                         break;
                                     }
                                 } else if (playingMessageObject.getDialogId() == (bhVar2 != null ? bhVar2.a() : 0L)) {
@@ -1204,7 +1204,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
                                 fragmentContextView.k(LocationController.getInstance(i132).getSharingLocationInfo(j3));
                                 break;
                             } else {
-                                n2Var2.showDialog(new ov0(fragmentContextView.getContext(), new j10(fragmentContextView), e6Var3));
+                                n2Var2.showDialog(new nv0(fragmentContextView.getContext(), new j10(fragmentContextView), f6Var3));
                                 break;
                             }
                         } else if (i162 != 3) {
@@ -1218,7 +1218,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
                             } else if (i162 == 5) {
                                 org.telegram.ui.zn znVar = (org.telegram.ui.zn) n2Var2;
                                 if (n2Var2.getSendMessagesHelper().getImportingHistory(znVar.a()) != null) {
-                                    w40 w40Var = new w40(fragmentContextView.getContext(), null, znVar, e6Var3);
+                                    w40 w40Var = new w40(fragmentContextView.getContext(), null, znVar, f6Var3);
                                     w40Var.setOnHideListener(new b1(fragmentContextView, i17));
                                     n2Var2.showDialog(w40Var);
                                     fragmentContextView.c(false);
@@ -1303,10 +1303,10 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
                 switch (i142) {
                     case 0:
                         bh bhVar = fragmentContextView.n;
-                        org.telegram.ui.ActionBar.e6 e6Var2 = fragmentContextView.p0;
+                        org.telegram.ui.ActionBar.f6 f6Var2 = fragmentContextView.p0;
                         org.telegram.ui.ActionBar.n2 n2Var = fragmentContextView.h;
                         if (fragmentContextView.T == 2) {
-                            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(n2Var.getParentActivity(), 0, e6Var2);
+                            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(n2Var.getParentActivity(), 0, f6Var2);
                             String string = LocaleController.getString(R.string.StopLiveLocationAlertToTitle);
                             org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
                             b2Var.R = string;
@@ -1328,7 +1328,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
                             alertDialog$Builder.o();
                             TextView textView = (TextView) b2Var.d(-1);
                             if (textView != null) {
-                                textView.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.q7, e6Var2));
+                                textView.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.q7, f6Var2));
                                 break;
                             }
                         } else {
@@ -1338,7 +1338,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
                         break;
                     case 1:
                         bh bhVar2 = fragmentContextView.n;
-                        org.telegram.ui.ActionBar.e6 e6Var3 = fragmentContextView.p0;
+                        org.telegram.ui.ActionBar.f6 f6Var3 = fragmentContextView.p0;
                         org.telegram.ui.ActionBar.n2 n2Var2 = fragmentContextView.h;
                         int i162 = fragmentContextView.T;
                         int i172 = 6;
@@ -1366,10 +1366,10 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
                                 if (playingMessageObject.isMusic()) {
                                     Activity findActivity = AndroidUtilities.findActivity(fragmentContextView.getContext());
                                     if (findActivity instanceof LaunchActivity) {
-                                        new j8(findActivity, e6Var3).show();
+                                        new i8(findActivity, f6Var3).show();
                                         break;
                                     } else if (AndroidUtilities.isContextSafe(LaunchActivity.G1)) {
-                                        new j8(LaunchActivity.G1, e6Var3).show();
+                                        new i8(LaunchActivity.G1, f6Var3).show();
                                         break;
                                     }
                                 } else if (playingMessageObject.getDialogId() == (bhVar2 != null ? bhVar2.a() : 0L)) {
@@ -1416,7 +1416,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
                                 fragmentContextView.k(LocationController.getInstance(i132).getSharingLocationInfo(j3));
                                 break;
                             } else {
-                                n2Var2.showDialog(new ov0(fragmentContextView.getContext(), new j10(fragmentContextView), e6Var3));
+                                n2Var2.showDialog(new nv0(fragmentContextView.getContext(), new j10(fragmentContextView), f6Var3));
                                 break;
                             }
                         } else if (i162 != 3) {
@@ -1430,7 +1430,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
                             } else if (i162 == 5) {
                                 org.telegram.ui.zn znVar = (org.telegram.ui.zn) n2Var2;
                                 if (n2Var2.getSendMessagesHelper().getImportingHistory(znVar.a()) != null) {
-                                    w40 w40Var = new w40(fragmentContextView.getContext(), null, znVar, e6Var3);
+                                    w40 w40Var = new w40(fragmentContextView.getContext(), null, znVar, f6Var3);
                                     w40Var.setOnHideListener(new b1(fragmentContextView, i172));
                                     n2Var2.showDialog(w40Var);
                                     fragmentContextView.c(false);
@@ -1557,8 +1557,8 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
                 setTopPadding(AndroidUtilities.dp2(getStyleHeight()));
                 v10 v10Var = this.o0;
                 if (v10Var != null) {
-                    ((fr0) v10Var).a(true);
-                    ((fr0) this.o0).a(false);
+                    ((er0) v10Var).a(true);
+                    ((er0) this.o0).a(false);
                 }
             }
             if (!this.S) {
@@ -1572,7 +1572,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
                     this.f = new AnimatorSet();
                     v10 v10Var2 = this.o0;
                     if (v10Var2 != null) {
-                        ((fr0) v10Var2).a(true);
+                        ((er0) v10Var2).a(true);
                     }
                     this.f.playTogether(ObjectAnimator.ofFloat(this, "topPadding", AndroidUtilities.dp2(getStyleHeight())));
                     this.f.setDuration(200L);
@@ -1601,10 +1601,10 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
         }
         boolean z11 = n2Var instanceof org.telegram.ui.uy;
         boolean isSharingLocation = z11 ? LocationController.getLocationsCount() != 0 : LocationController.getInstance(n2Var.getCurrentAccount()).isSharingLocation(this.n.a());
-        org.telegram.ui.Cells.t6 t6Var = this.s0;
+        org.telegram.ui.Cells.u6 u6Var = this.s0;
         if (!isSharingLocation) {
             this.r0 = -1;
-            AndroidUtilities.cancelRunOnUIThread(t6Var);
+            AndroidUtilities.cancelRunOnUIThread(u6Var);
             if (this.S) {
                 this.S = false;
                 if (z10) {
@@ -1631,7 +1631,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
         }
         b();
         s(2);
-        this.b.setImageDrawable(new wq0(getContext(), 1));
+        this.b.setImageDrawable(new vq0(getContext(), 1));
         if (z10 && this.R == 0.0f) {
             setTopPadding(AndroidUtilities.dp2(getStyleHeight()));
         }
@@ -1653,7 +1653,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
             setVisibility(0);
         }
         if (!z11) {
-            t6Var.run();
+            u6Var.run();
             f();
             return;
         }
@@ -1689,7 +1689,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
             }
             i11++;
         }
-        spannableStringBuilder.setSpan(new u51(AndroidUtilities.bold(), org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.t7, this.p0)), indexOf, string2.length() + indexOf, 18);
+        spannableStringBuilder.setSpan(new t51(AndroidUtilities.bold(), org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.t7, this.p0)), indexOf, string2.length() + indexOf, 18);
         this.d.b(spannableStringBuilder, false);
     }
 
@@ -2039,7 +2039,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
                                         path.rewind();
                                         float f37 = f7;
                                         j10 = j3;
-                                        path.addCircle(f7 - AndroidUtilities.dp(18.0f), com.google.android.gms.internal.vision.e2.A(measuredHeight, 0.0f, 2.0f, 0.0f), org.telegram.messenger.q.A(f37, 0.0f, 1.1f, f12), Path.Direction.CW);
+                                        path.addCircle(f7 - AndroidUtilities.dp(18.0f), com.google.android.gms.internal.vision.e2.A(measuredHeight, 0.0f, 2.0f, 0.0f), org.telegram.messenger.l0.z(f37, 0.0f, 1.1f, f12), Path.Direction.CW);
                                         canvas.save();
                                         canvas.clipPath(path);
                                         f13 = f37;
@@ -2244,7 +2244,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
             i13++;
         }
         if (indexOf >= 0) {
-            spannableStringBuilder.setSpan(new u51(AndroidUtilities.bold(), org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.t7, this.p0)), indexOf, string.length() + indexOf, 18);
+            spannableStringBuilder.setSpan(new t51(AndroidUtilities.bold(), org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.t7, this.p0)), indexOf, string.length() + indexOf, 18);
         }
         this.d.b(spannableStringBuilder, false);
     }
@@ -2307,7 +2307,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
             this.f.setDuration(200L);
             v10 v10Var = this.o0;
             if (v10Var != null) {
-                ((fr0) v10Var).a(true);
+                ((er0) v10Var).a(true);
             }
             this.f.addListener(new o10(this, 2));
             this.f.start();
@@ -2324,8 +2324,8 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
             setTopPadding(AndroidUtilities.dp2(getStyleHeight()));
             v10 v10Var2 = this.o0;
             if (v10Var2 != null) {
-                ((fr0) v10Var2).a(true);
-                ((fr0) this.o0).a(false);
+                ((er0) v10Var2).a(true);
+                ((er0) this.o0).a(false);
             }
         }
         if (!this.S) {
@@ -2339,7 +2339,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
                 this.f = new AnimatorSet();
                 v10 v10Var3 = this.o0;
                 if (v10Var3 != null) {
-                    ((fr0) v10Var3).a(true);
+                    ((er0) v10Var3).a(true);
                 }
                 this.f.playTogether(ObjectAnimator.ofFloat(this, "topPadding", AndroidUtilities.dp2(getStyleHeight())));
                 this.f.setDuration(200L);
@@ -2404,7 +2404,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
                 i13++;
             }
         }
-        spannableStringBuilder.setSpan(new u51(AndroidUtilities.bold(), org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.t7, this.p0)), 0, playingMessageObject.getMusicAuthor().length(), 18);
+        spannableStringBuilder.setSpan(new t51(AndroidUtilities.bold(), org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.t7, this.p0)), 0, playingMessageObject.getMusicAuthor().length(), 18);
         this.d.b(spannableStringBuilder, !z10 && z11 && this.V);
     }
 
@@ -2430,8 +2430,8 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
         }
         Context context = getContext();
         int i10 = org.telegram.ui.ActionBar.j6.j5;
-        org.telegram.ui.ActionBar.e6 e6Var = this.p0;
-        org.telegram.ui.ActionBar.v0 v0Var = new org.telegram.ui.ActionBar.v0(context, null, 0, org.telegram.ui.ActionBar.j6.v0(i10, e6Var), false, this.p0);
+        org.telegram.ui.ActionBar.f6 f6Var = this.p0;
+        org.telegram.ui.ActionBar.v0 v0Var = new org.telegram.ui.ActionBar.v0(context, null, 0, org.telegram.ui.ActionBar.j6.v0(i10, f6Var), false, this.p0);
         this.F = v0Var;
         v0Var.setAdditionalYOffset(AndroidUtilities.dp(30.0f));
         int i11 = 0;
@@ -2447,7 +2447,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
         v0Var2.setIcon(edVar);
         int i12 = 3;
         float[] fArr = {1.0f, 1.5f, 2.0f};
-        org.telegram.ui.ActionBar.b1 b1Var = new org.telegram.ui.ActionBar.b1(getContext(), e6Var);
+        org.telegram.ui.ActionBar.b1 b1Var = new org.telegram.ui.ActionBar.b1(getContext(), f6Var);
         this.H = b1Var;
         b1Var.setRoundRadiusDp(6.0f);
         this.H.setDrawShadow(true);
@@ -2485,10 +2485,10 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
             if (n2Var.getParentActivity() instanceof LaunchActivity) {
                 LaunchActivity launchActivity = (LaunchActivity) n2Var.getParentActivity();
                 launchActivity.K0(sharingLocationInfo.messageObject.currentAccount);
-                org.telegram.ui.jd0 jd0Var = new org.telegram.ui.jd0(2);
-                jd0Var.u0(sharingLocationInfo.messageObject);
-                jd0Var.F0 = new ai.z1(sharingLocationInfo, sharingLocationInfo.messageObject.getDialogId(), 5);
-                launchActivity.p0(jd0Var);
+                org.telegram.ui.kd0 kd0Var = new org.telegram.ui.kd0(2);
+                kd0Var.u0(sharingLocationInfo.messageObject);
+                kd0Var.F0 = new ai.z1(sharingLocationInfo, sharingLocationInfo.messageObject.getDialogId(), 5);
+                launchActivity.p0(kd0Var);
             }
         }
     }
@@ -2554,9 +2554,9 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
             valueAnimator.cancel();
             this.a0.a.f = null;
         }
-        j9 j9Var = this.a0.a;
-        if (j9Var.f != null) {
-            j9Var.g = true;
+        i9 i9Var = this.a0.a;
+        if (i9Var.f != null) {
+            i9Var.g = true;
             return;
         }
         int i11 = this.T;
@@ -2676,8 +2676,8 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
             if (this.O != z10 && this.x != null) {
                 this.O = z10;
                 this.y.P(z10 ? 15 : 29);
-                ij0 ij0Var = this.y;
-                ij0Var.N(ij0Var.f - 1, false, true);
+                hj0 hj0Var = this.y;
+                hj0Var.N(hj0Var.f - 1, false, true);
                 this.x.invalidate();
             }
         } else if (i11 == 4 && !this.k0) {
@@ -2699,8 +2699,8 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
         if (z11 != z10) {
             this.O = z10;
             this.y.P(z10 ? 15 : 29);
-            ij0 ij0Var = this.y;
-            ij0Var.N(ij0Var.f - 1, false, true);
+            hj0 hj0Var = this.y;
+            hj0Var.N(hj0Var.f - 1, false, true);
             this.x.invalidate();
             org.telegram.ui.ActionBar.j6.D0().c(this.S);
             idVar.f(this.S);
@@ -2889,13 +2889,13 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
     }
 
     public final void q() {
-        u51[] u51VarArr;
+        t51[] t51VarArr;
         int i10 = !i(MediaController.getInstance().getPlaybackSpeed(this.V), 1.0f) ? org.telegram.ui.ActionBar.j6.Qh : org.telegram.ui.ActionBar.j6.x7;
-        org.telegram.ui.ActionBar.e6 e6Var = this.p0;
-        int v02 = org.telegram.ui.ActionBar.j6.v0(i10, e6Var);
+        org.telegram.ui.ActionBar.f6 f6Var = this.p0;
+        int v02 = org.telegram.ui.ActionBar.j6.v0(i10, f6Var);
         ed edVar = this.G;
         if (edVar != null) {
-            ((o6) edVar.c).r(v02);
+            ((n6) edVar.c).r(v02);
             Paint paint = (Paint) edVar.b;
             if (paint != null) {
                 paint.setColor(v02);
@@ -2907,11 +2907,11 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
         }
         ImageView imageView = this.b;
         if (imageView != null) {
-            imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.w7, e6Var), PorterDuff.Mode.MULTIPLY));
+            imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.w7, f6Var), PorterDuff.Mode.MULTIPLY));
         }
         ImageView imageView2 = this.E;
         if (imageView2 != null) {
-            imageView2.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.x7, e6Var), PorterDuff.Mode.MULTIPLY));
+            imageView2.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.x7, f6Var), PorterDuff.Mode.MULTIPLY));
         }
         if (this.e != null) {
             int i11 = 0;
@@ -2919,7 +2919,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
                 r10 r10Var = this.e;
                 TextView textView = i11 == 0 ? r10Var.getTextView() : r10Var.getNextTextView();
                 if (textView != null) {
-                    textView.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.x7, e6Var));
+                    textView.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.x7, f6Var));
                 }
                 i11++;
             }
@@ -2934,11 +2934,11 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
                     r10 r10Var3 = this.d;
                     TextView textView2 = i12 == 0 ? r10Var3.getTextView() : r10Var3.getNextTextView();
                     if (textView2 != null) {
-                        textView2.setTextColor(org.telegram.ui.ActionBar.j6.v0(intValue, e6Var));
+                        textView2.setTextColor(org.telegram.ui.ActionBar.j6.v0(intValue, f6Var));
                         CharSequence text = textView2.getText();
-                        if ((text instanceof Spanned) && (u51VarArr = (u51[]) ((Spanned) text).getSpans(0, text.length(), u51.class)) != null) {
-                            for (u51 u51Var : u51VarArr) {
-                                u51Var.b = org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.t7, e6Var);
+                        if ((text instanceof Spanned) && (t51VarArr = (t51[]) ((Spanned) text).getSpans(0, text.length(), t51.class)) != null) {
+                            for (t51 t51Var : t51VarArr) {
+                                t51Var.b = org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.t7, f6Var);
                             }
                         }
                     }
@@ -2964,15 +2964,15 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
                 this.H.d(playbackSpeed, z10);
                 return;
             }
-            org.telegram.ui.ActionBar.e6 e6Var = this.p0;
+            org.telegram.ui.ActionBar.f6 f6Var = this.p0;
             if (z11 || Math.abs(playbackSpeed - O0[i10]) >= 0.05f) {
                 org.telegram.ui.ActionBar.t0 t0Var = t0VarArr[i10];
                 int i11 = org.telegram.ui.ActionBar.j6.E8;
-                t0Var.a(org.telegram.ui.ActionBar.j6.v0(i11, e6Var), org.telegram.ui.ActionBar.j6.v0(i11, e6Var));
+                t0Var.a(org.telegram.ui.ActionBar.j6.v0(i11, f6Var), org.telegram.ui.ActionBar.j6.v0(i11, f6Var));
             } else {
                 org.telegram.ui.ActionBar.t0 t0Var2 = t0VarArr[i10];
                 int i12 = org.telegram.ui.ActionBar.j6.Qh;
-                t0Var2.a(org.telegram.ui.ActionBar.j6.v0(i12, e6Var), org.telegram.ui.ActionBar.j6.v0(i12, e6Var));
+                t0Var2.a(org.telegram.ui.ActionBar.j6.v0(i12, f6Var), org.telegram.ui.ActionBar.j6.v0(i12, f6Var));
             }
             i10++;
         }
@@ -3011,9 +3011,9 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
         if (i10 != 4) {
             this.g0 = false;
         }
-        k9 k9Var = this.a0;
-        if (k9Var != null) {
-            k9Var.setStyle(this.T);
+        j9 j9Var = this.a0;
+        if (j9Var != null) {
+            j9Var.setStyle(this.T);
             this.a0.setLayoutParams(w7.y5.e(108, getStyleHeight(), 51));
         }
         this.r.setLayoutParams(w7.y5.d(-1, getStyleHeight(), 51, 0.0f, 0.0f, 0.0f, 0.0f));
@@ -3021,10 +3021,10 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
         if (f7 > 0.0f && f7 != AndroidUtilities.dp2(getStyleHeight())) {
             setTopPadding(AndroidUtilities.dp2(getStyleHeight()));
         }
-        org.telegram.ui.ActionBar.e6 e6Var = this.p0;
+        org.telegram.ui.ActionBar.f6 f6Var = this.p0;
         if (i10 == 6) {
             this.v.setBackground(org.telegram.ui.ActionBar.j6.K0(false));
-            this.r.setBackground(new GradientDrawable(GradientDrawable.Orientation.TOP_BOTTOM, new int[]{org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.nk, e6Var), org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.ok, e6Var)}));
+            this.r.setBackground(new GradientDrawable(GradientDrawable.Orientation.TOP_BOTTOM, new int[]{org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.nk, f6Var), org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.ok, f6Var)}));
             this.r.setTag(null);
             this.e.setVisibility(8);
             this.L.setVisibility(8);
@@ -3041,7 +3041,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
                 TextView textView = i12 == 0 ? r10Var.getTextView() : r10Var.getNextTextView();
                 if (textView != null) {
                     textView.setGravity(19);
-                    textView.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.A7, e6Var));
+                    textView.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.A7, f6Var));
                     textView.setTypeface(AndroidUtilities.bold());
                     textView.setTextSize(1, 15.0f);
                 }
@@ -3060,7 +3060,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
                 TextView textView2 = i13 == 0 ? r10Var2.getTextView() : r10Var2.getNextTextView();
                 if (textView2 != null) {
                     textView2.setGravity(19);
-                    textView2.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.u7, e6Var));
+                    textView2.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.u7, f6Var));
                     textView2.setTypeface(Typeface.DEFAULT);
                     textView2.setTextSize(1, 15.0f);
                 }
@@ -3102,7 +3102,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
                 TextView textView3 = i14 == 0 ? r10Var3.getTextView() : r10Var3.getNextTextView();
                 if (textView3 != null) {
                     textView3.setGravity(19);
-                    textView3.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.u7, e6Var));
+                    textView3.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.u7, f6Var));
                     textView3.setTypeface(Typeface.DEFAULT);
                     textView3.setTextSize(1, 15.0f);
                 }
@@ -3145,7 +3145,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
                 TextView textView4 = i15 == 0 ? r10Var4.getTextView() : r10Var4.getNextTextView();
                 if (textView4 != null) {
                     textView4.setGravity(51);
-                    textView4.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.t7, e6Var));
+                    textView4.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.t7, f6Var));
                     textView4.setTypeface(AndroidUtilities.bold());
                     textView4.setTextSize(1, 15.0f);
                 }
@@ -3191,8 +3191,8 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
             boolean z10 = VoIPService.getSharedInstance() != null && VoIPService.getSharedInstance().isMicMute();
             this.O = z10;
             this.y.P(z10 ? 15 : 29);
-            ij0 ij0Var = this.y;
-            ij0Var.N(ij0Var.f - 1, false, true);
+            hj0 hj0Var = this.y;
+            hj0Var.N(hj0Var.f - 1, false, true);
             this.x.invalidate();
             this.r.setBackground(null);
             this.r.setBackgroundColor(0);
@@ -3214,7 +3214,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
                 TextView textView5 = i16 == 0 ? r10Var5.getTextView() : r10Var5.getNextTextView();
                 if (textView5 != null) {
                     textView5.setGravity(19);
-                    textView5.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.A7, e6Var));
+                    textView5.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.A7, f6Var));
                     textView5.setTypeface(AndroidUtilities.bold());
                     textView5.setTextSize(1, 14.0f);
                 }
@@ -3252,9 +3252,9 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
         if (imageView != null) {
             imageView.setTranslationX(f7);
         }
-        lj0 lj0Var = this.w;
-        if (lj0Var != null) {
-            lj0Var.setTranslationX(f7);
+        kj0 kj0Var = this.w;
+        if (kj0Var != null) {
+            kj0Var.setTranslationX(f7);
         }
         r10 r10Var = this.d;
         if (r10Var != null) {
@@ -3264,9 +3264,9 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
         if (r10Var2 != null) {
             r10Var2.setTranslationX(f7);
         }
-        k9 k9Var = this.a0;
-        if (k9Var != null) {
-            k9Var.setTranslationX(f7);
+        j9 j9Var = this.a0;
+        if (j9Var != null) {
+            j9Var.setTranslationX(f7);
         }
     }
 
@@ -3288,18 +3288,18 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    public FragmentContextView(Context context, org.telegram.ui.ActionBar.n2 n2Var, View view, boolean z10, org.telegram.ui.ActionBar.e6 e6Var) {
+    public FragmentContextView(Context context, org.telegram.ui.ActionBar.n2 n2Var, View view, boolean z10, org.telegram.ui.ActionBar.f6 f6Var) {
         super(context);
         this.a = new id();
         this.I = new org.telegram.ui.ActionBar.t0[6];
         this.P = -1;
         this.T = -1;
         this.W = true;
-        this.i0 = new o6(false, true, true, false);
+        this.i0 = new n6(false, true, true, false);
         this.l0 = new p10(this);
         this.m0 = UserConfig.selectedAccount;
         this.r0 = -1;
-        this.s0 = new org.telegram.ui.Cells.t6(this, 14);
+        this.s0 = new org.telegram.ui.Cells.u6(this, 14);
         this.t0 = new AnimationNotificationsLocker();
         this.u0 = new AnimationNotificationsLocker(new int[]{NotificationCenter.messagesDidLoad});
         this.C0 = new NotificationCenter.ObserversGroup[4];
@@ -3307,7 +3307,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
         this.K0 = 0;
         this.M0 = new le.l(new j10(this), qr.h, 450L);
         this.N0 = 0;
-        this.p0 = e6Var;
+        this.p0 = f6Var;
         this.h = n2Var;
         if (n2Var instanceof bh) {
             this.n = (bh) n2Var;

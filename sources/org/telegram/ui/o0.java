@@ -3,7 +3,7 @@ package org.telegram.ui;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class o0 extends w7.i0 {
     public final /* synthetic */ h4 a;
@@ -22,7 +22,7 @@ public final class o0 extends w7.i0 {
     @Override // w7.i0
     public final void b() {
         if (AndroidUtilities.shouldShowClipboardToast()) {
-            org.telegram.messenger.wh.n(R.string.TextCopied, new org.telegram.ui.Components.xc(this.a.g0, null));
+            org.telegram.messenger.rk.o(R.string.TextCopied, new org.telegram.ui.Components.xc(this.a.g0, null));
         }
     }
 }

@@ -12,9 +12,9 @@ import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.util.SparseArray;
 import android.util.StateSet;
-import v7.r8;
+import v7.s8;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class b extends Drawable.ConstantState {
     public boolean A;
@@ -213,7 +213,7 @@ public final class b extends Drawable.ConstantState {
                 Drawable[] drawableArr = this.g;
                 Drawable newDrawable = constantState.newDrawable(this.b);
                 if (Build.VERSION.SDK_INT >= 23) {
-                    r8.b(this.x, newDrawable);
+                    s8.b(this.x, newDrawable);
                 }
                 Drawable mutate = newDrawable.mutate();
                 mutate.setCallback(this.a);
@@ -253,7 +253,7 @@ public final class b extends Drawable.ConstantState {
         }
         Drawable newDrawable = ((Drawable.ConstantState) this.f.valueAt(indexOfKey)).newDrawable(this.b);
         if (Build.VERSION.SDK_INT >= 23) {
-            r8.b(this.x, newDrawable);
+            s8.b(this.x, newDrawable);
         }
         Drawable mutate = newDrawable.mutate();
         mutate.setCallback(this.a);

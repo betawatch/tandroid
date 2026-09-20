@@ -26,7 +26,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
 import k2.v;
-import ki.c0;
+import ki.l;
 import org.json.JSONObject;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
@@ -34,7 +34,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.ui.Components.f10;
 import org.telegram.ui.Components.g10;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class k implements f10 {
     public static final Object v = new Object();
@@ -62,11 +62,11 @@ public final class k implements f10 {
     public final HashMap m = new HashMap();
     public final ArrayDeque n = new ArrayDeque();
 
-    public k(lf.i iVar, String str, byte[] bArr) {
-        this.b = (String) iVar.d;
-        String str2 = (String) iVar.b;
+    public k(lf.h hVar, String str, byte[] bArr) {
+        this.b = (String) hVar.d;
+        String str2 = (String) hVar.b;
         this.c = str2;
-        String str3 = (String) iVar.c;
+        String str3 = (String) hVar.c;
         String p5 = str3.isEmpty() ? "/" : a4.a.p("/", str3, "/");
         this.d = p5;
         this.e = str;
@@ -149,7 +149,7 @@ public final class k implements f10 {
                                 jVar.e = true;
                                 kVar.k(1, andUpdate, null);
                             }
-                            kVar.j.execute(new c0(10, kVar, jVar));
+                            kVar.j.execute(new l(12, kVar, jVar));
                         }
                         try {
                             accept.close();
@@ -215,7 +215,7 @@ public final class k implements f10 {
         }
     }
 
-    public static lf.i i(String str) {
+    public static lf.h i(String str) {
         if (str == null) {
             return null;
         }
@@ -238,7 +238,7 @@ public final class k implements f10 {
                 }
             }
         }
-        return new lf.i(j3, substring);
+        return new lf.h(j3, substring);
     }
 
     public static String j(String str) {
@@ -265,7 +265,7 @@ public final class k implements f10 {
     }
 
     public static int l(String str, String str2) {
-        lf.i i10 = i(str);
+        lf.h i10 = i(str);
         byte[] d = d(str2);
         if (i10 == null || d == null || !h()) {
             return 0;

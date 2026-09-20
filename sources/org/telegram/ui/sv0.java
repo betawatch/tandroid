@@ -7,7 +7,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class sv0 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ aw0 a;
@@ -100,7 +100,7 @@ public final class sv0 extends org.telegram.ui.ActionBar.j {
                     }
                 }
                 if (znVar.c()) {
-                    org.telegram.ui.Components.e5.L(znVar.getParentActivity(), znVar.a(), new rv0(0, this, tL_messageMediaToDo));
+                    org.telegram.ui.Components.d5.L(znVar.getParentActivity(), znVar.a(), new rv0(0, this, tL_messageMediaToDo));
                     return;
                 } else {
                     aw0Var.e0.a(tL_messageMediaToDo);
@@ -122,10 +122,10 @@ public final class sv0 extends org.telegram.ui.ActionBar.j {
                         s4.c1 L = aw0Var.c.L(i23);
                         if (L != null) {
                             View view = L.a;
-                            if (view instanceof org.telegram.ui.Cells.d6) {
-                                org.telegram.ui.Cells.d6 d6Var = (org.telegram.ui.Cells.d6) view;
-                                if (d6Var.getTop() > AndroidUtilities.dp(40.0f)) {
-                                    aw0Var.h.f(d6Var.getCheckBox(), true);
+                            if (view instanceof org.telegram.ui.Cells.e6) {
+                                org.telegram.ui.Cells.e6 e6Var = (org.telegram.ui.Cells.e6) view;
+                                if (e6Var.getTop() > AndroidUtilities.dp(40.0f)) {
+                                    aw0Var.h.f(e6Var.getCheckBox(), true);
                                     return;
                                 }
                             } else {
@@ -202,7 +202,7 @@ public final class sv0 extends org.telegram.ui.ActionBar.j {
                 }
             }
             if (znVar.c()) {
-                org.telegram.ui.Components.e5.L(znVar.getParentActivity(), znVar.a(), new rv0(this, tL_messageMediaPoll, arrayList));
+                org.telegram.ui.Components.d5.L(znVar.getParentActivity(), znVar.a(), new rv0(this, tL_messageMediaPoll, arrayList));
             } else {
                 aw0Var.e0.a(tL_messageMediaPoll);
                 aw0Var.finishFragment();

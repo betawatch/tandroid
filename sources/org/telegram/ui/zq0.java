@@ -7,19 +7,19 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class zq0 implements org.telegram.ui.Cells.s5 {
+public final class zq0 implements org.telegram.ui.Cells.t5 {
     public final /* synthetic */ ar0 a;
 
     public zq0(ar0 ar0Var) {
         this.a = ar0Var;
     }
 
-    @Override // org.telegram.ui.Cells.s5
-    public final void a(org.telegram.ui.Cells.t5 t5Var) {
+    @Override // org.telegram.ui.Cells.t5
+    public final void a(org.telegram.ui.Cells.u5 u5Var) {
         boolean z10;
-        int intValue = ((Integer) t5Var.getTag()).intValue();
+        int intValue = ((Integer) u5Var.getTag()).intValue();
         cr0 cr0Var = this.a.d;
         MediaController.AlbumEntry albumEntry = cr0Var.J;
         int i10 = -1;
@@ -34,7 +34,7 @@ public final class zq0 implements org.telegram.ui.Cells.s5 {
             if (cr0Var.e && !containsKey) {
                 i10 = cr0Var.c.size();
             }
-            t5Var.b(i10, z10, true);
+            u5Var.b(i10, z10, true);
             cr0Var.Y(intValue, photoEntry);
         } else {
             AndroidUtilities.hideKeyboard(cr0Var.getParentActivity().getCurrentFocus());
@@ -48,7 +48,7 @@ public final class zq0 implements org.telegram.ui.Cells.s5 {
             if (cr0Var.e && !containsKey2) {
                 i10 = cr0Var.c.size();
             }
-            t5Var.b(i10, z10, true);
+            u5Var.b(i10, z10, true);
             cr0Var.Y(intValue, searchImage);
         }
         cr0Var.i0(z10 ? 1 : 2);
@@ -62,7 +62,7 @@ public final class zq0 implements org.telegram.ui.Cells.s5 {
         if (!cr0Var.I || (znVar = cr0Var.U) == null || (chat = znVar.e) == null || ChatObject.hasAdminRights(chat) || !chat.slowmode_enabled || cr0Var.W == 2) {
             return;
         }
-        org.telegram.ui.Components.e5.u0(cr0Var, LocaleController.getString(R.string.Slowmode), LocaleController.getString(R.string.SlowmodeSelectSendError), null);
+        org.telegram.ui.Components.d5.u0(cr0Var, LocaleController.getString(R.string.Slowmode), LocaleController.getString(R.string.SlowmodeSelectSendError), null);
         if (cr0Var.W == 1) {
             cr0Var.W = 2;
         }

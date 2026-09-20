@@ -12,9 +12,9 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.ui.v10;
 import org.telegram.ui.x10;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class v10 extends org.telegram.ui.Components.vl0 {
+public final class v10 extends org.telegram.ui.Components.ul0 {
     public final Context c;
     public final /* synthetic */ x10 d;
 
@@ -23,7 +23,7 @@ public final class v10 extends org.telegram.ui.Components.vl0 {
         this.c = context;
     }
 
-    @Override // org.telegram.ui.Components.vl0
+    @Override // org.telegram.ui.Components.ul0
     public final boolean D(s4.c1 c1Var) {
         return false;
     }
@@ -76,30 +76,30 @@ public final class v10 extends org.telegram.ui.Components.vl0 {
             s2Var.V(x10Var.o0.c(p10Var), z10);
             return;
         }
-        org.telegram.ui.Cells.u7 u7Var = (org.telegram.ui.Cells.u7) view;
-        u7Var.setItemsCount(x10Var.s);
-        u7Var.setIsFirst(i10 == 0);
+        org.telegram.ui.Cells.v7 v7Var = (org.telegram.ui.Cells.v7) view;
+        v7Var.setItemsCount(x10Var.s);
+        v7Var.setIsFirst(i10 == 0);
         int i13 = 0;
         while (true) {
             int i14 = x10Var.s;
             if (i13 >= i14) {
-                u7Var.requestLayout();
+                v7Var.requestLayout();
                 return;
             }
             int i15 = (i14 * i10) + i13;
             if (i15 < arrayList.size()) {
                 MessageObject messageObject2 = (MessageObject) arrayList.get(i15);
-                u7Var.c(i13, arrayList.indexOf(messageObject2), messageObject2);
+                v7Var.c(i13, arrayList.indexOf(messageObject2), messageObject2);
                 if (x10Var.o0.g()) {
                     int id3 = messageObject2.getId();
                     p10Var.a = messageObject2.getDialogId();
                     p10Var.b = id3;
-                    u7Var.b(i13, x10Var.o0.c(p10Var));
+                    v7Var.b(i13, x10Var.o0.c(p10Var));
                 } else {
-                    u7Var.b(i13, false);
+                    v7Var.b(i13, false);
                 }
             } else {
-                u7Var.c(i13, i15, null);
+                v7Var.c(i13, i15, null);
             }
             i13++;
         }
@@ -115,47 +115,47 @@ public final class v10 extends org.telegram.ui.Components.vl0 {
         ?? r62;
         Context context = this.c;
         if (i10 == 0) {
-            final org.telegram.ui.Cells.u7 u7Var = new org.telegram.ui.Cells.u7(context);
+            final org.telegram.ui.Cells.v7 v7Var = new org.telegram.ui.Cells.v7(context);
             Paint paint = new Paint();
-            u7Var.n = paint;
-            u7Var.s = UserConfig.selectedAccount;
-            u7Var.r = 1;
+            v7Var.n = paint;
+            v7Var.s = UserConfig.selectedAccount;
+            v7Var.r = 1;
             paint.setColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Lh, false));
-            u7Var.b = new MessageObject[6];
-            u7Var.a = new org.telegram.ui.Cells.q7[6];
-            u7Var.c = new int[6];
+            v7Var.b = new MessageObject[6];
+            v7Var.a = new org.telegram.ui.Cells.r7[6];
+            v7Var.c = new int[6];
             for (int i11 = 0; i11 < 6; i11++) {
-                u7Var.a[i11] = new org.telegram.ui.Cells.q7(u7Var, context);
-                u7Var.addView(u7Var.a[i11]);
-                u7Var.a[i11].setVisibility(4);
-                u7Var.a[i11].setTag(Integer.valueOf(i11));
-                u7Var.a[i11].setOnClickListener(new org.telegram.ui.Cells.a(u7Var, 10));
-                u7Var.a[i11].setOnLongClickListener(new View.OnLongClickListener() { // from class: org.telegram.ui.Cells.p7
+                v7Var.a[i11] = new org.telegram.ui.Cells.r7(v7Var, context);
+                v7Var.addView(v7Var.a[i11]);
+                v7Var.a[i11].setVisibility(4);
+                v7Var.a[i11].setTag(Integer.valueOf(i11));
+                v7Var.a[i11].setOnClickListener(new org.telegram.ui.Cells.a(v7Var, 10));
+                v7Var.a[i11].setOnLongClickListener(new View.OnLongClickListener() { // from class: org.telegram.ui.Cells.q7
                     @Override // android.view.View.OnLongClickListener
                     public final boolean onLongClick(View view) {
-                        u7 u7Var2 = u7.this;
-                        if (u7Var2.d == null) {
+                        v7 v7Var2 = v7.this;
+                        if (v7Var2.d == null) {
                             return false;
                         }
                         int intValue = ((Integer) view.getTag()).intValue();
-                        r7 r7Var = u7Var2.d;
-                        int i12 = u7Var2.c[intValue];
-                        MessageObject messageObject = u7Var2.b[intValue];
-                        org.telegram.ui.g gVar = (org.telegram.ui.g) r7Var;
+                        s7 s7Var = v7Var2.d;
+                        int i12 = v7Var2.c[intValue];
+                        MessageObject messageObject = v7Var2.b[intValue];
+                        org.telegram.ui.g gVar = (org.telegram.ui.g) s7Var;
                         x10 x10Var = ((v10) gVar.b).d;
                         if (!x10Var.o0.g()) {
-                            x10.a(x10Var, messageObject, u7Var2, intValue);
+                            x10.a(x10Var, messageObject, v7Var2, intValue);
                             return true;
                         }
                         x10 x10Var2 = ((v10) gVar.b).d;
                         SpannableStringBuilder[] spannableStringBuilderArr = x10.s0;
-                        x10Var2.f(i12, u7Var2, messageObject, intValue);
+                        x10Var2.f(i12, v7Var2, messageObject, intValue);
                         return true;
                     }
                 });
             }
-            u7Var.setDelegate(new g(this, 17));
-            frameLayout = u7Var;
+            v7Var.setDelegate(new g(this, 17));
+            frameLayout = v7Var;
         } else {
             if (i10 != 2) {
                 r62 = new l10(this, context, 1);
@@ -163,9 +163,9 @@ public final class v10 extends org.telegram.ui.Components.vl0 {
                 r62.setViewType(2);
                 return com.google.android.gms.internal.vision.e2.k(r62, r62, -1, -2);
             }
-            FrameLayout v3Var = new org.telegram.ui.Cells.v3(context, null);
-            v3Var.setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.e7, false) & (-218103809));
-            frameLayout = v3Var;
+            FrameLayout w3Var = new org.telegram.ui.Cells.w3(context, null);
+            w3Var.setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.e7, false) & (-218103809));
+            frameLayout = w3Var;
         }
         r62 = frameLayout;
         return com.google.android.gms.internal.vision.e2.k(r62, r62, -1, -2);

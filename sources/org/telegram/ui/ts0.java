@@ -3,9 +3,9 @@ package org.telegram.ui;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class ts0 implements org.telegram.ui.ActionBar.s0, org.telegram.ui.Components.k71, org.telegram.ui.Components.v71, org.telegram.ui.Components.cf0 {
+public final class ts0 implements org.telegram.ui.ActionBar.s0, org.telegram.ui.Components.j71, org.telegram.ui.Components.u71, org.telegram.ui.Components.bf0 {
     public final /* synthetic */ PhotoViewer a;
 
     public /* synthetic */ ts0(PhotoViewer photoViewer) {
@@ -19,11 +19,11 @@ public final class ts0 implements org.telegram.ui.ActionBar.s0, org.telegram.ui.
             photoViewer.V0.setClickable(z11);
             photoViewer.V0.setVisibility(0);
             photoViewer.V0.clearAnimation();
-            photoViewer.V0.animate().alpha(!z10 ? 1.0f : 0.0f).setInterpolator(org.telegram.ui.Components.qr.f).setDuration(150L).withEndAction(new org.telegram.ui.Components.es0(7, photoViewer, z11));
+            photoViewer.V0.animate().alpha(!z10 ? 1.0f : 0.0f).setInterpolator(org.telegram.ui.Components.qr.f).setDuration(150L).withEndAction(new org.telegram.ui.Components.ds0(7, photoViewer, z11));
         }
     }
 
-    @Override // org.telegram.ui.Components.v71
+    @Override // org.telegram.ui.Components.u71
     public void b(float f7) {
         iu0 iu0Var;
         PhotoViewer photoViewer = this.a;
@@ -49,14 +49,14 @@ public final class ts0 implements org.telegram.ui.ActionBar.s0, org.telegram.ui.
         }
     }
 
-    @Override // org.telegram.ui.Components.v71
+    @Override // org.telegram.ui.Components.u71
     public void d(float f7) {
         mt0 mt0Var;
         mt0 mt0Var2;
         PhotoViewer photoViewer = this.a;
         iu0 iu0Var = photoViewer.f0;
         if (iu0Var != null && iu0Var.x && (mt0Var2 = photoViewer.s3) != null) {
-            int i10 = photoViewer.q3.h - org.telegram.ui.Components.w71.S;
+            int i10 = photoViewer.q3.h - org.telegram.ui.Components.v71.S;
             mt0Var2.N = iu0Var;
             if (mt0Var2.W != 0) {
                 mt0Var2.W = 0L;
@@ -85,7 +85,7 @@ public final class ts0 implements org.telegram.ui.ActionBar.s0, org.telegram.ui.
                 mt0Var2.Q.setImage(c10, null, null, null, 0L);
             }
         } else if (photoViewer.F2 != null && (mt0Var = photoViewer.s3) != null) {
-            mt0Var.e(photoViewer.T4, f7, photoViewer.q3.h - org.telegram.ui.Components.w71.S);
+            mt0Var.e(photoViewer.T4, f7, photoViewer.q3.h - org.telegram.ui.Components.v71.S);
         }
         this.a.a3(true);
         PhotoViewer.X(this.a);
@@ -101,11 +101,11 @@ public final class ts0 implements org.telegram.ui.ActionBar.s0, org.telegram.ui.
 
     public void f() {
         PhotoViewer photoViewer = this.a;
-        org.telegram.ui.Components.u71 u71Var = photoViewer.F2;
-        if (u71Var == null) {
+        org.telegram.ui.Components.t71 t71Var = photoViewer.F2;
+        if (t71Var == null) {
             return;
         }
-        u71Var.K((long) (u71Var.p() * photoViewer.w8));
+        t71Var.K((long) (t71Var.p() * photoViewer.w8));
         photoViewer.F2.B();
         photoViewer.S7.setProgress(photoViewer.w8);
         photoViewer.u0();
@@ -114,7 +114,7 @@ public final class ts0 implements org.telegram.ui.ActionBar.s0, org.telegram.ui.
         AndroidUtilities.runOnUIThread(sl0Var, 860L);
     }
 
-    @Override // org.telegram.ui.Components.k71
+    @Override // org.telegram.ui.Components.j71
     public void invalidate() {
         this.a.e0.invalidate();
     }

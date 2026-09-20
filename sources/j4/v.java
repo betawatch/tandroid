@@ -7,10 +7,10 @@ import c3.h0;
 import e9.a1;
 import e9.i0;
 import org.telegram.messenger.OneUIUtilities;
-import v7.p7;
-import v7.s8;
+import v7.q7;
+import v7.t8;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class v implements i {
     public String e;
@@ -46,7 +46,7 @@ public final class v implements i {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void a(e2.v vVar) {
+    public final void b(e2.v vVar) {
         int i10;
         int i11;
         int i12;
@@ -80,11 +80,11 @@ public final class v implements i {
                         a4.h hVar = this.b;
                         hVar.o(i20, bArr2);
                         hVar.f();
-                        int a10 = s8.a(hVar, 3, 8, 8);
+                        int a10 = t8.a(hVar, 3, 8, 8);
                         f9Var.a = a10;
                         if (a10 != -1) {
                             e2.d.b(Math.max(Math.max(2, 8), 32) <= 63);
-                            p7.a(p7.a(3L, 255L), 4294967296L);
+                            q7.a(q7.a(3L, 255L), 4294967296L);
                             if (hVar.b() >= 2) {
                                 long k10 = hVar.k(2);
                                 if (k10 == 3) {
@@ -116,7 +116,7 @@ public final class v implements i {
                                             throw s0.a(null, "AudioTruncation packet with invalid packet label 0");
                                         }
                                     }
-                                    int a11 = s8.a(hVar, 11, 24, 24);
+                                    int a11 = t8.a(hVar, 11, 24, 24);
                                     f9Var.c = a11;
                                     if (a11 != -1) {
                                         z10 = true;
@@ -296,7 +296,7 @@ public final class v implements i {
                                 c10 = 1;
                             }
                             hVar2.t(2);
-                            s8.c(hVar2);
+                            t8.c(hVar2);
                             int i30 = hVar2.i(5);
                             int i31 = 0;
                             int i32 = 0;
@@ -304,13 +304,13 @@ public final class v implements i {
                                 int i33 = 16;
                                 if (i31 < i30 + 1) {
                                     int i34 = hVar2.i(3);
-                                    i32 = s8.a(hVar2, 5, 8, 16) + 1 + i32;
+                                    i32 = t8.a(hVar2, 5, 8, 16) + 1 + i32;
                                     if ((i34 == 0 || i34 == 2) && hVar2.h()) {
-                                        s8.c(hVar2);
+                                        t8.c(hVar2);
                                     }
                                     i31++;
                                 } else {
-                                    int a12 = s8.a(hVar2, 4, 8, 16) + 1;
+                                    int a12 = t8.a(hVar2, 4, 8, 16) + 1;
                                     hVar2.s();
                                     int i35 = 0;
                                     while (true) {
@@ -323,7 +323,7 @@ public final class v implements i {
                                                     hVar2.t(13);
                                                 }
                                                 if (c10 > 0) {
-                                                    s8.b(hVar2);
+                                                    t8.b(hVar2);
                                                 }
                                             } else if (i36 == 1) {
                                                 hVar2.t(i19);
@@ -335,7 +335,7 @@ public final class v implements i {
                                                     hVar2.s();
                                                 }
                                                 if (c10 > 0) {
-                                                    s8.b(hVar2);
+                                                    t8.b(hVar2);
                                                     i15 = hVar2.i(2);
                                                 } else {
                                                     i15 = 0;
@@ -366,10 +366,10 @@ public final class v implements i {
                                                     hVar2.s();
                                                 }
                                             } else if (i36 == i19) {
-                                                s8.a(hVar2, 4, i18, i33);
-                                                int a13 = s8.a(hVar2, 4, i18, i33);
+                                                t8.a(hVar2, 4, i18, i33);
+                                                int a13 = t8.a(hVar2, 4, i18, i33);
                                                 if (hVar2.h()) {
-                                                    s8.a(hVar2, i18, i33, 0);
+                                                    t8.a(hVar2, i18, i33, 0);
                                                 }
                                                 hVar2.s();
                                                 if (a13 > 0) {
@@ -383,12 +383,12 @@ public final class v implements i {
                                         } else {
                                             if (hVar2.h()) {
                                                 int i39 = 8;
-                                                int a14 = s8.a(hVar2, 2, 4, 8) + 1;
+                                                int a14 = t8.a(hVar2, 2, 4, 8) + 1;
                                                 int i40 = 0;
                                                 bArr = null;
                                                 while (i40 < a14) {
-                                                    int a15 = s8.a(hVar2, 4, i39, 16);
-                                                    int a16 = s8.a(hVar2, 4, i39, 16);
+                                                    int a15 = t8.a(hVar2, 4, i39, 16);
+                                                    int a16 = t8.a(hVar2, 4, i39, 16);
                                                     if (a15 == 7) {
                                                         int i41 = hVar2.i(4) + 1;
                                                         hVar2.t(4);
@@ -536,7 +536,7 @@ public final class v implements i {
     }
 
     @Override // j4.i
-    public final void c() {
+    public final void d() {
         this.d = 0;
         this.l = 0;
         this.a.G(2);
@@ -555,7 +555,7 @@ public final class v implements i {
     }
 
     @Override // j4.i
-    public final void d(c3.q qVar, f0 f0Var) {
+    public final void e(c3.q qVar, f0 f0Var) {
         f0Var.a();
         f0Var.b();
         this.e = f0Var.e;
@@ -564,7 +564,7 @@ public final class v implements i {
     }
 
     @Override // j4.i
-    public final void f(int i10, long j3) {
+    public final void g(int i10, long j3) {
         this.k = i10;
         if (!this.j && (this.o != 0 || !this.m)) {
             this.i = true;
@@ -579,6 +579,6 @@ public final class v implements i {
     }
 
     @Override // j4.i
-    public final void e(boolean z10) {
+    public final void f(boolean z10) {
     }
 }

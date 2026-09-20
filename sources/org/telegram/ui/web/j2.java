@@ -24,9 +24,9 @@ import org.telegram.messenger.Timer;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.nj0;
+import org.telegram.ui.pj0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class j2 {
     public static final HashMap e = new HashMap();
@@ -118,7 +118,7 @@ public final class j2 {
         return null;
     }
 
-    public static u0 e(z0 z0Var, Utilities.Callback callback) {
+    public static r0 e(z0 z0Var, Utilities.Callback callback) {
         if (z0Var == null) {
             callback.run(null);
             return null;
@@ -130,7 +130,7 @@ public final class j2 {
         b2 b2Var = new b2(Timer.start(create, "getHTML"), zArr, create, j2Var, callback, 0);
         System.currentTimeMillis();
         z0Var.evaluateJavascript(AndroidUtilities.readRes(R.raw.open_collapsed).replace("$OPEN$", "true"), new c2(j2Var, z0Var, new File(AndroidUtilities.getCacheDir(), "archive.mht"), b2Var, 0));
-        return new u0(zArr, 5);
+        return new r0(zArr, 6);
     }
 
     public static boolean f(JSONArray jSONArray) {
@@ -155,7 +155,7 @@ public final class j2 {
 
     public static void g(i2 i2Var, ImageReceiver imageReceiver, Runnable runnable) {
         j2 j2Var;
-        l1 l1Var;
+        m1 m1Var;
         Bitmap decodeStream;
         if (i2Var == null || (j2Var = i2Var.a) == null) {
             return;
@@ -164,17 +164,17 @@ public final class j2 {
         try {
             if (j2Var.b != null) {
                 Iterator it = i2Var.c.iterator();
-                l1Var = null;
+                m1Var = null;
                 while (it.hasNext()) {
-                    l1Var = (l1) ((HashMap) j2Var.b.c).get((String) it.next());
-                    if (l1Var != null) {
+                    m1Var = (m1) ((HashMap) j2Var.b.c).get((String) it.next());
+                    if (m1Var != null) {
                         break;
                     }
                 }
             } else {
-                l1Var = null;
+                m1Var = null;
             }
-            if (l1Var == null) {
+            if (m1Var == null) {
                 if (hashMap.containsKey(i2Var.b)) {
                     imageReceiver.setImageBitmap((Bitmap) hashMap.get(i2Var.b));
                     return;
@@ -185,7 +185,7 @@ public final class j2 {
                 ArrayList arrayList = (ArrayList) f.get(i2Var.b);
                 if (arrayList == null) {
                     f.put(i2Var.b, new ArrayList());
-                    new i1(new nj0(12, j2Var, i2Var)).execute(i2Var.b);
+                    new j1(new pj0(12, j2Var, i2Var)).execute(i2Var.b);
                     return;
                 }
                 for (int i10 = 0; i10 < arrayList.size(); i10++) {
@@ -196,17 +196,17 @@ public final class j2 {
                 arrayList.add(new Pair(imageReceiver, runnable));
                 return;
             }
-            m1 m1Var = (m1) l1Var.a.get("content-type");
-            if ((m1Var == null ? null : m1Var.a).contains("svg")) {
+            n1 n1Var = (n1) m1Var.a.get("content-type");
+            if ((n1Var == null ? null : n1Var.a).contains("svg")) {
                 if (i2Var.d > 0 && i2Var.e > 0) {
-                    decodeStream = SvgHelper.getBitmap((InputStream) l1Var.a(), AndroidUtilities.dp(i2Var.d), AndroidUtilities.dp(i2Var.e), false);
+                    decodeStream = SvgHelper.getBitmap((InputStream) m1Var.a(), AndroidUtilities.dp(i2Var.d), AndroidUtilities.dp(i2Var.e), false);
                 }
                 return;
             }
             if (i2Var.d <= 0 || i2Var.e <= 0) {
                 BitmapFactory.Options options = new BitmapFactory.Options();
                 options.inJustDecodeBounds = true;
-                BitmapFactory.decodeStream(l1Var.a(), null, options);
+                BitmapFactory.decodeStream(m1Var.a(), null, options);
                 int i11 = i2Var.d;
                 if (i11 == 0 && i2Var.e == 0) {
                     i2Var.d = options.outWidth;
@@ -218,7 +218,7 @@ public final class j2 {
                 }
                 runnable.run();
             }
-            decodeStream = BitmapFactory.decodeStream(l1Var.a());
+            decodeStream = BitmapFactory.decodeStream(m1Var.a());
             imageReceiver.setImageBitmap(decodeStream);
         } catch (Exception e7) {
             FileLog.e(e7);

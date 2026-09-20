@@ -1,27 +1,43 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
+import android.view.MotionEvent;
 import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class fp0 extends s4.s0 {
+public final class fp0 extends FrameLayout {
     public final /* synthetic */ ef a;
 
-    public fp0(ef efVar) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public fp0(ef efVar, Context context) {
+        super(context);
         this.a = efVar;
     }
 
-    @Override // s4.s0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
         ef efVar = this.a;
-        View view = efVar.u;
-        boolean z10 = efVar.w.I0() != 0;
-        Boolean bool = efVar.x;
-        if (bool == null || z10 != bool.booleanValue()) {
-            view.animate().cancel();
-            view.animate().alpha(z10 ? 1.0f : 0.0f).setDuration(150L).start();
-            efVar.x = Boolean.valueOf(z10);
+        View contentView = efVar.getContentView();
+        int[] iArr = new int[2];
+        contentView.getLocationInWindow(iArr);
+        iArr[0] = iArr[0] + efVar.E;
+        iArr[1] = iArr[1] + efVar.F;
+        getLocationInWindow(new int[2]);
+        if (motionEvent.getAction() != 0 || motionEvent.getX() > iArr[0]) {
+            if (motionEvent.getX() < contentView.getWidth() + iArr[0] && motionEvent.getY() > iArr[1]) {
+                if (motionEvent.getY() < contentView.getHeight() + iArr[1]) {
+                    motionEvent.offsetLocation(r2[0] - iArr[0], (AndroidUtilities.statusBarHeight + r2[1]) - iArr[1]);
+                    return contentView.dispatchTouchEvent(motionEvent);
+                }
+            }
         }
+        if (!efVar.A && !efVar.D) {
+            efVar.D = true;
+            efVar.l(new o1.k[0]);
+        }
+        return true;
     }
 }

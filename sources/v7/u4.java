@@ -1,12 +1,12 @@
 package v7;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class u4 implements ia.d {
     public static final u4 a = new u4();
 
     static {
-        t8.b.t(t8.b.l(h.class, t8.b.p(2, t8.b.l(h.class, new e(1)))));
+        j0.q(org.telegram.ui.Cells.c1.l(h.class, new e(1)));
     }
 
     @Override // ia.a

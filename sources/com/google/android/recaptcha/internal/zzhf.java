@@ -4,9 +4,9 @@ import id.c;
 import jd.a;
 import org.telegram.tgnet.TLObject;
 import rd.p;
-import v7.t7;
+import v7.u7;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class zzhf {
     private final p zza;
@@ -38,7 +38,7 @@ public final class zzhf {
                 a aVar = a.a;
                 i10 = zzheVar.zzc;
                 if (i10 != 0) {
-                    t7.b(obj);
+                    u7.b(obj);
                     zzgr zzgrVar2 = new zzgr(zzhkVar, this.zzc, this.zzb);
                     try {
                         p pVar = this.zza;
@@ -61,7 +61,7 @@ public final class zzhf {
                     }
                     zzgrVar = zzheVar.zzd;
                     try {
-                        t7.b(obj);
+                        u7.b(obj);
                     } catch (zzcg e10) {
                         e = e10;
                         zzgrVar.zzc(e);

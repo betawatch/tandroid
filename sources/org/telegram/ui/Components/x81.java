@@ -23,10 +23,10 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public class x81 extends FrameLayout {
-    public static final vr0 T = new vr0(1);
+    public static final ur0 T = new ur0(1);
     public float E;
     public boolean F;
     public final int G;
@@ -42,7 +42,7 @@ public class x81 extends FrameLayout {
     public final ArrayList Q;
     public ValueAnimator R;
     public float S;
-    public final org.telegram.ui.ActionBar.e6 a;
+    public final org.telegram.ui.ActionBar.f6 a;
     public int b;
     public float c;
     public int d;
@@ -57,7 +57,7 @@ public class x81 extends FrameLayout {
     public boolean x;
     public boolean y;
 
-    public x81(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
+    public x81(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
         super(context);
         this.c = 1.0f;
         this.h = new SparseArray();
@@ -66,7 +66,7 @@ public class x81 extends FrameLayout {
         this.O = new Rect();
         this.P = true;
         this.Q = new ArrayList();
-        this.a = e6Var;
+        this.a = f6Var;
         this.K = AndroidUtilities.getPixelsInCM(0.3f, true);
         this.G = ViewConfiguration.get(context).getScaledMaximumFlingVelocity();
         this.f = new int[2];
@@ -74,15 +74,15 @@ public class x81 extends FrameLayout {
         setClipChildren(true);
     }
 
-    public static wl0 p(View view) {
+    public static vl0 p(View view) {
         if (!(view instanceof ViewGroup)) {
             return null;
         }
         ViewGroup viewGroup = (ViewGroup) view;
         for (int i10 = 0; i10 < viewGroup.getChildCount(); i10++) {
             View childAt = viewGroup.getChildAt(i10);
-            if (childAt instanceof wl0) {
-                return (wl0) childAt;
+            if (childAt instanceof vl0) {
+                return (vl0) childAt;
             }
             if (childAt instanceof ViewGroup) {
                 p(childAt);
@@ -495,7 +495,7 @@ public class x81 extends FrameLayout {
 
     public final ValueAnimator I(View view, float f7) {
         ValueAnimator ofFloat = ValueAnimator.ofFloat(view.getTranslationX(), f7);
-        ofFloat.addUpdateListener(new ox0(this, view, 1));
+        ofFloat.addUpdateListener(new nx0(this, view, 1));
         ofFloat.addListener(new n81(this, view, f7));
         return ofFloat;
     }

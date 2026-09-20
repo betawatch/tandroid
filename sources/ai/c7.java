@@ -3,9 +3,9 @@ package ai;
 import android.content.Context;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
-public final class c7 extends org.telegram.ui.Cells.o6 {
+public final class c7 extends org.telegram.ui.Cells.p6 {
     public final /* synthetic */ e7 K;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -14,7 +14,7 @@ public final class c7 extends org.telegram.ui.Cells.o6 {
         this.K = e7Var;
     }
 
-    @Override // org.telegram.ui.Cells.o6
+    @Override // org.telegram.ui.Cells.p6
     public final void b(long j3) {
         org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
         if (R == null) {

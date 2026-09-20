@@ -8,9 +8,9 @@ import android.graphics.Path;
 import android.graphics.RectF;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class jl extends org.telegram.ui.Components.w9 {
+public final class jl extends org.telegram.ui.Components.v9 {
     public final /* synthetic */ int G = 0;
     public Object H;
     public Object I;
@@ -48,7 +48,7 @@ public final class jl extends org.telegram.ui.Components.w9 {
         }
     }
 
-    @Override // org.telegram.ui.Components.w9, android.view.View
+    @Override // org.telegram.ui.Components.v9, android.view.View
     public void onDraw(Canvas canvas) {
         switch (this.G) {
             case 0:
@@ -91,9 +91,9 @@ public final class jl extends org.telegram.ui.Components.w9 {
             case 2:
                 org.telegram.ui.Components.voip.h hVar2 = (org.telegram.ui.Components.voip.h) this.I;
                 super.onDraw(canvas);
-                org.telegram.ui.Components.b60 b60Var = (org.telegram.ui.Components.b60) this.J;
-                if (b60Var.v0) {
-                    int i10 = b60Var.Q0;
+                org.telegram.ui.Components.a60 a60Var = (org.telegram.ui.Components.a60) this.J;
+                if (a60Var.v0) {
+                    int i10 = a60Var.Q0;
                     hVar2.f = i10;
                     RectF rectF2 = AndroidUtilities.rectTmp;
                     float f13 = i10;
@@ -109,7 +109,7 @@ public final class jl extends org.telegram.ui.Components.w9 {
             case 3:
                 org.telegram.ui.Components.voip.h hVar3 = (org.telegram.ui.Components.voip.h) this.I;
                 super.onDraw(canvas);
-                if (((org.telegram.ui.Components.a60) this.J).d0) {
+                if (((org.telegram.ui.Components.z50) this.J).f0) {
                     float min = Math.min(getWidth(), getHeight()) * 0.5f;
                     RectF rectF3 = AndroidUtilities.rectTmp;
                     rectF3.set(0.0f, 0.0f, getWidth(), getHeight());
@@ -133,17 +133,17 @@ public final class jl extends org.telegram.ui.Components.w9 {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public jl(org.telegram.ui.Components.a60 a60Var, Context context, Paint paint) {
+    public jl(org.telegram.ui.Components.z50 z50Var, Context context, Paint paint) {
         super(context);
-        this.J = a60Var;
+        this.J = z50Var;
         this.H = paint;
         this.I = new org.telegram.ui.Components.voip.h();
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public jl(org.telegram.ui.Components.b60 b60Var, Context context, Paint paint) {
+    public jl(org.telegram.ui.Components.a60 a60Var, Context context, Paint paint) {
         super(context);
-        this.J = b60Var;
+        this.J = a60Var;
         this.H = paint;
         this.I = new org.telegram.ui.Components.voip.h();
     }

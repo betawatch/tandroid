@@ -10,9 +10,9 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class b2 extends View implements org.telegram.ui.Cells.p9, d3 {
+public final class b2 extends View implements org.telegram.ui.Cells.q9, d3 {
     public final u70 a;
     public final f4 b;
     public a3 c;
@@ -26,7 +26,7 @@ public final class b2 extends View implements org.telegram.ui.Cells.p9, d3 {
         this.b = f4Var;
     }
 
-    @Override // org.telegram.ui.Cells.p9
+    @Override // org.telegram.ui.Cells.q9
     public final void fillTextLayoutBlocks(ArrayList arrayList) {
         a3 a3Var = this.c;
         if (a3Var != null) {
@@ -68,7 +68,7 @@ public final class b2 extends View implements org.telegram.ui.Cells.p9, d3 {
     }
 
     public /* bridge */ /* synthetic */ int getMinWidth() {
-        return org.telegram.messenger.wh.a(this);
+        return org.telegram.messenger.rk.a(this);
     }
 
     @Override // android.view.View
@@ -143,7 +143,7 @@ public final class b2 extends View implements org.telegram.ui.Cells.p9, d3 {
                 a2 = Layout.Alignment.ALIGN_CENTER;
             } else {
                 f4 f4Var = this.b;
-                a2 = (f4Var == null || !f4Var.G) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.vw0.a();
+                a2 = (f4Var == null || !f4Var.G) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.uw0.a();
             }
             Layout.Alignment alignment = a2;
             TL_iv.RichText richText = this.f.text;

@@ -1,60 +1,8 @@
 package org.telegram.ui.Components;
 
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.tgnet.TLRPC;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class ay0 extends s4.x {
-    public int e;
-    public final /* synthetic */ hy0 f;
-
-    public ay0(hy0 hy0Var) {
-        this.f = hy0Var;
-        this.d = 15;
-        this.e = -1;
-    }
-
-    @Override // s4.v
-    public final boolean n(RecyclerView recyclerView, s4.c1 c1Var, s4.c1 c1Var2) {
-        int i10 = c1Var.f;
-        if (i10 == 3 || i10 != c1Var2.f) {
-            return false;
-        }
-        hy0 hy0Var = this.f;
-        if (hy0Var.S == null) {
-            return false;
-        }
-        int b10 = c1Var.b();
-        int b11 = c1Var2.b();
-        hy0Var.S.documents.add(b11, hy0Var.S.documents.remove(b10));
-        hy0Var.d.p(b10, b11);
-        this.e = b11;
-        return true;
-    }
-
-    @Override // s4.v
-    public final void p(s4.c1 c1Var, int i10) {
-        hy0 hy0Var = this.f;
-        if (i10 != 0 || hy0Var.f == null || this.e <= 0) {
-            if (i10 == 2) {
-                hy0Var.f = ((org.telegram.ui.Cells.f8) c1Var.a).getSticker();
-            }
-        } else {
-            TLRPC.TL_stickers_changeStickerPosition tL_stickers_changeStickerPosition = new TLRPC.TL_stickers_changeStickerPosition();
-            tL_stickers_changeStickerPosition.position = this.e;
-            tL_stickers_changeStickerPosition.sticker = MediaDataController.getInputStickerSetItem(hy0Var.f, "").document;
-            this.e = -1;
-            hy0Var.f = null;
-        }
-    }
-
-    @Override // s4.v
-    public final void q(s4.c1 c1Var) {
-    }
-
-    @Override // s4.v
-    public final void o(RecyclerView recyclerView, s4.c1 c1Var, s4.c1 c1Var2, int i10, int i11, int i12) {
-    }
+public final class ay0 extends FrameLayout {
 }

@@ -32,7 +32,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.messenger.camera.CameraController;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.rk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -43,10 +43,10 @@ import org.telegram.ui.Components.kz;
 import org.telegram.ui.Components.py;
 import org.telegram.ui.Components.qr;
 import org.telegram.ui.Components.sy;
-import org.telegram.ui.Components.yx0;
+import org.telegram.ui.Components.xx0;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.TwoStepVerificationActivity;
-import org.telegram.ui.gh1;
+import org.telegram.ui.ih1;
 import org.telegram.ui.iy;
 import org.telegram.ui.ke;
 import org.telegram.ui.kg;
@@ -55,7 +55,7 @@ import org.telegram.ui.uy;
 import org.telegram.ui.xo0;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class u1 implements Runnable {
     public final /* synthetic */ int a;
@@ -148,42 +148,42 @@ public final /* synthetic */ class u1 implements Runnable {
                 yVar.e(false, z13);
                 return;
             case 3:
-                ii.j4.f((org.telegram.ui.ActionBar.n2) this.c, (Context) this.d, (org.telegram.ui.ActionBar.e6) this.e, (ii.t3) this.f, this.b);
+                ii.j4.f((org.telegram.ui.ActionBar.n2) this.c, (Context) this.d, (org.telegram.ui.ActionBar.f6) this.e, (ii.t3) this.f, this.b);
                 return;
             case 4:
-                ki.h0 h0Var = (ki.h0) this.c;
+                ki.o0 o0Var = (ki.o0) this.c;
                 boolean z14 = this.b;
-                ki.o oVar = (ki.o) this.d;
-                ki.e0 e0Var = (ki.e0) this.e;
+                ki.q qVar = (ki.q) this.d;
+                ki.k0 k0Var = (ki.k0) this.e;
                 File file2 = (File) this.f;
-                h0Var.getClass();
+                o0Var.getClass();
                 long nanoTime = System.nanoTime();
                 try {
-                    h0Var.f();
-                    long j3 = h0Var.y;
+                    o0Var.f();
+                    long j3 = o0Var.D;
                     if (z14) {
-                        synchronized (oVar) {
-                            oVar.c();
+                        synchronized (qVar) {
+                            qVar.c();
                         }
-                        h0Var.f();
-                        h0Var.j(e0Var, 1);
-                        File file3 = oVar.a;
-                        h0Var.c(true);
-                        a3.z a2 = w7.k.a(file2, h0Var.J, h0Var.A, h0Var.B, true);
+                        o0Var.f();
+                        o0Var.j(k0Var, 1);
+                        File file3 = qVar.a;
+                        o0Var.c(true);
+                        a3.z a2 = w7.k.a(file2, o0Var.O, o0Var.F, o0Var.G, true);
                         j3 = a2.b;
-                        h0Var.l.b("resume trim remux completed: requested=" + h0Var.A + ".." + h0Var.B + ", actualStartMs=" + a2.a + ", retainedDurationMs=" + j3 + ", outputSize=" + h0Var.J.a.length() + ", elapsedMs=" + ki.h0.e(nanoTime));
+                        o0Var.l.b("resume trim remux completed: requested=" + o0Var.F + ".." + o0Var.G + ", actualStartMs=" + a2.a + ", retainedDurationMs=" + j3 + ", outputSize=" + o0Var.O.a.length() + ", elapsedMs=" + ki.o0.e(nanoTime));
                         w7.k.c(file3);
                     }
                     w7.k.c(file2);
-                    h0Var.f();
-                    h0Var.K = null;
+                    o0Var.f();
+                    o0Var.P = null;
                     if (!z14) {
-                        h0Var.l.b("resume prepared without remux: retainedDurationMs=" + j3 + ", elapsedMs=" + ki.h0.e(nanoTime));
+                        o0Var.l.b("resume prepared without remux: retainedDurationMs=" + j3 + ", elapsedMs=" + ki.o0.e(nanoTime));
                     }
-                    h0Var.h.post(new ki.y(h0Var, j3, 0));
+                    o0Var.h.post(new ki.a0(o0Var, j3, 0));
                     return;
                 } catch (Exception e7) {
-                    h0Var.h.post(new ki.x(h0Var, e7, 1));
+                    o0Var.h.post(new ki.z(o0Var, e7, 1));
                     return;
                 }
             case 5:
@@ -251,19 +251,19 @@ public final /* synthetic */ class u1 implements Runnable {
                 kgVar.run(obj, Boolean.valueOf(z16));
                 return;
             case 16:
-                org.telegram.ui.Components.oa oaVar = (org.telegram.ui.Components.oa) this.c;
+                org.telegram.ui.Components.na naVar = (org.telegram.ui.Components.na) this.c;
                 String str2 = (String) this.f;
                 Bitmap bitmap2 = (Bitmap) this.d;
                 boolean z17 = this.b;
                 Bitmap bitmap3 = (Bitmap) this.e;
-                if (TextUtils.equals(oaVar.a, str2)) {
-                    oaVar.f = null;
-                    Bitmap bitmap4 = oaVar.b;
+                if (TextUtils.equals(naVar.a, str2)) {
+                    naVar.f = null;
+                    Bitmap bitmap4 = naVar.b;
                     if (bitmap4 != null) {
                         bitmap4.recycle();
                     }
-                    oaVar.b = bitmap2;
-                    Runnable runnable = oaVar.e;
+                    naVar.b = bitmap2;
+                    Runnable runnable = naVar.e;
                     if (runnable != null) {
                         runnable.run();
                     }
@@ -278,12 +278,12 @@ public final /* synthetic */ class u1 implements Runnable {
             case 17:
                 bu buVar = (bu) this.c;
                 boolean z18 = this.b;
-                fi.o oVar2 = (fi.o) this.d;
+                fi.o oVar = (fi.o) this.d;
                 String str3 = (String) this.f;
                 TextView textView = (TextView) this.e;
                 ClipboardManager clipboardManager = (ClipboardManager) buVar.getContext().getSystemService("clipboard");
-                boolean z19 = z18 && (TextUtils.isEmpty(oVar2.getText()) || TextUtils.equals(oVar2.getText().toString(), str3)) && clipboardManager != null && clipboardManager.hasPrimaryClip();
-                wh.r(textView.animate().alpha(z19 ? 1.0f : 0.0f).scaleX(z19 ? 1.0f : 0.7f).scaleY(z19 ? 1.0f : 0.7f), qr.h, 300L);
+                boolean z19 = z18 && (TextUtils.isEmpty(oVar.getText()) || TextUtils.equals(oVar.getText().toString(), str3)) && clipboardManager != null && clipboardManager.hasPrimaryClip();
+                rk.s(textView.animate().alpha(z19 ? 1.0f : 0.0f).scaleX(z19 ? 1.0f : 0.7f).scaleY(z19 ? 1.0f : 0.7f), qr.h, 300L);
                 return;
             case 18:
                 sy syVar = (sy) this.c;
@@ -379,7 +379,7 @@ public final /* synthetic */ class u1 implements Runnable {
                     photoEntry.averageDuration = (long) (MessageObject.getDocumentDuration(document) * 1000.0d);
                 }
                 PhotoViewer.t1().J2(n2Var.getParentActivity(), null, n2Var.getResourceProvider());
-                PhotoViewer.t1().f2(arrayList6, 0, 11, false, new yx0(), znVar2);
+                PhotoViewer.t1().f2(arrayList6, 0, 11, false, new xx0(), znVar2);
                 PhotoViewer.t1().X0(document, z21 ? document : null, true, null);
                 st.q().T = z21 ? tL_messages_stickerSet : null;
                 return;
@@ -473,20 +473,20 @@ public final /* synthetic */ class u1 implements Runnable {
                 i12 = ((org.telegram.ui.ActionBar.n2) uyVar).currentAccount;
                 MessagesController.getInstance(i12).removeSuggestion(0L, "USERPIC_SETUP");
                 uyVar.U4();
-                org.telegram.ui.Components.qc qcVar = uyVar.d4;
-                if (qcVar != null) {
-                    org.telegram.ui.Components.hc hcVar = (org.telegram.ui.Components.hc) qcVar.e;
-                    hcVar.d.c(LocaleController.getString(z22 ? R.string.YourProfileVideoDone : R.string.YourProfilePhotoDone), true, true);
-                    hcVar.setProgress(1.0f);
-                    org.telegram.ui.Components.mb button = hcVar.getButton();
+                org.telegram.ui.Components.pc pcVar = uyVar.d4;
+                if (pcVar != null) {
+                    org.telegram.ui.Components.gc gcVar = (org.telegram.ui.Components.gc) pcVar.e;
+                    gcVar.d.c(LocaleController.getString(z22 ? R.string.YourProfileVideoDone : R.string.YourProfilePhotoDone), true, true);
+                    gcVar.setProgress(1.0f);
+                    org.telegram.ui.Components.lb button = gcVar.getButton();
                     button.setScaleX(0.6f);
                     button.setScaleY(0.6f);
                     button.setAlpha(0.0f);
                     button.setVisibility(0);
-                    wh.r(button.animate().scaleX(1.0f).scaleY(1.0f).alpha(1.0f), qr.h, 360L);
-                    org.telegram.ui.Components.qc qcVar2 = uyVar.d4;
-                    qcVar2.j = 5000;
-                    qcVar2.i(false);
+                    rk.s(button.animate().scaleX(1.0f).scaleY(1.0f).alpha(1.0f), qr.h, 360L);
+                    org.telegram.ui.Components.pc pcVar2 = uyVar.d4;
+                    pcVar2.j = 5000;
+                    pcVar2.i(false);
                     uyVar.d4.i(true);
                     return;
                 }
@@ -498,7 +498,7 @@ public final /* synthetic */ class u1 implements Runnable {
                 xo0.i0((xo0) this.c, (TLRPC.TL_error) this.e, this.b, (TLObject) this.d, (String) this.f);
                 return;
             case 23:
-                gh1.U((gh1) this.c, (TLObject) this.d, this.b, (String) this.f, (TL_account.passwordInputSettings) this.e);
+                ih1.U((ih1) this.c, (TLObject) this.d, this.b, (String) this.f, (TL_account.passwordInputSettings) this.e);
                 return;
             default:
                 TLRPC.payments_GiveawayInfo payments_giveawayinfo = (TLRPC.payments_GiveawayInfo) this.c;
@@ -546,12 +546,12 @@ public final /* synthetic */ class u1 implements Runnable {
         this.f = obj4;
     }
 
-    public /* synthetic */ u1(ki.h0 h0Var, boolean z10, ki.o oVar, ki.e0 e0Var, File file) {
+    public /* synthetic */ u1(ki.o0 o0Var, boolean z10, ki.q qVar, ki.k0 k0Var, File file) {
         this.a = 4;
-        this.c = h0Var;
+        this.c = o0Var;
         this.b = z10;
-        this.d = oVar;
-        this.e = e0Var;
+        this.d = qVar;
+        this.e = k0Var;
         this.f = file;
     }
 
@@ -573,9 +573,9 @@ public final /* synthetic */ class u1 implements Runnable {
         this.e = n2Var;
     }
 
-    public /* synthetic */ u1(org.telegram.ui.Components.oa oaVar, String str, Bitmap bitmap, boolean z10, Bitmap bitmap2) {
+    public /* synthetic */ u1(org.telegram.ui.Components.na naVar, String str, Bitmap bitmap, boolean z10, Bitmap bitmap2) {
         this.a = 16;
-        this.c = oaVar;
+        this.c = naVar;
         this.f = str;
         this.d = bitmap;
         this.b = z10;
@@ -609,9 +609,9 @@ public final /* synthetic */ class u1 implements Runnable {
         this.e = updatepasswordsettings;
     }
 
-    public /* synthetic */ u1(gh1 gh1Var, TLObject tLObject, boolean z10, String str, TL_account.passwordInputSettings passwordinputsettings) {
+    public /* synthetic */ u1(ih1 ih1Var, TLObject tLObject, boolean z10, String str, TL_account.passwordInputSettings passwordinputsettings) {
         this.a = 23;
-        this.c = gh1Var;
+        this.c = ih1Var;
         this.d = tLObject;
         this.b = z10;
         this.f = str;

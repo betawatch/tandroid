@@ -9,7 +9,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ga0 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -28,26 +28,26 @@ public final /* synthetic */ class ga0 implements Utilities.Callback {
         switch (i10) {
             case 0:
                 boolean booleanValue = ((Boolean) obj).booleanValue();
-                if (launchActivity.q0 != null && booleanValue && LiteMode.getPowerSaverLevel() < 100 && (lastFragment = launchActivity.q0.getLastFragment()) != null && !(lastFragment instanceof oc0)) {
+                if (launchActivity.q0 != null && booleanValue && LiteMode.getPowerSaverLevel() < 100 && (lastFragment = launchActivity.q0.getLastFragment()) != null && !(lastFragment instanceof pc0)) {
                     int batteryLevel = LiteMode.getBatteryLevel();
                     org.telegram.ui.Components.xc a02 = org.telegram.ui.Components.xc.a0(lastFragment);
-                    org.telegram.ui.Components.y9 y9Var = new org.telegram.ui.Components.y9(batteryLevel / 100.0f, lastFragment.getThemedColor(org.telegram.ui.ActionBar.j6.Y5));
+                    org.telegram.ui.Components.x9 x9Var = new org.telegram.ui.Components.x9(batteryLevel / 100.0f, lastFragment.getThemedColor(org.telegram.ui.ActionBar.j6.Y5));
                     String string = LocaleController.getString(R.string.LowPowerEnabledTitle);
                     String formatString = LocaleController.formatString("LowPowerEnabledSubtitle", R.string.LowPowerEnabledSubtitle, String.format("%d%%", Integer.valueOf(batteryLevel)));
                     String string2 = LocaleController.getString(R.string.Disable);
                     g90 g90Var = new g90(launchActivity, 8);
                     a02.getClass();
                     Context W = a02.W();
-                    org.telegram.ui.ActionBar.e6 e6Var = a02.c;
-                    org.telegram.ui.Components.nc ncVar = new org.telegram.ui.Components.nc(W, e6Var);
-                    ncVar.a.setImageDrawable(y9Var);
-                    ncVar.b.setText(string);
-                    ncVar.c.setText(formatString);
-                    org.telegram.ui.Components.oc ocVar = new org.telegram.ui.Components.oc(a02.W(), e6Var, true);
-                    ocVar.e(string2);
-                    ocVar.a = g90Var;
-                    ncVar.setButton(ocVar);
-                    org.telegram.ui.Components.qc b10 = a02.b(ncVar, 2750);
+                    org.telegram.ui.ActionBar.f6 f6Var = a02.c;
+                    org.telegram.ui.Components.mc mcVar = new org.telegram.ui.Components.mc(W, f6Var);
+                    mcVar.a.setImageDrawable(x9Var);
+                    mcVar.b.setText(string);
+                    mcVar.c.setText(formatString);
+                    org.telegram.ui.Components.nc ncVar = new org.telegram.ui.Components.nc(a02.W(), f6Var, true);
+                    ncVar.e(string2);
+                    ncVar.a = g90Var;
+                    mcVar.setButton(ncVar);
+                    org.telegram.ui.Components.pc b10 = a02.b(mcVar, 2750);
                     b10.j = 5000;
                     b10.j();
                     break;

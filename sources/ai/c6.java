@@ -9,9 +9,9 @@ import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.ij0;
+import org.telegram.ui.Components.hj0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class c6 {
     public final Paint a;
@@ -33,8 +33,8 @@ public final class c6 {
     public final Drawable q;
     public final Drawable r;
     public final Drawable s;
-    public final ij0 t;
-    public final ij0 u;
+    public final hj0 t;
+    public final hj0 u;
 
     public c6(Context context) {
         new RectF();
@@ -49,11 +49,11 @@ public final class c6 {
         this.q = context.getDrawable(R.drawable.media_more);
         this.r = context.getDrawable(R.drawable.menu_stream_pip);
         this.s = context.getDrawable(R.drawable.msg_delete);
-        this.u = new ij0(R.raw.media_mute_unmute, AndroidUtilities.dp(28.0f), AndroidUtilities.dp(28.0f), true, null);
-        ij0 ij0Var = new ij0(R.raw.media_mute_unmute, AndroidUtilities.dp(28.0f), AndroidUtilities.dp(28.0f), true, null);
-        this.t = ij0Var;
-        ij0Var.N(20, false, true);
-        ij0Var.stop();
+        this.u = new hj0(R.raw.media_mute_unmute, AndroidUtilities.dp(28.0f), AndroidUtilities.dp(28.0f), true, null);
+        hj0 hj0Var = new hj0(R.raw.media_mute_unmute, AndroidUtilities.dp(28.0f), AndroidUtilities.dp(28.0f), true, null);
+        this.t = hj0Var;
+        hj0Var.N(20, false, true);
+        hj0Var.stop();
         Paint paint = new Paint(1);
         this.a = paint;
         paint.setColor(1442840575);
@@ -70,25 +70,25 @@ public final class c6 {
     }
 
     public final void a(boolean z10, boolean z11) {
-        ij0 ij0Var = this.u;
+        hj0 hj0Var = this.u;
         if (!z11) {
-            ij0Var.N(z10 ? 20 : 0, false, false);
-            ij0Var.P(z10 ? 20 : 0);
+            hj0Var.N(z10 ? 20 : 0, false, false);
+            hj0Var.P(z10 ? 20 : 0);
             return;
         }
         if (z10) {
-            if (ij0Var.a0 > 20) {
-                ij0Var.N(0, false, false);
+            if (hj0Var.a0 > 20) {
+                hj0Var.N(0, false, false);
             }
-            ij0Var.P(20);
-            ij0Var.start();
+            hj0Var.P(20);
+            hj0Var.start();
             return;
         }
-        int i10 = ij0Var.a0;
+        int i10 = hj0Var.a0;
         if (i10 == 0 || i10 >= 43) {
             return;
         }
-        ij0Var.P(43);
-        ij0Var.start();
+        hj0Var.P(43);
+        hj0Var.start();
     }
 }

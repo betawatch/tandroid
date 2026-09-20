@@ -2,11 +2,11 @@ package xh;
 
 import android.graphics.drawable.Drawable;
 import android.view.ViewGroup;
-import org.telegram.ui.Components.o5;
+import org.telegram.ui.Components.n5;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
-public final class e1 extends o5 {
+public final class e1 extends n5 {
     public final /* synthetic */ f1 M;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -15,7 +15,7 @@ public final class e1 extends o5 {
         this.M = f1Var;
     }
 
-    @Override // org.telegram.ui.Components.o5, org.telegram.ui.Components.w5
+    @Override // org.telegram.ui.Components.n5, org.telegram.ui.Components.v5
     public final void invalidate() {
         super.invalidate();
         Drawable drawable = this.M;

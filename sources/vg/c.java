@@ -15,60 +15,60 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j5;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.Components.RadioButton;
-import org.telegram.ui.Components.h9;
+import org.telegram.ui.Components.g9;
 import org.telegram.ui.Components.oq;
-import org.telegram.ui.Components.w9;
+import org.telegram.ui.Components.v9;
 import w7.y5;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public abstract class c extends FrameLayout {
-    public final e6 a;
-    public final h9 b;
-    public final w9 c;
+    public final f6 a;
+    public final g9 b;
+    public final v9 c;
     public final a6 d;
     public final j5 e;
     public final RadioButton f;
     public final Paint h;
     public boolean n;
 
-    public c(Context context, e6 e6Var) {
+    public c(Context context, f6 f6Var) {
         super(context);
-        h9 h9Var = new h9((e6) null);
-        this.b = h9Var;
+        g9 g9Var = new g9((f6) null);
+        this.b = g9Var;
         this.h = new Paint(1);
-        this.a = e6Var;
+        this.a = f6Var;
         View view = new View(context);
         addView(view, y5.n(-1, -1));
-        view.setBackgroundColor(j6.v0(j6.h5, e6Var));
-        h9Var.r = AndroidUtilities.dp(40.0f);
-        w9 w9Var = new w9(context);
-        this.c = w9Var;
-        w9Var.setRoundRadius(AndroidUtilities.dp(20.0f));
-        addView(w9Var);
+        view.setBackgroundColor(j6.v0(j6.h5, f6Var));
+        g9Var.r = AndroidUtilities.dp(40.0f);
+        v9 v9Var = new v9(context);
+        this.c = v9Var;
+        v9Var.setRoundRadius(AndroidUtilities.dp(20.0f));
+        addView(v9Var);
         a6 a6Var = new a6(context, 5);
         this.d = a6Var;
         NotificationCenter.listenEmojiLoading(a6Var);
-        NotificationCenter.listenEmojiLoading(w9Var);
+        NotificationCenter.listenEmojiLoading(v9Var);
         a6Var.setTextSize(16);
         int i10 = j6.j5;
-        a6Var.setTextColor(j6.v0(i10, e6Var));
+        a6Var.setTextColor(j6.v0(i10, f6Var));
         a6Var.setGravity(LocaleController.isRTL ? 5 : 3);
         addView(a6Var);
         j5 j5Var = new j5(context);
         this.e = j5Var;
         j5Var.setTextSize(14);
-        j5Var.setTextColor(j6.v0(i10, e6Var));
+        j5Var.setTextColor(j6.v0(i10, f6Var));
         j5Var.setGravity(LocaleController.isRTL ? 5 : 3);
         addView(j5Var);
         RadioButton radioButton = new RadioButton(context);
         this.f = radioButton;
         radioButton.setSize(AndroidUtilities.dp(20.0f));
-        radioButton.b(j6.v0(j6.j7, e6Var), j6.v0(j6.E5, e6Var));
+        radioButton.b(j6.v0(j6.j7, f6Var), j6.v0(j6.E5, f6Var));
         addView(radioButton);
         d();
         if (b()) {

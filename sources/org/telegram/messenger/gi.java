@@ -2,30 +2,27 @@ package org.telegram.messenger;
 
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final /* synthetic */ class gi implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ SecretChatHelper b;
-    public final /* synthetic */ TLRPC.EncryptedChat c;
+    public final /* synthetic */ TLRPC.TL_encryptedChatDiscarded c;
 
-    public /* synthetic */ gi(SecretChatHelper secretChatHelper, TLRPC.EncryptedChat encryptedChat, int i10) {
+    public /* synthetic */ gi(SecretChatHelper secretChatHelper, TLRPC.TL_encryptedChatDiscarded tL_encryptedChatDiscarded, int i10) {
         this.a = i10;
         this.b = secretChatHelper;
-        this.c = encryptedChat;
+        this.c = tL_encryptedChatDiscarded;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$processAcceptedSecretChat$18(this.c);
-                break;
-            case 1:
-                this.b.lambda$acceptSecretChat$21(this.c);
+                this.b.lambda$processAcceptedSecretChat$19(this.c);
                 break;
             default:
-                this.b.lambda$applyPeerLayer$9(this.c);
+                this.b.lambda$decryptMessage$17(this.c);
                 break;
         }
     }

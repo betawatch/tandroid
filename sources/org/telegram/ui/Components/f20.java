@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import android.widget.ScrollView;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public class f20 extends ScrollView {
     public final int a;
@@ -145,8 +145,8 @@ public class f20 extends ScrollView {
             return false;
         }
         rect.offset(view.getLeft() - view.getScrollX(), view.getTop() - view.getScrollY());
-        rect.top = org.telegram.messenger.q.D(20.0f, this.n, rect.top);
-        rect.bottom = org.telegram.messenger.q.D(50.0f, this.n, rect.bottom);
+        rect.top = org.telegram.messenger.l0.C(20.0f, this.n, rect.top);
+        rect.bottom = org.telegram.messenger.l0.C(50.0f, this.n, rect.bottom);
         return super.requestChildRectangleOnScreen(view, rect, z10);
     }
 

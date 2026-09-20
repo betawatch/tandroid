@@ -9,10 +9,10 @@ import java.util.concurrent.TimeUnit;
 import m.p3;
 import n6.i;
 import n6.l;
-import n7.z0;
 import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.ui.Cells.f3;
 import qb.m;
-import v7.r1;
+import v7.s1;
 import w7.d7;
 import w7.e7;
 import w7.ia;
@@ -21,7 +21,7 @@ import w7.la;
 import w7.na;
 import w7.y6;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class a {
     public volatile Bitmap a;
@@ -92,9 +92,9 @@ public final class a {
         p3Var.a = Long.valueOf(Long.MAX_VALUE & elapsedRealtime2);
         p3Var.h = Integer.valueOf(i10 & ConnectionsManager.DEFAULT_DATACENTER_ID);
         e7 e7Var = new e7(p3Var);
-        r1 r1Var = new r1(5, false);
-        r1Var.c = e7Var;
-        m.a.execute(new v(a2, new z0(r1Var), task.isSuccessful() ? (String) task.getResult() : i.c.a(a2.g)));
+        s1 s1Var = new s1(5, false);
+        s1Var.c = e7Var;
+        m.a.execute(new v(a2, new f3(s1Var), task.isSuccessful() ? (String) task.getResult() : i.c.a(a2.g)));
         return aVar;
     }
 }

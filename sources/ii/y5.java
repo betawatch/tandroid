@@ -2,9 +2,9 @@ package ii;
 
 import android.text.Editable;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Cells.q9;
+import org.telegram.ui.Cells.r9;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class y5 implements h1 {
     public final /* synthetic */ d6 a;
@@ -14,9 +14,9 @@ public final class y5 implements h1 {
     }
 
     @Override // ii.h1
-    public final void B(i1 i1Var, int i10, int i11) {
+    public final void D(i1 i1Var, int i10, int i11) {
         a6 a6Var;
-        q9 textSelectionHelper;
+        r9 textSelectionHelper;
         d6 d6Var = this.a;
         if (d6Var.n || i10 == i11 || (a6Var = d6Var.y) == null || (textSelectionHelper = ((e3) a6Var).a.getTextSelectionHelper()) == null) {
             return;
@@ -70,7 +70,7 @@ public final class y5 implements h1 {
     }
 
     @Override // ii.h1
-    public final /* synthetic */ boolean X(boolean z10) {
+    public final /* synthetic */ boolean Y(boolean z10) {
         return false;
     }
 
@@ -80,7 +80,7 @@ public final class y5 implements h1 {
         if (a6Var != null) {
             w3 w3Var = ((e3) a6Var).a;
             w3.N1(w3Var, i1Var);
-            w3Var.h3.t(i1Var, true);
+            w3Var.h3.x(i1Var, true);
         }
     }
 
@@ -106,7 +106,7 @@ public final class y5 implements h1 {
     }
 
     @Override // ii.h1
-    public final void m(i1 i1Var) {
+    public final void n(i1 i1Var) {
         a aVar;
         d6 d6Var = this.a;
         a6 a6Var = d6Var.y;
@@ -131,6 +131,6 @@ public final class y5 implements h1 {
     }
 
     @Override // ii.h1
-    public final void x() {
+    public final void y() {
     }
 }

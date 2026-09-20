@@ -1,66 +1,38 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.view.MotionEvent;
 import android.view.View;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class eb0 extends x81 {
-    public final /* synthetic */ ec0 U;
+public final class eb0 extends o81 {
+    public final /* synthetic */ Context a;
+    public final /* synthetic */ dc0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public eb0(ec0 ec0Var, Context context, ac0 ac0Var) {
-        super(context, ac0Var);
-        this.U = ec0Var;
+    public eb0(dc0 dc0Var, Context context) {
+        this.b = dc0Var;
+        this.a = context;
     }
 
-    @Override // org.telegram.ui.Components.x81, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        boolean z10;
-        int i10 = 0;
-        while (true) {
-            View[] viewArr = this.U.f.e;
-            if (i10 >= viewArr.length) {
-                z10 = false;
-                break;
-            }
-            View view = viewArr[i10];
-            if (view != null) {
-                yb0 yb0Var = (yb0) view;
-                if (yb0Var.a == 0) {
-                    z10 = yb0Var.e.i;
-                    break;
-                }
-            }
-            i10++;
-        }
-        if (z10) {
-            return false;
-        }
-        return B(motionEvent);
+    @Override // org.telegram.ui.Components.o81
+    public final void b(View view, int i10, int i11) {
+        xb0 xb0Var = (xb0) view;
+        xb0Var.h();
+        xb0Var.k(false);
     }
 
-    @Override // org.telegram.ui.Components.x81
-    public final void u() {
-        View view = this.e[0];
-        if (view instanceof yb0) {
-            ((yb0) view).e.W();
-        }
+    @Override // org.telegram.ui.Components.o81
+    public final View d(int i10) {
+        return new xb0(this.b, this.a, i10);
     }
 
-    @Override // org.telegram.ui.Components.x81
-    public final void w(boolean z10) {
-        ec0 ec0Var = this.U;
-        ec0Var.e.setSelectedTab(ec0Var.f.getPositionAnimated());
-        View[] viewArr = this.e;
-        View view = viewArr[0];
-        if (view instanceof yb0) {
-            ((yb0) view).e.H();
-        }
-        View view2 = viewArr[1];
-        if (view2 instanceof yb0) {
-            ((yb0) view2).e.H();
-        }
+    @Override // org.telegram.ui.Components.o81
+    public final int e() {
+        return this.b.e.a.size();
+    }
+
+    @Override // org.telegram.ui.Components.o81
+    public final int h(int i10) {
+        return ((ac0) this.b.e.a.get(i10)).a;
     }
 }

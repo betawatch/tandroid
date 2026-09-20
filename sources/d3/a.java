@@ -26,7 +26,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class a implements o {
     public static final int[] s = {13, 14, 16, 18, 20, 21, 27, 32, 6, 7, 6, 6, 1, 1, 1, 1};
@@ -119,7 +119,7 @@ public final class a implements o {
         h0 Z1 = qVar.Z1(0, 1);
         this.m = Z1;
         this.n = Z1;
-        qVar.e1();
+        qVar.f1();
     }
 
     @Override // c3.o
@@ -183,7 +183,7 @@ public final class a implements o {
             rVar.r = i12;
             rVar.I = 1;
             rVar.J = i11;
-            k0.r(rVar, h0Var);
+            k0.s(rVar, h0Var);
         }
         int i13 = 0;
         if (this.g == 0) {

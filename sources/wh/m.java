@@ -24,21 +24,21 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
-import org.telegram.ui.ActionBar.e6;
 import org.telegram.ui.ActionBar.f1;
+import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.sm0;
-import org.telegram.ui.Components.w9;
-import org.telegram.ui.Components.wl0;
-import org.telegram.ui.Components.zh0;
+import org.telegram.ui.Components.rm0;
+import org.telegram.ui.Components.v9;
+import org.telegram.ui.Components.vl0;
+import org.telegram.ui.Components.yh0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.zn;
-import rg.w1;
+import rg.q1;
 import w7.q;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class m extends Dialog {
     public final /* synthetic */ n E;
@@ -48,17 +48,17 @@ public final class m extends Dialog {
     public final TextView d;
     public final TextView e;
     public final ActionBarPopupWindow$ActionBarPopupWindowLayout f;
-    public final zh0 h;
+    public final yh0 h;
     public final j n;
     public TLRPC.TL_chatInviteImporter r;
     public ValueAnimator s;
-    public w9 v;
+    public v9 v;
     public BitmapDrawable w;
     public float x;
     public final l y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m(n nVar, Activity activity, wl0 wl0Var, e6 e6Var, boolean z10) {
+    public m(n nVar, Activity activity, vl0 vl0Var, f6 f6Var, boolean z10) {
         super(activity, R.style.TransparentDialog2);
         this.E = nVar;
         Drawable mutate = getContext().getResources().getDrawable(R.drawable.popup_fixed_alert2).mutate();
@@ -80,17 +80,17 @@ public final class m extends Dialog {
         mutate.getPadding(rect);
         this.a = rect.top;
         this.b = rect.left;
-        ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = new ActionBarPopupWindow$ActionBarPopupWindowLayout(activity, e6Var);
+        ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = new ActionBarPopupWindow$ActionBarPopupWindowLayout(activity, f6Var);
         this.f = actionBarPopupWindow$ActionBarPopupWindowLayout;
         actionBarPopupWindow$ActionBarPopupWindowLayout.setBackgroundColor(v02);
         lVar.addView(actionBarPopupWindow$ActionBarPopupWindowLayout);
         j jVar = new j(getContext());
         this.n = jVar;
-        zh0 zh0Var = new zh0(activity, n2Var.getActionBar(), wl0Var, jVar);
-        this.h = zh0Var;
-        zh0Var.setCreateThumbFromParent(true);
-        lVar.addView(zh0Var);
-        jVar.setProfileGalleryView(zh0Var);
+        yh0 yh0Var = new yh0(activity, n2Var.getActionBar(), vl0Var, jVar);
+        this.h = yh0Var;
+        yh0Var.setCreateThumbFromParent(true);
+        lVar.addView(yh0Var);
+        jVar.setProfileGalleryView(yh0Var);
         lVar.addView(jVar);
         textView.setMaxLines(1);
         textView.setTextColor(j6.v0(j6.G6, n2Var.getResourceProvider()));
@@ -102,11 +102,11 @@ public final class m extends Dialog {
         lVar.addView(textView2);
         f1 f1Var = new f1(activity, true, false);
         int i11 = j6.E8;
-        int v03 = j6.v0(i11, e6Var);
+        int v03 = j6.v0(i11, f6Var);
         int i12 = j6.F8;
-        f1Var.c(v03, j6.v0(i12, e6Var));
+        f1Var.c(v03, j6.v0(i12, f6Var));
         int i13 = j6.I5;
-        f1Var.setSelectorColor(j6.v0(i13, e6Var));
+        f1Var.setSelectorColor(j6.v0(i13, f6Var));
         f1Var.g(LocaleController.getString(z10 ? R.string.AddToChannel : R.string.AddToGroup), R.drawable.msg_requests, null);
         final int i14 = 0;
         f1Var.setOnClickListener(new View.OnClickListener(this) { // from class: wh.i
@@ -147,8 +147,8 @@ public final class m extends Dialog {
         });
         actionBarPopupWindow$ActionBarPopupWindowLayout.addView(f1Var);
         f1 f1Var2 = new f1(activity, false, false);
-        f1Var2.c(j6.v0(i11, e6Var), j6.v0(i12, e6Var));
-        f1Var2.setSelectorColor(j6.v0(i13, e6Var));
+        f1Var2.c(j6.v0(i11, f6Var), j6.v0(i12, f6Var));
+        f1Var2.setSelectorColor(j6.v0(i13, f6Var));
         f1Var2.g(LocaleController.getString(R.string.SendMessage), R.drawable.msg_msgbubble3, null);
         final int i15 = 1;
         f1Var2.setOnClickListener(new View.OnClickListener(this) { // from class: wh.i
@@ -189,8 +189,8 @@ public final class m extends Dialog {
         });
         actionBarPopupWindow$ActionBarPopupWindowLayout.addView(f1Var2);
         f1 f1Var3 = new f1(activity, false, true);
-        f1Var3.c(j6.v0(j6.q7, e6Var), j6.v0(j6.p7, e6Var));
-        f1Var3.setSelectorColor(j6.v0(i13, e6Var));
+        f1Var3.c(j6.v0(j6.q7, f6Var), j6.v0(j6.p7, f6Var));
+        f1Var3.setSelectorColor(j6.v0(i13, f6Var));
         f1Var3.g(LocaleController.getString(R.string.DismissRequest), R.drawable.msg_remove, null);
         final int i16 = 2;
         f1Var3.setOnClickListener(new View.OnClickListener(this) { // from class: wh.i
@@ -266,13 +266,13 @@ public final class m extends Dialog {
         }
         int[] iArr = new int[2];
         this.v.getLocationOnScreen(iArr);
-        zh0 zh0Var = this.h;
-        final float width = (this.v.getWidth() * 1.0f) / zh0Var.getMeasuredWidth();
+        yh0 yh0Var = this.h;
+        final float width = (this.v.getWidth() * 1.0f) / yh0Var.getMeasuredWidth();
         final float width2 = (this.v.getWidth() / 2.0f) / width;
         float f7 = 1.0f - width;
-        final float left = iArr[0] - (zh0Var.getLeft() + ((int) ((zh0Var.getMeasuredWidth() * f7) / 2.0f)));
+        final float left = iArr[0] - (yh0Var.getLeft() + ((int) ((yh0Var.getMeasuredWidth() * f7) / 2.0f)));
         int i10 = 1;
-        final float top = iArr[1] - (zh0Var.getTop() + ((int) ((d() * f7) / 2.0f)));
+        final float top = iArr[1] - (yh0Var.getTop() + ((int) ((d() * f7) / 2.0f)));
         final int i11 = (-this.f.getTop()) / 2;
         ValueAnimator ofFloat = ValueAnimator.ofFloat(z10 ? 0.0f : 1.0f, z10 ? 1.0f : 0.0f);
         this.s = ofFloat;
@@ -305,7 +305,7 @@ public final class m extends Dialog {
                 mVar.n.setAlpha(a2);
             }
         });
-        this.s.addListener(new sm0(this, z10, width, i10));
+        this.s.addListener(new rm0(this, z10, width, i10));
         this.s.setDuration(220L);
         this.s.setInterpolator(qr.f);
         this.s.start();
@@ -359,6 +359,6 @@ public final class m extends Dialog {
     @Override // android.app.Dialog
     public final void show() {
         super.show();
-        AndroidUtilities.runOnUIThread(new w1(this, 10), 80L);
+        AndroidUtilities.runOnUIThread(new q1(this, 11), 80L);
     }
 }

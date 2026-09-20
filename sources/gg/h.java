@@ -10,10 +10,10 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.UserConfig;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.Cells.c3;
-import org.telegram.ui.Components.w9;
+import org.telegram.ui.Components.v9;
 import w7.y5;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class h extends c3 {
     public final /* synthetic */ m f;
@@ -36,9 +36,9 @@ public final class h extends c3 {
         x5Var.setWillNotDraw(false);
         x5Var.setOrientation(1);
         x5Var.setPadding(AndroidUtilities.dp(32.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(32.0f), AndroidUtilities.dp(32.0f));
-        w9 w9Var = new w9(context);
-        this.b = w9Var;
-        w9Var.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Cells.b3
+        v9 v9Var = new v9(context);
+        this.b = v9Var;
+        v9Var.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Cells.b3
             public final /* synthetic */ gg.h b;
 
             {
@@ -58,7 +58,7 @@ public final class h extends c3 {
             }
         });
         a();
-        x5Var.addView(w9Var, y5.q(130, 130, 49));
+        x5Var.addView(v9Var, y5.q(130, 130, 49));
         TextView textView = new TextView(context);
         this.c = textView;
         textView.setGravity(17);

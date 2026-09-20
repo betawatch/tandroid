@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.regex.Pattern;
 import org.telegram.messenger.ContactsController;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class z80 implements org.telegram.ui.ActionBar.a2 {
     public final /* synthetic */ int a;
@@ -22,7 +22,7 @@ public final /* synthetic */ class z80 implements org.telegram.ui.ActionBar.a2 {
     }
 
     @Override // org.telegram.ui.ActionBar.a2
-    public final void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+    public final void k(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
         int i11 = this.a;
         boolean z10 = this.e;
         boolean z11 = this.d;

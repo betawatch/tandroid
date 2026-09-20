@@ -1,141 +1,47 @@
 package o0;
 
-import android.content.ContentUris;
-import android.content.Context;
-import android.content.pm.PackageManager;
-import android.content.pm.ProviderInfo;
-import android.content.pm.Signature;
-import android.content.res.Resources;
-import android.database.Cursor;
-import android.net.Uri;
-import android.os.Build;
-import android.os.Trace;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Collections;
+import android.util.Base64;
 import java.util.List;
-import w7.a8;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
-public abstract class d {
-    public static final a0.k a = new a0.k(2);
-    public static final a4.e b = new a4.e(21);
+public final class d {
+    public final String a;
+    public final String b;
+    public final String c;
+    public final List d;
+    public final String e;
 
-    public static j4.f a(Context context, List list) {
-        a8.a("FontProvider.getFontFamilyResult");
-        try {
-            ArrayList arrayList = new ArrayList();
-            for (int i10 = 0; i10 < list.size(); i10++) {
-                e eVar = (e) list.get(i10);
-                ProviderInfo b10 = b(context.getPackageManager(), eVar, context.getResources());
-                if (b10 == null) {
-                    return new j4.f();
-                }
-                arrayList.add(c(context, eVar, b10.authority));
-            }
-            return new j4.f(arrayList);
-        } finally {
-            Trace.endSection();
-        }
+    public d(String str, String str2, String str3, List list) {
+        str.getClass();
+        this.a = str;
+        str2.getClass();
+        this.b = str2;
+        this.c = str3;
+        list.getClass();
+        this.d = list;
+        this.e = str + "-" + str2 + "-" + str3;
     }
 
-    public static ProviderInfo b(PackageManager packageManager, e eVar, Resources resources) {
-        a4.e eVar2 = b;
-        a0.k kVar = a;
-        a8.a("FontProvider.getProvider");
-        try {
-            List list = eVar.d;
-            String str = eVar.a;
-            String str2 = eVar.b;
-            if (list == null) {
-                list = h0.b.h(resources, 0);
+    public final String toString() {
+        StringBuilder sb2 = new StringBuilder();
+        sb2.append("FontRequest {mProviderAuthority: " + this.a + ", mProviderPackage: " + this.b + ", mQuery: " + this.c + ", mCertificates:");
+        int i10 = 0;
+        while (true) {
+            List list = this.d;
+            if (i10 >= list.size()) {
+                sb2.append("}mCertificatesArray: 0");
+                return sb2.toString();
             }
-            c cVar = new c();
-            cVar.a = str;
-            cVar.b = str2;
-            cVar.c = list;
-            ProviderInfo providerInfo = (ProviderInfo) kVar.a(cVar);
-            if (providerInfo != null) {
-                return providerInfo;
+            sb2.append(" [");
+            List list2 = (List) list.get(i10);
+            for (int i11 = 0; i11 < list2.size(); i11++) {
+                sb2.append(" \"");
+                sb2.append(Base64.encodeToString((byte[]) list2.get(i11), 0));
+                sb2.append("\"");
             }
-            ProviderInfo resolveContentProvider = packageManager.resolveContentProvider(str, 0);
-            if (resolveContentProvider == null) {
-                throw new PackageManager.NameNotFoundException("No package found for authority: " + str);
-            }
-            if (!resolveContentProvider.packageName.equals(str2)) {
-                throw new PackageManager.NameNotFoundException("Found content provider " + str + ", but package was not " + str2);
-            }
-            Signature[] signatureArr = packageManager.getPackageInfo(resolveContentProvider.packageName, 64).signatures;
-            ArrayList arrayList = new ArrayList();
-            for (Signature signature : signatureArr) {
-                arrayList.add(signature.toByteArray());
-            }
-            Collections.sort(arrayList, eVar2);
-            for (int i10 = 0; i10 < list.size(); i10++) {
-                ArrayList arrayList2 = new ArrayList((Collection) list.get(i10));
-                Collections.sort(arrayList2, eVar2);
-                if (arrayList.size() == arrayList2.size()) {
-                    for (int i11 = 0; i11 < arrayList.size(); i11++) {
-                        if (!Arrays.equals((byte[]) arrayList.get(i11), (byte[]) arrayList2.get(i11))) {
-                            break;
-                        }
-                    }
-                    kVar.b(cVar, resolveContentProvider);
-                    return resolveContentProvider;
-                }
-            }
-            Trace.endSection();
-            return null;
-        } finally {
-            Trace.endSection();
-        }
-    }
-
-    public static i[] c(Context context, e eVar, String str) {
-        a8.a("FontProvider.query");
-        try {
-            ArrayList arrayList = new ArrayList();
-            Uri build = new Uri.Builder().scheme("content").authority(str).build();
-            Uri build2 = new Uri.Builder().scheme("content").authority(str).appendPath("file").build();
-            b eVar2 = Build.VERSION.SDK_INT < 24 ? new n2.e(context, build) : new ka.c(context, build);
-            Cursor cursor = null;
-            try {
-                String[] strArr = {"_id", "file_id", "font_ttc_index", "font_variation_settings", "font_weight", "font_italic", "result_code"};
-                a8.a("ContentQueryWrapper.query");
-                try {
-                    cursor = eVar2.q(build, strArr, new String[]{eVar.c});
-                    Trace.endSection();
-                    if (cursor != null && cursor.getCount() > 0) {
-                        int columnIndex = cursor.getColumnIndex("result_code");
-                        ArrayList arrayList2 = new ArrayList();
-                        int columnIndex2 = cursor.getColumnIndex("_id");
-                        int columnIndex3 = cursor.getColumnIndex("file_id");
-                        int columnIndex4 = cursor.getColumnIndex("font_ttc_index");
-                        int columnIndex5 = cursor.getColumnIndex("font_weight");
-                        int columnIndex6 = cursor.getColumnIndex("font_italic");
-                        while (cursor.moveToNext()) {
-                            int i10 = columnIndex != -1 ? cursor.getInt(columnIndex) : 0;
-                            arrayList2.add(new i(columnIndex3 == -1 ? ContentUris.withAppendedId(build, cursor.getLong(columnIndex2)) : ContentUris.withAppendedId(build2, cursor.getLong(columnIndex3)), columnIndex4 != -1 ? cursor.getInt(columnIndex4) : 0, columnIndex5 != -1 ? cursor.getInt(columnIndex5) : 400, columnIndex6 != -1 && cursor.getInt(columnIndex6) == 1, i10));
-                        }
-                        arrayList = arrayList2;
-                    }
-                    if (cursor != null) {
-                        cursor.close();
-                    }
-                    eVar2.close();
-                    return (i[]) arrayList.toArray(new i[0]);
-                } finally {
-                }
-            } catch (Throwable th2) {
-                if (cursor != null) {
-                    cursor.close();
-                }
-                eVar2.close();
-                throw th2;
-            }
-        } finally {
+            sb2.append(" ]");
+            i10++;
         }
     }
 }

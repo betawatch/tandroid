@@ -1,186 +1,157 @@
 package org.telegram.ui.Cells;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
-import android.widget.TextView;
+import j$.util.Comparator$-CC;
 import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
+import java.util.Collections;
 import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.R;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.sf;
+import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.dq;
-import org.telegram.ui.Components.p90;
-import org.telegram.ui.Components.qr;
-import org.telegram.ui.q01;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public abstract class h6 extends FrameLayout implements org.telegram.ui.ActionBar.z5 {
-    public final org.telegram.ui.ActionBar.e6 a;
-    public final TextView b;
-    public final dq c;
-    public final s2 d;
-    public boolean e;
-    public final org.telegram.ui.Components.e6 f;
-    public final p90 h;
-    public boolean n;
+public final class h6 {
+    public final int a;
+    public boolean b;
+    public boolean c;
+    public int e;
+    public long f;
+    public int g;
+    public final ArrayList d = new ArrayList();
+    public final ArrayList h = new ArrayList();
 
-    public h6(org.telegram.ui.ActionBar.n2 n2Var) {
-        super(n2Var.getContext());
-        qr qrVar = qr.h;
-        this.f = new org.telegram.ui.Components.e6(320L, qrVar);
-        this.n = false;
-        Context context = n2Var.getContext();
-        org.telegram.ui.ActionBar.e6 resourceProvider = n2Var.getResourceProvider();
-        this.a = resourceProvider;
-        LinearLayout e = wh.e(context, 0);
-        addView(e, w7.y5.d(-1, -2.0f, 55, 16.66f, 11.6f, 16.66f, 0.0f));
-        TextView textView = new TextView(context);
-        this.b = textView;
-        wh.j(14.0f, 1, textView);
-        textView.setText(LocaleController.getString(R.string.ProfileChannel));
-        e.addView(textView, w7.y5.q(-2, -2, 51));
-        dq dqVar = new dq(context);
-        this.c = dqVar;
-        dqVar.getDrawable().o(true, true, false);
-        dqVar.b(0.3f, 165L, qrVar);
-        dqVar.setTypeface(AndroidUtilities.bold());
-        dqVar.setTextSize(AndroidUtilities.dp(11.0f));
-        dqVar.setPadding(AndroidUtilities.dp(4.33f), 0, AndroidUtilities.dp(4.33f), 0);
-        dqVar.setGravity(3);
-        e.addView(dqVar, w7.y5.t(-1, 17, 51, 4, 1, 4, 0));
-        s2 s2Var = new s2(null, context, true, UserConfig.selectedAccount, resourceProvider);
-        this.d = s2Var;
-        s2Var.setBackgroundColor(0);
-        s2Var.setDialogCellDelegate(new e6((q01) this, n2Var, context));
-        s2Var.H = 15;
-        s2Var.I = 83;
-        addView(s2Var, w7.y5.e(-1, -2, 87));
-        e();
-        setWillNotDraw(false);
-        p90 p90Var = new p90();
-        this.h = p90Var;
-        int i10 = org.telegram.ui.ActionBar.j6.i6;
-        p90Var.e(org.telegram.ui.ActionBar.j6.l1(1.25f, org.telegram.ui.ActionBar.j6.v0(i10, resourceProvider)), org.telegram.ui.ActionBar.j6.l1(0.8f, org.telegram.ui.ActionBar.j6.v0(i10, resourceProvider)));
-        p90Var.j(8.0f);
+    public h6(int i10) {
+        this.a = i10;
     }
 
-    public final void a(ArrayList arrayList, TLRPC.Chat chat) {
-        String formatShortNumber;
-        boolean z10 = this.n;
-        boolean z11 = chat == null || chat.participants_count > 0;
-        dq dqVar = this.c;
-        dqVar.a();
-        dqVar.setPivotX(0.0f);
-        if (z10) {
-            dqVar.animate().alpha(z11 ? 1.0f : 0.0f).scaleX(z11 ? 1.0f : 0.8f).scaleY(z11 ? 1.0f : 0.8f).setDuration(420L).setInterpolator(qr.h).start();
-        } else {
-            dqVar.setAlpha(z11 ? 1.0f : 0.0f);
-            dqVar.setScaleX(z11 ? 1.0f : 0.0f);
-            dqVar.setScaleY(z11 ? 1.0f : 0.0f);
-        }
-        if (chat != null) {
-            int[] iArr = new int[1];
-            if (AndroidUtilities.isAccessibilityScreenReaderEnabled()) {
-                int i10 = chat.participants_count;
-                iArr[0] = i10;
-                formatShortNumber = String.valueOf(i10);
-            } else {
-                formatShortNumber = LocaleController.formatShortNumber(chat.participants_count, iArr);
+    public static /* synthetic */ void a(h6 h6Var, TLObject tLObject, MessagesStorage messagesStorage, long j3, int i10, ArrayList arrayList) {
+        ArrayList arrayList2 = h6Var.d;
+        int i11 = h6Var.a;
+        if (!(tLObject instanceof TLRPC.messages_Messages)) {
+            if (i10 != h6Var.e) {
+                return;
             }
-            dqVar.c(LocaleController.formatPluralString("Subscribers", iArr[0], new Object[0]).replace(String.format("%d", Integer.valueOf(iArr[0])), formatShortNumber), true, true);
-            boolean z12 = arrayList == null || arrayList.isEmpty();
-            this.e = z12;
-            s2 s2Var = this.d;
-            if (z12) {
-                s2Var.W(-chat.id, null, 0, false, z10);
+            h6Var.c();
+            return;
+        }
+        TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject;
+        MessagesController.getInstance(i11).putUsers(messages_messages.users, false);
+        MessagesController.getInstance(i11).putChats(messages_messages.chats, false);
+        messagesStorage.putUsersAndChats(messages_messages.users, messages_messages.chats, true, true);
+        messagesStorage.putMessages(messages_messages, -j3, 3, 0, false, 0, 0L);
+        if (i10 == h6Var.e && !messages_messages.messages.isEmpty()) {
+            arrayList2.clear();
+            Collections.sort(arrayList, Comparator$-CC.comparingInt(new ai.f7(7)));
+            TLRPC.Message message = (TLRPC.Message) hg.k0.g(1, messages_messages.messages);
+            long j10 = message.grouped_id;
+            if (j10 != 0) {
+                ArrayList<TLRPC.Message> arrayList3 = messages_messages.messages;
+                int size = arrayList3.size();
+                int i12 = 0;
+                while (i12 < size) {
+                    TLRPC.Message message2 = arrayList3.get(i12);
+                    i12++;
+                    TLRPC.Message message3 = message2;
+                    if (message3.grouped_id == j10) {
+                        arrayList2.add(new MessageObject(i11, message3, false, true));
+                    }
+                }
             } else {
-                MessageObject messageObject = (MessageObject) hg.k0.g(1, arrayList);
-                long j3 = -chat.id;
-                int i11 = messageObject.messageOwner.date;
-                if (s2Var.H0 != j3) {
-                    s2Var.t4 = -1;
+                arrayList2.add(new MessageObject(i11, message, false, true));
+            }
+            if (arrayList2.isEmpty()) {
+                return;
+            }
+            h6Var.c();
+        }
+    }
+
+    public static /* synthetic */ void b(h6 h6Var, int i10, ArrayList arrayList, long j3, int i11, MessagesStorage messagesStorage) {
+        int i12 = h6Var.a;
+        ArrayList arrayList2 = h6Var.d;
+        if (i10 != h6Var.e) {
+            return;
+        }
+        if (!arrayList.isEmpty()) {
+            arrayList2.clear();
+            Collections.sort(arrayList, Comparator$-CC.comparingInt(new ai.f7(6)));
+            TLRPC.Message message = (TLRPC.Message) arrayList.get(arrayList.size() - 1);
+            long j10 = message.grouped_id;
+            if (j10 != 0) {
+                int size = arrayList.size();
+                int i13 = 0;
+                while (i13 < size) {
+                    Object obj = arrayList.get(i13);
+                    i13++;
+                    TLRPC.Message message2 = (TLRPC.Message) obj;
+                    if (message2.grouped_id == j10) {
+                        arrayList2.add(new MessageObject(i12, message2, false, true));
+                    }
                 }
-                s2Var.H0 = j3;
-                s2Var.x4 = System.currentTimeMillis();
-                s2Var.f1 = messageObject;
-                s2Var.u2 = false;
-                s2Var.N0 = false;
-                s2Var.R0 = i11;
-                int i12 = messageObject.messageOwner.edit_date;
-                s2Var.S0 = 0;
-                s2Var.T0 = false;
-                s2Var.l1 = messageObject.getId();
-                s2Var.U0 = 0;
-                s2Var.V0 = 0;
-                s2Var.W0 = 0;
-                s2Var.X0 = messageObject.isUnread();
-                s2Var.g1 = arrayList;
-                MessageObject messageObject2 = s2Var.f1;
-                if (messageObject2 != null) {
-                    s2Var.Y0 = messageObject2.messageOwner.send_state;
-                }
-                s2Var.b0(0, z10);
+            } else {
+                arrayList2.add(new MessageObject(i12, message, false, true));
+            }
+            if (!arrayList2.isEmpty()) {
+                h6Var.c();
+                return;
             }
         }
-        if (!z10) {
-            this.f.f(this.e, true);
+        TLRPC.TL_channels_getMessages tL_channels_getMessages = new TLRPC.TL_channels_getMessages();
+        tL_channels_getMessages.channel = MessagesController.getInstance(i12).getInputChannel(j3);
+        for (int i14 = 10; i14 >= 0; i14--) {
+            int i15 = i11 - i14;
+            if (i15 >= 0) {
+                tL_channels_getMessages.id.add(Integer.valueOf(i15));
+            }
         }
-        invalidate();
-        this.n = true;
+        ConnectionsManager.getInstance(i12).sendRequest(tL_channels_getMessages, new gd(h6Var, messagesStorage, j3, i10, arrayList));
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        float e = this.f.e(this.e);
-        if (e > 0.0f) {
-            p90 p90Var = this.h;
-            p90Var.setAlpha((int) (e * 255.0f));
-            RectF rectF = AndroidUtilities.rectTmp;
-            s2 s2Var = this.d;
-            rectF.set(s2Var.getX() + AndroidUtilities.dp(s2Var.I + 6), s2Var.getY() + AndroidUtilities.dp(38.0f), (getWidth() * 0.5f) + s2Var.getX() + AndroidUtilities.dp(s2Var.I + 6), s2Var.getY() + AndroidUtilities.dp(46.33f));
-            p90Var.d(rectF);
-            p90Var.draw(canvas);
-            rectF.set(s2Var.getX() + AndroidUtilities.dp(s2Var.I + 6), s2Var.getY() + AndroidUtilities.dp(56.0f), (getWidth() * 0.36f) + s2Var.getX() + AndroidUtilities.dp(s2Var.I + 6), s2Var.getY() + AndroidUtilities.dp(64.33f));
-            p90Var.d(rectF);
-            p90Var.draw(canvas);
-            rectF.set(((s2Var.getX() + s2Var.getWidth()) - AndroidUtilities.dp(16.0f)) - AndroidUtilities.dp(43.0f), s2Var.getY() + AndroidUtilities.dp(12.0f), (s2Var.getX() + s2Var.getWidth()) - AndroidUtilities.dp(16.0f), s2Var.getY() + AndroidUtilities.dp(20.33f));
-            p90Var.d(rectF);
-            p90Var.draw(canvas);
-            invalidate();
+    public final void c() {
+        int i10 = 0;
+        this.b = false;
+        this.c = true;
+        ArrayList arrayList = this.h;
+        int size = arrayList.size();
+        while (i10 < size) {
+            Object obj = arrayList.get(i10);
+            i10++;
+            ((Runnable) obj).run();
         }
+        arrayList.clear();
     }
 
-    @Override // org.telegram.ui.ActionBar.z5
-    public final void e() {
-        int v02 = org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.L6, this.a);
-        dq dqVar = this.c;
-        dqVar.setTextColor(v02);
-        dqVar.setBackground(org.telegram.ui.ActionBar.j6.c0(AndroidUtilities.dp(9.0f), AndroidUtilities.dp(9.0f), org.telegram.ui.ActionBar.j6.l1(0.1f, v02)));
-        this.b.setTextColor(v02);
-    }
-
-    public /* bridge */ /* synthetic */ int[] getColorKeys() {
-        return null;
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(102.0f), TLObject.FLAG_30));
-    }
-
-    @Override // android.view.View
-    public final boolean verifyDrawable(Drawable drawable) {
-        return this.h == drawable || super.verifyDrawable(drawable);
+    public final void d(TLRPC.UserFull userFull) {
+        ArrayList arrayList = this.d;
+        if (userFull == null || (userFull.flags2 & 64) == 0) {
+            this.e++;
+            this.c = true;
+            arrayList.clear();
+            c();
+            return;
+        }
+        long j3 = userFull.personal_channel_id;
+        int i10 = userFull.personal_channel_message;
+        if (this.c || this.b) {
+            if (this.f == j3 && this.g == i10) {
+                return;
+            }
+            this.c = false;
+            arrayList.clear();
+        }
+        int i11 = this.e + 1;
+        this.e = i11;
+        this.b = true;
+        this.f = j3;
+        this.g = i10;
+        int i12 = this.a;
+        long clientUserId = UserConfig.getInstance(i12).getClientUserId();
+        MessagesStorage messagesStorage = MessagesStorage.getInstance(i12);
+        messagesStorage.getStorageQueue().postRunnable(new sf(this, i10, messagesStorage, j3, clientUserId, i11));
     }
 }

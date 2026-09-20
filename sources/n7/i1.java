@@ -1,14 +1,8 @@
 package n7;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
-public final class i1 implements h1 {
-    public static final ka.c a;
-
-    static {
-        int i10 = o.c;
-        Object[] objArr = y.r;
-        new b0("FIDO");
-        a = new ka.c(Boolean.FALSE, 5);
-    }
+public final class i1 {
+    public static final i1 b = new i1();
+    public final f a = new f(new k1());
 }

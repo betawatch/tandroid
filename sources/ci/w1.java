@@ -14,12 +14,12 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.gl0;
-import org.telegram.ui.Components.vl0;
+import org.telegram.ui.Components.fl0;
+import org.telegram.ui.Components.ul0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
-public final class w1 extends vl0 {
+public final class w1 extends ul0 {
     public String e;
     public TLRPC.User f;
     public String h;
@@ -45,7 +45,7 @@ public final class w1 extends vl0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.vl0
+    @Override // org.telegram.ui.Components.ul0
     public final boolean D(s4.c1 c1Var) {
         return c1Var.f == 2;
     }
@@ -211,25 +211,25 @@ public final class w1 extends vl0 {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r1v3, types: [android.view.View, org.telegram.ui.Cells.o8] */
+    /* JADX WARN: Type inference failed for: r1v3, types: [android.view.View, org.telegram.ui.Cells.p8] */
     /* JADX WARN: Type inference failed for: r9v10, types: [android.view.View] */
     @Override // s4.h0
     public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        org.telegram.ui.ActionBar.e6 e6Var;
+        org.telegram.ui.ActionBar.f6 f6Var;
         org.telegram.ui.Cells.f2 f2Var;
         z1 z1Var = this.s;
         if (i10 == 0) {
             f2Var = new View(z1Var.getContext());
         } else if (i10 == 1) {
             Context context = z1Var.getContext();
-            e6Var = ((org.telegram.ui.ActionBar.f3) z1Var.r).resourcesProvider;
-            ?? o8Var = new org.telegram.ui.Cells.o8(context, false, false, e6Var, false);
-            o8Var.b(0, LocaleController.getString(R.string.FeaturedGifs));
+            f6Var = ((org.telegram.ui.ActionBar.f3) z1Var.r).resourcesProvider;
+            ?? p8Var = new org.telegram.ui.Cells.p8(context, false, false, f6Var, false);
+            p8Var.b(0, LocaleController.getString(R.string.FeaturedGifs));
             s4.p0 p0Var = new s4.p0(-1, -2);
             ((ViewGroup.MarginLayoutParams) p0Var).topMargin = AndroidUtilities.dp(2.5f);
             ((ViewGroup.MarginLayoutParams) p0Var).bottomMargin = AndroidUtilities.dp(5.5f);
-            o8Var.setLayoutParams(p0Var);
-            f2Var = o8Var;
+            p8Var.setLayoutParams(p0Var);
+            f2Var = p8Var;
         } else {
             org.telegram.ui.Cells.f2 f2Var2 = new org.telegram.ui.Cells.f2(z1Var.getContext());
             f2Var2.getPhotoImage().setLayerNum(7);
@@ -242,6 +242,6 @@ public final class w1 extends vl0 {
             f2Var2.setCanPreviewGif(true);
             f2Var = f2Var2;
         }
-        return new gl0(f2Var);
+        return new fl0(f2Var);
     }
 }

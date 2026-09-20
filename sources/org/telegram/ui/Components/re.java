@@ -2,16 +2,16 @@ package org.telegram.ui.Components;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class re implements d5, ml0 {
+public final class re implements c5, ll0 {
     public final /* synthetic */ ChatActivityEnterView a;
 
     public /* synthetic */ re(ChatActivityEnterView chatActivityEnterView) {
         this.a = chatActivityEnterView;
     }
 
-    @Override // org.telegram.ui.Components.d5
+    @Override // org.telegram.ui.Components.c5
     public void J(int i10, int i11, boolean z10) {
         ChatActivityEnterView chatActivityEnterView = this.a;
         boolean T0 = chatActivityEnterView.T0(i10, z10, i11, true, 0L);
@@ -22,7 +22,7 @@ public final class re implements d5, ml0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.ml0
+    @Override // org.telegram.ui.Components.ll0
     public boolean d(int i10, View view) {
         if (!(view instanceof ei.a0)) {
             return false;

@@ -2,9 +2,9 @@ package n7;
 
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
-public final class w0 extends d1 {
+public final class w0 extends c1 {
     public final s0 a;
 
     public w0(s0 s0Var) {
@@ -13,13 +13,13 @@ public final class w0 extends d1 {
 
     @Override // java.lang.Comparable
     public final int compareTo(Object obj) {
-        d1 d1Var = (d1) obj;
-        int zza = d1Var.zza();
-        int c10 = d1.c((byte) 64);
+        c1 c1Var = (c1) obj;
+        int zza = c1Var.zza();
+        int c10 = c1.c((byte) 64);
         if (c10 != zza) {
-            return c10 - d1Var.zza();
+            return c10 - c1Var.zza();
         }
-        s0 s0Var = ((w0) d1Var).a;
+        s0 s0Var = ((w0) c1Var).a;
         s0 s0Var2 = this.a;
         byte[] bArr = s0Var2.b;
         int length = bArr.length;
@@ -41,7 +41,7 @@ public final class w0 extends d1 {
     }
 
     public final int hashCode() {
-        return Arrays.hashCode(new Object[]{Integer.valueOf(d1.c((byte) 64)), this.a});
+        return Arrays.hashCode(new Object[]{Integer.valueOf(c1.c((byte) 64)), this.a});
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -118,8 +118,8 @@ public final class w0 extends d1 {
         return a4.a.p("h'", m0Var.c(u10.length, u10), "'");
     }
 
-    @Override // n7.d1
+    @Override // n7.c1
     public final int zza() {
-        return d1.c((byte) 64);
+        return c1.c((byte) 64);
     }
 }

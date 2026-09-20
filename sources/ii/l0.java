@@ -12,20 +12,20 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Cells.q9;
+import org.telegram.ui.Cells.r9;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class l0 {
     public final i1 a;
-    public final org.telegram.ui.ActionBar.e6 b;
+    public final org.telegram.ui.ActionBar.f6 b;
     public final k0 c;
     public boolean d;
 
-    public l0(Context context, org.telegram.ui.ActionBar.e6 e6Var, k0 k0Var) {
-        this.b = e6Var;
+    public l0(Context context, org.telegram.ui.ActionBar.f6 f6Var, k0 k0Var) {
+        this.b = f6Var;
         this.c = k0Var;
-        i1 i1Var = new i1(context, e6Var);
+        i1 i1Var = new i1(context, f6Var);
         this.a = i1Var;
         i1Var.setPadding(AndroidUtilities.dp(2.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f));
         i1Var.setAllowNewlines(false);
@@ -33,7 +33,7 @@ public final class l0 {
         i1Var.setGravity(8388659);
         i1Var.setTextSize(1, Math.max(8, SharedConfig.fontSize - 2));
         i1Var.setHint(LocaleController.getString(R.string.AddCaption));
-        i1Var.setListener(new n4.y(this, k0Var, false, 19));
+        i1Var.setListener(new n4.y(this, k0Var, false));
         i1Var.setDelegate(new ah.b(17, this, k0Var));
         a();
     }
@@ -82,14 +82,14 @@ public final class l0 {
 
     public final void c(Canvas canvas) {
         k0 k0Var = this.c;
-        q9 C = k0Var.C();
-        if (C != null) {
+        r9 B = k0Var.B();
+        if (B != null) {
             if (this.a.getLayout() == null) {
                 return;
             }
             canvas.save();
             canvas.translate(r2.getPaddingLeft() + r2.getLeft(), r2.getPaddingTop() + r2.getTop());
-            C.a0(canvas, k0Var.I(), 0);
+            B.a0(canvas, k0Var.I(), 0);
             canvas.restore();
         }
     }

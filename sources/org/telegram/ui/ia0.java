@@ -7,7 +7,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ia0 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -26,13 +26,13 @@ public final /* synthetic */ class ia0 implements RequestDelegate {
             case 0:
                 Pattern pattern = LaunchActivity.B1;
                 if (tLObject != null) {
-                    AndroidUtilities.runOnUIThread(new y80(4, launchActivity, (TL_account.Password) tLObject));
+                    AndroidUtilities.runOnUIThread(new r80(6, launchActivity, (TL_account.Password) tLObject));
                     break;
                 }
                 break;
             default:
                 Pattern pattern2 = LaunchActivity.B1;
-                AndroidUtilities.runOnUIThread(new y80(0, launchActivity, tLObject));
+                AndroidUtilities.runOnUIThread(new r80(2, launchActivity, tLObject));
                 break;
         }
     }

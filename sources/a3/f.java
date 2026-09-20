@@ -6,7 +6,7 @@ import java.util.ArrayDeque;
 import java.util.List;
 import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class f implements o0 {
     public final a0 a;
@@ -22,7 +22,9 @@ public final class f implements o0 {
     public f(a0 a0Var, e2.x xVar) {
         this.a = a0Var;
         a0Var.l = xVar;
-        this.b = new f0(new n4.y(this), a0Var);
+        n4.y yVar = new n4.y();
+        yVar.b = this;
+        this.b = new f0(yVar, a0Var);
         this.c = new ArrayDeque();
         this.e = new b2.s(new b2.r());
         this.f = -9223372036854775807L;

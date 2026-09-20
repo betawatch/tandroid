@@ -35,11 +35,11 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.rk;
 import org.telegram.ui.Components.qt;
-import org.telegram.ui.bc1;
+import org.telegram.ui.dc1;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class x4 {
     public static final j4 p = new j4();
@@ -51,7 +51,7 @@ public final class x4 {
     public final int i;
     public Runnable j;
     public qt k;
-    public final e6 n;
+    public final f6 n;
     public final ah.c o;
     public final Rect c = new Rect();
     public final Rect d = new Rect();
@@ -61,11 +61,11 @@ public final class x4 {
     public final k4 l = new k4(this);
     public final a4.e m = new a4.e(23);
 
-    public x4(Context context, View view, int i10, e6 e6Var, ah.c cVar) {
+    public x4(Context context, View view, int i10, f6 f6Var, ah.c cVar) {
         this.a = view;
         this.i = i10;
         this.o = cVar;
-        this.n = e6Var;
+        this.n = f6Var;
         this.b = new v4(this, context, view);
     }
 
@@ -79,7 +79,7 @@ public final class x4 {
 
     public static LinearLayout b(x4 x4Var, Context context, MenuItem menuItem, boolean z10, boolean z11, boolean z12) {
         int v02;
-        e6 e6Var = x4Var.n;
+        f6 f6Var = x4Var.n;
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setLayoutParams(new ViewGroup.LayoutParams(-2, -2));
         linearLayout.setOrientation(0);
@@ -95,20 +95,20 @@ public final class x4 {
         textView.setFocusable(false);
         textView.setImportantForAccessibility(2);
         textView.setFocusableInTouchMode(false);
-        int v03 = j6.v0(j6.i6, e6Var);
+        int v03 = j6.v0(j6.i6, f6Var);
         int i10 = x4Var.i;
         if (i10 == 0) {
-            v02 = j6.v0(j6.j5, e6Var);
+            v02 = j6.v0(j6.j5, f6Var);
             textView.setTextColor(v02);
         } else if (i10 == 2) {
             v02 = -328966;
             textView.setTextColor(-328966);
             v03 = 553648127;
         } else if (i10 == 1) {
-            v02 = j6.v0(j6.G6, e6Var);
+            v02 = j6.v0(j6.G6, f6Var);
             textView.setTextColor(v02);
         } else {
-            v02 = j6.v0(j6.G6, e6Var);
+            v02 = j6.v0(j6.G6, f6Var);
         }
         if (z11 || z12) {
             linearLayout.setBackground(j6.a0(v03, z11 ? 12 : 0, z12 ? 12 : 0, z12 ? 12 : 0, z11 ? 12 : 0));
@@ -207,16 +207,16 @@ public final class x4 {
         v4Var.J = null;
         v4Var.N = false;
         v4Var.n();
-        bc1 bc1Var = v4Var.g;
-        bc1Var.removeAllViews();
-        bc1Var.setPaddingRelative(0, 0, 0, 0);
+        dc1 dc1Var = v4Var.g;
+        dc1Var.removeAllViews();
+        dc1Var.setPaddingRelative(0, 0, 0, 0);
         u4 u4Var = v4Var.h;
         ArrayAdapter arrayAdapter = (ArrayAdapter) u4Var.getAdapter();
         arrayAdapter.clear();
         u4Var.setAdapter((ListAdapter) arrayAdapter);
         v4Var.f.removeAllViews();
         v4Var.b.getWindowVisibleDisplayFrame(rect);
-        int min = Math.min(AndroidUtilities.dp(400.0f), wh.B(16.0f, 2, rect.width()));
+        int min = Math.min(AndroidUtilities.dp(400.0f), rk.B(16.0f, 2, rect.width()));
         LinkedList linkedList = new LinkedList(d);
         Iterator it = linkedList.iterator();
         int i12 = min;
@@ -248,7 +248,7 @@ public final class x4 {
                 }
                 b10.setTag(menuItem3);
                 b10.setOnClickListener(v4Var.L);
-                bc1Var.addView(b10);
+                dc1Var.addView(b10);
                 ViewGroup.LayoutParams layoutParams = b10.getLayoutParams();
                 layoutParams.width = min2;
                 b10.setLayoutParams(layoutParams);
@@ -261,10 +261,10 @@ public final class x4 {
             i10 = 0;
         } else {
             i10 = 0;
-            bc1Var.setPaddingRelative(0, 0, size2.getWidth(), 0);
+            dc1Var.setPaddingRelative(0, 0, size2.getWidth(), 0);
         }
-        bc1Var.measure(i10, i10);
-        v4Var.J = new Size(bc1Var.getMeasuredWidth(), bc1Var.getMeasuredHeight());
+        dc1Var.measure(i10, i10);
+        v4Var.J = new Size(dc1Var.getMeasuredWidth(), dc1Var.getMeasuredHeight());
         if (!linkedList.isEmpty()) {
             ArrayAdapter arrayAdapter2 = (ArrayAdapter) u4Var.getAdapter();
             arrayAdapter2.clear();

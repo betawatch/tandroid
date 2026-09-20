@@ -1,35 +1,116 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Rect;
-import android.widget.FrameLayout;
+import android.graphics.drawable.Drawable;
+import android.view.View;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class wc1 extends FrameLayout {
+public final class wc1 implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Rect b;
-    public final /* synthetic */ vd1 c;
+    public int b = 0;
+    public final /* synthetic */ xd1 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public wc1(vd1 vd1Var, Context context, int i10, Rect rect) {
-        super(context);
-        this.c = vd1Var;
+    public /* synthetic */ wc1(xd1 xd1Var, int i10) {
         this.a = i10;
-        this.b = rect;
+        this.c = xd1Var;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        int i10 = this.a;
-        Rect rect = this.b;
-        vd1 vd1Var = this.c;
-        if (i10 == 0) {
-            vd1Var.r.setBounds(vd1Var.V.getLeft() - rect.left, 0, vd1Var.V.getRight() + rect.right, getMeasuredHeight());
-        } else {
-            vd1Var.r.setBounds(-rect.left, 0, getMeasuredWidth() + rect.right, getMeasuredHeight());
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
+            case 0:
+                xd1 xd1Var = this.c;
+                xd1Var.F0.setRotation(this.b);
+                this.b -= 45;
+                xd1Var.F0.animate().rotationBy(-45.0f).setDuration(300L).setInterpolator(org.telegram.ui.Components.qr.g).start();
+                md1[] md1VarArr = xd1Var.w0;
+                md1 md1Var = md1VarArr[0];
+                if (md1Var != null) {
+                    Drawable background = md1Var.getBackground();
+                    if (background instanceof org.telegram.ui.Components.kc0) {
+                        ((org.telegram.ui.Components.kc0) background).x(false);
+                    } else {
+                        org.telegram.ui.ActionBar.h6 h6Var = xd1Var.s;
+                        if (xd1Var.b == 2) {
+                            xd1Var.h1 += 45;
+                            while (true) {
+                                int i10 = xd1Var.h1;
+                                if (i10 >= 360) {
+                                    xd1Var.h1 = i10 - 360;
+                                } else {
+                                    xd1Var.a1(xd1Var.Z0, 0, true);
+                                }
+                            }
+                        } else if (h6Var != null) {
+                            h6Var.n += 45;
+                            while (true) {
+                                int i11 = h6Var.n;
+                                if (i11 >= 360) {
+                                    h6Var.n = i11 - 360;
+                                } else {
+                                    org.telegram.ui.ActionBar.j6.n1(false, false);
+                                }
+                            }
+                        }
+                    }
+                }
+                md1 md1Var2 = md1VarArr[1];
+                if (md1Var2 != null) {
+                    Drawable background2 = md1Var2.getBackground();
+                    if (background2 instanceof org.telegram.ui.Components.kc0) {
+                        ((org.telegram.ui.Components.kc0) background2).x(false);
+                        break;
+                    }
+                }
+                break;
+            default:
+                xd1 xd1Var2 = this.c;
+                org.telegram.ui.ActionBar.q5 q5Var = xd1Var2.R;
+                xd1Var2.G0.setRotation(this.b);
+                this.b -= 45;
+                xd1Var2.G0.animate().rotationBy(-45.0f).setDuration(300L).setInterpolator(org.telegram.ui.Components.qr.g).start();
+                org.telegram.ui.ActionBar.h6 h6Var2 = xd1Var2.s;
+                if (!h6Var2.i) {
+                    int i12 = h6Var2.h;
+                    if (i12 != 0) {
+                        int i13 = h6Var2.e;
+                        if (i13 == 0) {
+                            i13 = h6Var2.c;
+                        }
+                        h6Var2.e = h6Var2.f;
+                        h6Var2.f = h6Var2.g;
+                        h6Var2.g = i12;
+                        h6Var2.h = i13;
+                    } else {
+                        int i14 = h6Var2.e;
+                        if (i14 == 0) {
+                            i14 = h6Var2.c;
+                        }
+                        h6Var2.e = h6Var2.f;
+                        h6Var2.f = h6Var2.g;
+                        h6Var2.g = i14;
+                    }
+                    xd1Var2.V.e(h6Var2.h, 3);
+                    xd1Var2.V.e(h6Var2.g, 2);
+                    xd1Var2.V.e(h6Var2.f, 1);
+                    org.telegram.ui.Components.mq mqVar = xd1Var2.V;
+                    int i15 = h6Var2.e;
+                    if (i15 == 0) {
+                        i15 = h6Var2.c;
+                    }
+                    mqVar.e(i15, 0);
+                    xd1Var2.K0[1].b(0, h6Var2.e);
+                    xd1Var2.K0[1].b(1, h6Var2.f);
+                    xd1Var2.K0[1].b(2, h6Var2.g);
+                    xd1Var2.K0[1].b(3, h6Var2.h);
+                    org.telegram.ui.ActionBar.j6.n1(true, true);
+                    xd1Var2.u0.g1();
+                    break;
+                } else if (q5Var.i() != null) {
+                    q5Var.i().x(false);
+                    break;
+                }
+                break;
         }
-        vd1Var.r.draw(canvas);
     }
 }

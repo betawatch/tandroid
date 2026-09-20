@@ -1,36 +1,36 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
-/* loaded from: classes3.dex */
-public final class lk0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ok0 b;
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import org.telegram.messenger.ImageReceiver;
 
-    public /* synthetic */ lk0(ok0 ok0Var, int i10) {
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* loaded from: classes3.dex */
+public final class lk0 extends ImageReceiver {
+    public final /* synthetic */ int a;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ lk0(int i10, View view) {
+        super(view);
         this.a = i10;
-        this.b = ok0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.messenger.ImageReceiver
+    public final boolean setImageBitmapByKey(Drawable drawable, String str, int i10, boolean z10, int i11) {
         switch (this.a) {
             case 0:
-                if (this.b.a.getImageReceiver().getLottieAnimation() != null && !this.b.a.getImageReceiver().getLottieAnimation().k0 && !this.b.a.getImageReceiver().getLottieAnimation().y()) {
-                    this.b.a.getImageReceiver().getLottieAnimation().start();
+                if (drawable instanceof hj0) {
+                    ((hj0) drawable).N(0, false, true);
                 }
-                this.b.E = false;
-                break;
+                return super.setImageBitmapByKey(drawable, str, i10, z10, i11);
             default:
-                ok0 ok0Var = this.b;
-                qk0 qk0Var = ok0Var.P;
-                try {
-                    ok0Var.performHapticFeedback(0);
-                } catch (Exception unused) {
+                boolean imageBitmapByKey = super.setImageBitmapByKey(drawable, str, i10, z10, i11);
+                if (imageBitmapByKey && (drawable instanceof hj0)) {
+                    hj0 hj0Var = (hj0) drawable;
+                    hj0Var.N(0, false, true);
+                    hj0Var.stop();
                 }
-                qk0Var.m0 = qk0Var.T.indexOf(ok0Var.e);
-                qk0Var.l0 = ok0Var.e;
-                qk0Var.invalidate();
-                break;
+                return imageBitmapByKey;
         }
     }
 }

@@ -5,7 +5,7 @@ import hg.k0;
 import java.util.ArrayList;
 import p4.r;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class c {
     public ArrayList a;
@@ -33,7 +33,7 @@ public final class c {
     }
 
     public void b(StringBuilder sb2) {
-        sb2.append(((Boolean) k0.v(1, this.a)).booleanValue() ? "</ol>" : "</ul>");
+        sb2.append(((Boolean) k0.x(1, this.a)).booleanValue() ? "</ol>" : "</ul>");
     }
 
     public void c(StringBuilder sb2) {

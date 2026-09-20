@@ -1,39 +1,34 @@
 package org.telegram.ui.Components;
 
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ProfileActivity;
+import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class rw0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ uw0 b;
+public final class rw0 {
+    public MessagesController.PeerColor a;
+    public org.telegram.ui.ActionBar.f6 b;
+    public int c;
+    public int d;
+    public float e;
 
-    public /* synthetic */ rw0(uw0 uw0Var, int i10) {
-        this.a = i10;
-        this.b = uw0Var;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                uw0 uw0Var = this.b;
-                uw0Var.invalidate();
-                AndroidUtilities.runOnUIThread(new rw0(uw0Var, 1));
-                break;
-            default:
-                uw0 uw0Var2 = this.b;
-                tw0 tw0Var = uw0Var2.e;
-                if (tw0Var != null) {
-                    uw0Var2.getVisibilityFactor();
-                    ProfileActivity profileActivity = ((org.telegram.ui.ky0) tw0Var).b;
-                    org.telegram.ui.ActionBar.j5[] j5VarArr = profileActivity.r;
-                    j5VarArr[1].setTranslationX(profileActivity.W3(profileActivity.Z5));
-                    j5VarArr[1].setTranslationY(profileActivity.X3(profileActivity.a6));
-                    break;
-                }
-                break;
+    public final void a(MessagesController.PeerColor peerColor) {
+        this.a = peerColor;
+        if (peerColor == null) {
+            this.c = org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.A8, this.b);
+            this.d = org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.s8, this.b);
+            this.c = i0.a.d(this.e, this.c, 603979776);
+            this.d = i0.a.d(this.e, this.d, -1);
+            return;
         }
+        int bgColor1 = peerColor.getBgColor1(org.telegram.ui.ActionBar.j6.I.q());
+        int bgColor2 = peerColor.getBgColor2(org.telegram.ui.ActionBar.j6.I.q());
+        org.telegram.ui.ActionBar.f6 f6Var = this.b;
+        int d = i0.a.d(0.75f, bgColor2, bgColor1);
+        int v02 = AndroidUtilities.computePerceivedBrightness(d) > 0.721f ? org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.v6, f6Var) : org.telegram.ui.ActionBar.j6.b(0.08f, -0.08f, d);
+        this.c = v02;
+        this.d = AndroidUtilities.computePerceivedBrightness(v02) > 0.721f ? -16777216 : -1;
+        this.c = i0.a.d(this.e, this.c, 603979776);
+        this.d = i0.a.d(this.e, this.d, -1);
     }
 }

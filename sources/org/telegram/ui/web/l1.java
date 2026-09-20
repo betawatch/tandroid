@@ -1,27 +1,40 @@
 package org.telegram.ui.web;
 
-import android.util.Base64InputStream;
-import java.io.BufferedInputStream;
 import java.io.File;
-import java.io.FilterInputStream;
-import java.util.HashMap;
+import java.io.FileInputStream;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
-public final class l1 {
-    public final HashMap a = new HashMap();
-    public File b;
-    public long c;
-    public long d;
+public final class l1 extends FileInputStream {
+    public final long a;
 
-    public final FilterInputStream a() {
-        BufferedInputStream bufferedInputStream = new BufferedInputStream(new k1(this.b, this.c, this.d));
-        HashMap hashMap = this.a;
-        m1 m1Var = (m1) hashMap.get("content-transfer-encoding");
-        if ("base64".equals(m1Var == null ? null : m1Var.a)) {
-            return new Base64InputStream(bufferedInputStream, 0);
+    public l1(File file, long j3, long j10) {
+        super(file);
+        this.a = j10;
+        if (j3 > 0 && skip(j3) != j3) {
+            throw new RuntimeException("BoundedInputStream failed to skip");
         }
-        m1 m1Var2 = (m1) hashMap.get("content-transfer-encoding");
-        return "quoted-printable".equalsIgnoreCase(m1Var2 != null ? m1Var2.a : null) ? new n1(bufferedInputStream) : bufferedInputStream;
+    }
+
+    @Override // java.io.FileInputStream, java.io.InputStream
+    public final int read() {
+        if (getChannel().position() >= this.a) {
+            return -1;
+        }
+        return super.read();
+    }
+
+    @Override // java.io.FileInputStream, java.io.InputStream
+    public final int read(byte[] bArr, int i10, int i11) {
+        long position = getChannel().position();
+        long j3 = this.a;
+        if (position >= j3) {
+            return -1;
+        }
+        long position2 = j3 - getChannel().position();
+        if (i11 > position2) {
+            i11 = (int) position2;
+        }
+        return super.read(bArr, i10, i11);
     }
 }

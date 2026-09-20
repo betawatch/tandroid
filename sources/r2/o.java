@@ -15,9 +15,9 @@ import j$.util.Objects;
 import java.util.HashMap;
 import java.util.List;
 import org.telegram.messenger.MediaController;
-import w7.a7;
+import w7.b7;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class o {
     public final String a;
@@ -418,12 +418,12 @@ public final class o {
         }
         int i12 = Build.VERSION.SDK_INT;
         if (i12 >= 29) {
-            int b10 = (i12 < 29 || ((bool = a7.a) != null && bool.booleanValue())) ? 0 : b2.c.b(videoCapabilities, i10, i11, d);
+            int b10 = (i12 < 29 || ((bool = b7.a) != null && bool.booleanValue())) ? 0 : b2.c.b(videoCapabilities, i10, i11, d);
             if (b10 != 2) {
                 if (b10 == 1) {
-                    StringBuilder k10 = k0.k("sizeAndRate.cover, ", i10, "x", i11, "@");
-                    k10.append(d);
-                    h(k10.toString());
+                    StringBuilder l4 = k0.l("sizeAndRate.cover, ", i10, "x", i11, "@");
+                    l4.append(d);
+                    h(l4.toString());
                     return false;
                 }
             }
@@ -433,9 +433,9 @@ public final class o {
             if (i10 < i11) {
                 String str = this.a;
                 if ((!"OMX.MTK.VIDEO.DECODER.HEVC".equals(str) || !"mcv5a".equals(Build.DEVICE)) && a(videoCapabilities, i11, i10, d)) {
-                    StringBuilder k11 = k0.k("sizeAndRate.rotated, ", i10, "x", i11, "@");
-                    k11.append(d);
-                    StringBuilder w10 = a4.a.w("AssumedSupport [", k11.toString(), "] [", str, ", ");
+                    StringBuilder l10 = k0.l("sizeAndRate.rotated, ", i10, "x", i11, "@");
+                    l10.append(d);
+                    StringBuilder w10 = a4.a.w("AssumedSupport [", l10.toString(), "] [", str, ", ");
                     w10.append(this.b);
                     w10.append("] [");
                     w10.append(d0.a);
@@ -444,9 +444,9 @@ public final class o {
                     return true;
                 }
             }
-            StringBuilder k12 = k0.k("sizeAndRate.support, ", i10, "x", i11, "@");
-            k12.append(d);
-            h(k12.toString());
+            StringBuilder l11 = k0.l("sizeAndRate.support, ", i10, "x", i11, "@");
+            l11.append(d);
+            h(l11.toString());
             return false;
         }
         return true;

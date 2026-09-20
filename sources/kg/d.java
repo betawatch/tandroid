@@ -4,16 +4,16 @@ import android.graphics.Canvas;
 import android.text.Layout;
 import android.text.StaticLayout;
 import android.text.TextPaint;
+import hg.k0;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.util.Locale;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BillingController;
-import org.telegram.messenger.q;
 import org.telegram.ui.ke;
-import yh.v7;
+import yh.w7;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class d {
     public final long[] a;
@@ -227,7 +227,7 @@ public final class d {
                 return AndroidUtilities.formatWholeNumber((int) j3, 0);
             }
             if (i10 != 1) {
-                return v7.X0(false, q.i(j3, ' ', new StringBuilder("XTR ")), 0.65f, null);
+                return w7.X0(false, k0.j(j3, ' ', new StringBuilder("XTR ")), 0.65f, null);
             }
             return "≈" + BillingController.getInstance().formatCurrency(j3, "USD");
         }

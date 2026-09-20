@@ -16,7 +16,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class bd extends View implements x2 {
     public final Drawable a;
@@ -25,7 +25,7 @@ public final class bd extends View implements x2 {
     public final Paint d;
     public final Paint e;
     public float f;
-    public final org.telegram.ui.Components.e6 h;
+    public final org.telegram.ui.Components.d6 h;
     public final Path n;
 
     public bd(Activity activity, int i10, int i11) {
@@ -34,7 +34,7 @@ public final class bd extends View implements x2 {
         this.d = paint;
         Paint paint2 = new Paint(3);
         this.e = paint2;
-        this.h = new org.telegram.ui.Components.e6(this, 0L, 350L, qr.h);
+        this.h = new org.telegram.ui.Components.d6(this, 0L, 350L, qr.h);
         this.n = new Path();
         this.a = activity.getResources().getDrawable(i10).mutate();
         this.b = i11;

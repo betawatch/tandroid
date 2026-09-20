@@ -15,9 +15,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.CopyOnWriteArrayList;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.ui.web.p1;
+import org.telegram.ui.web.g1;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class b implements y2.h {
     public final Uri a;
@@ -63,7 +63,7 @@ public final class b implements y2.h {
     }
 
     @Override // y2.h
-    public final void E(y2.j jVar, long j3, long j10, boolean z10) {
+    public final void F(y2.j jVar, long j3, long j10, boolean z10) {
         y2.p pVar = (y2.p) jVar;
         long j11 = pVar.a;
         Uri uri = pVar.d.c;
@@ -131,7 +131,7 @@ public final class b implements y2.h {
             d(uri);
         } else {
             this.r = true;
-            this.w.n.postDelayed(new p1(4, this, uri), j3 - elapsedRealtime);
+            this.w.n.postDelayed(new g1(6, this, uri), j3 - elapsedRealtime);
         }
     }
 

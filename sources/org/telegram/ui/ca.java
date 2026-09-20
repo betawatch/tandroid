@@ -4,7 +4,7 @@ import android.content.DialogInterface;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ca implements DialogInterface.OnCancelListener {
     public final /* synthetic */ int a;
@@ -45,10 +45,10 @@ public final /* synthetic */ class ca implements DialogInterface.OnCancelListene
                 ConnectionsManager.getInstance(((LanguageSelectActivity) this.c).currentAccount).cancelRequest(this.b, true);
                 break;
             case 7:
-                ((jd0) this.c).getConnectionsManager().cancelRequest(this.b, true);
+                ((kd0) this.c).getConnectionsManager().cancelRequest(this.b, true);
                 break;
             case 8:
-                ConnectionsManager.getInstance(((ae1) this.c).currentAccount).cancelRequest(this.b, true);
+                ConnectionsManager.getInstance(((ce1) this.c).currentAccount).cancelRequest(this.b, true);
                 break;
             default:
                 ConnectionsManager.getInstance(((yh.o) this.c).a).cancelRequest(this.b, true);

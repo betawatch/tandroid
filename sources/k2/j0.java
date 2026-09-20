@@ -1,9 +1,9 @@
 package k2;
 
 import java.nio.ByteBuffer;
-import v7.a8;
+import v7.b8;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class j0 {
     public static final byte[] d = {79, 103, 103, 83, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, -43, -59, -9, 1, 19, 79, 112, 117, 115, 72, 101, 97, 100, 1, 2, 56, 1, Byte.MIN_VALUE, -69, 0, 0, 0, 0, 0};
@@ -23,6 +23,6 @@ public final class j0 {
         byteBuffer.putInt(0);
         byteBuffer.putInt(i10);
         byteBuffer.putInt(0);
-        byteBuffer.put(a8.a(i11));
+        byteBuffer.put(b8.a(i11));
     }
 }

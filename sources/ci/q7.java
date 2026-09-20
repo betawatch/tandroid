@@ -15,7 +15,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public abstract class q7 extends FrameLayout {
     public float E;
@@ -29,7 +29,7 @@ public abstract class q7 extends FrameLayout {
     public ai.q0 n;
     public n r;
     public float s;
-    public qg.b2 v;
+    public qg.c2 v;
     public ValueAnimator w;
     public boolean x;
     public ValueAnimator y;
@@ -116,8 +116,8 @@ public abstract class q7 extends FrameLayout {
         paint.setAlpha((int) (this.s * 255.0f));
         canvas.drawCircle(rectF.centerX(), rectF.centerY(), Math.min(rectF.width() / 2.0f, rectF.height() / 2.0f) - 1.0f, paint);
         super.dispatchDraw(canvas);
-        qg.b2 b2Var = this.v;
-        if (b2Var != null && b2Var.getWidth() > 0 && this.v.getHeight() > 0) {
+        qg.c2 c2Var = this.v;
+        if (c2Var != null && c2Var.getWidth() > 0 && this.v.getHeight() > 0) {
             canvas.save();
             canvas.translate(rectF.left, rectF.top);
             canvas.scale(rectF.width() / this.v.getWidth(), rectF.height() / this.v.getHeight());

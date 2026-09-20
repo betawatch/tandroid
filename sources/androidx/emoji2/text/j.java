@@ -6,10 +6,10 @@ import com.google.android.gms.common.api.internal.p0;
 import java.util.ArrayList;
 import java.util.List;
 import org.telegram.ui.Cells.a0;
-import org.telegram.ui.Cells.n7;
-import w7.o6;
+import org.telegram.ui.Cells.o7;
+import w7.p6;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class j implements Runnable {
     public final /* synthetic */ int a;
@@ -64,19 +64,19 @@ public final class j implements Runnable {
                 }
                 break;
             default:
-                n7 n7Var = (n7) this.c;
-                if (n7Var.a && n7Var.getParent() != null && this.b == n7Var.c) {
-                    n7Var.a = false;
+                o7 o7Var = (o7) this.c;
+                if (o7Var.a && o7Var.getParent() != null && this.b == o7Var.c) {
+                    o7Var.a = false;
                     try {
-                        n7Var.performHapticFeedback(0);
+                        o7Var.performHapticFeedback(0);
                     } catch (Exception unused2) {
                     }
-                    int i11 = n7Var.h;
+                    int i11 = o7Var.h;
                     if (i11 >= 0) {
-                        n7Var.x.a(((CharSequence) n7Var.E.get(i11)).toString(), true);
+                        o7Var.x.a(((CharSequence) o7Var.E.get(i11)).toString(), true);
                     }
                     MotionEvent obtain2 = MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0);
-                    n7Var.onTouchEvent(obtain2);
+                    o7Var.onTouchEvent(obtain2);
                     obtain2.recycle();
                     break;
                 }
@@ -92,7 +92,7 @@ public final class j implements Runnable {
 
     public j(List list, int i10, Throwable th2) {
         this.a = 0;
-        o6.a(list, "initCallbacks cannot be null");
+        p6.a(list, "initCallbacks cannot be null");
         this.c = new ArrayList(list);
         this.b = i10;
     }

@@ -1,45 +1,41 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
+import android.view.MotionEvent;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class p51 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public int b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ Object d;
+public abstract class p51 {
+    public String[] a = new String[0];
 
-    public p51(org.telegram.ui.ev evVar, int i10, int i11) {
-        this.a = 1;
-        this.d = evVar;
-        this.b = i10;
-        this.c = i11;
+    public boolean a() {
+        return false;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                int floatValue = (int) (((Float) valueAnimator.getAnimatedValue()).floatValue() * this.c);
-                t51 t51Var = (t51) this.d;
-                t51Var.N = true;
-                t51Var.n.scrollBy(0, floatValue - this.b);
-                t51Var.N = false;
-                this.b = floatValue;
-                break;
-            default:
-                ((org.telegram.ui.ev) this.d).c.d.setColorFilter(new PorterDuffColorFilter(i0.a.d(((Float) valueAnimator.getAnimatedValue()).floatValue(), this.b, this.c), PorterDuff.Mode.SRC_IN));
-                break;
-        }
+    public String[] b() {
+        return this.a;
     }
 
-    public p51(t51 t51Var, int i10) {
-        this.a = 0;
-        this.d = t51Var;
-        this.c = i10;
-        this.b = 0;
+    public boolean c() {
+        return false;
+    }
+
+    public boolean d(i51 i51Var, MotionEvent motionEvent) {
+        return false;
+    }
+
+    public boolean e(i51 i51Var, j jVar, MotionEvent motionEvent) {
+        return false;
+    }
+
+    public abstract void g(TLRPC.StickerSetCovered stickerSetCovered, boolean z10);
+
+    public abstract void h(TLRPC.StickerSetCovered stickerSetCovered);
+
+    public void i(String[] strArr) {
+        this.a = strArr;
+    }
+
+    public void f(TLRPC.Document document, Object obj, boolean z10, int i10) {
     }
 }

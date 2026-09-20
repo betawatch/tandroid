@@ -9,13 +9,13 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class jj extends ni {
     public ai.w0 n;
     public int r;
     public bi.l s;
-    public za v;
+    public ya v;
     public int w;
     public q0.a x;
 
@@ -43,10 +43,10 @@ public final class jj extends ni {
             return ConnectionsManager.DEFAULT_DATACENTER_ID;
         }
         View childAt = w0Var.getChildAt(0);
-        gl0 gl0Var = (gl0) w0Var.H(childAt);
+        fl0 fl0Var = (fl0) w0Var.H(childAt);
         int top = childAt.getTop();
         int dp = AndroidUtilities.dp(7.0f);
-        if (top < AndroidUtilities.dp(7.0f) || gl0Var == null || gl0Var.b() != 0) {
+        if (top < AndroidUtilities.dp(7.0f) || fl0Var == null || fl0Var.b() != 0) {
             top = dp;
         }
         w0Var.setTopGlowOffset(top);
@@ -90,7 +90,7 @@ public final class jj extends ni {
         int i12;
         int i13;
         ai.w0 w0Var = this.n;
-        za zaVar = this.v;
+        ya yaVar = this.v;
         if (AndroidUtilities.isTablet()) {
             this.w = 4;
         } else {
@@ -105,10 +105,10 @@ public final class jj extends ni {
         int dp = ((i10 - AndroidUtilities.dp(12.0f)) - AndroidUtilities.dp(10.0f)) / this.w;
         if (this.r != dp) {
             this.r = dp;
-            zaVar.l();
+            yaVar.l();
         }
         this.s.y1(Math.max(1, ((this.w - 1) * AndroidUtilities.dp(5.0f)) + (this.w * dp)));
-        int ceil = (int) Math.ceil((((ArrayList) zaVar.e).size() - 1) / this.w);
+        int ceil = (int) Math.ceil((((ArrayList) yaVar.e).size() - 1) / this.w);
         Math.max(0, ((i11 - ((AndroidUtilities.dp(5.0f) * (ceil - 1)) + (dp * ceil))) - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) - AndroidUtilities.dp(60.0f));
         if (!AndroidUtilities.isTablet()) {
             Point point2 = AndroidUtilities.displaySize;

@@ -5,6 +5,7 @@ import android.media.UnsupportedSchemeException;
 import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
+import b2.r0;
 import e9.a1;
 import e9.g0;
 import e9.i0;
@@ -18,11 +19,11 @@ import java.util.IdentityHashMap;
 import java.util.List;
 import java.util.Set;
 import java.util.UUID;
-import ki.c0;
-import m4.r0;
+import m4.q0;
+import n4.y;
 import w7.b0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class f implements n {
     public int E;
@@ -35,13 +36,13 @@ public final class f implements n {
     public j2.k L;
     public volatile androidx.mediarouter.app.c M;
     public final UUID a;
-    public final r0 b;
+    public final q0 b;
     public final com.google.firebase.messaging.m c;
     public final HashMap d;
     public final boolean e;
     public final int[] f;
     public final boolean h;
-    public final of.b n;
+    public final y n;
     public final qb.b r;
     public final e s;
     public final long v;
@@ -60,7 +61,7 @@ public final class f implements n {
         this.f = iArr;
         this.h = z11;
         this.r = bVar;
-        this.n = new of.b(28);
+        this.n = new y(25);
         this.s = new e(this, 0);
         this.w = new ArrayList();
         this.x = Collections.newSetFromMap(new IdentityHashMap());
@@ -110,14 +111,14 @@ public final class f implements n {
     }
 
     @Override // n2.n
-    public final int L0(b2.s sVar) {
+    public final int M0(b2.s sVar) {
         h(false);
         r rVar = this.F;
         rVar.getClass();
-        int m0 = rVar.m0();
+        int l02 = rVar.l0();
         b2.o oVar = sVar.v;
         if (oVar == null) {
-            int h = b2.r0.h(sVar.r);
+            int h = r0.h(sVar.r);
             int i10 = 0;
             while (true) {
                 int[] iArr = this.f;
@@ -146,11 +147,11 @@ public final class f implements n {
                 return 1;
             }
         }
-        return m0;
+        return l02;
     }
 
     @Override // n2.n
-    public final h Y0(k kVar, b2.s sVar) {
+    public final h Z0(k kVar, b2.s sVar) {
         h(false);
         e2.d.g(this.E > 0);
         e2.d.h(this.I);
@@ -166,10 +167,10 @@ public final class f implements n {
         int i10 = 0;
         b bVar = null;
         if (oVar == null) {
-            int h = b2.r0.h(sVar.r);
+            int h = r0.h(sVar.r);
             r rVar = this.F;
             rVar.getClass();
-            if (rVar.m0() != 2 || !s.c) {
+            if (rVar.l0() != 2 || !s.c) {
                 int[] iArr = this.f;
                 while (true) {
                     if (i10 >= iArr.length) {
@@ -181,7 +182,7 @@ public final class f implements n {
                     }
                     i10++;
                 }
-                if (i10 != -1 && rVar.m0() != 1) {
+                if (i10 != -1 && rVar.l0() != 1) {
                     b bVar2 = this.G;
                     if (bVar2 == null) {
                         g0 g0Var = i0.b;
@@ -361,13 +362,13 @@ public final class f implements n {
     }
 
     @Override // n2.n
-    public final m j0(k kVar, b2.s sVar) {
+    public final m k0(k kVar, b2.s sVar) {
         e2.d.g(this.E > 0);
         e2.d.h(this.I);
         d dVar = new d(this, kVar);
         Handler handler = this.J;
         handler.getClass();
-        handler.post(new c0(8, dVar, sVar));
+        handler.post(new ki.l(10, dVar, sVar));
         return dVar;
     }
 

@@ -14,19 +14,19 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.Components.d90;
 import org.telegram.ui.Components.dp;
-import org.telegram.ui.Components.e90;
-import org.telegram.ui.Components.k70;
+import org.telegram.ui.Components.j70;
 import org.telegram.ui.Components.m30;
 import org.telegram.ui.Components.mp;
-import org.telegram.ui.Components.p6;
+import org.telegram.ui.Components.o6;
 import org.telegram.ui.Components.vi;
 import org.telegram.ui.Components.vo;
 import org.telegram.ui.zn;
 import s4.c1;
 import w7.y5;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class x implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -225,14 +225,14 @@ public final class x implements View.OnClickListener {
                 mpVar.Y.j0.f0();
                 mpVar.Y.show();
                 mpVar.Z = new n6(mpVar, mpVar.getContext());
-                p6 p6Var = new p6(mpVar.getContext(), true, true, true);
-                mpVar.a0 = p6Var;
-                p6Var.setTextSize(AndroidUtilities.dp(14.0f));
+                o6 o6Var = new o6(mpVar.getContext(), true, true, true);
+                mpVar.a0 = o6Var;
+                o6Var.setTextSize(AndroidUtilities.dp(14.0f));
                 mpVar.a0.setText(LocaleController.getString(R.string.SetColorAsBackground));
                 mpVar.a0.setGravity(17);
-                p6 p6Var2 = mpVar.a0;
+                o6 o6Var2 = mpVar.a0;
                 int i10 = j6.Oh;
-                p6Var2.setTextColor(mpVar.getThemedColor(i10));
+                o6Var2.setTextColor(mpVar.getThemedColor(i10));
                 mpVar.Z.addView(mpVar.a0, y5.e(-1, -2, 17));
                 n6 n6Var = mpVar.Z;
                 int dp = AndroidUtilities.dp(0.0f);
@@ -243,25 +243,25 @@ public final class x implements View.OnClickListener {
                 mpVar.Y.r1.addView(mpVar.Z, y5.e(-1, -2, 80));
                 return;
             case 9:
-                k70 k70Var = (k70) this.b;
+                j70 j70Var = (j70) this.b;
                 m30 m30Var = (m30) view;
                 if (m30Var.y) {
-                    k70Var.j0 = null;
-                    k70Var.f0.l(m30Var.getUid());
-                    k70Var.U.b(m30Var);
-                    k70Var.a0(true);
-                    AndroidUtilities.updateVisibleRows(k70Var.d);
+                    j70Var.j0 = null;
+                    j70Var.f0.l(m30Var.getUid());
+                    j70Var.U.b(m30Var);
+                    j70Var.a0(true);
+                    AndroidUtilities.updateVisibleRows(j70Var.d);
                     return;
                 }
-                m30 m30Var2 = k70Var.j0;
+                m30 m30Var2 = j70Var.j0;
                 if (m30Var2 != null) {
                     m30Var2.a();
                 }
-                k70Var.j0 = m30Var;
+                j70Var.j0 = m30Var;
                 m30Var.b();
                 return;
             default:
-                ((e90) this.b).e.callOnClick();
+                ((d90) this.b).e.callOnClick();
                 return;
         }
     }

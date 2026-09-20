@@ -11,13 +11,13 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class ov0 extends FrameLayout {
     public final FrameLayout a;
     public final TextureView b;
     public final k4 c;
-    public final org.telegram.ui.Components.w9 d;
+    public final org.telegram.ui.Components.v9 d;
     public final /* synthetic */ pv0 e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -30,9 +30,9 @@ public final class ov0 extends FrameLayout {
         this.a = frameLayout;
         frameLayout.setOutlineProvider(new nv0());
         frameLayout.setClipToOutline(true);
-        org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(context);
-        this.d = w9Var;
-        frameLayout.addView(w9Var);
+        org.telegram.ui.Components.v9 v9Var = new org.telegram.ui.Components.v9(context);
+        this.d = v9Var;
+        frameLayout.addView(v9Var);
         frameLayout.setWillNotDraw(false);
         k4 k4Var = new k4(context);
         this.c = k4Var;

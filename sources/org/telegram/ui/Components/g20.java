@@ -14,7 +14,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class g20 extends LinearLayout {
     public final ci.d a;
@@ -24,18 +24,18 @@ public final class g20 extends LinearLayout {
 
     public g20(Context context, int i10) {
         super(context);
-        TLRPC.TL_emojiList a2 = g9.a(i10);
+        TLRPC.TL_emojiList a2 = f9.a(i10);
         setOrientation(1);
-        w9 w9Var = new w9(context);
-        w9Var.setImageDrawable(new ij0(R.raw.utyan_gallery, AndroidUtilities.dp(110.0f), AndroidUtilities.dp(110.0f)));
+        v9 v9Var = new v9(context);
+        v9Var.setImageDrawable(new hj0(R.raw.utyan_gallery, AndroidUtilities.dp(110.0f), AndroidUtilities.dp(110.0f)));
         if (!AndroidUtilities.isTablet()) {
-            addView(w9Var, w7.y5.q(110, 110, 49));
+            addView(v9Var, w7.y5.q(110, 110, 49));
         }
-        TextView g10 = org.telegram.messenger.q.g(context, 1, 20.0f);
-        com.google.android.gms.internal.vision.e2.p(org.telegram.ui.ActionBar.j6.G6, null, false, g10, 1);
-        g10.setText(LocaleController.getString(R.string.GalleryAccessAllowAccess));
-        g10.setTypeface(AndroidUtilities.bold());
-        addView(g10, w7.y5.t(-2, -2, 49, 0, 15, 0, 7));
+        TextView f7 = org.telegram.messenger.l0.f(context, 1, 20.0f);
+        com.google.android.gms.internal.vision.e2.p(org.telegram.ui.ActionBar.j6.G6, null, false, f7, 1);
+        f7.setText(LocaleController.getString(R.string.GalleryAccessAllowAccess));
+        f7.setTypeface(AndroidUtilities.bold());
+        addView(f7, w7.y5.t(-2, -2, 49, 0, 15, 0, 7));
         TextView textView = new TextView(context);
         textView.setTextSize(1, 14.0f);
         com.google.android.gms.internal.vision.e2.p(org.telegram.ui.ActionBar.j6.c7, null, false, textView, 1);
@@ -67,7 +67,7 @@ public final class g20 extends LinearLayout {
         } else {
             long longValue = a2.document_id.get(0).longValue();
             this.d = longValue;
-            spannableStringBuilder2.setSpan(new z5(longValue, (Paint.FontMetricsInt) null), 0, 1, 33);
+            spannableStringBuilder2.setSpan(new y5(longValue, (Paint.FontMetricsInt) null), 0, 1, 33);
             spannableStringBuilder2.append((CharSequence) "  ");
         }
         spannableStringBuilder2.append((CharSequence) LocaleController.getString(R.string.UseEmoji));

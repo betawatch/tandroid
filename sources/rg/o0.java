@@ -3,12 +3,12 @@ package rg;
 import android.content.Context;
 import android.graphics.Canvas;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.p6;
+import org.telegram.ui.Components.o6;
 import org.telegram.ui.Components.tp;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class o0 extends p6 {
+public final class o0 extends o6 {
     public final /* synthetic */ int s;
     public final /* synthetic */ p0 v;
 
@@ -19,7 +19,7 @@ public final class o0 extends p6 {
         this.v = p0Var;
     }
 
-    @Override // org.telegram.ui.Components.p6, android.view.View
+    @Override // org.telegram.ui.Components.o6, android.view.View
     public final void onDraw(Canvas canvas) {
         switch (this.s) {
             case 0:

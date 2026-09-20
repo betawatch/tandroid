@@ -1,40 +1,39 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import org.telegram.messenger.AndroidUtilities;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class z8 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ float a;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ e9 d;
+public final class z8 {
+    public int a;
+    public boolean b;
+    public int c;
+    public int d;
+    public int e;
+    public int f;
 
-    public z8(e9 e9Var, float f7, float f10, boolean z10) {
-        this.d = e9Var;
-        this.a = f7;
-        this.b = f10;
-        this.c = z10;
+    public final z8 a() {
+        z8 z8Var = new z8();
+        z8Var.c = this.c;
+        z8Var.d = this.d;
+        z8Var.e = this.e;
+        z8Var.f = this.f;
+        z8Var.b = this.b;
+        return z8Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        org.telegram.ui.ActionBar.k kVar;
-        org.telegram.ui.ActionBar.k kVar2;
-        float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        e9 e9Var = this.d;
-        e9Var.N = floatValue;
-        float lerp = AndroidUtilities.lerp(this.a, this.b, floatValue);
-        kVar = ((org.telegram.ui.ActionBar.n2) e9Var).actionBar;
-        kVar.getTitleTextView().setAlpha(e9Var.N);
-        if (e9Var.F && !this.c) {
-            e9Var.i0(1.0f - e9Var.N, false);
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
-        e9Var.r.setTranslationY(lerp);
-        e9Var.x.setTranslationY(lerp);
-        e9Var.fragmentView.invalidate();
-        kVar2 = ((org.telegram.ui.ActionBar.n2) e9Var).actionBar;
-        kVar2.invalidate();
+        if (!(obj instanceof z8)) {
+            return false;
+        }
+        z8 z8Var = (z8) obj;
+        return this.c == z8Var.c && this.d == z8Var.d && this.e == z8Var.e && this.f == z8Var.f;
+    }
+
+    public final int hashCode() {
+        return Objects.hash(Integer.valueOf(this.a), Integer.valueOf(this.c), Integer.valueOf(this.d), Integer.valueOf(this.e), Integer.valueOf(this.f));
     }
 }

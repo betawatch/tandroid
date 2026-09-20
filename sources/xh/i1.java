@@ -11,30 +11,30 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.i11;
-import org.telegram.ui.Components.l61;
+import org.telegram.ui.Components.h11;
+import org.telegram.ui.Components.k61;
 import org.telegram.ui.Components.oq;
-import org.telegram.ui.Components.t61;
-import org.telegram.ui.Components.u51;
+import org.telegram.ui.Components.s61;
+import org.telegram.ui.Components.t51;
+import org.telegram.ui.Components.v51;
+import org.telegram.ui.Components.v9;
+import org.telegram.ui.Components.vl0;
 import org.telegram.ui.Components.w51;
-import org.telegram.ui.Components.w9;
-import org.telegram.ui.Components.wl0;
-import org.telegram.ui.Components.x51;
-import yh.v7;
+import yh.w7;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
-public final class i1 extends w51 {
+public final class i1 extends v51 {
     public static final /* synthetic */ int a = 0;
 
     static {
-        w51.setup(new i1());
+        v51.setup(new i1());
     }
 
-    public static x51 a(int i10, TL_stars.StarGift starGift, boolean z10, boolean z11, boolean z12, boolean z13, boolean z14) {
-        x51 J = x51.J(i1.class);
+    public static w51 a(int i10, TL_stars.StarGift starGift, boolean z10, boolean z11, boolean z12, boolean z13, boolean z14) {
+        w51 J = w51.J(i1.class);
         J.u = 1;
         J.z = i10;
         J.G = starGift;
@@ -46,15 +46,15 @@ public final class i1 extends w51 {
         return J;
     }
 
-    @Override // org.telegram.ui.Components.w51
-    public final void attachedView(wl0 wl0Var, View view, x51 x51Var) {
-        ((j1) view).d(x51Var.h, false);
+    @Override // org.telegram.ui.Components.v51
+    public final void attachedView(vl0 vl0Var, View view, w51 w51Var) {
+        ((j1) view).d(w51Var.h, false);
     }
 
-    @Override // org.telegram.ui.Components.w51
-    public final void bindView(View view, x51 x51Var, boolean z10, l61 l61Var, t61 t61Var) {
+    @Override // org.telegram.ui.Components.v51
+    public final void bindView(View view, w51 w51Var, boolean z10, k61 k61Var, s61 s61Var) {
         j1 j1Var = (j1) view;
-        Object obj = x51Var.G;
+        Object obj = w51Var.G;
         boolean z11 = false;
         if (obj instanceof rg.k) {
             rg.k kVar = (rg.k) obj;
@@ -62,12 +62,12 @@ public final class i1 extends w51 {
             TextView textView = j1Var.I;
             TextView textView2 = j1Var.H;
             f1 f1Var = j1Var.e;
-            w9 w9Var = j1Var.y;
+            v9 v9Var = j1Var.y;
             TextView textView3 = j1Var.L;
             TextView textView4 = j1Var.M;
             int d = kVar.d();
             if (j1Var.h0 != kVar) {
-                i11 c12 = v7.c1(w9Var, w9Var.getImageReceiver(), d);
+                h11 c12 = w7.c1(v9Var, v9Var.getImageReceiver(), d);
                 j1Var.N = c12;
                 c12.run();
                 j1Var.N = null;
@@ -79,7 +79,7 @@ public final class i1 extends w51 {
             textView.setText(LocaleController.getString(R.string.TelegramPremiumShort));
             textView2.setVisibility(0);
             textView.setVisibility(0);
-            w9Var.setTranslationY(-AndroidUtilities.dp(8.0f));
+            v9Var.setTranslationY(-AndroidUtilities.dp(8.0f));
             j1Var.n.setVisibility(8);
             j1Var.F.setVisibility(8);
             if (kVar.c == null && kVar.d == null) {
@@ -88,14 +88,14 @@ public final class i1 extends w51 {
                 textView4.setTextColor(j6.I.q() ? -1333971 : -2722014);
                 textView4.setVisibility(0);
                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("" + LocaleController.formatNumber(kVar.g(), ','));
-                spannableStringBuilder.setSpan(new u51(AndroidUtilities.bold()), 0, spannableStringBuilder.length(), 33);
+                spannableStringBuilder.setSpan(new t51(AndroidUtilities.bold()), 0, spannableStringBuilder.length(), 33);
                 oq[] oqVarArr = new oq[1];
-                textView4.setText(v7.X0(false, LocaleController.formatSpannable(R.string.PremiumOrStarsPrice, spannableStringBuilder), 0.48f, oqVarArr));
+                textView4.setText(w7.X0(false, LocaleController.formatSpannable(R.string.PremiumOrStarsPrice, spannableStringBuilder), 0.48f, oqVarArr));
                 oqVarArr[0].spaceScaleX = 0.8f;
             }
             FrameLayout.LayoutParams layoutParams = j1Var.E;
             layoutParams.gravity = 49;
-            w9Var.setLayoutParams(layoutParams);
+            v9Var.setLayoutParams(layoutParams);
             textView3.setPadding(AndroidUtilities.dp(10.0f), 0, AndroidUtilities.dp(10.0f), 0);
             textView3.setTextSize(1, 12.0f);
             textView3.setText(kVar.c());
@@ -118,43 +118,43 @@ public final class i1 extends w51 {
             j1Var.j();
         } else if (obj instanceof TL_stars.StarGift) {
             TL_stars.StarGift starGift = (TL_stars.StarGift) obj;
-            boolean z12 = x51Var.e;
-            Object obj2 = x51Var.H;
-            j1Var.g(starGift, z12, obj2 instanceof Boolean ? ((Boolean) obj2).booleanValue() : false, x51Var.q, x51Var.r, x51Var.t);
+            boolean z12 = w51Var.e;
+            Object obj2 = w51Var.H;
+            j1Var.g(starGift, z12, obj2 instanceof Boolean ? ((Boolean) obj2).booleanValue() : false, w51Var.q, w51Var.r, w51Var.t);
         } else if (obj instanceof TL_stars.SavedStarGift) {
-            z11 = j1Var.h((TL_stars.SavedStarGift) obj, x51Var.q, x51Var.r);
+            z11 = j1Var.h((TL_stars.SavedStarGift) obj, w51Var.q, w51Var.r);
         }
-        if (x51Var.f) {
-            j1Var.b(x51Var.e, z11);
+        if (w51Var.f) {
+            j1Var.b(w51Var.e, z11);
         }
-        j1Var.d(x51Var.h, z11);
-        j1Var.d.setAlpha(x51Var.g ? 1.0f : 0.65f);
-        j1Var.f.setAlpha(x51Var.g ? 1.0f : 0.5f);
+        j1Var.d(w51Var.h, z11);
+        j1Var.d.setAlpha(w51Var.g ? 1.0f : 0.65f);
+        j1Var.f.setAlpha(w51Var.g ? 1.0f : 0.5f);
     }
 
-    @Override // org.telegram.ui.Components.w51
-    public final View createView(Context context, wl0 wl0Var, int i10, int i11, e6 e6Var) {
-        return new j1(context, i10, e6Var);
+    @Override // org.telegram.ui.Components.v51
+    public final View createView(Context context, vl0 vl0Var, int i10, int i11, f6 f6Var) {
+        return new j1(context, i10, f6Var);
     }
 
-    @Override // org.telegram.ui.Components.w51
-    public final boolean equals(x51 x51Var, x51 x51Var2) {
-        if (x51Var.q != x51Var2.q) {
+    @Override // org.telegram.ui.Components.v51
+    public final boolean equals(w51 w51Var, w51 w51Var2) {
+        if (w51Var.q != w51Var2.q) {
             return false;
         }
-        Object obj = x51Var.G;
-        if (obj != null || x51Var2.G != null) {
+        Object obj = w51Var.G;
+        if (obj != null || w51Var2.G != null) {
             if (obj instanceof rg.k) {
-                return obj == x51Var2.G;
+                return obj == w51Var2.G;
             }
             if (obj instanceof TL_stars.StarGift) {
-                Object obj2 = x51Var2.G;
+                Object obj2 = w51Var2.G;
                 if (obj2 instanceof TL_stars.StarGift) {
                     return ((TL_stars.StarGift) obj).id == ((TL_stars.StarGift) obj2).id;
                 }
             }
             if (obj instanceof TL_stars.SavedStarGift) {
-                Object obj3 = x51Var2.G;
+                Object obj3 = w51Var2.G;
                 if (obj3 instanceof TL_stars.SavedStarGift) {
                     TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj;
                     TL_stars.SavedStarGift savedStarGift2 = (TL_stars.SavedStarGift) obj3;
@@ -162,6 +162,6 @@ public final class i1 extends w51 {
                 }
             }
         }
-        return x51Var.z == x51Var2.z && x51Var.e == x51Var2.e && x51Var.B == x51Var2.B && TextUtils.equals(x51Var.l, x51Var2.l);
+        return w51Var.z == w51Var2.z && w51Var.e == w51Var2.e && w51Var.B == w51Var2.B && TextUtils.equals(w51Var.l, w51Var2.l);
     }
 }

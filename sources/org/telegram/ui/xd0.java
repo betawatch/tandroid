@@ -1,31 +1,48 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class xd0 implements RequestDelegate {
+public final class xd0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ he0 b;
-    public final /* synthetic */ String c;
+    public final /* synthetic */ yg0 b;
 
-    public /* synthetic */ xd0(he0 he0Var, String str, int i10) {
+    public /* synthetic */ xd0(yg0 yg0Var, int i10) {
         this.a = i10;
-        this.b = he0Var;
-        this.c = str;
+        this.b = yg0Var;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                AndroidUtilities.runOnUIThread(new zd0(this.b, tL_error, this.c, tLObject));
+                yg0 yg0Var = this.b;
+                if (yg0Var.d == animator) {
+                    yg0Var.d = null;
+                    break;
+                }
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new zd0(this.b, tL_error, tLObject, this.c));
+                yg0 yg0Var2 = this.b;
+                yg0Var2.c.setVisibility(8);
+                if (yg0Var2.d == animator) {
+                    yg0Var2.d = null;
+                    break;
+                }
+                break;
+        }
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationStart(Animator animator) {
+        switch (this.a) {
+            case 0:
+                this.b.c.setVisibility(0);
+                break;
+            default:
+                super.onAnimationStart(animator);
                 break;
         }
     }

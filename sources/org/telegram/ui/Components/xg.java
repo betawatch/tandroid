@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import java.util.HashMap;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class xg extends HashMap {
     public final /* synthetic */ int a;
@@ -19,14 +19,14 @@ public final class xg extends HashMap {
         switch (this.a) {
             case 0:
                 int i10 = ((ah) this.b).v;
-                ij0 ij0Var = (ij0) super.get(obj);
-                if (ij0Var != null) {
-                    return ij0Var;
+                hj0 hj0Var = (hj0) super.get(obj);
+                if (hj0Var != null) {
+                    return hj0Var;
                 }
                 zg zgVar = (zg) obj;
-                ij0 ij0Var2 = new ij0(zgVar.c, AndroidUtilities.dp(i10), AndroidUtilities.dp(i10));
-                put(zgVar, ij0Var2);
-                return ij0Var2;
+                hj0 hj0Var2 = new hj0(zgVar.c, AndroidUtilities.dp(i10), AndroidUtilities.dp(i10));
+                put(zgVar, hj0Var2);
+                return hj0Var2;
             default:
                 return super.get(obj);
         }

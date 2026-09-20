@@ -11,17 +11,17 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Emoji;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class u81 extends View {
     public t81 a;
     public int b;
     public final RectF c;
     public CharSequence d;
-    public v01 e;
+    public u01 e;
     public boolean f;
-    public mp0 h;
-    public final e6 n;
+    public lp0 h;
+    public final d6 n;
     public final /* synthetic */ w81 r;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -29,7 +29,7 @@ public final class u81 extends View {
         super(context);
         this.r = w81Var;
         this.c = new RectF();
-        this.n = new e6(this, 360L, qr.h);
+        this.n = new d6(this, 360L, qr.h);
     }
 
     @Override // android.view.View
@@ -59,7 +59,7 @@ public final class u81 extends View {
         int i16;
         int i17;
         CharSequence charSequence;
-        v01 v01Var;
+        u01 u01Var;
         Canvas canvas2;
         int i18;
         int i19;
@@ -69,13 +69,13 @@ public final class u81 extends View {
         TextPaint textPaint = w81Var.d;
         TextPaint textPaint2 = w81Var.e;
         Paint paint = w81Var.f;
-        org.telegram.ui.ActionBar.e6 e6Var = w81Var.j0;
+        org.telegram.ui.ActionBar.f6 f6Var = w81Var.j0;
         TextPaint textPaint3 = w81Var.c;
         canvas.save();
         float e = this.n.e(this.f);
         if (e > 0.0f) {
             if (this.h == null) {
-                this.h = new mp0(this);
+                this.h = new lp0(this);
             }
             canvas.translate(getWidth() / 2.0f, getHeight() / 2.0f);
             this.h.a(canvas, e);
@@ -107,11 +107,11 @@ public final class u81 extends View {
             i15 = org.telegram.ui.ActionBar.j6.T9;
         }
         if (w81Var.E == 9) {
-            textPaint3.setColor(org.telegram.ui.ActionBar.j6.v0(w81Var.R, e6Var));
+            textPaint3.setColor(org.telegram.ui.ActionBar.j6.v0(w81Var.R, f6Var));
         } else if ((w81Var.J || i24 != -1) && (i22 == i10 || i22 == i11)) {
-            textPaint3.setColor(i0.a.d(w81Var.K, org.telegram.ui.ActionBar.j6.v0(i13, e6Var), org.telegram.ui.ActionBar.j6.v0(i12, e6Var)));
+            textPaint3.setColor(i0.a.d(w81Var.K, org.telegram.ui.ActionBar.j6.v0(i13, f6Var), org.telegram.ui.ActionBar.j6.v0(i12, f6Var)));
         } else {
-            textPaint3.setColor(org.telegram.ui.ActionBar.j6.v0(i12, e6Var));
+            textPaint3.setColor(org.telegram.ui.ActionBar.j6.v0(i12, f6Var));
         }
         this.a.getClass();
         if (this.a.a != Integer.MAX_VALUE) {
@@ -134,21 +134,21 @@ public final class u81 extends View {
                     CharSequence replaceEmoji = Emoji.replaceEmoji(t81Var.b, textPaint3.getFontMetricsInt(), false);
                     t81Var.b = replaceEmoji;
                     this.d = replaceEmoji;
-                    v01 v01Var2 = this.e;
-                    if (v01Var2 != null) {
-                        z5.release(v01Var2.j, v01Var2.k);
+                    u01 u01Var2 = this.e;
+                    if (u01Var2 != null) {
+                        y5.release(u01Var2.j, u01Var2.k);
                     }
-                    v01 v01Var3 = new v01(this.d, textPaint3.getTextSize() / AndroidUtilities.density, textPaint3.getTypeface());
-                    v01Var3.s(this);
-                    this.e = v01Var3;
+                    u01 u01Var3 = new u01(this.d, textPaint3.getTextSize() / AndroidUtilities.density, textPaint3.getTypeface());
+                    u01Var3.s(this);
+                    this.e = u01Var3;
                 }
-                v01Var = this.e;
-                if (v01Var == null) {
-                    v01Var.p = AndroidUtilities.dp(400.0f);
+                u01Var = this.e;
+                if (u01Var == null) {
+                    u01Var.p = AndroidUtilities.dp(400.0f);
                     i20 = i11;
                     i19 = i10;
                     i18 = measuredWidth;
-                    v01Var.c(measuredWidth, getMeasuredHeight() / 2, 1.0f, textPaint3.getColor(), canvas);
+                    u01Var.c(measuredWidth, getMeasuredHeight() / 2, 1.0f, textPaint3.getColor(), canvas);
                     canvas2 = canvas;
                 } else {
                     canvas2 = canvas;
@@ -158,11 +158,11 @@ public final class u81 extends View {
                 }
                 if (this.a.a != Integer.MAX_VALUE) {
                     if (w81Var.n) {
-                        textPaint.setColor(org.telegram.ui.ActionBar.j6.v0(w81Var.T, e6Var));
+                        textPaint.setColor(org.telegram.ui.ActionBar.j6.v0(w81Var.T, f6Var));
                         if (org.telegram.ui.ActionBar.j6.c1(i14) && org.telegram.ui.ActionBar.j6.c1(i15)) {
-                            int v02 = org.telegram.ui.ActionBar.j6.v0(i14, e6Var);
+                            int v02 = org.telegram.ui.ActionBar.j6.v0(i14, f6Var);
                             if ((w81Var.J || w81Var.L != -1) && ((i21 = this.a.a) == i19 || i21 == i20)) {
-                                paint.setColor(i0.a.d(w81Var.K, org.telegram.ui.ActionBar.j6.v0(i15, e6Var), v02));
+                                paint.setColor(i0.a.d(w81Var.K, org.telegram.ui.ActionBar.j6.v0(i15, f6Var), v02));
                             } else {
                                 paint.setColor(v02);
                             }
@@ -170,14 +170,14 @@ public final class u81 extends View {
                             paint.setColor(textPaint3.getColor());
                         }
                         int dp2 = AndroidUtilities.dp(6.0f) + i18 + this.a.c;
-                        int A = org.telegram.messenger.wh.A(20.0f, getMeasuredHeight(), 2);
+                        int z10 = org.telegram.messenger.rk.z(20.0f, getMeasuredHeight(), 2);
                         if (this.a.a != Integer.MAX_VALUE) {
                             if (w81Var.n) {
                                 int i28 = w81.s0;
                                 paint.setAlpha((int) 0.0f);
-                                float dp3 = AndroidUtilities.dp(20.0f) + A;
+                                float dp3 = AndroidUtilities.dp(20.0f) + z10;
                                 RectF rectF = this.c;
-                                rectF.set(dp2, A, dp2 + i16, dp3);
+                                rectF.set(dp2, z10, dp2 + i16, dp3);
                                 float f10 = AndroidUtilities.density * 11.5f;
                                 canvas2.drawRoundRect(rectF, f10, f10, paint);
                                 if (this.a.a != Integer.MAX_VALUE) {
@@ -197,9 +197,9 @@ public final class u81 extends View {
                             }
                         }
                         paint.setAlpha(255);
-                        float dp32 = AndroidUtilities.dp(20.0f) + A;
+                        float dp32 = AndroidUtilities.dp(20.0f) + z10;
                         RectF rectF2 = this.c;
-                        rectF2.set(dp2, A, dp2 + i16, dp32);
+                        rectF2.set(dp2, z10, dp2 + i16, dp32);
                         float f102 = AndroidUtilities.density * 11.5f;
                         canvas2.drawRoundRect(rectF2, f102, f102, paint);
                         if (this.a.a != Integer.MAX_VALUE) {
@@ -224,8 +224,8 @@ public final class u81 extends View {
         charSequence = this.a.b;
         if (charSequence != null) {
         }
-        v01Var = this.e;
-        if (v01Var == null) {
+        u01Var = this.e;
+        if (u01Var == null) {
         }
         if (this.a.a != Integer.MAX_VALUE) {
         }

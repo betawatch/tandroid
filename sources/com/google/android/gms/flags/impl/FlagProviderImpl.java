@@ -6,12 +6,12 @@ import android.content.pm.PackageManager;
 import android.util.Log;
 import c5.u;
 import d7.f;
-import v7.y6;
+import v7.z6;
 import w7.h0;
 import x6.a;
 import x6.b;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public class FlagProviderImpl extends f {
     public boolean a;
@@ -91,7 +91,7 @@ public class FlagProviderImpl extends f {
             return;
         }
         try {
-            this.b = y6.a(context.createPackageContext("com.google.android.gms", 0));
+            this.b = z6.a(context.createPackageContext("com.google.android.gms", 0));
             this.a = true;
         } catch (PackageManager.NameNotFoundException unused) {
         } catch (Exception e) {

@@ -21,11 +21,11 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.ui.Cells.u1;
-import org.telegram.ui.Components.jw0;
-import org.telegram.ui.Components.l61;
+import org.telegram.ui.Components.iw0;
+import org.telegram.ui.Components.k61;
 import org.telegram.ui.Components.rs;
 import org.telegram.ui.Components.ts;
-import org.telegram.ui.ak0;
+import org.telegram.ui.fj0;
 import org.telegram.ui.fm0;
 import org.telegram.ui.i60;
 import org.telegram.ui.kl;
@@ -33,7 +33,7 @@ import org.telegram.ui.pn0;
 import org.telegram.ui.sm0;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final /* synthetic */ class l0 implements Runnable {
     public final /* synthetic */ int a;
@@ -51,7 +51,7 @@ public final /* synthetic */ class l0 implements Runnable {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:31:0x0108 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:40:0x011a A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x011b A[SYNTHETIC] */
     @Override // java.lang.Runnable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -109,23 +109,23 @@ public final /* synthetic */ class l0 implements Runnable {
                 }
                 break;
             case 5:
-                jw0 jw0Var = (jw0) this.d;
+                iw0 iw0Var = (iw0) this.d;
                 boolean z13 = this.c;
                 int i15 = this.b;
                 u1 u1Var = (u1) this.e;
-                if (z13 && jw0Var.Q == null && jw0Var.R == null && jw0Var.P == null) {
-                    jw0Var.J = 2;
-                    jw0Var.X0 = true;
+                if (z13 && iw0Var.Q == null && iw0Var.R == null && iw0Var.P == null) {
+                    iw0Var.J = 2;
+                    iw0Var.X0 = true;
                 }
-                jw0Var.V0 = false;
-                if (jw0Var.Y0 || !jw0Var.W0) {
-                    jw0Var.U0 = jw0Var.i1[0];
+                iw0Var.V0 = false;
+                if (iw0Var.Y0 || !iw0Var.W0) {
+                    iw0Var.U0 = iw0Var.i1[0];
                     DownloadController.getInstance(i15).removeLoadingFileObserver(u1Var);
-                    jw0Var.I();
-                    jw0Var.x();
+                    iw0Var.I();
+                    iw0Var.x();
                     break;
                 } else {
-                    jw0Var.C(true);
+                    iw0Var.C(true);
                     break;
                 }
                 break;
@@ -235,7 +235,7 @@ public final /* synthetic */ class l0 implements Runnable {
                             recognize = MrzRecognizer.recognize(loadBitmap, pn0Var.F.type instanceof TLRPC.TL_secureValueTypeDriverLicense);
                             if (recognize == null) {
                                 try {
-                                    AndroidUtilities.runOnUIThread(new ak0(6, pn0Var, recognize));
+                                    AndroidUtilities.runOnUIThread(new fj0(8, pn0Var, recognize));
                                     z17 = true;
                                 } catch (Throwable th3) {
                                     th = th3;
@@ -263,17 +263,17 @@ public final /* synthetic */ class l0 implements Runnable {
         this.b = i10;
     }
 
-    public /* synthetic */ l0(jw0 jw0Var, boolean z10, int i10, u1 u1Var) {
+    public /* synthetic */ l0(iw0 iw0Var, boolean z10, int i10, u1 u1Var) {
         this.a = 5;
-        this.d = jw0Var;
+        this.d = iw0Var;
         this.c = z10;
         this.b = i10;
         this.e = u1Var;
     }
 
-    public /* synthetic */ l0(l61 l61Var, int i10, TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal, boolean z10, int i11) {
+    public /* synthetic */ l0(k61 k61Var, int i10, TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal, boolean z10, int i11) {
         this.a = i11;
-        this.d = l61Var;
+        this.d = k61Var;
         this.b = i10;
         this.e = tL_messages_searchGlobal;
         this.c = z10;

@@ -22,9 +22,9 @@ import android.view.textclassifier.TextClassifier;
 import android.widget.EditText;
 import android.widget.TextView;
 import org.telegram.messenger.beta.R;
-import w7.r7;
+import w7.s7;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class s extends EditText implements r0.o, u0.k {
     public final e2.c a;
@@ -100,7 +100,7 @@ public final class s extends EditText implements r0.o, u0.k {
 
     @Override // android.widget.TextView
     public ActionMode.Callback getCustomSelectionActionModeCallback() {
-        return r7.d(super.getCustomSelectionActionModeCallback());
+        return s7.d(super.getCustomSelectionActionModeCallback());
     }
 
     public ColorStateList getSupportBackgroundTintList() {
@@ -243,7 +243,7 @@ public final class s extends EditText implements r0.o, u0.k {
 
     @Override // android.widget.TextView
     public void setCustomSelectionActionModeCallback(ActionMode.Callback callback) {
-        super.setCustomSelectionActionModeCallback(r7.e(callback, this));
+        super.setCustomSelectionActionModeCallback(s7.e(callback, this));
     }
 
     public void setEmojiCompatEnabled(boolean z10) {

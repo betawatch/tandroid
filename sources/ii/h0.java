@@ -20,23 +20,23 @@ import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.ActionBar.j6;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class h0 extends a0 implements org.telegram.ui.ActionBar.z5 {
     public f0 E;
     public final int n;
-    public final org.telegram.ui.ActionBar.e6 r;
+    public final org.telegram.ui.ActionBar.f6 r;
     public final HorizontalScrollView s;
     public final LinearLayout v;
     public final z1 w;
     public final TextView x;
     public final ArrayList y;
 
-    public h0(Context context, int i10, org.telegram.ui.ActionBar.e6 e6Var) {
+    public h0(Context context, int i10, org.telegram.ui.ActionBar.f6 f6Var) {
         super(context);
         this.y = new ArrayList();
         this.n = i10;
-        this.r = e6Var;
+        this.r = f6Var;
         g(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(4.0f));
         HorizontalScrollView horizontalScrollView = new HorizontalScrollView(context);
         this.s = horizontalScrollView;
@@ -46,7 +46,7 @@ public final class h0 extends a0 implements org.telegram.ui.ActionBar.z5 {
         linearLayout.setOrientation(0);
         horizontalScrollView.addView(linearLayout, new FrameLayout.LayoutParams(-2, -1));
         addView(horizontalScrollView, w7.y5.e(-1, -1, 23));
-        z1 z1Var = new z1(context, R.drawable.msg_add, e6Var);
+        z1 z1Var = new z1(context, R.drawable.msg_add, f6Var);
         z1Var.e = 19;
         z1Var.e();
         this.w = z1Var;
@@ -217,9 +217,9 @@ public final class h0 extends a0 implements org.telegram.ui.ActionBar.z5 {
 
     public final void j() {
         int i10 = j6.Oh;
-        org.telegram.ui.ActionBar.e6 e6Var = this.r;
-        int v02 = j6.v0(i10, e6Var);
-        int v = j6.v(j6.v0(j6.d6, e6Var), j6.l1(0.1f, v02));
+        org.telegram.ui.ActionBar.f6 f6Var = this.r;
+        int v02 = j6.v0(i10, f6Var);
+        int v = j6.v(j6.v0(j6.d6, f6Var), j6.l1(0.1f, v02));
         TextView textView = this.x;
         textView.setTextColor(v02);
         textView.setBackground(j6.Z(v, j6.l1(0.16f, v02), AndroidUtilities.dp(19.0f), AndroidUtilities.dp(19.0f)));

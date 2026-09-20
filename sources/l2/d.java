@@ -5,13 +5,13 @@ import java.io.IOException;
 import u2.t;
 import y2.p;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class d implements y2.h {
     public final /* synthetic */ g a;
 
     @Override // y2.h
-    public void E(y2.j jVar, long j3, long j10, boolean z10) {
+    public void F(y2.j jVar, long j3, long j10, boolean z10) {
         this.a.w((p) jVar, j10);
     }
 

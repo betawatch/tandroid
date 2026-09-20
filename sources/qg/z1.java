@@ -1,166 +1,161 @@
 package qg;
 
-import android.content.Context;
+import android.animation.ValueAnimator;
+import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.Rect;
 import android.graphics.RectF;
+import android.view.MotionEvent;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.Components.qr;
+import org.telegram.ui.h70;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class z1 extends i {
-    public final /* synthetic */ int n;
+public abstract class z1 extends View {
+    public Bitmap a;
+    public Paint b;
+    public Paint c;
+    public Paint d;
+    public float e;
+    public float f;
+    public Path h;
+    public Rect n;
     public RectF r;
+    public int s;
+    public boolean v;
+    public q0.a w;
+    public float x;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ z1(j jVar, Context context, int i10) {
-        super(jVar, context);
-        this.n = i10;
+    public final void a(boolean z10) {
+        if (this.v) {
+            return;
+        }
+        this.v = true;
+        ValueAnimator duration = ValueAnimator.ofFloat(1.0f, 0.0f).setDuration(150L);
+        duration.setInterpolator(qr.f);
+        duration.addUpdateListener(new org.telegram.ui.Components.voip.r0(this, 10));
+        duration.addListener(new h70(14, this, z10));
+        duration.start();
     }
 
-    @Override // qg.i
-    public final int a(float f7, float f10) {
-        switch (this.n) {
-            case 0:
-                float dp = AndroidUtilities.dp(1.0f);
-                float dp2 = AndroidUtilities.dp(19.5f);
-                float f11 = dp + dp2;
-                float f12 = f11 * 2.0f;
-                float A = com.google.android.gms.internal.vision.e2.A(getMeasuredHeight(), f12, 2.0f, f11);
-                if (f7 <= f11 - dp2 || f10 <= A - dp2 || f7 >= f11 + dp2 || f10 >= A + dp2) {
-                    if (f7 <= ((getMeasuredWidth() - f12) + f11) - dp2 || f10 <= A - dp2 || f7 >= (getMeasuredWidth() - f12) + f11 + dp2 || f10 >= A + dp2) {
-                        if (Math.pow(f10 - r0, 2.0d) + Math.pow(f7 - r0, 2.0d) < Math.pow(getMeasuredWidth() / 2.0f, 2.0d)) {
-                        }
-                    }
-                }
-                break;
-            case 1:
-                float dp3 = AndroidUtilities.dp(1.0f);
-                float dp4 = AndroidUtilities.dp(19.5f);
-                float f13 = dp3 + dp4;
-                float f14 = f13 * 2.0f;
-                float A2 = com.google.android.gms.internal.vision.e2.A(getMeasuredHeight(), f14, 2.0f, f13);
-                if (f7 <= f13 - dp4 || f10 <= A2 - dp4 || f7 >= f13 + dp4 || f10 >= A2 + dp4) {
-                    if (f7 <= ((getMeasuredWidth() - f14) + f13) - dp4 || f10 <= A2 - dp4 || f7 >= (getMeasuredWidth() - f14) + f13 + dp4 || f10 >= A2 + dp4) {
-                        if (Math.pow(f10 - r0, 2.0d) + Math.pow(f7 - r0, 2.0d) < Math.pow(getMeasuredWidth() / 2.0f, 2.0d)) {
-                        }
-                    }
-                }
-                break;
-            default:
-                float dp5 = AndroidUtilities.dp(1.0f);
-                float dp6 = AndroidUtilities.dp(19.5f);
-                float f15 = dp5 + dp6;
-                float f16 = f15 * 2.0f;
-                float A3 = com.google.android.gms.internal.vision.e2.A(getMeasuredHeight(), f16, 2.0f, f15);
-                if (f7 <= f15 - dp6 || f10 <= A3 - dp6 || f7 >= f15 + dp6 || f10 >= A3 + dp6) {
-                    if (f7 <= ((getMeasuredWidth() - f16) + f15) - dp6 || f10 <= A3 - dp6 || f7 >= (getMeasuredWidth() - f16) + f15 + dp6 || f10 >= A3 + dp6) {
-                        if (Math.pow(f10 - r0, 2.0d) + Math.pow(f7 - r0, 2.0d) < Math.pow(getMeasuredWidth() / 2.0f, 2.0d)) {
-                        }
-                    }
-                }
-                break;
-        }
-        return 0;
+    @Override // android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        ((pg.n) this).y.n.d();
+        this.a.recycle();
+        this.a = null;
     }
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
-        switch (this.n) {
-            case 0:
-                RectF rectF = this.r;
-                super.onDraw(canvas);
-                int saveCount = canvas.getSaveCount();
-                float showAlpha = getShowAlpha();
-                if (showAlpha > 0.0f) {
-                    if (showAlpha < 1.0f) {
-                        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), (int) (showAlpha * 255.0f), 31);
-                    }
-                    float dp = AndroidUtilities.dp(1.0f);
-                    float dpf2 = AndroidUtilities.dpf2(5.66f);
-                    float dp2 = dp + dpf2 + AndroidUtilities.dp(15.0f);
-                    float measuredWidth = (getMeasuredWidth() / 2) - dp2;
-                    float f7 = (2.0f * measuredWidth) + dp2;
-                    rectF.set(dp2, dp2, f7, f7);
-                    Paint paint = this.a;
-                    canvas.drawArc(rectF, 0.0f, 180.0f, false, paint);
-                    canvas.drawArc(rectF, 180.0f, 180.0f, false, paint);
-                    float f10 = measuredWidth + dp2;
-                    Paint paint2 = this.c;
-                    canvas.drawCircle(dp2, f10, dpf2, paint2);
-                    Paint paint3 = this.b;
-                    canvas.drawCircle(dp2, f10, dpf2 - AndroidUtilities.dp(1.0f), paint3);
-                    canvas.drawCircle(f7, f10, dpf2, paint2);
-                    canvas.drawCircle(f7, f10, dpf2 - AndroidUtilities.dp(1.0f), paint3);
-                    canvas.restoreToCount(saveCount);
-                    break;
-                }
-                break;
-            case 1:
-                RectF rectF2 = this.r;
-                super.onDraw(canvas);
-                int saveCount2 = canvas.getSaveCount();
-                float showAlpha2 = getShowAlpha();
-                if (showAlpha2 > 0.0f) {
-                    if (showAlpha2 < 1.0f) {
-                        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), (int) (showAlpha2 * 255.0f), 31);
-                    }
-                    float dp3 = AndroidUtilities.dp(1.0f);
-                    float dpf22 = AndroidUtilities.dpf2(5.66f);
-                    float dp4 = dp3 + dpf22 + AndroidUtilities.dp(15.0f);
-                    float measuredWidth2 = (getMeasuredWidth() / 2.0f) - dp4;
-                    float f11 = (2.0f * measuredWidth2) + dp4;
-                    rectF2.set(dp4, dp4, f11, f11);
-                    Paint paint4 = this.a;
-                    canvas.drawArc(rectF2, 0.0f, 180.0f, false, paint4);
-                    canvas.drawArc(rectF2, 180.0f, 180.0f, false, paint4);
-                    float f12 = measuredWidth2 + dp4;
-                    Paint paint5 = this.c;
-                    canvas.drawCircle(dp4, f12, dpf22, paint5);
-                    Paint paint6 = this.b;
-                    canvas.drawCircle(dp4, f12, dpf22 - AndroidUtilities.dp(1.0f), paint6);
-                    canvas.drawCircle(f11, f12, dpf22, paint5);
-                    canvas.drawCircle(f11, f12, dpf22 - AndroidUtilities.dp(1.0f), paint6);
-                    canvas.restoreToCount(saveCount2);
-                    break;
-                }
-                break;
-            default:
-                RectF rectF3 = this.r;
-                super.onDraw(canvas);
-                int saveCount3 = canvas.getSaveCount();
-                float showAlpha3 = getShowAlpha();
-                if (showAlpha3 > 0.0f) {
-                    if (showAlpha3 < 1.0f) {
-                        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), (int) (showAlpha3 * 255.0f), 31);
-                    }
-                    float dp5 = AndroidUtilities.dp(1.0f);
-                    float dpf23 = AndroidUtilities.dpf2(5.66f);
-                    float dp6 = dp5 + dpf23 + AndroidUtilities.dp(15.0f);
-                    float measuredWidth3 = (getMeasuredWidth() / 2) - dp6;
-                    float f13 = (2.0f * measuredWidth3) + dp6;
-                    rectF3.set(dp6, dp6, f13, f13);
-                    Paint paint7 = this.a;
-                    canvas.drawArc(rectF3, 0.0f, 180.0f, false, paint7);
-                    canvas.drawArc(rectF3, 180.0f, 180.0f, false, paint7);
-                    float f14 = measuredWidth3 + dp6;
-                    Paint paint8 = this.c;
-                    canvas.drawCircle(dp6, f14, dpf23, paint8);
-                    Paint paint9 = this.b;
-                    canvas.drawCircle(dp6, f14, dpf23 - AndroidUtilities.dp(1.0f), paint9);
-                    canvas.drawCircle(f13, f14, dpf23, paint8);
-                    canvas.drawCircle(f13, f14, dpf23 - AndroidUtilities.dp(1.0f), paint9);
-                    canvas.restoreToCount(saveCount3);
-                    break;
-                }
-                break;
+        int i10;
+        float f7;
+        Rect rect = this.n;
+        Paint paint = this.b;
+        RectF rectF = this.r;
+        Path path = this.h;
+        super.onDraw(canvas);
+        float min = Math.min(getWidth(), getHeight()) * 0.2f;
+        float width = this.e * getWidth();
+        float height = this.f * getHeight();
+        int round = Math.round(this.e * this.a.getWidth());
+        int round2 = Math.round(this.f * this.a.getHeight());
+        int pixel = this.a.getPixel(Utilities.clamp(round, r11.getWidth() - 1, 0), Utilities.clamp(round2, this.a.getHeight() - 1, 0));
+        this.s = pixel;
+        Paint paint2 = this.d;
+        paint2.setColor(pixel);
+        float f10 = this.x;
+        if (f10 == 0.0f || f10 == 1.0f) {
+            i10 = round;
+            f7 = 1.0f;
+            canvas.save();
+        } else {
+            RectF rectF2 = AndroidUtilities.rectTmp;
+            f7 = 1.0f;
+            i10 = round;
+            rectF2.set(width - min, height - min, width + min, height + min);
+            canvas.saveLayerAlpha(rectF2, (int) (this.x * 255.0f), 31);
         }
+        float f11 = (this.x * 0.5f) + 0.5f;
+        canvas.scale(f11, f11, width, height);
+        path.rewind();
+        Path.Direction direction = Path.Direction.CW;
+        path.addCircle(width, height, min, direction);
+        canvas.clipPath(path);
+        int round3 = Math.round(3.5f);
+        rect.set(i10 - round3, round2 - round3, i10 + round3, round2 + round3);
+        rectF.set(width - min, height - min, width + min, height + min);
+        canvas.drawBitmap(this.a, rect, rectF, (Paint) null);
+        float strokeWidth = min - (paint2.getStrokeWidth() / 2.0f);
+        canvas.drawCircle(width, height, strokeWidth, paint2);
+        float strokeWidth2 = (strokeWidth - (paint2.getStrokeWidth() / 2.0f)) - (paint.getStrokeWidth() / 2.0f);
+        canvas.drawCircle(width, height, strokeWidth2, paint);
+        float strokeWidth3 = strokeWidth2 - (paint.getStrokeWidth() / 2.0f);
+        path.rewind();
+        path.addCircle(width, height, strokeWidth3, direction);
+        canvas.clipPath(path);
+        float f12 = (strokeWidth3 * 2.0f) / 8.0f;
+        path.rewind();
+        for (float f13 = -3.5f; f13 < 4.5f; f13 += f7) {
+            float f14 = (f13 * f12) + width;
+            path.moveTo(f14, height - strokeWidth3);
+            path.lineTo(f14, height + strokeWidth3);
+        }
+        for (float f15 = -3.5f; f15 < 4.5f; f15 += f7) {
+            float f16 = (f15 * f12) + height;
+            path.moveTo(width - strokeWidth3, f16);
+            path.lineTo(width + strokeWidth3, f16);
+        }
+        canvas.drawPath(path, this.c);
+        float f17 = f12 / 2.0f;
+        rectF.set(width - f17, height - f17, width + f17, height + f17);
+        canvas.drawRoundRect(rectF, AndroidUtilities.dp(f7), AndroidUtilities.dp(f7), paint);
+        canvas.restore();
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z1(b2 b2Var, Context context) {
-        super(b2Var, context);
-        this.n = 1;
-        this.r = new RectF();
+    @Override // android.view.View
+    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
+        super.onSizeChanged(i10, i11, i12, i13);
+        if (i10 == 0 || i11 == 0 || i12 == 0 || i13 == 0 || !isLaidOut()) {
+            return;
+        }
+        this.e = (i12 * this.e) / i10;
+        this.f = (i13 * this.f) / i11;
+    }
+
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        int actionMasked = motionEvent.getActionMasked();
+        if (actionMasked == 0) {
+            this.e = motionEvent.getX() / getWidth();
+            this.f = motionEvent.getY() / getHeight();
+            invalidate();
+            getParent().requestDisallowInterceptTouchEvent(true);
+            return true;
+        }
+        if (actionMasked == 1) {
+            a(true);
+            return true;
+        }
+        if (actionMasked != 2) {
+            if (actionMasked != 3) {
+                return true;
+            }
+            a(false);
+            return true;
+        }
+        this.e = motionEvent.getX() / getWidth();
+        this.f = motionEvent.getY() / getHeight();
+        invalidate();
+        return true;
+    }
+
+    public void setColorListener(q0.a aVar) {
+        this.w = aVar;
     }
 }

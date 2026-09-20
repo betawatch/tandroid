@@ -14,9 +14,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import k2.u;
-import v7.y7;
+import v7.z7;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class i {
     public final c a;
@@ -34,7 +34,7 @@ public final class i {
     public Uri o;
     public Uri p;
     public boolean q;
-    public x2.r r;
+    public x2.s r;
     public final n2.e j = new n2.e(2);
     public byte[] m = d0.b;
     public long s = -9223372036854775807L;
@@ -61,7 +61,7 @@ public final class i {
             }
         }
         l1 l1Var = this.h;
-        int[] f7 = y7.f(arrayList);
+        int[] f7 = z7.f(arrayList);
         g gVar = new g(l1Var, f7);
         gVar.g = gVar.s(l1Var.d[f7[0]]);
         this.r = gVar;

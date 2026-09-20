@@ -11,7 +11,7 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class j20 {
     public static final int x;
@@ -333,11 +333,11 @@ public final class j20 {
                                             } else {
                                                 photoViewer2.z1.e(true);
                                                 photoViewer2.z1.d(x12 < ((float) k12));
-                                                l71 l71Var = photoViewer2.z1;
+                                                k71 k71Var = photoViewer2.z1;
                                                 i20Var = i20Var2;
-                                                long j12 = l71Var.o + 10000;
-                                                l71Var.o = j12;
-                                                l71Var.p = LocaleController.formatPluralString("Seconds", (int) (j12 / 1000), new Object[0]);
+                                                long j12 = k71Var.o + 10000;
+                                                k71Var.o = j12;
+                                                k71Var.p = LocaleController.formatPluralString("Seconds", (int) (j12 / 1000), new Object[0]);
                                                 photoViewer2.s2(j10);
                                                 photoViewer2.e0.invalidate();
                                                 photoViewer2.q3.h(j10 / A1, true);
@@ -407,8 +407,8 @@ public final class j20 {
                                 cVar = cVar2;
                             }
                             if (photoViewer2.a6 == 1.0f) {
-                                float b10 = org.telegram.messenger.wh.b(3.0f, photoViewer2.a6, (motionEvent7.getX() - (photoViewer2.k1(photoViewer2.u4) / 2)) - photoViewer2.X5, motionEvent7.getX() - (photoViewer2.k1(photoViewer2.u4) / 2));
-                                float b11 = org.telegram.messenger.wh.b(3.0f, photoViewer2.a6, (motionEvent7.getY() - (photoViewer2.i1() / 2)) - photoViewer2.Y5, motionEvent7.getY() - (photoViewer2.i1() / 2));
+                                float b10 = org.telegram.messenger.rk.b(3.0f, photoViewer2.a6, (motionEvent7.getX() - (photoViewer2.k1(photoViewer2.u4) / 2)) - photoViewer2.X5, motionEvent7.getX() - (photoViewer2.k1(photoViewer2.u4) / 2));
+                                float b11 = org.telegram.messenger.rk.b(3.0f, photoViewer2.a6, (motionEvent7.getY() - (photoViewer2.i1() / 2)) - photoViewer2.Y5, motionEvent7.getY() - (photoViewer2.i1() / 2));
                                 photoViewer2.v3(3.0f);
                                 float f17 = photoViewer2.E6;
                                 if (b10 >= f17) {

@@ -20,7 +20,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class g0 extends View implements NotificationCenter.NotificationCenterDelegate {
     public float E;
@@ -45,12 +45,12 @@ public final class g0 extends View implements NotificationCenter.NotificationCen
     public float v;
     public float w;
     public float x;
-    public final org.telegram.ui.Components.e6 y;
+    public final org.telegram.ui.Components.d6 y;
 
     public g0(Context context, int i10, long j3, org.telegram.ui.j0 j0Var) {
         super(context);
         this.d = true;
-        this.y = new org.telegram.ui.Components.e6(this, 0L, 350L, qr.h);
+        this.y = new org.telegram.ui.Components.d6(this, 0L, 350L, qr.h);
         this.E = 1.0f;
         this.G = new ArrayList();
         this.H = new ArrayList();
@@ -105,7 +105,7 @@ public final class g0 extends View implements NotificationCenter.NotificationCen
                     hashSet.add(Long.valueOf(((TLRPC.TL_emojiStatusCollectible) emojiStatus).collectible_id));
                 }
                 int i14 = 0;
-                G = t5.y(i13, false).G(j3, true);
+                G = u5.y(i13, false).G(j3, true);
                 this.F = G;
                 if (G != null) {
                     for (int i15 = 0; i15 < this.F.l.size(); i15++) {
@@ -165,13 +165,13 @@ public final class g0 extends View implements NotificationCenter.NotificationCen
                             paint.setShader(f0Var6.h);
                             TLRPC.Document document = f0Var6.b;
                             if (document != null) {
-                                f0Var6.j = org.telegram.ui.Components.q5.m(i13, i14, document);
+                                f0Var6.j = org.telegram.ui.Components.p5.m(i13, i14, document);
                             } else {
-                                f0Var6.j = org.telegram.ui.Components.q5.n(i13, f0Var6.c, null, i14);
+                                f0Var6.j = org.telegram.ui.Components.p5.n(i13, f0Var6.c, null, i14);
                             }
-                            org.telegram.ui.Components.e6 e6Var = new org.telegram.ui.Components.e6(this, 0L, 320L, (TimeInterpolator) null);
-                            f0Var6.k = e6Var;
-                            e6Var.d(0.0f, true);
+                            org.telegram.ui.Components.d6 d6Var = new org.telegram.ui.Components.d6(this, 0L, 320L, (TimeInterpolator) null);
+                            f0Var6.k = d6Var;
+                            d6Var.d(0.0f, true);
                             if (isAttachedToWindow()) {
                                 f0Var6.j.a(this);
                             }
@@ -238,7 +238,7 @@ public final class g0 extends View implements NotificationCenter.NotificationCen
             if (emojiStatus instanceof TLRPC.TL_emojiStatusCollectible) {
             }
             int i142 = 0;
-            G = t5.y(i13, false).G(j3, true);
+            G = u5.y(i13, false).G(j3, true);
             this.F = G;
             if (G != null) {
             }
@@ -264,7 +264,7 @@ public final class g0 extends View implements NotificationCenter.NotificationCen
                 if (emojiStatus instanceof TLRPC.TL_emojiStatusCollectible) {
                 }
                 int i1422 = 0;
-                G = t5.y(i13, false).G(j3, true);
+                G = u5.y(i13, false).G(j3, true);
                 this.F = G;
                 if (G != null) {
                 }
@@ -288,7 +288,7 @@ public final class g0 extends View implements NotificationCenter.NotificationCen
             if (emojiStatus instanceof TLRPC.TL_emojiStatusCollectible) {
             }
             int i14222 = 0;
-            G = t5.y(i13, false).G(j3, true);
+            G = u5.y(i13, false).G(j3, true);
             this.F = G;
             if (G != null) {
             }
@@ -371,7 +371,7 @@ public final class g0 extends View implements NotificationCenter.NotificationCen
             float d = f0Var2.k.d(f12, z10);
             float lerp = AndroidUtilities.lerp(0.5f, f12, d);
             int i11 = i10;
-            float A = org.telegram.messenger.q.A(f12, g0Var.n, (f12 - g0Var.e) * d, clamp012);
+            float z11 = org.telegram.messenger.l0.z(f12, g0Var.n, (f12 - g0Var.e) * d, clamp012);
             int i12 = f0Var2.g;
             float f19 = 1.6f;
             if (i12 != 0) {
@@ -402,7 +402,7 @@ public final class g0 extends View implements NotificationCenter.NotificationCen
                         f10 = AndroidUtilities.lerp(f16, f10, g0Var.L.getInterpolation(clamp01));
                         lerp = AndroidUtilities.lerp(lerp / 2.0f, lerp, clamp01);
                     }
-                    if (A <= 0.0f) {
+                    if (z11 <= 0.0f) {
                         f11 = f16;
                         arrayList = arrayList2;
                     } else {
@@ -418,10 +418,10 @@ public final class g0 extends View implements NotificationCenter.NotificationCen
                         float a2 = f0Var2.m.a(0.1f) * f21;
                         canvas.scale(a2, a2);
                         f0Var2.f.d();
-                        f0Var2.f.b(canvas, f0Var2.d, A);
+                        f0Var2.f.b(canvas, f0Var2.d, z11);
                         Paint paint = f0Var2.i;
                         if (paint != null) {
-                            paint.setAlpha((int) (A * 255.0f * 1.0f));
+                            paint.setAlpha((int) (z11 * 255.0f * 1.0f));
                             float f23 = (-dp3) / 2.0f;
                             f0Var = f0Var2;
                             canvas.drawRect(f23, f23, f22, f22, f0Var2.i);
@@ -433,7 +433,7 @@ public final class g0 extends View implements NotificationCenter.NotificationCen
                             int i13 = (-dp4) / 2;
                             int i14 = dp4 / 2;
                             f0Var.j.setBounds(i13, i13, i14, i14);
-                            f0Var.j.setAlpha((int) (A * 255.0f));
+                            f0Var.j.setAlpha((int) (z11 * 255.0f));
                             f0Var.j.draw(canvas);
                         }
                         canvas.restore();
@@ -458,7 +458,7 @@ public final class g0 extends View implements NotificationCenter.NotificationCen
                 }
                 if (clamp01 < 1.0f) {
                 }
-                if (A <= 0.0f) {
+                if (z11 <= 0.0f) {
                 }
                 i10 = i11 + 1;
                 g0Var = this;
@@ -480,7 +480,7 @@ public final class g0 extends View implements NotificationCenter.NotificationCen
             }
             if (clamp01 < 1.0f) {
             }
-            if (A <= 0.0f) {
+            if (z11 <= 0.0f) {
             }
             i10 = i11 + 1;
             g0Var = this;

@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 import javax.net.ssl.HttpsURLConnection;
-import lf.i;
+import lf.h;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
@@ -24,10 +24,11 @@ import org.telegram.ui.Cells.c1;
 import tc.d;
 import tc.e;
 import tc.f;
-import w7.r8;
-import w7.z7;
+import v7.j0;
+import w7.a8;
+import w7.s8;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public abstract class b {
     public static final c a = new c();
@@ -117,13 +118,13 @@ public abstract class b {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static i c(HashMap hashMap, v vVar) {
+    public static h c(HashMap hashMap, v vVar) {
         String str;
         int i10;
         String str2;
         String str3;
         Boolean bool = Boolean.TRUE;
-        i iVar = null;
+        h hVar = null;
         try {
             str = Security.getProperty("networkaddress.cache.ttl");
         } catch (SecurityException unused) {
@@ -163,10 +164,10 @@ public abstract class b {
             g(i10, str2, str3);
             throw null;
         }
-        iVar = z7.a(str2);
+        hVar = a8.a(str2);
         if (bool.booleanValue()) {
         }
-        return iVar;
+        return hVar;
     }
 
     public static LinkedList d(String str, Map map) {
@@ -190,7 +191,7 @@ public abstract class b {
         }
         if (!(obj instanceof List)) {
             if ("".equals(obj)) {
-                throw new d(c1.i("You cannot set '", str, "' to an empty string. We interpret empty strings as null in requests. You may set '", str, "' to null to delete the property."), null, null);
+                throw new d(c1.k("You cannot set '", str, "' to an empty string. We interpret empty strings as null in requests. You may set '", str, "' to null to delete the property."), null, null);
             }
             if (obj == null) {
                 LinkedList linkedList = new LinkedList();
@@ -204,13 +205,13 @@ public abstract class b {
         List list = (List) obj;
         LinkedList linkedList3 = new LinkedList();
         Iterator it = list.iterator();
-        String v = t8.b.v(str, "[]");
+        String s10 = j0.s(str, "[]");
         if (list.isEmpty()) {
             linkedList3.add(new a(str, ""));
             return linkedList3;
         }
         while (it.hasNext()) {
-            linkedList3.addAll(e(it.next(), v));
+            linkedList3.addAll(e(it.next(), s10));
         }
         return linkedList3;
     }
@@ -275,12 +276,12 @@ public abstract class b {
         String str3;
         try {
             JSONObject jSONObject = new JSONObject(str).getJSONObject("error");
-            r8.a(jSONObject.optString("charge"));
-            r8.a(jSONObject.optString("code"));
-            r8.a(jSONObject.optString("decline_code"));
-            str3 = r8.a(jSONObject.optString("message"));
-            r8.a(jSONObject.optString("param"));
-            r8.a(jSONObject.optString(TeXSymbolParser.TYPE_ATTR));
+            s8.a(jSONObject.optString("charge"));
+            s8.a(jSONObject.optString("code"));
+            s8.a(jSONObject.optString("decline_code"));
+            str3 = s8.a(jSONObject.optString("message"));
+            s8.a(jSONObject.optString("param"));
+            s8.a(jSONObject.optString(TeXSymbolParser.TYPE_ATTR));
         } catch (JSONException unused) {
             str3 = "An improperly formatted error response was found.";
         }

@@ -27,7 +27,7 @@ import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b9 implements Runnable {
     public final /* synthetic */ int a;
@@ -290,7 +290,7 @@ public final /* synthetic */ class b9 implements Runnable {
                 }
             case 18:
                 ei.k3 k3Var3 = (ei.k3) this.b;
-                org.telegram.ui.Components.qc Q = new org.telegram.ui.Components.xc(k3Var3.p0, k3Var3.E).Q(R.raw.contact_check, 36, AndroidUtilities.replaceTags((String) this.c));
+                org.telegram.ui.Components.pc Q = new org.telegram.ui.Components.xc(k3Var3.p0, k3Var3.E).Q(R.raw.contact_check, 36, AndroidUtilities.replaceTags((String) this.c));
                 Q.j = 5000;
                 Q.k(true);
                 return;
@@ -319,7 +319,7 @@ public final /* synthetic */ class b9 implements Runnable {
                 }
             case 22:
                 ei.q4 q4Var2 = (ei.q4) this.b;
-                org.telegram.ui.Components.qc Q2 = new org.telegram.ui.Components.xc(q4Var2.b.getContainer(), q4Var2.a).Q(R.raw.contact_check, 36, AndroidUtilities.replaceTags((String) this.c));
+                org.telegram.ui.Components.pc Q2 = new org.telegram.ui.Components.xc(q4Var2.b.getContainer(), q4Var2.a).Q(R.raw.contact_check, 36, AndroidUtilities.replaceTags((String) this.c));
                 Q2.j = 5000;
                 Q2.k(true);
                 return;

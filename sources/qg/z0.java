@@ -1,132 +1,60 @@
 package qg;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
+import android.graphics.ColorMatrix;
+import android.graphics.ColorMatrixColorFilter;
 import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.view.MotionEvent;
-import android.view.TextureView;
+import android.text.TextPaint;
 import ci.c6;
-import ci.c7;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.ui.Components.na;
+import org.telegram.messenger.SharedConfig;
+import org.telegram.ui.Components.ma;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class z0 extends org.telegram.ui.Cells.u1 {
-    public final na Ge;
-    public final float[] He;
-    public final Path Ie;
-    public final Paint Je;
-    public final Rect Ke;
-    public final RectF Le;
-    public final /* synthetic */ a1 Me;
+public final class z0 extends org.telegram.ui.Cells.w0 {
+    public final ma l2;
+    public final TextPaint m2;
+    public final /* synthetic */ b1 n2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z0(a1 a1Var, Context context, int i10, com.google.firebase.messaging.n nVar) {
-        super(context, i10, false, null, nVar);
-        this.Me = a1Var;
-        this.Ge = new na(a1Var.d, this, 10, false);
-        this.He = new float[8];
-        this.Ie = new Path();
-        Paint paint = new Paint();
-        this.Je = paint;
-        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
-        this.Ke = new Rect();
-        this.Le = new RectF();
+    public z0(b1 b1Var, Context context, com.google.firebase.messaging.n nVar) {
+        super(context, nVar, false);
+        this.n2 = b1Var;
+        this.l2 = new ma(b1Var.d, this, 10, false);
+        TextPaint textPaint = new TextPaint(1);
+        this.m2 = textPaint;
+        textPaint.setTypeface(AndroidUtilities.bold());
+        textPaint.setTextSize(AndroidUtilities.dp(Math.max(16, SharedConfig.fontSize) - 2));
+        textPaint.setColor(-1);
     }
 
-    @Override // org.telegram.ui.Cells.u1
-    public final Paint M2(String str) {
+    @Override // org.telegram.ui.Cells.w0
+    public final Paint H(String str) {
+        if ("paintChatActionText".equals(str) || "paintChatActionText2".equals(str)) {
+            return this.m2;
+        }
         if ("paintChatActionBackground".equals(str)) {
-            this.Me.h.v0 = true;
-            Paint c10 = this.Ge.c(1.0f);
+            c6 c6Var = this.n2.h;
+            c6Var.v0 = true;
+            boolean z10 = c6Var.B0;
+            ma maVar = this.l2;
+            if (maVar.r != z10) {
+                maVar.r = z10;
+                if (maVar.i == 10) {
+                    ColorMatrix colorMatrix = new ColorMatrix();
+                    colorMatrix.setSaturation(1.6f);
+                    AndroidUtilities.multiplyBrightnessColorMatrix(colorMatrix, maVar.r ? 0.97f : 0.92f);
+                    AndroidUtilities.adjustBrightnessColorMatrix(colorMatrix, maVar.r ? 0.12f : -0.06f);
+                    maVar.h.setColorFilter(new ColorMatrixColorFilter(colorMatrix));
+                    maVar.g.setColorFilter(new ColorMatrixColorFilter(colorMatrix));
+                }
+            }
+            Paint c10 = maVar.c(1.0f);
             if (c10 != null) {
                 return c10;
             }
         }
-        return super.M2(str);
-    }
-
-    @Override // org.telegram.ui.Cells.u1
-    public final boolean a2(Canvas canvas) {
-        c7 c7Var;
-        float[] fArr;
-        ImageReceiver photoImage = getPhotoImage();
-        a1 a1Var = this.Me;
-        c6 c6Var = a1Var.h;
-        if (!a1Var.f || photoImage == null || (((c7Var = a1Var.e) == null || !c7Var.g || !c7Var.d || !c6Var.x0) && !c6Var.u0 && (c6Var.w0 == null || !c6Var.M0.I0))) {
-            return super.a2(canvas);
-        }
-        int i10 = 0;
-        while (true) {
-            int length = photoImage.getRoundRadius().length;
-            fArr = this.He;
-            if (i10 >= length) {
-                break;
-            }
-            int i11 = i10 * 2;
-            fArr[i11] = photoImage.getRoundRadius()[i10];
-            fArr[i11 + 1] = photoImage.getRoundRadius()[i10];
-            i10++;
-        }
-        RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(photoImage.getImageX(), photoImage.getImageY(), photoImage.getImageX2(), photoImage.getImageY2());
-        Path path = this.Ie;
-        path.rewind();
-        path.addRoundRect(rectF, fArr, Path.Direction.CW);
-        TextureView textureView = c6Var.w0;
-        if (textureView == null || !c6Var.M0.I0) {
-            canvas.drawPath(path, this.Je);
-            return true;
-        }
-        Bitmap bitmap = textureView.getBitmap();
-        if (bitmap == null) {
-            return super.a2(canvas);
-        }
-        canvas.save();
-        canvas.clipPath(path);
-        canvas.translate(-getX(), -getY());
-        float max = Math.max(photoImage.getImageWidth() / c6Var.y0, photoImage.getImageHeight() / c6Var.z0);
-        canvas.translate(photoImage.getCenterX() - ((c6Var.y0 * max) / 2.0f), photoImage.getCenterY() - ((c6Var.z0 * max) / 2.0f));
-        canvas.scale((c6Var.y0 / c6Var.w0.getWidth()) * max, (c6Var.z0 / c6Var.w0.getHeight()) * max);
-        int width = bitmap.getWidth();
-        int height = bitmap.getHeight();
-        Rect rect = this.Ke;
-        rect.set(0, 0, width, height);
-        float width2 = c6Var.w0.getWidth();
-        float height2 = c6Var.w0.getHeight();
-        RectF rectF2 = this.Le;
-        rectF2.set(0.0f, 0.0f, width2, height2);
-        canvas.drawBitmap(bitmap, rect, rectF2, (Paint) null);
-        canvas.restore();
-        return true;
-    }
-
-    @Override // org.telegram.ui.Cells.u1, android.view.View
-    public final void onDraw(Canvas canvas) {
-        Canvas canvas2;
-        a1 a1Var = this.Me;
-        c7 c7Var = a1Var.e;
-        if ((c7Var != null && c7Var.g && c7Var.d) || a1Var.h.u0) {
-            canvas2 = canvas;
-            canvas2.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), 255, 31);
-        } else {
-            canvas2 = canvas;
-            canvas2.save();
-        }
-        S1(canvas2);
-        canvas2.restore();
-    }
-
-    @Override // org.telegram.ui.Cells.u1, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        return false;
+        return super.H(str);
     }
 }

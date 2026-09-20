@@ -6,12 +6,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
+import org.telegram.ui.Components.bw0;
 import org.telegram.ui.Components.ch;
-import org.telegram.ui.Components.cw0;
 import org.telegram.ui.mu0;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class y5 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -20,9 +20,9 @@ public final class y5 extends AnimatorListenerAdapter {
     public final /* synthetic */ Object d;
     public final /* synthetic */ Object e;
 
-    public /* synthetic */ y5(cw0 cw0Var, ViewGroup viewGroup, ViewGroup viewGroup2, int i10, int i11) {
+    public /* synthetic */ y5(bw0 bw0Var, ViewGroup viewGroup, ViewGroup viewGroup2, int i10, int i11) {
         this.a = i11;
-        this.e = cw0Var;
+        this.e = bw0Var;
         this.c = viewGroup;
         this.d = viewGroup2;
         this.b = i10;
@@ -78,16 +78,16 @@ public final class y5 extends AnimatorListenerAdapter {
                 }
                 break;
             default:
-                qg.m0 m0Var = (qg.m0) this.e;
-                m0Var.g1 = m0Var.h1;
-                m0Var.h1 = -1;
-                m0Var.f1.invalidate();
+                qg.n0 n0Var = (qg.n0) this.e;
+                n0Var.g1 = n0Var.h1;
+                n0Var.h1 = -1;
+                n0Var.f1.invalidate();
                 View view2 = (View) this.c;
                 if (view2 != null && ((View) this.d) != null) {
                     view2.setVisibility(8);
                 }
-                if (animator == m0Var.j1) {
-                    m0Var.j1 = null;
+                if (animator == n0Var.j1) {
+                    n0Var.j1 = null;
                     break;
                 }
                 break;
@@ -102,21 +102,21 @@ public final class y5 extends AnimatorListenerAdapter {
         switch (this.a) {
             case 0:
                 r6 r6Var = (r6) this.e;
-                qg.w1 w1Var = r6Var.d1;
+                qg.x1 x1Var = r6Var.d1;
                 if (((View) this.c) != null && (view = (View) this.d) != null) {
                     view.setVisibility(0);
                 }
                 if (this.b != 2) {
                     pg.m currentBrush = r6Var.O0.getCurrentBrush();
                     if (!(currentBrush instanceof pg.b) && !(currentBrush instanceof pg.d)) {
-                        w1Var.b(0.05f, 1.0f);
+                        x1Var.b(0.05f, 1.0f);
                         break;
                     } else {
-                        w1Var.b(0.4f, 1.75f);
+                        x1Var.b(0.4f, 1.75f);
                         break;
                     }
                 } else {
-                    w1Var.b(0.5f, 2.0f);
+                    x1Var.b(0.5f, 2.0f);
                     break;
                 }
                 break;
@@ -126,22 +126,22 @@ public final class y5 extends AnimatorListenerAdapter {
                 this.b = NotificationCenter.getInstance(i10).setAnimationInProgress(this.b, null);
                 break;
             default:
-                qg.m0 m0Var = (qg.m0) this.e;
-                qg.w1 w1Var2 = m0Var.l1;
+                qg.n0 n0Var = (qg.n0) this.e;
+                qg.x1 x1Var2 = n0Var.l1;
                 if (((View) this.c) != null && (view2 = (View) this.d) != null) {
                     view2.setVisibility(0);
                 }
                 if (this.b != 2) {
-                    pg.m currentBrush2 = m0Var.W0.getCurrentBrush();
+                    pg.m currentBrush2 = n0Var.W0.getCurrentBrush();
                     if (!(currentBrush2 instanceof pg.b) && !(currentBrush2 instanceof pg.d)) {
-                        w1Var2.b(0.05f, 1.0f);
+                        x1Var2.b(0.05f, 1.0f);
                         break;
                     } else {
-                        w1Var2.b(0.4f, 1.75f);
+                        x1Var2.b(0.4f, 1.75f);
                         break;
                     }
                 } else {
-                    w1Var2.b(0.5f, 2.0f);
+                    x1Var2.b(0.5f, 2.0f);
                     break;
                 }
                 break;

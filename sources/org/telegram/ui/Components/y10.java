@@ -10,14 +10,14 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class y10 extends FrameLayout implements le.d {
     public final le.b a;
     public final le.b b;
-    public final lj0 c;
+    public final kj0 c;
     public final RadialProgressView d;
-    public final org.telegram.ui.ActionBar.e6 e;
+    public final org.telegram.ui.ActionBar.f6 e;
     public ArrayList f;
     public final boolean h;
     public final fh.c n;
@@ -27,8 +27,8 @@ public final class y10 extends FrameLayout implements le.d {
     public float w;
     public boolean x;
 
-    public y10(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
-        this(context, e6Var, false);
+    public y10(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+        this(context, f6Var, false);
     }
 
     public static FrameLayout.LayoutParams b() {
@@ -109,24 +109,24 @@ public final class y10 extends FrameLayout implements le.d {
     public final void g() {
         boolean z10 = this.h;
         RadialProgressView radialProgressView = this.d;
-        lj0 lj0Var = this.c;
-        org.telegram.ui.ActionBar.e6 e6Var = this.e;
+        kj0 kj0Var = this.c;
+        org.telegram.ui.ActionBar.f6 f6Var = this.e;
         if (!z10) {
             int i10 = org.telegram.ui.ActionBar.j6.O9;
-            lj0Var.setColorFilter(org.telegram.ui.ActionBar.j6.v0(i10, e6Var), PorterDuff.Mode.SRC_IN);
-            radialProgressView.setProgressColor(org.telegram.ui.ActionBar.j6.v0(i10, e6Var));
-            setBackground(org.telegram.ui.ActionBar.j6.h0(AndroidUtilities.dp(48.0f), org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Oh, e6Var), org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Qh, e6Var)));
+            kj0Var.setColorFilter(org.telegram.ui.ActionBar.j6.v0(i10, f6Var), PorterDuff.Mode.SRC_IN);
+            radialProgressView.setProgressColor(org.telegram.ui.ActionBar.j6.v0(i10, f6Var));
+            setBackground(org.telegram.ui.ActionBar.j6.h0(AndroidUtilities.dp(48.0f), org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Oh, f6Var), org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Qh, f6Var)));
             return;
         }
         int i11 = org.telegram.ui.ActionBar.j6.v8;
-        lj0Var.setColorFilter(org.telegram.ui.ActionBar.j6.v0(i11, e6Var), PorterDuff.Mode.SRC_IN);
-        radialProgressView.setProgressColor(org.telegram.ui.ActionBar.j6.v0(i11, e6Var));
+        kj0Var.setColorFilter(org.telegram.ui.ActionBar.j6.v0(i11, f6Var), PorterDuff.Mode.SRC_IN);
+        radialProgressView.setProgressColor(org.telegram.ui.ActionBar.j6.v0(i11, f6Var));
         this.n.a(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.d6, false));
-        this.s.d();
+        this.s.c();
         this.r.v();
         invalidate();
         int dp = AndroidUtilities.dp(18.0f);
-        int v02 = org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.i6, e6Var);
+        int v02 = org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.i6, f6Var);
         int dp2 = AndroidUtilities.dp(6.0f);
         setBackground(org.telegram.ui.ActionBar.j6.W(dp, v02, dp2, dp2, dp2, dp2));
     }
@@ -167,26 +167,26 @@ public final class y10 extends FrameLayout implements le.d {
         }
     }
 
-    public y10(Context context, org.telegram.ui.ActionBar.e6 e6Var, boolean z10) {
+    public y10(Context context, org.telegram.ui.ActionBar.f6 f6Var, boolean z10) {
         super(context);
         qr qrVar = qr.h;
         this.a = new le.b(0, this, qrVar, 380L, true);
         this.b = new le.b(1, this, qrVar, 380L, false);
-        this.e = e6Var;
+        this.e = f6Var;
         this.h = z10;
-        lj0 lj0Var = new lj0(context);
-        this.c = lj0Var;
-        lj0Var.setScaleType(ImageView.ScaleType.CENTER);
-        addView(lj0Var, w7.y5.c(-1.0f, -1));
+        kj0 kj0Var = new kj0(context);
+        this.c = kj0Var;
+        kj0Var.setScaleType(ImageView.ScaleType.CENTER);
+        addView(kj0Var, w7.y5.c(-1.0f, -1));
         RadialProgressView radialProgressView = new RadialProgressView(context, null);
         this.d = radialProgressView;
         radialProgressView.setSize(AndroidUtilities.dp(18.0f));
         radialProgressView.setStrokeWidth(2.0f);
         addView(radialProgressView, w7.y5.c(-1.0f, -1));
         d(radialProgressView, 0.0f);
-        w7.a6.a(this);
+        w7.b6.a(this);
         if (!z10) {
-            setOutlineProvider(yf.k0.a);
+            setOutlineProvider(yf.j0.a);
             setTranslationZ(AndroidUtilities.dpf2(0.5f));
         }
         if (z10) {

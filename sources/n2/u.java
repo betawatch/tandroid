@@ -16,15 +16,15 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
-import m4.r0;
+import m4.q0;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class u implements r {
-    public static final r0 d = new r0(11);
+    public static final q0 d = new q0(13);
     public final UUID a;
     public final MediaDrm b;
     public int c;
@@ -117,7 +117,7 @@ public final class u implements r {
     }
 
     @Override // n2.r
-    public final void j0(byte[] bArr) {
+    public final void h0(byte[] bArr) {
         this.b.provideProvisionResponse(bArr);
     }
 
@@ -299,18 +299,18 @@ public final class u implements r {
     }
 
     @Override // n2.r
+    public final int l0() {
+        return 2;
+    }
+
+    @Override // n2.r
     public final q m() {
         MediaDrm.ProvisionRequest provisionRequest = this.b.getProvisionRequest();
         return new q(provisionRequest.getDefaultUrl(), provisionRequest.getData());
     }
 
     @Override // n2.r
-    public final int m0() {
-        return 2;
-    }
-
-    @Override // n2.r
-    public final boolean r0(String str, byte[] bArr) {
+    public final boolean q0(String str, byte[] bArr) {
         MediaCrypto mediaCrypto;
         boolean equals;
         int i10 = Build.VERSION.SDK_INT;

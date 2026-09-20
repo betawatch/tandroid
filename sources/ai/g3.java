@@ -12,12 +12,12 @@ import org.telegram.ui.Components.oi;
 import org.telegram.ui.Components.vi;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.bd;
-import org.telegram.ui.f91;
+import org.telegram.ui.i91;
 import org.telegram.ui.ke;
 import org.telegram.ui.oo;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class g3 implements e2.h {
     public final /* synthetic */ int a;
@@ -121,9 +121,9 @@ public final /* synthetic */ class g3 implements e2.h {
                 break;
             case 6:
                 zn znVar = (zn) this.b;
-                org.telegram.ui.ActionBar.h6 h6Var = (org.telegram.ui.ActionBar.h6) this.c;
+                org.telegram.ui.ActionBar.c6 c6Var = (org.telegram.ui.ActionBar.c6) this.c;
                 znVar.ib = true;
-                h6Var.run();
+                c6Var.run();
                 break;
             case 7:
                 vi viVar = (vi) this.b;
@@ -164,11 +164,11 @@ public final /* synthetic */ class g3 implements e2.h {
                 }
                 break;
             case 10:
-                f91.V((f91) this.b, (TLRPC.TL_attachMenuBot) this.c);
+                i91.V((i91) this.b, (TLRPC.TL_attachMenuBot) this.c);
                 break;
             default:
                 a5.a aVar = (a5.a) this.b;
-                ((u2.k0) obj).d(aVar.b, (u2.f0) aVar.c, (u2.b0) this.c);
+                ((u2.l0) obj).d(aVar.b, (u2.f0) aVar.c, (u2.b0) this.c);
                 break;
         }
     }

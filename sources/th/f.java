@@ -28,31 +28,31 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.ActionBar.k;
-import org.telegram.ui.Cells.v3;
+import org.telegram.ui.Cells.w3;
+import org.telegram.ui.Components.ab;
 import org.telegram.ui.Components.b20;
-import org.telegram.ui.Components.bb;
 import org.telegram.ui.Components.f20;
-import org.telegram.ui.Components.l61;
+import org.telegram.ui.Components.k61;
 import org.telegram.ui.Components.m30;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.tb0;
+import org.telegram.ui.Components.sb0;
+import org.telegram.ui.Components.ul0;
 import org.telegram.ui.Components.vl0;
-import org.telegram.ui.Components.wl0;
 import org.telegram.ui.Components.y10;
 import org.telegram.ui.t5;
 import org.telegram.ui.web.b1;
 import r0.a0;
 import s4.j;
 import tg.u0;
-import w7.a6;
+import w7.b6;
 import w7.y5;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class f extends bb implements le.d {
+public final class f extends ab implements le.d {
     public static final /* synthetic */ int r0 = 0;
     public final le.e X;
     public final le.b Y;
@@ -60,12 +60,12 @@ public final class f extends bb implements le.d {
     public final ArrayList a0;
     public final ArrayList b0;
     public String c0;
-    public l61 d0;
+    public k61 d0;
     public final ci.d e0;
     public final o f0;
     public final t5 g0;
     public final f20 h0;
-    public final v3 i0;
+    public final w3 i0;
     public final HashMap j0;
     public l.d k0;
     public int l0;
@@ -75,8 +75,8 @@ public final class f extends bb implements le.d {
     public final Rect p0;
     public m30 q0;
 
-    public f(Context context, e6 e6Var) {
-        super(context, e6Var, true);
+    public f(Context context, f6 f6Var) {
+        super(context, f6Var, true);
         qr qrVar = qr.h;
         this.X = new le.e(3, this, qrVar, 350L);
         this.Y = new le.b(4, this, qrVar, 320L, false);
@@ -91,13 +91,13 @@ public final class f extends bb implements le.d {
         this.w = false;
         this.m0 = MessagesController.getInstance(this.currentAccount).config.pollCountriesMax.get();
         AndroidUtilities.enableEdgeToEdge(getWindow());
-        wl0 wl0Var = this.d;
+        vl0 vl0Var = this.d;
         int i10 = this.backgroundPaddingLeft;
-        wl0Var.setPadding(i10, 0, i10, AndroidUtilities.dp(68.0f) + AndroidUtilities.navigationBarHeight);
+        vl0Var.setPadding(i10, 0, i10, AndroidUtilities.dp(68.0f) + AndroidUtilities.navigationBarHeight);
         this.d.setClipToPadding(false);
-        this.d.j(new tb0(this, 15));
-        this.d.setOnItemClickListener(new c(context, e6Var, this));
-        ci.d dVar = new ci.d(context, e6Var, true);
+        this.d.j(new sb0(this, 15));
+        this.d.setOnItemClickListener(new c(context, f6Var, this));
+        ci.d dVar = new ci.d(context, f6Var, true);
         this.e0 = dVar;
         dVar.e();
         dVar.setCountFilled(true);
@@ -112,10 +112,10 @@ public final class f extends bb implements le.d {
         oVar.setGravity(17);
         oVar.setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f), 0);
         oVar.setVisibility(8);
-        a6.a(oVar);
+        b6.a(oVar);
         this.e.n().addView(oVar, y5.t(-2, 48, 16, 12, 0, 12, 0));
         oVar.setOnClickListener(new a(this, 1));
-        b20 b20Var = new b20(context, e6Var);
+        b20 b20Var = new b20(context, f6Var);
         String string = LocaleController.getString(R.string.PollV2SearchHint);
         h2 h2Var = b20Var.r;
         h2Var.setHint(string);
@@ -123,17 +123,17 @@ public final class f extends bb implements le.d {
         f20 f20Var = new f20(context, this.currentAccount);
         this.h0 = f20Var;
         f20Var.setDelegate(new b(this));
-        t5 t5Var = new t5(context, e6Var, this);
+        t5 t5Var = new t5(context, f6Var, this);
         this.g0 = t5Var;
         int i11 = this.backgroundPaddingLeft;
         t5Var.setPadding(i11, 0, i11, 0);
         t5Var.addView(b20Var, y5.d(-1, 40.0f, 48, 10.0f, 0.0f, 10.0f, 0.0f));
         t5Var.addView(f20Var, y5.d(-1, 144.0f, 48, -3.0f, 40.0f, -3.0f, 0.0f));
-        v3 v3Var = new v3(context, 18, e6Var);
-        this.i0 = v3Var;
-        v3Var.setTranslationY(AndroidUtilities.dp(48.0f));
-        v3Var.c(LocaleController.getString(R.string.SearchCountriesTitle), LocaleController.getString(R.string.DeselectAll), new a(this, 2));
-        t5Var.addView(v3Var, y5.e(-1, 32, 48));
+        w3 w3Var = new w3(context, 18, f6Var);
+        this.i0 = w3Var;
+        w3Var.setTranslationY(AndroidUtilities.dp(48.0f));
+        w3Var.c(LocaleController.getString(R.string.SearchCountriesTitle), LocaleController.getString(R.string.DeselectAll), new a(this, 2));
+        t5Var.addView(w3Var, y5.e(-1, 32, 48));
         this.containerView.addView(t5Var, y5.e(-1, 216, 48));
         FrameLayout frameLayout = new FrameLayout(context);
         frameLayout.setPadding(AndroidUtilities.dp(10.0f) + this.backgroundPaddingLeft, AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f) + this.backgroundPaddingLeft, AndroidUtilities.dp(10.0f) + AndroidUtilities.navigationBarHeight);
@@ -149,7 +149,7 @@ public final class f extends bb implements le.d {
         jVar.C = false;
         jVar.m = false;
         this.d.setItemAnimator(jVar);
-        this.d.i(new d(this, e6Var));
+        this.d.i(new d(this, f6Var));
         b1 b1Var = new b1(this, 12);
         ConnectionsManager connectionsManager = ConnectionsManager.getInstance(UserConfig.selectedAccount);
         TLRPC.TL_help_getCountriesList tL_help_getCountriesList = new TLRPC.TL_help_getCountriesList();
@@ -216,23 +216,23 @@ public final class f extends bb implements le.d {
         Rect rect = this.p0;
         boolean z10 = (rect.top == dp && rect.bottom == measuredHeight) ? false : true;
         rect.set(0, dp, this.containerView.getMeasuredWidth(), measuredHeight);
-        wl0 wl0Var = this.d;
-        wl0Var.setClipBounds(rect);
+        vl0 vl0Var = this.d;
+        vl0Var.setClipBounds(rect);
         if (z10) {
-            wl0Var.invalidate();
+            vl0Var.invalidate();
         }
     }
 
     public final void R() {
-        wl0 wl0Var;
+        vl0 vl0Var;
         float f7 = AndroidUtilities.displaySize.y;
         int i10 = 0;
         while (true) {
-            wl0Var = this.d;
-            if (i10 >= wl0Var.getChildCount()) {
+            vl0Var = this.d;
+            if (i10 >= vl0Var.getChildCount()) {
                 break;
             }
-            View childAt = wl0Var.getChildAt(i10);
+            View childAt = vl0Var.getChildAt(i10);
             if (RecyclerView.S(childAt) >= 1 && childAt.getY() < f7) {
                 f7 = childAt.getY();
             }
@@ -242,7 +242,7 @@ public final class f extends bb implements le.d {
         t5 t5Var = this.g0;
         if (t5Var.getTranslationY() != max) {
             t5Var.setTranslationY(max);
-            wl0Var.invalidate();
+            vl0Var.invalidate();
         }
     }
 
@@ -273,15 +273,15 @@ public final class f extends bb implements le.d {
         R();
     }
 
-    @Override // org.telegram.ui.Components.bb
-    public final vl0 v(wl0 wl0Var) {
-        l61 l61Var = new l61(wl0Var, getContext(), this.currentAccount, 0, true, new hi.a(this, 8), this.resourcesProvider);
-        this.d0 = l61Var;
-        l61Var.r = false;
-        return l61Var;
+    @Override // org.telegram.ui.Components.ab
+    public final ul0 v(vl0 vl0Var) {
+        k61 k61Var = new k61(vl0Var, getContext(), this.currentAccount, 0, true, new hi.a(this, 8), this.resourcesProvider);
+        this.d0 = k61Var;
+        k61Var.r = false;
+        return k61Var;
     }
 
-    @Override // org.telegram.ui.Components.bb
+    @Override // org.telegram.ui.Components.ab
     public final CharSequence y() {
         return LocaleController.getString(R.string.BoostingSelectCountry);
     }

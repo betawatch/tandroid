@@ -12,17 +12,17 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class w1 extends FrameLayout {
     public final TextView a;
     public final ImageView b;
     public final FrameLayout c;
-    public final org.telegram.ui.ActionBar.e6 d;
+    public final org.telegram.ui.ActionBar.f6 d;
 
-    public w1(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
+    public w1(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
         super(context);
-        this.d = e6Var;
+        this.d = f6Var;
         FrameLayout frameLayout = new FrameLayout(context);
         this.c = frameLayout;
         frameLayout.setBackgroundResource(R.drawable.newmsg_divider);
@@ -47,8 +47,8 @@ public final class w1 extends FrameLayout {
     }
 
     public final int a(int i10) {
-        org.telegram.ui.ActionBar.e6 e6Var = this.d;
-        Integer valueOf = e6Var != null ? Integer.valueOf(e6Var.G0(i10)) : null;
+        org.telegram.ui.ActionBar.f6 f6Var = this.d;
+        Integer valueOf = f6Var != null ? Integer.valueOf(f6Var.F0(i10)) : null;
         return valueOf != null ? valueOf.intValue() : org.telegram.ui.ActionBar.j6.w0(null, i10, false);
     }
 

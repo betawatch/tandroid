@@ -4,19 +4,19 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.gl0;
-import org.telegram.ui.Components.vl0;
+import org.telegram.ui.Components.fl0;
+import org.telegram.ui.Components.ul0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class l1 extends vl0 {
+public final class l1 extends ul0 {
     public final /* synthetic */ s0 c;
 
     public l1(s0 s0Var) {
         this.c = s0Var;
     }
 
-    @Override // org.telegram.ui.Components.vl0
+    @Override // org.telegram.ui.Components.ul0
     public final boolean D(s4.c1 c1Var) {
         return false;
     }
@@ -43,6 +43,6 @@ public final class l1 extends vl0 {
     public final s4.c1 x(ViewGroup viewGroup, int i10) {
         n1 n1Var = new n1(this.c, viewGroup.getContext());
         n1Var.setLayoutParams(new s4.p0(-1, -2));
-        return new gl0(n1Var);
+        return new fl0(n1Var);
     }
 }

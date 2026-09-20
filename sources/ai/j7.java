@@ -27,12 +27,12 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.bl0;
-import org.telegram.ui.Components.bm0;
+import org.telegram.ui.Components.al0;
+import org.telegram.ui.Components.am0;
 import org.telegram.ui.Components.pz;
 import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public abstract class j7 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public i7 E;
@@ -40,7 +40,7 @@ public abstract class j7 extends FrameLayout implements NotificationCenter.Notif
     public g9 G;
     public int H;
     public boolean I;
-    public final bl0 J;
+    public final al0 J;
     public final jc K;
     public final t6 L;
     public final u6 M;
@@ -90,7 +90,7 @@ public abstract class j7 extends FrameLayout implements NotificationCenter.Notif
         p6 p6Var = new p6(this, context, dVar);
         this.r = p6Var;
         p6Var.setClipToPadding(false);
-        this.J = new bl0(p6Var, true);
+        this.J = new al0(p6Var, true);
         pz pzVar = new pz(p6Var, 0);
         this.x = pzVar;
         p6Var.setLayoutManager(pzVar);
@@ -245,10 +245,10 @@ public abstract class j7 extends FrameLayout implements NotificationCenter.Notif
                 return;
             }
             View childAt = p6Var.getChildAt(i12);
-            if ((childAt instanceof org.telegram.ui.Cells.o6) && (S = RecyclerView.S(childAt)) >= 0) {
+            if ((childAt instanceof org.telegram.ui.Cells.p6) && (S = RecyclerView.S(childAt)) >= 0) {
                 e7 e7Var = this.w;
                 if (S < e7Var.c.size()) {
-                    ((org.telegram.ui.Cells.o6) childAt).a(d(((z6) e7Var.c.get(S)).b) ? 1.0f : 0.5f, true);
+                    ((org.telegram.ui.Cells.p6) childAt).a(d(((z6) e7Var.c.get(S)).b) ? 1.0f : 0.5f, true);
                 }
             }
             i12++;
@@ -397,14 +397,14 @@ public abstract class j7 extends FrameLayout implements NotificationCenter.Notif
             }
         }
         boolean z12 = u6Var.a;
-        bm0 bm0Var = y6Var.v;
+        am0 am0Var = y6Var.v;
         if (z12) {
             i7 i7Var = this.E;
             i10 = (i7Var == null || !i7Var.f) ? R.drawable.menu_views_reactions3 : R.drawable.menu_views_reposts3;
         } else {
             i10 = R.drawable.menu_views_recent3;
         }
-        bm0Var.a(i10, z10);
+        am0Var.a(i10, z10);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:121:0x01e3  */
@@ -548,7 +548,7 @@ public abstract class j7 extends FrameLayout implements NotificationCenter.Notif
         int i10 = this.v;
         NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.storiesUpdated);
         NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.storiesBlocklistUpdate);
-        org.telegram.ui.Components.qc.a(this, new w4(this, 1));
+        org.telegram.ui.Components.pc.a(this, new w4(this, 1));
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -562,7 +562,7 @@ public abstract class j7 extends FrameLayout implements NotificationCenter.Notif
         int i10 = this.v;
         NotificationCenter.getInstance(i10).removeObserver(this, NotificationCenter.storiesUpdated);
         NotificationCenter.getInstance(i10).removeObserver(this, NotificationCenter.storiesBlocklistUpdate);
-        org.telegram.ui.Components.qc.h(this);
+        org.telegram.ui.Components.pc.h(this);
     }
 
     @Override // android.view.ViewGroup

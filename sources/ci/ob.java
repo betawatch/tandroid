@@ -1,6 +1,6 @@
 package ci;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class ob implements sc {
     public final /* synthetic */ bi.v a;
@@ -15,7 +15,7 @@ public final class ob implements sc {
     }
 
     @Override // ci.sc
-    public final /* synthetic */ void D(float f7) {
+    public final /* synthetic */ void C(float f7) {
     }
 
     @Override // ci.sc
@@ -31,7 +31,7 @@ public final class ob implements sc {
     }
 
     @Override // ci.sc
-    public final /* synthetic */ void Y(float f7) {
+    public final /* synthetic */ void X(float f7) {
     }
 
     @Override // ci.sc
@@ -43,7 +43,7 @@ public final class ob implements sc {
     }
 
     @Override // ci.sc
-    public final /* synthetic */ void h0(float f7) {
+    public final /* synthetic */ void g0(float f7) {
     }
 
     @Override // ci.sc
@@ -87,10 +87,10 @@ public final class ob implements sc {
     }
 
     @Override // ci.sc
-    public final /* synthetic */ void i0(int i10, long j3) {
+    public final /* synthetic */ void h0(int i10, long j3) {
     }
 
     @Override // ci.sc
-    public final /* synthetic */ void n(long j3, boolean z10) {
+    public final /* synthetic */ void m(long j3, boolean z10) {
     }
 }

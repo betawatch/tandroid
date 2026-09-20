@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class e implements i {
     public static final byte[] x = {73, 68, 51};
@@ -44,7 +44,7 @@ public final class e implements i {
 
     /* JADX WARN: Multi-variable type inference failed */
     @Override // j4.i
-    public final void a(e2.v vVar) {
+    public final void b(e2.v vVar) {
         int i10;
         byte b10;
         int i11;
@@ -295,7 +295,7 @@ public final class e implements i {
     }
 
     @Override // j4.i
-    public final void c() {
+    public final void d() {
         this.u = -9223372036854775807L;
         this.n = false;
         this.j = 0;
@@ -304,7 +304,7 @@ public final class e implements i {
     }
 
     @Override // j4.i
-    public final void d(c3.q qVar, f0 f0Var) {
+    public final void e(c3.q qVar, f0 f0Var) {
         f0Var.a();
         f0Var.b();
         this.g = f0Var.e;
@@ -325,15 +325,15 @@ public final class e implements i {
         rVar.a = f0Var.e;
         rVar.p = r0.n(this.f);
         rVar.q = r0.n("application/id3");
-        k0.r(rVar, Z12);
+        k0.s(rVar, Z12);
     }
 
     @Override // j4.i
-    public final void f(int i10, long j3) {
+    public final void g(int i10, long j3) {
         this.u = j3;
     }
 
     @Override // j4.i
-    public final void e(boolean z10) {
+    public final void f(boolean z10) {
     }
 }

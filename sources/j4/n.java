@@ -8,7 +8,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import org.telegram.messenger.MessagesStorage;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class n implements i {
     public static final float[] l = {1.0f, 1.0f, 1.0909091f, 0.90909094f, 1.4545455f, 1.2121212f, 1.0f};
@@ -43,7 +43,7 @@ public final class n implements i {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void a(e2.v vVar) {
+    public final void b(e2.v vVar) {
         int i10;
         int i11;
         int i12;
@@ -175,7 +175,7 @@ public final class n implements i {
                                         rVar.y = i29;
                                         rVar.D = f7;
                                         rVar.t = Collections.singletonList(copyOf);
-                                        k0.r(rVar, h0Var);
+                                        k0.s(rVar, h0Var);
                                         this.j = true;
                                     } else {
                                         f7 = i23 / i24;
@@ -202,7 +202,7 @@ public final class n implements i {
                                         rVar2.y = i292;
                                         rVar2.D = f7;
                                         rVar2.t = Collections.singletonList(copyOf);
-                                        k0.r(rVar2, h0Var);
+                                        k0.s(rVar2, h0Var);
                                         this.j = true;
                                     }
                                 } else if (i22 < 7) {
@@ -230,7 +230,7 @@ public final class n implements i {
                                     rVar22.y = i2922;
                                     rVar22.D = f7;
                                     rVar22.t = Collections.singletonList(copyOf);
-                                    k0.r(rVar22, h0Var);
+                                    k0.s(rVar22, h0Var);
                                     this.j = true;
                                 } else {
                                     e2.a.n("H263Reader", "Invalid aspect ratio");
@@ -258,7 +258,7 @@ public final class n implements i {
                                     rVar222.y = i29222;
                                     rVar222.D = f7;
                                     rVar222.t = Collections.singletonList(copyOf);
-                                    k0.r(rVar222, h0Var);
+                                    k0.s(rVar222, h0Var);
                                     this.j = true;
                                 }
                             } else {
@@ -348,7 +348,7 @@ public final class n implements i {
     }
 
     @Override // j4.i
-    public final void c() {
+    public final void d() {
         f2.o.a(this.c);
         l lVar = this.d;
         lVar.a = false;
@@ -370,7 +370,7 @@ public final class n implements i {
     }
 
     @Override // j4.i
-    public final void d(c3.q qVar, f0 f0Var) {
+    public final void e(c3.q qVar, f0 f0Var) {
         f0Var.a();
         f0Var.b();
         this.h = f0Var.e;
@@ -382,7 +382,7 @@ public final class n implements i {
     }
 
     @Override // j4.i
-    public final void e(boolean z10) {
+    public final void f(boolean z10) {
         e2.d.h(this.f);
         if (z10) {
             this.f.b(0, this.g, this.j);
@@ -395,7 +395,7 @@ public final class n implements i {
     }
 
     @Override // j4.i
-    public final void f(int i10, long j3) {
+    public final void g(int i10, long j3) {
         this.k = j3;
     }
 }

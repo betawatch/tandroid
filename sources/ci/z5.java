@@ -7,7 +7,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class z5 extends t2 {
     public final /* synthetic */ int H;
@@ -26,7 +26,7 @@ public final class z5 extends t2 {
         if (num.intValue() == 3) {
             int i10 = 0;
             for (int i11 = 0; i11 < k6Var.getChildCount(); i11++) {
-                if (k6Var.getChildAt(i11) instanceof qg.a2) {
+                if (k6Var.getChildAt(i11) instanceof qg.b2) {
                     i10++;
                 }
             }
@@ -66,7 +66,7 @@ public final class z5 extends t2 {
                 if (i10 >= k6Var.getChildCount()) {
                     break;
                 }
-                if (k6Var.getChildAt(i10) instanceof qg.v2) {
+                if (k6Var.getChildAt(i10) instanceof qg.w2) {
                     z10 = true;
                     break;
                 }

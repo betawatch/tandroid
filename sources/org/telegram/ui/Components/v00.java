@@ -4,7 +4,7 @@ import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v00 implements Utilities.Callback {
     public final /* synthetic */ int a = 1;
@@ -37,7 +37,7 @@ public final /* synthetic */ class v00 implements Utilities.Callback {
                 org.telegram.ui.ActionBar.n2 n2Var = null;
                 for (int size = fragmentStack.size() - 1; size >= 0; size--) {
                     n2Var = (org.telegram.ui.ActionBar.n2) fragmentStack.get(size);
-                    if (!(n2Var instanceof org.telegram.ui.uy) && !(n2Var instanceof org.telegram.ui.fh0)) {
+                    if (!(n2Var instanceof org.telegram.ui.uy) && !(n2Var instanceof org.telegram.ui.gh0)) {
                         if (z11) {
                             n2Var.finishFragment();
                             z11 = false;
@@ -46,7 +46,7 @@ public final /* synthetic */ class v00 implements Utilities.Callback {
                         }
                     }
                     org.telegram.ui.ActionBar.n2 n2Var2 = n2Var;
-                    org.telegram.ui.ActionBar.n2 n2Var3 = !(n2Var2 instanceof org.telegram.ui.fh0) ? ((org.telegram.ui.fh0) n2Var2).J : n2Var2;
+                    org.telegram.ui.ActionBar.n2 n2Var3 = !(n2Var2 instanceof org.telegram.ui.gh0) ? ((org.telegram.ui.gh0) n2Var2).J : n2Var2;
                     z10 = n2Var3 instanceof org.telegram.ui.uy;
                     org.telegram.ui.of ofVar = this.c;
                     if (z10) {
@@ -60,7 +60,7 @@ public final /* synthetic */ class v00 implements Utilities.Callback {
                     }
                 }
                 org.telegram.ui.ActionBar.n2 n2Var22 = n2Var;
-                if (!(n2Var22 instanceof org.telegram.ui.fh0)) {
+                if (!(n2Var22 instanceof org.telegram.ui.gh0)) {
                 }
                 z10 = n2Var3 instanceof org.telegram.ui.uy;
                 org.telegram.ui.of ofVar2 = this.c;

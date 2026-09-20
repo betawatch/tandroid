@@ -18,11 +18,11 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class s1 extends FrameLayout implements org.telegram.ui.Cells.p9 {
+public final class s1 extends FrameLayout implements org.telegram.ui.Cells.q9 {
     public final r1 a;
-    public final org.telegram.ui.Components.q91 b;
+    public final org.telegram.ui.Components.p91 b;
     public a3 c;
     public a3 d;
     public int e;
@@ -46,9 +46,9 @@ public final class s1 extends FrameLayout implements org.telegram.ui.Cells.p9 {
             this.a = null;
             return;
         }
-        org.telegram.ui.Components.q91 q91Var = new org.telegram.ui.Components.q91(context, false, new n1(this));
-        this.b = q91Var;
-        addView(q91Var);
+        org.telegram.ui.Components.p91 p91Var = new org.telegram.ui.Components.p91(context, false, new n1(this));
+        this.b = p91Var;
+        addView(p91Var);
         h4Var.N.add(this);
         r1 r1Var = new r1(this, context);
         this.a = r1Var;
@@ -78,13 +78,13 @@ public final class s1 extends FrameLayout implements org.telegram.ui.Cells.p9 {
             }
         }
         this.v = null;
-        org.telegram.ui.Components.q91 q91Var = this.b;
-        if (q91Var != null) {
-            q91Var.b();
+        org.telegram.ui.Components.p91 p91Var = this.b;
+        if (p91Var != null) {
+            p91Var.b();
         }
     }
 
-    @Override // org.telegram.ui.Cells.p9
+    @Override // org.telegram.ui.Cells.q9
     public final void fillTextLayoutBlocks(ArrayList arrayList) {
         a3 a3Var = this.c;
         if (a3Var != null) {
@@ -173,12 +173,12 @@ public final class s1 extends FrameLayout implements org.telegram.ui.Cells.p9 {
             int i14 = this.n;
             r1Var.layout(i14, 0, r1Var.getMeasuredWidth() + i14, r1Var.getMeasuredHeight());
         }
-        org.telegram.ui.Components.q91 q91Var = this.b;
-        if (q91Var == null || q91Var.getParent() != this) {
+        org.telegram.ui.Components.p91 p91Var = this.b;
+        if (p91Var == null || p91Var.getParent() != this) {
             return;
         }
         int i15 = this.n;
-        q91Var.layout(i15, 0, q91Var.getMeasuredWidth() + i15, q91Var.getMeasuredHeight());
+        p91Var.layout(i15, 0, p91Var.getMeasuredWidth() + i15, p91Var.getMeasuredHeight());
     }
 
     /* JADX WARN: Removed duplicated region for block: B:40:0x013b  */
@@ -200,7 +200,7 @@ public final class s1 extends FrameLayout implements org.telegram.ui.Cells.p9 {
                 int dp2 = AndroidUtilities.dp(18.0f) + AndroidUtilities.dp(r15 * 14);
                 this.n = dp2;
                 this.e = dp2;
-                i13 = org.telegram.messenger.wh.z(18.0f, dp2, size);
+                i13 = org.telegram.messenger.rk.x(18.0f, dp2, size);
                 i14 = i13;
             } else {
                 this.n = 0;
@@ -235,9 +235,9 @@ public final class s1 extends FrameLayout implements org.telegram.ui.Cells.p9 {
             if (r1Var != null) {
                 r1Var.measure(View.MeasureSpec.makeMeasureSpec(i13, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(i18, TLObject.FLAG_30));
             }
-            org.telegram.ui.Components.q91 q91Var = this.b;
-            if (q91Var != null && q91Var.getParent() == this) {
-                q91Var.measure(View.MeasureSpec.makeMeasureSpec(i13, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(10.0f) + i18, TLObject.FLAG_30));
+            org.telegram.ui.Components.p91 p91Var = this.b;
+            if (p91Var != null && p91Var.getParent() == this) {
+                p91Var.measure(View.MeasureSpec.makeMeasureSpec(i13, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(10.0f) + i18, TLObject.FLAG_30));
             }
             int dp4 = AndroidUtilities.dp(8.0f) + i18;
             this.f = dp4;
@@ -251,14 +251,14 @@ public final class s1 extends FrameLayout implements org.telegram.ui.Cells.p9 {
             if (p5 != null) {
                 int height = this.c.d.getHeight() + AndroidUtilities.dp(4.0f);
                 this.h = height;
-                i18 = org.telegram.messenger.q.D(4.0f, height, i18);
+                i18 = org.telegram.messenger.l0.C(4.0f, height, i18);
             } else {
                 this.h = 0;
             }
             TL_iv.pageBlockEmbed pageblockembed4 = this.v;
             TL_iv.RichText richText2 = pageblockembed4.caption.credit;
             if (this.w.G) {
-                alignment = org.telegram.ui.Components.vw0.a();
+                alignment = org.telegram.ui.Components.uw0.a();
             }
             a3 p10 = h4.p(h4Var, this, null, richText2, i14, 0, pageblockembed4, alignment, 0, this.w);
             this.d = p10;

@@ -24,7 +24,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.StickersActivity;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class gg implements ly {
     public final /* synthetic */ ChatActivityEnterView a;
@@ -48,16 +48,16 @@ public final class gg implements ly {
             return;
         }
         if (c() && i10 == 0) {
-            e5.M(chatActivityEnterView.N2, znVar.a(), new org.telegram.ui.tq(this, view, obj, str, obj2, photoEntry, z11), chatActivityEnterView.V3);
+            d5.M(chatActivityEnterView.N2, znVar.a(), new org.telegram.ui.tq(this, view, obj, str, obj2, photoEntry, z11), chatActivityEnterView.V3);
             return;
         }
         if (chatActivityEnterView.G0 <= 0 || c()) {
-            e5.a0(chatActivityEnterView.Q, 1, chatActivityEnterView.P2, new fe(this, obj, photoEntry, z10, i10, i11, z11, str, obj2));
+            d5.a0(chatActivityEnterView.Q, 1, chatActivityEnterView.P2, new fe(this, obj, photoEntry, z10, i10, i11, z11, str, obj2));
             return;
         }
         ng ngVar = chatActivityEnterView.Y2;
         if (ngVar != null) {
-            ngVar.t1(view != null ? view : vgVar, vgVar.a.getText(), true);
+            ngVar.u1(view != null ? view : vgVar, vgVar.a.getText(), true);
         }
     }
 
@@ -99,10 +99,10 @@ public final class gg implements ly {
             inputStickerSet.access_hash = stickerSet.access_hash;
             inputStickerSet.id = stickerSet.id;
         }
-        hy0 hy0Var = new hy0(chatActivityEnterView.N2, n2Var2, inputStickerSet, null, chatActivityEnterView, chatActivityEnterView.V3);
-        n2Var2.showDialog(hy0Var);
+        gy0 gy0Var = new gy0(chatActivityEnterView.N2, n2Var2, inputStickerSet, null, chatActivityEnterView, chatActivityEnterView.V3);
+        n2Var2.showDialog(gy0Var);
         if (z10) {
-            hy0Var.p0();
+            gy0Var.p0();
         }
     }
 
@@ -230,7 +230,7 @@ public final class gg implements ly {
                 if (view == null) {
                     view = vgVar;
                 }
-                ngVar.t1(view, vgVar.a.getText(), true);
+                ngVar.u1(view, vgVar.a.getText(), true);
                 return;
             }
             return;
@@ -266,7 +266,7 @@ public final class gg implements ly {
     }
 
     @Override // org.telegram.ui.Components.ly
-    public final void o(t51 t51Var) {
+    public final void o(s51 s51Var) {
         ChatActivityEnterView chatActivityEnterView = this.a;
         org.telegram.ui.ActionBar.n2 n2Var = chatActivityEnterView.O2;
         if (n2Var == null) {
@@ -274,7 +274,7 @@ public final class gg implements ly {
         }
         org.telegram.ui.ActionBar.n2 n2Var2 = n2Var;
         if (n2Var2 != null) {
-            chatActivityEnterView.Z2 = new fg(this, chatActivityEnterView.getContext(), n2Var2, t51Var, chatActivityEnterView.V3);
+            chatActivityEnterView.Z2 = new fg(this, chatActivityEnterView.getContext(), n2Var2, s51Var, chatActivityEnterView.V3);
             ng ngVar = chatActivityEnterView.Y2;
             if (ngVar != null) {
                 ngVar.B(true);

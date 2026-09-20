@@ -11,10 +11,10 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class qa extends FrameLayout {
-    public final org.telegram.ui.Components.l90 a;
+    public final org.telegram.ui.Components.k90 a;
     public final org.telegram.ui.Cells.y1 b;
     public Integer c;
     public ValueAnimator d;
@@ -27,17 +27,17 @@ public final class qa extends FrameLayout {
         raVar.F = this;
         setPadding(AndroidUtilities.dp(18.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(18.0f), AndroidUtilities.dp(17.0f));
         setClipChildren(false);
-        org.telegram.ui.Components.l90 l90Var = new org.telegram.ui.Components.l90(activity, null);
-        this.a = l90Var;
-        l90Var.setTextSize(1, 15.0f);
+        org.telegram.ui.Components.k90 k90Var = new org.telegram.ui.Components.k90(activity, null);
+        this.a = k90Var;
+        k90Var.setTextSize(1, 15.0f);
         int i10 = org.telegram.ui.ActionBar.j6.F6;
-        l90Var.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, i10, false));
-        l90Var.setGravity(LocaleController.isRTL ? 5 : 3);
+        k90Var.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, i10, false));
+        k90Var.setGravity(LocaleController.isRTL ? 5 : 3);
         int i11 = org.telegram.ui.ActionBar.j6.J6;
-        l90Var.setLinkTextColor(org.telegram.ui.ActionBar.j6.w0(null, i11, false));
+        k90Var.setLinkTextColor(org.telegram.ui.ActionBar.j6.w0(null, i11, false));
         int i12 = org.telegram.ui.ActionBar.j6.K6;
-        l90Var.setHighlightColor(org.telegram.ui.ActionBar.j6.w0(null, i12, false));
-        l90Var.setPadding(AndroidUtilities.dp(3.0f), 0, AndroidUtilities.dp(3.0f), 0);
+        k90Var.setHighlightColor(org.telegram.ui.ActionBar.j6.w0(null, i12, false));
+        k90Var.setPadding(AndroidUtilities.dp(3.0f), 0, AndroidUtilities.dp(3.0f), 0);
         org.telegram.ui.Cells.y1 y1Var = new org.telegram.ui.Cells.y1(this, activity, 2);
         raVar.G = y1Var;
         this.b = y1Var;
@@ -47,10 +47,10 @@ public final class qa extends FrameLayout {
         y1Var.setLinkTextColor(org.telegram.ui.ActionBar.j6.w0(null, i11, false));
         y1Var.setHighlightColor(org.telegram.ui.ActionBar.j6.w0(null, i12, false));
         y1Var.setPadding(AndroidUtilities.dp(3.0f), 0, AndroidUtilities.dp(3.0f), 0);
-        addView(l90Var, w7.y5.e(-1, -2, 48));
+        addView(k90Var, w7.y5.e(-1, -2, 48));
         addView(y1Var, w7.y5.e(-1, -2, 48));
         if (raVar.x == 0) {
-            org.telegram.ui.Cells.c1.o(R.string.UsernameHelp, l90Var);
+            org.telegram.ui.Cells.c1.r(R.string.UsernameHelp, k90Var);
             return;
         }
         String string = LocaleController.getString(R.string.BotUsernameHelp);
@@ -60,13 +60,13 @@ public final class qa extends FrameLayout {
         if (indexOf != -1 && lastIndexOf != -1 && indexOf != lastIndexOf) {
             spannableStringBuilder.replace(lastIndexOf, lastIndexOf + 1, (CharSequence) "");
             spannableStringBuilder.replace(indexOf, indexOf + 1, (CharSequence) "");
-            spannableStringBuilder.setSpan(new org.telegram.ui.Components.b61("https://fragment.com", (org.telegram.ui.Components.d11) null), indexOf, lastIndexOf - 1, 33);
+            spannableStringBuilder.setSpan(new org.telegram.ui.Components.a61("https://fragment.com", (org.telegram.ui.Components.c11) null), indexOf, lastIndexOf - 1, 33);
         }
-        l90Var.setText(spannableStringBuilder);
+        k90Var.setText(spannableStringBuilder);
     }
 
     public static void a(final qa qaVar) {
-        org.telegram.ui.Components.l90 l90Var = qaVar.a;
+        org.telegram.ui.Components.k90 k90Var = qaVar.a;
         org.telegram.ui.Cells.y1 y1Var = qaVar.b;
         if (y1Var.getVisibility() == 0) {
             y1Var.measure(View.MeasureSpec.makeMeasureSpec((qaVar.getMeasuredWidth() - qaVar.getPaddingLeft()) - qaVar.getPaddingRight(), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(9999999, TLObject.FLAG_31));
@@ -77,8 +77,8 @@ public final class qa extends FrameLayout {
         }
         Integer num = qaVar.c;
         final int measuredHeight = num == null ? qaVar.getMeasuredHeight() : num.intValue();
-        final int height = l90Var.getHeight() + AndroidUtilities.dp(27.0f) + ((y1Var.getVisibility() != 0 || TextUtils.isEmpty(y1Var.getText())) ? 0 : AndroidUtilities.dp(8.0f) + y1Var.getMeasuredHeight());
-        final float translationY = l90Var.getTranslationY();
+        final int height = k90Var.getHeight() + AndroidUtilities.dp(27.0f) + ((y1Var.getVisibility() != 0 || TextUtils.isEmpty(y1Var.getText())) ? 0 : AndroidUtilities.dp(8.0f) + y1Var.getMeasuredHeight());
+        final float translationY = k90Var.getTranslationY();
         final float dp = (y1Var.getVisibility() != 0 || TextUtils.isEmpty(y1Var.getText())) ? 0.0f : AndroidUtilities.dp(8.0f) + y1Var.getMeasuredHeight();
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
         qaVar.d = ofFloat;

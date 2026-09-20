@@ -6,28 +6,28 @@ import java.util.ArrayList;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class fe extends org.telegram.ui.Components.o81 {
     public final Context a;
     public final int b;
     public final int c;
-    public final org.telegram.ui.ActionBar.e6 d;
+    public final org.telegram.ui.ActionBar.f6 d;
     public final ArrayList e = new ArrayList();
     public final /* synthetic */ ge f;
 
-    public fe(ge geVar, Context context, int i10, long j3, int i11, org.telegram.ui.ActionBar.e6 e6Var) {
+    public fe(ge geVar, Context context, int i10, long j3, int i11, org.telegram.ui.ActionBar.f6 f6Var) {
         this.f = geVar;
         this.a = context;
         this.b = i10;
         this.c = i11;
-        this.d = e6Var;
+        this.d = f6Var;
         i();
     }
 
     @Override // org.telegram.ui.Components.o81
     public final View d(int i10) {
-        return new ee(this.f, this.a, i10, this.b, this.c, new ai.n8(this, i10, 20), this.d);
+        return new ee(this.f, this.a, i10, this.b, this.c, new ai.n8(this, i10, 18), this.d);
     }
 
     @Override // org.telegram.ui.Components.o81
@@ -50,7 +50,7 @@ public final class fe extends org.telegram.ui.Components.o81 {
         if (i10 >= arrayList.size()) {
             return 1;
         }
-        return ((org.telegram.ui.Components.x51) arrayList.get(i10)).z;
+        return ((org.telegram.ui.Components.w51) arrayList.get(i10)).z;
     }
 
     public final void i() {
@@ -58,12 +58,12 @@ public final class fe extends org.telegram.ui.Components.o81 {
         arrayList.clear();
         ge geVar = this.f;
         if (!geVar.h.isEmpty()) {
-            arrayList.add(org.telegram.ui.Components.x51.C(1));
+            arrayList.add(org.telegram.ui.Components.w51.C(1));
         }
         if (geVar.n.isEmpty()) {
             return;
         }
-        arrayList.add(org.telegram.ui.Components.x51.C(0));
+        arrayList.add(org.telegram.ui.Components.w51.C(0));
     }
 
     @Override // org.telegram.ui.Components.o81

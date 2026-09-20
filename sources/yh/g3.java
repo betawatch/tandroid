@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class g3 {
     public final Runnable a;
@@ -19,7 +19,7 @@ public final class g3 {
     public final float j;
     public final int k;
     public int l;
-    public final org.telegram.ui.Components.e6 m;
+    public final org.telegram.ui.Components.d6 m;
     public int n = -1;
 
     public g3(Runnable runnable, ArrayList arrayList, f3 f3Var, f3 f3Var2, float f7, int i10) {
@@ -30,9 +30,9 @@ public final class g3 {
         this.i = f3Var2;
         this.j = f7;
         this.k = i10;
-        org.telegram.ui.Components.e6 e6Var = new org.telegram.ui.Components.e6(runnable, 300L, qr.h);
-        this.m = e6Var;
-        e6Var.a(true);
+        org.telegram.ui.Components.d6 d6Var = new org.telegram.ui.Components.d6(runnable, 300L, qr.h);
+        this.m = d6Var;
+        d6Var.a(true);
         this.f = -0.5f;
         this.e = 1;
         this.l = i10;
@@ -118,9 +118,9 @@ public final class g3 {
         } else {
             j3 = i11 == 3 ? 4500 : 2500;
         }
-        org.telegram.ui.Components.e6 e6Var = this.m;
-        e6Var.g = j3;
-        float lerp = (f7 * AndroidUtilities.lerp(i11 == 3 ? 0.75f : 2.0f, 7.5f, e6Var.e(i10 >= i11)) * this.j) + this.f;
+        org.telegram.ui.Components.d6 d6Var = this.m;
+        d6Var.g = j3;
+        float lerp = (f7 * AndroidUtilities.lerp(i11 == 3 ? 0.75f : 2.0f, 7.5f, d6Var.e(i10 >= i11)) * this.j) + this.f;
         this.f = lerp;
         f3 f3Var2 = this.i;
         if (lerp >= 0.0f) {

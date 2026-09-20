@@ -15,9 +15,9 @@ import e9.i0;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import v7.y7;
+import v7.z7;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class h implements c3.o {
     public final m a;
@@ -38,7 +38,7 @@ public final class h implements c3.o {
             r a2 = sVar.a();
             a2.q = r0.n("application/x-media3-cues");
             a2.j = sVar.r;
-            a2.O = mVar.A();
+            a2.O = mVar.I();
             sVar2 = new s(a2);
         } else {
             sVar2 = null;
@@ -74,7 +74,7 @@ public final class h implements c3.o {
         s sVar = this.b;
         if (sVar != null) {
             Z1.b(sVar);
-            qVar.e1();
+            qVar.f1();
             qVar.X1(new y(-9223372036854775807L, new long[]{0}, new long[]{0}));
         }
         this.h = 1;
@@ -121,7 +121,7 @@ public final class h implements c3.o {
      */
     /* JADX WARN: Code restructure failed: missing block: B:56:0x0090, code lost:
     
-        r20.a.C(r20.e, 0, r20.g, r2, new ai.f3(r20, 9));
+        r20.a.M(r20.e, 0, r20.g, r2, new ai.f3(r20, 9));
         java.util.Collections.sort(r11);
         r20.i = new long[r11.size()];
         r2 = 0;
@@ -164,7 +164,7 @@ public final class h implements c3.o {
         int i11 = this.h;
         e2.d.g((i11 == 0 || i11 == 5) ? false : true);
         if (this.h == 1) {
-            int b10 = pVar.getLength() != -1 ? y7.b(pVar.getLength()) : 1024;
+            int b10 = pVar.getLength() != -1 ? z7.b(pVar.getLength()) : 1024;
             if (b10 > this.e.length) {
                 this.e = new byte[b10];
             }
@@ -194,7 +194,7 @@ public final class h implements c3.o {
             i10 = 0;
         }
         if (this.h == 3) {
-            if (pVar.skip(pVar.getLength() != -1 ? y7.b(pVar.getLength()) : 1024) == -1) {
+            if (pVar.skip(pVar.getLength() != -1 ? z7.b(pVar.getLength()) : 1024) == -1) {
                 long j3 = this.j;
                 for (int e = j3 == -9223372036854775807L ? 0 : d0.e(this.i, j3, true); e < arrayList.size(); e++) {
                     b((g) arrayList.get(e));

@@ -13,9 +13,9 @@ import androidx.mediarouter.app.a0;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import n6.q;
-import v7.j8;
+import v7.k8;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class j {
     public aa.a a;
@@ -88,11 +88,11 @@ public final class j {
                 synchronized (e.class) {
                     e.b(context);
                 }
-                i8.g X0 = j8.a(context).X0(new x6.b(context));
+                i8.g X0 = k8.a(context).X0(new x6.b(context));
                 if (X0 == null) {
                     return;
                 }
-                this.g.G(new aa.a(this.e, X0));
+                this.g.E(new aa.a(this.e, X0));
                 int size = arrayList.size();
                 int i10 = 0;
                 while (i10 < size) {

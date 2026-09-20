@@ -26,7 +26,7 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.video.VideoPlayerHolderBase;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 class ArticleViewer$WindowView extends FrameLayout {
     public int E;
@@ -155,8 +155,8 @@ class ArticleViewer$WindowView extends FrameLayout {
                     velocityTracker3.recycle();
                     this.s = null;
                 }
-                org.telegram.ui.Cells.q9 q9Var = h4Var.O0;
-                if (q9Var != null && !q9Var.y()) {
+                org.telegram.ui.Cells.r9 r9Var = h4Var.O0;
+                if (r9Var != null && !r9Var.y()) {
                     h4Var.O0.f(false);
                 }
             }
@@ -271,7 +271,7 @@ class ArticleViewer$WindowView extends FrameLayout {
             motionEvent.offsetLocation(-h4Var.g0.getX(), -h4Var.g0.getY());
             return h4Var.Q0.g(motionEvent);
         }
-        org.telegram.ui.Cells.ca o9 = h4Var.O0.o(getContext());
+        org.telegram.ui.Cells.da o9 = h4Var.O0.o(getContext());
         MotionEvent obtain = MotionEvent.obtain(motionEvent);
         obtain.offsetLocation(-h4Var.g0.getX(), -h4Var.g0.getY());
         if (!h4Var.O0.y() || !h4Var.O0.o(getContext()).onTouchEvent(obtain)) {
@@ -489,9 +489,9 @@ class ArticleViewer$WindowView extends FrameLayout {
         h4Var.l0.setAlpha(i10);
         h4Var.x0.setAlpha(i10);
         this.w = f7;
-        lb0 lb0Var = h4Var.U0;
-        if (lb0Var != null) {
-            lb0Var.a(h4Var.V && f7 == 1.0f && this.v == 0.0f);
+        mb0 mb0Var = h4Var.U0;
+        if (mb0Var != null) {
+            mb0Var.a(h4Var.V && f7 == 1.0f && this.v == 0.0f);
         }
         invalidate();
     }
@@ -499,9 +499,9 @@ class ArticleViewer$WindowView extends FrameLayout {
     public void setInnerTranslationX(float f7) {
         this.v = f7;
         h4 h4Var = this.H;
-        lb0 lb0Var = h4Var.U0;
-        if (lb0Var != null) {
-            lb0Var.a(h4Var.V && this.w == 1.0f && f7 == 0.0f);
+        mb0 mb0Var = h4Var.U0;
+        if (mb0Var != null) {
+            mb0Var.a(h4Var.V && this.w == 1.0f && f7 == 0.0f);
         }
         invalidate();
     }

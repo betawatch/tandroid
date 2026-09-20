@@ -9,9 +9,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.ui.Components.ed;
-import org.telegram.ui.web.u0;
+import org.telegram.ui.web.r0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b {
     public final /* synthetic */ int a;
@@ -199,7 +199,7 @@ public final /* synthetic */ class b {
                 Log.i("PIP_DEBUG", "[HANDLER] on old source render first frame " + z10);
                 cf.c cVar2 = this.b.h;
                 Objects.requireNonNull(cVar2);
-                AndroidUtilities.runOnUIThread(new u0(cVar2, 24));
+                AndroidUtilities.runOnUIThread(new r0(cVar2, 25));
                 break;
             default:
                 final int i12 = 0;

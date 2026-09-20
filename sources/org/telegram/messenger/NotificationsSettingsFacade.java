@@ -6,7 +6,7 @@ import android.media.RingtoneManager;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public class NotificationsSettingsFacade {
     public static final String PROPERTY_CONTENT_PREVIEW = "content_preview_";
@@ -40,17 +40,17 @@ public class NotificationsSettingsFacade {
         ConnectionsManager connectionsManager = ConnectionsManager.getInstance(this.currentAccount);
         MessagesStorage messagesStorage = MessagesStorage.getInstance(this.currentAccount);
         NotificationsController notificationsController = NotificationsController.getInstance(this.currentAccount);
-        int d = q.d(PROPERTY_NOTIFY, sharedPrefKey, getPreferences(), -1);
+        int c10 = l0.c(PROPERTY_NOTIFY, sharedPrefKey, getPreferences(), -1);
         boolean z11 = true;
-        int d10 = q.d(PROPERTY_NOTIFY_UNTIL, sharedPrefKey, getPreferences(), 0);
+        int c11 = l0.c(PROPERTY_NOTIFY_UNTIL, sharedPrefKey, getPreferences(), 0);
         SharedPreferences.Editor edit = getPreferences().edit();
         if ((peerNotifySettings.flags & 2) != 0) {
-            edit.putBoolean(t8.b.i(PROPERTY_SILENT, sharedPrefKey), peerNotifySettings.silent);
+            edit.putBoolean(v7.j0.g(PROPERTY_SILENT, sharedPrefKey), peerNotifySettings.silent);
         } else {
             edit.remove(PROPERTY_SILENT + sharedPrefKey);
         }
         if ((peerNotifySettings.flags & 64) != 0) {
-            edit.putBoolean(t8.b.i(PROPERTY_STORIES_NOTIFY, sharedPrefKey), !peerNotifySettings.stories_muted);
+            edit.putBoolean(v7.j0.g(PROPERTY_STORIES_NOTIFY, sharedPrefKey), !peerNotifySettings.stories_muted);
         } else {
             edit.remove(PROPERTY_STORIES_NOTIFY + sharedPrefKey);
         }
@@ -60,7 +60,7 @@ public class NotificationsSettingsFacade {
         }
         if ((peerNotifySettings.flags & 4) == 0) {
             boolean z12 = true;
-            if (d != -1) {
+            if (c10 != -1) {
                 if (dialog != null) {
                     dialog.notify_settings.mute_until = 0;
                 }
@@ -74,7 +74,7 @@ public class NotificationsSettingsFacade {
             z11 = z12;
         } else if (peerNotifySettings.mute_until > connectionsManager.getCurrentTime()) {
             if (peerNotifySettings.mute_until <= connectionsManager.getCurrentTime() + 31536000) {
-                if (d == 3 && d10 == peerNotifySettings.mute_until) {
+                if (c10 == 3 && c11 == peerNotifySettings.mute_until) {
                     z11 = false;
                 } else {
                     edit.putInt(PROPERTY_NOTIFY + sharedPrefKey, 3);
@@ -84,7 +84,7 @@ public class NotificationsSettingsFacade {
                     }
                 }
                 i11 = peerNotifySettings.mute_until;
-            } else if (d != 2) {
+            } else if (c10 != 2) {
                 edit.putInt(PROPERTY_NOTIFY + sharedPrefKey, 2);
                 if (dialog != null) {
                     dialog.notify_settings.mute_until = ConnectionsManager.DEFAULT_DATACENTER_ID;
@@ -99,7 +99,7 @@ public class NotificationsSettingsFacade {
                 notificationsController.removeNotificationsForDialog(j3);
             }
         } else {
-            if (d == 0 || d == 1) {
+            if (c10 == 0 || c10 == 1) {
                 z10 = false;
             } else {
                 if (dialog != null) {
@@ -152,9 +152,9 @@ public class NotificationsSettingsFacade {
         int i13 = (j3 > 0L ? 1 : (j3 == 0L ? 0 : -1));
         if (i13 != 0) {
             String sharedPrefKey = NotificationsController.getSharedPrefKey(j3, j10, true);
-            str = t8.b.i("sound_", sharedPrefKey);
-            str3 = t8.b.i("sound_path_", sharedPrefKey);
-            str2 = t8.b.i("sound_document_id_", sharedPrefKey);
+            str = v7.j0.g("sound_", sharedPrefKey);
+            str3 = v7.j0.g("sound_path_", sharedPrefKey);
+            str2 = v7.j0.g("sound_document_id_", sharedPrefKey);
         } else if (i10 == 0) {
             str = "GroupSound";
             str2 = "GroupSoundDocId";

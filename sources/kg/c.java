@@ -14,11 +14,11 @@ import java.util.Date;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
 import w7.y5;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public class c extends FrameLayout {
     public final TextView a;
@@ -29,13 +29,13 @@ public class c extends FrameLayout {
     public boolean f;
     public final Drawable h;
     public final int n;
-    public final e6 r;
+    public final f6 r;
 
-    public c(Context context, e6 e6Var) {
+    public c(Context context, f6 f6Var) {
         super(context);
         this.e = true;
         new SimpleDateFormat("d MMM yyyy");
-        this.r = e6Var;
+        this.r = f6Var;
         TextPaint textPaint = new TextPaint();
         textPaint.setTextSize(14.0f);
         textPaint.setTypeface(AndroidUtilities.bold());
@@ -71,20 +71,20 @@ public class c extends FrameLayout {
         textView2.setCompoundDrawablesWithIntrinsicBounds(drawable, (Drawable) null, (Drawable) null, (Drawable) null);
         textView2.setCompoundDrawablePadding(AndroidUtilities.dp(4.0f));
         textView2.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(4.0f));
-        textView2.setBackground(j6.G0(AndroidUtilities.dp(3.0f), j6.v0(j6.Rh, e6Var)));
+        textView2.setBackground(j6.G0(AndroidUtilities.dp(3.0f), j6.v0(j6.Rh, f6Var)));
         textView4.addOnLayoutChangeListener(new g4(this, 1));
         a();
     }
 
     public final void a() {
         int i10 = j6.j5;
-        e6 e6Var = this.r;
-        this.a.setTextColor(j6.v0(i10, e6Var));
-        this.b.setTextColor(j6.v0(i10, e6Var));
-        this.c.setTextColor(j6.v0(i10, e6Var));
+        f6 f6Var = this.r;
+        this.a.setTextColor(j6.v0(i10, f6Var));
+        this.b.setTextColor(j6.v0(i10, f6Var));
+        this.c.setTextColor(j6.v0(i10, f6Var));
         int i11 = j6.fj;
-        this.d.setTextColor(j6.v0(i11, e6Var));
-        this.h.setColorFilter(j6.v0(i11, e6Var), PorterDuff.Mode.SRC_IN);
+        this.d.setTextColor(j6.v0(i11, f6Var));
+        this.h.setColorFilter(j6.v0(i11, f6Var), PorterDuff.Mode.SRC_IN);
     }
 
     public final void b(long j3, long j10) {

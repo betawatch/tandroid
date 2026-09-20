@@ -11,7 +11,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class k7 extends g7 {
     public final ArrayList f;
@@ -24,7 +24,7 @@ public final class k7 extends g7 {
         this.f = new ArrayList();
     }
 
-    @Override // org.telegram.ui.Components.vl0
+    @Override // org.telegram.ui.Components.ul0
     public final boolean D(s4.c1 c1Var) {
         return true;
     }
@@ -72,14 +72,14 @@ public final class k7 extends g7 {
         y6Var.getImageView().setRoundRadius(AndroidUtilities.dp(((userOrChat instanceof TLRPC.Chat) && ((TLRPC.Chat) userOrChat).forum) ? 12.0f : 19.0f));
         String formatFileSize = AndroidUtilities.formatFileSize(s6Var.c);
         boolean z11 = i10 < arrayList.size() - 1;
-        org.telegram.ui.Components.p6 p6Var = y6Var.d;
+        org.telegram.ui.Components.o6 o6Var = y6Var.d;
         TextView textView = y6Var.c;
         textView.setText(Emoji.replaceEmoji(dialogPhotoTitle, textView.getPaint().getFontMetricsInt(), false));
         if (formatFileSize != null) {
-            p6Var.c(formatFileSize, false, true);
-            p6Var.setVisibility(0);
+            o6Var.c(formatFileSize, false, true);
+            o6Var.setVisibility(0);
         } else {
-            p6Var.setVisibility(4);
+            o6Var.setVisibility(4);
         }
         y6Var.f = z11;
         y6Var.setWillNotDraw(!z11);
@@ -101,6 +101,6 @@ public final class k7 extends g7 {
 
     @Override // s4.h0
     public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        return new org.telegram.ui.Components.gl0(i10 == 1 ? new y6(this.h.getContext(), null) : null);
+        return new org.telegram.ui.Components.fl0(i10 == 1 ? new y6(this.h.getContext(), null) : null);
     }
 }

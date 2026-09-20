@@ -17,7 +17,7 @@ import com.google.android.gms.tasks.TaskCompletionSource;
 import java.io.IOException;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class q4 implements Runnable {
     public final /* synthetic */ int a;
@@ -139,8 +139,8 @@ public final class q4 implements Runnable {
                 return;
             case 12:
                 qg.j jVar = ((ci.qb) this.b).J0;
-                if (jVar instanceof qg.u2) {
-                    ((qg.u2) jVar).getEditText();
+                if (jVar instanceof qg.v2) {
+                    ((qg.v2) jVar).getEditText();
                     return;
                 }
                 return;
@@ -212,16 +212,15 @@ public final class q4 implements Runnable {
                 eVar3.h.animate().setDuration(120L).alpha(1.0f).start();
                 return;
             case 24:
-                ki.h0 h0Var = (ki.h0) this.b;
-                if (h0Var.Q == 5 && (e0Var = h0Var.L) != null && h0Var.r) {
+                ki.o0 o0Var = (ki.o0) this.b;
+                if (o0Var.U == 5 && (e0Var = o0Var.Q) != null && o0Var.w) {
                     long J0 = e0Var.J0();
-                    long j3 = h0Var.A;
-                    if (J0 < j3 || J0 >= h0Var.B) {
-                        h0Var.L.W0(5, j3);
-                        J0 = h0Var.A;
+                    long j3 = o0Var.F;
+                    if (J0 < j3 || J0 >= o0Var.G) {
+                        o0Var.Q.W0(5, j3);
                     }
-                    h0Var.c.M(J0);
-                    h0Var.h.postDelayed(this, 33L);
+                    o0Var.c.getClass();
+                    o0Var.h.postDelayed(this, 33L);
                     return;
                 }
                 return;
@@ -252,17 +251,17 @@ public final class q4 implements Runnable {
                 a0Var.postDelayed(jVar2, ViewConfiguration.getLongPressTimeout() - ViewConfiguration.getTapTimeout());
                 return;
             default:
-                org.telegram.ui.Cells.v5 v5Var = (org.telegram.ui.Cells.v5) this.b;
-                TextView textView = v5Var.b;
+                org.telegram.ui.Cells.w5 w5Var = (org.telegram.ui.Cells.w5) this.b;
+                TextView textView = w5Var.b;
                 textView.setTag(null);
                 AnimatorSet animatorSet = new AnimatorSet();
-                v5Var.d = animatorSet;
+                w5Var.d = animatorSet;
                 Property property = View.ALPHA;
-                animatorSet.playTogether(ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property, 0.0f), ObjectAnimator.ofFloat(v5Var.a, (Property<TextView, Float>) property, 1.0f));
-                v5Var.d.setDuration(250L);
-                v5Var.d.setInterpolator(new DecelerateInterpolator());
-                v5Var.d.addListener(new org.telegram.ui.t4(this, 9));
-                v5Var.d.start();
+                animatorSet.playTogether(ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property, 0.0f), ObjectAnimator.ofFloat(w5Var.a, (Property<TextView, Float>) property, 1.0f));
+                w5Var.d.setDuration(250L);
+                w5Var.d.setInterpolator(new DecelerateInterpolator());
+                w5Var.d.addListener(new org.telegram.ui.t4(this, 9));
+                w5Var.d.start();
                 return;
         }
     }

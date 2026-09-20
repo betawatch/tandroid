@@ -5,20 +5,20 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.Components.vq0;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.Components.uq0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class u extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ TL_stars.StarGift a;
     public final /* synthetic */ Context b;
-    public final /* synthetic */ e6 c;
+    public final /* synthetic */ f6 c;
 
-    public u(Context context, TL_stars.StarGift starGift, e6 e6Var) {
+    public u(Context context, TL_stars.StarGift starGift, f6 f6Var) {
         this.a = starGift;
         this.b = context;
-        this.c = e6Var;
+        this.c = f6Var;
     }
 
     @Override // org.telegram.ui.ActionBar.j
@@ -36,7 +36,7 @@ public final class u extends org.telegram.ui.ActionBar.j {
         if (i10 == 3) {
             AndroidUtilities.addToClipboard(str);
         } else {
-            vq0.N0(context, null, str, false, str).show();
+            uq0.N0(context, null, str, false, str).show();
         }
     }
 }

@@ -2,14 +2,14 @@ package ci;
 
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class f extends dh.b {
     public final /* synthetic */ int n;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ f(int i10, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(i10, e6Var);
+    public /* synthetic */ f(int i10, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(i10, f6Var);
         this.n = 2;
     }
 
@@ -36,7 +36,7 @@ public final class f extends dh.b {
     }
 
     @Override // dh.b, dh.a
-    public int c() {
+    public int d() {
         switch (this.n) {
             case 2:
                 if (b()) {
@@ -44,7 +44,7 @@ public final class f extends dh.b {
                 }
                 return TLObject.FLAG_29;
             default:
-                return super.c();
+                return super.d();
         }
     }
 
@@ -62,8 +62,8 @@ public final class f extends dh.b {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ f(org.telegram.ui.ActionBar.e6 e6Var, int i10, float f7, int i11) {
-        super(e6Var, i10, f7);
+    public /* synthetic */ f(org.telegram.ui.ActionBar.f6 f6Var, int i10, float f7, int i11) {
+        super(f6Var, i10, f7);
         this.n = i11;
     }
 }

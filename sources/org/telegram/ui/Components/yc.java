@@ -4,7 +4,7 @@ import android.animation.ValueAnimator;
 import android.view.View;
 import android.view.animation.OvershootInterpolator;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public class yc {
     public View a;
@@ -46,8 +46,8 @@ public class yc {
             }
             ValueAnimator ofFloat = ValueAnimator.ofFloat(this.i, z10 ? 1.0f : 0.0f);
             this.g = ofFloat;
-            ofFloat.addUpdateListener(new k6(this, 7));
-            this.g.addListener(new ca(1, this, z10));
+            ofFloat.addUpdateListener(new j6(this, 7));
+            this.g.addListener(new ba(1, this, z10));
             if (this.h) {
                 this.g.setInterpolator(qr.f);
                 this.g.setDuration((long) (this.b * 60.0f));

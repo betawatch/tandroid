@@ -6,7 +6,7 @@ import b2.x1;
 import java.lang.ref.WeakReference;
 import java.util.List;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class y implements b2.z0 {
     public final WeakReference a;
@@ -653,7 +653,7 @@ public final class y implements b2.z0 {
         for (int i10 = 0; i10 < s10.size(); i10++) {
             r rVar = (r) s10.get(i10);
             fVar.v(rVar);
-            a2.c(rVar, new j2.e(24));
+            a2.c(rVar, new j2.e(26));
         }
     }
 
@@ -827,7 +827,7 @@ public final class y implements b2.z0 {
         }
         a2.s = a2.s.d(q1Var);
         a2.c.a(true, true);
-        a2.d(new j2.e(q1Var, 25));
+        a2.d(new j2.e(q1Var, 27));
     }
 
     @Override // b2.z0
@@ -842,7 +842,7 @@ public final class y implements b2.z0 {
         }
         a2.s = a2.s.a(s1Var);
         a2.c.a(true, false);
-        a2.d(new j2.e(s1Var, 23));
+        a2.d(new j2.e(s1Var, 25));
     }
 
     @Override // b2.z0

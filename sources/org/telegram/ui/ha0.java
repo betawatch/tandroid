@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BuildVars;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ha0 implements ViewTreeObserver.OnGlobalLayoutListener {
     public final /* synthetic */ int a;
@@ -27,7 +27,7 @@ public final /* synthetic */ class ha0 implements ViewTreeObserver.OnGlobalLayou
             case 0:
                 Pattern pattern = LaunchActivity.B1;
                 int measuredHeight = ((View) obj).getMeasuredHeight();
-                org.telegram.messenger.q.o(AndroidUtilities.displaySize.y, hg.k0.j(measuredHeight, "height = ", " displayHeight = "));
+                org.telegram.messenger.l0.m(AndroidUtilities.displaySize.y, hg.k0.k(measuredHeight, "height = ", " displayHeight = "));
                 int i11 = (measuredHeight - AndroidUtilities.navigationBarHeight) - AndroidUtilities.statusBarHeight;
                 if (i11 > AndroidUtilities.dp(100.0f) && i11 < AndroidUtilities.displaySize.y) {
                     int dp = AndroidUtilities.dp(100.0f) + i11;
@@ -35,16 +35,16 @@ public final /* synthetic */ class ha0 implements ViewTreeObserver.OnGlobalLayou
                     if (dp > point.y) {
                         point.y = i11;
                         if (BuildVars.LOGS_ENABLED) {
-                            org.telegram.messenger.q.o(AndroidUtilities.displaySize.y, new StringBuilder("fix display size y to "));
+                            org.telegram.messenger.l0.m(AndroidUtilities.displaySize.y, new StringBuilder("fix display size y to "));
                             break;
                         }
                     }
                 }
                 break;
             default:
-                vd1 vd1Var = (vd1) obj;
-                vd1Var.P = SystemClock.elapsedRealtime() + 1500;
-                vd1Var.k0.invalidate();
+                xd1 xd1Var = (xd1) obj;
+                xd1Var.P = SystemClock.elapsedRealtime() + 1500;
+                xd1Var.k0.invalidate();
                 break;
         }
     }

@@ -27,9 +27,9 @@ import java.util.WeakHashMap;
 import org.telegram.messenger.beta.R;
 import r0.i0;
 import r0.l0;
-import w7.q7;
+import w7.r7;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class n implements Window.Callback {
     public final Window.Callback a;
@@ -149,7 +149,7 @@ public final class n implements Window.Callback {
         return this.a.dispatchTrackballEvent(motionEvent);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:57:0x01c3  */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x01c1  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -167,7 +167,7 @@ public final class n implements Window.Callback {
         if (aVar != null) {
             aVar.a();
         }
-        n4.y yVar = new n4.y(sVar, fVar, z10, 14);
+        n4.y yVar = new n4.y(sVar, fVar, z10);
         b0 p5 = sVar.p();
         int i10 = 1;
         if (p5 != null) {
@@ -181,7 +181,7 @@ public final class n implements Window.Callback {
             l.l lVar = a0Var2.d;
             lVar.w();
             try {
-                if (((oi.f) a0Var2.e.b).H(a0Var2, lVar)) {
+                if (((oi.f) a0Var2.e.a).H(a0Var2, lVar)) {
                     p5.i = a0Var2;
                     a0Var2.g();
                     p5.f.c(a0Var2);
@@ -219,7 +219,7 @@ public final class n implements Window.Callback {
                     sVar.y = new ActionBarContextView(context);
                     PopupWindow popupWindow = new PopupWindow(context, (AttributeSet) null, R.attr.actionModePopupWindowStyle);
                     sVar.E = popupWindow;
-                    q7.b(popupWindow, 2);
+                    r7.b(popupWindow, 2);
                     sVar.E.setContentView(sVar.y);
                     sVar.E.setWidth(-1);
                     context.getTheme().resolveAttribute(R.attr.actionBarSize, typedValue, true);

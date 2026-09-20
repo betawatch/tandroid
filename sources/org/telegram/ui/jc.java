@@ -2,14 +2,14 @@ package org.telegram.ui;
 
 import android.app.Activity;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class jc extends rg.j0 {
     public final /* synthetic */ int W0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public jc(bd bdVar, Activity activity, int i10, int i11, org.telegram.ui.ActionBar.e6 e6Var, int i12) {
-        super(i10, i11, activity, bdVar, e6Var);
+    public jc(bd bdVar, Activity activity, int i10, int i11, org.telegram.ui.ActionBar.f6 f6Var, int i12) {
+        super(i10, i11, activity, bdVar, f6Var);
         this.W0 = i12;
     }
 

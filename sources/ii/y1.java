@@ -8,19 +8,19 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.Components.ug;
-import org.telegram.ui.Components.vq0;
+import org.telegram.ui.Components.uq0;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.uy;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class y1 extends ug {
     public final /* synthetic */ int l0;
     public final /* synthetic */ Object m0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ y1(Object obj, Context context, int i10, org.telegram.ui.ActionBar.e6 e6Var, int i11) {
-        super(i10, context, e6Var, true);
+    public /* synthetic */ y1(Object obj, Context context, int i10, org.telegram.ui.ActionBar.f6 f6Var, int i11) {
+        super(i10, context, f6Var, true);
         this.l0 = i11;
         this.m0 = obj;
     }
@@ -62,7 +62,7 @@ public final class y1 extends ug {
         Object obj = this.m0;
         switch (i10) {
             case 2:
-                return ((vq0) obj).getThemedColor(j6.S5);
+                return ((uq0) obj).getThemedColor(j6.S5);
             case 3:
             default:
                 return super.getFillColor();
@@ -104,8 +104,8 @@ public final class y1 extends ug {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ y1(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, Context context, int i10, org.telegram.ui.ActionBar.e6 e6Var, int i11) {
-        super(i10, context, e6Var, false);
+    public /* synthetic */ y1(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, Context context, int i10, org.telegram.ui.ActionBar.f6 f6Var, int i11) {
+        super(i10, context, f6Var, false);
         this.l0 = i11;
         this.m0 = notificationCenterDelegate;
     }

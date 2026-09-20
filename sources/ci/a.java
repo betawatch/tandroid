@@ -19,7 +19,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.pq;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class a extends View {
     public final ImageReceiver a;
@@ -34,7 +34,7 @@ public final class a extends View {
     public float s;
     public float v;
 
-    public a(Context context, MediaController.PhotoEntry photoEntry, String str, int i10, org.telegram.ui.ActionBar.e6 e6Var) {
+    public a(Context context, MediaController.PhotoEntry photoEntry, String str, int i10, org.telegram.ui.ActionBar.f6 f6Var) {
         super(context);
         String str2;
         ImageReceiver imageReceiver = new ImageReceiver(this);
@@ -48,9 +48,9 @@ public final class a extends View {
         setMinimumWidth(AndroidUtilities.dp(196.0f));
         setLayoutParams(new LinearLayout.LayoutParams(-1, 48));
         int i11 = org.telegram.ui.ActionBar.j6.E8;
-        textPaint.setColor(org.telegram.ui.ActionBar.j6.v0(i11, e6Var));
+        textPaint.setColor(org.telegram.ui.ActionBar.j6.v0(i11, f6Var));
         textPaint.setTextSize(AndroidUtilities.dp(16.0f));
-        textPaint2.setColor(org.telegram.ui.ActionBar.j6.v0(i11, e6Var));
+        textPaint2.setColor(org.telegram.ui.ActionBar.j6.v0(i11, f6Var));
         textPaint2.setAlpha(102);
         textPaint2.setTextSize(AndroidUtilities.dp(13.0f));
         String str3 = "";

@@ -1,48 +1,59 @@
 package org.telegram.ui.Components;
 
+import android.graphics.Rect;
 import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
-import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ck0 implements e2.h {
+public final class ck0 extends s4.n0 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ qk0 b;
+    public final /* synthetic */ pk0 b;
 
-    public /* synthetic */ ck0(qk0 qk0Var, int i10) {
+    public /* synthetic */ ck0(pk0 pk0Var, int i10) {
         this.a = i10;
-        this.b = qk0Var;
+        this.b = pk0Var;
     }
 
-    @Override // e2.h
-    public final void accept(Object obj) {
-        View view = (View) obj;
+    @Override // s4.n0
+    public final void a(Rect rect, View view, RecyclerView recyclerView, s4.z0 z0Var) {
         switch (this.a) {
             case 0:
-                qk0 qk0Var = this.b;
-                ArrayList arrayList = qk0Var.d;
-                qk0Var.b.getClass();
-                int S = RecyclerView.S(view);
-                if (S >= 0 && S < arrayList.size() && (view instanceof ok0)) {
-                    ((ok0) view).f(((hk0) arrayList.get(S)).c, true);
+                super.a(rect, view, recyclerView, z0Var);
+                pk0 pk0Var = this.b;
+                if (!pk0Var.q()) {
+                    recyclerView.getClass();
+                    int S = RecyclerView.S(view);
+                    if (S == 0) {
+                        rect.left = AndroidUtilities.dp(6.0f);
+                    }
+                    rect.right = AndroidUtilities.dp(4.0f);
+                    if (S == pk0Var.a0.h() - 1) {
+                        if ((!pk0Var.U.isEmpty() && !MessagesController.getInstance(pk0Var.J).premiumFeaturesBlocked()) || pk0Var.q()) {
+                            rect.right = AndroidUtilities.dp(2.0f);
+                            break;
+                        } else {
+                            rect.right = AndroidUtilities.dp(6.0f);
+                            break;
+                        }
+                    }
+                } else {
+                    rect.left = 0;
+                    rect.right = 0;
                     break;
                 }
                 break;
             default:
-                if (view instanceof ok0) {
-                    ok0 ok0Var = (ok0) view;
-                    nk0 nk0Var = ok0Var.b;
-                    ok0Var.N = false;
-                    nk0Var.setAlpha(1.0f);
-                    if (!this.b.N0) {
-                        ok0Var.d();
-                        break;
-                    } else {
-                        nk0Var.setScaleX(ok0Var.I * (ok0Var.w ? 0.76f : 1.0f));
-                        nk0Var.setScaleY(ok0Var.I * (ok0Var.w ? 0.76f : 1.0f));
-                        break;
-                    }
+                recyclerView.getClass();
+                int S2 = RecyclerView.S(view);
+                if (S2 == 0) {
+                    rect.left = AndroidUtilities.dp(8.0f);
+                }
+                if (S2 == this.b.a0.h() - 1) {
+                    rect.right = AndroidUtilities.dp(8.0f);
+                    break;
                 }
                 break;
         }

@@ -8,7 +8,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.Tasks;
 import org.telegram.ui.Cells.c1;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 abstract class y {
     private final String b;
@@ -35,13 +35,13 @@ abstract class y {
                 if (Log.isLoggable("PlayCore", 3)) {
                     Log.d("PlayCore", j0.d(j0Var.a, "checkAndShowDialog(%s)", objArr));
                 }
-                Bundle f7 = c1.f(i10, "dialog.intent.type");
-                f7.putString("package.name", this.b);
-                f7.putInt("playcore.integrity.version.major", 1);
-                f7.putInt("playcore.integrity.version.minor", 4);
-                f7.putInt("playcore.integrity.version.patch", 0);
-                f7.putLong("request.token.sid", this.c);
-                return b(activity, f7);
+                Bundle g10 = c1.g(i10, "dialog.intent.type");
+                g10.putString("package.name", this.b);
+                g10.putInt("playcore.integrity.version.major", 1);
+                g10.putInt("playcore.integrity.version.minor", 4);
+                g10.putInt("playcore.integrity.version.patch", 0);
+                g10.putLong("request.token.sid", this.c);
+                return b(activity, g10);
             } catch (Throwable th2) {
                 throw th2;
             }

@@ -17,15 +17,15 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.rk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.b01;
+import org.telegram.ui.Components.a01;
 import org.telegram.ui.Components.l40;
-import org.telegram.ui.nj0;
+import org.telegram.ui.pj0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class d3 {
     public final TL_stars.TL_starGiftUnique a;
@@ -34,7 +34,7 @@ public final class d3 {
     public final long d;
     public final String e;
     public final boolean f;
-    public final org.telegram.ui.ActionBar.e6 g;
+    public final org.telegram.ui.ActionBar.f6 g;
     public final org.telegram.ui.ActionBar.b2 h;
     public final l40 i;
     public final TextView j;
@@ -47,7 +47,7 @@ public final class d3 {
     public zf.b q;
     public ci.f4 r;
 
-    public d3(Context context, org.telegram.ui.ActionBar.e6 e6Var, TL_stars.TL_starGiftUnique tL_starGiftUnique, b3 b3Var, int i10, long j3, String str, boolean z10, Utilities.Callback2 callback2) {
+    public d3(Context context, org.telegram.ui.ActionBar.f6 f6Var, TL_stars.TL_starGiftUnique tL_starGiftUnique, b3 b3Var, int i10, long j3, String str, boolean z10, Utilities.Callback2 callback2) {
         HashMap hashMap = new HashMap();
         this.o = hashMap;
         this.p = new HashSet();
@@ -58,47 +58,47 @@ public final class d3 {
         zf.b bVar = b3Var.a;
         this.q = bVar;
         hashMap.put(bVar, b3Var);
-        this.g = e6Var;
+        this.g = f6Var;
         this.e = str;
         boolean z11 = tL_starGiftUnique.resale_ton_only;
         this.f = !z11;
         TLObject user = j3 >= 0 ? MessagesController.getInstance(i10).getUser(Long.valueOf(j3)) : MessagesController.getInstance(i10).getChat(Long.valueOf(-j3));
-        LinearLayout e = wh.e(context, 1);
+        LinearLayout f7 = rk.f(context, 1);
         c3 c3Var = new c3(this, context);
-        c3Var.addView(e, w7.y5.c(-2.0f, -1));
+        c3Var.addView(f7, w7.y5.c(-2.0f, -1));
         if (z11) {
             this.i = null;
             TextView textView = new TextView(context);
-            wh.m(org.telegram.ui.ActionBar.j6.y6, e6Var, textView, 1, 14.0f);
-            wh.k(R.string.Gift2BuyPriceOnlyTON, textView, 17);
-            e.addView(textView, w7.y5.t(-2, -2, 17, 24, 4, 24, 4));
+            rk.n(org.telegram.ui.ActionBar.j6.y6, f6Var, textView, 1, 14.0f);
+            rk.l(R.string.Gift2BuyPriceOnlyTON, textView, 17);
+            f7.addView(textView, w7.y5.t(-2, -2, 17, 24, 4, 24, 4));
         } else {
-            l40 l40Var = new l40(context, e6Var);
+            l40 l40Var = new l40(context, f6Var);
             this.i = l40Var;
             ArrayList arrayList = new ArrayList();
             arrayList.add(LocaleController.getString(R.string.Gift2BuyInStars));
             arrayList.add(LocaleController.getString(R.string.Gift2BuyInTON));
             l40Var.b(arrayList, new v(this, 2));
-            e.addView(l40Var, w7.y5.t(-2, -2, 1, 18, 0, 18, 12));
+            f7.addView(l40Var, w7.y5.t(-2, -2, 1, 18, 0, 18, 12));
         }
-        e.addView(new a3(context, tL_starGiftUnique, user), w7.y5.t(-1, -2, 48, 0, -4, 0, 0));
+        f7.addView(new a3(context, tL_starGiftUnique, user), w7.y5.t(-1, -2, 48, 0, -4, 0, 0));
         TextView textView2 = new TextView(context);
         this.j = textView2;
-        wh.m(org.telegram.ui.ActionBar.j6.j5, e6Var, textView2, 1, 16.0f);
-        e.addView(textView2, w7.y5.t(-1, -2, 48, 24, 4, 24, 4));
+        rk.n(org.telegram.ui.ActionBar.j6.j5, f6Var, textView2, 1, 16.0f);
+        f7.addView(textView2, w7.y5.t(-1, -2, 48, 24, 4, 24, 4));
         if (z10) {
-            b01 b01Var = new b01(context, e6Var);
-            y3.q1(b01Var, t5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeModel.class));
-            y3.q1(b01Var, t5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeBackdrop.class));
-            y3.q1(b01Var, t5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributePattern.class));
+            a01 a01Var = new a01(context, f6Var);
+            y3.q1(a01Var, u5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeModel.class));
+            y3.q1(a01Var, u5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeBackdrop.class));
+            y3.q1(a01Var, u5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributePattern.class));
             if (!TextUtils.isEmpty(tL_starGiftUnique.slug) && (tL_starGiftUnique.flags & 256) != 0) {
-                b01Var.c(LocaleController.getString(R.string.GiftValue2), t8.b.i("~", BillingController.getInstance().formatCurrency(tL_starGiftUnique.value_amount, tL_starGiftUnique.value_currency, BillingController.getInstance().getCurrencyExp(tL_starGiftUnique.value_currency), true)), null, null);
+                a01Var.c(LocaleController.getString(R.string.GiftValue2), v7.j0.g("~", BillingController.getInstance().formatCurrency(tL_starGiftUnique.value_amount, tL_starGiftUnique.value_currency, BillingController.getInstance().getCurrencyExp(tL_starGiftUnique.value_currency), true)), null, null);
             }
-            e.addView(b01Var, w7.y5.t(-1, -2, 48, 23, 16, 23, 4));
+            f7.addView(a01Var, w7.y5.t(-1, -2, 48, 23, 16, 23, 4));
         }
-        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context, 0, e6Var);
+        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context, 0, f6Var);
         alertDialog$Builder.n(c3Var);
-        alertDialog$Builder.k("_", new org.telegram.ui.Components.d2(this, i10, context, e6Var, callback2, 6));
+        alertDialog$Builder.k("_", new org.telegram.ui.Components.d2(this, i10, context, f6Var, callback2, 6));
         alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
         this.h = alertDialog$Builder.a;
     }
@@ -146,7 +146,7 @@ public final class d3 {
             this.n = g10;
             g10.d();
             if (this.p.add(bVar)) {
-                t5.x(i11, bVar).H(this.a, j3, null, true, new nj0(20, this, bVar));
+                u5.x(i11, bVar).H(this.a, j3, null, true, new pj0(20, this, bVar));
                 return;
             }
             return;
@@ -156,11 +156,11 @@ public final class d3 {
         boolean z11 = j3 == UserConfig.getInstance(i11).getClientUserId();
         String str = this.e;
         if (bVar4 == bVar3) {
-            this.l.setText(v7.Q0(LocaleController.formatPluralStringComma("Gift2BuyDoPrice2", (int) aVar3.a())));
+            this.l.setText(w7.Q0(LocaleController.formatPluralStringComma("Gift2BuyDoPrice2", (int) aVar3.a())));
             textView.setText(AndroidUtilities.replaceTags(z11 ? LocaleController.formatPluralStringComma("Gift2BuyPriceSelfText", (int) aVar3.a(), str) : LocaleController.formatPluralStringComma("Gift2BuyPriceText", (int) aVar3.a(), str, DialogObject.getShortName(j3))));
         }
         if (bVar4 == bVar2) {
-            this.l.setText(v7.S0(LocaleController.formatString(R.string.Gift2BuyDoPrice2TON, aVar3.d()), true));
+            this.l.setText(w7.S0(LocaleController.formatString(R.string.Gift2BuyDoPrice2TON, aVar3.d()), true));
             textView.setText(AndroidUtilities.replaceTags(z11 ? LocaleController.formatString(R.string.Gift2BuyPriceSelfTextTON, aVar3.d(), str) : LocaleController.formatString(R.string.Gift2BuyPriceTextTON, aVar3.d(), str, DialogObject.getShortName(j3))));
         }
     }

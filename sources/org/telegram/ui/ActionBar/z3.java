@@ -14,14 +14,14 @@ import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.FileLog;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class z3 extends FrameLayout {
     public d5 a;
     public ActionBarLayout b;
     public boolean c;
     public final Paint d;
-    public r0.m1 e;
+    public r0.l1 e;
     public i0.b f;
     public i0.b h;
 
@@ -40,10 +40,10 @@ public final class z3 extends FrameLayout {
     @Override // android.view.ViewGroup
     public final void addView(View view, int i10, ViewGroup.LayoutParams layoutParams) {
         super.addView(view, i10, layoutParams);
-        r0.m1 m1Var = this.e;
-        if (m1Var != null) {
+        r0.l1 l1Var = this.e;
+        if (l1Var != null) {
             if ((view instanceof ActionBarLayout) || view.getTag() == null) {
-                r0.i0.b(view, m1Var);
+                r0.i0.b(view, l1Var);
             }
         }
     }

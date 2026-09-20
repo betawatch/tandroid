@@ -23,7 +23,7 @@ import org.telegram.tgnet.tl.TL_chatlists;
 import org.telegram.ui.FiltersSetupActivity;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -85,33 +85,33 @@ public final /* synthetic */ class f0 implements View.OnClickListener {
                 ((org.telegram.ui.Cells.a2) view).c(atomicBoolean.get(), true);
                 break;
             case 3:
-                ((e9) obj).f0();
+                ((d9) obj).f0();
                 break;
             case 4:
-                da daVar = (da) obj;
-                int i15 = daVar.v + 1;
-                daVar.v = i15;
+                ca caVar = (ca) obj;
+                int i15 = caVar.v + 1;
+                caVar.v = i15;
                 if (i15 >= 10) {
-                    daVar.setVisibility(8);
+                    caVar.setVisibility(8);
                     SharedConfig.pendingAppUpdate = null;
                     SharedConfig.saveConfig();
                     break;
                 }
                 break;
             case 5:
-                ((bc) ((zb) obj).m1).f();
-                qc.e();
+                ((ac) ((yb) obj).m1).f();
+                pc.e();
                 break;
             case 6:
-                ((oc) obj).f();
+                ((nc) obj).f();
                 break;
             case 7:
-                kd kdVar = (kd) obj;
+                ld ldVar = (ld) obj;
                 MessagesController.getGlobalMainSettings().edit().putInt("aihintshown", 3).apply();
-                e0 e0Var = new e0(kdVar.getContext(), new ai.d());
-                e0Var.m0(kdVar.f.getText());
-                e0Var.j0 = new y2(kdVar, i14);
-                mh mhVar = new mh(kdVar, 2);
+                e0 e0Var = new e0(ldVar.getContext(), new ai.d());
+                e0Var.m0(ldVar.f.getText());
+                e0Var.j0 = new x2(ldVar, i14);
+                mh mhVar = new mh(ldVar, 2);
                 e0Var.l0 = 0L;
                 e0Var.m0 = true;
                 e0Var.n0 = mhVar;
@@ -171,10 +171,10 @@ public final /* synthetic */ class f0 implements View.OnClickListener {
                 ((fs) obj).W(true);
                 break;
             case 12:
-                ((sv) obj).Z();
+                ((tv) obj).Z();
                 break;
             case 13:
-                Runnable runnable = ((cw) obj).R;
+                Runnable runnable = ((dw) obj).R;
                 if (runnable != null) {
                     runnable.run();
                     break;
@@ -201,20 +201,20 @@ public final /* synthetic */ class f0 implements View.OnClickListener {
             case 15:
                 fz fzVar = (fz) obj;
                 fzVar.getClass();
-                org.telegram.ui.Cells.s3 s3Var = (org.telegram.ui.Cells.s3) view.getParent();
-                TLRPC.StickerSetCovered stickerSet = s3Var.getStickerSet();
+                org.telegram.ui.Cells.t3 t3Var = (org.telegram.ui.Cells.t3) view.getParent();
+                TLRPC.StickerSetCovered stickerSet = t3Var.getStickerSet();
                 kz kzVar2 = fzVar.Q;
                 LongSparseArray longSparseArray = kzVar2.y1;
                 LongSparseArray longSparseArray2 = kzVar2.z1;
                 if (longSparseArray.indexOfKey(stickerSet.set.id) < 0 && longSparseArray2.indexOfKey(stickerSet.set.id) < 0) {
-                    if (s3Var.r) {
+                    if (t3Var.r) {
                         longSparseArray2.put(stickerSet.set.id, stickerSet);
-                        kzVar2.t1.h(s3Var.getStickerSet());
+                        kzVar2.t1.h(t3Var.getStickerSet());
                         break;
                     } else {
-                        s3Var.b(true, true);
+                        t3Var.b(true, true);
                         kzVar2.y1.put(stickerSet.set.id, stickerSet);
-                        kzVar2.t1.r(s3Var.getStickerSet());
+                        kzVar2.t1.r(t3Var.getStickerSet());
                         break;
                     }
                 }
@@ -291,8 +291,8 @@ public final /* synthetic */ class f0 implements View.OnClickListener {
                                         undoView = ((FiltersSetupActivity) lastFragment).Y();
                                     } else if (lastFragment instanceof org.telegram.ui.f10) {
                                         List fragmentStack = parentLayout.getFragmentStack();
-                                        if (fragmentStack.size() >= 2 && (t8.b.h(2, fragmentStack) instanceof FiltersSetupActivity)) {
-                                            FiltersSetupActivity filtersSetupActivity = (FiltersSetupActivity) t8.b.h(2, fragmentStack);
+                                        if (fragmentStack.size() >= 2 && (org.telegram.ui.Cells.c1.i(2, fragmentStack) instanceof FiltersSetupActivity)) {
+                                            FiltersSetupActivity filtersSetupActivity = (FiltersSetupActivity) org.telegram.ui.Cells.c1.i(2, fragmentStack);
                                             lastFragment.finishFragment();
                                             undoView = filtersSetupActivity.Y();
                                         }
@@ -433,21 +433,21 @@ public final /* synthetic */ class f0 implements View.OnClickListener {
                 ((w40) obj).dismiss();
                 break;
             case 28:
-                w70 w70Var = (w70) obj;
+                v70 v70Var = (v70) obj;
                 HashSet hashSet = ei.k3.W0;
-                if (w70Var.J) {
-                    w70Var.u();
+                if (v70Var.J) {
+                    v70Var.u();
                     break;
                 }
                 break;
             default:
-                f80.n((f80) obj);
+                e80.n((e80) obj);
                 break;
         }
     }
 
-    public /* synthetic */ f0(w70 w70Var, ai.f fVar) {
+    public /* synthetic */ f0(v70 v70Var, ai.f fVar) {
         this.a = 28;
-        this.b = w70Var;
+        this.b = v70Var;
     }
 }

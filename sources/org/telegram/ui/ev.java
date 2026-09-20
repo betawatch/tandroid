@@ -6,7 +6,7 @@ import android.view.View;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class ev implements View.OnClickListener {
     public final /* synthetic */ Context a;
@@ -54,10 +54,10 @@ public final class ev implements View.OnClickListener {
             String str3 = str2;
             boolean z10 = !q6;
             org.telegram.ui.ActionBar.i6 N0 = q6 ? org.telegram.ui.ActionBar.j6.N0(str3) : org.telegram.ui.ActionBar.j6.N0(str);
-            org.telegram.ui.Components.ij0 ij0Var = this.c.d;
-            ij0Var.P(q6 ? ij0Var.e[0] - 1 : 0);
+            org.telegram.ui.Components.hj0 hj0Var = this.c.d;
+            hj0Var.P(q6 ? hj0Var.e[0] - 1 : 0);
             this.c.e.getImageView().d();
-            int[] iArr = {(this.c.e.getImageView().getMeasuredWidth() / 2) + r2, org.telegram.messenger.q.D(3.0f, this.c.e.getImageView().getMeasuredHeight() / 2, r2)};
+            int[] iArr = {(this.c.e.getImageView().getMeasuredWidth() / 2) + r2, org.telegram.messenger.l0.C(3.0f, this.c.e.getImageView().getMeasuredHeight() / 2, r2)};
             this.c.e.getImageView().getLocationInWindow(iArr);
             int i10 = iArr[0];
             int i11 = iArr[1];
@@ -68,10 +68,10 @@ public final class ev implements View.OnClickListener {
         String str32 = str2;
         boolean z102 = !q62;
         org.telegram.ui.ActionBar.i6 N02 = q62 ? org.telegram.ui.ActionBar.j6.N0(str32) : org.telegram.ui.ActionBar.j6.N0(str);
-        org.telegram.ui.Components.ij0 ij0Var2 = this.c.d;
-        ij0Var2.P(q62 ? ij0Var2.e[0] - 1 : 0);
+        org.telegram.ui.Components.hj0 hj0Var2 = this.c.d;
+        hj0Var2.P(q62 ? hj0Var2.e[0] - 1 : 0);
         this.c.e.getImageView().d();
-        int[] iArr2 = {(this.c.e.getImageView().getMeasuredWidth() / 2) + i10, org.telegram.messenger.q.D(3.0f, this.c.e.getImageView().getMeasuredHeight() / 2, i11)};
+        int[] iArr2 = {(this.c.e.getImageView().getMeasuredWidth() / 2) + i10, org.telegram.messenger.l0.C(3.0f, this.c.e.getImageView().getMeasuredHeight() / 2, i11)};
         this.c.e.getImageView().getLocationInWindow(iArr2);
         int i102 = iArr2[0];
         int i112 = iArr2[1];

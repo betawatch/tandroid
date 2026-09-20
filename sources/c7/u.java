@@ -3,9 +3,9 @@ package c7;
 import android.os.Parcel;
 import android.os.Parcelable;
 import java.util.Arrays;
-import n7.l1;
+import n7.k1;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class u extends o6.a {
     public static final Parcelable.Creator<u> CREATOR = new w.a(25);
@@ -67,7 +67,7 @@ public final class u extends o6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        l1.a.r0();
+        k1.a.q0();
         throw null;
     }
 }

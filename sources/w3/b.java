@@ -5,7 +5,7 @@ import java.util.concurrent.TimeoutException;
 import w9.w;
 import za.a0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class b {
     public final Object a;
@@ -15,7 +15,7 @@ public final class b {
     }
 
     public void a(a0 a0Var) {
-        ((l5.q) ((i5.f) ((pa.b) this.a).get())).a("FIREBASE_APPQUALITY_SESSION", new i5.c("json"), new r5.d(this, 28)).a(new i5.a(null, a0Var, i5.d.a, null), new j2.e(20));
+        ((l5.q) ((i5.f) ((pa.b) this.a).get())).a("FIREBASE_APPQUALITY_SESSION", new i5.c("json"), new r5.d(this, 28)).a(new i5.a(null, a0Var, i5.d.a, null), new j2.e(22));
     }
 
     public void b(da.b bVar, Thread thread, Throwable th2) {

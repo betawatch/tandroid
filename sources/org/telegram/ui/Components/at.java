@@ -10,13 +10,13 @@ import java.util.ArrayList;
 import java.util.List;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public abstract class at extends s4.f1 {
     public static final DecelerateInterpolator D = new DecelerateInterpolator();
     public int A;
     public int B;
-    public final wl0 C;
+    public final vl0 C;
     public final ArrayList o = new ArrayList();
     public final ArrayList p = new ArrayList();
     public final ArrayList q = new ArrayList();
@@ -30,9 +30,9 @@ public abstract class at extends s4.f1 {
     public final ArrayList y = new ArrayList();
     public org.telegram.ui.Cells.s2 z;
 
-    public at(wl0 wl0Var) {
+    public at(vl0 vl0Var) {
         this.m = false;
-        this.C = wl0Var;
+        this.C = vl0Var;
     }
 
     public final void A() {
@@ -336,7 +336,7 @@ public abstract class at extends s4.f1 {
                     }
                     s2Var.setElevation(-1.0f);
                     s2Var.setOutlineProvider(null);
-                    ObjectAnimator duration = ObjectAnimator.ofFloat(s2Var, s6.h, 1.0f).setDuration(180L);
+                    ObjectAnimator duration = ObjectAnimator.ofFloat(s2Var, r6.h, 1.0f).setDuration(180L);
                     duration.setInterpolator(decelerateInterpolator);
                     duration.addListener(new vs(this, c1Var, s2Var, 0));
                     duration.start();
@@ -673,11 +673,11 @@ public abstract class at extends s4.f1 {
         org.telegram.ui.Cells.s2 s2Var = null;
         int i10 = 0;
         while (true) {
-            wl0 wl0Var = this.C;
-            if (i10 >= wl0Var.getChildCount()) {
+            vl0 vl0Var = this.C;
+            if (i10 >= vl0Var.getChildCount()) {
                 break;
             }
-            View childAt = wl0Var.getChildAt(i10);
+            View childAt = vl0Var.getChildAt(i10);
             if (childAt.getTop() > Integer.MIN_VALUE && (childAt instanceof org.telegram.ui.Cells.s2)) {
                 s2Var = (org.telegram.ui.Cells.s2) childAt;
             }

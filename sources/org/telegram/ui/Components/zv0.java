@@ -1,57 +1,7 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.Region;
-import android.graphics.text.MeasuredText;
-
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class zv0 extends Canvas {
-    @Override // android.graphics.Canvas
-    public final boolean clipPath(Path path) {
-        return false;
-    }
-
-    @Override // android.graphics.Canvas
-    public final void drawText(CharSequence charSequence, int i10, int i11, float f7, float f10, Paint paint) {
-    }
-
-    @Override // android.graphics.Canvas
-    public final void drawTextOnPath(String str, Path path, float f7, float f10, Paint paint) {
-    }
-
-    @Override // android.graphics.Canvas
-    public final void drawTextRun(MeasuredText measuredText, int i10, int i11, int i12, int i13, float f7, float f10, boolean z10, Paint paint) {
-    }
-
-    @Override // android.graphics.Canvas
-    public final boolean clipPath(Path path, Region.Op op) {
-        return false;
-    }
-
-    @Override // android.graphics.Canvas
-    public final void drawText(String str, float f7, float f10, Paint paint) {
-    }
-
-    @Override // android.graphics.Canvas
-    public final void drawTextOnPath(char[] cArr, int i10, int i11, Path path, float f7, float f10, Paint paint) {
-    }
-
-    @Override // android.graphics.Canvas
-    public final void drawTextRun(CharSequence charSequence, int i10, int i11, int i12, int i13, float f7, float f10, boolean z10, Paint paint) {
-    }
-
-    @Override // android.graphics.Canvas
-    public final void drawText(String str, int i10, int i11, float f7, float f10, Paint paint) {
-    }
-
-    @Override // android.graphics.Canvas
-    public final void drawTextRun(char[] cArr, int i10, int i11, int i12, int i13, float f7, float f10, boolean z10, Paint paint) {
-    }
-
-    @Override // android.graphics.Canvas
-    public final void drawText(char[] cArr, int i10, int i11, float f7, float f10, Paint paint) {
-    }
+public interface zv0 {
+    void H(int i10, boolean z10);
 }

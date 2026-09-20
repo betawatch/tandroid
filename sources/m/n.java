@@ -8,10 +8,10 @@ import android.text.InputFilter;
 import android.util.AttributeSet;
 import android.widget.CheckBox;
 import org.telegram.messenger.beta.R;
-import v7.v7;
-import w7.p6;
+import v7.w7;
+import w7.q6;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class n extends CheckBox implements u0.k {
     public final p a;
@@ -168,7 +168,7 @@ public final class n extends CheckBox implements u0.k {
 
     @Override // android.widget.TextView
     public void setFilters(InputFilter[] inputFilterArr) {
-        super.setFilters(((p6) getEmojiTextViewHelper().b.b).a(inputFilterArr));
+        super.setFilters(((q6) getEmojiTextViewHelper().b.b).a(inputFilterArr));
     }
 
     public void setSupportBackgroundTintList(ColorStateList colorStateList) {
@@ -219,6 +219,6 @@ public final class n extends CheckBox implements u0.k {
 
     @Override // android.widget.CompoundButton
     public void setButtonDrawable(int i10) {
-        setButtonDrawable(v7.b(getContext(), i10));
+        setButtonDrawable(w7.b(getContext(), i10));
     }
 }

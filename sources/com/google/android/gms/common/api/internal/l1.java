@@ -2,11 +2,11 @@ package com.google.android.gms.common.api.internal;
 
 import ai.q4;
 import android.app.AlertDialog;
-import v7.h5;
+import v7.i5;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
-public final class l1 extends h5 {
+public final class l1 extends i5 {
     public final /* synthetic */ AlertDialog a;
     public final /* synthetic */ q4 b;
 
@@ -15,7 +15,7 @@ public final class l1 extends h5 {
         this.a = alertDialog;
     }
 
-    @Override // v7.h5
+    @Override // v7.i5
     public final void a() {
         throw null;
     }

@@ -4,15 +4,15 @@ import android.content.Context;
 import android.view.ViewGroup;
 import org.telegram.ui.Components.np;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class q3 extends np {
     public final /* synthetic */ int d;
     public final /* synthetic */ ViewGroup e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ q3(ViewGroup viewGroup, Context context, org.telegram.ui.ActionBar.e6 e6Var, int i10) {
-        super(context, 21, e6Var);
+    public /* synthetic */ q3(ViewGroup viewGroup, Context context, org.telegram.ui.ActionBar.f6 f6Var, int i10) {
+        super(context, 21, f6Var);
         this.d = i10;
         this.e = viewGroup;
     }
@@ -36,8 +36,8 @@ public final class q3 extends np {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public q3(s3 s3Var, Context context, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(context, 24, e6Var);
+    public q3(s3 s3Var, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context, 24, f6Var);
         this.d = 0;
         this.e = s3Var;
     }

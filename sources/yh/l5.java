@@ -9,9 +9,9 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.kb1;
+import org.telegram.ui.mb1;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class l5 implements m5 {
     public final int a;
@@ -300,7 +300,7 @@ public final class l5 implements m5 {
                     arrayList = this.l;
                     arrayList.removeAll(h);
                     if (this.e && !this.c) {
-                        Collections.sort(arrayList, new kb1(21));
+                        Collections.sort(arrayList, new mb1(21));
                     }
                     arrayList.addAll(0, h);
                     NotificationCenter.getInstance(i10).lambda$postNotificationNameOnUIThread$1(NotificationCenter.starUserGiftsLoaded, Long.valueOf(this.b), this);
@@ -315,7 +315,7 @@ public final class l5 implements m5 {
                         return true;
                     }
                     while (h.size() > 0 && h.size() + 1 > MessagesController.getInstance(i10).stargiftsPinnedToTopLimit) {
-                        ((TL_stars.SavedStarGift) hg.k0.v(1, h)).pinned_to_top = false;
+                        ((TL_stars.SavedStarGift) hg.k0.x(1, h)).pinned_to_top = false;
                     }
                     z12 = true;
                 }
@@ -324,7 +324,7 @@ public final class l5 implements m5 {
                 arrayList = this.l;
                 arrayList.removeAll(h);
                 if (this.e) {
-                    Collections.sort(arrayList, new kb1(21));
+                    Collections.sort(arrayList, new mb1(21));
                 }
                 arrayList.addAll(0, h);
                 NotificationCenter.getInstance(i10).lambda$postNotificationNameOnUIThread$1(NotificationCenter.starUserGiftsLoaded, Long.valueOf(this.b), this);
@@ -343,7 +343,7 @@ public final class l5 implements m5 {
             Object obj = arrayList.get(i11);
             i11++;
             TL_stars.SavedStarGift savedStarGift2 = (TL_stars.SavedStarGift) obj;
-            if (t5.k(savedStarGift2, savedStarGift)) {
+            if (u5.k(savedStarGift2, savedStarGift)) {
                 if (!z10) {
                     savedStarGift2.collection_id.remove(Integer.valueOf(i10));
                 } else if (!savedStarGift2.collection_id.contains(Integer.valueOf(i10))) {
@@ -362,7 +362,7 @@ public final class l5 implements m5 {
             Object obj = arrayList.get(i10);
             i10++;
             TL_stars.SavedStarGift savedStarGift2 = (TL_stars.SavedStarGift) obj;
-            if (t5.k(savedStarGift2, savedStarGift) && savedStarGift2.unsaved != z10) {
+            if (u5.k(savedStarGift2, savedStarGift) && savedStarGift2.unsaved != z10) {
                 savedStarGift2.unsaved = z10;
                 z11 = true;
             }

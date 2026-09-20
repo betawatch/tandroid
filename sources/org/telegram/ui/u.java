@@ -21,7 +21,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u implements View.OnLongClickListener {
     public final /* synthetic */ int a;
@@ -55,7 +55,7 @@ public final /* synthetic */ class u implements View.OnLongClickListener {
         boolean b10;
         boolean z10;
         boolean z11;
-        org.telegram.ui.Components.w70 F;
+        org.telegram.ui.Components.v70 F;
         bt0 bt0Var;
         switch (this.a) {
             case 0:
@@ -65,7 +65,7 @@ public final /* synthetic */ class u implements View.OnLongClickListener {
                 if (h4Var.u0[0] != null) {
                     float f7 = h4Var.h0.M.d;
                     u3 u3Var = h4Var.K;
-                    org.telegram.ui.Components.w70 F2 = org.telegram.ui.Components.w70.F(u3Var != null ? u3Var.c : h4Var.f0, null, view);
+                    org.telegram.ui.Components.v70 F2 = org.telegram.ui.Components.v70.F(u3Var != null ? u3Var.c : h4Var.f0, null, view);
                     int w02 = SharedConfig.adaptableColorInBrowser ? org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Pk, false) : h4Var.u0[0].getBackgroundColor();
                     int w03 = SharedConfig.adaptableColorInBrowser ? org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.G6, false) : AndroidUtilities.computePerceivedBrightness(h4Var.u0[0].getBackgroundColor()) >= 0.721f ? -16777216 : -1;
                     int l1 = org.telegram.ui.ActionBar.j6.l1(0.65f, w03);
@@ -146,16 +146,16 @@ public final /* synthetic */ class u implements View.OnLongClickListener {
                             }, false);
                             org.telegram.ui.ActionBar.f1 y11 = F2.y();
                             if (y11 != null) {
-                                org.telegram.ui.Components.lj0 lj0Var = y11.c;
+                                org.telegram.ui.Components.kj0 kj0Var = y11.c;
                                 y11.g(webPage.title, R.drawable.msg_instant, null);
                                 y11.setTextColor(w03);
                                 if (!TextUtils.isEmpty(webPage.site_name)) {
                                     y11.setSubtext(webPage.site_name);
                                 }
                                 y11.setSubtextColor(l1);
-                                lj0Var.getLayoutParams().width = AndroidUtilities.dp(24.0f);
-                                lj0Var.setScaleX(1.45f);
-                                lj0Var.setScaleY(1.45f);
+                                kj0Var.getLayoutParams().width = AndroidUtilities.dp(24.0f);
+                                kj0Var.setScaleX(1.45f);
+                                kj0Var.setScaleY(1.45f);
                                 y11.c(w03, w03);
                             }
                         }
@@ -357,7 +357,7 @@ public final /* synthetic */ class u implements View.OnLongClickListener {
                                 boolean z16 = (z13 || !z14) && !isUserSelf;
                                 bv0 bv0Var6 = photoViewer.d;
                                 boolean z17 = bv0Var6 == null && bv0Var6.H() > 1;
-                                F = org.telegram.ui.Components.w70.F(photoViewer.e0, new ai.d(), view);
+                                F = org.telegram.ui.Components.v70.F(photoViewer.e0, new ai.d(), view);
                                 F.l(R.drawable.msg_sendfile, LocaleController.getString(!z17 ? R.string.SendAsFiles : R.string.SendAsFile), new jr0(photoViewer, 2), z11);
                                 F.l(R.drawable.msg_send, LocaleController.getString(R.string.SendAsNewPhoto), new jr0(photoViewer, 3), z14);
                                 F.l(R.drawable.msg_replace, LocaleController.getString(R.string.ReplacePhoto), new jr0(photoViewer, 4), z14);
@@ -379,7 +379,7 @@ public final /* synthetic */ class u implements View.OnLongClickListener {
                         bv0 bv0Var62 = photoViewer.d;
                         if (bv0Var62 == null) {
                         }
-                        F = org.telegram.ui.Components.w70.F(photoViewer.e0, new ai.d(), view);
+                        F = org.telegram.ui.Components.v70.F(photoViewer.e0, new ai.d(), view);
                         F.l(R.drawable.msg_sendfile, LocaleController.getString(!z17 ? R.string.SendAsFiles : R.string.SendAsFile), new jr0(photoViewer, 2), z11);
                         F.l(R.drawable.msg_send, LocaleController.getString(R.string.SendAsNewPhoto), new jr0(photoViewer, 3), z14);
                         F.l(R.drawable.msg_replace, LocaleController.getString(R.string.ReplacePhoto), new jr0(photoViewer, 4), z14);
@@ -401,7 +401,7 @@ public final /* synthetic */ class u implements View.OnLongClickListener {
                     bv0 bv0Var622 = photoViewer.d;
                     if (bv0Var622 == null) {
                     }
-                    F = org.telegram.ui.Components.w70.F(photoViewer.e0, new ai.d(), view);
+                    F = org.telegram.ui.Components.v70.F(photoViewer.e0, new ai.d(), view);
                     F.l(R.drawable.msg_sendfile, LocaleController.getString(!z17 ? R.string.SendAsFiles : R.string.SendAsFile), new jr0(photoViewer, 2), z11);
                     F.l(R.drawable.msg_send, LocaleController.getString(R.string.SendAsNewPhoto), new jr0(photoViewer, 3), z14);
                     F.l(R.drawable.msg_replace, LocaleController.getString(R.string.ReplacePhoto), new jr0(photoViewer, 4), z14);
@@ -418,7 +418,7 @@ public final /* synthetic */ class u implements View.OnLongClickListener {
                 bv0 bv0Var6222 = photoViewer.d;
                 if (bv0Var6222 == null) {
                 }
-                F = org.telegram.ui.Components.w70.F(photoViewer.e0, new ai.d(), view);
+                F = org.telegram.ui.Components.v70.F(photoViewer.e0, new ai.d(), view);
                 F.l(R.drawable.msg_sendfile, LocaleController.getString(!z17 ? R.string.SendAsFiles : R.string.SendAsFile), new jr0(photoViewer, 2), z11);
                 F.l(R.drawable.msg_send, LocaleController.getString(R.string.SendAsNewPhoto), new jr0(photoViewer, 3), z14);
                 F.l(R.drawable.msg_replace, LocaleController.getString(R.string.ReplacePhoto), new jr0(photoViewer, 4), z14);
@@ -434,18 +434,18 @@ public final /* synthetic */ class u implements View.OnLongClickListener {
                 }
                 return false;
             default:
-                g71 g71Var = (g71) this.b;
-                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(g71Var.getContext(), 0, null);
+                j71 j71Var = (j71) this.b;
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(j71Var.getContext(), 0, null);
                 alertDialog$Builder.a.R = LocaleController.getString(R.string.ClearRecentEmojiStatusesTitle);
                 alertDialog$Builder.a.T = LocaleController.getString(R.string.ClearRecentEmojiStatusesText);
-                alertDialog$Builder.k(LocaleController.getString(R.string.Clear), new l51(g71Var));
+                alertDialog$Builder.k(LocaleController.getString(R.string.Clear), new o51(j71Var));
                 alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
                 alertDialog$Builder.a.P0 = false;
-                alertDialog$Builder.j(new r5(g71Var, 15));
+                alertDialog$Builder.j(new r5(j71Var, 15));
                 alertDialog$Builder.o();
-                g71Var.w(1.0f);
+                j71Var.w(1.0f);
                 try {
-                    g71Var.performHapticFeedback(0, 1);
+                    j71Var.performHapticFeedback(0, 1);
                 } catch (Exception unused3) {
                 }
                 return true;

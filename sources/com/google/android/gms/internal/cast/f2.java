@@ -7,7 +7,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class f2 {
     public static final g6.b i = new g6.b("FeatureUsageAnalytics", null);
@@ -36,11 +36,11 @@ public final class f2 {
         SharedPreferences sharedPreferences = f2Var.b;
         String num = Integer.toString(f1Var.a);
         SharedPreferences.Editor edit = sharedPreferences.edit();
-        String i10 = t8.b.i("feature_usage_timestamp_reported_feature_", num);
-        if (!sharedPreferences.contains(i10)) {
-            i10 = t8.b.i("feature_usage_timestamp_detected_feature_", num);
+        String g10 = v7.j0.g("feature_usage_timestamp_reported_feature_", num);
+        if (!sharedPreferences.contains(g10)) {
+            g10 = v7.j0.g("feature_usage_timestamp_detected_feature_", num);
         }
-        edit.putLong(i10, System.currentTimeMillis()).apply();
+        edit.putLong(g10, System.currentTimeMillis()).apply();
         f2Var.f.add(f1Var);
         f2Var.e.post(f2Var.d);
     }

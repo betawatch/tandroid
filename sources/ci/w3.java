@@ -10,12 +10,12 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.gl0;
-import org.telegram.ui.Components.vl0;
+import org.telegram.ui.Components.fl0;
+import org.telegram.ui.Components.ul0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
-public abstract class w3 extends vl0 {
+public abstract class w3 extends ul0 {
     public boolean d;
     public String f;
     public String h;
@@ -31,7 +31,7 @@ public abstract class w3 extends vl0 {
         this.w = x3Var;
     }
 
-    @Override // org.telegram.ui.Components.vl0
+    @Override // org.telegram.ui.Components.ul0
     public final boolean D(s4.c1 c1Var) {
         return true;
     }
@@ -84,34 +84,34 @@ public abstract class w3 extends vl0 {
 
     @Override // s4.h0
     public final void v(s4.c1 c1Var, int i10) {
-        org.telegram.ui.Components.w9 w9Var = (org.telegram.ui.Components.w9) c1Var.a;
+        org.telegram.ui.Components.v9 v9Var = (org.telegram.ui.Components.v9) c1Var.a;
         TLObject tLObject = (TLObject) this.c.get(i10);
         boolean z10 = tLObject instanceof TLRPC.Document;
         ColorDrawable colorDrawable = this.s;
         if (z10) {
-            w9Var.h(ImageLocation.getForDocument((TLRPC.Document) tLObject), "200_200", colorDrawable, null);
+            v9Var.h(ImageLocation.getForDocument((TLRPC.Document) tLObject), "200_200", colorDrawable, null);
             return;
         }
         if (tLObject instanceof TLRPC.Photo) {
             TLRPC.Photo photo = (TLRPC.Photo) tLObject;
-            w9Var.h(ImageLocation.getForPhoto(FileLoader.getClosestPhotoSizeWithSize(photo.sizes, 320), photo), "200_200", colorDrawable, null);
+            v9Var.h(ImageLocation.getForPhoto(FileLoader.getClosestPhotoSizeWithSize(photo.sizes, 320), photo), "200_200", colorDrawable, null);
         } else {
             if (!(tLObject instanceof TLRPC.BotInlineResult)) {
-                w9Var.b();
+                v9Var.b();
                 return;
             }
             TLRPC.BotInlineResult botInlineResult = (TLRPC.BotInlineResult) tLObject;
             TLRPC.WebDocument webDocument = botInlineResult.thumb;
             if (webDocument != null) {
-                w9Var.h(ImageLocation.getForPath(webDocument.url), "200_200", colorDrawable, botInlineResult);
+                v9Var.h(ImageLocation.getForPath(webDocument.url), "200_200", colorDrawable, botInlineResult);
             } else {
-                w9Var.b();
+                v9Var.b();
             }
         }
     }
 
     @Override // s4.h0
     public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        return new gl0(new v3(this.w.getContext(), 0));
+        return new fl0(new v3(this.w.getContext(), 0));
     }
 }

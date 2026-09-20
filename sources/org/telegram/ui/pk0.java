@@ -1,63 +1,25 @@
 package org.telegram.ui;
 
-import j$.util.Objects;
+import android.widget.ImageView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class pk0 extends og.a {
-    public int c;
-    public int d;
-    public CharSequence e;
-    public CharSequence f;
-    public vk0 g;
-    public int h;
-    public boolean i;
+public final class pk0 extends org.telegram.ui.Cells.s8 {
+    public ImageView Q;
 
-    public static pk0 b(int i10, String str, boolean z10) {
-        pk0 pk0Var = new pk0(1, true);
-        pk0Var.c = i10;
-        pk0Var.e = str;
-        pk0Var.i = z10;
-        return pk0Var;
+    @Override // org.telegram.ui.Cells.s8, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        int dp = LocaleController.isRTL ? AndroidUtilities.dp(17.0f) : (i12 - i10) - AndroidUtilities.dp(41.0f);
+        int z11 = org.telegram.messenger.rk.z(24.0f, i13 - i11, 2);
+        this.Q.layout(dp, z11, AndroidUtilities.dp(24.0f) + dp, AndroidUtilities.dp(24.0f) + z11);
     }
 
-    public static pk0 c(int i10, String str, String str2) {
-        pk0 pk0Var = new pk0(5, true);
-        pk0Var.c = i10;
-        pk0Var.e = str;
-        pk0Var.f = str2;
-        return pk0Var;
-    }
-
-    public static pk0 d(int i10, String str) {
-        pk0 pk0Var = new pk0(4, true);
-        pk0Var.c = i10;
-        pk0Var.e = str;
-        return pk0Var;
-    }
-
-    @Override // og.a
-    public final boolean a(og.a aVar) {
-        if (this == aVar) {
-            return true;
-        }
-        if (pk0.class != aVar.getClass()) {
-            return false;
-        }
-        pk0 pk0Var = (pk0) aVar;
-        return this.c == pk0Var.c && this.d == pk0Var.d && this.h == pk0Var.h && this.i == pk0Var.i && Objects.equals(this.e, pk0Var.e) && Objects.equals(this.f, pk0Var.f) && this.g == pk0Var.g;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj != null && pk0.class == obj.getClass()) {
-            pk0 pk0Var = (pk0) obj;
-            if (this.c == pk0Var.c && this.h == pk0Var.h && ((this.a == 8 || (this.d == pk0Var.d && Objects.equals(this.e, pk0Var.e) && (this.a == 6 || Objects.equals(this.f, pk0Var.f)))) && this.g == pk0Var.g)) {
-                return true;
-            }
-        }
-        return false;
+    @Override // org.telegram.ui.Cells.s8, android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, i11);
+        this.Q.measure(i10, i11);
     }
 }

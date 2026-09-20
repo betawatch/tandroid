@@ -22,13 +22,13 @@ import java.util.Arrays;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.lc0;
-import v7.u7;
+import org.telegram.ui.Components.kc0;
+import v7.v7;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public class f5 extends Drawable {
-    public static final lc0[] Q = new lc0[3];
+    public static final kc0[] Q = new kc0[3];
     public NinePatchDrawable D;
     public int E;
     public boolean G;
@@ -50,7 +50,7 @@ public class f5 extends Drawable {
     public boolean i;
     public final int l;
     public final boolean m;
-    public e6 p;
+    public f6 p;
     public final boolean q;
     public int r;
     public boolean s;
@@ -72,8 +72,8 @@ public class f5 extends Drawable {
     public final Paint d = new Paint(1);
     public int F = 255;
 
-    public f5(int i10, boolean z10, boolean z11, e6 e6Var) {
-        this.p = e6Var;
+    public f5(int i10, boolean z10, boolean z11, f6 f6Var) {
+        this.p = f6Var;
         this.q = z10;
         this.l = i10;
         this.m = z11;
@@ -84,19 +84,19 @@ public class f5 extends Drawable {
         if (this.a instanceof BitmapShader) {
             boolean z10 = this.J;
             Matrix matrix = this.k;
-            lc0[] lc0VarArr = Q;
+            kc0[] kc0VarArr = Q;
             int i10 = this.l;
             char c10 = 2;
             if (z10 && (bitmap = this.L) != null) {
                 char c11 = i10 == 2 ? (char) 1 : (char) 0;
-                float min = 1.0f / Math.min(bitmap.getWidth() / lc0VarArr[c11].getBounds().width(), this.L.getHeight() / lc0VarArr[c11].getBounds().height());
+                float min = 1.0f / Math.min(bitmap.getWidth() / kc0VarArr[c11].getBounds().width(), this.L.getHeight() / kc0VarArr[c11].getBounds().height());
                 matrix.postScale(min, min);
             } else {
                 if (!this.v) {
                     c10 = i10 == 2 ? (char) 1 : (char) 0;
                 }
-                Bitmap bitmap2 = lc0VarArr[c10].k;
-                float min2 = 1.0f / Math.min(bitmap2.getWidth() / lc0VarArr[c10].getBounds().width(), bitmap2.getHeight() / lc0VarArr[c10].getBounds().height());
+                Bitmap bitmap2 = kc0VarArr[c10].k;
+                float min2 = 1.0f / Math.min(bitmap2.getWidth() / kc0VarArr[c10].getBounds().width(), bitmap2.getHeight() / kc0VarArr[c10].getBounds().height());
                 matrix.postScale(min2, min2);
             }
         }
@@ -404,7 +404,7 @@ public class f5 extends Drawable {
                 iArr = iArr2;
                 i10 = g10;
                 try {
-                    drawableArr2[c11][c10] = new NinePatchDrawable(createBitmap, u7.c((createBitmap.getWidth() / 2) - 1, (createBitmap.getWidth() / 2) + 1, (createBitmap.getHeight() / 2) - 1, (createBitmap.getHeight() / 2) + 1, 0, 0, 0, 0, i10).array(), new Rect(), null);
+                    drawableArr2[c11][c10] = new NinePatchDrawable(createBitmap, v7.c((createBitmap.getWidth() / 2) - 1, (createBitmap.getWidth() / 2) + 1, (createBitmap.getHeight() / 2) - 1, (createBitmap.getHeight() / 2) + 1, 0, 0, 0, 0, i10).array(), new Rect(), null);
                     setBounds(rect);
                 } catch (Throwable unused) {
                 }
@@ -439,8 +439,8 @@ public class f5 extends Drawable {
         if (this.l == 2) {
             return j6.w0(null, i10, false);
         }
-        e6 e6Var = this.p;
-        return e6Var != null ? e6Var.G0(i10) : j6.w0(null, i10, false);
+        f6 f6Var = this.p;
+        return f6Var != null ? f6Var.F0(i10) : j6.w0(null, i10, false);
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -452,17 +452,17 @@ public class f5 extends Drawable {
         if (this.l == 2) {
             return j6.w0(null, i10, false);
         }
-        e6 e6Var = this.p;
-        return e6Var != null ? e6Var.g1(i10) : j6.rl.get(i10);
+        f6 f6Var = this.p;
+        return f6Var != null ? f6Var.g1(i10) : j6.rl.get(i10);
     }
 
-    public final lc0 i() {
+    public final kc0 i() {
         boolean z10 = this.v;
-        lc0[] lc0VarArr = Q;
+        kc0[] kc0VarArr = Q;
         if (z10) {
-            return lc0VarArr[2];
+            return kc0VarArr[2];
         }
-        return lc0VarArr[this.l == 2 ? (char) 1 : (char) 0];
+        return kc0VarArr[this.l == 2 ? (char) 1 : (char) 0];
     }
 
     public final Drawable j() {
@@ -507,7 +507,7 @@ public class f5 extends Drawable {
                     i10 = 1;
                 }
                 bitmapArr[c10] = createBitmap;
-                drawableArr[c10] = new NinePatchDrawable(createBitmap, u7.c((createBitmap.getWidth() / 2) - 1, (createBitmap.getWidth() / 2) + 1, (createBitmap.getHeight() / 2) - 1, (createBitmap.getHeight() / 2) + 1, 0, 0, 0, 0, i10).array(), new Rect(), null);
+                drawableArr[c10] = new NinePatchDrawable(createBitmap, v7.c((createBitmap.getWidth() / 2) - 1, (createBitmap.getWidth() / 2) + 1, (createBitmap.getHeight() / 2) - 1, (createBitmap.getHeight() / 2) + 1, 0, 0, 0, 0, i10).array(), new Rect(), null);
                 z11 = true;
             } catch (Throwable unused) {
             }
@@ -636,12 +636,12 @@ public class f5 extends Drawable {
                 int i22 = this.l;
                 char c12 = !z16 ? (char) 2 : i22 == 2 ? (char) 1 : (char) 0;
                 z13 = this.J;
-                lc0[] lc0VarArr = Q;
+                kc0[] kc0VarArr = Q;
                 if (z13 && i19 != 0 && z12) {
                     c10 = 3;
-                    lc0 lc0Var = lc0VarArr[c12];
-                    if (lc0Var != null) {
-                        int[] iArr = lc0Var.a;
+                    kc0 kc0Var = kc0VarArr[c12];
+                    if (kc0Var != null) {
+                        int[] iArr = kc0Var.a;
                         this.e = iArr[0];
                         this.f = iArr[1];
                         this.g = iArr[2];
@@ -657,27 +657,27 @@ public class f5 extends Drawable {
                                     Shader.TileMode tileMode = Shader.TileMode.CLAMP;
                                     this.M = new BitmapShader(bitmap, tileMode, tileMode);
                                 }
-                                if (lc0VarArr[c12] == null) {
-                                    lc0 lc0Var2 = new lc0();
-                                    lc0VarArr[c12] = lc0Var2;
+                                if (kc0VarArr[c12] == null) {
+                                    kc0 kc0Var2 = new kc0();
+                                    kc0VarArr[c12] = kc0Var2;
                                     if (i22 != 2) {
                                         c11 = 1;
-                                        lc0Var2.t = true;
+                                        kc0Var2.t = true;
                                     } else {
                                         c11 = 1;
                                     }
-                                    lc0Var2.w(b(1.0f));
+                                    kc0Var2.w(b(1.0f));
                                 } else {
                                     c11 = 1;
                                 }
-                                lc0 lc0Var3 = lc0VarArr[c12];
+                                kc0 kc0Var3 = kc0VarArr[c12];
                                 Bitmap bitmap2 = this.L;
-                                int[] iArr2 = lc0Var3.a;
+                                int[] iArr2 = kc0Var3.a;
                                 iArr2[0] = g10;
                                 iArr2[c11] = i18;
                                 iArr2[2] = i19;
                                 iArr2[c10] = i20;
-                                Utilities.generateGradient(bitmap2, lc0Var3.i, lc0Var3.e.getInterpolation(lc0Var3.h), iArr2);
+                                Utilities.generateGradient(bitmap2, kc0Var3.i, kc0Var3.e.getInterpolation(kc0Var3.h), iArr2);
                                 this.M.setLocalMatrix(this.k);
                             }
                             BitmapShader bitmapShader = this.M;
@@ -691,16 +691,16 @@ public class f5 extends Drawable {
                             this.h = i20;
                         } else if (i18 == 0 && (this.a == null || i16 != this.b || this.e != g10 || this.f != i18 || this.g != i19 || this.h != i20 || this.i != z12)) {
                             if (i19 != 0 && z12) {
-                                if (lc0VarArr[c12] == null) {
-                                    lc0 lc0Var4 = new lc0();
-                                    lc0VarArr[c12] = lc0Var4;
+                                if (kc0VarArr[c12] == null) {
+                                    kc0 kc0Var4 = new kc0();
+                                    kc0VarArr[c12] = kc0Var4;
                                     if (i22 != 2) {
-                                        lc0Var4.t = true;
+                                        kc0Var4.t = true;
                                     }
-                                    lc0Var4.w(b(1.0f));
+                                    kc0Var4.w(b(1.0f));
                                 }
-                                lc0VarArr[c12].n(g10, i18, i19, i20);
-                                this.a = lc0VarArr[c12].v;
+                                kc0VarArr[c12].n(g10, i18, i19, i20);
+                                this.a = kc0VarArr[c12].v;
                             } else if (i19 == 0) {
                                 this.a = new LinearGradient(0.0f, i17, 0.0f, i16, new int[]{i18, g10}, (float[]) null, Shader.TileMode.CLAMP);
                             } else if (i20 != 0) {
@@ -724,7 +724,7 @@ public class f5 extends Drawable {
                         }
                         if (this.a instanceof BitmapShader) {
                             i21 = 0;
-                            lc0VarArr[c12].setBounds(0, i17, i11, i16 - i13);
+                            kc0VarArr[c12].setBounds(0, i17, i11, i16 - i13);
                         } else {
                             i21 = 0;
                         }
@@ -769,7 +769,7 @@ public class f5 extends Drawable {
         if (!z162) {
         }
         z13 = this.J;
-        lc0[] lc0VarArr2 = Q;
+        kc0[] kc0VarArr2 = Q;
         if (z13) {
         }
         c10 = 3;

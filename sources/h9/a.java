@@ -1,9 +1,9 @@
 package h9;
 
 import java.io.Serializable;
-import v7.t6;
+import v7.u6;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class a implements Serializable {
     public static final /* synthetic */ int c = 0;
@@ -29,9 +29,9 @@ public final class a implements Serializable {
         }
         if ((obj instanceof a) && (i11 = this.b) == (i10 = (aVar = (a) obj).b)) {
             for (int i12 = 0; i12 < i11; i12++) {
-                t6.c(i12, i11);
+                u6.c(i12, i11);
                 int i13 = this.a[i12];
-                t6.c(i12, i10);
+                u6.c(i12, i10);
                 if (i13 == aVar.a[i12]) {
                 }
             }

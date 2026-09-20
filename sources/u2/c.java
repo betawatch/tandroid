@@ -1,28 +1,28 @@
 package u2;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
-public final class c implements b1 {
-    public final b1 a;
+public final class c implements c1 {
+    public final c1 a;
     public boolean b;
     public final /* synthetic */ d c;
 
-    public c(d dVar, b1 b1Var) {
+    public c(d dVar, c1 c1Var) {
         this.c = dVar;
-        this.a = b1Var;
+        this.a = c1Var;
     }
 
-    @Override // u2.b1
+    @Override // u2.c1
     public final void a() {
         this.a.a();
     }
 
-    @Override // u2.b1
+    @Override // u2.c1
     public final boolean e() {
         return !this.c.a() && this.a.e();
     }
 
-    @Override // u2.b1
+    @Override // u2.c1
     public final int f(n4.y yVar, h2.h hVar, int i10) {
         d dVar = this.c;
         if (dVar.a()) {
@@ -44,7 +44,7 @@ public final class c implements b1 {
             this.b = true;
             return -4;
         }
-        b2.s sVar = (b2.s) yVar.c;
+        b2.s sVar = (b2.s) yVar.b;
         sVar.getClass();
         int i11 = sVar.N;
         int i12 = sVar.M;
@@ -60,11 +60,11 @@ public final class c implements b1 {
         b2.r a2 = sVar.a();
         a2.L = i12;
         a2.M = i11;
-        yVar.c = new b2.s(a2);
+        yVar.b = new b2.s(a2);
         return -5;
     }
 
-    @Override // u2.b1
+    @Override // u2.c1
     public final int j(long j3) {
         if (this.c.a()) {
             return -3;

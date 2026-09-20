@@ -39,14 +39,15 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
-import org.telegram.ui.Components.i90;
+import org.telegram.ui.Components.h90;
 import org.telegram.ui.Stories.ProfileStoriesView;
 import org.telegram.ui.lx;
 import org.telegram.ui.uy;
 import v7.i8;
-import w7.a8;
+import v7.j8;
+import w7.b8;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d implements Runnable {
     public final /* synthetic */ int a;
@@ -184,7 +185,7 @@ public final /* synthetic */ class d implements Runnable {
                 l9Var.S(y3, z10);
                 return;
             case 18:
-                ((i90) this.b).d(true);
+                ((h90) this.b).d(true);
                 return;
             case 19:
                 ((db) this.b).requestLayout();
@@ -256,7 +257,7 @@ public final /* synthetic */ class d implements Runnable {
                             return;
                         }
                         try {
-                            o0.i d = pVar.d();
+                            o0.h d = pVar.d();
                             int i11 = d.e;
                             if (i11 == 2) {
                                 synchronized (pVar.d) {
@@ -271,13 +272,13 @@ public final /* synthetic */ class d implements Runnable {
                                 t7.u uVar = pVar.c;
                                 Context context = pVar.a;
                                 uVar.getClass();
-                                o0.i[] iVarArr = {d};
-                                v7.h8 h8Var = i0.e.a;
-                                a8.a("TypefaceCompat.createFromFontInfo");
+                                o0.h[] hVarArr = {d};
+                                i8 i8Var = i0.e.a;
+                                b8.a("TypefaceCompat.createFromFontInfo");
                                 try {
-                                    Typeface b10 = i0.e.a.b(context, iVarArr, 0);
+                                    Typeface b10 = i0.e.a.b(context, hVarArr, 0);
                                     Trace.endSection();
-                                    MappedByteBuffer e = i8.e(pVar.a, d.a);
+                                    MappedByteBuffer e = j8.e(pVar.a, d.a);
                                     if (e == null || b10 == null) {
                                         throw new RuntimeException("Unable to open file.");
                                     }

@@ -20,25 +20,25 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.rk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Cells.v8;
+import org.telegram.ui.Cells.w8;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.pr;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.s61;
 import org.telegram.ui.Components.tp;
-import org.telegram.ui.Components.x51;
+import org.telegram.ui.Components.w51;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
 import w7.y5;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class u0 extends n2 {
     public static final int U = -1;
@@ -80,7 +80,7 @@ public final class u0 extends n2 {
     public boolean T;
     public pr a;
     public org.telegram.ui.ActionBar.v0 b;
-    public t61 c;
+    public s61 c;
     public gg.c2 d;
     public FrameLayout e;
     public EditTextBoldCursor f;
@@ -115,7 +115,7 @@ public final class u0 extends n2 {
         }
         if (tLObject instanceof TLRPC.TL_boolFalse) {
             u0Var.a.a(0.0f);
-            wh.o(R.string.UnknownError, xc.a0(u0Var), null);
+            rk.p(R.string.UnknownError, xc.a0(u0Var), null);
             return;
         }
         if (tLObject instanceof TLRPC.Updates) {
@@ -131,19 +131,19 @@ public final class u0 extends n2 {
                 if (user == null || (U2 = LaunchActivity.U()) == null) {
                     return;
                 }
-                k0.p(R.string.BusinessBotUpdated, new Object[]{UserObject.getUserName(user)}, xc.a0(U2), R.raw.contact_check, 36);
+                k0.q(R.string.BusinessBotUpdated, new Object[]{UserObject.getUserName(user)}, xc.a0(U2), R.raw.contact_check, 36);
                 return;
             }
             n2 U3 = LaunchActivity.U();
             if (U3 != null) {
-                k0.p(R.string.BusinessBotDone, new Object[]{UserObject.getUserName(user)}, xc.a0(U3), R.raw.contact_check, 36);
+                k0.q(R.string.BusinessBotDone, new Object[]{UserObject.getUserName(user)}, xc.a0(U3), R.raw.contact_check, 36);
             }
         }
     }
 
-    public static void W(final u0 u0Var, x51 x51Var, final View view) {
-        if (x51Var.g && !u0Var.v.h(x51Var)) {
-            int i10 = x51Var.d;
+    public static void W(final u0 u0Var, w51 w51Var, final View view) {
+        if (w51Var.g && !u0Var.v.h(w51Var)) {
+            int i10 = w51Var.d;
             if (i10 == U) {
                 a0 a0Var = u0Var.v;
                 u0Var.I = true;
@@ -166,8 +166,8 @@ public final class u0 extends n2 {
                 u0Var.Y(true);
                 return;
             }
-            if (x51Var.a == 13) {
-                TLRPC.User user = (TLRPC.User) u0Var.N.get(x51Var.x);
+            if (w51Var.a == 13) {
+                TLRPC.User user = (TLRPC.User) u0Var.N.get(w51Var.x);
                 if (user == null) {
                     return;
                 }
@@ -188,7 +188,7 @@ public final class u0 extends n2 {
             if (i10 == X) {
                 boolean z10 = !u0Var.P;
                 u0Var.P = z10;
-                ((v8) view).setChecked(z10);
+                ((w8) view).setChecked(z10);
                 u0Var.c.Y2.N(true);
                 return;
             }
@@ -237,7 +237,7 @@ public final class u0 extends n2 {
             if (i10 == d0) {
                 boolean z15 = !u0Var.Q;
                 u0Var.Q = z15;
-                ((v8) view).setChecked(z15);
+                ((w8) view).setChecked(z15);
                 u0Var.c.Y2.N(true);
                 return;
             }
@@ -354,7 +354,7 @@ public final class u0 extends n2 {
             if (i10 == i0) {
                 boolean z19 = !u0Var.R;
                 u0Var.R = z19;
-                ((v8) view).setChecked(z19);
+                ((w8) view).setChecked(z19);
                 u0Var.c.Y2.N(true);
                 return;
             }
@@ -793,7 +793,7 @@ public final class u0 extends n2 {
                 }
 
                 @Override // org.telegram.ui.ActionBar.a2
-                public final void f(org.telegram.ui.ActionBar.b2 b2Var2, int i13) {
+                public final void k(org.telegram.ui.ActionBar.b2 b2Var2, int i13) {
                     switch (i12) {
                         case 0:
                             this.b.K = true;
@@ -828,7 +828,7 @@ public final class u0 extends n2 {
             }
 
             @Override // org.telegram.ui.ActionBar.a2
-            public final void f(org.telegram.ui.ActionBar.b2 b2Var22, int i13) {
+            public final void k(org.telegram.ui.ActionBar.b2 b2Var22, int i13) {
                 switch (i11) {
                     case 0:
                         this.b.K = true;
@@ -1014,12 +1014,12 @@ public final class u0 extends n2 {
         this.v = a0Var;
         TL_account.TL_connectedBot tL_connectedBot = this.H;
         a0Var.i(tL_connectedBot == null ? null : tL_connectedBot.recipients);
-        t61 t61Var = new t61(this, new bi.v(this, 24), new q0(this, 3), null);
-        this.c = t61Var;
-        t61Var.q1();
-        t61 t61Var2 = this.c;
-        t61Var2.Y2.r = false;
-        frameLayout.addView(t61Var2, y5.c(-1.0f, -1));
+        s61 s61Var = new s61(this, new bi.v(this, 24), new q0(this, 3), null);
+        this.c = s61Var;
+        s61Var.q1();
+        s61 s61Var2 = this.c;
+        s61Var2.Y2.r = false;
+        frameLayout.addView(s61Var2, y5.c(-1.0f, -1));
         this.actionBar.z(this.c, true);
         this.fragmentView = frameLayout;
         return frameLayout;

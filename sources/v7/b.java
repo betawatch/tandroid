@@ -2,9 +2,9 @@ package v7;
 
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
-public final class b extends i9 {
+public final class b extends j9 {
     public final transient d c;
     public final transient c d;
 
@@ -18,7 +18,7 @@ public final class b extends i9 {
         return this.c.get(obj) != null;
     }
 
-    @Override // v7.e9
+    @Override // v7.f9
     public final int i(Object[] objArr) {
         return this.d.i(objArr);
     }

@@ -24,10 +24,10 @@ import android.util.SparseArray;
 import android.view.ContextThemeWrapper;
 import android.view.View;
 import java.util.Iterator;
-import v7.r8;
-import v7.v7;
+import v7.s8;
+import v7.w7;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public class MediaRouteButton extends View {
     private static final String CHOOSER_FRAGMENT_TAG = "android.support.v7.mediarouter:MediaRouteChooserDialogFragment";
@@ -73,7 +73,7 @@ public class MediaRouteButton extends View {
         if (isInEditMode()) {
             this.mRouter = null;
             this.mCallback = null;
-            this.mRemoteIndicator = v7.b(context2, obtainStyledAttributes.getResourceId(3, 0));
+            this.mRemoteIndicator = w7.b(context2, obtainStyledAttributes.getResourceId(3, 0));
             return;
         }
         this.mRouter = p4.x.d(context2);
@@ -451,7 +451,7 @@ public class MediaRouteButton extends View {
         }
         if (drawable != null) {
             if (this.mButtonTint != null) {
-                drawable = r8.d(drawable.mutate());
+                drawable = s8.d(drawable.mutate());
                 drawable.setTintList(this.mButtonTint);
             }
             drawable.setCallback(this);

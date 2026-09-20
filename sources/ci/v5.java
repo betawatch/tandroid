@@ -3,17 +3,17 @@ package ci;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.qk0;
+import org.telegram.ui.Components.pk0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final class v5 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ qk0 b;
+    public final /* synthetic */ pk0 b;
 
-    public /* synthetic */ v5(qk0 qk0Var, int i10) {
+    public /* synthetic */ v5(pk0 pk0Var, int i10) {
         this.a = i10;
-        this.b = qk0Var;
+        this.b = pk0Var;
     }
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
@@ -28,11 +28,11 @@ public final class v5 extends AnimatorListenerAdapter {
                 break;
             default:
                 super.onAnimationEnd(animator);
-                qk0 qk0Var = this.b;
-                qk0Var.Q = null;
-                qk0Var.n0 = 0.0f;
-                qk0Var.l0 = null;
-                qk0Var.invalidate();
+                pk0 pk0Var = this.b;
+                pk0Var.Q = null;
+                pk0Var.n0 = 0.0f;
+                pk0Var.l0 = null;
+                pk0Var.invalidate();
                 break;
         }
     }

@@ -7,7 +7,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class k10 extends tu0 {
     public final /* synthetic */ x10 a;
@@ -31,27 +31,27 @@ public final class k10 extends tu0 {
             for (int i11 = 0; i11 < childCount; i11++) {
                 View childAt = w0Var.getChildAt(i11);
                 int[] iArr = new int[2];
-                if (childAt instanceof org.telegram.ui.Cells.u7) {
-                    org.telegram.ui.Cells.u7 u7Var = (org.telegram.ui.Cells.u7) childAt;
+                if (childAt instanceof org.telegram.ui.Cells.v7) {
+                    org.telegram.ui.Cells.v7 v7Var = (org.telegram.ui.Cells.v7) childAt;
                     photoImage = null;
                     int i12 = 0;
                     while (i12 < 6) {
-                        MessageObject messageObject2 = i12 >= u7Var.e ? null : u7Var.b[i12];
+                        MessageObject messageObject2 = i12 >= v7Var.e ? null : v7Var.b[i12];
                         if (messageObject2 == null) {
                             break;
                         }
                         if (messageObject2.getId() == messageObject.getId()) {
-                            org.telegram.ui.Components.w9 w9Var = i12 >= u7Var.e ? null : u7Var.a[i12].a;
-                            ImageReceiver imageReceiver = w9Var.getImageReceiver();
-                            w9Var.getLocationInWindow(iArr);
+                            org.telegram.ui.Components.v9 v9Var = i12 >= v7Var.e ? null : v7Var.a[i12].a;
+                            ImageReceiver imageReceiver = v9Var.getImageReceiver();
+                            v9Var.getLocationInWindow(iArr);
                             photoImage = imageReceiver;
                         }
                         i12++;
                     }
-                } else if (childAt instanceof org.telegram.ui.Cells.k7) {
-                    org.telegram.ui.Cells.k7 k7Var = (org.telegram.ui.Cells.k7) childAt;
-                    if (k7Var.getMessage().getId() == messageObject.getId()) {
-                        org.telegram.ui.Components.w9 imageView = k7Var.getImageView();
+                } else if (childAt instanceof org.telegram.ui.Cells.l7) {
+                    org.telegram.ui.Cells.l7 l7Var = (org.telegram.ui.Cells.l7) childAt;
+                    if (l7Var.getMessage().getId() == messageObject.getId()) {
+                        org.telegram.ui.Components.v9 imageView = l7Var.getImageView();
                         ImageReceiver imageReceiver2 = imageView.getImageReceiver();
                         imageView.getLocationInWindow(iArr);
                         photoImage = imageReceiver2;
@@ -82,13 +82,13 @@ public final class k10 extends tu0 {
                     dv0Var.d.getLocationInWindow(iArr);
                     dv0Var.j = 0;
                     if (PhotoViewer.M1(messageObject) && (pinnedHeader = w0Var.getPinnedHeader()) != null) {
-                        int dp = (childAt instanceof org.telegram.ui.Cells.k7 ? AndroidUtilities.dp(8.0f) : 0) - dv0Var.c;
+                        int dp = (childAt instanceof org.telegram.ui.Cells.l7 ? AndroidUtilities.dp(8.0f) : 0) - dv0Var.c;
                         if (dp > childAt.getHeight()) {
                             w0Var.scrollBy(0, -(pinnedHeader.getHeight() + dp));
                             return dv0Var;
                         }
                         int height = dv0Var.c - w0Var.getHeight();
-                        if (childAt instanceof org.telegram.ui.Cells.k7) {
+                        if (childAt instanceof org.telegram.ui.Cells.l7) {
                             height -= AndroidUtilities.dp(8.0f);
                         }
                         if (height >= 0) {

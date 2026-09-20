@@ -15,20 +15,20 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.Cells.s2;
 import org.telegram.ui.Components.t00;
-import org.telegram.ui.Components.vl0;
+import org.telegram.ui.Components.ul0;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class o1 extends vl0 implements NotificationCenter.NotificationCenterDelegate {
+public final class o1 extends ul0 implements NotificationCenter.NotificationCenterDelegate {
     public final Context c;
     public final zn f;
     public int h;
     public int n;
-    public final e6 s;
+    public final f6 s;
     public final int v;
     public final boolean w;
     public String x;
@@ -38,15 +38,15 @@ public final class o1 extends vl0 implements NotificationCenter.NotificationCent
     public final int r = UserConfig.selectedAccount;
     public final uc E = new uc(this, 16);
 
-    public o1(Context context, zn znVar, e6 e6Var, int i10, boolean z10) {
-        this.s = e6Var;
+    public o1(Context context, zn znVar, f6 f6Var, int i10, boolean z10) {
+        this.s = f6Var;
         this.c = context;
         this.f = znVar;
         this.v = i10;
         this.w = z10;
     }
 
-    @Override // org.telegram.ui.Components.vl0
+    @Override // org.telegram.ui.Components.ul0
     public final boolean D(s4.c1 c1Var) {
         int i10 = c1Var.f;
         return i10 == 0 || i10 == 2;
@@ -173,17 +173,17 @@ public final class o1 extends vl0 implements NotificationCenter.NotificationCent
         View s2Var;
         View view;
         if (i10 != 0) {
-            e6 e6Var = this.s;
+            f6 f6Var = this.s;
             Context context = this.c;
             if (i10 == 1) {
-                t00 t00Var = new t00(context, e6Var);
+                t00 t00Var = new t00(context, f6Var);
                 t00Var.setIsSingleCell(true);
                 t00Var.setViewType(7);
                 view = t00Var;
             } else if (i10 != 2) {
                 s2Var = null;
             } else {
-                view = new n1(context, e6Var);
+                view = new n1(context, f6Var);
             }
             s2Var = view;
         } else {

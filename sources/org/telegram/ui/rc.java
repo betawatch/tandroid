@@ -9,7 +9,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class rc extends View {
     public final Paint a;
@@ -22,7 +22,7 @@ public final class rc extends View {
     public boolean n;
     public final org.telegram.ui.Components.yc r;
     public boolean s;
-    public final org.telegram.ui.Components.e6 v;
+    public final org.telegram.ui.Components.d6 v;
     public final /* synthetic */ sc w;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -37,23 +37,23 @@ public final class rc extends View {
         this.e = new Path();
         this.f = new Path();
         this.r = new org.telegram.ui.Components.yc(this);
-        this.v = new org.telegram.ui.Components.e6(this, 0L, 320L, org.telegram.ui.Components.qr.h);
+        this.v = new org.telegram.ui.Components.d6(this, 0L, 320L, org.telegram.ui.Components.qr.h);
         paint.setStyle(Paint.Style.STROKE);
     }
 
     public final void a(MessagesController.PeerColor peerColor) {
-        org.telegram.ui.ActionBar.e6 e6Var = this.w.a;
-        boolean a2 = e6Var != null ? e6Var.a() : org.telegram.ui.ActionBar.j6.I.q();
+        org.telegram.ui.ActionBar.f6 f6Var = this.w.a;
+        boolean a2 = f6Var != null ? f6Var.a() : org.telegram.ui.ActionBar.j6.I.q();
         Paint paint = this.c;
         Paint paint2 = this.b;
         if (a2 && peerColor.hasColor2() && !peerColor.hasColor3()) {
-            paint2.setColor(peerColor.getColor(1, e6Var));
-            paint.setColor(peerColor.getColor(0, e6Var));
+            paint2.setColor(peerColor.getColor(1, f6Var));
+            paint.setColor(peerColor.getColor(0, f6Var));
         } else {
-            paint2.setColor(peerColor.getColor(0, e6Var));
-            paint.setColor(peerColor.getColor(1, e6Var));
+            paint2.setColor(peerColor.getColor(0, f6Var));
+            paint.setColor(peerColor.getColor(1, f6Var));
         }
-        this.d.setColor(peerColor.getColor(2, e6Var));
+        this.d.setColor(peerColor.getColor(2, f6Var));
         this.h = peerColor.hasColor2();
         this.n = peerColor.hasColor3();
     }

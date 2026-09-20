@@ -5,17 +5,17 @@ import android.app.Activity;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class bl extends org.telegram.ui.Components.qk0 {
+public final class bl extends org.telegram.ui.Components.pk0 {
     public final int[] l1;
     public ValueAnimator m1;
     public boolean n1;
     public final /* synthetic */ zn o1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public bl(zn znVar, zn znVar2, Activity activity, int i10, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(3, i10, activity, znVar2, e6Var);
+    public bl(zn znVar, zn znVar2, Activity activity, int i10, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(3, i10, activity, znVar2, f6Var);
         this.o1 = znVar;
         this.l1 = new int[2];
         this.n1 = true;

@@ -15,12 +15,12 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.kl0;
-import org.telegram.ui.Components.l61;
-import org.telegram.ui.Components.la0;
+import org.telegram.ui.Components.jl0;
+import org.telegram.ui.Components.k61;
+import org.telegram.ui.Components.ka0;
 import org.telegram.ui.Components.vi;
-import org.telegram.ui.Components.x51;
-import org.telegram.ui.Components.yr0;
+import org.telegram.ui.Components.w51;
+import org.telegram.ui.Components.xr0;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.au0;
 import org.telegram.ui.bx;
@@ -30,9 +30,9 @@ import org.telegram.ui.ty;
 import org.telegram.ui.uy;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class g implements kl0 {
+public final /* synthetic */ class g implements jl0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -41,26 +41,26 @@ public final /* synthetic */ class g implements kl0 {
         this.b = obj;
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.jl0
     public final void d(int i10, View view) {
         TLRPC.Document document;
         TLRPC.BotInlineResult botInlineResult;
         int i11;
-        org.telegram.ui.Components.q5 q5Var;
+        org.telegram.ui.Components.p5 p5Var;
         org.telegram.ui.ActionBar.k kVar;
         Object O;
-        x51 G;
+        w51 G;
         switch (this.a) {
             case 0:
                 ((lx) this.b).i((a0) view, false);
                 break;
             case 1:
                 bi.u uVar = (bi.u) this.b;
-                yr0 yr0Var = uVar.W;
-                org.telegram.ui.ActionBar.n2 n2Var = yr0Var.a;
-                if (view instanceof org.telegram.ui.Cells.t7) {
-                    MessageObject messageObject = ((org.telegram.ui.Cells.t7) view).getMessageObject();
-                    if (!yr0Var.G.C1) {
+                xr0 xr0Var = uVar.W;
+                org.telegram.ui.ActionBar.n2 n2Var = xr0Var.a;
+                if (view instanceof org.telegram.ui.Cells.u7) {
+                    MessageObject messageObject = ((org.telegram.ui.Cells.u7) view).getMessageObject();
+                    if (!xr0Var.G.C1) {
                         jc orCreateStoryViewer = n2Var.getOrCreateStoryViewer();
                         Context context = uVar.getContext();
                         int id2 = messageObject.getId();
@@ -69,11 +69,11 @@ public final /* synthetic */ class g implements kl0 {
                         a2.s += ((n2Var instanceof ProfileActivity) && ((ProfileActivity) n2Var).s1) ? AndroidUtilities.dp(68.0f) : 0;
                         orCreateStoryViewer.C(context, id2, t8Var, a2);
                         break;
-                    } else if (!yr0Var.c(messageObject)) {
-                        yr0Var.e(messageObject);
+                    } else if (!xr0Var.c(messageObject)) {
+                        xr0Var.e(messageObject);
                         break;
                     } else {
-                        yr0Var.g(messageObject);
+                        xr0Var.g(messageObject);
                         break;
                     }
                 }
@@ -114,12 +114,12 @@ public final /* synthetic */ class g implements kl0 {
                         TLRPC.Document document2 = i10 >= arrayList.size() ? null : (TLRPC.Document) d2Var.s.get(i10);
                         if (document2 != t2Var2.e) {
                             long longValue = i10 >= arrayList2.size() ? 0L : ((Long) arrayList2.get(i10)).longValue();
-                            if (document2 == null && (view instanceof ci.o1) && (q5Var = ((ci.o1) view).c) != null) {
-                                document2 = q5Var.e;
+                            if (document2 == null && (view instanceof ci.o1) && (p5Var = ((ci.o1) view).c) != null) {
+                                document2 = p5Var.e;
                             }
                             if (document2 == null && longValue != 0) {
                                 i11 = ((org.telegram.ui.ActionBar.f3) t2Var2).currentAccount;
-                                document2 = org.telegram.ui.Components.q5.f(i11, longValue);
+                                document2 = org.telegram.ui.Components.p5.f(i11, longValue);
                             }
                             if (document2 != null) {
                                 Utilities.Callback3Return callback3Return2 = t2Var2.y;
@@ -149,8 +149,8 @@ public final /* synthetic */ class g implements kl0 {
                 e.j = str;
                 e.a.edit().putString("typeface", str).apply();
                 qg.j jVar = qbVar.J0;
-                if (jVar instanceof qg.u2) {
-                    ((qg.u2) jVar).setTypeface(k0Var);
+                if (jVar instanceof qg.v2) {
+                    ((qg.v2) jVar).setTypeface(k0Var);
                 }
                 qbVar.P0(false);
                 break;
@@ -158,9 +158,9 @@ public final /* synthetic */ class g implements kl0 {
                 di.i.x0((di.i) this.b, i10);
                 break;
             case 7:
-                l61 l61Var = ((di.h) this.b).b0;
-                if (l61Var != null) {
-                    l61Var.G(i10 - 1);
+                k61 k61Var = ((di.h) this.b).b0;
+                if (k61Var != null) {
+                    k61Var.G(i10 - 1);
                     break;
                 }
                 break;
@@ -169,12 +169,12 @@ public final /* synthetic */ class g implements kl0 {
                 break;
             case 9:
                 gg.i0 i0Var = (gg.i0) this.b;
-                if (view instanceof org.telegram.ui.Cells.n4) {
-                    org.telegram.ui.Cells.n4 n4Var = (org.telegram.ui.Cells.n4) view;
-                    if (n4Var.E) {
+                if (view instanceof org.telegram.ui.Cells.o4) {
+                    org.telegram.ui.Cells.o4 o4Var = (org.telegram.ui.Cells.o4) view;
+                    if (o4Var.E) {
                         gy gyVar = i0Var.U;
                         if (gyVar != null) {
-                            gyVar.a.N4(n4Var.getDialogId(), view);
+                            gyVar.a.N4(o4Var.getDialogId(), view);
                             break;
                         }
                     }
@@ -254,14 +254,14 @@ public final /* synthetic */ class g implements kl0 {
                         }
                     } else {
                         hg.a2 a2Var = (hg.a2) O;
-                        org.telegram.ui.Components.e5.a0(viVar.J1, a2Var.a(), viVar.n1(), new ci.m2(16, i0Var2, a2Var));
+                        org.telegram.ui.Components.d5.a0(viVar.J1, a2Var.a(), viVar.n1(), new ci.m2(16, i0Var2, a2Var));
                         break;
                     }
                 }
                 break;
             case 11:
                 hg.l0 l0Var = (hg.l0) this.b;
-                x51 G2 = l0Var.d0.G(i10 - 1);
+                w51 G2 = l0Var.d0.G(i10 - 1);
                 if (G2 != null) {
                     hg.a0 a0Var = l0Var.Z;
                     if (!a0Var.h(G2)) {
@@ -317,15 +317,15 @@ public final /* synthetic */ class g implements kl0 {
                 e7.j = str2;
                 e7.a.edit().putString("typeface", str2).apply();
                 qg.j jVar2 = au0Var.S0;
-                if (jVar2 instanceof qg.u2) {
-                    ((qg.u2) jVar2).setTypeface(k0Var2);
+                if (jVar2 instanceof qg.v2) {
+                    ((qg.v2) jVar2).setTypeface(k0Var2);
                 }
                 au0Var.z0(false);
                 break;
             case 15:
-                qg.i1 i1Var = (qg.i1) this.b;
-                i1Var.b3.accept(Integer.valueOf(i1Var.a3.b(i10)));
-                pg.u0 u0Var = i1Var.a3;
+                qg.j1 j1Var = (qg.j1) this.b;
+                j1Var.b3.accept(Integer.valueOf(j1Var.a3.b(i10)));
+                pg.u0 u0Var = j1Var.a3;
                 u0Var.c.put(Integer.valueOf(u0Var.f), Integer.valueOf(u0Var.b(i10)));
                 u0Var.e = true;
                 break;
@@ -342,7 +342,7 @@ public final /* synthetic */ class g implements kl0 {
                 }
                 break;
             case 18:
-                ((la0) this.b).h(view);
+                ((ka0) this.b).h(view);
                 break;
             case 19:
                 ((wh.n) this.b).h(view);
@@ -351,8 +351,8 @@ public final /* synthetic */ class g implements kl0 {
                 xh.m4 m4Var = (xh.m4) this.b;
                 ci.d dVar = m4Var.c0;
                 HashSet hashSet = m4Var.Z;
-                l61 l61Var2 = m4Var.e0;
-                if (l61Var2 != null && (G = l61Var2.G(i10 - 1)) != null) {
+                k61 k61Var2 = m4Var.e0;
+                if (k61Var2 != null && (G = k61Var2.G(i10 - 1)) != null) {
                     Object obj = G.G;
                     if (obj instanceof TL_stars.SavedStarGift) {
                         TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj;
@@ -374,16 +374,16 @@ public final /* synthetic */ class g implements kl0 {
                 }
                 break;
             case 21:
-                yh.v7.x0((yh.v7) this.b, i10);
+                yh.w7.x0((yh.w7) this.b, i10);
                 break;
             case 22:
-                yh.g7.P((yh.g7) this.b, i10);
+                yh.h7.P((yh.h7) this.b, i10);
                 break;
             case 23:
-                yh.k7.P((yh.k7) this.b, i10);
+                yh.l7.P((yh.l7) this.b, i10);
                 break;
             default:
-                yh.l7.P((yh.l7) this.b, i10);
+                yh.m7.P((yh.m7) this.b, i10);
                 break;
         }
     }

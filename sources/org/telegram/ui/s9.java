@@ -14,7 +14,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.camera.CameraView;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class s9 extends ViewGroup {
     public final /* synthetic */ int a = 1;
@@ -178,12 +178,12 @@ public final class s9 extends ViewGroup {
                     int i18 = measuredHeight - dp;
                     v9Var.a.layout(AndroidUtilities.dp(36.0f), i18, v9Var.a.getMeasuredWidth() + AndroidUtilities.dp(36.0f), v9Var.a.getMeasuredHeight() + i18);
                     if (i16 == 3) {
-                        int D = org.telegram.messenger.q.D(8.0f, v9Var.a.getMeasuredHeight(), i18);
-                        v9Var.b.layout(AndroidUtilities.dp(36.0f), D, v9Var.b.getMeasuredWidth() + AndroidUtilities.dp(36.0f), v9Var.b.getMeasuredHeight() + D);
+                        int C = org.telegram.messenger.l0.C(8.0f, v9Var.a.getMeasuredHeight(), i18);
+                        v9Var.b.layout(AndroidUtilities.dp(36.0f), C, v9Var.b.getMeasuredWidth() + AndroidUtilities.dp(36.0f), v9Var.b.getMeasuredHeight() + C);
                     }
                     v9Var.f.layout(0, getMeasuredHeight() - v9Var.f.getMeasuredHeight(), getMeasuredWidth(), getMeasuredHeight());
                     int measuredWidth2 = (i14 / 2) - (v9Var.r.getMeasuredWidth() / 2);
-                    int dp2 = AndroidUtilities.dp(80.0f) + hg.k0.x(i15, min, 2, min);
+                    int dp2 = AndroidUtilities.dp(80.0f) + hg.k0.z(i15, min, 2, min);
                     ImageView imageView = v9Var.r;
                     imageView.layout(measuredWidth2, dp2, imageView.getMeasuredWidth() + measuredWidth2, v9Var.r.getMeasuredHeight() + dp2);
                 }
@@ -196,16 +196,16 @@ public final class s9 extends ViewGroup {
                 v9Var.h0();
                 break;
             default:
-                gh1 gh1Var = (gh1) this.c;
-                kVar4 = ((org.telegram.ui.ActionBar.n2) gh1Var).actionBar;
-                kVar5 = ((org.telegram.ui.ActionBar.n2) gh1Var).actionBar;
+                ih1 ih1Var = (ih1) this.c;
+                kVar4 = ((org.telegram.ui.ActionBar.n2) ih1Var).actionBar;
+                kVar5 = ((org.telegram.ui.ActionBar.n2) ih1Var).actionBar;
                 int measuredWidth3 = kVar5.getMeasuredWidth();
-                kVar6 = ((org.telegram.ui.ActionBar.n2) gh1Var).actionBar;
+                kVar6 = ((org.telegram.ui.ActionBar.n2) ih1Var).actionBar;
                 kVar4.layout(0, 0, measuredWidth3, kVar6.getMeasuredHeight());
-                ci.s6 s6Var = gh1Var.y;
-                s6Var.layout(0, 0, s6Var.getMeasuredWidth(), gh1Var.y.getMeasuredHeight());
-                org.telegram.ui.Components.ea0 ea0Var = (org.telegram.ui.Components.ea0) this.b;
-                ea0Var.layout(0, 0, ea0Var.getMeasuredWidth(), ea0Var.getMeasuredHeight());
+                ci.s6 s6Var = ih1Var.y;
+                s6Var.layout(0, 0, s6Var.getMeasuredWidth(), ih1Var.y.getMeasuredHeight());
+                org.telegram.ui.Components.da0 da0Var = (org.telegram.ui.Components.da0) this.b;
+                da0Var.layout(0, 0, da0Var.getMeasuredWidth(), da0Var.getMeasuredHeight());
                 break;
         }
     }
@@ -236,9 +236,9 @@ public final class s9 extends ViewGroup {
                     v9Var.f.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, 0));
                     v9Var.r.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(60.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(60.0f), TLObject.FLAG_30));
                 }
-                v9Var.a.measure(org.telegram.messenger.wh.y(72.0f, size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, 0));
+                v9Var.a.measure(org.telegram.messenger.rk.c(72.0f, size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, 0));
                 if (i12 == 3) {
-                    v9Var.b.measure(org.telegram.messenger.wh.y(72.0f, size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, 0));
+                    v9Var.b.measure(org.telegram.messenger.rk.c(72.0f, size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, 0));
                 } else {
                     v9Var.b.measure(View.MeasureSpec.makeMeasureSpec((int) (size * 0.9f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, 0));
                 }
@@ -247,23 +247,23 @@ public final class s9 extends ViewGroup {
             default:
                 int size3 = View.MeasureSpec.getSize(i10);
                 int size4 = View.MeasureSpec.getSize(i11);
-                gh1 gh1Var = (gh1) this.c;
-                kVar2 = ((org.telegram.ui.ActionBar.n2) gh1Var).actionBar;
+                ih1 ih1Var = (ih1) this.c;
+                kVar2 = ((org.telegram.ui.ActionBar.n2) ih1Var).actionBar;
                 kVar2.measure(View.MeasureSpec.makeMeasureSpec(size3, TLObject.FLAG_30), i11);
-                ci.s6 s6Var = gh1Var.y;
+                ci.s6 s6Var = ih1Var.y;
                 int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size3, TLObject.FLAG_30);
-                kVar3 = ((org.telegram.ui.ActionBar.n2) gh1Var).actionBar;
+                kVar3 = ((org.telegram.ui.ActionBar.n2) ih1Var).actionBar;
                 s6Var.measure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(3.0f) + kVar3.getMeasuredHeight(), TLObject.FLAG_30));
-                ((org.telegram.ui.Components.ea0) this.b).measure(View.MeasureSpec.makeMeasureSpec(size3, TLObject.FLAG_30), i11);
+                ((org.telegram.ui.Components.da0) this.b).measure(View.MeasureSpec.makeMeasureSpec(size3, TLObject.FLAG_30), i11);
                 setMeasuredDimension(size3, size4);
                 break;
         }
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public s9(gh1 gh1Var, Context context, org.telegram.ui.Components.ea0 ea0Var) {
+    public s9(ih1 ih1Var, Context context, org.telegram.ui.Components.da0 da0Var) {
         super(context);
-        this.c = gh1Var;
-        this.b = ea0Var;
+        this.c = ih1Var;
+        this.b = da0Var;
     }
 }

@@ -15,7 +15,7 @@ import java.util.Arrays;
 import java.util.UUID;
 import org.telegram.messenger.TranslateController;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public abstract class o {
     public static final int[] a = {1769172845, 1769172786, 1769172787, 1769172788, 1769172789, 1769172790, 1769172793, 1635148593, 1752589105, 1751479857, 1635135537, 1836069937, 1836069938, 862401121, 862401122, 862417462, 862417718, 862414134, 862414646, 1295275552, 1295270176, 1714714144, 1801741417, 1295275600, 1903435808, 1297305174, 1684175153, 1769172332, 1885955686};
@@ -314,7 +314,7 @@ public abstract class o {
         while (i14 < i12) {
             vVar.G(8);
             boolean z14 = true;
-            if (!pVar.h(vVar.a, i13, 8, true)) {
+            if (!pVar.i(vVar.a, i13, 8, true)) {
                 break;
             }
             long z15 = vVar.z();
@@ -332,7 +332,7 @@ public abstract class o {
                     long length2 = pVar.getLength();
                     if (length2 != j3) {
                         i10 = i14;
-                        z15 = (length2 - pVar.i()) + 8;
+                        z15 = (length2 - pVar.j()) + 8;
                         j10 = z15;
                         i11 = 8;
                     }

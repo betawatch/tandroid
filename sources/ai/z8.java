@@ -39,29 +39,30 @@ import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.dn0;
-import org.telegram.ui.Components.hy0;
-import org.telegram.ui.Components.l90;
-import org.telegram.ui.Components.nm0;
-import org.telegram.ui.Components.uw;
-import org.telegram.ui.Components.w70;
+import org.telegram.ui.Components.cn0;
+import org.telegram.ui.Components.gy0;
+import org.telegram.ui.Components.k90;
+import org.telegram.ui.Components.mm0;
+import org.telegram.ui.Components.v70;
+import org.telegram.ui.Components.wn0;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
-import org.telegram.ui.b41;
+import org.telegram.ui.c41;
 import org.telegram.ui.cj;
 import org.telegram.ui.fn0;
-import org.telegram.ui.kh1;
+import org.telegram.ui.gh;
 import org.telegram.ui.ll0;
+import org.telegram.ui.mh1;
 import org.telegram.ui.pn0;
-import org.telegram.ui.q71;
 import org.telegram.ui.re;
-import org.telegram.ui.v31;
+import org.telegram.ui.t71;
+import org.telegram.ui.w31;
 import org.telegram.ui.ye;
 import org.telegram.ui.ze;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class z8 implements Runnable {
     public final /* synthetic */ int a;
@@ -83,7 +84,7 @@ public final /* synthetic */ class z8 implements Runnable {
     }
 
     private final void a() {
-        yh.t5 t5Var = (yh.t5) this.b;
+        yh.u5 u5Var = (yh.u5) this.b;
         List list = (List) this.c;
         m0 m0Var = (m0) this.d;
         TLRPC.TL_inputStorePaymentStarsGiveaway tL_inputStorePaymentStarsGiveaway = (TLRPC.TL_inputStorePaymentStarsGiveaway) this.e;
@@ -100,75 +101,75 @@ public final /* synthetic */ class z8 implements Runnable {
         }
         TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore = new TLRPC.TL_payments_canPurchaseStore();
         tL_payments_canPurchaseStore.purpose = tL_inputStorePaymentStarsGiveaway;
-        ConnectionsManager.getInstance(t5Var.a).sendRequest(tL_payments_canPurchaseStore, new kh1(oVar, hVar, m0Var, activity, tL_inputStorePaymentStarsGiveaway, list, 3));
+        ConnectionsManager.getInstance(u5Var.a).sendRequest(tL_payments_canPurchaseStore, new mh1(oVar, hVar, m0Var, activity, tL_inputStorePaymentStarsGiveaway, list, 3));
     }
 
     private final void b() {
-        yh.t5 t5Var = (yh.t5) this.b;
+        yh.u5 u5Var = (yh.u5) this.b;
         Runnable runnable = (Runnable) this.c;
         MessageObject messageObject = (MessageObject) this.d;
         TLRPC.InputInvoice inputInvoice = (TLRPC.InputInvoice) this.e;
         TLRPC.TL_payments_paymentFormStars tL_payments_paymentFormStars = (TLRPC.TL_payments_paymentFormStars) this.f;
         Utilities.Callback callback = (Utilities.Callback) this.h;
-        if (t5Var.e) {
-            t5Var.Y(messageObject, inputInvoice, tL_payments_paymentFormStars, runnable, callback);
+        if (u5Var.e) {
+            u5Var.Y(messageObject, inputInvoice, tL_payments_paymentFormStars, runnable, callback);
         } else {
-            yh.t5.e("NO_BALANCE");
+            yh.u5.e("NO_BALANCE");
             runnable.run();
         }
     }
 
     private final void c() {
-        yh.t5 t5Var = (yh.t5) this.b;
+        yh.u5 u5Var = (yh.u5) this.b;
         TLObject tLObject = (TLObject) this.c;
         MessageObject messageObject = (MessageObject) this.d;
         TLRPC.TL_inputInvoiceMessage tL_inputInvoiceMessage = (TLRPC.TL_inputInvoiceMessage) this.e;
         cj cjVar = (cj) this.f;
         TLRPC.TL_error tL_error = (TLRPC.TL_error) this.h;
         if (tLObject instanceof TLRPC.TL_payments_paymentFormStars) {
-            t5Var.Y(messageObject, tL_inputInvoiceMessage, (TLRPC.TL_payments_paymentFormStars) tLObject, cjVar, null);
+            u5Var.Y(messageObject, tL_inputInvoiceMessage, (TLRPC.TL_payments_paymentFormStars) tLObject, cjVar, null);
         } else {
-            yh.t5.e(tL_error == null ? "NO_PAYMENT_FORM" : tL_error.text);
+            yh.u5.e(tL_error == null ? "NO_PAYMENT_FORM" : tL_error.text);
         }
         cjVar.run();
     }
 
     private final void e() {
-        yh.t5 t5Var = (yh.t5) this.b;
+        yh.u5 u5Var = (yh.u5) this.b;
         boolean[] zArr = (boolean[]) this.c;
         MessageObject messageObject = (MessageObject) this.d;
         TLRPC.InputInvoice inputInvoice = (TLRPC.InputInvoice) this.e;
         TLRPC.TL_payments_paymentFormStars tL_payments_paymentFormStars = (TLRPC.TL_payments_paymentFormStars) this.f;
         Utilities.Callback callback = (Utilities.Callback) this.h;
         zArr[0] = true;
-        t5Var.a0(messageObject, inputInvoice, tL_payments_paymentFormStars, new yh.w0(1, callback));
+        u5Var.a0(messageObject, inputInvoice, tL_payments_paymentFormStars, new yh.w0(1, callback));
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:107:0x03f3, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:107:0x03f2, code lost:
     
         if (r1.admin_rights.manage_call != false) goto L110;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:109:0x042c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:109:0x042b, code lost:
     
         if (r8.creator != false) goto L114;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:123:0x0428, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:123:0x0427, code lost:
     
         if ((r10 instanceof org.telegram.tgnet.TLRPC.TL_chatParticipantCreator) == false) goto L114;
      */
-    /* JADX WARN: Removed duplicated region for block: B:195:0x0666 A[Catch: Exception -> 0x0600, TryCatch #0 {Exception -> 0x0600, blocks: (B:399:0x05f0, B:401:0x05fa, B:183:0x0604, B:186:0x0612, B:188:0x061c, B:190:0x0622, B:191:0x0625, B:193:0x0660, B:195:0x0666, B:197:0x066c, B:198:0x066f, B:200:0x0674, B:202:0x067a, B:203:0x067d, B:206:0x0686, B:208:0x0690, B:210:0x06a0, B:212:0x06ac, B:214:0x06b8, B:218:0x0701, B:220:0x0707, B:221:0x070a, B:223:0x0713, B:224:0x0716, B:225:0x0720, B:228:0x072a, B:234:0x073d, B:236:0x0743, B:244:0x0772, B:246:0x0778, B:248:0x0796, B:249:0x0798, B:250:0x07a0, B:252:0x07a4, B:254:0x07b9, B:255:0x07bf, B:257:0x07c5, B:258:0x07c9, B:260:0x07cf, B:261:0x07d3, B:369:0x079d, B:371:0x06c9, B:373:0x06d9, B:375:0x06e3, B:377:0x06fc, B:383:0x062a, B:385:0x0634, B:387:0x063a, B:388:0x063d, B:389:0x0641, B:391:0x064b, B:393:0x0651, B:395:0x0657, B:396:0x065a), top: B:398:0x05f0 }] */
-    /* JADX WARN: Removed duplicated region for block: B:208:0x0690 A[Catch: Exception -> 0x0600, TryCatch #0 {Exception -> 0x0600, blocks: (B:399:0x05f0, B:401:0x05fa, B:183:0x0604, B:186:0x0612, B:188:0x061c, B:190:0x0622, B:191:0x0625, B:193:0x0660, B:195:0x0666, B:197:0x066c, B:198:0x066f, B:200:0x0674, B:202:0x067a, B:203:0x067d, B:206:0x0686, B:208:0x0690, B:210:0x06a0, B:212:0x06ac, B:214:0x06b8, B:218:0x0701, B:220:0x0707, B:221:0x070a, B:223:0x0713, B:224:0x0716, B:225:0x0720, B:228:0x072a, B:234:0x073d, B:236:0x0743, B:244:0x0772, B:246:0x0778, B:248:0x0796, B:249:0x0798, B:250:0x07a0, B:252:0x07a4, B:254:0x07b9, B:255:0x07bf, B:257:0x07c5, B:258:0x07c9, B:260:0x07cf, B:261:0x07d3, B:369:0x079d, B:371:0x06c9, B:373:0x06d9, B:375:0x06e3, B:377:0x06fc, B:383:0x062a, B:385:0x0634, B:387:0x063a, B:388:0x063d, B:389:0x0641, B:391:0x064b, B:393:0x0651, B:395:0x0657, B:396:0x065a), top: B:398:0x05f0 }] */
-    /* JADX WARN: Removed duplicated region for block: B:220:0x0707 A[Catch: Exception -> 0x0600, TryCatch #0 {Exception -> 0x0600, blocks: (B:399:0x05f0, B:401:0x05fa, B:183:0x0604, B:186:0x0612, B:188:0x061c, B:190:0x0622, B:191:0x0625, B:193:0x0660, B:195:0x0666, B:197:0x066c, B:198:0x066f, B:200:0x0674, B:202:0x067a, B:203:0x067d, B:206:0x0686, B:208:0x0690, B:210:0x06a0, B:212:0x06ac, B:214:0x06b8, B:218:0x0701, B:220:0x0707, B:221:0x070a, B:223:0x0713, B:224:0x0716, B:225:0x0720, B:228:0x072a, B:234:0x073d, B:236:0x0743, B:244:0x0772, B:246:0x0778, B:248:0x0796, B:249:0x0798, B:250:0x07a0, B:252:0x07a4, B:254:0x07b9, B:255:0x07bf, B:257:0x07c5, B:258:0x07c9, B:260:0x07cf, B:261:0x07d3, B:369:0x079d, B:371:0x06c9, B:373:0x06d9, B:375:0x06e3, B:377:0x06fc, B:383:0x062a, B:385:0x0634, B:387:0x063a, B:388:0x063d, B:389:0x0641, B:391:0x064b, B:393:0x0651, B:395:0x0657, B:396:0x065a), top: B:398:0x05f0 }] */
-    /* JADX WARN: Removed duplicated region for block: B:223:0x0713 A[Catch: Exception -> 0x0600, TryCatch #0 {Exception -> 0x0600, blocks: (B:399:0x05f0, B:401:0x05fa, B:183:0x0604, B:186:0x0612, B:188:0x061c, B:190:0x0622, B:191:0x0625, B:193:0x0660, B:195:0x0666, B:197:0x066c, B:198:0x066f, B:200:0x0674, B:202:0x067a, B:203:0x067d, B:206:0x0686, B:208:0x0690, B:210:0x06a0, B:212:0x06ac, B:214:0x06b8, B:218:0x0701, B:220:0x0707, B:221:0x070a, B:223:0x0713, B:224:0x0716, B:225:0x0720, B:228:0x072a, B:234:0x073d, B:236:0x0743, B:244:0x0772, B:246:0x0778, B:248:0x0796, B:249:0x0798, B:250:0x07a0, B:252:0x07a4, B:254:0x07b9, B:255:0x07bf, B:257:0x07c5, B:258:0x07c9, B:260:0x07cf, B:261:0x07d3, B:369:0x079d, B:371:0x06c9, B:373:0x06d9, B:375:0x06e3, B:377:0x06fc, B:383:0x062a, B:385:0x0634, B:387:0x063a, B:388:0x063d, B:389:0x0641, B:391:0x064b, B:393:0x0651, B:395:0x0657, B:396:0x065a), top: B:398:0x05f0 }] */
-    /* JADX WARN: Removed duplicated region for block: B:228:0x072a A[Catch: Exception -> 0x0600, TRY_ENTER, TRY_LEAVE, TryCatch #0 {Exception -> 0x0600, blocks: (B:399:0x05f0, B:401:0x05fa, B:183:0x0604, B:186:0x0612, B:188:0x061c, B:190:0x0622, B:191:0x0625, B:193:0x0660, B:195:0x0666, B:197:0x066c, B:198:0x066f, B:200:0x0674, B:202:0x067a, B:203:0x067d, B:206:0x0686, B:208:0x0690, B:210:0x06a0, B:212:0x06ac, B:214:0x06b8, B:218:0x0701, B:220:0x0707, B:221:0x070a, B:223:0x0713, B:224:0x0716, B:225:0x0720, B:228:0x072a, B:234:0x073d, B:236:0x0743, B:244:0x0772, B:246:0x0778, B:248:0x0796, B:249:0x0798, B:250:0x07a0, B:252:0x07a4, B:254:0x07b9, B:255:0x07bf, B:257:0x07c5, B:258:0x07c9, B:260:0x07cf, B:261:0x07d3, B:369:0x079d, B:371:0x06c9, B:373:0x06d9, B:375:0x06e3, B:377:0x06fc, B:383:0x062a, B:385:0x0634, B:387:0x063a, B:388:0x063d, B:389:0x0641, B:391:0x064b, B:393:0x0651, B:395:0x0657, B:396:0x065a), top: B:398:0x05f0 }] */
-    /* JADX WARN: Removed duplicated region for block: B:243:0x0770  */
-    /* JADX WARN: Removed duplicated region for block: B:313:0x08bb A[Catch: Exception -> 0x0a07, TryCatch #3 {Exception -> 0x0a07, blocks: (B:265:0x07e4, B:266:0x07f7, B:268:0x07fd, B:270:0x0809, B:272:0x0811, B:274:0x081b, B:276:0x0829, B:277:0x082f, B:279:0x0835, B:281:0x083f, B:283:0x084d, B:284:0x0851, B:286:0x0857, B:288:0x0861, B:290:0x086f, B:291:0x0873, B:293:0x0879, B:295:0x087f, B:297:0x0889, B:299:0x088f, B:300:0x0892, B:301:0x0897, B:304:0x089e, B:306:0x08a3, B:311:0x08b5, B:313:0x08bb, B:315:0x08d1, B:318:0x08e8, B:320:0x08f2, B:322:0x0929, B:324:0x093e, B:325:0x0944, B:327:0x094a, B:328:0x094e, B:330:0x0954, B:331:0x0958, B:333:0x0962, B:334:0x096e, B:336:0x0974, B:338:0x097e, B:344:0x0989, B:346:0x098f, B:348:0x099b, B:350:0x09d2, B:351:0x09df, B:308:0x08b1), top: B:264:0x07e4 }] */
-    /* JADX WARN: Removed duplicated region for block: B:315:0x08d1 A[Catch: Exception -> 0x0a07, TryCatch #3 {Exception -> 0x0a07, blocks: (B:265:0x07e4, B:266:0x07f7, B:268:0x07fd, B:270:0x0809, B:272:0x0811, B:274:0x081b, B:276:0x0829, B:277:0x082f, B:279:0x0835, B:281:0x083f, B:283:0x084d, B:284:0x0851, B:286:0x0857, B:288:0x0861, B:290:0x086f, B:291:0x0873, B:293:0x0879, B:295:0x087f, B:297:0x0889, B:299:0x088f, B:300:0x0892, B:301:0x0897, B:304:0x089e, B:306:0x08a3, B:311:0x08b5, B:313:0x08bb, B:315:0x08d1, B:318:0x08e8, B:320:0x08f2, B:322:0x0929, B:324:0x093e, B:325:0x0944, B:327:0x094a, B:328:0x094e, B:330:0x0954, B:331:0x0958, B:333:0x0962, B:334:0x096e, B:336:0x0974, B:338:0x097e, B:344:0x0989, B:346:0x098f, B:348:0x099b, B:350:0x09d2, B:351:0x09df, B:308:0x08b1), top: B:264:0x07e4 }] */
-    /* JADX WARN: Removed duplicated region for block: B:322:0x0929 A[Catch: Exception -> 0x0a07, TryCatch #3 {Exception -> 0x0a07, blocks: (B:265:0x07e4, B:266:0x07f7, B:268:0x07fd, B:270:0x0809, B:272:0x0811, B:274:0x081b, B:276:0x0829, B:277:0x082f, B:279:0x0835, B:281:0x083f, B:283:0x084d, B:284:0x0851, B:286:0x0857, B:288:0x0861, B:290:0x086f, B:291:0x0873, B:293:0x0879, B:295:0x087f, B:297:0x0889, B:299:0x088f, B:300:0x0892, B:301:0x0897, B:304:0x089e, B:306:0x08a3, B:311:0x08b5, B:313:0x08bb, B:315:0x08d1, B:318:0x08e8, B:320:0x08f2, B:322:0x0929, B:324:0x093e, B:325:0x0944, B:327:0x094a, B:328:0x094e, B:330:0x0954, B:331:0x0958, B:333:0x0962, B:334:0x096e, B:336:0x0974, B:338:0x097e, B:344:0x0989, B:346:0x098f, B:348:0x099b, B:350:0x09d2, B:351:0x09df, B:308:0x08b1), top: B:264:0x07e4 }] */
-    /* JADX WARN: Removed duplicated region for block: B:340:0x0987 A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:346:0x098f A[Catch: Exception -> 0x0a07, TryCatch #3 {Exception -> 0x0a07, blocks: (B:265:0x07e4, B:266:0x07f7, B:268:0x07fd, B:270:0x0809, B:272:0x0811, B:274:0x081b, B:276:0x0829, B:277:0x082f, B:279:0x0835, B:281:0x083f, B:283:0x084d, B:284:0x0851, B:286:0x0857, B:288:0x0861, B:290:0x086f, B:291:0x0873, B:293:0x0879, B:295:0x087f, B:297:0x0889, B:299:0x088f, B:300:0x0892, B:301:0x0897, B:304:0x089e, B:306:0x08a3, B:311:0x08b5, B:313:0x08bb, B:315:0x08d1, B:318:0x08e8, B:320:0x08f2, B:322:0x0929, B:324:0x093e, B:325:0x0944, B:327:0x094a, B:328:0x094e, B:330:0x0954, B:331:0x0958, B:333:0x0962, B:334:0x096e, B:336:0x0974, B:338:0x097e, B:344:0x0989, B:346:0x098f, B:348:0x099b, B:350:0x09d2, B:351:0x09df, B:308:0x08b1), top: B:264:0x07e4 }] */
-    /* JADX WARN: Removed duplicated region for block: B:381:0x071a  */
-    /* JADX WARN: Removed duplicated region for block: B:382:0x0684  */
+    /* JADX WARN: Removed duplicated region for block: B:195:0x0665 A[Catch: Exception -> 0x05ff, TryCatch #1 {Exception -> 0x05ff, blocks: (B:399:0x05ef, B:401:0x05f9, B:183:0x0603, B:186:0x0611, B:188:0x061b, B:190:0x0621, B:191:0x0624, B:193:0x065f, B:195:0x0665, B:197:0x066b, B:198:0x066e, B:200:0x0673, B:202:0x0679, B:203:0x067c, B:206:0x0685, B:208:0x068f, B:210:0x069f, B:212:0x06ab, B:214:0x06b7, B:218:0x0700, B:220:0x0706, B:221:0x0709, B:223:0x0712, B:224:0x0715, B:225:0x071f, B:228:0x0729, B:234:0x073c, B:236:0x0742, B:244:0x0771, B:246:0x0777, B:248:0x0795, B:249:0x0797, B:250:0x079f, B:252:0x07a3, B:254:0x07b8, B:255:0x07be, B:257:0x07c4, B:258:0x07c8, B:260:0x07ce, B:261:0x07d2, B:369:0x079c, B:371:0x06c8, B:373:0x06d8, B:375:0x06e2, B:377:0x06fb, B:383:0x0629, B:385:0x0633, B:387:0x0639, B:388:0x063c, B:389:0x0640, B:391:0x064a, B:393:0x0650, B:395:0x0656, B:396:0x0659), top: B:398:0x05ef }] */
+    /* JADX WARN: Removed duplicated region for block: B:208:0x068f A[Catch: Exception -> 0x05ff, TryCatch #1 {Exception -> 0x05ff, blocks: (B:399:0x05ef, B:401:0x05f9, B:183:0x0603, B:186:0x0611, B:188:0x061b, B:190:0x0621, B:191:0x0624, B:193:0x065f, B:195:0x0665, B:197:0x066b, B:198:0x066e, B:200:0x0673, B:202:0x0679, B:203:0x067c, B:206:0x0685, B:208:0x068f, B:210:0x069f, B:212:0x06ab, B:214:0x06b7, B:218:0x0700, B:220:0x0706, B:221:0x0709, B:223:0x0712, B:224:0x0715, B:225:0x071f, B:228:0x0729, B:234:0x073c, B:236:0x0742, B:244:0x0771, B:246:0x0777, B:248:0x0795, B:249:0x0797, B:250:0x079f, B:252:0x07a3, B:254:0x07b8, B:255:0x07be, B:257:0x07c4, B:258:0x07c8, B:260:0x07ce, B:261:0x07d2, B:369:0x079c, B:371:0x06c8, B:373:0x06d8, B:375:0x06e2, B:377:0x06fb, B:383:0x0629, B:385:0x0633, B:387:0x0639, B:388:0x063c, B:389:0x0640, B:391:0x064a, B:393:0x0650, B:395:0x0656, B:396:0x0659), top: B:398:0x05ef }] */
+    /* JADX WARN: Removed duplicated region for block: B:220:0x0706 A[Catch: Exception -> 0x05ff, TryCatch #1 {Exception -> 0x05ff, blocks: (B:399:0x05ef, B:401:0x05f9, B:183:0x0603, B:186:0x0611, B:188:0x061b, B:190:0x0621, B:191:0x0624, B:193:0x065f, B:195:0x0665, B:197:0x066b, B:198:0x066e, B:200:0x0673, B:202:0x0679, B:203:0x067c, B:206:0x0685, B:208:0x068f, B:210:0x069f, B:212:0x06ab, B:214:0x06b7, B:218:0x0700, B:220:0x0706, B:221:0x0709, B:223:0x0712, B:224:0x0715, B:225:0x071f, B:228:0x0729, B:234:0x073c, B:236:0x0742, B:244:0x0771, B:246:0x0777, B:248:0x0795, B:249:0x0797, B:250:0x079f, B:252:0x07a3, B:254:0x07b8, B:255:0x07be, B:257:0x07c4, B:258:0x07c8, B:260:0x07ce, B:261:0x07d2, B:369:0x079c, B:371:0x06c8, B:373:0x06d8, B:375:0x06e2, B:377:0x06fb, B:383:0x0629, B:385:0x0633, B:387:0x0639, B:388:0x063c, B:389:0x0640, B:391:0x064a, B:393:0x0650, B:395:0x0656, B:396:0x0659), top: B:398:0x05ef }] */
+    /* JADX WARN: Removed duplicated region for block: B:223:0x0712 A[Catch: Exception -> 0x05ff, TryCatch #1 {Exception -> 0x05ff, blocks: (B:399:0x05ef, B:401:0x05f9, B:183:0x0603, B:186:0x0611, B:188:0x061b, B:190:0x0621, B:191:0x0624, B:193:0x065f, B:195:0x0665, B:197:0x066b, B:198:0x066e, B:200:0x0673, B:202:0x0679, B:203:0x067c, B:206:0x0685, B:208:0x068f, B:210:0x069f, B:212:0x06ab, B:214:0x06b7, B:218:0x0700, B:220:0x0706, B:221:0x0709, B:223:0x0712, B:224:0x0715, B:225:0x071f, B:228:0x0729, B:234:0x073c, B:236:0x0742, B:244:0x0771, B:246:0x0777, B:248:0x0795, B:249:0x0797, B:250:0x079f, B:252:0x07a3, B:254:0x07b8, B:255:0x07be, B:257:0x07c4, B:258:0x07c8, B:260:0x07ce, B:261:0x07d2, B:369:0x079c, B:371:0x06c8, B:373:0x06d8, B:375:0x06e2, B:377:0x06fb, B:383:0x0629, B:385:0x0633, B:387:0x0639, B:388:0x063c, B:389:0x0640, B:391:0x064a, B:393:0x0650, B:395:0x0656, B:396:0x0659), top: B:398:0x05ef }] */
+    /* JADX WARN: Removed duplicated region for block: B:228:0x0729 A[Catch: Exception -> 0x05ff, TRY_ENTER, TRY_LEAVE, TryCatch #1 {Exception -> 0x05ff, blocks: (B:399:0x05ef, B:401:0x05f9, B:183:0x0603, B:186:0x0611, B:188:0x061b, B:190:0x0621, B:191:0x0624, B:193:0x065f, B:195:0x0665, B:197:0x066b, B:198:0x066e, B:200:0x0673, B:202:0x0679, B:203:0x067c, B:206:0x0685, B:208:0x068f, B:210:0x069f, B:212:0x06ab, B:214:0x06b7, B:218:0x0700, B:220:0x0706, B:221:0x0709, B:223:0x0712, B:224:0x0715, B:225:0x071f, B:228:0x0729, B:234:0x073c, B:236:0x0742, B:244:0x0771, B:246:0x0777, B:248:0x0795, B:249:0x0797, B:250:0x079f, B:252:0x07a3, B:254:0x07b8, B:255:0x07be, B:257:0x07c4, B:258:0x07c8, B:260:0x07ce, B:261:0x07d2, B:369:0x079c, B:371:0x06c8, B:373:0x06d8, B:375:0x06e2, B:377:0x06fb, B:383:0x0629, B:385:0x0633, B:387:0x0639, B:388:0x063c, B:389:0x0640, B:391:0x064a, B:393:0x0650, B:395:0x0656, B:396:0x0659), top: B:398:0x05ef }] */
+    /* JADX WARN: Removed duplicated region for block: B:243:0x076f  */
+    /* JADX WARN: Removed duplicated region for block: B:313:0x08ba A[Catch: Exception -> 0x0a06, TryCatch #4 {Exception -> 0x0a06, blocks: (B:265:0x07e3, B:266:0x07f6, B:268:0x07fc, B:270:0x0808, B:272:0x0810, B:274:0x081a, B:276:0x0828, B:277:0x082e, B:279:0x0834, B:281:0x083e, B:283:0x084c, B:284:0x0850, B:286:0x0856, B:288:0x0860, B:290:0x086e, B:291:0x0872, B:293:0x0878, B:295:0x087e, B:297:0x0888, B:299:0x088e, B:300:0x0891, B:301:0x0896, B:304:0x089d, B:306:0x08a2, B:311:0x08b4, B:313:0x08ba, B:315:0x08d0, B:318:0x08e7, B:320:0x08f1, B:322:0x0928, B:324:0x093d, B:325:0x0943, B:327:0x0949, B:328:0x094d, B:330:0x0953, B:331:0x0957, B:333:0x0961, B:334:0x096d, B:336:0x0973, B:338:0x097d, B:344:0x0988, B:346:0x098e, B:348:0x099a, B:350:0x09d1, B:351:0x09de, B:308:0x08b0), top: B:264:0x07e3 }] */
+    /* JADX WARN: Removed duplicated region for block: B:315:0x08d0 A[Catch: Exception -> 0x0a06, TryCatch #4 {Exception -> 0x0a06, blocks: (B:265:0x07e3, B:266:0x07f6, B:268:0x07fc, B:270:0x0808, B:272:0x0810, B:274:0x081a, B:276:0x0828, B:277:0x082e, B:279:0x0834, B:281:0x083e, B:283:0x084c, B:284:0x0850, B:286:0x0856, B:288:0x0860, B:290:0x086e, B:291:0x0872, B:293:0x0878, B:295:0x087e, B:297:0x0888, B:299:0x088e, B:300:0x0891, B:301:0x0896, B:304:0x089d, B:306:0x08a2, B:311:0x08b4, B:313:0x08ba, B:315:0x08d0, B:318:0x08e7, B:320:0x08f1, B:322:0x0928, B:324:0x093d, B:325:0x0943, B:327:0x0949, B:328:0x094d, B:330:0x0953, B:331:0x0957, B:333:0x0961, B:334:0x096d, B:336:0x0973, B:338:0x097d, B:344:0x0988, B:346:0x098e, B:348:0x099a, B:350:0x09d1, B:351:0x09de, B:308:0x08b0), top: B:264:0x07e3 }] */
+    /* JADX WARN: Removed duplicated region for block: B:322:0x0928 A[Catch: Exception -> 0x0a06, TryCatch #4 {Exception -> 0x0a06, blocks: (B:265:0x07e3, B:266:0x07f6, B:268:0x07fc, B:270:0x0808, B:272:0x0810, B:274:0x081a, B:276:0x0828, B:277:0x082e, B:279:0x0834, B:281:0x083e, B:283:0x084c, B:284:0x0850, B:286:0x0856, B:288:0x0860, B:290:0x086e, B:291:0x0872, B:293:0x0878, B:295:0x087e, B:297:0x0888, B:299:0x088e, B:300:0x0891, B:301:0x0896, B:304:0x089d, B:306:0x08a2, B:311:0x08b4, B:313:0x08ba, B:315:0x08d0, B:318:0x08e7, B:320:0x08f1, B:322:0x0928, B:324:0x093d, B:325:0x0943, B:327:0x0949, B:328:0x094d, B:330:0x0953, B:331:0x0957, B:333:0x0961, B:334:0x096d, B:336:0x0973, B:338:0x097d, B:344:0x0988, B:346:0x098e, B:348:0x099a, B:350:0x09d1, B:351:0x09de, B:308:0x08b0), top: B:264:0x07e3 }] */
+    /* JADX WARN: Removed duplicated region for block: B:340:0x0986 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:346:0x098e A[Catch: Exception -> 0x0a06, TryCatch #4 {Exception -> 0x0a06, blocks: (B:265:0x07e3, B:266:0x07f6, B:268:0x07fc, B:270:0x0808, B:272:0x0810, B:274:0x081a, B:276:0x0828, B:277:0x082e, B:279:0x0834, B:281:0x083e, B:283:0x084c, B:284:0x0850, B:286:0x0856, B:288:0x0860, B:290:0x086e, B:291:0x0872, B:293:0x0878, B:295:0x087e, B:297:0x0888, B:299:0x088e, B:300:0x0891, B:301:0x0896, B:304:0x089d, B:306:0x08a2, B:311:0x08b4, B:313:0x08ba, B:315:0x08d0, B:318:0x08e7, B:320:0x08f1, B:322:0x0928, B:324:0x093d, B:325:0x0943, B:327:0x0949, B:328:0x094d, B:330:0x0953, B:331:0x0957, B:333:0x0961, B:334:0x096d, B:336:0x0973, B:338:0x097d, B:344:0x0988, B:346:0x098e, B:348:0x099a, B:350:0x09d1, B:351:0x09de, B:308:0x08b0), top: B:264:0x07e3 }] */
+    /* JADX WARN: Removed duplicated region for block: B:381:0x0719  */
+    /* JADX WARN: Removed duplicated region for block: B:382:0x0683  */
     @Override // java.lang.Runnable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -721,9 +722,9 @@ public final /* synthetic */ class z8 implements Runnable {
                 TLObject tLObject3 = (TLObject) this.b;
                 String[] strArr2 = (String[]) this.c;
                 final FrameLayout frameLayout = (FrameLayout) this.d;
-                final l90 l90Var = (l90) this.e;
+                final k90 k90Var = (k90) this.e;
                 org.telegram.ui.ActionBar.f3 f3Var = (org.telegram.ui.ActionBar.f3) this.f;
-                org.telegram.ui.ActionBar.e6 e6Var = (org.telegram.ui.ActionBar.e6) this.h;
+                org.telegram.ui.ActionBar.f6 f6Var = (org.telegram.ui.ActionBar.f6) this.h;
                 if (tLObject3 instanceof TL_phone.exportedGroupCallInvite) {
                     final String str12 = ((TL_phone.exportedGroupCallInvite) tLObject3).link;
                     strArr2[0] = str12;
@@ -746,13 +747,13 @@ public final /* synthetic */ class z8 implements Runnable {
                                     return;
                                 }
                                 atomicBoolean2.set(true);
-                                l90Var.setText(str12);
+                                k90Var.setText(str12);
                             }
                         }
                     });
-                    duration.addListener(new org.telegram.ui.c9(atomicBoolean, l90Var, str12));
+                    duration.addListener(new org.telegram.ui.c9(atomicBoolean, k90Var, str12));
                     duration.start();
-                    new xc(f3Var.topBulletinContainer, e6Var).M(LocaleController.getString(R.string.GroupCallCreatedLinkRevokedTitle), LocaleController.getString(R.string.GroupCallCreatedLinkRevokedText), R.raw.linkbroken).j();
+                    new xc(f3Var.topBulletinContainer, f6Var).M(LocaleController.getString(R.string.GroupCallCreatedLinkRevokedTitle), LocaleController.getString(R.string.GroupCallCreatedLinkRevokedText), R.raw.linkbroken).j();
                     break;
                 }
                 break;
@@ -796,10 +797,10 @@ public final /* synthetic */ class z8 implements Runnable {
                     }
                     if (ChatObject.canUserDoAction(chat, channelParticipant, 6) || ChatObject.canUserDoAction(chat, channelParticipant, 7)) {
                         arrayList7.add(LocaleController.getString(R.string.Restrict));
-                        org.telegram.ui.Cells.c1.k(R.drawable.msg_block2, 33, arrayList8, arrayList9);
+                        org.telegram.ui.Cells.c1.n(R.drawable.msg_block2, 33, arrayList8, arrayList9);
                     }
                     arrayList7.add(LocaleController.getString(R.string.Ban));
-                    org.telegram.ui.Cells.c1.k(R.drawable.msg_block, 35, arrayList8, arrayList9);
+                    org.telegram.ui.Cells.c1.n(R.drawable.msg_block, 35, arrayList8, arrayList9);
                 }
                 saVar.run();
                 break;
@@ -811,10 +812,10 @@ public final /* synthetic */ class z8 implements Runnable {
                 TLObject tLObject4 = (TLObject) this.f;
                 CharacterStyle characterStyle = (CharacterStyle) this.h;
                 eVar.b();
-                w70 I = w70.I(znVar, u1Var);
-                nm0 nm0Var = new nm0(znVar.getParentActivity(), znVar.ea);
-                I.p = new re(nm0Var, 0);
-                I.c(R.drawable.msg_copy, LocaleController.getString(R.string.CopyCardNumber), new ye(znVar, nm0Var, str13, 1), false);
+                v70 I = v70.I(znVar, u1Var);
+                mm0 mm0Var = new mm0(znVar.getParentActivity(), znVar.ea);
+                I.p = new re(mm0Var, 0);
+                I.c(R.drawable.msg_copy, LocaleController.getString(R.string.CopyCardNumber), new ye(znVar, mm0Var, str13, 1), false);
                 if (tLObject4 instanceof TLRPC.TL_payments_bankCardData) {
                     TLRPC.TL_payments_bankCardData tL_payments_bankCardData = (TLRPC.TL_payments_bankCardData) tLObject4;
                     ArrayList<TLRPC.TL_bankCardOpenUrl> arrayList10 = tL_payments_bankCardData.open_urls;
@@ -824,48 +825,48 @@ public final /* synthetic */ class z8 implements Runnable {
                         TLRPC.TL_bankCardOpenUrl tL_bankCardOpenUrl = arrayList10.get(i22);
                         i22++;
                         TLRPC.TL_bankCardOpenUrl tL_bankCardOpenUrl2 = tL_bankCardOpenUrl;
-                        I.c(R.drawable.msg_payment_card, tL_bankCardOpenUrl2.name, new org.telegram.ui.ActionBar.h6(29, znVar, tL_bankCardOpenUrl2), false);
+                        I.c(R.drawable.msg_payment_card, tL_bankCardOpenUrl2.name, new gh(1, znVar, tL_bankCardOpenUrl2), false);
                     }
                     if (!TextUtils.isEmpty(tL_payments_bankCardData.title)) {
                         I.k();
                         I.p(13, AndroidUtilities.dp(200.0f), tL_payments_bankCardData.title);
                     }
                 }
-                nm0Var.e(I);
-                nm0Var.f(u1Var, characterStyle, null, false);
-                znVar.showDialog(nm0Var);
+                mm0Var.e(I);
+                mm0Var.f(u1Var, characterStyle, null, false);
+                znVar.showDialog(mm0Var);
                 break;
             case 7:
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) this.b;
                 Context context = (Context) this.c;
-                org.telegram.ui.ActionBar.e6 e6Var2 = (org.telegram.ui.ActionBar.e6) this.d;
+                org.telegram.ui.ActionBar.f6 f6Var2 = (org.telegram.ui.ActionBar.f6) this.d;
                 ci.d dVar = (ci.d) this.e;
                 org.telegram.ui.ActionBar.f3 f3Var2 = (org.telegram.ui.ActionBar.f3) this.f;
                 Runnable runnable = (Runnable) this.h;
                 if (tL_error2 != null) {
-                    new xc(org.telegram.ui.Components.lb.a(context), e6Var2).d0(tL_error2, false);
+                    new xc(org.telegram.ui.Components.kb.a(context), f6Var2).d0(tL_error2, false);
                     break;
                 } else {
                     dVar.setLoading(false);
                     f3Var2.dismiss();
-                    new xc(org.telegram.ui.Components.lb.a(context), e6Var2).Q(R.raw.chats_infotip, 36, LocaleController.getString(R.string.PremiumReadSet)).j();
+                    new xc(org.telegram.ui.Components.kb.a(context), f6Var2).Q(R.raw.chats_infotip, 36, LocaleController.getString(R.string.PremiumReadSet)).j();
                     runnable.run();
                     break;
                 }
             case 8:
-                hy0 hy0Var = (hy0) this.b;
+                gy0 gy0Var = (gy0) this.b;
                 TLObject tLObject5 = (TLObject) this.c;
                 EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) this.d;
                 TextView textView = (TextView) this.e;
                 TextView textView2 = (TextView) this.f;
                 int[] iArr2 = (int[]) this.h;
-                hy0Var.getClass();
+                gy0Var.getClass();
                 if (!(tLObject5 instanceof TLRPC.TL_stickers_suggestedShortName) || (str5 = ((TLRPC.TL_stickers_suggestedShortName) tLObject5).short_name) == null) {
                     z14 = false;
                 } else {
                     editTextBoldCursor.setText(str5);
                     editTextBoldCursor.setSelection(0, editTextBoldCursor.length());
-                    hy0Var.m0(textView, editTextBoldCursor.getText().toString(), true);
+                    gy0Var.m0(textView, editTextBoldCursor.getText().toString(), true);
                     z14 = true;
                 }
                 textView2.setVisibility(0);
@@ -879,22 +880,22 @@ public final /* synthetic */ class z8 implements Runnable {
                 pn0.W((pn0) this.b, (TLRPC.TL_error) this.c, (String) this.d, (fn0) this.e, (TLObject) this.f, (TL_account.sendVerifyPhoneCode) this.h);
                 break;
             case 10:
-                b41.n((b41) this.b, (TLObject) this.c, (CharSequence) this.d, (TLRPC.TL_error) this.e, (byte[]) this.f, (String) this.h);
+                c41.n((c41) this.b, (TLObject) this.c, (CharSequence) this.d, (TLRPC.TL_error) this.e, (byte[]) this.f, (String) this.h);
                 break;
             case 11:
                 TLObject tLObject6 = (TLObject) this.b;
                 Context context2 = (Context) this.c;
-                org.telegram.ui.ActionBar.e6 e6Var3 = (org.telegram.ui.ActionBar.e6) this.d;
+                org.telegram.ui.ActionBar.f6 f6Var3 = (org.telegram.ui.ActionBar.f6) this.d;
                 byte[] bArr = (byte[]) this.e;
                 org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) this.f;
-                uw uwVar = (uw) this.h;
-                b41 b41Var = new b41(context2, e6Var3, 0L, bArr);
-                b41Var.O((TLRPC.TL_channels_sponsoredMessageReportResultChooseOption) tLObject6);
-                b41Var.s = new v31(n2Var, context2, e6Var3, uwVar);
-                b41Var.show();
+                wn0 wn0Var = (wn0) this.h;
+                c41 c41Var = new c41(context2, f6Var3, 0L, bArr);
+                c41Var.O((TLRPC.TL_channels_sponsoredMessageReportResultChooseOption) tLObject6);
+                c41Var.s = new w31(n2Var, context2, f6Var3, wn0Var);
+                c41Var.show();
                 break;
             case 12:
-                q71.R((q71) this.b, (TLRPC.TL_error) this.c, (TLRPC.InputCheckPasswordSRP) this.d, (TLRPC.User) this.e, (TwoStepVerificationActivity) this.f, (TLRPC.TL_channels_editCreator) this.h);
+                t71.R((t71) this.b, (TLRPC.TL_error) this.c, (TLRPC.InputCheckPasswordSRP) this.d, (TLRPC.User) this.e, (TwoStepVerificationActivity) this.f, (TLRPC.TL_channels_editCreator) this.h);
                 break;
             case 13:
                 org.telegram.ui.web.d1 d1Var = (org.telegram.ui.web.d1) this.b;
@@ -903,7 +904,7 @@ public final /* synthetic */ class z8 implements Runnable {
                 String str14 = (String) this.e;
                 TLRPC.TL_error tL_error3 = (TLRPC.TL_error) this.f;
                 String str15 = (String) this.h;
-                org.telegram.ui.ActionBar.e6 e6Var4 = d1Var.e;
+                org.telegram.ui.ActionBar.f6 f6Var4 = d1Var.e;
                 if (tLObject7 != null) {
                     if (tLObject7 instanceof TLRPC.TL_urlAuthResultRequest) {
                         ll0.b(false, d1Var.M, tL_messages_requestUrlAuth, (TLRPC.TL_urlAuthResultRequest) tLObject7, null, null, null, false, d1Var);
@@ -912,15 +913,15 @@ public final /* synthetic */ class z8 implements Runnable {
                         ll0.b(false, d1Var.M, tL_messages_requestUrlAuth, (TLRPC.TL_urlAuthResultAccepted) tLObject7, null, null, null, false, d1Var);
                         break;
                     } else if (tLObject7 instanceof TLRPC.TL_urlAuthResultDefault) {
-                        org.telegram.ui.Components.e5.p0(d1Var.getContext(), str14, false, true, true, false, 0L, null, null, null);
+                        org.telegram.ui.Components.d5.p0(d1Var.getContext(), str14, false, true, true, false, 0L, null, null, null);
                         break;
                     }
                 } else if (tL_error3 != null) {
                     if ("URL_EXPIRED".equalsIgnoreCase(tL_error3.text)) {
-                        new xc(d1Var, e6Var4).M(LocaleController.getString(R.string.BotAuthLoggedInFailTitle), AndroidUtilities.replaceSingleLinkBold(LocaleController.formatString(R.string.BotAuthLoggedInFail, str15), org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Gi, e6Var4)), R.raw.error).j();
+                        new xc(d1Var, f6Var4).M(LocaleController.getString(R.string.BotAuthLoggedInFailTitle), AndroidUtilities.replaceSingleLinkBold(LocaleController.formatString(R.string.BotAuthLoggedInFail, str15), org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Gi, f6Var4)), R.raw.error).j();
                         break;
                     } else {
-                        new xc(d1Var, e6Var4).d0(tL_error3, false);
+                        new xc(d1Var, f6Var4).d0(tL_error3, false);
                         break;
                     }
                 }
@@ -937,7 +938,7 @@ public final /* synthetic */ class z8 implements Runnable {
                     break;
                 } else {
                     int[] iArr3 = new int[11];
-                    Utilities.globalQueue.postRunnable(new dn0(file, iArr3, new ze(d1Var2, iArr3, file, b2Var, str16, str17, str18, 7), 18));
+                    Utilities.globalQueue.postRunnable(new cn0(file, iArr3, new ze(d1Var2, iArr3, file, b2Var, str16, str17, str18, 7), 18));
                     break;
                 }
             case 15:

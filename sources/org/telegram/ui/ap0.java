@@ -7,7 +7,7 @@ import android.util.SparseIntArray;
 import java.io.File;
 import org.telegram.messenger.ApplicationLoader;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ap0 implements Runnable {
     public final /* synthetic */ int a;
@@ -37,7 +37,7 @@ public final /* synthetic */ class ap0 implements Runnable {
         SparseIntArray Q0;
         int[] iArr;
         int i10;
-        org.telegram.ui.ActionBar.g6 k10;
+        org.telegram.ui.ActionBar.h6 k10;
         wp0 wp0Var;
         boolean z10;
         Drawable drawable;
@@ -91,11 +91,11 @@ public final /* synthetic */ class ap0 implements Runnable {
                         z10 = cq0Var.S;
                         if (cq0Var.a0 != z10) {
                             cq0Var.a0 = z10;
-                            org.telegram.ui.Components.ij0 ij0Var = cq0Var.T;
-                            ij0Var.P(z10 ? ij0Var.e[0] : 0);
-                            org.telegram.ui.Components.ij0 ij0Var2 = cq0Var.T;
-                            if (ij0Var2 != null) {
-                                ij0Var2.start();
+                            org.telegram.ui.Components.hj0 hj0Var = cq0Var.T;
+                            hj0Var.P(z10 ? hj0Var.e[0] : 0);
+                            org.telegram.ui.Components.hj0 hj0Var2 = cq0Var.T;
+                            if (hj0Var2 != null) {
+                                hj0Var2.start();
                             }
                         }
                         cq0Var.F0();

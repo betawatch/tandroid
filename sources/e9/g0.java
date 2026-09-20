@@ -2,9 +2,9 @@ package e9;
 
 import java.util.ListIterator;
 import java.util.NoSuchElementException;
-import v7.t6;
+import v7.u6;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class g0 extends o1 implements ListIterator {
     public final int a;
@@ -13,7 +13,7 @@ public final class g0 extends o1 implements ListIterator {
 
     public g0(i0 i0Var, int i10) {
         int size = i0Var.size();
-        t6.e(i10, size);
+        u6.e(i10, size);
         this.a = size;
         this.b = i10;
         this.c = i0Var;

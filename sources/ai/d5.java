@@ -17,13 +17,13 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.dy;
 import org.telegram.ui.Components.jy;
-import org.telegram.ui.Components.ly0;
-import org.telegram.ui.Components.sv;
+import org.telegram.ui.Components.ky0;
+import org.telegram.ui.Components.tv;
 import org.telegram.ui.Components.un;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class d5 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -53,10 +53,10 @@ public final /* synthetic */ class d5 implements Utilities.Callback {
                 h5Var.getClass();
                 ArrayList arrayList2 = new ArrayList(1);
                 arrayList2.add((TLRPC.InputStickerSet) obj);
-                sv svVar = new sv(((jc) obj3).f, h5Var.getContext(), (org.telegram.ui.ActionBar.e6) obj2, arrayList2);
+                tv tvVar = new tv(((jc) obj3).f, h5Var.getContext(), (org.telegram.ui.ActionBar.f6) obj2, arrayList2);
                 y5 y5Var = h5Var.z0.Q1;
                 if (y5Var != null) {
-                    ((ac) y5Var).h(svVar);
+                    ((ac) y5Var).h(tvVar);
                     break;
                 }
                 break;
@@ -88,10 +88,10 @@ public final /* synthetic */ class d5 implements Utilities.Callback {
                 e9 e9Var = (e9) obj;
                 f6 f6Var2 = ((w5) obj4).l;
                 f6Var2.S1.c(e9Var.a, f6Var2.B1, (TL_stories.StoryItem) obj3);
-                new xc(f6Var2.c1, (org.telegram.ui.ActionBar.e6) obj2).Q(R.raw.contact_check, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.StoryAddedToAlbumX, e9Var.b))).j();
+                new xc(f6Var2.c1, (org.telegram.ui.ActionBar.f6) obj2).Q(R.raw.contact_check, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.StoryAddedToAlbumX, e9Var.b))).j();
                 break;
             case 3:
-                org.telegram.ui.Components.j8.K((org.telegram.ui.Components.j8) obj4, (org.telegram.ui.ActionBar.b2) obj3, (TLRPC.Document) obj2, (TLRPC.InputFile) obj);
+                org.telegram.ui.Components.i8.K((org.telegram.ui.Components.i8) obj4, (org.telegram.ui.ActionBar.b2) obj3, (TLRPC.Document) obj2, (TLRPC.InputFile) obj);
                 break;
             case 4:
                 un unVar = (un) obj4;
@@ -103,7 +103,7 @@ public final /* synthetic */ class d5 implements Utilities.Callback {
                     unVar.b.dismiss(true);
                     break;
                 } else {
-                    org.telegram.ui.Components.e5.L(znVar.getParentActivity(), znVar.a(), new r5(unVar, tL_messageMediaToDo, l4, 26));
+                    org.telegram.ui.Components.d5.L(znVar.getParentActivity(), znVar.a(), new r5(unVar, tL_messageMediaToDo, l4, 26));
                     break;
                 }
             case 5:
@@ -132,13 +132,13 @@ public final /* synthetic */ class d5 implements Utilities.Callback {
                 break;
             case 6:
                 org.telegram.ui.ActionBar.b2 b2Var = (org.telegram.ui.ActionBar.b2) obj3;
-                ly0 ly0Var = (ly0) obj2;
+                ky0 ky0Var = (ky0) obj2;
                 ((org.telegram.ui.ActionBar.b2) obj4).dismiss();
                 if (!((Boolean) obj).booleanValue()) {
-                    ly0Var.setErrorText(".");
-                    AndroidUtilities.shakeViewSpring(ly0Var, -6.0f);
+                    ky0Var.setErrorText(".");
+                    AndroidUtilities.shakeViewSpring(ky0Var, -6.0f);
                     BotWebViewVibrationEffect.APP_ERROR.vibrate();
-                    AndroidUtilities.showKeyboard(ly0Var);
+                    AndroidUtilities.showKeyboard(ky0Var);
                     break;
                 } else {
                     b2Var.dismiss();
@@ -163,16 +163,16 @@ public final /* synthetic */ class d5 implements Utilities.Callback {
                 xh.m mVar = (xh.m) obj4;
                 mVar.getClass();
                 ((boolean[]) obj3)[0] = false;
-                new xh.c(mVar.getContext(), (org.telegram.ui.ActionBar.e6) obj2, mVar.l0, (List) obj).show();
+                new xh.c(mVar.getContext(), (org.telegram.ui.ActionBar.f6) obj2, mVar.l0, (List) obj).show();
                 break;
             case 9:
                 xh.v vVar = (xh.v) obj4;
-                org.telegram.ui.ActionBar.e6 e6Var = (org.telegram.ui.ActionBar.e6) obj2;
+                org.telegram.ui.ActionBar.f6 f6Var3 = (org.telegram.ui.ActionBar.f6) obj2;
                 List list = (List) obj;
                 vVar.getClass();
                 ((boolean[]) obj3)[0] = false;
                 if (vVar.m0 != null) {
-                    new xh.c(vVar.getContext(), e6Var, vVar.m0, list).show();
+                    new xh.c(vVar.getContext(), f6Var3, vVar.m0, list).show();
                     vVar.dismiss();
                     break;
                 }
@@ -192,7 +192,7 @@ public final /* synthetic */ class d5 implements Utilities.Callback {
                     y3Var2.dismiss();
                     break;
                 } else {
-                    AndroidUtilities.runOnUIThread(new uf.b(16, y3Var2, tL_error));
+                    AndroidUtilities.runOnUIThread(new u2.j0(18, y3Var2, tL_error));
                     break;
                 }
         }

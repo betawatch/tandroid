@@ -1,120 +1,122 @@
 package ki;
 
-import android.text.TextUtils;
 import java.io.File;
-import java.util.ArrayList;
-import java.util.Collections;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ActionBar.f3;
-import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.xc;
-import org.telegram.ui.LaunchActivity;
-import yh.t5;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.VideoEditedInfo;
+import org.telegram.ui.Components.n01;
+import org.telegram.ui.Components.o01;
+import org.telegram.ui.Components.p01;
+import org.telegram.ui.Components.y50;
+import org.telegram.ui.Components.z50;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b0 implements Runnable {
-    public final /* synthetic */ int a = 2;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ Object h;
-    public final /* synthetic */ Object n;
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ o0 b;
+    public final /* synthetic */ k0 c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ File e;
+    public final /* synthetic */ boolean f;
 
-    public /* synthetic */ b0(int i10, ci.d dVar, TLObject tLObject, TL_stars.StarsSubscription starsSubscription, boolean z10, boolean z11, f3[] f3VarArr) {
-        this.e = dVar;
-        this.f = f3VarArr;
-        this.d = i10;
-        this.b = z10;
-        this.h = starsSubscription;
-        this.c = z11;
-        this.n = tLObject;
+    public /* synthetic */ b0(o0 o0Var, k0 k0Var, long j3, File file, boolean z10) {
+        this.b = o0Var;
+        this.c = k0Var;
+        this.d = j3;
+        this.e = file;
+        this.f = z10;
+    }
+
+    private final void a() {
+        o0 o0Var = this.b;
+        k0 k0Var = this.c;
+        File file = this.e;
+        long j3 = this.d;
+        boolean z10 = this.f;
+        if (k0Var.d) {
+            return;
+        }
+        l0 l0Var = o0Var.d;
+        long j10 = k0Var.a;
+        long length = file.length();
+        p01 p01Var = (p01) l0Var;
+        synchronized (p01Var) {
+            n01 n01Var = (n01) p01Var.c.get(Long.valueOf(j10));
+            if (!p01Var.d && n01Var != null && !n01Var.e) {
+                p01Var.c(n01Var);
+                n01Var.b = Math.max(n01Var.b, length);
+                n01Var.c = length;
+                FileLoader.getInstance(p01Var.a).checkUploadNewDataAvailable(file.getAbsolutePath(), p01Var.b, n01Var.b, length);
+            }
+        }
+        o0Var.h.post(new b0(o0Var, k0Var, j3, file, z10));
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        File file;
+        o01 o01Var;
+        o01 o01Var2;
         switch (this.a) {
             case 0:
-                h0 h0Var = (h0) this.e;
-                o oVar = (o) this.f;
-                boolean z10 = this.b;
-                File file2 = (File) this.h;
-                boolean z11 = this.c;
-                int i10 = this.d;
-                e0 e0Var = (e0) this.n;
-                h0Var.getClass();
-                long nanoTime = System.nanoTime();
-                try {
-                    oVar.c();
-                    h0Var.l.b("preview output finalized: size=" + oVar.a.length() + ", replace=" + z10 + ", elapsedMs=" + h0.e(nanoTime));
-                    h0Var.f();
-                    if (z10) {
-                        h0Var.q(file2, h0Var.A, h0Var.B, z11, i10);
-                        file = file2;
-                        w7.k.c(oVar.a);
-                    } else {
-                        file = file2;
-                        h0Var.b(e0Var, oVar.a, h0Var.y, true);
-                    }
-                    w7.k.c(file);
-                    h0Var.K = null;
-                    break;
-                } catch (Exception e) {
-                    h0Var.h.post(new x(h0Var, e, 0));
+                a();
+                return;
+            default:
+                o0 o0Var = this.b;
+                k0 k0Var = this.c;
+                long j3 = this.d;
+                File file = this.e;
+                boolean z10 = this.f;
+                int i10 = o0Var.U;
+                if (i10 == 10 || i10 == 9) {
                     return;
                 }
-            case 1:
-                ((SendMessagesHelper) this.e).lambda$performSendMessageRequest$95(this.b, (TLRPC.Message) this.f, (ArrayList) this.h, this.c, (ArrayList) this.n, this.d);
-                break;
-            default:
-                ci.d dVar = (ci.d) this.e;
-                f3[] f3VarArr = (f3[]) this.f;
-                int i11 = this.d;
-                boolean z12 = this.b;
-                TL_stars.StarsSubscription starsSubscription = (TL_stars.StarsSubscription) this.h;
-                boolean z13 = this.c;
-                TLObject tLObject = (TLObject) this.n;
-                dVar.setLoading(false);
-                f3 f3Var = f3VarArr[0];
-                if (f3Var != null) {
-                    f3Var.dismiss();
+                o0Var.u(8);
+                o0Var.l.b("output completed: generation=" + k0Var.a + ", durationMs=" + j3 + ", size=" + file.length() + ", hasAudio=" + z10);
+                o0Var.l("completed");
+                l.d dVar = o0Var.c;
+                long j10 = k0Var.a;
+                z50 z50Var = (z50) dVar.a;
+                y50 y50Var = z50Var.Q;
+                if (y50Var == null) {
+                    return;
                 }
-                t5.y(i11, false).S();
-                n2 U = LaunchActivity.U();
-                if (U != null) {
-                    xc.a0(U).V(Collections.singletonList(tLObject), LocaleController.getString(R.string.StarsSubscriptionCancelledToast), AndroidUtilities.replaceTags((!z12 || TextUtils.isEmpty(starsSubscription.title)) ? (!z13 || TextUtils.isEmpty(starsSubscription.title)) ? LocaleController.formatString(R.string.StarsSubscriptionCancelledToastText, LocaleController.formatDateChat(starsSubscription.until_date)) : LocaleController.formatString(R.string.StarsSubscriptionCancelledBotToastText, LocaleController.formatDateChat(starsSubscription.until_date), starsSubscription.title) : LocaleController.formatString(R.string.StarsSubscriptionCancelledBizToastText, LocaleController.formatDateChat(starsSubscription.until_date), starsSubscription.title)), null).k(false);
-                    break;
+                z50Var.Q = null;
+                z50Var.d0 = true;
+                p01 p01Var = z50Var.O;
+                if (p01Var == null) {
+                    o01Var2 = null;
+                } else {
+                    synchronized (p01Var) {
+                        n01 n01Var = (n01) p01Var.c.get(Long.valueOf(j10));
+                        if (n01Var != null && !n01Var.e) {
+                            o01Var = new o01(Math.max(n01Var.c, file.length()), n01Var.f, n01Var.g, n01Var.h, n01Var.i);
+                        }
+                        o01Var = new o01(file.length(), null, null, null, null);
+                    }
+                    o01Var2 = o01Var;
                 }
-                break;
+                VideoEditedInfo n10 = z50Var.n(file, j3, o01Var2);
+                n10.muted = !z10;
+                MediaController.PhotoEntry photoEntry = new MediaController.PhotoEntry(0, 0, 0L, file.getAbsolutePath(), 0, true, 0, 0, 0L);
+                photoEntry.ttl = y50Var.c;
+                photoEntry.effectId = y50Var.d;
+                z50Var.d.q(photoEntry, n10, y50Var.a, y50Var.b, 0, false, y50Var.e);
+                p01 p01Var2 = z50Var.O;
+                if (p01Var2 != null) {
+                    p01Var2.b(false);
+                }
+                z50Var.O = null;
+                MediaController.getInstance().requestRecordAudioFocus(false);
+                return;
         }
     }
 
-    public /* synthetic */ b0(h0 h0Var, o oVar, boolean z10, File file, boolean z11, int i10, e0 e0Var) {
-        this.e = h0Var;
-        this.f = oVar;
-        this.b = z10;
-        this.h = file;
-        this.c = z11;
-        this.d = i10;
-        this.n = e0Var;
-    }
-
-    public /* synthetic */ b0(SendMessagesHelper sendMessagesHelper, boolean z10, TLRPC.Message message, ArrayList arrayList, boolean z11, ArrayList arrayList2, int i10) {
-        this.e = sendMessagesHelper;
-        this.b = z10;
-        this.f = message;
-        this.h = arrayList;
-        this.c = z11;
-        this.n = arrayList2;
-        this.d = i10;
+    public /* synthetic */ b0(o0 o0Var, k0 k0Var, File file, long j3, boolean z10) {
+        this.b = o0Var;
+        this.c = k0Var;
+        this.e = file;
+        this.d = j3;
+        this.f = z10;
     }
 }

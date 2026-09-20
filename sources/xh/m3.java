@@ -8,25 +8,25 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.Components.oq;
-import w7.a6;
+import w7.b6;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class m3 extends TextView {
     public final oq a;
 
-    public m3(Context context, e6 e6Var) {
+    public m3(Context context, f6 f6Var) {
         super(context);
-        int v02 = j6.v0(j6.y8, e6Var);
+        int v02 = j6.v0(j6.y8, f6Var);
         setTextColor(v02);
         setBackground(j6.Z(j6.l1(0.08f, v02), j6.l1(0.15f, v02), AndroidUtilities.dp(13.0f), AndroidUtilities.dp(13.0f)));
         setPadding(AndroidUtilities.dp(11.0f), 0, AndroidUtilities.dp(11.0f), 0);
         setGravity(17);
         setTypeface(AndroidUtilities.bold());
-        a6.a(this);
+        b6.a(this);
         oq oqVar = new oq(R.drawable.arrows_select, 0);
         this.a = oqVar;
         oqVar.spaceScaleX = 0.8f;

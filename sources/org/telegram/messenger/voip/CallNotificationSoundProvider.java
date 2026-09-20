@@ -8,7 +8,7 @@ import android.os.ParcelFileDescriptor;
 import java.io.FileNotFoundException;
 import org.telegram.messenger.ApplicationLoader;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public class CallNotificationSoundProvider extends ContentProvider {
     @Override // android.content.ContentProvider
@@ -34,7 +34,7 @@ public class CallNotificationSoundProvider extends ContentProvider {
     @Override // android.content.ContentProvider
     public ParcelFileDescriptor openFile(Uri uri, String str) {
         if (!"r".equals(str)) {
-            throw new SecurityException(t8.b.i("Unexpected file mode ", str));
+            throw new SecurityException(v7.j0.g("Unexpected file mode ", str));
         }
         if (ApplicationLoader.applicationContext == null) {
             throw new FileNotFoundException("Unexpected application state");

@@ -23,22 +23,22 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.rk;
 import org.telegram.messenger.video.VideoAds;
-import org.telegram.messenger.wh;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.h51;
-import org.telegram.ui.Components.o01;
-import org.telegram.ui.Components.q01;
-import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.w70;
+import org.telegram.ui.Components.g51;
+import org.telegram.ui.Components.n01;
+import org.telegram.ui.Components.p01;
+import org.telegram.ui.Components.pc;
+import org.telegram.ui.Components.v70;
 import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class t implements Runnable {
     public final /* synthetic */ int a;
@@ -100,7 +100,7 @@ public final /* synthetic */ class t implements Runnable {
                 c2Var.q = arrayList5;
                 c2Var.r = hashMap;
                 c2Var.s = true;
-                c2Var.a.F(arrayList5);
+                c2Var.a.G(arrayList5);
                 return;
             case 4:
                 e2 e2Var = (e2) this.b;
@@ -109,12 +109,12 @@ public final /* synthetic */ class t implements Runnable {
                 String str2 = tL_messages_searchStickerSets.q;
                 g2 g2Var = e2Var.a;
                 String str3 = g2Var.R;
-                h51 h51Var = g2Var.e;
+                g51 g51Var = g2Var.e;
                 if (str2.equals(str3)) {
                     e2Var.a();
-                    h51Var.b.h.getProgressDrawable().e = false;
+                    g51Var.b.h.getProgressDrawable().e = false;
                     g2Var.N = 0;
-                    h51Var.b(true);
+                    g51Var.b(true);
                     g2Var.E.addAll(tL_messages_foundStickerSets.sets);
                     g2Var.l();
                     return;
@@ -133,7 +133,7 @@ public final /* synthetic */ class t implements Runnable {
                     return;
                 } else {
                     cVar.a.a(0.0f);
-                    wh.o(R.string.UnknownError, xc.a0(cVar), null);
+                    rk.p(R.string.UnknownError, xc.a0(cVar), null);
                     return;
                 }
             case 6:
@@ -146,7 +146,7 @@ public final /* synthetic */ class t implements Runnable {
                     return;
                 } else if (tLObject3 instanceof TLRPC.TL_boolFalse) {
                     mVar.f.a(0.0f);
-                    wh.o(R.string.UnknownError, xc.a0(mVar), null);
+                    rk.p(R.string.UnknownError, xc.a0(mVar), null);
                     return;
                 } else {
                     if (mVar.F != null) {
@@ -194,7 +194,7 @@ public final /* synthetic */ class t implements Runnable {
                     return;
                 } else {
                     w0Var.a.a(0.0f);
-                    wh.o(R.string.UnknownError, xc.a0(w0Var), null);
+                    rk.p(R.string.UnknownError, xc.a0(w0Var), null);
                     return;
                 }
             case 11:
@@ -244,9 +244,9 @@ public final /* synthetic */ class t implements Runnable {
                 return;
             case 15:
                 w3 w3Var = (w3) this.b;
-                w70 w70Var = (w70) this.c;
+                v70 v70Var = (v70) this.c;
                 o5 o5Var = (o5) this.d;
-                if (w3Var.j4 != w70Var) {
+                if (w3Var.j4 != v70Var) {
                     return;
                 }
                 w3Var.j4 = null;
@@ -325,52 +325,52 @@ public final /* synthetic */ class t implements Runnable {
                 n4.y yVar3 = (n4.y) this.b;
                 b2.s sVar = (b2.s) this.c;
                 i2.h hVar = (i2.h) this.d;
-                k2.j jVar = (k2.j) yVar3.c;
+                k2.j jVar = (k2.j) yVar3.b;
                 String str5 = e2.d0.a;
                 j2.f fVar2 = ((i2.b0) jVar).a.s;
                 j2.a p5 = fVar2.p();
                 fVar2.q(p5, 1009, new j2.c(p5, sVar, hVar, 21));
                 return;
             case 22:
-                ki.m mVar2 = (ki.m) this.b;
+                ki.o oVar = (ki.o) this.b;
                 HandlerThread handlerThread = (HandlerThread) this.c;
                 CountDownLatch countDownLatch = (CountDownLatch) this.d;
-                mVar2.getClass();
+                oVar.getClass();
                 try {
-                    mVar2.d();
+                    oVar.d();
                     return;
                 } finally {
                     handlerThread.quitSafely();
                     countDownLatch.countDown();
                 }
             case 23:
-                ki.h0 h0Var = (ki.h0) this.b;
-                ki.o oVar = (ki.o) this.c;
+                ki.o0 o0Var = (ki.o0) this.b;
+                ki.q qVar = (ki.q) this.c;
                 File file = (File) this.d;
-                Handler handler = h0Var.h;
+                Handler handler = o0Var.h;
                 try {
-                    oVar.b(file);
-                    h0Var.f();
+                    qVar.b(file);
+                    o0Var.f();
                     long e = w7.k.e(file) / 1000;
-                    h0Var.l.b("preview snapshot completed: durationMs=" + e + ", size=" + file.length() + ", elapsedMs=" + ki.h0.e(h0Var.D));
-                    handler.post(new ki.y(h0Var, e, i10));
+                    o0Var.l.b("preview snapshot completed: durationMs=" + e + ", size=" + file.length() + ", elapsedMs=" + ki.o0.e(o0Var.I));
+                    handler.post(new ki.a0(o0Var, e, i10));
                     return;
                 } catch (Exception e7) {
-                    handler.post(new ki.x(h0Var, e7, 3));
+                    handler.post(new ki.z(o0Var, e7, 3));
                     return;
                 }
             case 24:
-                ki.h0 h0Var2 = (ki.h0) this.b;
-                ki.e0 e0Var = (ki.e0) this.c;
+                ki.o0 o0Var2 = (ki.o0) this.b;
+                ki.k0 k0Var = (ki.k0) this.c;
                 File file2 = (File) this.d;
-                ki.f0 f0Var3 = h0Var2.d;
-                long j10 = e0Var.a;
-                q01 q01Var = (q01) f0Var3;
-                synchronized (q01Var) {
-                    if (q01Var.d) {
+                ki.l0 l0Var = o0Var2.d;
+                long j10 = k0Var.a;
+                p01 p01Var = (p01) l0Var;
+                synchronized (p01Var) {
+                    if (p01Var.d) {
                         return;
                     }
-                    q01Var.c.put(Long.valueOf(j10), new o01(file2));
+                    p01Var.c.put(Long.valueOf(j10), new n01(file2));
                     return;
                 }
             case 25:
@@ -381,23 +381,23 @@ public final /* synthetic */ class t implements Runnable {
                 if (a0Var.i(rVar)) {
                     a0Var.b(keyEvent, false, false);
                 } else {
-                    m4.k0 k0Var = a0Var.h;
+                    m4.k0 k0Var2 = a0Var.h;
                     n4.a0 a0Var2 = rVar.a;
                     a0Var2.getClass();
-                    k0Var.getClass();
-                    k0Var.H(1, new m4.b0(k0Var, 7), a0Var2, true);
+                    k0Var2.getClass();
+                    k0Var2.H(1, new m4.b0(k0Var2, 7), a0Var2, true);
                 }
                 wVar.a = null;
                 return;
             case 26:
                 m4.a0 a0Var3 = (m4.a0) this.b;
-                m4.r0 r0Var = (m4.r0) this.c;
+                m4.q0 q0Var = (m4.q0) this.c;
                 m4.s sVar2 = (m4.s) this.d;
                 if (a0Var3.j()) {
                     return;
                 }
                 m4.j1 j1Var = a0Var3.t;
-                r0Var.getClass();
+                q0Var.getClass();
                 w7.u.b(j1Var, sVar2);
                 return;
             case 27:
@@ -405,10 +405,10 @@ public final /* synthetic */ class t implements Runnable {
                 this.c.b(kVar.a, kVar.b, (Exception) this.d);
                 return;
             case 28:
-                ((VideoAds) this.b).lambda$show$3((qc) this.c, (TLRPC.TL_sponsoredMessage) this.d);
+                ((VideoAds) this.b).lambda$show$3((pc) this.c, (TLRPC.TL_sponsoredMessage) this.d);
                 return;
             default:
-                ((VideoAds) this.b).lambda$show$5((qc) this.c, (boolean[]) this.d);
+                ((VideoAds) this.b).lambda$show$5((pc) this.c, (boolean[]) this.d);
                 return;
         }
     }

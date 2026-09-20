@@ -2,17 +2,17 @@ package ci;
 
 import android.view.MotionEvent;
 import android.view.View;
-import org.telegram.ui.Components.cw0;
+import org.telegram.ui.Components.bw0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class h5 implements View.OnTouchListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ cw0 b;
+    public final /* synthetic */ bw0 b;
 
-    public /* synthetic */ h5(cw0 cw0Var, int i10) {
+    public /* synthetic */ h5(bw0 bw0Var, int i10) {
         this.a = i10;
-        this.b = cw0Var;
+        this.b = bw0Var;
     }
 
     @Override // android.view.View.OnTouchListener
@@ -32,12 +32,12 @@ public final /* synthetic */ class h5 implements View.OnTouchListener {
                 }
                 break;
             default:
-                qg.m0 m0Var = (qg.m0) this.b;
-                m0Var.getClass();
-                if (motionEvent.getActionMasked() == 0 && (n1Var2 = m0Var.R1) != null && n1Var2.isShowing()) {
-                    view.getHitRect(m0Var.T1);
-                    if (!m0Var.T1.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
-                        m0Var.R1.d(true);
+                qg.n0 n0Var = (qg.n0) this.b;
+                n0Var.getClass();
+                if (motionEvent.getActionMasked() == 0 && (n1Var2 = n0Var.R1) != null && n1Var2.isShowing()) {
+                    view.getHitRect(n0Var.T1);
+                    if (!n0Var.T1.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
+                        n0Var.R1.d(true);
                         break;
                     }
                 }

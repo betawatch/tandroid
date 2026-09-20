@@ -14,13 +14,13 @@ import ci.uc;
 import ci.va;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.GenericProvider;
-import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.uv0;
+import org.telegram.ui.Components.pc;
+import org.telegram.ui.Components.tv0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public abstract class p4 extends FrameLayout {
-    public static final uv0 b0 = new uv0(new d2.c(21), new d2.c(22));
+    public static final tv0 b0 = new tv0(new d2.c(21), new d2.c(22));
     public Runnable E;
     public o4 F;
     public o1.k G;
@@ -94,9 +94,9 @@ public abstract class p4 extends FrameLayout {
         if (runnable != null) {
             runnable.run();
         }
-        qc qcVar = qc.w;
-        if (qcVar != null) {
-            qcVar.l();
+        pc pcVar = pc.w;
+        if (pcVar != null) {
+            pcVar.l();
         }
     }
 
@@ -171,7 +171,7 @@ public abstract class p4 extends FrameLayout {
                             float distance = AndroidUtilities.distance(motionEvent.getX(), motionEvent.getY(), this.W, this.a0);
                             long eventTime = motionEvent.getEventTime() - this.V;
                             if (this.F != null && (eventTime > 250 || distance > AndroidUtilities.dp(200.0f))) {
-                                this.F.j(!z10);
+                                this.F.i(!z10);
                             } else if (z11) {
                                 e((-this.f) + this.e);
                             }
@@ -219,7 +219,7 @@ public abstract class p4 extends FrameLayout {
             kVar3.c();
         }
         o1.k kVar4 = new o1.k(this, b0, f7);
-        kVar4.u = org.telegram.ui.Cells.c1.j(f7, 1200.0f, 1.0f);
+        kVar4.u = org.telegram.ui.Cells.c1.m(f7, 1200.0f, 1.0f);
         kVar4.a(new m4(0, this, runnable));
         this.G = kVar4;
         kVar4.f();
@@ -319,7 +319,7 @@ public abstract class p4 extends FrameLayout {
             kVar2.c();
         }
         o1.k kVar3 = new o1.k(new o1.j(f10));
-        kVar3.u = org.telegram.ui.Cells.c1.j(f7, 1400.0f, 1.0f);
+        kVar3.u = org.telegram.ui.Cells.c1.m(f7, 1400.0f, 1.0f);
         kVar3.b(new o1.g() { // from class: ei.l4
             @Override // o1.g
             public final void a(o1.h hVar, float f12, float f13) {

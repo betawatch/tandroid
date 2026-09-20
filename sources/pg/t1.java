@@ -7,10 +7,10 @@ import android.os.Build;
 import java.nio.ByteBuffer;
 import java.nio.IntBuffer;
 import org.telegram.messenger.FileLog;
-import org.telegram.ui.Components.vv0;
-import w7.n6;
+import org.telegram.ui.Components.uv0;
+import w7.o6;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class t1 {
     public final Bitmap a;
@@ -20,9 +20,9 @@ public final class t1 {
         this.a = bitmap;
     }
 
-    public static int b(vv0 vv0Var) {
-        int i10 = (int) vv0Var.a;
-        int i11 = (int) vv0Var.b;
+    public static int b(uv0 uv0Var) {
+        int i10 = (int) uv0Var.a;
+        int i11 = (int) uv0Var.b;
         int[] iArr = new int[1];
         GLES20.glGenTextures(1, iArr, 0);
         int i12 = iArr[0];
@@ -88,7 +88,7 @@ public final class t1 {
             allocateDirect.putInt(((pixel >> 16) & 255) | (pixel & (-16711936)) | ((pixel & 255) << 16)).position(0);
             GLES20.glTexSubImage2D(3553, 0, 0, 0, 1, 1, 6408, 5121, allocateDirect);
         }
-        n6.a();
+        o6.a();
         return this.b;
     }
 }

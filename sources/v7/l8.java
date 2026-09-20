@@ -1,36 +1,19 @@
 package v7;
 
-import java.util.concurrent.Future;
-
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public abstract class l8 {
-    public static Object a(Future future) {
-        Object obj;
-        boolean z10 = false;
-        if (!future.isDone()) {
-            throw new IllegalStateException(u6.a("Future was expected to be done: %s", future));
-        }
-        while (true) {
-            try {
-                obj = future.get();
-                break;
-            } catch (InterruptedException unused) {
-                z10 = true;
-            } catch (Throwable th2) {
-                if (z10) {
-                    Thread.currentThread().interrupt();
-                }
-                throw th2;
-            }
-        }
-        if (z10) {
-            Thread.currentThread().interrupt();
-        }
-        return obj;
-    }
+    public abstract boolean a(i9.o oVar, i9.c cVar, i9.c cVar2);
 
-    public static i9.u b(Object obj) {
-        return obj == null ? i9.u.b : new i9.u(obj);
-    }
+    public abstract boolean b(i9.o oVar, Object obj, Object obj2);
+
+    public abstract boolean c(i9.o oVar, i9.n nVar, i9.n nVar2);
+
+    public abstract i9.c d(i9.o oVar);
+
+    public abstract i9.n e(i9.o oVar);
+
+    public abstract void f(i9.n nVar, i9.n nVar2);
+
+    public abstract void g(i9.n nVar, Thread thread);
 }

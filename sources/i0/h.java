@@ -17,9 +17,9 @@ import java.lang.reflect.Method;
 import java.nio.ByteBuffer;
 import java.util.HashMap;
 import java.util.Map;
-import v7.i8;
+import v7.j8;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public class h extends f {
     public final Class f;
@@ -71,7 +71,7 @@ public class h extends f {
         return cls.getMethod("addFontFromAssetManager", AssetManager.class, String.class, cls2, Boolean.TYPE, cls2, cls2, cls2, FontVariationAxis[].class);
     }
 
-    @Override // i0.f, v7.h8
+    @Override // i0.f, v7.i8
     public final Typeface a(Context context, h0.e eVar, Resources resources, int i10) {
         Object obj;
         Method method = this.h;
@@ -114,15 +114,15 @@ public class h extends f {
 
     /* JADX WARN: Removed duplicated region for block: B:39:0x00a6  */
     /* JADX WARN: Removed duplicated region for block: B:41:0x00a2 A[SYNTHETIC] */
-    @Override // i0.f, v7.h8
+    @Override // i0.f, v7.i8
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Typeface b(Context context, o0.i[] iVarArr, int i10) {
+    public final Typeface b(Context context, o0.h[] hVarArr, int i10) {
         Object obj;
         Typeface j3;
         boolean z10;
-        if (iVarArr.length >= 1) {
+        if (hVarArr.length >= 1) {
             Method method = this.h;
             if (method == null) {
                 Log.w("TypefaceCompatApi26Impl", "Unable to collect necessary private methods. Fallback to legacy implementation.");
@@ -130,11 +130,11 @@ public class h extends f {
             try {
                 if (method != null) {
                     HashMap hashMap = new HashMap();
-                    for (o0.i iVar : iVarArr) {
-                        if (iVar.e == 0) {
-                            Uri uri = iVar.a;
+                    for (o0.h hVar : hVarArr) {
+                        if (hVar.e == 0) {
+                            Uri uri = hVar.a;
                             if (!hashMap.containsKey(uri)) {
-                                hashMap.put(uri, i8.e(context, uri));
+                                hashMap.put(uri, j8.e(context, uri));
                             }
                         }
                     }
@@ -145,17 +145,17 @@ public class h extends f {
                         obj = null;
                     }
                     if (obj != null) {
-                        int length = iVarArr.length;
+                        int length = hVarArr.length;
                         int i11 = 0;
                         boolean z11 = false;
                         while (true) {
                             Method method2 = this.k;
                             if (i11 < length) {
-                                o0.i iVar2 = iVarArr[i11];
-                                ByteBuffer byteBuffer = (ByteBuffer) unmodifiableMap.get(iVar2.a);
+                                o0.h hVar2 = hVarArr[i11];
+                                ByteBuffer byteBuffer = (ByteBuffer) unmodifiableMap.get(hVar2.a);
                                 if (byteBuffer != null) {
                                     try {
-                                        z10 = ((Boolean) this.i.invoke(obj, byteBuffer, Integer.valueOf(iVar2.b), null, Integer.valueOf(iVar2.c), Integer.valueOf(iVar2.d ? 1 : 0))).booleanValue();
+                                        z10 = ((Boolean) this.i.invoke(obj, byteBuffer, Integer.valueOf(hVar2.b), null, Integer.valueOf(hVar2.c), Integer.valueOf(hVar2.d ? 1 : 0))).booleanValue();
                                     } catch (IllegalAccessException | InvocationTargetException unused2) {
                                         z10 = false;
                                         if (z10) {
@@ -176,7 +176,7 @@ public class h extends f {
                         }
                     }
                 } else {
-                    o0.i f7 = f(iVarArr, i10);
+                    o0.h f7 = f(hVarArr, i10);
                     ParcelFileDescriptor openFileDescriptor = context.getContentResolver().openFileDescriptor(f7.a, "r", null);
                     if (openFileDescriptor != null) {
                         try {
@@ -196,7 +196,7 @@ public class h extends f {
         return null;
     }
 
-    @Override // v7.h8
+    @Override // v7.i8
     public final Typeface e(Context context, Resources resources, int i10, String str, int i11) {
         Object obj;
         Method method = this.h;

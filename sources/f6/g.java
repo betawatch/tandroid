@@ -25,9 +25,9 @@ import n4.y;
 import n6.l;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
-import v7.w6;
+import v7.x6;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class g {
     public static final g6.b u = new g6.b("MediaNotificationProxy", null);
@@ -240,7 +240,7 @@ public final class g {
             return;
         }
         y yVar = this.l;
-        Bitmap bitmap = yVar == null ? null : (Bitmap) yVar.c;
+        Bitmap bitmap = yVar == null ? null : (Bitmap) yVar.b;
         Context context = this.a;
         t tVar = new t(context, "cast_media_notification");
         tVar.j(bitmap);
@@ -268,7 +268,7 @@ public final class g {
             if (component != null) {
                 int size = arrayList.size();
                 try {
-                    for (Intent a10 = w6.a(context, component); a10 != null; a10 = w6.a(context, a10.getComponent())) {
+                    for (Intent a10 = x6.a(context, component); a10 != null; a10 = x6.a(context, a10.getComponent())) {
                         arrayList.add(size, a10);
                     }
                 } catch (PackageManager.NameNotFoundException e) {

@@ -15,12 +15,12 @@ import java.lang.reflect.Array;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import v7.h8;
 import v7.i8;
+import v7.j8;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
-public class f extends h8 {
+public class f extends i8 {
     public static Class a = null;
     public static Constructor b = null;
     public static Method c = null;
@@ -68,18 +68,18 @@ public class f extends h8 {
         d = method;
     }
 
-    @Override // v7.h8
+    @Override // v7.i8
     public Typeface a(Context context, h0.e eVar, Resources resources, int i10) {
         h();
         try {
             Object newInstance = b.newInstance(null);
             for (h0.f fVar : eVar.a) {
-                File d10 = i8.d(context);
+                File d10 = j8.d(context);
                 if (d10 == null) {
                     return null;
                 }
                 try {
-                    if (!i8.b(d10, resources, fVar.f)) {
+                    if (!j8.b(d10, resources, fVar.f)) {
                         return null;
                     }
                     if (!g(newInstance, d10.getPath(), fVar.b, fVar.c)) {
@@ -105,13 +105,13 @@ public class f extends h8 {
         }
     }
 
-    @Override // v7.h8
-    public Typeface b(Context context, o0.i[] iVarArr, int i10) {
+    @Override // v7.i8
+    public Typeface b(Context context, o0.h[] hVarArr, int i10) {
         File file;
         String readlink;
-        if (iVarArr.length >= 1) {
+        if (hVarArr.length >= 1) {
             try {
-                ParcelFileDescriptor openFileDescriptor = context.getContentResolver().openFileDescriptor(f(iVarArr, i10).a, "r", null);
+                ParcelFileDescriptor openFileDescriptor = context.getContentResolver().openFileDescriptor(f(hVarArr, i10).a, "r", null);
                 if (openFileDescriptor != null) {
                     try {
                         try {

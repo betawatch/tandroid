@@ -16,22 +16,22 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_aicompose;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.b2;
-import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.Components.ad;
 import org.telegram.ui.Components.e0;
 import org.telegram.ui.Components.y;
 import org.telegram.ui.Components.zc;
+import org.telegram.ui.w81;
 import org.telegram.ui.web.BotWebViewContainer$BotWebViewProxy;
 import org.telegram.ui.web.d1;
 import org.telegram.ui.web.h0;
-import org.telegram.ui.x81;
 import w7.y5;
 import xh.h4;
 import yh.a0;
 import yh.w0;
 import yh.y3;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -58,7 +58,7 @@ public final /* synthetic */ class e implements Utilities.Callback2 {
                 e0.W((e0) this.b, (nf.e) this.c, (TL_aicompose.TL_aiComposeTone) this.d);
                 break;
             case 2:
-                org.telegram.ui.Components.q.S((org.telegram.ui.Components.q) this.b, (e6) this.c, (TL_aicompose.AiComposeTone) this.d, (TLRPC.TL_error) obj2);
+                org.telegram.ui.Components.q.S((org.telegram.ui.Components.q) this.b, (f6) this.c, (TL_aicompose.AiComposeTone) this.d, (TLRPC.TL_error) obj2);
                 break;
             case 3:
                 y.P((y) this.b, (nf.e) this.c, (b2) this.d);
@@ -78,7 +78,7 @@ public final /* synthetic */ class e implements Utilities.Callback2 {
                     if (h0Var != null) {
                         h0Var.c();
                     }
-                    AndroidUtilities.runOnUIThread(new x81(26, botWebViewContainer$BotWebViewProxy, arrayList), 500L);
+                    AndroidUtilities.runOnUIThread(new w81(28, botWebViewContainer$BotWebViewProxy, arrayList), 500L);
                     break;
                 }
             case 5:

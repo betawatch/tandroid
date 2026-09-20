@@ -18,13 +18,13 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
 public final class aa extends org.telegram.ui.ActionBar.n2 {
     public z9 a;
     public z9 b;
     public org.telegram.ui.ActionBar.v0 c;
-    public org.telegram.ui.ActionBar.e6 d;
+    public org.telegram.ui.ActionBar.f6 d;
 
     public static void U(aa aaVar) {
         String str;
@@ -58,9 +58,9 @@ public final class aa extends org.telegram.ui.ActionBar.n2 {
     public final View createView(Context context) {
         org.telegram.ui.ActionBar.k kVar = this.actionBar;
         int i10 = org.telegram.ui.ActionBar.j6.f8;
-        org.telegram.ui.ActionBar.e6 e6Var = this.d;
-        kVar.A(org.telegram.ui.ActionBar.j6.v0(i10, e6Var), false);
-        this.actionBar.B(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.v8, e6Var), false);
+        org.telegram.ui.ActionBar.f6 f6Var = this.d;
+        kVar.A(org.telegram.ui.ActionBar.j6.v0(i10, f6Var), false);
+        this.actionBar.B(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.v8, f6Var), false);
         this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
         this.actionBar.setAllowOverlayTitle(true);
         this.actionBar.setTitle(LocaleController.getString(R.string.EditName));
@@ -80,10 +80,10 @@ public final class aa extends org.telegram.ui.ActionBar.n2 {
         z9Var.setTextSize(1, 18.0f);
         z9 z9Var2 = this.a;
         int i11 = org.telegram.ui.ActionBar.j6.H6;
-        z9Var2.setHintTextColor(org.telegram.ui.ActionBar.j6.v0(i11, e6Var));
+        z9Var2.setHintTextColor(org.telegram.ui.ActionBar.j6.v0(i11, f6Var));
         z9 z9Var3 = this.a;
         int i12 = org.telegram.ui.ActionBar.j6.G6;
-        z9Var3.setTextColor(org.telegram.ui.ActionBar.j6.v0(i12, e6Var));
+        z9Var3.setTextColor(org.telegram.ui.ActionBar.j6.v0(i12, f6Var));
         this.a.setBackgroundDrawable(null);
         z9 z9Var4 = this.a;
         int i13 = org.telegram.ui.ActionBar.j6.k6;
@@ -99,7 +99,7 @@ public final class aa extends org.telegram.ui.ActionBar.n2 {
         this.a.setInputType(49152);
         this.a.setImeOptions(5);
         this.a.setHint(LocaleController.getString(R.string.FirstName));
-        this.a.setCursorColor(org.telegram.ui.ActionBar.j6.v0(i12, e6Var));
+        this.a.setCursorColor(org.telegram.ui.ActionBar.j6.v0(i12, f6Var));
         this.a.setCursorSize(AndroidUtilities.dp(20.0f));
         this.a.setCursorWidth(1.5f);
         linearLayout.addView(this.a, w7.y5.k(24.0f, 24.0f, 24.0f, 0.0f, -1, 36));
@@ -136,8 +136,8 @@ public final class aa extends org.telegram.ui.ActionBar.n2 {
         z9 z9Var5 = new z9(this, context, 1);
         this.b = z9Var5;
         z9Var5.setTextSize(1, 18.0f);
-        this.b.setHintTextColor(org.telegram.ui.ActionBar.j6.v0(i11, e6Var));
-        this.b.setTextColor(org.telegram.ui.ActionBar.j6.v0(i12, e6Var));
+        this.b.setHintTextColor(org.telegram.ui.ActionBar.j6.v0(i11, f6Var));
+        this.b.setTextColor(org.telegram.ui.ActionBar.j6.v0(i12, f6Var));
         this.b.setBackgroundDrawable(null);
         this.b.setLineColors(getThemedColor(i13), getThemedColor(i14), getThemedColor(i15));
         this.b.setMaxLines(1);
@@ -147,7 +147,7 @@ public final class aa extends org.telegram.ui.ActionBar.n2 {
         this.b.setInputType(49152);
         this.b.setImeOptions(6);
         this.b.setHint(LocaleController.getString(R.string.LastName));
-        this.b.setCursorColor(org.telegram.ui.ActionBar.j6.v0(i12, e6Var));
+        this.b.setCursorColor(org.telegram.ui.ActionBar.j6.v0(i12, f6Var));
         this.b.setCursorSize(AndroidUtilities.dp(20.0f));
         this.b.setCursorWidth(1.5f);
         linearLayout.addView(this.b, w7.y5.k(24.0f, 16.0f, 24.0f, 0.0f, -1, 36));
@@ -191,7 +191,7 @@ public final class aa extends org.telegram.ui.ActionBar.n2 {
     }
 
     @Override // org.telegram.ui.ActionBar.n2
-    public final org.telegram.ui.ActionBar.e6 getResourceProvider() {
+    public final org.telegram.ui.ActionBar.f6 getResourceProvider() {
         return this.d;
     }
 

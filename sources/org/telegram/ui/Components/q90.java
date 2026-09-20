@@ -1,93 +1,98 @@
 package org.telegram.ui.Components;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapShader;
 import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.ComposeShader;
+import android.graphics.LinearGradient;
+import android.graphics.Matrix;
 import android.graphics.Paint;
-import android.text.style.ReplacementSpan;
-import android.view.View;
+import android.graphics.PorterDuff;
+import android.graphics.Rect;
+import android.graphics.Shader;
+import android.graphics.drawable.Drawable;
+import android.os.SystemClock;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.SvgHelper;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes3.dex */
-public final class q90 extends ReplacementSpan {
-    public final int a;
-    public View b;
-    public final p90 c;
-    public final int d;
-    public float e;
+public final class q90 extends Drawable {
+    public final Bitmap a;
+    public long c;
+    public LinearGradient d;
     public float f;
-    public float h;
-    public boolean n;
+    public float g;
+    public final v9 h;
+    public int i;
+    public int j;
+    public final Paint b = new Paint(2);
+    public final Matrix e = new Matrix();
 
-    public q90(int i10, View view) {
-        this(view, i10, AndroidUtilities.dp(2.0f), null);
+    public q90(v9 v9Var, String str, int i10, int i11) {
+        this.a = SvgHelper.getBitmapByPathOnly(str, 512, 512, i10, i11);
+        this.h = v9Var;
     }
 
-    public final void a(int i10, int i11) {
-        Integer valueOf = Integer.valueOf(i10);
-        p90 p90Var = this.c;
-        p90Var.o = valueOf;
-        p90Var.p = Integer.valueOf(i11);
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        Bitmap bitmap = this.a;
+        if (bitmap == null) {
+            return;
+        }
+        int i10 = org.telegram.ui.ActionBar.j6.h5;
+        int i11 = org.telegram.ui.ActionBar.j6.i5;
+        int w02 = org.telegram.ui.ActionBar.j6.w0(null, i10, false);
+        int w03 = org.telegram.ui.ActionBar.j6.w0(null, i11, false);
+        int i12 = this.i;
+        Paint paint = this.b;
+        Matrix matrix = this.e;
+        if (i12 != w02 || this.j != w03) {
+            this.i = w02;
+            this.j = w03;
+            int averageColor = AndroidUtilities.getAverageColor(w03, w02);
+            paint.setColor(w03);
+            float dp = AndroidUtilities.dp(500.0f);
+            this.g = dp;
+            LinearGradient linearGradient = new LinearGradient(0.0f, 0.0f, dp, 0.0f, new int[]{w03, averageColor, w03}, new float[]{0.0f, 0.18f, 0.36f}, Shader.TileMode.REPEAT);
+            this.d = linearGradient;
+            linearGradient.setLocalMatrix(matrix);
+            Shader.TileMode tileMode = Shader.TileMode.CLAMP;
+            paint.setShader(new ComposeShader(this.d, new BitmapShader(bitmap, tileMode, tileMode), PorterDuff.Mode.MULTIPLY));
+        }
+        Rect bounds = getBounds();
+        canvas.drawRect(bounds.left, bounds.top, bounds.right, bounds.bottom, paint);
+        long elapsedRealtime = SystemClock.elapsedRealtime();
+        long abs = Math.abs(this.c - elapsedRealtime);
+        if (abs > 17) {
+            abs = 16;
+        }
+        this.c = elapsedRealtime;
+        this.f = a4.a.A(abs, this.g, 1800.0f, this.f);
+        while (true) {
+            float f7 = this.f;
+            float f10 = this.g * 2.0f;
+            if (f7 < f10) {
+                matrix.setTranslate(f7, 0.0f);
+                this.d.setLocalMatrix(matrix);
+                this.h.invalidate();
+                return;
+            }
+            this.f = f7 - f10;
+        }
     }
 
-    @Override // android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
-        View view;
-        boolean z10 = this.n;
-        int i15 = this.a;
-        if (z10 && (view = this.b) != null && view.getMeasuredWidth() > 0) {
-            i15 = ((this.b.getMeasuredWidth() - this.b.getPaddingLeft()) - this.b.getPaddingRight()) - i15;
-        }
-        float f10 = this.f;
-        p90 p90Var = this.c;
-        if (f10 > 0.0f) {
-            float f11 = (i12 + i14) / 2.0f;
-            int i16 = (int) f7;
-            float f12 = f10 / 2.0f;
-            p90Var.setBounds(i16, (int) (f11 - f12), i15 + i16, (int) (f12 + f11));
-        } else {
-            int i17 = (int) f7;
-            float z11 = com.google.android.gms.internal.vision.e2.z(1.0f, this.e, org.telegram.messenger.q.C(2.0f, i14, i12) / 2.0f, i12);
-            float f13 = this.d;
-            p90Var.setBounds(i17, (int) (z11 + f13), i15 + i17, (int) (((i14 - AndroidUtilities.dp(2.0f)) - ((1.0f - this.e) * (org.telegram.messenger.q.C(2.0f, i14, i12) / 2.0f))) + f13));
-        }
-        p90Var.setAlpha((int) ((paint == null ? 255 : paint.getAlpha()) * this.h));
-        p90Var.draw(canvas);
-        View view2 = this.b;
-        if (view2 != null) {
-            view2.invalidate();
-        }
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
     }
 
-    @Override // android.text.style.ReplacementSpan
-    public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
-        View view;
-        Paint.FontMetrics fontMetrics = paint.getFontMetrics();
-        if (fontMetricsInt != null) {
-            fontMetricsInt.ascent = (int) fontMetrics.ascent;
-            fontMetricsInt.bottom = (int) fontMetrics.bottom;
-            fontMetricsInt.descent = (int) fontMetrics.descent;
-            fontMetricsInt.leading = (int) fontMetrics.leading;
-            fontMetricsInt.top = (int) fontMetrics.top;
-        }
-        p90 p90Var = this.c;
-        if (p90Var.o == null && p90Var.p == null) {
-            p90Var.e(org.telegram.ui.ActionBar.j6.l1(0.1f, paint.getColor()), org.telegram.ui.ActionBar.j6.l1(0.25f, paint.getColor()));
-        }
-        boolean z10 = this.n;
-        int i12 = this.a;
-        return (!z10 || (view = this.b) == null || view.getMeasuredWidth() <= 0) ? i12 : ((this.b.getMeasuredWidth() - this.b.getPaddingLeft()) - this.b.getPaddingRight()) - i12;
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
     }
 
-    public q90(View view, int i10, int i11, org.telegram.ui.ActionBar.e6 e6Var) {
-        this.e = 1.0f;
-        this.f = -1.0f;
-        this.h = 1.0f;
-        this.n = false;
-        this.b = view;
-        this.a = i10;
-        this.d = i11;
-        p90 p90Var = new p90(e6Var);
-        this.c = p90Var;
-        p90Var.j(4.0f);
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

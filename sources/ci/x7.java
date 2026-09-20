@@ -10,10 +10,10 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.ej;
-import org.telegram.ui.Components.l61;
-import org.telegram.ui.Components.x51;
+import org.telegram.ui.Components.k61;
+import org.telegram.ui.Components.w51;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class x7 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -29,22 +29,22 @@ public final /* synthetic */ class x7 implements Utilities.Callback2 {
         switch (this.a) {
             case 0:
                 ArrayList arrayList = (ArrayList) obj;
-                l61 l61Var = (l61) obj2;
+                k61 k61Var = (k61) obj2;
                 g8 g8Var = this.b;
                 MessagesController.SavedMusicList savedMusicList = g8Var.e0;
-                l61Var.E = 1;
+                k61Var.E = 1;
                 int dp = AndroidUtilities.dp(64.0f);
-                arrayList.add(x51.C(AndroidUtilities.dp(64.0f)));
+                arrayList.add(w51.C(AndroidUtilities.dp(64.0f)));
                 if (g8Var.Z || g8Var.h0) {
                     dp += g8Var.W(true, arrayList, LocaleController.getString(R.string.AudioSearchLocal), g8Var.b0, false, false, -1);
                 }
                 if (!g8Var.Z) {
                     if (TextUtils.isEmpty(g8Var.s0) && !g8Var.h0) {
-                        l61Var.U();
-                        x51 c10 = x51.c(1, R.drawable.msg2_folder, LocaleController.getString(R.string.StoryMusicSelectFromFiles));
+                        k61Var.U();
+                        w51 c10 = w51.c(1, R.drawable.msg2_folder, LocaleController.getString(R.string.StoryMusicSelectFromFiles));
                         c10.q = true;
                         arrayList.add(c10);
-                        l61Var.T();
+                        k61Var.T();
                         dp += AndroidUtilities.dp(50.0f);
                     }
                     if (!g8Var.h0 && savedMusicList != null) {
@@ -57,7 +57,7 @@ public final /* synthetic */ class x7 implements Utilities.Callback2 {
                         String string = LocaleController.getString(R.string.NoAudioFound);
                         String string2 = LocaleController.getString(R.string.NoAudioFilesInfo);
                         int i10 = ej.a;
-                        x51 J = x51.J(ej.class);
+                        w51 J = w51.J(ej.class);
                         J.l = string;
                         J.m = string2;
                         arrayList.add(J);
@@ -65,14 +65,14 @@ public final /* synthetic */ class x7 implements Utilities.Callback2 {
                         String string3 = LocaleController.getString(R.string.NoAudioFound);
                         SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(LocaleController.formatString(g8Var.s0.length() >= 3 ? R.string.NoAudioFoundInfo2 : R.string.NoAudioFoundInfo, g8Var.s0));
                         int i11 = ej.a;
-                        x51 J2 = x51.J(ej.class);
+                        w51 J2 = w51.J(ej.class);
                         J2.l = string3;
                         J2.m = replaceTags;
                         arrayList.add(J2);
                     }
                 }
-                arrayList.add(x51.B(null));
-                arrayList.add(x51.C(Math.max(0, AndroidUtilities.dp(24.0f) + (((AndroidUtilities.displaySize.y - (AndroidUtilities.dp(12.0f) + dp)) - AndroidUtilities.statusBarHeight) - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()))));
+                arrayList.add(w51.B(null));
+                arrayList.add(w51.C(Math.max(0, AndroidUtilities.dp(24.0f) + (((AndroidUtilities.displaySize.y - (AndroidUtilities.dp(12.0f) + dp)) - AndroidUtilities.statusBarHeight) - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()))));
                 break;
             default:
                 g8.Q(this.b, (TLRPC.messages_BotResults) obj);

@@ -11,10 +11,10 @@ import javax.net.ssl.HttpsURLConnection;
 import org.json.JSONException;
 import org.json.JSONObject;
 import rd.p;
-import v7.t7;
+import v7.u7;
 import zd.c0;
 
-/* compiled from: r8-map-id-33b1d79182603e8304c32e909c352797304d7e7816a08740f96af6cffe97caab */
+/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
 /* loaded from: classes.dex */
 public final class b extends kd.j implements p {
     public final /* synthetic */ int a = 1;
@@ -91,7 +91,7 @@ public final class b extends kd.j implements p {
                 gd.i iVar2 = gd.i.a;
                 switch (i10) {
                     case 0:
-                        t7.b(obj);
+                        u7.b(obj);
                         JSONObject jSONObject = (JSONObject) this.c;
                         Log.d("SessionConfigFetcher", "Fetched settings: " + jSONObject);
                         kotlin.jvm.internal.p pVar6 = new kotlin.jvm.internal.p();
@@ -243,7 +243,7 @@ public final class b extends kd.j implements p {
                         pVar3 = (kotlin.jvm.internal.p) this.e;
                         pVar5 = (kotlin.jvm.internal.p) this.d;
                         pVar4 = (kotlin.jvm.internal.p) this.c;
-                        t7.b(obj);
+                        u7.b(obj);
                         pVar = pVar5;
                         pVar2 = pVar4;
                         obj2 = pVar.a;
@@ -259,7 +259,7 @@ public final class b extends kd.j implements p {
                     case 2:
                         pVar3 = (kotlin.jvm.internal.p) this.d;
                         pVar2 = (kotlin.jvm.internal.p) this.c;
-                        t7.b(obj);
+                        u7.b(obj);
                         obj3 = pVar2.a;
                         if (((Double) obj3) != null) {
                         }
@@ -269,13 +269,13 @@ public final class b extends kd.j implements p {
                         break;
                     case 3:
                         pVar3 = (kotlin.jvm.internal.p) this.c;
-                        t7.b(obj);
+                        u7.b(obj);
                         obj4 = pVar3.a;
                         if (((Integer) obj4) == null) {
                         }
                         break;
                     case 4:
-                        t7.b(obj);
+                        u7.b(obj);
                         iVar = iVar2;
                         if (iVar == null) {
                         }
@@ -291,7 +291,7 @@ public final class b extends kd.j implements p {
                         }
                         return iVar2;
                     case 5:
-                        t7.b(obj);
+                        u7.b(obj);
                         Long l4222 = new Long(System.currentTimeMillis());
                         this.c = null;
                         this.d = null;
@@ -304,7 +304,7 @@ public final class b extends kd.j implements p {
                         }
                         return iVar2;
                     case 6:
-                        t7.b(obj);
+                        u7.b(obj);
                         return iVar2;
                     default:
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
@@ -316,8 +316,8 @@ public final class b extends kd.j implements p {
                 gd.i iVar3 = gd.i.a;
                 try {
                     if (i11 == 0) {
-                        t7.b(obj);
-                        URLConnection openConnection = aa.a.c((aa.a) this.d).openConnection();
+                        u7.b(obj);
+                        URLConnection openConnection = aa.a.a((aa.a) this.d).openConnection();
                         kotlin.jvm.internal.i.c(openConnection, "null cannot be cast to non-null type javax.net.ssl.HttpsURLConnection");
                         HttpsURLConnection httpsURLConnection = (HttpsURLConnection) openConnection;
                         httpsURLConnection.setRequestMethod("GET");
@@ -353,12 +353,12 @@ public final class b extends kd.j implements p {
                             }
                         }
                     } else if (i11 == 1 || i11 == 2) {
-                        t7.b(obj);
+                        u7.b(obj);
                     } else {
                         if (i11 != 3) {
                             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                         }
-                        t7.b(obj);
+                        u7.b(obj);
                     }
                 } catch (Exception e10) {
                     String message = e10.getMessage();
